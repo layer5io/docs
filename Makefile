@@ -1,24 +1,39 @@
-check:
-	golangci-lint run
+# Copyright Layer5, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-check-clean-cache:
-	golangci-lint cache clean
+include .github/build/Makefile.show-help.mk
 
-protoc-setup:
-	wget -P meshes https://raw.githubusercontent.com/layer5io/meshery/master/meshes/meshops.proto
+## Install docs.layer5.io dependencies your local machine.
+## See https://gohugo.io/categories/installation
+setup:
+	hugo server -D 
 
-proto:
-	protoc -I meshes/ meshes/meshops.proto --go_out=plugins=grpc:./meshes/
-
-
-
-
-
+## Run docs.layer5.io on your local machine with draft and future content enabled.
 site:
-	$(jekyll) serve --drafts --livereload
+	hugo server -D -F
+	
+## Run docs.layer5.io on your local machine. Alternate method.
+site-fast:
+	gatsby develop
 
+## Build docs.layer5.io on your local machine.
 build:
-	$(jekyll) build --drafts
+	hugo
 
-docker:
-	docker run --name site -d --rm -p 4000:4000 -v `pwd`:"/srv/jekyll" jekyll/jekyll:4.0.0 bash -c "bundle install; jekyll serve --drafts --livereload"
+## Empty build cache and run docs.layer5.io on your local machine.
+clean: 
+	hugo --cleanDestinationDir
+	site
+
+.PHONY: setup build site clean site-fast
