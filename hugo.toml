@@ -4,7 +4,12 @@ title = 'Layer5 Docs'
 theme = ""
 [module]
 proxy = "direct"
+[module.hugoVersion]
+  extended = true
+  min = "0.73.0"
 [[module.imports]]
-path = "github.com/google/docsy"
+  path = "github.com/google/docsy"
+  disable = false
 [[module.imports]]
-path = "github.com/google/docsy/dependencies"
+  path = "github.com/google/docsy/dependencies"
+  disable = false
