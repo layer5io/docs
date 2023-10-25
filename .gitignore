@@ -12,7 +12,6 @@
 *.out
 
 # build output
-package-lock.json
 /node_modules/
 
 # Dependency directories (remove the comment below to include it)
