@@ -1,5 +1,50 @@
-# layer5-repo-template
-This repository is used as the boilerplate for consistency across all Layer5 repos.
+# Layer5 Product Documentation
+Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
+
+## Contributions Welcome!
+
+If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
+
+### Running the Site Locally
+
+The website can be run locally through Golang (Hugo) or Docker. If you choose to run through Docker, everything will be a little bit slower due to the additional overhead, so for frequent contributors it may be worth it to use Golang.
+
+### With Docker
+
+Running the site locally is simple. Provided you have Docker installed, clone this repo, run make, and then visit http://localhost:3000.
+
+The docker image is pre-built with all the website dependencies installed, which is what makes it so quick and simple, but also means if you need to change dependencies and test the changes within Docker, you'll need a new image. If this is something you need to do, you can run make build-image to generate a local Docker image with updated dependencies, then make website-local to use that image and preview.
+
+### With Golang
+
+If your local development environment has a supported version (v1.21.0+) of Golang installed you can run:
+
+make setup
+make site
+
+...and then visit http://localhost:3000.
+
+If you pull down new code from GitHub, you should run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
+
+### Editing Markdown Content
+
+Documentation content is written in Markdown and you'll find all files listed under the /content directory.
+
+To create a new page with Markdown, create a file ending in `.md` in a `site/<subdirectory>`. The path in the content directory will be the URL route. For example, `site/docs/hello.md` will be served from the `/docs/hello` URL.
+
+```yaml
+---
+title: 'My Title'
+description: "A thorough, yet succinct description of the page's contents"
+---
+```
+The significant keys in the YAML frontmatter are:
+
+`title` (string) - This is the title of the page that will be set in the HTML title.
+`description` (string) - This is a description of the page that will be set in the HTML description.
+`permalink` (string - relative file path) - canoncial location of the page
+`category` (string) - section to which the page belongs.
+`redirect_from` (string - relative file path) - in case the page was previously available elsewhere
 
 <div>&nbsp;</div>
 
