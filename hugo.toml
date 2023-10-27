@@ -1,5 +1,5 @@
 baseURL = "https://docs.layer5.io"
-title = "Layer5 Documentation"
+# title = "Layer5 Documentation"
 
 # Language settings
 contentDir = "content/en"
@@ -64,8 +64,8 @@ languageName ="English"
 # Weight used for sorting.
 weight = 1
 [languages.en.params]
-title = "Goldydocs"
-description = "A Docsy example site"
+title = "Layer5"
+description = "Product Documentation"
 
 
 [markup]
