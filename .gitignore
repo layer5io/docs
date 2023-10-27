@@ -1,26 +1,5 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# build output
-/node_modules/
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# IDEs
-.vscode/*
-
-# Hugo output
 /public
-/resources/
+resources/
+node_modules/
+package-lock.json
 .hugo_build.lock
