@@ -1,6 +1,6 @@
 ---
-title: About Layer5
-linkTitle: About
+title: Meshery Playground
+linkTitle: Playground
 menu: {main: {weight: 10}}
 ---
 
@@ -13,10 +13,11 @@ Become a Layer5 power user.
 
 {{% blocks/lead %}}
 
-Goldydocs is a sample site using the [Docsy](https://github.com/google/docsy)
-Hugo theme that shows what it can do and provides you with a template site
-structure. It’s designed for you to clone and edit as much as you like. See the
-different sections of the documentation and site for more ideas.
+[Try it now!](https://play.meshery.io)
+
+**The Cloud Native Playground**
+
+Explore the Cloud Native Computing Foundation's graduated, incubation, and sandbox projects as well as many other popular open source projects. Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.
 
 {{% /blocks/lead %}}
 
