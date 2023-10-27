@@ -1,12 +1,12 @@
 ---
-title: About Goldydocs
+title: About Layer5
 linkTitle: About
 menu: {main: {weight: 10}}
 ---
 
 {{% blocks/cover title="About Goldydocs" image_anchor="bottom" height="auto" %}}
 
-A sample site using the Docsy Hugo theme.
+Become a Layer5 power user.
 {.mt-5}
 
 {{% /blocks/cover %}}
