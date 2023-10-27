@@ -88,7 +88,7 @@ section = ["HTML", "print", "RSS"]
 
 [params]
 copyright = "Layer5 Authors"
-privacy_policy = "https://layer5.io/legal/privacy"
+privacy_policy = "https://layer5.io/company/legal/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
@@ -112,7 +112,7 @@ version = "0.7"
 url_latest_version = "https://docs.layer5.io"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/google/docsy-example"
+github_repo = "https://github.com/layer5io/docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/layer5io/docs"
 
