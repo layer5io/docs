@@ -4,10 +4,10 @@ title: Layer5
 
 {{< blocks/cover title="Find your way" image_anchor="top" height="full" >}}
 <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  Cloud Docs <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/google/docsy-example">
-  Download <i class="fab fa-github ms-2 "></i>
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="/meshmap">
+  MeshMap Docs <i class="fab fa-github ms-2 "></i>
 </a>
 <p class="lead mt-5">Porridge temperature assessment &mdash; in the cloud!</p>
 {{< blocks/link-down color="info" >}}
@@ -15,12 +15,8 @@ title: Layer5
 
 
 {{% blocks/lead color="primary" %}}
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
+Jump right in and learn about Layer5.
 
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
 {{% /blocks/lead %}}
 
 
