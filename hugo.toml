@@ -88,7 +88,7 @@ section = ["HTML", "print", "RSS"]
 
 [params]
 copyright = "Layer5 Authors"
-privacy_policy = "https://layer5.io/legal/privacy"
+privacy_policy = "https://layer5.io/company/legal/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
