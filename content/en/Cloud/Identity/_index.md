@@ -3,7 +3,7 @@ title: Identity
 description: >
   Organizations, Teams, Users
 date: 2017-01-05
-weight: 1
+weight: 3
 ---
 
 {{% pageinfo %}}
