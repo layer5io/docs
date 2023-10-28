@@ -32,6 +32,8 @@ taxonomyCloudTitle = ["Tag Cloud", "Categories"]
 taxonomyPageHeader = ["tags", "categories"]
 
 
+staticDir = ['static']
+
 # Highlighting config
 pygmentsCodeFences = true
 pygmentsUseClasses = false
