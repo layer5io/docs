@@ -17,6 +17,43 @@
     color: $casper;
   }
 }
+// Code formatting.
+
+.td-content {
+  // Inline code
+  p code,
+  li > code,
+  table code {
+    color: inherit;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    word-break: normal;
+    background-color: rgba($black, 0.05);
+    border-radius: $border-radius;
+
+    br {
+      display: none;
+    }
+  }
+
+  // Code blocks
+  pre {
+    word-wrap: normal;
+    background-color: $gray-900;
+    padding: $spacer;
+
+    > code {
+      background-color: inherit !important;
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      border: 0;
+    }
+  }
+}
 
 // Links
 
@@ -101,4 +138,25 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 .pageinfo {
   font-weight: $font-weight-medium;
   background: $gray-900;
+}
+
+// Style alert boxes.
+
+.alert {
+  font-weight: $font-weight-medium;
+  background: $gray-900;
+  color: inherit;
+  border-radius: 0;
+  
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      & .alert-heading {
+        color: $value;
+      }
+      background-color: $gray-900;    
+      border-style: solid;
+      border-color: $value;
+      border-width: 0 0 0 4px;
+    }
+  }
 }
