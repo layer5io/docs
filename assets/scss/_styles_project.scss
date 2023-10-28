@@ -1,3 +1,14 @@
 .navbar-brand  {
   margin: 1.5rem;
 }
+// Links
+
+a {
+  color: $primary;
+  text-decoration: none; }
+  a:hover {
+    color: $white; }
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none; }
