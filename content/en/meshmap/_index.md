@@ -1,6 +1,7 @@
 ---
 title: Documentation
 linkTitle: MeshMap
+type: docs
 menu: {main: {weight: 20}}
 weight: 20
 ---
