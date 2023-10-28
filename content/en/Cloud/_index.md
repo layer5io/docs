@@ -1,6 +1,7 @@
 ---
 title: Documentation
-linkTitle: Docs
+linkTitle: Cloud
+type: docs
 menu: {main: {weight: 20}}
 weight: 20
 ---
