@@ -3,10 +3,16 @@
 .navbar-brand  {
   margin: 1.5rem;
 }
+.navbar-dark {
+  background-color: $black;
+}
+
+// Main Body
 
 .td-outer {
   margin-top: 2rem;
 }
+
 // Links
 
 a {
@@ -19,6 +25,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none; }
 
+// Taxonomy 
 
 .taxonomy-label {
   color: $gray-900;
@@ -30,3 +37,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     background-color: $secondary;
   }
 }
+
+// Footer
+.td-footer {
+  background-color: $black;
+} 

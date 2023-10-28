@@ -2,12 +2,12 @@
 title: Layer5
 ---
 
-{{< blocks/cover title="Find your way" image_anchor="top" height="full" >}}
+{{< blocks/cover title="Expect More from Your Infrastructure" image_anchor="top" height="full" >}}
 <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  User Guide <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  Cloud Docs <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="/meshmap">
-  Administrator Guide <i class="fab fa-github ms-2 "></i>
+  MeshMap Docs <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <p class="lead mt-5"></p>
 
