@@ -6,7 +6,6 @@ $enable-shadows: false;
 // Theme colors
 
 $primary: #00B39F;
-$green: #00B39F;
 $secondary: #00D3A9;
 
 $success: #3772ff !default;
@@ -29,7 +28,7 @@ $code-color: shade-color($secondary, 40%) !default;
 $body-color: #ccc;
 $body-bg: #010101;
 
-// UI element colors
+// Lefthand sidebar with inter-page docs menu
 
 $border-color: rgba($primary, .33);
 $td-sidebar-tree-root-color: #ccc;
@@ -38,6 +37,7 @@ $td-sidebar-color: rgba($white, .33);
 $td-sidebar-border-color: $border-color;
 $td-sidebar-bg-color: rgba($dark,.73);
 
+// Righthand sidebar with intra-page table of contents
 $td-sidebar-toc-bg-color: rgba($dark,.73);
 
 // Background colors for the sections on home page etc. It is a paint by number
