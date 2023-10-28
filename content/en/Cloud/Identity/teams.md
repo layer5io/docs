@@ -1,14 +1,15 @@
 ---
-title: Configuring Ponycopters
+title: Teams
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
 date: 2017-01-05
-weight: 2
+weight: 5
 ---
 
 {{% pageinfo %}}
 This is a placeholder page. Replace it with your own content.
 {{% /pageinfo %}}
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
@@ -230,8 +231,6 @@ Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 
 ### External Links
 
 Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-
 
 ```
 This is the final element on the page and there should be no margin below this.
