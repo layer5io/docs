@@ -17,12 +17,13 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none; }
 
 
-// .taxonomy-label {
-//   color: purple;
-// }
+.taxonomy-label {
+  color: $gray-900;
+}
 .taxonomy-term {
+  color: $black;
   background-color: $primary;
   & :hover {
-    background-color: $white;
+    background-color: $secondary;
   }
 }
