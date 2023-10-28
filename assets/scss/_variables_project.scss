@@ -1,9 +1,7 @@
-
-
 // Bootstrap options
 
-$enable-gradients: true !default;
-$enable-shadows: true !default;
+$enable-gradients: true;
+$enable-shadows: false;
 
 // Theme colors
 
@@ -39,6 +37,7 @@ $td-sidebar-bg-color: rgba($dark, .33);
 $td-sidebar-color: rgba($white, .33);
 $td-sidebar-border-color: $border-color;
 $td-sidebar-bg-color: rgba($dark,.73);
+
 $td-sidebar-toc-bg-color: rgba($dark,.73);
 
 // Background colors for the sections on home page etc. It is a paint by number
@@ -97,8 +96,8 @@ $pagination-disabled-color: $gray-300 !default;
 
 // Navbar
 
-$navbar-dark-color: rgba($white, 0.75) !default;      // TODO: consider moving into UG SCSS
-$navbar-dark-hover-color: rgba($white, 0.35) !default; // TODO: consider moving into UG SCSS
+$navbar-dark-color: rgba($white, 0.75) !default;
+$navbar-dark-hover-color: rgba($white, 0.35) !default;
 
 // Footer
 
