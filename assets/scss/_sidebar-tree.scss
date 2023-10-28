@@ -145,7 +145,7 @@
       @include media-breakpoint-up(md) {
         @supports (position: sticky) {
           position: sticky;
-          top: 6rem;
+          top: 4rem;
           padding-top: 3rem;
           z-index: 10;
           height: calc(100vh - 5rem);

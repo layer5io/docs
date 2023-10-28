@@ -6,7 +6,7 @@
     background-color: $td-sidebar-toc-bg-color;
     @supports (position: sticky) {
       position: sticky;
-      top: 6rem;
+      top: 4rem;
       padding-top: 3rem;
       height: calc(100vh - 4rem);
       overflow-y: auto;
