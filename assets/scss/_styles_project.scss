@@ -12,6 +12,11 @@
 .td-outer {
   margin-top: 2rem;
 }
+.td-content{
+  h2 {
+    color: $casper;
+  }
+}
 
 // Links
 
@@ -42,3 +47,58 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 .td-footer {
   background-color: $black;
 } 
+
+
+// Left sidebar
+.td-sidebar-nav {
+  &__section-title {
+    a {
+      color: $primary;
+    }
+  }
+  .td-sidebar-link {
+    &__page {
+      color: $gray-400;
+      font-weight: $font-weight-light;
+    }
+  }
+  a {
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+// Right sidebar
+.td-sidebar-toc {
+  border-left: 1px solid $border-color;
+  background-color: $td-sidebar-toc-bg-color;
+  @supports (position: sticky) {
+    position: sticky;
+    top: 4rem;
+    padding-top: 3rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+  
+}
+.td-page-meta {
+  a {
+    display: block;
+    color: $gray-400;
+    line-height: 1.65rem;
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+// pageinfo
+.pageinfo {
+  font-weight: $font-weight-medium;
+  background: $gray-900;
+}
