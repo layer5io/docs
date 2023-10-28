@@ -22,6 +22,7 @@ $code-color: shade-color($secondary, 40%) !default;
 // $bg-gradient-dark: linear-gradient(250deg, #477e96 0%, #00b39f 35%, rgb(60, 73, 79) 100%); 
 $body-color: #ccc;
 $body-bg: #010101;
+$color: pink;
 
 // UI element colors
 
@@ -41,10 +42,10 @@ $td-sidebar-toc-bg-color: rgba($dark,.73);
 $td-box-colors: $dark, $primary, $secondary, $info, $white, $gray-600, $success,
   $warning, $dark, $danger, $primary, $secondary, $info !default;
 
-$link-color: $danger;
+$bs-link-color: $danger;
 $link-decoration: none !default;
 $link-shade-percentage: 30% !default;
-
+$link-color: $white !default;
 // Fonts
 
 $td-enable-google-fonts: true !default;

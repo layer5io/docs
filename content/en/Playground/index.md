@@ -12,12 +12,12 @@ menu: {main: {weight: 10}}
 Explore the Cloud Native Computing Foundation's graduated, incubation, and sandbox projects as well as many other popular open source projects. Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.
 Become a Layer5 power user.
 {.mt-5}
-
+<!-- 
 {{% /blocks/cover %}}
 
 {{% blocks/lead %}}
 
 
 
-{{% /blocks/lead %}}
+{{% /blocks/lead %}} -->
 
