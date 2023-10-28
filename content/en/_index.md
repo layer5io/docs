@@ -4,12 +4,14 @@ title: Layer5
 
 {{< blocks/cover title="Find your way" image_anchor="top" height="full" >}}
 <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Cloud Docs <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  User Guide <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="/meshmap">
-  MeshMap Docs <i class="fab fa-github ms-2 "></i>
+  Administrator Guide <i class="fab fa-github ms-2 "></i>
 </a>
-<p class="lead mt-5">Porridge temperature assessment &mdash; in the cloud!</p>
+<p class="lead mt-5"></p>
+
+<!-- 
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
@@ -70,4 +72,4 @@ For announcement of latest features etc.
 {{% blocks/section %}}
 This is the another section
 {.h1 .text-center}
-{{% /blocks/section %}}
+{{% /blocks/section %}} -->
