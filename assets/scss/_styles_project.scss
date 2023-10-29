@@ -341,7 +341,9 @@ a.dash:hover {
 }
 
 // Cards
-
+.card {
+  background-color: $dark;
+}
 .card-header .bg-white {
   background-color: $dark;
 }

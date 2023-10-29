@@ -1,13 +1,13 @@
 ---
-title: Working with Components
+title: Exploring Designer
 weight: 4
 type: docs
 description: >
-  What does your user need to understand about your project in order to use it - or potentially contribute to it?
+  Designer mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
 ---
 
 {{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
+Collaborate with your team to create a Design. Enable collaboration mode using the Options mode available in the MeshMap canvas
 {{% /pageinfo %}}
 
 For many projects, users may not need much information beyond the information in the [Overview](/docs/overview/), so this section is **optional**. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.
