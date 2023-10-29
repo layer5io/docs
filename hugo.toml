@@ -126,7 +126,8 @@ github_project_repo = "https://github.com/layer5io/docs"
 github_branch= "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "d72aa9b2712488cc3"
+gcs_engine_id = "f475448a7bc1d43a4"
+# Layer5 search engine link https://cse.google.com/cse?cx=f475448a7bc1d43a4
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
