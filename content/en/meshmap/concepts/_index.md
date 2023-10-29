@@ -1,5 +1,5 @@
 ---
-title: Designer
+title: Components
 weight: 4
 type: docs
 description: >
