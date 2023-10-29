@@ -4,10 +4,11 @@ title: Layer5
 
 {{< blocks/cover title="Expect More from Your Infrastructure" image_anchor="top" height="full" >}}
 
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/docs/">
   Cloud Docs <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="/meshmap">
+<a class="btn btn-lg btn-secondary me-3 mb-4 l5btn"
+href="/meshmap">
   MeshMap Docs <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <p class="lead mt-5"></p>
@@ -18,6 +19,7 @@ transform: rotate(-55.68deg);
 flex-shrink: 0;
 position: absolute; z-index:-1;background: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);position: absolute; top: -18rem;right:-32rem;"></div>
 <div style="width: 74.125rem; height: 74.125rem; flex-shrink: 0; background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.20) 0%, rgba(0, 179, 159, 0.00) 100%);position: absolute; top: 8rem;left:-24rem;z-index:-1;"></div>
+
 {{< /blocks/cover >}}
 
 <!-- 
