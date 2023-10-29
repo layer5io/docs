@@ -6,13 +6,17 @@ title: Layer5
 
 <!-- <h1 style="font-weight:800;margin-bottom: 4rem;font-size:5rem;">Expect More from Your Infrastructure</h1> -->
 <div>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" 
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
+    <img src="images/5-light-no-trim.svg" 
+      style="width: 2rem; margin-right: .5rem;" />
   Cloud Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-secondary me-3 mb-4 l5btn"
   href="/meshmap">
+  <img src="images/meshmap-alt.svg" 
+    style="width: 2rem; margin-right: .5rem;" />
   MeshMap Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
