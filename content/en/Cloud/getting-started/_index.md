@@ -1,13 +1,9 @@
 ---
 title: Getting Started
-description: What does your user need to know to try your project?
-
+description: Learn how to effectively manage your organizations, teams, users, workspaces, environments, and more.
+weight: 1
 
 ---
-
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
 
 Information in this section helps your user try your project themselves.
 
