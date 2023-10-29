@@ -23,7 +23,7 @@ title: Layer5
 </div>
 
 <div style="margin-top:25%;padding-top:25%"><a href="/cloud" class="dash">Expect More from Your Infrastructure</a> </div>
-<div class="taxonomy taxonomy-terms-cloud taxo-categories">
+<!-- <div class="taxonomy taxonomy-terms-cloud taxo-categories">
   <h5 class="taxonomy-title">Cloud of Categories</h5>
   <ul class="taxonomy-terms">
     <li><a class="taxonomy-term" href="//localhost:1313/categories/category-1/" data-taxonomy-term="category-1"><span class="taxonomy-label">category 1</span><span class="taxonomy-count">3</span></a></li>
@@ -31,13 +31,13 @@ title: Layer5
     <li><a class="taxonomy-term" href="//localhost:1313/categories/category-3/" data-taxonomy-term="category-3"><span class="taxonomy-label">category 3</span><span class="taxonomy-count">2</span></a></li>
     <li><a class="taxonomy-term" href="//localhost:1313/categories/category-4/" data-taxonomy-term="category-4"><span class="taxonomy-label">category 4</span><span class="taxonomy-count">6</span></a></li>
   </ul>
-</div>
+</div> -->
 
 
 <div class="dash-tangle"></div>
 <div class="dash-ircle"></div>
 
-{{< /blocks/cover >}}
+<!-- {{< /blocks/cover >}}
 
 {{< card header="**Imagine**" title="Artist and songwriter: John Lennon" subtitle="Co-writer: Yoko Ono"
           footer="![SignatureJohnLennon](https://server.tld/…/signature.png 'Signature John Lennon')">}}
@@ -53,7 +53,7 @@ Imagine all the people living for today…
 Jump right in and learn about Layer5.
 {{< blocks/link-down color="info" >}}
 
-{{% /blocks/lead %}}
+{{% /blocks/lead %}} -->
 
 <!-- 
 {{% blocks/section color="dark" type="row" %}}
