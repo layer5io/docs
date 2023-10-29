@@ -1,12 +1,7 @@
 ---
 title: Users
-description: >
-  A short lead description about this section page. Text here can also be **bold** or _italic_ and can even be split over multiple paragraphs.
-date: 2017-01-05
+description: Smallest atomic unit of tenancy in the system.
+weight: 3
 ---
 
-{{% pageinfo %}}
-Organizations, Teams, Users
-{{% /pageinfo %}}
-
-YOu can create any number of these.
+Users are the smallest unit of tenancy in the Layer5 Cloud. They are the entities that can be authenticated and authorized to access resources in the system. Users can be created and managed by the "Provider Admins" or by the users themselves.
