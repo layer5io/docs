@@ -175,6 +175,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 // Dashboard
 
 .l5btn {
+  padding: 1.25rem;
   border-radius: 0.75rem;
   border: 4px solid rgba(0, 179, 159, 0.40);
   background: #000;
@@ -184,7 +185,11 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   }
   & :hover {
     color: white !important;
+    > img {
+      filter: grayscale(100%);
+    }
   }
+  
   & :focus {
     color: white;
   }
