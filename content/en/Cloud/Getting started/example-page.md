@@ -146,6 +146,18 @@ If a table is too wide, it should scroll horizontally.
 
 ----------------
 
+{{< card code=true header="**C**" lang="C" >}}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+  puts("Hello World!");
+  return EXIT_SUCCESS;
+}
+{{< /card >}}
+
+
 Code snippets like `var foo = "bar";` can be shown inline.
 
 Also, `this should vertically align` ~~`with this`~~ ~~and this~~.

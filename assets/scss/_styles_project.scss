@@ -142,7 +142,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 .td-sidebar-nav {
   &__section-title {
     a {
-      color: $primary;
+      color: $gray-400;
+      font-weight: $font-weight-bold;
     }
   }
   .td-sidebar-link {
@@ -155,6 +156,13 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     &:hover {
       color: $white;
       text-decoration: none;
+    }
+    &.active {
+      border: 2px solid $primary;
+      padding: .25rem;
+      padding-left: .5rem !important;
+      background-color: rgba($primary, .1);
+      color: $secondary;
     }
   }
 }
@@ -261,8 +269,10 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   flex-shrink: 0;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);
-  position: absolute; top: -18rem;right:-32rem;
+  position: absolute; 
+  top: -18rem; right:-32rem;
   z-index:-5;
+  background-clip: border-box;
   
 }
 
@@ -329,3 +339,13 @@ a.dash:hover {
   color: $saffron;
   
 }
+
+// Cards
+
+.card-header .bg-white {
+  background-color: $dark;
+}
+.bg-dark {
+  background-color: $dark;
+}
+
