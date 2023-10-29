@@ -160,3 +160,14 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     }
   }
 }
+
+// Dashboard
+
+.l5btn {
+  border-radius: 0.75rem;
+border: 4px solid rgba(0, 179, 159, 0.40);
+background: #000;color: white;
+& :active {
+  background-color: $saffron;
+}
+}
