@@ -1,23 +1,21 @@
 ---
 title: Getting started with your Layer5 account
-description: With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, and more.
+description: With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
 weight: 1
 ---
 
-This guide will walk you through setting up your Layer5 account and getting started with Layer5 Cloud's features for collaboration and infrastructure management.
+This guide will walk you through setting up your Layer5 account.
 
 ## Configuring your Layer5 account
 
 The first steps in starting with Layer5 are to create an account, verify your email, setup an organization and a workspace, and view your profile.
 
-There are several types of accounts on Layer5. Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.
+ Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.
 
 1. Creating an account
 
-To sign up for an account on cloud.layer5.io, navigate to <https://cloud.layer5.io/signup> and follow the prompts.
+To sign up for an account on Layer5 Cloud, navigate to <https://cloud.layer5.io/signup>.
 You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
-
-To keep your Layer5 account secure you should use a strong and unique password. For more information, see "Creating a strong password."
 
 2. Verifying your email address
 
@@ -30,15 +28,27 @@ Two-factor authentication, or 2FA, is an extra layer of security used when loggi
 
 Optionally, after you have configured 2FA, add a passkey to your account to enable a secure, passwordless login. For more information, see "About passkeys" and "Managing your passkeys." -->
 
-3. Creating an organization
+3. Signing in to Layer5 Cloud
+
+To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. Incase you have signed up with OAuth provider, you will be redirected to the provider's login page.
+On successful login, you will be prompted to setup your first organization and workspace.
+
+4. Creating an organization
 
 Organization are unit of tenant in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. You can create your own organization or join an existing one. By default you are the owner of the organization you create. For more information, see "[Organizations](/cloud/identity/organizations/)".
 
+Give your organization a name and a description. For more information, see "Creating an organization."
 
 4. Creating a workspace
 
 Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resouces in your workspaces through teams. For more information, see "[Workspaces](/cloud/workspaces/)".
 
-5. Viewing your Layer5 profile
+Give your workspace a name and a description. For more information, see "Creating a workspace."
+
+5. Dashboard
+
+The dashboard is the first page you see when you sign in to Layer5 Cloud. It provides a high-level overview of your Layer5 account. For more information, see "About your dashboard."
+
+6. Viewing your Layer5 profile
 
 Your Layer5 profile tells people the story of your work through the recent activites, designs that you've published to Cloud catalog. For more information, see "About your profile".
