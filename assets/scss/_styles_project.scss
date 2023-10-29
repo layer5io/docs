@@ -1,4 +1,5 @@
 @import 'fonts';
+@import 'content_project';
 
 .navbar-brand  {
   margin: 1.5rem;
@@ -74,23 +75,63 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none; }
 
 // Taxonomy 
-
-.taxonomy-label {
-  color: $gray-900;
-}
 .taxonomy-term {
-  color: $black;
-  background-color: $primary;
-  & :hover {
-    background-color: $secondary;
+    background: $gray-600;
+    border-width: 0;
+    border-radius: 0 3px 3px 0;
+    color: $white;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    max-width: 100%;
+    padding: 0 0.5em 0 1em;
+    position: relative;
+    margin: 0 0.5em 0.2em 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
+    clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
+  
+    .taxonomy-count {
+      color: $dark !important;
+    }
+    &:hover {
+      background-color: $primary;
+      color: $white;
+  
+      .taxonomy-count {
+        color: $dark !important;
+      }
+    }
+  
+    &:hover::before {
+      background: $primary;
+    }
   }
-}
+  .article-teaser {
+    &.card {
+      padding: 1em;
+      margin-bottom: 1.5em;
+      background-color: $dark;
+    }
+  
+    .breadcrumb {
+      margin-bottom: 0em;
+      font-size: 0.85rem;
+    }
+  
+    .article-meta {
+      margin-bottom: 0em;
+    }
+  }
+
+
 
 // Footer
 .td-footer {
   background-color: $black;
   bottom: 0%;
-  position: absolute;
   width: 100%;
   z-index: 5;
 
@@ -141,6 +182,23 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     &:hover {
       color: $white;
       text-decoration: none;
+    }
+  }
+}
+
+.td-toc {
+  margin-top: 2rem;
+  #TableOfContents {
+    > ul > li > ul > li > a {
+    }
+
+    a {
+      color: $lightslategray;
+
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
     }
   }
 }
