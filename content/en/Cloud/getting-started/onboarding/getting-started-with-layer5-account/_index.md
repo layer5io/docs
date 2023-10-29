@@ -14,7 +14,7 @@ There are several types of accounts on Layer5. Every person who uses Layer5 Clou
 
 1. Creating an account
 
-To sign up for an account on cloud.layer5.io, navigate to <https://cloud.layer5.io/> and follow the prompts.
+To sign up for an account on cloud.layer5.io, navigate to <https://cloud.layer5.io/signup> and follow the prompts.
 You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
 
 To keep your Layer5 account secure you should use a strong and unique password. For more information, see "Creating a strong password."
@@ -42,6 +42,3 @@ Workspaces are logical group of shared set of resources like environments, conne
 5. Viewing your Layer5 profile
 
 Your Layer5 profile tells people the story of your work through the recent activites, and infrastructure designs that you've published to Cloud catalog, the organization memberships you've chosen to publicize. For more information, see "About your profile".
-
-
-## 
