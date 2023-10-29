@@ -92,6 +92,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   bottom: 0%;
   position: absolute;
   width: 100%;
+  z-index: 5;
 
 } 
 
@@ -176,10 +177,18 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 .l5btn {
   border-radius: 0.75rem;
   border: 4px solid rgba(0, 179, 159, 0.40);
-  background: #000;color: white;
+  background: #000;
+  color: white;
   & :active {
   background-color: $saffron;
-}
+  }
+  & :hover {
+    color: white !important;
+  }
+  & :focus {
+    color: white;
+  }
+
 }
 
 .dash-tangle {
@@ -187,11 +196,20 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   height: 74.72rem;
   transform: rotate(-55.68deg);
   flex-shrink: 0;
-  position: absolute; z-index:-1;background: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);position: absolute; top: -18rem;right:-32rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);
+  position: absolute; top: -18rem;right:-32rem;
+  z-index:-5;
+  
 }
 
 .dash-ircle {
-  width: 74.125rem; height: 74.125rem; flex-shrink: 0; background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.20) 0%, rgba(0, 179, 159, 0.00) 100%);position: absolute; top: 8rem;left:-24rem;z-index:-1;
+  width: 74.125rem; height: 74.125rem; flex-shrink: 0; 
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.20) 0%, rgba(0, 179, 159, 0.00) 100%);
+  position: absolute; 
+  top: 8rem;left:-24rem;
+  overflow: hidden;
+  z-index:-5;
 }
 
 @keyframes tipsy {
