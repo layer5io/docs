@@ -10,15 +10,8 @@ This is a placeholder page. Replace it with your own content.
 {{% /pageinfo %}}
 
 
-{{ $image := .Resources.GetMatch "playground.png" }}
-<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+<img alt="test" src="/cloud/security/roles-overview.svg" />
 
-
-
-
-{{ with .Resources.GetMatch "playground.png" }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
