@@ -32,13 +32,13 @@ Optionally, after you have configured 2FA, add a passkey to your account to enab
 
 3. Creating an organization
 
-Organization are unit of tenant in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. You can create your own organization or join an existing one. By default you are the owner of the organization you create. For more information, see "About organizations."
+Organization are unit of tenant in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. You can create your own organization or join an existing one. By default you are the owner of the organization you create. For more information, see "[Organizations](/cloud/identity/organizations/)".
 
 
 4. Creating a workspace
 
-Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resouces in your workspaces through teams. For more information, see "About workspaces."
+Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resouces in your workspaces through teams. For more information, see "[Workspaces](/cloud/workspaces/)".
 
 5. Viewing your Layer5 profile
 
-Your Layer5 profile tells people the story of your work through the recent activites, and infrastructure designs that you've published to Cloud catalog, the organization memberships you've chosen to publicize. For more information, see "About your profile".
+Your Layer5 profile tells people the story of your work through the recent activites, designs that you've published to Cloud catalog. For more information, see "About your profile".
