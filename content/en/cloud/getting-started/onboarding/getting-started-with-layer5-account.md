@@ -1,5 +1,5 @@
 ---
-title: Getting started with your Layer5 account
+title: Setting up Layer5 Account
 description: With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
 weight: 1
 ---
