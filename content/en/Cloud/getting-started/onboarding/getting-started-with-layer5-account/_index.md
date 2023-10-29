@@ -51,4 +51,4 @@ The dashboard is the first page you see when you sign in to Layer5 Cloud. It pro
 
 6. Viewing your Layer5 profile
 
-Your Layer5 profile tells people the story of your work through the recent activites, designs that you've published to Cloud catalog. For more information, see "About your profile".
+Your Layer5 profile tells people the story of your work through the recent activites, designs that you've published to Cloud catalog and much more. For more information, see "About your profile".
