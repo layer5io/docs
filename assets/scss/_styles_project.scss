@@ -75,6 +75,12 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none; }
 
 // Taxonomy 
+.taxo-categories {
+  margin-top: 2rem;
+}
+.taxonomy {
+// .taxonomy-terms-cloud 
+
 .taxonomy-term {
     background: $gray-600;
     border-width: 0;
@@ -125,7 +131,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
       margin-bottom: 0em;
     }
   }
-
+}
 
 
 // Footer
@@ -147,9 +153,14 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     }
   }
   .td-sidebar-link {
+    
     &__page {
       color: $gray-400;
       font-weight: $font-weight-light;
+    }
+    &__section {
+      margin-top: 1rem;
+      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
   }
   a {
@@ -169,6 +180,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 // Right sidebar
 .td-sidebar-toc {
+  line-height: 1.25rem;
   border-left: 1px solid $border-color;
   background-color: $td-sidebar-toc-bg-color;
   @supports (position: sticky) {
@@ -191,6 +203,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
       color: $white;
       text-decoration: none;
     }
+  }
+  .td-page-meta--project-issue {
+    visibility: hidden;
   }
 }
 

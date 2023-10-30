@@ -12,6 +12,9 @@ This is a placeholder page. Replace it with your own content.
 
 <img alt="test" src="/cloud/security/roles-overview.svg" />
 
+{{ with .Resources.GetMatch "roles-overview.svg" }}
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+{{ end }}
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
