@@ -24,7 +24,7 @@ make site
 
 ...and then visit http://localhost:1313.
 
-If you pull down new code from GitHub, you should run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
+If you pull down new code from GitHub, you will occassionally need run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
 ### Editing Markdown Content
 
