@@ -2,6 +2,9 @@
 // Style Markdown content
 //
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 .td-content {
     order: 1;
   
@@ -12,12 +15,14 @@
     }
   
     > h1 {
+      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       font-weight: $font-weight-bold;
       margin-bottom: 1rem;
       color: $casper;
     }
   
     > h2 {
+      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       margin-bottom: 1rem;
       color: $casper;
     }
@@ -35,6 +40,7 @@
     > h4,
     > h5,
     > h6 {
+      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       margin-bottom: 1rem;
       margin-top: 2rem;
       color: $lightslategray;
@@ -42,7 +48,7 @@
         color: pink;
       }
     }
-  
+
     img {
       @extend .img-fluid;
     }
