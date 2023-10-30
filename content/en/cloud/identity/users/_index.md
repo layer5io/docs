@@ -1,6 +1,6 @@
 ---
 title: Users
-description: Smallest atomic unit of tenancy in the system.
+description: Each user account represents an individual collaborator. Individual user accounts exist beyond the bounds of organizations.
 weight: 3
 ---
 
