@@ -8,25 +8,42 @@ cascade:
     type: docs
 ---
 
+
 {{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
 
-This section is where the user documentation for your project lives - all the
-information your users need to understand and successfully use your project.
+Meshery is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with various CNCF projects, monitoring, CI/CD, and security tools. MeshMap is like Figma for DevOps, as it allows you to create, test, and deploy cloud native architectures with ease and efficiency.{{% /pageinfo %}}
 
-For large documentation sets we recommend adding content under the headings in
-this section, though if some or all of them don’t apply to your project feel
-free to remove them or add your own. You can see an example of a smaller Docsy
-documentation site in the [Docsy User Guide](https://docsy.dev/docs/), which
-lives in the [Docsy theme
-repo](https://github.com/google/docsy/tree/master/userguide) if you'd like to
-copy its docs section.
+{{< cardpane >}}
+    <a href="../designer/">
+  {{< card header="Designer" >}}
+    <a name="visualizer"></a>Designer mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+  {{< /card >}}
+    </a>
+  <a href="../visualizer/">
+  {{< card header="Visualizer" >}}
+    <a name="visualizer"></a> Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure.
+  {{< /card >}}
+  </a>
+{{< /cardpane >}}
 
-Other content such as marketing material, case studies, and community updates
-should live in the [About](/about/) and [Community](/community/) pages.
+## What is MeshMap?
 
-Find out how to use the Docsy theme in the [Docsy User
-Guide](https://docsy.dev/docs/). You can learn more about how to organize your
-documentation (and how we organized this site) in [Organizing Your
-Content](https://docsy.dev/docs/best-practices/organizing-content/).
+Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
+
+## Why do I want it?
+
+Help your user know if your project will help them. Useful information can include:
+
+* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
+
+* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
+
+* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
+
+## Where should I go next?
+
+Give your users next steps from the Overview. For example:
+
+* [Getting Started](/docs/getting-started/): Get started with $project
+* [Examples](/docs/examples/): Check out some example code!
+
