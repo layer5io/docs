@@ -1,9 +1,9 @@
 ---
-title: Bed and Chair Metrics
+title: Deploying Designs
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
-date: 2017-01-05
-weight: 2
+date: 2023-10-30
+weight: 4
 ---
 
 {{% pageinfo %}}
