@@ -7,9 +7,9 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+{{< figure src="roles-overview.svg" >}}
+{{< figure src="role-provider-admin.svg" link="images/role-provider-admin.svg"  width="100%"  >}}
+
 
 <!-- Think about your project’s features and use cases. Use these to choose your core tasks. Each granular use case (enable x, configure y) should have a corresponding tasks page or tasks page section. Users should be able to quickly refer to your core tasks when they need to find out how to do one specific thing, rather than having to look for the instructions in a bigger tutorial or example. Think of your tasks pages as a cookbook with different procedures your users can combine to create something more substantial.
 

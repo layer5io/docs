@@ -7,16 +7,36 @@ categories: [Security]
 tags: [roles, permissions]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+## Provider Admin Role
 
+{{< cardpane >}}
+{{% card header="Provider Admin Role" %}}
+<img src="/cloud/security/images/role-provider-admin.svg" link="images/role-provider-admin.svg"  width="100%"  />
+{{% /card %}}
+{{% card %}}
 
-<img alt="test" src="/cloud/security/roles-overview.svg" />
+**What is the purpose of this role?**
 
-{{ with .Resources.GetMatch "roles-overview.svg" }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
+- Used for administration of Layer5 Cloud.
+- Used for debugging and monitoring.
+- Applicable to platform engineering team and on-prem users.
+
+**Who can assign this role?**
+- Provider Admins
+
+**When this role first assigned?**
+- On ☁️ boot-up (using build args)
+
+**How many instances of these roles?**
+- Min: 1, Max: many (based on plan)
+
+**Who can remove assignment of this role?**
+- Provider Admins
+
+**What permissions does this role have?**
+- Can perform CRUD on all resources
+{{% /card %}}
+{{< /cardpane >}}
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
