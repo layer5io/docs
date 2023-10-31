@@ -2,12 +2,14 @@
 title: Managing Organization Permissions
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
-date: 2023-10-28
+date: 2023-10-30
 weight: 4
+categories: [Identity]
+tags: [orgs]
 ---
 
 {{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
+Page under construction.
 {{% /pageinfo %}}
 
 

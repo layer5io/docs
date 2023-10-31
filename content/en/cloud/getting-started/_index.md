@@ -4,8 +4,10 @@ description: Learn how to effectively manage your organizations, teams, users, w
 weight: 1
 
 ---
-
-Information in this section helps your user try your project themselves.
+{{% pageinfo %}}
+Page under construction.
+{{% /pageinfo %}}
+<!-- Information in this section helps your user try your project themselves.
 
 * What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
 
@@ -27,4 +29,4 @@ Is there any initial setup users need to do after installation to try your proje
 
 ## Try it out!
 
-Can your users test their installation, for example by running a command or deploying a Hello World example?
+Can your users test their installation, for example by running a command or deploying a Hello World example? -->

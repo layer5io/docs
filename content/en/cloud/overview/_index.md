@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Overview
 description: Here's where your user finds out if your project is for them.
 weight: 2
@@ -7,7 +7,7 @@ tags: [test, docs]
 ---
 
 {{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
+Page under construction.
 {{% /pageinfo %}}
 
 
@@ -35,4 +35,4 @@ Give your users next steps from the Overview. For example:
 
 * [Getting Started](/docs/getting-started/): Get started with $project
 * [Examples](/docs/examples/): Check out some example code!
-
+ -->

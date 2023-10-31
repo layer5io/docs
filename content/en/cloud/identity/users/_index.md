@@ -2,11 +2,13 @@
 title: Users
 description: >
   A short lead description about this section page. Text here can also be **bold** or _italic_ and can even be split over multiple paragraphs.
-date: 2017-01-05
+date: 2023-10-30
+categories: [Identity]
+tags: [users]
 ---
 
 {{% pageinfo %}}
 Organizations, Teams, Users
 {{% /pageinfo %}}
 
-YOu can create any number of these.
+Organization and teams may have any number of users accounts. User accounts are treated as sovereign entities that are owned by individual individuals, not by corporations.
