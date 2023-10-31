@@ -3,7 +3,7 @@ title: Contribution Guidelines
 weight: 10
 description: How to contribute to the docs
 ---
-# Contributing to the docs.layer5.io Website
+## Contributing to the docs.layer5.io Website
 
 Welcome to the GitHub repository for Layer5's documentation website!
 

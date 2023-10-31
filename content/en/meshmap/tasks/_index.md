@@ -1,12 +1,12 @@
 ---
 title: Core Tasks
 description: What can your user do with your project?
-date: 2017-01-05
+date: 2023-10-30
 weight: 6
 ---
 
 {{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
+Page under construction.
 {{% /pageinfo %}}
 
 Think about your project’s features and use cases. Use these to choose your core tasks. Each granular use case (enable x, configure y) should have a corresponding tasks page or tasks page section. Users should be able to quickly refer to your core tasks when they need to find out how to do one specific thing, rather than having to look for the instructions in a bigger tutorial or example. Think of your tasks pages as a cookbook with different procedures your users can combine to create something more substantial.

@@ -7,7 +7,7 @@ weight: 4
 ---
 
 {{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
+Page under construction.
 {{% /pageinfo %}}
 
 

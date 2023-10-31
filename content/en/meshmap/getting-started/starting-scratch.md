@@ -3,17 +3,17 @@ title: Starting from scratch
 date: 2023-10-05
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
-categories: [Examples]
-tags: [test, sample, docs]
 weigth: 2
+categories: [Designer]
+tags: [designs]
 ---
 
 {{% pageinfo %}}
-This is a placeholder page. Replace it with your own content.
+Page under construction.
 {{% /pageinfo %}}
 
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
 There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
 
@@ -238,4 +238,4 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 
 ```
 This is the final element on the page and there should be no margin below this.
-```
+``` -->
