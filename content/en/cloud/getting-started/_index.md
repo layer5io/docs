@@ -2,11 +2,10 @@
 title: Getting Started
 description: Learn how to effectively manage your organizations, teams, users, workspaces, environments, and more.
 weight: 1
-
 ---
-{{% pageinfo %}}
+<!-- {{% pageinfo %}}
 Page under construction.
-{{% /pageinfo %}}
+{{% /pageinfo %}} -->
 <!-- Information in this section helps your user try your project themselves.
 
 * What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
