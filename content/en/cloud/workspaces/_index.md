@@ -66,7 +66,7 @@ See "[Teams](/extensions/team-management)" section for more information.
 - Connections can be assigned to one or more environments.
 - Same connection can be assigned to multiple environments.
 
-See "[Connections](/concepts/connections)" section for more information.
+See [Connections in Meshery Docs](https://docs.meshery.io/concepts/connections) section for more information.
 
 ## Best Practices
 
