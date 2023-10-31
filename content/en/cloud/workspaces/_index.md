@@ -27,6 +27,10 @@ Workspaces facilitate collaboration between you and your teams, allow you to con
 
 - Access to Workspaces may be granted to one or more teams.
 - As a point of collaboration to facilitate work, Workspaces may have zero or more Environments associated.
+- A Workspace is closely associated with Teams in Meshery. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
+- One ore more teams can be assigned to a workspace.
+- Same team can be assigned to multiple workspaces.
+- A team can be assigned to a workspace only if the team is not already assigned to another workspace.
 
 After creating a Workspace, of your next steps is to resource that Workspace. Like a shared drive (or or shared collection of files). Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 

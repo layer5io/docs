@@ -1,7 +1,7 @@
 ---
 title: Undeploying Designs
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
 date: 2023-10-30
 weight: 3
 categories: [Designer]

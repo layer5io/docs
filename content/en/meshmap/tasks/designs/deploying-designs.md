@@ -1,7 +1,7 @@
 ---
 title: Deploying Designs
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+    Each Meshery design is deployable to one or more Kubernetes clusters.
 date: 2023-10-30
 weight: 4
 categories: [Designer]
