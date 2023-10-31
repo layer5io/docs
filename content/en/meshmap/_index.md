@@ -2,8 +2,8 @@
 title: Documentation
 linkTitle: MeshMap
 type: docs
-menu: {main: {weight: 20}}
-weight: 20
+menu: {main: {weight: 3}}
+weight: 1
 cascade: 
     type: docs
 ---
