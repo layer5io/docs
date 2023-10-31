@@ -28,7 +28,7 @@ cascade:
   </a>
 {{< /cardpane >}}
 
-## What is MeshMap?
+<!-- ## What is MeshMap?
 
 Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
 
@@ -48,4 +48,4 @@ Give your users next steps from the Overview. For example:
 
 * [Getting Started](/docs/getting-started/): Get started with $project
 * [Examples](/docs/examples/): Check out some example code!
-
+ -->

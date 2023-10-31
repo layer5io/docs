@@ -9,4 +9,3 @@ date: 2023-10-30
 Page under construction.
 {{% /pageinfo %}}
 
-This is the section landing page.
