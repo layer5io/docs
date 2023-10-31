@@ -11,7 +11,9 @@ cascade:
 
 {{% pageinfo %}}
 
-Meshery is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with various CNCF projects, monitoring, CI/CD, and security tools. MeshMap is like Figma for DevOps, as it allows you to create, test, and deploy cloud native architectures with ease and efficiency.{{% /pageinfo %}}
+**Meshery** is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with various CNCF projects, monitoring, CI/CD, and security tools.
+
+**MeshMap** is like Figma for DevOps, as it allows you to create, test, and deploy cloud native architectures with ease and efficiency.{{% /pageinfo %}}
 
 {{< cardpane >}}
     <a href="../designer/">

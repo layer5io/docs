@@ -240,7 +240,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 // pageinfo
 .pageinfo {
   font-weight: $font-weight-medium;
-  background: $gray-900;
+  background: $black;
+  font-family: "Open Sans";
 }
 
 // Style alert boxes.
