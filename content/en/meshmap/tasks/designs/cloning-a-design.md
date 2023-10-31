@@ -1,7 +1,7 @@
 ---
 title: Cloning a Design
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Treat designs as templates by cloning an existing design to modify and build upon.
 date: 2023-10-30
 weight: 5
 categories: [Designer]
@@ -11,7 +11,6 @@ tags: [designs]
 {{% pageinfo %}}
 Page under construction.
 {{% /pageinfo %}}
-
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
