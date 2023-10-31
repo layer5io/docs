@@ -207,9 +207,9 @@ To create a shortcode:
 
 To use a shortcode in a document, wrap the name of the shortcode in braces and percent signs like this:
 
-  ```
-  {{% shortcode-name %}}
-  ```
+```code
+  { {% shortcode-name %}}
+```
 
 The shortcode name is the file name minus the `.html` file extension.
 
@@ -230,7 +230,7 @@ The shortcode name is the file name minus the `.html` file extension.
 * Usage in a document:
 
   ```
-  You need Kubernetes version {{% kubernetes-min-version %}} or later.
+  You need Kubernetes version 1.28 or later.
   ```
 
 Useful Hugo docs:
@@ -256,7 +256,7 @@ For information on how to update the website to a new version, see the [Layer5 r
 Whenever any documents reference any source code, you should use the version shortcode in the links, like so:
 
 ```
-https://github.com/layer5io/docs/blob/{{< params "githubbranch" >}}/scripts/gke/deploy.sh
+https://github.com/layer5io/docs/blob/master/scripts/gke/deploy.sh
 ```
 
 This ensures that all the links in a versioned webpage point to the correct branch.
