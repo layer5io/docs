@@ -13,4 +13,6 @@ Layer5 badges are one of the many ways that we recognize the efforts of our cont
 
 See all "Achievement" and all "Project" badges in the [Badge Gallery](https://badges.layer5.io).
 
-See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard).
+<!-- 
+Pending Leaderboard completion
+See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). -->
