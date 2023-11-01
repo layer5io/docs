@@ -277,19 +277,21 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   & :active {
   background-color: $saffron;
   }
+  // this isn't working.
   & :hover {
     color: white !important;
-    > img {
-      filter: grayscale(100%);
+    & img {
+      filter: brightness(0) invert(1);
     }
   }
-  
   & :focus {
     color: white;
   }
 
 }
-
+.l5btn > img:hover {
+  filter: brightness(0) invert(1);
+}  
 .dash-tangle {
   width: 78.14231rem;
   height: 74.72rem;
