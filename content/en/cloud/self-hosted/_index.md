@@ -1,6 +1,6 @@
 ---
 title: Self-Hosted
-weight: 2
+weight: 10
 description: >
   Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
 ---

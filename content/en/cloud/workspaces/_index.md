@@ -34,7 +34,7 @@ Workspaces facilitate collaboration between you and your teams, allow you to con
 
 After creating a Workspace, of your next steps is to resource that Workspace. Like a shared drive (or or shared collection of files). Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 
-## Key Components
+## Key Workspace Components
 
 ### Environments
 
