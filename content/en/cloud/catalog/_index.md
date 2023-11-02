@@ -5,6 +5,10 @@ description: >
   What does your user need to understand about your project in order to use it - or potentially contribute to it?
 ---
 
+{{%pageinfo%}}
+Public Catalog: https://meshery.layer5.io/catalog
+{{%/pageinfo%}}
+
 ## Catalog Concepts
 
 The catalog envisions a web-based, public catalog to facilitate easy discovery and investment-free catalog perusal. Content is published at meshery.layer5.io/catalog, and one-click import of catalog content into Meshery Server is seamlessly integrated.
@@ -28,7 +32,3 @@ The catalog envisions a web-based, public catalog to facilitate easy discovery a
 - Arbitrary strings for categorization.
 - Content Support Levels: "Official", "Partner", "Community".
 
-{{ $context := . }}
-{{ range $taxo, $taxo_map := .Site.Taxonomies }}
-  {{ partial "taxonomy_terms_article.html" (dict "context" $context "taxo" $taxo ) }}
-{{ end }}

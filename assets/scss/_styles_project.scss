@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'content_project';
+@import 'image-modal_project.scss';
 
 .navbar-brand  {
   margin: 1.5rem;
@@ -75,6 +76,12 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none; }
 
 // Taxonomy 
+.taxo-categories {
+  margin-top: 2rem;
+}
+.taxonomy {
+// .taxonomy-terms-cloud 
+
 .taxonomy-term {
     background: $gray-600;
     border-width: 0;
@@ -125,7 +132,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
       margin-bottom: 0em;
     }
   }
-
+}
 
 
 // Footer
@@ -137,9 +144,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 } 
 
-
 // Left sidebar
 .td-sidebar-nav {
+  overflow: hidden;
   &__section-title {
     a {
       color: $gray-400;
@@ -147,28 +154,43 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     }
   }
   .td-sidebar-link {
+    
     &__page {
       color: $gray-400;
       font-weight: $font-weight-light;
     }
+    &__section {
+      margin-top: 1rem;
+      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    }
+    
   }
   a {
     &:hover {
       color: $white;
       text-decoration: none;
     }
-    &.active {
-      border: 2px solid $primary;
+    &.active:not(.tree-root) {
+      border: 2px solid $primary !important;
       padding: .25rem;
       padding-left: .5rem !important;
       background-color: rgba($primary, .1);
       color: $secondary;
+    }
+    &.active.tree-root {
+      border: 2px solid $lightslategray !important;
+      padding: .25rem;
+      padding-left: .5rem !important;
+      background-color: rgba($lightslategray, .1);
+      color: $white;
     }
   }
 }
 
 // Right sidebar
 .td-sidebar-toc {
+  line-height: 1.25rem;
   border-left: 1px solid $border-color;
   background-color: $td-sidebar-toc-bg-color;
   @supports (position: sticky) {
@@ -192,6 +214,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
       text-decoration: none;
     }
   }
+  .td-page-meta--project-issue {
+    visibility: hidden;
+  }
 }
 
 .td-toc {
@@ -214,7 +239,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 // pageinfo
 .pageinfo {
   font-weight: $font-weight-medium;
-  background: $gray-900;
+  background: $black;
+  font-family: "Open Sans";
 }
 
 // Style alert boxes.
@@ -249,30 +275,34 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   & :active {
   background-color: $saffron;
   }
+  // this isn't working.
   & :hover {
     color: white !important;
-    > img {
-      filter: grayscale(100%);
+    & img {
+      filter: brightness(0) invert(1);
     }
   }
-  
   & :focus {
     color: white;
   }
 
 }
-
+.l5btn > img:hover {
+  filter: brightness(0) invert(1);
+}  
 .dash-tangle {
   width: 78.14231rem;
   height: 74.72rem;
   transform: rotate(-55.68deg);
   flex-shrink: 0;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);
+  background-image: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);
   position: absolute; 
   top: -18rem; right:-32rem;
   z-index:-5;
-  background-clip: border-box;
+  background-clip: content-box;
+  -webkit-background-clip: padding-box;
+
   
 }
 
@@ -282,11 +312,13 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   position: absolute; 
   top: 8rem;left:-24rem;
   overflow: hidden;
+  background-clip: border-box;
+
   z-index:-5;
 }
 
 @keyframes tipsy {
-  0 {
+  0% {
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
   }
   100% {
@@ -298,8 +330,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 a.dash {
   color: #fffbf1;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 300;
   text-decoration: none;
   letter-spacing: 0px;
   position: absolute;
@@ -321,9 +353,9 @@ a.dash:after {
   width: 100%;
   top: 50%;
   display: block;
-  border: 15px solid $primary;
+  border: 8px solid $primary;
   transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  animation: 10s infinite alternate ease-in-out tipsy;
+  animation: 6s alternate ease-in-out tipsy;
 }
 
 a.dash:before {
