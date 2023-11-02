@@ -35,12 +35,12 @@ $body-bg: #010101;
 
 $border-color: rgba($primary, .33);
 $td-sidebar-tree-root-color: #ccc;
-$td-sidebar-bg-color: rgba($black, 1);
+$td-sidebar-bg-color: rgba($dark, .5);
 $td-sidebar-color: rgba($white, .33);
 $td-sidebar-border-color: $border-color;
 
 // Righthand sidebar with intra-page table of contents
-$td-sidebar-toc-bg-color: rgba($black,1);
+$td-sidebar-toc-bg-color: rgba($dark,.5);
 
 // Background colors for the sections on home page etc. It is a paint by number
 // system, starting at 0, where the number is taken from the shortcode's ordinal
