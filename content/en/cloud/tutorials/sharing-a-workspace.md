@@ -5,10 +5,93 @@ description: >
 date: 2023-10-30
 weight: 5
 ---
+## Share designs from Workspaces
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+You can share the designs and connections that you store in a workspace with anyone in your organization, but your organization may limit how you can share designs with other people.
+
+When you share, you can control whether people can edit, comment on, or only open the design. When you share content, the default workspace policies apply.
+
+Step 1: Find the design you want to share
+
+**Share a single design**
+
+In your browser, go to [https://meshery.layer5.io](Layer5 Cloud).
+1. Click the design you want to share.
+2. Click Share.
+3. Enter the email addresses of the individual(s) you want to share with.
+
+## Stop, limit, or change Workspace sharing
+
+After you share a workspace, you can stop sharing at any time. You can also control if teams you've shared with can change or share your workspace and Designs within it.
+
+Tip: When you update permissions for a design you share from a workspace and the person you share with doesn’t have permissions, you can update permissions for:
+
+- The workspace that contains the design
+- Only the design itself
+
+
+### Share & collaborate on a design with many people
+
+**Important:**
+
+At any time, a design can only be edited on up to 25 open tabs or devices. If there are more than 25 instances of the design open, only the owner and some users with editing permissions can edit the design.
+A single design can only be shared up to 600 individual email addresses.
+To share and collaborate on a design with a very wide audience:
+
+#### Publish the design
+
+- If you need multiple people to open a design, publish the design then create a link to share to people with access. You can give edit access to people who need to edit or comment on the design. [Learn how to publish a design](#).
+- Depending on your account’s settings, publishing a design makes it visible to everyone on the web, everyone in your organization, or a group of people in your organization. Be careful when publishing private or sensitive info.
+    - **Important:** Provider administrators and Organization administrators can limit who can access a published design. If you're an administrator, [learn how to control who can publish documents to the web](#).
+- To remove a design from the web, you must stop publishing it. [Learn how to stop publishing a design](#).
+- To stop sharing a design with collaborators, [learn how to change sharing permissions](#).
+
+### Stop sharing a design
+
+**Important:**
+
+If you share a design with people, the owner and anyone with edit access can change sharing permissions and share the design.
+If you don’t want anyone to publicly access your design, stop publishing the design.
+
+<details>
+<summary>
+Delete a shared design
+</summary>
+If you delete a shared design that you own:
+
+- People that can view, comment, or edit can make a copy of the design until you permanently delete it.
+- To permanently delete the design, click the design in your trash, and click Delete forever. Learn more about deleting designs.
+
+</details>
+
+### Anonymous or unknown people in a design
+
+You might see a name you don’t recognize or "anonymous user" viewing your design. This can happen when a design is shared publicly or with anyone who has the link.
+
+#### If you see someone you don’t know
+
+Someone you don’t know might be looking at your design because:
+
+- The design is shared with a mailing list.
+- The design is shared with someone who doesn’t have a Layer5 Account or isn’t signed in.
+- Someone who can edit your design or has the link shared it with other people.
+- Someone changed their Layer5 Account name. You can see their email address when you click Share.
+
+#### Limit how people can view your design
+
+If you want to stop sharing a design you can edit, you can learn how to:
+
+- Restrict link sharing for a design.
+- Prevent others from sharing designs you own.
+
+### "Anonymous users"
+
+If you share or open a design with a link, you may not see the names of people who view it.
+
+- People you didn’t invite individually will show as anonymous animals when they’re in the design.
+- People you invite individually will show by name when they’re in the design.
+
+You can only see other people’s names when you give them individual permission to view a design or if they have a Layer5 Account.
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
@@ -35,7 +118,7 @@ Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork b
 
 ## Second Header 2
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock designt mignon cow shoulder short ribs biltong.
 
 ### Header 3
 
@@ -211,7 +294,7 @@ _The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik 
 
 ## Another Heading
 
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock designt mignon cow shoulder short ribs biltong.
 
 ### This Document
 
