@@ -1,17 +1,36 @@
 ---
 title: MeshMap Snapshots
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.
 date: 2023-10-30
 category: GitOps
 weight: 4
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+MeshMap Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
+
+## Meshery GitHub App
+
+In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
+
+View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/meshmap-snapshot).
+
+## Enabling and Configuring Snapshots
+
+1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
+1. Visit Connections and click [Create on the GitHub connection](https://meshery.layer5.io/connect/github/new).
+1. Use the mult-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
+1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
+1. Identify the path to either one or more Meshery Designs, Helm Charts, Kuberentes Manifests, or Docker Compose files.
+1. You will establish a secrte for the Meshery GitHub app and aa new workflow to be invoked when a new snapshot is needed.
+    1. Customize the workflow `on` event trigger to match your needs.
+
+You can always return to the [GitHub connection](https://meshery.layer5.io/connect/github) to update the connection or to add additional repositories.
+
+
+
+<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
 There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
 
@@ -234,4 +253,4 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 
 ```
 This is the final element on the page and there should be no margin below this.
-```
+``` -->

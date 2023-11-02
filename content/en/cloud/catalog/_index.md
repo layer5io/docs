@@ -2,7 +2,7 @@
 title: Catalog
 weight: 2
 description: >
-  What does your user need to understand about your project in order to use it - or potentially contribute to it?
+  WThe Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
 ---
 
 {{%pageinfo%}}
