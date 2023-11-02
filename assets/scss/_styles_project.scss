@@ -139,8 +139,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 // Footer
 .td-footer {
   background-color: $black;
-  bottom: 0%;
-  width: 100%;
+  // bottom: 0%; 
   z-index: 5;
 
 } 
