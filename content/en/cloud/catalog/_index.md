@@ -2,7 +2,7 @@
 title: Catalog
 weight: 2
 description: >
-  WThe Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
+  The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
 ---
 
 {{%pageinfo%}}
