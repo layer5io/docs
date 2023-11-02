@@ -33,10 +33,10 @@ title: Layer5
   </ul>
 </div> -->
 
-
 <div class="dash-tangle"></div>
-<div class="dash-ircle"></div>
-
+<div class="dash-ircle-container">
+  <div class="dash-ircle"></div>
+</div>
 <!-- {{< /blocks/cover >}}
 
 {{< card header="**Imagine**" title="Artist and songwriter: John Lennon" subtitle="Co-writer: Yoko Ono"
@@ -48,14 +48,13 @@ Imagine all the people living for today…
 …
 {{< /card >}}
 
-
 {{% blocks/lead color="primary" %}}
 Jump right in and learn about Layer5.
 {{< blocks/link-down color="info" >}}
 
 {{% /blocks/lead %}} -->
 
-<!-- 
+<!--
 {{% blocks/section color="dark" type="row" %}}
 {{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
 The Goldydocs UI now shows chair size metrics by default.
