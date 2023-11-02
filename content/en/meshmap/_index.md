@@ -36,7 +36,7 @@ cascade:
 
 ## What is MeshMap?
 
-<div style="display:flex;justify-content:center;margin:1rem;">MeshMap is a web-based application that allows users to create and share diagrams of cloud native infrastructure for Kubernetes. Users can draw shapes, lines, text, and icons to represent the components and relationships of their Kubernetes clusters. MeshMap supports freestyle design, meaning that users can customize the appearance and layout of their diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that users can invite others to join their sessions and edit the diagrams together. MeshMap is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes.</div>
+<div style="display:flex;justify-content:center;margin:1rem;">MeshMap is a web-based application that allows you to create and share diagrams of cloud native infrastructure for Kubernetes. You can draw shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters. MeshMap supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. MeshMap is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes.</div>
 
 ## What is MeshMap Modes
 
