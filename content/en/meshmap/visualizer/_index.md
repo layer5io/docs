@@ -2,18 +2,36 @@
 title: Navigating Visualizer
 weight: 5
 description: >
-  Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure.
+  Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure. 
 categories: [Visuzalizer]
 ---
 
-{{% pageinfo %}}
-Discover and visualize your Kubernetes clusters and cloud native infrastructure.
-{{% /pageinfo %}}
+Discover and examine your Kubernetes clusters and cloud native infrastructure using Visualizer mode.
+
+## Using Filters
+
+Using filters you can select the Kubernetes resources you want to view. Apply one or more filters to narrow down the resources you want to view.
+
+## Search and Select Specific Resources
+
+Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Visualizer canvas. Details of the selected resources are displayed in the right panel.
+
+<!-- {{< figure src="images/visualizer-filters.png" link="images/visualizer-filters.png"  width="100%"  >}} -->
+
+## Connecting with Kubernetes Pods
+
+Visualizer supports connecting to Kubernetes pods via the following methods.
 
 ### Understanding Log Streamer
 
 {{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%"  >}}
 
-<!-- For many projects, users may not need much information beyond the information in the [Overview](/docs/overview/), so this section is **optional**. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.
+### Understanding Interactive Terminal
 
-Remember to focus on what the user needs to know, not just what you think is interesting about your project! If they don’t need to understand your original design decisions to use or contribute to the project, don’t put them in, or include your design docs in your repo and link to them. Similarly, most users will probably need to know more about how features work when in use rather than how they are implemented. Consider a separate architecture page for more detailed implementation and system design information that potential project contributors can consult. -->
+The interactive terminal behaves in a fashion similar to similar to the behavior of the `kubectl exec` command, but web-based.
+
+While using using the interactive terminal, understand that you can only open one session per container.
+Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / MeshMap.
+The GraphQL subscription between your web browser running MeshMap and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
+
+{{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%"  >}}
