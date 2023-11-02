@@ -35,22 +35,8 @@ title: Layer5
 <div class="dash-ircle-container">
   <div class="dash-ircle"></div>
 </div>
-<!-- {{< /blocks/cover >}}
 
-{{< card header="**Imagine**" title="Artist and songwriter: John Lennon" subtitle="Co-writer: Yoko Ono"
-          footer="![SignatureJohnLennon](https://server.tld/…/signature.png 'Signature John Lennon')">}}
-Imagine there's no heaven, It's easy if you try<br/>
-No hell below us, above us only sky<br/>
-Imagine all the people living for today…
-
-…
-{{< /card >}}
-
-{{% blocks/lead color="primary" %}}
-Jump right in and learn about Layer5.
-{{< blocks/link-down color="info" >}}
-
-{{% /blocks/lead %}} -->
+{{< /blocks/cover >}}
 
 <!--
 {{% blocks/section color="dark" type="row" %}}

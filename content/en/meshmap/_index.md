@@ -1,6 +1,6 @@
 ---
-title: Documentation
-linkTitle: MeshMap
+title: MeshMap Documentation
+linkTitle: Overview
 type: docs
 menu: {main: {weight: 3}}
 weight: 1
@@ -34,20 +34,35 @@ cascade:
 
 {{% /pageinfo %}}
 
+## What is MeshMap?
+
+<div style="display:flex;justify-content:center;margin:1rem;">MeshMap is a web-based application that allows users to create and share diagrams of cloud native infrastructure for Kubernetes. Users can draw shapes, lines, text, and icons to represent the components and relationships of their Kubernetes clusters. MeshMap supports freestyle design, meaning that users can customize the appearance and layout of their diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that users can invite others to join their sessions and edit the diagrams together. MeshMap is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes.</div>
+
+## What is MeshMap Modes
+
+Choose your mode of operation for MeshMap.
+
 <div style="display:flex;justify-content:center;">
 {{< cardpane >}}
     <a href="../designer/">
   {{< card header="Designer" >}}
-    <a name="visualizer"></a>Designer mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+    <a href="../designer/">Designer</a> mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+    <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
+    <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
     </a>
   <a href="../visualizer/">
   {{< card header="Visualizer" >}}
-    <a name="visualizer"></a> Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure.
+    <a href="../visualizer/">Visualizer</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
+    <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
+    <p>Interactively connect to pods and containers to debug and troubleshoot.</p>
   {{< /card >}}
   </a>
 {{< /cardpane >}}
 </div>
+
+
+
 
 <!-- ## What is MeshMap?
 
