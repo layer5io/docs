@@ -12,6 +12,7 @@
 // Main Body
 .td-home {
   background-color: $dark;
+  overflow-x: hidden;
 }
 // .td-cover-block--height-full {
 //   min-height: 90vh;
@@ -138,8 +139,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 // Footer
 .td-footer {
   background-color: $black;
-  bottom: 0%;
-  width: 100%;
+  // bottom: 0%; 
   z-index: 5;
 
 } 
@@ -306,16 +306,25 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   
 }
 
-.dash-ircle {
-  width: 74.125rem; height: 74.125rem; flex-shrink: 0; 
-  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.20) 0%, rgba(0, 179, 159, 0.00) 100%);
-  position: absolute; 
-  top: 8rem;left:-24rem;
+.dash-ircle-container {
+  height: calc(74.125rem - 8rem);
+  position: absolute;
+  top: 8rem;
+  left: -24rem;
   overflow: hidden;
-  background-clip: border-box;
 
-  z-index:-5;
+  > .dash-ircle {
+    width: 74.125rem; height: 74.125rem; flex-shrink: 0; 
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.20) 0%, rgba(0, 179, 159, 0.00) 100%);
+    position: absolute; 
+    overflow: hidden;
+    background-clip: border-box;
+  
+    z-index:-5;
+  }
 }
+
+
 
 @keyframes tipsy {
   0% {
