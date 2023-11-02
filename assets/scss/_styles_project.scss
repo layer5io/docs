@@ -144,11 +144,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 } 
 
-
 // Left sidebar
 .td-sidebar-nav {
   overflow: hidden;
-
   &__section-title {
     a {
       color: $gray-400;
