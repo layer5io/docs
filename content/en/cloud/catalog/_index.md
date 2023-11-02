@@ -32,7 +32,3 @@ The catalog envisions a web-based, public catalog to facilitate easy discovery a
 - Arbitrary strings for categorization.
 - Content Support Levels: "Official", "Partner", "Community".
 
-{{ $context := . }}
-{{ range $taxo, $taxo_map := .Site.Taxonomies }}
-  {{ partial "taxonomy_terms_article.html" (dict "context" $context "taxo" $taxo ) }}
-{{ end }}
