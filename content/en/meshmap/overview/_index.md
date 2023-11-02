@@ -8,16 +8,22 @@ weight: 1
     <a href="../designer/">
   {{< card header="Designer" >}}
     <a href="../designer/">Designer</a> mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+    <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
+    <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
     </a>
   <a href="../visualizer/">
   {{< card header="Visualizer" >}}
     <a href="../visualizer/">Visualizer</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
+    <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
+
+    
   {{< /card >}}
   </a>
 {{< /cardpane >}}
 
-The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).
+
+<!-- The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).
 
 Try answering these questions for your user in this page:
 
@@ -41,4 +47,4 @@ Give your users next steps from the Overview. For example:
 
 * [Getting Started](/docs/getting-started/): Get started with $project
 * [Examples](/docs/examples/): Check out some example code!
-
+ -->

@@ -10,6 +10,7 @@ categories: [Visuzalizer]
 Discover and visualize your Kubernetes clusters and cloud native infrastructure.
 {{% /pageinfo %}}
 
+### Understanding Log Streamer
 
 {{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%"  >}}
 
