@@ -272,25 +272,17 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   border-radius: 0.75rem;
   border: 4px solid rgba(0, 179, 159, 0.40);
   background: #000;
-  color: white;
-  & :active {
-  background-color: $saffron;
+  color: $white;
+  -webkit-transition: color .8s;
+  -webkit-transition: background-color .8s;
+  > img {
+    width: 2rem; margin-right: .5rem;
   }
-  // this isn't working.
-  & :hover {
-    color: white !important;
-    & img {
-      filter: brightness(0) invert(1);
-    }
-  }
-  & :focus {
-    color: white;
-  }
-
+  > img:hover {
+    filter: brightness(0) invert(1);
+  }  
 }
-.l5btn > img:hover {
-  filter: brightness(0) invert(1);
-}  
+
 .dash-tangle {
   width: 78.14231rem;
   height: 74.72rem;

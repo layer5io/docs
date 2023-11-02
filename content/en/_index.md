@@ -8,15 +8,13 @@ title: Layer5
 <div>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
-    <img src="images/5-light-no-trim.svg" 
-      style="width: 2rem; margin-right: .5rem;" />
+    <img src="images/5-light-no-trim.svg" />
   Cloud Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4 l5btn"
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/meshmap">
-  <img src="images/meshmap-alt.svg" 
-    style="width: 2rem; margin-right: .5rem;" />
+  <img src="images/meshmap-alt.svg" />
   MeshMap Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
