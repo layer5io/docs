@@ -277,19 +277,21 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   & :active {
   background-color: $saffron;
   }
+  // this isn't working.
   & :hover {
     color: white !important;
-    > img {
-      filter: grayscale(100%);
+    & img {
+      filter: brightness(0) invert(1);
     }
   }
-  
   & :focus {
     color: white;
   }
 
 }
-
+.l5btn > img:hover {
+  filter: brightness(0) invert(1);
+}  
 .dash-tangle {
   width: 78.14231rem;
   height: 74.72rem;
@@ -330,8 +332,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 a.dash {
   color: #fffbf1;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
-  font-size: 42px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 300;
   text-decoration: none;
   letter-spacing: 0px;
   position: absolute;
@@ -353,9 +355,9 @@ a.dash:after {
   width: 100%;
   top: 50%;
   display: block;
-  border: 15px solid $primary;
+  border: 8px solid $primary;
   transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  animation: 10s infinite alternate ease-in-out tipsy;
+  animation: 6s alternate ease-in-out tipsy;
 }
 
 a.dash:before {
