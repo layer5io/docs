@@ -1,17 +1,26 @@
 ---
 title: Whiteboarding
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  MeshMap Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
 date: 2023-10-30
 weight: 2
 categories: [Designer]
 tags: [designs]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+With MeshMap Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. MeshMap supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
 
+
+## Using the Shapes Palette
+
+
+## Converting Shapes
+
+
+## Copying, pasting, and deleting shapes
+Using the context menu,
+
+## 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
