@@ -23,19 +23,25 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 - Applicable to platform engineering team and on-prem users.
 
 **Who can assign this role?**
+
 - Provider Admins
 
 **When this role first assigned?**
+
 - On ☁️ boot-up (using build args)
 
 **How many instances of these roles?**
+
 - Min: 1, Max: many (based on plan)
 
 **Who can remove assignment of this role?**
+
 - Provider Admins
 
 **What permissions does this role have?**
+
 - Can perform CRUD on all resources
+
 {{% /card %}}
 {{< /cardpane >}}
 
