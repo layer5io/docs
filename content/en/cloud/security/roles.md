@@ -85,7 +85,7 @@ tags: [roles, permissions]
 {{% /card %}}
 {{< /cardpane >}}
 
-{{< alert title="Organization owners as Entitlements" >}}
+{{< alert title="Organization owners as entitlements" >}}
 It's essential to understand that organization owners are not roles but entitlements. These entitlements are automatically assigned to the user who creates an organization. They are granted certain administrative privileges within the organization, allowing them to manage its settings and members effectively, including the administrative privilege to delete the organization.
 <br><br>
 For more information, see [Organization](/cloud/identity/organizations).
@@ -124,7 +124,7 @@ Min: 1, Max: many
 {{% /card %}}
 {{< /cardpane >}}
 
-{{< alert title="Team owners as Entitlements" >}}
+{{< alert title="Team owners as entitlements" >}}
 It's essential to understand that team owners are not roles but entitlements. These entitlements are automatically assigned to the user who creates an team within an organization. They are granted certain administrative privileges within the team, allowing them to manage its settings and members effectively, including the administrative privilege to delete the team.
 <br><br>
 For more information, see [Teams](/cloud/identity/teams).
