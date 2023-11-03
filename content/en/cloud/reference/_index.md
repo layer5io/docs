@@ -20,8 +20,16 @@ To authenticate with the API, pass the token as a bearer token in the `Authoriza
 
 ```bash
 
+curl protocol://<Layer5-cloud-hostname>/<API> \
+-H "Authorization: Bearer <token>"
 
 ```
+
+{{< alert title="Note" >}}
+Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
+
+Replace `<API>` with the API endpoint you want to access. For example, [`/api/identity/users/profile`](https://cloud.layer5.io/api/identity/users/profile).
+{{< /alert >}}
 
 ### API Endpoints
 
