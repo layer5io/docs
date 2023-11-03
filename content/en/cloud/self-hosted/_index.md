@@ -7,6 +7,7 @@ description: >
 
 {{< figure src="images/self-hosted.svg" link="images/self-hosted.svg" class="image-right-no-shadow" >}}
 
+
 ## On-premises Deployment of Layer5 Cloud
 
 Layer5 Cloud is a collection of services that can be deployed on-premises. The following diagram illustrates the architecture of Layer5 Cloud.
@@ -14,6 +15,10 @@ Layer5 Cloud is a collection of services that can be deployed on-premises. The f
 ## Whitelabeling
 
 Whitelabeling is supported by Layer5 Cloud. The following diagram illustrates the architecture of Layer5 Cloud with whitelabeling.
+
+## Considerations of Self-Hosted Deployments
+
+{{< figure src="images/self-hosted-deployment.svg" link="images/self-hosted-deployment.svg" class="image-center-no-shadow" >}}
 
 ## Consideration for Air-Gapped Deployments
 
