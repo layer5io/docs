@@ -3,8 +3,11 @@
 @import 'image-modal_project.scss';
 @import 'elements_project.scss';
 
+.td-navbar{
+  min-height:6rem;
 .navbar-brand  {
-  margin: 1.5rem;
+  margin: 1.25rem;
+  }
 }
 .navbar-dark {
   background-color: $black;
@@ -20,16 +23,16 @@
   
 // }
 .td-outer {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
-.td-content{
-  h2 {
-    color: $casper;
-  }
-}
+
 // Code formatting.
 
 .td-content {
+
+  h2 {
+    color: $casper;
+  }
   // Inline code
   p code,
   li > code,
@@ -79,7 +82,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 // Taxonomy 
 .taxo-categories {
-  margin-top: 2rem;
+  // margin-top: 2rem;
 }
 .taxonomy {
 // .taxonomy-terms-cloud 
@@ -144,10 +147,20 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   z-index: 5;
 
 } 
+td-sidebar {
+  td-sidebar__inner {
+    td-sidebar__search {
+      td-search {
 
+      }
+    }
+  }
+}
 // Left sidebar
 .td-sidebar-nav {
   overflow: hidden;
+  padding:0px;
+
   &__section-title {
     a {
       color: $gray-400;
@@ -201,7 +214,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
     height: calc(100vh - 4rem);
     overflow-y: auto;
   }
-  
+  .taxo-categories {
+    margin-top: 2rem;
+  }
 }
 .td-page-meta {
   a {
