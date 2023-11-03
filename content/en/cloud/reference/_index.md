@@ -27,7 +27,7 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 
 {{< alert title="Note" >}}
 
-Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance - whether it's on-premises or accessible online.
+Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance.
 
 Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
 
