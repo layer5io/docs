@@ -27,11 +27,11 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 
 {{< alert title="Note" >}}
 
-Replace `<protocol>` with `http` or `https` based on your Layer5 Cloud instance, if its on-prem or exposed on web.
+Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance - whether it's on-premises or accessible online.
 
 Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
 
-Replace `<API>` with the API endpoint you want to access. For example, [`/api/identity/users/profile`](https://cloud.layer5.io/api/identity/users/profile).
+Replace `<API>` with the API endpoint you want to access. For example, `/api/identity/users/profile`.
 
 Replace `<token>` with the security token you generated.
 
