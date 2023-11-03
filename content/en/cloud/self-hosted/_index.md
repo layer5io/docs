@@ -20,8 +20,17 @@ Whitelabeling is supported by Layer5 Cloud. The following diagram illustrates th
 
 {{< figure src="images/self-hosted-deployment.svg" link="images/self-hosted-deployment.svg" class="image-center-no-shadow" >}}
 
+## Considerations of Peer-to-Peer Communication and Central Coordination
+
+
+{{< figure src="images/meshmap-collaboration-networking.svg" link="images/meshmap-collaboration-networking.svg" class="image-center-no-shadow" >}}
+
+
+
 ## Consideration for Air-Gapped Deployments
 
 Meshery acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Meshery's commitment to versatile deployment scenarios.
 
 {{< alert title="As as Service" >}}Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.{{< /alert >}}
+
+
