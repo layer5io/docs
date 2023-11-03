@@ -29,6 +29,8 @@ curl protocol://<Layer5-cloud-hostname>/<API> \
 Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
 
 Replace `<API>` with the API endpoint you want to access. For example, [`/api/identity/users/profile`](https://cloud.layer5.io/api/identity/users/profile).
+
+Replace `<token>` with the security token you generated.
 {{< /alert >}}
 
 ### API Endpoints
