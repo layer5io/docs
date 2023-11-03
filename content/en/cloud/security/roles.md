@@ -1,7 +1,7 @@
 ---
 title: Roles
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  A role contains a set of permissions that allows you to perform specific actions on Layer5 Cloud resources. To make permissions available to principals, including users, you grant roles to the principals.
 date: 2023-10-30
 categories: [Security]
 tags: [roles, permissions]
@@ -37,6 +37,100 @@ tags: [roles, permissions]
 - Can perform CRUD on all resources
 {{% /card %}}
 {{< /cardpane >}}
+
+## Organization Roles
+
+{{< cardpane >}}
+{{% card header="Organization Adminstrator" %}}
+
+**What is the purpose of this role?**
+- Administration of an organization (for each organization for which the user has this role assigned)
+
+**Who can assign this role?**
+- The Organization Owner
+
+**When this role first assigned?**
+- Creation of new organization or User Account creation
+
+**How many instances of these roles?**
+- Min: 1, Max: many (based on plan)
+- By default, the first Organization Admin is the owner (the creator of the organization).
+
+**Who can remove assignment of this role?**
+- Organization Owner
+
+{{% /card %}}
+{{% card header="Organization Billing Manager" %}}
+
+**What is the purpose of this role?**
+
+- Administration of subscriptions, plans, payments, billing methods and information, spending limits, invoice mgmt etc.
+
+**Who can assign this role?**
+
+- Organization Owner
+
+**When this role first assigned?**
+
+- Manually by Organization Owner
+
+**How many instances of these roles?**
+
+- Min: 0, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Owner
+
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< alert title="Organization owners as Entitlements" >}}
+It's essential to understand that organization owners are not roles but entitlements. These entitlements are automatically assigned to the user who creates an organization. They are granted certain administrative privileges within the organization, allowing them to manage its settings and members effectively, including the administrative privilege to delete the organization.
+<br><br>
+For more information, see [Organization](/cloud/identity/organizations).
+{{< /alert >}}
+
+## Team Roles
+
+{{< cardpane >}}
+{{% card header="Team Adminstrator" %}}
+**What is the purpose of this role?**
+- Administration of teams
+
+**Who can assign and unassign this role?**
+- Organization Administrator or Team owner
+
+**When this role first assigned?**
+- Creation of new team or User Account creation
+- By default, the first Team Admin is owner (the team creator)
+
+**How many instances of these roles?**
+Min: 1, Max: many
+
+{{% /card %}}
+{{% card header="Team Manager" %}}
+**What is the purpose of this role?**
+- Administration of teams (without delete access)
+
+**Who can assign and unassign this role?**
+- Organization Administrators or Team Owner
+
+**When this role first assigned?**
+- Upon Team creation.
+- Manually by Organization Administrator or Team Owner
+
+**How many instances of these roles?**
+- Min: 0, Max: many
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< alert title="Team owners as Entitlements" >}}
+It's essential to understand that team owners are not roles but entitlements. These entitlements are automatically assigned to the user who creates an team within an organization. They are granted certain administrative privileges within the team, allowing them to manage its settings and members effectively, including the administrative privilege to delete the team.
+<br><br>
+For more information, see [Teams](/cloud/identity/teams).
+{{< /alert >}}
+
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
