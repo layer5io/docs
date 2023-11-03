@@ -1,10 +1,13 @@
-<!-- ---
+---
 title: Concepts
 weight: 2
 description: >
-  What does your user need to understand about your project in order to use it - or potentially contribute to it?
+  An overview of Layer5 Cloud concepts and their relationships to one another.
 ---
 
+{{< figure src="concepts-overview.svg"  class="image-center-shadow" >}}
+
+<!--
 {{% pageinfo %}}
 Page under construction.
 {{% /pageinfo %}}
