@@ -44,7 +44,7 @@ tags: [roles, permissions]
 {{% card header="Organization Adminstrator" %}}
 
 **What is the purpose of this role?**
-- Administration of an organization (for each organization for which the user has this role assigned)
+- Administration of an organization
 
 **Who can assign this role?**
 - The Organization Owner
@@ -117,7 +117,6 @@ Min: 1, Max: many
 - Organization Administrators or Team Owner
 
 **When this role first assigned?**
-- Upon Team creation.
 - Manually by Organization Administrator or Team Owner
 
 **How many instances of these roles?**
