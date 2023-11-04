@@ -7,7 +7,7 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{< figure src="images/connections.svg" link="images/connections.svg"  width="100%"  >}}
-{{< figure src="images/cloud-native-patterns.svg" link="images/cloud-native-patterns.svg" width="100%" >}}
-{{< figure src="images/service-mesh-patterns.svg" link="images/service-mesh-patterns.svg"  width="100%"  >}}
-{{< figure src="images/publishing-to-the-meshery-catalog.svg" link="images/publishing-to-the-meshery-catalog.svg"  width="100%"  >}}
+{{< figure src="images/connections.svg" link="images/connections.svg"  width="100%" class="image-center-no-shadow" >}}
+{{< figure src="images/cloud-native-patterns.svg" link="images/cloud-native-patterns.svg" width="100%"class="image-center-no-shadow" >}}
+{{< figure src="images/service-mesh-patterns.svg" link="images/service-mesh-patterns.svg"  width="100%" class="image-center-no-shadow" >}}
+{{< figure src="images/publishing-to-the-meshery-catalog.svg" link="images/publishing-to-the-meshery-catalog.svg"  width="100%" class="image-center-no-shadow" >}}

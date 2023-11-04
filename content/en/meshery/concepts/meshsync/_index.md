@@ -7,8 +7,8 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{< figure src="images/states-for-kubernetes-cluster-connections.svg" link="images/states-for-kubernetes-cluster-connections.svg" width="100%" >}}
-{{< figure src="images/states-for-unmanaged-connections.svg" link="images/states-for-unmanaged-connections.svg"  width="100%"  >}}
-{{< figure src="images/single-tier-discovery.svg" link="images/single-tier-discovery.svg"  width="100%"  >}}
-{{< figure src="images/highly-extensible-tiered-discovery.svg" link="images/highly-extensible-tiered-discovery.svg"  width="100%"  >}}
-{{< figure src="images/states-and-their-transitions.svg" link="images/states-and-their-transitions.svg"  width="100%"  >}}
+{{< figure src="images/states-for-kubernetes-cluster-connections.svg" link="images/states-for-kubernetes-cluster-connections.svg" width="100%" class="image-center-no-shadow" >}}
+{{< figure src="images/states-for-unmanaged-connections.svg" link="images/states-for-unmanaged-connections.svg"  width="100%"  class="image-center-no-shadow" >}}
+{{< figure src="images/single-tier-discovery.svg" link="images/single-tier-discovery.svg"  width="100%"  class="image-center-no-shadow" >}}
+{{< figure src="images/highly-extensible-tiered-discovery.svg" link="images/highly-extensible-tiered-discovery.svg"  width="100%"  class="image-center-no-shadow" >}}
+{{< figure src="images/states-and-their-transitions.svg" link="images/states-and-their-transitions.svg"  width="100%"  class="image-center-no-shadow" >}}

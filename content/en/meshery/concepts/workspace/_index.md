@@ -7,4 +7,4 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{< figure src="images/attribute-based-access-control.svg" link="images/attribute-based-access-control.svg" width="100%" >}}
+{{< figure src="images/attribute-based-access-control.svg" link="images/attribute-based-access-control.svg" width="100%" class="image-center-no-shadow" >}}

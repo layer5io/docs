@@ -7,4 +7,4 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{< figure src="images/intel-extension-in-meshery.svg" link="images/intel-extension-in-meshery.svg"  width="100%"  >}}
+{{< figure src="images/intel-extension-in-meshery.svg" link="images/intel-extension-in-meshery.svg"  width="100%" class="image-center-no-shadow" >}}

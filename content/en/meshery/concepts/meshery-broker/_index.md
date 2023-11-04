@@ -7,5 +7,5 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{< figure src="images/subjects.svg" link="images/subjects.svg" width="100%" >}}
-{{< figure src="images/meshery-log-viewer.svg" link="images/meshery-log-viewer.svg"  width="100%"  >}}
+{{< figure src="images/subjects.svg" link="images/subjects.svg" width="100%" class="image-center-no-shadow" >}}
+{{< figure src="images/meshery-log-viewer.svg" link="images/meshery-log-viewer.svg"  width="100%"  class="image-center-no-shadow" >}}
