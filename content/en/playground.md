@@ -1,4 +1,4 @@
-<!-- ---
+---
 menu: {main: {
     name: "Playground",
     url: https://play.meshery.io, 
@@ -6,4 +6,4 @@ menu: {main: {
     }
   }
 
---- -->
+--- 
