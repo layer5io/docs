@@ -8,15 +8,13 @@ title: Layer5
 <div>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
-    <img src="images/5-light-no-trim.svg" 
-      style="width: 2rem; margin-right: .5rem;" />
+    <img src="images/5-light-no-trim.svg" />
   Cloud Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4 l5btn"
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/meshmap">
-  <img src="images/meshmap-alt.svg" 
-    style="width: 2rem; margin-right: .5rem;" />
+  <img src="images/meshmap-alt.svg" />
   MeshMap Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
@@ -33,29 +31,14 @@ title: Layer5
   </ul>
 </div> -->
 
-
 <div class="dash-tangle"></div>
-<div class="dash-ircle"></div>
+<div class="dash-ircle-container">
+  <div class="dash-ircle"></div>
+</div>
 
-<!-- {{< /blocks/cover >}}
+{{< /blocks/cover >}}
 
-{{< card header="**Imagine**" title="Artist and songwriter: John Lennon" subtitle="Co-writer: Yoko Ono"
-          footer="![SignatureJohnLennon](https://server.tld/…/signature.png 'Signature John Lennon')">}}
-Imagine there's no heaven, It's easy if you try<br/>
-No hell below us, above us only sky<br/>
-Imagine all the people living for today…
-
-…
-{{< /card >}}
-
-
-{{% blocks/lead color="primary" %}}
-Jump right in and learn about Layer5.
-{{< blocks/link-down color="info" >}}
-
-{{% /blocks/lead %}} -->
-
-<!-- 
+<!--
 {{% blocks/section color="dark" type="row" %}}
 {{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
 The Goldydocs UI now shows chair size metrics by default.

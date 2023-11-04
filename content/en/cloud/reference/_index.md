@@ -1,7 +1,7 @@
 ---
 title: Reference
 description: Low-level ReST API reference for extending Layer5 Cloud.
-weight: 9
+weight: 20
 categories: [Reference]
 tags: [extensibility]
 ---
@@ -14,14 +14,28 @@ Page under construction.
 
 ### Authenticating with the API
 
-Visit your [user account's security tokens](https://meshery.layer5.io/security/tokens) and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.
+In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://meshery.layer5.io/security/tokens) and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.
 
 To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
 
 ```bash
 
+curl <protocol>://<Layer5-cloud-hostname>/<API> \
+-H "Authorization: Bearer <token>"
 
 ```
+
+{{< alert title="Note" >}}
+
+Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance.
+
+Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
+
+Replace `<API>` with the API endpoint you want to access. For example, `/api/identity/users/profile`.
+
+Replace `<token>` with the security token you generated.
+
+{{< /alert >}}
 
 ### API Endpoints
 

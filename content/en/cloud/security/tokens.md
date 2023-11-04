@@ -1,26 +1,15 @@
 ---
-title: Whiteboarding
+title: Tokens
 description: >
-  MeshMap Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
-date: 2023-10-30
-weight: 2
-categories: [Designer]
-tags: [designs]
+  API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
+date: 2023-10-28
+weight: 3
 ---
 
-With MeshMap Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. MeshMap supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
+{{% pageinfo %}}
+This is a placeholder page. Replace it with your own content.
+{{% /pageinfo %}}
 
-
-## Using the Shapes Palette
-
-
-## Converting Shapes
-
-
-## Copying, pasting, and deleting shapes
-Using the context menu,
-
-## 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
@@ -245,4 +234,3 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 
 ```
 This is the final element on the page and there should be no margin below this.
-``` -->

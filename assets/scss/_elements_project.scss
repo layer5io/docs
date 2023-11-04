@@ -1,0 +1,88 @@
+div.tip {
+    position: relative;
+    float: right;
+    max-width: 50%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding: 2rem;
+    font-style: italic;
+    font-size: 0.8rem;
+    border-top: "1px solid $secondary";
+    border-bottom: "1px solid $secondary";
+    border-left: 1px dashed $secondary;
+    border-right: 1px dashed $secondary;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: rgba($secondary, .33);
+    span {
+      font-style: normal;
+    }
+    h3 {
+      margin-bottom: .5rem;
+    }
+    table, td {
+      text-align: center;
+      border-top: 1px dotted #3c494f;
+      th { 
+        background-color: #3c494f;
+        color: #eee;
+        padding: 0rem .5rem;
+      }
+    }
+    @media (max-width: 990px){
+        max-width: 100%;
+      } 
+    @media (max-width: 699px) {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+  }
+  .image-left {
+    width: 40%;
+    float: left;
+    margin: 1rem 1.25rem 1rem 0rem;
+    box-shadow: 0px 5px 10px 1px $primary;
+  }
+
+  .image-right {
+    width: 40%;
+    float: right;
+    margin: 1rem 0rem 1rem 1.25rem;
+    box-shadow: 0px 5px 10px 1px $primary;
+  }
+  .image-right-no-shadow {
+    width: 40%;
+    float: right;
+    margin: 1rem 0rem 1rem 1rem;
+  }
+  .image-left-no-shadow {
+    width: 40%;
+    float: left;
+    margin: 1rem 1rem 1rem 0rem;
+  }
+  .image-center-shadow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    width: 90%;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+  }
+  .image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .align-right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22%;
+    height: 22%;
+    float: right;
+    border-radius: 50%;
+  }

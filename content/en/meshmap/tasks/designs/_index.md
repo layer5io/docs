@@ -5,6 +5,3 @@ description: >
 date: 2023-10-30
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}

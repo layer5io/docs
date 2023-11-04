@@ -16,3 +16,11 @@ See all "Achievement" and all "Project" badges in the [Badge Gallery](https://ba
 <!-- 
 Pending Leaderboard completion
 See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). -->
+
+### How to Earn Badges
+
+### How to Assign Badges
+
+### How to Embed Baddges
+
+### How to Create New Badges

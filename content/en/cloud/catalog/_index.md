@@ -1,38 +1,34 @@
 ---
 title: Catalog
-weight: 2
+weight: 4
 description: >
-  What does your user need to understand about your project in order to use it - or potentially contribute to it?
+  The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
 ---
 
-{%pageinfo%}
+{{%pageinfo%}}
 Public Catalog: https://meshery.layer5.io/catalog
-{%/pageinfo%}
+{{%/pageinfo%}}
 
-## Catalog Concepts
-
-The catalog envisions a web-based, public catalog to facilitate easy discovery and investment-free catalog perusal. Content is published at meshery.layer5.io/catalog, and one-click import of catalog content into Meshery Server is seamlessly integrated.
+The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of existing designs. Designs thaat are published into the catalog caan be, but are not alwaays curated for known best praactices and patterns. Content is published at meshery.layer5.io/catalog, and one-click import of catalog content into Meshery Server is seamlessly integrated.
 
 ### Content Visibility
 
-- Public: View and edit rights for all users.
-- Private: Associated roles and/or keys can dictate permissions.
+Each item in the catalog comes with an associated level of visibility.
+
+- Published: View and clone permission for all users. View for all non-users.
+- Public: View and edit permissions for all users.
+- Private: View and edit permissions only for design owner.
 
 ### Content Types
 
-- User-produced content: e.g., Performance profiles, filters, patterns.
-- Provider-produced content: e.g., Profiles, filters, patterns.
 
-### Content Classes
+### Content Categories
 
-- Policies, Filters, Programs, Extensions.
+Catalog content is categorized in a number of ways:
+ 
+<!-- List design metadata and descriptions here -->
 
 ### Content Tags
 
 - Arbitrary strings for categorization.
 - Content Support Levels: "Official", "Partner", "Community".
-
-{{ $context := . }}
-{{ range $taxo, $taxo_map := .Site.Taxonomies }}
-  {{ partial "taxonomy_terms_article.html" (dict "context" $context "taxo" $taxo ) }}
-{{ end }}
