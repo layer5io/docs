@@ -148,6 +148,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 } 
 td-sidebar {
+  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+
   td-sidebar__inner {
     td-sidebar__search {
       td-search {
@@ -160,7 +162,6 @@ td-sidebar {
 .td-sidebar-nav {
   overflow: hidden;
   padding:0px;
-
   &__section-title {
     a {
       color: $gray-400;
@@ -186,10 +187,14 @@ td-sidebar {
       text-decoration: none;
     }
     &.active:not(.tree-root) {
-      border: 2px solid $primary !important;
+      border-width: 1px;
+      border-style: solid;
+      border-image: linear-gradient(to left, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
+      background-color: linear-gradient(to left, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
       padding: .25rem;
       padding-left: .5rem !important;
-      background-color: rgba($primary, .1);
+      // background-image: linear-gradient(to left, rgba($dark,.33),rgba($dark,.5),rgba($dark,.75),#1e2117, #31412b, #3b6447, #378b6d, #00b39f);
+      background-color: rgba($primary, .05);
       color: $secondary;
     }
     &.active.tree-root {
