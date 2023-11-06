@@ -3,6 +3,8 @@
 @import 'image-modal_project.scss';
 @import 'elements_project.scss';
 
+
+// Global Navigation Bar
 .td-navbar{
   min-height:6rem;
 .navbar-brand  {
@@ -13,7 +15,24 @@
   background-color: $black;
 }
 
-// Main Body
+.nav-link.active {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
+  padding-bottom:.3rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  align-content: center;
+  padding: auto;
+  margin: auto;
+  // background-color: linear-gradient(to right, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
+   
+}
+
+
+// Page Layout Sections
 .td-home {
   background-color: $dark;
   overflow-x: hidden;
@@ -26,8 +45,8 @@
   margin-top: 3rem;
 }
 
-// Code formatting.
 
+// Main Middle Body
 .td-content {
 
   h2 {
@@ -148,6 +167,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 } 
 td-sidebar {
+  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+
   td-sidebar__inner {
     td-sidebar__search {
       td-search {
@@ -160,7 +181,6 @@ td-sidebar {
 .td-sidebar-nav {
   overflow: hidden;
   padding:0px;
-
   &__section-title {
     a {
       color: $gray-400;
@@ -186,10 +206,14 @@ td-sidebar {
       text-decoration: none;
     }
     &.active:not(.tree-root) {
-      border: 2px solid $primary !important;
+      border-width: 1px;
+      border-style: solid;
+      border-image: linear-gradient(to left, rgba($dark,0) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
+      background-image: linear-gradient(to left, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
       padding: .25rem;
       padding-left: .5rem !important;
-      background-color: rgba($primary, .1);
+      // background-image: linear-gradient(to left, rgba($dark,.33),rgba($dark,.5),rgba($dark,.75),#1e2117, #31412b, #3b6447, #378b6d, #00b39f);
+      // background-color: rgba($primary, .05);
       color: $secondary;
     }
     &.active.tree-root {
