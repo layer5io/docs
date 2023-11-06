@@ -373,12 +373,10 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .github {
-    a {
-      &:hover {
-        filter: brightness(100%);
-      }
-    }
+  .social-icon{filter: grayscale(0) invert(0.38) !important;
+  }
+  .social-icon:hover{
+    filter: grayscale(0) invert(1) !important;
   }
 
   .footer-resources {
