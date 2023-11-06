@@ -9,8 +9,8 @@
             <div class="col-lg-6 footer-info footer-icons">
 
                 {{ range .Site.Params.links.footer.icons }}
-                <a href="{{ .url }}" target="_blank" rel="noreferrer">
-                    <i class="{{ .icon }} h-10 fa-xl"></i>
+                <a href="{{ .url  }}" class="{{ .class }}" target="_blank" rel="noreferrer">
+                    <img height="30px"  src="{{ .icon | safeURL }}">
                 </a>
                 {{ end }}
             </div>
