@@ -434,12 +434,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer-hr {
+    width: 100%;
     color: white;
     margin: 0;
   }
 
   .footer-bottom {
-    p {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    span {
       margin: 0 0 1rem;
       font-size: 0.8rem;
     }
@@ -449,13 +456,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .footer-bottom-left {
-    float: left;
-  }
 
-  .footer-bottom-right {
-    float: right;
-  }
 
   /* Media Query for Mobile */
   @media (max-width: 480px) {
@@ -551,7 +552,8 @@ h1, h2, h3, h4, h5, h6 {
       width: 13rem !important;
     }
     .footer-button {
-      width: 120px !important;
+      margin-top: 5px;
+      width: 7.5rem !important;
     }
     .footer-bottom-right {
       margin: 1.5% !important;
