@@ -6,7 +6,7 @@ menu: {main: {weight: 2}}
 cascade: 
     type: docs
 ---
-![layer5-cloud-provider](layer5-cloud-provider.svg)
+![layer5-cloud-provider](layer5-cloud-provider.svg "image-center-shadow")
 {{% pageinfo %}}
 
 ## Understanding the Meshery Ecosystem

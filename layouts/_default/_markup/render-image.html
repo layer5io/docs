@@ -8,5 +8,5 @@
 <!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
 
 <div class="md__image">
-  <img style="width:100%;" id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" class="{{ . }}" {{ end }} />
 </div>

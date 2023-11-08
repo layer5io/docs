@@ -7,9 +7,9 @@ categories: [Security]
 tags: [permissions]
 ---
 
-![roles](roles-overview.svg)
+![roles](roles-overview.svg "image-center-no-shadow")
 
-![provider](images/role-provider-admin.svg)
+![provider](images/role-provider-admin.svg#float-left "image-center-no-shadow")
 
 
 
