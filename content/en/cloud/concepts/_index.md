@@ -5,7 +5,7 @@ description: >
   An overview of Layer5 Cloud concepts and their relationships to one another.
 ---
 
-![concepts-overview](concepts-overview.svg)
+![concepts-overview](concepts-overview.svg "image-center-shadow")
 
 <!--
 {{% pageinfo %}}

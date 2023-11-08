@@ -5,7 +5,7 @@ description: >
   Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
 ---
 
-![self-hosted](images/self-hosted.svg)
+![self-hosted](images/self-hosted.svg "image-right-no-shadow")
 
 ## On-premises Deployment of Layer5 Cloud
 
@@ -17,12 +17,12 @@ Whitelabeling is supported by Layer5 Cloud. The following diagram illustrates th
 
 ## Considerations of Self-Hosted Deployments
 
-![self-hosted-deployment](images/self-hosted-deployment.svg)
+![self-hosted-deployment](images/self-hosted-deployment.svg "image-center-no-shadow")
 
 ## Considerations of Peer-to-Peer Communication and Central Coordination
 
 
-![meshmap-collaboration-networking](images/meshmap-collaboration-networking.svg)
+![meshmap-collaboration-networking](images/meshmap-collaboration-networking.svg "image-center-no-shadow")
 
 
 ## Consideration for Air-Gapped Deployments
