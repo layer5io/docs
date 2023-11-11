@@ -37,7 +37,7 @@ Meshmap's visualizer provides a set of keyboard shortcuts to enhance your experi
 These visualizer shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
 
 ### Searching for Components
-
+ 
 Meshmap offers a powerful search feature that allows you to find specific components based on various criteria, such as object name, kinds, and namespaces. Here are the steps to effectively search for components in your Meshmap environment:
 
 1. Click the search icon or press `/` (Forward Slash) to activate the search bar.
