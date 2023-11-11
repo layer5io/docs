@@ -34,7 +34,7 @@ Meshmap's visualizer provides a set of keyboard shortcuts to enhance your experi
 - / (Forward Slash): Search your environment for MeshMap elements matching your criteria.
 - ` (Backtick key): Close the Visualizer Terminal when it's open.
 
-These visualizer shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
+These visualizer shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management. 
  
 ### Searching for Components
  
