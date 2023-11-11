@@ -417,10 +417,15 @@ a.dash:hover {
 .card {
   background-color: $dark;
 }
+.card-header { 
+  font-weight: bold;
+  font-size: larger;
+}
 .card-header .bg-white {
   background-color: $dark;
+
 }
 .bg-dark {
-  background-color: $dark;
+  background-color: $dark; 
 }
 

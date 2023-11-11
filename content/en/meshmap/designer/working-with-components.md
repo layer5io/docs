@@ -24,7 +24,7 @@ To copy and paste, you can use keyboard shortcuts:
 
 To copy and paste:
 
-1. Use [keyboard shortcuts](/reference/keyboard-shortcuts/)
+1. Use [keyboard shortcuts](/meshmap/reference/keyboard-shortcuts/)
 1. Use the right-click menu
 
 <!-- Image needed -->
