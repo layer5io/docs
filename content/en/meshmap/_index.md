@@ -1,6 +1,6 @@
 ---
 title: MeshMap Documentation
-linkTitle: Overview
+linkTitle: MeshMap
 type: docs
 menu: {main: {weight: 3}}
 weight: 1
