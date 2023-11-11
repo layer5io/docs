@@ -3,7 +3,7 @@ title: Meshmap Keyboard Shortcuts
 description: >
   Learn the keyboard shortcuts for Meshmap to enhance your designing experience.
 date: 2023-11-11
----
+--- 
  
 Meshmap provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:
 
