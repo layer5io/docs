@@ -8,12 +8,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-
-  h5 {
-    font-weight: 300;
-    font-family: $td-fonts-serif;
-  }
+  margin: -12px;
+  font-family: $font-qanelas;
 
   .d-header {
     height: 6rem;
@@ -36,27 +32,6 @@
 
   .search-widget {
     display: none;
-  }
-
-  .custom-search-banner {
-    margin: -1em 0 2em 0;
-    background-color: $primary;
-
-    .custom-search-banner-wrap {
-      max-height: 250px;
-      padding-top: 4em;
-
-      h1 {
-        color: $white;
-        font-size: 50px;
-      }
-
-      p {
-        color: $white;
-        font-size: 28px;
-        margin: 1rem 0 3rem 0;
-      }
-    }
   }
 
   .list-controls {
@@ -109,7 +84,7 @@
 
         .category-logo.aspect-image {
           --max-height: 75px;
-          max-width: 90px;
+          max-width: 5.625rem;
           height: auto;
         }
       }
@@ -153,14 +128,8 @@
   .footer {
     background-color: $dark;
     z-index: 100;
-    color: $white;
+    color: $body-color;
     line-height: 28px;
-    //padding: 0rem 0rem 1.5rem;
-
-    h5 {
-      font-weight: 300;
-      font-family: $td-fonts-serif;
-    }
   }
 
   .row {
@@ -209,21 +178,19 @@
     font-style: italic;
     font-weight: 100;
     font-size: 16px;
-    color: $body-color;
   }
 
   .section-title {
     font-size: 1.25rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
-    --heading-font-family: "Qanelas Soft", "Open Sans", sans-serif;
+    width: fit-content;
   }
 
   .footer-h5 {
-    padding: 0px;
+    padding: 0;
     font-size: 1rem;
     margin-top: 10px;
-    color: $body-color;
+    width: fit-content;
   }
 
   .footer-sections {
@@ -232,8 +199,8 @@
     //margin-top: 15px;
 
     a {
-      color: $white;
-      //color: $color_7;
+      color: $body-color;
+      font-weight: 400 !important;
 
       &:hover {
         color: $primary;
@@ -260,14 +227,12 @@
     }
   }
 
-  .social-icon{filter: grayscale(0) invert(0.38) !important;
-  }
-  .social-icon:hover{
-    filter: grayscale(0) invert(1) !important;
+  .social-icon {
+    filter: grayscale(0) invert(0.38) !important;
   }
 
-  .footer-resources {
-    margin-left: 60px;
+  .social-icon:hover {
+    filter: grayscale(0) invert(1) !important;
   }
 
   .subscribe {
@@ -334,6 +299,7 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+
     span {
       margin: 0 0 1rem;
       font-size: 0.8rem;
@@ -344,19 +310,46 @@
     }
   }
 
+  .odd-col {
+    flex: 1 1 auto;
+  }
+
+  .even-col {
+    flex: 1 1 auto;
+  }
 
 
   /* Media Query for Mobile */
-  @media (max-width: 480px) {
+  @media (max-width: 490px) {
+
+    padding: 2.5rem 0;
     .footer-info {
       flex-wrap: wrap !important;
-      justify-content: center !important;
+    }
+
+    .row {
+      padding: 0;
+    }
+
+    .footer-h5 {
+      font-size: 0.85rem;
     }
     .footer-resources {
       margin: 0 !important;
     }
     .footer-sections {
       padding: 20px !important;
+    }
+    .footer-icons {
+      a {
+        margin-bottom: 15px;
+      }
+    }
+    .odd-col {
+      flex: 0 0 60%;
+    }
+    .even-col {
+      flex: 0 0 40%;
     }
     .col-lg-3 {
       width: 100% !important;
@@ -400,7 +393,7 @@
   }
 
   /* Media Query for low resolution Tablets, Ipads */
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media (min-width: 489px) and (max-width: 767px) {
     .footer-info {
       flex-wrap: wrap !important;
     }
@@ -409,6 +402,12 @@
     }
     .footer-sections {
       padding: 20px !important;
+    }
+    .odd-col {
+      flex: 0 0 60%;
+    }
+    .even-col {
+      flex: 0 0 40%;
     }
     .col-lg-3 {
       width: 100% !important;
@@ -429,6 +428,9 @@
     }
     .footer-icons {
       justify-content: center !important;
+      a {
+        margin-bottom: 15px;
+      }
     }
     .footer-logo {
       padding: 10px 10px 0px 10px !important;
@@ -452,10 +454,9 @@
   }
 
   /* Media Query for Tablets Ipads portrait mode */
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 768px) and (max-width: 850px) {
     .footer-info {
       flex-wrap: wrap !important;
-      justify-content: center !important;
     }
     .footer-resources {
       margin: 0 !important;
@@ -465,6 +466,15 @@
     }
     .footer-sections a {
       font-weight: 400;
+    }
+    .odd-col, .even-col {
+      flex: 0 1 auto;
+      width: auto; /* Adjust the width to auto */
+      margin: 0; /* Reset any margin */
+      padding: 20px; /* Consistent padding */
+    }
+    .even-col {
+      flex: 0 1 auto;
     }
     .col-lg-3 {
       width: 100% !important;
@@ -488,6 +498,7 @@
     }
     .subscribe {
       justify-content: center !important;
+      margin-top: -8rem;
     }
     .footer-button {
       width: 120px !important;
