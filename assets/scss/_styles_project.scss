@@ -3,6 +3,11 @@
 @import 'image-modal_project.scss';
 @import 'elements_project.scss';
 
+:root, :host{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .td-navbar{
   min-height:6rem;
 .navbar-brand  {
