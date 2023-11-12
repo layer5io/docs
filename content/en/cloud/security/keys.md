@@ -56,14 +56,11 @@ Incase, you don't have permission to view keys for your selected organization, y
 1. Choose the organization for which you want to assign keys to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
 2. Navigate to [Keychains](https://meshery.layer5.io/security/keychains) page.
 3. Choose from the existing set of keychains or create a new keychain to which you want to assign keys. For more information, see [Keychains](/cloud/security/keychains).
-4. Select one more of your desired keys from the list of available keys.
-5. Click the **Assign Key** button to assign the selected keys to the keychain.
-6. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
-7. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/security/roles).
-8. Click the **Assign Keychain** button to assign the selected keychain to the role.
-9. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
-10. Choose the user to whom you want to assign the role. 
-11. Select your the role to which you recently assigned keychain. 
+4. Choose one more of your desired keys from the list of available keys.
+5. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
+6. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/security/roles).
+7. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
+8. Choose the user to whom you want to assign the role with new set of permissions.
 
 {{< alert title="Note" >}}
 
