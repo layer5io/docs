@@ -70,8 +70,8 @@ To export a design as an embedding, follow these steps:
 
 You can customize the styles for the embedded design by targeting CSS classes exposed or by adding inline styles. The following class can be overridden:
 
-- `embed-design-container` : for the embedding container
-- `cy-container : for the canvas
+- `embed-design-container`: for the embedding container
+- `cy-container`: for the canvas
 
 If you have multiple embeddings on a page, you can target them all using the classes or specific ones using the div's ID in the shortcode.
 
