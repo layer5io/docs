@@ -76,3 +76,7 @@ Incase, you don't have permission to to perform any of the above operations then
 
 {{< /alert >}}
 
+#### Keys Lifecycle
+
+Layer5 Cloud ships with 103 default keys. Each of these keys are purpose built to enforce permission across the Layer5 Cloud platform. All the keys shipped with the system are immutable and cannot be deleted or modified. Each key is uniquely identified in the form of a UUID. The UUID used to reference the key in the system.
+
