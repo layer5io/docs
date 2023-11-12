@@ -11,7 +11,6 @@ In Layer5 Cloud, permissions are represented as keys, each serving as a unique i
 
 For instance, consider a system shipped default key `Create Organization`, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have `Create Organization` key assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
-
 {{< alert title="Note" >}}
 
 1. Same key can be asssigned to muliple keychains.
@@ -29,13 +28,35 @@ Generally, there are four types of keys:
 3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
 4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
 
-There are also some special types of keys which don't fall into the standard CRUD (CREATE, READ, UPDATE, DELETE) category. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog](/cloud/catalog) or `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your workspace in context of any organization.
+There are also some special types of keys which don't fall into the standard CRUD (CREATE, READ, UPDATE, DELETE) category. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog](/cloud/catalog) or `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your [workspace](/cloud/workspaces) in context of any organization.
 
 
 ### Keys Enforcement
 
-The primary purpose of key enforcement is to ensure that you can only perform actions for which you have the necessary permissions within the context of an organization you are a member of. This is achieved by disabling or hiding the UI elements associated with actions for which you lack the required permissions. This approach not only provides clarity regarding what actions you are authorized to perform but also prevents you from attempting actions that you do not have authorization to execute.
+The primary purpose of key enforcement is to ensure that you can only perform actions for which you have the necessary permissions within the context of your selected/available organization. This is achieved by disabling or hiding the UI elements associated with actions for which you lack the required permissions. This approach not only provides clarity regarding what actions you are authorized to perform but also prevents you from attempting actions that you do not have authorization to execute.
 For more information on managing permissions within an organization and use of organization context switcher, see [Organizations](/cloud/identity/organizations).
 
 Each key is enforced at specific UI elements. For instance, the `Create Organization` key is enforced at the **Create Organization** button in the **Organizations** page. This implies that the button is disabled if you don't have the `Create Organization` assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
+
+### Keys Management
+
+#### View Keys
+
+Review Keys assigned to your user account by navigating to the [Keys](https://cloud.layer5.io/security/keys) page on Layer5 Cloud.
+
+{{< alert title="Note" >}}
+
+Incase, you don't have permission to view keys for your selected organization, you will see a disabled **Keys** tab. In that case, consider switching to an organization for which you have permission to view keys or contact your organization admin to assign you access to keys page.
+
+{{< /alert >}}
+
+#### Assigning Keys to a Keychain
+
+Assign keys to a keychain, by navigating to the [Keychain](https://cloud.layer5.io/security/keychain) page.
+
+{{< alert title="Note" >}}
+
+Incase, you don't have permission to assign keys to a keychain for your selected organization, you will see a disabled **Edit Keychain** button. In that case, consider switching to an organization for which you have permission to edit keychain or contact your organization admin to assign you access to update keychains.
+
+{{< /alert >}}
