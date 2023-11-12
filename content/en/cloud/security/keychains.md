@@ -1,14 +1,21 @@
 ---
 title: Keychains
-description: >
-  Kechaings simplify the management of permissions by allowing you to assign a set of keys to a user role. 
-  
+description: Keychains are a collection of keys
 date: 2023-10-30
 # weight: 4
 categories: [Security]
 tags: [keychains, permissions]
 ---
-A **keychain** is a collection of **keys** grouped together. Keychains simplify the management of permissions by allowing you to assign a set of keys to a user role. This way, you can define what actions a user can perform based on their role within the system.
+
+In Layer5 Cloud, a collection of permissions is represented as a keychain. For instance, consider a system shipped default keychain `Team Management`, which is a collection of eight keys: `View All Teams`, `Add User to Team`, `Invite User to Team`, `Remove User from Team`, `Create Team`, `Delete Team`, `Remove User Role from Team`, and `Assign User Role in a Team`. This means that you can perform all these operations only if you have been assigned this keychain.
+
+Keychains are grouped together and assigned to a [role](/security/roles). Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.
+
+{{< alert title="Note" >}}
+1. Same keychain can be asssigned to muliple roles.
+2. One or more keychains can be assigned to a role.
+
+{{< /alert >}}
 
 ### Keychains Management
 
