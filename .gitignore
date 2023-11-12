@@ -3,3 +3,5 @@ resources/
 node_modules/
 .hugo_build.lock
 .vscode/
+
+.DS_Store
