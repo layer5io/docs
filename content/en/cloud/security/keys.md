@@ -21,31 +21,10 @@ For instance, consider a system shipped default key `Create Organization`, which
 {{< /alert >}}
 
 
+### Keys Enforcement
 
+The primary purpose of key enforcement is to ensure that you can only perform actions for which you have the necessary permissions within the context of an organization you are a member of. This is achieved by disabling or hiding the UI elements associated with actions for which you lack the required permissions. This approach not only provides clarity regarding what actions you are authorized to perform but also prevents you from attempting actions that you do not have authorization to execute.
+For more information on managing permissions within an organization and use of organization context switcher, see [Organizations](/identity/organizations).
 
-
-### Flow of 
-
-### Key Name
-
-- It provides the clearest indication of the key's purpose.
-
-
-### Category
-
-- These are the top-level categories that broadly define the primary functions or features associated with keys. For example:
-
-  - Workspace Management: Handling workspace-related tasks.
-  - Security Management: Managing security-related tasks.
-
-### Subcategory
-
-- The subcategory specifies the context or category to which the key belongs. For example:
-
-   - Workspace Management > Environments:
-      Under the Workspace Management category, the Environments subcategory is used to manage environments.
-
-### Description
-
-- The description provides a more detailed explanation of the key's role.
+Each key is enforced at specific UI elements. For instance, the `Create Organization` key is enforced at the **Create Organization** button in the **Organizations** page. This implies that the button is disabled if you don't have the `Create Organization` assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
