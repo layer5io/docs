@@ -1,15 +1,13 @@
 ---
 title: Keys
-description: Keys are the atomic unit of access control in Layer5 Cloud
+description: Keys are the atomic unit of access control
 date: 2023-10-30
 # weight: 3
 categories: [Security]
 tags: [keys, permissions]
 ---
 
-## Overview
-
-In Layer5 Cloud, permissions are represented in the form of keys. Each key is a unique identifier that represents a specific permission. For example, the key "17a6fa82-cdab-46db-a7ce-a9d0a1bbf40f" represents the permission to create an organization. Therefore, you can create an organization only if you have this key assigned to you.
+In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for specific permissions. For instance, the key "17a6fa82-cdab-46db-a7ce-a9d0a1bbf40f" corresponds to the permission to create an organization. This means that you can create an organization only if you have been assigned this key.
 
 Keys are grouped together into a logical construct called a [keychain](/security/keychains). These keychains are then grouped together and assigned to a [role](/security/roles). Afterward, a role is assigned to a user. This is the general flow of how permissions are assigned to a user
 
