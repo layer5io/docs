@@ -7,7 +7,7 @@ categories: [Security]
 tags: [keys, permissions]
 ---
 
-In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a [keychain](/security/keychains). Then this keychain can be assigned to a [role](/security/roles) and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.
+In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a [keychain](/cloud/security/keychains). Then this keychain can be assigned to a [role](/cloud/security/roles) and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.
 
 For instance, consider a system shipped default key `Create Organization`, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have `Create Organization` key assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
@@ -20,11 +20,22 @@ For instance, consider a system shipped default key `Create Organization`, which
 
 {{< /alert >}}
 
+### Keys Types
+
+Generally, there are four types of keys:
+
+1. **Create** - Create keys permit you to create resources. For example, `Create Organization` key allows you to create an organization.
+2. **Read** - Read keys permit you to access and retrieve resources. For example, `View All Teams` key lets you see all the teams within a selected organization.
+3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
+4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
+
+There are also some special types of keys which don't fall into the standard CRUD (CREATE, READ, UPDATE, DELETE) category. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog](/cloud/catalog) or `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your workspace in context of any organization.
+
 
 ### Keys Enforcement
 
 The primary purpose of key enforcement is to ensure that you can only perform actions for which you have the necessary permissions within the context of an organization you are a member of. This is achieved by disabling or hiding the UI elements associated with actions for which you lack the required permissions. This approach not only provides clarity regarding what actions you are authorized to perform but also prevents you from attempting actions that you do not have authorization to execute.
-For more information on managing permissions within an organization and use of organization context switcher, see [Organizations](/identity/organizations).
+For more information on managing permissions within an organization and use of organization context switcher, see [Organizations](/cloud/identity/organizations).
 
 Each key is enforced at specific UI elements. For instance, the `Create Organization` key is enforced at the **Create Organization** button in the **Organizations** page. This implies that the button is disabled if you don't have the `Create Organization` assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
