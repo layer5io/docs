@@ -5,6 +5,8 @@ description: >
 weight: 5
 categories: [Designer]
 tags: [designs]
+# Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
+# https://github.com/layer5labs/meshery-extensions/tree/master/meshmap/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
 # Exporting Your MeshMap Designs
