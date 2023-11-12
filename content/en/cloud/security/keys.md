@@ -51,7 +51,7 @@ Incase, you don't have permission to view keys for your selected organization, y
 
 {{< /alert >}}
 
-#### Assigning Keys to a Keychain
+#### Assign Keys to a Keychain
 
 Assign keys to a keychain, by navigating to the [Keychain](https://cloud.layer5.io/security/keychain) page.
 
