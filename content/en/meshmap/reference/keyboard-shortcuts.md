@@ -1,13 +1,22 @@
 ---
-title: REST API
+title: Keyboard Shortcuts
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Layer5's keyboard shortcuts and preset icons make it easy to create beautiful, informative designs that explain every aspect of your deploy, test, and monitor infrastructure.
 date: 2023-10-30
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+
+You can copy and paste one or more components — even if you're going from one design to another.
+
+### Use the right-click menu or keyboard shortcuts
+
+You might be able to copy and paste with the right-click menu, but for security reasons, most browsers don't allow web apps (like Docs, Sheets, and Slides) to use your computer's clipboard through menus.
+
+
+
+PC: Ctrl + c for Copy, Ctrl + x for Cut, and Ctrl + v for Paste.
+Mac: ⌘ + c for Copy, ⌘ + x for Cut, and ⌘ + v for Paste.
+
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 

@@ -15,9 +15,11 @@ With MeshMap Designer you can draw shapes, lines, text, add custom styles, image
 
 
 ## Converting Shapes
-
+Existing shapes can be converted to other shapes. For example, you can convert a rectangle to a circle, or a triangle to a rectangle. This is useful if you want to change the shape of a shape without losing its position, size, and formatting.
+If you'd rather use a different shape while keeping the same position, size, and formatting, you can change the shape.
 
 ## Copying, pasting, and deleting shapes
+
 Using the context menu,
 
 ## 
