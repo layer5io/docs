@@ -1,13 +1,11 @@
 ---
 title: Keys
-description: >
-  Keys are a fundamental component of our cloud system, playing a crucial role in access control and permissions management. They are essential for ensuring that users have the appropriate access to specific features and functionalities within the system.
+description: Keys represent the atomic unit of access control in Layer5 Cloud. These are used to provide granular access to users.
 date: 2023-10-30
 # weight: 3
 categories: [Security]
 tags: [keys, permissions]
 ---
-
 
 ## Keys Management
 
