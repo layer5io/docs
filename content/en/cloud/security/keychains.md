@@ -19,6 +19,23 @@ For instance, consider a system shipped default keychain `Team Management`, whic
 
 {{< /alert >}}
 
+
+### Keychains Types
+
+Layer5 Cloud ships with the following 10 default keychains
+
+1. **Provider Management** - This keychain is a collection of keys that allows you to manage providers. For instance, this keychain permits you to view, approve or deny catalog requests.
+2. **Security Management** - This keychain is a collection of keys that allows you to manage security. For instance, this keychain permits you to create/delete credentials and tokens.
+3. **User View** - This keychain is a collection of keys that allows you to manage users views. For instance, this keychain permits you to view all users within an organization or all environments and connections within a workspace of your organization.
+4. **Team View** - This keychain is a collection of keys that allows you to manage team level views. For instance, this keychain permits you to view and edit teams within an organization.
+5. **User Management** - This keychain is a collection of keys that allows you to manage users. For instance, this keychain permits you to invite user to a team or remove user from a team.
+6. **Organization Management** - This keychain is a collection of keys that allows you to manage organizations. For instance, this keychain permits you to create/delete organizations.
+7. **Environment Management** - This keychain is a collection of keys that allows you to manage environments. For instance, this keychain permits you to CRUD operations on environments assigned to your workspace of your organization.
+8. **Workspace Management** - This keychain is a collection of keys that allows you to manage workspaces. For instance, this keychain permits you to CRUD operations on workspaces of your organization.
+9. **Team Management** - This keychain is a collection of keys that allows you to manage teams. For instance, this keychain permits you to CRUD operations on teams of your organization.
+10. **Events Management** - This keychain is a collection of keys that allows you to manage events. For instance, this keychain permits you to view events of all users of the Layer5 Cloud.
+
+
 ### Keychains Management
 
 #### Creating a Keychain
