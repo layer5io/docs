@@ -1,6 +1,6 @@
 ---
 title: Keys
-description: Keys represent the atomic unit of access control in Layer5 Cloud. These are used to provide granular access to users.
+description: Keys are the atomic unit of access control in Layer5 Cloud
 date: 2023-10-30
 # weight: 3
 categories: [Security]
