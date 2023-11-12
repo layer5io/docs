@@ -7,13 +7,17 @@ categories: [Security]
 tags: [keys, permissions]
 ---
 
-In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for specific permissions. For instance, the key "17a6fa82-cdab-46db-a7ce-a9d0a1bbf40f" corresponds to the permission to create an organization. This means that you can create an organization only if you have been assigned this key.
+In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for specific permissions. For instance, the `Create Organization` key corresponds to the permission to create an organization in the Cloud. This means that you can create an organization only if you have been assigned this key.
 
-Keys are grouped together into a logical construct called a [keychain](/security/keychains). These keychains are then grouped together and assigned to a [role](/security/roles). Afterward, a role is assigned to a user. This is the general flow of how permissions are assigned to a user
+Keys are grouped together and assigned to a [keychain](/security/keychains). These keychains are then grouped together and assigned to a [role](/security/roles). Later, a role can be assigned to a user. This is the general flow of how keys are assigned to a user.
 
 {{< alert title="Note" >}}
-Same key can be asssigned to muliple keychains.
+1. Same key can be asssigned to muliple keychains.
+2. One or more keys can be assigned to a keychain.
 {{< /alert >}}
+
+
+
 
 
 ### Flow of 
