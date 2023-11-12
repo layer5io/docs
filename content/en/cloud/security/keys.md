@@ -7,11 +7,18 @@ categories: [Security]
 tags: [keys, permissions]
 ---
 
-## Keys Management
+## Overview
 
-In our cloud system, a "key" is a unique identifier used to grant or restrict access to specific functionalities or features. Keys have a significant impact on access control, as they determine what users can or cannot do within the system.
+In Layer5 Cloud, permissions are represented in the form of keys. Each key is a unique identifier that represents a specific permission. For example, the key "17a6fa82-cdab-46db-a7ce-a9d0a1bbf40f" represents the permission to create an organization. Therefore, you can create an organization only if you have this key assigned to you.
 
-### Key Attributes
+Keys are grouped together into a logical construct called a [keychain](/security/keychains). These keychains are then grouped together and assigned to a [role](/security/roles). Afterward, a role is assigned to a user. This is the general flow of how permissions are assigned to a user
+
+{{< alert title="Note" >}}
+Same key can be asssigned to muliple keychains.
+{{< /alert >}}
+
+
+### Flow of 
 
 ### Key Name
 
