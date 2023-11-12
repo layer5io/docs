@@ -47,7 +47,7 @@ Review Keys assigned to your user account by navigating to the [Keys](https://cl
 
 {{< alert title="Note" >}}
 
-Incase, you don't have permission to view keys for your selected organization, you will see a disabled **Keys** tab. In that case, consider switching to a different organization for which you have permission to view keys or contact your organization admin to assign you access to keys page.
+If you don't have permission to view keys for your selected organization, you will see a disabled Keys tab. In that case, consider switching to a different organization for which you have permission to view keys, or contact your organization admin to assign you access to the keys page.
 
 {{< /alert >}}
 
@@ -64,7 +64,7 @@ Incase, you don't have permission to view keys for your selected organization, y
 
 {{< alert title="Note" >}}
 
-Incase, you don't have permission to to perform any of the above operations then, consider switching to a different organization for which you are authorized to perform such actions or contact your organization admin for allevated access.
+If you don't have permission to perform any of the above operations, consider switching to a different organization for which you are authorized to perform these actions. Alternatively, contact your organization admin for elevated access.
 
 {{< /alert >}}
 
@@ -78,5 +78,5 @@ Incase, you don't have permission to to perform any of the above operations then
 
 #### Keys Lifecycle
 
-Layer5 Cloud ships with 103 default keys. Each of these keys are purpose built to enforce permission across the Layer5 Cloud platform. All the keys shipped with the system are immutable and cannot be deleted or modified. Each key is uniquely identified in the form of a UUID. The UUID is used to reference the key in the system.
+Layer5 Cloud ships with 103 default keys, each designed to enforce permissions across the platform. All the keys shipped with the system are immutable and cannot be deleted or modified. Each key is uniquely identified in the form of a UUID. The UUID is used to reference the key in the system.
 
