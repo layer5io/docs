@@ -24,6 +24,8 @@ For instance, consider a system shipped default keychain `Team Management`, whic
 
 Layer5 Cloud ships with the following 10 default keychains
 
+<!-- TODO: Create separate page to explain in detail about each of the default keys assigned to the following default keychains. -->
+
 1. **Provider Management** - This keychain is a collection of keys that allows you to manage providers. For instance, this keychain permits you to view, approve or deny catalog requests.
 2. **Security Management** - This keychain is a collection of keys that allows you to manage security. For instance, this keychain permits you to create/delete credentials and tokens.
 3. **User View** - This keychain is a collection of keys that allows you to manage users views. For instance, this keychain permits you to view all users within an organization or all environments and connections within a workspace of your organization.
@@ -38,8 +40,59 @@ Layer5 Cloud ships with the following 10 default keychains
 
 ### Keychains Management
 
-#### Creating a Keychain
+#### Create Keychains
 
-- To create a keychain, navigate to the **Keychains** page and click the **Create Keychain** button.
-- Assign relevant keys to the keychain.
-- Further, assign the keychain to the relevant user roles to grant specific permissions to users.
+Create a new keychain by navigating to the [Keychains](https://cloud.layer5.io/security/keychains) page and clicking the **Create Keychain** button. Provide a name and choose the one more keys from the list of available keys. Then click the **Create Keychain** button to create the keychain.
+
+
+{{< alert title="Note" >}}
+
+If you don't have permission to create keychains for your selected organization, you will see a disabled Keychains tab. In that case, consider switching to a different organization for which you have permission to view keychains, or contact your organization admin to assign you access to the keychains page.
+{{< /alert >}}
+
+
+#### View Keychains
+
+Review keychains assigned to your user account by navigating to the [Keychains](https://cloud.layer5.io/security/keychains) page.
+
+{{< alert title="Note" >}}
+
+If you don't have permission to view keychains for your selected organization, you will see a disabled Keychains tab. In that case, consider switching to a different organization for which you have permission to view keychains, or contact your organization admin to assign you access to the keychains page.
+
+{{< /alert >}}
+
+#### Assign Keychains
+
+1. Select the organization for which you wish to assign keychains to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
+2. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
+3. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/security/roles).
+4. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
+5. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users](/cloud/identity/users).
+
+{{< alert title="Note" >}}
+
+If you don't have permission to perform any of the above operations, consider switching to a different organization for which you are authorized to perform these actions. Alternatively, contact your organization admin for elevated access.
+
+{{< /alert >}}
+
+
+{{< alert title="Permission Assignment at Teams, Organization and Provider Levels" >}}
+
+1. You need to have the default `Team Admin` role (or a custom role with `Edit User` key assigned) to assign permissions to users in your team.
+2. You need to have the default `Organization Admin` role (or a custom role with `Edit User` key assigned) to assign permissions to users in your organization.
+3. You need to have default `Provider Admin` role (or a custom role with `Update Profile` key assigned) to assign permissions to users across any organization or teams.
+
+{{< /alert >}}
+
+
+#### Keychains Lifecycle
+
+Layer5 Cloud ships with 10 default keychains, each designed to enforce permissions across the platform. These default keychains are mutable, that is, you can add or remove keys from these keychains (provided you have permission to Edit a Keychain). Separately, you can also create your own keychains and assign them to roles.
+
+{{< alert title="Best Practice" >}}
+
+It is recommended not to alter the existing default keychains unless you intend to change permissions across the entire platform, affecting all users regardless of their organization. This is because the default keychains are assigned to default roles, and each new user is assigned a default role.
+
+If you wish to change the permission for a specific organization, consider creating a new keychain and assigning it to a role. Then assign the role to the users of that organization.
+
+{{< /alert >}}
