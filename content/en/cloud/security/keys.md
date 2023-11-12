@@ -60,7 +60,7 @@ If you don't have permission to view keys for your selected organization, you wi
 5. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
 6. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/security/roles).
 7. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
-8. Choose the user to whom you want to assign the role with new set of permissions.
+8. Choose the user to whom you want to assign the role with new set of permissions. Or separately invite a new user with the role with new set of permissions. For more information, see [Users](/cloud/identity/users).
 
 {{< alert title="Note" >}}
 
