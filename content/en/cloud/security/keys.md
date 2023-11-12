@@ -43,7 +43,7 @@ Each key is enforced at specific UI elements. For instance, the `Create Organiza
 
 #### View Keys
 
-Review Keys assigned to your user account by navigating to the [Keys](https://cloud.layer5.io/security/keys) page on Layer5 Cloud.
+Review Keys assigned to your user account by navigating to the [Keys](https://cloud.layer5.io/security/keys) page.
 
 {{< alert title="Note" >}}
 
