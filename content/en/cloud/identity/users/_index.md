@@ -11,6 +11,8 @@ tags: [users]
 Page under construction.
 {{% /pageinfo %}}
 
+{{< figure src="/cloud/identity/images/authentication-sequences.svg"  class="image-center-shadow" >}}
+
 ### User Accounts
 
 Every person who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five's profile.
