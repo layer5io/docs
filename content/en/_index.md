@@ -3,8 +3,12 @@ title: Layer5
 ---
 
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
+<!-- <img class="recBg" src="images/recBg.svg" /> -->
 
-<!-- <h1 style="font-weight:800;margin-bottom: 4rem;font-size:5rem;">Expect More from Your Infrastructure</h1> -->
+<div  class="landingPage">
+<h1 style="font-weight: 700;">Discover Your Way Forward.</h1>
+<h3 >Expect More from Your Infrastructure</h3>
+<h2 style="font-weight: 700;">Explore tutorials & documentation by product</h2>
 <div>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
@@ -18,9 +22,56 @@ title: Layer5
   MeshMap Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="/meshmap">
+  <img src="images/meshmap-alt.svg" />
+  Cloud Native Performance
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="/meshmap">
+  <img src="images/meshmap-alt.svg" />
+  Catalog
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="/meshmap">
+  <img src="images/meshmap-alt.svg" />
+  NightHawk
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
 </div>
 
-<div style="margin-top:35%;padding-top:35%"><a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash">Expect More from Your Infrastructure</a> </div>
+
+<!-- <div style="margin-top:35%;padding-top:35%"><a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash">Expect More from Your Infrastructure</a> </div> -->
+
+<div class= "productSec">
+<div class= "playgroundSec gridCard">
+<span class="proHead">Meshery playground</span>
+<p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+<img src="images/mesheryO15.svg" />
+</div>
+<div class= "catalogSec gridCard">
+<span class="proHead">Meshery Catalog</span>
+<p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
+<img src="images/catalog.svg" />
+</div>
+<div class= "forumSec gridCard">
+<span class="proHead">Discussion forum</span>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+<img src="images/discuss.png" />
+</div>
+<div class= "handbookSec gridCard">
+<div class= "handbookText">
+<span class="proHead">Community Handbook</span>
+<p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+</div>
+<div class= "handbookImg">
+<img src="images/handbook.png" />
+</div>
+</div>
+</div>
+</div>
 <!-- <div class="taxonomy taxonomy-terms-cloud taxo-categories">
   <h5 class="taxonomy-title">Cloud of Categories</h5>
   <ul class="taxonomy-terms">
