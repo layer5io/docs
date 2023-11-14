@@ -3,6 +3,10 @@
 @import 'image-modal_project.scss';
 @import 'elements_project.scss';
 
+:root, :host{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
 // Global Navigation Bar
 .td-navbar{
