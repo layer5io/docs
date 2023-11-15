@@ -46,7 +46,7 @@ You can add comments in three convenient ways, ensuring a seamless and versatile
 2. **Resolving a Comment for Conclusion:**
    Use the resolution feature to conclude a comment thread after addressing the feedback or making necessary changes. Resolving a comment signifies that the conversation on that specific topic has been concluded, allowing for a clean and organized design canvas.
 
-3. **Comment History for Insightful Tracking:**
+3. **Comment History:**
    After resolving a comment thread, you can access the comment history to review previous discussions and decisions.
 
 {{< alert color="success" title="Note">}}
