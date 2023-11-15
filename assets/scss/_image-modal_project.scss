@@ -7,20 +7,19 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 9999999;
   padding-top: 4em;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: black;
+  background: rgba(0,0,0,0.85);
 }
 
 /* Modal Content */
-.modal-content {
+.modal-cont {
   position: relative;
-  background-color: black;
   margin: auto;
   padding: 0;
   width: 90%;
@@ -40,16 +39,16 @@
   color: white;
   background-color: black;
   position: absolute;
-  top: .5em;
-  right: .5em;
-  font-size: 2em;
-  font-weight: bold;
+  top: 5px;
+  right: 5px;
+  font-size: 2.5em;
   height: 1em;
   width: 1em;
   text-indent: 10em;
   overflow: hidden;
   border: 0;
-}
+  z-index: 99;
+} 
 
 .modal-close::after {
   position: absolute;

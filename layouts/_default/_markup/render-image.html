@@ -5,8 +5,8 @@
 <!-- Id for the image on the page is set to a random 6 numbers, chosen from 1 to 500 -->
 <!-- Onclick opens the modal, and displays/overlays the the image that has the id for the 
   clicked image. -->
-<!-- from: https://gist.github.com/zjeaton/0cdd7e4bed9d292ab6f3d76b0369f16d -->
+<!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
 
 <div class="md__image">
-    <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" {{ with .Title}} class="{{ . }}" {{ end }} />
 </div>
