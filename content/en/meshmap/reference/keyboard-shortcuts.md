@@ -1,5 +1,5 @@
 ---
-title: Meshmap Keyboard Shortcuts
+title: Keyboard Shortcuts
 description: |
   Learn the keyboard shortcuts for Meshmap to enhance your designing experience.
 date: 2023-11-12
