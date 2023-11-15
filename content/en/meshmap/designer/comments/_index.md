@@ -30,7 +30,7 @@ Facilitate efficient design reviews by using comments to highlight key aspects, 
 You can add comments in three convenient ways, ensuring a seamless and versatile commenting experience:
 
 1. **Comment through Toolbar:**
-   Click on the comment icon in the toolbar to open a comment box instantly. This is your go-to method for quick annotations without leaving your canvas.
+   Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
 
 2. **Right-Click in Canvas:**
    Right-click on any area of your canvas, and from the contextual menu, select "Comment" or use the shortcut ***Ctrl + M (Command + M for Mac users)***. This allows for swift comment placement right where you need it.
