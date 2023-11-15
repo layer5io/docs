@@ -49,7 +49,7 @@ You can add comments in three convenient ways, ensuring a seamless and versatile
 3. **Comment History:**
    After resolving a comment thread, you can access the comment history to review previous discussions and decisions.
 
-{{< alert color="success" title="Note">}}
+{{< alert title="Note">}}
 - The 'Comment' feature is currently in its beta phase, and we may introduce updates or improvements over time.
 - Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
 {{< /alert >}}
