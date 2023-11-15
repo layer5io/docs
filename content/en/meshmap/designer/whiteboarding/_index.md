@@ -109,7 +109,7 @@ The tooltip is your gateway to customization. It's simple and intuitive, offerin
 
 Manage layers, group elements, for better organization. These advanced tools ensure collaborative work while preserving design integrity.
 
-#### Line and Edge Editing (comming soon)
+#### Line and Edge Editing
 
 Lines and edges are easily manipulated. Adjust thickness, style, and endpoints effortlessly. Drag line segments to create bends or curves, adding detail to visual representations.
 
