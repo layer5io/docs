@@ -2,6 +2,7 @@
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
   <head>
     {{ partial "head.html" . }}
+    {{ partial "favicon.html" . }}
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
     <header>
@@ -28,5 +29,6 @@
       {{ partial "footer.html" . }}
     </div>
     {{ partial "scripts.html" . }}
+    {{ partial "image-modal.html" . }}
   </body>
 </html>
