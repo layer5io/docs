@@ -38,32 +38,44 @@ title: Layer5
 </a>
 </div>
 
+<div class= "product-section">
 
-<!-- <div style="margin-top:35%;padding-top:35%"><a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash">Expect More from Your Infrastructure</a> </div> -->
+<a href="https://playground.meshery.io">
+  <div class="grid-card">
+    <div class= "playground-section playground-logo">
+      <span class="product-head">Meshery playground</span>
+      <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+    </div>
+  </div>
+</a>
 
-<div class= "productSec">
-<div class= "playgroundSec gridCard">
-<span class="proHead">Meshery playground</span>
-<p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
-<img src="images/mesheryO15.svg" />
+<a href="https://meshery.layer5.io/catalog">
+  <div class="grid-card">
+    <div class= "catalog-section catalog-logo">
+      <span class="product-head">Meshery Catalog</span>
+      <p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
+    </div>
+  </div>
+</a>
+
+<div class= "forum-section">
+  <div class="grid-card">
+  <span class="product-head">Discussion forum</span>
+  <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
+  <img src="images/landing/discuss.png" />
+  </div>
 </div>
-<div class= "catalogSec gridCard">
-<span class="proHead">Meshery Catalog</span>
-<p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
-<img src="images/catalog.svg" />
-</div>
-<div class= "forumSec gridCard">
-<span class="proHead">Discussion forum</span>
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-<img src="images/discuss.png" />
-</div>
-<div class= "handbookSec gridCard">
-<div class= "handbookText">
-<span class="proHead">Community Handbook</span>
-<p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
-</div>
-<div class= "handbookImg">
-<img src="images/handbook.png" />
+
+<a href="https://layer5.io/community/handbook">
+<div class= "handbook-section grid-card">
+  <div class= "handbook-text">
+    <span class="product-head">Community Handbook</span>
+    <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+  </div>
+  <div class= "handbook-image">
+<img src="images/landing/handbook.png" />
+</a>
+
 </div>
 </div>
 </div>
