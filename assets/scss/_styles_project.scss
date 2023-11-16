@@ -10,6 +10,7 @@
   margin: 1.25rem;
   }
 }
+
 .navbar-dark {
   background-color: $black;
 }
@@ -27,9 +28,7 @@
   padding: auto;
   margin: auto;
   // background-color: linear-gradient(to right, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
-   
 }
-
 
 // Page Layout Sections
 .td-home {
@@ -99,9 +98,9 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   text-decoration: none; }
 
 // Taxonomy 
-.taxo-categories {
-  // margin-top: 2rem;
-}
+// .taxo-categories {
+//   // margin-top: 2rem;
+// }
 .taxonomy {
 // .taxonomy-terms-cloud 
 
@@ -355,8 +354,6 @@ td-sidebar {
   }
 }
 
-
-
 @keyframes tipsy {
   0% {
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
@@ -366,7 +363,6 @@ td-sidebar {
   }
 }
 
-
 a.dash {
   color: #fffbf1;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
@@ -374,11 +370,11 @@ a.dash {
   font-weight: 300;
   text-decoration: none;
   letter-spacing: 0px;
-  position: absolute;
+  position: relative;
   width: auto;
   white-space: nowrap;
-  top: 50%;
-  left: 50%;
+  // top: 50%;
+  // left: 50%;
   padding:2rem;
 
   transform: translateX(-50%) translateY(-50%);
