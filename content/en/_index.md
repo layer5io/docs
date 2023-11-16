@@ -4,29 +4,36 @@ title: Layer5
 
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 
-<div style="box-sizing: border-box;">
-<h1 style="font-weight:800;margin-bottom: 4rem;font-size:5rem;background: linear-gradient(90deg, rgba(235,192,23, 0.46) 9.03%, rgba(223, 255, 199, 0.57) 41.12%, rgba(255,243,197, 0.31) 61.68%) repeat scroll 0% 0% / auto padding-box text, rgba(0, 0, 0, 0) linear-gradient(rgb(239, 239, 241), rgb(239, 239, 255,1)) repeat scroll 0% 0% / auto padding-box text;
-background-position: 0% 0%, 0% 0%;
-box-sizing: auto;
-color: rgba(0, 0, 0, 0);
-display: block;
-text-rendering: optimizelegibility;
--webkit-background-clip: text, text;
- -webkit-font-smoothing: antialiased;
-">Expect More from Your Infrastructure</h1></div>
+<!-- <div style="box-sizing: border-box;"></div> -->
+<div class="dash-sign-container">
+<h1 class="dashboard">Expect More from Your Infrastructure</h1>
 
-<a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash">Design your path</a>
+<a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
+</div>
 <div>
+<h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
-    <img src="images/5-light-no-trim.svg" />
+    <img src="images/logos/5-light-no-trim.svg" />
   Cloud Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/meshmap">
-  <img src="images/meshmap-alt.svg" />
+  <img src="images/logos/meshmap-alt.svg" />
   MeshMap Docs
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="https://docs.meshery.io">
+  <img src="images/logos/meshery-light-icon.svg" />
+  Meshery Docs
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="https://getnighthawk.dev">
+  <img src="images/logos/nighthawk-logo.svg" />
+  Nighthawk Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 </div>
