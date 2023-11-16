@@ -5,39 +5,35 @@ title: Layer5
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 <!-- <img class="recBg" src="images/recBg.svg" /> -->
 
-<div  class="landingPage">
-<h1 style="font-weight: 700;">Discover Your Way Forward.</h1>
-<h3 >Expect More from Your Infrastructure</h3>
-<h2 style="font-weight: 700;">Explore tutorials & documentation by product</h2>
+<div class="dash-sign-container">
+<h1 class="dashboard">Expect More from Your Infrastructure</h1>
+
+<a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
+</div>
 <div>
+<h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
-    <img src="images/5-light-no-trim.svg" />
+    <img src="images/logos/5-light-no-trim.svg" />
   Cloud Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/meshmap">
-  <img src="images/meshmap-alt.svg" />
+  <img src="images/logos/meshmap-alt.svg" />
   MeshMap Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="/meshmap">
-  <img src="images/meshmap-alt.svg" />
-  Cloud Native Performance
+  href="https://docs.meshery.io">
+  <img src="images/logos/meshery-light-icon.svg" />
+  Meshery Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="/meshmap">
-  <img src="images/meshmap-alt.svg" />
-  Catalog
-  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="/meshmap">
-  <img src="images/meshmap-alt.svg" />
-  NightHawk
+  href="https://getnighthawk.dev">
+  <img src="images/logos/nighthawk-logo.svg" />
+  Nighthawk Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 </div>
