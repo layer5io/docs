@@ -64,6 +64,8 @@
 .handbook-section {
   display: flex;
   grid-column: span 2;
+  // flex-basis: 100%;
+  // flex: 2;
   background: linear-gradient(112deg, #000 34.88%, rgba(0, 110, 88, 0.82) 92.89%, #000 159.16%);
   flex-direction: row;
   align-items: start;
@@ -103,16 +105,13 @@
 .forum-section {
   grid-row: span 3;
   overflow: hidden;
-  justify-content: baseline;
-  align-content: baseline;
-  justify-self: baseline;
-  align-self: baseline;
+
   img {
     box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
     
     border-radius: 8px;
-    width: 160%;
-    min-height: 26rem;
+    height: 18rem;
+    min-height: 70%;
    
   }
   @media (max-width: 1000px) {

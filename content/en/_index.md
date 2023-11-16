@@ -58,6 +58,7 @@ title: Layer5
   </div>
 </a>
 
+<a href="https://discuss.layer5.io">
 <div class= "forum-section">
   <div class="grid-card">
   <span class="product-head">Discussion forum</span>
@@ -65,6 +66,7 @@ title: Layer5
   <img src="images/landing/discuss.png" />
   </div>
 </div>
+</a>
 
 <a href="https://layer5.io/community/handbook">
 <div class= "handbook-section grid-card">
