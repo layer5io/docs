@@ -12,7 +12,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 {{< cardpane >}}
 {{% card header="Provider Admin Role" %}}
-<img src="/cloud/security/images/role-provider-admin.svg" link="images/role-provider-admin.svg"  width="100%"  />
+![](/cloud/security/images/role-provider-admin.svg)
 {{% /card %}}
 {{% card %}}
 
