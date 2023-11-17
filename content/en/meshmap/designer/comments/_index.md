@@ -1,5 +1,5 @@
 ---
-title: 'Comments in Designer'
+title: Reviewing Designs
 description: >
   Learn how to leverage comments in MeshMap's Designer Mode to enhance collaboration and streamline design reviews.
 weight: 3
