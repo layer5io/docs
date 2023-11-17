@@ -16,7 +16,7 @@ There are three essential aspects of user interaction:
 ## Create User
 Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user's introduction to Layer5 Cloud.
 
-<img src="./create-user.gif" alt="Create User" width="1000"/>
+<img src="/cloud/identity/users/create-user.gif" alt="Create User" />
 
 {{< alert type="info" title="Note" >}}
 Only Provider Admins can create users. For more information, see [Roles](/cloud/security/roles).
