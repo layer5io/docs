@@ -3,7 +3,7 @@ title: Navigating Visualizer
 weight: 5
 description: >
   Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure. 
-categories: [Visuzalizer]
+categories: [Visualizer]
 ---
 
 Discover and examine your Kubernetes clusters and cloud native infrastructure using Visualizer mode.
