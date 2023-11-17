@@ -3,7 +3,6 @@ title: Layer5
 ---
 
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
-<!-- <img class="recBg" src="images/recBg.svg" /> -->
 
 <div class="dash-sign-container">
 <h1 class="dashboard">Expect More from Your Infrastructure</h1>
