@@ -424,9 +424,6 @@ td-sidebar {
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
     animation: 6s alternate ease-in-out tipsy;
     // animation-play-state: paused; 
-    &:hover {
-      color: #EBC017 !important;
-    }
   }
 
   a.dash-sign:before {
@@ -442,6 +439,9 @@ td-sidebar {
   a.dash-sign:visited {
     color: $white;
     // animation-play-state: running;
+  }
+  a.dash-sign:hover {
+    color: #EBC017 !important;
   }
 }
 // Cards
