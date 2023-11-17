@@ -3,8 +3,8 @@ title: Connections
 weight: 4
 description: >
   Understand how Meshery effectively manages connections - actively monitoring and controlling managed connections, while Meshery Cloud oversees unmanaged connections, providing users with a customizable experience based on specific requirements.
-categories: [Designer]
-tags: [designs]
+categories: [Connections]
+tags: [connections]
 ---
 
 ![connections server registration](connections-server-registration.svg "image-center-shadow")
