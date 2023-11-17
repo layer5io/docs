@@ -6,13 +6,7 @@ categories: [Reference]
 tags: [extensibility]
 ---
 
-<!-- {{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}} -->
-## REST API Reference
-
-
-### Authenticating with the API
+## Authenticating with the API
 
 In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://meshery.layer5.io/security/tokens) and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.
 
@@ -30,11 +24,13 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 - Replace `<API>` with the API endpoint you want to access. For example, `/api/identity/users/profile`.
 - Replace `<token>` with the security token you generated.
 
-### API Endpoints
+## All API Endpoints
+
+{{< alert type="warning" >}}
+<a href="https://meshery.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
+{{< /alert >}}
 
 {{< redoc "cloud.yaml" >}}
 
-{{< alert type="warning" >}}
-See all the API endpoints in the [API Reference](https://meshery.layer5.io/system/api/docs).
-{{< /alert >}}
+
 
