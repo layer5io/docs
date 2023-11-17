@@ -5,6 +5,7 @@ weight: 20
 categories: [Reference]
 tags: [extensibility]
 ---
+To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.
 
 ## Authenticating with the API
 
