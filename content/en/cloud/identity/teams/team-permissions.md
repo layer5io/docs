@@ -20,7 +20,5 @@ tags: [teams]
 | Assign roles to team members                                    | ✅         | ✅           |
 | Assign keys and keychains to the team members                   | ✅         | ✅           |
 
-{{< alert >}}
-1. these default permissions can be altered by granular permission using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/)
-2. \* only allowed if org owner
-{{< /alert >}}
+
+_The default permissions can be adjusted through granular permissions using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/), note that certain permissions marked with * are only allowed if you're the organization owner._

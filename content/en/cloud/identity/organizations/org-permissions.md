@@ -34,7 +34,5 @@ tags: [orgs]
 | Purchase new capabilities                                       | ✅*        | ✅           |
 | Approve/Deny purchase requests for new capabilities             | ✅*        | ✅           |
 
-{{< alert >}}
-1. these default permissions can be altered by granular permission using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/)
-2. \* only allowed if org owner
-{{< /alert >}}
+_The default permissions can be adjusted through granular permissions using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/), note that certain permissions marked with * are only allowed if you're the organization owner._
+
