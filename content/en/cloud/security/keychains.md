@@ -1,239 +1,98 @@
 ---
 title: Keychains
-description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+description: Keychains are a collection of keys
 date: 2023-10-30
 # weight: 4
 categories: [Security]
 tags: [keychains, permissions]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a [role](/cloud/security/roles). Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.
 
+For instance, consider a system shipped default keychain `Team Management`, which is a collection of eight keys: `View All Teams`, `Add User to Team`, `Invite User to Team`, `Remove User from Team`, `Create Team`, `Delete Team`, `Remove User Role from Team`, and `Assign User Role in a Team`. This implies that you can perform all these operations only if your user account possesses a role to which `Team Management` keychain is assigned in a given organization.
 
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+{{< alert title="Note" >}}
 
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+1. Same keychain can be asssigned to muliple roles.
+2. One or more keychains can be assigned to a role.
+3. Each keychain is assigned in context of an organization.
 
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
+{{< /alert >}}
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
 
-## First Header 2
+### Keychains Types
 
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
+Layer5 Cloud ships with the following 10 default keychains
 
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
+<!-- TODO: Create separate page to explain in detail about each of the default keys assigned to the following default keychains. -->
 
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
+1. **Provider Management** - This keychain is a collection of keys that allows you to manage providers. For instance, this keychain permits you to view, approve or deny catalog requests.
+2. **Security Management** - This keychain is a collection of keys that allows you to manage security. For instance, this keychain permits you to create/delete credentials and tokens.
+3. **User View** - This keychain is a collection of keys that allows you to manage users views. For instance, this keychain permits you to view all users within an organization or all environments and connections within a workspace of your organization.
+4. **Team View** - This keychain is a collection of keys that allows you to manage team level views. For instance, this keychain permits you to view and edit teams within an organization.
+5. **User Management** - This keychain is a collection of keys that allows you to manage users. For instance, this keychain permits you to invite user to a team or remove user from a team.
+6. **Organization Management** - This keychain is a collection of keys that allows you to manage organizations. For instance, this keychain permits you to create/delete organizations.
+7. **Environment Management** - This keychain is a collection of keys that allows you to manage environments. For instance, this keychain permits you to CRUD operations on environments assigned to your workspace of your organization.
+8. **Workspace Management** - This keychain is a collection of keys that allows you to manage workspaces. For instance, this keychain permits you to CRUD operations on workspaces of your organization.
+9. **Team Management** - This keychain is a collection of keys that allows you to manage teams. For instance, this keychain permits you to CRUD operations on teams of your organization.
+10. **Events Management** - This keychain is a collection of keys that allows you to manage events. For instance, this keychain permits you to view events of all users of the Layer5 Cloud.
 
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
 
+### Keychains Management
 
-## Second Header 2
+#### Create Keychains
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+Create a new keychain by navigating to the [Keychains](https://cloud.layer5.io/security/keychains) page and clicking the **Create Keychain** button. Provide a name and choose the one more keys from the list of available keys. Then click the **Create Keychain** button to create the keychain.
 
-### Header 3
 
-```
-This is a code block following a header.
-```
+{{< alert title="Note" >}}
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
+If you don't have permission to create keychains for your selected organization, you will see a disabled Keychains tab. In that case, consider switching to a different organization for which you have permission to view keychains, or contact your organization admin to assign you access to the keychains page.
+{{< /alert >}}
 
-#### Header 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+#### View Keychains
 
-##### Header 5
+Review keychains assigned to your user account by navigating to the [Keychains](https://cloud.layer5.io/security/keychains) page.
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+{{< alert title="Note" >}}
 
-###### Header 6
+If you don't have permission to view keychains for your selected organization, you will see a disabled Keychains tab. In that case, consider switching to a different organization for which you have permission to view keychains, or contact your organization admin to assign you access to the keychains page.
 
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
+{{< /alert >}}
 
-----------------
+#### Assign Keychains
 
-There's a horizontal rule above and below this.
+1. Select the organization for which you wish to assign keychains to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
+2. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
+3. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/security/roles).
+4. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
+5. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users](/cloud/identity/users).
 
-----------------
+{{< alert title="Note" >}}
 
-Here is an unordered list:
+If you don't have permission to perform any of the above operations, consider switching to a different organization for which you are authorized to perform these actions. Alternatively, contact your organization admin for elevated access.
 
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
+{{< /alert >}}
 
-And an ordered list:
 
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
+{{< alert title="Permission Assignment at Teams, Organization and Provider Levels" >}}
 
-And an unordered task list:
+1. You need to have the default `Team Admin` role (or a custom role with `Edit User` key assigned) to assign permissions to users in your team.
+2. You need to have the default `Organization Admin` role (or a custom role with `Edit User` key assigned) to assign permissions to users in your organization.
+3. You need to have default `Provider Admin` role (or a custom role with `Update Profile` key assigned) to assign permissions to users across any organization or teams.
 
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
+{{< /alert >}}
 
-And a "mixed" task list:
 
-- [ ] Pack bags
-- ?
-- [ ] Travel!
+### Keychains Lifecycle
 
-And a nested list:
+Layer5 Cloud ships with 10 default keychains, each designed to enforce permissions across the platform. These default keychains are mutable, that is, you can add or remove keys from these keychains (provided you have permission to Edit a Keychain). Separately, you can also create your own keychains and assign them to roles.
 
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
+{{< alert title="Best Practice" >}}
 
-Definition lists can be used with Markdown syntax. Definition headers are bold.
+It is recommended not to alter the existing default keychains unless you intend to change permissions across the entire platform, affecting all users regardless of their organization. This is because the default keychains are assigned to default roles, and each new user is assigned a default role.
 
-Name
-: Godzilla
+If you wish to change the permission for a specific organization, consider creating a new keychain and assigning it to a role. Then assign the role to the users of that organization.
 
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
+{{< /alert >}}
