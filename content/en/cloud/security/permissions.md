@@ -8,9 +8,7 @@ categories: [Security]
 tags: [permissions]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+![permission](/cloud/security/images/permissions.svg "image-center-shadow")
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
