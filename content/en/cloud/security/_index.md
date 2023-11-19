@@ -12,14 +12,127 @@ tags: [permissions]
 ![provider](images/role-provider-admin.svg#float-left "image-center-no-shadow")
 
 
+## Team Admins and Team Managers
 
-<!-- Think about your project’s features and use cases. Use these to choose your core tasks. Each granular use case (enable x, configure y) should have a corresponding tasks page or tasks page section. Users should be able to quickly refer to your core tasks when they need to find out how to do one specific thing, rather than having to look for the instructions in a bigger tutorial or example. Think of your tasks pages as a cookbook with different procedures your users can combine to create something more substantial.
+{{< cardpane >}}
+{{% card header="## Provider Administrators" %}}
 
-You can give each task a page, or you can group related tasks together in a page, such as tasks related to a particular feature. As well as grouping related tasks in single pages, you can also group task pages in nested folders with an index page as an overview, as seen in this example site. Or if you have a small docset like the [Docsy User Guide](https://docsy.dev/docs/) with no Tutorials or Concepts pages, consider adding your feature-specific pages at the top level of your docs rather than in a Tasks section.
+**What is the purpose of this role?**
 
-Each task should give the user
+- Administration and operation of Remote Provider. Commonly used by the consulting organization (e.g. platform engineering team) or hosting company.
 
-* The prerequisites for this task, if any (this can be specified at the top of a multi-task page if they're the same for all the page's tasks. "All these tasks assume that you understand....and that you have already....").
-* What this task accomplishes.
-* Instructions for the task. If it involves editing a file, running a command, or writing code, provide code-formatted example snippets to show the user what to do! If there are multiple steps, provide them as a numbered list.
-* If appropriate, links to related concept, tutorial, or example pages. -->
+**Who can assign and unassign this role?**
+
+- Other Provider Admins
+
+**When this role first assigned?**
+
+- Upon initial deployment of the Remote Provider
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+
+**What permissions does this role have?**
+
+- Full permission. This role has full control over every organization and all resources
+
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< cardpane >}}
+
+{{% card header="## Organization Administrators" %}}
+
+**What is the purpose of this role?**
+
+- Administration of an organization (for each organization for which the user has this role assigned)
+
+**Who can assign this role?**
+
+- The Organization Owner
+
+**When this role first assigned?**
+
+- Creation of new organization or User Account creation
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many (based on plan)
+- By default, the first Organization Admin is the owner (the creator of the organization).
+
+**Who can remove assignment of this role?**
+
+- Organization Owner
+
+{{% /card %}}
+
+{{% card header="## Organization Billing Managers" %}}
+
+**What is the purpose of this role?**
+
+- Administration of subscriptions, plans, payments, billing methods and information, spending limits, invoice mgmt etc.
+
+**Who can assign this role?**
+
+- Organization Owner
+
+**When this role first assigned?**
+
+- Manually by Organization Owner
+
+**How many instances of these roles?**
+
+- Min: 0, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Owner
+
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< cardpane >}}
+
+{{% card header="## Team Administrators" %}}
+
+**What is the purpose of this role?**
+
+- Administration of teams
+
+**Who can assign and unassign this role?**
+
+- Organization Administrator or Team owner
+
+**When this role first assigned?**
+
+- Creation of new team or User Account creation
+- By default, the first Team Admin is owner (the team creator)
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+
+{{% /card %}}
+
+{{% card header="## Team Managers" %}}
+
+**What is the purpose of this role?**
+
+- Administration of teams (without delete access)
+
+**Who can assign and unassign this role?**
+
+- Organization Administrators or Team Owner
+
+**When this role first assigned?**
+
+- Upon Team creation.
+- Manually by Organization Administrator or Team Owner
+
+**How many instances of these roles?**
+
+- Min: 0, Max: many
+
+{{% /card %}}
+{{< /cardpane >}}
