@@ -8,8 +8,9 @@ categories: [Identity]
 tags: [orgs]
 ---
 
-| Permissions                                                     | Team Admin  | Team Manager |
-|-----------------------------------------------------------------|-------------|--------------|
+| Permissions                                                     | Org Admin  | Org Billing Manager |
+|-----------------------------------------------------------------|------------|---------------|
+| Create new accounts                                             | ✅*        | ❌           |
 | Delete org                                                      | ✅*        | ❌           |
 | Transfer org ownership to another member of the org             | ✅*        | ❌           |
 | Add (invite) people to org                                      | ✅         | ❌           |
