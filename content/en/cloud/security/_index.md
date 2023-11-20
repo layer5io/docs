@@ -12,7 +12,7 @@ tags: [permissions]
 ![provider](images/role-provider-admin.svg#float-left "image-center-no-shadow")
 
 
-## Team Admins and Team Managers
+## Default roles and their purpose
 
 {{< cardpane >}}
 {{% card header="## Provider Administrators" %}}
