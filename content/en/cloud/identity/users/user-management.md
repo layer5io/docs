@@ -24,7 +24,7 @@ Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Spe
 Only Provider Admins and Organization Admin can create users. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
 
-## Add User/ Remove User (in an organization)
+## Add User/ Remove User
 
 Add or remove users from the selected organization.
 
@@ -33,6 +33,8 @@ Add or remove users from the selected organization.
 3. Select the organization to which you want to add the user.
 4. Select the user from the list of available users.
 5. From below chips, click on cross icon to remove the user from the organization.
+
+<img src="/cloud/identity/users/add-user.gif" alt="Add User" />
 
 ## Invite User
 
