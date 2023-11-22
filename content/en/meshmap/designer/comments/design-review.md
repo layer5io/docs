@@ -13,6 +13,7 @@ The comment feature in MeshMap's Designer Mode makes the design review process e
 
 ![Conversation inside comments in designer](./comments-conversation.gif)
 
+
 ## How to Add Comments
 
 You can add comments in three convenient ways:
