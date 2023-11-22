@@ -10,7 +10,7 @@ tags: [orgs]
 
 | Permissions                                                     | Org Admin  | Org Billing Manager |
 |-----------------------------------------------------------------|------------|---------------|
-| Create new accounts                                             | ✅*        | ❌           |
+| Create new user accounts                                        | ✅         | ❌           |
 | Delete org                                                      | ✅*        | ❌           |
 | Transfer org ownership to another member of the org             | ✅*        | ❌           |
 | Add (invite) people to org                                      | ✅         | ❌           |
