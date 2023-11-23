@@ -19,36 +19,36 @@
 </style>
 <script>
   function focusSearchBar() {
-    var searchBar = document.querySelector(".td-search-input");
+    var searchBar = document.querySelector('.td-search-input');
     if (searchBar) {
       searchBar.focus();
     }
   }
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "/") {
+  document.addEventListener('keydown', function (event) {
+    if (event.key === '/') {
       event.preventDefault();
       focusSearchBar();
     }
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var parent = document.createElement("div");
-    parent.id = "iconParent";
+  document.addEventListener('DOMContentLoaded', function () {
+    var parent = document.createElement('div');
+    parent.id = 'iconParent';
 
-    var prompt = document.createElement("span");
-    prompt.textContent = "/";
-    prompt.id = "promptChild";
+    var prompt = document.createElement('span');
+    prompt.textContent = '/';
+    prompt.id = 'promptChild';
     parent.appendChild(prompt);
 
-    var searchElement = document.querySelector(".td-search__icon");
+    var searchElement = document.querySelector('.td-search__icon');
     if (searchElement) {
       searchElement.appendChild(parent);
     }
 
-    var inputElement = document.querySelector(".td-search-input");
+    var inputElement = document.querySelector('.td-search-input');
     if (inputElement) {
-      inputElement.placeholder = "Search";
+      inputElement.placeholder = 'Search';
     }
   });
 </script>
