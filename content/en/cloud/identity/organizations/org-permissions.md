@@ -1,7 +1,7 @@
 ---
 title: Managing Organization Permissions
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Complete list of default permissions granted to Org Admin and Org Billing Manager roles.
 date: 2023-10-30
 weight: 4
 categories: [Identity]
@@ -36,4 +36,3 @@ tags: [orgs]
 | Approve/Deny purchase requests for new capabilities             | ✅*        | ✅           |
 
 _The default permissions can be adjusted through granular permissions using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/), note that certain permissions marked with * are only allowed if you're the organization owner._
-
