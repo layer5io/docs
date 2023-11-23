@@ -7,9 +7,6 @@ categories: [Identity]
 tags: [teams]
 ---
 
-{{% pageinfo %}}
-Organizations, Teams, Users
-{{% /pageinfo %}}
 
 Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.
 

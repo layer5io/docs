@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Permissions
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
@@ -8,8 +8,8 @@ categories: [Security]
 tags: [permissions]
 ---
 
-![permission](/cloud/security/images/permissions.svg "image-center-shadow")
 
+![provider](images/role-provider-admin.svg#float-left "image-center-no-shadow")
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
@@ -234,4 +234,4 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 
 ```
 This is the final element on the page and there should be no margin below this.
-``` -->
+``` --> -->
