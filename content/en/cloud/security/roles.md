@@ -51,6 +51,12 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 ## Organization Roles
 
 {{< cardpane >}}
+{{% card %}}
+![](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< cardpane >}}
 {{% card header="### Organization Adminstrator" %}}
 
 **What is the purpose of this role?**
@@ -111,6 +117,12 @@ For more information, see [Organization](/cloud/identity/organizations).
 {{< /alert >}}
 
 ## Team Roles
+
+{{< cardpane >}}
+{{% card %}}
+![](/cloud/identity/images/team-admins-and-team-managers.svg)
+{{% /card %}}
+{{< /cardpane >}}
 
 {{< cardpane >}}
 {{% card header="### Team Adminstrator" %}}
