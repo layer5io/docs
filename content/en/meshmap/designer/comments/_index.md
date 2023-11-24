@@ -14,7 +14,7 @@ MeshMap's Designer Mode offers a powerful collaboration feature through comments
 
 ## How to Add Comments
 
-You can add comments in three convenient ways, ensuring a seamless and versatile commenting experience:
+You can add comments in three convenient ways:
 
 1. **Comment through Toolbar:**
    Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
