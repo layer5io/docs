@@ -1,0 +1,54 @@
+<style>
+  #iconParent {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #promptChild {
+    position: relative;
+    right: -70px;
+    top: -1.5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: #cccccc;
+    border-radius: 6px;
+    padding: 0px 8px;
+  }
+</style>
+<script>
+  function focusSearchBar() {
+    var searchBar = document.querySelector(".td-search-input");
+    if (searchBar) {
+      searchBar.focus();
+    }
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "/") {
+      event.preventDefault();
+      focusSearchBar();
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var parent = document.createElement("div");
+    parent.id = "iconParent";
+
+    var prompt = document.createElement("span");
+    prompt.textContent = "/";
+    prompt.id = "promptChild";
+    parent.appendChild(prompt);
+
+    var searchElement = document.querySelector(".td-search__icon");
+    if (searchElement) {
+      searchElement.appendChild(parent);
+    }
+
+    var inputElement = document.querySelector(".td-search-input");
+    if (inputElement) {
+      inputElement.placeholder = "Search";
+    }
+  });
+</script>
