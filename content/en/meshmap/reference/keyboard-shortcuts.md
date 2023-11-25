@@ -1,9 +1,11 @@
 ---
-title: Meshmap Keyboard Shortcuts
+title: Keyboard Shortcuts
 description: |
   Learn the keyboard shortcuts for Meshmap to enhance your designing experience.
 date: 2023-11-12
 ---
+<!-- set of custom keyboard button classes -->
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
 
 Meshmap provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:
 
@@ -11,16 +13,16 @@ Meshmap provides several keyboard shortcuts to improve your design workflow. The
 
 As a designer in Meshmap, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently:
 
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">M</kbd>: Add a comment to the selected node.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">C</kbd>: Copy the selected node or collection into your clipboard.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">A</kbd>: Select all nodes on the canvas.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">Delete</kbd> or <kbd style="background-color: #6C757D; color: white;">⌘</kbd> + <kbd style="background-color: #6C757D; color: white;">Backspace</kbd> (on Mac): Delete the selected node or collection of nodes from the canvas.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">V</kbd>: Paste a node or collection of nodes from your clipboard.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">Left-click</kbd> + <kbd style="background-color: #6C757D; color: white;">Drag</kbd>: Create a selection box to select multiple nodes.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">Z</kbd>: Undo your last create or delete action.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">Y</kbd> or <kbd style="background-color: #6C757D; color: white;">Shift</kbd> + <kbd style="background-color: #6C757D; color: white;">Z</kbd>: Redo your last create or delete action.
-- <kbd style="background-color: #6C757D; color: white;">Right-click</kbd> or <kbd style="background-color: #6C757D; color: white;">Left-click</kbd> + <kbd style="background-color: #6C757D; color: white;">Hold</kbd>: Open the context menu to choose an action to perform.
-- <kbd style="background-color: #6C757D; color: white;">Esc</kbd>: Close any open menus or dialogs.
+- <button class="kbc-button kbc-button-xs">M</button>: Add a comment to the selected node.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">C</button>: Copy the selected node or collection into your clipboard.
+- <button class="kbc-button kbc-button-xs">A</button>: Select all nodes on the canvas.<a 
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Delete</button> or <button class="kbc-button kbc-button-xs">⌘</button> + <button class="kbc-button kbc-button-xs">Backspace</button> (on Mac): Delete the selected node or collection of nodes from the canvas.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">V</button>: Paste a node or collection of nodes from your clipboard.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes by dragging your mouse over an area.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Z</button>: Undo your last create or delete action.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Y</button> or <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">Z</button>: Redo your last create or delete action.
+- <button class="kbc-button kbc-button-xs">Right-click</button> or <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Hold</button>: Open the context menu to choose an action to perform.
+- <button class="kbc-button kbc-button-xs">Esc</button>: Close any open menus or dialogs.
 
 These designer shortcuts are essential for a smooth and efficient design workflow within Meshmap.
 
@@ -28,11 +30,11 @@ These designer shortcuts are essential for a smooth and efficient design workflo
 
 Meshmap's visualizer provides a set of keyboard shortcuts to enhance your experience when working with the visualized data. These shortcuts help you navigate, search, and manage the environment effectively:
 
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">Left-click</kbd> + <kbd style="background-color: #6C757D; color: white;">Drag</kbd>: Create a selection box to select multiple nodes in the visualizer.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">Left-click</kbd>: Select multiple nodes individually.
-- <kbd style="background-color: #6C757D; color: white;">Ctrl</kbd> + <kbd style="background-color: #6C757D; color: white;">`</kbd> (Backtick key): Opens the terminal window for interactive console sessions or log viewing.
-- <kbd style="background-color: #6C757D; color: white;">/</kbd> (Forward Slash): Search your environment for MeshMap elements matching your criteria.
-- <kbd style="background-color: #6C757D; color: white;">`</kbd> (Backtick key): Close the Visualizer Terminal when it's open.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes in Visualizer by dragging your mouse over an area.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> (mouse): Select multiple nodes individually.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Opens the terminal window for interactive console sessions or log viewing.
+- <button class="kbc-button kbc-button-xs">/</button> (Forward Slash): Search your environment for MeshMap elements matching your criteria.
+- <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Close the Visualizer Terminal when it's open.
 
 These visualizer shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
 

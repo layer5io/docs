@@ -62,7 +62,7 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-languageName ="English"
+languageName = "English"
 # Weight used for sorting.
 weight = 1
 [languages.en.params]
@@ -123,7 +123,7 @@ github_project_repo = "https://github.com/layer5io/docs"
 
 # Uncomment this if your GitHub repo does not have "main" as the default branch,
 # or specify a new value if you want to reference another branch in your GitHub links
-github_branch= "master"
+github_branch = "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = "f475448a7bc1d43a4"
@@ -177,38 +177,129 @@ no = 'Sorry to hear that. Please <a href="https://github.com/layer5io/docs/issue
 enable = false
 
 [params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-[[params.links.user]]
-  name = "User mailing list"
-  url = "https://layer5.io/subscribe"
-  icon = "fa fa-envelope"
-  desc = "Discussion and help from your fellow users"
-[[params.links.user]]
-  name ="Twitter"
-  url = "https://twitter/layer5"
-  icon = "fab fa-twitter"
-  desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
-  name = "Discussion Forum"
-  url = "https://discuss.layer5.io"
-  icon = "fab fa-stack-overflow"
-  desc = "Practical questions and curated answers"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-[[params.links.developer]]
-  name = "GitHub"
-  url = "https://github.com/layer5io"
-  icon = "fab fa-github"
-  desc = "Development takes place here"
-[[params.links.developer]]
-  name = "Slack"
-  url = "https://slack.layer5.io"
-  icon = "fab fa-slack"
-  desc = "Chat with other project developers"
-[[params.links.developer]]
-  name = "Developer mailing list"
-  url = "https://meshery.io/subscribe"
-  icon = "fa fa-envelope"
-  desc = "Discuss development issues around the project"
+	[[params.links.footer.icons]]
+		name = "User mailing list"
+		url = "https://layer5.io/subscribe"
+		icon = "icons/envelope.svg"
+		desc = "Discussion and help from your fellow users"
+	[[params.links.footer.icons]]
+		name = "Twitter"
+		url = "https://twitter.com/layer5"
+		icon = "icons/twitter.svg"
+		desc = "Follow us on Twitter to get the latest news!"
+		class= "social-icon"
+	[[params.links.footer.icons]]
+		name = "Discussion Forum"
+		url = "https://discuss.layer5.io"
+		icon = "icons/discuss.svg"
+		desc = "Practical questions and curated answers"
+	[[params.links.footer.icons]]
+		name = "GitHub"
+		url = "https://github.com/layer5io"
+		icon = "icons/github.svg"
+		desc = "Development takes place here"
+		class= "social-icon"
+	[[params.links.footer.icons]]
+		name = "Slack"
+		url = "https://slack.layer5.io"
+		icon = "icons/slack.svg"
+		desc = "Chat with other project developers"
+	[[params.links.footer.icons]]
+		name = "LinkedIn"
+		url = "https://www.linkedin.com/company/layer5"
+		icon = "icons/linkedin.svg"
+		desc = "Discuss development issues around the project"
+	[[params.links.footer.icons]]
+		name = "YouTube"
+		url = "https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
+		icon = "icons/youtube.svg"
+		desc = "Discuss development issues around the project"
+	[[params.links.footer.icons]]
+		name = "Docker"
+		url = "https://hub.docker.com/u/layer5/"
+		icon = "icons/docker.svg"
+		desc = "Discuss development issues around the project"
+
+	[[params.links.footer.resources.items]]
+		name = "Learning Paths"
+		url = "https://layer5.io/learn/learning-paths"
+	[[params.links.footer.resources.items]]
+		name = "Resource Library"
+		url = "https://layer5.io/resources"
+	[[params.links.footer.resources.items]]
+		name = "Cloud Native Books"
+		url = "https://layer5.io/learn/service-mesh-books"
+	[[params.links.footer.resources.items]]
+		name = "Cloud Native Workshops"
+		url = "https://layer5.io/learn/service-mesh-workshops"
+	[[params.links.footer.resources.items]]
+		name = "Service Mesh Comparison"
+		url = "https://layer5.io/service-mesh-landscape#service-mesh-comaprison-matrix"
+	[[params.links.footer.resources.items]]
+		name = "Cloud Native Interactive Labs"
+		url = "https://layer5.io/learn/service-mesh-labs"
+
+	[[params.links.footer.community.items]]
+		name = "Blog"
+		url = "https://layer5.io/blog"
+	[[params.links.footer.community.items]]
+		name = "Events"
+		url = "https://layer5.io/community/events"
+	[[params.links.footer.community.items]]
+		name = "Forum"
+		url = "https://discuss.layer5.io"
+	[[params.links.footer.community.items]]
+		name = "FAQ"
+		url = "https://layer5.io/company/faq"
+	[[params.links.footer.community.items]]
+		name = "Programs"
+		url = "https://layer5.io/careers/programs"
+	[[params.links.footer.community.items]]
+		name = "Handbook"
+		url = "https://layer5.io/community/handbook"
+
+
+	[[params.links.footer.projects.items]]
+		name = "Meshery Docs"
+		url = "https://docs.meshery.io/"
+	[[params.links.footer.projects.items]]
+		name = "MeshMap"
+		url = "https://layer5.io/cloud-native-management/meshmap"
+	[[params.links.footer.projects.items]]
+		name = "Meshery"
+		url = "https://layer5.io/cloud-native-management/meshery"
+	[[params.links.footer.projects.items]]
+		name = "Nighthawk"
+		url = "https://layer5.io/projects/nighthawk"
+	[[params.links.footer.projects.items]]
+		name = "Docker Extension"
+		url = "https://layer5.io/docker-extension-meshery"
+	[[params.links.footer.projects.items]]
+		name = "Service Mesh Interface"
+		url = "https://layer5.io/projects/service-mesh-interface-conformance"
+	[[params.links.footer.projects.items]]
+		name = "Cloud Native Performance"
+		url = "https://layer5.io/projects/cloud-native-performance"
+
+
+	[[params.links.footer.company.items]]
+		name = "News"
+		url = "https://layer5.io/company/news"
+	[[params.links.footer.company.items]]
+		name = "Brands"
+		url = "https://layer5.io/company/brand"
+	[[params.links.footer.company.items]]
+		name = "Pricing"
+		url = "https://layer5.io/pricing"
+	[[params.links.footer.company.items]]
+		name = "Career"
+		url = "https://layer5.io/careers"
+	[[params.links.footer.company.items]]
+		name = "Partners"
+		url = "https://layer5.io/partners"
+	[[params.links.footer.company.items]]
+		name = "Contact"
+		url = "https://layer5.io/company/contact"
 
 # hugo module configuration
 
