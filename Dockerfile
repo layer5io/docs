@@ -1,18 +1,16 @@
-# Use the base Hugo image
-FROM klakegg/hugo:ext-alpine
+###############
+# Build Stage #
+###############
+FROM jakejarvis/hugo-extended:latest as builder
+# Base URL
+ARG HUGO_BASEURL=
+ENV HUGO_BASEURL=${HUGO_BASEURL}
+# Build site
+COPY . /src
+RUN set -e && hugo --minify --gc --enableGitInfo
 
-# Set the working directory
-WORKDIR /src
-
-# Install Git (if not already installed)
-RUN apk --no-cache add git
-
-# Initialize a new Hugo site if it doesn't exist (optional)
-# You can skip this step if you already have a Hugo site in your project directory
-RUN hugo new site .
-
-# Expose the port for the Hugo server (if necessary)
-EXPOSE 1313
-
-# Start the Hugo server
-CMD ["hugo", "server", "--bind", "0.0.0.0"]
+###############
+# Final Stage #
+###############
+FROM jakejarvis/hugo-extended:latest as final
+COPY --from=builder /src/public /site

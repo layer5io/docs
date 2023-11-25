@@ -14,7 +14,7 @@
 
 include .github/build/Makefile.show-help.mk
 
-## Install docs.layer5.io dependencies your local machine.
+## Install docs.layer5.io dependencies on your local machine.
 ## See https://gohugo.io/categories/installation
 setup:
 	hugo server -D 
@@ -37,3 +37,7 @@ clean:
 	site
 
 .PHONY: setup build site clean site-fast
+
+.PHONY: docker
+docker:
+	docker run -v $(PWD):/src -p 1313:1313 jakejarvis/hugo-extended:latest server --buildDrafts --buildFuture --bind 0.0.0.0
