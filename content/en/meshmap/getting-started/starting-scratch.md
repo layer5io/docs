@@ -7,10 +7,47 @@ weigth: 2
 categories: [Designer]
 tags: [designs]
 ---
+# Getting Started - Creating a Design from Scratch
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+Welcome to MeshMap, your central hub for managing Kubernetes clusters, service mesh deployments, and cloud-native applications. MeshMap offers two distinct modes - Designer and Visualizer. In this guide, we will delve into the Designer mode, a powerful tool that allows you to craft and customize complex cloud-native deployments effortlessly.
+
+## Step 1: Accessing Designer Mode
+
+Upon entering MeshMap, navigate to the "Designer" mode by selecting the "Designer" tab from the main menu. This will open up the Designer toolbox, your gateway to creating intricate infrastructure designs.
+
+## Step 2: Giving Your Design a Name
+
+Initiate your design process by clicking on the "New Design" button in the Designer panel. Provide a meaningful name for your design, reflecting its purpose or key components.
+
+## Step 3: Browsing Available Components
+
+Explore the extensive toolbox in the Designer mode, offering a diverse array of components such as Kubernetes clusters, service mesh options, and cloud-native application elements. Each component is designed to seamlessly integrate into your infrastructure.
+
+## Step 4: Selecting Specific Versions
+
+To ensure precision in your design, select the specific version of each component you need. MeshMap supports a variety of versions for different components, allowing you to tailor your design to meet your exact requirements.
+
+## Step 5: Building Complex Cloud-Native Deployments
+
+With the Designer toolbox at your disposal, you can build complex cloud-native deployments with ease. Simply drag and drop components onto the MeshMap canvas, arranging them in a way that suits your architecture.
+
+## Step 6: Configuring Each Component
+
+Fine-tune your design by configuring each component using the Configuration panel. MeshMap's intuitive interface enables you to adjust settings and parameters effortlessly. Your design will automatically update with each change made.
+
+## Step 7: Design Actions and Interactions
+
+Explore additional design actions by right-clicking on components. Group components together or establish connections between them according to your needs. MeshMap's flexibility allows for a dynamic and responsive design experience.
+
+## Step 8: Merging Designs
+
+For enhanced collaboration and scalability, drag and drop existing designs into your canvas. This feature enables you to merge multiple designs seamlessly, creating a unified and comprehensive view of your infrastructure.
+
+Congratulations! You've successfully navigated the Designer mode in MeshMap, creating a robust and tailored cloud-native deployment. Continue exploring MeshMap's features to optimize and manage your designs effectively.
+
+
+Happy designing!
+
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
