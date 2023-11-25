@@ -1,9 +1,11 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
   <head>
-    {{ partial "head.html" . }}
+    {{ partial "head.html" . }} {{ partial "favicon.html" . }}
   </head>
-  <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
+  <body
+    class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}"
+  >
     <header>
       {{ partial "navbar.html" . }}
     </header>
@@ -14,19 +16,18 @@
             {{ partial "sidebar.html" . }}
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
-            {{ partial "page-meta-links.html" . }}
-            {{ partial "toc.html" . }}
-            {{ partial "taxonomy_terms_clouds.html" . }}
+            {{ partial "page-meta-links.html" . }} {{ partial "toc.html" . }} {{
+            partial "taxonomy_terms_clouds.html" . }}
           </aside>
           <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
-            {{ partial "version-banner.html" . }}
-            {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
-            {{ block "main" . }}{{ end }}
+            {{ partial "version-banner.html" . }} {{ if not
+            .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" .
+            }}{{ end }} {{ block "main" . }}{{ end }}
           </main>
         </div>
       </div>
       {{ partial "footer.html" . }}
     </div>
-    {{ partial "scripts.html" . }}
+    {{ partial "scripts.html" . }} {{ partial "image-modal.html" . }}
   </body>
 </html>
