@@ -48,7 +48,12 @@ The significant keys in the YAML frontmatter are:
 
 <div>&nbsp;</div>
 
-## Join the Layer5 community!
+### Uploading Images to the site
+To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)`. 
+
+**Note-> For images to show correctly on subpages, always provide the complete image path**
+
+<hr/>
 
 <a name="contributing"></a><a name="community"></a>
 Our projects are community-built and welcome collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you and jump into our <a href="http://slack.layer5.io">Slack</a>!
