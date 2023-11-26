@@ -4,23 +4,83 @@ title: Layer5
 
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 
-<!-- <h1 style="font-weight:800;margin-bottom: 4rem;font-size:5rem;">Expect More from Your Infrastructure</h1> -->
+<div class="dash-sign-container">
+<h1 class="dashboard">Expect More from Your Infrastructure</h1>
+
+<a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
+</div>
 <div>
+<h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/cloud">
-    <img src="images/5-light-no-trim.svg" />
+    <img src="images/logos/5-light-no-trim.svg" />
   Cloud Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
   href="/meshmap">
-  <img src="images/meshmap-alt.svg" />
+  <img src="images/logos/meshmap-alt.svg" />
   MeshMap Docs
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="https://docs.meshery.io">
+  <img src="images/logos/meshery-light-icon.svg" />
+  Meshery Docs
+  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
+  href="https://getnighthawk.dev">
+  <img src="images/logos/nighthawk-logo.svg" />
+  Nighthawk Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 </div>
 
-<div style="margin-top:35%;padding-top:35%"><a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash">Expect More from Your Infrastructure</a> </div>
+<div class= "product-section">
+
+<a href="https://playground.meshery.io">
+  <div class="grid-card">
+    <div class= "playground-section playground-logo">
+      <span class="product-head">Meshery playground</span>
+      <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+    </div>
+  </div>
+</a>
+
+<a href="https://meshery.layer5.io/catalog">
+  <div class="grid-card">
+    <div class= "catalog-section catalog-logo">
+      <span class="product-head">Meshery Catalog</span>
+      <p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
+    </div>
+  </div>
+</a>
+
+<a href="https://discuss.layer5.io">
+<div class= "forum-section">
+  <div class="grid-card">
+  <span class="product-head">Discussion forum</span>
+  <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
+  <img src="images/landing/discuss.png" />
+  </div>
+</div>
+</a>
+
+<a href="https://layer5.io/community/handbook">
+<div class= "handbook-section grid-card">
+  <div class= "handbook-text">
+    <span class="product-head">Community Handbook</span>
+    <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+  </div>
+  <div class= "handbook-image">
+<img src="images/landing/handbook.png" />
+</a>
+
+</div>
+</div>
+</div>
+</div>
 <!-- <div class="taxonomy taxonomy-terms-cloud taxo-categories">
   <h5 class="taxonomy-title">Cloud of Categories</h5>
   <ul class="taxonomy-terms">
