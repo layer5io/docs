@@ -2,14 +2,14 @@
 title: Starting from scratch
 date: 2023-10-05
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+ Welcome to MeshMap, your central hub for managing Kubernetes clusters, service mesh deployments, and cloud-native applications. MeshMap offers two distinct modes - Designer and Visualizer. In this guide, we will delve into the Designer mode, a powerful tool that allows you to craft and customize complex cloud-native deployments effortlessly.
 weigth: 2
 categories: [Designer]
 tags: [designs]
 ---
-# Getting Started - Creating a Design from Scratch
 
-Welcome to MeshMap, your central hub for managing Kubernetes clusters, service mesh deployments, and cloud-native applications. MeshMap offers two distinct modes - Designer and Visualizer. In this guide, we will delve into the Designer mode, a powerful tool that allows you to craft and customize complex cloud-native deployments effortlessly.
+
+
 
 ## Step 1: Accessing Designer Mode
 
