@@ -16,6 +16,8 @@ tags: [users]
 | View user Badges                                                | ✅         |
 | View user Activity                                              | ✅         |
 | View Keys                                                       | ✅         |
+| View Catalog                                                    | ✅         |
+| Invite Users                                                    | ✅         |
 | Update User Profile                                             | ❌         |
 | Delete a user account                                           | ❌         |
 | Create a new user                                               | ❌         |
