@@ -28,7 +28,3 @@ tags: [users]
 
 
 _The default permissions can be adjusted through granular permissions using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/), note that certain permissions marked with * are only allowed if you're the organization owner._
-
-{{< alert type="info" title="Note" >}}
-Permissions that a user has in one organization does not necessarily reflect the same level of access that their membership in another oganziation does.
-{{< /alert >}}
