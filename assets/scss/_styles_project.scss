@@ -11,9 +11,32 @@
 .td-navbar{
   min-height:6rem;
   background-color: $body-bg !important;
-.navbar-brand  {
+  .navbar-brand  {
     margin: 1.25rem;
   }
+  .td-search {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    // background-color: #EBC017;
+    background-color:#2e2e31;
+
+      .td-search__input {
+        width: 100%;
+        text-indent: 1.25em;
+        border-radius: 1rem; }
+        .td-search__input:not(:focus) {
+          background: transparent; }
+        .td-search__input.form-control:focus {
+          border-color: orange;
+          box-shadow: 0 0 0 2px red;
+          color: inherit; }
+    }
+    .td-search__input.form-control:focus {
+     
+      background-color: #EBC017;
+    }    
+  
 }
 
 .navbar-dark {
@@ -170,17 +193,14 @@ a:not([href]):not([class]):hover {
   z-index: 5;
 
 }
-td-sidebar {
+.td-sidebar {
   background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
-
-  td-sidebar__inner {
-    td-sidebar__search {
-      td-search {
-
-      }
+  .td-sidebar__inner {
+    .td-sidebar__search {
     }
   }
 }
+
 // Left sidebar
 .td-sidebar-nav {
   overflow: hidden;
