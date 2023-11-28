@@ -4,6 +4,16 @@ description: Troubleshooting MeshMap
 
 ---
 
+## Meshery Extension
+
+### Designer Mode
+
+Upon Meshery extension's first load, a GET request initializes the MeshMap plugin. Errors are classified into two types: plugin not found or built on a different version. MeshMap loads, and Designer is functional if no errors occur.
+
+### Visualizer Mode
+
+GraphQL queries fetch header data and view data for the Visualizer canvas. Checks ensure data types and properties are correct, enabling canvas display. If no clusters are connected, a modal prompts the user to select one.
+
 ## Fault Scenarios Explained for MeshMap Extension
 
 ### 1. MISSING PLUGIN
