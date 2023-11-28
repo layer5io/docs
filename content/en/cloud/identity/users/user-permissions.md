@@ -1,7 +1,7 @@
 ---
 title: Managing User Permissions
 description: >
-  Complete list of default permissions granted to User role.
+  Complete list of default permissions granted to all users.
 date: 2023-10-30
 weight: 5
 categories: [Identity]
