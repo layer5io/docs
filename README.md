@@ -17,10 +17,11 @@ The docker image is pre-built with all the website dependencies installed, which
 
 ### With Golang
 
-If your local development environment has a supported version (v1.21.0+) of Golang installed you can run:
+If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended hugo version as it has necessary SCSS/SASS support. Find all the hugo packages here: https://github.com/gohugoio/hugo/releases/tag/v0.120.4
 
-make setup
-make site
+Now to setup and run the site locally run: 
+
+`make setup` followed by `make site`
 
 ...and then visit http://localhost:1313.
 
