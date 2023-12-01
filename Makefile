@@ -38,6 +38,19 @@ clean:
 
 .PHONY: setup build site clean site-fast
 
-.PHONY: docker
-docker:
-	docker run -v $(PWD):/src -p 1313:1313 jakejarvis/hugo-extended:latest server --buildDrafts --buildFuture --bind 0.0.0.0
+.PHONY: setup build run clean docker
+
+setup:
+	npm install
+
+build:
+	hugo
+
+run:
+	docker-compose up
+
+clean:
+	docker-compose down
+
+docker: setup build run
+

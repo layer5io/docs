@@ -1,16 +1,9 @@
-###############
-# Build Stage #
-###############
-FROM jakejarvis/hugo-extended:latest as builder
-# Base URL
-ARG HUGO_BASEURL=
-ENV HUGO_BASEURL=${HUGO_BASEURL}
-# Build site
-COPY . /src
-RUN set -e && hugo --minify --gc --enableGitInfo
+# Use floryn90/hugo:ext-alpine as the base image
+FROM floryn90/hugo:ext-alpine
 
-###############
-# Final Stage #
-###############
-FROM jakejarvis/hugo-extended:latest as final
-COPY --from=builder /src/public /site
+# Set the working directory to /src
+WORKDIR /src
+
+# Install Git and configure safe directory
+RUN apk add --no-cache git && \
+    git config --global --add safe.directory /src
