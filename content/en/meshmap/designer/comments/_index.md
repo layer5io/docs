@@ -19,20 +19,20 @@ You can add comments in three convenient ways:
 1. **Comment through Toolbar:**
    Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
 
-<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="700" style="margin-bottom: 10px;">
-<img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="700" style="margin-bottom: 20px;">
+<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="600" style="margin-bottom: 15px;">
+<img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="600" style="margin-bottom: 25px;">
 
 2. **Right-Click in Canvas:**
    Right-click on any area of your canvas, and from the contextual menu, select "Comment" or use the shortcut ***Ctrl + M (Command + M for Mac users)***. This allows for swift comment placement right where you need it.
 
-<img src="./Right-click.png" alt="Comment by right-clicking" width="700" style="margin-bottom: 20px;">
+<img src="./Right-click.png" alt="Comment by right-clicking" width="600" style="margin-bottom: 25px;">
 
 3. **Drag comment from doc:**
    To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
 
 ## How to Use Comment for Design Reviews
 
-<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="700" style="margin-bottom: 20px;">
+<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="600" style="margin-bottom: 25px;">
 
 1. **Initiate a Comment Thread:**
 
