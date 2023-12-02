@@ -12,27 +12,32 @@ tags: [designs, collaboration, review]
 MeshMap's Designer Mode offers a powerful collaboration feature through comments. You can use it to write detailed design description, add pointers for you team members, and include any helpful information that can help you or others collaborate.
 
 
-## How to Add Comments
+## Three Ways to Add Comments
 
 You can add comments in three convenient ways:
 
 1. **Comment through Toolbar:**
    Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
 
-<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="1000"/>
-<img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="1000"/>
+<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="100"/>
+
+
+<img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="100"/>
+
 
 2. **Right-Click in Canvas:**
    Right-click on any area of your canvas, and from the contextual menu, select "Comment" or use the shortcut ***Ctrl + M (Command + M for Mac users)***. This allows for swift comment placement right where you need it.
 
-<img src="./Right-click.png" alt="Comment by right-clicking" width="1000"/>
+<img src="./Right-click.png" alt="Comment by right-clicking" width="100"/>
+
 
 3. **Drag comment from doc:**
    To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
 
 ## How to Use Comment for Design Reviews
 
-<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="1000"/>
+<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="100"/>
+
 
 1. **Initiate a Comment Thread:**
 
