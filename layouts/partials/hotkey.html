@@ -1,13 +1,14 @@
 <style>
-  #searchKey {
+  /* #searchKey {
     font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: white;
     background-color: #cccccc;
     border-radius: 6px;
     margin: 0px;
-  }
+  } */
 </style>
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
 <script>
   function focusSearchBar() {
     var searchBar = document.querySelector(".td-search-input");
@@ -23,10 +24,17 @@
     }
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var searchKey = document.createElement("div");
-    searchKey.id = "searchKey";
+  searchKey.addEventListener('mousedown', () =>{
+      event.preventDefault();
+      focusSearchBar();
+  });
 
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var searchKey = document.getElementById("searchKey");
+    if (searchKey) {
+      searchBar.focus();
+    }
     var searchElement = document.querySelector(".td-search-input");
     if (searchElement) {
       searchElement.appendChild(searchKey);
