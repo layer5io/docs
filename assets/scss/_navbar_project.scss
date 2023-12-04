@@ -9,15 +9,15 @@
 }
 
 .nav-link-external {
-  border: 1px solid transparent;
+  border: 1px solid $primary;
   border-radius: 0.25rem;
-  color: $primary;
+  color: $secondary;
   background: transparent;
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
 }
 
 .nav-link-external:hover {
-  border: 1px solid $primary;
+  border: 1px solid $secondary;
   color: $primary;
   box-shadow: $light 0 0 5px;
   background-color: transparent;
