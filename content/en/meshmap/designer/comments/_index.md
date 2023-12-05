@@ -18,9 +18,10 @@ You can add comments in three convenient ways:
 
 1. **Comment through Toolbar:**
    Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
-
-<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="600" style="margin-bottom: 15px;">
-<img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="600" style="margin-bottom: 25px;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+  <img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="600">
+  <img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="600">
+</div>
 
 2. **Right-Click in Canvas:**
    Right-click on any area of your canvas, and from the contextual menu, select "Comment" or use the shortcut ***Ctrl + M (Command + M for Mac users)***. This allows for swift comment placement right where you need it.
