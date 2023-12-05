@@ -126,7 +126,7 @@ github_project_repo = "https://github.com/layer5io/docs"
 github_branch = "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "f475448a7bc1d43a4"
+# gcs_engine_id = "f475448a7bc1d43a4"
 # Layer5 search engine link https://cse.google.com/cse?cx=f475448a7bc1d43a4
 # Customization link https://programmablesearchengine.google.com/controlpanel/lookandfeel?cx=f475448a7bc1d43a4
 
@@ -134,7 +134,7 @@ gcs_engine_id = "f475448a7bc1d43a4"
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
