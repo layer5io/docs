@@ -1,0 +1,27 @@
+.github
+Update hugo.yaml
+archive
+update
+assets
+content/en
+static
+.gitignore
+.hugo_build.lock
+.nvmrc
+CNAME
+CODE_OF_CONDUCT.md
+CONTRIBUTING-gitflow.md
+CONTRIBUTING.md
+Dockerfile
+LICENSE
+Makefile
+README.md
+SECURITY.md
+config.yaml
+docker-compose.yaml
+go.mod
+go.sum
+hugo.toml
+netlify.toml
+package-lock.json
+package.json

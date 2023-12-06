@@ -33,6 +33,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "hugo-extended": "0.113.0",
-    "postcss-cli": "^10.1.0"
+    "postcss-cli": "^10.1.0",
+    "prettier-plugin-organize-imports": "^3.2.4"
   }
 }
