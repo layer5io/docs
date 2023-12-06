@@ -1,22 +1,14 @@
 <style>
-  #iconParent {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  #promptChild {
-    position: relative;
-    right: -70px;
-    top: -1.5px;
+  /* #searchKey {
     font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: white;
     background-color: #cccccc;
     border-radius: 6px;
-    padding: 0px 8px;
-  }
+    margin: 0px;
+  } */
 </style>
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
 <script>
   function focusSearchBar() {
     var searchBar = document.querySelector('.td-search-input');
@@ -32,18 +24,21 @@
     }
   });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var parent = document.createElement('div');
-    parent.id = 'iconParent';
+  searchKey.addEventListener('mousedown', () =>{
+      event.preventDefault();
+      focusSearchBar();
+  });
 
-    var prompt = document.createElement('span');
-    prompt.textContent = '/';
-    prompt.id = 'promptChild';
-    parent.appendChild(prompt);
+  document.addEventListener("DOMContentLoaded", function () {
 
-    var searchElement = document.querySelector('.td-search__icon');
+    var searchKey = document.getElementById("searchKey");
+    if (searchKey) {
+      searchBar.focus();
+    }
+    var searchElement = document.querySelector(".td-search-input");
+
     if (searchElement) {
-      searchElement.appendChild(parent);
+      searchElement.appendChild(searchKey);
     }
 
     var inputElement = document.querySelector('.td-search-input');

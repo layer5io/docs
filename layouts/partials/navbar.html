@@ -1,0 +1,31 @@
+<header>
+    <nav class="td-navbar navbar-dark js-navbar-scroll td-navbar-cover navbar-bg-onscroll--fade">
+        <div class="container-fluid flex-column flex-md-row">
+            <a class="navbar-brand" href="/">
+            <span class="navbar-brand__logo navbar-logo">
+                {{ $svg := resources.Get "icons/logo.svg" }}
+                    <img class="footer-logo" src="{{ $svg.Permalink }}" alt="logo"/>
+            </span>
+                <span class="navbar-brand__name"></span></a>
+            <div class="td-navbar-nav-scroll ms-md-auto main-nav-items" id="main_navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item nav-external">
+                        <a class="nav-link nav-link-external" href="https://playground.meshery.io" target="_blank">
+                            <span>Playground</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/cloud/"><span>Cloud</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/meshmap/"><span>MeshMap</span></a></li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block main-nav-items">
+                <div class="td-search">
+                    <div class="td-search__icon"></div>
+                    <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
+                           aria-label="Search this site…" autocomplete="off">
+                    <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
+                        </div>
+            </div>
+        </div>
+    </nav>
+</header>

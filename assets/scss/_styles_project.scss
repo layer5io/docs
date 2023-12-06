@@ -5,14 +5,40 @@
 @import 'footer_project.scss';
 @import 'variables_project.scss';
 @import 'landing_project.scss';
+@import '_navbar_project.scss';
 
 // Global Navigation Bar
 .td-navbar{
   min-height:6rem;
   background-color: $body-bg !important;
-.navbar-brand  {
+  .navbar-brand  {
     margin: 1.25rem;
   }
+  .td-search {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    // background-color: #EBC017;
+    background-color:#2e2e31;
+    border-radius: 1rem; 
+
+
+      .td-search__input {
+        width: 100%;
+        text-indent: 1.25em;
+        border-radius: 1rem; 
+      }
+        .td-search__input:not(:focus) {
+          background: transparent;
+          border-radius: 1rem;  }
+        .td-search__input.form-control:focus {
+          color: inherit; }
+    }
+    .td-search__input.form-control:focus {
+     
+      // background-color: #EBC017;
+    }    
+  
 }
 
 .navbar-dark {
@@ -169,17 +195,14 @@ a:not([href]):not([class]):hover {
   z-index: 5;
 
 }
-td-sidebar {
+.td-sidebar {
   background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
-
-  td-sidebar__inner {
-    td-sidebar__search {
-      td-search {
-
-      }
+  .td-sidebar__inner {
+    .td-sidebar__search {
     }
   }
 }
+
 // Left sidebar
 .td-sidebar-nav {
   overflow: hidden;
@@ -233,7 +256,7 @@ td-sidebar {
 .td-sidebar-toc {
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
-  background-color: $td-sidebar-toc-bg-color;
+  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
   @supports (position: sticky) {
     position: sticky;
     top: 4rem;
@@ -330,14 +353,12 @@ td-sidebar {
   margin-bottom: 4rem; 
   font-size:5rem;
   text-align: left;
-  background: linear-gradient(90deg, 
-    rgba(235,192,23, 0.46) 9.03%, 
-    rgba(223, 255, 199, 0.57) 41.12%, 
-    rgba(255,243,197, 0.31) 61.68%) repeat scroll 0% 0% / auto padding-box text, rgba(0, 0, 0, 0) 
-    linear-gradient(rgb(239, 239, 241), rgb(239, 239, 255)) repeat scroll 0% 0% / auto padding-box text; 
-    background-position: 0% 0%, 0% 0%;
+  background: 
+    linear-gradient(217deg, rgba(249,245,13, 0.26), rgba(223, 255, 219, 0.57) 9.03%),
+    linear-gradient(127deg, rgba(249,245,13, 0.7), rgba(223, 225, 199, 0.1) 41.12%),
+    linear-gradient(336deg, rgba(249,245,13, 0.1), rgba(239, 239, 251, 0.81) 0%);    background-position: 0% 0%, 0% 0%;
     box-sizing: auto;
-  color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
   display:block;
   text-rendering: optimizelegibility;
   -webkit-background-clip: text, text;
