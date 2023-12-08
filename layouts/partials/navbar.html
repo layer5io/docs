@@ -19,12 +19,13 @@
                 </ul>
             </div>
             <div class="d-none d-lg-block main-nav-items">
-                <div class="td-search">
+                <!-- <div class="td-search">
                     <div class="td-search__icon"></div>
                     <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
                            aria-label="Search this site…" autocomplete="off">
                     <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
-                        </div>
+                        </div> -->
+                        {{ partial "search-input-nav.html" . }}
             </div>
         </div>
     </nav>
