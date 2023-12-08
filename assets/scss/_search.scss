@@ -125,4 +125,36 @@
     background-color:#2e2e31;
   }
 
+  // Global Navigation Bar
+  .td-navbar{
+    min-height:6rem;
+    background-color: $body-bg !important;
+    .navbar-brand  {
+      margin: 1.25rem;
+    }
+    .td-search {
+      display:flex;
+      justify-content: center;
+      align-content: center;
+      // background-color: #EBC017;
+      background-color:#2e2e31;
+      border-radius: 1rem; 
   
+  
+        .td-search__input {
+          width: 100%;
+          text-indent: 1.25em;
+          border-radius: 1rem; 
+        }
+          .td-search__input:not(:focus) {
+            background: transparent;
+            border-radius: 1rem;  }
+          .td-search__input.form-control:focus {
+            color: inherit; }
+      }
+      .td-search__input.form-control:focus {
+       
+        // background-color: #EBC017;
+      }    
+    
+  }
