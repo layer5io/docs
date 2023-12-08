@@ -10,19 +10,6 @@
 </style>
 <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
 <script>
-  function focusSearchBar() {
-    var searchBar = document.querySelector(".td-search-input");
-    if (searchBar) {
-      searchBar.focus();
-    }
-  }
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "/") {
-      event.preventDefault();
-      focusSearchBar();
-    }
-  });
 
   searchKey.addEventListener('mousedown', () =>{
       event.preventDefault();

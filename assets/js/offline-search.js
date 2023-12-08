@@ -180,6 +180,13 @@
         popover.show();
       };
 
+      //Bring focus to search bar
+      $(document).on('keydown', function (event) {
+        if (event.key === '/') {
+          $searchInput.focus();
+        }
+      });
+
       $(document).on('click', function (event) {
         if (!$(event.target).closest('.td-search').length) {
           // Clicked outside the search panel
