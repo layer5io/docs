@@ -263,6 +263,9 @@ enable = false
 		name = "Meshery Docs"
 		url = "https://docs.meshery.io/"
 	[[params.links.footer.projects.items]]
+		name = "Layer5 Badges"
+		url = "https://badges.layer5.io/"
+	[[params.links.footer.projects.items]]
 		name = "MeshMap"
 		url = "https://layer5.io/cloud-native-management/meshmap"
 	[[params.links.footer.projects.items]]
