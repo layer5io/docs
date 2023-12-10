@@ -260,9 +260,6 @@ enable = false
 
 
 	[[params.links.footer.projects.items]]
-		name = "Meshery Docs"
-		url = "https://docs.meshery.io/"
-	[[params.links.footer.projects.items]]
 		name = "MeshMap"
 		url = "https://layer5.io/cloud-native-management/meshmap"
 	[[params.links.footer.projects.items]]
@@ -274,9 +271,6 @@ enable = false
 	[[params.links.footer.projects.items]]
 		name = "Docker Extension"
 		url = "https://layer5.io/docker-extension-meshery"
-	[[params.links.footer.projects.items]]
-		name = "Service Mesh Interface"
-		url = "https://layer5.io/projects/service-mesh-interface-conformance"
 	[[params.links.footer.projects.items]]
 		name = "Cloud Native Performance"
 		url = "https://layer5.io/projects/cloud-native-performance"
