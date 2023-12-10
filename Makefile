@@ -38,19 +38,3 @@ clean:
 
 .PHONY: setup build site clean site-fast
 
-.PHONY: setup build run clean docker
-
-setup:
-	npm install
-
-build:
-	hugo
-
-run:
-	docker-compose up
-
-clean:
-	docker-compose down
-
-docker: setup build run
-
