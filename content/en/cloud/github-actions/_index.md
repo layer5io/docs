@@ -18,7 +18,7 @@ Meshery introduces the MeshMap Snapshot GitHub Actions, a tool that allows you t
 
 **Step 1: Get access to MeshMap**
 
-To initiate the GitOps workflow with Meshery, it is essential to [sign up](https://layer5.io/cloud-native-management/meshmap#:~:text=Signup%20for,MeshMap%20Beta) for MeshMap. MeshMap serves as a fundamental component, providing visual insights into infrastructure changes and facilitating the synchronization between the actual and desired states. Ensure that you have proper access to MeshMap to leverage its capabilities for effective GitOps implementation.
+To initiate the GitOps workflow with Meshery, it is essential to [sign up](https://layer5.io/cloud-native-management/meshmap) for MeshMap. MeshMap serves as a fundamental component, providing visual insights into infrastructure changes and facilitating the synchronization between the actual and desired states. Ensure that you have proper access to MeshMap to leverage its capabilities for effective GitOps implementation.
 
 **Step 2: Enable GitHub Actions: MeshMap Snapshot Extension in Meshery Playground**
 
