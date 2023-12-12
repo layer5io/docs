@@ -239,6 +239,7 @@ enable = false
 		name = "Cloud Native Interactive Labs"
 		url = "https://layer5.io/learn/service-mesh-labs"
 
+
 	[[params.links.footer.community.items]]
 		name = "Blog"
 		url = "https://layer5.io/blog"
@@ -257,6 +258,9 @@ enable = false
 	[[params.links.footer.community.items]]
 		name = "Handbook"
 		url = "https://layer5.io/community/handbook"
+	[[params.links.footer.community.items]]
+		name = "Recognition Program"
+		url = "https://badges.layer5.io/"
 
 
 	[[params.links.footer.projects.items]]
