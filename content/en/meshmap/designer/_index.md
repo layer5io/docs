@@ -5,8 +5,6 @@ description: >
 weight: 4
 categories: [Designer]
 tags: [designs]
-aliases:
-  - "/designer"
 ---
 
 {{% pageinfo %}}
