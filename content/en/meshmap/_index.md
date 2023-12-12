@@ -44,16 +44,16 @@ Choose your mode of operation for MeshMap.
 
 <div style="display:flex;justify-content:center;">
 {{< cardpane >}}
-    <a href="../designer/">
+    <a href="../meshmap/designer/">
   {{< card header="Designer" >}}
-    <a href="../designer/">Designer</a> mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+    <a href="../meshmap/designer/">Designer</a> mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
     <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
     <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
     </a>
-  <a href="../visualizer/">
+  <a href="../meshmap/visualizer/">
   {{< card header="Visualizer" >}}
-    <a href="../visualizer/">Visualizer</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
+    <a href="../meshmap/visualizer/">Visualizer</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
     <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
     <p>Interactively connect to pods and containers to debug and troubleshoot.</p>
   {{< /card >}}
