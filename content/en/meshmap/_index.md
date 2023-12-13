@@ -1,5 +1,6 @@
 ---
 title: MeshMap Documentation
+description: MeshMap aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
 linkTitle: MeshMap
 type: docs
 menu: {main: {weight: 3}}
