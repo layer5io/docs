@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting MeshMap
-description: Troubleshooting MeshMap
+description: Learn to Troubleshoot the MeshMap
 
 ---
 

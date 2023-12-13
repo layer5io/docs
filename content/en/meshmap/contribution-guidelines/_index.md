@@ -1,7 +1,7 @@
 ---
 title: Contribution Guidelines
 weight: 10
-description: How to contribute to the docs
+description: A detailed contribution guide for Layer5 Docs.
 ---
 ## Contributing to the docs.layer5.io Website
 
