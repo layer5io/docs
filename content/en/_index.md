@@ -1,5 +1,7 @@
 ---
 title: Layer5
+description: >
+  Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
 ---
 
 {{< blocks/cover title="" image_anchor="top" height="full" >}}

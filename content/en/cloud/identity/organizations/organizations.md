@@ -1,7 +1,7 @@
 ---
 title: Organizations
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Organization is subdivided into two roles: Organization Administrator and Organization Billing Manager.
 date: 2023-10-30
 weight: 3
 categories: [Identity]

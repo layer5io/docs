@@ -1,5 +1,7 @@
 ---
 title: Cloud Documentation
+description: >
+  Layer5 Cloud provides a powerful platform for managing and deploying your cloud infrastructure with flexibility and ease.
 linkTitle: Cloud
 type: docs
 menu: {main: {weight: 2}}

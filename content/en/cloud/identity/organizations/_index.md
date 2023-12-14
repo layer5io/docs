@@ -1,7 +1,7 @@
 ---
 title: Organizations
 description: >
-  Create and manage organizations, teams, and users.
+  Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.
 date: 2023-10-30
 categories: [Identity]
 tags: [orgs]
