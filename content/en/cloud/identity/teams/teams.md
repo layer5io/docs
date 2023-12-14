@@ -1,7 +1,7 @@
 ---
 title: Teams
 description: >
-  Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
+  Teams is subdivided into two roles: Team Admins and Team Managers.
 date: 2023-10-30
 weight: 5
 categories: [Identity]
