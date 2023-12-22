@@ -24,7 +24,7 @@ Visualizer supports connecting to Kubernetes pods via the following methods.
 
 ### Understanding Log Streamer
 
-{{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%"  >}}
+{{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%" alt="log-stream-sequence-diagram" >}}
 
 ### Understanding Interactive Terminal
 
@@ -34,4 +34,4 @@ While using using the interactive terminal, understand that you can only open on
 Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / MeshMap.
 The GraphQL subscription between your web browser running MeshMap and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
 
-{{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%"  >}}
+{{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}}
