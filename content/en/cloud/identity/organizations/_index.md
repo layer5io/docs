@@ -9,7 +9,7 @@ tags: [orgs]
 
 {{< cardpane >}}
 {{% card %}}
-<img src="/cloud/identity/images/organization_units.svg" link="images/organization_units.svg"  />
+<img src="/cloud/identity/images/organization_units.svg" link="images/organization_units.svg" alt="Organizational units" />
 {{% /card %}}
 {{< /cardpane >}}
 

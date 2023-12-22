@@ -11,11 +11,12 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 ![roles](/cloud/security/images/roles-overview.svg "image-center-no-shadow")
 
 
+
 ## Provider Admin Role
 
 {{< cardpane >}}
 {{% card header="### Provider Admin Role" %}}
-![](/cloud/security/images/role-provider-admin.svg)
+![role-provider](/cloud/security/images/role-provider-admin.svg)
 {{% /card %}}
 {{% card %}}
 
@@ -52,7 +53,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 {{< cardpane >}}
 {{% card %}}
-![](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
+![organization-administrator and manager](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -120,7 +121,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 {{< cardpane >}}
 {{% card %}}
-![](/cloud/identity/images/team-admins-and-team-managers.svg)
+![team-admins-and-manager](/cloud/identity/images/team-admins-and-team-managers.svg)
 {{% /card %}}
 {{< /cardpane >}}
 

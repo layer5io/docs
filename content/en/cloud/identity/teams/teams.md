@@ -13,7 +13,7 @@ tags: [teams]
 
 {{< cardpane >}}
 {{% card header="Team Admins and Team Managers" %}}
-<img src="/cloud/identity/images/team-admins-and-team-managers.svg" link="images/team-admins-and-team-managers.svg"  width="100%"  />
+<img src="/cloud/identity/images/team-admins-and-team-managers.svg" link="images/team-admins-and-team-managers.svg"  width="100%" alt="Team Admin and Team managers" />
 {{% /card %}}
 {{< /cardpane >}}
 
