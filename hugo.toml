@@ -177,64 +177,56 @@ no = 'Sorry to hear that. Please <a href="https://github.com/layer5io/docs/issue
 enable = false
 
 [params.links]
-  [[params.links.footer.icons]]
-    name = "User mailing list"
-    url = "https://layer5.io/subscribe"
-    icon = "icons/envelope.svg"
-    desc = "Discussion and help from your fellow users"
-    alt = "Envelope Icon"
-
-  [[params.links.footer.icons]]
-    name = "Twitter"
-    url = "https://twitter.com/layer5"
-    icon = "icons/twitter.svg"
-    desc = "Follow us on Twitter to get the latest news!"
-    class = "social-icon"
-    alt = "Twitter Icon"
-
-  [[params.links.footer.icons]]
-    name = "Discussion Forum"
-    url = "https://discuss.layer5.io"
-    icon = "icons/discuss.svg"
-    desc = "Practical questions and curated answers"
-    alt = "Discussion Forum Icon"
-
-  [[params.links.footer.icons]]
-    name = "GitHub"
-    url = "https://github.com/layer5io"
-    icon = "icons/github.svg"
-    desc = "Development takes place here"
-    class = "social-icon"
-    alt = "GitHub Icon"
-
-  [[params.links.footer.icons]]
-    name = "Slack"
-    url = "https://slack.layer5.io"
-    icon = "icons/slack.svg"
-    desc = "Chat with other project developers"
-    alt = "Slack Icon"
-
-  [[params.links.footer.icons]]
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/company/layer5"
-    icon = "icons/linkedin.svg"
-    desc = "Discuss development issues around the project"
-    alt = "LinkedIn Icon"
-
-  [[params.links.footer.icons]]
-    name = "YouTube"
-    url = "https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
-    icon = "icons/youtube.svg"
-    desc = "Discuss development issues around the project"
-    alt = "YouTube Icon"
-
-  [[params.links.footer.icons]]
-    name = "Docker"
-    url = "https://hub.docker.com/u/layer5/"
-    icon = "icons/docker.svg"
-    desc = "Discuss development issues around the project"
-    alt = "Docker Icon"
-
+	[[params.links.footer.icons]]
+		name = "User mailing list"
+		url = "https://layer5.io/subscribe"
+		icon = "icons/envelope.svg"
+		desc = "Discussion and help from your fellow users"
+        alt = "Envelope Icon"
+	[[params.links.footer.icons]]
+		name = "Twitter"
+		url = "https://twitter.com/layer5"
+		icon = "icons/twitter.svg"
+		desc = "Follow us on Twitter to get the latest news!"
+		class= "social-icon"
+        alt = "Twitter Icon"
+	[[params.links.footer.icons]]
+		name = "Discussion Forum"
+		url = "https://discuss.layer5.io"
+		icon = "icons/discuss.svg"
+		desc = "Practical questions and curated answers"
+        alt = "Discussion Forum Icon"
+	[[params.links.footer.icons]]
+		name = "GitHub"
+		url = "https://github.com/layer5io"
+		icon = "icons/github.svg"
+		desc = "Development takes place here"
+		class= "social-icon"
+        alt = "GitHub Icon"
+	[[params.links.footer.icons]]
+		name = "Slack"
+		url = "https://slack.layer5.io"
+		icon = "icons/slack.svg"
+		desc = "Chat with other project developers"
+        alt = "Slack Icon"
+	[[params.links.footer.icons]]
+		name = "LinkedIn"
+		url = "https://www.linkedin.com/company/layer5"
+		icon = "icons/linkedin.svg"
+		desc = "Discuss development issues around the project"
+        alt = "LinkedIn Icon"
+	[[params.links.footer.icons]]
+		name = "YouTube"
+		url = "https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
+		icon = "icons/youtube.svg"
+		desc = "Discuss development issues around the project"
+        alt = "YouTube Icon"
+	[[params.links.footer.icons]]
+		name = "Docker"
+		url = "https://hub.docker.com/u/layer5/"
+		icon = "icons/docker.svg"
+		desc = "Discuss development issues around the project"
+        alt = "Docker Icon"
 
 	[[params.links.footer.resources.items]]
 		name = "Learning Paths"
