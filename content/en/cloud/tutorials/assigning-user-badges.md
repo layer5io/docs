@@ -26,7 +26,7 @@ Project Badges are assigned by the admin to the user when a user contributes to 
 ### How to Embed Badges
 To share your badges on other social profiles, utilize the provided embedded code and direct share functionality. Access your badges from the Layer5 Cloud profile badges section, and then use it to post your achievements on social media platforms seamlessly. This enables you to showcase your Layer5 contributions and milestones to a wider audience.
 
-{{< figure src="/cloud/tutorials/images/embedding-badges-modal.svg" >}}
+{{< figure src="/cloud/tutorials/images/embedding-badges-modal.svg" alt="Embedding-badges-modal">}}
 
 ### FAQ's
 - **Is there a limit to the number of badges that I can earn?**  

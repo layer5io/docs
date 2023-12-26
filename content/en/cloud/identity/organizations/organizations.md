@@ -13,7 +13,7 @@ tags: [orgs]
 
 {{< cardpane >}}
 {{% card header="Organization Administrator and Organization Billing Manager" %}}
-<img src="/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg" link="images/organization-administrator-and-organization-billing-manager.svg"  width="100%"  />
+<img src="/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg" link="images/organization-administrator-and-organization-billing-manager.svg"  width="100%" alt="Organization Administrator and Organization Billing Manager " />
 {{% /card %}}
 {{< /cardpane >}}
 

@@ -13,30 +13,26 @@ description: >
 </div>
 <div>
 <h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="/cloud">
-    <img src="images/logos/5-light-no-trim.svg" />
-  Cloud Docs
-  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="/meshmap">
-  <img src="images/logos/meshmap-alt.svg" />
-  MeshMap Docs
-  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="https://docs.meshery.io">
-  <img src="images/logos/meshery-light-icon.svg" />
-  Meshery Docs
-  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="https://getnighthawk.dev">
-  <img src="images/logos/nighthawk-logo.svg" />
-  Nighthawk Docs
-  <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/cloud" aria-label="Cloud Docs">
+    <img src="images/logos/5-light-no-trim.svg" alt="Layer5 Cloud Docs Logo" />
+    Cloud Docs
+    <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  </a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/meshmap" aria-label="MeshMap Docs">
+    <img src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
+    MeshMap Docs
+    <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  </a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs">
+    <img src="images/logos/meshery-light-icon.svg" alt="Layer5 Meshery Docs Logo" />
+    Meshery Docs
+    <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  </a>
+  <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://getnighthawk.dev" aria-label="Nighthawk Docs">
+    <img src="images/logos/nighthawk-logo.svg" alt="Layer5 Nighthawk Docs Logo" />
+    Nighthawk Docs
+    <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+  </a>
 </div>
 
 <div class= "product-section">
@@ -64,8 +60,8 @@ description: >
   <div class="grid-card">
   <span class="product-head">Discussion forum</span>
   <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
-  <img src="images/landing/discuss.png" />
-  </div>
+  <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
+      </div>
 </div>
 </a>
 
@@ -76,7 +72,9 @@ description: >
     <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
   </div>
   <div class= "handbook-image">
-<img src="images/landing/handbook.png" />
+<img src="images/landing/handbook.png" alt="Community Handbook Image" />
+      </div>
+
 </a>
 
 </div>
