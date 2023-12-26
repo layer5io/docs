@@ -44,7 +44,7 @@ tags: [orgs]
 
 **What permissions does this role have?**
 
-- Check [Organization Permissions](/cloud/identity/teams/org-permissions/)
+- Check [Organization Permissions](cloud/identity/organizations/org-permissions/)
 
 {{% /card %}}
 

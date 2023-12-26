@@ -30,7 +30,7 @@ Here's a quick guide to updating the docs:
 6. Continue updating your doc and pushing your changes until you're happy with the content.
 
 7. When you're ready for a review, add a comment to the PR, remove any holds or "WIP" markers, and assign a reviewer/approver. 
-   See the [Layer5 contributor guide](https://docs.layer5.io/docs/about/contributing/).
+   See the [Layer5 contributor guide](https://layer5.io/community/handbook/contribution).
 
 If you need more help with the GitHub workflow, follow
 this [guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/quick-github-guide.md).
@@ -145,7 +145,7 @@ git -C themes/docsy checkout tags/v0.6.0
 ## Documentation style guide
 
 For guidance on writing effective documentation, see
-the [style guide for the Layer5 docs](https://docs.layer5.io/docs/about/style-guide/).
+the style guide for the Layer5 docs.
 
 ## Styling your content
 
@@ -169,7 +169,7 @@ You can override the default styles and add new ones:
 
 Styling of images:
 
-* To see some examples of styled images, take a look at the [OAuth setup page](https://docs.layer5.io/docs/gke/deploy/oauth-setup/) in the Layer5 docs. 
+* To see some examples of styled images, take a look at the OAuth setup page in the Layer5 docs. 
   Search for `.png` in the [page source](https://raw.githubusercontent.com/layer5io/docs/master/content/en/docs/gke/deploy/oauth-setup.md).
 
 * For more help, see the guide to
