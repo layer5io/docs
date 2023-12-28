@@ -1,13 +1,10 @@
-version: "3.3"
+version: '3'
 
 services:
-
-  site:
-    image: docsy/docsy-example
-    build:
-      context: .
-    command: server
+  hugo:
+    image: floryn90/hugo:ext-alpine
     ports:
       - "1313:1313"
     volumes:
       - .:/src
+    command: server --buildDrafts --buildFuture --bind 0.0.0.0
