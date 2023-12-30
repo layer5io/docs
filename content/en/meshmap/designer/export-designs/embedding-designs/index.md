@@ -60,3 +60,39 @@ function Design() {
 
 Make sure the `embedScriptSrc` attribute in the component points to the location of the downloaded embedding script on your react filesystem.
 Usually the script is located "static" folder
+
+### Render
+After Finishing the steps , the embedded design will be rendered like :
+
+<!-- Design Embed Container  -->
+<div id="embedded-design-6afd9029-60cf-4662-b031-cf4f9ab854fd" style="height:30rem;width:100%"></div>
+<script src="../embedded-design-mongo_configuration_using_configmap.js" type="module" ></script>
+
+### Customization
+
+You can customize the styles for the embedded design by targeting CSS classes exposed or by adding inline styles. The following class can be overridden:
+
+- `embed-design-container`: for the embedding container
+- `cy-container`: for the canvas
+
+If you have multiple embeddings on a page, you can target them all using the classes or specific ones using the div's ID in the shortcode.
+
+Here is a customization example:
+
+```html
+<style>
+  .embed-design-container {
+    width: 100%;
+    border-radius: 1rem;
+    margin: 1rem;
+    overflow: hidden;
+    margin-inline: auto;
+    height: 35rem;
+  }
+  .embed-canvas-container {
+    background-color: gray;
+  }
+</style>
+```
+
+
