@@ -1,11 +1,49 @@
 .navbar-brand {
   width: 280.06px;
-  height: 30px;
-
+  height: auto;
 }
 
-.main-nav-items {
-  margin-top: 0.75rem;
+.nav-item {
+  margin-right: 0.75rem;
+
+  #navbarDropdown {
+    color: $primary;
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    transform: translate(-25%, 4.5rem) !important;
+    border-radius: 0;
+    .dropdown-item {
+      height: 5rem;
+      width: 18rem;
+      display: flex;
+      align-items: center;
+      .logo-container {
+        height: 2rem;
+        width: 2rem;
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 100%;
+        }
+      }
+      span {
+        margin-left: 1rem;
+      }
+      &:hover {
+        color: $black;
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
 }
 
 .nav-link-external {

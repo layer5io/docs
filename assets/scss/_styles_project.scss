@@ -1,22 +1,44 @@
-@import 'fonts';
-@import 'content_project';
-@import 'image-modal_project.scss';
-@import 'elements_project.scss';
-@import 'footer_project.scss';
-@import 'variables_project.scss';
-@import 'landing_project.scss';
-@import '_navbar_project.scss';
-
+@import "fonts";
+@import "content_project";
+@import "image-modal_project.scss";
+@import "elements_project.scss";
+@import "footer_project.scss";
+@import "variables_project.scss";
+@import "landing_project.scss";
+@import "_navbar_project.scss";
 
 .navbar-dark {
-      background-color: $black;
+  min-height: 5rem;
+  padding: 0 5rem;
+  border-bottom: 1px solid #333;
+  background-color: $dark !important;
+  .dropdown-menu {
+    background-color: $dark;
+    box-shadow: 0px 4px 20px 0px rgba(0, 211, 169, 0.2);
+    .dropdown-item {
+      color: $white;
+      &:hover {
+        background: $primary;
+      }
     }
+    .dropdown-divider {
+      margin: 0;
+      border-top: 1px solid $primary;
+    }
+  }
+}
 
 .nav-link.active {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to bottom, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
-  padding-bottom:.3rem;
+  border-image: linear-gradient(
+      to bottom,
+      rgba($dark, 0.2) 30%,
+      rgba($primary, 0.3) 60%,
+      $primary 90% 100%
+    )
+    1;
+  padding-bottom: 0.3rem;
   align-items: center;
   justify-content: center;
   align-self: center;
@@ -34,16 +56,14 @@
 }
 // .td-cover-block--height-full {
 //   min-height: 90vh;
-  
+
 // }
 .td-outer {
   margin-top: 3rem;
 }
 
-
 // Main Middle Body
 .td-content {
-
   h2 {
     color: $casper;
   }
@@ -86,16 +106,19 @@
 
 a {
   color: $primary;
-  text-decoration: none; }
+  text-decoration: none;
+}
 a:hover {
-  color: $white; }
+  color: $white;
+}
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
   color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
-// Taxonomy 
+// Taxonomy
 // .taxo-categories {
 //   // margin-top: 2rem;
 // }
@@ -154,16 +177,21 @@ a:not([href]):not([class]):hover {
   }
 }
 
-
 // Footer
 .td-footer {
   background-color: $black;
   // bottom: 0%;
   z-index: 5;
-
 }
 .td-sidebar {
-  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+  background-image: linear-gradient(
+    to top,
+    #1e2117,
+    #1d1912,
+    #18120e,
+    #0f0a09,
+    #000000
+  );
   .td-sidebar__inner {
     .td-sidebar__search {
     }
@@ -173,7 +201,7 @@ a:not([href]):not([class]):hover {
 // Left sidebar
 .td-sidebar-nav {
   overflow: hidden;
-  padding:0px;
+  padding: 0px;
   &__section-title {
     a {
       color: $gray-400;
@@ -181,17 +209,16 @@ a:not([href]):not([class]):hover {
     }
   }
   .td-sidebar-link {
-
     &__page {
       color: $gray-400;
       font-weight: $font-weight-light;
     }
     &__section {
       margin-top: 1rem;
-      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
+      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol";
     }
-
   }
   a {
     &:hover {
@@ -201,19 +228,31 @@ a:not([href]):not([class]):hover {
     &.active:not(.tree-root) {
       border-width: 1px;
       border-style: solid;
-      border-image: linear-gradient(to left, rgba($dark,0) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
-      background-image: linear-gradient(to left, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
-      padding: .25rem;
-      padding-left: .5rem !important;
+      border-image: linear-gradient(
+          to left,
+          rgba($dark, 0) 30%,
+          rgba($primary, 0.3) 60%,
+          $primary 90% 100%
+        )
+        1;
+      background-image: linear-gradient(
+          to left,
+          rgba($dark, 0.2) 30%,
+          rgba($primary, 0.3) 60%,
+          $primary 90% 100%
+        )
+        1;
+      padding: 0.25rem;
+      padding-left: 0.5rem !important;
       // background-image: linear-gradient(to left, rgba($dark,.33),rgba($dark,.5),rgba($dark,.75),#1e2117, #31412b, #3b6447, #378b6d, #00b39f);
       // background-color: rgba($primary, .05);
       color: $secondary;
     }
     &.active.tree-root {
       border: 2px solid $lightslategray !important;
-      padding: .25rem;
-      padding-left: .5rem !important;
-      background-color: rgba($lightslategray, .1);
+      padding: 0.25rem;
+      padding-left: 0.5rem !important;
+      background-color: rgba($lightslategray, 0.1);
       color: $white;
     }
   }
@@ -223,7 +262,14 @@ a:not([href]):not([class]):hover {
 .td-sidebar-toc {
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
-  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+  background-image: linear-gradient(
+    to top,
+    #1e2117,
+    #1d1912,
+    #18120e,
+    #0f0a09,
+    #000000
+  );
   @supports (position: sticky) {
     position: sticky;
     top: 4rem;
@@ -302,13 +348,14 @@ a:not([href]):not([class]):hover {
 .l5btn {
   padding: 1.25rem;
   border-radius: 0.75rem;
-  border: 4px solid rgba(0, 179, 159, 0.40);
+  border: 4px solid rgba(0, 179, 159, 0.4);
   background: #000;
   color: $white;
-  -webkit-transition: color .8s;
-  -webkit-transition: background-color .8s;
+  -webkit-transition: color 0.8s;
+  -webkit-transition: background-color 0.8s;
   > img {
-        width: 2rem; margin-right: .5rem;
+    width: 2rem;
+    margin-right: 0.5rem;
   }
   > img:hover {
     filter: brightness(0) invert(1);
@@ -316,21 +363,32 @@ a:not([href]):not([class]):hover {
 }
 
 .dashboard {
-  font-weight:800; 
-  margin-bottom: 4rem; 
-  font-size:5rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  font-size: 5rem;
   text-align: left;
-  background: 
-    linear-gradient(217deg, rgba(249,245,13, 0.26), rgba(223, 255, 219, 0.57) 9.03%),
-    linear-gradient(127deg, rgba(249,245,13, 0.7), rgba(223, 225, 199, 0.1) 41.12%),
-    linear-gradient(336deg, rgba(249,245,13, 0.1), rgba(239, 239, 251, 0.81) 0%);    background-position: 0% 0%, 0% 0%;
-    box-sizing: auto;
-    color: rgba(0, 0, 0, 0);
-  display:block;
+  background: linear-gradient(
+      217deg,
+      rgba(249, 245, 13, 0.26),
+      rgba(223, 255, 219, 0.57) 9.03%
+    ),
+    linear-gradient(
+      127deg,
+      rgba(249, 245, 13, 0.7),
+      rgba(223, 225, 199, 0.1) 41.12%
+    ),
+    linear-gradient(
+      336deg,
+      rgba(249, 245, 13, 0.1),
+      rgba(239, 239, 251, 0.81) 0%
+    );
+  background-position: 0% 0%, 0% 0%;
+  box-sizing: auto;
+  color: rgba(0, 0, 0, 0);
+  display: block;
   text-rendering: optimizelegibility;
   -webkit-background-clip: text, text;
   -webkit-font-smoothing: antialiased;
-
 }
 .dash-tangle {
   width: 78.14231rem;
@@ -338,10 +396,15 @@ a:not([href]):not([class]):hover {
   transform: rotate(-55.68deg);
   flex-shrink: 0;
   overflow: hidden;
-  background-image: linear-gradient(180deg, rgba(0, 179, 115, 0.00) 0%, rgba(0, 179, 159, 0.30) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 179, 115, 0) 0%,
+    rgba(0, 179, 159, 0.3) 100%
+  );
   position: absolute;
-  top: -18rem; right:-32rem;
-  z-index:-5;
+  top: -18rem;
+  right: -32rem;
+  z-index: -5;
   background-clip: content-box;
   -webkit-background-clip: padding-box;
 }
@@ -357,7 +420,11 @@ a:not([href]):not([class]):hover {
     width: 74.125rem;
     height: 74.125rem;
     flex-shrink: 0;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.2) 0%, rgba(0, 179, 159, 0) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 179, 159, 0.2) 0%,
+      rgba(0, 179, 159, 0) 100%
+    );
     position: absolute;
     overflow: hidden;
     background-clip: border-box;
@@ -391,7 +458,7 @@ a:not([href]):not([class]):hover {
     white-space: nowrap;
     // top: 50%;
     // left: 50%;
-    padding:2rem;
+    padding: 2rem;
     margin: 15rem;
     transform: translateX(-50%) translateY(-50%);
     &:hover {
@@ -401,8 +468,8 @@ a:not([href]):not([class]):hover {
 
   a.dash-sign:before,
   a.dash-sign:after {
-    content: '';
-    padding: .9em .4em;
+    content: "";
+    padding: 0.9em 0.4em;
     position: absolute;
     left: 50%;
     width: 100%;
@@ -411,7 +478,7 @@ a:not([href]):not([class]):hover {
     border: 8px solid $primary;
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
     animation: 6s alternate ease-in-out tipsy;
-    // animation-play-state: paused; 
+    // animation-play-state: paused;
   }
 
   a.dash-sign:before {
@@ -421,7 +488,7 @@ a:not([href]):not([class]):hover {
 
   a.dash-sign:after {
     border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) $primary $secondary;
-    box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
+    box-shadow: 25px 25px 25px rgba(46, 46, 49, 0.8);
   }
 
   a.dash-sign:visited {
@@ -429,22 +496,20 @@ a:not([href]):not([class]):hover {
     // animation-play-state: running;
   }
   a.dash-sign:hover {
-    color: #EBC017 !important;
+    color: #ebc017 !important;
   }
 }
 // Cards
 .card {
   background-color: $dark;
 }
-.card-header { 
+.card-header {
   font-weight: bold;
   font-size: larger;
 }
 .card-header .bg-white {
   background-color: $dark;
-
 }
 .bg-dark {
-  background-color: $dark; 
+  background-color: $dark;
 }
-
