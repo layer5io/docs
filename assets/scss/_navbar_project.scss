@@ -15,11 +15,11 @@
 
   .dropdown-menu {
     padding: 0;
-    transform: translate(-25%, 4.5rem) !important;
+    transform: translate(-15%, 4.5rem) !important;
     border-radius: 0;
     .dropdown-item {
       height: 5rem;
-      width: 18rem;
+      width: 20rem;
       display: flex;
       align-items: center;
       .logo-container {
@@ -44,24 +44,4 @@
       }
     }
   }
-}
-
-.nav-link-external {
-  border: 1px solid $primary;
-  border-radius: 0.25rem;
-  color: $secondary;
-  background: transparent;
-  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
-}
-
-.nav-link-external:hover {
-  border: 1px solid $secondary;
-  color: $primary;
-  box-shadow: $light 0 0 5px;
-  background-color: transparent;
-}
-
-.nav-link-external:active {
-  box-shadow: $primary 0 0 5px;
-  border: 1px solid $secondary;
 }

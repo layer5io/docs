@@ -139,8 +139,8 @@ a:not([href]):not([class]):hover {
     position: relative;
     margin: 0 0.5em 0.2em 0;
     text-decoration: none;
-    -webkit-transition: color 0.2s;
-    -webkit-clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
+    transition: color 0.2s;
+    clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
 
     .taxonomy-count {
@@ -192,10 +192,6 @@ a:not([href]):not([class]):hover {
     #0f0a09,
     #000000
   );
-  .td-sidebar__inner {
-    .td-sidebar__search {
-    }
-  }
 }
 
 // Left sidebar
@@ -301,9 +297,6 @@ a:not([href]):not([class]):hover {
 .td-toc {
   margin-top: 2rem;
   #TableOfContents {
-    > ul > li > ul > li > a {
-    }
-
     a {
       color: $lightslategray;
 
@@ -351,8 +344,8 @@ a:not([href]):not([class]):hover {
   border: 4px solid rgba(0, 179, 159, 0.4);
   background: #000;
   color: $white;
-  -webkit-transition: color 0.8s;
-  -webkit-transition: background-color 0.8s;
+  transition: color 0.8s;
+  transition: background-color 0.8s;
   > img {
     width: 2rem;
     margin-right: 0.5rem;
@@ -387,8 +380,7 @@ a:not([href]):not([class]):hover {
   color: rgba(0, 0, 0, 0);
   display: block;
   text-rendering: optimizelegibility;
-  -webkit-background-clip: text, text;
-  -webkit-font-smoothing: antialiased;
+  background-clip: text, text;
 }
 .dash-tangle {
   width: 78.14231rem;
