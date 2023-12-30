@@ -38,4 +38,4 @@ If your design was generated from a source like HelmChart, Kubernetes manifest, 
 ## Exporting as Embedding
 
 Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. The embedded design version offers a visually interactive representation of your design, making it easy to share with infrastructure stakeholders.
-[Learn more](embedding-designs/index.md) about Embedding Designs.
+[Learn more](embedding-designs) about Embedding Designs.
