@@ -54,6 +54,14 @@ To display images in a pop-up modal, use the following syntax: `![alt text](/pat
 
 **Note-> For images to show correctly on subpages, always provide the complete image path**
 
+### Adding Alert to the site
+Use the following Syntax to add a Alert:
+`{{< alert type="permission" title="Note" >}} Your Note {{< /alert >}}`
+
+  - `type="permission"`: Alert used for Note regarding permissions.
+
+**Note-> Using the wrong type will lead to the use of the default alert**
+
 <hr/>
 
 <a name="contributing"></a><a name="community"></a>
