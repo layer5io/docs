@@ -5,7 +5,7 @@
 
 {{ $_hugo_config := `{ "version": 1 }` }}
 {{ $color := .Get "color" | default "danger" }}
-<div class="permission permission-{{ $color }}" role="alert">
+<div class="permission permission-{{ $color }}" role="alert"><div class="perm-lock">🔐</div>
 {{ with .Get "title" }}<h4 class="permission-heading">{{ . | safeHTML }}</h4>{{ end }}
 {{ if eq .Page.File.Ext "md" }}
     {{ .Inner | markdownify }}
@@ -13,6 +13,7 @@
     {{ .Inner | htmlUnescape | safeHTML }}
 {{ end }}
 </div>
+
 
 {{ else }}
 

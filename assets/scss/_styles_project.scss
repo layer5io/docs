@@ -305,22 +305,29 @@ a:not([href]):not([class]):hover {
   margin-top: 2 * $spacer;
   margin-bottom: 2 * $spacer;
   padding: 1rem;
-  filter: blur(5px);
-  transition: filter 0.3s ease;
+  position: relative;
+
+  .perm-lock {
+    position: absolute; // Position the perm-lock absolutely
+    top: 0; // Align to the top
+    left: 0; // Align to the left
+    margin: 0; // Remove any default margin
+    padding: 0; // Remove any default padding
+    font-size: 1.875em;
+  }
+  
 
   @each $color, $value in $theme-colors {
     &-#{$color} {
       & .permission-heading {
         color: $value;
+        text-align: center;
       }
       background-color: $gray-900;
       border-style: solid;
       border-color: $value;
       border-width: 0 0 0 4px;
     }
-  }
-  &:hover {
-    filter: blur(0);
   }
 }
 

@@ -40,6 +40,8 @@ Add or remove users from the selected organization.
 
 Invite users to join your organization. Specify the user's name and email address and tailor their involvement by adding them to **organizations** and **teams**, optionally assigning predefined roles.
 
-{{< alert type="info" title="Note" >}}
+{{< alert type="permission" title="Note" >}}
+An Organization Admin can assign organization roles to users but provider roles can only be assigned by Provider Admins. For more information, see [Roles](/cloud/security/roles).
+An Organization Admin can assign organization roles to users but provider roles can only be assigned by Provider Admins. For more information, see [Roles](/cloud/security/roles).
 An Organization Admin can assign organization roles to users but provider roles can only be assigned by Provider Admins. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
