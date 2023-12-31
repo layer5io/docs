@@ -297,6 +297,33 @@ a:not([href]):not([class]):hover {
   }
 }
 
+.permission {
+  font-weight: $font-weight-medium;
+  background: $gray-900;
+  color: inherit;
+  border-radius: 0;
+  margin-top: 2 * $spacer;
+  margin-bottom: 2 * $spacer;
+  padding: 1rem;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      & .permission-heading {
+        color: $value;
+      }
+      background-color: $gray-900;
+      border-style: solid;
+      border-color: $value;
+      border-width: 0 0 0 4px;
+    }
+  }
+  &:hover {
+    filter: blur(0);
+  }
+}
+
 // Dashboard
 
 .l5btn {

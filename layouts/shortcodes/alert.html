@@ -1,0 +1,30 @@
+{{ $type := .Get "type" | default "temp" }}
+
+
+{{ if eq $type "permission" }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "danger" }}
+<div class="permission permission-{{ $color }}" role="alert">
+{{ with .Get "title" }}<h4 class="permission-heading">{{ . | safeHTML }}</h4>{{ end }}
+{{ if eq .Page.File.Ext "md" }}
+    {{ .Inner | markdownify }}
+{{ else }}
+    {{ .Inner | htmlUnescape | safeHTML }}
+{{ end }}
+</div>
+
+{{ else }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "primary" }}
+<div class="alert alert-{{ $color }}" role="alert">
+{{ with .Get "title" }}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
+{{ if eq .Page.File.Ext "md" }}
+    {{ .Inner | markdownify }}
+{{ else }}
+    {{ .Inner | htmlUnescape | safeHTML }}
+{{ end }}
+</div>
+
+{{ end }}
