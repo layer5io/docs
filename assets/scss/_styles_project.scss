@@ -88,7 +88,12 @@ a {
   color: $primary;
   text-decoration: none; }
 a:hover {
-  color: $white; }
+
+  color: $white;
+  img{
+    filter: brightness(0) invert(1);
+  }
+}
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
@@ -310,9 +315,7 @@ a:not([href]):not([class]):hover {
   > img {
         width: 2rem; margin-right: .5rem;
   }
-  > img:hover {
-    filter: brightness(0) invert(1);
-  }
+
 }
 
 .dashboard {
