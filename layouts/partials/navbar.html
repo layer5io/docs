@@ -30,7 +30,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Products
+              Solutions
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a
@@ -125,4 +125,9 @@
       </div>
     </div>
   </nav>
+  <script>
+    document.querySelector("#navbarDropdown").addEventListener("click", () => {
+      document.querySelector(".dropdown-menu").classList.toggle("show");
+    });
+  </script>
 </header>
