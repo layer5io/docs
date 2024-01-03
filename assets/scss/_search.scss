@@ -56,6 +56,9 @@
     &.form-control:focus {
       box-shadow: 0 0 0 2px tint-color($primary, 40%);
     }
+    &.form-control:not(:focus) {
+      color: #000;
+    }
   }
 }
 
