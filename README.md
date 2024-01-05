@@ -64,6 +64,8 @@ Use the following Syntax to add a Alert:
   - `type="neutral"`: Alert used to indicate a neutral information.
   - `type="success"`: Alert used to indicate a positive information.
 
+By default, if you don't specify a title `title="Your Title"`, the title will be the same as the type name.
+
 **Note-> Using the wrong type will lead to the use of the default alert i.e. success**
 
 <hr/>
