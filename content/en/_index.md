@@ -13,26 +13,30 @@ description: >
 </div>
 <div>
 <h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/cloud" aria-label="Cloud Docs">
-    <img src="images/logos/5-light-no-trim.svg" alt="Layer5 Cloud Docs Logo" />
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/cloud" aria-label="Cloud Docs"
+onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout="restoreImage('layer5', 'images/logos/5-light-no-trim.svg')">
+    <img id="layer5" src="images/logos/5-light-no-trim.svg" alt="Layer5 Cloud Docs Logo" />
     Cloud Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-  </a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/meshmap" aria-label="MeshMap Docs">
-    <img src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/meshmap" aria-label="MeshMap Docs"
+onmouseover="changeImage('meshmap', 'images/logos/meshmap-light.svg')" onmouseout="restoreImage('meshmap', 'images/logos/meshmap-alt.svg')">
+    <img id="meshmap" src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
     MeshMap Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-  </a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs">
-    <img src="images/logos/meshery-light-icon.svg" alt="Layer5 Meshery Docs Logo" />
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs"
+onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseout="restoreImage('meshery', 'images/logos/meshery-light-icon.svg')">
+    <img id="meshery" src="images/logos/meshery-light-icon.svg" alt="Layer5 Meshery Docs Logo" />
     Meshery Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-  </a>
-  <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://getnighthawk.dev" aria-label="Nighthawk Docs">
-    <img src="images/logos/nighthawk-logo.svg" alt="Layer5 Nighthawk Docs Logo" />
+</a>
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://getnighthawk.dev" aria-label="Nighthawk Docs"
+  onmouseover="changeImage('nighthawk', 'images/logos/nighthawk-light.svg')" onmouseout="restoreImage('nighthawk', 'images/logos/nighthawk-logo.svg')">
+    <img id="nighthawk" src="images/logos/nighthawk-logo.svg" alt="Layer5 Nighthawk Docs Logo" />
     Nighthawk Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
-  </a>
+</a>
 </div>
 
 <div class= "product-section">
@@ -150,3 +154,14 @@ For announcement of latest features etc.
 This is the another section
 {.h1 .text-center}
 {{% /blocks/section %}} -->
+<script>
+function changeImage(imgId, newSrc) {
+    var img = document.getElementById(imgId);
+    img.src = newSrc;
+}
+
+function restoreImage(imgId, originalSrc) {
+    var img = document.getElementById(imgId);
+    img.src = originalSrc;
+}
+</script>
