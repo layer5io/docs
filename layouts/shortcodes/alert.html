@@ -1,0 +1,67 @@
+{{ $type := .Get "type" | default "temp" }}
+
+
+{{ if eq $type "danger" }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "danger" }}
+<div class="alert alert-{{ $color }}" role="alert">
+{{ with .Get "title" | default "Danger" }}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
+{{ if eq .Page.File.Ext "md" }}
+    {{ .Inner | markdownify }}
+{{ else }}
+    {{ .Inner | htmlUnescape | safeHTML }}
+{{ end }}
+</div>
+
+{{ else if eq $type "info" }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  {{ with .Get "title" | default "Info"}}<h4 class="alert-heading" style="color: #3772ff;">{{ . | safeHTML }}</h4>{{ end }}
+  {{ if eq .Page.File.Ext "md" }}
+      {{ .Inner | markdownify }}
+  {{ else }}
+      {{ .Inner | htmlUnescape | safeHTML }}
+  {{ end }}
+</div>
+
+{{ else if eq $type "warning" }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
+  {{ with .Get "title" | default "Warning"}}<h4 class="alert-heading" style="color: #EBC017;">{{ . | safeHTML }}</h4>{{ end }}
+  {{ if eq .Page.File.Ext "md" }}
+      {{ .Inner | markdownify }}
+  {{ else }}
+      {{ .Inner | htmlUnescape | safeHTML }}
+  {{ end }}
+</div>
+
+{{ else if eq $type "note" }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="alert alert-custom" style="border-color: #7A848E;" role="alert">
+  {{ with .Get "title" | default "Note"}}<h4 class="alert-heading" style="color: #7A848E;">{{ . | safeHTML }}</h4>{{ end }}
+  {{ if eq .Page.File.Ext "md" }}
+      {{ .Inner | markdownify }}
+  {{ else }}
+      {{ .Inner | htmlUnescape | safeHTML }}
+  {{ end }}
+</div>
+
+
+{{ else }}
+
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "primary" }}
+<div class="alert alert-{{ $color }}" role="alert">
+{{ with .Get "title" | default "Success"}}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
+{{ if eq .Page.File.Ext "md" }}
+    {{ .Inner | markdownify }}
+{{ else }}
+    {{ .Inner | htmlUnescape | safeHTML }}
+{{ end }}
+</div>
+
+{{ end }}

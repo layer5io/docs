@@ -54,6 +54,20 @@ To display images in a pop-up modal, use the following syntax: `![alt text](/pat
 
 **Note-> For images to show correctly on subpages, always provide the complete image path**
 
+### Adding Alert to the site
+Use the following Syntax to add a Alert:
+`{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}`
+
+  - `type="danger"`: Alert used to indicate something related to security.
+  - `type="info"`: Alert used to write some information.
+  - `type="warning"`: Alert used to indicate a warning that might need attention.
+  - `type="note"`: Alert used to indicate a neutral information.
+  - `type="success"`: Alert used to indicate a positive information.
+
+By default, if you don't specify a title `title="Your Title"`, the title will be the same as the type name.
+
+**Note-> Using the wrong type will lead to the use of the default alert i.e. success**
+
 <hr/>
 
 <a name="contributing"></a><a name="community"></a>

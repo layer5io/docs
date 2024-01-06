@@ -323,16 +323,10 @@ a:not([href]):not([class]):hover {
   color: inherit;
   border-radius: 0;
 
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      & .alert-heading {
-        color: $value;
-      }
-      background-color: $gray-900;
-      border-style: solid;
-      border-color: $value;
-      border-width: 0 0 0 4px;
-    }
+  &.alert-custom {
+    background-color: $gray-900;
+    border-style: solid;
+    border-width: 0 0 0 4px;
   }
 }
 
