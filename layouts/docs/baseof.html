@@ -1,14 +1,17 @@
-<!doctype html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
+<!DOCTYPE html>
+<html
+  itemscope
+  itemtype="http://schema.org/WebPage"
+  lang="{{ .Site.Language.Lang }}"
+  class="no-js"
+>
   <head>
     {{ partial "head.html" . }} {{ partial "favicon.html" . }}
   </head>
   <body
     class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}"
   >
-    <header>
-      {{ partial "navbar.html" . }}
-    </header>
+    <header>{{ partial "navbar.html" . }}</header>
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
