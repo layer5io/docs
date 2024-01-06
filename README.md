@@ -61,7 +61,7 @@ Use the following Syntax to add a Alert:
   - `type="danger"`: Alert used to indicate something related to security.
   - `type="info"`: Alert used to write some information.
   - `type="warning"`: Alert used to indicate a warning that might need attention.
-  - `type="neutral"`: Alert used to indicate a neutral information.
+  - `type="note"`: Alert used to indicate a neutral information.
   - `type="success"`: Alert used to indicate a positive information.
 
 By default, if you don't specify a title `title="Your Title"`, the title will be the same as the type name.
