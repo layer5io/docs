@@ -1,32 +1,139 @@
 <header>
-    <nav class="td-navbar navbar-dark js-navbar-scroll td-navbar-cover navbar-bg-onscroll--fade">
-        <div class="container-fluid flex-column flex-md-row">
-            <a class="navbar-brand" href="/">
-            <span class="navbar-brand__logo navbar-logo">
-                {{ $svg := resources.Get "icons/logo.svg" }}
-                    <img class="footer-logo" src="{{ $svg.Permalink }}" alt="logo"/>
-            </span>
-                <span class="navbar-brand__name"></span></a>
-            <div class="td-navbar-nav-scroll ms-md-auto main-nav-items" id="main_navbar">
-                <ul class="navbar-nav">
-                    <!-- <li class="nav-item nav-external">
+  <nav
+    class="td-navbar navbar-dark js-navbar-scroll td-navbar-cover navbar-bg-onscroll--fade"
+  >
+    <div class="container-fluid flex-column flex-md-row">
+      <a class="navbar-brand" href="/">
+        <span class="navbar-brand__logo navbar-logo">
+          {{ $svg := resources.Get "icons/logo.svg" }}
+          <img class="footer-logo" src="{{ $svg.Permalink }}" alt="logo" />
+        </span>
+        <span class="navbar-brand__name"></span
+      ></a>
+      <div
+        class="td-navbar-nav-scroll ms-md-auto main-nav-items"
+        id="main_navbar"
+      >
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item nav-external">
                         <a class="nav-link nav-link-external" href="https://playground.meshery.io" target="_blank">
                             <span>Playground</span>
                         </a>
                     </li> -->
-                    <li class="nav-item"><a class="nav-link" href="/cloud/"><span>Cloud</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/meshmap/"><span>MeshMap</span></a></li>
-                </ul>
+          <li class="nav-item dropdown" data-bs-theme="dark">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Products
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/cloud-native-management/meshery"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/meshery-light-icon.svg"
+                    alt="Layer5 Meshery Logo"
+                  />
+                </div>
+                <span>Meshery</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/cloud-native-management/meshmap"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/meshmap-alt.svg"
+                    alt="Layer5 MeshMap Logo"
+                  />
+                </div>
+
+                <span>MeshMap</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/cloud-native-management/catalog"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/catalog.svg"
+                    alt="Layer5 Catalog Logo"
+                  />
+                </div>
+
+                <span>Catalog</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/projects/cloud-native-performance"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/smp-light.png"
+                    alt="Layer5 Cloud Native Performance Logo"
+                  />
+                </div>
+
+                <span>Cloud Native Performance</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/projects/nighthawk"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/nighthawk-logo.svg"
+                    alt="Layer5 Night Hawk Logo"
+                  />
+                </div>
+
+                <span>Night Hawk</span></a
+              >
             </div>
-            <div class="d-none d-lg-block main-nav-items">
-                <!-- <div class="td-search">
-                    <div class="td-search__icon"></div>
-                    <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
-                           aria-label="Search this site…" autocomplete="off">
-                    <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
-                        </div> -->
-                        {{ partial "search-input-nav.html" . }}
-            </div>
-        </div>
-    </nav>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cloud/"> Cloud</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/meshmap/"> MeshMap</a>
+          </li>
+          <li class="d-none d-lg-block nav-item">
+            <!-- <div class="td-search">
+                            <div class="td-search__icon"></div>
+                            <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
+                                   aria-label="Search this site…" autocomplete="off">
+                            <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
+                                </div> -->
+            {{ partial "search-input-nav.html" . }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+    document.querySelector("#navbarDropdown").addEventListener("click", () => {
+      document.querySelector(".dropdown-menu").classList.toggle("show");
+    });
+  </script>
 </header>

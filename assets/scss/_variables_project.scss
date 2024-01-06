@@ -5,44 +5,44 @@ $enable-shadows: false;
 
 // Theme colors
 
-$primary: #00B39F;
-$secondary: #00D3A9;
+$primary: #00b39f;
+$secondary: #00d3a9;
 
 $success: #3772ff !default;
 $info: #c0e0de !default;
 $warning: #ed6a5a !default;
 $danger: #ed6a5a;
 $light: #d3f3ee;
-$dark: #1E2117;
-$blonde: #FFF3C5;
-$saffron: #EBC017;
-$lightslategray: #7A848E;
-$casper: #B1B6B8;
+$dark: #121212;
+$blonde: #fff3c5;
+$saffron: #ebc017;
+$lightslategray: #7a848e;
+$casper: #b1b6b8;
 
 // $bg-gradient:#1E2117;
 $code-color: shade-color($secondary, 40%) !default;
-// $body-bg: linear-gradient(250deg, #477e96 0%, #00b39f 35%, rgb(60, 73, 79) 100%); 
-// $bg-gradient-dark: linear-gradient(250deg, #477e96 0%, #00b39f 35%, rgb(60, 73, 79) 100%); 
+// $body-bg: linear-gradient(250deg, #477e96 0%, #00b39f 35%, rgb(60, 73, 79) 100%);
+// $bg-gradient-dark: linear-gradient(250deg, #477e96 0%, #00b39f 35%, rgb(60, 73, 79) 100%);
 
 // Body
-$body-color: #CCCCCC;
+$body-color: #cccccc;
 $body-bg: #010101;
 // $bs-body-bg: $dark;
 // $bs-card-cap-bg: $dark;
 
 // Buttons
-$btn-line-height:3rem;
+$btn-line-height: 3rem;
 
 // Lefthand sidebar with inter-page docs menu
 
-$border-color: rgba($primary, .33);
+$border-color: rgba($primary, 0.33);
 $td-sidebar-tree-root-color: #ccc;
-$td-sidebar-bg-color: rgba($dark, .5);
-$td-sidebar-color: rgba($white, .33);
+$td-sidebar-bg-color: rgba($dark, 0.5);
+$td-sidebar-color: rgba($white, 0.33);
 $td-sidebar-border-color: $border-color;
 
 // Righthand sidebar with intra-page table of contents
-$td-sidebar-toc-bg-color: rgba($dark,.5);
+$td-sidebar-toc-bg-color: rgba($dark, 0.5);
 
 // Background colors for the sections on home page etc. It is a paint by number
 // system, starting at 0, where the number is taken from the shortcode's ordinal
@@ -66,29 +66,33 @@ $google_font_family: "Open+Sans:300,300i,400,400i,700,700i" !default;
 $web-font-path: "https://fonts.googleapis.com/css?family=#{$google_font_family}&display=swap";
 $font-awesome-font-name: "Font Awesome 6 Free" !default;
 
-$td-fonts-serif: "Qanelas Soft", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-qanelas: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$td-fonts-serif: "Qanelas Soft", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+$font-qanelas: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
 
 @if $td-enable-google-fonts {
   $td-fonts-serif: prepend($td-fonts-serif, "#{$google_font_name}");
 }
 
-$font-family-sans-serif: $td-fonts-serif; 
+$font-family-sans-serif: $td-fonts-serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-  "Liberation Mono", "Courier New", monospace !default; 
-$font-family-base: $font-family-sans-serif !default; 
+  "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
 $bs-body-font-family: $td-fonts-serif;
 
 // Font weights
 
-$font-weight-medium: 500 !default; 
+$font-weight-medium: 500 !default;
 $font-weight-body-text: $font-weight-normal !default;
 
 // Heading sizes
 
-$h3-font-size: $font-size-base * 1.5 !default;  
-$h4-font-size: $font-size-base * 1.35 !default; 
-$h5-font-size: $font-size-base * 1.15 !default; 
+$h3-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: $font-size-base * 1.35 !default;
+$h5-font-size: $font-size-base * 1.15 !default;
 
 // Space
 
@@ -97,8 +101,8 @@ $td-block-space-bottom-base: 4 * $spacer !default;
 
 // Pagination
 
-$pagination-color: $gray-600 !default; 
-$pagination-disabled-color: $gray-300 !default; 
+$pagination-color: $gray-600 !default;
+$pagination-disabled-color: $gray-300 !default;
 
 // Navbar
 

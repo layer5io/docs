@@ -8,26 +8,27 @@
     margin: 0px;
   } */
 </style>
-<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css"
+/>
 <script>
-
-  searchKey.addEventListener('mousedown', () =>{
-      event.preventDefault();
-      focusSearchBar();
+  searchKey.addEventListener("mousedown", () => {
+    event.preventDefault();
+    focusSearchBar();
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-
     var searchKey = document.getElementById("searchKey");
     if (searchKey) {
       searchBar.focus();
     }
-    var searchElement = document.querySelector(".td-search-input");
+    var searchElement = document.querySelector(".td-search__input");
     if (searchElement) {
       searchElement.appendChild(searchKey);
     }
 
-    var inputElement = document.querySelector(".td-search-input");
+    var inputElement = document.querySelector(".td-search__input");
     if (inputElement) {
       inputElement.placeholder = "Search";
     }
