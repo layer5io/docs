@@ -138,9 +138,10 @@
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;
-    window.location.pathname.includes("/cloud/")
-      ? (cur = document.querySelector("#cloud"))
-      : (cur = document.querySelector("#meshmap"));
+    if (window.location.pathname.includes("/cloud/"))
+      cur = document.querySelector("#cloud");
+    else if (window.location.pathname.includes("/meshmap/"))
+      cur = document.querySelector("#meshmap");
     cur.classList.add("current");
     cur.href = "javascript: void(0)";
   </script>
