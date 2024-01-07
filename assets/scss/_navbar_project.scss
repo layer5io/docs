@@ -6,6 +6,9 @@
 .nav-item {
   margin-right: 0.75rem;
 
+  .current {
+    color: $primary !important;
+  }
   #navbarDropdown {
     color: $primary;
     &:hover {
