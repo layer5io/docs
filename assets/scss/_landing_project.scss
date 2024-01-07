@@ -62,7 +62,7 @@
   font-weight: 500;
   color: $primary;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  gap: 20px;
 } 
 .playground-section {
   &.playground-logo {
@@ -76,6 +76,7 @@
   justify-content: top;
   text-align: left;
   align-content: space-between;
+  gap: 20px;
 }
 
 .catalog-section {
@@ -90,6 +91,7 @@
   justify-content: top;
   text-align: left;
   align-content: space-between;
+  gap: 20px;
 }
 .handbook-section {
   display: flex;
@@ -106,8 +108,8 @@
   }
 }
 .handbook-image{
-  padding-top:20px;
-  width: 100%;
+  padding-top:40px;
+  width: 110%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -124,7 +126,7 @@
   
 }
 .handbook-text{
-  padding:20px;
+  padding-top:20px;
   display: flex;
   line-height: 30px;
   width: 90%;
