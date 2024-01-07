@@ -113,10 +113,10 @@
             <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cloud/"> Cloud</a>
+            <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/meshmap/"> MeshMap</a>
+            <a id="meshmap" class="nav-link" href="/meshmap/"> MeshMap</a>
           </li>
           <li class="d-none d-lg-block nav-item">
             <!-- <div class="td-search">
@@ -135,5 +135,19 @@
     document.querySelector("#navbarDropdown").addEventListener("click", () => {
       document.querySelector(".dropdown-menu").classList.toggle("show");
     });
+    // console.log(window.location.pathname == "/cloud/");
+    // check if the current page ic cloud
+    let cur;
+    switch (window.location.pathname) {
+      case "/cloud/":
+        cur = document.querySelector("#cloud");
+        break;
+
+      case "/meshmap/":
+        cur = document.querySelector("#meshmap");
+        break;
+    }
+    cur.classList.add("current");
+    cur.href = "javascript: void(0)";
   </script>
 </header>
