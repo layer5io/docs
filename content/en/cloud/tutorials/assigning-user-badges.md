@@ -8,7 +8,9 @@ date: 2023-10-30
 
 Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.
 
-See all "Achievement" and all "Project" badges in the [Badge Gallery](https://badges.layer5.io).
+{{< alert type="info" >}}
+See all Achievement and all Project badges in the [Badge Gallery](https://badges.layer5.io).
+{{< /alert >}}
 
 <!-- 
 Pending Leaderboard completion
@@ -22,9 +24,19 @@ These badges will be prominently displayed on your Layer5 community profile, vis
 
 Project Badges are assigned by the admin to the user when a user contributes to a particular project. Achievement Badges are the badges that are assigned automatically when a user completes a task like sharing a design, creating a design for the first time, etc.
 
+{{< alert type="info" >}}
+See the **Recognition** section of the [Layer5 Community Handbook](https://layer5.io/community/handbook/recognition) for details of when and how each badge is awarded.
+{{< /alert >}}
+
 
 ### How to Embed Badges
 To share your badges on other social profiles, utilize the provided embedded code and direct share functionality. Access your badges from the Layer5 Cloud profile badges section, and then use it to post your achievements on social media platforms seamlessly. This enables you to showcase your Layer5 contributions and milestones to a wider audience.
+##### Follow these steps to display your badge:
+
+1. Visit your [Layer5 Cloud](https://meshery.layer5.io/) Profile to see the badges
+2. Click on the badge, which you wanted to display
+3. Copy the html or the markdown code by clicking the Embed Code icon
+4. Paste the code in your site
 
 {{< figure src="/cloud/tutorials/images/embedding-badges-modal.svg" alt="Embedding-badges-modal">}}
 
