@@ -132,7 +132,9 @@
     </div>
   </nav>
   <script>
-    document.querySelector("#navbarDropdown").addEventListener("click", () => {
+    let dropdown = document.querySelector("#navbarDropdown");
+    dropdown.addEventListener("click", function () {
+      dropdown.classList.toggle("current");
       document.querySelector(".dropdown-menu").classList.toggle("show");
     });
     // console.log(window.location.pathname == "/cloud/");
