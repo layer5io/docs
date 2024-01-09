@@ -1,24 +1,13 @@
 // Search
 
 .td-search {
-  width: auto;
-  padding: 0;
-  border-radius: 8px;
-  border: 1px solid $white;
-  background: linear-gradient(
-    96deg,
-    rgba(217, 224, 226, 0.7) 3.53%,
-    rgba(217, 224, 226, 0) 398.97%
-  );
-  display: flex;
-  align-content: center;
-  // background-color: #EBC017;
+  background: transparent;
   position: relative;
+  width: 100%;
 
   // Search icon
-  .td-search__icon {
+  &__icon {
     // Vertically center the content.
-    color: #fff;
     display: flex;
     align-items: center;
     height: 100%;
@@ -30,12 +19,16 @@
     // Click-through to the underlying input.
     pointer-events: none;
 
-    &:not(:focus) {
-      color: #000;
-    }
     &:before {
       @extend .fa;
       content: fa-content($fa-var-search);
+    }
+
+    // Styling adjustments for the navbar
+    @at-root {
+      .td-navbar & {
+        color: $navbar-dark-color;
+      }
     }
   }
 
@@ -43,22 +36,43 @@
   &__input {
     width: 100%;
     text-indent: 1.25em;
-    line-height: 2rem;
-    border-radius: 8px;
 
     &:not(:focus) {
       background: transparent;
-      &::placeholder {
-        color: #000;
-      }
     }
 
     &.form-control:focus {
+      border-color: tint-color($primary, 95%);
       box-shadow: 0 0 0 2px tint-color($primary, 40%);
+      color: inherit;
     }
-    &.form-control:not(:focus) {
-      color: #000;
+
+    // Styling adjustments for the navbar
+    @at-root {
+      .td-navbar & {
+        border: none;
+        color: $navbar-dark-color;
+
+        @include placeholder {
+          color: $navbar-dark-color;
+        }
+      }
     }
+  }
+
+  // Hide icon on focus
+  &:focus-within {
+    .td-search__icon {
+      display: none;
+    }
+
+    .td-search-input {
+      text-indent: 0px;
+    }
+  }
+
+  &:not(:focus-within) {
+    color: $input-placeholder-color;
   }
 }
 
@@ -108,5 +122,39 @@
 }
 
 .popover-body {
-  background-color: #2e2e31;
+  background-color:#2e2e31;
+}
+
+// Global Navigation Bar
+.td-navbar{
+  min-height:6rem;
+  background-color: $body-bg !important;
+  .navbar-brand  {
+    margin: 1.25rem;
+  }
+  .td-search {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    // background-color: #EBC017;
+    background-color:#2e2e31;
+    border-radius: 1rem; 
+
+
+      .td-search__input {
+        width: 100%;
+        text-indent: 1.25em;
+        border-radius: 1rem; 
+      }
+        .td-search__input:not(:focus) {
+          background: transparent;
+          border-radius: 1rem;  }
+        .td-search__input.form-control:focus {
+          color: inherit; }
+    }
+    .td-search__input.form-control:focus {
+     
+      // background-color: #EBC017;
+    }    
+  
 }
