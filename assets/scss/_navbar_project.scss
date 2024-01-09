@@ -9,12 +9,6 @@
   .current {
     color: $primary !important;
   }
-  #navbarDropdown {
-    color: $primary;
-    &:hover {
-      color: $secondary;
-    }
-  }
 
   .dropdown-menu {
     padding: 0;
