@@ -109,14 +109,14 @@
             </div>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
+          </li> -->
+          <li class="nav-item">
+            <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cloud/"> Cloud</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/meshmap/"> MeshMap</a>
+            <a id="meshmap" class="nav-link" href="/meshmap/"> MeshMap</a>
           </li>
           <li class="d-none d-lg-block nav-item">
             <!-- <div class="td-search">
@@ -132,8 +132,19 @@
     </div>
   </nav>
   <script>
-    document.querySelector("#navbarDropdown").addEventListener("click", () => {
+    let dropdown = document.querySelector("#navbarDropdown");
+    dropdown.addEventListener("click", function () {
+      dropdown.classList.toggle("current");
       document.querySelector(".dropdown-menu").classList.toggle("show");
     });
+    // console.log(window.location.pathname == "/cloud/");
+    // check if the current page ic cloud
+    let cur;
+    if (window.location.pathname.includes("/cloud/"))
+      cur = document.querySelector("#cloud");
+    else if (window.location.pathname.includes("/meshmap/"))
+      cur = document.querySelector("#meshmap");
+    cur.classList.add("current");
+    cur.href = "javascript: void(0)";
   </script>
 </header>
