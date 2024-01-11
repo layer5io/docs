@@ -22,4 +22,6 @@ Below the top-level organization, you can add as many teams as you want - at the
 
 Learn more about the [organizational structure](/cloud/identity).
 
-_Note: If you are the current team owner, you can’t remove yourself from the team until you transfer ownership to another team administrator._
+{{< alert type="info" title="Note">}}
+If you are the current team owner, you can’t remove yourself from the team until you transfer ownership to another team administrator.
+{{< /alert >}}
