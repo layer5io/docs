@@ -20,8 +20,8 @@ onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout=
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/meshmap" aria-label="MeshMap Docs"
-onmouseover="changeImage('meshmap', 'images/logos/meshmap-light.svg')" onmouseout="restoreImage('meshmap', 'images/logos/meshmap-alt.svg')">
-    <img id="meshmap" src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
+onmouseover="changeImage('meshmapp', 'images/logos/meshmap-light.svg')" onmouseout="restoreImage('meshmapp', 'images/logos/meshmap-alt.svg')">
+    <img id="meshmapp" src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
     MeshMap Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
