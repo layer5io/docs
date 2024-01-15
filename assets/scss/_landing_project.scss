@@ -1,7 +1,14 @@
+.wrapper {
+  box-sizing: border-box;
+}
 .product-section {
   display: grid;
+  //justify-content: space-between;
   gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
+  //grid-template-columns: 1fr 1fr 1fr;
+  //grid-template-columns: repeat(2, 1fr);
+  //grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, 1fr);
   a {
     color: $white;
   }
@@ -12,6 +19,29 @@
     grid-template-columns: 1fr;
   }
 }
+// .box1, .box2 {
+//   grid-row: span 1;
+// }
+
+// .box3 {
+//   grid-column: span 2;
+//   grid-row: span 1;
+// }
+
+// .box4 {
+//   grid-column: span 2;
+//   grid-row: span 2;
+// }
+
+.box3 {
+  grid-row: span 2;
+}
+
+.box4 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
 .grid-card {
   border-radius: 1rem;
   border: 2px solid #515151;
@@ -30,10 +60,10 @@
 .product-head {
   font-size: 1.5rem;
   font-weight: 500;
-  color: $white;
+  color: $primary;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}  
+  gap: 20px;
+} 
 .playground-section {
   &.playground-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/meshery-light-icon.svg");
@@ -46,6 +76,7 @@
   justify-content: top;
   text-align: left;
   align-content: space-between;
+  gap: 20px;
 }
 
 .catalog-section {
@@ -60,6 +91,7 @@
   justify-content: top;
   text-align: left;
   align-content: space-between;
+  gap: 20px;
 }
 .handbook-section {
   display: flex;
@@ -76,7 +108,8 @@
   }
 }
 .handbook-image{
-  width: 100%;
+  padding-top:40px;
+  width: 110%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -86,14 +119,16 @@
 
   }
   img{
-    box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
-    border-radius: 8px;
+    //box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
+    border-radius: 20px;
     width: 100%;
   }
   
 }
 .handbook-text{
+  padding-top:20px;
   display: flex;
+  line-height: 30px;
   width: 90%;
   flex-direction: column;
   gap: 20px;
@@ -109,7 +144,7 @@
   img {
     box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
     
-    border-radius: 8px;
+    border-radius: 20px;
     height: 18rem;
     min-height: 70%;
    
