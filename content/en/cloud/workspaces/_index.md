@@ -42,7 +42,9 @@ After creating a Workspace, of your next steps is to resource that Workspace. Li
 - One or more environments can be assigned to a workspace.
 - Same environment can be assigned to multiple workspaces.
 
-See [Environments](https://docs.meshery.io/concepts/environments) section for more information.
+{{< alert type="info" >}}
+Assign any number of Environments to one or more Workspaces. See [Environments](https://docs.meshery.io/concepts/environments) section for more information.
+{{< /alert >}}
 
 ### Designs
 
@@ -51,14 +53,18 @@ See [Environments](https://docs.meshery.io/concepts/environments) section for mo
 - One ore more designs can be assigned to a workspace.
 - Same design can be assigned to multiple workspaces.
 
-See [Meshery Designs](https://docs.meshery.io/concepts/designs) section for more information.
+{{< alert type="info" >}}
+Designs belong to only one Workspace at any given time. See [Meshery Designs](https://docs.meshery.io/concepts/designs) section for more information.
+{{< /alert >}}
 
 ### Teams 
 - A Workspace is closely associated with Teams in Meshery. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
 - One ore more teams can be assigned to a workspace.
 - Same team can be assigned to multiple workspaces.
 
-See [Teams](../identity/teams) section for more information.
+{{< alert type="info" >}}
+Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections, See [Teams](../identity/teams) 
+{{< /alert >}}
 
 ### Connections
 
@@ -66,7 +72,9 @@ See [Teams](../identity/teams) section for more information.
 - Connections can be assigned to one or more environments.
 - Same connection can be assigned to multiple environments.
 
+{{< alert type="info" >}}
 See [Connections](https://docs.meshery.io/concepts/connections) section for more information.
+{{< /alert >}}
 
 ## Best Practices
 
