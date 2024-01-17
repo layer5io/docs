@@ -15,7 +15,7 @@ Step 1: Find the design you want to share
 
 **Share a single design**
 
-In your browser, go to [https://meshery.layer5.io](Layer5 Cloud).
+In your browser, go to [Layer5 Cloud](https://meshery.layer5.io).
 1. Click the design you want to share.
 2. Click Share.
 3. Enter the email addresses of the individual(s) you want to share with.
