@@ -5,8 +5,8 @@ weight: 20
 categories: [Identity]
 tags: [users]
 ---
-It's a collection of user-configurable preferences designed to enable users to control the types of emails they receive from Layer5 Cloud.
-You can change which email notifications you receive in Layer5 Cloud
+
+Layer5 Cloud offers a range of user-configurable preferences, allowing you to control the types of emails you receive.
 
 <img src="/cloud/identity/users/notification-preferences.gif" alt="Add User" />
 
@@ -25,4 +25,4 @@ You can change which email notifications you receive in Layer5 Cloud
         - Weekly summary
 4. Click **Save Preferences**
 
-You have the option to stop receiving all email notifications by toggling the button located on the right side of the Notifications 
+You can opt out of all email notifications by toggling the button located on the right side of the Notifications.
