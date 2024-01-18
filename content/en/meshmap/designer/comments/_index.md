@@ -62,7 +62,7 @@ After resolving a comment thread, you can access the comment history to review p
 
 ### Enable Email Notifications
 
-Customize your notification preferences to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
+Customize your [notification preferences](https://docs.layer5.io/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
 
 ## Best Practices for Effective Design Reviews
 
