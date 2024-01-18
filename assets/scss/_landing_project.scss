@@ -127,12 +127,12 @@
 }
 
 .forum-image {
-  padding: 1.25rem 1.5rem;
+  padding: 3.85rem 0 0 1.5rem;
   img {
     box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
     border-radius: 20px;
-    height: auto;
-    width: 100%;
+    height: 25.5rem;
+    width: auto;
     object-fit: contain;
   }
 }
@@ -154,6 +154,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding-right: 0;
+  padding-bottom: 0;
+  max-height: 620px;
+  overflow: hidden;
 }
 
 .hidden {
