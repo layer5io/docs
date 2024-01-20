@@ -40,6 +40,10 @@
 .box4 {
   grid-column: span 2;
   grid-row: span 1;
+  
+  @media (max-width:768px){
+    grid-column: auto;
+  }
 }
 
 .grid-card {
@@ -147,6 +151,9 @@
     border-radius: 20px;
     height: 18rem;
     min-height: 70%;
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
    
   }
   @media (max-width: 1000px) {
