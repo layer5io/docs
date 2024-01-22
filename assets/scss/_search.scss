@@ -130,7 +130,9 @@
   min-height: 6rem;
   background-color: $body-bg !important;
 
-  @media (max-width: 991.98px) {
+  .td-navbar-nav-scroll {
+      max-width: fit-content;
+    }
     .td-navbar-nav-scroll {
       max-width: fit-content;
     }
