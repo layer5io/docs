@@ -8,7 +8,7 @@ weight: 3
 
 ## What sessions are
 
-A session is a period of time in which a user is authenticated to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of inactivity, which defaults to 72 hours but can be configured to any value between 15 minutes and 72 hours.
+A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.
 
 Layer5 Cloud sessions use [OAuth 2.0](https://oauth.net/2/) for authentication. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.
 
