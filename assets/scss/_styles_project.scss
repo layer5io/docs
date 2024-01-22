@@ -377,6 +377,7 @@ a:not([href]):not([class]):hover {
   background-clip: text, text;
   @media (max-width:768px){
     font-size: 4rem;
+    text-align: center;
   }
   
 }
@@ -399,8 +400,10 @@ a:not([href]):not([class]):hover {
   -webkit-background-clip: padding-box;
 
   @media (max-width: 768px) {
-    top: -6rem;
-    right: 13rem;
+    width: 129.14rem;
+    top: 7rem;
+    right: -70rem;
+    position: fixed;
   }
 }
 
