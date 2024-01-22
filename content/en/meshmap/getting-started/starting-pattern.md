@@ -2,7 +2,7 @@
 title: Starting from a pattern
 date: 2023-10-05
 description: >
-  A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  Meshery patterns are a collection of curated, reusable solutions to the most common problems in cloud and cloud native infrastructure management.
 weight: 3
 categories: [Designer]
 tags: [designs]
