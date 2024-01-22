@@ -1,8 +1,8 @@
 ---
-title: Managing User Permissions
+title: Default User Permissions
 description: >
   Complete list of default permissions granted to all users.
-date: 2023-10-30
+date: 2024-01-21
 weight: 5
 categories: [Identity]
 tags: [users]
@@ -26,5 +26,7 @@ tags: [users]
 | Assign roles to team members                                    | ❌         |
 | Assign keys and keychains to the team members                   | ❌         |
 
+{{< alert title="*Organization Owner" type="warning" >}}
+_Permissions marked with * apply only if you are the owner of the organization._{{< /alert >}}
 
-_The default permissions can be adjusted through granular permissions using [keys](/cloud/security/keys/) and [keychains](/cloud/security/keychains/), note that certain permissions marked with * are only allowed if you're the organization owner._
+{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains](/cloud/security/keychains/) and [roles](/cloud/security/roles).{{< /alert >}}
