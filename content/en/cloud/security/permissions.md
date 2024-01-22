@@ -1,16 +1,17 @@
 ---
-title: Permissions
+title: Provider Administrator Role
 description: >
   A short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
-date: 2023-10-30
+date: 2024-01-24
 # weight: 5
 categories: [Security]
 tags: [permissions]
 draft: true
 ---
 
+<img src="/cloud/identity/users/notification-preferences.gif" alt="Add User" />
 
-![provider](images/role-provider-admin.svg#float-left "image-center-no-shadow")
+![provider](/cloud/security/images/role-provider-admin.svg#float-left "image-center-no-shadow")
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
