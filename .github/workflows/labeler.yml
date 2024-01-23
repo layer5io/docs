@@ -2,8 +2,6 @@ name: "Custom Labeler"
 
 on:
   pull_request_target:
-    paths:
-      - 'content/en/meshmap/**/*'
 
 jobs:
   labeler:
@@ -12,6 +10,9 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
+    - name: Check if workflow is triggered
+      run: echo "Workflow is triggered!"
+
     - uses: actions/labeler@v5
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
