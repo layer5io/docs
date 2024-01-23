@@ -24,7 +24,7 @@ jobs:
       
     - name: Dump keys from the spreadsheet
       run: |
-        curl -L "${{ env.spreadsheet_uri }}" -o "./keys.csv";      
+        curl -L "${{ inputs.spreadsheet_uri }}" -o "./keys.csv";      
     - name: Create permissions folder
       run: |
         [ ! -d "./assets/csv/permissions" ] && mkdir -p "./assets/csv/permissions";
