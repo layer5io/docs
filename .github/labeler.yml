@@ -1,0 +1,6 @@
+# .github/labeler.yml
+labels:
+  - name: component/cloud-docs
+    any:
+      - changed-files:
+          - any-glob-to-any-file: 'content/en/meshmap/**/*'
