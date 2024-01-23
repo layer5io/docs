@@ -2,8 +2,9 @@
 title: Sessions
 description: >
   User sessions are created each time a user successfully authenticates.
-date: 2024-01-24
 weight: 3
+categories: [Security]
+tags: [sessions, permissions]
 ---
 
 ## What sessions are
