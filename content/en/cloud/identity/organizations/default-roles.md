@@ -1,18 +1,14 @@
 ---
-title: Organizations
+title: Default Roles
 description: >
-  Organization is subdivided into two roles: Organization Administrator and Organization Billing Manager.
-date: 2023-10-30
+  By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
+date: 2024-01-21
 weight: 3
 categories: [Identity]
 tags: [orgs]
 ---
-
-## Organization Administrator and Organization Billing Manager
-
-
 {{< cardpane >}}
-{{% card header="Organization Administrator and Organization Billing Manager" %}}
+{{% card header="Default Organization Roles" %}}
 <img src="/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg" link="images/organization-administrator-and-organization-billing-manager.svg"  width="100%" alt="Organization Administrator and Organization Billing Manager " />
 {{% /card %}}
 {{< /cardpane >}}
@@ -47,7 +43,9 @@ tags: [orgs]
 - Check [Organization Permissions](cloud/identity/organizations/org-permissions/)
 
 {{% /card %}}
+{{< /cardpane >}}
 
+{{< cardpane >}}
 {{% card header="## Organization Billing Managers" %}}
 
 **What is the purpose of this role?**
