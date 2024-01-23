@@ -23,3 +23,4 @@ When creating a new design by default it's visibility level will be set to __pub
 
 {{< alert title="Google Docs Analogy" >}}Google Docs are a useful analogy for understanding Meshery designs. In many ways a Meshery design is like a single Google Doc in that they are collaboratively authored, versioned, permissioned and can move from workspace to workspace. Workspaces, a shared collection of designs, can be likened to a Google Drive, a shared collection of files.{{< /alert >}}
 
+making changes ot test
