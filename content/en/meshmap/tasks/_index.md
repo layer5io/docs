@@ -1,7 +1,6 @@
 ---
 title: Core Tasks
 description: Navigate your way around MeshMap with these common tasks.
-date: 2023-10-30
 weight: 6
 ---
 

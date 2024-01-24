@@ -2,7 +2,6 @@
 title: Publishing to Catalog
 description: >
   Learn to Publish to Catalog
-date: 2023-10-30
 weight: 4
 ---
 

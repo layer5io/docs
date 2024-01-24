@@ -2,7 +2,6 @@
 title: Default User Permissions
 description: >
   Complete list of default permissions granted to all users.
-date: 2024-01-21
 weight: 5
 categories: [Identity]
 tags: [users]

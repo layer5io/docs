@@ -2,7 +2,6 @@
 title: Default Team Permissions
 description: >
   Complete list of default permissions granted to Team Admin and Team Manager roles.
-date: 2024-01-21
 weight: 4
 categories: [Identity]
 tags: [teams]

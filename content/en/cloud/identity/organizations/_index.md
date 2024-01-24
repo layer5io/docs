@@ -2,7 +2,6 @@
 title: Organizations
 description: >
   Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.
-date: 2024-01-21
 categories: [Identity]
 tags: [orgs]
 ---

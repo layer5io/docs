@@ -2,7 +2,6 @@
 title: MeshMap Snapshots
 description: >
   Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.
-date: 2023-10-30
 category: GitOps
 weight: 4
 ---
