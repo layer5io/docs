@@ -1,8 +1,7 @@
 ---
 title: Keychains
 description: Keychains are a collection of keys
-date: 2023-10-30
-# weight: 4
+weight: 2
 categories: [Security]
 tags: [keychains, permissions]
 ---

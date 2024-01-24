@@ -1,26 +1,20 @@
 ---
-title: Teams
+title: Default Roles
 description: >
-  Teams is subdivided into two roles: Team Admins and Team Managers.
-date: 2023-10-30
-weight: 5
+  By default, Organizations have two roles available: Team Admins and Team Managers.
+weight: 3
 categories: [Identity]
 tags: [teams]
 ---
 
-## Team Admins and Team Managers
-
-
 {{< cardpane >}}
-{{% card header="Team Admins and Team Managers" %}}
+{{% card header="Default Team Roles" %}}
 <img src="/cloud/identity/images/team-admins-and-team-managers.svg" link="images/team-admins-and-team-managers.svg"  width="100%" alt="Team Admin and Team managers" />
 {{% /card %}}
 {{< /cardpane >}}
 
-## Team Admins and Team Managers
-
 {{< cardpane >}}
-{{% card header="Team Administrator" %}}
+{{% card header="## Team Administrator" %}}
 
 **What is the purpose of this role?**
 
@@ -48,7 +42,9 @@ tags: [teams]
 - Check [Team Permissions](/cloud/identity/teams/team-permissions/)
 
 {{% /card %}}
+{{< /cardpane >}}
 
+{{< cardpane >}}
 {{% card header="## Team Manager" %}}
 
 **What is the purpose of this role?**

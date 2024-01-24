@@ -2,7 +2,6 @@
 title: Keyboard Shortcuts
 description: |
   Learn the keyboard shortcuts for Meshmap to enhance your designing experience.
-date: 2023-11-12
 ---
 <!-- set of custom keyboard button classes -->
 <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
