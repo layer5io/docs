@@ -1,6 +1,5 @@
 ---
 title: Creating Relationships
-date: 2023-10-05
 description: >
   Relationships identify and facilitate genealogy between Components.
 weight: 4

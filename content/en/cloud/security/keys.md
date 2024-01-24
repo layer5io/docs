@@ -1,8 +1,7 @@
 ---
 title: Keys
 description: Keys are the atomic unit of access control
-date: 2023-10-30
-# weight: 3
+weight: 2
 categories: [Security]
 tags: [keys, permissions]
 ---

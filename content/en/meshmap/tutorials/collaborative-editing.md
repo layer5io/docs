@@ -2,7 +2,6 @@
 title: Collaborative Editing
 description: >
   Learn about Collaborative Editing
-date: 2023-10-30
 weight: 5
 categories: [Designer]
 ---
