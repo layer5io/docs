@@ -42,7 +42,7 @@ You can initiate a comment thread by just adding a comment. Your comment may be 
 
 ### Utilize Mentions
 
-Easily draw the attention of relevant team members by tagging them in your comment. To activate this, type @ in the comment box and a list of your team members will appear then you can select who you want to mention. This ensures that the right people are notified and can contribute to the discussion.
+Easily draw the attention of relevant team members by tagging them in your comment. To activate this, type <code style="color:#00b39f">@</code> in the comment box and a list of your team members will appear then you can select who you want to mention. This ensures that the right people are notified and can contribute to the discussion.
 
 ### Comment on Specific Elements
 
