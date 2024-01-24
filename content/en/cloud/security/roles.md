@@ -3,7 +3,6 @@ title: Roles
 description: >
   Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions. 
 weight: 2
-date: 2023-10-30
 categories: [Security]
 tags: [roles, permissions]
 ---
