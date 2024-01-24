@@ -1,9 +1,6 @@
-name: "Custom Labeler"
-
+name: "Pull Request Labeler"
 on:
-  pull_request_target:
-    paths:
-      - 'content/en/meshmap/**/*'
+- pull_request_target
 
 jobs:
   labeler:
@@ -13,6 +10,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@v5
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        configuration-path: '.github/labeler.yml'
