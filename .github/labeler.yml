@@ -1,6 +1,5 @@
-# .github/labeler.yml
-labels:
-  - name: component/cloud-docs
-    any:
-      - changed-files:
-          - any-glob-to-any-file: 'content/en/meshmap/**/*'
+
+component/cloud-docs:
+  - label: bug
+    paths:
+      - "content/en/meshmap/**/*"
