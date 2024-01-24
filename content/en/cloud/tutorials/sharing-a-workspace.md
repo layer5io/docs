@@ -2,7 +2,6 @@
 title: Sharing a Workspace
 description: >
   Learn how to control access to workspaces and their resources.
-date: 2023-10-30
 weight: 5
 ---
 ## Share designs from Workspaces

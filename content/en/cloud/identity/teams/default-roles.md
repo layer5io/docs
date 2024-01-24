@@ -2,7 +2,6 @@
 title: Default Roles
 description: >
   By default, Organizations have two roles available: Team Admins and Team Managers.
-date: 2024-01-21
 weight: 3
 categories: [Identity]
 tags: [teams]
