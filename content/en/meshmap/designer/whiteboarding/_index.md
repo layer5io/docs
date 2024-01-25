@@ -1,6 +1,6 @@
 ---
 title: Whiteboarding
-description: Whiteboarding and Freestyle Drawing inside meshmap
+description: Whiteboarding and Freestyle Drawing inside MeshMap
 weight: 4
 categories: [Designer]
 tags: [designs]
@@ -8,67 +8,57 @@ tags: [designs]
 # https://github.com/layer5labs/meshery-extensions/tree/master/meshmap/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-### Overview
+# Overview
 
 ![Shapes Introduction](./overview.png)
 
-The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Meshmap.
-This expansion augments the tool's functionality with a suite of annotation and visualization tools,
-allowing users to draw, annotate, and collaborate in real-time on their cloud native designs.
+The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Meshmap. This expansion augments the tool's functionality with a suite of annotation and visualization tools, allowing users to draw, annotate, and collaborate in real-time on their cloud native designs.
 
-### Key Functionality
+# Key Functionality
 
 1. **Drawing Tools Integration**
-
    - Incorporates a comprehensive set of drawing tools resembling popular whiteboard applications.
    - Enables users to draw shapes,group components , annotate, and highlight specific elements within the infrastructure design canvas.
-
 2. **Real-time Collaboration**
-
    - Facilitates simultaneous collaboration among multiple users within the tool.
    - Supports live editing and instant visualization of changes made by collaborators.
-
 3. **Non-Invasive Annotations**
    - Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.
 
-### Enabling the Whiteboarding Beta Feature
+# Enable the Whiteboarding Beta Feature
 
-#### Step 1: Accessing Preferences
+### Step 1: Accessing Preferences
 
-1. **Navigate to Canvas Preferences**
-
-#### Step 2: Enabling Whiteboard Beta
-
+1. Navigate to canvas preferences and enable "Whiteboard Beta"
 ![Canvas Preferences](./canvas-preferences.png)
+1. **Toggle Whiteboard Feature**
+   1. Inside the 'Preferences' menu, find the section related to 'Canvas Settings' or 'Features'.
+   1. Look for the option labeled 'Whiteboard' or similar.
+1. **Activate the Whiteboard**
+   1. Toggle the switch or checkbox next to 'Whiteboard' to enable this feature.
 
-2. **Toggle Whiteboard Feature**
+### Step 2: Confirmation and Access
 
-   - Inside the 'Preferences' menu, find the section related to 'Canvas Settings' or 'Features'.
-   - Look for the option labeled 'Whiteboard' or similar.
+2. **Accessing Whiteboard**
+   1. Once enabled, exit the Preferences menu.
+   1. Look for a new bottom dock which houses shapes , annotations and other whichboarding tools .
 
-3. **Activate the Whiteboard**
-   - Toggle the switch or checkbox next to 'Whiteboard' to enable this feature.
+### Step 3: Utilizing Whiteboard Tools
 
-#### Step 3: Confirmation and Access
+3. **Explore Drawing Tools**
+   1. Access the newly enabled whiteboard tools within the canvas interface.
+   1. Experiment with drawing, annotation, and collaboration functionalities available in the whiteboard toolbar.
 
-4. **Accessing Whiteboard**
-   - Once enabled, exit the Preferences menu.
-   - Look for a new bottom dock which houses shapes , annotations and other whichboarding tools .
+4. **Collaborative Usage**
+   1. Share access with collaborators or team members to engage in real-time collaborative drawing sessions.
 
-#### Step 4: Utilizing Whiteboard Tools
-
-6. **Explore Drawing Tools**
-
-   - Access the newly enabled whiteboard tools within the canvas interface.
-   - Experiment with drawing, annotation, and collaboration functionalities available in the whiteboard toolbar.
-
-7. **Collaborative Usage**
-   - Share access with collaborators or team members to engage in real-time collaborative drawing sessions.
-
-#### Note:
-
-- The 'Whiteboard (Beta)' feature might undergo updates or improvements during its beta phase.
+{{% alert title="Note" %}}
+- The Whiteboard (Beta) feature might undergo updates or improvements during its beta phase.
 - Provide feedback or report issues encountered while using the whiteboard to contribute to its refinement.
+{{% /alert %}}
+
+
+
 
 ### Feature Highlights
 
@@ -120,12 +110,10 @@ The customization tools apply uniformly to all annotation types. Changes made wi
 ### Benefits
 
 1. **Enhanced Communication**
-
    - Facilitates clearer communication by allowing visual annotations on specific design components.
    - Reduces ambiguity and ensures better understanding of design intentions.
 
 2. **Efficient Collaborative Workflows**
-
    - Real-time collaboration accelerates feedback loops, enhancing team productivity.
    - Enables instant sharing of ideas and design iterations among team members.
 
@@ -137,9 +125,8 @@ The customization tools apply uniformly to all annotation types. Changes made wi
 
 - **Team Collaboration:** Multiple users collaborating on infrastructure designs, adding annotations and insights simultaneously.
 - **Educational Context:** Instructors and students using the tool for visualizing concepts or workflows in remote learning environments.
-
 - **Architecture and Healthcare Planning:** Professionals in architecture or healthcare visualizing and annotating designs collaboratively.
 
 ### Conclusion
 
-The Whiteboarding and Freestyle Drawing feature enriches the Visual Infrastructure Designer tool by seamlessly integrating drawing capabilities without compromising the integrity of the underlying infrastructure. Its versatility in enabling real-time collaboration, preserving data integrity, and fostering a safe creative space positions it as a powerful asset for effective communication, efficient collaboration, and innovative ideation within diverse professional settings.
+The whiteboarding and freestyle drawing feature enriches MeshMap's visual infrastructure designer tool by seamlessly integrating drawing capabilities without compromising the integrity of the underlying infrastructure. Its versatility in enabling real-time collaboration, preserving data integrity, and fostering a safe creative space positions it as a powerful asset for effective communication, efficient collaboration, and innovative ideation within diverse professional settings.

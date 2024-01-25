@@ -2,7 +2,6 @@
 title: Teams
 description: >
   Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
-date: 2023-10-30
 categories: [Identity]
 tags: [teams]
 ---

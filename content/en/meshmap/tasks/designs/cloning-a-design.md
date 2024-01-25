@@ -2,7 +2,6 @@
 title: Cloning a Design
 description: >
   Treat designs as templates by cloning an existing design to modify and build upon.
-date: 2023-10-30
 weight: 5
 categories: [Designer]
 tags: [designs]
