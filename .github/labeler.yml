@@ -1,0 +1,15 @@
+# .github/labeler.yml
+
+# Define label rules based on modified paths
+component/cloud-docs:
+  - label: bug
+    paths:
+      - "content/en/meshmap/**/*"
+
+# Define default labels to be applied if no rules match
+default-labels:
+  - "needs-review"
+
+# Define labels to be removed if no rules match
+remove-labels:
+  - "in-progress"
