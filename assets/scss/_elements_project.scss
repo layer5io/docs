@@ -89,3 +89,24 @@ div.tip {
     float: right;
     border-radius: 50%;
   }
+
+    .prevBtn {
+      $btn-color: $primary;
+      $btn-color-dark: shade($btn-color, 40%);
+      color: tint($btn-color);
+    
+      &:before {
+        content: '';
+        // @include absolute(0,0,0,0);
+        background-color: $btn-color-dark;
+        transform: translateX(-100%);
+      }
+    
+      &:hover {
+        color: tint($btn-color, 75%);
+    
+        &:before {
+          transform: translateX(0);
+        }
+      }
+    }
