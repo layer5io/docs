@@ -41,9 +41,8 @@ Make sure you have the following prerequisites installed on your operating syste
   go version
   ```
 
-- [Docsy](https://www.docsy.dev/docs/get-started/docsy-as-module/installation-prerequisites/) 
+- [Hugo](https://gohugo.io/installation/) 
 
-  This site uses Docsy Theme and the following are basic prerequisites for using Docsy in your site:
 
   - Install a recent release of the Hugo "extended" version. If you install from
     the [Hugo release page](https://github.com/gohugoio/hugo/releases), make sure
