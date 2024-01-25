@@ -17,7 +17,10 @@
 .flex-row {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width:768px){
+    flex-wrap: wrap;
+  }
 }
 
 .flex-col {
@@ -159,10 +162,16 @@
 
 .playground-card {
   max-width: 351.88px;
+  @media (max-width:768px){
+    max-width: 100%;
+  }
 }
 
 .catalog-card {
   max-width: 351.9px;
+  @media (max-width:768px){
+    max-width: 100%;
+  }
 }
 
 .handbook-card {
