@@ -33,21 +33,44 @@ Make sure you have the following prerequisites installed on your operating syste
   npm -v
   ```
 
-- [Hugo](https://gohugo.io/)
+- [Go](https://go.dev/doc/install)
 
   To verify run:
 
   ```
-  hugo version
+  go version
   ```
 
-- [Gatsby.js](https://www.gatsbyjs.com/)
+- [Docsy](https://www.docsy.dev/docs/get-started/docsy-as-module/installation-prerequisites/) 
 
-  To verify run:
+  This site uses Docsy Theme and the following are basic prerequisites for using Docsy in your site:
 
-  ```
-  gatsby --version
-  ```
+  - Install a recent release of the Hugo "extended" version. If you install from
+    the [Hugo release page](https://github.com/gohugoio/hugo/releases), make sure
+    you download the `extended` version, which supports SCSS.
+
+    To verify run:
+
+    ```
+    hugo version
+    ```
+
+  - Install `PostCSS` so that the site build can create the final CSS assets. You
+    can install it locally by running the following commands from the root
+    directory of your project:
+
+    ```sh
+    npm install --save-dev autoprefixer
+    npm install --save-dev postcss-cli
+    ```
+
+    Starting in
+    [version 8 of `postcss-cli`](https://github.com/postcss/postcss-cli/blob/master/CHANGELOG.md),
+    you must also separately install `postcss`:
+
+    ```sh
+    npm install -D postcss
+    ```
 
 **Note:** If you're on a _Windows environment_ then it is highly recommended that you install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install) both for performance and ease of use.
 
