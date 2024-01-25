@@ -1,0 +1,23 @@
+name: Labeler
+on: [pull_request_target]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/labeler.yml
+
+      - name: Check Labeler Output
+        run: |
+          if [ $? -ne 0 ]; then
+            echo "Labeler failed to apply labels. Please check the configuration."
+            exit 1
+          fi
+
