@@ -3,6 +3,8 @@ title: Sharing a Workspace
 description: >
   Learn how to control access to workspaces and their resources.
 weight: 5
+tags: [workspace]
+categories: [tutorial]
 ---
 ## Share designs from Workspaces
 

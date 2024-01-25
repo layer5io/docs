@@ -3,6 +3,8 @@ title: Tokens
 description: >
   API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
 weight: 3
+tags: [tokens, permissions]
+categories: [Security]
 ---
 
 ## What tokens are

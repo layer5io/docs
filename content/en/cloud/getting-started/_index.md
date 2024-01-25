@@ -2,6 +2,8 @@
 title: Getting Started
 description: Learn how to effectively manage your organizations, teams, users, workspaces, environments, and more.
 weight: 1
+tags: [cloud]
+categories: [cloud]
 ---
 <!-- {{% pageinfo %}}
 Page under construction.

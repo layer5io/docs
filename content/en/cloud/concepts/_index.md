@@ -3,6 +3,8 @@ title: Concepts
 weight: 2
 description: >
   An overview of Layer5 Cloud concepts and their relationships to one another.
+tags: [cloud]
+categories: [cloud, concepts]
 ---
 
 ![concepts-overview](concepts-overview.svg "image-center-shadow")

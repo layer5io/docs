@@ -2,6 +2,8 @@
 title: Core Tasks
 description: Navigate your way around MeshMap with these common tasks.
 weight: 6
+categories: [tasks]
+tags: [tasks]
 ---
 
 {{% pageinfo %}}

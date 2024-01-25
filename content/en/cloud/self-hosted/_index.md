@@ -3,6 +3,8 @@ title: Self-Hosted
 weight: 10
 description: >
   Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
+tags: [cloud]
+categories: [cloud]
 ---
 
 ![self-hosted](images/self-hosted.svg "image-right-no-shadow")

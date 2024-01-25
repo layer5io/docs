@@ -4,6 +4,8 @@ description: >
   Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.
 category: GitOps
 weight: 4
+tags: [meshmap]
+categories: [tutorial]
 ---
 
 

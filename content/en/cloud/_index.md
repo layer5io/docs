@@ -7,6 +7,8 @@ type: docs
 menu: {main: {weight: 2}}
 cascade: 
     type: docs
+tags: [cloud]
+categories: [cloud, documentation]
 ---
 ![layer5-cloud-provider](layer5-cloud-provider.svg "image-center-shadow")
 {{% pageinfo %}}

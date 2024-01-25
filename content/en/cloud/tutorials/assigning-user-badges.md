@@ -2,6 +2,8 @@
 title: Recognizing User and Contributor Milestones
 description: >
   Showcasing user and contributor achievements
+tags: [badges, milestones]
+categories: [tutorial]
 ---
 
 
