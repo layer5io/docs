@@ -2,7 +2,6 @@
 title: Deploying Designs
 description: >
     Each Meshery design is deployable to one or more Kubernetes clusters.
-date: 2023-10-30
 weight: 4
 categories: [Designer]
 tags: [designs]

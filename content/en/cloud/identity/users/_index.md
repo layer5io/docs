@@ -2,7 +2,6 @@
 title: Users
 description: >
   Each user account represents an individual collaborator. Individual user accounts exist beyond the bounds of organizations.
-date: 2023-10-30
 categories: [Identity]
 tags: [users]
 ---

@@ -2,7 +2,6 @@
 title: Recognizing User and Contributor Milestones
 description: >
   Showcasing user and contributor achievements
-date: 2023-10-30
 ---
 
 
