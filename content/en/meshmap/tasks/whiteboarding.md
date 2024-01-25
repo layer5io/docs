@@ -2,7 +2,6 @@
 title: Whiteboarding
 description: >
   MeshMap Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
-date: 2023-10-30
 weight: 2
 categories: [Designer]
 tags: [designs]

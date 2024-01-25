@@ -119,9 +119,14 @@ a:not([href]):not([class]):hover {
 }
 
 // Taxonomy
-// .taxo-categories {
-//   // margin-top: 2rem;
-// }
+.article-meta {
+
+    background-color: $gray-900;
+    padding: .5rem;
+    padding-left: 1rem;
+
+}
+
 .taxonomy {
   // .taxonomy-terms-cloud
 

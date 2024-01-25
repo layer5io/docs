@@ -2,7 +2,6 @@
 title: Validating Designs
 description: >
   Prior to deploying a design, you can validate the configuration that it contains in accordance with the target platform.
-date: 2023-10-30
 weight: 2
 categories: [Designer]
 tags: [designs]

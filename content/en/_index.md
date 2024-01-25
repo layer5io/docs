@@ -20,8 +20,8 @@ onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout=
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/meshmap" aria-label="MeshMap Docs"
-onmouseover="changeImage('meshmap', 'images/logos/meshmap-light.svg')" onmouseout="restoreImage('meshmap', 'images/logos/meshmap-alt.svg')">
-    <img id="meshmap" src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
+onmouseover="changeImage('Meshmap', 'images/logos/meshmap-light.svg')" onmouseout="restoreImage('Meshmap', 'images/logos/meshmap-alt.svg')">
+    <img id="Meshmap" src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
     MeshMap Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
@@ -39,8 +39,10 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a>
 </div>
 
+<div class="wrapper">
 <div class= "product-section">
 
+<div class="box">
 <a href="https://playground.meshery.io">
   <div class="grid-card">
     <div class= "playground-section playground-logo">
@@ -48,8 +50,9 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
       <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
     </div>
   </div>
-</a>
+</a></div>
 
+<div class="box">
 <a href="https://meshery.layer5.io/catalog">
   <div class="grid-card">
     <div class= "catalog-section catalog-logo">
@@ -57,43 +60,34 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
       <p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
     </div>
   </div>
-</a>
+</a></div>
 
-<a href="https://discuss.layer5.io">
-<div class= "forum-section">
-  <div class="grid-card">
-  <span class="product-head">Discussion forum</span>
-  <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
-  <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
-      </div>
-</div>
-</a>
+<div class="box box3">
+    <a href="https://discuss.layer5.io">
+    <div class= "forum-section">
+      <div class="grid-card">
+      <span class="product-head">Discussion forum</span>
+      <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
+      <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
+          </div>
+    </div>
+    </a></div>
 
+<div class="box box4">
 <a href="https://layer5.io/community/handbook">
-<div class= "handbook-section grid-card">
-  <div class= "handbook-text">
-    <span class="product-head">Community Handbook</span>
-    <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
-  </div>
-  <div class= "handbook-image">
-<img src="images/landing/handbook.png" alt="Community Handbook Image" />
+    <div class= "handbook-section grid-card">
+      <div class= "handbook-text">
+        <span class="product-head">Community Handbook</span>
+        <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
       </div>
+      <div class= "handbook-image">
+        <img src="images/landing/handbook.png" alt="Community Handbook Image" />
+          </div></div>
+    </a>
+    </div>
+    </div>
 
-</a>
-
-</div>
-</div>
-</div>
-</div>
-<!-- <div class="taxonomy taxonomy-terms-cloud taxo-categories">
-  <h5 class="taxonomy-title">Cloud of Categories</h5>
-  <ul class="taxonomy-terms">
-    <li><a class="taxonomy-term" href="//localhost:1313/categories/category-1/" data-taxonomy-term="category-1"><span class="taxonomy-label">category 1</span><span class="taxonomy-count">3</span></a></li>
-    <li><a class="taxonomy-term" href="//localhost:1313/categories/category-2/" data-taxonomy-term="category-2"><span class="taxonomy-label">category 2</span><span class="taxonomy-count">1</span></a></li>
-    <li><a class="taxonomy-term" href="//localhost:1313/categories/category-3/" data-taxonomy-term="category-3"><span class="taxonomy-label">category 3</span><span class="taxonomy-count">2</span></a></li>
-    <li><a class="taxonomy-term" href="//localhost:1313/categories/category-4/" data-taxonomy-term="category-4"><span class="taxonomy-label">category 4</span><span class="taxonomy-count">6</span></a></li>
-  </ul>
-</div> -->
+  </div> <!-- Wrapper close -->
 
 <div class="dash-tangle"></div>
 <div class="dash-ircle-container">

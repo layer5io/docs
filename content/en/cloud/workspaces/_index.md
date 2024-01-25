@@ -2,7 +2,6 @@
 title: Workspaces
 description: >
   Meshery Workspaces serve as a virtual space for your team-based work.
-date: 2023-10-30
 weight: 6
 categories: [Workspaces]
 ---
