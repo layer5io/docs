@@ -352,6 +352,9 @@ a:not([href]):not([class]):hover {
   > img:hover {
     filter: brightness(0) invert(1);
   }
+  @media (max-width:768px){
+    width: 277px;
+  }
 }
 
 .dashboard {
@@ -381,9 +384,11 @@ a:not([href]):not([class]):hover {
   text-rendering: optimizelegibility;
   background-clip: text, text;
   @media (max-width:768px){
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
   }
+  // @media (max-width:1200px){
+  // }
   
 }
 .dash-tangle {
@@ -404,6 +409,11 @@ a:not([href]):not([class]):hover {
   background-clip: content-box;
   -webkit-background-clip: padding-box;
 
+  @media (max-width: 1440px) {
+    top: -5rem;
+    right: -28rem;
+    position: fixed;
+  }
   @media (max-width: 768px) {
     width: 129.14rem;
     top: 7rem;
@@ -472,7 +482,7 @@ a:not([href]):not([class]):hover {
     &:hover {
       color: "#EBC017" !important;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1440px) {
       margin: 0rem;
     }
   }

@@ -132,6 +132,9 @@
 
   .td-navbar-nav-scroll {
     max-width: fit-content;
+    @media (max-width: 991.98px){
+      padding-bottom: 3rem;
+    }
   }
 
   .navbar-brand {
