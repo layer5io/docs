@@ -17,10 +17,10 @@ include .github/build/Makefile.show-help.mk
 ## Install docs.layer5.io dependencies on your local machine.
 ## See https://gohugo.io/categories/installation
 setup:
-	hugo server -D 
+	npm install
 
 ## Run docs.layer5.io on your local machine with draft and future content enabled.
-site:
+site: check-go
 	hugo server -D -F
 	
 ## Run docs.layer5.io on your local machine. Alternate method.
@@ -36,5 +36,9 @@ clean:
 	hugo --cleanDestinationDir
 	site
 
-.PHONY: setup build site clean site-fast
+.PHONY: setup build site clean site-fast check-go
 
+check-go:
+	@echo "Checking if Go is installed..."
+	@command -v go > /dev/null || (echo "Go is not installed. Please install it before proceeding."; exit 1)
+	@echo "Go is installed."
