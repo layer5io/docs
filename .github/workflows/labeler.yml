@@ -20,3 +20,4 @@ jobs:
             echo "Labeler failed to apply labels. Please check the configuration."
             exit 1
           fi
+
