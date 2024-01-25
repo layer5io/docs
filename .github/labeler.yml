@@ -1,4 +1,10 @@
-component/cloud-docs:
+label-rules:
   - label: bug
     paths:
       - "content/en/meshmap/**/*"
+
+default-labels:
+  - "needs-review"
+
+remove-labels:
+  - "in-progress"
