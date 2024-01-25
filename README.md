@@ -27,7 +27,7 @@ Now to setup and run the site locally run:
 
 If you pull down new code from GitHub, you will occassionally need run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
-# Layer5 Documentation Stucture
+## Layer5 Documentation Stucture
 
 ## High-Level Outline & Information Architecture for Layer5 Documentation
 
@@ -38,7 +38,7 @@ If you pull down new code from GitHub, you will occassionally need run `make set
 - **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
 - **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
 
-**Information Architecture for Cloud Docs:**
+## Cloud Docs:
 
 ### Getting Started
 
@@ -84,7 +84,7 @@ Keep your MeshMap designs internal to your workplace. Get remote support from La
 
 Low-level ReST API reference for extending Layer5 Cloud.
 
-**Information Architecture for Meshmap Docs:**
+## Meshmap Docs:
 
 ### Getting Started with Designs
 
