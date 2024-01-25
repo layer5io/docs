@@ -2,7 +2,6 @@
 title: User Management
 description: >
   Efficiently manage and organize users within Layer5 Cloud with our comprehensive user management capabilities.
-date: 2023-10-28
 weight: 4
 categories: [Identity]
 tags: [users]
