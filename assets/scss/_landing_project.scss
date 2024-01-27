@@ -7,7 +7,7 @@
   display: flex;
   align-items: stretch;
   gap: 20px;
-  @media (max-width:1000px){
+  @media (max-width:992px){
     justify-content: center;
     flex-wrap: wrap;
   }
