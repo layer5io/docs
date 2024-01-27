@@ -16,4 +16,4 @@ jobs:
     - uses: actions/labeler@v4
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        configuration-path: surajvast1/docs/.github/workflows/labeler.yml
+        configuration-path: surajvast1/docs/.github/labeler.yml
