@@ -2,10 +2,10 @@
 component/cloud-docs:
   - label: bug
     paths:
+      - "content/en/cloud/**/*"
+
+component/meshery-docs:
+  - label: bug
+    paths:
       - "content/en/meshmap/**/*"
 
-default-labels:
-  - "needs-review"
-
-remove-labels:
-  - "in-progress"
