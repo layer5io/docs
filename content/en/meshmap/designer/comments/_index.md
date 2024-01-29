@@ -68,6 +68,12 @@ After a comment has been resolved, there might be situations where you need to r
 
 <img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600">
 
+### Mute Comment Notifications
+
+Customize your notification preferences to mute emails for comments on your design. When this feature is enabled, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter. Follow the steps below to mute comment notifications
+
+<img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" width="600" height="270">
+
 ## Best Practices for Effective Design Reviews
 
 ### Be specific and actionable
