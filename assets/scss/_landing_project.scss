@@ -1,48 +1,39 @@
 .wrapper {
   box-sizing: border-box;
 }
+
 .product-section {
-  display: grid;
-  //justify-content: space-between;
+  font-family: $font-qanelas;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
-  //grid-template-columns: 1fr 1fr 1fr;
-  //grid-template-columns: repeat(2, 1fr);
-  //grid-template-rows: auto auto;
-  grid-template-columns: repeat(3, 1fr);
   a {
     color: $white;
   }
-  @media (max-width: 1000px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
-// .box1, .box2 {
-//   grid-row: span 1;
-// }
-
-// .box3 {
-//   grid-column: span 2;
-//   grid-row: span 1;
-// }
-
-// .box4 {
-//   grid-column: span 2;
-//   grid-row: span 2;
-// }
-
-.box3 {
-  grid-row: span 2;
 }
 
-.box4 {
-  grid-column: span 2;
-  grid-row: span 1;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.grid-card {
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-20px {
+  gap: 20px;
+}
+
+.grow-1 {
+  flex-grow: 1;
+}
+
+.landing-card {
   border-radius: 1rem;
   border: 2px solid #515151;
   background: #000;
@@ -50,19 +41,19 @@
   padding: 20px;
   text-align: left;
   font-size: 1.25rem;
-  // aspect-ratio: 3/2;
   min-height: 300px;
   &:hover {
     border: 2px solid $secondary;
 
   }
 }
-.product-head {
+.landing-card-title {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   color: $primary;
   text-transform: uppercase;
   gap: 20px;
+  white-space: nowrap;
 } 
 .playground-section {
   &.playground-logo {
@@ -95,20 +86,14 @@
 }
 .handbook-section {
   display: flex;
-  grid-column: span 2;
-  // flex-basis: 100%;
-  // flex: 2;
+  align-items: center;
   background: linear-gradient(112deg, #000 34.88%, rgba(0, 110, 88, 0.82) 92.89%, #000 159.16%);
-  flex-direction: row;
-  align-items: start;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    grid-column: span 1;
   }
 }
 .handbook-image{
-  padding-top:40px;
   width: 110%;
   height: 100%;
   display: flex;
@@ -119,14 +104,13 @@
 
   }
   img{
-    //box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
+    box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
     border-radius: 20px;
     width: 100%;
   }
   
 }
-.handbook-text{
-  padding-top:20px;
+.landing-card-text{
   display: flex;
   line-height: 30px;
   width: 90%;
@@ -137,22 +121,59 @@
   }
 }
 
-.forum-section {
-  grid-row: span 3;
-  overflow: hidden;
-
+.forum-image {
+  padding: 3.85rem 0 0 1.5rem;
   img {
     box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
-    
-    border-radius: 20px;
-    height: 18rem;
-    min-height: 70%;
-   
+    border-radius: 20px 0 0 0;
+    height: 25.5rem;
+    width: auto;
+    object-fit: contain;
   }
-  @media (max-width: 1000px) {
-    grid-column: span 2;
+}
+
+.forum-section {
+  border-radius: 1rem;
+  border: 2px solid #515151;
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  font-size: 1.25rem;
+  height: 100%;
+  &:hover {
+    border: 2px solid $secondary;
   }
-  @media (max-width: 768px) {
-    grid-column: span 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-right: 0;
+  padding-bottom: 0;
+  max-height: 620px;
+  overflow: hidden;
+}
+
+.playground-card {
+  max-width: 351.88px;
+}
+
+.catalog-card {
+  max-width: 351.9px;
+}
+
+.handbook-card {
+  max-width: 723.78px;
+}
+
+.forum-card {
+  max-width: 723.78px;
+
+  overflow: hidden;
+}
+
+@media (min-width: 1536px) {
+  .forum-card {
+    max-width: 552px;
   }
 }
