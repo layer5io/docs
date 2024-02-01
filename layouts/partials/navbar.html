@@ -21,9 +21,8 @@
                         </a>
                     </li> -->
           <li class="nav-item dropdown" data-bs-theme="dark">
-            <a
+            <span
               class="nav-link dropdown-toggle"
-              href="#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -31,7 +30,7 @@
               aria-expanded="false"
             >
               Products
-            </a>
+          </span>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a
                 class="dropdown-item"
@@ -137,6 +136,12 @@
       dropdown.classList.toggle("current");
       document.querySelector(".dropdown-menu").classList.toggle("show");
     });
+    document.body.addEventListener('click', function(e) {
+      if(e.target != dropdown && dropdown.classList.contains("current")){
+        dropdown.classList.toggle("current");
+        document.querySelector(".dropdown-menu").classList.toggle("show");
+      }
+    })
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;
