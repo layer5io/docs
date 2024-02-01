@@ -352,6 +352,9 @@ a:not([href]):not([class]):hover {
   > img:hover {
     filter: brightness(0) invert(1);
   }
+  @media (max-width:768px){
+    width: 277px;
+  }
 }
 
 .dashboard {
@@ -380,6 +383,13 @@ a:not([href]):not([class]):hover {
   display: block;
   text-rendering: optimizelegibility;
   background-clip: text, text;
+  @media (max-width:768px){
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  // @media (max-width:1200px){
+  // }
+  
 }
 .dash-tangle {
   width: 78.14231rem;
@@ -398,6 +408,18 @@ a:not([href]):not([class]):hover {
   z-index: -5;
   background-clip: content-box;
   -webkit-background-clip: padding-box;
+
+  @media (max-width: 1440px) {
+    top: -5rem;
+    right: -28rem;
+    position: fixed;
+  }
+  @media (max-width: 768px) {
+    width: 129.14rem;
+    top: 7rem;
+    right: -70rem;
+    position: fixed;
+  }
 }
 
 .dash-ircle-container {
@@ -437,6 +459,11 @@ a:not([href]):not([class]):hover {
   align-items: center;
   text-align: right;
 
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   a.dash-sign {
     color: #fffbf1;
     text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
@@ -454,6 +481,9 @@ a:not([href]):not([class]):hover {
     transform: translateX(-50%) translateY(-50%);
     &:hover {
       color: "#EBC017" !important;
+    }
+    @media (max-width: 1440px) {
+      margin: 0rem;
     }
   }
 
