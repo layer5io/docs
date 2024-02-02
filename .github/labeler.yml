@@ -1,6 +1,3 @@
 
-component/meshery-docs:
-    - "content/en/meshmap/**/*"
-    
 component/cloud-docs:
-    - "content/en/cloud/**/*"
+    - "content/en/meshmap/**/*"
