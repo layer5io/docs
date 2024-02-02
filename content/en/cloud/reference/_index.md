@@ -27,7 +27,7 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 
 ## All API Endpoints
 
-{{< alert type="warning" >}}
+{{< alert type="info" >}}
 <a href="https://meshery.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
 {{< /alert >}}
 
