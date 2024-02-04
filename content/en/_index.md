@@ -40,7 +40,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a>
 </div>
 
-<h1 style="margin:6.5rem auto 1.5rem auto">Elevate Your Infrastructure and Join Our Community</h1>
+<!-- <h1 style="margin:6.5rem auto 1.5rem auto">Elevate Your Infrastructure and Join Our Community</h1> -->
 <div class= "product-section">
 <div class="gap-20px flex-col">
 <div class="flex-row gap-20px">
