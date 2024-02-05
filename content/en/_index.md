@@ -7,7 +7,7 @@ description: >
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 
 <div class="dash-sign-container">
-<h1 class="dashboard">Expect More from Your Infrastructure</h1>
+<h1 class="dashboard">Expect more from your infrastructure</h1>
 
 <a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
 
@@ -40,7 +40,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a>
 </div>
 
-<h1 style="margin:6.5rem auto 1.5rem auto">Elevate Your Infrastructure and Join Our Community</h1>
+<h1 style="margin:6.5rem auto 1.5rem auto">Discover your way forward</h1>
 <div class= "product-section">
 <div class="gap-20px flex-col">
 <div class="flex-row gap-20px">
