@@ -29,6 +29,6 @@ White-labeling is a feature that allows you to customize the appearance and bran
 
 Meshery acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Meshery's commitment to versatile deployment scenarios.
 
-{{< alert title="As as Service" >}}Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.{{< /alert >}}
+{{< alert title="As a Service" >}}Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.{{< /alert >}}
 
 
