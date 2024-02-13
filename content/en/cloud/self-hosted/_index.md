@@ -59,6 +59,19 @@ helm install -f ./install/helm-chart-values/layer5-cloud-values.yaml cloud ./ins
 --set-file 'kratos.kratos.emailTemplates.verification.valid.body'=<path to the email templates to override>/valid/email-verify.body.gotmpl
 ```
 
+**3. Create an OAuth 2.0 client**
+1. Port forward the Hydra Admin service.
+2. ```bash
+    hydra clients create \
+    --endpoint <port forwarded endpoint> \
+    --id meshery-cloud \ <--- ensure the id specified matches with the env.oauthclientid in values.yaml
+    --secret some-secret \ <--- ensure the secret specified matches with the env.oauthsecret in values.yaml
+    --grant-types authorization_code,refresh_token,client_credentials,implicit \
+    --response-types token,code,id_token \
+    --scope openid,offline,offline_access \
+    --callbacks <Layer5 Cloud host>/callback 
+    ```
+
 #### Customizing Layer5 Cloud's installation with values.yaml
 
 Layer5’s Helm charts support a number of configuration options. Please refer to following table of configuration options.
