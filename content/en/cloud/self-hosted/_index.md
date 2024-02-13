@@ -21,17 +21,21 @@ Layer5 offers on-premises isntallation of its Meshery Remote Provider: Layer5 Cl
 
 A persistent volume to store the Postgres database is necessary to prepare prior to deployment. If your target cluster does not have a persistent volume readily available (or not configured for automatic PV provisioning and binding of PVCs to PV), we suggest to apply the following configuration to your cluster.
 
-1. [Optional] Prepare a persistent volume.
-
 ```bash
 kubectl apply -f install/kubernetes/persistent-volume.yaml
 ```
 
-2. Prepare a dedicated namespace and add the chart repo to your helm configuration.
+**2. Prepare a dedicated namespace and add the chart repo to your helm configuration.**
 
 ```bash
 kubectl create ns <namespace>
 helm repo add layer5 https://docs.layer5.io/charts
+```
+
+**3. Ensure NGINX Ingress Controller is deployed.**
+
+``` 
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
 ```
 
 #### Installation
@@ -48,7 +52,11 @@ helm install -f ./install/postgresql/values.yaml postgres ./install/postgresql -
 ## TBD: Delete local filesystem reference
 # helm install -f ./install/kubernetes/values.yaml cloud ./install/kubernetes -n <namespace>`
 
-helm install layer5-cloud layer5 -n layer5-cloud
+helm install -f ./install/helm-chart-values/layer5-cloud-values.yaml cloud ./install/kubernetes -n postgres \
+--set-file 'kratos.kratos.emailTemplates.recovery.valid.subject'=<path to the email templates to override>/valid/email-recover-subject.body.gotmpl \
+--set-file 'kratos.kratos.emailTemplates.recovery.valid.body'=<path to the email templates to override>/valid/email-recover.body.gotmpl \
+--set-file 'kratos.kratos.emailTemplates.verification.valid.subject'=<path to the email templates to override>/valid/email-verify-subject.body.gotmpl \
+--set-file 'kratos.kratos.emailTemplates.verification.valid.body'=<path to the email templates to override>/valid/email-verify.body.gotmpl
 ```
 
 #### Customizing Layer5 Cloud's installation with values.yaml
