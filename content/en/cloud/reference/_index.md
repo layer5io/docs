@@ -14,10 +14,8 @@ In order to authenticate to Layer5 Cloud's REST API, you need to generate and us
 To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
 
 ```bash
-
 curl <protocol>://<Layer5-cloud-hostname>/<API> \
 -H "Authorization: Bearer <token>"
-
 ```
 
 - Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance.
