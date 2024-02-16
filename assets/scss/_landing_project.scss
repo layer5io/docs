@@ -6,9 +6,12 @@
   font-family: $font-qanelas;
   display: flex;
   align-items: stretch;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  // margin-top: 6rem;
+  @media (max-width:992px){
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   a {
     color: $white;
   }
@@ -17,7 +20,10 @@
 .flex-row {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width:768px){
+    flex-wrap: wrap;
+  }
 }
 
 .flex-col {
@@ -29,8 +35,16 @@
   gap: 20px;
 }
 
+
 .grow-1 {
   flex-grow: 1;
+  a{
+    .landing-card{
+      @media (max-width:1400px){
+        min-height: 100%;
+      }
+    }
+  }
 }
 
 .landing-card {
@@ -46,6 +60,7 @@
     border: 2px solid $secondary;
 
   }
+
 }
 .landing-card-title {
   font-size: 1.5rem;
@@ -61,6 +76,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
+    min-height: 240px;
   }
   display: flex;
   flex-direction: column;
@@ -76,6 +92,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
+    min-height: 240px;
   }
   display: flex;
   flex-direction: column;
@@ -152,14 +169,23 @@
   padding-bottom: 0;
   max-height: 620px;
   overflow: hidden;
+  @media (max-width:1535px){
+    max-height: 100%;
+  }
 }
 
 .playground-card {
   max-width: 351.88px;
+  @media (max-width:768px){
+    max-width: 100%;
+  }
 }
 
 .catalog-card {
   max-width: 351.9px;
+  @media (max-width:768px){
+    max-width: 100%;
+  }
 }
 
 .handbook-card {
@@ -167,13 +193,10 @@
 }
 
 .forum-card {
-  max-width: 723.78px;
+  max-width: 550.78px;
 
   overflow: hidden;
-}
-
-@media (min-width: 1536px) {
-  .forum-card {
-    max-width: 552px;
+  @media (max-width:1000px) {
+    max-width: 100%;
   }
 }
