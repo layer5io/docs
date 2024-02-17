@@ -177,9 +177,7 @@ White-labeling is a feature that allows you to customize the appearance and bran
 
 ## Considerations of Peer-to-Peer Communication and Central Coordination
 
-
 ![meshmap-collaboration-networking](images/meshmap-collaboration-networking.svg "image-center-no-shadow")
-
 
 ## Consideration for Air-Gapped Deployments
 
