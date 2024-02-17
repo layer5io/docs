@@ -3,7 +3,7 @@ title: Workspaces
 description: >
   Meshery Workspaces serve as a virtual space for your team-based work.
 weight: 6
-categories: [Workspaces]
+categories: [Spaces]
 ---
 
 Meshery Workspaces serve as a virtual space for your team-based work. Create a Workspace to organize your work and to serve as the central point of collaboration for you and your teams and a central point of access control to Environments and their resources.
