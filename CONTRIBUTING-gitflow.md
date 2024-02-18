@@ -43,7 +43,7 @@ Now, your local master branch is up-to-date with everything modified upstream.
 **Create a Branch** (doing your work)
 Whenever you begin work on a new feature or bugfix, it's important that you create a new branch. Not only is it proper git workflow, but it also keeps your changes organized and separated from the master branch so that you can easily submit and manage multiple pull requests for every task you complete.
 
-To create a new branch and start working on it, peform the following flow.
+To create a new branch and start working on it, perform the following flow.
 
 ## Checkout the master branch - you want your new branch to come from master
 ```
