@@ -1,6 +1,6 @@
 ---
 title: Creating a Design from Meshery Catalog Templates
-description: With this guide, you can create amazing cloud native designs for your infrastructure from already avaliable templetes in the meshery catalog. 
+description: With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog. 
 weight: 2
 ---
 
@@ -10,10 +10,10 @@ weight: 2
 
 1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
 2. Explore the catalogs located in the menu section.
-3. Search by technology or type and find the best templete for your infrastructure. You will already see some of the information just by hovering on it.
+3. Search by technology or type and find the best template for your infrastructure. You will already see some of the information just by hovering on it.
 4. For detailed information just click on it.
 5. Simply click the green clone button.
 6. Now you have it. Navigate to [Meshery Playground](https://playground.meshery.io/)
 7. Go to the MeshMap and you will see your cloned template here. If you con't see it just reload the page.
 
-You can also publish your own design as a templete.
+You can also publish your own design as a template.

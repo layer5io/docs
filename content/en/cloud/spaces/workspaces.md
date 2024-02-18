@@ -79,7 +79,7 @@ See [Connections](https://docs.meshery.io/concepts/connections) section for more
 
 To make the most of Meshery Workspaces, here are some best practices:
 
-- Clearly define permissions in the form of team assignement to ensure proper access control.
+- Clearly define permissions in the form of team assignment to ensure proper access control.
 - Use Infrastructure Designs to standardize resource deployments.
 - Regularly review and update your Workspace's resources and configurations.
 
