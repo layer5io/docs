@@ -29,5 +29,5 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 <a href="https://meshery.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
 {{< /alert >}}
 
-
-
+## Keys & Keychains Permissions
+{{< csvtable >}}

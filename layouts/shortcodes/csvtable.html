@@ -1,0 +1,35 @@
+{{ $data := "" }}
+{{ $p := "csv/keys.csv" }}
+{{ with resources.Get $p }}
+  {{ $opts := dict "delimiter" "," }}
+  {{ $data = .Content | transform.Unmarshal $opts }}
+{{ else }}
+  {{ errorf "Unable to get resource %q" $p }}
+{{ end }}
+
+{{ if $data }}
+  <table class="csvtable">
+    <thead>
+      <tr>
+        {{ range index $data 0 }}
+          <th>{{ . }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      
+      {{ range $i, $row := $data }}
+      {{ if ne $i 0 }}
+        <tr>
+          {{ range $j, $cell := $row }}
+          <!-- {{ $cell }} (Row: {{ $i }}, Column: {{ $j }}) -->
+          <td>{{ . }}</td> 
+          {{ end }}
+        </tr>
+      {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+{{ else }}
+  <p>No data available.</p>
+{{ end }}
