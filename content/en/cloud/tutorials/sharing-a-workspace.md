@@ -19,6 +19,8 @@ In your browser, go to [Layer5 Cloud](https://meshery.layer5.io).
 2. Click Share.
 3. Enter the email addresses of the individual(s) you want to share with.
 
+![Flow for sharing designs](../catalog/images/Slide51.svg)
+
 ## Stop, limit, or change Workspace sharing
 
 After you share a workspace, you can stop sharing at any time. You can also control if teams you've shared with can change or share your workspace and Designs within it.
