@@ -117,6 +117,8 @@ The entitlement of "organization owner" is automatically bestowed to the creator
 For more information, see [Organization](/cloud/identity/organizations).
 {{< /alert >}}
 
+![Entitlements](./images/Slide42.svg)
+
 ## Team Roles
 
 {{< cardpane >}}
