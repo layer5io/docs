@@ -17,13 +17,13 @@ The first steps in starting with Layer5 are to create an account, verify your em
 To sign up for an account on Layer5 Cloud, navigate to <https://cloud.layer5.io/signup>.
 You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
 
-![Flow for user account creation](./images/Slide40.svg)
+![Flow for user account creation](/cloud/getting-started/images/Slide40.svg)
 
 ### 2. Verifying your email address
 
 To ensure you can use all the features in your Layer5 plan, verify your email address after signing up for a new account. For more information, see "Verifying your email address."
 
-![Flow for email verification](./images/Slide50.svg)
+![Flow for email verification](/cloud/getting-started/images/Slide50.svg)
 
 <!-- considering we would want to use 2FA in future
 4. Configuring two-factor authentication
@@ -37,7 +37,7 @@ Optionally, after you have configured 2FA, add a passkey to your account to enab
 To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
 On successful login, you will be prompted to setup your first organization and workspace.
 
-![Sign in flow](./images/Slide48.svg)
+![Sign in flow](/cloud/getting-started/images/Slide48.svg)
 
 ### 4. Creating an organization
 
