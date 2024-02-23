@@ -12,7 +12,7 @@ You can contact Layer5 support in the following ways:
 
 - **Email**: Send us an email at [support@layer5.io](mailto:support@layer5.io) with your questions or concerns. Our support team will respond to you as soon as possible and assist you with resolving any issues.
 
-  ![Contact Us](./images/Slide39.svg)
+  ![Contact Us](/cloud/getting-started/images/Slide39.svg)
 
 - **Community Forum**: Join our vibrant [community forum](https://discuss.layer5.io/) where you can ask questions, share your experiences, and connect with other users. Our community members and moderators are here to help you and provide valuable insights and assistance.
 
@@ -32,5 +32,5 @@ If you've forgotten your Layer5 Cloud account password, don't worry. You can eas
 
 6. After successfully resetting your password, you can now login to your Layer5 Cloud account using your new password.
 
-![Account Recovery](./images/Slide49.svg)
+![Account Recovery](/cloud/getting-started/images/Slide49.svg)
 
