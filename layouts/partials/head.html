@@ -11,6 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 {{ end -}}
 
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Description }}">
+<meta property="og:image" content="/favicons/android-chrome-192x192.png">
+<meta property="og:url" content="{{ .Permalink | absURL }}">
+<meta property="og:type" content="website">
+
 {{ partialCached "favicon.html" . }}
 <title>
   {{- if .IsHome -}}
