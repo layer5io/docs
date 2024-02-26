@@ -11,7 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 {{ end -}}
 
-{{ partialCached "favicons.html" . }}
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Description }}">
+<meta property="og:image" content="/images/layer5-gradient.webp">
+<meta property="og:url" content="{{ .Permalink | absURL }}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/images/layer5-gradient.webp">
+
+{{ partialCached "favicon.html" . }}
 <title>
   {{- if .IsHome -}}
     {{ .Site.Title -}}
