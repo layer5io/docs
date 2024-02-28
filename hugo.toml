@@ -1,5 +1,5 @@
 baseURL = "https://docs.layer5.io"
-# title = "Layer5 Documentation"
+title = "Layer5 Documentation"
 
 # Language settings
 contentDir = "content/en"
@@ -129,9 +129,6 @@ github_branch = "master"
 # gcs_engine_id = "f475448a7bc1d43a4"
 # Layer5 search engine link https://cse.google.com/cse?cx=f475448a7bc1d43a4
 # Customization link https://programmablesearchengine.google.com/controlpanel/lookandfeel?cx=f475448a7bc1d43a4
-
-# Enable Algolia DocSearch
-algolia_docsearch = false
 
 # Enable Lunr.js offline search
 offlineSearch = true

@@ -7,9 +7,10 @@ description: >
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 
 <div class="dash-sign-container">
-<h1 class="dashboard">Expect More from Your Infrastructure</h1>
+<h1 class="dashboard">Expect more from your infrastructure</h1>
 
 <a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
+
 </div>
 <div>
 <h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
@@ -39,8 +40,8 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a>
 </div>
 
+<h1 style="margin:6.5rem auto 1.5rem auto">Discover your way forward</h1>
 <div class= "product-section">
-
 <div class="gap-20px flex-col">
 <div class="flex-row gap-20px">
 <div class="playground-card grow-1">
@@ -103,58 +104,6 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 
 {{< /blocks/cover >}}
 
-<!--
-{{% blocks/section color="dark" type="row" %}}
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-
-{{% /blocks/section %}}
-
-
-{{% blocks/section %}}
-This is the second section
-{.h1 .text-center}
-{{% /blocks/section %}}
-
-
-{{% blocks/section type="row" %}}
-
-{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
-Get the Goldydocs app!
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
-    url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls)
-contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
-    url="https://twitter.com/GoHugoIO" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-{{% /blocks/section %}}
-
-
-{{% blocks/section %}}
-This is the another section
-{.h1 .text-center}
-{{% /blocks/section %}} -->
 <script>
 function changeImage(imgId, newSrc) {
     var img = document.getElementById(imgId);

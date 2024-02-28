@@ -48,7 +48,7 @@ Choose your mode of operation for MeshMap.
     <a href="../meshmap/designer/">
   {{< card header="Designer" >}}
     <a href="../meshmap/designer/">Designer</a> mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
-    <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
+    <p>Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.</p>
     <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
     </a>

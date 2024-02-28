@@ -3,7 +3,7 @@ title: Workspaces
 description: >
   Meshery Workspaces serve as a virtual space for your team-based work.
 weight: 6
-categories: [Workspaces]
+categories: [Spaces]
 ---
 
 Meshery Workspaces serve as a virtual space for your team-based work. Create a Workspace to organize your work and to serve as the central point of collaboration for you and your teams and a central point of access control to Environments and their resources.
@@ -79,7 +79,7 @@ See [Connections](https://docs.meshery.io/concepts/connections) section for more
 
 To make the most of Meshery Workspaces, here are some best practices:
 
-- Clearly define permissions in the form of team assignement to ensure proper access control.
+- Clearly define permissions in the form of team assignment to ensure proper access control.
 - Use Infrastructure Designs to standardize resource deployments.
 - Regularly review and update your Workspace's resources and configurations.
 

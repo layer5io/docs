@@ -2,7 +2,7 @@
 title: Starting from scratch
 description: >
  Welcome to MeshMap, your comprehensive tool for creating and managing cloud-native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
-weigth: 2
+weight: 2
 categories: [Designer]
 tags: [designs]
 ---
