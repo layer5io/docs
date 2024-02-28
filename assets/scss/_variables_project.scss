@@ -74,7 +74,7 @@ $font-qanelas: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont,
   "Segoe UI Emoji", "Segoe UI Symbol";
 
 @if $td-enable-google-fonts {
-  $td-fonts-serif: prepend($td-fonts-serif, "#{$google_font_name}");
+  $td-fonts-serif: $td-fonts-serif, "#{$google_font_name}";
 }
 
 $font-family-sans-serif: $td-fonts-serif;
