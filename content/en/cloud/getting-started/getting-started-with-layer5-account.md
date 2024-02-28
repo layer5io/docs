@@ -34,7 +34,7 @@ Optionally, after you have configured 2FA, add a passkey to your account to enab
 
 ### 3. Signing in to Layer5 Cloud
 
-To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
+To sign in to Layer5 Cloud, navigate to <https://meshery.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
 On successful login, you will be prompted to setup your first organization and workspace.
 
 ![Sign in flow](/cloud/getting-started/images/Slide48.svg)
