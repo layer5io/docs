@@ -20,7 +20,7 @@ You can contact Layer5 support in the following ways:
 
 If you've forgotten your Layer5 Cloud account password, don't worry. You can easily recover your account using the following steps:
 
-1. Go to the Layer5 Cloud [login page](https://cloud.layer5.io/login).
+1. Go to the Layer5 Cloud [login page](https://meshery.layer5.io/login).
 
 2. On the login page, click on the "Forgot Password" link below the login form.
 
