@@ -1,5 +1,7 @@
 {{ $data := "" }}
 {{ $p := "csv/keys.csv" }}
+{{ $excludedColumns := slice 4 6 7 }} 
+
 {{ with resources.Get $p }}
   {{ $opts := dict "delimiter" "," }}
   {{ $data = .Content | transform.Unmarshal $opts }}
@@ -11,21 +13,24 @@
   <table class="csvtable">
     <thead>
       <tr>
-        {{ range index $data 1 }}
-          <th>{{ . }}</th>
+        {{ range $i, $col := index $data 1 }}
+          {{ if not (in $excludedColumns $i) }}
+            <th>{{ $col }}</th>
+          {{ end }}
         {{ end }}
       </tr>
     </thead>
     <tbody>
-
       {{ range $i, $row := $data }}
-      {{ if gt $i 1 }}
-        <tr>
-          {{ range $j, $cell := $row }}
-          <td>{{ . }}</td> 
-          {{ end }}
-        </tr>
-      {{ end }}
+        {{ if gt $i 1 }}
+          <tr>
+            {{ range $j, $cell := $row }}
+              {{ if not (in $excludedColumns $j) }}
+                <td>{{ $cell }}</td> 
+              {{ end }}
+            {{ end }}
+          </tr>
+        {{ end }}
       {{ end }}
     </tbody>
   </table>
