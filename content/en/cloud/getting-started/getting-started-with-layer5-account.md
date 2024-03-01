@@ -23,7 +23,6 @@ You may choose to either signup with your personal email or any of our supported
 
 To ensure you can use all the features in your Layer5 plan, verify your email address after signing up for a new account. For more information, see "Verifying your email address."
 
-![Flow for email verification](/cloud/getting-started/images/Slide50.svg)
 
 <!-- considering we would want to use 2FA in future
 4. Configuring two-factor authentication
@@ -37,7 +36,6 @@ Optionally, after you have configured 2FA, add a passkey to your account to enab
 To sign in to Layer5 Cloud, navigate to <https://meshery.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
 On successful login, you will be prompted to setup your first organization and workspace.
 
-![Sign in flow](/cloud/getting-started/images/Slide48.svg)
 
 ### 4. Creating an organization
 
