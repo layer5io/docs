@@ -25,7 +25,7 @@ Now to setup and run the site locally run:
 
 ...and then visit http://localhost:1313.
 
-If you pull down new code from GitHub, you will occassionally need run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
+If you pull down new code from GitHub, you will occasionally need run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
 ### Editing Markdown Content
 
@@ -43,7 +43,7 @@ The significant keys in the YAML frontmatter are:
 
 `title` (string) - This is the title of the page that will be set in the HTML title.
 `description` (string) - This is a description of the page that will be set in the HTML description.
-`permalink` (string - relative file path) - canoncial location of the page
+`permalink` (string - relative file path) - canonical location of the page
 `category` (string) - section to which the page belongs.
 `redirect_from` (string - relative file path) - in case the page was previously available elsewhere
 

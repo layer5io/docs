@@ -21,7 +21,7 @@ View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marke
 1. Visit Connections and click [Create on the GitHub connection](https://meshery.layer5.io/connect/github/new).
 1. Use the mult-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
 1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
-1. Identify the path to either one or more Meshery Designs, Helm Charts, Kuberentes Manifests, or Docker Compose files.
+1. Identify the path to either one or more Meshery Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
 1. You will establish a secrte for the Meshery GitHub app and aa new workflow to be invoked when a new snapshot is needed.
     1. Customize the workflow `on` event trigger to match your needs.
 
