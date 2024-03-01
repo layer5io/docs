@@ -12,7 +12,7 @@ For instance, consider a system shipped default key `Create Organization`, which
 
 {{< alert title="Note" >}}
 
-1. Same key can be asssigned to muliple keychains.
+1. Same key can be asssigned to multiple keychains.
 2. One or more keys can be assigned to a keychain.
 3. Each key is assigned in context of an organization.
 

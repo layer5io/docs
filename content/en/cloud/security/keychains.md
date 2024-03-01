@@ -12,7 +12,7 @@ For instance, consider a system shipped default keychain `Team Management`, whic
 
 {{< alert title="Note" >}}
 
-1. Same keychain can be asssigned to muliple roles.
+1. Same keychain can be asssigned to multiple roles.
 2. One or more keychains can be assigned to a role.
 3. Each keychain is assigned in context of an organization.
 

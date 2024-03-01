@@ -30,7 +30,7 @@ Optionally, after you have configured 2FA, add a passkey to your account to enab
 
 ### 3. Signing in to Layer5 Cloud
 
-To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. Incase you have signed up with OAuth provider, you will be redirected to the provider's login page.
+To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
 On successful login, you will be prompted to setup your first organization and workspace.
 
 ### 4. Creating an organization
@@ -45,7 +45,7 @@ Give your organization a name and a description. For more information, see "Crea
 
 ### 5. Creating a workspace
 
-Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resouces in your workspaces through teams.
+Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resources in your workspaces through teams.
 
 {{< alert type="info" >}}
 For more information, see [Workspaces](/cloud/workspaces/)
@@ -59,4 +59,4 @@ The dashboard is the first page you see when you sign in to Layer5 Cloud. It pro
 
 ### 7. Viewing your Layer5 profile
 
-Your Layer5 profile tells people the story of your work through the recent activites, designs that you've published to Cloud catalog and much more. For more information, see "About your profile".
+Your Layer5 profile tells people the story of your work through the recent activities, designs that you've published to Cloud catalog and much more. For more information, see "About your profile".
