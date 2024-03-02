@@ -7,9 +7,10 @@ description: >
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 
 <div class="dash-sign-container">
-<h1 class="dashboard">Expect More from Your Infrastructure</h1>
+<h1 class="dashboard">Expect more from your infrastructure</h1>
 
 <a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
+
 </div>
 <div>
 <h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
@@ -39,55 +40,62 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a>
 </div>
 
-<div class="wrapper">
+<h1 style="margin:6.5rem auto 1.5rem auto">Discover your way forward</h1>
 <div class= "product-section">
-
-<div class="box">
+<div class="gap-20px flex-col">
+<div class="flex-row gap-20px">
+<div class="playground-card grow-1">
 <a href="https://playground.meshery.io">
-  <div class="grid-card">
+  <div class="landing-card">
     <div class= "playground-section playground-logo">
-      <span class="product-head">Meshery playground</span>
+      <span class="landing-card-title">Meshery playground</span>
       <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
     </div>
   </div>
 </a></div>
 
-<div class="box">
+<div class="catalog-card">
 <a href="https://meshery.layer5.io/catalog">
-  <div class="grid-card">
+  <div class="landing-card">
     <div class= "catalog-section catalog-logo">
-      <span class="product-head">Meshery Catalog</span>
+      <span class="landing-card-title">Meshery Catalog</span>
       <p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
     </div>
   </div>
 </a></div>
+</div>
 
-<div class="box box3">
-    <a href="https://discuss.layer5.io">
-    <div class= "forum-section">
-      <div class="grid-card">
-      <span class="product-head">Discussion forum</span>
-      <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
-      <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
-          </div>
-    </div>
-    </a></div>
-
-<div class="box box4">
+<div class="handbook-card">
 <a href="https://layer5.io/community/handbook">
-    <div class= "handbook-section grid-card">
-      <div class= "handbook-text">
-        <span class="product-head">Community Handbook</span>
+    <div class= "handbook-section landing-card">
+      <div class= "landing-card-text">
+        <span class="landing-card-title">Community Handbook</span>
         <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
       </div>
       <div class= "handbook-image">
         <img src="images/landing/handbook.png" alt="Community Handbook Image" />
-          </div></div>
-    </a>
+      </div>
     </div>
-    </div>
+</a>
+</div>
+</div>
 
-  </div> <!-- Wrapper close -->
+<div class="forum-card">
+<a href="https://discuss.layer5.io">
+      <div class="forum-section landing-card">
+        <div class="landing-card-text">
+            <span class="landing-card-title">Discussion forum</span>
+            <p>Cloud Native Management of developer-defined infrastructure. Join the open source-first community of cloud native engineers.</p>
+        </div>
+        <div class="forum-image">
+            <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
+        </div>
+      </div>
+</a>
+</div>
+
+</div>
+<!-- Wrapper close -->
 
 <div class="dash-tangle"></div>
 <div class="dash-ircle-container">
@@ -96,58 +104,6 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 
 {{< /blocks/cover >}}
 
-<!--
-{{% blocks/section color="dark" type="row" %}}
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-
-{{% /blocks/section %}}
-
-
-{{% blocks/section %}}
-This is the second section
-{.h1 .text-center}
-{{% /blocks/section %}}
-
-
-{{% blocks/section type="row" %}}
-
-{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
-Get the Goldydocs app!
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
-    url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls)
-contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-
-{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
-    url="https://twitter.com/GoHugoIO" %}}
-For announcement of latest features etc.
-{{% /blocks/feature %}}
-
-{{% /blocks/section %}}
-
-
-{{% blocks/section %}}
-This is the another section
-{.h1 .text-center}
-{{% /blocks/section %}} -->
 <script>
 function changeImage(imgId, newSrc) {
     var img = document.getElementById(imgId);
