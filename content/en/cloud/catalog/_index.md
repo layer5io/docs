@@ -37,7 +37,7 @@ Catalog content is categorized in a number of ways:
 - **Patterns**: Cloud native patterns enable the business function in simple language.
 - **Filters**: Embedded in the data plane of a service mesh, WebAssembly filters offer fine-grained control over service requests.
 - **Programs**: Embedded in the data plane of a service mesh, eBPF programs performant, fine-grained control over service requests.
-- **Policies**: Applied across the cloud native infrastructure under management, policies may be applied broadly and specificly.
+- **Policies**: Applied across the cloud native infrastructure under management, policies may be applied broadly and specifically.
  
 <!-- List design metadata and descriptions here -->
 

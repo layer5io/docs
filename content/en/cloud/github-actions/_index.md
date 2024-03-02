@@ -41,7 +41,7 @@ To integrate Snapshots into your GitHub pull requests, confirm that your user ac
 1. Specify the path within your Git repository where the application configurations are stored. This ensures Meshery knows where to find and visuzlie the desired state of your infrastructure.
 
 {{%pageinfo%}}
-Curently, only authorization of the Meshery GitHub App is supported. If you would like to use your GitHub user's personal access token, [please let us know](https://meshery.layer5.io/support). {{%/pageinfo%}}
+Currently, only authorization of the Meshery GitHub App is supported. If you would like to use your GitHub user's personal access token, [please let us know](https://meshery.layer5.io/support). {{%/pageinfo%}}
 
 
 ## Customizing Snapshot Workflow Triggers in MeshMap Snapshot

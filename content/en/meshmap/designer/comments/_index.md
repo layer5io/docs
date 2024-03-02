@@ -9,7 +9,7 @@ tags: [designs, collaboration, review]
 
 ## Overview
 
-MeshMap's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration desicions. Pay it forward to your future self by leaving comments for reference later.
+MeshMap's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving comments for reference later.
 
 ## Three Ways to Add Comments
 
@@ -19,10 +19,8 @@ You can add comments in three convenient ways:
 
 Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
 
-<div style="display: flex; margin-bottom: 25px;">
-  <img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="290" style="margin-right: 20px;"/>
-  <img src="./Toolbar2.png" alt="Comment through toolbar (2)" width="290"/>
-</div>
+<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="600"/>
+
 
 ### Commenting via Context-Click in Canvas
 
@@ -63,6 +61,12 @@ After resolving a comment thread, you can access the comment history to review p
 ### Enable Email Notifications
 
 Customize your [notification preferences](https://docs.layer5.io/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
+
+### Unresolving Comments
+
+After a comment has been resolved, there might be situations where you need to reopen the discussion. Unresolving a comment allows you to reinitiate conversations, address additional concerns, or make further changes. Follow the steps below to unresolve a comment:
+
+<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600">
 
 ## Best Practices for Effective Design Reviews
 
