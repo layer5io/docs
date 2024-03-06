@@ -1,5 +1,5 @@
 ---
-title: Team Roles
+title: Default Team Roles
 description: >
   By default, Organizations have two roles available: Team Admins and Team Managers.
 weight: 3
