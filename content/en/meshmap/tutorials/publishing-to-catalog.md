@@ -3,6 +3,7 @@ title: Publishing to Catalog
 description: >
   Learn to Publish to Catalog
 weight: 4
+draft: true
 ---
 
 {{% pageinfo %}}
