@@ -8,11 +8,10 @@ tags: [permissions]
 draft: true
 ---
 
-<img src="/cloud/identity/users/notification-preferences.gif" alt="Add User" />
-
-![provider](/cloud/security/images/role-provider-admin.svg#float-left "image-center-no-shadow")
-
 {{< cardpane >}}
+{{% card %}}
+<img src="/cloud/security/images/role-provider-admin.svg" />
+{{% /card %}}
 {{% card header="## Provider Administrator" %}}
 
 **What is the purpose of this role?**
