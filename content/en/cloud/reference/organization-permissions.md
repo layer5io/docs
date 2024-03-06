@@ -2,7 +2,7 @@
 title: Default Organization Permissions
 description: >
   List of default permissions granted to the Organization Admin and Organization Billing Manager roles.
-weight: 4
+weight: 1
 categories: [Identity]
 tags: [orgs]
 ---
