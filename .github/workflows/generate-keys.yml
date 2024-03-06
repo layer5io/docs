@@ -27,8 +27,8 @@ jobs:
         curl -L "${{ inputs.spreadsheet_uri }}" -o "./keys.csv";      
     - name: Create permissions folder
       run: |
-        [ ! -d "./static/csv" ] && mkdir -p "./static/csv";
-        mv keys.csv static/csv/keys.csv;
+        [ ! -d "./data/csv" ] && mkdir -p "./data/csv";
+        mv keys.csv data/csv/keys.csv;
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
