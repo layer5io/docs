@@ -1,5 +1,5 @@
 {{ $data := "" }}
-{{ $p := .Site.Data.keys }}
+{{ $p := "data/csv/keys.csv" }}
 {{ $excludedColumns := slice 0 3 9 10 11 12 13 14 15 16 }} 
 
 {{ with resources.Get $p }}
