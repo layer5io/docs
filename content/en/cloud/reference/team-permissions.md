@@ -2,7 +2,7 @@
 title: Default Team Permissions
 description: >
   Complete list of default permissions granted to Team Admin and Team Manager roles.
-weight: 4
+weight: 2
 categories: [Identity]
 tags: [teams]
 ---
