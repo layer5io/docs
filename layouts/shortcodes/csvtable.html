@@ -1,7 +1,7 @@
 {{ $data := "" }}
 
 {{ $p := "static/data/csv/keys.csv" }}
-{{ $excludedColumns := slice 0 3 9 10 11 12 13 14 15 16 }} 
+{{ $excludedColumns := slice 0 9 10 11 12 13 14 15 16 }} 
 
 {{ if os.FileExists $p }}
   {{ $opts := dict "delimiter" "," }}
