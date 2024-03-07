@@ -1,14 +1,15 @@
 {{ $data := "" }}
 
-{{ $p := "data/keys.csv" }}
+{{ $p := "static/data/csv/keys.csv" }}
 {{ $excludedColumns := slice 0 3 9 10 11 12 13 14 15 16 }} 
 
-{{ with resources.Get $p }}
+{{ if os.FileExists $p }}
   {{ $opts := dict "delimiter" "," }}
-  {{ $data = .Content | transform.Unmarshal $opts }}
+  {{ $data = (os.ReadFile $p | transform.Unmarshal $opts) }}
 {{ else }}
   {{ errorf "Unable to get resource %q" $p }}
 {{ end }}
+
 
 {{ if $data }}
   {{ $uniqueCategories := slice }}
