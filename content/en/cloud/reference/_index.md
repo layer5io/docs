@@ -29,9 +29,5 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 <a href="https://meshery.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
 {{< /alert >}}
 
-## Permissions
 
-{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains](/cloud/security/keychains/) and [roles](/cloud/security/roles).{{< /alert >}}
-
-{{< csvtable >}}
 
