@@ -8,6 +8,8 @@ categories: [Visualizer]
 
 The Views tab is located on the right side of the screen just beside the Details tab in MeshMap Visualizer. It allows you to see all containers the present in your Kubernetes cluster. Think of views for Visualizer mode as you would design for the Designer mode. 
 
+![Visualizer Views](./images/Views.svg)
+
 ## Managing Views
 Here's what you can do with views in Visualizer:
 
