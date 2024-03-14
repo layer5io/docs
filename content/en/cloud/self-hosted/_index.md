@@ -22,9 +22,7 @@ Customize the appearance and branding of your engineering platform powered by La
 
 ## Considerations of Peer-to-Peer Communication
 
-Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience.
-
-Layer5 Cloud propagates document updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.
+Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience and does so by propagating document (e.g. designs, views, and so on) updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.
 
 Characteristics of the peer-to-peer communication include:
 
