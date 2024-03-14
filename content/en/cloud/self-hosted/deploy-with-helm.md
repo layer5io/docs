@@ -1,7 +1,7 @@
 ---
 title: Deploying Layer5 Cloud
 description: "Layer5 Cloud is a collection of services that can be deployed on-premises using Helm."
-categories: [self-hosted]
+categories: [Self-Hosted]
 ---
 
 ## High-level List of Deployment Tasks
@@ -16,11 +16,11 @@ categories: [self-hosted]
 
 ### Kubernetes-based Installation with Helm
 
-Layer5 offers on-premises installation of its Meshery Remote Provider: Layer5 Cloud. See the repository's full [index](https://docs.layer5.io/charts) of Layer5 Helm Charts. Contained in the Layer5 Helm repository is one chart with two subcharts.
+Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud. See the repository's full [index](https://docs.layer5.io/charts) of Layer5 Helm Charts. Contained in the Layer5 Helm repository is one chart with two subcharts.
 
 #### Prerequisites
 
-**1. Prepare a Persistent Volume**
+##### 1. Prepare a Persistent Volume
 
 A persistent volume to store the Postgres database is necessary to prepare prior to deployment. If your target cluster does not have a persistent volume readily available (or not configured for automatic PV provisioning and binding of PVCs to PV), we suggest to apply the following configuration to your cluster.
 
@@ -28,14 +28,16 @@ A persistent volume to store the Postgres database is necessary to prepare prior
 kubectl apply -f install/kubernetes/persistent-volume.yaml
 ```
 
-**2. Prepare a dedicated namespace and add the chart repo to your helm configuration.**
+##### 2. Prepare a dedicated namespace and add the chart repo to your helm configuration
 
 ```bash
 kubectl create ns <namespace>
 helm repo add layer5 https://docs.layer5.io/charts
 ```
 
-**3. Ensure NGINX Ingress Controller is deployed.**
+##### 3. Ensure NGINX Ingress Controller is deployed
+
+*You may chose to use an alternative ingress controller, but the following instructions assume the use of NGINX Ingress Controller.*
 
 ``` 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
@@ -43,13 +45,13 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 
 #### Installation
 
-**1. Install Postgres database**
+##### 1. Install Postgres database
 
 ```bash
 helm install -f ./install/postgresql/values.yaml postgres ./install/postgresql -n <namespace>
 ```
 
-**2. Install Remote Provider Server and Identity Provider.**
+##### 2. Install Remote Provider Server and Identity Provider
 
 ```bash
 ## TBD: Delete local filesystem reference
@@ -62,7 +64,7 @@ helm install -f ./install/helm-chart-values/layer5-cloud-values.yaml cloud ./ins
 --set-file 'kratos.kratos.emailTemplates.verification.valid.body'=<path to the email templates to override>/valid/email-verify.body.gotmpl
 ```
 
-**3. Create an OAuth 2.0 client**
+##### 3. Create an OAuth 2.0 client
 1. Port forward the Hydra Admin service.
 2. ```bash
     hydra clients create \
