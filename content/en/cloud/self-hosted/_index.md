@@ -12,20 +12,41 @@ description: >
 
 Layer5 Cloud is a collection of services that can be deployed on-premises. The following diagram illustrates the architecture of Layer5 Cloud.
 
-## White-labeling
+## White-labeling (Rebranding)
 
-White-labeling is a feature that allows you to customize the appearance and branding of your engineering platform powered by Layer5 Cloud. With white-labeling, you can change the logo, color scheme, domain name, and other elements of the user interface to match your own identity and preferences. White-labeling enables you to offer a seamless and consistent experience to your customers, partners, or internal users who access your service mesh platform. White-labeling also helps you to differentiate your platform from other Layer5 Cloud users and competitors, and to enhance your brand recognition and loyalty.
+Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. You can change the logo, color scheme, domain name, and other aspects of the user interface to match your own identity and preferences. White-labeling enables you to offer a seamless and consistent experience to your customers, partners, or internal users who access your service mesh platform. White-labeling also helps you to differentiate your platform from other Layer5 Cloud users and competitors, and to enhance your brand recognition and loyalty.
 
 ## Considerations of Self-Hosted Deployments
 
 ![self-hosted-deployment](images/self-hosted-deployment.svg "image-center-no-shadow")
 
-## Considerations of Peer-to-Peer Communication and Central Coordination
+## Considerations of Peer-to-Peer Communication
+
+Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience.
+
+Layer5 Cloud propagates document updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.
+
+Characteristics of the peer-to-peer communication include:
+
+- Fast message propagation
+-Encryption and authorization over untrusted signaling servers
+- No setup required, public signaling servers are available
+- Very little server load
+- Not suited for a large amount of collaborators on a single document (each peer is connected to each other)
 
 ![meshmap-collaboration-networking](images/meshmap-collaboration-networking.svg "image-center-no-shadow")
+
+### Default Configuration
+
+By default, Layer5 Cloud uses the public signaling server provided by Layer5. This server is hosted by Layer5 and is available to all users. The server is not able to see the content of the documents, but it can see the metadata of the documents (title, list of users, etc.).
+
+#### Default Number of Supported Users
+
+Minimum: 20
+Maximum: 34
+
+Layer5 Cloud uses a min and max range for the total number of users in multi-player mode in one document at-a-time in order to prevent users forming clusters (groups), that can't connect to other users. The min and max range is randomly selected for each document editing session.
 
 ## Consideration for Air-Gapped Deployments
 
 Meshery acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Meshery's commitment to versatile deployment scenarios.
-
-{{< alert title="As a Service" >}}Connect to Layer5 Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.{{< /alert >}}
