@@ -21,6 +21,16 @@ Here's what you can do with views in Visualizer:
 ### 4. Delete a view
   You can delete a view when you no longer have use of it. You can only delete a view that you created. Views created by others and made public cannot be deleted, except by the owner of that view.
 ### 5. Export a view
-  When you export a view, the view is downloaded to your device in .json format
+  To export a view,
+  1. Click on the more icon to the right of the view you want to export.
+     
+     <img width="233" alt="exportview1" src="https://github.com/nwanduka/docs/assets/122698422/e520d50f-16a1-4c0d-aa62-3cb22fb68787">
+
+  2. You'll find a list of actions. Export is the second icon from the left
+     
+     <img width="232" alt="exportview2" src="https://github.com/nwanduka/docs/assets/122698422/65d6376d-bc9c-4ef2-a275-5e35182a3c52">
+
+  3. Click on the export icon. The view will be downloaded to your device in .json format
+     
 ### 6. View info
   View info shows you the owner of the design, the view visibility (whether it's set to public or private), the date the design was created and the date it was last modified. If you're the owner of the view, you'll also see an input field where you can add notes about the design.
