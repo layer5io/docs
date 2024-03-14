@@ -44,7 +44,9 @@ jobs:
       - uses: azure/setup-helm@v4.1.0
       - name: validate
         run: helm lint cloud/install/kubernetes --with-subcharts
-
+      - name: Change to cloud directory
+        run: |
+          cd meshery-cloud;
       - name: Manually publish Helm chart with release version
         uses: helm/chart-releaser-action@v1.6.0
         env:
