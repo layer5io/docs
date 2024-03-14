@@ -8,34 +8,34 @@ on:
   #     - 'v*'
   #   paths:
   #     - 'install/kubernetes/**'
-#   pull_request:
-#     branches:
-#       - 'master'
-#     paths:
-#       - 'install/kubernetes/**'
-  workflow_call:      
+  #   pull_request:
+  #     branches:
+  #       - 'master'
+  #     paths:
+  #       - 'install/kubernetes/**'
+  workflow_call:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'
+        description: "Log level"
         required: true
-        default: 'warning'
+        default: "warning"
       release-ver:
-          description: 'Release Version'     
-          required: false
-          default: 'v0.7.83'
+        description: "Release Version"
+        required: false
+        default: "v0.7.83"
 jobs:
   validate:
     runs-on: ubuntu-latest
     # if: ${{github.event_name == 'pull_request'}}
     steps:
-      - uses: actions/checkout@v4 
+      - uses: actions/checkout@v4
         with:
           path: cloud
           repository: layer5io/meshery-cloud
           ref: master
           token: ${{ secrets.GH_ACCESS_TOKEN }}
-      - uses: actions/checkout@v4 
+      - uses: actions/checkout@v4
         with:
           path: docs
           repository: layer5io/docs
@@ -44,20 +44,10 @@ jobs:
       - uses: azure/setup-helm@v4.1.0
       - name: validate
         run: helm lint cloud/install/kubernetes --with-subcharts
-  
-  
+
       - name: Manually publish Helm chart with release version
-        uses: stefanprodan/helm-gh-pages@master
+        uses: helm/chart-releaser-action@v1.6.0
+        env:
+          CR_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          charts_dir: cloud/install/kubernetes
-          owner: layer5io
-          repository: docs
-          branch: master
-          charts_url: https://docs.layer5.io/charts
-          target_dir: docs/static/charts
-          commit_username: l5io
-          commit_email: l5io@layer5.io
-          linting: on
-          chart_version: ${{github.event.inputs.release-ver}}
-          app_version: ${{github.event.inputs.release-ver}}
+          charts_dir: meshery-cloud/install/kubernetes
