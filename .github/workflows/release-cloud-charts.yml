@@ -35,60 +35,19 @@ jobs:
           repository: layer5io/meshery-cloud
           ref: master
           token: ${{ secrets.GH_ACCESS_TOKEN }}
-      - uses: azure/setup-helm@v4
-        id: install
-      - name: validate cloud chart
-        run: helm lint cloud/install/kubernetes --with-subcharts
-    # if: ${{ github.event_name != 'pull_request' }} && ${{ github.ref == 'refs/heads/master' }}
       - uses: actions/checkout@v4 
         with:
           path: docs
           repository: layer5io/docs
           ref: master
           token: ${{ secrets.GH_ACCESS_TOKEN }}
-      #- name: Publish Helm chart for edge latest
-      #  if: startsWith(github.ref, 'refs/tags/') != true && success()
-      #  uses: stefanprodan/helm-gh-pages@master
-      #  with:
-      #    token: ${{ secrets.GH_ACCESS_TOKEN }}
-      #    charts_dir: install/kubernetes/helm
-      #    owner: layer5io
-      #    repository: meshery.io
-      #    branch: master
-      #    target_dir: charts
-      #    commit_username: l5io
-      #    commit_email: l5io@layer5.io
-      #    chart_version: edge-latest
-      #- name: Publish Helm chart for stable latest
-      #  if: github.event_name != 'pull_request' && startsWith(github.ref, 'refs/tags/') && success()
-      #  uses: stefanprodan/helm-gh-pages@master
-      #  with:
-      #    token: ${{ secrets.GH_ACCESS_TOKEN }}
-      #    charts_dir: install/kubernetes/helm
-      #    owner: layer5io
-      #    repository: meshery.io
-      #    branch: master
-      #    target_dir: charts
-      #    commit_username: l5io
-      #    commit_email: l5io@layer5.io
-      #    chart_version: stable-latest
-
-    #   - name: Publish Helm chart for release version  
-    #     uses: stefanprodan/helm-gh-pages@master
-    #     with:
-    #       token: ${{ secrets.GH_ACCESS_TOKEN }}
-    #       charts_dir: ${{ github.workspace }}/cloud/install/kubernetes
-    #       owner: layer5io
-    #       repository: docs
-    #       branch: master
-    #       target_dir: charts
-    #       commit_username: l5io
-    #       commit_email: l5io@layer5.io
-    #       chart_version: ${{ steps.vars.outputs.tag }}
-    #       app_version: ${{ steps.vars.outputs.tag }}
+      - name: "validate cloud chart"
+      - uses: azure/setup-helm@v4.1.0
+          run: helm lint cloud/install/kubernetes --with-subcharts
+  
+  
   
       - name: Manually publish Helm chart with release version
-        # if:  github.event_name == 'workflow_dispatch'
         uses: stefanprodan/helm-gh-pages@master
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
