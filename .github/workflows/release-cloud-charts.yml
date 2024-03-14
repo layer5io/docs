@@ -42,8 +42,8 @@ jobs:
           ref: master
           token: ${{ secrets.GH_ACCESS_TOKEN }}
       - uses: azure/setup-helm@v4.1.0
-        name: "validate cloud chart"
-          run: helm lint cloud/install/kubernetes --with-subcharts
+      - name: validate
+        run: helm lint cloud/install/kubernetes --with-subcharts
   
   
       - name: Manually publish Helm chart with release version
