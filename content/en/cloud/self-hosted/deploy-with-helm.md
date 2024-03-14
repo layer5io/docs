@@ -30,8 +30,10 @@ kubectl apply -f install/kubernetes/persistent-volume.yaml
 
 ##### 2. Prepare a dedicated namespace and add the chart repo to your helm configuration
 
+*You may choose to use an alternative namespace, but the following instructions assume the use of `layer5` namespace.*
+
 ```bash
-kubectl create ns <namespace>
+kubectl create ns layer5
 helm repo add layer5 https://docs.layer5.io/charts
 ```
 
@@ -39,11 +41,14 @@ helm repo add layer5 https://docs.layer5.io/charts
 
 *You may chose to use an alternative ingress controller, but the following instructions assume the use of NGINX Ingress Controller.*
 
-``` 
+```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
 ```
 
 #### Installation
+
+The first service to install is the Postgres database. The following command installs the Postgres database and initializes it's dataset. The dataset is used by the Layer5 Cloud server and the Layer5 Cloud identity provider.
+
 
 ##### 1. Install Postgres database
 
