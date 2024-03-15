@@ -2,14 +2,15 @@
 title: Deploying Layer5 Cloud
 description: "Layer5 Cloud is a collection of services that can be deployed on-premises using Helm."
 categories: [Self-Hosted]
+weight: 1
 ---
 
 ## High-level List of Deployment Tasks
 
 <ol>
-    <li>Review the prequisites for installing Layer5 Cloud on Kubernetes. (<a href="https://docs.layer5.io/self-hosted/">docs</a>)</li>
+    <li>Review the prequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
     </li>
-    <li>Install Layer5 Cloud on Kubernetes using Helm. Deploy it's services in Kubernetes in-cluster. (<a href="https://docs.layer5.io/self-hosted/">docs</a>)</li>
+    <li>Install Layer5 Cloud on Kubernetes using Helm. Deploy it's services in Kubernetes in-cluster. (<a href="#installation">docs</a>)</li>
     <li>Meshery deployments are separate from <a href="https://docs.meshery.io/extensibility/providers">Remote Provider</a> deployments (Layer5 Cloud). Deploy Meshery in Kubernetes in-cluster (or out-of-cluster). (<a href="https://docs.meshery.io/installation/quick-start">docs</a>)</li>
     <li>Configure Meshery Server point to your Remote Provider. Learn more about the Meshery Server registration process with Remote Providers. (<a href="https://docs.meshery.io/extensibility/providers#meshery-server-registration">docs</a>)</li>
 </ol>
