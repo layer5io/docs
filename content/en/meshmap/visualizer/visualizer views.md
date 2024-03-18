@@ -46,3 +46,5 @@ Here's what you can do with views in Visualizer:
      
 ### 6. View info
   View info shows you the owner of the design, the view visibility (whether it's set to public or private), the date the design was created and the date it was last modified. If you're the owner of the view, you'll also see an input field where you can add notes about the design.
+
+  ![View Info](/meshmap/visualizer/images/ViewInfo.png)
