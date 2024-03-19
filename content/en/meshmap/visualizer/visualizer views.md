@@ -35,7 +35,7 @@ Here's what you can do with views in Visualizer:
     
   3. Click on the share icon to open up the share modal.
    
-     <img src="./images/ShareModal.png" alt="Share a view" height="300">
+     <img src="./images/ShareModal.PNG" alt="Share a view" height="300">
     
   4. Enter the name of the user you want to share a view with and set the view access.
      
