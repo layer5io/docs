@@ -1,7 +1,7 @@
 ---
-title: Resource Access
+title: Sharing Designs
 description: >
-  Using control access to manage resource permissions and visibility.
+  Share design with other users and use control access to manage design access permissions and visibility.
 weight: 3
 categories: [Designer]
 tags: [designs, collaboration, review]
@@ -9,13 +9,25 @@ tags: [designs, collaboration, review]
 
 ## Overview
 
-In Meshery, a resource represents the entities you create and manage within the platform. For example, designs, filters, views, environment and workspaces. You can share these resource with your team members or members within your organization. It's important to note Meshery currently only support sharing resources like designs, filters and views, resource access control for environment and workspaces is upcoming feature.
+In Meshmap, you can share your designs or design that you have permission to share with other members of your organization and teams and can control over access permissions. This page describes control access permissions for designs and how to effectively use them.
 
-This page describes about resource access permissions specifically for designs and views and how you can manage permissions within Meshmap.
+{{< alert title="Note">}}
+- You can share and use control access to manage views permissions and visibility also with same methods.
+{{< /alert >}}
+
+## Visibility
+
+Designs and Views have visibility status which defines who can access your designs. These options provide different levels of exposure for your designs:
+
+- **Private:** Designs or Views with visibility status private defines only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.
+
+- **Public:**  Making a design public allows anyone within your organization to view, comment on, and edit the design. This feature is useful for sharing best practices, reference architectures, or contributions within your organization. However, as the owner of the design, you can restrict permissions for individual users or teams by adding and customizing access permissions. We will discuss how you can do this in the next section.
+
+- **Published:**  The published visibility setting is designed for sharing designs with a wider audience. Published designs become discoverable to other Meshery users and allows them to view, download and clone the design. Users can find published designs through [Meshery Catalog](https://meshery.io/catalog) and catalog tab within MeshMap.
 
 ## Granting access for Individual Users
 
-As a design or view owner, you have granular control over access permissions for your designs. 
+As a design owner, you have granular control over access permissions for your designs. 
 
 Following steps shows how you can grant access to individual users:
 
@@ -24,100 +36,32 @@ Following steps shows how you can grant access to individual users:
 - Enter the name or email addresses of the users you want to share the design with.
 - Define the permission level for each user (e.g., view, comment, edit). You can choose from predefined options.
 
-### Commenting via the Activity Toolbar
+You can also change visibility status between public and private of design from here. 
 
-Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
+## Permission Levels and their Impact:
 
-<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="600"/>
+Meshmap by default provides you various access permissions for your design that you can grant to other users or team.
 
+- View: Users with view access can see the design details but cannot modify them.
+- Comment: Comment access allows users to add comments and suggestions to the design, facilitating discussions and feedback.
+- Edit: Edit access allows users to modify configurations, add components, deploy design, and essentially alter the design. While Editors have extensive access, they do not have all the privileges of the Owner like deleting designs.
+- Owner: Owner role grants the highest level of access, includes all permissions available like view, comment and edit. Owners have full control over the design and its settings. However, it's important to note that presently Meshmap does not support transferring the design ownership.
 
-### Commenting via Context-Click in Canvas
+The Owner, Editor, and Viewer access permissions are hierarchical, meaning that the Owner permissions includes the edit permission, and the Edit permission includes the view permission. 
 
-Right-click on any area of your canvas, and from the contextual menu, select "Comment" or use the shortcut ***Ctrl + M (Command + M for Mac users)***. This allows for swift comment placement right where you need it.
+If there are explicit access permission set for a user, that will take precedence and be considered active. Otherwise, the permissions assigned to the team will be used if the team has access.
 
-<img src="./Right-click.png" alt="Comment by right-clicking" width="600" style="margin-bottom: 25px;">
+For example, if Sarah has been granted specific access permission, that will be active. However, if no specific access permission are set for Sarah, but she's part of a team with access, then the permissions of that team will apply to her.
 
-### Commenting via drag-and-drop from the Dock
+## Revoking, and Re-inviting Access:
 
-   To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
+You can manage access permissions at any time by revisiting the "Share" modal. This modal allows you to grant access to new users, revoke access or even update the access permissions of current users.
 
-## Tips for using Comments as a Design Review Tool
+## Share design via link
 
-<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="600" style="margin-bottom: 25px;">
-
-### Initiate Threads
-
-You can initiate a comment thread by just adding a comment. Your comment may be a request for design review or feedback on a design. Team members can reply directly to comments to for a comment thread. This creates a structured dialogue around each point of feedback for easy referencing.
-
-### Utilize Mentions
-
-Easily draw the attention of relevant team members by tagging them in your comment. To activate this, type @ in the comment box and a list of your team members will appear then you can select who you want to mention. This ensures that the right people are notified and can contribute to the discussion.
-
-### Comment on Specific Elements
-
-Leave comments on specific elements within the design, whether it's a shape, text, or an entire component. This specificity ensures that feedback is targeted and directly related to the part of the design under discussion.
-  
-### Avoid Dangling Threads / Resolving Comment
-
-Once revisions are complete, you can resolve the comment. This action closes the comment thread and signifies that the conversation around that feedback has concluded.
-
-### View Comment History
-
-After resolving a comment thread, you can access the comment history to review previous discussions and decisions.
-
-![Conversation inside comments in designer](./comments-conversation.gif)
-
-### Enable Email Notifications
-
-Customize your [notification preferences](https://docs.layer5.io/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
-
-### Unresolving Comments
-
-After a comment has been resolved, there might be situations where you need to reopen the discussion. Unresolving a comment allows you to reinitiate conversations, address additional concerns, or make further changes. Follow the steps below to unresolve a comment:
-
-<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600">
-
-### Mute Comment Notifications
-
-Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
-
-<img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
-
-**What Muting Affects:**
-
-  -  *Muted Design's Comment Thread:* This includes all subsequent replies within the same thread, whether directed at you or not.
-  -  *Your Mentions:* You won't receive email alerts when someone mentions you in the muted design's comment thread.
-
-**What Muting Doesn't Affect:**
-
-  -  *Mentions in Other Designs:* You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
-  -  *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
-
-{{< alert title="Remember">}}
-- While email alerts are muted, you can still access and view all comments on the design at any time.
-- You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
-{{< /alert >}}
-
-
-## Best Practices for Effective Design Reviews
-
-### Be specific and actionable
-
-Provide specific feedback rather that the design can act on. Vague comments can lead to misunderstandings and delays in the design process. Support your feedback with examples or references. This can help clarify your point and provide the designer with tangible suggestions for improvement.
-
-### Balance positive and contructive feedback
-
-Frame feedback in a constructive manner, focusing on how things can be improved rather than just pointing out flaws. Acknowledge what works well in the design before delving into areas that need improvement. This helps maintain a positive and collaborative atmosphere.
-
-### Regularly check and respond to comments
-
-Stay engaged in the review process. Regularly check and respond to comments to keep the conversation alive and ensure a smooth workflow.
-
-### Prioritize feedback
-
-Highlight the most critical feedback first. This ensures that the designer focuses on the most important aspects for improvement.
+You can share your design by copying the link 
 
 {{< alert title="Note">}}
-- The 'Comment' feature is currently in its beta phase, and we may introduce updates or improvements over time.
+- The 'Share' feature is currently in its beta phase, and we may introduce updates or improvements over time.
 - Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
 {{< /alert >}}
