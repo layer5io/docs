@@ -9,7 +9,7 @@ tags: [designs, collaboration, review]
 
 ## Overview
 
-In MeshMap, you can share your designs or design that you have permission to share with other members of your organization and teams and can control over access permissions. This page describes control access permissions for designs and how to effectively use them.
+In MeshMap, you can share your designs or design that you have permission to share with other members of your organization and teams and can control over access permissions. This page describes access types for designs and how to effectively use them.
 
 {{< alert title="Note">}}
 - You can share and use control access to manage views permissions and visibility also with same methods.
