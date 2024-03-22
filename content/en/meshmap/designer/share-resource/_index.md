@@ -73,7 +73,7 @@ With this new capability, you'll be able to designate specific teams within your
 
 When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private, however you can update the access type of team by revisiting the "Share" modal within MeshMap.
 
-[Learn more about auditing the access permission within workspace]()
+[Learn more about auditing the access permission within workspace](/cloud/spaces/workspaces/)
 
 {{< alert title="Note">}}
 - The 'Share' feature is currently in its beta phase, and we may introduce updates or improvements over time.
