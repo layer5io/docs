@@ -35,7 +35,7 @@ Here is a list of the different types of relationships that Meshery supports:
 1. Edge-Permission
    Here's an example of an Edge-Permission relationship
    
-   ![example of edge-permission relationship](./edge_permission_cluster_role_service_account.svg)
+   ![example of edge-permission relationship](./edge_permission_relationship_cluster_role_service_account.svg)
    
 1. Hierarchical-Inventory
    Here's an example of a Hierarchical-Inventory relationship
