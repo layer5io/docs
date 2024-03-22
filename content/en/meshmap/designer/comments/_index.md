@@ -9,7 +9,7 @@ tags: [designs, collaboration, review]
 
 ## Overview
 
-MeshMap's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration desicions. Pay it forward to your future self by leaving comments for reference later.
+MeshMap's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving comments for reference later.
 
 ## Three Ways to Add Comments
 
@@ -67,6 +67,28 @@ Customize your [notification preferences](https://docs.layer5.io/cloud/identity/
 After a comment has been resolved, there might be situations where you need to reopen the discussion. Unresolving a comment allows you to reinitiate conversations, address additional concerns, or make further changes. Follow the steps below to unresolve a comment:
 
 <img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600">
+
+### Mute Comment Notifications
+
+Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
+
+<img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
+
+**What Muting Affects:**
+
+  -  *Muted Design's Comment Thread:* This includes all subsequent replies within the same thread, whether directed at you or not.
+  -  *Your Mentions:* You won't receive email alerts when someone mentions you in the muted design's comment thread.
+
+**What Muting Doesn't Affect:**
+
+  -  *Mentions in Other Designs:* You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
+  -  *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
+
+{{< alert title="Remember">}}
+- While email alerts are muted, you can still access and view all comments on the design at any time.
+- You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
+{{< /alert >}}
+
 
 ## Best Practices for Effective Design Reviews
 
