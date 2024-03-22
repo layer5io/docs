@@ -9,7 +9,7 @@ tags: [designs, collaboration, review]
 
 ## Overview
 
-In MeshMap, you can share your designs or design that you have permission to share with other members of your organization and teams and can control over access permissions. This page describes access types for designs and how to effectively use them.
+In MeshMap, you can share your designs or designs for which you have permission to share with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
 {{< alert title="Note">}}
 - You can share and use control access to manage views permissions and visibility also with same methods.
@@ -17,7 +17,7 @@ In MeshMap, you can share your designs or design that you have permission to sha
 
 ## Visibility
 
-Designs and Views have visibility status which defines who can access your designs. These options provide different levels of exposure for your designs:
+Designs and Views have visibility statuses that define who can access your designs. These options offer different levels of exposure for your designs:
 
 - **Private:** Designs or Views with visibility status private defines only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.
 
