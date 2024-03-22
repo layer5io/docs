@@ -20,29 +20,29 @@ Here is a list of the different types of relationships that Meshery supports:
 1. Edge-Network
       The Edge-Network relationship type configures the networking between one or more components. An example is the         relationship between an Ingress and a Service.
    
-      [example of edge-network relationship](./EdgeNetworkRelationship.svg)
+      ![example of edge-network relationship](./EdgeNetworkRelationship.svg)
    
 1. Edge-Firewall
    An example of this relationship is that between two Pods.
    
-   [example of edge-firewall relationship](./edge_firewall_relationship_pod_to_pod.svg)
+   ![example of edge-firewall relationship](./edge_firewall_relationship_pod_to_pod.svg)
    
 1. Edge-Mount
    Here's an example of an Edge-Mount relationship.
    
-   [example of edge-mount relationship](./EdgeMountRelationship.svg)
+   ![example of edge-mount relationship](./EdgeMountRelationship.svg)
    
 1. Edge-Permission
    Here's an example of an Edge-Permission relationship
    
-   [example of edge-permission relationship](./edge_permission_cluster_role_service_account.svg)
+   ![example of edge-permission relationship](./edge_permission_cluster_role_service_account.svg)
    
 1. Hierarchical-Inventory
    Here's an example of a Hierarchical-Inventory relationship
    
-   [example of edge-permission relationship](./Hierachical_Inventory_Relationships.svg)
+   ![example of edge-permission relationship](./Hierachical_Inventory_Relationships.svg)
    
 1. Hierarchical-Parent
    Here's an example of a Hierarchical-Parent relationship
    
-   [example of edge-permission relationship](./Hierarchical_Parent_Relationship.svg)
+   ![example of edge-permission relationship](./Hierarchical_Parent_Relationship.svg)
