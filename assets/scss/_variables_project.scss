@@ -73,9 +73,9 @@ $font-qanelas: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol";
 
-@if $td-enable-google-fonts {
-  $td-fonts-serif: prepend($td-fonts-serif, "#{$google_font_name}");
-}
+// @if $td-enable-google-fonts {
+//   $td-fonts-serif: prepend($td-fonts-serif, "#{$google_font_name}");
+// }
 
 $font-family-sans-serif: $td-fonts-serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
