@@ -17,8 +17,10 @@ Relationships are categorized into different kinds, types, and subtypes, so that
 
 Here is a list of the different types of relationships that Meshery supports:
 
-1. Edge-Network
-      The Edge-Network relationship type configures the networking between one or more components. An example is the         relationship between an Ingress and a Service.
+1. Edge
+  Edge relationships indicate the possibility of traffic flow between two components. They enable communication and interaction between different Components within the system.
+   1. Edge-Network
+      The Edge-Network relationship type configures the networking between one or more components. This deals with IP addresses and DNS names and provides stable endpoints for communication. For instance, a “Service” provides a stable endpoint for accessing multiple replicas of a “Deployment”. Here's a visual representation of this kind of relationship.
    
       ![example of edge-network relationship](./EdgeNetworkRelationship.svg)
    
