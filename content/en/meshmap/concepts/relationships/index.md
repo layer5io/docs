@@ -17,29 +17,39 @@ Relationships are categorized into different kinds, types, and subtypes, so that
 
 Here is a list of the different types of relationships that Meshery supports:
 
-1. Edge
-  Edge relationships indicate the possibility of traffic flow between two components. They enable communication and interaction between different Components within the system.
-   1. Edge-Network
-      The Edge-Network relationship type configures the networking between one or more components. This deals with IP addresses and DNS names and provides stable endpoints for communication. For instance, a “Service” provides a stable endpoint for accessing multiple replicas of a “Deployment”. Here's a visual representation of this kind of relationship.
+### 1. Edge Relationships
+
+Edge relationships indicate the possibility of traffic flow between two components. They enable communication and interaction between different Components within the system. There are 4 subtypes of the edge relationship.
+
+**i. Edge-Network:**
+
+The Edge-Network relationship type configures the networking between one or more components. This deals with IP addresses and DNS names and provides stable endpoints for communication. For instance, a “Service” provides a stable endpoint for accessing multiple replicas of a “Deployment”. Here's a visual representation of this kind of relationship.
    
-      ![example of edge-network relationship](./EdgeNetworkRelationship.svg)
+  ![example of edge-network relationship](./EdgeNetworkRelationship.svg)
    
-1. Edge-Firewall
-   An example of this relationship is that between two Pods.
+**ii. Edge-Firewall**
+
+This acts as intermediary for communications which include standard networking protocols like TCP and UDP. It can enforce network policies to control traffic between components, for example between two Pods.
    
    ![example of edge-firewall relationship](./edge_firewall_relationship_pod_to_pod.svg)
    
-1. Edge-Mount
-   Here's an example of an Edge-Mount relationship.
+**iii. Edge-Mount**
+
+   This subtype addresses the storage and access possibility between involved components. For example, a “PersistentVolume” can be mounted to a “Pod” to provide persistent storage for the pod’s data.
    
    ![example of edge-mount relationship](./EdgeMountRelationship.svg)
    
-1. Edge-Permission
-   Here's an example of an Edge-Permission relationship
+**iv. Edge-Permission**
+
+   This defines the permissions for components if they can have a possible relationship with other components. It ensures that only authorized components can interact with each other. For example, a “Role” can define permissions for Components to access specific resources.
    
    ![example of edge-permission relationship](./edge_permission_relationship_cluster_role_service_account.svg)
-   
-1. Hierarchical-Inventory
+
+
+### 2. Hierarchical Relationships
+
+**i. Hierarchical-Inventory**
+
    Here's an example of a Hierarchical-Inventory relationship
    
    ![example of edge-permission relationship](./Hierachical_Inventory_Relationships.svg)
