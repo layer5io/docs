@@ -48,13 +48,16 @@ This acts as intermediary for communications which include standard networking p
 
 ### 2. Hierarchical Relationships
 
+Hierarchical relationships involve either an ancestral connection of the components (i.e. the creation/deletion of a component higher up affects the existence of the components below in the lineage) or a connection which involves the inheritence of features from one component to the other. There are 2 subtypes of the hierarchical relationship.
+
 **i. Hierarchical-Inventory**
 
-   Here's an example of a Hierarchical-Inventory relationship
+  This is a relationship between components where the configuration settings of one component, known as the parent, are combined or integrated with the configuration settings of another component, known as the child. This implies that changes or updates made to the parent component can affect or influence the configuration of the child component. Here's an example of a Hierarchical-Inventory relationship
    
    ![example of edge-permission relationship](./Hierachical_Inventory_Relationships.svg)
    
-1. Hierarchical-Parent
-   Here's an example of a Hierarchical-Parent relationship
+**ii. Hierarchical-Parent**
+
+A parent-child relationship implies that the parent component must be present or established before the child component can be created. For instance, in Kubernetes, a 'Namespace' can serve as a parent to 'Pods' within that namespace. Therefore, the namespace must be created beforehand for pods to be deployed within it. Here's an example of a Hierarchical-Parent relationship
    
    ![example of edge-permission relationship](./Hierarchical_Parent_Relationship.svg)
