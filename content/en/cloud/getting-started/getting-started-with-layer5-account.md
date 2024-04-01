@@ -14,7 +14,7 @@ The first steps in starting with Layer5 are to create an account, verify your em
 
 ### 1. Creating an account
 
-To sign up for an account on Layer5 Cloud, navigate to <https://cloud.layer5.io/signup>.
+To sign up for an account on Layer5 Cloud, navigate to <https://meshery.layer5.io/signup>.
 You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
 
 ![Flow for user account creation](/cloud/getting-started/images/Slide40.svg)
