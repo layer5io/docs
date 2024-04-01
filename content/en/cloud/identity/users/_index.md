@@ -34,5 +34,5 @@ Organization and teams may have any number of users accounts. User accounts are 
 Users and their tokens may be authorized to access resources. Users can be created and managed by the Provider Admins, Organization Admins, or Team Admins. Users of one organization may be granted access to resources (e.g. Workspaces and Designs) of another organization. User entitlement, roles and permissions are org-scoped, meaning that the entitlements and permissions that a given user has in one organization does not necessarily reflect the same level of access that their membership in another oganziation does.
 
 {{< alert type="info" >}}
-Only Provider Admins and Organization Admin can create users. For more information, see [Roles](http://localhost:1313/cloud/security/roles/). 
+Only Provider Admins and Organization Admin can create users. For more information, see [Roles](/cloud/security/roles/). 
 {{< /alert >}}
