@@ -235,7 +235,11 @@ make run-tests
 ```
 
 #### Building Docker image
-To build a Docker image of the project, please ensure you have `Docker` installed to be able to build the image. Now, run the following command to build the Docker image:
+To build a Docker image of the project, please ensure you have `Docker` installed to be able to build the image. Now, run the following command to build and serve the files locally.:
+
+> [!IMPORTANT]  
+> This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
+> Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
 ```sh
 make docker
 ```
