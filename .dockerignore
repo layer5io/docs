@@ -1,0 +1,13 @@
+.DS_Store
+.github
+.gitignore
+.idea
+_releaser
+CONTRIBUTING.md
+Dockerfile
+compose.yml
+docker-bake.hcl
+public
+node_modules
+resources
+tmp
