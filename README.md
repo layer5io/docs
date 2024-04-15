@@ -17,8 +17,6 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 > This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
 > Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
 
-The docker image is pre-built with all the website dependencies installed, which is what makes it so quick and simple, but also means if you need to change dependencies and test the changes within Docker, you'll need a new image. If this is something you need to do, you can run make build-image to generate a local Docker image with updated dependencies, then make website-local to use that image and preview.
-
 ### With Golang
 
 If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended hugo version as it has necessary SCSS/SASS support. Find all the hugo packages here: https://github.com/gohugoio/hugo/releases/tag/v0.120.4
