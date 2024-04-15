@@ -1,9 +1,10 @@
-# Use floryn90/hugo:ext-alpine as the base image
-FROM floryn90/hugo:ext-alpine
+FROM razonyang/hugo:exts as builder
 
-# Set the working directory to /src
-WORKDIR /src
+ARG HUGO_BASEURL=
+ENV HUGO_BASEURL=${HUGO_BASEURL}
 
-# Install Git and configure safe directory
-RUN apk add --no-cache git && \
-    git config --global --add safe.directory /src
+COPY . /src
+RUN hugo --minify --gc --enableGitInfo
+
+FROM razonyang/hugo:nginx
+COPY --from=builder /src/public /site
