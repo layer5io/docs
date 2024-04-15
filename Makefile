@@ -42,3 +42,7 @@ check-go:
 	@echo "Checking if Go is installed..."
 	@command -v go > /dev/null || (echo "Go is not installed. Please install it before proceeding."; exit 1)
 	@echo "Go is installed."
+
+docker:
+	docker build -t layer5/docs .
+	docker run -p 8080:80 layer5/docs
