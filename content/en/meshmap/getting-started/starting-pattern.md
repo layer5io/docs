@@ -15,21 +15,21 @@ Starting from a pattern is a quick way to get started with a popular stack or so
 The design catalog can be accessed from two locations:
  - From the Catalog tab in _MeshMap_ Design view.
 
-   ![MeshMap Design Catalog](../../../../assets/screenshots/2024-04-14_12-40.png)
+   ![MeshMap Design Catalog](/meshmap/getting-started/images/2024-04-14_12-40.png)
 
  - From the _Meshery Cloud_ catalog page at [Meshery Cloud Catalog](https://meshery.layer5.io/catalog).
 
-   ![Meshery Cloud Catalog](../../../../assets/screenshots/2024-04-14_12-44.png)
+   ![Meshery Cloud Catalog](/meshmap/getting-started/images/2024-04-14_12-44.png)
 
 
 ## Copying a Design
 
 To start from a pattern, select and create a copy of the design. If you are on the MeshMap design page, click on the chosen design from the **Catalog** tab. This will present a popup to clone the design, click **Clone** to begin.
 
-![Copy of a Design](../../../../assets/screenshots/2024-04-18_19-57.png)
+![Copy of a Design](/meshmap/getting-started/images/2024-04-18_19-57.png)
 
 This will create a copy of the catalog item to a new design, now owned by you.
 
-![Copy of a Design](../../../../assets/screenshots/2024-04-14_12-37.png)
+![Copy of a Design](/meshmap/getting-started/images/2024-04-14_12-37.png)
 
 You are now free to deploy it as it is or modify it further. 
