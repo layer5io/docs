@@ -7,9 +7,28 @@ categories: [Designer]
 tags: [designs]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+## Steps to cloning a design from Catalog using MeshMap
+
+1. Switch to MeshMap Designer mode, if not already in it.
+1. In the left navigation panel, click the “Catalog” menu tab.
+1. Select a design from the list that appears in the panel.
+1. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
+
+![Copy of a Design](/meshmap/getting-started/images/2024-04-18_19-57.png)
+
+This will create a copy of the catalog item to a new design, now owned by you.
+
+1. Click “clone” and a copy of the design will appear on your MeshMap canvas. You can then configure the design to suit your purposes.
+2. Find your newly cloned design in the list of designs in the left navigation panel.
+
+![Copy of a Design](/meshmap/getting-started/images/2024-04-14_12-37.png)
+
+You are now free to deploy it as it is or modify it further. 
+
+
+{{< alert title="Learn about Designs" >}}Learn more about what a [Meshery Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits into Meshery's approach to cloud native management.
+{{< /alert >}}
+
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
