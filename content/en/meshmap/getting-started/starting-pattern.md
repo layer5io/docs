@@ -1,30 +1,30 @@
 ---
-title: Starting from a pattern
+title: Starting from a published design
 description: >
-  Meshery patterns are a collection of curated, reusable solutions to the most common problems in cloud and cloud native infrastructure management.
+  Published designs are available from the Layer5 Cloud catalog. Published designs are a collection of curated, reusable solutions to the most common problems in cloud and cloud native infrastructure management.
 weight: 3
 categories: [Designer]
 tags: [designs]
 ---
 
-Starting from a pattern is a quick way to get started with a popular stack or solution.
-
+Starting from a published design is a quick way to get started with a popular stack or solution.
 
 ## Exploring the Design Catalog
 
-The design catalog can be accessed from two locations:
- - From the Catalog tab in _MeshMap_ Design view.
+The design catalog can be accessed from three locations:
 
+1. From the *Catalog* tab in _MeshMap Designer_.
    ![MeshMap Design Catalog](/meshmap/getting-started/images/2024-04-14_12-40.png)
 
- - From the _Meshery Cloud_ catalog page at [Meshery Cloud Catalog](https://meshery.layer5.io/catalog).
+2. From the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://meshery.layer5.io/catalog).
+   ![Layer5 Cloud Catalog](/meshmap/getting-started/images/2024-04-14_12-44.png)
+   
+3. From the Meshery Catalog page at [Meshery Catalog](https://meshery.io/catalog).
+   ![Meshery Catalog](/meshmap/getting-started/images/meshery-io-catalog.png)
 
-   ![Meshery Cloud Catalog](/meshmap/getting-started/images/2024-04-14_12-44.png)
+## Cloning a Design
 
-
-## Copying a Design
-
-To start from a pattern, select and create a copy of the design. If you are on the MeshMap design page, click on the chosen design from the **Catalog** tab. This will present a popup to clone the design, click **Clone** to begin.
+To start from a design, select and create a [clone of the design](/meshmap/tasks/designs/cloning-a-design). If you are on the MeshMap design page, click on the chosen design from the **Catalog** tab. This will present a popup to clone the design, click **Clone** to begin.
 
 ![Copy of a Design](/meshmap/getting-started/images/2024-04-18_19-57.png)
 
