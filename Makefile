@@ -44,5 +44,5 @@ check-go:
 	@echo "Go is installed."
 
 docker:
-	docker build -t layer5/docs .
-	docker run -p 8080:80 layer5/docs
+	docker build -t layer5docs .
+	docker run -p 8080:80 layer5docs
