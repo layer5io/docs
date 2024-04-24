@@ -1,7 +1,7 @@
 ---
 title: Starting from scratch
 description: >
- Welcome to MeshMap, your comprehensive tool for creating and managing cloud-native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
+ Welcome to MeshMap, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
 weight: 2
 categories: [Designer]
 tags: [designs]
@@ -13,7 +13,7 @@ tags: [designs]
 Upon entering MeshMap, seamlessly transition to the "Designer" mode by selecting the "Designer" tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.
 
 **Example Analogy:**
-Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use MeshMap to design your cloud-native applications.
+Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use MeshMap to design your cloud native applications.
 
 ## Step 2: Giving Your Design a Name
 
@@ -27,21 +27,21 @@ Naming your design is like labeling a blueprint for a mobile app. It helps every
 Explore the extensive toolbox in Designer mode, offering a diverse array of components such as microservices, databases, and event queues. Each component seamlessly integrates into your infrastructure. As you explore components, MeshMap dynamically previews their integration into your design, ensuring a harmonious fit.
 
 **Example Analogy:**
-Think of the toolbox as a palette of building blocks for your cloud-native app. Just like selecting different materials for a construction project, you choose components for your app's architecture.
+Think of the toolbox as a palette of building blocks for your cloud native app. Just like selecting different materials for a construction project, you choose components for your app's architecture.
 
 ## Step 4: Selecting Specific Versions
 
 To ensure precision in your design, select the specific version of each component you need. MeshMap supports a variety of versions for different components, allowing you to tailor your design to meet your exact requirements. A compatibility check is conducted, ensuring that selected versions align seamlessly within your design.
 
 **Example Analogy:**
-Choosing component versions is similar to selecting software versions for your cloud-native app. It's like picking the right versions of libraries to ensure your app functions smoothly.
+Choosing component versions is similar to selecting software versions for your cloud native app. It's like picking the right versions of libraries to ensure your app functions smoothly.
 
-## Step 5: Building Complex Cloud-Native Deployments
+## Step 5: Building Complex cloud native Deployments
 
-With the Designer toolbox at your disposal, effortlessly construct complex cloud-native deployments. Simply drag and drop components onto the MeshMap canvas, arranging them in a way that suits your architecture. MeshMap renders your design in real-time as you drag and drop components, providing immediate visual feedback.
+With the Designer toolbox at your disposal, effortlessly construct complex cloud native deployments. Simply drag and drop components onto the MeshMap canvas, arranging them in a way that suits your architecture. MeshMap renders your design in real-time as you drag and drop components, providing immediate visual feedback.
 
 **Example Analogy:**
-Building your deployment is like assembling a puzzle. Each component fits together to create a cohesive picture—the architecture of your cloud-native app.
+Building your deployment is like assembling a puzzle. Each component fits together to create a cohesive picture—the architecture of your cloud native app.
 
 ## Step 6: Configuring Each Component
 
@@ -64,7 +64,7 @@ For enhanced collaboration and scalability, seamlessly merge existing designs in
 **Example Analogy:**
 Merging designs is like integrating features from different app versions. You bring together different elements to create a cohesive and feature-rich user experience without losing the uniqueness of each version.
 
-Congratulations! You've successfully navigated the Designer mode in MeshMap, orchestrating a robust and tailored cloud-native deployment. Continue exploring MeshMap's features to optimize and manage your designs effectively.
+Congratulations! You've successfully navigated the Designer mode in MeshMap, orchestrating a robust and tailored cloud native deployment. Continue exploring MeshMap's features to optimize and manage your designs effectively.
 
 Happy designing!
 
