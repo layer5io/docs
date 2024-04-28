@@ -2,7 +2,7 @@
 title: Export Designs
 description: >
   How to export your designs for backup , sharing or offline use .
-weight: 5
+weight: 6
 categories: [Designer]
 tags: [designs]
 # Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
