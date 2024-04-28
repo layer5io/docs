@@ -31,6 +31,14 @@ To export your MeshMap design, follow these steps:
 
 Exporting your design as a design file provides you with a YAML file representing the current snapshot of your design. This file can be used for offline sharing, backup, or later import.
 
+## Exporting as an OCI Image
+
+Exporting your design as an OCI image allows you to package your design as a container image. This image can be shared, stored, or retrieved from any container registry, like Docker Hub.
+
+## Exporting as a PNG Image
+
+Exporting your design as a PNG image provides you with a visual snapshot of your design. This image can be shared, embedded, or used in presentations.
+
 ## Exporting as the Unmodified Source
 
 If your design was generated from a source like HelmChart, Kubernetes manifest, or a previous design file, exporting it as an unmodified source will give you the original source file.
