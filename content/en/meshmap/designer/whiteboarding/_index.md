@@ -12,20 +12,22 @@ tags: [designs]
 
 ![Shapes Introduction](./overview.png)
 
-The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Meshmap. This expansion augments the tool's functionality with a suite of annotation and visualization tools, allowing users to draw, annotate, and collaborate in real-time on their cloud native designs.
+The whiteboarding feature introduces versatile, freestyle drawing capabilities within Meshmap. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
 
-# Key Functionality
+## Key Functionality
 
 1. **Drawing Tools Integration**
    - Incorporates a comprehensive set of drawing tools resembling popular whiteboard applications.
-   - Enables users to draw shapes,group components , annotate, and highlight specific elements within the infrastructure design canvas.
+   - Enables you to draw shapes, group components , annotate, and highlight specific elements within the infrastructure design canvas.
 2. **Real-time Collaboration**
    - Facilitates simultaneous collaboration among multiple users within the tool.
    - Supports live editing and instant visualization of changes made by collaborators.
 3. **Non-Invasive Annotations**
    - Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.
 
-# Enable the Whiteboarding Beta Feature
+## Enable the Whiteboarding Beta Feature
+
+If not already enabled, follow these steps to access the whiteboarding feature within MeshMap:
 
 ### Step 1: Accessing Preferences
 
@@ -53,12 +55,8 @@ The Whiteboarding and Freestyle Drawing feature introduces versatile drawing cap
    1. Share access with collaborators or team members to engage in real-time collaborative drawing sessions.
 
 {{% alert title="Note" %}}
-- The Whiteboard (Beta) feature might undergo updates or improvements during its beta phase.
-- Provide feedback or report issues encountered while using the whiteboard to contribute to its refinement.
+The Whiteboard (Beta) feature might undergo updates or improvements during its beta phase. Provide feedback or report issues encountered while using the whiteboard to contribute to its refinement.
 {{% /alert %}}
-
-
-
 
 ### Feature Highlights
 

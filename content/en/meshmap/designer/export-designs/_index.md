@@ -2,7 +2,7 @@
 title: Export Designs
 description: >
   How to export your designs for backup , sharing or offline use .
-weight: 5
+weight: 6
 categories: [Designer]
 tags: [designs]
 # Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
@@ -30,6 +30,14 @@ To export your MeshMap design, follow these steps:
 ## Exporting as a Design File
 
 Exporting your design as a design file provides you with a YAML file representing the current snapshot of your design. This file can be used for offline sharing, backup, or later import.
+
+## Exporting as an OCI Image
+
+Exporting your design as an OCI image allows you to package your design as a container image. This image can be shared, stored, or retrieved from any container registry, like Docker Hub.
+
+## Exporting as a PNG Image
+
+Exporting your design as a PNG image provides you with a visual snapshot of your design. This image can be shared, embedded, or used in presentations.
 
 ## Exporting as the Unmodified Source
 
