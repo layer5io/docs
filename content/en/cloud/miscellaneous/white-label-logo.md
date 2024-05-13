@@ -1,8 +1,10 @@
 ---
-title: How to white label logo?
+title: How to customize Layer5 Cloud with your own logo
 description: This guide will walk you through the process of white-labeling a logo using our custom letters in Figma.
 weight: 1
 ---
+
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
 
 ## Introduction
 White-labeling a logo involves customizing it to remove branding elements and make it more generic or suitable for rebranding purposes. In Figma, this process can be achieved using custom letters and design tools. This document outlines step-by-step instructions on how to white-label a logo using custom letters in Figma.
@@ -13,7 +15,7 @@ White-labeling a logo involves customizing it to remove branding elements and ma
 
 1. **Select the Text Element:** Identify the text element within the logo design that contains the brand name or specific branding elements.
 
-1. **Replace Text with Custom Letters:** Use the Text Tool (shortcut: T) to select the text element. Delete the existing text and replace it with custom letters from the [Figma](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs?type=design&node-id=25126%3A7220&mode=design&t=n1b199pVzQKGxw1l-1) design file.
+1. **Replace Text with Custom Letters:** Use the Text Tool (shortcut: <button class="kbc-button kbc-button-xs">T</button>) to select the text element. Delete the existing text and replace it with custom letters from the [Figma](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs?type=design&node-id=25126%3A7220&mode=design&t=n1b199pVzQKGxw1l-1) design file.
 
 1. **Adjust Letter Spacing and Size:** Fine-tune the letter spacing and size to ensure consistency and readability.
 
