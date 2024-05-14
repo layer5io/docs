@@ -26,3 +26,9 @@ To group components using tags, follow these steps.
 Designs support two different types of tags: Labels and Annotations. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
 
 <img alt="Labels and Annotations" src="./group-components.png" width="50%" />
+
+{{< alert title="Performance Consideration" type="warning">}}
+Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
+
+MeshMap will disable grouping by tags when the number of tags exceeds 10 within a single Design.
+{{< /alert >}}
