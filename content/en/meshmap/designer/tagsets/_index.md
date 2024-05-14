@@ -25,4 +25,4 @@ To group components using tags, follow these steps.
 
 Designs support two different types of tags: Labels and Annotations. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
 
-![Labels and Annotations](./group-components.png)
+<img alt="Labels and Annotations" src="./group-components.png" width="50%" />
