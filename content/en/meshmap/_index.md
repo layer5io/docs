@@ -20,14 +20,14 @@ cascade:
 
 ## Understanding the Meshery Ecosystem
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div style="width: 80px; margin-right: 8px;">{{< svg name="cloud" >}}</div>
+<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="cloud" >}}</div>
 
 <div style="flex: 1;">
 
 **Layer5 Cloud** ([docs](/cloud)) is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
 </div></div>
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div style="width: 80px; margin-right: 8px;">{{< svg name="meshery" >}}</div>
+<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshery" >}}</div>
 
 <div style="flex: 1;">
 
@@ -38,7 +38,7 @@ cascade:
             box-shadow: inset 0 -3em 3em #00b39f33,
                 0 0 0 2px #00b39f33,
                 0.3em 0.3em 1em #00b39f00;">You are here</p> -->
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div style="width: 80px; margin-right: 8px;">{{< svg name="meshmap" >}}</div>
+<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshmap" >}}</div>
 
 <div style="flex: 1;">
 

@@ -200,3 +200,15 @@
     max-width: 100%;
   }
 }
+
+
+.logo-container {
+  width: 80px;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+}
