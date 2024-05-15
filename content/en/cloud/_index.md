@@ -13,6 +13,12 @@ cascade:
 
 ## Understanding the Meshery Ecosystem
 
+<p class="image-left" 
+    style="display:inline; font-style:italic; padding: 1rem; width:auto;
+            box-shadow: inset 0 -3em 3em #00b39f33,
+                0 0 0 2px #00b39f33,
+                0.3em 0.3em 1em #00b39f00;">You are here</p>
+                
 <div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="cloud" >}}</div>
 
 <div style="flex: 1;">
@@ -26,11 +32,7 @@ cascade:
 
 **Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
 </div></div>
-<!-- <p class="image-left" 
-    style="display:inline; font-style:italic; padding: 1rem; width:auto;
-            box-shadow: inset 0 -3em 3em #00b39f33,
-                0 0 0 2px #00b39f33,
-                0.3em 0.3em 1em #00b39f00;">You are here</p> -->
+
 <div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshmap" >}}</div>
 
 <div style="flex: 1;">
