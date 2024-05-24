@@ -51,7 +51,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 The first service to install is the Postgres database. The following command installs the Postgres database and initializes it's dataset. The dataset is used by the Layer5 Cloud server and the Layer5 Cloud identity provider.
 
 Layer5 Cloud `postgres` instance requires `pg_cron` extension to be enabled and configured in the `postgres` database to schedule PostgreSQL commands. 
-The cloud instance is bundled with required migrations to schedule the jobs with the required commands/sql queries.
+The cloud instance is bundled with required migrations to schedule jobs and execute required commands/sql queries.
 
 __NOTE: Configuring the extension in some other database will result in failure to apply SQL migrations.__
 
