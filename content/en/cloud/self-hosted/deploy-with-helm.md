@@ -58,7 +58,8 @@ __NOTE: Configuring the extension in some other database will result in failure 
 ##### 1. Install Postgres database
 
 ```bash
-helm install -f ./install/postgresql/values.yaml postgres ./install/postgresql -n <namespace>
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install postgresql bitnami/postgresql --version 14.0.1
 ```
 
 ##### 2. Install Remote Provider Server and Identity Provider
