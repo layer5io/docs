@@ -65,8 +65,8 @@ Usually the script is located "static" folder
 After Finishing the steps , the embedded design will be rendered like :
 
 <!-- Design Embed Container  -->
-<div id="embedded-design-6afd9029-60cf-4662-b031-cf4f9ab854fd" style="height:30rem;width:100%"></div>
-<script src="../embedded-design-mongo_configuration_using_configmap.js" type="module" ></script>
+<div id="embedded-design-6afd9029-60cf-4662-b031-cf4f9ab854fd" style="height:30rem;width:100%;border:1px solid #eee"></div>
+<script src="../export-designs/embedded-design-mongo_configuration_using_configmap.js" type="module" ></script>
 
 ### Customization
 
