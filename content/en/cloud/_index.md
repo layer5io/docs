@@ -8,23 +8,22 @@ menu: {main: {weight: 2}}
 cascade: 
     type: docs
 ---
-![layer5-cloud-provider](layer5-cloud-provider.svg "image-center-shadow")
+
 {{% pageinfo %}}
 
 ## Understanding the Meshery Ecosystem
 
-<p class="image-left" 
-    style="display:inline; font-style:italic; padding: 1rem; width:auto;
-            box-shadow: inset 0 -3em 3em #ebc01733,
-                0 0 0 2px #ebc01733,
-                0.3em 0.3em 1em #ebc01700;">You are here</p>
+<div style="display:flex; gap: .5rem;">
+<div 
+    style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
                 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="cloud" >}}</div>
+<div style="min-width:50px;">{{< svg name="cloud" >}}</div>
 
-<div style="flex: 1;">
+<div style="padding:auto;margin:auto;">
 
-**Layer5 Cloud** ([docs](/cloud)) is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
-</div></div>
+  **Layer5 Cloud** ([docs](/cloud)) is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+</div>
+</div>
 
 <div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshery" >}}</div>
 
@@ -39,6 +38,7 @@ cascade:
 
 **MeshMap** ([docs](/meshmap)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. MeshMap aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
 </div></div>
+</div>
 {{% /pageinfo %}}
 
 
