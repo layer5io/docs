@@ -34,7 +34,7 @@ build:
 ## Empty build cache and run docs.layer5.io on your local machine.
 clean: 
 	hugo --cleanDestinationDir
-	site
+	make site
 
 .PHONY: setup build site clean site-fast check-go
 

@@ -1,11 +1,13 @@
-@import "fonts";
-@import "content_project";
+@import "fonts_project.scss";
+@import "content_project.scss";
 @import "image-modal_project.scss";
 @import "elements_project.scss";
 @import "footer_project.scss";
 @import "variables_project.scss";
 @import "landing_project.scss";
 @import "_navbar_project.scss";
+@import "tax_project.scss";
+@import "search_project.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -318,6 +320,8 @@ a:not([href]):not([class]):hover {
   font-weight: $font-weight-medium;
   background: $black;
   font-family: "Open Sans";
+  border-style: solid;
+  border-color: #00b39f;
 }
 
 // Style alert boxes.
