@@ -26,8 +26,8 @@
       width: 100%;
       font-size: 1rem;
       font-weight: 700;
-      color: $gray-500;
-      border-bottom: 1px rgba($primary, .33) solid;
+      color: $primary;
+      border-bottom: 1px $primary solid;
       margin-bottom: 1em;
       padding-bottom: 0.375rem;
       margin-top: 1em;
@@ -60,6 +60,7 @@
       .taxonomy-count,
       .taxonomy-label {
         display: inherit;
+        text-transform: capitalize;
         font-size: 1rem;
         margin: 0;
         padding: 0;
@@ -113,7 +114,7 @@
     background: $gray-200;
     border-width: 0;
     border-radius: 0 3px 3px 0;
-    color: $gray-600;
+    color: $primary;
     display: inline-block;
     font-size: 1em;
     line-height: 1.5em;
