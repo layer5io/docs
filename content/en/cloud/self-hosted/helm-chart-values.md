@@ -11,6 +11,7 @@ weight: 2
 |------------|------|---------|
 | @ory | hydra | 0.24.2 |
 | @ory | kratos | 0.39.1 |
+{.td-initial}
 
 ## Values
 
@@ -93,4 +94,5 @@ weight: 2
 | serviceAccount.name | string | `"meshery-cloud"` |  |
 | smtp | object | `{"smtphost":"","smtppassword":"","smtpport":"","smtpusername":""}` | smtp configuration to be used when sending out emails |
 | tolerations | list | `[]` | Tolerations for Layer5 Cloud pods assignment ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
+{.td-initial}
 
