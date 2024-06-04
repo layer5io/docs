@@ -25,7 +25,7 @@
 
   {{ range $index, $category := $uniqueCategories }}
     <h2>{{ $category }} Permissions</h2>
-    <table class="csvtable">
+    <table class="csvtable td-initial">
       <thead>
         <tr>
           {{ range $i, $col := index $data 0 }}
