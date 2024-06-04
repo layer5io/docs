@@ -33,15 +33,14 @@ cascade:
 
 **Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
 </div></div>
-<p class="image-left" 
-    style="display:inline; font-style:italic; padding: 1rem; width:auto;
-            box-shadow: inset 0 -3em 3em #00b39f33,
-                0 0 0 2px #00b39f33,
-                0.3em 0.3em 1em #00b39f00;">You are here</p>
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshmap" >}}</div>
+<div style="display:flex; gap: .5rem;">
+<div 
+    style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
+                
+<div style="min-width:50px;">{{< svg name="meshmap" >}}</div>
 
-<div style="flex: 1;">
+<div>
 
 **MeshMap** ([docs](/meshmap)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. MeshMap aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
 </div></div>
@@ -51,7 +50,7 @@ cascade:
 
 <div style="display:flex;justify-content:center;margin:1rem;">MeshMap is a web-based application that allows you to create and share diagrams of cloud native infrastructure for Kubernetes. You can draw shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters. MeshMap supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. MeshMap is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes.</div>
 
-## What is MeshMap Modes
+### Choose your mode
 
 Choose your mode of operation for MeshMap.
 
@@ -73,10 +72,6 @@ Choose your mode of operation for MeshMap.
   </a>
 {{< /cardpane >}}
 </div>
-
-
-
-
 
 
 <!-- ## What is MeshMap?
