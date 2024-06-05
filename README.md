@@ -1,7 +1,8 @@
 # Layer5 Product Documentation
+
 Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
 
-## Contributions Welcome!
+## Contributions Welcome
 
 If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
@@ -11,7 +12,7 @@ The website can be run locally through Golang (Hugo) or Docker. If you choose to
 
 ### With Docker
 
-Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit http://localhost:1313.
+Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
 
 > [!IMPORTANT]  
 > This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
@@ -19,13 +20,13 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 
 ### With Golang
 
-If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended hugo version as it has necessary SCSS/SASS support. Find all the hugo packages here: https://github.com/gohugoio/hugo/releases/tag/v0.120.4
+If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended hugo version as it has necessary SCSS/SASS support. Find all the hugo packages here: <https://github.com/gohugoio/hugo/releases/tag/v0.120.4>
 
-Now to setup and run the site locally run: 
+Now to setup and run the site locally run:
 
 `make setup` followed by `make site`
 
-...and then visit http://localhost:1313.
+...and then visit <http://localhost:1313>.
 
 If you pull down new code from GitHub, you will occasionally need run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
@@ -40,7 +41,7 @@ If you pull down new code from GitHub, you will occasionally need run `make setu
 - **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
 - **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
 
-## Cloud Docs:
+## Cloud Docs
 
 ### Getting Started
 
@@ -86,7 +87,7 @@ Keep your MeshMap designs internal to your workplace. Get remote support from La
 
 Low-level ReST API reference for extending Layer5 Cloud.
 
-## Meshmap Docs:
+## Meshmap Docs
 
 ### Getting Started with Designs
 
@@ -138,6 +139,7 @@ title: 'My Title'
 description: "A thorough, yet succinct description of the page's contents"
 ---
 ```
+
 The significant keys in the YAML frontmatter are:
 
 `title` (string) - This is the title of the page that will be set in the HTML title.
@@ -149,19 +151,21 @@ The significant keys in the YAML frontmatter are:
 <div>&nbsp;</div>
 
 ### Uploading Images to the site
-To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)`. 
+
+To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)`.
 
 **Note-> For images to show correctly on subpages, always provide the complete image path**
 
 ### Adding Alert to the site
+
 Use the following Syntax to add a Alert:
 `{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}`
 
-  - `type="danger"`: Alert used to indicate something related to security.
-  - `type="info"`: Alert used to write some information.
-  - `type="warning"`: Alert used to indicate a warning that might need attention.
-  - `type="note"`: Alert used to indicate a neutral information.
-  - `type="success"`: Alert used to indicate a positive information.
+- `type="danger"`: Alert used to indicate something related to security.
+- `type="info"`: Alert used to write some information.
+- `type="warning"`: Alert used to indicate a warning that might need attention.
+- `type="note"`: Alert used to indicate a neutral information.
+- `type="success"`: Alert used to indicate a positive information.
 
 By default, if you don't specify a title `title="Your Title"`, the title will be the same as the type name.
 
@@ -176,7 +180,7 @@ Our projects are community-built and welcome collaboration. 👍 Be sure to see 
 <a href ="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/layer5-community-sign.png" style="margin-right:10px; margin-bottom:15px;" width="28%" align="left"/></a>
 <h3>Find your MeshMate</h3>
 
-<p>MeshMates are experienced Layer5 community members, who will help you learn your way around, discover live projects and expand your community network. 
+<p>MeshMates are experienced Layer5 community members, who will help you learn your way around, discover live projects and expand your community network.
 Become a <b>Meshtee</b> today!</p>
 
 Find out more on the <a href="https://layer5.io/community">Layer5 community</a>. <br />
@@ -193,7 +197,6 @@ Find out more on the <a href="https://layer5.io/community">Layer5 community</a>.
   <img alt="Shows an illustrated light mode meshery logo in light color mode and a dark mode meshery logo dark color mode." src=".github/readme/images//slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:13px;">
 </picture>
 </a>
-
 
 <a href="https://meshery.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:5px;" width="140px" align="left" /></a>
 
