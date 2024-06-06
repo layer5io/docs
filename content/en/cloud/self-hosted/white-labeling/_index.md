@@ -12,8 +12,6 @@ You can change the logo, color scheme, domain name, and other aspects of the use
 
 The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme.
 
-Visit the Layer5 Cloud dashboard and navigate to the settings page to customize the theme.
-
 {{< cardpane >}}
 {{% card header="Dashboard Example" footer="<i>Example: CNCF branding on Dashboard</i>" %}}
 This example includes a custom branding with colors and full-sized logo.
@@ -36,6 +34,12 @@ This example includes a custom branding with colors and full-sized logo.
 
 Layer5 Cloud supports customizing themes on a per organization basis. This includes the ability to upload your own logo and define your own color scheme. Your logo will be displayed in the top left corner of the dashboard. Both a full-sized logo and a logo mark are supported.
 
+{{< alert type="info" title="Recommended">}}
+We need different types of logos for varying screen sizes.
+- Small screen logo: 135w.
+- Large icon logo: 387w or 400vw.
+{{< /alert >}}
+
 {{< youtube id=hZuhmP7lenk title="Example: Replace the Layer5 logo with your own logo." >}}
 
 _Example: Layer5 Cloud custom branding on login screen with CNCF branding._
@@ -45,3 +49,15 @@ _Example: Layer5 Cloud custom branding on login screen with CNCF branding._
 Layer5 Cloud supports customizing the login screen based on custom domain name. Redirect your users to your own domain name. For example, if your domain name is `mycompany.com`, you can redirect users to `meshery.mycompany.com`.
 
 Example: https://meshery.layer5.io/signup?program=cncf
+
+## Organization Prefrence 
+Organization preferences include theme selection, impacting both the organization and its users. Admins can choose from various options, controlling access based on user permissions. For example, selecting a theme can be customized as shown below.
+
+Visit the Layer5 Cloud dashboard and navigate to the prefrence page to customize the theme.
+{{% card header="Prefrence Example" footer="<i>Example: Selection of theme</i>" %}}
+This example shows how to customize through different themes 
+![white-label-catalog-example.png](./images/pref-selection.gif)
+{{% /card %}}
+
+## Sistent Theme Provider
+Exposing the brand section from the theme provider allows for changing the color scheme of most cloud components.
