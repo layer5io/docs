@@ -90,11 +90,11 @@ Subdomains are configured with a CNAME record through your DNS provider.
 
 ### Configuring a subdomain
 
-To set up a www or custom subdomain, such as <www.example.com> or meshery.example.com, you must add your domain in the repository settings. After that, configure a CNAME record with your DNS provider.
+To set up a www or custom subdomain, such as `www.example.com` or `meshery.example.com`, you must add your domain in the repository settings. After that, configure a CNAME record with your DNS provider.
 
 In Layer5 Cloud, navigate to your Provider Organization.
 
-Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a Provider Administrator.
+Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator](/cloud/security/roles/provider-admin-roles/).
 
 Under "Custom domain", type your custom domain, then click Save. This will create a server configuration will require a reboot in order to take affect.
 
@@ -102,13 +102,15 @@ Under "Custom domain", type your custom domain, then click Save. This will creat
 
 Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `hub.cncf.io` for your user site, create a CNAME record that points `hub.cncf.io` to `meshery.layer5.io`. For more information about how to create the correct record, see your DNS provider's documentation.
 
-Warning: We strongly recommend that you do not use wildcard DNS records, such as *.example.com. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify example.com this prevents someone from using a.example.com but they could still take over b.a.example.com (which is covered by the wildcard DNS record).
+{{< alert title="Warning" color="warning" >}}
+Warning: We strongly recommend that you do not use wildcard DNS records, such as `*.example.com`. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify example.com this prevents someone from using `a.example.com`, but they could still take over `b.a.example.com` (which is covered by the wildcard DNS record).
+{{< /alert >}}
 
 #### Verifying your custom domain
 
 Open Terminal.
 
-To confirm that your DNS record configured correctly, use the dig command, replacing hub.cncf.io with your subdomain.
+To confirm that your DNS record configured correctly, use the dig command, replacing `hub.cncf.io` with your subdomain.
 
 <pre>
 $ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
