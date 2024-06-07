@@ -1,6 +1,6 @@
 ---
-title: Customizing Layer5 Cloud's webhooks
-description: "Layer5 Cloud uses webhooks to automate workflows, learn how you can customize these webhooks with your own custom webhooks"
+title: Customizing Webhooks
+description: "Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks."
 categories: [Self-Hosted]
 weight: 1
 ---
