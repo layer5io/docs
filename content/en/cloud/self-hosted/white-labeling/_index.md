@@ -79,8 +79,44 @@ On the [Organizations page](https://meshery.layer5.io/identity/organizations), y
 
 Layer5 Cloud supports customizing the login screen based on custom domain name. Redirect your users to your own domain name. For example, if your domain name is `mycompany.com`, you can redirect users to `meshery.mycompany.com`.
 
-Example: <https://meshery.layer5.io/signup?program=cncf>
+<!-- {{< youtube id=hZuhmP7lenk title="Example: Replace the Layer5 logo with your own logo." >}} -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hZuhmP7lenk?si=1o8KLhk3K-HeJCcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-{{< youtube id=hZuhmP7lenk title="Example: Replace the Layer5 logo with your own logo." >}}
-<br />
-_Example: Layer5 Cloud custom branding on login screen with CNCF branding._
+<p style="text-align:center; font-style: italic;">Example: Layer5 Cloud custom branding on login screen with CNCF branding. Live example: <a href="https://meshery.layer5.io/signup?program=cncf">https://meshery.layer5.io/signup?program=cncf</a></p>
+
+A subdomain is the part of a URL before the root domain. You can configure your subdomain as www or as a distinct section of your site, like hub.cncf.io.
+
+Subdomains are configured with a CNAME record through your DNS provider.
+
+### Configuring a subdomain
+
+To set up a www or custom subdomain, such as <www.example.com> or meshery.example.com, you must add your domain in the repository settings. After that, configure a CNAME record with your DNS provider.
+
+In Layer5 Cloud, navigate to your Provider Organization.
+
+Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a Provider Administrator.
+
+Under "Custom domain", type your custom domain, then click Save. This will create a server configuration will require a reboot in order to take affect.
+
+*Note: If your custom domain is an internationalized domain name, you must enter the Punycode encoded version.*
+
+Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `hub.cncf.io` for your user site, create a CNAME record that points `hub.cncf.io` to `meshery.layer5.io`. For more information about how to create the correct record, see your DNS provider's documentation.
+
+Warning: We strongly recommend that you do not use wildcard DNS records, such as *.example.com. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify example.com this prevents someone from using a.example.com but they could still take over b.a.example.com (which is covered by the wildcard DNS record).
+
+#### Verifying your custom domain
+
+Open Terminal.
+
+To confirm that your DNS record configured correctly, use the dig command, replacing hub.cncf.io with your subdomain.
+
+<pre>
+$ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
+> ;hub.cncf.io.                    IN      A
+> hub.cncf.io.             3592    IN      CNAME   .
+> meshery.layer5.io.      43192    IN      CNAME   meshery.layer5.io .
+> meshery.layer5.io .        22    IN      A       192.0.2.1
+</pre>
+
+<!-- FUTURE: SUPPORT FOR HTTPS 
+Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It can take up to 24 hours before this option is available. -->
