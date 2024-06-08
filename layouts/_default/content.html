@@ -7,6 +7,9 @@
 			{{ partial "reading-time.html" . -}}
 		{{ end -}}
 	</header>
+	{{ with .Params.plan }}
+        {{ partial "plan-info.html" (dict "plan" .) }}
+    {{ end }}
 	{{ .Content }}
 	{{ if (.Site.Config.Services.Disqus.Shortname) -}}
 		<br />

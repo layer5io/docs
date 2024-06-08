@@ -8,6 +8,9 @@
 			{{ partial "reading-time.html" . -}}
 		{{ end -}}
 	</header>
+	{{ with .Params.plan }}
+        {{ partial "plan-info.html" (dict "plan" .) }}
+    {{ end }}
 	{{ .Content }}
   {{ partial "section-index.html" . -}}
 	
