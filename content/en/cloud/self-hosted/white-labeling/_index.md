@@ -13,11 +13,19 @@ You can change the logo, color scheme, domain name, and other aspects of the use
 The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme.
 
 {{< cardpane >}}
-{{% card header="Dashboard Example" footer="<i>Example: CNCF branding on Dashboard</i>" %}}
+{{% card header="Dashboard Example" footer="<i>Example: Cloudfire branding on Dashboard</i>" %}}
+This example includes a custom branding with colors and full-sized logo.
+![custom-branding-dashboard-cloudfire.pngmake ](./images/custom-branding-dashboard-cloudfire.png)
+{{% /card %}}
+{{% card header="Dashboard Mobile Example" footer="<i>Example: Cloudfire branding in Catalog</i>" %}}
+This example includes a custom branding with colors and logo mark.
+![custom-branding-dashboard-mobile-cloudfire.png](./images/custom-branding-dashboard-mobile-cloudfire.png)
+{{% /card %}}
+{{% card header="Dashboard Mobile" footer="<i>Example: CNCF branding on Dashboard</i>" %}}
 This example includes a custom branding with colors and full-sized logo.
 ![white-label-dashboard-example.png](./images/white-label-dashboard-example.png)
 {{% /card %}}
-{{% card header="Catalog Example" footer="<i>Example: CNCF branding in Catalog</i>" %}}
+{{% card header="Catalog Example" footer="<i>Example: CNCF branding on Catalog</i>" %}}
 This example includes a custom branding with colors and full-sized logo.
 ![white-label-catalog-example.png](./images/white-label-catalog-example.png)
 {{% /card %}}
