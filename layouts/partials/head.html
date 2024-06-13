@@ -24,7 +24,7 @@
   {{- if .IsHome -}}
     {{ .Site.Title -}}
   {{ else -}}
-    {{ with .Title }}{{ . }} | Layer5{{ end -}}
+    {{ with .Title }}{{ . }} | {{ end -}}
     {{ .Site.Title -}}
   {{ end -}}
 </title>
