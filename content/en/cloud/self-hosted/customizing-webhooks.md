@@ -7,17 +7,44 @@ weight: 1
 
 ### Overview
 
-Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud and allows you to customize it according to your preferences. In this guide we will walkthrough the webhooks Layer5 Cloud uses internally to automate tasks and how you can replace them with your own custom webhooks.
+Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud allows you to customize it according to your preferences. In this guide, we will walk through the webhooks Layer5 Cloud uses internally to automate tasks and how you can replace them with your own custom webhooks.
 
-## List of webhooks
+## Customize and add your own custom webhook
 
-Layer5 Cloud uses make.com webhooks by default for automating workflows like emailing users, registrating users to mailing list. Here's a list of webhooks that are pre-configured in Layer5 Cloud:
+Layer5 Cloud's webhook configurations are managed through environment variables defined in the **.env** file. Here's how you can customize them:
 
-| **Title**                  | **Workflow URL**                         | **Description**                                       |
-|----------------------------|------------------------------------------|-------------------------------------------------------|
-| Help And Support  | [https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y](https://hook.us1.make.com/r5qgpjel5tlhtyndcgjvkrdkoc65417y) | Triggers when a user fills the help and support form.   |
-| Meshmap Entitlement Notification  | [https://hook.us1.make.com/mvv3ka2p1kbsvx3kuh4phqivlqohlat5](https://hook.us1.make.com/mvv3ka2p1kbsvx3kuh4phqivlqohlat5) | Sends an email notification to the user when they receive a Meshmap entitlement.|
-| Signup Request Notification | [https://hook.us1.make.com/h7plpgs7me4o1mjj8uebmjmq8v23o5qj](https://hook.us1.make.com/h7plpgs7me4o1mjj8uebmjmq8v23o5qj) | Sends an update email upon signup request approval or denial. |
+### Step 1: Locate the **.env** File
 
-## Customize and add your own custom webhook (Upcoming Feature)
+The **.env** file is typically found in the config directory of your Layer5 Cloud installation. This file contains environment variables that control various aspects of the application, including webhook URLs.
 
+### Step 2: Define Custom Webhooks in the **.env** File
+
+Add your custom webhook URLs to the **.env** file by modifying the existing variables. Here is an example of how the **.env** file should look:
+
+```ini
+# Other configuration variables
+
+# Webhooks
+# Below is the list of webhooks that Layer5 Cloud uses internally.
+# You can replace the values of these variables with your own webhook URLs.
+
+# Triggers when a user fills the help and support form.  
+WEBHOOK_HELP_AND_SUPPORT="https://your-custom-webhook-url.com/help-support"
+
+# Webhook to send an email notification to the user when they receive a Meshmap entitlement
+WEBHOOK_MESHMAP_ENTITLEMENT="https://your-custom-webhook-url.com/meshmap-entitlement"
+
+# Webhook to send an update email upon signup request approval or denial.
+WEBHOOK_SIGNUP_REQUEST="https://your-custom-webhook-url.com/signup-request"
+
+```
+
+It is advisable not to change variable names to avoid potential conflicts. If you are customizing the remote provider to support additional webhooks, you can add new variables following the naming convention starting with WEBHOOK.
+
+### Step 4: Applying the Configuration
+
+After updating the **.env** file, apply the changes to your Layer5 Cloud installation. This typically involves restarting the services.
+
+### Step 5: Testing the Webhooks
+
+Once the configuration is applied, test the webhooks to ensure they are functioning correctly. You can trigger each webhook by performing the associated actions (e.g., filling out the help and support form, triggering a Meshmap entitlement, or processing a signup request).
