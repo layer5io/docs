@@ -199,6 +199,10 @@ a:not([href]):not([class]):hover {
     #0f0a09,
     #000000
   );
+    position: sticky;
+    height: calc(100vh - 2rem);
+    top: 2rem;
+    overflow: auto;
 }
 
 // Left sidebar
