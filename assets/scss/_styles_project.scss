@@ -191,18 +191,12 @@ a:not([href]):not([class]):hover {
   z-index: 5;
 }
 .td-sidebar {
-  background-image: linear-gradient(
-    to top,
-    #1e2117,
-    #1d1912,
-    #18120e,
-    #0f0a09,
-    #000000
-  );
-    position: sticky;
-    height: calc(100vh - 2rem);
-    top: 2rem;
-    overflow: auto;
+  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+  position: sticky;
+  height: calc(100vh - 4rem);
+  top: 4rem;
+  overflow: auto;
+  padding-top: 3rem;
 }
 
 // Left sidebar
