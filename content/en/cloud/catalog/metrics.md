@@ -25,21 +25,16 @@ You can view the metrics of a Design in two ways:
 Here’s a detailed explanation of each metric we track:
 
 ##### 1. Opens
-**Definition:** The number of times a design is opened.<br>
-**Purpose:** This metric helps us understand how often users are viewing a particular design. Frequent opens may indicate high interest or usefulness of the design.
+This metric helps us understand how often users are viewing a particular design.
 
 ##### 2. Downloads
-**Definition:** The number of times a design is downloaded.<br>
-**Purpose:** Downloads provide insights into the popularity and demand for a design. A high number of downloads typically signifies that users find the design valuable enough to use it offline or in other applications.
+Downloads provide insights into the popularity and demand for a design.
 
 ##### 3. Deployments
-**Definition:** The number of times a design is deployed.<br>
-**Purpose:** This metric shows how often a design is implemented or put into action. High deployment numbers can indicate the practical applicability and effectiveness of a design in real-world scenarios.
+This metric shows how often a design is implemented or put into action. 
 
 ##### 4. Clones
-**Definition:** The number of times a design is cloned or duplicated.<br>
-**Purpose:** Cloning metrics indicate how often users are creating copies of a design for modification or personal use. It reflects the adaptability and flexibility of the design to meet various user needs.
+Cloning metrics indicate how often users are creating copies of a design for modification or personal use.
 
 ##### 5. Shares
-**Definition:** The number of times a design is shared with others.<br>
-**Purpose:** Shares measure the social aspect of design usage. A high number of shares suggests that users find the design valuable and worth recommending to others, indicating community engagement and word-of-mouth promotion.
+Shares measure the social aspect of design usage.
