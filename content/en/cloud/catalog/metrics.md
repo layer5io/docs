@@ -9,6 +9,11 @@ Metrics provide valuable insights into how users engage with the designs, allowi
 
 The design catalog can be accessed from the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://meshery.layer5.io/catalog).
 
+{{< alert title="Note" >}}
+
+Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about [Designs](/meshmap/getting-started/)
+
+{{< /alert >}}
 
 You can view the metrics of a Design in two ways:
 1. Below each Design's catalog card, you can see its metrics.
