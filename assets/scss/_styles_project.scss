@@ -201,8 +201,9 @@ a:not([href]):not([class]):hover {
   position: sticky;
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
-  overflow: auto;
+  overflow-y: auto;
   padding-top: 1rem;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 768px){
