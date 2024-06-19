@@ -60,8 +60,14 @@
 //   min-height: 90vh;
 
 // }
+
+//main sections
 .td-outer {
   margin-top: 3rem;
+}
+
+body{
+  overflow-x: hidden;
 }
 
 // Main Middle Body
@@ -193,10 +199,20 @@ a:not([href]):not([class]):hover {
 .td-sidebar {
   background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
   position: sticky;
-  height: calc(100vh - 4rem);
-  top: 4rem;
+  height: calc(100vh - 5.5rem);
+  top: 5.5rem;
   overflow: auto;
-  padding-top: 3rem;
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 768px){
+  .td-sidebar {
+    position: relative;
+    height: auto;
+    top: 0;
+    padding-top: 0;
+  }
+  
 }
 
 // Left sidebar
@@ -273,9 +289,9 @@ a:not([href]):not([class]):hover {
   );
   @supports (position: sticky) {
     position: sticky;
-    top: 4rem;
-    padding-top: 3rem;
-    height: calc(100vh - 4rem);
+    top: 5.5rem;
+    padding-top: 1rem;
+    height: calc(100vh - 5.5rem);
     overflow-y: auto;
   }
   .taxo-categories {
