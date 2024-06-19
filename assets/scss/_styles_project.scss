@@ -214,6 +214,14 @@ a:not([href]):not([class]):hover {
   }
   
 }
+@media screen and (min-height: 800px){
+  .td-sidebar {
+    height: 100vh;
+    top: 0;
+    padding-top: 3rem;
+  }
+  
+}
 
 // Left sidebar
 .td-sidebar-nav {
