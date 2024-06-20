@@ -1,5 +1,5 @@
 ---
-title: Contribution Guidelines
+title: Contributing to Docs
 weight: 10
 description: A detailed contribution guide for Layer5 Docs.
 ---
