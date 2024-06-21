@@ -12,6 +12,7 @@ weight: 2
 </style>
 
 ## Requirements
+
 <div class="table-container">
 
 | Repository | Name | Version |
@@ -22,7 +23,7 @@ weight: 2
  
  </div>
 
- 
+
 ## Values
 
 <div class="table-container">
