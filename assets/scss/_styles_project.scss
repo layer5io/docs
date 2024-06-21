@@ -573,11 +573,11 @@ a:not([href]):not([class]):hover {
   color: $lightslategray !important;
   background-color: $dark !important;
   &:hover{
-    color: $light !important;
+    color: $body-color !important;
   }
 }
 
 .tooltip .tooltip-inner{
   background-color: $dark;
-  color: $light
+  color: $body-color
 }
