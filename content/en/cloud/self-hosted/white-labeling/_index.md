@@ -65,7 +65,7 @@ Square logo (mark):  32 width x 32 height pixels
 {{% card header="Square Logo Example" footer="<i>Example: CNCF branding on Dashboard</i>" %}}
 <p>
 This example includes a custom branding with colors and logo mark as would be displayed on a mobile device.</p>
-<div style="width: 500px; height: 200px; overflow: hidden;">
+<div style="max-width: 500px; width:100%; height: 200px; overflow: hidden;">
   <img src="./images/white-label-dashboard-responsive-example.png"
   width="100%"
   style="margin-top:-.25rem;
