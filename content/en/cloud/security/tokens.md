@@ -26,7 +26,7 @@ See [Tokens](https://meshery.layer5.io/security/tokens) in Layer5 Cloud.
 To use a token to authenticate to Layer5 Cloud's REST API, pass the token as a Bearer token in the Authorization header of your HTTP request:
 
 ```bash
-
+Authorization: mdJhY2Nlc3NfdG9rgW4iOiJleUpoYkdjaU9pSlNVekkxTmlJc0ltdHBaQ0k2SW5CMVlteHBZem81T1dJNE1XSTBOeTA1TTJaaExUUTBNRE10T0RjMU15MHhOelU1TkRGaFptWmpOV0lpTJNKMGVYQWlPaUpLVjFRaWZRLmV5SmhkV1FpT2x0ZExDSmpiR2xsYm5SZmFXUWlPaUp0WlhOb1pYSjVMV05zYjNWa0lpd2laWGgwSWpwN2ZTd2lhV0YwSWpveE56RTROemsxTVRFMUxDSnBjM01pT2lKb2RIUndjem92TDIxbGMyaGxjbmt1YkdGNVpYSTFMbWx2TDJoNVpISmhJaXdpYW5
 ```
 
 ## Revoking tokens
