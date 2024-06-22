@@ -14,15 +14,11 @@ weight: 2
 
 ## Requirements
 
-<div class="table-container">
-
 | Repository | Name | Version |
 |------------|------|---------|
 | @ory | hydra | 0.24.2 |
 | @ory | kratos | 0.39.1 |
 {.td-initial}
-
-</div>
 
 ## Values
 
