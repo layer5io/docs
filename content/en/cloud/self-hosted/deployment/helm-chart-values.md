@@ -5,6 +5,13 @@ description: "Layer5’s Helm charts support a number of configuration options. 
 weight: 2
 ---
 
+<style>
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+</style>
+
 ## Requirements
 
 | Repository | Name | Version |
@@ -14,6 +21,8 @@ weight: 2
 {.td-initial}
 
 ## Values
+
+<div class="table-container">
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
@@ -96,3 +105,4 @@ weight: 2
 | tolerations | list | `[]` | Tolerations for Layer5 Cloud pods assignment ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
 {.td-initial}
 
+</div>
