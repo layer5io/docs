@@ -15,7 +15,7 @@ The Layer5 Cloud dashboard can be customized with your own branding, including y
 {{< cardpane >}}
 {{% card header="Dashboard Example" footer="<i>Example: Cloudfire branding on Dashboard</i>" %}}
 This example includes a custom branding with colors and full-sized logo.
-![custom-branding-dashboard-cloudfire.pngmake ](./images/custom-branding-dashboard-cloudfire.png)
+![custom-branding-dashboard-cloudfire.png ](./images/custom-branding-dashboard-cloudfire.png)
 {{% /card %}}
 {{% card header="Dashboard Mobile Example" footer="<i>Example: Cloudfire branding in Catalog</i>" %}}
 This example includes a custom branding with colors and logo mark.
@@ -90,7 +90,19 @@ Your dashboard experience is customizable. As an administrator of your organizat
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/szheY8c5CRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-*Follow the steps demonstrated in the video to customize your organization's dashboard.*
+*To customize your organization's dashboard, follow the steps in this video or the steps outlined in the screenshots below.*
+
+{{< cardpane >}}
+{{% card header="Edit your Org's Dashboard" footer="<i>Click 'Edit' to enter into customization mode.</i>" %}}
+![custom-dashboard-1.png](./images/custom-dashboard-1.png)
+{{% /card %}}
+{{% card header="Add and Remove Widgets" footer="<i>Pick and choose which widgets to include. Reposition and resize each as you like.</i>" %}}
+![custom-dashboard-2.png](./images/custom-dashboard-2.png)
+{{% /card %}}
+{{% card header="Save and Publish Dashboard" footer="<i>Make your customize layout available to all members of your org or reset your changes to revert to the default layout.</i>" %}}
+![custom-dashboard-3.png](./images/custom-dashboard-3.png)
+{{% /card %}}
+{{< /cardpane >}}
 
 ## Custom Domain Name and Login Screen
 
