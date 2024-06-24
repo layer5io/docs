@@ -83,10 +83,9 @@ On the [Organizations page](https://meshery.layer5.io/identity/organizations), y
 1. Click Select file to upload and select the logo image on your computer. You'll see a preview your logo.
 1. Click Save, if satisfied. You may change your custom logo images at any time.
 
-
 ## Customizing your Organization's Dashboard
 
-Your dashboard experience is customizable. As an administrator of your organization, you can customize the dashboard experience for all members of your organization. To customize your organization's dashboard, select from a collection of widgets to include or exclude.
+Layer5 Cloud supports customizing dashboard layouts on a per organization basis. As an administrator of your organization, you can customize the dashboard experience for all members of your organization. To customize your organization's dashboard, select from a collection of widgets to include or exclude.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/szheY8c5CRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
