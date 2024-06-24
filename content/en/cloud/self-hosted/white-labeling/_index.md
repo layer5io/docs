@@ -103,6 +103,8 @@ Layer5 Cloud supports customizing dashboard layouts on a per organization basis.
 {{% /card %}}
 {{< /cardpane >}}
 
+Each of the prebuilt widgets can be added to a dashboard only once. If find that a particular widget that you would like to have is not available, [please let us know](https://layer5.io/company/contact).
+
 ## Custom Domain Name and Login Screen
 
 Layer5 Cloud supports customizing the login screen based on custom domain name. Redirect your users to your own domain name. For example, if your domain name is `mycompany.com`, you can redirect users to `meshery.mycompany.com`.
