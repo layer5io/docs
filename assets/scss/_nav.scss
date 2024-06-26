@@ -64,10 +64,6 @@
     .nav-item {
       padding-inline-end: $spacer * 0.5;
     }
-
-    .navbar-nav {
-      padding-top: 0 !important;
-    }
   }
 
   @include media-breakpoint-down(lg) {
