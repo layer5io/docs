@@ -177,7 +177,8 @@ h1, h2, h3, h4, h5, h6 {
   display: table-cell;
   vertical-align: inherit;
   unicode-bidi: isolate;
-
+  max-width: 300px;
+  overflow-wrap: break-word;
   padding: .5rem;
   background-color: #00000000;
   border-bottom-width: 1px;
@@ -194,4 +195,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.05);
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
 }
