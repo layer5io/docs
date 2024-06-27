@@ -5,13 +5,6 @@ description: "Layer5’s Helm charts support a number of configuration options. 
 weight: 2
 ---
 
-<style>
-.table-container {
-    overflow-x: auto;
-    max-width: 100%;
-}
-</style>
-
 ## Requirements
 
 | Repository | Name | Version |
