@@ -61,3 +61,9 @@ Hierarchical relationships involve either an ancestral connection of the compone
 A parent-child relationship implies that the parent component must be present or established before the child component can be created. For instance, in Kubernetes, a 'Namespace' can serve as a parent to 'Pods' within that namespace. Therefore, the namespace must be created beforehand for pods to be deployed within it. Here's an example of a Hierarchical-Parent relationship
    
    ![example of edge-permission relationship](./Hierarchical_Parent_Relationship.svg)
+
+### 3. TagSets Relationships
+
+These represent relationships between components of same Labels or Annotations key/value pairs. Labels and Annotations are two different types of Tags. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
+
+![example of Tag sets](./tags.png)
