@@ -24,6 +24,7 @@ tags: [users]
 | View Roles                                                      | ❌         |
 | Assign roles to team members                                    | ❌         |
 | Assign keys and keychains to the team members                   | ❌         |
+{.td-initial}
 
 {{< alert title="*Organization Owner" type="warning" >}}
 _Permissions marked with * apply only if you are the owner of the organization._{{< /alert >}}
