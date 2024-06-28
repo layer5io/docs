@@ -40,7 +40,7 @@ tags: [workspaces]
 
 **What permissions does this role have?**
 
-- Check [Organization Permissions](cloud/identity/organizations/org-permissions/)
+- Check [Permissions](cloud/identity/organizations/org-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -70,7 +70,7 @@ tags: [workspaces]
 
 **What permissions does this role have?**
 
-- Check [Organization Permissions](/cloud/identity/teams/org-permissions/)
+- Check [Permissions](/cloud/identity/teams/org-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
