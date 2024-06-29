@@ -2,114 +2,167 @@
 // Style Markdown content
 //
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Qanelas Soft",
+    sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
+
 .td-content {
-    order: 1;
-  
-    p,
-    li,
-    td {
-      font-weight: $font-weight-body-text;
-    }
-  
-    > h1 {
-      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      font-weight: $font-weight-bold;
-      margin-bottom: 1rem;
-      color: $casper;
-    }
-  
-    > h2 {
-      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      margin-bottom: 1rem;
-      color: $casper;
-    }
-  
-    > h2:not(:first-child) {
-      margin-top: 3rem;
-      color: $casper;
-    }
-  
-    > h2 + h3 {
-      margin-top: 1rem;
-    }
-  
-    > h3,
-    > h4,
-    > h5,
-    > h6 {
-      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      margin-bottom: 1rem;
-      margin-top: 2rem;
-      color: $lightslategray;
-      & a {
-        color: $primary;
-        & :hover {
-          color: $white;
-        }
+  order: 1;
+
+  p,
+  li,
+  td {
+    font-weight: $font-weight-body-text;
+  }
+
+  >h1 {
+    font-family:
+      "Qanelas Soft",
+      sans-serif,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+    color: $casper;
+  }
+
+  >h2 {
+    font-family:
+      "Qanelas Soft",
+      sans-serif,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    margin-bottom: 1rem;
+    color: $casper;
+  }
+
+  >h2:not(:first-child) {
+    margin-top: 3rem;
+    color: $casper;
+  }
+
+  >h2+h3 {
+    margin-top: 1rem;
+  }
+
+  >h3,
+  >h4,
+  >h5,
+  >h6 {
+    font-family:
+      "Qanelas Soft",
+      sans-serif,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: $lightslategray;
+
+    & a {
+      color: $primary;
+
+      & :hover {
+        color: $white;
       }
     }
+  }
 
-    img {
-      @extend .img-fluid;
-    }
-  
-    table {
-      @extend .td-table;
-    }
-  
-    blockquote {
-      padding: 0 0 0 1rem;
-      margin-bottom: $spacer;
-      color: $gray-600;
-      border-left: 6px solid $secondary;
-    }
-  
-    ul li,
-    ol li {
-      margin-bottom: 0.25rem;
-    }
-  
-    strong {
-      font-weight: $font-weight-bold;
-    }
-  
-    .footnotes,
-    > .alert,
-    > .highlight,
-    > .lead,
-    > .td-table,
-    > blockquote,
-    > dl dd,
-    > h1,
-    > h2,
-    > ol,
-    > p,
-    > pre,
-    > ul {
-      @extend .td-max-width-on-larger-screens;
-    }
-  
-    .alert:not(:first-child) {
-      margin-top: 2 * $spacer;
-      margin-bottom: 2 * $spacer;
-    }
-  
-    .lead {
-      margin-bottom: 1.5rem;
-    }
+  img {
+    width: 100%;
+    @extend .img-fluid;
   }
-  
-  .td-title {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  
-    @include media-breakpoint-up(sm) {
-      font-size: 3rem;
-    }
+
+  table {
+    @extend .td-table;
   }
+
+  blockquote {
+    padding: 0 0 0 1rem;
+    margin-bottom: $spacer;
+    color: $gray-600;
+    border-left: 6px solid $secondary;
+  }
+
+  ul li,
+  ol li {
+    margin-bottom: 0.25rem;
+  }
+
+  strong {
+    font-weight: $font-weight-bold;
+  }
+
+  .footnotes,
+  >.alert,
+  >.highlight,
+  >.lead,
+  >.td-table,
+  >blockquote,
+  >dl dd,
+  >h1,
+  >h2,
+  >ol,
+  >p,
+  >pre,
+  >ul {
+    @extend .td-max-width-on-larger-screens;
+  }
+
+  .alert:not(:first-child) {
+    margin-top: 2 * $spacer;
+    margin-bottom: 2 * $spacer;
+  }
+
+  .lead {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.td-title {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3rem;
+  }
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -147,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   color: #cccccc;
   vertical-align: top;
-  border-color:rgba(0, 179, 159, 0.33);
+  border-color: rgba(0, 179, 159, 0.33);
 }
 
 .td-initial thead {
@@ -156,7 +209,12 @@ h1, h2, h3, h4, h5, h6 {
   unicode-bidi: isolate;
 }
 
-.td-initial thead, tbody, tfoot, tr, td, th {
+.td-initial thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
   border-color: rgba(0, 179, 159, 0.33);
   border-style: solid;
   border-width: 0;
@@ -179,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
   unicode-bidi: isolate;
   max-width: 300px;
   overflow-wrap: break-word;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #00000000;
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.05);
@@ -191,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   text-align: -internal-center;
   unicode-bidi: isolate;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: transparent;
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.05);
