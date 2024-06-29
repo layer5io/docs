@@ -180,8 +180,6 @@ It's essential to understand that owners are not roles, but entitlements.
 Workspace owners carry the organization administrator role, and may be joined in their workspace administration duties by any number of other users carrying the workspace administrator role. However, the workspace owner also has the administrative privilege to delete the workspace.
 
 The entitlement of "workspace owner" is automatically bestowed to the creator of a workspace. The individual user who created a given workspace initially is therefore granted certain administrative privileges beyond that of other workspace administrators. Specifically, workspace owners retain the sole permission to delete the workspace.
-
-For more information, see [Workspace](/cloud/identity/workspaces).
 {{< /alert >}}
 
 ## Team Roles
