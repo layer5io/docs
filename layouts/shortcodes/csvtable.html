@@ -1,7 +1,7 @@
 {{ $data := "" }}
 
 {{ $p := "static/data/csv/keys.csv" }}
-{{ $excludedColumns := slice 0 9 10 11 12 13 14 15 16 }} 
+{{ $excludedColumns := slice 0 10 11 12 13 14 15 16 17 18 }} 
 
 {{ if os.FileExists $p }}
   {{ $opts := dict "delimiter" "," }}
@@ -47,9 +47,9 @@
           {{ if and (gt $i 0) (eq (trim (index $row 0) " ") $category) }}
             <tr>
               {{ range $j, $cell := $row }}
-                {{ if and (not (in $excludedColumns $j)) (or (gt $j 2) (lt $j 8)) }} 
+                {{ if and (not (in $excludedColumns $j)) (or (gt $j 2) (lt $j 10)) }} 
                   <td>
-                    {{ if and (gt $j 2) (lt $j 8) }} 
+                    {{ if and (gt $j 2) (lt $j 10) }} 
                       {{ if eq $cell "X" }}
                         ✅
                       {{ else }}
