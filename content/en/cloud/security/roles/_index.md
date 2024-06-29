@@ -120,7 +120,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 {{< cardpane >}}
 {{% card %}}
-![organization-administrator and manager](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
+![workspacea-administrator-and-workspace-manager](/cloud/identity/images/workspace-administrator-and-workspace-manager.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -181,7 +181,7 @@ Workspace owners carry the organization administrator role, and may be joined in
 
 The entitlement of "workspace owner" is automatically bestowed to the creator of a workspace. The individual user who created a given workspace initially is therefore granted certain administrative privileges beyond that of other workspace administrators. Specifically, workspace owners retain the sole permission to delete the workspace.
 
-For more information, see [Workspace](/cloud/identity/organizations).
+For more information, see [Workspace](/cloud/identity/workspaces).
 {{< /alert >}}
 
 ## Team Roles

@@ -8,8 +8,8 @@ tags: [workspaces]
 ---
 
 {{< cardpane >}}
-{{% card header="Default Workspace Roles" %}}
-<img src="/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg" link="images/organization-administrator-and-organization-billing-manager.svg"  width="100%" alt="Organization Administrator and Organization Billing Manager " />
+{{% card %}}
+<img src="/cloud/identity/images/workspace-administrator-and-workspace-manager.svg" link="images/workspace-administrator-and-workspace-manager.svg"  width="100%" alt="Workspace Administrator and Workspace Manager" />
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -40,7 +40,7 @@ tags: [workspaces]
 
 **What permissions does this role have?**
 
-- Check [Permissions](cloud/identity/organizations/org-permissions/)
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -70,7 +70,7 @@ tags: [workspaces]
 
 **What permissions does this role have?**
 
-- Check [Permissions](/cloud/identity/teams/org-permissions/)
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
