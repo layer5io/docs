@@ -6,6 +6,7 @@ weight: 2
 categories: [Identity]
 tags: [orgs]
 ---
+
 {{< cardpane >}}
 {{% card header="Default Organization Roles" %}}
 <img src="/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg" link="images/organization-administrator-and-organization-billing-manager.svg"  width="100%" alt="Organization Administrator and Organization Billing Manager " />
@@ -39,7 +40,7 @@ tags: [orgs]
 
 **What permissions does this role have?**
 
-- Check [Organization Permissions](cloud/identity/organizations/org-permissions/)
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -69,7 +70,7 @@ tags: [orgs]
 
 **What permissions does this role have?**
 
-- Check [Organization Permissions](/cloud/identity/teams/org-permissions/)
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
