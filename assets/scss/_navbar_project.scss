@@ -43,5 +43,10 @@
   }
 }
 .dropdown{
-  position: static;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown-menu{
+  display: block;
 }
