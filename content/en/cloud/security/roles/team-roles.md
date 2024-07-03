@@ -39,7 +39,7 @@ tags: [teams]
 
 **What permissions does this role have?**
 
-- Check [Team Permissions](/cloud/identity/teams/team-permissions/)
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -69,8 +69,7 @@ tags: [teams]
 
 **What permissions does this role have?**
 
-- Check [Team Permissions](/cloud/identity/teams/team-permissions/)
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
 
 {{% /card %}}
 {{< /cardpane >}}
-
