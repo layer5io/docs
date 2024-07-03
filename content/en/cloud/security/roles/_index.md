@@ -200,7 +200,7 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 
 - Organization Administrator or Team owner
 
-**When this role is first assigned?**
+**When is this role first assigned?**
 
 - Creation of new team or User Account creation
 - By default, the first Team Admin is owner (the team creator)
@@ -218,7 +218,7 @@ Min: 1, Max: many
 
 - Organization Administrators or Team Owner
 
-**When this role is first assigned?**
+**When is this role first assigned?**
 
 - Manually by Organization Administrator or Team Owner
 
