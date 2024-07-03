@@ -48,6 +48,426 @@ entries:
     version: 0.39.1
   layer5-cloud:
   - apiVersion: v2
+    appVersion: v0.7.186
+    created: "2024-07-03T12:06:03.204892686Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 1d2b7bea27bfe126ad209d942d1efeb297c6428400e508f5c42a40cf9708c01a
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.186.tgz
+    version: v0.7.186
+  - apiVersion: v2
+    appVersion: v0.7.185
+    created: "2024-06-28T13:36:28.814956649Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 55a5aa8002ee3fb1799c994ef3cf007175375eed2f22a3e6e696504ef2340996
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.185.tgz
+    version: v0.7.185
+  - apiVersion: v2
+    appVersion: v0.7.184
+    created: "2024-06-28T12:22:03.926613738Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: ad1c48d1b29acdce3aa20007cd304e5483d67e4c867aef86bfb0f842d3a340b4
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.184.tgz
+    version: v0.7.184
+  - apiVersion: v2
+    appVersion: v0.7.183
+    created: "2024-06-25T22:21:31.943283006Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: d5977a9ed2869a7a5728ff2358363dd5ef11656812e7985834674e833a1336f9
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.183.tgz
+    version: v0.7.183
+  - apiVersion: v2
+    appVersion: v0.7.182
+    created: "2024-06-25T21:37:34.250134065Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 3f8974240e306e24b3f3f6c593dc66ea5bc281af2aff69e24871393022a75e7d
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.182.tgz
+    version: v0.7.182
+  - apiVersion: v2
+    appVersion: v0.7.181
+    created: "2024-06-25T21:17:52.564590605Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: c785b090abf8999aedeeb29eb378472f71a317a8de875bed653a6e5b97173602
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.181.tgz
+    version: v0.7.181
+  - apiVersion: v2
+    appVersion: v0.7.180
+    created: "2024-06-25T20:42:54.633081119Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 16342bcebceede7e90943b6a267db388b87d9e05d00b93c39f0f71747561ea20
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.180.tgz
+    version: v0.7.180
+  - apiVersion: v2
+    appVersion: v0.7.179
+    created: "2024-06-25T20:01:43.059474918Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 7621b0e8c37dced09012da5a700721aeb165899d3316121162e8aacf9fe2b3ea
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.179.tgz
+    version: v0.7.179
+  - apiVersion: v2
+    appVersion: v0.7.178
+    created: "2024-06-25T06:40:13.113951996Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 69030893e55e7fca962b0e1868dcca1a6bf6f9d902e49ad1c64a2b09cc069b27
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.178.tgz
+    version: v0.7.178
+  - apiVersion: v2
+    appVersion: v0.7.177
+    created: "2024-06-25T04:24:16.919126186Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 03caa24f39f22119e4582cb9db7a4acf80a0d4917d84baf228a2ba30f7b92bb4
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.177.tgz
+    version: v0.7.177
+  - apiVersion: v2
+    appVersion: v0.7.176
+    created: "2024-06-25T00:16:07.085061623Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 6ac0aadb4fa37a45011b4fcce122ea516aa621b28576bd9dc7f613bb36c9831a
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.176.tgz
+    version: v0.7.176
+  - apiVersion: v2
+    appVersion: v0.7.175
+    created: "2024-06-20T19:33:17.447521533Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 2d6fbe2e1b7ac1ed906f9dcf369c193bbdb212434bff071a6e7f7c6b2b0d369e
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.175.tgz
+    version: v0.7.175
+  - apiVersion: v2
+    appVersion: v0.7.174
+    created: "2024-06-20T00:48:02.998692897Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: b7e36327fc7f253bb293def9a74aa2444f30738a8401c0288a82d50c8a39d0b7
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.174.tgz
+    version: v0.7.174
+  - apiVersion: v2
+    appVersion: v0.7.173
+    created: "2024-06-19T00:56:21.683382244Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 39a7b3a5488d36e53b7fce9b9aa50d1e7a842dd280c1528417de08158cdcc959
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.173.tgz
+    version: v0.7.173
+  - apiVersion: v2
+    appVersion: v0.7.172
+    created: "2024-06-18T17:34:43.581356145Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 495491ee8b586ab4e5d010d3596c330ef1b7ba9c77166f5e284c1e9b866e7c8d
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.172.tgz
+    version: v0.7.172
+  - apiVersion: v2
+    appVersion: v0.7.171
+    created: "2024-06-18T13:23:08.817123347Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: f87b6a44d977aab39f1940b1a13d1da4a964406cf909f56c7e762d85d927a1b5
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.171.tgz
+    version: v0.7.171
+  - apiVersion: v2
+    appVersion: v0.7.170
+    created: "2024-06-18T05:02:21.192950576Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 65c59a9915bb4365fedba612f9a7df4dfa4e1d5bdcc2dc207f18c1509b3bc6d9
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.170.tgz
+    version: v0.7.170
+  - apiVersion: v2
+    appVersion: v0.7.169
+    created: "2024-06-16T19:11:37.488772651Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 99e4065a72036904424c19da9c8af526db61612c892aed3fff56bc40cc969cce
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.169.tgz
+    version: v0.7.169
+  - apiVersion: v2
+    appVersion: v0.7.168
+    created: "2024-06-15T04:13:52.454292814Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: bc9c4e13b0d8435b2485ed453d9358605ab0122ca8ef5f2cc1de1fdb849549f4
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.168.tgz
+    version: v0.7.168
+  - apiVersion: v2
+    appVersion: v0.7.167
+    created: "2024-06-15T01:58:43.605854248Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 9348bc97f058eea4277ad4b5f11dbdda42cca78abbd9fa49521f38326f1c96a6
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.167.tgz
+    version: v0.7.167
+  - apiVersion: v2
+    appVersion: v0.7.166
+    created: "2024-06-13T22:29:16.412724746Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.39.1
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: c010f5ad38e2711d270f0b7ea9965992c95b060190930bd0224af7f0e2db2867
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.166.tgz
+    version: v0.7.166
+  - apiVersion: v2
     appVersion: v0.7.165
     created: "2024-06-12T12:46:22.810823198Z"
     dependencies:
@@ -287,4 +707,4 @@ entries:
     urls:
     - layer5-cloud-v0.7.83.tgz
     version: v0.7.83
-generated: "2024-06-12T12:46:22.806174963Z"
+generated: "2024-07-03T12:06:03.200653096Z"

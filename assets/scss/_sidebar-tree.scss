@@ -5,12 +5,12 @@
     margin-right: -15px;
     margin-left: -15px;
   
-    @include media-breakpoint-up(md) {
-      @supports (position: sticky) {
-        max-height: $_max-height;
-        overflow-y: auto;
-      }
-    }
+    // @include media-breakpoint-up(md) {
+    //   @supports (position: sticky) {
+    //     max-height: $_max-height;
+    //     overflow-y: auto;
+    //   }
+    // }
   
     // Adjust height and padding when sidebar_search_disable is true, but only for
     // >= `lg` views, because on tablet (`md`) and mobile (<= `sm`), the search
@@ -140,14 +140,14 @@
     &__inner {
       order: 0;
   
-      @include media-breakpoint-up(md) {
-        @supports (position: sticky) {
-          position: sticky;
-          top: 4rem;
-          z-index: 10;
-          height: calc(100vh - 5rem);
-        }
-      }
+      // @include media-breakpoint-up(md) {
+      //   @supports (position: sticky) {
+      //     position: sticky;
+      //     top: 4rem;
+      //     z-index: 10;
+      //     height: calc(100vh - 5rem);
+      //   }
+      // }
   
       @include media-breakpoint-up(xl) {
         flex: 0 1 320px;

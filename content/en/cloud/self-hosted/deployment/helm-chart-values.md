@@ -15,6 +15,8 @@ weight: 2
 
 ## Values
 
+<div class="table-container">
+
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity for Layer5 Cloud primary pods assignment ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity |
@@ -96,3 +98,4 @@ weight: 2
 | tolerations | list | `[]` | Tolerations for Layer5 Cloud pods assignment ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
 {.td-initial}
 
+</div>
