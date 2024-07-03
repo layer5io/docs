@@ -1,16 +1,15 @@
 ---
 title: Roles
 description: >
-  Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions. 
+  Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions.
 weight: 2
 categories: [Security]
 tags: [roles, permissions]
 ---
+
 Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions.
 
 ![roles](/cloud/security/images/roles-overview.svg "image-center-no-shadow")
-
-
 
 ## Provider Admin Role
 
@@ -30,7 +29,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 - Provider Admins
 
-**When this role first assigned?**
+**When this role is first assigned?**
 
 - On ☁️ boot-up (using build args)
 
@@ -68,7 +67,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 - The Organization Owner
 
-**When this role first assigned?**
+**When this role is first assigned?**
 
 - Creation of new organization or User Account creation
 
@@ -92,7 +91,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 - Organization Owner
 
-**When this role first assigned?**
+**When this role is first assigned?**
 
 - Manually by Organization Owner
 
@@ -117,6 +116,72 @@ The entitlement of "organization owner" is automatically bestowed to the creator
 For more information, see [Organization](/cloud/identity/organizations).
 {{< /alert >}}
 
+## Workspace Roles
+
+{{< cardpane >}}
+{{% card %}}
+![workspacea-administrator-and-workspace-manager](/cloud/identity/images/workspace-administrator-and-workspace-manager.svg)
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< cardpane >}}
+{{% card header="### Workspace Administrator" %}}
+
+**What is the purpose of this role?**
+
+- Administration of a workspace along with curation of content for an organization's catalog (for each organization for which the user has this role assigned)
+
+**Who can assign this role?**
+
+- Organization Administrators or Workspace Owner
+
+**When this role is first assigned?**
+
+- Creation of new workspace
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+- By default, the first Workspace Administrator is the owner (the creator) of the workspace.
+
+**Who can remove assignment of this role?**
+
+- Organization Administrators or Workspace Owner
+
+{{% /card %}}
+{{% card header="### Workspace Manager" %}}
+
+**What is the purpose of this role?**
+
+- Management and administration of the various workspace resources
+
+**Who can assign this role?**
+
+- Organization Administrators or Workspace Administrators
+
+**When this role is first assigned?**
+
+- Manually by Organization Administrators or Workspace Administrators
+
+**How many instances of these roles?**
+
+- Min: 0, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Administrators or Workspace Administrators
+
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< alert title="Workspace owners as entitlements" >}}
+It's essential to understand that owners are not roles, but entitlements.
+
+Workspace owners carry the organization administrator role, and may be joined in their workspace administration duties by any number of other users carrying the workspace administrator role. However, the workspace owner also has the administrative privilege to delete the workspace.
+
+The entitlement of "workspace owner" is automatically bestowed to the creator of a workspace. The individual user who created a given workspace initially is therefore granted certain administrative privileges beyond that of other workspace administrators. Specifically, workspace owners retain the sole permission to delete the workspace.
+{{< /alert >}}
+
 ## Team Roles
 
 {{< cardpane >}}
@@ -135,7 +200,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 - Organization Administrator or Team owner
 
-**When this role first assigned?**
+**When is this role first assigned?**
 
 - Creation of new team or User Account creation
 - By default, the first Team Admin is owner (the team creator)
@@ -153,15 +218,15 @@ Min: 1, Max: many
 
 - Organization Administrators or Team Owner
 
-**When this role first assigned?**
+**When is this role first assigned?**
 
 - Manually by Organization Administrator or Team Owner
 
 **How many instances of these roles?**
 
 - Min: 0, Max: many
-{{% /card %}}
-{{< /cardpane >}}
+  {{% /card %}}
+  {{< /cardpane >}}
 
 {{< alert title="Owners as entitlements, not roles" >}}
 It's essential to understand that owners are not roles, but entitlements.
@@ -172,5 +237,3 @@ The entitlement of "team owner" is automatically bestowed to the creator of a te
 
 For more information, see [Teams](/cloud/identity/teams).
 {{< /alert >}}
-
-
