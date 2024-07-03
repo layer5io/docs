@@ -45,3 +45,7 @@
 .dropdown{
   position: static;
 }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
