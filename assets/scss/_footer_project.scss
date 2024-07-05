@@ -335,7 +335,7 @@
       font-size: 0.85rem;
     }
     .footer-resources {
-      margin: 0 !important;
+      margin: 0;
     }
     .footer-sections {
       padding: 20px !important;
@@ -511,4 +511,20 @@
     }
   }
 
+}
+
+@media (max-width: 850px){
+  .footer .even-col{
+    flex: 0 0 40%;
+  }
+
+  footer .subscribe{
+    margin-top: 0rem !important;
+  }
+}
+
+@media (max-width: 400px){
+  .footer-company{
+    margin-left: 5px;
+  }
 }
