@@ -14,7 +14,7 @@
 	{{ if (.Site.Config.Services.Disqus.Shortname) -}}
 		<br />
 		{{- partial "disqus-comment.html" . -}}
-	{{ end -}}
+	{{ end -}}{{ partial "pager.html" . }}
 	{{ partial "page-meta-lastmod.html" . }}
 </div>
 {{/**/ -}}
