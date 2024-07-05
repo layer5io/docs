@@ -15,7 +15,7 @@
   {{ $uniqueCategories := slice }}
 
   {{ range $i, $row := $data }}
-    {{ if gt $i 0 }}
+    {{ if gt $i 1 }}
       {{ $category := trim (index $row 0) " " }}
       {{ if not (in $uniqueCategories $category) }}
         {{ $uniqueCategories = $uniqueCategories | append $category }}
@@ -28,7 +28,7 @@
     <table class="csvtable td-initial">
       <thead>
         <tr>
-          {{ range $i, $col := index $data 0 }}
+          {{ range $i, $col := index $data 1 }}
             {{ if and (not (in $excludedColumns $i)) (or (eq $i 0) (ne $i 1) (ne $i 2)) }}
             {{ if and (eq $i 1) }}
             <th>Permission</th>
