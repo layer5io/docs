@@ -14,15 +14,19 @@
   padding: 0 5rem;
   border-bottom: 1px solid #333;
   background-color: $dark !important;
+
   .dropdown-menu {
     background-color: $dark;
     box-shadow: 0px 4px 20px 0px rgba(0, 211, 169, 0.2);
+
     .dropdown-item {
       color: $white;
+
       &:hover {
         background: $primary;
       }
     }
+
     .dropdown-divider {
       margin: 0;
       border-top: 1px solid $primary;
@@ -56,6 +60,7 @@
   background-color: $dark;
   overflow-x: hidden;
 }
+
 // .td-cover-block--height-full {
 //   min-height: 90vh;
 
@@ -66,7 +71,7 @@
   margin-top: 3rem;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -75,6 +80,7 @@ body{
   h2 {
     color: $casper;
   }
+
   // Inline code
   p code,
   li > code,
@@ -116,6 +122,7 @@ a {
   color: $primary;
   text-decoration: none;
 }
+
 a:hover {
   color: $white;
 }
@@ -128,11 +135,9 @@ a:not([href]):not([class]):hover {
 
 // Taxonomy
 .article-meta-bg {
-
-    background-color: $gray-900;
-    padding: .5rem;
-    padding-left: 1rem;
-
+  background-color: $gray-900;
+  padding: 0.5rem;
+  padding-left: 1rem;
 }
 
 .taxonomy {
@@ -159,6 +164,7 @@ a:not([href]):not([class]):hover {
     .taxonomy-count {
       color: $dark !important;
     }
+
     &:hover {
       background-color: $primary;
       color: $white;
@@ -172,6 +178,7 @@ a:not([href]):not([class]):hover {
       background: $primary;
     }
   }
+
   .article-teaser {
     &.card {
       padding: 1em;
@@ -196,8 +203,16 @@ a:not([href]):not([class]):hover {
   // bottom: 0%;
   z-index: 5;
 }
+
 .td-sidebar {
-  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+  background-image: linear-gradient(
+    to top,
+    #1e2117,
+    #1d1912,
+    #18120e,
+    #0f0a09,
+    #000000
+  );
   position: sticky;
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
@@ -206,15 +221,15 @@ a:not([href]):not([class]):hover {
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .td-sidebar {
     position: relative;
     height: auto;
     top: 0;
     padding-top: 0;
   }
-  
 }
+
 @media screen and (min-height: 800px) and (min-width: 768px) {
   .td-sidebar {
     height: 100vh;
@@ -223,34 +238,47 @@ a:not([href]):not([class]):hover {
   }
 }
 
-
 // Left sidebar
 .td-sidebar-nav {
   overflow: hidden;
   padding: 0px;
+
   &__section-title {
     a {
       color: $gray-400;
       font-weight: $font-weight-bold;
     }
   }
+
   .td-sidebar-link {
     &__page {
       color: $gray-400;
       font-weight: $font-weight-light;
     }
+
     &__section {
       margin-top: 1rem;
-      font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family:
+        "Qanelas Soft",
+        sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol";
     }
   }
+
   a {
     &:hover {
       color: $white;
       text-decoration: none;
     }
+
     &.active:not(.tree-root) {
       border-width: 1px;
       border-style: solid;
@@ -274,6 +302,7 @@ a:not([href]):not([class]):hover {
       // background-color: rgba($primary, .05);
       color: $secondary;
     }
+
     &.active.tree-root {
       border: 2px solid $lightslategray !important;
       padding: 0.25rem;
@@ -296,6 +325,7 @@ a:not([href]):not([class]):hover {
     #0f0a09,
     #000000
   );
+
   @supports (position: sticky) {
     position: sticky;
     top: 5.5rem;
@@ -303,10 +333,12 @@ a:not([href]):not([class]):hover {
     height: calc(100vh - 5.5rem);
     overflow-y: auto;
   }
+
   .taxo-categories {
     margin-top: 2rem;
   }
 }
+
 .td-page-meta {
   a {
     display: block;
@@ -319,6 +351,7 @@ a:not([href]):not([class]):hover {
       text-decoration: none;
     }
   }
+
   .td-page-meta--project-issue {
     visibility: hidden;
   }
@@ -326,6 +359,7 @@ a:not([href]):not([class]):hover {
 
 .td-toc {
   margin-top: 2rem;
+
   #TableOfContents {
     a {
       color: $lightslategray;
@@ -372,14 +406,17 @@ a:not([href]):not([class]):hover {
   color: $white;
   transition: color 0.8s;
   transition: background-color 0.8s;
+
   > img {
     width: 2rem;
     margin-right: 0.5rem;
   }
+
   > img:hover {
     filter: brightness(0) invert(1);
   }
-  @media (max-width:768px){
+
+  @media (max-width: 768px) {
     width: 277px;
   }
 }
@@ -404,20 +441,24 @@ a:not([href]):not([class]):hover {
       rgba(249, 245, 13, 0.1),
       rgba(239, 239, 251, 0.81) 0%
     );
-  background-position: 0% 0%, 0% 0%;
+  background-position:
+    0% 0%,
+    0% 0%;
   box-sizing: auto;
   color: rgba(0, 0, 0, 0);
   display: block;
   text-rendering: optimizelegibility;
   background-clip: text, text;
-  @media (max-width:768px){
+
+  @media (max-width: 768px) {
     font-size: 3.5rem;
     text-align: center;
   }
+
   // @media (max-width:1200px){
   // }
-  
 }
+
 .dash-tangle {
   width: 78.14231rem;
   height: 74.72rem;
@@ -441,6 +482,7 @@ a:not([href]):not([class]):hover {
     right: -28rem;
     position: fixed;
   }
+
   @media (max-width: 768px) {
     width: 129.14rem;
     top: 7rem;
@@ -477,10 +519,12 @@ a:not([href]):not([class]):hover {
   0% {
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
   }
+
   100% {
     transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
 }
+
 .dash-sign-container {
   display: flex;
   align-items: center;
@@ -493,7 +537,9 @@ a:not([href]):not([class]):hover {
 
   a.dash-sign {
     color: #fffbf1;
-    text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+    text-shadow:
+      0 20px 25px #2e2e31,
+      0 40px 60px #2e2e31;
     font-size: 28px;
     font-weight: 600;
     text-decoration: none;
@@ -506,9 +552,11 @@ a:not([href]):not([class]):hover {
     padding: 2rem;
     margin: 15rem;
     transform: translateX(-50%) translateY(-50%);
+
     &:hover {
       color: "#EBC017" !important;
     }
+
     @media (max-width: 1440px) {
       margin: 0rem;
     }
@@ -543,21 +591,26 @@ a:not([href]):not([class]):hover {
     color: $white;
     // animation-play-state: running;
   }
+
   a.dash-sign:hover {
     color: #ebc017 !important;
   }
 }
+
 // Cards
 .card {
   background-color: $dark;
 }
+
 .card-header {
   font-weight: bold;
   font-size: larger;
 }
+
 .card-header .bg-white {
   background-color: $dark;
 }
+
 .bg-dark {
   background-color: $dark;
 }
@@ -566,18 +619,38 @@ a:not([href]):not([class]):hover {
   color: red;
 }
 
-.click-to-copy button{
+.click-to-copy button {
   aspect-ratio: 1;
-  top: 6px!important;
-  right: 10px!important;
+  top: 6px !important;
+  right: 10px !important;
   color: $lightslategray !important;
   background-color: $dark !important;
-  &:hover{
+
+  &:hover {
     color: $body-color !important;
   }
 }
 
-.tooltip .tooltip-inner{
+.tooltip .tooltip-inner {
   background-color: $dark;
-  color: $body-color
+  color: $body-color;
+}
+
+.tab-body {
+  overflow-x: scroll;
+  background: transparent;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.tab-content > .active {
+  display: flex;
+}
+
+.nav-tabs .nav-link.active {
+  color: #00d3a9;
+}
+
+.csvtable {
+  width: 100%;
 }
