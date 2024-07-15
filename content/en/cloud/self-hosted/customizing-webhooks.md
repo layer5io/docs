@@ -7,17 +7,17 @@ weight: 1
 
 ### Overview
 
-Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud allows you to customize it according to your preferences. In this guide, we will walk through the webhooks Layer5 Cloud uses internally to automate tasks and how you can replace them with your own custom webhooks.
+Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers), Layer5 Cloud. In this guide, we will walk through configurable webhooks that Layer5 Cloud uses internally to automate tasks and how you can customize these webhooks to integrate with your existing tools.
 
 ## Customize and add your own custom webhook
 
-Layer5 Cloud's webhook configurations are managed through environment variables defined in the **.env** file. Here's how you can customize them:
+Layer5 Cloud's webhook configurations are managed through environment variables defined in **.env** files. Here's how you can customize them:
 
 ### Step 1: Locate the **.env** File
 
-The **.env** file is typically found in the config directory of your Layer5 Cloud installation. This file contains environment variables that control various aspects of the application, including webhook URLs.
+Found **.env** files in the `config` directory of your Layer5 Cloud installation. These file contains environment variables that control various aspects of the application, including webhook URLs.
 
-### Step 2: Define Custom Webhooks in the **.env** File
+### Step 2: Define Custom Webhooks in the **.env** file
 
 Add your custom webhook URLs to the **.env** file by modifying the existing variables. Here is an example of how the **.env** file should look:
 
