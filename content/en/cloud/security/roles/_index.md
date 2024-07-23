@@ -199,6 +199,8 @@ The entitlement of "team owner" is automatically bestowed to the creator of a te
 For more information, see [Teams](/cloud/identity/teams).
 {{< /alert >}}
 
+## User Role
+
 {{< cardpane >}}
 {{% card %}}
 ![user](/cloud/security/images/user-role.svg)
