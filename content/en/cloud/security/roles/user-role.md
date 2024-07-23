@@ -8,7 +8,7 @@ tags: [user, roles]
 ---
 
 {{< cardpane >}}
-{{% card header="Default Team Roles" %}}
+{{% card header="Default User Role" %}}
 <img src="/cloud/security/images/user-role.svg" link="images/user-role.svg"  width="100%" alt="User Role" />
 {{% /card %}}
 {{< /cardpane >}}
