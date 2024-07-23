@@ -52,7 +52,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 {{< cardpane >}}
 {{% card %}}
-![organization-administrator and manager](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
+![organization-administrator](/cloud/security/images/organization-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -120,7 +120,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 {{< cardpane >}}
 {{% card %}}
-![workspacea-administrator-and-workspace-manager](/cloud/identity/images/workspace-administrator-and-workspace-manager.svg)
+![workspace-administrator](/cloud/security/images/workspace-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -149,29 +149,6 @@ For more information, see [Organization](/cloud/identity/organizations).
 - Organization Administrators or Workspace Owner
 
 {{% /card %}}
-{{% card header="### Workspace Manager" %}}
-
-**What is the purpose of this role?**
-
-- Management and administration of the various workspace resources
-
-**Who can assign this role?**
-
-- Organization Administrators or Workspace Administrators
-
-**When this role is first assigned?**
-
-- Manually by Organization Administrators or Workspace Administrators
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators or Workspace Administrators
-
-{{% /card %}}
 {{< /cardpane >}}
 
 {{< alert title="Workspace owners as entitlements" >}}
@@ -186,7 +163,7 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 
 {{< cardpane >}}
 {{% card %}}
-![team-admins-and-manager](/cloud/identity/images/team-admins-and-team-managers.svg)
+![team-administrators](/cloud/security/images/team-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -206,27 +183,11 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 - By default, the first Team Admin is owner (the team creator)
 
 **How many instances of these roles?**
-Min: 1, Max: many
+
+- Min: 1, Max: many
 
 {{% /card %}}
-{{% card header="### Team Manager" %}}
-**What is the purpose of this role?**
-
-- Administration of teams (without delete access)
-
-**Who can assign and unassign this role?**
-
-- Organization Administrators or Team Owner
-
-**When is this role first assigned?**
-
-- Manually by Organization Administrator or Team Owner
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-  {{% /card %}}
-  {{< /cardpane >}}
+{{< /cardpane >}}
 
 {{< alert title="Owners as entitlements, not roles" >}}
 It's essential to understand that owners are not roles, but entitlements.
@@ -237,3 +198,37 @@ The entitlement of "team owner" is automatically bestowed to the creator of a te
 
 For more information, see [Teams](/cloud/identity/teams).
 {{< /alert >}}
+
+## User Role
+
+{{< cardpane >}}
+{{% card %}}
+![user](/cloud/security/images/user-role.svg)
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< cardpane >}}
+{{% card header="## User" %}}
+
+**What is the purpose of this role?**
+
+- To grant Organization members access to basic features and resources within the context of that Organization.
+
+**Who can assign this role?**
+
+- Organization Administrators, Workspace Administrators and Team Administrators
+
+**When this role first assigned?**
+
+- Automatically assigned to members on joining an Organization.
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Administrators, Workspace Administrators and Team Administrators
+
+{{% /card %}}
+{{< /cardpane >}}
