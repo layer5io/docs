@@ -3,13 +3,13 @@ title: Default Workspace Roles
 description: >
   By default, Workspaces have two roles available: Workspace Administrator and Workspace Manager.
 weight: 2
-categories: [Identity]
-tags: [workspaces]
+categories: [Security]
+tags: [workspaces, roles]
 ---
 
 {{< cardpane >}}
 {{% card %}}
-<img src="/cloud/identity/images/workspace-administrator-and-workspace-manager.svg" link="images/workspace-administrator-and-workspace-manager.svg"  width="100%" alt="Workspace Administrator and Workspace Manager" />
+<img src="/cloud/security/images/workspace-roles.svg" link="images/workspace-roles.svg"  width="100%" alt="Workspace Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -37,36 +37,6 @@ tags: [workspaces]
 **Who can remove assignment of this role?**
 
 - Organization Administrators or Workspace Owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference](/cloud/reference/default-permissions/)
-
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-{{% card header="## Workspace Manager" %}}
-
-**What is the purpose of this role?**
-
-- Management and administration of the various workspace resources
-
-**Who can assign this role?**
-
-- Organization Administrators or Workspace Administrators
-
-**When this role first assigned?**
-
-- Manually by Organization Administrators or Workspace Administrators
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators or Workspace Administrators
 
 **What permissions does this role have?**
 

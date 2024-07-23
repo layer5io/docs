@@ -3,13 +3,13 @@ title: Default Team Roles
 description: >
   By default, Organizations have two roles available: Team Admins and Team Managers.
 weight: 3
-categories: [Identity]
-tags: [teams]
+categories: [Security]
+tags: [teams, roles]
 ---
 
 {{< cardpane >}}
 {{% card header="Default Team Roles" %}}
-<img src="/cloud/identity/images/team-admins-and-team-managers.svg" link="images/team-admins-and-team-managers.svg"  width="100%" alt="Team Admin and Team managers" />
+<img src="/cloud/security/images/team-roles.svg" link="images/team-roles.svg"  width="100%" alt="Team Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -36,36 +36,6 @@ tags: [teams]
 **Who can remove assignment of this role?**
 
 - Organization Administrator or Team owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference](/cloud/reference/default-permissions/)
-
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-{{% card header="## Team Manager" %}}
-
-**What is the purpose of this role?**
-
-- Administration of teams (without delete access)
-
-**Who can assign this role?**
-
-- Organization Administrator or Team Owner
-
-**When this role first assigned?**
-
-- Manually by Organization Administrator or Team Owner
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many (based on plan)
-
-**Who can remove assignment of this role?**
-
-- Organization Owner or Team Owner
 
 **What permissions does this role have?**
 

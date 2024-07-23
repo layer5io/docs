@@ -3,13 +3,13 @@ title: Default Organization Roles
 description: >
   By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
 weight: 2
-categories: [Identity]
-tags: [orgs]
+categories: [Security]
+tags: [orgs, roles]
 ---
 
 {{< cardpane >}}
 {{% card header="Default Organization Roles" %}}
-<img src="/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg" link="images/organization-administrator-and-organization-billing-manager.svg"  width="100%" alt="Organization Administrator and Organization Billing Manager " />
+<img src="/cloud/security/images/organization-roles.svg" link="images/organization-roles.svg"  width="100%" alt="Organization Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
