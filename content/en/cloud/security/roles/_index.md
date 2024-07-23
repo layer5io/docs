@@ -52,7 +52,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 {{< cardpane >}}
 {{% card %}}
-![organization-administrator and manager](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
+![organization-administrator](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -120,7 +120,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 {{< cardpane >}}
 {{% card %}}
-![workspacea-administrator-and-workspace-manager](/cloud/identity/images/workspace-administrator-and-workspace-manager.svg)
+![workspace-administrator](/cloud/identity/images/workspace-administrator-and-workspace-manager.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -163,7 +163,7 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 
 {{< cardpane >}}
 {{% card %}}
-![team-admins-and-manager](/cloud/identity/images/team-admins-and-team-managers.svg)
+![team-administrators](/cloud/identity/images/team-admins-and-team-managers.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -183,7 +183,8 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 - By default, the first Team Admin is owner (the team creator)
 
 **How many instances of these roles?**
-Min: 1, Max: many
+
+- Min: 1, Max: many
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -197,3 +198,35 @@ The entitlement of "team owner" is automatically bestowed to the creator of a te
 
 For more information, see [Teams](/cloud/identity/teams).
 {{< /alert >}}
+
+{{< cardpane >}}
+{{% card %}}
+![user](/cloud/identity/images/team-admins-and-team-managers.svg)
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< cardpane >}}
+{{% card header="## User" %}}
+
+**What is the purpose of this role?**
+
+- To grant Organization members access to basic features and resources within the context of that Organization.
+
+**Who can assign this role?**
+
+- Organization Administrators, Workspace Administrators and Team Administrators
+
+**When this role first assigned?**
+
+- Automatically assigned to members on joining an Organization.
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Administrators, Workspace Administrators and Team Administrators
+
+{{% /card %}}
+{{< /cardpane >}}
