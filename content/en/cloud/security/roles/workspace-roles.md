@@ -9,7 +9,7 @@ tags: [workspaces, roles]
 
 {{< cardpane >}}
 {{% card %}}
-<img src="/cloud/identity/images/workspace-administrator-and-workspace-manager.svg" link="images/workspace-administrator-and-workspace-manager.svg"  width="100%" alt="Workspace Administrator and Workspace Manager" />
+<img src="/cloud/security/images/workspace-roles.svg" link="images/workspace-roles.svg"  width="100%" alt="Workspace Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 

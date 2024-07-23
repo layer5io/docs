@@ -9,7 +9,7 @@ tags: [teams, roles]
 
 {{< cardpane >}}
 {{% card header="Default Team Roles" %}}
-<img src="/cloud/identity/images/team-admins-and-team-managers.svg" link="images/team-admins-and-team-managers.svg"  width="100%" alt="Team Admin and Team managers" />
+<img src="/cloud/security/images/team-roles.svg" link="images/team-roles.svg"  width="100%" alt="Team Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
