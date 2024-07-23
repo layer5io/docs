@@ -149,29 +149,6 @@ For more information, see [Organization](/cloud/identity/organizations).
 - Organization Administrators or Workspace Owner
 
 {{% /card %}}
-{{% card header="### Workspace Manager" %}}
-
-**What is the purpose of this role?**
-
-- Management and administration of the various workspace resources
-
-**Who can assign this role?**
-
-- Organization Administrators or Workspace Administrators
-
-**When this role is first assigned?**
-
-- Manually by Organization Administrators or Workspace Administrators
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators or Workspace Administrators
-
-{{% /card %}}
 {{< /cardpane >}}
 
 {{< alert title="Workspace owners as entitlements" >}}
@@ -209,24 +186,7 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 Min: 1, Max: many
 
 {{% /card %}}
-{{% card header="### Team Manager" %}}
-**What is the purpose of this role?**
-
-- Administration of teams (without delete access)
-
-**Who can assign and unassign this role?**
-
-- Organization Administrators or Team Owner
-
-**When is this role first assigned?**
-
-- Manually by Organization Administrator or Team Owner
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-  {{% /card %}}
-  {{< /cardpane >}}
+{{< /cardpane >}}
 
 {{< alert title="Owners as entitlements, not roles" >}}
 It's essential to understand that owners are not roles, but entitlements.

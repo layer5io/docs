@@ -3,8 +3,8 @@ title: Default Organization Roles
 description: >
   By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
 weight: 2
-categories: [Identity]
-tags: [orgs]
+categories: [Security]
+tags: [orgs, roles]
 ---
 
 {{< cardpane >}}
