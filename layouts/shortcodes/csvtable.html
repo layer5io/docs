@@ -35,7 +35,13 @@
         <tr>
           {{ range $i, $col := $header }}
             {{ if not (in $excludedColumns $col) }}
-              <th>{{ $col }}</th>
+              {{ if eq $col "Function" }}
+                <th>Permission</th>
+              {{ else if eq $col "Feature" }}
+                <th>Description</th>
+              {{ else }}
+                <th>{{ $col }}</th>
+              {{ end }}
             {{ end }}
           {{ end }}
         </tr>
