@@ -40,7 +40,22 @@
               {{ else if eq $col "Feature" }}
                 <th>Description</th>
               {{ else }}
-                <th>{{ $col }}</th>
+                {{ $sectionName := $col | lower }}
+                {{ $urlPath := "roles" }}
+                {{ if hasPrefix $sectionName "workspace" }}
+                  {{ $urlPath = "roles/workspace-roles" }}
+                {{ else if hasPrefix $sectionName "team" }}
+                  {{ $urlPath = "roles/team-roles" }}
+                {{ else if hasPrefix $sectionName "org" }}
+                  {{ $urlPath = "roles/organization-roles" }}
+                {{ else if hasPrefix $sectionName "provider" }}
+                  {{ $urlPath = "roles/#provider-admin-role" }}
+                {{ else if hasPrefix $sectionName "user" }}
+                  {{ $urlPath = "roles/user-role" }}
+                {{ else }}
+                  {{ $urlPath = print "roles/" }}
+                {{ end }}
+                <th><a href="/cloud/security/{{ $urlPath }}" target="_blank">{{ $col }}</a></th>
               {{ end }}
             {{ end }}
           {{ end }}
