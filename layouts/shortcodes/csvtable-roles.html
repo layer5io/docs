@@ -22,7 +22,7 @@ end }} {{end}} {{ range $index, $category := $uniqueCategories }}
   {{ else }}
     {{ $urlPath = print "roles/" $sectionName | urlize }}
   {{ end }}
-  <h2><a href="/cloud/security/{{ $urlPath }}" target="_blank">{{ $category }} Role</a></h2>
+  <h2><a href="/cloud/security/{{ $urlPath }}">{{ $category }} Role</a></h2>
   <table class="csvtable td-initial">
     <thead>
       <tr>
