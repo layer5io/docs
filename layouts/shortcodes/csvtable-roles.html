@@ -9,7 +9,20 @@ and (ne (trim $header "") "") (not (in $uniqueCategories $header)) }} {{
 $uniqueCategories = $uniqueCategories | append $header }} {{ end }} {{ end }} {{
 end }} {{end}} {{ range $index, $category := $uniqueCategories }}
 <div class="csvtable-div">
-  <h2>{{ $category }} Role</h2>
+  {{ $sectionName := $category | lower }}
+  {{ $urlPath := "roles" }}
+  {{ if hasPrefix $sectionName "workspace" }}
+    {{ $urlPath = "roles/workspace-roles" }}
+  {{ else if hasPrefix $sectionName "team" }}
+    {{ $urlPath = "roles/team-roles" }}
+  {{ else if hasPrefix $sectionName "org" }}
+    {{ $urlPath = "roles/organization-roles" }}
+  {{ else if hasPrefix $sectionName "provider" }}
+    {{ $urlPath = "roles/#provider-admin-role" }}
+  {{ else }}
+    {{ $urlPath = print "roles/" $sectionName | urlize }}
+  {{ end }}
+  <h2><a href="/cloud/security/{{ $urlPath }}" target="_blank">{{ $category }} Role</a></h2>
   <table class="csvtable td-initial">
     <thead>
       <tr>
