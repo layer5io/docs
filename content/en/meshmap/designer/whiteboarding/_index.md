@@ -101,6 +101,7 @@ Manage layers, group elements, for better organization. These advanced tools ens
 
 Lines and edges are easily manipulated. Adjust thickness, style, and endpoints effortlessly. Drag line segments to create bends or curves, adding detail to visual representations.
 
+Tip:To enable this animation for an edge, set the animation property of relationship metadata to "marching-ants".
 #### Consistent Functionality
 
 The customization tools apply uniformly to all annotation types. Changes made within the tooltip reflect instantly on the canvas, facilitating real-time collaboration.
