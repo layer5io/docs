@@ -26,7 +26,7 @@ You can start the integration process from the “Dashboard” or “Extensions�
 
 ### Navigating to the Integrations Page via Meshery Dashboard
 
-1. On [Meshery Dashboard](https://meshery.layer5.io/dashboard). Click on the **menu icon** on the navigation bar.
+1. From the [Cloud Dashboard](https://meshery.layer5.io/dashboard). Click on the **menu icon** to open the global navigation menu.
 
     ![Dashboard](/cloud/getting-started/images/github/dashboard.png)
 
@@ -172,7 +172,7 @@ To view and manage the GitHub connection, on the left sidebar of the playground,
 
 You can delete the GitHub Integration Connection, from Meshery Playground on the “Connections” page shown in the preceding section or “Integration” page.
 
-On the Connections page:
+On the Connections page in Layer5 Cloud:
 
   1. Identify the connection, click on the checkbox beside.
   1. Click **Delete**.
