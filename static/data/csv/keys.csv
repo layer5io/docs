@@ -31,12 +31,12 @@ Users,View All Kubernetes Clusters,View all configured Kubernetes clusters,X,X,X
 Teams,View Team,See only teams to which you are a member. See all other members within those teams.,X,X,X,,X,X,Team Management,27447fb0-be46-4497-8366-c34e24920f22,X,FALSE
 Teams,View Teams,See all teams of which you are an administrator. See all members of those teams.,,X,X,,X,X,Team Management,6ecbbe79-c392-43bd-b7b6-ecdec019e24c,X,FALSE
 Teams,View All Teams,See all teams within an organization. See all members of all teams.,X,X,X,,X,X,Organization Management,8b94dd6b-234f-4c89-86cf-b029e0090255,X,FALSE
-Teams,Add User to Team,Directly create a new user account within a team.,,X,X,,X,X,Team Management,88b9a857-d012-4c6d-a129-4ce65b63b018,X,FALSE
-Teams,Invite User to Team,Send a request for a user to join a team.,,X,X,,X,X,Team Management,f224ecf3-b105-4d81-9886-77127073a6ca,X,FALSE
-Teams,Remove User from Team,Discontinue user membership of a team and team resources.,,X,X,,X,X,Team Management,e996c998-a50f-4cb8-ae7b-77127073a6ca,X,FALSE
-Teams,Create Team,Establish new team for organizing groups of users and resource access.,,X,X,,X,X,Team Management,41a9eb36-b99b-4715-8140-780f97d3c6a0,X,FALSE
-Teams,Delete Team,Dissolve a team and all user memberships. Leave associated resources intact.,,X,X,,X,X,Team Management,bbb691b6-8664-44c7-8ea7-9c46b1ca1e8b,X,FALSE
-Teams,Edit Team,Edit a team and add new members to it. ,,X,X,,X,X,Team Management,6cf69881-0be0-4723-b5f0-031b7847509a,X,FALSE
+Teams,Add User to Team,Directly create a new user account within a team.,,X,,,X,X,Team Management,88b9a857-d012-4c6d-a129-4ce65b63b018,X,FALSE
+Teams,Invite User to Team,Send a request for a user to join a team.,,X,,,X,X,Team Management,f224ecf3-b105-4d81-9886-77127073a6ca,X,FALSE
+Teams,Remove User from Team,Discontinue user membership of a team and team resources.,,X,,,X,X,Team Management,e996c998-a50f-4cb8-ae7b-77127073a6ca,X,FALSE
+Teams,Create Team,Establish new team for organizing groups of users and resource access.,,X,,,X,X,Team Management,41a9eb36-b99b-4715-8140-780f97d3c6a0,X,FALSE
+Teams,Delete Team,Dissolve a team and all user memberships. Leave associated resources intact.,,X,,,X,X,Team Management,bbb691b6-8664-44c7-8ea7-9c46b1ca1e8b,X,FALSE
+Teams,Edit Team,Edit a team and add new members to it. ,,X,,,X,X,Team Management,6cf69881-0be0-4723-b5f0-031b7847509a,X,FALSE
 Teams,Remove Roles from Team members,Remove roles from users in a team,,X,X,,X,X,Team Management,ed3dbd2d-52f8-4608-87e0-7f2999a4518c,X,FALSE
 Teams,Assign Roles to Team members,Assign roles to users in a team,,X,X,,X,X,Team Management,06f33eca-950c-4daa-b46d-e73af39e0868,X,FALSE
 Teams,Open Team Invite,"This governs the team's invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.",,X,X,,X,X,Organization Management,6086c0a5-cd79-48ca-8c9f-a0e0ad75343c,X,FALSE
