@@ -10,9 +10,19 @@
     color: $primary !important;
   }
 
+ @media (min-width: 768px) {
+  &:hover {
+    .dropdown-menu {
+      display: block;
+    }
+      .dropdown-menu {
+        transform: translate(-15%, 0rem);
+      }
+  }
+}
   .dropdown-menu {
     padding: 0;
-    transform: translate(-15%, 2.5rem) !important;
+    transform: translate(-15%, 2.5rem);
     border-radius: 0;
     .dropdown-item {
       height: 5rem;
