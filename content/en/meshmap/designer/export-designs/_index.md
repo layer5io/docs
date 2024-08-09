@@ -1,7 +1,7 @@
 ---
-title: Export Designs
+title: Exporting Designs
 description: >
-  How to export your designs for backup , sharing or offline use .
+  How to export your designs for backup, sharing or offline use.
 weight: 6
 categories: [Designer]
 tags: [designs]
@@ -9,9 +9,7 @@ tags: [designs]
 # https://github.com/layer5labs/meshery-extensions/tree/master/meshmap/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-# Exporting Your MeshMap Designs
-
-This documentation guides you on how to export your MeshMap designs for various purposes, including backup, offline sharing, or integration with other infrastructure tools. MeshMap Designer offers multiple export options, allowing you to choose the format that suits your needs.
+This documentation guides you on how to export your Meshery designs for various purposes, including backup, offline sharing, pushing to an OCI registry, publishing on Artifact Hub, or integration with other infrastructure tools. MeshMap Designer offers multiple export options, allowing you to choose the format that suits your needs.
 
 ## Exporting Your Design
 
