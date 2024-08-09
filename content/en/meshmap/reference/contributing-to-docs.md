@@ -33,7 +33,7 @@ Here's a quick guide to updating the docs:
    See the [Layer5 contributor guide](https://layer5.io/community/handbook/contribution).
 
 If you need more help with the GitHub workflow, follow
-this [guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/quick-github-guide.md).
+this [guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/CONTRIBUTING-gitflow.md).
 
 ## Local development
 
