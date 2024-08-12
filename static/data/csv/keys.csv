@@ -31,12 +31,12 @@ Users,View All Kubernetes Clusters,View all configured Kubernetes clusters,X,X,X
 Teams,View Team,See only teams to which you are a member. See all other members within those teams.,X,X,X,,X,X,Team Management,27447fb0-be46-4497-8366-c34e24920f22,X,FALSE
 Teams,View Teams,See all teams of which you are an administrator. See all members of those teams.,,X,X,,X,X,Team Management,6ecbbe79-c392-43bd-b7b6-ecdec019e24c,X,FALSE
 Teams,View All Teams,See all teams within an organization. See all members of all teams.,X,X,X,,X,X,Organization Management,8b94dd6b-234f-4c89-86cf-b029e0090255,X,FALSE
-Teams,Add User to Team,Directly create a new user account within a team.,,X,X,,X,X,Team Management,88b9a857-d012-4c6d-a129-4ce65b63b018,X,FALSE
-Teams,Invite User to Team,Send a request for a user to join a team.,,X,X,,X,X,Team Management,f224ecf3-b105-4d81-9886-77127073a6ca,X,FALSE
-Teams,Remove User from Team,Discontinue user membership of a team and team resources.,,X,X,,X,X,Team Management,e996c998-a50f-4cb8-ae7b-77127073a6ca,X,FALSE
-Teams,Create Team,Establish new team for organizing groups of users and resource access.,,X,X,,X,X,Team Management,41a9eb36-b99b-4715-8140-780f97d3c6a0,X,FALSE
-Teams,Delete Team,Dissolve a team and all user memberships. Leave associated resources intact.,,X,X,,X,X,Team Management,bbb691b6-8664-44c7-8ea7-9c46b1ca1e8b,X,FALSE
-Teams,Edit Team,Edit a team and add new members to it. ,,X,X,,X,X,Team Management,6cf69881-0be0-4723-b5f0-031b7847509a,X,FALSE
+Teams,Add User to Team,Directly create a new user account within a team.,,X,,,X,X,Team Management,88b9a857-d012-4c6d-a129-4ce65b63b018,X,FALSE
+Teams,Invite User to Team,Send a request for a user to join a team.,,X,,,X,X,Team Management,f224ecf3-b105-4d81-9886-77127073a6ca,X,FALSE
+Teams,Remove User from Team,Discontinue user membership of a team and team resources.,,X,,,X,X,Team Management,e996c998-a50f-4cb8-ae7b-77127073a6ca,X,FALSE
+Teams,Create Team,Establish new team for organizing groups of users and resource access.,,X,,,X,X,Team Management,41a9eb36-b99b-4715-8140-780f97d3c6a0,X,FALSE
+Teams,Delete Team,Dissolve a team and all user memberships. Leave associated resources intact.,,X,,,X,X,Team Management,bbb691b6-8664-44c7-8ea7-9c46b1ca1e8b,X,FALSE
+Teams,Edit Team,Edit a team and add new members to it. ,,X,,,X,X,Team Management,6cf69881-0be0-4723-b5f0-031b7847509a,X,FALSE
 Teams,Remove Roles from Team members,Remove roles from users in a team,,X,X,,X,X,Team Management,ed3dbd2d-52f8-4608-87e0-7f2999a4518c,X,FALSE
 Teams,Assign Roles to Team members,Assign roles to users in a team,,X,X,,X,X,Team Management,06f33eca-950c-4daa-b46d-e73af39e0868,X,FALSE
 Teams,Open Team Invite,"This governs the team's invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.",,X,X,,X,X,Organization Management,6086c0a5-cd79-48ca-8c9f-a0e0ad75343c,X,FALSE
@@ -67,23 +67,23 @@ Performance,View Results,View results of performance tests,X,X,X,,X,X,Performanc
 Performance,Edit performance test,Edit performance test,,,,,X,X,Performance Management,33aa5c47-a8aa-4ad5-9950-7c17042c001d,X,TRUE
 Performance,Delete performance test,Delete performance test,,,,,X,X,Performance Management,84aa9d3c-3d4b-4587-947d-ae17b2dcd5f5,X,TRUE
 Performance,View performance profiles,View all performance profiles,X,X,X,,X,X,Performance Management,6593ac26-820b-4e87-be32-64ee740ea204,X,TRUE
-Cloud native infrastructure lifecycle,Manage cloud native infrastructure life cycle,Manage cloud native infrastructure life cycle,,,,,X,X,Infrastructure Management,255fd148-e3fd-4408-a48c-0d157a57d4d9,X,TRUE
+Cloud native infrastructure lifecycle,Manage cloud native infrastructure life cycle,"This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",,,,,X,X,Infrastructure Management,255fd148-e3fd-4408-a48c-0d157a57d4d9,X,TRUE
 Cloud native infrastructure lifecycle,Manage cloud native infrastructure configuration,"Manage infrastructure configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info",,,,,X,X,Infrastructure Management,0eb0558d-9b21-4e50-b4c6-bd8e9e3414f5,X,TRUE
 Cloud native infrastructure lifecycle,Apply cloud native infrastructure configuration,"Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy",,,,,X,X,Infrastructure Management,3f20a106-24f5-4da6-a8eb-6eddaad50944,X,TRUE
 Cloud native infrastructure lifecycle,Validate cloud native infrastructure configuration,"Validate cloud native configuration against best practices like Analyze Running Configuration, SMI conformance",,,,,X,X,Infrastructure Management,8bb93f97-fcfb-4827-9fed-f931fdca7b95,X,TRUE
-Cloud native infrastructure lifecycle,Apply custom cloud native infrastructure configuration,Apply custom cloud native configuration,,,,,X,X,Infrastructure Management,2f4e2300-4c7e-4d48-95aa-74614a4826fe,X,TRUE
-Cloud native infrastructure lifecycle,Deploy cloud native infrastructure,Deploy cloud native infrastructure,,,,,X,X,Infrastructure Management,f7e70ffb-333d-43b3-a76e-0e6c63b9fbfa,X,TRUE
-Cloud native infrastructure lifecycle,Undeploy cloud native infrastructure,Undeploy cloud native infrastructure,,,,,X,X,Infrastructure Management,6e7f6f4f-4321-4e42-9eff-6a8323f32e84,X,TRUE
-Cloud native infrastructure lifecycle,View cloud native infrastructure,View all cloud native infrastructure in Meshery UI,X,X,X,,X,X,Infrastructure Management,fdc485dc-f68b-405c-9e54-7b9a7254c282,X,TRUE
+Cloud native infrastructure lifecycle,Apply custom cloud native infrastructure configuration,This permission grants the user the ability to apply custom configuration and customize existing configuration of their cloud native infrastructure,,,,,X,X,Infrastructure Management,2f4e2300-4c7e-4d48-95aa-74614a4826fe,X,TRUE
+Cloud native infrastructure lifecycle,Deploy cloud native infrastructure,"This permission grants the user the ability to deploy thier infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",,,,,X,X,Infrastructure Management,f7e70ffb-333d-43b3-a76e-0e6c63b9fbfa,X,TRUE
+Cloud native infrastructure lifecycle,Undeploy cloud native infrastructure,"This permission grants the user the ability to undeploy thier infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies",,,,,X,X,Infrastructure Management,6e7f6f4f-4321-4e42-9eff-6a8323f32e84,X,TRUE
+Cloud native infrastructure lifecycle,View cloud native infrastructure,"This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.",X,X,X,,X,X,Infrastructure Management,fdc485dc-f68b-405c-9e54-7b9a7254c282,X,TRUE
 Connections,View Connections,View all connections within an environment,X,X,X,,X,X,Lifecycle management,b35c9ce0-e787-4de6-8560-631007b0b947,X,TRUE
-Environments,View Environment,See all environments within an workspace.,X,X,X,,X,X,Organization Management,e3656bbc-fba2-483d-9996-34f8614cd21b,X,FALSE
+Environments,View Environment,See all environments within an workspace.,X,X,X,,X,X,Organization Management,e3656bbc-fba2-483d-9996-34f8614cd21b,X,TRUE
 Environments,Create Environment,Create a new environment,,,X,,X,X,Organization Management,a97b7f3b-3349-4a86-b917-2ce0b64a540b,X,TRUE
 Environments,Delete Environment,Dissolve environment and all connection memberships. Leave associated resources intact.,,,X,,X,X,Organization Management,70747966-dfad-4523-93ce-bd7421258955,X,TRUE
 Environments,Edit Environment,Edit environment and it connection membership,,,X,,X,X,Organization Management,145ab6ed-b4b6-4e34-ada5-78dada250f89,X,TRUE
 Environments,Assign connections to environment,Add new connections to environments,,,X,,X,X,Organization Management,52cbe0b8-9aa7-4605-8eed-aa37e595adbb,X,TRUE
 Environments,Remove connections from environments,"Remove connections from environment, ",,,X,,X,X,Organization Management,65648682-e47f-43d7-a5ad-dc042803f951,X,TRUE
 Catalog,View Catalog,View all items in catalog,X,X,X,,X,X,User View,0cd05106-36b6-4393-a08e-4222fc10c8de,X,FALSE
-Workspace,View Workspace,See all workspaces within an organisation,X,X,X,,X,X,Workspace Management,bc9379e8-dc18-4655-b53c-c641271c4ba3,X,FALSE
+Workspace,View Workspace,See all workspaces within an organisation,X,X,X,,X,X,Workspace Management,bc9379e8-dc18-4655-b53c-c641271c4ba3,X,TRUE
 Workspace,Delete Workspace,Dissolve workspace and all team and environment memberships. Leave associated resources intact,,,X,,X,X,Workspace Management,09eb0507-2f14-4bc4-92c5-9e26a4efbd5e,X,TRUE
 Workspace,Edit Workspace,Edit workspace and it's team and environment membership,,,X,,X,X,Workspace Management,4112230f-5d1e-4d30-9790-942ad5c1dc50,X,TRUE
 Workspace,Create Workspace,Create new workspace,,,X,,X,X,Workspace Management,eb42ac41-a883-465e-843c-d64e962a3a0e,X,TRUE
