@@ -6,6 +6,7 @@ category: GitOps
 weight: 4
 ---
 
+{{< front-matter feature_name="MeshMap Snapshots" >}}
 
 MeshMap Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
 

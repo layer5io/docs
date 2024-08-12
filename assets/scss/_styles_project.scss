@@ -381,6 +381,49 @@ a:not([href]):not([class]):hover {
   border-color: #00b39f;
 }
 
+// front-matter
+.matterinfo {
+  font-weight: $font-weight-medium;
+  background: $black;
+  font-family: "Open Sans";
+  border-style: solid;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-color: #00b39f;
+  border-radius: 10px;
+}
+
+.heading {
+  font-size: 1.2rem;
+  color: #00b39f;
+}
+
+.matterheader {
+  font-size: 1.2rem;
+  color: #00b39f; 
+}
+
+.matterinfo .plan-support {
+  display: flex; 
+  align-items: center; 
+}
+
+.matterinfo .plan-support .support-icon {
+  width: 20px; 
+  height: 20px;
+  margin-right: 10px;
+}
+
+.plan-icon {
+  display: inline-block;
+}
+
+.highlight{
+  color: #00b39f; 
+  font-weight: bold; 
+  margin-left:10px
+}
+
 // Style alert boxes.
 
 .alert {
