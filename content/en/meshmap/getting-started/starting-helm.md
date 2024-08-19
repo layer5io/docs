@@ -7,6 +7,8 @@ categories: [Designer]
 tags: [designs]
 ---
 
+{{< front-matter feature_name="Application Import" >}}
+
 Helm helps you manage Kubernetes applications. Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
 Starting a MeshMap design from a Helm chart is another way to get started with an entire application stack.
 

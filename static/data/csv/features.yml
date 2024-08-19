@@ -52,6 +52,14 @@ features:
     personal: true
     team: true
     enterprise: true
+  - name: Application Import
+    personal: true
+    team: true
+    enterprise: true
+  - name: Authentication SAML
+    personal: false
+    team: false
+    enterprise: true
   - name: Community Support
     personal: true
     team: true

@@ -6,6 +6,8 @@ categories: [Identity]
 tags: [users]
 ---
 
+{{< front-matter feature_name="Notification Center" >}}
+
 Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.
 
 <img src="/cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" />
