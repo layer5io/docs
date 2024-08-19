@@ -7,10 +7,58 @@ categories: [Designer]
 tags: [designs]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+1. To deploy a design, navigate to the **Actions** button at the top of the Design canvas.
 
+2. Click on the **Deploy** icon.
+
+3. This opens a modal that will take you through all the steps before the final deployment.
+
+4. Click on **Open In Visualizer** to see the pre-filtered view of the deployed resources in the cluster
+
+5. Click **Finish**
+
+![success-deploy](/meshmap/getting-started/images/deploy-designs/success-deploy.png)
+
+### Deployment Errors
+
+1. **Missing Namespace**: This error occurs when you attempt to create a Kubernetes resource without specifying a namespace. Kubernetes requires that all resources have an associated namespace.
+
+![missing-ns](/meshmap/getting-started/images/deploy-designs/missing-ns.png)
+
+2. **Empty Label Selector**: This error indicates an empty label selector.
+
+![empty-ls](/meshmap/getting-started/images/deploy-designs/empty-ls.png)
+
+### Troubleshooting Errors
+
+When reviewing validation, dry run, or deployment issues, you’ll notice specific error codes denoted from time to time.
+
+As a system, Meshery itemizes different errors that occur and assigns a unique error code to each along with details on how to remediate the issue at hand.
+
+For the comprehensive list of error codes refer to [Error Code Reference](https://docs.meshery.io/reference/error-codes) in the Meshery documentation.
+
+If you encounter persistent issues consider consulting the [Meshery Community forum](https://discuss.layer5.io/c/meshery/5)
+
+![error-code](/meshmap/getting-started/images/deploy-designs/error-code.png)
+
+
+### Using the Notification Center for Troubleshooting
+
+The Notification Center in Meshery helps manage events during the deployment process. It provides real-time updates and alerts on the status of the deployment. This feature can be particularly useful for troubleshooting, as it:
+
+1. Displays immediate feedback on the success or failure of each deployment step.
+
+2. Highlights specific error messages and codes, helping you quickly identify and understand issues.
+
+3. Offers links to detailed documentation and guides for resolving common problems.
+
+4. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions.
+
+![notification](/meshmap/getting-started/images/deploy-designs/notification.png) 
+
+![notification-center](/meshmap/getting-started/images/deploy-designs/notification-center.png)
+
+By actively monitoring the Notification Center, you can promptly address issues as they arise, ensuring a smoother deployment process. Learn more about [Managing Events with the Notification Center](https://docs.meshery.io/guides/events-management).
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
