@@ -47,12 +47,9 @@ If you encounter persistent issues consider consulting the [Meshery Community fo
 The Notification Center in Meshery helps manage events during the deployment process. It provides real-time updates and alerts on the status of the deployment. This feature can be particularly useful for troubleshooting, as it:
 
 1. Displays immediate feedback on the success or failure of each deployment step.
-
-2. Highlights specific error messages and codes, helping you quickly identify and understand issues.
-
-3. Offers links to detailed documentation and guides for resolving common problems.
-
-4. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions.
+1. Highlights specific error messages and codes, helping you quickly identify and understand issues.
+1. Offers links to detailed documentation and guides for resolving common problems.
+1. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions.
 
 ![notification](/meshmap/getting-started/images/deploy-designs/notification.png) 
 
