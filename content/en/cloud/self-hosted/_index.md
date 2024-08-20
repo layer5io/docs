@@ -6,7 +6,7 @@ description: >
   Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
 ---
 
-![self-hosted](images/self-hosted.svg "image-right-no-shadow")
+<img class="image-right-no-shadow" src="images/self-hosted.svg" />
 
 ## On-premises Deployment of Layer5 Cloud
 
