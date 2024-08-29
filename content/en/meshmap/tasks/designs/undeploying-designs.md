@@ -7,9 +7,13 @@ categories: [Designer]
 tags: [designs]
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+To undeploy the resources
+
+1. Navigate to the Actions button at the top of the Meshery Design canvas.
+
+2. Click on the **Undeploy** icon.
+
+![undeploying designs](/meshmap/getting-started/images/undeploying-designs/undeploy.png)
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
