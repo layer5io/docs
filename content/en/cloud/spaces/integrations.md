@@ -18,7 +18,7 @@ Meshery provides a rich set of integrations designed to simplify and enhance you
 With the GitHub integration, you can effortlessly manage your infrastructure using GitOps principles. Connect your GitHub account to Meshery and import your existing Helm Charts, Docker Compose applications, and Kubernetes manifests. This integration allows you to visually configure and customize your cloud-native infrastructure directly from within Meshery. Once configured, you can save and share your design patterns to GitHub, choosing between public or private repositories.
 
 **Key Benefits:**
-- **Seamless Import:** Bring in your Helm Charts, Docker Compose files, and Kubernetes manifests directly into Meshery.
+- **Seamless Import:** Bring in your Helm Charts, Docker Compose files, Kubernetes manifests or Meshery Designs directly into Meshery.
 - **GitOps Management:** Automate your infrastructure management by leveraging GitHub as a source of truth.
 - **Version Control:** Keep track of all changes made to your infrastructure with GitHub’s version control capabilities.
 
