@@ -1,14 +1,14 @@
 ---
 title: Whiteboarding
 description: >
-  MeshMap Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+  Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
 date: 2023-10-30
 weight: 2
 categories: [Designer]
 tags: [designs]
 ---
 
-With MeshMap Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. MeshMap supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
+With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
 
 
 ## Using the Shapes Palette

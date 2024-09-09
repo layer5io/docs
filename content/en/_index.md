@@ -18,9 +18,9 @@ title: Layer5
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"
-  href="/meshmap">
-  <img src="images/logos/meshmap-alt.svg" />
-  MeshMap Docs
+  href="/kanvas">
+  <img src="images/logos/kanvas-alt.svg" />
+  Kanvas Docs
   <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn"

@@ -1,7 +1,7 @@
 ---
 title: Reviewing Designs
 description: >
-  Learn how to leverage comments in MeshMap's Designer Mode to enhance collaboration and streamline design reviews.
+  Learn how to leverage comments in Kanvas Designer Mode to enhance collaboration and streamline design reviews.
 weight: 3
 categories: [Designer]
 tags: [designs, collaboration, review]
@@ -9,7 +9,7 @@ tags: [designs, collaboration, review]
 
 ## Overview
 
-MeshMap's Designer Mode offers a powerful collaboration feature through comments. You can use it to write detailed design description, add pointers for you team members, and include any helpful information that can help you or others collaborate.
+Kanvas' Designer Mode offers a powerful collaboration feature through comments. You can use it to write detailed design description, add pointers for you team members, and include any helpful information that can help you or others collaborate.
 
 ![Conversation inside comments in designer](./comments-conversation.gif)
 
@@ -17,7 +17,7 @@ MeshMap's Designer Mode offers a powerful collaboration feature through comments
 
 ### Enhance Collaboration
 
-Comments serve as a communication channel, allowing team members to discuss specific part of a MeshMap design. Whether it's seeking feedback, asking questions, or providing clarifications, comments foster a collaborative environment.
+Comments serve as a communication channel, allowing team members to discuss specific part of a Kanvas design. Whether it's seeking feedback, asking questions, or providing clarifications, comments foster a collaborative environment.
 
 ### Streamline Design Reviews
 
@@ -56,4 +56,4 @@ You can add comments in three convenient ways, ensuring a seamless and versatile
 
 ## Conclusion
 
-Comments in Designer Mode are a valuable tool for enhancing collaboration and conducting efficient design reviews within MeshMap. Leverage this feature to enhance communication, capture feedback, and ensure a smooth collaborative design process within MeshMap designer.
+Comments in Designer Mode are a valuable tool for enhancing collaboration and conducting efficient design reviews within Kanvas. Leverage this feature to enhance communication, capture feedback, and ensure a smooth collaborative design process within Kanvas designer.

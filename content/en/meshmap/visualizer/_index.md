@@ -31,7 +31,7 @@ Visualizer supports connecting to Kubernetes pods via the following methods.
 The interactive terminal behaves in a fashion similar to similar to the behavior of the `kubectl exec` command, but web-based.
 
 While using using the interactive terminal, understand that you can only open one session per container.
-Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / MeshMap.
-The GraphQL subscription between your web browser running MeshMap and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
+Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas.
+The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
 
 {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%"  >}}

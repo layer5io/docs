@@ -9,15 +9,15 @@ tags: [designs]
 # https://github.com/layer5labs/meshery-extensions/tree/master/meshmap/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-# Exporting Your MeshMap Designs
+# Exporting Your Kanvas Designs
 
-This documentation guides you on how to export your MeshMap designs for various purposes, including backup, offline sharing, or integration with other infrastructure tools. MeshMap Designer offers multiple export options, allowing you to choose the format that suits your needs.
+This documentation guides you on how to export your Kanvas designs for various purposes, including backup, offline sharing, or integration with other infrastructure tools. Kanvas Designer offers multiple export options, allowing you to choose the format that suits your needs.
 
 ## Exporting Your Design
 
-To export your MeshMap design, follow these steps:
+To export your Kanvas design, follow these steps:
 
-1. **Access Export Options**: Within the MeshMap Designer, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.
+1. **Access Export Options**: Within the Kanvas Designer, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.
 
    ![Export Icon](./export-modal.png)
 
@@ -114,4 +114,4 @@ Here is a customization example:
 <div id="embedded-design-abedbfc6-2a46-4866-99d4-1f9eadd90d0c"></div>
 <script src="./embedded-design-embedding-example.js" type="module" ></script>
 
-Now you have the flexibility to export your MeshMap designs in various formats and customize the embedded design to suit your needs.
+Now you have the flexibility to export your Kanvas designs in various formats and customize the embedded design to suit your needs.

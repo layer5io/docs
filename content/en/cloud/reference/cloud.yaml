@@ -2083,7 +2083,7 @@
           },
           "roles": {
             "type": "array",
-            "description": "Provider level roles (meshmap, admin, curator)",
+            "description": "Provider level roles (kanvas, admin, curator)",
             "items": {
               "$ref": "#/components/schemas/text"
             }
@@ -3607,7 +3607,7 @@
           },
           "form_type": {
             "$ref": "#/components/schemas/text",
-            "description": "Form Type (MeshMap or Playground)"
+            "description": "Form Type (Kanvas or Playground)"
           },
           "status": {
             "$ref": "#/components/schemas/text",
@@ -8761,7 +8761,7 @@
           {
             "name": "form_type",
             "in": "query",
-            "description": "Form Type (MeshMap or Playground)",
+            "description": "Form Type (Kanvas or Playground)",
             "schema": {
               "type": "string"
             }
@@ -8867,7 +8867,7 @@
           {
             "name": "form_type",
             "in": "query",
-            "description": "Form Type (MeshMap or Playground)",
+            "description": "Form Type (Kanvas or Playground)",
             "schema": {
               "type": "string"
             }

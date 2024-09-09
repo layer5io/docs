@@ -1,14 +1,14 @@
 ---
 title: Exploring Designer
 description: >
-  Designer mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+  Designer mode is for those who want to create their own Kanvas, using the palette of components provided by Meshery.
 weight: 4
 categories: [Designer]
 tags: [designs]
 ---
 
 {{% pageinfo %}}
-Collaborate with your team to create a Design. Enable collaboration mode using the Options mode available in the MeshMap canvas
+Collaborate with your team to create a Design. Enable collaboration mode using the Options mode available in the Kanvas canvas
 {{% /pageinfo %}}
 
 <!-- For many projects, users may not need much information beyond the information in the [Overview](/docs/overview/), so this section is **optional**. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.

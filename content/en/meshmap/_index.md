@@ -1,6 +1,6 @@
 ---
-title: MeshMap Documentation
-linkTitle: MeshMap
+title: Kanvas Documentation
+linkTitle: Kanvas
 type: docs
 menu: {main: {weight: 3}}
 weight: 1
@@ -13,7 +13,7 @@ cascade:
 
 **Meshery** is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with various CNCF projects, monitoring, CI/CD, and security tools.
 
-**MeshMap** is like Figma for DevOps, as it allows you to create, test, and deploy cloud native architectures with ease and efficiency.{{% /pageinfo %}} -->
+**Kanvas** is like Figma for DevOps, as it allows you to create, test, and deploy cloud native architectures with ease and efficiency.{{% /pageinfo %}} -->
 <!-- {{< figure src="layer5-cloud-provider.svg"  class="image-center-shadow" >}} -->
 
 {{% pageinfo %}}
@@ -30,23 +30,23 @@ cascade:
                 0 0 0 2px #00b39f33,
                 0.3em 0.3em 1em #00b39f00;">You are here</p>
 
-**MeshMap** ([docs](/meshmap)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. MeshMap aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
+**Kanvas** ([docs](/kanvas)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. Kanvas aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
 
 {{% /pageinfo %}}
 
-## What is MeshMap?
+## What is Kanvas?
 
-<div style="display:flex;justify-content:center;margin:1rem;">MeshMap is a web-based application that allows you to create and share diagrams of cloud native infrastructure for Kubernetes. You can draw shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters. MeshMap supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. MeshMap also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. MeshMap is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes.</div>
+<div style="display:flex;justify-content:center;margin:1rem;">Kanvas is a web-based application that allows you to create and share diagrams of cloud native infrastructure for Kubernetes. You can draw shapes, lines, text, and icons to represent the components and relationships of your Kubernetes clusters. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. Kanvas is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes.</div>
 
-## What is MeshMap Modes
+## What is Kanvas Modes
 
-Choose your mode of operation for MeshMap.
+Choose your mode of operation for Kanvas.
 
 <div style="display:flex;justify-content:center;">
 {{< cardpane >}}
     <a href="../designer/">
   {{< card header="Designer" >}}
-    <a href="../designer/">Designer</a> mode is for those who want to create their own MeshMap, using the palette of components provided by Meshery.
+    <a href="../designer/">Designer</a> mode is for those who want to create their own Kanvas, using the palette of components provided by Meshery.
     <p>Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components.</p>
     <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
@@ -66,7 +66,7 @@ Choose your mode of operation for MeshMap.
 
 
 
-<!-- ## What is MeshMap?
+<!-- ## What is Kanvas?
 
 Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
 

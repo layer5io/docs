@@ -7,7 +7,7 @@ tags: [designs]
 ---
 
 
-## Use MeshMap for your Diagrams
+## Use Kanvas for your Diagrams
 
 {{< cardpane >}}
 {{% card header="Dev Env Documentation" %}}
@@ -21,7 +21,7 @@ Layer5's keyboard shortcuts and preset icons make it easy to create beautiful, i
 {{% /card %}}
 {{% /cardpane %}}
 
-### Use Layer5 MeshMap for all of your diagrams and docs
+### Use Layer5 Kanvas for all of your diagrams and docs
 
 Beyond data flow diagrams, do you need to create other technical docs and diagrams like design docs, RFCs, network diagrams, and API diagrams? Eraser provides a single platform for modern engineering teams to collaborate on docs and diagrams.
 <!-- Information in this section helps your user try your project themselves.

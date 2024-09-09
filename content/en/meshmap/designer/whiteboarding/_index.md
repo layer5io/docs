@@ -1,6 +1,6 @@
 ---
 title: Whiteboarding
-description: Whiteboarding and Freestyle Drawing inside meshmap
+description: Whiteboarding and Freestyle Drawing inside kanvas
 weight: 4
 categories: [Designer]
 tags: [designs]
@@ -12,7 +12,7 @@ tags: [designs]
 
 ![Shapes Introduction](./overview.png)
 
-The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Meshmap.
+The Whiteboarding and Freestyle Drawing feature introduces versatile drawing capabilities within Kanvas.
 This expansion augments the tool's functionality with a suite of annotation and visualization tools,
 allowing users to draw, annotate, and collaborate in real-time on their cloud native designs.
 
