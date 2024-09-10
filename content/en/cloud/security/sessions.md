@@ -21,7 +21,7 @@ A session is created each time a user successfully authenticates. See all active
 
 To use a session, sign into your Layer5 Cloud user account, thereby creating a new session. Your session's token will automatically be stored in your web browser using a cookie. To use that same session, simply use the same browser until the session expires. You can have multiple sessions active concurrently, whether on the same device or different device. Each session receives it's own authentication token and expiry time.
 
- In this way, it is possible to use your same account to collaborate between different sessions that you have established. For example, you may use those two different sessions to open up the same MeshMap design and you will find that your avatar shows up twice in the design (along with your mouse cursor). You can use this to collaborate with yourself or with others. We recommend collaborating with others, though.
+ In this way, it is possible to use your same account to collaborate between different sessions that you have established. For example, you may use those two different sessions to open up the same Kanvas design and you will find that your avatar shows up twice in the design (along with your mouse cursor). You can use this to collaborate with yourself or with others. We recommend collaborating with others, though.
 
 ## Revoking sessions
 

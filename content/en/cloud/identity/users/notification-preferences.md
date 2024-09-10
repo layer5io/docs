@@ -28,10 +28,10 @@ Layer5 Cloud offers a range of user-configurable preferences that allows you to 
 
      - **Workspace Activity:** You can choose to be notified about:
         - Changes to Designs
-        - Comments on Your Designs: Check this box to receive notifications for all new comments on your designs. Unchecking this box will disable all comment notifications. If you prefer to keep this box checked but wish to stop receiving notifications for a specific comment thread, you can directly mute notifications for that thread in the comment modal. You can [learn more about this feature](https://docs.layer5.io/meshmap/designer/comments/#mute-comment-notifications).
+        - Comments on Your Designs: Check this box to receive notifications for all new comments on your designs. Unchecking this box will disable all comment notifications. If you prefer to keep this box checked but wish to stop receiving notifications for a specific comment thread, you can directly mute notifications for that thread in the comment modal. You can [learn more about this feature](https://docs.layer5.io/kanvas/designer/comments/#mute-comment-notifications).
         - Deployment in environments
         - Membership Changes: team membership, user account creation/deletion
-        - Participating, @mentions in comments: [Learn more](https://docs.layer5.io/meshmap/designer/comments/#mute-comment-notifications)
+        - Participating, @mentions in comments: [Learn more](https://docs.layer5.io/kanvas/designer/comments/#mute-comment-notifications)
         - Weekly summary
 
 5. Click **Save Preferences**
