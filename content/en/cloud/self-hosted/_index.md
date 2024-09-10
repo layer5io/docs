@@ -3,7 +3,7 @@ title: Self-Hosted
 weight: 10
 categories: [Self-Hosted]
 description: >
-  Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
+  Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
 ---
 
 <img class="image-right-no-shadow" src="images/self-hosted.svg" width="40%" />

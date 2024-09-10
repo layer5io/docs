@@ -25,7 +25,7 @@ You can commence the integration process from the "**Extensions Page in Meshery*
 ### Access Integrations Page from the Meshery Extensions Page
 
 1. Go to [Extensions](https://playground.meshery.io/extensions).
-1. Click on **Enable** for **GitHub Action: MeshMap Snapshot**.
+1. Click on **Enable** for **GitHub Action: Kanvas Snapshot**.
 1. You will be redirected to the Integrations page.
 
     ![Extensions](/cloud/getting-started/images/github/extensions.png)
@@ -128,7 +128,7 @@ These next steps are optional. By enabling snapshots, you can choose a design fr
 
     - **Assigns Permissions**: Provides necessary permissions for reading actions, writing content, handling security events, statuses, and pull requests.
 
-    - **Captures Snapshots**: Uses the MeshMap-Snapshot action to capture snapshots of your infrastructure based on the specified application_type (e.g. Kubernetes Manifest, Docker Compose, Helm Chart).
+    - **Captures Snapshots**: Uses the Kanvas-Snapshot action to capture snapshots of your infrastructure based on the specified application_type (e.g. Kubernetes Manifest, Docker Compose, Helm Chart).
 
     With the workflow active in your repository, you can now visualize changes to your infrastructure directly in your pull requests, making it easier to track and review updates on designs.
 

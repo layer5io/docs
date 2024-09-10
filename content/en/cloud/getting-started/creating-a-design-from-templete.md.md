@@ -14,6 +14,6 @@ weight: 2
 4. For detailed information just click on it.
 5. Simply click the green clone button.
 6. Now you have it. Navigate to [Meshery Playground](https://playground.meshery.io/)
-7. Go to the MeshMap and you will see your cloned template here. If you con't see it just reload the page.
+7. Go to the Kanvas and you will see your cloned template here. If you con't see it just reload the page.
 
 You can also publish your own design as a template.

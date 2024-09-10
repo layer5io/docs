@@ -1,31 +1,73 @@
 ---
-title: Kanvas Snapshots
+title: Starting from scratch
 description: >
-  Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
-category: GitOps
-weight: 4
+ Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
+weight: 2
+categories: [Designer]
+tags: [designs]
 ---
 
 
-Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
+## Step 1: Accessing Designer Mode
 
-## Meshery GitHub App
+Upon entering Kanvas, seamlessly transition to the "Designer" mode by selecting the "Designer" tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.
 
-In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
+**Example Analogy:**
+Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.
 
-View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
+## Step 2: Giving Your Design a Name
 
-## Enabling and Configuring Snapshots
+Initiate the design process by clicking on the "New Design" button in the Designer panel. Provide a meaningful name for your design, reflecting its purpose or key components. This action initializes a unique design entity, establishing it within the system.
 
-1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
-1. Visit Connections and click [Create on the GitHub connection](https://meshery.layer5.io/connect/github/new).
-1. Use the multi-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
-1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
-1. Identify the path to either one or more Meshery Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
-1. You will establish a secret for the Meshery GitHub app and a new workflow to be invoked when a new snapshot is needed.
-    1. Customize the workflow on event trigger to match your needs.
+**Example Analogy:**
+Naming your design is like labeling a blueprint for a mobile app. It helps everyone involved understand the app's purpose and functionality.
 
-You can always return to the [GitHub connection](https://meshery.layer5.io/connect/github) to update the connection or to add additional repositories.
+## Step 3: Browsing Available Components
+
+Explore the extensive toolbox in Designer mode, offering a diverse array of components such as microservices, databases, and event queues. Each component seamlessly integrates into your infrastructure. As you explore components, Kanvas dynamically previews their integration into your design, ensuring a harmonious fit.
+
+**Example Analogy:**
+Think of the toolbox as a palette of building blocks for your cloud native app. Just like selecting different materials for a construction project, you choose components for your app's architecture.
+
+## Step 4: Selecting Specific Versions
+
+To ensure precision in your design, select the specific version of each component you need. Kanvas supports a variety of versions for different components, allowing you to tailor your design to meet your exact requirements. A compatibility check is conducted, ensuring that selected versions align seamlessly within your design.
+
+**Example Analogy:**
+Choosing component versions is similar to selecting software versions for your cloud native app. It's like picking the right versions of libraries to ensure your app functions smoothly.
+
+## Step 5: Building Complex cloud native Deployments
+
+With the Designer toolbox at your disposal, effortlessly construct complex cloud native deployments. Simply drag and drop components onto the Kanvas canvas, arranging them in a way that suits your architecture. Kanvas renders your design in real-time as you drag and drop components, providing immediate visual feedback.
+
+**Example Analogy:**
+Building your deployment is like assembling a puzzle. Each component fits together to create a cohesive picture—the architecture of your cloud native app.
+
+## Step 6: Configuring Each Component
+
+Fine-tune your design by configuring each component using the Configuration panel. Kanvas's intuitive interface enables you to adjust settings and parameters effortlessly. Your design will automatically update with each change made. Kanvas's auto-sync feature ensures that configuration changes are instantly reflected in the design canvas.
+
+**Example Analogy:**
+Configuring components is like customizing app settings. You tweak each component to ensure they work seamlessly together, just like adjusting preferences in a mobile app.
+
+## Step 7: Design Actions and Interactions
+
+Explore additional design actions by right-clicking on components. Group components together or establish connections between them according to your needs. Kanvas responds in real-time to design actions, providing a fluid and responsive user experience.
+
+**Example Analogy:**
+Design actions are akin to arranging app features. You organize components like arranging app features on a dashboard, creating an intuitive and user-friendly experience.
+
+## Step 8: Merging Designs
+
+For enhanced collaboration and scalability, seamlessly merge existing designs into your canvas by dragging and dropping. This feature enables you to consolidate multiple designs, creating a unified and comprehensive view of your infrastructure. Kanvas orchestrates the merging process internally, creating a unified design that incorporates components from the dragged designs. Importantly, users do not lose their original designs during the merging process. Kanvas retains records of each design, preserving their individuality. The act of merging designs dynamically adjusts the visibility of the merged design, aligning with user intentions and access controls.
+
+**Example Analogy:**
+Merging designs is like integrating features from different app versions. You bring together different elements to create a cohesive and feature-rich user experience without losing the uniqueness of each version.
+
+Congratulations! You've successfully navigated the Designer mode in Kanvas, orchestrating a robust and tailored cloud native deployment. Continue exploring Kanvas's features to optimize and manage your designs effectively.
+
+Happy designing!
+
 
 
 
@@ -249,6 +291,8 @@ Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 
 ### External Links
 
 Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
+
+
 
 ```
 This is the final element on the page and there should be no margin below this.
