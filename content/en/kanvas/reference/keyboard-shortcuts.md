@@ -1,31 +1,56 @@
 ---
-title: Kanvas Snapshots
-description: >
-  Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
-category: GitOps
-weight: 4
+title: Keyboard Shortcuts
+description: |
+  Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
 ---
+<!-- set of custom keyboard button classes -->
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+
+Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:
+
+### Designer Shortcuts
+
+As a designer in Kanvas, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently:
+
+- <button class="kbc-button kbc-button-xs">M</button>: Add a comment to the selected node.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">C</button>: Copy the selected node or collection into your clipboard.
+- <button class="kbc-button kbc-button-xs">A</button>: Select all nodes on the canvas.<a 
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Delete</button> or <button class="kbc-button kbc-button-xs">⌘</button> + <button class="kbc-button kbc-button-xs">Backspace</button> (on Mac): Delete the selected node or collection of nodes from the canvas.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">V</button>: Paste a node or collection of nodes from your clipboard.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes by dragging your mouse over an area.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Z</button>: Undo your last create or delete action.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Y</button> or <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">Z</button>: Redo your last create or delete action.
+- <button class="kbc-button kbc-button-xs">Right-click</button> or <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Hold</button>: Open the context menu to choose an action to perform.
+- <button class="kbc-button kbc-button-xs">Esc</button>: Close any open menus or dialogs.
+
+These designer shortcuts are essential for a smooth and efficient design workflow within Kanvas.
+
+### Visualizer Shortcuts
+
+Kanvas's visualizer provides a set of keyboard shortcuts to enhance your experience when working with the visualized data. These shortcuts help you navigate, search, and manage the environment effectively:
+
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes in Visualizer by dragging your mouse over an area.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> (mouse): Select multiple nodes individually.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Opens the terminal window for interactive console sessions or log viewing.
+- <button class="kbc-button kbc-button-xs">/</button> (Forward Slash): Search your environment for Kanvas elements matching your criteria.
+- <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Close the Visualizer Terminal when it's open.
+
+These visualizer shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
+
+### Searching for Components
+
+Kanvas offers a powerful search feature that allows you to find specific components based on various criteria, such as object name, kinds, and namespaces. Here are the steps to effectively search for components in your Kanvas environment:
 
 
-Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
+1. Start typing your search query, such as the object name, kinds, or namespaces you're interested in. As you type, Kanvas will dynamically filter and display components that match your criteria.
 
-## Meshery GitHub App
+2. By clicking on a keyword or component in the search results, you can further filter out the components to focus on specific items.
 
-In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
+This search functionality makes it easy to quickly locate and access the components you need in your Kanvas environment.
 
-View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
 
-## Enabling and Configuring Snapshots
 
-1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
-1. Visit Connections and click [Create on the GitHub connection](https://meshery.layer5.io/connect/github/new).
-1. Use the multi-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
-1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
-1. Identify the path to either one or more Meshery Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
-1. You will establish a secret for the Meshery GitHub app and a new workflow to be invoked when a new snapshot is needed.
-    1. Customize the workflow on event trigger to match your needs.
 
-You can always return to the [GitHub connection](https://meshery.layer5.io/connect/github) to update the connection or to add additional repositories.
 
 
 
@@ -228,28 +253,4 @@ _The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik 
 {{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
 
 
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
+## Another Heading -->

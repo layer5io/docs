@@ -75,19 +75,19 @@ Meshery Workspaces serve as a virtual space for your team-based work.
 
 ### Tutorials
 
-- **MeshMap Snapshots**: Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.
+- **Kanvas Snapshots**: Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
 - **Sharing a Workspace**: Learn how to control access to workspaces and their resources.
 - **Recognizing User and Contributor Milestones**: Showcasing user and contributor achievements
 
 ### Self-Hosted
 
-Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
+Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
 
 ### Reference
 
 Low-level ReST API reference for extending Layer5 Cloud.
 
-## Meshmap Docs
+## Kanvas Docs
 
 ### Getting Started with Designs
 
@@ -98,8 +98,8 @@ Low-level ReST API reference for extending Layer5 Cloud.
 
 ### Exploring Designer
 
-- **Reviewing Designs:** Learn how to leverage comments in MeshMap’s Designer Mode to enhance collaboration and streamline design reviews.
-- **Whiteboarding:** Whiteboarding and Freestyle Drawing inside meshmap
+- **Reviewing Designs:** Learn how to leverage comments in Kanvas’s Designer Mode to enhance collaboration and streamline design reviews.
+- **Whiteboarding:** Whiteboarding and Freestyle Drawing inside kanvas
 - **Export Designs:** How to export your designs for backup , sharing or offline use.
 
 ### Working with Components
@@ -112,15 +112,15 @@ Visualizer mode is for operating your Kubernetes clusters and cloud native infra
 
 ### Core Tasks
 
-- **Whiteboarding:** MeshMap Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+- **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
 
 - **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying Designs, Cloning a Design
 
 ### Reference
 
-- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Meshmap to enhance your designing experience.
+- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
 
-- **Troubleshooting MeshMap:** Learn to Troubleshoot the MeshMap
+- **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
 
 ### Contribution Guidelines
 

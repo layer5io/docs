@@ -32,11 +32,11 @@ cascade:
 **Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
 </div></div>
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshmap" >}}</div>
+<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="kanvas" >}}</div>
 
 <div style="flex: 1;">
 
-**MeshMap** ([docs](/meshmap)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. MeshMap aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
+**Kanvas** ([docs](/kanvas)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. Kanvas aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
 </div></div>
 </div>
 {{% /pageinfo %}}
@@ -50,7 +50,7 @@ Please follow this space for updates!
 {{% blocks/feature icon="fa-brands fa-github" title="Contributions welcome!" url="https://github.com/gohugoio/hugo" %}}
 We do a [Pull Request](https://github.com/gohugoio/hugo/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
-{{% blocks/feature icon="./featured-background.png" title="MeshMap" url="/meshmap" %}}
-**MeshMap** provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. MeshMap aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
+{{% blocks/feature icon="./featured-background.png" title="Kanvas" url="/kanvas" %}}
+**Kanvas** provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. Kanvas aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
 {{% /blocks/feature %}}
 {{< /blocks/section >}} -->
