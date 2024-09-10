@@ -1,32 +1,33 @@
 ---
-title: Kanvas Snapshots
+title: Cloning a Design
 description: >
-  Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
-category: GitOps
-weight: 4
+  Treat designs as templates by cloning an existing design to modify and build upon.
+weight: 5
+categories: [Designer]
+tags: [designs]
 ---
 
+## Steps to cloning a design from Catalog using Kanvas
 
-Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
+1. Switch to Kanvas Designer mode, if not already in it.
+1. In the left navigation panel, click the “Catalog” menu tab.
+1. Select a design from the list that appears in the panel.
+1. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
 
-## Meshery GitHub App
+![Copy of a Design](/kanvas/getting-started/images/2024-04-18_19-57.png)
 
-In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
+This will create a copy of the catalog item to a new design, now owned by you.
 
-View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
+1. Click “clone” and a copy of the design will appear on your Kanvas canvas. You can then configure the design to suit your purposes.
+2. Find your newly cloned design in the list of designs in the left navigation panel.
 
-## Enabling and Configuring Snapshots
+![Copy of a Design](/kanvas/getting-started/images/2024-04-14_12-37.png)
 
-1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
-1. Visit Connections and click [Create on the GitHub connection](https://meshery.layer5.io/connect/github/new).
-1. Use the multi-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
-1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
-1. Identify the path to either one or more Meshery Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
-1. You will establish a secret for the Meshery GitHub app and a new workflow to be invoked when a new snapshot is needed.
-    1. Customize the workflow on event trigger to match your needs.
+You are now free to deploy it as it is or modify it further. 
 
-You can always return to the [GitHub connection](https://meshery.layer5.io/connect/github) to update the connection or to add additional repositories.
 
+{{< alert title="Learn about Designs" >}}Learn more about what a [Meshery Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits into Meshery's approach to cloud native management.
+{{< /alert >}}
 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).

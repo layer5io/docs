@@ -1,33 +1,61 @@
 ---
-title: Kanvas Snapshots
+title: Deploying Designs
 description: >
-  Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
-category: GitOps
+    Each Meshery design is deployable to one or more Kubernetes clusters.
 weight: 4
+categories: [Designer]
+tags: [designs]
 ---
 
+1. To deploy a design, navigate to the **Actions** button at the top of the Design canvas.
 
-Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
+2. Click on the **Deploy** icon.
 
-## Meshery GitHub App
+3. This opens a modal that will take you through all the steps before the final deployment.
 
-In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
+4. Click on **Open In Visualizer** to see the pre-filtered view of the deployed resources in the cluster
 
-View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
+5. Click **Finish**
 
-## Enabling and Configuring Snapshots
+![success-deploy](/kanvas/getting-started/images/deploy-designs/success-deploy.png)
 
-1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
-1. Visit Connections and click [Create on the GitHub connection](https://meshery.layer5.io/connect/github/new).
-1. Use the multi-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
-1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
-1. Identify the path to either one or more Meshery Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
-1. You will establish a secret for the Meshery GitHub app and a new workflow to be invoked when a new snapshot is needed.
-    1. Customize the workflow on event trigger to match your needs.
+### Deployment Errors
 
-You can always return to the [GitHub connection](https://meshery.layer5.io/connect/github) to update the connection or to add additional repositories.
+1. **Missing Namespace**: This error occurs when you attempt to create a Kubernetes resource without specifying a namespace. Kubernetes requires that all resources have an associated namespace.
+
+![missing-ns](/kanvas/getting-started/images/deploy-designs/missing-ns.png)
+
+2. **Empty Label Selector**: This error indicates an empty label selector.
+
+![empty-ls](/kanvas/getting-started/images/deploy-designs/empty-ls.png)
+
+### Troubleshooting Errors
+
+When reviewing validation, dry run, or deployment issues, you’ll notice specific error codes denoted from time to time.
+
+As a system, Meshery itemizes different errors that occur and assigns a unique error code to each along with details on how to remediate the issue at hand.
+
+For the comprehensive list of error codes refer to [Error Code Reference](https://docs.meshery.io/reference/error-codes) in the Meshery documentation.
+
+If you encounter persistent issues consider consulting the [Meshery Community forum](https://discuss.layer5.io/c/meshery/5)
+
+![error-code](/kanvas/getting-started/images/deploy-designs/error-code.png)
 
 
+### Using the Notification Center for Troubleshooting
+
+The Notification Center in Meshery helps manage events during the deployment process. It provides real-time updates and alerts on the status of the deployment. This feature can be particularly useful for troubleshooting, as it:
+
+1. Displays immediate feedback on the success or failure of each deployment step.
+1. Highlights specific error messages and codes, helping you quickly identify and understand issues.
+1. Offers links to detailed documentation and guides for resolving common problems.
+1. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions.
+
+![notification](/kanvas/getting-started/images/deploy-designs/notification.png) 
+
+![notification-center](/kanvas/getting-started/images/deploy-designs/notification-center.png)
+
+By actively monitoring the Notification Center, you can promptly address issues as they arise, ensuring a smoother deployment process. Learn more about [Managing Events with the Notification Center](https://docs.meshery.io/guides/events-management).
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
