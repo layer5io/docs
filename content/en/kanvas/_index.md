@@ -8,8 +8,8 @@ weight: 1
 cascade: 
     type: docs
 aliases:
-    - /content/en/meshmap/
-    - /content/en/kanvas/
+    - /meshmap/
+    - /kanvas/
 ---
 
 <!-- {{% pageinfo %}}
