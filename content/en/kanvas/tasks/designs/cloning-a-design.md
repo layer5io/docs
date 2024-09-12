@@ -5,6 +5,8 @@ description: >
 weight: 5
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/tasks/designs/cloning-a-design
 ---
 
 ## Steps to cloning a design from Catalog using Kanvas

@@ -2,6 +2,8 @@
 title: Keyboard Shortcuts
 description: |
   Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+aliases:
+  - /meshmap/reference/keyboard-shortcuts
 ---
 <!-- set of custom keyboard button classes -->
 <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />

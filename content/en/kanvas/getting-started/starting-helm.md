@@ -5,6 +5,8 @@ description: >
 weight: 3
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/getting-started/starting-helm
 ---
 
 Helm helps you manage Kubernetes applications. Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.

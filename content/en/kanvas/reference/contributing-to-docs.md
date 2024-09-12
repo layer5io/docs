@@ -2,6 +2,8 @@
 title: Contributing to Docs
 weight: 10
 description: A detailed contribution guide for Layer5 Docs.
+aliases:
+  - /meshmap/reference/contributing-to-docs
 ---
 ## Contributing to the docs.layer5.io Website
 

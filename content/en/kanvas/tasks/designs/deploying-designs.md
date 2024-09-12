@@ -5,6 +5,8 @@ description: >
 weight: 4
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/tasks/designs/deploying-designs
 ---
 
 1. To deploy a design, navigate to the **Actions** button at the top of the Design canvas.
