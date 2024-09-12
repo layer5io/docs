@@ -6,7 +6,7 @@ weight: 4
 categories: [Designer]
 tags: [designs]
 aliases:
-  - meshmap/designer/
+  - /meshmap/designer/
 ---
 
 {{% pageinfo %}}
