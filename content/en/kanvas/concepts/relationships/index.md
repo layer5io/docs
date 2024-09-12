@@ -6,6 +6,9 @@ description: >
   Meshery uses relationships to map how interconnected components interact.
 categories: [Designer]
 tags: [designs, relationships, components]
+aliases:
+  - /meshmap/concepts/relationships
+  - /kanvas/concepts/relationships
 ---
 
 ## What are Meshery Relationships?

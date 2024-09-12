@@ -5,6 +5,9 @@ description: >
 weight: 4
 categories: [Designer]
 tags: [designs]
+aliases:
+  - meshmap/designer/
+  - kanvas/designer/
 ---
 
 {{% pageinfo %}}

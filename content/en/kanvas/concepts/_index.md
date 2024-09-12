@@ -6,6 +6,9 @@ description: >
   Meshery Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured.
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/concepts
+  - /kanvas/concepts
 ---
 
 ## Designs

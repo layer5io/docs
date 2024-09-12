@@ -5,6 +5,9 @@ description: >
 weight: 3
 categories: [Designer]
 tags: [designs, collaboration, review]
+aliases:
+  - /meshmap/designer/share-resource
+  - /kanvas/designer/share-resource
 ---
 
 ## Overview
