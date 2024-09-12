@@ -8,7 +8,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - /meshmap/concepts
-  - /kanvas/concepts
 ---
 
 ## Designs

@@ -6,7 +6,6 @@ description: >
 categories: [Visualizer]
 aliases:
   - /meshmap/visualizer/visualizer-views
-  - /kanvas/visualizer/visualizer-views
 ---
 
 The Views tab is located on the right side of the screen just beside the Details tab in Kanvas Visualizer. It allows you to see all containers the present in your Kubernetes cluster. Think of views for Visualizer mode as you would design for the Designer mode. 

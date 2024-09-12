@@ -6,7 +6,6 @@ description: >
 categories: [Visualizer]
 aliases:
   - /meshmap/visualizer
-  - /kanvas/visualizer
 ---
 
 Discover and examine your Kubernetes clusters and cloud native infrastructure using Visualizer mode.

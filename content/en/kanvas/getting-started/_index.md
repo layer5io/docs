@@ -6,7 +6,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - /meshmap/getting-started
-  - /kanvas/getting-started
 ---
 
 

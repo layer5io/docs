@@ -7,7 +7,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/whiteboarding
-  - /kanvas/tasks/whiteboarding
 ---
 
 With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
