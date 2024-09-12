@@ -6,7 +6,6 @@ weight: 8
 draft: true
 aliases:
   - /meshmap/tutorials
-  - /kanvas/tutorials
 ---
 <!-- 
 {{% pageinfo %}}

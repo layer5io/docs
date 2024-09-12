@@ -7,7 +7,6 @@ categories: [Designer]
 tags: [designs, collaboration, review] 
 aliases:
   - /meshmap/designer/tagsets
-  - /kanvas/designer/tagsets
 ---
 
 ## Overview

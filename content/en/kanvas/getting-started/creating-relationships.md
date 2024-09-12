@@ -7,7 +7,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - /meshmap/getting-started/creating-relationships
-  - /kanvas/getting-started/creating-relationships
 ---
 
 {{% pageinfo %}}

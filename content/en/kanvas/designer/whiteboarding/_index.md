@@ -6,7 +6,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - /meshmap/designer/whiteboarding
-  - /kanvas/designer/whiteboarding
 # Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---

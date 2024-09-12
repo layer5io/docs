@@ -7,7 +7,6 @@ categories: [Designer]
 draft: true
 aliases:
   - /meshmap/tutorials/collaborative-editing
-  - /kanvas/tutorials/collaborative-editing
 ---
 
 {{% pageinfo %}}

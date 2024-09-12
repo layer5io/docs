@@ -9,7 +9,6 @@ cascade:
     type: docs
 aliases:
     - /meshmap/
-    - /kanvas/
 ---
 
 <!-- {{% pageinfo %}}

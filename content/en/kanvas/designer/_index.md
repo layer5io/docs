@@ -7,7 +7,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - meshmap/designer/
-  - kanvas/designer/
 ---
 
 {{% pageinfo %}}

@@ -7,7 +7,6 @@ categories: [Designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/undeploying-designs
-  - /kanvas/tasks/designs/undeploying-designs
 ---
 
 {{% pageinfo %}}
