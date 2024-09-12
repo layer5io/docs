@@ -5,6 +5,9 @@ description: >
 weight: 3
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/tasks/designs/undeploying-designs
+  - /kanvas/tasks/designs/undeploying-designs
 ---
 
 {{% pageinfo %}}
