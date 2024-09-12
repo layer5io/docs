@@ -5,6 +5,9 @@ description: >
 weight: 4
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/getting-started/working-with-components
+  - /kanvas/getting-started/working-with-components
 ---
 
 ## Copy and Paste Components

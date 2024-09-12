@@ -5,6 +5,9 @@ description: >
 weight: 2
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/getting-started/starting-scratch
+  - /kanvas/getting-started/starting-scratch
 ---
 
 

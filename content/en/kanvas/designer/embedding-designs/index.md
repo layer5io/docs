@@ -5,6 +5,9 @@ description: >
 weight: 5
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/designer/embedding-designs
+  - /kanvas/designer/embedding-designs
 ---
 
 # Meshery Design Embedding

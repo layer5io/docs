@@ -5,6 +5,9 @@ description: >
 weight: 3
 categories: [Designer]
 tags: [designs, collaboration, review]
+aliases:
+  - /meshmap/designer/comments
+  - /kanvas/designer/comments
 ---
 
 ## Overview
