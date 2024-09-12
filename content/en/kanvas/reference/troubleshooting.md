@@ -1,7 +1,8 @@
 ---
 title: Troubleshooting Kanvas
 description: Learn to Troubleshoot the Kanvas
-
+aliases:
+  - /meshmap/reference/troubleshooting
 ---
 
 ## Meshery Extension

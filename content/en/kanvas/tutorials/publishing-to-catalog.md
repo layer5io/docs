@@ -4,6 +4,8 @@ description: >
   Learn to Publish to Catalog
 weight: 4
 draft: true
+aliases:
+  - /meshmap/tutorials/publishing-to-catalog
 ---
 
 {{% pageinfo %}}

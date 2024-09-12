@@ -5,6 +5,8 @@ description: >
 weight: 5
 categories: [Designer]
 draft: true
+aliases:
+  - /meshmap/tutorials/collaborative-editing
 ---
 
 {{% pageinfo %}}

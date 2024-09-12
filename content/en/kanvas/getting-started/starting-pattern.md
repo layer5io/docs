@@ -5,6 +5,8 @@ description: >
 weight: 3
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/getting-started/starting-pattern
 ---
 
 Starting from a published design is a quick way to get started with a popular stack or solution.

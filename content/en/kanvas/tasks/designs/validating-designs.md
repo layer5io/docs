@@ -5,6 +5,8 @@ description: >
 weight: 2
 categories: [Designer]
 tags: [designs]
+aliases:
+  - /meshmap/tasks/designs/validating-designs
 ---
 
 {{% pageinfo %}}
