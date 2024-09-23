@@ -1,4 +1,4 @@
-name: Publish Version Dispatcher
+name: Publish Meshery Cloud Version Dispatcher
 on:   
   workflow_dispatch:
 
@@ -38,6 +38,7 @@ jobs:
         run: |
             echo ${{ steps.meshery-cloud.outputs.release_tag }} > build/meshery-cloud.version
       - name: Commit changes
+        if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Release Notes Meshery Cloud version ${{ steps.meshery-cloud.outputs.release_tag }}"
