@@ -17,7 +17,7 @@ Characteristics of the peer-to-peer communication include:
 - Very little server load
 - Not suited for a large amount of collaborators on a single document (each peer is connected to each other)
 
-![meshmap-collaboration-networking](../images/meshmap-collaboration-networking.svg "image-center-no-shadow")
+![kanvas-collaboration-networking](../images/kanvas-collaboration-networking.svg "image-center-no-shadow")
 
 ### Default Configuration
 

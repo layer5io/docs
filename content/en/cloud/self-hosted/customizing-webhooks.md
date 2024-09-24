@@ -31,8 +31,8 @@ Add your custom webhook URLs to the **.env** file by modifying the existing vari
 # Triggers when a user fills the help and support form.  
 WEBHOOK_HELP_AND_SUPPORT="https://your-custom-webhook-url.com/help-support"
 
-# Webhook to send an email notification to the user when they receive a Meshmap entitlement
-WEBHOOK_MESHMAP_ENTITLEMENT="https://your-custom-webhook-url.com/meshmap-entitlement"
+# Webhook to send an email notification to the user when they receive a Kanvas entitlement
+WEBHOOK_MESHMAP_ENTITLEMENT="https://your-custom-webhook-url.com/kanvas-entitlement"
 
 # Webhook to send an update email upon signup request approval or denial.
 WEBHOOK_SIGNUP_REQUEST="https://your-custom-webhook-url.com/signup-request"
@@ -47,4 +47,4 @@ After updating the **.env** file, apply the changes to your Layer5 Cloud install
 
 ### Step 5: Testing the Webhooks
 
-Once the configuration is applied, test the webhooks to ensure they are functioning correctly. You can trigger each webhook by performing the associated actions (e.g., filling out the help and support form, triggering a Meshmap entitlement, or processing a signup request).
+Once the configuration is applied, test the webhooks to ensure they are functioning correctly. You can trigger each webhook by performing the associated actions (e.g., filling out the help and support form, triggering a Kanvas entitlement, or processing a signup request).

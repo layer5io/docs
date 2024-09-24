@@ -1,19 +1,19 @@
 ---
-title: MeshMap Snapshots
+title: Kanvas Snapshots
 description: >
-  Connect MeshMap to your GitHub repo and see changes pull request-to-pull request.
+  Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
 category: GitOps
 weight: 4
 ---
 
 
-MeshMap Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
+Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
 
 ## Meshery GitHub App
 
 In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
 
-View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/meshmap-snapshot).
+View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
 
 ## Enabling and Configuring Snapshots
 

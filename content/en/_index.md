@@ -20,10 +20,10 @@ onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout=
     Cloud Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/meshmap" aria-label="MeshMap Docs"
-onmouseover="changeImage('Meshmap', 'images/logos/meshmap-light.svg')" onmouseout="restoreImage('Meshmap', 'images/logos/meshmap-alt.svg')">
-    <img id="Meshmap" src="images/logos/meshmap-alt.svg" alt="Layer5 MeshMap Docs Logo" />
-    MeshMap Docs
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/kanvas" aria-label="Kanvas Docs"
+onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout="restoreImage('Kanvas', 'images/logos/kanvas-alt.svg')">
+    <img id="Kanvas" src="images/logos/kanvas-alt.svg" alt="Layer5 Kanvas Docs Logo" />
+    Kanvas Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs"
