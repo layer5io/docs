@@ -90,8 +90,8 @@ To maximize the benefits of Meshery integrations, consider the following best pr
 4. **Implement Continuous Monitoring:**  
    With Prometheus integrated, continuously monitor your cloud-native infrastructure. Set up alerts and dashboards within Meshery to keep track of key performance indicators (KPIs) and respond to issues proactively.
 
-5. **Secure Access with Credentials:**
-Always ensure that managed connections are secured using appropriate credentials. Meshery offers built-in security features to safely manage access tokens and secrets. You can read more about how to set up credentials or utilize roles for secure access by visiting the following link: [Roles and Credentials Setup](https://docs.layer5.io/cloud/security/roles/)
+5. **Secure Access with Credentials:**  
+   Always secure your managed connections with appropriate credentials. Use Meshery’s built-in security features to manage access tokens and secrets safely.
 
 ---
 
