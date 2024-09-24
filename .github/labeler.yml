@@ -1,6 +1,8 @@
-
 component/cloud-docs:
+- changed-files:
+  - any-glob-to-any-file:
     - "content/en/cloud/**/*"
-
-component/kanvas-docs:
+component/kanvas-doc:
+- changed-files:
+  - any-glob-to-any-file:
     - "content/en/kanvas/**/*"
