@@ -10,6 +10,8 @@ categories: [Spaces]
 
 Meshery provides a rich set of integrations designed to simplify and enhance your cloud-native management workflows. These integrations allow you to connect Meshery with various tools and platforms, making it easier to manage, visualize, and collaborate on your infrastructure across different environments. Below is a detailed overview of the supported integrations, how they work, and best practices for using them effectively.
 
+To see all the available integrations and manage them, navigate to the Integrations page via the [Layer5 Cloud Dashboard](https://docs.layer5.io/cloud/getting-started/github-integration/#navigate-to-the-integrations-page-via-the-layer5-cloud-dashboard). This page provides an overview of all integrations available in Meshery and allows you to configure them according to your needs.
+
 ---
 
 ### GitHub Integration
