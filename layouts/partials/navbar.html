@@ -6,7 +6,7 @@
       <a class="navbar-brand" href="/">
         <span class="navbar-brand__logo navbar-logo">
           {{ $svg := resources.Get "icons/logo.svg" }}
-          <img class="footer-logo" src="{{ $svg.Permalink }}" alt="logo" />
+          <img class="footer-logo" src="/images/logo.svg" alt="logo" />
         </span>
         <span class="navbar-brand__name"></span
       ></a>
@@ -22,29 +22,29 @@
                     </li> -->
           <li class="nav-item dropdown" data-bs-theme="dark">
             <span
-              class="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+            class="nav-link dropdown-toggle"
+            id="productsDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
             >
-              Products
+            Products
           </span>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                href="https://docs.meshery.io/"
-                target="_blank"
-              >
-                <div class="logo-container">
-                  <img
-                    src="/images/logos/meshery-light-icon.svg"
-                    alt="Layer5 Meshery Logo"
-                  />
-                </div>
-                <span>Meshery</span></a
-              >
+          <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:2.5rem;">
+            <a
+            class="dropdown-item"
+            href="https://docs.meshery.io/"
+            target="_blank"
+            >
+              <div class="logo-container">
+                <img
+                  src="/images/logos/meshery-light-icon.svg"
+                  alt="Layer5 Meshery Logo"
+                />
+              </div>
+              <span>Meshery</span></a
+            >
               <div class="dropdown-divider"></div>
               <a
                 class="dropdown-item"
@@ -126,22 +126,104 @@
                                 </div> -->
             {{ partial "search-input-nav.html" . }}
           </li>
+          <li class="nav-item dropdown" data-bs-theme="dark" id="userlist" style="display: none;">
+            <div
+              class="nav-link avatar-container"
+              id="avatarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+            </div>
+            <div class="dropdown-menu" aria-labelledby="avatarDropdown" style="width:15rem;margin-left:-120px">
+              <a
+                class="dropdown-item"
+                href=""
+                target="_blank"
+                id="cloud-link"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/meshery-light-icon.svg"
+                    alt="Layer5 Meshery Logo"
+                  />
+                </div>
+                <span>Cloud</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/cloud-native-management/kanvas"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/kanvas-alt.svg"
+                    alt="Layer5 Kanvas Logo"
+                  />
+                </div>
+                <span>Kanvas</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <div
+                class="dropdown-item"
+                target="_blank"
+                onclick="logOut()"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logout.svg"
+                    alt="logout logo"
+                  />
+                </div>
+                <span>Logout</span></div
+              >
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <script>
-    let dropdown = document.querySelector("#navbarDropdown");
-    dropdown.addEventListener("click", function () {
-      dropdown.classList.toggle("current");
-      document.querySelector(".dropdown-menu").classList.toggle("show");
-    });
-    document.body.addEventListener('click', function(e) {
-      if(e.target != dropdown && dropdown.classList.contains("current")){
-        dropdown.classList.toggle("current");
-        document.querySelector(".dropdown-menu").classList.toggle("show");
+  function setupDropdown(dropdownId) {
+    const dropdown = document.querySelector(`#${dropdownId}`);
+    const dropdownMenu = dropdown.nextElementSibling;
+
+    
+    dropdown.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    closeOtherDropdowns(dropdownId);
+    dropdown.classList.toggle("current");
+    dropdownMenu.classList.toggle("show");
+  });
+
+    document.body.addEventListener('click', function() {
+      if (dropdown.classList.contains("current")) {
+        dropdown.classList.remove("current");
+        dropdownMenu.classList.remove("show");
+    }
+  });
+}
+function closeOtherDropdowns(currentDropdownId) {
+  const allDropdowns = document.querySelectorAll(".nav-item.dropdown");
+
+  // close all dropdowns except current one
+  allDropdowns.forEach(function (dropdown) {
+    if (dropdown.querySelector(`#${currentDropdownId}`) === null) {
+      dropdown.classList.remove("current");
+      const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+      if (dropdownMenu) {
+        dropdownMenu.classList.remove("show");
       }
-    })
+    }
+  });
+}
+
+  setupDropdown("productsDropdown");
+  setupDropdown("avatarDropdown");
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;
@@ -149,7 +231,70 @@
       cur = document.querySelector("#cloud");
     else if (window.location.pathname.includes("/kanvas/"))
       cur = document.querySelector("#kanvas");
-    cur.classList.add("current");
-    cur.href = "javascript: void(0)";
+    if (cur) {
+      cur.classList.add("current");
+      cur.href = "javascript: void(0)";
+    }
+
+const tok = "eyJhY2Nlc3NfdG9rZW4iOiJleUpoYkdjaU9pSlNVekkxTmlJc0ltdHBaQ0k2SW5CMVlteHBZenBsT0dWbU5ERmpNeTFpWldWbUxUUmlZakV0T0dVNE1DMHpOakExTVRZeU4yTTJNakVpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmhkV1FpT2x0ZExDSmpiR2xsYm5SZmFXUWlPaUp0WlhOb1pYSjVMV05zYjNWa0lpd2laWGh3SWpveE56STNNamMyT1RNeUxDSmxlSFFpT250OUxDSnBZWFFpT2pFM01qY3hPVEExTXpJc0ltbHpjeUk2SW1oMGRIQnpPaTh2YldWemFHVnllUzVzWVhsbGNqVXVhVzh2YUhsa2NtRXZJaXdpYW5ScElqb2lZV1F4WkRKa01HVXRaVFkyTlMwMFltSmhMVGt6WW1JdE1ERmhZVGhsWWpVeU1qQm1JaXdpYm1KbUlqb3hOekkzTVRrd05UTXlMQ0p6WTNBaU9sc2liM0JsYm1sa0lpd2liMlptYkdsdVpTSXNJbTltWm14cGJtVmZZV05qWlhOeklsMHNJbk4xWWlJNkltUnRiSHBoUjBaelpHMXNNbHBYY3pCUFJHaEJXakl4YUdGWGQzVlpNamwwT21KWFZucGhSMVo1WlZNeGFtSkhPVEZhUVQwOUluMC52TGFqNkdWdC11cVpMczBJbEhlVjFWTXcwV2lGYlVsTmg2QWpLNG9ELW53V1lvQjhQbWc3VzJQQUI0SEdNZFE5QnZVT3IxVVJMbUdxNFkwY0htWVRacmpqN0JOSHpLQTduMDRfS3ByUzZCWDUtNG9WLS1mUkVmX2lwblJGdWU4dW9wSFl3ZURpdXA2VTlGb0lHX1VKQlF6dDM5d2JFMDRidmdWLUhBcEY1bmZQZXloai1EYlJlRkRPU3BWaU9qRUdUTFl1VnB1ekYxVUZKdjVtc2JDY28yTEViMDQzbG9mTjhUSEFKS0RCWkFHd01jeWpDdmMtRll1Q3ZtNnR1RGplUFhpLURwZndkVjVlVV9BQUtMdVlVdzQ2OFpiQW9faWVTSVp5Tk16b3lEOF93YW9kOHRGYkIzOGVsc3QxYVdxX3h0c2xYcE9zenpEX1JmS3BaZUgwQjB2RElVZ2N1UTVUS3BIdGZtdTJsTjNOTVdCOGVuZ1YwNU4wbXpfT09hMDIzc3VaUHBwSUZzR01wdU1HekZCQ2JvUi1iOTZLRHZKYTFnWWpCeGV0Z2NvSDR0TkFTcWU3eVNwMWstOGdiWWkxTDctdDN6NVo0emFKN2tRTktEOXpibXJ2YzhhMTBoY2xBRWtyRnZQNm1kd0dlbVI5T0dvQ3ZwREM2d3A4dnF6REtEUllOamdDV0FtWGFSLV95S0ZJbGg4bHJZOU9rVVFOTWE2Z0NnQU52YUo5RUU5YS16dmc3YjJOcUxzaTJEMVdzTUZLbnRtSlkzel93UG5DbUZsczI3NzMzXy1yeWMwSzdRM3k3b0J5X0J0VTkxeTdxcE5VRS1DeUhBVXNQY2tTNEJCNHNHYks1ckd5bV9BWWgxWTVYRU4xX2tRWTkzdnZ1SFA4eEQ3dzRDOCIsInRva2VuX3R5cGUiOiJiZWFyZXIiLCJyZWZyZXNoX3Rva2VuIjoiUjQxVzdVYWRvbWIwd1BUYndZUEdkcnNvaURYZFRDM0pMY24wT2Y0dlBLdy5TR05xU3ZNMUdUbndzVlhSeDBmaWl4bjF0WnRFeXl3VV9aSWtoU1BCMk5nIiwiZXhwaXJ5IjoiMjAyNC0wOS0yNVQxNTowODo1MS42MDI4NTU4NTRaIn0";
+
+  function removeCookie(cookieName) {
+    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+
+  function getCookieValue(cookieName) {
+    const cookies = document.cookie.split(";");
+    console.log(cookies)
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim();
+      if (cookie.indexOf(cookieName + "=") === 0) {
+        return cookie.substring(cookieName.length + 1);
+      }
+    }
+    return tok;  // Return default token if cookie not found
+  }
+  function logOut() {
+    removeCookie("provider_token");
+    document.getElementById("userlist").style.display = "none"; 
+    // Open logout API link in a new tab
+    window.open("https://meshery.layer5.io/logout", "_blank");
+    // Refresh the current page
+    window.location.reload();
+  }
+  const hasCookie = async () => {
+    const CLOUD_USER_API = "https://meshery.layer5.io/api/identity/users/profile";
+    try {
+      const token = getCookieValue("provider_token");
+      const re = await fetch(CLOUD_USER_API, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      const response = await re.json();
+      if (re.status !== 200) {
+        throw new Error("user not logged in");
+      }
+
+    if (response && response.avatar_url) {
+
+      document.getElementById("userlist").style.display = "block";
+      const avatarUrl = response.avatar_url;
+      const avatarContainer = document.querySelector('.avatar-container');
+      avatarContainer.style.backgroundImage = `url("${avatarUrl}")`;
+      avatarContainer.style.backgroundSize = 'cover';
+
+      const userId = response.id;
+      const cloudLink = document.getElementById('cloud-link');
+      cloudLink.href = `https://meshery.layer5.io/user/${userId}`;
+    }
+
+  } catch (error) {
+    console.error("could not set user details:", error);
+  }
+};
+
+  hasCookie();
   </script>
 </header>
