@@ -15,17 +15,17 @@ Once you’ve added components to your design in Kanvas, configuring them is a c
 
 **Steps to Configure Components:**
 
-1. **Select the Component:** Click on the component on the MeshMap canvas that you want to configure. This action opens the Configuration Panel.
+1. **Select the Component:** Click on the component on the Kanvas canvas that you want to configure. This action opens the Configuration Panel.
 
 2. **Adjust Component Settings:** In the Configuration Panel, you can modify various settings, such as resource limits, environment variables, replicas, and more, depending on the type of component you’re working with (e.g., microservices, databases).
 
-3. **Real-time Updates:** As you adjust configurations, MeshMap will reflect those changes in real-time, allowing you to visualize how the changes affect your overall design. This feature ensures that the design is always up-to-date with the latest configurations.
+3. **Real-time Updates:** As you adjust configurations, Kanvas will reflect those changes in real-time, allowing you to visualize how the changes affect your overall design. This feature ensures that the design is always up-to-date with the latest configurations.
 
 By configuring components effectively, you ensure that your cloud-native deployments run smoothly and efficiently, tailored to your specific use case.
 
 ## Using the Radial Context Menu to Lock, Style, Duplicate, and Delete Components
 
-MeshMap’s **radial context menu** provides an intuitive way to interact with components on your design canvas. This menu allows you to quickly perform key actions such as locking, styling, duplicating, and deleting components without leaving the design canvas.
+Kanvas' **radial context menu** provides an intuitive way to interact with components on your design canvas. This menu allows you to quickly perform key actions such as locking, styling, duplicating, and deleting components without leaving the design canvas.
 
 ### Key Functions of the Radial Context Menu:
 
@@ -45,7 +45,31 @@ MeshMap’s **radial context menu** provides an intuitive way to interact with c
 
 **Use Case:** Delete components when modifying or refactoring your design to remove legacy infrastructure or redundant elements.
 
-The radial context menu offers an efficient, user-friendly way to manage components within MeshMap, streamlining the design process.
+The radial context menu offers an efficient, user-friendly way to manage components within Kanvas, streamlining the design process.
+
+## Annotations
+
+Annotations in MeshMap are a powerful feature that enables you to add contextual information to your designs directly on the canvas. These annotations can take the form of comments, labels, or freehand drawings, allowing for more detailed communication and documentation throughout the design process.
+
+### Types of Annotations:
+
+1. **Text Annotations:** Text annotations allow you to add notes or explanations alongside components. This is useful for providing instructions, detailing configurations, or documenting key decisions made during the design process.
+
+**Use Case:** Leave detailed instructions for collaborators about specific components or workflows within the design. Annotations are especially helpful when multiple team members are working on a project.
+
+2. **Pencil and Pen Tool:** The whiteboard feature in MeshMap allows you to use freehand drawings to annotate the design. This is useful for highlighting connections between components, drawing attention to specific areas, or visually brainstorming ideas on the canvas.
+
+**Use Case:** Use freehand annotations to draw attention to critical connections between services or infrastructure components, or to mark areas that require further review or adjustment.
+
+3. **Pinning Comments to Components:** In addition to standalone annotations, you can pin comments directly to specific components. This ensures that feedback or instructions remain attached to the component, even if the design evolves or components are moved around.
+
+**Use Case:** Pin a comment to a database component explaining the configuration and deployment strategy so that future collaborators can easily understand the logic behind it.
+
+### Importance of Annotations:
+
+Annotations play a crucial role in collaborative design processes. They provide a way to document decisions, share knowledge, and offer feedback directly within the design environment. This minimizes miscommunication and ensures all team members are aligned on the design's intent and structure.
+
+By effectively using annotations, you enhance the clarity and transparency of your designs, ensuring that they are well-documented and easy for all collaborators to understand.
 
 ## Copy and Paste Components
 
@@ -54,7 +78,6 @@ You can copy and paste one or more components — even if you're going from one 
 ### Use the right-click menu or keyboard shortcuts
 
 You might be able to copy and paste with the right-click menu, but for security reasons, most browsers don't allow web apps (like Kanvas) to use your computer's clipboard through menus.
-
 
 To copy and paste, you can use keyboard shortcuts:
 
