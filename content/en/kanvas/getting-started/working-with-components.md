@@ -35,15 +35,15 @@ Kanvas' **radial context menu** provides an intuitive way to interact with compo
 
 2. **Styling Components:** The styling option allows you to modify the appearance of the component, such as changing its color or label. This feature is especially useful for visually organizing components, making it easier to distinguish between different types or states within the architecture.
 
-**Use Case:** Style components to represent various application states, environments (production vs. development), or priority levels in your infrastructure design.
+  **Use Case:** Style components to represent various application states, environments (production vs. development), or priority levels in your infrastructure design.
 
 3. **Duplicating Components:** The radial menu also provides a quick way to duplicate a component. This feature is beneficial when you need multiple instances of the same component with identical configurations.
 
-**Use Case:** Quickly create replicas of services or microservices with consistent settings without having to reconfigure each one manually.
+  **Use Case:** Quickly create replicas of services or microservices with consistent settings without having to reconfigure each one manually.
 
 4. **Deleting Components:** Removing components is as simple as selecting the “Delete” option from the radial menu. This action helps keep the design clean and organized by removing unnecessary or outdated components.
 
-**Use Case:** Delete components when modifying or refactoring your design to remove legacy infrastructure or redundant elements.
+  **Use Case:** Delete components when modifying or refactoring your design to remove legacy infrastructure or redundant elements.
 
 The radial context menu offers an efficient, user-friendly way to manage components within Kanvas, streamlining the design process.
 
@@ -55,15 +55,15 @@ Annotations in MeshMap are a powerful feature that enables you to add contextual
 
 1. **Text Annotations:** Text annotations allow you to add notes or explanations alongside components. This is useful for providing instructions, detailing configurations, or documenting key decisions made during the design process.
 
-**Use Case:** Leave detailed instructions for collaborators about specific components or workflows within the design. Annotations are especially helpful when multiple team members are working on a project.
+  **Use Case:** Leave detailed instructions for collaborators about specific components or workflows within the design. Annotations are especially helpful when multiple team members are working on a project.
 
 2. **Pencil and Pen Tool:** The whiteboard feature in MeshMap allows you to use freehand drawings to annotate the design. This is useful for highlighting connections between components, drawing attention to specific areas, or visually brainstorming ideas on the canvas.
 
-**Use Case:** Use freehand annotations to draw attention to critical connections between services or infrastructure components, or to mark areas that require further review or adjustment.
+  **Use Case:** Use freehand annotations to draw attention to critical connections between services or infrastructure components, or to mark areas that require further review or adjustment.
 
 3. **Pinning Comments to Components:** In addition to standalone annotations, you can pin comments directly to specific components. This ensures that feedback or instructions remain attached to the component, even if the design evolves or components are moved around.
 
-**Use Case:** Pin a comment to a database component explaining the configuration and deployment strategy so that future collaborators can easily understand the logic behind it.
+  **Use Case:** Pin a comment to a database component explaining the configuration and deployment strategy so that future collaborators can easily understand the logic behind it.
 
 ### Importance of Annotations:
 
