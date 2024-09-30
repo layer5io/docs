@@ -40,7 +40,7 @@
               <div class="logo-container">
                 <img
                   src="/images/logos/meshery-light-icon.svg"
-                  alt="Meshery Logo"
+                  alt="Layer5 Meshery Logo"
                 />
               </div>
               <span>Meshery</span></a
@@ -146,7 +146,7 @@
                 <div class="logo-container">
                   <img
                     src="/images/logos/meshery-light-icon.svg"
-                    alt="Meshery Logo"
+                    alt="Layer5 Meshery Logo"
                   />
                 </div>
                 <span>Cloud</span></a
@@ -236,22 +236,19 @@ function closeOtherDropdowns(currentDropdownId) {
       cur.href = "javascript: void(0)";
     }
 
-const tok = "";
-
   function removeCookie(cookieName) {
     document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
 
   function getCookieValue(cookieName) {
     const cookies = document.cookie.split(";");
-    console.log(cookies)
     for (let i = 0; i < cookies.length; i++) {
       let cookie = cookies[i].trim();
       if (cookie.indexOf(cookieName + "=") === 0) {
         return cookie.substring(cookieName.length + 1);
       }
     }
-    return tok;  // Return default token if cookie not found
+    return null;
   }
   function logOut() {
     removeCookie("provider_token");
@@ -261,10 +258,13 @@ const tok = "";
     // Refresh the current page
     window.location.reload();
   }
-  const hasCookie = async () => {
+  const checkUserAuth = async () => {
     const CLOUD_USER_API = "https://meshery.layer5.io/api/identity/users/profile";
     try {
       const token = getCookieValue("provider_token");
+      if (!token) {
+      throw new Error("authentication failed");
+    }
       const re = await fetch(CLOUD_USER_API, {
         method: 'GET',
         headers: {
@@ -272,29 +272,29 @@ const tok = "";
         },
       });
 
-      const response = await re.json();
       if (re.status !== 200) {
-        throw new Error("user not logged in");
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-    if (response && response.avatar_url) {
-
-      document.getElementById("userlist").style.display = "block";
-      const avatarUrl = response.avatar_url;
-      const avatarContainer = document.querySelector('.avatar-container');
-      avatarContainer.style.backgroundImage = `url("${avatarUrl}")`;
-      avatarContainer.style.backgroundSize = 'cover';
-
-      const userId = response.id;
-      const cloudLink = document.getElementById('cloud-link');
-      cloudLink.href = `https://meshery.layer5.io/user/${userId}`;
-    }
+      const response = await re.json();
+      updateUI(response);
 
   } catch (error) {
-    console.error("could not set user details:", error);
+    console.error("could not set user details.", error);
   }
 };
+function updateUI(response) {
+document.getElementById("userlist").style.display = "block";
+const avatarUrl = response.avatar_url;
+const avatarContainer = document.querySelector('.avatar-container');
+avatarContainer.style.backgroundImage = `url("${avatarUrl}")`;
+avatarContainer.style.backgroundSize = 'cover';
 
-  hasCookie();
+const userId = response.id;
+const cloudLink = document.getElementById('cloud-link');
+cloudLink.href = `https://meshery.layer5.io/user/${userId}`;
+}
+
+checkUserAuth();
   </script>
 </header>
