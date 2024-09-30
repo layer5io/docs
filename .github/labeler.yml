@@ -1,6 +1,8 @@
-
 component/cloud-docs:
+- changed-files:
+  - any-glob-to-any-file:
     - "content/en/cloud/**/*"
-
-component/meshmap-docs:
-    - "content/en/meshmap/**/*"
+component/kanvas-doc:
+- changed-files:
+  - any-glob-to-any-file:
+    - "content/en/kanvas/**/*"
