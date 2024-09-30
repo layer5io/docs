@@ -1,0 +1,49 @@
+name: Update Pricing List and Front Matter
+
+on:
+  workflow_dispatch:
+    inputs:
+      spreadsheet_uri:
+        description: 'Link of the spreadsheet containing subscription details.'
+        type: string
+        required: true
+
+jobs:
+  update-pricing-and-frontmatter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Pricing List workflow via GitHub API
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{ secrets.GH_ACCESS_TOKEN }}" \
+            https://api.github.com/repos/layer5labs/meshery-extensions-packages/actions/workflows/generate-pricing-list.yml/dispatches \
+            -d '{"ref":"master", "inputs":{"spreadsheet_uri":"${{ inputs.spreadsheet_uri }}"}}'
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.17'  # Specify the Go version you need
+
+      - name: Wait for Pricing List workflow to complete
+        run: |
+          # You may need to implement a polling mechanism here to check the status of the other workflow
+          # For simplicity, we'll just wait for a fixed amount of time
+          sleep 60  # Adjust this time based on how long the pricing list workflow typically takes
+
+      - name: Pull latest changes
+        run: |
+          git pull origin master
+
+      - name: Run update_frontmatter.go
+        run: go run update_frontmatter.go
+
+      - name: Commit and push if there are changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update front matter based on new pricing data" && git push)
