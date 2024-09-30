@@ -52,7 +52,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 {{< cardpane >}}
 {{% card %}}
-![organization-administrator and manager](/cloud/identity/images/organization-administrator-and-organization-billing-manager.svg)
+![organization-administrator and manager](/cloud/security/images/organization-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -120,7 +120,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 {{< cardpane >}}
 {{% card %}}
-![workspacea-administrator-and-workspace-manager](/cloud/identity/images/workspace-administrator-and-workspace-manager.svg)
+![workspacea-administrator-and-workspace-manager](/cloud/security/images/workspace-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -186,7 +186,7 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 
 {{< cardpane >}}
 {{% card %}}
-![team-admins-and-manager](/cloud/identity/images/team-admins-and-team-managers.svg)
+![team-admins-and-manager](/cloud/security/images/team-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 

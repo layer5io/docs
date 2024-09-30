@@ -11,7 +11,7 @@ The design catalog can be accessed from the _Layer5 Cloud_ catalog page at [Laye
 
 {{< alert title="Note" >}}
 
-Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about [Designs](/meshmap/getting-started/)
+Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about [Designs](/kanvas/getting-started/)
 
 {{< /alert >}}
 
