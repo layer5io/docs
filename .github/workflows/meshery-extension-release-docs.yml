@@ -17,7 +17,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
         run: |
-          release_tag=$(curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5labs/meshery-extensions/releases/latest | jq -r ".tag_name")
+          release_tag=$(curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5labs/meshery-extensions-packages/releases/latest | jq -r ".tag_name")
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
           current_tag=$(<build/meshery-extensions.version)
           echo "current_tag=$current_tag" >> $GITHUB_OUTPUT
@@ -26,7 +26,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
         run: |
-          curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5labs/meshery-extensions/releases/latest > latest_release.json
+          curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5labs/meshery-extensions-packages/releases/latest > latest_release.json
           
           export RELEASE_TAG=$( cat latest_release.json | jq '.["tag_name"]' | tr -d '"')
           export PRERELEASE=$( cat latest_release.json | jq '.["prerelease"]' | tr -d '"')
