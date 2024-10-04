@@ -91,5 +91,59 @@ git rebase -i master
 ```
 This will open up a text editor where you can specify which commits to squash.
 
+## Instructions on How to Sign Off Commits to Meet the Developer Certificate of Origin (DCO) Requirements
+
+Contributors to this project are required to sign off on their commits to comply with the Developer Certificate of Origin (DCO). The DCO is a simple statement that you, as the contributor, have the legal right to make the contribution.
+
+By making a contribution to this project, I certify that:
+
+(a) The contribution was created in whole or in part by me and I have the right to submit it under the open source license indicated in the file.
+
+(b) The contribution is based upon previous work that, to the best of my knowledge, is covered under an appropriate open source license and I have the right under that license to submit that work with modifications, whether created in whole or in part by me.
+
+(c) The contribution was provided directly to me by some other person who certified (a), (b) and I have not modified it.
+
+(d) I understand and agree that this project and the contribution are public and that a record of the contribution (including all personal information I submit with it, including my sign-off) is maintained indefinitely and may be redistributed consistent with this project or the open source license(s) involved.
+
+**How to Sign Off on Your Commits**
+
+To add the required sign-off to your commits, follow these steps:
+
+1. Ensure Git is Configured with Your Name and Email
+
+Your Git configuration must have your correct name and email address, as they will be used to generate the sign-off message. To configure Git, run the following commands:
+```
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+2. Use the -s or --signoff Option in Your Commit
+
+When making a commit, you must use the -s or --signoff option to add the sign-off line. This will append the following line to your commit message:
+```
+Signed-off-by: Your Name <your.email@example.com>
+```
+Example of a signed-off commit:
+```
+git commit -s -m "Fixing issue with Meshery module"
+```
+
+This ensures that your contribution complies with the DCO.
+
+3. Verify Your Sign-Off
+
+To verify that your commit has the sign-off, you can inspect your commit log:
+```
+git log -1
+```
+The last commit should contain a Signed-off-by line that matches your name and email.
+
+4. Amending a Commit Without Sign-Off
+
+If you've already made a commit but forgot to sign off, you can amend the commit with the sign-off using the following command:
+```
+git commit --amend --signoff
+```
+This will add the sign-off to your previous commit.
+
 ## Submitting
 Once you've committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes on your development branch and update.
