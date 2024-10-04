@@ -111,14 +111,14 @@ To add the required sign-off to your commits, follow these steps:
 
 1. Ensure Git is Configured with Your Name and Email
 
-Your Git configuration must have your correct name and email address, as they will be used to generate the sign-off message. To configure Git, run the following commands:
+    Your Git configuration must have your correct name and email address, as they will be used to generate the sign-off message. To configure Git, run the following commands:
 ```
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 2. Use the -s or --signoff Option in Your Commit
 
-When making a commit, you must use the -s or --signoff option to add the sign-off line. This will append the following line to your commit message:
+    When making a commit, you must use the -s or --signoff option to add the sign-off line. This will append the following line to your commit message:
 ```
 Signed-off-by: Your Name <your.email@example.com>
 ```
@@ -131,7 +131,7 @@ This ensures that your contribution complies with the DCO.
 
 3. Verify Your Sign-Off
 
-To verify that your commit has the sign-off, you can inspect your commit log:
+    To verify that your commit has the sign-off, you can inspect your commit log:
 ```
 git log -1
 ```
@@ -139,7 +139,7 @@ The last commit should contain a Signed-off-by line that matches your name and e
 
 4. Amending a Commit Without Sign-Off
 
-If you've already made a commit but forgot to sign off, you can amend the commit with the sign-off using the following command:
+    If you've already made a commit but forgot to sign off, you can amend the commit with the sign-off using the following command:
 ```
 git commit --amend --signoff
 ```
