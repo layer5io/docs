@@ -21,10 +21,10 @@ jobs:
             -d '{"ref":"master", "inputs":{"spreadsheet_uri":"${{ inputs.spreadsheet_uri }}"}}'
 
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v5
         with:
           go-version: '1.17'  # Specify the Go version you need
 
