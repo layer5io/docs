@@ -1,4 +1,4 @@
-name: Update Pricing List and Front Matter
+name: Subscriptions Plan
 
 on:
   workflow_dispatch:
@@ -11,14 +11,32 @@ on:
 jobs:
   update-pricing-and-frontmatter:
     runs-on: ubuntu-latest
+    env:  
+      PRICING_FILE: 'pricing-data.json'  
+
     steps:
-      - name: Trigger Pricing List workflow via GitHub API
+      - name: Trigger Pricing List workflow and wait for completion
+        id: trigger-workflow
         run: |
-          curl -X POST \
+          WORKFLOW_ID=$(curl -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${{ secrets.GH_ACCESS_TOKEN }}" \
             https://api.github.com/repos/layer5labs/meshery-extensions-packages/actions/workflows/generate-pricing-list.yml/dispatches \
-            -d '{"ref":"master", "inputs":{"spreadsheet_uri":"${{ inputs.spreadsheet_uri }}"}}'
+            -d '{"ref":"master", "inputs":{"spreadsheet_uri":"${{ inputs.spreadsheet_uri }}"}}' \
+            -s -o /dev/null -w "%{http_code}")
+          
+          echo "Triggered workflow, waiting for completion..."
+          
+          while true; do
+            STATUS=$(curl -H "Authorization: token ${{ secrets.GH_ACCESS_TOKEN }}" \
+              https://api.github.com/repos/layer5labs/meshery-extensions-packages/actions/runs | jq '.workflow_runs[0].status' -r)
+            if [ "$STATUS" = "completed" ]; then
+              echo "Workflow completed"
+              break
+            fi
+            echo "Waiting for workflow to complete..."
+            sleep 30
+          done
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,24 +44,14 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.17'  # Specify the Go version you need
-
-      - name: Wait for Pricing List workflow to complete
-        run: |
-          # You may need to implement a polling mechanism here to check the status of the other workflow
-          # For simplicity, we'll just wait for a fixed amount of time
-          sleep 60  # Adjust this time based on how long the pricing list workflow typically takes
-
-      - name: Pull latest changes
-        run: |
-          git pull origin master
+          go-version: '1.21' 
 
       - name: Run update_frontmatter.go
-        run: go run update_frontmatter.go
+        run: go run update_frontmatter.go "${{ env.PRICING_FILE }}" 
 
       - name: Commit and push if there are changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
+          git add ${{ env.PRICING_FILE }}
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update front matter based on new pricing data" && git push)

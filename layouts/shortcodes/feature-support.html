@@ -10,7 +10,7 @@
     {{ if $feature }}
     {{ $subscription_tier := index $feature.entire_row "Subscription Tier" }}
     <div class="plan-support all-plans {{ lower $subscription_tier }}-plan">
-        <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
+        <img src="../../assets/icons/subscription.svg" alt="Icon" class="support-icon adaptive-icon">
         Supported on <span class="tier"> {{ $subscription_tier }} </span> Plan
     </div>
     {{ else }}
