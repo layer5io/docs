@@ -40,7 +40,7 @@
               <div class="logo-container">
                 <img
                   src="/images/logos/meshery-light-icon.svg"
-                  alt="Layer5 Meshery Logo"
+                  alt="Meshery Logo"
                 />
               </div>
               <span>Meshery</span></a
@@ -146,7 +146,7 @@
                 <div class="logo-container">
                   <img
                     src="/images/logos/5-light-no-trim.svg"
-                    alt="Layer5 Meshery Logo"
+                    alt="Layer5 Logo"
                   />
                 </div>
                 <span>Cloud</span></a
@@ -160,7 +160,7 @@
                 <div class="logo-container">
                   <img
                     src="/images/logos/kanvas-alt.svg"
-                    alt="Layer5 Kanvas Logo"
+                    alt="Kanvas Logo"
                   />
                 </div>
                 <span>Kanvas</span></a
@@ -251,21 +251,19 @@ function closeOtherDropdowns(currentDropdownId) {
     return null;
   }
   function logOut() {
+    // Open logout API link in a new tab to expire the token
+    window.open("https://meshery.layer5.io/logout", "_blank");
+    // remove cookie
     removeCookie("provider_token");
     document.getElementById("userlist").style.display = "none"; 
-    // Open logout API link in a new tab
-    window.open("https://meshery.layer5.io/logout", "_blank");
-    // Refresh the current page
-    window.location.reload();
   }
   const checkUserAuth = async () => {
-    const CLOUD_USER_API = "https://meshery.layer5.io/api/identity/users/profile";
     try {
-      const token = getCookieValue("provider_token");
+     const token = getCookieValue("provider_token");
       if (!token) {
       throw new Error("authentication failed");
     }
-      const re = await fetch(CLOUD_USER_API, {
+      const re = await fetch("https://meshery.layer5.io/api/identity/users/profile", {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
