@@ -6,7 +6,7 @@
       <a class="navbar-brand" href="/">
         <span class="navbar-brand__logo navbar-logo">
           {{ $svg := resources.Get "icons/logo.svg" }}
-          <img class="footer-logo" src="{{ $svg.Permalink }}" alt="logo" />
+          <img class="footer-logo" src="/images/logo.svg" alt="logo" />
         </span>
         <span class="navbar-brand__name"></span
       ></a>
@@ -22,29 +22,29 @@
                     </li> -->
           <li class="nav-item dropdown" data-bs-theme="dark">
             <span
-              class="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+            class="nav-link dropdown-toggle"
+            id="productsDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
             >
-              Products
+            Products
           </span>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                href="https://docs.meshery.io/"
-                target="_blank"
-              >
-                <div class="logo-container">
-                  <img
-                    src="/images/logos/meshery-light-icon.svg"
-                    alt="Layer5 Meshery Logo"
-                  />
-                </div>
-                <span>Meshery</span></a
-              >
+          <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:2.5rem;">
+            <a
+            class="dropdown-item"
+            href="https://docs.meshery.io/"
+            target="_blank"
+            >
+              <div class="logo-container">
+                <img
+                  src="/images/logos/meshery-light-icon.svg"
+                  alt="Meshery Logo"
+                />
+              </div>
+              <span>Meshery</span></a
+            >
               <div class="dropdown-divider"></div>
               <a
                 class="dropdown-item"
@@ -126,22 +126,104 @@
                                 </div> -->
             {{ partial "search-input-nav.html" . }}
           </li>
+          <li class="nav-item dropdown" data-bs-theme="dark" id="userlist" style="display: none;">
+            <div
+              class="nav-link avatar-container"
+              id="avatarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+            </div>
+            <div class="dropdown-menu" aria-labelledby="avatarDropdown" style="width:15rem;margin-left:-120px">
+              <a
+                class="dropdown-item"
+                href=""
+                target="_blank"
+                id="cloud-link"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/5-light-no-trim.svg"
+                    alt="Layer5 Logo"
+                  />
+                </div>
+                <span>Cloud</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item"
+                href="https://layer5.io/cloud-native-management/kanvas"
+                target="_blank"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logos/kanvas-alt.svg"
+                    alt="Kanvas Logo"
+                  />
+                </div>
+                <span>Kanvas</span></a
+              >
+              <div class="dropdown-divider"></div>
+              <div
+                class="dropdown-item"
+                target="_blank"
+                onclick="logOut()"
+              >
+                <div class="logo-container">
+                  <img
+                    src="/images/logout.svg"
+                    alt="logout logo"
+                  />
+                </div>
+                <span>Logout</span></div
+              >
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <script>
-    let dropdown = document.querySelector("#navbarDropdown");
-    dropdown.addEventListener("click", function () {
-      dropdown.classList.toggle("current");
-      document.querySelector(".dropdown-menu").classList.toggle("show");
-    });
-    document.body.addEventListener('click', function(e) {
-      if(e.target != dropdown && dropdown.classList.contains("current")){
-        dropdown.classList.toggle("current");
-        document.querySelector(".dropdown-menu").classList.toggle("show");
+  function setupDropdown(dropdownId) {
+    const dropdown = document.querySelector(`#${dropdownId}`);
+    const dropdownMenu = dropdown.nextElementSibling;
+
+    
+    dropdown.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    closeOtherDropdowns(dropdownId);
+    dropdown.classList.toggle("current");
+    dropdownMenu.classList.toggle("show");
+  });
+
+    document.body.addEventListener('click', function() {
+      if (dropdown.classList.contains("current")) {
+        dropdown.classList.remove("current");
+        dropdownMenu.classList.remove("show");
+    }
+  });
+}
+function closeOtherDropdowns(currentDropdownId) {
+  const allDropdowns = document.querySelectorAll(".nav-item.dropdown");
+
+  // close all dropdowns except current one
+  allDropdowns.forEach(function (dropdown) {
+    if (dropdown.querySelector(`#${currentDropdownId}`) === null) {
+      dropdown.classList.remove("current");
+      const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+      if (dropdownMenu) {
+        dropdownMenu.classList.remove("show");
       }
-    })
+    }
+  });
+}
+
+  setupDropdown("productsDropdown");
+  setupDropdown("avatarDropdown");
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;
@@ -149,7 +231,68 @@
       cur = document.querySelector("#cloud");
     else if (window.location.pathname.includes("/kanvas/"))
       cur = document.querySelector("#kanvas");
-    cur.classList.add("current");
-    cur.href = "javascript: void(0)";
+    if (cur) {
+      cur.classList.add("current");
+      cur.href = "javascript: void(0)";
+    }
+
+  function removeCookie(cookieName) {
+    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+
+  function getCookieValue(cookieName) {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim();
+      if (cookie.indexOf(cookieName + "=") === 0) {
+        return cookie.substring(cookieName.length + 1);
+      }
+    }
+    return null;
+  }
+  function logOut() {
+    // Open logout API link in a new tab to expire the token
+    window.open("https://meshery.layer5.io/logout", "_blank");
+    // remove cookie
+    removeCookie("provider_token");
+    document.getElementById("userlist").style.display = "none"; 
+  }
+  const checkUserAuth = async () => {
+    try {
+     const token = getCookieValue("provider_token");
+      if (!token) {
+      throw new Error("authentication failed");
+    }
+      const re = await fetch("https://meshery.layer5.io/api/identity/users/profile", {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      if (re.status !== 200) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const response = await re.json();
+      updateUI(response);
+
+  } catch (error) {
+    console.error("could not set user details.", error);
+  }
+};
+function updateUI(response) {
+document.getElementById("userlist").style.display = "block";
+const avatarUrl = response.avatar_url;
+const avatarContainer = document.querySelector('.avatar-container');
+avatarContainer.style.backgroundImage = `url("${avatarUrl}")`;
+avatarContainer.style.backgroundSize = 'cover';
+
+const userId = response.id;
+const cloudLink = document.getElementById('cloud-link');
+cloudLink.href = `https://meshery.layer5.io/user/${userId}`;
+}
+
+checkUserAuth();
   </script>
 </header>
