@@ -126,6 +126,9 @@
                                 </div> -->
             {{ partial "search-input-nav.html" . }}
           </li>
+          <li class="nav-item" id="signin-button" style="display: none;">
+            <a class="nav-link" href="https://meshery.layer5.io/login" target="_blank">Sign In</a>
+          </li>
           <li class="nav-item dropdown" data-bs-theme="dark" id="userlist" style="display: none;">
             <div
               class="nav-link avatar-container"
@@ -235,7 +238,8 @@ function closeOtherDropdowns(currentDropdownId) {
       cur.classList.add("current");
       cur.href = "javascript: void(0)";
     }
-
+  
+  let isUserAuthenticated = false;
   function removeCookie(cookieName) {
     document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
@@ -255,7 +259,9 @@ function closeOtherDropdowns(currentDropdownId) {
     window.open("https://meshery.layer5.io/logout", "_blank");
     // remove cookie
     removeCookie("provider_token");
-    document.getElementById("userlist").style.display = "none"; 
+    showSignInButton();
+
+    isUserAuthenticated = false;
   }
   const checkUserAuth = async () => {
     try {
@@ -279,9 +285,11 @@ function closeOtherDropdowns(currentDropdownId) {
 
   } catch (error) {
     console.error("could not set user details.", error);
+    showSignInButton();
   }
 };
 function updateUI(response) {
+document.getElementById('signin-button').style.display = 'none';
 document.getElementById("userlist").style.display = "block";
 const avatarUrl = response.avatar_url;
 const avatarContainer = document.querySelector('.avatar-container');
@@ -291,8 +299,25 @@ avatarContainer.style.backgroundSize = 'cover';
 const userId = response.id;
 const cloudLink = document.getElementById('cloud-link');
 cloudLink.href = `https://meshery.layer5.io/user/${userId}`;
+
+isUserAuthenticated = true;
 }
 
-checkUserAuth();
+function showSignInButton() {
+      document.getElementById("userlist").style.display = "none";
+      document.getElementById("signin-button").style.display = "block";
+}
+
+function handleVisibilityChange() {
+  console.log("visiblity change happen")
+    if (document.visibilityState === 'visible' && !isUserAuthenticated ) {
+     console.log("again visible")
+      checkUserAuth();
+    }
+  }
+
+  checkUserAuth();
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
   </script>
 </header>
