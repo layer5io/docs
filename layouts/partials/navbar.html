@@ -309,9 +309,7 @@ function showSignInButton() {
 }
 
 function handleVisibilityChange() {
-  console.log("visiblity change happen")
     if (document.visibilityState === 'visible' && !isUserAuthenticated ) {
-     console.log("again visible")
       checkUserAuth();
     }
   }
