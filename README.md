@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/926e71c4-4f1b-4188-8540-6f951c173710)# Layer5 Product Documentation
+![image](https://github.com/user-attachments/assets/0d802112-175c-437b-947f-a63b8b483436) # Layer5 Product Documentation
 
 Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
 
