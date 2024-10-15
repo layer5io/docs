@@ -27,6 +27,10 @@
     // padding: 0;
     transform: translate(-15%, 2.5rem);
     border-radius: 0.75rem;
+    &::after{
+      content: "";
+      width: 5rem;
+    }
     .dropdown-item {
       height: 5rem;
       width: max-content;

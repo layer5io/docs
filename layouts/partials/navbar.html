@@ -11,15 +11,24 @@
         <span class="navbar-brand__name"></span
       ></a>
       <div
-        class="td-navbar-nav-scroll ms-md-auto main-nav-items"
+        class="td-navbar-nav-scroll main-nav-items flex-grow-1"
         id="main_navbar"
       >
-        <ul class="navbar-nav">
+        <ul class="navbar-nav d-flex">
           <!-- <li class="nav-item nav-external">
                         <a class="nav-link nav-link-external" href="https://playground.meshery.io" target="_blank">
                             <span>Playground</span>
                         </a>
                     </li> -->
+                    <div class="d-flex">
+                      <li class="nav-item">
+                        <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
+                      </li>
+                      <li class="nav-item">
+                        <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
+                      </li>
+                    </div>
+                    <div class="d-flex ms-auto">
           <li class="nav-item dropdown" data-bs-theme="dark">
             <div
             class="nav-link"
@@ -30,7 +39,7 @@
             <img src="/images/grid-icon.svg" />
 
           </div>
-          <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:2.5rem;visibility:hidden;">
+          <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-4.5rem;visibility:hidden;">
             <a
             class="dropdown-item"
             href="https://docs.meshery.io/"
@@ -110,12 +119,6 @@
           <!-- <li class="nav-item">
             <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
           </li> -->
-          <li class="nav-item">
-            <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
-          </li>
-          <li class="nav-item">
-            <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
-          </li>
           <li class="d-none d-lg-block nav-item">
             <!-- <div class="td-search">
                             <div class="td-search__icon"></div>
@@ -141,6 +144,7 @@
               </div>
             </a>
           </li>
+          </div>
         </ul>
       </div>
     </div>
