@@ -10,13 +10,13 @@
     color: $primary !important;
   }
 
- @media (min-width: 768px) {
-  &:hover {
-      .dropdown-menu {
-        transform: translate(-15%, 0rem);
-      }
-  }
-}
+//  @media (min-width: 768px) {
+//   &:hover {
+//       .dropdown-menu {
+//         transform: translate(-15%, 0rem);
+//       }
+//   }
+// }
   .dropdown-menu {
     display: flex;
     flex-direction: row;
