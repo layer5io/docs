@@ -13,6 +13,11 @@
   href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css"
 />
 <script>
+   function focusSearchBar (){
+    var searchBar = document.querySelector(".td-search__input");
+    searchBar.focus();
+  } 
+
   searchKey.addEventListener("click", () => {
     event.preventDefault();
     focusSearchBar();
