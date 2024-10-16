@@ -29,14 +29,29 @@
                       </li>
                     </div>
                     <div class="d-flex ms-auto">
+        
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
+          </li> -->
+          <li class="d-none d-lg-block nav-item">
+            <!-- <div class="td-search">
+                            <div class="td-search__icon"></div>
+                            <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
+                                   aria-label="Search this site…" autocomplete="off">
+                            <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
+                                </div> -->
+            {{ partial "search-input-nav.html" . }}
+          </li>
           <li class="nav-item dropdown" data-bs-theme="dark">
             <div
             class="nav-link"
             id="productsDropdown"
             role="button"
             data-toggle="dropdown"
+            style="padding-top:6px"
             >
-            <img src="/images/grid-icon.svg" />
+            <img width="28px" src="/images/grid-icon.svg" />
 
           </div>
           <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-4.5rem;visibility:hidden;">
@@ -114,19 +129,6 @@
                 <span>Nighthawk</span></a
               >
             </div>
-          </li>
-
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
-          </li> -->
-          <li class="d-none d-lg-block nav-item">
-            <!-- <div class="td-search">
-                            <div class="td-search__icon"></div>
-                            <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
-                                   aria-label="Search this site…" autocomplete="off">
-                            <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
-                                </div> -->
-            {{ partial "search-input-nav.html" . }}
           </li>
           <li class="nav-item" id="signin-button" style="display: none;">
             <a class="nav-link" href="https://meshery.layer5.io/login" target="_blank">Sign In</a>
