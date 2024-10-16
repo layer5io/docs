@@ -37,6 +37,7 @@ Right-click on any area of your canvas, and from the contextual menu, select "Co
 ## Tips for using Comments as a Design Review Tool
 
 <img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="600" style="margin-bottom: 25px;">
+<img src="/images/random.svg" alt="random test svg"/>
 
 ### Initiate Threads
 
