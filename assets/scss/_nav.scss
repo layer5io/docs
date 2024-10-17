@@ -68,7 +68,7 @@
 
   @include media-breakpoint-down(lg) {
     .td-navbar-nav-scroll {
-      max-width: 100%;
+      max-width: fit-content;
       height: 2.5rem;
       overflow: hidden;
       font-size: 0.9rem;
