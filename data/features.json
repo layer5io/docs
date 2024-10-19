@@ -1,0 +1,352 @@
+[
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design",
+      "Feature": "Create new Meshery design",
+      "Function": "Create new design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/extensions/importing-a-design",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.meshery.io/extensions/importing-a-design",
+      "Feature": "Import a design",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+      "Feature": "Import a design from Kubernetes Manifest",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+      "Feature": "Import a design from Helm Chart",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/importing-designs#import-designs-using-meshery-cli",
+      "Feature": "Import a design from Docker Compose",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "",
+      "Feature": "Import a design from Kubernetes Manifest, Meshery Design (YAML), Helm Chart, Docker Compose or Meshery Design (OCI Image)",
+      "Function": "Standard Import Design",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "",
+      "Feature": "Import a design from GitHub, GitLab, BitBucket",
+      "Function": "Premium Design Import Features",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://deploy-preview-379--bejewelled-pegasus-b0ce81.netlify.app/kanvas/designer/export-designs/#exporting-as-a-design-file",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-a-design-file",
+      "Feature": "Export a latest version of design in Meshery Design (YAML format)",
+      "Function": "Export Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+      "Feature": "Export a latest version of design in Meshery Design (OCI format)",
+      "Function": "Export Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "documentation": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+      "Feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
+      "Function": "Standard Export Design",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "",
+      "Feature": "Export a design to GitHub, GitLab, BitBucket",
+      "Function": "Premium Export Design Features",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/extensions/publishing-a-design",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.meshery.io/extensions/publishing-a-design",
+      "Feature": "Publish a design",
+      "Function": "Publish Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Import a filter",
+      "Function": "Import Filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Publish WASM Filter",
+      "Function": "Publish WASM Filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Unpublish WASM Filter",
+      "Function": "Unpublish WASM Filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Download a WASM filter",
+      "Function": "Download a WASM filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Check information or details of a WASM filter",
+      "Function": "Details of WASM Filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Edit WASM filter",
+      "Function": "Edit WASM filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Clone WASM filter from catalog, which allows customizing filter and use it in design",
+      "Function": "Clone WASM Filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "documentation": "https://docs.meshery.io/guides/configuration-management/filter-management",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "https://docs.meshery.io/guides/configuration-management/filter-management",
+      "Feature": "Delete WASM filter permanently from catalog.",
+      "Function": "Delete WASM Filter",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Filters",
+      "Documented?": "",
+      "Feature": "Import, Unpublish, Publish, Download, Edit, Clone, Delete, Details of WASM Filter",
+      "Function": "WASM Filter and filter",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "documentation": "https://deploy-preview-379--bejewelled-pegasus-b0ce81.netlify.app/kanvas/designer/comments/",
+    "entire_row": {
+      "Category": "Design Reviews",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/comments/",
+      "Feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
+      "Function": "Discuss any design by leaving review comments",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "MeshMap"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Sidecar",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Parse logs",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Sidecar",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Exec Shell",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Adapter"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Filter",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Dynamic load / unload",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Meshery Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Design Patterns",
+      "Documented?": "",
+      "Feature": "Undo/Redo",
+      "Function": "",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "MeshMap"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Design Patterns",
+      "Documented?": "",
+      "Feature": "Ability to freeform draw any shapes, draw edges",
+      "Function": "Whiteboarding",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "MeshMap"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Visual Design",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "MeshMap"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Notification Integrations",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
+    }
+  }
+]
