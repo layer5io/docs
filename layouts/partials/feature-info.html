@@ -1,0 +1,25 @@
+{{ $currentPage := .Page.Permalink }}
+{{ $features := .Site.Data.features }}
+
+{{ if not $features }}
+  {{ $features = getJSON "features.json" }}
+{{ end }}
+
+{{ if $features }}
+{{ range $features }}
+  {{ $docUrl := .documentation | default "" }}
+  {{ $cleanDocUrl := (index (split $docUrl "#") 0) }} <!-- Remove the # fragment if it exists -->
+  {{ if eq $cleanDocUrl $currentPage }}
+    <div class="matterinfo">
+        <h4 class="matterheader">Who can use this feature</h4>
+        {{ $subscription_tier := index .entire_row "Subscription Tier" }}
+        <div class="plan-support all-plans {{ lower $subscription_tier }}-plan">
+            <img src="/images/subscription.svg" alt="Icon" class="support-icon adaptive-icon">
+            Supported on <span class="tier">{{ $subscription_tier }}</span> Plan
+        </div>
+    </div>
+    {{ break }} 
+  {{ end }}
+{{ end }}
+{{ end }}
+
