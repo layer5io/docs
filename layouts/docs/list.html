@@ -11,6 +11,7 @@
 	{{ with .Params.plan }}
         {{ partial "plan-info.html" (dict "plan" .) }}
     {{ end }}
+	{{- partial "feature-info.html" . -}}
 	{{ .Content }}
   {{ partial "section-index.html" . -}}
 	
