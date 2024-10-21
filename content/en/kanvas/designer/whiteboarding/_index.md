@@ -99,11 +99,18 @@ The tooltip is your gateway to customization. It's simple and intuitive, offerin
 
 Manage layers, group elements, for better organization. These advanced tools ensure collaborative work while preserving design integrity.
 
-#### Line and Edge Editing
+#### Customizing Line Styles
 
-Lines and edges are easily manipulated. Adjust thickness, style, and endpoints effortlessly. Drag line segments to create bends or curves, adding detail to visual representations.
+You have the flexibility to customize lines to fit your design needs and architectural specifications. Lines can represent various relationships, such as data flow, dependencies, or communication between components. By adjusting line properties like curve style, arrow style, and line type (e.g., solid or dashed), you can visually convey different meanings, making your design easier for others to interpret. Use the design tooltip to adjust these visual elements and create clear, meaningful connections between components in your architecture.
 
-Tip:To enable this animation for an edge, set the animation property of relationship metadata to "marching-ants".
+![Edit Line](./line-editing.gif)
+
+#### Adding Line Animations
+
+Take your designs a step further by adding animations to the lines, like the `marching ants` effect, to emphasize flow or movement between components. This feature improves visual clarity by highlighting the direction and movement of processes or data throughout your system, making interactions more intuitive. Adding this animation is simple, just click on the line and use the design tooltip.
+
+![Marching Ants Animation](./marching-ants.gif)
+
 #### Consistent Functionality
 
 The customization tools apply uniformly to all annotation types. Changes made within the tooltip reflect instantly on the canvas, facilitating real-time collaboration.
