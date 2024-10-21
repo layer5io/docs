@@ -86,3 +86,9 @@
   height: 100%;
   object-fit: cover;
 }
+img.grid-icon {
+  transition: filter 0.15s ease-in-out;
+  &:hover {
+    filter: invert(.6);
+  }
+}
