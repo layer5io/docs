@@ -93,3 +93,27 @@ To copy and paste:
 1. Use the right-click menu
 
 <!-- Image needed -->
+### Select All with Keyboard Shortcuts
+
+1. Select all components on the Kanvas by pressing CMD+A (Mac) or CTRL+A (Windows).
+2. Copy the selection by pressing CMD+C (Mac) or CTRL+C (Windows).
+3. Paste the components by pressing CMD+V (Mac) or CTRL+V (Windows).
+
+### Use the Right-Click Menu
+
+1. Right-click on the canvas and select Select All Components.
+   ![copy-paste-rightclick-select](/kanvas/getting-started/images/working-with-components/copy-paste-rightclick-select.png)
+2. Right-click again and choose Paste or press CMD+V (Mac) or CTRL+V (Windows) to paste the copied components.
+   ![copy-paste-rightclick-paste](/kanvas/getting-started/images/working-with-components/copy-paste-rightclick-paste.png)
+
+### Use the Save As Option
+
+1. Go to the design toolbar and select Save As.
+   ![copy-paste-save](/kanvas/getting-started/images/working-with-components/copy-paste-save.png)
+2. A copy of all components will be saved in your new design file, which you can then paste into another design.
+
+
+### Select with SHIFT or CTRL
+1. Press and hold either SHIFT or CTRL, then click and drag over all the components you want to select.
+2. Copy the selected components with CMD+C (Mac) or CTRL+C (Windows).
+3. Paste the components with CMD+V (Mac) or CTRL+V (Windows).
