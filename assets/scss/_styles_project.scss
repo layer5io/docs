@@ -37,13 +37,10 @@
 .nav-link.active {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(
-      to bottom,
+  border-image: linear-gradient(to bottom,
       rgba($dark, 0.2) 30%,
       rgba($primary, 0.3) 60%,
-      $primary 90% 100%
-    )
-    1;
+      $primary 90% 100%) 1;
   padding-bottom: 0.3rem;
   align-items: center;
   justify-content: center;
@@ -83,7 +80,7 @@ body {
 
   // Inline code
   p code,
-  li > code,
+  li>code,
   table code {
     color: inherit;
     padding: 0.2em 0.4em;
@@ -104,7 +101,7 @@ body {
     background-color: $gray-900;
     padding: $spacer;
 
-    > code {
+    >code {
       background-color: inherit !important;
       padding: 0;
       margin: 0;
@@ -205,14 +202,12 @@ a:not([href]):not([class]):hover {
 }
 
 .td-sidebar {
-  background-image: linear-gradient(
-    to top,
-    #1e2117,
-    #1d1912,
-    #18120e,
-    #0f0a09,
-    #000000
-  );
+  background-image: linear-gradient(to top,
+      #1e2117,
+      #1d1912,
+      #18120e,
+      #0f0a09,
+      #000000);
   position: sticky;
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
@@ -282,20 +277,14 @@ a:not([href]):not([class]):hover {
     &.active:not(.tree-root) {
       border-width: 1px;
       border-style: solid;
-      border-image: linear-gradient(
-          to left,
+      border-image: linear-gradient(to left,
           rgba($dark, 0) 30%,
           rgba($primary, 0.3) 60%,
-          $primary 90% 100%
-        )
-        1;
-      background-image: linear-gradient(
-          to left,
+          $primary 90% 100%) 1;
+      background-image: linear-gradient(to left,
           rgba($dark, 0.2) 30%,
           rgba($primary, 0.3) 60%,
-          $primary 90% 100%
-        )
-        1;
+          $primary 90% 100%) 1;
       padding: 0.25rem;
       padding-left: 0.5rem !important;
       // background-image: linear-gradient(to left, rgba($dark,.33),rgba($dark,.5),rgba($dark,.75),#1e2117, #31412b, #3b6447, #378b6d, #00b39f);
@@ -317,14 +306,12 @@ a:not([href]):not([class]):hover {
 .td-sidebar-toc {
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
-  background-image: linear-gradient(
-    to top,
-    #1e2117,
-    #1d1912,
-    #18120e,
-    #0f0a09,
-    #000000
-  );
+  background-image: linear-gradient(to top,
+      #1e2117,
+      #1d1912,
+      #18120e,
+      #0f0a09,
+      #000000);
 
   @supports (position: sticky) {
     position: sticky;
@@ -381,6 +368,50 @@ a:not([href]):not([class]):hover {
   border-color: #00b39f;
 }
 
+// front-matter
+.matterinfo {
+  font-weight: $font-weight-medium;
+  background: $black;
+  font-family: "Open Sans";
+  border-style: solid;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-color: #00b39f;
+  border-radius: 10px;
+}
+
+.heading {
+  font-size: 1.2rem;
+  color: #00b39f;
+}
+
+.matterheader {
+  font-size: 1.2rem;
+  color: #00b39f;
+}
+
+.matterinfo .plan-support {
+  display: flex;
+  align-items: center;
+}
+
+.matterinfo .plan-support .support-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.plan-icon {
+  display: inline-block;
+}
+
+.tier {
+  color: #00b39f;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+
 // Style alert boxes.
 
 .alert {
@@ -407,12 +438,12 @@ a:not([href]):not([class]):hover {
   transition: color 0.8s;
   transition: background-color 0.8s;
 
-  > img {
+  >img {
     width: 2rem;
     margin-right: 0.5rem;
   }
 
-  > img:hover {
+  >img:hover {
     filter: brightness(0) invert(1);
   }
 
@@ -426,21 +457,15 @@ a:not([href]):not([class]):hover {
   margin-bottom: 4rem;
   font-size: 5rem;
   text-align: left;
-  background: linear-gradient(
-      217deg,
+  background: linear-gradient(217deg,
       rgba(249, 245, 13, 0.26),
-      rgba(223, 255, 219, 0.57) 9.03%
-    ),
-    linear-gradient(
-      127deg,
+      rgba(223, 255, 219, 0.57) 9.03%),
+    linear-gradient(127deg,
       rgba(249, 245, 13, 0.7),
-      rgba(223, 225, 199, 0.1) 41.12%
-    ),
-    linear-gradient(
-      336deg,
+      rgba(223, 225, 199, 0.1) 41.12%),
+    linear-gradient(336deg,
       rgba(249, 245, 13, 0.1),
-      rgba(239, 239, 251, 0.81) 0%
-    );
+      rgba(239, 239, 251, 0.81) 0%);
   background-position:
     0% 0%,
     0% 0%;
@@ -465,11 +490,9 @@ a:not([href]):not([class]):hover {
   transform: rotate(-55.68deg);
   flex-shrink: 0;
   overflow: hidden;
-  background-image: linear-gradient(
-    180deg,
-    rgba(0, 179, 115, 0) 0%,
-    rgba(0, 179, 159, 0.3) 100%
-  );
+  background-image: linear-gradient(180deg,
+      rgba(0, 179, 115, 0) 0%,
+      rgba(0, 179, 159, 0.3) 100%);
   position: absolute;
   top: -18rem;
   right: -32rem;
@@ -498,15 +521,13 @@ a:not([href]):not([class]):hover {
   left: -24rem;
   overflow: hidden;
 
-  > .dash-ircle {
+  >.dash-ircle {
     width: 74.125rem;
     height: 74.125rem;
     flex-shrink: 0;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(0, 179, 159, 0.2) 0%,
-      rgba(0, 179, 159, 0) 100%
-    );
+    background: radial-gradient(50% 50% at 50% 50%,
+        rgba(0, 179, 159, 0.2) 0%,
+        rgba(0, 179, 159, 0) 100%);
     position: absolute;
     overflow: hidden;
     background-clip: border-box;
@@ -643,7 +664,7 @@ a:not([href]):not([class]):hover {
   gap: 3rem;
 }
 
-.tab-content > .active {
+.tab-content>.active {
   display: flex;
 }
 
