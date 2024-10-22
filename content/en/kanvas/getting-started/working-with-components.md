@@ -106,7 +106,7 @@ To copy and paste:
 2. Right-click again and choose Paste or press CMD+V (Mac) or CTRL+V (Windows) to paste the copied components.
    ![copy-paste-rightclick-paste](/kanvas/getting-started/images/working-with-components/copy-paste-rightclick-paste.png)
 
-### Use the Right-Click Menu
+### Use the Save As Option
 
 1. Go to the design toolbar and select Save As.
    ![copy-paste-save](/kanvas/getting-started/images/working-with-components/copy-paste-save.png)
