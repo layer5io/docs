@@ -14,7 +14,7 @@
         render($(event.target));
   
         // Hide keyboard on mobile browser
-        $searchInput.blur();
+        // $searchInput.blur();
       });
   
       // Prevent reloading page by enter key on sidebar search.
@@ -62,23 +62,13 @@
         // Dispose existing popover
         //
   
-        {
-          let popover = bootstrap.Popover.getInstance($targetSearchInput[0]);
-          if (popover !== null) {
-            popover.dispose();
-          }
-        }
+        bootstrap.Popover.getInstance($targetSearchInput[0])?.dispose();
   
         //
         // Search
         //
-  
-        if (idx === null) {
-          return;
-        }
-  
         const searchQuery = $targetSearchInput.val();
-        if (searchQuery === '') {
+        if (idx === null || searchQuery === "") {
           return;
         }
   
@@ -182,7 +172,7 @@
 
       //Bring focus to search bar
       $(document).on('keydown', function (event) {
-        if (event.key === '/') {
+        if (event.key === '/' ) {
           $searchInput.focus();
         }
       });
