@@ -160,10 +160,15 @@
     dropdown.addEventListener("click", function (event) {
     event.stopPropagation();
 
-    closeOtherDropdowns(dropdownId);
+    if (dropdown.classList.contains("current")) {
+        dropdown.classList.remove("current");
+        dropdownMenu.classList.remove("show");
+        dropdownMenu.style.visibility = "hidden"; 
+    } else {
     dropdown.classList.toggle("current");
     dropdownMenu.classList.toggle("show");
     dropdownMenu.style.visibility = "visible"; 
+    }
   });
 
     document.body.addEventListener('click', function() {
@@ -174,20 +179,7 @@
     }
   });
 }
-function closeOtherDropdowns(currentDropdownId) {
-  const allDropdowns = document.querySelectorAll(".nav-item.dropdown");
 
-  // close all dropdowns except current one
-  allDropdowns.forEach(function (dropdown) {
-    if (dropdown.querySelector(`#${currentDropdownId}`) === null) {
-      dropdown.classList.remove("current");
-      const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-      if (dropdownMenu) {
-        dropdownMenu.classList.remove("show");
-      }
-    }
-  });
-}
 
   setupDropdown("productsDropdown");
     // console.log(window.location.pathname == "/cloud/");
