@@ -44,7 +44,9 @@ function closeModal() {
     var imgTags = document.querySelectorAll("img");
     imgTags.forEach(function (img) {
       img.onclick = function () {
-        openModal(img);
+        if (img.dataset.modal !== "false") {
+                openModal(img);
+            }
       };
     });
   });
