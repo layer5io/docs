@@ -25,7 +25,6 @@ function openModal(imageIdOrElement) {
 
   document.getElementById("modalPic").src = src;
   document.getElementById("myModal").style.display = "block";
-  document.getElementById("site-footer").style.display = "hidden";
 }
 
 
@@ -33,7 +32,6 @@ function openModal(imageIdOrElement) {
 function closeModal() { 
   document.getElementById("modalPic").src = "";
   document.getElementById("myModal").style.display = "none";
-  document.getElementById("site-footer").style.display = "block";
 }
 
 </script>
@@ -44,7 +42,9 @@ function closeModal() {
     var imgTags = document.querySelectorAll("img");
     imgTags.forEach(function (img) {
       img.onclick = function () {
-        openModal(img);
+        if (img.dataset.modal !== "false") {
+                openModal(img);
+            }
       };
     });
   });
