@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-  actions: write
+  actions: read
 
 jobs:
   check-and-update-features:
@@ -18,6 +18,15 @@ jobs:
     steps:
       - name: Checkout current repository
         uses: actions/checkout@v4
+
+      - name: Restore cache
+        id: cache-sha
+        uses: actions/cache@v3
+        with:
+          path: .sha-cache
+          key: feature-data-sha
+          restore-keys: |
+            feature-data-sha
 
       - name: Check for updates in source repository
         id: check-updates
@@ -34,37 +43,28 @@ jobs:
             // Store the latest commit SHA
             const latestSHA = sourceFile.sha;
             
-            // Try to get the previously stored SHA from cache
-            const cache = await github.rest.actions.getActionsCacheList({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            });
+            const fs = require('fs');
             
+            // Check if we have a previous SHA
             let hasUpdates = true;
-            if (cache.data.actions_caches.length > 0) {
-              const lastSHA = cache.data.actions_caches[0].key.split('-').pop();
+            if (fs.existsSync('.sha-cache')) {
+              const lastSHA = fs.readFileSync('.sha-cache', 'utf8');
               hasUpdates = lastSHA !== latestSHA;
             }
             
             if (hasUpdates) {
-              // Update the cache with new SHA
-              await github.rest.actions.createActionsCacheEntry({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                key: `feature-data-sha-${latestSHA}`,
-                ref: context.ref,
-                cache_data: latestSHA
-              });
+              // Save the new SHA
+              fs.mkdirSync('.sha-cache', { recursive: true });
+              fs.writeFileSync('.sha-cache', latestSHA);
               
               // Decode and save the content
-              const content = Buffer.from(sourceFile.content, 'base64').toString('utf-8');
-              const fs = require('fs');
+              const content = Buffer.from(sourceFile.content, 'base64').toString('utf8');
               
               // Create data directory if it doesn't exist
               fs.mkdirSync('data', { recursive: true });
               
               // Write the new content
-              fs.writeFileSync('${{ env.FEATURES_FILE }}', content);
+              fs.writeFileSync(process.env.FEATURES_FILE, content);
               
               core.setOutput('has-updates', 'true');
             } else {
