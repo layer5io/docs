@@ -1,5 +1,41 @@
 [
   {
+    "documentation": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile",
+    "entire_row": {
+      "Category": "Profile",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile",
+      "Feature": "View your profile.",
+      "Function": "View Profile",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/designer/share-resource/",
+    "entire_row": {
+      "Category": "Catalog",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/share-resource/",
+      "Feature": "Share design with anyone within your organization, and make your design easily accessible to all relevant team members.",
+      "Function": "Share Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/",
+    "entire_row": {
+      "Category": "Catalog",
+      "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/cloning-a-design/",
+      "Feature": "Clone any published design to customise it according to your use cases",
+      "Function": "Clone Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
     "documentation": "https://docs.meshery.io/guides/configuration-management/creating-a-meshery-design",
     "entire_row": {
       "Category": "Designs",
@@ -8,7 +44,7 @@
       "Function": "Create new design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -20,7 +56,7 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -32,7 +68,19 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/getting-started/starting-helm/#importing-a-design",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/getting-started/starting-helm/#importing-a-design",
+      "Feature": "Import a design from Meshery Design (YAML)",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
     }
   },
   {
@@ -44,7 +92,7 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -56,7 +104,7 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -68,7 +116,7 @@
       "Function": "Standard Import Design",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -80,7 +128,7 @@
       "Function": "Premium Design Import Features",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -92,7 +140,7 @@
       "Function": "Export Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -104,20 +152,19 @@
       "Function": "Export Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
     "pricing_page": "true",
-    "documentation": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
     "entire_row": {
       "Category": "Designs",
-      "Documented?": "https://docs.layer5.io/kanvas/designer/export-designs/#exporting-as-an-oci-image",
+      "Documented?": "",
       "Feature": "Export a latest version of design in Meshery Design (OCI format, YAML format) Export a design in source type format (Kubernetes Manifest, Helm Chart, Docker Compose)",
       "Function": "Standard Export Design",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -129,7 +176,7 @@
       "Function": "Premium Export Design Features",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -141,7 +188,43 @@
       "Function": "Publish Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/",
+      "Feature": "Validate a design",
+      "Function": "Validate Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/deploying-designs/",
+      "Feature": "Deploy a design",
+      "Function": "Deploy Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/",
+      "Feature": "Retract all resources used in a Meshery design from the cluster",
+      "Function": "Undeploy Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
     }
   },
   {
@@ -153,7 +236,7 @@
       "Function": "Import Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -165,7 +248,7 @@
       "Function": "Publish WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -177,7 +260,7 @@
       "Function": "Unpublish WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -189,7 +272,7 @@
       "Function": "Download a WASM filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -201,7 +284,7 @@
       "Function": "Details of WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -213,7 +296,7 @@
       "Function": "Edit WASM filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -225,7 +308,7 @@
       "Function": "Clone WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -237,7 +320,7 @@
       "Function": "Delete WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
@@ -249,20 +332,44 @@
       "Function": "WASM Filter and filter",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Meshery"
+      "Tech": "Server"
     }
   },
   {
     "pricing_page": "true",
-    "documentation": "https://docs.layer5.io/kanvas/designer/comments/",
+    "documentation": "https://docs.layer5.io/meshmap/designer/comments/",
     "entire_row": {
       "Category": "Design Reviews",
-      "Documented?": "https://docs.layer5.io/kanvas/designer/comments/",
+      "Documented?": "https://docs.layer5.io/meshmap/designer/comments/",
       "Feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
       "Function": "Discuss any design by leaving review comments",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
-      "Tech": "MeshMap"
+      "Tech": "Kanvas"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/teams/",
+    "entire_row": {
+      "Category": "Teams",
+      "Documented?": "https://docs.layer5.io/cloud/identity/teams/",
+      "Feature": "Directly create a new user account within a team.",
+      "Function": "Add User to Team",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/organizations/",
+    "entire_row": {
+      "Category": "Organizations",
+      "Documented?": "https://docs.layer5.io/cloud/identity/organizations/",
+      "Feature": "Establish new organization for organizing teams, users, and resource access.",
+      "Function": "Create Organization",
+      "Pricing page?": "",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
     }
   },
   {
@@ -298,7 +405,31 @@
       "Function": "Dynamic load / unload",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Meshery Server"
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/catalog/metrics/",
+    "entire_row": {
+      "Category": "Settings",
+      "Documented?": "https://docs.layer5.io/cloud/catalog/metrics/",
+      "Feature": "View already configured metrics",
+      "Function": "View Metrics",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/concepts/relationships/#2-hierarchical-relationships",
+    "entire_row": {
+      "Category": "Design Patterns",
+      "Documented?": "https://docs.layer5.io/kanvas/concepts/relationships/#2-hierarchical-relationships",
+      "Feature": "",
+      "Function": "Use heirarchical relationships",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Kanvas"
     }
   },
   {
@@ -306,23 +437,24 @@
     "entire_row": {
       "Category": "Design Patterns",
       "Documented?": "",
-      "Feature": "Undo/Redo",
-      "Function": "",
+      "Feature": "This permission grants the user the ability to undo/redo any action in done in Kanvas",
+      "Function": "Undo or Redo",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
-      "Tech": "MeshMap"
+      "Tech": "Kanvas"
     }
   },
   {
     "pricing_page": "true",
+    "documentation": "https://docs.layer5.io/kanvas/designer/whiteboarding/",
     "entire_row": {
       "Category": "Design Patterns",
-      "Documented?": "",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/whiteboarding/",
       "Feature": "Ability to freeform draw any shapes, draw edges",
       "Function": "Whiteboarding",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "MeshMap"
+      "Tech": "Kanvas"
     }
   },
   {
@@ -334,7 +466,115 @@
       "Function": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "MeshMap"
+      "Tech": "Kanvas"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
+    "entire_row": {
+      "Category": "Visualizer",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
+      "Feature": "See all views withing a workspace",
+      "Function": "View Views",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
+    "entire_row": {
+      "Category": "Visualizer",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
+      "Feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+      "Function": "Delete View",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
+    "entire_row": {
+      "Category": "Visualizer",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
+      "Feature": "Export views to JSON format",
+      "Function": "Export views",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": "Server"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
+    "entire_row": {
+      "Category": "Visualizer",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
+      "Feature": "Share Views",
+      "Function": "Share Views",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": "Kanvas"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/security/sessions/#what-sessions-are",
+    "entire_row": {
+      "Category": "Sessions",
+      "Documented?": "https://docs.layer5.io/cloud/security/sessions/#what-sessions-are",
+      "Feature": "",
+      "Function": "View Sessions",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": ""
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/security/tokens/#creating-tokens",
+    "entire_row": {
+      "Category": "Tokens",
+      "Documented?": "https://docs.layer5.io/cloud/security/tokens/#creating-tokens",
+      "Feature": "",
+      "Function": "Create Token",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": ""
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/security/keys/",
+    "entire_row": {
+      "Category": "Keys",
+      "Documented?": "https://docs.layer5.io/cloud/security/keys/",
+      "Feature": "",
+      "Function": "View Keys",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": ""
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/spaces/workspaces/",
+    "entire_row": {
+      "Category": "Workspace",
+      "Documented?": "https://docs.layer5.io/cloud/spaces/workspaces/",
+      "Feature": "See all workspaces within an organisation",
+      "Function": "View Workspace",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": ""
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/spaces/environments/#deleting-an-environment",
+    "entire_row": {
+      "Category": "Environments",
+      "Documented?": "https://docs.layer5.io/cloud/spaces/environments/#deleting-an-environment",
+      "Feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
+      "Function": "Delete Environment",
+      "Pricing page?": "",
+      "Subscription Tier": "Enterprise",
+      "Tech": ""
     }
   },
   {
