@@ -1,10 +1,9 @@
-
 {{ if eq .Section "kanvas" }}
-<h2>Recent Discussions on Kanvas</h2>
+<h2>Recent Discussions on kanvas</h2>
 <ul>
     {{ with site.Data.kanvas_discuss }}
       {{ $users := .users }}
-      {{ $topics := .topic_list.topics }}
+      {{ $topics := sort .topic_list.topics "last_posted_at" "desc" }}
       
       {{ range first 8 $topics }}
         <li style="line-height:1.75rem;padding:0.3rem 0.4rem;">
