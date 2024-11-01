@@ -1,21 +1,22 @@
 {{ $currentPage := .Page.Permalink }}
 {{ $features := .Site.Data.features }}
-
 {{ if not $features }}
 {{ $features = getJSON "features.json" }}
 {{ end }}
-
 {{ if $features }}
 {{ $groupedFeatures := dict }}
 {{ range $features }}
 {{ $docUrl := .documentation | default "" }}
 {{ $cleanDocUrl := (index (split $docUrl "#") 0) }}
-{{ if eq $cleanDocUrl $currentPage }}
+{{ $currentPagePath := path.Clean (urls.Parse $currentPage).Path }}
+{{ $cleanDocUrlPath := path.Clean (urls.Parse $cleanDocUrl).Path }}
+
+{{ if eq $cleanDocUrlPath $currentPagePath }}
 {{ $tier := index .entire_row "Subscription Tier" }}
 {{ $feature := index .entire_row "Feature" }}
 {{ $currentFeatures := index $groupedFeatures $tier | default "" }}
-{{ $groupedFeatures = merge $groupedFeatures (dict $tier (printf "%s%s%s" $currentFeatures (cond (eq $currentFeatures
-"") "" ", ") $feature)) }}
+{{ $groupedFeatures = merge $groupedFeatures (dict $tier (printf "%s%s%s" $currentFeatures (cond (eq $currentFeatures "") "" ", ") $feature)) }}
+
 {{ end }}
 {{ end }}
 
@@ -34,10 +35,8 @@
   <h4 class="matterheader">Who can use this feature</h4>
   <div class="plan-support all-plans {{ lower $maxTier }}-plan">
     <img src="/images/subscription.svg" alt="Icon" class="support-icon adaptive-icon" data-modal="false" >
-    Supported on <a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $maxTier
-        }}</span> </a>Plan
+        Supported on <a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $maxTier }}</span> </a>Plan
   </div>
-
   {{ if gt (len $groupedFeatures) 1 }}
   <div class="add-ons">
     <strong>Add-ons:</strong>
@@ -46,8 +45,7 @@
     {{ if ne $tier $maxTier }}
     {{ if not $first }}, {{ end }}
     {{ $first = false }}
-    {{ $features }} [<a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $tier
-        }}</span></a>]
+    {{ $features }} [<a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $tier }}</span></a>]
     {{ end }}
     {{ end }}
   </div>
