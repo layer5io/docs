@@ -1,0 +1,31 @@
+name: Discussion data files update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' #runs every day at midnight
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    if: github.repository == 'layer5io/docs'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Fetch discussions data for kanvas tag
+        run: curl https://discuss.layer5.io/tag/kanvas.json -o data/kanvas_discuss.json
+
+      - name: Pull changes from remote
+        run: git pull origin master
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_user_name: Discuss bot
+          commit_user_email: discussions@meshery.io
+          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit_options: "--signoff"
+          commit_message: "latest discussion data files added"
+          branch: master
