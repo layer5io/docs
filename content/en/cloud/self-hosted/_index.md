@@ -6,7 +6,7 @@ description: >
   Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
 ---
 
-<img class="image-right-no-shadow" src="images/self-hosted.svg" style="max-width:200px;" />
+<img class="image-right-no-shadow" src="images/self-hosted.svg" style="max-width:300px;" />
 
 ## On-premises Deployment of Layer5 Cloud
 
