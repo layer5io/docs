@@ -8,7 +8,33 @@
       "Function": "View Profile",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Cloud"
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Account Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/catalog/",
+    "entire_row": {
+      "Category": "Catalog",
+      "Documented?": "https://docs.layer5.io/cloud/catalog/",
+      "Feature": "Export a copy of a design to your local system.",
+      "Function": "",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/catalog/",
+    "entire_row": {
+      "Category": "Catalog",
+      "Documented?": "https://docs.layer5.io/cloud/catalog/",
+      "Feature": "Export a copy of a design to your local system.",
+      "Function": "",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
     }
   },
   {
@@ -20,7 +46,8 @@
       "Function": "Share Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -32,7 +59,8 @@
       "Function": "Clone Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -44,7 +72,8 @@
       "Function": "Create new design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -56,7 +85,8 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -68,7 +98,8 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -80,7 +111,8 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -92,7 +124,8 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -104,7 +137,8 @@
       "Function": "Import Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -116,7 +150,33 @@
       "Function": "Standard Import Design",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs",
+      "Feature": "Import a design from GitHub",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Catalog Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/github-integration/#connect-github-and-import-designs",
+      "Feature": "Import a design from GitHub",
+      "Function": "Import Design",
+      "Pricing page?": "",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
     }
   },
   {
@@ -128,7 +188,8 @@
       "Function": "Premium Design Import Features",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -140,7 +201,8 @@
       "Function": "Export Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -152,7 +214,8 @@
       "Function": "Export Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -164,7 +227,8 @@
       "Function": "Standard Export Design",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -176,7 +240,33 @@
       "Function": "Premium Export Design Features",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "",
+      "Feature": "Import and export your designs using your local filesystem or remote URL.",
+      "Function": "Cloud Native Design Patterns",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Catalog Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Designs",
+      "Documented?": "",
+      "Feature": "Import and export your designs using your local filesystem or remote URL.",
+      "Function": "Cloud Native Design Patterns",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": ""
     }
   },
   {
@@ -188,7 +278,8 @@
       "Function": "Publish Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -200,7 +291,8 @@
       "Function": "Validate Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -212,7 +304,8 @@
       "Function": "Deploy Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -224,7 +317,8 @@
       "Function": "Undeploy Design",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -236,7 +330,8 @@
       "Function": "Import Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -248,7 +343,8 @@
       "Function": "Publish WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -260,7 +356,8 @@
       "Function": "Unpublish WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -272,7 +369,8 @@
       "Function": "Download a WASM filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -284,7 +382,8 @@
       "Function": "Details of WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -296,7 +395,8 @@
       "Function": "Edit WASM filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -308,7 +408,8 @@
       "Function": "Clone WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -320,7 +421,8 @@
       "Function": "Delete WASM Filter",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
@@ -332,20 +434,210 @@
       "Function": "WASM Filter and filter",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Catalog Management"
     }
   },
   {
     "pricing_page": "true",
-    "documentation": "https://docs.layer5.io/meshmap/designer/comments/",
+    "entire_row": {
+      "Category": "Team Chat",
+      "Documented?": "",
+      "Feature": "Message in real-time, unattached to a specific design. Control who can pariticpate in the discussion.",
+      "Function": "Message in real-time",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Collaboration"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "documentation": "https://docs.layer5.io/kanvas/designer/comments/",
     "entire_row": {
       "Category": "Design Reviews",
-      "Documented?": "https://docs.layer5.io/meshmap/designer/comments/",
+      "Documented?": "https://docs.layer5.io/kanvas/designer/comments/",
       "Feature": "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere.",
       "Function": "Discuss any design by leaving review comments",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Collaboration"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Organization and Team Management",
+      "Documented?": "",
+      "Feature": "Manage access to designs on a team-by-team, or individual user, basis.",
+      "Function": "Manage access to designs",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Collaboration"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Built-in Roles",
+      "Documented?": "",
+      "Feature": "Static - out of the box",
+      "Function": "Built-in Roles",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "User-defined Roles",
+      "Documented?": "",
+      "Feature": "Customizable roles for specific permission assignments",
+      "Function": "User-defined Roles",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Authentication: LDAP",
+      "Documented?": "",
+      "Feature": "Access Meshery Server using your existing accounts and centrally manage repository access.",
+      "Function": "Authentication: LDAP",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Authentication: SAML",
+      "Documented?": "",
+      "Feature": "Use an identity provider to manage the identities of GitHub users and applications.",
+      "Function": "Authentication: SAML",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/users/user-management/#add-user-remove-user",
+    "entire_row": {
+      "Category": "Users",
+      "Documented?": "https://docs.layer5.io/cloud/identity/users/user-management/#add-user-remove-user",
+      "Feature": "Delete a user account",
+      "Function": "Delete User",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/users/user-management/#create-user",
+    "entire_row": {
+      "Category": "Users",
+      "Documented?": "https://docs.layer5.io/cloud/identity/users/user-management/#create-user",
+      "Feature": "Create a new user",
+      "Function": "Create User",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Organization and Team Management",
+      "Documented?": "",
+      "Feature": "Manage access to designs on a team-by-team, or individual user, basis.",
+      "Function": "Manage access to designs",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
       "Tech": "Kanvas"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Built-in Roles",
+      "Documented?": "",
+      "Feature": "Static - out of the box",
+      "Function": "Built-in Roles",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "User-defined Roles",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Customizable roles for specific permission assignments",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Authentication: LDAP",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Access Meshery Server using your existing accounts and centrally manage repository access.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Authentication: SAML",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Use an identity provider to manage the identities of GitHub users and applications.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/users/user-management/#add-user-remove-user",
+    "entire_row": {
+      "Category": "Users",
+      "Documented?": "https://docs.layer5.io/cloud/identity/users/user-management/#add-user-remove-user",
+      "Feature": "Delete a user account",
+      "Function": "Delete User",
+      "Pricing page?": "",
+      "Subscription Tier": "Team",
+      "Tech": ""
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/users/user-management/#create-user",
+    "entire_row": {
+      "Category": "Users",
+      "Documented?": "https://docs.layer5.io/cloud/identity/users/user-management/#create-user",
+      "Feature": "Create a new user",
+      "Function": "Create User",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": ""
     }
   },
   {
@@ -357,7 +649,8 @@
       "Function": "Add User to Team",
       "Pricing page?": "",
       "Subscription Tier": "Team",
-      "Tech": "Cloud"
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
     }
   },
   {
@@ -369,43 +662,83 @@
       "Function": "Create Organization",
       "Pricing page?": "",
       "Subscription Tier": "Enterprise",
-      "Tech": "Cloud"
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Identity \u0026 Access Management"
     }
   },
   {
     "pricing_page": "true",
     "entire_row": {
-      "Category": "Sidecar",
+      "Category": "Dry-run",
       "Documented?": "",
-      "Feature": "",
-      "Function": "Parse logs",
+      "Feature": "Test and verify configuration changes in a separate environment.",
+      "Function": "Dry-run",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Lifecycle Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Multiple Kubernetes Clusters",
+      "Documented?": "",
+      "Feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
+      "Function": "Multiple Kubernetes Clusters",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Adapter"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Lifecycle Management"
     }
   },
   {
     "pricing_page": "true",
     "entire_row": {
-      "Category": "Sidecar",
+      "Category": "mesheryctl",
       "Documented?": "",
-      "Feature": "",
-      "Function": "Exec Shell",
+      "Feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface",
+      "Function": "all mesheryctl commands",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Adapter"
+      "Tech": "Golang",
+      "Theme (also: Keychain Name)": "Meshery System"
     }
   },
   {
     "pricing_page": "true",
     "entire_row": {
-      "Category": "Filter",
+      "Category": "Cluster discovery",
       "Documented?": "",
       "Feature": "",
-      "Function": "Dynamic load / unload",
+      "Function": "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "MeshSync"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Multiple Kubernetes Clusters",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
       "Tech": "Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "mesheryctl",
+      "Documented?": "",
+      "Feature": "Seamlessly manage your configurations, deployments, and interactions through our intuitive and powerful command-line interface",
+      "Function": "all mesheryctl commands",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Golang"
     }
   },
   {
@@ -417,7 +750,33 @@
       "Function": "View Metrics",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Meshery System"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Service Performance",
+      "Documented?": "",
+      "Feature": "Continuous visibility across all of your clusters and workloads.",
+      "Function": "Service Performance",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Service Performance",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Continuous visibility across all of your clusters and workloads.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Kanvas"
     }
   },
   {
@@ -429,7 +788,8 @@
       "Function": "Use heirarchical relationships",
       "Pricing page?": "",
       "Subscription Tier": "Free",
-      "Tech": "Kanvas"
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
@@ -441,7 +801,8 @@
       "Function": "Undo or Redo",
       "Pricing page?": "X",
       "Subscription Tier": "Team",
-      "Tech": "Kanvas"
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
@@ -454,7 +815,8 @@
       "Function": "Whiteboarding",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Kanvas"
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
@@ -466,7 +828,8 @@
       "Function": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
       "Pricing page?": "X",
       "Subscription Tier": "Free",
-      "Tech": "Kanvas"
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
     }
   },
   {
@@ -478,7 +841,8 @@
       "Function": "View Views",
       "Pricing page?": "",
       "Subscription Tier": "Team",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "MeshMap"
     }
   },
   {
@@ -490,7 +854,8 @@
       "Function": "Delete View",
       "Pricing page?": "",
       "Subscription Tier": "Team",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "MeshMap"
     }
   },
   {
@@ -502,7 +867,8 @@
       "Function": "Export views",
       "Pricing page?": "",
       "Subscription Tier": "Team",
-      "Tech": "Server"
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "MeshMap"
     }
   },
   {
@@ -514,7 +880,183 @@
       "Function": "Share Views",
       "Pricing page?": "",
       "Subscription Tier": "Team",
-      "Tech": "Kanvas"
+      "Tech": "Kanvas",
+      "Theme (also: Keychain Name)": "Kanvas"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Load Generation",
+      "Documented?": "",
+      "Feature": "Single Load Generator: Support testing multiple endpoints simultaneously.",
+      "Function": "Load Generation",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Load Generation",
+      "Documented?": "",
+      "Feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
+      "Function": "Distributed Load Generator",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "GetNighthawk",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Performance Profiles",
+      "Documented?": "",
+      "Feature": "Share performance profiles and test results with individual users or teams.",
+      "Function": "Performance Profiles",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Comparative Testing",
+      "Documented?": "",
+      "Feature": "Historical views: Infrastructure-centric",
+      "Function": "Comparative Testing",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Comparative Testing",
+      "Documented?": "",
+      "Feature": "Detect real-time anomalies.",
+      "Function": "Comparative Testing",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Continuous Quality of Service Monitoring",
+      "Documented?": "",
+      "Feature": "Experience uninterrupted oversight of your service quality with our Continuous Quality of Service Monitoring.",
+      "Function": "Continuous Quality of Service Monitoring",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "MeshMark",
+      "Documented?": "",
+      "Feature": "Identify the cost of a specific network function.",
+      "Function": "MeshMark",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Performance Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Load Generation",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Single Load Generator: Support testing multiple endpoints simultaneously.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Load Generation",
+      "Documented?": "",
+      "Feature": "Multiple Meshery Servers or Meshery Adapters generating load, collecting and coalescing results into a single report.",
+      "Function": "Distributed Load Generator",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "GetNighthawk"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Performance Profiles",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Share performance profiles and test results with individual users or teams.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Comparative Testing",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Historical views: Infrastructure-centric",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Comparative Testing",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Detect real-time anomalies.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Cloud"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Continuous Quality of Service Monitoring",
+      "Documented?": "",
+      "Feature": "Experience uninterrupted oversight of your service quality with our Continuous Quality of Service Monitoring.",
+      "Function": "",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "MeshMark",
+      "Documented?": "",
+      "Feature": "Identify the cost of a specific network function.",
+      "Function": "MeshMark",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
     }
   },
   {
@@ -526,7 +1068,8 @@
       "Function": "View Sessions",
       "Pricing page?": "",
       "Subscription Tier": "",
-      "Tech": ""
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Security Management"
     }
   },
   {
@@ -538,7 +1081,8 @@
       "Function": "Create Token",
       "Pricing page?": "",
       "Subscription Tier": "",
-      "Tech": ""
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Security Management"
     }
   },
   {
@@ -550,7 +1094,8 @@
       "Function": "View Keys",
       "Pricing page?": "",
       "Subscription Tier": "",
-      "Tech": ""
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Security Management"
     }
   },
   {
@@ -561,8 +1106,9 @@
       "Feature": "See all workspaces within an organisation",
       "Function": "View Workspace",
       "Pricing page?": "",
-      "Subscription Tier": "",
-      "Tech": ""
+      "Subscription Tier": "Enterprise",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Workspace Management"
     }
   },
   {
@@ -574,7 +1120,360 @@
       "Function": "Delete Environment",
       "Pricing page?": "",
       "Subscription Tier": "Enterprise",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Workspace Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/getting-started/creating-a-design-from-templete.md/",
+    "entire_row": {
+      "Category": "Catalog",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/creating-a-design-from-templete.md/",
+      "Feature": "Clone any item from catalog",
+      "Function": "Clone Catalog Item",
+      "Pricing page?": "",
+      "Subscription Tier": "",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Catalog Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "documentation": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support",
+    "entire_row": {
+      "Category": "Community Support",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support",
+      "Feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
+      "Function": "Community Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Support and Deployment"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Standard Support",
+      "Documented?": "",
+      "Feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
+      "Function": "Standard Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Support and Deployment"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Premium and Premium Plus Support",
+      "Documented?": "",
+      "Feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
+      "Function": "Premium and Premium Plus Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Support and Deployment"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Self-hosted Deployment",
+      "Documented?": "",
+      "Feature": "Self-hosted Meshery Cloud for on-prem appliances or self-managed cloud tenants.",
+      "Function": "Self-hosted Deployment",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Support and Deployment"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Phone Support",
+      "Documented?": "",
+      "Feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
+      "Function": "Phone Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Support and Deployment"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Serverless Pricing",
+      "Documented?": "",
+      "Feature": "Subscription plan management. Transformation of workflow pricing model.",
+      "Function": "Serverless Pricing",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "WASM",
+      "Theme (also: Keychain Name)": "Business Performance"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Screenshots",
+      "Documented?": "",
+      "Feature": "Capture and share visual snapshots of your work with ease using our Screenshots feature.",
+      "Function": "Screenshots",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "WASM",
+      "Theme (also: Keychain Name)": "Digital Experience Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/users/notification-preferences/",
+    "entire_row": {
+      "Category": "Notification Center",
+      "Documented?": "https://docs.layer5.io/cloud/identity/users/notification-preferences/",
+      "Feature": "",
+      "Function": "Events: Reporting of asynchronous events.",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Incident Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Notification Center",
+      "Documented?": "",
+      "Feature": "Consolidate all important updates, alerts, and messages in one centralized hub, ensuring you never miss a critical communication or task.",
+      "Function": "Notification Center",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server",
+      "Theme (also: Keychain Name)": "Incident Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Audit Trail",
+      "Documented?": "",
+      "Feature": "Detailed accounting of user activity. Historical record or each action taken.",
+      "Function": "Audit Trail",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "",
+      "Theme (also: Keychain Name)": "Incident Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Alert Generation",
+      "Documented?": "",
+      "Feature": "Dismiss individual; Dismiss bulk.",
+      "Function": "Alert Generation",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server UI",
+      "Theme (also: Keychain Name)": "Incident Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Calendaring",
+      "Documented?": "",
+      "Feature": "Get integration with GSuite and integration with Microsoft Outlook.",
+      "Function": "Calendaring",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Golang",
+      "Theme (also: Keychain Name)": "Incident Management"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Traffic Replay",
+      "Documented?": "",
+      "Feature": "Visual event replay in MeshMap",
+      "Function": "Traffic Replay",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Postgres",
+      "Theme (also: Keychain Name)": "Incident Management"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/getting-started/creating-a-design-from-templete.md/",
+    "entire_row": {
+      "Category": "Catalog",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/creating-a-design-from-templete.md/",
+      "Feature": "Clone any item from catalog",
+      "Function": "Clone Catalog Item",
+      "Pricing page?": "",
+      "Subscription Tier": "",
       "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "documentation": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support",
+    "entire_row": {
+      "Category": "Community Support",
+      "Documented?": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support",
+      "Feature": "Get help with most of your Meshery questions and issues in our Community Forum.",
+      "Function": "Community Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Standard Support",
+      "Documented?": "",
+      "Feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web.",
+      "Function": "Standard Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Premium and Premium Plus Support",
+      "Documented?": "",
+      "Feature": "With Premium, get a 30-minute SLA and 24/7 web and phone support. With Premium Plus, get everything in Premium plus your own Support Account Manager and more.",
+      "Function": "Premium and Premium Plus Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Self-hosted Deployment",
+      "Documented?": "",
+      "Feature": "Self-hosted Meshery Cloud for on-prem appliances or self-managed cloud tenants.",
+      "Function": "Self-hosted Deployment",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Phone Support",
+      "Documented?": "",
+      "Feature": "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone.",
+      "Function": "Phone Support",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Serverless Pricing",
+      "Documented?": "",
+      "Feature": "Subscription plan management. Transformation of workflow pricing model.",
+      "Function": "Serverless Pricing",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "WASM"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Screenshots",
+      "Documented?": "",
+      "Feature": "Capture and share visual snapshots of your work with ease using our Screenshots feature.",
+      "Function": "Screenshots",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "WASM"
+    }
+  },
+  {
+    "documentation": "https://docs.layer5.io/cloud/identity/users/notification-preferences/",
+    "entire_row": {
+      "Category": "Notification Center",
+      "Documented?": "https://docs.layer5.io/cloud/identity/users/notification-preferences/",
+      "Feature": "",
+      "Function": "Events: Reporting of asynchronous events.",
+      "Pricing page?": "",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Notification Center",
+      "Documented?": "",
+      "Feature": "Consolidate all important updates, alerts, and messages in one centralized hub, ensuring you never miss a critical communication or task.",
+      "Function": "Notification Center",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Audit Trail",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Detailed accounting of user activity. Historical record or each action taken.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": ""
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Alert Generation",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Dismiss individual; Dismiss bulk.",
+      "Pricing page?": "X",
+      "Subscription Tier": "Free",
+      "Tech": "Server UI"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Calendaring",
+      "Documented?": "",
+      "Feature": "Get integration with GSuite and integration with Microsoft Outlook.",
+      "Function": "Calendaring",
+      "Pricing page?": "X",
+      "Subscription Tier": "Team",
+      "Tech": "Golang"
+    }
+  },
+  {
+    "pricing_page": "true",
+    "entire_row": {
+      "Category": "Traffic Replay",
+      "Documented?": "",
+      "Feature": "",
+      "Function": "Visual event replay in MeshMap",
+      "Pricing page?": "X",
+      "Subscription Tier": "Enterprise",
+      "Tech": "Postgres"
     }
   },
   {
@@ -582,11 +1481,12 @@
     "entire_row": {
       "Category": "Notification Integrations",
       "Documented?": "",
-      "Feature": "",
-      "Function": "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+      "Feature": "Access a variety of third-party applications, right from MeshMap. Send a message to Slack, identify an on-duty team to page, or raise an alarm in Datadog.",
+      "Function": "Notification Integrations",
       "Pricing page?": "X",
       "Subscription Tier": "Enterprise",
-      "Tech": "Cloud"
+      "Tech": "Cloud",
+      "Theme (also: Keychain Name)": "Incident Management"
     }
   }
 ]
