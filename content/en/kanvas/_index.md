@@ -40,7 +40,7 @@ aliases:
 <div 
     style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
                 
-<div style="min-width:50px;">{{< svg name="kanvas" >}}</div>
+<div style="min-width:50px;"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo"/></div>
 
 <div>
 
