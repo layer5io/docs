@@ -30,7 +30,7 @@ Kanvas serves as a fundamental component, providing visual insights into infrast
 
 #### Step 1: Get access to Kanvas
 
-To integrate Snapshots into your GitHub pull requests, confirm that your user account has Kanvas access. To do so, sign into your Layer5 Cloud account and look forIf your user account doesn't have access, [simply request access](https://meshery.layer5.io/account/subscriptions) to Kanvas.
+To integrate Snapshots into your GitHub pull requests, confirm that your user account has Kanvas access. To do so, sign into your Layer5 Cloud account and look forIf your user account doesn't have access, [simply request access](https://cloud.layer5.io/account/subscriptions) to Kanvas.
 
 #### Step 2: Enable Kanvas Snapshot Action
 
@@ -41,7 +41,7 @@ To integrate Snapshots into your GitHub pull requests, confirm that your user ac
 1. Specify the path within your Git repository where the application configurations are stored. This ensures Meshery knows where to find and visuzlie the desired state of your infrastructure.
 
 {{%pageinfo%}}
-The Meshery GitHub App requires authorization to interact with your repositories. If you would like to use your GitHub user's personal access token, instead, [please let us know](https://meshery.layer5.io/support). {{%/pageinfo%}}
+The Meshery GitHub App requires authorization to interact with your repositories. If you would like to use your GitHub user's personal access token, instead, [please let us know](https://cloud.layer5.io/support). {{%/pageinfo%}}
 
 
 ## Customizing Snapshot Workflow Triggers in Kanvas Snapshot
