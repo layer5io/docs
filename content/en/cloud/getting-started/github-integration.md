@@ -32,7 +32,7 @@ You can commence the integration process from the "**Extensions Page in Meshery*
 
 ### Navigate to the Integrations Page via the Layer5 Cloud Dashboard
 
-1. On [Layer5 Cloud](https://meshery.layer5.io/dashboard), click on the **menu icon** on the navigation bar to open the global navigation menu.
+1. On [Layer5 Cloud](https://cloud.layer5.io/dashboard), click on the **menu icon** on the navigation bar to open the global navigation menu.
 
     ![Dashboard](/cloud/getting-started/images/github/dashboard.png)
 
@@ -150,7 +150,7 @@ You have successfully Integrated GitHub with Meshery! This page provides an over
 
 To view imported designs:
 
-1. Go to [Meshery Catalog](https://meshery.layer5.io/catalog).
+1. Go to [Meshery Catalog](https://cloud.layer5.io/catalog).
 1. Click on **My Designs** on the navigation bar.
 
     ![Catalog](/cloud/getting-started/images/github/catalog.png)
@@ -170,7 +170,7 @@ On the Connections page in Meshery:
   1. Identify the connection and click on its checkbox.
   1. Click **Delete**.
 
-On the [Integrations Page in Layer5 Cloud](https://meshery.layer5.io/spaces/integrations) page:
+On the [Integrations Page in Layer5 Cloud](https://cloud.layer5.io/spaces/integrations) page:
 
   1. Click on the GitHub Connection.
       ![Select Connection](/cloud/getting-started/images/github/select_connection.png)

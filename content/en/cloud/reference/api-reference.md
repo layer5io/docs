@@ -11,7 +11,7 @@ To create integrations, retrieve data, and automate your cloud native infrastruc
 
 ## Authenticating with the API
 
-In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://meshery.layer5.io/security/tokens) and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.
+In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.
 
 To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
 
@@ -28,5 +28,5 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 ## All API Endpoints
 
 {{< alert type="info" >}}
-<a href="https://meshery.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
+<a href="https://cloud.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
 {{< /alert >}}

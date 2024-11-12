@@ -55,7 +55,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a></div>
 
 <div class="catalog-card">
-<a href="https://meshery.layer5.io/catalog">
+<a href="https://clou.layer5.io/catalog">
   <div class="landing-card">
     <div class= "catalog-section catalog-logo">
       <span class="landing-card-title">Meshery Catalog</span>
