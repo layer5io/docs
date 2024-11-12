@@ -53,7 +53,7 @@ If you don't have permission to view keys for your selected organization, you wi
 #### Assign Keys
 
 1. Select the organization for which you wish to assign keys to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
-2. Navigate to [Keychains](https://meshery.layer5.io/security/keychains) page.
+2. Navigate to [Keychains](https://cloud.layer5.io/security/keychains) page.
 3. Choose from the existing set of keychains or create a new keychain to which you want to assign keys. For more information, see [Keychains](/cloud/security/keychains).
 4. Choose one more of your desired keys from the list of available keys.
 5. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
