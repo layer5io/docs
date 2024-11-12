@@ -17,7 +17,7 @@ Session OAuth tokens are stored in your user-agent (web browser) in a cookie. Th
 
 ## Creating and using sessions
 
-A session is created each time a user successfully authenticates. See all active sessions on your [user account's security sessions page](https://meshery.layer5.io/security/sessions).
+A session is created each time a user successfully authenticates. See all active sessions on your [user account's security sessions page](https://cloud.layer5.io/security/sessions).
 
 To use a session, sign into your Layer5 Cloud user account, thereby creating a new session. Your session's token will automatically be stored in your web browser using a cookie. To use that same session, simply use the same browser until the session expires. You can have multiple sessions active concurrently, whether on the same device or different device. Each session receives it's own authentication token and expiry time.
 
@@ -27,4 +27,4 @@ To use a session, sign into your Layer5 Cloud user account, thereby creating a n
 
 You can revoke your sessions at any time. When you revoke a session, it is immediately invalidated and cannot be used to make requests to the API. Revoking a session also revokes any refresh tokens associated with that session.
 
-See [Sessions](https://meshery.layer5.io/security/sessions) in Layer5 Cloud.
+See [Sessions](https://cloud.layer5.io/security/sessions) in Layer5 Cloud.

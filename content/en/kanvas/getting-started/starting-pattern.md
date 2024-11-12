@@ -18,7 +18,7 @@ For your convenience, the design catalog can be accessed from three locations:
 1. From the *Catalog* tab in _Kanvas Designer_.
    ![Kanvas Design Catalog](/kanvas/getting-started/images/2024-04-14_12-40.png)
 
-2. From the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://meshery.layer5.io/catalog).
+2. From the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://cloud.layer5.io/catalog).
    ![Layer5 Cloud Catalog](/kanvas/getting-started/images/2024-04-14_12-44.png)
 
 3. From the Meshery Catalog page at [Meshery Catalog](https://meshery.io/catalog).

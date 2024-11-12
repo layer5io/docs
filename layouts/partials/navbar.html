@@ -131,7 +131,7 @@
             </div>
           </li>
           <li class="nav-item" id="signin-button" style="display: none;">
-            <a class="nav-link" href="https://meshery.layer5.io/login" target="_blank">Sign In</a>
+            <a class="nav-link" href="https://cloud.layer5.io/login" target="_blank">Sign In</a>
           </li>
           <li class="nav-item dropdown" data-bs-theme="dark" id="userlist" style="display: none;">
              <a href="" id="user-profile-url">
@@ -220,7 +220,7 @@
         }
       throw new Error("no cookie to authenticate");
     }
-      const re = await fetch("https://meshery.layer5.io/api/identity/users/profile", {
+      const re = await fetch("https://cloud.layer5.io/api/identity/users/profile", {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -249,7 +249,7 @@ avatarContainer.style.backgroundSize = 'cover';
 
 const userId = response.id;
 const cloudLink = document.getElementById('user-profile-url');
-cloudLink.href = `https://meshery.layer5.io/user/${userId}`;
+cloudLink.href = `https://cloud.layer5.io/user/${userId}`;
 
 isUserAuthenticated = true;
 }
