@@ -63,12 +63,52 @@ function Design() {
 Make sure the `embedScriptSrc` attribute in the component points to the location of the downloaded embedding script on your react filesystem.
 Usually the script is located "static" folder
 
+
+### Embedding with Hugo
+
+Hugo users can use the meshery-design-embed shortcode to embed designs effortlessly.
+
+__Shortcode Definition__
+
+```html
+
+{{ $script := .Get "src" }}
+{{ $id := .Get "id" }}
+{{ $style := .Get "style" }}
+
+<div
+    id="{{ $id }}"
+    {{ if $style }}
+        style="{{ $style }}"
+    {{ else }}
+        style="height: 30rem; width: 100%; border: 1px solid #eee"
+    {{ end }}
+></div>
+
+<script src="{{ $script }}" type="module"></script>
+
+```
+
+__Shortcode Usage__
+
+Use the shortcode in your Hugo content files as shown:
+
+```html
+{{</* meshery-design-embed
+    src="../export-designs/embedded-design-dapr.js"
+    id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4"
+*/>}}
+```
+
+---
+
+
 ### Render
 After Finishing the steps , the embedded design will be rendered like :
 
 <!-- Design Embed Container  -->
-<div id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" style="height:30rem;width:100%;border:1px solid #eee"></div>
-<script src="../export-designs/embedded-design-dapr.js" type="module" ></script>
+
+{{< meshery-design-embed  src="../export-designs/embedded-design-dapr.js"  id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" >}}
 
 ### Customization
 
@@ -96,5 +136,3 @@ Here is a customization example:
   }
 </style>
 ```
-
-
