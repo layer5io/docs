@@ -10,7 +10,7 @@ You can change the logo, color scheme, domain name, and other aspects of the use
 
 ## Customizing Themes
 
-The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme.
+The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme. Customized theme colors also affect email notifications.
 
 {{< cardpane >}}
 {{% card header="Dashboard Example" footer="<i>Example: Cloudfire branding on Dashboard</i>" %}}
@@ -31,7 +31,7 @@ This example includes a custom branding with colors and full-sized logo.
 {{% /card %}}
 {{< /cardpane >}}
 
-### Organization Preference
+### Enable white labeling: Organization Preferences
 
 Layer5 Cloud supports customizing themes on a per organization basis. This includes the ability to upload your own logo and define your own color scheme. Your logo will be displayed in the top left corner of the dashboard. Both a full-sized logo and a logo mark are supported.
 
@@ -152,3 +152,13 @@ $ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
 
 <!-- FUTURE: SUPPORT FOR HTTPS 
 Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It can take up to 24 hours before this option is available. -->
+
+## White Label FAQ
+
+Frequently asked questions about white labeling.
+
+**Do users have to use my custom URL to access the Organization?**
+No. In addition to your custom URL, you'll always be able to log in from our website and access your Organization from <https://cloud.layer5.io>.
+
+**When I send someone a link that includes my custom URL, do they need to be logged in?**
+Yes. Users will need to be signed in through your custom URL (not through cloud.layer5.io) in order to open links that include your custom URL. Users who are not logged in can quickly do so, and subsequently, be redirected to the link you have shared.
