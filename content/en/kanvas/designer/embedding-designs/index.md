@@ -33,6 +33,33 @@ To embed your Kanvas design, follow these steps:
 
    Make sure the `src` attribute in the script tag points to the location of the downloaded embedding script on your local filesystem or server.
 
+### Customization
+
+You can customize the styles for the embedded design by targeting CSS classes exposed or by adding inline styles. The following class can be overridden:
+
+- `embed-design-container`: for the embedding container
+- `cy-container`: for the canvas
+
+If you have multiple embeddings on a page, you can target them all using the classes or specific ones using the div's ID in the shortcode.
+
+Here is a customization example:
+
+```html
+<style>
+  .embed-design-container {
+    width: 100%;
+    border-radius: 1rem;
+    margin: 1rem;
+    overflow: hidden;
+    margin-inline: auto;
+    height: 35rem;
+  }
+  .embed-canvas-container {
+    background-color: gray;
+  }
+</style>
+```
+
 ## Embedding in React Projects
 
 1. **Install the Package**: To integrate the Meshery Design into your React project, start by installing the package via npm:
@@ -66,7 +93,7 @@ Usually the script is located "static" folder
 
 ### Embedding with Hugo
 
-Hugo users can use the meshery-design-embed shortcode to embed designs effortlessly.
+To prepare your Hugo site to support design embedding, perform the one-time task of adding the following shortcode definition to your site's set of supported shortcodes.
 
 __Shortcode Definition__
 
@@ -86,10 +113,19 @@ __Shortcode Definition__
 ></div>
 
 <script src="{{ $script }}" type="module"></script>
-
 ```
 
-__Shortcode Usage__
+#### Shortcode Explaination
+
+`src`: Specify the path to the exported JavaScript file.
+`id`: Provide a unique ID for the embedded design.
+`style`: (Optional) Customize the appearance of the embedded design with CSS styles. This allows you to control the height, width, border, and other visual aspects.
+
+Now that your site has shortcode support for embedding Kanvas designs, you're ready to use the shortcode in any Hugo markdown file where you want embedded the designs to be visible to your site visitors. 
+
+#### Shortcode Usage
+
+Following the steps to export a design will generate a JavaScript file, containing your design. Add the Javascript file to your site and embed the design by using your new shortcode. In the following example, we use an exported design, "embedded-design-dapr.js". 
 
 Use the shortcode in your Hugo content files as shown:
 
@@ -100,39 +136,14 @@ Use the shortcode in your Hugo content files as shown:
 */>}}
 ```
 
----
+This code snippet demonstrates how to embed a design named "embedded-design-dapr.js" with a specific ID. This will render an interactive diagram of a Dapr (Distributed Application Runtime) setup within your Hugo-based website. 
 
+#### Embedded Design Example
 
-### Render
-After Finishing the steps , the embedded design will be rendered like :
+Finally, render your designs in your pages. When Hugo builds your website, it will process this shortcode and generate the necessary HTML and JavaScript to embed the interactive Kanvas design. After finishing the steps, the embedded design will be rendered like in the example below.
 
 <!-- Design Embed Container  -->
 
 {{< meshery-design-embed  src="../export-designs/embedded-design-dapr.js"  id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" >}}
 
-### Customization
 
-You can customize the styles for the embedded design by targeting CSS classes exposed or by adding inline styles. The following class can be overridden:
-
-- `embed-design-container`: for the embedding container
-- `cy-container`: for the canvas
-
-If you have multiple embeddings on a page, you can target them all using the classes or specific ones using the div's ID in the shortcode.
-
-Here is a customization example:
-
-```html
-<style>
-  .embed-design-container {
-    width: 100%;
-    border-radius: 1rem;
-    margin: 1rem;
-    overflow: hidden;
-    margin-inline: auto;
-    height: 35rem;
-  }
-  .embed-canvas-container {
-    background-color: gray;
-  }
-</style>
-```
