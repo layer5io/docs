@@ -1,0 +1,18 @@
+{{ $script := .Get "src" }} {{ $id := .Get "id" }} {{ $style := .Get "style" }}
+
+<div
+    id="{{$id}}"
+    {{
+    if
+    $style
+    }}
+    style="{{$style}}"
+    {{
+    else}}
+    style="height: 30rem; width: 100%; border: 1px solid #eee"
+    {{
+    end
+    }}
+></div>
+
+<script src="{{$script}} " type="module"></script>
