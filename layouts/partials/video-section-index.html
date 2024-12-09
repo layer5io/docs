@@ -1,0 +1,81 @@
+<div class="section-index">
+    {{ $page := .Page -}}
+    {{ $pages := (where .Site.Pages "Section" .Section).ByWeight -}}
+    {{ $pages = (where $pages "Type" "!=" "search") }}
+    {{ $pages = (where $pages ".Params.hide_summary" "!=" true) -}}
+    {{ $pages = (where $pages ".Parent" "!=" nil) -}}
+    {{ $pages = (where $pages ".Parent.File" "!=" nil) -}}
+    {{ if $page.File -}}
+        {{ $pages = (where $pages "Parent.File.UniqueID" "==" $page.File.UniqueID) -}}
+    {{ end -}}
+    {{ if or $page.Params.no_list (eq (len $pages) 0) -}}
+    {{/* If no_list is true or we don't have subpages we don't show a list of subpages */}}
+    {{ else if $page.Params.simple_list -}}
+    {{/* If simple_list is true we show a bulleted list of subpages */}}
+        <ul>
+            {{ range $pages -}}
+                {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
+                <li><a href="{{ $manualLink }}"{{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}{{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- .Title -}}</a></li>
+            {{ end -}}
+        </ul>
+    {{ else if $page.Params.videoGrid -}}
+    <div class="container">
+    <div class="row">
+        {{ range $pages -}}
+           {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
+            <a href="{{ $manualLink }}"
+              {{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}
+              {{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 bg-dark text-white border border-secondary shadow-lg">
+                    <div class="video-container position-relative" style="height: 250px; overflow: hidden;">
+                        {{ if .Params.kind }}
+                            {{ if eq .Params.kind "local" }}
+                                <video 
+                                    src="{{ .Params.src }}" 
+                                    class="card-img-top w-100 h-100 object-fit-cover" 
+                                    {{ if .Params.muted }}muted{{ end }} 
+                                    {{ if .Params.autoplay }}autoplay{{ end }} 
+                                    {{ if .Params.loop }}loop{{ end }}
+                                    controls
+                                ></video>
+                            {{ else if eq .Params.kind "youtube" }}
+                                <div class="ratio ratio-16x9 h-100">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/{{ .Params.video_id }}" 
+                                        title="{{ .Title }}" 
+                                        frameborder="0" 
+                                        class="w-100 h-100"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                            {{ end }}
+                            <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-overlay"></div>
+                        {{ end }}
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{ .Title }}</h5>
+                        <p class="card-text">{{ .Description }}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{ end -}}
+    </div>
+</div>
+    {{ else -}}
+    {{/* Otherwise we show a nice formatted list of subpages with page descriptions */}}
+    <hr class="panel-line">
+        {{ range $pages -}}
+            {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) -}}
+            <div class="entry">
+                <h5>
+                    <a href="{{ $manualLink }}"{{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}{{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>{{- .Title -}}</a>
+                </h5>
+                <p>{{ .Description | markdownify -}}</p>
+            </div>
+        {{ end -}}
+    {{ end -}}
+</div>
