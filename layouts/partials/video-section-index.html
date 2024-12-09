@@ -29,8 +29,8 @@
             <!-- <div > -->
                 <div class="card h-100 bg-dark text-white border border-secondary shadow-lg">
                     <div class="video-container position-relative" style="height: 250px; overflow: hidden;">
-                        {{ if .Params.kind }}
-                            {{ if eq .Params.kind "local" }}
+                        {{ if .Params.videoType }}
+                            {{ if eq .Params.videoType "local" }}
                                 <video 
                                     src="{{ .Params.src }}" 
                                     class="card-img-top w-100 h-100 object-fit-cover" 
@@ -39,7 +39,7 @@
                                     {{ if .Params.loop }}loop{{ end }}
                                     controls
                                 ></video>
-                            {{ else if eq .Params.kind "youtube" }}
+                            {{ else if eq .Params.videoType "youtube" }}
                                 <div class="ratio ratio-16x9 h-100">
                                     <iframe 
                                         src="https://www.youtube.com/embed/{{ .Params.video_id }}" 
