@@ -25,8 +25,8 @@
            {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
             <a href="{{ $manualLink }}"
               {{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}
-              {{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }}>
-            <div class="col-md-4 mb-4">
+              {{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }} class="col-md-4 mb-4">
+            <!-- <div > -->
                 <div class="card h-100 bg-dark text-white border border-secondary shadow-lg">
                     <div class="video-container position-relative" style="height: 250px; overflow: hidden;">
                         {{ if .Params.kind }}
@@ -60,7 +60,7 @@
                         <p class="card-text">{{ .Description }}</p>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </a>
         {{ end -}}
     </div>
