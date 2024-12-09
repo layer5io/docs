@@ -31,7 +31,7 @@ This example includes a custom branding with colors and full-sized logo.
 {{% /card %}}
 {{< /cardpane >}}
 
-### Enable white labeling: Organization Preferences
+### Enable White Labeling: Organization Preferences
 
 Layer5 Cloud supports customizing themes on a per organization basis. This includes the ability to upload your own logo and define your own color scheme. Your logo will be displayed in the top left corner of the dashboard. Both a full-sized logo and a logo mark are supported.
 
