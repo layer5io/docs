@@ -27,17 +27,17 @@ As a designer in Kanvas, you can take advantage of various keyboard shortcuts to
 
 These designer shortcuts are essential for a smooth and efficient design workflow within Kanvas.
 
-### Visualizer Shortcuts
+### Operator Shortcuts
 
-Kanvas's visualizer provides a set of keyboard shortcuts to enhance your experience when working with the visualized data. These shortcuts help you navigate, search, and manage the environment effectively:
+Kanvas's operator provides a set of keyboard shortcuts to enhance your experience when working with the visualized data. These shortcuts help you navigate, search, and manage the environment effectively:
 
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes in Visualizer by dragging your mouse over an area.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes in Operator by dragging your mouse over an area.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> (mouse): Select multiple nodes individually.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Opens the terminal window for interactive console sessions or log viewing.
 - <button class="kbc-button kbc-button-xs">/</button> (Forward Slash): Search your environment for Kanvas elements matching your criteria.
-- <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Close the Visualizer Terminal when it's open.
+- <button class="kbc-button kbc-button-xs">`</button> (Backtick key): Close the Operator Terminal when it's open.
 
-These visualizer shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
+These operator shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
 
 ### Searching for Components
 

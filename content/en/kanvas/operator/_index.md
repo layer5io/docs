@@ -1,14 +1,14 @@
 ---
-title: Navigating Visualizer
+title: Navigating Operator
 weight: 5
 description: >
-  Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure. 
-categories: [Visualizer]
+  Operator mode is for operating your Kubernetes clusters and cloud native infrastructure. 
+categories: [Operator]
 aliases:
-  - /meshmap/visualizer
+  - /meshmap/operator
 ---
 
-Discover and examine your Kubernetes clusters and cloud native infrastructure using Visualizer mode.
+Discover and examine your Kubernetes clusters and cloud native infrastructure using Operator mode.
 
 ## Using Filters
 
@@ -16,13 +16,13 @@ Using filters you can select the Kubernetes resources you want to view. Apply on
 
 ## Search and Select Specific Resources
 
-Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Visualizer canvas. Details of the selected resources are displayed in the right panel.
+Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Operator canvas. Details of the selected resources are displayed in the right panel.
 
-<!-- {{< figure src="images/visualizer-filters.png" link="images/visualizer-filters.png"  width="100%"  >}} -->
+<!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
 ## Connecting with Kubernetes Pods
 
-Visualizer supports connecting to Kubernetes pods via the following methods.
+Operator supports connecting to Kubernetes pods via the following methods.
 
 ### Understanding Log Streamer
 
