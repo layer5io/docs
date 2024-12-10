@@ -65,9 +65,9 @@ Choose your mode of operation for Kanvas.
     <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
     </a>
-  <a href="../kanvas/visualizer/">
-  {{< card header="Visualizer" >}}
-    <a href="../kanvas/visualizer/">Visualizer</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
+  <a href="../kanvas/operator/">
+  {{< card header="Operator" >}}
+    <a href="../kanvas/operator/">Operator</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
     <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
     <p>Interactively connect to pods and containers to debug and troubleshoot.</p>
   {{< /card >}}
