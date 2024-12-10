@@ -1,0 +1,8 @@
+<video 
+  src="{{ .Get "src" }}" 
+  class="card-img-top w-100 h-100 object-fit-cover" 
+  {{ if .Get "muted" }}muted{{ end }} 
+  {{ if .Get "autoplay" }}autoplay{{ end }}
+  {{ if .Get "loop" }}loop{{ end }} 
+  controls>
+</video>
