@@ -105,8 +105,11 @@ h6 {
   }
 
   img {
-    width: 20%;
     @extend .img-fluid;
+    @extend .img-thumbnail;
+    @extend .rounded;
+    @extend .shadow;
+    margin-bottom: $spacer;
   }
 
   table {

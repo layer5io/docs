@@ -9,8 +9,9 @@ description: >
 Public Catalog: https://cloud.layer5.io/catalog
 {{%/pageinfo%}}
 
-{{< figure src="/cloud/catalog/images/delivering-catalog-content.svg" alt="Delivering-catalog-content" class="image-center-shadow" >}}
+<!-- {{< figure src="/cloud/catalog/images/delivering-catalog-content.svg" alt="Delivering-catalog-content" class="image-center-shadow" >}} -->
 
+<img src="/cloud/catalog/images/delivering-catalog-content.svg" alt="Delivering-catalog-content" />
 
 The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of existing designs. Designs that are published into the catalog can be, but are not always curated for known best practices and patterns. Content is published at [cloud.layer5.io/catalog](https://cloud.layer5.io/catalog), and one-click import of catalog content into Meshery Server is seamlessly integrated.
 
