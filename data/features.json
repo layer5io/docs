@@ -666,7 +666,7 @@
       "Category": "Multiple Kubernetes Clusters",
       "Documented?": "",
       "Enterprise Comparison Tier": "x",
-      "Feature": "Management and ongoing synchronization of cloud native infrastructure across any number of Clouds and Kubernetes clusters.",
+      "Feature": "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters.",
       "Free Comparison Tier": "",
       "Function": "Multiple Kubernetes Clusters",
       "Pricing page?": "X",
@@ -798,10 +798,10 @@
     }
   },
   {
-    "documentation": "https://docs.layer5.io/kanvas/operator/operator-views/",
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
     "entire_row": {
       "Category": "Operator",
-      "Documented?": "https://docs.layer5.io/kanvas/operator/operator-views/",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/",
       "Enterprise Comparison Tier": "x",
       "Feature": "See all views withing a workspace",
       "Free Comparison Tier": "",
@@ -813,10 +813,10 @@
     }
   },
   {
-    "documentation": "https://docs.layer5.io/kanvas/operator/operator-views/#4-delete-a-view",
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
     "entire_row": {
       "Category": "Operator",
-      "Documented?": "https://docs.layer5.io/kanvas/operator/operator-views/#4-delete-a-view",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#4-delete-a-view",
       "Enterprise Comparison Tier": "x",
       "Feature": "Dissolve environment and all connection memberships. Leave associated resources intact.",
       "Free Comparison Tier": "",
@@ -828,10 +828,10 @@
     }
   },
   {
-    "documentation": "https://docs.layer5.io/kanvas/operator/operator-views/#5-export-a-view",
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
     "entire_row": {
       "Category": "Operator",
-      "Documented?": "https://docs.layer5.io/kanvas/operator/operator-views/#5-export-a-view",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#5-export-a-view",
       "Enterprise Comparison Tier": "x",
       "Feature": "Export views to JSON format",
       "Free Comparison Tier": "",
@@ -843,10 +843,10 @@
     }
   },
   {
-    "documentation": "https://docs.layer5.io/kanvas/operator/operator-views/#3-share-a-view",
+    "documentation": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
     "entire_row": {
       "Category": "Operator",
-      "Documented?": "https://docs.layer5.io/kanvas/operator/operator-views/#3-share-a-view",
+      "Documented?": "https://docs.layer5.io/kanvas/visualizer/visualizer-views/#3-share-a-view",
       "Enterprise Comparison Tier": "x",
       "Feature": "Share Views",
       "Free Comparison Tier": "",
