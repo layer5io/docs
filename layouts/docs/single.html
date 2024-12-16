@@ -1,3 +1,7 @@
 {{ define "main" }}
+{{ partial "feature-info.html" . }}
 {{ .Render "content" }}
+<div style="margin-top:2rem;">
+{{ partial "recent-discussions.html" . }}
+</div>
 {{ end }}

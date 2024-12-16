@@ -1,6 +1,6 @@
 {{ $data := "" }}
 
-{{ $p := "static/data/csv/keys.csv" }}
+{{ $p := "static/data/csv/keys-backup.csv" }}
 {{ $excludedColumns := slice "Category" "Keychain ID" "Key ID" "Inserted" "Local Provider" }} <!-- Add the names of the columns to exclude -->
 
 {{ if os.FileExists $p }}

@@ -16,9 +16,9 @@ Metrics are quantifiable measures used to track and assess the status, progress,
 
 ### How to Access the Leaderboard
 
-1. Open the design catalog on the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://meshery.layer5.io/catalog).
+1. Open the design catalog on the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://cloud.layer5.io/catalog).
 
-2. By clicking on the Leaderboard icon button, you will be redirected to the [Leaderboard](https://meshery.layer5.io/catalog/leaderboard) page.
+2. By clicking on the Leaderboard icon button, you will be redirected to the [Leaderboard](https://cloud.layer5.io/catalog/leaderboard) page.
 ![Leaderboard Button](/cloud/catalog/images/leaderboard_button.png)
 
 3. The Leaderboard page will show you the top 10 designs based on the Metrics.

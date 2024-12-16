@@ -19,7 +19,7 @@ Access tokens are opaque tokens that conform to the OAuth 2.0 framework. They co
 
 You can create a token for your user account at any time. Tokens never expire, but can be revoked. You can also give the token a descriptive label. This label will be shown in the list of tokens on your user account's security tokens page.
 
-See [Tokens](https://meshery.layer5.io/security/tokens) in Layer5 Cloud.
+See [Tokens](https://cloud.layer5.io/security/tokens) in Layer5 Cloud.
 
 ## Using tokens
 
@@ -33,4 +33,4 @@ Authorization: mdJhY2Nlc3NfdG9rgW4iOiJleUpoYkdjaU9pSlNVekkxTmlJc0ltdHBaQ0k2SW5CM
 
 You can revoke an access token at any time. When you revoke an access token, it is immediately invalidated and cannot be used to make requests to the API. Revoking an access token also revokes any refresh tokens associated with that access token.
 
-See [Tokens](https://meshery.layer5.io/security/tokens) in Layer5 Cloud.
+See [Tokens](https://cloud.layer5.io/security/tokens) in Layer5 Cloud.

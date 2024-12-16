@@ -32,7 +32,7 @@ cascade:
 **Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
 </div></div>
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="kanvas" >}}</div>
+<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo"/></div>
 
 <div style="flex: 1;">
 
