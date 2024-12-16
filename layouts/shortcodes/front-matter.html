@@ -5,42 +5,40 @@
 {{ $color := .Get "color" | default "primary" }}
 
 <div class="matterinfo">
-    <h4 class="matterheader">Who can use this feature</h4>
-    
     {{ if $feature }}
-        {{ $supported_plans := slice }}
-        {{ if $feature.personal }}
-            {{ $supported_plans = $supported_plans | append "Personal" }}
-        {{ end }}
-        {{ if $feature.team }}
-            {{ $supported_plans = $supported_plans | append "Team" }}
-        {{ end }}
-        {{ if $feature.enterprise }}
-            {{ $supported_plans = $supported_plans | append "Enterprise" }}
-        {{ end }}
-        
-        {{ $plan_count := len $supported_plans }}
-        
-        {{ if eq $plan_count 3 }}
-            <div class="plan-support all-plans">
-                <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
-                <span class="plan-icon"></span>
-               <span>Supported for  <span class="highlight"> all</span></span> 
-            </div>
-        {{ else if eq $plan_count 1 }}
-            <div class="plan-support {{ index $supported_plans 0 | lower }}-plan">
-                <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
-                <span class="plan-icon"></span>
-                Supported on {{ index $supported_plans 0 }} Plan
-            </div>
-        {{ else if gt $plan_count 1 }}
-            <div class="plan-support multiple-plans">
-                <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
-                <span class="plan-icon"></span>
-                Supported on {{ delimit $supported_plans " and " }} Plans
-            </div>
-        {{ end }}
+    {{ $supported_plans := slice }}
+    {{ if $feature.personal }}
+    {{ $supported_plans = $supported_plans | append "Personal" }}
+    {{ end }}
+    {{ if $feature.team }}
+    {{ $supported_plans = $supported_plans | append "Team" }}
+    {{ end }}
+    {{ if $feature.enterprise }}
+    {{ $supported_plans = $supported_plans | append "Enterprise" }}
+    {{ end }}
+
+    {{ $plan_count := len $supported_plans }}
+
+    {{ if eq $plan_count 3 }}
+    <div class="plan-support all-plans">
+        <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
+        <span class="plan-icon"></span>
+        <span>Subscription: <span class="highlight"> Free, Team, Enterprise</span></span>
+    </div>
+    {{ else if eq $plan_count 1 }}
+    <div class="plan-support {{ index $supported_plans 0 | lower }}-plan">
+        <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
+        <span class="plan-icon"></span>
+        Subscription:{{ index $supported_plans 0 }} Plan
+    </div>
+    {{ else if gt $plan_count 1 }}
+    <div class="plan-support multiple-plans">
+        <img src="/icons/discuss.svg" alt="Icon" class="support-icon">
+        <span class="plan-icon"></span>
+        Subscription: {{ delimit $supported_plans " and " }} Plans
+    </div>
+    {{ end }}
     {{ else }}
-        <p>Feature information not found</p>
+    <p>Feature information not found</p>
     {{ end }}
 </div>
