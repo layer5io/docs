@@ -93,7 +93,6 @@ Customize your notification preferences to mute email notifications for comments
 - You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
 {{< /alert >}}
 
-
 ## Best Practices for Effective Design Reviews
 
 ### Be specific and actionable
