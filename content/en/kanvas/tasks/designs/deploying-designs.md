@@ -15,7 +15,7 @@ aliases:
 
 3. This opens a modal that will take you through all the steps before the final deployment.
 
-4. Click on **Open In Visualizer** to see the pre-filtered view of the deployed resources in the cluster
+4. Click on **Open In Operator** to see the pre-filtered view of the deployed resources in the cluster
 
 5. Click **Finish**
 

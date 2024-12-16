@@ -32,7 +32,7 @@ See the **Recognition** section of the [Layer5 Community Handbook](https://layer
 To share your badges on other social profiles, utilize the provided embedded code and direct share functionality. Access your badges from the Layer5 Cloud profile badges section, and then use it to post your achievements on social media platforms seamlessly. This enables you to showcase your Layer5 contributions and milestones to a wider audience.
 ##### Follow these steps to display your badge:
 
-1. Visit your [Layer5 Cloud](https://meshery.layer5.io/) Profile to see the badges
+1. Visit your [Layer5 Cloud](https://cloud.layer5.io/) Profile to see the badges
 2. Click on the badge, which you wanted to display
 3. Copy the html or the markdown code by clicking the Embed Code icon
 4. Paste the code in your site
