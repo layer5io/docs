@@ -9,8 +9,6 @@ aliases:
   - /meshmap/designer/comments
 ---
 
-{{< front-matter feature_name="Design Reviews" >}}
-
 ## Overview
 
 Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving comments for reference later.
