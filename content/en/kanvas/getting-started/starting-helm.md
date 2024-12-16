@@ -9,8 +9,6 @@ aliases:
   - /meshmap/getting-started/starting-helm
 ---
 
-{{< front-matter feature_name="Application Import" >}}
-
 Helm helps you manage Kubernetes applications. Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
 Starting a Kanvas design from a Helm chart is another way to get started with an entire application stack.
 
