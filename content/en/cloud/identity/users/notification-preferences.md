@@ -12,9 +12,9 @@ Layer5 Cloud offers a range of user-configurable preferences that allows you to 
 
 ## To change the notification preferences
 
-1. Sign into [Layer5 Cloud](https://meshery.layer5.io)
+1. Sign into [Layer5 Cloud](https://cloud.layer5.io)
 
-2. Visit **Account** > [Preferences](https://meshery.layer5.io/account/preferences)
+2. Visit **Account** > [Preferences](https://cloud.layer5.io/account/preferences)
 
 3. Under “Notifications,” choose what notifications you want to receive:
     - **Acknowledgment:** You'll receive notifications about badges you've been awarded and related updates.

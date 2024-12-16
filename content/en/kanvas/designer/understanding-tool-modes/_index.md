@@ -7,75 +7,57 @@ categories: [Designer]
 tags: [designs]
 aliases:
 ---
+
+<!-- set of custom keyboard button classes -->
+<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+
+
 # Tool Modes
 
 You can switch between mouse modes using hotkeys or tool selection. Here are hotkeys that control your mode:
 
-**Spacebar**: Temporarily enables the alternative mouse mode (default mode vs pan mode)  
-**Escape**: Switches to default mode irrespective of which mode you are currently using.
+- <button class="kbc-button kbc-button-xs">Spacebar</button> : Temporarily enables the alternative mouse mode (default mode vs pan mode)  
+- <button class="kbc-button kbc-button-xs">H</button> : Switches to pan mode (hand icon)  
+- <button class="kbc-button kbc-button-xs">Escape / V</button> : Switches to default mode irrespective of which mode you are currently using.
 
 ## Interacting with Components
-
-### Default Mode (no tool selected)
-
-**Hover**: Displays subtle indication of focus by outlining the component with a light green color.  
- Cursor style: “default (arrow)”  
-**Click-and-drag:** Moves component in the direction of the mouse.  
- Cursor style: “move”  
-**Click**: Displays the component toolbar, resize box, and connections handles.  
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-**Double-click**:
-
-- Components \- Opens the component configurator.  
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “pointer”  
-
-- Textbox \- Enables text editing inside the component.  
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “text”
-
-**Right-click**: Opens the circular component context menu.  
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-## Interacting with the Canvas
-
 ### Default Mode (no tool selected)
 
 **Hover:** Nothing  
 Cursor style: “default (arrow)”  
-**Click**: Nothing  
+
+**Click-and-drag:** Moves component in the direction of the mouse.  
+Cursor style: “move”  
+
+**Click**: Displays the component toolbar, resize box, and connections handles.  
 Cursor style: “default (arrow)”  
-**Double-click**: Opens the quick component configurator.
+<img style="width:500px;" src="./click.png" />
 
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
+**Double-click**:  
+Cursor style: “pointer”  
+- Components \- Opens the component configurator.  
+<img style="width:500px;" src="./double_click.png" />
 
-Cursor style: “pointer”
+- Textbox \- Enables text editing inside the component.  
+Cursor style: “text”  
+<img style="width:500px;" src="./text-box-double-click.gif" />
 
-**Right-click**: Opens design context menu
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “default (arrow)”, with “pointer” on hover of a menu item.  
+**Right-click**: Opens the circular component context menu.  
+Cursor style: “default (arrow)”  
+<img style="width:500px;" src="./right_click.png" />
 
 **Click-and-hold:** Initiates box selection for selecting of multiple components.  
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
 Cursor style: “crosshair”  
+<img style="width:500px;" src="./select.gif" />
+
 **Scroll wheel**: Pan up or down in the direction of the mouse.  
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “grabbing-hand”  
+Cursor style: "default (arrow)”  
 
 **Scroll wheel \+ CMD/CTL**: Zoom in/out in the direction of the mouse.  
-Cursor style: “grabbing-hand”  
+Cursor style: "default (arrow)”  
 
 **Horizontal scroll wheel**: Pan left or right in the direction of the mouse.  
-Cursor style: “grabbing-hand”
+Cursor style: "default (arrow)”  
 
 #### Pencil Mouse Mode
 
@@ -83,10 +65,9 @@ Pencil lines do not connect individual components, but offer annotating capabili
 **Hover:** Nothing  
 Cursor style: “custom(pencil)”  
 **Mouse down and drag:** Start drawing a freeform line.  
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
 Cursor style: “custom(pencil)”  
+<img style="width:500px;" src="./pencil.gif" />
+
 **Mouse down \+ SHIFT:** Start drawing a straight line in the direction of the mouse, which will initiate and remain as either a vertical or horizontal line.  
  Cursor style: “custom(pencil)”  
 **Mouse up**: Complete the line and renders into a component with full styling capabilities.  
