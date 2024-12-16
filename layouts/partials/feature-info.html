@@ -15,7 +15,8 @@
 {{ $tier := index .entire_row "Subscription Tier" }}
 {{ $feature := index .entire_row "Feature" }}
 {{ $currentFeatures := index $groupedFeatures $tier | default "" }}
-{{ $groupedFeatures = merge $groupedFeatures (dict $tier (printf "%s%s%s" $currentFeatures (cond (eq $currentFeatures "") "" ", ") $feature)) }}
+{{ $groupedFeatures = merge $groupedFeatures (dict $tier (printf "%s%s%s" $currentFeatures (cond (eq $currentFeatures
+"") "" ", ") $feature)) }}
 
 {{ end }}
 {{ end }}
@@ -32,10 +33,10 @@
 {{ end }}
 
 <div class="matterinfo">
-  <h4 class="matterheader">Who can use this feature</h4>
   <div class="plan-support all-plans {{ lower $maxTier }}-plan">
-    <img src="/images/subscription.svg" alt="Icon" class="support-icon adaptive-icon" data-modal="false" >
-        Supported on <a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $maxTier }}</span> </a>Plan
+    <img src="/images/subscription.svg" alt="Icon" class="support-icon adaptive-icon" data-modal="false">
+    Subscription: <a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $maxTier
+        }}</span> </a>
   </div>
   {{ if gt (len $groupedFeatures) 1 }}
   <div class="add-ons">
@@ -45,7 +46,8 @@
     {{ if ne $tier $maxTier }}
     {{ if not $first }}, {{ end }}
     {{ $first = false }}
-    {{ $features }} [<a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $tier }}</span></a>]
+    {{ $features }} [<a href="https://layer5.io/pricing" class="tier-link" target="_blank"><span class="tier">{{ $tier
+        }}</span></a>]
     {{ end }}
     {{ end }}
   </div>
