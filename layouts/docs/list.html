@@ -11,6 +11,7 @@
 	{{ with .Params.plan }}
         {{ partial "plan-info.html" (dict "plan" .) }}
     {{ end }}
+	{{- partial "feature-info.html" . -}}
 	{{ .Content }}
   {{ partial "section-index.html" . -}}
 	
@@ -19,5 +20,6 @@
 		{{- partial "disqus-comment.html" . -}}
 	{{ end -}}{{ partial "pager.html" . }}
 	{{ partial "page-meta-lastmod.html" . -}}
+	{{ partial "recent-discussions.html" . -}}
 </div>
 {{ end -}}

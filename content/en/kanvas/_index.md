@@ -40,7 +40,7 @@ aliases:
 <div 
     style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
                 
-<div style="min-width:50px;">{{< svg name="kanvas" >}}</div>
+<div style="min-width:50px;"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo"/></div>
 
 <div>
 
@@ -65,9 +65,9 @@ Choose your mode of operation for Kanvas.
     <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}
     </a>
-  <a href="../kanvas/visualizer/">
-  {{< card header="Visualizer" >}}
-    <a href="../kanvas/visualizer/">Visualizer</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
+  <a href="../kanvas/operator/">
+  {{< card header="Operator" >}}
+    <a href="../kanvas/operator/">Operator</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
     <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
     <p>Interactively connect to pods and containers to debug and troubleshoot.</p>
   {{< /card >}}

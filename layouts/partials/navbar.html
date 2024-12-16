@@ -6,45 +6,68 @@
       <a class="navbar-brand" href="/">
         <span class="navbar-brand__logo navbar-logo">
           {{ $svg := resources.Get "icons/logo.svg" }}
-          <img class="footer-logo" src="{{ $svg.Permalink }}" alt="logo" />
+          <img class="footer-logo" src="/images/logo.svg" alt="logo" data-modal="false" />
         </span>
         <span class="navbar-brand__name"></span
       ></a>
       <div
-        class="td-navbar-nav-scroll ms-md-auto main-nav-items"
+        class="td-navbar-nav-scroll main-nav-items flex-grow-1"
         id="main_navbar"
       >
-        <ul class="navbar-nav">
+        <ul class="navbar-nav d-flex">
           <!-- <li class="nav-item nav-external">
                         <a class="nav-link nav-link-external" href="https://playground.meshery.io" target="_blank">
                             <span>Playground</span>
                         </a>
                     </li> -->
+                    <div class="d-flex">
+                      <li class="nav-item">
+                        <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
+                      </li>
+                      <li class="nav-item">
+                        <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
+                      </li>
+                    </div>
+                    <div class="d-flex ms-auto">
+        
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
+          </li> -->
+          <li class="d-none d-lg-block nav-item">
+            <!-- <div class="td-search">
+                            <div class="td-search__icon"></div>
+                            <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
+                                   aria-label="Search this site…" autocomplete="off">
+                            <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
+                                </div> -->
+            {{ partial "search-input-nav.html" . }}
+          </li>
           <li class="nav-item dropdown" data-bs-theme="dark">
-            <span
-              class="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+            <div
+            class="nav-link"
+            id="productsDropdown"
+            role="button"
+            data-toggle="dropdown"
+            style="padding-top:6px"
             >
-              Products
-          </span>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                href="https://docs.meshery.io/"
-                target="_blank"
-              >
-                <div class="logo-container">
-                  <img
-                    src="/images/logos/meshery-light-icon.svg"
-                    alt="Layer5 Meshery Logo"
-                  />
-                </div>
-                <span>Meshery</span></a
-              >
+            <img width="28px" src="/images/grid-icon.svg" class="grid-icon" data-modal="false" />
+
+          </div>
+          <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-4.5rem;visibility:hidden;">
+            <a
+            class="dropdown-item"
+            href="https://docs.meshery.io/"
+            target="_blank"
+            >
+              <div class="logo-container">
+                <img
+                  src="/images/logos/meshery-light-icon.svg"
+                  alt="Meshery Logo"
+                />
+              </div>
+              <span>Meshery</span></a
+            >
               <div class="dropdown-divider"></div>
               <a
                 class="dropdown-item"
@@ -88,7 +111,7 @@
                   />
                 </div>
 
-                <span>Cloud Native Performance</span></a
+                <span>CNP</span></a
               >
               <div class="dropdown-divider"></div>
               <a
@@ -107,41 +130,58 @@
               >
             </div>
           </li>
-
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="/cloud/tutorials/"> Tutorials</a>
-          </li> -->
-          <li class="nav-item">
-            <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
+          <li class="nav-item" id="signin-button" style="display: none;">
+            <a class="nav-link" href="https://cloud.layer5.io/login" target="_blank">Sign In</a>
           </li>
-          <li class="nav-item">
-            <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
+          <li class="nav-item dropdown" data-bs-theme="dark" id="userlist" style="display: none;">
+             <a href="" id="user-profile-url">
+              <div
+                class="nav-link avatar-container"
+               id="avatarDropdown"
+               role="button"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+              >
+              </div>
+            </a>
           </li>
-          <li class="d-none d-lg-block nav-item">
-            <!-- <div class="td-search">
-                            <div class="td-search__icon"></div>
-                            <input type="search" class="td-search__input form-control td-search-input" placeholder="Search"
-                                   aria-label="Search this site…" autocomplete="off">
-                            <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button> 
-                                </div> -->
-            {{ partial "search-input-nav.html" . }}
-          </li>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <script>
-    let dropdown = document.querySelector("#navbarDropdown");
-    dropdown.addEventListener("click", function () {
-      dropdown.classList.toggle("current");
-      document.querySelector(".dropdown-menu").classList.toggle("show");
-    });
-    document.body.addEventListener('click', function(e) {
-      if(e.target != dropdown && dropdown.classList.contains("current")){
-        dropdown.classList.toggle("current");
-        document.querySelector(".dropdown-menu").classList.toggle("show");
-      }
-    })
+  function setupDropdown(dropdownId) {
+    const dropdown = document.querySelector(`#${dropdownId}`);
+    const dropdownMenu = dropdown.nextElementSibling;
+
+    
+    dropdown.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    if (dropdown.classList.contains("current")) {
+        dropdown.classList.remove("current");
+        dropdownMenu.classList.remove("show");
+        dropdownMenu.style.visibility = "hidden"; 
+    } else {
+    dropdown.classList.toggle("current");
+    dropdownMenu.classList.toggle("show");
+    dropdownMenu.style.visibility = "visible"; 
+    }
+  });
+
+    document.body.addEventListener('click', function() {
+      if (dropdown.classList.contains("current")) {
+        dropdown.classList.remove("current");
+        dropdownMenu.classList.remove("show");
+        dropdownMenu.style.visibility = "hidden"; 
+    }
+  });
+}
+
+
+  setupDropdown("productsDropdown");
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;
@@ -149,7 +189,84 @@
       cur = document.querySelector("#cloud");
     else if (window.location.pathname.includes("/kanvas/"))
       cur = document.querySelector("#kanvas");
-    cur.classList.add("current");
-    cur.href = "javascript: void(0)";
+    if (cur) {
+      cur.classList.add("current");
+      cur.href = "javascript: void(0)";
+    }
+  
+  let isUserAuthenticated = false;
+  function removeCookie(cookieName) {
+    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+
+  function getCookieValue(cookieName) {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim();
+      if (cookie.indexOf(cookieName + "=") === 0) {
+        return cookie.substring(cookieName.length + 1);
+      }
+    }
+    return null;
+  }
+
+  const checkUserAuth = async () => {
+    try {
+     const token = getCookieValue("provider_token");
+      if (!token) { // cookie doesn't exist, user logged out of cloud
+        if (isUserAuthenticated) {
+          showSignInButton();
+          isUserAuthenticated = false;
+        }
+      throw new Error("no cookie to authenticate");
+    }
+      const re = await fetch("https://cloud.layer5.io/api/identity/users/profile", {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      if (re.status !== 200) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const response = await re.json();
+      updateUI(response);
+
+  } catch (error) {
+    console.error("could not set user details.", error);
+    showSignInButton();
+  }
+};
+function updateUI(response) {
+document.getElementById('signin-button').style.display = 'none';
+document.getElementById("userlist").style.display = "block";
+const avatarUrl = response.avatar_url;
+const avatarContainer = document.querySelector('.avatar-container');
+avatarContainer.style.backgroundImage = `url("${avatarUrl}")`;
+avatarContainer.style.backgroundSize = 'cover';
+
+const userId = response.id;
+const cloudLink = document.getElementById('user-profile-url');
+cloudLink.href = `https://cloud.layer5.io/user/${userId}`;
+
+isUserAuthenticated = true;
+}
+
+function showSignInButton() {
+      document.getElementById("userlist").style.display = "none";
+      document.getElementById("signin-button").style.display = "block";
+}
+
+function handleVisibilityChange() {
+    if (document.visibilityState === 'visible' && !isUserAuthenticated ) {
+      checkUserAuth();
+    }
+  }
+
+  checkUserAuth();
+
+  document.addEventListener('visibilitychange', handleVisibilityChange);
   </script>
 </header>

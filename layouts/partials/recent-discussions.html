@@ -1,0 +1,29 @@
+{{ if eq .Section "kanvas" }}
+<h2>Recent Discussions on Kanvas</h2>
+<ul>
+    {{ with site.Data.kanvas_discuss }}
+      {{ $users := .users }}
+      {{ $topics := sort .topic_list.topics "last_posted_at" "desc" }}
+      
+      {{ range first 8 $topics }}
+        <li style="line-height:1.75rem;padding:0.3rem 0.4rem;">
+          <span>
+            {{ dateFormat "Jan 02" .created_at }} |
+          </span>
+          <a href="http://discuss.meshery.io/t/{{ index .topics 0 | urlize }}{{ .id }}">
+            {{ .title }}
+          </a>
+          <span>
+            {{ $posterId := (index .posters 0).user_id }}
+            {{ range $users }}
+              {{ if eq .id $posterId }}
+                {{ $author := .name }}
+                by {{ $author }}
+              {{ end }}
+            {{ end }}
+          </span>
+        </li>
+      {{ end }}
+    {{ end }}
+</ul>
+{{ end }}
