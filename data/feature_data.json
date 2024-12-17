@@ -517,11 +517,11 @@
     "category": "Catalog",
     "functionOrder": "708",
     "function": "Approve Catalog Request",
-    "feature": "Change management through a process of curation of content to be published in the catalog.",
+    "feature": "Change management for the curation of content published in the catalog.",
     "subscriptionTier": "Enterprise",
     "comparisonTiers": {
       "free": false,
-      "teamDesigner": true,
+      "teamDesigner": false,
       "teamOperator": false,
       "enterprise": true
     },
