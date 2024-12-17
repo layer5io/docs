@@ -5,6 +5,7 @@ categories: [Self-Hosted]
 tags: [identity]
 weight: 3
 ---
+
 Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See [Getting Started with a Layer5 Account](../../getting-started/getting-started-with-layer5-account.md) for details.
 
 Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).

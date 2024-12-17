@@ -1,0 +1,42 @@
+name: Pricing List
+on:
+  workflow_dispatch:
+    inputs:
+      spreadsheet_uri:
+        description: Link of the spreadsheet containing subscription details.
+        type: string
+        default: https://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/pub?output=csv
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  fetch-pricing-list:
+    name: Fetch Pricing List
+    if: github.repository == 'layer5io/docs'
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+      - name: Set spreadsheet_uri as environment variable
+        run: echo "spreadsheet_uri=https://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/pub?output=csv" >> $GITHUB_ENV
+        if: inputs.spreadsheet_uri != ''
+          echo "spreadsheet_uri=${{ inputs.spreadsheet_uri }}" >> $GITHUB_ENV
+
+      - name: Dump pricing list from the spreadsheet
+        run: |
+          curl -L $spreadsheet_uri  -o "./pricing-list.csv";
+      - name: Create data folder
+        run: |
+          [ ! -d "./static/data/csv" ] && mkdir -p "./static/data/csv";
+          mv pricing-list.csv static/data/csv/pricing-list.csv;
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Updated pricing-list data.
+          branch: master
+          commit_options: "--signoff"
+          commit_user_name: l5io
+          commit_user_email: ci@layer5.io
+          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>author of the commit that triggered the run
