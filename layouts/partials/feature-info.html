@@ -4,44 +4,61 @@
 {{ $features = getJSON "feature_data.json" }}
 {{ end }}
 
-{{ $currentPage := .Page.Permalink }}
-
-{{ if $features }}
+{{ $featuresByUrl := dict }}
 {{ range $features }}
 {{ $docUrl := .docs | default "" }}
+{{ if ne $docUrl "" }}
 {{ $cleanDocUrl := (index (split $docUrl "#") 0) }}
+
+{{ $existingFeatures := slice }}
+{{ with index $featuresByUrl $cleanDocUrl }}
+{{ if reflect.IsSlice . }}
+{{ $existingFeatures = . }}
+{{ else if reflect.IsMap . }}
+{{ $existingFeatures = slice . }}
+{{ end }}
+{{ end }}
+
+{{ $updatedFeatures := $existingFeatures }}
+{{ $updatedFeatures = $updatedFeatures | append . }}
+
+{{ $featuresByUrl = merge $featuresByUrl (dict $cleanDocUrl $updatedFeatures) }}
+{{ end }}
+{{ end }}
+
+{{ range $docUrl, $urlFeatures := $featuresByUrl }}
 {{ $currentPagePath := path.Clean (urls.Parse $currentPage).Path }}
-{{ $cleanDocUrlPath := path.Clean (urls.Parse $cleanDocUrl).Path }}
+{{ $cleanDocUrlPath := path.Clean (urls.Parse $docUrl).Path }}
 
-{{ if and (ne $docUrl "") (eq $cleanDocUrlPath $currentPagePath) }}
+{{ if eq $cleanDocUrlPath $currentPagePath }}
 {{ $tiers := slice }}
-
-{{ if .comparisonTiers.free }}
+{{ range $feature := $urlFeatures }}
+{{ if $feature.comparisonTiers.free }}
 {{ $tiers = $tiers | append "Free" }}
 {{ end }}
-
-{{ if .comparisonTiers.teamDesigner }}
+{{ if $feature.comparisonTiers.teamDesigner }}
 {{ $tiers = $tiers | append "Team Designer" }}
 {{ end }}
-
-{{ if .comparisonTiers.teamOperator }}
+{{ if $feature.comparisonTiers.teamOperator }}
 {{ $tiers = $tiers | append "Team Operator" }}
 {{ end }}
-
-{{ if .comparisonTiers.enterprise }}
+{{ if $feature.comparisonTiers.enterprise }}
 {{ $tiers = $tiers | append "Enterprise" }}
 {{ end }}
+{{ end }}
 
-{{ if len $tiers }}
+{{ $uniqueTiers := uniq $tiers }}
+
+{{ if len $uniqueTiers }}
 <div class="matterinfo">
   <div class="plan-support all-plans">
     <img src="/images/subscription.svg" alt="Icon" class="support-icon adaptive-icon" data-modal="false">
-    Subscription: <a href="https://layer5.io/pricing" class="tier-link" target="_blank">
-      <span class="tier">{{ delimit $tiers ", " }}</span>
+    Subscription:
+    <a href="https://layer5.io/pricing" class="tier-link" target="_blank">
+      <span class="tier">{{ delimit $uniqueTiers ", " }}</span>
     </a>
   </div>
 </div>
-{{ end }}
 {{ end }}
 {{ end }}
 {{ end }}
