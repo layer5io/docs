@@ -14,7 +14,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 
 # Comment out to enable taxonomies in Docsy
-# disableKinds = ["taxonomy", "taxonomyTerm"]
+# disableKinds = ["taxonomy", "term"]
 
 # You can add your own taxonomies
 [taxonomies]
@@ -89,7 +89,7 @@ description = "Product Documentation"
   home = ["HTML", "RSS", "SITEMAP"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
 
 [sitemap]
   changefreq = "daily"
