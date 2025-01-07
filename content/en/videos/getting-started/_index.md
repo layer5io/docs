@@ -6,5 +6,4 @@ linkTitle: Adding Comments
 weight: 2
 videoGrid: true
 ---
-
-https://youtu.be/bb6J--aApk8
+{{< youtube bb6J--aApk8 >}}
