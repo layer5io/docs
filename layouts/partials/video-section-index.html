@@ -27,8 +27,8 @@
               {{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}
               {{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }} class="col-md-4 mb-4">
             <!-- <div > -->
-                <div class="card h-100 bg-dark text-white border border-secondary shadow-lg">
-                    <div class="video-container position-relative" style="height: 250px; overflow: hidden;">
+                <div class="card h-100 bg-dark text-white border border-secondary shadow-lg  p-1">
+                    <div class="video-container position-relative" style="height: max-content; overflow: hidden;">
                         {{ if .Params.videoType }}
                             {{ if eq .Params.videoType "local" }}
                                 <video 
@@ -41,14 +41,15 @@
                                 ></video>
                             {{ else if eq .Params.videoType "youtube" }}
                                 <div class="ratio ratio-16x9 h-100">
-                                    <iframe 
+                                    <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}" />
+                                    <!-- <iframe 
                                         src="https://www.youtube.com/embed/{{ .Params.video_id }}" 
                                         title="{{ .Title }}" 
                                         frameborder="0" 
                                         class="w-100 h-100"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                         allowfullscreen
-                                    ></iframe>
+                                    ></iframe> -->
                                 </div>
                             {{ end }}
                             <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-overlay"></div>
@@ -57,7 +58,7 @@
                     
                     <div class="card-body">
                         <h5 class="card-title">{{ .Title }}</h5>
-                        <p class="card-text">{{ .Description }}</p>
+                        <p class="card-text" style="margin-top: .5rem;">{{ .Description }}</p>
                     </div>
                 </div>
             <!-- </div> -->

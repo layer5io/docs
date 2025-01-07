@@ -1,9 +1,8 @@
 ---
-title: Reviewing Designs
+title: Getting Started Videos
 description: >
-  Getting Started with Kanvas and Design Reviews
-linkTitle: Adding Comments
+  Getting started Video on Cloud and Kanvas
+linkTitle: Getting Started
 weight: 2
 videoGrid: true
 ---
-{{< youtube bb6J--aApk8 >}}
