@@ -114,9 +114,9 @@ Low-level ReST API reference for extending Layer5 Cloud.
 
 Meshery Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
 
-### Navigating Visualizer
+### Navigating Operator
 
-Visualizer mode is for operating your Kubernetes clusters and cloud native infrastructure.
+Operator mode is for operating your Kubernetes clusters and cloud native infrastructure.
 
 ### Core Tasks
 
