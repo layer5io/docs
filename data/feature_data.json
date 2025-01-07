@@ -184,7 +184,7 @@
     "feature": "Export views to JSON format",
     "subscriptionTier": "",
     "comparisonTiers": {
-      "free": false,
+      "free": true,
       "teamDesigner": false,
       "teamOperator": true,
       "enterprise": true
