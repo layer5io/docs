@@ -51,13 +51,13 @@
 
 {{ if len $uniqueTiers }}
 <div class="matterinfo">
+  <a href="https://layer5.io/pricing" class="tier-link" target="_blank">
   <div class="plan-support all-plans">
     <img src="/images/subscription.svg" alt="Icon" class="support-icon adaptive-icon" data-modal="false">
     Subscription:
-    <a href="https://layer5.io/pricing" class="tier-link" target="_blank">
       <span class="tier">{{ delimit $uniqueTiers ", " }}</span>
-    </a>
-  </div>
+    </div>
+  </a>
 </div>
 {{ end }}
 {{ end }}
