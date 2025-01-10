@@ -2,7 +2,6 @@
 title: Core Tasks
 description: Navigate your way around Kanvas with these common tasks.
 weight: 6
-published: false
 visible: false
 aliases:
   - /meshmap/tasks
