@@ -386,14 +386,18 @@ a:not([href]):not([class]):hover {
 
 .matterheader {
   font-size: 1.2rem;
-  color: #00b39f;
+  color: $casper;
 }
 
 .matterinfo .plan-support {
   padding: .5rem;
-  border: .5px solid $casper;
+  border: .5px solid $border-color;
   display: flex;
   align-items: center;
+  color: $casper;
+  &:hover {
+    background-color: rgba($primary, 0.3)
+  }
 }
 
 .matterinfo .plan-support .support-icon {
@@ -407,9 +411,9 @@ a:not([href]):not([class]):hover {
 }
 
 .tier {
-  color: $casper;
   font-weight: bold;
   padding: 0 5px;
+  color: $casper;
 }
 
 
