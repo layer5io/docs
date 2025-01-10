@@ -390,6 +390,8 @@ a:not([href]):not([class]):hover {
 }
 
 .matterinfo .plan-support {
+  padding: .5rem;
+  border: .5px solid $casper;
   display: flex;
   align-items: center;
 }
@@ -405,7 +407,7 @@ a:not([href]):not([class]):hover {
 }
 
 .tier {
-  color: #00b39f;
+  color: $casper;
   font-weight: bold;
   padding: 0 5px;
 }
