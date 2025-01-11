@@ -13,6 +13,11 @@ aliases:
 
 Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving comments for reference later.
 
+<figure>
+  <img src="./kanvas-comment.png" alt="Comments in Designer" width="600">
+  <figcaption>Example of comments in Designer</figcaption>
+</figure>
+
 ## Three Ways to Add Comments
 
 You can add comments in three convenient ways:
@@ -21,18 +26,21 @@ You can add comments in three convenient ways:
 
 Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
 
-<img src="./Toolbar1.png" alt="Comment through toolbar (1)" width="600"/>
-
+<img src="./comment-dock.png" alt="Create a comment from the dock" width="600"/>
 
 ### Commenting via Context-Click in Canvas
 
-Right-click on any area of your canvas, and from the contextual menu, select "Comment" or use the shortcut ***Ctrl + M (Command + M for Mac users)***. This allows for swift comment placement right where you need it.
+Context-click on any area of your canvas, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - in context.
 
-<img src="./Right-click.png" alt="Comment by right-clicking" width="600" style="margin-bottom: 25px;">
+<img src="./comment-canvas.png" alt="Comment by context-clicking on canvas" width="600" style="margin-bottom: 25px;">
 
 ### Commenting via drag-and-drop from the Dock
 
-   To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
+To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
+
+### Commenting via Hotkey
+
+<button class="kbc-button kbc-button-xs">⌘/CTL + M</button> Add a comment into your design when you press this hotkey combination. After pressing the hotkey, you can move the new comment anywhere on the canvas.
 
 ## Tips for using Comments as a Design Review Tool
 

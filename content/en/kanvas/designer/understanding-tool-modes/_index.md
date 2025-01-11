@@ -16,9 +16,9 @@ aliases:
 
 You can switch between mouse modes using hotkeys or tool selection. Here are hotkeys that control your mode:
 
-- <button class="kbc-button kbc-button-xs">Spacebar</button> : Temporarily enables the alternative mouse mode (default mode vs pan mode)  
-- <button class="kbc-button kbc-button-xs">H</button> : Switches to pan mode (hand icon)  
-- <button class="kbc-button kbc-button-xs">Escape / V</button> : Switches to default mode irrespective of which mode you are currently using.
+- <button class="kbc-button kbc-button-xs">Spacebar</button>: Temporarily enables the alternative mouse mode (default mode vs pan mode)  
+- <button class="kbc-button kbc-button-xs">H</button>: Switches to pan mode (hand icon)  
+- <button class="kbc-button kbc-button-xs">Escape / V</button>: Switches to default mode irrespective of which mode you are currently using.
 
 ## Interacting with Components
 ### Default Mode (no tool selected)
