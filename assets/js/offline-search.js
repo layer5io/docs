@@ -172,7 +172,8 @@
 
       //Bring focus to search bar
       $(document).on('keydown', function (event) {
-        if (event.key === '/' ) {
+        if (event.key === '/' && !(document.activeElement instanceof HTMLInputElement)) {
+          event.preventDefault();
           $searchInput.focus();
         }
       });
@@ -193,6 +194,10 @@
         }
       });
 
+      $searchInput.on('blur', function () {
+        $searchInput.val('');
+        $searchInput.trigger('change');
+      });
+
     });
   })(jQuery);
-  
