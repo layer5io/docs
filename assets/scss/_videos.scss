@@ -1,0 +1,30 @@
+.video-btn-wrapper {
+    height: 60px;
+    width: 60px;
+    background-color: #00b39f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    transform: translate(-50%, -50%);
+  }
+  
+  .video-btn-wrapper svg {
+    height: 50%;
+    width: 50%;
+    margin-top: 5px;
+  }
+  
+  .play-icon-path {
+    fill: white;
+    transition: fill 0.3s ease;
+  }
+  
+  .bg-gradient-overlay:hover .video-btn-wrapper {
+    background-color: #ffffff;
+  }
+  
+  .bg-gradient-overlay:hover .play-icon-path {
+    fill: #00b39f;
+  }
