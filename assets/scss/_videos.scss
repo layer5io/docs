@@ -17,14 +17,32 @@
   }
   
   .play-icon-path {
-    fill: white;
+    fill: #ddd;
     transition: fill 0.3s ease;
   }
   
-  .bg-gradient-overlay:hover .video-btn-wrapper {
-    background-color: #ffffff;
+  .video:hover {
+    .play-icon-path {
+      fill: #00b39f;
+    }
+    .video-btn-wrapper {
+      background-color: #ddd;
+    }
+    > .card-title {
+      color: $white;
+    }
+    > .card-text {
+      color: $casper;
+    }
   }
-  
-  .bg-gradient-overlay:hover .play-icon-path {
-    fill: #00b39f;
+
+  .video > .card-title {
+    font-weight: bold;
+    color: $casper;
+  }
+  .video > .card-text {
+    color: $lightslategray;
+    font-size: .9rem;
+    margin-top: .5rem;
+    font-style: italic;
   }

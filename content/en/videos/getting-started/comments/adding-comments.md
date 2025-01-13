@@ -7,6 +7,9 @@ videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
+categories: [Designer]
+formats: [video]
+tags: [review, collaboration, comments]
 ---
 
 {{< youtube bb6J--aApk8 >}}
