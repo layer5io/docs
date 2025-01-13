@@ -27,7 +27,7 @@
               {{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}
               {{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }} class="col-md-4 mb-4">
             <!-- <div > -->
-                <div class="card h-100 bg-dark text-white border border-secondary shadow-lg  p-1">
+                <div class="video card h-100 bg-dark text-white border border-secondary shadow-lg  p-1">
                     <div class="video-container position-relative" style="height: max-content; overflow: hidden;">
                         {{ if .Params.videoType }}
                             {{ if eq .Params.videoType "local" }}
@@ -62,9 +62,9 @@
                         {{ end }}
                     </div>
                     
-                    <div class="card-body">
-                        <h5 class="card-title">{{ .Title }}</h5>
-                        <p class="card-text" style="margin-top: .5rem;">{{ .Description }}</p>
+                    <div class="video card-body">
+                        <h5 class="video card-title">{{ .Title }}</h5>
+                        <p class="video card-text">{{ .Description }}</p>
                     </div>
                 </div>
             <!-- </div> -->
