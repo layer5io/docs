@@ -20,17 +20,16 @@ enableGitInfo = true
 [taxonomies]
 tag = "tags"
 category = "categories"
-format = "formats"
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
-taxonomyCloud = ["tags", "categories", "format"]
+taxonomyCloud = ["tags", "categories"]
 
 # If used, must have same length as taxonomyCloud
-taxonomyCloudTitle = ["Tags", "Categories", "Formats"]
+taxonomyCloudTitle = ["Tags", "Categories"]
 
 # set taxonomyPageHeader = [] to hide taxonomies on the page headers
-taxonomyPageHeader = ["tags", "categories", "formats"]
+taxonomyPageHeader = ["tags", "categories"]
 
 
 staticDir = ['static']

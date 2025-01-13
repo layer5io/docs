@@ -4,7 +4,7 @@ description: >
   Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
 weight: 3
 categories: [Designer]
-tags: [designs, collaboration, review]
+tags: [designs, collaboration, review, comments]
 format: [video]
 aliases:
   - /meshmap/designer/comments
