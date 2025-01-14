@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   trigger-feature-list:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       FEATURES_FILE: 'data/feature_data.json'
       SPREADSHEET_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQwzrUSKfuSRcpkp7sJTw1cSB63s4HCjYLJeGPWECsvqn222hjaaONQlN4X8auKvlaB0es3BqV5rQyz/pub?gid=1153419764&single=true&output=csv'

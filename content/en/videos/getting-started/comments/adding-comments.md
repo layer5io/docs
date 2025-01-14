@@ -1,7 +1,7 @@
 ---
-title: Reviewing Designs
+title: "Design Reviews: Adding Comments"
 description: >
-  Getting Started with Kanvas and Design Reviews
+   Add comments to your designs in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
 video_id: "bb6J--aApk8"
 videoType: youtube  # or "local"
 muted: true  # optional
