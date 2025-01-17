@@ -3,6 +3,7 @@ title: "Local video 1"
 description: "Birth of Kanvas logo from Meshery Birth of Kanvas logo from Meshery"
 src: "/videos/pattern-import.mp4"
 videoType: local
+video_id: "Do7htKrRzdA"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
