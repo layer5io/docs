@@ -1,8 +1,8 @@
 ---
-title: Intermediate Videos
+title: Feature Videos
 description: >
-  Intermediate videos
-linkTitle: Intermediate vidoes
+  Watch these videos to learn more about the features of the Layer5 Cloud and Kanvas platforms.
+linkTitle: Features
 weight: 3
 videoGrid: true
 ---
