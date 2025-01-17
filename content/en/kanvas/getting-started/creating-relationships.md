@@ -5,6 +5,8 @@ description: >
 weight: 4
 categories: [Designer]
 tags: [designs]
+published: false
+visible: false
 aliases:
   - /meshmap/getting-started/creating-relationships
 ---
