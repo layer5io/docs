@@ -107,7 +107,7 @@
       "free": false,
       "teamDesigner": true,
       "teamOperator": false,
-      "enterprise": false
+      "enterprise": true
     },
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/validating-designs/"
   },
@@ -251,7 +251,7 @@
       "free": false,
       "teamDesigner": false,
       "teamOperator": true,
-      "enterprise": false
+      "enterprise": true
     },
     "docs": "https://docs.layer5.io/kanvas/tasks/designs/undeploying-designs/"
   },
