@@ -205,7 +205,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://layer5io.github.io/docs/static/charts/layer5-cloud-v0.8.133.tgz
+    - https://layer5io.github.io/docs/charts/layer5-cloud-v0.8.133.tgz
     version: v0.8.133
   - apiVersion: v2
     appVersion: v0.8.132
@@ -225,7 +225,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.132.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.132.tgz
     version: v0.8.132
   - apiVersion: v2
     appVersion: v0.8.131
@@ -245,7 +245,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.131.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.131.tgz
     version: v0.8.131
   - apiVersion: v2
     appVersion: v0.8.130
@@ -265,7 +265,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.130.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.130.tgz
     version: v0.8.130
   - apiVersion: v2
     appVersion: v0.8.129
@@ -285,7 +285,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.129.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.129.tgz
     version: v0.8.129
   - apiVersion: v2
     appVersion: v0.8.128
@@ -305,7 +305,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.128.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.128.tgz
     version: v0.8.128
   - apiVersion: v2
     appVersion: v0.8.126
@@ -325,7 +325,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.126.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.126.tgz
     version: v0.8.126
   - apiVersion: v2
     appVersion: v0.8.125
@@ -345,7 +345,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.125.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.125.tgz
     version: v0.8.125
   - apiVersion: v2
     appVersion: v0.8.123
@@ -365,7 +365,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.123.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.123.tgz
     version: v0.8.123
   - apiVersion: v2
     appVersion: v0.8.122
@@ -385,7 +385,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.122.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.122.tgz
     version: v0.8.122
   - apiVersion: v2
     appVersion: v0.8.121
@@ -405,7 +405,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.121.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.121.tgz
     version: v0.8.121
   - apiVersion: v2
     appVersion: v0.8.119
@@ -425,7 +425,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.119.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.119.tgz
     version: v0.8.119
   - apiVersion: v2
     appVersion: v0.8.117
@@ -445,7 +445,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.117.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.117.tgz
     version: v0.8.117
   - apiVersion: v2
     appVersion: v0.8.116
@@ -465,7 +465,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.116.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.116.tgz
     version: v0.8.116
   - apiVersion: v2
     appVersion: v0.8.115
@@ -485,7 +485,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.115.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.115.tgz
     version: v0.8.115
   - apiVersion: v2
     appVersion: v0.8.113
@@ -505,7 +505,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.113.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.113.tgz
     version: v0.8.113
   - apiVersion: v2
     appVersion: v0.8.111
@@ -525,7 +525,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.111.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.111.tgz
     version: v0.8.111
   - apiVersion: v2
     appVersion: v0.8.110
@@ -545,7 +545,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.110.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.110.tgz
     version: v0.8.110
   - apiVersion: v2
     appVersion: v0.8.109
@@ -565,7 +565,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.109.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.109.tgz
     version: v0.8.109
   - apiVersion: v2
     appVersion: v0.8.108
@@ -585,7 +585,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.108.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.108.tgz
     version: v0.8.108
   - apiVersion: v2
     appVersion: v0.8.107
@@ -605,7 +605,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.107.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.107.tgz
     version: v0.8.107
   - apiVersion: v2
     appVersion: v0.8.106
@@ -625,7 +625,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.106.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.106.tgz
     version: v0.8.106
   - apiVersion: v2
     appVersion: v0.8.104
@@ -645,7 +645,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.104.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.104.tgz
     version: v0.8.104
   - apiVersion: v2
     appVersion: v0.8.103
@@ -665,7 +665,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.103.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.103.tgz
     version: v0.8.103
   - apiVersion: v2
     appVersion: v0.8.101
@@ -685,7 +685,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.101.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.101.tgz
     version: v0.8.101
   - apiVersion: v2
     appVersion: v0.8.97
@@ -705,7 +705,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.97.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.97.tgz
     version: v0.8.97
   - apiVersion: v2
     appVersion: v0.8.96
@@ -725,7 +725,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.96.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.96.tgz
     version: v0.8.96
   - apiVersion: v2
     appVersion: v0.8.95
@@ -745,7 +745,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.95.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.95.tgz
     version: v0.8.95
   - apiVersion: v2
     appVersion: v0.8.94
@@ -765,7 +765,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.94.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.94.tgz
     version: v0.8.94
   - apiVersion: v2
     appVersion: v0.8.93
@@ -785,7 +785,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.93.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.93.tgz
     version: v0.8.93
   - apiVersion: v2
     appVersion: v0.8.92
@@ -805,7 +805,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.92.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.92.tgz
     version: v0.8.92
   - apiVersion: v2
     appVersion: v0.8.91
@@ -825,7 +825,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.91.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.91.tgz
     version: v0.8.91
   - apiVersion: v2
     appVersion: v0.8.89
@@ -845,7 +845,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.89.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.89.tgz
     version: v0.8.89
   - apiVersion: v2
     appVersion: v0.8.87
@@ -865,7 +865,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.87.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.87.tgz
     version: v0.8.87
   - apiVersion: v2
     appVersion: v0.8.86
@@ -885,7 +885,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.86.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.86.tgz
     version: v0.8.86
   - apiVersion: v2
     appVersion: v0.8.84
@@ -905,7 +905,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.84.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.84.tgz
     version: v0.8.84
   - apiVersion: v2
     appVersion: v0.8.83
@@ -925,7 +925,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.83.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.83.tgz
     version: v0.8.83
   - apiVersion: v2
     appVersion: v0.8.81
@@ -945,7 +945,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.81.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.81.tgz
     version: v0.8.81
   - apiVersion: v2
     appVersion: v0.8.80
@@ -965,7 +965,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.80.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.80.tgz
     version: v0.8.80
   - apiVersion: v2
     appVersion: v0.8.79
@@ -985,7 +985,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.79.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.79.tgz
     version: v0.8.79
   - apiVersion: v2
     appVersion: v0.8.78
@@ -1005,7 +1005,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.78.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.78.tgz
     version: v0.8.78
   - apiVersion: v2
     appVersion: v0.8.77
@@ -1025,7 +1025,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.77.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.77.tgz
     version: v0.8.77
   - apiVersion: v2
     appVersion: v0.8.76
@@ -1045,7 +1045,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.76.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.76.tgz
     version: v0.8.76
   - apiVersion: v2
     appVersion: v0.8.73
@@ -1065,7 +1065,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.73.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.73.tgz
     version: v0.8.73
   - apiVersion: v2
     appVersion: v0.8.72
@@ -1085,7 +1085,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.72.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.72.tgz
     version: v0.8.72
   - apiVersion: v2
     appVersion: v0.8.69
@@ -1105,7 +1105,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.69.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.69.tgz
     version: v0.8.69
   - apiVersion: v2
     appVersion: v0.8.68
@@ -1125,7 +1125,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.68.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.68.tgz
     version: v0.8.68
   - apiVersion: v2
     appVersion: v0.8.65
@@ -1145,7 +1145,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.65.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.65.tgz
     version: v0.8.65
   - apiVersion: v2
     appVersion: v0.8.64
@@ -1165,7 +1165,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.64.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.64.tgz
     version: v0.8.64
   - apiVersion: v2
     appVersion: v0.8.63
@@ -1185,7 +1185,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.63.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.63.tgz
     version: v0.8.63
   - apiVersion: v2
     appVersion: v0.8.62
@@ -1205,7 +1205,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.62.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.62.tgz
     version: v0.8.62
   - apiVersion: v2
     appVersion: v0.8.61
@@ -1225,7 +1225,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.61.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.61.tgz
     version: v0.8.61
   - apiVersion: v2
     appVersion: v0.8.58
@@ -1245,7 +1245,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.58.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.58.tgz
     version: v0.8.58
   - apiVersion: v2
     appVersion: v0.8.57
@@ -1265,7 +1265,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.57.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.57.tgz
     version: v0.8.57
   - apiVersion: v2
     appVersion: v0.8.56
@@ -1285,7 +1285,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.56.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.56.tgz
     version: v0.8.56
   - apiVersion: v2
     appVersion: v0.8.55
@@ -1305,7 +1305,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.55.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.55.tgz
     version: v0.8.55
   - apiVersion: v2
     appVersion: v0.8.54
@@ -1325,7 +1325,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.54.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.54.tgz
     version: v0.8.54
   - apiVersion: v2
     appVersion: v0.8.53
@@ -1345,7 +1345,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.53.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.53.tgz
     version: v0.8.53
   - apiVersion: v2
     appVersion: v0.8.52
@@ -1365,7 +1365,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.52.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.52.tgz
     version: v0.8.52
   - apiVersion: v2
     appVersion: v0.8.51
@@ -1385,7 +1385,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.51.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.51.tgz
     version: v0.8.51
   - apiVersion: v2
     appVersion: v0.8.50
@@ -1405,7 +1405,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.50.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.50.tgz
     version: v0.8.50
   - apiVersion: v2
     appVersion: v0.8.49
@@ -1425,7 +1425,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.49.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.49.tgz
     version: v0.8.49
   - apiVersion: v2
     appVersion: v0.8.48
@@ -1445,7 +1445,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.48.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.48.tgz
     version: v0.8.48
   - apiVersion: v2
     appVersion: v0.8.47
@@ -1465,7 +1465,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.47.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.47.tgz
     version: v0.8.47
   - apiVersion: v2
     appVersion: v0.8.46
@@ -1485,7 +1485,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.46.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.46.tgz
     version: v0.8.46
   - apiVersion: v2
     appVersion: v0.8.45
@@ -1505,7 +1505,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.45.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.45.tgz
     version: v0.8.45
   - apiVersion: v2
     appVersion: v0.8.44
@@ -1525,7 +1525,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.44.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.44.tgz
     version: v0.8.44
   - apiVersion: v2
     appVersion: v0.8.43
@@ -1545,7 +1545,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.43.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.43.tgz
     version: v0.8.43
   - apiVersion: v2
     appVersion: v0.8.42
@@ -1565,7 +1565,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.42.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.42.tgz
     version: v0.8.42
   - apiVersion: v2
     appVersion: v0.8.40
@@ -1585,7 +1585,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.40.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.40.tgz
     version: v0.8.40
   - apiVersion: v2
     appVersion: v0.8.39
@@ -1605,7 +1605,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.39.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.39.tgz
     version: v0.8.39
   - apiVersion: v2
     appVersion: v0.8.38
@@ -1625,7 +1625,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.38.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.38.tgz
     version: v0.8.38
   - apiVersion: v2
     appVersion: v0.8.36
@@ -1645,7 +1645,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.36.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.36.tgz
     version: v0.8.36
   - apiVersion: v2
     appVersion: v0.8.35
@@ -1665,7 +1665,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.35.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.35.tgz
     version: v0.8.35
   - apiVersion: v2
     appVersion: v0.8.33
@@ -1685,7 +1685,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.33.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.33.tgz
     version: v0.8.33
   - apiVersion: v2
     appVersion: v0.8.32
@@ -1705,7 +1705,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.32.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.32.tgz
     version: v0.8.32
   - apiVersion: v2
     appVersion: v0.8.31
@@ -1725,7 +1725,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.31.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.31.tgz
     version: v0.8.31
   - apiVersion: v2
     appVersion: v0.8.29
@@ -1745,7 +1745,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.29.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.29.tgz
     version: v0.8.29
   - apiVersion: v2
     appVersion: v0.8.28
@@ -1765,7 +1765,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.28.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.28.tgz
     version: v0.8.28
   - apiVersion: v2
     appVersion: v0.8.27
@@ -1785,7 +1785,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.27.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.27.tgz
     version: v0.8.27
   - apiVersion: v2
     appVersion: v0.8.26
@@ -1805,7 +1805,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.26.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.26.tgz
     version: v0.8.26
   - apiVersion: v2
     appVersion: v0.8.24
@@ -1825,7 +1825,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.24.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.24.tgz
     version: v0.8.24
   - apiVersion: v2
     appVersion: v0.8.23
@@ -1845,7 +1845,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.23.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.23.tgz
     version: v0.8.23
   - apiVersion: v2
     appVersion: v0.8.21
@@ -1865,7 +1865,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.21.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.21.tgz
     version: v0.8.21
   - apiVersion: v2
     appVersion: v0.8.20
@@ -1885,7 +1885,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.20.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.20.tgz
     version: v0.8.20
   - apiVersion: v2
     appVersion: v0.8.19
@@ -1905,7 +1905,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.19.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.19.tgz
     version: v0.8.19
   - apiVersion: v2
     appVersion: v0.8.18
@@ -1925,7 +1925,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.18.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.18.tgz
     version: v0.8.18
   - apiVersion: v2
     appVersion: v0.8.17
@@ -1945,7 +1945,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.17.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.17.tgz
     version: v0.8.17
   - apiVersion: v2
     appVersion: v0.8.16
@@ -1965,7 +1965,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.16.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.16.tgz
     version: v0.8.16
   - apiVersion: v2
     appVersion: v0.8.15
@@ -1985,7 +1985,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.15.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.15.tgz
     version: v0.8.15
   - apiVersion: v2
     appVersion: v0.8.14
@@ -2005,7 +2005,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.14.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.14.tgz
     version: v0.8.14
   - apiVersion: v2
     appVersion: v0.8.13
@@ -2025,7 +2025,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.13.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.13.tgz
     version: v0.8.13
   - apiVersion: v2
     appVersion: v0.8.12
@@ -2045,7 +2045,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.12.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.12.tgz
     version: v0.8.12
   - apiVersion: v2
     appVersion: v0.8.11
@@ -2065,7 +2065,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.11.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.11.tgz
     version: v0.8.11
   - apiVersion: v2
     appVersion: v0.8.10
@@ -2085,7 +2085,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.10.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.10.tgz
     version: v0.8.10
   - apiVersion: v2
     appVersion: v0.8.9
@@ -2105,7 +2105,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.9.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.9.tgz
     version: v0.8.9
   - apiVersion: v2
     appVersion: v0.8.8
@@ -2125,7 +2125,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.8.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.8.tgz
     version: v0.8.8
   - apiVersion: v2
     appVersion: v0.8.7
@@ -2145,7 +2145,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.7.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.7.tgz
     version: v0.8.7
   - apiVersion: v2
     appVersion: v0.8.6
@@ -2165,7 +2165,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.6.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.6.tgz
     version: v0.8.6
   - apiVersion: v2
     appVersion: v0.8.5
@@ -2185,7 +2185,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.5.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.5.tgz
     version: v0.8.5
   - apiVersion: v2
     appVersion: v0.8.4
@@ -2205,7 +2205,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.4.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.4.tgz
     version: v0.8.4
   - apiVersion: v2
     appVersion: v0.8.3
@@ -2225,7 +2225,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.3.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.3.tgz
     version: v0.8.3
   - apiVersion: v2
     appVersion: v0.8.2
@@ -2245,7 +2245,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.2.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.2.tgz
     version: v0.8.2
   - apiVersion: v2
     appVersion: v0.8.1
@@ -2265,7 +2265,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.1.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.1.tgz
     version: v0.8.1
   - apiVersion: v2
     appVersion: v0.8.0
@@ -2285,7 +2285,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.0.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.0.tgz
     version: v0.8.0
   - apiVersion: v2
     appVersion: v0.8.0-beta.2
@@ -2305,7 +2305,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.0-beta.2.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.0-beta.2.tgz
     version: v0.8.0-beta.2
   - apiVersion: v2
     appVersion: v0.8.0-beta.1
@@ -2325,7 +2325,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.8.0-beta.1.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.0-beta.1.tgz
     version: v0.8.0-beta.1
   - apiVersion: v2
     appVersion: v0.7.250
@@ -2345,7 +2345,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.250.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.250.tgz
     version: v0.7.250
   - apiVersion: v2
     appVersion: v0.7.249
@@ -2365,7 +2365,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.249.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.249.tgz
     version: v0.7.249
   - apiVersion: v2
     appVersion: v0.7.248
@@ -2385,7 +2385,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.248.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.248.tgz
     version: v0.7.248
   - apiVersion: v2
     appVersion: v0.7.247
@@ -2405,7 +2405,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.247.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.247.tgz
     version: v0.7.247
   - apiVersion: v2
     appVersion: v0.7.246
@@ -2425,7 +2425,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.246.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.246.tgz
     version: v0.7.246
   - apiVersion: v2
     appVersion: v0.7.245
@@ -2445,7 +2445,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.245.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.245.tgz
     version: v0.7.245
   - apiVersion: v2
     appVersion: v0.7.244
@@ -2465,7 +2465,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.244.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.244.tgz
     version: v0.7.244
   - apiVersion: v2
     appVersion: v0.7.243
@@ -2485,7 +2485,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.243.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.243.tgz
     version: v0.7.243
   - apiVersion: v2
     appVersion: v0.7.242
@@ -2505,7 +2505,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.242.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.242.tgz
     version: v0.7.242
   - apiVersion: v2
     appVersion: v0.7.241
@@ -2525,7 +2525,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.241.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.241.tgz
     version: v0.7.241
   - apiVersion: v2
     appVersion: v0.7.240
@@ -2545,7 +2545,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.240.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.240.tgz
     version: v0.7.240
   - apiVersion: v2
     appVersion: v0.7.239
@@ -2565,7 +2565,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.239.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.239.tgz
     version: v0.7.239
   - apiVersion: v2
     appVersion: v0.7.238
@@ -2585,7 +2585,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.238.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.238.tgz
     version: v0.7.238
   - apiVersion: v2
     appVersion: v0.7.237
@@ -2605,7 +2605,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.237.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.237.tgz
     version: v0.7.237
   - apiVersion: v2
     appVersion: v0.7.236
@@ -2625,7 +2625,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.236.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.236.tgz
     version: v0.7.236
   - apiVersion: v2
     appVersion: v0.7.235
@@ -2645,7 +2645,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.235.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.235.tgz
     version: v0.7.235
   - apiVersion: v2
     appVersion: v0.7.234
@@ -2665,7 +2665,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.234.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.234.tgz
     version: v0.7.234
   - apiVersion: v2
     appVersion: v0.7.233
@@ -2685,7 +2685,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.233.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.233.tgz
     version: v0.7.233
   - apiVersion: v2
     appVersion: v0.7.232
@@ -2705,7 +2705,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.232.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.232.tgz
     version: v0.7.232
   - apiVersion: v2
     appVersion: v0.7.231
@@ -2725,7 +2725,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.231.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.231.tgz
     version: v0.7.231
   - apiVersion: v2
     appVersion: v0.7.230
@@ -2745,7 +2745,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.230.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.230.tgz
     version: v0.7.230
   - apiVersion: v2
     appVersion: v0.7.229
@@ -2765,7 +2765,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.229.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.229.tgz
     version: v0.7.229
   - apiVersion: v2
     appVersion: v0.7.228
@@ -2785,7 +2785,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.228.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.228.tgz
     version: v0.7.228
   - apiVersion: v2
     appVersion: v0.7.227
@@ -2805,7 +2805,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.227.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.227.tgz
     version: v0.7.227
   - apiVersion: v2
     appVersion: v0.7.226
@@ -2825,7 +2825,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.226.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.226.tgz
     version: v0.7.226
   - apiVersion: v2
     appVersion: v0.7.225
@@ -2845,7 +2845,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.225.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.225.tgz
     version: v0.7.225
   - apiVersion: v2
     appVersion: v0.7.224
@@ -2865,7 +2865,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.224.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.224.tgz
     version: v0.7.224
   - apiVersion: v2
     appVersion: v0.7.223
@@ -2885,7 +2885,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.223.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.223.tgz
     version: v0.7.223
   - apiVersion: v2
     appVersion: v0.7.222
@@ -2905,7 +2905,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.222.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.222.tgz
     version: v0.7.222
   - apiVersion: v2
     appVersion: v0.7.221
@@ -2925,7 +2925,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.221.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.221.tgz
     version: v0.7.221
   - apiVersion: v2
     appVersion: v0.7.220
@@ -2945,7 +2945,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.220.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.220.tgz
     version: v0.7.220
   - apiVersion: v2
     appVersion: v0.7.219
@@ -2965,7 +2965,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.219.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.219.tgz
     version: v0.7.219
   - apiVersion: v2
     appVersion: v0.7.218
@@ -2985,7 +2985,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.218.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.218.tgz
     version: v0.7.218
   - apiVersion: v2
     appVersion: v0.7.217
@@ -3005,7 +3005,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.217.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.217.tgz
     version: v0.7.217
   - apiVersion: v2
     appVersion: v0.7.216
@@ -3025,7 +3025,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.216.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.216.tgz
     version: v0.7.216
   - apiVersion: v2
     appVersion: v0.7.215
@@ -3045,7 +3045,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.215.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.215.tgz
     version: v0.7.215
   - apiVersion: v2
     appVersion: v0.7.214
@@ -3065,7 +3065,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.214.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.214.tgz
     version: v0.7.214
   - apiVersion: v2
     appVersion: v0.7.213
@@ -3085,7 +3085,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.213.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.213.tgz
     version: v0.7.213
   - apiVersion: v2
     appVersion: v0.7.212
@@ -3105,7 +3105,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.212.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.212.tgz
     version: v0.7.212
   - apiVersion: v2
     appVersion: v0.7.211
@@ -3125,7 +3125,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.211.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.211.tgz
     version: v0.7.211
   - apiVersion: v2
     appVersion: v0.7.210
@@ -3145,7 +3145,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.210.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.210.tgz
     version: v0.7.210
   - apiVersion: v2
     appVersion: v0.7.209
@@ -3165,7 +3165,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.209.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.209.tgz
     version: v0.7.209
   - apiVersion: v2
     appVersion: v0.7.208
@@ -3185,7 +3185,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.208.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.208.tgz
     version: v0.7.208
   - apiVersion: v2
     appVersion: v0.7.207
@@ -3205,7 +3205,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.207.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.207.tgz
     version: v0.7.207
   - apiVersion: v2
     appVersion: v0.7.206
@@ -3225,7 +3225,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.206.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.206.tgz
     version: v0.7.206
   - apiVersion: v2
     appVersion: v0.7.205
@@ -3245,7 +3245,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.205.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.205.tgz
     version: v0.7.205
   - apiVersion: v2
     appVersion: v0.7.204
@@ -3265,7 +3265,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.204.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.204.tgz
     version: v0.7.204
   - apiVersion: v2
     appVersion: v0.7.203
@@ -3285,7 +3285,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.203.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.203.tgz
     version: v0.7.203
   - apiVersion: v2
     appVersion: v0.7.202
@@ -3305,7 +3305,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.202.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.202.tgz
     version: v0.7.202
   - apiVersion: v2
     appVersion: v0.7.201
@@ -3325,7 +3325,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.201.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.201.tgz
     version: v0.7.201
   - apiVersion: v2
     appVersion: v0.7.200
@@ -3345,7 +3345,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.200.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.200.tgz
     version: v0.7.200
   - apiVersion: v2
     appVersion: v0.7.199
@@ -3365,7 +3365,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.199.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.199.tgz
     version: v0.7.199
   - apiVersion: v2
     appVersion: v0.7.198
@@ -3385,7 +3385,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.198.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.198.tgz
     version: v0.7.198
   - apiVersion: v2
     appVersion: v0.7.197
@@ -3405,7 +3405,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.197.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.197.tgz
     version: v0.7.197
   - apiVersion: v2
     appVersion: v0.7.196
@@ -3425,7 +3425,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.196.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.196.tgz
     version: v0.7.196
   - apiVersion: v2
     appVersion: v0.7.195
@@ -3445,7 +3445,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.195.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.195.tgz
     version: v0.7.195
   - apiVersion: v2
     appVersion: v0.7.194
@@ -3465,7 +3465,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.194.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.194.tgz
     version: v0.7.194
   - apiVersion: v2
     appVersion: v0.7.193
@@ -3485,7 +3485,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.193.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.193.tgz
     version: v0.7.193
   - apiVersion: v2
     appVersion: v0.7.192
@@ -3505,7 +3505,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.192.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.192.tgz
     version: v0.7.192
   - apiVersion: v2
     appVersion: v0.7.191
@@ -3525,7 +3525,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.191.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.191.tgz
     version: v0.7.191
   - apiVersion: v2
     appVersion: v0.7.190
@@ -3545,7 +3545,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.190.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.190.tgz
     version: v0.7.190
   - apiVersion: v2
     appVersion: v0.7.189
@@ -3565,7 +3565,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.189.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.189.tgz
     version: v0.7.189
   - apiVersion: v2
     appVersion: v0.7.188
@@ -3585,7 +3585,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.188.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.188.tgz
     version: v0.7.188
   - apiVersion: v2
     appVersion: v0.7.186
@@ -3605,7 +3605,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.186.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.186.tgz
     version: v0.7.186
   - apiVersion: v2
     appVersion: v0.7.185
@@ -3625,7 +3625,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.185.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.185.tgz
     version: v0.7.185
   - apiVersion: v2
     appVersion: v0.7.184
@@ -3645,7 +3645,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.184.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.184.tgz
     version: v0.7.184
   - apiVersion: v2
     appVersion: v0.7.183
@@ -3665,7 +3665,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.183.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.183.tgz
     version: v0.7.183
   - apiVersion: v2
     appVersion: v0.7.182
@@ -3685,7 +3685,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.182.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.182.tgz
     version: v0.7.182
   - apiVersion: v2
     appVersion: v0.7.181
@@ -3705,7 +3705,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.181.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.181.tgz
     version: v0.7.181
   - apiVersion: v2
     appVersion: v0.7.180
@@ -3725,7 +3725,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.180.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.180.tgz
     version: v0.7.180
   - apiVersion: v2
     appVersion: v0.7.179
@@ -3745,7 +3745,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.179.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.179.tgz
     version: v0.7.179
   - apiVersion: v2
     appVersion: v0.7.178
@@ -3765,7 +3765,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.178.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.178.tgz
     version: v0.7.178
   - apiVersion: v2
     appVersion: v0.7.177
@@ -3785,7 +3785,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.177.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.177.tgz
     version: v0.7.177
   - apiVersion: v2
     appVersion: v0.7.176
@@ -3805,7 +3805,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.176.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.176.tgz
     version: v0.7.176
   - apiVersion: v2
     appVersion: v0.7.175
@@ -3825,7 +3825,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.175.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.175.tgz
     version: v0.7.175
   - apiVersion: v2
     appVersion: v0.7.174
@@ -3845,7 +3845,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.174.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.174.tgz
     version: v0.7.174
   - apiVersion: v2
     appVersion: v0.7.173
@@ -3865,7 +3865,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.173.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.173.tgz
     version: v0.7.173
   - apiVersion: v2
     appVersion: v0.7.172
@@ -3885,7 +3885,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.172.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.172.tgz
     version: v0.7.172
   - apiVersion: v2
     appVersion: v0.7.171
@@ -3905,7 +3905,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.171.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.171.tgz
     version: v0.7.171
   - apiVersion: v2
     appVersion: v0.7.170
@@ -3925,7 +3925,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.170.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.170.tgz
     version: v0.7.170
   - apiVersion: v2
     appVersion: v0.7.169
@@ -3945,7 +3945,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.169.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.169.tgz
     version: v0.7.169
   - apiVersion: v2
     appVersion: v0.7.168
@@ -3965,7 +3965,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.168.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.168.tgz
     version: v0.7.168
   - apiVersion: v2
     appVersion: v0.7.167
@@ -3985,7 +3985,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.167.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.167.tgz
     version: v0.7.167
   - apiVersion: v2
     appVersion: v0.7.166
@@ -4005,7 +4005,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.166.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.166.tgz
     version: v0.7.166
   - apiVersion: v2
     appVersion: v0.7.165
@@ -4025,7 +4025,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.165.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.165.tgz
     version: v0.7.165
   - apiVersion: v2
     appVersion: v0.7.164
@@ -4045,7 +4045,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.164.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.164.tgz
     version: v0.7.164
   - apiVersion: v2
     appVersion: v0.7.163
@@ -4065,7 +4065,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.163.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.163.tgz
     version: v0.7.163
   - apiVersion: v2
     appVersion: v0.7.162
@@ -4085,7 +4085,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.162.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.162.tgz
     version: v0.7.162
   - apiVersion: v2
     appVersion: v0.7.161
@@ -4105,7 +4105,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.161.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.161.tgz
     version: v0.7.161
   - apiVersion: v2
     appVersion: v0.7.160
@@ -4125,7 +4125,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.160.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.160.tgz
     version: v0.7.160
   - apiVersion: v2
     appVersion: v0.7.159
@@ -4145,7 +4145,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.159.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.159.tgz
     version: v0.7.159
   - apiVersion: v2
     appVersion: v0.7.158
@@ -4165,7 +4165,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.158.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.158.tgz
     version: v0.7.158
   - apiVersion: v2
     appVersion: v0.7.157
@@ -4185,7 +4185,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-v0.7.157.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-v0.7.157.tgz
     version: v0.7.157
   - apiVersion: v2
     appVersion: v0.7.88
@@ -4205,7 +4205,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/charts/static/charts/layer5-cloud-v0.7.88.tgz
+    - https://docs.layer5.io/charts/charts/layer5-cloud-v0.7.88.tgz
     version: v0.7.88
   - apiVersion: v2
     appVersion: v0.7.85
@@ -4225,7 +4225,7 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/charts/static/charts/layer5-cloud-v0.7.85.tgz
+    - https://docs.layer5.io/charts/charts/layer5-cloud-v0.7.85.tgz
     version: v0.7.85
   - apiVersion: v2
     appVersion: v0.7.83
@@ -4265,6 +4265,6 @@ entries:
     name: layer5-cloud
     type: application
     urls:
-    - https://docs.layer5.io/static/charts/layer5-cloud-0.1.0.tgz
+    - https://docs.layer5.io/charts/layer5-cloud-0.1.0.tgz
     version: 0.1.0
 generated: "2025-02-01T11:47:24.169042718Z"
