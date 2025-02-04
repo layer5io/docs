@@ -327,5 +327,8 @@ enable = false
     path = "github.com/google/docsy/dependencies"
     disable = false
   [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
     source = "charts"
     target = "static/charts"
