@@ -78,3 +78,15 @@
     background-color: #fff;
     opacity: 1;
 }
+
+
+/* medium and up screens */
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev, .carousel-inner {
+    display: flex;
+  }
+
+}
+
