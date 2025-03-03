@@ -232,12 +232,12 @@
         },
       });
 
-      if (res.status === 401) { // cookie has expired
+      if (re.status === 401) { // cookie has expired
         expiredToken = token;
         throw new Error("unauthorized");
       }
       if (re.status !== 200) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error! status: ${re.status}`);
       }
 
       const response = await re.json();
