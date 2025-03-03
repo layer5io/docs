@@ -9,6 +9,7 @@
 @import "tax_project.scss";
 @import "search_project.scss";
 @import "videos.scss";
+@import "subscription.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -68,8 +69,13 @@
 .td-outer {
   margin-top: 3rem;
 }
-.td-main > .main {
-  margin-top: 3rem;
+
+.td-main main {
+  @include media-breakpoint-up(md) {
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 body {
