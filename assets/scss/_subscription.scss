@@ -1,0 +1,37 @@
+.bwnekH {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #00b39f;
+  padding: 16px;
+  margin-left:6rem;
+  margin-right:6rem;
+  margin-bottom:2rem;
+}
+
+.f4 {
+    font-size: 16px !important;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.mb-3 {
+    margin-bottom: 16px !important;
+}
+
+.mt-1 {
+    margin-right:4px;
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+
+  .feature-info-container {
+    @include media-breakpoint-down($lightslategray) {
+      margin: 1rem 0rem;
+    }
+  }
+}
