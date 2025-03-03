@@ -194,10 +194,6 @@
         }
       });
 
-      $searchInput.on('blur', function () {
-        $searchInput.val('');
-        $searchInput.trigger('change');
-      });
 
     });
   })(jQuery);
