@@ -68,6 +68,9 @@
 .td-outer {
   margin-top: 3rem;
 }
+.td-main > .main {
+  margin-top: 3rem;
+}
 
 body {
   overflow-x: hidden;
@@ -374,8 +377,6 @@ a:not([href]):not([class]):hover {
   font-weight: $font-weight-medium;
   background: $black;
   font-family: "Qanelas Soft";
-  margin: auto;
-  padding: 1rem;
   border-color: #00b39f;
   border-radius: 10px;
 }
