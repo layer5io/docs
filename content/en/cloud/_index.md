@@ -36,11 +36,10 @@ cascade:
 
 <div style="flex: 1;">
 
-**Kanvas** ([docs](/kanvas)) provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. Kanvas aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
+**Kanvas** ([docs](/kanvas)) Kanvas delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
 </div></div>
 </div>
 {{% /pageinfo %}}
-
 
 <!-- {{< blocks/section color="dark" type="row" >}}
 {{% blocks/feature icon="fa-lightbulb" title="Fastest OS **on the planet**!" %}}
