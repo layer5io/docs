@@ -29,6 +29,9 @@ h6 {
   li,
   td {
     font-weight: $font-weight-body-text;
+    // @include media-breakpoint-up(sm) {
+    //   max-width: 100%;
+    // }
   }
 
   >h1 {
