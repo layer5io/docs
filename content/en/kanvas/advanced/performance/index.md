@@ -15,13 +15,41 @@ Kanvas is designed to handle a wide range of infrastructure and application conf
 
 Kanvas has a maximum limit of 1,000 components per design. If you exceed this limit, you may experience performance issues such as slow loading times and laggy interactions. To avoid hitting this limit, consider breaking your design into smaller, more manageable designs.
 
+<!--
+#### Maximum Number of Components per Layer
+  Needs a follow up -->
+
+<!--
+#### Maximum Number of Relationship
+  Needs a follow up -->
+
+#### Maximum Number of Annotation-only Components (non-semantically meaningful components)
+
+{{< alert type="note" title="What is a Non-Semantic Component?" >}}
+A non-semantic component is a component that does not represent a meaningful entity in your design. For example, a textbox, a shape, a line, or a comment are all examples of non-semantic components. These components are used for annotation purposes only and do not have a direct relationship to the underlying infrastructure or application that you are modeling.
+{{< /alert >}}
+
+Kanvas allows up to 1,000 non-sematically meaningfull components per design. Some designs have a large number of comments. While comments are a valuable collaboration tool, excessive comments can impact the performance of your design. Consider archiving or deleting old comments to keep your design running smoothly.
+
+#### Maxiumum Number of Orchestrated Components (semantically meaningful components)
+
+{{< alert type="note" title="What is a Semantic Component?" >}}
+A semantic component is a component that represents a meaningful entity in your design. For example, a server, a database, or a network switch are all examples of semantic components. These components have a direct relationship to the underlying infrastructure or application that you are modeling.
+{{< /alert >}}
+
 ### Maximum Number of Relationships
 
-Kanvas supports up to 10,000 relationships per design. Exceeding this limit can impact the performance of your design, especially when rendering complex designs. To optimize performance, try to minimize the number of relationships in your design.
+Kanvas supports up to 1,000 relationships per design. Exceeding this limit can impact the performance of your design, especially when rendering complex designs. To optimize performance, try to minimize the number of relationships in your design.
 
-### Maximum Number of Comments
+#### Maximum Number of TagSet Relationships
 
-Kanvas allows up to 1,000 comments per design. While comments are a valuable collaboration tool, excessive comments can impact the performance of your design. Consider archiving or deleting old comments to keep your design running smoothly.
+<img alt="Labels and Annotations" src="../../designer/tagsets/group-components.png" width="15%" /> Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
+
+Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the “Group Components” button in the Designer dock. For more information, see [Working with Tags](/kanvas/designer/tagsets/).
+
+<!--
+#### Maximum Number of Relationships per Component
+  Needs a follow up -->
 
 ### Maximum Number of Users
 
@@ -29,7 +57,7 @@ Under the Free subscription plan, Kanvas supports at least 20 users per design. 
 
 ## Performance Tuning
 
-### Optimize Your Design
+### Optimize Your Design using the Layers Panel
 
 To improve the performance of your design, consider optimizing by disabling one or more layers.
 

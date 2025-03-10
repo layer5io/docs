@@ -466,7 +466,7 @@ a:not([href]):not([class]):hover {
 }
 
 figure {
-  & :hover { cursor: pointer; }
+  > img:hover { cursor: pointer; }
   figcaption {
     color: $dark;
     background-color: rgba($lightslategray, 1);
