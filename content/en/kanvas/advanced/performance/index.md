@@ -57,6 +57,9 @@ Upon loading a design exceeds that exceeds 20 tags within a single design, Kanva
 
 Under the Free subscription plan, Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simulatanously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services](/cloud/self-hosted/planning/peer-to-peer-communication) for more details.
 
+### Impact of Images
+
+Images that are added to the canvas or included in a design are directly embedded within the design file. While this ensures the images are self-contained within the file, adding large or multiple images can significantly increase file size, potentially causing performance issues.
 ## Performance Tuning
 
 ### Optimize Your Design using the Layers Panel
