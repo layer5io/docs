@@ -55,11 +55,16 @@ Upon loading a design exceeds that exceeds 20 tags within a single design, Kanva
 
 ### Maximum Number of Users
 
-Under the Free subscription plan, Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simulatanously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services](/cloud/self-hosted/planning/peer-to-peer-communication) for more details.
+Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simulatanously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services](/cloud/self-hosted/planning/peer-to-peer-communication) for more details.
 
 ### Impact of Images
 
-Images that are added to the canvas or included in a design are directly embedded within the design file. While this ensures the images are self-contained within the file, adding large or multiple images can significantly increase file size, potentially causing performance issues.
+Be aware that designs are self-contained documents and that all artifacts, like any images (e.g. SVG, PNG, GIF, WEBP, etc.) that are added to your design are embedded into your design document, adding to the overall size of your design file. The embedding of images into your design file ensures portability of your design. You can export your design with the assurity that your images will remain in your design upon (re-)import.
+
+As the number and size of images contained in your design grows, images can significantly increase file size, potentially causing performance issues. This is particularly true during collaboration sessions. With each change made to your design, the entire design file is sent to all users in the collaboration session. If your design contains a large number of images, this can lead to slow performance and increased bandwidth usage.
+
+Under the Free subscription plan, Kanvas support a single image size of up to 500KB of images per design with a total of 5MB per design. If you need to use more images, consider upgrading to a paid [subscription plan](https://layer5.io/pricing).
+
 ## Performance Tuning
 
 ### Optimize Your Design using the Layers Panel
@@ -76,3 +81,12 @@ Some layers specifically offer control of visibility of components, while other 
 In the same way, as you toggle the evaluation of different types of relationships, understand that this releationships between your components still exist. Those relationsihps are simply temporarily hidding from view and the overhead of their evaluation eliminated while the respective type of relationship is disabled.
 
 Using the Layers panel you control the level of sophistication or simplicity of the rendering of components and relationships in your designs. You can both simplify your design layout by removing unnecessary elements and improve performance simultaneously. Alternatively, you can increase the level of detail in your design by enabling additional layers and relationships, while controlling the balance between detail and performance.
+
+### Optimize use of Images in your Design
+
+To optimize performance, consider the following:
+
+1. Use vector images (SVG) instead of raster images (PNG, JPG, etc.) as they are typically smaller in size and scale without pixelation.
+2. Prioritize using smaller file sizes whenever possible. Use the `webp` image format over `png`, `jpg`, or `gif` as it generally provides significantly better compression, resulting in faster design save times without sacrificing much image quality.
+3. Remove any unnecessary images from your design.
+4. Use image compression tools to reduce the size of your images before adding them to your design.
