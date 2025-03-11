@@ -61,9 +61,9 @@ Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports a
 
 Be aware that designs are self-contained documents and that all artifacts, like any images (e.g. SVG, PNG, GIF, WEBP, etc.) that are added to your design are embedded into your design document, adding to the overall size of your design file. The embedding of images into your design file ensures portability of your design. You can export your design with the assurity that your images will remain in your design upon (re-)import.
 
-As the number and size of images contained in your design grows, images can significantly increase file size, potentially causing performance issues. This is particularly true during collaboration sessions. With each change made to your design, the entire design file is sent to all users in the collaboration session. If your design contains a large number of images, this can lead to slow performance and increased bandwidth usage.
+As the number and size of images contained in your design grows, images can significantly increase file size, potentially causing performance issues. With each change made to your design, the entire design file is uploaded to Layer5 Cloud. This same performance consideration applies during collaborative editing sessions with multiple users viewing/editing the same design. Each change to your design made by any user in the collaboration session will be propagated to every other currently collaborating user. If your design contains a large number of images, this can lead to slow performance and increased bandwidth usage.
 
-Under the Free subscription plan, Kanvas support a single image size of up to 500KB of images per design with a total of 5MB per design. If you need to use more images, consider upgrading to a paid [subscription plan](https://layer5.io/pricing).
+Under the Free subscription plan, Kanvas support a single image size of up to 500KB of images per design with a total of 10MB per design. If you need to use more images, consider upgrading to a paid [subscription plan](https://layer5.io/pricing).
 
 ## Performance Tuning
 
