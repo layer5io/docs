@@ -160,9 +160,11 @@ The significant keys in the YAML frontmatter are:
 
 ### Uploading Images to the site
 
-To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)`.
+To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)` or `<img src="" alt="" />`.
 
-**Note-> For images to show correctly on subpages, always provide the complete image path**
+**Note:**
+- For images to show correctly on subpages, always provide the complete image path.
+- When using the `<img />` tag, add `data-modal="false"` to prevent the image from opening in a modal e.g. a [logo](https://github.com/layer5io/docs/blob/0bef5a9a05214a9dda10d8a68431e41f5a36676d/layouts/partials/footer.html#L9).
 
 ### Adding Alert to the site
 
