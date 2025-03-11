@@ -465,6 +465,17 @@ a:not([href]):not([class]):hover {
   }
 }
 
+figure {
+  > img:hover { cursor: pointer; }
+  figcaption {
+    color: $dark;
+    background-color: rgba($lightslategray, 1);
+    // font-style:italic;
+    text-align: center;
+    width: inherit;
+  }
+} 
+
 .dashboard {
   font-weight: 800;
   margin-bottom: 4rem;
