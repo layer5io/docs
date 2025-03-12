@@ -34,6 +34,13 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
+// Listen for the Escape key to close the modal
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
+
 </script>
 
 <!-- To attach onclick attribute to all <img> -->
