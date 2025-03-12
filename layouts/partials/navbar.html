@@ -198,6 +198,8 @@
     }
   
   let isUserAuthenticated = false;
+  let expiredToken = "";
+
   function removeCookie(cookieName) {
     document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
@@ -216,12 +218,12 @@
   const checkUserAuth = async () => {
     try {
      const token = getCookieValue("provider_token");
-      if (!token) { // cookie doesn't exist, user logged out of cloud
+      if (!token || token === expiredToken) { // cookie doesn't exist or has expired (due to user logout)
         if (isUserAuthenticated) {
           showSignInButton();
           isUserAuthenticated = false;
         }
-      throw new Error("no cookie to authenticate");
+      throw new Error("missing or expired cookie");
     }
       const re = await fetch("https://cloud.layer5.io/api/identity/users/profile", {
         method: 'GET',
@@ -230,8 +232,12 @@
         },
       });
 
+      if (re.status === 401) { // cookie has expired
+        expiredToken = token;
+        throw new Error("unauthorized");
+      }
       if (re.status !== 200) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error! status: ${re.status}`);
       }
 
       const response = await re.json();
