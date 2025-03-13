@@ -1,37 +1,128 @@
 ---
-title: Starting from a published design
-description: >
-  Published designs are available from the Layer5 Cloud catalog. Published designs are a collection of curated, reusable solutions to the most common problems in cloud and cloud native infrastructure management.
+title: Publishing and Managing Designs
+description: Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
 weight: 3
 categories: [Designer]
-tags: [designs]
+tags: [designs, publishing]
 aliases:
   - /meshmap/getting-started/starting-pattern
 ---
 
-Starting from a published design is a quick way to get started with a popular stack or solution.
+Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.
 
-## Exploring the Design Catalog
+## Publishing Workflow
 
-For your convenience, the design catalog can be accessed from three locations:
+### Step 1: Access Extensions UI
+Navigate to Meshery [Kanvas Designer](https://playground.meshery.io/extension/meshmap) from the main dashboard.
 
-1. From the *Catalog* tab in _Kanvas Designer_.
-   ![Kanvas Design Catalog](/kanvas/getting-started/images/2024-04-14_12-40.png)
+### Step 2: Select Design in Sidebar
+Find designs through two methods. Click the **info ("i")** button for details.
 
-2. From the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://cloud.layer5.io/catalog).
-   ![Layer5 Cloud Catalog](/kanvas/getting-started/images/2024-04-14_12-44.png)
+- **Option 1:** View designs in the sidebar
+  ![Sidebar Design List](/kanvas/getting-started/images/designs-select-sidebar.png)
 
-3. From the Meshery Catalog page at [Meshery Catalog](https://meshery.io/catalog).
-   ![Meshery Catalog](/kanvas/getting-started/images/meshery-io-catalog.png)
+- **Option 2:** Go to Configuration → Designs
+  ![Design Details](/kanvas/getting-started/images/designs-select-design.png)
+
+### Step 3: Submit Design Metadata
+Fill out the publication form:
+
+- **Type:** Select design category
+- **Technology:** Specify related technology
+- **Description:** Explain purpose and usage
+- **Caveats:** Add important considerations
+
+![Publish Modal](/kanvas/getting-started/images/publish-form.png)
+
+### Step 4: Review Process
+Approval workflow based on user role:
+- **Admin submissions:** Published immediately
+- **User submissions:** Enter "Pending Review"
+
+Regardless of approval or rejection, submitters will receive an email notification with the decision.
+
+![Approval Queue](/kanvas/getting-started/images/approval-queue.png)
+
+### Step 5: Post-Approval Status
+Once the review process is complete, you will receive an email notification informing you of the decision.  
+
+- If your design is approved: 
+  - It will no longer appear in "My Designs."  
+  - Instead, it will be listed in the **[Catalog](https://cloud.layer5.io/catalog)** as a publicly available entry.  
+  - This ensures that published designs remain accessible to all users while keeping personal design spaces uncluttered.  
+
+- If your design is rejected:
+  - You will receive an email notification with a rejection reason. 
+  - Rejected designs **cannot be resubmitted** directly.  
+  - If you want to revise and submit it again, you must clone the design, make changes, and submit it as a new entry.
 
 ## Cloning a Design
+To modify published designs:
 
-To start from a design, select and create a [clone of the design](/kanvas/tasks/designs/cloning-a-design). If you are on the Kanvas design page, click on the chosen design from the **Catalog** tab. This will present a popup to clone the design, click **Clone** to begin.
+1. Select design from [Catalog](https://cloud.layer5.io/catalog)
+2. Click **Clone** to create editable copy
+3. Make changes and submit as new version
 
-![Copy of a Design](/kanvas/getting-started/images/2024-04-18_19-57.png)
+## State Management
 
-This will create a copy of the catalog item to a new design, now owned by you.
+### 1. Design State Lifecycle
+A design transitions through multiple states from creation to publication. The diagram below visually represents this process.
 
-![Copy of a Design](/kanvas/getting-started/images/2024-04-14_12-37.png)
+![Publishing Flow](/kanvas/getting-started/images/Publishing-flow.svg)
 
-You are now free to deploy it as it is or modify it further.
+#### State Transitions Overview
+- **Pre-Publish:** Users freely create and edit designs.  
+- **Pending Review:** Submitted designs undergo an approval process.  
+- **Published:** Approved designs are locked and listed publicly.  
+- **Withdrawn:** Unpublished designs return to private storage.
+
+### 2. Design State Characteristics
+
+| **State Stage**    | **Visibility**                    | **Operability**                                | **Key Restrictions**                                              |
+|--------------------|----------------------------------|------------------------------------------------|--------------------------------------------------------------------|
+| **Pre-Publish**    | Sidebar Design List & Configuration → Designs               | Free edit/delete/rename (editable by anyone)   |  No restrictions                                                                    |
+| **Pending Review** | Sidebar Design List & Configuration → Designs                | Editable by all users (including guests)       | Deleting during this stage creates dead entries in the approval list |
+| **Published**      | Category List (hidden in sidebar) | View-only copies (auto-appended "_copy")       | Original design permanently locked (edit in category only updates metadata) |
+| **Withdrawn**      | Returns to sidebar as private     | Free edit/delete/rename                        | Original cannot be republished; must create a new canvas with identical content |
+
+**Critical Rules:**
+- Withdrawn designs require re-submission as new entries.
+- Published designs are immutable.
+
+### 3. Permission Controls
+
+| **Operation**       | **Creator**        | **Organization Admin** | **Provider Admin** | **Regular User** | **Guest**               |
+|---------------------|--------------------|------------------------|--------------------|------------------|-------------------------|
+| Edit Pending Design | ✔                  | ✔                      | ✔                 | ✔                | ✔                       |
+| Unpublish           | ✘   | ✔                      | ✔                 | ✘                | ✘            |
+
+**Key Notes:**
+- Provider Admins have root-level visibility and can see private designs from all organizations.
+- Catalog approval queues are org-specific—only members of an organization can see its pending approvals, unless the user is a Provider Admin.
+- The "Unpublish" button is visible to all users except Guests. However, only Admins can successfully execute the action. For all other users, clicking the button will result in an error message indicating insufficient permissions.
+- Admins and Provider Admins bypass all state restrictions.
+
+## FAQ
+
+### 1. When my design is in "Pending Review," can I still edit it? Will the changes take effect?
+Yes, you can edit your design while it is in the "Pending Review" state, and any modifications will be automatically reflected in the submitted design. No need to resubmit the request.
+
+### 2. After my design is approved and published, can I modify it? Will the category be updated?
+No, once a design is **published**, it becomes **immutable**. You cannot directly edit or modify the contents. The category and metadata remain locked to ensure version consistency. However, you can create a new version by cloning the design and making modifications.
+
+### 3. After my design is published, can I modify the category field?
+No, the category field **cannot be changed** after the design is published. If a category update is required, you must clone the design, update the category, and submit it as a new entry.
+
+### 4. If my design is denied (rejected), can I submit it again?  
+No, once a design is denied, it **cannot be resubmitted**. However, you can clone the design, make adjustments, and submit it as a new entry for review.
+
+### 5. Can I unpublish a design after it has been published?  
+Only Admins and Provider Admins have the ability to unpublish a design, Regular users, creators, and guests cannot unpublish a design. If you need to remove a published design, contact an Admin or Provider Admin to request unpublishing.  
+
+### 6. What is the difference between Public, Private, and Published?  
+
+| **State**    | **Visibility** | **Editability** | **Notes** |
+|-------------|---------------|----------------|-----------|
+| **Public**   | Visible to all Meshery Cloud users | Fully editable | Available for all users to access |
+| **Private**  | Only visible to the owner and organization members | Fully editable | Used for drafts and internal work |
+| **Published** | Approved and locked for public access | Cannot be modified | Ensures design consistency and prevents unauthorized edits |  
