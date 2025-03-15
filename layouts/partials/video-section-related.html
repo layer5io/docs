@@ -26,7 +26,7 @@
     {{ if gt $matchScore 0 }}
     {{ $matchingVideos = $matchingVideos | append (dict "page" $page "score" $matchScore) }}
     {{ end }}
- 
+
     {{ end }}
 
     {{ $sortedVideos := sort $matchingVideos "score" "desc" }}
@@ -46,9 +46,9 @@
 
             <div class="carousel-inner">
                 {{ range $index, $video := $sortedVideos }}
-                <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-8 col-lg-6">
+                <div class="carousel-item justify-content-around {{ if eq $index 0 }}active{{ end }}">
+                    
+                        <div class="col-12 col-md-7 col-lg-5">
                             <a href="{{ .page.RelPermalink }}" class="video-link text-decoration-none">
                                 <div class="video card h-100 bg-dark text-white border border-secondary shadow-lg p-1">
                                     <div class="video-container position-relative"
@@ -73,7 +73,6 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
                 </div>
                 {{ end }}
             </div>
@@ -92,6 +91,22 @@
 </div>
 
 
-<style>
-
-</style>
+<script>
+    
+    if (window.matchMedia("(min-width: 768px)").matches) {
+    let items = document.querySelectorAll('.carousel .carousel-item')
+    items.forEach((el) => {
+        const minPerSlide = 2;
+        let next = el.nextElementSibling;
+        for (var i = 1; i < minPerSlide; i++) {
+            if (!next) {
+                // wrap carousel by using first child
+                next = items[0];
+            }
+            let cloneChild = next.cloneNode(true);
+            el.appendChild(cloneChild.children[0]);
+            next = next.nextElementSibling;
+        }
+    });
+    }
+</script>
