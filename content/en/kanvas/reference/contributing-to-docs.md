@@ -9,7 +9,7 @@ aliases:
 
 Welcome to the GitHub repository for Layer5's documentation website!
 
-The docs website is hosted at https://docs.layer5.io.
+The docs website is hosted at <https://docs.layer5.io>.
 
 We use [Hugo](https://gohugo.io/) with the [google/docsy](https://github.com/google/docsy) theme for styling and site structure, and [Netlify](https://www.netlify.com/) to manage the deployment of the site.
 
@@ -21,21 +21,18 @@ Here's a quick guide to updating the docs:
 
 2. Make your changes and send a pull request (PR).
 
-3. If you're not yet ready for a review, add "WIP" to the PR name to indicate it's a work in progress. 
-   Alternatively, you use the `/hold` [prow command](https://prow.k8s.io/command-help) in a comment to mark the PR as not ready for merge.
+3. If you're not yet ready for a review, add "WIP" to the PR name to indicate it's a work in progress.
 
-4. Wait for the automated PR workflow to do some checks. 
+4. Wait for the automated PR workflow to do some checks.
    When it's ready, you should see a comment like this: `deploy/netlify — Deploy preview ready!`
 
 5. Click **Details** to the right of "Deploy preview ready" to see a preview of your updates.
 
 6. Continue updating your doc and pushing your changes until you're happy with the content.
 
-7. When you're ready for a review, add a comment to the PR, remove any holds or "WIP" markers, and assign a reviewer/approver. 
-   See the [Layer5 contributor guide](https://layer5.io/community/handbook/contribution).
+7. When you're ready for a review, add a comment to the PR, remove any holds or "WIP" markers, and assign a reviewer/approver. See the [Layer5 contributor guide](https://layer5.io/community/handbook/contribution).
 
-If you need more help with the GitHub workflow, follow
-this [guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/CONTRIBUTING-gitflow.md).
+If you need more help with the GitHub workflow, follow  this [guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/CONTRIBUTING-gitflow.md).
 
 ## Local development
 
@@ -45,12 +42,12 @@ This section will show you how to develop the website locally, by running a loca
 
 To install Hugo, follow the [instructions for your system type](https://gohugo.io/getting-started/installing/).
 
-**NOTE:** we recommend that you use Hugo version `0.119.0`, as this is currently the version we deploy to Netlify.
+**NOTE:** we recommend that you use Hugo version `v0.140.2`, as this is currently the version we deploy to Netlify.
 
 For example, using homebrew to install hugo on macOS or linux:
 
 ```bash
-# WARNING: this may install a newer version than `0.119.0`
+# WARNING: this may install a newer version than `v0.140.2`
 brew install hugo
 ```
 
@@ -129,7 +126,7 @@ weight = 1
 
 ## Docsy Theme
 
-We use the [Docsy](https://www.docsy.dev/) theme for the website. 
+We use the [Docsy](https://www.docsy.dev/) theme for the website.
 The theme files are managed with a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in the `themes/docsy` directory.
 
 **Do not change these files**, they are not actually inside this repo, but are part of the [google/docsy](https://github.com/google/docsy) repo.
@@ -157,21 +154,21 @@ The theme holds its styles in the [`assets/scss` directory](https://github.com/l
 
 You can override the default styles and add new ones:
 
-* In general, put your files in the project directory structure under `website` rather than in the theme directory. 
+* In general, put your files in the project directory structure under `website` rather than in the theme directory.
   Use the same file name as the theme does, and put the file in the same relative position.
-  Hugo looks first at the file in the main project directories, if present, then at the files under the theme directory. 
+  Hugo looks first at the file in the main project directories, if present, then at the files under the theme directory.
   For example, the Layer5 website's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html)
   overrides the theme's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/themes/docsy/layouts/partials/navbar.html)
 
 * You can update the Layer5 website's project variables in the [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
-  Values in that file override the [Docsy variables](https://github.com/layer5io/docs/blob/master/themes/docsy/assets/scss/_variables.scss). 
+  Values in that file override the [Docsy variables](https://github.com/layer5io/docs/blob/master/themes/docsy/assets/scss/_variables.scss).
   You can also use `_variables_project.scss` to specify your own values for any of the default [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
 
 * Custom styles [`_styles_project` file](https://github.com/layer5io/docs/blob/master/assets/scss/_styles_project.scss)
 
 Styling of images:
 
-* To see some examples of styled images, take a look at the OAuth setup page in the Layer5 docs. 
+* To see some examples of styled images, take a look at the OAuth setup page in the Layer5 docs.
   Search for `.png` in the [page source](https://raw.githubusercontent.com/layer5io/docs/master/content/en/docs/gke/deploy/oauth-setup.md).
 
 * For more help, see the guide to
@@ -182,7 +179,7 @@ Styling of images:
 
 The site's [front page](https://docs.layer5.io/):
 
-* See the [page source](https://github.com/layer5io/docs/blob/master/content/en/_index.html).
+* See the [page source](<https://github.com/layer5io/docs/blob/master/content/en/>.
 
 * The CSS styles are in the [project variables file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
 
@@ -192,17 +189,17 @@ The site's [front page](https://docs.layer5.io/):
 
 ## Using Hugo shortcodes
 
-Sometimes it's useful to define a snippet of information in one place and reuse it wherever we need it. 
-For example, we want to be able to refer to the minimum version of various frameworks/libraries throughout the docs, 
+Sometimes it's useful to define a snippet of information in one place and reuse it wherever we need it.
+For example, we want to be able to refer to the minimum version of various frameworks/libraries throughout the docs,
 without causing a maintenance nightmare.
 
-For this purpose, we use Hugo's "shortcodes". 
-Shortcodes are similar to Django variables. You define a shortcode in a file, then use a specific markup 
+For this purpose, we use Hugo's "shortcodes".
+Shortcodes are similar to Django variables. You define a shortcode in a file, then use a specific markup
 to invoke the shortcode in the docs. That markup is replaced by the content of the shortcode file when the page is built.
 
 To create a shortcode:
 
-1. Add an HTML file in the `/docs/layouts/shortcodes/` directory. 
+1. Add an HTML file in the `/docs/layouts/shortcodes/` directory.
    The file name must be short and meaningful, as it determines the shortcode you and others use in the docs.
 
 2. For the file content, add the text and HTML markup that should replace the shortcode markup when the web page is built.
@@ -242,17 +239,17 @@ Useful Hugo docs:
 
 ## Versioning of the docs
 
-For each stable release, we create a new branch for the relevant documentation. 
+For each stable release, we create a new branch for the relevant documentation.
 For example, the documentation for the v0.2 stable release is maintained in the [v0.2-branch](https://github.com/layer5io/docs/tree/v0.2-branch).
 Each branch has a corresponding Netlify website that automatically syncs each merged PR.
 
 The versioned sites follow this convention:
 
-* `docs.layer5.io` always points to the current *master branch*
+* `docs.layer5.io` always points to the current _master branch_
 * `master.docs.layer5.io` always points to GitHub head
 * `vXXX-YYY.docs.layer5.io` points to the release at vXXX.YYY-branch
 
-We also hook up each version to the dropdown on the website menu bar. 
+We also hook up each version to the dropdown on the website menu bar.
 For information on how to update the website to a new version, see the [Layer5 release guide](https://github.com/layer5io/docs/blob/master/docs_dev/releasing.md#releasing-a-new-version-of-the-website).
 
 Whenever any documents reference any source code, you should use the version shortcode in the links, like so:
