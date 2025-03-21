@@ -110,9 +110,9 @@ Follow the usual GitHub workflow of forking the repository on GitHub and then cl
 ## Menu structure
 
 The site theme has one Hugo menu (`main`), which defines the top navigation bar. You can find and adjust the definition
-of the menu in the [site configuration file](https://github.com/layer5io/docs/blob/master/config.toml).
+of the menu in the [site configuration file](https://github.com/layer5io/docs/blob/master/hugo.toml).
 
-The left-hand navigation panel is defined by the directory structure under the [`docs` directory](https://github.com/layer5io/docs/tree/master/content/en/docs).
+The left-hand navigation panel is defined by the directory structure under the [`content/en` directory](https://github.com/layer5io/docs/tree/master/content/en).
 
 A `weight` property in the _front matter_ of each page determines the position of the page relative to the others in the same directory.
 The lower the weight, the earlier the page appears in the section.
