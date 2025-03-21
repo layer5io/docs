@@ -151,7 +151,7 @@ the style guide for the Layer5 docs.
 
 ## Styling your content
 
-The theme holds its styles in the [`assets/scss` directory](https://github.com/layer5io/docs/tree/master/themes/docsy/assets/scss).
+The theme holds its styles in the [`assets/scss` directory](https://github.com/layer5io/docs/tree/master/assets/scss).
 
 **Do not change these files**, they are not actually inside this repo, but are part of the [google/docsy](https://github.com/google/docsy) repo.
 
