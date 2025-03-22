@@ -21,9 +21,8 @@ If you'd rather use a different shape while keeping the same position, size, and
 
 ## Copying, pasting, and deleting shapes
 
-Using the context menu,
+Using the context menu, click on the shape while holding the right click and select copy to copy a shape. To paste the copied shape, move the mouse to the desired place, right-click, and select paste. To delete a shape, click on the shape while holding the right click and hover to the delete tab on the circular popup.
 
-## 
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
