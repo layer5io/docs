@@ -62,7 +62,7 @@ Designs belong to only one Workspace at any given time. See [Meshery Designs](ht
 - Same team can be assigned to multiple workspaces.
 
 {{< alert type="info" >}}
-Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections, See [Teams](../identity/teams) 
+Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections, See [Teams](/cloud/identity/teams).
 {{< /alert >}}
 
 ### Connections
@@ -72,7 +72,7 @@ Teams offer control access to workspaces and to workspace resources such as envi
 - Same connection can be assigned to multiple environments.
 
 {{< alert type="info" >}}
-See [Connections](https://docs.meshery.io/concepts/connections) section for more information.
+See [Connections](https://docs.meshery.io/concepts/logical/connections) section for more information.
 {{< /alert >}}
 
 ## Best Practices

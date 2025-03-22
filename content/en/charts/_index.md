@@ -11,7 +11,7 @@ cascade:
 
 {{< alert type="info" title="Repository Only">}}
 This page only contains a brief synopsis of the Helm repository.
- 
+
 See the [Self-Hosted section](/cloud/self-hosted/) of the Layer5 Cloud documentation for deployment prerequisites, considerations, and instructions.
 {{< /alert >}}
 
@@ -21,7 +21,7 @@ Contained in the Layer5 Helm repository is the [Meshery Remote Provider](https:/
 
 ## Chart Source
 
-<p>The source for this chart is located in the <code>layer5io/meshery-cloud</code> repository under <a href="https://github.com/layer5io/meshery-cloud/tree/master/install/kubernetes/">install/kubernetes/</a>.</p>
+<p>The source for this chart is located in the <code>layer5io/meshery-cloud</code> repository under <pre>install/kubernetes/</pre>.</p>
 <br />
 {{< alert type="info" title="Complete Deployment Instructions">}}
 Layer5 Cloud's Helm chart supports a number of [configuration options]({{<ref "/cloud/self-hosted/deployment/helm-chart-values" >}})
