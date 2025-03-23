@@ -2,7 +2,7 @@
 name: 💡 Feature Request
 about: Suggest an enhancement to Meshery.
 title: ''
-labels: 'kind/enhancement, framework/hugo, language/css, language/javascript, language/html'
+labels: 'kind/enhancement, framework/hugo, language/css, language/javascript, language/html, help wanted'
 assignees: ''
 ---
 #### Current Behavior
