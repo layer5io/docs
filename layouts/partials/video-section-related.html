@@ -34,7 +34,7 @@
     {{ if gt (len $sortedVideos) 0 }}
     <div class="related-videos">
         <h2>Related Videos</h2>
-        <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-indicators">
                 {{ range $index, $_ := $sortedVideos }}
                 {{ if modBool $index 2 }}
