@@ -124,7 +124,7 @@ To set up a www or custom subdomain, such as `www.example.com` or `meshery.examp
 
 In Layer5 Cloud, navigate to your Provider Organization.
 
-Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator](/cloud/security/roles/provider-admin-roles/).
+Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator](/cloud/security/roles).
 
 Under "Custom domain", type your custom domain, then click Save. This will create a server configuration will require a reboot in order to take affect.
 
