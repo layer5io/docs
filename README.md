@@ -1,7 +1,7 @@
 <p style="text-align:center;" align="center">
       <picture align="center">
-         <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/images/layer5/layer5-light-no-trim.svg">
-         <source media="(prefers-color-scheme: light)" srcset="./.github/assets/images/layer5/layer5-no-trim.svg">
+         <source media="(prefers-color-scheme: dark)" srcset="./.github/readme/images/layer5-light-no-trim.svg">
+         <source media="(prefers-color-scheme: light)" srcset="./.github/readme/images/layer5-no-trim.svg">
          <img align="center" src="./.github/assets/images/layer5/layer5-no-trim.svg" alt="Shows a dark layer5 logo in light mode and a white logo in dark mode" width="45%"/>
       </picture>
 </p>
