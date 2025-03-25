@@ -20,7 +20,6 @@ Existing shapes can be converted to other shapes. For example, you can convert a
 If you'd rather use a different shape while keeping the same position, size, and formatting, you can change the shape.
 
 ## Copying, pasting, and deleting shapes
-
 Using the context menu, click on the shape while holding the right click and select copy to copy a shape. To paste the copied shape, move the mouse to the desired place, right-click, and select paste. To delete a shape, click on the shape while holding the right click and hover to the delete tab on the circular popup.
 
 
