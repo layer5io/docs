@@ -31,7 +31,7 @@
   {{ end -}}
 
   {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
-  {{ $issuesURL := printf "%s/issues/new?assignees=&labels=area%2Fdocs%2C+framework%2Fhugo%2C+language%2Fmarkdown&projects=&template=documentation.md&title=[Docs]" $gh_repo -}}
+  {{ $issuesURL := printf "%s/issues/new/choose" $gh_repo -}}
   {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
   {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL -}}
 
