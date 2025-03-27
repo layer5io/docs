@@ -692,8 +692,13 @@ figure {
   display: flex;
 }
 
-.nav-tabs .nav-link.active {
+.nav-tabs .nav-item:not(:first-child) .nav-link {
+  background-color: rgba(46, 46, 49, 0.8);
+}
+
+.nav-tabs .nav-item:not(:first-child) .nav-link.active {
   color: #00d3a9;
+  background-color: rgba(46, 46, 49, 0.8);
 }
 
 .csvtable {
