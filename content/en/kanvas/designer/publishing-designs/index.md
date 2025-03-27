@@ -95,7 +95,7 @@ A design transitions through multiple states from creation to publication. The d
 |---------------------|-----------|------------------|-----------|------------------------|--------------------|
 | Edit Pending Design | ✔         | ✔                | ✔         | ✔                      | ✔                  |
 | Submit for Review     | ✔         | ✔                | ✔         | ✔                      | ✔                  |
-| Unpublish           | ✘         | ✘                | ✔         | ✔                      | ✔                  |
+| Unpublish           | ✘         | ✘                | ✘         | ✔                      | ✔                  |
 
 For more about roles and permissions, refer to [Role Descriptions](https://docs.layer5.io/cloud/security/roles/) and [Default Permissions](https://docs.layer5.io/cloud/reference/default-permissions/).
 
