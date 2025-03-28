@@ -10,7 +10,7 @@ Meshery GitHub Actions enhance your operational workflow by integrating git vers
 ## Meshery Github Actions
 
 1. [Kanvas Snapshot](#kanvas-snapshot-github-action)
-2. [Performance Testing with Meshery](https://docs.meshery.io/guides/gitops-with-meshery)
+2. [Performance Testing with Meshery](https://docs.meshery.io/guides/infrastructure-management/gitops-with-meshery)
 3. Archived: [Service Mesh Interface Conformance with Meshery](https://github.com/marketplace/actions/service-mesh-interface-conformance-with-meshery)
 
 This methodology automates the synchronization of your actual infrastructure state with the desired state defined in your Git repository. Meshery enables GitOps by offering a comprehensive view of your infrastructure, allowing you to verify workload designs and Kubernetes cluster configurations before merging pull requests.
@@ -56,4 +56,4 @@ GitHub Actions provides a variety of events that can trigger workflows, allowing
 
 You can create your own performance profiles to run repeatable tests with Meshery. You can configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event. A sample configuration of the action is shown below.
 
-Read more about the Service Mesh Performance GitHub Action in the [Meshery documentation](https://docs.meshery.io/guides/gitops-with-meshery). [See action in GitHub Marketplace](https://github.com/marketplace/actions/performance-testing-with-meshery)
+Read more about the Service Mesh Performance GitHub Action in the [Meshery documentation](https://docs.meshery.io/guides/infrastructure-management/gitops-with-meshery). [See action in GitHub Marketplace](https://github.com/marketplace/actions/performance-testing-with-meshery)
