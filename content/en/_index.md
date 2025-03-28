@@ -69,8 +69,8 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 <div class="playground-card grow-1">
 <a href="https://cloud.layer5.io/academy/challenges">
   <div class="landing-card">
-    <div class= "playground-section challanges-logo">
-      <span class="landing-card-title">Challanges</span>
+    <div class= "playground-section challenges-logo">
+      <span class="landing-card-title">Challenges</span>
       <p>Accept the challenge. Learn CNCF projects by taking and completing time-based, hands-on labs. Complete your challenge quickly and you might be this month's CNCF Challenger!</p>
     </div>
   </div>
