@@ -65,19 +65,28 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </a></div>
 </div>
 
-<div class="handbook-card">
-<a href="https://layer5.io/community/handbook">
-    <div class= "handbook-section landing-card">
-      <div class= "landing-card-text">
-        <span class="landing-card-title">Community Handbook</span>
-        <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
-      </div>
-      <div class= "handbook-image">
-        <img src="images/landing/handbook.png" alt="Community Handbook Image" />
-      </div>
+<div class="flex-row gap-20px">
+<div class="playground-card grow-1">
+<a href="https://cloud.layer5.io/academy/challenges">
+  <div class="landing-card">
+    <div class= "playground-section challanges-logo">
+      <span class="landing-card-title">Challanges</span>
+      <p>Accept the challenge. Learn CNCF projects by taking and completing time-based, hands-on labs. Complete your challenge quickly and you might be this month's CNCF Challenger!</p>
     </div>
-</a>
+  </div>
+</a></div>
+
+<div class="catalog-card">
+<a href="https://cloud.layer5.io/academy/learning-paths">
+  <div class="landing-card">
+    <div class= "catalog-section learning-path-logo">
+      <span class="landing-card-title">Learning Paths</span>
+      <p>Learning Paths offer a structured approach to learning, combining theoretical cloud native knowledge with hands-on, practical experience.</p>
+    </div>
+  </div>
+</a></div>
 </div>
+
 </div>
 
 <div class="forum-card">

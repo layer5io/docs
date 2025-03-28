@@ -78,6 +78,13 @@
     background-size: 50%;
     min-height: 240px;
   }
+  &.challanges-logo {
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/challanges.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    min-height: 240px;
+  }
   display: flex;
   flex-direction: column;
   justify-content: top;
@@ -89,6 +96,13 @@
 .catalog-section {
   &.catalog-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/catalog.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    min-height: 240px;
+  }
+  &.learning-path-logo{
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/learning-path.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
