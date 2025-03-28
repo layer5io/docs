@@ -45,11 +45,11 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 <div class="gap-20px flex-col">
 <div class="flex-row gap-20px">
 <div class="playground-card grow-1">
-<a href="https://playground.meshery.io">
+<a href="https://kanvas.new">
   <div class="landing-card">
     <div class= "playground-section playground-logo">
-      <span class="landing-card-title">Meshery playground</span>
-      <p>Use Meshery Playground to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
+      <span class="landing-card-title">Kanvas</span>
+      <p>Use Kanvas to explore a new way of DevOps - visual and collaborative configuration management for your infrastructure.</p>
     </div>
   </div>
 </a></div>
@@ -58,7 +58,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 <a href="https://cloud.layer5.io/catalog">
   <div class="landing-card">
     <div class= "catalog-section catalog-logo">
-      <span class="landing-card-title">Meshery Catalog</span>
+      <span class="landing-card-title">Cloud Catalog</span>
       <p>Discover top-quality cloud native services for your infrastructure with the Cloud Native Catalog. Discover best practices and upgrade your Kubernetes management practices.</p>
     </div>
   </div>
