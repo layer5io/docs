@@ -35,13 +35,13 @@ Enter the required information for your model:
 - **Model Name:** Should be in lowercase with hyphens. For example, cert-manager.
 - **Display Name:** How you want your model to be named. For example, Cert Manager.
 
-[![registry generate model name](/assets/img/registry/url-import-model-name.png)](/assets/img/registry/url-import-model-name.png)
+<img src="./model-details.png" alt="model detail step" width="600" style="margin-bottom: 25px;">
 
 #### 3. Set Model Categorization
 
 Choose appropriate category and subcategory for your model from the dropdown menus. If your model doesn't fit existing categories, select "Uncategorized". This helps organize models in the registry and makes them easier to find.
 
-[![registry generate model categorization](/assets/img/registry/url-import-category.png)](/assets/img/registry/url-import-category.png)
+<img src="./model-category.png" alt="model category step" width="600" style="margin-bottom: 25px;">
 
 #### 4. Configure Model Styling
 
@@ -53,35 +53,38 @@ Customize your model's appearance:
 
 Note: If you don't provide custom styling, Meshery's default values will be used. You can change these later in the model definition.
 
-[![registry generate model styling](/assets/img/registry/url-import-model-styling.png)](/assets/img/registry/url-import-model-styling.png)
+<img src="./model-styling.png" alt="model styling step" width="600" style="margin-bottom: 25px;">
 
 #### 5. Provide Source Location
 
 You can provide either a GitHub repository URL or an ArtifactHub package URL as your source:
 
-**For GitHub repositories:**
-Enter a URL in the format: `git://github.com/[organization or username]/[repository]/[branch]/path/to/crds`
-For example: `git://github.com/cert-manager/cert-manager/master/deploy/crds`
+- **For GitHub repositories:**
+  Enter a URL in the format: `git://github.com/[organization or username]/[repository]/[branch]/path/to/crds`.
+  For example: `git://github.com/cert-manager/cert-manager/master/deploy/crds`
 
-**For ArtifactHub packages:**
-Enter a URL in the format: `https://artifacthub.io/packages/search?ts_query_web={model-name}`
+- **For ArtifactHub packages:**
+  Enter a URL in the format: `https://artifacthub.io/packages/search?ts_query_web={model-name}`
 
 **Pro tip:** Check the `sourceURL` column in the [Meshery Integration Sheet](https://docs.google.com/spreadsheets/d/1DZHnzxYWOlJ69Oguz4LkRVTFM79kC2tuvdwizOJmeMw) and try one of the listed sources.
 
-[![registry generate model source selection](/assets/img/registry/url-import-github-url.png)](/assets/img/registry/url-import-github-url.png)
+<img src="./model-source.png" alt="model source step" width="600" style="margin-bottom: 25px;">
 
 #### 6. Additional Settings
 
-Before finishing, you can:
+In this step you can specify if the model is for visual annotation only
 
-- Choose to register the model immediately for instant availability in Meshery instance.
-- Specify if the model is for visual annotation only
+> **Visual Annotation Models**
+>
+> When a model is marked for visual annotation only, it means the model will be used purely for visualization and diagramming purposes within Meshery's interface, rather than for actual infrastructure management.
 
-{% include alert.html type="light" title="Visual Annotation Models" content="When a model is marked for visual annotation only, it means the model will be used purely for visualization and diagramming purposes within Meshery's interface, rather than for actual infrastructure management." %}
+<img src="./model-additional.png" alt="model additional step" width="600" style="margin-bottom: 25px;">
 
-[![registry generate model additional settings](/assets/img/registry/url-import-model-additional-settings.png)](/assets/img/registry/url-import-model-additional-settings.png)
+#### 7. Finalize and Generate
 
-After completing these steps, click "Finish" to generate your model. Once generated, you can find your model in the Registry section (if you checked "Register Model Immediately") else it'll download the generated model in an archive, ready for use in your Meshery environment.
+Now in this step you can verify all the model details you provided. If everything looks good, you can click the "Generate" button and it will start generating your model. During generation, Meshery will process the source information and create the appropriate model components. If you want to make any changes before generation, you can go back to the previous steps using the navigation buttons and edit the details as needed.
+
+<img src="./model-fianlize.png" alt="model finalize step" width="600" style="margin-bottom: 25px;">
 
 ## Importing a Model
 
