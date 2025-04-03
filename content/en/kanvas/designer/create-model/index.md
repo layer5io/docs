@@ -35,7 +35,7 @@ Enter the required information for your model:
 - **Model Name:** Should be in lowercase with hyphens. For example, cert-manager.
 - **Display Name:** How you want your model to be named. For example, Cert Manager.
 
-<img src="./model-details.png" alt="model detail step" width="600" style="margin-bottom: 25px;">
+    <img src="./model-details.png" alt="model detail step" width="600" style="margin-bottom: 25px;">
 
 #### 3. Set Model Categorization
 
@@ -53,7 +53,7 @@ Customize your model's appearance:
 
 Note: If you don't provide custom styling, Meshery's default values will be used. You can change these later in the model definition.
 
-<img src="./model-styling.png" alt="model styling step" width="600" style="margin-bottom: 25px;">
+  <img src="./model-styling.png" alt="model styling step" width="600" style="margin-bottom: 25px;">
 
 #### 5. Provide Source Location
 
@@ -66,19 +66,19 @@ You can provide either a GitHub repository URL or an ArtifactHub package URL as 
 - **For ArtifactHub packages:**
   Enter a URL in the format: `https://artifacthub.io/packages/search?ts_query_web={model-name}`
 
-**Pro tip:** Check the `sourceURL` column in the [Meshery Integration Sheet](https://docs.google.com/spreadsheets/d/1DZHnzxYWOlJ69Oguz4LkRVTFM79kC2tuvdwizOJmeMw) and try one of the listed sources.
+    <img src="./model-source.png" alt="model source step" width="600" style="margin-bottom: 25px;">
 
-<img src="./model-source.png" alt="model source step" width="600" style="margin-bottom: 25px;">
+  **Pro tip:** Check the `sourceURL` column in the [Meshery Integration Sheet](https://docs.google.com/spreadsheets/d/1DZHnzxYWOlJ69Oguz4LkRVTFM79kC2tuvdwizOJmeMw) and try one of the listed sources.
 
 #### 6. Additional Settings
 
 In this step you can specify if the model is for visual annotation only
 
+<img src="./model-additional.png" alt="model additional step" width="600" style="margin-bottom: 25px;">
+
 > **Visual Annotation Models**
 >
 > When a model is marked for visual annotation only, it means the model will be used purely for visualization and diagramming purposes within Meshery's interface, rather than for actual infrastructure management.
-
-<img src="./model-additional.png" alt="model additional step" width="600" style="margin-bottom: 25px;">
 
 #### 7. Finalize and Generate
 
@@ -98,25 +98,25 @@ You can access import models near creating models in the Kanvas Designer. Click 
 
 Select a local file to import. Supported formats include `.tar`, `.tar.gz`, and `.tgz`. For more details on the file structure you can export our existing models from registry.
 
-1. Select the **File Import** option.
+1.  Select the **File Import** option.
 
-<img src="./file-import.png" alt="File import model" width="600" style="margin-bottom: 25px;">
+    <img src="./file-import.png" alt="File import model" width="600" style="margin-bottom: 25px;">
 
-2. Click on **File Broswer** button to select a local file.
-3. Click the **Import** button to import the model.
-4. New generated model will be appear in either shape or component picker.
+2.  Click on **File Broswer** button to select a local file.
+3.  Click the **Import** button to import the model.
+4.  New generated model will be appear in either shape or component picker.
 
 ### Importing a Model from a URL:
 
 Enter the URL of the model you want to import. A direct URL to a single model file, for example: https://raw.githubusercontent.com/your-model-file.tar. Supported formats include `.tar`, `.tar.gz`, and `.tgz`.
 
-1. Select the **URL Import** option.
+1.  Select the **URL Import** option.
 
-<img src="./url-import.png" alt="URL import model" width="600" style="margin-bottom: 25px;">
+      <img src="./url-import.png" alt="URL import model" width="600" style="margin-bottom: 25px;">
 
-2. Enter the URL of the model you want to import.
-3. Click the **Import** button to import the model.
-4. New generated model will be appear in either shape or component picker.
+2.  Enter the URL of the model you want to import.
+3.  Click the **Import** button to import the model.
+4.  New generated model will be appear in either shape or component picker.
 
 ### Importing a Model from CSV:
 
@@ -133,10 +133,14 @@ The CSV Import feature allows you to generate models in Meshery by providing tem
 
    **Pro tip:** Look at existing models in the [Meshery Integration Sheet](https://docs.google.com/spreadsheets/d/1DZHnzxYWOlJ69Oguz4LkRVTFM79kC2tuvdwizOJmeMw) to understand how to structure your CSV files effectively.
 
+    <img src="./model-csv.png" alt="upload model csv step" width="600" style="margin-bottom: 25px;">
+
 3. Upload Models, Components, and Relationships CSV:
 
    - Click the "Choose File" button to select your respective CSV files from your local machine.
    - Ensure that you upload the Model CSV first, followed by the Components CSV, and finally the Relationships CSV.
+
+    <img src="./relationship-csv.png" alt="relationship model csv step" width="600" style="margin-bottom: 25px;">
 
 4. Click the "Import" button to generate your model based on the provided CSV files.
 5. The model will be appear in either shape or component picker.
