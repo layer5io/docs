@@ -18,13 +18,13 @@ Meshery Components are the building blocks of a model. Each component represents
 
 ## Creating your first Meshery Model
 
-The following instructions are a no-fluff guide to creating your own Meshery Models quickly. For more detailed information, see the [Contributing to Models](/project/contributing/contributing-models) documentation.
+The following instructions are a no-fluff guide to creating your own Meshery Models quickly.
 
-The URL Import feature allows you to generate models in Meshery by providing URLs to source repositories or package registries. Here's how to use it:
+The create model wizard allows you to generate models in Meshery by providing URLs to source repositories or package registries. Here's how to use it:
 
 #### 1. Access the Model Generation Interface
 
-Navigate to Kanvas [Designer](https://playground.meshery.io/extension/meshmap). From bottom dock click on shape or component tab. Click the "Create Model" icon to begin creating a new model.
+Navigate to Kanvas [Designer](https://playground.meshery.io/extension/meshmap) mode. From bottom dock click on shape or component tab. Click the **Create Model** icon to begin creating a new model.
 
 <img src="./create-model.png" alt="kanvas model generate" width="600" style="margin-bottom: 25px;">
 
@@ -39,7 +39,7 @@ Enter the required information for your model:
 
 #### 3. Set Model Categorization
 
-Choose appropriate category and subcategory for your model from the dropdown menus. If your model doesn't fit existing categories, select "Uncategorized". This helps organize models in the registry and makes them easier to find.
+Choose appropriate category and subcategory for your model from the dropdown menus. If your model doesn't fit existing categories, select **Uncategorized**. This helps organize models in the registry and makes them easier to find.
 
 <img src="./model-category.png" alt="model category step" width="600" style="margin-bottom: 25px;">
 
@@ -82,17 +82,25 @@ In this step you can specify if the model is for visual annotation only
 
 #### 7. Finalize and Generate
 
-Now in this step you can verify all the model details you provided. If everything looks good, you can click the "Generate" button and it will start generating your model. During generation, Meshery will process the source information and create the appropriate model components. If you want to make any changes before generation, you can go back to the previous steps using the navigation buttons and edit the details as needed.
+Now in this step you can verify all the model details you provided. If everything looks good, you can click the **Generate** button and it will start generating your model. During generation, Meshery will process the source information and create the appropriate model components. If you want to make any changes before generation, you can go back to the previous steps using the navigation buttons and edit the details as needed.
 
 <img src="./model-fianlize.png" alt="model finalize step" width="600" style="margin-bottom: 25px;">
 
+#### 8. Model Generation Status
+
+Once the model generation is complete, you will see a success message indicating that your model has been successfully generated. You can also view all of the components and relationships that were created during the generation process.
+
+<img src="./finish-step.png" alt="model finalize step" width="600" style="margin-bottom: 25px;">
+
+#### 9. Accessing the Generated Model
+
+After the model generation is complete, you can access the generated model in the Kanvas Designer from the shape or component picker. The generated model will be available within given category and subcategory you selected earlier or you can search for it using the search bar. You can drag and drop the model onto the kanvas to start using it in your designs.
+
+<img src="./generated-model.png" alt="generated model status" width="600" style="margin-bottom: 25px;">
+
 ## Importing a Model
 
-You can import a model from a URL or a local file. To import a model, click on the "Import Model" button in the Kanvas Designer. You can then provide the URL or select a local file to import.
-
-Once the model is imported, you can view and edit it in the Kanvas Designer. You can also export the model to a local file or a URL.
-
-You can access import models near creating models in the Kanvas Designer. Click on the "Import Model" button to begin.
+There are several ways to import a model into Meshery. You can import a model from a file, a URL, or CSV files. To import a model, click on the **Import Model** button in the Kanvas Designer. You can find the import models button located next to the create model icon button in the bottom dock of the Kanvas Designer interface.
 
 ### Importing a Model from a File:
 
@@ -124,8 +132,9 @@ Upload separate CSV files for model definitions, components, and their relations
 
 The CSV Import feature allows you to generate models in Meshery by providing template CSV files that define your model structure, components, and relationships. Here's a comprehensive guide on how to use this feature:
 
-1. Select the "Import from CSV" option.
-2. Prepare your CSV files: You'll need three essential CSV files to define your model. You can download the template CSV files from the download icon in the top right corner of model. Each file serves a specific purpose:
+1. Select the **Import from CSV** option.
+   <img src="./csv-import.png" alt="select csv" width="600" style="margin-bottom: 25px;">
+2. **Prepare your CSV files:** You'll need three essential CSV files to define your model. You can download the template CSV files from the download icon in the top right corner of model. Each file serves a specific purpose:
 
    - **Model CSV:** Defines your model's core metadata, including name, version, and general properties.
    - **Components CSV:** Describes the individual components that make up your model.
@@ -137,13 +146,18 @@ The CSV Import feature allows you to generate models in Meshery by providing tem
 
 3. Upload Models, Components, and Relationships CSV:
 
-   - Click the "Choose File" button to select your respective CSV files from your local machine.
+   - Click the **Choose File** button to select your respective CSV files from your local machine.
    - Ensure that you upload the Model CSV first, followed by the Components CSV, and finally the Relationships CSV.
 
     <img src="./relationship-csv.png" alt="relationship model csv step" width="600" style="margin-bottom: 25px;">
 
-4. Click the "Import" button to generate your model based on the provided CSV files.
-5. The model will be appear in either shape or component picker.
+4. Click the **Generate** button to generate your model based on the provided CSV files.
+
+5. Once the model generation is complete, you will see a success message indicating that your model has been successfully generated. You can also view all of the components and relationships that were created during the generation process.
+
+   <img src="./final-csv-step.png" alt="model finalize step" width="600" style="margin-bottom: 25px;">
+
+6. After the model generation is complete, you can access the generated model in the Kanvas Designer from the shape or component picker. The generated model will be available within the given category and subcategory you selected earlier or you can search for it using the search bar. You can drag and drop the model onto the kanvas to start using it in your designs.
 
 **Congratulations! You have successfully created a new model.**
 
