@@ -110,7 +110,7 @@ Select a local file to import. Supported formats include `.tar`, `.tar.gz`, and 
 
     <img src="./file-import.png" alt="File import model" width="600" style="margin-bottom: 25px;">
 
-2.  Click on **File Broswer** button to select a local file.
+2.  Click on **File Browser** button to select a local file.
 3.  Click the **Import** button to import the model.
 4.  New generated model will be appear in either shape or component picker.
 
