@@ -1,13 +1,13 @@
 ---
 title: Create Model
 description: >
-  This guide will walk you through the process of creating a new model in Meshery.
+  This guide will walk you through the process of creating a new model in kanvas designer mode.
 weight: 3
 categories: [Designer]
 tags: [designs, relationships, components, models]
 format: [video]
 aliases:
-  - /meshmap/designer/create-model
+  - /meshmap/concepts/create-model
 ---
 
 ## Overview
