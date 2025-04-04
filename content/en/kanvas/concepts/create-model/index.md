@@ -84,7 +84,7 @@ In this step you can specify if the model is for visual annotation only
 
 Now in this step you can verify all the model details you provided. If everything looks good, you can click the **Generate** button and it will start generating your model. During generation, Meshery will process the source information and create the appropriate model components. If you want to make any changes before generation, you can go back to the previous steps using the navigation buttons and edit the details as needed.
 
-<img src="./model-fianlize.png" alt="model finalize step" width="600" style="margin-bottom: 25px;">
+<img src="./model-finalize.png" alt="model finalize step" width="600" style="margin-bottom: 25px;">
 
 #### 8. Model Generation Status
 
