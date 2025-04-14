@@ -73,6 +73,11 @@
 .playground-section {
   &.playground-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/meshery-light-icon.svg");
+  }
+  &.challenges-logo {
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/challenges.svg");
+  }
+    &.playground-logo, &.challanges-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -89,6 +94,11 @@
 .catalog-section {
   &.catalog-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/catalog.svg");
+  }
+  &.learning-path-logo{
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/learning-path.svg");
+  }
+  &.catalog-logo, &.learning-path-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -212,3 +222,4 @@
     display: none;
   }
 }
+
