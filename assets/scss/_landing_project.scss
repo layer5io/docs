@@ -73,13 +73,11 @@
 .playground-section {
   &.playground-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/meshery-light-icon.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
-    min-height: 240px;
   }
   &.challenges-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/challenges.svg");
+  }
+    &.playground-logo, &.challanges-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
