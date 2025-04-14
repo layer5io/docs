@@ -94,13 +94,11 @@
 .catalog-section {
   &.catalog-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/catalog.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
-    min-height: 240px;
   }
   &.learning-path-logo{
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/learning-path.svg");
+  }
+  &.catalog-logo, &.learning-path-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -224,3 +222,4 @@
     display: none;
   }
 }
+
