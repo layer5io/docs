@@ -85,7 +85,10 @@ When a user deletes their account, the following behaviors apply:
 - The new account:
   - Will not automatically regain access to resources linked to the deleted account.
   - May, in rare cases, display inconsistent profile data (e.g., old display name in design attribution).
-- This is a known issue and will be addressed through UUID-based identity linking in the future.
+
+{{< alert type="info" >}}
+This is a known issue. Future versions of Layer5 Cloud will address it through UUID-based identity linking.
+{{< /alert >}}
 
 **6. Deployed Designs**
 
