@@ -19,7 +19,7 @@ To export your Kanvas design, follow these steps:
 
 1. **Access Export Options**: Within the Kanvas Designer, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.
 
-   ![Export Icon](./export-modal.png)
+   ![Export Icon](./export-modal-new.png)
 
 2. **Select Export Format**: The export modal will appear, offering various export formats:
 
@@ -34,6 +34,12 @@ Exporting your design as a design file provides you with a YAML file representin
 ## Exporting as an OCI Image
 
 Exporting your design as an OCI image allows you to package your design as a container image. This image can be shared, stored, or retrieved from any container registry, like Docker Hub.
+
+## Exporting as a Helm Chart
+
+Exporting your design as a Helm chart allows you to package your Meshery design for use with Helm, making it easy to deploy and share your design as a reusable Kubernetes package.
+
+**Lossy Export:** When exporting as a Helm chart, Meshery-specific information (such as visual arrangement, comments, and other metadata) is not included. Only the core Kubernetes resource definitions are preserved.
 
 ## Exporting as a PNG Image
 
