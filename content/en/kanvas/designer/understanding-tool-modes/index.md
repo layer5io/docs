@@ -84,9 +84,11 @@ Cursor style: “custom(pencil)”
 1. *In the future, the canvas moves with the pen/pencil as they near the edge of the viewport.*  
 2. *In the future, the scroll wheel will behave as it normally does in default mode.* -->
 
-#### Connector Tool Mode
+#### Pen Tool Mode
 
-The Connector tool operates as a creator of annotation relationships. Note that the connector tool has two behaviors depending upon the context in which you initiate the connection.
+The Pen tool operates as a creator of annotation edges. Note that the pen tool has two behaviors depending upon the context in which you initiate the connection.
+
+The Pen Tool Mode is activated using **CMD+E**.
 
 {{< alert title="Connector Behaviors">}}
 **Component-connect Behavior**: When you click an empty spot on the canvas, and drag to another empty spot on the canvas, you get a **joint** (aka a terminal node) from which you can create new connections as well as new edge relationships.
@@ -103,7 +105,7 @@ The Connector tool operates as a creator of annotation relationships. Note that 
 
 <img style="width:250px;" src="./tool-mode-placeholder.svg" />
 
-Cursor style: “connector (pen)” (*might* change in the future)
+Cursor style: “pen” 
 
 **Mouse down and drag:** Nothing
 
@@ -113,17 +115,23 @@ Creating connections happens in three phases.
 
 <img style="width:250px;" src="./tool-mode-placeholder.svg" />
 
-Cursor style: “connector (pen)”
+Cursor style: “pen”
 1. **Click and move:** if a connection was initiated, moves the ghost edge around else does nothing.
 
 <img style="width:250px;" src="./tool-mode-placeholder.svg" />
 
-Cursor style: “connector (pen)” and the annotation edge following the mouse around.
+Cursor style: “pen” and the annotation edge following the mouse around.
 1. **Click while connecting**: Establish and render connection.
 
 <img style="width:250px;" src="./tool-mode-placeholder.svg" />
 
-Cursor style: “connector (pen)”
+Cursor style: “pen”
+
+**How to Draw and Connect Lines**<br>
+<img style="width:500px;" src="./draw_line.gif" />
+
+**How to customize nodes at the ends of connections**<br>
+<img style="width:500px;" src="./customize_end.gif" />
 
 <!-- 
 *Developer notes:*
