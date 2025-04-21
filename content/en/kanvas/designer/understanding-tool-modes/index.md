@@ -86,7 +86,7 @@ Cursor style: “custom(pencil)”
 
 #### Pen Tool Mode
 
-The Pen tool operates as a creator of annotation relationships. Note that the pen tool has two behaviors depending upon the context in which you initiate the connection.
+The Pen tool operates as a creator of annotation edges. Note that the pen tool has two behaviors depending upon the context in which you initiate the connection.
 
 The Pen Tool Mode is activated using **CMD+E**.
 
