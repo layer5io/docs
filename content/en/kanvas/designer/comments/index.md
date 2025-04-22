@@ -12,28 +12,31 @@ aliases:
 
 ## Overview
 
-Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving comments for reference later.
+Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
 <figure>
-  <img src="./kanvas-comment.png" alt="Comments in Designer" width="600">
+  <img src="./kanvas-comment.png" alt="Comments in Designer" width="600px" />
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
-## Three Ways to Add Comments
+## Commenting on a Design
 
-You can add comments in three convenient ways:
+You can add comments in a number of convenient ways. The following methods are available:
 
-### Commenting via the Activity Toolbar
+1. **Activity Toolbar**: Click on the comment icon in the toolbar to open a comment instantly.
+1. **Context-Click in Canvas**: Context-click on any area of your canvas, and from the contextual menu, select "Add a Comment".
+1. **Drag-and-Drop from the Dock**: To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
+1. **Hotkey**: Press <button class="kbc-button kbc-button-xs">⌘/CTL + M</button> to add a comment into your design.
 
 Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
 
-<img src="./comment-dock.png" alt="Create a comment from the dock" width="600"/>
+<img src="./comment-dock.png" alt="Create a comment from the dock" width="600px" />
 
 ### Commenting via Context-Click in Canvas
 
 Context-click on any area of your canvas, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - in context.
 
-<img src="./comment-canvas.png" alt="Comment by context-clicking on canvas" width="600" style="margin-bottom: 25px;">
+<img src="./comment-canvas.png" alt="Comment by context-clicking on canvas" width="600px" style="margin-bottom: 25px;">
 
 ### Commenting via drag-and-drop from the Dock
 
@@ -45,7 +48,7 @@ To access comment from whiteboarding doc make sure your whiteboarding feature is
 
 ## Tips for using Comments as a Design Review Tool
 
-<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="600" style="margin-bottom: 25px;">
+<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="600px" style="margin-bottom: 25px;">
 
 ### Initiate Threads
 
@@ -77,7 +80,7 @@ Customize your [notification preferences](https://docs.layer5.io/cloud/identity/
 
 After a comment has been resolved, there might be situations where you need to reopen the discussion. Unresolving a comment allows you to reinitiate conversations, address additional concerns, or make further changes. Follow the steps below to unresolve a comment:
 
-<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600">
+<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600px">
 
 ### Mute Comment Notifications
 
