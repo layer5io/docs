@@ -1,5 +1,5 @@
 ---
-title: API Endpoints
+title: REST API
 description: >
   Low-level ReST API reference for extending Layer5 Cloud.
 weight: 1
