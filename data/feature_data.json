@@ -56,7 +56,7 @@
     "feature": "Define new components, relationships, and policies as needed. Import/export your custom models as OCI images.",
     "subscriptionTier": "Free",
     "comparisonTiers": {
-      "free": true,
+      "free": false,
       "teamDesigner": true,
       "teamOperator": true,
       "enterprise": true
