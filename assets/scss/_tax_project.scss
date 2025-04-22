@@ -107,14 +107,15 @@
     margin-left: 0.6em;
     text-align: center;
     border-radius: 1em;
-    background-color: $white;
+    background-color: $gray-900;
+    color: $light;
   }
   
   .taxonomy-term {
-    background: $gray-200;
+    background: $gray-600;
     border-width: 0;
     border-radius: 0 3px 3px 0;
-    color: $primary;
+    color: $gray-900;
     display: inline-block;
     font-size: 1em;
     line-height: 1.5em;
@@ -131,10 +132,6 @@
     &:hover {
       background-color: $primary;
       color: $white;
-  
-      .taxonomy-count {
-        color: $dark !important;
-      }
     }
   
     &:hover::before {
@@ -193,7 +190,7 @@
       font-size: 0.75em;
     }
   
-    .taxonomy-term:hover .taxonomy-count {
+    .taxonomy-term:hover {
       color: $link-color !important;
     }
   }
@@ -251,10 +248,7 @@
       &:hover {
         background: none;
         color: $link-color;
-  
-        .taxonomy-count {
-          color: $dark !important;
-        }
+
       }
   
       &:hover::before {
