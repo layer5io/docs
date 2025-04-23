@@ -117,6 +117,7 @@ Note:
 ## Frequently Asked Questions
 
 **Q. Can I re-import a Helm Chart or Kubernetes manifest into Meshery for editing?** 
+
 You can import the resources, but design-time metadata (layout, annotations) is lost, so the graph will not reappear as originally designed.
 
 **Q. What gets removed in a lossy export?**  
