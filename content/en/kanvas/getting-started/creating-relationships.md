@@ -9,234 +9,96 @@ draft: true
 aliases:
   - /meshmap/getting-started/creating-relationships
 ---
+# Creating Relationships
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+## What are Relationships
 
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure's architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.
 
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+Meshery recognizes different kinds of relationships:
+- **Hierarchical Relationships**: Parent-child relationships showing clear lineage
+- **Edge Relationships**: Connections depicting how components interact with each other
+- **TagSets Relationships**: Connections based on shared Labels or Annotations
 
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
+## Creating Relationships in Kanvas
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
+Kanvas provides an interactive interface to create and visualize relationships in your designs. Different types of relationships can be initiated in various ways:
 
-## First Header 2
+### Creating Edge Relationships
 
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
+Edge relationships represent connections between components that interact with each other. These include network connections, bindings, permissions, and firewall rules. To create an edge relationship:
 
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
+1. Single-tap on a component to open the edge picker
+2. Select the desired relationship type from the edge picker
+3. Drag the connection line to a compatible target component
+4. Release to establish the relationship
 
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
+Kanvas will highlight compatible target components as you drag the connection line, making it easier to identify potential relationships.
 
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
+### Creating Hierarchical Parent-Child Relationships
 
+Hierarchical relationships represent parent-child connections between components. To create a hierarchical relationship:
 
-## Second Header 2
+1. Simply drag a child component and drop it inside the parent component
+2. The parent-child relationship will be automatically established
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+For example, dragging a Kubernetes Pod into a Namespace creates a hierarchical relationship where the Namespace is the parent of the Pod.
 
-### Header 3
+### Creating Inventory Wallet Relationships 
 
-```
-This is a code block following a header.
-```
+Similar to Parent-Child relationships, Inventory Wallet relationships represent a relationship where a component is directly attached to another component, such as a sidecar container or WASM filter. These are visualized as a badge at the bottom right corner of the parent component with the number of inventory items displayed as a label.
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
+To create an Inventory Wallet relationship:
+1. Drag the attachment component (like a sidecar) to the host component
+2. After successful creation, a purple badge will appear on the host component
+3. Clicking on this badge reveals all inventory items
 
-#### Header 4
+### Creating MatchLabel Relationships
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+MatchLabel relationships (also referred to as TagSets) are automatically created when you input matching labels in the configuration for components. These relationships represent connections between components that share the same Labels or Annotations.
 
-##### Header 5
+For example, if you add the same label `app: frontend` to both a Service and a Deployment, Kanvas will automatically establish a MatchLabel relationship between them and visualize it as a tagset around the matching components.
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+## Keeping Configuration in Sync
 
-###### Header 6
+Kanvas leverages Meshery's evaluation engine to maintain dependencies between related components. When components are bound by a relationship, changes in one component can automatically update the configuration of related components.
 
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
+For example, if you create a network relationship between a Service and a Deployment, updating the port in the Service will automatically reflect in the container port configuration of the Deployment. This eliminates the need to manually find and update configurations across multiple components.
 
-----------------
+The direction of syncronisation depends on the kind of relationships . for parent child relationships implicated configuration of child is updated to match with parent ( eg the value of namespace will be set to name of the parent namespace) . for edge relationships the configuration of the target will be syncronised with the source component eg the port number inside the deployment will be mutated to match the port number in service and similarly for inventory relationships the configuration of parent will get mutated to syncronise with the inventory item 
 
-There's a horizontal rule above and below this.
 
-----------------
+## Deleting Relationships 
 
-Here is an unordered list:
+Similar to creation, relationships of different kinds can be deleted in different ways:
 
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
+1. **Edge Relationships**: Can be deleted by clicking the delete button on the edge menu which can be opened by tapping on the edge
+2. **Hierarchical Parent-Child Relationships**: Can be deleted by dragging the child component out of the parent 
+3. **Inventory Wallet Relationships**: Can be deleted by clicking the cross icon on the wallet item (coming soon)
+4. **MatchLabel Relationships**: Can be deleted by right-clicking on the tagset and selecting delete (coming soon)
 
-And an ordered list:
+## What to Expect from Relationships
 
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
+Relationships help define semantic connections and dependencies between components, showing how one component can influence or modify others. Kanvas relationship visualization makes it easy to understand complex infrastructure details, such as:
 
-And an unordered task list:
+- How traffic flows through services and components (using network relationships)
+- How resources are sandboxed or provisioned (using parent-child relationships)
+- Which components affect or enhance other components through volume mounts, permissions, etc.
 
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
+## Managing Evaluation/Visualization for Relationships
 
-And a "mixed" task list:
+Individual relationship kinds can be toggled on or off from the relationships section of the designs. When a relationship is toggled off:
 
-- [ ] Pack bags
-- ?
-- [ ] Travel!
+- It won't be considered for evaluation or visualization
+- It will no longer be identified, validated, synchronized, or visualized in your design
 
-And a nested list:
+This gives you control over which types of relationships you want to focus on in your infrastructure design.
 
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
+## Benefits of Using Relationships
 
-Definition lists can be used with Markdown syntax. Definition headers are bold.
+- **Improved Visibility**: Clear visual representation of connections between components
+- **Enhanced Design**: Make informed decisions about component selection and placement
+- **Automated Configuration**: Relationship-driven actions automate configuration of components
+- **Increased Flexibility**: Use of selectors and operators provides flexibility in defining relationships
+- **Better Understanding**: Easily comprehend the overall structure and dependencies of your managed systems
 
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
