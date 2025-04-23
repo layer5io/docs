@@ -56,8 +56,11 @@ Similar to Parent-Child relationships, Inventory Wallet relationships represent 
 
 To create an Inventory Wallet relationship:
 1. Drag the attachment component (like a sidecar) to the host component
-2. After successful creation, a purple badge will appear on the host component
+2. After successful creation, a green badge will appear on the host component
 3. Clicking on this badge reveals all inventory items
+
+
+![Create Inventory Wallet Relationships](/kanvas/getting-started/images/relationships/create-inventory-wallet.gif)
 
 ### Creating MatchLabel Relationships
 
