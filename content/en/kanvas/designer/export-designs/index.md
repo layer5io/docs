@@ -128,3 +128,11 @@ Yes. After export, run `helm install <release> <chart.tgz>` or add it to a Helm 
 **Q. Should I use Helm Chart or OCI image for sharing?**  
 Use Helm if your consumers deploy via Helm; use OCI if you rely on container registries for versioning.
 
+**Q. Do I need to be logged in to export a design?**  
+No, login is not required. You can export as a guest user.
+
+**Q. Can I export someone else's published design?**  
+Yes. Any published design can be exported, not just your own.
+
+**Q. Where does the exported file go?**  
+After export, your browser will either prompt you to choose a save location or automatically download the file to your default downloads folder.
