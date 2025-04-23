@@ -32,7 +32,7 @@ Click on the comment icon in the toolbar to open a comment instantly. This is yo
   <figcaption>Create a comment from the Dock</figcaption>
 </figure>
 
-### Commenting via Context-Click
+### Commenting via context-click
 
 Context-click on any area of your design, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - *in context*.
 
@@ -45,11 +45,11 @@ Context-click on any area of your design, and from the contextual menu, select "
 
 Add comments to your design by clicking and dragging a new comment from your dock to any area of your design. If you don't see a dock, ensure that the dock feature is enabled. To toggle visibility of the dock, context-click anywhere on the canvas, choose Options and enable the Dock feature.
 
-### Commenting via Hotkey
+### Commenting via hotkey
 
 <button class="kbc-button kbc-button-xs">⌘/CTL + M</button> Add a comment into your design when you press this hotkey combination. After pressing the hotkey, a new comment will be displayed. You can move the new comment anywhere in your design.
 
-## Tips for using Comments as a Design Review Tool
+## Design review using comments
 
 <figure style="width:400px;">
   <img src="./conversation-screenshot.png" alt="Peer review using comments in Designer" />
@@ -74,8 +74,7 @@ Once revisions are complete, you can resolve the comment. This action closes the
 
 ### View Comment History
 
-After resolving a comment thread, you can access the comment history to review previous discussions and decisions.
-This is particularly useful for tracking changes and understanding the evolution of the design.
+After resolving a comment thread, you can access the comment history to review previous discussions and decisions. This is particularly useful for tracking changes and understanding the evolution of the design.
 
 <figure style="width:400px;">
   <img src="./comments-conversation.gif" alt="View comment history" />
