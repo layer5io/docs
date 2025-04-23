@@ -5,11 +5,10 @@ description: >
 weight: 4
 categories: [Designer]
 tags: [designs]
-draft: true
+draft: false
 aliases:
   - /meshmap/getting-started/creating-relationships
 ---
-# Creating Relationships
 
 ## What are Relationships
 
@@ -19,6 +18,8 @@ Meshery recognizes different kinds of relationships:
 - **Hierarchical Relationships**: Parent-child relationships showing clear lineage
 - **Edge Relationships**: Connections depicting how components interact with each other
 - **TagSets Relationships**: Connections based on shared Labels or Annotations
+
+👉 [Learn more about relationships](/kanvas/concepts/relationships/)
 
 ## Creating Relationships in Kanvas
 
@@ -35,6 +36,8 @@ Edge relationships represent connections between components that interact with e
 
 Kanvas will highlight compatible target components as you drag the connection line, making it easier to identify potential relationships.
 
+![Edge Network Relationships](/kanvas/getting-started/images/relationships/EdgeNetwork.gif)
+
 ### Creating Hierarchical Parent-Child Relationships
 
 Hierarchical relationships represent parent-child connections between components. To create a hierarchical relationship:
@@ -43,6 +46,9 @@ Hierarchical relationships represent parent-child connections between components
 2. The parent-child relationship will be automatically established
 
 For example, dragging a Kubernetes Pod into a Namespace creates a hierarchical relationship where the Namespace is the parent of the Pod.
+
+
+![Create Parent Child Relationships](/kanvas/getting-started/images/relationships/create-parent-child.gif)
 
 ### Creating Inventory Wallet Relationships 
 
@@ -59,6 +65,9 @@ MatchLabel relationships (also referred to as TagSets) are automatically created
 
 For example, if you add the same label `app: frontend` to both a Service and a Deployment, Kanvas will automatically establish a MatchLabel relationship between them and visualize it as a tagset around the matching components.
 
+
+![Create MatchLabel Relationships](/kanvas/getting-started/images/relationships/create-matchlabels.gif)
+
 ## Keeping Configuration in Sync
 
 Kanvas leverages Meshery's evaluation engine to maintain dependencies between related components. When components are bound by a relationship, changes in one component can automatically update the configuration of related components.
@@ -73,9 +82,16 @@ The direction of syncronisation depends on the kind of relationships . for paren
 Similar to creation, relationships of different kinds can be deleted in different ways:
 
 1. **Edge Relationships**: Can be deleted by clicking the delete button on the edge menu which can be opened by tapping on the edge
-2. **Hierarchical Parent-Child Relationships**: Can be deleted by dragging the child component out of the parent 
+
+![Delete Edge Relationships](/kanvas/getting-started/images/relationships/delete-edge.gif)
+
+2. **Hierarchical Parent-Child Relationships**: Can be deleted by dragging the child component out of the parent
+
+![Delete Parent Child Relationships](/kanvas/getting-started/images/relationships/delete-parent-child.gif)
+
+<!-- Not implemented yet
 3. **Inventory Wallet Relationships**: Can be deleted by clicking the cross icon on the wallet item (coming soon)
-4. **MatchLabel Relationships**: Can be deleted by right-clicking on the tagset and selecting delete (coming soon)
+4. **MatchLabel Relationships**: Can be deleted by right-clicking on the tagset and selecting delete (coming soon) -->
 
 ## What to Expect from Relationships
 
@@ -93,6 +109,9 @@ Individual relationship kinds can be toggled on or off from the relationships se
 - It will no longer be identified, validated, synchronized, or visualized in your design
 
 This gives you control over which types of relationships you want to focus on in your infrastructure design.
+
+
+![Relationships Layers Panel](/kanvas/getting-started/images/relationships/layers-panel-relationships.gif)
 
 ## Benefits of Using Relationships
 
