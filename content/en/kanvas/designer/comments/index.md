@@ -10,8 +10,6 @@ aliases:
   - /meshmap/designer/comments
 ---
 
-## Overview
-
 Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
 <figure style="width:400px;">
@@ -21,11 +19,12 @@ Kanvas's Designer offers enables you to place comments "inline" with your infras
 
 ## Commenting on a Design
 
-You can add comments in a number of convenient ways.
+You can add comments in a number of convenient ways. Since designs are public by default, you can add comments to your designs without having to share them first. This is particularly useful for gathering feedback from team members or stakeholders before finalizing the design.
 
 ### Commenting via the Dock
 
-Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your design.
+1. Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your design or first identifying where you want to place your comment.
+2. You can also create a comment by dragging and dropping the comment icon from the Dock to your design. This method allows you to place comments directly on specific elements or areas of your design.
 
 <figure style="width:400px;">
 <img src="./comment-dock.png" alt="Create a comment from the Dock" />
@@ -40,10 +39,6 @@ Context-click on any area of your design, and from the contextual menu, select "
 <img src="./comment-canvas.png" alt="Comment by context-clicking on your design" />
   <figcaption>Comment by context-clicking on your design</figcaption>
 </figure>
-
-### Commenting via drag-and-drop from the Dock
-
-Add comments to your design by clicking and dragging a new comment from your dock to any area of your design. If you don't see a dock, ensure that the dock feature is enabled. To toggle visibility of the dock, context-click anywhere on the canvas, choose Options and enable the Dock feature.
 
 ### Commenting via hotkey
 
