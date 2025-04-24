@@ -77,6 +77,8 @@ When you add design to a workspace, it signifies that all teams associated with 
 [Learn more about auditing the access permission within workspace](/cloud/spaces/workspaces/)
 
 {{< alert title="Note">}}
+
 - The 'Share' feature is currently in its beta phase, and we may introduce updates or improvements over time.
 - Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
+
 {{< /alert >}}
