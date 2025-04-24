@@ -64,11 +64,11 @@ You can share your design via link, for that revisit the "Share" modal and click
 
 This can be useful when you want to share design with multiple users without explicitly giving the access.
 
-## Granting access for Teams[^1]
+## Granting access to multiple users
 
-In an upcoming feature, Kanvas will introduce the ability to grant access to entire teams, simplify the process of collaboration and sharing within your organization. This feature will offer a convenient way to manage permissions for groups of users who are working together on projects or tasks.
+You can share your designs with many users at the same time, by granting access to any number of teams, which simplifies the process of sharing within your organization. This provides a convenient way to manage permissions for groups of users who are working together on projects or tasks.
 
-With this new capability, you'll be able to designate specific teams within your organization and grant them access to designs. Instead of individually assigning permissions to each member, you can simply assign permissions to the team as a whole, and manage access permission like view, comment and edit for team.
+Grant access to teams by assigning a team to a workspace. Instead of individually assigning permissions to each member, you can simply assign permissions to the team as a whole, and manage access permissions like view, comment, and edit for the team.
 
 **Understanding the Implications of adding a Design to a Workspace:**
 
@@ -80,5 +80,3 @@ When you add design to a workspace, it signifies that all teams associated with 
 - The 'Share' feature is currently in its beta phase, and we may introduce updates or improvements over time.
 - Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
 {{< /alert >}}
-
-[^1]: This feature is currently in development and will be available in the future.
