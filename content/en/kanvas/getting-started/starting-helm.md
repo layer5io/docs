@@ -22,7 +22,10 @@ Jump start your Kanvas design by importing your existing Helm Charts.
 
 ## Importing a Design
 
-Click the **Import Design** option under the _Designs_ tab in Kanvas.
+There are a few different ways to import a Helm chart into Kanvas.
+
+1. Drag and drop your Helm chart onto Kanvas. 
+1. Click the **Import Design** option under the _Designs_ tab in Kanvas.
 
 ![Import a Design](/kanvas/getting-started/images/2024-04-18_18-01.png)
 
