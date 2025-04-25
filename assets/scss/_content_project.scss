@@ -135,7 +135,11 @@ h6 {
     font-weight: $font-weight-bold;
   }
 
-  .footnotes,
+  .footnotes {
+    :target {
+      scroll-margin-top: 6rem;
+    }
+  }
   >.alert,
   >.highlight,
   >.lead,
