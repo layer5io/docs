@@ -12,12 +12,10 @@ aliases:
 
 ## Overview
 
-In Kanvas, you can share your designs or designs for which you have permission to share with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
+In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
-{{< alert title="Note">}}
-
-- You can share and use control access to manage views permissions and visibility also with same methods.
- 
+{{< alert title="Sharing Views">}}
+You can share and control access to [Views](/kanvas/operator/views) in the same fashion as you do for Designs.
 {{< /alert >}}
 
 ## Visibility
