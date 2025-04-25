@@ -16,15 +16,15 @@ Jump start your Kanvas design by importing your existing Helm Charts.
 
 ## Requirements
 
+- Access Kanvas at https://kanvas.new or request access from within your Layer5 Cloud account.
 - Access a Meshery Server. If you have not [deployed your own Meshery Server](https://docs.meshery.io/installation), you can use the _Meshery Playground_. If you don't have an account, sign up for free at [https://play.meshery.io](https://play.meshery.io).
-- Access to _Kanvas_. You can sign up for the beta at [https://layer5.io/cloud-native-management/kanvas](https://layer5.io/cloud-native-management/kanvas) or request access from within your Layer5 Cloud account.
-- One or more Helm chart packages in **.tgz** format.
+- One or more Helm charts in `.tgz`, `.tar`, `.tar.gz`, or OCI format.
 
 ## Importing a Design
 
 Click the **Import Design** option under the _Designs_ tab in Kanvas.
 
-![Copy of a Design](/kanvas/getting-started/images/2024-04-18_18-01.png)
+![Import a Design](/kanvas/getting-started/images/2024-04-18_18-01.png)
 
 Next, provide a name under Design File Name (1), set the _Design Type_ to Helm Chart and paste the URL (3) to the location of the Helm chart package in .tgz format.
 
