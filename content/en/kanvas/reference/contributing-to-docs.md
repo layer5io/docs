@@ -158,10 +158,10 @@ You can override the default styles and add new ones:
   Use the same file name as the theme does, and put the file in the same relative position.
   Hugo looks first at the file in the main project directories, if present, then at the files under the theme directory.
   For example, the Layer5 website's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html)
-  overrides the theme's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/themes/docsy/layouts/partials/navbar.html)
+  overrides the theme's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html)
 
 * You can update the Layer5 website's project variables in the [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
-  Values in that file override the [Docsy variables](https://github.com/layer5io/docs/blob/master/themes/docsy/assets/scss/_variables.scss).
+  Values in that file override the [Docsy variables](https://github.com/layer5io/docs/blob/master/assets/scss/_variables.scss).
   You can also use `_variables_project.scss` to specify your own values for any of the default [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
 
 * Custom styles [`_styles_project` file](https://github.com/layer5io/docs/blob/master/assets/scss/_styles_project.scss)
@@ -244,7 +244,7 @@ Useful Hugo docs:
 * [Shortcode templates](https://gohugo.io/templates/shortcode-templates/)
 * [Shortcodes](https://gohugo.io/content-management/shortcodes/)
 
-## Versioning of the docs
+<!-- ## Versioning of the docs
 
 For each stable release, we create a new branch for the relevant documentation.
 For example, the documentation for the v0.2 stable release is maintained in the [v0.2-branch](https://github.com/layer5io/docs/tree/v0.2-branch).
@@ -257,7 +257,7 @@ The versioned sites follow this convention:
 * `vXXX-YYY.docs.layer5.io` points to the release at vXXX.YYY-branch
 
 We also hook up each version to the dropdown on the website menu bar.
-For information on how to update the website to a new version, see the [Layer5 release guide](https://github.com/layer5io/docs/blob/master/docs_dev/releasing.md#releasing-a-new-version-of-the-website).
+For information on how to update the website to a new version, see the [Layer5 release guide](https://github.com/layer5io/docs/blob/master/docs_dev/releasing.md#releasing-a-new-version-of-the-website). -->
 
 Whenever any documents reference any source code, you should use the version shortcode in the links, like so:
 
