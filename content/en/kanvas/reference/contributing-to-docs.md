@@ -350,7 +350,7 @@ And an unordered task list:
 And a "mixed" task list:
 
 * [ ] Pack bags
-* ?
+* Don’t forget your passport!
 * [ ] Travel!
 
 And a nested list:
