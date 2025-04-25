@@ -24,14 +24,15 @@ Jump start your Kanvas design by importing your existing Helm Charts.
 
 There are a few different ways to import a Helm chart into Kanvas.
 
-1. Drag and drop your Helm chart onto Kanvas. 
-1. Click the **Import Design** option under the _Designs_ tab in Kanvas.
-
-![Import a Design](/kanvas/getting-started/images/2024-04-18_18-01.png)
+Option 1. Drag and drop your Helm chart onto Kanvas.
+![Drag and drop a Design](/kanvas/getting-started/images/importing-designs/drag-and-drop-design-into-kanvas.png)
+Option 2. Click the **Import Design** option under the _Designs_ tab in Kanvas.
+Option 3. Visit My Designs, and click the **Import Design** button in Cloud.
+![Import a Design](/kanvas/getting-started/images/importing-designs/import-a-design-layer5-cloud)
 
 Next, provide a name under Design File Name (1), set the _Design Type_ to Helm Chart and paste the URL (3) to the location of the Helm chart package in .tgz format.
 
-This example uses the Meshery Server helm chart at [https://meshery.github.io/meshery.io/charts/meshery-v0.7.48.tgz](https://meshery.github.io/meshery.io/charts/meshery-v0.7.48.tgz)
+This example uses the Meshery Server Helm chart at [https://meshery.github.io/meshery.io/charts/meshery-v0.8.56.tgz](https://meshery.github.io/meshery.io/charts/meshery-v0.8.56.tgz)
 
 ![Copy of a Design](/kanvas/getting-started/images/2024-04-18_18-04.png)
 
