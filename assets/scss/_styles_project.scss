@@ -151,10 +151,9 @@ a:not([href]):not([class]):hover {
   // .taxonomy-terms-cloud
 
   .taxonomy-term {
-    background: $gray-600;
+
     border-width: 0;
     border-radius: 0 3px 3px 0;
-    color: $white;
     display: inline-block;
     font-size: 1em;
     line-height: 1.5em;
@@ -168,22 +167,13 @@ a:not([href]):not([class]):hover {
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
 
-    .taxonomy-count {
-      color: $dark !important;
-    }
 
     &:hover {
       background-color: $primary;
       color: $white;
 
-      .taxonomy-count {
-        color: $dark !important;
-      }
     }
 
-    &:hover::before {
-      background: $primary;
-    }
   }
 
   .article-teaser {
@@ -466,15 +456,27 @@ a:not([href]):not([class]):hover {
 }
 
 figure {
+  display: flex;
+  flex-direction: column;
+
   > img:hover { cursor: pointer; }
+  > img {
+    margin: 0 auto; // Center the image
+    margin-bottom: 0px !important;
+    border-radius: .5rem .5rem 0rem 0rem !important;
+    box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4) !important;
+  }
   figcaption {
     color: $dark;
     background-color: rgba($lightslategray, 1);
     // font-style:italic;
     text-align: center;
-    width: inherit;
+    margin: 0rem;
+    padding: 0 0.45 0.45 0.45rem;
+    border-radius: 0 0 .5rem .5rem;
+    box-sizing: border-box; // Include padding in width calculation
   }
-} 
+}
 
 .dashboard {
   font-weight: 800;
