@@ -1,11 +1,10 @@
 ---
-title: Contributing to Docs
+title: Contributing to Layer5 Docs
 weight: 10
 description: A detailed contribution guide for Layer5 Docs.
 aliases:
   - /meshmap/reference/contributing-to-docs
 ---
-## Contributing to the docs.layer5.io Website
 
 Welcome to the GitHub repository for Layer5's documentation website!
 
@@ -143,48 +142,50 @@ git -C themes/docsy checkout tags/v0.6.0
 
 ## Documentation style guide
 
-For guidance on writing effective documentation, see
-the style guide for the Layer5 docs.
+For guidance on writing effective documentation, see the style guide for the Layer5 docs.
 
-## Styling your content
+### Overriding theme styles
 
 The theme holds its styles in the [`assets/scss` directory](https://github.com/layer5io/docs/tree/master/assets/scss).
 
-**Do not change these files**, they are not actually inside this repo, but are part of the [google/docsy](https://github.com/google/docsy) repo.
+**Do not change these files**, they are not actually inside this repo, but are part of the [google/docsy](https://github.com/google/docsy) repo. These files are managed as a Git submodule and may be updated or replaced when the theme is upgraded. Any changes made directly to the theme files will be lost during updates and are not preserved in version control.
 
 You can override the default styles and add new ones:
 
-* In general, put your files in the project directory structure under `website` rather than in the theme directory.
-  Use the same file name as the theme does, and put the file in the same relative position.
-  Hugo looks first at the file in the main project directories, if present, then at the files under the theme directory.
-  For example, the Layer5 website's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html)
-  overrides the theme's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/themes/docsy/layouts/partials/navbar.html)
+* To override templates or layouts, place your files in the main project directory (e.g., `layouts/partials/`) instead of editing the theme files under `themes/docsy/`.
+* Use the same file name and relative path as the theme. Hugo will look for files in the project first and fall back to the theme if no override is found.
+  
+  For example, to override the theme’s navigation bar template:
+  ```
+  Project override:    layouts/partials/navbar.html  
+  Theme default:       themes/docsy/layouts/partials/navbar.html
+  ```
+* To customize SCSS variables, update the `_variables_project.scss` file in the `assets/scss/` directory. This file overrides the theme’s SCSS variables and can also be used to redefine Bootstrap variables.
+* For adding custom CSS rules, use the `_styles_project.scss` file in the same `assets/scss/` directory.
 
-* You can update the Layer5 website's project variables in the [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
-  Values in that file override the [Docsy variables](https://github.com/layer5io/docs/blob/master/themes/docsy/assets/scss/_variables.scss).
-  You can also use `_variables_project.scss` to specify your own values for any of the default [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
+### Image styling
 
-* Custom styles [`_styles_project` file](https://github.com/layer5io/docs/blob/master/assets/scss/_styles_project.scss)
+By default, Markdown images are written like this:
+```markdown
+![Alt text](/path/to/image.png)
+```
+These are rendered with:
+- `max-width: 70%` of the viewport
+- `max-height: 80vh` of the viewport height
+- centered block layout
 
-Styling of images:
+This default styling works well for most landscape (horizontal) images. However, if an image is very tall, narrow, or otherwise looks awkward, you can override the default by embedding raw HTML and specifying a custom size:
 
-* To see some examples of styled images, take a look at the OAuth setup page in the Layer5 docs.
-  Search for `.png` in the [page source](https://raw.githubusercontent.com/layer5io/docs/master/content/en/docs/gke/deploy/oauth-setup.md).
+```html
+<img src="./images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
+```
 
-* For more help, see the guide to
-  [Bootstrap image styling](https://getbootstrap.com/docs/4.0/content/images/).
+### Additional resources
 
-* Also see the Bootstrap utilities, such as
-  [borders](https://getbootstrap.com/docs/4.0/utilities/borders/).
-
-The site's [front page](https://docs.layer5.io/):
-
-* See the [page source](https://github.com/layer5io/docs/blob/master/content/en/).
-* The CSS styles are in the [project variables file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
-
-* The page uses the [cover block](https://www.docsy.dev/docs/adding-content/shortcodes/#blocks-cover) defined by the theme.
-
-* The page also uses the [linkdown block](https://www.docsy.dev/docs/adding-content/shortcodes/#blocks-link-down).
+- **Bootstrap image utilities:**  
+  https://getbootstrap.com/docs/4.0/content/images/  
+- **Bootstrap utilities (borders, floats, etc.):**  
+  https://getbootstrap.com/docs/4.0/utilities/  
 
 ## Using Hugo shortcodes
 
@@ -247,7 +248,7 @@ Useful Hugo docs:
 ## Versioning of the docs
 
 For each stable release, we create a new branch for the relevant documentation.
-For example, the documentation for the v0.2 stable release is maintained in the [v0.2-branch](https://github.com/layer5io/docs/tree/v0.2-branch).
+For example, the documentation for the v0.2 stable release is maintained in the `v0.2-branch`.
 Each branch has a corresponding Netlify website that automatically syncs each merged PR.
 
 The versioned sites follow this convention:
@@ -257,7 +258,6 @@ The versioned sites follow this convention:
 * `vXXX-YYY.docs.layer5.io` points to the release at vXXX.YYY-branch
 
 We also hook up each version to the dropdown on the website menu bar.
-For information on how to update the website to a new version, see the [Layer5 release guide](https://github.com/layer5io/docs/blob/master/docs_dev/releasing.md#releasing-a-new-version-of-the-website).
 
 Whenever any documents reference any source code, you should use the version shortcode in the links, like so:
 
