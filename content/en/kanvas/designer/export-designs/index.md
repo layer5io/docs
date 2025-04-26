@@ -42,7 +42,7 @@ Kanvas let's you export a design in several formats, so you can:
 
 ### Meshery Design (YAML)
 
-Exports a complete, lossless snapshot of your design.  
+Exports a complete, lossless copy of your design.  
 This format preserves all Meshery-specific metadata, including:
 
 - Visual layout  
