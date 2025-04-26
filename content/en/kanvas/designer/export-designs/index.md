@@ -11,7 +11,7 @@ aliases:
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-Meshery lets you export a design in several formats, so you can:
+Kanvas let's you export a design in several formats, so you can:
 
 * keep versioned backups  
 * collaborate offline  
