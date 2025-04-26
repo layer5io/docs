@@ -32,7 +32,7 @@ Kanvas let's you export a design in several formats, so you can:
 
 | Format                          | Keeps full design metadata? | Typical uses                                       |
 |---------------------------------|-----------------------------|----------------------------------------------------|
-| Meshery Design (YAML)           | ✔                           | Backups, sharing, re-import into Meshery           |
+| Meshery Design (YAML)           | ✔                           | Backups, sharing, re-import into Kanvas           |
 | Meshery Design (OCI image)      | ✔                           | Store in Docker Hub/GHCR; registry-based versioning|
 | Kubernetes Manifest (YAML)      | ✖ (lossy)                   | `kubectl apply`; raw K8s deployment                |
 | Helm Chart (.tar.gz)            | ✖ (lossy)                   | Helm repos, GitOps (Argo CD/Flux), Artifact Hub    |
