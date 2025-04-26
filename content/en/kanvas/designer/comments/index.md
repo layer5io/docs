@@ -10,42 +10,46 @@ aliases:
   - /meshmap/designer/comments
 ---
 
-## Overview
+Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
-Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving comments for reference later.
-
-<figure>
-  <img src="./kanvas-comment.png" alt="Comments in Designer" width="600">
+<figure style="width:400px;">
+  <img src="./kanvas-comment.png" alt="Comments in Designer" />
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
-## Three Ways to Add Comments
+## Commenting on a Design
 
-You can add comments in three convenient ways:
+You can add comments in a number of convenient ways. Since designs are public by default, you can add comments to your designs without having to share them first. This is particularly useful for gathering feedback from team members or stakeholders before finalizing the design.
 
-### Commenting via the Activity Toolbar
+### Commenting via the Dock
 
-Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your canvas.
+1. Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your design or first identifying where you want to place your comment.
+2. You can also create a comment by dragging and dropping the comment icon from the Dock to your design. This method allows you to place comments directly on specific elements or areas of your design.
 
-<img src="./comment-dock.png" alt="Create a comment from the dock" width="600"/>
+<figure style="width:400px;">
+<img src="./comment-dock.png" alt="Create a comment from the Dock" />
+  <figcaption>Create a comment from the Dock</figcaption>
+</figure>
 
-### Commenting via Context-Click in Canvas
+### Commenting via context-click
 
-Context-click on any area of your canvas, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - in context.
+Context-click on any area of your design, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - *in context*.
 
-<img src="./comment-canvas.png" alt="Comment by context-clicking on canvas" width="600" style="margin-bottom: 25px;">
+<figure style="width:400px;">
+<img src="./comment-canvas.png" alt="Comment by context-clicking on your design" />
+  <figcaption>Comment by context-clicking on your design</figcaption>
+</figure>
 
-### Commenting via drag-and-drop from the Dock
+### Commenting via hotkey
 
-To access comment from whiteboarding doc make sure your whiteboarding feature is enabled, select comment tool from doc and drop it anywhere on canvas to comment.
+<button class="kbc-button kbc-button-xs">⌘/CTL + M</button> Add a comment into your design when you press this hotkey combination. After pressing the hotkey, a new comment will be displayed. You can move the new comment anywhere in your design.
 
-### Commenting via Hotkey
+## Design review using comments
 
-<button class="kbc-button kbc-button-xs">⌘/CTL + M</button> Add a comment into your design when you press this hotkey combination. After pressing the hotkey, you can move the new comment anywhere on the canvas.
-
-## Tips for using Comments as a Design Review Tool
-
-<img src="./conversation-screenshot.png" alt="Design review inside comments in designer" width="600" style="margin-bottom: 25px;">
+<figure style="width:400px;">
+  <img src="./conversation-screenshot.png" alt="Peer review using comments in Designer" />
+  <figcaption>Peer review using comments in Designer</figcaption>
+</figure>
 
 ### Initiate Threads
 
@@ -65,37 +69,51 @@ Once revisions are complete, you can resolve the comment. This action closes the
 
 ### View Comment History
 
-After resolving a comment thread, you can access the comment history to review previous discussions and decisions.
+After resolving a comment thread, you can access the comment history to review previous discussions and decisions. This is particularly useful for tracking changes and understanding the evolution of the design.
 
-![Conversation inside comments in designer](./comments-conversation.gif)
+<figure style="width:400px;">
+  <img src="./comments-conversation.gif" alt="View comment history" />
+  <figcaption>View comment history</figcaption>
+</figure>
+
+Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
+
+## Managing Comment Notifications
 
 ### Enable Email Notifications
 
-Customize your [notification preferences](https://docs.layer5.io/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
+Customize your [notification preferences](/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
 
-### Unresolving Comments
+### Unresolving (reopening) Comments
 
 After a comment has been resolved, there might be situations where you need to reopen the discussion. Unresolving a comment allows you to reinitiate conversations, address additional concerns, or make further changes. Follow the steps below to unresolve a comment:
 
-<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" width="600">
+<figure style="width:400px;">
+<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" />
+  <figcaption>Unresolving comments in designer</figcaption>
+</figure>
 
 ### Mute Comment Notifications
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
-<img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
+<figure style="width:400px;">
+  <img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
+  <figcaption>Example of comments in Designer</figcaption>
+</figure>
 
 **What Muting Affects:**
 
-  -  *Muted Design's Comment Thread:* This includes all subsequent replies within the same thread, whether directed at you or not.
-  -  *Your Mentions:* You won't receive email alerts when someone mentions you in the muted design's comment thread.
+- *Muted Design's Comment Thread:* This includes all subsequent replies within the same thread, whether directed at you or not.
+- *Your Mentions:* You won't receive email alerts when someone mentions you in the muted design's comment thread.
 
 **What Muting Doesn't Affect:**
 
-  -  *Mentions in Other Designs:* You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
-  -  *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
+- *Mentions in Other Designs:* You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
+- *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
 
 {{< alert title="Remember">}}
+
 - While email alerts are muted, you can still access and view all comments on the design at any time.
 - You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
 {{< /alert >}}
@@ -119,6 +137,7 @@ Stay engaged in the review process. Regularly check and respond to comments to k
 Highlight the most critical feedback first. This ensures that the designer focuses on the most important aspects for improvement.
 
 {{< alert title="Note">}}
-- The 'Comment' feature is currently in its beta phase, and we may introduce updates or improvements over time.
+
 - Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
+
 {{< /alert >}}

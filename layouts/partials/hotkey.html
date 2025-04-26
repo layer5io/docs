@@ -18,19 +18,23 @@
     searchBar.focus();
   } 
 
-  searchKey.addEventListener("click", () => {
-    event.preventDefault();
-    focusSearchBar();
-  });
-
   document.addEventListener("DOMContentLoaded", function () {
     var searchKey = document.getElementById("searchKey");
     if (searchKey) {
-      searchBar.focus();
-    }
-    var searchElement = document.querySelector(".td-search__input");
-    if (searchElement) {
-      searchElement.appendChild(searchKey);
+      searchKey.addEventListener("click", (event) => {
+        event.preventDefault();
+        focusSearchBar();
+      });
+      
+      var searchBar = document.querySelector(".td-search__input");
+      if (searchBar) {
+        searchBar.focus();
+      }
+      
+      var searchElement = document.querySelector(".td-search__input");
+      if (searchElement) {
+        searchElement.appendChild(searchKey);
+      }
     }
 
     var inputElement = document.querySelector(".td-search__input");
