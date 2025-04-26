@@ -86,8 +86,7 @@ Best used when:
 - You're working with GitOps tools like Argo CD or Flux
 - You plan to publish to a Helm repository or Artifact Hub
 
-This format includes only Kubernetes resource definitions.  
-Design layout, annotations, and other Meshery-specific metadata will not be included.
+This format includes only Kubernetes resource definitions.  Design layout, annotations, and other Meshery-specific metadata will not be included.
 
 > If you want to keep your design fully editable in Meshery, use **Meshery Design (YAML)** instead.
 
