@@ -4,52 +4,135 @@ description: >
   How to export your designs for backup, sharing or offline use.
 weight: 6
 categories: [Designer]
-tags: [designs]
+tags: [designs, export]
 aliases:
   - /meshmap/designer/export-designs
 # Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-This documentation guides you on how to export your Meshery designs for various purposes, including backup, offline sharing, pushing to an OCI registry, publishing on Artifact Hub, or integration with other infrastructure tools. Kanvas Designer offers multiple export options, allowing you to choose the format that suits your needs.
+Kanvas let's you export a design in several formats, so you can:
 
-## Exporting Your Design
+* keep versioned backups  
+* collaborate offline  
+* push artifacts to OCI-compatible registries or Helm repositories  
+* integrate designs into CI/CD or GitOps pipelines  
+* embed interactive diagrams in documentation and blogs  
 
-To export your Kanvas design, follow these steps:
+## Export in Two Steps
 
-1. **Access Export Options**: Within the Kanvas Designer, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.
+1. Open the export menu 
+   Within the [Kanvas Designer](https://playground.meshery.io/extension/meshmap), select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design. 
+2. Pick an export format 
+   Choose the option that matches your workflow (see table below).
 
-   ![Export Icon](./export-modal-new.png)
+![Export Icon](./export-modal.gif)
 
-2. **Select Export Format**: The export modal will appear, offering various export formats:
+## Quick Reference: Export Formats
 
-   - **Original Source Form**: Export the design in its original source form.
-   - **Current Design**: Obtain the design as it appears at the moment.
-   - **Embedded Form**: Export the design for embedding into websites, blogs, or other platforms supporting HTML/CSS and JavaScript.
+| Format                          | Keeps full design metadata? | Typical uses                                       |
+|---------------------------------|-----------------------------|----------------------------------------------------|
+| Meshery Design (YAML)           | ✔                           | Backups, sharing, re-import into Kanvas           |
+| Meshery Design (OCI image)      | ✔                           | Store in Docker Hub/GHCR; registry-based versioning|
+| Kubernetes Manifest (YAML)      | ✖ (lossy)                   | `kubectl apply`; raw K8s deployment                |
+| Helm Chart (.tar.gz)            | ✖ (lossy)                   | Helm repos, GitOps (Argo CD/Flux), Artifact Hub    |
+| Embed Design (JS snippet)       | -                           | Interactive diagrams in docs or dashboards         |
 
-## Exporting as a Design File
+## Detailed Format Guide
 
-Exporting your design as a design file provides you with a YAML file representing the current snapshot of your design. This file can be used for offline sharing, backup, or later import.
+### Meshery Design (YAML)
 
-## Exporting as an OCI Image
+Exports a complete, lossless copy of your design.  
+This format preserves all Meshery-specific metadata, including:
 
-Exporting your design as an OCI image allows you to package your design as a container image. This image can be shared, stored, or retrieved from any container registry, like Docker Hub.
+- Visual layout  
+- Annotations and comments  
+- Component grouping and configuration  
 
-## Exporting as a Helm Chart
+Use it to back up or move designs between Meshery instances. The file is saved as `<design-name>.yml`.
 
-Exporting your design as a Helm chart allows you to package your Meshery design for use with Helm, making it easy to deploy and share your design as a reusable Kubernetes package.
+### Meshery Design (OCI Image)
 
-**Lossy Export:** When exporting as a Helm chart, Meshery-specific information (such as visual arrangement, comments, and other metadata) is not included. Only the core Kubernetes resource definitions are preserved.
+Exports your design as an OCI-compliant container image.  
+This format preserves all design metadata, just like the Meshery Design (YAML), but in a form suitable for container registries.
 
-## Exporting as a PNG Image
+When to use:
 
-Exporting your design as a PNG image provides you with a visual snapshot of your design. This image can be shared, embedded, or used in presentations.
+- Version and distribute your design via Docker Hub, GitHub Container Registry, AWS ECR, etc.  
+- Integrate with registry-based workflows or team collaboration tools  
+- Store designs alongside application artifacts
 
-## Exporting as the Unmodified Source
+The exported file is named `<design-name>.tar`, and can be pushed using tools like `docker push` or `oras push`.
 
-If your design was generated from a source like HelmChart, Kubernetes manifest, or a previous design file, exporting it as an unmodified source will give you the original source file.
+### Kubernetes Manifest (YAML)  *Lossy Export*
 
-## Exporting as Embedding
+Exports your design as raw Kubernetes YAML files, ready to apply with `kubectl`.
 
-Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. The embedded design version offers a visually interactive representation of your design, making it easy to share with infrastructure stakeholders.
-[Learn more](../embedding-designs) about Embedding Designs.
+Best used when:
+- You want to deploy directly to a cluster
+- You're integrating with CI/CD tools that expect plain manifests
+- You no longer need visual layout, annotations, or design metadata
+
+This format strips out Meshery-specific context and includes only standard Kubernetes resource definitions.
+
+> If you want to preserve the full editable design, use **Meshery Design (YAML)** instead.
+
+### Helm Chart (.tar.gz)  *Lossy Export*
+
+Packages your design as a standard Helm chart archive (`.tar.gz`).
+
+Best used when:
+- You want to deploy via Helm (`helm install`)
+- You're working with GitOps tools like Argo CD or Flux
+- You plan to publish to a Helm repository or Artifact Hub
+
+This format includes only Kubernetes resource definitions.  Design layout, annotations, and other Meshery-specific metadata will not be included.
+
+> If you want to keep your design fully editable in Meshery, use **Meshery Design (YAML)** instead.
+
+### Embed Design (JavaScript Snippet)
+
+Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. 
+
+The embedded design version offers a visually interactive representation of your design, making it easy to share with infrastructure stakeholders.
+> [Learn more](../embedding-designs) about Embedding Designs.
+
+## Best Practices and Tips
+
+| Need | Recommended format |
+|------|--------------------|
+| Preserve every design detail | Meshery Design (YAML) or OCI image |
+| One-off deployment           | Kubernetes Manifest |
+| Share a reusable package     | Helm Chart |
+| Show an interactive diagram  | Embed Design |
+| Publish to Helm repo         | Helm Chart (.tar.gz) |
+| Store in container registry  | Meshery Design (OCI image) |
+
+Note:
+1. If you plan to keep editing in Meshery, avoid lossy formats.  
+2. A Helm `.tar.gz` can be placed in any Helm repo and installed with `helm install`.  
+3. An OCI image can be versioned and pulled just like an application image.
+
+## Frequently Asked Questions
+
+**Q. Can I re-import a Helm Chart or Kubernetes manifest into Meshery for editing?** 
+
+You can import the resources, but design-time metadata (layout, annotations) is lost, so the graph will not reappear as originally designed.
+
+**Q. What gets removed in a lossy export?**  
+Layout coordinates, visual grouping, comments, and any Meshery-only metadata.
+
+**Q. Is the Helm `.tar.gz` ready for `helm install`?**  
+Yes. After export, run `helm install <release> <chart.tgz>` or add it to a Helm repo.
+
+**Q. Should I use Helm Chart or OCI image for sharing?**  
+Use Helm if your consumers deploy via Helm; use OCI if you rely on container registries for versioning.
+
+**Q. Do I need to be logged in to export a design?**  
+No, login is not required. You can export as a guest user.
+
+**Q. Can I export someone else's published design?**  
+Yes. Any published design can be exported, not just your own.
+
+**Q. Where does the exported file go?**  
+After export, your browser will either prompt you to choose a save location or automatically download the file to your default downloads folder.
