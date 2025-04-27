@@ -6,13 +6,10 @@ weight: 6
 categories: [Spaces]
 ---
 
-Meshery Workspaces serve as a virtual space for your team-based work. Create a Workspace to organize your work and to serve as the central point of collaboration for you and your teams and a central point of access control to Environments and their resources.
 
-You may create Workspaces to organize project-based work or to create domains of responsibility for your teams or segregate Designs and Environments and track team activity.
+Meshery Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.
 
-## Summary
-
-Workspaces facilitate collaboration between you and your teams, allow you to control access to resources, and track activity and report on related events.
+You can create Workspaces to group related Designs and Environments, define domains of responsibility for your teams, and streamline resource management.
 
 ## Key Features
 
@@ -33,6 +30,19 @@ Workspaces facilitate collaboration between you and your teams, allow you to con
 
 After creating a Workspace, of your next steps is to resource that Workspace. Like a shared drive (or or shared collection of files). Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 
+### Workspace Deletion Behavior
+
+When a Workspace is deleted, Meshery follows a non-destructive deletion strategy to preserve important data:
+
+- The Workspace itself is **soft-deleted** by setting a `deleted_at` timestamp. It is no longer active but still exists in the database for auditing purposes.
+- **Associated mappings** between the Workspace and its Environments, Designs, Teams, and Views are also soft-deleted.  
+- **Environments, Designs, Teams, and Views themselves are not deleted**. They remain available and can be reassigned to other Workspaces if needed.
+- Users will see the previously associated resources listed as available again, ready for new associations.
+
+{{< alert type="info" title="What Happens When a Workspace is Deleted?" >}}
+Deleting a Workspace only removes the relationships between the Workspace and its associated resources. It does not delete the resources themselves.
+{{< /alert >}}
+
 ## Key Workspace Components
 
 ### Environments
@@ -41,7 +51,7 @@ After creating a Workspace, of your next steps is to resource that Workspace. Li
 - One or more environments can be assigned to a workspace.
 - Same environment can be assigned to multiple workspaces.
 
-{{< alert type="info" >}}
+{{< alert type="info" title="Assigning Environments to Workspaces" >}}
 Assign any number of Environments to one or more Workspaces. See [Environments](https://docs.meshery.io/concepts/environments) section for more information.
 {{< /alert >}}
 
@@ -52,7 +62,7 @@ Assign any number of Environments to one or more Workspaces. See [Environments](
 - One ore more designs can be assigned to a workspace.
 - Same design can be assigned to multiple workspaces.
 
-{{< alert type="info" >}}
+{{< alert type="info" title="Design Ownership in Workspaces" >}}
 Designs belong to only one Workspace at any given time. See [Meshery Designs](https://docs.meshery.io/concepts/designs) section for more information.
 {{< /alert >}}
 
@@ -61,8 +71,8 @@ Designs belong to only one Workspace at any given time. See [Meshery Designs](ht
 - One ore more teams can be assigned to a workspace.
 - Same team can be assigned to multiple workspaces.
 
-{{< alert type="info" >}}
-Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections, See [Teams](/cloud/identity/teams).
+{{< alert type="info" title="Team Access Control in Workspaces" >}}
+Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams](/cloud/identity/teams).
 {{< /alert >}}
 
 ### Connections
@@ -71,7 +81,7 @@ Teams offer control access to workspaces and to workspace resources such as envi
 - Connections can be assigned to one or more environments.
 - Same connection can be assigned to multiple environments.
 
-{{< alert type="info" >}}
+{{< alert type="info" title="Learn More About Connections" >}}
 See [Connections](https://docs.meshery.io/concepts/logical/connections) section for more information.
 {{< /alert >}}
 
