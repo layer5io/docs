@@ -24,11 +24,11 @@ You can create Workspaces to group related Designs and Environments, define doma
 - Access to Workspaces may be granted to one or more teams.
 - As a point of collaboration to facilitate work, Workspaces may have zero or more Environments associated.
 - A Workspace is closely associated with Teams in Meshery. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
-- One ore more teams can be assigned to a workspace.
+- One or more teams can be assigned to a workspace.
 - Same team can be assigned to multiple workspaces.
 - A team can be assigned to a workspace only if the team is not already assigned to another workspace.
 
-After creating a Workspace, of your next steps is to resource that Workspace. Like a shared drive (or or shared collection of files). Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
+After creating a Workspace, one of your next steps is to resource that Workspace. Like a shared drive (or shared collection of files). Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 
 ### Workspace Deletion Behavior
 
@@ -58,8 +58,8 @@ Assign any number of Environments to one or more Workspaces. See [Environments](
 ### Designs
 
 - Infrastructure Designs are essential for creating reusable deployment templates. Users belonging to teams with access to a workspace can utilize these designs to deploy resources in the Kubernetes clusters associated with that workspace.
-- Like a shared drive (or or shared collection of files), Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
-- One ore more designs can be assigned to a workspace.
+- Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
+- One or more designs can be assigned to a workspace.
 - Same design can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Design Ownership in Workspaces" >}}
@@ -68,7 +68,7 @@ Designs belong to only one Workspace at any given time. See [Meshery Designs](ht
 
 ### Teams 
 - A Workspace is closely associated with Teams in Meshery. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
-- One ore more teams can be assigned to a workspace.
+- One or more teams can be assigned to a workspace.
 - Same team can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Team Access Control in Workspaces" >}}
