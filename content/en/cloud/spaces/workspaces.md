@@ -13,11 +13,11 @@ You can create Workspaces to group related Designs and Environments, define doma
 
 ## Key Features
 
-- **Resource Sharing** Workspaces allow for seamless resource sharing among team members, fostering collaboration.
-- **Logical Grouping** Within Workspaces, you can group related components such as environments and infrastructure designs.
-- **Flexibility**: Workspaces support various resources like Kubernetes, Prometheus, Jaeger, Nginx, and more.
-- **Simplified Management** Managing and deploying resources is made easy within Workspaces.
-- **Access Control** Workspaces allow you to control access to resources by granting permissions to users and teams.
+- **Resource Sharing:** Workspaces allow for seamless resource sharing among team members, fostering collaboration.
+- **Logical Grouping:** Within Workspaces, you can group related components such as environments and infrastructure designs.
+- **Flexibility:** Workspaces support various resources like Kubernetes, Prometheus, Jaeger, Nginx, and more.
+- **Simplified Management:** Managing and deploying resources is made easy within Workspaces.
+- **Access Control:** Workspaces allow you to control access to resources by granting permissions to users and teams.
 
 ### Workspace Relationships and Restrictions
 
@@ -32,12 +32,11 @@ After creating a Workspace, one of your next steps is to resource that Workspace
 
 ### Workspace Deletion Behavior
 
-When a Workspace is deleted, Meshery follows a non-destructive deletion strategy to preserve important data:
+When a Workspace is deleted:
 
-- The Workspace itself is **soft-deleted** by setting a `deleted_at` timestamp. It is no longer active but still exists in the database for auditing purposes.
-- **Associated mappings** between the Workspace and its Environments, Designs, Teams, and Views are also soft-deleted.  
-- **Environments, Designs, Teams, and Views themselves are not deleted**. They remain available and can be reassigned to other Workspaces if needed.
-- Users will see the previously associated resources listed as available again, ready for new associations.
+- Deletion is **permanent and irreversible**. Proceed with caution.
+- Associated mappings between the Workspace and its Environments, Designs, Teams, and Views are detached.
+- **Environments, Designs, Teams, and Views themselves are not deleted**; they remain available for reassignment to other Workspaces if needed[^1].
 
 {{< alert type="info" title="What Happens When a Workspace is Deleted?" >}}
 Deleting a Workspace only removes the relationships between the Workspace and its associated resources. It does not delete the resources themselves.
@@ -94,3 +93,5 @@ To make the most of Meshery Workspaces, here are some best practices:
 - Regularly review and update your Workspace's resources and configurations.
 
 Meshery Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature in Meshery.
+
+[^1]: In future releases, workspace deletion will cascade to associated designs, views, and filters. Users will be notified and offered an option to transfer these resources to another workspace prior to deletion.
