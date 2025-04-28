@@ -36,10 +36,10 @@ When a Workspace is deleted:
 
 - Deletion is **permanent and irreversible**. Proceed with caution.
 - Any associated Teams or Environments with the Workspace are detached. 
-- **Environments, Designs, Teams, and Views themselves are not deleted**; they remain available for reassignment to other Workspaces if needed[^1].
+- All associated Designs will be permanently deleted along with the Workspace[^1].
 
 {{< alert type="info" title="What Happens When a Workspace is Deleted?" >}}
-Deleting a Workspace only removes the relationships between the Workspace and its associated resources. It does not delete the resources themselves.
+Deleting a Workspace will permanently remove the Workspace itself and its associated Designs. Teams and Environments will remain intact but will no longer be associated with the deleted Workspace.
 {{< /alert >}}
 
 ## Key Workspace Components
@@ -94,4 +94,4 @@ To make the most of Meshery Workspaces, here are some best practices:
 
 Meshery Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature in Meshery.
 
-[^1]: In future releases, workspace deletion will cascade to associated designs, views, and filters. Users will be notified and offered an option to transfer these resources to another workspace prior to deletion.
+[^1]: This functionality is not fully implemented yet. Users might occasionally observe that Designs are preserved after Workspace deletion.
