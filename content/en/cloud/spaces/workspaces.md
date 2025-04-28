@@ -35,11 +35,12 @@ Like a shared drive (or shared collection of files), Workspaces are your Google 
 When a Workspace is deleted:
 
 - Deletion is **permanent and irreversible**. Proceed with caution.
-- Any associated Teams or Environments with the Workspace are detached. 
-- All associated Designs will be permanently deleted along with the Workspace[^1].
+- Before deletion, users have the option to transfer associated Designs and Views to another Workspace.
+- If no transfer is made, all associated Designs and Views will be permanently deleted along with the Workspace[^1].
+- Any associated Teams or Environments will be detached from the Workspace but will remain available for reassignment.
 
 {{< alert type="info" title="What Happens When a Workspace is Deleted?" >}}
-Deleting a Workspace will permanently remove the Workspace itself and its associated Designs. Teams and Environments will remain intact but will no longer be associated with the deleted Workspace.
+Deleting a Workspace will permanently remove the Workspace itself and its associated Designs and Views, unless they are transferred beforehand. Teams and Environments will remain intact but will no longer be associated with the deleted Workspace.
 {{< /alert >}}
 
 ## Key Workspace Components
@@ -59,7 +60,7 @@ Assign any number of Environments to one or more Workspaces. See [Environments](
 - Infrastructure Designs are essential for creating reusable deployment templates. Users belonging to teams with access to a workspace can utilize these designs to deploy resources in the Kubernetes clusters associated with that workspace.
 - Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 - One or more designs can be assigned to a workspace.
-- Same design can be assigned to multiple workspaces.
+- The Same design can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Design Ownership in Workspaces" >}}
 Designs belong to only one Workspace at any given time. See [Meshery Designs](https://docs.meshery.io/concepts/designs) section for more information.
@@ -94,4 +95,4 @@ To make the most of Meshery Workspaces, here are some best practices:
 
 Meshery Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature in Meshery.
 
-[^1]: This functionality is not fully implemented yet. Users might occasionally observe that Designs are preserved after Workspace deletion.
+[^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
