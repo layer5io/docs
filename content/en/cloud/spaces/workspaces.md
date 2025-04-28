@@ -33,7 +33,7 @@ After creating a Workspace, one of your next steps is to resource that Workspace
 When a Workspace is deleted:
 
 - Deletion is **permanent and irreversible**. Proceed with caution.
-- Associated mappings between the Workspace and its Environments, Designs, Teams, and Views are detached.
+- Any associated Teams or Environments with the Workspace are detached. 
 - **Environments, Designs, Teams, and Views themselves are not deleted**; they remain available for reassignment to other Workspaces if needed[^1].
 
 {{< alert type="info" title="What Happens When a Workspace is Deleted?" >}}
