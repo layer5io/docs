@@ -333,6 +333,12 @@
 }
 
 @media (max-width: 768px) {
+    div.video-main-wrapper {
+        padding: 0 1.25rem;
+    }
+    .category-tabs {
+         gap: 0;
+    }
     .hero-section-wrapper {
         padding: 4rem 1rem 6rem;
     }
@@ -347,7 +353,7 @@
 
     .category-tab {
         padding: 0.6rem 1rem;
-        width: 50%
+        width: 50%;
     }
 
     .category-tab .tab-icon {
