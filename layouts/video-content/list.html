@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{ $videoContentDir := .Site.GetPage "section" "video-content" }}
+
+  <!-- video categories section -->
+  <div class="video-tabs-container">
+
+    <!-- category tabs -->
+    <div class="category-tabs">
+      {{ $currentPage := . }}
+      {{ range $index, $section := $videoContentDir.Sections }}
+        <a href="#category-{{ $index }}" class="category-tab" data-category="{{ $index }}">
+          <div class="tab-icon">
+            {{ if .Params.icon }}
+              <i class="bi {{ .Params.icon }}"></i>
+            {{ else }}
+              <i class="bi bi-collection-play"></i>
+            {{ end }}
+          </div>
+          <span>{{ .Title }}</span>
+        </a>
+      {{ end }}
+    </div>
+
+    <!-- subcategory container -->
+    <div class="subcategory-container">
+      {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
+        <div class="subcategory-group" id="subcategory-group-{{ $mainIndex }}" style="display: none;">
+          <div class="subcategory-buttons">
+            {{ range $subIndex, $subSection := .Sections }}
+              <a href="#category-{{ $mainIndex }}-subcategory-{{ $subIndex }}" class="subcategory-btn" 
+                 data-main-category="{{ $mainIndex }}" data-subcategory="{{ $subIndex }}">
+                {{ .Title }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    <!-- video grid container -->
+    <div class="video-grid-container">
+      {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
+        {{ range $subIndex, $subSection := .Sections }}
+          <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}" style="display: none;">
+            <div class="video-grid">
+              {{ range $subSection.Pages }}
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    {{ if .Params.videoType }}
+                      {{ if eq .Params.videoType "youtube" }}
+                        <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                      {{ else if .Params.thumbnail }}
+                        <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                      {{ else }}
+                        <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                      {{ end }}
+                    {{ else }}
+                      <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                    {{ end }}
+                    <div class="play-button-overlay">
+                      <div class="play-button">
+                        <i class="bi bi-play-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video-info">
+                    <h3>{{ .Title }}</h3>
+                    {{ if .Params.duration }}
+                    <i class="bi bi-clock"></i>
+                    <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                    {{ end }}
+                    <p class="video-description">{{ .Description | truncate 100 }}</p>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>  
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
