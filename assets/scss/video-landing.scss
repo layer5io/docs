@@ -7,6 +7,16 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+
+    nav {
+        //background-color: rgba(0, 0, 0, 0.3) !important;
+        background-color: transparent !important;
+        border: none;
+    }
+    nav.scrolled {
+        background-color: #121212 !important;
+        border: 1px solid #333 !important;
+    }
 }
 
 .video-page-container::after {
