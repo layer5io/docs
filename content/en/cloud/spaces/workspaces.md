@@ -24,7 +24,7 @@ You can create Workspaces to group related Designs and Environments, define doma
 - Access to Workspaces may be granted to one or more teams.
 - As a point of collaboration to facilitate work, Workspaces may have zero or more Environments associated.
 - A Workspace is closely associated with Teams in Meshery. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
-- One or more teams can be assigned to a workspace.
+- One or more teams can be assigned access to a workspace.
 - Same team can be assigned to multiple workspaces.
 - A team can be assigned to a workspace only if the team is not already assigned to another workspace.
 
