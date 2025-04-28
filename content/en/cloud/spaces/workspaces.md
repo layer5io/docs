@@ -26,7 +26,9 @@ You can create Workspaces to group related Designs and Environments, define doma
 - A Workspace is closely associated with Teams in Meshery. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
 - One or more teams can be assigned access to a workspace.
 
-After creating a Workspace, one of your next steps is to resource that Workspace. Like a shared drive (or shared collection of files). Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
+After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment's connections available to users of the Workspace. 
+
+Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 
 ### Workspace Deletion Behavior
 
