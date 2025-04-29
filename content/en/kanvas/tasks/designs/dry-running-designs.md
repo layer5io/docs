@@ -31,7 +31,7 @@ Meshery provides **two UI entry points** for Dry Run operations:
 
 ### 3.1 Using the Actions Dropdown Menu
 
-- In the design editor, click the **Actions** dropdown.  
+- In the [kanvas](https://playground.meshery.io/extension/meshmap), click the **Actions** dropdown.  
 - Select **Dry Run** from the list.
 
 ![Actions menu showing Dry Run option](/kanvas/tasks/designs/images/actions-dropdown-menu.png)
@@ -42,13 +42,13 @@ Meshery provides **two UI entry points** for Dry Run operations:
 
 ### 3.2 Using the Arrow Dropdown Menu
 
-- At the top-right corner of the design canvas, click the **arrow-shaped dropdown button**. 
-- A menu will appear with multiple deployment-related options.
+- At the top-right corner of the design mode in [kanvas](https://playground.meshery.io/extension/meshmap), click the **arrow-shaped dropdown button**. 
+- Select **Dry Run** from the list.
 
 ![Dropdown Menu Shortcut](/kanvas/tasks/designs/images/arrow-dropdown-menu.png)
 
-- Select **Dry Run** from this list. The simulation will be triggered immediately based on the clusters selected in your current context.
-- You will receive feedback via the **Notification Center**, where you can view results for each component[^1].
+- The simulation will be triggered immediately based on the clusters selected in your current context.
+- You will receive feedback via the **[Notification Center](https://docs.meshery.io/guides/infrastructure-management/notification-management)**, where you can view results for each component[^1].
 
 ## 4. How It Works
 
