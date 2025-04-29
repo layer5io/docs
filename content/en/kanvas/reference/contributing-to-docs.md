@@ -161,7 +161,7 @@ You can override the default styles and add new ones:
   overrides the theme's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html)
 
 * You can update the Layer5 website's project variables in the [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
-  Values in that file override the [Docsy variables](https://github.com/layer5io/docs/blob/master/assets/scss/_variables.scss).
+  Values in that file override the [Docsy variables](https://github.com/google/docsy/blob/main/assets/scss/_variables.scss).
   You can also use `_variables_project.scss` to specify your own values for any of the default [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
 
 * Custom styles [`_styles_project` file](https://github.com/layer5io/docs/blob/master/assets/scss/_styles_project.scss)
