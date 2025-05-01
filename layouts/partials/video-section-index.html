@@ -21,7 +21,26 @@
     {{ else if $page.Params.videoGrid -}}
     <div class="container">
     <div class="row">
-        {{ range $pages -}}
+
+        {{ $currentPage := . }}
+            
+            {{ $videoPages := slice }}
+            
+            {{ if .File }}
+                <!-- {{/* get videos directly inside this section */}} 
+                 
+                -->
+                {{ $directChildren := (where .Pages "Kind" "page") }}
+                {{ $videoPages = $videoPages | append $directChildren }}
+                
+                <!-- {{/* get videos from immediate sub sections */}} -->
+                {{ range .Sections }}
+                    {{ $subpages := (where .Pages "Kind" "page") }}
+                    {{ $videoPages = $videoPages | append $subpages }}
+                {{ end }}
+            {{ end }}
+
+        {{ range $videoPages -}}
            {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
             <a href="{{ $manualLink }}"
               {{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}
