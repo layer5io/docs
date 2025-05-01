@@ -8,7 +8,7 @@ cascade:
     type: video
 weight: 2
 featured_video: true
-featured_image: /images/layer5-kanvas-designer.webp
+featured_image: /images/kanvas/layer5-kanvas-designer.webp
 layout: "video"
 video_id: Do7htKrRzDA
 ---
