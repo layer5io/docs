@@ -22,70 +22,128 @@
 
     <!-- subcategory container -->
     <div class="subcategory-container">
-      {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
-        <div class="subcategory-group" id="subcategory-group-{{ $mainIndex }}" style="display: none;">
-          <div class="subcategory-buttons">
-            {{ range $subIndex, $subSection := .Sections }}
-              <a href="#category-{{ $mainIndex }}-subcategory-{{ $subIndex }}" class="subcategory-btn" 
-                 data-main-category="{{ $mainIndex }}" data-subcategory="{{ $subIndex }}">
-                {{ .Title }}
-              </a>
-            {{ end }}
+        {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
+          <div class="subcategory-group" id="subcategory-group-{{ $mainIndex }}" style="display: none;">
+            <div class="subcategory-buttons">
+                <!-- if a category has at least 1 subcategory -->
+              {{ if gt (len .Sections) 0 }}
+                {{ range $subIndex, $subSection := .Sections }}
+                  <a href="#category-{{ $mainIndex }}-subcategory-{{ $subIndex }}" class="subcategory-btn" 
+                     data-main-category="{{ $mainIndex }}" data-subcategory="{{ $subIndex }}">
+                    {{ .Title }}
+                  </a>
+                {{ end }}
+              {{ else }}
+                <!-- if no subcategories i.e. videos are directly in category folder: set a default "All" subcategory  -->
+                <a href="#category-{{ $mainIndex }}-subcategory-main" class="subcategory-btn" 
+                   data-main-category="{{ $mainIndex }}" data-subcategory="main">
+                  All
+                </a>
+              {{ end }}
+            </div>
           </div>
-        </div>
-      {{ end }}
-    </div>
+        {{ end }}
+      </div>
+
 
     <!-- video grid container -->
     <div class="video-grid-container">
-      {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
-        {{ range $subIndex, $subSection := .Sections }}
-          <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}" style="display: none;">
-            <div class="video-grid">
-              {{ range $subSection.Pages }}
-                <div class="video-card">
-                  <div class="video-thumbnail">
-                    {{ if .Params.videoType }}
-                      {{ if eq .Params.videoType "youtube" }}
-                        <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
-                      {{ else if .Params.thumbnail }}
-                        <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+        {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
+          <!-- display videos from subcategories -->
+          {{ range $subIndex, $subSection := .Sections }}
+            <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}" style="display: none;">
+              <div class="video-grid">
+                {{ range $subSection.Pages }}
+                  <div class="video-card" >
+                    <div class="video-thumbnail">
+                      {{ if .Params.videoType }}
+                        {{ if eq .Params.videoType "youtube" }}
+                          <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                        {{ else if .Params.thumbnail }}
+                          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                        {{ else }}
+                          <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                        {{ end }}
                       {{ else }}
                         <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
                       {{ end }}
-                    {{ else }}
-                      <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
-                    {{ end }}
-                    <div class="play-button-overlay">
-                      <div class="play-button">
-                        <i class="bi bi-play-fill"></i>
+                      <div class="play-button-overlay">
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="video-info">
-                    <h3>{{ .Title }}</h3>
-                    {{ if .Params.duration }}
-                    <div class="video-duration">
-                    <i class="bi bi-clock"></i>
-                    <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
-                    </div>
-                    {{ end }}
-                    {{ if .Params.tags }}
-                    <div class="taxonomy-terms">
-                      {{ range .Params.tags }}
-                        <a href="/tags/{{ . }}"><span class=" taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                    <div class="video-info">
+                      <h3>{{ .Title }}</h3>
+                      {{ if .Params.duration }}
+                      <div class="video-duration">
+                      <i class="bi bi-clock"></i>
+                      <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                      </div>
                       {{ end }}
+                      {{ if .Params.tags }}
+                      <div class="taxonomy-terms" style="margin-bottom: 0.6rem;">
+                        {{ range .Params.tags }}
+                          <a href="/tags/{{ . }}"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                      <p class="video-description">{{ .Description | truncate 100 }}</p>
                     </div>
-                  {{ end }}
-                    <p class="video-description">{{ .Description | truncate 100 }}</p>
                   </div>
-                </div>
-              {{ end }}
+                {{ end }}
+              </div>
+            </div>  
+          {{ end }}
+          
+          <!-- for direct videos in main category (when no subcategories) -->
+          {{ if eq (len .Sections) 0 }}
+            <div class="video-group" id="video-group-{{ $mainIndex }}-0" style="display: none;">
+              <div class="video-grid">
+                {{ range where $mainSection.Pages "Kind" "page" }}
+                  <div class="video-card">
+                    <div class="video-thumbnail">
+                      {{ if .Params.videoType }}
+                        {{ if eq .Params.videoType "youtube" }}
+                          <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                        {{ else if .Params.thumbnail }}
+                          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                        {{ else }}
+                          <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                        {{ end }}
+                      {{ else }}
+                        <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                      {{ end }}
+                      <div class="play-button-overlay">
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-info">
+                      <h3>{{ .Title }}</h3>
+                      {{ if .Params.tags }}
+                      <div class="taxonomy-terms">
+                        {{ range .Params.tags }}
+                          <a href="/tags/{{ . }}"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                      {{ if .Params.duration }}
+                      <div class="video-duration">
+                      <i class="bi bi-clock"></i>
+                      <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                      </div>
+                      {{ end }}
+                      <p class="video-description">{{ .Description | truncate 100 }}</p>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
             </div>
-          </div>  
+          {{ end }}
         {{ end }}
-      {{ end }}
-    </div>
+      </div>
   </div>
 
   <script>
