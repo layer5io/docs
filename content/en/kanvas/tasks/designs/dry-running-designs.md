@@ -12,7 +12,7 @@ It’s a safe way to check if everything is set up correctly before you actually
 
 ![Find Dry Run Menu](/kanvas/tasks/designs/images/find-dry-run-menu.gif)
 
-## Why you should perform Dry Runs?
+## Why you should perform Dry Runs
 
 - **Catch mistakes early** before real resources are created or modified.  
 - **Validate permissions** to ensure your service account can perform the intended actions.  
