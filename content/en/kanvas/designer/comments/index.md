@@ -80,6 +80,19 @@ Manage your comment history by clicking on the "View Comment History" button. Th
 
 ## Managing Comment Notifications
 
+### Temporarily Hiding Comments for Clearer Reviews
+
+You can temporarily hide or reveal open comments using the Layers panel, just like toggling layers in Photoshop. This helps you focus on the most important parts of your design and improve review clarity.  
+
+<figure style="width:400px;">
+  <img src="./comments-hide.png" alt="Hide comments Using Layers" />
+  <figcaption>Hide comments Using Layers</figcaption>
+</figure>
+
+{{< alert type="info" title="Explore More Panel Features" >}}
+Want to improve performance of your workspace? Learn more about using the [Layers panel](https://docs.layer5.io/kanvas/advanced/performance/#optimize-your-design-using-the-layers-panel).
+{{< /alert >}}
+
 ### Enable Email Notifications
 
 Customize your [notification preferences](/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
