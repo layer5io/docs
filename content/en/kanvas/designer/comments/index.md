@@ -10,7 +10,7 @@ aliases:
   - /meshmap/designer/comments
 ---
 
-Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
+Kanvas's Designer enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
 <figure style="width:400px;">
   <img src="./kanvas-comment.png" alt="Comments in Designer" />
@@ -53,7 +53,7 @@ Context-click on any area of your design, and from the contextual menu, select "
 
 ### Initiate Threads
 
-You can initiate a comment thread by just adding a comment. Your comment may be a request for design review or feedback on a design. Team members can reply directly to comments to for a comment thread. This creates a structured dialogue around each point of feedback for easy referencing.
+You can initiate a comment thread by just adding a comment. Your comment may be a request for design review or feedback on a design. Team members can reply directly to comments for a comment thread. This creates a structured dialogue around each point of feedback for easy referencing.
 
 ### Utilize Mentions
 
@@ -80,7 +80,7 @@ Manage your comment history by clicking on the "View Comment History" button. Th
 
 ## Managing Comment Notifications
 
-### Temporarily Hiding Comments for Clearer Reviews
+### Temporarily Hide Comments for Clearer Reviews
 
 You can temporarily hide or reveal open comments using the Layers panel—just like toggling layers in Photoshop.  
 This helps you focus on the most important parts of your design and improves clarity during reviews.
@@ -94,7 +94,7 @@ This helps you focus on the most important parts of your design and improves cla
 Want to improve the performance of your workspace? [Learn more about using the Layers panel](https://docs.layer5.io/kanvas/advanced/performance/#optimize-your-design-using-the-layers-panel).
 {{< /alert >}}
 
-### Naming Comments for Easy Access
+### Name Comments for Easy Access
 
 If you plan to keep certain comments in your design for documentation, team reference, or historical context, it's a good idea to give them meaningful names. This simple habit improves clarity for both you and your team—especially when reviewing or revisiting designs later.
 
@@ -103,7 +103,8 @@ If you plan to keep certain comments in your design for documentation, team refe
 </figure>
 
 {{< alert type="info" title="Best Practice" >}}
-Give long-lived comments short, descriptive names like `"Needs Load Balancer"` or `"Review DNS settings"` to make them easier to locate in the Layers panel and across your design.
+Give long-lived comments short, descriptive names like `"Needs Load Balancer"` or `"Review DNS settings"`  
+so you can quickly find them in the Layers panel later on.
 {{< /alert >}}
 
 ### Enable Email Notifications
@@ -148,7 +149,7 @@ Customize your notification preferences to mute email notifications for comments
 
 ### Be specific and actionable
 
-Provide specific feedback rather that the design can act on. Vague comments can lead to misunderstandings and delays in the design process. Support your feedback with examples or references. This can help clarify your point and provide the designer with tangible suggestions for improvement.
+Provide specific feedback that the designer can act on. Vague comments can lead to misunderstandings and delays in the design process. Support your feedback with examples or references. This can help clarify your point and provide the designer with tangible suggestions for improvement.
 
 ### Balance positive and contructive feedback
 
