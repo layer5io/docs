@@ -163,7 +163,7 @@
         <div class="modal-body p-0">
             <div class="ratio ratio-16x9">
               <iframe 
-                id="vidIframee"
+                id="vidIframe"
                 src="" 
                 title="" 
                 frameborder="0" 
@@ -171,7 +171,7 @@
                 allowfullscreen>
               </iframe>
             </div>
-            <a href="" id="videoPageLink"><h4 id="videoModalDetailTitle" style="padding: 1rem 0 2rem !important;"></h4></a>
+            <a href="" id="videoPageLink"><h4 id="videoModalTitle" style="padding: 1rem 0 2rem !important;"></h4></a>
             </div>
           </div>
 
@@ -268,7 +268,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     const modalElement = document.getElementById('videoModal');
     const modal = new bootstrap.Modal(modalElement);
-    const iframe = document.getElementById('vidIframee');
+    const iframe = document.getElementById('vidIframe');
     const videoTitleElem = document.getElementById('videoModalTitle');
     const linkElem = document.getElementById('videoPageLink');
   
