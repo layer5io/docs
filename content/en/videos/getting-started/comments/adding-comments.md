@@ -10,6 +10,7 @@ loop: true #optional
 categories: [Designer]
 formats: [video]
 tags: [review, collaboration, comments]
+duration: "0:17"
 ---
 
 {{< youtube bb6J--aApk8 >}}
