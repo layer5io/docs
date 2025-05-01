@@ -82,15 +82,28 @@ Manage your comment history by clicking on the "View Comment History" button. Th
 
 ### Temporarily Hiding Comments for Clearer Reviews
 
-You can temporarily hide or reveal open comments using the Layers panel, just like toggling layers in Photoshop. This helps you focus on the most important parts of your design and improve review clarity.  
+You can temporarily hide or reveal open comments using the Layers panel—just like toggling layers in Photoshop.  
+This helps you focus on the most important parts of your design and improves clarity during reviews.
 
 <figure style="width:400px;">
-  <img src="./comments-hide.png" alt="Hide comments Using Layers" />
-  <figcaption>Hide comments Using Layers</figcaption>
+  <img src="./comments-hide.png" alt="Hide comments using Layers" />
+  <figcaption>Hide comments using the Layers panel</figcaption>
 </figure>
 
 {{< alert type="info" title="Explore More Panel Features" >}}
-Want to improve performance of your workspace? Learn more about using the [Layers panel](https://docs.layer5.io/kanvas/advanced/performance/#optimize-your-design-using-the-layers-panel).
+Want to improve the performance of your workspace? [Learn more about using the Layers panel](https://docs.layer5.io/kanvas/advanced/performance/#optimize-your-design-using-the-layers-panel).
+{{< /alert >}}
+
+### Naming Comments for Easy Access
+
+If you plan to keep certain comments in your design for documentation, team reference, or historical context, it's a good idea to give them meaningful names. This simple habit improves clarity for both you and your team—especially when reviewing or revisiting designs later.
+
+<figure style="width:400px;">
+  <img src="./naming-comments.png" alt="Naming a comment in Designer" />
+</figure>
+
+{{< alert type="info" title="Best Practice" >}}
+Give long-lived comments short, descriptive names like `"Needs Load Balancer"` or `"Review DNS settings"` to make them easier to locate in the Layers panel and across your design.
 {{< /alert >}}
 
 ### Enable Email Notifications
