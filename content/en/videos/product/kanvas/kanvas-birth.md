@@ -7,7 +7,7 @@ video_id: "4WcofErPTx4"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
-tags: ["meshery"]
+tags: [meshery]
 duration: "2:10"
 ---
 

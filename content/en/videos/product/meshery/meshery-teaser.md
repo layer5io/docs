@@ -6,7 +6,7 @@ videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
-tags: ["meshery"]
+tags: [meshery]
 duration: "2:10"
 ---
 {{< youtube Do7htKrRzDA >}}
