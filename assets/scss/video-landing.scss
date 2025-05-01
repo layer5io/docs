@@ -143,7 +143,7 @@
 .category-tab {
     background: none;
     border: none;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.50);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     cursor: pointer;
@@ -205,13 +205,13 @@
 
 .subcategory-btn {
     background-color: rgba(0, 0, 0, 0.05);
-    border: none;
     color: #555;
     padding: 0.5rem 1.25rem;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s ease;
     text-decoration: none;
+    box-shadow: 0 0 1px white;
 }
 
 .subcategory-btn:hover {
@@ -241,6 +241,7 @@
 .video-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .video-thumbnail {
@@ -304,7 +305,7 @@
 .video-info h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
