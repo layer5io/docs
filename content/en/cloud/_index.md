@@ -13,16 +13,18 @@ cascade:
 
 ## Understanding the Meshery Ecosystem
 
-<div style="display:flex; gap: .5rem;">
-<div 
-    style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
-                
-<div style="min-width:50px;">{{< svg name="cloud" >}}</div>
-
-<div style="padding:auto;margin:auto;">
-
-  **Layer5 Cloud** ([docs](/cloud)) is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
-</div>
+<div style="display:flex;flex-direction:column;margin-bottom:2rem;margin-top:1rem;padding:1rem;box-shadow:inset 0 0 4em #ebc01766,0 0 0 2px #ebc01766,.3em .3em 1em #ebc01733;position:relative;">
+  <!-- "You are here" indicator -->
+  <div style="position:absolute;top:-10px;left:10px;background:#ebc017;color:#333;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold;">
+    YOU ARE HERE
+  </div>
+  
+  <div style="display:flex;align-items:flex-start;gap:1rem;width:100%;">
+    <div style="min-width:50px;flex-shrink:0;">{{< svg name="cloud" >}}</div>
+    <div style="flex:1;word-wrap:break-word;">
+      <strong>Layer5 Cloud</strong> (<a href="/cloud">docs</a>) is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+    </div>
+  </div>
 </div>
 
 <div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshery" >}}</div>

@@ -36,16 +36,19 @@ aliases:
 **Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
 </div></div>
 
-<div style="display:flex; gap: .5rem;">
-<div 
-    style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
-                
-<div style="min-width:50px;"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo" data-modal="false" style="border: none;"/></div>
-
-<div>
-
-**Kanvas** ([docs](/kanvas)) Kanvas delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
-</div></div>
+<div style="display:flex;flex-direction:column;margin-bottom:2rem;margin-top:1rem;padding:1rem;box-shadow:inset 0 0 4em #ebc01766,0 0 0 2px #ebc01766,.3em .3em 1em #ebc01733;position:relative;background-color:#1a1a1a;border:1px solid #ebc017;">
+  <!-- "You are here" indicator -->
+  <div style="position:absolute;top:-10px;left:10px;background:#ebc017;color:#333;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold;">
+    YOU ARE HERE
+  </div>
+  
+  <div style="display:flex;align-items:flex-start;gap:1rem;width:100%;">
+    <div style="min-width:50px;flex-shrink:0;"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo" data-modal="false" style="border:none;"/></div>
+    <div style="flex:1;word-wrap:break-word;">
+      <strong>Kanvas</strong> (<a href="/kanvas">docs</a>) Kanvas delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+    </div>
+  </div>
+</div>
 {{% /pageinfo %}}
 
 ## What is Kanvas?
