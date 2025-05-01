@@ -1,5 +1,4 @@
-{{ define "main" }}
-{{ $videoContentDir := .Site.GetPage "section" "video-content" }}
+{{ $videoContentDir := .Site.GetPage "section" "videos" }}
 
   <!-- video categories section -->
   <div class="video-tabs-container">
@@ -66,9 +65,18 @@
                   <div class="video-info">
                     <h3>{{ .Title }}</h3>
                     {{ if .Params.duration }}
+                    <div class="video-duration">
                     <i class="bi bi-clock"></i>
                     <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                    </div>
                     {{ end }}
+                    {{ if .Params.tags }}
+                    <div class="taxonomy-terms">
+                      {{ range .Params.tags }}
+                        <a href="/tags/{{ . }}"><span class=" taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                      {{ end }}
+                    </div>
+                  {{ end }}
                     <p class="video-description">{{ .Description | truncate 100 }}</p>
                   </div>
                 </div>
@@ -80,89 +88,88 @@
     </div>
   </div>
 
-
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const categoryTabs = document.querySelectorAll('.category-tab');
-      const subcategoryBtns = document.querySelectorAll('.subcategory-btn');
-      
-      // update active states and show/hide content
-      function updateContent(mainCategoryIndex, subCategoryIndex = 0) {
-        // update active main category
-        categoryTabs.forEach(tab => tab.classList.remove('active'));
-        categoryTabs[mainCategoryIndex].classList.add('active');
-        
-        // show/hide subcategory groups
-        const subcategoryGroups = document.querySelectorAll('.subcategory-group');
-        subcategoryGroups.forEach(group => group.style.display = 'none');
-        const activeSubcategoryGroup = document.getElementById(`subcategory-group-${mainCategoryIndex}`);
-        if (activeSubcategoryGroup) {
-          activeSubcategoryGroup.style.display = 'block';
-        }
-        
-        // update active subcategory
-        const currentSubcategoryBtns = document.querySelectorAll(`.subcategory-btn[data-main-category="${mainCategoryIndex}"]`);
-        currentSubcategoryBtns.forEach(btn => btn.classList.remove('active'));
-        if (currentSubcategoryBtns.length > 0 && subCategoryIndex < currentSubcategoryBtns.length) {
-          currentSubcategoryBtns[subCategoryIndex].classList.add('active');
-        }
-        
-        // show/hide video groups
-        const videoGroups = document.querySelectorAll('.video-group');
-        videoGroups.forEach(group => group.style.display = 'none');
-        const activeVideoGroup = document.getElementById(`video-group-${mainCategoryIndex}-${subCategoryIndex}`);
-        if (activeVideoGroup) {
-          activeVideoGroup.style.display = 'block';
-        }
-        
-        // update url hash, can later modify this to have 
-        // this: category-getting-started-subcategory-onboarding
-        // instead of: category-0-subcategory-1
-
-        window.location.hash = `category-${mainCategoryIndex}-subcategory-${subCategoryIndex}`;
-      }
-      
-      // Add click handlers to main category tabs
-      categoryTabs.forEach((tab, index) => {
-        tab.addEventListener('click', function(e) {
-          e.preventDefault();
-          updateContent(index);
-        });
-      });
-      
-      // Add click handlers to subcategory buttons
-      subcategoryBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          const mainCategoryIndex = parseInt(this.getAttribute('data-main-category'));
-          const subCategoryIndex = parseInt(this.getAttribute('data-subcategory'));
-          updateContent(mainCategoryIndex, subCategoryIndex);
-        });
-      });
-      
-      // handle initial load and urL hash changes
-      function handleHashChange() {
-        const hash = window.location.hash;
-        if (hash) {
-          // parse hash like #category-0-subcategory-1
-          const matches = hash.match(/#category-(\d+)(?:-subcategory-(\d+))?/);
-          if (matches) {
-            const mainCategoryIndex = parseInt(matches[1]);
-            const subCategoryIndex = matches[2] ? parseInt(matches[2]) : 0;
-            updateContent(mainCategoryIndex, subCategoryIndex);
-            return;
-          }
-        }
-        
-        // default to first category and subcategory if no hash or invalid hash (alphabetially for now)
-        updateContent(0, 0);
-      }
-      
-      // handle hash changes
-      window.addEventListener('hashchange', handleHashChange);
-      
-      // hndle initial load
-      handleHashChange();
-    });
-  </script>
-  {{ end }}
+         const categoryTabs = document.querySelectorAll('.category-tab');
+         const subcategoryBtns = document.querySelectorAll('.subcategory-btn');
+         
+         // update active states and show/hide content
+         function updateContent(mainCategoryIndex, subCategoryIndex = 0) {
+           // update active main category
+           categoryTabs.forEach(tab => tab.classList.remove('active'));
+           categoryTabs[mainCategoryIndex].classList.add('active');
+           
+           // show/hide subcategory groups
+           const subcategoryGroups = document.querySelectorAll('.subcategory-group');
+           subcategoryGroups.forEach(group => group.style.display = 'none');
+           const activeSubcategoryGroup = document.getElementById(`subcategory-group-${mainCategoryIndex}`);
+           if (activeSubcategoryGroup) {
+             activeSubcategoryGroup.style.display = 'block';
+           }
+           
+           // update active subcategory
+           const currentSubcategoryBtns = document.querySelectorAll(`.subcategory-btn[data-main-category="${mainCategoryIndex}"]`);
+           currentSubcategoryBtns.forEach(btn => btn.classList.remove('active'));
+           if (currentSubcategoryBtns.length > 0 && subCategoryIndex < currentSubcategoryBtns.length) {
+             currentSubcategoryBtns[subCategoryIndex].classList.add('active');
+           }
+           
+           // show/hide video groups
+           const videoGroups = document.querySelectorAll('.video-group');
+           videoGroups.forEach(group => group.style.display = 'none');
+           const activeVideoGroup = document.getElementById(`video-group-${mainCategoryIndex}-${subCategoryIndex}`);
+           if (activeVideoGroup) {
+             activeVideoGroup.style.display = 'block';
+           }
+           
+           // update url hash, can later modify this to have 
+           // this: category-getting-started-subcategory-onboarding
+           // instead of: category-0-subcategory-1
+   
+           window.location.hash = `category-${mainCategoryIndex}-subcategory-${subCategoryIndex}`;
+         }
+         
+         // Add click handlers to main category tabs
+         categoryTabs.forEach((tab, index) => {
+           tab.addEventListener('click', function(e) {
+             e.preventDefault();
+             updateContent(index);
+           });
+         });
+         
+         // Add click handlers to subcategory buttons
+         subcategoryBtns.forEach(btn => {
+           btn.addEventListener('click', function(e) {
+             e.preventDefault();
+             const mainCategoryIndex = parseInt(this.getAttribute('data-main-category'));
+             const subCategoryIndex = parseInt(this.getAttribute('data-subcategory'));
+             updateContent(mainCategoryIndex, subCategoryIndex);
+           });
+         });
+         
+         // handle initial load and urL hash changes
+         function handleHashChange() {
+           const hash = window.location.hash;
+           if (hash) {
+             // parse hash like #category-0-subcategory-1
+             const matches = hash.match(/#category-(\d+)(?:-subcategory-(\d+))?/);
+             if (matches) {
+               const mainCategoryIndex = parseInt(matches[1]);
+               const subCategoryIndex = matches[2] ? parseInt(matches[2]) : 0;
+               updateContent(mainCategoryIndex, subCategoryIndex);
+               return;
+             }
+           }
+           
+           // default to first category and subcategory if no hash or invalid hash (alphabetially for now)
+           updateContent(0, 0);
+         }
+         
+         // handle hash changes
+         window.addEventListener('hashchange', handleHashChange);
+         
+         // hndle initial load
+         handleHashChange();
+       });
+   
+     </script>
