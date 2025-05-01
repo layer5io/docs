@@ -1,4 +1,4 @@
 ---
-title: Cloud
+title: Onboarding
 videoGrid: true
 ---

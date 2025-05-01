@@ -130,6 +130,12 @@
                     </div>
                     <div class="video-info">
                       <h3>{{ .Title }}</h3>
+                      {{ if .Params.duration }}
+                      <div class="video-duration">
+                      <i class="bi bi-clock"></i>
+                      <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                      </div>
+                      {{ end }}
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms">
                         {{ range .Params.tags }}
@@ -137,12 +143,6 @@
                         {{ end }}
                       </div>
                     {{ end }}
-                      {{ if .Params.duration }}
-                      <div class="video-duration">
-                      <i class="bi bi-clock"></i>
-                      <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
-                      </div>
-                      {{ end }}
                       <p class="video-description">{{ .Description | truncate 100 }}</p>
                     </div>
                   </div>
