@@ -54,7 +54,11 @@
             <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}" style="display: none;">
               <div class="video-grid">
                 {{ range $subSection.Pages }}
-                  <div class="video-card" >
+                  <div class="video-card" 
+                  data-video-id="{{ .Params.video_id }}" 
+                  data-video-title="{{ .Title }}" 
+                  data-video-url="{{ .RelPermalink }}"
+                  >
                     <div class="video-thumbnail">
                       {{ if .Params.videoType }}
                         {{ if eq .Params.videoType "youtube" }}
@@ -101,7 +105,11 @@
             <div class="video-group" id="video-group-{{ $mainIndex }}-0" style="display: none;">
               <div class="video-grid">
                 {{ range where $mainSection.Pages "Kind" "page" }}
-                  <div class="video-card">
+                  <div class="video-card"
+                  data-video-id="{{ .Params.video_id }}" 
+                  data-video-title="{{ .Title }}" 
+                  data-video-url="{{ .RelPermalink }}"
+                  >
                     <div class="video-thumbnail">
                       {{ if .Params.videoType }}
                         {{ if eq .Params.videoType "youtube" }}
@@ -146,6 +154,30 @@
       </div>
   </div>
 
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="padding: 20px 20px 0;background-color: #333;">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #00d3a9;"></button>
+        </div>
+        <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                id="vidIframee"
+                src="" 
+                title="" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <a href="" id="videoPageLink"><h4 id="videoModalDetailTitle" style="padding: 1rem 0 2rem !important;"></h4></a>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
          const categoryTabs = document.querySelectorAll('.category-tab');
@@ -231,3 +263,39 @@
        });
    
      </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modalElement = document.getElementById('videoModal');
+    const modal = new bootstrap.Modal(modalElement);
+    const iframe = document.getElementById('vidIframee');
+    const videoTitleElem = document.getElementById('videoModalTitle');
+    const linkElem = document.getElementById('videoPageLink');
+  
+    const videoCards = document.querySelectorAll('.video-card');
+  
+    videoCards.forEach(card => {
+      card.addEventListener('click', function () {
+        const videoId = card.getAttribute('data-video-id');
+        const videoTitle = card.getAttribute('data-video-title');
+        const videoUrl = card.getAttribute('data-video-url');
+  
+        // prep the modal
+        videoTitleElem.textContent = videoTitle;
+        linkElem.href = videoUrl;
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&showinfo=0`; // autoplay=1 starts playing the vid
+  
+        modal.show();
+      });
+    });
+  
+    // on modal close, clear iframe src to stop the vid
+    modalElement.addEventListener('hidden.bs.modal', function () {
+      iframe.src = ''; 
+  });
+  });
+  
+  document.getElementById('videoModal').addEventListener('hidden.bs.modal', () => {
+    console.log('Modal closed event fired');
+  });
+      </script>
