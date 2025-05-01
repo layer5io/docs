@@ -1,5 +1,5 @@
 ---
-title: "Design Reviews: Adding Comments"
+title: "Design Reviews: Adding Comments 2"
 description: >
    Add comments to your designs in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
 video_id: "bb6J--aApk8"
@@ -10,6 +10,7 @@ loop: true #optional
 categories: [Designer]
 formats: [video]
 tags: [review, collaboration, comments]
+duraiton: 3:40
 ---
 
 {{< youtube bb6J--aApk8 >}}
