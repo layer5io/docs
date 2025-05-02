@@ -71,7 +71,7 @@ Under the Free subscription plan, Kanvas support a single image size of up to 50
 
 To improve the performance of your design, consider optimizing by disabling one or more layers.
 
-<figure">
+<figure>
   <img src="./layers-panel.png" alt="Layers panel in Kanvas Designer" />
   <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
