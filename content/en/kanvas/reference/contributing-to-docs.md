@@ -180,6 +180,17 @@ This default styling works well for most landscape (horizontal) images. However,
 <img src="./images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
 ```
 
+If you want your image to include a caption for explanation or accessibility, you can use the `<figure>` element:
+
+```html
+<figure>
+  <img src="./images/example.png" alt="Example description" />
+  <figcaption>Example: Control which layers of your design are visible using the Layers panel.</figcaption>
+</figure>
+```
+
+Using `<figure>` allows you to pair an image with a caption while preserving semantic structure and visual consistency. It's particularly useful for annotated screenshots or UI illustrations.
+
 ### Additional resources
 
 - **Bootstrap image utilities:**  
