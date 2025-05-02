@@ -129,6 +129,13 @@ Customize your notification preferences to mute email notifications for comments
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
+You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
+
+<figure style="width:400px;">
+  <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
+  <figcaption>Manage all comment notifications centrally in the Cloud</figcaption>
+</figure>
+
 **What Muting Affects:**
 
 - *Muted Design's Comment Thread:* This includes all subsequent replies within the same thread, whether directed at you or not.
