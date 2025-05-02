@@ -80,7 +80,7 @@ Manage your comment history by clicking on the "View Comment History" button. Th
 
 ## Managing Comment Notifications
 
-### Temporarily Hide Comments for Clearer Reviews
+### Hide Comments Using the Layers Panel
 
 You can temporarily hide or reveal open comments using the Layers panel—just like toggling layers in Photoshop.  
 This helps you focus on the most important parts of your design and improves clarity during reviews.
@@ -111,7 +111,7 @@ so you can quickly find them in the Layers panel later on.
 
 Customize your [notification preferences](/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
 
-### Unresolving (reopening) Comments
+### Reopen a Resolved Comment	
 
 After a comment has been resolved, there might be situations where you need to reopen the discussion. Unresolving a comment allows you to reinitiate conversations, address additional concerns, or make further changes. Follow the steps below to unresolve a comment:
 
@@ -120,7 +120,7 @@ After a comment has been resolved, there might be situations where you need to r
   <figcaption>Unresolving comments in designer</figcaption>
 </figure>
 
-### Mute Comment Notifications
+### Mute Email Notifications for Comments
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
