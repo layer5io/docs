@@ -17,7 +17,7 @@ cascade:
 <div 
     style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
                 
-<div style="min-width:50px;">{{< svg name="cloud" >}}</div>
+<div style="min-width:50px;align-self:center;">{{< svg name="cloud" >}}</div>
 
 <div style="padding:auto;margin:auto;">
 
@@ -32,7 +32,7 @@ cascade:
 **Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
 </div></div>
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo"/></div>
+<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container" style="height:65px;width:65px;margin-left:-.45rem;"><img src="/images/logos/kanvas-alt.svg" style="border:0px;" alt="kanvas logo"/></div>
 
 <div style="flex: 1;">
 
