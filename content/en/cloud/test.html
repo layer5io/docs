@@ -1,0 +1,83 @@
+<style>
+    .highlight-box {
+      display: flex;
+      align-items: center;
+      font-style: italic;
+      gap: 0.5rem;
+      padding: 1rem;
+      margin: auto -1rem;
+      box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
+      transition: box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .hidden-highlight-box {
+      display: flex;
+      align-items: center;
+      font-style: italic;
+      gap: 0.5rem;
+      padding: 1rem;
+      margin: auto -1rem;
+      box-shadow: none;
+      transition: box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+  
+    .hidden-highlight-box:hover {
+      box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
+    }
+
+    /* New rule to hide highlight-box shadow when hidden-highlight-box is hovered or focused */
+    .hidden-highlight-box:hover ~ .highlight-box,
+    .hidden-highlight-box:focus ~ .highlight-box {
+      box-shadow: none;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  
+    .logo-container {
+      min-width: 50px;
+      margin-right: 0.5rem;
+    }
+  
+    .logo-section a {
+      text-decoration: none;
+      color: inherit;
+      display: contents;
+    }
+</style>
+  <div class="highlight-wrapper" style="display:flex; flex-direction:column; gap: 1rem;">
+
+    <!-- Meshery Section -->
+    <div class="hidden-highlight-box" tabindex="0">
+      <a href="https://docs.meshery.io" class="logo-section">
+        <div class="logo-container">{{< svg name="meshery" >}}</div>
+        <div><strong>Meshery</strong> (<u>docs</u>) is a cloud native manager that enables the design and management...</div>
+      </a>
+    </div>
+  
+    <!-- Kanvas Section -->
+    <div class="hidden-highlight-box" tabindex="0">
+      <a href="/kanvas" class="logo-section">
+        <div class="logo-container" style="height:65px;width:65px;"><img src="/images/logos/kanvas-alt.svg" style="border:0;" alt="kanvas logo"/></div>
+        <div><strong>Kanvas</strong> (<u>docs</u>) delivers a collaborative experience similar to Figma and Google Workspace...</div>
+      </a>
+    </div>
+
+      <!-- Layer5 Cloud Box -->
+      <div class="highlight-box" tabindex="0">
+      <a href="/cloud">
+        <div style="max-width:50px;align-self:center;">{{< svg name="cloud" >}}</div>
+        <div><strong>Layer5 Cloud</strong> (<u>docs</u>) is an identity provider and global console for Meshery deployments...</div>
+      </a>
+    </div>
+</div>
+
+  
