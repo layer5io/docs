@@ -491,6 +491,31 @@ figure[style*="width"] {
   }
 }
 
+// Mobile: override for full-width content alignment
+@media (max-width: 600px) {
+  figure,
+  figure[style*="width"] {
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+.md__image img,
+img.md-image-responsive {
+  max-width: 70%;
+  max-height: 80vh;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+}
+
 .dashboard {
   font-weight: 800;
   margin-bottom: 4rem;
