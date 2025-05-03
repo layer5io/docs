@@ -5,6 +5,6 @@ description: >
 linkTitle: Features
 weight: 2
 videoGrid: true
-icon: bi-gear-fill
+icon: bi-star-fill
 ---
 
