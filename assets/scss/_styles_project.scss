@@ -458,7 +458,7 @@ a:not([href]):not([class]):hover {
 
 figure,
 figure[style*="width"] {
-  width: 100% !important;
+  width: auto !important;
   max-width: 70% !important;
   margin: 0 auto 2rem auto !important;
 
