@@ -23,28 +23,28 @@ It’s a safe way to check if everything is set up correctly before you actually
 
 ## How to Perform a Dry Run
 
-In Kanvas, there are two ways to start a Dry Run:
+In Kanvas, there are two ways to trigger a Dry Run—via the **Actions dropdown** or the **arrow-shaped dropdown** in design mode. Both options perform exactly the same operation:
 
-### Using the Actions Dropdown Menu
+- They simulate the deployment or undeployment of your design across **all selected Kubernetes clusters**.
+- They use the same backend mechanism and validation pipeline.
+- The results of the simulation are identical regardless of the entry point.
 
-- In [kanvas](https://playground.meshery.io/extension/meshmap), click the **Actions** dropdown.  
-- Select **Dry Run** from the list.
+The only difference lies in how results are delivered:
 
-![Actions menu showing Dry Run option](/kanvas/tasks/designs/images/actions-dropdown-menu.png)
+- **Actions Dropdown**: A modal window appears to display the dry-run results.
+- **Arrow Dropdown**: Feedback is shown in the **[Notification Center](https://docs.meshery.io/guides/infrastructure-management/notification-management)**.
 
-- After clicking, results of your simulated deployment will appear:
+### To Start a Dry Run
 
-![Actions menu next result ](/kanvas/tasks/designs/images/actions-dropdown-result.png)
+1. Navigate to [Kanvas](https://playground.meshery.io/extension/meshmap).
+2. Choose one of the following entry points:
+   - **Actions dropdown**  
+     ![Actions menu showing Dry Run option](/kanvas/tasks/designs/images/actions-dropdown-menu.png)
+   - **Arrow-shaped dropdown**
+     ![Dropdown Menu Shortcut](/kanvas/tasks/designs/images/arrow-dropdown-menu.png)
+3. Select **Dry Run**.
 
-### Using the Arrow Dropdown Menu
-
-- At the top-right corner of the design mode in [kanvas](https://playground.meshery.io/extension/meshmap), click the **arrow-shaped dropdown button**. 
-- Select **Dry Run** from the list.
-
-![Dropdown Menu Shortcut](/kanvas/tasks/designs/images/arrow-dropdown-menu.png)
-
-- The simulation will be triggered immediately based on the clusters selected in your current context.
-- You will receive feedback via the **[Notification Center](https://docs.meshery.io/guides/infrastructure-management/notification-management)**, where you can view results for each component[^1].
+Depending on the entry point, you will either see a modal or receive a notification, but the operation and its output remain the same.[^1].
 
 ## How It Works
 
