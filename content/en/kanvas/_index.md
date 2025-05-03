@@ -20,32 +20,64 @@ aliases:
 
 {{% pageinfo %}}
 
+<style>
+    .highlight-box {
+      display: flex;
+      align-items: center;
+      font-style: italic;
+      gap: 0.5rem;
+      padding: 1rem;
+      margin: auto -1rem;
+      box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
+      transition: box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .hidden-highlight-box {
+      display: flex;
+      align-items: center;
+      font-style: italic;
+      gap: 0.5rem;
+      padding: 1rem;
+      margin: auto -1rem;
+      box-shadow: none;
+      transition: box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .hidden-highlight-box:hover {
+      box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
+    }
+    /* New rule to hide highlight-box shadow when hidden-highlight-box is hovered or focused */
+    .hidden-highlight-box:hover ~ .highlight-box,
+    .hidden-highlight-box:focus ~ .highlight-box {
+      box-shadow: none;
+    }
+</style>  
+
 ## Understanding the Meshery Ecosystem
 
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="cloud" >}}</div>
+<a href="/cloud">
+<div class="hidden-highlight-box" style="display:flex; gap: .5rem;">
+<div style="min-width:50px;align-self:center;">{{< svg name="cloud" >}}</div>
+<div style="margin:auto;color:#ccc;">
+  <strong>Layer5 Cloud</strong> is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+</div>
+</div>
+</a>
 
-<div style="flex: 1;">
+<a href="https://docs.meshery.io" target="_blank">
+<div class="hidden-highlight-box"  style="display: flex; align-self:center; margin-top:15px;"><div class="logo-container">{{< svg name="meshery" >}}</div>
+<div style="flex: 1;color:#ccc;">
+<strong>Meshery</strong> is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.</div></div>
+</a>
 
-**Layer5 Cloud** ([docs](/cloud)) is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
-</div></div>
-
-<div style="display: flex; align-items: flex-start; margin-top:15px;"><div class="logo-container">{{< svg name="meshery" >}}</div>
-
-<div style="flex: 1;">
-
-**Meshery** ([docs](https://docs.meshery.io)) is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with all CNCF projects, and various monitoring, CI/CD, and security tools.
-</div></div>
-
-<div style="display:flex; gap: .5rem;">
-<div 
-    style="display:flex; align-items: center; margin-bottom:2rem; margin-top: 1rem;font-style:italic; white-space: nowrap;padding: 1rem; box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;">You are here</div>
-                
-<div style="min-width:50px;"><img src="/images/logos/kanvas-alt.svg" alt="kanvas logo" data-modal="false" style="border: none;"/></div>
-
-<div>
-
-**Kanvas** ([docs](/kanvas)) Kanvas delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
-</div></div>
+<a href="/kanvas">
+<div class="highlight-box" style="display: flex; align-self:center; margin-top:15px;"><div class="logo-container" style="height:65px;width:65px;margin-left:-.45rem;"><img src="/images/logos/kanvas-alt.svg" style="border:0px;" alt="kanvas logo"/></div>
+<div style="flex: 1;color:#ccc;">
+<strong>Kanvas</strong> delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.</div></div>
+</a>
+</div>
 {{% /pageinfo %}}
 
 ## What is Kanvas?
