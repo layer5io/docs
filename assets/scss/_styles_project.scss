@@ -456,26 +456,63 @@ a:not([href]):not([class]):hover {
   }
 }
 
-figure {
+figure,
+figure[style*="width"] {
+  width: auto !important;
+  max-width: 70% !important;
+  margin: 0 auto 2rem auto !important;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
 
-  > img:hover { cursor: pointer; }
   > img {
-    margin: 0 auto; // Center the image
-    margin-bottom: 0px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
     border-radius: .5rem .5rem 0rem 0rem !important;
     box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4) !important;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
-  figcaption {
-    color: $dark;
-    background-color: rgba($lightslategray, 1);
-    // font-style:italic;
+
+  > figcaption {
+    width: 100% !important;
     text-align: center;
-    margin: 0rem;
-    padding: 0 0.45 0.45 0.45rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba($lightslategray, 1);
+    color: $dark;
     border-radius: 0 0 .5rem .5rem;
-    box-sizing: border-box; // Include padding in width calculation
+    box-sizing: border-box;
+  }
+}
+
+// Mobile: override for full-width content alignment
+@media (max-width: 600px) {
+  figure,
+  figure[style*="width"] {
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+.md__image img,
+img.md-image-responsive {
+  max-width: 70%;
+  max-height: 80vh;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
   }
 }
 
