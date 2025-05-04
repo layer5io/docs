@@ -42,7 +42,7 @@ Context-click on any area of your design, and from the contextual menu, select "
 
 ### Commenting via hotkey
 
-<button class="kbc-button kbc-button-xs">⌘/CTL + M</button> Add a comment into your design when you press this hotkey combination. After pressing the hotkey, a new comment will be displayed. You can move the new comment anywhere in your design.
+<button class="kbc-button kbc-button-xs">M</button> Add a comment into your design when you press "M" as the hotkey. After pressing the hotkey, a new comment will be displayed. You can move the new comment anywhere in your design.
 
 ## Design review using comments
 
