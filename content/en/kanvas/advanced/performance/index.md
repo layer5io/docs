@@ -43,7 +43,7 @@ Kanvas supports up to 1,000 relationships per design. Exceeding this limit can i
 
 #### Maximum Number of TagSet Relationships
 
-<img alt="Labels and Annotations" src="../../designer/tagsets/group-components.png" width="15%" />
+![Labels and Annotations](../../designer/tagsets/group-components.png)
 
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
 
@@ -71,7 +71,7 @@ Under the Free subscription plan, Kanvas support a single image size of up to 50
 
 To improve the performance of your design, consider optimizing by disabling one or more layers.
 
-<figure style="width:600px;">
+<figure>
   <img src="./layers-panel.png" alt="Layers panel in Kanvas Designer" />
   <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
