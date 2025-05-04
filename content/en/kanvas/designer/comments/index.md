@@ -78,6 +78,39 @@ After resolving a comment thread, you can access the comment history to review p
 
 Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
 
+### Copying or Cloning Comments
+
+You can reuse a comment by cloning it. This is helpful when you want to move a discussion to a new place or carry it over to another design.
+
+Both Copy and Duplicate create a new comment based on the original. **Duplicate** places it immediately in the same design, while **Copy** allows you to paste it manually wherever you want.
+
+* **Right-click and Copy**: Right-click on any comment, then select **Copy** from the menu.
+
+<figure style="width:400px;">
+  <img src="./comment-copy.gif" alt="Copy a comment" />
+  <figcaption>Copy a comment</figcaption>
+</figure>
+
+* **Right-click and Duplicat**: From the menu, click **Duplicate** to immediately create a copy of the comment in the same design. 
+
+* **Copy and Paste**: 
+    * <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste the comment.
+    * <button class="kbc-button kbc-button-xs">Ctrl + Z</button>: Undo the clone action if needed.
+
+{{< alert title="Tip" type="info">}}
+You can also press and hold the left mouse button to select multiple comments and copy or manipulate them together.
+{{< /alert >}}
+
+What to expect when cloning a comment:
+
+- **Timestamp**: The original creation time is preserved.
+- **Mentions**: @mentions won’t trigger new notifications after cloning.
+- **Threads**: All replies in the thread are included.
+- **Name**: If the comment has a name, the clone keeps the same name.
+- **Placement**: You can paste the comment into the same design or a different one.
+- **Notifications**: Replies to the cloned comment will notify participants unless they’ve muted the thread.
+- **Independence**: The clone is separate—editing or deleting the original won't affect the copy.
+
 ## Managing Comment Notifications
 
 ### Enable Email Notifications
@@ -92,6 +125,14 @@ After a comment has been resolved, there might be situations where you need to r
 <img src="./comments-unresolved.gif" alt="Unresolving comments in designer" />
   <figcaption>Unresolving comments in designer</figcaption>
 </figure>
+
+**Resolving vs Deleting**
+
+Resolving a comment hides it from the canvas but keeps its history, so you can always revisit or reopen it later. Deleting a comment removes it entirely — including all threads and history — and cannot be undone.
+
+**What if two people act at the same time?**
+
+If someone resolves a comment while you're still typing in it, the comment will immediately close for both of you. You'll see a message letting you know that the thread was resolved.
 
 ### Mute Comment Notifications
 
@@ -113,7 +154,6 @@ Customize your notification preferences to mute email notifications for comments
 - *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
 
 {{< alert title="Remember">}}
-
 - While email alerts are muted, you can still access and view all comments on the design at any time.
 - You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
 {{< /alert >}}
@@ -136,8 +176,6 @@ Stay engaged in the review process. Regularly check and respond to comments to k
 
 Highlight the most critical feedback first. This ensures that the designer focuses on the most important aspects for improvement.
 
-{{< alert title="Note">}}
-
-- Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
-
+{{< alert title="Share your thoughts">}}
+Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
 {{< /alert >}}
