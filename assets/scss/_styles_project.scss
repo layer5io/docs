@@ -458,7 +458,7 @@ a:not([href]):not([class]):hover {
 
 figure,
 figure[style*="width"] {
-  width: auto !important;
+  width: max-content !important;
   max-width: 70% !important;
   margin: 0 auto 2rem auto !important;
 
@@ -467,7 +467,8 @@ figure[style*="width"] {
   align-items: center;
 
   > img {
-    width: 100% !important;
+    width: auto !important;
+    max-width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
     display: block !important;
@@ -502,6 +503,7 @@ figure[style*="width"] {
 
 .md__image img,
 img.md-image-responsive {
+  width: auto;
   max-width: 70%;
   max-height: 80vh;
   height: auto;
@@ -510,6 +512,7 @@ img.md-image-responsive {
   object-fit: contain;
 
   @media (max-width: 600px) {
+    width: auto;
     max-width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
