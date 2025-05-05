@@ -140,14 +140,14 @@ Customize your notification preferences to mute email notifications for comments
 - *Mentions in Other Designs:* You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
 - *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
 
-{{< alert title="Remember">}}
+{{< alert title="Muted Notifcations Reminder">}}
 
 - While email alerts are muted, you can still access and view all comments on the design at any time.
 - You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
 {{< /alert >}}
 
-{{< alert type="info" title="Tip">}}
-Currently, the system does not track read or unread messages inside comment threads for each user. If a user is mentioned but misses the notification, they might not become aware of the mention until they receive a new notification for another comment in that conversation.
+{{< alert type="info" title="Missed Notifcations">}}
+Kanvas does not track the read or unread status of messages inside comment threads for each user. If a user is mentioned, but misses the notification, they might not become aware of the comment until they receive a new notification for another comment in that conversation.
 {{< /alert >}}
 
 ## Best Practices for Effective Design Reviews
