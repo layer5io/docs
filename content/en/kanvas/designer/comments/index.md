@@ -88,7 +88,26 @@ You can also reopen comments.
 
 Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
 
-### Copying or Cloning Comments
+### Duplicating Comments
+
+Duplicating a comment can be especially useful in design reviews where conversations evolve, branch out, and cover multiple subtopics. Here are a few reasons why you might use this feature:
+
+- **Preserving Valuable Context**: Long comment threads often accumulate detailed discussions. If a portion of the thread is resolved but the remaining conversation still holds relevance, duplicating the comment allows you to preserve and carry forward that context—while allowing the original thread to be marked as resolved.
+- **Managing Multiple Action Items**: Design discussions frequently lead to multiple actionable items or ideas. Splitting these into individual, focused comments allows each item to be tracked and resolved independently. This not only brings clarity but also helps avoid bottlenecks where one unresolved point prevents closing the entire discussion.
+
+A key part of duplicating comments effectively is _comment naming_. When a comment is added in Kanvas, it receives an auto-generated name that helps identify it quickly. These default names are ideal for brief or transient feedback.
+
+However, when duplicating a comment - especially for long-term tracking or historical purposes - it’s best to _rename the duplicated comment_. This helps differentiate it from the original, organizes your design notes, and ensures collaborators can quickly identify what each comment pertains to.
+
+Clear, purposeful names enhance the readability and manageability of your design, making collaboration smoother and more effective.
+
+
+<!-- TODO: https://github.com/layer5io/docs/issues/536
+
+a link to the doc on the Layers panel and how to rename components is needed here. 
+
+-->
+
 
 You can reuse a comment by cloning it. This is helpful when you want to move a discussion to a new place or carry it over to another design.
 
