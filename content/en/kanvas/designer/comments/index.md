@@ -91,7 +91,7 @@ Both Copy and Duplicate create a new comment based on the original. **Duplicate*
   <figcaption>Copy a comment</figcaption>
 </figure>
 
-* **Right-click and Duplicat**: From the menu, click **Duplicate** to immediately create a copy of the comment in the same design. 
+* **Right-click and Duplicate**: From the menu, click **Duplicate** to immediately create a copy of the comment in the same design. 
 
 * **Copy and Paste**: 
     * <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste the comment.
