@@ -458,20 +458,21 @@ a:not([href]):not([class]):hover {
 
 figure,
 figure[style*="width"] {
-  width: auto !important;
+  width: max-content !important;
   max-width: 70% !important;
-  margin: 0 auto 2rem auto !important;
+  margin: 0 auto 2rem auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   > img {
-    width: 100% !important;
-    height: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto;
     object-fit: contain !important;
-    display: block !important;
-    margin: 0 auto !important;
+    display: block;
+    margin: 0 auto;
     border-radius: .5rem .5rem 0rem 0rem !important;
     box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4) !important;
 
@@ -502,6 +503,7 @@ figure[style*="width"] {
 
 .md__image img,
 img.md-image-responsive {
+  width: auto;
   max-width: 70%;
   max-height: 80vh;
   height: auto;
@@ -510,6 +512,7 @@ img.md-image-responsive {
   object-fit: contain;
 
   @media (max-width: 600px) {
+    width: auto;
     max-width: 100%;
     padding: 0 1rem;
     box-sizing: border-box;
