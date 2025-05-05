@@ -1,4 +1,4 @@
 ---
-title: Onboarding
+title: Basics
 videoGrid: true
 ---
