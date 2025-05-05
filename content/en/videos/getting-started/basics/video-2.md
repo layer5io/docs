@@ -11,6 +11,7 @@ categories: [Designer]
 formats: [video]
 tags: [review, collaboration, comments]
 duraiton: 3:40
+draft: true
 ---
 
 {{< youtube bb6J--aApk8 >}}
