@@ -1,4 +1,0 @@
----
-title: Onboarding
-videoGrid: true
----
