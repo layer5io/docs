@@ -32,8 +32,6 @@ Subtitle: Kanvas, Meshery, and all the things you wish someone explained… in f
 6. “DevOps Explained (With Fewer Acronyms)”
 Subtitle: Because reading RFCs isn’t your idea of a good time either.
 
----
-
 ### For Site Reliability Engineers (SREs):
 
 1. **"Uptime’s a Beast. Here’s the Taming Guide."**
@@ -48,8 +46,6 @@ Subtitle: Because reading RFCs isn’t your idea of a good time either.
 4. **"99.999% Sure These Videos Help"**
    Subtitle: SRE-tested walkthroughs for keeping systems sane when everything scales (or breaks).
 
----
-
 ### For Platform Engineers:
 
 1. **"Platform, but Make It Product"**
@@ -63,11 +59,6 @@ Subtitle: Because reading RFCs isn’t your idea of a good time either.
 
 4. **"Run the Platform. Don’t Let It Run You."**
    Subtitle: Get up to speed on tools that help you go from enabler to hero.
-
----
-Absolutely — here are two sets of creative title + subtitle pairings, one geared for multi-cloud wranglers and another for solution architects. Each keeps things sharp, a little snarky, and strategically Layer5-ish.
-
----
 
 ## For Multi-Cloud Wranglers
 
@@ -98,5 +89,3 @@ Absolutely — here are two sets of creative title + subtitle pairings, one gear
 
 4. **“Your Solutions Should Scale. Your Stress Shouldn’t.”**
    Subtitle: Architect smarter with videos that bring clarity to the cloud-native stack.
-
----
