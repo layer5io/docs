@@ -21,8 +21,8 @@ onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout=
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/kanvas" aria-label="Kanvas Docs"
-onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout="restoreImage('Kanvas', 'images/logos/kanvas-alt.svg')">
-    <img id="Kanvas" src="images/logos/kanvas-alt.svg" alt="Layer5 Kanvas Docs Logo" />
+onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout="restoreImage('Kanvas', 'images/logos/kanvas-icon-color.svg')">
+    <img id="Kanvas" src="images/logos/kanvas-icon-color.svg" alt="Layer5 Kanvas Docs Logo" />
     Kanvas Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
