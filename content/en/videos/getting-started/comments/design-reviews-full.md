@@ -1,7 +1,7 @@
 ---
-title: "Design Reviews"
+title: "Design Review Mechanics"
 description: >
-   Kanvas’s Designer offers enables you to place comments “inline” with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
+   Kanvas’s Designer offers enables you to place comments “inline” with your infrastructure as code. 
 video_id: "LaG3AykTx0M"
 videoType: youtube  # or "local"
 muted: true  # optional
@@ -14,6 +14,10 @@ duration: "2:47"
 ---
 
 {{< youtube LaG3AykTx0M >}}
+
+Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
+
+Related Documentation: [Design Reviews](https://docs.layer5.io/kanvas/designer/comments/)
 
 Lessons learned in this Peer Review module:
 
