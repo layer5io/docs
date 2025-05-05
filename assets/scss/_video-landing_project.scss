@@ -63,6 +63,16 @@
     width: 90%;
     margin: 0 auto;
 }
+a#videoPageLink {
+    padding: 0rem;
+    color: $lightslategray;
+}
+a#videoPageLink:hover {
+    color: $casper;
+}
+a#videoPageLink:focus {
+    color: $white;
+}
 
 .hero-video-container {
     border-radius: 12px;
