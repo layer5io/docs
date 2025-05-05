@@ -86,6 +86,73 @@ You can also reopen comments.
 
 Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
 
+### Duplicating / Copying Comments
+
+Kanvas supports two ways to reuse comments: **Duplicate** and **Copy**. Both create a new comment based on the original, but they serve different use cases.
+
+#### Why Use Duplicate?
+
+Design reviews often involve evolving threads or multiple subtopics. Duplicate is ideal when:
+
+- **Preserving Valuable Context**  
+  Long threads may include resolved and unresolved content. Duplicating preserves ongoing relevance while letting you resolve the original.
+
+- **Managing Multiple Action Items**  
+  Break down one thread into focused, actionable items. This improves clarity and prevents blockers from holding up the discussion.
+
+#### Why Use Copy?
+
+**Copy** is helpful when you need flexibility to place the comment somewhere else—either within the same design or across different ones.  
+This method supports:
+
+- **Manual Placement**: Paste the copied comment exactly where you need it.
+- **Bulk Operations**: Copy multiple selected comments at once using mouse drag.
+
+{{< alert title="Tip: Comment participants' access to designs" type="info">}}
+
+Copying a comment into another design does **not** change the target design’s sharing settings:
+
+- Participants from the original thread may not have access
+- Notifications may still be sent, but users might not be able to view or respond
+
+Learn more about [sharing settings](/kanvas/designer/sharing).
+
+{{< /alert >}}
+
+#### How to Copy or Duplicate
+
+- **Right-click and Copy**: Choose **Copy** to manually paste it later.
+
+  <figure style="width:400px;">
+    <img src="./comment-copy.gif" alt="Copy a comment" />
+    <figcaption>Copy a comment</figcaption>
+  </figure>
+
+- **Right-click and Duplicate**: Use **Duplicate** to instantly create a copy in the same design.
+
+- **Keyboard Shortcuts**:
+  - <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste
+  - <button class="kbc-button kbc-button-xs">Ctrl + Z</button>: Undo the action
+
+{{< alert title="Tip: Copy more than one item at-a-time" type="info">}}
+Click and drag the left mouse button to select multiple comments and copy them together.
+{{< /alert >}}
+
+#### Naming Matters
+
+Kanvas auto-generates comment names, useful for quick feedback. When duplicating or copying for tracking or history, **rename the copy** to reduce confusion and aid navigation.
+
+#### What Happens When You Duplicate or Copy a Comment?
+
+- **Timestamp**: The original creation time is preserved.
+- **Threads**: All replies in the original thread are included.
+- **Name**: If the comment has a name, the clone keeps the same name.
+- **Placement**:  
+  - **Duplicate**: Instantly places the comment in the same design.  
+  - **Copy**: Allows you to paste the comment manually into the same or a different design.
+- **Notifications**: Neither duplicating nor copying sends a creation notification to the design owner or participants. However, replies to the cloned comment will notify participants unless they’ve muted the thread.
+- **Independence**: The clone is separate—editing or deleting the original does not affect the copy.
+
 ### Hide Comments Using the Layers Panel
 
 You can temporarily hide or reveal open comments using the Layers panel—just like toggling layers in Photoshop.  
@@ -161,13 +228,13 @@ You can also manage all your comment notification settings centrally through the
 
 **What Muting Affects:**
 
-- *Muted Design's Comment Thread:* This includes all subsequent replies within the same thread, whether directed at you or not.
-- *Your Mentions:* You won't receive email alerts when someone mentions you in the muted design's comment thread.
+- **Muted Comment Thread:** This includes all subsequent replies within the same thread, whether directed at you or not.
+- **Your Mentions:** You won't receive email alerts when someone mentions you in the muted design's comment thread.
 
-**What Muting Doesn't Affect:**
+#### What Muting Doesn't Affect
 
-- *Mentions in Other Designs:* You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
-- *New Comment Threads:* Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
+- **Mentions in Other Designs:** You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
+- **New Comment Threads:** Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
 
 {{< alert title="Muted Notifcations Reminder">}}
 
@@ -180,6 +247,10 @@ Kanvas does not track the read or unread status of messages inside comment threa
 {{< /alert >}}
 
 ## Best Practices for Effective Design Reviews
+
+### Resolving vs deleting comments
+
+Resolving a comment hides it from the canvas but keeps its history, so you can always revisit or reopen it later. Deleting a comment removes it entirely — including all threads and history — and cannot be undone.
 
 ### Be specific and actionable
 
@@ -197,8 +268,9 @@ Stay engaged in the review process. Regularly check and respond to comments to k
 
 Highlight the most critical feedback first. This ensures that the designer focuses on the most important aspects for improvement.
 
-{{< alert title="Note">}}
+<!-- ## FAQs
 
-- Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
+**What if two people act at the same time?**
 
-{{< /alert >}}
+If someone resolves a comment while you're still typing in it, the comment will immediately close for both of you. You'll see a message letting you know that the thread was resolved.
+ -->
