@@ -10,7 +10,11 @@
         <a href="#category-{{ $index }}" class="category-tab" data-category="{{ $index }}">
           <div class="tab-icon">
             {{ if .Params.icon }}
-              <i class="bi {{ .Params.icon }}"></i>
+              {{ if hasPrefix .Params.icon "bi" }}
+                <i class="bi {{ .Params.icon }}"></i>
+              {{ else }}
+                 <img src="{{ .Params.icon }}" alt="{{ .Title }} icon" style="max-width: 100%;object-fit: contain;"/>
+              {{ end }}
             {{ else }}
               <i class="bi bi-collection-play"></i>
             {{ end }}
