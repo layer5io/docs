@@ -210,7 +210,7 @@ As new comments are added into the your design, collaborators (other users) with
 
 Customize your [notification preferences](/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
 
-### Mute Comment Notifications
+### Muting Comment Notifications
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
@@ -226,7 +226,7 @@ You can also manage all your comment notification settings centrally through the
   <figcaption>Manage all comment notifications centrally in the Cloud</figcaption>
 </figure>
 
-**What Muting Affects:**
+#### What Muting Affects
 
 - **Muted Comment Thread:** This includes all subsequent replies within the same thread, whether directed at you or not.
 - **Your Mentions:** You won't receive email alerts when someone mentions you in the muted design's comment thread.
