@@ -1,13 +1,11 @@
 ---
 title: "Birth of Kanvas Logo"
 description: "A visually transformation of the Meshery logo into the Kanvas logo."
-videoType: "youtube"
 video_id: "4WcofErPTx4"
+videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
-tags: [Meshery]
-duration: "2:10"
 ---
 
 {{< youtube 4WcofErPTx4 >}}

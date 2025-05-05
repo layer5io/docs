@@ -10,7 +10,7 @@ aliases:
   - /meshmap/designer/comments
 ---
 
-Kanvas's Designer offers enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
+Kanvas's Designer enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
 <figure style="width:400px;">
   <img src="./kanvas-comment.png" alt="Comments in Designer" />
@@ -57,9 +57,7 @@ Context-click on any area of your design, and from the contextual menu, select "
 
 Any number of users can participate in a single comment. When more than one user makes a remark in the same comment, a comment thread ensues.
 
-When a new thr is added, existing comments are typically pushed down within the same comment thread. This means that the new comment appears at the bottom of the thread, with earlier comments remaining visible but lower in the list.
-
-Initiate a comment thread by just adding a remark on an existing comment. Collaborators can reply directly to comments in real-time (approximating a chat). Comment threads create a structured dialogue around each point of feedback for easy reference.
+You can initiate a comment thread by adding a remark to an existing comment. Collaborators can reply directly to comments in real-time (approximating a chat). Comment threads create a structured dialogue around each point of feedback for easy reference.
 
 ### Utilize Mentions
 
@@ -110,11 +108,15 @@ This method supports:
 - **Manual Placement**: Paste the copied comment exactly where you need it.
 - **Bulk Operations**: Copy multiple selected comments at once using mouse drag.
 
-{{< alert title="Important Note" type="warning">}}
+{{< alert title="Tip: Comment participants' access to designs" type="info">}}
+
 Copying a comment into another design does **not** change the target design’s sharing settings:
+
 - Participants from the original thread may not have access
 - Notifications may still be sent, but users might not be able to view or respond
+
 Learn more about [sharing settings](/kanvas/designer/sharing).
+
 {{< /alert >}}
 
 #### How to Copy or Duplicate
@@ -132,8 +134,8 @@ Learn more about [sharing settings](/kanvas/designer/sharing).
   - <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste
   - <button class="kbc-button kbc-button-xs">Ctrl + Z</button>: Undo the action
 
-{{< alert title="Tip" type="info">}}
-Press and hold the left mouse button to select multiple comments and copy them together.
+{{< alert title="Tip: Copy more than one item at-a-time" type="info">}}
+Click and drag the left mouse button to select multiple comments and copy them together.
 {{< /alert >}}
 
 #### Naming Matters
@@ -151,11 +153,36 @@ Kanvas auto-generates comment names, useful for quick feedback. When duplicating
 - **Notifications**: Neither duplicating nor copying sends a creation notification to the design owner or participants. However, replies to the cloned comment will notify participants unless they’ve muted the thread.
 - **Independence**: The clone is separate—editing or deleting the original does not affect the copy.
 
-### Reopening (unresolving) Comments
+### Hide Comments Using the Layers Panel
 
-After a comment has been resolved, you might need to reopen the discussion. Reopening a comment allows you to reinitiate conversations, address additional concerns, or make further changes.
+You can temporarily hide or reveal open comments using the Layers panel—just like toggling layers in Photoshop.  
+This helps you focus on the most important parts of your design and improves clarity during reviews.
 
-If a comment is resolved by mistake, it can be reopened. Adding a new comment to a resolved discussion will also re-open the thread.
+<figure style="width:400px;">
+  <img src="./comments-hide.png" alt="Hide comments using Layers" />
+  <figcaption>Hide comments using the Layers panel</figcaption>
+</figure>
+
+{{< alert type="info" title="Explore More Panel Features" >}}
+Want to improve the performance of your workspace? [Learn more about using the Layers panel](https://docs.layer5.io/kanvas/advanced/performance/#optimize-your-design-using-the-layers-panel).
+{{< /alert >}}
+
+### Name Comments for Easy Access
+
+If you plan to keep certain comments in your design for documentation, team reference, or historical context, it's a good idea to give them meaningful names. This simple habit improves clarity for both you and your team—especially when reviewing or revisiting designs later.
+
+<figure style="width:400px;">
+  <img src="./naming-comments.png" alt="Naming a comment in Designer" />
+</figure>
+
+{{< alert type="info" title="Best Practice" >}}
+Give long-lived comments short, descriptive names like `"Needs Load Balancer"` or `"Review DNS settings"`  
+so you can quickly find them in the Layers panel later on.
+{{< /alert >}}
+
+### Reopen a Resolved Comment	
+
+If a comment is resolved by mistake, it can be reopened. Adding a new comment to a resolved discussion will also re-open the thread. Reopening a comment allows you to reinitiate conversations, address additional concerns, or make further changes.
 
 Follow the steps below to reopen a comment:
 
@@ -192,7 +219,14 @@ Customize your notification preferences to mute email notifications for comments
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
-#### What Muting Affects
+You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
+
+<figure style="width:400px;">
+  <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
+  <figcaption>Manage all comment notifications centrally in the Cloud</figcaption>
+</figure>
+
+**What Muting Affects:**
 
 - **Muted Comment Thread:** This includes all subsequent replies within the same thread, whether directed at you or not.
 - **Your Mentions:** You won't receive email alerts when someone mentions you in the muted design's comment thread.
@@ -220,7 +254,7 @@ Resolving a comment hides it from the canvas but keeps its history, so you can a
 
 ### Be specific and actionable
 
-Provide specific feedback rather that the design can act on. Vague comments can lead to misunderstandings and delays in the design process. Support your feedback with examples or references. This can help clarify your point and provide the designer with tangible suggestions for improvement.
+Provide specific feedback that the designer can act on. Vague comments can lead to misunderstandings and delays in the design process. Support your feedback with examples or references. This can help clarify your point and provide the designer with tangible suggestions for improvement.
 
 ### Balance positive and contructive feedback
 
