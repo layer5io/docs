@@ -88,57 +88,68 @@ You can also reopen comments.
 
 Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
 
-### Duplicating Comments
+### Duplicating / Copying Comments
 
-Duplicating a comment can be especially useful in design reviews where conversations evolve, branch out, and cover multiple subtopics. Here are a few reasons why you might use this feature:
+Kanvas supports two ways to reuse comments: **Duplicate** and **Copy**. Both create a new comment based on the original, but they serve different use cases.
 
-- **Preserving Valuable Context**: Long comment threads often accumulate detailed discussions. If a portion of the thread is resolved but the remaining conversation still holds relevance, duplicating the comment allows you to preserve and carry forward that context—while allowing the original thread to be marked as resolved.
-- **Managing Multiple Action Items**: Design discussions frequently lead to multiple actionable items or ideas. Splitting these into individual, focused comments allows each item to be tracked and resolved independently. This not only brings clarity but also helps avoid bottlenecks where one unresolved point prevents closing the entire discussion.
+#### Why Use Duplicate?
 
-A key part of duplicating comments effectively is _comment naming_. When a comment is added in Kanvas, it receives an auto-generated name that helps identify it quickly. These default names are ideal for brief or transient feedback.
+Design reviews often involve evolving threads or multiple subtopics. Duplicate is ideal when:
 
-However, when duplicating a comment - especially for long-term tracking or historical purposes - it’s best to _rename the duplicated comment_. This helps differentiate it from the original, organizes your design notes, and ensures collaborators can quickly identify what each comment pertains to.
+- **Preserving Valuable Context**  
+  Long threads may include resolved and unresolved content. Duplicating preserves ongoing relevance while letting you resolve the original.
 
-Clear, purposeful names enhance the readability and manageability of your design, making collaboration smoother and more effective.
+- **Managing Multiple Action Items**  
+  Break down one thread into focused, actionable items. This improves clarity and prevents blockers from holding up the discussion.
 
+#### Why Use Copy?
 
-<!-- TODO: https://github.com/layer5io/docs/issues/536
+**Copy** is helpful when you need flexibility to place the comment somewhere else—either within the same design or across different ones.  
+This method supports:
 
-a link to the doc on the Layers panel and how to rename components is needed here. 
+- **Manual Placement**: Paste the copied comment exactly where you need it.
+- **Bulk Operations**: Copy multiple selected comments at once using mouse drag.
 
--->
-
-
-You can reuse a comment by cloning it. This is helpful when you want to move a discussion to a new place or carry it over to another design.
-
-Both Copy and Duplicate create a new comment based on the original. **Duplicate** places it immediately in the same design, while **Copy** allows you to paste it manually wherever you want.
-
-* **Right-click and Copy**: Right-click on any comment, then select **Copy** from the menu.
-
-<figure style="width:400px;">
-  <img src="./comment-copy.gif" alt="Copy a comment" />
-  <figcaption>Copy a comment</figcaption>
-</figure>
-
-* **Right-click and Duplicate**: From the menu, click **Duplicate** to immediately create a copy of the comment in the same design. 
-
-* **Copy and Paste**: 
-    * <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste the comment.
-    * <button class="kbc-button kbc-button-xs">Ctrl + Z</button>: Undo the clone action if needed.
-
-{{< alert title="Tip" type="info">}}
-You can also press and hold the left mouse button to select multiple comments and copy or manipulate them together.
+{{< alert title="Important Note" type="warning">}}
+Copying a comment into another design does **not** change the target design’s sharing settings:
+- Participants from the original thread may not have access
+- Notifications may still be sent, but users might not be able to view or respond
+Learn more about [sharing settings](/kanvas/designer/sharing).
 {{< /alert >}}
 
-What to expect when cloning a comment:
+#### How to Copy or Duplicate
+
+- **Right-click and Copy**: Choose **Copy** to manually paste it later.
+
+  <figure style="width:400px;">
+    <img src="./comment-copy.gif" alt="Copy a comment" />
+    <figcaption>Copy a comment</figcaption>
+  </figure>
+
+- **Right-click and Duplicate**: Use **Duplicate** to instantly create a copy in the same design.
+
+- **Keyboard Shortcuts**:
+  - <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste
+  - <button class="kbc-button kbc-button-xs">Ctrl + Z</button>: Undo the action
+
+{{< alert title="Tip" type="info">}}
+Press and hold the left mouse button to select multiple comments and copy them together.
+{{< /alert >}}
+
+#### Naming Matters
+
+Kanvas auto-generates comment names, useful for quick feedback. When duplicating or copying for tracking or history, **rename the copy** to reduce confusion and aid navigation.
+
+#### What Happens When You Duplicate or Copy a Comment?
 
 - **Timestamp**: The original creation time is preserved.
-- **Mentions**: @mentions won’t trigger new notifications after cloning.
-- **Threads**: All replies in the thread are included.
+- **Threads**: All replies in the original thread are included.
 - **Name**: If the comment has a name, the clone keeps the same name.
-- **Placement**: You can paste the comment into the same design or a different one.
-- **Notifications**: Replies to the cloned comment will notify participants unless they’ve muted the thread.
-- **Independence**: The clone is separate—editing or deleting the original won't affect the copy.
+- **Placement**:  
+  - **Duplicate**: Instantly places the comment in the same design.  
+  - **Copy**: Allows you to paste the comment manually into the same or a different design.
+- **Notifications**: Neither duplicating nor copying sends a creation notification to the design owner or participants. However, replies to the cloned comment will notify participants unless they’ve muted the thread.
+- **Independence**: The clone is separate—editing or deleting the original does not affect the copy.
 
 ### Reopening (unresolving) Comments
 
