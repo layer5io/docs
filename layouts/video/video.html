@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
+    <div class="video-page-container">
+        <div class="navbar-sticky-wrapper" style="min-height: 5rem;">
+            <header>{{ partial "navbar.html" . }}</header>
+        </div>
+  <div class="hero-section-wrapper">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-subtitle">{{ .Description }}</p>
+    
+    {{ if .Params.featured_video }}
+    <div class="hero-video-wrapper">
+      <div class="hero-video-container" id="videoContainer">
+        <div class="video-overlay bg-gradient-overlay">
+          <div style="max-height: 100%;">
+            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="video-btn-wrapper">
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 57 60">
+              <path class="play-icon-svg-path" d="M43.2,35.4l-23.8,13.8c0,0-.2,0-.2.1-.8.4-1.8.7-2.8.7-3.3,0-6-2.7-6-6v-28c0-1.2.3-2.2.9-3.2,1.7-2.7,5.2-3.7,8-2l23.8,13.8c1,.5,1.9,1.3,2.5,2.4.5,1,.8,2,.8,3,0,1-.3,2-.8,3-.6,1.1-1.5,1.9-2.5,2.4Z"/>
+              </svg>
+          </div>
+        </div>
+        
+        <div class="video-iframe-container">
+          <iframe 
+            id="videoIframe"
+            src="" 
+            title="{{ .Title }}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  </div> 
+
+  <div class="container-fluid video-main-wrapper">
+    {{ partial "video-landing-page.html" . }}
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "scripts.html" . }}
+  {{ partial "image-modal.html" . }}
+
+
+<script>
+var navbar = document.querySelector('nav');
+window.onscroll = function() {
+  // pageYOffset or scrollY
+  if (window.pageYOffset > 0) {
+    navbar.classList.add('scrolled')
+  } else {
+    navbar.classList.remove('scrolled')
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainer = document.getElementById('videoContainer');
+    const videoOverlay = videoContainer.querySelector('.video-overlay');
+    const iframeContainer = videoContainer.querySelector('.video-iframe-container');
+    const videoIframe = document.getElementById('videoIframe');
+    
+    videoContainer.addEventListener('click', function() {
+      // set the iframe src with autoplay parameter
+      videoIframe.src = "https://www.youtube.com/embed/{{ .Params.video_id }}?autoplay=1";
+      
+      // hide the overlay, show the iframe
+      videoOverlay.style.display = 'none';
+      iframeContainer.style.display = 'block';
+    });
+  });
+</script>
+ 
+</body>
+
+</html>
