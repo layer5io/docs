@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     videoContainer.addEventListener('click', function() {
       // set the iframe src with autoplay parameter
-      videoIframe.src = "https://www.youtube.com/embed/{{ .Params.video_id }}?autoplay=1";
+      videoIframe.src = "https://www.youtube.com/embed/{{ .Params.videoId }}?autoplay=1";
       
       // hide the overlay, show the iframe
       videoOverlay.style.display = 'none';
