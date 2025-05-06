@@ -2,7 +2,7 @@
 title: "Kanvas Designer Overview"
 description: >
    With thousands of components available, you can collaboratively design and operate your multi-cloud and cloud native infrastructure.
-video_id: "qaoYRP3oLok"
+videoId: "qaoYRP3oLok"
 videoType: youtube 
 categories: [Designer]
 formats: [video]
