@@ -1,6 +1,6 @@
 
 - A section is a directory having `_index.md` in Hugo.
-- contributing vidoe involves, creating a category -> subcategory -> video markdown files, or adding a video markdown file directly under a subcategory.
+- contributing video involves, creating a category -> subcategory -> video markdown files, or adding a video markdown files directly under a category, without any subcategory
 
 Category: 
 Create a direcoty under `content/en/videos` like `getting-started` and add `_index.md` inside it, this constitues a top-level category and a section.
