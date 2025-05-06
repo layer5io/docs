@@ -90,7 +90,7 @@ Manage your comment history by clicking on the "View Comment History" button. Th
 
 Kanvas supports two ways to reuse comments: **Duplicate** and **Copy**. Both create a new comment based on the original, but they serve different use cases.
 
-#### Why Use Duplicate?
+#### Why duplicate a comment?
 
 Design reviews often involve evolving threads or multiple subtopics. Duplicate is ideal when:
 
@@ -100,9 +100,9 @@ Design reviews often involve evolving threads or multiple subtopics. Duplicate i
 - **Managing Multiple Action Items**  
   Break down one thread into focused, actionable items. This improves clarity and prevents blockers from holding up the discussion.
 
-#### Why Use Copy?
+#### Why copy a comment?
 
-**Copy** is helpful when you need flexibility to place the comment somewhere else—either within the same design or across different ones.  
+**Copy** is helpful when you need flexibility to place the comment somewhere else—either within the same design or across different designs.  
 This method supports:
 
 - **Manual Placement**: Paste the copied comment exactly where you need it.
