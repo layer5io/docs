@@ -1,9 +1,10 @@
 ---
 title: Contributing to Layer5 Docs
-weight: 10
+weight: 1
 description: A detailed contribution guide for Layer5 Docs.
 aliases:
   - /meshmap/reference/contributing-to-docs
+  - /kanvas/reference/contributing-to-docs/
 ---
 
 Welcome to the GitHub repository for Layer5's documentation website!
