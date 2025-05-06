@@ -18,12 +18,12 @@
       <div class="hero-video-container" id="videoContainer">
         <div class="video-overlay bg-gradient-overlay">
           <div style="max-height: 100%;">
-            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="{{ .Params.featured_image }}" data-modal="false" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="video-btn-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 60">
-              <path class="play-icon-svg-path" d="M39.5298 29.028L21.7045 39.395C21.6471 39.4284 21.5893 39.4603 21.5311 39.4908C20.9134 39.8161 20.2107 40 19.4654 40C16.9992 40 15 37.9861 15 35.5018V14.5102C15 13.6377 15.2466 12.8233 15.6734 12.1337C16.9369 10.0722 19.6075 9.38388 21.7044 10.6034L39.5291 20.97C40.2869 21.3504 40.9459 21.9517 41.401 22.7457C41.811 23.4611 42.0038 24.2428 41.9999 25.0133C41.999 25.7747 41.806 26.5461 41.4009 27.2527C40.9461 28.0464 40.2873 28.6476 39.5298 29.028Z" />
-            </svg>
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 57 60">
+              <path class="play-icon-svg-path" d="M43.2,35.4l-23.8,13.8c0,0-.2,0-.2.1-.8.4-1.8.7-2.8.7-3.3,0-6-2.7-6-6v-28c0-1.2.3-2.2.9-3.2,1.7-2.7,5.2-3.7,8-2l23.8,13.8c1,.5,1.9,1.3,2.5,2.4.5,1,.8,2,.8,3,0,1-.3,2-.8,3-.6,1.1-1.5,1.9-2.5,2.4Z"/>
+              </svg>
           </div>
         </div>
         
@@ -44,7 +44,7 @@
   </div> 
 
   <div class="container-fluid video-main-wrapper">
-    {{ partial "landing-page-videos.html" . }}
+    {{ partial "video-landing-page.html" . }}
     {{ partial "footer.html" . }}
   </div>
   {{ partial "scripts.html" . }}

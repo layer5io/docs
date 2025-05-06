@@ -1,4 +1,4 @@
 ---
-title: Configuration
+title: Basics
 videoGrid: true
 ---
