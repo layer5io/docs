@@ -96,7 +96,6 @@ a#videoPageLink:focus {
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 30px rgba(0, 179, 159, 0.4);
-    cursor: pointer;
     transition: all 0.3s ease;
     position: absolute;
     top: 50%;
@@ -115,16 +114,7 @@ a#videoPageLink:focus {
     transition: fill 0.3s ease;
 }
 
-.video-btn-wrapper:hover {
-    background-color: #00b39f;
-    .play-icon-svg-path {
-        fill: #fff;
-    }
-}
 
-.video-btn-wrapper:hover .play-icon-path {
-    fill: #fff;
-}
 
 .video-tabs-container {
     background: linear-gradient(to right top, #3d3d3d, #343434, #2b2b2b, #222222, #1a1a1a, #181818, #161616, #141414, #181818, #1c1c1c, #212121, #252525);
@@ -262,6 +252,12 @@ a#videoPageLink:focus {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    .video-info h3 {
+        color: #fff;
+    }
+    p.video-description{
+        color: #b1b6b8;
+    }
 }
 
 .video-thumbnail {
@@ -327,6 +323,7 @@ a#videoPageLink:focus {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
+    color: #b1b6b8;
 }
 
 .video-duration {
@@ -336,7 +333,7 @@ a#videoPageLink:focus {
 }
 
 .video-description {
-    color: #666;
+    color: #7a848e;
     font-size: 0.9375rem;
     line-height: 1.5;
     margin-bottom: 0;
@@ -353,6 +350,16 @@ a#videoPageLink:focus {
 }
 .video-overlay {
     z-index: 2;
+}
+
+.video-overlay:hover{
+    cursor: pointer;
+    .video-btn-wrapper {
+      background-color: #00b39f;
+      .play-icon-svg-path {
+          fill: #fff;
+       }
+    }  
 }
 
 .video-iframe-container {
