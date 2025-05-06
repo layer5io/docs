@@ -1,9 +1,13 @@
+## Contribute videos
 
-- A section is a directory having `_index.md` in Hugo.
-- contributing video involves, creating a category -> subcategory -> video markdown files, or adding a video markdown files directly under a category, without any subcategory
+> [!Note]
+> A section is a directory having `_index.md` in Hugo.
 
-Category: 
-Create a direcoty under `content/en/videos` like `getting-started` and add `_index.md` inside it, this constitues a top-level category and a section.
+ 
+Contributing video involves, creating a category -> subcategory -> adding video markdown files, or adding video markdown files directly under a category, without any subcategory.
+
+### Creating a Category: 
+Create a directory under `content/en/videos` like `getting-started` and add `_index.md` inside it, this constitues a top-level category and a section.
 inside `_index.md`, include following frontmatter: 
 
 ```yaml
@@ -55,7 +59,7 @@ duration: 2:30 # optional, duration of the video in minutes:seconds format, "min
 
 this video will now appear under Getting Started category in Onboarding subcategory in /videos gallary and on docs/getting-started index page as well.
 
-#### Adding a video directly under a category
+### Adding a video directly under a category
 
 - follow the 2nd step from above
 
