@@ -59,14 +59,14 @@
               <div class="video-grid">
                 {{ range $subSection.Pages }}
                   <div class="video-card" 
-                  data-video-id="{{ .Params.video_id }}" 
+                  data-video-id="{{ .Params.videoId }}" 
                   data-video-title="{{ .Title }}" 
                   data-video-url="{{ .RelPermalink }}"
                   >
                     <div class="video-thumbnail">
                       {{ if .Params.videoType }}
                         {{ if eq .Params.videoType "youtube" }}
-                          <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                          <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}">
                         {{ else if .Params.thumbnail }}
                           <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
                         {{ else }}
@@ -110,14 +110,14 @@
               <div class="video-grid">
                 {{ range where $mainSection.Pages "Kind" "page" }}
                   <div class="video-card"
-                  data-video-id="{{ .Params.video_id }}" 
+                  data-video-id="{{ .Params.videoId }}" 
                   data-video-title="{{ .Title }}" 
                   data-video-url="{{ .RelPermalink }}"
                   >
                     <div class="video-thumbnail">
                       {{ if .Params.videoType }}
                         {{ if eq .Params.videoType "youtube" }}
-                          <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                          <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}">
                         {{ else if .Params.thumbnail }}
                           <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
                         {{ else }}
