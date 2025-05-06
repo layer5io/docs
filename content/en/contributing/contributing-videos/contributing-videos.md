@@ -4,8 +4,7 @@ weight: 1
 description: A detailed contribution guide for adding videos to Layer5 Docs docs videos gallary
 ---
 
-> [!Note]
-> In Hugo, a section is a directory containing an `_index.md` file.
+{{< alert title="Note" >}}In Hugo, a section is a directory containing an `_index.md` file.{{< /alert >}}
 
 ## Overview
 
@@ -64,8 +63,10 @@ tags: [review, collaboration, comments] # Available as hyperlinked tags in the v
 duration: 2:30 # Optional: duration in minutes:seconds format ("min" is automatically added)
 ---
 
-{{< youtube id="videoId" class="yt-embed-container" >}} # Example: {{< youtube id=bb6J--aApk8 class="yt-embed-container" >}} we can control the styling of this iframe and wrapping div
-# by modify style of .yt-embed-container in assets/scss/_videos_project.scss
+# the following youtube shortcode is used for individual video page
+# Example: {{</* youtube id=bb6J--aApk8 class="yt-embed-container" */>}}
+# we can control the styling of resulting iframe and wrapping div by modify style of .yt-embed-container in assets/scss/_videos_project.scss
+{{</* youtube id="videoId" class="yt-embed-container" */>}}
 ```
 
 ### Approach B: Add Videos Directly Under a Category
@@ -118,3 +119,5 @@ content/en/videos/
         ├── _index.md # Defines the "Sub Category" sub-section
         └── video-1.md # file containing video specific data
 ```
+
+See `content/en/videos/template-category/` for an example of a category with subcategories and videos. It is set to draft and is not published and is intended as a reference for adding videos.
