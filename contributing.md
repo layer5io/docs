@@ -1,13 +1,3 @@
----
-title: Template # the category text on /videos category tab
-description: >
-  Template Videos for contributing videos docs
-weight: 1
-icon: bi-rocket-takeoff-fill # can use any bootstrap icon or a custom icon
-# videoGrid: true # show all child / nested videos as grid of cards on the section's index page. for example here the videoGrid: true will show all videos inside getting-started/** as grid of video cards, ommiting of or setting it to false, presents a hyperlinked list of videos / sub-sections 
-
----
-
 
 - A section is a directory having `_index.md` in Hugo.
 - contributing vidoe involves, creating a category -> subcategory -> video markdown files, or adding a video markdown file directly under a subcategory.
