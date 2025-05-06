@@ -7,4 +7,4 @@ muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
 ---
-{{< youtube Do7htKrRzDA >}}
+{{< youtube id=Do7htKrRzDA class="yt-embed-container" >}}

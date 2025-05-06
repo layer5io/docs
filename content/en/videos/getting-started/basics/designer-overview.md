@@ -10,7 +10,7 @@ tags: [basics]
 duration: "1:38"
 ---
 
-{{< youtube qaoYRP3oLok >}}
+{{< youtube id=qaoYRP3oLok class="yt-embed-container" >}}
 
 ### Related Docs
 

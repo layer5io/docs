@@ -9,4 +9,4 @@ loop: true #optional
 tags: [meshery]
 duration: "2:10"
 ---
-{{< youtube Do7htKrRzDA >}}
+{{< youtube id=Do7htKrRzDA class="yt-embed-container" >}}
