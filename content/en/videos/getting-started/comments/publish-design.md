@@ -2,7 +2,7 @@
 title: "Publishing Designs"
 description: >
    How to publish your designs to the Cloud Catalog.
-video_id: "UCKS4eSB7AY"
+videoId: "UCKS4eSB7AY"
 videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional

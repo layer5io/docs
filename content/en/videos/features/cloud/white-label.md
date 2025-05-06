@@ -1,7 +1,7 @@
 ---
 title: Custom styling for your self-hosted deployments
 description: "Layer5 Cloud deployments are highly customizable."
-video_id: "hZuhmP7lenk"
+videoId: "hZuhmP7lenk"
 videoType: "youtube"
 tags: [cloud]
 duration: "0:18"
