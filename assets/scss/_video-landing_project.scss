@@ -14,7 +14,7 @@
         border: none;
     }
     nav.scrolled {
-        background-color: #121212 !important;
+        background-color: $dark !important;
         border: 1px solid #333 !important;
     }
 }
@@ -110,7 +110,7 @@ a#videoPageLink:focus {
 }
 
 .play-icon-svg-path {
-    fill: #00b39f;
+    fill: $primary;
     transition: fill 0.3s ease;
 }
 
@@ -194,12 +194,12 @@ a#videoPageLink:focus {
 
 .category-tab.active {
    border-radius: 0;
-   border-bottom: 2px solid  #00b39f;
+   border-bottom: 2px solid  $primary;
    color: #fff;
 }
 
 .category-tab.active .tab-icon {
-    background-color: #00b39f;
+    background-color: $primary;
 }
 
 .category-tab.active .tab-icon i {
@@ -230,7 +230,7 @@ a#videoPageLink:focus {
 }
 
 .subcategory-btn.active {
-    background-color: #00b39f;
+    background-color: $primary;
     color: #fff;
 }
 
@@ -256,7 +256,7 @@ a#videoPageLink:focus {
         color: #fff;
     }
     p.video-description{
-        color: #b1b6b8;
+        color: $casper;
     }
 }
 
@@ -323,17 +323,17 @@ a#videoPageLink:focus {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #b1b6b8;
+    color: $casper;
 }
 
 .video-duration {
-    color: #00b39f;
+    color: $primary;
     font-size: 0.875rem;
     margin-bottom: 0.45rem;
 }
 
 .video-description {
-    color: #7a848e;
+    color: $lightslategray;
     font-size: 0.9375rem;
     line-height: 1.5;
     margin-bottom: 0;
@@ -355,7 +355,7 @@ a#videoPageLink:focus {
 .video-overlay:hover{
     cursor: pointer;
     .video-btn-wrapper {
-      background-color: #00b39f;
+      background-color: $primary;
       .play-icon-svg-path {
           fill: #fff;
        }
