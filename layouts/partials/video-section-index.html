@@ -60,8 +60,8 @@
                                 ></video>
                             {{ else if eq .Params.videoType "youtube" }}
                                 <div class="ratio ratio-16x9 h-100">
-                                    {{ if .Params.video_id }}
-                                    <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}" />
+                                    {{ if .Params.videoId }}
+                                    <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}" />
                                     {{ else }}
                                     <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
                                     {{ end }}
