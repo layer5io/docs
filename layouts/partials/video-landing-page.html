@@ -92,7 +92,7 @@
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms" style="margin-bottom: 0.6rem;">
                         {{ range .Params.tags }}
-                          <a href="/tags/{{ . }}"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
                         {{ end }}
                       </div>
                     {{ end }}
@@ -143,7 +143,7 @@
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms">
                         {{ range .Params.tags }}
-                          <a href="/tags/{{ . }}"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
                         {{ end }}
                       </div>
                     {{ end }}
@@ -279,7 +279,10 @@
     const videoCards = document.querySelectorAll('.video-card');
   
     videoCards.forEach(card => {
-      card.addEventListener('click', function () {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('span.taxonomy-term') || e.target.closest('a.video-tag')) {
+          return;
+        }
         const videoId = card.getAttribute('data-video-id');
         const videoTitle = card.getAttribute('data-video-title');
         const videoUrl = card.getAttribute('data-video-url');
@@ -299,7 +302,4 @@
   });
   });
   
-  document.getElementById('videoModal').addEventListener('hidden.bs.modal', () => {
-    console.log('Modal closed event fired');
-  });
       </script>
