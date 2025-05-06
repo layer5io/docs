@@ -10,4 +10,4 @@ tags: [review, collaboration, comments]
 duration: "0:17"
 ---
 
-{{< youtube bb6J--aApk8 >}}
+{{< youtube id=bb6J--aApk8 class="yt-embed-container" >}}

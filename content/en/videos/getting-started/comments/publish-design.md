@@ -13,6 +13,6 @@ tags: [catalog]
 duraiton: 0:39
 ---
 
-{{< youtube UCKS4eSB7AY >}}
+{{< youtube id=UCKS4eSB7AY class="yt-embed-container" >}}
 
 Publishing a design lets you make your content visible to any anonymous visitor of https://cloud.layer5.io/catalog and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.
