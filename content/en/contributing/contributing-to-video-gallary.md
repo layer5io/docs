@@ -1,7 +1,7 @@
 ---
-title: Contributing Videos to Layer5 docs
+title: Contributing to Video Gallery
 weight: 1
-description: A detailed contribution guide for adding videos to Layer5 Docs docs videos gallary
+description: A detailed contribution guide for adding videos to Layer5 Docs video gallary
 ---
 
 {{< alert title="Note" >}}In Hugo, a section is a directory containing an `_index.md` file.{{< /alert >}}
@@ -28,7 +28,7 @@ icon: bi-rocket-takeoff-fill # Icon for the category (supports Bootstrap icons a
 videoGrid: true # When true, shows all child  / nested videos as a grid of cards on this section's index page
                 # When false, presents a hyperlinked list of videos/sub-sections instead
 
-draft: true # When true, previews on local dev server but hides from left sidebar and /videos landing page on published site
+draft: true # When true, previews this section on local dev server but hides from left sidebar and /videos landing page on published site
 ```
 
 ## 2. Adding Videos to Your Category
