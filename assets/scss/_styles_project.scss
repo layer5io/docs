@@ -180,7 +180,6 @@ a:not([href]):not([class]):hover {
     text-decoration: none;
     transition: color 0.2s;
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
-    clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
 
 
     &:hover {
@@ -482,12 +481,7 @@ a:not([href]):not([class]):hover {
 }
 
 .td-content figure > img {
-  width: 100%;
   max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
   border-radius: .5rem .5rem 0 0;
   box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);
   transition: box-shadow 0.2s;
