@@ -156,23 +156,27 @@ You can override the default styles and add new ones:
 * Use the same file name and relative path as the theme. Hugo will look for files in the project first and fall back to the theme if no override is found.
   
   For example, to override the theme’s navigation bar template:
+
   ```
   Project override:    layouts/partials/navbar.html  
   Theme default:       themes/docsy/layouts/partials/navbar.html
   ```
+
 * To customize SCSS variables, update the `_variables_project.scss` file in the `assets/scss/` directory. This file overrides the theme’s SCSS variables and can also be used to redefine Bootstrap variables.
 * For adding custom CSS rules, use the `_styles_project.scss` file in the same `assets/scss/` directory.
 
 ### Image styling
 
 By default, Markdown images are written like this:
+
 ```markdown
 ![Alt text](/path/to/image.png)
 ```
+
 These are rendered with:
-- `max-width: 70%` of the viewport
-- `max-height: 80vh` of the viewport height
-- centered block layout
+* `max-width: 70%` of the viewport
+* `max-height: 80vh` of the viewport height
+* centered block layout
 
 This default styling works well for most landscape (horizontal) images. However, if an image is very tall, narrow, or otherwise looks awkward, you can override the default by embedding raw HTML and specifying a custom size:
 
@@ -180,12 +184,23 @@ This default styling works well for most landscape (horizontal) images. However,
 <img src="./images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
 ```
 
+If you want your image to include a caption for explanation or accessibility, you can use the `<figure>` element:
+
+```html
+<figure>
+  <img src="./images/example.png" alt="Example description" />
+  <figcaption>Example: Control which layers of your design are visible using the Layers panel.</figcaption>
+</figure>
+```
+
+Using `<figure>` allows you to pair an image with a caption while preserving semantic structure and visual consistency. It's particularly useful for annotated screenshots or UI illustrations.
+
 ### Additional resources
 
-- **Bootstrap image utilities:**  
-  https://getbootstrap.com/docs/4.0/content/images/  
-- **Bootstrap utilities (borders, floats, etc.):**  
-  https://getbootstrap.com/docs/4.0/utilities/  
+* **Bootstrap image utilities:**  
+  <https://getbootstrap.com/docs/4.0/content/images/>  
+* **Bootstrap utilities (borders, floats, etc.):**  
+  <https://getbootstrap.com/docs/4.0/utilities/>  
 
 ## Using Hugo shortcodes
 

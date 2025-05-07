@@ -23,7 +23,7 @@
 
   background: $primary;
   min-height: 4rem;
-  margin: 0;
+  margin: auto;
   z-index: 32;
 
   .navbar-brand {
@@ -70,12 +70,11 @@
     .td-navbar-nav-scroll {
       max-width: fit-content;
       height: 3.5rem;
-      overflow: hidden;
       font-size: 0.9rem;
     }
 
     .navbar-brand {
-      margin-right: 0;
+      // margin-right: 0;
     }
 
     .navbar-nav {

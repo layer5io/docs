@@ -3,7 +3,7 @@
     {{ $currentTags := .Params.tags }}
     {{ $currentCategories := .Params.categories }}
 
-    {{ $videoPages := (where .Site.Pages ".Params.video_id" "!=" nil) }}
+    {{ $videoPages := (where .Site.Pages ".Params.videoId" "!=" nil) }}
 
     {{ $matchingVideos := slice }}
 
@@ -56,7 +56,7 @@
                                     <div class="video-container position-relative"
                                         style="height: max-content; overflow: hidden;">
                                         <div class="ratio ratio-16x9 h-100">
-                                            <img src="https://i.ytimg.com/vi/{{ .page.Params.video_id }}/maxresdefault.jpg"
+                                            <img src="https://i.ytimg.com/vi/{{ .page.Params.videoId }}/maxresdefault.jpg"
                                                 alt="{{ .page.Title }}" class="img-fluid" />
                                         </div>
                                         <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-overlay">
@@ -84,7 +84,7 @@
                                     <div class="video-container position-relative"
                                         style="height: max-content; overflow: hidden;">
                                         <div class="ratio ratio-16x9 h-100">
-                                            <img src="https://i.ytimg.com/vi/{{ $nextVideo.page.Params.video_id }}/maxresdefault.jpg"
+                                            <img src="https://i.ytimg.com/vi/{{ $nextVideo.page.Params.videoId }}/maxresdefault.jpg"
                                                 alt="{{ $nextVideo.page.Title }}" class="img-fluid" />
                                         </div>
                                         <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-overlay">

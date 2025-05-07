@@ -8,6 +8,6 @@
 <!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
 
 <div class="md__image">
-  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" {{ with .Title}} class="{{ . }}" {{ end }} 
-  style="max-width: 70%; max-height: 80vh; height: auto; display: block; margin: 0 auto; object-fit: contain;" />
+  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" 
+  class="md-image-responsive{{ with .Title }} {{ . }}{{ end }}" />
 </div>
