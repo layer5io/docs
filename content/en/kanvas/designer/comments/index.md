@@ -173,6 +173,7 @@ If you plan to keep certain comments in your design for documentation, team refe
 
 <figure>
   <img src="./naming-comments.png" alt="Naming a comment in Designer" />
+    <figcaption>Naming a comment in Designer</figcaption>
 </figure>
 
 {{< alert type="info" title="Best Practice" >}}

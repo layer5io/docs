@@ -128,7 +128,7 @@ body {
   img.md-image-responsive {
     display: block;
     width: 100%;
-    max-width: clamp(320px, 80vw, 800px);
+    max-width: clamp(320px, 100%, 800px);
     height: auto;
     margin: 0 auto;
     object-fit: contain;
@@ -470,9 +470,9 @@ a:not([href]):not([class]):hover {
 }
 
 .td-content figure,
-.td-content figure[style*="width"] {
-  width: 100%;
-  max-width: clamp(320px, 80vw, 800px);
+.td-content figure {
+  width: max-content;
+  max-width: clamp(320px, 100%, 700px);
   margin: 0 auto 2rem auto;
   box-sizing: border-box;
   display: flex;
@@ -481,6 +481,7 @@ a:not([href]):not([class]):hover {
 }
 
 .td-content figure > img {
+  width: auto;
   max-width: 100%;
   border-radius: .5rem .5rem 0 0;
   box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);
