@@ -8,9 +8,8 @@
 @import "_navbar_project.scss";
 @import "tax_project.scss";
 @import "search_project.scss";
-@import "_videos_project.scss";
-@import "subscription.scss";
-@import "_video-landing_project.scss";
+@import "videos_project";
+@import "video-landing_project";
 
 .navbar-dark {
   min-height: 5rem;
@@ -122,6 +121,20 @@ body {
       border: 0;
     }
   }
+
+  img,
+  .md__image img,
+  img.md-image-responsive {
+    display: block;
+    width: 100%;
+    max-width: clamp(320px, 80vw, 800px);
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    box-sizing: border-box;
+  }
+
+  overflow-x: hidden;
 }
 
 // Links
@@ -456,67 +469,37 @@ a:not([href]):not([class]):hover {
   }
 }
 
-figure,
-figure[style*="width"] {
-  width: max-content !important;
-  max-width: 70% !important;
+.td-content figure,
+.td-content figure[style*="width"] {
+  width: 100%;
+  max-width: clamp(320px, 80vw, 800px);
   margin: 0 auto 2rem auto;
-
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  > img {
-    width: auto !important;
-    max-width: 100% !important;
-    height: auto;
-    object-fit: contain !important;
-    display: block;
-    margin: 0 auto;
-    border-radius: .5rem .5rem 0rem 0rem !important;
-    box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4) !important;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  > figcaption {
-    width: 100% !important;
-    text-align: center;
-    padding: 0.5rem 1rem;
-    background-color: rgba($lightslategray, 1);
-    color: $dark;
-    border-radius: 0 0 .5rem .5rem;
-    box-sizing: border-box;
-  }
 }
 
-// Mobile: override for full-width content alignment
-@media (max-width: 600px) {
-  figure,
-  figure[style*="width"] {
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
-}
-
-.md__image img,
-img.md-image-responsive {
-  width: auto;
-  max-width: 70%;
-  max-height: 80vh;
+.td-content figure > img {
+  width: 100%;
+  max-width: 100%;
   height: auto;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
-  object-fit: contain;
+  border-radius: .5rem .5rem 0 0;
+  box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);
+  transition: box-shadow 0.2s;
+}
 
-  @media (max-width: 600px) {
-    width: auto;
-    max-width: 100%;
-    padding: 0 1rem;
-    box-sizing: border-box;
-  }
+.td-content figure > figcaption {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba($lightslategray, 1);
+  color: $dark;
+  border-radius: 0 0 .5rem .5rem;
+  box-sizing: border-box;
 }
 
 .dashboard {
