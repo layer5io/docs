@@ -10,8 +10,6 @@ aliases:
   - /kanvas/designer/share-resource
 ---
 
-## Overview
-
 In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
 {{< alert title="Sharing Views">}}
@@ -73,15 +71,10 @@ You can share your designs with many users at the same time, by granting access 
 
 Grant access to teams by assigning a team to a workspace. Instead of individually assigning permissions to each member, you can simply assign permissions to the team as a whole, and manage access permissions like view, comment, and edit for the team.
 
-**Understanding the Implications of adding a Design to a Workspace:**
+{{< alert title="Implications of adding a Design to a Workspace">}}
 
-When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private, however you can update the access type of team by revisiting the "Share" modal within Kanvas.
+When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private. Review your workspace's team assignments in order to verify which users will be granted access.
 
-[Learn more about auditing the access permission within workspace](/cloud/spaces/workspaces/)
-
-{{< alert title="Note">}}
-
-- The 'Share' feature is currently in its beta phase, and we may introduce updates or improvements over time.
-- Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
+Learn more about [auditing and assigning Workspace access](/cloud/spaces/workspaces/).
 
 {{< /alert >}}
