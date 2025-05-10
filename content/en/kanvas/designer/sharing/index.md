@@ -12,7 +12,9 @@ aliases:
 
 In [Kanvas](https://kanvas.new/), you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
-{{< alert title="Use Cases for Public Visibility" type="info">}}
+![Ways to open Share modal](/kanvas/designer/sharing/model-where.gif)
+
+{{< alert title="Sharing Views" type="info">}}
 You can share and control access to [Views](/kanvas/operator/views) in the same fashion as you do for Designs.
 {{< /alert >}}
 
@@ -34,15 +36,23 @@ Public status is useful for sharing designs broadly, for example, as open-source
 
 When you share a design, those users or teams become collaborators. You can share your designs with other users by using the "Share" modal. This modal allows you to grant access to individual users or teams. The following steps show how you can grant access to individual users:
 
-- Open your design in Kanvas.
-- Click the "Share" button located on the top right corner.
-- Enter the name or email addresses of the users you want to share the design with.
+**Accessing the "Share" Modal:**
 
-You can also change the visibility status between public and private of the design from here.
+There are two primary ways to open the "Share" modal for an item:
 
-![Share Model](/kanvas/designer/sharing/share-model.png)
+1.  **From an Open Item:**
+    * First, open your Design or View in Kanvas.
+    * Click the main **"Share" button**, which is typically located in the top right corner of the editor interface.
 
-## Understanding Your Permissions: Owner vs. Collaborator
+2.  **From a List of Items (e.g., "Recent Designs"):**
+    * Click the **more options icon** (often represented by three vertical dots ⋮) associated with that item.
+    * Select **"Share"** from the context menu that appears.
+
+Once the "Share" modal is open, type the names or email addresses of the users or teams you want to invite as Collaborators. From the "Share" modal, you can also typically change the overall visibility status of the item (e.g., switching between Private and Public).
+
+![Share Modal](/kanvas/designer/sharing/share-model.png)
+
+## Owner vs. Collaborator
 
 When you share a design, or when a design is shared with you, what you can do with it depends on whether you are the **Owner** or a **Collaborator**. 
 
@@ -74,14 +84,14 @@ transferring ownership of a design to another user is not currently supported in
 
 When an Owner shares a design, they add users or teams as Collaborators. Whether you are added individually or are part of a team that gains access, you receive the standard Collaborator permissions described above.
 
-> For example, if Sarah is added as a Collaborator to a design, she can edit it. If the design is shared with the "Engineering Team" and Sarah is a member, she also gains the same Collaborator access to edit the design through her team membership.
-
 **Managing Access: Revoking and Inviting**
 
 As the Owner of a design, you can manage who has access to it at any time using the "Share" modal. This allows you to:
 
 -   Grant access to new users or teams: Add them as Collaborators on your design.
 -   Revoke access from existing Collaborators: If someone no longer needs access, you can remove them.
+
+> For example, if Sarah is added as a Collaborator to a design, she can edit it. If the design is shared with the "Engineering Team" and Sarah is a member, she also gains the same Collaborator access to edit the design through her team membership.
 
 ## Sharing Your Design with a Link
 
@@ -103,20 +113,18 @@ Using "Copy Link" is a quick way to direct people to your design, but remember t
 
 You can efficiently share your designs with many users at once by sharing with **Teams**. When you share a design with a team, all members of that team become Collaborators on the design, gaining the standard Collaborator permissions.
 
-**How to share with Teams:**
+There are two primary ways to share designs with teams:
 
--   You can typically add a team as a Collaborator directly through the **"Share" modal**, similar to how you add individual users.
--   Alternatively, designs within a **Workspace** can sometimes inherit permissions from teams assigned to that Workspace (see note below).
+1.  **Direct Sharing via the "Share" Modal:**
+    * You can add a team as a Collaborator directly through the item's **"Share" modal**, similar to how you add individual users. This gives the team explicit access to that specific item.[^2]
 
-This approach simplifies managing access for groups, as you only need to manage the team's access rather than each individual member's.
-
-**Understanding Design Access within a Workspace:**
-
-When a design is part of a Workspace, the intention is often that teams associated with that Workspace can access the designs within it. However, please note:
-
--   **Important Note (Current Behavior for Private Designs):** As mentioned in the "Understanding visibility levels" section, there's a known issue. For **Private** designs within a Workspace, members of a team assigned to that Workspace may not automatically gain access. Explicitly sharing the Private design directly with the team (e.g., via the "Share" modal) or its individual members is often still required for them to become Collaborators.
--   If a team *does* gain access to a design through its association with a Workspace, its members become Collaborators with the standard set of permissions. There are no different "access types" (like view-only or edit-only) to assign to the team for that design beyond making them Collaborators.
+2.  **Indirect Sharing via Workspace Association (Intended Mechanism):**
+    * Another way access is intended to be managed for teams is through **Workspaces**. The general idea is:
+        1.  Place your item (e.g., a Private Design) into a Workspace.
+        2.  Assign one or more Teams to that same Workspace.
+        3.  By this association, members of the assigned Team(s) should then inherit access to the items within that Workspace, including Private items.
 
 > Learn more about auditing the access permission within [workspace](/cloud/spaces/workspaces/)
 
-[^1]: This functionality is not fully implemented yet. Users might occasionally observe even a team is assigned to a workspace, members of that team  may not be able to access private designs within that workspace. 
+[^1]: This functionality is not fully implemented yet. Users might occasionally observe that even when a team is assigned to a workspace, members of that team may not be able to access private designs within that workspace without explicit individual or team-level sharing for the design itself.
+[^2]: This feature (direct sharing with teams via the "Share" modal) is not yet fully implemented and is planned for a future update.
