@@ -60,7 +60,6 @@ Assign any number of Environments to one or more Workspaces. See [Environments](
 - Infrastructure Designs are essential for creating reusable deployment templates. Users belonging to teams with access to a workspace can utilize these designs to deploy resources in the Kubernetes clusters associated with that workspace.
 - Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
 - One or more designs can be assigned to a workspace.
-- The Same design can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Design Ownership in Workspaces" >}}
 Designs belong to only one Workspace at any given time. See [Meshery Designs](https://docs.meshery.io/concepts/designs) section for more information.
