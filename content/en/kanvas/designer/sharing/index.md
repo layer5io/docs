@@ -12,15 +12,13 @@ aliases:
 
 In [Kanvas](https://kanvas.new/), you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
-![Ways to open Share modal](/kanvas/designer/sharing/model-where.gif)
-
 {{< alert title="Sharing Views" type="info">}}
 You can share and control access to [Views](/kanvas/operator/views) in the same fashion as you do for Designs.
 {{< /alert >}}
 
 ## Understanding visibility levels
 
-Designs have visibility statuses that define who can access your designs. These options offer different levels of exposure for content within your workspaces:
+Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:
 
 - **Private:** Designs with visibility status private define only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.[^1]
 
@@ -38,17 +36,19 @@ When you share a design, those users or teams become collaborators. You can shar
 
 **Accessing the "Share" Modal:**
 
-There are two primary ways to open the "Share" modal for an item:
+There are two primary ways to open the "Share" modal for a design:
 
-1.  **From an Open Item:**
+1.  **From an Open design:**
     * First, open your Design or View in Kanvas.
     * Click the main **"Share" button**, which is typically located in the top right corner of the editor interface.
 
-2.  **From a List of Items (e.g., "Recent Designs"):**
-    * Click the **more options icon** (often represented by three vertical dots ⋮) associated with that item.
+2.  **From the Recent Designs list:**
+    * Click the **more options icon** (often represented by three vertical dots ⋮) associated with that design.
     * Select **"Share"** from the context menu that appears.
 
-Once the "Share" modal is open, type the names or email addresses of the users or teams you want to invite as Collaborators. From the "Share" modal, you can also typically change the overall visibility status of the item (e.g., switching between Private and Public).
+![Ways to open Share modal](/kanvas/designer/sharing/model-where.gif)
+
+Once the "Share" modal is open, type the names or email addresses of the users or teams you want to invite as Collaborators. From the "Share" modal, you can also typically change the overall visibility status of the design (e.g., switching between Private and Public).
 
 ![Share Modal](/kanvas/designer/sharing/share-model.png)
 
@@ -116,13 +116,13 @@ You can efficiently share your designs with many users at once by sharing with *
 There are two primary ways to share designs with teams:
 
 1.  **Direct Sharing via the "Share" Modal:**
-    * You can add a team as a Collaborator directly through the item's **"Share" modal**, similar to how you add individual users. This gives the team explicit access to that specific item.[^2]
+    * You can add a team as a Collaborator directly through the **design's** "Share" modal, similar to how you add individual users. This gives the team explicit access to that specific **design**.[^2]
 
 2.  **Indirect Sharing via Workspace Association (Intended Mechanism):**
     * Another way access is intended to be managed for teams is through **Workspaces**. The general idea is:
-        1.  Place your item (e.g., a Private Design) into a Workspace.
+        1.  Place your **design** (e.g., a Private Design) into a Workspace.
         2.  Assign one or more Teams to that same Workspace.
-        3.  By this association, members of the assigned Team(s) should then inherit access to the items within that Workspace, including Private items.
+        3.  By this association, members of the assigned Team(s) should then inherit access to the **designs** within that Workspace, including Private designs.
 
 > Learn more about auditing the access permission within [workspace](/cloud/spaces/workspaces/)
 
