@@ -10,7 +10,11 @@
         <a href="#category-{{ $index }}" class="category-tab" data-category="{{ $index }}">
           <div class="tab-icon">
             {{ if .Params.icon }}
-              <i class="bi {{ .Params.icon }}"></i>
+              {{ if hasPrefix .Params.icon "bi" }}
+                <i class="bi {{ .Params.icon }}"></i>
+              {{ else }}
+                 <img src="{{ .Params.icon }}" alt="{{ .Title }} icon" style="max-width: 100%;object-fit: contain;"/>
+              {{ end }}
             {{ else }}
               <i class="bi bi-collection-play"></i>
             {{ end }}
@@ -55,14 +59,14 @@
               <div class="video-grid">
                 {{ range $subSection.Pages }}
                   <div class="video-card" 
-                  data-video-id="{{ .Params.video_id }}" 
+                  data-video-id="{{ .Params.videoId }}" 
                   data-video-title="{{ .Title }}" 
                   data-video-url="{{ .RelPermalink }}"
                   >
                     <div class="video-thumbnail">
                       {{ if .Params.videoType }}
                         {{ if eq .Params.videoType "youtube" }}
-                          <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                          <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}">
                         {{ else if .Params.thumbnail }}
                           <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
                         {{ else }}
@@ -88,7 +92,7 @@
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms" style="margin-bottom: 0.6rem;">
                         {{ range .Params.tags }}
-                          <a href="/tags/{{ . }}"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
                         {{ end }}
                       </div>
                     {{ end }}
@@ -106,14 +110,14 @@
               <div class="video-grid">
                 {{ range where $mainSection.Pages "Kind" "page" }}
                   <div class="video-card"
-                  data-video-id="{{ .Params.video_id }}" 
+                  data-video-id="{{ .Params.videoId }}" 
                   data-video-title="{{ .Title }}" 
                   data-video-url="{{ .RelPermalink }}"
                   >
                     <div class="video-thumbnail">
                       {{ if .Params.videoType }}
                         {{ if eq .Params.videoType "youtube" }}
-                          <img src="https://i.ytimg.com/vi/{{ .Params.video_id }}/maxresdefault.jpg" alt="{{ .Title }}">
+                          <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}">
                         {{ else if .Params.thumbnail }}
                           <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
                         {{ else }}
@@ -139,7 +143,7 @@
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms">
                         {{ range .Params.tags }}
-                          <a href="/tags/{{ . }}"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
                         {{ end }}
                       </div>
                     {{ end }}
@@ -156,9 +160,9 @@
 
   <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content" style="padding: 20px 20px 0;background-color: #333;">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #00d3a9;"></button>
+      <div class="modal-content">
+        <div class="modal-header"><a href="" id="videoPageLink"><h4 id="videoModalTitle"></h4></a>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #00b39f;"></button>
         </div>
         <div class="modal-body p-0">
             <div class="ratio ratio-16x9">
@@ -171,7 +175,7 @@
                 allowfullscreen>
               </iframe>
             </div>
-            <a href="" id="videoPageLink"><h4 id="videoModalTitle" style="padding: 1rem 0 2rem !important;"></h4></a>
+            
             </div>
           </div>
 
@@ -275,7 +279,10 @@
     const videoCards = document.querySelectorAll('.video-card');
   
     videoCards.forEach(card => {
-      card.addEventListener('click', function () {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('span.taxonomy-term') || e.target.closest('a.video-tag')) {
+          return;
+        }
         const videoId = card.getAttribute('data-video-id');
         const videoTitle = card.getAttribute('data-video-title');
         const videoUrl = card.getAttribute('data-video-url');
@@ -295,7 +302,4 @@
   });
   });
   
-  document.getElementById('videoModal').addEventListener('hidden.bs.modal', () => {
-    console.log('Modal closed event fired');
-  });
       </script>

@@ -14,7 +14,7 @@
         border: none;
     }
     nav.scrolled {
-        background-color: #121212 !important;
+        background-color: $dark !important;
         border: 1px solid #333 !important;
     }
 }
@@ -63,6 +63,16 @@
     width: 90%;
     margin: 0 auto;
 }
+a#videoPageLink {
+    padding: 0rem;
+    color: $lightslategray;
+}
+a#videoPageLink:hover {
+    color: $casper;
+}
+a#videoPageLink:focus {
+    color: $white;
+}
 
 .hero-video-container {
     border-radius: 12px;
@@ -86,7 +96,6 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 30px rgba(0, 179, 159, 0.4);
-    cursor: pointer;
     transition: all 0.3s ease;
     position: absolute;
     top: 50%;
@@ -101,20 +110,11 @@
 }
 
 .play-icon-svg-path {
-    fill: #00b39f;
+    fill: $primary;
     transition: fill 0.3s ease;
 }
 
-.video-btn-wrapper:hover {
-    background-color: #00b39f;
-    .play-icon-svg-path {
-        fill: #fff;
-    }
-}
 
-.video-btn-wrapper:hover .play-icon-path {
-    fill: #fff;
-}
 
 .video-tabs-container {
     background: linear-gradient(to right top, #3d3d3d, #343434, #2b2b2b, #222222, #1a1a1a, #181818, #161616, #141414, #181818, #1c1c1c, #212121, #252525);
@@ -194,12 +194,12 @@
 
 .category-tab.active {
    border-radius: 0;
-   border-bottom: 2px solid  #00b39f;
+   border-bottom: 2px solid  $primary;
    color: #fff;
 }
 
 .category-tab.active .tab-icon {
-    background-color: #00b39f;
+    background-color: $primary;
 }
 
 .category-tab.active .tab-icon i {
@@ -230,7 +230,7 @@
 }
 
 .subcategory-btn.active {
-    background-color: #00b39f;
+    background-color: $primary;
     color: #fff;
 }
 
@@ -252,6 +252,12 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    .video-info h3 {
+        color: #fff;
+    }
+    p.video-description{
+        color: $casper;
+    }
 }
 
 .video-thumbnail {
@@ -317,16 +323,17 @@
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
+    color: $casper;
 }
 
 .video-duration {
-    color: #00b39f;
+    color: $primary;
     font-size: 0.875rem;
     margin-bottom: 0.45rem;
 }
 
 .video-description {
-    color: #666;
+    color: $lightslategray;
     font-size: 0.9375rem;
     line-height: 1.5;
     margin-bottom: 0;
@@ -343,6 +350,16 @@
 }
 .video-overlay {
     z-index: 2;
+}
+
+.video-overlay:hover{
+    cursor: pointer;
+    .video-btn-wrapper {
+      background-color: $primary;
+      .play-icon-svg-path {
+          fill: #fff;
+       }
+    }  
 }
 
 .video-iframe-container {
