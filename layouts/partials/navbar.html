@@ -27,8 +27,44 @@
                       <li class="nav-item">
                         <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
                       </li>
-                      <li class="nav-item">
-                        <a id="videos" class="nav-link" href="/videos"> Videos</a>
+                      <li class="nav-item dropdown" data-bs-theme="dark">
+                        <div
+                        class="nav-link"
+                        id="resourcesDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        >
+                        Resources <span class="down-icon">&#9660;</span>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="resourcesDropdown" style="visibility:hidden;">
+                          <a
+                          class="dropdown-item"
+                          href="https://cloud.layer5.io/academy/overview"
+                          target="_blank"
+                          >
+                            <div class="logo-container">
+                              <img
+                                src="/images/logos/learning-path.svg"
+                                alt="Meshery Logo"
+                              />
+                            </div>
+                            <span>Academy</span>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                          <a
+                          class="dropdown-item"
+                          href="https://docs.layer5.io/videos"
+                          target="_blank"
+                          >
+                            <div class="logo-container">
+                              <img
+                                src="/images/logos/video-play.svg"
+                                alt="Meshery Logo"
+                              />
+                            </div>
+                            <span>Videos</span>
+                          </a>
+                        </div>
                       </li>
                     </div>
                     <div class="d-flex ms-auto">
@@ -186,6 +222,7 @@
 
 
   setupDropdown("productsDropdown");
+  setupDropdown("resourcesDropdown");
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;

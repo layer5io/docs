@@ -10,6 +10,10 @@
     color: $primary !important;
   }
 
+  .down-icon{
+    font-size: 0.75rem;
+  }
+
 //  @media (min-width: 768px) {
 //   &:hover {
 //       .dropdown-menu {
@@ -19,11 +23,11 @@
 // }
   .dropdown-menu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    width: 180px;
+    width: 12rem;
     justify-content: center;
-    padding: 0.5rem .2rem;
+    padding: 0.1rem .2rem;
     // padding: 0;
     transform: translate(-15%, 2.5rem);
     border-radius: 0.75rem;
@@ -32,16 +36,18 @@
       width: 5rem;
     }
     .dropdown-item {
-      height: 5rem;
-      width: 5rem;
+      height: 3rem;
+      width: 11.5rem;
+      margin: 0.1rem 0rem;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       border-radius: 0.75rem;
       .logo-container {
         height: 2rem;
         width: 2rem;
         margin: 0.5rem 0;
+        margin-right: 0.9rem;
         display: flex;
         align-items: center;
         justify-content: center;
