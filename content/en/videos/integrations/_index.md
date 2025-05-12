@@ -1,8 +1,8 @@
 ---
 title: Integrations
 description: >
-    Compatibility Mode: Always On
-linkTitle: 350+ integrations with the tools you already use — and the ones you pretend to understand.
+    350+ integrations with the tools you already use — and the ones you pretend to understand.
+linkTitle: Integrations
 weight: 3
 icon: bi bi-puzzle-fill
 videoGrid: true
