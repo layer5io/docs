@@ -33,7 +33,7 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 | **Click**                      | `default (arrow)`   | Displays component toolbar, resize box, and connection handles               | <img src="./click.png" style="width:1000px;" alt="Click" /> |
 | **Double-click (component)**   | `pointer`           | Opens the component configurator                                             | <img src="./double_click.png" style="width:1000px;" alt="Double-click component" /> |
 | **Double-click (textbox)**     | `text`              | Enables text editing inside the component                                    | <img src="./text-box-double-click.gif" style="width:1000px;" alt="Double-click textbox" /> |
-| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | <img src="./right_click.png" style="width:100px;" alt="Right-click" /> |
+| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | <img src="./right_click.png" style="width:1000px;" alt="Right-click" /> |
 | **Click-and-hold**             | `crosshair`         | Initiates box selection for selecting multiple components                    | <img src="./select.gif" style="width:1000px;" alt="Box selection" /> |
 | **Scroll wheel**               | `default (arrow)`   | Pan up or down                                                                |                                          |
 | **Scroll wheel + CMD/CTL**     | `default (arrow)`   | Zoom in/out                                                                   |                                          |
