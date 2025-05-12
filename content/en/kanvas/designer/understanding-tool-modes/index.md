@@ -43,7 +43,7 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 
 ### 2. Pencil Mouse Mode
 
-Pencil lines do not connect individual components but offer annotating capability, allowing you to take notes and draw annotations.
+Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.
 
 | Action                      | Cursor Style        | Behavior                                            |                                            |
 |-----------------------------|---------------------|-----------------------------------------------------|-------------------------------------------------|
@@ -61,13 +61,13 @@ Pencil lines do not connect individual components but offer annotating capabilit
 
 The Pen tool operates as a creator of annotation edges. It has two behaviors depending on context.
 
-**Activate:** `CMD+E`
+**To Activate:** `CMD+E`
 
 <details>
 <summary><strong>Connector Behaviors</strong></summary>
 
-- **Component-connect Behavior**: Click an empty spot → drag to another empty spot → create a **joint** (terminal node) for new connections.  
-- **Canvas-connect Behavior**: Click an empty spot → drag to an existing component → create an annotation edge.
+- **Component-connect Behavior**: When you click an empty spot on the canvas, and drag to another empty spot on the canvas, you get a joint (aka a terminal node) from which you can create new connections as well as new edge relationships.  
+- **Canvas-connect Behavior**: When you click an empty spot on the canvas, and drag to an existing component, you get an annotation edge relationship.
 </details>
 
 | Phase                            | Cursor Style | Behavior                                                      |                                                        |
@@ -80,8 +80,8 @@ The Pen tool operates as a creator of annotation edges. It has two behaviors dep
 
 | Example                                  |                                                |
 |------------------------------------------|-----------------------------------------------------|
-| How to Draw and Connect Lines            | <img src="./draw_line.gif" style="width:1000px;" alt="Draw line" /> |
-| How to customize nodes at the ends       | <img src="./customize_end.gif" style="width:1000px;" alt="Customize nodes" /> |
+| How to Draw and Connect Lines | <img src="./draw_line.gif" style="width:1000px;" alt="Draw line" /> |
+| How to customize nodes at the ends of connections      | <img src="./customize_end.gif" style="width:1000px;" alt="Customize nodes" /> |
 
 ---
 
@@ -90,7 +90,7 @@ The Pen tool operates as a creator of annotation edges. It has two behaviors dep
 | Action                      | Cursor Style        | Behavior                                 |
 |-----------------------------|---------------------|------------------------------------------
 | **Hover**                   | `hand`              | Nothing                                  |       |
-| **Click-and-hold**          | `grabbing-hand`     | Grab the canvas and pan    
-| **Scroll wheel + CMD/CTL**  | `grabbing-hand`     | Zoom in/out         
-| **Horizontal scroll wheel** | `grabbing-hand`     | Pan left or right                    
+| **Click-and-hold**          | `grabbing-hand`     | Grab the canvas and pan in the direction of mouse movement  |
+| **Scroll wheel + CMD/CTL**  | `grabbing-hand`     | Zoom in/out in the direction of the mouse.  |
+| **Horizontal scroll wheel** | `grabbing-hand`     | Pan left or right in the direction of the mouse.   |                
 
