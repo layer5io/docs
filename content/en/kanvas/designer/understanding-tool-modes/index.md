@@ -8,144 +8,89 @@ tags: [designs]
 aliases:
 ---
 
-<!-- set of custom keyboard button classes -->
 <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
-
 
 # Tool Modes
 
 You can switch between mouse modes using hotkeys or tool selection. Here are hotkeys that control your mode:
 
-- <button class="kbc-button kbc-button-xs">Spacebar</button>: Temporarily enables the alternative mouse mode (default mode vs pan mode)  
-- <button class="kbc-button kbc-button-xs">H</button>: Switches to pan mode (hand icon)  
-- <button class="kbc-button kbc-button-xs">Escape / V</button>: Switches to default mode irrespective of which mode you are currently using.
+| Hotkeys                                                          | Description                                                                 |
+|------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| <button class="kbc-button kbc-button-xs">Spacebar</button>       | Temporarily enables the alternative mouse mode (default mode vs pan mode)   |
+| <button class="kbc-button kbc-button-xs">H</button>              |  Switches to pan mode (hand icon)       |
+| <button class="kbc-button kbc-button-xs">Escape / V</button>     | Switches to default mode irrespective of which mode you are currently using. |
+
+---
 
 ## Interacting with Components
-### Default Mode (no tool selected)
 
-**Hover:** Nothing  
-Cursor style: “default (arrow)”  
+### 1. Default Mode (no tool selected)
 
-**Click-and-drag:** Moves component in the direction of the mouse.  
-Cursor style: “move”  
+| Action                         | Cursor Style        | Behavior                                                                     |                                        |
+|--------------------------------|---------------------|------------------------------------------------------------------------------|------------------------------------------|
+| **Hover**                      | `default (arrow)`   | Nothing                                                                      |                                          |
+| **Click-and-drag**             | `move`              | Moves component in the direction of the mouse                                |                                          |
+| **Click**                      | `default (arrow)`   | Displays component toolbar, resize box, and connection handles               | <img src="./click.png" style="width:1000px;" alt="Click" /> |
+| **Double-click (component)**   | `pointer`           | Opens the component configurator                                             | <img src="./double_click.png" style="width:1000px;" alt="Double-click component" /> |
+| **Double-click (textbox)**     | `text`              | Enables text editing inside the component                                    | <img src="./text-box-double-click.gif" style="width:1000px;" alt="Double-click textbox" /> |
+| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | <img src="./right_click.png" style="width:100px;" alt="Right-click" /> |
+| **Click-and-hold**             | `crosshair`         | Initiates box selection for selecting multiple components                    | <img src="./select.gif" style="width:1000px;" alt="Box selection" /> |
+| **Scroll wheel**               | `default (arrow)`   | Pan up or down                                                                |                                          |
+| **Scroll wheel + CMD/CTL**     | `default (arrow)`   | Zoom in/out                                                                   |                                          |
+| **Horizontal scroll wheel**    | `default (arrow)`   | Pan left or right                                                             |                                          |
 
-**Click**: Displays the component toolbar, resize box, and connections handles.  
-Cursor style: “default (arrow)”  
-<img style="width:500px;" src="./click.png" />
+---
 
-**Double-click**:  
-Cursor style: “pointer”  
-- Components \- Opens the component configurator.  
-<img style="width:500px;" src="./double_click.png" />
+### 2. Pencil Mouse Mode
 
-- Textbox \- Enables text editing inside the component.  
-Cursor style: “text”  
-<img style="width:500px;" src="./text-box-double-click.gif" />
+Pencil lines do not connect individual components but offer annotating capability, allowing you to take notes and draw annotations.
 
-**Right-click**: Opens the circular component context menu.  
-Cursor style: “default (arrow)”  
-<img style="width:500px;" src="./right_click.png" />
+| Action                      | Cursor Style        | Behavior                                            |                                            |
+|-----------------------------|---------------------|-----------------------------------------------------|-------------------------------------------------|
+| **Hover**                   | `custom(pencil)`    | Nothing                                             |                                                 |
+| **Mouse down + drag**       | `custom(pencil)`    | Start drawing a freeform line                       | <img src="./pencil.gif" style="width:1000px;" alt="Pencil mode" /> |
+| **Mouse down + SHIFT**      | `custom(pencil)`    | Start drawing a straight vertical or horizontal line |                                                 |
+| **Mouse up**                | `custom(pencil)`    | Complete the line and render into a styled component |                                                 |
+| **Click**                   | `custom(pencil)`    | Draws ink from the pencil                           |                                                 |
+| **Scroll wheel**            | `custom(pencil)`    | Nothing                                             |                                                 |
+| **Scroll wheel + CMD/CTL**  | `custom(pencil)`    | Nothing                                             |                                                 |
 
-**Click-and-hold:** Initiates box selection for selecting of multiple components.  
-Cursor style: “crosshair”  
-<img style="width:500px;" src="./select.gif" />
+---
 
-**Scroll wheel**: Pan up or down in the direction of the mouse.  
-Cursor style: "default (arrow)”  
+### 3. Pen Tool Mode
 
-**Scroll wheel \+ CMD/CTL**: Zoom in/out in the direction of the mouse.  
-Cursor style: "default (arrow)”  
+The Pen tool operates as a creator of annotation edges. It has two behaviors depending on context.
 
-**Horizontal scroll wheel**: Pan left or right in the direction of the mouse.  
-Cursor style: "default (arrow)”  
+**Activate:** `CMD+E`
 
-#### Pencil Mouse Mode
+<details>
+<summary><strong>Connector Behaviors</strong></summary>
 
-Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.  
-**Hover:** Nothing  
-Cursor style: “custom(pencil)”  
-**Mouse down and drag:** Start drawing a freeform line.  
-Cursor style: “custom(pencil)”  
-<img style="width:500px;" src="./pencil.gif" />
+- **Component-connect Behavior**: Click an empty spot → drag to another empty spot → create a **joint** (terminal node) for new connections.  
+- **Canvas-connect Behavior**: Click an empty spot → drag to an existing component → create an annotation edge.
+</details>
 
-**Mouse down \+ SHIFT:** Start drawing a straight line in the direction of the mouse, which will initiate and remain as either a vertical or horizontal line.  
- Cursor style: “custom(pencil)”  
-**Mouse up**: Complete the line and renders into a component with full styling capabilities.  
- Cursor style: “custom(pencil)”  
-**Click**: Draws ink from the pencil.  
- Cursor style: “custom(pencil)”  
-**Scroll wheel**: Nothing
- Cursor style: “custom(pencil)”  
-**Scroll wheel \+ CMD/CTL**: Nothing  
- Cursor style: “custom(pencil)”
+| Phase                            | Cursor Style | Behavior                                                      |                                                        |
+|----------------------------------|--------------|---------------------------------------------------------------|-------------------------------------------------------------|
+| **1. Click & release**           | `pen`        | Initiate connection                                            | <img src="./tool-mode-placeholder.svg" style="width:1000px;" alt="Phase 1" /> |
+| **2. Click-and-move**            | `pen`        | Move the ghost edge around if a connection was initiated       | <img src="./tool-mode-placeholder.svg" style="width:1000px;" alt="Phase 2" /> |
+| **3. Click while connecting**    | `pen`        | Establish and render the connection                            | <img src="./tool-mode-placeholder.svg" style="width:1000px;" alt="Phase 3" /> |
 
-<!-- *Developer notes:*
+#### Additional Examples
 
-1. *In the future, the canvas moves with the pen/pencil as they near the edge of the viewport.*  
-2. *In the future, the scroll wheel will behave as it normally does in default mode.* -->
+| Example                                  |                                                |
+|------------------------------------------|-----------------------------------------------------|
+| How to Draw and Connect Lines            | <img src="./draw_line.gif" style="width:1000px;" alt="Draw line" /> |
+| How to customize nodes at the ends       | <img src="./customize_end.gif" style="width:1000px;" alt="Customize nodes" /> |
 
-#### Pen Tool Mode
+---
 
-The Pen tool operates as a creator of annotation edges. Note that the pen tool has two behaviors depending upon the context in which you initiate the connection.
+### 4. Pan Mouse Mode
 
-The Pen Tool Mode is activated using **CMD+E**.
+| Action                      | Cursor Style        | Behavior                                 |
+|-----------------------------|---------------------|------------------------------------------
+| **Hover**                   | `hand`              | Nothing                                  |       |
+| **Click-and-hold**          | `grabbing-hand`     | Grab the canvas and pan    
+| **Scroll wheel + CMD/CTL**  | `grabbing-hand`     | Zoom in/out         
+| **Horizontal scroll wheel** | `grabbing-hand`     | Pan left or right                    
 
-{{< alert title="Connector Behaviors">}}
-**Component-connect Behavior**: When you click an empty spot on the canvas, and drag to another empty spot on the canvas, you get a **joint** (aka a terminal node) from which you can create new connections as well as new edge relationships.
-
-**Canvas-connect Behavior**: When you click an empty spot on the canvas, and drag to an existing component, you get an annotation edge relationship.
-
-{{< /alert >}}
-
-**Component-connect Behavior**: When you click an empty spot on the canvas, and drag to another empty spot on the canvas, you get a **joint** (aka a terminal node) from which you can create new connections as well as new edge relationships.
-
-**Canvas-connect Behavior**: When you click an empty spot on the canvas, and drag to an existing component, you get an annotation edge relationship.
-
-**Hover:** Nothing  
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “pen” 
-
-**Mouse down and drag:** Nothing
-
-Creating connections happens in three phases.
-
-1. **Click** (press primary mouse button and release)**:** Initiate connection.
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “pen”
-1. **Click and move:** if a connection was initiated, moves the ghost edge around else does nothing.
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “pen” and the annotation edge following the mouse around.
-1. **Click while connecting**: Establish and render connection.
-
-<img style="width:250px;" src="./tool-mode-placeholder.svg" />
-
-Cursor style: “pen”
-
-**How to Draw and Connect Lines**<br>
-<img style="width:500px;" src="./draw_line.gif" />
-
-**How to customize nodes at the ends of connections**<br>
-<img style="width:500px;" src="./customize_end.gif" />
-
-<!-- 
-*Developer notes:*
-
-1. *In future, when the connector is released on an empty spot on the canvas, offer a component picker from which users can always choose a “Joint” component.*  
-2. *Rename PenTerminalNode to “**Joint**”, unless there’s something better to call it.* -->
-
-#### Pan Mouse Mode
-
- **Hover:** Nothing
-  Cursor style: “hand”  
-**Click-and-hold:** Grab the canvas and pan in the direction of mouse movement.  
-Cursor style: “grabbing-hand”  
-**Scroll wheel \+ CMD/CTL**: Zoom in/out in the direction of the mouse.  
-Cursor style: “grabbing-hand”  
-**Horizontal scroll wheel**: Pan left or right in the direction of the mouse.  
-Cursor style: “grabbing-hand”
