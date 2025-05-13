@@ -30,11 +30,11 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 |--------------------------------|---------------------|------------------------------------------------------------------------------|------------------------------------------|
 | **Hover**                      | `default (arrow)`   | Nothing                                                                      |                                          |
 | **Click-and-drag**             | `move`              | Moves component in the direction of the mouse                                |                                          |
-| **Click**                      | `default (arrow)`   | Displays component toolbar, resize box, and connection handles               | <img src="./click.png" style="width:1000px;" alt="Click" /> |
-| **Double-click (component)**   | `pointer`           | Opens the component configurator                                             | <img src="./double_click.png" style="width:1000px;" alt="Double-click component" /> |
-| **Double-click (textbox)**     | `text`              | Enables text editing inside the component                                    | <img src="./text-box-double-click.gif" style="width:1000px;" alt="Double-click textbox" /> |
-| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | <img src="./right_click.png" style="width:1000px;" alt="Right-click" /> |
-| **Click-and-hold**             | `crosshair`         | Initiates box selection for selecting multiple components                    | <img src="./select.gif" style="width:1000px;" alt="Box selection" /> |
+| **Click**                      | `default (arrow)`   | Displays component toolbar, resize box, and connection handles               | <img src="./click.png" style="max-width=100%; height:Auto;" alt="Click" /> |
+| **Double-click (component)**   | `pointer`           | Opens the component configurator                                             | <img src="./double_click.png" style="max-width=100%; height:Auto;" alt="Double-click component" /> |
+| **Double-click (textbox)**     | `text`              | Enables text editing inside the component                                    | <img src="./text-box-double-click.gif" style="max-width=100%; height:Auto;" alt="Double-click textbox" /> |
+| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | <img src="./right_click.png" style="max-width=100%; height:Auto;" alt="Right-click" /> |
+| **Click-and-hold**             | `crosshair`         | Initiates box selection for selecting multiple components                    | <img src="./select.gif" style="max-width=100%; height:Auto;" alt="Box selection" /> |
 | **Scroll wheel**               | `default (arrow)`   | Pan up or down                                                                |                                          |
 | **Scroll wheel + CMD/CTL**     | `default (arrow)`   | Zoom in/out                                                                   |                                          |
 | **Horizontal scroll wheel**    | `default (arrow)`   | Pan left or right                                                             |                                          |
@@ -48,7 +48,7 @@ Pencil lines do not connect individual components, but offer annotating capabili
 | Action                      | Cursor Style        | Behavior                                            |                                            |
 |-----------------------------|---------------------|-----------------------------------------------------|-------------------------------------------------|
 | **Hover**                   | `custom(pencil)`    | Nothing                                             |                                                 |
-| **Mouse down + drag**       | `custom(pencil)`    | Start drawing a freeform line                       | <img src="./pencil.gif" style="width:1000px;" alt="Pencil mode" /> |
+| **Mouse down + drag**       | `custom(pencil)`    | Start drawing a freeform line                       | <img src="./pencil.gif" style="max-width=100%; height:Auto;" alt="Pencil mode" /> |
 | **Mouse down + SHIFT**      | `custom(pencil)`    | Start drawing a straight vertical or horizontal line |                                                 |
 | **Mouse up**                | `custom(pencil)`    | Complete the line and render into a styled component |                                                 |
 | **Click**                   | `custom(pencil)`    | Draws ink from the pencil                           |                                                 |
@@ -72,16 +72,16 @@ The Pen tool operates as a creator of annotation edges. It has two behaviors dep
 
 | Phase                            | Cursor Style | Behavior                                                      |                                                        |
 |----------------------------------|--------------|---------------------------------------------------------------|-------------------------------------------------------------|
-| **1. Click & release**           | `pen`        | Initiate connection                                            | <img src="./tool-mode-placeholder.svg" style="width:1000px;" alt="Phase 1" /> |
-| **2. Click-and-move**            | `pen`        | Move the ghost edge around if a connection was initiated       | <img src="./tool-mode-placeholder.svg" style="width:1000px;" alt="Phase 2" /> |
-| **3. Click while connecting**    | `pen`        | Establish and render the connection                            | <img src="./tool-mode-placeholder.svg" style="width:1000px;" alt="Phase 3" /> |
+| **1. Click & release**           | `pen`        | Initiate connection                                            | <img src="./tool-mode-placeholder.svg" style="max-width=100%; height:Auto;" alt="Phase 1" /> |
+| **2. Click-and-move**            | `pen`        | Move the ghost edge around if a connection was initiated       | <img src="./tool-mode-placeholder.svg" style="max-width=100%; height:Auto;" alt="Phase 2" /> |
+| **3. Click while connecting**    | `pen`        | Establish and render the connection                            | <img src="./tool-mode-placeholder.svg" style="max-width=100%; height:Auto;" alt="Phase 3" /> |
 
 #### Additional Examples
 
 | Example                                  |                                                |
 |------------------------------------------|-----------------------------------------------------|
-| How to Draw and Connect Lines | <img src="./draw_line.gif" style="width:1000px;" alt="Draw line" /> |
-| How to customize nodes at the ends of connections      | <img src="./customize_end.gif" style="width:1000px;" alt="Customize nodes" /> |
+| How to Draw and Connect Lines | <img src="./draw_line.gif" style="max-width=100%; height:Auto;" alt="Draw line" /> |
+| How to customize nodes at the ends of connections      | <img src="./customize_end.gif" style="max-width=100%; height:Auto;" alt="Customize nodes" /> |
 
 ---
 
