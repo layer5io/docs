@@ -9,7 +9,7 @@ tags: [performance]
 
 By default, Kanvas optimizes the rendering of your designs to ensure good performance and responsiveness. This means that some computationally intensive visual elements, such as advanced relationships like **TagSets** (groups of components visually demarcated), might not be displayed initially to reduce system load.
 
-> To learn more about defining relationships between components, including the detailed use and creation of **TagSets**, please see the [Creating Relationships | Layer5 Documentation](https://docs.layer5.io/cloud/designs/creating-relationships).
+> To learn more about defining relationships between components, including the detailed use and creation of **TagSets**, please see the [Creating Relationships | Layer5 Documentation](https://docs.layer5.io/kanvas/getting-started/creating-relationships/).
 
 ## Enable Full Render Mode
 
