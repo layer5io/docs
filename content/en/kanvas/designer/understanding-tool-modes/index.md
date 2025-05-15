@@ -24,9 +24,9 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 
 ## Interacting with Components
 
-{{< tabpane >}}
+{{% tabpane %}}
 
-{{< tab name="Default Mode" active="true" >}}
+{{% tab name="Default Mode" active="true" %}}
 | Action                         | Cursor Style        | Behavior                                                                     | Example                                                 |
 |--------------------------------|---------------------|------------------------------------------------------------------------------|-------------------------------------------------------|
 | **Hover**                      | `default (arrow)`   | Nothing                                                                      |                                                       |
@@ -39,9 +39,9 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 | **Scroll wheel**               | `default (arrow)`   | Pan up or down                                                                |                                                       |
 | **Scroll wheel + CMD/CTL**     | `default (arrow)`   | Zoom in/out                                                                   |                                                       |
 | **Horizontal scroll wheel**    | `default (arrow)`   | Pan left or right                                                             |                                                       |
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab name="Pencil Mouse Mode" >}}
+{{% tab name="Pencil Mouse Mode" %}}
 Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.
 
 | Action                      | Cursor Style        | Behavior                                            | Example                                                 |
@@ -53,9 +53,9 @@ Pencil lines do not connect individual components, but offer annotating capabili
 | **Click**                   | `custom(pencil)`    | Draws ink from the pencil                           |                                                       |
 | **Scroll wheel**            | `custom(pencil)`    | Nothing                                             |                                                       |
 | **Scroll wheel + CMD/CTL**  | `custom(pencil)`    | Nothing                                             |                                                       |
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab name="Pen Tool Mode" >}}
+{{% tab name="Pen Tool Mode" %}}
 The Pen tool operates as a creator of annotation edges. It has two behaviors depending on context.
 
 **To Activate:** `CMD+E`
@@ -79,15 +79,15 @@ The Pen tool operates as a creator of annotation edges. It has two behaviors dep
 |------------------------------------------|-------------------------------------------------------|
 | How to Draw and Connect Lines            | <a href="./draw_line.gif"><picture><img src="./draw_line.gif" style="max-width:100%; height:auto;" alt="Draw line" /></picture></a> |
 | How to customize nodes at the ends of connections | <a href="./customize_end.gif"><picture><img src="./customize_end.gif" style="max-width:100%; height:auto;" alt="Customize nodes" /></picture></a> |
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab name="Pan Mouse Mode" >}}
+{{% tab name="Pan Mouse Mode" %}}
 | Action                      | Cursor Style        | Behavior                                 |
 |-----------------------------|---------------------|------------------------------------------|
 | **Hover**                   | `hand`              | Nothing                                  |
 | **Click-and-hold**          | `grabbing-hand`     | Grab the canvas and pan in the direction of mouse movement  |
 | **Scroll wheel + CMD/CTL**  | `grabbing-hand`     | Zoom in/out in the direction of the mouse.  |
 | **Horizontal scroll wheel** | `grabbing-hand`     | Pan left or right in the direction of the mouse.   |
-{{< /tab >}}
+{{% /tab %}}
 
-{{< /tabpane >}}
+{{% /tabpane %}}
