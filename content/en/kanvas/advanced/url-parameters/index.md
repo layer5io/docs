@@ -52,4 +52,4 @@ To use full render mode effectively:
    When sharing a design link with `render=full` for review, advise collaborators to also enable the relevant toggles in their **Layers panel**. This helps prevent discrepancies caused by individual layer settings, ensuring everyone sees the same details.
 
 3. **Check the Layers Panel if Details Are Missing**  
-   If `render=full` is active in your URL but expected elements (like **TagSets**) are not visible, verify that their visibility is enabled in your **Layers panel**. Your local Layers settings can hide elements even when full render is requested.
+   If `render=full` is active in your URL but expected elements (like **TagSets**) are not visible, verify that their visibility is enabled in your **Layers panel**. Your Layers settings can hide elements even when full render is requested.
