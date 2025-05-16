@@ -12,12 +12,9 @@ aliases:
 
 Kanvas's Designer enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
-<figure>
-  <img src="./kanvas-comment.png" alt="Comments in Designer" />
-  <figcaption>Example of comments in Designer</figcaption>
-</figure>
-
 Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.
+
+{{< figure src="./kanvas-comment.png" alt="Comments in Designer" caption="Example of comments in Designer" >}}
 
 ## Commenting on a Design
 
@@ -28,30 +25,21 @@ You can add comments in a number of convenient ways. Since designs are public by
 1. Click on the comment icon in the toolbar to open a comment instantly. This is your go-to method for quick annotations without leaving your design or first identifying where you want to place your comment.
 2. You can also create a comment by dragging and dropping the comment icon from the Dock to your design. This method allows you to place comments directly on specific elements or areas of your design.
 
-<figure>
-<img src="./comment-dock.png" alt="Create a comment from the Dock" />
-  <figcaption>Create a comment from the Dock</figcaption>
-</figure>
+{{< figure src="./comment-dock.png" alt="Create a comment from the Dock" caption="Create a comment from the Dock" >}}
 
 ### Commenting via context-click
 
 Context-click on any area of your design, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - *in context*.
 
-<figure>
-<img src="./comment-canvas.png" alt="Comment by context-clicking on your design" />
-  <figcaption>Comment by context-clicking on your design</figcaption>
-</figure>
+{{< figure src="./comment-canvas.png" alt="Comment by context-clicking on your design" caption="Comment by context-clicking on your design" >}}
 
 ### Commenting via hotkey
 
-<button class="kbc-button kbc-button-xs">M</button> Add a comment into your design when you press "M" as the hotkey. After pressing the hotkey, a new comment will be displayed. You can move the new comment anywhere in your design.
+`M` Add a comment into your design when you press "M" as the hotkey. After pressing the hotkey, a new comment will be displayed. You can move the new comment anywhere in your design.
 
 ## Design review using comments
 
-<figure>
-  <img src="./conversation-screenshot.png" alt="Peer review using comments in Designer" />
-  <figcaption>Peer review using comments in Designer</figcaption>
-</figure>
+{{< figure src="./conversation-screenshot.png" alt="Peer review using comments in Designer" caption="Peer review using comments in Designer" >}}
 
 ### Conversations in Comment Threads
 
@@ -79,12 +67,24 @@ You can also reopen comments.
 
 ### View Comment History
 
-<figure>
-  <img src="./comments-conversation.gif" alt="View comment history" />
-  <figcaption>View comment history</figcaption>
-</figure>
+{{< figure src="./comments-conversation.gif" alt="View comment history" caption="View comment history" >}}
 
-Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
+Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost. The comment history panel provides several key actions for managing comments:
+
+#### Actions in the Comment History Panel
+
+1. **Resolve Individual Comments**  
+   You can resolve specific comments directly from the history panel without having to locate them on the canvas. This is particularly useful when reviewing multiple comments or when working with a complex design.
+
+2. **Mute Notifications**  
+   Control which comment threads you receive notifications for by muting specific comments. This helps you focus on the most relevant discussions while staying informed about the ones that matter most to you.
+
+3. **Delete Comments**  
+   Remove individual comments that are no longer needed. Unlike resolving comments which preserves the history, deleting a comment permanently removes it and its entire thread. Use this action with caution since it cannot be undone.
+
+{{< alert type="warning" title="Deleting Comments" >}}
+Deleting a comment permanently removes the comment and its entire thread from your design. This action cannot be undone. Consider resolving comments instead of deleting them to maintain a historical record of discussions.
+{{< /alert >}}
 
 ### Duplicating / Copying Comments
 
@@ -123,16 +123,12 @@ Learn more about [sharing settings](/kanvas/designer/sharing).
 
 - **Right-click and Copy**: Choose **Copy** to manually paste it later.
 
-  <figure>
-    <img src="./comment-copy.gif" alt="Copy a comment" />
-    <figcaption>Copy a comment</figcaption>
-  </figure>
+{{< figure src="./comment-copy.gif" alt="Copy a comment" caption="Copy a comment" >}}
 
 - **Right-click and Duplicate**: Use **Duplicate** to instantly create a copy in the same design.
 
-- **Keyboard Shortcuts**:
-  - <button class="kbc-button kbc-button-xs">Ctrl + C</button> / <button class="kbc-button kbc-button-xs">Ctrl + V</button>: Copy and paste
-  - <button class="kbc-button kbc-button-xs">Ctrl + Z</button>: Undo the action
+- **Keyboard Shortcuts**:  - `Ctrl + C` / `Ctrl + V`: Copy and paste
+  - `Ctrl + Z`: Undo the action
 
 {{< alert title="Tip: Copy more than one item at-a-time" type="info">}}
 Click and drag the left mouse button to select multiple comments and copy them together.
@@ -158,10 +154,7 @@ Kanvas auto-generates comment names, useful for quick feedback. When duplicating
 You can temporarily hide or reveal open comments using the Layers panel—just like toggling layers in Photoshop.  
 This helps you focus on the most important parts of your design and improves clarity during reviews.
 
-<figure>
-  <img src="./comments-hide.png" alt="Hide comments using Layers" />
-  <figcaption>Hide comments using the Layers panel</figcaption>
-</figure>
+{{< figure src="./comments-hide.png" alt="Hide comments using Layers" caption="Hide comments using the Layers panel" >}}
 
 {{< alert type="info" title="Explore More Panel Features" >}}
 Want to improve the performance of your workspace? [Learn more about using the Layers panel](https://docs.layer5.io/kanvas/advanced/performance/#optimize-your-design-using-the-layers-panel).
@@ -171,10 +164,7 @@ Want to improve the performance of your workspace? [Learn more about using the L
 
 If you plan to keep certain comments in your design for documentation, team reference, or historical context, it's a good idea to give them meaningful names. This simple habit improves clarity for both you and your team—especially when reviewing or revisiting designs later.
 
-<figure>
-  <img src="./naming-comments.png" alt="Naming a comment in Designer" />
-    <figcaption>Naming a comment in Designer</figcaption>
-</figure>
+{{< figure src="./naming-comments.png" alt="Naming a comment in Designer" caption="Naming a comment in Designer" >}}
 
 {{< alert type="info" title="Best Practice" >}}
 Give long-lived comments short, descriptive names like `"Needs Load Balancer"` or `"Review DNS settings"`  
@@ -187,19 +177,13 @@ If a comment is resolved by mistake, it can be reopened. Adding a new comment to
 
 Follow the steps below to reopen a comment:
 
-<figure>
-<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" />
-  <figcaption>Unresolving comments in designer</figcaption>
-</figure>
+{{< figure src="./comments-unresolved.gif" alt="Unresolving comments in designer" caption="Unresolving comments in designer" >}}
 
 ## Managing Comment Notifications
 
 Each time that a new comment is made in a design, remark placed into existing comment, a comment is resolved or reopened, you and your collaborators might receive notification via email.
 
-<figure>
-<img src="./example-notification-email.png" alt="Example email notification received when design comment is made" />
-  <figcaption>Example email notification received when design comment is made.</figcaption>
-</figure>
+{{< figure src="./example-notification-email.png" alt="Example email notification received when design comment is made" caption="Example email notification received when design comment is made." >}}
 
 As the owner of a design, you will recieve notification each time a comment is made in your design. Tag other users and have them receive notificaiton of your comment by mentioning their username with the `@` symbol.
 
@@ -215,17 +199,11 @@ Customize your [notification preferences](/cloud/identity/users/notification-pre
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
-<figure>
-  <img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
-  <figcaption>Example of comments in Designer</figcaption>
-</figure>
+{{< figure src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" caption="Example of comments in Designer" >}}
 
 You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
 
-<figure>
-  <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
-  <figcaption>Manage all comment notifications centrally in the Cloud</figcaption>
-</figure>
+{{< figure src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" caption="Manage all comment notifications centrally in the Cloud" >}}
 
 #### What Muting Affects
 
