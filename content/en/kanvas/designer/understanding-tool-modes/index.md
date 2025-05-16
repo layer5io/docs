@@ -21,7 +21,7 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 | <button class="kbc-button kbc-button-xs">Escape / V</button>     | Switches to default mode irrespective of which mode you are currently using. |
 
 ---
-s
+
 ## Interacting with Components
 
 {{< tabpane text=true >}}
