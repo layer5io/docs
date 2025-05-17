@@ -8,7 +8,7 @@ jobs:
   star-notify:
     if: github.event_name == 'watch'
     name: Notify Slack on star
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
     - name: Get current star count
       run: |
@@ -22,7 +22,7 @@ jobs:
   good-first-issue-notify:
     if:  github.event_name == 'issues' && github.event.label.name == 'good first issue' || github.event.label.name == 'first-timers-only' 
     name: Notify Slack for new good-first-issue
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Notify slack
         env:
@@ -32,5 +32,5 @@ jobs:
           args: |
             {
             "channel": "C019426UBNY",
-            "text": "A new, good first issue is up for grabs: [Add new social media account alongside the others](https://github.com/layer5io/docs/issues/567)"
+            "text": "A new, good first issue is up for grabs: [${{github.event.issue.title}}](${{github.event.issue.html_url}})"
             }
