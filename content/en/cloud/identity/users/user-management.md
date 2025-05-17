@@ -9,19 +9,18 @@ tags: [users]
 
 Effectively managing users is crucial for maintaining a secure and organized Layer5 Cloud environment. This guide outlines the various methods available for user creation, addition to organizations, and invitations.
 
-
-![Org Invite](/cloud/identity/users/org_invite.png)
+![User Management options](/cloud/identity/users/org_invite.png)
 
 ## Create User Account
 
 Seamlessly initiate new user accounts, ensuring a smooth onboarding process for individuals new to Layer5 Cloud. As an administrator, you can specify user details and tailor their initial access.
 
 * **Process:** The administrator directly fills out a form with the new user's details.
-* **Information Required:** Typically includes First Name, Last Name, Email ID, the Organization(s) to assign, Organization Role(s), and any applicable Provider Role Names.
+* **Information Required:** Typically includes First Name, Last Name, Email ID, the Organization(s) to assign, Organization Role(s), and Provider Role Names.
 
 ![Create User](/cloud/identity/users/create-user.gif)
 
-{{< alert type="info" title="Note" >}}
+{{< alert type="info" title="Permission Required for User Creation" >}}
 Only Provider Admins and Organization Admins can create users. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
 
@@ -69,7 +68,7 @@ Invite new or existing users to join one of your organizations by sending a dire
     4.  An invitation email is sent to the user.
 * **User Action:** The recipient clicks a link in the email to accept the invitation. If they are new to Layer5 Cloud, they will be prompted to create an account first before joining the organization.
 
-{{< alert type="info" title="Note" >}}
+{{< alert type="info" title="Permissions for Role Assignment" >}}
 An Organization Admin can assign organization roles to users, but provider roles can only be assigned by Provider Admins. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
 
@@ -84,13 +83,13 @@ Beyond direct methods, Layer5 Cloud provides a convenient way to invite multiple
 
 ### Obtaining the Invitation Link
 To get the invitation link for your organization:
-1.  Navigate to your **Organization's settings** page in Layer5 Cloud.
-2.  Find the section related to user invitations or organization membership (often labeled "Invitations" or similar).
-3.  Look for an option like **"Copy invite link to join your org"** and click it.
+1. Navigate to your **Organization's settings** page in Layer5 Cloud.
+2. Find the section related to user invitations or organization membership (often labeled "Invitations" or similar).
+3. Look for an option like **"Copy invite link to join your org"** and click it.
 
 ![Obtain Organization Invite Link](/cloud/identity/users/org_open_invite.gif)
 
- {{< alert title="Inviting Users to Specific Teams" type="info" >}}
+{{< alert title="Inviting Users to Specific Teams" type="info" >}}
 If you want to invite users directly to a specific team within your organization, please refer to the documentation on [Open Team Invites](https://docs.layer5.io/cloud/identity/teams/)
 {{< /alert >}}
 
@@ -101,8 +100,8 @@ If you want to invite users directly to a specific team within your organization
     * After creating their account, they will be automatically added to the organization associated with the invite link.
 
 2.  For Existing Users (with a Layer5 Cloud account):
-    * An existing user who clicks the invitation link will be able to join the organization using their current account.^1
+    * An existing user who clicks the invitation link will be able to join the organization using their current account.[^1]
 
 This Open Organization Invitation Link feature is designed to make expanding your Layer5 Cloud organization straightforward and efficient.
 
-[^1]: **Known Issue for Existing Users:** Existing users who click this invitation link might encounter a "Page not found" error. The intended behavior is for users to be seamlessly prompted to join the organization with their existing account. This is a temporary bug and is being addressed.
+[^1]: Existing users who click this invitation link might encounter a "Page not found" error. This is a temporary bug and is being addressed.
