@@ -227,6 +227,12 @@ enable = false
 		desc = "Discuss development issues around the project"
         alt = "YouTube Icon"
 	[[params.links.footer.icons]]
+		name = "Bluesky"
+		url = "https://bsky.app/profile/layer5.bsky.social"
+		icon = "icons/bluesky.svg"
+		desc = "Follow us on Bluesky for updates"
+		alt = "Bluesky Icon"
+	[[params.links.footer.icons]]
 		name = "Docker"
 		url = "https://hub.docker.com/u/layer5/"
 		icon = "icons/docker.svg"
