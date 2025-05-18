@@ -13,10 +13,7 @@ Effectively managing users is crucial for maintaining a secure and organized Lay
 
 ## Create User Account
 
-Seamlessly initiate new user accounts, ensuring a smooth onboarding process for individuals new to Layer5 Cloud. As an administrator, you can specify user details and tailor their initial access.
-
-* **Process:** The administrator directly fills out a form with the new user's details.
-* **Information Required:** Typically includes First Name, Last Name, Email ID, the Organization(s) to assign, Organization Role(s), and Provider Role Names.
+Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user's introduction to Layer5 Cloud.
 
 ![Create User](/cloud/identity/users/create-user.gif)
 
@@ -31,13 +28,13 @@ This section covers adding **existing** Layer5 Cloud users to a specific organiz
 ![Flow for organization and team membership](/cloud/identity/users/Slide41.svg)
 
 ### Adding a User to an Organization
-This option is used to grant an existing Layer5 Cloud user membership into one of your organizations if they are not already a part of it.
+This section covers adding **existing** Layer5 Cloud users to a specific organization or removing them.
 
-1.  Navigate to the **Users** tab in the Identity section (or directly within an Organization's member settings).
-2.  Click the **Add User** button (or a similar option to manage organization members).
-3.  Select or confirm the organization to which you want to add the user.
-4.  Search for and select the user from the list of available Layer5 Cloud users (e.g., by email or username).
-5.  Assign appropriate roles within the organization.
+1. Navigate to the **Users** tab in the Identity section.
+2. Click the **Add User** button.
+3. Select the organization to which you want to add the user.
+4. Select the user from the list of available users.
+5. Assign appropriate roles within the organization.
 
 ![Add User to Organization](/cloud/identity/users/add-user.gif)
 
