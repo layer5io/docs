@@ -1,13 +1,13 @@
 ---
 title: User Management
 description: >
-  Efficiently manage and organize users within Layer5 Cloud with our comprehensive user management capabilities.
+  Learn how to create, add, invite, and manage users within Layer5 Cloud.
 weight: 4
 categories: [Identity]
 tags: [users]
 ---
 
-Effectively managing users is crucial for maintaining a secure and organized Layer5 Cloud environment. This guide outlines the various methods available for user creation, addition to organizations, and invitations.
+This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.
 
 ![User Management options](/cloud/identity/users/org_invite.png)
 
@@ -23,14 +23,15 @@ Only Provider Admins and Organization Admins can create users. For more informat
 
 ## Add User to Organization / Remove User
 
-This section covers adding **existing** Layer5 Cloud users to a specific organization or removing them.
+This section explains how to add existing Layer5 Cloud users to one of your organizations or remove them.
 
 ![Flow for organization and team membership](/cloud/identity/users/Slide41.svg)
 
 ### Adding a User to an Organization
-This section covers adding **existing** Layer5 Cloud users to a specific organization or removing them.
 
-1. Navigate to the **Users** tab in the Identity section.
+If someone already has a Layer5 Cloud account but isn't part of your organization, you can add them.
+
+1. Go to the Users tab in the Identity section 
 2. Click the **Add User** button.
 3. Select the organization to which you want to add the user.
 4. Select the user from the list of available users.
@@ -40,30 +41,30 @@ This section covers adding **existing** Layer5 Cloud users to a specific organiz
 
 ### Removing Users from an Organization
 
-You have the flexibility to remove users from an organization individually or multiple users at once. This action revokes their membership and access to that specific organization's resources but typically does not delete their overall Layer5 Cloud account.
+You can remove users from an organization one by one or several at once. This action takes away their membership and access to that specific organization's resources but doesn’t delete their overall Layer5 Cloud account.
 
 #### Method 1: Individual User Removal (One by One)
    * **Locate the User:** Find the specific user you wish to remove from the list.
-   * **Use Row Action:** Each user row typically has a "Remove" icon. Click this icon for the user you want to remove.
-   * **Confirm:** A confirmation prompt will appear. Confirm the action to remove the user from the organization.
+   * **Use Row Action:** Click the "Remove User" icon.
+   * **Confirm:** When prompted, confirm your decision to remove the user from the organization.
 
 #### Method 2: Bulk User Removal (Multiple Users at Once)
    * **Select Users:** Use the checkboxes next to each user's name to select all the users you intend to remove.
-   * **Use Bulk Action:** After selecting the users, a bulk action option will typically become active. Click this button.
-   * **Confirm:** A confirmation prompt will appear, often listing the number of users selected for removal. Confirm the action to remove all selected users from the organization simultaneously.
+   * **Use Bulk Action:** Click the "Delete" button.
+   * **Confirm:** When prompted, confirm that you want to remove all the selected users from the organization.
 
 ![Removing Users from an Organization](/cloud/identity/users/remove_user.png)
 
 ## Invite User via Email
 
-Invite new or existing users to join one of your organizations by sending a direct email invitation. This method allows for personalized onboarding.
+You can invite new or existing users to join one of your organizations by sending them an email invitation.
 
-* **Process:**
-    1.  An administrator accesses the "Invite User" feature, typically from the User Management area or an Organization's member page.
-    2.  The administrator fills in the prospective member's First Name, Last Name, and Email address.
-    3.  They assign the target Organization, and optionally, specific Team(s) and Organization Role(s) that the user will have upon accepting the invitation.
-    4.  An invitation email is sent to the user.
-* **User Action:** The recipient clicks a link in the email to accept the invitation. If they are new to Layer5 Cloud, they will be prompted to create an account first before joining the organization.
+* **How to Invite:**
+    1.  Click the "Invite User" button.
+    2.  Enter the person's First Name, Last Name, and Email address.
+    3.  Assign them to a target Organization. Optionally, Team(s) and Organization Role(s) they will receive.
+    4.  Layer5 Cloud sends an invitation email to the user.
+* **What the User Does:** The person you invited will click a link in the email to accept. If they're new to Layer5 Cloud, they'll need to create an account first before they can join your organization.
 
 {{< alert type="info" title="Permissions for Role Assignment" >}}
 An Organization Admin can assign organization roles to users, but provider roles can only be assigned by Provider Admins. For more information, see [Roles](/cloud/security/roles).
@@ -71,18 +72,17 @@ An Organization Admin can assign organization roles to users, but provider roles
 
 ## Using the Open Organization Invitation Link
 
-Beyond direct methods, Layer5 Cloud provides a convenient way to invite multiple users to join your organization using a shareable "Open Organization Invitation Link". This link allows users to request access or be directly added to your organization, streamlining the onboarding process, especially for larger groups or public communities.
+To invite multiple users to your organization at once, or to allow open sign-ups (for example, for a public community), you can use the "Open Organization Invitation Link." This is a shareable link that lets users join directly or request access.
 
-### Why you should use this
-* **Bulk Onboarding:** Efficiently invite multiple new users at once without sending individual invitations.
-* **Public Sign-ups:** Post the link on a community page or public resource to allow open sign-ups to your organization.
-* **Cross-Organizational Collaboration:** Simplify access for collaborators from different organizations or external partners.
+### When to Use This Link
+* **Bulk Onboarding:** To quickly onboard many users without sending individual emails.
+* **Public Sign-ups:** To let people sign up openly, for instance, by posting the link on a community page or another public resource.
+* **Cross-Organizational Collaboration:** To make it easy for collaborators from other organizations or external partners to join.
 
-### Obtaining the Invitation Link
-To get the invitation link for your organization:
-1. Navigate to your **Organization's settings** page in Layer5 Cloud.
-2. Find the section related to user invitations or organization membership (often labeled "Invitations" or similar).
-3. Look for an option like **"Copy invite link to join your org"** and click it.
+### How to Get the Invitation Link
+1. Go to your Organization's settings page in Layer5 Cloud.
+2. Choose the target organization, then click its edit button.
+3. Click the "Copy invite link to join your org" option.
 
 ![Obtain Organization Invite Link](/cloud/identity/users/org_open_invite.gif)
 
@@ -98,7 +98,5 @@ If you want to invite users directly to a specific team within your organization
 
 2.  For Existing Users (with a Layer5 Cloud account):
     * An existing user who clicks the invitation link will be able to join the organization using their current account.[^1]
-
-This Open Organization Invitation Link feature is designed to make expanding your Layer5 Cloud organization straightforward and efficient.
 
 [^1]: Existing users who click this invitation link might encounter a "Page not found" error. This is a temporary bug and is being addressed.
