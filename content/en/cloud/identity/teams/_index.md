@@ -32,9 +32,8 @@ The "Open Team Invite" feature allows administrators to enable a specific invita
 
 ### Why Use Open Team Invite
 
-* **Targeted Team Invites:** Directly invite users to join specific teams.
-* **Streamlined Access:** Simplify onboarding for users needing access to particular project groups or shared resources within a team.
-* **Focused Membership:** Works in conjunction with organization invites, allowing users to first join the organization and then be guided into specific teams.
+* **Effortless Onboarding to Teams:**  Provides a single invitation link that seamlessly guides users through account creation (if new), organization membership, and directly into the specific team.
+* **Targeted Invitations:** Allows for precise invitations to particular teams using a dedicated, shareable link.
 
 {{< alert type="info" title="For Organization-Specific Invitations">}}
 If your goal is to invite users only to a specific organization (and not directly to a team as part of the same invitation), please refer to the documentation on [Open Org Invite Link and User Management](https://docs.layer5.io/cloud/identity/users/user-management/).
