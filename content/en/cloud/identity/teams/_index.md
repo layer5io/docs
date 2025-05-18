@@ -12,13 +12,13 @@ Outside of grouping users together, teams offer control access to workspaces and
 
 ## Add a Team
 
-To apply different settings to a set of users, create a new team within your organization. You can then apply unique settings to that team, such as access to specific workspaces and their associated environments.
+To apply different settings to a set of users, create a child new team below your top-level organization and place them in it. You can then apply unique settings to that team, like access to a workspace and their a specific set of environments.
 
-A team is a group created by an administrator to apply common settings and access controls to a specific set of users within an organization. By default, all users are part of the top-level organization. Teams inherit settings from the parent organization, but these can be customized as needed for the team.
+A team is simply a group that an administrator can create in the Google Admin console to apply settings to a specific set of users. By default, all users are placed in the top-level (parent) organizational unit. Child organizational units inherit the settings from the parent, but can be changed to fit the needs of the child organizational unit.
 
-Currently, hierarchical teams are not supported; all teams exist at the same level directly under the organization. Changes to settings at the organization level will propagate to all teams that inherit those settings, while custom team settings will remain unchanged.
+Below the top-level organization, you can add as many teams as you want - at the same level. Hierarchal teams are not currently supported. When you change a setting at the higher level organization, the settings for all child teams that inherit that setting also change. Custom settings at the team level, however, remain unchanged.
 
-Learn more about the [organizational structure](/cloud/identity). 
+>Learn more about the [organizational structure](/cloud/identity). 
 
 {{< alert type="info" title="Team Ownership">}}
 If you are the current team owner, you can’t remove yourself from the team until you transfer ownership to another team administrator.
