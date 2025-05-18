@@ -21,7 +21,7 @@ Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Spe
 Only Provider Admins and Organization Admins can create users. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
 
-## Add User to Organization / Remove User
+## Add User / Remove User
 
 This section explains how to add existing Layer5 Cloud users to one of your organizations or remove them.
 
@@ -80,7 +80,7 @@ To invite multiple users to your organization at once, or to allow open sign-ups
 * **Cross-Organizational Collaboration:** To make it easy for collaborators from other organizations or external partners to join.
 
 ### How to Get the Invitation Link
-1. Go to your Organization's settings page in Layer5 Cloud.
+1. Go to your Organization's settings page.
 2. Choose the target organization, then click its edit button.
 3. Click the "Copy invite link to join your org" option.
 
