@@ -200,6 +200,16 @@
     dropdown.addEventListener("click", function (event) {
     event.stopPropagation();
 
+    // hide any other active dropdowns
+    const allActiveDropdowns = document.querySelectorAll(".nav-link.current");
+    allActiveDropdowns.forEach((otherDropdown) => {
+      if (otherDropdown !== dropdown) {
+        otherDropdown.classList.remove("current");
+        otherDropdown.nextElementSibling.classList.remove("show");
+        otherDropdown.nextElementSibling.style.visibility = "hidden"; 
+      }
+    });
+
     if (dropdown.classList.contains("current")) {
         dropdown.classList.remove("current");
         dropdownMenu.classList.remove("show");
