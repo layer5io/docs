@@ -21,7 +21,7 @@ An Organization provides a way to structure your teams, users, and resource acce
 
 ### How to create an Organization
 
-1.  Go to the **Organizations** section, click the **Add Organization** button
+1.  Go to the Organizations section, click the **Add Organization** button
 2.  The "Create New Organization" modal will appear:
     -   Organization Name: Enter a unique name for your new Organization. This is a required field.
     -   Country (Optional): Select the country for your Organization.
