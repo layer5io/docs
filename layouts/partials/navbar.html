@@ -27,8 +27,44 @@
                       <li class="nav-item">
                         <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
                       </li>
-                      <li class="nav-item">
-                        <a id="videos" class="nav-link" href="/videos"> Videos</a>
+                      <li class="nav-item dropdown" data-bs-theme="dark">
+                        <div
+                        class="nav-link"
+                        id="resourcesDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        >
+                        Resources<span class="down-icon">&#9660;</span>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="resourcesDropdown" style="visibility:hidden;">
+                          <a
+                          class="dropdown-item"
+                          href="https://cloud.layer5.io/academy/overview"
+                          target="_blank"
+                          >
+                            <div class="logo-container">
+                              <img
+                                src="/images/academy-icon.svg"
+                                alt="Meshery Logo"
+                              />
+                            </div>
+                            <span>Academy</span>
+                          </a>
+                          <div class="dropdown-divider"></div>
+                          <a
+                          class="dropdown-item"
+                          href="https://docs.layer5.io/videos"
+                          target="_blank"
+                          >
+                            <div class="logo-container">
+                              <img
+                                src="/images/video-play.svg"
+                                alt="Meshery Logo"
+                              />
+                            </div>
+                            <span>Videos</span>
+                          </a>
+                        </div>
                       </li>
                     </div>
                     <div class="d-flex ms-auto">
@@ -164,6 +200,16 @@
     dropdown.addEventListener("click", function (event) {
     event.stopPropagation();
 
+    // hide any other active dropdowns
+    const allActiveDropdowns = document.querySelectorAll(".nav-link.current");
+    allActiveDropdowns.forEach((otherDropdown) => {
+      if (otherDropdown !== dropdown) {
+        otherDropdown.classList.remove("current");
+        otherDropdown.nextElementSibling.classList.remove("show");
+        otherDropdown.nextElementSibling.style.visibility = "hidden"; 
+      }
+    });
+
     if (dropdown.classList.contains("current")) {
         dropdown.classList.remove("current");
         dropdownMenu.classList.remove("show");
@@ -186,6 +232,7 @@
 
 
   setupDropdown("productsDropdown");
+  setupDropdown("resourcesDropdown");
     // console.log(window.location.pathname == "/cloud/");
     // check if the current page ic cloud
     let cur;
@@ -245,7 +292,7 @@
       updateUI(response);
 
   } catch (error) {
-    console.error("could not set user details.", error);
+    // console.error("could not set user details.", error);
     showSignInButton();
   }
 };
