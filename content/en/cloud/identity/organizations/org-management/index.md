@@ -7,7 +7,7 @@ categories: [Identity]
 tags: [orgs]
 ---
 
-Manage your Organizations in Layer5 Cloud. This guide covers creating new organizations, editing their details, inviting members, and deleting organizations when necessary.
+This guide covers creating new organizations, editing their details, inviting members, and deleting organizations when necessary.
 
 ![Organization Overview](/cloud/identity/organizations/org-management/org_overview.png)
 

@@ -11,7 +11,3 @@ Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organi
 Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections
 
 <img src="/cloud/identity/images/organization_units.svg" alt="Organizational units" style="width: 35%;" />
-
-{{< alert type="info" title="Managing Organization Members" >}}
-For detailed instructions on how to manage users within your organization, please refer to [User Management documentation](https://docs.layer5.io/cloud/identity/users/user-management/).
-{{< /alert >}}
