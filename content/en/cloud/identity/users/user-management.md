@@ -69,34 +69,3 @@ You can invite new or existing users to join one of your organizations by sendin
 {{< alert type="info" title="Permissions for Role Assignment" >}}
 An Organization Admin can assign organization roles to users, but provider roles can only be assigned by Provider Admins. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
-
-## Using the Open Organization Invitation Link
-
-To invite multiple users to your organization at once, or to allow open sign-ups (for example, for a public community), you can use the "Open Organization Invitation Link." This is a shareable link that lets users join directly.
-
-### When to Use This Link
-* **Bulk Onboarding:** To quickly onboard many users without sending individual emails.
-* **Public Sign-ups:** To let people sign up openly, for instance, by posting the link on a community page or another public resource.
-* **Cross-Organizational Collaboration:** To make it easy for collaborators from other organizations or external partners to join.
-
-### How to Get the Invitation Link
-1. Go to your Organization's settings page.
-2. Choose the target organization, then click its edit button.
-3. Click the "Copy invite link to join your org" option.
-
-![Obtain Organization Invite Link](/cloud/identity/users/org_open_invite.gif)
-
-{{< alert title="Inviting Users to Specific Teams" type="info" >}}
-If you want to invite users directly to a specific team within your organization, please refer to the documentation on [Open Team Invites](https://docs.layer5.io/cloud/identity/teams/)
-{{< /alert >}}
-
-### How it Works
-
-1.  For New Users (without an existing Layer5 Cloud account):
-    * When a new user clicks the invitation link, they will be directed to the sign-up page.
-    * After creating their account, they will be automatically added to the organization associated with the invite link.
-
-2.  For Existing Users (with a Layer5 Cloud account):
-    * An existing user who clicks the invitation link will be able to join the organization using their current account.[^1]
-
-[^1]: Existing users who click this invitation link might encounter a "Page not found" error. This is a temporary bug and is being addressed.
