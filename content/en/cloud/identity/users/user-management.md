@@ -72,7 +72,7 @@ An Organization Admin can assign organization roles to users, but provider roles
 
 ## Using the Open Organization Invitation Link
 
-To invite multiple users to your organization at once, or to allow open sign-ups (for example, for a public community), you can use the "Open Organization Invitation Link." This is a shareable link that lets users join directly or request access.
+To invite multiple users to your organization at once, or to allow open sign-ups (for example, for a public community), you can use the "Open Organization Invitation Link." This is a shareable link that lets users join directly.
 
 ### When to Use This Link
 * **Bulk Onboarding:** To quickly onboard many users without sending individual emails.
