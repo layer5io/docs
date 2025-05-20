@@ -81,7 +81,7 @@ Deleting an Organization is a permanent action that removes it entirely, includi
 
 1.  Select the Organization you want to delete and click its **"Delete"** button.
 2.  A confirmation modal will appear, requiring you to verify this action.
-3. Click the red "Delete" button to permanently remove the Organization. To abort the deletion, click "Cancel".
+3. Click the "Delete" button to permanently remove the Organization. To abort the deletion, click "Cancel".
 
 <img src="/cloud/identity/organizations/org-management/delete_org.png" alt="Delete Organization" style="width: 30%;" />
 
