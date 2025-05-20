@@ -21,7 +21,7 @@ Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Spe
 Only Provider Admins and Organization Admins can create users. For more information, see [Roles](/cloud/security/roles).
 {{< /alert >}}
 
-## Add User / Remove User
+## Add / Remove Existing User
 
 This section explains how to add existing Layer5 Cloud users to one of your organizations or remove them.
 
