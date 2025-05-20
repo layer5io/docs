@@ -77,6 +77,34 @@ If you want to invite users directly to a specific team within your organization
 
 Deleting an Organization is a permanent action that removes it entirely, including all associated teams, user memberships within that Organization, and its resources. 
 
+{{< alert type="warning" title="Deletion is Permanent and Unrecoverable" >}}
+Once an Organization is deleted, **this action cannot be undone**.
+{{< /alert >}}
+
+### Consequences of Deletion
+
+Upon confirming deletion, the following are **permanently and irretrievably removed**:
+* The Organization Itself: Including all its unique settings and configurations.
+* All Associated Teams: Teams created within or exclusively linked to this Organization.
+* User Access to this Organization: Users' memberships, roles, and permissions specific to this Organization are revoked. (Note: Users' individual accounts themselves are not deleted from the system).
+* Owned Workspaces: All Workspaces exclusively owned by this Organization.
+* Designs within Owned Workspaces: Designs that belong to one of the deleted Workspaces will also be deleted.
+
+### When NOT to Delete
+Avoid deleting an Organization if:
+* You might need the Organization or its data later.
+* Critical resources within it have not been backed up or migrated.
+* Other users or services still depend on it.
+* You only need to modify memberships or restructure parts of it.
+* You are unsure about the full extent of its data or dependencies.
+
+### When Deletion May Be Appropriate
+
+* The Organization was for a temporary project or test and is no longer needed.
+* It was created in error or is now redundant due to consolidation.
+* Permanent removal of all its data is required for compliance or data lifecycle management.
+* You are certain all its resources are obsolete or migrated, and no dependencies remain.
+
 ### How to Delete Your Organization
 
 1.  Select the Organization you want to delete and click its **"Delete"** button.
@@ -84,9 +112,5 @@ Deleting an Organization is a permanent action that removes it entirely, includi
 3. Click the "Delete" button to permanently remove the Organization. To abort the deletion, click "Cancel".
 
 <img src="/cloud/identity/organizations/org-management/delete_org.png" alt="Delete Organization" style="width: 30%;" />
-
-{{< alert type="danger" title="Warning: Deletion is Irreversible" >}}
-Once an Organization is deleted, this action **cannot be undone**.
-{{< /alert >}}
 
 [^1]: Existing users who click this invitation link might encounter a "Page not found" error. This is a temporary bug and is being addressed.
