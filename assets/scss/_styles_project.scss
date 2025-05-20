@@ -8,8 +8,9 @@
 @import "_navbar_project.scss";
 @import "tax_project.scss";
 @import "search_project.scss";
-@import "videos.scss";
+@import "_videos_project.scss";
 @import "subscription.scss";
+@import "_video-landing_project.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -121,6 +122,20 @@ body {
       border: 0;
     }
   }
+
+  img,
+  .md__image img,
+  img.md-image-responsive {
+    display: block;
+    width: 100%;
+    max-width: clamp(320px, 100%, 700px);
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    box-sizing: border-box;
+  }
+
+  overflow-x: hidden;
 }
 
 // Links
@@ -164,7 +179,6 @@ a:not([href]):not([class]):hover {
     margin: 0 0.5em 0.2em 0;
     text-decoration: none;
     transition: color 0.2s;
-    clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
 
 
@@ -455,27 +469,33 @@ a:not([href]):not([class]):hover {
   }
 }
 
-figure {
+.td-content figure,
+.td-content figure {
+  width: max-content;
+  max-width: clamp(320px, 100%, 700px);
+  margin: 0 auto 2rem auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
 
-  > img:hover { cursor: pointer; }
-  > img {
-    margin: 0 auto; // Center the image
-    margin-bottom: 0px !important;
-    border-radius: .5rem .5rem 0rem 0rem !important;
-    box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4) !important;
-  }
-  figcaption {
-    color: $dark;
-    background-color: rgba($lightslategray, 1);
-    // font-style:italic;
-    text-align: center;
-    margin: 0rem;
-    padding: 0 0.45 0.45 0.45rem;
-    border-radius: 0 0 .5rem .5rem;
-    box-sizing: border-box; // Include padding in width calculation
-  }
+.td-content figure > img {
+  width: auto;
+  max-width: 100%;
+  border-radius: .5rem .5rem 0 0;
+  box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);
+  transition: box-shadow 0.2s;
+}
+
+.td-content figure > figcaption {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba($lightslategray, 1);
+  color: $dark;
+  border-radius: 0 0 .5rem .5rem;
+  box-sizing: border-box;
 }
 
 .dashboard {

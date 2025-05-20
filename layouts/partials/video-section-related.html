@@ -3,7 +3,7 @@
     {{ $currentTags := .Params.tags }}
     {{ $currentCategories := .Params.categories }}
 
-    {{ $videoPages := (where .Site.Pages ".Params.video_id" "!=" nil) }}
+    {{ $videoPages := (where .Site.Pages ".Params.videoId" "!=" nil) }}
 
     {{ $matchingVideos := slice }}
 
@@ -50,19 +50,18 @@
                 {{ if modBool $index 2 }}
                 <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
                     <div class="row justify-content-center">
-                        <!-- First video in pair -->
-                        <div class="col-12 col-md-6 col-lg-5">
+                        <div class="col-12 col-md-6 col-lg-5 mb-5 mb-md-0">
                             <a href="{{ .page.RelPermalink }}" class="video-link text-decoration-none">
                                 <div class="video card h-100 bg-dark text-white border border-secondary shadow-lg p-1">
                                     <div class="video-container position-relative"
                                         style="height: max-content; overflow: hidden;">
                                         <div class="ratio ratio-16x9 h-100">
-                                            <img src="https://i.ytimg.com/vi/{{ .page.Params.video_id }}/maxresdefault.jpg"
+                                            <img src="https://i.ytimg.com/vi/{{ .page.Params.videoId }}/maxresdefault.jpg"
                                                 alt="{{ .page.Title }}" class="img-fluid" />
                                         </div>
                                         <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-overlay">
                                             <div
-                                                class="video-btn-wrapper position-absolute top-50 start-50 translate-middle">
+                                                class="videobtn-wrapper position-absolute top-50 start-50 translate-middle">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 60">
                                                     <path class="play-icon-path"
                                                         d="M39.5298 29.028L21.7045 39.395C21.6471 39.4284 21.5893 39.4603 21.5311 39.4908C20.9134 39.8161 20.2107 40 19.4654 40C16.9992 40 15 37.9861 15 35.5018V14.5102C15 13.6377 15.2466 12.8233 15.6734 12.1337C16.9369 10.0722 19.6075 9.38388 21.7044 10.6034L39.5291 20.97C40.2869 21.3504 40.9459 21.9517 41.401 22.7457C41.811 23.4611 42.0038 24.2428 41.9999 25.0133C41.999 25.7747 41.806 26.5461 41.4009 27.2527C40.9461 28.0464 40.2873 28.6476 39.5298 29.028Z" />
@@ -85,12 +84,12 @@
                                     <div class="video-container position-relative"
                                         style="height: max-content; overflow: hidden;">
                                         <div class="ratio ratio-16x9 h-100">
-                                            <img src="https://i.ytimg.com/vi/{{ $nextVideo.page.Params.video_id }}/maxresdefault.jpg"
+                                            <img src="https://i.ytimg.com/vi/{{ $nextVideo.page.Params.videoId }}/maxresdefault.jpg"
                                                 alt="{{ $nextVideo.page.Title }}" class="img-fluid" />
                                         </div>
                                         <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-overlay">
                                             <div
-                                                class="video-btn-wrapper position-absolute top-50 start-50 translate-middle">
+                                                class="videobtn-wrapper position-absolute top-50 start-50 translate-middle">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 60">
                                                     <path class="play-icon-path"
                                                         d="M39.5298 29.028L21.7045 39.395C21.6471 39.4284 21.5893 39.4603 21.5311 39.4908C20.9134 39.8161 20.2107 40 19.4654 40C16.9992 40 15 37.9861 15 35.5018V14.5102C15 13.6377 15.2466 12.8233 15.6734 12.1337C16.9369 10.0722 19.6075 9.38388 21.7044 10.6034L39.5291 20.97C40.2869 21.3504 40.9459 21.9517 41.401 22.7457C41.811 23.4611 42.0038 24.2428 41.9999 25.0133C41.999 25.7747 41.806 26.5461 41.4009 27.2527C40.9461 28.0464 40.2873 28.6476 39.5298 29.028Z" />

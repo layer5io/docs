@@ -21,8 +21,8 @@ onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout=
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/kanvas" aria-label="Kanvas Docs"
-onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout="restoreImage('Kanvas', 'images/logos/kanvas-alt.svg')">
-    <img id="Kanvas" src="images/logos/kanvas-alt.svg" alt="Layer5 Kanvas Docs Logo" />
+onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout="restoreImage('Kanvas', 'images/logos/kanvas-icon-color.svg')">
+    <img id="Kanvas" src="images/logos/kanvas-icon-color.svg" alt="Layer5 Kanvas Docs Logo" />
     Kanvas Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
@@ -67,11 +67,11 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 
 <div class="flex-row gap-20px">
 <div class="playground-card grow-1">
-<a href="https://cloud.layer5.io/academy/challenges">
+<a href="/videos">
   <div class="landing-card">
-    <div class= "playground-section challenges-logo">
-      <span class="landing-card-title">Challenges</span>
-      <p>Accept the challenge. Learn CNCF projects by taking and completing time-based, hands-on labs. Complete your challenge quickly and you might be this month's CNCF Challenger!</p>
+    <div class= "playground-section video-play-logo">
+      <span class="landing-card-title">Video Library</span>
+      <p>Give your brain a break from YAML. Watch Layer5 tools like Kanvas and cloud native infrastructure management in action through hands-on demonstrations and tutorials.</p>
     </div>
   </div>
 </a></div>

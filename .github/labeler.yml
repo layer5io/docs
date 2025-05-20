@@ -2,7 +2,7 @@ component/cloud-docs:
 - changed-files:
   - any-glob-to-any-file:
     - "content/en/cloud/**/*"
-component/kanvas-doc:
+component/kanvas-docs:
 - changed-files:
   - any-glob-to-any-file:
     - "content/en/kanvas/**/*"
