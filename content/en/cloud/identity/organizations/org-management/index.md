@@ -85,9 +85,9 @@ Once an Organization is deleted, **this action cannot be undone**.
 
 Upon confirming deletion, the following are **permanently and irretrievably removed**:
 * The Organization Itself: Including all its unique settings and configurations.
-* All Associated Teams: Teams created within or exclusively linked to this Organization.
+* All Associated Teams: Teams created within to this Organization.
 * User Access to this Organization: Users' memberships, roles, and permissions specific to this Organization are revoked. (Note: Users' individual accounts themselves are not deleted from the system).
-* Owned Workspaces: All Workspaces exclusively owned by this Organization.
+* Owned Workspaces: All Workspaces owned by this Organization.
 * Designs within Owned Workspaces: Designs that belong to one of the deleted Workspaces will also be deleted.
 
 ### When NOT to Delete
