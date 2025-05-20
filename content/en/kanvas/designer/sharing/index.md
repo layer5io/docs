@@ -1,7 +1,7 @@
 ---
 title: Sharing Designs
 description: >
-  Share design with other users and use control access to manage design access permissions and visibility.
+  Share designs with other users and use access controls to manage design permissions and visibility.
 weight: 3
 categories: [Designer]
 tags: [designs, collaboration, review]
@@ -10,78 +10,121 @@ aliases:
   - /kanvas/designer/share-resource
 ---
 
-## Overview
+In [Kanvas](https://kanvas.new/), you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
-In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
-
-{{< alert title="Sharing Views">}}
+{{< alert title="Sharing Views" type="info">}}
 You can share and control access to [Views](/kanvas/operator/views) in the same fashion as you do for Designs.
 {{< /alert >}}
 
 ## Understanding visibility levels
 
-Designs and Views have visibility statuses that define who can access your designs. These options offer different levels of exposure for content within your workspaces:
+Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:
 
-- **Private:** Designs or Views with visibility status private defines only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.
+- **Private:** Designs with visibility status private define only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.[^1]
 
-- **Public:**  Making a design public allows anyone within your organization to view, comment on, and edit the design. This feature is useful for sharing best practices, reference architectures, or contributions within your organization. However, as the owner of the design, you can restrict permissions for individual users or teams by adding and customizing access permissions. We will discuss how you can do this in the next section.
+- **Public:**  Making a design "Public" makes it accessible to anyone on the internet who has the link or discovers it through public channels. By default, users accessing a Public design are granted permissions to view, comment on, and edit the design. 
+
+{{< alert title="Why use public" type="info">}}
+Public status is useful for sharing designs broadly, for example, as open-source templates, public demonstrations, or for soliciting feedback from a wider community. If your goal is to share broadly only within your organization, consider using a combination of private designs shared with specific organization-wide teams or workspaces.
+{{< /alert >}}
 
 - **Published:**  The published visibility setting is designed for sharing designs with a wider audience. Published designs become discoverable to other users and allow them to view, download, and clone the design. Users can find published designs through [Cloud Catalog](/cloud/catalog) ([open catalog](https://cloud.layer5.io/catalog)).
 
 ## Granting access to individual users
 
-As a design owner, you have granular control over access permissions for your designs. You can share your designs with specific users and assign them different access types. This allows you to collaborate effectively while maintaining control over who can view, comment, or edit your designs.
-You can share your designs with other users by using the "Share" modal. This modal allows you to grant access to individual users or teams, and you can define the access type for each user or team.
+When you share a design, those users or teams become collaborators. You can share your designs with other users by using the "Share" modal. This modal allows you to grant access to individual users or teams. The following steps show how you can grant access to individual users:
 
-The following steps show how you can grant access to individual users:
+**Accessing the "Share" Modal:**
 
-- Open your design in Kanvas.
-- Click the "Share" button located on the top right corner.
-- Enter the name or email addresses of the users you want to share the design with.
-- Define the access type for each user (e.g., view, comment, edit). You can choose from predefined options.
+There are two primary ways to open the "Share" modal for a design:
 
-You can also change the visibility status between public and private of the design from here.
+1.  **From an Open design:**
+    * First, open your Design or View in Kanvas.
+    * Click the main **"Share" button**, which is typically located in the top right corner of the editor interface.
 
-## Levels of access
+2.  **From the Recent Designs list:**
+    * Click the **more options icon** (often represented by three vertical dots ⋮) associated with that design.
+    * Select **"Share"** from the context menu that appears.
 
-When you share a design, you have different access types that you can assign to users or teams for your designs. These access types include:
+![Ways to open Share modal](/kanvas/designer/sharing/model-where.gif)
 
-- **View**: Users with view access can see the design details but cannot modify them.
-- **Comment**: Comment access allows users to add comments and suggestions to the design, facilitating discussions and feedback.
-- **Edit**: Edit access allows users to modify configurations, add components, deploy design, and essentially alter the design. While Editors have extensive access, they do not have all the privileges of the Owner like deleting designs.
-- **Owner**: Owner access grants the highest level of permission, includes all access types available like view, comment and edit. Owners have full control over the design and its settings. However, it's important to note that presently Kanvas does not support transferring the design ownership.
+Once the "Share" modal is open, type the names or email addresses of the users or teams you want to invite as Collaborators. From the "Share" modal, you can also typically change the overall visibility status of the design (e.g., switching between Private and Public).
 
-The Owner, Editor, and Viewer access types are hierarchical, meaning that the Owner access includes the edit access, and the Edit access includes the view access.
+![Share Modal](/kanvas/designer/sharing/share-model.png)
 
-If there are explicit access type set for a user, that will take precedence and be considered active. Otherwise, the access type assigned to the team will be used if the user is part of team and team has access.
+## Owner vs. Collaborator
 
-For example, if Sarah has been granted specific access type, that will be active. However, if no specific access permission are set for Sarah, but she's part of a team with access, then the access type of that team will apply to her.
+When you share a design, or when a design is shared with you, what you can do with it depends on whether you are the **Owner** or a **Collaborator**. 
 
-### Revoking access and re-inviting users
+-   **Owner:**
+    -   You are the Owner if you created the design.
+    -   As the Owner, you have complete control over your design. This includes:
+        -   Viewing, editing, and modifying all aspects of the design.
+        -   Deploying the design.
+        -   Sharing the design with other users or teams (making them Collaborators) and revoking their access.
+        -   Changing the design's overall visibility (e.g., from Private to Public).
+        -   Deleting the design.
 
-You can manage access permissions at any time by revisiting the "Share" modal. This modal allows you to grant access to new users, revoke access or even update the access permissions of current users.
-
-## Share design via link
-
-You can share your design via link, for that revisit the "Share" modal and click on "Copy Link" button. You will be allowed to share the link only if your design's visibility status is public, anyone who click the link or you share with can be able to access your design. It's important to understand that currently making design public allows users to view, comment and edit the design.
-
-This can be useful when you want to share design with multiple users without explicitly giving the access.
-
-## Granting access to multiple users
-
-You can share your designs with many users at the same time, by granting access to any number of teams, which simplifies the process of sharing within your organization. This provides a convenient way to manage permissions for groups of users who are working together on projects or tasks.
-
-Grant access to teams by assigning a team to a workspace. Instead of individually assigning permissions to each member, you can simply assign permissions to the team as a whole, and manage access permissions like view, comment, and edit for the team.
-
-**Understanding the Implications of adding a Design to a Workspace:**
-
-When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private, however you can update the access type of team by revisiting the "Share" modal within Kanvas.
-
-[Learn more about auditing the access permission within workspace](/cloud/spaces/workspaces/)
-
-{{< alert title="Note">}}
-
-- The 'Share' feature is currently in its beta phase, and we may introduce updates or improvements over time.
-- Your feedback is invaluable! If you encounter any issues or have suggestions for enhancement, please take a moment to provide feedback.
-
+{{< alert title="Limitation: Ownership Transfer" type="info">}}
+transferring ownership of a design to another user is not currently supported in Kanvas.
 {{< /alert >}}
+
+-   **Collaborator (Shared User/Team):**
+    -   When an Owner shares a design with you or your team, you become a Collaborator.
+    -   As a Collaborator, you can actively work on the design. This typically means you can:
+        -   View the design details.
+        -   Modify configurations, add or remove components, and essentially edit the design's content.
+        -   Deploy the design.
+    -   However, Collaborators have certain limitations and **cannot**:
+        -   Delete the design.
+        -   Re-share the design with other users or teams.
+        -   Change the design's overall visibility (e.g., from Private to Public).
+
+**How You Get Collaborator Access:**
+
+When an Owner shares a design, they add users or teams as Collaborators. Whether you are added individually or are part of a team that gains access, you receive the standard Collaborator permissions described above.
+
+**Managing Access: Revoking and Inviting**
+
+As the Owner of a design, you can manage who has access to it at any time using the "Share" modal. This allows you to:
+
+-   Grant access to new users or teams: Add them as Collaborators on your design.
+-   Revoke access from existing Collaborators: If someone no longer needs access, you can remove them.
+
+> For example, if Sarah is added as a Collaborator to a design, she can edit it. If the design is shared with the "Engineering Team" and Sarah is a member, she also gains the same Collaborator access to edit the design through her team membership.
+
+## Sharing Your Design with a Link
+
+You can easily share a direct link to your design:
+
+1.  Open the "Share" modal for your design.
+2.  Click the **"Copy Link"** button. This button is always available, whether your design is Private or Public.
+
+**How the link works:**
+
+-   **For Private Designs:** If your design is Private, copying and sending the link acts as a convenient pointer. However, the recipient **must also be explicitly added as a Collaborator** in the "Share" modal to be able to open and access the design. The link alone does not grant them access if they haven't been given permission.
+-   **For Public Designs:** If your design's visibility is set to Public, anyone with the link can typically access it according to the permissions defined for Public designs (as discussed in "Understanding visibility levels" – for example, they might be able to view, comment, and edit).
+
+{{< alert title="Link Sharing vs. Permissions" type="info">}}
+Using "Copy Link" is a quick way to direct people to your design, but remember that actual access is always controlled by the design's visibility status (Private/Public) and the explicit permissions you've granted.
+{{< /alert >}}
+
+## Sharing with Multiple Users via Teams
+
+You can efficiently share your designs with many users at once by sharing with **Teams**. When you share a design with a team, all members of that team become Collaborators on the design, gaining the standard Collaborator permissions.
+
+There are two primary ways to share designs with teams:
+
+1.  **Direct Sharing via the "Share" Modal:**
+    * You can add a team as a Collaborator directly through the **design's** "Share" modal, similar to how you add individual users. This gives the team explicit access to that specific **design**.[^2]
+
+2.  **Indirect Sharing via Workspace Association (Intended Mechanism):**
+    * Another way access is intended to be managed for teams is through **Workspaces**. The general idea is:
+        1.  Place your **design** (e.g., a Private Design) into a Workspace.
+        2.  Assign one or more Teams to that same Workspace.
+        3.  By this association, members of the assigned Team(s) should then inherit access to the **designs** within that Workspace, including Private designs.
+
+> Learn more about auditing the access permission within [workspace](/cloud/spaces/workspaces/)
+
+[^1]: This functionality is not fully implemented yet. Users might occasionally observe that even when a team is assigned to a workspace, members of that team may not be able to access private designs within that workspace without explicit individual or team-level sharing for the design itself.
+[^2]: This feature (direct sharing with teams via the "Share" modal) is not yet fully implemented and is planned for a future update.

@@ -21,8 +21,8 @@ Contained in the Layer5 Helm repository is the [Meshery Remote Provider](https:/
 
 ## Chart Source
 
-<p>The source for this chart is located in the <code>layer5io/meshery-cloud</code> repository under <pre>install/kubernetes/</pre>.</p>
-<br />
+<p>The source for this chart is located in the <code>layer5io/meshery-cloud</code> repository under <code>install/kubernetes/</code>.</p>
+
 {{< alert type="info" title="Complete Deployment Instructions">}}
 Layer5 Cloud's Helm chart supports a number of [configuration options]({{<ref "/cloud/self-hosted/deployment/helm-chart-values" >}})
 

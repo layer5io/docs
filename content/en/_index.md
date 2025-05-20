@@ -67,11 +67,11 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 
 <div class="flex-row gap-20px">
 <div class="playground-card grow-1">
-<a href="https://cloud.layer5.io/academy/challenges">
+<a href="/videos">
   <div class="landing-card">
-    <div class= "playground-section challenges-logo">
-      <span class="landing-card-title">Challenges</span>
-      <p>Accept the challenge. Learn CNCF projects by taking and completing time-based, hands-on labs. Complete your challenge quickly and you might be this month's CNCF Challenger!</p>
+    <div class= "playground-section video-play-logo">
+      <span class="landing-card-title">Video Library</span>
+      <p>Give your brain a break from YAML. Watch Layer5 tools like Kanvas and cloud native infrastructure management in action through hands-on demonstrations and tutorials.</p>
     </div>
   </div>
 </a></div>
