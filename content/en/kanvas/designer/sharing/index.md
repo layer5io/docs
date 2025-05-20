@@ -9,8 +9,7 @@ aliases:
   - /meshmap/designer/share-resource
   - /kanvas/designer/share-resource
 ---
-
-In [Kanvas](https://kanvas.new/), you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
+In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
 {{< alert title="Sharing Views" type="info">}}
 You can share and control access to [Views](/kanvas/operator/views) in the same fashion as you do for Designs.
@@ -92,6 +91,11 @@ As the Owner of a design, you can manage who has access to it at any time using 
 -   Revoke access from existing Collaborators: If someone no longer needs access, you can remove them.
 
 > For example, if Sarah is added as a Collaborator to a design, she can edit it. If the design is shared with the "Engineering Team" and Sarah is a member, she also gains the same Collaborator access to edit the design through her team membership.
+
+{{< alert title="Implications of adding a Design to a Workspace">}}
+When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private. Review your workspace's team assignments in order to verify which users will be granted access.
+Learn more about [auditing and assigning Workspace access](/cloud/spaces/workspaces/).
+{{< /alert >}}
 
 ## Sharing Your Design with a Link
 
