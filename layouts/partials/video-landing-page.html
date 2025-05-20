@@ -1,0 +1,305 @@
+{{ $videoContentDir := .Site.GetPage "section" "videos" }}
+
+  <!-- video categories section -->
+  <div class="video-tabs-container">
+
+    <!-- category tabs -->
+    <div class="category-tabs">
+      {{ $currentPage := . }}
+      {{ range $index, $section := $videoContentDir.Sections }}
+        <a href="#category-{{ $index }}" class="category-tab" data-category="{{ $index }}">
+          <div class="tab-icon">
+            {{ if .Params.icon }}
+              {{ if hasPrefix .Params.icon "bi" }}
+                <i class="bi {{ .Params.icon }}"></i>
+              {{ else }}
+                 <img src="{{ .Params.icon }}" alt="{{ .Title }} icon" style="max-width: 100%;object-fit: contain;"/>
+              {{ end }}
+            {{ else }}
+              <i class="bi bi-collection-play"></i>
+            {{ end }}
+          </div>
+          <span>{{ .Title }}</span>
+        </a>
+      {{ end }}
+    </div>
+
+    <!-- subcategory container -->
+    <div class="subcategory-container">
+        {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
+          <div class="subcategory-group" id="subcategory-group-{{ $mainIndex }}" style="display: none;">
+            <div class="subcategory-buttons">
+                <!-- if a category has at least 1 subcategory -->
+              {{ if gt (len .Sections) 0 }}
+                {{ range $subIndex, $subSection := .Sections }}
+                  <a href="#category-{{ $mainIndex }}-subcategory-{{ $subIndex }}" class="subcategory-btn" 
+                     data-main-category="{{ $mainIndex }}" data-subcategory="{{ $subIndex }}">
+                    {{ .Title }}
+                  </a>
+                {{ end }}
+              {{ else }}
+                <!-- if no subcategories i.e. videos are directly in category folder: set a default "All" subcategory  -->
+                <a href="#category-{{ $mainIndex }}-subcategory-main" class="subcategory-btn" 
+                   data-main-category="{{ $mainIndex }}" data-subcategory="main">
+                  All
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+
+
+    <!-- video grid container -->
+    <div class="video-grid-container">
+        {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
+          <!-- display videos from subcategories -->
+          {{ range $subIndex, $subSection := .Sections }}
+            <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}" style="display: none;">
+              <div class="video-grid">
+                {{ range $subSection.Pages }}
+                  <div class="video-card" 
+                  data-video-id="{{ .Params.videoId }}" 
+                  data-video-title="{{ .Title }}" 
+                  data-video-url="{{ .RelPermalink }}"
+                  >
+                    <div class="video-thumbnail">
+                      {{ if .Params.videoType }}
+                        {{ if eq .Params.videoType "youtube" }}
+                          <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}">
+                        {{ else if .Params.thumbnail }}
+                          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                        {{ else }}
+                          <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                        {{ end }}
+                      {{ else }}
+                        <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                      {{ end }}
+                      <div class="play-button-overlay">
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-info">
+                      <h3>{{ .Title }}</h3>
+                      {{ if .Params.duration }}
+                      <div class="video-duration">
+                      <i class="bi bi-clock"></i>
+                      <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                      </div>
+                      {{ end }}
+                      {{ if .Params.tags }}
+                      <div class="taxonomy-terms" style="margin-bottom: 0.6rem;">
+                        {{ range .Params.tags }}
+                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                      <p class="video-description">{{ .Description | truncate 100 }}</p>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>  
+          {{ end }}
+          
+          <!-- for direct videos in main category (when no subcategories) -->
+          {{ if eq (len .Sections) 0 }}
+            <div class="video-group" id="video-group-{{ $mainIndex }}-0" style="display: none;">
+              <div class="video-grid">
+                {{ range where $mainSection.Pages "Kind" "page" }}
+                  <div class="video-card"
+                  data-video-id="{{ .Params.videoId }}" 
+                  data-video-title="{{ .Title }}" 
+                  data-video-url="{{ .RelPermalink }}"
+                  >
+                    <div class="video-thumbnail">
+                      {{ if .Params.videoType }}
+                        {{ if eq .Params.videoType "youtube" }}
+                          <img src="https://i.ytimg.com/vi/{{ .Params.videoId }}/maxresdefault.jpg" alt="{{ .Title }}">
+                        {{ else if .Params.thumbnail }}
+                          <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                        {{ else }}
+                          <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                        {{ end }}
+                      {{ else }}
+                        <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                      {{ end }}
+                      <div class="play-button-overlay">
+                        <div class="play-button">
+                          <i class="bi bi-play-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="video-info">
+                      <h3>{{ .Title }}</h3>
+                      {{ if .Params.duration }}
+                      <div class="video-duration">
+                      <i class="bi bi-clock"></i>
+                      <p class="video-duration" style="display: inline; margin-left: .25rem;">{{ .Params.duration }} min</p>
+                      </div>
+                      {{ end }}
+                      {{ if .Params.tags }}
+                      <div class="taxonomy-terms">
+                        {{ range .Params.tags }}
+                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                      <p class="video-description">{{ .Description | truncate 100 }}</p>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+  </div>
+
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header"><a href="" id="videoPageLink"><h4 id="videoModalTitle"></h4></a>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #00b39f;"></button>
+        </div>
+        <div class="modal-body p-0">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                id="vidIframe"
+                src="" 
+                title="" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+         const categoryTabs = document.querySelectorAll('.category-tab');
+         const subcategoryBtns = document.querySelectorAll('.subcategory-btn');
+         
+         // update active states and show/hide content
+         function updateContent(mainCategoryIndex, subCategoryIndex = 0) {
+           // update active main category
+           categoryTabs.forEach(tab => tab.classList.remove('active'));
+           categoryTabs[mainCategoryIndex].classList.add('active');
+           
+           // show/hide subcategory groups
+           const subcategoryGroups = document.querySelectorAll('.subcategory-group');
+           subcategoryGroups.forEach(group => group.style.display = 'none');
+           const activeSubcategoryGroup = document.getElementById(`subcategory-group-${mainCategoryIndex}`);
+           if (activeSubcategoryGroup) {
+             activeSubcategoryGroup.style.display = 'block';
+           }
+           
+           // update active subcategory
+           const currentSubcategoryBtns = document.querySelectorAll(`.subcategory-btn[data-main-category="${mainCategoryIndex}"]`);
+           currentSubcategoryBtns.forEach(btn => btn.classList.remove('active'));
+           if (currentSubcategoryBtns.length > 0 && subCategoryIndex < currentSubcategoryBtns.length) {
+             currentSubcategoryBtns[subCategoryIndex].classList.add('active');
+           }
+           
+           // show/hide video groups
+           const videoGroups = document.querySelectorAll('.video-group');
+           videoGroups.forEach(group => group.style.display = 'none');
+           const activeVideoGroup = document.getElementById(`video-group-${mainCategoryIndex}-${subCategoryIndex}`);
+           if (activeVideoGroup) {
+             activeVideoGroup.style.display = 'block';
+           }
+           
+           // update url hash, can later modify this to have 
+           // this: category-getting-started-subcategory-onboarding
+           // instead of: category-0-subcategory-1
+   
+           window.location.hash = `category-${mainCategoryIndex}-subcategory-${subCategoryIndex}`;
+         }
+         
+         // Add click handlers to main category tabs
+         categoryTabs.forEach((tab, index) => {
+           tab.addEventListener('click', function(e) {
+             e.preventDefault();
+             updateContent(index);
+           });
+         });
+         
+         // Add click handlers to subcategory buttons
+         subcategoryBtns.forEach(btn => {
+           btn.addEventListener('click', function(e) {
+             e.preventDefault();
+             const mainCategoryIndex = parseInt(this.getAttribute('data-main-category'));
+             const subCategoryIndex = parseInt(this.getAttribute('data-subcategory'));
+             updateContent(mainCategoryIndex, subCategoryIndex);
+           });
+         });
+         
+         // handle initial load and urL hash changes
+         function handleHashChange() {
+           const hash = window.location.hash;
+           if (hash) {
+             // parse hash like #category-0-subcategory-1
+             const matches = hash.match(/#category-(\d+)(?:-subcategory-(\d+))?/);
+             if (matches) {
+               const mainCategoryIndex = parseInt(matches[1]);
+               const subCategoryIndex = matches[2] ? parseInt(matches[2]) : 0;
+               updateContent(mainCategoryIndex, subCategoryIndex);
+               return;
+             }
+           }
+           
+           // default to first category and subcategory if no hash or invalid hash (alphabetially for now)
+           updateContent(0, 0);
+         }
+         
+         // handle hash changes
+         window.addEventListener('hashchange', handleHashChange);
+         
+         // hndle initial load
+         handleHashChange();
+       });
+   
+     </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const modalElement = document.getElementById('videoModal');
+    const modal = new bootstrap.Modal(modalElement);
+    const iframe = document.getElementById('vidIframe');
+    const videoTitleElem = document.getElementById('videoModalTitle');
+    const linkElem = document.getElementById('videoPageLink');
+  
+    const videoCards = document.querySelectorAll('.video-card');
+  
+    videoCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('span.taxonomy-term') || e.target.closest('a.video-tag')) {
+          return;
+        }
+        const videoId = card.getAttribute('data-video-id');
+        const videoTitle = card.getAttribute('data-video-title');
+        const videoUrl = card.getAttribute('data-video-url');
+  
+        // prep the modal
+        videoTitleElem.textContent = videoTitle;
+        linkElem.href = videoUrl;
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&showinfo=0`; // autoplay=1 starts playing the vid
+  
+        modal.show();
+      });
+    });
+  
+    // on modal close, clear iframe src to stop the vid
+    modalElement.addEventListener('hidden.bs.modal', function () {
+      iframe.src = ''; 
+  });
+  });
+  
+      </script>
