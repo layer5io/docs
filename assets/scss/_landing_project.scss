@@ -74,10 +74,10 @@
   &.playground-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/meshery-light-icon.svg");
   }
-  &.challenges-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/challenges.svg");
+  &.video-play-logo {
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/video-play.svg");
   }
-    &.playground-logo, &.challanges-logo {
+    &.playground-logo, &.video-play-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -214,7 +214,8 @@
 
 .logo-container {
   width: 50px;
-  margin-right: 8px;
+  margin: auto;
+  margin-right: .65rem;
 }
 
 @media screen and (max-width: 768px) {

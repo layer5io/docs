@@ -43,11 +43,11 @@ Kanvas supports up to 1,000 relationships per design. Exceeding this limit can i
 
 #### Maximum Number of TagSet Relationships
 
-<img alt="Labels and Annotations" src="../../designer/tagsets/group-components.png" width="15%" />
+![Labels and Annotations](../../designer/tagsets/group-components.png)
 
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
 
-Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the “Group Components” button in the Designer dock. For more information, see [Working with Tags](/kanvas/designer/tagsets/).
+Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags](/kanvas/designer/tagsets/).
 
 <!--
 #### Maximum Number of Relationships per Component
@@ -71,16 +71,24 @@ Under the Free subscription plan, Kanvas support a single image size of up to 50
 
 To improve the performance of your design, consider optimizing by disabling one or more layers.
 
-<figure style="width:600px;">
+<figure>
   <img src="./layers-panel.png" alt="Layers panel in Kanvas Designer" />
   <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
 
-Some layers specifically offer control of visibility of components, while other layers offer control over the ongoing evaluation of relationships between components. Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the number and type of components in view. Note, that even though you might hide components, those components are not deleted or removed from your design. These components are simply hidden from current view.
+Some layers specifically offer control of **visibility of components**, while other layers offer control over the **ongoing evaluation of relationships** between components. 
 
-In the same way, as you toggle the evaluation of different types of relationships, understand that this releationships between your components still exist. Those relationsihps are simply temporarily hidding from view and the overhead of their evaluation eliminated while the respective type of relationship is disabled.
+Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the **number and type** of components in view. 
+
+> Even though you might hide components, those components are not deleted or removed from your design. These components are simply hidden from current view.
+
+In the same way, as you toggle the evaluation of different types of relationships, understand that this releationships between your components still exist. Those relationsihps are simply **temporarily hidding** from view and the overhead of their evaluation eliminated while the respective type of relationship is disabled.
 
 Using the Layers panel you control the level of sophistication or simplicity of the rendering of components and relationships in your designs. You can both simplify your design layout by removing unnecessary elements and improve performance simultaneously. Alternatively, you can increase the level of detail in your design by enabling additional layers and relationships, while controlling the balance between detail and performance.
+
+{{< alert type="info" title="Keep It Lightweight" >}}
+Hide layers you don't need at the moment to keep your workspace lightweight and responsive.
+{{< /alert >}}
 
 ### Optimize use of Images in your Design
 

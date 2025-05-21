@@ -55,13 +55,29 @@
 
 {{ $_hugo_config := `{ "version": 1 }` }}
 {{ $color := .Get "color" | default "primary" }}
-<div class="alert alert-{{ $color }}" role="alert">
-{{ with .Get "title" | default "Success"}}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
-{{ if eq .Page.File.Ext "md" }}
-    {{ .Inner | markdownify }}
-{{ else }}
-    {{ .Inner | htmlUnescape | safeHTML }}
+{{ $title := .Get "title" }}
+
+{{ if not $title }}
+  {{ if eq $color "warning" }}
+    {{ $title = "Warning" }}
+  {{ else if eq $color "danger" }}
+    {{ $title = "Danger" }}
+  {{ else if eq $color "info" }}
+    {{ $title = "Info" }}
+  {{ else if eq $color "note" }}
+    {{ $title = "Note" }}
+  {{ else }}
+    {{ $title = "Success" }}
+  {{ end }}
 {{ end }}
+
+<div class="alert alert-{{ $color }}" role="alert">
+  <h4 class="alert-heading">{{ $title | safeHTML }}</h4>
+  {{ if eq .Page.File.Ext "md" }}
+      {{ .Inner | markdownify }}
+  {{ else }}
+      {{ .Inner | htmlUnescape | safeHTML }}
+  {{ end }}
 </div>
 
 {{ end }}

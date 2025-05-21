@@ -10,6 +10,14 @@ aliases:
   - /meshmap/getting-started/creating-relationships
 ---
 
+## Benefits of Using Relationships
+
+- **Improved Visibility**: Clear visual representation of connections between components
+- **Enhanced Design**: Make informed decisions about component selection and placement
+- **Automated Configuration**: Relationship-driven actions automate configuration of components
+- **Increased Flexibility**: Use of selectors and operators provides flexibility in defining relationships
+- **Better Understanding**: Easily comprehend the overall structure and dependencies of your managed systems
+
 ## What are Relationships
 
 Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure's architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.
@@ -115,12 +123,4 @@ This gives you control over which types of relationships you want to focus on in
 
 
 ![Relationships Layers Panel](/kanvas/getting-started/images/relationships/layers-panel-relationships.gif)
-
-## Benefits of Using Relationships
-
-- **Improved Visibility**: Clear visual representation of connections between components
-- **Enhanced Design**: Make informed decisions about component selection and placement
-- **Automated Configuration**: Relationship-driven actions automate configuration of components
-- **Increased Flexibility**: Use of selectors and operators provides flexibility in defining relationships
-- **Better Understanding**: Easily comprehend the overall structure and dependencies of your managed systems
 

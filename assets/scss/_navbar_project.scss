@@ -10,6 +10,10 @@
     color: $primary !important;
   }
 
+  .down-icon{
+    font-size: 0.75rem;
+  }
+
 //  @media (min-width: 768px) {
 //   &:hover {
 //       .dropdown-menu {
@@ -30,6 +34,10 @@
     &::after{
       content: "";
       width: 5rem;
+    }
+    &--col{
+      flex-direction: column;
+      padding: 0.1rem .1rem;
     }
     .dropdown-item {
       height: 5rem;
@@ -58,9 +66,19 @@
           filter: brightness(0) invert(1);
         }
       }
+      &--row{
+        flex-direction: row;
+        height: 3rem;
+        width: auto;
+        margin: 0.1rem 0rem;
+        .logo-container {
+          margin-right: 1rem;
+        }
+      }
     }
   }
 }
+
 .dropdown{
   position: static;
 }
