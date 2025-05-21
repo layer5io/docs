@@ -153,17 +153,16 @@ The theme holds its styles in the [`assets/scss` directory](https://github.com/l
 
 You can override the default styles and add new ones:
 
-* To override templates or layouts, place your files in the main project directory (e.g., `layouts/partials/`) instead of editing the theme files under `themes/docsy/`.
-* Use the same file name and relative path as the theme. Hugo will look for files in the project first and fall back to the theme if no override is found.
+* In general, put your files in the project directory structure under `website` rather than in the theme directory.
+  Use the same file name as the theme does, and put the file in the same relative position.
+  Hugo looks first at the file in the main project directories, if present, then at the files under the theme directory.
   
-  For example, to override the theme’s navigation bar template:
+  For example, the Layer5 website's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html) overrides the theme's `layouts/partials/navbar.html`
 
-  ```
-  Project override:    layouts/partials/navbar.html  
-  Theme default:       themes/docsy/layouts/partials/navbar.html
-  ```
+* You can update the Layer5 website's project variables in the [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
+  Values in that file override the [Docsy variables](https://github.com/google/docsy/blob/main/assets/scss/_variables.scss).
+  You can also use `_variables_project.scss` to specify your own values for any of the default [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
 
-* To customize SCSS variables, update the `_variables_project.scss` file in the `assets/scss/` directory. This file overrides the theme’s SCSS variables and can also be used to redefine Bootstrap variables.
 * For adding custom CSS rules, use the `_styles_project.scss` file in the same `assets/scss/` directory.
 
 ### Image styling
@@ -261,20 +260,6 @@ Useful Hugo docs:
 * [Shortcode templates](https://gohugo.io/templates/shortcode-templates/)
 * [Shortcodes](https://gohugo.io/content-management/shortcodes/)
 
-## Versioning of the docs
-
-For each stable release, we create a new branch for the relevant documentation.
-For example, the documentation for the v0.2 stable release is maintained in the `v0.2-branch`.
-Each branch has a corresponding Netlify website that automatically syncs each merged PR.
-
-The versioned sites follow this convention:
-
-* `docs.layer5.io` always points to the current _master branch_
-* `master.docs.layer5.io` always points to GitHub head
-* `vXXX-YYY.docs.layer5.io` points to the release at vXXX.YYY-branch
-
-We also hook up each version to the dropdown on the website menu bar.
-
 Whenever any documents reference any source code, you should use the version shortcode in the links, like so:
 
 ```
@@ -282,6 +267,14 @@ https://github.com/layer5io/docs/blob/master/scripts/gke/deploy.sh
 ```
 
 This ensures that all the links in a versioned webpage point to the correct branch.
+
+<!-- ## Versioning of the docs
+For each stable release, we create a new branch for the relevant documentation.
+For example, the documentation for the v0.2 stable release is maintained in the [v0.2-branch](https://github.com/layer5io/docs/tree/v0.2-branch).
+	@@ -257,7 +257,7 @@ The versioned sites follow this convention:
+* `vXXX-YYY.docs.layer5.io` points to the release at vXXX.YYY-branch
+We also hook up each version to the dropdown on the website menu bar.
+For information on how to update the website to a new version, see the [Layer5 release guide](https://github.com/layer5io/docs/blob/master/docs_dev/releasing.md#releasing-a-new-version-of-the-website). -->
 
 ## Markdown
 
