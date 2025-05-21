@@ -88,7 +88,7 @@ Upon confirming deletion, the following are **permanently and irretrievably remo
 * All Associated Teams: All teams belonging to this Organization.
 * User Access to this Organization: Users' memberships, roles, and permissions specific to this Organization are revoked. (Note: Users' individual accounts themselves are not deleted from the system).
 * Owned Workspaces: All Workspaces belonging to this Organization.
-* Designs within Owned Workspaces: Designs that belong to one of the deleted Workspaces will also be deleted.
+* Designs and Environments: All Designs and Environments within the Organization's deleted Workspaces will also be permanently removed.
 
 ### When NOT to Delete
 Avoid deleting an Organization if:
