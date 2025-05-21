@@ -268,6 +268,14 @@ https://github.com/layer5io/docs/blob/master/scripts/gke/deploy.sh
 
 This ensures that all the links in a versioned webpage point to the correct branch.
 
+<!-- ## Versioning of the docs
+For each stable release, we create a new branch for the relevant documentation.
+For example, the documentation for the v0.2 stable release is maintained in the [v0.2-branch](https://github.com/layer5io/docs/tree/v0.2-branch).
+	@@ -257,7 +257,7 @@ The versioned sites follow this convention:
+* `vXXX-YYY.docs.layer5.io` points to the release at vXXX.YYY-branch
+We also hook up each version to the dropdown on the website menu bar.
+For information on how to update the website to a new version, see the [Layer5 release guide](https://github.com/layer5io/docs/blob/master/docs_dev/releasing.md#releasing-a-new-version-of-the-website). -->
+
 ## Markdown
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
