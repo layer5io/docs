@@ -1,90 +1,104 @@
 <footer class="footer">
-        <!-- Hotkey func -->
-        {{partial "hotkey.html" .}}
-        <!----------------->
-        <div class="row footer-top">
-            <div class="col-lg-6">
-                <a href="/">
-                    {{ $svg := resources.Get "icons/logo.svg" }}
-                    <img class="footer-logo" src="{{ $svg.Permalink }}" alt="Footer Logo Layer5" data-modal="false">
-                </a>
-            </div>
-            <div class="col-lg-6 footer-info footer-icons">
-                {{ range .Site.Params.links.footer.icons }}
-                <a href="{{ .url  }}" class="{{ .class }}" target="_blank" rel="noreferrer">
-                    {{ $svg1 := resources.Get .icon }}
-                    <img height="30px"  src="{{ $svg1.Permalink }}" alt="{{ .alt }}" data-modal="false">
-                </a>
-                {{ end }}
-            </div>
+  <!-- Hotkey func -->
+  {{partial "hotkey.html" .}}
+  <!----------------->
+  <div class="row footer-top">
+    <div class="col-lg-6">
+      <a href="/">
+        {{ $svg := resources.Get "icons/logo.svg" }}
+        <img class="footer-logo" src="{{ $svg.Permalink }}" alt="Footer Logo Layer5" data-modal="false">
+      </a>
+    </div>
+    <div class="col-lg-6 footer-info footer-icons">
+      {{ range .Site.Params.links.footer.icons }}
+      <a href="{{ .url  }}" class="{{ .class }}" target="_blank" rel="noreferrer">
+        {{ $svg1 := resources.Get .icon }}
+        <img height="30px" src="{{ $svg1.Permalink }}" alt="{{ .alt }}" data-modal="false">
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  <div class="footer-info">
+    <div class="col-lg-3 footer-desc">
+      <p>An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and
+        maintainer of cloud native standards. Maker of Meshery, the cloud native manager.</p>
+    </div>
+
+    <div class="col-lg-9">
+      <div class="footer-info">
+        <!-- Resources Section -->
+        <div class="odd-col footer-sections footer-resources">
+          <h3 class="section-title"><a href="https://layer5.io/learn">RESOURCES</a></h3>
+          {{ range .Site.Params.links.footer.resources.items }}
+          <h5 class="footer-h5">
+            <a href="{{ .url }}">{{ .name }}</a>
+          </h5>
+          {{ end }}
         </div>
-        <div class="footer-info">
-            <div class="col-lg-3 footer-desc">
-                <p>An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and
-                    maintainer of cloud native standards. Maker of Meshery, the cloud native manager.</p>
-            </div>
 
-            <div class="col-lg-9">
-                <div class="footer-info">
-                    <!-- Resources Section -->
-                    <div class="odd-col footer-sections footer-resources">
-                        <h3 class="section-title"><a href="https://layer5.io/learn">RESOURCES</a></h3>
-                        {{ range .Site.Params.links.footer.resources.items }}
-                        <h5 class="footer-h5">
-                            <a href="{{ .url }}">{{ .name }}</a>
-                        </h5>
-                        {{ end }}
-                    </div>
-
-                    <!-- Community Section -->
-                    <div class="even-col footer-sections footer-community">
-                        <h3 class="section-title"><a href="https://layer5.io/community">COMMUNITY</a></h3>
-                        {{ range .Site.Params.links.footer.community.items }}
-                        <h5 class="footer-h5"><a href="{{ .url }}">{{ .name }}</a></h5>
-                        {{ end }}
-                    </div>
-
-                    <!-- Projects Section -->
-                    <div class="odd-col footer-sections footer-projects">
-                        <h3 class="section-title"><a href="https://layer5.io/projects">SOLUTIONS</a></h3>
-                        {{ range .Site.Params.links.footer.projects.items }}
-                        <h5 class="footer-h5"><a href="{{ .url }}">{{ .name }}</a></h5>
-                        {{ end }}
-                    </div>
-
-                    <!-- Company Section -->
-                    <div class="even-col footer-sections footer-company">
-                        <h3 class="section-title"><a href="https://layer5.io/company/about">COMPANY</a></h3>
-                        {{ range .Site.Params.links.footer.company.items }}
-                        <h5 class="footer-h5"><a href="{{ .url }}">{{ .name }}</a></h5>
-                        {{ end }}
-                    </div>
-                </div>
-                <div class="row footer-info2 subscribe">
-                    <div class="footer-end">
-                        <form name="contactform">
-                            <div>
-                                <p>
-                                    Subscribe to our Newsletter
-                                </p>
-                                <input class="footer-input" type="email" placeholder="Email Address"/>
-                                <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- Community Section -->
+        <div class="even-col footer-sections footer-community">
+          <h3 class="section-title"><a href="https://layer5.io/community">COMMUNITY</a></h3>
+          {{ range .Site.Params.links.footer.community.items }}
+          <h5 class="footer-h5"><a href="{{ .url }}">{{ .name }}</a></h5>
+          {{ end }}
         </div>
-        <hr class="footer-hr"/>
-        <div class="footer-bottom">
-            <div class="footer-bottom-left">
-                <span>
-                    <script>document.write(new Date().getFullYear() + ' ');</script> Copyright ©Layer5, Inc | All Rights Reserved
-                </span>
-            </div>
-            <div class="footer-bottom-right">
-                <span><a href="https://layer5.io/company/legal/privacy">Privacy</a></span> &nbsp; <span><a
-                        href="https://layer5.io/company/legal/terms-of-service">Terms</a></span>
-            </div>
+
+        <!-- Projects Section -->
+        <div class="odd-col footer-sections footer-projects">
+          <h3 class="section-title"><a href="https://layer5.io/projects">SOLUTIONS</a></h3>
+          {{ range .Site.Params.links.footer.projects.items }}
+          <h5 class="footer-h5"><a href="{{ .url }}">{{ .name }}</a></h5>
+          {{ end }}
         </div>
+
+        <!-- Company Section -->
+        <div class="even-col footer-sections footer-company">
+          <h3 class="section-title"><a href="https://layer5.io/company/about">COMPANY</a></h3>
+          {{ range .Site.Params.links.footer.company.items }}
+          <h5 class="footer-h5"><a href="{{ .url }}">{{ .name }}</a></h5>
+          {{ end }}
+        </div>
+      </div>
+      <div class="row footer-info2 subscribe">
+        <div class="footer-end">
+          <form name="contactform">
+            <div>
+              <p>
+                Subscribe to our Newsletter
+              </p>
+              <input class="footer-input" type="email" placeholder="Email Address" />
+              <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-hr" />
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <span>
+        <script>document.write(new Date().getFullYear() + ' ');</script> Copyright ©Layer5, Inc | All Rights Reserved
+      </span>
+    </div>
+    <div class="footer-bottom-middle">
+      <span>
+        <span class="edit-page">
+          <a href="https://github.com/layer5io/layer5/blob/master/src/pages/index.js" target="_blank"
+            rel="noreferrer">Edit This Page</a>
+        </span>
+        <span>
+          <a class="status-link" href="https://layer5.statuspage.io" target="_blank" rel="noreferrer">
+            Layer5 Cloud Status <span class="pulse-icon"></span>
+          </a>
+        </span>
+      </span>
+      </span>
+    </div>
+    <div class="footer-bottom-right">
+      <span><a href="https://layer5.io/company/legal/privacy">Privacy</a></span> &nbsp; <span><a
+          href="https://layer5.io/company/legal/terms-of-service">Terms</a></span>
+    </div>
+  </div>
 </footer>
