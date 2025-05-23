@@ -26,7 +26,7 @@ If you are the current team owner, you can’t remove yourself from the team unt
 
 ## Open Team Invite
 
-The "Open Team Invite" feature allows administrators to use shareable "Team Invite Links" for users to join a particular team. This link-based invitation method functions much like an [Open Org Invite Link](https://docs.layer5.io/cloud/identity/users/user-management/), but is tailored for team-specific invitations and provides a direct alternative to adding members manually.
+The "Open Team Invite" feature allows administrators to use shareable "Team Invite Links" for users to join a particular team. This link-based invitation method functions much like an [Open Org Invite Link](https://docs.layer5.io/cloud/identity/organizations/org-management/), but is tailored for team-specific invitations and provides a direct alternative to adding members manually.
 
 ![Process of open team invite](/cloud/identity/teams/open_team_invite.gif)
 
