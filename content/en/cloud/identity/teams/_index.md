@@ -37,7 +37,7 @@ The "Open Team Invite" feature allows administrators to use shareable "Team Invi
 - **Structured Self-Service Enrollment:** Supports efficient, self-service team setup for urgent initiatives (e.g., agile sprints, training cohorts).
 
 {{< alert type="info" title="For Organization-Specific Invitations">}}
-If your goal is to invite users only to a specific organization (and not directly to a team as part of the same invitation), please refer to the documentation on [Open Org Invite Link and User Management](https://docs.layer5.io/cloud/identity/users/user-management/).
+If your goal is to invite users only to a specific organization (and not directly to a team as part of the same invitation), please refer to the documentation on [Open Org Invite Link and User Management](https://docs.layer5.io/cloud/identity/organizations/org-management/).
 {{< /alert >}}
 
 ### How it Works
