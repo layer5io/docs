@@ -310,6 +310,57 @@
     }
   }
 
+  .footer-bottom-middle {
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+      }
+
+      70% {
+        transform: scale(1);
+        box-shadow: rgba(0, 211, 169, 0) 0px 0px 0px 5px;
+      }
+      100% {
+        transform: scale(0.9);
+        box-shadow: rgba(153, 237, 220, 0) 0px 0px 0px 0px;
+      }
+    }
+    .status-link {
+      margin-left: 1rem;
+      background-color: rgb(72, 72, 72);
+      border-radius: 0.75rem;
+      padding-inline: 0.4rem;
+      padding-block: 0.2rem;
+    }
+    
+    .pulse-icon {
+      display: inline-block;
+      margin: 0;
+      width: 0.62rem;
+      height: 0.62rem;
+      border: none;
+      border-radius: 50%;
+      background: $primary;
+      box-shadow: rgba(0, 211, 169, 0.5) 0px 0px 0px 0px;
+      animation: 1.5s ease 0s infinite normal none running pulse;
+    }
+    a {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+  }
+
+  .footer-bottom-right {
+    a{
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
   .odd-col {
     flex: 1 1 auto;
   }
@@ -387,6 +438,9 @@
     .footer-bottom-right {
       margin: 1.5% !important;
     }
+    .footer-bottom-middle {
+      padding: 2%;
+    }
     .footer-bottom-left {
       padding: 2% !important;
     }
@@ -448,6 +502,9 @@
     .footer-bottom-right {
       margin: 1.5% !important;
     }
+    .footer-bottom-middle {
+      padding: 2%;
+    }
     .footer-bottom-left {
       padding: 2% !important;
     }
@@ -505,6 +562,9 @@
     }
     .footer-bottom-right {
       margin: 1.5% !important;
+    }
+    .footer-bottom-middle {
+      padding: 2%;
     }
     .footer-bottom-left {
       padding: 2% !important;
