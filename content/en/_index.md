@@ -118,7 +118,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
         <div class="forum-section landing-card">
           <div class="landing-card-text">
               <span class="landing-card-title">Discussion forum</span>
-              <p>Join the open source-first community of cloud native engineers.</p>
+              <p>Get help. Find your answer on the forum. Share your knowledge with others.</p>
           </div>
           <div class="forum-image">
               <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
