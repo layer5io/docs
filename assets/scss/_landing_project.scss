@@ -58,17 +58,26 @@
   min-height: 300px;
   &:hover {
     border: 2px solid $secondary;
-
+    .landing-card-title {
+      color: $secondary;
+    }
+    p {
+      color: $white;
+    }
   }
-
+  p {
+    font-weight: 400;
+    color: $casper; 
+    margin-top: 0.5rem;
+  }
 }
 .landing-card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: $primary;
+  color: $light;
   text-transform: uppercase;
   gap: 20px;
-  white-space: nowrap;
+  white-space: wrap;
 } 
 .playground-section {
   &.playground-logo {
@@ -98,7 +107,10 @@
   &.learning-path-logo{
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/learning-path.svg");
   }
-  &.catalog-logo, &.learning-path-logo {
+  &.recognition-program-logo{
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/recognition-program.png");
+  }
+  &.catalog-logo, &.learning-path-logo , &.recognition-program-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
