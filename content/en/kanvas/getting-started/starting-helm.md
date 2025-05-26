@@ -26,9 +26,11 @@ There are a few different ways to import a Helm chart into Kanvas.
 
 Option 1. Drag and drop your Helm chart onto Kanvas.
 ![Drag and drop a Design](/kanvas/getting-started/images/importing-designs/drag-and-drop-design-into-kanvas.png)
+
 Option 2. Click the **Import Design** option under the _Designs_ tab in Kanvas.
+
 Option 3. Visit My Designs, and click the **Import Design** button in Cloud.
-![Import a Design](/kanvas/getting-started/images/importing-designs/import-a-design-layer5-cloud)
+![Import a Design](/kanvas/getting-started/images/importing-designs/import-a-design-layer5-cloud.png)
 
 Next, provide a name under Design File Name (1), set the _Design Type_ to Helm Chart and paste the URL (3) to the location of the Helm chart package in .tgz format.
 
