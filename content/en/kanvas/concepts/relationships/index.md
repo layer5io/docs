@@ -1,23 +1,24 @@
 ---
-title: Understanding Meshery Relationships
+title: Understanding Model Relationships
 weight: 4
 type: docs
 description: >
-  Meshery uses relationships to map how interconnected components interact.
+  Kanvas uses relationships to map how interconnected components interact.
 categories: [Designer]
 tags: [designs, relationships, components]
 aliases:
   - /meshmap/concepts/relationships
 ---
 
-## What are Meshery Relationships?
-Relationships define the nature of interaction between interconnected components in Meshery. They represent various types of connections and dependencies between components no matter the genealogy of the relationship such as parent, siblings, binding.
+## What are Model Relationships?
+
+Relationships define the nature of interaction between interconnected components in Kanvas. They represent various types of connections and dependencies between components no matter the genealogy of the relationship such as parent, siblings, binding.
 
 ## Types of Relationships
 
 Relationships are categorized into different kinds, types, and subtypes, so that can be expressive of the specific manner in which one or more components relate to one another.
 
-Here is a list of the different types of relationships that Meshery supports:
+Here is a list of the different types of relationships that Kanvas supports:
 
 ### 1. Edge Relationships
 
