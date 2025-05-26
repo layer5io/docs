@@ -2,7 +2,7 @@
 title: Sharing Designs
 description: >
   Share designs with other users and use access controls to manage design permissions and visibility.
-weight: 3
+weight: 2
 categories: [Designer]
 tags: [designs, collaboration, review]
 aliases:
