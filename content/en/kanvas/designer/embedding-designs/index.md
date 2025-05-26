@@ -2,7 +2,7 @@
 title: Embedding Designs
 description: >
   How to embed your designs for sharing on your sites.
-weight: 5
+weight: 6
 categories: [Designer]
 tags: [designs]
 aliases:
