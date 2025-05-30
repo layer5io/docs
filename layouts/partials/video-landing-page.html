@@ -81,7 +81,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="video-info">
+                    <div class="video-info" data-video-url="{{ .RelPermalink }}">
                       <h3>{{ .Title }}</h3>
                       {{ if .Params.duration }}
                       <div class="video-duration">
@@ -132,7 +132,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="video-info">
+                    <div class="video-info" data-video-url="{{ .RelPermalink }}">
                       <h3>{{ .Title }}</h3>
                       {{ if .Params.duration }}
                       <div class="video-duration">
@@ -276,16 +276,17 @@
     const videoTitleElem = document.getElementById('videoModalTitle');
     const linkElem = document.getElementById('videoPageLink');
   
-    const videoCards = document.querySelectorAll('.video-card');
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
   
-    videoCards.forEach(card => {
-      card.addEventListener('click', function(e) {
-        if (e.target.closest('span.taxonomy-term') || e.target.closest('a.video-tag')) {
-          return;
-        }
-        const videoId = card.getAttribute('data-video-id');
-        const videoTitle = card.getAttribute('data-video-title');
-        const videoUrl = card.getAttribute('data-video-url');
+    videoThumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+  
+        const videoCard = thumbnail.closest('.video-card');
+        const videoId = videoCard.getAttribute('data-video-id');
+        const videoTitle = videoCard.getAttribute('data-video-title');
+        const videoUrl = videoCard.getAttribute('data-video-url');
   
         // prep the modal
         videoTitleElem.textContent = videoTitle;
@@ -300,6 +301,21 @@
     modalElement.addEventListener('hidden.bs.modal', function () {
       iframe.src = ''; 
   });
+    const videoInfos = document.querySelectorAll('.video-info');
+  videoInfos.forEach(videoInfo => {
+    videoInfo.addEventListener('click', function(e) {
+      // don't navigate if clicking on a tag
+      if (e.target.closest('.video-tag')) {
+        return;
+      }
+      
+      const videoUrl = this.getAttribute('data-video-url');
+      if (videoUrl) {
+        window.location.href = videoUrl;
+      }
+    });
+  });
+  
   });
   
       </script>
