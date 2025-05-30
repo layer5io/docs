@@ -169,8 +169,8 @@ a#videoPageLink:focus {
 }
 
 .category-tab .tab-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     display: flex;
@@ -180,7 +180,7 @@ a#videoPageLink:focus {
 }
 
 .category-tab .tab-icon i {
-    font-size: 1.25rem;
+    font-size: 1.64rem;
     color: #555;
 }
 
@@ -248,17 +248,6 @@ a#videoPageLink:focus {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    .video-info h3 {
-        color: #fff;
-    }
-    p.video-description{
-        color: $casper;
-    }
-}
 
 .video-thumbnail {
     position: relative;
@@ -272,8 +261,13 @@ a#videoPageLink:focus {
     object-fit: cover;
     transition: transform 0.3s ease;
 }
+.video-thumbnail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
 
-.video-card:hover .video-thumbnail img {
+ .video-thumbnail:hover img {
     transform: scale(1.05);
 }
 
@@ -288,7 +282,7 @@ a#videoPageLink:focus {
     transition: opacity 0.3s ease, background 0.3s ease;
 }
 
-.video-card:hover .play-button-overlay {
+.video-thumbnail:hover .play-button-overlay {
     opacity: 1;
     background: rgba(0, 0, 0, 0.3);
 }
@@ -310,12 +304,21 @@ a#videoPageLink:focus {
     color: #fff;
 }
 
-.video-card:hover .play-button {
+.video-thumbnail:hover .play-button {
     transform: scale(1);
 }
 
 .video-info {
     padding: 1.25rem;
+}
+.video-info:hover {
+    cursor: pointer;
+    h3 {
+        color: #fff;
+    }
+    p.video-description {
+         color: $casper;
+    }
 }
 
 .video-info h3 {
