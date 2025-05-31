@@ -72,7 +72,7 @@ aliases:
 </a>
 
 <a href="/kanvas">
-<div class="highlight-box"><div class="logo-container" style="height:65px;width:65px;margin-left:-.45rem;"><img src="/images/logos/kanvas-icon-color.svg" style="border:0px;" alt="kanvas logo"/></div>
+<div class="hidden-highlight-box"><div class="logo-container">{{< svg name="kanvas" >}}</div>
 <div style="flex: 1;color:#ccc;">
 <strong>Kanvas</strong> delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.</div></div>
 </a>
