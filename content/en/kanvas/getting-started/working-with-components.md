@@ -9,6 +9,13 @@ aliases:
   - /meshmap/getting-started/working-with-components
 ---
 
+## Types of Components
+
+1. **Configurable Components** - These components allow customization or user-defined settings. They usually have a background color to indicate that they can be configured.
+2. **Non-Configurable Components** - These components are fixed in behavior and do not offer customization options. They typically appear transparent, making it easy to identify them as non-editable.
+
+**Note**: The background (or lack of it) helps users visually distinguish between the two types at a glance.
+
 ## Configuring Components
 
 Once you’ve added components to your design in Kanvas, configuring them is a critical step in customizing and optimizing your cloud-native infrastructure. Configuring components allows you to fine-tune their behavior, set specific parameters, and ensure they meet the precise needs of your architecture.
