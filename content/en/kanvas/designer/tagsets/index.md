@@ -9,8 +9,6 @@ aliases:
   - /meshmap/designer/tagsets
 ---
 
-## Overview
-
 You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.
 
 {{< alert title="Related Concept">}}
