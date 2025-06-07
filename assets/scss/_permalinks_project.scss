@@ -1,0 +1,53 @@
+/* assets/scss/_permalinks_project.scss */
+
+.permalink-icon {
+    margin-left: 0.5em;
+    /* Space between the heading text and the icon */
+    font-size: 0.8em;
+    /* Make the icon slightly smaller than the heading text */
+    text-decoration: none;
+    /* Remove the default underline for anchor tags */
+    color: #00b39f;
+    /* A subtle green color (using $primary from your file) or a similar dark gray */
+    opacity: 0;
+    /* Hidden by default */
+    transition: opacity 0.2s ease-in-out;
+    /* Smooth transition for hover effect */
+    vertical-align: middle;
+    /* Align icon vertically with text */
+    cursor: pointer;
+    /* Indicate it's clickable */
+}
+
+h1:hover .permalink-icon,
+h2:hover .permalink-icon,
+h3:hover .permalink-icon,
+h4:hover .permalink-icon,
+h5:hover .permalink-icon,
+h6:hover .permalink-icon {
+    opacity: 1;
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    /* Make the heading a positioning context */
+    padding-right: 1.5em;
+    /* Add space for the icon if it's positioned outside */
+    display: inline-block;
+    /* Helps with positioning on some elements */
+}
+
+.permalink-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}

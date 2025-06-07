@@ -11,6 +11,7 @@
 @import "_videos_project.scss";
 @import "subscription.scss";
 @import "_video-landing_project.scss";
+@import "_permalinks_project.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -407,6 +408,7 @@ a:not([href]):not([class]):hover {
   display: flex;
   align-items: center;
   color: $casper;
+
   &:hover {
     background-color: rgba($primary, 0.3)
   }
@@ -480,7 +482,7 @@ a:not([href]):not([class]):hover {
   align-items: center;
 }
 
-.td-content figure > img {
+.td-content figure>img {
   width: auto;
   max-width: 100%;
   border-radius: .5rem .5rem 0 0;
@@ -488,7 +490,7 @@ a:not([href]):not([class]):hover {
   transition: box-shadow 0.2s;
 }
 
-.td-content figure > figcaption {
+.td-content figure>figcaption {
   width: 100%;
   text-align: center;
   padding: 0.5rem 1rem;
