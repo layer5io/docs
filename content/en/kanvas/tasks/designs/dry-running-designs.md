@@ -23,28 +23,23 @@ It’s a safe way to check if everything is set up correctly before you actually
 
 ## How to Perform a Dry Run
 
-In Kanvas, there are two ways to trigger a Dry Run—via the **Actions dropdown** or the **arrow-shaped dropdown** in design mode. Both options perform exactly the same operation:
+In Kanvas, you can trigger a Dry Run from either the **Actions dropdown** or the **arrow-shaped dropdown** in design mode. Both entry points launch a modal window where you perform the same operation:
 
-- They simulate the deployment or undeployment of your design across **all selected Kubernetes clusters**.
-- They use the same backend mechanism and validation pipeline.
-- The results of the simulation are identical regardless of the entry point.
-
-The only difference lies in how results are delivered:
-
-- **Actions Dropdown**: A modal window appears to display the dry-run results.
-- **Arrow Dropdown**: Feedback is shown in the **[Notification Center](https://docs.meshery.io/guides/infrastructure-management/notification-management)**.
+- You select one or more Kubernetes clusters to run a simulated deployment against.
+- The simulation uses the same backend mechanism and validation pipeline.
+- The results are identical regardless of which entry point you use.
 
 ### To Start a Dry Run
 
-1. Navigate to [Kanvas](https://playground.meshery.io/extension/meshmap).
+1. Navigate to [Kanvas](https://kanvas.new).
 2. Choose one of the following entry points:
    - **Actions dropdown**  
      ![Actions menu showing Dry Run option](/kanvas/tasks/designs/images/actions-dropdown-menu.png)
    - **Arrow-shaped dropdown**
      ![Dropdown Menu Shortcut](/kanvas/tasks/designs/images/arrow-dropdown-menu.png)
-3. Select **Dry Run**.
-
-Depending on the entry point, you will either see a modal or receive a notification, but the operation and its output remain the same.[^1].
+3. Select **Dry Run**. A modal window will appear.
+4. **Select the target Kubernetes cluster(s)** you want to simulate the deployment against.
+5. Click **Run** to start the simulation.
 
 ## How It Works
 
