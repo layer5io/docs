@@ -125,3 +125,7 @@ A single semantic component will be visually represented differently depending o
 3. **Deployment component as seen in a cluster resource overview:**
 
 ![Deployment component in a cluster resource overview](images/deployment-dashboard.png)
+
+{{< alert title="Learn More About Interpreting Designs" type="info">}}
+To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the <a href="https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs">Layer5 Academy</a>.
+{{< /alert >}}
