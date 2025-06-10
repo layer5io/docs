@@ -35,7 +35,7 @@ All components, whether semantic or non-semantic, support rich visual customizat
 
 ## Semantic Components
 
-These components represent real infrastructure that Kanvas can manage. They can be either built-in (like Kubernetes components) or custom components that you create.
+These components represent real infrastructure that Kanvas can manage. They can be either built-in (like Kubernetes components) or custom components that you [create](https://docs.meshery.io/guides/configuration-management/creating-models).
 
 ### Kubernetes Components
 
@@ -51,6 +51,7 @@ Kanvas employs a thoughtful design system for Kubernetes resources, built on the
 - **Meaningful Inner Symbols:** The white symbol inside each icon is the crucial unique identifier for that specific Kubernetes Kind
 
 **Principle 2: Shape as an Indicator**
+
 The blue background is framed by different outer shapes that help identify the component's role:
 
 - **Triangles:** Used for core networking resources like `Service` and `API Service`
