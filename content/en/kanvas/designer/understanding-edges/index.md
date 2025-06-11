@@ -1,97 +1,129 @@
 ---
 title: Understanding Edge Styles
 description: >
-  Learn how to interpret and customize the different types of edges in Kanvas to represent relationships between components in your infrastructure designs.
+  Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
 weight: 2
 categories: [Designer]
 tags: [designs]
 ---
 
-When you connect components in [Kanvas](https://kanvas.new/), the line you draw is called an **edge**. Each edge visually represents a [relationship]({https://docs.meshery.io/concepts/logical/relationships) between your components. Understanding how to style these edges is key to creating clear and effective infrastructure diagrams.
+When you connect components in [Kanvas](https://kanvas.new/), the line you draw is called an edge. Each edge visually represents a [relationship](https://docs.layer5.io/kanvas/concepts/relationships/) between your components. This guide will help you understand how to use different edge styles to create clear and effective infrastructure diagrams.
 
-## Semantic vs. Non-semantic Edges
+![Examples of changing edge styles in Kanvas](images/style-edge.gif)
 
-Edges in Kanvas fall into two fundamental categories, distinguished by whether they have a built-in meaning that the system can act upon.
+## Types of Edges
 
-- **Semantic (Orchestratable) Edges**: These represent real infrastructure relationships that Kanvas understands, such as network links or volume mounts. Kanvas can use this information during deployment.
+In Kanvas, there are two main types of edges, each serving a different purpose:
 
-- **Non-semantic (Annotation-Only) Edges**: These are purely for your visual and organizational aid. They help you document designs and illustrate concepts but are ignored by Kanvas during deployment.
+### Semantic Edges
+These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:
+- Network connections between services
+- Volume mounts between containers
+- Dependencies between components
 
-## System Default Styles: The Visual Language of Kanvas
+Kanvas uses these edges during deployment to understand how your components should be connected.
 
-To provide a consistent and recognizable visual language, Kanvas uses a specific, minimal set of styles for edges that are created by default. These styles give you immediate, at-a-glance information about an edge's nature.
+> For detailed information about each relationship type, visit [Relationships Documentation](https://docs.layer5.io/kanvas/concepts/relationships/)
 
-| For this Relationship... | Kanvas Uses this Style... | Meaning |
-| :--- | :--- | :--- |
-| **Semantic Relationship**<br>(e.g., `Edge-Network`, `Edge-Mount`) | A **Dotted Line** with a standard **Arrowhead**. | This signifies a logical or dynamic connection that is managed by the system. The default color is typically blue or white. |
-| **Non-semantic Annotation** | A **Solid Line** with a standard **Arrowhead**. | This signifies a direct visual note created by the user. The default color is a distinct **Green/Teal** to visually separate it from semantic edges. |
+### Non-semantic Edges
+These are visual aids that help you document and explain your design. They are useful for:
+- Adding explanatory notes
+- Showing conceptual relationships
+- Highlighting important connections
 
-These defaults serve as a community convention, but as you'll see next, you have the power to change them.
+Kanvas ignores these edges during deployment as they are purely for documentation.
 
-## Customizing Your Edges: The Full Styling Toolkit
+## Edge Styles
 
-A key principle in Kanvas is flexibility. **All edges, whether semantic or non-semantic, support a rich set of visual customizations.** Simply select any edge on the canvas to reveal the floating styling toolbar.
+### Default Edge Styles
 
-From here, you can override the defaults and tailor the appearance of any edge to fit your needs.
+To help you quickly understand your diagrams, Kanvas uses specific default styles for each type of edge:
 
-### 1. Line Style
+**Semantic Edges**
+- Style: Dotted line with an arrowhead
+- Color: Grey
+- Use: For all real infrastructure connections
 
-Controls the edge's shape and pattern.
+{{< meshery-design-embed src="../understanding-edges/images/embedded-design-untitled-design.js" id="embedded-design-d0a031d0-b4d7-4d60-be17-c4b5d2480ee6" size="half" >}}
 
-- **Basic Styles**:（系统默认的样式通常是这两种）
-  - `Solid Line` - **Recommended for**: Direct visual annotations (the default for annotations).
-  - `Dotted Line` - **Recommended for**: Standard semantic relationships (the default for semantic edges).
+**Non-semantic Edges**
+- Style: Solid line with an arrowhead
+- Color: Green
+- Use: For all visual annotations and notes
 
-我们还有
-    - `Dashed Line` - **Recommended for**: Indicating a proposed or optional connection.
+{{< meshery-design-embed src="../understanding-edges/images/embedded-design-edge-annotation-relationship-copy.js" id="embedded-design-daecd14f-6c65-45d9-b74a-4fc536a7868f" size="half" >}}
 
-这些是系统中很少看到，但是提供你自定义的：
-- **Advanced Shapes**:
-  - `Zigzag Line` - **Recommended for**: Showing indirect paths that need to avoid other components.
-  - `Wave Line` - **Recommended for**: Representing a flexible or non-critical connection.
-  - `Bezier Curve` - **Recommended for**: Creating smooth, aesthetically pleasing layouts.
-  - `Line with Circles` - **Recommended for**: Highlighting specific points or stages along a path.
+### Customizing Edge Styles
 
-### 2. Endpoint Style
+While the default styles are designed to be clear and consistent, Kanvas gives you the flexibility to customize any edge to better suit your needs. Simply select an edge to reveal the styling toolbar.
 
-While Kanvas defaults to a simple arrowhead, you can choose from a variety of endpoint styles for your custom diagrams.
+#### Line Styles
 
-| Style | Recommended Use Case |
-| :--- | :--- |
-| `Arrowhead` (Default) | Clearly shows the direction of flow or dependency. |
+**Primary Styles (Most Commonly Used)**
 
-提供自定义的样式：
-| `Filled Diamond` | Can represent decision points or conditional flows. |
-| `Filled Square` | Useful for termination points or specific API interfaces. |
-| `Filled Triangle` | A strong alternative for indicating direction. |
+Straight Line
+- Default for most connections
+- Best for: Direct relationships and simple associations
+- Visual meaning: A clear, straightforward connection
 
-### 3. Color Coding
+Dotted Line
+- Default for semantic edges
+- Best for: Infrastructure connections (like network links, volume mounts)
+- Visual meaning: A system-managed connection
 
-The color tool is perfect for creating your own visual language. Use it to categorize connections or draw attention to specific parts of your design.
+Bezier Curve
+- Best for: Non-linear or indirect connections
+- Visual meaning: A smooth, curved relationship between components
 
-**Suggested Color Palette**:
-| Color | Suggested Meaning |
-| :--- | :--- |
-| **Green** | Approved, active, or successfully deployed paths. |
-| **Blue/White** | Standard documentation or default state. |
+![Common line styles in Kanvas](images/line-styles.png)
 
-| **Yellow** | Connections with warnings or those that require review. |
-| **Red** | Requires attention, a known issue, or a breaking change. |
+**Additional Options**
 
-### 4. Labels and Annotations
+These styles are available for specialized use cases:
 
-The rename tool lets you add descriptive text directly on the edge, which is a powerful way to document your design.
+Line Types
+- Dashed Line: For proposed or optional connections
+- Wave Line: For asynchronous or non-continuous connections
+- Zigzag Line: For disrupted or unreliable connections
+- Tree Line: For hierarchical relationships (parent-child, system-subsystem)
+- Line with Circles: For weak or indirect associations
 
-**Examples**:
-- Describe traffic flow: `"User Traffic → API Gateway"`
-- Add process steps: `"Requires Manual Review"`
-- Note important details: `"Backup Route (Low Priority)"`
-- Specify protocols: `"gRPC / 50051"`
+Endpoint Styles
+- Arrow Head (Default): Shows general direction or flow
+- Filled Diamond: For "whole-part" relationships (aggregation)
+- Filled Square: For strong ownership relationships (composition)
+- Filled Triangle: For inheritance or "is-a" relationships
+- Filled Circle: For loose containment relationships
 
-### 5. Visual Effects
+![Advanced style examples](images/advanced-styles.png)
 
-The "Marching-ants" effect adds an animated stroke to your edge.
+> **Note**: While Kanvas supports these UML-style relationships, the most commonly used styles are straight lines, dotted lines, and arrow heads. Use other styles when you need to express specific types of relationships in your diagrams.
 
-**Best For**:
-- Drawing attention to a critical path during a presentation or demo.
-- Highlighting the exact edge you are discussing in a team review.
+#### Colors
+
+Colors help you create a visual language in your diagrams. While Kanvas has default colors, you can use any color to convey meaning:
+
+Default Colors
+- Green: For non-semantic annotations
+- Grey: For semantic relationships
+
+Suggested Color Meanings
+- Yellow: For connections that need review
+- Red: For issues or breaking changes
+
+![Color examples](images/color-examples.png)
+
+### Labels and Annotations
+
+You can add text directly to edges to provide more information. This is especially useful for:
+- Describing traffic flow (e.g., "User Traffic → API Gateway")
+- Adding process steps (e.g., "Requires Manual Review")
+- Noting important details (e.g., "Backup Route (Low Priority)")
+- Specifying protocols (e.g., "gRPC / 50051")
+
+### Visual Effects
+
+The "Marching-ants" animation effect can be added to any edge to:
+- Draw attention during presentations
+- Highlight specific connections in team reviews
+- Emphasize critical paths
