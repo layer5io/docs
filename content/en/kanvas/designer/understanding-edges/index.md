@@ -16,6 +16,7 @@ When you connect components in [Kanvas](https://kanvas.new/), the line you draw 
 In Kanvas, there are two main types of edges, each serving a different purpose:
 
 ### Semantic Edges
+
 These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:
 - Network connections between services
 - Volume mounts between containers
@@ -26,6 +27,7 @@ Kanvas uses these edges during deployment to understand how your components shou
 > For detailed information about each relationship type, visit [Relationships Documentation](https://docs.layer5.io/kanvas/concepts/relationships/)
 
 ### Non-semantic Edges
+
 These are visual aids that help you document and explain your design. They are useful for:
 - Adding explanatory notes
 - Showing conceptual relationships
@@ -41,7 +43,7 @@ To help you quickly understand your diagrams, Kanvas uses specific default style
 
 **Semantic Edges**
 - Style: Dotted line with an arrowhead
-- Color: Grey
+- Color: Grey/Blue
 - Use: For all real infrastructure connections
 
 {{< meshery-design-embed src="../understanding-edges/images/embedded-design-untitled-design.js" id="embedded-design-d0a031d0-b4d7-4d60-be17-c4b5d2480ee6" size="half" >}}
@@ -57,45 +59,20 @@ To help you quickly understand your diagrams, Kanvas uses specific default style
 
 While the default styles are designed to be clear and consistent, Kanvas gives you the flexibility to customize any edge to better suit your needs. Simply select an edge to reveal the styling toolbar.
 
-#### Line Styles
-
-**Primary Styles (Most Commonly Used)**
-
-Straight Line
-- Default for most connections
-- Best for: Direct relationships and simple associations
-- Visual meaning: A clear, straightforward connection
-
-Dotted Line
-- Default for semantic edges
-- Best for: Infrastructure connections (like network links, volume mounts)
-- Visual meaning: A system-managed connection
-
-Bezier Curve
-- Best for: Non-linear or indirect connections
-- Visual meaning: A smooth, curved relationship between components
-
-![Common line styles in Kanvas](images/line-styles.png)
-
-**Additional Options**
-
-These styles are available for specialized use cases:
-
-Line Types
+#### Line Types
 - Dashed Line: For proposed or optional connections
 - Wave Line: For asynchronous or non-continuous connections
 - Zigzag Line: For disrupted or unreliable connections
 - Tree Line: For hierarchical relationships (parent-child, system-subsystem)
 - Line with Circles: For weak or indirect associations
+- Bezier Curve: For non-linear or indirect connections
 
-Endpoint Styles
+#### Endpoint Types
 - Arrow Head (Default): Shows general direction or flow
 - Filled Diamond: For "whole-part" relationships (aggregation)
 - Filled Square: For strong ownership relationships (composition)
 - Filled Triangle: For inheritance or "is-a" relationships
 - Filled Circle: For loose containment relationships
-
-![Advanced style examples](images/advanced-styles.png)
 
 > **Note**: While Kanvas supports these UML-style relationships, the most commonly used styles are straight lines, dotted lines, and arrow heads. Use other styles when you need to express specific types of relationships in your diagrams.
 
@@ -105,13 +82,11 @@ Colors help you create a visual language in your diagrams. While Kanvas has defa
 
 Default Colors
 - Green: For non-semantic annotations
-- Grey: For semantic relationships
+- Grey/Blue: For semantic relationships
 
 Suggested Color Meanings
 - Yellow: For connections that need review
 - Red: For issues or breaking changes
-
-![Color examples](images/color-examples.png)
 
 ### Labels and Annotations
 
@@ -124,6 +99,10 @@ You can add text directly to edges to provide more information. This is especial
 ### Visual Effects
 
 The "Marching-ants" animation effect can be added to any edge to:
-- Draw attention during presentations
 - Highlight specific connections in team reviews
 - Emphasize critical paths
+
+
+{{< alert title="Learn More About Interpreting Designs" type="info" >}}
+To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the [Layer5 Academy](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs).
+{{< /alert >}}
