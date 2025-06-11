@@ -37,13 +37,24 @@ All components, whether semantic or non-semantic, support rich visual customizat
 
 These components represent real infrastructure that Kanvas can manage. They can be either built-in (like Kubernetes components) or custom components that you [create](https://docs.meshery.io/guides/configuration-management/creating-models).
 
-### Kubernetes Components
+![Example of using integrated components in Kanvas](images/component_style.gif)
 
-While Kubernetes components are commonly used, they follow the same principles as all other semantic components. They have a distinct visual style to help you instantly recognize them:
+Kanvas provides a rich ecosystem of semantic components through various integrations. While Kubernetes is a commonly used example, all integration models (like KEDA, Istio, AWS, etc.) provide components with the same orchestratable capabilities. To help you navigate this ecosystem, Kanvas organizes these components in a clear hierarchy:
+
+{{< alert title="Integration Hierarchy" type="info">}}
+Kanvas organizes integrated components in a clear hierarchy:
+1. **Categories:** High-level groups (e.g., "Cloud Native Network", "Database")
+2. **Integration Models:** Specific technologies (e.g., "AWS App Mesh", "Prometheus", "Kubernetes")
+3. **Semantic Components:** Functional building blocks that can be deployed and managed
+{{< /alert >}}
+
+### Kubernetes Components Example
+
+To illustrate how semantic components work in practice, let's examine Kubernetes components. As one of the most widely used integration models, Kubernetes components demonstrate how Kanvas implements its design principles while maintaining a distinct visual style:
 
 ![Example of using kubernetes components in Kanvas](images/k8s_style.gif)
 
-Kanvas employs a thoughtful design system for Kubernetes resources, built on these key principles:
+For Kubernetes resources, Kanvas employs a thoughtful design system built on these key principles:
 
 **Principle 1: Color and Structure**
 - **Uniform Color Scheme:** Kubernetes component icons typically use a **distinctive blue background** as a standard identifier
@@ -57,19 +68,6 @@ The blue background is framed by different outer shapes that help identify the c
 - **Triangles:** Used for core networking resources like `Service` and `API Service`
 - **Hexagons:** Used for foundational workload controllers like `StatefulSet`
 - **Unique Polygons:** Used for specialized resources like `Endpoints`, `PriorityClass`, or `ValidatingWebhookConfiguration`
-
-### Integrated Technologies
-
-Kanvas provides a rich ecosystem of semantic components through various integrations. While Kubernetes is a commonly used example, all integration models (like KEDA, Istio, AWS, etc.) provide components with the same orchestratable capabilities.
-
-{{< alert title="Integration Hierarchy" type="info">}}
-Kanvas organizes integrated components in a clear hierarchy:
-1. **Categories:** High-level groups (e.g., "Cloud Native Network", "Database")
-2. **Integration Models:** Specific technologies (e.g., "AWS App Mesh", "Prometheus", "Kubernetes")
-3. **Semantic Components:** Functional building blocks that can be deployed and managed
-{{< /alert >}}
-
-![Example of using integrated components in Kanvas](images/component_style.gif)
 
 {{< alert title="Exploring All Integrations" type="info">}}
 This guide covers the visual style of components. For a complete catalog of all technologies that Kanvas integrates, visit the <a href="https://docs.meshery.io/extensions/integrations">integrations directory</a>.
