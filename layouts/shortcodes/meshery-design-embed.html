@@ -6,7 +6,8 @@
   to visualize, explore, and collaborate on service mesh designs.
   
   -- Usage: 
-  {{/*< meshery-design-embed src="path/to/embed.js" id="unique-id" style="custom-styles" >*/}}
+  {{/*< meshery-design-embed src="path/to/embed.js" id="unique-id" size="full|half" >*/}}
+  size: "full" for full-width (default), "half" for half-width display
 
   More Information: 
   Learn more about embedding Meshery designs at:
@@ -28,10 +29,31 @@
 {{ $id := .Get "id" }}
 
 <!-- 
-  Retrieve optional custom styles for the embedding container.
-  If not provided, a default style will be applied to ensure proper rendering. 
+  Retrieve the size for the embedding container.
+  If not provided, "full" is used as default.
 -->
-{{ $style := .Get "style" }}
+{{ $size := .Get "size" | default "full" }}
+
+<style>
+.meshery-embed-container {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin: 1rem auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.meshery-embed-container.full {
+  width: 100%;
+  height: 30rem;
+}
+.meshery-embed-container.half {
+  width: 50%;
+  height: 30rem;
+}
+.meshery-embed-container .cy-container {
+  width: 100%;
+  height: 100%;
+}
+</style>
 
 <!-- 
   Embedding Container: 
@@ -45,11 +67,7 @@
 -->
 <div
     id="{{ $id }}"
-    {{ if $style }}
-    style="{{ $style }}"
-    {{ else }}
-    style="height: 30rem; width: 100%; border: 1px solid #eee"
-    {{ end }}
+    class="meshery-embed-container {{ $size }}"
 ></div>
 
 <!-- 
