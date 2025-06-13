@@ -83,7 +83,7 @@ This guide covers the visual style of components. For a complete catalog of all 
 
 These components help you document and organize your designs without affecting the actual infrastructure. They include:
 
-![](images/shape_style.gif)
+![Example of non-semantic components](images/shape_style.gif)
 
 ### Generic Shapes
 
