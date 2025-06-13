@@ -20,6 +20,12 @@ These components represent actual infrastructure resources that Kanvas can under
 
 These components are orchestratable because Kanvas can create, configure, and manage their lifecycle during deployment.
 
+{{< alert title="Visual Distinction Rule" type="info">}}
+To help users quickly distinguish between component types, Kanvas follows a clear visual design rule:
+- Semantic (Configurable) Components: Have a background to represent their status as "real" infrastructure resources
+- Non-semantic (Annotation) Components: Have transparent backgrounds, as they are purely visual aids
+{{< /alert >}}
+
 ### Non-semantic Components (Annotation-Only)
 These components are visual and organizational elements that help document and organize your designs. They are "meaningless" in terms of infrastructure because they don't represent deployable resources. Examples include:
 - Text boxes and comments
