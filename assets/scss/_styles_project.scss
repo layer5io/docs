@@ -721,3 +721,9 @@ a:not([href]):not([class]):hover {
 .csvtable {
   width: 100%;
 }
+
+.img-thumbnail,
+.td-content img {
+  background-color: transparent;
+}
+
