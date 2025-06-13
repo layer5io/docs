@@ -2,7 +2,7 @@
 title: Exporting Designs
 description: >
   How to export your designs for backup, sharing or offline use.
-weight: 5
+weight: 8
 categories: [Designer]
 tags: [designs, export]
 aliases:

@@ -2,7 +2,7 @@
 title: Working with Tags
 description: >
   Share design with other users and use control access to manage design access permissions and visibility.
-weight: 4
+weight: 6
 categories: [Designer]
 tags: [designs, collaboration, review] 
 aliases:

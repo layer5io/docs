@@ -1,7 +1,7 @@
 ---
 title: Whiteboarding
 description: Whiteboarding and Freestyle Drawing inside Kanvas
-weight: 4
+weight: 3
 categories: [Designer]
 tags: [designs]
 aliases:
