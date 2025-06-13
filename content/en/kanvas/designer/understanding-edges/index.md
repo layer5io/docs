@@ -22,9 +22,9 @@ These edges represent real infrastructure relationships that Kanvas can understa
 - Volume mounts between containers
 - Dependencies between components
 
-Kanvas uses these edges during deployment to understand how your components should be connected.
+What makes semantic edges special is their ability to automatically configure components in real-time as you design. When you draw a semantic edge, Kanvas immediately interprets the relationship and updates the components' configurations - for instance, a TCP connection edge automatically configures port bindings, while a volume mount edge updates container specifications. This real-time configuration makes semantic edges not just visual connectors, but active configuration tools that shape your infrastructure as you build it.
 
-> For detailed information about each relationship type, visit [Relationships Documentation](https://docs.layer5.io/kanvas/concepts/relationships/)
+> For detailed information about each relationship type and their configuration effects, visit [Relationships Documentation](https://docs.layer5.io/kanvas/concepts/relationships/)
 
 ### Non-semantic Edges: Annotating Your Designs
 
