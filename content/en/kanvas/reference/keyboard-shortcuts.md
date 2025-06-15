@@ -24,6 +24,10 @@ As a designer in Kanvas, you can take advantage of various keyboard shortcuts to
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Y</button> or <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">Z</button>: Redo your last create or delete action.
 - <button class="kbc-button kbc-button-xs">Right-click</button> or <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Hold</button>: Open the context menu to choose an action to perform.
 - <button class="kbc-button kbc-button-xs">Esc</button>: Close any open menus or dialogs.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">+</button>: Zoom in on the canvas.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">-</button>: Zoom out on the canvas.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">+</button>: Zoom in on the Page.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">-</button>: Zoom out on the Page.
 
 These designer shortcuts are essential for a smooth and efficient design workflow within Kanvas.
 
