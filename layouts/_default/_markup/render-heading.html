@@ -1,0 +1,10 @@
+{{- $level := .Level -}}
+{{- $text := .Text | safeHTML -}}
+{{- $anchor := .Anchor | safeURL -}}
+
+<h{{ $level }} id="{{ $anchor }}" class="heading-link">
+  {{ $text }}
+  <a class="heading-anchor" href="#{{ $anchor }}" aria-label="Anchor link to this section">
+    🔗
+  </a>
+</h{{ $level }}>
