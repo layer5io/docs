@@ -2,9 +2,8 @@
 {{- $text := .Text | safeHTML -}}
 {{- $anchor := .Anchor | safeURL -}}
 
-<h{{ $level }} id="{{ $anchor }}" class="heading-link">
-  {{ $text }}
-  <a class="heading-anchor" href="#{{ $anchor }}" aria-label="Anchor link to this section">
-    🔗
-  </a>
+{{ $level := .Level }}
+<h{{ $level }} id="{{ .Anchor | safeURL }}" class="heading-link">
+  {{ .Text }}
+  <a href="#{{ .Anchor | safeURL }}" class="heading-anchor" aria-label="Permalink to this heading">🔗</a>
 </h{{ $level }}>
