@@ -25,7 +25,7 @@ Kanvas let's you export a design in several formats, so you can:
 2. Pick an export format 
    Choose the option that matches your workflow (see table below).
 
-![Export Icon](./export-modal.gif)
+![Export Icon](./export-designs.gif)
 
 ## Quick Reference: Export Formats
 
