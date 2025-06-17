@@ -21,8 +21,7 @@ Kanvas let's you export a design in several formats, so you can:
 
 ## Export in Two Steps
 
-1. Open the export menu 
-   Within the [Kanvas Designer](https://playground.meshery.io/extension/meshmap), select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design. 
+1. Once inside your design, use the **Export Menu** in [Kanvas Designer](https://kanvas.new). Click the **hamburger menu** (☰) in the top-left corner, then select **Export** from the menu.
 2. Pick an export format 
    Choose the option that matches your workflow (see table below).
 
