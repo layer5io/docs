@@ -721,3 +721,46 @@ a:not([href]):not([class]):hover {
 .csvtable {
   width: 100%;
 }
+<<<<<<< HEAD
+=======
+
+// Only target the tabbed panels using ID naming convention
+
+[id^="tabs-"] {
+  border: 1px solid rgba($light, 0.1);
+  border-radius: 0.5rem;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  background-color: rgba($light, 0.02);
+  box-shadow: 0 0 8px rgba($dark, 0.2);
+
+  .nav-link {
+    color: $light;
+    background-color: transparent;
+    border: 2px solid rgba($light, 0.15);
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin: 2px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: rgba($light, 0.08);
+      color: $white;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: #fff;
+      border-color: $primary $primary transparent;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+>>>>>>> 3b1c4297 (tabbed content visibility)
