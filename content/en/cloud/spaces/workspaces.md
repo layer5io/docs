@@ -1,11 +1,10 @@
 ---
 title: Workspaces
 description: >
-  Meshery Workspaces serve as a virtual space for your team-based work.
+  Understand the core concepts of Meshery Workspaces.
 weight: 6
 categories: [Spaces]
 ---
-
 
 Meshery Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.
 
@@ -29,19 +28,6 @@ You can create Workspaces to group related Designs and Environments, define doma
 After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment's connections available to users of the Workspace. 
 
 Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Meshery Designs are your Google Docs.
-
-### Workspace Deletion Behavior
-
-When a Workspace is deleted:
-
-- Deletion is **permanent and irreversible**. Proceed with caution.
-- Before deletion, users have the option to transfer associated Designs and Views to another Workspace.
-- If no transfer is made, all associated Designs and Views will be permanently deleted along with the Workspace[^1].
-- Any associated Teams or Environments will be detached from the Workspace but will remain available for reassignment.
-
-{{< alert type="info" title="What Happens When a Workspace is Deleted?" >}}
-Deleting a Workspace will permanently remove the Workspace itself and its associated Designs and Views, unless they are transferred beforehand. Teams and Environments will remain intact but will no longer be associated with the deleted Workspace.
-{{< /alert >}}
 
 ## Key Workspace Components
 
@@ -93,5 +79,3 @@ To make the most of Meshery Workspaces, here are some best practices:
 - Regularly review and update your Workspace's resources and configurations.
 
 Meshery Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature in Meshery.
-
-[^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
