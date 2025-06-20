@@ -83,7 +83,7 @@ On the [Organizations page](https://cloud.layer5.io/identity/organizations), you
 1. Click Select file to upload and select the logo image on your computer. You'll see a preview your logo.
 1. Click Save, if satisfied. You may change your custom logo images at any time.
 
-## Customizing your Organization's Dashboard
+## Customizing your Organization\'s Dashboard
 
 Layer5 Cloud supports customizing dashboard layouts on a per organization basis. As an administrator of your organization, you can customize the dashboard experience for all members of your organization. To customize your organization's dashboard, select from a collection of widgets to include or exclude.
 
