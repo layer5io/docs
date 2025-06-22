@@ -5,9 +5,9 @@ weight: 7
 categories: [Spaces]
 ---
 
-This guide walks you through the practical steps of managing your Workspaces. Here, you'll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments/Designs/Views to them.
+This guide walks you through the practical steps of managing your Workspaces. Here, you'll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.
 
-If you're new to the concept of Workspaces, we recommend starting with the [Workspaces Overview](https://docs.meshery.io/concepts/logical/workspaces) to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.
+If you're new to the concept of Workspaces, we recommend starting with the [Workspaces Overview](https://docs.layer5.io/cloud/spaces/workspaces/) to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.
 
 {{< alert type="info" title="A Note on Permissions" >}}
 Every action described in this guide is governed by roles and permissions. To see a detailed breakdown of what your assigned role allows you to do, please refer to the [Default Permissions](https://docs.layer5.io/cloud/reference/default-permissions/) documentation.
@@ -20,50 +20,67 @@ The [Workspaces page](https://cloud.layer5.io/spaces/workspaces) is where you ca
 To suit different workflows, you can switch between two distinct layouts: a visual grid view and a detailed table view.
 
 #### Grid View
-The grid view offers a card-based layout, perfect for quickly identifying workspaces at a glance. Each card displays essential information, and you can flip it to reveal management options like editing or deleting and get audit hisdtory.
-![](/images/grid-view.png)
+The grid view offers a card-based layout, perfect for quickly identifying workspaces at a glance. Each card displays essential information, and you can flip it to reveal management options like editing or deleting and get audit history.
+![Grid view of workspaces showing card-based layout](/cloud/spaces/images/grid-view.png)
 
 #### Table View
 The table view provides a dense, list-based format that is ideal for managing a large number of workspaces. This view allows for sorting and gives you more control over the specific details you see.
 
-To customize the information displayed, click **View Columns** icon and select the attributes you want to see, such as Owner Id or Created Date.
+To customize the information displayed, click the **View Columns** icon and select the attributes you want to see, such as Owner ID or Created Date.
 
-![](/images/table-view.png)
+![Table view of workspaces showing list-based format with sorting options](/cloud/spaces/images/table-view.png)
 
 {{< alert type="info" title="Consistent Actions Across Views" >}}
 Both the grid and table views provide the same set of management capabilities. You can choose the layout that best fits your needs without losing any functionality.
 {{< /alert >}}
 
-### Create Workspace
+### Create a Workspace
 
-You can create new workspaces to organize your resources and teams.
+Creating a new workspace allows you to manage resources, and define team access.
 
-{{< alert type="info" title="Consistent Actions Across Views" >}}
+{{< alert type="info" title="Permissions Required" >}}
 Only users with the Workspace Admin or Organization Admin role can create new workspaces.
 {{< /alert >}}
 
 To create a workspace:
 
-1. Click the **+ Create** button to open the creation dialog.
+1. Click the **+ Create** button to open the creation modal.
 2. From the dropdown menu, select the **Organization** that will own the new workspace. The chosen Organization **cannot be** changed after the workspace is created. Please select carefully.
-3. Enter a descriptive **Name** and an optional **Description**.
-4. Click **Save**.
-5. Your new workspace will now appear on the page.
+3. Enter a descriptive **Name** and an optional **Description**, then click **Save**.
+4. Your new workspace will now appear on the page.
 
-![](/images/create-workspace.gif)
+![Animation showing workspace creation process](/cloud/spaces/images/create-workspace.gif)
 
 ### Edit a Workspace
 
 You can modify a workspace's name and description at any time after it has been created.
 
-  - **From the Grid View:** Hover over the workspace card to flip it, then click the **pencil icon**.
-  - **From the Table View:** Click the **pencil icon** in the row of the workspace you wish to modify.
+- **From the Grid View:** Flip the workspace card, then click the **pencil icon**.
+- **From the Table View:** Click the **pencil icon** in the row of the workspace you wish to modify.
 
-After clicking the icon, a dialog will appear where you can update the workspace's details.
+![Animation showing workspace editing process](/cloud/spaces/images/edit-workspace.gif)
 
-![](/images/edit-workspace.gif)
+### Delete a Workspace
 
-### Workspace Deletion Behavior
+You can delete a single workspace or multiple workspaces at once.
+
+- **To delete a single workspace:**
+
+    - From the **Grid View**, flip the workspace card, then click the **trash can icon**.
+    - From the **Table View**, click the **trash can icon** in the row of the workspace you wish to delete.
+
+- **To delete multiple workspaces (Grid View only):**
+
+  1. Select the checkboxes on the cards of the workspaces you want to delete.
+  2. Click the **Delete** button that appears at the top of the page.
+
+![Animation showing workspace deletion process](/cloud/spaces/images/delete-workspace.gif)
+
+{{< alert type="info" title="Deletion Restrictions" >}}
+Meshery requires at least one workspace to exist within an organization at all times, so you cannot delete the last remaining workspace.
+{{< /alert >}}
+
+#### Workspace Deletion Behavior
 When a Workspace is deleted:
 
 - Deletion is **permanent and irreversible**. Proceed with caution.
@@ -75,70 +92,76 @@ When a Workspace is deleted:
 Deleting a Workspace will permanently remove the Workspace itself and its associated Designs and Views, unless they are transferred beforehand. Teams and Environments will remain intact but will no longer be associated with the deleted Workspace.
 {{< /alert >}}
 
-### How to Delete Workspaces
-Dissolve workspace and all team and environment memberships. Leave associated resources intact
+### Assign Teams to a Workspace
+Assigning teams is the way you grant users access to a workspace. Once a team is assigned, its members can access all of the Designs, Views, and Environments linked to that workspace.
 
-在grid view，先点击卡片翻转，再点击垃圾桶图标，删除
-或者选中checkbox，可以多个一起删除
-在table view 点击删除
+![Animation showing team assignment process](/cloud/spaces/images/assign-teams.gif)
 
-删除的动图，两种方式都展示一遍
-![]/images/delete-workspace.gif
+You can open the team management modal from either the grid or table view.
 
-每个账户都会有一个默认的叫my workspace
-可以创建多个，可以修改，但是不可以删除到一个workspace都没有
-Workspace Delete Error: cannot delete workspace: at least one workspace must exist for the organization
+- **From the Grid View:** Click the **Teams** tile.
+- **From the Table View:** Click the **Teams icon** in the workspace row. A list of currently assigned teams will appear. From there, click the **Assign Team** button to open the assignment modal.
 
-级联删除？试试看到时候 没实现。。加一个角标
+Inside the assignment modal, you will see two lists: **Available Teams** on the left and **Assigned Teams** on the right.
 
-### Assign team to workspace Remove team from workspace
+1. Select one or more teams from either list.
+2. Use the arrow buttons to move the selected teams between the lists:
+      - **>** Assigns a selected team.
+      - **<** Unassigns a selected team.
+      - **>>** Assigns all available teams.
+      - **<<** Unassigns all assigned teams.
+3. Click **Save** to apply your changes.
 
-Add new team to workspace
-Remove team from workspace
+{{< alert type="info" title="Team and Workspace Relationships" >}}
+You can assign multiple teams to a single workspace, and a single team can also be a member of multiple workspaces. This provides flexible access control across your projects. For more restrictions, see [Workspaces documentation](https://docs.layer5.io/cloud/spaces/workspaces/).
+{{< /alert >}}
 
-关于assign team的限制，查看 https://docs.layer5.io/cloud/spaces/workspaces/
+### Link Environments to a Workspace
+When you link an [Environment](https://docs.layer5.io/cloud/spaces/environments/) to a Workspace, you make all the connections (like those to Kubernetes clusters or databases) grouped within that Environment available. This means any team members with access to that Workspace can then deploy their applications or configurations to the resources.
 
-步骤
-1.点击design/view（grid view）
-进入assign team的model
+The process of linking environments is almost the same as assigning teams.
+![Animation showing environment assignment process](/cloud/spaces/images/assign_environment.png)
 
-1.点击assign team icon（table view），首先会展示已经assign的team的表格
-再点击左上角的assign team按钮，进入assign team的model
+{{< alert type="info" title="Many-to-Many Relationship" >}}
+An Environment can be linked to multiple Workspaces, and a Workspace can have multiple Environments. This allows you to share common environments across different projects.
+{{< /alert >}}
 
-2.assign/unassign：选择你想要转移的team，点击》（assign）或者《（unassign）按钮来转移，或者按》》和《《来全部转移
-之后点击save
+### Move Designs and Views Between Workspaces
 
-alert：多个team可以被assign到多个wrokspcae，team中的成员可以访问所有workspace中的design/View，不管是public还是pricvate的
+Unlike Environments, every Design and View **must belong to exactly one Workspace at all times.**
 
-动图：/images/assign-teams.gif
+When you create a new Design, it is automatically added to your current Workspace. Therefore, you don't "link" them in the same way you link an Environment; instead, you **move** them from one Workspace to another.
 
-### Assign Designs/Views/Environment to Workspaces Remove from Workspaces（主要是举动，和怎么做，关于具体的概念和限制，要查看另外的文档）
+#### How to Move a Design or View
 
-步骤和之前assign team类似，
+1. Click the **Designs/Views** tile on the Workspace card (or the equivalent icon in the table view) to open the management modal.
+2. Inside the modal, select the Design(s) or View(s).
+3. Use the arrow buttons to move the selected Design(s) or View(s) to the target workspace.
+4. Click **Save**.
 
-1.assign envirooment （https://docs.layer5.io/cloud/spaces/environments/）
-/images/assign-designs-views.gif
-Add new environment to workspace
-Remove environment from workspace
+![Animation showing design and view assignment process](/cloud/spaces/images/assign-designs-views.gif)
 
-2.由于规定，disgn/view比如属于一个workspace，所以design一旦被创建完毕就会出现在你的一个workspcae中，
-如果你想要assign你的design到别的worksapce
-design和view是必须存在于workspace里面的，所以创建的会默认到一个workspace里面
-Assign designs to workspaces
-Remove designs from workspaces
-/images/assign-designs-views.gif
+{{< alert type="info" title="Exclusive Ownership" >}}
+A Design or View can only exist in one Workspace at a time. Moving it to a new Workspace will automatically remove it from its original location. For more detailed information, see [Workspaces documentation](https://docs.layer5.io/cloud/spaces/workspaces/).
+{{< /alert >}}
 
-可以移动重新assign
+### View Recent Activity
 
-alert；关于assign xxxx 的限制，查看 https://docs.layer5.io/cloud/spaces/workspaces/
+Meshery keeps a detailed audit log for each workspace, allowing you to track all significant events. This is useful for maintaining security and troubleshooting issues.
 
-### audit of workspace - Recent Activity
+![Workspace audit log showing recent activity](/cloud/spaces/images/security-audit.png)
 
-什么样子的activity会被记录：创建/edit/assign/unassign xxx 所有和workspace有关的活动类型
-下面会显示最新的update日期和create日期
-/images/security-audit.png
+The activity log captures a variety of events, including:
+- The creation or deletion of the workspace.
+- Updates to the workspace's name or description.
+- The assignment or unassignment of Teams.
+- The linking or unlinking of Environments.
+- The movement of Designs or Views between workspaces.
 
-最后
-alert：想要了解全流程的从创建org到team到workspace的流程，查看：https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=using-workspaces-effectively
+At the bottom of the log, you will also find timestamps for when the workspace was initially created and when it was last updated.
+
+{{< alert type="info" title="Putting It All Together: A Hands-on Guide" >}}
+To see how managing a Workspace fits into a complete, end-to-end workflow, follow the [Using Workspaces Effectively](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=using-workspaces-effectively) learning path.
+{{< /alert >}}
 
 [^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
