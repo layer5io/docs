@@ -15,7 +15,7 @@ Every action described in this guide is governed by roles and permissions. To se
 
 ### View Workspaces
 
-The [Workspaces page](/cloud/spaces/workspaces) is where you can see all of the workspaces within the currently selected organization.
+The [Workspaces page](https://cloud.layer5.io/spaces/workspaces) is where you can see all of the workspaces within the currently selected organization.
 
 > To suit different workflows, you can switch between two distinct layouts: a visual [grid view](#grid-view) and a detailed [table view](#table-view).
 
