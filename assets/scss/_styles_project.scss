@@ -760,4 +760,19 @@ a:not([href]):not([class]):hover {
       box-shadow: none; // remove shadow from active to flatten it into content
     }
   }
+
+   .nav-link.disabled {
+    background: transparent;
+    border: none;
+    color: rgba($light, 0.5);
+    font-weight: 400;
+    cursor: default;
+    box-shadow: none;
+    pointer-events: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0.5rem;
+    margin-left: 0.25rem;
+    letter-spacing: 0.03em;
+  }
 }
