@@ -733,7 +733,7 @@ a:not([href]):not([class]):hover {
 
   .nav-link {
     color: $light;
-    background-color: transparent;
+    background-color: rgba($light, 0.3); // 🆕 consistent visible bg for inactive tabs
     border: 2px solid rgba($light, 0.15);
     border-radius: 0.5rem 0.5rem 0 0;
     margin: 2px;
@@ -743,9 +743,10 @@ a:not([href]):not([class]):hover {
     display: inline-block;
     transition: background-color 0.2s ease, color 0.2s ease;
     white-space: nowrap;
+    box-shadow: 0 0 4px rgba($dark, 0.05); // 🆕 soft shadow for depth
 
     &:hover {
-      background-color: rgba($light, 0.08);
+      background-color: rgba($light, 0.5);
       color: $white;
     }
 
@@ -756,6 +757,7 @@ a:not([href]):not([class]):hover {
       font-weight: 600;
       position: relative;
       z-index: 2;
+      box-shadow: none; // remove shadow from active to flatten it into content
     }
   }
 }
