@@ -7,17 +7,17 @@ categories: [Spaces]
 
 This guide walks you through the practical steps of managing your Workspaces. Here, you'll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.
 
-If you're new to the concept of Workspaces, we recommend starting with the [Workspaces Overview](https://docs.layer5.io/cloud/spaces/workspaces/) to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.
+If you're new to the concept of Workspaces, we recommend starting with the [Workspaces Overview](/cloud/spaces/workspaces/) to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.
 
 {{< alert type="info" title="A Note on Permissions" >}}
-Every action described in this guide is governed by roles and permissions. To see a detailed breakdown of what your assigned role allows you to do, please refer to the [Default Permissions](https://docs.layer5.io/cloud/reference/default-permissions/) documentation.
+Every action described in this guide is governed by roles and permissions. To see a detailed breakdown of what your assigned role allows you to do, please refer to the [Default Permissions](/cloud/reference/default-permissions/) documentation.
 {{< /alert >}}
 
 ### View Workspaces
 
-The [Workspaces page](https://cloud.layer5.io/spaces/workspaces) is where you can see all of the workspaces within the currently selected organization.
+The [Workspaces page](/cloud/spaces/workspaces) is where you can see all of the workspaces within the currently selected organization.
 
-To suit different workflows, you can switch between two distinct layouts: a visual grid view and a detailed table view.
+> To suit different workflows, you can switch between two distinct layouts: a visual [grid view](#grid-view) and a detailed [table view](#table-view).
 
 #### Grid View
 The grid view offers a card-based layout, perfect for quickly identifying workspaces at a glance. Each card displays essential information, and you can flip it to reveal management options like editing or deleting and get audit history.
@@ -44,7 +44,7 @@ Only users with the Workspace Admin or Organization Admin role can create new wo
 
 To create a workspace:
 
-1. Click the **+ Create** button to open the creation modal.
+1. Click the **+ Create** button to open the creation Dialog.
 2. From the dropdown menu, select the **Organization** that will own the new workspace. The chosen Organization **cannot be** changed after the workspace is created. Please select carefully.
 3. Enter a descriptive **Name** and an optional **Description**, then click **Save**.
 4. Your new workspace will now appear on the page.
@@ -81,6 +81,11 @@ Meshery requires at least one workspace to exist within an organization at all t
 {{< /alert >}}
 
 #### Workspace Deletion Behavior
+
+{{< alert type="warning" title="What Happens When a Workspace is Deleted?" >}}
+Deleting a Workspace will permanently delete the Workspace itself and its associated Designs and Views.
+{{< /alert >}}
+
 When a Workspace is deleted:
 
 - Deletion is **permanent and irreversible**. Proceed with caution.
@@ -88,21 +93,17 @@ When a Workspace is deleted:
 - If no transfer is made, all associated Designs and Views will be permanently deleted along with the Workspace[^1].
 - Any associated Teams or Environments will be detached from the Workspace but will remain available for reassignment.
 
-{{< alert type="warning" title="What Happens When a Workspace is Deleted?" >}}
-Deleting a Workspace will permanently remove the Workspace itself and its associated Designs and Views, unless they are transferred beforehand. Teams and Environments will remain intact but will no longer be associated with the deleted Workspace.
-{{< /alert >}}
-
 ### Assign Teams to a Workspace
 Assigning teams is the way you grant users access to a workspace. Once a team is assigned, its members can access all of the Designs, Views, and Environments linked to that workspace.
 
 ![Animation showing team assignment process](/cloud/spaces/images/assign-teams.gif)
 
-You can open the team management modal from either the grid or table view.
+You can open the team management Dialog from either the grid or table view.
 
 - **From the Grid View:** Click the **Teams** tile.
-- **From the Table View:** Click the **Teams icon** in the workspace row. A list of currently assigned teams will appear. From there, click the **Assign Team** button to open the assignment modal.
+- **From the Table View:** Click the **Teams icon** in the workspace row. A list of currently assigned teams will appear. From there, click the **Assign Team** button to open the assignment Dialog.
 
-Inside the assignment modal, you will see two lists: **Available Teams** on the left and **Assigned Teams** on the right.
+Inside the assignment Dialog, you will see two lists: **Available Teams** on the left and **Assigned Teams** on the right.
 
 1. Select one or more teams from either list.
 2. Use the arrow buttons to move the selected teams between the lists:
@@ -113,11 +114,11 @@ Inside the assignment modal, you will see two lists: **Available Teams** on the 
 3. Click **Save** to apply your changes.
 
 {{< alert type="info" title="Team and Workspace Relationships" >}}
-You can assign multiple teams to a single workspace, and a single team can also be a member of multiple workspaces. This provides flexible access control across your projects. For more restrictions, see [Workspaces documentation](https://docs.layer5.io/cloud/spaces/workspaces/).
+You can assign multiple teams to a single workspace, and a single team can also be a member of multiple workspaces. This provides flexible access control across your projects. For more restrictions, see [Workspaces documentation](/cloud/spaces/workspaces/).
 {{< /alert >}}
 
 ### Link Environments to a Workspace
-When you link an [Environment](https://docs.layer5.io/cloud/spaces/environments/) to a Workspace, you make all the connections (like those to Kubernetes clusters or databases) grouped within that Environment available. This means any team members with access to that Workspace can then deploy their applications or configurations to the resources.
+When you link an [Environment](/cloud/spaces/environments/) to a Workspace, you make all the connections (like those to Kubernetes clusters or databases) grouped within that Environment available. This means any team members with access to that Workspace can then deploy their applications or configurations to the resources.
 
 The process of linking environments is almost the same as assigning teams.
 ![Animation showing environment assignment process](/cloud/spaces/images/assign_environment.png)
@@ -134,15 +135,15 @@ When you create a new Design, it is automatically added to your current Workspac
 
 #### How to Move a Design or View
 
-1. Click the **Designs/Views** tile on the Workspace card (or the equivalent icon in the table view) to open the management modal.
-2. Inside the modal, select the Design(s) or View(s).
+1. Click the **Designs/Views** tile on the Workspace card (or the equivalent icon in the table view) to open the management Dialog.
+2. Inside the Dialog, select the Design(s) or View(s).
 3. Use the arrow buttons to move the selected Design(s) or View(s) to the target workspace.
 4. Click **Save**.
 
 ![Animation showing design and view assignment process](/cloud/spaces/images/assign-designs-views.gif)
 
 {{< alert type="info" title="Exclusive Ownership" >}}
-A Design or View can only exist in one Workspace at a time. Moving it to a new Workspace will automatically remove it from its original location. For more detailed information, see [Workspaces documentation](https://docs.layer5.io/cloud/spaces/workspaces/).
+A Design or View can only exist in one Workspace at a time. Moving it to a new Workspace will automatically remove it from its original location. For more detailed information, see [Workspaces documentation](/cloud/spaces/workspaces/).
 {{< /alert >}}
 
 ### View Recent Activity

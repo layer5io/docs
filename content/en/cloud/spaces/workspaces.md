@@ -79,3 +79,7 @@ To make the most of Meshery Workspaces, here are some best practices:
 - Regularly review and update your Workspace's resources and configurations.
 
 Meshery Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature in Meshery.
+
+{{< alert type="info" title="Looking for Practical Workspace Management?" >}}
+For a step-by-step guide on how to create, edit, and manage your workspaces, see the [Managing Workspaces](/cloud/spaces/managing-workspaces/) documentation.
+{{< /alert >}}
