@@ -82,7 +82,7 @@ Meshery requires at least one workspace to exist within an organization at all t
 
 #### Workspace Deletion Behavior
 
-{{< alert type="warning" title="What Happens When a Workspace is Deleted?" >}}
+{{< alert type="danger" title="What Happens When a Workspace is Deleted?" >}}
 Deleting a Workspace will permanently delete the Workspace itself and its associated Designs and Views.
 {{< /alert >}}
 
