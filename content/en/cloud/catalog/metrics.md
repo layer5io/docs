@@ -3,6 +3,8 @@ title: Metrics
 weight: 1
 description: >
    Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
+categories: [Catalog]
+tags: [Designer]
 ---
 
 Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.
@@ -30,7 +32,7 @@ This metric helps us understand how often users are viewing a particular design.
 ##### 2. Downloads
 Downloads provide insights into the popularity and demand for a design.
 
-##### 3. Deployments
+##### 3. Deploys
 This metric shows how often a design is implemented or put into action. 
 
 ##### 4. Clones
