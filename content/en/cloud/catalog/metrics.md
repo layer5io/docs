@@ -9,9 +9,9 @@ tags: [Designer]
 
 Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.
 
-The design catalog can be accessed from the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://cloud.layer5.io/catalog).
+The design catalog can be accessed from the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](/cloud/catalog).
 
-{{< alert title="Note" >}}
+{{< alert type="info" title="Design Capabilities" >}}
 
 Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about [Designs](/kanvas/getting-started/)
 

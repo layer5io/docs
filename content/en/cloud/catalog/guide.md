@@ -8,19 +8,19 @@ tags: [Designer]
 
 The [Meshery Catalog](https://cloud.layer5.io/catalog) serves as your central hub for well-architected cloud native patterns and best practices templates. Here, you can browse, discover, and share designs with the wider community.
 
-![](/images/catalog-view.gif)
+![Catalog main page view](/cloud/catalog/images/catalog-view.gif)
 
 ## Viewing Catalog Items
 
 The main catalog page displays all available designs in an organized, searchable format.
 
 ### Top Performers
-At the top of the Catalog page, you'll find the **Top Performers** section. Think of this as a snapshot of the full Leaderboard, highlighting the most popular designs based on various [metrics](https://docs.layer5.io/cloud/catalog/metrics/).
+At the top of the Catalog page, you'll find the **Top Performers** section. This provides a snapshot of the full Leaderboard, highlighting the most popular designs based on various [metrics](/cloud/catalog/metrics/).
 -   To see the complete rankings, click the **Open Leaderboard** button.
 -   You can toggle the visibility of this section using the **Hide Performers** / **Show Performers** button.
 
-{{< alert type="info" title="Learn More" >}}
-To learn more about Leaderboard, see the [Leaderboard documentation](https://docs.layer5.io/cloud/catalog/leaderboard/).
+{{< alert type="info" title="Learn More About Leaderboard" >}}
+To learn more about Leaderboard, see the [Leaderboard documentation](/cloud/catalog/leaderboard/).
 {{< /alert >}}
 
 ### Grid View
@@ -32,19 +32,19 @@ The grid view offers a visual, card-based layout that's ideal for browsing desig
 - **Metrics:** A row of icons at the bottom displays key usage statistics (Opens, Downloads, Deploys, Clones, Shares)
 - **Detailed Information (on hover):** When you hover over a card, it flips to reveal more details, including the author, design version, technologies used, and the last updated time
 
-![](/images/card-view.png)
+![Catalog card view with metrics](/cloud/catalog/images/card-view.png)
 
-{{< alert type="info" title="Learn More" >}}
-To better understand what these Metrics represent, you can learn more about [design metrics](https://docs.layer5.io/cloud/catalog/metrics/).
+{{< alert type="info" title="Understanding Design Metrics" >}}
+To better understand what these Metrics represent, you can learn more about [design metrics](/cloud/catalog/metrics/).
 {{< /alert >}}
 
 ### Table View
 
 Table view provides a dense, list-based format that's ideal for sorting and comparing items based on specific metrics. To customize the information displayed in this view, click the **View Columns icon** and select the attributes you want to see, such as Author, Created At, or Downloads.
 
-![](/images/design-view.gif)
+![Catalog table view](/cloud/catalog/images/design-view.gif)
 
-{{< alert type="info" title="Choose Your View" >}}
+{{< alert type="info" title="Choose Your Preferred View" >}}
 Both the grid and table views provide the same set of management capabilities, so you can pick the layout that best suits your task.
 {{< /alert >}}
 
@@ -66,7 +66,7 @@ The `Class` filter helps you find content based on its level of support and veri
   - **Community:** Content produced and shared by Meshery users. This includes a wide range of content with varying levels of support and reliability.
 
 #### Technology and Type
-These filters correspond to the metadata auther provide when they publish designs. They allow you to find items based on the technologies they use or the function they perform.
+These filters correspond to the metadata authors provide when they publish designs. They allow you to find items based on the technologies they use or the function they perform.
   - **Technology:** A list of technologies included in the design, like `Argo CD`, `AWS API Gateway`, or `Apache ShardingSphere`.
   - **Type:** The category of the design, such as `deployment`, `observability`, `resiliency`, or `traffic-management`.
 
@@ -106,7 +106,7 @@ When you clone a design:
 
 The **Download** button allows you to save the design to your local machine as a `Meshery Design (YAML)` file. This is useful for offline backups, version control with Git, or sharing the file directly.
 
-> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs](https://docs.layer5.io/kanvas/designer/export-designs/).
+> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs](/kanvas/designer/export-designs/).
 
 ### Edit
 
@@ -117,6 +117,8 @@ You can modify the following fields:
 - **Technology:** Add or remove associated technology tags
 - **Description:** Update the main purpose and intended uses of the design
 - **Caveats and Considerations:** Revise any special stipulations or known behaviors
+
+![Design edit modal](/cloud/catalog/images/design-edit.png)
 
 {{< alert type="warning" title="Immutable Properties" >}}
 Some properties of a published design are immutable and cannot be changed through the edit screen:
@@ -129,5 +131,5 @@ Some properties of a published design are immutable and cannot be changed throug
 If you no longer want a design to be publicly visible in the catalog, you can use the **Unpublish** button. This action removes the design from the public catalog but does not delete it. It will remain in your workspace as a private design.
 
 {{< alert type="info" title="Permissions Required" >}}
-Editing/Unpublish catalog items requires specific user roles and permissions. Learn more: [Default Permissions documentation](https://docs.layer5.io/cloud/reference/default-permissions/).
+Editing/Unpublish catalog items requires specific user roles and permissions. Learn more: [Default Permissions documentation](/cloud/reference/default-permissions/).
 {{< /alert >}}
