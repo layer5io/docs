@@ -22,7 +22,7 @@ You can view the metrics of a Design in two ways:
 ![Catalog card](/cloud/catalog/images/cards.png)
 
 2. By clicking on the catalog card, a modal will pop up displaying all the information about the Design, including its metrics.
-![Catalog modal](/cloud/catalog/images/modal.png)
+![Catalog modal](/cloud/catalog/images/design_model.png)
 
 Here’s a detailed explanation of each metric we track:
 

@@ -1,8 +1,7 @@
 ---
 title: Catalog Management
 weight: 3
-description: >
-A guide to managing items in the Meshery Catalog. Learn how to view, filter, edit, unpublish, delete, download, and clone your designs.
+description: "A guide to managing items in the Meshery Catalog. Learn how to view, filter, edit, unpublish, delete, download, and clone your designs."
 categories: [Catalog]
 tags: [Designer]
 ---
