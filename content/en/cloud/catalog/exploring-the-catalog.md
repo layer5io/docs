@@ -1,5 +1,5 @@
 ---
-title: Exploring the Catalog
+title: Exploring Meshery Catalog
 weight: 3
 description: "Discover how to browse, find, and interact with designs in the Catalog."
 categories: [Catalog]
@@ -50,7 +50,7 @@ To customize the information displayed in this view, click the **View Columns ic
 
 ## Filtering and Sorting Catalog Items
 
-The filter bar on the left helps you narrow down the catalog to find exactly what you need. You can sort the entire catalog or apply specific filters.
+The filter bar helps you narrow down the catalog to find exactly what you need. You can sort the entire catalog or apply specific filters.
 
 ### Sort By
 You can order all items in the catalog based on different criteria, such as alphabetically, by most recently updated, or by popularity metrics like most cloned or downloaded.
@@ -78,14 +78,14 @@ When you click on any design, you'll see its detail page. This page provides a c
 
 ### Metadata
 
-- **Class, Created By, and Dates:** See the design's class, its original author, and when it was created and last updated
-- **Version:** The design's version number. This increments automatically each time the design is updated
-- **Visibility:** The status of the design. For all items found in the public catalog, this will be **Published**
+- **Class, Created By, and Dates:** See the design's class, its original author, and when it was created and last updated.
+- **Version:** The design's version number. This increments automatically each time the design is updated.
+- **Visibility:** The status of the design. For all designs found in the public catalog, this will be **Published**.
 
 As you scroll down the page, you will find other useful sections:
 
-- **Caveats and Considerations:** Specific stipulations to consider and known behaviors to be aware of when using this design
-- **Similar Designs by Type:** At the bottom, other designs of the same type, helping you discover other relevant patterns
+- **Caveats and Considerations:** Specific stipulations to consider and known behaviors to be aware of when using this design.
+- **Similar Designs by Type:** At the bottom, other designs of the same type, helping you discover other relevant patterns.
 
 ## Available Actions
 
@@ -98,9 +98,9 @@ Clicking **Open in Playground** loads the design directly into [Kanvas](https://
 Cloning creates a personal, editable copy of the design in your own workspace. This is useful when you want to use an existing public design as a starting point for your own customizations.
 
 When you clone a design:
-- The new copy will appear in your **My Designs** tab
-- Its name will be appended with `(Copy)` to distinguish it from the original
-- The visibility of the cloned design is set to **Private** by default, so only you can see it until you decide to publish it
+- The new copy will appear in your **My Designs** tab.
+- Its name will be appended with `(Copy)` to distinguish it from the original.
+- The visibility of the cloned design is set to **Private** by default, so only you can see it until you decide to publish it.
 
 ### Download
 
@@ -115,15 +115,15 @@ After you've published a design, you might need to update its metadata or descri
 ![Design edit modal](/cloud/catalog/images/design-edit.png)
 
 You can modify the following fields:
-- **Type:** Change the design's category
-- **Technology:** Add or remove associated technology tags
-- **Description:** Update the main purpose and intended uses of the design
-- **Caveats and Considerations:** Revise any special stipulations or known behaviors
+- **Type:** Change the design's category.
+- **Technology:** Add or remove associated technology tags.
+- **Description:** Update the main purpose and intended uses of the design.
+- **Caveats and Considerations:** Revise any special stipulations or known behaviors.
 
 {{< alert type="warning" title="Immutable Properties" >}}
 Some properties of a published design are immutable and cannot be changed:
-- **Name:** The original name of the published design cannot be modified
-- **Visibility:** You cannot change a published design's visibility directly. To remove it from public view, you must **Unpublish** it instead
+- **Name:** The original name of the published design cannot be modified.
+- **Visibility:** You cannot change a published design's visibility directly. To remove it from public view, you must **Unpublish** it instead.
 {{< /alert >}}
 
 ### Unpublish
@@ -131,5 +131,5 @@ Some properties of a published design are immutable and cannot be changed:
 If you no longer want a design to be publicly visible in the catalog, you can use the **Unpublish** button. This action will remove the design from the public catalog but does not delete it. The design will remain as a private design in your account.
 
 {{< alert type="info" title="Permissions Required" >}}
-Editing/Unpublish catalog items requires specific user roles and permissions. Learn more: [Default Permissions documentation](/cloud/reference/default-permissions/).
+Editing/Unpublish published designs requires specific user roles and permissions. Learn more: [Default Permissions documentation](/cloud/reference/default-permissions/).
 {{< /alert >}}
