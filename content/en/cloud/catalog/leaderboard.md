@@ -26,7 +26,7 @@ You can reach the Leaderboard page in two ways:
 
 ### Using the Leaderboard Page
 
-The Leaderboard page offers several ways to explore and interact with the data:
+The Leaderboard page offers several ways to explore and interact with:
 
 - **Search for Designs:** Click the **Search** icon to quickly find specific designs by name.
 - **Sort by Different Metrics:** Click on column headers like `Opens`, `Clones`, or `Downloads` to reorder the list based on your preferred metric.

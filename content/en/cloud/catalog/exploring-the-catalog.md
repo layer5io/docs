@@ -1,18 +1,18 @@
 ---
 title: Exploring the Catalog
 weight: 3
-description: "A guide to managing items in the Meshery Catalog. Learn how to view, filter, edit, unpublish, delete, download, and clone your designs."
+description: "Discover how to browse, find, and interact with designs in the Catalog."
 categories: [Catalog]
 tags: [Designer]
 ---
 
-The [Meshery Catalog](https://cloud.layer5.io/catalog) is the central hub for well-architected cloud native patterns and best practices templates. Here, you can browse, discover, and share designs with the wider community.
+The [Meshery Catalog](https://cloud.layer5.io/catalog) is the central hub for well-architected cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.
 
 ![Catalog main page view](/cloud/catalog/images/catalog-view.gif)
 
 ## Viewing Catalog Items
 
-The Cloud Catalog displays all available designs in an organized, searchable format.
+The Meshery Catalog displays all available designs in an organized, searchable format.
 
 ### Top Performers
 
@@ -87,9 +87,7 @@ As you scroll down the page, you will find other useful sections:
 - **Caveats and Considerations:** Specific stipulations to consider and known behaviors to be aware of when using this design
 - **Similar Designs by Type:** At the bottom, other designs of the same type, helping you discover other relevant patterns
 
-## Actions
-
-You can perform various actions on each design in the catalog.
+## Available Actions
 
 ### Open in Playground
 
@@ -130,7 +128,7 @@ Some properties of a published design are immutable and cannot be changed:
 
 ### Unpublish
 
-If you no longer want a design to be publicly visible in the catalog, you can use the **Unpublish** button. This action removes the design from the public catalog but does not delete it. It will remain be your design as a private design.
+If you no longer want a design to be publicly visible in the catalog, you can use the **Unpublish** button. This action will remove the design from the public catalog but does not delete it. The design will remain as a private design in your account.
 
 {{< alert type="info" title="Permissions Required" >}}
 Editing/Unpublish catalog items requires specific user roles and permissions. Learn more: [Default Permissions documentation](/cloud/reference/default-permissions/).
