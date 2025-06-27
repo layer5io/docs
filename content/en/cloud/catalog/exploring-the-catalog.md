@@ -108,6 +108,10 @@ The **Download** button allows you to save the design as a `Meshery Design (YAML
 
 > For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs](/kanvas/designer/export-designs/).
 
+{{< alert type="warning" title="Metadata Not Included in Download" >}}
+Design downloads include only the core YAML definition, excluding associated catalog metadata such as descriptions, technology, or class.
+{{< /alert >}}
+
 ### Edit
 
 After you've published a design, you might need to update its metadata or description. Clicking the **Edit** button opens a dialog where you can make your changes.
