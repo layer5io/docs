@@ -20,7 +20,7 @@ Metrics are quantifiable measures used to track and assess the status, progress,
 You can reach the Leaderboard page in two ways:
 
 1. **Global Navigation Bar:** Click the Leaderboard icon in the main navigation bar for quick access.
-2. **From the Catalog Page:** While browsing the Catalog, look for the **Top Performers** section and click the "Open Leaderboard" button.
+2. **From the Catalog Page:** While Browse the Catalog, you can click the 'Open Leaderboard' button in the **Top Performers** section
 
 ![Leaderboard Button](/cloud/catalog/images/leaderboard_button.png)
 

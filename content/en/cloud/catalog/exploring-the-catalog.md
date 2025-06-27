@@ -1,22 +1,22 @@
 ---
-title: Exploring Meshery Catalog
+title: Exploring The Catalog
 weight: 3
-description: "Discover how to browse, find, and interact with designs in the Catalog."
+description: "Discover how to browse, find, and interact with designs in Meshery Catalog."
 categories: [Catalog]
 tags: [Designer]
 ---
 
-The [Meshery Catalog](https://cloud.layer5.io/catalog) is the central hub for well-architected cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.
+[Meshery Catalog](https://cloud.layer5.io/catalog) is the central hub for well-architected cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.
 
 ![Catalog main page view](/cloud/catalog/images/catalog-view.gif)
 
 ## Viewing Catalog Items
 
-The Meshery Catalog displays all available designs in an organized, searchable format.
+Meshery Catalog displays all published designs in an organized, searchable format.
 
 ### Top Performers
 
-At the top of the page, you can find the **Top Performers** section. This provides a snapshot of the full Leaderboard, highlighting the most popular designs based on various [metrics](/cloud/catalog/metrics/).
+At the top of the page, you can find the **Top Performers** section. This provides a snapshot of the **Leaderboard**, highlighting the most popular designs based on various [metrics](/cloud/catalog/metrics/).
 -   To see the complete rankings, click the **Open Leaderboard** button.
 -   You can toggle the visibility of this section using the **Hide Performers** / **Show Performers** button.
 
@@ -123,12 +123,12 @@ You can modify the following fields:
 {{< alert type="warning" title="Immutable Properties" >}}
 Some properties of a published design are immutable and cannot be changed:
 - **Name:** The original name of the published design cannot be modified.
-- **Visibility:** You cannot change a published design's visibility directly. To remove it from public view, you must **Unpublish** it instead.
+- **Visibility:** You cannot change a published design's visibility directly. To remove it from the catalog, you must **Unpublish** it instead.
 {{< /alert >}}
 
 ### Unpublish
 
-If you no longer want a design to be publicly visible in the catalog, you can use the **Unpublish** button. This action will remove the design from the public catalog but does not delete it. The design will remain as a private design in your account.
+If you no longer want a design to be published in the catalog, you can use the **Unpublish** button. This action will remove the design from  Meshery Catalog but does **not delete** it. The design will remain as a private design in your account.
 
 {{< alert type="info" title="Permissions Required" >}}
 Editing/Unpublish published designs requires specific user roles and permissions. Learn more: [Default Permissions documentation](/cloud/reference/default-permissions/).
