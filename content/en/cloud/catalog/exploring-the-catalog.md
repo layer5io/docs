@@ -1,7 +1,7 @@
 ---
-title: Exploring The Catalog
+title: Exploring the Catalog
 weight: 3
-description: "Discover how to browse, find, and interact with designs in Meshery Catalog."
+description: "Discover how to browse, find, and interact with designs in the Catalog."
 categories: [Catalog]
 tags: [Designer]
 ---
