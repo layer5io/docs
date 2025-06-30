@@ -76,7 +76,7 @@ When you click on any design, you'll see its detail page. This page provides a c
 
 ![Catalog modal](/cloud/catalog/images/design_model.png)
 
-### Metadata
+### Key Information
 
 - **Class, Created By, and Dates:** See the design's class, its original author, and when it was created and last updated.
 - **Version:** The design's version number. This increments automatically each time the design is updated.
@@ -98,7 +98,7 @@ Clicking **Open in Playground** loads the design directly into [Kanvas](https://
 Cloning creates a personal, editable copy of the design in your own workspace. This is useful when you want to use an existing public design as a starting point for your own customizations.
 
 When you clone a design:
-- The new copy will appear in your **My Designs** tab.
+- The new copy will appear in your **[My Designs](https://cloud.layer5.io/catalog/content/my-designs)** tab.
 - Its name will be appended with `(Copy)` to distinguish it from the original.
 - The visibility of the cloned design is set to **Private** by default, so only you can see it until you decide to publish it.
 
