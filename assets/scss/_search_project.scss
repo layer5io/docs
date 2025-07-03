@@ -169,3 +169,14 @@
 .form-control {
   border: 1px solid #ced4da;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1em;
+  width: 1em;
+  background: transparent;
+  color: #00B39F;
+  filter: invert(55%) sepia(75%) saturate(380%) hue-rotate(135deg) brightness(95%) contrast(90%);
+  cursor: pointer;
+}
