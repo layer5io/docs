@@ -41,12 +41,8 @@ The diagram below illustrates this setup, providing a visual representation of h
 1. Kubernetes Cluster connected to Meshery.
 
 
-{{ alert title="Available Clusters" }}
-
-If you are using a self-hosted Meshery deployment, connect to your Kubernetes cluster using this [Guide](https://docs.meshery.io/installation/kubernetes). Alternatively, Meshery Playground users can use the live pre-registered Kubernetes connection.
-
-  This tutorial uses a self-hosted Meshery deployment with a connected **Minikube** cluster.
-{{ /alert }}
+{{< alert title="Available Clusters" >}} If you are using a self-hosted Meshery deployment, connect to your Kubernetes cluster using this [Guide](https://docs.meshery.io/installation/kubernetes). Alternatively, Meshery Playground users can use the live pre-registered Kubernetes connection. This tutorial uses a self-hosted Meshery deployment with a connected **Minikube** cluster.
+{{< /alert >}}
 
 <h2 class="chapter-sub-heading">Learning Objectives</h2>
 
