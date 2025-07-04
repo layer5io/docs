@@ -1,0 +1,10 @@
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $align := .Get "align" | default "center" }}
+{{ $alt := .Get "alt" | default "" }}
+{{ $title := .Get "title" | default "" }}
+
+<div class="image-container" style="text-align: {{ $align }}; margin: 1rem 0;">
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" {{ with $title }}title="{{ . }}"{{ end }} style="width: {{ $width }}; max-width: 100%; height: auto; border-radius: 0.5rem; box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);" data-modal="true" onclick="openModal(this)" />
+  {{ with $title }}<p style="text-align: center; margin-top: 0.5rem;">{{ . }}</p>{{ end }}
+</div>
