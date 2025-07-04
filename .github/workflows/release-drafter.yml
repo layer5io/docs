@@ -5,6 +5,12 @@ on:
     # our release branch
     branches:
       - master
+    paths-ignore:
+      - '.github/**'
+      - 'archive/**'
+concurrency:
+  group: "release-drafter-workflow"
+  cancel-in-progress: true  # Only latest draft creation runs
 
 jobs:
   update_release_draft:
