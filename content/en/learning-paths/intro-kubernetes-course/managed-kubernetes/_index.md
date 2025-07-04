@@ -6,7 +6,7 @@ lectures: 4
 courseTitle: "Why Managed Kubernetes?"
 themeColor: "#00B39F"
 order: 3
-cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
+cardImage: ""
 toc:
   [
     "managed-kubernetes",

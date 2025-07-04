@@ -6,7 +6,7 @@ lectures: 2
 courseTitle: "Why Exoscale SKS?"
 themeColor: "#00B39F"
 order: 6
-cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
+cardImage: ""
 toc:
   [
     "scalable-kubernetes-service",

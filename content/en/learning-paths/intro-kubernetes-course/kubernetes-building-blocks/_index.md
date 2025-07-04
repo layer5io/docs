@@ -6,7 +6,7 @@ lectures: 4
 courseTitle: "Kubernetes Building Blocks"
 themeColor: "#00B39F"
 order: 3
-cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
+cardImage: ""
 toc:
   [
     "important-building-blocks",

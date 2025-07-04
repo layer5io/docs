@@ -6,7 +6,7 @@ lectures: 2
 courseTitle: "Why Kubernetes?"
 themeColor: "#00B39F"
 order: 2
-cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
+cardImage: ""
 toc:
   [
     "without-container-orchestration",

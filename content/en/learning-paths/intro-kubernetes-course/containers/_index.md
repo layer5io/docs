@@ -6,7 +6,7 @@ lectures: 4
 courseTitle: "Why Containers?"
 themeColor: "#00B39F"
 order: 1
-cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
+cardImage: ""
 toc:
   [
     "experience-we-want-to-change",
