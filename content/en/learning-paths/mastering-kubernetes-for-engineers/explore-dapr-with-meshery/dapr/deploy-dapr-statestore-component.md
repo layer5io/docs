@@ -4,7 +4,6 @@ id: "deploy-dapr-statestore-component.mdx"
 chapterTitle: "Deploy Dapr StateStore Component"
 description: 
 title: "Deploy Dapr StateStore Component"
-videos: 0
 lectures: 4
 weight: 4
 ---

@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "deploy-an-application"
 chapterTitle: "Deploy a sample application"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 weight: 2
 title: "Deploy a sample application"

@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "using-workspaces-effectively"
 chapterTitle: "Using Workspaces Effectively"
 description: "Learn how to effectively organize and utilize Workspaces in Meshery by setting up Organizations, Teams, and managing access for streamlined collaboration and deployment."
-videos: 0
 lectures: 4
 order: 1
 title: "Using Workspaces Effectively"

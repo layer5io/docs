@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "design-interpretation"
 chapterTitle: "Interpreting the Edge Stack Meshery Design"
 description: "This chapter explores the relationships between different components in the Ambassador Edge Stack (AES) system using a Kanvas design. It covers the roles and communication ports of each component, as well as the service account roles and relationships within the AES system."
-videos: 0
 lectures: 4
 title: "Interpreting the Edge Stack Meshery Design"
 weight: 3

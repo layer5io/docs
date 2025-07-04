@@ -2,7 +2,6 @@
 docType: "Course"
 title: "Introduction to Service Meshes"
 description: "Learn how to setup a service mesh and deploy an application using it."
-videos: 4
 lectures: 12
 courseTitle: "Introduction to Service Meshes"
 themeColor: "#00B39F"

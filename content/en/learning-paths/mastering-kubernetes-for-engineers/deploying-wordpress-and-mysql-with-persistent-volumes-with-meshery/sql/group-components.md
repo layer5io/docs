@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "group-components"
 chapterTitle: "Add labels and Group Components"
 description: "In this section you will add labels to components and learn how to group them."
-videos: 4
 lectures: 12
 title: "Group Components"
 weight: 4

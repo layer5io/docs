@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "deploy-redis"
 chapterTitle: "Deploy Redis"
 description: "This chapter covers the deployment of Redis Statestore"
-videos: 0
 lectures: 4
 weight: 3
 title: "Deploy Redis"

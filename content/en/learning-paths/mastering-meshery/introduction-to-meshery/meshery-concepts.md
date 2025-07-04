@@ -4,7 +4,6 @@ docType: "Chapter"
 id: "meshery-concepts"
 chapterTitle: "Meshery Concepts"
 description: "This chapter delves into the fundamental concepts of Meshery, explaining its purpose, and the architectural and logical components that form its foundation."
-videos: 0
 lectures: 4
 weight: 1
 title: "Meshery Concepts"

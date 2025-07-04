@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "view-application-logs"
 chapterTitle: "View Application Logs"
 description: "Use Meshery's interactive terminal to view logs of applications"
-videos: 0
 lectures: 4
 weight: 6
 title: "View Application Logs"

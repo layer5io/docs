@@ -2,7 +2,6 @@
 docType: "Chapter"
 chapterTitle: "Circuit Breaking"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 title: "Circuit Breaking"
 weight: 8

@@ -2,7 +2,6 @@
 docType: "Chapter"
 chapterTitle: "Request Routing and Canary Testing"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 weight: 5
 title: "Request Routing and Canary Testing"

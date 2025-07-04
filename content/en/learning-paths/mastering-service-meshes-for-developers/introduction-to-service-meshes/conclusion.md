@@ -3,7 +3,6 @@ docType: "Chapter"
 chapterTitle: "Conclusion"
 title: "Conclusion"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 weight: 9
 ---

@@ -2,7 +2,6 @@
 docType: "Chapter"
 chapterTitle: "Observability"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 title: "Observability"
 weight: 4

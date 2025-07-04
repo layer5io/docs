@@ -2,7 +2,6 @@
 docType: "Course"
 title: "Explore Dapr with Meshery"
 description: "Learn how Dapr works by deploying Dapr and sample applications in a Kubernetes Cluster using Meshery"
-videos: 0
 lectures: 4
 courseTitle: "Explore Dapr with Meshery"
 themeColor: "#00B39F"

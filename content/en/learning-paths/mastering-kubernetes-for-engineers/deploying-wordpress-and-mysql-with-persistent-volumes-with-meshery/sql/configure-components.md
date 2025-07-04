@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "configure-components"
 chapterTitle: "Create and Configure Kubernetes Components"
 description: "In this section you will create and configure Persistent Volumes, Persistent Volume Claims and a Secret for the Database."
-videos: 4
 lectures: 12
 weight: 3
 title: "Configure Components"

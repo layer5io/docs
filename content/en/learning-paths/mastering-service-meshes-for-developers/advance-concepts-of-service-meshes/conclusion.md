@@ -4,7 +4,6 @@ docType: "Chapter"
 chapterTitle: "Conclusion"
 title: "Conclusion"
 description: "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud native infrastructure."
-videos: 4
 lectures: 12
 weight: 8
 id: "conclusion"

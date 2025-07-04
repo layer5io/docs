@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "deploy"
 chapterTitle: "Validate and Deploy Resources"
 description: "In this section you will validate your design and deploy the resources to a Kubernetes cluster"
-videos: 4
 lectures: 12
 weight: 5
 title: "Deploy Resources"

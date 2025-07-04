@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "interpreting-meshery-designs"
 chapterTitle: "Interpreting Meshery Designs"
 description: "This chapter delves into the process of understanding the visually expressive language of Meshery designs."
-videos: 0
 lectures: 4
 weight: 5
 title: "Interpreting Meshery Designs"

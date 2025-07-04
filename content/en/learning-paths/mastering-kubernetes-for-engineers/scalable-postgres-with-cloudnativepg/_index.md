@@ -2,7 +2,6 @@
 docType: "Course"
 title: "Scalable Postgres with CloudNativePG"
 description: "Learn how to Install a Scalable PostgreSQL Distribution on Kubernetes with Cloud Native PostgreSQL"
-videos: 4
 lectures: 7
 courseTitle: "Scalable Postgres with CloudNativePG"
 themeColor: "#00B39F"

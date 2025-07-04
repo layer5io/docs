@@ -6,7 +6,6 @@ description: "A course which teaches advanced concepts of service meshes."
 courseTitle: "Advance Concepts of Service Meshes"
 themeColor: "#466BB0"
 weight: 2
-videos: 3
 lectures: 8
 cardImage: "/learning-paths/images/service-mesh-icons/istio-white.svg"
 meshesYouLearn:

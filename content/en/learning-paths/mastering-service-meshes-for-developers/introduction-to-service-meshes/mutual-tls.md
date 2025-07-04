@@ -2,7 +2,6 @@
 docType: "Chapter"
 chapterTitle: "Mutual TLS & Identity Verification"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 title: "Mutual TLS & Identity Verification"
 lectures: 12
 weight: 7

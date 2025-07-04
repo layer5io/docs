@@ -2,7 +2,6 @@
 docType: "Course"
 title: "Deploying WordPress and MySQL with Persistent Volumes with Meshery"
 description: "Learn how to deploy WordPress and MySQL with persistent volumes with Meshery Playground"
-videos: 4
 lectures: 7
 courseTitle: "Deploying WordPress and MySql with Persistent Volumes with Meshery"
 themeColor: "#00B39F"

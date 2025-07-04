@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "visualize"
 chapterTitle: "Visualize Deployed Resources"
 description: "In this section you will use the Visualize tool to see the resources in the cluster"
-videos: 4
 lectures: 12
 title: "Visualize Resources"
 weight: 6

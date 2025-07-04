@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "import-designs"
 chapterTitle: "Import Design Files and Merge"
 description: "Here we will import the design files in Meshery Playground and learn how to merge designs."
-videos: 4
 lectures: 12
 title: "Import Designs"
 weight: 2

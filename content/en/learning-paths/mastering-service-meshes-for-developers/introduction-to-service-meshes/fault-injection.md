@@ -3,7 +3,6 @@ docType: "Chapter"
 chapterTitle: "Fault Injection"
 title: "Fault Injection"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 weight: 6
 ---

@@ -2,7 +2,6 @@
 docType: "Chapter"
 chapterTitle: "Exposing services through Istio Ingress Gateway"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 weight: 3
 title: "Expose services through Istio Ingress Gateway"

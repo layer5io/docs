@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "getting-started"
 chapterTitle: "Getting Started"
 description: "Meshery, collaborative Kubernetes manager"
-videos: 4
 lectures: 12
 weight: 1
 title: "Getting Started with Istio"

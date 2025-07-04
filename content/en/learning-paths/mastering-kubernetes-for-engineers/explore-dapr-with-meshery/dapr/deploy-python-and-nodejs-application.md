@@ -4,7 +4,6 @@ id: "deploy-python-and-nodejs-application.mdx"
 chapterTitle: "Deploy Python and NodeJS application"
 description: 
 title: "Deploy Python and NodeJS application"
-videos: 0
 lectures: 4
 weight: 5
 ---

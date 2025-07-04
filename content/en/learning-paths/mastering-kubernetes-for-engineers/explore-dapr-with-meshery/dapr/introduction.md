@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "introduction"
 chapterTitle: "Understanding How Dapr Works in a Kubernetes Cluster: A Visual Guide with Meshery"
 description: "Learn how Dapr works by deploying Dapr and sample applications in a Kubernetes Cluster using Meshery."
-videos: 0
 lectures: 4
 title: "Introduction"
 weight: 1

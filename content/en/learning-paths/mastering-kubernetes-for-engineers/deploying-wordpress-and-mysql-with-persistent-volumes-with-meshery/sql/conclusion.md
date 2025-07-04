@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "conclusion"
 chapterTitle: "Conclusion"
 description: ""
-videos: 4
 lectures: 12
 weight: 7
 title: "Conclusion"

@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "deploying-meshery-designs"
 chapterTitle: "Deploying Meshery Designs"
 description: "This chapter covers the steps for deploying Meshery Designs, including validation, dry-run, environment selection, and deployment. It explains how to carry out these actions, addresses possible errors, and provides remediation strategies. Additionally, it covers how to use the Notification Center for troubleshooting errors and viewing the deployment status."
-videos: 0
 lectures: 4
 weight: 2
 title: "Deploying Meshery Designs"

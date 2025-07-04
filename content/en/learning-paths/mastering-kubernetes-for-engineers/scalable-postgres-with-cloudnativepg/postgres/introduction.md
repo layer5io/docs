@@ -3,7 +3,6 @@ docType: "Chapter"
 id: "introduction"
 chapterTitle: "Introduction"
 description: ""
-videos: 4
 lectures: 12
 title: "Introduction"
 weight: 1
