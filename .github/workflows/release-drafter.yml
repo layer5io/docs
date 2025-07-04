@@ -5,6 +5,9 @@ on:
     # our release branch
     branches:
       - master
+    paths-ignore:
+      - '.github/**'
+      - 'archive/**'
 
 jobs:
   update_release_draft:
