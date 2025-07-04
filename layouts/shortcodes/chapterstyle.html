@@ -1,0 +1,4 @@
+{{ $style := .Get "style" | default "" }}
+<div class="chapter-content"{{ with $style }} style="{{ . }}"{{ end }}>
+{{ .Inner | markdownify }}
+</div>
