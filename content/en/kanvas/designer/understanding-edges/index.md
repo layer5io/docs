@@ -105,8 +105,3 @@ The "Marching-ants" animation effect can be added to any edge to:
 {{< alert title="Learn More About Interpreting Designs" type="info" >}}
 To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the [Layer5 Academy](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs).
 {{< /alert >}}
-
-
-{{< alert type="info" title="Learn More About Interpreting Designs"  >}}
-To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the [Layer5 Academy](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs).
-{{< /alert >}}
