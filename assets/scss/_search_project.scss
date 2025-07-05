@@ -95,6 +95,8 @@
     .td-search__icon {
       display: flex;
       color: $input-placeholder-color;
+      background-color: var(--bs-body-bg);
+      padding-right: 0.2rem;      
     }
   }
 }
