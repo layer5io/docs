@@ -24,4 +24,6 @@ To say that <strong>Kubernetes is the leading container orchestration platform</
 <strong> The learning curve is both steep and long.</strong>
 </p>
 
+{{<meshery-design-embed src="/images/learning-path/intro-kubernetes/embed-designs/embedded-design-exoscale-design.js" id="embedded-design-a9022be8-42d1-47ad-b434-a42d2e6a2125">}}
+
 {{< /chapterstyle >}}
