@@ -1,4 +1,4 @@
----
+<!-- ---
 title: xxx Component Badges
 description: >
 Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
@@ -6,6 +6,8 @@ weight: 3
 categories: [Designer]
 tags: [designs]
 ---
+
+(understand 感觉用的太多了，有别的吗)
 
 Ever wondered what those little icons in the corners of your components are? Think of them as your component's real-time status display. These indicators, called **badges**, give you at-a-glance information about everything from configuration errors to live performance.
 
@@ -105,4 +107,4 @@ best pracitse：
 
 
 
-
+ -->
