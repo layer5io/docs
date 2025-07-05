@@ -74,3 +74,52 @@ tags: [orgs, roles]
 
 {{% /card %}}
 {{< /cardpane >}}
+
+
+
+## Additional Role Behaviors and Management
+
+### What happens if the Users role is removed?
+
+If a user’s user role is removed from an organization, they lose access to:
+- organizations dashhboards and data
+- Any features restricted to authenticated org members
+- Workspace collaboration for that org
+
+The user will still exist on the platform, but will appear unassigned for that organization.
+
+
+### Role Assignments Across Multiple Organizations
+
+Roles are organizations-specific in Layer5 Cloud. This means:
+- A user can have different roles in different orgs (e.g.,admin in one,viewer in another)
+- Changes to roles in Org A have no impact on Org B
+
+### Assigning Keychains to Roles
+
+To securely enable access for automations:
+1. Navigate to Security → Keychains
+2. Choose a keychain from the list
+3. Use the asssign role dropdown to select which roles can use it
+
+This lets roles use tokens or credentials for deployments or API usage.
+
+
+### Creating Custom Roles
+
+Admins can define new roles tailored to their team’s needs:
+- Go to Organization Settings → Roles
+- Click create role
+- Select desired permissions from a checklist
+- Save and assign to users
+Custom roles allow more control than the default Admin/Billing Manager.
+
+### Updating, Deleting, and Exporting Roles ,
+
+-Update: Open a role, edit permissions, and save.
+- Delete: Available only for custom roles not currently in use.
+- Export: Download your role definitions (JSON/YAML) for backup or import.
+
+
+
+
