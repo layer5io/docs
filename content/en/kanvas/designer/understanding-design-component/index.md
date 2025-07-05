@@ -119,9 +119,7 @@ A single semantic component will be visually represented differently depending o
 
 1. **Deployment component with its distinctive shape and badge:**
 
-<a href=".images/deployment-shape.png">
-    <img src="images/deployment-shape.png" style="width:30%; height:auto;" alt="Deployment Component Shape">
-</a>
+<img src="./images/deployment-shape.png" alt="Deployment Component Shape" style="width:30%; height:auto;" />
 
 2. **Deployment icon as it appears in a component selection panel:**
 
