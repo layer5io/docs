@@ -255,7 +255,10 @@ To make your reviews more structured, Kanvas offers a number of tools inside the
 
 #### Use Color-Coded Comments
 
-Use color to visually categorize your comments:
+<figure>
+  <img src="./comments-color.png" alt="Categorize Comments" />
+  <figcaption>Use color to visually categorize your comments</figcaption>
+</figure>
 
 - 🔴 **Security** concerns
 - 🔵 **Scalability** or performance-related notes
@@ -268,6 +271,14 @@ This makes it easy for team members to scan and prioritize feedback based on typ
 
 Link your comment to a specific part of the design using **annotation arrows**. This reduces ambiguity and ensures the context of your comment is crystal clear.
 
+Follow the steps about how to annotate the comment:
+
+<figure>
+<img src="./kanvas-annotations.gif" alt="use of annotation arrows" />
+  <figcaption>Annotating a comment</figcaption>
+</figure>
+
+
 #### Lock Important Comments
 
 Lock comments in place to keep them visible even as you continue working. This is helpful for feedback that should remain persistent throughout the review cycle.
@@ -275,6 +286,11 @@ Lock comments in place to keep them visible even as you continue working. This i
 #### Group Related Comments
 
 Bundle multiple related comments using the **Group** feature. This keeps threads organized and easier to track, especially for complex designs with many parts.
+
+<figure>
+<img src="./comments-grouped.png" alt="Grouping of Comments" />
+  <figcaption>Two related comments Grouped</figcaption>
+</figure>
 
 ### Resolving vs deleting comments
 
