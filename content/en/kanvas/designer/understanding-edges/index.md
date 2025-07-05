@@ -110,11 +110,3 @@ To learn how to interpret and understand designs in practice, including how comp
 {{< alert type="info" title="Learn More About Interpreting Designs"  >}}
 To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the [Layer5 Academy](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs).
 {{< /alert >}}
-
-{{< alert type="note" title="Component Shape Guide" >}}
-To learn more about the usage of shapes and why specific shapes were chosen for Kubernetes resources, see the [Component Shape Guide](https://docs.meshery.io/extensions/component-shape-guide).
-{{< /alert >}}
-
-{{< alert type="note" title="Kubernetes Components Categories" >}}
-These categories also serve as a guide for users customizing Kubernetes components. By using these established shapes and icons as a reference, you can ensure that your customizations maintain semantic meaning and align with the existing representations, helping to preserve clarity and consistency in your designs.
-{{< /alert >}}
