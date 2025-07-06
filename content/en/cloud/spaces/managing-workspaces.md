@@ -167,8 +167,6 @@ To see how managing a Workspace fits into a complete, end-to-end workflow, follo
 
 [^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
 
-Of course. Here is the Q\&A section formatted in Markdown, based on the answers derived from your notes. You can insert this into your page.
-
 ### FAQ
 
 #### When a design is transferred from one Workspace to the next, is design ownership affected? Who has access? What if the Workspaces are in different orgs?
