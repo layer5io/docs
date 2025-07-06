@@ -283,12 +283,18 @@ Follow the steps about how to annotate the comment:
 
 Lock comments in place to keep them visible even as you continue working. This is helpful for feedback that should remain persistent throughout the review cycle.
 
+Example on how to lock your comment:
+<figure>
+<img src="./locking-comment.gif" alt="Lock the comment" />
+  <figcaption>Locking comments </figcaption>
+</figure>
+
 #### Group Related Comments
 
 Bundle multiple related comments using the **Group** feature. This keeps threads organized and easier to track, especially for complex designs with many parts.
 
 <figure>
-<img src="./comments-grouped.png" alt="Grouping of Comments" />
+<img src="./grouping -comments.gif" alt="Grouping of Comments" />
   <figcaption>Two related comments Grouped</figcaption>
 </figure>
 
