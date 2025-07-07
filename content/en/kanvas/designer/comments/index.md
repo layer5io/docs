@@ -260,6 +260,7 @@ To make your reviews more structured, Kanvas offers a number of tools inside the
   <figcaption>Use color to visually categorize your comments</figcaption>
 </figure>
 
+You can use color to visually categorize your comments. Here are some common examples:
 - 🔴 **Security** concerns
 - 🔵 **Scalability** or performance-related notes
 - 🟢 **UI/UX** feedback
