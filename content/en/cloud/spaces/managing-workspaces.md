@@ -165,51 +165,58 @@ At the bottom of the log, you will also find timestamps for when the workspace w
 To see how managing a Workspace fits into a complete, end-to-end workflow, follow the [Using Workspaces Effectively](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=using-workspaces-effectively) learning path.
 {{< /alert >}}
 
-[^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
-
 ### FAQ
 
-#### When a design is transferred from one Workspace to the next, is design ownership affected? Who has access? What if the Workspaces are in different orgs?
+#### 1. When a design is transferred from one Workspace to the next, is design ownership affected? Who has access? What if the Workspaces are in different orgs?
 
-  - **Ownership**: When a Design is transferred within the same Organization, its ownership does not change; it still belongs to the user account that created it.
+  - **Ownership**: A Design’s ownership is permanent. It always belongs to the user account that created it.
   - **Access**: Access to the Design is determined by the Teams assigned to its new Workspace.
   - **Cross-Organization Transfers**: You can move a Design you own into a Workspace in a different Organization, provided you have the necessary permissions in the target Organization. 
 
 > A key restriction is that a user, even with a [Workspace Admin](/cloud/security/roles/workspace-roles/) role, cannot manage a Design they **do not own**. This action requires [Organization Admin](/cloud/security/roles/organization-roles/) or Organization Owner permissions.
 
-#### What can other users of a Workspace do with my design? Can they delete my design?
+#### 2. What can other users of a Workspace do with my design? Can they delete my design?
 
 Other members of a Workspace can view and edit your Design, but they **cannot delete it**. The permission to delete a Design is exclusive to its **Owner**.
 
-#### Can Workspaces contain private, public, and published designs?
+#### 3. Can Workspaces contain private, public, and published designs?
 
 Yes. A Workspace can simultaneously contain Designs that are private, public, and published.
 
-#### How will I know if another user made changes to my design? Will I be notified? Is there an edit history or audit trail?
+#### 4. How will I know if another user made changes to my design? Will I be notified? Is there an edit history or audit trail?
 
 Currently, it is **not possible** to receive direct notifications or see a collaborative audit trail of changes made by other users. While a Version History feature exists for Designs, it currently only tracks changes made by you, not changes from other collaborators.
 
-#### What are the best practices for organizing my workspaces?
+#### 5. What are the best practices for organizing my workspaces?
 
 The most effective practice is to adopt a hybrid, three-tiered strategy to leverage the full potential of both Workspaces and the public Catalog:
 
-1.  **Organize by Project as the Core**: Use project-specific Workspaces as the primary model for daily collaboration. Centralize all relevant teams, environments, and designs/Views for a given project in one place to streamline teamwork.
+1.  **Organize by Project as the Core**: Use project-specific Workspaces as the primary model for daily collaboration. Centralize all relevant teams, environments, Designs and Views for a given project in one place to streamline teamwork.
 2.  **Use Private Workspaces for Individuals**: Encourage each engineer to have their own private Workspace as a personal "sandbox". This allows for free experimentation and development. Once a Design is mature, it can be moved to a shared project Workspace.
 3.  **Establish an Internal Template Library Workspace**: Create a separate, access-controlled Workspace to serve as your organization's internal, private template library. This is for storing non-public, organization-specific, or sensitive patterns. This practice complements the [public Catalog](/cloud/catalog/exploring-the-catalog/), which is used for sharing generic, non-sensitive designs with the community.
 
-#### If I share my private design with a user in a different org, can they share my design with other users?
+#### 6. If I share my private design with a user in a different org, can they share my design with other users?
 
 No. A user with whom you share a private Design cannot re-share it with others.
 
 > [learn more about sharing designs](/kanvas/designer/sharing/).
 
-#### My design is public and other users can edit my design. Is there a way to have my design publicly available, but read-only to other users?
-
-Yes, there are two primary ways to control access, depending on your intended audience:
-
-1.  **For a broad, public audience (Read-only):** To make a Design available to everyone but in a read-only state, you should **[Publish](/kanvas/designer/publishing-designs/)** it. A Published design can be viewed and cloned by any user, but the original cannot be edited by others. This is distinct from setting visibility to Public, which grants edit permissions to all users.
-2. **For a specific group of people:** First, ensure your Design's visibility is set to **Private**. This prevents anyone from accessing it by default. Then, by placing the private Design in a **Workspace** and assigning a specific **Team** to it, you grant access exclusively to the members of that Team.
-
-#### Does a workspace have space limitations or file count limitations?
+#### 7. Does a workspace have space limitations or file count limitations?
 
 Currently, there are no specific space or file count limitations for Workspaces. However, this may be subject to change in the future and could be tied to different [subscription plans](https://layer5.io/pricing).
+
+#### 8. How can I make my design publicly available, but read-only to other users?
+
+To make a Design available to everyone but in a read-only state, you should **[Publish](/kanvas/designer/publishing-designs/)** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
+
+#### 9. How do I share a private design with a specific team for collaboration?
+
+To share a design exclusively with a select group:
+
+1.  First, ensure your Design's visibility is set to **Private**. This prevents anyone from accessing it by default.
+2.  Next, place the private Design into a **Workspace**.
+3.  Finally, assign a specific **Team** to that Workspace.
+
+This grants members of the assigned Team exclusive access and the permission to edit the design.
+
+[^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
