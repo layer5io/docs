@@ -24,8 +24,8 @@ While the specific badges change depending on your mode, they all follow a consi
 - **Contextual Actions (Top-Right)**
   This corner provides helpful, non-critical actions or shortcuts, such as a link to relevant documentation.
 
-- **Composition and Contents (Bottom-Right)**
-  This quadrant details what a component is made of or what it is currently managing, answering the question, "What's inside?".
+- **Management and Control (Bottom-Right)**
+  This quadrant is for hands-on management, providing tools to either control a component's internal composition or interact directly with its live instance.
 
 - **The "Problem Corner" (Bottom-Left)**
   This is your go-to spot for all status checks and issue reporting. If something needs attention, you'll find it here.
@@ -80,11 +80,11 @@ Reports the real-time health, performance, and policy compliance status of the r
 
 - For example, a yellow icon indicating a performance warning, or a red icon for a critical policy violation.
 
-#### Live Inventory / Status
+#### Terminal
 
-Shows the real-time count and ready-state of the resources managed by this component. Can also show other statuses like an active terminal session.
+Provides direct, interactive shell access to the component's runtime, specifically for containers.
 
-- For example, a badge on a Deployment showing Pods: 3/3, indicating all desired replicas are running and ready.
+- For example, a terminal icon appears on a running Pod, which, when clicked, opens a live command-line shell to that container.
 
 ### Best Practices
 
