@@ -1,7 +1,7 @@
 ---
 title: "Design Review Mechanics"
 description: >
-   Kanvas’s Designer offers enables you to place comments “inline” with your infrastructure as code. 
+   Kanvas’s Designer enables you to place comments “inline” with your infrastructure as code. 
 videoId : "LaG3AykTx0M"
 videoType: youtube  # or "local"
 muted: true  # optional

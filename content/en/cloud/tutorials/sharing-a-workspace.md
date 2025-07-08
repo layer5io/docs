@@ -31,7 +31,7 @@ Tip: When you update permissions for a design you share from a workspace and the
 - Only the design itself
 
 
-### Share & collaborate on a design with many people
+### Share and collaborate on a design with many people
 
 **Important:**
 
@@ -85,7 +85,7 @@ If you want to stop sharing a design you can edit, you can learn how to:
 - Restrict link sharing for a design.
 - Prevent others from sharing designs you own.
 
-### "Anonymous users"
+### Anonymous users
 
 If you share or open a design with a link, you may not see the names of people who view it.
 

@@ -37,7 +37,7 @@
 ✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
 </p>
 </div>
-Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
+Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products.
 
 If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
