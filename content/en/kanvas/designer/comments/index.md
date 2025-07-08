@@ -260,7 +260,6 @@ You can use color to visually categorize your comments. Here is one common examp
   <figcaption>Use color to visually categorize your comments</figcaption>
 </figure>
 
-
 - 🔴 **Security** concerns
 - 🔵 **Scalability** or performance-related notes
 - 🟢 **UI/UX** feedback
