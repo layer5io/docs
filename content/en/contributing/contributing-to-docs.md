@@ -500,5 +500,22 @@ This is the final element on the page and there should be no margin below this.
 ### Footnotes
 
 This is a superscript number for your footnote. [^1]
-
 [^1]: This is a footnote.
+
+---
+
+### TabPane Shortcode Example
+
+Layer5 docs support tabbed content using the `tabpane` shortcode. Here’s a basic example:
+
+{{< tabpane >}}
+  {{< tab name="Example Tab 1" >}}
+  This is the content inside Tab 1.
+  {{< /tab >}}
+
+  {{< tab name="Example Tab 2" >}}
+  This is the content inside Tab 2.
+  {{< /tab >}}
+{{< /tabpane >}}
+
+Use this shortcode to display platform-specific commands, language-specific code blocks, or comparisons — all in an elegant, user-friendly tab layout.
