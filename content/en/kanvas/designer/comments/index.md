@@ -35,7 +35,7 @@ You can add comments in a number of convenient ways. Since designs are public by
 
 ### Commenting via context-click
 
-Context-click on any area of your design, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - *in context*.
+Context-click on any area of your design, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - _in context_.
 
 <figure>
 <img src="./comment-canvas.png" alt="Comment by context-clicking on your design" />
@@ -66,7 +66,7 @@ Easily draw the attention of relevant team members by tagging them in your comme
 ### Comment on Specific Elements
 
 Leave comments on specific elements within the design, whether it's a shape, text, or an entire component. This specificity ensures that feedback is targeted and directly related to the part of the design under discussion.
-  
+
 ### Resolving a Comment
 
 Resolving a comment thread indicates that the conversation on that topic has concluded. When a comment is resolved, the comment component is removed from view on the canvas.
@@ -147,8 +147,8 @@ Kanvas auto-generates comment names, useful for quick feedback. When duplicating
 - **Timestamp**: The original creation time is preserved.
 - **Threads**: All replies in the original thread are included.
 - **Name**: If the comment has a name, the clone keeps the same name.
-- **Placement**:  
-  - **Duplicate**: Instantly places the comment in the same design.  
+- **Placement**:
+  - **Duplicate**: Instantly places the comment in the same design.
   - **Copy**: Allows you to paste the comment manually into the same or a different design.
 - **Notifications**: Neither duplicating nor copying sends a creation notification to the design owner or participants. However, replies to the cloned comment will notify participants unless they’ve muted the thread.
 - **Independence**: The clone is separate—editing or deleting the original does not affect the copy.
@@ -181,7 +181,7 @@ Give long-lived comments short, descriptive names like `"Needs Load Balancer"` o
 so you can quickly find them in the Layers panel later on.
 {{< /alert >}}
 
-### Reopen a Resolved Comment	
+### Reopen a Resolved Comment
 
 If a comment is resolved by mistake, it can be reopened. Adding a new comment to a resolved discussion will also re-open the thread. Reopening a comment allows you to reinitiate conversations, address additional concerns, or make further changes.
 
@@ -241,13 +241,62 @@ You can also manage all your comment notification settings centrally through the
 
 - While email alerts are muted, you can still access and view all comments on the design at any time.
 - You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
-{{< /alert >}}
+  {{< /alert >}}
 
 {{< alert type="info" title="Missed Notifcations">}}
 Kanvas does not track the read or unread status of messages inside comment threads for each user. If a user is mentioned, but misses the notification, they might not become aware of the comment until they receive a new notification for another comment in that conversation.
 {{< /alert >}}
 
 ## Best Practices for Effective Design Reviews
+
+### Use Color-Coded Comments
+
+To make your reviews more structured, Kanvas offers a number of tools inside the comment system itself. Use them to streamline collaboration and clarify your feedback.
+You can use color to visually categorize your comments. Here is one common example:
+
+
+<figure>
+  <img src="./comments-color.png" alt="Categorize Comments" />
+  <figcaption>Use color to visually categorize your comments</figcaption>
+</figure>
+
+- 🔴 **Security** concerns
+- 🔵 **Scalability** or performance-related notes
+- 🟢 **UI/UX** feedback
+- 🟡 **Open questions** or suggestions
+
+This makes it easy for team members to scan and prioritize feedback based on type.
+
+### Use Annotation Arrows 
+
+Link your comment to a specific part of the design using **annotation arrows**. This reduces ambiguity and ensures the context of your comment is crystal clear.
+
+Follow the steps about how to annotate the comment:
+
+<figure>
+<img src="./kanvas-annotations.gif" alt="use of annotation arrows" />
+  <figcaption>Annotating a comment</figcaption>
+</figure>
+
+
+### Lock Important Comments
+
+Lock comments in place to keep them visible even as you continue working. This is helpful for feedback that should remain persistent throughout the review cycle.
+
+Example on how to lock your comment:
+<figure>
+<img src="./locking-comment.gif" alt="Lock the comment" />
+  <figcaption>Locking comments </figcaption>
+</figure>
+
+### Group Related Comments
+
+Bundle multiple related comments using the **Group** feature. This keeps threads organized and easier to track, especially for complex designs with many parts.
+
+<figure>
+<img src="./grouping -comments.gif" alt="Grouping of Comments" />
+  <figcaption>Two related comments Grouped</figcaption>
+</figure>
 
 ### Resolving vs deleting comments
 

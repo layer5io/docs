@@ -165,4 +165,75 @@ At the bottom of the log, you will also find timestamps for when the workspace w
 To see how managing a Workspace fits into a complete, end-to-end workflow, follow the [Using Workspaces Effectively](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=using-workspaces-effectively) learning path.
 {{< /alert >}}
 
+### Common Workspace Usage Patterns
+
+There isn't a single "best" way to organize your workspaces, as structure depends heavily on team dynamics and project needs. Instead, we recommend a flexible, multi-layered approach to maximize workspace effectiveness. Below are common usage patterns:  
+
+**1. The Project Hub** 
+
+Dedicate a shared workspace to each project. It becomes a central hub where your team can co-develop designs, share reusable components, and align with specific environments (e.g., staging or production). This keeps all your environments, history, and resources in one place
+
+**2. Your Personal "My Drive"** 
+
+Think of a private workspace as your personal Google "My Drive." You can use it for anything—from important, confidential designs to just playing around with new ideas in a "sandbox." It's more than just a place for quick tests; it's also where you can build and polish your professional work before it's ready to be shared.
+
+**3. Template Library** 
+
+Create a separate, access-controlled Workspace to serve as your organization's internal, private template library. This is for storing non-public, organization-specific, or sensitive patterns. 
+> This practice complements the [public Catalog](/cloud/catalog/exploring-the-catalog/), which is used for sharing generic, non-sensitive designs with the community. A dedicated Organization Catalog feature is also planned for the future.
+
+**4. The Team Space** 
+
+You can also organize long-term workspaces around specific teams, such as a "Developer Hub" or "QA Workspace." This simplifies resource management and makes it easy to monitor team-wide activity.
+
+**5. The Environment-Specific Space** 
+
+For teams requiring strict separation between environments, this pattern is essential. You can create dedicated workspaces like a "Production Workspace," which would exclusively contain designs approved for deployment and link only to production clusters. This approach builds a secure barrier between your development, staging, and production assets.
+
+### FAQ
+
+#### 1. When a design is transferred from one Workspace to the next, is design ownership affected? Who has access? What if the Workspaces are in different orgs?
+
+  - **Ownership**: A Design’s ownership is permanent. It always belongs to the user account that created it.
+  - **Access**: Access to the Design is determined by the Teams assigned to its new Workspace.
+  - **Cross-Organization Transfers**: You can move a Design you own into a Workspace in a different Organization, provided you have the necessary permissions in the target Organization. 
+
+> A key restriction is that a user, even with a [Workspace Admin](/cloud/security/roles/workspace-roles/) role, cannot manage a Design they **do not own**. This action requires [Organization Admin](/cloud/security/roles/organization-roles/) or Organization Owner permissions.
+
+#### 2. What can other users of a Workspace do with my design? Can they delete my design?
+
+Other members of a Workspace can view and edit your Design, but they **cannot delete it**. The permission to delete a Design is exclusive to its **Owner**.
+
+#### 3. Can Workspaces contain private, public, and published designs?
+
+Yes. A Workspace can simultaneously contain Designs that are private, public, and published.
+
+#### 4. How will I know if another user made changes to my design? Will I be notified? Is there an edit history or audit trail?
+
+Currently, it is **not possible** to receive direct notifications or see a collaborative audit trail of changes made by other users. While a Version History feature exists for Designs, it currently only tracks changes made by you, not changes from other collaborators.
+
+#### 5. If I share my private design with a user in a different org, can they share my design with other users?
+
+No. A user with whom you share a private Design cannot re-share it with others.
+
+> [learn more about sharing designs](/kanvas/designer/sharing/).
+
+#### 6. Does a workspace have space limitations or file count limitations?
+
+Currently, there are no specific space or file count limitations for Workspaces. However, this may be subject to change in the future and could be tied to different [subscription plans](https://layer5.io/pricing).
+
+#### 7. How can I make my design publicly available, but read-only to other users?
+
+To make a Design available to everyone but in a read-only state, you should **[Publish](/kanvas/designer/publishing-designs/)** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
+
+#### 8. How do I share a private design with a specific team for collaboration?
+
+To share a design exclusively with a select group:
+
+1.  First, ensure your Design's visibility is set to **Private**. This prevents anyone from accessing it by default.
+2.  Next, place the private Design into a **Workspace**.
+3.  Finally, assign a specific **Team** to that Workspace.
+
+This grants members of the assigned Team exclusive access and the permission to edit the design.
+
 [^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
