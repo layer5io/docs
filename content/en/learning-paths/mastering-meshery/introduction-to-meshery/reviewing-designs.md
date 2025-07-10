@@ -105,7 +105,7 @@ This image shows the locking and unlocking interface for nodes in Kanvas. Right-
 
 **How It Works:**
 
-    * **Lock Comments:** By locking a comment, you ensure that it stays in place. This can be particularly useful for critical components that form the backbone of your design.
+* **Lock Comments:** By locking a comment, you ensure that it stays in place. This can be particularly useful for critical components that form the backbone of your design.
     * **Shared Among Collaborators:** When a comment is locked, collaborators working on that design will be unable to move or reposition the locked component. This is an excellent opportunity to brainstorm suggestions for easily identifying locked components.
     * **Unlocking Comments:** Comments can be unlocked when necessary, allowing for flexibility in design adjustments. This can be done through the radial menu shown in the image, which provides options for copying, resetting styles, duplicating, deleting, and unlocking nodes.
 
