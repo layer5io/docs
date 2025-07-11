@@ -98,7 +98,7 @@ This is Meshery's native format and provides a lossless way to save and import y
 
 Each supported file will be imported as a separate, new design. For example, if you drag three different Kubernetes manifest files onto Kanvas, three distinct designs will be created.
 
-### What happens if I select multiple files in the "File Upload" dialog?
+### What happens if I select multiple files in the File Upload dialog?
 
 The "File Upload" dialog is designed to process one file or package at a time. If you select multiple files in your operating system's file browser, only the last file in the selection will be processed for import. To import from multiple files, please import them individually.
 
