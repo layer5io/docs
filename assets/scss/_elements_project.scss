@@ -150,3 +150,25 @@ div.tip {
   font-weight: 600;
   word-break: break-word;
 }
+
+.heading-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  .heading-anchor {
+    font-size: 0.6em;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-left: 0.25rem;
+    text-decoration: none;
+  }
+
+  &:hover .heading-anchor {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
