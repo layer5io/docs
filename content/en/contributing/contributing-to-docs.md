@@ -506,15 +506,13 @@ Layer5 docs support tabbed content using the `tabpane` shortcode. Here’s a bas
 
 {{< tab name="Example Tab 1" >}}
 
-This is the content inside Example Tab 1.  
-You can include instructions, descriptions, or examples here.
+<p>This is the content inside Example Tab 1.</p>
 
 {{< /tab >}}
 
 {{< tab name="Example Tab 2" >}}
 
-This is the content inside Example Tab 2.  
-Each tab can hold different sets of content as needed.
+<p>This is the content inside Example Tab 2.</p>
 
 {{< /tab >}}
 
