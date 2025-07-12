@@ -59,10 +59,16 @@ cascade:
 </div>
 
 <a href="/kanvas">
-<div class="hidden-highlight-box" style="display: flex; align-self:center; margin-top:15px;"><div class="logo-container" style="height:65px;width:65px;margin-left:-.45rem;"><img src="/images/logos/kanvas-icon-color.svg" style="border:0px;" alt="kanvas logo"/></div>
-<div style="flex: 1;color:#ccc;">
-<strong>Kanvas</strong> delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.</div></div>
+  <div class="hidden-highlight-box">
+    <div style="min-width:50px; align-self:center;">
+      <img src="/images/logos/kanvas-icon-color.svg" alt="kanvas logo" style="height:65px;width:65px;margin-left:-.45rem; border:0 ; background-color: transparent;" />
+    </div>
+    <div style="margin:auto; color:#ccc;">
+      <strong>Kanvas</strong> delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+    </div>
+  </div>
 </a>
+
 </div>
 {{% /pageinfo %}}
 
