@@ -16,25 +16,37 @@ aliases:
 
 There are multiple ways to import a design.
 
-**1. Using Drag and Drop:**
+{{< tabpane text=true >}}
+
+{{% tab header="Drag and Drop" lang="en" active="true" %}}
 
 You can drag a file from your local computer directly onto the Kanvas canvas to import a design.
 ![Drag and Drop Import](/kanvas/getting-started/images/importing-designs/drag-drop.gif)
 
-**2. From [Kanvas](https://kanvas.new) toolbar:**
+{{< /tab >}}
+
+{{% tab header="From Kanvas Toolbar" lang="en" %}}
 
 The most direct method is to click the **hamburger menu** (☰) in the top-left corner, then select the "Import" button in the Kanvas toolbar.
 ![File Import Process](/kanvas/getting-started/images/importing-designs/file-import.gif)
 
-**3. From Layer5 Cloud:**
+{{< /tab >}}
+
+{{% tab header="From Layer5 Cloud" lang="en" %}}
 
 Navigate to the [My Designs](https://cloud.layer5.io/catalog/content/my-designs) page and click the "Import" button.
 ![Cloud Import Process](/kanvas/getting-started/images/importing-designs/cloud-url.gif)
 
-**4. Via GitHub Integration:**
+{{< /tab >}}
+
+{{% tab header="Via GitHub Integration" lang="en" %}}
 
 For a more advanced, repository-based workflow, you can establish a persistent connection between your GitHub account and Meshery. This allows you to browse your repositories and import multiple designs directly.
 > Learn more about [GitHub integration](/cloud/getting-started/github-integration/).
+
+{{< /tab >}}
+
+{{< /tabpane >}}
 
 {{< alert type="info" title="Recommendation: Use Kanvas Import" >}}
 For the most flexibility, we recommend initiating the import from within Kanvas. This interface gives you the option to either import the configuration as a brand-new design or merge it into a design you currently have open.
