@@ -30,7 +30,7 @@ In our example, the second step is to run the hello-world container with the > d
 <h3 class="chapter-sub-heading">Build & Run</h3>
 <p>Video: Build & Run </p>
 <div style="border: 2px solid #ccc; border-radius: 8px; padding: 10px; background-color: #1e1e1e; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-top: 1em; margin-bottom: 1em; width: 75%; height:50%; display: block; margin: auto;">
-    <video width="100%" height="100%" controls>
+    <video width="100%" height="100%" autoplay controls>
         <source src="https://sos-de-fra-1.exo.io/exoscale-academy/videos/sks_starter_vid7.mp4?1752342546480" type="video/mp4">
         Your browser does not support the video tag.
     </video>
