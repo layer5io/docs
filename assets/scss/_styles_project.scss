@@ -722,3 +722,12 @@ a:not([href]):not([class]):hover {
 .csvtable {
   width: 100%;
 }
+
+html {
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 1rem;
+}
