@@ -16,20 +16,20 @@ aliases:
 
 There are multiple ways to import a design.
 
-**1. From [Kanvas](https://kanvas.new):**
+**1. Using Drag and Drop:**
+
+You can drag a file from your local computer directly onto the Kanvas canvas to import a design.
+![Drag and Drop Import](/kanvas/getting-started/images/importing-designs/drag-drop.gif)
+
+**2. From [Kanvas](https://kanvas.new) toolbar:**
 
 The most direct method is to click the **hamburger menu** (☰) in the top-left corner, then select the "Import" button in the Kanvas toolbar.
 ![File Import Process](/kanvas/getting-started/images/importing-designs/file-import.gif)
 
-**2. From Layer5 Cloud:**
+**3. From Layer5 Cloud:**
 
 Navigate to the [My Designs](https://cloud.layer5.io/catalog/content/my-designs) page and click the "Import" button.
 ![Cloud Import Process](/kanvas/getting-started/images/importing-designs/cloud-url.gif)
-
-**3. Using Drag and Drop:**
-
-You can drag a file from your local computer directly onto the Kanvas canvas to import a design.
-![Drag and Drop Import](/kanvas/getting-started/images/importing-designs/drag-drop.gif)
 
 **4. Via GitHub Integration:**
 
@@ -43,6 +43,10 @@ For the most flexibility, we recommend initiating the import from within Kanvas.
 ## Importing by Infrastructure Type
 
 Kanvas supports a diverse set of infrastructure types and packaging formats. The following sections provide detailed requirements and instructions for each.
+
+{{< alert type="info" title="Cannot Import Folders Directly" >}}
+You can't directly import folders. If your infrastructure definition (like Kustomize or Helm) is in a folder, you must compress it into a single archive file before uploading.
+{{< /alert >}}
 
 {{< tabpane text=true >}}
 
@@ -58,7 +62,7 @@ Importing from a Kubernetes manifest is the most direct way to bring your existi
 
 A key requirement when importing a Kustomize project is that you **must provide the entire project directory**, not just the `kustomization.yaml` file. This is because the `kustomization.yaml` file only contains instructions and references to other base manifest files. To correctly render the final configuration, Kanvas needs access to all of these related files.
 
-- **Supported Packaging Formats:** A `.zip` archive containing the complete Kustomize project directory, including the `kustomization.yaml` file and all of its referenced resources.
+- **Supported Packaging Formats:** A archive (such as `.zip`, `.tar`, or `.tar.gz`) containing the complete Kustomize project directory. This archive must include the `kustomization.yaml` file and all of its referenced resources.
 
 {{< /tab >}}
 
