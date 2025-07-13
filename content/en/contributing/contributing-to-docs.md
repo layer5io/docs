@@ -501,25 +501,21 @@ This is the final element on the page and there should be no margin below this.
 
 Layer5 docs support tabbed content using the `tabpane` shortcode. Here's a basic example:
 
-{{< tabpane text=true >}}
+{{< tabpane >}}
 
-{{< tab name="Example Tab 1" >}}
+{{< tab name="Tab 0" >}}
 
-<div style="width: 100%; display: flex;">
-  <div style="flex: 1; background-color: #2d2d2d; color: #ffffff; padding: 1rem; border-radius: 4px; font-family: monospace;">
-    This is the content inside Example Tab 1.
-  </div>
-</div>
+{{% highlight text %}}
+This is the content inside Example Tab 1.
+{{% /highlight %}}
 
 {{< /tab >}}
 
-{{< tab name="Example Tab 2" >}}
+{{< tab name="Tab 1" >}}
 
-<div style="width: 100%; display: flex;">
-  <div style="flex: 1; background-color: #2d2d2d; color: #ffffff; padding: 1rem; border-radius: 4px; font-family: monospace;">
-    This is the content inside Example Tab 2.
-  </div>
-</div>
+{{% highlight text %}}
+This is the content inside Example Tab 2.
+{{% /highlight %}}
 
 {{< /tab >}}
 
