@@ -505,20 +505,20 @@ Layer5 docs support tabbed content using the `tabpane` shortcode. Here's a basic
 
 {{< tab name="Example Tab 1" >}}
 
-<div style="width: 100%;">
-  <pre style="background-color: #2d2d2d; color: #ffffff; padding: 1rem; overflow-x: auto;">
-This is the content inside Example Tab 1.
-  </pre>
+<div style="width: 100%; display: flex;">
+  <div style="flex: 1; background-color: #2d2d2d; color: #ffffff; padding: 1rem; border-radius: 4px; font-family: monospace;">
+    This is the content inside Example Tab 1.
+  </div>
 </div>
 
 {{< /tab >}}
 
 {{< tab name="Example Tab 2" >}}
 
-<div style="width: 100%;">
-  <pre style="background-color: #2d2d2d; color: #ffffff; padding: 1rem; overflow-x: auto;">
-This is the content inside Example Tab 2.
-  </pre>
+<div style="width: 100%; display: flex;">
+  <div style="flex: 1; background-color: #2d2d2d; color: #ffffff; padding: 1rem; border-radius: 4px; font-family: monospace;">
+    This is the content inside Example Tab 2.
+  </div>
 </div>
 
 {{< /tab >}}
@@ -526,6 +526,7 @@ This is the content inside Example Tab 2.
 {{< /tabpane >}}
 
 Use this shortcode to display platform-specific commands, language-specific code blocks, or comparisons — all in an elegant, user-friendly tab layout.
+
 
 
 ### Footnotes
