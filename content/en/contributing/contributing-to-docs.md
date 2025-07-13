@@ -505,13 +505,21 @@ Layer5 docs support tabbed content using the `tabpane` shortcode. Here's a basic
 
 {{< tab name="Example Tab 1" >}}
 
-<div class="highlight"><pre><code>This is the content inside Example Tab 1.</code></pre></div>
+<div style="width: 100%;">
+  <pre style="background-color: #2d2d2d; color: #ffffff; padding: 1rem; overflow-x: auto;">
+This is the content inside Example Tab 1.
+  </pre>
+</div>
 
 {{< /tab >}}
 
 {{< tab name="Example Tab 2" >}}
 
-<div class="highlight"><pre><code>This is the content inside Example Tab 2.</code></pre></div>
+<div style="width: 100%;">
+  <pre style="background-color: #2d2d2d; color: #ffffff; padding: 1rem; overflow-x: auto;">
+This is the content inside Example Tab 2.
+  </pre>
+</div>
 
 {{< /tab >}}
 
