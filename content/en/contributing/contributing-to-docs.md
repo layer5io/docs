@@ -503,32 +503,21 @@ Layer5 docs support tabbed content using the `tabpane` shortcode. Here's a basic
 
 {{< tabpane text=true >}}
 
-{{< tab header="Example Tab 1" >}}
+{{< tab name="Example Tab 1" >}}
 
-```plaintext
-This is the content inside Example Tab 1.
-```
+<div class="highlight"><pre><code>This is the content inside Example Tab 1.</code></pre></div>
 
 {{< /tab >}}
 
-{{< tab header="Example Tab 2" >}}
+{{< tab name="Example Tab 2" >}}
 
-```plaintext
-This is the content inside Example Tab 2.
-```
+<div class="highlight"><pre><code>This is the content inside Example Tab 2.</code></pre></div>
 
 {{< /tab >}}
 
 {{< /tabpane >}}
 
 Use this shortcode to display platform-specific commands, language-specific code blocks, or comparisons — all in an elegant, user-friendly tab layout.
-
-<style>
-  .tab-content { padding: 0 !important; }
-  .tab-content pre { margin: 0 !important; border-radius: 0 !important; }
-</style>
-
-
 
 
 ### Footnotes
