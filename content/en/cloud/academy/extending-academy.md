@@ -101,20 +101,3 @@ learning-paths/
 ```
 
 Each `_index.md` file contains frontmatter and overview content for that level (path, course, chapter).
-
----
-
-## Summary
-
-With the Layer5 Cloud Academy, enterprise users can:
-
-* Author powerful cloud-native learning content using markdown
-* Integrate with Kanvas for live cloud-native visuals
-* Maintain full control over content and branding
-* Deliver isolated, scalable learning experiences for their teams or customers
-
-> Get started today by [forking the template](https://github.com/layer5io/academy-example) and joining the growing ecosystem of cloud-native educators.
-
----
-
-Would you like me to generate a sample `_index.md` or lesson markdown file for quick reference?
