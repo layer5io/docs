@@ -1,10 +1,11 @@
 ---
 docType: "Course"
-title: "1. Why Containers?"
+title: "Why Containers?"
 description: "This section provides an introduction to containers, their architecture, and how they are used in modern software development."
 lectures: 4
 courseTitle: "Why Containers?"
 themeColor: "#00B39F"
+weight: 1
 order: 1
 cardImage: ""
 toc:

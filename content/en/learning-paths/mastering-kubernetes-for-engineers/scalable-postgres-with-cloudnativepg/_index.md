@@ -6,6 +6,7 @@ lectures: 7
 courseTitle: "Scalable Postgres with CloudNativePG"
 themeColor: "#00B39F"
 order: 1
+weight: 10
 cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
 meshesYouLearn:
   [

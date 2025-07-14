@@ -1,11 +1,12 @@
 ---
 docType: "Course"
-title: "7. Simple Examples"
+title: "Simple Examples"
 description: "Let's look at two examples. First, a simple hello-world container and second, a simple Ubuntu container."
 lectures: 2
 courseTitle: "Simple Examples"
 themeColor: "#00B39F"
 order: 2
+weight: 6
 cardImage: ""
 ---
 

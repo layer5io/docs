@@ -6,6 +6,7 @@ lectures: 7
 courseTitle: "Deploying WordPress and MySql with Persistent Volumes with Meshery"
 themeColor: "#00B39F"
 order: 1
+weight: 8
 cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
 meshesYouLearn:
   [

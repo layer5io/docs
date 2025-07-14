@@ -1,10 +1,11 @@
 ---
 docType: "Course"
-title: "4. Kubernetes Building Blocks"
+title: "Kubernetes Building Blocks"
 description: "Learn the details of Kubernetes, including its architecture, components, and how it manages containerized applications."
 lectures: 4
 courseTitle: "Kubernetes Building Blocks"
 themeColor: "#00B39F"
+weight: 4
 order: 3
 cardImage: ""
 toc:
