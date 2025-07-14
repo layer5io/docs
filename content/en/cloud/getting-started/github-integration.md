@@ -4,7 +4,7 @@ description: Discover how to seamlessly connect your GitHub repository with Mesh
 weight: 2
 ---
 
-## Introduction
+## 1.Introduction
 
 Meshery's GitHub Integration is a powerful feature that lets you authorize your GitHub account and import infrastructure files into Meshery. These files are then readily available in the Meshery catalog and can be easily opened in the Meshery Playground for viewing and configuration.
 
