@@ -501,27 +501,33 @@ This is the final element on the page and there should be no margin below this.
 
 Layer5 docs support tabbed content using the `tabpane` shortcode. Here's a basic example:
 
-{{< tabpane >}}
+{{< tabpane text=true >}}
 
-{{< tab name="Tab 0" >}}
+{{< tab header="Example Tab 1" >}}
 
-{{% highlight text %}}
+```plaintext
 This is the content inside Example Tab 1.
-{{% /highlight %}}
+```
 
 {{< /tab >}}
 
-{{< tab name="Tab 1" >}}
+{{< tab header="Example Tab 2" >}}
 
-{{% highlight text %}}
+```plaintext
 This is the content inside Example Tab 2.
-{{% /highlight %}}
+```
 
 {{< /tab >}}
 
 {{< /tabpane >}}
 
 Use this shortcode to display platform-specific commands, language-specific code blocks, or comparisons — all in an elegant, user-friendly tab layout.
+
+<style>
+  .tab-content { padding: 0 !important; }
+  .tab-content pre { margin: 0 !important; border-radius: 0 !important; }
+</style>
+
 
 
 
