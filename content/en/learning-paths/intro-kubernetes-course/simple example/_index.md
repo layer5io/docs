@@ -11,12 +11,10 @@ cardImage: ""
 
 {{< chapterstyle >}}
 
-<p align="center">simple `hello-world` conatiner </p>
+{{< image src="/images/learning-path/intro-kubernetes/simple-example/c7_l1_1.png" width="100%" align="center" alt="simple `hello-world` conatiner" >}}
 
-{{< image src="/images/learning-path/intro-kubernetes/simple-example/c7_l1_1.png" width="100%" align="center"  >}}
 
-<p align="center">simple ubuntu container</p>
-{{< image src="/images/learning-path/intro-kubernetes/simple-example/c7_l1_2.png" width="100%" align="center"  >}}
+{{< image src="/images/learning-path/intro-kubernetes/simple-example/c7_l1_2.png" width="100%" align="center" alt="simple ubuntu container" >}}
 
 Watch these two examples below in the videos.
 
