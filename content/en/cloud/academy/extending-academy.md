@@ -34,6 +34,8 @@ Content is sourced using the **[Hugo](https://gohugo.io/)** static site engine. 
 
 ---
 
+
+
 ## Directory Overview
 
 When you clone the template, you’ll see a familiar Hugo structure:
@@ -101,3 +103,70 @@ learning-paths/
 ```
 
 Each `_index.md` file contains frontmatter and overview content for that level (path, course, chapter).
+
+
+## Available Shortcodes
+
+
+
+Your theme includes powerful utility shortcodes that abstract away tenant scoping and other content rendering
+
+
+## 🖼️ `usestatic` – Tenant-scoped static file helper
+
+**Use when you want to include static assets under a tenant-specific path.**
+
+### ✅ Syntax
+
+```gohtml
+{{< usestatic path="images/logo.png" >}}
+```
+
+### 🧠 What it does
+
+This will generate a URL like:
+
+```html
+/static/<tenant-uuid>/images/logo.png
+```
+
+Where `<tenant-uuid>` comes from your `tenant-context.html` partial.
+
+### 📎 Example
+
+```markdown
+![Logo]({{< usestatic path="images/logo.png" >}})
+```
+
+Rendered as:
+
+```html
+<img src="/static/acme-org-uuid/images/logo.png" alt="Logo">
+```
+
+---
+
+## 🔒 Why these are useful
+
+These shortcodes:
+
+* Eliminate the need to repeat or hardcode tenant UUIDs
+* Keep content files clean and user-friendly
+* Enable reuse of global shortcodes/themes across isolated tenants
+
+---
+
+## 🌐 Example Directory Layout
+
+```
+layouts/
+├── shortcodes/
+│   └── acme-org-uuid/
+│       └── banner.html
+static/
+└── acme-org-uuid/
+    └── images/
+        └── logo.png
+```
+
+---
