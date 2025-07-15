@@ -11,6 +11,7 @@
 @import "_videos_project.scss";
 @import "subscription.scss";
 @import "_video-landing_project.scss";
+@import "elements_project";
 
 .navbar-dark {
   min-height: 5rem;
@@ -707,7 +708,7 @@ a:not([href]):not([class]):hover {
   overflow-x: scroll;
   background: transparent;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .tab-content>.active {

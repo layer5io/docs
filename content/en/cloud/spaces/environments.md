@@ -31,14 +31,14 @@ Environments represent a collection of resources in the form of Connections - bo
 
 ## Key Components
 
-### Connections <a id="connections"></a>
+### Connections
 
 Connections are an integral part of Environment. These are cloud native resources that can be both managed and unmanaged, and they're registered by the Meshery Server. Examples of connections include Kubernetes clusters, Prometheus instances, Jaeger tracers, and Nginx web servers.
 
-See "[Connections](https://docs.meshery.io/concepts/logical/connections)" in Meshery Docs for more information.
+> See "[Connections](https://docs.meshery.io/concepts/logical/connections)" in Meshery Docs for more information.
 
-### Credentials <a id="credentials"></a>
+### Credentials
 
 Credentials in an Environment are the keys to securely authenticate and access managed connections. For example, valid Prometheus secrets or Kubernetes API tokens are essential credentials for securely interacting with these managed resources.
 
-See "[Credentials](https://docs.meshery.io/concepts/logical/credentials)" in Meshery Docs for more information.
+> See "[Credentials](https://docs.meshery.io/concepts/logical/credentials)" in Meshery Docs for more information.
