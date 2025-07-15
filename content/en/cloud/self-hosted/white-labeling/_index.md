@@ -128,6 +128,10 @@ A subdomain is the part of a URL before the root domain. You can configure your 
 
 Subdomains are configured with a CNAME record through your DNS provider.
 
+{{< alert title="Changing Custom Domain May Break Academy Integration" color="warning" >}}
+Changing your custom domain name after configuring an external Academy can break the content integration. If you change your domain, you **must** also update the organizational folder name (`/content/learning-paths/<your-org-name>`) in your Academy content repository to match.
+{{< /alert >}}
+
 ### Configuring a subdomain
 
 To set up a www or custom subdomain, such as `www.example.com` or `meshery.example.com`, you must add your domain in the repository settings. After that, configure a CNAME record with your DNS provider.
@@ -144,7 +148,7 @@ If your custom domain is an internationalized domain name, you must enter the Pu
 
 Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `hub.cncf.io` for your user site, create a CNAME record that points `hub.cncf.io` to `cloud.layer5.io`. For more information about how to create the correct record, see your DNS provider's documentation.
 
-{{< alert title="Warning" color="warning" >}}
+{{< alert title="Risks of Using Wildcard DNS Records" color="warning" >}}
 Warning: We strongly recommend that you do not use wildcard DNS records, such as `*.example.com`. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify example.com this prevents someone from using `a.example.com`, but they could still take over `b.a.example.com` (which is covered by the wildcard DNS record).
 {{< /alert >}}
 
