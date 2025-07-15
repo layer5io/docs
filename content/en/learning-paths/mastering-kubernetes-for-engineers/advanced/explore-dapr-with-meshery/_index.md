@@ -6,6 +6,7 @@ lectures: 4
 courseTitle: "Explore Dapr with Meshery"
 themeColor: "#00B39F"
 order: 4
+weight: 9
 cardImage: "../../../src/images/service-mesh-icons/linkerd-white.svg"
 
 toc:
