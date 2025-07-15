@@ -269,9 +269,6 @@ enable = false
 		name = "Forum"
 		url = "https://discuss.layer5.io"
 	[[params.links.footer.community.items]]
-		name = "FAQ"
-		url = "https://layer5.io/company/faq"
-	[[params.links.footer.community.items]]
 		name = "Programs"
 		url = "https://layer5.io/careers/programs"
 	[[params.links.footer.community.items]]
@@ -311,6 +308,9 @@ enable = false
 	[[params.links.footer.company.items]]
 		name = "Career"
 		url = "https://layer5.io/careers"
+	[[params.links.footer.company.items]]
+		name = "FAQ"
+		url = "https://layer5.io/company/faq"		
 	[[params.links.footer.company.items]]
 		name = "Partners"
 		url = "https://layer5.io/partners"
