@@ -118,9 +118,7 @@ Your theme includes powerful utility shortcodes that abstract away tenant scopin
 
 ### ✅ Syntax
 
-```gohtml
-{{< usestatic path="images/logo.png" >}}
-```
+{{</* usestatic path="images/logo.png" */>}}
 
 ### 🧠 What it does
 
@@ -134,9 +132,7 @@ Where `<tenant-uuid>` comes from your `tenant-context.html` partial.
 
 ### 📎 Example
 
-```markdown
-![Logo]({{< usestatic path="images/logo.png" >}})
-```
+![Logo]({{</* usestatic path="images/logo.png" */>}})
 
 Rendered as:
 
