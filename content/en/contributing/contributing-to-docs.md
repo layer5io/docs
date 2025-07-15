@@ -497,7 +497,7 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 This is the final element on the page and there should be no margin below this.
 ```
 
-### TabPane Shortcode Example
+### TabPane
 
 Layer5 docs support tabbed content using the `tabpane` shortcode. Here's a basic example:
 
