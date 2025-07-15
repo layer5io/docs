@@ -777,3 +777,12 @@ a:not([href]):not([class]):hover {
     letter-spacing: 0.03em;
   }
 }
+
+html {
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 1rem;
+}
