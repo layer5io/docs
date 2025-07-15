@@ -25,4 +25,13 @@ As a solution, virtualization was introduced. It allows you to run multiple Virt
 
 Containers are similar to VMs, but they have relaxed isolation properties to share the Operating System (OS) among the applications. Therefore, containers are considered lightweight. Similar to a VM, a container has its own file system, share of CPU, memory, process space, and more. As they are decoupled from the underlying infrastructure, they are portable across clouds and OS distributions.
 
+<h3 class="chapter-sub-heading">App Deployment</h3>
+<p>Video: Application Deployment Overview</p>
+<div style="border: 2px solid #ccc; border-radius: 8px; padding: 10px; background-color: #1e1e1e; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-top: 1em; margin-bottom: 1em; width: 75%; height:50%; display: block; margin: auto;">
+    <video width="100%" height="100%" autoplay controls>
+        <source src="https://sos-de-fra-1.exo.io/exoscale-academy/videos/sks_starter_vid0.mp4?1752340619870" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
 {{< /chapterstyle >}}
