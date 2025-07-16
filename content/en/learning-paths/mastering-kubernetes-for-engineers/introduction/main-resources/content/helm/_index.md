@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Helm"
 description: "Application management"
 lectures: 2

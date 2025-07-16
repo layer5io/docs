@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Service"
 description: "Network exposure and load balancing"
 lectures: 2

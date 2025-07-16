@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Practice"
 lectures: 1
 courseTitle: "Ingress"

@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Deployment"
 description: "Manage Pods lifecycle"
 lectures: 2

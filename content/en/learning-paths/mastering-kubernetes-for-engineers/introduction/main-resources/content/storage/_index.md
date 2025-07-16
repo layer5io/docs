@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Storage"
 description: "Persistent storage solutions"
 lectures: 2

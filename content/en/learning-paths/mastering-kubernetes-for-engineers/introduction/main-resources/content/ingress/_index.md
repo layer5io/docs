@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Ingress"
 description: "External access management"
 lectures: 2

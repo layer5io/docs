@@ -1,5 +1,5 @@
 ---
-docType: "Course"
+docType: "Chapter"
 title: "Configuration"
 description: "Manage configuration and sensitive data"
 lectures: 2
