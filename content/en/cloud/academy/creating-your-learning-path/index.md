@@ -109,6 +109,48 @@ Use only lowercase letters and separate words with hyphens (e.g., `my-company`, 
     - **The Lessons (`content/`)**
     Finally, inside each course folder, a `content` directory holds all your individual lesson files, written in standard Markdown.
 
+4. **Front matter**
+
+    Use this at the top of each **Learning Path** page (`learning-paths/<orgId>/<slug>/_index.md` or similar):
+
+    ```yaml
+    ---
+    title: "Mastering Kubernetes for Engineers"
+    description: "Learn how to configure your Kubernetes clusters and manage the lifecycle of your workloads"
+    banner: null  # Optional, URL to banner image
+    ---
+    ```
+
+    > Place this frontmatter in the Markdown file that represents the learning path index page.
+
+    **Course Frontmatter (Optional Individual Course Pages)**
+
+      If each course has its own markdown page, you can use this frontmatter:
+
+        ```yaml
+        ---
+        title: "Kubernetes Basics"
+        description: "Learn the basics of Kubernetes"
+        weight: 1
+        banner: null  # Optional
+        ---
+        ```
+
+    **Summary of Required Fields**
+
+    | Type          | Field         | Required | Notes                       |
+    | ------------- | ------------- | -------- | --------------------------- |
+    | Learning Path | `title`       | ✅        |                             |
+    |               | `description` | ✅        |                             |
+    |               | `weight`      | ✅        | Defines order in the path   |
+    |               | `banner`      | ❌        | Optional image URI          |
+    | Course        | `title`       | ✅        |                             |
+    |               | `description` | ✅        |                             |
+    |               | `weight`      | ✅        | Defines order in the path   |
+    |               | `banner`      | ❌        | Optional image URI          |
+    |               | `prerequisites`      | ❌        | Optional List of prerequisites for the course |
+
+
 ### 3. Add Assets and Interactive Content
 
 Enhance your course with images and other visual aids. To ensure compatibility with the multi-tenant Academy platform, **do not use standard Markdown image links**. Instead, use the `usestatic` shortcode, which generates the correct, tenant-aware path for your assets.
@@ -150,3 +192,6 @@ A Layer5 administrator will then integrate your repository into the main Academy
 - **How do I structure multiple courses under one learning path?**
 
     The structure is defined by your folder hierarchy. A learning path is a directory, and each course is simply a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
+
+
+
