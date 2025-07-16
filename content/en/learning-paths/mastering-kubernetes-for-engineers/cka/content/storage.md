@@ -10,24 +10,22 @@ weight: 6
 
 {{< chapterstyle >}}
 
-<p>This section is a refresher that provides an overview of the primary Kubernetes resources related to storage. At the end of this section, please complete the exercises to put these concepts into practice.</p>
+This section is a refresher that provides an overview of the primary Kubernetes resources related to storage. At the end of this section, please complete the exercises to put these concepts into practice.
 
-<h2>Volume</h2>
-<hr>
+## Volume
+---
 
-<p>Volume is a property that can be defined in a Pod's specification (at <code>.spec.volumes</code>) and mounted in a container's filesystem (<code>.spec.containers.volumeMounts</code>). It allows decoupling a container from the storage solution and containers of the same pod to share data.</p>
+Volume is a property that can be defined in a Pod's specification (at `.spec.volumes`) and mounted in a container's filesystem (`.spec.containers.volumeMounts`). It allows decoupling a container from the storage solution and containers of the same pod to share data.
 
-<p>Among the available types of volumes:</p>
+Among the available types of volumes:
 
-<ul>
-<li><code>emptyDir</code></li>
-<li><code>configMap</code></li>
-<li><code>Secret</code></li>
-<li><code>hostPath</code></li>
-<li><code>downwardAPI</code></li>
-</ul>
+- `emptyDir`
+- `configMap`
+- `Secret`
+- `hostPath`
+- `downwardAPI`
 
-<p>The following specification defines a MongoDB Pod with an <code>emptyDir</code> volume mounted at <code>/data/db</code> in the container filesystem. It allows the data to persist outside the container's filesystem but still on the host filesystem.</p>
+The following specification defines a MongoDB Pod with an `emptyDir` volume mounted at `/data/db` in the container filesystem. It allows the data to persist outside the container's filesystem but still on the host filesystem.
 
 ```yaml
 apiVersion: v1
@@ -46,52 +44,50 @@ spec:
     emptyDir: {}
 ```
 
-<p><strong>Note:</strong> We should not use a volume for persistent storage; instead we should use PersistentVolume and PersistentVolumeClaim.</p>
+**Note:** We should not use a volume for persistent storage; instead we should use PersistentVolume and PersistentVolumeClaim.
 
-<h2>PersistentVolume</h2>
-<hr>
+## PersistentVolume
+---
 
-<p>A PersistentVolume (PV) is a resource used to provide storage, either statically or dynamically. It decouples an application from the storage solution.</p>
+A PersistentVolume (PV) is a resource used to provide storage, either statically or dynamically. It decouples an application from the storage solution.
 
-<p>Various types of PersistentVolume are available, including:</p>
+Various types of PersistentVolume are available, including:
 
-<ul>
-<li><code>cephfs</code></li>
-<li><code>csi</code></li>
-<li><code>fc</code></li>
-<li><code>hostPath</code></li>
-<li><code>iscsi</code></li>
-<li><code>local</code></li>
-<li><code>nfs</code></li>
-<li><code>rbd</code></li>
-</ul>
+- `cephfs`
+- `csi`
+- `fc`
+- `hostPath`
+- `iscsi`
+- `local`
+- `nfs`
+- `rbd`
 
-<p>The main properties of a PV are the following:</p>
+The main properties of a PV are the following:
 
-<h3>volumeMode</h3>
-<p>Defines how the volume is presented to a Pod:</p>
-<ul>
-<li><code>Filesystem</code> (default)</li>
-<li><code>Block</code></li>
-</ul>
+### volumeMode
 
-<h3>accessModes</h3>
-<p>Specifies how we can mount the volume in the Pod:</p>
-<ul>
-<li><code>ReadWriteOnce (RWO)</code>: the volume can be mounted as read-write by a single Node</li>
-<li><code>ReadOnlyMany (ROX)</code>: the volume can be mounted as read-only by multiple Nodes at the same time</li>
-<li><code>ReadWriteMany (RWX)</code>: the volume can be mounted as read-write by multiple Nodes at the same time</li>
-<li><code>ReadWriteOncePod (RWOP)</code>: the volume can be mounted as read-write by a single Pod only</li>
-</ul>
+Defines how the volume is presented to a Pod:
 
-<h3>persistentVolumeReclaimPolicy</h3>
-<p>Defines what happens to the PersistentVolume after the associated PersistentVolumeClaim is deleted:</p>
-<ul>
-<li><code>Retain</code> (default if manually created): the PersistentVolume is not deleted, a manual data recovery is possible</li>
-<li><code>Delete</code> (default if dynamically created): the PersistentVolume and the underlying storage are deleted</li>
-</ul>
+- `Filesystem` (default)
+- `Block`
 
-<p>The specification below defines a PersistentVolume that will be tied to a single Node and offer 1G of storage from this Node's filesystem.</p>
+### accessModes
+
+Specifies how we can mount the volume in the Pod:
+
+- `ReadWriteOnce (RWO)`: the volume can be mounted as read-write by a single Node
+- `ReadOnlyMany (ROX)`: the volume can be mounted as read-only by multiple Nodes at the same time
+- `ReadWriteMany (RWX)`: the volume can be mounted as read-write by multiple Nodes at the same time
+- `ReadWriteOncePod (RWOP)`: the volume can be mounted as read-write by a single Pod only
+
+### persistentVolumeReclaimPolicy
+
+Defines what happens to the PersistentVolume after the associated PersistentVolumeClaim is deleted:
+
+- `Retain` (default if manually created): the PersistentVolume is not deleted, a manual data recovery is possible
+- `Delete` (default if dynamically created): the PersistentVolume and the underlying storage are deleted
+
+The specification below defines a PersistentVolume that will be tied to a single Node and offer 1G of storage from this Node's filesystem.
 
 ```yaml
 apiVersion: v1
@@ -107,12 +103,12 @@ spec:
     path: /tmp/data
 ```
 
-<h2>PersistentVolumeClaim</h2>
-<hr>
+## PersistentVolumeClaim
+---
 
-<p>A PersistentVolumeClaim (PVC) is a storage request. It specifies the storage requirements regarding size and access mode, and is bound to a PersistentVolume that meets those requirements.</p>
+A PersistentVolumeClaim (PVC) is a storage request. It specifies the storage requirements regarding size and access mode, and is bound to a PersistentVolume that meets those requirements.
 
-<p>The following specification defines a PersistentVolumeClaim, which requests 500 MB of storage with a RWO mode.</p>
+The following specification defines a PersistentVolumeClaim, which requests 500 MB of storage with a RWO mode.
 
 ```yaml
 apiVersion: v1
@@ -127,7 +123,7 @@ spec:
       storage: 500Mi
 ```
 
-<p>A Pod can request storage by referencing the PVC in its specification as follows. When a PVC is bound to a PV, the PV is mounted into the container's filesystem.</p>
+A Pod can request storage by referencing the PVC in its specification as follows. When a PVC is bound to a PV, the PV is mounted into the container's filesystem.
 
 ```yaml
 apiVersion: v1
@@ -147,18 +143,16 @@ spec:
       claimName: pvc
 ```
 
-<h2>StorageClass</h2>
-<hr>
-
-<p>A StorageClass defines how to dynamically create PersistentVolumes without needing to pre-provision them.</p>
-
-<p>More information in the official documentation at <a href="https://kubernetes.io/docs/concepts/storage/">https://kubernetes.io/docs/concepts/storage/</a></p>
-
+## StorageClass
 ---
 
-<h2>Practice</h2>
-<hr>
+A StorageClass defines how to dynamically create PersistentVolumes without needing to pre-provision them.
 
-<p>You can now jump to the <a href="./exercises/">Exercises part</a> to learn and practice the concepts above.</p>
+More information in the official documentation at https://kubernetes.io/docs/concepts/storage/
+
+## Practice
+---
+
+You can now jump to the [Exercises part](./exercises/) to learn and practice the concepts above.
 
 {{< /chapterstyle >}}

@@ -10,56 +10,52 @@ weight: 4
 
 {{< chapterstyle >}}
 
-<p>This section is a refresher that provides an overview of the main properties involved in the scheduling phase. At the end of this section, please complete the exercises to apply these concepts.</p>
+This section is a refresher that provides an overview of the main properties involved in the scheduling phase. At the end of this section, please complete the exercises to apply these concepts.
 
-<h2>Purpose</h2>
-<hr>
+## Purpose
+---
 
-<p>The scheduling step is where Kubernetes decides on which Node a Pod will run on. The Scheduler, running on the control plane, is the process in charge of this action.</p>
+The scheduling step is where Kubernetes decides on which Node a Pod will run on. The Scheduler, running on the control plane, is the process in charge of this action.
 
 {{< image src="/images/learning-path/cka/scheduling/scheduling.png" width="100%" align="center" alt="" >}}
 
-<p>There are various properties/items which can influence the scheduling decision, including:</p>
+There are various properties/items which can influence the scheduling decision, including:
 
-<ul>
-<li><code>nodeName</code></li>
-<li><code>nodeSelector</code></li>
-<li><code>nodeAffinity</code></li>
-<li><code>podAffinity / podAntiAffinity</code></li>
-<li><code>topologySpreadConstraints</code></li>
-<li><code>taint / toleration</code></li>
-<li><code>available resources</code></li>
-<li><code>priorityClass</code></li>
-<li><code>runtimeClass</code></li>
-</ul>
+- `nodeName`
+- `nodeSelector`
+- `nodeAffinity`
+- `podAffinity / podAntiAffinity`
+- `topologySpreadConstraints`
+- `taint / toleration`
+- `available resources`
+- `priorityClass`
+- `runtimeClass`
 
-<h2>nodeName</h2>
-<hr>
+## nodeName
+---
+
+The `nodeName` property bypasses the scheduling process, indicating directly in the Pod's specification the name of the Node this Pod must be deployed to.
 
 {{< image src="/images/learning-path/cka/scheduling/nodeName.png" width="100%" align="center" alt="" >}}
 
-<p>The <code>nodeName</code> property bypasses the scheduling process, indicating directly in the Pod's specification the name of the Node this Pod must be deployed to.</p>
+## nodeSelector
+---
 
-<h2>nodeSelector</h2>
-<hr>
+The `nodeSelector` property uses Node's labels to schedule a Pod.
 
 {{< image src="/images/learning-path/cka/scheduling/nodeSelector.png" width="100%" align="center" alt="" >}}
 
-<p>The <code>nodeSelector</code> property uses Node's labels to schedule a Pod.</p>
+## nodeAffinity
+---
 
-<h2>nodeAffinity</h2>
-<hr>
+The `nodeAffinity` property also uses Node's label. Still, it is more granular than `nodeSelector` as it can use the following operators on the labels: **In**, **NotIn**, **Exists**, **DoesNotExist**, **Gt**, and **Lt**.
 
-<p>The <code>nodeAffinity</code> property also uses Node's label. Still, it is more granular than <code>nodeSelector</code> as it can use the following operators on the labels: <strong>In</strong>, <strong>NotIn</strong>, <strong>Exists</strong>, <strong>DoesNotExist</strong>, <strong>Gt</strong>, and <strong>Lt</strong>.</p>
+Two rules are available when using `nodeAffinity`:
 
-<p>Two rules are available when using <code>nodeAffinity</code>:</p>
+- `requiredDuringSchedulingIgnoredDuringExecution` defines a **hard constraint**: if the scheduler does not manage to schedule the Pod according to the specification, then the Pod will remain in Pending
+- `preferredDuringSchedulingIgnoredDuringExecution` defines a **soft constraint**: if the scheduler does not manage to schedule the Pod, according to the specification, then it will do its best to schedule it anyway, even if the requirements are not satisfied
 
-<ul>
-<li><code>requiredDuringSchedulingIgnoredDuringExecution</code> defines a <strong>hard constraint</strong>: if the scheduler does not manage to schedule the Pod according to the specification, then the Pod will remain in Pending</li>
-<li><code>preferredDuringSchedulingIgnoredDuringExecution</code> defines a <strong>soft constraint</strong>: if the scheduler does not manage to schedule the Pod, according to the specification, then it will do its best to schedule it anyway, even if the requirements are not satisfied</li>
-</ul>
-
-<h3>Example:</h3>
+### Example:
 
 ```yaml
 spec:
@@ -83,28 +79,24 @@ spec:
             - ssd
 ```
 
-<h2>podAffinity / podAntiAffinity</h2>
-<hr>
+## podAffinity / podAntiAffinity
+---
 
-<p>We use the <code>podAffinity</code> and <code>podAntiAffinity</code> properties to schedule a Pod based on the labels of already existing Pods.</p>
+We use the `podAffinity` and `podAntiAffinity` properties to schedule a Pod based on the labels of already existing Pods.
 
-<p>It uses the same rules as the <code>nodeAffinity</code> property:</p>
-<ul>
-<li><code>requiredDuringSchedulingIgnoredDuringExecution</code> defines a <strong>hard constraint</strong></li>
-<li><code>preferredDuringSchedulingIgnoredDuringExecution</code> defines a <strong>soft constraint</strong></li>
-</ul>
+It uses the same rules as the `nodeAffinity` property:
+- `requiredDuringSchedulingIgnoredDuringExecution` defines a **hard constraint**
+- `preferredDuringSchedulingIgnoredDuringExecution` defines a **soft constraint**
 
-<p>It also uses a property named <code>topologyKey</code> to specify geographical preferences (among other things):</p>
-<ul>
-<li><code>hostname</code></li>
-<li><code>region</code></li>
-<li><code>az</code></li>
-<li>...</li>
-</ul>
+It also uses a property named `topologyKey` to specify geographical preferences (among other things):
+- `hostname`
+- `region`
+- `az`
+- ...
 
-<h3>Example 1</h3>
+### Example 1
 
-<p>The following Deployment's Pods cannot all be created on a cluster with less than 4 Nodes as it specifies that two Pods with the <code>app: cache</code> label must not be on the same Node.</p>
+The following Deployment's Pods cannot all be created on a cluster with less than 4 Nodes as it specifies that two Pods with the `app: cache` label must not be on the same Node.
 
 ```yaml
 apiVersion: apps/v1
@@ -136,9 +128,9 @@ spec:
             topologyKey: "kubernetes.io/hostname"
 ```
 
-<h3>Example 2</h3>
+### Example 2
 
-<p>The following specification illustrates the usage of both <code>podAffinity</code> and <code>podAntiAffinity</code> properties.</p>
+The following specification illustrates the usage of both `podAffinity` and `podAntiAffinity` properties.
 
 ```yaml
 spec:
@@ -164,12 +156,12 @@ spec:
           topologyKey: kubernetes.io/hostname
 ```
 
-<h2>TopologySpreadConstraints</h2>
-<hr>
+## TopologySpreadConstraints
+---
 
-<p>The <code>topologySpreadConstraints</code> property defines how to spread Pods across a cluster topology, ensuring application resiliency.</p>
+The `topologySpreadConstraints` property defines how to spread Pods across a cluster topology, ensuring application resiliency.
 
-<p>The following Deployment uses the <code>topologySpreadConstraints</code> property to ensure Pods are correctly balanced between AZ and Node.</p>
+The following Deployment uses the `topologySpreadConstraints` property to ensure Pods are correctly balanced between AZ and Node.
 
 {{< image src="/images/learning-path/cka/scheduling/topologySpreadConstraint.png" width="100%" align="center" alt="" >}}
 
@@ -206,21 +198,19 @@ spec:
             app: www
 ```
 
-<h2>Taints & Tolerations</h2>
-<hr>
+## Taints & Tolerations
+---
 
-<p>In contrast to the properties we saw earlier, we use a <strong>Taint</strong> to prevent certain Pods from being scheduled on a node. A Pod must tolerate a Taint, using a <code>toleration</code> property, to be scheduled on a Node having that Taint.</p>
+In contrast to the properties we saw earlier, we use a **Taint** to prevent certain Pods from being scheduled on a node. A Pod must tolerate a Taint, using a `toleration` property, to be scheduled on a Node having that Taint.
 
-<p>A Taint has 3 properties:</p>
-<ul>
-<li><code>key</code>: it can be arbitrary string content, same format as labels</li>
-<li><code>value</code>: it can be an arbitrary string content, same format as labels</li>
-<li><code>effect</code>: among <code>NoSchedule</code>, <code>PreferNoSchedule</code> and <code>NoExecute</code></li>
-</ul>
+A Taint has 3 properties:
+- `key`: it can be arbitrary string content, same format as labels
+- `value`: it can be an arbitrary string content, same format as labels
+- `effect`: among `NoSchedule`, `PreferNoSchedule` and `NoExecute`
 
-<p>By default, a kubeadm cluster sets a Taint on the control plane Nodes. This Taint prevents a Pod from being deployed on these Nodes unless the Pod explicitly tolerates this Taint.</p>
+By default, a kubeadm cluster sets a Taint on the control plane Nodes. This Taint prevents a Pod from being deployed on these Nodes unless the Pod explicitly tolerates this Taint.
 
-<p>The following command lists the Taints existing on the controlplane Node.</p>
+The following command lists the Taints existing on the controlplane Node.
 
 ```bash
 $ kubectl get no controlplane -o jsonpath='{.spec.taints}' | jq
@@ -232,7 +222,7 @@ $ kubectl get no controlplane -o jsonpath='{.spec.taints}' | jq
 ]
 ```
 
-<p>When creating the following Deployment, with 10 replicas of nginx Pods, none of the Pods will land on the controlplane because of this specific Taint.</p>
+When creating the following Deployment, with 10 replicas of nginx Pods, none of the Pods will land on the controlplane because of this specific Taint.
 
 ```yaml
 apiVersion: apps/v1
@@ -254,7 +244,7 @@ spec:
         name: nginx
 ```
 
-<p>We must add a toleration for the Taint, so the scheduler can schedule Pods on the controlplane.</p>
+We must add a toleration for the Taint, so the scheduler can schedule Pods on the controlplane.
 
 ```yaml
 apiVersion: apps/v1
@@ -279,12 +269,12 @@ spec:
         name: nginx
 ```
 
-<h2>PriorityClass</h2>
-<hr>
+## PriorityClass
+---
 
-<p>A <code>PriorityClass</code> is a Kubernetes resource that defines the priority of Pods. It influences scheduling decisions and preemption - meaning that higher-priority Pods can evict lower-priority ones if resources are scarce. A PriorityClass can be preempting (default behavior) or non-preempting, depending on the <code>preemtionPolicy</code> property.</p>
+A `PriorityClass` is a Kubernetes resource that defines the priority of Pods. It influences scheduling decisions and preemption - meaning that higher-priority Pods can evict lower-priority ones if resources are scarce. A PriorityClass can be preempting (default behavior) or non-preempting, depending on the `preemtionPolicy` property.
 
-<p>The following specifications define a high-priority PriorityClass and a Pod using it.</p>
+The following specifications define a high-priority PriorityClass and a Pod using it.
 
 ```yaml
 apiVersion: scheduling.k8s.io/v1
@@ -305,23 +295,21 @@ spec:
   priorityClassName: high-priority
 ```
 
-<h2>RuntimeClass</h2>
-<hr>
+## RuntimeClass
+---
 
-<p>A <code>RuntimeClass</code> allows to have multiple container runtimes in the cluster, and to select the one which best fits a workload. There are several container runtimes, each one of them addresses specific use cases, including:</p>
+A `RuntimeClass` allows to have multiple container runtimes in the cluster, and to select the one which best fits a workload. There are several container runtimes, each one of them addresses specific use cases, including:
 
-<ul>
-<li><a href="https://containerd.io/">Containerd</a> is a general-purpose container runtime (CNCF Graduated)</li>
-<li><a href="https://github.com/cri-o/cri-o">CRI-O</a> is a light container runtime focusing on Kubernetes (CNCF Graduated)</li>
-<li><a href="https://gvisor.dev/">GVisor</a> is used to run an unsecure workload in a sandbox</li>
-<li><a href="https://katacontainers.io/">Kata-Container</a> uses Micro VMs for workload isolation</li>
-<li><a href="https://firecracker-microvm.github.io/">Firecracker</a> uses Micro VMs, mainly for serverless</li>
-<li><a href="https://wasmedge.org/">WasmEdge</a> is dedicated to run Wasm workload</li>
-</ul>
+- [Containerd](https://containerd.io/) is a general-purpose container runtime (CNCF Graduated)
+- [CRI-O](https://github.com/cri-o/cri-o) is a light container runtime focusing on Kubernetes (CNCF Graduated)
+- [GVisor](https://gvisor.dev/) is used to run an unsecure workload in a sandbox
+- [Kata-Container](https://katacontainers.io/) uses Micro VMs for workload isolation
+- [Firecracker](https://firecracker-microvm.github.io/) uses Micro VMs, mainly for serverless
+- [WasmEdge](https://wasmedge.org/) is dedicated to run Wasm workload
 
-<p>In a Pod specification, we can specify the container runtime configuration needed by this workload. The scheduler ensures that Pods are placed on Nodes that support the required container runtime configuration.</p>
+In a Pod specification, we can specify the container runtime configuration needed by this workload. The scheduler ensures that Pods are placed on Nodes that support the required container runtime configuration.
 
-<p>Let's say our cluster already has a RuntimeClass named <code>gvisor</code>, then we can use it in the Pod specification as follows.</p>
+Let's say our cluster already has a RuntimeClass named `gvisor`, then we can use it in the Pod specification as follows.
 
 ```yaml
 apiVersion: v1
@@ -335,11 +323,9 @@ spec:
   runtimeClass: gvisor
 ```
 
+## Practice
 ---
 
-<h2>Practice</h2>
-<hr>
-
-<p>You can now jump to the <a href="./exercises/">Exercises part</a> to learn and practice the concepts above.</p>
+You can now jump to the [Exercises part](./exercises/) to learn and practice the concepts above.
 
 {{< /chapterstyle >}}

@@ -10,44 +10,47 @@ weight: 2
 
 {{< chapterstyle >}}
 
-<p>This section guides you in creating of a 3-nodes Kubernetes cluster using <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/">kubeadm</a> bootstrapping tool. This is an important step as you will use this cluster throughout this workshop.</p>
+This section guides you in creating of a 3-nodes Kubernetes cluster using [kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/) bootstrapping tool. This is an important step as you will use this cluster throughout this workshop.
 
-<p>The cluster you'll create is composed of 3 Nodes named <strong>controlplane</strong>, <strong>worker1</strong> and <strong>worker2</strong>. The controlplane Node runs the cluster components (API Server, Controller Manager, Scheduler, etcd), while worker1 and worker2 are the worker Nodes in charge of running the containerized workloads.</p>
+The cluster you'll create is composed of 3 Nodes named **controlplane**, **worker1** and **worker2**. The controlplane Node runs the cluster components (API Server, Controller Manager, Scheduler, etcd), while worker1 and worker2 are the worker Nodes in charge of running the containerized workloads.
 
 {{< image src="/images/learning-path/cka/creation/objectives.png" width="100%" align="center" alt="" >}}
 
-<h2>Provisioning VMs</h2>
+## Provisioning VMs
+---
 
-<p>Before creating a cluster, it's necessary to provision the infrastructure (bare metal servers or virtual machines). You can create the 3 VMs on your local machine or a cloud provider (but this last option will come with a small cost). Ensure you name those VMs <strong>controlplane</strong>, <strong>worker1</strong>, and <strong>worker2</strong> to keep consistency alongside the workshop. Please also ensure each VM has at least 2 vCPUs and 2G of RAM so it meets the <a href="https://bit.ly/kubeadm-prerequisites">prerequisites</a>.</p>
+Before creating a cluster, it's necessary to provision the infrastructure (bare metal servers or virtual machines). You can create the 3 VMs on your local machine or a cloud provider (but this last option will come with a small cost). Ensure you name those VMs **controlplane**, **worker1**, and **worker2** to keep consistency alongside the workshop. Please also ensure each VM has at least 2 vCPUs and 2G of RAM so it meets the [prerequisites](https://bit.ly/kubeadm-prerequisites).
 
-<p>If you want to create those VMs on your local machine, we recommend using <a href="https://multipass.run">Multipass</a>, a tool from <a href="https://canonical.com/">Canonical</a>. Multipass makes creating local VMs a breeze. Once you have installed Multipass, create the VMs as follows.</p>
+If you want to create those VMs on your local machine, we recommend using [Multipass](https://multipass.run), a tool from [Canonical](https://canonical.com/). Multipass makes creating local VMs a breeze. Once you have installed Multipass, create the VMs as follows.
 
 ```bash
 multipass launch --name controlplane --memory 2G --cpus 2 --disk 10G
 multipass launch --name worker1 --memory 2G --cpus 2 --disk 10G
 multipass launch --name worker2 --memory 2G --cpus 2 --disk 10G
 ```
+
 {{< image src="/images/learning-path/cka/creation/step-1.png" width="100%" align="center" alt="" >}}
 
-<h2>Cluster initialization</h2>
+## Cluster initialization
+---
 
-<p>Now that the VMs are created, you need to install some dependencies on each on them (a couple of packages including <strong>kubectl</strong>, <strong>containerd</strong> and <strong>kubeadm</strong>). To simplify this process we provide some scripts that will do this job for you.</p>
+Now that the VMs are created, you need to install some dependencies on each on them (a couple of packages including **kubectl**, **containerd** and **kubeadm**). To simplify this process we provide some scripts that will do this job for you.
 
-<p>First, ssh on the controlplane VM and install those dependencies using the following command.</p>
+First, ssh on the controlplane VM and install those dependencies using the following command.
 
 ```bash
 curl https://luc.run/kubeadm/controlplane.sh | VERSION="1.32" sh
 ```
 
-<p>Next, still from the controlplane VM, initialize the cluster.</p>
+Next, still from the controlplane VM, initialize the cluster.
 
 ```bash
 sudo kubeadm init
 ```
 
-<p>The initialization should take a few tens of seconds. The list below shows all the steps it takes.</p>
+The initialization should take a few tens of seconds. The list below shows all the steps it takes.
 
-<pre>
+```
 preflight                     Run pre-flight checks
 certs                         Certificate generation
   /ca                           Generate the self-signed Kubernetes CA to provision identities for other Kubernetes components
@@ -86,15 +89,16 @@ addon                         Install required addons for passing conformance te
   /coredns                      Install the CoreDNS addon to a Kubernetes cluster
   /kube-proxy                   Install the kube-proxy addon to a Kubernetes cluster
 show-join-command             Show the join command for control-plane and worker node
-</pre>
+```
 
-<p>Several commands are returned at the end of the installation process, which you'll use in the next part.</p>
+Several commands are returned at the end of the installation process, which you'll use in the next part.
 
 {{< image src="/images/learning-path/cka/creation/step-2.png" width="100%" align="center" alt="" >}}
 
-<h2>Retrieving kubeconfig file</h2>
+## Retrieving kubeconfig file
+---
 
-<p>The first set of commands returned during the initialization step allows configuring kubectl for the current user. Run those commands from a shell in the controlplane Node.</p>
+The first set of commands returned during the initialization step allows configuring kubectl for the current user. Run those commands from a shell in the controlplane Node.
 
 ```bash
 mkdir -p $HOME/.kube
@@ -102,7 +106,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-<p>You can now list the Nodes. You'll get only one Node as you've not added the worker Nodes yet.</p>
+You can now list the Nodes. You'll get only one Node as you've not added the worker Nodes yet.
 
 ```bash
 $ kubectl get no
@@ -110,43 +114,46 @@ NAME           STATUS     ROLES           AGE    VERSION
 controlplane   NotReady   control-plane   5m4s   v1.32.4
 ```
 
-<h2>Adding the first worker Node</h2>
+## Adding the first worker Node
+---
 
-<p>As you've done for the controlplane, use the following command to install the dependencies (kubectl, containerd, kubeadm) on worker1.</p>
+As you've done for the controlplane, use the following command to install the dependencies (kubectl, containerd, kubeadm) on worker1.
 
 ```bash
 curl https://luc.run/kubeadm/worker.sh | VERSION="1.32" sh
 ```
 
-<p>Then, run the join command returned during the initialization step. This command allows you to add worker nodes to the cluster.</p>
+Then, run the join command returned during the initialization step. This command allows you to add worker nodes to the cluster.
 
 ```bash
 sudo kubeadm join 10.81.0.174:6443 --token kolibl.0oieughn4y03zvm7 \
         --discovery-token-ca-cert-hash sha256:a1d26efca219428731be6b62e3298a2e5014d829e51185e804f2f614b70d933d
 ```
 
-<h2>Adding the second worker Node</h2>
+## Adding the second worker Node
+---
 
-<p>You need to do the same on worker2. First, install the dependencies.</p>
+You need to do the same on worker2. First, install the dependencies.
 
 ```bash
 curl https://luc.run/kubeadm/worker.sh | VERSION="1.32" sh
 ```
 
-<p>Then, run the join command to add this Node to the cluster.</p>
+Then, run the join command to add this Node to the cluster.
 
 ```bash
 sudo kubeadm join 10.81.0.174:6443 --token kolibl.0oieughn4y03zvm7 \
         --discovery-token-ca-cert-hash sha256:a1d26efca219428731be6b62e3298a2e5014d829e51185e804f2f614b70d933d
 ```
 
-<p>You now have cluster with 3 Nodes.</p>
+You now have cluster with 3 Nodes.
 
 {{< image src="/images/learning-path/cka/creation/step-3.png" width="100%" align="center" alt="" >}}
 
-<h2>Status of the Nodes</h2>
+## Status of the Nodes
+---
 
-<p>List the Nodes and notice they are all in NotReady status.</p>
+List the Nodes and notice they are all in NotReady status.
 
 ```bash
 $ kubectl get nodes
@@ -156,16 +163,17 @@ worker1         NotReady   <none>          58s     v1.32.4
 worker2         NotReady   <none>          55s     v1.32.4
 ```
 
-<p>If you go one step further and describe the controlplane Node, you'll get why the cluster is not ready yet.</p>
+If you go one step further and describe the controlplane Node, you'll get why the cluster is not ready yet.
 
-<pre>
+```
 …
 KubeletNotReady              container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
-</pre>
+```
 
-<h2>Installing a network plugin</h2>
+## Installing a network plugin
+---
 
-<p>Run the following commands from the controlplane Node to install Cilium in your cluster.</p>
+Run the following commands from the controlplane Node to install Cilium in your cluster.
 
 ```bash
 OS="$(uname | tr '[:upper:]' '[:lower:]')"
@@ -175,7 +183,7 @@ sudo tar xzvfC cilium-$OS-$ARCH.tar.gz /usr/local/bin
 cilium install
 ```
 
-<p>After a few tens of seconds, you'll see your cluster is ready.</p>
+After a few tens of seconds, you'll see your cluster is ready.
 
 ```bash
 $ kubectl get nodes
@@ -185,11 +193,12 @@ worker1         Ready    <none>          4m28s   v1.32.4
 worker2         Ready    <none>          4m25s   v1.32.4
 ```
 
-<h2>Get the kubeconfig on the host machine</h2>
+## Get the kubeconfig on the host machine
+---
 
-<p>To avoid connecting to the controlplane Node to run the kubectl commands, copy the kubeconfig file from the controlplane to the host machine. Make sure to copy this file into <code>$HOME/.kube/config</code> so it automatically configures kubectl.</p>
+To avoid connecting to the controlplane Node to run the kubectl commands, copy the kubeconfig file from the controlplane to the host machine. Make sure to copy this file into `$HOME/.kube/config` so it automatically configures kubectl.
 
-<p>If you've created your VMs with Multipass, you can copy the kubeconfig file using the following commands.</p>
+If you've created your VMs with Multipass, you can copy the kubeconfig file using the following commands.
 
 ```bash
 multipass transfer controlplane:/home/ubuntu/.kube/config config
@@ -197,7 +206,7 @@ mkdir $HOME/.kube
 mv config $HOME/.kube/config
 ```
 
-<p>You should now be able to direcly list the Nodes from the host machine.</p>
+You should now be able to direcly list the Nodes from the host machine.
 
 ```bash
 $ kubectl get nodes

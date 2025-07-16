@@ -10,49 +10,43 @@ weight: 8
 
 {{< chapterstyle >}}
 
-<p>This section is a refresher that provides an overview of the main concepts used to troubleshoot a Kubernetes cluster. At the end of this section, please complete the exercises to put these concepts into practice.</p>
+This section is a refresher that provides an overview of the main concepts used to troubleshoot a Kubernetes cluster. At the end of this section, please complete the exercises to put these concepts into practice.
 
-<h2>Log management</h2>
-<hr>
+## Log management
+---
 
-<p>Logs allow users to:</p>
-<ul>
-<li>follow the cluster's activity</li>
-<li>analyze errors</li>
-</ul>
+Logs allow users to:
+- follow the cluster's activity
+- analyze errors
 
-<p>We must decouple log management from the workload (Containers, Pods) and from the Nodes.</p>
+We must decouple log management from the workload (Containers, Pods) and from the Nodes.
 
-<p>Among the <strong>best practices</strong>:</p>
-<ul>
-<li>a container must log on stdout/stderr</li>
-<li>we should ship logs to a centralized logging solution</li>
-</ul>
+Among the **best practices**:
+- a container must log on stdout/stderr
+- we should ship logs to a centralized logging solution
 
-<h3>Different levels</h3>
+### Different levels
 
-<p>The following picture illustrates how we can configure logging on a cluster:</p>
+The following picture illustrates how we can configure logging on a cluster:
 
-<p><strong>Node level</strong>: the container runtime stores the logs on the Node's filesystem</p>
+**Node level**: the container runtime stores the logs on the Node's filesystem
 
-<p><strong>Cluster level</strong>:</p>
-<ul>
-<li>the container directly ships logs to a centralized logging system</li>
-<li>the container runtime stores the logs on the Node's filesystem, and then an external process (usually deployed as a DaemonSet) reads these logs and ships them to a centralized system</li>
-<li>a sidecar container is used to generate the logs on stdin/stdout, next the container runtime stores the logs on the Node's filesystem, and then an external process reads these logs and ships them to a centralized system</li>
-</ul>
+**Cluster level**:
+- the container directly ships logs to a centralized logging system
+- the container runtime stores the logs on the Node's filesystem, and then an external process (usually deployed as a DaemonSet) reads these logs and ships them to a centralized system
+- a sidecar container is used to generate the logs on stdin/stdout, next the container runtime stores the logs on the Node's filesystem, and then an external process reads these logs and ships them to a centralized system
 
 {{< image src="/images/learning-path/cka/troubleshooting/logging-levels.png" width="100%" align="center" alt="" >}}
 
-<h3>Pods & Containers logs</h3>
+### Pods & Containers logs
 
-<p>The common way to get a Pod's logs is using kubectl. First, we run a Pod based on the ghost image.</p>
+The common way to get a Pod's logs is using kubectl. First, we run a Pod based on the ghost image.
 
 ```bash
 kubectl run ghost --image=ghost:4
 ```
 
-<p>Next, we can query the Pod's logs.</p>
+Next, we can query the Pod's logs.
 
 ```bash
 $ kubectl logs ghost
@@ -63,7 +57,7 @@ $ kubectl logs ghost
 ...
 ```
 
-<p>We can also find these logs on the filesystem of the Node this Pod is running on. The following command tells us the Pod is running on worker1.</p>
+We can also find these logs on the filesystem of the Node this Pod is running on. The following command tells us the Pod is running on worker1.
 
 ```bash
 kubectl get po -o wide
@@ -71,7 +65,7 @@ NAME    READY   STATUS    RESTARTS   AGE     IP          NODE      NOMINATED NOD
 ghost   1/1     Running   0          6m32s   10.0.0.96   worker1   <none>           <none>
 ```
 
-<p>The <code>/var/log/pods</code> folder on that Node contains the logs of all the Pods running on that Node, including the logs of the ghost Pod.</p>
+The `/var/log/pods` folder on that Node contains the logs of all the Pods running on that Node, including the logs of the ghost Pod.
 
 ```bash
 $ sudo ls /var/log/pods
@@ -80,7 +74,7 @@ default_mongo_331fa933-e9cf-42f8-94c0-93fe5e5d6e82        kube-system_cilium-vht
 default_podinfo_c146441a-ba30-41cd-8e99-80feb7f12afe      kube-system_kube-proxy-szfrd_17d684c2-a4ff-4316-b855-6f1ff63e5a0b
 ```
 
-<p>We get the same content we had using kubectl.</p>
+We get the same content we had using kubectl.
 
 ```bash
 $ sudo cat /var/log/pods/default_ghost_c502bf3e-7671-4488-af0c-5a2f0908db41/ghost/0.log
@@ -90,7 +84,7 @@ $ sudo cat /var/log/pods/default_ghost_c502bf3e-7671-4488-af0c-5a2f0908db41/ghos
 2025-04-24T13:05:39.165232139Z stdout F [2025-04-24 13:05:39] INFO Ghost server started in 0.974s
 ```
 
-<p>Still from worker1, we can get containers' logs in <code>/var/log/containers</code></p>
+Still from worker1, we can get containers' logs in `/var/log/containers`
 
 ```bash
 $ sudo ls /var/log/containers
@@ -108,15 +102,15 @@ mongo_default_mongo-70628c097a2032abd76d0716e62635378befb7efb077b787581eb86d1955
 podinfo_default_podinfo-5e99fed167e8338e2d11b8e337fb3490522dc7c601ee83e60f85e80c5d7d4f4a.log
 ```
 
-<h3>Control plane logs</h3>
+### Control plane logs
 
-<p>We can get the logs of the control plane components (API Server, etcd, controller-manager, and scheduler) with kubectl. The following command allows us to get the logs of the API Server running on the controlplane Node.</p>
+We can get the logs of the control plane components (API Server, etcd, controller-manager, and scheduler) with kubectl. The following command allows us to get the logs of the API Server running on the controlplane Node.
 
 ```bash
 kubectl -n kube-system logs kube-apiserver-controlplane
 ```
 
-<p>The logs of these components are available on the controlplane Node, which is the Node they are running on.</p>
+The logs of these components are available on the controlplane Node, which is the Node they are running on.
 
 ```bash
 $ sudo ls -al /var/log/pods
@@ -131,84 +125,74 @@ drwxr-xr-x 3 root root 4096 Apr 22 15:05 kube-system_kube-scheduler-controlplane
 ...
 ```
 
-<h3>Kubelet logs</h3>
+### Kubelet logs
 
-<p>The kubelet agent, running on each Node of the cluster, is managed by systemd. We can use journalctl to get its logs.</p>
+The kubelet agent, running on each Node of the cluster, is managed by systemd. We can use journalctl to get its logs.
 
 ```bash
 sudo journalctl -u kubelet | less
 ```
 
-<h2>Metrics management</h2>
-<hr>
+## Metrics management
+---
 
-<p>In Kubernetes, metrics come in various types, originate from different layers of the stack, and are exposed by multiple components.</p>
+In Kubernetes, metrics come in various types, originate from different layers of the stack, and are exposed by multiple components.
 
-<p><strong>Types of Metrics</strong>:</p>
-<ul>
-<li>CPU / RAM usage</li>
-<li>Disk I/O</li>
-<li>Network activity</li>
-<li>Request and error rates</li>
-</ul>
+**Types of Metrics**:
+- CPU / RAM usage
+- Disk I/O
+- Network activity
+- Request and error rates
 
-<p><strong>Sources of Metrics</strong>:</p>
-<ul>
-<li>Cluster-wide</li>
-<li>Control plane</li>
-<li>Individual Nodes</li>
-<li>Pods and containers</li>
-<li>Applications</li>
-</ul>
+**Sources of Metrics**:
+- Cluster-wide
+- Control plane
+- Individual Nodes
+- Pods and containers
+- Applications
 
-<p><strong>Metrics Producers</strong>:</p>
-<ul>
-<li>cAdvisor (embedded in kubelet)</li>
-<li>Metrics Server</li>
-<li>Kubernetes API Server</li>
-<li>Node Exporter</li>
-<li>kube-state-metrics</li>
-</ul>
+**Metrics Producers**:
+- cAdvisor (embedded in kubelet)
+- Metrics Server
+- Kubernetes API Server
+- Node Exporter
+- kube-state-metrics
 
-<h3>Prometheus-based solution</h3>
+### Prometheus-based solution
 
-<p>The Prometheus stack is a widely used solution to manage Metrics in a Kubernetes cluster.</p>
+The Prometheus stack is a widely used solution to manage Metrics in a Kubernetes cluster.
 
 {{< image src="/images/learning-path/cka/troubleshooting/monitoring-prometheus.png" width="100%" align="center" alt="" >}}
 
-<h3>Metrics server</h3>
+### Metrics server
 
-<p>The metrics-server is a lightweight component that is not installed by default in Kubernetes. It gets CPU / RAM usage in real time but does not store history. Other resources, such as HorizontalPodAutoscaler (HPA), use it to increase/decrease the number of Pods based on resource consumption.</p>
+The metrics-server is a lightweight component that is not installed by default in Kubernetes. It gets CPU / RAM usage in real time but does not store history. Other resources, such as HorizontalPodAutoscaler (HPA), use it to increase/decrease the number of Pods based on resource consumption.
 
-<p>The metrics-server brings additional kubectl commands to get the usage of resources in the cluster.</p>
+The metrics-server brings additional kubectl commands to get the usage of resources in the cluster.
 
-<ul>
-<li><strong>Getting the CPU and RAM in use by the cluster's Nodes</strong></li>
-</ul>
+- **Getting the CPU and RAM in use by the cluster's Nodes**
 
 ```bash
 kubectl top nodes
 ```
 
-<ul>
-<li><strong>Getting the CPU and RAM in use by individual Pods</strong></li>
-</ul>
+- **Getting the CPU and RAM in use by individual Pods**
 
 ```bash
 kubectl top pods
 ```
 
-<h2>Cluster components</h2>
-<hr>
+## Cluster components
+---
 
-<p>Each control plane component is a static Pod. The <code>/etc/kubernetes/manifests</code> folder of the controlplane Node contains all their YAML specifications. These Pods are directly managed by kubelet.</p>
+Each control plane component is a static Pod. The `/etc/kubernetes/manifests` folder of the controlplane Node contains all their YAML specifications. These Pods are directly managed by kubelet.
 
 ```bash
 $ ls /etc/kubernetes/manifests
 etcd.yaml  kube-apiserver.yaml  kube-controller-manager.yaml  kube-scheduler.yaml
 ```
 
-<p>For each static Pod, kubelet automatically creates a mirror Pod that appears in the Kubernetes API.</p>
+For each static Pod, kubelet automatically creates a mirror Pod that appears in the Kubernetes API.
 
 ```bash
 $ kubectl get po -n kube-system
@@ -226,12 +210,12 @@ weave-net-pfcrp                          2/2     Running   1 (5d17h ago)   5d17h
 weave-net-zxchk                          2/2     Running   1 (5d17h ago)   5d17h
 ```
 
-<h2>Troubleshooting - Examples</h2>
-<hr>
+## Troubleshooting - Examples
+---
 
-<h3>Application failure - Example 1</h3>
+### Application failure - Example 1
 
-<p>The following specification seems valid for deploying a Pod based on the elasticsearch image.</p>
+The following specification seems valid for deploying a Pod based on the elasticsearch image.
 
 ```yaml
 apiVersion: v1
@@ -244,7 +228,7 @@ spec:
     name: es
 ```
 
-<p>After waiting a few dozen seconds following the creation of this Pod, we begin to see some errors.</p>
+After waiting a few dozen seconds following the creation of this Pod, we begin to see some errors.
 
 ```bash
 $ kubectl get pods/es -w
@@ -255,7 +239,7 @@ es     0/1     Error               1          58s
 es     0/1     CrashLoopBackOff    1          70s
 ```
 
-<p>To understand the origin of these errors, we first need to use the describe command to get more details.</p>
+To understand the origin of these errors, we first need to use the describe command to get more details.
 
 ```bash
 $ kubectl describe po/es
@@ -267,7 +251,7 @@ Events:
   Warning  BackOff    19s (x9 over 2m57s)   kubelet, workers-1i2u   Back-off restarting failed container
 ```
 
-<p>Next, we verify the application logs. It shows the root cause: the value of the kernel property <code>vm.max_map_count</code> is too low.</p>
+Next, we verify the application logs. It shows the root cause: the value of the kernel property `vm.max_map_count` is too low.
 
 ```bash
 $ kubectl logs po/es
@@ -278,7 +262,7 @@ ERROR: [1] bootstrap checks failed
 [2020-03-15T17:42:15,483][INFO ][o.e.n.Node               ] [hK4xzxV] stopped
 ```
 
-<p>We should use an initContainer and an env var to fix the thing for this specific example.</p>
+We should use an initContainer and an env var to fix the thing for this specific example.
 
 ```yaml
 apiVersion: v1
@@ -300,9 +284,9 @@ spec:
       value: single-node
 ```
 
-<h3>Application failure - Example 2</h3>
+### Application failure - Example 2
 
-<p>Let's consider a Pod exposed with a Service.</p>
+Let's consider a Pod exposed with a Service.
 
 ```bash
 kubectl get po,svc -l app=ghost
@@ -313,11 +297,11 @@ NAME            TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 service/ghost   NodePort   10.43.121.142   <none>        2368:30526/TCP   88s
 ```
 
-<p>It happens that the application is not reachable via the NodePort provided.</p>
+It happens that the application is not reachable via the NodePort provided.
 
 {{< image src="/images/learning-path/cka/troubleshooting/application-failure-2.png" width="100%" align="center" alt="" >}}
 
-<p>In this case, we can first describe the Service and check the Endpoints. In the following example, <strong>Endpoints is empty</strong>, which indicates we did not configure the Service correctly.</p>
+In this case, we can first describe the Service and check the Endpoints. In the following example, **Endpoints is empty**, which indicates we did not configure the Service correctly.
 
 ```bash
 k describe svc ghost
@@ -340,26 +324,24 @@ External Traffic Policy:  Cluster
 Events:                   <none>
 ```
 
-<p>The list of Endpoints is empty, so the service does not expose a single Pod.</p>
+The list of Endpoints is empty, so the service does not expose a single Pod.
 
-<p>There is a mismatch between the Service's selector and the pod labels:</p>
-<ul>
-<li>Service's selector is <code>run: ghost</code></li>
-<li>Pod's label is <code>app: ghost</code></li>
-</ul>
+There is a mismatch between the Service's selector and the pod labels:
+- Service's selector is `run: ghost`
+- Pod's label is `app: ghost`
 
-<p>In this case, we need to change one of them to ensure they match.</p>
+In this case, we need to change one of them to ensure they match.
 
-<h3>Failure of the API Server</h3>
+### Failure of the API Server
 
-<p>If kubectl commands hang, that may be because the API Server is not available.</p>
+If kubectl commands hang, that may be because the API Server is not available.
 
 ```bash
 $ kubectl get po
 ... hanging
 ```
 
-<p>From the controlplane, we first check the kubelet's logs. In this example, the logs indicate the API Server encounters a problem to start.</p>
+From the controlplane, we first check the kubelet's logs. In this example, the logs indicate the API Server encounters a problem to start.
 
 ```bash
 Checking kubelet logs
@@ -369,7 +351,7 @@ Mar 31 09:49:18 controlplane kubelet[72558]: E0331 09:49:18.426742 72558 kubelet
 …
 ```
 
-<p>We retrieve the name of the API Server's log file from the <code>/var/log/pods</code> folder on the controlplane Node.</p>
+We retrieve the name of the API Server's log file from the `/var/log/pods` folder on the controlplane Node.
 
 ```bash
 $ ls -al /var/log/pods
@@ -386,7 +368,7 @@ drwxr-xr-x  3 root root 4096 Mar 26 13:46 kube-system_kube-scheduler-controlplan
 drwxr-xr-x  5 root root 4096 Mar 25 16:06 kube-system_weave-net-66dtm_cef2efd7-9ea6-4604-a871-53ab915a7a84
 ```
 
-<p>From that file, we directly understand why the API Server cannot start: an invalid configuration option is used in its specification.</p>
+From that file, we directly understand why the API Server cannot start: an invalid configuration option is used in its specification.
 
 ```bash
 sudo cat kube-system_kube-apiserver-controlplae_1379f6cdef52f9b598e745122eb20d6f/kube-apiserver/8.log
@@ -394,7 +376,7 @@ sudo cat kube-system_kube-apiserver-controlplae_1379f6cdef52f9b598e745122eb20d6f
 2022-03-31T10:00:27.785838518Z stderr F E0331 10:00:27.785689       1 run.go:74] "command failed" err="enable-admission-plugins plugin \"WRONG_STUFF_HERE\" is unknown"
 ```
 
-<p>Still, from the controlplane Node, we can check the API Server specification (<code>/etc/kubernetes/manifests/kube-apiserver.yaml</code>) and fix the incorrect configuration.</p>
+Still, from the controlplane Node, we can check the API Server specification (`/etc/kubernetes/manifests/kube-apiserver.yaml`) and fix the incorrect configuration.
 
 ```yaml
 apiVersion: v1
@@ -421,11 +403,11 @@ spec:
     ...
 ```
 
-<p>Once the specification is changed, kubelet automatically restarts the API Server Pod.</p>
+Once the specification is changed, kubelet automatically restarts the API Server Pod.
 
-<h3>Failure of a worker node</h3>
+### Failure of a worker node
 
-<p>Sometimes, a Node may not be in the Ready state as illustrated below.</p>
+Sometimes, a Node may not be in the Ready state as illustrated below.
 
 ```bash
 $ kubectl get nodes
@@ -435,7 +417,7 @@ worker1        NotReady   <none>          5d19h   v1.32.2  <- This Node does not
 worker2        Ready      <none>          5d19h   v1.32.2
 ```
 
-<p>We start by getting more information about this Node to troubleshoot this issue.</p>
+We start by getting more information about this Node to troubleshoot this issue.
 
 ```bash
 kubectl describe nodes worker1
@@ -454,7 +436,7 @@ Conditions:
 …
 ```
 
-<p>The result above indicates that the kubelet process running on worker1 has stopped posting the Node's status, which might indicate that process no longer runs. In that case, we can check the status of the kubelet systemd service on worker1.</p>
+The result above indicates that the kubelet process running on worker1 has stopped posting the Node's status, which might indicate that process no longer runs. In that case, we can check the status of the kubelet systemd service on worker1.
 
 ```bash
 Checking the status of the node's kubelet
@@ -474,17 +456,15 @@ Mar 31 11:35:14 worker1 kubelet[66511]: I0331 11:35:14.916992   66511 eviction_m
 ...
 ```
 
-<p>As kubelet is not running, we can restart it.</p>
+As kubelet is not running, we can restart it.
 
 ```bash
 sudo systemctl restart kubelet
 ```
 
+## Practice
 ---
 
-<h2>Practice</h2>
-<hr>
-
-<p>You can now jump to the <a href="./exercises/">Exercises part</a> to learn and practice the concepts above.</p>
+You can now jump to the [Exercises part](./exercises/) to learn and practice the concepts above.
 
 {{< /chapterstyle >}}
