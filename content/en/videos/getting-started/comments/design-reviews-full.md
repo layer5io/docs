@@ -5,8 +5,9 @@ description: Learn how to use the Layers Panel in MeshMap to manage and organize
 
 ## Layers Panel
 
-The Layers Panel in MeshMap helps you organize, manage, and interact with the components in your design canvas. It is especially useful when you're working with large, complex designs and want better control over visibility, naming, and relationships between components. This guide explains how to use the Layers Panel effectively as part of your MeshMap workflows.
+Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
+The Layers Panel helps you organize, manage, and interact with the components in your design canvas. It is especially useful when you're working with large, complex designs and want better control over visibility, naming, and relationships between components. This guide explains how to use the Layers Panel effectively as part of your design workflows.
 ### Renaming Components
 
 When you're working with many components, it can be helpful to give them meaningful names to keep track of their roles. MeshMap allows you to rename any component directly from the Layers Panel.
