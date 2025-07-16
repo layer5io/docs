@@ -50,23 +50,23 @@ This step is essential. It updates your repository's "identity card" (`go.mod`) 
 
 The Academy uses a specific directory layout to keep each organization's content separate and secure.
 
-1. **Define Your Unique Identifier**
+1. **Get Your Organization ID**
 
-    First, you'll need a unique identifier for your organization. This should be a simple, URL-friendly name.
+    Each learning path is tied to a specific organization. Before creating content, you must get your organization's unique identifier (UID). This is a system-generated ID, not a name you create.
 
-{{< alert type="warning" title="Naming Standard" >}}
-Use only lowercase letters and separate words with hyphens (e.g., `my-company`, `acme-inc`).
+{{< alert type="info" title="What is the UID?" >}}
+The Organization UID ensures that your learning content is securely associated with your organization and displayed only to its members. You will use this exact UID to name your core content folders.
 {{< /alert >}}
 
 2. **Create the Core Directories**
 
     Now, inside your `academy-example` project, you should see the following top-level folders.
 
-    1. `content/learning-paths/<your-identifier>/`
+    1. `content/learning-paths/<your-organization-uid>/`
       This `content` directory is where all your written material lives. The folder hierarchy you create here directly defines the navigation and organization of your learning paths.
-    2. `static/<your-identifier>/`
+    2. `static/<your-organization-uid>/`
       This `static` directory is for all your assets, such as images, diagrams, and so on. 
-    3. `layouts/shortcodes/<your-identifier>/`
+    3. `layouts/shortcodes/<your-organization-uid>/`
       This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components in your lessons.
 
 3. **Build the Content Hierarchy**
@@ -79,7 +79,7 @@ Use only lowercase letters and separate words with hyphens (e.g., `my-company`, 
     content/
     └── learning-paths/
         ├── _index.md
-        └── <your-identifier>/
+        └── <your-organization-uid>/
             └── <your-learning-path>/
                 ├── _index.md
                 └── <your-course-1>/
@@ -97,8 +97,8 @@ Use only lowercase letters and separate words with hyphens (e.g., `my-company`, 
     - **The Section (`learning-paths`)**
     This is the top-level category for your content. The `_index.md` file at this level defines the main landing page for all learning paths.
 
-    - **Your Organization Folder (`<your-identifier>`)**
-    This is the most important folder for ensuring your content is properly scoped. All of your learning paths must reside inside a single folder named with your unique identifier.
+    - **Your Organization Folder (`<your-organization-uid>`)**
+    This is the most important folder for ensuring your content is properly scoped. All of your learning paths must reside inside a single folder named with your organization uid.
 
     - **The Learning Path (`<your-learning-path>`)**
     This folder represents a complete learning path. The `_index.md` file inside it contains the title, description, and other metadata that will be displayed on the learning path's summary card.
@@ -158,7 +158,7 @@ Enhance your course with images and other visual aids. To ensure compatibility w
 **How to Add an Image**
 
 1.  Place your image file (e.g., `hugo-logo.png`) in your scoped static directory:
-    `static/<your-identifier>/images/hugo-logo.png`
+    `static/<your-organization-uid>/images/hugo-logo.png`
 2.  In your `lesson-1.md` file, embed the image using the `usestatic` shortcode. The `path` is relative to your scoped static folder: ![The Hugo Logo]({{</* usestatic path="images/hugo-logo.png" */>}})
 
 Then the system will automatically convert this into the correct URL when building the site.
