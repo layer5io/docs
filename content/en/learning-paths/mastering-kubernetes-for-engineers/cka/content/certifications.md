@@ -15,42 +15,44 @@ weight: 1
 
 <p>The <a href="https://cncf.io">CNCF</a> delivers several Kubernetes certifications, which are listed in the following table.</p>
 
-<table>
+<div style="display: flex; justify-content: center;">
+<table style="width: 80%; table-layout: fixed;">
 <thead>
 <tr>
-<th>Certification</th>
-<th>Type</th>
-<th>Badge</th>
+<th style="width: 50%; text-align: left;">Certification</th>
+<th style="width: 20%; text-align: center;">Type</th>
+<th style="width: 30%; text-align: center;">Badge</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align: middle;">Kubernetes and Cloud Native Associate (KCNA)</td>
-<td style="vertical-align: middle;">MCQ</td>
-<td style="vertical-align: middle; text-align: center;">{{< image src="/images/learning-path/cka/certifications/kcna.png" width="90px" align="center" alt="" >}}</td>
+<td style="vertical-align: middle; padding: 10px;">Kubernetes and Cloud Native Associate (KCNA)</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">MCQ</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/kcna.png" width="120px" align="center" alt="" >}}</td>
 </tr>
 <tr>
-<td style="vertical-align: middle;">Kubernetes and Cloud Native Security Associate (KCSA)</td>
-<td style="vertical-align: middle;">MCQ</td>
-<td style="vertical-align: middle; text-align: center;">{{< image src="/images/learning-path/cka/certifications/kcsa.png" width="90px" align="center" alt="" >}}</td>
+<td style="vertical-align: middle; padding: 10px;">Kubernetes and Cloud Native Security Associate (KCSA)</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">MCQ</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/kcsa.png" width="120px" align="center" alt="" >}}</td>
 </tr>
 <tr>
-<td style="vertical-align: middle;">Certified Kubernetes Application Developer (CKAD)</td>
-<td style="vertical-align: middle;">Practice</td>
-<td style="vertical-align: middle; text-align: center;">{{< image src="/images/learning-path/cka/certifications/ckad.png" width="90px" align="center" alt="" >}}</td>
+<td style="vertical-align: middle; padding: 10px;">Certified Kubernetes Application Developer (CKAD)</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">Practice</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/ckad.png" width="120px" align="center" alt="" >}}</td>
 </tr>
 <tr>
-<td style="vertical-align: middle;">Certified Kubernetes Administrator (CKA)</td>
-<td style="vertical-align: middle;">Practice</td>
-<td style="vertical-align: middle; text-align: center;">{{< image src="/images/learning-path/cka/certifications/cka.png" width="90px" align="center" alt="" >}}</td>
+<td style="vertical-align: middle; padding: 10px;">Certified Kubernetes Administrator (CKA)</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">Practice</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/cka.png" width="120px" align="center" alt="" >}}</td>
 </tr>
 <tr>
-<td style="vertical-align: middle;">Certified Kubernetes Security Specialist (CKS) <em>passing the CKA is a requirement before passing the CKS</em></td>
-<td style="vertical-align: middle;">Practice</td>
-<td style="vertical-align: middle; text-align: center;">{{< image src="/images/learning-path/cka/certifications/cks.png" width="90px" align="center" alt="" >}}</td>
+<td style="vertical-align: middle; padding: 10px;">Certified Kubernetes Security Specialist (CKS) <em>passing the CKA is a requirement before passing the CKS</em></td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">Practice</td>
+<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/cks.png" width="120px" align="center" alt="" >}}</td>
 </tr>
 </tbody>
 </table>
+</div>
 
 <p>If you pass all those certifications, you become a <a href="https://www.cncf.io/training/kubestronaut/">Kubestronaut</a>.</p>
 <p>If you pass all those certifications, you become a <a href="https://www.cncf.io/training/kubestronaut/">Kubestronaut</a>.</p>
@@ -60,7 +62,8 @@ weight: 1
 
 <p>The following table summarizes the distribution of the CKA questions across 5 main subjects.</p>
 
-<table>
+<div style="display: flex; justify-content: center;">
+<table style="width: 80%; table-layout: fixed;">
 <thead>
 <tr>
 <th>Subject</th>
@@ -90,6 +93,7 @@ weight: 1
 </tr>
 </tbody>
 </table>
+</div>
 
 <h2>CKA Environment</h2>
 <hr>
