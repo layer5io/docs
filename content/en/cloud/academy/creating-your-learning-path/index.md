@@ -7,7 +7,7 @@ categories: [Academy]
 tags: [Designer]
 ---
 
-This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the Layer5 Academy. You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
+This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy/overview). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
 
 ### 1. Set Up Your Content Repository
 
@@ -98,7 +98,7 @@ Use only lowercase letters and separate words with hyphens (e.g., `my-company`, 
     This is the top-level category for your content. The `_index.md` file at this level defines the main landing page for all learning paths.
 
     - **Your Organization Folder (`<your-identifier>`)**
-    This is the most important folder for ensuring your content is properly scoped. All of your learning paths and challenges must reside inside a single folder named with your unique organization identifier.
+    This is the most important folder for ensuring your content is properly scoped. All of your learning paths must reside inside a single folder named with your unique identifier.
 
     - **The Learning Path (`<your-learning-path>`)**
     This folder represents a complete learning path. The `_index.md` file inside it contains the title, description, and other metadata that will be displayed on the learning path's summary card.
