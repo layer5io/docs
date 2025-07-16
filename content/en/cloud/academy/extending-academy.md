@@ -84,6 +84,55 @@ This folder acts as the **root scope** for all your learning paths. Supporting a
 
 ---
 
+## Front matter
+
+
+## 📘 Learning Path Frontmatter
+
+Use this at the top of each **Learning Path** page (`learning-paths/<orgId>/<slug>/_index.md` or similar):
+
+```yaml
+---
+title: "Mastering Kubernetes for Engineers"
+description: "Learn how to configure your Kubernetes clusters and manage the lifecycle of your workloads"
+banner: null  # Optional, URL to banner image
+---
+```
+
+> 📌 Place this frontmatter in the Markdown file that represents the learning path index page.
+
+---
+
+## 📗 Course Frontmatter (Optional Individual Course Pages)
+
+If each course has its own markdown page, you can use this frontmatter:
+
+```yaml
+---
+title: "Kubernetes Basics"
+description: "Learn the basics of Kubernetes"
+weight: 1
+banner: null  # Optional
+---
+```
+
+---
+
+## ✅ Summary of Required Fields
+
+| Type          | Field         | Required | Notes                       |
+| ------------- | ------------- | -------- | --------------------------- |
+| Learning Path | `title`       | ✅        |                             |
+|               | `description` | ✅        |                             |
+|               | `weight`      | ✅        | Defines order in the path   |
+|               | `banner`      | ❌        | Optional image URI          |
+| Course        | `title`       | ✅        |                             |
+|               | `description` | ✅        |                             |
+|               | `weight`      | ✅        | Defines order in the path   |
+|               | `banner`      | ❌        | Optional image URI          |
+|               | `prerequisites`      | ❌        | Optional List of prerequisites for the course |
+
+
 ## Learning Path Structure
 
 Each learning path can include multiple courses, chapters, and lessons, organized in a clear hierarchy.
