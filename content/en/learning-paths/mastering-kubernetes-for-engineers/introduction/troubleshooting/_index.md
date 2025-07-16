@@ -1,12 +1,12 @@
 ---
 docType: "Course"
 title: "Troubleshooting"
-description: "This section provides an introduction to Kubernetes, its architecture, and how it is used in modern software development."
-lectures: 6
+description: "This section presents some common deployment errors and how to troubleshoot them."
+lectures: 0
 courseTitle: "Troubleshooting"
 themeColor: "#00B39F"
 weight: 1
-cardImage: "/images/learning-path/intro-kubernetes/Resources/configuration.png"
+cardImage: ""
 
 ---
 
