@@ -15,46 +15,14 @@ Get an overview of the existing Kubernetes certifications and what you need to l
 ## Several certifications available
 ---
 
-The [CNCF](https://cncf.io) delivers several Kubernetes certifications, which are listed in the following table.
+| Certification | Type | Badge |
+|---------------|------|-------|
+| Kubernetes and Cloud Native Associate (KCNA) | MCQ | <img src="/images/learning-path/cka/certifications/kcsa.png" style="width: 120px;"> |
+| Kubernetes and Cloud Native Security Associate (KCSA) | MCQ | <img src="/images/learning-path/cka/certifications/kcsa.png" style="width: 120px;"> |
+| Certified Kubernetes Application Developer (CKAD) | Practice | <img src="/images/learning-path/cka/certifications/ckad.png" style="width: 120px;"> |
+| Certified Kubernetes Administrator (CKA) | Practice | <img src="/images/learning-path/cka/certifications/cka.png" style="width: 120px;"> |
+| Certified Kubernetes Security Specialist (CKS) <br> \*passing the CKA is a requirement before passing the CKS* | Practice | <img src="/images/learning-path/cka/certifications/cks.png" style="width: 120px;"> |
 
-<div style="display: flex; justify-content: left;">
-<table style="width: 80%; table-layout: fixed;">
-<thead>
-<tr>
-<th style="width: 50%; text-align: left;">Certification</th>
-<th style="width: 20%; text-align: center;">Type</th>
-<th style="width: 30%; text-align: center;">Badge</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align: middle; padding: 10px;">Kubernetes and Cloud Native Associate (KCNA)</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">MCQ</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/kcna.png" width="120px" align="center" alt="" >}}</td>
-</tr>
-<tr>
-<td style="vertical-align: middle; padding: 10px;">Kubernetes and Cloud Native Security Associate (KCSA)</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">MCQ</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/kcsa.png" width="120px" align="center" alt="" >}}</td>
-</tr>
-<tr>
-<td style="vertical-align: middle; padding: 10px;">Certified Kubernetes Application Developer (CKAD)</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">Practice</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/ckad.png" width="120px" align="center" alt="" >}}</td>
-</tr>
-<tr>
-<td style="vertical-align: middle; padding: 10px;">Certified Kubernetes Administrator (CKA)</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">Practice</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/cka.png" width="120px" align="center" alt="" >}}</td>
-</tr>
-<tr>
-<td style="vertical-align: middle; padding: 10px;">Certified Kubernetes Security Specialist (CKS) <em>passing the CKA is a requirement before passing the CKS</em></td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">Practice</td>
-<td style="vertical-align: middle; text-align: center; padding: 10px;">{{< image src="/images/learning-path/cka/certifications/cks.png" width="120px" align="center" alt="" >}}</td>
-</tr>
-</tbody>
-</table>
-</div>
 
 If you pass all those certifications, you become a [Kubestronaut](https://www.cncf.io/training/kubestronaut/).
 
