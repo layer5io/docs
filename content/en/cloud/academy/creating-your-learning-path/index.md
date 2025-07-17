@@ -127,14 +127,14 @@ The Organization UID ensures that your learning content is securely associated w
 
       If each course has its own markdown page, you can use this frontmatter:
 
-        ```yaml
-        ---
-        title: "Kubernetes Basics"
-        description: "Learn the basics of Kubernetes"
-        weight: 1
-        banner: null  # Optional
-        ---
-        ```
+    ```yaml
+    ---
+    title: "Kubernetes Basics"
+    description: "Learn the basics of Kubernetes"
+    weight: 1
+    banner: null  # Optional
+    ---
+    ```
 
     **Summary of Required Fields**
 
@@ -158,10 +158,29 @@ Enhance your course with images and other visual aids. To ensure compatibility w
 **How to Add an Image**
 
 1.  Place your image file (e.g., `hugo-logo.png`) in your scoped static directory:
-    `static/<your-organization-uid>/images/hugo-logo.png`
-2.  In your `lesson-1.md` file, embed the image using the `usestatic` shortcode. The `path` is relative to your scoped static folder: ![The Hugo Logo]({{</* usestatic path="images/hugo-logo.png" */>}})
+
+    ```text
+    static/<your-organization-uid>/images/hugo-logo.png
+    ```
+2.  In your `lesson-1.md` file, embed the image using the `usestatic` shortcode. The `path` is relative to your scoped static folder: 
+
+    ```text
+    ![The Hugo Logo]({{</* usestatic path="images/hugo-logo.png" */>}})
+    ```
 
 Then the system will automatically convert this into the correct URL when building the site.
+
+**How to Add a Video**
+
+```text
+{{</* card 
+title="Video: Example" */>}}
+<video width="100%" height="100%" controls>
+    <source src="https://exmaple.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+{{</* /card */>}}
+```
 
 ### 4. Build and Preview Locally
 
