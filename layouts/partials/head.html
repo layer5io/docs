@@ -28,7 +28,7 @@
     {{ .Site.Title -}}
   {{ end -}}
 </title>
-<meta name="description" content="{{ template "partials/page-description.html" . }}">
+<meta name="description" content="{{ template "_partials/page-description.html" . }}">
 {{ template "_internal/opengraph.html" . -}}
 {{ template "_internal/schema.html" . -}}
 {{ template "_internal/twitter_cards.html" . -}}
@@ -52,7 +52,8 @@
 
 {{ partial "hooks/head-end.html" . -}}
 
-{{/* To comply with GDPR, cookie consent scripts places in head-end must execute before Google Analytics is enabled */ -}}
+{{/*
+ To comply with GDPR, cookie consent scripts places in head-end must execute before Google Analytics is enabled 
 {{ if hugo.IsProduction -}}
   {{ $enableGtagForUniversalAnalytics := not .Site.Params.disableGtagForUniversalAnalytics -}}
   {{ if (or $enableGtagForUniversalAnalytics (hasPrefix .Site.GoogleAnalytics "G-")) -}}
@@ -61,6 +62,9 @@
     {{ template "_internal/google_analytics.html" . -}}
   {{ end -}}
 {{ end -}}
+*/ -}}
+
+
 
 {{ define "algolia/head" -}}
 

@@ -37,12 +37,12 @@ Layer5 Cloud supports customizing themes on a per organization basis. This inclu
 
 As an [Organization Administrator](/cloud/security/roles/organization-roles/), you can add your organization's logo to the global navigation bar, which supports a large, horizontal logo for desktop users and a small, square logo for mobile users. The logo appears at the top of each user's window for all Layer5 Cloud pages within your organization.
 
-{{% card header="Prefrence Example" footer="<i>Example: Selection of theme</i>" %}}
+{{% card header="Preference Example" footer="<i>Example: Selection of theme</i>" %}}
 This example shows how to customize through different themes
 ![white-label-catalog-example.png](./images/pref-selection.gif)
 {{% /card %}}
 
-### Custom Logos
+#### Custom Logos
 
 You can upload your own logo for your organization. Logo appears in upper left corner of all Layer5 Cloud pages. All teams, workspaces, and users in your organization will use these custom logos.
 
@@ -58,21 +58,29 @@ Horizontal logo: 389 width x 32 height pixels
 </pre>
 If you upload a smaller or larger image, the image is resized to exactly 389 x 32 pixels. If the aspect ratio does not match, then the image will be distorted. For example, a 132 x 132 pixel image expands to 389 x 32 pixels, causing distortion.
 
-<!-- Insert example logo here -->
 <pre>
-Square logo (mark):  32 width x 32 height pixels
+Square logo (mark): 32 width x 32 height pixels
 </pre>
-{{% card header="Square Logo Example" footer="<i>Example: CNCF branding on Dashboard</i>" %}}
-<p>
-This example includes a custom branding with colors and logo mark as would be displayed on a mobile device.</p>
-<div style="width: 500px; height: 200px; overflow: hidden;">
-  <img src="./images/white-label-dashboard-responsive-example.png"
-  width="100%"
-  style="margin-top:-.25rem;
-    margin-left:-.25rem;border-radius:.25rem;
-    object-fit: fill;" />
-</div>
-{{% /card %}}
+
+{{< tabpane text=true >}}
+
+{{% tab header="Full-sized Logo Example" lang="en" active="true" %}}
+
+When users register through the [Open Organization Invitation Link](https://docs.layer5.io/cloud/identity/organizations/org-management/#using-the-open-organization-invitation-link), they will see the full-sized logo.
+
+<img src="./images/full-size-logo.png" alt="Full-sized Logo" style="width:50%; height:auto;" />
+
+{{< /tab >}}
+
+{{% tab header="Logo Mark Example" lang="en" %}}
+
+When logging into Layer5 Cloud on mobile devices, the small logo mark will be displayed.
+
+<img src="./images/logo-mark.png" alt="Logo Mark" style="width:50%; height:auto;" />
+
+{{< /tab >}}
+
+{{< /tabpane >}}
 
 ### Uploading Your Logo
 
@@ -80,10 +88,10 @@ On the [Organizations page](https://cloud.layer5.io/identity/organizations), you
 
 1. Go to Menu and then [**Identity** > **Organization**].
 1. To open the Edit window, click the pencil icon next to the organization name.
-1. Click Select file to upload and select the logo image on your computer. You'll see a preview your logo.
+1. Click Select file to upload and select the logo image on your computer. You'll see a preview of your logo.
 1. Click Save, if satisfied. You may change your custom logo images at any time.
 
-## Customizing your Organization\'s Dashboard
+## Organization Dashboard Customization
 
 Layer5 Cloud supports customizing dashboard layouts on a per organization basis. As an administrator of your organization, you can customize the dashboard experience for all members of your organization. To customize your organization's dashboard, select from a collection of widgets to include or exclude.
 
@@ -98,12 +106,14 @@ Layer5 Cloud supports customizing dashboard layouts on a per organization basis.
 {{% card header="Add and Remove Widgets" footer="<i>Pick and choose which widgets to include. Reposition and resize each as you like.</i>" %}}
 ![custom-dashboard-2.png](./images/custom-dashboard-2.png)
 {{% /card %}}
-{{% card header="Save and Publish Dashboard" footer="<i>Make your customize layout available to all members of your org or reset your changes to revert to the default layout.</i>" %}}
+{{% card header="Save and Publish Dashboard" footer="<i>Make your customized layout available to all members of your org or reset your changes to revert to the default layout.</i>" %}}
 ![custom-dashboard-3.png](./images/custom-dashboard-3.png)
 {{% /card %}}
 {{< /cardpane >}}
 
-Each of the prebuilt widgets can be added to a dashboard only once. If find that a particular widget that you would like to have is not available, [please let us know](https://layer5.io/company/contact).
+{{< alert title="Widget Limitations" color="info" >}}
+Each of the prebuilt widgets can be added to a dashboard only once. If you find that a particular widget that you would like to have is not available, [please let us know](https://layer5.io/company/contact).
+{{< /alert >}}
 
 ## Custom Domain Name and Login Screen
 
@@ -118,6 +128,10 @@ A subdomain is the part of a URL before the root domain. You can configure your 
 
 Subdomains are configured with a CNAME record through your DNS provider.
 
+{{< alert title="Changing Custom Domain May Break Academy Integration" color="warning" >}}
+Changing your custom domain name after configuring an external Academy can break the content integration. If you change your domain, you **must** also update the organizational folder name (`/content/learning-paths/<your-org-name>`) in your Academy content repository to match.
+{{< /alert >}}
+
 ### Configuring a subdomain
 
 To set up a www or custom subdomain, such as `www.example.com` or `meshery.example.com`, you must add your domain in the repository settings. After that, configure a CNAME record with your DNS provider.
@@ -126,21 +140,33 @@ In Layer5 Cloud, navigate to your Provider Organization.
 
 Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator](/cloud/security/roles).
 
-Under "Custom domain", type your custom domain, then click Save. This will create a server configuration will require a reboot in order to take affect.
+Under "Custom domain", type your custom domain, then click Save. This will create a server configuration that will require a reboot in order to take effect.
 
-*Note: If your custom domain is an internationalized domain name, you must enter the Punycode encoded version.*
+{{< alert title="Internationalized Domain Names" color="info" >}}
+If your custom domain is an internationalized domain name, you must enter the Punycode encoded version.
+{{< /alert >}}
 
 Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `hub.cncf.io` for your user site, create a CNAME record that points `hub.cncf.io` to `cloud.layer5.io`. For more information about how to create the correct record, see your DNS provider's documentation.
 
-{{< alert title="Warning" color="warning" >}}
+{{< alert title="Risks of Using Wildcard DNS Records" color="warning" >}}
 Warning: We strongly recommend that you do not use wildcard DNS records, such as `*.example.com`. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify example.com this prevents someone from using `a.example.com`, but they could still take over `b.a.example.com` (which is covered by the wildcard DNS record).
 {{< /alert >}}
+
+#### Domain Format Requirements
+
+1. **Uniqueness:** The domain must be unique across all organizations in Meshery Cloud. It cannot be in use by another organization.
+
+2. **Format:** Do not include the protocol (http:// or https://) or the www. prefix. You should enter the pure hostname (e.g., meshery.mycompany.com).
+
+3. **Length:** The domain name must be between 3 and 63 characters long.
+
+4. **Removing a Domain:** To remove a custom domain assignment, simply clear the domain field and save. An empty field is treated as a request to nullify the domain linkage.
 
 #### Verifying your custom domain
 
 Open Terminal.
 
-To confirm that your DNS record configured correctly, use the dig command, replacing `hub.cncf.io` with your subdomain.
+To confirm that your DNS record is configured correctly, use the dig command, replacing `hub.cncf.io` with your subdomain.
 
 <pre>
 $ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
@@ -158,7 +184,13 @@ Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It 
 Frequently asked questions about white labeling.
 
 **Do users have to use my custom URL to access the Organization?**
+
 No. In addition to your custom URL, you'll always be able to log in from our website and access your Organization from <https://cloud.layer5.io>.
 
 **When I send someone a link that includes my custom URL, do they need to be logged in?**
+
 Yes. Users will need to be signed in through your custom URL (not through cloud.layer5.io) in order to open links that include your custom URL. Users who are not logged in can quickly do so, and subsequently, be redirected to the link you have shared.
+
+**Why does the custom domain work for my colleagues but not for me?**
+
+This issue could potentially be related to your local network environment. It's possible that a local proxy client, VPN, or network accelerator on your computer might be intercepting the network request before it can reach the public internet.
