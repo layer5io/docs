@@ -104,3 +104,20 @@ While account deletion is permanent for end-users, future versions of Layer5 Clo
 
 {{< /alert >}}
 
+## What Happens When You Link Two Layer5 Accounts?
+
+If you're linking two separate Layer5 accounts that both have existing data (like designs or configurations), the platform will ask you to make a choice.
+
+You'll need to pick one to be your **primary account**. Think of this as the main account you want to keep everything from. The other account will be treated as the secondary one.
+
+> **Heads up: Your data won't merge automatically!**
+>
+> Designs and other resources from the secondary account **are not** automatically moved over to your primary account. To avoid losing any work, you should manually export anything you want to save from the secondary account **before** you finish linking them.
+
+We're working on tools to make this process smoother in a future release, including ways to help migrate and merge your designs.
+
+## A Quick Note on Social Logins
+
+Keep in mind that you can currently link **only one account from each social provider**.
+
+For example, you can connect one Google account and one GitHub account to your Layer5 profile. However, you **cannot** link two different Google accounts to that same Layer5 profile. Attempting to do so will cause an error. We may add support for multiple accounts from the same provider down the road.
