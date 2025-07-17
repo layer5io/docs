@@ -104,3 +104,19 @@ While account deletion is permanent for end-users, future versions of Layer5 Clo
 
 {{< /alert >}}
 
+### Behavior When Linking Multiple Accounts
+
+If you link two Layer5 accounts that both have existing designs or resources:
+
+- You will be prompted to choose a **primary account** to retain.
+- Designs from the secondary account **are not merged automatically**.
+- You should manually export or migrate any designs you want to retain from the secondary account before completing the linking process.
+- In future releases, Layer5 Cloud will introduce tools to assist in migrating and merging designs during linking.
+
+### Linking Multiple Social Sign-In Accounts of the Same Type
+
+Currently, Layer5 Cloud **does not support linking multiple accounts of the same provider type** (e.g., multiple Google or GitHub accounts) to a single Layer5 account.
+
+- Each Layer5 account can be linked to **only one account per provider type**.
+- Attempting to link another account of the same provider will result in an error or prompt to replace the existing one.
+- Support for multiple accounts of the same provider may be considered in future versions.
