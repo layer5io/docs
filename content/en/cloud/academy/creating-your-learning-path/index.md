@@ -190,7 +190,7 @@ If your images are only needed for a specific chapter or section (not globally),
 Before publishing, it is crucial to preview your content locally to check for formatting errors, broken links, and overall structure.
 
 ```bash
-hugo serve
+hugo server
 ```
 
 This will start a local development server, where you can view your learning path as you build it.

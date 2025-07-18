@@ -26,7 +26,7 @@ The ability to create, manage, and publish content is available to organizations
 ### Content Creation Process"
 
 We believe you should always own your content. That’s why the Academy is designed around a Git-native workflow that avoids vendor lock-in.
-hai
+
 Instead of using a restrictive web UI, you manage all your learning content within **your own Git repositories**. This gives you the full power of version control, collaboration through pull requests, and a workflow that your developers are already comfortable with. 
 
 The entire experience is powered by **[Hugo](https://gohugo.io/)**, a powerful static site engine, but we've abstracted away the complexity. You and your team only need to write in simple Markdown.
