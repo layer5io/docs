@@ -7,7 +7,7 @@ categories: [Academy]
 tags: [Designer]
 ---
 
-The [Layer5 Cloud Academy](https://cloud.layer5.io/academy/overview) is a modular learning management system (LMS) designed for building **learning paths** and interactive, hands-on cloud-native challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud-native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
+The [Layer5 Cloud Academy](https://cloud.layer5.io/academy/overview) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
 
 This approach transforms learning from passive reading into active, hands-on practice.
 
@@ -15,7 +15,7 @@ This approach transforms learning from passive reading into active, hands-on pra
 
 ### Who Can Create Content
 
-The ability to create, manage, and publish private content is available to organizations on our **Enterprise Plan**. This plan includes full support for:
+The ability to create, manage, and publish content is available to organizations on our **Enterprise Plan**. This plan includes full support for:
 
   - **Multi-tenancy:** Your content, users, and data are securely isolated from all other organizations.
   - **White-labeling:** You can brand the Academy with your own logo and color scheme.
@@ -23,7 +23,7 @@ The ability to create, manage, and publish private content is available to organ
 
 > You can learn more about our subscription plans on the [Layer5 Pricing](https://layer5.io/pricing) page.
 
-### Your Content, Your Control: A Git-Native Workflow
+### Content Creation Process"
 
 We believe you should always own your content. That’s why the Academy is designed around a Git-native workflow that avoids vendor lock-in.
 
@@ -39,8 +39,12 @@ You don't need to be a web developer to create beautiful and effective learning 
 
 Your content is structured hierarchically to create a clear and logical learning experience for your users.
 
-At the highest level, you have a **Learning Path**, which serves as a container for a specific specialization or topic. Each Learning Path is made up of one or more **Courses**, and each Course is further broken down into logical **Chapters** and individual **Lessons**. This modular structure makes your content easy to navigate, manage, and update.
+At the highest level, you have a **Learning Path**, which serves as a container for a specific specialization or topic. Each Learning Path is made up of one or more **Courses**, and each Course is further broken down into individual **Chapters**. This modular structure makes your content easy to navigate, manage, and update.
 
-{{< alert type="warning" title="Content Scoping" >}}
-To ensure security and isolation, all of your content files must be placed within a directory named for your organization. You'll learn the specifics of how to do this in our [hands-on tutorial](/cloud/academy/creating-your-learning-path/).
+For example, a Learning Path titled "Mastering Kubernetes" might contain:
+- A Course named "Core Concepts", which includes Chapters on "Pods", "Services", and "Deployments".
+- Another Course named "Advanced Networking", with Chapters on "Ingress" and "Service Mesh".
+
+{{< alert type="warning" title="Content Isolation" >}}
+To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial](/cloud/academy/creating-your-learning-path/).
 {{< /alert >}}
