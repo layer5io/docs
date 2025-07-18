@@ -23,7 +23,7 @@ The ability to create, manage, and publish content is available to organizations
 
 > You can learn more about our subscription plans on the [Layer5 Pricing](https://layer5.io/pricing) page.
 
-### Content Creation Process"
+### Content Creation Process
 
 We believe you should always own your content. That’s why the Academy is designed around a Git-native workflow that avoids vendor lock-in.
 
