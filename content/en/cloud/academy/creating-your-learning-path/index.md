@@ -136,13 +136,21 @@ You can find and copy your Organization UUID from your organization page on [Lay
     | ------------- | ------------- | -------- | --------------------------- |
     | Learning Path | `title`       | ✅        |                             |
     |               | `description` | ✅        |                             |
-    |               | `weight`      | ✅        | Defines order in the path, Lower numbers appear first  |
+    |               | `weight`      | ✅        | Order in path, lower first  |
     |               | `banner`      | ❌        | Optional image URI          |
     | Course        | `title`       | ✅        |                             |
     |               | `description` | ✅        |                             |
-    |               | `weight`      | ✅        | Defines order in the path   |
+    |               | `weight`      | ✅        | Order in path   |
     |               | `banner`      | ❌        | Optional image URI          |
     |               | `prerequisites`      | ❌        | Optional List of prerequisites for the course |
+    |               | `draft`       | ❌        | Skips build, won't appear|
+    |               | `tags`        | ❌ | Keywords for content |
+    |               | `categories`  | ❌ |  Main content categories |
+
+
+{{< alert type="warning" title="Banner Image Paths" >}}
+When using the `banner` field in your frontmatter, you cannot use the `usestatic` shortcode. You must provide the full, static path to the image, starting with your Organization UUID.
+{{< /alert >}}
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -263,6 +271,9 @@ With the setup complete, you can publish your content anytime by creating a new 
 6.  Click **"Publish release"**.
 
 This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/identity/overview).
+
+- Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
+- Your content will go fully live to the production Academy platform during the next scheduled cloud release.
 
 > **For Urgent Updates:** If you have a time-sensitive publishing request or encounter any issues with the automated process, please [contact the Layer5 team](https://layer5.io/company/contact) for expedited assistance.
 
