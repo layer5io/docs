@@ -39,7 +39,7 @@ To share your badges on other social profiles, utilize the provided embedded cod
 
 {{< figure src="/cloud/tutorials/images/embedding-badges-modal.svg" alt="Embedding-badges-modal">}}
 
-### FAQ's
+### FAQ
 - **Is there a limit to the number of badges that I can earn?**  
   There is no set limit to the number of badges you can earn within the Layer5 Recognition Program. Your achievements and contributions determine the badges you receive, showcasing your dedication and skills within the community.
 
