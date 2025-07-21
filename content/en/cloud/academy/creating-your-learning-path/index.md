@@ -136,13 +136,21 @@ You can find and copy your Organization UUID from your organization page on [Lay
     | ------------- | ------------- | -------- | --------------------------- |
     | Learning Path | `title`       | ✅        |                             |
     |               | `description` | ✅        |                             |
-    |               | `weight`      | ✅        | Defines order in the path, Lower numbers appear first  |
+    |               | `weight`      | ✅        | Order in path, lower first  |
     |               | `banner`      | ❌        | Optional image URI          |
     | Course        | `title`       | ✅        |                             |
     |               | `description` | ✅        |                             |
-    |               | `weight`      | ✅        | Defines order in the path   |
+    |               | `weight`      | ✅        | Order in path   |
     |               | `banner`      | ❌        | Optional image URI          |
     |               | `prerequisites`      | ❌        | Optional List of prerequisites for the course |
+    |               | `draft`       | ❌        | Skips build, won't appear|
+    |               | `tags`        | ❌ | Keywords for content |
+    |               | `categories`  | ❌ |  Main content categories |
+
+
+{{< alert type="warning" title="Banner Image Paths" >}}
+When using the `banner` field in your frontmatter, you cannot use the `usestatic` shortcode. You must provide the full, static path to the image, starting with your Organization UUID.
+{{< /alert >}}
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -264,6 +272,9 @@ With the setup complete, you can publish your content anytime by creating a new 
 
 This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/identity/overview).
 
+- Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
+- Your content will go fully live to the production Academy platform during the next scheduled cloud release.
+
 > **For Urgent Updates:** If you have a time-sensitive publishing request or encounter any issues with the automated process, please [contact the Layer5 team](https://layer5.io/company/contact) for expedited assistance.
 
 ![Release Example](./images/release-publish.gif)
@@ -289,3 +300,14 @@ This action will automatically trigger the workflow, and your content will be de
 5. **How do I structure multiple courses under one learning path?**
 
     The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
+
+| Field | Required | Type | Description |
+| :--- | :---: | :--- | :--- |
+| `title` | ✅ | String | The main title of the learning path, course, or chapter. |
+| `description` | ✅ | String | A brief summary of the content. |
+| `weight` | ✅ | Number | Controls the order of content. **Lower numbers appear first.** For example, a course with `weight: 1` will appear before one with `weight: 2`. |
+| `draft` | ❌ | Boolean | When set to `true`, this page will be skipped during the build process and will not appear on the live site. Defaults to `false`. |
+| `tags` | ❌ | List | A list of keywords associated with the content. See the warning below. |
+| `categories` | ❌ | List | The main category or categories the content belongs to. See the warning below. |
+| `banner` | ❌ | String | An optional URL for a banner image. |
+| `prerequisites`| ❌ | List | An optional list of prerequisites for a course. |
