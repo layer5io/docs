@@ -300,14 +300,3 @@ This action will automatically trigger the workflow, and your content will be de
 5. **How do I structure multiple courses under one learning path?**
 
     The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
-
-| Field | Required | Type | Description |
-| :--- | :---: | :--- | :--- |
-| `title` | ✅ | String | The main title of the learning path, course, or chapter. |
-| `description` | ✅ | String | A brief summary of the content. |
-| `weight` | ✅ | Number | Controls the order of content. **Lower numbers appear first.** For example, a course with `weight: 1` will appear before one with `weight: 2`. |
-| `draft` | ❌ | Boolean | When set to `true`, this page will be skipped during the build process and will not appear on the live site. Defaults to `false`. |
-| `tags` | ❌ | List | A list of keywords associated with the content. See the warning below. |
-| `categories` | ❌ | List | The main category or categories the content belongs to. See the warning below. |
-| `banner` | ❌ | String | An optional URL for a banner image. |
-| `prerequisites`| ❌ | List | An optional list of prerequisites for a course. |
