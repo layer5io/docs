@@ -172,9 +172,9 @@ For all assets, please use the Page Bundling method. It simplifies asset managem
     ![The Hugo Logo](hugo-logo.png)
     ```
 
-{{\< alert type="warning" title="Legacy Method: Do Not Use for New Content" \>}}
+{{< alert type="warning" title="Legacy Method: Do Not Use for New Content" >}}
 The `usestatic` shortcode is **deprecated** and should not be used for new courses.
-{{\< /alert \>}}
+{{< /alert >}}
 
 **How to Add a Video**
 
