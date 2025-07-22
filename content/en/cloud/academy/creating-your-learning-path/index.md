@@ -149,7 +149,7 @@ You can find and copy your Organization UUID from your organization page on [Lay
 
 
 {{< alert type="warning" title="Banner Image Paths" >}}
-When using the `banner` field in your frontmatter, you must provide the full, static path to the image, starting with your Organization UUID. eg:/org_id/images/kubernetes-icon.svg
+When using the `banner` field in your frontmatter, always provide the full, static path to your image. This path must start with your Organization UUID; for example: `/org_id/images/kubernetes-icon.svg`.
 {{< /alert >}}
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
