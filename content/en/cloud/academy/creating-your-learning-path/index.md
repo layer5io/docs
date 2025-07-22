@@ -149,33 +149,32 @@ You can find and copy your Organization UUID from your organization page on [Lay
 
 
 {{< alert type="warning" title="Banner Image Paths" >}}
-When using the `banner` field in your frontmatter, you cannot use the `usestatic` shortcode. You must provide the full, static path to the image, starting with your Organization UUID.
+When using the `banner` field in your frontmatter, you must provide the full, static path to the image, starting with your Organization UUID. eg:/org_id/images/kubernetes-icon.svg
 {{< /alert >}}
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
 ## 3. Add Assets and Interactive Content
 
-Enhance your course with images and other visual aids. To ensure compatibility with the multi-tenant Academy platform, do not use standard Markdown image links. Instead, use the `usestatic` shortcode, which generates the correct, tenant-aware path for your assets.
+Enhance your course with images and other visual aids. The recommended and standard method for adding images is Page Bundling. This approach involves placing your image files directly alongside the Markdown content they belong to, which is simpler and keeps content organized.
 
-{{< alert type="warning" title="Do Not Use Standard Markdown Image Links" >}}
-Do not use standard Markdown image links. Always use the `usestatic` shortcode for images to ensure compatibility with the platform.
+{{< alert type="success" title="Recommended Method: Page Bundling" >}}
+For all assets, please use the Page Bundling method. It simplifies asset management by co-locating images with the Markdown files that use them.
 {{< /alert >}}
 
 **How to Add an Image**
 
-1.  Place your image file (e.g., `hugo-logo.png`) in your scoped static directory:
+1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `Chapter-1.md`). 
 
-    ```text
-    static/<your-organization-uid>/images/hugo-logo.png
-    ```
-2.  In your `Chapter-1.md` file, embed the image using the `usestatic` shortcode. The `path` is relative to your scoped static folder: 
+2.  In your `Chapter-1.md` file, embed the image using a **standard Markdown link**. The path should just be the filename.
 
-    ```text
-    ![The Hugo Logo]({{</* usestatic path="images/hugo-logo.png" */>}})
+    ```markdown
+    ![The Hugo Logo](hugo-logo.png)
     ```
 
-Then the system will automatically convert this into the correct URL when building the site.
+{{\< alert type="warning" title="Legacy Method: Do Not Use for New Content" \>}}
+The `usestatic` shortcode is **deprecated** and should not be used for new courses.
+{{\< /alert \>}}
 
 **How to Add a Video**
 
@@ -188,10 +187,6 @@ title="Video: Example" */>}}
 </video>
 {{</* /card */>}}
 ```
-
-{{< alert type="info" title="Best Practice" >}}
-If your images are only needed for a specific chapter or section (not globally), it is recommended to place them next to the relevant content folder. This keeps your project organized and makes asset management easier.
-{{< /alert >}}
 
 ## 4. Build and Preview Locally
 
