@@ -21,7 +21,12 @@ Designs have visibility statuses that defines who can access your designs. These
 
 - **Private:** Designs with visibility status private define only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.[^1]
 
-- **Public:**  Making a design "Public" makes it accessible to anyone on the internet who has the link or discovers it through public channels. By default, users accessing a Public design are granted permissions to view, comment on, and edit the design. 
+- **Public:**  Making a design "Public" makes it accessible to anyone on the internet who has the link or discovers it through public channels.
+> **Note:**  
+> When a design is Public:  
+> - Viewers and commenters can view, download, print, and copy the design.  
+> - Editors can change permissions and share the design with others.  
+> This permission model applies to all public designs in Layer5.
 
 {{< alert title="Why use public" type="info">}}
 Public status is useful for sharing designs broadly, for example, as open-source templates, public demonstrations, or for soliciting feedback from a wider community. If your goal is to share broadly only within your organization, consider using a combination of private designs shared with specific organization-wide teams or workspaces.
