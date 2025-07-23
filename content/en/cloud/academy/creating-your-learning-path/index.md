@@ -254,6 +254,10 @@ Once configured correctly, your secrets page should look like this:
 While you can hardcode your `ACADEMY_ORG_ID` directly in the workflow file, we strongly recommend using secrets for better security and flexibility.
 {{< /alert >}}
 
+{{< alert type="warning" title="Avoid Static Counts in Front Matter" >}}
+Do **not** add static counters such as `courses:`, `learning-paths:`, or `challenges:` to your front matter. These values are automatically calculated during the Academy build process and including them can cause incorrect or conflicting information. If you have existing content that still contains these keys, simply delete the lines.
+{{< /alert >}}
+
 ### Stage 2: Publish by Creating a GitHub Release
 
 With the setup complete, you can publish your content anytime by creating a new release.
