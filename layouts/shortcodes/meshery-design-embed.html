@@ -6,8 +6,9 @@
   to visualize, explore, and collaborate on service mesh designs.
   
   -- Usage: 
-  {{/*< meshery-design-embed src="path/to/embed.js" id="unique-id" size="full|half" >*/}}
+  {{/*< meshery-design-embed src="path/to/embed.js" id="unique-id" size="full|half" link="design-url" >*/}}
   size: "full" for full-width (default), "half" for half-width display
+  link: Optional URL to link to the original design (enables hyperlink functionality)
 
   More Information: 
   Learn more about embedding Meshery designs at:
@@ -34,12 +35,22 @@
 -->
 {{ $size := .Get "size" | default "full" }}
 
+<!--
+  Retrieve the optional link to the original design.
+  This enables hyperlink functionality for the embedded design.
+-->
+{{ $link := .Get "link" }}
+
 <style>
 .meshery-embed-container {
-  border: 1px solid #eee;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   margin: 1rem auto;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
 }
 .meshery-embed-container.full {
   width: 100%;
@@ -52,8 +63,41 @@
 .meshery-embed-container .cy-container {
   width: 100%;
   height: 100%;
+  border-radius: 11px;
 }
 </style>
+
+{{ if $link }}
+<style>
+.meshery-embed-container {
+  cursor: pointer;
+}
+.meshery-embed-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 179, 159, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+.meshery-embed-container::after {
+  content: "🔗 Open in Meshery";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 179, 159, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.meshery-embed-container:hover::after {
+  opacity: 1;
+}
+</style>
+{{ end }}
 
 <!-- 
   Embedding Container: 
@@ -65,10 +109,17 @@
       - Width: 100% (responsive to container width)
       - Border: 1px solid #eee (light border for visibility)
 -->
+
+{{ if $link }}
+<a href="{{ $link }}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+{{ end }}
 <div
     id="{{ $id }}"
     class="meshery-embed-container {{ $size }}"
 ></div>
+{{ if $link }}
+</a>
+{{ end }}
 
 <!-- 
   Embed Script: 
