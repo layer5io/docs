@@ -51,14 +51,18 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: all 0.3s ease;
+  aspect-ratio: 4 / 3;
 }
 .meshery-embed-container.full {
   width: 100%;
-  height: 30rem;
 }
 .meshery-embed-container.half {
   width: 50%;
-  height: 30rem;
+}
+@media (max-width: 768px) {
+  .meshery-embed-container.half {
+    width: 100%;
+  }
 }
 .meshery-embed-container .cy-container {
   width: 100%;
