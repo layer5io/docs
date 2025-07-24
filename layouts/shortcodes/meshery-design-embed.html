@@ -53,16 +53,14 @@
 -->
 {{ $link := .Get "link" }}
 
-<!-- Auto-generate link if not provided -->
+<!-- Always try to generate auto-link from ID -->
 {{ $autoLink := "" }}
-{{ if not $link }}
-  {{ if strings.HasPrefix $id "embedded-design-" }}
-    {{ $designId := strings.TrimPrefix $id "embedded-design-" }}
-    {{ $autoLink = printf "https://playground.meshery.io/extension/meshmap?mode=design&design=%s" $designId }}
-  {{ end }}
+{{ if strings.HasPrefix $id "embedded-design-" }}
+  {{ $designId := strings.TrimPrefix $id "embedded-design-" }}
+  {{ $autoLink = printf "https://playground.meshery.io/extension/meshmap?mode=design&design=%s" $designId }}
 {{ end }}
 
-<!-- Use custom link if provided, otherwise use auto-generated link -->
+<!-- Use provided link or auto-link -->
 {{ $finalLink := $link }}
 {{ if not $finalLink }}
   {{ $finalLink = $autoLink }}
@@ -98,7 +96,7 @@
 }
 </style>
 
-{{ if $link }}
+{{ if $finalLink }}
 <style>
 .meshery-embed-container {
   cursor: pointer;
@@ -141,14 +139,11 @@
       - Border: 1px solid #eee (light border for visibility)
 -->
 
-{{ if $link }}
-<a href="{{ $link }}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+{{ if $finalLink }}
+<a href="{{ $finalLink }}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
 {{ end }}
-<div
-    id="{{ $id }}"
-    class="meshery-embed-container {{ $size }}"
-></div>
-{{ if $link }}
+<div id="{{ $id }}" class="meshery-embed-container {{ $size }}"></div>
+{{ if $finalLink }}
 </a>
 {{ end }}
 
