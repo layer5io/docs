@@ -270,7 +270,7 @@ With the setup complete, you can publish your content anytime by creating a new 
 5.  Provide a title and description for your release.
 6.  Click **"Publish release"**.
 
-This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/identity/overview).
+This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/academy/content).
 
 - Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
 - Your content will go fully live to the production Academy platform during the next scheduled cloud release.
