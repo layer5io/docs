@@ -55,7 +55,7 @@
 
 <!-- Auto-generate link if not provided -->
 {{ $autoLink := "" }}
-{{ if not $customLink }}
+{{ if not $Link }}
   {{ if strings.HasPrefix $id "embedded-design-" }}
     {{ $designId := strings.TrimPrefix $id "embedded-design-" }}
     {{ $autoLink = printf "https://playground.meshery.io/extension/meshmap?mode=design&design=%s" $designId }}
