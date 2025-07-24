@@ -7,7 +7,7 @@ categories: [Academy]
 tags: [Designer]
 ---
 
-This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy/overview). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
+This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy/content). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
 
 ### Prerequisites
 
@@ -74,10 +74,8 @@ You can find and copy your Organization UUID from your organization page on [Lay
 
     1. `content/learning-paths/<your-organization-uid>/`
       This `content` directory is where all your written material lives. The folder hierarchy you create here directly defines the navigation and organization of your learning paths.
-    2. `static/<your-organization-uid>/`
-      This `static` directory is for all your assets, such as images, diagrams, and so on. 
-    3. `layouts/shortcodes/<your-organization-uid>/`
-      This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components in your Chapters.
+    2. `layouts/shortcodes/<your-organization-uid>/`
+      This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components.
 
 3. **Build the Content Hierarchy**
 
@@ -97,6 +95,7 @@ You can find and copy your Organization UUID from your organization page on [Lay
                     ├── _index.md
                     ├── 01-pods.md                 // <-- Chapter 1
                     └── 02-services.md             // <-- Chapter 2
+                    └── arch.png                   // <-- Image
     ```
 
     Each folder represents a level in the hierarchy, and the `_index.md` file within a folder defines the metadata (like title and description) for that level. The final `.md` files are your individual Chapter.
@@ -109,9 +108,13 @@ You can find and copy your Organization UUID from your organization page on [Lay
 
     ```yaml
     ---
-    title: "Mastering Kubernetes for Engineers"
-    description: "Learn how to configure your Kubernetes clusters and manage the lifecycle of your workloads"
-    banner: null  # Optional, URL to banner image
+    title: "Advanced Course"
+    description: "This ADVANCED - Course is where to get the technical knowledge."
+    weight: 5
+    banner: "images/exoscale-icon.svg"
+    id: "754627a3-7993-4b01-a7f0-c66c0212a1a1" 
+    tags: [orchestration]
+    categories: [introductory]
     ---
     ```
 
@@ -119,38 +122,34 @@ You can find and copy your Organization UUID from your organization page on [Lay
 
     **Course Frontmatter (Optional Individual Course Pages)**
 
-      If each course has its own markdown page, you can use this frontmatter:
+    If each course has its own markdown page, you can use this frontmatter:
 
     ```yaml
     ---
-    title: "Kubernetes Basics"
-    description: "Learn the basics of Kubernetes"
-    weight: 1
-    banner: null  # Optional
+    id: "Networks" 
+    title: "Networks"
+    description: "This course clear your Network concept"
+    weight: 2
+    banner: "images/kubernetes-icon.svg"      
+    tags: [network]
+    categories: [introductory]
     ---
     ```
 
     **Summary of Required Fields**
 
-    | Type          | Field         | Required | Notes                       |
-    | ------------- | ------------- | -------- | --------------------------- |
-    | Learning Path | `title`       | ✅        |                             |
-    |               | `description` | ✅        |                             |
-    |               | `weight`      | ✅        | Order in path, lower first  |
-    |               | `banner`      | ❌        | Optional image URI          |
-    | Course        | `title`       | ✅        |                             |
-    |               | `description` | ✅        |                             |
-    |               | `weight`      | ✅        | Order in path   |
-    |               | `banner`      | ❌        | Optional image URI          |
-    |               | `prerequisites`      | ❌        | Optional List of prerequisites for the course |
-    |               | `draft`       | ❌        | Skips build, won't appear|
-    |               | `tags`        | ❌ | Keywords for content |
-    |               | `categories`  | ❌ |  Main content categories |
-
-
-{{< alert type="warning" title="Banner Image Paths" >}}
-When using the `banner` field in your frontmatter, always provide the full, static path to your image. This path must start with your Organization UUID; for example: `/org_id/images/kubernetes-icon.svg`.
-{{< /alert >}}
+    | Applicable To   | Field         | Required | Notes                                                                      |
+    | --------------- | ------------- | :------: | -------------------------------------------------------------------------- |
+    | All             | `title`       |    ✅    | The main display title.                                                    |
+    | All             | `description` |    ✅    | A brief summary of the content.                                            |
+    | All             | `weight`      |    ✅    | Controls the display order (lower numbers appear first).                   |
+    | All             | `banner`      |    ❌    | Path to an image in the `static` folder, e.g., `images/icon.svg`.          |
+    | All             | `tags`        |    ❌    | Keywords for content discovery.                                            |
+    | All             | `categories`  |    ❌    | The main categories for the content.                                       |
+    | All             | `draft`       |    ❌    | If `true`, the page will not be published.                                 |
+    | **Learning Path** | `id`          |    ✅    | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]|
+    | **Course** | `id`          |    ❌    | A simple, human-readable string identifier for the course.                 |
+    | **Course** | `prerequisites` |    ❌    | Optional list of prerequisites for the course. |
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -173,7 +172,7 @@ For all assets, please use the Page Bundling method. It simplifies asset managem
     ```
 
 {{< alert type="warning" title="Legacy Method: Do Not Use" >}}
-The `usestatic` shortcode is **deprecated** and should not be used for new courses.
+The `usestatic` shortcode is **deprecated** and should not be used!
 {{< /alert >}}
 
 **How to Add a Video**
@@ -200,14 +199,20 @@ This will start a local development server, where you can view your learning pat
 ![Preview site](./images/preview-site.png)
 
 {{< alert type="info" title="Local Previews" >}}
-The local preview uses a generic theme to show the structure and content of your learning path. It **will not** display your organization's specific branding, such as custom logos or color schemes. The full, branded experience will only be visible after your content is published to the Layer5 Academy platform. 
+The local preview uses a generic theme to show the structure and content of your learning path. It **will not** display your organization's specific branding, such as custom logos or color schemes.
 
 You can configure your organization's branding in the [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations).
 {{< /alert >}}
 
 ## 5. Publishing Your Learning Path
 
-Once you have tested your content locally, you can publish it to the [Layer5 Academy](https://cloud.layer5.io/academy/overview) through our automated workflow. The process involves a one-time setup of secrets and then creating a GitHub Release to publish each new version.
+Once you have tested your content locally, you can publish it to the [Layer5 Academy](https://cloud.layer5.io/academy/content) through our automated workflow. 
+
+To help you visualize how your content goes from a local file to a live learning path, the diagram below illustrates the entire end-to-end publishing workflow. It shows which components you will interact with directly and how the CI/CD pipeline handles the rest automatically.
+
+{{< meshery-design-embed src="..//creating-your-learning-path/images/embedded-design-academy-content-publishing-workflow.js" id="embedded-design-37c37d14-be76-487a-90aa-5ada0c1c115f" size="full" >}}
+
+The process involves a one-time setup of secrets in your repository, followed by creating a GitHub Release to publish each new version of your content.
 
 ### Stage 1: Configure the Publishing Workflow (One-Time Setup)
 
@@ -295,3 +300,5 @@ This action will automatically trigger the workflow, and your content will be de
 5. **How do I structure multiple courses under one learning path?**
 
     The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
+
+[^1]: The auto-generated learning path ID feature will be launched soon.            
