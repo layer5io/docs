@@ -8,7 +8,19 @@
   -- Usage: 
   {{/*< meshery-design-embed src="path/to/embed.js" id="unique-id" size="full|half" link="design-url" >*/}}
   size: "full" for full-width (default), "half" for half-width display
-  link: Optional URL to link to the original design (enables hyperlink functionality)
+  link: Optional URL to link to the original design. If not provided, will auto-generate from design ID
+  id: Container ID, usually in format "embedded-design-<design_id>"
+  
+  -- Parameters:
+    - src: Path to the JavaScript file for the embedded design
+    - id: Full container ID (e.g., "embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4")
+    - size: "full" for full-width (default), "half" for half-width display  
+    - link: Optional URL to override auto-generated Meshery link
+
+  -- Auto-link generation:
+    If 'link' parameter is not provided and ID follows the pattern "embedded-design-{uuid}",
+    the shortcode will automatically generate:
+    https://playground.meshery.io/extension/meshmap?mode=design&design={uuid}
 
   More Information: 
   Learn more about embedding Meshery designs at:
@@ -40,6 +52,21 @@
   This enables hyperlink functionality for the embedded design.
 -->
 {{ $link := .Get "link" }}
+
+<!-- Auto-generate link if not provided -->
+{{ $autoLink := "" }}
+{{ if not $customLink }}
+  {{ if strings.HasPrefix $id "embedded-design-" }}
+    {{ $designId := strings.TrimPrefix $id "embedded-design-" }}
+    {{ $autoLink = printf "https://playground.meshery.io/extension/meshmap?mode=design&design=%s" $designId }}
+  {{ end }}
+{{ end }}
+
+<!-- Use custom link if provided, otherwise use auto-generated link -->
+{{ $finalLink := $customLink }}
+{{ if not $finalLink }}
+  {{ $finalLink = $autoLink }}
+{{ end }}
 
 <style>
 .meshery-embed-container {
