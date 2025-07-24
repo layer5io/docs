@@ -63,7 +63,7 @@
 {{ end }}
 
 <!-- Use custom link if provided, otherwise use auto-generated link -->
-{{ $finalLink := $customLink }}
+{{ $finalLink := $Link }}
 {{ if not $finalLink }}
   {{ $finalLink = $autoLink }}
 {{ end }}
