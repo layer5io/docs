@@ -56,8 +56,10 @@
 <!-- Always try to generate auto-link from ID -->
 {{ $autoLink := "" }}
 {{ if strings.HasPrefix $id "embedded-design-" }}
-  {{ $designId := strings.TrimPrefix $id "embedded-design-" }}
-  {{ $autoLink = printf "https://playground.meshery.io/extension/meshmap?mode=design&design=%s" $designId }}
+  {{ $designId := strings.Replace $id "embedded-design-" "" 1 }}
+  {{ if $designId }}
+    {{ $autoLink = printf "https://playground.meshery.io/extension/meshmap?mode=design&design=%s" $designId }}
+  {{ end }}
 {{ end }}
 
 <!-- Use provided link or auto-link -->
@@ -127,7 +129,6 @@
 }
 </style>
 {{ end }}
-
 
 <!-- 
   Embedding Container: 
