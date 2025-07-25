@@ -279,6 +279,39 @@ This action will automatically trigger the workflow, and your content will be de
 
 ![Release Example](./images/release-publish.gif)
 
+## 6. Ongoing Maintenance and Updates
+
+Once your learning path is live, you may need to perform routine tasks to keep your local environment and dependencies up-to-date.
+
+### Updating the Academy Theme
+The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the core layout, style, and features for your learning path. Regularly updating it ensures you benefit from the latest improvements and bug fixes.
+
+To upgrade to the latest theme version, run: 
+```bash
+make theme-upgrade
+```
+
+You will see output similar to this as Hugo fetches the new modules:
+```bash 
+hugo mod get -u
+hugo: collected modules in 1707 ms
+go: downloading github.com/layer5io/academy-theme v0.1.6
+go: upgraded github.com/layer5io/academy-theme v0.1.5 => v0.1.6
+go: upgraded github.com/twbs/bootstrap v5.3.6+incompatible => v5.3.7+incompatible
+```
+
+{{< alert type="info" title="When to Update?" >}}
+It's a good practice to update the theme before creating a new release or when you notice that your local preview is missing recent design changes.
+{{< /alert >}}
+
+### Clearing the Local Cache for Troubleshooting
+
+If you encounter unexpected formatting issues or your content doesn't update correctly during local development, your build cache might be stale. Use the `make clean` command to resolve this.
+This command first deletes the local build cache (`public` directory) and then restarts the development server, ensuring you are previewing a fresh build of your content.
+```bash
+make clean
+```
+
 ## Frequently Asked Questions
 
 1. **Why is my workflow failing with a `401 Unauthorized` or `user must be logged in` error?**
