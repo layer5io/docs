@@ -281,6 +281,9 @@ This action will automatically trigger the workflow, and your content will be de
 
 ## 6. Ongoing Maintenance and Updates
 
+Once your learning path is live, you may need to perform routine tasks to keep your local environment and dependencies up-to-date.
+
+### Updating the Academy Theme
 The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the core layout, style, and features for your learning path. Regularly updating it ensures you benefit from the latest improvements and bug fixes.
 
 To upgrade to the latest theme version, run: 
