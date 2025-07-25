@@ -281,14 +281,14 @@ This action will automatically trigger the workflow, and your content will be de
 
 ## 6. Ongoing Maintenance and Updates
 
-The Layer5 Academy uses a maintained Hugo theme called [`academy-theme`](https://github.com/layer5io/academy-theme). As improvements are made to the theme, it is important to keep your local copy up to date to benefit from the latest features and fixes.
+The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the core layout, style, and features for your learning path. Regularly updating it ensures you benefit from the latest improvements and bug fixes.
 
 To upgrade to the latest theme version, run: 
 ```bash
 make theme-upgrade
 ```
 
-This will trigger a sequence that updates the theme dependencies and applies the latest modules. The output below shows an example of what you might see:
+You will see output similar to this as Hugo fetches the new modules:
 ```bash 
 hugo mod get -u
 hugo: collected modules in 1707 ms
@@ -297,12 +297,17 @@ go: upgraded github.com/layer5io/academy-theme v0.1.5 => v0.1.6
 go: upgraded github.com/twbs/bootstrap v5.3.6+incompatible => v5.3.7+incompatible
 ```
 
-#### When should you upgrade the theme?
+{{< alert type="info" title="When to Update?" >}}
+It's a good practice to update the theme before creating a new release or when you notice that your local preview is missing recent design changes.
+{{< /alert >}}
 
-- Before creating a release, to ensure you are using the most up-to-date theme.
-- If your preview or build seems outdated or missing recent design improvements.
-- After any update to the `academy-theme` repository is announced.
-> Run `hugo mod graph` to inspect which version of the theme you are currently using.
+### Clearing the Local Cache for Troubleshooting
+
+If you encounter unexpected formatting issues or your content doesn't update correctly during local development, your build cache might be stale. Use the `make clean` command to resolve this.
+This command first deletes the local build cache (`public` directory) and then restarts the development server, ensuring you are previewing a fresh build of your content.
+```bash
+make clean
+```
 
 ## Frequently Asked Questions
 
