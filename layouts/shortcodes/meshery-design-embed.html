@@ -109,8 +109,7 @@
   border-color: rgba(0, 179, 159, 0.5);
   background: rgba(255, 255, 255, 0.15);
 }
-.meshery-embed-container::after {
-  content: "🔗 Open in Meshery";
+.meshery-link-button {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -120,11 +119,12 @@
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
-  opacity: 0;
+  text-decoration: none;
+  opacity: 1;
   transition: opacity 0.3s ease;
-  pointer-events: none;
+  z-index: 10;
 }
-.meshery-embed-container:hover::after {
+.meshery-embed-container:hover .meshery-link-button {
   opacity: 1;
 }
 </style>
@@ -141,13 +141,13 @@
       - Border: 1px solid #eee (light border for visibility)
 -->
 
-{{ if $finalLink }}
-<a href="{{ $finalLink }}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-{{ end }}
-<div id="{{ $id }}" class="meshery-embed-container {{ $size }}"></div>
-{{ if $finalLink }}
-</a>
-{{ end }}
+<div id="{{ $id }}" class="meshery-embed-container {{ $size }}">
+  {{ if $finalLink }}
+  <a href="{{ $finalLink }}" target="_blank" rel="noopener" class="meshery-link-button">
+    🔗 Open in Meshery
+  </a>
+  {{ end }}
+</div>
 
 <!-- 
   Embed Script: 
