@@ -7,7 +7,7 @@ categories: [Academy]
 tags: [Designer]
 ---
 
-The [Layer5 Cloud Academy](https://cloud.layer5.io/academy/overview) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
+The [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
 
 This approach transforms learning from passive reading into active, hands-on practice.
 
