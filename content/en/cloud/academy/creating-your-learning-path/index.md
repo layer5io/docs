@@ -288,7 +288,7 @@ To upgrade to the latest theme version, run:
 make theme-upgrade
 ```
 
-This will trigger a sequence that updates the theme dependencies and applies the latest modules:
+This will trigger a sequence that updates the theme dependencies and applies the latest modules. The output below shows an example of what you might see:
 ```bash 
 hugo mod get -u
 hugo: collected modules in 1707 ms
