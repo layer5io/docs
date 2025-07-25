@@ -279,7 +279,7 @@ This action will automatically trigger the workflow, and your content will be de
 
 ![Release Example](./images/release-publish.gif)
 
-## Upgrading the Academy Theme
+## 6. Ongoing Maintenance and Updates
 
 The Layer5 Academy uses a maintained Hugo theme called [`academy-theme`](https://github.com/layer5io/academy-theme). As improvements are made to the theme, it is important to keep your local copy up to date to benefit from the latest features and fixes.
 
