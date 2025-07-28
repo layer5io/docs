@@ -128,7 +128,7 @@ body {
   .md__image img,
   img.md-image-responsive {
     display: block;
-    width: 100%;
+    width: auto;
     max-width: clamp(320px, 100%, 700px);
     height: auto;
     margin: 0 auto;
