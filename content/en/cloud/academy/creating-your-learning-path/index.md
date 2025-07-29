@@ -312,6 +312,10 @@ This command first deletes the local build cache (`public` directory) and then r
 make clean
 ```
 
+{{< alert type="info" title="Be Careful About Name Changes" >}}
+Renaming a course or module after publication would break the learning path tracking for enrolled learners. It's like changing chapters while someone is following the story. Consider updating the module’s description, adding an introductory note, or creating a versioned copy.
+{{< /alert >}}
+
 ## Frequently Asked Questions
 
 1. **Why is my workflow failing with a `401 Unauthorized` or `user must be logged in` error?**
