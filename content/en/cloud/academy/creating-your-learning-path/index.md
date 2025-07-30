@@ -114,7 +114,7 @@ You can find and copy your Organization UUID from your organization page on [Aca
     ```yaml
     ---
     type: "learning-paths"
-    title: "Exoscale Cloud Fundamentals"
+    title: "Cloud Fundamentals"
     description: "A learning path focused on providing the technical knowledge required for advanced topics."
     weight: 5
     banner: "images/kubernetes-icon.svg"
