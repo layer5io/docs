@@ -172,11 +172,11 @@ For all assets, please use the Page Bundling method. It simplifies asset managem
 
 ### Size Limits for Embedded Media
 While there's no hard-coded size limit, we enforce these practical constraints:
-| Media Type | Recommended Max Size | Impact Beyond Limit           |
-|------------|----------------------|-------------------------------|
-| Video      | 50 MB                | Slow builds, CI failures      |
-| Image      | 5 MB                 | Hugo memory overflow.         |
-| PDF        | 20 MB                | Browser loading delays.       |
+| Media Type | Recommended Max Size | Impact Beyond Limit          |
+|------------|----------------------|------------------------------|
+| Video      | 50 MB                | Slow builds, CI failures     |
+| Image      | 5 MB                 | Hugo memory overflow         |
+| PDF        | 20 MB                | Browser loading delays       |
 
 
 ### How to Add an Image
@@ -194,27 +194,9 @@ The `usestatic` shortcode is **deprecated** and should not be used!
 {{< /alert >}}
 
 ### How to Add a Video
-```mermaid
-graph LR
-    A[Add Video] --> B{Size >50MB?}
-    B -->|Yes| C[External Platform]
-    B -->|No| D[Page Bundling]
-    C --> E[Embed with URL]
-    D --> F[Local Reference]
-```
 
-#### Best Practices for Video Storage
-**Recommended Approach (Page Bundling):**
+**Page Bundling (Recommended)**
 ```markdown
-// Directory structure
-content/
-└── learning-paths/
-    └── org-uuid/
-        └── course-name/
-            ├── chapter.md
-            └── video-demo.mp4  // Same directory as Markdown
-
-// In chapter.md
 <video controls width="100%">
   <source src="video-demo.mp4" type="video/mp4">
 </video>
@@ -237,19 +219,10 @@ For optimal performance, we recommend hosting large videos on dedicated platform
 - **Cloudflare Stream** (Paid, enterprise-grade)
 - **Vimeo** (Paid, professional features)
 
-#### Migration Guide
-```mermaid
-flowchart LR
-    A[Identify Videos] --> B{Current Location}
-    B -->|static/ folder| C[Move to Page Bundle]
-    B -->|External URL| D[Verify accessibility]
-    C --> E[Update references]
-    D --> E
-    E --> F[Test locally]
-    F --> G[Publish via Release]
-```
 
 #### Critical Considerations
+- Best practice: Page Bundling
+
 - Accessibility: Always include subtitle tracks (VTT format)
 
 - Thumbnails: Set custom posters with ```poster="image.jpg"```
