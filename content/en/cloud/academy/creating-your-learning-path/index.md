@@ -14,7 +14,7 @@ This guide provides a step-by-step walkthrough for creating and organizing a new
 Before you dive into creating your first learning path, it's helpful to be familiar with the core technologies and concepts used by the Academy platform. 
 
 - **Git and GitHub**: All learning content is managed in a Git repository.
-- **Markdown**: All course and chapter content is written in standard Markdown. 
+- **Markdown**: All content is written in standard Markdown. 
 - **Hugo**: The entire Academy platform is built on the [Hugo](https://gohugo.io/) static site generator. 
 - **Academy Template & Theme**: We provide an `academy-example` repository that serves as a pre-configured template. [Layer5 Academy theme](https://github.com/layer5io/academy-theme) to ensure your content is styled correctly right out of the box.
 - **A Layer5 Cloud Account**: Required to obtain your Organization ID and Personal Access Token for publishing.
@@ -65,7 +65,7 @@ The Academy uses a specific directory layout to keep each organization's content
     Each learning path is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
 
 {{< alert type="info" title="How to Find Your Organization UUID?" >}}
-You can find and copy your Organization UUID from your organization page on [Layer5 Cloud](https://cloud.layer5.io/identity/organizations).
+You can find and copy your Organization UUID from your organization page on [Academy](https://cloud.layer5.io/academy).
 {{< /alert >}}
 
 2. **Create the Core Directories**
@@ -79,79 +79,88 @@ You can find and copy your Organization UUID from your organization page on [Lay
 
 3. **Build the Content Hierarchy**
 
-    With the main folders in place, you can now structure your first course inside the `content` directory. The content is organized in a clear hierarchy: **Learning Path → Course → Chapter**.
+    With the main folders in place, you can now structure your first course inside the `content` directory. The content is organized in a clear hierarchy: **Learning Path → Course → Module → Page, Quiz, or Lab.**
 
     A high-level view of the structure looks like this:
 
     ```text
-    content/
-    └── learning-paths/
-        ├── _index.md
-        └── ea124d12-234a-6f78-9df0-1fa2b3e4d567/  // <-- Organization UID
-            └── mastering-kubernetes/              // <-- Learning Path
-                ├── _index.md
-                └── advanced-networking/           // <-- Course 1
-                └── core-concepts/                 // <-- Course 2
-                    ├── _index.md
-                    ├── 01-pods.md                 // <-- Chapter 1
-                    └── 02-services.md             // <-- Chapter 2
-                    └── arch.png                   // <-- Image
+    learning-paths/
+    └── mastering-kubernetes/                    // <-- Learning Path
+        ├── _index.md                            
+        ├── advanced-networking/                 // <-- Course 1
+        │   └── _index.md                        
+        └── core-concepts/                       // <-- Course 2
+            ├── _index.md                        
+            └── 01-pods-and-services/            // <-- Module
+                ├── _index.md                    
+                ├── 01-pods.md                   // <-- Page 1
+                ├── 02-services.md               // <-- Page 2
+                ├── 03-knowledge-check.md        // <-- Quiz
+                ├── 04-hands-on-lab.md           // <-- Lab
+                └── arch.png                     // <-- Image
     ```
-
-    Each folder represents a level in the hierarchy, and the `_index.md` file within a folder defines the metadata (like title and description) for that level. The final `.md` files are your individual Chapter.
+    Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`). The final `.md` files at the lowest level are your individual **Pages**, **Quizzes**, or **Labs**.
 
 > For a deeper understanding of how Hugo uses `_index.md` to create content sections, you can refer to the official [Hugo Page Bundles documentation](https://gohugo.io/content-management/page-bundles/).
 
 4. **Front matter**
 
-    Use this at the top of each **Learning Path** page (`learning-paths/<orgId>/<slug>/_index.md` or similar):
+    Front matter is the configuration block at the top of every content file that defines its metadata. The most critical field is type, which tells the Academy how to render the content.
+
+    The front matter configuration varies slightly depending on whether you are creating a Learning Path/Challengs, Course, Module, or Page. The following examples for a Learning Path and a Course illustrate a typical setup.
+
+    **Learing Path Frontmatter**
 
     ```yaml
     ---
-    title: "Advanced Course"
-    description: "This ADVANCED - Course is where to get the technical knowledge."
+    type: "learning-paths"
+    title: "Cloud Fundamentals"
+    description: "A learning path focused on providing the technical knowledge required for advanced topics."
     weight: 5
-    banner: "images/exoscale-icon.svg"
-    id: "754627a3-7993-4b01-a7f0-c66c0212a1a1" 
-    tags: [orchestration]
-    categories: [introductory]
+    banner: "images/kubernetes-icon.svg"
+    id: "754627a3-2323-4545-a7f0-c66c0212a1a1" 
+    tags: [kubernetes, infrastructure]
+    categories: "cloud"
     ---
     ```
 
-    > Place this frontmatter in the Markdown file that represents the learning path index page.
-
-    **Course Frontmatter (Optional Individual Course Pages)**
+    **Course Frontmatter**
 
     If each course has its own markdown page, you can use this frontmatter:
 
     ```yaml
     ---
-    id: "Networks" 
-    title: "Networks"
-    description: "This course clear your Network concept"
+    type: "course"
+    title: "Intro Sustainability"
+    description: "An introductory course exploring the core concepts of sustainability."
     weight: 2
     banner: "images/kubernetes-icon.svg"      
-    tags: [network]
-    categories: [introductory]
+    tags: [network, infrastructure]
+    level: "beginner"
+    categories: "compliance"
     ---
     ```
 
     **Summary of Required Fields**
 
-    | Applicable To   | Field         | Required | Notes                                                                      |
-    | --------------- | ------------- | :------: | -------------------------------------------------------------------------- |
-    | All             | `title`       |    ✅    | The main display title.                                                    |
-    | All             | `description` |    ✅    | A brief summary of the content.                                            |
-    | All             | `weight`      |    ✅    | Controls the display order (lower numbers appear first).                   |
-    | All             | `banner`      |    ❌    | Path to an image in the `static` folder, e.g., `images/icon.svg`.          |
-    | All             | `tags`        |    ❌    | Keywords for content discovery.                                            |
-    | All             | `categories`  |    ❌    | The main categories for the content.                                       |
-    | All             | `draft`       |    ❌    | If `true`, the page will not be published.                                 |
-    | **Learning Path** | `id`          |    ✅    | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]|
-    | **Course** | `id`          |    ❌    | A simple, human-readable string identifier for the course.                 |
-    | **Course** | `prerequisites` |    ❌    | Optional list of prerequisites for the course. |
+    | Applicable To                 | Field         | Required | Notes                                                                                                         |
+    | ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
+    | All                           | `title`       |    ✅    | The main display title.                                                                                       |
+    | All                           | `description` |    ✅    | A brief summary of the content.                                                                               |
+    | All                           | `weight`      |    ✅    | Controls the display order (lower numbers appear first).                                                      |
+    | All                           | `draft`       |    ❌    | If `true`, the page will not be published.                                                                    |
+    | All                           | `type`        |    ✅    | Defines the content's role. Optional values: `challenge`, `learning-path`, `course`, `module`, `page`, `quiz`, or `lab`. |
+    | **Course** | `level`       |    ❌    | The difficulty level of the content. Optional values: `beginner`, `intermediate`, `advanced`.                 |
+    | **Learning Path** | `id`          |    ✅    | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
+    | **Learning Path**, **Course**, **module** | `tags`        |    ❌    | Keywords for content discovery. Multiple tags can be selected.                                                |
+    | **Learning Path**, **Course**, **module** | `categories`  |    ❌    | The main categories for the content. Only one can be selected.                                                |
+    | **Learning Path**, **Course** | `banner`      |    ❌    | Path to an image in the `static` folder, e.g., `images/icon.svg`.                                             |
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
+
+{{< alert type="info" title="Be Careful About Name Changes" >}}
+Renaming a course or module after publication would break the learning path tracking for enrolled learners. It's like changing pages while someone is following the story. Consider updating the module’s description, adding an introductory note, or creating a versioned copy.
+{{< /alert >}}
 
 ## 3. Add Assets and Interactive Content
 
@@ -172,9 +181,9 @@ While there's no hard-coded size limit, we enforce these practical constraints:
 
 ### How to Add an Image
 
-1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `Chapter-1.md`). 
+1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `01-pods.md`). 
 
-2.  In your `Chapter-1.md` file, embed the image using a **standard Markdown link**. The path should just be the filename.
+2.  In your `01-pods.md` file, embed the image using a **standard Markdown link**. The path should just be the filename.
 
     ```markdown
     ![The Hugo Logo](hugo-logo.png)
