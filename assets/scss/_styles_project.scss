@@ -722,61 +722,6 @@ a:not([href]):not([class]):hover {
 .csvtable {
   width: 100%;
 }
-// Only target the tabbed panels using ID naming convention
-
-[id^="tabs-"] {
-  border: 1px solid rgba($light, 0.1);
-  border-radius: 0.5rem;
-  padding: .5rem;
-  margin-bottom: 1rem;
-  background-color: rgba($light, 0.02);
-  box-shadow: 0 0 8px rgba($dark, 0.2);
-
-  .nav-link {
-    color: $light;
-    background-color: rgba($light, 0.3); // 🆕 consistent visible bg for inactive tabs
-    border: 2px solid rgba($light, 0.15);
-    border-radius: 0.5rem 0.5rem 0 0;
-    margin: 2px;
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    display: inline-block;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-    box-shadow: 0 0 4px rgba($dark, 0.05); // 🆕 soft shadow for depth
-
-    &:hover {
-      background-color: rgba($light, 0.5);
-      color: $white;
-    }
-
-    &.active {
-      background-color: $primary;
-      color: #fff;
-      border-color: $primary $primary transparent;
-      font-weight: 600;
-      position: relative;
-      z-index: 2;
-      box-shadow: none; // remove shadow from active to flatten it into content
-    }
-  }
-
-   .nav-link.disabled {
-    background: transparent;
-    border: none;
-    color: rgba($light, 0.5);
-    font-weight: 400;
-    cursor: default;
-    box-shadow: none;
-    pointer-events: none;
-    padding-left: 0;
-    padding-right: 0;
-    margin-right: 0.5rem;
-    margin-left: 0.25rem;
-    letter-spacing: 0.03em;
-  }
-}
 
 html {
   scroll-padding-top: 5rem;
