@@ -135,7 +135,7 @@ You can find and copy your Organization UUID from your organization page on [Aca
     description: "An introductory course exploring the core concepts of sustainability."
     weight: 2
     banner: "images/kubernetes-icon.svg"      
-    tags: [network]
+    tags: [network, infrastructure]
     level: "beginner"
     categories: "compliance"
     ---
