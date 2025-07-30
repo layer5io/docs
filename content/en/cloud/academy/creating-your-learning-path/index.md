@@ -161,7 +161,16 @@ Enhance your course with images and other visual aids. The recommended and stand
 For all assets, please use the Page Bundling method. It simplifies asset management by co-locating images with the Markdown files that use them.
 {{< /alert >}}
 
-**How to Add an Image**
+### Size Limits for Embedded Media
+While there's no hard-coded size limit, we enforce these practical constraints:
+| Media Type | Recommended Max Size | Impact Beyond Limit           |
+|------------|----------------------|-------------------------------|
+| Video      | 50 MB                | Slow builds, CI failures      |
+| Image      | 5 MB                 | Hugo memory overflow.         |
+| PDF        | 20 MB                | Browser loading delays.       |
+
+
+### How to Add an Image
 
 1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `Chapter-1.md`). 
 
@@ -175,17 +184,70 @@ For all assets, please use the Page Bundling method. It simplifies asset managem
 The `usestatic` shortcode is **deprecated** and should not be used!
 {{< /alert >}}
 
-**How to Add a Video**
+### How to Add a Video
+```mermaid
+graph LR
+    A[Add Video] --> B{Size >50MB?}
+    B -->|Yes| C[External Platform]
+    B -->|No| D[Page Bundling]
+    C --> E[Embed with URL]
+    D --> F[Local Reference]
+```
 
-```text
-{{</* card 
-title="Video: Example" */>}}
-<video width="100%" height="100%" controls>
-    <source src="https://exmaple.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+#### Best Practices for Video Storage
+**Recommended Approach (Page Bundling):**
+```markdown
+// Directory structure
+content/
+└── learning-paths/
+    └── org-uuid/
+        └── course-name/
+            ├── chapter.md
+            └── video-demo.mp4  // Same directory as Markdown
+
+// In chapter.md
+<video controls width="100%">
+  <source src="video-demo.mp4" type="video/mp4">
+</video>
+```
+
+**External Hosting (Large Files)**
+```markdown
+{{</* card title="Video Tutorial" */>}}
+<video controls preload="metadata">
+  <source src="https://cdn.yourcompany.com/video.mp4" type="video/mp4">
+  Your browser doesn't support HTML5 video.
 </video>
 {{</* /card */>}}
 ```
+
+#### External Hosting Recommendations
+For optimal performance, we recommend hosting large videos on dedicated platforms:
+- **YouTube** (Free, public/private options)
+- **AWS S3** (Requires bucket & CORS configuration)
+- **Cloudflare Stream** (Paid, enterprise-grade)
+- **Vimeo** (Paid, professional features)
+
+#### Migration Guide
+```mermaid
+flowchart LR
+    A[Identify Videos] --> B{Current Location}
+    B -->|static/ folder| C[Move to Page Bundle]
+    B -->|External URL| D[Verify accessibility]
+    C --> E[Update references]
+    D --> E
+    E --> F[Test locally]
+    F --> G[Publish via Release]
+```
+
+#### Critical Considerations
+- Accessibility: Always include subtitle tracks (VTT format)
+
+- Thumbnails: Set custom posters with ```poster="image.jpg"```
+
+- Bandwidth: Self-hosted videos may incur significant costs
+
+- Authentication: For private videos, use signed URLs (S3) or unlisted (YouTube)
 
 ## 4. Build and Preview Locally
 
@@ -333,5 +395,20 @@ make clean
 5. **How do I structure multiple courses under one learning path?**
 
     The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
+
+6. **Why does my local build fail when adding large videos?**
+
+    Hugo's default memory limit is 512MB. For videos >50MB:
+    ```bash
+    hugo server --memlimit 2GB
+    ```
+
+7.  **How to securely host private training videos?**
+
+    Use AWS S3 with signed URLs:
+    ```html
+    <video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
+    ```
+
 
 [^1]: The auto-generated learning path ID feature will be launched soon.            
