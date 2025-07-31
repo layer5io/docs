@@ -155,7 +155,7 @@ questions:
 ---
 questions:
   - id: "question4"
-	text: "What is the default namespace in Kubernetes?"
+    text: "What is the default namespace in Kubernetes?"
     type: "short_answer"  # add
     marks: 2
     correct_answer: "default"
