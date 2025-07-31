@@ -91,7 +91,7 @@ You can find and copy your Organization UUID from your organization page on [Aca
         │   └── _index.md                        
         └── core-concepts/                       // <-- Course 2
             ├── _index.md   
-            └── course-exam.md                   // <-- Course Exam (Quiz)                     
+            ├── course-exam.md                   // <-- Course Exam (Quiz)                     
             └── 01-pods-and-services/            // <-- Module
                 ├── _index.md                    
                 ├── 01-pods.md                   // <-- Page 1
