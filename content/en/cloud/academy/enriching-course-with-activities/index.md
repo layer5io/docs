@@ -110,30 +110,30 @@ questions:
     # Single Choice:
   - id: "question1"
     text: "Test single choice question"
-    type: "mcq"
+    type: "mcq"             # choose the type
     marks: 1
     options:
       - id: "a"
         text: "Option A"
-        is_correct: true  # add
+        is_correct: true    # correct option
       - id: "b"
         text: "Option B"
 
     # Multiple Choice:
   - id: "question2"
     text: "Test multiple choice question"
-    type: "mcq"
-    multiple_answers: true  # add 
+    type: "mcq".            # choose the type
+    multiple_answers: true  # enable multiple selection
     marks: 2
     options:
       - id: "a"
         text: "Option A"
-        is_correct: true  # add
+        is_correct: true    # correct option
       - id: "b"
         text: "Option B"
       - id: "c"
         text: "Option C"
-        is_correct: true  # add
+        is_correct: true    # correct option
 
     # True/False:
   - id: "question3"
@@ -143,7 +143,7 @@ questions:
     options:
       - id: "true"
         text: "True"
-        is_correct: true  # add
+        is_correct: true    # correct option
       - id: "false"
         text: "False"
 ---
@@ -156,15 +156,15 @@ questions:
 questions:
   - id: "question4"
     text: "What is the default namespace in Kubernetes?"
-    type: "short_answer"  # add
+    type: "short_answer"                # choose the type
     marks: 2
-    correct_answer: "default"
+    correct_answer: "default"           # expected answer
 
   - id: "question5"
     text: "Which kubectl command lists all pods?"
-    type: "short_answer"  # add
+    type: "short_answer"                # choose the type
     marks: 2
-    correct_answer: "kubectl get pods" 
+    correct_answer: "kubectl get pods"  # expected answer
 ---
 ```
 
@@ -193,9 +193,11 @@ The system automatically calculates quiz scores based on the marks field for eac
     Yes, the filename must be quiz.md for the system to recognize it.
 
 2. Is the `id` field required in the quiz's front matter?
-	Yes, use the format "quiz-your-course-name" for consistency.
+	
+    Yes, use the format "quiz-your-course-name" for consistency.
 
 3. Can I add a quiz directly in the course root instead of a module?
+    
     Yes, you can place quizzes at the course level if needed.
 
 
