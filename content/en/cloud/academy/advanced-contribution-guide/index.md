@@ -22,7 +22,9 @@ The Layer5 Academy platform is composed of several core repositories.
 
 This repository is the "skin" for the entire Academy. It controls the website's design, including all the layouts, colors, and fonts.
 
-Content repositories automatically import this theme as a Go Module. As a content creator, you do not need to fork or clone this repository; your academy will use these styles by default.
+Content repositories automatically import this theme as a Go Module. As a content creator, you do not need to fork or clone this repository; your academy will use these styles by default. 
+
+> Currently, we only support customizing shortcodes in your content repository, not full theme customization.
 
 ### [academy-example](https://github.com/layer5io/academy-example)
 
