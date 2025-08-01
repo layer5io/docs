@@ -1,5 +1,5 @@
 ---
-title: Flexible Quiz Placement
+title: Integrating Quizzes in the Academy
 weight: 4
 description: >
   Learn how to spice up your courses with interactive quizzes that keep learners engaged.
