@@ -79,7 +79,7 @@ You can find and copy your Organization UUID from your organization page on [Aca
 
 3. **Build the Content Hierarchy**
 
-    With the main folders in place, you can now structure your first course inside the `content` directory. The content is organized in a clear hierarchy: **Learning Path → Course → Module → Page, Quiz, or Lab.**
+    With the main folders in place, you can now structure your first course inside the `content` directory. The content is organized in a clear hierarchy: A **Learning Path** contains **Courses**. A **Course** is primarily broken down into **Modules**, but can also conclude with a final **Quiz** that serves as a course exam. Finally, a **Module** consists of individual **Pages**, **Quizzes**, and **Labs**.
 
     A high-level view of the structure looks like this:
 
@@ -90,7 +90,8 @@ You can find and copy your Organization UUID from your organization page on [Aca
         ├── advanced-networking/                 // <-- Course 1
         │   └── _index.md                        
         └── core-concepts/                       // <-- Course 2
-            ├── _index.md                        
+            ├── _index.md   
+            ├── course-exam.md                   // <-- Course Exam (Quiz)                     
             └── 01-pods-and-services/            // <-- Module
                 ├── _index.md                    
                 ├── 01-pods.md                   // <-- Page 1
@@ -98,8 +99,10 @@ You can find and copy your Organization UUID from your organization page on [Aca
                 ├── 03-knowledge-check.md        // <-- Quiz
                 ├── 04-hands-on-lab.md           // <-- Lab
                 └── arch.png                     // <-- Image
+
     ```
-    Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`). The final `.md` files at the lowest level are your individual **Pages**, **Quizzes**, or **Labs**.
+
+    Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`). The final `.md` files represent your individual learning activities: **Pages** and **Labs** are typically found inside Modules, while **Quizzes** can be found inside Modules (for knowledge checks) or directly under a Course (as a final exam).
 
 > For a deeper understanding of how Hugo uses `_index.md` to create content sections, you can refer to the official [Hugo Page Bundles documentation](https://gohugo.io/content-management/page-bundles/).
 
