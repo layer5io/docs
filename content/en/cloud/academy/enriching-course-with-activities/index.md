@@ -80,6 +80,10 @@ Quizzes can have prerequisites that must be completed before taking the quiz.
 
 - Module Level: Multiple quizzes allowed (quiz-1.md, quiz-2.md, etc.)
 
+{{< alert type="warning" title="Completion Tracking Requirement" >}}
+To ensure proper completion and progress tracking, **every course and learning path must have at least one quiz defined**. This includes challenges and any top-level content.
+{{< /alert >}}
+
 
 #### 4. Unified Quiz Structure
 All `quiz.md` files follow the same format regardless of which level they're placed in. Whether it's a module quiz or learning path quiz, the structure stays consistent.
@@ -111,7 +115,7 @@ questions:
 
 ***Frontmatter Fields***
 - title: Write a descriptive, user-facing name for the quiz
-- id: Unique quiz ID starts with 'quiz-'(e.g., quiz-intro-meshery, quiz-containers)
+- id: Unique quiz ID. For calrity,  starts with 'quiz-'(e.g., quiz-intro-meshery, quiz-containers)
 - passing_percentage: Minimum score to pass (typically 70%) 
 - layout: Must be "quiz", metadata required
 - type: Must be "quiz", metadata required
@@ -226,9 +230,6 @@ This quiz allows you to review your educational progress. Give it a try!
 ### Scoring
 
 The system automatically calculates quiz scores based on the marks field for each question. Students must achieve the passing_percentage to complete the quiz successfully.
-
-
-> Find a complete, up-to-date reference for all supported question types in this [example file](https://github.com/layer5io/exoscale-academy/blob/f92b4b72e80be4cc9856fc20fa7f42903413481a/content/learning-paths/98e16360-a366-4b78-8e0a-031da07fdacb/end-to-end-kubernetes/cka-prep/cka/quiz.md?plain=1#L36).
 
 
 ### Frequently Asked Questions
