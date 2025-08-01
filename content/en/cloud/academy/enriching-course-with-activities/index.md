@@ -17,7 +17,7 @@ Each **Course** is broken down into **Modules**, and each Module consists of lea
 
 This guide shows how to add these learning activities to enhance learner engagement and comprehension.
 
-## How to Add a Page {#add-page}
+<!-- ## How to Add a Page {#add-page} -->
 
 
 ## How to Add a Quiz {#add-quiz}
@@ -84,7 +84,6 @@ Quizzes can have prerequisites that must be completed before taking the quiz.
 To ensure proper completion and progress tracking, **every course and learning path must have at least one quiz defined**. This includes challenges and any top-level content.
 {{< /alert >}}
 
-
 #### 4. Unified Quiz Structure
 All `quiz.md` files follow the same format regardless of which level they're placed in. Whether it's a module quiz or learning path quiz, the structure stays consistent.
 
@@ -112,7 +111,7 @@ questions:
 ```
 
 ***Frontmatter Fields***
-- id: Unique quiz ID. Optional. But if you include an id, it must be unique (e.g., UUID format).
+- id: Unique quiz ID. Optional. But if you include an id, it must be unique.
 - passing_percentage: Minimum score to pass (typically 70%) 
 - layout: Required field for metadata. Use "quiz" (or "test")
 - questions: Array of question objects
@@ -235,9 +234,20 @@ The system automatically calculates quiz scores based on the marks field for eac
 
   
 2. Is the `id` field required in the quiz's front matter?
-	
-    No, the id field is optional. If you choose to include one, ensure it's globally unique. We recommend using UUID format (e.g., quiz-intro-meshery, quiz-containers).
 
+    No, the `id` field is **optional** in the quiz's front matter. If omitted, a unique ID is auto-generated from the file's path (e.g., `7a4af2222daae1111acfac539f657724`).  However, it's strongly recommended to provide one. For better stability and easier debugging, use a globally unique and human-readable ID (e.g., `quiz-intro-meshery`, `quiz-containers`, or `quiz-intro-kubernetes`).
 
+4. Why is a quiz required for every Course and Learning Path?
 
-## How to Add a Lab {#add-lab}
+    For proper tracking, the system determines the "completion" of a Course or Learning Path by the user passing its specific, designated quiz (e.g., test.md or exam.md). Without this quiz, the system has no trigger to mark the level as completed and award achievements like badges. Module-level quizzes are for practice and do not trigger completion of the parent course.
+
+5. Can I fully test the quiz, including scoring, on my local machine?
+
+    You can preview the visual layout of the quiz locally. However, the scoring and evaluation logic runs on the backend server. Therefore, you cannot test the submission, grading, and result display process locally. You must publish the content to see the full functionality.
+
+6. How are multiple-answer questions scored? Is partial credit given?
+
+    Currently, there is no partial credit. For a multiple-answer question, the learner must select all of the correct options and none of the incorrect options to receive marks. Missing a correct option or selecting an incorrect one results in zero marks for that question.
+
+<!-- ## How to Add a Lab {#add-lab} -->
+
