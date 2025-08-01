@@ -94,11 +94,9 @@ Each quiz file (`quiz.md`) must contain the following YAML frontmatter:
 
 ```yaml
 ---
-title: "Your quiz title"
 id: "quiz-module-name"
 passing_percentage: 70
 layout: "quiz"
-type: "quiz" 
 questions:
   - id: "q1"
     text: "Your question text here"
@@ -114,11 +112,9 @@ questions:
 ```
 
 ***Frontmatter Fields***
-- title: Write a descriptive, user-facing name for the quiz
 - id: Unique quiz ID. For calrity,  starts with 'quiz-'(e.g., quiz-intro-meshery, quiz-containers)
 - passing_percentage: Minimum score to pass (typically 70%) 
-- layout: Must be "quiz", metadata required
-- type: Must be "quiz", metadata required
+- layout: Required field for metadata. Use "quiz" (or "test")
 - questions: Array of question objects
 
 ***Question Object Structure***
@@ -235,12 +231,13 @@ The system automatically calculates quiz scores based on the marks field for eac
 ### Frequently Asked Questions
 1. **Must the quiz file be named exactly `quiz.md?`?**
 
-    In our examples, we show `quiz.md` for simplicity. You can use any descriptive filename (e.g., `assessment.md`, `exam.md`) as long as the metadata includes `layout: 'quiz'` and `type: 'quiz'`.
+    In our examples, we show `quiz.md` for simplicity. You can use any descriptive filename (e.g., `test.md`, `assessment.md`, `exam.md`).
 
+  
 2. Is the `id` field required in the quiz's front matter?
 	
-    Yes, use the format "quiz-your-course-name" for consistency.
-
+    No, the id field is optional. If you choose to include one, ensure it's globally unique. We recommend using UUID format (e.g., quiz-intro-meshery, quiz-containers).
+    
 
 
 ## How to Add a Lab {#add-lab}
