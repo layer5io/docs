@@ -1,5 +1,5 @@
 ---
-title: Enriching Course With Quizzes
+title: Flexible Quiz Placement
 weight: 4
 description: >
   Learn how to spice up your courses with interactive quizzes that keep learners engaged.
@@ -84,7 +84,7 @@ Each quiz file (`quiz.md`) must contain the following YAML frontmatter:
 
 ```yaml
 ---
-id: "quiz-uuid"
+id: "quiz-id"
 passing_percentage: 70
 type: "quiz"
 questions:
@@ -102,7 +102,7 @@ questions:
 ```
 
 ***Frontmatter Fields***
-- id: Unique quiz ID. Optional. But if you include an id, it must be unique.
+- id: Quiz ID. This field is Optional. If you don't declare one, we'll automatically generate a UUID for it.
 - passing_percentage: Minimum score to pass (typically 70%) 
 - layout: Required field for metadata. Use "quiz" (or "test")
 - questions: Array of question objects
