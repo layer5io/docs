@@ -1,37 +1,28 @@
 ---
-title: Enriching Course With Activities
+title: Enriching Course With Quizzes
 weight: 4
 description: >
-  Learn how to spice up your courses with interactive activities that keep learners engaged.
+  Learn how to spice up your courses with interactive quizzes that keep learners engaged.
 categories: [Academy]
 tags: [Designer]
 ---
 
-The [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content) courses are structured as modular learning experiences. 
+Think of [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content) courses like a **garden growing system** :
+- **Courses** = Complete gardens (your cultivation project)
+- **Modules** = Different plant beds (specialized areas)  
+- **Quizzes** = Growth check-ins at any stage
 
-Each **Course** is broken down into **Modules**, and each Module consists of learning activities. As a content developer, you can enrich your modules with three types of learning activities:
+As a content developer, you have the **flexibility to place quizzes anywhere** - whether it's after a single activity, at the end of a module, or as a final course assessment.
 
-- **[Pages](#add-page)** – Text-based content for theoretical learning  
-- **[Quizzes](#add-quiz)** – Knowledge checks for concept reinforcement  
-- **[Labs](#add-lab)** – Hands-on practical exercises  
+**Why quizzes matter:**
 
-This guide shows how to add these learning activities to enhance learner engagement and comprehension.
+**Reinforce** - Lock in key concepts  
+**Self-check** - "Am I ready to move forward?"  
+**Instant feedback** - Learn from mistakes immediately
 
-<!-- ## How to Add a Page {#add-page} -->
+## Key Rules
 
-
-## How to Add a Quiz {#add-quiz}
-
-Quizzes in Layer5 Academy serve as knowledge checkpoints to help learners:
-
-- Reinforce key concepts from module content  
-- Self-assess their understanding before progressing  
-- Receive immediate feedback on their learning  
-
-
-### Key Rules
-
-#### 1. Each Level Can Have Quiz
+### 1. Each Level Can Have Quiz
 
 Quizzes are supported at each level of the content hierarchy and can be placed directly within any level:
 > Here we use `quiz.md` as illustration, you can use any name you like as long as they keep consistent.
@@ -61,7 +52,7 @@ Pass `learning-path-name/quiz.md` → Entire learning path is marked as complete
 {{< /alert >}}
 
 
-#### 2. Prerequisites - Ensuring Learning Order
+### 2. Prerequisites - Ensuring Learning Order
 Quizzes can have prerequisites that must be completed before taking the quiz.
 
 **Learning Path Quiz:**
@@ -72,7 +63,7 @@ Quizzes can have prerequisites that must be completed before taking the quiz.
 
 - complete required Module quizzes ➜ can take the Course quiz
 
-#### 3. Quiz Quantity Per Level
+### 3. Quiz Quantity Per Level
 
 - Learning Path Level: Single quiz only (quiz.md)
 
@@ -84,18 +75,18 @@ Quizzes can have prerequisites that must be completed before taking the quiz.
 To ensure proper completion and progress tracking, **every course and learning path must have at least one quiz defined**. This includes challenges and any top-level content.
 {{< /alert >}}
 
-#### 4. Unified Quiz Structure
+### 4. Unified Quiz Structure
 All `quiz.md` files follow the same format regardless of which level they're placed in. Whether it's a module quiz or learning path quiz, the structure stays consistent.
 
 
-### Quiz File Structure
+## Quiz File Structure
 Each quiz file (`quiz.md`) must contain the following YAML frontmatter:
 
 ```yaml
 ---
 id: "quiz-uuid"
 passing_percentage: 70
-layout: "quiz"
+type: "quiz"
 questions:
   - id: "q1"
     text: "Your question text here"
@@ -127,7 +118,7 @@ questions:
 Remember: `layout: "quiz"` and `type: "quiz"` are fixed values that cannot be modified. The system needs these exact words to work properly.
 {{< /alert >}}
 
-### Supported Quiz Types
+## Supported Quiz Types
 
 Layer5 Academy supports these question formats:
 
@@ -142,9 +133,9 @@ Layer5 Academy supports these question formats:
 - Fill-in-the-blank responses  
 - Direct text input
 
-### Question Types Examples
+## Question Types Examples
 
-**1. Multiple Choice Questions (type: mcq)**
+#### 1. Multiple Choice Questions (type: mcq)
 
 ```yaml
 ---
@@ -192,7 +183,7 @@ questions:
 ---
 ```
       
-**2. Short Answer Questions (type: short_answer)**
+#### 2. Short Answer Questions (type: short_answer)
 
 ```yaml
 ---
@@ -211,7 +202,7 @@ questions:
 ---
 ```
 
-### Post-Frontmatter
+## Post-Frontmatter
 
 After the frontmatter, you can add some content for learner orientation:
 ```markdown
@@ -222,26 +213,26 @@ questions:
 This quiz allows you to review your educational progress. Give it a try!
 ```
 
-### Scoring
+## Scoring
 
 The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passing_percentage` for the quiz. Here is how the system processes the scores:
 
-#### How Scores Are Calculated
+### How Scores Are Calculated
 
 1.  **Total Possible Marks**: The total score for a quiz is automatically calculated by summing the `marks` value of every question within that quiz. You do not need to define this total manually.
 2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
 3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passing_percentage` you set, the quiz is marked as "Passed".
 
-#### Scoring Rules for Question Types
+### Scoring Rules for Question Types
 
 - **Multiple-Choice Questions (MCQ)**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
 - **Short Answer Questions**: The learner's input is compared against the `correct_answer` field. The comparison is **case-insensitive**, and leading/trailing whitespace is ignored to avoid penalizing minor typing variations.
 
-#### The Result of Scoring
+### The Result of Scoring
 
 After a quiz is submitted and scored, a detailed result record is permanently saved to the learner's grade history. If the quiz is a designated test for a Course or Learning Path and the result is "Passed", it will trigger the completion of that Course or Learning Path in the learner's progress tracker.
 
-### Frequently Asked Questions
+## Frequently Asked Questions
 1. **Must the quiz file be named exactly `quiz.md?`?**
 
     In our examples, we show `quiz.md` for simplicity. You can use any descriptive filename (e.g., `test.md`, `assessment.md`, `exam.md`).
@@ -262,5 +253,4 @@ After a quiz is submitted and scored, a detailed result record is permanently sa
 
     Currently, there is no partial credit. For a multiple-answer question, the learner must select all of the correct options and none of the incorrect options to receive marks. Missing a correct option or selecting an incorrect one results in zero marks for that question.
 
-<!-- ## How to Add a Lab {#add-lab} -->
 
