@@ -11,16 +11,16 @@ The [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content) courses are 
 
 Each **Course** is broken down into **Modules**, and each Module consists of learning activities. As a content developer, you can enrich your modules with three types of learning activities:
 
-- **Pages** – Text-based content for theoretical learning  
-- **Quizzes** – Knowledge checks for concept reinforcement  
-- **Labs** – Hands-on practical exercises  
+- **[Pages](#add-page)** – Text-based content for theoretical learning  
+- **[Quizzes](#add-quiz)** – Knowledge checks for concept reinforcement  
+- **[Labs](#add-lab)** – Hands-on practical exercises  
 
 This guide shows how to add these learning activities to enhance learner engagement and comprehension.
 
-## How to Add A Page
+## How to Add a Page {#add-page}
 
 
-## How to Add a Quiz
+## How to Add a Quiz {#add-quiz}
 
 Quizzes in Layer5 Academy serve as knowledge checkpoints to help learners:
 
@@ -28,29 +28,73 @@ Quizzes in Layer5 Academy serve as knowledge checkpoints to help learners:
 - Self-assess their understanding before progressing  
 - Receive immediate feedback on their learning  
 
-### File Structure
 
-Quizzes are placed inside a `knowledge-check/` directory under each module:
-```
-course-name/
-└── module-1/
-└── module-2/
-│   └── knowledge-check/
-│       └── quiz.md      // <-- Quiz file
-└── module-3/
+### Key Rules
+
+#### 1. Each Level Can Have Quiz
+
+Quizzes are supported at each level of the content hierarchy and can be placed directly within any level:
+> Here we use `quiz.md` as illustration, you can use any name you like as long as they keep consistent.
 
 ```
+        learning-path-name/
+        ├── quiz.md                        // <-- Learning path quiz
+        ├── course-1/
+        │   ├── quiz.md                    // <-- Course quiz
+        │   ├── module-1/
+        │   │   ├── quiz-1.md              // <-- Module quizzes
+        │   │   └── quiz-2.md
+        │   ├── module-2/
+        │   │   └── quiz.md                // <-- Module quiz
+        │   └── module-3/
+        └── course-2/
+            ├── quiz.md                    // <-- Course quiz
+            └── module-1/
+                └── quiz.md
+```
+
+{{< alert type="info" title="Passing the Quiz Marks that Level as Completed" >}}
+
+Pass `course-1/quiz.md` → Course 1 is marked as completed.
+
+Pass `learning-path-name/quiz.md` → Entire learning path is marked as completed
+{{< /alert >}}
+
+
+#### 2. Prerequisites - Ensuring Learning Order
+Quizzes can have prerequisites that must be completed before taking the quiz.
+
+**Learning Path Quiz:**
+
+- complete all Courses ➜ can take quiz
+
+**Course Quiz (planned):**
+
+- complete required Module quizzes ➜ can take the Course quiz
+
+#### 3. Quiz Quantity Per Level
+
+- Learning Path Level: Single quiz only (quiz.md)
+
+- Course Level: Single quiz only (quiz.md)
+
+- Module Level: Multiple quizzes allowed (quiz-1.md, quiz-2.md, etc.)
+
+
+#### 4. Unified Quiz Structure
+All `quiz.md` files follow the same format regardless of which level they're placed in. Whether it's a module quiz or learning path quiz, the structure stays consistent.
+
 
 ### Quiz File Structure
 Each quiz file (`quiz.md`) must contain the following YAML frontmatter:
 
 ```yaml
 ---
-title: "Knowledge Check"
+title: "Your quiz title"
 id: "quiz-module-name"
 passing_percentage: 70
 layout: "quiz"
-type: "quiz"
+type: "quiz" 
 questions:
   - id: "q1"
     text: "Your question text here"
@@ -65,12 +109,12 @@ questions:
 ---
 ```
 
-***Frontmatter Fields (Required)***
-- title: Always "Knowledge Check" for consistency
+***Frontmatter Fields***
+- title: Write a descriptive, user-facing name for the quiz
 - id: Unique quiz ID starts with 'quiz-'(e.g., quiz-intro-meshery, quiz-containers)
 - passing_percentage: Minimum score to pass (typically 70%) 
-- layout: Must be "quiz"
-- type: Must be "quiz"
+- layout: Must be "quiz", metadata required
+- type: Must be "quiz", metadata required
 - questions: Array of question objects
 
 ***Question Object Structure***
@@ -176,7 +220,7 @@ After the frontmatter, you can add some content for learner orientation:
 questions:
 
 ---
-This knowledge check allows you to review your educational progress. Give it a try!
+This quiz allows you to review your educational progress. Give it a try!
 ```
 
 ### Scoring
@@ -190,16 +234,12 @@ The system automatically calculates quiz scores based on the marks field for eac
 ### Frequently Asked Questions
 1. **Must the quiz file be named exactly `quiz.md?`?**
 
-    Yes, the filename must be quiz.md for the system to recognize it.
+    In our examples, we show `quiz.md` for simplicity. You can use any descriptive filename (e.g., `assessment.md`, `exam.md`) as long as the metadata includes `layout: 'quiz'` and `type: 'quiz'`.
 
 2. Is the `id` field required in the quiz's front matter?
 	
     Yes, use the format "quiz-your-course-name" for consistency.
 
-3. Can I add a quiz directly in the course root instead of a module?
-    
-    Yes, you can place quizzes at the course level if needed.
 
 
-
-## How to Add a Lab
+## How to Add a Lab {#add-lab}
