@@ -94,7 +94,7 @@ Each quiz file (`quiz.md`) must contain the following YAML frontmatter:
 
 ```yaml
 ---
-id: "quiz-module-name"
+id: "quiz-uuid"
 passing_percentage: 70
 layout: "quiz"
 questions:
@@ -112,7 +112,7 @@ questions:
 ```
 
 ***Frontmatter Fields***
-- id: Unique quiz ID. For calrity,  starts with 'quiz-'(e.g., quiz-intro-meshery, quiz-containers)
+- id: Unique quiz ID. Optional. But if you include an id, it must be unique (e.g., UUID format).
 - passing_percentage: Minimum score to pass (typically 70%) 
 - layout: Required field for metadata. Use "quiz" (or "test")
 - questions: Array of question objects
@@ -237,7 +237,7 @@ The system automatically calculates quiz scores based on the marks field for eac
 2. Is the `id` field required in the quiz's front matter?
 	
     No, the id field is optional. If you choose to include one, ensure it's globally unique. We recommend using UUID format (e.g., quiz-intro-meshery, quiz-containers).
-    
+
 
 
 ## How to Add a Lab {#add-lab}
