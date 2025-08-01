@@ -224,14 +224,27 @@ This quiz allows you to review your educational progress. Give it a try!
 
 ### Scoring
 
-The system automatically calculates quiz scores based on the marks field for each question. Students must achieve the passing_percentage to complete the quiz successfully.
+The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passing_percentage` for the quiz. Here is how the system processes the scores:
 
+#### How Scores Are Calculated
+
+1.  **Total Possible Marks**: The total score for a quiz is automatically calculated by summing the `marks` value of every question within that quiz. You do not need to define this total manually.
+2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
+3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passing_percentage` you set, the quiz is marked as "Passed".
+
+#### Scoring Rules for Question Types
+
+- **Multiple-Choice Questions (MCQ)**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
+- **Short Answer Questions**: The learner's input is compared against the `correct_answer` field. The comparison is **case-insensitive**, and leading/trailing whitespace is ignored to avoid penalizing minor typing variations.
+
+#### The Result of Scoring
+
+After a quiz is submitted and scored, a detailed result record is permanently saved to the learner's grade history. If the quiz is a designated test for a Course or Learning Path and the result is "Passed", it will trigger the completion of that Course or Learning Path in the learner's progress tracker.
 
 ### Frequently Asked Questions
 1. **Must the quiz file be named exactly `quiz.md?`?**
 
     In our examples, we show `quiz.md` for simplicity. You can use any descriptive filename (e.g., `test.md`, `assessment.md`, `exam.md`).
-
   
 2. Is the `id` field required in the quiz's front matter?
 
