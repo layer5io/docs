@@ -165,6 +165,103 @@ You can find and copy your Organization UUID from your organization page on [Aca
 Renaming a course or module after publication would break the learning path tracking for enrolled learners. It's like changing pages while someone is following the story. Consider updating the module’s description, adding an introductory note, or creating a versioned copy.
 {{< /alert >}}
 
+
+
+
+## ✅ Test Usage , Progress and Prerequisite tracking Logic
+
+### Purpose of Tests
+
+Tests are used for grading and evaluating user progress throughout the academy.
+
+---
+
+### Where Tests Can Be Placed
+
+Tests can be defined at any level of the academy hierarchy, including:
+
+* At the root of a **learning path**, **certification**, or **challenge**
+* Inside each **course**
+* Within individual **modules**
+
+---
+
+### Mandatory Tests and Sections
+
+* Tests are used to evaluate the **completion** of a section.
+* Each **mandatory section** must contain **at least one test**.
+* By default, all sections (learning paths, courses, modules) are **mandatory**.
+
+  * For example, to complete a learning path, all its courses must be completed.
+  * To complete a course, all its modules must be completed.
+
+---
+
+### Optional Sections and Tests
+
+* A section (course, module, or test) can be made **optional** by setting the front matter field:
+
+  ```yaml
+  is_optional: true
+  ```
+
+* Optional sections are **excluded** from prerequisite checks.
+
+  * If all modules in a course are marked optional, users can take the course-level test without completing any module tests.
+
+---
+
+### Final Tests
+
+* A **final test** is the test that evaluates whether a section (with mandatory children) is complete.
+* A final test can only be taken after all **mandatory sibling pages** (modules, courses, etc.) are complete.
+
+---
+
+### Rules for Final Test Selection
+
+1. If **only one test** exists in a section, it is treated as the **final test**.
+
+2. If **multiple tests** exist:
+
+   * One may be explicitly marked as final using:
+
+     ```yaml
+     final: true
+     ```
+
+   * If none are marked, the **last test** (by file path) is treated as final.
+
+   * There must be **only one** explicitly marked final test per section.
+
+3. A **final test cannot be optional**.
+
+   * This applies even when only one test is present—it cannot have `is_optional: true`.
+
+---
+
+### 🧪 Final Test Determination Logic
+
+A test is considered final if:
+
+* It has `final: true` in its front matter.
+* It is the **only** test under its parent section.
+* It is the **last test** (ordered by `File.Path`) among sibling tests, and no other test is explicitly marked as final.
+
+If any sibling test is marked as `final: true`, no other test will be considered final—even if it’s last.
+
+---
+
+### ⚠️ Why Not Use `weight` to Determine the Final Test?
+
+* Pages may **omit `weight`**, defaulting to `0`.
+* Multiple pages can have the **same weight**.
+* This makes it possible for **multiple tests** to qualify as final.
+* Using `weight` introduces **ambiguity**, which violates the rule of having **only one** final test.
+
+Using `File.Path` ensures a **stable**, **deterministic** fallback for selecting the final test.
+
+
 ## 3. Add Assets and Interactive Content
 
 Enhance your course with images and other visual aids. The recommended and standard method for adding images is Page Bundling. This approach involves placing your image files directly alongside the Markdown content they belong to, which is simpler and keeps content organized.
