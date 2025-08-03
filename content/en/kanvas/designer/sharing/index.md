@@ -22,7 +22,6 @@ Designs have visibility statuses that defines who can access your designs. These
 - **Private:** Designs with visibility status private define only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.[^1]
 
 - **Public:**  Making a design "Public" makes it accessible to anyone on the internet who has the link or discovers it through public channels.
-> **Note:**  
 > When a design is Public:  
 > - Viewers and commenters can view, download, print, and copy the design.  
 > - Editors can change permissions and share the design with others.  
