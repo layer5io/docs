@@ -19,7 +19,7 @@ details {
     margin-right: -1.5rem;
     margin-left: -1.5rem;  
     display: block;
-    background-color: lighten($dark, 5%); 
+    background-color: lighten($dark, 10%); 
     color: $navbar-dark-color;
     padding-left: 2.2rem;
     position: relative;
@@ -43,6 +43,10 @@ details {
     transform: rotate(0);
     transform-origin: .2rem 50%;
     transition: .25s transform ease;
+  }
+
+  details[open] {
+    padding-bottom: 0.5rem;
   }
   
   details[open] > summary:before {
