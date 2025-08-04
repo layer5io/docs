@@ -114,7 +114,7 @@ To prepare your Hugo site to support design embedding, perform the one-time task
 .meshery-embed-container {
   border: 1px solid #eee;
   border-radius: 4px;
-  margin: 1rem auto;
+  margin: 0rem auto;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 .meshery-embed-container.full {
@@ -146,14 +146,14 @@ To prepare your Hugo site to support design embedding, perform the one-time task
 
 ### Shortcode Explanation
 
--   **`src`** (Required): The path to the exported JavaScript file for your design.
--   **`id`** (Required): A unique ID for the embedded design container.
--   **`size`** (Optional): A preset for simple sizing.
-    -   Accepts `"full"` (default) or `"half"`.
-    -   This parameter is ignored if `style` is used.
--   **`style`** (Optional): For advanced customization.
-    -   Allows you to provide any custom CSS inline styles.
-    -   **This parameter has higher priority and will override the `size` parameter.**
+- **`src`** (Required): The path to the exported JavaScript file for your design.
+- **`id`** (Required): A unique ID for the embedded design container.
+- **`size`** (Optional): A preset for simple sizing.
+  - Accepts `"full"` (default) or `"half"`.
+  - This parameter is ignored if `style` is used.
+- **`style`** (Optional): For advanced customization.
+  - Allows you to provide any custom CSS inline styles.
+  - **This parameter has higher priority and will override the `size` parameter.**
 
 Now that your site has shortcode support for embedding Kanvas designs, you can use the `meshery-design-embed` shortcode in any Hugo markdown file where you want to display embedded designs to your site visitors.
 
