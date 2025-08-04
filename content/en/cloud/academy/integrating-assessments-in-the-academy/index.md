@@ -79,25 +79,32 @@ Take **Learning Path** as an example:
 ### 3. Unified Assessment Structure
 All assessment files follow [the same format](#assessment-file-structure) regardless of which level they're placed in. Whether it's a module quiz or learning path exam, the structure stays consistent.
 
-### 4. Prerequisites and Mandatory Assessments
+### 4. Assessment Requirements and Prerequisites
 
-By default, every assessment at **Each level** have prerequisites that must be completed before taking it.
+**By default, all assessments are required.** This means learners must pass each assessment to unlock the next level.
 
-Take **Learning Path** as an example
-- complete all Courses ➜ can take exam in the Learning Path
-**Course Tests:**
-- complete required Module quizzes ➜ can take the Course test
-**Module Quizzes:**
-- complete required s ➜ can take the Course test
+Take **Learning Path** as an example:
+- Pass all Module quizzes → Unlock Course test
+- Pass all Course tests → Unlock Learning Path exam
 
 
-{{< alert type="info" title="Passing the test Marks that Level as Completed" >}}
-
-Pass all `course-1/test.md` → Course 1 is marked as completed.
-
-Pass `learning-path-name/exam.md` → Entire learning path is marked as completed
+{{< alert type="info" title="Passing the Assessment Marks that Level as Completed" >}}
+Pass `course-1/test.md` → Course 1 is marked as completed.  
+Pass `learning-path-name/exam.md` → Entire learning path is marked as completed. 
 {{< /alert >}}
 
+**Making assessments optional:**
+
+You can make any assessment **optional** by adding this to its frontmatter:
+  ```yaml
+  is_optional: true
+  ```
+This means the Optional sections are **excluded** from prerequisite checks.
+
+> **What this means:**
+> - Optional assessments don't block progress.
+> - Learners can skip them and still advance.
+> - Example: If all modules in a course are optional, learners can go straight to the course test.
 
 ## Assessment File Structure
 Each assessment file must contain the following YAML frontmatter:
