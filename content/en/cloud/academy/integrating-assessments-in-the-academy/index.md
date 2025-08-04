@@ -105,17 +105,17 @@ Each assessment file must contain the following YAML frontmatter:
 
 ```yaml
 ---
-id: "assessment-id"                  # (Optional) Unique identifier for the assessment. If omitted, a UUID will be auto-generated.
-passing_percentage: 70               # Minimum score required to pass the assessment (default is typically 70).
-type: "test"                         # (Required) Metadata type for the assessment. `test` is the only accepted value.
-is_optional: true                    # (Optional) Boolean. If true, the assessment can be skipped without affecting completion.
-final: false                         # (Optional) Boolean flag. Set to true if this assessment determines course or path completion.
-questions:                           # Array of question objects.
-  - id: "q1"                         # Unique ID per question (e.g., q1, q2)
-    text: "Your question text here"  # The question prompt
-    type: "mcq"                      # Either "mcq" or "short_answer"
-    marks: 2                         # Points awarded for correct answer
-    options:                         # Array of answer options (for mcq type)
+id: "assessment-id"                 
+passing_percentage: 70               
+type: "test"                        
+is_optional: true                 
+final: false                     
+questions:                     
+  - id: "q1"                       
+    text: "Your question text here" 
+    type: "mcq"                     
+    marks: 2                        
+    options:                       
       - id: "a"
         text: "Option A text"
       - id: "b" 
@@ -123,6 +123,22 @@ questions:                           # Array of question objects.
         is_correct: true
 ---
 ```
+
+### Assessment Frontmatter Fields
+
+| Applicable To | Field | Required | Description |
+| :--- | :--- | :--- | :--- |
+| **Assessment** | `id` | No | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
+| | `passing_percentage` | Yes | Minimum score required to pass the assessment (e.g., `70`). |
+| | `type` | Yes | Metadata type for the assessment. The value must be `test`. |
+| | `is_optional` | No | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
+| | `final` | No | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
+| | `questions` | Yes | An array containing one or more question objects. |
+| **Question Object** | `id` | Yes | Unique identifier for the question within the assessment (e.g., `q1`, `q2`). |
+| | `text` | Yes | The text of the question prompt. |
+| | `type` | Yes | The type of question. Accepted values are `mcq` or `short_answer`. |
+| | `marks` | Yes | The number of points awarded for a correct answer. |
+| | `options` | No | An array of answer options. *This field is only required when `type` is `mcq`.* |
 
 {{< alert type="warning" title="Quick heads up" >}}
 Remember: `type: "test"` are fixed values that cannot be modified. The system needs these exact words to work properly.
