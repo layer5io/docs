@@ -719,6 +719,11 @@ a:not([href]):not([class]):hover {
   color: #00d3a9;
 }
 
+.nav-tabs .nav-link:not(.active) {
+  border: 1px solid $lightslategray;
+  padding-bottom: 0.3rem;
+}
+
 .csvtable {
   width: 100%;
 }
