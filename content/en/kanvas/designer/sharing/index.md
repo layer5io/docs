@@ -26,7 +26,7 @@ Designs have visibility statuses that defines who can access your designs. These
 {{< alert title="When a design is Public" type="info" >}} 
  - Viewers and commenters can view, download, print, and copy the design.  
  - Editors can change permissions and share the design with others.  
- - This permission model applies to all public designs in Layer5.
+ - This permission model applies to all public designs.
 {{< /alert >}}
 
 {{< alert title="Why use public" type="info">}}
