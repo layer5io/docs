@@ -87,23 +87,28 @@ Use this workflow for end-to-end testing that mirrors the production environment
 
 All steps in this section should be performed from the root of your local `academy-build` repository.
 
-1. **Prepare Local Dependencies**: If you're testing local changes from other repositories (like a theme or content module), edit the `go.mod` file in `academy-build` to point to your local versions using a replace directive:
+1.  **Install Dependencies**: Run this command once to install necessary dependencies.
+    ```bash
+    make setup
+    ```
+
+2. **Prepare Local Dependencies**: If you're testing local changes from other repositories (like a theme or content module), edit the `go.mod` file in `academy-build` to point to your local versions using a replace directive:
    ```go
    replace github.com/layer5io/academy-theme => ../academy-theme
    replace github.com/layer5io/layer5-academy => ../layer5-academy
    ```
 
-2. **Build Locally**: Run the command to build the entire Academy site. This fetches all remote content modules and the theme:
-   ```bash
-   make academy-dev
-   ```
+3.  **Build for Staging**: Run the command to build the entire Academy site specifically for the staging environment.
+    ```bash
+    make stg-build
+    ```
 
-3. **Sync with Cloud**: After the build completes, run the following command to sync the generated static files with the Layer5 Cloud staging environment:
-   ```bash
-   make sync-with-cloud
-   ```
+4.  **Sync with Cloud**: After the build completes, run the following command to sync the generated static files with the Layer5 Cloud staging environment:
+    ```bash
+    make sync-with-cloud
+    ```
 
-4. **Preview on Staging**: Your changes will be available on the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
+5. **Preview on Staging**: Your changes will be available on the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
 
 {{< alert type="warning" title="Local vs. Cloud Discrepancies" >}}
 The local preview (`make site`) is excellent for rapid development, but it is **not** a 100% accurate representation of the final product. The Cloud UI acts as a wrapper around the Academy content, which can introduce subtle differences. These are often caused by CSS class conflicts or variations in JavaScript execution within the larger application.
@@ -116,7 +121,7 @@ The local preview (`make site`) is excellent for rapid development, but it is **
 If you need a faster way to check the final output without syncing to the cloud, you can run a production-like build locally from the `academy-build` repo:
 
 ```bash
-make academy-prod
+make prod-build
 ```
 
 This command generates the final static files in the `public/` directory. You can inspect the generated HTML and JSON files here to diagnose build-time issues before deploying.
