@@ -18,11 +18,15 @@ Think of it as a **botanical garden**:
 
 Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment
 
-**Why assessments matter:**
+## Why assessments matter:
 
-- **Reinforce** - Lock in key concepts  
-- **Self-check** - "Am I ready to move forward?"  
-- **Instant feedback** - Learn from mistakes immediately
+In Layer5 Academy, assessments are more than just tests; they are integral checkpoints in the learning journey. They provide a structured way to validate understanding and build confidence, serving as a bridge that ensures a learner has mastered key concepts before advancing.
+
+Well-designed assessments are crucial because they:
+
+- **Reinforce Knowledge:** Help lock in new information and improve long-term retention.
+- **Enable Self-Checks:** Allow learners to accurately gauge their own understanding and confirm they are ready to move on to more complex topics.
+- **Provide Instant Feedback:** Offer an immediate opportunity to learn from mistakes, understand why an answer was incorrect, and solidify the correct concepts.
 
 ## Key Rules
 
@@ -34,28 +38,23 @@ Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content), to avoid
 
 ```
 Layer5 Cloud Academy
-│
-├── Learning Path                          → 🎯 Exam
+├── Learning Path                               → 🎯 Exam
 │      ├── Course 1 (Rose Garden)               → 🎯 Test
-│      │    ├── Module A (Rose Bed 1)                → 🎯 Quiz
+│      │    ├── Module A (Rose Bed 1)           → 🎯 Quiz
 │      │    │   └── [quiz.md]
-│      │    ├── Module B (Rose Bed 2)                → 🎯 Quiz
+│      │    ├── Module B (Rose Bed 2)           → 🎯 Quiz
 │      │    │   └── [quiz.md]
 │      │    └── [test.md]
-│      │
 │      ├── Course 2  
 │      │    ├── Module A
 │      │    │   └── [quiz.md]
 │      │    ├── Module B
 │      │    │   └── [quiz.md]
 │      │    └── [test.md]
-│      │
 │      └── [exam.md]
-│
-├── Challenge                              → 🎯 Exam
+├── Challenge                                  → 🎯 Exam
 │      └── [exam.md]
-│
-└── Certification                          → 🎯 Exam
+└── Certification                              → 🎯 Exam
        └── [exam.md]
 ```
 {{< alert type="info" title="Naming Flexibility" >}}
@@ -68,13 +67,9 @@ For example, filenames like `test-for-course.md` and `test-for-module.md` are pe
 Each **mandatory section** must contain **at least one assessment**.
 
 Take **Learning Path** as an example:  
-
 - Learning Path Level: At leat one exam (exam.md)
-
 - Course Level: At leat one test (test.md)
-
 - Module Level: At leat one quiz (quiz.md)
-
 
 ### 3. Unified Assessment Structure
 All assessment files follow [the same format](#assessment-file-structure) regardless of which level they're placed in. Whether it's a module quiz or learning path exam, the structure stays consistent.
@@ -86,7 +81,6 @@ All assessment files follow [the same format](#assessment-file-structure) regard
 Take **Learning Path** as an example:
 - Pass all Module quizzes → Unlock Course test
 - Pass all Course tests → Unlock Learning Path exam
-
 
 {{< alert type="info" title="Passing the Assessment Marks that Level as Completed" >}}
 Pass `course-1/test.md` → Course 1 is marked as completed.  
@@ -101,27 +95,27 @@ You can make any assessment **optional** by adding this to its frontmatter:
   ```
 This means the Optional sections are **excluded** from prerequisite checks.
 
-> **What this means:**
-> - Optional assessments don't block progress.
-> - Learners can skip them and still advance.
-> - Example: If all modules in a course are optional, learners can go straight to the course test.
+**What this means:**
+ - Optional assessments don't block progress.
+ - Learners can skip them and still advance.
+ - Example: If all modules in a course are optional, learners can go straight to the course test.
 
 ## Assessment File Structure
 Each assessment file must contain the following YAML frontmatter:
 
 ```yaml
 ---
-id: "assessment-id"
-passing_percentage: 70
-type: "test"
-is_optional: true
-final: false
-questions:
-  - id: "q1"
-    text: "Your question text here"
-    type: "mcq"
-    marks: 2
-    options:
+id: "assessment-id"                  # id: (Optional) Unique identifier for the assessment. If omitted, a UUID will be auto-generated from the file path.
+passing_percentage: 70               # passing_percentage: Minimum score required to pass the assessment (default is typically 70).
+type: "test"                         # type: (Required) Metadata type for the assessment. `test` is the only accepted value.
+is_optional: true                    # is_optional: (Optional) Boolean. If true, the assessment can be skipped without affecting completion.
+final: false                         # final: (Optional) Boolean flag. Set to true if this assessment determines course or path completion.
+questions:                           # questions: Array of question objects.
+  - id: "q1"                         # id: Unique ID per question (e.g., q1, q2)
+    text: "Your question text here"  # text: The question prompt
+    type: "mcq"                      # type: Either "mcq" or "short_answer"
+    marks: 2                         # marks: Points awarded for correct answer
+    options:                         # options: Array of answer options (for mcq type)
       - id: "a"
         text: "Option A text"
       - id: "b" 
@@ -130,25 +124,9 @@ questions:
 ---
 ```
 
-***Frontmatter Fields***
-- id:  (Optional) Unique identifier for the assessment. If omitted, a UUID will be auto-generated from the file path.
-- passing_percentage: Minimum score required to pass the assessment (default is typically 70).
-- type: (Required) Metadata type for the assessment. `test` is the only accepted value.
-- final: (Optional) Boolean flag. Set to true if this assessment determines course or path completion.
-- is_optional: (Optional) Boolean. If true, the assessment can be skipped without affecting completion.
-- questions: Array of question objects.
-
-{{< alert type="info" title="Quick heads up" >}}
+{{< alert type="warning" title="Quick heads up" >}}
 Remember: `type: "test"` are fixed values that cannot be modified. The system needs these exact words to work properly.
 {{< /alert >}} 
-
-***Question Object Structure***
-- id: Unique ID per question (e.g., q1, q2)
-- text: The question prompt
-- type: Either "mcq" or "short_answer"
-- marks: Points awarded for correct answer
-- options: Array of answer options (for mcq type)
-
 
 ## Supported Assessment Types
 
@@ -260,25 +238,16 @@ This assessment allows you to review your educational progress. Give it a try!
 3. A **final exam cannot be optional**.
    * This applies even when only one exam is present — it cannot have `is_optional: true`.
 
-
 ### Final Exam Determination Logic
 A exam is considered final if:
 - It has `final: true` in its front matter.
 - It is the **only** exam under its parent section.
 - It is the **last exam** (ordered by `File.Path`) among sibling exams, and no other exam is explicitly marked as final. 
-
-> If any sibling exam is marked as `final: true`, no other exam will be considered final — even if it’s last.
-
+- If any sibling exam is marked as `final: true`, no other exam will be considered final — even if it’s last.
 
 {{< alert type="info" title="Why Not Use `weight` to Determine the Final Exam" >}}
-* Pages may **omit `weight`**, defaulting to `0`.
-* Multiple pages can have the **same weight**.
-* This makes it possible for **multiple exams** to qualify as final.
-* Using `weight` introduces **ambiguity**, which violates the rule of having **only one** final exam.
-* Using `File.Path` ensures a **stable**, **deterministic** fallback for selecting the final exam.
+To ensure the final exam is always clear and uniquely identified, we don't use the `weight` field, which can be ambiguous (e.g., missing or duplicated across files). Instead, we rely on the file path order as a more stable and reliable standard.
 {{< /alert >}}
-
-
 
 ## Scoring
 
