@@ -105,17 +105,17 @@ Each assessment file must contain the following YAML frontmatter:
 
 ```yaml
 ---
-id: "assessment-id"                  # id: (Optional) Unique identifier for the assessment. If omitted, a UUID will be auto-generated from the file path.
-passing_percentage: 70               # passing_percentage: Minimum score required to pass the assessment (default is typically 70).
-type: "test"                         # type: (Required) Metadata type for the assessment. `test` is the only accepted value.
-is_optional: true                    # is_optional: (Optional) Boolean. If true, the assessment can be skipped without affecting completion.
-final: false                         # final: (Optional) Boolean flag. Set to true if this assessment determines course or path completion.
-questions:                           # questions: Array of question objects.
-  - id: "q1"                         # id: Unique ID per question (e.g., q1, q2)
-    text: "Your question text here"  # text: The question prompt
-    type: "mcq"                      # type: Either "mcq" or "short_answer"
-    marks: 2                         # marks: Points awarded for correct answer
-    options:                         # options: Array of answer options (for mcq type)
+id: "assessment-id"                  # (Optional) Unique identifier for the assessment. If omitted, a UUID will be auto-generated.
+passing_percentage: 70               # Minimum score required to pass the assessment (default is typically 70).
+type: "test"                         # (Required) Metadata type for the assessment. `test` is the only accepted value.
+is_optional: true                    # (Optional) Boolean. If true, the assessment can be skipped without affecting completion.
+final: false                         # (Optional) Boolean flag. Set to true if this assessment determines course or path completion.
+questions:                           # Array of question objects.
+  - id: "q1"                         # Unique ID per question (e.g., q1, q2)
+    text: "Your question text here"  # The question prompt
+    type: "mcq"                      # Either "mcq" or "short_answer"
+    marks: 2                         # Points awarded for correct answer
+    options:                         # Array of answer options (for mcq type)
       - id: "a"
         text: "Option A text"
       - id: "b" 
