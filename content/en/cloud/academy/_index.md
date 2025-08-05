@@ -4,7 +4,7 @@ weight: 5
 description: >
   Building, managing, and extending Layer5 Academy learning paths.
 categories: [Academy]
-tags: [Designer]
+tags: [Academy]
 ---
 
 {{%pageinfo%}}
