@@ -335,7 +335,7 @@ The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the c
 
 To upgrade to the latest theme version, run: 
 ```bash
-make theme-upgrade
+make theme-update
 ```
 
 You will see output similar to this as Hugo fetches the new modules:
