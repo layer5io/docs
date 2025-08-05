@@ -105,15 +105,17 @@ Each assessment file must contain the following YAML frontmatter:
 
 ```yaml
 ---
+title: "Assessment Example"
 id: "assessment-id"                 
 passing_percentage: 70               
-type: "test"                        
+type: "test"
+layout: "test"
 is_optional: true                 
 final: false                     
 questions:                     
   - id: "q1"                       
     text: "Your question text here" 
-    type: "mcq"                     
+    type: "single-answer"                     
     marks: 2                        
     options:                       
       - id: "a"
@@ -128,17 +130,19 @@ questions:
 
 | Applicable To | Field | Required | Description |
 | :--- | :--- | :--- | :--- |
-| **Assessment** | `id` | No | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
+| **Assessment** | `title` | No | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
+| | `id` | No | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
 | | `passing_percentage` | Yes | Minimum score required to pass the assessment (e.g., `70`). |
 | | `type` | Yes | Metadata type for the assessment. The value must be `test`. |
+| | `layout` | No | Metadata type for the assessment. The value must be `test`. |
 | | `is_optional` | No | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
 | | `final` | No | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
 | | `questions` | Yes | An array containing one or more question objects. |
 | **Question Object** | `id` | Yes | Unique identifier for the question within the assessment (e.g., `q1`, `q2`). |
 | | `text` | Yes | The text of the question prompt. |
-| | `type` | Yes | The type of question. Accepted values are `mcq` or `short_answer`. |
+| | `type` | Yes | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short_answer`. |
 | | `marks` | Yes | The number of points awarded for a correct answer. |
-| | `options` | No | An array of answer options. *This field is only required when `type` is `mcq`.* |
+| | `options` | No | An array of answer options. |
 
 {{< alert type="warning" title="Quick heads up" >}}
 Remember: `type: "test"` are fixed values that cannot be modified. The system needs these exact words to work properly.
@@ -146,24 +150,20 @@ Remember: `type: "test"` are fixed values that cannot be modified. The system ne
 
 ## Supported Assessment Types
 
-Layer5 Academy supports these question formats:
+Layer5 Academy supports three question formats:
 
-***Multiple Choice Questions***
-
+***Single Choice Questions***
 - Single correct answer
-- Multiple correct answers  
 - True/False questions
 
 <details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: mcq</code> </summary>
+  <summary>Examples: <code>type: single-answer</code> </summary>
   
     ---
     questions:
-
-        # Single Choice:
       - id: "question1"
         text: "Test single choice question"
-        type: "mcq"             # choose the type
+        type: "single-answer"             # choose the type
         marks: 1
         options:
           - id: "a"
@@ -172,11 +172,33 @@ Layer5 Academy supports these question formats:
           - id: "b"
             text: "Option B"
 
-        # Multiple Choice:
+        # True/False:
       - id: "question2"
+        text: "This is a true/false question"
+        type: "single-answer"            # choose the type
+        marks: 1
+        options:
+          - id: "true"
+            text: "True"
+            is_correct: true    # correct option
+          - id: "false"
+            text: "False"
+    ---
+  </code></pre>
+</details>
+
+***Multiple Choice Questions***
+
+- Multiple correct answers  
+
+<details style="margin-bottom: 1em;">
+  <summary>Examples: <code>type: multiple-answers</code> </summary>
+  
+    ---
+    questions:
+      - id: "question3"
         text: "Test multiple choice question"
-        type: "mcq"             # choose the type
-        multiple_answers: true  # enable multiple selection
+        type: "multiple-answers"             # choose the type
         marks: 2
         options:
           - id: "a"
@@ -187,18 +209,7 @@ Layer5 Academy supports these question formats:
           - id: "c"
             text: "Option C"
             is_correct: true    # correct option
-
-        # True/False:
-      - id: "question3"
-        text: "This is a true/false question"
-        type: "mcq"
-        marks: 1
-        options:
-          - id: "true"
-            text: "True"
-            is_correct: true    # correct option
-          - id: "false"
-            text: "False"
+    ---
   </code></pre>
 </details>
 
@@ -215,7 +226,7 @@ Layer5 Academy supports these question formats:
     ---
     questions:
       - id: "question4"
-        text: "What is the default namespace in Kubernetes?"
+        text: "In Kubernetes, ___ is the default namespace."
         type: "short_answer"                # choose the type
         marks: 2
         correct_answer: "default"           # expected answer
@@ -280,7 +291,7 @@ The scoring process is handled automatically by the backend system. As a content
 
 ### Scoring Rules for Question Types
 
-- **Multiple-Choice Questions (MCQ)**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
+- **Multiple-Choice Questions**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
 - **Short Answer Questions**: The learner's input is compared against the `correct_answer` field. The comparison is **case-insensitive**, and leading/trailing whitespace is ignored to avoid penalizing minor typing variations.
 
 ### The Result of Scoring
