@@ -154,78 +154,81 @@ Layer5 Academy supports these question formats:
 - Multiple correct answers  
 - True/False questions
 
-  {{< toggle title="Examples: [type: mcq]" >}}
-  ```yaml
-  ---
-  questions:
+<details style="margin-bottom: 1em;">
+  <summary>Examples: <code>type: mcq</code> </summary>
+  
+    ---
+    questions:
 
-      # Single Choice:
-    - id: "question1"
-      text: "Test single choice question"
-      type: "mcq"             # choose the type
-      marks: 1
-      options:
-        - id: "a"
-          text: "Option A"
-          is_correct: true    # correct option
-        - id: "b"
-          text: "Option B"
+        # Single Choice:
+      - id: "question1"
+        text: "Test single choice question"
+        type: "mcq"             # choose the type
+        marks: 1
+        options:
+          - id: "a"
+            text: "Option A"
+            is_correct: true    # correct option
+          - id: "b"
+            text: "Option B"
 
-      # Multiple Choice:
-    - id: "question2"
-      text: "Test multiple choice question"
-      type: "mcq".            # choose the type
-      multiple_answers: true  # enable multiple selection
-      marks: 2
-      options:
-        - id: "a"
-          text: "Option A"
-          is_correct: true    # correct option
-        - id: "b"
-          text: "Option B"
-        - id: "c"
-          text: "Option C"
-          is_correct: true    # correct option
+        # Multiple Choice:
+      - id: "question2"
+        text: "Test multiple choice question"
+        type: "mcq"             # choose the type
+        multiple_answers: true  # enable multiple selection
+        marks: 2
+        options:
+          - id: "a"
+            text: "Option A"
+            is_correct: true    # correct option
+          - id: "b"
+            text: "Option B"
+          - id: "c"
+            text: "Option C"
+            is_correct: true    # correct option
 
-      # True/False:
-    - id: "question3"
-      text: "This is a true/false question"
-      type: "mcq"
-      marks: 1
-      options:
-        - id: "true"
-          text: "True"
-          is_correct: true    # correct option
-        - id: "false"
-          text: "False"
-  ---
-  ```
-  {{< /toggle >}} 
-<br>
+        # True/False:
+      - id: "question3"
+        text: "This is a true/false question"
+        type: "mcq"
+        marks: 1
+        options:
+          - id: "true"
+            text: "True"
+            is_correct: true    # correct option
+          - id: "false"
+            text: "False"
+  </code></pre>
+</details>
+
+
 
 ***Short Answer Questions***
 
 - Fill-in-the-blank responses  
 - Direct text input
 
-  {{< toggle title="Examples: [type: short_answer]" >}}
-  ```yaml
-  ---
-  questions:
-    - id: "question4"
-      text: "What is the default namespace in Kubernetes?"
-      type: "short_answer"                # choose the type
-      marks: 2
-      correct_answer: "default"           # expected answer
+<details style="margin-bottom: 1em;">
+  <summary>Examples: <code>type: short_answer</code> </summary>
 
-    - id: "question5"
-      text: "Which kubectl command lists all pods?"
-      type: "short_answer"                # choose the type
-      marks: 2
-      correct_answer: "kubectl get pods"  # expected answer
-  ---
-  ```
-  {{< /toggle >}}
+    ---
+    questions:
+      - id: "question4"
+        text: "What is the default namespace in Kubernetes?"
+        type: "short_answer"                # choose the type
+        marks: 2
+        correct_answer: "default"           # expected answer
+
+      - id: "question5"
+        text: "Which kubectl command lists all pods?"
+        type: "short_answer"                # choose the type
+        marks: 2
+        correct_answer: "kubectl get pods"  # expected answer
+    ---
+  </code></pre>
+</details>
+  
 
 ## Post-Frontmatter
 
