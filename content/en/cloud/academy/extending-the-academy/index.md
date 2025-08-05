@@ -39,11 +39,12 @@ You don't need to be a web developer to create beautiful and effective learning 
 
 Your content is structured hierarchically to create a clear and logical learning experience for your users.
 
-At the highest level, you have a **Learning Path**, which serves as a container for a specific specialization or topic. Each Learning Path is made up of one or more **Courses**, and each Course is further broken down into individual **Chapters**. This modular structure makes your content easy to navigate, manage, and update.
+At the highest level, you have a **Learning Path**, which contains one or more **Courses**. Each Course is broken down into **Modules**, and each Module consists of individual learning activities like **Pages** (for text) and **Labs** (for hands-on practice). In addition, **Tests** can be integrated at various levels of this hierarchy. This modular structure makes your content easy to navigate, manage, and update.
 
-For example, a Learning Path titled "Mastering Kubernetes" might contain:
-- A Course named "Core Concepts", which includes Chapters on "Pods", "Services", and "Deployments".
-- Another Course named "Advanced Networking", with Chapters on "Ingress" and "Service Mesh".
+For example, a **Learning Path** named **"Mastering Kubernetes"** might contain:
+  * A **Course** on **"Core Concepts"**, which is broken down into multiple modules:
+      * **Module 1: "Workload Fundamentals"**, containing a **Page** on the "Anatomy of a Pod" and a hands-on **Lab** for "Scaling Deployments".
+      * **Module 2: "Networking Principles"**, containing a **Page** that covers "Services and Ingress" and a **Tests** on networking concepts.
 
 {{< alert type="warning" title="Content Isolation" >}}
 To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial](/cloud/academy/creating-your-learning-path/).
