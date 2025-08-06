@@ -5,6 +5,8 @@ description: >
   A hands-on tutorial that walks you through creating, structuring, and testing a custom learning path for the Layer5 Academy.
 categories: [Academy]
 tags: [Designer]
+aliases: 
+- /cloud/academy/creating-your-learning-path/
 ---
 
 This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
