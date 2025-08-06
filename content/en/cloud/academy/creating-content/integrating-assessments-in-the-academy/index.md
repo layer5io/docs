@@ -4,7 +4,9 @@ weight: 4
 description: >
   Learn how to spice up the Academy with interactive assessments that keep learners engaged.
 categories: [Academy]
-tags: [Designer]
+tags: [Academy]
+aliases: 
+- /cloud/academy/integrating-assessments-in-the-academy/
 ---
 
 [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content) implements **Learning Paths**, **Challenges**, and **Certifications** to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.
