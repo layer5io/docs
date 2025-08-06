@@ -84,7 +84,6 @@ categories: "platform"
 | `weight` | ❌ | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
 | `banner` | ❌ | Path to an image in the `static` folder, e.g., `images/icon.svg`. |
 | `tags` | ❌ | Keywords for content discovery. Multiple tags can be selected. |
-| `level` | ❌ | A string indicating the intended difficulty (e.g., `beginner`, `intermediate`, `advanced`). |
 | `level` | ❌ | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
 | `categories` | ❌ | A string that assigns the certification to a specific category. |
 
