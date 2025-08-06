@@ -42,7 +42,7 @@ Below is the standard file structure:
 
 ```
 content/certifications/
-└── layer5-certification-exam/     <-- The <certification-name> directory
+└── orgID/layer5-certification-exam/     <-- The <certification-name> directory
     ├── _index.md                  <-- Defines the certification's metadata
     ├── exam-1.md                  <-- (Optional) A standard content page for introduction
     ├── optional-exam-2.md         <-- An optional supplementary exam
@@ -85,6 +85,7 @@ categories: "platform"
 | `banner` | ❌ | Path to an image in the `static` folder, e.g., `images/icon.svg`. |
 | `tags` | ❌ | Keywords for content discovery. Multiple tags can be selected. |
 | `level` | ❌ | A string indicating the intended difficulty (e.g., `beginner`, `intermediate`, `advanced`). |
+| `level` | ❌ | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
 | `categories` | ❌ | A string that assigns the certification to a specific category. |
 
 ### 3. Add Content and Exams
