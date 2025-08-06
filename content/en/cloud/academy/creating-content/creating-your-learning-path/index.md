@@ -4,10 +4,12 @@ weight: 3
 description: >
   A hands-on tutorial that walks you through creating, structuring, and testing a custom learning path for the Layer5 Academy.
 categories: [Academy]
-tags: [Designer]
+tags: [Academy]
+aliases: 
+- /cloud/academy/creating-your-learning-path/
 ---
 
-This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy/content). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
+This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
 
 ### Prerequisites
 
@@ -253,7 +255,7 @@ You can configure your organization's branding in the [Layer5 Cloud Organization
 
 ## 5. Publishing Your Learning Path
 
-Once you have tested your content locally, you can publish it to the [Layer5 Academy](https://cloud.layer5.io/academy/content) through our automated workflow. 
+Once you have tested your content locally, you can publish it to the [Layer5 Academy](https://cloud.layer5.io/academy) through our automated workflow. 
 
 To help you visualize how your content goes from a local file to a live learning path, the diagram below illustrates the entire end-to-end publishing workflow. It shows which components you will interact with directly and how the CI/CD pipeline handles the rest automatically.
 
@@ -317,7 +319,7 @@ With the setup complete, you can publish your content anytime by creating a new 
 5.  Provide a title and description for your release.
 6.  Click **"Publish release"**.
 
-This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/academy/content).
+This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/academy).
 
 - Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
 - Your content will go fully live to the production Academy platform during the next scheduled cloud release.
@@ -335,7 +337,7 @@ The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the c
 
 To upgrade to the latest theme version, run: 
 ```bash
-make theme-upgrade
+make theme-update
 ```
 
 You will see output similar to this as Hugo fetches the new modules:
