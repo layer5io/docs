@@ -130,21 +130,23 @@ questions:
 
 ### Assessment Frontmatter Fields
 
+> In this table, fields marked with ✅ are required, while those marked with – are optional.
+
 | Applicable To | Field | Required | Description |
 | :--- | :--- | :--- | :--- |
-| **Assessment** | `title` | No | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
-| | `id` | No | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
-| | `passing_percentage` | Yes | Minimum score required to pass the assessment (e.g., `70`). |
-| | `type` | Yes | Metadata type for the assessment. The value must be `test`. |
-| | `layout` | No | Metadata type for the assessment. The value must be `test`. |
-| | `is_optional` | No | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
-| | `final` | No | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
-| | `questions` | Yes | An array containing one or more question objects. |
-| **Question Object** | `id` | Yes | Unique identifier for the question within the assessment (e.g., `q1`, `q2`). |
-| | `text` | Yes | The text of the question prompt. |
-| | `type` | Yes | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short_answer`. |
-| | `marks` | Yes | The number of points awarded for a correct answer. |
-| | `options` | No | An array of answer options. |
+| **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
+| | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
+| | `passing_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
+| | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
+| | `layout` | - | Metadata type for the assessment. The value must be `test`. |
+| | `is_optional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
+| | `final` | - | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
+| | `questions` | ✅  | An array containing one or more question objects. |
+| **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`). |
+| | `text` | ✅  | The text of the question prompt. |
+| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short_answer`. |
+| | `marks` | ✅  | The number of points awarded for a correct answer. |
+| | `options` | - | An array of answer options. |
 
 {{< alert type="warning" title="Quick heads up" >}}
 Remember: `type: "test"` are fixed values that cannot be modified. The system needs these exact words to work properly.

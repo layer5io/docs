@@ -36,17 +36,17 @@ Building a new certification involves setting up the correct directory structure
 
 All content for a new certification must reside within the `content/certifications/orgID` directory. To keep content organized, each certification has its own folder named with a descriptive, URL-friendly slug.
 
-The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/<certification-folder-name>/`
+The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/orgID/<certification-folder-name>/`
 
 Below is the standard file structure:
 
 ```
 content/certifications/
-└── orgID/layer5-certification-exam/     <-- The <certification-name> directory
-    ├── _index.md                  <-- Defines the certification's metadata
-    ├── exam-1.md                  <-- (Optional) A standard content page for introduction
-    ├── optional-exam-2.md         <-- An optional supplementary exam
-    └── exam-3.md                  <-- A mandatory exam, accessible after completing all previous required units.
+└── orgID/layer5-certification-exam/   <-- The <certification-name> directory
+    ├── _index.md                      <-- Defines the certification's metadata
+    ├── exam-1.md                      <-- (Optional) A standard content page for introduction
+    ├── optional-exam-2.md             <-- An optional supplementary exam
+    └── exam-3.md                      <-- A mandatory exam, accessible after completing all previous required units.
 ```
 
 **Key Files:**
@@ -75,17 +75,19 @@ categories: "platform"
 
 #### Frontmatter Fields Reference
 
+> In this table, fields marked with ✅  are required, while those marked with – are optional.
+
 | Field | Required | Description |
 | :--- | :--- | :--- |
-| `type` | ✅ | Must be set to `"certification"` to identify this content correctly. |
-| `id` | ✅ | A globally unique identifier (UUID) for the certification. |
-| `title` | ✅ | The human-readable title that will be displayed to users. |
-| `description` | ✅ | A comprehensive summary of the certification's scope and objectives. |
-| `weight` | ❌ | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
-| `banner` | ❌ | Path to an image in the `static` folder, e.g., `images/icon.svg`. |
-| `tags` | ❌ | Keywords for content discovery. Multiple tags can be selected. |
-| `level` | ❌ | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
-| `categories` | ❌ | A string that assigns the certification to a specific category. |
+| `type` | ✅  | Must be set to `"certification"` to identify this content correctly. |
+| `id` | ✅  | A globally unique identifier (UUID) for the certification. |
+| `title` | ✅  | The human-readable title that will be displayed to users. |
+| `description` | ✅  | A comprehensive summary of the certification's scope and objectives. |
+| `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
+| `banner` | - | Path to an image in the `static` folder, e.g., `images/icon.svg`. |
+| `tags` | - | Keywords for content discovery. Multiple tags can be selected. |
+| `level` | - | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+| `categories` | - | A string that assigns the certification to a specific category. |
 
 ### 3. Add Content and Exams
 
@@ -107,6 +109,8 @@ Successfully completing a certification provides learners with valuable, verifia
 ### Badges
 
 Upon successful completion of all mandatory exams, learners are awarded a digital badge. This badge serves as a verifiable credential that is perfect for sharing on professional profiles to showcase the achievement.
+
+See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
 
 ![example badge image](./images/badge.png)
 

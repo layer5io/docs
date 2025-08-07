@@ -146,20 +146,21 @@ You can find and copy your Organization UUID from your organization page on [Aca
     ---
     ```
 
+    > In this table, fields marked with ✅ are required, while those marked with – are optional.
     **Summary of Required Fields**
 
     | Applicable To                 | Field         | Required | Notes                                                                                                         |
     | ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
-    | All                           | `title`       |    ✅    | The main display title.                                                                                       |
-    | All                           | `description` |    ✅    | A brief summary of the content.                                                                               |
-    | All                           | `weight`      |    ✅    | Controls the display order (lower numbers appear first).                                                      |
-    | All                           | `draft`       |    ❌    | If `true`, the page will not be published.                                                                    |
-    | All                           | `type`        |    ✅    | Defines the content's role. Optional values: `challenge`, `learning-path`, `course`, `module`, `page`, `test`, or `lab`. |
-    | **Course** | `level`       |    ❌    | The difficulty level of the content. Optional values: `beginner`, `intermediate`, `advanced`.                 |
-    | **Learning Path** | `id`          |    ✅    | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
-    | **Learning Path**, **Course**, **module** | `tags`        |    ❌    | Keywords for content discovery. Multiple tags can be selected.                                                |
-    | **Learning Path**, **Course**, **module** | `categories`  |    ❌    | The main categories for the content. Only one can be selected.                                                |
-    | **Learning Path**, **Course** | `banner`      |    ❌    | Path to an image in the `static` folder, e.g., `images/icon.svg`.                                             |
+    | All                           | `title`       |    ✅     | The main display title.                                                                                       |
+    | All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
+    | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
+    | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
+    | All                           | `type`        |    ✅     | Defines the content's role. Optional values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
+    | **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+    | **Learning Path** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
+    | **Learning Path**, **Course**, **module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
+    | **Learning Path**, **Course**, **module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
+    | **Learning Path**, **Course** | `banner`      |    -    | Path to an image in the `static` folder, e.g., `images/icon.svg`.                                             |
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
