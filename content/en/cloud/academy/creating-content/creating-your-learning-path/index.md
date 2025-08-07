@@ -147,6 +147,7 @@ You can find and copy your Organization UUID from your organization page on [Aca
     ```
 
     > In this table, fields marked with ✅ are required, while those marked with – are optional.
+    
     **Summary of Required Fields**
 
     | Applicable To                 | Field         | Required | Notes                                                                                                         |
