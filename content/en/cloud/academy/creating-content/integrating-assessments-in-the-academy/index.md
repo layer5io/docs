@@ -305,42 +305,33 @@ After an assessment is submitted and scored, a detailed result record is permane
 
 ## Frequently Asked Questions
 
-<details style="margin-bottom: 1em;">
+<details>
   <summary>1. Is the <code>id</code> field required in the file's front matter?</summary>
 
-  <div style="padding-left: 1.5em;">
-    <p><strong>Answer:</strong> No, the <code>id</code> field is <strong>optional</strong>. If omitted, the system auto-generates a unique ID based on the file path (e.g., <code>7a4af2222daae1111acfac539f657724</code>). However, we strongly recommend specifying a human-readable, globally unique ID (e.g., <code>test-intro-meshery</code>, <code>quiz-containers</code>, <code>test-intro-kubernetes</code>) for better traceability and debugging.</p>
-  </div>
+No, the <code>id</code> field is <strong>optional</strong>. If omitted, the system auto-generates a unique ID based on the file path (e.g., <code>7a4af2222daae1111acfac539f657724</code>). However, we strongly recommend specifying a human-readable, globally unique ID (e.g., <code>test-intro-meshery</code>, <code>quiz-containers</code>, <code>test-intro-kubernetes</code>) for better traceability and debugging.
 </details>
 
-<details style="margin-bottom: 1em;">
+<details>
   <summary>2. Why is an assessment required for every Course and Learning Path?</summary>
 
-  <div style="padding-left: 1.5em;">
-    <p><strong>Answer:</strong> The system determines the completion of a Course or Learning Path based on whether the learner passes its designated assessment (e.g., <code>test.md</code>, <code>exam.md</code>). Without this, the system has no trigger to mark the level as completed or to award achievements such as badges. Module-level quizzes are intended for practice and do not trigger parent-level completion.</p>
-  </div>
+The system determines the completion of a Course or Learning Path based on whether the learner passes its designated assessment (e.g., <code>test.md</code>, <code>exam.md</code>). Without this, the system has no trigger to mark the level as completed or to award achievements such as badges. Module-level quizzes are intended for practice and do not trigger parent-level completion.
+
 </details>
 
-<details style="margin-bottom: 1em;">
+<details>
   <summary>3. Can I fully test the assessment (including scoring) locally?</summary>
 
-  <div style="padding-left: 1.5em;">
-    <p><strong>Answer:</strong> You can preview the test layout locally, but scoring and evaluation are handled by the backend server. This means submission, grading, and result processing are not available in local previews. You must publish the content to test full functionality.</p>
-  </div>
+You can preview the test layout locally, but scoring and evaluation are handled by the backend server. This means submission, grading, and result processing are not available in local previews. You must publish the content to test full functionality.
 </details>
 
-<details style="margin-bottom: 1em;">
+<details>
   <summary>4. How are multiple-answer questions scored? Is partial credit given?</summary>
 
-  <div style="padding-left: 1.5em;">
-    <p><strong>Answer:</strong> No partial credit is awarded. To receive points, the learner must select all correct options and avoid all incorrect ones. Selecting a wrong option or missing a correct one results in zero marks for that question.</p>
-  </div>
+No partial credit is awarded. To receive points, the learner must select all correct options and avoid all incorrect ones. Selecting a wrong option or missing a correct one results in zero marks for that question.
 </details>
 
-<details style="margin-bottom: 1em;">
+<details>
   <summary>5. Can a learner retake an assessment even after scoring 100%?</summary>
 
-  <div style="padding-left: 1.5em;">
-    <p><strong>Answer:</strong> Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows—without enforcing score-based access rules.</p>
-  </div>
+Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows—without enforcing score-based access rules.
 </details>
