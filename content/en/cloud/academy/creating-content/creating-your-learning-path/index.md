@@ -122,10 +122,11 @@ You can find and copy your Organization UUID from your organization page on [Aca
     title: "Cloud Fundamentals"
     description: "A learning path focused on providing the technical knowledge required for advanced topics."
     weight: 5
-    banner: "images/kubernetes-icon.svg"
+    banner: "kubernetes-icon.svg"
     id: "754627a3-2323-4545-a7f0-c66c0212a1a1" 
     tags: [kubernetes, infrastructure]
     categories: "cloud"
+    level: "beginner"
     ---
     ```
 
@@ -139,7 +140,7 @@ You can find and copy your Organization UUID from your organization page on [Aca
     title: "Intro Sustainability"
     description: "An introductory course exploring the core concepts of sustainability."
     weight: 2
-    banner: "images/kubernetes-icon.svg"      
+    banner: "kubernetes-icon.svg"      
     tags: [network, infrastructure]
     level: "beginner"
     categories: "compliance"
@@ -157,11 +158,11 @@ You can find and copy your Organization UUID from your organization page on [Aca
     | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
     | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
     | All                           | `type`        |    ✅     | Defines the content's role. Optional values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
-    | **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+    | **Learning Path**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
     | **Learning Path** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
     | **Learning Path**, **Course**, **module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
     | **Learning Path**, **Course**, **module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
-    | **Learning Path**, **Course** | `banner`      |    -    | Path to an image in the `static` folder, e.g., `images/icon.svg`.                                             |
+    | **Learning Path**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -243,6 +244,9 @@ For optimal performance, we recommend hosting large videos on dedicated platform
 Before publishing, it is crucial to preview your content locally to check for formatting errors, broken links, and overall structure.
 
 ```bash
+# Set Up the Environment (One-time Task)
+make setup
+# Run the Local Preview Server
 make site
 ```
 
