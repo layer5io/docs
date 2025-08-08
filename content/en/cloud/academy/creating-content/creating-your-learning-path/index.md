@@ -146,10 +146,10 @@ You can find and copy your Organization UUID from your organization page on [Aca
     categories: "compliance"
     ---
     ```
-
-    > In this table, fields marked with ✅ are required, while those marked with – are optional.
     
     **Summary of Required Fields**
+
+    > In this table, fields marked with ✅ are required, while those marked with – are optional.
 
     | Applicable To                 | Field         | Required | Notes                                                                                                         |
     | ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
