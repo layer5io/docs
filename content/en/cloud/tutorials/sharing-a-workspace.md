@@ -41,10 +41,11 @@ To share and collaborate on a design with a very wide audience:
 
 #### Publish the design
 
-- If you need multiple people to open a design, publish the design then create a link to share to people with access. You can give edit access to people who need to edit or comment on the design. [Learn how to publish a design](#). 
+- If you need multiple people to open a design, use the Share option. Under “General Access”, you can set the design to **Public** so anyone with the link can view or edit, or set it to **Private** so only specified people can access it. [Learn how to publish a design](/kanvas/designer/publishing-designs/).
+
 
 {{< alert title="When a design is Public" type="info" >}}
-- When a design is published (made public), viewers and commenters will have access to view, download, print, and copy the design.  
+- When a design is published (made public), viewers and commenters will have access to view, download, and copy the design.  
 - Editors will have the ability to change permissions and share the design with others.  
 - These permissions apply consistently to all public designs.
 {{< /alert >}}
