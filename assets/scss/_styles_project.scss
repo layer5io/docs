@@ -380,6 +380,8 @@ a:not([href]):not([class]):hover {
   font-weight: $font-weight-medium;
   background: $black;
   font-family: "Open Sans";
+  border-style: solid;
+  border-color: #00b39f;
 }
 
 // front-matter
