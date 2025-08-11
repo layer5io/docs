@@ -5,6 +5,8 @@ description: >
   Learn how to create, manage, and publish learning paths, challenges, and certifications on the Layer5 Academy platform.
 categories: [Academy]
 tags: [Academy]
+aliases: 
+- /cloud/academy/extending-the-academy/
 ---
 
 **Welcome, content creators and instructors!**
