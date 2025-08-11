@@ -141,7 +141,7 @@ You can navigate to any course at any time using the sidebar. However, for a Lea
 </details>
 
 <details>
-<summary>If I fail a quiz or exam, can I retake it?</summary>
+<summary>If I fail an assessment, can I retake it?</summary>
   
 Yes, you can retake assessments. We believe in learning from mistakes, so you will have opportunities to try again. The platform does not limit the number of retake attempts.
 </details>
