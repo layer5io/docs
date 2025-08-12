@@ -20,8 +20,6 @@ Using the search bar, you can search for specific resources and select them. The
 
 <!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
-![operator-filters](images/operator-filters.png)
-
 ## Connecting with Kubernetes Pods
 
 Operator supports connecting to Kubernetes pods via the following methods.
