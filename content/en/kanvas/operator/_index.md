@@ -20,13 +20,17 @@ Using the search bar, you can search for specific resources and select them. The
 
 <!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
+![operator-filters](images/operator-filters.png)
+
 ## Connecting with Kubernetes Pods
 
 Operator supports connecting to Kubernetes pods via the following methods.
 
 ### Understanding Log Streamer
 
-{{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%" alt="log-stream-sequence-diagram" >}}
+<!-- {{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%" alt="log-stream-sequence-diagram" >}} -->
+
+![log-stream-sequence-diagram](images/log-stream-sequence-diagram.svg)
 
 ### Understanding Interactive Terminal
 
@@ -36,4 +40,6 @@ While using using the interactive terminal, understand that you can only open on
 Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas.
 The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
 
-{{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}}
+<!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
+
+![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
