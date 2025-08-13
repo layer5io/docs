@@ -295,3 +295,36 @@ This action will automatically trigger the workflow, and your content will be de
 5. **How do I structure multiple courses under one learning path?**
 
     The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
+
+6. **How do I debug using Layer5 Cloud Events?**
+
+   If your content is not appearing in the Academy after a GitHub release, it may have failed to publish. You can troubleshoot these issues using the **Events** section in [Layer5 Cloud](https://cloud.layer5.io).
+
+   To view publishing logs:
+
+   1. Navigate to **Settings > Events**
+   2. Switch to the **Audit** tab
+   3. Apply a filter using the action type:
+   `AcademyUpserted`
+   This will show all attempts to upload content, including which ones failed and why.
+
+   **Common Errors You Might See**
+   - **Duplicate IDs**  
+   Two lessons or paths using the same identifier. You can fix this by renaming or regenerating unique IDs.
+
+   - **Invalid Content Type**  
+   For example,
+   Instead of
+   ```yaml
+   type: "learning-paths"  
+   ``` 
+   it should be:
+   ```yaml
+   type: "learning-path"   
+   ```
+   - **Missing Required Fields**
+   Ensure that title, description, and type are included in the content’s frontmatter.
+
+   {{< alert type="info" title="Tip" >}}
+   Use the event filter `AcademyRegisteredToContent` to track user activity, like who enrolled in which learning path.
+   {{< /alert >}}
