@@ -87,20 +87,23 @@ You can find and copy your Organization UUID from your organization page on [Aca
 
     ```text
     learning-paths/
-    └── mastering-kubernetes/                    // <-- Learning Path
+    └── mastering-kubernetes/                        // <-- Learning Path/
         ├── _index.md                            
-        ├── advanced-networking/                 // <-- Course 1
+        ├── advanced-networking/                     // <-- Course 1/
         │   └── _index.md                        
-        └── core-concepts/                       // <-- Course 2
+        └── core-concepts/                           // <-- Course 2/
             ├── _index.md   
-            ├── course-exam.md                   // <-- Course Exam (Test)                     
-            └── 01-pods-and-services/            // <-- Module
+            ├── course-exam.md                       // <-- Course Exam (Test)                     
+            └── 01-pods-and-services/                // <-- Module/
                 ├── _index.md                    
-                ├── 01-pods.md                   // <-- Page 1
-                ├── 02-services.md               // <-- Page 2
-                ├── 03-knowledge-check.md        // <-- Test
-                ├── 04-hands-on-lab.md           // <-- Lab
-                └── arch.png                     // <-- Image
+                ├── 01-pods/
+                │   └── _index.md                    // <-- Page 1
+                ├── 02-services/
+                │   ├── _index.md                    // <-- Page 2
+                │   ├── 02-image.png                 // <-- Image               
+                ├── 03-knowledge-check.md            // <-- Test
+                ├── 04-hands-on-lab.md               // <-- Lab
+                └── arch.png                         // <-- Image
 
     ```
 
