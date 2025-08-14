@@ -4,7 +4,9 @@ weight: 3
 description: >
   A hands-on tutorial that walks you through creating, structuring, and testing a custom learning path for the Layer5 Academy.
 categories: [Academy]
-tags: [Designer]
+tags: [Academy]
+aliases: 
+- /cloud/academy/creating-your-learning-path/
 ---
 
 This guide provides a step-by-step walkthrough for creating and organizing a new learning path in the [Layer5 Academy](https://cloud.layer5.io/academy). You'll learn how to set up your content repository, structure your courses, add assets, preview your work, and publish it for your organization.
@@ -120,10 +122,11 @@ You can find and copy your Organization UUID from your organization page on [Aca
     title: "Cloud Fundamentals"
     description: "A learning path focused on providing the technical knowledge required for advanced topics."
     weight: 5
-    banner: "images/kubernetes-icon.svg"
+    banner: "kubernetes-icon.svg"
     id: "754627a3-2323-4545-a7f0-c66c0212a1a1" 
     tags: [kubernetes, infrastructure]
     categories: "cloud"
+    level: "beginner"
     ---
     ```
 
@@ -137,27 +140,29 @@ You can find and copy your Organization UUID from your organization page on [Aca
     title: "Intro Sustainability"
     description: "An introductory course exploring the core concepts of sustainability."
     weight: 2
-    banner: "images/kubernetes-icon.svg"      
+    banner: "kubernetes-icon.svg"      
     tags: [network, infrastructure]
     level: "beginner"
     categories: "compliance"
     ---
     ```
-
+    
     **Summary of Required Fields**
+
+    > In this table, fields marked with ✅ are required, while those marked with – are optional.
 
     | Applicable To                 | Field         | Required | Notes                                                                                                         |
     | ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
-    | All                           | `title`       |    ✅    | The main display title.                                                                                       |
-    | All                           | `description` |    ✅    | A brief summary of the content.                                                                               |
-    | All                           | `weight`      |    ✅    | Controls the display order (lower numbers appear first).                                                      |
-    | All                           | `draft`       |    ❌    | If `true`, the page will not be published.                                                                    |
-    | All                           | `type`        |    ✅    | Defines the content's role. Optional values: `challenge`, `learning-path`, `course`, `module`, `page`, `test`, or `lab`. |
-    | **Course** | `level`       |    ❌    | The difficulty level of the content. Optional values: `beginner`, `intermediate`, `advanced`.                 |
-    | **Learning Path** | `id`          |    ✅    | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
-    | **Learning Path**, **Course**, **module** | `tags`        |    ❌    | Keywords for content discovery. Multiple tags can be selected.                                                |
-    | **Learning Path**, **Course**, **module** | `categories`  |    ❌    | The main categories for the content. Only one can be selected.                                                |
-    | **Learning Path**, **Course** | `banner`      |    ❌    | Path to an image in the `static` folder, e.g., `images/icon.svg`.                                             |
+    | All                           | `title`       |    ✅     | The main display title.                                                                                       |
+    | All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
+    | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
+    | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
+    | All                           | `type`        |    ✅     | Defines the content's role. Optional values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
+    | **Learning Path**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+    | **Learning Path** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
+    | **Learning Path**, **Course**, **module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
+    | **Learning Path**, **Course**, **module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
+    | **Learning Path**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -239,6 +244,9 @@ For optimal performance, we recommend hosting large videos on dedicated platform
 Before publishing, it is crucial to preview your content locally to check for formatting errors, broken links, and overall structure.
 
 ```bash
+# Set Up the Environment (One-time Task)
+make setup
+# Run the Local Preview Server
 make site
 ```
 
@@ -335,7 +343,7 @@ The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the c
 
 To upgrade to the latest theme version, run: 
 ```bash
-make theme-upgrade
+make theme-update
 ```
 
 You will see output similar to this as Hugo fetches the new modules:
@@ -361,39 +369,49 @@ make clean
 
 ## Frequently Asked Questions
 
-1. **Why is my workflow failing with a `401 Unauthorized` or `user must be logged in` error?**
+<details>
+  <summary>1. Why is my workflow failing with a <code>401 Unauthorized</code> or <code>User must be logged in</code> error?</summary>
+  
+This error indicates an issue with your <code>ACADEMY_TOKEN</code>. Please ensure you have correctly copied only the token string and not the entire JSON object from the downloaded file.
+</details>
 
-    This error indicates an issue with your **`ACADEMY_TOKEN`**. Please ensure you have correctly copied **only the token string** and not the entire JSON object from the downloaded file.
+<details>
+  <summary>2. Why is my workflow failing with a URL containing a double slash </code>( // )</code>?</summary>
+  
+A double slash in the URL (e.g., <code>.../api/academy//update/...</code>) means your <strong>ACADEMY_ORG_ID</strong> was not found. This typically happens when the secret name in your repository does not <strong>exactly match</strong> the name expected by the workflow file (e.g., <code>ORG_ID</code>).
+</details>
 
-2. **Why is my workflow failing with a URL containing a double slash (`//`)?**
+<details>
+  <summary>3. How do I handle updates or corrections after my content is live?</summary>
+  
+All content updates are managed through your Git repository. Simply commit and push your changes, then <strong>create a new GitHub Release</strong> with a new version number (e.g., <code>v1.0.2</code>). This automatically triggers the publishing workflow and updates your content on the Academy platform.
+</details>
 
-    A double slash in the URL (e.g., `.../api/academy//update/...`) means your **`ACADEMY_ORG_ID`** was not found. This typically happens when the secret name in your repository does not **exactly match** the name expected by the workflow file (e.g., `ORG_ID`).
+<details>
+  <summary>4. What happens if my new content has an error?</summary>
+  
+The publishing process is designed to be safe. If your new content causes a build error, the workflow will fail, and the previously working version of the Academy will remain unchanged. Your broken update will not be published.
+</details>
 
-3. **How do I handle updates or corrections after my content is live?**
+<details>
+  <summary>5. How do I structure multiple courses under one learning path?</summary>
+  
+The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your <code>content</code> directory directly maps to the learning path structure presented to users.
+</details>
 
-    All content updates are managed through your Git repository. Simply commit and push your changes, then **create a new GitHub Release** with a new version number (e.g., `v1.0.2`). This automatically triggers the publishing workflow and updates your content on the Academy platform.
-
-4. **What happens if my new content has an error?**
-
-    The publishing process is designed to be safe. If your new content causes a build error, the workflow will fail, and the previously working version of the Academy will remain unchanged. Your broken update will not be published.
-
-5. **How do I structure multiple courses under one learning path?**
-
-    The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your `content` directory directly maps to the learning path structure presented to users.
-
-6. **Why does my local build fail when adding large videos?**
-
-    Hugo's default memory limit is 512MB. For videos >50MB:
-    ```bash
-    hugo server --memlimit 2GB
-    ```
-
-7.  **How to securely host private training videos?**
-
-    Use AWS S3 with signed URLs:
-    ```html
-    <video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
-    ```
-
+<details>
+  <summary>6. Why does my local build fail when adding large videos?</summary>
+  
+The ideal size should be less than 10MB for our service performance and sustainability, and server resource management. If your asset size is larger than 10MB, we recommend using external hosting as listed.
+</details>
+ 
+<details>
+  <summary>7. How to securely host private training videos?</summary>
+  
+Use AWS S3 with signed URLs:
+```html
+<video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
+```
+</details>
 
 [^1]: The auto-generated learning path ID feature will be launched soon.            
