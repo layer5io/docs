@@ -32,7 +32,7 @@ jobs:
           export PRERELEASE=$( cat latest_release.json | jq '.["prerelease"]' | tr -d '"')
           export RELEASE_BODY=$( cat latest_release.json | jq '.["body"]' | tr -d '"')
           export DATE=$( cat latest_release.json | jq '.["published_at"]' | tr -d '"')
-          printf '%b\n' "---\ntitle: $RELEASE_TAG\ndate: $DATE\ntag: $RELEASE_TAG\nprerelease: $PRERELEASE\n---\n\n$RELEASE_BODY" > ./content/en/cloud/reference/releases/$RELEASE_TAG.md
+          printf '%b\n' "---\ntitle: $RELEASE_TAG\ndate: $DATE\ntag: $RELEASE_TAG\nprerelease: $PRERELEASE\ntoc_hide: true\n---\n\n$RELEASE_BODY" > ./content/en/cloud/reference/releases/$RELEASE_TAG.md
       - name: Update current release version
         if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
         run: |
