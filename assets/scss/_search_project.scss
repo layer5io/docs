@@ -86,11 +86,17 @@
 }
 
 // Offline search
+
 .td-search--offline {
   &:focus-within {
-    // Keep the search icon visible but maintain consistent styling
+    // Don't hide the search icon on focus: this gives better UX when user
+    // explores content of search-results popup and focus is lost.
+
     .td-search__icon {
       display: flex;
+      color: $input-placeholder-color;
+      background-color: var(--bs-body-bg);
+      padding-right: 0.2rem;      
     }
   }
 }
@@ -136,11 +142,11 @@
   .navbar-brand {
     margin: 1.25rem;
   }
-
   .td-search {
     display: flex;
     justify-content: center;
     align-content: center;
+    // background-color: #EBC017;
     background-color: #2e2e31;
     border-radius: 1rem;
 
@@ -148,50 +154,28 @@
       width: 100%;
       text-indent: 1.25em;
       border-radius: 1rem;
-      background: transparent;
-      border: none;
-      color: inherit;
     }
-
     .td-search__input:not(:focus) {
       background: transparent;
       border-radius: 1rem;
     }
-
-    // Make focused state identical to non-focused state
     .td-search__input.form-control:focus {
-      background: transparent !important;
-      border: none !important;
-      color: inherit !important;
-      box-shadow: none !important;
-      outline: none !important;
-      border-radius: 1rem;
+      color: inherit;
     }
-
-    // Ensure search icon maintains consistent styling in navbar
-    .td-search__icon {
-      color: $navbar-dark-color !important;
-
-      // Override any focus-within changes for navbar specifically
-      .td-search--offline:focus-within & {
-        color: $navbar-dark-color !important;
-        background-color: transparent !important;
-        padding-right: 0 !important;
-      }
-    }
+  }
+  .td-search__input.form-control:focus {
+    // background-color: #EBC017;
   }
 }
 
 .form-control {
   border: 1px solid #ced4da;
 }
-
 input[type="search"]::-webkit-search-cancel-button {
   filter: invert(55%) sepia(75%) saturate(380%) hue-rotate(135deg) brightness(95%) contrast(90%);
   cursor: pointer;
   transform: scale(1.1);
 }
-
 input[type="search"]::-webkit-search-cancel-button:hover {
   filter: invert(60%) sepia(95%) saturate(500%) hue-rotate(140deg) brightness(100%) contrast(100%);
 }

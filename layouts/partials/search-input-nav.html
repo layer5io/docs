@@ -32,20 +32,21 @@
 {{ end -}}
 {{ $offlineSearchLink := $offlineSearchIndex.RelPermalink -}}
 
-<div class="td-search td-search--offline">
-  <div class="td-search__icon"></div>
-  <input
-    type="search"
-    class="form-control td-search__input"
-    placeholder="{{ T "ui_search" }}"
-    aria-label="{{ T "ui_search" }}"
-    autocomplete="off"
-    data-offline-search-index-json-src="{{ $offlineSearchLink }}"
-    data-offline-search-base-href="/"
-    data-offline-search-max-results="{{ .Site.Params.offlineSearchMaxResults | default 10 }}"
-  >
-  <button id="searchKey" style="margin-left:-2rem;" class="kbc-button kbc-button-xs">/</button>
-  
+<div class="custom-search custom-search--offline">
+  <div class="custom-search__container">
+    <input
+      type="search"
+      class="custom-search__input"
+      placeholder="{{ T "ui_search" }}"
+      aria-label="{{ T "ui_search" }}"
+      autocomplete="off"
+      data-offline-search-index-json-src="{{ $offlineSearchLink }}"
+      data-offline-search-base-href="/"
+      data-offline-search-max-results="{{ .Site.Params.offlineSearchMaxResults | default 10 }}"
+    >
+    <i class="fas fa-search custom-search__icon"></i>
+    <span class="custom-search__key-hint">/</span>
+  </div>
 </div>
 
 {{- end -}}
