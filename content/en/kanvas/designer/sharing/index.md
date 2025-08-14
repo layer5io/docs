@@ -24,7 +24,7 @@ Designs have visibility statuses that defines who can access your designs. These
 - **Public:**  Making a design "Public" makes it accessible to anyone on the internet who has the link or discovers it through public channels.
 
 {{< alert title="When a design is Public" type="info" >}} 
- - Viewers and commenters can view, download, print, and copy the design.  
+ - Viewers and commenters can view, download, and clone the design.  
  - Editors can change permissions and share the design with others.  
  - This permission model applies to all public designs.
 {{< /alert >}}
