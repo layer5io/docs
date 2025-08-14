@@ -17,7 +17,7 @@ To view the Instructor Console, you must be assigned the Academy Admin role.
 The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. [Learn more](https://layer5.io/pricing)
 {{< /alert >}}
 
-If you are part of an organization with an Enterprise plan but do not see the console in your navigation, you'll need to request access. Reach out to your organization's system administrator. Ask them to assign the **Academy Admin** role to your user account.
+If you are part of an organization with an Enterprise plan but do not see the console in your navigation, you'll need to request access. Reach out to your organization's administrator. Ask them to assign the **Academy Admin** role to your user account.
 
 Once the role is assigned, the Instructor Console will become visible in your navigation menu.
 
@@ -41,7 +41,7 @@ These four cards at the top provide your most immediate, high-level statistics:
 
 The Instructor Console includes a Content Creation Tool to kickstart the development of new learning materials. It's a simple, guided process to help you generate the initial configuration for your content.
 
-This Tool guides you through three quick steps to generate your content's boilerplate configuration.
+This tool guides you through three quick steps to generate your content's boilerplate configuration.
 
 ![Content Creation Tool](./images/create-content-model.gif)
 
@@ -66,7 +66,7 @@ Think of the console's creation tool as a 'quick start' generator. It generates 
 
 ![Content Statistics Dashboard](./images/content-stats.png)
 
-The dashboard offers a more granular look at your content's structure and your learners' overall status.
+This section offers a more granular look at your content's structure and your learners' overall status.
 
   - **Content Stats**: This card gives you a quick count of the different types of content you've published. Each category is interactive; clicking on one will take you to the Academy Catalog, pre-filtered to show all your content of that type.
 
@@ -76,7 +76,7 @@ The dashboard offers a more granular look at your content's structure and your l
 
 ### The All Learners Report
 
-The Learners section is a detailed, interactive table that allows you to track individual progress, see who is taking which courses, and get a granular view of your learner base.
+The Learners section provides a detailed, interactive table that allows you to track individual progress, see who is taking which contents, and get a granular view of your learner base.
 
 ![All Learners Report](./images/learners.png)
 
@@ -117,9 +117,9 @@ The final section is dedicated to analyzing the performance of your assessments.
 
 #### Test Stats
 
-The statistics on the left provide a high-level summary of all test activity in your academy.
+The statistics on the left provide a high-level summary of all test activities in your academy.
 
-![Test Statistics Overview](./images/est-stats.png)
+![Test Statistics Overview](./images/test-stats.png)
 
 -   **Pass/Fail Summary Bar:** This bar chart gives you an at-a-glance comparison of the total number of passed attempts (green) versus failed attempts (red) across all tests.
 
