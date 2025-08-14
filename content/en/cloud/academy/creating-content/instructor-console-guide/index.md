@@ -32,7 +32,7 @@ These four cards at the top provide your most immediate, high-level statistics:
 - **Content Version**: This shows the version of the academy module your learners are currently using.
 - **Total Learners**: A running total of every unique user who has ever registered for any of your content.
 - **Active Learners**: The number of learners who are currently "in-progress." They have registered for content but have not yet completed it.
-- **Total Test Taken**: The total number of times any test has been attempted across all your courses. This counts retakes as well.
+- **Total Test Taken**: The total number of times any test has been attempted across all your content. This counts retakes as well.
 
 ![Core Metrics Dashboard](./images/core-metrics.png)
 
@@ -70,13 +70,13 @@ This section offers a more granular look at your content's structure and your le
 
   - **Content Stats**: This card gives you a quick count of the different types of content you've published. Each category is interactive; clicking on one will take you to the Academy Catalog, pre-filtered to show all your content of that type.
 
-  - **Registration Status**: This donut chart provides an immediate visual summary of your learner base. It shows the proportion of learners who are currently working through content (`registered`) compared to those who have successfully finished their courses (`completed`).
+  - **Registration Status**: This donut chart provides an immediate visual summary of your learner base. It shows the proportion of learners who are currently working through content (`registered`) compared to those who have successfully finished their content (`completed`).
 
-  - **Content Metrics**: Think of this as a leaderboard for your content. It lists your courses and ranks them by the total number of registrations, giving you a clear view of what learners find most engaging. Each title is a direct link, allowing you to navigate straight to it.
+  - **Content Metrics**: Think of this as a leaderboard for your content. It lists your content and ranks them by the total number of registrations, giving you a clear view of what learners find most engaging. Each title is a direct link, allowing you to navigate straight to it.
 
 ### The All Learners Report
 
-The Learners section provides a detailed, interactive table that allows you to track individual progress, see who is taking which contents, and get a granular view of your learner base.
+The Learners section provides a detailed, interactive table that allows you to track individual progress, see who is taking which content, and get a granular view of your learner base.
 
 ![All Learners Report](./images/learners.png)
 
@@ -87,17 +87,17 @@ Each row in the table represents a single user's registration for a specific con
 -   **USER**: The learner's information. Clicking the avatar will take you to their public user profile.
 -   **CURRICULA**: The specific content the user is enrolled in. Clicking the title will navigate you directly to that content.
 -   **REGISTERED AT**: A timestamp indicating when the user enrolled. This is shown as a relative time (e.g., "6 hours ago") and will display the full date on hover.
--   **STATUS**: The learner's current standing in the course. Statuses include:
-    -   `Registered` (Blue): The learner has enrolled but has not yet completed the course.
-    -   `Completed` (Green): The learner has successfully finished all required parts of the course.
-    -   `Withdrawn` (Red): The learner has unenrolled from the course.
+-   **STATUS**: The learner's current standing in the content. Statuses include:
+    -   `Registered` (Blue): The learner has enrolled but has not yet completed the content.
+    -   `Completed` (Green): The learner has successfully finished all required parts of the content.
+    -   `Withdrawn` (Red): The learner has unenrolled from the content.
 
 **Filtering and Finding Learners**
 
 To find specific groups of learners, use the filter control located at the top-right of the table.
 
 -   **Filter by Content Type**: Want to see everyone enrolled only in Certifications? Select `Certification` from the 'Content Type' filter.
--   **Filter by Status**: Need a list of everyone who has successfully finished a course? Select `Completed` from the 'Status' filter.
+-   **Filter by Status**: Need a list of everyone who has successfully finished content? Select `Completed` from the 'Status' filter.
 
 **Customizing Your View**
 
