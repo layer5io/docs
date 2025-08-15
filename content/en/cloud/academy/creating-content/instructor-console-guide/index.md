@@ -25,7 +25,7 @@ This tool walks you through three quick steps to create your content's boilerpla
 
 ![Content Creation Tool](./images/create-content-model.gif)
 
-1.  **Basic Information**: First, you'll provide the essential details for your new content, such as its **Content Type** (Learning Path/Certification/Challenge), **Title**, and **Description**.
+1. **Basic Information**: First, you'll provide the essential details for your new content, such as its **Content Type** (Learning Path/Certification/Challenge), **Title**, and **Description**.
 
     | Feature | Learning Path | Challenge | Certification |
     | :--- | :--- | :--- | :--- |
@@ -33,9 +33,11 @@ This tool walks you through three quick steps to create your content's boilerpla
     | Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
     | Outcome | Acquired knowledge and skills. | A score and rank status. | An optional, paid official certificate and a verifiable badge.|
 
-2.  **Content Details**: Next, you'll refine additional properties for the content.
+2. **Content Details**: Next, you'll refine additional properties for the content.
 
-3.  **Copy Template**: Finally, the Creation Tool presents you with a **"Generated Front Matter & Setup Guide"**. You'll copy this YAML configuration and place it at the top of the corresponding `_index.md` file in your content repository.
+> Need help understanding these properties? [Learn more](/cloud/academy/creating-content/creating-your-learning-path/#2-structure-your-learning-path).
+
+3. **Copy Template**: Finally, the Creation Tool presents you with a **"Generated Front Matter & Setup Guide"**. You'll copy this YAML configuration and place it at the top of the corresponding `_index.md` file in your content repository.
 
 {{< alert type="info" title="Console Creation Tool vs. Full Guides" >}}
 Think of the console's creation tool as a 'quick start' generator. It generates the necessary configuration boilerplate, but the detailed work of writing, structuring files, and publishing your content is done in your Git repository. For that, you'll need to follow our [comprehensive guides](/cloud/academy/creating-content/).
