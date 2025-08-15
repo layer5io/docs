@@ -9,7 +9,7 @@ aliases:
 - /cloud/academy/integrating-assessments-in-the-academy/
 ---
 
-[Layer5 Cloud Academy](https://cloud.layer5.io/academy/content) implements **Learning Paths**, **Challenges**, and **Certifications** to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.
+[Layer5 Cloud Academy](https://cloud.layer5.io/academy/) implements **Learning Paths**, **Challenges**, and **Certifications** to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.
 
 Think of it as a **botanical garden**:
 - Learning Path = the comprehensive plant collection
@@ -33,7 +33,7 @@ Well-designed assessments are crucial because they:
 ## Key Rules
 
 ### 1. Each Level Can Have Assessments
-Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/content), to avoid confusion and clearly distinguish between assessment types at each level, we use specific naming conventions:
+Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/), to avoid confusion and clearly distinguish between assessment types at each level, we use specific naming conventions:
 - Firsr Level (Root Level): Exam – assesses learning outcomes at root level
     - Second Level: Test – measures understanding within a course
       - Third Level: Quiz – short assessments tied to specific modules
