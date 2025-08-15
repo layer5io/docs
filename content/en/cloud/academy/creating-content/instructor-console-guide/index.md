@@ -1,5 +1,5 @@
 ---
-title: "Instructor Console Guide"
+title: "Academy Instructor Console Guide"
 weight: 5
 description: >
   A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
@@ -7,7 +7,7 @@ categories: [Academy]
 tags: [Academy]
 ---
 
-The [Instructor Console](https://cloud.layer5.io/academy/instructors-console) serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.
+The [Academy Instructor Console](https://cloud.layer5.io/academy/instructors-console) serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.
 
 ### Gaining Access
 
@@ -49,11 +49,11 @@ Below the creation tool is the main dashboard, which provides an overview of you
 
 ### Core Metrics
 
-The three cards display your most important, high-level statistics:
+These three cards display your most important, high-level statistics, giving you a snapshot of your academy's health:
 
-- **Total Learners**: A running count of every unique user who has registered for any of your content.
-- **Active Learners**: The number of learners currently working through content who haven't completed it yet.
-- **Total Test Taken**: The total number of test attempts across all your content, including retakes.
+- **Total Learners**: Represents the overall reach of your academy. Think of this as the total number of people who have ever shown interest in your content.
+- **Active Learners**: Measures current engagement. This is the number of learners currently working through content, giving you an idea of your active student body.
+- **Total Test Taken**: Indicates the level of interaction with your assessments. A high average may suggest that the material is challenging and requires multiple retakes, while a low average might indicate less engagement with the assessments.
 
 ![Core Metrics Dashboard](./images/core-metrics.png)
 
@@ -61,14 +61,25 @@ The three cards display your most important, high-level statistics:
 
 This widget provides a quick inventory of your academy's content:
 
-- **Content Version**: Shows the current version of the academy module your learners are using.
+- **Content Version**: Shows the version of the academy content your learners are using. 
 - **Content Stats**: Shows a quick count of the different types of content you've published. Each category is interactive; clicking on one will take you to the Academy Catalog, pre-filtered to show all your content of that type.
 
 ![Content Details](./images/content-details.png)
 
+{{< alert type="info" title="Content Versioning and Release Process" >}}
+If you've recently published new content but don't see the version number updated here, it is likely due to the platform's two-stage release process. Your updates become fully live only after both your content repository's GitHub Release is created and the subsequent Layer5 Cloud release is deployed. 
+
+For a complete walkthrough of this workflow, see the [Publishing Your Content Guide](/cloud/academy/creating-content/creating-your-learning-path/#5-publishing-your-learning-path).
+{{< /alert >}}
+
 ### Learner Registration
 
 This donut chart provides an immediate visual summary of your learner base. It shows the proportion of learners who are currently working through content (`registered`) compared to those who have successfully finished their content (`completed`).
+
+While the chart will only display statuses that currently have data, the system recognizes the following definitions, each represented by a specific color:
+  -   `Registered` (Blue): The learner has enrolled but has not yet completed the content.
+  -   `Completed` (Green): The learner has successfully finished all required parts of the content.
+  -   `Withdrawn` (Red): The learner has unenrolled from the content.
 
 ![Learner Registration](./images/learner-registration.png)
 
@@ -77,6 +88,12 @@ This donut chart provides an immediate visual summary of your learner base. It s
 It lists your content and ranks them by the total number of registrations, giving you a clear view of what learners find most engaging. Each title is a direct link, allowing you to navigate straight to it.
 
 ![Content Metrics](./images/content-metrics.png)
+
+**When to Use this Widget**
+This list helps you answer key questions about your content's popularity and engagement:
+- Which of my courses is the most popular?
+- Is the new content I just launched gaining traction with learners?
+- Where should I focus my efforts for future content updates or improvements?
 
 ### All Learners Report
 
@@ -91,10 +108,7 @@ Each row in the table represents a single user's registration for a specific con
 -   **USER**: The learner's information. Clicking the avatar will take you to their public user profile.
 -   **CURRICULA**: The specific content the user is enrolled in. Clicking the title will navigate you directly to that content.
 -   **REGISTERED AT**: A timestamp indicating when the user enrolled. This is shown as a relative time (e.g., "6 hours ago") and will display the full date on hover.
--   **STATUS**: The learner's current standing in the content. Statuses include:
-    -   `Registered` (Blue): The learner has enrolled but has not yet completed the content.
-    -   `Completed` (Green): The learner has successfully finished all required parts of the content.
-    -   `Withdrawn` (Red): The learner has unenrolled from the content.
+-   **STATUS**: The learner's current standing in the content. The definition for each status is provided in the Learner Registration section [above](#learner-registration).
 
 #### Filtering and Finding Learners
 
@@ -114,6 +128,13 @@ You can customize which columns are visible to tailor the report to your specifi
 If there are a large number of learner registrations, the report is split into multiple pages. Use the controls at the bottom of the table to navigate through the data:
 
 **Rows per page**: Choose how many records to display on each page (e.g., 10, 25, 50).
+
+#### Strategic Uses for the Report
+
+Beyond simple lookups, you can use the All Learners Report for proactive learner management:
+
+-   **Identify At-Risk Learners**: Regularly filter for users who have been in the `Registered` status for an unusually long time on a key course. This could be an opportunity to reach out and offer them help or gather feedback on why they are stuck.
+-   **Gather Targeted Feedback**: After a group of learners moves to the `Completed` status for a certification, use this report to identify them. You can then contact this cohort to ask for feedback while the content is still fresh in their minds.
 
 ### Analyzing Test Performance
 
@@ -141,6 +162,20 @@ The percentage (e.g., `33%`) shows the overall pass rate for that specific test.
 {{< alert type="info" title="Identifying Problem Areas" >}}
 Use this list to quickly identify which specific assessments are causing the most trouble for your learners. A low pass rate on a particular assessment might indicate that the source material needs clarification or that the questions themselves are unclear.
 {{< /alert >}}
+
+### A Practical Use Case
+
+When you launch a new Learning Path, you can use the different components of the Instructor Console together to monitor its performance and gather insights for potential improvements. Here's one approach you might consider:
+
+1. **Track Adoption**: In the **Content Metrics** widget, monitor your new Learning Path's registration numbers. These numbers can provide insights into initial learner interest and content visibility.
+
+2. **Monitor Engagement**: Check the **Learner Registration** donut chart to see how learners are progressing. Are they moving from the `registered` to the `completed` status, or is the `registered` slice growing disproportionately large? This information can help you understand learner engagement patterns.
+
+3. **Identify Potential Challenges**: Review the **Analyzing Test Performance** section. If a quiz from your new Learning Path appears in the **Most Difficult Test** card, check its pass rate in the **Test Metrics** list. A low pass rate might indicate that a specific topic could benefit from additional clarification or review.
+
+4. **Investigate Further**: Use the **All Learners Report** to filter by your new Learning Path and a `Registered` status. This can help you identify learners who are currently in progress and might benefit from additional support or resources.
+
+5. **Consider Next Steps**: Based on the data you've gathered, you might choose to reach out to learners for feedback, review and revise challenging content, or explore other approaches that align with your instructional goals and learner needs.
 
 ## Frequently Asked Questions
 
