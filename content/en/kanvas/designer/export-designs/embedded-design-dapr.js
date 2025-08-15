@@ -32352,6 +32352,7 @@ const addStyles = () => {
         width: 100%;
         background-color: "inheirt";
     }
+   
    #embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4 .water-mark{
         background: "transparent";
         padding: 0.5rem;
@@ -32367,8 +32368,43 @@ const addStyles = () => {
         outline: none !important; 
     }
 
+    #embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4 .water-mark-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    #embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4 .hover-dropdown {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        background: black;
+        border-radius: 4px;
+        min-width: 70px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+        margin-bottom: 5px;
+    }
+
+    #embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4 .water-mark-container:hover .hover-dropdown {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-option {
+        display: block;
+        padding: 0.5em;
+        color: white;
+        text-decoration: none;
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    .dropdown-option:hover {
+        color: #00D3A9;
+    }
+
     #embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4 .toolbar {
-       
         pointer-events: auto ;
         padding: 0.5rem;
         cursor: pointer;
@@ -32401,8 +32437,9 @@ const CreateToolBar = () => {
   const toolbar = document.createElement("div");
   toolbar.innerHTML = `
     <div class="toolbar ">
-        <a class="water-mark" href="https://meshery.io" target="_blank">
-          <span> 
+        <div class="water-mark-container">
+          <div class="water-mark">
+            <span> 
 <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="1.9rem" viewBox="0 0 97 17" fill="none">
   <path d="M8.62109 4.55884V8.26808L11.9 6.40375L8.62109 4.55884Z" fill="#00D3A9"/>
   <path d="M8.62109 9.04541V12.7838L11.9297 10.9195L8.62109 9.04541Z" fill="#00D3A9"/>
@@ -32437,8 +32474,13 @@ const CreateToolBar = () => {
   <path d="M31.1557 5.77447C30.7669 4.8737 29.8126 4.21544 28.7876 4.25009H19.5273V6.22485V13.5349H21.542V6.19021C24.2989 6.19021 28.8936 6.15556 28.9997 6.22485C29.7066 6.01698 29.2117 13.2231 29.3531 13.4657H31.3678C31.2617 12.842 31.5445 6.19021 31.1557 5.77447Z" fill="currentColor"/>
   <path d="M26.4482 7.22925H24.4336V13.5H26.4482V7.22925Z" fill="currentColor"/>
 </svg>
- </span>
-        </a>
+            </span>
+          </div>
+          <div class="hover-dropdown">
+            <a href="https://playground.meshery.io/extension/meshmap?mode=design&design=764be348-d327-44f1-96e1-6de7de9e97a0" target="_blank" class="dropdown-option">View</a>
+            <a href="https://cloud.layer5.io/catalog/content/catalog/embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" target="_blank" class="dropdown-option">Edit</a>
+          </div>
+        </div>
     </div>
 
     `;
