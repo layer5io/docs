@@ -51,3 +51,38 @@ For example, a **Learning Path** named **"Mastering Kubernetes"** might contain:
 {{< alert type="warning" title="Content Isolation" >}}
 To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial](/cloud/academy/creating-your-learning-path/).
 {{< /alert >}}
+
+### Branded Email Communications
+
+When using the Academy with white-labeling enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
+
+Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
+
+**Email Template Structure:**
+```
+From: no-reply@{{OrganizationDomain}}                    ← Your custom domain
+Subject: New badge(s) awarded by {{OrganizationName}}    ← Your organization name
+
+    Congratulations, {{Awardee}}!                        ← Student's name
+    You have earned the following badges:
+
+    {{Badges}}                                           ← Cicable badge with name and description
+
+    [Go to Profile Button{{PublicProfileLink}}]          ← Direct link to profile
+
+    Share your achievements with the world:
+    X | LinkedIn | Facebook
+---
+{{OrganizationName}} Academy | Powered by Layer5 Cloud 
+```
+
+Here is a real-world example of the email:
+![Example of Email](./images/example_email.png)
+
+When users click the badge, they will go to the details in the Academy:
+![Example of Badge](./images/example_badge.png)
+
+{{< alert type="info" title="Email Customization" >}}
+Email templates automatically incorporate your organization's logo and primary brand color as configured in your [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations). Custom email templates can be provided for Enterprise customers with specific branding requirements.
+{{< /alert >}}
+
