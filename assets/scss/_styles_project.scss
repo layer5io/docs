@@ -787,3 +787,203 @@ html {
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 1rem;
 }
+
+// Custom Search Styles - Clean replacement for Docsy searchbar
+.custom-search {
+  background: transparent;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #2e2e31;
+    border-radius: 1rem;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0.75em;
+    z-index: 2;
+    color: $navbar-dark-color;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: none;
+    background: transparent;
+    border-radius: 1rem;
+    color: $navbar-dark-color;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: $navbar-dark-color;
+    }
+
+    &:focus {
+      color: inherit;
+      box-shadow: none;
+      border: none;
+      outline: none;
+    }
+
+    &:focus + .custom-search__icon {
+      color: inherit;
+    }
+
+    // Search cancel button styling
+    &::-webkit-search-cancel-button {
+      filter: invert(55%) sepia(75%) saturate(380%) hue-rotate(135deg) brightness(95%) contrast(90%);
+      cursor: pointer;
+      transform: scale(1.1);
+
+      &:hover {
+        filter: invert(60%) sepia(95%) saturate(500%) hue-rotate(140deg) brightness(100%) contrast(100%);
+      }
+    }
+  }
+
+  &__key-hint {
+    position: absolute;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: $navbar-dark-color;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.75rem;
+    font-family: monospace;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  // Hide icon and key hint when focused and has content
+  &__container.has-focus {
+    .custom-search__icon {
+      opacity: 0;
+    }
+
+    .custom-search__input {
+      padding-left: 1rem;
+    }
+
+    .custom-search__key-hint {
+      opacity: 0;
+    }
+  }
+}
+
+// Search results styling
+.custom-search-results {
+  max-width: 90%;
+
+  .card {
+    margin-bottom: $spacer * 0.5;
+    background-color: #2e2e31;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .card-header {
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+    }
+  }
+
+  &__close-button {
+    float: right;
+    cursor: pointer;
+    color: #9ca3af;
+
+    &:hover {
+      color: #ffffff;
+    }
+
+    &::after {
+      @extend .fas;
+      content: fa-content($fa-var-times);
+    }
+  }
+}
+
+// Popover styling for search results
+.popover-body {
+  background-color: #2e2e31;
+  color: #ffffff;
+}
+
+.popover {
+  background-color: #2e2e31;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  .popover-arrow::before {
+    border-bottom-color: #2e2e31;
+  }
+}
+
+// Navbar specific styling
+.td-navbar {
+  .custom-search {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    &__container {
+      background-color: #2e2e31;
+      border-radius: 1rem;
+    }
+
+    &__icon {
+      color: $navbar-dark-color;
+    }
+
+    &__input {
+      color: $navbar-dark-color;
+
+      &::placeholder {
+        color: $navbar-dark-color;
+      }
+
+      &:focus {
+        color: inherit;
+      }
+    }
+
+    &__key-hint {
+      color: $navbar-dark-color;
+    }
+  }
+}
+
+// Search result entries
+.search-result-entry {
+  margin-top: 1rem;
+
+  a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: #93c5fd;
+    }
+  }
+
+  small {
+    color: #9ca3af;
+  }
+
+  p {
+    color: #d1d5db;
+    margin-bottom: 0;
+  }
+}
