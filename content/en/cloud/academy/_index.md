@@ -2,7 +2,7 @@
 title: Academy
 weight: 5
 description: >
-  Building, managing, and extending Layer5 Academy learning paths.
+  Learn how to use, build, manage, and extend the Layer5 Academy.
 categories: [Academy]
 tags: [Academy]
 ---
