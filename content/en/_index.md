@@ -86,12 +86,12 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 </div>
 <div class="flex-row gap-20px">
 
-<!-- Learning Paths -->
-  <div class="playground-card grow-1">
-    <a href="https://cloud.layer5.io/academy/learning-paths">
+<!-- Academy -->
+  <div class="academy-card grow-1">
+    <a href="https://cloud.layer5.io/academy">
       <div class="landing-card">
-        <div class="catalog-section learning-path-logo">
-          <span class="landing-card-title">Learning Paths</span>
+        <div class="catalog-section academy-logo">
+          <span class="landing-card-title">Academy</span>
           <p>Structured learning of Kubernetes, AWS, Azure, GCP, Meshery, and Kanvas with theoretical knowledge and hands-on, practical experience.</p>
         </div>
       </div>

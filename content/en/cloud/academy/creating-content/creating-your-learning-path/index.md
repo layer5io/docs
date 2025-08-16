@@ -25,12 +25,12 @@ Before you dive into creating your first learning path, it's helpful to be famil
 
 Start by preparing a dedicated Git repository for your learning content. Using our official Layer5 template to help you get started quickly.
 
-1. **Fork the academy-example Repository**
+### 1. Fork the academy-example Repository
 
 - Go to the [academy-example repository](https://github.com/layer5io/academy-example) on GitHub.
 - Click **Fork** to create a copy under your own GitHub account.
 
-2. **Clone Your Fork Locally**
+### 2. Clone Your Fork Locally
 
 - Use the `git clone` command to download your forked repository. 
 - Example:
@@ -41,18 +41,18 @@ Start by preparing a dedicated Git repository for your learning content. Using o
   git checkout -b <your-feature-branch>
   ```
 
-3. **Update the Go Module Path**
+### 3. Update the Go Module Path
 
-    1. Open the `go.mod` file located at the root of your `academy-example` project.
-    2. The first line will be:
-      ```go
-      module github.com/layer5io/academy-example
-      ```
-    3. Change this line to match your fork's path:
-      ```go
-      module github.com/<your-username>/academy-example
-      ```
-    4. Save the file, then commit and push this change to your repository.
+1. Open the `go.mod` file located at the root of your `academy-example` project.
+2. The first line will be: 
+  ```go
+  module github.com/layer5io/academy-example
+  ```
+3. Change this line to match your fork's path: 
+  ```go
+  module github.com/<your-username>/<your-repo-name>
+  ```
+4. Save the file, then commit and push this change to your repository.
 
 {{< alert type="info" title="Critical Step" >}}
 This step is essential. It updates your repository's "identity card" (`go.mod`) to match its new "address" (your GitHub URL). Without this change, the Academy publishing process will fail.
@@ -62,110 +62,125 @@ This step is essential. It updates your repository's "identity card" (`go.mod`) 
 
 The Academy uses a specific directory layout to keep each organization's content separate and secure.
 
-1. **Find Your Organization UUID**
+### Find Your Organization UUID and content ID
 
-    Each learning path is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
-
-{{< alert type="info" title="How to Find Your Organization UUID?" >}}
-You can find and copy your Organization UUID from your organization page on [Academy](https://cloud.layer5.io/academy).
+{{< alert type="warning" title="Important: Replace UUIDs" >}}
+Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-learning-path-uuid>` placeholders. Make sure to replace all of these with your actual UUIDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when implementing your learning path.
 {{< /alert >}}
 
-2. **Create the Core Directories**
+Each learning path is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
 
-    Now, inside your `academy-example` project, you should see the following top-level folders.
+You'll need two types of UUIDs:
+- **Learning Path ID**: A unique identifier for your specific learning path that gets added to the front matter of your learning path's index file
+- **Organization ID**: Your organization's UUID that's used in directory paths
 
-    1. `content/learning-paths/<your-organization-uid>/`
-      This `content` directory is where all your written material lives. The folder hierarchy you create here directly defines the navigation and organization of your learning paths.
-    2. `layouts/shortcodes/<your-organization-uid>/`
-      This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components.
+{{< alert type="info" title="Generating Your IDs from the Instructor Console" >}}
 
-3. **Build the Content Hierarchy**
+The easiest way to get the correct IDs is by using the content creation tool.
 
-    With the main folders in place, you can now structure your first course inside the `content` directory. The content is organized in a clear hierarchy: A **Learning Path** contains **Courses**. A **Course** is primarily broken down into **Modules**, but can also conclude with a final **Test** that serves as a course exam. Finally, a **Module** consists of individual **Pages** and **Labs**. 
+- Navigate to the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) in Layer5 Cloud.
+- Use the "Create New Content" tool and fill in the information for your new content
+- The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
 
-    A high-level view of the structure looks like this:
+[Learn more](/cloud.layer5.io/academy/instructors-console) about academy console.
+{{< /alert >}}
 
-    ```text
-    learning-paths/
-    └── mastering-kubernetes/                        // <-- Learning Path/
-        ├── _index.md                            
-        ├── advanced-networking/                     // <-- Course 1/
-        │   └── _index.md                        
-        └── core-concepts/                           // <-- Course 2/
-            ├── _index.md   
-            ├── course-exam.md                       // <-- Course Exam (Test)                     
-            └── 01-pods-and-services/                // <-- Module/
-                ├── _index.md                    
-                ├── 01-pods/
-                │   └── _index.md                    // <-- Page 1
-                ├── 02-services/
-                │   ├── _index.md                    // <-- Page 2
-                │   ├── 02-image.png                 // <-- Image               
-                ├── 03-knowledge-check.md            // <-- Test
-                ├── 04-hands-on-lab.md               // <-- Lab
-                └── arch.png                         // <-- Image
+### Create the Core Directories
 
-    ```
+Now, inside your academy repository, you should see the following top-level folders.
 
-    Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`). The final `.md` files represent your individual learning activities: **Pages** and **Labs** are typically found inside Modules, while **Tests** can be palced at any hierachy - either within Modules (as knowledge checks) or directly under a Course (as a final exam).
+1. `content/learning-paths/<your-organization-uuid>/`
+  This `content` directory is where all your written material lives. The folder hierarchy you create here directly defines the navigation and organization of your learning paths.
+2. `layouts/shortcodes/<your-organization-uuid>/`
+  This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components.
+
+### Build the Content Hierarchy
+
+ With the main folders in place, you can now structure your first course inside the `content` directory. The content is organized in a clear hierarchy: A **Learning Path** contains **Courses**. A **Course** is primarily broken down into **Modules**, but can also conclude with a final **Test** that serves as a course exam. Finally, a **Module** consists of individual **Pages** and **Labs**. 
+
+ A high-level view of the structure looks like this:
+
+ ```text
+ learning-paths/<your-organization-uuid>
+ └── mastering-kubernetes/                        // <-- Learning Path/
+     ├── _index.md                            
+     ├── advanced-networking/                     // <-- Course 1/
+     │   └── _index.md                        
+     └── core-concepts/                           // <-- Course 2/
+         ├── _index.md   
+         ├── course-exam.md                       // <-- Course Exam (Test)                     
+         └── 01-pods-and-services/                // <-- Module/
+             ├── _index.md                    
+             ├── 01-pods/
+             │   └── _index.md                    // <-- Page 1
+             ├── 02-services/
+             │   ├── _index.md                    // <-- Page 2
+             │   ├── 02-image.png                 // <-- Image               
+             ├── 03-knowledge-check.md            // <-- Test
+             ├── 04-hands-on-lab.md               // <-- Lab
+             └── arch.png                         // <-- Image
+
+ ```
+
+ Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`). The final `.md` files represent your individual learning activities: **Pages** and **Labs** are typically found inside Modules, while **Tests** can be placed at any hierarchy - either within Modules or directly under a Course.
 
 > For a deeper understanding of how Hugo uses `_index.md` to create content sections, you can refer to the official [Hugo Page Bundles documentation](https://gohugo.io/content-management/page-bundles/).
 
-4. **Front matter**
+### Front Matter
 
-    Front matter is the configuration block at the top of every content file that defines its metadata. The most critical field is type, which tells the Academy how to render the content.
+ Front matter is the configuration block at the top of every content file that defines its metadata. The most critical field is type, which tells the Academy how to render the content.
 
-    The front matter configuration varies slightly depending on whether you are creating a Learning Path/Challengs, Course, Module, or Page. The following examples for a Learning Path and a Course illustrate a typical setup.
+ The front matter configuration varies slightly depending on whether you are creating a Learning Path/Challenge/Certification, Course, Module, or Page. The following examples for a Learning Path and a Course illustrate a typical setup.
 
-    **Learing Path Frontmatter**
+ **Learning Path Frontmatter**
 
-    ```yaml
-    ---
-    type: "learning-paths"
-    title: "Cloud Fundamentals"
-    description: "A learning path focused on providing the technical knowledge required for advanced topics."
-    weight: 5
-    banner: "kubernetes-icon.svg"
-    id: "754627a3-2323-4545-a7f0-c66c0212a1a1" 
-    tags: [kubernetes, infrastructure]
-    categories: "cloud"
-    level: "beginner"
-    ---
-    ```
+ ```yaml
+ ---
+ type: "learning-paths"
+ title: "Cloud Fundamentals"
+ description: "A learning path focused on providing the technical knowledge required for advanced topics."
+ weight: 5
+ banner: "kubernetes-icon.svg"
+ id: "<your-learning-path-uuid>"
+ tags: [kubernetes, infrastructure]
+ categories: "cloud"
+ level: "beginner"
+ ---
+ ```
 
-    **Course Frontmatter**
+ **Course Frontmatter**
 
-    If each course has its own markdown page, you can use this frontmatter:
+ If each course has its own markdown page, you can use this frontmatter:
 
-    ```yaml
-    ---
-    type: "course"
-    title: "Intro Sustainability"
-    description: "An introductory course exploring the core concepts of sustainability."
-    weight: 2
-    banner: "kubernetes-icon.svg"      
-    tags: [network, infrastructure]
-    level: "beginner"
-    categories: "compliance"
-    ---
-    ```
-    
-    **Summary of Required Fields**
+ ```yaml
+ ---
+ type: "course"
+ title: "Intro Sustainability"
+ description: "An introductory course exploring the core concepts of sustainability."
+ weight: 2
+ banner: "kubernetes-icon.svg"      
+ tags: [network, infrastructure]
+ level: "beginner"
+ categories: "compliance"
+ ---
+ ```
+ 
+ **Summary of Required Fields**
 
-    > In this table, fields marked with ✅ are required, while those marked with – are optional.
+ > In this table, fields marked with ✅ are required, while those marked with – are optional.
 
-    | Applicable To                 | Field         | Required | Notes                                                                                                         |
-    | ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
-    | All                           | `title`       |    ✅     | The main display title.                                                                                       |
-    | All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
-    | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
-    | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
-    | All                           | `type`        |    ✅     | Defines the content's role. Optional values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
-    | **Learning Path**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
-    | **Learning Path** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.** [^1]                                     |
-    | **Learning Path**, **Course**, **module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
-    | **Learning Path**, **Course**, **module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
-    | **Learning Path**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
+ | Applicable To                 | Field         | Required | Notes                                                                                                         |
+ | ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
+ | All                           | `title`       |    ✅     | The main display title.                                                                                       |
+ | All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
+ | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
+ | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
+ | All                           | `type`        |    ✅     | Defines the content's role. Optional values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
+ | **Learning Path**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+ | **Learning Path** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
+ | **Learning Path**, **Course**, **module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
+ | **Learning Path**, **Course**, **module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
+ | **Learning Path**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -416,5 +431,3 @@ Use AWS S3 with signed URLs:
 <video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
 ```
 </details>
-
-[^1]: The auto-generated learning path ID feature will be launched soon.            
