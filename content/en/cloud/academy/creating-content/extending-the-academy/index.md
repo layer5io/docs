@@ -170,3 +170,37 @@ This is a styled callout with custom CSS.
 - `.custom-callout` creates a CSS class for styling
 - The shortcode applies padding, margins, colors, and borders
 - `{{ .Inner }}` displays the content between opening and closing shortcode tags
+
+### Branded Email Communications
+
+When using the Academy with [white-labeling](/cloud/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
+
+Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
+
+**Email Template Structure:**
+```
+From: no-reply@{{OrganizationDomain}}                    ← Your custom domain
+Subject: New badge(s) awarded by {{OrganizationName}}    ← Your organization name
+
+    Congratulations, {{Awardee}}!                        ← Student's name
+    You have earned the following badges:
+
+    {{Badges}}                                           ← Cicable badge with name and description
+
+    [Go to Profile Button{{PublicProfileLink}}]          ← Direct link to profile
+
+    Share your achievements with the world:
+    X | LinkedIn | Facebook
+---
+{{OrganizationName}} Academy | Powered by Layer5 Cloud 
+```
+
+Here is a real-world example of the email:
+![Example of Email](./images/example_email.png)
+
+When users click the badge, they will go to the details in the Academy:
+![Example of Badge](./images/example_badge.png)
+
+{{< alert type="info" title="Email Customization" >}}
+Email templates automatically incorporate your organization's logo and primary brand color as configured in your [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations). Custom email templates can be provided for Enterprise customers with specific branding requirements.
+{{< /alert >}}
