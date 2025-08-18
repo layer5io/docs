@@ -32,17 +32,40 @@ A Certification is ideal when the main objective is to test, not teach. It assum
 
 Building a new certification involves setting up the correct directory structure and defining its properties through Markdown frontmatter.
 
+### Find Your Organization UUID and Certification ID
+
+{{< alert type="warning" title="Important: Replace UUIDs" >}}
+Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-certification-uuid>` placeholders. Make sure to replace all of these with your actual UUIDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when implementing your certification.
+{{< /alert >}}
+
+Each certification is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
+
+You'll need two types of UUIDs:
+- **Certification ID**: A unique identifier for your specific certification that gets added to the front matter of your certification's index file
+- **Organization ID**: Your organization's UUID that's used in directory paths
+
+{{< alert type="info" title="Generating Your IDs from the Instructor Console" >}}
+
+The easiest way to get the correct IDs is by using the content creation tool.
+
+- Navigate to the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) in Layer5 Cloud.
+- Use the "Create New Content" tool and fill in the information for your new content
+- The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
+
+[Learn more](https://cloud.layer5.io/academy/instructors-console) about the Academy Console.
+{{< /alert >}}
+
 ### 1. Set Up the Directory Structure
 
-All content for a new certification must reside within the `content/certifications/orgID` directory. To keep content organized, each certification has its own folder named with a descriptive, URL-friendly slug.
+All content for a new certification must reside within the `content/certifications/<your-organization-uuid>` directory. To keep content organized, each certification has its own folder named with a descriptive, URL-friendly slug.
 
-The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/orgID/<certification-folder-name>/`
+The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/<your-organization-uuid>/<certification-folder-name>/`
 
 Below is the standard file structure:
 
 ```
-content/certifications/
-└── orgID/layer5-certification-exam/   <-- The <certification-name> directory
+content/certifications/<your-organization-uuid>
+└── layer5-certification-exam/   <-- The <certification-name> directory
     ├── _index.md                      <-- Defines the certification's metadata
     ├── exam-1.md                      <-- (Optional) A standard content page for introduction
     ├── optional-exam-2.md             <-- An optional supplementary exam
@@ -62,7 +85,7 @@ Here's a complete example of the YAML frontmatter for a certification's `_index.
 ```yaml
 ---
 type: "certification"
-id: "445a80d2-1234-1234-1234-2329c5ddcdec"
+id: "<your-certification-uuid>"
 title: "Layer5 Network Certification"
 description: "Validate your expertise in Layer5 networking technologies through comprehensive assessment"
 banner: "images/layer5-icon.svg"
@@ -80,7 +103,7 @@ categories: "platform"
 | Field | Required | Description |
 | :--- | :--- | :--- |
 | `type` | ✅  | Must be set to `"certification"` to identify this content correctly. |
-| `id` | ✅  | A globally unique identifier (UUID) for the certification. |
+| `id` | ✅  | **Crucial.** A stable UUID for tracking progress. **Do not change.** |
 | `title` | ✅  | The human-readable title that will be displayed to users. |
 | `description` | ✅  | A comprehensive summary of the certification's scope and objectives. |
 | `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
