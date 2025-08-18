@@ -39,9 +39,15 @@ At any time, a design can only be edited on up to 25 open tabs or devices. If th
 A single design can only be shared up to 600 individual email addresses.
 To share and collaborate on a design with a very wide audience:
 
-#### Publish the design
+#### Share without publishing
+If you need multiple people to open a design, publish the design then create a link to share to people with access. You can give edit access to people who need to edit or comment on the design. [Learn how to publish a design](#).
 
-- If you need multiple people to open a design, publish the design then create a link to share to people with access. You can give edit access to people who need to edit or comment on the design. [Learn how to publish a design](#).
+#### Publish the design
+{{< alert title="When a design is Public" type="info" >}}
+- When a design is published, viewers and commenters will have access to view, download, and clone the design.  
+- Editors will have the ability to change permissions and share the design with others.  
+- These permissions apply consistently to all public designs.
+{{< /alert >}}
 - Depending on your account’s settings, publishing a design makes it visible to everyone on the web, everyone in your organization, or a group of people in your organization. Be careful when publishing private or sensitive info.
     - **Important:** Provider administrators and Organization administrators can limit who can access a published design. If you're an administrator, [learn how to control who can publish documents to the web](#).
 - To remove a design from the web, you must stop publishing it. [Learn how to stop publishing a design](#).
