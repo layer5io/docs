@@ -56,7 +56,7 @@ To ensure security and isolation, all of your content files must be placed withi
 
 When using the Academy with [white-labeling](/cloud/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
 
-Below is an example email template showing how badge award notifications appear when [white-labeling](/cloud/self-hosted/white-labeling) is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
+Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
 
 **Email Template Structure:**
 ```
