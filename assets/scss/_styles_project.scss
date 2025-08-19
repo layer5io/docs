@@ -710,47 +710,52 @@ a:not([href]):not([class]):hover {
 
 .nav-tabs {
   border: none;
-  border-bottom: 1px solid $lightslategray;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.nav-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: 0;
+  margin-right: 0;
 }
 
 .nav-tabs .nav-link {
   position: relative;
   border: 1px solid transparent;
+  border-bottom: 1px solid $lightslategray;
   border-radius: 5px 5px 0 0;
   color: $primary;
-  margin-bottom: -8px;
+  padding: 0.6rem 1.2rem;
+  white-space: nowrap;
 }
 
 .nav-tabs .nav-link:not(.active):hover {
   background-color: lighten($dark, 10%);
   color: lighten($primary, 15%);
-  z-index: 1;
+  border-bottom-color: lighten($lightslategray, 20%);
 }
 
 .nav-tabs .nav-link.active {
-  color: $primary;
-  background-color: $body-bg; 
-  border-color: $lightslategray $lightslategray transparent;
+  background-color: $body-bg;
   font-weight: 500;
-  z-index: 3;
+  border-color: $lightslategray $lightslategray;
+  border-bottom: 1px solid $body-bg;
+  z-index: 1;
 }
 
 .tab-content .tab-pane {
   border: 1px solid $lightslategray;
-  border-top: none;
+  margin-top: -1px;
   padding: 1.5rem;
   border-radius: 0 0 5px 5px;
-}
-
-.tab-content > .active {
-  display: flex;
-}
-
-.tab-body {
-  background-color: transparent; 
-  overflow-x: scroll;
-  flex-direction: column;
-  gap: 1rem;
+  background-color: $body-bg;
 }
 
 html {
