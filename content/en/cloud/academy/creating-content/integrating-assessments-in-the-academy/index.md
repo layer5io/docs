@@ -146,6 +146,7 @@ questions:
 | | `text` | ✅  | The text of the question prompt. |
 | | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short_answer`. |
 | | `marks` | ✅  | The number of points awarded for a correct answer. |
+| | `instructions` | -  | Custom instruction for each question |
 | | `options` | - | An array of answer options. |
 
 {{< alert type="warning" title="Quick heads up" >}}
@@ -169,6 +170,7 @@ Layer5 Academy supports three question formats:
         text: "Test single choice question"
         type: "single-answer"             # choose the type
         marks: 1
+        instructions: "Only one option is correct"
         options:
           - id: "a"
             text: "Option A"
@@ -204,6 +206,7 @@ Layer5 Academy supports three question formats:
         text: "Test multiple choice question"
         type: "multiple-answers"             # choose the type
         marks: 2
+        instructions: "More then one answer can be correct"
         options:
           - id: "a"
             text: "Option A"
@@ -233,6 +236,7 @@ Layer5 Academy supports three question formats:
         text: "In Kubernetes, ___ is the default namespace."
         type: "short_answer"                # choose the type
         marks: 2
+        instructions: "Just type the command"
         correct_answer: "default"           # expected answer
 
       - id: "question5"
@@ -282,6 +286,49 @@ A exam is considered final if:
 {{< alert type="info" title="Why Not Use `weight` to Determine the Final Exam" >}}
 To ensure the final exam is always clear and uniquely identified, we don't use the `weight` field, which can be ambiguous (e.g., missing or duplicated across files). Instead, we rely on the file path order as a more stable and reliable standard.
 {{< /alert >}}
+
+## About Instructions
+
+Instructions are a way to help or clarify what the question is trying to ask , and user doesnt get confused . 
+
+Instructions are defaultly defined for each question type : 
+- single-answer: Select one answer
+- multiple-answers: Select all that apply
+- short_answer: Type your answer below
+
+
+Instructions can be override in frontmatter by defining a custom intruction for each question.
+
+<details style="margin-bottom: 1em;">
+  <summary>Examples: <code>Instruction</code> </summary>
+
+    ---
+    questions:
+      - id: "question4"
+        text: "In Kubernetes, ___ is the default namespace."
+        type: "short_answer"                
+        marks: 2
+        instructions: "Just type the command" #custom instruction
+        correct_answer: "default"           
+
+      questions:                              # will display the default instructions for question type
+      - id: "question3"
+        text: "Test multiple choice question"
+        type: "multiple-answers"             # choose the type
+        marks: 2
+        options:
+          - id: "a"
+            text: "Option A"
+            is_correct: true    # correct option
+          - id: "b"
+            text: "Option B"
+          - id: "c"
+            text: "Option C"
+            is_correct: true    # correct option
+    ---
+  </code></pre>
+</details>
+  
 
 ## Scoring
 
