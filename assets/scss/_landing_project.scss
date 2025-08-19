@@ -104,13 +104,13 @@
   &.catalog-logo {
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/catalog.svg");
   }
-  &.learning-path-logo{
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/learning-path.svg");
+  &.academy-logo{
+    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/academy.svg");
   }
   &.recognition-program-logo{
     background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/recognition-program.png");
   }
-  &.catalog-logo, &.learning-path-logo , &.recognition-program-logo {
+  &.catalog-logo, &.academy-logo , &.recognition-program-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -196,7 +196,7 @@
   }
 }
 
-.playground-card {
+.academy-card {
   max-width: 351.88px;
   @media (max-width:768px){
     max-width: 100%;
