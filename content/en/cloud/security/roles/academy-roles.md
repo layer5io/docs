@@ -50,6 +50,11 @@ tags: [academy, roles]
 {{% /card %}}
 {{< /cardpane >}}
 
+{{< alert title="Managing Learner Costs" color="info" >}}
+While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization's subscription plan. Please be mindful of your subscription to manage costs effectively.
+
+{{< /alert >}}
+
 {{< cardpane >}}
 
 {{% card header="## Learner" %}}
