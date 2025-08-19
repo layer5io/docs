@@ -171,6 +171,10 @@ This is a styled callout with custom CSS.
 - The shortcode applies padding, margins, colors, and borders
 - `{{ .Inner }}` displays the content between opening and closing shortcode tags
 
+##### Advanced Hugo Features
+
+The Layer5 Academy platform supports all Hugo shortcode features. For more advanced functionality, see the [Hugo documentation](https://gohugo.io/content-management/shortcodes/). 
+
 ### Branded Email Communications
 
 When using the Academy with [white-labeling](/cloud/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
