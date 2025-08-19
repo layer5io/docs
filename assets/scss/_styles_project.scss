@@ -708,28 +708,49 @@ a:not([href]):not([class]):hover {
   color: $body-color;
 }
 
-.tab-body {
-  overflow-x: scroll;
-  background: transparent;
-  flex-direction: column;
-  gap: 1rem;
+.nav-tabs {
+  border: none;
+  border-bottom: 1px solid $lightslategray;
 }
 
-.tab-content>.active {
-  display: flex;
+.nav-tabs .nav-link {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 5px 5px 0 0;
+  color: $primary;
+  margin-bottom: -8px;
+}
+
+.nav-tabs .nav-link:not(.active):hover {
+  background-color: lighten($dark, 10%);
+  color: lighten($primary, 15%);
+  z-index: 1;
 }
 
 .nav-tabs .nav-link.active {
-  color: #00d3a9;
+  color: $primary;
+  background-color: $body-bg; 
+  border-color: $lightslategray $lightslategray transparent;
+  font-weight: 500;
+  z-index: 3;
 }
 
-.nav-tabs .nav-link:not(.active) {
+.tab-content .tab-pane {
   border: 1px solid $lightslategray;
-  padding-bottom: 0.3rem;
+  border-top: none;
+  padding: 1.5rem;
+  border-radius: 0 0 5px 5px;
 }
 
-.csvtable {
-  width: 100%;
+.tab-content > .active {
+  display: flex;
+}
+
+.tab-body {
+  background-color: transparent; 
+  overflow-x: scroll;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 html {
