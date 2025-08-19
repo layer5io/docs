@@ -50,6 +50,11 @@ tags: [academy, roles]
 {{% /card %}}
 {{< /cardpane >}}
 
+{{< alert title="Managing Learner Costs" color="info" >}}
+While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization's subscription plan. Please be mindful of your subscription to manage costs effectively.
+
+{{< /alert >}}
+
 {{< cardpane >}}
 
 {{% card header="## Learner" %}}
@@ -70,10 +75,6 @@ tags: [academy, roles]
 **How many instances of these roles?**
 
 - Min: 0, Max: many
-
-{{ alert title="Note" color="info" }}
-While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization's subscription plan. Both are paid roles with different pricing. Please be mindful of your subscription to manage costs effectively.
-{{ /alert }}
 
 **Who can remove assignment of this role?**
 
