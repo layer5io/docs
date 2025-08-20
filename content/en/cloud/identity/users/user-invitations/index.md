@@ -7,7 +7,7 @@ categories: [Identity]
 tags: [users]
 ---
 
-The new invitation system gives you precise control over how members join your community, allowing you to streamline onboarding and enhance security.
+The new invitation system gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.
 
 You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.
 
@@ -19,14 +19,14 @@ The invitation system provides three main areas of control to help you manage ac
 Tailor each invitation to your specific needs with three flexible modes:
 - Precise invitation: Target a single user by specifying their full email address.
 - Domain-wide invitation: Onboard an entire organization at once by allowing any email from a specific domain (e.g., `*@layer5.io`).
-- Public invitation: Leave the email field blank to create an open link for public events (e.g., Academy Challenge invites).
+- Public invitation: Leave the email field blank to create an open link for public events (e.g., Academy Challenge invitations).
 
 {{< alert type="warning" title="Use domain wildcards carefully" >}}
-Patterns like `*@company.com` allow anyone with that domain. Verify ownership and pair with roles/teams that grant only necessary access.
+Patterns like `*@company.com` allow anyone with that domain. Verify ownership and pair with roles and teams that grant only necessary access.
 {{< /alert >}}
 
 #### Control the invitation lifecycle
-Manage access with security settings that put you in control:
+Manage access with settings that put you in control:
 - Expiration date: Set a specific date and time for an invitation to automatically become invalid.
 - Usage quota: Limit the number of times an invitation can be used.
 
@@ -59,7 +59,7 @@ The invitation system offers flexible configurations to fit a variety of use cas
 
 #### Scenario 1: Inviting a single team member
 
-- Goal: Provide a new employee with a secure, single-use invitation that grants correct initial permissions.
+- Goal: Provide a new employee with a secure, single-use invitation that grants the correct initial permissions.
 - Configuration:
   - Email: Set to the new member's specific email.
   - Roles: Assign their specific role (e.g., `Developer`).
@@ -75,7 +75,7 @@ The invitation system offers flexible configurations to fit a variety of use cas
 
 #### Scenario 3: Launching a community challenge
 
-- Goal: Create a public sign-up link for a limited-time community event with a maximum number of participants.
+- Goal: Create a public signup link for a limited-time community event with a maximum number of participants.
 - Configuration:
   - Email: Leave blank for public access.
   - Name: Give it a clear name like "Layer5 Challenge 2025".
