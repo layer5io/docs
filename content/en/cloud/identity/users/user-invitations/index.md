@@ -9,7 +9,7 @@ tags: [users]
 
 The new invitation system gives you precise control over how members join your community, allowing you to streamline onboarding and enhance security.
 
-You xx create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.
+You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.
 
 ### Key capabilities
 
@@ -22,7 +22,7 @@ Tailor each invitation to your specific needs with three flexible modes:
 - Public invitation: Leave the email field blank to create an open link for public events (e.g., Academy Challenge invites).
 
 {{< alert type="warning" title="Use domain wildcards carefully" >}}
-Emails like `*@company.com` trust anyone with that domain. Verify ownership and pair with roles/teams that grant only necessary access.
+Patterns like `*@company.com` allow anyone with that domain. Verify ownership and pair with roles/teams that grant only necessary access.
 {{< /alert >}}
 
 #### Control the invitation lifecycle
@@ -35,7 +35,7 @@ If `expiresAt` is not set, the invitation never expires. If `quota` is not set, 
 {{< /alert >}}
 
 #### Manage invitations dynamically
-Instantly revoke access for a completed project by switching an invitation's status between enabled and disabled at any time.
+Instantly revoke access by switching an invitation's status between enabled and disabled at any time.
 
 <!-- ### How to create an invitation -->
 
@@ -70,18 +70,18 @@ The invitation system offers flexible configurations to fit a variety of use cas
 
 - Goal: Allow all employees from your company to join using their corporate email without individual invitations.
 - Configuration:
-  - Email: Use a domain pattern to cover all employees (e.g., `*@your-company.com`).
-  - Roles: Assign a default role for all new members (e.g., `Member`).
+  - Email: Use a domain pattern to cover all employees.
+  - Roles: Assign a default role for all new members.
 
 #### Scenario 3: Launching a community challenge
 
 - Goal: Create a public sign-up link for a limited-time community event with a maximum number of participants.
 - Configuration:
   - Email: Leave blank for public access.
-  - Name: Give it a clear name like "Q4 Community Challenge 2025".
+  - Name: Give it a clear name like "Layer5 Challenge 2025".
   - Expiration date: Set to the date and time the challenge registration closes.
-  - Quota: Set to the maximum number of participants (e.g., `200`).
-  - Roles: Assign a temporary role like `Challenger`.
+  - Quota: Set to the maximum number of participants (e.g., `100`).
+  - Roles: Assign a temporary role like `Learner`.
 
 {{< alert type="info" title="Managing learner costs" >}}
 The available seats for learners are determined by your organization's subscription plan. Please be mindful of your subscription to manage costs effectively.
@@ -89,11 +89,11 @@ The available seats for learners are determined by your organization's subscript
 
 #### Scenario 4: Granting temporary partner access
 
-- Goal: Give an external partner or contractor secure access to specific resources only for the duration of a project.
+- Goal: Give an external partner secure access to specific resources only for the duration of a project.
 - Configuration:
-  - Email: Use the partner's domain (e.g., `*@partner-company.com`).
+  - Email: Use the partner's domain (e.g., `*@partner.com`).
   - Teams: Add them only to a shared project team (e.g., `Project-X-Shared`).
-  - Expiration date: Set to the project's end date to automatically revoke access.
+  - Expiration date: Set to the project's end date to revoke access.
   - Description: Add a note for internal reference, such as "Temporary access for Project X contractors".
 
 {{< alert type="warning" title="Public invitations" >}}
