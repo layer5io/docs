@@ -87,16 +87,6 @@ The platform supports CSS through multiple methods:
 This example demonstrates custom CSS styling within the Academy platform. The styling includes custom colors, padding, borders, and typography.
 {{< /styled-callout >}}
 
-##### Verification Steps
-
-To verify these capabilities work in your Academy content:
-
-1. **Test HTML + Markdown mixing**: Copy the example above into any `.md` file in your Academy content
-2. **Test CSS styling**: Use the `styled-callout` shortcode as shown
-3. **Preview locally**: Run `make site` to see the rendered result
-4. **Production verification**: Deploy to staging to confirm compatibility
-
-
 When properly rendered, you will see:
 - Markdown formatting (bold, italic, links) processed within HTML elements
 - Custom CSS styles applied (colors, spacing, borders)
@@ -173,7 +163,9 @@ This is a styled callout with custom CSS.
 
 ##### Advanced Hugo Features
 
+{{< alert type="info" title="Email Customization" >}}
 The Layer5 Academy platform supports all Hugo shortcode features. For more advanced functionality, see the [Hugo documentation](https://gohugo.io/content-management/shortcodes/). 
+{{< /alert >}}
 
 ### Branded Email Communications
 
