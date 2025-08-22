@@ -12,7 +12,7 @@ aliases:
 ## Steps to cloning a design from Catalog using Kanvas
 
 1. Switch to Kanvas Designer mode, if not already in it.
-1. In the left File menu, click New → From a template.
+1. In the left file menu, click New → From a template.
 1. Select a design from the list that appears in the panel.
 1. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
 
