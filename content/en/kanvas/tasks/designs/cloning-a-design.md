@@ -23,7 +23,7 @@ aliases:
 This will create a copy of the catalog item to a new design, now owned by you.
 
 1. Click “clone” and a copy of the design will appear on your Kanvas canvas. You can then configure the design to suit your purposes.
-2. Find your newly cloned design in the list of designs in the  Open Recents.
+2. Find your newly cloned designs in the list under 'Open Recents' at the top profile icon.
 
 ![Copy of a Design](/kanvas/getting-started/images/cloning-design/OpenRecents.jpg)
 
