@@ -28,12 +28,22 @@
 -->
 {{ $id := .Get "id" }}
 
+<!-- get the design id from the id  , the id contains embedded-design- as prefix  -->
+{{ $designId := replace $id "embedded-design-" "" }}
+
+
+<!-- get the hostname for provider -->
+{{ $remoteProviderHost := .Get "host" | default "https://cloud.layer5.io" }}
+<!-- create design link -->
+{{ $designLink := printf "%s/catalog/content/design/%s" $remoteProviderHost $designId }}
+
 <!-- 
   Retrieve the size for the embedding container.
   If not provided, "full" is used as default.
 -->
 {{ $size := .Get "size" | default "full" }}
 {{ $style := .Get "style" }}
+{{ $showOpenLink := .Get "showOpenLink" | default "true" }}
 
 <style>
 .meshery-embed-container {
@@ -54,6 +64,7 @@
   width: 100%;
   height: 100%;
 }
+
 </style>
 
 <!-- 
@@ -66,6 +77,7 @@
       - Width: 100% (responsive to container width)
       - Border: 1px solid #eee (light border for visibility)
 -->
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
 <div
     id="{{ $id }}"
     {{- if $style -}}
@@ -74,6 +86,12 @@
         class="meshery-embed-container {{ $size }}"
     {{- end -}}
 ></div>
+
+<a href="{{ $designLink }}" target="_blank" rel="noopener noreferrer">
+  Open Design
+</a>
+
+</div>
 
 <!-- 
   Embed Script: 
