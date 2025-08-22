@@ -145,6 +145,11 @@ Now, inside your academy repository, you should see the following top-level fold
  tags: [kubernetes, infrastructure]
  categories: "cloud"
  level: "beginner"
+ badge: 
+    png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+    svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+    title: "Layer5 Certified"
+    description: "Earn the Certification badge to showcase your expertise in Layer5 cloud services."
  ---
  ```
 
@@ -176,11 +181,13 @@ Now, inside your academy repository, you should see the following top-level fold
  | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
  | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
  | All                           | `type`        |    ✅     | Defines the content's role. Optional values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
- | **Learning Path**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
  | **Learning Path** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
+ | **Learning Path** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., layer5-badge.svg).|
+ | **Learning Path**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+ | **Learning Path**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
  | **Learning Path**, **Course**, **module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
  | **Learning Path**, **Course**, **module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
- | **Learning Path**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
+
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
@@ -430,4 +437,38 @@ Use AWS S3 with signed URLs:
 ```html
 <video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
 ```
+</details>
+
+<details>
+  <summary>8. How do I debug using Layer5 Cloud Events?</summary>
+
+If your content is not appearing in the Academy after a GitHub release, it may have failed to publish. You can troubleshoot these issues using the **Events** section in [Layer5 Cloud](https://cloud.layer5.io).
+ 
+To view publishing logs:
+1. Navigate to **Settings > Events**
+2. Switch to the **Audit** tab
+3. Apply a filter using the action type:
+ `AcademyUpserted`
+This will show all attempts to upload content, including which ones failed and why.
+
+**Common Errors You Might See**
+- **Duplicate IDs**  
+  Two lessons or paths using the same identifier. You can fix this by renaming or regenerating unique IDs.
+
+- **Invalid Content Type**  
+  For example,
+  Instead of
+ ```yaml
+  type: "learning-paths"  
+  ``` 
+ it should be:
+ ```yaml
+ type: "learning-path"   
+ ```
+- **Missing Required Fields**
+ Ensure that title, description, and type are included in the content’s frontmatter.
+
+ {{< alert type="info" title="Tip" >}}
+ Use the event filter `AcademyRegisteredToContent` to track user activity, like who enrolled in which learning path.
+ {{< /alert >}}
 </details>

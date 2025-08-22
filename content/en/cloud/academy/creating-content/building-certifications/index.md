@@ -93,6 +93,11 @@ weight: 1
 tags: [layer5, cloud, infrastructure]
 level: "beginner"
 categories: "platform"
+badge: 
+    png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+    svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+    title: "Layer5 Certified"
+    description: "Earn the Certification badge to showcase your expertise in Layer5 cloud services."
 ---
 ```
 
@@ -107,10 +112,11 @@ categories: "platform"
 | `title` | ✅  | The human-readable title that will be displayed to users. |
 | `description` | ✅  | A comprehensive summary of the certification's scope and objectives. |
 | `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
-| `banner` | - | Path to an image in the `static` folder, e.g., `images/icon.svg`. |
+| `banner` | - | Path to a banner image located in the same folder (Page Bundle).  |
 | `tags` | - | Keywords for content discovery. Multiple tags can be selected. |
 | `level` | - | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
 | `categories` | - | A string that assigns the certification to a specific category. |
+| `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., layer5-badge.svg).|
 
 ### 3. Add Content and Exams
 

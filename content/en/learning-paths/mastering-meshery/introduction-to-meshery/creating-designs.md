@@ -138,7 +138,7 @@ To view the design on the canvas:
 
 For enhanced collaboration and scalability, merge existing designs into your canvas by dragging and dropping. This feature enables you to consolidate multiple designs, creating a unified and comprehensive view of your infrastructure. 
 
-Kanvas orchestrates the merging process internally, creating a unified design that incorporates components from the dragged designs. Importantly, users do not lose their original designs during the merging process. Kanvas retains records of each design, preserving their individuality. To learn how to merge designs, see [Merging Designs](https://docs.meshery.io/extensions/merging-design).
+Kanvas orchestrates the merging process internally, creating a unified design that incorporates components from the dragged designs. Importantly, users do not lose their original designs during the merging process. Kanvas retains records of each design, preserving their individuality. To learn how to merge designs, see [Merging Designs](https://docs.layer5.io/kanvas/getting-started/starting-scratch/#step-8-merging-designs).
 
 <h2 class="chapter-sub-heading">Conclusion</h2>
 
