@@ -7,7 +7,7 @@ categories: [Identity]
 tags: [users]
 ---
 
-The new invitation system gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.
+The [invitation system](https://cloud.layer5.io/identity/invitations) gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.
 
 You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.
 
@@ -37,11 +37,13 @@ If `expiresAt` is not set, the invitation never expires. If `quota` is not set, 
 #### Manage invitations dynamically
 Instantly revoke access by switching an invitation's status between enabled and disabled at any time.
 
-<!-- ### How to create an invitation -->
+### How to create an invitation
 
-<!-- ### Managing existing invitations -->
+To create a new invitation, navigate to the [Invitations page](https://cloud.layer5.io/identity/invitations) from the main menu. Click the **Create Invitation** button to open the creation dialog.
 
-### Invitation properties explained
+<img src="./images/create-invitation.png" alt="Create Invitation Dialog" style="width:30%; height:auto;" />
+
+#### Invitation properties explained
 
 | Property | Description |
 | :--- |  :--- |
@@ -53,9 +55,25 @@ Instantly revoke access by switching an invitation's status between enabled and 
 | `roles` | List of roles automatically assigned to new members upon accepting the invitation. |
 | `teams` | List of teams new members are automatically added to upon accepting the invitation. |
 
+### Managing existing invitations
+
+All existing invitations are displayed in a table that shows key invitation information.
+
+![Invitations Overview Table ](./images/overview.png)
+
+From this overview table, you can perform several management actions:
+
+* **Copy Link**: Click the copy icon to copy the invitation URL for sharing.
+* **Edit Invitation**: Click the pencil icon to open the edit dialog and modify invitation properties.
+* **Change Status**: Toggle between `Enabled` and `Disabled` to control whether the invitation can be accessed by users.
+
 ### Use cases and examples
 
 The invitation system offers flexible configurations to fit a variety of use cases.
+
+{{< alert type="info" title="How Invitation Links Handle Logins" >}}
+When a user who is not logged in clicks an invitation link, the system temporarily saves the invitation ID in a 30-minute cookie and redirects them to the login page. After a successful login, the system reads the cookie and seamlessly guides them back to complete the invitation acceptance process.
+{{< /alert >}}
 
 #### Scenario 1: Inviting a single team member
 
