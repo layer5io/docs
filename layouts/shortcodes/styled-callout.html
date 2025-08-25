@@ -1,0 +1,12 @@
+<style>
+.custom-callout { 
+  padding: 1rem; 
+  margin: 1rem 0; 
+  border-radius: 8px; 
+  border-left: 20px solid #007bff;
+  background: #39393a;
+}
+</style>
+<div class="custom-callout">
+  <strong>{{ .Get "title" | default "Note" }}:</strong> {{ .Inner }}
+</div>
