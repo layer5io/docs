@@ -1,76 +1,61 @@
 ---
-title: "REST APIs EXAMPLES"
+title: "REST APIs Examples"
 weight: 5
 description: >
-  An advanced guide to how to use our Academy REST API to retrieve various statistics / information.
+  An advanced guide to how to use our Academy REST APIs to retrieve various statistics/information.
 categories: [Academy]
 
 ---
 
-The following examples demonstrate how to retrieve statistics from the Academy REST API.
+The following examples demonstrate how to retrieve information from the Academy REST APIs.
 
-## Get the number of active learners 
+## Get the total number of registered learners in Academy
 
-Use the Layer5 Cloud API to retrieve the number of *active* learners. Pass your [security token](https://docs.layer5.io/cloud/security/tokens/) as a Bearer token in the `Authorization` header (as shown in [Authenticating with API](https://docs.layer5.io/cloud/reference/api-reference/#authenticating-with-the-api)). The response JSON includes an array of user objects.
 
-## Example: cURL Request
+Use the Layer5 Cloud API to retrieve the *total* number of registered learners. Pass your [Security Token](https://docs.layer5.io/cloud/security/tokens/) as a Bearer token in the `Authorization` header (as shown in [Authenticating with API](https://docs.layer5.io/cloud/reference/api-reference/#authenticating-with-the-api)). The response JSON includes an array of user objects.
 
-```bash
-curl -s -X GET "https://cloud.layer5.io/api/identity/users/online" \
-  -H "Authorization: Bearer <your-token>” \
-  | jq 'length'
-```
 
-This returns the number of active learners.
-```
-30
-``` 
+{{< tabpane >}}
+{{< tab header="cURL"  >}}
+curl -s -X GET "https://cloud.layer5.io/api/academy/cirricula"  \
+ -H "Authorization: Bearer <Your-Token>"  \
+  | jq '[.data[].registration_count] | add'
 
-## Example: JavaScript (Node.js)
+{{< /tab >}}
 
-```javascript
-const token = "your-token"
+{{< tab header="JavaScript" >}}
 
-fetch("https://cloud.layer5.io/api/identity/users/online", {
-  headers: { "Authorization": "Bearer " + token }
-})
-  .then(res => res.json())
-  .then(users => {
-    console.log("Active learners:", users.length);
-    // users is an array of {id, user_id, first_name, last_name, ...}
+const token = "Your-Token"
+
+async function getTotalLearners() {
+  const res = await fetch("https://cloud.layer5.io/api/academy/cirricula", {
+    headers: { Authorization: `Bearer ${token}` },
   });
-```
+  const data = await res.json();
+  const total = data.data.reduce((sum, path) => sum + path.registration_count, 0);
+  console.log(total);
+}
 
-This will print the number of active learners like this:
+getTotalLearners();
 
-```
-30
-```
+{{< /tab >}}
 
-## Example: Python Client
+{{< tab header="Python" >}}
 
-```python
 import requests
 
-url = "https://cloud.layer5.io/api/identity/users/online"
-headers = {"Authorization": "Bearer <your-token>"}
+url = "https://cloud.layer5.io/api/academy/cirricula"
+headers = {"Authorization": "Bearer <Your-Token>"}
 
-resp = requests.get(url, headers=headers)
-online_users = resp.json()
-print("Active Learners:", len(online_users))
+res = requests.get(url, headers=headers)
+data = res.json()
+total = sum(item["registration_count"] for item in data["data"])
+print(total)
 
-```
+{{< /tab >}}
 
-This will output:
+{{< tab header="Golang" >}}
 
-```
-Active Learners: 30
-```
-
-
-## Example: Go
-
-```go
 package main
 
 import (
@@ -80,28 +65,47 @@ import (
 	"net/http"
 )
 
+type Path struct {
+	RegistrationCount int `json:"registration_count"`
+}
+
+type Response struct {
+	Data []Path `json:"data"`
+}
+
 func main() {
-	url := "https://cloud.layer5.io/api/identity/users/online"
+	url := "https://cloud.layer5.io/api/academy/cirricula"
+
 	req, _ := http.NewRequest("GET", url, nil)
 	req.Header.Set("Authorization", "Bearer <your-token>")
 
 	client := &http.Client{}
-	resp, _ := client.Do(req)
-	defer resp.Body.Close()
+	res, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer res.Body.Close()
 
-	body, _ := io.ReadAll(resp.Body)
-	var users []map[string]interface{}
-	json.Unmarshal(body, &users)
+	body, _ := io.ReadAll(res.Body)
 
-	fmt.Println("Active users:", len(users))
+	var response Response
+	if err := json.Unmarshal(body, &response); err != nil {
+		panic(err)
+	}
+
+	total := 0
+	for _, path := range response.Data {
+		total += path.RegistrationCount
+	}
+
+	fmt.Println(total)
 }
 
+{{< /tab >}}
+
+{{< /tabpane >}}
+
+This returns the number of Total registered learners:
 ```
-
-This will output something like:
-
-```
-Active users: 30
-```
-
-
+130
+``` 
