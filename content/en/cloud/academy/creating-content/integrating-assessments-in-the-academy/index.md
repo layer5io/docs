@@ -109,7 +109,7 @@ Each assessment file must contain the following YAML frontmatter:
 ---
 title: "Assessment Example"
 id: "assessment-id"                 
-passing_percentage: 70               
+pass_percentage: 70               
 type: "test"
 layout: "test"
 is_optional: true                 
@@ -136,7 +136,7 @@ questions:
 | :--- | :--- | :--- | :--- |
 | **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
 | | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
-| | `passing_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
+| | `pass_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
 | | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
 | | `layout` | - | Metadata type for the assessment. The value must be `test`. |
 | | `is_optional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
@@ -332,13 +332,13 @@ Instructions can be override in frontmatter by defining a custom intruction for 
 
 ## Scoring
 
-The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passing_percentage` for the assessment. Here is how the system processes the scores:
+The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `pass_percentage` for the assessment. Here is how the system processes the scores:
 
 ### How Scores Are Calculated
 
 1.  **Total Possible Marks**: The total score for a assessment is automatically calculated by summing the `marks` value of every question within that assessment. You do not need to define this total manually.
 2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
-3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passing_percentage` you set, the assessment is marked as "Passed".
+3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `pass_percentage` you set, the assessment is marked as "Passed".
 
 ### Scoring Rules for Question Types
 
