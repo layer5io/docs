@@ -25,7 +25,7 @@ Only Provider Admins and Organization Admins can create users. For more informat
 
 This section explains how to add existing Layer5 Cloud users to one of your organizations or remove them.
 
-![Flow for organization and team membership](/cloud/identity/users/Slide41.svg)
+{{< meshery-design-embed  src="/export-designs/embedded-design-page-open-source.js"  id="embedded-design-066b0ef3-7956-4c3b-a5cc-1d276ac13ec6" >}}
 
 ### Adding a User to an Organization
 
