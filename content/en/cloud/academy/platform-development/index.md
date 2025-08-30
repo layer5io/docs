@@ -26,7 +26,7 @@ This repository is the "skin" for the entire Academy. It controls the website's 
 
 Content repositories automatically import this theme as a Go Module. As a content creator, you do not need to fork or clone this repository; your academy will use these styles by default. 
 
-> Currently, we only support customizing shortcodes in your content repository, not full theme customization.
+> Currently, we only support customizing shortcodes in your content repository, not full theme customization. For requests regarding new archetypes, layouts, or theme enhancements, please open an issue in the [academy-theme repository](https://github.com/layer5io/academy-theme/issues).
 
 ### [academy-example](https://github.com/layer5io/academy-example)
 
