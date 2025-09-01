@@ -52,6 +52,121 @@ For example, a **Learning Path** named **"Mastering Kubernetes"** might contain:
 To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial](/cloud/academy/creating-your-learning-path/).
 {{< /alert >}}
 
+### Advanced Content Features
+
+Create custom Hugo shortcodes, mix HTML with Markdown, and add custom CSS styling to enhance your Academy content.
+
+#### Content Format Support
+
+The Academy platform supports **Markdown + HTML mixing** and **custom CSS styling**.
+
+##### HTML + Markdown Integration
+
+Combine Markdown syntax with HTML elements in the same file:
+
+```markdown
+## Markdown Heading
+
+This is **bold** text in markdown.
+
+<div style="background: #000000ff; padding: 20px;">
+  <h3>HTML Section</h3>
+  <p>This is HTML with **markdown** inside.</p>
+</div>
+```
+
+##### Custom CSS Support
+
+The platform supports CSS through multiple methods:
+
+1. **Inline CSS** (as shown above)
+2. **CSS in shortcodes** (demonstrated below)
+3. **CSS classes** in HTML elements
+
+{{< styled-callout title="Live Example" >}}
+This example demonstrates custom CSS styling within the Academy platform. The styling includes custom colors, padding, borders, and typography.
+{{< /styled-callout >}}
+
+When properly rendered, you will see:
+- Markdown formatting (bold, italic, links) processed within HTML elements
+- Custom CSS styles applied (colors, spacing, borders)
+- Seamless integration without layout conflicts
+- Responsive behavior across different screen sizes
+
+#### Creating Custom Shortcodes
+
+Custom shortcodes are reusable components that enhance Academy content. They function as templates that accept parameters and generate HTML output.
+
+##### Basic Shortcode
+
+**Step 1:** Create the shortcode file in your organization's directory:
+```
+layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
+```
+
+**Step 2:** Define the shortcode template:
+```html
+{{ $names := .Get "names" }}
+<div class="custom shortcode">
+  {{ $names }}
+ Hey! This is a custom shortcode
+</div>
+```
+
+**Step 3:** Use the shortcode in your content:
+```markdown
+{{< custom-org-shortcode names="Alex, Bob, Charely" >}}
+```
+
+**How it works:**
+- `{{ .Get "names" }}` retrieves the "names" parameter
+- The shortcode outputs: "Alex, Bob, Charely Hey! This is a custom shortcode"
+- You can reuse this shortcode throughout your Academy content
+
+##### Shortcode with CSS
+
+Add CSS styling to make shortcodes visually appealing.
+
+**Example:** `layouts/shortcodes/<your-org-uuid>/styled-callout.html`
+```html
+<style>
+.custom-callout { 
+  padding: 1rem; 
+  margin: 1rem 0; 
+  border-radius: 4px; 
+  border-left: 4px solid #007bff;
+  background: #f8f9fa;
+}
+</style>
+<div class="custom-callout">
+  <strong>{{ .Get "title" | default "Note" }}:</strong> {{ .Inner }}
+</div>
+```
+
+**Usage:**
+```markdown
+{{</* styled-callout title="Custom CSS Example" */>}}
+This is a styled callout with custom CSS.
+{{</* /styled-callout */>}}
+```
+
+**Result:**
+{{< styled-callout title="Custom CSS Example" >}}
+This is a styled callout with custom CSS.
+{{< /styled-callout >}}
+
+**How CSS works in shortcodes:**
+- `<style>` tags define the visual appearance
+- `.custom-callout` creates a CSS class for styling
+- The shortcode applies padding, margins, colors, and borders
+- `{{ .Inner }}` displays the content between opening and closing shortcode tags
+
+##### Advanced Hugo Features
+
+{{< alert type="info" title="Email Customization" >}}
+The Layer5 Academy platform supports all Hugo shortcode features. For more advanced functionality, see the [Hugo documentation](https://gohugo.io/content-management/shortcodes/). 
+{{< /alert >}}
+
 ### Branded Email Communications
 
 When using the Academy with [white-labeling](/cloud/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
@@ -85,4 +200,3 @@ When users click the badge, they will go to the details in the Academy:
 {{< alert type="info" title="Email Customization" >}}
 Email templates automatically incorporate your organization's logo and primary brand color as configured in your [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations). Custom email templates can be provided for Enterprise customers with specific branding requirements.
 {{< /alert >}}
-

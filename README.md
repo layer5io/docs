@@ -41,18 +41,6 @@ Explore tutorials and documentation by product in the https://docs.layer5.io web
 
 If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
-### Running the Site Locally
-
-The website can be run locally through Golang (Hugo) or Docker. If you choose to run through Docker, everything will be a little bit slower due to the additional overhead, so for frequent contributors it may be worth it to use Golang.
-
-### With Docker
-
-Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
-
-> [!IMPORTANT]  
-> This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
-> Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
-
 ### With Golang
 
 If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended Hugo version as it has necessary SCSS/SASS support. Find all the Hugo packages here: <https://github.com/gohugoio/hugo/releases/tag/v0.120.4>
@@ -65,6 +53,15 @@ Now to setup and run the site locally run:
 
 If you pull down new code from GitHub, you will occasionally need to run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
+### With Docker
+
+Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
+
+> [!IMPORTANT]  
+> This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
+> Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
+
+
 ## Layer5 Documentation Structure
 
 ## High-Level Outline & Information Architecture for Layer5 Documentation
@@ -76,7 +73,8 @@ If you pull down new code from GitHub, you will occasionally need to run `make s
 - **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
 - **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
 
-## Cloud Docs
+<details>
+  <summary><h2>Cloud Docs</h2></summary>
 
 ### Getting Started
 
@@ -122,7 +120,9 @@ Keep your Kanvas designs internal to your workplace. Get remote support from Lay
 
 Low-level ReST API reference for extending Layer5 Cloud.
 
-## Kanvas Docs
+</details>
+<details>
+  <summary><h2>Kanvas Docs</h2>
 
 ### Getting Started with Designs
 
@@ -148,14 +148,14 @@ Operator mode is for operating your Kubernetes clusters and cloud native infrast
 ### Core Tasks
 
 - **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
-
 - **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying Designs, Cloning a Design
 
 ### Reference
 
 - **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
-
 - **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
+
+</details>
 
 ### Contribution Guidelines
 
