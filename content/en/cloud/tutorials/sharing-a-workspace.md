@@ -19,7 +19,8 @@ In your browser, go to [Layer5 Cloud](https://cloud.layer5.io).
 2. Click Share.
 3. Enter the email addresses of the individual(s) you want to share with.
 
-![Flow for sharing designs](/cloud/catalog/images/Slide51.svg)
+{{< meshery-design-embed  src="/export-designs/embedded-design-kanvas.js"  id="embedded-design-f4e8757d-3dbb-464f-bb6d-39597fd49a47" >}}
+
 
 ## Stop, limit, or change Workspace sharing
 
