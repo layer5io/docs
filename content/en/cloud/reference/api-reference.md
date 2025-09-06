@@ -30,3 +30,6 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 {{< alert type="info" >}}
 <a href="https://cloud.layer5.io/system/api/docs">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
 {{< /alert >}}
+
+## API Examples
+See [Academy REST API Examples](/cloud/academy/rest-apis-examples/) for working code snippets in cURL, JavaScript, Python, and Go.
