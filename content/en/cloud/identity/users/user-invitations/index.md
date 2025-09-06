@@ -43,17 +43,23 @@ To create a new invitation, navigate to the [Invitations page](https://cloud.lay
 
 <img src="./images/create-invitation.png" alt="Create Invitation Dialog" style="width:30%; height:auto;" />
 
+After the invitation is created, the invitee will receive an email with the invitation details.
+
+<img src="./images/invitation-email.png" alt="Invitation Email" style="width:50%; height:auto;" />
+
+
 #### Invitation properties explained
 
 | Property | Description |
 | :--- |  :--- |
-| `name` |  A name used to identify the invitation. |
-| `description` | Additional information about the invitation's purpose. |
-| `emails` |  List of email addresses or domain patterns allowed to use the invitation. If empty, the invitation is public. |
-| `expiresAt` |  Date when the invitation becomes invalid. If not set, it never expires. |
-| `quota` | Number that limits how many users can accept the invitation. If not set, there's no usage limit. |
+| `emails` | List of email addresses or domain patterns allowed to use the invitation. If empty, the invitation is public. |
 | `roles` | List of roles automatically assigned to new members upon accepting the invitation. |
 | `teams` | List of teams new members are automatically added to upon accepting the invitation. |
+| `quota` | Number that limits how many users can accept the invitation. If not set, there's no usage limit. |
+| `expiresAt` | Date when the invitation becomes invalid. If not set, it never expires. |
+| `status` | Invitation status: enabled = active/usable; disabled = inactive (can be re-enabled later). |
+| `name` | A name used to identify the invitation. |
+| `description` | Additional information about the invitation's purpose. |
 
 ### Managing existing invitations
 
@@ -65,7 +71,7 @@ From this overview table, you can perform several management actions:
 
 * **Copy Link**: Click the copy icon to copy the invitation URL for sharing.
 * **Edit Invitation**: Click the pencil icon to open the edit dialog and modify invitation properties.
-* **Change Status**: Toggle between `Enabled` and `Disabled` to control whether the invitation can be accessed by users.
+* **Delete Invitation**: Click the trash icon to delete the invitation.
 
 ### Use cases and examples
 
@@ -117,3 +123,11 @@ The available seats for learners are determined by your organization's subscript
 {{< alert type="warning" title="Public invitations" >}}
 Public links can be forwarded broadly. Always set an expiration date and a quota.
 {{< /alert >}}
+
+#### Scenario 5: Onboarding a new training coordinator
+
+See detailed example in [Academy Admin invitations](../../../academy/using-the-academy/#academy-admin).
+
+#### Scenario 6: Enrolling new employees in company training program
+
+See detailed example in [Academy Learner invitations](../../../academy/using-the-academy/#academy-learner).
