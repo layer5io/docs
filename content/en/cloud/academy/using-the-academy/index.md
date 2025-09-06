@@ -1,5 +1,5 @@
 ---
-title: Using the Academy
+title: Learner Guide
 weight: 2
 description: >
   Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
