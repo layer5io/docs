@@ -48,6 +48,30 @@ entries:
     version: 0.39.1
   layer5-cloud:
   - apiVersion: v2
+    appVersion: v0.8.434
+    created: "2025-09-08T07:15:49.652908854Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: file://charts/postgresql
+      version: 14.0.1
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.45.0
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.24.2
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: 9646d6cef2bb27c751d5edbfd6634d9f18cafdbde94ab233421f86c01fe4c3bd
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/charts/layer5-cloud-v0.8.434.tgz
+    version: v0.8.434
+  - apiVersion: v2
     appVersion: v0.8.433
     created: "2025-09-06T13:26:58.500684998Z"
     dependencies:
@@ -3351,4 +3375,4 @@ entries:
     urls:
     - https://docs.layer5.io/charts/layer5-cloud-v0.8.235.tgz
     version: v0.8.235
-generated: "2025-09-06T13:26:58.484428827Z"
+generated: "2025-09-08T07:15:49.63737985Z"
