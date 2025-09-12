@@ -110,34 +110,46 @@ This is Meshery's native format and provides a lossless way to save and import y
 
 ## Frequently Asked Questions
 
-### What happens if I drag and drop multiple files onto Kanvas at once?
-
+<details>
+  <summary>What happens if I drag and drop multiple files onto Kanvas at once?</summary>
+  
 Each supported file will be imported as a separate, new design. For example, if you drag three different Kubernetes manifest files onto Kanvas, three distinct designs will be created.
+</details>
 
-### What happens if I select multiple files in the File Upload dialog?
-
+<details>
+  <summary>What happens if I select multiple files in the File Upload dialog?</summary>
+  
 The "File Upload" dialog is designed to process one file or package at a time. If you select multiple files in your operating system's file browser, only the last file in the selection will be processed for import. To import from multiple files, please import them individually.
+</details>
 
-### After importing a file, can I download my original, unaltered file?
-
+<details>
+  <summary>After importing a file, can I download my original, unaltered file?</summary>
+  
 No. When a file is imported, it is converted into a native Meshery Design. The original source file is not stored and cannot be downloaded later. The export function will generate a new file based on the **current** state of your design.
-
 > For more details, see the [Exporting Designs](/kanvas/designer/export-designs/) guide.
 
-### When I import from a Kubernetes manifest, Helm chart, or other type, and choose to merge this file into an existing design, can I download my original file?
+</details>
 
+
+<details>
+  <summary>When I import from a Kubernetes manifest, Helm chart, or other type, and choose to merge this file into an existing design, can I download my original file?</summary>
+  
 When you choose to **merge** a new design into an existing one, Meshery first creates a separate design from your imported file before performing the merge. You can find this newly created design on your [My Designs](https://cloud.layer5.io/catalog/content/my-designs) page.
+</details>
 
-### Are there any differences, limitations, or special requirements for importing via File Upload, URL, or the GitHub Integration?
-
+<details>
+  <summary>Are there any differences, limitations, or special requirements for importing via File Upload, URL, or the GitHub Integration?</summary>
+  
 Yes. File Upload and URL Import are simple, one-time actions for importing a single design. In contrast, the **GitHub Integration** creates a deep, persistent connection to your GitHub account.
 
 It requires you to authorize the Meshery GitHub App, which then allows you to browse your repositories and select designs directly from the Meshery UI. Most importantly, this integration can enable a GitOps workflow by adding a GitHub Action to your repository that provides visual snapshots of design changes in your pull requests.
+</details>
 
-### Is there a file size limit for imported designs?
-
+<details>
+  <summary>Is there a file size limit for imported designs?</summary>
+  
 There is no strict limit on the file size itself (e.g., in MB). However, there are limits on the number of **components** a design can contain, which is determined by your current subscription plan. Free accounts are limited to 100 components.
 
 If you attempt to import a design that contains more components than your plan allows, the import will fail with a message stating that the component limit has been exceeded.
-
 > Learn more about [plans](https://layer5.io/pricing).
+</details>

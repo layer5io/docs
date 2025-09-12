@@ -115,24 +115,44 @@ Note:
 
 ## Frequently Asked Questions
 
-**Q. Can I re-import a Helm Chart or Kubernetes manifest into Meshery for editing?** 
-
+<details>
+  <summary>Can I re-import a Helm Chart or Kubernetes manifest into Meshery for editing?</summary>
+  
 You can import the resources, but design-time metadata (layout, annotations) is lost, so the graph will not reappear as originally designed.
+</details>
 
-**Q. What gets removed in a lossy export?**  
+<details>
+  <summary>What gets removed in a lossy export?</summary>
+  
 Layout coordinates, visual grouping, comments, and any Meshery-only metadata.
+</details>
 
-**Q. Is the Helm `.tar.gz` ready for `helm install`?**  
+<details>
+  <summary>Is the Helm `.tar.gz` ready for `helm install`?</summary>
+  
 Yes. After export, run `helm install <release> <chart.tgz>` or add it to a Helm repo.
+</details>
 
-**Q. Should I use Helm Chart or OCI image for sharing?**  
+<details>
+  <summary>Should I use Helm Chart or OCI image for sharing?</summary>
+  
 Use Helm if your consumers deploy via Helm; use OCI if you rely on container registries for versioning.
+</details>
 
-**Q. Do I need to be logged in to export a design?**  
+<details>
+  <summary>Do I need to be logged in to export a design?</summary>
+  
 No, login is not required. You can export as a guest user.
+</details>
 
-**Q. Can I export someone else's published design?**  
+<details>
+  <summary>Can I export someone else's published design?</summary>
+  
 Yes. Any published design can be exported, not just your own.
+</details>
 
-**Q. Where does the exported file go?**  
+<details>
+  <summary>Where does the exported file go?</summary>
+  
 After export, your browser will either prompt you to choose a save location or automatically download the file to your default downloads folder.
+</details>
