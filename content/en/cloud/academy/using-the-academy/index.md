@@ -1,5 +1,5 @@
 ---
-title: Using the Academy
+title: Learner Guide
 weight: 2
 description: >
   Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
@@ -7,6 +7,7 @@ categories: [Academy]
 tags: [Academy]
 aliases: 
 - /cloud/academy/learner-guide/
+- /cloud/academy/using-the-academy/
 ---
 
 This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.

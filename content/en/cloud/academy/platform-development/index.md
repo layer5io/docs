@@ -1,12 +1,13 @@
 ---
-title: "Platform Development"
+title: "Platform Development Guide"
 weight: 5
 description: >
   An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
 categories: [Academy]
 aliases: 
 - /cloud/academy/advanced-contribution-guide/
-- /cloud/academy/platform-development-guide/
+- /cloud/academy/platform-development/
+
 ---
 
 This guide walks you through the Layer5 Academy platform's multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.
