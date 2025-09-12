@@ -183,6 +183,10 @@ Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It 
 
 Frequently asked questions about white labeling.
 
+**Do I need to self-host Layer5 Cloud in order to white-label it?**
+
+No, you can access and use all the same custom theming, custom dashboards, and organization preferences from the hosted version of Layer5 Cloud as well.
+
 **Do users have to use my custom URL to access the Organization?**
 
 No. In addition to your custom URL, you'll always be able to log in from our website and access your Organization from <https://cloud.layer5.io>.
