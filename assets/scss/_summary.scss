@@ -11,7 +11,10 @@ details {
     font-size: 1rem;
     padding: 0rem 1.5rem 0rem 1.5rem;
     & > h6 { color: $blonde};
-    & > p { color: $body-color};
+    & > p {
+      color: $body-color;
+      margin-top: 1rem;
+    }
   }
   
   summary {
