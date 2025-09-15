@@ -179,18 +179,28 @@ $ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
 <!-- FUTURE: SUPPORT FOR HTTPS 
 Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It can take up to 24 hours before this option is available. -->
 
-## White Label FAQ
+## Frequently asked questions about white labeling
 
-Frequently asked questions about white labeling.
+<details>
+  <summary>Do I need to self-host Layer5 Cloud in order to white-label it?</summary>
+  
+No, you can access and use all the same custom theming, custom dashboards, and organization preferences from the hosted version of Layer5 Cloud as well.
+</details>
 
-**Do users have to use my custom URL to access the Organization?**
-
+<details>
+  <summary>Do users have to use my custom URL to access the Organization?</summary>
+  
 No. In addition to your custom URL, you'll always be able to log in from our website and access your Organization from <https://cloud.layer5.io>.
+</details>
 
-**When I send someone a link that includes my custom URL, do they need to be logged in?**
-
+<details>
+  <summary>When I send someone a link that includes my custom URL, do they need to be logged in?</summary>
+  
 Yes. Users will need to be signed in through your custom URL (not through cloud.layer5.io) in order to open links that include your custom URL. Users who are not logged in can quickly do so, and subsequently, be redirected to the link you have shared.
+</details>
 
-**Why does the custom domain work for my colleagues but not for me?**
-
+<details>
+  <summary>Why does the custom domain work for my colleagues but not for me?</summary>
+  
 This issue could potentially be related to your local network environment. It's possible that a local proxy client, VPN, or network accelerator on your computer might be intercepting the network request before it can reach the public internet.
+</details>
