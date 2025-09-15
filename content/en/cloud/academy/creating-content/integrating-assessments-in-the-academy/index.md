@@ -109,7 +109,7 @@ Each assessment file must contain the following YAML frontmatter:
 ---
 title: "Assessment Example"
 id: "assessment-id"                 
-passing_percentage: 70               
+pass_percentage: 70               
 type: "test"
 layout: "test"
 is_optional: true                 
@@ -136,7 +136,7 @@ questions:
 | :--- | :--- | :--- | :--- |
 | **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
 | | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
-| | `passing_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
+| | `pass_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
 | | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
 | | `layout` | - | Metadata type for the assessment. The value must be `test`. |
 | | `is_optional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
@@ -146,6 +146,7 @@ questions:
 | | `text` | ✅  | The text of the question prompt. |
 | | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short_answer`. |
 | | `marks` | ✅  | The number of points awarded for a correct answer. |
+| | `instructions` | -  | Custom instruction for each question |
 | | `options` | - | An array of answer options. |
 
 {{< alert type="warning" title="Quick heads up" >}}
@@ -169,6 +170,7 @@ Layer5 Academy supports three question formats:
         text: "Test single choice question"
         type: "single-answer"             # choose the type
         marks: 1
+        instructions: "Only one option is correct"
         options:
           - id: "a"
             text: "Option A"
@@ -204,6 +206,7 @@ Layer5 Academy supports three question formats:
         text: "Test multiple choice question"
         type: "multiple-answers"             # choose the type
         marks: 2
+        instructions: "More then one answer can be correct"
         options:
           - id: "a"
             text: "Option A"
@@ -233,6 +236,7 @@ Layer5 Academy supports three question formats:
         text: "In Kubernetes, ___ is the default namespace."
         type: "short_answer"                # choose the type
         marks: 2
+        instructions: "Just type the command"
         correct_answer: "default"           # expected answer
 
       - id: "question5"
@@ -283,15 +287,58 @@ A exam is considered final if:
 To ensure the final exam is always clear and uniquely identified, we don't use the `weight` field, which can be ambiguous (e.g., missing or duplicated across files). Instead, we rely on the file path order as a more stable and reliable standard.
 {{< /alert >}}
 
+## About Instructions
+
+Instructions are a way to help or clarify what the question is trying to ask , and user doesnt get confused . 
+
+Instructions are defaultly defined for each question type : 
+- single-answer: Select one answer
+- multiple-answers: Select all that apply
+- short_answer: Type your answer below
+
+
+Instructions can be override in frontmatter by defining a custom intruction for each question.
+
+<details style="margin-bottom: 1em;">
+  <summary>Examples: <code>Instruction</code> </summary>
+
+    ---
+    questions:
+      - id: "question4"
+        text: "In Kubernetes, ___ is the default namespace."
+        type: "short_answer"                
+        marks: 2
+        instructions: "Just type the command" #custom instruction
+        correct_answer: "default"           
+
+      questions:                              # will display the default instructions for question type
+      - id: "question3"
+        text: "Test multiple choice question"
+        type: "multiple-answers"             # choose the type
+        marks: 2
+        options:
+          - id: "a"
+            text: "Option A"
+            is_correct: true    # correct option
+          - id: "b"
+            text: "Option B"
+          - id: "c"
+            text: "Option C"
+            is_correct: true    # correct option
+    ---
+  </code></pre>
+</details>
+  
+
 ## Scoring
 
-The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passing_percentage` for the assessment. Here is how the system processes the scores:
+The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `pass_percentage` for the assessment. Here is how the system processes the scores:
 
 ### How Scores Are Calculated
 
 1.  **Total Possible Marks**: The total score for a assessment is automatically calculated by summing the `marks` value of every question within that assessment. You do not need to define this total manually.
 2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
-3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passing_percentage` you set, the assessment is marked as "Passed".
+3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `pass_percentage` you set, the assessment is marked as "Passed".
 
 ### Scoring Rules for Question Types
 
