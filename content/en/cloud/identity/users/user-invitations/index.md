@@ -123,11 +123,3 @@ The available seats for learners are determined by your organization's subscript
 {{< alert type="warning" title="Public invitations" >}}
 Public links can be forwarded broadly. Always set an expiration date and a quota.
 {{< /alert >}}
-
-#### Scenario 5: Onboarding a new training coordinator
-
-See detailed example in [Academy Admin invitations](../../../academy/using-the-academy/#academy-admin).
-
-#### Scenario 6: Enrolling new employees in company training program
-
-See detailed example in [Academy Learner invitations](../../../academy/using-the-academy/#academy-learner).

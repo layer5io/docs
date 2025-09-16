@@ -129,53 +129,6 @@ Completing content in the Academy earns you valuable credentials that you can sh
 
 **Certificates**: You earn an official Certificate of Completion after passing a Certification exam. While the learning and exams are free, the issuance of the official certificate is an optional, paid feature.
 
-## Joining Through Invitations
-
-You can invite people to join the Academy. Learn [how to create invitations](../../identity/users/user-invitations/index.md/#how-to-create-an-invitation).
-The Academy supports two distinct roles, each with its own invitation process and access levels.
-
-After the invitation is created, there are two different invitation flows based on the assigned role.
-
-### Academy Admin
-
-Academy administrators have full management capabilities and follow this invitation flow:
-
-1. **Receive admin invitation**: You'll get an invitation link via email with administrative privileges.
-2. **Accept invitation**: Click the invitation link to gain full administrative access
-3. **Access instructor console**: Navigate to the instructor dashboard to manage content
-4. **Manage content and analytics**: Create, edit, and monitor learning content while viewing detailed analytics
-
-**Scenario**: Onboarding a new training coordinator
-
-- Goal: Grant administrative access to a new team member who will manage Academy content and oversee learner progress.
-- Configuration:
-  - Email: Set to the coordinator's specific email address.
-  - Roles: Assign `Academy Admin` role for full administrative privileges.
-  - Teams: Add to `Academy-Management` team for collaboration with other administrators.
-  - Quota: Set to `1` for secure, single-use access.
-  - Description: "New training coordinator - full Academy management access".
-
-### Academy Learner
-
-Learners join the Academy to access educational content through this streamlined process:
-
-1. **Receive content invitation**: You'll get an invitation link via email to join Academy content.
-2. **Accept invitation**: Click the link to automatically join the organization
-3. **Auto-enrollment**: You're automatically added to the organization and assigned teams
-4. **Gain content access**: Receive Academy Content Access permissions
-5. **Start learning**: Access all learning materials and enroll in courses
-
-**Scenario**: Enrolling new employees in company training program
-
-- Goal: Provide streamlined access to Academy learning content for new hires as part of their onboarding process.
-- Configuration:
-  - Email: Use company domain pattern (e.g., `*@company.com`) to allow all employees to join.
-  - Roles: Assign `Academy Learner` role for access to learning materials.
-  - Teams: Add to `Company-Training-Cohort` team to track progress collectively.
-  - Expiration date: Set to end of training period (e.g., 90 days from creation).
-  - Description: "Q1 2025 new employee training program access".
-
-
 ## Frequently Asked Questions
 
 <details>
