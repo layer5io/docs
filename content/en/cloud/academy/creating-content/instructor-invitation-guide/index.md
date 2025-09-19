@@ -1,6 +1,6 @@
 ---
 title: "Managing Learners Through Invitations"
-weight: 1
+weight: 6
 description: >
   Learn how to create and manage invitations to organize training programs and provide learners access to Academy content.
 categories: [Academy]
