@@ -1,6 +1,6 @@
 ---
-title: "Academy Instructor Console Guide"
-weight: 5
+title: "Using the Instructor Console"
+weight: 2
 description: >
   A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
 categories: [Academy]
