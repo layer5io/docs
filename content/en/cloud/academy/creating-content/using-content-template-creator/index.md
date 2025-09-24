@@ -133,8 +133,7 @@ After generating our template:
 1. **Copy the Template**: Use the provided copy button to get your front matter
 2. **Create Your Content File**: Paste the template into a new .md file in your academy repository
 3. **Add Your Content**: Replace the placeholder comment with your actual learning material
-4. **Test and Review**: Preview your content before publishing
-5. **Engage the Community**: Share your content with relevant teams and gather feedback
+
 
 ### Invitation
 
