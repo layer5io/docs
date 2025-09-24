@@ -139,4 +139,4 @@ After generating our template:
 ### Invitation
 
 ![](images/auto-invitation.png)
-auto-invitation-details.png
+![](images/auto-invitation-details.png)
