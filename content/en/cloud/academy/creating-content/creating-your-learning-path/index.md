@@ -1,5 +1,5 @@
 ---
-title: Creating Academy Content
+title: Creating Content for the Academy
 weight: 3
 description: >
   A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
@@ -8,6 +8,8 @@ tags: [Academy]
 aliases:
 - /cloud/academy/creating-your-learning-path/
 - /cloud/academy/creating-academy-content/
+- /cloud/academy/creating-content-for-the-academy/
+- /cloud/academy/creating-content-for-academy/
 ---
 
 This guide provides a step-by-step walkthrough for creating and organizing new content in the [Layer5 Academy](https://cloud.layer5.io/academy). You'll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.
@@ -66,7 +68,7 @@ The Academy supports three distinct content types, each designed for specific ed
 | Feature | Learning Path | Challenge | Certification |
 | :--- | :--- | :--- | :--- |
 | Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
-| Structure | Hierarchical (Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
+| Structure | Hierarchical (Learning Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
 | Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
 | Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
 
@@ -117,24 +119,18 @@ A high-level view of the learning path structure looks like this:
 
  ```text
  learning-paths/<your-organization-uuid>
- └── mastering-kubernetes/                        // <-- Learning Path/
+ └── {learning-path-name}/ 
      ├── _index.md                            
-     ├── advanced-networking/                     // <-- Course 1/
+     ├── course-1/
      │   └── _index.md                        
-     └── core-concepts/                           // <-- Course 2/
+     └── course-2/  
          ├── _index.md   
-         ├── course-exam.md                       // <-- Course Exam (Test)                     
-         └── 01-pods-and-services/                // <-- Module/
+         ├── course-exam.md  
+         └── module-1/ 
              ├── _index.md                    
-             ├── 01-pods/
-             │   └── _index.md                    // <-- Page 1
-             ├── 02-services/
-             │   ├── _index.md                    // <-- Page 2
-             │   ├── 02-image.png                 // <-- Image               
-             ├── 03-knowledge-check.md            // <-- Test
-             ├── 04-hands-on-lab.md               // <-- Lab
-             └── arch.png                         // <-- Image
-
+             ├── page-1/
+             │   └── _index.md 
+             ├── test.md 
  ```
 
 #### Certification Structure
@@ -142,23 +138,31 @@ A **Certification** typically contains one or more **Exams** and optional study 
 
 ```text
 certifications/<your-organization-uuid>
-└── kubernetes-certified-admin/               // <-- Certification/
-    ├── _index.md
-    ├── exam-1.md                             // <-- Exam
-    ├── exam-2.md                             // <-- Exam (optional)
-    └── study-guide/                          // <-- Study materials (optional)
-        └── _index.md
+└── {certification-name}/
+    ├── _index.md  
+    ├── exam/
+    │   ├── _index.md  
+    ├── test-1/
+    ├── test-2/
+    └── test-3/
 ```
 
 #### Challenge Structure
-A **Challenge** is typically a single scenario-based task with instructions and validation.
+A **Challenge** is typically a single scenario-based task with lab and exam components.
 
 ```text
 challenges/<your-organization-uuid>
-└── kubernetes-troubleshooting/               // <-- Challenge/
-    ├── _index.md
-    ├── scenario.md                           // <-- Challenge instructions
-    └── validation.md                         // <-- Validation criteria
+└── {challenge-name}/
+    ├── _index.md 
+    ├── lab/
+    │   ├── _index.md 
+    ├── exam/
+    │   ├── _index.md 
+    └── content/
+        ├── description/
+        ├── getting-started/
+        ├── faq/
+        └── {other-sections}/
 ```
 
 Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`, `type: "certification"`, or `type: "challenge"`). The final `.md` files represent your individual learning activities.
@@ -171,11 +175,13 @@ Front matter is the configuration block at the top of every content file that de
 
 The front matter configuration varies depending on the content type. The following examples illustrate typical setups for each content type.
 
-#### Learning Path Frontmatter
+#### Frontmatter
+
+All `_index.md` files use the same frontmatter structure. Only the `type` field differs based on the content level:
 
 ```yaml
 ---
-type: "learning-path"
+type: "learning-path"  # or "certification", "challenge", "course"
 title: "Cloud Fundamentals"
 description: "A learning path focused on providing the technical knowledge required for advanced topics."
 weight: 5
@@ -185,64 +191,10 @@ tags: [kubernetes, infrastructure]
 categories: "cloud"
 level: "beginner"
 badge:
-   png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
-   svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
-   title: "Layer5 Certified"
-   description: "Earn the Certification badge to showcase your expertise in Layer5 cloud services."
----
-```
-
-#### Certification Frontmatter
-
-```yaml
----
-type: "certification"
-title: "Kubernetes Certified Administrator"
-description: "Official certification for Kubernetes administration expertise."
-weight: 1
-banner: "k8s-cert-icon.svg"
-id: "<your-content-uuid>"
-tags: [kubernetes, certification]
-categories: "infrastructure"
-level: "advanced"
-badge:
-   png: "certification-badge.png"
-   svg: "certification-badge.svg"
-   title: "Kubernetes Admin Certified"
-   description: "Validates your expertise in Kubernetes administration."
----
-```
-
-#### Challenge Frontmatter
-
-```yaml
----
-type: "challenge"
-title: "Kubernetes Troubleshooting Challenge"
-description: "Solve real-world Kubernetes issues in a competitive scenario."
-weight: 1
-banner: "challenge-icon.svg"
-id: "<your-content-uuid>"
-tags: [kubernetes, troubleshooting]
-categories: "infrastructure"
-level: "intermediate"
----
-```
-
-#### Course Frontmatter
-
-If each course has its own markdown page, you can use this frontmatter:
-
-```yaml
----
-type: "course"
-title: "Intro Sustainability"
-description: "An introductory course exploring the core concepts of sustainability."
-weight: 2
-banner: "kubernetes-icon.svg"
-tags: [network, infrastructure]
-level: "beginner"
-categories: "compliance"
+  png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+  svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+  title: "Layer5 Certified"
+  description: "Earn the Certification badge to showcase your expertise in Layer5 cloud services."
 ---
 ```
  
@@ -258,11 +210,11 @@ categories: "compliance"
 | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
 | All                           | `type`        |    ✅     | Defines the content's role. Values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
 | **Learning Path**, **Certification**, **Challenge** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
-| **Learning Path**, **Certification** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., layer5-badge.svg).|
-| **Learning Path**, **Certification**, **Challenge**, **Course** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
-| **Learning Path**, **Certification**, **Challenge**, **Course** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
-| **Learning Path**, **Certification**, **Challenge**, **Course**, **Module** | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
-| **Learning Path**, **Certification**, **Challenge**, **Course**, **Module** | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
+| **Learning Path**, **Certification**, **Challenge** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., meshery-contributor-badge.svg).|
+| **Learning Path**, **Certification**, **Challenge** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+| **Learning Path**, **Certification**, **Challenge** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
+| All | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
+| All | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
 
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
