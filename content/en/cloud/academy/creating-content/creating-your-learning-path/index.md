@@ -208,7 +208,7 @@ badge:
 | All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
 | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
 | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
-| All                           | `type`        |    ✅     | Defines the content's role. Values: `challenge`, `learning-path`, `certification`, `course`, `module`, `page`, `test`, or `lab`. |
+| **Learning Path**, **Certification**, **Challenge** | `type`        |    ✅     | Defines the content's role. Values: `challenge`, `learning-path`, `certification` |
 | **Learning Path**, **Certification**, **Challenge** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
 | **Learning Path**, **Certification**, **Challenge** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., meshery-contributor-badge.svg).|
 | **Learning Path**, **Certification**, **Challenge** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
