@@ -34,9 +34,9 @@ Operator supports connecting to Kubernetes pods via the following methods.
 
 The interactive terminal behaves in a fashion similar to similar to the behavior of the `kubectl exec` command, but web-based.
 
-While using using the interactive terminal, understand that you can only open one session per container.
-Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas.
-The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
+{{< alert type="note" title="Distinct Capabilities" >}} Note that each component offers its own capabilities, and that these capabilities differ between Designer mode and Operator mode. For example, in operator mode, if you right-click (and hold) on a Kubernetes pod, you will see actions unique to the Pod component, which are to open either an interactive terminal to one or all of the containers in the pod or to start streaming logs from any/all of the containers in the pod. {{< /alert >}}
+
+While using using the interactive terminal, understand that you can only open one session per container. Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas. The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection established a unique session ID.
 
 <!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
 
