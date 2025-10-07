@@ -300,7 +300,7 @@ enable = false
 		name = "News"
 		url = "https://layer5.io/company/news"
 	[[params.links.footer.company.items]]
-		name = "Brands"
+		name = "Brand"
 		url = "https://layer5.io/company/brand"
 	[[params.links.footer.company.items]]
 		name = "Pricing"
