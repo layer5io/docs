@@ -12,6 +12,7 @@
 @import "subscription.scss";
 @import "_video-landing_project.scss";
 @import "elements_project";
+@import "summary.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -137,6 +138,9 @@ body {
   }
 
   overflow-x: hidden;
+}
+.td-content .card img {
+  width: 100% ;
 }
 
 // Links
@@ -712,78 +716,54 @@ a:not([href]):not([class]):hover {
   color: $body-color;
 }
 
-.tab-body {
-  overflow-x: scroll;
-  background: transparent;
-  flex-direction: column;
-  gap: 1rem;
+.nav-tabs {
+  border: none;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.tab-content>.active {
-  display: flex;
+.nav-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.nav-tabs .nav-link {
+  position: relative;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $lightslategray;
+  border-radius: 5px 5px 0 0;
+  color: $primary;
+  padding: 0.6rem 1.2rem;
+  white-space: nowrap;
+}
+
+.nav-tabs .nav-link:not(.active):hover {
+  background-color: lighten($dark, 10%);
+  color: lighten($primary, 15%);
+  border-bottom-color: lighten($lightslategray, 20%);
 }
 
 .nav-tabs .nav-link.active {
-  color: #00d3a9;
+  background-color: $body-bg;
+  font-weight: 500;
+  border-color: $lightslategray $lightslategray;
+  border-bottom: 1px solid $body-bg;
+  z-index: 1;
 }
 
-.csvtable {
-  width: 100%;
-}
-// Only target the tabbed panels using ID naming convention
-
-[id^="tabs-"] {
-  border: 1px solid rgba($light, 0.1);
-  border-radius: 0.5rem;
-  padding: .5rem;
-  margin-bottom: 1rem;
-  background-color: rgba($light, 0.02);
-  box-shadow: 0 0 8px rgba($dark, 0.2);
-
-  .nav-link {
-    color: $light;
-    background-color: rgba($light, 0.3); // 🆕 consistent visible bg for inactive tabs
-    border: 2px solid rgba($light, 0.15);
-    border-radius: 0.5rem 0.5rem 0 0;
-    margin: 2px;
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    display: inline-block;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-    box-shadow: 0 0 4px rgba($dark, 0.05); // 🆕 soft shadow for depth
-
-    &:hover {
-      background-color: rgba($light, 0.5);
-      color: $white;
-    }
-
-    &.active {
-      background-color: $primary;
-      color: #fff;
-      border-color: $primary $primary transparent;
-      font-weight: 600;
-      position: relative;
-      z-index: 2;
-      box-shadow: none; // remove shadow from active to flatten it into content
-    }
-  }
-
-   .nav-link.disabled {
-    background: transparent;
-    border: none;
-    color: rgba($light, 0.5);
-    font-weight: 400;
-    cursor: default;
-    box-shadow: none;
-    pointer-events: none;
-    padding-left: 0;
-    padding-right: 0;
-    margin-right: 0.5rem;
-    margin-left: 0.25rem;
-    letter-spacing: 0.03em;
-  }
+.tab-content .tab-pane {
+  border: 1px solid $lightslategray;
+  margin-top: -1px;
+  padding: 1.5rem;
+  border-radius: 0 0 5px 5px;
+  background-color: $body-bg;
 }
 
 html {
