@@ -141,13 +141,13 @@ questions:
 | | `layout` | - | Metadata type for the assessment. The value must be `test`. |
 | | `is_optional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
 | | `final` | - | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
-| | `questions` | ✅  | An array containing one or more question objects. |
-| **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`). |
-| | `text` | ✅  | The text of the question prompt. |
-| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short_answer`. |
-| | `marks` | ✅  | The number of points awarded for a correct answer. |
-| | `instructions` | -  | Custom instruction for each question |
-| | `options` | - | An array of answer options. |
+| | `questions` | ✅  | An array containing one or more question objects.                                                         |
+| **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`).                              |
+| | `text` | ✅  | The text of the question prompt.                                                                          |
+| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short-answer`.          |
+| | `marks` | ✅  | The number of points awarded for a correct answer.                                                        |
+| | `instructions` | -  | Custom instruction for each question                                                                      |
+| | `options` | - | An array of answer options.                                                                               |
 
 {{< alert type="warning" title="Quick heads up" >}}
 Remember: `type: "test"` are fixed values that cannot be modified. The system needs these exact words to work properly.
@@ -228,20 +228,20 @@ Layer5 Academy supports three question formats:
 - Direct text input
 
 <details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: short_answer</code> </summary>
+  <summary>Examples: <code>type: short-answer</code> </summary>
 
     ---
     questions:
       - id: "question4"
         text: "In Kubernetes, ___ is the default namespace."
-        type: "short_answer"                # choose the type
+        type: "short-answer"                # choose the type
         marks: 2
         instructions: "Just type the command"
         correct_answer: "default"           # expected answer
 
       - id: "question5"
         text: "Which kubectl command lists all pods?"
-        type: "short_answer"                # choose the type
+        type: "short-answer"                # choose the type
         marks: 2
         correct_answer: "kubectl get pods"  # expected answer
     ---
@@ -294,7 +294,7 @@ Instructions are a way to help or clarify what the question is trying to ask , a
 Instructions are defaultly defined for each question type : 
 - single-answer: Select one answer
 - multiple-answers: Select all that apply
-- short_answer: Type your answer below
+- short-answer: Type your answer below
 
 
 Instructions can be override in frontmatter by defining a custom intruction for each question.
@@ -306,7 +306,7 @@ Instructions can be override in frontmatter by defining a custom intruction for 
     questions:
       - id: "question4"
         text: "In Kubernetes, ___ is the default namespace."
-        type: "short_answer"                
+        type: "short-answer"                
         marks: 2
         instructions: "Just type the command" #custom instruction
         correct_answer: "default"           
