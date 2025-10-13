@@ -115,6 +115,19 @@ If you're ever unsure about a concept, you can always use the Back button to rev
 
 ![Quiz Result - Passed](./images/q-result-pass.png)
 
+### Retaking an Assessment
+
+If you don't pass an assessment on your first try, don't worry! You can retake it. The experience you have when retrying an exam depends on how the instructor has configured it.
+
+**Standard Retakes** :
+For many exams, when you retry, you will be presented with the **exact same set of questions** you saw on your previous attempt. Often, instructors allow for unlimited retries, giving you multiple chances to review the material and pass the test.
+
+**Exams with a Question Bank** :
+To ensure a fair and comprehensive assessment, some exams use a Question Bank. This means the instructor has created a large pool of questions, and you only see a small portion of them on any single attempt.
+
+If you retry an exam that uses a Question Bank, you will be presented with a **completely new set of questions**. This helps ensure you've mastered the subject matter, not just the answers to a specific set of questions. These exams might have a specific limit on the number of retries.
+
+
 ## Your Achievements
 
 Completing content in the Academy earns you valuable credentials that you can share with your professional network.
