@@ -144,9 +144,10 @@ To ensure even division, the **total number of questions** must be a **multiple*
 
 By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
 
-> ⚠️ **Note :**  
-> For certifications containing multiple exams, each exam may have its own question bank, question count, and retry settings.  
-> These configurations are defined per test and may differ across exams within the same certification.
+{{< alert type="warning" title="Note : " >}}
+For certifications containing multiple exams, each exam may have its own question bank, question count, and retry settings.  
+These configurations are defined per test and may differ across exams within the same certification.
+{{< /alert >}}
 
 
 
