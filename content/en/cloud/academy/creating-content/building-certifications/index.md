@@ -133,7 +133,7 @@ For detailed instructions on how to write an exam file, define various question 
 
 ### 4. Managing Question Pools and Test Attempts
 
-A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank**. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
+A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank** — collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
 
 This behavior is controlled by the `number_of_questions` property in the front matter.
 
