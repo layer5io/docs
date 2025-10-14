@@ -122,10 +122,10 @@ If you don't pass an assessment on your first try, don't worry! You can retake i
 **Standard Retakes** :
 For many exams, when you retry, you will be presented with the **exact same set of questions** you saw on your previous attempt. Often, instructors allow for unlimited retries, giving you multiple chances to review the material and pass the test.
 
-**Exams with a Question Bank** :
-To ensure a fair and comprehensive assessment, some exams use a Question Bank. This means the instructor has created a large pool of questions, and you only see a small portion of them on any single attempt.
+**Exams with a Test Bank** :
+To ensure a fair and comprehensive assessment, some exams use a Test Bank. This means the instructor has created a large pool of questions, and you only see a small portion of them on any single attempt.
 
-If you retry an exam that uses a Question Bank, you may be presented with a **completely new set of questions**. This helps ensure you've mastered the subject matter, not just the answers to a specific set of questions. These exams might have a specific limit on the number of retries.
+If you retry an exam that uses a Test Bank, you may be presented with a **completely new set of questions**. This helps ensure you've mastered the subject matter, not just the answers to a specific set of questions. These exams might have a specific limit on the number of retries.
 
 
 ## Your Achievements
