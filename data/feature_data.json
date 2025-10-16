@@ -435,6 +435,22 @@
     "theme": "",
     "categoryOrder": "5",
     "category": "Identity & Access Management",
+    "functionOrder": "502",
+    "function": "Identity through OAuth",
+    "feature": "Use third-party identity providers, Google and GitHub, to manage the identities of your organization's members.",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": true,
+      "teamDesigner": true,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/identity/users/#account-linking"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
     "functionOrder": "503",
     "function": "Teams",
     "feature": "Establish new team for organizing groups of users and resource access. Single organization, multiple teams.",
@@ -478,6 +494,22 @@
       "enterprise": true
     },
     "docs": "https://docs.layer5.io/cloud/security/roles/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "5",
+    "category": "Identity & Access Management",
+    "functionOrder": "508",
+    "function": "Cloud as an IDP",
+    "feature": "Own and control the user accounts of your enterprise members with Layer5 Cloud your identity provider (IdP).",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/self-hosted/planning/identity-services/"
   },
   {
     "theme": "",
