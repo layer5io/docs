@@ -131,6 +131,22 @@ Every "Exam" file within a certification follows the unified Academy assessment 
 For detailed instructions on how to write an exam file, define various question types, set scoring and passing percentages, and use advanced options, please refer to our comprehensive [Integrating Assessments in the Academy](../integrating-assessments-in-the-academy/) guide.
 {{< /alert >}}
 
+### 4. Managing Question Pools and Test Attempts
+
+A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank**. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
+
+This behavior is controlled by the `number_of_questions` property in the front matter.
+
+* If `number_of_questions` is **not defined**, all questions in the test are used in every attempt.
+* If it **is defined**, the test is automatically divided into multiple sets, each containing the specified number of questions.
+
+To ensure even division, the **total number of questions** must be a **multiple** of `number_of_questions`.
+
+By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
+
+
+
+
 ## Learner Outcomes: Badges and Certificates
 
 Successfully completing a certification provides learners with valuable, verifiable credentials.

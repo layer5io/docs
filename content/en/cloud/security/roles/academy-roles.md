@@ -46,6 +46,7 @@ tags: [academy, roles]
 
 {{< cardpane >}}
 {{% card header="Learner" %}}
+Learner = A [User](../roles/user-role.md) who has registered for academy content.
 <img src="/cloud/security/images/learner.svg" link="images/learner.svg"  width="100%" alt="Learner Roles" />
 {{% /card %}}
 {{< /cardpane >}}
@@ -83,6 +84,17 @@ While the maximum number of instances is unlimited, the available seats for Lear
 **What permissions does this role have?**
 
 - Check [Permissions Reference](/cloud/reference/default-permissions/)
+
+**Status as a Learner**
+
+Each individual academy content item (learning path, certification, or challenge) that a learner enrolls in tracks one of the following 4 status types:
+
+| Status      | What it means |
+|-------------|-------------|
+| registered (enrolled)  | They signed up but haven't started |
+| completed   | They finished the course |
+| failed      | They didn't pass |
+| withdrawn   | They left the course |
 
 {{% /card %}}
 {{< /cardpane >}}
