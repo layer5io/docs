@@ -403,6 +403,54 @@
     "theme": "",
     "categoryOrder": "4",
     "category": "Collaboration",
+    "functionOrder": "402",
+    "function": "Collaborative Infrastructure Design",
+    "feature": "Create and collaborate in online designs in real-time.",
+    "subscriptionTier": "TeamDesigner",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": true,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/kanvas/designer/sharing/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "403",
+    "function": "Public and Private Designs",
+    "feature": "Invite any user to collaborate on your public or private designs.",
+    "subscriptionTier": "TeamDesigner",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": true,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/kanvas/designer/sharing/#sharing-your-design-with-a-link"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
+    "functionOrder": "404",
+    "function": "Collaborative Infrastructure Views",
+    "feature": "Simultaneously manage your infrastructure using shared views in real-time. See the status of your deployments, monitor performance, and troubleshoot issues. Views provide tools for interacting with your cluster, such as terminal access and log streaming.",
+    "subscriptionTier": "TeamOperator",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/kanvas/operator/views/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "4",
+    "category": "Collaboration",
     "functionOrder": "405",
     "function": "Public and Private Views",
     "feature": "Invite any user to collaborate on your public or private views.",
