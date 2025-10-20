@@ -144,7 +144,7 @@ questions:
 | | `questions` | ✅  | An array containing one or more question objects.                                                         |
 | **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`).                              |
 | | `text` | ✅  | The text of the question prompt.                                                                          |
-| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers`, `short-answer`, or `true-false`. |
+| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers` or `short-answer`.          |
 | | `marks` | ✅  | The number of points awarded for a correct answer.                                                        |
 | | `instructions` | -  | Custom instruction for each question                                                                      |
 | | `options` | - | An array of answer options.                                                                               |
@@ -155,7 +155,7 @@ Remember: `type: "test"` are fixed values that cannot be modified. The system ne
 
 ## Supported Assessment Types
 
-Layer5 Academy supports four question formats:
+Layer5 Academy supports three question formats:
 
 ***Single Choice Questions***
 - Single correct answer
@@ -177,18 +177,11 @@ Layer5 Academy supports four question formats:
             is_correct: true    # correct option
           - id: "b"
             text: "Option B"
-    ---
-  </code></pre>
-</details>
 
-<details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: true-false</code> </summary>
-  
-    ---
-    questions:
+        # True/False:
       - id: "question2"
-        text: "Kubernetes Pods can contain multiple containers."
-        type: "true-false"             # choose the type
+        text: "This is a true/false question"
+        type: "single-answer"            # choose the type
         marks: 1
         options:
           - id: "true"
@@ -302,7 +295,6 @@ Instructions are defaultly defined for each question type :
 - single-answer: Select one answer
 - multiple-answers: Select all that apply
 - short-answer: Type your answer below
-- true-false: Select True or False
 
 
 Instructions can be override in frontmatter by defining a custom intruction for each question.
