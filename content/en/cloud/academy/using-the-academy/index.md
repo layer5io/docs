@@ -117,15 +117,7 @@ If you're ever unsure about a concept, you can always use the Back button to rev
 
 ### Retaking an Assessment
 
-If you don't pass an assessment on your first try, don't worry! You can retake it. The experience you have when retrying an exam depends on how the instructor has configured it.
-
-**Standard Retakes** :
-For many exams, when you retry, you will be presented with the **exact same set of questions** you saw on your previous attempt. Often, instructors allow for unlimited retries, giving you multiple chances to review the material and pass the test.
-
-**Exams with a Test Bank** :
-To ensure a fair and comprehensive assessment, some exams use a Test Bank. This means the instructor has created a large pool of questions, and you only see a small portion of them on any single attempt.
-
-If you retry an exam that uses a Test Bank, you may be presented with a **completely new set of questions**. This helps ensure you've mastered the subject matter, not just the answers to a specific set of questions. These exams might have a specific limit on the number of retries.
+If you don’t pass an assessment on your first try, don’t worry you may be able to retake it. Depending on the certification, you may have unlimited retries, a limited number of retries, or in some cases, no retries at all.
 
 
 ## Your Achievements
