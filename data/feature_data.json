@@ -867,6 +867,38 @@
     "theme": "",
     "categoryOrder": "9",
     "category": "Managed Service Provider",
+    "functionOrder": "902",
+    "function": "Public Profiles for Users",
+    "feature": "See public user profile details, public activities and public resources.",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/identity/users/#user-accounts"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Managed Service Provider",
+    "functionOrder": "903",
+    "function": "Recognition Program Badges",
+    "feature": "Badges are visual indicators of achievements or milestones that users can earn in order to recognizing activity milestones, encouraging positive behavior, mark progress, and gamifying platform experience.",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/tutorials/assigning-user-badges/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "9",
+    "category": "Managed Service Provider",
     "functionOrder": "904",
     "function": "Self-service User Accounts",
     "feature": "New user sign-up verification. Self-service password recovery.",
