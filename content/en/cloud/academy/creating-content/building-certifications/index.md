@@ -133,7 +133,7 @@ For detailed instructions on how to write an exam file, define various question 
 
 ### 4. Managing Question Pools and Test Attempts
 
-A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank**. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
+A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank** — collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
 
 This behavior is controlled by the `number_of_questions` property in the front matter.
 
@@ -143,6 +143,11 @@ This behavior is controlled by the `number_of_questions` property in the front m
 To ensure even division, the **total number of questions** must be a **multiple** of `number_of_questions`.
 
 By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
+
+{{< alert type="warning" title="Multi-Exam Certification Settings" >}}
+For certifications containing multiple exams, each exam may have its own test bank, question count, and retry settings.  
+These configurations are defined per test and may differ across exams within the same certification.
+{{< /alert >}}
 
 
 
