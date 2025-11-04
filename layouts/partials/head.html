@@ -64,7 +64,12 @@
 {{ end -}}
 */ -}}
 
-
+<script>
+document.addEventListener('DOMContentLoaded',()=>{const n=s=>(s||'').replace(/\/+$/,''); const cur=n(location.pathname); let b=null,l=-1;
+document.querySelectorAll('.td-sidebar-nav a[href]').forEach(a=>{const p=n(new URL(a.getAttribute('href'),location).pathname); if(p&&(cur===p||cur.startsWith(p+'/'))&&p.length>l){b=a;l=p.length}});
+if(!b)return; b.classList.add('active');
+for(let e=b.parentElement;e&&!e.classList.contains('td-sidebar-nav');e=e.parentElement){ if(e.tagName==='LI'){const pa=e.querySelector(':scope > a'); if(pa)pa.classList.add('active'); const ul=e.querySelector(':scope > ul'); if(ul)ul.classList.add('show')}}});
+</script>
 
 {{ define "algolia/head" -}}
 
