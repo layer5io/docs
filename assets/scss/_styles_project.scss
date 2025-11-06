@@ -744,6 +744,7 @@ a:not([href]):not([class]):hover {
 
 .nav-tabs .nav-link.active {
   background-color: $body-bg;
+  color: $primary;
   font-weight: 500;
   border-color: $lightslategray $lightslategray;
   border-bottom: 1px solid $body-bg;
