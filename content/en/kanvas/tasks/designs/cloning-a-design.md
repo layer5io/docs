@@ -12,20 +12,18 @@ aliases:
 ## Steps to cloning a design from Catalog using Kanvas
 
 1. Switch to Kanvas Designer mode, if not already in it.
-1. In the left ☰ menu, click New → From a template.
-1. Select a design from the list that appears in the panel.
-1. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
+2. In the left ☰ menu, click New → From a template.
+3. Select a design from the list that appears in the panel.
+4. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
 
-![Copy of a Design](/kanvas/getting-started/images/deploy-designs/cloneDesign.gif)
+![Copy of a Design](/kanvas/getting-started/images/deploy-designs/clone-design.gif)
 
 This will create a copy of the catalog item to a new design, now owned by you.
 
 1. Click “clone” and a copy of the design will appear on your Kanvas canvas. You can then configure the design to suit your purposes.
-2. To access your newly cloned design, go to the top profile icon and click Open Recents → My Designs.
+2. To access your newly cloned design, click the three-shapes icon, then click through: Workspaces → My Workspaces → Explore Workspaces → My Designs.
 
-![Copy of a Design](/kanvas/getting-started/images/deploy-designs/openRecents.png)
-
-![Copy of a Design](/kanvas/getting-started/images/deploy-designs/myDesigns.png)
+![Copy of a Design](/kanvas/getting-started/images/deploy-designs/my-designs.gif)
 
 You are now free to deploy it as it is or modify it further. 
 
