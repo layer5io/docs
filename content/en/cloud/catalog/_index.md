@@ -46,6 +46,16 @@ Catalog content is categorized in a number of ways:
  
 <!-- List design metadata and descriptions here -->
 
+### Publishing from Kanvas 🔗
+
+To publish a design into the catalog:
+
+1. Open your design in Kanvas (for example from **My Designs**).
+1. Click the **hamburger menu** in the top-left of Kanvas.
+1. Choose **Share… → Publish to catalog**.
+1. In the design details dialog, review or update the **name**, **type**, and **description**, then click **Publish To Catalog**.
+1. After the request is submitted, maintainers approve it, and the design appears in the [public catalog](https://cloud.layer5.io/catalog).
+
 ### Content Tags
 
 - Arbitrary strings for categorization.
