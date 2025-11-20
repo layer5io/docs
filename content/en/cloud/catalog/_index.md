@@ -48,13 +48,13 @@ Catalog content is categorized in a number of ways:
 
 ### Publishing from Kanvas 🔗
 
-To publish a design from Meshery Kanvas (Playground) into the Cloud Catalog:
+To publish a design into the catalog:
 
-- Open your design in Kanvas (for example from **My Designs → Open in Playground**).
-- Click the **hamburger menu** in the top-left of Kanvas.
-- Choose **Share… → Publish to catalog**.
-- In the design details dialog, review or update the **name**, **type**, and **description**, then click **Publish To Catalog**.
-- After the request is submitted, maintainers approve it, and the design appears in the public Catalog at [cloud.layer5.io/catalog](https://cloud.layer5.io/catalog).
+1. Open your design in Kanvas (for example from **My Designs**).
+1. Click the **hamburger menu** in the top-left of Kanvas.
+1. Choose **Share… → Publish to catalog**.
+1. In the design details dialog, review or update the **name**, **type**, and **description**, then click **Publish To Catalog**.
+1. After the request is submitted, maintainers approve it, and the design appears in the [public catalog](https://cloud.layer5.io/catalog).
 
 ### Content Tags
 
