@@ -508,23 +508,24 @@ a:not([href]):not([class]):hover {
   margin-bottom: 4rem;
   font-size: 5rem;
   text-align: left;
-  background: linear-gradient(217deg,
-      rgba(249, 245, 13, 0.26),
-      rgba(223, 255, 219, 0.57) 9.03%),
-    linear-gradient(127deg,
-      rgba(249, 245, 13, 0.7),
-      rgba(223, 225, 199, 0.1) 41.12%),
-    linear-gradient(336deg,
-      rgba(249, 245, 13, 0.1),
-      rgba(239, 239, 251, 0.81) 0%);
-  background-position:
-    0% 0%,
-    0% 0%;
+  background-image: linear-gradient(
+    135deg,
+    rgb(224, 242, 157),
+    rgb(218, 237, 192),
+    rgb(211, 227, 212),
+    rgb(213, 232, 213),
+    rgb(211, 227, 212),
+    rgb(218, 237, 192),
+    rgb(224, 242, 157),
+    );
+  background-size: 200%;
   box-sizing: auto;
-  color: rgba(0, 0, 0, 0);
+  color: transparent;
   display: block;
   text-rendering: optimizelegibility;
-  background-clip: text, text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: color-shift 8s linear infinite;
 
   @media (max-width: 768px) {
     font-size: 3.5rem;
@@ -534,6 +535,13 @@ a:not([href]):not([class]):hover {
   // @media (max-width:1200px){
   // }
 }
+
+@keyframes color-shift {
+  to {
+    background-position: -200%;
+  }
+}
+
 
 .dash-tangle {
   width: 78.14231rem;
