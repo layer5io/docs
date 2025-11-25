@@ -10,12 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.RELEASEDRAFTER_PAT }}
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
           repository: layer5io/docs
       - name: Get Latest Meshery Extensions Release
         id: meshery-extensions
         env:
-          ACCESS_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
+          ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           release_tag=$(curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5labs/meshery-extensions-packages/releases/latest | jq -r ".tag_name")
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
@@ -24,7 +24,7 @@ jobs:
       - name: Get Release Info
         if: steps.meshery-extensions.outputs.current_tag != steps.meshery-extensions.outputs.release_tag
         env:
-          ACCESS_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
+          ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5labs/meshery-extensions-packages/releases/latest > latest_release.json
           
