@@ -508,16 +508,11 @@ a:not([href]):not([class]):hover {
   margin-bottom: 4rem;
   font-size: 5rem;
   text-align: left;
-  background-image: linear-gradient(
-    135deg,
-    rgb(224, 242, 157),
-    rgb(218, 237, 192),
-    rgb(211, 227, 212),
-    rgb(213, 232, 213),
-    rgb(211, 227, 212),
-    rgb(218, 237, 192),
-    rgb(224, 242, 157),
-    );
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, .9) 0px, rgb(0, 211, 169) 34%, rgb(235, 192, 23) 71%, rgb(255,243,197) 100%);
+  background-position:
+    0% 0%,
+    0% 0%;
   background-size: 200%;
   box-sizing: auto;
   color: transparent;
