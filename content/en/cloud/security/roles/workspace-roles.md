@@ -1,7 +1,7 @@
 ---
 title: Default Workspace Roles
 description: >
-  By default, Workspaces have the Workspace Administrator role available.
+  By default, Workspaces have one role available: Workspace Administrator.
 weight: 2
 categories: [Security]
 tags: [workspaces, roles]
