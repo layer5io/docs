@@ -120,7 +120,7 @@ For more information, see [Organization](/cloud/identity/organizations).
 
 {{< cardpane >}}
 {{% card %}}
-![workspacea-administrator-and-workspace-manager](/cloud/security/images/workspace-roles.svg)
+![workspace-administrator](/cloud/security/images/workspace-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -147,29 +147,6 @@ For more information, see [Organization](/cloud/identity/organizations).
 **Who can remove assignment of this role?**
 
 - Organization Administrators or Workspace Owner
-
-{{% /card %}}
-{{% card header="### Workspace Manager" %}}
-
-**What is the purpose of this role?**
-
-- Management and administration of the various workspace resources
-
-**Who can assign this role?**
-
-- Organization Administrators or Workspace Administrators
-
-**When this role is first assigned?**
-
-- Manually by Organization Administrators or Workspace Administrators
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators or Workspace Administrators
 
 {{% /card %}}
 {{< /cardpane >}}
