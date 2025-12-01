@@ -127,11 +127,11 @@ Use the project's custom shortcodes for enhanced content:
 ```
 
 Alert types:
-- `type="danger"`: Security-related alerts
-- `type="info"`: Informational content
-- `type="warning"`: Important warnings
-- `type="note"`: Neutral information
-- `type="success"`: Positive information
+- `type="danger"`: Critical alerts (security-related or breaking changes)
+- `type="info"`: General informational content
+- `type="warning"`: Important warnings that need attention
+- `type="note"`: Neutral notes and tips
+- `type="success"`: Positive outcomes or confirmations
 
 ### Image Guidelines
 - Use the following syntax: `![alt text](/path/to/image.svg)` or `<img src="" alt="" />`
