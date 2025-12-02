@@ -27,7 +27,7 @@ A dry run in Meshery simulates the deployment of your design in the selected tar
 
 ### Invalid Field Value
 
-This error indicates that a field has an invalid value. For example, when configuring a Kubernetes Service, the fields "spec > ports[0] > port" and "spec > ports[0] > targetPort" may have invalid values of 0. These values must be between 1 and 65535, inclusive.
+This error indicates that a field has an invalid value. For example, when configuring a Kubernetes Service, the fields `spec.ports[0].port` and `spec.ports[0].targetPort` may have invalid values of 0. These values must be between 1 and 65535, inclusive.
 
 ### Missing Required Field
 
