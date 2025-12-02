@@ -29,12 +29,20 @@ A dry run in Meshery simulates the deployment of your design in the selected tar
 
 This error indicates that a field has an invalid value. For example, when configuring a Kubernetes Service, the fields `spec.ports[0].port` and `spec.ports[0].targetPort` may have invalid values of 0. These values must be between 1 and 65535, inclusive.
 
+![Invalid Field Value Error](/kanvas/getting-started/images/dry-running-designs/invalid-field-value-1.png)
+
+![Invalid Field Value Details](/kanvas/getting-started/images/dry-running-designs/invalid-field-value-2.png)
+
 ### Missing Required Field
 
 This error occurs when a required field in the configuration has not been provided. Ensure all required fields are properly configured before running the dry run.
+
+![Missing Required Field Error](/kanvas/getting-started/images/dry-running-designs/missing-field.png)
 
 ### Missing Dependencies
 
 This error occurs because a Kubernetes Custom Resource Definition (CRD) should have been deployed first before attempting to deploy a component that relies on it.
 
 To resolve this, ensure that all necessary dependencies, such as CRDs, are deployed before deploying the components that rely on them.
+
+![Missing Dependencies Error](/kanvas/getting-started/images/dry-running-designs/missing-resource.png)
