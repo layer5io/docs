@@ -16,13 +16,7 @@ Layer5 Cloud REST API uses [OAuth 2.0](https://oauth.net/2/) for authentication 
 Access tokens are opaque tokens that conform to the OAuth 2.0 framework. They contain authorization information, but not identity information. They are used to authenticate and provide authorization information to Layer5 APIs. Access tokens are associated with a user account. They have an unlimited lifetime and can be revoked at any time.
 
 {{< alert type="info" title="API Tokens are User-Scoped, Not Organization-Scoped" >}}
-Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of, similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work. For users who belong to multiple organizations, this is an important consideration when using API tokens for automation or integrations.
-
-To explicitly control which organization your API requests operate on, you can:
-- Use the `layer5-current-orgid` header to specify the target organization for each request
-- Set your `selectedOrganization` and `selectedWorkspace` preferences via the [Preferences API](/cloud/reference/api-reference/#specifying-organization-context)
-
-See [Specifying Organization Context](/cloud/reference/api-reference/#specifying-organization-context) in the REST API documentation for detailed examples.
+Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of, similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work. For users who belong to multiple organizations, see [Specifying Organization Context](/cloud/reference/api-reference/#specifying-organization-context) in the REST API documentation to learn how to control which organization your API requests operate on.
 {{< /alert >}}
 
 ## Creating tokens
