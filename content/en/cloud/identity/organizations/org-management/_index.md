@@ -41,7 +41,7 @@ You can update your Organization's name, location, associated teams, branding, a
 ### How to Edit Your Organization
 
 1.  Select the Organization you want to modify and click its **"Edit"** button.
-2.  The "Edit Organization" model will open:
+2.  The "Edit Organization" modal will open:
     -   Add Team: Associate existing Teams with this Organization.
     -   Theme: Customize your Organization's visual theme by selecting from the available color swatches.
     -   Logos: Upload specific logo versions for various display contexts by clicking the respective **"Upload"** buttons.
