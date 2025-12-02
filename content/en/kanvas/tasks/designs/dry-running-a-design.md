@@ -23,13 +23,11 @@ A dry run in Meshery simulates the deployment of your design in the selected tar
 
 5. Re-run the dry run to ensure all issues have been resolved.
 
-## Examples of Dry Run Errors
-
-Some examples of dry run errors are:
+## Dry Run Errors
 
 ### Invalid Field Value
 
-The error message indicates that a field has an invalid value. For instance, the fields "spec > ports[0] > port" and "spec > ports[0] > targetPort" may have invalid values of 0. These values must be between 1 and 65535, inclusive.
+This error indicates that a field has an invalid value. For example, when configuring a Kubernetes Service, the fields "spec > ports[0] > port" and "spec > ports[0] > targetPort" may have invalid values of 0. These values must be between 1 and 65535, inclusive.
 
 ### Missing Required Field
 
