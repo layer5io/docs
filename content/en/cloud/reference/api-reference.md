@@ -25,6 +25,142 @@ curl <protocol>://<Layer5-cloud-hostname>/<API> \
 - Replace `<API>` with the API endpoint you want to access. For example, `/api/identity/users/profile`.
 - Replace `<token>` with the security token you generated.
 
+## Specifying Organization Context
+
+{{< alert type="info" title="API Tokens are User-Scoped" >}}
+Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of. For users who belong to multiple organizations, you need to explicitly specify which organization your API requests should operate on.
+
+This is similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work, where a single token grants access to all repositories and organizations the user has access to.
+{{< /alert >}}
+
+There are two ways to control the organization context for your API requests:
+
+### Using the `layer5-current-orgid` Header
+
+Include the `layer5-current-orgid` header with your organization's ID to specify the target organization for a request:
+
+{{< tabpane >}}
+{{< tab header="cURL"  >}}
+curl -X POST "https://cloud.layer5.io/api/pattern" \
+ -H "Authorization: Bearer <Your-Token>" \
+ -H "layer5-current-orgid: <Your-Organization-ID>" \
+ -H "Content-Type: application/json" \
+ -d '{"name": "my-design", "pattern_file": "..."}'
+
+{{< /tab >}}
+
+{{< tab header="JavaScript" >}}
+
+const token = "Your-Token";
+const orgId = "Your-Organization-ID";
+
+async function createDesign() {
+  const res = await fetch("https://cloud.layer5.io/api/pattern", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "layer5-current-orgid": orgId,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "my-design",
+      pattern_file: "...",
+    }),
+  });
+  const data = await res.json();
+  console.log(data);
+}
+
+createDesign();
+
+{{< /tab >}}
+
+{{< tab header="Python" >}}
+
+import requests
+import json
+
+url = "https://cloud.layer5.io/api/pattern"
+headers = {
+    "Authorization": "Bearer <Your-Token>",
+    "layer5-current-orgid": "<Your-Organization-ID>",
+    "Content-Type": "application/json"
+}
+payload = {
+    "name": "my-design",
+    "pattern_file": "..."
+}
+
+res = requests.post(url, headers=headers, data=json.dumps(payload))
+print(res.json())
+
+{{< /tab >}}
+
+{{< /tabpane >}}
+
+### Setting Organization and Workspace Preferences
+
+Alternatively, you can set your default organization and workspace using the Preferences API. This sets your user preferences so that subsequent API requests will use the specified organization and workspace context:
+
+{{< tabpane >}}
+{{< tab header="cURL"  >}}
+# Set organization and workspace preferences
+curl -X PUT "https://cloud.layer5.io/api/identity/users/preferences" \
+ -H "Authorization: Bearer <Your-Token>" \
+ -H "Content-Type: application/json" \
+ -d '{
+   "selectedOrganization": "<Your-Organization-ID>",
+   "selectedWorkspace": "<Your-Workspace-ID>"
+ }'
+
+{{< /tab >}}
+
+{{< tab header="JavaScript" >}}
+
+const token = "Your-Token";
+
+async function setPreferences() {
+  const res = await fetch("https://cloud.layer5.io/api/identity/users/preferences", {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      selectedOrganization: "<Your-Organization-ID>",
+      selectedWorkspace: "<Your-Workspace-ID>",
+    }),
+  });
+  const data = await res.json();
+  console.log(data);
+}
+
+setPreferences();
+
+{{< /tab >}}
+
+{{< tab header="Python" >}}
+
+import requests
+import json
+
+url = "https://cloud.layer5.io/api/identity/users/preferences"
+headers = {
+    "Authorization": "Bearer <Your-Token>",
+    "Content-Type": "application/json"
+}
+payload = {
+    "selectedOrganization": "<Your-Organization-ID>",
+    "selectedWorkspace": "<Your-Workspace-ID>"
+}
+
+res = requests.put(url, headers=headers, data=json.dumps(payload))
+print(res.json())
+
+{{< /tab >}}
+
+{{< /tabpane >}}
+
 ## All API Endpoints
 
 {{< alert type="info" >}}
