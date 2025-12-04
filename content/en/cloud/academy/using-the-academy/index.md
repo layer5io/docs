@@ -134,15 +134,6 @@ Completing content in the Academy earns you valuable credentials that you can sh
 > Expand a section below to learn more.
 
 <details>
-<summary><strong>Learning Experience</strong></summary>
-
-<details>
-<summary>Is Layer5 Academy free to use?</summary>
-
-Yes, all learning materials, including learning paths, challenges, and exams, are completely free. The only optional, paid item is the issuance of an official certificate after successfully passing a Certification.
-</details>
-
-<details>
 <summary>Will my learning progress be saved if I leave and come back later?</summary>
 
 Yes, as long as you are enrolled in a content, your progress is saved automatically. You can always return and continue from your last completed course.
