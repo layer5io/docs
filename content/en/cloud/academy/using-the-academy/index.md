@@ -154,7 +154,7 @@ Currently, all content is designed to be accessed online through the Academy pla
 <details>
 <summary>Where can I ask questions or discuss the content material?</summary>
 
-Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to join the [Layer5 Community](https://layer5.io/community/handbook).
+Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to open new or participate in existing topics in the community [discussion forum](https://discuss.layer5.io). We also warmly welcome you to join the [Layer5 Community Slack](https://slack.layer5.io).
 </details>
 
 </details>
