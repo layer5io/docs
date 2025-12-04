@@ -183,4 +183,3 @@ Yes. Meshery Academy certifications may have an expiration date. Please check th
 Upon successful completion, you’ll receive a verifiable digital certificate. You can share your achievement by adding it to your professional profiles (for example, on LinkedIn) or including it on your resume. A shareable verification link is available within your certification dashboard, which you can use to confirm your credential publicly.
 </details>
 
-</details>
