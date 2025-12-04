@@ -65,6 +65,10 @@ docs/
 
 ## Development Workflow
 
+1. Don't fork this repo.
+1. Create a branch and pull request in this repo.
+1. Don't mark your pull request as draft.
+
 ### Setup
 ```bash
 # Install dependencies (required for fresh clone)
