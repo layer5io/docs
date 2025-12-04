@@ -14,7 +14,7 @@
 	{{ .Content }}
 	{{ range .RegularPages.ByDate.Reverse }}
 	  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-	  <p>{{ .Date.Format "Monday, 02-Jan-06 15:04:05 MST" }}</p>
+	  <p>{{ .Date.Format "Monday, Jan 2nd, 2025 15:04:05 CST" }}</p>
 	{{ end }}
 	</section>
 	
