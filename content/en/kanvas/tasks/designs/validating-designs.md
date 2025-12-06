@@ -25,9 +25,11 @@ This comprehensive validation ensures that:
 
 1. To validate your design, navigate to the Actions button at the top of the Design canvas.
 
+![Performing Validation](/kanvas/getting-started/images/validating-designs/performing-validation-1.png)
+
 2. Click on the **Validate** Icon.
 
-![Performing Validation](/kanvas/getting-started/images/validating-designs/performing-validation.png)
+![Performing Validation](/kanvas/getting-started/images/validating-designs/performing-validation-2.png)
 
 If the validation is successful, you will see a modal displaying the number of components validated and the number of annotations, similar to the one shown below:
 
