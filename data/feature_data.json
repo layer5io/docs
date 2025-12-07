@@ -369,6 +369,22 @@
   },
   {
     "theme": "",
+    "categoryOrder": "2",
+    "category": "Kanvas",
+    "functionOrder": "202",
+    "function": "500 Built-in Shapes, Pen and Pencil",
+    "feature": "Draw shapes, lines, text, customize style, drag and drop images and text files to represent the components and relationships of between your infrastructure components.",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": true,
+      "teamDesigner": true,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/kanvas/designer/whiteboarding/#step-3-utilizing-whiteboard-tools"
+  },
+  {
+    "theme": "",
     "categoryOrder": "3",
     "category": "Performance Management",
     "functionOrder": "301",
@@ -942,6 +958,22 @@
       "enterprise": true
     },
     "docs": "https://docs.layer5.io/cloud/academy/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "add-on",
+    "category": "Kanvas",
+    "functionOrder": "1104",
+    "function": "Dedicated WebRTC",
+    "feature": "This premium offering delivers a secure, high-performance WebRTC solution, purpose-built for real-time, multiplayer collaboration across distributed teams. Powered by Conflict-Free Replicated Data Types (CRDT), this feature ensures seamless, low-latency synchronization of cloud native designs, configurations, and operational workflows, even in complex multi-cluster Kubernetes and public Cloud environments.",
+    "subscriptionTier": "Enterprise",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/self-hosted/planning/peer-to-peer-communication/"
   },
   {
     "theme": "",
