@@ -12,10 +12,10 @@ jobs:
   fetch-pricing-list:
     name: Fetch Pricing List
     if: github.repository == 'layer5io/docs'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
