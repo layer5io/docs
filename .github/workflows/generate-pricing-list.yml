@@ -15,18 +15,21 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Check out code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
       - name: Set spreadsheet_uri as environment variable
-        run: echo "spreadsheet_uri=https://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/pub?output=csv" >> $GITHUB_ENV
-        if: inputs.spreadsheet_uri != ''
-          echo "spreadsheet_uri=${{ inputs.spreadsheet_uri }}" >> $GITHUB_ENV
+        run: |
+          if [ -n "${{ inputs.spreadsheet_uri }}" ]; then
+            echo "spreadsheet_uri=${{ inputs.spreadsheet_uri }}" >> $GITHUB_ENV
+          else
+            echo "spreadsheet_uri=https://docs.google.com/spreadsheets/d/1Ck_5q7U_vLSIDTtplugG3pCVC5zugXgTHtO7T7-yL8g/pub?output=csv" >> $GITHUB_ENV
+          fi
 
       - name: Dump pricing list from the spreadsheet
         run: |
-          curl -L $spreadsheet_uri  -o "./pricing-list.csv";
+          curl -L "$spreadsheet_uri" -o "./pricing-list.csv";
       - name: Create data folder
         run: |
           [ ! -d "./static/data/csv" ] && mkdir -p "./static/data/csv";
@@ -39,4 +42,4 @@ jobs:
           commit_options: "--signoff"
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
-          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>author of the commit that triggered the run
+          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
