@@ -5,17 +5,17 @@ on:
 jobs:
   release_notes_docs_cloud_latest:
     name: Release notes cloud with latest version
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          token: ${{ secrets.RELEASEDRAFTER_PAT }}
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
           repository: layer5io/docs
-      - name: Get Latest Meshery Cloud Release
+      - name: Get Latest Cloud Release
         id: meshery-cloud
         env:
-          ACCESS_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
+          ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           release_tag=$(curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5io/meshery-cloud/releases/latest | jq -r ".tag_name")
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
@@ -24,7 +24,7 @@ jobs:
       - name: Get Release Info
         if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
         env:
-          ACCESS_TOKEN: ${{ secrets.RELEASEDRAFTER_PAT }}
+          ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5io/meshery-cloud/releases/latest > latest_release.json
           
@@ -41,7 +41,7 @@ jobs:
         if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Release Notes Meshery Cloud version ${{ steps.meshery-cloud.outputs.release_tag }}"
+          commit_message: "Release Notes Cloud version ${{ steps.meshery-cloud.outputs.release_tag }}"
           branch: master
           commit_options: "--signoff"
           file_pattern: 'build/meshery-cloud.version ./content/en/cloud/reference/releases/${{ steps.meshery-cloud.outputs.release_tag }}.md'
