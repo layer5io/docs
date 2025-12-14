@@ -1,4 +1,4 @@
-name: Publish Meshery Cloud Version Dispatcher
+name: Publish Cloud Version Dispatcher
 on:   
   workflow_dispatch:
 

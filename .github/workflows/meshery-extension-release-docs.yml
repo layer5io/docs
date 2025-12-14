@@ -1,18 +1,18 @@
-name: Publish Meshery Extensions Version Dispatcher
+name: Publish Kanvas Version Dispatcher
 on:   
   workflow_dispatch:
 
 jobs:
   release_notes_docs_meshery_extensions_latest:
-    name: Release notes meshery extensions with latest version
-    runs-on: ubuntu-22.04
+    name: Release notes Kanvas with latest version
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           repository: layer5io/docs
-      - name: Get Latest Meshery Extensions Release
+      - name: Get Latest Kanvas Release
         id: meshery-extensions
         env:
           ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
@@ -41,7 +41,7 @@ jobs:
         if: steps.meshery-extensions.outputs.current_tag != steps.meshery-extensions.outputs.release_tag
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Release Notes Meshery Extension version ${{ steps.meshery-extensions.outputs.release_tag }}"
+          commit_message: "Release Notes Kanvas version ${{ steps.meshery-extensions.outputs.release_tag }}"
           branch: master
           commit_options: "--signoff"
           file_pattern: 'build/meshery-extensions.version ./content/en/kanvas/reference/releases/${{ steps.meshery-extensions.outputs.release_tag }}.md'
