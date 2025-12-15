@@ -1,5 +1,8 @@
 ---
 title: Planning
+description: Plan your self-hosted Layer5 Cloud deployment
+weight: 2
+---
 
 ## Provider Configuration Planning
 
@@ -26,7 +29,8 @@ For detailed usage and examples, see the [Deployment Guide](/cloud/self-hosted/d
 
 {{< alert type="warning" title="Important" >}}
 Plan your INIT_CONFIG carefully as it is only processed during initial startup. Changes require redeployment or manual configuration updates.
-{{< /alert >}} Layer5 Cloud Deployment
+{{< /alert >}}
+ Layer5 Cloud Deployment
 description: "Understand deployment prerequisites and prepare your environment for a secure and scalable Layer5 Cloud deployment."
 categories: [Self-Hosted]
 #tags: [helm]
