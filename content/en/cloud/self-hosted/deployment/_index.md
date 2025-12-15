@@ -6,7 +6,55 @@ tags: [helm]
 weight: 2
 ---
 
-## High-level List of Deployment Tasks
+## High-level List of Deployment
+
+## Environment Variables
+
+### INIT_CONFIG
+
+The `INIT_CONFIG` environment variable allows you to configure the initial setup of your self-hosted Layer5 Cloud provider. This variable accepts a JSON string that defines the provider initialization configuration.
+
+#### Purpose
+
+`INIT_CONFIG` enables you to:
+- Pre-configure provider settings during deployment
+- Automate initial setup for consistent deployments  
+- Define custom provider configurations without manual intervention
+
+#### Usage
+
+Set the `INIT_CONFIG` environment variable with a JSON configuration string:
+
+```bash
+export INIT_CONFIG='{"provider": {"name": "my-provider", "settings": {...}}}'
+```
+
+For Docker deployments:
+
+```bash
+docker run -e INIT_CONFIG='{"provider": {"name": "my-provider"}}' layer5/meshery-cloud
+```
+
+For Kubernetes deployments, add to your deployment manifest:
+
+```yaml
+env:
+  - name: INIT_CONFIG
+    value: '{"provider": {"name": "my-provider", "settings": {...}}}'
+```
+
+{{< alert type="info" title="Note" >}}
+The INIT_CONFIG variable is only processed during the initial startup. Subsequent restarts will not reprocess this configuration.
+{{< /alert >}}
+
+#### Configuration Schema
+
+The `INIT_CONFIG` JSON structure supports the following fields:
+
+- `provider.name`: The name of your provider instance
+- `provider.settings`: Custom provider settings specific to your deployment
+
+For detailed configuration options, refer to the [provider initialization documentation](https://github.com/layer5io/meshery-cloud/blob/master/docs/provider-init.md). Tasks
 
 <ol>
     <li>Review the prequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
