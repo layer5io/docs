@@ -99,386 +99,282 @@ To optimize performance, consider the following:
 3. Remove any unnecessary images from your design.
 4. Use image compression tools to reduce the size of your images before adding them to your design.
 
-## Compound Node Rendering Performance
+## What Affects Performance
 
-When working with compound nodes (parent nodes containing multiple child nodes), you may encounter performance challenges as the number of children increases. Understanding these issues and the optimizations available can help you create more responsive designs.
+As your designs grow in complexity, certain design patterns can impact how smoothly Kanvas responds. Understanding these factors helps you create designs that remain fast and responsive.
 
-### Root Cause Analysis
+### Working with Grouped Components
 
-The rendering performance of compound nodes with many children can be significantly impacted by several factors:
+When you create groups of components (placing multiple components inside a parent container), you might notice performance differences as the number of grouped items increases. Here's what you might experience:
 
-- **Badge Rendering Plugin Overhead**: The `@layer5/cytoscape-node-html-label` plugin, while powerful for rendering badges and labels, can become a performance bottleneck for compound nodes with many children.
-- **Overly Broad Selectors**: The badge selector `node[?label]` matches virtually every node in the graph, causing unnecessary re-renders even for nodes that haven't changed.
-- **Missing Viewport Culling**: Badges are rendered for all nodes in the design, even those currently off-screen and not visible to the user, wasting computational resources.
-- **Re-render Multiplication**: With 100 child nodes in a compound parent, approximately 303 badge re-renders occur per update cycle.
-- **Drag Operation Overhead**: During interactive operations like dragging, the system can generate 18,000-36,000 function calls per second, leading to UI lag and poor user experience.
+**Signs of Performance Impact:**
+- Dragging groups feels laggy or choppy
+- Design takes longer to load and display
+- Moving or resizing groups shows delayed response
+- Screen updates appear slower during interactions
 
-{{< alert type="warning" title="Performance Impact" >}}
-Large compound nodes (100+ children) can experience significant lag during drag operations and viewport changes without proper optimizations.
+{{< alert type="warning" title="Large Groups" >}}
+Groups containing 100 or more components may experience noticeable lag during drag operations. Consider breaking large groups into smaller, logical subgroups for better performance.
 {{< /alert >}}
 
-### Performance Metrics
+### How Kanvas Optimizes Your Design
 
-The following table illustrates the dramatic performance improvements achieved through optimization:
+Kanvas automatically works behind the scenes to keep your designs running smoothly:
 
-| Scenario | Before Optimization | After Optimization | Improvement |
-|----------|---------------------|-------------------|-------------|
-| Badge re-renders per update (100 children) | 303 | ~30 | 90% reduction |
-| Function calls/sec during drag | 18,000-36,000 | 500-3,000 | 90-95% reduction |
-| Perceived responsiveness | Laggy, choppy | Smooth, responsive | Significantly improved |
+**Smart Rendering:**
+- Kanvas only updates the parts of your design that actually change, not the entire canvas
+- Components outside your current view aren't fully rendered, saving resources
+- Information badges and labels are displayed efficiently to prevent unnecessary redraws
 
-### Optimizations Implemented
+**What This Means for You:**
+The table below shows typical performance improvements you'll experience:
 
-Kanvas incorporates several key optimizations to address compound node rendering performance:
-
-#### 1. Viewport Culling (50-80% reduction)
-
-Only badges for nodes currently visible in the viewport are rendered. Nodes outside the visible area are skipped, reducing unnecessary computation.
+| Design Scenario | Without Optimization | With Optimization | Your Experience |
+|----------------|----------------------|-------------------|-----------------|
+| Dragging a group of 100 components | Laggy and slow | Smooth and responsive | 90% improvement |
+| Moving grouped components | Choppy interactions | Fluid movement | Significantly better |
+| Overall responsiveness | Delayed reactions | Immediate feedback | Much more responsive |
 
 {{< alert type="success" title="Automatic Optimization" >}}
-Viewport culling is automatically enabled in Kanvas. No configuration is required to benefit from this optimization.
+These optimizations work automatically. You don't need to configure anything to benefit from better performance.
 {{< /alert >}}
 
-#### 2. Increased Memoization TTL (70% reduction)
+## Managing Design Complexity
 
-Badge rendering is intelligently cached to avoid redundant computations:
+Kanvas provides many interactive features that enhance your design experience. Understanding how these features work together helps you maintain optimal performance.
 
-- **Error Badges**: Cache duration increased from 300ms to 1000ms
-- **Compound Badges**: Cache duration increased from 200ms to 1000ms
+### Features That Impact Performance
 
-This means that if a node's state hasn't changed, its badge rendering is reused from cache rather than recomputed.
+Your design experience includes several interactive capabilities that all work together:
 
-#### 3. Combined Impact (90-95% reduction)
+**Interactive Features:**
+- **Alignment guides** help you position components precisely as you drag them
+- **Automatic relationship management** keeps connections between components updated
+- **Tooltips and information displays** show helpful context as you work
+- **Resize handles and controls** let you adjust component sizes smoothly
+- **Visual grouping indicators** show which components belong together
 
-When viewport culling and increased memoization work together, the overall reduction in badge re-renders reaches 90-95%, resulting in a dramatically more responsive user interface even with complex compound nodes.
-
-{{< alert type="note" title="Technical Reference" >}}
-These optimizations were implemented in PR #3917 and address issues documented in #3916 from the layer5labs/meshery-extensions repository.
-{{< /alert >}}
-
-## Cytoscape Plugin Performance Considerations
-
-Kanvas leverages multiple Cytoscape.js plugins to provide rich interactive features. Understanding the performance characteristics of these plugins can help you anticipate and mitigate potential performance issues.
-
-### Plugin-Specific Performance Characteristics
-
-#### Compound Drag-and-Drop Plugin
-
-The compound drag-and-drop functionality may experience performance degradation with large graphs. This is a known limitation documented in the plugin's own README. If you're working with designs containing hundreds of nodes, consider:
-
-- Breaking your design into multiple smaller designs
-- Using the Layers panel to hide unnecessary components during editing
-- Limiting the number of compound nodes with large child counts
-
-#### Event Cascade Issues
-
-Multiple plugins listening to the same Cytoscape events can create a multiplication effect that compounds performance overhead:
-
-- **Grid Guide Plugin**: Listens for drag events to display alignment guides
-- **Automove Plugin**: Monitors node movements to maintain relationships
-- **Popper Plugin**: Tracks node positions for tooltip positioning
-
-When all these plugins respond to a single drag event, the computational cost multiplies, potentially causing lag during interactive operations.
+When you're working with many components simultaneously, these features all activate together, which can sometimes slow down interactions like dragging.
 
 {{< alert type="info" title="Performance Tip" >}}
-The impact of event cascades is most noticeable during continuous operations like dragging. The render throttling optimizations described later in this document help mitigate this issue.
+If dragging feels slow, try these strategies:
+- Hide unnecessary layers temporarily using the Layers panel
+- Break your design into smaller, focused sections
+- Work on one area of your design at a time
+- Zoom in to focus on specific components
 {{< /alert >}}
 
-#### HTML Plugin Overhead
+### Practical Tips for Better Performance
 
-Earlier versions of Kanvas used DOM-based HTML rendering for interactive elements. Migration to a 2D canvas renderer has provided significant performance improvements for:
+**When Creating Large Designs:**
+1. Use the Layers panel to hide components you're not actively editing
+2. Break complex designs into multiple smaller designs that you can link together
+3. Group related components thoughtfully rather than creating very large groups
+4. Remove old comments and annotations you no longer need
 
-- **Resize Handles**: Canvas-based handles render faster and respond more smoothly
-- **Overlays**: Canvas overlays avoid DOM manipulation overhead
-- **Interactive Controls**: Canvas-based controls reduce browser reflow and repaint operations
+**When Experiencing Slowness:**
+1. Check if you have many layers enabled that you're not using
+2. Consider if your design has grown beyond 500 components (approaching the 1,000 limit)
+3. Try hiding relationship layers temporarily while arranging components
+4. Close and reopen your design to refresh the canvas
 
-#### Bubblesets Optimization
+## How Kanvas Keeps Things Fast
 
-For designs with complex relationship visualizations, the Bubblesets algorithm has been optimized to provide better performance through improved algorithms that reduce computational complexity.
+Kanvas includes built-in intelligence to maintain smooth performance as you work on your designs. You don't need to manage these features manually—they work automatically in the background.
 
-{{< alert type="note" title="Technical Reference" >}}
-These optimizations were implemented across multiple PRs: #3885, #3887, and #3500 from the layer5labs/meshery-extensions repository.
+### Efficient Updates
+
+**What Happens When You Make Changes:**
+Think of your design like a document. When you edit a single paragraph, you wouldn't want your word processor to reformat the entire document. Similarly, Kanvas only updates the specific components you're changing, not your entire design.
+
+**Benefits You'll Notice:**
+- Quick response when you move or edit components
+- Smooth interactions even in large designs
+- Consistent performance throughout your work session
+- Better experience when multiple people collaborate on the same design
+
+{{< alert type="success" title="Smart Performance" >}}
+Kanvas is designed to only update what needs updating, keeping your design responsive without requiring any configuration from you.
 {{< /alert >}}
 
-## State Management and Rendering Optimizations
+### Smooth Interactions During Continuous Operations
 
-Efficient state management is critical for maintaining good performance as your designs grow in complexity. Kanvas employs several sophisticated techniques to optimize state updates and rendering.
+When you're actively dragging components, resizing groups, or panning around your design, Kanvas automatically manages how often the screen updates to ensure smooth, responsive interactions.
 
-### Fine-Grained Reactivity
+**What This Means:**
+- Dragging feels fluid, not jerky
+- Your cursor stays synchronized with the component you're moving
+- Multiple simultaneous operations remain responsive
+- The interface doesn't freeze or stutter during intensive operations
 
-Instead of expensive JSON snapshot computations that process the entire design state, Kanvas uses fine-grained state updates that only affect the specific parts of the design that have changed.
+## Working with Different Zoom Levels
 
-**Benefits:**
-- Reduced CPU usage during state updates
-- Faster response times for user interactions
-- Lower memory consumption
-- More predictable performance characteristics
+The zoom level you choose affects both what you see and how your design performs. Kanvas adapts its rendering based on your current zoom level to provide the best experience.
 
-{{< alert type="success" title="Automatic Optimization" >}}
-Fine-grained reactivity is built into Kanvas's state management system and requires no configuration.
+### Progressive Detail Display
+
+Kanvas automatically adjusts the level of detail based on how far you're zoomed in or out:
+
+**Zoomed Out (Overview Mode):**
+- Shows component shapes and primary names
+- Displays main relationships between components
+- Provides a fast, high-level view of your entire design
+- Perfect for understanding overall structure
+
+**Medium Zoom (Working Mode):**
+- Adds relationship details and secondary information
+- Shows more component metadata
+- Good balance between detail and performance
+
+**Zoomed In (Detail Mode):**
+- Displays all badges, annotations, and detailed information
+- Shows validation messages and warnings
+- Reveals complete component properties
+- Best for detailed configuration work
+
+{{< alert type="info" title="Use Zoom Strategically" >}}
+Take advantage of zoom levels: zoom out to get an overview and rearrange major sections, then zoom in when you need to configure specific components in detail.
 {{< /alert >}}
-
-### Render Throttling
-
-To prevent UI thrashing during continuous operations, Kanvas implements render throttling that locks down re-renders to a maximum of 10 per second during operations like:
-
-- Dragging nodes or groups of nodes
-- Resizing components
-- Panning and zooming the viewport
-- Bulk operations affecting multiple components
-
-This ensures that the UI remains responsive even during intensive operations, preventing the browser from becoming overwhelmed with render requests.
-
-**Target Performance:**
-- Maximum re-renders: 10 per second
-- Frame time budget: ~100ms per render
-- Typical user-perceived lag: Minimal to none
-
-### Selector Optimization
-
-Cytoscape selectors used for sharedState snapshots have been optimized to reduce computational overhead:
-
-- Use specific selectors instead of broad queries when possible
-- Cache selector results when appropriate
-- Minimize the number of selector evaluations per frame
-- Defer non-critical selector operations to idle time
-
-### Evaluation Deferral
-
-Kanvas intelligently skips unnecessary feasibility evaluations for events that don't require validation:
-
-- **Tap Events**: No feasibility check needed for simple selections
-- **Double-Click Events**: Validation deferred until action is confirmed
-- **Hover Events**: No evaluation unless tooltip or preview is needed
-
-This reduces computational overhead for common user interactions that don't modify the design.
-
-{{< alert type="note" title="Technical Reference" >}}
-State management optimizations were implemented in PRs #3448, #3595, #3121, and #3114 from the layer5labs/meshery-extensions repository.
-{{< /alert >}}
-
-## Zoom and Viewport Performance
-
-The zoom level and viewport position significantly impact rendering performance. Kanvas implements several optimizations to ensure smooth performance across all zoom levels.
-
-### Minimum Zoom Viewport
-
-Maintaining a consistent minimum zoom level ensures that detailed rendering works properly across all interactive elements:
-
-- **Layers**: All layers render consistently at minimum zoom
-- **Badges**: Error, warning, and info badges remain visible and properly sized
-- **Textboxes**: Text remains readable without excessive scaling
-- **Interactions**: Interactive handles and controls maintain proper hit targets
-- **Device Compatibility**: Consistent experience across desktop, tablet, and mobile devices
-
-{{< alert type="warning" title="Zoom Limits" >}}
-Kanvas enforces minimum and maximum zoom limits to ensure optimal rendering performance and usability. Attempting to zoom beyond these limits will have no effect.
-{{< /alert >}}
-
-### Progressive Detail Rendering
-
-Kanvas implements view filtering based on zoom level to show more or less detail depending on the current viewport:
-
-- **Zoomed Out (Low Detail)**: Show component shapes and primary labels only
-- **Medium Zoom**: Add relationship lines and secondary labels
-- **Zoomed In (High Detail)**: Show all badges, annotations, and detailed metadata
-
-This approach ensures that rendering resources are focused on visible, meaningful details at each zoom level.
 
 **Performance Benefits:**
-- Reduced rendering overhead at low zoom levels
-- Faster panning and zooming operations
-- Smoother performance with large designs
-- Better user experience with progressive disclosure of information
+When you're zoomed out, Kanvas doesn't spend resources rendering details you can't see anyway. This keeps panning and navigation fast even in large designs. As you zoom in, more information progressively appears, giving you the detail you need without overwhelming the display.
 
-### Zoom Rendering Consistency
+### Zoom Limits
 
-Fixes have been implemented to ensure consistent rendering behavior at all zoom levels:
+Kanvas sets reasonable minimum and maximum zoom levels to ensure everything remains usable:
 
-- Badges maintain proper sizing relative to nodes
-- Relationship lines scale appropriately
-- Interactive handles remain accessible
-- Text remains readable without pixelation
+- Text stays readable without becoming pixelated
+- Interactive handles remain large enough to click
+- Badges and indicators maintain appropriate sizes
+- The design looks good on all devices (desktop, tablet, mobile)
 
-{{< alert type="note" title="Technical Reference" >}}
-Zoom and viewport optimizations were implemented in PRs #3528, #3711, and #2292 from the layer5labs/meshery-extensions repository.
+{{< alert type="warning" title="Zoom Boundaries" >}}
+If you try to zoom beyond the minimum or maximum limits, Kanvas won't zoom further. These limits are in place to maintain usability and performance.
 {{< /alert >}}
 
-## Performance Testing Guidelines
+## Testing Your Design's Performance
 
-Regular performance testing helps ensure that your designs remain responsive as they grow in complexity. Use these guidelines to validate performance characteristics.
+As you build larger designs, it's helpful to evaluate how well they perform. Here are practical ways to test your design's responsiveness.
 
-### Test Scenarios
+### Practical Test Scenarios
 
-Validate performance across a range of design complexities:
+Try these scenarios to understand how your design performs:
 
-1. **Baseline Scenario**: 1 parent + 10 children
-   - Expected behavior: Smooth, lag-free interactions
-   - Use case: Small component groups, basic hierarchies
+1. **Small Group Test** (10-20 components in a group)
+   - Does dragging feel instant and smooth?
+   - Do components respond immediately to your actions?
+   - This is the baseline—everything should feel effortless
 
-2. **Medium Complexity**: 1 parent + 50 children
-   - Expected behavior: Responsive with minor delays acceptable
-   - Use case: Moderate-sized microservice architectures, namespace groups
+2. **Medium Design Test** (50-100 components total)
+   - Can you drag groups without noticeable delay?
+   - Does panning around the canvas feel fluid?
+   - Are minor delays acceptable for your workflow?
 
-3. **Large/Complex**: 1 parent + 100 children
-   - Expected behavior: Acceptable performance with optimizations
-   - Use case: Large namespaces, complex service meshes, cluster visualizations
+3. **Large Design Test** (200+ components)
+   - How does dragging large groups feel?
+   - Is there lag when you first load the design?
+   - Does zooming in and out remain responsive?
 
-4. **Stress Test**: 3 levels of nesting
-   - Expected behavior: Functional but may experience some lag
-   - Use case: Deeply nested organizational structures, multi-tier architectures
+4. **Complex Nesting Test** (groups within groups, 3+ levels deep)
+   - Can you still move parent groups smoothly?
+   - Do nested relationships display correctly?
+   - Is the design still manageable?
 
 {{< alert type="info" title="Testing Approach" >}}
-Start with the baseline scenario and progressively increase complexity. This helps identify the specific point where performance begins to degrade.
+Start simple and add complexity gradually. This helps you identify exactly when performance starts to degrade, making it easier to adjust your design approach.
 {{< /alert >}}
 
-### Target Metrics
+### Simple Performance Checks
 
-Aim for the following performance targets when testing:
+You don't need specialized tools to evaluate performance. Just ask yourself:
 
-#### Frame Rate During Drag Operations
-- **Target**: 60 FPS (frames per second)
-- **Acceptable Threshold**: 30 FPS
-- **Below Threshold**: Indicates performance issues requiring optimization
+**Responsiveness Check:**
+- Does dragging components feel smooth or choppy?
+- Do components respond immediately when you click them?
+- Can you pan around the design without lag?
 
-#### Time to First Badge Render
-- **Target**: < 100ms
-- **Measurement**: Time from design load to all visible badges rendered
-- **Impact**: Affects perceived load time and user experience
+**Loading Time Check:**
+- Does your design load within a few seconds?
+- Are badges and indicators visible quickly?
+- Does the design feel "ready" when it first appears?
 
-#### Badge Re-renders Per Drag Operation
-- **Target**: < 1,000 re-renders
-- **Measurement**: Total badge rendering calls during a single drag operation
-- **Impact**: Directly affects drag smoothness and responsiveness
+**Interaction Check:**
+- Can you resize components smoothly?
+- Do relationships update without delay?
+- Does the interface feel responsive or sluggish?
 
-### Monitoring Performance
+### Using Browser Developer Tools (Optional)
 
-To monitor performance during testing:
+For more detailed performance analysis, you can use your browser's built-in developer tools:
 
-1. **Browser DevTools**: Use the Performance tab to record and analyze interactions
-2. **Frame Rate**: Monitor FPS during drag operations
-3. **CPU Usage**: Watch for excessive CPU spikes during interactions
-4. **Memory Usage**: Check for memory leaks during extended sessions
+1. **Open Developer Tools**: Press F12 (Windows/Linux) or Cmd+Option+I (Mac)
+2. **Navigate to Performance Tab**: Look for the "Performance" or "Profiler" tab
+3. **Record an Interaction**: Click the record button, perform an action (like dragging), then stop recording
+4. **Review Results**: Look for long operations or frame drops that indicate performance issues
 
 {{< alert type="warning" title="Browser Differences" >}}
-Performance can vary significantly across browsers. Test in your primary target browsers (Chrome, Firefox, Safari) to ensure consistent experience.
+Performance can vary between browsers. If your design feels slow, try testing in Chrome, Firefox, or Safari to see if performance differs.
 {{< /alert >}}
 
-## Long-term Architecture Recommendations
+## Future Improvements
 
-While current optimizations provide significant performance improvements, several architectural enhancements could provide even greater benefits in future versions of Kanvas.
+We're continuously working to make Kanvas even faster and more responsive. Future updates will bring additional performance enhancements, including:
 
-### Canvas-Based Badge Rendering
+- Improved rendering techniques for even smoother interactions
+- Smarter optimization of complex designs
+- Better handling of very large designs (1,000+ components)
+- Enhanced performance on lower-powered devices
 
-Migrating from DOM-based badge rendering to canvas-based rendering could provide 10-100x performance improvement:
+These improvements will happen automatically through Kanvas updates—you won't need to change your designs or workflows to benefit from them.
 
-**Current Approach (DOM-based):**
-- Each badge is an HTML element
-- Browser must manage layout, styles, and reflows
-- Limited by DOM manipulation performance
-
-**Proposed Approach (Canvas-based):**
-- Badges rendered directly to canvas
-- No DOM manipulation overhead
-- Batch rendering operations
-- Better control over rendering pipeline
-
-**Expected Benefits:**
-- 10-100x faster badge rendering
-- Reduced memory footprint
-- Smoother animations and transitions
-- Better scaling for large designs
-
-### Virtual Badge Manager
-
-A virtual badge manager would only render badges currently visible in the viewport:
-
-**Implementation Strategy:**
-- Track viewport bounds
-- Maintain a spatial index of badge positions
-- Render only badges intersecting with viewport
-- Update dynamically as viewport changes
-
-**Expected Benefits:**
-- Constant rendering time regardless of total badge count
-- Seamless handling of designs with thousands of nodes
-- Reduced GPU memory usage
-- Improved scrolling and panning performance
-
-### Web Worker Rendering
-
-Offloading computationally intensive operations to background threads (Web Workers) could prevent UI blocking:
-
-**Candidate Operations:**
-- Badge layout calculations
-- Relationship path computations
-- Validation and feasibility checks
-- Complex selector evaluations
-
-**Expected Benefits:**
-- UI thread remains responsive during heavy computations
-- Better multi-core CPU utilization
-- Smoother user experience during intensive operations
-- Reduced perceived lag
-
-{{< alert type="info" title="Future Enhancement" >}}
-Web Worker rendering requires careful coordination between threads and may introduce complexity in state management.
+{{< alert type="success" title="Continuous Improvement" >}}
+Performance optimization is an ongoing priority. As Kanvas evolves, your existing designs will automatically benefit from new performance enhancements.
 {{< /alert >}}
 
-### Progressive Rendering Strategy
+## Special URL Options for Performance
 
-Implement a priority-based rendering system that renders critical elements first:
-
-**Rendering Priority Levels:**
-1. **Critical (Immediate)**: Error badges, validation warnings
-2. **High (< 50ms)**: Info badges, relationship indicators
-3. **Medium (< 200ms)**: Annotations, secondary labels
-4. **Low (Idle Time)**: Decorative elements, optional metadata
-
-**Expected Benefits:**
-- Faster time to interactive
-- Critical information always visible
-- Better perceived performance
-- Graceful degradation under load
-
-{{< alert type="success" title="User-Centric Design" >}}
-Progressive rendering ensures users see the most important information first, even if the design hasn't fully loaded.
-{{< /alert >}}
-
-## Performance-Related URL Parameters
-
-Kanvas supports several URL parameters that can impact rendering performance and behavior. Understanding these parameters helps you optimize the loading and rendering of your designs.
+When opening designs in Kanvas, you can add special parameters to the URL that change how your design loads and displays. These options give you control over the balance between features and performance.
 
 ### Full Render Mode
 
-The `render=full` URL parameter enables comprehensive rendering of all design elements, including advanced relationships:
+By default, Kanvas loads your design with optimized rendering for best performance. If you need to see absolutely everything—all relationships, groupings, and metadata—you can use full render mode.
 
-**Usage:**
+**How to Use It:**
+Add `render=full` to your design URL:
 ```
 https://cloud.layer5.io/kanvas/designer?design=<design-id>&render=full
 ```
 
-**What It Includes:**
-- All component relationships
-- TagSet relationships and groupings
+**What You'll See:**
+- Every relationship between components, including complex connections
+- All tag-based groupings and relationships
+- Complete component metadata and properties
+- All status badges and validation indicators
 - Advanced semantic relationships
-- Complete metadata rendering
-- All badges and indicators
 
-**Performance Implications:**
-- Increased initial load time
-- Higher memory usage
-- More computational overhead during updates
-- May impact performance on large designs (100+ components)
+**When to Use Full Render Mode:**
+- When you need to see the complete picture of your design
+- For troubleshooting relationship issues
+- When generating comprehensive documentation
+- For detailed audits or reviews
 
-{{< alert type="warning" title="Large Design Consideration" >}}
-For designs with hundreds of components or complex TagSet relationships, full render mode may cause noticeable performance impact. Consider using standard render mode and selectively enabling layers as needed.
+**When NOT to Use It:**
+- For everyday design work (standard mode is faster)
+- With large designs (100+ components) where performance matters
+- When you only need to view or edit a specific part of your design
+- On slower computers or devices
+
+{{< alert type="warning" title="Performance Trade-off" >}}
+Full render mode shows everything, but it takes longer to load and may feel slower during interactions. For most work, the standard mode provides the best experience. Use full render mode only when you specifically need to see all relationships and metadata at once.
 {{< /alert >}}
 
-### Additional Parameters
+**Practical Example:**
+Imagine you have a design with 200 microservices and hundreds of relationships. In standard mode, Kanvas shows you what you need to work effectively. In full render mode, it displays every single connection and grouping—which is great for a complete overview but can make the design feel sluggish.
 
-For complete documentation on all available URL parameters and their effects, see [URL Parameters](/kanvas/advanced/url-parameters/).
+### More URL Options
 
-{{< alert type="note" title="Parameter Combinations" >}}
-URL parameters can be combined to customize your Kanvas experience. Experiment with different combinations to find the optimal balance between features and performance for your specific use case.
+Kanvas supports several other URL parameters that control different aspects of your design. For a complete list of available options and what they do, see [URL Parameters](/kanvas/advanced/url-parameters/).
+
+{{< alert type="info" title="Experiment and Learn" >}}
+Try different URL parameters to find what works best for your workflow. You can combine multiple parameters to customize your Kanvas experience exactly how you need it.
 {{< /alert >}}
