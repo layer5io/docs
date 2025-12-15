@@ -82,7 +82,7 @@ Depending on the type of layer disabled, either specific components or all compo
 
 > Even though you might hide components, those components are not deleted or removed from your design. These components are simply hidden from current view.
 
-In the same way, as you toggle the evaluation of different types of relationships, understand that this releationships between your components still exist. Those relationsihps are simply **temporarily hidding** from view and the overhead of their evaluation eliminated while the respective type of relationship is disabled.
+In the same way, as you toggle the evaluation of different types of relationships, understand that these relationships between your components still exist. Those relationships are simply **temporarily hidden** from view and the overhead of their evaluation eliminated while the respective type of relationship is disabled.
 
 Using the Layers panel you control the level of sophistication or simplicity of the rendering of components and relationships in your designs. You can both simplify your design layout by removing unnecessary elements and improve performance simultaneously. Alternatively, you can increase the level of detail in your design by enabling additional layers and relationships, while controlling the balance between detail and performance.
 
