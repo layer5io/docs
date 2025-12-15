@@ -29,9 +29,9 @@ Kanvas has a maximum limit of 1,000 components per design. If you exceed this li
 A non-semantic component is a component that does not represent a meaningful entity in your design. For example, a textbox, a shape, a line, or a comment are all examples of non-semantic components. These components are used for annotation purposes only and do not have a direct relationship to the underlying infrastructure or application that you are modeling.
 {{< /alert >}}
 
-Kanvas allows up to 1,000 non-sematically meaningfull components per design. Some designs have a large number of comments. While comments are a valuable collaboration tool, excessive comments can impact the performance of your design. Consider archiving or deleting old comments to keep your design running smoothly.
+Kanvas allows up to 1,000 non-semantically meaningful components per design. Some designs have a large number of comments. While comments are a valuable collaboration tool, excessive comments can impact the performance of your design. Consider archiving or deleting old comments to keep your design running smoothly.
 
-#### Maxiumum Number of Orchestrated Components (semantically meaningful components)
+#### Maximum Number of Orchestrated Components (semantically meaningful components)
 
 {{< alert type="note" title="What is a Semantic Component?" >}}
 A semantic component is a component that represents a meaningful entity in your design. For example, a server, a database, or a network switch are all examples of semantic components. These components have a direct relationship to the underlying infrastructure or application that you are modeling.
@@ -55,7 +55,7 @@ Upon loading a design exceeds that exceeds 20 tags within a single design, Kanva
 
 ### Maximum Number of Users
 
-Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simulatanously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services](/cloud/self-hosted/planning/peer-to-peer-communication) for more details.
+Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simultaneously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services](/cloud/self-hosted/planning/peer-to-peer-communication) for more details.
 
 ### Impact of Images
 
