@@ -101,14 +101,12 @@
               
               const email = emailInput.value.trim();
               
-              // Validate email is not empty
               if (!email) {
                 showMessage('Please enter your email address', true);
                 emailInput.focus();
                 return false;
               }
               
-              // Validate email format
               const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
               if (!emailRegex.test(email)) {
                 showMessage('Please enter a valid email address', true);
@@ -116,8 +114,6 @@
                 return false;
               }
               
-              // Here you can add your newsletter subscription logic
-              // For now, just show a success message
               showMessage('Thank you for subscribing!', false);
               emailInput.value = '';
               
