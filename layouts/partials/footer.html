@@ -62,17 +62,70 @@
       </div>
       <div class="row footer-info2 subscribe">
         <div class="footer-end">
-          <form name="contactform">
+          <form name="contactform" id="newsletter-form">
             <div>
               <p>
                 Subscribe to our Newsletter
               </p>
-              <input class="footer-input" type="email" placeholder="Email Address" />
-              <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
+              <div style="display: flex; align-items: flex-start; flex-direction: column;">
+                <div style="display: flex; align-items: center;">
+                  <input class="footer-input" id="newsletter-email" type="email" placeholder="Email Address" required />
+                  <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
+                </div>
+                <div id="newsletter-message" style="margin-top: 0.5rem; font-size: 0.9rem; min-height: 1.5rem;"></div>
+              </div>
             </div>
           </form>
         </div>
       </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('newsletter-form');
+          const emailInput = document.getElementById('newsletter-email');
+          const messageDiv = document.getElementById('newsletter-message');
+          
+          function showMessage(text, isError) {
+            messageDiv.textContent = text;
+            messageDiv.style.color = isError ? '#ff6b6b' : '#00d3a9';
+          }
+          
+          function clearMessage() {
+            messageDiv.textContent = '';
+          }
+          
+          if (form) {
+            emailInput.addEventListener('input', clearMessage);
+            
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              const email = emailInput.value.trim();
+              
+              // Validate email is not empty
+              if (!email) {
+                showMessage('Please enter your email address', true);
+                emailInput.focus();
+                return false;
+              }
+              
+              // Validate email format
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address', true);
+                emailInput.focus();
+                return false;
+              }
+              
+              // Here you can add your newsletter subscription logic
+              // For now, just show a success message
+              showMessage('Thank you for subscribing!', false);
+              emailInput.value = '';
+              
+              return false;
+            });
+          }
+        });
+      </script>
     </div>
   </div>
   <hr class="footer-hr" />

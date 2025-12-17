@@ -263,17 +263,11 @@
     border-radius: 0.5rem;
     outline: none;
     color: $white;
+    transition: border-color 0.2s ease;
 
     &:focus {
-      padding: 1rem;
-      margin-right: 0.25rem;
-      width: 24rem;
-      height: 3.5rem;
-      border: 0.5px solid $white;
-      background: transparent;
-      border-radius: 0.5rem;
+      border: 1px solid $white;
       outline-width: 0;
-      color: $white;
     }
   }
 
