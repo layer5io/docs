@@ -62,66 +62,33 @@
       </div>
       <div class="row footer-info2 subscribe">
         <div class="footer-end">
-          <form name="contactform" id="newsletter-form">
+          <form name="contactform" id="newsletter-form" aria-label="Newsletter subscription form">
             <div>
               <p>
                 Subscribe to our Newsletter
               </p>
-              <div style="display: flex; align-items: flex-start; flex-direction: column;">
-                <div style="display: flex; align-items: center;">
-                  <input class="footer-input" id="newsletter-email" type="email" placeholder="Email Address" required />
+              <div class="newsletter-container">
+                <div class="newsletter-input-row">
+                  <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                  <input 
+                    class="footer-input" 
+                    id="newsletter-email" 
+                    type="email" 
+                    placeholder="Email Address" 
+                    aria-required="true"
+                    aria-describedby="newsletter-message"
+                    required 
+                  />
                   <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
                 </div>
-                <div id="newsletter-message" style="margin-top: 0.5rem; font-size: 0.9rem; min-height: 1.5rem;"></div>
+                <div id="newsletter-message" class="newsletter-message" aria-live="polite"></div>
               </div>
             </div>
           </form>
         </div>
       </div>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const form = document.getElementById('newsletter-form');
-          const emailInput = document.getElementById('newsletter-email');
-          const messageDiv = document.getElementById('newsletter-message');
-          
-          function showMessage(text, isError) {
-            messageDiv.textContent = text;
-            messageDiv.style.color = isError ? '#ff6b6b' : '#00d3a9';
-          }
-          
-          function clearMessage() {
-            messageDiv.textContent = '';
-          }
-          
-          if (form) {
-            emailInput.addEventListener('input', clearMessage);
-            
-            form.addEventListener('submit', function(e) {
-              e.preventDefault();
-              
-              const email = emailInput.value.trim();
-              
-              if (!email) {
-                showMessage('Please enter your email address', true);
-                emailInput.focus();
-                return false;
-              }
-              
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (!emailRegex.test(email)) {
-                showMessage('Please enter a valid email address', true);
-                emailInput.focus();
-                return false;
-              }
-              
-              showMessage('Thank you for subscribing!', false);
-              emailInput.value = '';
-              
-              return false;
-            });
-          }
-        });
-      </script>
+      {{ $newsletter := resources.Get "js/newsletter.js" }}
+      <script src="{{ $newsletter.Permalink }}" defer></script>
     </div>
   </div>
   <hr class="footer-hr" />
