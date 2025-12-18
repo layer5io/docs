@@ -1,280 +1,250 @@
-[bep]: https://github.com/bep
-[bugs]: https://github.com/gohugoio/hugo/issues?q=is%3Aopen+is%3Aissue+label%3ABug
-[contributing]: CONTRIBUTING.md
-[create a proposal]: https://github.com/gohugoio/hugo/issues/new?labels=Proposal%2C+NeedsTriage&template=feature_request.md
-[documentation repository]: https://github.com/gohugoio/hugoDocs
-[documentation]: https://gohugo.io/documentation
-[dragonfly bsd, freebsd, netbsd, and openbsd]: https://gohugo.io/installation/bsd
-[features]: https://gohugo.io/about/features/
-[forum]: https://discourse.gohugo.io
-[friends]: https://github.com/gohugoio/hugo/graphs/contributors
-[go]: https://go.dev/
-[hugo modules]: https://gohugo.io/hugo-modules/
-[installation]: https://gohugo.io/installation
-[issue queue]: https://github.com/gohugoio/hugo/issues
-[linux]: https://gohugo.io/installation/linux
-[macos]: https://gohugo.io/installation/macos
-[prebuilt binary]: https://github.com/gohugoio/hugo/releases/latest
-[requesting help]: https://discourse.gohugo.io/t/requesting-help/9132
-[spf13]: https://github.com/spf13
-[static site generator]: https://en.wikipedia.org/wiki/Static_site_generator
-[support]: https://discourse.gohugo.io
-[themes]: https://themes.gohugo.io/
-[website]: https://gohugo.io
-[windows]: https://gohugo.io/installation/windows
-
-<a href="https://gohugo.io/"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/static/images/hugo-logo-wide.svg?sanitize=true" alt="Hugo" width="565"></a>
-
-A fast and flexible static site generator built with love by [bep], [spf13], and [friends] in [Go].
-
----
-
-[![GoDoc](https://godoc.org/github.com/gohugoio/hugo?status.svg)](https://godoc.org/github.com/gohugoio/hugo)
-[![Tests on Linux, MacOS and Windows](https://github.com/gohugoio/hugo/workflows/Test/badge.svg)](https://github.com/gohugoio/hugo/actions?query=workflow%3ATest)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gohugoio/hugo)](https://goreportcard.com/report/github.com/gohugoio/hugo)
-
-[Website] | [Installation] | [Documentation] | [Support] | [Contributing] | <a rel="me" href="https://fosstodon.org/@gohugoio">Mastodon</a>
-
-## Overview
-
-Hugo is a [static site generator] written in [Go], optimized for speed and designed for flexibility. With its advanced templating system and fast asset pipelines, Hugo renders a complete site in seconds, often less.
-
-Due to its flexible framework, multilingual support, and powerful taxonomy system, Hugo is widely used to create:
-
-- Corporate, government, nonprofit, education, news, event, and project sites
-- Documentation sites
-- Image portfolios
-- Landing pages
-- Business, professional, and personal blogs
-- Resumes and CVs
-
-Use Hugo's embedded web server during development to instantly see changes to content, structure, behavior, and presentation. Then deploy the site to your host, or push changes to your Git provider for automated builds and deployment.
-
-Hugo's fast asset pipelines include:
-
-- Image processing &ndash; Convert, resize, crop, rotate, adjust colors, apply filters, overlay text and images, and extract EXIF data
-- JavaScript bundling &ndash; Transpile TypeScript and JSX to JavaScript, bundle, tree shake, minify, create source maps, and perform SRI hashing.
-- Sass processing &ndash; Transpile Sass to CSS, bundle, tree shake, minify, create source maps, perform SRI hashing, and integrate with PostCSS
-- Tailwind CSS processing &ndash; Compile Tailwind CSS utility classes into standard CSS, bundle, tree shake, optimize, minify, perform SRI hashing, and integrate with PostCSS
-
-And with [Hugo Modules], you can share content, assets, data, translations, themes, templates, and configuration with other projects via public or private Git repositories.
-
-See the [features] section of the documentation for a comprehensive summary of Hugo's capabilities.
-
-## Sponsors
-
-<p>&nbsp;</p>
-<p float="left">
-  <a href="https://www.linode.com/?utm_campaign=hugosponsor&utm_medium=banner&utm_source=hugogithub" target="_blank"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/assets/images/sponsors/linode-logo_standard_light_medium.png" width="200" alt="Linode"></a>
-&nbsp;&nbsp;&nbsp;
-  <a href="https://www.jetbrains.com/go/?utm_source=OSS&utm_medium=referral&utm_campaign=hugo" target="_blank"><img src="https://raw.githubusercontent.com/gohugoio/gohugoioTheme/master/assets/images/sponsors/goland.svg" width="200" alt="The complete IDE crafted for professional Go developers."></a>
+<p style="text-align:center;" align="center">
+      <picture align="center">
+         <source media="(prefers-color-scheme: dark)" srcset="./.github/readme/images/layer5-light-no-trim.svg">
+         <source media="(prefers-color-scheme: light)" srcset="./.github/readme/images/layer5-no-trim.svg">
+         <img align="center" src="./.github/assets/images/layer5/layer5-no-trim.svg" alt="Shows a dark layer5 logo in light mode and a white logo in dark mode" width="45%"/>
+      </picture>
 </p>
 
-## Editions
+<p align="center">
+<a href="https://github.com/layer5io/docs/graphs/contributors" alt="GitHub contributors">
+<img src="https://img.shields.io/github/contributors/layer5io/layer5.svg" /></a>
+<a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions)+label%3A%22help+wanted%22" alt="Help wanted GitHub issues">
+<img src="https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00" /></a>
+<a href="https://slack.layer5.io" alt="Slack">
+<img src="https://img.shields.io/badge/Slack-@layer5.svg?logo=slack" /></a>
+<a href="https://twitter.com/layer5" alt="Twitter Follow">
+<img src="https://img.shields.io/twitter/follow/layer5.svg?label=Follow+Layer5&style=social" /></a>
+<a href="https://github.com/layer5io/layer5/blob/master/LICENSE" alt="License">
+<img src="https://img.shields.io/github/license/layer5io/layer5.svg" /></a>
+</p>
 
-Hugo is available in three editions: standard, extended, and extended/deploy. While the standard edition provides core functionality, the extended and extended/deploy editions offer advanced features.
+<h5><p align="center"><i>If you’re using Layer5 products or if you like the project, please <a href="https://github.com/layer5io/layer5/stargazers">★</a> this repository to show your support! 🤩</i></p></h5>
 
-Feature|extended edition|extended/deploy edition
-:--|:-:|:-:
-Encode to the WebP format when [processing images]. You can decode WebP images with any edition.|:heavy_check_mark:|:heavy_check_mark:
-[Transpile Sass to CSS] using the embedded LibSass transpiler. You can use the [Dart Sass] transpiler with any edition.|:heavy_check_mark:|:heavy_check_mark:
-Deploy your site directly to a Google Cloud Storage bucket, an AWS S3 bucket, or an Azure Storage container. See&nbsp;[details].|:x:|:heavy_check_mark:
+# About Layer5
 
-[dart sass]: https://gohugo.io/functions/css/sass/#dart-sass
-[processing images]: https://gohugo.io/content-management/image-processing/
-[transpile sass to css]: https://gohugo.io/functions/css/sass/
-[details]: https://gohugo.io/hosting-and-deployment/hugo-deploy/
+[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
-Unless your specific deployment needs require the extended/deploy edition, we recommend the extended edition.
+## Contributions Welcome
 
-## Installation
+<div>
+<a href="https://meshery.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
+<p>
+✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
+✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
+✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">Community Drive</a> by completing a community <a href="https://layer5.io/newcomer">Member Form</a>.<br />
+✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
+✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
+</p>
+</div>
+Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products.
 
-Install Hugo from a [prebuilt binary], package manager, or package repository. Please see the installation instructions for your operating system:
+If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
-- [macOS]
-- [Linux]
-- [Windows]
-- [DragonFly BSD, FreeBSD, NetBSD, and OpenBSD]
+### With Golang
 
-## Build from source
+If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended Hugo version as it has necessary SCSS/SASS support. Find all the Hugo packages here: <https://github.com/gohugoio/hugo/releases/tag/v0.120.4>
 
-Prerequisites to build Hugo from source:
+Now to setup and run the site locally run:
 
-- Standard edition: Go 1.23.0 or later
-- Extended edition: Go 1.23.0 or later, and GCC
-- Extended/deploy edition: Go 1.23.0 or later, and GCC
+`make setup` followed by `make site`
 
-Build the standard edition:
+...and then visit <http://localhost:1313>.
 
-```text
-go install github.com/gohugoio/hugo@latest
-```
+If you pull down new code from GitHub, you will occasionally need to run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
-Build the extended edition:
+### With Docker
 
-```text
-CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@latest
-```
+Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
 
-Build the extended/deploy edition:
+> [!IMPORTANT]  
+> This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
+> Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
 
-```text
-CGO_ENABLED=1 go install -tags extended,withdeploy github.com/gohugoio/hugo@latest
-```
 
-## Star History
+## Layer5 Documentation Structure
 
-[![Star History Chart](https://api.star-history.com/svg?repos=gohugoio/hugo&type=Timeline)](https://star-history.com/#gohugoio/hugo&Timeline)
+## High-Level Outline & Information Architecture for Layer5 Documentation
 
-## Documentation
+**Goal:** Offer comprehensive, organized, and accessible documentation for diverse audiences, from new users to expert contributors.
 
-Hugo's [documentation] includes installation instructions, a quick start guide, conceptual explanations, reference information, and examples.
+**Target Audience:**
 
-Please submit documentation issues and pull requests to the [documentation repository].
-
-## Support
-
-Please **do not use the issue queue** for questions or troubleshooting. Unless you are certain that your issue is a software defect, use the [forum].
-
-Hugo’s [forum] is an active community of users and developers who answer questions, share knowledge, and provide examples. A quick search of over 20,000 topics will often answer your question. Please be sure to read about [requesting help] before asking your first question.
-
-## Contributing
-
-You can contribute to the Hugo project by:
-
-- Answering questions on the [forum]
-- Improving the [documentation]
-- Monitoring the [issue queue]
-- Creating or improving [themes]
-- Squashing [bugs]
-
-Please submit documentation issues and pull requests to the [documentation repository].
-
-If you have an idea for an enhancement or new feature, create a new topic on the [forum] in the "Feature" category. This will help you to:
-
-- Determine if the capability already exists
-- Measure interest
-- Refine the concept
-
-If there is sufficient interest, [create a proposal]. Do not submit a pull request until the project lead accepts the proposal.
-
-For a complete guide to contributing to Hugo, see the [Contribution Guide](CONTRIBUTING.md).
-
-## Dependencies
-
-Hugo stands on the shoulders of great open source libraries. Run `hugo env --logLevel info` to display a list of dependencies.
+- **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
+- **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
 
 <details>
-<summary>See current dependencies</summary>
+  <summary><h2>Cloud Docs</h2></summary>
 
-```text
-github.com/BurntSushi/locker="v0.0.0-20171006230638-a6e239ea1c69"
-github.com/PuerkitoBio/goquery="v1.10.1"
-github.com/alecthomas/chroma/v2="v2.15.0"
-github.com/andybalholm/cascadia="v1.3.3"
-github.com/armon/go-radix="v1.0.1-0.20221118154546-54df44f2176c"
-github.com/bep/clocks="v0.5.0"
-github.com/bep/debounce="v1.2.0"
-github.com/bep/gitmap="v1.6.0"
-github.com/bep/goat="v0.5.0"
-github.com/bep/godartsass/v2="v2.3.2"
-github.com/bep/golibsass="v1.2.0"
-github.com/bep/gowebp="v0.3.0"
-github.com/bep/imagemeta="v0.8.4"
-github.com/bep/lazycache="v0.7.0"
-github.com/bep/logg="v0.4.0"
-github.com/bep/mclib="v1.20400.20402"
-github.com/bep/overlayfs="v0.9.2"
-github.com/bep/simplecobra="v0.5.0"
-github.com/bep/tmc="v0.5.1"
-github.com/cespare/xxhash/v2="v2.3.0"
-github.com/clbanning/mxj/v2="v2.7.0"
-github.com/cpuguy83/go-md2man/v2="v2.0.4"
-github.com/disintegration/gift="v1.2.1"
-github.com/dlclark/regexp2="v1.11.5"
-github.com/dop251/goja="v0.0.0-20250125213203-5ef83b82af17"
-github.com/evanw/esbuild="v0.24.2"
-github.com/fatih/color="v1.18.0"
-github.com/frankban/quicktest="v1.14.6"
-github.com/fsnotify/fsnotify="v1.8.0"
-github.com/getkin/kin-openapi="v0.129.0"
-github.com/ghodss/yaml="v1.0.0"
-github.com/go-openapi/jsonpointer="v0.21.0"
-github.com/go-openapi/swag="v0.23.0"
-github.com/go-sourcemap/sourcemap="v2.1.4+incompatible"
-github.com/gobuffalo/flect="v1.0.3"
-github.com/gobwas/glob="v0.2.3"
-github.com/gohugoio/go-i18n/v2="v2.1.3-0.20230805085216-e63c13218d0e"
-github.com/gohugoio/hashstructure="v0.5.0"
-github.com/gohugoio/httpcache="v0.7.0"
-github.com/gohugoio/hugo-goldmark-extensions/extras="v0.2.0"
-github.com/gohugoio/hugo-goldmark-extensions/passthrough="v0.3.0"
-github.com/gohugoio/locales="v0.14.0"
-github.com/gohugoio/localescompressed="v1.0.1"
-github.com/golang/freetype="v0.0.0-20170609003504-e2365dfdc4a0"
-github.com/google/go-cmp="v0.6.0"
-github.com/google/pprof="v0.0.0-20250208200701-d0013a598941"
-github.com/gorilla/websocket="v1.5.3"
-github.com/hairyhenderson/go-codeowners="v0.7.0"
-github.com/hashicorp/golang-lru/v2="v2.0.7"
-github.com/jdkato/prose="v1.2.1"
-github.com/josharian/intern="v1.0.0"
-github.com/kr/pretty="v0.3.1"
-github.com/kr/text="v0.2.0"
-github.com/kyokomi/emoji/v2="v2.2.13"
-github.com/lucasb-eyer/go-colorful="v1.2.0"
-github.com/mailru/easyjson="v0.7.7"
-github.com/makeworld-the-better-one/dither/v2="v2.4.0"
-github.com/marekm4/color-extractor="v1.2.1"
-github.com/mattn/go-colorable="v0.1.13"
-github.com/mattn/go-isatty="v0.0.20"
-github.com/mattn/go-runewidth="v0.0.9"
-github.com/mazznoer/csscolorparser="v0.1.5"
-github.com/mitchellh/mapstructure="v1.5.1-0.20231216201459-8508981c8b6c"
-github.com/mohae/deepcopy="v0.0.0-20170929034955-c48cc78d4826"
-github.com/muesli/smartcrop="v0.3.0"
-github.com/niklasfasching/go-org="v1.7.0"
-github.com/oasdiff/yaml3="v0.0.0-20241210130736-a94c01f36349"
-github.com/oasdiff/yaml="v0.0.0-20241210131133-6b86fb107d80"
-github.com/olekukonko/tablewriter="v0.0.5"
-github.com/pbnjay/memory="v0.0.0-20210728143218-7b4eea64cf58"
-github.com/pelletier/go-toml/v2="v2.2.3"
-github.com/perimeterx/marshmallow="v1.1.5"
-github.com/pkg/browser="v0.0.0-20240102092130-5ac0b6a4141c"
-github.com/pkg/errors="v0.9.1"
-github.com/rivo/uniseg="v0.4.7"
-github.com/rogpeppe/go-internal="v1.13.1"
-github.com/russross/blackfriday/v2="v2.1.0"
-github.com/sass/libsass="3.6.6"
-github.com/spf13/afero="v1.11.0"
-github.com/spf13/cast="v1.7.1"
-github.com/spf13/cobra="v1.8.1"
-github.com/spf13/fsync="v0.10.1"
-github.com/spf13/pflag="v1.0.6"
-github.com/tdewolff/minify/v2="v2.20.37"
-github.com/tdewolff/parse/v2="v2.7.15"
-github.com/tetratelabs/wazero="v1.8.2"
-github.com/webmproject/libwebp="v1.3.2"
-github.com/yuin/goldmark-emoji="v1.0.4"
-github.com/yuin/goldmark="v1.7.8"
-go.uber.org/automaxprocs="v1.5.3"
-golang.org/x/crypto="v0.33.0"
-golang.org/x/exp="v0.0.0-20250210185358-939b2ce775ac"
-golang.org/x/image="v0.24.0"
-golang.org/x/mod="v0.23.0"
-golang.org/x/net="v0.35.0"
-golang.org/x/sync="v0.11.0"
-golang.org/x/sys="v0.30.0"
-golang.org/x/text="v0.22.0"
-golang.org/x/tools="v0.30.0"
-golang.org/x/xerrors="v0.0.0-20240903120638-7835f813f4da"
-gonum.org/v1/plot="v0.15.0"
-google.golang.org/protobuf="v1.36.5"
-gopkg.in/yaml.v2="v2.4.0"
-gopkg.in/yaml.v3="v3.0.1"
-oss.terrastruct.com/d2="v0.6.9"
-oss.terrastruct.com/util-go="v0.0.0-20241005222610-44c011a04896"
-rsc.io/qr="v0.2.0"
-software.sslmate.com/src/go-pkcs12="v0.2.0"
-```
+### Getting Started
+
+- **Setting up Layer5 Account:** With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
+- **Creating a Design from Meshery Catalog Templates:** With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog.
+
+### Concepts
+
+An overview of Layer5 Cloud concepts and their relationships to one another.
+
+### Identity
+
+- **Organizations:** Organizations, Managing Organization Permissions
+- **Teams:** Teams, Managing Teams Permissions
+- **Users:** User Management, Managing User Permissions
+
+### Security
+
+- **Tokens:** API Tokens are used to authenticate to Layer5 Cloud’s REST API.
+- **Keychains**: Keychains are a collection of keys
+- **Keys**: Keys are the atomic unit of access control
+- **Roles**: Roles map permissions to users.
+
+### Catalog
+
+The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
+
+### Workspaces
+
+Meshery Workspaces serve as a virtual space for your team-based work.
+
+### Tutorials
+
+- **Kanvas Snapshots**: Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
+- **Sharing a Workspace**: Learn how to control access to workspaces and their resources.
+- **Recognizing User and Contributor Milestones**: Showcasing user and contributor achievements
+
+### Self-Hosted
+
+Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
+
+### Reference
+
+Low-level ReST API reference for extending Layer5 Cloud.
+
 </details>
+<details>
+  <summary><h2>Kanvas Docs</h2>
+
+### Getting Started with Designs
+
+- **Starting from a pattern:** A Pattern is an entity that augments the operational behavior of a deployed instance of a Design.
+- **Creating Relationships:** Relationships identify and facilitate genealogy between Components.
+- **Working with Components:** Components represent entities in the Meshery ecosystem, exposing capabilities of the underlying platform.
+- **Starting from scratch:** Emphasize the underlying system behavior for each action you take.
+
+### Exploring Designer
+
+- **Reviewing Designs:** Learn how to leverage comments in Kanvas’s Designer Mode to enhance collaboration and streamline design reviews.
+- **Whiteboarding:** Whiteboarding and Freestyle Drawing inside Kanvas
+- **Export Designs:** How to export your designs for backup, sharing or offline use.
+
+### Working with Components
+
+Meshery Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
+
+### Navigating Operator
+
+Operator mode is for operating your Kubernetes clusters and cloud native infrastructure.
+
+### Core Tasks
+
+- **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+- **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying Designs, Cloning a Design
+
+### Reference
+
+- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+- **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
+
+</details>
+
+### Contribution Guidelines
+
+A detailed contribution guide for Layer5 Docs.
+Contributing to the docs.layer5.io
+
+### Editing Markdown Content
+
+Documentation content is written in Markdown and you'll find all files listed under the /content directory.
+
+To create a new page with Markdown, create a file ending in `.md` in a `site/<subdirectory>`. The path in the content directory will be the URL route. For example, `site/docs/hello.md` will be served from the `/docs/hello` URL.
+
+```yaml
+---
+title: 'My Title'
+description: "A thorough, yet succinct description of the page's contents"
+---
+```
+
+The significant keys in the YAML frontmatter are:
+
+`title` (string) - This is the title of the page that will be set in the HTML title.
+`description` (string) - This is a description of the page that will be set in the HTML description.
+`permalink` (string - relative file path) - canonical location of the page
+`category` (string) - section to which the page belongs.
+`redirect_from` (string - relative file path) - in case the page was previously available elsewhere
+
+<div>&nbsp;</div>
+
+### Uploading Images to the site
+
+To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)` or `<img src="" alt="" />`.
+
+**Note:**
+- For images to show correctly on subpages, always provide the complete image path.
+- When using the `<img />` tag, add `data-modal="false"` to prevent the image from opening in a modal e.g. a [logo](https://github.com/layer5io/docs/blob/0bef5a9a05214a9dda10d8a68431e41f5a36676d/layouts/partials/footer.html#L9).
+
+### Adding Alert to the site
+
+Use the following Syntax to add an Alert:
+`{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}`
+
+- `type="danger"`: Alert used to indicate something related to security.
+- `type="info"`: Alert used to write some information.
+- `type="warning"`: Alert used to indicate a warning that might need attention.
+- `type="note"`: Alert used to indicate a neutral information.
+- `type="success"`: Alert used to indicate a positive information.
+
+By default, if you don't specify a `title="Your Title"`, the title will be the same as the type name.
+
+**Note-> Using an invalid alert type will lead to the default alert being used (i.e. success).**
+
+<hr/>
+
+<a name="contributing"></a><a name="community"></a>
+Our projects are community-driven and open to collaboration. 👍 Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you. You can also join our <a href="http://slack.layer5.io">Slack</a> to get involved. 
+
+<p style="clear:both;">
+<a href ="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/layer5-community-sign.png" style="margin-right:10px; margin-bottom:15px;" width="28%" align="left"/></a>
+<h3>Find your MeshMate</h3>
+
+<p>
+  MeshMates are experienced Layer5 community members who will help you learn your way around, discover live projects and expand your community network.
+  Become a <b>Meshtee</b> today!
+</p>
+
+Find out more on the <a href="https://layer5.io/community">Layer5 community</a>. <br />
+<br /><br /><br /><br />
+</p>
+
+<div>&nbsp;</div>
+
+<a href="https://slack.meshery.io">
+
+<picture align="right">
+  <source media="(prefers-color-scheme: dark)" srcset=".github/readme/images//slack-dark-128.png"  width="110px" align="right" style="margin-left:10px;margin-top:10px;">
+  <source media="(prefers-color-scheme: light)" srcset=".github/readme/images//slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:5px;">
+  <img alt="Shows an illustrated light mode meshery logo in light color mode and a dark mode meshery logo dark color mode." src=".github/readme/images//slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:13px;">
+</picture>
+</a>
+<div>
+<a href="https://meshery.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
+<p>
+✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Community calendar</a>.<br />
+✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
+✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">Community Drive</a> by completing a community <a href="https://layer5.io/newcomer">Member Form</a>.<br />
+✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
+✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
+</p>
+</div>
+<p align="center">
+<i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+(org%3Alayer5io+OR+org%3Ameshery+OR+org%3Alayer5labs+OR+org%3Aservice-mesh-performance+OR+org%3Aservice-mesh-patterns+OR+org%3Ameshery-extensions)+label%3A%22help+wanted%22">help-wanted label</a>.</p>
