@@ -54,7 +54,6 @@ The `INIT_CONFIG` JSON structure supports the following fields:
 - `provider.name`: The name of your provider instance
 - `provider.settings`: Custom provider settings specific to your deployment
 
-For detailed configuration options, refer to the [provider initialization documentation](https://github.com/layer5io/meshery-cloud/blob/master/docs/provider-init.md). Tasks
 
 <ol>
     <li>Review the prequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
