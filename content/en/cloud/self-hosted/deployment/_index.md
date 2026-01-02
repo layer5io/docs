@@ -6,7 +6,7 @@ tags: [helm]
 weight: 2
 ---
 
-## High-level List of Deployment
+## High-level List of Deployment Tasks
 
 ## Environment Variables
 
