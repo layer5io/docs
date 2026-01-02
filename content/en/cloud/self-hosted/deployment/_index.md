@@ -8,7 +8,7 @@ weight: 2
 
 ## High-level List of Deployment Tasks
 
-## Environment Variables
+## High-level List of Deployment Tasks
 
 ### INIT_CONFIG
 
@@ -32,6 +32,7 @@ export INIT_CONFIG='{"provider": {"name": "my-provider", "settings": {...}}}'
 For Docker deployments:
 
 ```bash
+# example
 docker run -e INIT_CONFIG='{"provider": {"name": "my-provider"}}' layer5/meshery-cloud
 ```
 
