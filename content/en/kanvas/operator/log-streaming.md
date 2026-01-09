@@ -13,7 +13,7 @@ Kanvas Log Streaming is part of the **Operator** mode (Visualizer). It establish
 
 ### Key Features
 
-* **Real-time Tailing:** Watch logs generation instantly as events occur in your cluster.
+* **Real-time Tailing:** Watch log generation instantly as events occur in your cluster.
 * **Multi-Pod Streaming:** Stream logs from a single specific pod or multiplex logs from several pods at once to correlate events across different services.
 * **Keyword Filtering:** Apply search filters to the log stream to isolate specific error codes, transaction IDs, or warning messages.
 * **Playback Controls:** Interactive controls to **Play**, **Pause**, **Stop**, and **Clear** the stream, giving you control over the flow of information during high-volume events.
