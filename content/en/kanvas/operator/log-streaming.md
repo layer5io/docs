@@ -33,7 +33,7 @@ To utilize the Log Streamer, ensure you are in **Operator Mode** and have a conn
 Once the stream is active, the Log Streamer panel will display the output.
 
 * **Search/Filter:** Use the search bar within the panel to highlight or filter lines containing specific strings (e.g., `Error`, `Exception`, or specific request IDs).
-* **Toggle State:** Use the toggle switches to pause the live feed to inspect a specific log line without losing your place, then resume to catch up with the live tail.
+* **Pause/Resume:** Use the playback toggle to pause the live feed to inspect a specific log line without losing your place, then resume to catch up with the live tail.
 * **Copy Logs:** Use the copy function to capture the current log buffer to your clipboard for external analysis or ticket submission.
 
 ## Use Cases and Examples
