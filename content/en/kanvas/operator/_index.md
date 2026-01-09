@@ -24,11 +24,7 @@ Using the search bar, you can search for specific resources and select them. The
 
 Operator supports connecting to Kubernetes pods via the following methods.
 
-### Understanding Log Streamer
-
-<!-- {{< figure src="images/log-stream-sequence-diagram.svg" link="images/log-stream-sequence-diagram.svg"  width="100%" alt="log-stream-sequence-diagram" >}} -->
-
-![log-stream-sequence-diagram](images/log-stream-sequence-diagram.svg)
+- [Log Streaming](/kanvas/operator/log-streaming): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
 
 ### Understanding Interactive Terminal
 
