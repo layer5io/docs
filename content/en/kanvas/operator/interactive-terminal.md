@@ -9,7 +9,7 @@ When operating cloud native infrastructure, deep diagnostics often require direc
 
 ## Overview
 
-The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for "last mile" debugging where metrics and logs alone are insufficient.
+The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for "last mile" debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the `kubectl exec` command, but web-based.
 
 ### Key Features
 
@@ -20,7 +20,7 @@ The Kanvas Interactive Terminal allows operators to establish a secure, low-late
 
 ## How to Access the Terminal
 
-To use the Interactive Terminal, ensure you are in **Operator Mode** (Visualizer) and have a connected Kubernetes cluster.
+To use the Interactive Terminal, ensure you are in **Operator Mode** and have a connected Kubernetes cluster.
 
 1. **Navigate to Visualizer:** Open Kanvas and switch to **Operator** mode to view your active cluster resources.
 2. **Select a Workload:** Click on a **Pod** or **Deployment** node within your design.
@@ -64,6 +64,14 @@ The Interactive Terminal is built on an event-driven architecture designed for s
 2. **Orchestration:** The request is brokered to the **Meshery Operator**, which signals the **MeshSync** controller running inside the cluster to start the interactive session.
 3. **Data Transport:** Input and output data are streamed via **NATS** through the Meshery Broker. Shell output is preprocessed and transcribed before being delivered to the UI.
 4. **Session Isolation:** Each terminal session is mapped to a unique topic ID within the subscription, ensuring that data streams for multiple open terminals do not overlap.
+
+{{< alert type="note" title="Distinct Capabilities" >}} Note that each component offers its own capabilities, and that these capabilities differ between Designer mode and Operator mode. For example, in operator mode, if you right-click (and hold) on a Kubernetes pod, you will see actions unique to the Pod component, which are to open either an interactive terminal to one or all of the containers in the pod or to start streaming logs from any/all of the containers in the pod. {{< /alert >}}
+
+While using the interactive terminal, understand that you can only open one session per container. Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas. The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection establishes a unique session ID.
+
+<!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
+
+![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
 
 ***
 
