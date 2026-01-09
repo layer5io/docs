@@ -1,12 +1,9 @@
 ---
-title: Log Streaming in Kanvas
-weight: 5
+title: Log Streaming
 description: >
   Learn about Log Streaming in Operator mode 
 categories: [Operator]
 ---
-
-# Log Streaming in Kanvas
 
 Efficient troubleshooting requires immediate visibility into your application's behavior. The **Log Streamer** in Kanvas allows you to live-tail logs from your Kubernetes pods and containers directly within the visual topology. Unlike static log files, this feature provides a real-time, multiplexed view of your infrastructure's activities, enabling you to debug interactions between services without leaving the Kanvas interface.
 
