@@ -13,16 +13,16 @@ jobs:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           repository: layer5io/docs
       - name: Get Latest Cloud Release
-        id: meshery-cloud
+        id: layer5-cloud
         env:
           ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           release_tag=$(curl -sL -H "Authorization: token $ACCESS_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/layer5io/meshery-cloud/releases/latest | jq -r ".tag_name")
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
-          current_tag=$(<build/meshery-cloud.version)
+          current_tag=$(<build/layer5-cloud.version)
           echo "current_tag=$current_tag" >> $GITHUB_OUTPUT
       - name: Get Release Info
-        if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
+        if: steps.layer5-cloud.outputs.current_tag != steps.layer5-cloud.outputs.release_tag
         env:
           ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
@@ -34,17 +34,17 @@ jobs:
           export DATE=$( cat latest_release.json | jq '.["published_at"]' | tr -d '"')
           printf '%b\n' "---\ntitle: $RELEASE_TAG\ndate: $DATE\ntag: $RELEASE_TAG\nprerelease: $PRERELEASE\ntoc_hide: true\n---\n\n$RELEASE_BODY" > ./content/en/cloud/reference/releases/$RELEASE_TAG.md
       - name: Update current release version
-        if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
+        if: steps.layer5-cloud.outputs.current_tag != steps.layer5-cloud.outputs.release_tag
         run: |
-            echo ${{ steps.meshery-cloud.outputs.release_tag }} > build/meshery-cloud.version
+            echo ${{ steps.layer5-cloud.outputs.release_tag }} > build/layer5-cloud.version
       - name: Commit changes
-        if: steps.meshery-cloud.outputs.current_tag != steps.meshery-cloud.outputs.release_tag
-        uses: stefanzweifel/git-auto-commit-action@v5
+        if: steps.layer5-cloud.outputs.current_tag != steps.layer5-cloud.outputs.release_tag
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "Release Notes Cloud version ${{ steps.meshery-cloud.outputs.release_tag }}"
+          commit_message: "Release Notes Cloud version ${{ steps.layer5-cloud.outputs.release_tag }}"
           branch: master
           commit_options: "--signoff"
-          file_pattern: 'build/meshery-cloud.version ./content/en/cloud/reference/releases/${{ steps.meshery-cloud.outputs.release_tag }}.md'
+          file_pattern: 'build/layer5-cloud.version ./content/en/cloud/reference/releases/${{ steps.layer5-cloud.outputs.release_tag }}.md'
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
           commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>

@@ -1,6 +1,6 @@
 ---
 name: 💡 Feature Request
-about: Suggest an enhancement to Meshery.
+about: Suggest an enhancement to Layer5 Docs.
 title: ''
 labels: 'kind/enhancement, framework/hugo, language/css, language/javascript, language/html, help wanted'
 assignees: ''
