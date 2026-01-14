@@ -71,7 +71,7 @@ While using the interactive terminal, understand that you can only open one sess
 
 <!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
 
-![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
+![interactive-terminal-sequence-diagram](/images/interactive-terminal-sequence-diagram.svg)
 
 ***
 
