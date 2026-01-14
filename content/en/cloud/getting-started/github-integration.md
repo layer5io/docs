@@ -92,7 +92,7 @@ Let’s go through the steps required to connect your GitHub account and import 
       1. Helm charts
       2. Docker Compose files
       3. Kubernetes manifests
-      4. Meshery Designs
+      4. Designs
 
     - Select the checkbox beside the directory name to import all the files in the directory, or individually select the files you want to import and click **Import**.
     - If you want to go back and change your selection or choose a different repository, click **Back**.

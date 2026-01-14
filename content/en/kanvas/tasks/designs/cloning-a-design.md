@@ -28,7 +28,7 @@ This will create a copy of the catalog item to a new design, now owned by you.
 You are now free to deploy it as it is or modify it further. 
 
 
-{{< alert title="Learn about Designs" >}}Learn more about what a [Meshery Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits into Meshery's approach to cloud native management.
+{{< alert title="Learn about Designs" >}}Learn more about what a [Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits into Meshery's approach to cloud native management.
 {{< /alert >}}
 
 
