@@ -28,7 +28,7 @@ onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout=
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs"
 onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseout="restoreImage('meshery', 'images/logos/meshery-light-icon.svg')">
-    <img id="meshery" src="images/logos/meshery-light-icon.svg" alt="Layer5 Meshery Docs Logo" />
+    <img id="meshery" src="images/logos/meshery-light-icon.svg" alt="Meshery Docs Logo" />
     Meshery Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
