@@ -105,7 +105,7 @@ The `INIT_CONFIG` JSON structure supports the following fields:
 
 #### Installation
 
-You will install the Postgres database first followed by Layer5 cloud.
+You will install the Postgres database first or configure connection details to your existing Postgres v12+ database server, followed by the rest of Layer5 Cloud's containers.
 
 ##### 1. Deploy PostgreSQL using CloudNativePG
 
