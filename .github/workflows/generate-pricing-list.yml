@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
@@ -35,7 +35,7 @@ jobs:
           [ ! -d "./static/data/csv" ] && mkdir -p "./static/data/csv";
           mv pricing-list.csv static/data/csv/pricing-list.csv;
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Updated pricing-list data.
           branch: master

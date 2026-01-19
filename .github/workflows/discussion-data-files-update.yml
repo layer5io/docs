@@ -11,7 +11,7 @@ jobs:
     if: github.repository == 'layer5io/docs'
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Fetch discussions data for kanvas tag
@@ -21,7 +21,7 @@ jobs:
         run: git pull origin master
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_user_name: Discuss bot
           commit_user_email: discussions@meshery.io
