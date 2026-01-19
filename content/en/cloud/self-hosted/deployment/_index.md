@@ -18,7 +18,7 @@ weight: 2
 
 ### Kubernetes-based Installation with Helm
 
-Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud. Contained in the [Layer5 Helm repository](https://docs.layer5.io/charts) is one chart with two subcharts (see repo [index](https://docs.layer5.io/charts/index.yaml)).
+Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud. Available in the [Layer5 Helm repository](https://docs.layer5.io/charts) is the layer5-cloud chart, which contains two subcharts. See the Helm repo [index](https://docs.layer5.io/charts/index.yaml) for details.
 
 #### Prerequisites
 
