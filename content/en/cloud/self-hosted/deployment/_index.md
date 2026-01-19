@@ -29,7 +29,7 @@ Before you begin ensure the following are installed:
 
 ##### 1. Create dedicated namespaces
 
-This deployment uses two namespaces, `cnpg-postgres` for hosting the PostgreSQL database using CloudNativePG operator and `layer5-cloud` namespace for the Layer5 cloud. You can also choose to keep all components in the same namespace. 
+This deployment uses two namespaces, `cnpg-postgres` for hosting the PostgreSQL database using CloudNativePG operator and `layer5-cloud` namespace for the Layer5 Cloud. You can also choose to keep all components in the same namespace. 
 ```bash
 kubectl create ns cnpg-postgres
 kubectl create ns layer5-cloud
