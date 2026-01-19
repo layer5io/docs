@@ -211,7 +211,7 @@ Retrieve the _Service_ endpoints of cnpg. This must be updated in the Layer5 `va
     ```
     Review and update values if necessary. If you have followed this tutorial with the exact steps, there are no changes requires to get started.
 
-3. Deploy Layer5 cloud using the `helm install` command.
+3. Deploy Layer5 Cloud using the `helm install` command.
 
     ```bash
     helm install -f values.yaml layer5-cloud -n layer5-cloud
