@@ -19,6 +19,22 @@
     "theme": "",
     "categoryOrder": "0",
     "category": "Configuration Management",
+    "functionOrder": "1",
+    "function": "Infrastructure as Design",
+    "feature": "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads",
+    "subscriptionTier": "Free",
+    "comparisonTiers": {
+      "free": true,
+      "teamDesigner": true,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/kanvas/#what-is-kanvas"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
     "functionOrder": "2",
     "function": "Export Designs",
     "feature": "Export a latest version of design in any supported format: Kubernetes Manifest, Helm Chart, Docker Compose, Artifact Hub and as any OCI, YAML, or JSON.",
@@ -78,6 +94,22 @@
       "enterprise": true
     },
     "docs": "https://docs.meshery.io/extensions/importing-a-design"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "0",
+    "category": "Configuration Management",
+    "functionOrder": "6",
+    "function": "Design Review Notifications",
+    "feature": "In-line commenting. Threaded discussions. Notifications w/user mentions. Silence notifications. Resolve and reopen comments. Comment history.",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": true,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/kanvas/designer/comments/"
   },
   {
     "theme": "",
@@ -398,6 +430,54 @@
       "enterprise": true
     },
     "docs": "https://docs.meshery.io/guides/performance-management/performance-management"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
+    "functionOrder": "302",
+    "function": "Performance Profiles",
+    "feature": "Define, name, and save performance profiles. Share performance profiles and test results with individual users or teams.",
+    "subscriptionTier": "TeamOperator",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance#performance-profiles"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
+    "functionOrder": "303",
+    "function": "Comparative Testing",
+    "feature": "Visual comparison of performance test results.",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.meshery.io/guides/performance-management/interpreting-performance-test-results"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "3",
+    "category": "Performance Management",
+    "functionOrder": "304",
+    "function": "Capacity, soak, and burst testing",
+    "feature": "Protocols: HTTP, HTTPS, TCP, gRPC with configuration duration, concurrency",
+    "subscriptionTier": "",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.meshery.io/guides/performance-management/managing-performance#configuring-performance-testing-settings"
   },
   {
     "theme": "",
@@ -926,6 +1006,70 @@
       "enterprise": true
     },
     "docs": "https://docs.layer5.io/cloud/getting-started/getting-started-with-layer5-account/#7-viewing-your-layer5-profile"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "10",
+    "category": "Support and Deployment",
+    "functionOrder": "1001",
+    "function": "Community Support",
+    "feature": "Get help with most of your questions and issues in our Community Forum.",
+    "subscriptionTier": "Free",
+    "comparisonTiers": {
+      "free": true,
+      "teamDesigner": true,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "10",
+    "category": "Support and Deployment",
+    "functionOrder": "1002",
+    "function": "Standard Support",
+    "feature": "Layer5 Support can help you troubleshoot issues you run into. Get support via email.",
+    "subscriptionTier": "TeamDesigner|TeamOperator",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": true,
+      "teamOperator": true,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "10",
+    "category": "Support and Deployment",
+    "functionOrder": "1003",
+    "function": "Managed Service Provider",
+    "feature": "White Label: Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. \n<br /><br />Multi-tenancy: Hierarchical organizations, teams, users and customizable permissioning.",
+    "subscriptionTier": "Enterprise",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/self-hosted/white-labeling/"
+  },
+  {
+    "theme": "",
+    "categoryOrder": "10",
+    "category": "Support and Deployment",
+    "functionOrder": "1004",
+    "function": "Premium Support",
+    "feature": "With Premium, get a 2-hour SLA and 24/7 web and phone support.",
+    "subscriptionTier": "Enterprise",
+    "comparisonTiers": {
+      "free": false,
+      "teamDesigner": false,
+      "teamOperator": false,
+      "enterprise": true
+    },
+    "docs": "https://docs.layer5.io/cloud/getting-started/support/#contacting-support"
   },
   {
     "theme": "",
