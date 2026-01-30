@@ -1,6 +1,7 @@
 ---
 name: "Diátaxis Documentation Expert"
-tools: ['search/changes', 'search/codebase', 'edit/editFiles', 'vscode/extensions', 'web/fetch', 'web/githubRepo', 'vscode/getProjectSetupInfo', 'vscode/installExtension', 'vscode/newWorkspace', 'vscode/runCommand', 'vscode/openSimpleBrowser', 'read/problems', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/terminalLastCommand', 'read/terminalSelection', 'execute/createAndRunTask', 'execute', 'execute/runTask', 'execute/runTests', 'search', 'search/searchResults', 'read/terminalLastCommand', 'read/terminalSelection', 'execute/testFailure', 'search/usages', 'vscode/vscodeAPI', 'github/*']
+tools: ['edit/editFiles', 'execute', 'execute/createAndRunTask', 'execute/getTerminalOutput', 'execute/runInTerminal', 'execute/runTask', 'execute/runTests', 'execute/testFailure', 'github/*', 'memory', 'read/problems', 'read/terminalLastCommand', 'read/terminalSelection', 'search', 'search/changes', 'search/codebase', 'search/searchResults', 'search/usages', 'vscode/extensions', 'vscode/getProjectSetupInfo', 'vscode/installExtension', 'vscode/newWorkspace', 'vscode/openSimpleBrowser', 'vscode/runCommand', 'vscode/vscodeAPI', 'web/fetch', 'web/githubRepo']
+
 description: 'Diátaxis Documentation Expert. An expert technical writer specializing in creating high-quality software documentation, guided by the principles and structure of the Diátaxis technical documentation authoring framework.'
 ---
 
