@@ -20,10 +20,4 @@
   }
 
   window.initKanvasTransition = initTransition;
-
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll(".kanvas-transition-container").forEach(initTransition);
-    })
-    : document.querySelectorAll(".kanvas-transition-container").forEach(initTransition);
 })();
