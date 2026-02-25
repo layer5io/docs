@@ -67,8 +67,8 @@
 
 .kanvas-corner-popup .close-btn {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.5rem;
+  right: 0.5rem;
   background: none;
   border: none;
   padding: 0;
@@ -78,6 +78,21 @@
 
   &:hover {
     opacity: 0.7;
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  @media (max-width: 640px) {
+    top: 0.30rem;
+    right: 0.45rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
