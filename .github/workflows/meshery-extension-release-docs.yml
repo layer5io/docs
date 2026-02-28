@@ -39,7 +39,7 @@ jobs:
             echo ${{ steps.meshery-extensions.outputs.release_tag }} > build/meshery-extensions.version
       - name: Commit changes
         if: steps.meshery-extensions.outputs.current_tag != steps.meshery-extensions.outputs.release_tag
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Release Notes Kanvas version ${{ steps.meshery-extensions.outputs.release_tag }}"
           branch: master
