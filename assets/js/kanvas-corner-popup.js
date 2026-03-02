@@ -38,7 +38,7 @@
   }
 
   function init() {
-    setTimeout(show, 8000);
+    setTimeout(show, 3000);
   }
 
   document.readyState === "loading"
