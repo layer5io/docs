@@ -2,10 +2,10 @@
 title: Security
 description: Manage identity and access through Tokens, Keychains, Keys, and RBAC Roles.
 weight: 4
+draft: false
 categories: [Security]
 tags: [permissions, identity, authentication]
----
-
+---git add content/en/cloud/security/_index.md
 Layer5 Cloud provides a multi-tenant security model designed to manage access across complex organizational structures. This section covers the core components of our Identity and Access Management (IAM) system.
 
 ## Security Architecture
