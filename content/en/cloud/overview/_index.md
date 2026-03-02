@@ -1,39 +1,27 @@
 ---
 title: Overview
-description: Here's where your user finds out if your project is for them.
-weight: 2
-categories: [Examples, Placeholders]
-tags: [test, docs]
-draft: true
+description: Learn how Layer5 Cloud centralizes management, visualization, and collaboration for your multi-cloud infrastructure.
+weight: 1
+categories: [Reference, Cloud]
+tags: [Cloud, Architecture, Governance]
+draft: false
 ---
-<!-- 
+
 {{% pageinfo %}}
-Page under construction.
+Layer5 Cloud is the control plane for your cloud-native infrastructure, providing deep insights and collaborative management across all your clusters.
 {{% /pageinfo %}}
 
+## What is Layer5 Cloud?
 
-The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide).
+Layer5 Cloud serves as the centralized management console and identity provider for the Layer5 ecosystem, specifically for **Kanvas** and **Meshery** deployments. It provides an extensible authorization framework that allows organizations to manage complex infrastructure with confidence.
 
-Try answering these questions for your user in this page:
+## Why use Layer5 Cloud?
 
-## What is it?
+* **Collaborative Design**: Similar to Google Workspace or Figma, multiple team members can design and review infrastructure patterns in real-time.
+* **Unified Identity**: Manage organizations, teams, and users with granular Role-Based Access Control (RBAC).
+* **Content Catalog**: Host and share cloud-native patterns publicly or keep them private within your organization.
 
-Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
+## Next Steps
 
-## Why do I want it?
-
-Help your user know if your project will help them. Useful information can include:
-
-* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
-
-* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
-
-* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
-
-## Where should I go next?
-
-Give your users next steps from the Overview. For example:
-
-* [Getting Started](/docs/getting-started/): Get started with $project
-* [Examples](/docs/examples/): Check out some example code!
- -->
+* [**Identity**](/cloud/identity): Learn about Organizations, Teams, and Users.
+* [**Security**](/cloud/security): Understand tokens, keychains, and permissions.
