@@ -784,6 +784,25 @@ html {
   scroll-behavior: smooth;
 }
 
+// Max-width constraint for large screens to prevent layout stretch
+@media (min-width: $site-max-width) {
+  .td-navbar {
+    > .container-fluid {
+      max-width: $site-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .container-fluid.td-outer {
+    > .td-main {
+      max-width: $site-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 1rem;
 }
