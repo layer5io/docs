@@ -232,8 +232,15 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
-  padding-top: 1rem;
+  padding-top: 0;
+  margin-top: 0;
   overflow-x: hidden;
+}
+
+.td-sidebar #td-sidebar-menu,
+.td-sidebar .td-sidebar__search {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 768px) {
