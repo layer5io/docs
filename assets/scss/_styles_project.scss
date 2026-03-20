@@ -647,7 +647,7 @@ a:not([href]):not([class]):hover {
     transform: translateX(0%) translateY(0%);
 
     &:hover {
-      color: "#EBC017";
+      color: #EBC017;
     }
 
     @media (max-width: 768px) {
