@@ -1,12 +1,17 @@
 {
-  "name": "Layer5 Docs",
+  "name": "layer5-docs",
   "version": "0.9.1",
   "description": "Layer5 Product Documentation",
-  "repository": "github:layer5io/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/layer5io/docs.git"
+  },
   "homepage": "https://docs.layer5.io",
   "author": "Layer5 Authors",
   "license": "Apache-2.0",
-  "bugs": "https://github.com/layer5io/docs/issues",
+  "bugs": {
+    "url": "https://github.com/layer5io/docs/issues"
+  },
   "spelling": "cSpell:ignore HTMLTEST precheck postbuild -",
   "scripts": {
     "_build": "npm run _hugo-dev",
@@ -31,8 +36,14 @@
     "update:pkg:hugo": "npm install --save-dev --save-exact hugo-extended@latest"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.27",
     "hugo-extended": "0.157.0",
-    "postcss-cli": "^11.0.0"
+    "postcss-cli": "^11.0.1"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "postcss": "^8.5.8"
   }
 }
