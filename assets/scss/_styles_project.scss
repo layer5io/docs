@@ -232,7 +232,7 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
-  padding-top: 0;
+  padding-top: 1rem;
   margin-top: 0;
   overflow-x: hidden;
 }
@@ -256,7 +256,7 @@ a:not([href]):not([class]):hover {
   .td-sidebar {
     height: 100vh;
     top: 0;
-    padding-top: 3rem;
+    padding-top: 0rem;
   }
 }
 
@@ -331,6 +331,7 @@ a:not([href]):not([class]):hover {
 
 // Right sidebar
 .td-sidebar-toc {
+  margin-top: 0rem;
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
   background-image: linear-gradient(to top,
