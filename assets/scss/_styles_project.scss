@@ -233,7 +233,14 @@ a:not([href]):not([class]):hover {
   top: 5.5rem;
   overflow-y: auto;
   padding-top: 1rem;
+  margin-top: 0;
   overflow-x: hidden;
+}
+
+.td-sidebar #td-sidebar-menu,
+.td-sidebar .td-sidebar__search {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -249,7 +256,7 @@ a:not([href]):not([class]):hover {
   .td-sidebar {
     height: 100vh;
     top: 0;
-    padding-top: 3rem;
+    padding-top: 0rem;
   }
 }
 
@@ -324,6 +331,7 @@ a:not([href]):not([class]):hover {
 
 // Right sidebar
 .td-sidebar-toc {
+  margin-top: 0rem;
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
   background-image: linear-gradient(to top,
@@ -604,11 +612,23 @@ a:not([href]):not([class]):hover {
 .dash-sign-container {
   display: flex;
   align-items: center;
+  justify-content: space-between; 
   text-align: right;
+
+  h1.dashboard {
+    max-width: 40%;        
+    text-align: left;
+    flex-shrink: 0;       
+  }
 
   @media (max-width: 768px) {
     flex-wrap: wrap;
     justify-content: center;
+
+    h1.dashboard {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   a.dash-sign {
@@ -623,18 +643,16 @@ a:not([href]):not([class]):hover {
     position: relative;
     width: auto;
     white-space: nowrap;
-    // top: 50%;
-    // left: 50%;
     padding: 2rem;
-    margin: 15rem;
-    transform: translateX(-50%) translateY(-50%);
+    margin: 0;
+    transform: translateX(0%) translateY(0%);
 
     &:hover {
-      color: "#EBC017" !important;
+      color: #EBC017;
     }
 
-    @media (max-width: 1440px) {
-      margin: 0rem;
+    @media (max-width: 768px) {
+      margin: 2rem 0 0 0;
     }
   }
 
@@ -650,7 +668,6 @@ a:not([href]):not([class]):hover {
     border: 8px solid $primary;
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
     animation: 6s alternate ease-in-out tipsy;
-    // animation-play-state: paused;
   }
 
   a.dash-sign:before {
@@ -665,11 +682,10 @@ a:not([href]):not([class]):hover {
 
   a.dash-sign:visited {
     color: $white;
-    // animation-play-state: running;
   }
 
   a.dash-sign:hover {
-    color: #ebc017 !important;
+    color: #ebc017;
   }
 }
 
