@@ -9,7 +9,7 @@ aliases:
   - /meshmap/designer/embedding-designs
 ---
 
-Meshery Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.
+Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.
 
 ## Embedding Your Design
 
@@ -69,7 +69,7 @@ For styling a single instance, the recommended method is to use the `style` para
 
 ## Embedding in React Projects
 
-1. **Install the Package**: To integrate the Meshery Design into your React project, start by installing the package via npm:
+1. **Install the Package**: To integrate the Design into your React project, start by installing the package via npm:
 ```bash
   npm i meshery-design-embed
 ```
@@ -159,7 +159,7 @@ Now that your site has shortcode support for embedding Kanvas designs, you can u
 
 ### Using the Shortcode
 
-To embed a Meshery Design in your Hugo pages, use the `meshery-design-embed` shortcode. You will need the design's exported JavaScript file and its unique ID.
+To embed a Design in your Hugo pages, use the `meshery-design-embed` shortcode. You will need the design's exported JavaScript file and its unique ID.
 
 ### Usage Examples
 

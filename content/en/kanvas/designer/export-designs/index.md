@@ -32,15 +32,15 @@ Kanvas let's you export a design in several formats, so you can:
 
 | Format                          | Keeps full design metadata? | Typical uses                                       |
 |---------------------------------|-----------------------------|----------------------------------------------------|
-| Meshery Design (YAML)           | ✔                           | Backups, sharing, re-import into Kanvas           |
-| Meshery Design (OCI image)      | ✔                           | Store in Docker Hub/GHCR; registry-based versioning|
+| Design (YAML)           | ✔                           | Backups, sharing, re-import into Kanvas           |
+| Design (OCI image)      | ✔                           | Store in Docker Hub/GHCR; registry-based versioning|
 | Kubernetes Manifest (YAML)      | ✖ (lossy)                   | `kubectl apply`; raw K8s deployment                |
 | Helm Chart (.tar.gz)            | ✖ (lossy)                   | Helm repos, GitOps (Argo CD/Flux), Artifact Hub    |
 | Embed Design (JS snippet)       | -                           | Interactive diagrams in docs or dashboards         |
 
 ## Detailed Format Guide
 
-### Meshery Design (YAML)
+### Design (YAML)
 
 Exports a complete, lossless copy of your design.  
 This format preserves all Meshery-specific metadata, including:
@@ -51,10 +51,10 @@ This format preserves all Meshery-specific metadata, including:
 
 Use it to back up or move designs between Meshery instances. The file is saved as `<design-name>.yml`.
 
-### Meshery Design (OCI Image)
+### Design (OCI Image)
 
 Exports your design as an OCI-compliant container image.  
-This format preserves all design metadata, just like the Meshery Design (YAML), but in a form suitable for container registries.
+This format preserves all design metadata, just like the Design (YAML), but in a form suitable for container registries.
 
 When to use:
 
@@ -75,7 +75,7 @@ Best used when:
 
 This format strips out Meshery-specific context and includes only standard Kubernetes resource definitions.
 
-> If you want to preserve the full editable design, use **Meshery Design (YAML)** instead.
+> If you want to preserve the full editable design, use **Design (YAML)** instead.
 
 ### Helm Chart (.tar.gz)  *Lossy Export*
 
@@ -88,7 +88,7 @@ Best used when:
 
 This format includes only Kubernetes resource definitions.  Design layout, annotations, and other Meshery-specific metadata will not be included.
 
-> If you want to keep your design fully editable in Meshery, use **Meshery Design (YAML)** instead.
+> If you want to keep your design fully editable in Meshery, use **Design (YAML)** instead.
 
 ### Embed Design (JavaScript Snippet)
 
@@ -101,12 +101,12 @@ The embedded design version offers a visually interactive representation of your
 
 | Need | Recommended format |
 |------|--------------------|
-| Preserve every design detail | Meshery Design (YAML) or OCI image |
+| Preserve every design detail | Design (YAML) or OCI image |
 | One-off deployment           | Kubernetes Manifest |
 | Share a reusable package     | Helm Chart |
 | Show an interactive diagram  | Embed Design |
 | Publish to Helm repo         | Helm Chart (.tar.gz) |
-| Store in container registry  | Meshery Design (OCI image) |
+| Store in container registry  | Design (OCI image) |
 
 Note:
 1. If you plan to keep editing in Meshery, avoid lossy formats.  

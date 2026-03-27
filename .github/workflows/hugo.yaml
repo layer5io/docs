@@ -32,7 +32,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     env:
-      HUGO_VERSION: 0.148.1
+      HUGO_VERSION: 0.157.0
     steps:
       - name: Install Hugo CLI
         run: |
@@ -41,7 +41,7 @@ jobs:
       - name: Install Dart Sass
         run: sudo snap install dart-sass
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
           fetch-depth: 0

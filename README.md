@@ -28,9 +28,9 @@
 ## Contributions Welcome
 
 <div>
-<a href="https://meshery.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
+<a href="https://layer5.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
 <p>
-✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
+✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on <a href="https://meet.layer5.io">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
 ✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">Community Drive</a> by completing a community <a href="https://layer5.io/newcomer">Member Form</a>.<br />
 ✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
@@ -61,7 +61,6 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 > This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
 > Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
 
-
 ## Layer5 Documentation Structure
 
 ## High-Level Outline & Information Architecture for Layer5 Documentation
@@ -79,7 +78,7 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 ### Getting Started
 
 - **Setting up Layer5 Account:** With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
-- **Creating a Design from Meshery Catalog Templates:** With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog.
+- **Creating a Design from Layer5 Cloud Catalog Templates:** With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the catalog.
 
 ### Concepts
 
@@ -104,7 +103,7 @@ The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and 
 
 ### Workspaces
 
-Meshery Workspaces serve as a virtual space for your team-based work.
+Workspaces serve as a virtual space for your team-based work.
 
 ### Tutorials
 
@@ -128,7 +127,7 @@ Low-level ReST API reference for extending Layer5 Cloud.
 
 - **Starting from a pattern:** A Pattern is an entity that augments the operational behavior of a deployed instance of a Design.
 - **Creating Relationships:** Relationships identify and facilitate genealogy between Components.
-- **Working with Components:** Components represent entities in the Meshery ecosystem, exposing capabilities of the underlying platform.
+- **Working with Components:** Components represent entities in the ecosystem, exposing capabilities of the underlying platform.
 - **Starting from scratch:** Emphasize the underlying system behavior for each action you take.
 
 ### Exploring Designer
@@ -139,7 +138,7 @@ Low-level ReST API reference for extending Layer5 Cloud.
 
 ### Working with Components
 
-Meshery Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
+Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
 
 ### Navigating Operator
 
@@ -190,6 +189,7 @@ The significant keys in the YAML frontmatter are:
 To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)` or `<img src="" alt="" />`.
 
 **Note:**
+
 - For images to show correctly on subpages, always provide the complete image path.
 - When using the `<img />` tag, add `data-modal="false"` to prevent the image from opening in a modal e.g. a [logo](https://github.com/layer5io/docs/blob/0bef5a9a05214a9dda10d8a68431e41f5a36676d/layouts/partials/footer.html#L9).
 
@@ -211,7 +211,7 @@ By default, if you don't specify a `title="Your Title"`, the title will be the s
 <hr/>
 
 <a name="contributing"></a><a name="community"></a>
-Our projects are community-driven and open to collaboration. 👍 Be sure to see the <a href="https://layer5.io/community/newcomers">Layer5 Community Welcome Guide</a> for a tour of resources available to you. You can also join our <a href="http://slack.layer5.io">Slack</a> to get involved. 
+Our projects are community-driven and open to collaboration. 👍 Be sure to see the <a href="https://layer5.io/community/newcomers">Layer5 Community Welcome Guide</a> for a tour of resources available to you. You can also join our <a href="http://slack.layer5.io">Slack</a> to get involved.
 
 <p style="clear:both;">
 <a href ="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/layer5-community-sign.png" style="margin-right:10px; margin-bottom:15px;" width="28%" align="left"/></a>
@@ -228,16 +228,16 @@ Find out more on the <a href="https://layer5.io/community">Layer5 community</a>.
 
 <div>&nbsp;</div>
 
-<a href="https://slack.meshery.io">
+<a href="https://slack.layer5.io">
 
 <picture align="right">
-  <source media="(prefers-color-scheme: dark)" srcset=".github/readme/images//slack-dark-128.png"  width="110px" align="right" style="margin-left:10px;margin-top:10px;">
-  <source media="(prefers-color-scheme: light)" srcset=".github/readme/images//slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:5px;">
-  <img alt="Shows an illustrated light mode meshery logo in light color mode and a dark mode meshery logo dark color mode." src=".github/readme/images//slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:13px;">
+  <source media="(prefers-color-scheme: dark)" srcset=".github/readme/images/slack-dark-128.png"  width="110px" align="right" style="margin-left:10px;margin-top:10px;">
+  <source media="(prefers-color-scheme: light)" srcset=".github/readme/images/slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:5px;">
+  <img alt="Slack logo" src=".github/readme/images//slack-128.png" width="110px" align="right" style="margin-left:10px;padding-top:13px;">
 </picture>
 </a>
 <div>
-<a href="https://meshery.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
+<a href="https://layer5.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
 <p>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />

@@ -1,7 +1,7 @@
 ---
 title: Working with Components
 description: >
-  Meshery Components are reusable, interactive elements that can be used to build your Meshery designs. Learn how to work with components.
+  Meshery Components are reusable, interactive elements that can be used to build your designs. Learn how to work with components.
 weight: 4
 categories: [Designer]
 tags: [designs]

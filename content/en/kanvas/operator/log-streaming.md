@@ -60,7 +60,7 @@ Once the stream is active, the Log Streamer panel will display the output.
 
 The Log Streamer utilizes a robust architecture where the **Meshery Operator** signals the **MeshSync** controller to start the log flow. Data is streamed using **NATS** to the Meshery Broker, preprocessed, and then delivered to your browser via a **WebSocket** connection using GraphQL subscriptions. This ensures minimal latency and high performance, even when streaming data from multiple active containers.
 
-![log-stream-sequence-diagram](images/log-stream-sequence-diagram.svg)
+![log-stream-sequence-diagram](/images/log-stream-sequence-diagram.svg)
 
 ***
 

@@ -13,7 +13,7 @@ aliases:
 
 <!-- {{% pageinfo %}}
 
-**Meshery** is a cloud native manager that enables the design and management of Kubernetes-based infrastructure and applications. It is an extensible developer platform that seamlessly integrates with various CNCF projects, monitoring, CI/CD, and security tools.
+**Kanvas** is a visual and collaborative configuration management tool for cloud native infrastructure. It simplifies the complexity of Kubernetes and multi-cloud infrastructure management, making it accessible to all.
 
 {{% /pageinfo %}} -->
 <!-- {{< figure src="layer5-cloud-provider.svg"  class="image-center-shadow" >}} -->
@@ -60,7 +60,7 @@ aliases:
 <div class="hidden-highlight-box"  style="display:flex; gap: 1.5rem;">
 <div style="min-width:50px;align-self:center;line-height:1.85rem;">{{< svg name="cloud" >}}</div>
 <div style="margin:auto;color:#ccc;">
-  <strong>Layer5 Cloud</strong> is an identity provider and global console for Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+  <strong>Layer5 Cloud</strong> is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
 </div>
 </div>
 </a>
@@ -90,7 +90,7 @@ Choose your mode of operation for Kanvas.
 {{< cardpane >}}
     <a href="../kanvas/designer/">
   {{< card header="Designer" >}}
-    <a href="../kanvas/designer/">Designer</a> mode is for those who want to create their own Kanvas, using the palette of components provided by Meshery.
+    <a href="../kanvas/designer/">Designer</a> mode is for those who want to create their own Kanvas, using the palette of components.
     <p>Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.</p>
     <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   {{< /card >}}

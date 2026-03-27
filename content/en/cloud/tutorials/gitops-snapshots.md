@@ -8,20 +8,20 @@ weight: 4
 
 Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.
 
-## Meshery GitHub App
+## Layer5 GitHub App
 
 In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.
 
-View the Meshery GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
+View the Layer5 GitHub App in the [GitHub Marketplace](https://github.com/marketplace/actions/kanvas-snapshot).
 
 ## Enabling and Configuring Snapshots
 
 1. Sign into [Layer5 Cloud](https://cloud.layer5.io)
 1. Visit Connections and click [Create on the GitHub connection](https://cloud.layer5.io/connect/github/new).
-1. Use the multi-step connection wizard to authorize Meshery to access your GitHub repositories (you may need to sign into GitHub).
-1. Once you have authorized Meshery to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
-1. Identify the path to either one or more Meshery Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
-1. You will establish a secret for the Meshery GitHub app and a new workflow to be invoked when a new snapshot is needed.
+1. Use the multi-step connection wizard to authorize Layer5 to access your GitHub repositories (you may need to sign into GitHub).
+1. Once you have authorized Layer5 to access your GitHub repositories, you will be redirected back to Layer5 Cloud. You should see a success message.
+1. Identify the path to either one or more Designs, Helm Charts, Kubernetes Manifests, or Docker Compose files.
+1. You will establish a secret for the Layer5 GitHub app and a new workflow to be invoked when a new snapshot is needed.
     1. Customize the workflow on event trigger to match your needs.
 
 You can always return to the [GitHub connection](https://cloud.layer5.io/connect/github) to update the connection or to add additional repositories.

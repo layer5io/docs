@@ -147,7 +147,7 @@ Alert types:
 - **No external images**: Use local assets only
 - **No placeholder text**: Provide complete, production-ready content
 - **No sensitive data**: Never include API keys, credentials, or personal information
-- **Use proper terminology**: "Meshery" not "meshery", "Kanvas" not "canvas", "Layer5" not "layer5"
+- **Use proper capitalization**: "Meshery" not "meshery", "Kanvas" not "canvas", "Layer5" not "layer5"
 
 ## Template Guidelines
 
@@ -238,7 +238,7 @@ Use descriptive, kebab-case names:
 
 ### Documentation
 - Layer5 Community Handbook: https://layer5.io/community/handbook
-- Meshery Documentation: https://docs.meshery.io
+- Layer5 Documentation: https://docs.layer5.io
 - Hugo Documentation: https://gohugo.io/documentation/
 
 ### Getting Help
@@ -258,7 +258,7 @@ Before submitting a PR, verify:
 - [ ] Proper frontmatter is included
 - [ ] Images have descriptive alt text
 - [ ] Links are valid and accessible
-- [ ] Terminology is correct (Meshery, Kanvas, Layer5)
+- [ ] Capitalization is correct (Meshery, Kanvas, Layer5)
 - [ ] American English spelling and grammar
 
 ### Technical Quality
