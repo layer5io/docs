@@ -201,11 +201,17 @@ Each time that a new comment is made in a design, remark placed into existing co
   <figcaption>Example email notification received when design comment is made.</figcaption>
 </figure>
 
-As the owner of a design, you will recieve notification each time a comment is made in your design. Tag other users and have them receive notificaiton of your comment by mentioning their username with the `@` symbol.
+As the owner of a design, you will receive notification each time a comment is made in your design. 
+
+**Note:**
+- Global notification preferences (Cloud settings) are respected for design owners and can be used to disable notifications entirely  
+- Thread-level muting does not suppress notifications for design owners  
+
+Tag other users and have them receive notification of your comment by mentioning their username with the `@` symbol.
 
 All users participating in a comment will be notified as new remarks are added in a comment thread.
 
-As new comments are added into the your design, collaborators (other users) with which you have shared the design, will not receive notification unless they are tagged in that comment.
+As new comments are added into your design, collaborators (other users) with which you have shared the design, will not receive notification unless they are tagged in that comment.
 
 ### Enable Email Notifications
 
@@ -215,12 +221,18 @@ Customize your [notification preferences](/cloud/identity/users/notification-pre
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
+**Note:**
+- Thread-level muting does not suppress notifications for design owners
+
 <figure>
   <img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
 You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
+
+**Note:**
+- Global notification preferences (Cloud settings) are respected for design owners and can be used to disable notifications entirely  
 
 <figure>
   <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
@@ -235,15 +247,18 @@ You can also manage all your comment notification settings centrally through the
 #### What Muting Doesn't Affect
 
 - **Mentions in Other Designs:** You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
-- **New Comment Threads:** Muting only applies to the specific comment thread it's activated on. New threads on the same design will trigger notifications as usual.
+- **New Comment Threads:** Muting applies only to the specific thread where it is activated.
+New threads on the same design follow the standard notification rules:
+  - Design owners will receive notifications
+  - Users will receive notifications only if they are participants in the thread or are explicitly mentioned
 
-{{< alert title="Muted Notifcations Reminder">}}
+{{< alert title="Muted Notifications Reminder">}}
 
 - While email alerts are muted, you can still access and view all comments on the design at any time.
 - You'll never miss an important mention, as notifications for mentions outside the muted thread remain active.
   {{< /alert >}}
 
-{{< alert type="info" title="Missed Notifcations">}}
+{{< alert type="info" title="Missed Notifications">}}
 Kanvas does not track the read or unread status of messages inside comment threads for each user. If a user is mentioned, but misses the notification, they might not become aware of the comment until they receive a new notification for another comment in that conversation.
 {{< /alert >}}
 
