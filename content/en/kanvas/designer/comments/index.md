@@ -203,10 +203,6 @@ Each time that a new comment is made in a design, remark placed into existing co
 
 As the owner of a design, you will receive notification each time a comment is made in your design. 
 
-**Note:**
-- Global notification preferences (Cloud settings) are respected for design owners and can be used to disable notifications entirely  
-- Thread-level muting does not suppress notifications for design owners  
-
 Tag other users and have them receive notification of your comment by mentioning their username with the `@` symbol.
 
 All users participating in a comment will be notified as new remarks are added in a comment thread.
@@ -221,23 +217,28 @@ Customize your [notification preferences](/cloud/identity/users/notification-pre
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
-**Note:**
-- Thread-level muting does not suppress notifications for design owners
-
 <figure>
   <img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
-You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
+{{< alert type="info" title="Thread-level Muting Behavior">}}
+Muting a comment thread applies to participants in that thread.
 
-**Note:**
-- Global notification preferences (Cloud settings) are respected for design owners and can be used to disable notifications entirely  
+Design owners will continue to receive notifications for all activity within their design.
+{{< /alert >}}
+
+You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
 
 <figure>
   <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
   <figcaption>Manage all comment notifications centrally in the Cloud</figcaption>
 </figure>
+{{< alert type="info" title="Global Notification Preferences">}}
+Notification preferences set in Cloud apply across all designs.
+
+Disabling notifications using preferences will stop email notifications for both owners and collaborators.
+{{< /alert >}}
 
 #### What Muting Affects
 
@@ -248,9 +249,11 @@ You can also manage all your comment notification settings centrally through the
 
 - **Mentions in Other Designs:** You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
 - **New Comment Threads:** Muting applies only to the specific thread where it is activated.
-New threads on the same design follow the standard notification rules:
-  - Design owners will receive notifications
-  - Users will receive notifications only if they are participants in the thread or are explicitly mentioned
+
+  New threads on the same design follow standard notification behavior:
+
+  - Design owners receive notifications for all comment activity  
+  - Users receive notifications only if they are participants in the thread or are explicitly mentioned  
 
 {{< alert title="Muted Notifications Reminder">}}
 
