@@ -1,7 +1,8 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  {{ range site.AllPages }}
+  {{ range hugo.Sites }}
+  {{ range .Pages }}
   {{- if and (not .Params.sitemap_exclude) (not .Draft) }}
   <url>
     <loc>{{ .Permalink }}</loc>
@@ -16,5 +17,6 @@
     {{- end }}
   </url>
   {{- end }}
+  {{ end }}
   {{ end }}
 </urlset>
