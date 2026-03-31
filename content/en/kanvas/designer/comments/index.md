@@ -86,6 +86,14 @@ You can also reopen comments.
 
 Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
 
+From the comment history panel, you can manage individual threads without leaving the review flow:
+
+- **Resolve individual comments** once a discussion is complete while keeping the thread available for future reference.
+- **Mute notifications** for a specific comment thread when you want to reduce email noise without changing your broader comment notification preferences.
+- **Delete individual comments** when a thread should be removed entirely instead of kept as part of the design's historical record.
+
+For most review workflows, resolving a comment is preferred over deleting it because resolution preserves context and lets you reopen the thread later if needed.
+
 ### Duplicating / Copying Comments
 
 Kanvas supports two ways to reuse comments: **Duplicate** and **Copy**. Both create a new comment based on the original, but they serve different use cases.
