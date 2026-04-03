@@ -1,7 +1,7 @@
 {{ if eq .Section "kanvas" }}
 <h2>Recent Discussions on Kanvas</h2>
 <ul>
-    {{ with site.Data.kanvas_discuss }}
+    {{ with hugo.Data.kanvas_discuss }}
       {{ $users := .users }}
       {{ $topics := sort .topic_list.topics "last_posted_at" "desc" }}
       
