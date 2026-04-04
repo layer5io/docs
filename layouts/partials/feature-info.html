@@ -1,5 +1,5 @@
 {{ $currentPage := .Page.Permalink }}
-{{ $features := .Site.Data.feature_data }}
+{{ $features :=hugo.Data.feature_data }}
 {{ if not $features }}
 {{ with readFile "data/feature_data.json" }}
 {{ $features = . | transform.Unmarshal }}
