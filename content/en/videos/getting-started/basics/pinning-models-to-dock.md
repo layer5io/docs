@@ -6,7 +6,7 @@ videoId: "8lQ6ed_1Tss"
 videoType: youtube 
 categories: [Designer]
 formats: [video]
-tags: [basics, dock, pin, models]
+tags: [Dock, Pin, Models, designer]
 duration: "0:57"
 ---
 
