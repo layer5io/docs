@@ -625,13 +625,13 @@ a:not([href]):not([class]):hover {
     }
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
 
     h1.dashboard {
-      max-width: 100% !important;
+      max-width: 100%;
       text-align: center;
     }
   }
@@ -656,7 +656,7 @@ a:not([href]):not([class]):hover {
       color: #EBC017;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 768px) {
       margin: 2rem 0 0 0;
     }
   }
