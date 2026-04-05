@@ -1,5 +1,7 @@
 baseURL = "https://docs.layer5.io"
 title = "Layer5 Documentation"
+relativeURLs = true
+canonifyURLs = false
 
 # Language settings
 contentDir = "content/en"
