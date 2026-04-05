@@ -531,7 +531,7 @@ a:not([href]):not([class]):hover {
   -webkit-background-clip: text;
   animation: color-shift 8s linear infinite;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 768px) {
     font-size: 4rem;
   }
 
