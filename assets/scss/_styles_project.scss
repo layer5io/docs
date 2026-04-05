@@ -620,7 +620,7 @@ a:not([href]):not([class]):hover {
     max-width: 70%;        
     text-align: left;
     flex-shrink: 0;
-    @media (max-width: 1200px) {
+    @media (max-width: 768px) {
       max-width: 60%;
     }
   }
