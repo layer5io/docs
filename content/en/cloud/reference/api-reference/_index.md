@@ -1,14 +1,10 @@
 ---
 title: REST API
 description: >
-  Browse the Layer5 Cloud REST API inside the docs, powered by the shared OpenAPI schema.
+  REST APIs for extending Layer5 Cloud.
 weight: 1
 categories: [Reference]
 tags: [extensibility]
-layout: rest-apis
-display_toc: false
-body_class: rest-api-reference-page
-hide_readingtime: true
 ---
 
 To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.
@@ -256,6 +252,4 @@ This returns the number of Total registered learners:
 130
 ``` 
 
-
-## All API Endpoints 
 

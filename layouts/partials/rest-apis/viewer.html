@@ -96,13 +96,12 @@
     <section class="rest-api-overview" aria-label="Layer5 Cloud REST API overview">
       <p class="rest-api-overview__eyebrow">Layer5 Cloud REST API reference</p>
       <p class="rest-api-overview__summary">
-        {{ len $operations }} API endpoints across {{ len $orderedTags }} categories.
-        This reference is generated from the OpenAPI schema used by the Layer5 docs.
+        {{ len $operations }} API endpoints across {{ len $orderedTags }} resources.
+        This reference is generated from the <a href="https://raw.githubusercontent.com/layer5io/docs/refs/heads/master/data/openapi.yml">OpenAPI schema</a> used by the Layer5 docs.
       </p>
       <ul class="rest-api-overview__stats">
-        <li><strong>{{ len $orderedTags }}</strong><span>categories</span></li>
+        <li><strong>{{ len $orderedTags }}</strong><span>resources</span></li>
         <li><strong>{{ len $operations }}</strong><span>endpoints</span></li>
-        <li><strong>Schema</strong><span><a href="{{ $specURL }}">View OpenAPI source</a></span></li>
       </ul>
     </section>
 
@@ -114,22 +113,22 @@
           class="rest-api-search"
           type="search"
           autocomplete="off"
-          placeholder="Search paths, summaries, methods, and categories"
+          placeholder="Search paths, summaries, methods, and resources"
           data-rest-api-search
         />
       </div>
 
       <div class="rest-api-controls__categories">
-        <p class="rest-api-controls__label">Categories</p>
+        <p class="rest-api-controls__label">Resources</p>
         <div class="rest-api-category-bar" data-rest-api-tag-filters>
           <button
             type="button"
             class="rest-api-category-button is-active"
             data-tag-filter="all"
-            data-tag-label="All categories"
+            data-tag-label="All resources"
             aria-pressed="true"
           >
-            <span>All categories</span>
+            <span>All resources</span>
             <span class="rest-api-category-button__count">{{ len $operations }}</span>
           </button>
           {{ range $tagName := $orderedTags }}
@@ -162,7 +161,7 @@
               class="rest-api-nav-control"
               data-toggle-all-groups
               data-toggle-mode="expand"
-              aria-label="Expand all categories"
+              aria-label="Expand all resources"
             >
               <span class="rest-api-nav-control__icon" aria-hidden="true">
                 <span></span>
@@ -191,7 +190,6 @@
                   {{ $groupLabel = $groupLabel | title }}
                 {{ end }}
                 <section class="rest-api-nav-group" data-rest-api-group>
-                  <p class="rest-api-nav-group__heading">{{ $groupLabel }}</p>
                   <div class="rest-api-nav-group__items">
                     {{ range $tagName := $groupTags }}
                       {{ $subsectionMeta := partial "rest-apis/tag-subsection-meta.html" (dict "name" $tagName "tags" $tagIndex) | transform.Unmarshal (dict "format" "json") }}
@@ -252,7 +250,7 @@
 
             {{ if gt (len $remainingTags) 0 }}
               <section class="rest-api-nav-group" data-rest-api-group>
-                <p class="rest-api-nav-group__heading">Additional categories</p>
+                <p class="rest-api-nav-group__heading">Additional resources</p>
                 <div class="rest-api-nav-group__items">
                   {{ range $tagName := $remainingTags }}
                     {{ $tagMeta := partial "rest-apis/tag-meta.html" (dict "name" $tagName "tags" $tagIndex) | transform.Unmarshal (dict "format" "json") }}
@@ -301,7 +299,7 @@
             {{ end }}
           </div>
 
-          <p class="rest-api-nav__empty" data-rest-api-empty hidden>No endpoints match the current search or category filter.</p>
+          <p class="rest-api-nav__empty" data-rest-api-empty hidden>No endpoints match the current search or resource filter.</p>
         </div>
       </aside>
 
@@ -313,7 +311,7 @@
             </div>
             <h2 class="rest-api-operation__path">Select an endpoint</h2>
             <p class="rest-api-operation__summary">
-              Open a category, choose a tag, and pick an endpoint to view its request and response details here.
+              Open a resource, choose a tag, and pick an endpoint to view its request and response details here.
             </p>
           </div>
         </article>
@@ -333,7 +331,6 @@
               <div class="rest-api-operation__labels">
                 <span class="rest-api-method-badge rest-api-method-badge--{{ .method }}">{{ upper .method }}</span>
                 <span class="rest-api-chip">{{ .tagLabel }}</span>
-                <span class="rest-api-chip rest-api-chip--subtle">{{ if .isShared }}Shared{{ else }}Cloud{{ end }}</span>
               </div>
               <h2 class="rest-api-operation__path" id="{{ .id }}">{{ .path }}</h2>
               <p class="rest-api-operation__summary">{{ .summary }}</p>
@@ -343,17 +340,14 @@
             </div>
 
             {{ if $authSummary }}
-              <dl class="rest-api-meta">
-                <div class="rest-api-meta__item">
-                  <dt>Authentication</dt>
-                  <dd>{{ $authSummary }}</dd>
-                </div>
-              </dl>
+              <div class="rest-api-auth" id="authentication-{{ $operationId }}">
+                <p class="rest-api-auth__label">Authentication</p>
+                <span class="rest-api-auth__value">{{ $authSummary }}</span>
+              </div>
             {{ end }}
 
             <section class="rest-api-section rest-api-section--try">
               <div class="rest-api-section-heading rest-api-section-heading--try">
-                <p class="rest-api-section-heading__eyebrow">Base URLs</p>
                 <h3 id="server-urls-{{ $operationId }}">Try this endpoint</h3>
                 <p class="rest-api-section-heading__summary">
                   Substitute your own Layer5 Cloud hostname when you are working against a hosted or self-managed instance.
@@ -372,7 +366,7 @@
             </section>
 
             {{ if gt (len $parameters) 0 }}
-              <section class="rest-api-section">
+              <section class="rest-api-section rest-api-section--parameters">
                 <h3 id="parameters-{{ $operationId }}">Parameters</h3>
                 {{ $locations := slice
                   (dict "key" "path" "label" "Path parameters")
@@ -423,11 +417,28 @@
 
             {{ with $operation.requestBody }}
               {{ $requestBody := . }}
-              <section class="rest-api-section">
-                <h3 id="request-body-{{ $operationId }}">Request body</h3>
-                {{ with $requestBody.description }}
-                  <div class="rest-api-prose">{{ . | markdownify }}</div>
+              {{ $requestContentCount := len $requestBody.content }}
+              {{ $singleRequestContentType := "" }}
+              {{ if eq $requestContentCount 1 }}
+                {{ range $contentType, $_ := $requestBody.content }}
+                  {{ $singleRequestContentType = $contentType }}
                 {{ end }}
+              {{ end }}
+              <section class="rest-api-section">
+                <div class="rest-api-section-heading rest-api-section-heading--request">
+                  <div class="rest-api-section-header rest-api-section-header--request">
+                    <h3 id="request-body-{{ $operationId }}">Request body</h3>
+                    {{ if eq $requestContentCount 1 }}
+                      <div class="rest-api-section-header__meta">
+                        <span class="rest-api-section-header__type">{{ $singleRequestContentType }}</span>
+                        <span class="rest-api-chip rest-api-chip--subtle">{{ if $requestBody.required }}Required{{ else }}Optional{{ end }}</span>
+                      </div>
+                    {{ end }}
+                  </div>
+                  {{ with $requestBody.description }}
+                    <div class="rest-api-section-heading__summary rest-api-prose">{{ . | markdownify }}</div>
+                  {{ end }}
+                </div>
                 {{ range $contentType, $content := $requestBody.content }}
                   {{ $schema := index $content "schema" | default dict }}
                   {{ $schemaType := partial "rest-apis/schema-type.html" (dict "schema" $schema "schemas" $schemas) | strings.TrimSpace }}
@@ -438,13 +449,12 @@
                     {{ $example = $exampleJSON | transform.Unmarshal (dict "format" "json") }}
                   {{ end }}
                   <article class="rest-api-media-block">
-                    <div class="rest-api-media-block__header">
-                      <div>
+                    {{ if ne $requestContentCount 1 }}
+                      <div class="rest-api-media-block__header rest-api-media-block__header--request">
                         <p class="rest-api-media-block__title">{{ $contentType }}</p>
-                        <p class="rest-api-media-block__summary">Schema: <code>{{ $schemaType }}</code></p>
+                        <span class="rest-api-chip rest-api-chip--subtle">{{ if $requestBody.required }}Required{{ else }}Optional{{ end }}</span>
                       </div>
-                      <span class="rest-api-chip rest-api-chip--subtle">{{ if $requestBody.required }}Required{{ else }}Optional{{ end }}</span>
-                    </div>
+                    {{ end }}
 
                     {{ $requestSchema := partial "rest-apis/schema-source.html" (dict "schema" $schema "schemas" $schemas) | transform.Unmarshal (dict "format" "json") }}
                     {{ with index $requestSchema "description" }}
@@ -562,6 +572,11 @@
                     {{ $responseTone = "danger" }}
                   {{ end }}
 
+                  {{ $responseContentCount := 0 }}
+                  {{ with $response.content }}
+                    {{ $responseContentCount = len . }}
+                  {{ end }}
+
                   <article class="rest-api-response rest-api-response--{{ $responseTone }}">
                     <div class="rest-api-response__header">
                       <span class="rest-api-status">{{ $statusCode }}</span>
@@ -572,6 +587,13 @@
                           <p>No description provided.</p>
                         {{ end }}
                       </div>
+                      {{ if eq $responseContentCount 1 }}
+                        {{ with $response.content }}
+                          {{ range $contentType, $_ := . }}
+                            <p class="rest-api-response__content-type">{{ $contentType }}</p>
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
                     </div>
 
                     {{ with $response.content }}
@@ -585,12 +607,13 @@
                           {{ $example = $exampleJSON | transform.Unmarshal (dict "format" "json") }}
                         {{ end }}
                         <article class="rest-api-media-block rest-api-media-block--response">
-                          <div class="rest-api-media-block__header">
-                            <div>
-                              <p class="rest-api-media-block__title">{{ $contentType }}</p>
-                              <p class="rest-api-media-block__summary">Schema: <code>{{ $schemaType }}</code></p>
+                          {{ if gt $responseContentCount 1 }}
+                            <div class="rest-api-media-block__header">
+                              <div>
+                                <p class="rest-api-media-block__title">{{ $contentType }}</p>
+                              </div>
                             </div>
-                          </div>
+                          {{ end }}
 
                           {{ $responseSchema := partial "rest-apis/schema-source.html" (dict "schema" $schema "schemas" $schemas) | transform.Unmarshal (dict "format" "json") }}
                           {{ with index $responseSchema "description" }}
@@ -671,8 +694,6 @@
                                 </article>
                               {{ end }}
                             </div>
-                          {{ else }}
-                            <p class="rest-api-muted">Schema: <code>{{ $schemaType }}</code></p>
                           {{ end }}
 
                           {{ if $example }}
@@ -829,7 +850,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleAllGroups.dataset.toggleMode = mode;
     toggleAllGroups.setAttribute(
       "aria-label",
-      anyOpen ? "Collapse all categories" : "Expand all categories"
+      anyOpen ? "Collapse all resources" : "Expand all resources"
     );
     toggleAllGroups.disabled = visible.length === 0;
 
@@ -856,13 +877,46 @@ document.addEventListener("DOMContentLoaded", function () {
     var navbar = document.querySelector(".navbar");
     var navbarHeight = navbar ? navbar.offsetHeight : 0;
     var topOffset = scrollPaddingTop || navbarHeight || 0;
-    var top = window.pageYOffset + element.getBoundingClientRect().top - topOffset - 4;
+    var top = Math.max(window.pageYOffset + element.getBoundingClientRect().top - topOffset - 4, 0);
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    window.scrollTo({
-      top: Math.max(top, 0),
-      left: 0,
-      behavior: "auto"
-    });
+    if (prefersReducedMotion) {
+      window.scrollTo({
+        top: top,
+        left: 0,
+        behavior: "auto"
+      });
+      return;
+    }
+
+    var startTop = window.pageYOffset;
+    var distance = top - startTop;
+    var duration = 420;
+    var startTime = null;
+
+    function easeInOutCubic(progress) {
+      return progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    }
+
+    function step(timestamp) {
+      if (startTime === null) {
+        startTime = timestamp;
+      }
+
+      var elapsed = timestamp - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = easeInOutCubic(progress);
+
+      window.scrollTo(0, startTop + distance * eased);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    }
+
+    window.requestAnimationFrame(step);
   }
 
   function clearActive(options) {
@@ -958,7 +1012,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var categoryButton = tagButtons.find(function (button) {
       return button.dataset.tagFilter === activeTag;
     });
-    var label = categoryButton ? categoryButton.dataset.tagLabel : "All categories";
+    var label = categoryButton ? categoryButton.dataset.tagLabel : "All resources";
 
     if (!visibleCount) {
       resultsText.textContent = "No endpoints match the current filters.";
