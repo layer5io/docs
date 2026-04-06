@@ -1,7 +1,7 @@
 ---
 title: REST API
 description: >
-  Low-level ReST API reference for extending Layer5 Cloud.
+  REST APIs for extending Layer5 Cloud.
 weight: 1
 categories: [Reference]
 tags: [extensibility]
@@ -11,18 +11,18 @@ To create integrations, retrieve data, and automate your cloud native infrastruc
 
 ## Authenticating with the API
 
-In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.
+In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
 
 To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
 
 ```bash
-curl <protocol>://<Layer5-cloud-hostname>/<API> \
+curl <protocol>://<Layer5-cloud-hostname>/api/identity/users/profile \
 -H "Authorization: Bearer <token>"
 ```
 
 - Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance.
 - Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
-- Replace `<API>` with the API endpoint you want to access. For example, `/api/identity/users/profile`.
+- Replace the path with the API endpoint you want to access.
 - Replace `<token>` with the security token you generated.
 
 ## Specifying Organization Context
@@ -41,11 +41,9 @@ Include the `layer5-current-orgid` header with your organization's ID to specify
 
 {{< tabpane >}}
 {{< tab header="cURL"  >}}
-curl -X POST "https://cloud.layer5.io/api/pattern" \
+curl -X GET "https://cloud.layer5.io/api/environments" \
  -H "Authorization: Bearer <Your-Token>" \
- -H "layer5-current-orgid: <Your-Organization-ID>" \
- -H "Content-Type: application/json" \
- -d '{"name": "my-design", "pattern_file": "..."}'
+ -H "layer5-current-orgid: <Your-Organization-ID>"
 
 {{< /tab >}}
 
@@ -54,44 +52,33 @@ curl -X POST "https://cloud.layer5.io/api/pattern" \
 const token = "Your-Token";
 const orgId = "Your-Organization-ID";
 
-async function createDesign() {
-  const res = await fetch("https://cloud.layer5.io/api/pattern", {
-    method: "POST",
+async function listEnvironments() {
+  const res = await fetch("https://cloud.layer5.io/api/environments", {
+    method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
       "layer5-current-orgid": orgId,
-      "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      name: "my-design",
-      pattern_file: "...",
-    }),
   });
   const data = await res.json();
   console.log(data);
 }
 
-createDesign();
+listEnvironments();
 
 {{< /tab >}}
 
 {{< tab header="Python" >}}
 
 import requests
-import json
 
-url = "https://cloud.layer5.io/api/pattern"
+url = "https://cloud.layer5.io/api/environments"
 headers = {
     "Authorization": "Bearer <Your-Token>",
-    "layer5-current-orgid": "<Your-Organization-ID>",
-    "Content-Type": "application/json"
-}
-payload = {
-    "name": "my-design",
-    "pattern_file": "..."
+    "layer5-current-orgid": "<Your-Organization-ID>"
 }
 
-res = requests.post(url, headers=headers, data=json.dumps(payload))
+res = requests.get(url, headers=headers)
 print(res.json())
 
 {{< /tab >}}
@@ -160,12 +147,6 @@ print(res.json())
 {{< /tab >}}
 
 {{< /tabpane >}}
-
-## All API Endpoints
-
-{{< alert type="info" >}}
-<a href="https://cloud.layer5.io/system/api/docs" target="_blank">Open API Endpoints in new window <i class="fa fa-external-link" aria-hidden="true"></i></a>
-{{< /alert >}}
 
 ## API Example
 
@@ -270,3 +251,5 @@ This returns the number of Total registered learners:
 ```
 130
 ``` 
+
+
