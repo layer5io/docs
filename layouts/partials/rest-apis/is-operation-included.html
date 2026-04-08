@@ -1,0 +1,21 @@
+{{ $operation := .operation | default . }}
+{{ $audience := .audience | default "cloud" }}
+{{ $xInternal := index $operation "x-internal" }}
+{{ $include := false }}
+
+{{ if not $xInternal }}
+  {{ $include = true }}
+{{ else }}
+  {{ $values := slice }}
+  {{ if reflect.IsSlice $xInternal }}
+    {{ $values = $xInternal }}
+  {{ else }}
+    {{ $values = slice $xInternal }}
+  {{ end }}
+
+  {{ if in $values $audience }}
+    {{ $include = true }}
+  {{ end }}
+{{ end }}
+
+{{- if $include -}}true{{- else -}}false{{- end -}}
