@@ -201,9 +201,7 @@ Each time that a new comment is made in a design, remark placed into existing co
   <figcaption>Example email notification received when design comment is made.</figcaption>
 </figure>
 
-As the owner of a design, you will receive notification each time a comment is made in your design. 
-
-Tag other users and have them receive notification of your comment by mentioning their username with the `@` symbol.
+As the owner of a design, you will receive notification each time a comment is made in your design. Tag other users and have them receive notification of your comment by mentioning their username with the `@` symbol.
 
 All users participating in a comment will be notified as new remarks are added in a comment thread.
 
