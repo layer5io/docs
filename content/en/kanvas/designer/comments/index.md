@@ -246,9 +246,7 @@ Disabling notifications using preferences will stop email notifications for both
 #### What Muting Doesn't Affect
 
 - **Mentions in Other Designs:** You'll still be notified if someone mentions you in new or existing comment threads on other designs in your portfolio.
-- **New Comment Threads:** Muting applies only to the specific thread where it is activated.
-
-  New threads on the same design follow standard notification behavior:
+- **New Comment Threads:** Muting applies only to the specific thread where it is activated. New threads on the same design follow standard notification behavior:
 
   - Design owners receive notifications for all comment activity  
   - Users receive notifications only if they are participants in the thread or are explicitly mentioned  
