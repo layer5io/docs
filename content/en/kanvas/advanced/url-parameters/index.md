@@ -56,10 +56,10 @@ To use full render mode effectively:
 
 ## Additional Render Mode Parameters
 
-In addition to `render=full`, you can specify other render modes via the `render` parameter:
+You can specify render modes via the `render` parameter:
 
 - `render=full` -- Full rendering with all details
-- `render=medium` -- Style-only rendering without badges and tagsets
+- `render=medium` -- Style-only rendering without badges and TagSets
 - `render=wireframe` -- Outline-only rendering
 - `render=viewOnly` -- Non-interactive wireframe snapshot
 
