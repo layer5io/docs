@@ -86,7 +86,7 @@ The **Render Mode Switcher** is located in the Layers panel in the left sidebar.
 You can also set the render mode via URL query parameter. Append the `render` parameter to your Kanvas design URL:
 
 - `render=full` -- Full rendering with all details
-- `render=medium` -- Style-only rendering without badges and tagsets
+- `render=medium` -- Style-only rendering without badges and TagSets
 - `render=wireframe` -- Outline-only rendering
 - `render=viewOnly` -- Non-interactive wireframe snapshot
 
