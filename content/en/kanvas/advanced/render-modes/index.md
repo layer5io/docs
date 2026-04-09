@@ -17,8 +17,8 @@ Kanvas provides four render modes, each offering a different balance of visual f
 
 | Mode | Fidelity | Description |
 |------|----------|-------------|
-| Full | Highest | Complete rendering with all details, badges, tagsets, animations |
-| Medium (Style-Only) | High | Full component styles but no badges, tagsets, or animations |
+| Full | Highest | Complete rendering with all details, badges, TagSets, animations |
+| Medium (Style-Only) | High | Full component styles but no badges, TagSets, or animations |
 | Wireframe | Low | Simple outlines and straight-line connections, no SVGs or styling |
 | View Only | Lowest | Static wireframe snapshot with no interactivity |
 
