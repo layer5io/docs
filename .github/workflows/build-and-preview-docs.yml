@@ -21,7 +21,7 @@ jobs:
   build-and-deploy-preview:
     runs-on: ubuntu-24.04
     env:
-      HUGO_VERSION: 0.157.0
+      HUGO_VERSION: 0.158.0
 
     steps:
       - name: Checkout PR code
