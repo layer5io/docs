@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.6-1</title><link>/kanvas/reference/releases/v1.0.6-1/</link><pubDate>Thu, 09 Apr 2026 06:46:48 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.6-2</title><link>/kanvas/reference/releases/v1.0.6-2/</link><pubDate>Sat, 11 Apr 2026 12:36:24 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix proxy-revoked crash \Cannot perform &amp;lsquo;get&amp;rsquo; on a proxy that has been revoked\ @leecalcote (#4152)&lt;/li&gt;
+&lt;li&gt;Fix make targets that use sibling-repo relative paths for git worktree support @leecalcote (#4150)&lt;/li&gt;
+&lt;li&gt;Fix z-index for newly created components and GraphQL worktrees @leecalcote (#4149)&lt;/li&gt;
+&lt;li&gt;fix(operator): plainify draft refs in saveView and updateViewRoute @leecalcote (#4144)&lt;/li&gt;
+&lt;li&gt;Fix z-index for newly created components appearing below existing ones @&lt;a href="https://github.com/apps/copilot-swe-agent"&gt;copilot-swe-agent[bot]&lt;/a&gt; (#3915)&lt;/li&gt;
+&lt;li&gt;sistent 18.4 and test updates @marblom007 (#4133)&lt;/li&gt;
+&lt;li&gt;test: add unit tests for adaptive mode actors, model, and guidance @marblom007 (#4123)&lt;/li&gt;
+&lt;li&gt;test: add unit tests for render mode constants, thresholds, and integration @marblom007 (#4122)&lt;/li&gt;
+&lt;li&gt;test: add unit tests for render mode styles, badges, and features @marblom007 (#4121)&lt;/li&gt;
+&lt;li&gt;feat: add user guidance system for performance optimization suggestions @leecalcote (#4115)&lt;/li&gt;
+&lt;li&gt;feat: implement View Only render mode @leecalcote (#4116)&lt;/li&gt;
+&lt;li&gt;fix: wire adaptive mode event pipeline between actors (#3923) @leecalcote (#4118)&lt;/li&gt;
+&lt;li&gt;feat: add adaptive mode toggle to RenderModeSwitcher UI @leecalcote (#4114)&lt;/li&gt;
+&lt;li&gt;feat: add performance monitor actor for render latency sampling @leecalcote (#4112)&lt;/li&gt;
+&lt;li&gt;perf: compound node rendering optimizations @marblom007 (#4124)&lt;/li&gt;
+&lt;li&gt;feat: add adaptive mode actor for automatic render mode switching @leecalcote (#4113)&lt;/li&gt;
+&lt;li&gt;feat: wire adaptive mode pipeline and add transition polish @leecalcote (#4117)&lt;/li&gt;
+&lt;li&gt;Add performance monitor actor for render latency sampling @marblom007 (#4130)&lt;/li&gt;
+&lt;li&gt;test: skip flaky duplicate-evaluation e2e test @leecalcote (#4119)&lt;/li&gt;
+&lt;li&gt;fix: add explicit markup prop to Mention for React 19 compatibility @arjunmehta-git (#4127)&lt;/li&gt;
+&lt;li&gt;fix: lazy-init edge handle tooltip to survive Cytoscape mount race @marblom007 (#4125)&lt;/li&gt;
+&lt;li&gt;test: stabilize canvas node selection @marblom007 (#4126)&lt;/li&gt;
+&lt;li&gt;feat: implement medium render mode as distinct middle tier @leecalcote (#4110)&lt;/li&gt;
+&lt;li&gt;fix: correct guard condition in design validation event publisher @leecalcote (#4120)&lt;/li&gt;
+&lt;li&gt;feat: complete wireframe mode rendering @leecalcote (#4111)&lt;/li&gt;
+&lt;li&gt;Susan is kaput. fix: resolve XState actor communication error in validation @arjunmehta-git (#4104)&lt;/li&gt;
+&lt;li&gt;feat: expand render mode type system for adaptive transitions @leecalcote (#4109)&lt;/li&gt;
+&lt;li&gt;fix: align Help Center grid cards @arjunmehta-git (#4105)&lt;/li&gt;
+&lt;li&gt;test: improve duplicate component evaluation test reliability @arjunmehta-git (#4103)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-designer" class="heading-link"&gt;
+ 🖌️ Designer
+ &lt;a href="#-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Refactor ActionToolbar for mobile actions and cleanup @fitzergerald (#4140)&lt;/li&gt;
+&lt;li&gt;fix: replace @syncedstore/core with immer-yjs to fix collaboration state corruption @marblom007 (#4131)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix Component style editing tooltip not showing up @aabidsofi19 (#4156)&lt;/li&gt;
+&lt;li&gt;fix(tests): fail Playwright auth setup fast on invalid credentials @leecalcote (#4155)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @sistent/sistent 0.18.3 → 0.18.4 @leecalcote (#4151)&lt;/li&gt;
+&lt;li&gt;fix(sweettea): harden actor lifecycle safety across store layer @leecalcote (#4142)&lt;/li&gt;
+&lt;li&gt;fix: replace @syncedstore/core with immer-yjs to fix collaboration state corruption @marblom007 (#4131)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;improvement(tests): faster and more precise Playwright E2E execution @leecalcote (#4146)&lt;/li&gt;
+&lt;li&gt;build: clean up residual webpack references after rspack migration @leecalcote (#4129)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-documentation" class="heading-link"&gt;
+ 📖 Documentation
+ &lt;a href="#-documentation" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;docs: refresh Kanvas Developer Guide for current codebase @leecalcote (#4145)&lt;/li&gt;
+&lt;li&gt;chore: remove dead @layer5/cytoscape-node-html-label dependency @marblom007 (#4134)&lt;/li&gt;
+&lt;li&gt;build: clean up residual webpack references after rspack migration @leecalcote (#4129)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @arjunmehta-git, @fitzergerald, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @miacycle, @simihablo, @winkletinkle, @yi-nuo426 and &lt;a href="https://github.com/apps/copilot-swe-agent"&gt;copilot-swe-agent[bot]&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.6-1</title><link>/kanvas/reference/releases/v1.0.6-1/</link><pubDate>Thu, 09 Apr 2026 06:46:48 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
