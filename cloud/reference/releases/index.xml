@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.6</title><link>/cloud/reference/releases/v1.0.6/</link><pubDate>Thu, 09 Apr 2026 06:38:13 +0000</pubDate><guid>/cloud/reference/releases/v1.0.6/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.7</title><link>/cloud/reference/releases/v1.0.7/</link><pubDate>Mon, 13 Apr 2026 16:56:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.7/</guid><description>&lt;ul&gt;
+&lt;li&gt;refactor(workspace_handler): update GetWorkspaceByID response return one workspace instead of a page, use schema definition @lekaf974 (#5010)&lt;/li&gt;
+&lt;li&gt;feat(dashboard): enforce minimum size constraints for widgets @Rajesh-Nagarajan-11 (#5011)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.18.4 @l5io (#5008)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11, @hortison, @l5io, @leecalcote, @lekaf974, @meshery-ci, @pontusringblom and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.6</title><link>/cloud/reference/releases/v1.0.6/</link><pubDate>Thu, 09 Apr 2026 06:38:13 +0000</pubDate><guid>/cloud/reference/releases/v1.0.6/</guid><description>&lt;ul&gt;
 &lt;li&gt;Fix all-organizations provider admin flow @arjunmehta-git (#5005)&lt;/li&gt;
 &lt;li&gt;Transition UUID type references to schemas core.Uuid @yi-nuo426 (#5003)&lt;/li&gt;
 &lt;/ul&gt;
