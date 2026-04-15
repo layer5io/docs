@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.7</title><link>/cloud/reference/releases/v1.0.7/</link><pubDate>Mon, 13 Apr 2026 16:56:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.7/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.8</title><link>/cloud/reference/releases/v1.0.8/</link><pubDate>Wed, 15 Apr 2026 01:38:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.8/</guid><description>&lt;ul&gt;
+&lt;li&gt;tests(TP-014): implement P0+P1 frontend component &amp;amp; page test cases @leecalcote (#5016)&lt;/li&gt;
+&lt;li&gt;tests(TP-004): implement P0+P1 teams &amp;amp; RBAC test cases @leecalcote (#5014)&lt;/li&gt;
+&lt;li&gt;tests(TP-009): implement P0+P1 billing &amp;amp; subscriptions test cases @leecalcote (#5020)&lt;/li&gt;
+&lt;li&gt;tests(TP-016): implement authentication E2E spec + expand e2e network helpers @leecalcote (#5017)&lt;/li&gt;
+&lt;li&gt;tests(TP-012): implement P0+P1 academy test cases + fix short-answer scoring @leecalcote (#5015)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.18.7 @l5io (#5012)&lt;/li&gt;
+&lt;li&gt;tests(TP-011): implement P0+P1 events &amp;amp; notifications test cases @leecalcote (#5021)&lt;/li&gt;
+&lt;li&gt;tests(TP-003): implement P0+P1 organizations &amp;amp; multi-tenancy test cases @leecalcote (#5013)&lt;/li&gt;
+&lt;li&gt;tests(TP-007): implement P0+P1 catalog test cases @leecalcote (#5024)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @mascot-five and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.7</title><link>/cloud/reference/releases/v1.0.7/</link><pubDate>Mon, 13 Apr 2026 16:56:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.7/</guid><description>&lt;ul&gt;
 &lt;li&gt;refactor(workspace_handler): update GetWorkspaceByID response return one workspace instead of a page, use schema definition @lekaf974 (#5010)&lt;/li&gt;
 &lt;li&gt;feat(dashboard): enforce minimum size constraints for widgets @Rajesh-Nagarajan-11 (#5011)&lt;/li&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.18.4 @l5io (#5008)&lt;/li&gt;
