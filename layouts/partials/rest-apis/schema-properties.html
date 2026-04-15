@@ -1,0 +1,35 @@
+{{ $schema := .schema | default . }}
+{{ $schemas := .schemas | default dict }}
+{{ $source := partial "rest-apis/schema-source.html" (dict "schema" $schema "schemas" $schemas) | transform.Unmarshal (dict "format" "json") }}
+{{ $label := "Schema fields" }}
+{{ $result := dict "label" $label "rows" (slice) }}
+
+{{ if and (not (index $source "properties")) (eq (index $source "type") "array") (index $source "items") (index (index $source "items") "properties") }}
+  {{ $source = index $source "items" }}
+  {{ $label = "Array item fields" }}
+  {{ $result = dict "label" $label "rows" (slice) }}
+{{ end }}
+
+{{ $properties := index $source "properties" }}
+{{ if $properties }}
+  {{ $required := index $source "required" | default (slice) }}
+  {{ $rows := slice }}
+
+  {{ range $name, $property := $properties }}
+    {{ $order := 9999 }}
+    {{ with index $property "x-order" }}
+      {{ $order = . }}
+    {{ end }}
+    {{ $rows = $rows | append (dict
+      "name" $name
+      "order" $order
+      "schema" $property
+      "required" (in $required $name)
+    ) }}
+  {{ end }}
+
+  {{ $rows = sort (sort $rows "name") "order" }}
+  {{ $result = dict "label" $label "rows" $rows }}
+{{ end }}
+
+{{- $result | jsonify -}}
