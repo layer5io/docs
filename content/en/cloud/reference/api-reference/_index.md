@@ -1,8 +1,7 @@
 ---
-title: REST API
+title: Cloud API
 description: >
-  REST APIs for extending Layer5 Cloud.
-weight: 1
+  REST APIs for integrating with and extending Layer5 Cloud.
 categories: [Reference]
 tags: [extensibility]
 ---
