@@ -46,11 +46,11 @@ Explore tutorials and documentation by product in the https://docs.layer5.io web
 <summary><h3>Build Docs with Golang</h3></summary>
 If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended Hugo version as it has necessary SCSS/SASS support. Find all the Hugo packages here: <https://github.com/gohugoio/hugo/releases/tag/v0.120.4>
 
-Now to setup and run the site locally run:
+Now to setup and run the site locally execute:
 
-`make setup` followed by `make site`
-
-...and then visit <http://localhost:1313>.
+1. `make setup`
+2. `make site`
+3. visit http://localhost:1313
 
 If you pull down new code from GitHub, you will occasionally need to run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
@@ -70,7 +70,7 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 
 <details>
       
-<summary><h3>Contribution Guidelines</h3>
+<summary><h3>Contribution Guidelines</h3></summary>
 
 A detailed contribution guide for Layer5 Docs.
 
@@ -80,22 +80,20 @@ Documentation content is written in Markdown and you'll find all files listed un
 
 To create a new page with Markdown, create a file ending in `.md` in a `site/<subdirectory>`. The path in the content directory will be the URL route. For example, `site/docs/hello.md` will be served from the `/docs/hello` URL.
 
-```yaml
+<pre><code language="yaml">
 ---
 title: 'My Title'
 description: "A thorough, yet succinct description of the page's contents"
 ---
-```
+</code></pre>
 
 The significant keys in the YAML frontmatter are:
 
-`title` (string) - This is the title of the page that will be set in the HTML title.
-`description` (string) - This is a description of the page that will be set in the HTML description.
-`permalink` (string - relative file path) - canonical location of the page
-`category` (string) - section to which the page belongs.
-`redirect_from` (string - relative file path) - in case the page was previously available elsewhere
-
-<div>&nbsp;</div>
+- `title` (string) - This is the title of the page that will be set in the HTML title.
+- `description` (string) - This is a description of the page that will be set in the HTML description.
+- `permalink` (string - relative file path) - canonical location of the page
+- `category` (string) - section to which the page belongs.
+- `redirect_from` (string - relative file path) - in case the page was previously available elsewhere
 
 ### Uploading Images to the site
 
@@ -109,7 +107,7 @@ To display images in a pop-up modal, use the following syntax: `![alt text](/pat
 ### Adding Alert to the site
 
 Use the following Syntax to add an Alert:
-`{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}`
+<code>{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}</code>
 
 - `type="danger"`: Alert used to indicate something related to security.
 - `type="info"`: Alert used to write some information.
@@ -184,7 +182,7 @@ Low-level ReST API reference for extending Layer5 Cloud.
 </details>
 
 <details>
-<summary><h3>Kanvas Section: Information Architecture</h3>
+<summary><h3>Kanvas Section: Information Architecture</h3></summary>
 
 ### Getting Started with Designs
 
