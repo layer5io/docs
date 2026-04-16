@@ -68,58 +68,11 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 
 </details>
 
-<details>
       
-<summary><h3>Contribution Guidelines</h3></summary>
+### Contribution Guidelines
 
-A detailed contribution guide for Layer5 Docs.
+**--> See https://docs.layer5.io/contributing <--** for a detailed contribution guide.
 
-### Editing Markdown Content
-
-Documentation content is written in Markdown and you'll find all files listed under the /content directory.
-
-To create a new page with Markdown, create a file ending in `.md` in a `site/<subdirectory>`. The path in the content directory will be the URL route. For example, `site/docs/hello.md` will be served from the `/docs/hello` URL.
-
-<pre><code language="yaml">
----
-title: 'My Title'
-description: "A thorough, yet succinct description of the page's contents"
----
-</code></pre>
-
-The significant keys in the YAML frontmatter are:
-
-- `title` (string) - This is the title of the page that will be set in the HTML title.
-- `description` (string) - This is a description of the page that will be set in the HTML description.
-- `permalink` (string - relative file path) - canonical location of the page
-- `category` (string) - section to which the page belongs.
-- `redirect_from` (string - relative file path) - in case the page was previously available elsewhere
-
-### Uploading Images to the site
-
-To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)` or `<img src="" alt="" />`.
-
-**Note:**
-
-- For images to show correctly on subpages, always provide the complete image path.
-- When using the `<img />` tag, add `data-modal="false"` to prevent the image from opening in a modal e.g. a [logo](https://github.com/layer5io/docs/blob/0bef5a9a05214a9dda10d8a68431e41f5a36676d/layouts/partials/footer.html#L9).
-
-### Adding Alert to the site
-
-Use the following Syntax to add an Alert:
-<code>{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}</code>
-
-- `type="danger"`: Alert used to indicate something related to security.
-- `type="info"`: Alert used to write some information.
-- `type="warning"`: Alert used to indicate a warning that might need attention.
-- `type="note"`: Alert used to indicate a neutral information.
-- `type="success"`: Alert used to indicate a positive information.
-
-By default, if you don't specify a `title="Your Title"`, the title will be the same as the type name.
-
-**Note-> Using an invalid alert type will lead to the default alert being used (i.e. success).**
-
-</details>
 
 ## Documentation Structure
 
