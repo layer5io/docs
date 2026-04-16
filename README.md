@@ -25,7 +25,7 @@
 
 [Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
-## Contributions Welcome
+### Contributions Welcome
 
 <div>
 <a href="https://layer5.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
@@ -37,12 +37,13 @@
 ✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
 </p>
 </div>
-Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products.
+Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products. If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
-If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
+## Building the Documentation
 
-### With Golang
+<details>
 
+<summary><h3>Build Docs with Golang</h3></summary>
 If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended Hugo version as it has necessary SCSS/SASS support. Find all the Hugo packages here: <https://github.com/gohugoio/hugo/releases/tag/v0.120.4>
 
 Now to setup and run the site locally run:
@@ -53,7 +54,11 @@ Now to setup and run the site locally run:
 
 If you pull down new code from GitHub, you will occasionally need to run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
-### With Docker
+</details>
+<details>
+
+<summary><h3>Build Docs with Docker</h3></summary>
+
 
 Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
 
@@ -61,105 +66,13 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 > This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
 > Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
 
-## Layer5 Documentation Structure
-
-## High-Level Outline & Information Architecture for Layer5 Documentation
-
-**Goal:** Offer comprehensive, organized, and accessible documentation for diverse audiences, from new users to expert contributors.
-
-**Target Audience:**
-
-- **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
-- **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
-
-<details>
-  <summary><h2>Cloud Docs</h2></summary>
-
-### Getting Started
-
-- **Setting up Layer5 Account:** With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
-- **Creating a Design from Layer5 Cloud Catalog Templates:** With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the catalog.
-
-### Concepts
-
-An overview of Layer5 Cloud concepts and their relationships to one another.
-
-### Identity
-
-- **Organizations:** Organizations, Managing Organization Permissions
-- **Teams:** Teams, Managing Teams Permissions
-- **Users:** User Management, Managing User Permissions
-
-### Security
-
-- **Tokens:** API Tokens are used to authenticate to Layer5 Cloud’s REST API.
-- **Keychains**: Keychains are a collection of keys
-- **Keys**: Keys are the atomic unit of access control
-- **Roles**: Roles map permissions to users.
-
-### Catalog
-
-The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
-
-### Workspaces
-
-Workspaces serve as a virtual space for your team-based work.
-
-### Tutorials
-
-- **Kanvas Snapshots**: Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
-- **Sharing a Workspace**: Learn how to control access to workspaces and their resources.
-- **Recognizing User and Contributor Milestones**: Showcasing user and contributor achievements
-
-### Self-Hosted
-
-Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
-
-### Reference
-
-Low-level ReST API reference for extending Layer5 Cloud.
-
-</details>
-<details>
-  <summary><h2>Kanvas Docs</h2>
-
-### Getting Started with Designs
-
-- **Starting from a pattern:** A Pattern is an entity that augments the operational behavior of a deployed instance of a Design.
-- **Creating Relationships:** Relationships identify and facilitate genealogy between Components.
-- **Working with Components:** Components represent entities in the ecosystem, exposing capabilities of the underlying platform.
-- **Starting from scratch:** Emphasize the underlying system behavior for each action you take.
-
-### Exploring Designer
-
-- **Reviewing Designs:** Learn how to leverage comments in Kanvas’s Designer Mode to enhance collaboration and streamline design reviews.
-- **Whiteboarding:** Whiteboarding and Freestyle Drawing inside Kanvas
-- **Export Designs:** How to export your designs for backup, sharing or offline use.
-
-### Working with Components
-
-Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
-
-### Navigating Operator
-
-Operator mode is for operating your Kubernetes clusters and cloud native infrastructure.
-
-### Core Tasks
-
-- **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
-- **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying Designs, Cloning a Design
-
-### Reference
-
-- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
-- **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
-
 </details>
 
-### Contribution Guidelines
+<details>
+      
+<summary><h3>Contribution Guidelines</h3>
 
 A detailed contribution guide for Layer5 Docs.
-Contributing to the docs.layer5.io
 
 ### Editing Markdown Content
 
@@ -207,6 +120,104 @@ Use the following Syntax to add an Alert:
 By default, if you don't specify a `title="Your Title"`, the title will be the same as the type name.
 
 **Note-> Using an invalid alert type will lead to the default alert being used (i.e. success).**
+
+</details>
+
+## Documentation Structure
+
+The following is the high-level outline and information architecture for Layer5 documentation.
+
+**Goal:** Offer comprehensive, organized, and accessible documentation for diverse audiences, from new users to expert contributors.
+
+**Target Audience:**
+
+- **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
+- **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
+
+<details>
+<summary><h3>Cloud Section: Information Architecture</h3></summary>
+
+### Getting Started
+
+- Creating an Account
+- Creating your first Designs
+
+### Concepts
+
+An overview of Layer5 Cloud concepts and their relationships to one another.
+
+#### Identity
+
+- **Organizations:** Organizations, Managing Organization Permissions
+- **Teams:** Teams, Managing Teams Permissions
+- **Users:** User Management, Managing User Permissions
+
+#### Security
+
+- **Tokens:** API Tokens are used to authenticate to Layer5 Cloud’s REST API.
+- **Keychains**: Keychains are a collection of keys
+- **Keys**: Keys are the atomic unit of access control
+- **Roles**: Roles map permissions to users.
+
+#### Catalog
+
+The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
+
+#### Workspaces
+
+Workspaces serve as a virtual space for your team-based work.
+
+#### Tutorials
+
+- Kanvas Snapshots
+- Sharing a Workspace
+- Recognizing User and Contributor Milestones
+
+### Self-Hosted
+
+Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
+
+### Reference
+
+Low-level ReST API reference for extending Layer5 Cloud.
+
+</details>
+
+<details>
+<summary><h3>Kanvas Section: Information Architecture</h3>
+
+### Getting Started with Designs
+
+- **Starting from a pattern:** A Pattern is an entity that augments the operational behavior of a deployed instance of a Design.
+- **Creating Relationships:** Relationships identify and facilitate genealogy between Components.
+- **Working with Components:** Components represent entities in the ecosystem, exposing capabilities of the underlying platform.
+- **Starting from scratch:** Emphasize the underlying system behavior for each action you take.
+
+### Exploring Designer
+
+- **Reviewing Designs:** Learn how to leverage comments in Kanvas’s Designer Mode to enhance collaboration and streamline design reviews.
+- **Whiteboarding:** Whiteboarding and Freestyle Drawing inside Kanvas
+- **Export Designs:** How to export your designs for backup, sharing or offline use.
+
+### Working with Components
+
+Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
+
+### Navigating Operator
+
+Operator mode is for operating your Kubernetes clusters and cloud native infrastructure.
+
+### Core Tasks
+
+- **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+- **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying Designs, Cloning a Design
+
+### Reference
+
+- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+- **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
+
+</details>
 
 <hr/>
 
