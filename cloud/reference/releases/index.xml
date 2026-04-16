@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.9</title><link>/cloud/reference/releases/v1.0.9/</link><pubDate>Wed, 15 Apr 2026 22:52:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.9/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.10</title><link>/cloud/reference/releases/v1.0.10/</link><pubDate>Thu, 16 Apr 2026 02:39:14 +0000</pubDate><guid>/cloud/reference/releases/v1.0.10/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(middleware): return 404 when environment not found in owner authz @alexquincy (#5039)&lt;/li&gt;
+&lt;li&gt;chore: remove local openapi-schema and dead doc-serving code @PragalvaXFREZ (#4997)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@PragalvaXFREZ, @alexquincy, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.9</title><link>/cloud/reference/releases/v1.0.9/</link><pubDate>Wed, 15 Apr 2026 22:52:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.9/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix: address 5 production bugs documented during P0+P1 test batch @leecalcote (#5027)&lt;/li&gt;
 &lt;li&gt;tests(TP-001): add unit tests for 16 remaining governance middlewares @leecalcote (#5030)&lt;/li&gt;
 &lt;li&gt;tests(TP-014): add catalog component interaction tests @leecalcote (#5031)&lt;/li&gt;
