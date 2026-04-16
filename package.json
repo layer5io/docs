@@ -28,11 +28,15 @@
     "serve": "npm run _serve",
     "test": "npm run check:links",
     "update:pkg:dep": "npm install --save-dev autoprefixer@latest postcss-cli@latest",
-    "update:pkg:hugo": "npm install --save-dev --save-exact hugo-extended@latest"
+    "update:pkg:hugo": "npm install --save-dev --save-exact hugo-extended@latest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "hugo-extended": "0.158.0",
-    "postcss-cli": "^11.0.0"
+    "postcss-cli": "^11.0.0",
+    "prettier": "3.8.3",
+    "prettier-plugin-organize-imports": "^4.3.0"
   }
 }
