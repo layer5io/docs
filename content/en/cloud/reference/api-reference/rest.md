@@ -2,7 +2,7 @@
 title: REST API Reference
 description: >
   Complete reference of all Layer5 Cloud REST API endpoints
-weight: 1
+weight: 2
 categories: [Reference]
 tags: [extensibility]
 layout: rest-apis
