@@ -3,7 +3,7 @@
     class="td-navbar navbar-dark js-navbar-scroll td-navbar-cover navbar-bg-onscroll--fade"
   >
     <div class="container-fluid flex-column flex-md-row">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/" aria-label="Home">
         <span class="navbar-brand__logo navbar-logo">
           {{ $svg := resources.Get "icons/logo.svg" }}
           <img class="footer-logo" src="/images/logo.svg" alt="logo" data-modal="false" />
@@ -41,6 +41,7 @@
                           class="dropdown-item dropdown-item--row"
                           href="https://cloud.layer5.io/academy"
                           target="_blank"
+                          aria-label="Academy"
                           >
                             <div class="logo-container">
                               <img
@@ -54,6 +55,7 @@
                           <a
                           class="dropdown-item dropdown-item--row"
                           href="/videos"
+                          aria-label="Videos"
                           >
                             <div class="logo-container">
                               <img
@@ -89,13 +91,14 @@
             data-toggle="dropdown"
             style="padding-top:6px"
             >
-            <img width="28px" src="/images/grid-icon.svg" class="grid-icon" data-modal="false" />
+            <img width="28px" src="/images/grid-icon.svg" alt="Products" class="grid-icon" data-modal="false" />
 
           </div>
           <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-4.5rem;visibility:hidden;">
             <a
             class="dropdown-item"
             href="https://docs.meshery.io/"
+            aria-label="Meshery Docs"
             target="_blank"
             >
               <div class="logo-container">
@@ -110,6 +113,7 @@
               <a
                 class="dropdown-item"
                 href="https://layer5.io/cloud-native-management/kanvas"
+                aria-label="Kanvas"
                 target="_blank"
               >
                 <div class="logo-container">
@@ -126,6 +130,7 @@
               <a
                 class="dropdown-item"
                 href="https://layer5.io/cloud-native-management/catalog"
+                aria-label="Catalog"
                 target="_blank"
               >
                 <div class="logo-container">
@@ -141,6 +146,7 @@
               <a
                 class="dropdown-item"
                 href="https://smp-spec.io/"
+                aria-label="SMP Spec"
                 target="_blank"
               >
                 <div class="logo-container">
@@ -156,6 +162,7 @@
               <a
                 class="dropdown-item"
                 href="https://getnighthawk.dev/"
+                aria-label="Nighthawk"
                 target="_blank"
               >
                 <div class="logo-container">
@@ -173,6 +180,7 @@
                 class="dropdown-item"
                 href="https://cloud.layer5.io/academy"
                 target="_blank"
+                aria-label="Layer5 Academy"
               >
                 <div class="logo-container">
                   <img
@@ -189,7 +197,7 @@
             <a class="nav-link" href="https://cloud.layer5.io/login" target="_blank">Sign In</a>
           </li>
           <li class="nav-item dropdown" data-bs-theme="dark" id="userlist" style="display: none;">
-             <a href="" id="user-profile-url">
+             <a href="https://cloud.layer5.io" id="user-profile-url" aria-label="User Profile">
               <div
                 class="nav-link avatar-container"
                id="avatarDropdown"
@@ -257,7 +265,8 @@
       cur = document.querySelector("#kanvas");
     if (cur) {
       cur.classList.add("current");
-      cur.href = "javascript: void(0)";
+      cur.style.pointerEvents = "none";
+      cur.style.cursor = "default";
     }
   
   let isUserAuthenticated = false;
