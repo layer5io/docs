@@ -1,4 +1,208 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v0.9.8</title><link>/cloud/reference/releases/v0.9.8/</link><pubDate>Tue, 24 Mar 2026 13:03:24 +0000</pubDate><guid>/cloud/reference/releases/v0.9.8/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.12</title><link>/cloud/reference/releases/v1.0.12/</link><pubDate>Thu, 16 Apr 2026 18:00:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.12/</guid><description>&lt;ul&gt;
+&lt;li&gt;Updated link in getting-started @Rajesh-Nagarajan-11 (#5041)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11 and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.11</title><link>/cloud/reference/releases/v1.0.11/</link><pubDate>Thu, 16 Apr 2026 03:05:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.11/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(active-users): use API user names @alexquincy (#5040)&lt;/li&gt;
+&lt;li&gt;tests(TP-016): add Design CRUD, Org switching, and related E2E specs @leecalcote (#5033)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.10</title><link>/cloud/reference/releases/v1.0.10/</link><pubDate>Thu, 16 Apr 2026 02:39:14 +0000</pubDate><guid>/cloud/reference/releases/v1.0.10/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(middleware): return 404 when environment not found in owner authz @alexquincy (#5039)&lt;/li&gt;
+&lt;li&gt;chore: remove local openapi-schema and dead doc-serving code @PragalvaXFREZ (#4997)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@PragalvaXFREZ, @alexquincy, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.9</title><link>/cloud/reference/releases/v1.0.9/</link><pubDate>Wed, 15 Apr 2026 22:52:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.9/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: address 5 production bugs documented during P0+P1 test batch @leecalcote (#5027)&lt;/li&gt;
+&lt;li&gt;tests(TP-001): add unit tests for 16 remaining governance middlewares @leecalcote (#5030)&lt;/li&gt;
+&lt;li&gt;tests(TP-014): add catalog component interaction tests @leecalcote (#5031)&lt;/li&gt;
+&lt;li&gt;tests(TP-016): add post-deployment smoke tests (local/staging/production) @leecalcote (#5029)&lt;/li&gt;
+&lt;li&gt;tests(TP-001): close the authz-middleware coverage gap (18 new tests) @leecalcote (#5028)&lt;/li&gt;
+&lt;li&gt;tests(TP-010): implement P0+P1 performance profiles &amp;amp; results test cases @leecalcote (#5018)&lt;/li&gt;
+&lt;li&gt;docs(testing): reconcile COVERAGE_STATUS.md after P0+P1 test batch @leecalcote (#5026)&lt;/li&gt;
+&lt;li&gt;tests(TP-014): add general component interaction tests @leecalcote (#5032)&lt;/li&gt;
+&lt;li&gt;tests(TP-014): add account interaction tests @leecalcote (#5035)&lt;/li&gt;
+&lt;li&gt;tests: implement P2/P3 deferred cases from TP-003/TP-006/TP-008 @leecalcote (#5036)&lt;/li&gt;
+&lt;li&gt;tests(TP-014): add identity component interaction tests @leecalcote (#5034)&lt;/li&gt;
+&lt;li&gt;fix: correct React key, useEffect deps, and StatusChip style fallback @miacycle (#5037)&lt;/li&gt;
+&lt;li&gt;tests(TP-008): implement P0+P1 GitHub integration test cases @leecalcote (#5023)&lt;/li&gt;
+&lt;li&gt;tests(TP-001): implement P0+P1 auth &amp;amp; authz test cases @leecalcote (#5022)&lt;/li&gt;
+&lt;li&gt;tests(TP-006): implement P0+P1 designs/patterns/content test cases @leecalcote (#5025)&lt;/li&gt;
+&lt;li&gt;tests(TP-005): implement P0+P1 workspaces &amp;amp; environments test cases @leecalcote (#5019)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @marblom007, @mascot-five, @miacycle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.8</title><link>/cloud/reference/releases/v1.0.8/</link><pubDate>Wed, 15 Apr 2026 01:38:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.8/</guid><description>&lt;ul&gt;
+&lt;li&gt;tests(TP-014): implement P0+P1 frontend component &amp;amp; page test cases @leecalcote (#5016)&lt;/li&gt;
+&lt;li&gt;tests(TP-004): implement P0+P1 teams &amp;amp; RBAC test cases @leecalcote (#5014)&lt;/li&gt;
+&lt;li&gt;tests(TP-009): implement P0+P1 billing &amp;amp; subscriptions test cases @leecalcote (#5020)&lt;/li&gt;
+&lt;li&gt;tests(TP-016): implement authentication E2E spec + expand e2e network helpers @leecalcote (#5017)&lt;/li&gt;
+&lt;li&gt;tests(TP-012): implement P0+P1 academy test cases + fix short-answer scoring @leecalcote (#5015)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.18.7 @l5io (#5012)&lt;/li&gt;
+&lt;li&gt;tests(TP-011): implement P0+P1 events &amp;amp; notifications test cases @leecalcote (#5021)&lt;/li&gt;
+&lt;li&gt;tests(TP-003): implement P0+P1 organizations &amp;amp; multi-tenancy test cases @leecalcote (#5013)&lt;/li&gt;
+&lt;li&gt;tests(TP-007): implement P0+P1 catalog test cases @leecalcote (#5024)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @mascot-five and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.7</title><link>/cloud/reference/releases/v1.0.7/</link><pubDate>Mon, 13 Apr 2026 16:56:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.7/</guid><description>&lt;ul&gt;
+&lt;li&gt;refactor(workspace_handler): update GetWorkspaceByID response return one workspace instead of a page, use schema definition @lekaf974 (#5010)&lt;/li&gt;
+&lt;li&gt;feat(dashboard): enforce minimum size constraints for widgets @Rajesh-Nagarajan-11 (#5011)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.18.4 @l5io (#5008)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11, @hortison, @l5io, @leecalcote, @lekaf974, @meshery-ci, @pontusringblom and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.6</title><link>/cloud/reference/releases/v1.0.6/</link><pubDate>Thu, 09 Apr 2026 06:38:13 +0000</pubDate><guid>/cloud/reference/releases/v1.0.6/</guid><description>&lt;ul&gt;
+&lt;li&gt;Fix all-organizations provider admin flow @arjunmehta-git (#5005)&lt;/li&gt;
+&lt;li&gt;Transition UUID type references to schemas core.Uuid @yi-nuo426 (#5003)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @hamza-mohd, @l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.5</title><link>/cloud/reference/releases/v1.0.5/</link><pubDate>Tue, 07 Apr 2026 18:01:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.5/</guid><description>&lt;ul&gt;
+&lt;li&gt;Chore: UI package updates @leecalcote (#4999)&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;fix patternFile tag naming @aabidsofi19 (#4996)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.4</title><link>/cloud/reference/releases/v1.0.4/</link><pubDate>Tue, 07 Apr 2026 06:14:33 +0000</pubDate><guid>/cloud/reference/releases/v1.0.4/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.18.3 @l5io (#4994)&lt;/li&gt;
+&lt;li&gt;chore: upgrade meshery/schemas to v1.0.5 @yi-nuo426 (#4993)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.3</title><link>/cloud/reference/releases/v1.0.3/</link><pubDate>Tue, 07 Apr 2026 04:12:22 +0000</pubDate><guid>/cloud/reference/releases/v1.0.3/</guid><description>&lt;ul&gt;
+&lt;li&gt;Bump @sistent/sistent to v0.18.2 and use editWorkspaceSchema @fitzergerald (#4987)&lt;/li&gt;
+&lt;li&gt;Upgrade to Meshery Schemas v1.0.4: enhance Workspace API @yi-nuo426 (#4985)&lt;/li&gt;
+&lt;li&gt;Implement Wave 1 test coverage: 310+ new tests @leecalcote (#4959)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald, @l5io, @leecalcote, @miacycle, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.2</title><link>/cloud/reference/releases/v1.0.2/</link><pubDate>Mon, 06 Apr 2026 17:09:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.2/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: use dynamic label in OutlinedInput for correct border cutout @Rajesh-Nagarajan-11 (#4978)&lt;/li&gt;
+&lt;li&gt;fix(db): make seed migration idempotent against existing data @yi-nuo426 (#4976)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11, @alexquincy, @l5io, @meshery-ci and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.1</title><link>/cloud/reference/releases/v1.0.1/</link><pubDate>Sat, 04 Apr 2026 22:53:45 +0000</pubDate><guid>/cloud/reference/releases/v1.0.1/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(db): realign academy enum type names with schemas package @yi-nuo426 (#4975)&lt;/li&gt;
+&lt;li&gt;fix(router): restore ui/public fallback for /assets/* and /favicon.ico @yi-nuo426 (#4974)&lt;/li&gt;
+&lt;li&gt;Fix academy dashboard summary guards @yi-nuo426 (#4973)&lt;/li&gt;
+&lt;li&gt;fix: harden downloadTokenHandler RTK Query dispatch @yi-nuo426 (#4970)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @miacycle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.0</title><link>/cloud/reference/releases/v1.0.0/</link><pubDate>Sat, 04 Apr 2026 19:56:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.0/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(router): restore auth asset routing for auth flows @yi-nuo426 (#4972)&lt;/li&gt;
+&lt;li&gt;fix: stabilize make tests @yi-nuo426 (#4969)&lt;/li&gt;
+&lt;li&gt;fix/login log remediation @miacycle (#4968)&lt;/li&gt;
+&lt;li&gt;test: add auth middleware coverage @leecalcote (#4963)&lt;/li&gt;
+&lt;li&gt;test: expand Redux slice and smoke coverage @leecalcote (#4964)&lt;/li&gt;
+&lt;li&gt;Reduce auth log noise and remove secret-bearing logs @miacycle (#4967)&lt;/li&gt;
+&lt;li&gt;test: add organization handler coverage @leecalcote (#4965)&lt;/li&gt;
+&lt;li&gt;test: add user handler coverage @leecalcote (#4966)&lt;/li&gt;
+&lt;li&gt;test: add workspaces handler coverage @leecalcote (#4961)&lt;/li&gt;
+&lt;li&gt;test: add key and view handler coverage @leecalcote (#4962)&lt;/li&gt;
+&lt;li&gt;Refactor: Move architecture docs to dedicated file @leecalcote (#4960)&lt;/li&gt;
+&lt;li&gt;Ignore next-env.d.ts to prevent dev/prod flip-flopping @leecalcote (#4958)&lt;/li&gt;
+&lt;li&gt;Fix Pop migration: replace JSONB ? operator with jsonb_exists() @leecalcote (#4957)&lt;/li&gt;
+&lt;li&gt;Add comprehensive test strategy with 16 test plans and 1,275+ test cases @leecalcote (#4956)&lt;/li&gt;
+&lt;li&gt;Fix Google OAuth avatar not populated during registration @leecalcote (#4953)&lt;/li&gt;
+&lt;li&gt;fix: pass orgId to useGetWorkspacesQuery to prevent &amp;lsquo;invalid org id&amp;rsquo; error @leecalcote (#4955)&lt;/li&gt;
+&lt;li&gt;Fix 3 bugs: Missing names, workspace @leecalcote (#4954)&lt;/li&gt;
+&lt;li&gt;chore: upgrade meshery/schemas to v1.0.3 and meshkit to v1.0.2 @leecalcote (#4951)&lt;/li&gt;
+&lt;li&gt;Cleanup api docs @CodexRaunak (#4944)&lt;/li&gt;
+&lt;li&gt;chore: upgrade meshery/schemas to v1.0.3 and meshkit to v1.0.2 @leecalcote (#4950)&lt;/li&gt;
+&lt;li&gt;Align JSON keys with meshery/schemas camelCase convention @miacycle (#4932)&lt;/li&gt;
+&lt;li&gt;Fix typo in user account registration instructions @CodexRaunak (#4947)&lt;/li&gt;
+&lt;li&gt;[auth] Improve logging and error handling in authentication flow @leecalcote (#4949)&lt;/li&gt;
+&lt;li&gt;Improve clarity of unsaved changes warning in dashboard @Rajesh-Nagarajan-11 (#4946)&lt;/li&gt;
+&lt;li&gt;Refactor code structure for improved readability and maintainability @miacycle (#4933)&lt;/li&gt;
+&lt;li&gt;Add Unsaved Changes Protection to Dashboard Layout Editor @Rajesh-Nagarajan-11 (#4925)&lt;/li&gt;
+&lt;li&gt;Consolidate database migrations into single initial schema @miacycle (#4930)&lt;/li&gt;
+&lt;li&gt;fix: mock @/api/api in workspace tests to match component imports @miacycle (#4929)&lt;/li&gt;
+&lt;li&gt;Add MCP server configuration and documentation @miacycle (#4927)&lt;/li&gt;
+&lt;li&gt;fix: add ts-node devDependency for Jest TypeScript config @miacycle (#4928)&lt;/li&gt;
+&lt;li&gt;Send feedback form emails to &lt;a href="mailto:support@layer5.io"&gt;support@layer5.io&lt;/a&gt; @CodexRaunak (#4926)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;details&gt;
+&lt;summary&gt;7 changes&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/net from 0.51.0 to 0.52.0 @dependabot (#4937)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/ozontech/allure-go/pkg/allure from 0.8.1 to 0.8.2 @dependabot (#4935)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/text from 0.34.0 to 0.35.0 @dependabot (#4936)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/mattn/go-sqlite3 from 1.14.34 to 1.14.38 @dependabot (#4938)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/lib/pq from 1.11.2 to 1.12.1 @dependabot (#4934)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump recharts from 3.8.0 to 3.8.1 in /ui @dependabot (#4942)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump xstate from 5.28.0 to 5.30.0 in /ui @dependabot (#4940)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @PragalvaXFREZ, @Rajesh-Nagarajan-11, @alexquincy, @dependabot, @dependabot[bot], @fitzergerald, @jamieplu, @l5io, @leecalcote, @marblom007, @meshery-ci, @miacycle, @simihablo, @suttonskate and @yi-nuo426&lt;/p&gt;</description></item><item><title>v0.9.8</title><link>/cloud/reference/releases/v0.9.8/</link><pubDate>Tue, 24 Mar 2026 13:03:24 +0000</pubDate><guid>/cloud/reference/releases/v0.9.8/</guid><description>&lt;ul&gt;
 &lt;li&gt;Fix workspace endpoint imports to use local API slice @leecalcote (#4924)&lt;/li&gt;
 &lt;/ul&gt;
 

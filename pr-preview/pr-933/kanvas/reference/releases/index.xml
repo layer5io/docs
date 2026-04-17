@@ -1,4 +1,467 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.0-1</title><link>/kanvas/reference/releases/v1.0.0-1/</link><pubDate>Wed, 25 Mar 2026 01:23:06 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.0-1/</guid><description>&lt;p&gt;&lt;a href="https://meshery.io/blog/meshery-v1.0-general-availability/"&gt;Meshery v1.0 is here!&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v0.9.2-1</title><link>/kanvas/reference/releases/v0.9.2-1/</link><pubDate>Tue, 24 Mar 2026 07:44:19 +0000</pubDate><guid>/kanvas/reference/releases/v0.9.2-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.9-1</title><link>/kanvas/reference/releases/v1.0.9-1/</link><pubDate>Fri, 17 Apr 2026 18:59:13 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.9-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
+&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
+&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
+&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.8-2</title><link>/kanvas/reference/releases/v1.0.8-2/</link><pubDate>Wed, 15 Apr 2026 06:39:56 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-2/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.7-2</title><link>/kanvas/reference/releases/v1.0.7-2/</link><pubDate>Mon, 13 Apr 2026 17:36:14 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.7-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[React 19] Fix hooks ordering violations and ref misuse @leecalcote (#4160)&lt;/li&gt;
+&lt;li&gt;chore(deps): remove unused @babel/eslint-* packages @leecalcote (#4153)&lt;/li&gt;
+&lt;li&gt;docs: expand E2E test README with framework assessment and profiles @leecalcote (#4161)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-operator" class="heading-link"&gt;
+ 🕸️ Operator
+ &lt;a href="#-operator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix Golang Plugin k8s deps compatibility @leecalcote (#4162)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-documentation" class="heading-link"&gt;
+ 📖 Documentation
+ &lt;a href="#-documentation" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;docs: consolidate tests/README.md into developer guide @leecalcote (#4164)&lt;/li&gt;
+&lt;li&gt;Document performance review of autopan extension @leecalcote (#4147)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.7-1</title><link>/kanvas/reference/releases/v1.0.7-1/</link><pubDate>Sun, 12 Apr 2026 15:43:16 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.7-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No changes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.6-2</title><link>/kanvas/reference/releases/v1.0.6-2/</link><pubDate>Sat, 11 Apr 2026 12:36:24 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix proxy-revoked crash \Cannot perform &amp;lsquo;get&amp;rsquo; on a proxy that has been revoked\ @leecalcote (#4152)&lt;/li&gt;
+&lt;li&gt;Fix make targets that use sibling-repo relative paths for git worktree support @leecalcote (#4150)&lt;/li&gt;
+&lt;li&gt;Fix z-index for newly created components and GraphQL worktrees @leecalcote (#4149)&lt;/li&gt;
+&lt;li&gt;fix(operator): plainify draft refs in saveView and updateViewRoute @leecalcote (#4144)&lt;/li&gt;
+&lt;li&gt;Fix z-index for newly created components appearing below existing ones @&lt;a href="https://github.com/apps/copilot-swe-agent"&gt;copilot-swe-agent[bot]&lt;/a&gt; (#3915)&lt;/li&gt;
+&lt;li&gt;sistent 18.4 and test updates @marblom007 (#4133)&lt;/li&gt;
+&lt;li&gt;test: add unit tests for adaptive mode actors, model, and guidance @marblom007 (#4123)&lt;/li&gt;
+&lt;li&gt;test: add unit tests for render mode constants, thresholds, and integration @marblom007 (#4122)&lt;/li&gt;
+&lt;li&gt;test: add unit tests for render mode styles, badges, and features @marblom007 (#4121)&lt;/li&gt;
+&lt;li&gt;feat: add user guidance system for performance optimization suggestions @leecalcote (#4115)&lt;/li&gt;
+&lt;li&gt;feat: implement View Only render mode @leecalcote (#4116)&lt;/li&gt;
+&lt;li&gt;fix: wire adaptive mode event pipeline between actors (#3923) @leecalcote (#4118)&lt;/li&gt;
+&lt;li&gt;feat: add adaptive mode toggle to RenderModeSwitcher UI @leecalcote (#4114)&lt;/li&gt;
+&lt;li&gt;feat: add performance monitor actor for render latency sampling @leecalcote (#4112)&lt;/li&gt;
+&lt;li&gt;perf: compound node rendering optimizations @marblom007 (#4124)&lt;/li&gt;
+&lt;li&gt;feat: add adaptive mode actor for automatic render mode switching @leecalcote (#4113)&lt;/li&gt;
+&lt;li&gt;feat: wire adaptive mode pipeline and add transition polish @leecalcote (#4117)&lt;/li&gt;
+&lt;li&gt;Add performance monitor actor for render latency sampling @marblom007 (#4130)&lt;/li&gt;
+&lt;li&gt;test: skip flaky duplicate-evaluation e2e test @leecalcote (#4119)&lt;/li&gt;
+&lt;li&gt;fix: add explicit markup prop to Mention for React 19 compatibility @arjunmehta-git (#4127)&lt;/li&gt;
+&lt;li&gt;fix: lazy-init edge handle tooltip to survive Cytoscape mount race @marblom007 (#4125)&lt;/li&gt;
+&lt;li&gt;test: stabilize canvas node selection @marblom007 (#4126)&lt;/li&gt;
+&lt;li&gt;feat: implement medium render mode as distinct middle tier @leecalcote (#4110)&lt;/li&gt;
+&lt;li&gt;fix: correct guard condition in design validation event publisher @leecalcote (#4120)&lt;/li&gt;
+&lt;li&gt;feat: complete wireframe mode rendering @leecalcote (#4111)&lt;/li&gt;
+&lt;li&gt;Susan is kaput. fix: resolve XState actor communication error in validation @arjunmehta-git (#4104)&lt;/li&gt;
+&lt;li&gt;feat: expand render mode type system for adaptive transitions @leecalcote (#4109)&lt;/li&gt;
+&lt;li&gt;fix: align Help Center grid cards @arjunmehta-git (#4105)&lt;/li&gt;
+&lt;li&gt;test: improve duplicate component evaluation test reliability @arjunmehta-git (#4103)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-designer" class="heading-link"&gt;
+ 🖌️ Designer
+ &lt;a href="#-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Refactor ActionToolbar for mobile actions and cleanup @fitzergerald (#4140)&lt;/li&gt;
+&lt;li&gt;fix: replace @syncedstore/core with immer-yjs to fix collaboration state corruption @marblom007 (#4131)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix Component style editing tooltip not showing up @aabidsofi19 (#4156)&lt;/li&gt;
+&lt;li&gt;fix(tests): fail Playwright auth setup fast on invalid credentials @leecalcote (#4155)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @sistent/sistent 0.18.3 → 0.18.4 @leecalcote (#4151)&lt;/li&gt;
+&lt;li&gt;fix(sweettea): harden actor lifecycle safety across store layer @leecalcote (#4142)&lt;/li&gt;
+&lt;li&gt;fix: replace @syncedstore/core with immer-yjs to fix collaboration state corruption @marblom007 (#4131)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;improvement(tests): faster and more precise Playwright E2E execution @leecalcote (#4146)&lt;/li&gt;
+&lt;li&gt;build: clean up residual webpack references after rspack migration @leecalcote (#4129)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-documentation" class="heading-link"&gt;
+ 📖 Documentation
+ &lt;a href="#-documentation" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;docs: refresh Kanvas Developer Guide for current codebase @leecalcote (#4145)&lt;/li&gt;
+&lt;li&gt;chore: remove dead @layer5/cytoscape-node-html-label dependency @marblom007 (#4134)&lt;/li&gt;
+&lt;li&gt;build: clean up residual webpack references after rspack migration @leecalcote (#4129)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @arjunmehta-git, @fitzergerald, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @miacycle, @simihablo, @winkletinkle, @yi-nuo426 and &lt;a href="https://github.com/apps/copilot-swe-agent"&gt;copilot-swe-agent[bot]&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.6-1</title><link>/kanvas/reference/releases/v1.0.6-1/</link><pubDate>Thu, 09 Apr 2026 06:46:48 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix TypeError when catalog_data is undefined in Catalog modal @arjunmehta-git (#4102)&lt;/li&gt;
+&lt;li&gt;update @arjunmehta-git (#4101)&lt;/li&gt;
+&lt;li&gt;fix: harden XState actor guards against null data crashes @arjunmehta-git (#4100)&lt;/li&gt;
+&lt;li&gt;Remove axios dependency and deduplicate RTK endpoints @arjunmehta-git (#4097)&lt;/li&gt;
+&lt;li&gt;docs: rewrite AGENTS.md for coding agent relevance @arjunmehta-git (#4094)&lt;/li&gt;
+&lt;li&gt;build: replace webpack with rspack @yi-nuo426 (#4084)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-designer" class="heading-link"&gt;
+ 🖌️ Designer
+ &lt;a href="#-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: improve mobile responsiveness and touch navigation @arjunmehta-git (#4095)&lt;/li&gt;
+&lt;li&gt;simplify @arjunmehta-git (#4098)&lt;/li&gt;
+&lt;li&gt;fix build issues @arjunmehta-git (#4093)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: improve mobile responsiveness and touch navigation @arjunmehta-git (#4095)&lt;/li&gt;
+&lt;li&gt;Fix React runtime bundling mismatch in Kanvas @arjunmehta-git (#4099)&lt;/li&gt;
+&lt;li&gt;.patternFile @arjunmehta-git (#4096)&lt;/li&gt;
+&lt;li&gt;Fix feedback React import and logo SVG sizing @yi-nuo426 (#4083)&lt;/li&gt;
+&lt;li&gt;fix build issues @arjunmehta-git (#4093)&lt;/li&gt;
+&lt;li&gt;test: stabilize follow-up E2E interactions @marblom007 (#4092)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @hortison, @l5io, @leecalcote, @marblom007 and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.5-2</title><link>/kanvas/reference/releases/v1.0.5-2/</link><pubDate>Wed, 08 Apr 2026 22:05:24 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.5-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: relationship API endpoints broken after RTK migration @arjunmehta-git (#4091)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @arjunmehta-git, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.5-1</title><link>/kanvas/reference/releases/v1.0.5-1/</link><pubDate>Tue, 07 Apr 2026 20:22:03 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.5-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No changes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.4-v1.0.4</title><link>/kanvas/reference/releases/v1.0.4-v1.0.4/</link><pubDate>Tue, 07 Apr 2026 19:07:49 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.4-v1.0.4/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump lodash from 4.17.21 to 4.18.1 in /tests @&lt;a href="https://github.com/apps/dependabot"&gt;dependabot[bot]&lt;/a&gt; (#4089)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @dependabot[bot], @l5io and &lt;a href="https://github.com/apps/dependabot"&gt;dependabot[bot]&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.4-1</title><link>/kanvas/reference/releases/v1.0.4-1/</link><pubDate>Tue, 07 Apr 2026 18:03:23 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.4-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-designer" class="heading-link"&gt;
+ 🖌️ Designer
+ &lt;a href="#-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix pattern file naming in ui @aabidsofi19 (#4088)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix pattern file naming in ui @aabidsofi19 (#4088)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io&lt;/p&gt;</description></item><item><title>v1.0.3-1</title><link>/kanvas/reference/releases/v1.0.3-1/</link><pubDate>Tue, 07 Apr 2026 15:10:56 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.3-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No changes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.2-2</title><link>/kanvas/reference/releases/v1.0.2-2/</link><pubDate>Tue, 07 Apr 2026 08:26:05 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.2-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: polyfill ReactDOM.findDOMNode for React 19 compat @yi-nuo426 (#4086)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.2-1</title><link>/kanvas/reference/releases/v1.0.2-1/</link><pubDate>Tue, 07 Apr 2026 07:32:24 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.2-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;refactor/workspace type from schemas @yi-nuo426 (#4080)&lt;/li&gt;
+&lt;li&gt;project settings @yi-nuo426 (#4072)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-operator" class="heading-link"&gt;
+ 🕸️ Operator
+ &lt;a href="#-operator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix react internal runtime crash @aabidsofi19 (#4085)&lt;/li&gt;
+&lt;li&gt;refactor/workspace type from schemas @yi-nuo426 (#4081)&lt;/li&gt;
+&lt;li&gt;Upgrade @meshery/schemas to v1.0.4 and @sistent/sistent to v0.18.2 @yi-nuo426 (#4078)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix react internal runtime crash @aabidsofi19 (#4085)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix react internal runtime crash @aabidsofi19 (#4085)&lt;/li&gt;
+&lt;li&gt;chore: improve environment and workflow configuration @yi-nuo426 (#4073)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote, @miacycle, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.1-1</title><link>/kanvas/reference/releases/v1.0.1-1/</link><pubDate>Mon, 06 Apr 2026 20:06:07 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.1-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;enhanced test env defaults @yi-nuo426 (#4064)&lt;/li&gt;
+&lt;li&gt;fix duplicate element test @leecalcote (#4063)&lt;/li&gt;
+&lt;li&gt;fix: correct URL query string in deploy/undeploy endpoints @alexquincy (#4058)&lt;/li&gt;
+&lt;li&gt;chore: fix import order in designs.ts @leecalcote (#4055)&lt;/li&gt;
+&lt;li&gt;chore: add .claude/settings.local.json to .gitignore @alexquincy (#4056)&lt;/li&gt;
+&lt;li&gt;additional package added @leecalcote (#4044)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-designer" class="heading-link"&gt;
+ 🖌️ Designer
+ &lt;a href="#-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: use isRejectedWithValue for 510 error check in middleware @leecalcote (#4059)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-operator" class="heading-link"&gt;
+ 🕸️ Operator
+ &lt;a href="#-operator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: use isRejectedWithValue for 510 error check in middleware @leecalcote (#4059)&lt;/li&gt;
+&lt;li&gt;fix: remove console.log debug code from mesheryErrorMiddleware @alexquincy (#4057)&lt;/li&gt;
+&lt;li&gt;chore: upgrade to meshery/schemas v1.0.1, sistent v0.18.1, meshkit v1.0.1 @leecalcote (#4048)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix syncedStore Immer import @yi-nuo426 (#4065)&lt;/li&gt;
+&lt;li&gt;fix: detect local Meshery lockfile from worktrees @leecalcote (#4060)&lt;/li&gt;
+&lt;li&gt;Resolve catalog modal issue @Rajesh-Nagarajan-11 (#4035)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore: use sparse checkout for meshery release sync @yi-nuo426 (#4068)&lt;/li&gt;
+&lt;li&gt;fix: sync graphql go.mod to Meshery release tag before Docker build @leecalcote (#4062)&lt;/li&gt;
+&lt;li&gt;Bump typescript-eslint from 8.57.2 to 8.58.0 in /meshmap @&lt;a href="https://github.com/apps/dependabot"&gt;dependabot[bot]&lt;/a&gt; (#4045)&lt;/li&gt;
+&lt;li&gt;Bump @microlink/react-json-view from 1.31.3 to 1.31.15 in /meshmap @&lt;a href="https://github.com/apps/dependabot"&gt;dependabot[bot]&lt;/a&gt; (#4046)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Copilot, @Rajesh-Nagarajan-11, @aabidsofi19, @alexquincy, @arjunmehta-git, @dependabot[bot], @l5io, @leecalcote, @ritzorama, @simihablo, @yi-nuo426 and &lt;a href="https://github.com/apps/dependabot"&gt;dependabot[bot]&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.0-1</title><link>/kanvas/reference/releases/v1.0.0-1/</link><pubDate>Wed, 25 Mar 2026 01:23:06 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.0-1/</guid><description>&lt;p&gt;&lt;a href="https://meshery.io/blog/meshery-v1.0-general-availability/"&gt;Meshery v1.0 is here!&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v0.9.2-1</title><link>/kanvas/reference/releases/v0.9.2-1/</link><pubDate>Tue, 24 Mar 2026 07:44:19 +0000</pubDate><guid>/kanvas/reference/releases/v0.9.2-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

@@ -17,7 +17,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[393 115 120 466 396 409]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[352 496 198 444 420 211]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
 &lt;p&gt;Here, you can achieve:&lt;/p&gt;
@@ -38,20 +38,14 @@
  Prerequisites
  &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Shortcodes Reference</title><link>/cloud/academy/creating-content/creating-your-learning-path/shortcodes-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/shortcodes-reference/</guid><description>&lt;p&gt;The Layer5 Academy platform supports a wide range of shortcodes for enriching your learning content. Shortcodes are reusable template snippets you invoke in Markdown files to generate HTML output. They come from three sources:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Academy Theme&lt;/strong&gt; — custom shortcodes built specifically for the Academy platform.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Docsy Theme&lt;/strong&gt; — shortcodes inherited from the &lt;a href="https://www.docsy.dev/"&gt;Google Docsy&lt;/a&gt; documentation theme.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Hugo Built-in&lt;/strong&gt; — shortcodes included with the &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt; static site generator.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;For guidance on creating your own shortcodes, see &lt;a href="/cloud/academy/creating-content/extending-the-academy/"&gt;Extending the Academy&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Academy Administrator
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="/cloud/security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
+ &lt;img src="../../cloud/security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -139,7 +133,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[348 288 168 267 252 207]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[84 256 150 361 411 366]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -151,7 +145,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[60 153 44 119 374 106]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[405 322 54 73 359 309]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -174,7 +168,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[377 314 32 269 255 267]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[188 9 421 208 134 497]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;

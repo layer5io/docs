@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[46 110 162 432 230 164]" src="/cloud/identity/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[375 275 61 38 89 343]" src="../../cloud/identity/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -36,7 +36,7 @@
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="/cloud/security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
+ &lt;img src="../../cloud/security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -101,4 +101,4 @@
 &lt;/h2&gt;
 &lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/identity/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/organizations/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
 &lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections&lt;/p&gt;
-&lt;img src="/cloud/identity/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;</description></item></channel></rss>
+&lt;img src="../../cloud/identity/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;</description></item></channel></rss>

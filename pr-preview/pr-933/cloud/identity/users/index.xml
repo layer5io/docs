@@ -14,7 +14,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[419 207 487 100 22 313]" src="/cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[389 460 327 126 297 96]" src="../../../cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -115,10 +115,10 @@
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="/cloud/security/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="/cloud/security/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="../../../cloud/security/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="../../../cloud/security/roles/"&gt;roles&lt;/a&gt;.
  
 &lt;/div&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/identity/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
-&lt;img src="/cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
+&lt;img src="../../../cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
  To change the notification preferences

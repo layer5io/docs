@@ -1,13 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on Layer5 Documentation</title><link>/cloud/reference/</link><description>Recent content in Reference on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>REST API</title><link>/cloud/reference/api-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/</guid><description>&lt;p&gt;To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.&lt;/p&gt;
-
-&lt;h2 id="authenticating-with-the-api" class="heading-link"&gt;
- Authenticating with the API
- &lt;a href="#authenticating-with-the-api" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;In order to authenticate to Layer5 Cloud&amp;rsquo;s REST API, you need to generate and use a &lt;a href="/cloud/security/tokens/"&gt;security token&lt;/a&gt;. Visit your &lt;a href="https://cloud.layer5.io/security/tokens"&gt;user account&amp;rsquo;s security tokens&lt;/a&gt; and generate a long-lived security token. Security tokens are without expiration date. You can generate as many tokens as you like. You can also revoke them at any time.&lt;/p&gt;</description></item><item><title>Default Permissions</title><link>/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/default-permissions/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on Layer5 Documentation</title><link>/cloud/reference/</link><description>Recent content in Reference on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Permissions</title><link>/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/default-permissions/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="/cloud/security/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="/cloud/security/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="../../cloud/security/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="../../cloud/security/roles/"&gt;roles&lt;/a&gt;.
  
 &lt;/div&gt;
 
@@ -627,7 +621,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -638,7 +632,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -649,7 +643,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -660,7 +654,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -671,7 +665,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -682,7 +676,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1228,7 +1222,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1239,7 +1233,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1250,7 +1244,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1261,7 +1255,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1272,7 +1266,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1283,7 +1277,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2756,7 +2750,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2767,7 +2761,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2778,7 +2772,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2789,7 +2783,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2800,7 +2794,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2811,7 +2805,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3769,7 +3763,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3780,7 +3774,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3791,7 +3785,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3802,7 +3796,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3813,7 +3807,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3824,7 +3818,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4370,7 +4364,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4381,7 +4375,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4392,7 +4386,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4403,7 +4397,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4414,7 +4408,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4425,7 +4419,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4971,7 +4965,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4982,7 +4976,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4993,7 +4987,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5004,7 +4998,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5015,7 +5009,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5026,7 +5020,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5366,7 +5360,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5377,7 +5371,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5388,7 +5382,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5399,7 +5393,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5410,7 +5404,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5421,7 +5415,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6894,7 +6888,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6905,7 +6899,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6916,7 +6910,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6927,7 +6921,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6938,7 +6932,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6949,7 +6943,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8319,7 +8313,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8330,7 +8324,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8341,7 +8335,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8352,7 +8346,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8363,7 +8357,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8374,7 +8368,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9229,7 +9223,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9240,7 +9234,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9251,7 +9245,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9262,7 +9256,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9273,7 +9267,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9284,7 +9278,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10139,7 +10133,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10150,7 +10144,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10161,7 +10155,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10172,7 +10166,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10183,7 +10177,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10194,7 +10188,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11049,7 +11043,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11060,7 +11054,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11071,7 +11065,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11082,7 +11076,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11093,7 +11087,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11104,7 +11098,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12165,7 +12159,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12176,7 +12170,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12187,7 +12181,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12198,7 +12192,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12209,7 +12203,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12220,7 +12214,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13075,7 +13069,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13086,7 +13080,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13097,7 +13091,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13108,7 +13102,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13119,7 +13113,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13130,7 +13124,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14485,7 +14479,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/cloud/security/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/security/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -24140,7 +24134,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/cloud/security/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/security/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -33975,7 +33969,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -43240,7 +43234,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/cloud/security/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/security/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -53385,7 +53379,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/cloud/security/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/security/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
