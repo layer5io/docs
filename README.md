@@ -25,7 +25,7 @@
 
 [Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
-## Contributions Welcome
+### Contributions Welcome
 
 <div>
 <a href="https://layer5.io/community"><img alt="Layer5 Community" src=".github/readme/images//community.svg" style="margin-right:8px;padding-top:9px;" width="140px" align="left" /></a>
@@ -37,23 +37,28 @@
 ✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
 </p>
 </div>
-Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products.
+Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products. If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
-If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
+## Building the Documentation
 
-### With Golang
+<details>
 
+<summary><h3>Build Docs with Golang</h3></summary>
 If your local development environment has a supported version (v1.21.0+) of Golang installed, next you'll need to install extended Hugo version as it has necessary SCSS/SASS support. Find all the Hugo packages here: <https://github.com/gohugoio/hugo/releases/tag/v0.120.4>
 
-Now to setup and run the site locally run:
+Now to setup and run the site locally execute:
 
-`make setup` followed by `make site`
-
-...and then visit <http://localhost:1313>.
+1. `make setup`
+2. `make site`
+3. visit http://localhost:1313
 
 If you pull down new code from GitHub, you will occasionally need to run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
 
-### With Docker
+</details>
+<details>
+
+<summary><h3>Build Docs with Docker</h3></summary>
+
 
 Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
 
@@ -61,9 +66,17 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 > This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
 > Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
 
-## Layer5 Documentation Structure
+</details>
 
-## High-Level Outline & Information Architecture for Layer5 Documentation
+      
+### Contribution Guidelines
+
+**--> See https://docs.layer5.io/contributing <--** for a detailed contribution guide.
+
+
+## Documentation Structure
+
+The following is the high-level outline and information architecture for Layer5 documentation.
 
 **Goal:** Offer comprehensive, organized, and accessible documentation for diverse audiences, from new users to expert contributors.
 
@@ -73,43 +86,43 @@ Running the site locally is simple. Provided you have Docker installed, clone th
 - **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
 
 <details>
-  <summary><h2>Cloud Docs</h2></summary>
+<summary><h3>Cloud Section: Information Architecture</h3></summary>
 
 ### Getting Started
 
-- **Setting up Layer5 Account:** With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
-- **Creating a Design from Layer5 Cloud Catalog Templates:** With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the catalog.
+- Creating an Account
+- Creating your first Designs
 
 ### Concepts
 
 An overview of Layer5 Cloud concepts and their relationships to one another.
 
-### Identity
+#### Identity
 
 - **Organizations:** Organizations, Managing Organization Permissions
 - **Teams:** Teams, Managing Teams Permissions
 - **Users:** User Management, Managing User Permissions
 
-### Security
+#### Security
 
 - **Tokens:** API Tokens are used to authenticate to Layer5 Cloud’s REST API.
 - **Keychains**: Keychains are a collection of keys
 - **Keys**: Keys are the atomic unit of access control
 - **Roles**: Roles map permissions to users.
 
-### Catalog
+#### Catalog
 
 The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
 
-### Workspaces
+#### Workspaces
 
 Workspaces serve as a virtual space for your team-based work.
 
-### Tutorials
+#### Tutorials
 
-- **Kanvas Snapshots**: Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
-- **Sharing a Workspace**: Learn how to control access to workspaces and their resources.
-- **Recognizing User and Contributor Milestones**: Showcasing user and contributor achievements
+- Kanvas Snapshots
+- Sharing a Workspace
+- Recognizing User and Contributor Milestones
 
 ### Self-Hosted
 
@@ -120,8 +133,9 @@ Keep your Kanvas designs internal to your workplace. Get remote support from Lay
 Low-level ReST API reference for extending Layer5 Cloud.
 
 </details>
+
 <details>
-  <summary><h2>Kanvas Docs</h2>
+<summary><h3>Kanvas Section: Information Architecture</h3></summary>
 
 ### Getting Started with Designs
 
@@ -155,58 +169,6 @@ Operator mode is for operating your Kubernetes clusters and cloud native infrast
 - **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
 
 </details>
-
-### Contribution Guidelines
-
-A detailed contribution guide for Layer5 Docs.
-Contributing to the docs.layer5.io
-
-### Editing Markdown Content
-
-Documentation content is written in Markdown and you'll find all files listed under the /content directory.
-
-To create a new page with Markdown, create a file ending in `.md` in a `site/<subdirectory>`. The path in the content directory will be the URL route. For example, `site/docs/hello.md` will be served from the `/docs/hello` URL.
-
-```yaml
----
-title: 'My Title'
-description: "A thorough, yet succinct description of the page's contents"
----
-```
-
-The significant keys in the YAML frontmatter are:
-
-`title` (string) - This is the title of the page that will be set in the HTML title.
-`description` (string) - This is a description of the page that will be set in the HTML description.
-`permalink` (string - relative file path) - canonical location of the page
-`category` (string) - section to which the page belongs.
-`redirect_from` (string - relative file path) - in case the page was previously available elsewhere
-
-<div>&nbsp;</div>
-
-### Uploading Images to the site
-
-To display images in a pop-up modal, use the following syntax: `![alt text](/path/to/image.svg)` or `<img src="" alt="" />`.
-
-**Note:**
-
-- For images to show correctly on subpages, always provide the complete image path.
-- When using the `<img />` tag, add `data-modal="false"` to prevent the image from opening in a modal e.g. a [logo](https://github.com/layer5io/docs/blob/0bef5a9a05214a9dda10d8a68431e41f5a36676d/layouts/partials/footer.html#L9).
-
-### Adding Alert to the site
-
-Use the following Syntax to add an Alert:
-`{{< alert type="success" title="Note" >}} Your Note {{< /alert >}}`
-
-- `type="danger"`: Alert used to indicate something related to security.
-- `type="info"`: Alert used to write some information.
-- `type="warning"`: Alert used to indicate a warning that might need attention.
-- `type="note"`: Alert used to indicate a neutral information.
-- `type="success"`: Alert used to indicate a positive information.
-
-By default, if you don't specify a `title="Your Title"`, the title will be the same as the type name.
-
-**Note-> Using an invalid alert type will lead to the default alert being used (i.e. success).**
 
 <hr/>
 

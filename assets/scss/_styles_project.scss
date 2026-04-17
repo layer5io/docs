@@ -10,6 +10,7 @@
 @import "search_project.scss";
 @import "_videos_project.scss";
 @import "subscription.scss";
+@import "rest-api-reference.scss";
 @import "_video-landing_project.scss";
 @import "elements_project";
 @import "summary.scss";
@@ -532,12 +533,13 @@ a:not([href]):not([class]):hover {
   animation: color-shift 8s linear infinite;
 
   @media (max-width: 768px) {
-    font-size: 3.5rem;
-    text-align: center;
+    font-size: 4rem;
   }
 
-  // @media (max-width:1200px){
-  // }
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 
 @keyframes color-shift {
@@ -616,14 +618,18 @@ a:not([href]):not([class]):hover {
   text-align: right;
 
   h1.dashboard {
-    max-width: 40%;        
+    max-width: 70%;        
     text-align: left;
-    flex-shrink: 0;       
+    flex-shrink: 0;
+    @media (max-width: 768px) {
+      max-width: 60%;
+    }
   }
 
   @media (max-width: 768px) {
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 
     h1.dashboard {
       max-width: 100%;

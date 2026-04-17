@@ -19,7 +19,7 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 **Use when:** finalizing a design, reviewing it with colleagues, publishing, exporting a snapshot, working on the visual polish.
 
-**What renders:** everything Kanvas has. Component icons with full texture, feasibility indicators, validation badges, deployment error badges, inventory badges, comments, collaborator cursors, TagSets, relationship animations, grid lines, compound-group outlines, and hover overlays. Labels render in their full fidelity with font rendering and shadows where applicable.
+**What renders:** everything Kanvas has — SVG backgrounds and gradient fills, component icons with full texture, feasibility indicators, all badges (compound node, label, external link, expand/collapse, managed-by-Meshery, terminal session, and error badges), TagSets (BubbleSets), mount animations, relationship animations with bezier curves and colored arrows, grid lines, compound-group outlines, and hover overlays. Labels render in their full fidelity with font rendering and shadows where applicable.
 
 **Cost:** highest. Every pan, zoom, or layout update touches every overlay and badge in the visible area. Designed to look best, not go fastest.
 
@@ -29,7 +29,7 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 **Use when:** day-to-day editing, adding or arranging components, when you want enough detail to orient yourself but not every live overlay running.
 
-**What renders:** component icons, grid, relationships, TagSets, and core interactions. **Suppressed:** validation / error / inventory badges, feasibility indicators, and some overlay-driven visual effects. You keep the visual identity of each component but stop paying the per-frame cost of re-positioning dozens of badges.
+**What renders:** component SVG backgrounds, node shapes, edge styling, expand/collapse badges (essential for navigating compound nodes), error badges, and core interactions. **Suppressed:** decorative badges (compound node, label, external link, managed-by-Meshery, terminal session), TagSets, mount animations, gradient fills, validation / inventory badges, and feasibility indicators. You keep the visual identity of each component but stop paying the per-frame cost of re-positioning dozens of badges.
 
 **Cost:** moderate. Fan-out on pan/zoom is roughly half of Full because the badge and overlay layers don't react to every viewport change.
 
@@ -37,7 +37,7 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 **Use when:** working with large designs where structure matters more than detail, doing layout passes, or exporting simplified views. Also the right mode when you are about to pan or zoom heavily on a design with hundreds of components.
 
-**What renders:** component outlines, component shapes, and relationships. **Suppressed:** textures, images, badges, overlays, and most styling. The canvas effectively becomes a schematic of your design.
+**What renders:** component outlines, component shapes, and relationships as straight gray lines. **Suppressed:** SVG background images, textures, images, bezier-curve edge styling, badges, overlays, layout animations, TagSets, and most styling. The canvas effectively becomes a schematic of your design.
 
 **Cost:** low. Only the renderer paints; no badges, no overlays, no image decoding.
 
@@ -45,13 +45,40 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 **Use when:** embedding a design, sharing a read-only snapshot, presenting a design to an audience, or viewing a design where nobody should be able to accidentally edit.
 
-**What renders:** the same minimal set as Wireframe — outlines, shapes, relationships — but with **every interactive affordance disabled**. No drag, no drop, no double-click to edit, no hover handles, no keyboard shortcuts that would mutate the design. The canvas is visible and pannable but not editable.
+**What renders:** the same minimal set as Wireframe — outlines, shapes, relationships — but with **every interactive affordance disabled**. All nodes are locked (cannot be moved or resized), all event handlers are removed (no click, hover, grab, drag, resize, or double-click responses), and no keyboard shortcuts that would mutate the design are active. The canvas is visible and pannable but not editable.
 
 **Cost:** lowest. Same paint budget as Wireframe plus the interaction layer is disabled entirely.
+
+{{< alert type="info" >}}
+In View Only mode, users cannot interact with the canvas at all. Switch to another mode to resume editing.
+{{< /alert >}}
 
 {{< alert type="note" title="Render mode vs. Operator mode" >}}
 Don't confuse render mode with **Operator mode**. Operator mode is a separate top-level mode of Kanvas (alongside Designer mode) that visualizes **live infrastructure** rather than authored designs. Render mode is orthogonal — it works the same way inside Designer and Operator.
 {{< /alert >}}
+
+## Switching render modes
+
+### Using the Options panel
+
+The **Render Mode Switcher** is located in the Options panel (the gear icon on the toolbar). To change modes:
+
+1. Open the Options panel from the toolbar.
+2. Click the current mode to open the mode selector.
+3. Select the desired mode. The canvas updates immediately.
+
+### Using URL parameters
+
+You can also set the render mode via URL query parameter. Append the `render` parameter to your Kanvas design URL:
+
+- `render=full` — Full rendering with all details
+- `render=medium` — Style-only rendering without badges and TagSets
+- `render=wireframe` — Outline-only rendering
+- `render=viewOnly` — Non-interactive wireframe snapshot
+
+For example: `https://kanvas.new/extension/meshmap?render=wireframe&mode=design&design=xxxx`
+
+For more details on URL parameters, see [Design Render Quality](/kanvas/advanced/url-parameters/).
 
 ## Feature size gates by render mode
 
@@ -95,25 +122,33 @@ If you're past the threshold for the mode, the feature is gated off. Switch rend
 
 ### How to turn it on
 
-In the render-mode switcher (Options panel), there is an **Adaptive** toggle at the top. Flip it on and Kanvas enters adaptive mode. Instead of selecting a render mode directly, the mode you pick in the switcher becomes the **ceiling** — the maximum fidelity adaptive mode is allowed to use. A `AUTO` chip appears next to the current mode so you know adaptive is driving.
+In the render-mode switcher (Options panel), there is an **Adaptive** toggle at the top. Flip it on and Kanvas enters adaptive mode. Instead of selecting a render mode directly, the mode you pick in the switcher becomes the **ceiling** — the maximum fidelity adaptive mode is allowed to use. An `AUTO` chip appears next to the current mode so you know adaptive is driving.
 
 If you pick Full as your ceiling, adaptive mode will use Full when performance allows and downshift to Medium or Wireframe when it needs to. If you pick Medium as the ceiling, it will never go above Medium but will still downshift to Wireframe under load.
+
+You can also enable Adaptive mode via URL parameter: `?adaptive=true`
+
+For example: `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
 
 ### What signals does adaptive mode watch?
 
 Kanvas's performance monitor emits a rolling window of samples covering two latency metrics:
 
-- **Render latency** — the time it takes to paint a single frame.
-- **Interaction latency** — the time between a user input (click, drag, hotkey) and the visible response.
+- **Render latency** — the time it takes to paint a single frame (measured at the p95 percentile).
+- **Interaction latency** — the time between a user input (pan, zoom, click, drag, hotkey) and the visible response (measured at the p95 percentile).
 
-Both are tracked as **p95** across a rolling window, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many frames before adaptive reacts.
+Both are tracked as **p95** across a rolling window of the last 20 samples, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many frames before adaptive reacts.
 
 Two thresholds on each metric govern the decision:
 
-- **Downshift** — p95 render latency above about 150 ms, or p95 interaction latency above about 80 ms, means the current mode is too expensive. Adaptive moves to the next lower mode after a short cooldown.
-- **Upshift** — p95 render latency below about 60 ms **and** p95 interaction latency below about 30 ms, sustained across a number of consecutive good samples, means there is headroom to paint more detail. Adaptive moves to the next higher mode (capped by your ceiling) after a longer delay.
+- **Downshift** — p95 render latency above about 150 ms, or p95 interaction latency above about 80 ms, means the current mode is too expensive. Adaptive moves to the next lower mode after a short 3-second cooldown.
+- **Upshift** — p95 render latency below about 60 ms **and** p95 interaction latency below about 30 ms, sustained across 10 consecutive good samples, means there is headroom to paint more detail. Adaptive moves to the next higher mode (capped by your ceiling) after a longer delay.
 
 The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
+
+{{< alert type="note" >}}
+Adaptive mode is event-driven — it only samples performance when you interact with the canvas (pan, zoom, edit). There is zero overhead when the canvas is idle.
+{{< /alert >}}
 
 ### The mode ladder
 
@@ -144,11 +179,22 @@ Adaptive is the right default for most users. Turn it on once and forget about i
 
 ### When to turn it off
 
-Adaptive mode is dynamic by design. That means the canvas you're looking at may change fidelity between one minute and the next. Most of the time this is exactly what you want; occasionally it isn't. Turn it off when:
+Adaptive mode is dynamic by design. That means the canvas you're looking at may change fidelity between one minute and the next. Turn it off when:
 
 - You are **recording a video or capturing screenshots** where mid-capture mode changes would be distracting.
 - You are **teaching or demoing** Kanvas and you want viewers to see a specific render mode.
 - You are **comparing two designs** side-by-side and you want to be sure they are both rendered at the same fidelity.
+
+## Performance guidance
+
+When Adaptive mode downshifts, Kanvas may display suggestions to help you optimize your design. These appear as toast notifications with actionable recommendations:
+
+- **"N tagsets detected"** — Large numbers of TagSets (BubbleSets) are computationally expensive. Consider disabling some via the Layers panel.
+- **"N parent nodes detected"** — Deeply nested compound nodes increase render complexity. Collapsing some parent nodes may help.
+- **"N components visible"** — High-density designs benefit from layer filtering to hide components you are not currently working with.
+- **"N relationships"** — Designs with many relationships render faster in Wireframe mode.
+
+Each suggestion is shown at most once per minute to avoid notification fatigue.
 
 ## Cheat sheet
 
@@ -160,6 +206,31 @@ Adaptive mode is dynamic by design. That means the canvas you're looking at may 
 | Share a read-only view                                     | Pick **View-Only** and share the design URL.                                                                        |
 | Recover autopan that stopped working                       | Either switch to a lower-fidelity render mode or delete/hide components to drop below the per-mode size threshold.  |
 | Make a snapshot with all badges and TagSets forced visible | Use `?render=full` in the URL — see [Design Render Quality](/kanvas/advanced/url-parameters/).                     |
+
+## Best practices
+
+1. **Start with Adaptive mode** for everyday work — it handles performance automatically and keeps the canvas responsive.
+2. **Use Full mode selectively** — reserve it for final visual review or documentation screenshots.
+3. **Switch to Wireframe for layout work** — it is the fastest mode for rearranging large designs.
+4. **Use View Only for sharing** — when embedding designs or sharing read-only snapshots where editing should be prevented.
+5. **Set an appropriate ceiling** — if you do not need badges or tagsets, set the ceiling to Medium to avoid unnecessary rendering overhead.
+6. **Break large designs into smaller ones** — designs beyond 500 components benefit from being split regardless of render mode. See [Performance Limits and Tuning](/kanvas/advanced/performance/) for more guidance.
+
+## Known limitations
+
+- Render mode applies globally to the entire canvas — you cannot set different modes for different areas of a design.
+- View Only mode strips all interactivity. You must switch to another mode to resume editing.
+- Adaptive mode thresholds are fixed and cannot be customized per-user or per-design.
+- Mode transitions may cause a brief visual flash as styles update across all elements.
+- The performance guidance system analyzes design structure, not actual GPU or CPU load — suggestions are heuristic-based.
+
+## Render modes in Designer vs Operator
+
+All four render modes work in both Designer and Operator contexts:
+
+- In **Designer mode**, render modes control the fidelity of your editable design canvas. All modes except View Only allow full editing.
+- In **Operator mode**, the `managed-by-Meshery` and `terminal session` badges follow the same suppression rules as in Designer — they are visible in Full mode and hidden in Medium, Wireframe, and View Only modes.
+- **View Only mode is particularly useful in Operator** for monitoring dashboards where accidental edits should be prevented.
 
 ## Related pages
 

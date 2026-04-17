@@ -98,3 +98,9 @@ To optimize performance, consider the following:
 2. Prioritize using smaller file sizes whenever possible. Use the `webp` image format over `png`, `jpg`, or `gif` as it generally provides significantly better compression, resulting in faster design save times without sacrificing much image quality.
 3. Remove any unnecessary images from your design.
 4. Use image compression tools to reduce the size of your images before adding them to your design.
+
+## Render Modes for Performance
+
+Kanvas provides multiple render modes that dramatically reduce rendering overhead for large designs. The Adaptive mode automatically switches between modes based on real-time performance measurements.
+
+For detailed information about each render mode and how to use Adaptive mode, see [Render Modes](/kanvas/advanced/render-modes/).

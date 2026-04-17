@@ -2,7 +2,6 @@
 title: Default Permissions
 description: >
   List of default permissions granted to the Organizations, Teams and Users roles.
-weight: 2
 categories: [Identity]
 tags: [perms]
 ---

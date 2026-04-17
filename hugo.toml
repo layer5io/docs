@@ -1,5 +1,7 @@
 baseURL = "https://docs.layer5.io"
 title = "Layer5 Documentation"
+relativeURLs = true
+canonifyURLs = false
 
 # Language settings
 contentDir = "content/en"
@@ -65,6 +67,7 @@ id = "G-HX135VWX9B"
 languageName = "English"
 # Weight used for sorting.
 weight = 1
+direction = "ltr"
 [languages.en.params]
 title = "Layer5"
 description = "Product Documentation"
