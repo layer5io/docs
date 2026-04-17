@@ -53,3 +53,24 @@ To use full render mode effectively:
 
 3. **Check the Layers Panel if Details Are Missing**  
    If `render=full` is active in your URL but expected elements (like **TagSets**) are not visible, verify that their visibility is enabled in your **Layers panel**. Your Layers settings can hide elements even when full render is requested.
+
+## Additional Render Mode Parameters
+
+You can specify render modes via the `render` parameter:
+
+- `render=full` -- Full rendering with all details
+- `render=medium` -- Style-only rendering without badges and TagSets
+- `render=wireframe` -- Outline-only rendering
+- `render=viewOnly` -- Non-interactive wireframe snapshot
+
+For example: `https://kanvas.new/extension/meshmap?render=wireframe&mode=design&design=xxxx`
+
+See [Render Modes](/kanvas/advanced/render-modes/) for detailed descriptions of each mode.
+
+## Adaptive Mode Parameter
+
+You can enable Adaptive mode via URL parameter:
+
+`https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
+
+When `adaptive=true` is set, Kanvas will automatically monitor performance and switch render modes as needed. The current render mode (set via the `render` parameter or the default) becomes the ceiling -- the highest fidelity Adaptive mode will use. See [Render Modes](/kanvas/advanced/render-modes/) for details.

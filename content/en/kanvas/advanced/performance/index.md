@@ -103,6 +103,10 @@ To optimize performance, consider the following:
 
 As your designs grow in complexity, certain design patterns can impact how smoothly Kanvas responds. Understanding these factors helps you create designs that remain fast and responsive.
 
+{{< alert type="info" title="Related performance controls" >}}
+This page covers the design patterns and tuning levers that affect Kanvas performance. For the per-mode rendering ladder (Full, Medium, Wireframe, View-Only) and automatic fidelity management, see [Render Modes](/kanvas/advanced/render-modes/). For the drag-to-edge viewport pan and its per-render-mode size thresholds, see [Auto-pan on Drag](/kanvas/advanced/autopan/).
+{{< /alert >}}
+
 ### Working with Grouped Components
 
 When you create groups of components (placing multiple components inside a parent container), you might notice performance differences as the number of grouped items increases. Here's what you might experience:
@@ -114,7 +118,7 @@ When you create groups of components (placing multiple components inside a paren
 - Screen updates appear slower during interactions
 
 {{< alert type="warning" title="Large Groups" >}}
-Groups containing 100 or more components may experience noticeable lag during drag operations. Consider breaking large groups into smaller, logical subgroups for better performance.
+Groups containing 100 or more components may experience noticeable lag during drag operations. Consider breaking large groups into smaller, logical subgroups for better performance. If dragging across a design that extends past your viewport feels slow, see [Auto-pan on Drag](/kanvas/advanced/autopan/) for the per-render-mode thresholds that gate the drag-to-edge pan.
 {{< /alert >}}
 
 ### How Kanvas Optimizes Your Design
@@ -331,50 +335,12 @@ These improvements will happen automatically through Kanvas updates—you won't 
 Performance optimization is an ongoing priority. As Kanvas evolves, your existing designs will automatically benefit from new performance enhancements.
 {{< /alert >}}
 
-## Special URL Options for Performance
+## Render Modes and URL Overrides
 
-When opening designs in Kanvas, you can add special parameters to the URL that change how your design loads and displays. These options give you control over the balance between features and performance.
+Kanvas can paint the same design at four distinct fidelity levels — **Full**, **Medium**, **Wireframe**, and **View-Only** — and can switch between them automatically via **Adaptive Render Mode** based on live render and interaction latency. The lower-fidelity modes suppress badges, overlays, and texture work, so they stay fast on large designs while keeping the same underlying components, relationships, and metadata.
 
-### Full Render Mode
+Render modes are the primary performance lever once a design grows past a few hundred components. Rather than duplicate the details here, see:
 
-By default, Kanvas loads your design with optimized rendering for best performance. If you need to see absolutely everything—all relationships, groupings, and metadata—you can use full render mode.
-
-**How to Use It:**
-Add `render=full` to your design URL:
-```
-https://cloud.layer5.io/kanvas/designer?design=<design-id>&render=full
-```
-
-**What You'll See:**
-- Every relationship between components, including complex connections
-- All tag-based groupings and relationships
-- Complete component metadata and properties
-- All status badges and validation indicators
-- Advanced semantic relationships
-
-**When to Use Full Render Mode:**
-- When you need to see the complete picture of your design
-- For troubleshooting relationship issues
-- When generating comprehensive documentation
-- For detailed audits or reviews
-
-**When NOT to Use It:**
-- For everyday design work (standard mode is faster)
-- With large designs (100+ components) where performance matters
-- When you only need to view or edit a specific part of your design
-- On slower computers or devices
-
-{{< alert type="warning" title="Performance Trade-off" >}}
-Full render mode shows everything, but it takes longer to load and may feel slower during interactions. For most work, the standard mode provides the best experience. Use full render mode only when you specifically need to see all relationships and metadata at once.
-{{< /alert >}}
-
-**Practical Example:**
-Imagine you have a design with 200 microservices and hundreds of relationships. In standard mode, Kanvas shows you what you need to work effectively. In full render mode, it displays every single connection and grouping—which is great for a complete overview but can make the design feel sluggish.
-
-### More URL Options
-
-Kanvas supports several other URL parameters that control different aspects of your design. For a complete list of available options and what they do, see [URL Parameters](/kanvas/advanced/url-parameters/).
-
-{{< alert type="info" title="Experiment and Learn" >}}
-Try different URL parameters to find what works best for your workflow. You can combine multiple parameters to customize your Kanvas experience exactly how you need it.
-{{< /alert >}}
+- [Render Modes](/kanvas/advanced/render-modes/) — what each mode renders, the per-mode feature-size gates, and how Adaptive mode decides when to upshift or downshift.
+- [Auto-pan on Drag](/kanvas/advanced/autopan/) — the most visible feature that is gated per render mode (autopan disables itself on graphs past 100 / 500 / 1,000 elements for Full / Medium / Wireframe respectively).
+- [Design Render Quality](/kanvas/advanced/url-parameters/) — URL parameters (`render=full|medium|wireframe|viewOnly`, `adaptive=true`) for forcing a render mode or enabling adaptive behavior on a specific link.

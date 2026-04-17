@@ -99,12 +99,14 @@ Custom shortcodes are reusable components that enhance Academy content. They fun
 
 ##### Basic Shortcode
 
-**Step 1:** Create the shortcode file in your organization's directory:
-```
+**Step 1:** Create the shortcode file in your organization's directory ([example](https://github.com/layer5io/academy-example/tree/master/layouts)):
+
+```shell
 layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
 ```
 
 **Step 2:** Define the shortcode template:
+
 ```html
 {{ $names := .Get "names" }}
 <div class="custom shortcode">
@@ -114,6 +116,7 @@ layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
 ```
 
 **Step 3:** Use the shortcode in your content:
+
 ```markdown
 {{< custom-org-shortcode names="Alex, Bob, Charely" >}}
 ```

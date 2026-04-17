@@ -1,0 +1,66 @@
+{{ $bg := resources.Get "banner-transitions/empty-dark.svg" }}
+{{ $svc := resources.Get "banner-transitions/service-interface-partial-colorMode.svg" }}
+{{ $ingress := resources.Get "banner-transitions/ingress-gateway-partial-colorMode.svg" }}
+{{ $kube := resources.Get "banner-transitions/kubernetes-partial-colorMode.svg" }}
+{{ $pod := resources.Get "banner-transitions/pod-partial-colorMode.svg" }}
+{{ $prom := resources.Get "banner-transitions/prometheus-partial-colorMode.svg" }}
+{{ $arrows := resources.Get "banner-transitions/supporting-arrows.svg" }}
+
+<div id="kanvas-corner-popup" class="kanvas-corner-popup" role="dialog" aria-label="Kanvas Collaboration Popup">
+  <div class="popup">
+    <div class="popup-inner">
+      <button class="close-btn" aria-label="Close popup">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM17 15.59L15.59 17L12 13.41L8.41 17L7 15.59L10.59 12L7 8.41L8.41 7L12 10.59L15.59 7L17 8.41L13.41 12L17 15.59Z" />
+        </svg>
+      </button>
+
+      <a class="popup-content-link" href="https://kanvas.new/" target="_blank" rel="noopener noreferrer">
+        <div class="popup-text">
+          <h4>Build solutions together</h4>
+          <h1>Collaborate with the team</h1>
+        </div>
+
+        <div class="kanvas-transition-container">
+          <div class="canvas-grid"></div>
+
+          <img class="kanvas-canvas-bg" src="{{ $bg.RelPermalink }}" alt="" />
+
+          <div class="kanvas-layer">
+            <img class="kanvas-service-interface" src="{{ $svc.RelPermalink }}" alt="" />
+          </div>
+          <div class="kanvas-layer">
+            <img class="kanvas-ingress-gateway" src="{{ $ingress.RelPermalink }}" alt="" />
+          </div>
+          <div class="kanvas-layer">
+            <img class="kanvas-kubernetes" src="{{ $kube.RelPermalink }}" alt="" />
+          </div>
+          <div class="kanvas-layer">
+            <img class="kanvas-pod" src="{{ $pod.RelPermalink }}" alt="" />
+          </div>
+          <div class="kanvas-layer">
+            <img class="kanvas-prometheus" src="{{ $prom.RelPermalink }}" alt="" />
+          </div>
+
+          <img class="kanvas-supporting-arrows" src="{{ $arrows.RelPermalink }}" alt="" />
+        </div>
+
+        <div class="try-it-text">
+          <span>Try it now at </span><strong>kanvas.new</strong>
+        </div>
+      </a>
+
+      <a class="explore-playground-button" href="https://kanvas.new/" target="_blank" rel="noopener noreferrer">
+        Access Kanvas
+      </a>
+    </div>
+  </div>
+</div>
+
+{{ with resources.Get "js/kanvas-architectural-transition.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{ end }}
+{{ with resources.Get "js/kanvas-corner-popup.js" }}
+<script src="{{ .RelPermalink }}" defer></script>
+{{ end }}
