@@ -50,7 +50,7 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 **Cost:** lowest. Same paint budget as Wireframe plus the interaction layer is disabled entirely.
 
 {{< alert type="note" title="Render mode vs. Operator mode" >}}
-Don't confuse render mode with **Operator mode**. Operator mode is a separate top-level mode of Kanvas (alongside Designer mode) that visualises **live infrastructure** rather than authored designs. Render mode is orthogonal — it works the same way inside Designer and Operator.
+Don't confuse render mode with **Operator mode**. Operator mode is a separate top-level mode of Kanvas (alongside Designer mode) that visualizes **live infrastructure** rather than authored designs. Render mode is orthogonal — it works the same way inside Designer and Operator.
 {{< /alert >}}
 
 ## Feature size gates by render mode
