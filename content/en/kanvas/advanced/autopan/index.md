@@ -7,7 +7,7 @@ categories: [Designer]
 tags: [performance, interaction]
 ---
 
-**Auto-pan on Drag** (autopan, for short) is the behaviour where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.
+**Auto-pan on Drag** (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.
 
 Autopan is the difference between **"move this component to another part of the design"** being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the **Options** panel.
 
