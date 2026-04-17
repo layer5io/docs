@@ -27,7 +27,7 @@ With autopan enabled, the same action is a single uninterrupted drag. Kanvas det
 
 Autopan is most valuable when:
 
-- **Re-organising large designs.** Moving a node from one cluster to another, relocating a group, or reshaping the layout of a design that doesn't fit on screen.
+- **Re-organizing large designs.** Moving a node from one cluster to another, relocating a group, or reshaping the layout of a design that doesn't fit on screen.
 - **Drag-based edge creation.** Pulling a relationship handle from a source component toward a target that is off-screen.
 - **Compound drag-and-drop.** Dropping a child component into a parent group that sits past the viewport edge — the autopan keeps the drop target in view as you approach it.
 
