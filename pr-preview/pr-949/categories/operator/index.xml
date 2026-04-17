@@ -41,7 +41,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[363 461 14 180 429 458]" src="/kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[3 334 124 401 246 275]" src="../../kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -65,7 +65,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
  &lt;a href="#related-docs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/kanvas/operator/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="../../kanvas/operator/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Log Streaming</title><link>/kanvas/operator/log-streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/log-streaming/</guid><description>&lt;p&gt;Efficient troubleshooting requires immediate visibility into your application&amp;rsquo;s behavior. The &lt;strong&gt;Log Streamer&lt;/strong&gt; in Kanvas allows you to live-tail logs from your Kubernetes pods and containers directly within the visual topology. Unlike static log files, this feature provides a real-time, multiplexed view of your infrastructure&amp;rsquo;s activities, enabling you to debug interactions between services without leaving the Kanvas interface.&lt;/p&gt;
 
