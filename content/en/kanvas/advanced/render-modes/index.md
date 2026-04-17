@@ -17,7 +17,7 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 ### Full
 
-**Use when:** finalising a design, reviewing it with colleagues, publishing, exporting a snapshot, working on the visual polish.
+**Use when:** finalizing a design, reviewing it with colleagues, publishing, exporting a snapshot, working on the visual polish.
 
 **What renders:** everything Kanvas has. Component icons with full texture, feasibility indicators, validation badges, deployment error badges, inventory badges, comments, collaborator cursors, TagSets, relationship animations, grid lines, compound-group outlines, and hover overlays. Labels render in their full fidelity with font rendering and shadows where applicable.
 
