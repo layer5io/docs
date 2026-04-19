@@ -4,14 +4,14 @@
   <!----------------->
   <div class="row footer-top">
     <div class="col-lg-6">
-      <a href="/">
+      <a href="/" aria-label="Home">
         {{ $svg := resources.Get "icons/logo.svg" }}
         <img class="footer-logo" src="{{ $svg.Permalink }}" alt="Footer Logo Layer5" data-modal="false">
       </a>
     </div>
     <div class="col-lg-6 footer-info footer-icons">
       {{ range .Site.Params.links.footer.icons }}
-      <a href="{{ .url  }}" class="{{ .class }}" target="_blank" rel="noreferrer">
+      <a href="{{ .url  }}" class="{{ .class }}" target="_blank" rel="noreferrer" aria-label="{{ .alt }}">
         {{ $svg1 := resources.Get .icon }}
         <img height="30px" src="{{ $svg1.Permalink }}" alt="{{ .alt }}" data-modal="false">
       </a>
