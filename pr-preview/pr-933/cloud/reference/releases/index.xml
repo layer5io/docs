@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.12</title><link>/cloud/reference/releases/v1.0.12/</link><pubDate>Thu, 16 Apr 2026 18:00:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.12/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.13</title><link>/cloud/reference/releases/v1.0.13/</link><pubDate>Fri, 17 Apr 2026 22:55:58 +0000</pubDate><guid>/cloud/reference/releases/v1.0.13/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.18.8 @l5io (#5046)&lt;/li&gt;
+&lt;li&gt;chore(mcp): configure postgres MCP servers for dev, staging, prod @alexquincy (#5047)&lt;/li&gt;
+&lt;li&gt;fix(auth): sanitize invalid selectedOrganizationId in user preferences @alexquincy (#5044)&lt;/li&gt;
+&lt;li&gt;tests(TP-015): schema alignment and RTK Query API coverage @alexquincy (#5043)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @hamza-mohd, @l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.12</title><link>/cloud/reference/releases/v1.0.12/</link><pubDate>Thu, 16 Apr 2026 18:00:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.12/</guid><description>&lt;ul&gt;
 &lt;li&gt;Updated link in getting-started @Rajesh-Nagarajan-11 (#5041)&lt;/li&gt;
 &lt;/ul&gt;
 
