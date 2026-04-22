@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.17</title><link>/cloud/reference/releases/v1.0.17/</link><pubDate>Tue, 21 Apr 2026 03:56:17 +0000</pubDate><guid>/cloud/reference/releases/v1.0.17/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.18</title><link>/cloud/reference/releases/v1.0.18/</link><pubDate>Wed, 22 Apr 2026 04:12:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.18/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(connections): prevent null user_id crash on meshery connection re-registration @jamieplu (#5071)&lt;/li&gt;
+&lt;li&gt;docs(agents): mandate schema/handler parity when editing OpenAPI specs @jamieplu (#5059)&lt;/li&gt;
+&lt;li&gt;add meshmap role @jamieplu (#5070)&lt;/li&gt;
+&lt;li&gt;chore(schemas): bump to v1.0.9-preview + align MesheryPatternRequestBody.patternData tag @jamieplu (#5069)&lt;/li&gt;
+&lt;li&gt;docs(agents): Kanvas -&amp;gt; Meshery Server -&amp;gt; Meshery Cloud routing rule @jamieplu (#5058)&lt;/li&gt;
+&lt;li&gt;[ui] Fix crash in error-404 fallback when user has no roleNames @jamieplu (#5060)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @l5io, @leecalcote, @meshery-ci and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.17</title><link>/cloud/reference/releases/v1.0.17/</link><pubDate>Tue, 21 Apr 2026 03:56:17 +0000</pubDate><guid>/cloud/reference/releases/v1.0.17/</guid><description>&lt;ul&gt;
 &lt;li&gt;chore(share): consume canonical @meshery/schemas v1.0.8 ContentSharePayload @jamieplu (#5056)&lt;/li&gt;
 &lt;li&gt;[server] Fix 500 on user profile Views tab for users with zero views @jamieplu (#5057)&lt;/li&gt;
 &lt;/ul&gt;
