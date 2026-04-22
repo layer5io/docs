@@ -1,4 +1,164 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.6-2</title><link>/kanvas/reference/releases/v1.0.6-2/</link><pubDate>Sat, 11 Apr 2026 12:36:24 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.11-1</title><link>/kanvas/reference/releases/v1.0.11-1/</link><pubDate>Wed, 22 Apr 2026 06:57:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.11-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
+&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
+&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
+&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.10-1</title><link>/kanvas/reference/releases/v1.0.10-1/</link><pubDate>Wed, 22 Apr 2026 04:36:44 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.10-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
+&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
+&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
+&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.9-1</title><link>/kanvas/reference/releases/v1.0.9-1/</link><pubDate>Fri, 17 Apr 2026 18:59:13 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.9-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
+&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
+&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
+&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.8-2</title><link>/kanvas/reference/releases/v1.0.8-2/</link><pubDate>Wed, 15 Apr 2026 06:39:56 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-2/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.7-2</title><link>/kanvas/reference/releases/v1.0.7-2/</link><pubDate>Mon, 13 Apr 2026 17:36:14 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.7-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[React 19] Fix hooks ordering violations and ref misuse @leecalcote (#4160)&lt;/li&gt;
+&lt;li&gt;chore(deps): remove unused @babel/eslint-* packages @leecalcote (#4153)&lt;/li&gt;
+&lt;li&gt;docs: expand E2E test README with framework assessment and profiles @leecalcote (#4161)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-operator" class="heading-link"&gt;
+ 🕸️ Operator
+ &lt;a href="#-operator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix Golang Plugin k8s deps compatibility @leecalcote (#4162)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-documentation" class="heading-link"&gt;
+ 📖 Documentation
+ &lt;a href="#-documentation" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;docs: consolidate tests/README.md into developer guide @leecalcote (#4164)&lt;/li&gt;
+&lt;li&gt;Document performance review of autopan extension @leecalcote (#4147)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.7-1</title><link>/kanvas/reference/releases/v1.0.7-1/</link><pubDate>Sun, 12 Apr 2026 15:43:16 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.7-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;No changes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.6-2</title><link>/kanvas/reference/releases/v1.0.6-2/</link><pubDate>Sat, 11 Apr 2026 12:36:24 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.6-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
