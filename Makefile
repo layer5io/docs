@@ -22,10 +22,6 @@ setup:
 ## Run docs.layer5.io on your local machine with draft and future content enabled.
 site: check-go
 	hugo server -D -F
-	
-## Run docs.layer5.io on your local machine. Alternate method.
-site-fast:
-	gatsby develop
 
 ## Build docs.layer5.io on your local machine.
 build:
@@ -36,7 +32,7 @@ clean:
 	hugo --cleanDestinationDir
 	make site
 
-.PHONY: setup build site clean site-fast check-go docker
+.PHONY: setup build site clean check-go docker
 
 check-go:
 	@echo "Checking if Go is installed..."
