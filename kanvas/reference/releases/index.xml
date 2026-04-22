@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.10-1</title><link>/kanvas/reference/releases/v1.0.10-1/</link><pubDate>Wed, 22 Apr 2026 04:36:44 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.10-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.11-1</title><link>/kanvas/reference/releases/v1.0.11-1/</link><pubDate>Wed, 22 Apr 2026 06:57:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.11-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
+&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-maintenance" class="heading-link"&gt;
+ 🧰 Maintenance
+ &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
+&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
+&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.10-1</title><link>/kanvas/reference/releases/v1.0.10-1/</link><pubDate>Wed, 22 Apr 2026 04:36:44 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.10-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
