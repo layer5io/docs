@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.19</title><link>/cloud/reference/releases/v1.0.19/</link><pubDate>Wed, 22 Apr 2026 05:22:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.19/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.20</title><link>/cloud/reference/releases/v1.0.20/</link><pubDate>Thu, 23 Apr 2026 05:09:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.20/</guid><description>&lt;ul&gt;
+&lt;li&gt;[server/handlers] Harden kratos handlers: remove debug prints, PII log leaks, and panicky assertions @jamieplu (#5077)&lt;/li&gt;
+&lt;li&gt;fix: stop advertising broken Meshery applications capability @jamieplu (#5076)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @l5io, @leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.19</title><link>/cloud/reference/releases/v1.0.19/</link><pubDate>Wed, 22 Apr 2026 05:22:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.19/</guid><description>&lt;ul&gt;
 &lt;li&gt;[ui] Reset navbar logo error state on src change @jamieplu (#5072)&lt;/li&gt;
 &lt;/ul&gt;
 
