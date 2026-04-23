@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Contributing on Layer5 Documentation</title><link>/contributing/</link><description>Recent content in Contributing on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Contributing to Layer5 Docs</title><link>/contributing/contributing-to-docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/contributing/contributing-to-docs/</guid><description>&lt;p&gt;Welcome to the GitHub repository for Layer5&amp;rsquo;s documentation website!&lt;/p&gt;
+&lt;p&gt;The docs website is hosted at &lt;a href="https://docs.layer5.io"&gt;https://docs.layer5.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We use &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt; with the &lt;a href="https://github.com/google/docsy"&gt;google/docsy&lt;/a&gt; theme for styling and site structure, and &lt;a href="https://www.netlify.com/"&gt;Netlify&lt;/a&gt; to manage the deployment of the site.&lt;/p&gt;
+
+&lt;h2 id="quickstart" class="heading-link"&gt;
+ Quickstart
+ &lt;a href="#quickstart" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s a quick guide to updating the docs:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Fork the &lt;a href="https://github.com/layer5io/docs"&gt;layer5io/docs repository&lt;/a&gt; on GitHub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make your changes and send a pull request (PR).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you&amp;rsquo;re not yet ready for a review, add &amp;ldquo;WIP&amp;rdquo; to the PR name to indicate it&amp;rsquo;s a work in progress.&lt;/p&gt;</description></item><item><title>Contributing to Video Gallery</title><link>/contributing/contributing-to-video-gallary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/contributing/contributing-to-video-gallary/</guid><description>&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
+ 
+ In Hugo, a section is a directory containing an &lt;code&gt;_index.md&lt;/code&gt; file.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Contributing videos involves either:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Creating a category → subcategory → adding video markdown files, or&lt;/li&gt;
+&lt;li&gt;Adding video markdown files directly under a category (these will automatically be assigned to an &amp;ldquo;ALL&amp;rdquo; subcategory)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="1-creating-a-category" class="heading-link"&gt;
+ 1. Creating a Category
+ &lt;a href="#1-creating-a-category" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;To create a top-level category:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a directory under &lt;code&gt;content/en/videos&lt;/code&gt; (e.g., &lt;code&gt;getting-started&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Add an &lt;code&gt;_index.md&lt;/code&gt; file inside this directory with the following frontmatter:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#0087ff"&gt;title&lt;/span&gt;: Getting Started &lt;span style="color:#4e4e4e"&gt;# Category text appearing in the /videos category tab and left sidebar&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#0087ff"&gt;description&lt;/span&gt;: &amp;gt;&lt;span style="color:#00afaf"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#00afaf"&gt; Getting started videos on Cloud and Kanvas&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#0087ff"&gt;weight&lt;/span&gt;: &lt;span style="color:#00afaf"&gt;2&lt;/span&gt; &lt;span style="color:#4e4e4e"&gt;# Order in which this category appears in the /videos page and left sidebar&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#0087ff"&gt;icon&lt;/span&gt;: bi-rocket-takeoff-fill &lt;span style="color:#4e4e4e"&gt;# Icon for the category (supports Bootstrap icons and local/remote assets)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#0087ff"&gt;videoGrid&lt;/span&gt;: &lt;span style="color:#d75f00"&gt;true&lt;/span&gt; &lt;span style="color:#4e4e4e"&gt;# When true, shows all child / nested videos as a grid of cards on this section&amp;#39;s index page&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#4e4e4e"&gt;# When false, presents a hyperlinked list of videos/sub-sections instead&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#0087ff"&gt;draft&lt;/span&gt;: &lt;span style="color:#d75f00"&gt;true&lt;/span&gt; &lt;span style="color:#4e4e4e"&gt;# When true, previews this section on local dev server but hides from left sidebar and /videos landing page on published site&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="2-adding-videos-to-your-category" class="heading-link"&gt;
+ 2. Adding Videos to Your Category
+ &lt;a href="#2-adding-videos-to-your-category" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item></channel></rss>

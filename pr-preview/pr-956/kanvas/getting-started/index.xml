@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started with Designs on Layer5 Documentation</title><link>/kanvas/getting-started/</link><description>Recent content in Getting Started with Designs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
+ Step 1: Accessing Designer Mode
+ &lt;a href="#step-1-accessing-designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Upon entering Kanvas, seamlessly transition to the &amp;ldquo;Designer&amp;rdquo; mode by selecting the &amp;ldquo;Designer&amp;rdquo; tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example Analogy:&lt;/strong&gt;
+Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
+
+&lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
+ Accessing the Import Functionality
+ &lt;a href="#accessing-the-import-functionality" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;There are multiple ways to import a design.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist"&gt;
+ &lt;li class="nav-item"&gt;
+ &lt;button class="nav-link active"
+ id="tabs-00-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-00" role="tab"
+ data-td-tp-persist="drag and drop" aria-controls="tabs-00-00" aria-selected="true"&gt;
+ Drag and Drop
+ &lt;/button&gt;
+ &lt;/li&gt;&lt;li class="nav-item"&gt;
+ &lt;button class="nav-link"
+ id="tabs-00-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-01" role="tab"
+ data-td-tp-persist="from kanvas toolbar" aria-controls="tabs-00-01" aria-selected="false"&gt;
+ From Kanvas Toolbar
+ &lt;/button&gt;
+ &lt;/li&gt;&lt;li class="nav-item"&gt;
+ &lt;button class="nav-link"
+ id="tabs-00-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-02" role="tab"
+ data-td-tp-persist="from layer5 cloud" aria-controls="tabs-00-02" aria-selected="false"&gt;
+ From Layer5 Cloud
+ &lt;/button&gt;
+ &lt;/li&gt;&lt;li class="nav-item"&gt;
+ &lt;button class="nav-link"
+ id="tabs-00-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-03" role="tab"
+ data-td-tp-persist="via github integration" aria-controls="tabs-00-03" aria-selected="false"&gt;
+ Via GitHub Integration
+ &lt;/button&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="tab-content" id="tabs-0-content"&gt;
+ &lt;div class="tab-body tab-pane fade show active"
+ id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab" tabindex="0"&gt;
+ &lt;p&gt;You can drag a file from your local computer directly onto the Kanvas canvas to import a design.
+
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[207 41 178 204 209 305]" src="../../kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
+ Benefits of Using Relationships
+ &lt;a href="#benefits-of-using-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Improved Visibility&lt;/strong&gt;: Clear visual representation of connections between components&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced Design&lt;/strong&gt;: Make informed decisions about component selection and placement&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automated Configuration&lt;/strong&gt;: Relationship-driven actions automate configuration of components&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Increased Flexibility&lt;/strong&gt;: Use of selectors and operators provides flexibility in defining relationships&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Better Understanding&lt;/strong&gt;: Easily comprehend the overall structure and dependencies of your managed systems&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="what-are-relationships" class="heading-link"&gt;
+ What are Relationships
+ &lt;a href="#what-are-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure&amp;rsquo;s architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.&lt;/p&gt;</description></item><item><title>Working with Components</title><link>/kanvas/getting-started/working-with-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/working-with-components/</guid><description>&lt;h2 id="configuring-components" class="heading-link"&gt;
+ Configuring Components
+ &lt;a href="#configuring-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Once you’ve added components to your design in Kanvas, configuring them is a critical step in customizing and optimizing your cloud-native infrastructure. Configuring components allows you to fine-tune their behavior, set specific parameters, and ensure they meet the precise needs of your architecture.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[241 283 340 354 417 15]" src="../../kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Select the Component:&lt;/strong&gt; Click on the component on the Kanvas canvas that you want to configure. This action opens the Configuration Panel.&lt;/p&gt;</description></item></channel></rss>
