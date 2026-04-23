@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on Layer5 Documentation</title><link>/kanvas/reference/</link><description>Recent content in Reference on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
+&lt;p&gt;Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:&lt;/p&gt;
+
+&lt;h3 id="designer-shortcuts" class="heading-link"&gt;
+ Designer Shortcuts
+ &lt;a href="#designer-shortcuts" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;As a designer in Kanvas, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently:&lt;/p&gt;</description></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;h2 id="meshery-extension" class="heading-link"&gt;
+ Meshery Extension
+ &lt;a href="#meshery-extension" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="designer-mode" class="heading-link"&gt;
+ Designer Mode
+ &lt;a href="#designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Upon Meshery extension&amp;rsquo;s first load, a GET request initializes the Kanvas plugin. Errors are classified into two types: plugin not found or built on a different version. Kanvas loads, and Designer is functional if no errors occur.&lt;/p&gt;
+
+&lt;h3 id="operator-mode" class="heading-link"&gt;
+ Operator Mode
+ &lt;a href="#operator-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;GraphQL queries fetch header data and view data for the Operator canvas. Checks ensure data types and properties are correct, enabling canvas display. If no clusters are connected, a modal prompts the user to select one.&lt;/p&gt;</description></item></channel></rss>
