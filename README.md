@@ -176,7 +176,7 @@ Operator mode is for operating your Kubernetes clusters and cloud native infrast
 Our projects are community-driven and open to collaboration. 👍 Be sure to see the <a href="https://layer5.io/community/newcomers" aria-label="Welcome Guide">Layer5 Community Welcome Guide</a> for a tour of resources available to you. You can also join our <a href="http://slack.layer5.io" aria-label="Slack">Slack</a> to get involved.
 
 <p style="clear:both;">
-<a href ="https://layer5.io/community/meshmates" aria-label="MeshMates"><img alt="MeshMates" src=".github/readme/images/layer5-community-sign.png" style="margin-right:10px; margin-bottom:15px;" width="28%" align="left"/></a>
+<a href="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/layer5-community-sign.png" style="margin-right:10px; margin-bottom:15px;" width="28%" align="left"/></a>
 <h3>Find your MeshMate</h3>
 
 <p>
