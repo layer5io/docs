@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.21</title><link>/cloud/reference/releases/v1.0.21/</link><pubDate>Fri, 24 Apr 2026 18:36:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.21/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.22</title><link>/cloud/reference/releases/v1.0.22/</link><pubDate>Fri, 24 Apr 2026 19:27:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.22/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(handlers): return 404+JSON from GetUserProfileById and plug fall-through @miacycle (#5098)&lt;/li&gt;
+&lt;li&gt;[server/auth] Prevent DevTools probe from hijacking post-login redirect @miacycle (#5099)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @miacycle, @pontusringblom and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.21</title><link>/cloud/reference/releases/v1.0.21/</link><pubDate>Fri, 24 Apr 2026 18:36:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.21/</guid><description>&lt;ul&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.20.0 @l5io (#5096)&lt;/li&gt;
 &lt;li&gt;fix: Phase 2.K cascade — flip deferred 10 wire keys (server + UI) @miacycle (#5095)&lt;/li&gt;
 &lt;li&gt;refactor: use schema UUID aliases @jamieplu (#5078)&lt;/li&gt;
