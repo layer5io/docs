@@ -16,8 +16,6 @@
 {{ $methodOrder := slice "get" "post" "put" "patch" "delete" "options" "head" }}
 {{ $operations := slice }}
 {{ $tagCounts := dict }}
-{{ $cloudOnlyCount := 0 }}
-{{ $sharedCount := 0 }}
 
 {{ range $path, $route := $spec.paths }}
   {{ range $methodOrder }}
@@ -25,7 +23,6 @@
     {{ with index $route $method }}
       {{ $operation := . }}
       {{ $includeOperation := eq (partial "rest-apis/is-operation-included.html" (dict "operation" $operation "audience" "cloud") | strings.TrimSpace) "true" }}
-      {{ $xInternal := index $operation "x-internal" }}
       {{ if $includeOperation }}
         {{ $servers := index $operation "servers" | default (index $route "servers") | default ($spec.servers | default (slice)) }}
         {{ $tagName := "Ungrouped" }}
@@ -41,13 +38,6 @@
           {{ $pathSlug = "root" }}
         {{ end }}
         {{ $operationID := printf "%s-%s" $method $pathSlug }}
-        {{ $isShared := not $xInternal }}
-
-        {{ if $isShared }}
-          {{ $sharedCount = add $sharedCount 1 }}
-        {{ else }}
-          {{ $cloudOnlyCount = add $cloudOnlyCount 1 }}
-        {{ end }}
 
         {{ $operations = $operations | append (dict
           "id" $operationID
@@ -59,7 +49,6 @@
           "tag" $tagName
           "tagLabel" (index $tagMeta "label")
           "tagDescription" (index $tagMeta "description")
-          "isShared" $isShared
           "servers" $servers
           "data" $operation
         ) }}
@@ -90,6 +79,50 @@
     {{ $orderedTags = $orderedTags | append .tag }}
   {{ end }}
 {{ end }}
+
+{{ $baseTagLabels := dict }}
+{{ $baseTagLabelCounts := dict }}
+{{ range $tagName := $orderedTags }}
+  {{ $tagMeta := partial "rest-apis/tag-meta.html" (dict "name" $tagName "tags" $tagIndex) | transform.Unmarshal (dict "format" "json") }}
+  {{ $baseLabel := index $tagMeta "label" | default "Ungrouped" }}
+  {{ $baseTagLabels = merge $baseTagLabels (dict $tagName $baseLabel) }}
+  {{ $baseCount := index $baseTagLabelCounts $baseLabel | default 0 }}
+  {{ $baseTagLabelCounts = merge $baseTagLabelCounts (dict $baseLabel (add $baseCount 1)) }}
+{{ end }}
+
+{{ $tagLabels := dict }}
+{{ $sortedTagEntries := slice }}
+{{ range $tagName := $orderedTags }}
+  {{ $baseLabel := index $baseTagLabels $tagName | default "Ungrouped" }}
+  {{ $resolvedLabel := $baseLabel }}
+  {{ if gt (index $baseTagLabelCounts $baseLabel | default 0) 1 }}
+    {{ $parts := split $tagName "_" }}
+    {{ $suffixParts := after 1 $parts }}
+    {{ $suffixLabel := delimit $suffixParts " " }}
+    {{ if ne $suffixLabel "" }}
+      {{ $suffixLabel = $suffixLabel | title }}
+    {{ end }}
+    {{ if and (ne $suffixLabel "") (ne (lower $suffixLabel) (lower $baseLabel)) }}
+      {{ $resolvedLabel = printf "%s %s" $baseLabel $suffixLabel }}
+    {{ end }}
+  {{ end }}
+  {{ $tagLabels = merge $tagLabels (dict $tagName $resolvedLabel) }}
+  {{ $sortedTagEntries = $sortedTagEntries | append (dict
+    "name" $tagName
+    "label" $resolvedLabel
+  ) }}
+{{ end }}
+{{ $sortedTagEntries = sort $sortedTagEntries "label" }}
+{{ $orderedTags = slice }}
+{{ range $sortedTagEntries }}
+  {{ $orderedTags = $orderedTags | append .name }}
+{{ end }}
+
+{{ $normalizedOperations := slice }}
+{{ range $operations }}
+  {{ $normalizedOperations = $normalizedOperations | append (merge . (dict "tagLabel" ((index $tagLabels .tag) | default .tagLabel))) }}
+{{ end }}
+{{ $operations = $normalizedOperations }}
 
 {{ if gt (len $operations) 0 }}
   <div class="rest-api-page" data-rest-api-root>
@@ -132,15 +165,15 @@
             <span class="rest-api-category-button__count">{{ len $operations }}</span>
           </button>
           {{ range $tagName := $orderedTags }}
-            {{ $tagMeta := partial "rest-apis/tag-meta.html" (dict "name" $tagName "tags" $tagIndex) | transform.Unmarshal (dict "format" "json") }}
+            {{ $tagLabel := index $tagLabels $tagName | default $tagName }}
             <button
               type="button"
               class="rest-api-category-button"
               data-tag-filter="{{ $tagName }}"
-              data-tag-label="{{ index $tagMeta "label" }}"
+              data-tag-label="{{ $tagLabel }}"
               aria-pressed="false"
             >
-              <span>{{ index $tagMeta "label" }}</span>
+              <span>{{ $tagLabel }}</span>
               <span class="rest-api-category-button__count">{{ index $tagCounts $tagName }}</span>
             </button>
           {{ end }}
@@ -184,6 +217,19 @@
                 {{ end }}
               {{ end }}
 
+              {{ $groupTagEntries := slice }}
+              {{ range $tagName := $groupTags }}
+                {{ $groupTagEntries = $groupTagEntries | append (dict
+                  "name" $tagName
+                  "label" ((index $tagLabels $tagName) | default $tagName)
+                ) }}
+              {{ end }}
+              {{ $groupTagEntries = sort $groupTagEntries "label" }}
+              {{ $groupTags = slice }}
+              {{ range $groupTagEntries }}
+                {{ $groupTags = $groupTags | append .name }}
+              {{ end }}
+
               {{ if gt (len $groupTags) 0 }}
                 {{ $groupLabel := replace ($tagGroup.name | default "Ungrouped") "_" " " }}
                 {{ if eq $groupLabel (lower $groupLabel) }}
@@ -192,7 +238,7 @@
                 <section class="rest-api-nav-group" data-rest-api-group>
                   <div class="rest-api-nav-group__items">
                     {{ range $tagName := $groupTags }}
-                      {{ $subsectionMeta := partial "rest-apis/tag-subsection-meta.html" (dict "name" $tagName "tags" $tagIndex) | transform.Unmarshal (dict "format" "json") }}
+                      {{ $resolvedTagLabel := index $tagLabels $tagName | default $tagName }}
                       {{ $groupOperations := where $operations "tag" $tagName }}
                       {{ if gt (len $groupOperations) 0 }}
                         <section class="rest-api-nav-subgroup" data-rest-api-subgroup data-tag-name="{{ $tagName }}">
@@ -202,7 +248,7 @@
                             data-subgroup-toggle
                             aria-expanded="false"
                           >
-                            <span class="rest-api-nav-subgroup__title">{{ index $subsectionMeta "label" }}</span>
+                            <span class="rest-api-nav-subgroup__title">{{ $resolvedTagLabel }}</span>
                             <span class="rest-api-nav-subgroup__toggle-meta">
                               <span class="rest-api-nav-subgroup__count" data-subgroup-count data-total-count="{{ len $groupOperations }}">{{ len $groupOperations }}</span>
                               <span class="rest-api-nav-subgroup__chevron" aria-hidden="true"></span>
@@ -220,7 +266,7 @@
                                   data-path-id="{{ .pathId }}"
                                   data-tag-name="{{ .tag }}"
                                   data-tag-label="{{ .tagLabel }}"
-                                  data-search="{{ lower (printf "%s %s %s %s %s" .method .path .summary $groupLabel (index $subsectionMeta "label")) }}"
+                                  data-search="{{ lower (printf "%s %s %s %s %s" .method .path .summary $groupLabel .tagLabel) }}"
                                 >
                                   <span class="rest-api-nav-link__top">
                                     <span class="rest-api-method-badge rest-api-method-badge--{{ .method }}">{{ upper .method }}</span>
@@ -253,7 +299,7 @@
                 <p class="rest-api-nav-group__heading">Additional resources</p>
                 <div class="rest-api-nav-group__items">
                   {{ range $tagName := $remainingTags }}
-                    {{ $tagMeta := partial "rest-apis/tag-meta.html" (dict "name" $tagName "tags" $tagIndex) | transform.Unmarshal (dict "format" "json") }}
+                    {{ $resolvedTagLabel := index $tagLabels $tagName | default $tagName }}
                     {{ $groupOperations := where $operations "tag" $tagName }}
                     <section class="rest-api-nav-subgroup" data-rest-api-subgroup data-tag-name="{{ $tagName }}">
                       <button
@@ -262,7 +308,7 @@
                         data-subgroup-toggle
                         aria-expanded="false"
                       >
-                        <span class="rest-api-nav-subgroup__title">{{ index $tagMeta "label" }}</span>
+                        <span class="rest-api-nav-subgroup__title">{{ $resolvedTagLabel }}</span>
                         <span class="rest-api-nav-subgroup__toggle-meta">
                           <span class="rest-api-nav-subgroup__count" data-subgroup-count data-total-count="{{ len $groupOperations }}">{{ len $groupOperations }}</span>
                           <span class="rest-api-nav-subgroup__chevron" aria-hidden="true"></span>
