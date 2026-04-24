@@ -14,8 +14,6 @@
 {{ $include := false }}
 {{ if in $values $audience }}
   {{ $include = true }}
-{{ else }}
-  {{ $include = false }}
 {{ end }}
 
 {{- if $include -}}true{{- else -}}false{{- end -}}
