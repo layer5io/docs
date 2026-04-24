@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.20</title><link>/cloud/reference/releases/v1.0.20/</link><pubDate>Thu, 23 Apr 2026 05:09:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.20/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.21</title><link>/cloud/reference/releases/v1.0.21/</link><pubDate>Fri, 24 Apr 2026 18:36:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.21/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.20.0 @l5io (#5096)&lt;/li&gt;
+&lt;li&gt;fix: Phase 2.K cascade — flip deferred 10 wire keys (server + UI) @miacycle (#5095)&lt;/li&gt;
+&lt;li&gt;refactor: use schema UUID aliases @jamieplu (#5078)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.19.1 @l5io (#5093)&lt;/li&gt;
+&lt;li&gt;chore(ui): bump @sistent/sistent to v0.19.0 (Phase 2.K) @miacycle (#5094)&lt;/li&gt;
+&lt;li&gt;fix(ui,handlers): canonical camelCase wire keys in hand-rolled api.ts (Option B Phase 2 tail) @miacycle (#5092)&lt;/li&gt;
+&lt;li&gt;chore(deps): pin schemas v1.1.1 (drop pseudo-version) @leecalcote (#5091)&lt;/li&gt;
+&lt;li&gt;fix(handlers): canonical camelCase wrapper tags + dual-accept on filter/application request bodies @leecalcote (#5090)&lt;/li&gt;
+&lt;li&gt;[server] Harden auth/user/team/workspace handlers: security, correctness, efficiency @jamieplu (#5080)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump meshkit to v1.0.5 and schemas to latest canonical-casing release @leecalcote (#5089)&lt;/li&gt;
+&lt;li&gt;chore(schemas): repoint workspace + connection consumers to canonical-casing versions (Phase 3) @leecalcote (#5088)&lt;/li&gt;
+&lt;li&gt;chore(schemas): repoint plan + subscription consumers to v1beta3 (Phase 3) @leecalcote (#5087)&lt;/li&gt;
+&lt;li&gt;fix(handlers): dual-accept contentId/contentType alongside content_id/content_type in share endpoint @leecalcote (#5086)&lt;/li&gt;
+&lt;li&gt;chore(schemas): repoint identity-domain resources to canonical-casing versions (Phase 3) @leecalcote (#5085)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @meshery/schemas to ^1.1.0 @leecalcote (#5084)&lt;/li&gt;
+&lt;li&gt;docs(agents): identifier-naming mandate (Phase 4.C) @leecalcote (#5083)&lt;/li&gt;
+&lt;li&gt;docs(agents): adopt identifier-naming MANDATORY boilerplate @leecalcote (#5082)&lt;/li&gt;
+&lt;li&gt;fix: align identifier naming — QueryParamOrganizationID, mapping-model json:ID, UI case-flips @leecalcote (#5081)&lt;/li&gt;
+&lt;li&gt;[server/dao] Harden auth/identity DAOs; fix UpdateIdentityPublicMetadata missing WHERE @jamieplu (#5079)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald, @jamieplu, @l5io, @leecalcote, @meshery-ci, @miacycle and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.20</title><link>/cloud/reference/releases/v1.0.20/</link><pubDate>Thu, 23 Apr 2026 05:09:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.20/</guid><description>&lt;ul&gt;
 &lt;li&gt;[server/handlers] Harden kratos handlers: remove debug prints, PII log leaks, and panicky assertions @jamieplu (#5077)&lt;/li&gt;
 &lt;li&gt;fix: stop advertising broken Meshery applications capability @jamieplu (#5076)&lt;/li&gt;
 &lt;/ul&gt;
