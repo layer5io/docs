@@ -45,7 +45,19 @@ At any time, a design can only be edited on up to 25 open tabs or devices. If th
 
 To share and collaborate on a design with a very wide audience:
 
+#### Share without publishing
+
+If you need multiple people to open a design without making it broadly discoverable, publish the design and then create a restricted link to share only with those who have access. You can grant edit access to people who need to edit or comment on the design. [Learn how to publish a design](#publish-the-design).
+
 #### Publish the design
+
+{{< alert type="info" title="When a design is Public" >}}
+- When a design is published, viewers and commenters can view, download, and clone the design.
+- Editors can change permissions and share the design with others.
+- These permissions apply consistently to all public designs.
+
+Note: **Published** and **Public** are distinct states. Publishing a design makes it available via a link; marking it Public makes it discoverable by anyone on the web or within your organization, depending on your account settings.
+{{< /alert >}}
 
 - If many people need to open a design, publish it and share the link. You can give edit access to people who need to edit or comment on the design.
 - Depending on your account's settings, publishing a design makes it visible to everyone on the web, everyone in your organization, or a defined group.
