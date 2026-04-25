@@ -328,8 +328,9 @@
   }
 
   function getUserProfileUrl(response) {
-    if (response && response.id !== undefined && response.id !== null && response.id !== "") {
-      return `${cloudAppUrl}/user/${encodeURIComponent(response.id)}`;
+    const userId = response?.id;
+    if (userId) {
+      return `${cloudAppUrl}/user/${encodeURIComponent(userId)}`;
     }
 
     return cloudAppUrl;
@@ -341,8 +342,10 @@
 
     const avatarUrl = getAvatarUrl(response);
     const avatarContainer = document.querySelector('.avatar-container');
-    avatarContainer.style.backgroundImage = avatarUrl ? `url("${avatarUrl}")` : "none";
-    avatarContainer.style.backgroundSize = avatarUrl ? "cover" : "";
+    if (avatarContainer) {
+      avatarContainer.style.backgroundImage = avatarUrl ? `url("${avatarUrl}")` : "none";
+      avatarContainer.style.backgroundSize = avatarUrl ? "cover" : "";
+    }
 
     const cloudLink = document.getElementById('user-profile-url');
     cloudLink.href = getUserProfileUrl(response);
