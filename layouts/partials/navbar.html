@@ -269,6 +269,7 @@
       cur.style.cursor = "default";
     }
   
+  const cloudAppUrl = "https://cloud.layer5.io";
   let isUserAuthenticated = false;
   let expiredToken = "";
 
@@ -297,7 +298,7 @@
         }
       throw new Error("missing or expired cookie");
     }
-      const re = await fetch("https://cloud.layer5.io/api/identity/users/profile", {
+      const re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -320,20 +321,40 @@
     showSignInButton();
   }
 };
-function updateUI(response) {
-document.getElementById('signin-button').style.display = 'none';
-document.getElementById("userlist").style.display = "block";
-const avatarUrl = response.avatar_url;
-const avatarContainer = document.querySelector('.avatar-container');
-avatarContainer.style.backgroundImage = `url("${avatarUrl}")`;
-avatarContainer.style.backgroundSize = 'cover';
+  function getAvatarUrl(response) {
+    if (
+      response &&
+      typeof response.avatar_url === "string" &&
+      response.avatar_url.trim()
+    ) {
+      return response.avatar_url.trim();
+    }
 
-const userId = response.id;
-const cloudLink = document.getElementById('user-profile-url');
-cloudLink.href = `https://cloud.layer5.io/user/${userId}`;
+    return "";
+  }
 
-isUserAuthenticated = true;
-}
+  function getUserProfileUrl(response) {
+    if (response && response.id !== undefined && response.id !== null && response.id !== "") {
+      return `${cloudAppUrl}/user/${encodeURIComponent(response.id)}`;
+    }
+
+    return cloudAppUrl;
+  }
+
+  function updateUI(response) {
+    document.getElementById('signin-button').style.display = 'none';
+    document.getElementById("userlist").style.display = "block";
+
+    const avatarUrl = getAvatarUrl(response);
+    const avatarContainer = document.querySelector('.avatar-container');
+    avatarContainer.style.backgroundImage = avatarUrl ? `url("${avatarUrl}")` : "none";
+    avatarContainer.style.backgroundSize = avatarUrl ? "cover" : "";
+
+    const cloudLink = document.getElementById('user-profile-url');
+    cloudLink.href = getUserProfileUrl(response);
+
+    isUserAuthenticated = true;
+  }
 
 function showSignInButton() {
       document.getElementById("userlist").style.display = "none";
