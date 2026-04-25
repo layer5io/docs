@@ -1,4 +1,136 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.20</title><link>/cloud/reference/releases/v1.0.20/</link><pubDate>Thu, 23 Apr 2026 05:09:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.20/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.30</title><link>/cloud/reference/releases/v1.0.30/</link><pubDate>Sat, 25 Apr 2026 07:03:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.30/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(user-profile): public profile page showed \Invalid Date\ for Joined/Last Active — &lt;code&gt;v1beta2.User&lt;/code&gt; emits camelCase &lt;code&gt;createdAt&lt;/code&gt;/&lt;code&gt;lastLoginTime&lt;/code&gt; but UI read snake_case &lt;code&gt;created_at&lt;/code&gt;/&lt;code&gt;last_login_time&lt;/code&gt;; fix across &lt;code&gt;user-details.js&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(user-profile): name, avatar, and GitHub link on public profile broken by same cause — &lt;code&gt;firstName&lt;/code&gt;/&lt;code&gt;lastName&lt;/code&gt;/&lt;code&gt;avatarUrl&lt;/code&gt;/&lt;code&gt;userId&lt;/code&gt; now read correctly from &lt;code&gt;v1beta2.User&lt;/code&gt; response @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(catalog): catalog card author avatar blank — &lt;code&gt;useGetUserProfileByIdQuery&lt;/code&gt; result accessed as &lt;code&gt;avatar_url&lt;/code&gt;; corrected to &lt;code&gt;avatarUrl&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(navbar): navbar avatar image missing — &lt;code&gt;useGetUserQuery&lt;/code&gt; result now read as &lt;code&gt;avatarUrl&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(active-users): active user avatars and list keys broken — &lt;code&gt;userId&lt;/code&gt;/&lt;code&gt;avatarUrl&lt;/code&gt; aligned to &lt;code&gt;v1beta2.User&lt;/code&gt; wire format @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(user-management): view-user modal read &lt;code&gt;user_id&lt;/code&gt;/&lt;code&gt;avatar_url&lt;/code&gt; from &lt;code&gt;useGetUserProfileByIdQuery&lt;/code&gt; response; corrected to &lt;code&gt;userId&lt;/code&gt;/&lt;code&gt;avatarUrl&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(account/profile): account profile page read &lt;code&gt;avatar_url&lt;/code&gt;/&lt;code&gt;user_id&lt;/code&gt; from &lt;code&gt;useGetUserQuery&lt;/code&gt; response and displayed blank username field; corrected to &lt;code&gt;avatarUrl&lt;/code&gt;/&lt;code&gt;userId&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(user-profile): skip predicate on &lt;code&gt;useGetUserProfileByIdQuery&lt;/code&gt; used &lt;code&gt;profile?.userId&lt;/code&gt; but query arg is &lt;code&gt;profile?.id&lt;/code&gt;; email-signup users (no &lt;code&gt;userId&lt;/code&gt;) had their profile detail fetch incorrectly skipped @jamieplu (#5115)&lt;/li&gt;
+&lt;li&gt;fix(user-profile): breadcrumb title coerced null &lt;code&gt;lastName&lt;/code&gt; to the string
+ull; replaced with nullish coalescing @jamieplu (#5115)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.29</title><link>/cloud/reference/releases/v1.0.29/</link><pubDate>Sat, 25 Apr 2026 06:07:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.29/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(catalog): individual pattern detail pages returning 404/undefined — all &lt;code&gt;useGetPatternQuery&lt;/code&gt; call sites passed &lt;code&gt;{ id: cardId }&lt;/code&gt; but &lt;code&gt;@meshery/schemas&lt;/code&gt; v1.2.2 renamed the path param to &lt;code&gt;designId&lt;/code&gt;; fix across catalog, designs, leaderboard details, and requests content-info @jamieplu (#5114)&lt;/li&gt;
+&lt;li&gt;fix(catalog): &lt;code&gt;deletePattern&lt;/code&gt; mutation arg renamed from &lt;code&gt;id&lt;/code&gt; to &lt;code&gt;designId&lt;/code&gt; per v1.2.2; update hook and Jest interaction tests @jamieplu (#5114)&lt;/li&gt;
+&lt;li&gt;fix(catalog): &lt;code&gt;clonePattern&lt;/code&gt; / &lt;code&gt;cloneFilter&lt;/code&gt; mutation args renamed from &lt;code&gt;id&lt;/code&gt; to &lt;code&gt;designId&lt;/code&gt; / &lt;code&gt;filterId&lt;/code&gt; @jamieplu (#5114)&lt;/li&gt;
+&lt;li&gt;fix(badges): &lt;code&gt;deleteBadgeById&lt;/code&gt; mutation arg renamed from &lt;code&gt;id&lt;/code&gt; to &lt;code&gt;badgeId&lt;/code&gt; per v1.2.2 @jamieplu (#5114)&lt;/li&gt;
+&lt;li&gt;fix(catalog): restore &lt;code&gt;metrics: true&lt;/code&gt; query arg on &lt;code&gt;useGetPatternQuery&lt;/code&gt; calls in catalog, designs, and leaderboard detail pages (accidentally dropped during rename) @jamieplu (#5114)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.28</title><link>/cloud/reference/releases/v1.0.28/</link><pubDate>Sat, 25 Apr 2026 05:15:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.28/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(catalog): crash on /catalog page — sistent v0.20.0 uses camelCase `updatedAt`/`createdAt` but wire tags were still snake_case; flip JSON tags in MesheryPattern, MesheryFilter, MesheryView @jamieplu (#5113)&lt;/li&gt;
+&lt;li&gt;fix(badges): badge images missing on user profiles — all badge UI components read snake_case `image_url` but `Badge` struct emits camelCase `imageUrl`; fix across badges-tab, badge-management-modal, general/badges, dashboard/badges @jamieplu (#5113)&lt;/li&gt;
+&lt;li&gt;fix(auth): suppress false-positive ERROR logs from `GetUser`/`getTwitterAndLinkedinUserData` for `sql.ErrNoRows` (expected \user not found\ path during `UpsertUser`) @jamieplu (#5113)&lt;/li&gt;
+&lt;li&gt;fix(catalog): align sort option values to camelCase so MUI DataTable sort arrows match renamed columns; add `visibility` to `GetViews` order allowlist and fix pre-existing SQL injection vector in views DAO @jamieplu (#5113)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.27</title><link>/cloud/reference/releases/v1.0.27/</link><pubDate>Sat, 25 Apr 2026 03:34:56 +0000</pubDate><guid>/cloud/reference/releases/v1.0.27/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(catalog,users): stop catalog metrics zeroing &amp;amp; NULL joinedAt on signup @miacycle (#5111)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @meshery/schemas to v1.2.2 (Go + UI) @miacycle (#5112)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @l5io, @leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.26</title><link>/cloud/reference/releases/v1.0.26/</link><pubDate>Sat, 25 Apr 2026 03:10:45 +0000</pubDate><guid>/cloud/reference/releases/v1.0.26/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(catalog): sanitize order param to honor camelCase wire contract @miacycle (#5110)&lt;/li&gt;
+&lt;li&gt;chore(application): remove unsupported MesheryApplication construct end-to-end @miacycle (#5109)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @l5io, @leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.25</title><link>/cloud/reference/releases/v1.0.25/</link><pubDate>Sat, 25 Apr 2026 01:13:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.25/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(db): add 5 count columns to meshery_patterns (production hotfix — canonical contract alignment) @miacycle (#5108)&lt;/li&gt;
+&lt;li&gt;fix(db): add 9 canonical-conformance columns + retire DAO projection workarounds + tests @miacycle (#5107)&lt;/li&gt;
+&lt;li&gt;fix(handlers): marshal-before-write at every WriteHeader→Encode site @jamieplu (#5105)&lt;/li&gt;
+&lt;li&gt;chore(ui): revert useGetAvailableBadgesQuery({}) workaround @jamieplu (#5104)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @leecalcote, @miacycle and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.24</title><link>/cloud/reference/releases/v1.0.24/</link><pubDate>Fri, 24 Apr 2026 23:25:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.24/</guid><description>&lt;ul&gt;
+&lt;li&gt;chore(ui): revert useGetAvailableBadgesQuery({}) workaround @jamieplu (#5104)&lt;/li&gt;
+&lt;li&gt;fix(ui): guard useGetAvailableBadgesQuery against no-arg orgId TypeError @miacycle (#5102)&lt;/li&gt;
+&lt;li&gt;docs: cross-reference the identifier-naming contributor guide @miacycle (#5103)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.23</title><link>/cloud/reference/releases/v1.0.23/</link><pubDate>Fri, 24 Apr 2026 20:03:45 +0000</pubDate><guid>/cloud/reference/releases/v1.0.23/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(handlers): unshadow path package in isNavigationRequest (hotfix) @miacycle (#5101)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.22</title><link>/cloud/reference/releases/v1.0.22/</link><pubDate>Fri, 24 Apr 2026 19:27:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.22/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(handlers): return 404+JSON from GetUserProfileById and plug fall-through @miacycle (#5098)&lt;/li&gt;
+&lt;li&gt;[server/auth] Prevent DevTools probe from hijacking post-login redirect @miacycle (#5099)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @miacycle, @pontusringblom and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.21</title><link>/cloud/reference/releases/v1.0.21/</link><pubDate>Fri, 24 Apr 2026 18:36:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.21/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.20.0 @l5io (#5096)&lt;/li&gt;
+&lt;li&gt;fix: Phase 2.K cascade — flip deferred 10 wire keys (server + UI) @miacycle (#5095)&lt;/li&gt;
+&lt;li&gt;refactor: use schema UUID aliases @jamieplu (#5078)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.19.1 @l5io (#5093)&lt;/li&gt;
+&lt;li&gt;chore(ui): bump @sistent/sistent to v0.19.0 (Phase 2.K) @miacycle (#5094)&lt;/li&gt;
+&lt;li&gt;fix(ui,handlers): canonical camelCase wire keys in hand-rolled api.ts (Option B Phase 2 tail) @miacycle (#5092)&lt;/li&gt;
+&lt;li&gt;chore(deps): pin schemas v1.1.1 (drop pseudo-version) @leecalcote (#5091)&lt;/li&gt;
+&lt;li&gt;fix(handlers): canonical camelCase wrapper tags + dual-accept on filter/application request bodies @leecalcote (#5090)&lt;/li&gt;
+&lt;li&gt;[server] Harden auth/user/team/workspace handlers: security, correctness, efficiency @jamieplu (#5080)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump meshkit to v1.0.5 and schemas to latest canonical-casing release @leecalcote (#5089)&lt;/li&gt;
+&lt;li&gt;chore(schemas): repoint workspace + connection consumers to canonical-casing versions (Phase 3) @leecalcote (#5088)&lt;/li&gt;
+&lt;li&gt;chore(schemas): repoint plan + subscription consumers to v1beta3 (Phase 3) @leecalcote (#5087)&lt;/li&gt;
+&lt;li&gt;fix(handlers): dual-accept contentId/contentType alongside content_id/content_type in share endpoint @leecalcote (#5086)&lt;/li&gt;
+&lt;li&gt;chore(schemas): repoint identity-domain resources to canonical-casing versions (Phase 3) @leecalcote (#5085)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @meshery/schemas to ^1.1.0 @leecalcote (#5084)&lt;/li&gt;
+&lt;li&gt;docs(agents): identifier-naming mandate (Phase 4.C) @leecalcote (#5083)&lt;/li&gt;
+&lt;li&gt;docs(agents): adopt identifier-naming MANDATORY boilerplate @leecalcote (#5082)&lt;/li&gt;
+&lt;li&gt;fix: align identifier naming — QueryParamOrganizationID, mapping-model json:ID, UI case-flips @leecalcote (#5081)&lt;/li&gt;
+&lt;li&gt;[server/dao] Harden auth/identity DAOs; fix UpdateIdentityPublicMetadata missing WHERE @jamieplu (#5079)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald, @jamieplu, @l5io, @leecalcote, @meshery-ci, @miacycle and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.20</title><link>/cloud/reference/releases/v1.0.20/</link><pubDate>Thu, 23 Apr 2026 05:09:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.20/</guid><description>&lt;ul&gt;
 &lt;li&gt;[server/handlers] Harden kratos handlers: remove debug prints, PII log leaks, and panicky assertions @jamieplu (#5077)&lt;/li&gt;
 &lt;li&gt;fix: stop advertising broken Meshery applications capability @jamieplu (#5076)&lt;/li&gt;
 &lt;/ul&gt;
