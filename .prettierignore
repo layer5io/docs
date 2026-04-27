@@ -4,3 +4,6 @@ node_modules/
 .hugo_build.lock
 build/
 layouts/
+.github/agents/
+.github/copilot-instructions.md
+assets/json/
