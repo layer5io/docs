@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.30</title><link>/cloud/reference/releases/v1.0.30/</link><pubDate>Sat, 25 Apr 2026 07:03:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.30/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.31</title><link>/cloud/reference/releases/v1.0.31/</link><pubDate>Mon, 27 Apr 2026 23:04:58 +0000</pubDate><guid>/cloud/reference/releases/v1.0.31/</guid><description>&lt;ul&gt;
+&lt;li&gt;Workspaces: API Migration @miacycle (#5117)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meshery v0.4.22 content update @l5io (#5116)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @l5io, @leecalcote, @miacycle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.30</title><link>/cloud/reference/releases/v1.0.30/</link><pubDate>Sat, 25 Apr 2026 07:03:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.30/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(user-profile): public profile page showed \Invalid Date\ for Joined/Last Active — &lt;code&gt;v1beta2.User&lt;/code&gt; emits camelCase &lt;code&gt;createdAt&lt;/code&gt;/&lt;code&gt;lastLoginTime&lt;/code&gt; but UI read snake_case &lt;code&gt;created_at&lt;/code&gt;/&lt;code&gt;last_login_time&lt;/code&gt;; fix across &lt;code&gt;user-details.js&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
 &lt;li&gt;fix(user-profile): name, avatar, and GitHub link on public profile broken by same cause — &lt;code&gt;firstName&lt;/code&gt;/&lt;code&gt;lastName&lt;/code&gt;/&lt;code&gt;avatarUrl&lt;/code&gt;/&lt;code&gt;userId&lt;/code&gt; now read correctly from &lt;code&gt;v1beta2.User&lt;/code&gt; response @jamieplu (#5115)&lt;/li&gt;
 &lt;li&gt;fix(catalog): catalog card author avatar blank — &lt;code&gt;useGetUserProfileByIdQuery&lt;/code&gt; result accessed as &lt;code&gt;avatar_url&lt;/code&gt;; corrected to &lt;code&gt;avatarUrl&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
