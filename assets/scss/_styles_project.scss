@@ -236,6 +236,17 @@ a:not([href]):not([class]):hover {
   padding-top: 1rem;
   margin-top: 0;
   overflow-x: hidden;
+  &__inner {
+    order: 0;
+
+    @include media-breakpoint-up(md) {
+      @supports (position: sticky) {
+        position: static;
+        top: 0;
+        z-index: 10;
+      }
+    }
+  }
 }
 
 .td-sidebar #td-sidebar-menu,
@@ -253,18 +264,18 @@ a:not([href]):not([class]):hover {
   }
 }
 
-@media screen and (min-height: 800px) and (min-width: 768px) {
-  .td-sidebar {
-    height: 100vh;
-    top: 0;
-    padding-top: 0rem;
-  }
-}
-
 // Left sidebar
 .td-sidebar-nav {
+  $_max-height: none;
   overflow: hidden;
   padding: 0px;
+
+  @include media-breakpoint-up(md) {
+    @supports (position: sticky) {
+      max-height: $_max-height;
+      overflow-y: hidden;
+    }
+  }
 
   &__section-title {
     a {
