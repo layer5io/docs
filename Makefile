@@ -46,7 +46,3 @@ docker:
 ## Format code using Prettier
 format:
 	npm run format
-
-## Check code formatting using Prettier
-format-check:
-	npm run format:check
