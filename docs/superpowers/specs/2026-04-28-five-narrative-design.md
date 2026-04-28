@@ -74,7 +74,7 @@ Character profile cards using `{{< cardpane >}}`. Each card: name, org, role, pl
 | Name | Role | Personality |
 |---|---|---|
 | Five | Platform Engineer (User) | The protagonist — curious, enthusiastic, reliably the first to discover a feature works differently than the docs say it does. |
-| Maya Chen | Org Admin | Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM. |
+| Maya Chen | Org Admin + Development Team Admin | Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM. (Org Admins may also administer teams; Maya does both.) |
 | Zara Osei | Team Admin, Infrastructure Team | Sole keeper of the keychain permission matrix. Responds to access requests with a 48-hour SLA and a knowing look. |
 | Rex Park | User, Developer Team | Opens design review requests and immediately asks Five if they've been approved yet. Deploys with confidence; reads error logs with less. |
 | Jordan Reyes | User, Developer Team | Crafts Kanvas designs of alarming elegance. Considers a 47-component architecture diagram "a rough draft." |
@@ -90,7 +90,7 @@ Character profile cards using `{{< cardpane >}}`. Each card: name, org, role, pl
 | Org | Team | Members | Roles |
 |---|---|---|---|
 | Orbital Labs | Infrastructure | Five, Zara Osei | Team Admin (Zara), User (Five) |
-| Orbital Labs | Development | Rex Park, Jordan Reyes | Team Admin (Maya Chen), User (Rex, Jordan) |
+| Orbital Labs | Development | Rex Park, Jordan Reyes | Team Admin (Maya Chen, who is also Org Admin), User (Rex, Jordan) |
 | Stellar Dynamics | Platform | Marcus Webb | Org Admin (Marcus) |
 | Constellation Cloud | — | Dr. Aiko Sato | Provider Admin |
 
