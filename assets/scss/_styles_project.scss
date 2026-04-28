@@ -237,13 +237,9 @@ a:not([href]):not([class]):hover {
   margin-top: 0;
   overflow-x: hidden;
   &__inner {
-    order: 0;
-
     @include media-breakpoint-up(md) {
       @supports (position: sticky) {
         position: static;
-        top: 0;
-        z-index: 10;
       }
     }
   }
@@ -269,13 +265,6 @@ a:not([href]):not([class]):hover {
   $_max-height: none;
   overflow: hidden;
   padding: 0px;
-
-  @include media-breakpoint-up(md) {
-    @supports (position: sticky) {
-      max-height: $_max-height;
-      overflow-y: hidden;
-    }
-  }
 
   &__section-title {
     a {
