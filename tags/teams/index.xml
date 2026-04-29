@@ -44,8 +44,8 @@
 &lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Teams</title><link>/cloud/identity/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/teams/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
 &lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.&lt;/p&gt;
 
-&lt;h2 id="add-a-team" class="heading-link"&gt;
- Add a Team
- &lt;a href="#add-a-team" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h2 id="example-orbital-labs-teams" class="heading-link"&gt;
+ Example: Orbital Labs Teams
+ &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;To apply different settings to a set of users, create a child new team below your top-level organization and place them in it. You can then apply unique settings to that team, like access to a workspace and their a specific set of environments.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href="../../cloud/about"&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
