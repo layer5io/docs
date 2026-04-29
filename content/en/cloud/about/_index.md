@@ -14,10 +14,10 @@ Layer5 Cloud documentation uses **Orbital Labs** as a fictional example organiza
 
 | Example user | Example role |
 | --- | --- |
-| Zara Osei | Infrastructure Team Admin |
+| Zara Osei | Infrastructure Team Administrator |
 | Five | Infrastructure Team Member |
-| Maya Chen | Development Team Admin |
+| Maya Chen | Development Team Administrator |
 | Rex Park | Development Team Member |
 | Jordan Reyes | Development Team Member |
 
-Use these names as the canonical cast reference when you see teams, organizations, and user-management scenarios elsewhere in the Layer5 Cloud docs.
+Use these example users as reference points when you see teams, organizations, and user-management scenarios elsewhere in the Layer5 Cloud docs.
