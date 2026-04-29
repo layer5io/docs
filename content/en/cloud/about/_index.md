@@ -45,7 +45,7 @@ Orbital Labs operates as a tenant of Constellation Cloud, an MSP whose Provider 
 
 {{< cardpane >}}
 {{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
-<img src="/images/five/layer5-five-mascot-means-business.svg" alt="Five mascot in business mode" style="width:80px; float:right; margin-left:1rem;" />
+<img src='{{ "images/five/layer5-five-mascot-means-business.svg" | relURL }}' alt="Five mascot in business mode" style="width:80px; float:right; margin-left:1rem;" />
 
 **Organization:** Constellation Cloud  
 **Role:** Provider Admin  
