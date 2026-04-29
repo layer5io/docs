@@ -10,6 +10,8 @@ Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organi
 
 Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
 
+Throughout this page, use Orbital Labs as an example organization. Its **Infrastructure** team is administered by Zara Osei with Five as a member. Its **Development** team is administered by Maya Chen with Rex Park and Jordan Reyes as members. For the full cast of example users used in these docs, see [Cloud About](/cloud/about).
+
 ## Add a Team
 
 To apply different settings to a set of users, create a child new team below your top-level organization and place them in it. You can then apply unique settings to that team, like access to a workspace and their a specific set of environments.
@@ -17,6 +19,10 @@ To apply different settings to a set of users, create a child new team below you
 A team is simply a group that an administrator can create in the Google Admin console to apply settings to a specific set of users. By default, all users are placed in the top-level (parent) organizational unit. Child organizational units inherit the settings from the parent, but can be changed to fit the needs of the child organizational unit.
 
 Below the top-level organization, you can add as many teams as you want - at the same level. Hierarchal teams are not currently supported. When you change a setting at the higher level organization, the settings for all child teams that inherit that setting also change. Custom settings at the team level, however, remain unchanged.
+
+At Orbital Labs, Zara Osei might create the **Infrastructure** team first so that Five can work with shared environments and connections without giving that same access to every contributor. Maya Chen can then administer a separate **Development** team for Rex Park and Jordan Reyes when application work needs its own workspace access and permissions.
+
+![Diagram showing Orbital Labs with an Infrastructure team led by Zara Osei and Five, plus a Development team led by Maya Chen with Rex Park and Jordan Reyes.](/images/five/team-of-fives.svg)
 
 >Learn more about the [organizational structure](/cloud/identity). 
 
