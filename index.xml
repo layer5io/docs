@@ -79,7 +79,20 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Performance Limits and Tuning</title><link>/kanvas/advanced/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/performance/</guid><description>&lt;p&gt;Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.&lt;/p&gt;
+&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Five Narrative — Research Plan</title><link>/cloud/about/five-narrative-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/about/five-narrative-plan/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
+ 
+ This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="objective" class="heading-link"&gt;
+ Objective
+ &lt;a href="#objective" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders (&amp;ldquo;User A&amp;rdquo;, &amp;ldquo;Organization X&amp;rdquo;), every major docs section uses the canonical cast and scenarios defined in &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;. This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.&lt;/p&gt;</description></item><item><title>Performance Limits and Tuning</title><link>/kanvas/advanced/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/performance/</guid><description>&lt;p&gt;Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.&lt;/p&gt;
 
 &lt;h2 id="performance-limits" class="heading-link"&gt;
  Performance Limits
@@ -729,7 +742,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[430 431 188 428 89 18]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[312 437 488 337 73 446]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -747,7 +760,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[307 22 357 151 27 4]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[460 314 254 10 470 445]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -832,7 +845,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[182 374 297 124 252 408]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[123 326 233 147 417 286]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -873,7 +886,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[268 255 88 31 333 276]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[207 4 115 399 76 431]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -995,7 +1008,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[392 231 64 428 341 334]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[432 410 447 188 342 469]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1067,7 +1080,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[258 115 397 104 271 151]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[221 185 294 416 248 375]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1078,7 +1091,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[74 283 221 402 330 466]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[29 200 420 450 252 193]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1131,7 +1144,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[187 416 71 82 297 157]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[14 462 137 100 184 405]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1571,7 +1584,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[476 240 166 267 482 94]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[144 99 312 272 326 423]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1587,7 +1600,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[360 409 70 161 206 328]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[175 376 215 145 326 436]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1603,7 +1616,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[24 221 43 260 200 115]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[142 132 465 93 482 139]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1619,7 +1632,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[190 26 173 37 29 325]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[393 491 235 6 98 410]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1635,7 +1648,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[85 126 203 280 97 70]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[368 13 397 85 330 496]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1651,7 +1664,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[251 243 434 409 101 426]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[251 476 37 420 490 378]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1667,7 +1680,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[249 465 238 85 371 426]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[445 26 317 350 195 355]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1683,7 +1696,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[34 97 464 262 450 448]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[489 330 173 419 356 41]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1699,7 +1712,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[449 428 300 244 90 392]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[206 32 235 159 7 360]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1715,7 +1728,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[40 343 19 301 327 496]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[77 346 493 253 488 8]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1740,7 +1753,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[183 479 85 345 110 94]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[250 120 457 234 414 67]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1857,7 +1870,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[221 390 457 401 235 489]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[497 396 343 261 347 19]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1876,7 +1889,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[371 91 176 434 304 122]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[96 462 31 321 256 42]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -1924,7 +1937,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[435 460 223 3 202 193]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[396 408 154 79 447 136]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1945,7 +1958,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[159 106 277 176 486 313]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[321 425 376 458 112 200]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -1980,7 +1993,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[301 144 184 5 86 359]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[351 14 383 43 250 467]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -1992,7 +2005,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[335 285 153 192 489 346]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[148 320 202 319 312 66]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2018,7 +2031,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[49 289 439 396 211 207]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[407 240 457 492 486 417]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/identity/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
@@ -2157,7 +2170,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[488 21 99 404 269 29]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[129 95 23 117 21 493]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2189,7 +2202,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[63 278 191 279 320 4]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[145 277 108 110 199 114]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2274,7 +2287,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[424 445 75 354 23 499]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[176 416 415 137 155 326]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
