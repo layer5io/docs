@@ -36,7 +36,7 @@
 - [ ] **Step 1: Create the target directory**
 
 ```bash
-mkdir -p /Users/l/code/docs/static/images/five
+mkdir -p static/images/five
 ```
 
 - [ ] **Step 2: Copy all Five SVG assets**
