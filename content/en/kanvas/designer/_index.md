@@ -13,7 +13,7 @@ Kanvas Designer is the visual canvas where you create, edit, and collaborate on 
 
 ## Building the `api-platform-aws` Design
 
-Jordan Reyes opens Kanvas Designer and creates a new design named `api-platform-aws` inside the `orbital-production` workspace. The blank canvas is the starting point; from here the entire AWS-backed API platform will take shape.
+Five owns the `api-platform-aws` design in the `orbital-production` workspace and asked Jordan Reyes — the Orbital Labs team's go-to designer — to build out the architecture. Jordan opens the design in Kanvas Designer, takes one look at the blank canvas, and gets to work.
 
 She works from the component palette on the left, pulling in the services that will carry production traffic. An Amazon EKS cluster goes down first — the spine of the platform. Alongside it she places an AWS API Gateway to handle ingress, an AWS Lambda function for lightweight processing at the edge, an Amazon RDS instance configured for PostgreSQL, and an Amazon S3 bucket for object storage. Each component snaps into position as she arranges them across the canvas.
 
