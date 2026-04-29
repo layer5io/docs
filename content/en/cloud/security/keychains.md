@@ -95,3 +95,28 @@ It is recommended not to alter the existing default keychains unless you intend 
 If you wish to change the permission for a specific organization, consider creating a new keychain and assigning it to a role. Then assign the role to the users of that organization.
 
 {{< /alert >}}
+
+## Example: Zara's Infrastructure Keychain
+
+The following illustrates how Zara Osei, Team Admin of the Orbital Labs Infrastructure team, uses a custom keychain to control access to production resources. See [Meet Five and the Cast](/cloud/about) for the full narrative.
+
+**Scenario:** Orbital Labs has promoted its platform to AWS. Five has connected three AWS services to the `prod-aws` environment: EKS (compute), RDS PostgreSQL (database), and S3 (storage). Zara needs to ensure that only Infrastructure team members can deploy to this environment — Development team members have access to `orbital-staging` but not `orbital-production`.
+
+**Zara's approach:**
+
+1. **Create a custom keychain** named `Infrastructure Production Access` containing the following keys:
+   - `View All Environments` — allows viewing environments assigned to a workspace
+   - `Environment Management` — allows assigning/unassigning environments to workspaces
+   - `Workspace Management` — allows managing resources in the `orbital-production` workspace
+
+2. **Assign the keychain to a role** scoped to the Infrastructure team within Orbital Labs
+
+3. **Result:** Five (Infrastructure team member) can deploy to `prod-aws`. Rex and Jordan (Development team) retain access only to `orbital-dev` and `orbital-staging`.
+
+{{< alert type="info" >}}
+The Development team's Maya Chen retains broader access as Org Admin — Org Admins are not bound by team-level keychain restrictions. See [Roles](/cloud/security/roles/) for how org-level and team-level roles interact.
+{{< /alert >}}
+
+{{< alert type="info" >}}
+See [Meet Five and the Cast](/cloud/about) for the full workspace and environment inventory used in these examples.
+{{< /alert >}}
