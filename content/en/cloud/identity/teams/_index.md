@@ -27,7 +27,7 @@ Below the top-level organization, you can add as many teams as you want - at the
 
 At Orbital Labs, Zara Osei can use the **Infrastructure** team to manage access to shared environments and connections for platform work. Maya Chen can use the **Development** team to give Rex Park and Jordan Reyes access only to the workspaces and resources needed for day-to-day delivery.
 
-<img src="/images/five/team-of-fives.svg" alt="Orbital Labs organization with an Infrastructure team led by Zara Osei and Five, and a Development team led by Maya Chen with Rex Park and Jordan Reyes." style="width: 60%;" />
+<img src="/images/five/team-of-fives.svg" alt="Orbital Labs organization with an Infrastructure team led by Zara Osei and Five, and a Development team led by Maya Chen with Rex Park and Jordan Reyes." data-modal="false" style="max-width: 100%; width: 60%;" />
 
 >Learn more about the [organizational structure](/cloud/identity). 
 
