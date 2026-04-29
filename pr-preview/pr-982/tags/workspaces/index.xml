@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workspaces on Layer5 Documentation</title><link>/tags/workspaces/</link><description>Recent content in Workspaces on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/workspaces/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Workspace Roles</title><link>/cloud/security/roles/workspace-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/workspace-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/security/images/workspace-roles.svg" link="images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="workspace-administrator" class="heading-link"&gt;
+ Workspace Administrator
+ &lt;a href="#workspace-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of a workspace along with curation of content for the organization&amp;rsquo;s catalog (for each organization for which the user has this role assigned)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators or Workspace Owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of a new workspace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
