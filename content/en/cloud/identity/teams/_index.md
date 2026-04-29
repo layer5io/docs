@@ -10,7 +10,12 @@ Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organi
 
 Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
 
-Throughout this page, use Orbital Labs as an example organization. Its **Infrastructure** team is administered by Zara Osei with Five as a member. Its **Development** team is administered by Maya Chen with Rex Park and Jordan Reyes as members. For the full cast of example users used in these docs, see [Cloud About](/cloud/about).
+Consider Orbital Labs as an example organization:
+
+- The **Infrastructure** team is administered by Zara Osei, with Five as a member.
+- The **Development** team is administered by Maya Chen, with Rex Park and Jordan Reyes as members.
+
+For the full cast reference used across these docs, see [Meet Five and the Cast](/cloud/about/).
 
 ## Add a Team
 
@@ -20,9 +25,9 @@ A team is simply a group that an administrator can create in the Google Admin co
 
 Below the top-level organization, you can add as many teams as you want - at the same level. Hierarchal teams are not currently supported. When you change a setting at the higher level organization, the settings for all child teams that inherit that setting also change. Custom settings at the team level, however, remain unchanged.
 
-At Orbital Labs, Zara Osei might create the **Infrastructure** team first so that Five can work with shared environments and connections without giving that same access to every contributor. Maya Chen can then administer a separate **Development** team for Rex Park and Jordan Reyes when application work needs its own workspace access and permissions.
+At Orbital Labs, Zara can use the **Infrastructure** team to manage access to shared environments and connections for platform work, while Maya can use the **Development** team to give Rex and Jordan access only to the workspaces and resources needed for day-to-day delivery.
 
-![Diagram showing Orbital Labs with an Infrastructure team led by Zara Osei and Five, plus a Development team led by Maya Chen with Rex Park and Jordan Reyes.](/images/five/team-of-fives.svg)
+<img src="/images/five/team-of-fives.svg" alt="Orbital Labs organization with an Infrastructure team led by Zara Osei and Five, and a Development team led by Maya Chen with Rex Park and Jordan Reyes." style="width: 60%;" />
 
 >Learn more about the [organizational structure](/cloud/identity). 
 
