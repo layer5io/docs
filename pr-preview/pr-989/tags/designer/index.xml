@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designer on Layer5 Documentation</title><link>/tags/designer/</link><description>Recent content in Designer on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/designer/index.xml" rel="self" type="application/rss+xml"/><item><title>Metrics</title><link>/cloud/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
+&lt;p&gt;The design catalog can be accessed from the &lt;em&gt;Layer5 Cloud&lt;/em&gt; catalog page at &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Design Capabilities&lt;/h4&gt;
+ 
+ Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about &lt;a href="../../kanvas/getting-started/"&gt;Designs&lt;/a&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[235 387 214 226 403 359]" src="../../cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Understanding Metrics&lt;/h4&gt;
+ 
+ Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="../../cloud/catalog/metrics/"&gt;Metrics&lt;/a&gt;
+ 
+&lt;/div&gt;
+
+
+
+&lt;h3 id="how-to-access-the-leaderboard" class="heading-link"&gt;
+ How to Access the Leaderboard
+ &lt;a href="#how-to-access-the-leaderboard" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;You can reach the Leaderboard page in two ways:&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[34 350 377 96 412 266]" src="../../cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id="viewing-catalog-items" class="heading-link"&gt;
+ Viewing Catalog Items
+ &lt;a href="#viewing-catalog-items" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Meshery Catalog displays all published designs in an organized, searchable format.&lt;/p&gt;
+
+&lt;h3 id="top-performers" class="heading-link"&gt;
+ Top Performers
+ &lt;a href="#top-performers" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="../../cloud/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Catalog</title><link>/cloud/catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/</guid><description>&lt;div class="pageinfo"&gt;
+&lt;p&gt;Public Catalog: &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;!-- &lt;figure class="image-center-shadow"&gt;&lt;img src="../../cloud/catalog/images/delivering-catalog-content.svg"
+ alt="Delivering-catalog-content"&gt;
+&lt;/figure&gt;
+ --&gt;
+&lt;img src="../../cloud/catalog/images/delivering-catalog-content.svg" alt="Delivering-catalog-content" /&gt;
+&lt;p&gt;The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of existing designs. Designs that are published into the catalog can be, but are not always curated for known best practices and patterns. Content is published at &lt;a href="https://cloud.layer5.io/catalog"&gt;cloud.layer5.io/catalog&lt;/a&gt;, and one-click import of catalog content into Meshery Server is seamlessly integrated.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[198 224 266 245 369 24]" src="./images/Slide51.svg" onclick="openModal(this.id)" alt="Flow for sharing design" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id="content-visibility" class="heading-link"&gt;
+ Content Visibility
+ &lt;a href="#content-visibility" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Each item in the catalog comes with an associated level of visibility.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Users on Layer5 Documentation</title><link>/cloud/identity/users/</link><description>Recent content in Users on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/identity/users/index.xml" rel="self" type="application/rss+xml"/><item><title>User Invitations</title><link>/cloud/identity/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+&lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
+
+&lt;h3 id="key-capabilities" class="heading-link"&gt;
+ Key capabilities
+ &lt;a href="#key-capabilities" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The invitation system provides three main areas of control to help you manage access effectively.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/identity/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[203 431 68 228 291 319]" src="../../../cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id="create-user-account" class="heading-link"&gt;
+ Create User Account
+ &lt;a href="#create-user-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user&amp;rsquo;s introduction to Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/identity/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Permissions&lt;/th&gt;
+ &lt;th&gt;User&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View All Users&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View user Profile&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View user Designs&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View user Badges&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View user Activity&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View Keys&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View Catalog&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Invite Users&lt;/td&gt;
+ &lt;td&gt;✅&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Update User Profile&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Delete a user account&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Create a new user&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Leave a Team&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;View Roles&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Assign roles to team members&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Assign keys and keychains to the team members&lt;/td&gt;
+ &lt;td&gt;❌&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #EBC017;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #EBC017;"&gt;*Organization Owner&lt;/h4&gt;
+ 
+ &lt;em&gt;Permissions marked with * apply only if you are the owner of the organization.&lt;/em&gt;
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
+ 
+ Default permissions can be easily customized by simply creating your own &lt;a href="../../../cloud/security/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="../../../cloud/security/roles/"&gt;roles&lt;/a&gt;.
+ 
+&lt;/div&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/identity/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;img src="../../../cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
+
+&lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
+ To change the notification preferences
+ &lt;a href="#to-change-the-notification-preferences" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Sign into &lt;a href="https://cloud.layer5.io"&gt;Layer5 Cloud&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Visit &lt;strong&gt;Account&lt;/strong&gt; &amp;gt; &lt;a href="https://cloud.layer5.io/account/preferences"&gt;Preferences&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Under “Notifications,” choose what notifications you want to receive:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item></channel></rss>
