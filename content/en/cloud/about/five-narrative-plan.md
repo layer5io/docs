@@ -8,12 +8,12 @@ categories: [About]
 ---
 
 {{< alert type="info" >}}
-This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see [Meet Five and the Cast](.).
+This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see [Meet Five and the Cast](/cloud/about/).
 {{< /alert >}}
 
 ## Objective
 
-Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders ("User A", "Organization X"), every major docs section uses the canonical cast and scenarios defined in [Meet Five and the Cast](.). This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.
+Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders ("User A", "Organization X"), every major docs section uses the canonical cast and scenarios defined in [Meet Five and the Cast](/cloud/about/). This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.
 
 ## Integration Map
 
