@@ -128,7 +128,7 @@ Files support tickets with executive summaries, numbered findings, and a risk ma
 |---|---|---|---|
 | Constellation Cloud | — | Dr. Aiko Sato | Provider Admin |
 | Orbital Labs | Infrastructure | Five, Zara Osei | Team Admin (Zara), User (Five) |
-| Orbital Labs | Development | Rex Park, Jordan Reyes | Team Admin (Maya Chen, who is also Org Admin), User (Rex, Jordan) |
+| Orbital Labs | Development | Maya Chen, Rex Park, Jordan Reyes | Team Admin (Maya), User (Rex, Jordan) |
 | Stellar Dynamics | Platform | Marcus Webb | Org Admin (Marcus) |
 
 ## Seed Inventory
