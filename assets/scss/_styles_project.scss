@@ -378,8 +378,12 @@ a:not([href]):not([class]):hover {
   #TableOfContents {
     a {
       color: $lightslategray;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         color: $white;
         text-decoration: none;
         background-color: rgba($primary, 0.15);
