@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.35</title><link>/cloud/reference/releases/v1.0.35/</link><pubDate>Tue, 28 Apr 2026 21:17:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.35/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.36</title><link>/cloud/reference/releases/v1.0.36/</link><pubDate>Wed, 29 Apr 2026 04:19:03 +0000</pubDate><guid>/cloud/reference/releases/v1.0.36/</guid><description>&lt;ul&gt;
+&lt;li&gt;chore(deps): bump github.com/meshery/meshkit to v1.0.7 @leecalcote (#5141)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip Credential/Organization/Team/MesheryFilter/sibling JSON tags to canonical camelCase (Phase 4 tail) @leecalcote (#5140)&lt;/li&gt;
+&lt;li&gt;chore(deps): promote deprecated v1beta1 schema imports to v1beta2 (Phase 7a) @leecalcote (#5139)&lt;/li&gt;
+&lt;li&gt;chore(wire-format): delete *Legacy dual-emit shims and Phase 2.K dual-accept whitelists (Phase 6b) @leecalcote (#5138)&lt;/li&gt;
+&lt;li&gt;fix(routes): rename URL :ID path params to canonical camelCase :Id (Phase 6a) @leecalcote (#5137)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip MeshModels JSON tags to canonical camelCase @leecalcote (#5136)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip Workspace-resource JSON tags to canonical camelCase @leecalcote (#5129)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip User-resource JSON tags to canonical camelCase @leecalcote (#5133)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip Collaboration + Academy JSON tags to canonical camelCase @leecalcote (#5134)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip mapping/small-model JSON tags to canonical camelCase @leecalcote (#5135)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip MesheryPattern-resource JSON tags to canonical camelCase @leecalcote (#5130)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip MesheryResults / PerformanceProfile JSON tags to canonical camelCase @leecalcote (#5131)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip Connection-resource JSON tags to canonical camelCase @leecalcote (#5128)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip Role-resource JSON tags to canonical camelCase @leecalcote (#5127)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): flip Event-resource JSON tags to canonical camelCase @leecalcote (#5126)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): use camelCase sort order strings throughout UI @leecalcote (#5122)&lt;/li&gt;
+&lt;li&gt;chore(claude): GitHub MCP server + environment &amp;amp; cross-repo guidance in AGENTS.md @leecalcote (#5125)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jamieplu, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.35</title><link>/cloud/reference/releases/v1.0.35/</link><pubDate>Tue, 28 Apr 2026 21:17:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.35/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(kratos): use snake_case JSON tags on Name struct to match Kratos identity schema @leecalcote (#5124)&lt;/li&gt;
 &lt;/ul&gt;
 
