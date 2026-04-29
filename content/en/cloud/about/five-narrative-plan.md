@@ -71,7 +71,7 @@ When capturing screenshots for any section that references the Five narrative, f
 | Provider Admin, cross-tenant | Dr. Aiko | `aiko@constellation-cloud.example` |
 | Enterprise org, cross-org access | Marcus | `marcus@stellar-dynamics.example` |
 
-**Which workspace/environment to use:** Match the section's purpose to the Seed Inventory table in [Meet Five and the Cast](/cloud/about). Use `dev-local` for all getting-started screenshots (no real cloud credentials required).
+**Which workspace/environment to use:** Match the section's purpose to the Seed Inventory table in [Meet Five and the Cast](/cloud/about/). Use `dev-local` for all getting-started screenshots (no real cloud credentials required).
 
 **File naming:** `<section>-<scenario>-<YYYY-MM-DD>.png`, e.g., `workspaces-orbital-staging-creation-2026-04-28.png`. Store in the `images/` subdirectory of the relevant content section.
 
