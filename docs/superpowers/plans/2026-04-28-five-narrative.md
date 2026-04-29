@@ -66,7 +66,7 @@ done
 - [ ] **Step 3: Verify files are present**
 
 ```bash
-ls /Users/l/code/docs/static/images/five/
+ls static/images/five/
 ```
 
 Expected: 24 files (19 numbered SVGs + team-of-fives.svg + layer5-five-mascot-means-business.svg + .gif + resources-sign.svg + stick-figures.svg)
@@ -116,7 +116,7 @@ categories: [About]
 - [ ] **Step 2: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -151,7 +151,7 @@ Orbital Labs operates as a tenant of Constellation Cloud, an MSP whose Provider 
 - [ ] **Step 2: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -206,7 +206,7 @@ Replace `<!-- Organizations section goes here in Task 4 -->` with:
 - [ ] **Step 2: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -318,7 +318,7 @@ Files support tickets with executive summaries, numbered findings, and a risk ma
 - [ ] **Step 2: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -397,7 +397,7 @@ Use these canonical names in all screenshots, tutorials, and example walkthrough
 - [ ] **Step 3: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -434,7 +434,7 @@ See the [Five Narrative Research Plan](five-narrative-plan) for a section-by-sec
 - [ ] **Step 2: Full Hugo build and spot-check the rendered page**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -571,7 +571,7 @@ When capturing screenshots for any section that references the Five narrative, f
 - [ ] **Step 2: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -623,7 +623,7 @@ Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs
 - [ ] **Step 2: Verify Hugo builds without error**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 ```
 
@@ -922,7 +922,7 @@ Expected: 12 issue numbers with the titles from Steps 1–4.
 - [ ] **Step 1: Full clean build**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 make clean 2>&1 | tail -5
 ```
 
@@ -931,7 +931,7 @@ Expected: Build completes without errors.
 - [ ] **Step 2: Verify all internal links from the about page resolve**
 
 ```bash
-cd /Users/l/code/docs
+cd docs
 hugo --quiet 2>&1 | grep -i "error\|warn\|ref.*not found\|anchor.*not found" || echo "All clear"
 ```
 

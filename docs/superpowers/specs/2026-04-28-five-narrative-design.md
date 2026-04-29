@@ -114,7 +114,7 @@ Character profile cards using `{{< cardpane >}}`. Each card: name, org, role, pl
 | `orbital-production` | Orbital Labs | Infrastructure | Prod access controls, environment assignment |
 | `orbital-staging` | Orbital Labs | Infrastructure, Development | Cross-team workspace sharing |
 | `orbital-dev` | Orbital Labs | Development | Team-scoped workspace, design iteration |
-| `stellar-main` | Stellar Dynamics | Marcus's team | Enterprise org, cross-org scenarios |
+| `stellar-main` | Stellar Dynamics | Platform | Enterprise org, cross-org scenarios |
 
 **Designs**
 
@@ -144,7 +144,7 @@ Why this narrative exists, what problem it solves, how to use this plan.
 | `cloud/identity/users` | Five, Maya | Five's profile card; Maya as Org Admin | SVG 1 (meet Five) | Low | Open |
 | `cloud/identity/organizations` | Maya, Marcus | Orbital Labs org creation; Stellar Dynamics as enterprise tenant | — | Low | Open |
 | `cloud/identity/teams` | Zara, Rex, Jordan | Infrastructure vs. Dev team setup | team-of-fives.svg | Low | Open |
-| `cloud/security/roles` | Dr. Aiko, Zara | Provider Admin → Org Admin → Team Admin chain | business-mode.svg | Medium | Open |
+| `cloud/security/roles` | Dr. Aiko, Maya, Zara | Provider Admin → Org Admin → Team Admin chain | business-mode.svg | Medium | Open |
 | `cloud/security/keychains` | Zara | Zara configuring keychain for Infrastructure team | — | Medium | Open |
 | `cloud/spaces/workspaces` | Five, Maya | Creating `orbital-staging`; assigning teams | — | Medium | Open |
 | `cloud/spaces/environments` | Five, Zara | Connecting `prod-aws` and `prod-gcp`; assigning to workspace | — | Medium | Open |
