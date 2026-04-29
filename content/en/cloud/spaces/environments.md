@@ -87,5 +87,5 @@ Five repeats the process for GCP to give Orbital Labs multi-cloud flexibility:
 Both environments are now available to any design deployed within the `orbital-production` workspace.
 
 {{< alert type="info" title="dev-local for Getting Started" >}}
-The \`dev-local\` environment uses a local Kubernetes cluster (kind) and LocalStack to emulate AWS services — no cloud credentials required. If you are following along with these docs for the first time, start with \`dev-local\` in the \`orbital-dev\` workspace.
+The `dev-local` environment uses a local Kubernetes cluster (kind) and LocalStack to emulate AWS services — no cloud credentials required. If you are following along with these docs for the first time, start with `dev-local` in the `orbital-dev` workspace.
 {{< /alert >}}
