@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Exploring Designer on Layer5 Documentation</title><link>/kanvas/designer/</link><description>Recent content in Exploring Designer on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/designer/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Design Components</title><link>/kanvas/designer/understanding-design-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-design-component/</guid><description>&lt;p&gt;When you&amp;rsquo;re designing and visualizing in &lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;, you&amp;rsquo;ll encounter a rich library of components. This guide will help you understand what these components mean and how they behave in your designs.&lt;/p&gt;
+
+&lt;h2 id="core-component-categories" class="heading-link"&gt;
+ Core Component Categories
+ &lt;a href="#core-component-categories" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.meshery.io/concepts/logical/components"&gt;Components&lt;/a&gt; in Kanvas fall into two fundamental categories, distinguished by whether they can be orchestrated (managed) during deployment.&lt;/p&gt;
+
+&lt;h3 id="semantic-components-orchestratable" class="heading-link"&gt;
+ Semantic Components (Orchestratable)
+ &lt;a href="#semantic-components-orchestratable" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;These components represent actual infrastructure resources that Kanvas can understand and manage during deployment. They are &amp;ldquo;meaningful&amp;rdquo; because they map directly to real infrastructure elements. Examples include:&lt;/p&gt;</description></item><item><title>Understanding Edge Styles</title><link>/kanvas/designer/understanding-edges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-edges/</guid><description>&lt;p&gt;When you connect components in &lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;, the line you draw is called an &lt;strong&gt;edge&lt;/strong&gt;. Each edge visually represents a &lt;a href="https://docs.layer5.io/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; between your components. This guide explains how to use different edge styles to create clear and effective infrastructure designs.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[107 421 445 186 51 47]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id="understanding-edge-types" class="heading-link"&gt;
+ Understanding Edge Types
+ &lt;a href="#understanding-edge-types" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In Kanvas, there are two main types of edges, each serving a different purpose:&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[366 397 4 206 280 430]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;A Tale of Two Modes&lt;/h4&gt;
+ 
+ A badge&amp;rsquo;s meaning changes completely depending on your current mode. In &lt;strong&gt;Designer&lt;/strong&gt;, badges help you build a valid blueprint. In &lt;strong&gt;Operator&lt;/strong&gt;, they switch to providing real-time operational data from your live instances.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h3 id="what-each-corner-means" class="heading-link"&gt;
+ What Each Corner Means
+ &lt;a href="#what-each-corner-means" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;While the specific badges change depending on your mode, they all follow a consistent placement philosophy. Badges are organized into four quadrants around a component, with each corner reserved for a specific type of information.&lt;/p&gt;</description></item><item><title>Understanding Tool Modes</title><link>/kanvas/designer/understanding-tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-tool-modes/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
+Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Understanding these modes is essential for effectively interacting with components and the canvas.
+&lt;p&gt;You can switch between mouse modes using hotkeys or tool selection. Here are hotkeys that control your mode:&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Hotkeys&lt;/th&gt;
+ &lt;th&gt;Description&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;button class="kbc-button kbc-button-xs"&gt;Spacebar&lt;/button&gt;&lt;/td&gt;
+ &lt;td&gt;Temporarily enables the alternative mouse mode (default mode vs pan mode)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;button class="kbc-button kbc-button-xs"&gt;H&lt;/button&gt;&lt;/td&gt;
+ &lt;td&gt;Switches to pan mode (hand icon)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;button class="kbc-button kbc-button-xs"&gt;Escape / V&lt;/button&gt;&lt;/td&gt;
+ &lt;td&gt;Switches to default mode irrespective of which mode you are currently using.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="interacting-with-components" class="heading-link"&gt;
+ Interacting with Components
+ &lt;a href="#interacting-with-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist"&gt;
+ &lt;li class="nav-item"&gt;
+ &lt;button class="nav-link active"
+ id="tabs-00-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-00" role="tab"
+ data-td-tp-persist="select tool" aria-controls="tabs-00-00" aria-selected="true"&gt;
+ Select Tool
+ &lt;/button&gt;
+ &lt;/li&gt;&lt;li class="nav-item"&gt;
+ &lt;button class="nav-link"
+ id="tabs-00-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-01" role="tab"
+ data-td-tp-persist="pencil tool" aria-controls="tabs-00-01" aria-selected="false"&gt;
+ Pencil Tool
+ &lt;/button&gt;
+ &lt;/li&gt;&lt;li class="nav-item"&gt;
+ &lt;button class="nav-link"
+ id="tabs-00-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-02" role="tab"
+ data-td-tp-persist="pen tool" aria-controls="tabs-00-02" aria-selected="false"&gt;
+ Pen Tool
+ &lt;/button&gt;
+ &lt;/li&gt;&lt;li class="nav-item"&gt;
+ &lt;button class="nav-link"
+ id="tabs-00-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-03" role="tab"
+ data-td-tp-persist="pan tool" aria-controls="tabs-00-03" aria-selected="false"&gt;
+ Pan Tool
+ &lt;/button&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="tab-content" id="tabs-0-content"&gt;
+ &lt;div class="tab-body tab-pane fade show active"
+ id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab" tabindex="0"&gt;
+ &lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;th&gt;Cursor Style&lt;/th&gt;
+ &lt;th&gt;Behavior&lt;/th&gt;
+ &lt;th&gt;Example&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Hover&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Nothing&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[181 15 51 346 138 255]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Click-and-drag&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;move&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Moves component in the direction of the mouse&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[48 332 232 485 282 233]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Click&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Displays component toolbar, resize box, and connection handles&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[131 256 482 316 272 130]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Double-click (component)&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;pointer&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Opens the component configurator&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[258 3 260 76 363 211]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Double-click (textbox)&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;text&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Enables text editing inside the component&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[475 444 80 401 64 477]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Right-click&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Opens the circular component context menu&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[312 301 34 488 306 79]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Click-and-hold&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;crosshair&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Initiates box selection for selecting multiple components&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[323 491 482 488 196 379]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Scroll wheel&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Pan up or down&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[456 66 214 62 439 238]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Scroll wheel + CMD/CTRL&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Zoom in/out&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[52 215 381 163 355 128]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Horizontal scroll wheel&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Pan left or right&lt;/td&gt;
+ &lt;td&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[1 391 156 312 142 30]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+ &lt;/div&gt;
+ &lt;div class="tab-body tab-pane fade"
+ id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
+ &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description>&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[53 279 183 156 431 319]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
+
+&lt;h2 id="key-functionality" class="heading-link"&gt;
+ Key Functionality
+ &lt;a href="#key-functionality" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Drawing Tools Integration&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Incorporates a comprehensive set of drawing tools resembling popular whiteboard applications.&lt;/li&gt;
+&lt;li&gt;Enables you to draw shapes, group components , annotate, and highlight specific elements within the infrastructure design canvas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real-time Collaboration&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Facilitates simultaneous collaboration among multiple users within the tool.&lt;/li&gt;
+&lt;li&gt;Supports live editing and instant visualization of changes made by collaborators.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Non-Invasive Annotations&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="enable-the-whiteboarding-beta-feature" class="heading-link"&gt;
+ Enable the Whiteboarding Beta Feature
+ &lt;a href="#enable-the-whiteboarding-beta-feature" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;If not already enabled, follow these steps to access the whiteboarding feature within Kanvas:&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img src="./kanvas-comment.png" alt="Comments in Designer" /&gt;
+ &lt;figcaption&gt;Example of comments in Designer&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing Views&lt;/h4&gt;
+ 
+ You can share and control access to &lt;a href="../../kanvas/operator/views/"&gt;Views&lt;/a&gt; in the same fashion as you do for Designs.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="understanding-visibility-levels" class="heading-link"&gt;
+ Understanding visibility levels
+ &lt;a href="#understanding-visibility-levels" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
+
+&lt;h2 id="embedding-your-design" class="heading-link"&gt;
+ Embedding Your Design
+ &lt;a href="#embedding-your-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Working with Tags</title><link>/kanvas/designer/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/tagsets/</guid><description>&lt;p&gt;You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Related Concept&lt;/h4&gt;
+ 
+ Kubernetes resources are capable of being assigned Label and Annotation key/value pairs. When pairs of Labels or Annotations match, a relationship is formed and visualized as shown below.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="grouping-components-with-tags" class="heading-link"&gt;
+ Grouping Components with Tags
+ &lt;a href="#grouping-components-with-tags" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas let&amp;rsquo;s you export a design in several formats, so you can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;keep versioned backups&lt;/li&gt;
+&lt;li&gt;collaborate offline&lt;/li&gt;
+&lt;li&gt;push artifacts to OCI-compatible registries or Helm repositories&lt;/li&gt;
+&lt;li&gt;integrate designs into CI/CD or GitOps pipelines&lt;/li&gt;
+&lt;li&gt;embed interactive diagrams in documentation and blogs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="export-in-two-steps" class="heading-link"&gt;
+ Export in Two Steps
+ &lt;a href="#export-in-two-steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the export menu
+Within the &lt;a href="https://playground.meshery.io/extension/meshmap"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.&lt;/li&gt;
+&lt;li&gt;Pick an export format
+Choose the option that matches your workflow (see table below).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[279 376 69 181 75 43]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
+
+&lt;h2 id="publishing-workflow" class="heading-link"&gt;
+ Publishing Workflow
+ &lt;a href="#publishing-workflow" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="step-1-access-extensions-ui" class="heading-link"&gt;
+ Step 1: Access Extensions UI
+ &lt;a href="#step-1-access-extensions-ui" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Navigate to Meshery &lt;a href="https://playground.meshery.io/extension/meshmap"&gt;Kanvas Designer&lt;/a&gt; from the main dashboard.&lt;/p&gt;
+
+&lt;h3 id="step-2-select-design-in-sidebar" class="heading-link"&gt;
+ Step 2: Select Design in Sidebar
+ &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item></channel></rss>
