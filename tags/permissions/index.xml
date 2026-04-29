@@ -9,7 +9,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[468 118 292 30 123 300]" src="../../cloud/security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
+ &lt;img id="[90 245 329 28 236 198]" src="../../cloud/security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
  class="md-image-responsive image-center-no-shadow" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -32,7 +32,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[377 318 120 440 464 17]" src="../../cloud/security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
+ &lt;img id="[353 150 247 174 233 279]" src="../../cloud/security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/p&gt;
@@ -52,7 +52,14 @@
  What sessions are
  &lt;a href="#what-sessions-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.&lt;/p&gt;</description></item><item><title>Security</title><link>/cloud/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/</guid><description>&lt;p&gt;
+&lt;p&gt;A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.&lt;/p&gt;</description></item><item><title>Security</title><link>/cloud/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/</guid><description>&lt;p&gt;Layer5 Cloud provides a multi-tenant security model designed to manage access across complex organizational structures. This section covers the core components of our Identity and Access Management (IAM) system.&lt;/p&gt;
+
+&lt;h2 id="security-architecture" class="heading-link"&gt;
+ Security Architecture
+ &lt;a href="#security-architecture" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The following diagram illustrates the relationship between Organizational Units, Roles, and the underlying Permissions:&lt;/p&gt;
+&lt;p&gt;
 
 
 
@@ -60,6 +67,13 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[102 122 117 268 467 365]" src="../../cloud/security/images/permissions.svg" onclick="openModal(this.id)" alt="permission" 
+ &lt;img id="[16 485 57 417 463 302]" src="../../cloud/security/images/permissions.svg" onclick="openModal(this.id)" alt="permission" 
  class="md-image-responsive image-center-shadow" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;/div&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h2 id="organizational-units" class="heading-link"&gt;
+ Organizational Units
+ &lt;a href="#organizational-units" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud uses a hierarchical structure to isolate resources and manage users at scale:&lt;/p&gt;</description></item></channel></rss>
