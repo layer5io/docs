@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Examples on Layer5 Documentation</title><link>/tags/examples/</link><description>Recent content in Examples on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Meet Five and the Cast</title><link>/cloud/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/about/</guid><description>&lt;p&gt;Layer5 Cloud documentation uses &lt;strong&gt;Orbital Labs&lt;/strong&gt; as a fictional example organization to illustrate how identities, teams, and permissions work together.&lt;/p&gt;
+
+&lt;h2 id="example-cast" class="heading-link"&gt;
+ Example cast
+ &lt;a href="#example-cast" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Example user&lt;/th&gt;
+ &lt;th&gt;Example role&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Zara Osei&lt;/td&gt;
+ &lt;td&gt;Administrator of the Infrastructure team&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Five&lt;/td&gt;
+ &lt;td&gt;Member of the Infrastructure team&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Maya Chen&lt;/td&gt;
+ &lt;td&gt;Administrator of the Development team&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Rex Park&lt;/td&gt;
+ &lt;td&gt;Member of the Development team&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Jordan Reyes&lt;/td&gt;
+ &lt;td&gt;Member of the Development team&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Use these example users as reference points when you see teams, organizations, and user management scenarios elsewhere in the Layer5 Cloud docs.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roles on Layer5 Documentation</title><link>/cloud/security/roles/</link><description>Recent content in Roles on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/security/roles/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Organization Roles</title><link>/cloud/security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Default Organization Roles
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../../cloud/security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="organization-administrators" class="heading-link"&gt;
+ Organization Administrators
+ &lt;a href="#organization-administrators" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of an organization (for each organization for which the user has this role assigned)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Organization Owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of new organization or User Account creation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Workspace Roles</title><link>/cloud/security/roles/workspace-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/workspace-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../../cloud/security/images/workspace-roles.svg" link="images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="workspace-administrator" class="heading-link"&gt;
+ Workspace Administrator
+ &lt;a href="#workspace-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of a workspace along with curation of content for the organization&amp;rsquo;s catalog (for each organization for which the user has this role assigned)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators or Workspace Owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of a new workspace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Team Roles</title><link>/cloud/security/roles/team-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/team-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Default Team Roles
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../../cloud/security/images/team-roles.svg" link="images/team-roles.svg" width="100%" alt="Team Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="team-administrator" class="heading-link"&gt;
+ Team Administrator
+ &lt;a href="#team-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of teams&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrator or Team owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of new team or User Account creation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Min: 1, Max: many (based on plan)&lt;/li&gt;
+&lt;li&gt;Only first Team Admin would be the owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default User Role</title><link>/cloud/security/roles/user-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/user-role/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Default User Role
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../../cloud/security/images/user-role.svg" link="images/user-role.svg" width="100%" alt="User Role" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="user" class="heading-link"&gt;
+ User
+ &lt;a href="#user" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To grant Organization members access to basic features and resources within the context of that Organization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators, Workspace Administrators and Team Administrators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically assigned to members on joining an Organization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Academy Administrator
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../../cloud/security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="academy-administrator" class="heading-link"&gt;
+ Academy Administrator
+ &lt;a href="#academy-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Management of an organization&amp;rsquo;s academy, learner management, and access to academy instructor console.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Manually assigned by an Organization Administrator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Min: 0, Max: many&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
