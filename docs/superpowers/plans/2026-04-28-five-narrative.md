@@ -42,24 +42,24 @@ mkdir -p static/images/five
 - [ ] **Step 2: Copy all Five SVG assets**
 
 ```bash
-cp /Users/l/code/layer5/src/assets/images/five/SVG/team-of-fives.svg \
-   /Users/l/code/docs/static/images/five/
+cp ../layer5/src/assets/images/five/SVG/team-of-fives.svg \
+   static/images/five/
 
-cp /Users/l/code/layer5/src/assets/images/five/SVG/layer5-five-mascot-means-business.svg \
-   /Users/l/code/docs/static/images/five/
+cp ../layer5/src/assets/images/five/SVG/layer5-five-mascot-means-business.svg \
+   static/images/five/
 
-cp /Users/l/code/layer5/src/assets/images/five/SVG/layer5-five-mascot-means-business.gif \
-   /Users/l/code/docs/static/images/five/
+cp ../layer5/src/assets/images/five/SVG/layer5-five-mascot-means-business.gif \
+   static/images/five/
 
-cp /Users/l/code/layer5/src/assets/images/five/SVG/resources-sign.svg \
-   /Users/l/code/docs/static/images/five/
+cp ../layer5/src/assets/images/five/SVG/resources-sign.svg \
+   static/images/five/
 
-cp /Users/l/code/layer5/src/assets/images/five/SVG/stick-figures.svg \
-   /Users/l/code/docs/static/images/five/
+cp ../layer5/src/assets/images/five/SVG/stick-figures.svg \
+   static/images/five/
 
 for i in $(seq 1 19); do
-  cp /Users/l/code/layer5/src/assets/images/five/SVG/${i}.svg \
-     /Users/l/code/docs/static/images/five/
+  cp ../layer5/src/assets/images/five/SVG/${i}.svg \
+     static/images/five/
 done
 ```
 
@@ -74,7 +74,7 @@ Expected: 24 files (19 numbered SVGs + team-of-fives.svg + layer5-five-mascot-me
 - [ ] **Step 4: Commit**
 
 ```bash
-cd /Users/l/code/docs
+cd .
 git add static/images/five/
 git commit -s -m "[Docs] Add Five mascot SVG assets from layer5 repo"
 ```
