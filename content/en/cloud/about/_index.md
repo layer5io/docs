@@ -20,4 +20,4 @@ Layer5 Cloud documentation uses **Orbital Labs** as a fictional example organiza
 | Rex Park | Development Team Member |
 | Jordan Reyes | Development Team Member |
 
-Use these example users as reference points when you see teams, organizations, and user-management scenarios elsewhere in the Layer5 Cloud docs.
+Use these example users as reference points when you see teams, organizations, and user management scenarios elsewhere in the Layer5 Cloud docs.
