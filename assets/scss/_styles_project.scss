@@ -236,6 +236,13 @@ a:not([href]):not([class]):hover {
   padding-top: 1rem;
   margin-top: 0;
   overflow-x: hidden;
+  &__inner {
+    @include media-breakpoint-up(md) {
+      @supports (position: sticky) {
+        position: static;
+      }
+    }
+  }
 }
 
 .td-sidebar #td-sidebar-menu,
@@ -250,14 +257,6 @@ a:not([href]):not([class]):hover {
     height: auto;
     top: 0;
     padding-top: 0;
-  }
-}
-
-@media screen and (min-height: 800px) and (min-width: 768px) {
-  .td-sidebar {
-    height: 100vh;
-    top: 0;
-    padding-top: 0rem;
   }
 }
 
@@ -383,6 +382,7 @@ a:not([href]):not([class]):hover {
       &:hover {
         color: $white;
         text-decoration: none;
+        background-color: rgba($primary, 0.15);
       }
     }
   }
