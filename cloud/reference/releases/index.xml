@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.38</title><link>/cloud/reference/releases/v1.0.38/</link><pubDate>Wed, 29 Apr 2026 12:37:07 +0000</pubDate><guid>/cloud/reference/releases/v1.0.38/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.39</title><link>/cloud/reference/releases/v1.0.39/</link><pubDate>Wed, 29 Apr 2026 12:45:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.39/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(handlers,dao): second-wave ORDER BY audit — 8 latent defects (audit follow-up to v1.0.37) @leecalcote (#5148)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.38</title><link>/cloud/reference/releases/v1.0.38/</link><pubDate>Wed, 29 Apr 2026 12:37:07 +0000</pubDate><guid>/cloud/reference/releases/v1.0.38/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(handlers): nil-guard anonymous public-resource reads (prod panic) @leecalcote (#5147)&lt;/li&gt;
 &lt;li&gt;chore(wire-format): delete K8sContext dual-emit Marshal/Unmarshal + update DAO snake_case lookups (Phase 6 tail) @leecalcote (#5143)&lt;/li&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.20.1 @l5io (#5142)&lt;/li&gt;
