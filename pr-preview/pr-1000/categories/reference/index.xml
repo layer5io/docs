@@ -1,32 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on Layer5 Documentation</title><link>/categories/reference/</link><description>Recent content in Reference on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>/cloud/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/overview/</guid><description>&lt;div class="pageinfo"&gt;
-&lt;p&gt;Layer5 Cloud is the control plane for your cloud-native infrastructure, providing deep insights and collaborative management across all your clusters.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id="what-is-layer5-cloud" class="heading-link"&gt;
- What is Layer5 Cloud?
- &lt;a href="#what-is-layer5-cloud" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud serves as the centralized management console and identity provider for the Layer5 ecosystem, specifically for &lt;strong&gt;Kanvas&lt;/strong&gt; and &lt;strong&gt;Meshery&lt;/strong&gt; deployments. It provides an extensible authorization framework that allows organizations to manage complex infrastructure with confidence.&lt;/p&gt;
-
-&lt;h2 id="why-use-layer5-cloud" class="heading-link"&gt;
- Why use Layer5 Cloud?
- &lt;a href="#why-use-layer5-cloud" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Collaborative Design&lt;/strong&gt;: Similar to Google Workspace or Figma, multiple team members can design and review infrastructure patterns in real-time.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Unified Identity&lt;/strong&gt;: Manage organizations, teams, and users with granular Role-Based Access Control (RBAC).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Content Catalog&lt;/strong&gt;: Host and share cloud-native patterns publicly or keep them private within your organization.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="next-steps" class="heading-link"&gt;
- Next Steps
- &lt;a href="#next-steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../../cloud/identity/"&gt;&lt;strong&gt;Identity&lt;/strong&gt;&lt;/a&gt;: Learn about Organizations, Teams, and Users.&lt;/li&gt;
-&lt;li&gt;&lt;a href="../../cloud/security/"&gt;&lt;strong&gt;Security&lt;/strong&gt;&lt;/a&gt;: Understand tokens, keychains, and permissions.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Reference</title><link>/cloud/reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/</guid><description/></item><item><title>Releases</title><link>/cloud/reference/releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/releases/</guid><description/></item><item><title>Releases</title><link>/kanvas/reference/releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/releases/</guid><description/></item><item><title>API Reference</title><link>/cloud/reference/api-reference/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rest/</guid><description/></item><item><title>Cloud API</title><link>/cloud/reference/api-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/</guid><description>&lt;p&gt;To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on Layer5 Documentation</title><link>/categories/reference/</link><description>Recent content in Reference on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Reference</title><link>/cloud/reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/</guid><description/></item><item><title>Releases</title><link>/cloud/reference/releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/releases/</guid><description/></item><item><title>Releases</title><link>/kanvas/reference/releases/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/releases/</guid><description/></item><item><title>API Reference</title><link>/cloud/reference/api-reference/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rest/</guid><description/></item><item><title>Cloud API</title><link>/cloud/reference/api-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/</guid><description>&lt;p&gt;To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.&lt;/p&gt;
 
 &lt;h2 id="authenticating-with-the-api" class="heading-link"&gt;
  Authenticating with the API

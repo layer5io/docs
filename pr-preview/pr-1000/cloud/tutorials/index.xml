@@ -8,37 +8,9 @@
  Share designs from Workspaces
  &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the &lt;code&gt;microservices-baseline&lt;/code&gt; design and test his service changes without touching staging.&lt;/p&gt;
-&lt;p&gt;Here is how Five shares the &lt;code&gt;orbital-dev&lt;/code&gt; workspace with Rex.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/cloud/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This tutorial walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.&lt;/p&gt;
-&lt;p&gt;See &lt;a href="../../cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline:&lt;/p&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Workspace&lt;/th&gt;
- &lt;th&gt;Environment&lt;/th&gt;
- &lt;th&gt;Teams with Access&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-staging&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;staging-aws&lt;/code&gt; (EKS + S3 + ElastiCache), &lt;code&gt;staging-azure&lt;/code&gt; (AKS + Azure Blob + Azure Service Bus)&lt;/td&gt;
- &lt;td&gt;Infrastructure + Development&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-production&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;prod-aws&lt;/code&gt; (EKS + RDS + S3 + CloudFront + SQS), &lt;code&gt;prod-gcp&lt;/code&gt; (GKE + Cloud SQL + Cloud Storage + Pub/Sub)&lt;/td&gt;
- &lt;td&gt;Infrastructure only&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+&lt;p&gt;You can share the designs and connections that you store in a workspace with anyone in your organization, but your organization may limit how you can share designs with other people.&lt;/p&gt;
+&lt;p&gt;When you share, you can control whether people can edit, comment on, or only open the design. When you share content, the default workspace policies apply.&lt;/p&gt;
+&lt;p&gt;Step 1: Find the design you want to share&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
 
 
 

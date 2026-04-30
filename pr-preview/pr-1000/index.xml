@@ -79,20 +79,7 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Five Narrative — Research Plan</title><link>/cloud/about/five-narrative-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/about/five-narrative-plan/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
- 
- This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="objective" class="heading-link"&gt;
- Objective
- &lt;a href="#objective" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders (&amp;ldquo;User A&amp;rdquo;, &amp;ldquo;Organization X&amp;rdquo;), every major docs section uses the canonical cast and scenarios defined in &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;. This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.&lt;/p&gt;</description></item><item><title>Performance Limits and Tuning</title><link>/kanvas/advanced/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/performance/</guid><description>&lt;p&gt;Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.&lt;/p&gt;
+&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Performance Limits and Tuning</title><link>/kanvas/advanced/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/performance/</guid><description>&lt;p&gt;Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.&lt;/p&gt;
 
 &lt;h2 id="performance-limits" class="heading-link"&gt;
  Performance Limits
@@ -742,7 +729,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[177 15 467 484 73 236]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[485 184 232 498 176 500]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -760,7 +747,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[407 290 159 60 375 307]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[90 255 121 216 408 51]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -845,7 +832,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[333 204 335 257 344 245]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[54 84 106 183 491 287]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -886,7 +873,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[103 349 390 1 483 415]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[349 207 183 54 303 485]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -1008,7 +995,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[489 249 469 294 367 15]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[430 353 219 190 347 243]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1080,7 +1067,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[367 76 150 272 14 79]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[218 85 46 94 234 182]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1091,7 +1078,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[2 35 414 46 56 23]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[149 368 282 98 209 484]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1144,7 +1131,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[432 400 172 354 75 262]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[85 5 238 246 4 274]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1584,7 +1571,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[9 171 92 34 115 498]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[318 406 479 310 322 349]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1600,7 +1587,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[308 419 386 359 296 492]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[236 372 381 159 293 410]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1616,7 +1603,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[108 289 387 63 470 285]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[270 254 490 206 320 115]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1632,7 +1619,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[293 360 17 343 103 161]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[474 293 407 361 439 100]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1648,7 +1635,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[21 433 168 334 198 403]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[201 29 67 275 405 206]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1664,7 +1651,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[356 235 216 76 90 456]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[17 430 73 318 232 161]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1680,7 +1667,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[332 51 443 399 11 241]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[323 474 436 363 51 277]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1696,7 +1683,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[274 45 35 10 63 358]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[4 15 425 367 9 469]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1712,7 +1699,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[490 57 132 452 445 416]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[43 13 205 32 117 389]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1728,7 +1715,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[8 136 379 340 137 273]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[7 449 458 153 12 4]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1753,7 +1740,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[282 334 442 444 307 105]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[133 155 183 242 297 418]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1870,7 +1857,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[381 497 445 428 267 94]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[202 170 262 398 103 354]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1889,7 +1876,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[337 204 471 255 41 125]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[89 356 64 26 427 446]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -1912,24 +1899,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Layer5 GitHub App
  &lt;a href="#layer5-github-app" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Monitoring is essential to operate a reliable Layer5 Cloud deployment. Plan for metrics, logs, traces, dashboards, alerting, and retention so that you can detect and resolve issues quickly, understand capacity, and meet compliance needs.&lt;/p&gt;
-
-&lt;h2 id="objectives" class="heading-link"&gt;
- Objectives
- &lt;a href="#objectives" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Establish observability for core services (API, UI, real-time collaboration, identity, database, cache, ingress) and infrastructure (Kubernetes, nodes, storage, networking)&lt;/li&gt;
-&lt;li&gt;Provide dashboards for SLOs and golden signals (latency, traffic, errors, saturation)&lt;/li&gt;
-&lt;li&gt;Configure actionable alerts with clear ownership and runbooks&lt;/li&gt;
-&lt;li&gt;Size and retain telemetry data according to compliance and cost constraints&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="metrics" class="heading-link"&gt;
- Metrics
- &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
+&lt;p&gt;In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
 &lt;p&gt;The render mode is a &lt;strong&gt;performance tool&lt;/strong&gt;, not a document property. Switching modes does not change your design — components, relationships, layers, and metadata are identical. It only changes what Kanvas chooses to render on screen.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="./kanvas-comment.png" alt="Comments in Designer" /&gt;
@@ -1954,7 +1924,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[144 171 43 15 271 397]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[292 303 247 178 298 192]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1975,7 +1945,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[493 429 292 258 184 234]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[96 351 135 45 73 65]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2010,7 +1980,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[287 168 4 302 200 295]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[379 250 126 162 87 309]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2022,7 +1992,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[364 454 252 261 431 126]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[253 495 216 20 158 326]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2048,7 +2018,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[15 310 188 486 315 414]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[44 169 16 432 448 489]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/identity/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
@@ -2156,8 +2126,9 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
  Share designs from Workspaces
  &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the &lt;code&gt;microservices-baseline&lt;/code&gt; design and test his service changes without touching staging.&lt;/p&gt;
-&lt;p&gt;Here is how Five shares the &lt;code&gt;orbital-dev&lt;/code&gt; workspace with Rex.&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
+&lt;p&gt;You can share the designs and connections that you store in a workspace with anyone in your organization, but your organization may limit how you can share designs with other people.&lt;/p&gt;
+&lt;p&gt;When you share, you can control whether people can edit, comment on, or only open the design. When you share content, the default workspace policies apply.&lt;/p&gt;
+&lt;p&gt;Step 1: Find the design you want to share&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
 
 
 
@@ -2186,7 +2157,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[141 481 202 135 439 242]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[315 254 205 204 456 355]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2194,7 +2165,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
  Managing Views
  &lt;a href="#managing-views" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Here&amp;rsquo;s what you can do with views in Operator:&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s what you can do with views in Operator:&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
 
 &lt;h2 id="embedding-your-design" class="heading-link"&gt;
  Embedding Your Design
@@ -2203,36 +2174,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 &lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/cloud/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This tutorial walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.&lt;/p&gt;
-&lt;p&gt;See &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline:&lt;/p&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Workspace&lt;/th&gt;
- &lt;th&gt;Environment&lt;/th&gt;
- &lt;th&gt;Teams with Access&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-staging&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;staging-aws&lt;/code&gt; (EKS + S3 + ElastiCache), &lt;code&gt;staging-azure&lt;/code&gt; (AKS + Azure Blob + Azure Service Bus)&lt;/td&gt;
- &lt;td&gt;Infrastructure + Development&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-production&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;prod-aws&lt;/code&gt; (EKS + RDS + S3 + CloudFront + SQS), &lt;code&gt;prod-gcp&lt;/code&gt; (GKE + Cloud SQL + Cloud Storage + Pub/Sub)&lt;/td&gt;
- &lt;td&gt;Infrastructure only&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
+&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
 creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.&lt;/p&gt;
 
 &lt;h2 id="getting-started" class="heading-link"&gt;
@@ -2247,7 +2189,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[79 2 255 431 482 3]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[254 434 257 106 46 4]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2304,7 +2246,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;A Workspace is closely associated with Teams. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.&lt;/li&gt;
 &lt;li&gt;One or more teams can be assigned access to a workspace.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment&amp;rsquo;s connections available to users of the Workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Managing Workspaces</title><link>/cloud/spaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/managing-workspaces/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Workspaces. Here, you&amp;rsquo;ll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.&lt;/p&gt;
+&lt;p&gt;After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment&amp;rsquo;s connections available to users of the Workspace.&lt;/p&gt;</description></item><item><title>Managing Workspaces</title><link>/cloud/spaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/managing-workspaces/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Workspaces. Here, you&amp;rsquo;ll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re new to the concept of Workspaces, we recommend starting with the &lt;a href="./cloud/spaces/workspaces/"&gt;Workspaces Overview&lt;/a&gt; to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas let&amp;rsquo;s you export a design in several formats, so you can:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;keep versioned backups&lt;/li&gt;
@@ -2332,7 +2274,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[132 485 469 409 276 246]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[135 309 11 339 185 107]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
@@ -2351,39 +2293,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Step 2: Select Design in Sidebar
  &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Pinning Models to the Dock</title><link>/kanvas/designer/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/pin-model-to-dock/</guid><description>&lt;p&gt;The Kanvas Designer dock allows you to keep your most-used models and tools within easy reach. You can pin any model to the dock for quick access, and unpin it just as easily.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Pinning a model adds it to the dock at the bottom of the Designer interface. This helps you:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Quickly access frequently used models&lt;/li&gt;
-&lt;li&gt;Customize your workspace&lt;/li&gt;
-&lt;li&gt;Streamline your design workflow&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="how-to-pin-a-model" class="heading-link"&gt;
- How to Pin a Model
- &lt;a href="#how-to-pin-a-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Hover over the model you want to pin in the component list on the left side of the Designer.&lt;/li&gt;
-&lt;li&gt;Click the pin icon that appears next to the model name. A tooltip will show &amp;ldquo;Pin To Dock&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;The model will now appear in the dock at the bottom of the Designer.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img id="[9 133 58 424 373 277]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
- class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/identity/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/identity/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
 &lt;img src="./cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
@@ -2404,328 +2314,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.45</title><link>/cloud/reference/releases/v1.0.45/</link><pubDate>Thu, 30 Apr 2026 19:56:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.45/</guid><description>&lt;ul&gt;
-&lt;li&gt;Chore: Rotate recaptcha keys @pontusringblom (#5164)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-academy" class="heading-link"&gt;
- 📚 Academy
- &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Layer5 v0.8.16 content update @l5io (#5162)&lt;/li&gt;
-&lt;li&gt;Layer5 v0.8.16 content update @l5io (#5161)&lt;/li&gt;
-&lt;li&gt;DigitalOcean v0.1.14 content update @l5io (#5160)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.44</title><link>/cloud/reference/releases/v1.0.44/</link><pubDate>Thu, 30 Apr 2026 15:00:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.44/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(academy): restore active-learner count and remove /academy// dashboard href @pontusringblom (#5156)&lt;/li&gt;
-&lt;li&gt;[Server][UI] Add [CAPTCHA_FLOW] structured logging for signup verification @pontusringblom (#5159)&lt;/li&gt;
-&lt;li&gt;fix(dashboard): right-size CONTENT DETAILS widget and zero placeholders @pontusringblom (#5157)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@jamieplu, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.43</title><link>/cloud/reference/releases/v1.0.43/</link><pubDate>Thu, 30 Apr 2026 04:42:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.43/</guid><description>&lt;ul&gt;
-&lt;li&gt;Fix Academy Console test summary decoding @miacycle (#5154)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@leecalcote, @miacycle and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.42</title><link>/cloud/reference/releases/v1.0.42/</link><pubDate>Thu, 30 Apr 2026 04:02:52 +0000</pubDate><guid>/cloud/reference/releases/v1.0.42/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(kratos): clean up reCAPTCHA template wiring @miacycle (#5153)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.41</title><link>/cloud/reference/releases/v1.0.41/</link><pubDate>Thu, 30 Apr 2026 03:35:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.41/</guid><description>&lt;ul&gt;
-&lt;li&gt;Fix reCAPTCHA verification in signup flow @pontusringblom (#5152)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@google-labs-jules[bot], @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.40</title><link>/cloud/reference/releases/v1.0.40/</link><pubDate>Thu, 30 Apr 2026 01:37:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.40/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(SocialLinksEditor): fix delete icon layout on mobile @Rajesh-Nagarajan-11 (#5149)&lt;/li&gt;
-&lt;li&gt;[Chore]: Update to Sistent v0.20.2 @l5io (#5150)&lt;/li&gt;
-&lt;li&gt;fix: bump schemas v1.2.6 + stamp joined_at in create_and_assign_my_team SQL function @leecalcote (#5145)&lt;/li&gt;
-&lt;li&gt;docs: refresh examples and references after canonical-naming overhaul @leecalcote (#5144)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@Rajesh-Nagarajan-11, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.16-2</title><link>/kanvas/reference/releases/v1.0.16-2/</link><pubDate>Wed, 29 Apr 2026 20:46:19 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.16-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
- What&amp;rsquo;s New
- &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h2 id="-general" class="heading-link"&gt;
- 🔤 General
- &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
-&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-maintenance" class="heading-link"&gt;
- 🧰 Maintenance
- &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
-&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
-&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.16-1</title><link>/kanvas/reference/releases/v1.0.16-1/</link><pubDate>Wed, 29 Apr 2026 19:11:43 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.16-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
- What&amp;rsquo;s New
- &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h2 id="-general" class="heading-link"&gt;
- 🔤 General
- &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
-&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-maintenance" class="heading-link"&gt;
- 🧰 Maintenance
- &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
-&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
-&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.15-1</title><link>/kanvas/reference/releases/v1.0.15-1/</link><pubDate>Wed, 29 Apr 2026 16:36:03 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.15-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
- What&amp;rsquo;s New
- &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h2 id="-general" class="heading-link"&gt;
- 🔤 General
- &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
-&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-maintenance" class="heading-link"&gt;
- 🧰 Maintenance
- &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
-&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
-&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.39</title><link>/cloud/reference/releases/v1.0.39/</link><pubDate>Wed, 29 Apr 2026 12:45:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.39/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(handlers,dao): second-wave ORDER BY audit — 8 latent defects (audit follow-up to v1.0.37) @leecalcote (#5148)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.38</title><link>/cloud/reference/releases/v1.0.38/</link><pubDate>Wed, 29 Apr 2026 12:37:07 +0000</pubDate><guid>/cloud/reference/releases/v1.0.38/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(handlers): nil-guard anonymous public-resource reads (prod panic) @leecalcote (#5147)&lt;/li&gt;
-&lt;li&gt;chore(wire-format): delete K8sContext dual-emit Marshal/Unmarshal + update DAO snake_case lookups (Phase 6 tail) @leecalcote (#5143)&lt;/li&gt;
-&lt;li&gt;[Chore]: Update to Sistent v0.20.1 @l5io (#5142)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@hamza-mohd, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.37</title><link>/cloud/reference/releases/v1.0.37/</link><pubDate>Wed, 29 Apr 2026 05:02:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.37/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(handlers): ORDER BY qualifier mismatch breaking workspaces/teams/environments lists (prod outage) @leecalcote (#5146)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.14-1</title><link>/kanvas/reference/releases/v1.0.14-1/</link><pubDate>Wed, 29 Apr 2026 04:23:57 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.14-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
- What&amp;rsquo;s New
- &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h2 id="-general" class="heading-link"&gt;
- 🔤 General
- &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
-&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-maintenance" class="heading-link"&gt;
- 🧰 Maintenance
- &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
-&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
-&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.36</title><link>/cloud/reference/releases/v1.0.36/</link><pubDate>Wed, 29 Apr 2026 04:19:03 +0000</pubDate><guid>/cloud/reference/releases/v1.0.36/</guid><description>&lt;ul&gt;
-&lt;li&gt;chore(deps): bump github.com/meshery/meshkit to v1.0.7 @leecalcote (#5141)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip Credential/Organization/Team/MesheryFilter/sibling JSON tags to canonical camelCase (Phase 4 tail) @leecalcote (#5140)&lt;/li&gt;
-&lt;li&gt;chore(deps): promote deprecated v1beta1 schema imports to v1beta2 (Phase 7a) @leecalcote (#5139)&lt;/li&gt;
-&lt;li&gt;chore(wire-format): delete *Legacy dual-emit shims and Phase 2.K dual-accept whitelists (Phase 6b) @leecalcote (#5138)&lt;/li&gt;
-&lt;li&gt;fix(routes): rename URL :ID path params to canonical camelCase :Id (Phase 6a) @leecalcote (#5137)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip MeshModels JSON tags to canonical camelCase @leecalcote (#5136)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip Workspace-resource JSON tags to canonical camelCase @leecalcote (#5129)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip User-resource JSON tags to canonical camelCase @leecalcote (#5133)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip Collaboration + Academy JSON tags to canonical camelCase @leecalcote (#5134)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip mapping/small-model JSON tags to canonical camelCase @leecalcote (#5135)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip MesheryPattern-resource JSON tags to canonical camelCase @leecalcote (#5130)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip MesheryResults / PerformanceProfile JSON tags to canonical camelCase @leecalcote (#5131)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip Connection-resource JSON tags to canonical camelCase @leecalcote (#5128)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip Role-resource JSON tags to canonical camelCase @leecalcote (#5127)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): flip Event-resource JSON tags to canonical camelCase @leecalcote (#5126)&lt;/li&gt;
-&lt;li&gt;fix(wire-format): use camelCase sort order strings throughout UI @leecalcote (#5122)&lt;/li&gt;
-&lt;li&gt;chore(claude): GitHub MCP server + environment &amp;amp; cross-repo guidance in AGENTS.md @leecalcote (#5125)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@jamieplu, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.35</title><link>/cloud/reference/releases/v1.0.35/</link><pubDate>Tue, 28 Apr 2026 21:17:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.35/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(kratos): use snake_case JSON tags on Name struct to match Kratos identity schema @leecalcote (#5124)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.34</title><link>/cloud/reference/releases/v1.0.34/</link><pubDate>Tue, 28 Apr 2026 04:31:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.34/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(db): unblock fresh-DB bootstrap (MV refresh guard + CSV column list) @leecalcote (#5123)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.33</title><link>/cloud/reference/releases/v1.0.33/</link><pubDate>Tue, 28 Apr 2026 04:04:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.33/</guid><description>&lt;ul&gt;
-&lt;li&gt;[Kratos] Make reCAPTCHA site key configurable; fix \Invalid site key\ on non-prod origins @leecalcote (#5121)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.32</title><link>/cloud/reference/releases/v1.0.32/</link><pubDate>Mon, 27 Apr 2026 23:51:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.32/</guid><description>&lt;ul&gt;
-&lt;li&gt;fix(seed): wire default workspaces to owners/teams and stop orphaning design user_ids @miacycle (#5100)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@leecalcote, @miacycle, @pontusringblom and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.31</title><link>/cloud/reference/releases/v1.0.31/</link><pubDate>Mon, 27 Apr 2026 23:04:58 +0000</pubDate><guid>/cloud/reference/releases/v1.0.31/</guid><description>&lt;ul&gt;
-&lt;li&gt;Workspaces: API Migration @miacycle (#5117)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-academy" class="heading-link"&gt;
- 📚 Academy
- &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Meshery v0.4.22 content update @l5io (#5116)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@alexquincy, @l5io, @leecalcote, @miacycle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.13-1</title><link>/kanvas/reference/releases/v1.0.13-1/</link><pubDate>Sun, 26 Apr 2026 02:50:33 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.13-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
- What&amp;rsquo;s New
- &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h2 id="-general" class="heading-link"&gt;
- 🔤 General
- &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;UI: Adjust Zoom icon ViewBox @leecalcote (#4166)&lt;/li&gt;
-&lt;li&gt;test: enable one retry in CI for e2e flakiness resilience @leecalcote (#4168)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-maintenance" class="heading-link"&gt;
- 🧰 Maintenance
- &lt;a href="#-maintenance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;test(e2e): fix CI timeout failures — raise timeout, halve workers, decouple XState wait @leecalcote (#4176)&lt;/li&gt;
-&lt;li&gt;Fix copy, paste, and duplicate hotkeys in Kanvas Designer @leecalcote (#4167)&lt;/li&gt;
-&lt;li&gt;CI: Block PR gate until remote E2E tests complete @leecalcote (#4175)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="-contributors" class="heading-link"&gt;
- 👨🏽‍💻 Contributors
- &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Thank you to our contributors for making this release possible:
-@l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.30</title><link>/cloud/reference/releases/v1.0.30/</link><pubDate>Sat, 25 Apr 2026 07:03:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.30/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.30</title><link>/cloud/reference/releases/v1.0.30/</link><pubDate>Sat, 25 Apr 2026 07:03:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.30/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(user-profile): public profile page showed \Invalid Date\ for Joined/Last Active — &lt;code&gt;v1beta2.User&lt;/code&gt; emits camelCase &lt;code&gt;createdAt&lt;/code&gt;/&lt;code&gt;lastLoginTime&lt;/code&gt; but UI read snake_case &lt;code&gt;created_at&lt;/code&gt;/&lt;code&gt;last_login_time&lt;/code&gt;; fix across &lt;code&gt;user-details.js&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
 &lt;li&gt;fix(user-profile): name, avatar, and GitHub link on public profile broken by same cause — &lt;code&gt;firstName&lt;/code&gt;/&lt;code&gt;lastName&lt;/code&gt;/&lt;code&gt;avatarUrl&lt;/code&gt;/&lt;code&gt;userId&lt;/code&gt; now read correctly from &lt;code&gt;v1beta2.User&lt;/code&gt; response @jamieplu (#5115)&lt;/li&gt;
 &lt;li&gt;fix(catalog): catalog card author avatar blank — &lt;code&gt;useGetUserProfileByIdQuery&lt;/code&gt; result accessed as &lt;code&gt;avatar_url&lt;/code&gt;; corrected to &lt;code&gt;avatarUrl&lt;/code&gt; @jamieplu (#5115)&lt;/li&gt;
