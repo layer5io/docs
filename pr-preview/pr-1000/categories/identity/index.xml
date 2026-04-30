@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[483 42 178 19 333 115]" src="../../cloud/identity/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[287 1 63 360 162 10]" src="../../cloud/identity/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -60,7 +60,14 @@
  Order of Precedence for Organization Settings
  &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Identity</title><link>/cloud/identity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/</guid><description/></item><item><title>User Invitations</title><link>/cloud/identity/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Identity</title><link>/cloud/identity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
+&lt;p&gt;Below is an overview of the core identity components within the Layer5 Cloud.&lt;/p&gt;
+
+&lt;h2 id="organizations" class="heading-link"&gt;
+ &lt;a href="../../cloud/identity/organizations/"&gt;Organizations&lt;/a&gt;
+ &lt;a href="#organizations" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/identity/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
 &lt;h3 id="key-capabilities" class="heading-link"&gt;
@@ -76,7 +83,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[385 57 278 29 86 411]" src="../../cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[364 40 386 65 87 217]" src="../../cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -63729,30 +63736,33 @@
 &lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Organizations</title><link>/cloud/identity/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/organizations/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
 &lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections&lt;/p&gt;
-&lt;img src="../../cloud/identity/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;</description></item><item><title>Teams</title><link>/cloud/identity/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/teams/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
+&lt;img src="../../cloud/identity/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;
+
+&lt;h2 id="example-the-orbital-labs-ecosystem" class="heading-link"&gt;
+ Example: The Orbital Labs Ecosystem
+ &lt;a href="#example-the-orbital-labs-ecosystem" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using &lt;a href="../../cloud/about/"&gt;Five and the cast at Orbital Labs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Teams</title><link>/cloud/identity/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/teams/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
 &lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.&lt;/p&gt;
 
-&lt;h2 id="add-a-team" class="heading-link"&gt;
- Add a Team
- &lt;a href="#add-a-team" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h2 id="example-orbital-labs-teams" class="heading-link"&gt;
+ Example: Orbital Labs Teams
+ &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;To apply different settings to a set of users, create a child new team below your top-level organization and place them in it. You can then apply unique settings to that team, like access to a workspace and their a specific set of environments.&lt;/p&gt;</description></item><item><title>Users</title><link>/cloud/identity/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/</guid><description>&lt;h2 id="user-accounts" class="heading-link"&gt;
+&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href="../../cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Users</title><link>/cloud/identity/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/</guid><description>&lt;h2 id="user-accounts" class="heading-link"&gt;
  User Accounts
  &lt;a href="#user-accounts" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Anyone who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five&amp;rsquo;s profile.&lt;/p&gt;
-&lt;!-- 
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #EBC017;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #EBC017;"&gt;TODO&lt;/h4&gt;
- 
- Insert Five&amp;rsquo;s user profile here.
- 
-&lt;/div&gt;
-
- --&gt;
-&lt;p&gt;Your user account can own resources such as workspaces, designs, connections, credentials, tokens, Any time you take any action on Layer5 Cloud such as creating a design or reviewing a deployment request, the action is attributed to your user account.&lt;/p&gt;</description></item></channel></rss>
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ &lt;strong&gt;Five&lt;/strong&gt; — Platform Engineer
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../images/five/1.svg" alt="Five" style="width:70px; float:right; margin-left:1rem;" /&gt;
+&lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Orbital Labs&lt;br&gt;
+&lt;strong&gt;Role:&lt;/strong&gt; User (Platform Engineer)&lt;br&gt;
+&lt;strong&gt;Plan:&lt;/strong&gt; Team&lt;/p&gt;
+&lt;p&gt;Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.&lt;/p&gt;</description></item></channel></rss>
