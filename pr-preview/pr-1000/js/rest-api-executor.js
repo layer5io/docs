@@ -82,7 +82,7 @@ class RESTAPIExecutor {
 
       const startTime = performance.now();
       const response = await fetch(url, {
-        method: 'GET',
+        method: operation.method.toUpperCase(),
         headers: headers,
         signal: controller.signal,
         mode: 'cors',
@@ -205,7 +205,7 @@ class RESTAPIExecutor {
     // Replace path parameters
     const pathParams = this.getParameterValues(operationPanel, 'path');
     Object.entries(pathParams).forEach(([name, value]) => {
-      path = path.replace(`{${name}}`, encodeURIComponent(value));
+      path = path.replaceAll(`{${name}}`, encodeURIComponent(value));
     });
 
     // Build query string
