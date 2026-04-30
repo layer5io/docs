@@ -372,7 +372,8 @@
             {{ $servers = $servers | append $defaultCloudServer }}
           {{ end }}
 
-          <article class="rest-api-operation" data-operation-panel data-operation-id="{{ .id }}" data-path-id="{{ .pathId }}">
+          <article class="rest-api-operation" data-operation-panel data-operation-id="{{ .id }}" data-path-id="{{ .pathId }}" data-operation-method="{{ .method }}"
+>
             <div class="rest-api-operation__header">
               <div class="rest-api-operation__labels">
                 <span class="rest-api-method-badge rest-api-method-badge--{{ .method }}">{{ upper .method }}</span>
@@ -409,6 +410,26 @@
                   </div>
                 {{ end }}
               </div>
+
+              {{ if eq .method "get" }}
+                <div class="rest-api-execute-section">
+                  <h4>Execute directly</h4>
+                  
+                  {{ partial "rest-apis/server-selector.html" (dict "servers" $servers "operationId" $operationId) }}
+                  
+                  {{ partial "rest-apis/url-preview.html" (dict "operationId" $operationId "path" $operationPath "servers" $servers) }}
+                  
+                  {{ if $authSummary }}
+                    {{ partial "rest-apis/auth-input.html" (dict "operationId" $operationId "requiresAuth" true) }}
+                  {{ end }}
+                  
+                  {{ if gt (len $parameters) 0 }}
+                    {{ partial "rest-apis/parameter-inputs.html" (dict "operationId" $operationId "parameters" $parameters "schemas" $schemas) }}
+                  {{ end }}
+                  
+                  {{ partial "rest-apis/execute-button.html" (dict "operationId" $operationId "method" .method "path" $operationPath) }}
+                </div>
+              {{ end }}
             </section>
 
             {{ if gt (len $parameters) 0 }}

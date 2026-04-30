@@ -1,0 +1,76 @@
+{{/* 
+  Parameter Input Partial
+  Renders interactive input fields for API parameters
+  Context expects: parameters (array), operationId
+*/}}
+{{ if gt (len .parameters) 0 }}
+  {{ $locations := slice
+    (dict "key" "path" "label" "Path parameters")
+    (dict "key" "query" "label" "Query parameters")  
+    (dict "key" "header" "label" "Header parameters")
+    (dict "key" "cookie" "label" "Cookie parameters")
+  }}
+
+  {{ range $locations }}
+    {{ $rows := where $.parameters "in" .key }}
+    {{ if gt (len $rows) 0 }}
+      <div class="rest-api-parameter-group">
+        <h4 class="rest-api-parameter-group-title">{{ .label }}</h4>
+        {{ range $rows }}
+          {{ $paramSchema := index . "schema" | default dict }}
+          {{ $paramType := partial "rest-apis/schema-type.html" (dict "schema" $paramSchema "schemas" $.schemas) | strings.TrimSpace }}
+          {{ $isRequired := .required | default false }}
+          {{ $paramId := printf "param-%s-%s-%s" $.operationId .in .name }}
+          
+          <div class="rest-api-parameter-input">
+            <label for="{{ $paramId }}">
+              {{ .name }}
+              {{ if $isRequired }}<span class="rest-api-parameter-required" aria-label="required">*</span>{{ end }}
+            </label>
+            
+            {{ if eq $paramType "boolean" }}
+              <select 
+                id="{{ $paramId }}"
+                class="rest-api-parameter-input-field"
+                data-parameter-input
+                data-parameter-name="{{ .name }}"
+                data-parameter-location="{{ .in }}"
+                {{ if $isRequired }}required{{ end }}
+              >
+                <option value="">-- Select --</option>
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+            {{ else if eq $paramType "integer" }}
+              <input
+                id="{{ $paramId }}"
+                type="number"
+                class="rest-api-parameter-input-field"
+                data-parameter-input
+                data-parameter-name="{{ .name }}"
+                data-parameter-location="{{ .in }}"
+                placeholder="e.g., 10"
+                {{ if $isRequired }}required{{ end }}
+              />
+            {{ else }}
+              <input
+                id="{{ $paramId }}"
+                type="text"
+                class="rest-api-parameter-input-field"
+                data-parameter-input
+                data-parameter-name="{{ .name }}"
+                data-parameter-location="{{ .in }}"
+                placeholder="Enter {{ .name }}"
+                {{ if $isRequired }}required{{ end }}
+              />
+            {{ end }}
+
+            {{ with .description }}
+              <p class="rest-api-parameter-description">{{ . | markdownify }}</p>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

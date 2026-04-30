@@ -1,0 +1,26 @@
+{{/* 
+  Authentication Input Partial
+  Provides bearer token input for authenticated requests
+  Context expects: operationId, requiresAuth
+*/}}
+{{ if .requiresAuth }}
+  <div class="rest-api-auth-input">
+    <label for="auth-token-{{ .operationId }}">
+      Authorization Token
+    </label>
+    <input
+      id="auth-token-{{ .operationId }}"
+      type="password"
+      class="rest-api-auth-input-field"
+      data-auth-token-input
+      placeholder="Bearer token (optional for public endpoints)"
+      autocomplete="off"
+    />
+    <p class="rest-api-auth-help">
+      Provide a security token for authentication. 
+      <a href="https://docs.layer5.io/cloud/identity/tokens/" target="_blank">
+        Learn how to generate tokens
+      </a>
+    </p>
+  </div>
+{{ end }}
