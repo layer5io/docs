@@ -6,6 +6,7 @@
 class RESTAPIExecutor {
   constructor() {
     this.activeRequest = null;
+    this.requestCache = new Map();
     this.init();
   }
 
@@ -81,7 +82,7 @@ class RESTAPIExecutor {
 
       const startTime = performance.now();
       const response = await fetch(url, {
-        method: operation.method.toUpperCase(),
+        method: 'GET',
         headers: headers,
         signal: controller.signal,
         mode: 'cors',
@@ -204,7 +205,7 @@ class RESTAPIExecutor {
     // Replace path parameters
     const pathParams = this.getParameterValues(operationPanel, 'path');
     Object.entries(pathParams).forEach(([name, value]) => {
-      path = path.replaceAll(`{${name}}`, encodeURIComponent(value));
+      path = path.replace(`{${name}}`, encodeURIComponent(value));
     });
 
     // Build query string
@@ -284,31 +285,16 @@ class RESTAPIExecutor {
 
   /**
    * Update the preview URL when parameters change
-   * @param {Element|null} source - The changed element or operation panel
    */
-  updatePreviewUrl(source = null) {
-    const updatePanelPreview = (panel) => {
+  updatePreviewUrl() {
+    const panels = document.querySelectorAll('[data-operation-panel]');
+    panels.forEach(panel => {
       const preview = panel.querySelector('[data-url-preview]');
       if (preview) {
         const operation = this.getOperationMetadata(panel);
         const url = this.buildRequestUrl(panel, operation);
         preview.textContent = url;
       }
-    };
-
-    const targetPanel = source?.matches?.('[data-operation-panel]')
-      ? source
-      : source?.closest?.('[data-operation-panel]') ||
-        document.activeElement?.closest?.('[data-operation-panel]');
-
-    if (targetPanel) {
-      updatePanelPreview(targetPanel);
-      return;
-    }
-
-    const panels = document.querySelectorAll('[data-operation-panel]');
-    panels.forEach((panel) => {
-      updatePanelPreview(panel);
     });
   }
 
@@ -341,35 +327,18 @@ class RESTAPIExecutor {
       // Update body
       const bodyElement = responseSection.querySelector('[data-response-body]');
       if (bodyElement) {
-        const bodyWrapper = bodyElement.closest('.rest-api-response-body');
-
-        bodyElement.classList.remove('language-json', 'hljs');
-        bodyElement.removeAttribute('data-highlighted');
-
-        if (bodyWrapper) {
-          bodyWrapper.classList.remove('language-json', 'hljs');
-        }
-
         if (response.data) {
           bodyElement.textContent = JSON.stringify(response.data, null, 2);
           bodyElement.classList.add('language-json');
-
-          if (bodyWrapper) {
-            bodyWrapper.classList.add('language-json');
-          }
-
-          // Re-highlight if using a syntax highlighter
-          if (window.hljs) {
-            window.hljs.highlightElement(bodyElement);
-
-            if (bodyWrapper && bodyElement.classList.contains('hljs')) {
-              bodyWrapper.classList.add('hljs');
-            }
-          }
         } else if (response.text) {
           bodyElement.textContent = response.text;
         } else {
           bodyElement.textContent = '(empty response)';
+        }
+        
+        // Re-highlight if using a syntax highlighter
+        if (window.hljs) {
+          window.hljs.highlightElement(bodyElement);
         }
       }
 
@@ -481,21 +450,7 @@ class RESTAPIExecutor {
     if (button) {
       button.disabled = isLoading;
       button.classList.toggle('is-loading', isLoading);
-      button.setAttribute('aria-busy', isLoading ? 'true' : 'false');
-
-      const buttonText = button.querySelector(
-        '[data-execute-request-text], .rest-api-execute-button__text, .rest-api-button-text'
-      );
-
-      if (buttonText) {
-        if (!buttonText.dataset.originalText) {
-          buttonText.dataset.originalText = buttonText.textContent;
-        }
-
-        buttonText.textContent = isLoading
-          ? 'Executing...'
-          : buttonText.dataset.originalText;
-      }
+      button.textContent = isLoading ? 'Executing...' : 'Execute Request';
     }
   }
 
