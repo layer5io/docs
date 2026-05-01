@@ -11,7 +11,7 @@ aliases:
 
 To undeploy the resources
 
-1. Navigate to the Actions button at the top of the Meshery Design canvas.
+1. Navigate to the Actions button at the top of the Design canvas.
 
 2. Click on the **Undeploy** icon.
 

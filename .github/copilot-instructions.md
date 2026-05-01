@@ -1,8 +1,8 @@
-# GitHub Copilot Custom Coding Agent Instructions
+# Coding Agent Instructions for Layer5 Docs
 
 ## AI Model Selection
 
-**IMPORTANT**: When using GitHub Copilot, always select the most powerful AI model available (e.g., GPT-4, Claude 3.5 Sonnet, or the latest advanced model) for code generation, review, and assistance tasks. More powerful models provide better code quality, deeper understanding of context, and more accurate suggestions aligned with project standards.
+**IMPORTANT**: When using GitHub Copilot, always select the most powerful AI model available (e.g., GPT-5.1 Codex, Gemini 3 Pro Claude 4.5, or the latest advanced model) to ensure the most comprehensive, most human-understandable documentation with examples, tips, notes, analogies and so on.
 
 ## Project Overview
 
@@ -64,6 +64,10 @@ docs/
 ```
 
 ## Development Workflow
+
+1. Don't fork this repo.
+1. Create a branch and pull request in this repo.
+1. Don't mark your pull request as draft.
 
 ### Setup
 ```bash
@@ -143,7 +147,7 @@ Alert types:
 - **No external images**: Use local assets only
 - **No placeholder text**: Provide complete, production-ready content
 - **No sensitive data**: Never include API keys, credentials, or personal information
-- **Use proper terminology**: "Meshery" not "meshery", "Kanvas" not "canvas", "Layer5" not "layer5"
+- **Use proper capitalization**: "Meshery" not "meshery", "Kanvas" not "canvas", "Layer5" not "layer5"
 
 ## Template Guidelines
 
@@ -234,7 +238,7 @@ Use descriptive, kebab-case names:
 
 ### Documentation
 - Layer5 Community Handbook: https://layer5.io/community/handbook
-- Meshery Documentation: https://docs.meshery.io
+- Layer5 Documentation: https://docs.layer5.io
 - Hugo Documentation: https://gohugo.io/documentation/
 
 ### Getting Help
@@ -254,7 +258,7 @@ Before submitting a PR, verify:
 - [ ] Proper frontmatter is included
 - [ ] Images have descriptive alt text
 - [ ] Links are valid and accessible
-- [ ] Terminology is correct (Meshery, Kanvas, Layer5)
+- [ ] Capitalization is correct (Meshery, Kanvas, Layer5)
 - [ ] American English spelling and grammar
 
 ### Technical Quality

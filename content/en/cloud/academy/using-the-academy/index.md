@@ -131,28 +131,18 @@ Completing content in the Academy earns you valuable credentials that you can sh
 
 ## Frequently Asked Questions
 
+> Expand a section below to learn more.
+
 <details>
 <summary>Will my learning progress be saved if I leave and come back later?</summary>
-  
+
 Yes, as long as you are enrolled in a content, your progress is saved automatically. You can always return and continue from your last completed course.
 </details>
 
 <details>
 <summary>Can I skip courses and jump directly to the exam?</summary>
-  
+
 You can navigate to any course at any time using the sidebar. However, for a Learning Path to be marked as complete, you typically need to pass all required quizzes and the final test in sequence.
-</details>
-
-<details>
-<summary>If I fail an assessment, can I retake it?</summary>
-  
-Yes, you can retake assessments. We believe in learning from mistakes, so you will have opportunities to try again. The platform does not limit the number of retake attempts.
-</details>
-
-<details>
-<summary>Is Layer5 Academy free to use?</summary>
-  
-Yes, all learning materials, including learning paths, challenges, and exams, are completely free. The only optional, paid item is the issuance of an official certificate after successfully passing a Certification.
 </details>
 
 <details>
@@ -164,5 +154,32 @@ Currently, all content is designed to be accessed online through the Academy pla
 <details>
 <summary>Where can I ask questions or discuss the content material?</summary>
 
-Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to join the [Layer5 Community](https://layer5.io/community/handbook).
+Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to open new or participate in existing topics in the community [discussion forum](https://discuss.layer5.io). We also warmly welcome you to join the [Layer5 Community Slack](https://slack.layer5.io).
 </details>
+
+</details>
+
+---
+
+<details>
+<summary><strong>Certification and Assessment</strong></summary>
+
+
+<details>
+<summary>If I fail an assessment, can I retake it?</summary>
+
+It depends on the certification. Some certifications allow multiple attempts, while others do not offer retries. Please refer to the specific certification’s guidelines to confirm whether retakes are permitted.
+</details>
+
+<details>
+<summary>Does my certificate expire?</summary>
+
+Yes. Meshery Academy certifications may have an expiration date. Please check the specific certification details for validity duration.
+</details>
+
+<details>
+<summary>How can I showcase my credential?</summary>
+
+Upon successful completion, you’ll receive a verifiable digital certificate. You can share your achievement by adding it to your professional profiles (for example, on LinkedIn) or including it on your resume. A shareable verification link is available within your certification dashboard, which you can use to confirm your credential publicly.
+</details>
+

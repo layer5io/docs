@@ -1,0 +1,56 @@
+{{ $schema := .schema | default . }}
+{{ $schemas := .schemas | default dict }}
+{{ $type := "" }}
+{{ $format := "" }}
+
+{{ if not $schema }}
+  {{ $type = "" }}
+{{ else if and (reflect.IsMap $schema) (index $schema "$ref") }}
+  {{ $refName := replaceRE "^.*/" "" (index $schema "$ref") }}
+  {{ $type = (replace $refName "_" " " | title) }}
+{{ else }}
+  {{ $source := partial "rest-apis/schema-source.html" (dict "schema" $schema "schemas" $schemas) | transform.Unmarshal (dict "format" "json") }}
+
+  {{ with index $source "format" }}
+    {{ $format = printf " (%s)" . }}
+  {{ end }}
+
+  {{ if index $source "type" }}
+    {{ $type = index $source "type" }}
+    {{ if eq $type "array" }}
+      {{ $itemType := partial "rest-apis/schema-type.html" (dict "schema" (index $source "items") "schemas" $schemas) }}
+      {{ if $itemType }}
+        {{ $type = printf "array of %s" $itemType }}
+      {{ end }}
+    {{ else if eq $type "object" }}
+      {{ $type = "object" }}
+    {{ end }}
+  {{ else if index $source "oneOf" }}
+    {{ $labels := slice }}
+    {{ range index $source "oneOf" }}
+      {{ $label := index . "title" | default (partial "rest-apis/schema-type.html" (dict "schema" . "schemas" $schemas)) | default "schema" }}
+      {{ if not (in $labels $label) }}
+        {{ $labels = $labels | append $label }}
+      {{ end }}
+    {{ end }}
+    {{ $type = printf "one of %s" (delimit $labels ", ") }}
+  {{ else if index $source "properties" }}
+    {{ $type = "object" }}
+  {{ else if index $source "enum" }}
+    {{ $type = "enum" }}
+  {{ end }}
+
+  {{ if and (index $source "nullable") $type }}
+    {{ $type = printf "%s | null" $type }}
+  {{ end }}
+
+  {{ if and $type $format (not (strings.Contains $type $format)) }}
+    {{ $type = printf "%s%s" $type $format }}
+  {{ end }}
+
+  {{ if not $type }}
+    {{ $type = "schema" }}
+  {{ end }}
+{{ end }}
+
+{{- $type -}}

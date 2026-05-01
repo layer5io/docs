@@ -10,9 +10,9 @@ While this isn't an absolutely necessary step, if you plan on doing anything mor
 
 ## Add 'upstream' repo to list of remotes
 ```
-git remote add upstream https://github.com/layer5io/meshery.git
+git remote add upstream https://github.com/layer5io/layer5.git
 ``` 
-("meshery" is used as the example repo. Be sure to reference the _actual_ repo you're contributing to e.g. "meshery-linkerd").
+("layer5" is used as the example repo. Be sure to reference the _actual_ repo you're contributing to).
 
 ## Verify the new remote named 'upstream'
 ```
@@ -124,7 +124,7 @@ Signed-off-by: Your Name <your.email@example.com>
 ```
 Example of a signed-off commit:
 ```
-git commit -s -m "Fixing issue with Meshery module"
+git commit -s -m "Fixing issue with module"
 ```
 
 This ensures that your contribution complies with the DCO.

@@ -1,24 +1,39 @@
 ---
 title: Concepts
 weight: 2
-draft: true
+draft: false
 description: >
   An overview of Layer5 Cloud concepts and their relationships.
 ---
 
+The Layer5 Cloud provides a comprehensive suite of management tools for cloud-native infrastructure. Understanding the core entities and how they interact is essential for effectively managing your service meshes, clusters, and designs.
+
+## Core Entities
+
+The following concepts form the foundation of the Layer5 Cloud ecosystem:
+
+* **Workspaces:** Logical isolation boundaries for organizing team members, environments, and resources.
+* **Environments:** Specific deployment targets (e.g., Development, Staging, Production) within a Workspace.
+* **Designs:** Visual representations of your infrastructure patterns and service mesh configurations.
+* **Catalogs:** Repositories of reusable patterns and best practices shared across the community or organization.
+
 ![concepts-overview](images/concepts-overview.svg "image-center-shadow")
 
-<!--
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+This section explains the underlying concepts of Layer5 Cloud — the building blocks that the rest of the documentation assumes you understand.
 
-For many projects, users may not need much information beyond the information in the [Overview](/docs/overview/), so this section is **optional**. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.
+- [Meshery Server Registration](meshery-server-registration) — How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, how Cloud identifies an existing registration, and what fields are preserved across re-registration.
 
-Remember to focus on what the user needs to know, not just what you think is interesting about your project! If they don’t need to understand your original design decisions to use or contribute to the project, don’t put them in, or include your design docs in your repo and link to them. Similarly, most users will probably need to know more about how features work when in use rather than how they are implemented. Consider a separate architecture page for more detailed implementation and system design information that potential project contributors can consult.
+---
 
+### Understanding Relationships
 
-{{ $context := . }}
-{{ range $taxo, $taxo_map := .Site.Taxonomies }}
-  {{ partial "taxonomy_terms_article.html" (dict "context" $context "taxo" $taxo ) }}
-{{ end }} -->
+To get the most out of Layer5 Cloud, it is important to understand how these components interact:
+
+| Concept | Relationship | Purpose |
+| :--- | :--- | :--- |
+| **User to Workspace** | Many-to-Many | Users can collaborate across multiple isolated workspaces. |
+| **Workspace to Environment** | One-to-Many | A single workspace can host multiple environments for lifecycle management. |
+| **Design to Catalog** | Many-to-One | Designs can be published to a catalog for broader consumption and version control. |
+
+### Next Steps
+For a deeper dive into the technical implementation of these concepts, please refer to our [Architecture Documentation](/docs/architecture).

@@ -96,7 +96,7 @@ The easiest way to get the correct IDs is by using the content creation tool.
 - Use the "Create New Content" tool and fill in the information for your new content
 - The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
 
-[Learn more](/cloud.layer5.io/academy/instructors-console) about academy console.
+[Learn more](https://cloud.layer5.io/academy/instructors-console) about academy console.
 {{< /alert >}}
 
 ### Create the Core Directories

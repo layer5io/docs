@@ -1,0 +1,18 @@
+{{- $.Scratch.Add "offline-search-index" slice -}}
+{{- range hugo.Sites -}}
+{{- range where .Pages ".Params.exclude_search" "!=" true -}}
+{{- $.Scratch.Add
+    "offline-search-index"
+    (dict
+        "ref" .RelPermalink
+        "title" .Title
+        "categories" (.Params.categories | default "")
+        "tags" (.Params.tags | default "")
+        "description" (.Description | default "")
+        "body" (.Plain | htmlUnescape)
+        "excerpt" ((.Description | default .Plain) | htmlUnescape | truncate (.Site.Params.offlineSearchSummaryLength | default 70) | htmlUnescape)
+    )
+-}}
+{{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "offline-search-index" | jsonify -}}

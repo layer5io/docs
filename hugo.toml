@@ -1,5 +1,7 @@
 baseURL = "https://docs.layer5.io"
 title = "Layer5 Documentation"
+relativeURLs = true
+canonifyURLs = false
 
 # Language settings
 contentDir = "content/en"
@@ -65,6 +67,7 @@ id = "G-HX135VWX9B"
 languageName = "English"
 # Weight used for sorting.
 weight = 1
+direction = "ltr"
 [languages.en.params]
 title = "Layer5"
 description = "Product Documentation"
@@ -187,57 +190,57 @@ enable = false
 		url = "https://layer5.io/subscribe"
 		icon = "icons/envelope.svg"
 		desc = "Discussion and help from your fellow users"
-        alt = "Envelope Icon"
+        alt = "Subscribe to the Layer5 newsletter"
 	[[params.links.footer.icons]]
-		name = "Twitter"
-		url = "https://twitter.com/layer5"
-		icon = "icons/twitter.svg"
-		desc = "Follow us on Twitter to get the latest news!"
+		name = "X"
+		url = "https://X.com/layer5"
+		icon = "icons/x.svg"
+		desc = "Follow us on X to get the latest news!"
 		class= "social-icon"
-        alt = "Twitter Icon"
+        alt = "Follow Layer5 on X"
 	[[params.links.footer.icons]]
 		name = "Discussion Forum"
 		url = "https://discuss.layer5.io"
 		icon = "icons/discuss.svg"
 		desc = "Practical questions and curated answers"
-        alt = "Discussion Forum Icon"
+        alt = "Join the Layer5 discussion forum"
 	[[params.links.footer.icons]]
 		name = "GitHub"
 		url = "https://github.com/layer5io"
 		icon = "icons/github.svg"
 		desc = "Development takes place here"
 		class= "social-icon"
-        alt = "GitHub Icon"
+        alt = "Visit Layer5 on GitHub"
 	[[params.links.footer.icons]]
 		name = "Slack"
 		url = "https://slack.layer5.io"
 		icon = "icons/slack.svg"
 		desc = "Chat with other project developers"
-        alt = "Slack Icon"
+        alt = "Join the Layer5 Slack community"
 	[[params.links.footer.icons]]
 		name = "LinkedIn"
 		url = "https://www.linkedin.com/company/layer5"
 		icon = "icons/linkedin.svg"
 		desc = "Discuss development issues around the project"
-        alt = "LinkedIn Icon"
+        alt = "Follow Layer5 on LinkedIn"
 	[[params.links.footer.icons]]
 		name = "YouTube"
 		url = "https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
 		icon = "icons/youtube.svg"
 		desc = "Discuss development issues around the project"
-        alt = "YouTube Icon"
+        alt = "Watch Layer5 on YouTube"
 	[[params.links.footer.icons]]
 		name = "Bluesky"
 		url = "https://bsky.app/profile/layer5.bsky.social"
 		icon = "icons/bluesky.svg"
 		desc = "Follow us on Bluesky for updates"
-		alt = "Bluesky Icon"
+		alt = "Follow Layer5 on Bluesky"
 	[[params.links.footer.icons]]
 		name = "Docker"
 		url = "https://hub.docker.com/u/layer5/"
 		icon = "icons/docker.svg"
 		desc = "Discuss development issues around the project"
-        alt = "Docker Icon"
+        alt = "Explore Layer5 images on Docker Hub"
 
 	[[params.links.footer.resources.items]]
 		name = "Learning Paths"

@@ -28,7 +28,7 @@ onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout=
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs"
 onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseout="restoreImage('meshery', 'images/logos/meshery-light-icon.svg')">
-    <img id="meshery" src="images/logos/meshery-light-icon.svg" alt="Layer5 Meshery Docs Logo" />
+    <img id="meshery" src="images/logos/meshery-light-icon.svg" alt="Meshery Docs Logo" />
     Meshery Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
@@ -152,73 +152,75 @@ function restoreImage(imgId, originalSrc) {
 <!-- Wave Visualizer Script -->
 <script>
     const canvas = document.getElementById('visualizer');
-    const ctx = canvas.getContext('2d');
-    let time = 0;
-    let waveData = Array(8).fill(0).map(() => ({
-        value: Math.random() * 0.5 + 0.1,
-        targetValue: Math.random() * 0.15 + 0.1,
-        speed: Math.random() * .02 + 0.01
-    }));
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let time = 0;
+      let waveData = Array(8).fill(0).map(() => ({
+          value: Math.random() * 0.5 + 0.1,
+          targetValue: Math.random() * 0.15 + 0.1,
+          speed: Math.random() * .02 + 0.01
+      }));
 
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+      function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+      }
+
+      function updateWaveData() {
+          waveData.forEach(data => {
+              if (Math.random() < 0.01) {
+                  data.targetValue = Math.random() * 0.7 + 0.1;
+              }
+              const diff = data.targetValue - data.value;
+              data.value += diff * data.speed;
+          });
+      }
+
+      function draw() {
+          ctx.fillStyle = 'black';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          for (let i = 0; i < 8; i++) {
+              const freq = waveData[i].value * 7.0;
+              ctx.beginPath();
+
+              for (let x = 0; x < canvas.width; x += 1) {
+                  const normalizedX = (x / canvas.width) * 2 - 1;
+                  let px = normalizedX + i * 0.04 + freq * 0.03;
+                  let py = Math.sin(px * 10 + time) * Math.cos(px * 2) * freq * 0.1 * ((i + 1) / 8);
+                  const canvasY = (py + 1) * canvas.height / 2;
+
+                  if (x === 0) {
+                      ctx.moveTo(x, canvasY);
+                  } else {
+                      ctx.lineTo(x, canvasY);
+                  }
+              }
+
+              const intensity = Math.min(1, freq * 0.3);
+              const r = 255 + intensity * 100;
+              const g = 243 + intensity * 130;
+              const b = 197;
+
+              ctx.lineWidth = .1 + (i * 0.3);
+              ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.6)`;
+              ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.5)`;
+              ctx.shadowBlur = 5;
+              ctx.stroke();
+              ctx.shadowBlur = 0;
+          }
+      }
+
+      function animate() {
+          time += 0.02;
+          updateWaveData();
+          draw();
+          requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      animate();
     }
-
-    function updateWaveData() {
-        waveData.forEach(data => {
-            if (Math.random() < 0.01) {
-                data.targetValue = Math.random() * 0.7 + 0.1;
-            }
-            const diff = data.targetValue - data.value;
-            data.value += diff * data.speed;
-        });
-    }
-
-    function draw() {
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < 8; i++) {
-            const freq = waveData[i].value * 7.0;
-            ctx.beginPath();
-
-            for (let x = 0; x < canvas.width; x += 1) {
-                const normalizedX = (x / canvas.width) * 2 - 1;
-                let px = normalizedX + i * 0.04 + freq * 0.03;
-                let py = Math.sin(px * 10 + time) * Math.cos(px * 2) * freq * 0.1 * ((i + 1) / 8);
-                const canvasY = (py + 1) * canvas.height / 2;
-
-                if (x === 0) {
-                    ctx.moveTo(x, canvasY);
-                } else {
-                    ctx.lineTo(x, canvasY);
-                }
-            }
-
-            const intensity = Math.min(1, freq * 0.3);
-            const r = 255 + intensity * 100;
-            const g = 243 + intensity * 130;
-            const b = 197;
-
-            ctx.lineWidth = .1 + (i * 0.3);
-            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.6)`;
-            ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.5)`;
-            ctx.shadowBlur = 5;
-            ctx.stroke();
-            ctx.shadowBlur = 0;
-        }
-    }
-
-    function animate() {
-        time += 0.02;
-        updateWaveData();
-        draw();
-        requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    animate();
   </script>
   <!-- Wave Visualizer Script -->

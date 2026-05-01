@@ -5,7 +5,7 @@ categories: [Spaces]
 ---
 
 Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
-Meshery Environments allow you to logically group related [Connections](#connections) and their associated [Credentials](#credentials). Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.
+Environments allow you to logically group related [Connections](#connections) and their associated [Credentials](#credentials). Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.
 
 ### Assigning Resources to Environments
 
@@ -42,3 +42,50 @@ Connections are an integral part of Environment. These are cloud native resource
 Credentials in an Environment are the keys to securely authenticate and access managed connections. For example, valid Prometheus secrets or Kubernetes API tokens are essential credentials for securely interacting with these managed resources.
 
 > See "[Credentials](https://docs.meshery.io/concepts/logical/credentials)" in Meshery Docs for more information.
+
+## Example: Orbital Labs Environment Setup
+
+The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure. See [Meet Five and the Cast](/cloud/about) for the full seed inventory.
+
+### Environment Inventory
+
+| Environment | Workspace | Cloud Provider | Connections |
+|---|---|---|---|
+| `prod-aws` | orbital-production | AWS | EKS cluster, RDS (PostgreSQL), S3, CloudFront, SQS |
+| `prod-gcp` | orbital-production | GCP | GKE cluster, Cloud SQL, Cloud Storage, Pub/Sub |
+| `staging-aws` | orbital-staging | AWS | EKS cluster, S3, ElastiCache |
+| `staging-azure` | orbital-staging | Azure | AKS cluster, Azure Blob Storage, Azure Service Bus |
+| `dev-local` | orbital-dev | Local | kind (local Kubernetes), LocalStack (AWS emulation) |
+| `stellar-enterprise` | stellar-main | Azure | AKS, Azure SQL, Azure API Management, Azure AD |
+
+### Connecting prod-aws
+
+Five connects Orbital Labs' primary AWS production environment to Layer5 Cloud:
+
+1. Navigate to **Environments** and click **Create Environment**
+2. Name it `prod-aws` and save
+3. Add connections one at a time — each connection is a discrete cloud resource:
+   - **EKS cluster** — the compute layer for deployed workloads
+   - **RDS (PostgreSQL)** — the managed database instance
+   - **S3 bucket** — object storage for design artifacts and state
+   - **CloudFront distribution** — CDN layer for the frontend
+   - **SQS queue** — async messaging between services
+4. Zara assigns `prod-aws` to the `orbital-production` workspace, making all five connections available to Infrastructure team members
+
+### Adding prod-gcp for Multi-Cloud Coverage
+
+Five repeats the process for GCP to give Orbital Labs multi-cloud flexibility:
+
+1. Create environment `prod-gcp`
+2. Add connections:
+   - **GKE cluster** — Google Kubernetes Engine compute
+   - **Cloud SQL** — managed relational database on GCP
+   - **Cloud Storage bucket** — GCP object storage
+   - **Pub/Sub topic** — async messaging on GCP
+3. Zara assigns `prod-gcp` to `orbital-production` alongside `prod-aws`
+
+Both environments are now available to any design deployed within the `orbital-production` workspace.
+
+{{< alert type="info" title="dev-local for Getting Started" >}}
+The `dev-local` environment uses a local Kubernetes cluster (kind) and LocalStack to emulate AWS services — no cloud credentials required. If you are following along with these docs for the first time, start with `dev-local` in the `orbital-dev` workspace.
+{{< /alert >}}

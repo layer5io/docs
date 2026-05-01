@@ -10,9 +10,11 @@
 @import "search_project.scss";
 @import "_videos_project.scss";
 @import "subscription.scss";
+@import "rest-api-reference.scss";
 @import "_video-landing_project.scss";
 @import "elements_project";
 @import "summary.scss";
+@import "_kanvas-corner-popup.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -232,7 +234,21 @@ a:not([href]):not([class]):hover {
   top: 5.5rem;
   overflow-y: auto;
   padding-top: 1rem;
+  margin-top: 0;
   overflow-x: hidden;
+  &__inner {
+    @include media-breakpoint-up(md) {
+      @supports (position: sticky) {
+        position: static;
+      }
+    }
+  }
+}
+
+.td-sidebar #td-sidebar-menu,
+.td-sidebar .td-sidebar__search {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -241,14 +257,6 @@ a:not([href]):not([class]):hover {
     height: auto;
     top: 0;
     padding-top: 0;
-  }
-}
-
-@media screen and (min-height: 800px) and (min-width: 768px) {
-  .td-sidebar {
-    height: 100vh;
-    top: 0;
-    padding-top: 3rem;
   }
 }
 
@@ -323,6 +331,7 @@ a:not([href]):not([class]):hover {
 
 // Right sidebar
 .td-sidebar-toc {
+  margin-top: 0rem;
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
   background-image: linear-gradient(to top,
@@ -369,10 +378,15 @@ a:not([href]):not([class]):hover {
   #TableOfContents {
     a {
       color: $lightslategray;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         color: $white;
         text-decoration: none;
+        background-color: rgba($primary, 0.15);
       }
     }
   }
@@ -523,12 +537,13 @@ a:not([href]):not([class]):hover {
   animation: color-shift 8s linear infinite;
 
   @media (max-width: 768px) {
-    font-size: 3.5rem;
-    text-align: center;
+    font-size: 4rem;
   }
 
-  // @media (max-width:1200px){
-  // }
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 
 @keyframes color-shift {
@@ -603,11 +618,27 @@ a:not([href]):not([class]):hover {
 .dash-sign-container {
   display: flex;
   align-items: center;
+  justify-content: space-between; 
   text-align: right;
+
+  h1.dashboard {
+    max-width: 70%;        
+    text-align: left;
+    flex-shrink: 0;
+    @media (max-width: 768px) {
+      max-width: 60%;
+    }
+  }
 
   @media (max-width: 768px) {
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
+
+    h1.dashboard {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   a.dash-sign {
@@ -622,18 +653,16 @@ a:not([href]):not([class]):hover {
     position: relative;
     width: auto;
     white-space: nowrap;
-    // top: 50%;
-    // left: 50%;
     padding: 2rem;
-    margin: 15rem;
-    transform: translateX(-50%) translateY(-50%);
+    margin: 0;
+    transform: translateX(0%) translateY(0%);
 
     &:hover {
-      color: "#EBC017" !important;
+      color: #EBC017;
     }
 
-    @media (max-width: 1440px) {
-      margin: 0rem;
+    @media (max-width: 768px) {
+      margin: 2rem 0 0 0;
     }
   }
 
@@ -649,7 +678,6 @@ a:not([href]):not([class]):hover {
     border: 8px solid $primary;
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
     animation: 6s alternate ease-in-out tipsy;
-    // animation-play-state: paused;
   }
 
   a.dash-sign:before {
@@ -664,11 +692,10 @@ a:not([href]):not([class]):hover {
 
   a.dash-sign:visited {
     color: $white;
-    // animation-play-state: running;
   }
 
   a.dash-sign:hover {
-    color: #ebc017 !important;
+    color: #ebc017;
   }
 }
 
@@ -765,6 +792,25 @@ a:not([href]):not([class]):hover {
 html {
   scroll-padding-top: 5rem;
   scroll-behavior: smooth;
+}
+
+// Max-width constraint for large screens to prevent layout stretch
+@media (min-width: $site-max-width) {
+  .td-navbar {
+    > .container-fluid {
+      max-width: $site-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .container-fluid.td-outer {
+    > .td-main {
+      max-width: $site-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

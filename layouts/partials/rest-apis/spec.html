@@ -1,0 +1,17 @@
+{{ $candidates := slice }}
+{{ $candidates = $candidates | append "data/openapi.yml" }}
+
+{{ $resolvedPath := "" }}
+{{ range $candidate := $candidates }}
+  {{ if and (eq $resolvedPath "") (os.FileExists $candidate) }}
+    {{ $resolvedPath = $candidate }}
+  {{ end }}
+{{ end }}
+
+{{ if eq $resolvedPath "" }}
+  {{ errorf "Unable to load REST API spec. Checked: %s" (delimit $candidates ", ") }}
+{{ end }}
+
+{{ $opts := dict "format" "yaml" }}
+{{ $spec := os.ReadFile $resolvedPath | transform.Unmarshal $opts }}
+{{- $spec | jsonify -}}

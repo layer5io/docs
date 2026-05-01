@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
+<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
 
 <head>
   {{ partial "head.html" . }}
@@ -33,6 +33,7 @@
             src="" 
             title="{{ .Title }}" 
             frameborder="0" 
+            referrerPolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen
           ></iframe>

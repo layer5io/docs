@@ -1,0 +1,57 @@
+{{ $schema := .schema | default dict }}
+{{ $schemas := .schemas | default dict }}
+
+{{ if not $schema }}
+  {{- dict | jsonify -}}
+  {{- return -}}
+{{ end }}
+
+{{ $resolved := $schema }}
+
+{{ if and (reflect.IsMap $schema) (index $schema "$ref") }}
+  {{ $refName := replaceRE "^.*/" "" (index $schema "$ref") }}
+  {{ with index $schemas $refName }}
+    {{ $resolved = partial "rest-apis/schema-source.html" (dict "schema" . "schemas" $schemas) | transform.Unmarshal (dict "format" "json") }}
+  {{ end }}
+{{ else if and (reflect.IsMap $schema) (index $schema "allOf") }}
+  {{ $properties := dict }}
+  {{ $required := slice }}
+  {{ $description := index $schema "description" | default "" }}
+  {{ $type := index $schema "type" | default "object" }}
+
+  {{ range index $schema "allOf" }}
+    {{ $part := partial "rest-apis/schema-source.html" (dict "schema" . "schemas" $schemas) | transform.Unmarshal (dict "format" "json") }}
+    {{ with index $part "properties" }}
+      {{ $properties = merge $properties . }}
+    {{ end }}
+    {{ range (index $part "required" | default (slice)) }}
+      {{ if not (in $required .) }}
+        {{ $required = $required | append . }}
+      {{ end }}
+    {{ end }}
+    {{ if and (eq $description "") (index $part "description") }}
+      {{ $description = index $part "description" }}
+    {{ end }}
+    {{ if and (eq $type "object") (index $part "type") }}
+      {{ $type = index $part "type" }}
+    {{ end }}
+  {{ end }}
+
+  {{ with index $schema "properties" }}
+    {{ $properties = merge $properties . }}
+  {{ end }}
+  {{ range (index $schema "required" | default (slice)) }}
+    {{ if not (in $required .) }}
+      {{ $required = $required | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ $resolved = dict "type" $type "properties" $properties "required" $required }}
+  {{ if $description }}
+    {{ $resolved = merge $resolved (dict "description" $description) }}
+  {{ end }}
+{{ else if and (reflect.IsMap $schema) (eq (index $schema "type") "array") (index $schema "items") }}
+  {{ $resolved = merge $schema (dict "items" (partial "rest-apis/schema-source.html" (dict "schema" (index $schema "items") "schemas" $schemas) | transform.Unmarshal (dict "format" "json"))) }}
+{{ end }}
+
+{{- $resolved | jsonify -}}

@@ -96,13 +96,13 @@ This import method provides a convenient bridge for developers looking to migrat
 
 {{< /tab >}}
 
-{{% tab header="From a Meshery Design" lang="en" %}}
+{{% tab header="From a Design" lang="en" %}}
 
 This is Meshery's native format and provides a lossless way to save and import your designs. It preserves all of an application's component configurations as well as the visual layout, annotations, and metadata from the Kanvas designer.
 
 - **Supported Packaging Formats:**
     - **YAML File (`.yml`):** The standard, human-readable file generated when you export a design.
-    - **OCI Artifact:** Meshery Designs can also be packaged as OCI artifacts, allowing them to be versioned and distributed via container registries.
+    - **OCI Artifact:** Designs can also be packaged as OCI artifacts, allowing them to be versioned and distributed via container registries.
 
 {{< /tab >}}
 
@@ -125,7 +125,7 @@ The "File Upload" dialog is designed to process one file or package at a time. I
 <details>
   <summary>After importing a file, can I download my original, unaltered file?</summary>
   
-No. When a file is imported, it is converted into a native Meshery Design. The original source file is not stored and cannot be downloaded later. The export function will generate a new file based on the **current** state of your design.
+No. When a file is imported, it is converted into a native Design. The original source file is not stored and cannot be downloaded later. The export function will generate a new file based on the **current** state of your design.
 > For more details, see the [Exporting Designs](/kanvas/designer/export-designs/) guide.
 
 </details>

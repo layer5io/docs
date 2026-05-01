@@ -9,7 +9,7 @@ autoplay: true  # optional
 loop: true #optional
 categories: [Designer]
 formats: [video]
-tags: [catalog]
+tags: [catalog, designs, publishing]
 duraiton: 0:39
 ---
 
