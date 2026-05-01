@@ -23,7 +23,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[90 255 121 216 408 51]" src="../../cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[128 142 154 391 480 454]" src="../../cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -54,7 +54,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[430 353 219 190 347 243]" src="../../cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[183 213 453 74 131 13]" src="../../cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -86,7 +86,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[218 457 363 358 333 280]" src="./images/Slide51.svg" onclick="openModal(this.id)" alt="Flow for sharing design" 
+ &lt;img id="[431 253 31 221 69 339]" src="./images/Slide51.svg" onclick="openModal(this.id)" alt="Flow for sharing design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -94,4 +94,10 @@
  Content Visibility
  &lt;a href="#content-visibility" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Each item in the catalog comes with an associated level of visibility.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Each item in the catalog comes with an associated level of visibility.&lt;/p&gt;</description></item><item><title>Pinning Models to Dock</title><link>/videos/getting-started/basics/pinning-models-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/pinning-models-to-dock/</guid><description>&lt;div class="yt-embed-container"&gt;
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8lQ6ed_1Tss?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Transcript:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Five has found that he frequently references the same set of models while designing. If you know that you’ll be using components from a model frequently, you can pin that model for easy retrieval of its components.
+To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the model. The model will now be accessible in the dock for quick use.&lt;/p&gt;</description></item></channel></rss>

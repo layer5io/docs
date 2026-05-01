@@ -14,7 +14,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[292 303 247 178 298 192]" src="../../cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[397 119 294 334 394 474]" src="../../cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -143,18 +143,15 @@
  &lt;a href="#user-accounts" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Anyone who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five&amp;rsquo;s profile.&lt;/p&gt;
-&lt;!-- 
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #EBC017;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #EBC017;"&gt;TODO&lt;/h4&gt;
- 
- Insert Five&amp;rsquo;s user profile here.
- 
-&lt;/div&gt;
-
- --&gt;
-&lt;p&gt;Your user account can own resources such as workspaces, designs, connections, credentials, tokens, Any time you take any action on Layer5 Cloud such as creating a design or reviewing a deployment request, the action is attributed to your user account.&lt;/p&gt;</description></item></channel></rss>
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ &lt;strong&gt;Five&lt;/strong&gt; — Platform Engineer
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../images/five/1.svg" alt="Five" style="width:70px; float:right; margin-left:1rem;" /&gt;
+&lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Orbital Labs&lt;br&gt;
+&lt;strong&gt;Role:&lt;/strong&gt; User (Platform Engineer)&lt;br&gt;
+&lt;strong&gt;Plan:&lt;/strong&gt; Team&lt;/p&gt;
+&lt;p&gt;Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.&lt;/p&gt;</description></item></channel></rss>

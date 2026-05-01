@@ -84,7 +84,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[456 484 173 202 130 242]" src="../../cloud/security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
+ &lt;img id="[354 153 292 192 168 126]" src="../../cloud/security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
  class="md-image-responsive image-center-no-shadow" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -107,7 +107,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[226 333 466 296 58 21]" src="../../cloud/security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
+ &lt;img id="[21 104 117 13 166 331]" src="../../cloud/security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/p&gt;
@@ -251,7 +251,14 @@
 &lt;ul&gt;
 &lt;li&gt;Min: 0, Max: many&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Security</title><link>/cloud/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/</guid><description>&lt;p&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Security</title><link>/cloud/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/</guid><description>&lt;p&gt;Layer5 Cloud provides a multi-tenant security model designed to manage access across complex organizational structures. This section covers the core components of our Identity and Access Management (IAM) system.&lt;/p&gt;
+
+&lt;h2 id="security-architecture" class="heading-link"&gt;
+ Security Architecture
+ &lt;a href="#security-architecture" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The following diagram illustrates the relationship between Organizational Units, Roles, and the underlying Permissions:&lt;/p&gt;
+&lt;p&gt;
 
 
 
@@ -259,6 +266,13 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[146 301 448 452 479 215]" src="../../cloud/security/images/permissions.svg" onclick="openModal(this.id)" alt="permission" 
+ &lt;img id="[8 265 173 34 30 108]" src="../../cloud/security/images/permissions.svg" onclick="openModal(this.id)" alt="permission" 
  class="md-image-responsive image-center-shadow" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;/div&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h2 id="organizational-units" class="heading-link"&gt;
+ Organizational Units
+ &lt;a href="#organizational-units" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud uses a hierarchical structure to isolate resources and manage users at scale:&lt;/p&gt;</description></item></channel></rss>
