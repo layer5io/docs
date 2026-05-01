@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.47</title><link>/cloud/reference/releases/v1.0.47/</link><pubDate>Fri, 01 May 2026 16:04:28 +0000</pubDate><guid>/cloud/reference/releases/v1.0.47/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.48</title><link>/cloud/reference/releases/v1.0.48/</link><pubDate>Fri, 01 May 2026 16:37:58 +0000</pubDate><guid>/cloud/reference/releases/v1.0.48/</guid><description>&lt;h2 id="-bugfix" class="heading-link"&gt;
+ 🐛 Bugfix
+ &lt;a href="#-bugfix" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/layer5io/meshery-cloud/commit/01268359adc6d84b2d7de3e0030f9882e8cd1bcd"&gt;fix(recaptcha): enhance logging for partially configured reCAPTCHA with environment details&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump react-dom from 19.2.4 to 19.2.5 in /ui @dependabot (#5167)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump react-router-dom from 7.14.0 to 7.14.2 in /ui @dependabot (#5166)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@dependabot and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.47</title><link>/cloud/reference/releases/v1.0.47/</link><pubDate>Fri, 01 May 2026 16:04:28 +0000</pubDate><guid>/cloud/reference/releases/v1.0.47/</guid><description>&lt;ul&gt;
 &lt;li&gt;[Server][UI] Enforce reCAPTCHA on staging+localhost and align form column to OAuth-button width @pontusringblom (#5165)&lt;/li&gt;
 &lt;/ul&gt;
 
