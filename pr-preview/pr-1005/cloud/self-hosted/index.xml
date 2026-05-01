@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self-Hosted on Layer5 Documentation</title><link>/cloud/self-hosted/</link><description>Recent content in Self-Hosted on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/self-hosted/index.xml" rel="self" type="application/rss+xml"/><item><title>Customizing Webhooks</title><link>/cloud/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 offers on-premises installation of its &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;, Layer5 Cloud. In this guide, we will walk through configurable webhooks that Layer5 Cloud uses internally to automate tasks and how you can customize these webhooks to integrate with your existing tools.&lt;/p&gt;
+
+&lt;h2 id="customize-and-add-your-own-custom-webhook" class="heading-link"&gt;
+ Customize and add your own custom webhook
+ &lt;a href="#customize-and-add-your-own-custom-webhook" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud&amp;rsquo;s webhook configurations are managed through environment variables defined in &lt;strong&gt;.env&lt;/strong&gt; files. Here&amp;rsquo;s how you can customize them:&lt;/p&gt;</description></item><item><title>Email / SMTP Troubleshooting</title><link>/cloud/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/operating/smtp/</guid><description>&lt;h1 id="email-debugging-guide-for-layer5-cloud" class="heading-link"&gt;
+ Email Debugging Guide for Layer5 Cloud
+ &lt;a href="#email-debugging-guide-for-layer5-cloud" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.&lt;/p&gt;</description></item></channel></rss>

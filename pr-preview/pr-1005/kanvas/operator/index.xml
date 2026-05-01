@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Navigating Operator on Layer5 Documentation</title><link>/kanvas/operator/</link><description>Recent content in Navigating Operator on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/operator/index.xml" rel="self" type="application/rss+xml"/><item><title>Instance Details</title><link>/kanvas/operator/resource-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/resource-details/</guid><description>&lt;p&gt;In Kanvas, the Instance Details tab provides a detailed view of Kubernetes resources such as Nodes, Pods, Deployments, and more. This tab is essential for understanding the configuration and status of individual resources within your Kubernetes cluster.
+The Instance Details tab is accessible when you select a specific Kubernetes resource from the Resources tab. It allows you to view and manage the details of that resource, including its configuration, status, and associated events.&lt;/p&gt;</description></item><item><title>Views in Operator</title><link>/kanvas/operator/views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/views/</guid><description>&lt;p&gt;The Views tab is located on the right side of the screen just beside the Details tab in Kanvas Operator. It allows you to see all containers the present in your Kubernetes cluster. Think of views for Operator mode as you would design for the Designer mode.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[346 197 28 224 44 237]" src="../../kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id="managing-views" class="heading-link"&gt;
+ Managing Views
+ &lt;a href="#managing-views" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s what you can do with views in Operator:&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &amp;ldquo;last mile&amp;rdquo; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the &lt;code&gt;kubectl exec&lt;/code&gt; command, but web-based.&lt;/p&gt;</description></item><item><title>Log Streaming</title><link>/kanvas/operator/log-streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/log-streaming/</guid><description>&lt;p&gt;Efficient troubleshooting requires immediate visibility into your application&amp;rsquo;s behavior. The &lt;strong&gt;Log Streamer&lt;/strong&gt; in Kanvas allows you to live-tail logs from your Kubernetes pods and containers directly within the visual topology. Unlike static log files, this feature provides a real-time, multiplexed view of your infrastructure&amp;rsquo;s activities, enabling you to debug interactions between services without leaving the Kanvas interface.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kanvas Log Streaming is part of the &lt;strong&gt;Operator&lt;/strong&gt; mode (Visualizer). It establishes a persistent, low-latency connection to your cluster resources, allowing you to stream &lt;code&gt;stdout&lt;/code&gt; and &lt;code&gt;stderr&lt;/code&gt; logs from one or multiple pods simultaneously.&lt;/p&gt;</description></item></channel></rss>
