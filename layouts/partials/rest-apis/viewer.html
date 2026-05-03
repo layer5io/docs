@@ -404,7 +404,7 @@
                 {{ range $server := $servers }}
                   {{ $serverUrl := index $server "url" | default "" }}
                   {{ $serverDescription := index $server "description" | default "Layer5 Cloud URL" }}
-                  <div class="rest-api-try-item">
+                  <div class="rest-api-try-item" data-base-url="{{ $serverUrl }}">
                     <p class="rest-api-try-item__label">{{ $serverDescription }}</p>
                     <code class="rest-api-try-item__url">{{ printf "%s%s" $serverUrl $operationPath }}</code>
                   </div>

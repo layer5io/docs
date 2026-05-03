@@ -180,11 +180,10 @@ class RESTAPIExecutor {
     if (!trySection) return ['https://cloud.layer5.io'];
 
     const servers = [];
-    const urlElements = trySection.querySelectorAll('.rest-api-try-item__url');
-    urlElements.forEach(el => {
-      const url = el.textContent.trim();
-      const baseUrl = url.replace(/\/[^/]*$/, ''); // Remove path, keep base
-      if (!servers.includes(baseUrl)) {
+    const tryItems = trySection.querySelectorAll('.rest-api-try-item');
+    tryItems.forEach(item => {
+      const baseUrl = item.dataset.baseUrl;
+      if (baseUrl && !servers.includes(baseUrl)) {
         servers.push(baseUrl);
       }
     });
