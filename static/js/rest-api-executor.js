@@ -26,8 +26,10 @@ class RESTAPIExecutor {
     buttons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
-        const operationId = button.dataset.operationId;
-        this.executeRequest(operationId);
+        const operationPanel = button.closest('[data-operation-panel]');
+        if (operationPanel) {
+          this.executeRequest(operationPanel);
+        }
       });
     });
   }
@@ -53,13 +55,12 @@ class RESTAPIExecutor {
   }
 
   /**
-   * Execute an API request for the given operation
-   * @param {string} operationId - The ID of the operation to execute
+   * Execute an API request for the given operation panel
+   * @param {Element} operationPanel - The operation panel element
    */
-  async executeRequest(operationId) {
-    const operationPanel = document.querySelector(`[data-operation-id="${operationId}"]`);
+  async executeRequest(operationPanel) {
     if (!operationPanel) {
-      console.error(`Operation panel not found for ${operationId}`);
+      console.error('Operation panel not found');
       return;
     }
 
