@@ -33,17 +33,20 @@ class RESTAPIExecutor {
   }
 
   /**
-   * Set up input listeners for real-time parameter updates
+   * Set up input listeners for real-time parameter updates using event delegation
    */
   setupParameterInputs() {
-    const inputs = document.querySelectorAll('[data-parameter-input]');
-    inputs.forEach(input => {
-      input.addEventListener('change', () => {
-        this.updatePreviewUrl();
-      });
-      input.addEventListener('input', () => {
-        this.updatePreviewUrl();
-      });
+    document.addEventListener('change', (e) => {
+      if (e.target.matches('[data-parameter-input]')) {
+        const panel = e.target.closest('[data-operation-panel]');
+        if (panel) this.updatePreviewUrl(panel);
+      }
+    });
+    document.addEventListener('input', (e) => {
+      if (e.target.matches('[data-parameter-input]')) {
+        const panel = e.target.closest('[data-operation-panel]');
+        if (panel) this.updatePreviewUrl(panel);
+      }
     });
   }
 
@@ -283,9 +286,10 @@ class RESTAPIExecutor {
 
   /**
    * Update the preview URL when parameters change
+   * @param {Element} operationPanel - Optional specific panel to update. If not provided, updates all panels.
    */
-  updatePreviewUrl() {
-    const panels = document.querySelectorAll('[data-operation-panel]');
+  updatePreviewUrl(operationPanel) {
+    const panels = operationPanel ? [operationPanel] : document.querySelectorAll('[data-operation-panel]');
     panels.forEach(panel => {
       const preview = panel.querySelector('[data-url-preview]');
       if (preview) {
