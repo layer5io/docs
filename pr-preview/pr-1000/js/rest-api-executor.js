@@ -156,8 +156,7 @@ class RESTAPIExecutor {
    * @returns {string} HTTP method
    */
   extractMethod(operationPanel) {
-    const badge = operationPanel.querySelector('.rest-api-method-badge');
-    return badge ? badge.textContent.toLowerCase() : 'get';
+    return operationPanel.dataset.operationMethod || 'get';
   }
 
   /**
