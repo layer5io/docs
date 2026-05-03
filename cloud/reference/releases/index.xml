@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.49</title><link>/cloud/reference/releases/v1.0.49/</link><pubDate>Fri, 01 May 2026 16:58:42 +0000</pubDate><guid>/cloud/reference/releases/v1.0.49/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.50</title><link>/cloud/reference/releases/v1.0.50/</link><pubDate>Sun, 03 May 2026 17:03:33 +0000</pubDate><guid>/cloud/reference/releases/v1.0.50/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(events): pin return-user-event action so the dedup guard actually matches @leecalcote (#5181)&lt;/li&gt;
+&lt;li&gt;chore: ignore worktree dirs in git and docker @pontusringblom (#5177)&lt;/li&gt;
+&lt;li&gt;fix(dao): write return-user events to event_trackers + add org/domain resolution design doc @pontusringblom (#5176)&lt;/li&gt;
+&lt;li&gt;fix: restore UI build compatibility after package upgrade @miacycle (#5178)&lt;/li&gt;
+&lt;li&gt;fix(auth): break /logout redirect loop by using Kratos UpdateLogoutFlow API @pontusringblom (#5174)&lt;/li&gt;
+&lt;li&gt;fix: remove noisy HandleLogin start log @pontusringblom (#5175)&lt;/li&gt;
+&lt;li&gt;chore: update UI package versions @miacycle (#5173)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Exoscale v0.6.33 content update @l5io (#5182)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @carlosriosilva, @hamza-mohd, @l5io, @leecalcote, @meshery-ci, @miacycle and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.49</title><link>/cloud/reference/releases/v1.0.49/</link><pubDate>Fri, 01 May 2026 16:58:42 +0000</pubDate><guid>/cloud/reference/releases/v1.0.49/</guid><description>&lt;ul&gt;
 &lt;li&gt;chore: upgrade ui package dependencies @miacycle (#5172)&lt;/li&gt;
 &lt;/ul&gt;
 
