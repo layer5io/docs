@@ -68,6 +68,13 @@ class RESTAPIExecutor {
       // Get operation metadata from data attributes
       const operation = this.getOperationMetadata(operationPanel);
       
+      // Validate required parameters before executing
+      const validationError = this.validateRequiredParameters(operationPanel);
+      if (validationError) {
+        this.displayError(operationPanel, validationError);
+        return;
+      }
+      
       // Build the complete URL with parameters
       const url = this.buildRequestUrl(operationPanel, operation);
       
@@ -139,6 +146,32 @@ class RESTAPIExecutor {
       }
       this.setLoadingState(operationPanel, false);
     }
+  }
+
+  /**
+   * Validate that all required parameters are provided
+   * @param {Element} operationPanel - The operation panel element
+   * @returns {Error|null} Error object if validation fails, null otherwise
+   */
+  validateRequiredParameters(operationPanel) {
+    const requiredInputs = operationPanel.querySelectorAll('[data-parameter-input][required]');
+    const missingParams = [];
+
+    requiredInputs.forEach(input => {
+      if (!input.value || input.value.trim() === '') {
+        const paramName = input.dataset.parameterName;
+        const paramLocation = input.dataset.parameterLocation;
+        missingParams.push(`${paramName} (${paramLocation})`);
+      }
+    });
+
+    if (missingParams.length > 0) {
+      const error = new Error(`Required parameters are missing: ${missingParams.join(', ')}`);
+      error.validationError = true;
+      return error;
+    }
+
+    return null;
   }
 
   /**
