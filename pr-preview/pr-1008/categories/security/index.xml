@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Layer5 Documentation</title><link>/categories/security/</link><description>Recent content in Security on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Organization Roles</title><link>/cloud/security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Default Organization Roles
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="organization-administrators" class="heading-link"&gt;
+ Organization Administrators
+ &lt;a href="#organization-administrators" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of an organization (for each organization for which the user has this role assigned)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Organization Owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of new organization or User Account creation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Workspace Roles</title><link>/cloud/security/roles/workspace-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/workspace-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/security/images/workspace-roles.svg" link="images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="workspace-administrator" class="heading-link"&gt;
+ Workspace Administrator
+ &lt;a href="#workspace-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of a workspace along with curation of content for the organization&amp;rsquo;s catalog (for each organization for which the user has this role assigned)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators or Workspace Owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of a new workspace&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Keychains</title><link>/cloud/security/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/keychains/</guid><description>&lt;p&gt;In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a &lt;a href="../../cloud/security/roles/"&gt;role&lt;/a&gt;. Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.&lt;/p&gt;
+&lt;p&gt;For instance, consider a system shipped default keychain &lt;code&gt;Team Management&lt;/code&gt;, which is a collection of eight keys: &lt;code&gt;View All Teams&lt;/code&gt;, &lt;code&gt;Add User to Team&lt;/code&gt;, &lt;code&gt;Invite User to Team&lt;/code&gt;, &lt;code&gt;Remove User from Team&lt;/code&gt;, &lt;code&gt;Create Team&lt;/code&gt;, &lt;code&gt;Delete Team&lt;/code&gt;, &lt;code&gt;Remove User Role from Team&lt;/code&gt;, and &lt;code&gt;Assign User Role in a Team&lt;/code&gt;. This implies that you can perform all these operations only if your user account possesses a role to which &lt;code&gt;Team Management&lt;/code&gt; keychain is assigned in a given organization.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/security/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/keys/</guid><description>&lt;p&gt;In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a &lt;a href="../../cloud/security/keychains/"&gt;keychain&lt;/a&gt;. Then this keychain can be assigned to a &lt;a href="../../cloud/security/roles/"&gt;role&lt;/a&gt; and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.&lt;/p&gt;
+&lt;p&gt;For instance, consider a system shipped default key &lt;code&gt;Create Organization&lt;/code&gt;, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have &lt;code&gt;Create Organization&lt;/code&gt; key assigned to a keychain, which, in turn, is assigned to a role that&amp;rsquo;s associated with your user account for a given organization.&lt;/p&gt;</description></item><item><title>Roles</title><link>/cloud/security/roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/</guid><description>&lt;p&gt;Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[290 65 456 8 443 492]" src="../../cloud/security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
+ class="md-image-responsive image-center-no-shadow" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h2 id="provider-admin-role" class="heading-link"&gt;
+ Provider Admin Role
+ &lt;a href="#provider-admin-role" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ &lt;a href='https://docs.layer5.io/cloud/reference/default-permissions/#Provider+Admin' target='_blank'&gt;Provider Admin Role&lt;/a&gt;
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[148 218 37 58 392 498]" src="../../cloud/security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for administration of Layer5 Cloud.&lt;/li&gt;
+&lt;li&gt;Used for debugging and monitoring.&lt;/li&gt;
+&lt;li&gt;Applicable to platform engineering team and on-prem users.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Team Roles</title><link>/cloud/security/roles/team-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/team-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Default Team Roles
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/security/images/team-roles.svg" link="images/team-roles.svg" width="100%" alt="Team Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="team-administrator" class="heading-link"&gt;
+ Team Administrator
+ &lt;a href="#team-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Administration of teams&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrator or Team owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creation of new team or User Account creation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Min: 1, Max: many (based on plan)&lt;/li&gt;
+&lt;li&gt;Only first Team Admin would be the owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default User Role</title><link>/cloud/security/roles/user-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/user-role/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Default User Role
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/security/images/user-role.svg" link="images/user-role.svg" width="100%" alt="User Role" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="user" class="heading-link"&gt;
+ User
+ &lt;a href="#user" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To grant Organization members access to basic features and resources within the context of that Organization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators, Workspace Administrators and Team Administrators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically assigned to members on joining an Organization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Sessions</title><link>/cloud/security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/sessions/</guid><description>&lt;h2 id="what-sessions-are" class="heading-link"&gt;
+ What sessions are
+ &lt;a href="#what-sessions-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ Academy Administrator
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="academy-administrator" class="heading-link"&gt;
+ Academy Administrator
+ &lt;a href="#academy-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Management of an organization&amp;rsquo;s academy, learner management, and access to academy instructor console.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organization Administrators&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Manually assigned by an Organization Administrator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Min: 0, Max: many&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Security</title><link>/cloud/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/</guid><description>&lt;p&gt;Layer5 Cloud provides a multi-tenant security model designed to manage access across complex organizational structures. This section covers the core components of our Identity and Access Management (IAM) system.&lt;/p&gt;
+
+&lt;h2 id="security-architecture" class="heading-link"&gt;
+ Security Architecture
+ &lt;a href="#security-architecture" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The following diagram illustrates the relationship between Organizational Units, Roles, and the underlying Permissions:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[330 402 75 489 279 484]" src="../../cloud/security/images/permissions.svg" onclick="openModal(this.id)" alt="permission" 
+ class="md-image-responsive image-center-shadow" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h2 id="organizational-units" class="heading-link"&gt;
+ Organizational Units
+ &lt;a href="#organizational-units" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud uses a hierarchical structure to isolate resources and manage users at scale:&lt;/p&gt;</description></item></channel></rss>
