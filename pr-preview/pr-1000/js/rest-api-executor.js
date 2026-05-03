@@ -37,9 +37,11 @@ class RESTAPIExecutor {
    */
   setupParameterInputs() {
     document.addEventListener('change', (e) => {
-      if (e.target.matches('[data-parameter-input]')) {
-        const panel = e.target.closest('[data-operation-panel]');
-        if (panel) this.updatePreviewUrl(panel);
+      const panel = e.target.closest('[data-operation-panel]');
+      if (panel) {
+        if (e.target.matches('[data-parameter-input]') || e.target.matches('[data-server-select]')) {
+          this.updatePreviewUrl(panel);
+        }
       }
     });
     document.addEventListener('input', (e) => {
