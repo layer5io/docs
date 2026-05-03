@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Helm on Layer5 Documentation</title><link>/tags/helm/</link><description>Recent content in Helm on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/helm/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploying Layer5 Cloud</title><link>/cloud/self-hosted/deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/deployment/</guid><description>&lt;h2 id="high-level-list-of-deployment-tasks" class="heading-link"&gt;
+ High-level List of Deployment Tasks
+ &lt;a href="#high-level-list-of-deployment-tasks" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+ &lt;li&gt;Review the prequisites for installing Layer5 Cloud on Kubernetes. (&lt;a href="#prerequisites"&gt;docs&lt;/a&gt;)&lt;/li&gt;
+ &lt;li&gt;Prepare INIT_CONFIG parameters for initial setup&lt;/li&gt;
+ &lt;li&gt;Install Layer5 Cloud on Kubernetes using Helm. Deploy it's services in Kubernetes in-cluster. (&lt;a href="#installation"&gt;docs&lt;/a&gt;)&lt;/li&gt;
+ &lt;li&gt;Meshery deployments are separate from &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Remote Provider&lt;/a&gt; deployments (Layer5 Cloud). Deploy Meshery in Kubernetes in-cluster (or out-of-cluster). (&lt;a href="https://docs.meshery.io/installation/quick-start"&gt;docs&lt;/a&gt;)&lt;/li&gt;
+ &lt;li&gt;Configure Meshery Server point to your Remote Provider. Learn more about the Meshery Server registration process with Remote Providers. (&lt;a href="https://docs.meshery.io/extensibility/providers#meshery-server-registration"&gt;docs&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="kubernetes-based-installation-with-helm" class="heading-link"&gt;
+ Kubernetes-based Installation with Helm
+ &lt;a href="#kubernetes-based-installation-with-helm" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Layer5 offers on-premises installation of its &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;: Layer5 Cloud. Available in the &lt;a href="https://docs.layer5.io/charts"&gt;Layer5 Helm repository&lt;/a&gt; is the layer5-cloud chart, which contains two subcharts. See the Helm repo &lt;a href="https://docs.layer5.io/charts/index.yaml"&gt;index&lt;/a&gt; for details.&lt;/p&gt;</description></item></channel></rss>
