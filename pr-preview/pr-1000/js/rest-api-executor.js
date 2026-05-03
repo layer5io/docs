@@ -177,18 +177,18 @@ class RESTAPIExecutor {
   /**
    * Extract available servers from panel
    * @param {Element} operationPanel - The operation panel element
-   * @returns {Array} Server URLs
+   * @returns {Array} Server URLs from the server selector dropdown
    */
   extractServers(operationPanel) {
-    const trySection = operationPanel.querySelector('.rest-api-section--try');
-    if (!trySection) return ['https://cloud.layer5.io'];
+    const serverSelect = operationPanel.querySelector('[data-server-select]');
+    if (!serverSelect) return ['https://cloud.layer5.io'];
 
     const servers = [];
-    const tryItems = trySection.querySelectorAll('.rest-api-try-item');
-    tryItems.forEach(item => {
-      const baseUrl = item.dataset.baseUrl;
-      if (baseUrl && !servers.includes(baseUrl)) {
-        servers.push(baseUrl);
+    const options = serverSelect.querySelectorAll('option');
+    options.forEach(option => {
+      const url = option.value;
+      if (url && !servers.includes(url)) {
+        servers.push(url);
       }
     });
 
