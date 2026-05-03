@@ -234,7 +234,7 @@ class RESTAPIExecutor {
   /**
    * Get parameter values from inputs
    * @param {Element} operationPanel - The operation panel element
-   * @param {string} location - Parameter location (path, query, header, cookie)
+   * @param {string} location - Parameter location (path, query, or header)
    * @returns {Object} Parameter values
    */
   getParameterValues(operationPanel, location) {
