@@ -72,7 +72,7 @@
 
 //main sections
 .td-outer {
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .td-main main {
@@ -85,6 +85,7 @@
 
 body {
   overflow-x: hidden;
+  padding-top: 5.5rem;
 }
 
 // Main Middle Body
@@ -815,4 +816,16 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .td-navbar {
+    top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  body {
+    padding-top: 0;
+  }
 }
