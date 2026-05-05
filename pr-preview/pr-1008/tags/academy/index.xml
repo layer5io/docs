@@ -17,7 +17,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[179 134 259 226 271 235]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[175 202 235 494 462 130]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
 &lt;p&gt;Here, you can achieve:&lt;/p&gt;
@@ -38,14 +38,22 @@
  Prerequisites
  &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Academy</title><link>/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/</guid><description>&lt;p&gt;&lt;strong&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is a platform that provides a comprehensive learning experience for anyone beginning their journey into cloud native infrastructure or advancing along that path.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id="it-organizes-content-into-three-key-formats" class="heading-link"&gt;
+ It organizes content into three key formats:
+ &lt;a href="#it-organizes-content-into-three-key-formats" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Learning Paths&lt;/strong&gt;: Guided sequences of courses that break down complex topics into manageable modules.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Challenges&lt;/strong&gt;: Practical exercises that focus on solving specific problems, often structured in a competitive or scenario-based format.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Certifications&lt;/strong&gt;: Formal assessments that validate professional skills and provide recognized credentials.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/concepts/identity-and-access/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Academy Administrator
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
+ &lt;img src="../../cloud/concepts/identity-and-access/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -96,15 +104,7 @@
 &lt;li&gt;Challenges = the garden competition - focused skill challenges&lt;/li&gt;
 &lt;li&gt;Certifications = master gardener diploma - expertise validation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Academy</title><link>/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/</guid><description>&lt;p&gt;&lt;strong&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is a platform that provides a comprehensive learning experience for anyone beginning their journey into cloud native infrastructure or advancing along that path.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h5 id="it-organizes-content-into-three-key-formats" class="heading-link"&gt;
- It organizes content into three key formats:
- &lt;a href="#it-organizes-content-into-three-key-formats" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;Learning Paths&lt;/strong&gt;: Guided sequences of courses that break down complex topics into manageable modules.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Challenges&lt;/strong&gt;: Practical exercises that focus on solving specific problems, often structured in a competitive or scenario-based format.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Certifications&lt;/strong&gt;: Formal assessments that validate professional skills and provide recognized credentials.&lt;/p&gt;</description></item><item><title>Academy Instructor Console Guide</title><link>/cloud/academy/creating-content/instructor-console-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/instructor-console-guide/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy/instructors-console"&gt;Academy Instructor Console&lt;/a&gt; serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.&lt;/p&gt;
+&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Academy Instructor Console Guide</title><link>/cloud/academy/creating-content/instructor-console-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/instructor-console-guide/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy/instructors-console"&gt;Academy Instructor Console&lt;/a&gt; serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.&lt;/p&gt;
 
 &lt;h3 id="gaining-access" class="heading-link"&gt;
  Gaining Access
@@ -133,7 +133,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[203 330 395 221 127 285]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[162 22 133 275 350 486]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -145,7 +145,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[204 182 177 149 23 55]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[192 178 225 134 401 467]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -168,7 +168,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[439 36 279 186 140 66]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[74 105 382 278 466 272]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;

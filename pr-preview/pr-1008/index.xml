@@ -57,13 +57,14 @@
  2. Adding Videos to Your Category
  &lt;a href="#2-adding-videos-to-your-category" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Customizing Webhooks</title><link>/cloud/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 offers on-premises installation of its &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;, Layer5 Cloud. In this guide, we will walk through configurable webhooks that Layer5 Cloud uses internally to automate tasks and how you can customize these webhooks to integrate with your existing tools.&lt;/p&gt;
+&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Customizing Webhooks</title><link>/cloud/guides/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 offers on-premises installation of its &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;, Layer5 Cloud. In this guide, we will walk through configurable webhooks that Layer5 Cloud uses internally to automate tasks and how you can customize these webhooks to integrate with your existing tools.&lt;/p&gt;
 
 &lt;h2 id="customize-and-add-your-own-custom-webhook" class="heading-link"&gt;
  Customize and add your own custom webhook
  &lt;a href="#customize-and-add-your-own-custom-webhook" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud&amp;rsquo;s webhook configurations are managed through environment variables defined in &lt;strong&gt;.env&lt;/strong&gt; files. Here&amp;rsquo;s how you can customize them:&lt;/p&gt;</description></item><item><title>Meshery Server Registration</title><link>/cloud/concepts/meshery-server-registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/meshery-server-registration/</guid><description>&lt;p&gt;Layer5 Cloud is a &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;. When a Meshery Server is configured to use Layer5 Cloud (SaaS or self-hosted), the server &lt;em&gt;registers itself&lt;/em&gt; with Cloud on behalf of the authenticated user. Registration is what makes a particular Meshery Server visible inside Cloud — it appears as a &lt;code&gt;meshery&lt;/code&gt; Connection on the user&amp;rsquo;s account, scoped to their Organization, and becomes the anchor point for everything else the user does through that server (designs, environments, workspaces, events, capabilities).&lt;/p&gt;</description></item><item><title>Metrics</title><link>/cloud/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud&amp;rsquo;s webhook configurations are managed through environment variables defined in &lt;strong&gt;.env&lt;/strong&gt; files. Here&amp;rsquo;s how you can customize them:&lt;/p&gt;</description></item><item><title>Managing Workspaces</title><link>/cloud/guides/workspaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/workspaces/managing-workspaces/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Workspaces. Here, you&amp;rsquo;ll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re new to the concept of Workspaces, we recommend starting with the &lt;a href="./cloud/concepts/spaces/workspaces/"&gt;Workspaces Overview&lt;/a&gt; to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.&lt;/p&gt;</description></item><item><title>Meshery Server Registration</title><link>/cloud/concepts/meshery-server-registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/meshery-server-registration/</guid><description>&lt;p&gt;Layer5 Cloud is a &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;. When a Meshery Server is configured to use Layer5 Cloud (SaaS or self-hosted), the server &lt;em&gt;registers itself&lt;/em&gt; with Cloud on behalf of the authenticated user. Registration is what makes a particular Meshery Server visible inside Cloud — it appears as a &lt;code&gt;meshery&lt;/code&gt; Connection on the user&amp;rsquo;s account, scoped to their Organization, and becomes the anchor point for everything else the user does through that server (designs, environments, workspaces, events, capabilities).&lt;/p&gt;</description></item><item><title>Metrics</title><link>/cloud/concepts/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
 &lt;p&gt;The design catalog can be accessed from the &lt;em&gt;Layer5 Cloud&lt;/em&gt; catalog page at &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt;.&lt;/p&gt;
 
 
@@ -79,10 +80,10 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Five Narrative — Research Plan</title><link>/cloud/about/five-narrative-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/about/five-narrative-plan/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Five Narrative — Research Plan</title><link>/cloud/getting-started/meet-five/five-narrative-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/meet-five/five-narrative-plan/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
  
- This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;.
+ This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see &lt;a href="./cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt;.
  
 &lt;/div&gt;
 
@@ -92,7 +93,7 @@
  Objective
  &lt;a href="#objective" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders (&amp;ldquo;User A&amp;rdquo;, &amp;ldquo;Organization X&amp;rdquo;), every major docs section uses the canonical cast and scenarios defined in &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt;. This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.&lt;/p&gt;</description></item><item><title>Performance Limits and Tuning</title><link>/kanvas/advanced/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/performance/</guid><description>&lt;p&gt;Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders (&amp;ldquo;User A&amp;rdquo;, &amp;ldquo;Organization X&amp;rdquo;), every major docs section uses the canonical cast and scenarios defined in &lt;a href="./cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt;. This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.&lt;/p&gt;</description></item><item><title>Performance Limits and Tuning</title><link>/kanvas/advanced/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/performance/</guid><description>&lt;p&gt;Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.&lt;/p&gt;
 
 &lt;h2 id="performance-limits" class="heading-link"&gt;
  Performance Limits
@@ -110,7 +111,12 @@
  &lt;a href="#configuring-your-layer5-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The first steps in starting with Layer5 are to create an account, verify your email, setup an organization and a workspace, and view your profile.&lt;/p&gt;
-&lt;p&gt;Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/getting-started/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/support/</guid><description>&lt;p&gt;At Layer5 Cloud, we&amp;rsquo;re here to help you every step of the way. If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don&amp;rsquo;t hesitate to reach out to us. Our dedicated support team is committed to providing you with the help and guidance you need.&lt;/p&gt;
+&lt;p&gt;Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.&lt;/p&gt;</description></item><item><title>Sharing a Workspace</title><link>/cloud/guides/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
+ Share designs from Workspaces
+ &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the &lt;code&gt;microservices-baseline&lt;/code&gt; design and test his service changes without touching staging.&lt;/p&gt;
+&lt;p&gt;Here is how Five shares the &lt;code&gt;orbital-dev&lt;/code&gt; workspace with Rex.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/getting-started/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/support/</guid><description>&lt;p&gt;At Layer5 Cloud, we&amp;rsquo;re here to help you every step of the way. If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don&amp;rsquo;t hesitate to reach out to us. Our dedicated support team is committed to providing you with the help and guidance you need.&lt;/p&gt;
 
 &lt;h3 id="contacting-support" class="heading-link"&gt;
  Contacting Support
@@ -143,7 +149,7 @@
 &lt;li&gt;Now you have it. Navigate to &lt;a href="https://playground.meshery.io/"&gt;Meshery Playground&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Go to the Kanvas and you will see your cloned template here. If you con&amp;rsquo;t see it just reload the page.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;You can also publish your own design as a template.&lt;/p&gt;</description></item><item><title>Customizing Layer5 Cloud Deployment with Helm</title><link>/cloud/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/deployment/helm-chart-values/</guid><description>&lt;h2 id="requirements" class="heading-link"&gt;
+&lt;p&gt;You can also publish your own design as a template.&lt;/p&gt;</description></item><item><title>Customizing Layer5 Cloud Deployment with Helm</title><link>/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;h2 id="requirements" class="heading-link"&gt;
  Requirements
  &lt;a href="#requirements" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -648,14 +654,14 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</description></item><item><title>Default Organization Roles</title><link>/cloud/security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;/div&gt;</description></item><item><title>Default Organization Roles</title><link>/cloud/concepts/identity-and-access/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Default Organization Roles
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="./cloud/security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
+ &lt;img src="./cloud/concepts/identity-and-access/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -687,11 +693,11 @@
 &lt;ul&gt;
 &lt;li&gt;Creation of new organization or User Account creation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Workspace Roles</title><link>/cloud/security/roles/workspace-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/workspace-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Workspace Roles</title><link>/cloud/concepts/identity-and-access/roles/workspace-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/roles/workspace-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="./cloud/security/images/workspace-roles.svg" link="images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
+ &lt;img src="./cloud/concepts/identity-and-access/images/workspace-roles.svg" link="images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -742,16 +748,14 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[179 134 259 226 271 235]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[175 202 235 494 462 130]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Meshery&amp;rsquo;s GitHub Integration is a powerful feature that lets you authorize your GitHub account and import infrastructure files into Meshery. These files are then readily available in the Meshery catalog and can be easily opened in the Meshery Playground for viewing and configuration.&lt;/p&gt;
-&lt;p&gt;The GitHub integration offers an alternative to &lt;a href="https://docs.meshery.io/guides/configuration-management/importing-designs"&gt;importing designs from the canvas or through mesheryctl&lt;/a&gt;. It simplifies configuration management and enhances deployment workflow efficiency. By leveraging this integration, you ensure your infrastructure designs are easily accessible and always up-to-date.&lt;/p&gt;</description></item><item><title>Keychains</title><link>/cloud/security/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/keychains/</guid><description>&lt;p&gt;In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a &lt;a href="./cloud/security/roles/"&gt;role&lt;/a&gt;. Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.&lt;/p&gt;
-&lt;p&gt;For instance, consider a system shipped default keychain &lt;code&gt;Team Management&lt;/code&gt;, which is a collection of eight keys: &lt;code&gt;View All Teams&lt;/code&gt;, &lt;code&gt;Add User to Team&lt;/code&gt;, &lt;code&gt;Invite User to Team&lt;/code&gt;, &lt;code&gt;Remove User from Team&lt;/code&gt;, &lt;code&gt;Create Team&lt;/code&gt;, &lt;code&gt;Delete Team&lt;/code&gt;, &lt;code&gt;Remove User Role from Team&lt;/code&gt;, and &lt;code&gt;Assign User Role in a Team&lt;/code&gt;. This implies that you can perform all these operations only if your user account possesses a role to which &lt;code&gt;Team Management&lt;/code&gt; keychain is assigned in a given organization.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/security/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/keys/</guid><description>&lt;p&gt;In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a &lt;a href="./cloud/security/keychains/"&gt;keychain&lt;/a&gt;. Then this keychain can be assigned to a &lt;a href="./cloud/security/roles/"&gt;role&lt;/a&gt; and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.&lt;/p&gt;
-&lt;p&gt;For instance, consider a system shipped default key &lt;code&gt;Create Organization&lt;/code&gt;, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have &lt;code&gt;Create Organization&lt;/code&gt; key assigned to a keychain, which, in turn, is assigned to a role that&amp;rsquo;s associated with your user account for a given organization.&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
+&lt;p&gt;The GitHub integration offers an alternative to &lt;a href="https://docs.meshery.io/guides/configuration-management/importing-designs"&gt;importing designs from the canvas or through mesheryctl&lt;/a&gt;. It simplifies configuration management and enhances deployment workflow efficiency. By leveraging this integration, you ensure your infrastructure designs are easily accessible and always up-to-date.&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/concepts/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -760,7 +764,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[494 329 256 195 374 328]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[12 157 196 202 77 248]" src="./cloud/concepts/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -772,7 +776,7 @@
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Understanding Metrics&lt;/h4&gt;
  
- Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="./cloud/catalog/metrics/"&gt;Metrics&lt;/a&gt;
+ Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="./cloud/concepts/catalog/metrics/"&gt;Metrics&lt;/a&gt;
  
 &lt;/div&gt;
 
@@ -795,7 +799,7 @@
  Exploring the Content Catalog
  &lt;a href="#exploring-the-content-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Your journey begins at the Academy&amp;rsquo;s main catalog page, where you can discover all available learning content.&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/identity/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
+&lt;p&gt;Your journey begins at the Academy&amp;rsquo;s main catalog page, where you can discover all available learning content.&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/guides/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
 
 &lt;h2 id="understanding-organization-context" class="heading-link"&gt;
  Understanding Organization Context
@@ -826,11 +830,40 @@
  Order of Precedence for Organization Settings
  &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Networking</title><link>/cloud/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;h2 id="considerations-of-peer-to-peer-communication" class="heading-link"&gt;
+&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Networking</title><link>/cloud/guides/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;h2 id="considerations-of-peer-to-peer-communication" class="heading-link"&gt;
  Considerations of Peer-to-Peer Communication
  &lt;a href="#considerations-of-peer-to-peer-communication" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience and does so by propagating document (e.g. designs, views, and so on) updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.&lt;/p&gt;</description></item><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
+&lt;p&gt;Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience and does so by propagating document (e.g. designs, views, and so on) updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/cloud/guides/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This guide walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.&lt;/p&gt;
+&lt;p&gt;See &lt;a href="./cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline:&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Workspace&lt;/th&gt;
+ &lt;th&gt;Environment&lt;/th&gt;
+ &lt;th&gt;Teams with Access&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;orbital-staging&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;staging-aws&lt;/code&gt; (EKS + S3 + ElastiCache), &lt;code&gt;staging-azure&lt;/code&gt; (AKS + Azure Blob + Azure Service Bus)&lt;/td&gt;
+ &lt;td&gt;Infrastructure + Development&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;orbital-production&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;prod-aws&lt;/code&gt; (EKS + RDS + S3 + CloudFront + SQS), &lt;code&gt;prod-gcp&lt;/code&gt; (GKE + Cloud SQL + Cloud Storage + Pub/Sub)&lt;/td&gt;
+ &lt;td&gt;Infrastructure only&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
  Step 1: Accessing Designer Mode
  &lt;a href="#step-1-accessing-designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -845,7 +878,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[31 426 60 215 156 409]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[71 474 318 117 465 113]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -886,7 +919,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[297 368 370 471 373 9]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[83 70 354 472 247 100]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -907,14 +940,14 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
  Prerequisites
  &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Default Team Roles</title><link>/cloud/security/roles/team-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/team-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Default Team Roles</title><link>/cloud/concepts/identity-and-access/roles/team-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/roles/team-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Default Team Roles
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="./cloud/security/images/team-roles.svg" link="images/team-roles.svg" width="100%" alt="Team Roles" /&gt;
+ &lt;img src="./cloud/concepts/identity-and-access/images/team-roles.svg" link="images/team-roles.svg" width="100%" alt="Team Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -950,14 +983,14 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 &lt;li&gt;Min: 1, Max: many (based on plan)&lt;/li&gt;
 &lt;li&gt;Only first Team Admin would be the owner&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default User Role</title><link>/cloud/security/roles/user-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/user-role/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default User Role</title><link>/cloud/concepts/identity-and-access/roles/user-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/roles/user-role/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Default User Role
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="./cloud/security/images/user-role.svg" link="images/user-role.svg" width="100%" alt="User Role" /&gt;
+ &lt;img src="./cloud/concepts/identity-and-access/images/user-role.svg" link="images/user-role.svg" width="100%" alt="User Role" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -999,7 +1032,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 &lt;p&gt;Navigate to the &lt;strong&gt;Actions&lt;/strong&gt; button at the top of the Design canvas.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
+&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -1008,7 +1041,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[60 172 83 362 309 436]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[284 202 395 448 292 289]" src="./cloud/concepts/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1022,7 +1055,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
  Top Performers
  &lt;a href="#top-performers" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="./cloud/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="./cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="./cloud/concepts/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="./cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
 &lt;p&gt;Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
 
 &lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
@@ -1080,7 +1113,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[412 161 148 41 430 480]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[64 43 27 411 225 81]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1091,7 +1124,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[64 38 202 336 181 447]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[154 394 111 487 117 340]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1113,21 +1146,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
  What Each Corner Means
  &lt;a href="#what-each-corner-means" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;While the specific badges change depending on your mode, they all follow a consistent placement philosophy. Badges are organized into four quadrants around a component, with each corner reserved for a specific type of information.&lt;/p&gt;</description></item><item><title>Sessions</title><link>/cloud/security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/sessions/</guid><description>&lt;h2 id="what-sessions-are" class="heading-link"&gt;
- What sessions are
- &lt;a href="#what-sessions-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.&lt;/p&gt;</description></item><item><title>Tokens</title><link>/cloud/security/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/tokens/</guid><description>&lt;h2 id="what-tokens-are" class="heading-link"&gt;
- What tokens are
- &lt;a href="#what-tokens-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;For authentication and authorization, a token is a digital object that contains information about the identity of the principal making the request and what kind of access they are authorized for. In most authentication flows, the application—or a library used by the application—exchanges a credential for a token, which determines which resources the application is authorized to access.&lt;/p&gt;
-
-&lt;h2 id="access-tokens" class="heading-link"&gt;
- Access tokens
- &lt;a href="#access-tokens" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud REST API uses &lt;a href="https://oauth.net/2/"&gt;OAuth 2.0&lt;/a&gt; for authentication and authorization. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.&lt;/p&gt;</description></item><item><title>Undeploying Designs</title><link>/kanvas/tasks/designs/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/undeploying-designs/</guid><description>&lt;p&gt;To undeploy the resources&lt;/p&gt;
+&lt;p&gt;While the specific badges change depending on your mode, they all follow a consistent placement philosophy. Badges are organized into four quadrants around a component, with each corner reserved for a specific type of information.&lt;/p&gt;</description></item><item><title>Undeploying Designs</title><link>/kanvas/tasks/designs/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/undeploying-designs/</guid><description>&lt;p&gt;To undeploy the resources&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Navigate to the Actions button at the top of the Design canvas.&lt;/p&gt;
@@ -1144,7 +1163,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[368 441 57 271 401 445]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[24 400 238 487 422 393]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1584,7 +1603,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[137 393 252 438 336 167]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[224 120 265 353 100 122]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1600,7 +1619,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[46 240 193 449 481 349]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[467 293 228 274 397 51]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1616,7 +1635,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[499 285 302 333 84 45]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[207 244 203 468 419 94]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1632,7 +1651,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[369 350 29 388 298 323]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[133 419 121 217 411 86]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1648,7 +1667,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[22 488 413 428 226 8]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[40 240 232 158 354 332]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1664,7 +1683,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[130 163 429 445 324 479]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[391 424 200 111 115 474]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1680,7 +1699,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[192 408 447 239 137 80]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[197 401 485 449 55 208]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1696,7 +1715,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[101 21 173 144 90 12]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[493 393 288 36 252 319]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1712,7 +1731,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[391 327 266 36 239 464]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[463 481 116 337 261 276]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1728,7 +1747,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[40 322 275 190 358 179]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[348 38 391 146 133 22]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1738,7 +1757,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  &lt;/div&gt;
  &lt;div class="tab-body tab-pane fade"
  id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
- &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/identity/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+ &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-access/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
 &lt;h3 id="key-capabilities" class="heading-link"&gt;
@@ -1753,7 +1772,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[443 407 155 236 227 377]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[276 382 279 230 401 3]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1802,14 +1821,14 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  What are Relationships
  &lt;a href="#what-are-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure&amp;rsquo;s architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure&amp;rsquo;s architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/cloud/concepts/identity-and-access/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Academy Administrator
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="./cloud/security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
+ &lt;img src="./cloud/concepts/identity-and-access/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -1870,7 +1889,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[187 376 309 282 46 65]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[393 494 293 274 151 458]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1889,7 +1908,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[141 188 94 424 435 127]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[231 308 96 226 89 480]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -1906,13 +1925,13 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 &lt;li&gt;Challenges = the garden competition - focused skill challenges&lt;/li&gt;
 &lt;li&gt;Certifications = master gardener diploma - expertise validation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Kanvas Snapshots</title><link>/cloud/tutorials/gitops-snapshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/gitops-snapshots/</guid><description>&lt;p&gt;Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.&lt;/p&gt;
+&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Kanvas Snapshots</title><link>/cloud/guides/tutorials/gitops-snapshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/gitops-snapshots/</guid><description>&lt;p&gt;Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.&lt;/p&gt;
 
 &lt;h2 id="layer5-github-app" class="heading-link"&gt;
  Layer5 GitHub App
  &lt;a href="#layer5-github-app" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Monitoring is essential to operate a reliable Layer5 Cloud deployment. Plan for metrics, logs, traces, dashboards, alerting, and retention so that you can detect and resolve issues quickly, understand capacity, and meet compliance needs.&lt;/p&gt;
+&lt;p&gt;In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Monitoring is essential to operate a reliable Layer5 Cloud deployment. Plan for metrics, logs, traces, dashboards, alerting, and retention so that you can detect and resolve issues quickly, understand capacity, and meet compliance needs.&lt;/p&gt;
 
 &lt;h2 id="objectives" class="heading-link"&gt;
  Objectives
@@ -1929,7 +1948,30 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Metrics
  &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
+&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
+ 
+ See all Achievement and all Project badges in the &lt;a href="https://badges.layer5.io"&gt;Badge Gallery&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+&lt;!-- 
+Pending Leaderboard completion
+See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). --&gt;
+
+&lt;h3 id="how-to-earn-badges" class="heading-link"&gt;
+ How to Earn Badges
+ &lt;a href="#how-to-earn-badges" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
 &lt;p&gt;The render mode is a &lt;strong&gt;performance tool&lt;/strong&gt;, not a document property. Switching modes does not change your design — components, relationships, layers, and metadata are identical. It only changes what Kanvas chooses to render on screen.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="./kanvas-comment.png" alt="Comments in Designer" /&gt;
@@ -1945,7 +1987,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Types of Relationships
  &lt;a href="#types-of-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Relationships are categorized into different kinds, types, and subtypes, so that can be expressive of the specific manner in which one or more components relate to one another.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/identity/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
+&lt;p&gt;Relationships are categorized into different kinds, types, and subtypes, so that can be expressive of the specific manner in which one or more components relate to one another.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/concepts/identity-and-access/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -1954,7 +1996,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[456 446 481 185 384 210]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[353 357 400 175 18 314]" src="./cloud/concepts/identity-and-access/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1975,7 +2017,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[326 88 20 390 66 174]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[304 158 274 490 75 446]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2010,7 +2052,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[203 330 395 221 127 285]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[162 22 133 275 350 486]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2022,7 +2064,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[204 182 177 149 23 55]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[192 178 225 134 401 467]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2048,9 +2090,9 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[411 319 483 322 422 41]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[351 267 71 170 99 374]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/identity/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/concepts/identity-and-access/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;Permissions&lt;/th&gt;
@@ -2143,21 +2185,17 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="./cloud/security/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="./cloud/security/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="./cloud/concepts/identity-and-access/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="./cloud/concepts/identity-and-access/roles/"&gt;roles&lt;/a&gt;.
  
 &lt;/div&gt;</description></item><item><title>Instance Details</title><link>/kanvas/operator/resource-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/resource-details/</guid><description>&lt;p&gt;In Kanvas, the Instance Details tab provides a detailed view of Kubernetes resources such as Nodes, Pods, Deployments, and more. This tab is essential for understanding the configuration and status of individual resources within your Kubernetes cluster.
-The Instance Details tab is accessible when you select a specific Kubernetes resource from the Resources tab. It allows you to view and manage the details of that resource, including its configuration, status, and associated events.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
+The Instance Details tab is accessible when you select a specific Kubernetes resource from the Resources tab. It allows you to view and manage the details of that resource, including its configuration, status, and associated events.&lt;/p&gt;</description></item><item><title>Keychains</title><link>/cloud/concepts/identity-and-access/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/keychains/</guid><description>&lt;p&gt;In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a &lt;a href="./cloud/concepts/identity-and-access/roles/"&gt;role&lt;/a&gt;. Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.&lt;/p&gt;
+&lt;p&gt;For instance, consider a system shipped default keychain &lt;code&gt;Team Management&lt;/code&gt;, which is a collection of eight keys: &lt;code&gt;View All Teams&lt;/code&gt;, &lt;code&gt;Add User to Team&lt;/code&gt;, &lt;code&gt;Invite User to Team&lt;/code&gt;, &lt;code&gt;Remove User from Team&lt;/code&gt;, &lt;code&gt;Create Team&lt;/code&gt;, &lt;code&gt;Delete Team&lt;/code&gt;, &lt;code&gt;Remove User Role from Team&lt;/code&gt;, and &lt;code&gt;Assign User Role in a Team&lt;/code&gt;. This implies that you can perform all these operations only if your user account possesses a role to which &lt;code&gt;Team Management&lt;/code&gt; keychain is assigned in a given organization.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="the-multi-repository-model" class="heading-link"&gt;
  The Multi-Repository Model
  &lt;a href="#the-multi-repository-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy platform&lt;/a&gt; is built on a &amp;ldquo;separation of concerns&amp;rdquo; architecture. Instead of a single monolithic repository, we use a multi-repository model where content, style, and build configurations are managed independently. This approach keeps the system modular, simplifies maintenance, and allows teams to work on different parts of the platform concurrently.&lt;/p&gt;</description></item><item><title>Sharing a Workspace</title><link>/cloud/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
- Share designs from Workspaces
- &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the &lt;code&gt;microservices-baseline&lt;/code&gt; design and test his service changes without touching staging.&lt;/p&gt;
-&lt;p&gt;Here is how Five shares the &lt;code&gt;orbital-dev&lt;/code&gt; workspace with Rex.&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy platform&lt;/a&gt; is built on a &amp;ldquo;separation of concerns&amp;rdquo; architecture. Instead of a single monolithic repository, we use a multi-repository model where content, style, and build configurations are managed independently. This approach keeps the system modular, simplifies maintenance, and allows teams to work on different parts of the platform concurrently.&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
 
 
 
@@ -2186,7 +2224,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[434 227 370 171 116 3]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[24 461 257 7 435 76]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2203,36 +2241,8 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 &lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/cloud/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This tutorial walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.&lt;/p&gt;
-&lt;p&gt;See &lt;a href="./cloud/about/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline:&lt;/p&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Workspace&lt;/th&gt;
- &lt;th&gt;Environment&lt;/th&gt;
- &lt;th&gt;Teams with Access&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-staging&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;staging-aws&lt;/code&gt; (EKS + S3 + ElastiCache), &lt;code&gt;staging-azure&lt;/code&gt; (AKS + Azure Blob + Azure Service Bus)&lt;/td&gt;
- &lt;td&gt;Infrastructure + Development&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-production&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;prod-aws&lt;/code&gt; (EKS + RDS + S3 + CloudFront + SQS), &lt;code&gt;prod-gcp&lt;/code&gt; (GKE + Cloud SQL + Cloud Storage + Pub/Sub)&lt;/td&gt;
- &lt;td&gt;Infrastructure only&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
+&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/concepts/identity-and-access/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/keys/</guid><description>&lt;p&gt;In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a &lt;a href="./cloud/concepts/identity-and-access/keychains/"&gt;keychain&lt;/a&gt;. Then this keychain can be assigned to a &lt;a href="./cloud/concepts/identity-and-access/roles/"&gt;role&lt;/a&gt; and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.&lt;/p&gt;
+&lt;p&gt;For instance, consider a system shipped default key &lt;code&gt;Create Organization&lt;/code&gt;, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have &lt;code&gt;Create Organization&lt;/code&gt; key assigned to a keychain, which, in turn, is assigned to a role that&amp;rsquo;s associated with your user account for a given organization.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
 creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.&lt;/p&gt;
 
 &lt;h2 id="getting-started" class="heading-link"&gt;
@@ -2247,7 +2257,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[439 36 279 186 140 66]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[74 105 382 278 466 272]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2279,7 +2289,7 @@ creating learning paths, challenges, and certifications by collecting all necess
  Grouping Components with Tags
  &lt;a href="#grouping-components-with-tags" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>/cloud/spaces/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/workspaces/</guid><description>&lt;p&gt;Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.&lt;/p&gt;
+&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>/cloud/concepts/spaces/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/spaces/workspaces/</guid><description>&lt;p&gt;Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.&lt;/p&gt;
 &lt;p&gt;You can create Workspaces to group related Designs and Environments, define domains of responsibility for your teams, and streamline resource management.&lt;/p&gt;
 
 &lt;h2 id="key-features" class="heading-link"&gt;
@@ -2304,8 +2314,11 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;A Workspace is closely associated with Teams. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.&lt;/li&gt;
 &lt;li&gt;One or more teams can be assigned access to a workspace.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment&amp;rsquo;s connections available to users of the Workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Managing Workspaces</title><link>/cloud/spaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/managing-workspaces/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Workspaces. Here, you&amp;rsquo;ll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;re new to the concept of Workspaces, we recommend starting with the &lt;a href="./cloud/spaces/workspaces/"&gt;Workspaces Overview&lt;/a&gt; to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas let&amp;rsquo;s you export a design in several formats, so you can:&lt;/p&gt;
+&lt;p&gt;After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment&amp;rsquo;s connections available to users of the Workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Sessions</title><link>/cloud/concepts/identity-and-access/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/sessions/</guid><description>&lt;h2 id="what-sessions-are" class="heading-link"&gt;
+ What sessions are
+ &lt;a href="#what-sessions-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas let&amp;rsquo;s you export a design in several formats, so you can:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;keep versioned backups&lt;/li&gt;
 &lt;li&gt;collaborate offline&lt;/li&gt;
@@ -2332,9 +2345,19 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[205 131 80 156 439 238]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[71 433 29 292 334 353]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Tokens</title><link>/cloud/concepts/identity-and-access/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/tokens/</guid><description>&lt;h2 id="what-tokens-are" class="heading-link"&gt;
+ What tokens are
+ &lt;a href="#what-tokens-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;For authentication and authorization, a token is a digital object that contains information about the identity of the principal making the request and what kind of access they are authorized for. In most authentication flows, the application—or a library used by the application—exchanges a credential for a token, which determines which resources the application is authorized to access.&lt;/p&gt;
+
+&lt;h2 id="access-tokens" class="heading-link"&gt;
+ Access tokens
+ &lt;a href="#access-tokens" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud REST API uses &lt;a href="https://oauth.net/2/"&gt;OAuth 2.0&lt;/a&gt; for authentication and authorization. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
 &lt;h2 id="publishing-workflow" class="heading-link"&gt;
  Publishing Workflow
@@ -2381,10 +2404,10 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[278 368 474 456 266 218]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[283 215 328 294 481 20]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/identity/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
-&lt;img src="./cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-access/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;img src="./cloud/concepts/identity-and-access/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
  To change the notification preferences
@@ -26193,7 +26216,7 @@ Thank you to our contributors for making this release possible:
 &lt;p&gt;You can change the logo, color scheme, domain name, and other aspects of the user interface to match your own identity and preferences. White-labeling enables you to offer a seamless and consistent experience to your customers, partners, or internal users who access your service mesh platform. White-labeling also helps you to differentiate your platform from other Layer5 Cloud users and competitors, and to enhance your brand recognition and loyalty.&lt;/p&gt;</description></item><item><title>Default Permissions</title><link>/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/default-permissions/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="./cloud/security/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="./cloud/security/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="./cloud/concepts/identity-and-access/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="./cloud/concepts/identity-and-access/roles/"&gt;roles&lt;/a&gt;.
  
 &lt;/div&gt;
 
@@ -26813,7 +26836,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -26824,7 +26847,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -26835,7 +26858,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -26846,7 +26869,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -26857,7 +26880,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -26868,7 +26891,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -27414,7 +27437,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -27425,7 +27448,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -27436,7 +27459,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -27447,7 +27470,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -27458,7 +27481,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -27469,7 +27492,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -28942,7 +28965,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -28953,7 +28976,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -28964,7 +28987,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -28975,7 +28998,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -28986,7 +29009,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -28997,7 +29020,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -29955,7 +29978,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -29966,7 +29989,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -29977,7 +30000,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -29988,7 +30011,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -29999,7 +30022,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30010,7 +30033,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30556,7 +30579,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30567,7 +30590,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30578,7 +30601,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30589,7 +30612,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30600,7 +30623,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -30611,7 +30634,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31157,7 +31180,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31168,7 +31191,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31179,7 +31202,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31190,7 +31213,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31201,7 +31224,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31212,7 +31235,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31552,7 +31575,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31563,7 +31586,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31574,7 +31597,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31585,7 +31608,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31596,7 +31619,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -31607,7 +31630,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -33080,7 +33103,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -33091,7 +33114,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -33102,7 +33125,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -33113,7 +33136,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -33124,7 +33147,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -33135,7 +33158,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -34505,7 +34528,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -34516,7 +34539,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -34527,7 +34550,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -34538,7 +34561,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -34549,7 +34572,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -34560,7 +34583,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -35415,7 +35438,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -35426,7 +35449,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -35437,7 +35460,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -35448,7 +35471,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -35459,7 +35482,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -35470,7 +35493,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -36325,7 +36348,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -36336,7 +36359,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -36347,7 +36370,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -36358,7 +36381,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -36369,7 +36392,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -36380,7 +36403,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -37235,7 +37258,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -37246,7 +37269,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -37257,7 +37280,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -37268,7 +37291,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -37279,7 +37302,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -37290,7 +37313,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -38351,7 +38374,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -38362,7 +38385,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -38373,7 +38396,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -38384,7 +38407,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -38395,7 +38418,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -38406,7 +38429,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -39261,7 +39284,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -39272,7 +39295,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -39283,7 +39306,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -39294,7 +39317,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -39305,7 +39328,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -39316,7 +39339,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;th&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -40671,7 +40694,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;h2&gt;&lt;a href="./cloud/security/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -50326,7 +50349,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;h2&gt;&lt;a href="./cloud/security/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -60161,7 +60184,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;h2&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -69426,7 +69449,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;h2&gt;&lt;a href="./cloud/security/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -79571,7 +79594,7 @@ Thank you to our contributors for making this release possible:
  
  
  
- &lt;h2&gt;&lt;a href="./cloud/security/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="./cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -89744,7 +89767,7 @@ Thank you to our contributors for making this release possible:
 &lt;!-- example: &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/bb6J--aApk8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
- --&gt;</description></item><item><title>Email / SMTP Troubleshooting</title><link>/cloud/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/operating/smtp/</guid><description>&lt;h1 id="email-debugging-guide-for-layer5-cloud" class="heading-link"&gt;
+ --&gt;</description></item><item><title>Email / SMTP Troubleshooting</title><link>/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;h1 id="email-debugging-guide-for-layer5-cloud" class="heading-link"&gt;
  Email Debugging Guide for Layer5 Cloud
  &lt;a href="#email-debugging-guide-for-layer5-cloud" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h1&gt;
@@ -89754,8 +89777,8 @@ Thank you to our contributors for making this release possible:
  Overview
  &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
-Environments allow you to logically group related &lt;a href="./cloud/spaces/environments/#connections"&gt;Connections&lt;/a&gt; and their associated &lt;a href="./cloud/spaces/environments/#credentials"&gt;Credentials&lt;/a&gt;. Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/concepts/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
+Environments allow you to logically group related &lt;a href="./cloud/concepts/spaces/environments/#connections"&gt;Connections&lt;/a&gt; and their associated &lt;a href="./cloud/concepts/spaces/environments/#credentials"&gt;Credentials&lt;/a&gt;. Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id="overview" class="heading-link"&gt;
  Overview
@@ -89812,30 +89835,7 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/UCKS4eSB7AY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
-&lt;p&gt;Publishing a design lets you make your content visible to any anonymous visitor of &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt; and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
- 
- See all Achievement and all Project badges in the &lt;a href="https://badges.layer5.io"&gt;Badge Gallery&lt;/a&gt;.
- 
-&lt;/div&gt;
-
-
-&lt;!-- 
-Pending Leaderboard completion
-See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). --&gt;
-
-&lt;h3 id="how-to-earn-badges" class="heading-link"&gt;
- How to Earn Badges
- &lt;a href="#how-to-earn-badges" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item><item><title>Search Results</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;h2 id="meshery-extension" class="heading-link"&gt;
+&lt;p&gt;Publishing a design lets you make your content visible to any anonymous visitor of &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt; and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.&lt;/p&gt;</description></item><item><title>Search Results</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;h2 id="meshery-extension" class="heading-link"&gt;
  Meshery Extension
  &lt;a href="#meshery-extension" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
