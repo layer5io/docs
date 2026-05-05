@@ -13,7 +13,7 @@ aliases:
 
 In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. _ConfigMaps_ are used to manage configuration data, while _Secrets_ are used for sensitive information such as passwords. Using Meshery Playground, an interactive live cluster environment, we'll perform hands-on exercises to gain practical knowledge into working with these Kubernetes objects.
 
-> **_NOTE:_** If this is your fist time working with Meshery Playground start with the [Kubernetes Pods with Meshery](/kanvas/tutorials/images/kubernetes-pods.md).
+> **_NOTE:_** If this your fist time working with Meshery Playground start with the [Kubernetes Pods with Meshery](/kanvas/tutorials/images/kubernetes-pods.md).
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. _ConfigMa
 
  - Start with an existing design of a simple MySQL pod. 
  - Add a _ConfigMap_ to set the database name to be created on MySQL pod deployment.
- - Use a _Secret_ to set the MySQL root password.
+ - Use a _Secert_ to set the MySQL root password.
 
 ## Objective
 

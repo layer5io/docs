@@ -89,8 +89,8 @@ Under the “Designs” tab, you will see that we have successfully imported the
 ![Import redis-php-guestbook-dryrun](/kanvas/tutorials/images/screenshots/redis-php-guestbook-dryrun.png)
 1. Finally your deployment and click Deploy to deploy the application to the cluster.
 ![Import redis-php-guestbook-finalize](/kanvas/tutorials/images/screenshots/redis-php-guestbook-finalize.png)
-1. On successful deployment you will see the following modal asking you to open you deployment in visualizer
-![Import redis-php-guestbook-finalize](/kanvas/tutorials/images/screenshots/redis-php-guestbook-deployment.png)
+1. On successful deployment you will see the following modal asking yout o open you deployment in visualizer
+![Import redis-php-guestbook-finalize](/kanvas/tutorials/images/screenshots/redis-php-guestbook-finalize.png)
 
 
 #### 5. **Updating the Deployments:**

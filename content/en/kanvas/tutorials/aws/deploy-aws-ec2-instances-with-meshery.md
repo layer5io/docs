@@ -112,7 +112,7 @@ After configuring your design, the next step is deployment. To learn more about 
 
 1. Click the **Actions** button at the top of the Kanvas and click **Deploy**.
 
-1. Once the deployment is complete, click **Open in Visualizer** to switch to Operator mode and see a pre-filtered view of your just deployed resources in the cluster. Alternatively, you can click *Operate* at the top of the Kanvas to enter **Operator** mode.
+1. Once the deployment is complete, click **Open in Visualizer** to switch to Operator mode and see a pre-filtered view of your just deployed resources in the cluster. Alternatively, you can click *Operate* at the top of the Kanvas to enter Operater mode.
 
     ![Operator Mode](/kanvas/tutorials/images/aws-controllers/controller-operator-mode.png)
 
@@ -120,11 +120,11 @@ To get the filtered view shown above, click the filter icon and adjust the follo
 
   - For `view Selector` select `single namespace`
   - For `Kinds` select `Deployment, Pod, secret`
-  - For `namespace` select `ack-system` 
+  - For `namspace` select `ack-system`
 
 ### 3. Deploy the VPC Workflow
 
-This step involves deploying all the necessary resources to create the VPC and other networking components for the EC2 instance. The resources included in this network topology include:
+This step involves deploying all the necessary resources to create the VPC and other networking components for the EC2 instance. The resources included in this network toplology include:
 
 - 1 VPC
 - 1 Internet Gateway

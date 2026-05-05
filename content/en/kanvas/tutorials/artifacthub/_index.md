@@ -1,3 +1,3 @@
 ---
-title: Artifact Hub 
+title: Artifacthub 
 ---
