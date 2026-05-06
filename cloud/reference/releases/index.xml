@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.60</title><link>/cloud/reference/releases/v1.0.60/</link><pubDate>Wed, 06 May 2026 22:42:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.60/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.61</title><link>/cloud/reference/releases/v1.0.61/</link><pubDate>Wed, 06 May 2026 23:07:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.61/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): cookie Path normalisation (401 after OIDC) + legacy behavior parity + comprehensive test plan @leecalcote (#5228)&lt;/li&gt;
+&lt;li&gt;fix(ui/auth): vertically center carousel in brand-info pane @leecalcote (#5229)&lt;/li&gt;
+&lt;li&gt;test(ui/auth): pin OAuth-clickable contract for /login and /registration @leecalcote (#5227)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.60</title><link>/cloud/reference/releases/v1.0.60/</link><pubDate>Wed, 06 May 2026 22:42:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.60/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
