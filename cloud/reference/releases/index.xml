@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.55</title><link>/cloud/reference/releases/v1.0.55/</link><pubDate>Tue, 05 May 2026 03:35:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.55/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.57</title><link>/cloud/reference/releases/v1.0.57/</link><pubDate>Wed, 06 May 2026 20:08:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.57/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui/auth): restore legacy styling for React-based auth pages @leecalcote (#5220)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/meshery/schemas to v1.2.12 @leecalcote (#5219)&lt;/li&gt;
+&lt;li&gt;feat(hydra): rotate JWKs with overlap; flag drifted CNPG DSN @jamieplu (#5075)&lt;/li&gt;
+&lt;li&gt;fix(build): thread KRATOS_BROWSER_URL through the Docker build pipeline @leecalcote (#5218)&lt;/li&gt;
+&lt;li&gt;fix(test): make TestHandleRegister_WithFlowIDServesReactPage hermetic @arjunmehta-git (#5217)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): notification_preferences Phase B — backfill migration @arjunmehta-git (#5216)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.4 @l5io (#5213)&lt;/li&gt;
+&lt;li&gt;fix: complete RJSF form schema migration — remove last eslint-disable blocks (closes #866) @leecalcote (#5215)&lt;/li&gt;
+&lt;li&gt;fix: migrate RJSF form schema imports from @sistent/sistent to @meshery/schemas @leecalcote (#5214)&lt;/li&gt;
+&lt;li&gt;feat(auth): migrate Kratos auth pages from Go HTML templates to React/Next.js @leecalcote (#5208)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): retire dual-read fallbacks for connections + catalog_data + github metadata (Phase C) @leecalcote (#5211)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): notification_preferences Phase A — canonical writer + dual-read @leecalcote (#5212)&lt;/li&gt;
+&lt;li&gt;fix(teams): flip teams.metadata.member_addition to canonical camelCase @leecalcote (#5200)&lt;/li&gt;
+&lt;li&gt;fix(subscriptions): canonical planId query param + drop dead UI args @leecalcote (#5209)&lt;/li&gt;
+&lt;li&gt;fix(github-webhook): register signature-verified handler on /api/integrations/github/webhook @ritzorama (#5187)&lt;/li&gt;
+&lt;li&gt;fix(security,subscriptions): drop orphan keychainId column; fix forecasted-amount column drift @leecalcote (#5207)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): UI-side snake_case → camelCase audit per identifier-naming contract @leecalcote (#5206)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @jamieplu, @l5io, @leecalcote, @mascot-five, @meshery-ci, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.55</title><link>/cloud/reference/releases/v1.0.55/</link><pubDate>Tue, 05 May 2026 03:35:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.55/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(ui): lock down form-schema source-of-truth contract @leecalcote (#5198)&lt;/li&gt;
 &lt;li&gt;perf(ui): slim bundle, dynamic-load RJSF/recharts, fix rjsf bugs @simihablo (#5196)&lt;/li&gt;
 &lt;li&gt;fix(github): flip GitHub connection metadata keys to canonical camelCase @leecalcote (#5197)&lt;/li&gt;

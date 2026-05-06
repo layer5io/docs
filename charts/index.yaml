@@ -48,6 +48,26 @@ entries:
     version: 0.39.1
   layer5-cloud:
   - apiVersion: v2
+    appVersion: v1.0.57
+    created: "2026-05-06T20:10:31.464459745Z"
+    dependencies:
+    - condition: kratos.enabled
+      name: kratos
+      repository: '@ory'
+      version: 0.60.0
+    - condition: ory/hydra.enabled
+      name: hydra
+      repository: '@ory'
+      version: 0.60.0
+    description: Layer5 Cloud is a collection of services that can be deployed on-premises.
+    digest: bb027dd3bc57958eb2f778eed2cca8d983430723be9b69c42a8d8bf52a5dd55a
+    icon: data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDEuNzMgMTQxLjczIj48dGl0bGU+NS1saWdodC1iZzwvdGl0bGU+PHJlY3QgaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIHg9Ijc5LjYzIiB5PSIyMy45NyIgd2lkdGg9IjM2LjkzIiBoZWlnaHQ9IjE3Ljc5IiBzdHlsZT0iZmlsbDojMDBiMzlmIi8+PHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMTE5LjkyLDgzLjlWNzYuNTNjMC04LjQ5LTcuMTQtMTUuMzctMTUuOTQtMTUuMzdINDQuMzhWNTYuMzFIMjIuNTZ2MjFIOTguMVY4My45WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjxwb2x5Z29uIGlkPSJfUGF0aF8zIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgcG9pbnRzPSI0NC4zOCA1MC41IDQ0LjM4IDQxLjc2IDczLjYgNDEuNzYgNzMuNiAyMy45NyAyMi41NiAyMy45NyAyMi41NiA1MC41IDQ0LjM4IDUwLjUiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNCIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik05OC4xLDg5LjYyVjEwMEg2OC44OHYxNy43OWgzNmExNC43NywxNC43NywwLDAsMCwxNS0xNC40OVY4OS42MloiIHN0eWxlPSJmaWxsOiMwMGQzYTkiLz48cGF0aCBpZD0iX1BhdGhfNSIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik00Mi42Myw5MC41OFYxMDBINjIuODV2MTcuNzloLTI2YTE0Ljc3LDE0Ljc3LDAsMCwxLTE1LTE0LjQ5VjkwLjU4WiIgc3R5bGU9ImZpbGw6IzAwYjM5ZiIvPjwvc3ZnPg==
+    name: layer5-cloud
+    type: application
+    urls:
+    - https://docs.layer5.io/charts/layer5-cloud-v1.0.57.tgz
+    version: v1.0.57
+  - apiVersion: v2
     appVersion: v1.0.56
     created: "2026-05-05T18:59:10.466226778Z"
     dependencies:
@@ -9439,4 +9459,4 @@ entries:
     urls:
     - https://docs.layer5.io/charts/layer5-cloud-v0.8.235.tgz
     version: v0.8.235
-generated: "2026-05-05T18:59:10.459979761Z"
+generated: "2026-05-06T20:10:31.45838862Z"
