@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[304 365 146 445 37 167]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[211 40 331 24 254 85]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -29,9 +29,9 @@
  Creating an Organization
  &lt;a href="#creating-an-organization" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;An Organization provides a way to structure your teams, users, and resource access for different projects or initiatives.&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/concepts/identity-and-access/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/organizations/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
+&lt;p&gt;An Organization provides a way to structure your teams, users, and resource access for different projects or initiatives.&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/concepts/identity-and-security/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/organizations/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
 &lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections&lt;/p&gt;
-&lt;img src="../../cloud/concepts/identity-and-access/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;
+&lt;img src="../../cloud/concepts/identity-and-security/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;
 
 &lt;h2 id="example-the-orbital-labs-ecosystem" class="heading-link"&gt;
  Example: The Orbital Labs Ecosystem
@@ -68,28 +68,28 @@
  Order of Precedence for Organization Settings
  &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/guides/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/</guid><description>&lt;p&gt;Use these guides to create, edit, invite members to, navigate, and delete organizations in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Teams</title><link>/cloud/concepts/identity-and-access/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/teams/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/guides/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/</guid><description>&lt;p&gt;Use these guides to create, edit, invite members to, navigate, and delete organizations in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Teams</title><link>/cloud/concepts/identity-and-security/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/teams/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
 &lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.&lt;/p&gt;
 
 &lt;h2 id="example-orbital-labs-teams" class="heading-link"&gt;
  Example: Orbital Labs Teams
  &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href="../../cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity and Access</title><link>/cloud/concepts/identity-and-access/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
+&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href="../../cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
 &lt;p&gt;Below is an overview of the core identity components within the Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="identity" class="heading-link"&gt;
  Identity
  &lt;a href="#identity" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-access/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+&lt;p&gt;Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
 &lt;h3 id="key-capabilities" class="heading-link"&gt;
  Key capabilities
  &lt;a href="#key-capabilities" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;The invitation system provides three main areas of control to help you manage access effectively.&lt;/p&gt;</description></item><item><title>Users</title><link>/cloud/concepts/identity-and-access/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/</guid><description>&lt;h2 id="user-accounts" class="heading-link"&gt;
+&lt;p&gt;The invitation system provides three main areas of control to help you manage access effectively.&lt;/p&gt;</description></item><item><title>Users</title><link>/cloud/concepts/identity-and-security/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/</guid><description>&lt;h2 id="user-accounts" class="heading-link"&gt;
  User Accounts
  &lt;a href="#user-accounts" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -105,7 +105,7 @@
 &lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Orbital Labs&lt;br&gt;
 &lt;strong&gt;Role:&lt;/strong&gt; User (Platform Engineer)&lt;br&gt;
 &lt;strong&gt;Plan:&lt;/strong&gt; Team&lt;/p&gt;
-&lt;p&gt;Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/concepts/identity-and-access/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
+&lt;p&gt;Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/concepts/identity-and-security/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -114,7 +114,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[480 40 165 299 33 333]" src="../../cloud/concepts/identity-and-access/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[31 70 375 261 426 396]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -122,7 +122,7 @@
  Create User Account
  &lt;a href="#create-user-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user&amp;rsquo;s introduction to Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/concepts/identity-and-access/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
+&lt;p&gt;Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user&amp;rsquo;s introduction to Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/concepts/identity-and-security/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;Permissions&lt;/th&gt;
@@ -215,10 +215,10 @@
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="../../cloud/concepts/identity-and-access/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="../../cloud/concepts/identity-and-access/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="../../cloud/concepts/identity-and-security/keychains/"&gt;keychains&lt;/a&gt; and &lt;a href="../../cloud/concepts/identity-and-security/roles/"&gt;roles&lt;/a&gt;.
  
-&lt;/div&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-access/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-access/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
-&lt;img src="../../cloud/concepts/identity-and-access/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
+&lt;/div&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;img src="../../cloud/concepts/identity-and-security/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
  To change the notification preferences
@@ -241,7 +241,7 @@
 &lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>Default Permissions</title><link>/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/default-permissions/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="../../cloud/concepts/identity-and-access/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="../../cloud/concepts/identity-and-access/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="../../cloud/concepts/identity-and-security/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="../../cloud/concepts/identity-and-security/roles/"&gt;roles&lt;/a&gt;.
  
 &lt;/div&gt;
 
@@ -861,7 +861,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -872,7 +872,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -883,7 +883,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -894,7 +894,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -905,7 +905,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -916,7 +916,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1462,7 +1462,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1473,7 +1473,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1484,7 +1484,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1495,7 +1495,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1506,7 +1506,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1517,7 +1517,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -2990,7 +2990,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3001,7 +3001,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3012,7 +3012,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3023,7 +3023,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3034,7 +3034,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3045,7 +3045,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4003,7 +4003,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4014,7 +4014,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4025,7 +4025,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4036,7 +4036,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4047,7 +4047,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4058,7 +4058,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4604,7 +4604,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4615,7 +4615,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4626,7 +4626,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4637,7 +4637,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4648,7 +4648,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4659,7 +4659,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5205,7 +5205,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5216,7 +5216,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5227,7 +5227,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5238,7 +5238,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5249,7 +5249,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5260,7 +5260,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5600,7 +5600,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5611,7 +5611,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5622,7 +5622,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5633,7 +5633,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5644,7 +5644,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5655,7 +5655,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -7128,7 +7128,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -7139,7 +7139,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -7150,7 +7150,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -7161,7 +7161,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -7172,7 +7172,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -7183,7 +7183,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8553,7 +8553,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8564,7 +8564,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8575,7 +8575,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8586,7 +8586,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8597,7 +8597,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8608,7 +8608,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9463,7 +9463,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9474,7 +9474,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9485,7 +9485,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9496,7 +9496,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9507,7 +9507,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -9518,7 +9518,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10373,7 +10373,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10384,7 +10384,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10395,7 +10395,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10406,7 +10406,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10417,7 +10417,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10428,7 +10428,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11283,7 +11283,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11294,7 +11294,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11305,7 +11305,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11316,7 +11316,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11327,7 +11327,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11338,7 +11338,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12399,7 +12399,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12410,7 +12410,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12421,7 +12421,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12432,7 +12432,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12443,7 +12443,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12454,7 +12454,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13309,7 +13309,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13320,7 +13320,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13331,7 +13331,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13342,7 +13342,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13353,7 +13353,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13364,7 +13364,7 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14719,7 +14719,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -24374,7 +24374,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -34209,7 +34209,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -43474,7 +43474,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -53619,7 +53619,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-access/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
