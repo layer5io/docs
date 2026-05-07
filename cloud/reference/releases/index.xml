@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.67</title><link>/cloud/reference/releases/v1.0.67/</link><pubDate>Thu, 07 May 2026 13:13:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.67/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.68</title><link>/cloud/reference/releases/v1.0.68/</link><pubDate>Thu, 07 May 2026 14:33:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.68/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(auth): URL state authoritative + server-side custom-domain logout (resolves Issues 1 &amp;amp; 2 from v1.0.67 deploy) by @leecalcote in &lt;a href="https://github.com/layer5io/meshery-cloud/pull/5244"&gt;https://github.com/layer5io/meshery-cloud/pull/5244&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.67...v1.0.68"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.67...v1.0.68&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.67</title><link>/cloud/reference/releases/v1.0.67/</link><pubDate>Thu, 07 May 2026 13:13:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.67/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
