@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[277 121 486 144 59 116]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[321 220 111 203 166 368]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -37,7 +37,7 @@
  Example: The Orbital Labs Ecosystem
  &lt;a href="#example-the-orbital-labs-ecosystem" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using &lt;a href="../../cloud/getting-started/meet-five/"&gt;Five and the cast at Orbital Labs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/guides/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
+&lt;p&gt;The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using &lt;a href=""&gt;Five and the cast at Orbital Labs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/guides/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
 
 &lt;h2 id="understanding-organization-context" class="heading-link"&gt;
  Understanding Organization Context
@@ -75,7 +75,7 @@
  Example: Orbital Labs Teams
  &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href="../../cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
+&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href=""&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
 &lt;p&gt;Below is an overview of the core identity components within the Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="identity" class="heading-link"&gt;
@@ -114,7 +114,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[372 38 238 311 190 468]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[93 156 263 212 363 355]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
