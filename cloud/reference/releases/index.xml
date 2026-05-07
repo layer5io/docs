@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.66</title><link>/cloud/reference/releases/v1.0.66/</link><pubDate>Thu, 07 May 2026 06:10:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.66/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.67</title><link>/cloud/reference/releases/v1.0.67/</link><pubDate>Thu, 07 May 2026 13:13:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.67/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;hotfix(auth): configure Kratos oauth2_provider + restore custom-domain logout bounce by @leecalcote in &lt;a href="https://github.com/layer5io/meshery-cloud/pull/5243"&gt;https://github.com/layer5io/meshery-cloud/pull/5243&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.66...v1.0.67"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.66...v1.0.67&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.66</title><link>/cloud/reference/releases/v1.0.66/</link><pubDate>Thu, 07 May 2026 06:10:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.66/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(auth): bridge access-token cookie to non-layer5.io custom domains (issue #5238 Phase 3) @leecalcote (#5241)&lt;/li&gt;
 &lt;li&gt;feat(auth): thread originating host through Hydra (issue #5238 Phase 2) @leecalcote (#5240)&lt;/li&gt;
 &lt;/ul&gt;
