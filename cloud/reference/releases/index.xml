@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.63</title><link>/cloud/reference/releases/v1.0.63/</link><pubDate>Thu, 07 May 2026 02:09:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.63/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.64</title><link>/cloud/reference/releases/v1.0.64/</link><pubDate>Thu, 07 May 2026 03:05:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.64/</guid><description>&lt;ul&gt;
+&lt;li&gt;hotfix(helm): templatize KRATOS_PUBLIC namespace (resolves v1.0.63 custom-domain 502) @leecalcote (#5237)&lt;/li&gt;
+&lt;li&gt;docs(migration): RBAC -&amp;gt; plan-feature entitlement migration plan @jamieplu (#5061)&lt;/li&gt;
+&lt;li&gt;fix(ui): catalog, account, plans, and dashboard UX polish pass @leecalcote (#5233)&lt;/li&gt;
+&lt;li&gt;fix(server): backfill NULL users.status to unblock static-token auth @leecalcote (#5232)&lt;/li&gt;
+&lt;li&gt;fix(auth): omit login_challenge from return_to in flow/init redirect @arjunmehta-git (#5235)&lt;/li&gt;
+&lt;li&gt;fix(e2e): stop proxying auth pages in dev server; serve via Next.js @arjunmehta-git (#5236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @jamieplu, @l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.63</title><link>/cloud/reference/releases/v1.0.63/</link><pubDate>Thu, 07 May 2026 02:09:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.63/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): KRATOS_PUBLIC → internal service; classify transport vs upstream @leecalcote (#5234)&lt;/li&gt;
 &lt;/ul&gt;
 
