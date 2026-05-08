@@ -17,7 +17,7 @@
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../images/five/1.svg" alt="Five" style="width:70px; float:right; margin-left:1rem;" /&gt;
+ &lt;img src="../../images/five/1.svg" alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" /&gt;
 &lt;p&gt;&lt;strong&gt;Organization:&lt;/strong&gt; Orbital Labs&lt;br&gt;
 &lt;strong&gt;Role:&lt;/strong&gt; User (Platform Engineer)&lt;br&gt;
 &lt;strong&gt;Plan:&lt;/strong&gt; Team&lt;/p&gt;
@@ -30,7 +30,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[93 156 263 212 363 355]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[494 42 400 111 443 365]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
