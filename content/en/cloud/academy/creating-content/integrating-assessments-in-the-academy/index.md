@@ -109,7 +109,7 @@ Each assessment file must contain the following YAML frontmatter:
 ---
 title: "Assessment Example"
 id: "assessment-id"                 
-pass_percentage: 70               
+passPercentage: 70
 type: "test"
 layout: "test"
 is_optional: true                 
@@ -124,7 +124,7 @@ questions:
         text: "Option A text"
       - id: "b" 
         text: "Option B text"
-        is_correct: true
+        isCorrect: true
 ---
 ```
 
@@ -136,18 +136,19 @@ questions:
 | :--- | :--- | :--- | :--- |
 | **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
 | | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
-| | `pass_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
+| | `passPercentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
 | | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
 | | `layout` | - | Metadata type for the assessment. The value must be `test`. |
 | | `is_optional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
 | | `final` | - | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
 | | `questions` | ✅  | An array containing one or more question objects.                                                         |
-| **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`).                              |
+| **Question Object** | `id` | ✅  | Stable source key for the question. Must be unique within the assessment (e.g., `q1`, `q2`).                              |
 | | `text` | ✅  | The text of the question prompt.                                                                          |
 | | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers`, `short-answer`, or `true-false`. |
 | | `marks` | ✅  | The number of points awarded for a correct answer.                                                        |
 | | `instructions` | -  | Custom instruction for each question                                                                      |
-| | `options` | - | An array of answer options.                                                                               |
+| | `correctAnswer` | - | Expected answer for `short-answer` questions. |
+| | `options` | - | An array of answer options. Each option `id` must be unique within its question.                                                                               |
 
 {{< alert type="warning" title="Quick heads up" >}}
 Remember: `type: "test"` are fixed values that cannot be modified. The system needs these exact words to work properly.
@@ -174,7 +175,7 @@ Layer5 Academy supports four question formats:
         options:
           - id: "a"
             text: "Option A"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "b"
             text: "Option B"
     ---
@@ -193,7 +194,7 @@ Layer5 Academy supports four question formats:
         options:
           - id: "true"
             text: "True"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "false"
             text: "False"
     ---
@@ -217,12 +218,12 @@ Layer5 Academy supports four question formats:
         options:
           - id: "a"
             text: "Option A"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "b"
             text: "Option B"
           - id: "c"
             text: "Option C"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
     ---
   </code></pre>
 </details>
@@ -244,13 +245,13 @@ Layer5 Academy supports four question formats:
         type: "short-answer"                # choose the type
         marks: 2
         instructions: "Just type the command"
-        correct_answer: "default"           # expected answer
+        correctAnswer: "default"           # expected answer
 
       - id: "question5"
         text: "Which kubectl command lists all pods?"
         type: "short-answer"                # choose the type
         marks: 2
-        correct_answer: "kubectl get pods"  # expected answer
+        correctAnswer: "kubectl get pods"  # expected answer
     ---
   </code></pre>
 </details>
@@ -317,7 +318,7 @@ Instructions can be override in frontmatter by defining a custom intruction for 
         type: "short-answer"                
         marks: 2
         instructions: "Just type the command" #custom instruction
-        correct_answer: "default"           
+        correctAnswer: "default"
 
       questions:                              # will display the default instructions for question type
       - id: "question3"
@@ -327,12 +328,12 @@ Instructions can be override in frontmatter by defining a custom intruction for 
         options:
           - id: "a"
             text: "Option A"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "b"
             text: "Option B"
           - id: "c"
             text: "Option C"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
     ---
   </code></pre>
 </details>
@@ -340,18 +341,18 @@ Instructions can be override in frontmatter by defining a custom intruction for 
 
 ## Scoring
 
-The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `pass_percentage` for the assessment. Here is how the system processes the scores:
+The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passPercentage` for the assessment. Here is how the system processes the scores:
 
 ### How Scores Are Calculated
 
 1.  **Total Possible Marks**: The total score for a assessment is automatically calculated by summing the `marks` value of every question within that assessment. You do not need to define this total manually.
 2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
-3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `pass_percentage` you set, the assessment is marked as "Passed".
+3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passPercentage` you set, the assessment is marked as "Passed".
 
 ### Scoring Rules for Question Types
 
 - **Multiple-Choice Questions**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
-- **Short Answer Questions**: The learner's input is compared against the `correct_answer` field. The comparison is **case-insensitive**, and leading/trailing whitespace is ignored to avoid penalizing minor typing variations.
+- **Short Answer Questions**: The learner's input is compared against the `correctAnswer` field. The comparison is **case-insensitive**, and leading/trailing whitespace is ignored to avoid penalizing minor typing variations.
 
 ### The Result of Scoring
 
