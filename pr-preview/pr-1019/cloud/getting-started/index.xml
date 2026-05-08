@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started on Layer5 Documentation</title><link>/cloud/getting-started/</link><description>Recent content in Getting Started on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Setting up Layer5 Account</title><link>/cloud/getting-started/getting-started-with-layer5-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/getting-started-with-layer5-account/</guid><description>&lt;p&gt;This guide will walk you through setting up your Layer5 account.&lt;/p&gt;
+
+&lt;h2 id="configuring-your-layer5-account" class="heading-link"&gt;
+ Configuring your Layer5 account
+ &lt;a href="#configuring-your-layer5-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The first steps in starting with Layer5 are to create an account, verify your email, setup an organization and a workspace, and view your profile.&lt;/p&gt;
+&lt;p&gt;Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/getting-started/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/support/</guid><description>&lt;p&gt;At Layer5 Cloud, we&amp;rsquo;re here to help you every step of the way. If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don&amp;rsquo;t hesitate to reach out to us. Our dedicated support team is committed to providing you with the help and guidance you need.&lt;/p&gt;
+
+&lt;h3 id="contacting-support" class="heading-link"&gt;
+ Contacting Support
+ &lt;a href="#contacting-support" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;You can contact Layer5 support in the following ways:&lt;/p&gt;</description></item><item><title>Creating a Design from Meshery Catalog Templates</title><link>/cloud/getting-started/creating-a-design-from-templete.md/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/creating-a-design-from-templete.md/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/catalog"&gt;Meshery Catalog&lt;/a&gt; functions much like a cloud marketplace, providing a user-friendly interface for browsing, discovering, and sharing configurations and patterns for cloud native infrastructure. With Meshery Catalog, you can easily find,clone and deploy Kubernetes-based infrastructure and tools, making it easy to streamline your cloud native development and operations processes.&lt;/p&gt;
+
+&lt;h2 id="cloning-a-design-from-a-template-in-the-meshery-catalog" class="heading-link"&gt;
+ Cloning a design from a template in the Meshery Catalog
+ &lt;a href="#cloning-a-design-from-a-template-in-the-meshery-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Sign into &lt;a href="https://cloud.layer5.io"&gt;Layer5 Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Explore the catalogs located in the menu section.&lt;/li&gt;
+&lt;li&gt;Search by technology or type and find the best template for your infrastructure. You will already see some of the information just by hovering on it.&lt;/li&gt;
+&lt;li&gt;For detailed information just click on it.&lt;/li&gt;
+&lt;li&gt;Simply click the green clone button.&lt;/li&gt;
+&lt;li&gt;Now you have it. Navigate to &lt;a href="https://playground.meshery.io/"&gt;Meshery Playground&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go to the Kanvas and you will see your cloned template here. If you con&amp;rsquo;t see it just reload the page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can also publish your own design as a template.&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Meshery&amp;rsquo;s GitHub Integration is a powerful feature that lets you authorize your GitHub account and import infrastructure files into Meshery. These files are then readily available in the Meshery catalog and can be easily opened in the Meshery Playground for viewing and configuration.&lt;/p&gt;
+&lt;p&gt;The GitHub integration offers an alternative to &lt;a href="https://docs.meshery.io/guides/configuration-management/importing-designs"&gt;importing designs from the canvas or through mesheryctl&lt;/a&gt;. It simplifies configuration management and enhances deployment workflow efficiency. By leveraging this integration, you ensure your infrastructure designs are easily accessible and always up-to-date.&lt;/p&gt;</description></item></channel></rss>

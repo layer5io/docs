@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spaces on Layer5 Documentation</title><link>/cloud/spaces/</link><description>Recent content in Spaces on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/spaces/index.xml" rel="self" type="application/rss+xml"/><item><title>Workspaces</title><link>/cloud/spaces/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/workspaces/</guid><description>&lt;p&gt;Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.&lt;/p&gt;
+&lt;p&gt;You can create Workspaces to group related Designs and Environments, define domains of responsibility for your teams, and streamline resource management.&lt;/p&gt;
+
+&lt;h2 id="key-features" class="heading-link"&gt;
+ Key Features
+ &lt;a href="#key-features" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Resource Sharing:&lt;/strong&gt; Workspaces allow for seamless resource sharing among team members, fostering collaboration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Logical Grouping:&lt;/strong&gt; Within Workspaces, you can group related components such as environments and infrastructure designs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flexibility:&lt;/strong&gt; Workspaces support various resources like Kubernetes, Prometheus, Jaeger, Nginx, and more.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simplified Management:&lt;/strong&gt; Managing and deploying resources is made easy within Workspaces.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Access Control:&lt;/strong&gt; Workspaces allow you to control access to resources by granting permissions to users and teams.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="workspace-relationships-and-restrictions" class="heading-link"&gt;
+ Workspace Relationships and Restrictions
+ &lt;a href="#workspace-relationships-and-restrictions" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Access to Workspaces may be granted to one or more teams.&lt;/li&gt;
+&lt;li&gt;As a point of collaboration to facilitate work, Workspaces may have zero or more Environments associated.&lt;/li&gt;
+&lt;li&gt;A Workspace is closely associated with Teams. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.&lt;/li&gt;
+&lt;li&gt;One or more teams can be assigned access to a workspace.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment&amp;rsquo;s connections available to users of the Workspace.&lt;/p&gt;</description></item><item><title>Managing Workspaces</title><link>/cloud/spaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/managing-workspaces/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Workspaces. Here, you&amp;rsquo;ll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re new to the concept of Workspaces, we recommend starting with the &lt;a href="../../cloud/spaces/workspaces/"&gt;Workspaces Overview&lt;/a&gt; to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
+Environments allow you to logically group related &lt;a href="../../cloud/spaces/environments/#connections"&gt;Connections&lt;/a&gt; and their associated &lt;a href="../../cloud/spaces/environments/#credentials"&gt;Credentials&lt;/a&gt;. Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.&lt;/p&gt;</description></item></channel></rss>
