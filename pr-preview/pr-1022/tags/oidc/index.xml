@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Oidc on Layer5 Documentation</title><link>/tags/oidc/</link><description>Recent content in Oidc on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/oidc/index.xml" rel="self" type="application/rss+xml"/><item><title>Authentication Flows</title><link>/cloud/identity/authentication/authentication-flows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/authentication/authentication-flows/</guid><description>&lt;p&gt;This page catalogues every authentication flow Layer5 Cloud exposes to end users. Each flow is described from three perspectives: the user-visible journey, the HTTP / cookie behaviour underneath, and the entry-points and exit-points used by integrators (deep-links, redirect parameters, downstream flows).&lt;/p&gt;
+
+&lt;h2 id="common-architecture" class="heading-link"&gt;
+ Common architecture
+ &lt;a href="#common-architecture" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Every authentication action the browser takes is routed through Layer5 Cloud — never directly to Ory Kratos. The hop pattern is the same for every flow:&lt;/p&gt;</description></item><item><title>Authentication</title><link>/cloud/identity/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/authentication/</guid><description>&lt;p&gt;Layer5 Cloud authenticates every user through a unified identity layer that supports email-and-password sign-in, single sign-on with OAuth/OIDC providers (GitHub, Google), email-link verification, and self-service password recovery. Once a user is authenticated, the platform pins each request to the correct organization tenant — including organizations that have been mapped to a custom domain.&lt;/p&gt;
+
+&lt;h2 id="how-authentication-is-structured" class="heading-link"&gt;
+ How authentication is structured
+ &lt;a href="#how-authentication-is-structured" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud&amp;rsquo;s authentication subsystem is built on three components that work together:&lt;/p&gt;</description></item></channel></rss>
