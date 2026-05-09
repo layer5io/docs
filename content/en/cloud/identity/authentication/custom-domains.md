@@ -11,6 +11,17 @@ Layer5 Cloud lets a tenant organization map its own hostname (e.g. `academy.laye
 
 If you haven't already, read [Authentication Flows](/cloud/identity/authentication/authentication-flows) first. This page builds on those flows.
 
+## Worked example: the Academy organization
+
+The scenarios on this page use one consistent worked example throughout:
+
+* **Org name:** Academy
+* **Org id (variable):** `academy_org`
+* **Custom domain:** `academy.layer5.io`
+* **Default domain:** `cloud.layer5.io` (the platform's `SERVER_BASE_URL`)
+
+Wherever you see `academy_org` in pseudo-code, that's the UUID of the Academy organization. Wherever you see `academy.layer5.io`, that's the custom domain mapped to it. Substitute your own org's name and hostname when reading.
+
 ## The contract in one paragraph
 
 > The custom-domain hostname is the strongest **scope** signal — it pins every request to a specific tenant for read/write authorization. The user's preference is the strongest **intent** signal — it answers "what organization does the user want to be looking at right now". When intent and scope conflict, the system **changes the scope** (redirects the URL/domain), not the intent (the preference). Switching the preference to match a wrong scope is always a bug.
@@ -49,7 +60,7 @@ Custom-domain registration is performed by Provider Admins via the org-managemen
 
 ## The six sources of organization context
 
-A request can carry organization context from any of six places. Each has a different lifetime and a different trust level. The server normalises them into a single `CurrentOrgID` value on the request context; the UI runs a parallel resolution.
+A request can carry organization context from any of six places. Each has a different lifetime and a different trust level. The server normalizes them into a single `CurrentOrgID` value on the request context; the UI runs a parallel resolution.
 
 | # | Source | Wire shape | Lifetime | Set by | Trust |
 |---|--------|------------|----------|--------|-------|
@@ -104,10 +115,10 @@ The codebase passes around what looks like a UUID, but four out of those five va
 | A real UUID | A specific organization | DB `organizations.id`, `users.preferences.selectedOrganizationId`, route params, cookie |
 | `"all"` | "All organizations" view, only valid for **provider admins** | UI Redux/preference, server query string |
 | `"11111111-1111-1111-1111-111111111111"` | Provider organization sentinel — alias for "all" | Server context; UI organization utility |
-| `""` (empty string) | "Unknown / not set yet" — the resolver should fall through to fallbacks, not error | Cookie present-but-empty, prefs key cleared by canonicalising migration |
+| `""` (empty string) | "Unknown / not set yet" — the resolver should fall through to fallbacks, not error | Cookie present-but-empty, prefs key cleared by canonicalizing migration |
 | `nil` / undefined | Same as `""`. Code paths must handle both | DB `organizations.domain`, JSON optionals |
 
-The Provider Org UUID and the string `"all"` are **interchangeable on the wire**. The server normalises one to the other on persistence, and the UI normalises the other direction on read. Empty string is never a valid org id; always treat it as "unknown" and fall through.
+The Provider Org UUID and the string `"all"` are **interchangeable on the wire**. The server normalizes one to the other on persistence, and the UI normalizes the other direction on read. Empty string is never a valid org id; always treat it as "unknown" and fall through.
 
 ---
 
@@ -126,27 +137,29 @@ http.SetCookie(res, &http.Cookie{
 // Second — host-scoped on the actual request host
 http.SetCookie(res, &http.Cookie{
     Name:   "provider_token",
-    Domain: "exoscale.layer5.io",         // AccessTokenCookieForCustomDomain(req)
+    Domain: "academy.layer5.io",          // AccessTokenCookieForCustomDomain(req)
     Path:   "/",
     Value:  token,                        // (same value)
 })
 ```
 
-The first is **parent-scoped**: a `Domain` of `.layer5.io` means the cookie is sent on *every* `*.layer5.io` request, which is what makes a `cloud.layer5.io` → `exoscale.layer5.io` redirect carry the user's session. The second is **host-scoped**: when the auth completes on the custom domain itself, an extra cookie scoped to that exact host is set so future SameSite tightening doesn't drop it.
+The first is **parent-scoped**: a `Domain` of `.layer5.io` means the cookie is sent on *every* `*.layer5.io` request, which is what makes a `cloud.layer5.io` → `academy.layer5.io` redirect carry the user's session. The second is **host-scoped**: when the auth completes on the custom domain itself, an extra cookie scoped to that exact host is set so future SameSite tightening doesn't drop it.
 
 ### Implications
 
 * **Custom domains that are subdomains of `*.layer5.io`** receive both cookies via `window.location.href` redirects; no special handshake is needed.
 * **Custom domains on a different eTLD** (e.g. `cloud.meshery.io`) cannot receive the parent-scoped cookie because eTLD+1 doesn't match. The platform supports them via the **token-handoff redirect** described below.
-* The parent-scoped cookie means *any* `*.layer5.io` site that is also on this Hydra/Kratos session can read it. That's intentional (e.g. kanvas.new flows), but worth knowing.
+* The parent-scoped cookie means *any* `*.layer5.io` site that is also on this Hydra/Kratos session can read it. That's intentional (e.g. Kanvas at `kanvas.new` flows), but worth knowing.
 
 ### The token-handoff redirect (cross-eTLD bridge)
 
-For cross-eTLD domains, Layer5 Cloud uses `RedirectWithTokenToCustomOrgdomain` to bridge the cookie:
+For cross-eTLD domains, Layer5 Cloud uses `RedirectWithTokenToCustomOrgdomain` to bridge the cookie. Reading top-down with the user as the active subject:
 
-1. After Hydra completes login on `cloud.layer5.io`, `issueSessionForOtherDomains` builds a redirect URL that bounces through the destination domain so it can set its own cookie. The originating host is threaded through the OAuth2 `state` payload as `origin_host`.
-2. The destination calls back to `/auth/redirect/accept` on the original domain with the token. The handler reads the `origin_host` query parameter, validates the value against the `custom_domains` registry (open-redirect guard), then forwards through `RedirectWithTokenToCustomOrgdomain` if the host belongs to a registered tenant.
-3. `HandleAuthRedirect` is the symmetric endpoint — it accepts a `?token=` query, sets the cookie on both `.layer5.io` and the current host, and finally redirects to either the original referrer or the org's custom domain. Pre-`origin_host` invocations fall back to the legacy `Layer5-Current-Orgid` cookie path.
+1. After Hydra completes login on `cloud.layer5.io`, `issueSessionForOtherDomains` redirects the browser to a `kanvas.new/auth/redirect` URL whose `return_to` parameter points back at `cloud.layer5.io/auth/redirect/accept`. The originating host is also threaded along as `origin_host` (encoded into the OAuth2 `state` payload Hydra round-tripped earlier).
+2. The browser is redirected back to `/auth/redirect/accept` on `cloud.layer5.io` with the token. The handler reads the `origin_host` query parameter, validates the value against the `custom_domains` registry (open-redirect guard), and — when the host belongs to a registered tenant — forwards the browser to the destination domain's `/auth/redirect/accept` endpoint via `RedirectWithTokenToCustomOrgdomain`.
+3. The destination domain's `HandleAuthRedirect` accepts the `?token=` query, sets the `provider_token` cookie host-only on that domain, and finally redirects to either the original referrer or the destination's `/dashboard`.
+
+A misconfigured `origin_host` (e.g. a host not in the registry) causes the cross-domain hop to be skipped and the legacy `Layer5-Current-Orgid` cookie path to take over. A warning is logged so the misconfiguration surfaces in operations.
 
 This handshake is **not** used for in-session navigation between same-eTLD subdomains. The plain `window.location.href = ...` pattern works there precisely because the parent-scoped cookie carries the session.
 
@@ -154,7 +167,7 @@ This handshake is **not** used for in-session navigation between same-eTLD subdo
 
 ## End-to-end scenarios
 
-The eight scenarios below cover every combination of "where is the user" and "what is the user's preference". The first column tells you what to expect; the second is the contract; the third is what happens under the hood.
+The eight scenarios below cover every combination of "where is the user" and "what is the user's preference". Each one uses the Academy worked example introduced at the top of this page.
 
 ### Scenario 1 — Default domain, default-domain org
 
@@ -180,18 +193,18 @@ This is the simplest case. There's no scope/intent conflict to reconcile.
 
 ### Scenario 2 — Default domain, custom-domain org
 
-> User logs in on `cloud.layer5.io`. Their preferred org is `Orbital Labs`, which is mapped to `exoscale.layer5.io`.
+> User logs in on `cloud.layer5.io`. Their preferred org is **Academy**, which is mapped to `academy.layer5.io`.
 
-The user authenticates as in Scenario 1, but on the post-auth dashboard render the client detects that `selectedOrganization.domain = exoscale.layer5.io` and the current hostname is `cloud.layer5.io`. The contract says: **change scope to match intent**.
+The user authenticates as in Scenario 1, but on the post-auth dashboard render the client detects that `selectedOrganization.domain = academy.layer5.io` and the current hostname is `cloud.layer5.io`. The contract says: **change scope to match intent**.
 
 ```
 Browser → /dashboard on cloud.layer5.io   (post-login)
    useGetSelectedOrganization → selectedOrganization = academy_org (with domain)
    Effect P3: selectedOrganization.domain non-empty
               → SyncBrowserUrlWithOrgDomain(selectedOrganization)
-              → window.location.href = "https://exoscale.layer5.io/dashboard"
+              → window.location.href = "https://academy.layer5.io/dashboard"
 
-Browser → /dashboard on exoscale.layer5.io
+Browser → /dashboard on academy.layer5.io
    New page load. CustomDomainOrgResolverMiddleware sets CurrentOrgID = academy_org.id
    useGetSelectedOrganization → selectedOrganization = academy_org
    Effect P2: hostname matches academy_org.domain, IDs match → steady state.
@@ -201,15 +214,15 @@ The `provider_token` parent-scoped cookie carries the session across the redirec
 
 ### Scenario 3 — Custom domain, member of that org
 
-> User signs in on `exoscale.layer5.io` and is a member of the `Orbital Labs` org that owns it.
+> User signs in on `academy.layer5.io` and is a member of the **Academy** org that owns it.
 
 ```
-Browser → /login on exoscale.layer5.io
+Browser → /login on academy.layer5.io
    Server: CustomDomainOrgResolverMiddleware → CurrentOrgID = academy_org.id
-           (auth pages are themed with academy branding via buildOrgAuthData)
+           (auth pages are themed with Academy branding via buildOrgAuthData)
    Kratos flow → Hydra issues token
-   Server sets provider_token cookie on .layer5.io AND on exoscale.layer5.io
-   Browser → /dashboard on exoscale.layer5.io
+   Server sets provider_token cookie on .layer5.io AND on academy.layer5.io
+   Browser → /dashboard on academy.layer5.io
    Effect P2: hostname matches selected, IDs match → steady state.
 ```
 
@@ -217,7 +230,7 @@ This is the steady-state custom-domain experience — the user logs in directly 
 
 ### Scenario 4 — Custom domain, **not** a member
 
-> Visitor lands on `exoscale.layer5.io` but is not a member of `Orbital Labs`.
+> Visitor lands on `academy.layer5.io` but is not a member of the **Academy** org.
 
 The contract is: **surface the authorization error**, do not silently redirect. The custom-domain resolver still pins `CurrentOrgID = academy_org.id`, but the per-handler authorization check (every DAO call carries a `userID` and filters by `users_organizations_mappings`) rejects the request. The UI shows a real "you don't have access to this organization" page rather than bouncing the user back to the default domain.
 
@@ -225,26 +238,26 @@ This is intentional: a silent bounce would mask a misconfiguration (e.g. an invi
 
 ### Scenario 5 — Switching org via the header switcher
 
-> Authenticated user picks a different org from the header dropdown.
+> Authenticated user picks the **Academy** org from the header dropdown.
 
 ```
-User picks "Academy Org" from header switcher
-   onClick → useUpdateSelectedOrganization.handleUpdate(academyOrgId)
+User picks "Academy" from header switcher
+   onClick → useUpdateSelectedOrganization.handleUpdate(academy_org.id)
        1. invalidate organizations cache and refetch
-       2. validate academyOrgId is in the refetched list
+       2. validate academy_org.id is in the refetched list
           (refuses to switch to an org the user isn't a member of)
-       3. PUT /api/identity/users/preferences  (selectedOrganizationId = academyOrgId)
+       3. PUT /api/identity/users/preferences  (selectedOrganizationId = academy_org.id)
           Server: UpdateUserPreference → "Saved user … preferences"
        4. SyncBrowserUrlWithOrgDomain(academy_org)
-          → window.location.href = "https://exoscale.layer5.io/<current-path>"
-   exoscale.layer5.io page load → P2 steady state (same as Scenario 3 tail).
+          → window.location.href = "https://academy.layer5.io/<current-path>"
+   academy.layer5.io page load → P2 steady state (same as Scenario 3 tail).
 ```
 
 The persistence (PUT preferences) happens **before** the redirect, so by the time the new domain loads, the DB row already matches what the user picked. If the new org has no custom domain, step 4 redirects to the default domain instead.
 
 ### Scenario 6 — Academy enrolment with a custom domain
 
-> User is on `cloud.layer5.io/academy/<academyOrgId>/learning-path/<slug>`, **not yet a member** of `academyOrgId`. They click **Enroll Now**.
+> User is on `cloud.layer5.io/academy/<academy_org.id>/learning-path/<slug>`, **not yet a member** of the Academy org. They click **Enroll Now**.
 
 ```
 Click "Enroll Now"
@@ -254,29 +267,29 @@ Click "Enroll Now"
           create academy_registration row
           if curricula.InviteId != nil:
               InvitationService.AcceptInvitation(user, curricula.InviteId)
-                AddUserToOrganization(user.ID, academy_org.ID)   ← user becomes member
+                AddUserToOrganization(user.ID, academy_org.id)   ← user becomes member
                 AssignRoleToUserInOrg(...)
                 AddUserToTeam(...)
           return 200 OK
-  → updateSelectedOrg(curricula.org_id)         ← academy_org.ID
+  → updateSelectedOrg(curricula.org_id)         ← academy_org.id
         PUT /api/identity/users/preferences
         SyncBrowserUrlWithOrgDomain(academy_org)
-  → window.location.href = "https://exoscale.layer5.io/academy/<academyOrgId>/learning-path/<slug>"
+  → window.location.href = "https://academy.layer5.io/academy/<academy_org.id>/learning-path/<slug>"
 
-exoscale.layer5.io page load:
-  CustomDomainOrgResolverMiddleware → CurrentOrgID = academy_org.ID
+academy.layer5.io page load:
+  CustomDomainOrgResolverMiddleware → CurrentOrgID = academy_org.id
   Queries:
-     getUser → preferences.selectedOrganizationId = academy_org.ID  ✓
+     getUser → preferences.selectedOrganizationId = academy_org.id  ✓
      getOrgs → must include academy_org (membership was just written)
   useGetSelectedOrganization → selectedOrganization = academy_org
   P2: hostname matches → steady state.
 ```
 
-The membership write **must** complete before the redirect; otherwise the post-redirect page-load on the custom domain sees `getOrgs` returning a list that doesn't include the academy org and the user lands in the unauth state covered by Scenario 4.
+The membership write **must** complete before the redirect; otherwise the post-redirect page-load on the custom domain sees `getOrgs` returning a list that doesn't include the Academy org and the user lands in the unauth state covered by Scenario 4.
 
 ### Scenario 7 — Invitation acceptance via email link
 
-> User clicks an **Accept invitation** link from an email. The inviting org (`Orbital Labs`) has a custom domain (`exoscale.layer5.io`), but the email link points at `cloud.layer5.io`.
+> User clicks an **Accept invitation** link from an email. The inviting org is **Academy** (custom domain `academy.layer5.io`), but the email link points at `cloud.layer5.io`.
 
 The email link is on the default domain because the invitee is **not yet a member** and therefore can't be served from the custom domain.
 
@@ -286,24 +299,24 @@ Email link → /invitations/<inviteId>/accept on cloud.layer5.io
      useAcceptInvitationMutation()  → POST /api/identity/invitations/<id>/accept
         Server: write users_organizations_mappings row
                 assign role / team if specified
-                set Layer5-Current-Orgid cookie = inviteOrg.id
+                set Layer5-Current-Orgid cookie = academy_org.id
                                          (host-only on cloud.layer5.io,
                                           carries org context through Kratos handshake
                                           if user needs to authenticate first)
      await updateSelectedOrg(acceptedInvite.orgId)
                                        PUT preferences
-     SyncBrowserUrlWithOrgDomain(inviteOrg)
-                                       → exoscale.layer5.io/dashboard
-  exoscale.layer5.io: P2 steady state.
+     SyncBrowserUrlWithOrgDomain(academy_org)
+                                       → academy.layer5.io/dashboard
+  academy.layer5.io: P2 steady state.
 ```
 
-If the invitee was not signed in when they clicked the link, the auth chain runs first ([email login](/cloud/identity/authentication/authentication-flows/#email-login), or one of the OAuth flows). The `Layer5-Current-Orgid` cookie set during the invitation-accept request is what themes the auth pages with the inviting org's branding.
+If the invitee was not signed in when they clicked the link, the auth chain runs first ([email login](/cloud/identity/authentication/authentication-flows/#email-login), or one of the OAuth flows). The `Layer5-Current-Orgid` cookie set during the invitation-accept request is what themes the auth pages with the Academy org's branding.
 
 ### Scenario 8 — Cross-eTLD custom domain (e.g. `cloud.meshery.io`)
 
 > Tenant org has a custom domain on a different eTLD than the platform — e.g. `cloud.meshery.io` rather than `*.layer5.io`. The parent-scoped cookie can't follow.
 
-This is the case the **token-handoff redirect** exists for. The user authenticates on `cloud.layer5.io` (or the cross-eTLD host directly); the cloud server threads the originating host through the OAuth2 `state` as `origin_host`, and `HandleAuthRedirect` validates that host against the `custom_domains` registry before issuing `RedirectWithTokenToCustomOrgdomain`. The destination calls back to `/auth/redirect/accept` with the token; the handler sets the `provider_token` cookie host-only on the cross-eTLD host, then redirects to the original referrer or the dashboard.
+This is the case the **token-handoff redirect** exists for. The user authenticates on `cloud.layer5.io`; the cloud server threads the originating host through the OAuth2 `state` as `origin_host`, and after the Hydra round-trip `HandleAuthRedirect` validates that host against the `custom_domains` registry before issuing `RedirectWithTokenToCustomOrgdomain`. The destination domain's `/auth/redirect/accept` then sets the `provider_token` cookie host-only on the cross-eTLD host and redirects to the original referrer or the destination's dashboard.
 
 A misconfigured `origin_host` (e.g. a host not in the registry) causes the bridge to be skipped and the legacy `Layer5-Current-Orgid` cookie path to take over. A warning is logged so the misconfiguration surfaces in operations.
 
@@ -316,12 +329,12 @@ A misconfigured `origin_host` (e.g. a host not in the registry) causes the bridg
 ```
 Browser              Ingress               Cloud server                  DB
    │                    │                       │                         │
-   │  GET /api/orgs     │  Host: exoscale...    │                         │
+   │  GET /api/orgs     │  Host: academy...     │                         │
    │ ───────────────►   │ ────────────────────► │                         │
    │                    │                       │ CustomDomainOrgResolver │
    │                    │                       │ → GetOrganizationByDomain
    │                    │                       │ ──────────────────────► │
-   │                    │                       │ ctx.CurrentOrgID = academy_org_id
+   │                    │                       │ ctx.CurrentOrgID = academy_org.id
    │                    │                       │                         │
    │                    │                       │ OrganizationResolver: short-circuit
    │                    │                       │                         │
@@ -333,7 +346,7 @@ Browser              Ingress               Cloud server                  DB
 ### Org switch with a domain hop
 
 ```
-Browser            cloud.layer5.io            exoscale.layer5.io
+Browser            cloud.layer5.io            academy.layer5.io
    │                    │                          │
    │ click switcher     │                          │
    │                    │                          │
@@ -343,8 +356,8 @@ Browser            cloud.layer5.io            exoscale.layer5.io
    │ getOrgs (refetch) ►│                          │
    │ ◄──── 200 ──────── │                          │
    │                    │                          │
-   │ window.location.href = exoscale.layer5.io/...
-   │ ─────────────────────────────────────────────►│
+   │ window.location.href = academy.layer5.io/...
+   │ ──────────────────────────────────────────────►│
    │                                               │
    │                        page load              │
    │                        getUser, getOrgs ─────►│
@@ -387,9 +400,9 @@ There are exactly four code paths that write `users.preferences.selectedOrganiza
 
 | Caller | Trigger | Notes |
 |---|---|---|
-| `UpdateUserPreference` handler | `PUT /api/identity/users/preferences` from UI | Normalises `"all"` → `PROVIDER_ORG_ID` before persisting. |
+| `UpdateUserPreference` handler | `PUT /api/identity/users/preferences` from UI | Normalizes `"all"` → `PROVIDER_ORG_ID` before persisting. |
 | `useUpdateSelectedOrganization` (UI) | Org switcher, academy enrol, invitation accept | Calls the handler above; persistence completes before `SyncBrowserUrlWithOrgDomain` triggers the redirect. |
-| `OrganizationSessionProvider` priorities | Page-load reconciliation | Writes only when the URL explicitly asked for a different org, or when canonicalising preference to a domain-pinned org the user is a member of. |
+| `OrganizationSessionProvider` priorities | Page-load reconciliation | Writes only when the URL explicitly asked for a different org, or when canonicalizing preference to a domain-pinned org the user is a member of. |
 | Historical migration | One-shot | Removes invalid pre-canonical preference values (empty string, JSON null, malformed UUID). |
 
 The `Layer5-Current-Orgid` cookie is written by the start of the Kratos auth flow and the invitation acceptance redirect. **It is not** a session-scoped cookie that follows the user around — treat it as a hint for theming and Kratos flow continuity, not as a source of truth for authorization scope.
@@ -398,7 +411,7 @@ The `Layer5-Current-Orgid` cookie is written by the start of the Kratos auth flo
 
 ## Cross-organization access
 
-Users of one organization may be granted access to resources (workspaces, designs) in another organization, but **entitlements are org-scoped**: the permissions a user has in `Orbital Labs` do not automatically apply in `Stellar Dynamics`, and vice versa. When a user with cross-org access switches to a different org via the header switcher, they will be redirected to the matching custom domain (Scenario 5) — or stay on the default domain if the destination org has no custom domain.
+Users of one organization may be granted access to resources (workspaces, designs) in another organization, but **entitlements are org-scoped**: the permissions a user has in one org do not automatically apply in another, and vice versa. When a user with cross-org access switches to a different org via the header switcher, they will be redirected to the matching custom domain (Scenario 5) — or stay on the default domain if the destination org has no custom domain.
 
 See [Identity → Organizations](/cloud/identity/organizations) for cross-organization access controls and the example tenant structure (`Constellation Cloud` → `Orbital Labs` / `Stellar Dynamics`).
 

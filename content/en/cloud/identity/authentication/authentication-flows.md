@@ -7,7 +7,7 @@ categories: [Identity]
 tags: [authentication, oauth, oidc, kratos, hydra, signup, login, logout, recovery, github, google]
 ---
 
-This page catalogues every authentication flow Layer5 Cloud exposes to end users. Each flow is described from three perspectives: the user-visible journey, the HTTP / cookie behaviour underneath, and the entry-points and exit-points used by integrators (deep-links, redirect parameters, downstream flows).
+This page catalogs every authentication flow Layer5 Cloud exposes to end users. Each flow is described from three perspectives: the user-visible journey, the HTTP / cookie behavior underneath, and the entry-points and exit-points used by integrators (deep-links, redirect parameters, downstream flows).
 
 ## Common architecture
 
@@ -41,7 +41,7 @@ Three properties hold for **every** flow on this page:
 
 1. **The browser never POSTs to Kratos directly.** The form action is always `/api/auth/flow/submit?type=<flow-type>&id=<flow-id>` on the cloud server.
 2. **The browser never redirects to a Kratos URL.** Every server hop ends at a cloud-server path (`/api/auth/...`).
-3. **Cookies relayed from Kratos are rewritten** so they survive the proxy: the `Domain` attribute is stripped (the cookie binds host-only to the cloud server origin), and `Path` is normalised to `/` so the browser sends them on `/api/auth/flow/submit`. Other attributes — `Name`, `Value`, `MaxAge`, `Expires`, `Secure`, `HttpOnly`, `SameSite` — pass through unchanged.
+3. **Cookies relayed from Kratos are rewritten** so they survive the proxy: the `Domain` attribute is stripped (the cookie binds host-only to the cloud server origin), and `Path` is normalized to `/` so the browser sends them on `/api/auth/flow/submit`. Other attributes — `Name`, `Value`, `MaxAge`, `Expires`, `Secure`, `HttpOnly`, `SameSite` — pass through unchanged.
 
 These invariants are what allow Layer5 Cloud to look like a first-party application even though Kratos and Hydra are doing the heavy lifting under the hood.
 
@@ -55,11 +55,21 @@ The cloud server's flow proxy maps the five Kratos flow types onto the five corr
 | `registration` | `/self-service/registration` | `/registration`   | 24 hours       |
 | `verification` | `/self-service/verification` | `/verification`   | 30 days        |
 | `recovery`     | `/self-service/recovery`     | `/recovery`       | 30 days        |
-| `settings`     | `/self-service/settings`     | `/reset`          | 24 h privileged window |
+| `settings`     | `/self-service/settings`     | `/reset`          | 24 hours privileged window |
 
 The submit-proxy (`/api/auth/flow/submit`) enforces a 1 MiB request-body cap and a 30-second timeout to Kratos. Oversize bodies return `413 Request Entity Too Large`; transport failures to Kratos return `502 Bad Gateway`.
 
 ### Cookies set during authentication
+
+Layer5 Cloud uses three categories of cookies during sign-in. They are distinct — don't conflate them:
+
+* **Kratos session cookie** (`session_cookie`) — the Kratos-issued cookie that proves the user has an active Kratos identity. Required by Kratos's own `/self-service/settings` flow.
+* **OAuth2 access-token cookie** (`provider_token`) — the Hydra-issued OAuth2 access token, used for every authenticated cloud-server API call and forwarded to Meshery instances acting as Layer5 Cloud clients. This is the cookie that gates day-to-day API access.
+* **Browser-side workflow cookies** (`Layer5-Current-Orgid`, `new_user`, `source_ref`, `return_to`, `meshery_ref`, `_meshery_saas_ref`, `anonymousUserID`) — short-lived state used to drive the auth pages, themes, and post-login redirect.
+
+{{< alert type="info" >}}
+The [Sessions](/cloud/security/sessions) page describes the user-visible session that ties these cookies together; the cookie name `meshery_session` referenced there is the legacy single-cookie name from before the Kratos/Hydra split. Today, the equivalent state lives across the `session_cookie` (Kratos) and `provider_token` (Hydra OAuth2) cookies described below.
+{{< /alert >}}
 
 | Cookie | Set by | Scope | Lifetime | Purpose |
 |---|---|---|---|---|
@@ -103,10 +113,10 @@ The user creates a Layer5 Cloud account from scratch using an email address and 
 4. Open the email, click **Verify**, and you'll be bounced through the [email-verification flow](#email-verification) into `/login`.
 5. Log in with the credentials you just set. You land on `/dashboard`.
 
-**Behaviour notes**
+**Behavior notes**
 
 * The form posts to `/api/auth/flow/submit?type=registration&id=<flow-id>`.
-* Validation happens client-side first: name regex (`^[\p{L}\p{M}\s]{1,50}$/u`, accepts unicode letters and marks but no digits or symbols), an RFC-leaning email regex, and a spam filter that blocks listed names and email domains.
+* Validation happens client-side first: name regex (`^[\p{L}\p{M}\s]{1,50}$`, accepts unicode letters and marks but no digits or symbols), an RFC-leaning email regex, and a spam filter that blocks listed names and email domains.
 * Password rules are enforced server-side by Kratos: minimum 8 characters, identifier-similarity check (your password may not be substantially similar to your email), and a "have I been pwned" check against the public breach corpus.
 * The reCAPTCHA token, when present, is sent as a hidden input named `transient_payload` with value `{"recaptcha_token":"<token>"}`.
 * The flow lasts 24 hours from creation; expired flows return a fresh one via `/api/auth/flow/init`.
@@ -124,7 +134,7 @@ Verifying an email address is the second half of [email registration](#email-reg
 2. The page server-renders the `passed_challenge` state and immediately redirects you to `/login`.
 3. Sign in normally.
 
-**Behaviour notes**
+**Behavior notes**
 
 * Verification flows are valid for 30 days but each `flow=<id>` is single-use. If the link has expired or been used, the cloud server bounces the browser through `/api/auth/flow/init` to mint a fresh flow that asks the user to re-enter their email.
 * For users who registered via OAuth, email verification is implicit — the OAuth provider has already attested the address, so Kratos marks the identity as verified at registration time.
@@ -145,16 +155,14 @@ The standard sign-in flow for users who registered with an email address and pas
 
 **Where you land after signing in**
 
-The post-login destination is selected in this order:
+The post-login destination is selected in this order (highest priority first):
 
-1. **`?ref=` query parameter** on the URL that started the auth flow — used by trusted upstream systems (e.g. a Meshery server) to hand off a deep-link.
-2. **`meshery_ref` cookie** set by a Meshery instance acting as a Layer5 Cloud client.
-3. **`return_to` / `source_ref` cookie** captured at the start of the flow from the request URL — but **only** when the original request was a real top-level browser navigation (`Sec-Fetch-Dest: document`, method `GET`, and not a static-asset path or a `/.well-known/...` probe). Background fetches (favicon requests, service-worker probes, the Chrome DevTools `/.well-known/appspecific/com.chrome.devtools.json` probe, XHR, sub-resource loads) are deliberately ignored so they don't poison the post-login destination.
+1. **`meshery_ref` cookie** set by a Meshery instance acting as a Layer5 Cloud client. When present, this overrides everything else — a Meshery client is explicitly handing off a destination it controls.
+2. **`?ref=` query parameter** on the URL that started the auth flow — used by trusted upstream systems (e.g. a Meshery server) to hand off a deep-link.
+3. **The synthesized request URL** (encoded into the `return_to` / `source_ref` cookie at the start of the flow) — but **only** when the original request was a real top-level browser navigation (`Sec-Fetch-Dest: document`, method `GET`) AND the path is not itself an auth-initiation route (`/login`, `/registration`, `/callback`, `/logout`). Background fetches (favicon requests, service-worker probes, the Chrome DevTools `/.well-known/appspecific/com.chrome.devtools.json` probe, XHR, sub-resource loads) are deliberately ignored so they don't poison the post-login destination.
 4. **`/dashboard`** as the default fallback.
 
-The capture step also explicitly skips paths that *are* the auth flow itself (`/login`, `/registration`, `/callback`, `/logout`) so the user can't end up looped back into sign-in after they finish signing in.
-
-**Behaviour notes**
+**Behavior notes**
 
 * On invalid password, Kratos returns the existing flow with an error message attached and the user re-renders the same `/login?flow=<id>` page with the message inlined next to the relevant field.
 * On expired flow (HTTP `410 Gone` from Kratos), the cloud server bounces the browser back through `/api/auth/flow/init` to mint a new one — the user sees a fresh `/login` page, never an error.
@@ -176,7 +184,7 @@ Single sign-on registration via GitHub, using OAuth 2.0 / OpenID Connect.
 5. A registration webhook fires server-side, creating the corresponding row in the `users` table and provisioning the user's default workspace.
 6. Hydra issues the access token, the cloud server sets the `provider_token` cookie, and you land on `/registered` (and then `/dashboard`).
 
-**Behaviour notes**
+**Behavior notes**
 
 * The button label `Sign up with GitHub` comes directly from Kratos's flow JSON (`flow.ui.nodes[].meta.label.text`). Login flows return "Sign in with GitHub"; registration flows return "Sign up with GitHub".
 * OIDC submits skip the registration page's name/email/spam-filter validation entirely — GitHub supplies those fields, and they're populated server-side after the callback.
@@ -195,7 +203,7 @@ Subsequent sign-ins for an account that was either originally registered via Git
 3. GitHub consent (skipped if you have an active GitHub session and previously authorized Layer5 Cloud).
 4. Land on `/dashboard` with a valid access token.
 
-**Critical assertion**: after the OIDC round-trip the browser must not see a `401`. If it does, the most likely cause is the cookie `Path` attribute — the cloud server's cookie-relay normalises Kratos's native `Path=/.ory/kratos/public/` to `Path=/`; if that has been bypassed, the next form post will fail CSRF.
+**Critical assertion**: after the OIDC round-trip the browser must not see a `401`. If it does, the most likely cause is the cookie `Path` attribute — the cloud server's cookie-relay normalizes Kratos's native `Path=/.ory/kratos/public/` to `Path=/`; if that has been bypassed, the next form post will fail CSRF.
 
 ---
 
@@ -212,7 +220,7 @@ Single sign-on registration via Google, using OAuth 2.0 / OpenID Connect.
 5. The same registration webhook as the GitHub flow fires, creating the user record and the default workspace.
 6. Hydra issues the access token, the cloud server sets the `provider_token` cookie, and you land on `/registered` (and then `/dashboard`).
 
-**Behaviour notes**
+**Behavior notes**
 
 * The button label `Sign up with Google` is supplied by Kratos's flow JSON.
 * The user's `provider` field is set to `google`; their `userId` is set to the Google account's stable identifier.
@@ -245,7 +253,7 @@ Self-service flow for users who have forgotten their password.
 4. Enter and confirm a new password, then submit.
 5. You're redirected to `/login`. Sign in with the new password.
 
-**Behaviour notes**
+**Behavior notes**
 
 * The wording at step 2 is intentionally non-committal — the response does not disclose whether the email is registered, to prevent enumeration.
 * Recovery flows are valid for 30 days, but the one-time code in the email link is single-use.
@@ -274,7 +282,7 @@ Lets a signed-in user change their password, attach an additional credential met
 5. **Unlinking a provider** — Kratos validates that you still have at least one usable credential method left. You can never remove the only credential method on the account.
 6. **Changing a password** — Kratos enforces the same minimum-length / leaked-credential rules as the registration flow.
 
-**Behaviour notes**
+**Behavior notes**
 
 * The settings flow has a 24-hour `privileged_session_max_age`. If you signed in more than 24 hours ago, Kratos will require a fresh sign-in before allowing destructive changes (set/change password, unlink, etc.).
 * Linking is keyed on the email address Kratos receives from the provider — so if you sign up with `alice@example.com` via password and later try to **sign in** (not link) with a GitHub account whose primary email is `alice@example.com`, you'll be prompted for the existing password and the linking happens automatically. See [User Accounts → Account Linking](/cloud/identity/users/#account-linking) for the full rules.
@@ -329,14 +337,14 @@ Logout terminates the user's session on Layer5 Cloud and revokes the OAuth2 acce
 **User journey**
 
 1. Click your avatar in the header and choose **Sign out**.
-2. The browser hits Layer5 Cloud's logout handler. Three things happen in order:
-   * The cloud server calls Hydra's `RevokeToken` endpoint with the current `provider_token`. Hydra invalidates the token; subsequent calls with that token return `401 Unauthorized` even before the cookie expires.
-   * The Kratos session cookie is cleared by sending a `Set-Cookie: <name>=; Max-Age=-1; Path=/`. This terminates the Kratos session that backs the `/account` settings flow.
-   * The `provider_token` cookie is cleared on every domain it was set on (the eTLD+1-scoped copy and the host-scoped copy).
+2. The browser hits Layer5 Cloud's logout handler. Two things happen:
+   * The cloud server calls Hydra's `RevokeToken` endpoint with the current `provider_token`. **Hydra invalidates the token immediately** — subsequent API calls bearing that token return `401 Unauthorized`, regardless of whether the cookie itself has expired.
+   * The Kratos session cookie (`session_cookie` / `KratosCookieName`) is cleared by sending a `Set-Cookie: ...; Max-Age=-1; Path=/`. This terminates the Kratos session that backs the `/account` settings flow.
 3. Kratos's `flows.logout.after.default_browser_return_url` is configured to `/login`, so the browser lands on the login page.
 
-**Behaviour notes**
+**Behavior notes**
 
+* The `provider_token` cookie itself is *not* explicitly cleared by `RevokeToken` — the cookie can persist client-side until its 24-hour expiry, but the token it contains is dead the moment Hydra revokes it. Backend authorization checks see the revoked token and return `401`.
 * Logout is a single-page event — the user's browser is the only client invalidated. If you are signed in on a different device, that session is unaffected; revoke it from [Sessions](https://cloud.layer5.io/security/sessions) instead.
 * API tokens (Personal Access Tokens) are not affected by the browser logout. To revoke an API token, see [Tokens](/cloud/security/tokens).
 * If a Meshery instance is using your Layer5 Cloud session, that Meshery instance will receive `401` responses for its next API call and prompt the user to re-authenticate.
@@ -347,14 +355,14 @@ Logout terminates the user's session on Layer5 Cloud and revokes the OAuth2 acce
 
 | Symptom | First thing to check |
 |---|---|
-| `401 Unauthorized` immediately after an OIDC round-trip | The session cookie set by Kratos must have `Path=/` (so the browser sends it on `/api/auth/flow/submit`). The cloud server's cookie-relay normalises this; if it has been bypassed, you'll see the cookie restricted to `/.ory/...` and the next form post will fail CSRF. |
+| `401 Unauthorized` immediately after an OIDC round-trip | The session cookie set by Kratos must have `Path=/` (so the browser sends it on `/api/auth/flow/submit`). The cloud server's cookie-relay normalizes this; if it has been bypassed, you'll see the cookie restricted to `/.ory/...` and the next form post will fail CSRF. |
 | OAuth button does nothing on the registration page | HTML5 form validation is blocking. The OIDC submit button must carry `formNoValidate`. |
 | Form submit fails CSRF on the very first attempt | The `/api/auth/flow/init` response must include the CSRF cookie — check `Set-Cookie` is present and `Path=/`. |
 | `/registration?flow=<id>` redirects to a 404 page | `KRATOS_BROWSER_URL` has been re-exposed to the JavaScript bundle by mistake. The public UI must treat Kratos as if it doesn't exist. |
 | Anonymous designs disappear after signup | Trace `anonymousUserID` through every redirect. It must appear in `/api/auth/flow/init`, in the post-init bounce-back, and in the `source_ref` cookie that the post-auth handler reads to trigger `MigrateUserResourceToCurrentUser`. |
 | `413 Request Entity Too Large` on form submit | Body exceeded the 1 MiB cap on the submit proxy. Legitimate flows do not approach this; investigate what is being submitted. |
 | Form submit hangs | The cloud server enforces a 30-second timeout to Kratos. A hang past this point indicates Kratos itself is slow or unreachable. |
-| Logout button "did nothing" — user is still signed in | Check both `provider_token` cookies (eTLD+1-scoped and host-scoped, on custom domains). Both must be cleared. |
+| Logout button "did nothing" — user is still signed in | Confirm Hydra's `RevokeToken` returned 200, and confirm the Kratos `session_cookie` was cleared. Note that the `provider_token` cookie may visibly remain in DevTools — that's expected; what matters is that API calls return 401. |
 | User lands on a junk page after sign-in (e.g. `/.well-known/appspecific/com.chrome.devtools.json`) | Background-fetch URL was captured as `refURL`. The `isNavigationRequest` filter in `GetRefURL` should drop this. |
 
 {{< alert type="info" >}}
