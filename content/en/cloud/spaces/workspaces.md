@@ -84,3 +84,33 @@ Workspaces enhance collaboration within your teams, providing a structured envir
 {{< alert type="info" title="Looking for Practical Workspace Management?" >}}
 For a step-by-step guide on how to create, edit, and manage your workspaces, see the [Managing Workspaces](/cloud/spaces/managing-workspaces/) documentation.
 {{< /alert >}}
+
+## Example: Orbital Labs Workspace Setup
+
+The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows. See [Meet Five and the Cast](/cloud/about) for the full seed inventory.
+
+### Workspace Inventory
+
+| Workspace | Owner Org | Teams with Access | Environments |
+|---|---|---|---|
+| `orbital-production` | Orbital Labs | Infrastructure only | `prod-aws` (EKS + RDS + S3 + CloudFront + SQS), `prod-gcp` (GKE + Cloud SQL + Cloud Storage + Pub/Sub) |
+| `orbital-staging` | Orbital Labs | Infrastructure + Development | `staging-aws` (EKS + S3 + ElastiCache), `staging-azure` (AKS + Azure Blob + Azure Service Bus) |
+| `orbital-dev` | Orbital Labs | Development only | `dev-local` (kind + LocalStack) |
+
+### Creating orbital-staging
+
+Five creates the `orbital-staging` workspace to give the Development team a shared environment for feature-branch testing — without handing them the keys to production.
+
+**Steps Five follows:**
+1. Navigate to **Workspaces** and click **Create Workspace**
+2. Name the workspace `orbital-staging`
+3. Save — the workspace is created with no team access and no environments assigned
+
+**Maya then assigns team access:**
+1. Open the `orbital-staging` workspace settings
+2. Add the **Infrastructure** team — enabling Zara and Five to manage environment connections
+3. Add the **Development** team — enabling Rex and Jordan to deploy designs and use connections
+
+{{< alert type="info" title="Why both teams?" >}}
+Infrastructure owns the environments (Zara assigns connections); Development owns the designs (Rex and Jordan deploy them). Assigning both teams to `orbital-staging` gives each group the access it needs without elevating Development's access to `orbital-production`.
+{{< /alert >}}

@@ -10,6 +10,33 @@ Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organi
 
 Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
 
+## Example: Orbital Labs Teams
+
+The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at [Meet Five and the Cast](/cloud/about).
+
+<img src="/images/five/team-of-fives.svg" alt="Team of Fives" style="width:120px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
+
+{{< cardpane >}}
+{{% card header="**Infrastructure Team**" %}}
+**Organization:** Orbital Labs  
+**Team Admin:** Zara Osei  
+**Members:** Five
+
+Controls access to production and staging workspaces (`orbital-production`, `orbital-staging`). Zara manages the keychain permission matrix and approves environment assignments. Five handles day-to-day platform operations and occasionally discovers undocumented feature behavior.
+{{% /card %}}
+{{% card header="**Development Team**" %}}
+**Organization:** Orbital Labs  
+**Team Admin:** Maya Chen *(also Org Admin)*  
+**Members:** Rex Park, Jordan Reyes
+
+Controls access to the development workspace (`orbital-dev`). Rex deploys often; Jordan designs infrastructure that is architecturally ambitious. Maya ensures neither of them touches production on a Friday afternoon.
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< alert type="info" >}}
+An Org Admin may also serve as a Team Admin — Maya Chen holds both roles at Orbital Labs. See [Roles](/cloud/security/roles/) for more on how role assignments stack.
+{{< /alert >}}
+
 ## Add a Team
 
 To apply different settings to a set of users, create a child new team below your top-level organization and place them in it. You can then apply unique settings to that team, like access to a workspace and their a specific set of environments.

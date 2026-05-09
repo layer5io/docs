@@ -73,7 +73,7 @@
 
 //main sections
 .td-outer {
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .td-main main {
@@ -86,6 +86,7 @@
 
 body {
   overflow-x: hidden;
+  padding-top: 5.5rem;
 }
 
 // Main Middle Body
@@ -237,6 +238,13 @@ a:not([href]):not([class]):hover {
   padding-top: 1rem;
   margin-top: 0;
   overflow-x: hidden;
+  &__inner {
+    @include media-breakpoint-up(md) {
+      @supports (position: sticky) {
+        position: static;
+      }
+    }
+  }
 }
 
 .td-sidebar #td-sidebar-menu,
@@ -251,14 +259,6 @@ a:not([href]):not([class]):hover {
     height: auto;
     top: 0;
     padding-top: 0;
-  }
-}
-
-@media screen and (min-height: 800px) and (min-width: 768px) {
-  .td-sidebar {
-    height: 100vh;
-    top: 0;
-    padding-top: 0rem;
   }
 }
 
@@ -380,10 +380,15 @@ a:not([href]):not([class]):hover {
   #TableOfContents {
     a {
       color: $lightslategray;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         color: $white;
         text-decoration: none;
+        background-color: rgba($primary, 0.15);
       }
     }
   }
@@ -791,6 +796,37 @@ html {
   scroll-behavior: smooth;
 }
 
+// Max-width constraint for large screens to prevent layout stretch
+@media (min-width: $site-max-width) {
+  .td-navbar {
+    > .container-fluid {
+      max-width: $site-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .container-fluid.td-outer {
+    > .td-main {
+      max-width: $site-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .td-navbar {
+    top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  body {
+    padding-top: 0;
+  }
 }

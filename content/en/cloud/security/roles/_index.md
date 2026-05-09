@@ -214,3 +214,35 @@ The entitlement of "team owner" is automatically bestowed to the creator of a te
 
 For more information, see [Teams](/cloud/identity/teams).
 {{< /alert >}}
+
+## Example: The Orbital Labs Role Hierarchy
+
+The following illustrates how Provider Admin, Org Admin, and Team Admin roles stack in practice across the Orbital Labs ecosystem. See [Meet Five and the Cast](/cloud/about) for the full narrative.
+
+<img src="/images/five/layer5-five-mascot-means-business.svg" alt="Five means business" style="width:90px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
+
+{{< cardpane >}}
+{{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
+**Organization:** Constellation Cloud  
+**Scope:** All tenants (Orbital Labs, Stellar Dynamics, and others)
+
+Dr. Aiko Sato holds the Provider Admin role at Constellation Cloud, the MSP that manages Orbital Labs as a tenant. Provider Admins can perform CRUD on all resources across all tenant organizations. Dr. Sato has seen every misconfigured RBAC policy known to humankind, which is why she documents each one.
+{{% /card %}}
+{{% card header="**Maya Chen** — Organization Administrator" %}}
+**Organization:** Orbital Labs  
+**Scope:** All resources within Orbital Labs
+
+Maya Chen holds the Org Admin role for Orbital Labs. She manages user accounts, team membership, workspace creation, and role assignments within Orbital Labs. She also serves as Team Admin for the Development team — an Org Admin may administer any team in their organization.
+{{% /card %}}
+{{% card header="**Zara Osei** — Team Administrator" %}}
+**Organization:** Orbital Labs  
+**Team:** Infrastructure  
+**Scope:** Infrastructure team members and their workspace access
+
+Zara Osei holds the Team Admin role for Orbital Labs' Infrastructure team. She manages keychain assignments for Five and controls which environments the Infrastructure team can access. Access requests go through Zara's 48-hour SLA — no exceptions, no matter how urgent Five thinks the situation is.
+{{% /card %}}
+{{< /cardpane >}}
+
+{{< alert type="info" >}}
+Role assignments are org-scoped. Dr. Aiko's Provider Admin role spans all tenants; Maya's Org Admin role applies only within Orbital Labs; Zara's Team Admin role applies only to the Infrastructure team within Orbital Labs.
+{{< /alert >}}

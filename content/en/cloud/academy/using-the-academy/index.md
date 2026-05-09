@@ -115,11 +115,6 @@ If you're ever unsure about a concept, you can always use the Back button to rev
 
 ![Quiz Result - Passed](./images/q-result-pass.png)
 
-### Retaking an Assessment
-
-If you don’t pass an assessment on your first try, don’t worry you may be able to retake it. Depending on the certification, you may have unlimited retries, a limited number of retries, or in some cases, no retries at all.
-
-
 ## Your Achievements
 
 Completing content in the Academy earns you valuable credentials that you can share with your professional network.

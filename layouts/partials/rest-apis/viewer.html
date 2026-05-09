@@ -129,7 +129,6 @@
     <section class="rest-api-overview" aria-label="Layer5 Cloud REST API overview">
       <p class="rest-api-overview__eyebrow">Layer5 Cloud REST API reference</p>
       <p class="rest-api-overview__summary">
-        {{ len $operations }} API endpoints across {{ len $orderedTags }} resources.
         This reference is generated from the <a href="https://raw.githubusercontent.com/layer5io/docs/refs/heads/master/data/openapi.yml">OpenAPI schema</a> used by the Layer5 docs.
       </p>
       <ul class="rest-api-overview__stats">
@@ -376,8 +375,8 @@
 >
             <div class="rest-api-operation__header">
               <div class="rest-api-operation__labels">
-                <span class="rest-api-method-badge rest-api-method-badge--{{ .method }}">{{ upper .method }}</span>
                 <span class="rest-api-chip">{{ .tagLabel }}</span>
+                <span class="rest-api-method-badge rest-api-method-badge--{{ .method }}">{{ upper .method }}</span>
               </div>
               <h2 class="rest-api-operation__path" id="{{ .id }}">{{ .path }}</h2>
               <p class="rest-api-operation__summary">{{ .summary }}</p>

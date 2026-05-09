@@ -42,3 +42,7 @@ check-go:
 ## Build and run docs website within a Docker container
 docker:
 	docker compose watch
+
+## Format code using Prettier
+format:
+	npm run format

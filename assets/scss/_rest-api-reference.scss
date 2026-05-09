@@ -915,10 +915,11 @@ $method-head: #7d8790;
 
   .rest-api-chip {
     padding: 0.35rem 0.75rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba($white, 0.1);
-    background: rgba($white, 0.03);
+    border-radius: 0.45rem;
+    border: 1px dashed rgba($white, 0.3);
+    background: transparent;
     font-size: 0.82rem;
+    letter-spacing: 0.09em;
     color: $white;
   }
 

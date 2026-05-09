@@ -11,6 +11,13 @@
   margin: -12px;
   font-family: $font-qanelas;
 
+  @media (min-width: $site-max-width) {
+    > * {
+      max-width: $site-max-width;
+      width: 100%;
+    }
+  }
+
   .d-header {
     height: 6rem;
     background-color: $white;
