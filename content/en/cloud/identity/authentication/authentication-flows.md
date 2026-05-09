@@ -308,7 +308,7 @@ The same allowlist that preserves `anonymousUserID` also carries:
 * `login_challenge` — Hydra OAuth2 continuation token. Dropping it would force a fresh OAuth flow and the user would land on `/login` instead of completing the in-progress flow.
 * `refresh=true` — instructs Kratos to enforce re-authentication regardless of the existing session.
 * `return_to` — explicit deep-link to land on after authentication.
-* `program` — used by enrolment flows tied to specific learning programmes.
+* `program` — used by enrollment flows tied to specific learning programs.
 * `orgId` — pre-selects an organization context for the auth pages (see [Custom domains](/cloud/identity/authentication/custom-domains)).
 
 ---

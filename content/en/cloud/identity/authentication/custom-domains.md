@@ -255,7 +255,7 @@ User picks "Academy" from header switcher
 
 The persistence (PUT preferences) happens **before** the redirect, so by the time the new domain loads, the DB row already matches what the user picked. If the new org has no custom domain, step 4 redirects to the default domain instead.
 
-### Scenario 6 — Academy enrolment with a custom domain
+### Scenario 6 — Academy enrollment with a custom domain
 
 > User is on `cloud.layer5.io/academy/<academy_org.id>/learning-path/<slug>`, **not yet a member** of the Academy org. They click **Enroll Now**.
 
