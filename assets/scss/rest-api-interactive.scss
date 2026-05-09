@@ -424,7 +424,7 @@
   .rest-api-url-preview {
     background-color: #1f2937;
     border-left-color: #60a5fa;
-    color: #e5e7eb;
+    color: #f9fafb;
   }
 
   .rest-api-parameter-input input,
@@ -435,17 +435,18 @@
   }
 
   .rest-api-parameter-input label {
-    color: #e5e7eb;
+    color: #f9fafb;
   }
 
   .rest-api-server-selector label {
-    color: #e5e7eb;
+    color: #f9fafb;
   }
 
   .rest-api-server-select {
     background-color: #1f2937;
     border-color: #374151;
     color: #f3f4f6;
+    cursor: pointer;
   }
 
   .rest-api-server-select:focus {
