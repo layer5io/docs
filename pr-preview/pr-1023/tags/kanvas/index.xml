@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kanvas on Layer5 Documentation</title><link>/tags/kanvas/</link><description>Recent content in Kanvas on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/kanvas/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Actions</title><link>/cloud/github-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/github-actions/</guid><description>&lt;p&gt;Kanvas GitHub Actions enhance your operational workflow by integrating git version control and the management of your infrastructure. Kanvas GitHub Actions are design to integrate into your existing pipelines.&lt;/p&gt;
+
+&lt;h2 id="kanvas-github-actions" class="heading-link"&gt;
+ Kanvas Github Actions
+ &lt;a href="#kanvas-github-actions" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="../../cloud/github-actions/#kanvas-snapshot-github-action"&gt;Kanvas Snapshot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.meshery.io/guides/infrastructure-management/gitops-with-meshery"&gt;Performance Testing with Kanvas&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This methodology automates the synchronization of your actual infrastructure state with the desired state defined in your Git repository. Kanvas enables GitOps by offering a comprehensive view of your infrastructure, allowing you to verify workload designs and Kubernetes cluster configurations before merging pull requests.&lt;/p&gt;</description></item></channel></rss>
