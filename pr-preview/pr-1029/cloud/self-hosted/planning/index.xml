@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Planning on Layer5 Documentation</title><link>/cloud/self-hosted/planning/</link><description>Recent content in Planning on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/self-hosted/planning/index.xml" rel="self" type="application/rss+xml"/><item><title>Networking</title><link>/cloud/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;h2 id="considerations-of-peer-to-peer-communication" class="heading-link"&gt;
+ Considerations of Peer-to-Peer Communication
+ &lt;a href="#considerations-of-peer-to-peer-communication" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience and does so by propagating document (e.g. designs, views, and so on) updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="../../../cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Monitoring is essential to operate a reliable Layer5 Cloud deployment. Plan for metrics, logs, traces, dashboards, alerting, and retention so that you can detect and resolve issues quickly, understand capacity, and meet compliance needs.&lt;/p&gt;
+
+&lt;h2 id="objectives" class="heading-link"&gt;
+ Objectives
+ &lt;a href="#objectives" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Establish observability for core services (API, UI, real-time collaboration, identity, database, cache, ingress) and infrastructure (Kubernetes, nodes, storage, networking)&lt;/li&gt;
+&lt;li&gt;Provide dashboards for SLOs and golden signals (latency, traffic, errors, saturation)&lt;/li&gt;
+&lt;li&gt;Configure actionable alerts with clear ownership and runbooks&lt;/li&gt;
+&lt;li&gt;Size and retain telemetry data according to compliance and cost constraints&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="metrics" class="heading-link"&gt;
+ Metrics
+ &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item></channel></rss>
