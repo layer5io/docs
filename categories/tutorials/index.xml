@@ -27,4 +27,33 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Note&lt;/h4&gt;
+ 
+ This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic understanding of Kubernetes objects (Service, Pod, Container)&lt;/li&gt;
+&lt;li&gt;Access to the &lt;em&gt;Kanvas Playground&lt;/em&gt;. If you don&amp;rsquo;t have an account, sign up at &lt;a href="https://play.meshery.io/"&gt;Kanvas Playground&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="lab-scenario" class="heading-link"&gt;
+ Lab Scenario
+ &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;We will explore a simple application architecture in Kubernetes.&lt;/p&gt;</description></item></channel></rss>
