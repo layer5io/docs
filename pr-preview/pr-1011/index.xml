@@ -103,7 +103,45 @@
  Maximum Number of Components
  &lt;a href="#maximum-number-of-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Kanvas has a maximum limit of 1,000 components per design. If you exceed this limit, you may experience performance issues such as slow loading times and laggy interactions. To avoid hitting this limit, consider breaking your design into smaller, more manageable designs.&lt;/p&gt;</description></item><item><title>Setting up Layer5 Account</title><link>/cloud/getting-started/getting-started-with-layer5-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/getting-started-with-layer5-account/</guid><description>&lt;p&gt;This guide will walk you through setting up your Layer5 account.&lt;/p&gt;
+&lt;p&gt;Kanvas has a maximum limit of 1,000 components per design. If you exceed this limit, you may experience performance issues such as slow loading times and laggy interactions. To avoid hitting this limit, consider breaking your design into smaller, more manageable designs.&lt;/p&gt;</description></item><item><title>Provider Admin Role</title><link>/cloud/security/roles/provider-admin-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/provider-admin-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="./cloud/security/images/role-provider-admin.svg" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="provider-administrator" class="heading-link"&gt;
+ Provider Administrator
+ &lt;a href="#provider-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for administration of Layer5 Cloud.&lt;/li&gt;
+&lt;li&gt;Used for debugging and monitoring.&lt;/li&gt;
+&lt;li&gt;Applicable to platform engineering team and on-prem users.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provider Admins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On ☁️ boot-up (using build args)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Min: 1, Max: many (based on plan)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Setting up Layer5 Account</title><link>/cloud/getting-started/getting-started-with-layer5-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/getting-started-with-layer5-account/</guid><description>&lt;p&gt;This guide will walk you through setting up your Layer5 account.&lt;/p&gt;
 
 &lt;h2 id="configuring-your-layer5-account" class="heading-link"&gt;
  Configuring your Layer5 account
@@ -742,7 +780,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[471 194 473 428 415 74]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[227 154 13 87 286 34]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -760,7 +798,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[194 448 51 480 228 190]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[179 229 157 473 141 353]" src="./cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -845,7 +883,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[188 439 465 495 406 478]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[469 91 436 26 348 122]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -886,7 +924,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[454 37 83 394 5 325]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[252 239 336 459 221 246]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -1008,7 +1046,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[23 229 225 71 329 192]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[137 178 344 456 361 455]" src="./cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1080,7 +1118,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[317 139 386 96 60 373]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[475 176 60 64 301 287]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1091,7 +1129,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[186 367 414 326 430 330]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[378 213 399 365 444 366]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1144,7 +1182,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[256 277 42 209 409 307]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[359 346 77 401 267 282]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1584,7 +1622,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[202 466 483 276 280 460]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[282 491 406 351 10 483]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1600,7 +1638,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[65 179 232 282 339 192]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[468 466 75 192 339 422]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1616,7 +1654,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[31 83 88 13 219 459]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[206 92 390 229 63 480]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1632,7 +1670,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[82 356 74 193 324 2]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[442 436 127 92 494 366]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1648,7 +1686,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[83 430 336 132 322 70]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[32 256 422 316 397 361]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1664,7 +1702,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[377 385 277 374 153 378]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[21 488 301 154 243 177]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1680,7 +1718,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[10 167 228 9 359 230]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[264 175 50 21 189 142]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1696,7 +1734,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[389 40 286 179 340 137]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[394 250 487 281 59 346]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1712,7 +1750,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[151 303 476 92 13 146]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[10 163 215 248 459 320]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1728,7 +1766,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[423 232 302 326 61 91]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[259 250 70 465 408 474]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1753,7 +1791,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[257 391 464 359 124 421]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[495 354 232 108 178 292]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1870,7 +1908,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[498 421 42 70 125 88]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[104 211 123 25 473 122]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1889,7 +1927,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[421 252 251 321 4 298]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[286 118 391 115 360 279]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -1929,7 +1967,12 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Metrics
  &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
+&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Publishing to Catalog</title><link>/kanvas/tutorials/publishing-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/publishing-to-catalog/</guid><description>&lt;div class="pageinfo"&gt;
+&lt;p&gt;Page under construction.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, or &lt;del&gt;strikethrough&lt;/del&gt;. &lt;a href="https://gohugo.io"&gt;Links&lt;/a&gt; should be blue with no underlines (unless hovered over).&lt;/p&gt;
+&lt;p&gt;There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
 &lt;p&gt;The render mode is a &lt;strong&gt;performance tool&lt;/strong&gt;, not a document property. Switching modes does not change your design — components, relationships, layers, and metadata are identical. It only changes what Kanvas chooses to render on screen.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="./kanvas-comment.png" alt="Comments in Designer" /&gt;
@@ -1954,7 +1997,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[68 235 382 454 78 228]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[495 415 254 235 86 240]" src="./cloud/identity/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1975,7 +2018,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[411 261 493 191 218 330]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[145 182 99 322 121 147]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2010,7 +2053,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[28 21 500 313 59 259]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[264 394 17 209 84 32]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2022,7 +2065,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[95 301 344 145 52 429]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[227 150 387 360 66 394]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2048,9 +2091,356 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[470 65 42 395 124 272]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[272 120 412 234 486 398]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/identity/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;div class="pageinfo"&gt;
+&lt;p&gt;Page under construction.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+
+There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+
+90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
+
+&gt; There should be no margin above this first sentence.
+&gt;
+&gt; Blockquotes should be a lighter gray with a border along the left side in the secondary color.
+&gt;
+&gt; There should be no margin below this final sentence.
+
+## First Header 2
+
+This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
+
+Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
+
+On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
+
+Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&amp;B. **I love this life we live in**.
+
+
+## Second Header 2
+
+&gt; This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
+### Header 3
+
+```
+This is a code block following a header.
+```
+
+Next level leggings before they sold out, PBR&amp;B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
+
+#### Header 4
+
+* This is an unordered list following a header.
+* This is an unordered list following a header.
+* This is an unordered list following a header.
+
+##### Header 5
+
+1. This is an ordered list following a header.
+2. This is an ordered list following a header.
+3. This is an ordered list following a header.
+
+###### Header 6
+
+| What | Follows |
+|-----------|-----------------|
+| A table | A header |
+| A table | A header |
+| A table | A header |
+
+----------------
+
+There's a horizontal rule above and below this.
+
+----------------
+
+Here is an unordered list:
+
+* Liverpool F.C.
+* Chelsea F.C.
+* Manchester United F.C.
+
+And an ordered list:
+
+1. Michael Brecker
+2. Seamus Blake
+3. Branford Marsalis
+
+And an unordered task list:
+
+- [x] Create a Hugo theme
+- [x] Add task lists to it
+- [ ] Take a vacation
+
+And a "mixed" task list:
+
+- [ ] Pack bags
+- ?
+- [ ] Travel!
+
+And a nested list:
+
+* Jackson 5
+ * Michael
+ * Tito
+ * Jackie
+ * Marlon
+ * Jermaine
+* TMNT
+ * Leonardo
+ * Michelangelo
+ * Donatello
+ * Raphael
+
+Definition lists can be used with Markdown syntax. Definition headers are bold.
+
+Name
+: Godzilla
+
+Born
+: 1952
+
+Birthplace
+: Japan
+
+Color
+: Green
+
+
+----------------
+
+Tables should have bold headings and alternating shaded rows.
+
+| Artist | Album | Year |
+|-------------------|-----------------|------|
+| Michael Jackson | Thriller | 1982 |
+| Prince | Purple Rain | 1984 |
+| Beastie Boys | License to Ill | 1986 |
+
+If a table is too wide, it should scroll horizontally.
+
+| Artist | Album | Year | Label | Awards | Songs |
+|-------------------|-----------------|------|-------------|----------|-----------|
+| Michael Jackson | Thriller | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
+| Prince | Purple Rain | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
+| Beastie Boys | License to Ill | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin &amp; Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
+
+----------------
+
+Code snippets like `var foo = "bar";` can be shown inline.
+
+Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
+
+Code can also be shown in a block element.
+
+```
+foo := "bar";
+bar := "foo";
+```
+
+Code can also use syntax highlighting.
+
+```go
+func main() {
+ input := `var foo = "bar";`
+
+ lexer := lexers.Get("javascript")
+ iterator, _ := lexer.Tokenise(nil, input)
+ style := styles.Get("github")
+ formatter := html.New(html.WithLineNumbers())
+
+ var buff bytes.Buffer
+ formatter.Format(&amp;buff, style, iterator)
+
+ fmt.Println(buff.String())
+}
+```
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+Inline code inside table cells should still be distinguishable.
+
+| Language | Code |
+|-------------|--------------------|
+| Javascript | `var foo = "bar";` |
+| Ruby | `foo = "bar"{` |
+
+----------------
+
+Small images should be shown at their actual size.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
+
+Large images should always scale down and fit in the content container.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
+
+_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
+
+
+## Components
+
+### Alerts
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Success&lt;/h4&gt;
+ 
+ This is an alert.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
+ 
+ This is an alert with a title.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
+ 
+ This is an alert with a title and &lt;strong&gt;Markdown&lt;/strong&gt;.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+&lt;div class="alert alert-success" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Success&lt;/h4&gt;
+ 
+ This is a successful alert.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+&lt;div class="alert alert-warning" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Warning&lt;/h4&gt;
+ 
+ This is a warning.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-warning" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Warning&lt;/h4&gt;
+ 
+ This is a warning with a title.
+ 
+&lt;/div&gt;
+
+
+
+
+## Another Heading
+
+Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
+### This Document
+
+Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
+
+
+### Pixel Count
+
+Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&amp;B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
+
+### Contact Info
+
+Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
+
+
+### External Links
+
+Stumptown PBR&amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
+
+```
+This is the final element on the page and there should be no margin below this.
+``` --&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/identity/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;Permissions&lt;/th&gt;
@@ -2186,7 +2576,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[470 362 467 249 10 222]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[170 327 13 108 178 65]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2247,7 +2637,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[94 205 19 431 96 314]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[486 296 311 380 383 270]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2332,7 +2722,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[229 490 184 199 16 324]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[223 237 497 40 21 349]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
@@ -2381,7 +2771,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[95 460 464 37 323 77]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[92 254 486 439 135 443]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/identity/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
 &lt;img src="./cloud/identity/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
@@ -89910,7 +90300,7 @@ Thank you to our contributors for making this release possible:
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[280 216 153 209 423 11]" src="./kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
+ &lt;img id="[8 298 313 455 196 144]" src="./kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
 Environments allow you to logically group related &lt;a href="./cloud/spaces/environments/#connections"&gt;Connections&lt;/a&gt; and their associated &lt;a href="./cloud/spaces/environments/#credentials"&gt;Credentials&lt;/a&gt;. Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
@@ -89972,26 +90362,13 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;/h3&gt;
 &lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the resources responsible for exposing applications inside and outside the cluster. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on labs to gain practical experience with the Kubernetes Services, without writing any YAML.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="./kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="./kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Helm Kanvas Snapshot</title><link>/kanvas/concepts/helm-kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/helm-kanvas-snapshot/</guid><description>&lt;h1 id="helm-kanvas-snapshot" class="heading-link"&gt;
- &lt;img style="height: 4rem; width: 4rem;" src="./kanvas/concepts/images/helm-chart-color.svg" /&gt; Helm Kanvas Snapshot
- &lt;a href="#helm-kanvas-snapshot" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h1&gt;
-
-&lt;h2 id="extension-overview" class="heading-link"&gt;
- Extension Overview
- &lt;a href="#extension-overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;Kanvas Snapshot Helm Plugin&lt;/strong&gt; allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="./kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="./kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Helm Kanvas Snapshot</title><link>/kanvas/concepts/helm-kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/helm-kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="text-align: left; position:relative; display:inline; height: 32px; width: 32px;" src="./kanvas/concepts/images/helm-chart-color.svg" /&gt; The &lt;strong&gt;Kanvas Snapshot Helm Plugin&lt;/strong&gt; allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id="overview" class="heading-link"&gt;
  Overview
  &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &amp;ldquo;last mile&amp;rdquo; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the &lt;code&gt;kubectl exec&lt;/code&gt; command, but web-based.&lt;/p&gt;</description></item><item><title>Kanvas</title><link>/kanvas/concepts/kanvas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas/</guid><description>&lt;h1 id="kanvas-beta" class="heading-link"&gt;
- &lt;img style="height: 4rem; width: 4rem;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas &lt;sup style="font-size: 1.8rem; vertical-align: top;"&gt;BETA&lt;/sup&gt;
- &lt;a href="#kanvas-beta" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;Kanvas is a GitOps-infused cloud native &lt;b&gt;visual designer&lt;/b&gt; for Kubernetes and cloud native applications. Kanvas works with your Kubernetes clusters so that you design and manage your infrastructure and applications between members of your team. Kanvas has two modes: Designer and Visualizer. Create and share your own Kubernetes deployments and patterns in Kanvas Designer. Deploy your designs and manage your infrastructure using Kanvas Visualizer. It includes multi-user collaboration features that allow teams to work together seamlessly towards achieving their goals in a more timely manner. Kanvas aims at removing all the challenging aspects of collaboration from the equation so that everyone on your team can be on the same page when it comes to managing cloud-native infrastructure projects.&lt;/p&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/designer-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/designer-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &amp;ldquo;last mile&amp;rdquo; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the &lt;code&gt;kubectl exec&lt;/code&gt; command, but web-based.&lt;/p&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/designer-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/designer-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qaoYRP3oLok?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
@@ -90014,11 +90391,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="./kanvas/operator/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Kanvas Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;h1 id="kanvas-snapshot" class="heading-link"&gt;
- &lt;img style="height: 4rem; width: 4rem;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot
- &lt;a href="#kanvas-snapshot" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
 &lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
@@ -90055,11 +90428,11 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/UCKS4eSB7AY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
-&lt;p&gt;Publishing a design lets you make your content visible to any anonymous visitor of &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt; and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to ArtifactHub</title><link>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+&lt;p&gt;Publishing a design lets you make your content visible to any anonymous visitor of &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt; and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to Artifact Hub</title><link>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll see how to export a Design from Meshery which we will use to populate an ArtifactHub repository.&lt;/p&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll see how to export a Design from Meshery which we will use to populate an Artifact Hub repository.&lt;/p&gt;
 
 &lt;h2 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -90078,17 +90451,7 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
  1. Click on MeshMap
  &lt;a href="#1-click-on-meshmap" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img id="[193 488 87 203 356 14]" src="./kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
- class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+&lt;p&gt;![](/kanvas/tutorials/images/publish-to-Artifact Hub/2024-07-30_1.png)&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
 
 
 

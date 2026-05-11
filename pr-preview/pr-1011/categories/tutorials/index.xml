@@ -77,7 +77,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[280 216 153 209 423 11]" src="../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
+ &lt;img id="[8 298 313 455 196 144]" src="../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
 In this tutorial, we will explore Kubernetes CronJobs, a resource that allows you to run jobs periodically at specified intervals. We will use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for working with CronJobs in Kubernetes.&lt;/p&gt;
@@ -140,11 +140,11 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="../../kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a &lt;strong&gt;diagram built in Meshery Kanvas&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to ArtifactHub</title><link>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to Artifact Hub</title><link>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll see how to export a Design from Meshery which we will use to populate an ArtifactHub repository.&lt;/p&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll see how to export a Design from Meshery which we will use to populate an Artifact Hub repository.&lt;/p&gt;
 
 &lt;h2 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -163,17 +163,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  1. Click on MeshMap
  &lt;a href="#1-click-on-meshmap" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img id="[193 488 87 203 356 14]" src="../../kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
- class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+&lt;p&gt;![](/kanvas/tutorials/images/publish-to-Artifact Hub/2024-07-30_1.png)&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
