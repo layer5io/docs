@@ -1,4 +1,195 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.55</title><link>/cloud/reference/releases/v1.0.55/</link><pubDate>Tue, 05 May 2026 03:35:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.55/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;DigitalOcean v0.1.15 content update @l5io (#5262)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.34 content update @l5io (#5260)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.72</title><link>/cloud/reference/releases/v1.0.72/</link><pubDate>Fri, 08 May 2026 17:54:22 +0000</pubDate><guid>/cloud/reference/releases/v1.0.72/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.8 @l5io (#5255)&lt;/li&gt;
+&lt;li&gt;fix(ui/catalog/filters): adopt fullWidth=false on toolbar SearchBar @leecalcote (#5259)&lt;/li&gt;
+&lt;li&gt;fix(ui/academy): use camelCase field names on AcademyCurricula wire reads and writes @leecalcote (#5257)&lt;/li&gt;
+&lt;li&gt;fix(auth): prevent OIDC buttons from capturing Enter key on login/signup forms @leecalcote (#5258)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.71</title><link>/cloud/reference/releases/v1.0.71/</link><pubDate>Fri, 08 May 2026 16:41:18 +0000</pubDate><guid>/cloud/reference/releases/v1.0.71/</guid><description>&lt;ul&gt;
+&lt;li&gt;chore(deps): bump @sistent/sistent to 0.21.8 and adopt fullWidth=false in toolbar SearchBars @leecalcote (#5256)&lt;/li&gt;
+&lt;li&gt;fix(academy): translate Hugo on-disk quiz JSON to canonical schema shape @leecalcote (#5249)&lt;/li&gt;
+&lt;li&gt;fix: secure public users directory @arjunmehta-git (#5254)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.70</title><link>/cloud/reference/releases/v1.0.70/</link><pubDate>Thu, 07 May 2026 18:17:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.70/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(helm): shorten Hydra-proxy port name to fit k8s 15-char limit @leecalcote (#5253)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.69</title><link>/cloud/reference/releases/v1.0.69/</link><pubDate>Thu, 07 May 2026 17:50:29 +0000</pubDate><guid>/cloud/reference/releases/v1.0.69/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): hydra-admin intercept proxy rewrites Kratos UUID subjects @leecalcote (#5251)&lt;/li&gt;
+&lt;li&gt;fix(ui/account): profile screenshot feedback + plans comparison caret regression @leecalcote (#5247)&lt;/li&gt;
+&lt;li&gt;fix(connections): add description and url columns to public.connections @leecalcote (#5250)&lt;/li&gt;
+&lt;li&gt;fix(auth): honor custom-domain org branding on React auth pages @leecalcote (#5246)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.68</title><link>/cloud/reference/releases/v1.0.68/</link><pubDate>Thu, 07 May 2026 14:33:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.68/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(auth): URL state authoritative + server-side custom-domain logout (resolves Issues 1 &amp;amp; 2 from v1.0.67 deploy) by @leecalcote in &lt;a href="https://github.com/layer5io/meshery-cloud/pull/5244"&gt;https://github.com/layer5io/meshery-cloud/pull/5244&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.67...v1.0.68"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.67...v1.0.68&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.67</title><link>/cloud/reference/releases/v1.0.67/</link><pubDate>Thu, 07 May 2026 13:13:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.67/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;hotfix(auth): configure Kratos oauth2_provider + restore custom-domain logout bounce by @leecalcote in &lt;a href="https://github.com/layer5io/meshery-cloud/pull/5243"&gt;https://github.com/layer5io/meshery-cloud/pull/5243&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.66...v1.0.67"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.66...v1.0.67&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.66</title><link>/cloud/reference/releases/v1.0.66/</link><pubDate>Thu, 07 May 2026 06:10:53 +0000</pubDate><guid>/cloud/reference/releases/v1.0.66/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(auth): bridge access-token cookie to non-layer5.io custom domains (issue #5238 Phase 3) @leecalcote (#5241)&lt;/li&gt;
+&lt;li&gt;feat(auth): thread originating host through Hydra (issue #5238 Phase 2) @leecalcote (#5240)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.65</title><link>/cloud/reference/releases/v1.0.65/</link><pubDate>Thu, 07 May 2026 04:04:56 +0000</pubDate><guid>/cloud/reference/releases/v1.0.65/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(auth): stop bouncing custom-domain /login + /logout to SERVER_BASE_URL (resolves Cloudflare 502 redirect-loop) by @leecalcote in &lt;a href="https://github.com/layer5io/meshery-cloud/pull/5239"&gt;https://github.com/layer5io/meshery-cloud/pull/5239&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.64...v1.0.65"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.64...v1.0.65&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.64</title><link>/cloud/reference/releases/v1.0.64/</link><pubDate>Thu, 07 May 2026 03:05:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.64/</guid><description>&lt;ul&gt;
+&lt;li&gt;hotfix(helm): templatize KRATOS_PUBLIC namespace (resolves v1.0.63 custom-domain 502) @leecalcote (#5237)&lt;/li&gt;
+&lt;li&gt;docs(migration): RBAC -&amp;gt; plan-feature entitlement migration plan @jamieplu (#5061)&lt;/li&gt;
+&lt;li&gt;fix(ui): catalog, account, plans, and dashboard UX polish pass @leecalcote (#5233)&lt;/li&gt;
+&lt;li&gt;fix(server): backfill NULL users.status to unblock static-token auth @leecalcote (#5232)&lt;/li&gt;
+&lt;li&gt;fix(auth): omit login_challenge from return_to in flow/init redirect @arjunmehta-git (#5235)&lt;/li&gt;
+&lt;li&gt;fix(e2e): stop proxying auth pages in dev server; serve via Next.js @arjunmehta-git (#5236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @jamieplu, @l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.63</title><link>/cloud/reference/releases/v1.0.63/</link><pubDate>Thu, 07 May 2026 02:09:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.63/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): KRATOS_PUBLIC → internal service; classify transport vs upstream @leecalcote (#5234)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.62</title><link>/cloud/reference/releases/v1.0.62/</link><pubDate>Thu, 07 May 2026 00:19:26 +0000</pubDate><guid>/cloud/reference/releases/v1.0.62/</guid><description>&lt;ul&gt;
+&lt;li&gt;test(auth): Playwright e2e specs for every auth flow (main domain + custom-domain org) @leecalcote (#5230)&lt;/li&gt;
+&lt;li&gt;fix: migrate /error page from Go template to React (AuthLayout + carousel) @yi-nuo426 (#5231)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.61</title><link>/cloud/reference/releases/v1.0.61/</link><pubDate>Wed, 06 May 2026 23:07:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.61/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): cookie Path normalisation (401 after OIDC) + legacy behavior parity + comprehensive test plan @leecalcote (#5228)&lt;/li&gt;
+&lt;li&gt;fix(ui/auth): vertically center carousel in brand-info pane @leecalcote (#5229)&lt;/li&gt;
+&lt;li&gt;test(ui/auth): pin OAuth-clickable contract for /login and /registration @leecalcote (#5227)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.60</title><link>/cloud/reference/releases/v1.0.60/</link><pubDate>Wed, 06 May 2026 22:42:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.60/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="fixes" class="heading-link"&gt;
+ Fixes
+ &lt;a href="#fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(jsonb): defensively strip legacy &lt;code&gt;notification_preferences&lt;/code&gt; on every write to prevent re-persisting deprecated JSONB key after Phase C cutover&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.59...v1.0.60"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.59...v1.0.60&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.59</title><link>/cloud/reference/releases/v1.0.59/</link><pubDate>Wed, 06 May 2026 22:21:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.59/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): proxy Kratos through cloud server; never browser→Kratos direct @leecalcote (#5224)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): notification_preferences Phase C — drop legacy fallback @arjunmehta-git (#5225)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.58</title><link>/cloud/reference/releases/v1.0.58/</link><pubDate>Wed, 06 May 2026 21:59:29 +0000</pubDate><guid>/cloud/reference/releases/v1.0.58/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui/auth): restore legacy styling for React-based auth pages (reopen of #5220) @leecalcote (#5222)&lt;/li&gt;
+&lt;li&gt;Revert eat(hydra): rotate JWKs with overlap; flag drifted CNPG DSN\ @leecalcote (#5223)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.5 @l5io (#5221)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.57</title><link>/cloud/reference/releases/v1.0.57/</link><pubDate>Wed, 06 May 2026 20:08:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.57/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui/auth): restore legacy styling for React-based auth pages @leecalcote (#5220)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/meshery/schemas to v1.2.12 @leecalcote (#5219)&lt;/li&gt;
+&lt;li&gt;feat(hydra): rotate JWKs with overlap; flag drifted CNPG DSN @jamieplu (#5075)&lt;/li&gt;
+&lt;li&gt;fix(build): thread KRATOS_BROWSER_URL through the Docker build pipeline @leecalcote (#5218)&lt;/li&gt;
+&lt;li&gt;fix(test): make TestHandleRegister_WithFlowIDServesReactPage hermetic @arjunmehta-git (#5217)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): notification_preferences Phase B — backfill migration @arjunmehta-git (#5216)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.4 @l5io (#5213)&lt;/li&gt;
+&lt;li&gt;fix: complete RJSF form schema migration — remove last eslint-disable blocks (closes #866) @leecalcote (#5215)&lt;/li&gt;
+&lt;li&gt;fix: migrate RJSF form schema imports from @sistent/sistent to @meshery/schemas @leecalcote (#5214)&lt;/li&gt;
+&lt;li&gt;feat(auth): migrate Kratos auth pages from Go HTML templates to React/Next.js @leecalcote (#5208)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): retire dual-read fallbacks for connections + catalog_data + github metadata (Phase C) @leecalcote (#5211)&lt;/li&gt;
+&lt;li&gt;fix(jsonb): notification_preferences Phase A — canonical writer + dual-read @leecalcote (#5212)&lt;/li&gt;
+&lt;li&gt;fix(teams): flip teams.metadata.member_addition to canonical camelCase @leecalcote (#5200)&lt;/li&gt;
+&lt;li&gt;fix(subscriptions): canonical planId query param + drop dead UI args @leecalcote (#5209)&lt;/li&gt;
+&lt;li&gt;fix(github-webhook): register signature-verified handler on /api/integrations/github/webhook @ritzorama (#5187)&lt;/li&gt;
+&lt;li&gt;fix(security,subscriptions): drop orphan keychainId column; fix forecasted-amount column drift @leecalcote (#5207)&lt;/li&gt;
+&lt;li&gt;fix(wire-format): UI-side snake_case → camelCase audit per identifier-naming contract @leecalcote (#5206)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @jamieplu, @l5io, @leecalcote, @mascot-five, @meshery-ci, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.55</title><link>/cloud/reference/releases/v1.0.55/</link><pubDate>Tue, 05 May 2026 03:35:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.55/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(ui): lock down form-schema source-of-truth contract @leecalcote (#5198)&lt;/li&gt;
 &lt;li&gt;perf(ui): slim bundle, dynamic-load RJSF/recharts, fix rjsf bugs @simihablo (#5196)&lt;/li&gt;
 &lt;li&gt;fix(github): flip GitHub connection metadata keys to canonical camelCase @leecalcote (#5197)&lt;/li&gt;

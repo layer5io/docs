@@ -4,4 +4,4 @@
  Authenticating with the API
  &lt;a href="#authenticating-with-the-api" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In order to authenticate to Layer5 Cloud&amp;rsquo;s REST API, you need to generate and use a &lt;a href="../security/tokens"&gt;security token&lt;/a&gt;. Visit your &lt;a href="https://cloud.layer5.io/security/tokens"&gt;user account&amp;rsquo;s security tokens&lt;/a&gt; and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;In order to authenticate to Layer5 Cloud&amp;rsquo;s REST API, you need to generate and use a &lt;a href="../../cloud/concepts/identity-and-security/tokens/"&gt;security token&lt;/a&gt;. Visit your &lt;a href="https://cloud.layer5.io/security/tokens"&gt;user account&amp;rsquo;s security tokens&lt;/a&gt; and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.&lt;/p&gt;</description></item></channel></rss>

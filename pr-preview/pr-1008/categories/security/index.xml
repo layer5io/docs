@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Layer5 Documentation</title><link>/categories/security/</link><description>Recent content in Security on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Organization Roles</title><link>/cloud/concepts/identity-and-security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Layer5 Documentation</title><link>/categories/security/</link><description>Recent content in Security on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Provider Admin Role</title><link>/cloud/concepts/identity-and-security/roles/provider-admin-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/roles/provider-admin-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../../cloud/concepts/identity-and-security/images/role-provider-admin.svg" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="provider-administrator" class="heading-link"&gt;
+ Provider Administrator
+ &lt;a href="#provider-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for administration of Layer5 Cloud.&lt;/li&gt;
+&lt;li&gt;Used for debugging and monitoring.&lt;/li&gt;
+&lt;li&gt;Applicable to platform engineering team and on-prem users.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provider Admins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On ☁️ boot-up (using build args)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Min: 1, Max: many (based on plan)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can remove assignment of this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Default Organization Roles</title><link>/cloud/concepts/identity-and-security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Default Organization Roles
@@ -213,7 +251,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[275 33 432 226 286 297]" src="../../cloud/concepts/identity-and-security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
+ &lt;img id="[219 38 215 383 161 93]" src="../../cloud/concepts/identity-and-security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
  class="md-image-responsive image-center-no-shadow" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -236,7 +274,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[452 390 200 249 180 197]" src="../../cloud/concepts/identity-and-security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
+ &lt;img id="[306 307 104 261 231 412]" src="../../cloud/concepts/identity-and-security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/p&gt;

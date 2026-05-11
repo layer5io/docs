@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Users on Layer5 Documentation</title><link>/tags/users/</link><description>Recent content in Users on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/users/index.xml" rel="self" type="application/rss+xml"/><item><title>User Invitations</title><link>/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
-&lt;h3 id="key-capabilities" class="heading-link"&gt;
- Key capabilities
- &lt;a href="#key-capabilities" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Required permission&lt;/h4&gt;
+ 
+ Managing invitations requires the &lt;strong&gt;Manage Invitations&lt;/strong&gt; permission within your organization. Contact your organization administrator if you need access.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h3 id="default-organization-state" class="heading-link"&gt;
+ Default organization state
+ &lt;a href="#default-organization-state" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;The invitation system provides three main areas of control to help you manage access effectively.&lt;/p&gt;</description></item><item><title>Users</title><link>/cloud/concepts/identity-and-security/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/</guid><description>&lt;h2 id="user-accounts" class="heading-link"&gt;
+&lt;p&gt;By default, organizations are &lt;strong&gt;closed&lt;/strong&gt;: there is no open registration. A user cannot join your organization simply by navigating to a URL — they must either click a valid invitation link or register through a page associated with an organization that has a &lt;a href="../../cloud/concepts/identity-and-security/users/user-invitations/#invitation-properties-explained"&gt;default invitation&lt;/a&gt; configured.&lt;/p&gt;</description></item><item><title>Users</title><link>/cloud/concepts/identity-and-security/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/</guid><description>&lt;h2 id="user-accounts" class="heading-link"&gt;
  User Accounts
  &lt;a href="#user-accounts" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -30,7 +44,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[494 42 400 111 443 365]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[334 136 280 486 401 62]" src="../../cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
