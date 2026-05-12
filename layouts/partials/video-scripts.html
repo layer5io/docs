@@ -1,0 +1,34 @@
+<!-- Partial: video-scripts.html - rewrites /videos links to include category hashes -->
+{{ $videoHashMap := dict }}
+{{ $videos := .Site.GetPage "section" "videos" }}
+{{ if $videos }}
+  {{ range $mainIndex, $mainSection := $videos.Sections }}
+    {{ $videoHashMap = merge $videoHashMap (dict $mainSection.RelPermalink (printf "category-%d-subcategory-0" $mainIndex)) }}
+    {{ range $subIndex, $subSection := $mainSection.Sections }}
+      {{ $videoHashMap = merge $videoHashMap (dict $subSection.RelPermalink (printf "category-%d-subcategory-%d" $mainIndex $subIndex)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div id="video-hash-map" data-map='{{ $videoHashMap | jsonify | safeHTMLAttr }}' style="display:none"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mapEl = document.getElementById('video-hash-map');
+  const videoHashMap = mapEl ? JSON.parse(mapEl.dataset.map || '{}') : {};
+
+  const normalize = (href) => {
+    try {
+      const u = new URL(href, location.origin);
+      let p = u.pathname;
+      if (!p.endsWith('/')) p += '/';
+      return p;
+    } catch (_) { return href || ''; }
+  };
+
+  document.querySelectorAll("a[href^='/videos/'], a[href*='/videos/']").forEach(link => {
+    const key = normalize(link.getAttribute('href') || '');
+    const hash = videoHashMap[key];
+    if (hash) link.setAttribute('href', key + '#' + hash);
+  });
+});
+</script>
