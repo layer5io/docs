@@ -43,7 +43,7 @@
 
     &.form-control:focus {
       border-color: tint-color($primary, 95%);
-      box-shadow: 0 0 0 2px tint-color($primary, 40%);
+      //box-shadow: 0 0 0 2px tint-color($primary, 40%);
       //box-shadow: none;
       color: inherit;
     }
@@ -97,7 +97,7 @@
       display: flex;
       color: $primary;
       //background-color: var(--bs-body-bg);
-      background-color: none;
+      background-color: transparent;
       padding-right: 0.2rem;      
     }
   }
@@ -165,9 +165,9 @@
       color: inherit;
     }
   }
-  .td-search__input.form-control:focus {
-    // background-color: #EBC017;
-  }
+  // .td-search__input.form-control:focus {
+  //   // background-color: #EBC017;
+  // }
 }
 
 .form-control {
