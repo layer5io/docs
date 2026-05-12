@@ -21286,7 +21286,7 @@ img.grid-icon {
 .td-search--offline:focus-within .td-search__icon {
   display: flex;
   color: #00b39f;
-  background-color: none;
+  background-color: transparent;
   padding-right: 0.2rem; }
 
 .td-offline-search-results {
