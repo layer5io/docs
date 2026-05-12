@@ -44,6 +44,7 @@
     &.form-control:focus {
       border-color: tint-color($primary, 95%);
       box-shadow: 0 0 0 2px tint-color($primary, 40%);
+      //box-shadow: none;
       color: inherit;
     }
 
@@ -94,8 +95,9 @@
 
     .td-search__icon {
       display: flex;
-      color: $input-placeholder-color;
-      background-color: var(--bs-body-bg);
+      color: $primary;
+      //background-color: var(--bs-body-bg);
+      background-color: none;
       padding-right: 0.2rem;      
     }
   }
