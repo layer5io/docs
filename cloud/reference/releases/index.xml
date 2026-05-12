@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.74</title><link>/cloud/reference/releases/v1.0.74/</link><pubDate>Tue, 12 May 2026 03:50:16 +0000</pubDate><guid>/cloud/reference/releases/v1.0.74/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.11 @l5io (#5269)&lt;/li&gt;
+&lt;li&gt;fix(invitations): align table column names with camelCase wire format @leecalcote (#5264)&lt;/li&gt;
+&lt;li&gt;Custom domain auth plan @marblom007 (#5275)&lt;/li&gt;
+&lt;li&gt;docs: lock in custom-domain auth decisions (BYOC, Hydra fronting, per-org templates, OAuth Apps) @hortison (#5274)&lt;/li&gt;
+&lt;li&gt;chore: finish sistent v0.21.10 / schemas v1.2.18 accommodation @leecalcote (#5272)&lt;/li&gt;
+&lt;li&gt;chore: upgrade sistent and schemas @yi-nuo426 (#5271)&lt;/li&gt;
+&lt;li&gt;fix(academy): recover camelCase orgId in quiz decode + refresh enroll test mocks @hortison (#5267)&lt;/li&gt;
+&lt;li&gt;docs: plan for custom-domain authentication flows @hortison (#5268)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.9 @l5io (#5261)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @arjunmehta-git, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
  📚 Academy
  &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
