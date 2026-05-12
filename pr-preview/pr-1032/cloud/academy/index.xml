@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Academy on Layer5 Documentation</title><link>/cloud/academy/</link><description>Recent content in Academy on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/academy/index.xml" rel="self" type="application/rss+xml"/><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
+&lt;p&gt;Here, you can achieve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A systematic understanding of complex topics&lt;/li&gt;
+&lt;li&gt;Hands-on experience by solving real-world problems&lt;/li&gt;
+&lt;li&gt;Verifiable badges to showcase your skills&lt;/li&gt;
+&lt;li&gt;Official certificates to formally recognize your expertise&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="exploring-the-content-catalog" class="heading-link"&gt;
+ Exploring the Content Catalog
+ &lt;a href="#exploring-the-content-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Your journey begins at the Academy&amp;rsquo;s main catalog page, where you can discover all available learning content.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
+
+&lt;h2 id="the-multi-repository-model" class="heading-link"&gt;
+ The Multi-Repository Model
+ &lt;a href="#the-multi-repository-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy platform&lt;/a&gt; is built on a &amp;ldquo;separation of concerns&amp;rdquo; architecture. Instead of a single monolithic repository, we use a multi-repository model where content, style, and build configurations are managed independently. This approach keeps the system modular, simplifies maintenance, and allows teams to work on different parts of the platform concurrently.&lt;/p&gt;</description></item></channel></rss>
