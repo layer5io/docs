@@ -44,7 +44,7 @@ On successful login, you will be prompted to setup your first organization and w
 Organization are unit of tenant in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. You can create your own organization or join an existing one. By default you are the owner of the organization you create.
 
 {{< alert type="info" >}}
-For more information, see [Organizations](/cloud/identity/organizations/).
+For more information, see [Organizations](/cloud/concepts/identity-and-security/organizations/)
 {{< /alert >}}
 
 
@@ -55,7 +55,7 @@ Give your organization a name and a description. For more information, see "Crea
 Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resources in your workspaces through teams.
 
 {{< alert type="info" >}}
-For more information, see [Workspaces](/cloud/spaces/workspaces/).
+For more information, see [Workspaces](/cloud/concepts/spaces/workspaces/)
 {{< /alert >}}
 
 Give your workspace a name and a description. For more information, see "Creating a workspace."

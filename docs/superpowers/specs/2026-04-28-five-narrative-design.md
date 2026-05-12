@@ -29,19 +29,19 @@ The approach mirrors Microsoft's use of "Contoso" but goes further: Five has a p
 ### New files
 
 ```
-content/en/cloud/about/_index.md              ← narrative + cast reference page
-content/en/cloud/about/five-narrative-plan.md ← research plan / integration roadmap
+content/en/cloud/getting-started/meet-five/_index.md              ← narrative + cast reference page
+content/en/cloud/getting-started/meet-five/five-narrative-plan.md ← research plan / integration roadmap
 ```
 
 ### Modified files
 
 ```
-content/en/cloud/getting-started/_index.md   ← short intro paragraph + link to /cloud/about
+content/en/cloud/getting-started/_index.md   ← short intro paragraph + link to /cloud/getting-started/meet-five
 ```
 
 ---
 
-## Narrative Page Structure (`content/en/cloud/about/_index.md`)
+## Narrative Page Structure (`content/en/cloud/getting-started/meet-five/_index.md`)
 
 ### Section 1 — Origin Story (prose)
 Three paragraphs:
@@ -132,7 +132,7 @@ Short `{{< alert type="info" >}}` callout pointing to `five-narrative-plan.md` w
 
 ---
 
-## Research Plan Page Structure (`content/en/cloud/about/five-narrative-plan.md`)
+## Research Plan Page Structure (`content/en/cloud/getting-started/meet-five/five-narrative-plan.md`)
 
 ### Section 1 — Objective
 Why this narrative exists, what problem it solves, how to use this plan.
@@ -171,7 +171,7 @@ Reference table mapping each Five SVG (1–19) plus named pieces (business-mode,
 ## Follow-up GitHub Issues (to be filed with this PR)
 
 ### Batch 1 — Identity (Low difficulty)
-1. `[Docs] Add Five's user profile card to cloud/identity/users` — Replace `<!-- TODO -->` placeholder with Five's character card, avatar, and link to `/cloud/about`.
+1. `[Docs] Add Five's user profile card to cloud/identity/users` — Replace `<!-- TODO -->` placeholder with Five's character card, avatar, and link to `/cloud/getting-started/meet-five`.
 2. `[Docs] Illustrate cloud/identity/organizations with Orbital Labs and Stellar Dynamics examples`
 3. `[Docs] Illustrate cloud/identity/teams with Infrastructure and Development team examples`
 
@@ -197,5 +197,5 @@ Reference table mapping each Five SVG (1–19) plus named pieces (business-mode,
 - All Five SVG illustrations source from `layer5` repo at `src/assets/images/five/SVG/`. Files must be copied into `static/images/five/` in the `docs` repo.
 - Hugo shortcodes in use: `{{< cardpane >}}`, `{{< alert >}}`, `{{< svg >}}`. No new shortcodes needed.
 - The narrative page is the single source of truth. Character names, roles, and seed data defined here must not be contradicted elsewhere in the docs.
-- The `kanvas` docs reference this narrative but the canonical home is in `cloud/about`. Kanvas pages link to `/cloud/about` rather than duplicating the cast.
+- The `kanvas` docs reference this narrative but the canonical home is in `cloud/getting-started/meet-five`. Kanvas pages link to `/cloud/getting-started/meet-five` rather than duplicating the cast.
 - Tone standard: witty sarcasm and dry humor as tools to keep the reader engaged. Never obscures technical content. One well-placed quip per page is enough.

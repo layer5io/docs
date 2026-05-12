@@ -2,10 +2,10 @@
 title: Using Academy Content Template Creator
 weight: 6
 description: >
-  
+
 categories: [Academy]
 tags: [Academy]
-aliases: 
+aliases:
 - /cloud/academy/using-academy-content-template-creator
 - /cloud/academy/using-content-template-creator
 - /cloud/academy/academy-content-template-creator-guide
@@ -153,7 +153,7 @@ Your invitation link provides targeted access management:
 
 - **Specific Team Access**: Only members of your selected teams can access the content through this link
 - **Automatic Role Assignment**: Users who accept the invitation automatically receive the "Academy Learner" role
-- **Organization Boundary Protection**: Only users within your [organization](https://docs.layer5.io/cloud/identity/organizations/) can use this invitation
+- **Organization Boundary Protection**: Only users within your [organization](https://docs.layer5.io/cloud/concepts/identity-and-security/organizations/) can use this invitation
 
 ### 2. Flexible Sharing and Distribution
 
@@ -179,7 +179,7 @@ The invitation form contains eight properties. Three are automatically generated
 1. **Name**: Automatically formatted as "Academy Invitation for [your-content-name]"
    *Example: "Academy Invitation for meshery-contributors-certification" (lowercase with dash)*
 2. **Description**: "Invitation to join organization [organization-name] for academy curricula [course-name]"
-3. **Roles**: Defaults to "Academy Learner" - [Learn more about Academy roles](https://docs.layer5.io/cloud/security/roles/academy-roles/) 
+3. **Roles**: Defaults to "Academy Learner" - [Learn more about Academy roles](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/academy-roles/)
 
 {{< alert type="info" title="Admin Role Invitations" >}}
 Academy admins can invite other instructors to become co-admins by changing the **Roles** property from "Academy Learner" to "Academy Admin" during invitation customization.
@@ -229,7 +229,7 @@ Specify which teams invited users will join:
 
 - **Team Selection**: Choose from available teams via dropdown menu
 - **Multiple Teams**: You can assign users to multiple teams
-- **No Teams Available**: If your organization has no teams, [create them](https://docs.layer5.io/cloud/identity/teams/) first. Users will be added to all successfully configured teams
+- **No Teams Available**: If your organization has no teams, [create them](https://docs.layer5.io/cloud/concepts/identity-and-security/teams/) first. Users will be added to all successfully configured teams
 
 {{< alert type="info" title="Team Structure Changes" >}}
 **During Organization Restructuring:**

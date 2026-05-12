@@ -10,7 +10,7 @@ To create integrations, retrieve data, and automate your cloud native infrastruc
 
 ## Authenticating with the API
 
-In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](../security/tokens). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
+In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](/cloud/concepts/identity-and-security/tokens/). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
 
 To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
 
@@ -153,7 +153,7 @@ The following example demonstrate how to retrieve information from the Academy R
 
 ### Get the total number of registered learners in Academy
 
-Use the Layer5 Cloud API to retrieve the *total* number of registered learners. Pass your [Security Token](https://docs.layer5.io/cloud/security/tokens/) as a Bearer token in the `Authorization` header (as shown in [Authenticating with API](/cloud/reference/api-reference/#authenticating-with-the-api)). The response JSON includes an array of user objects.
+Use the Layer5 Cloud API to retrieve the *total* number of registered learners. Pass your [Security Token](https://docs.layer5.io/cloud/concepts/identity-and-security/tokens/) as a Bearer token in the `Authorization` header (as shown in [Authenticating with API](/cloud/reference/api-reference/#authenticating-with-the-api)). The response JSON includes an array of user objects.
 
 
 {{< tabpane >}}
@@ -249,6 +249,4 @@ func main() {
 This returns the number of Total registered learners:
 ```
 130
-``` 
-
-
+```

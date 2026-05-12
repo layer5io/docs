@@ -97,7 +97,7 @@ A design transitions through multiple states from creation to publication. The d
 | Submit for Review     | ✔         | ✔                | ✔         | ✔                      | ✔                  |
 | Unpublish           | ✘         | ✘                | ✔         | ✔                      | ✔                  |
 
-For more about roles and permissions, refer to [Role Descriptions](https://docs.layer5.io/cloud/security/roles/) and [Default Permissions](https://docs.layer5.io/cloud/reference/default-permissions/).
+For more about roles and permissions, refer to [Role Descriptions](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/) and [Default Permissions](https://docs.layer5.io/cloud/reference/default-permissions/).
 
 **Key Notes:**
 - Provider Admins have root-level visibility and can see private designs from all organizations.

@@ -27,7 +27,7 @@ Designs have visibility statuses that defines who can access your designs. These
 Public status is useful for sharing designs broadly, for example, as open-source templates, public demonstrations, or for soliciting feedback from a wider community. If your goal is to share broadly only within your organization, consider using a combination of private designs shared with specific organization-wide teams or workspaces.
 {{< /alert >}}
 
-- **Published:**  The published visibility setting is designed for sharing designs with a wider audience. Published designs become discoverable to other users and allow them to view, download, and clone the design. Users can find published designs through [Cloud Catalog](/cloud/catalog) ([open catalog](https://cloud.layer5.io/catalog)).
+- **Published:**  The published visibility setting is designed for sharing designs with a wider audience. Published designs become discoverable to other users and allow them to view, download, and clone the design. Users can find published designs through [Cloud Catalog](/cloud/concepts/catalog) ([open catalog](https://cloud.layer5.io/catalog)).
 
 ## Granting access to individual users
 
@@ -94,7 +94,7 @@ As the Owner of a design, you can manage who has access to it at any time using 
 
 {{< alert title="Implications of adding a Design to a Workspace">}}
 When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private. Review your workspace's team assignments in order to verify which users will be granted access.
-Learn more about [auditing and assigning Workspace access](/cloud/spaces/workspaces/).
+Learn more about [auditing and assigning Workspace access](/cloud/concepts/spaces/workspaces/).
 {{< /alert >}}
 
 ## Sharing Your Design with a Link
@@ -128,7 +128,7 @@ There are two primary ways to share designs with teams:
         2.  Assign one or more Teams to that same Workspace.
         3.  By this association, members of the assigned Team(s) should then inherit access to the **designs** within that Workspace, including Private designs.
 
-> Learn more about auditing the access permission within [workspace](/cloud/spaces/workspaces/)
+> Learn more about auditing the access permission within [workspace](/cloud/concepts/spaces/workspaces/)
 
 [^1]: This functionality is not fully implemented yet. Users might occasionally observe that even when a team is assigned to a workspace, members of that team may not be able to access private designs within that workspace without explicit individual or team-level sharing for the design itself.
 [^2]: This feature (direct sharing with teams via the "Share" modal) is not yet fully implemented and is planned for a future update.
