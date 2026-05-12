@@ -224,12 +224,16 @@
     event.stopPropagation();
 
     // hide any other active dropdowns
-    const allActiveDropdowns = document.querySelectorAll(".nav-link.current");
+    // Added [data-toggle='dropdown'] so it ignores active page links like #cloud or #kanvas
+    const allActiveDropdowns = document.querySelectorAll(".nav-link.current[data-toggle='dropdown']");
     allActiveDropdowns.forEach((otherDropdown) => {
       if (otherDropdown !== dropdown) {
         otherDropdown.classList.remove("current");
-        otherDropdown.nextElementSibling.classList.remove("show");
-        otherDropdown.nextElementSibling.style.visibility = "hidden"; 
+        // Added a safety check to ensure the nextElementSibling actually exists before modifying it
+        if (otherDropdown.nextElementSibling) {
+            otherDropdown.nextElementSibling.classList.remove("show");
+            otherDropdown.nextElementSibling.style.visibility = "hidden"; 
+        }
       }
     });
 
