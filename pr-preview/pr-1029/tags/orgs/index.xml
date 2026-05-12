@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Orgs on Layer5 Documentation</title><link>/tags/orgs/</link><description>Recent content in Orgs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/orgs/index.xml" rel="self" type="application/rss+xml"/><item><title>Organization Management</title><link>/cloud/identity/organizations/org-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/organizations/org-management/</guid><description>&lt;p&gt;This guide covers creating new organizations, editing their details, inviting members, and deleting organizations when necessary.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Orgs on Layer5 Documentation</title><link>/tags/orgs/</link><description>Recent content in Orgs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/orgs/index.xml" rel="self" type="application/rss+xml"/><item><title>Organization Management</title><link>/cloud/guides/organizations/org-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/</guid><description>&lt;p&gt;This guide covers creating new organizations, editing their details, inviting members, and deleting organizations when necessary.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[263 328 52 113 155 27]" src="../../cloud/identity/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[14 132 183 40 344 184]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -29,14 +29,22 @@
  Creating an Organization
  &lt;a href="#creating-an-organization" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;An Organization provides a way to structure your teams, users, and resource access for different projects or initiatives.&lt;/p&gt;</description></item><item><title>Default Organization Roles</title><link>/cloud/security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;p&gt;An Organization provides a way to structure your teams, users, and resource access for different projects or initiatives.&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/concepts/identity-and-security/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/organizations/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
+&lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections&lt;/p&gt;
+&lt;img src="../../cloud/concepts/identity-and-security/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;
+
+&lt;h2 id="example-the-orbital-labs-ecosystem" class="heading-link"&gt;
+ Example: The Orbital Labs Ecosystem
+ &lt;a href="#example-the-orbital-labs-ecosystem" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using &lt;a href="../../cloud/getting-started/meet-five/"&gt;Five and the cast at Orbital Labs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Default Organization Roles</title><link>/cloud/concepts/identity-and-security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Default Organization Roles
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
+ &lt;img src="../../cloud/concepts/identity-and-security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -68,7 +76,7 @@
 &lt;ul&gt;
 &lt;li&gt;Creation of new organization or User Account creation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/identity/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/guides/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
 
 &lt;h2 id="understanding-organization-context" class="heading-link"&gt;
  Understanding Organization Context
@@ -99,12 +107,4 @@
  Order of Precedence for Organization Settings
  &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organizations</title><link>/cloud/identity/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/identity/organizations/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
-&lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections&lt;/p&gt;
-&lt;img src="../../cloud/identity/images/organization_units.svg" alt="Organizational units" style="width: 35%;" /&gt;
-
-&lt;h2 id="example-the-orbital-labs-ecosystem" class="heading-link"&gt;
- Example: The Orbital Labs Ecosystem
- &lt;a href="#example-the-orbital-labs-ecosystem" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using &lt;a href="../../cloud/about/"&gt;Five and the cast at Orbital Labs&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item></channel></rss>
