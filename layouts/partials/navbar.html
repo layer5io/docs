@@ -229,11 +229,11 @@
     allActiveDropdowns.forEach((otherDropdown) => {
       if (otherDropdown !== dropdown) {
         otherDropdown.classList.remove("current");
-        // Added a safety check to ensure the nextElementSibling actually exists before modifying it
-        if (otherDropdown.nextElementSibling) {
-            otherDropdown.nextElementSibling.classList.remove("show");
-            otherDropdown.nextElementSibling.style.visibility = "hidden"; 
-        }
+const menu = otherDropdown.nextElementSibling;
+if (menu) {
+    menu.classList.remove("show");
+    menu.style.visibility = "hidden";
+}
       }
     });
 
