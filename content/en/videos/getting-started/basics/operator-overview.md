@@ -14,4 +14,4 @@ duration: "2:11"
 
 ### Related Docs
 
-- [Exploring Designer](/kanvas/operator/)
+- [Exploring Operator](/kanvas/operator/)
