@@ -21256,7 +21256,6 @@ img.grid-icon {
       background: transparent; }
     .td-search__input.form-control:focus {
       border-color: #f2fbfa;
-      box-shadow: 0 0 0 2px #66d1c5;
       color: inherit; }
     .td-navbar .td-search__input {
       border: none;
