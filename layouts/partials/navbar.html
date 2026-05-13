@@ -229,31 +229,32 @@
     allActiveDropdowns.forEach((otherDropdown) => {
       if (otherDropdown !== dropdown) {
         otherDropdown.classList.remove("current");
-const menu = otherDropdown.nextElementSibling;
-if (menu) {
-    menu.classList.remove("show");
-    menu.style.visibility = "hidden";
-}
-      }
-    });
-
-    if (dropdown.classList.contains("current")) {
-        dropdown.classList.remove("current");
-        dropdownMenu.classList.remove("show");
-        dropdownMenu.style.visibility = "hidden"; 
-    } else {
-    dropdown.classList.toggle("current");
-    dropdownMenu.classList.toggle("show");
-    dropdownMenu.style.visibility = "visible"; 
-    }
-  });
-
-    document.body.addEventListener('click', function() {
-      if (dropdown.classList.contains("current")) {
-        dropdown.classList.remove("current");
-        dropdownMenu.classList.remove("show");
-        dropdownMenu.style.visibility = "hidden"; 
-    }
+            const menu = otherDropdown.nextElementSibling;
+            if (menu) {
+                menu.classList.remove("show");
+                menu.style.visibility = "hidden";
+            }
+          }
+        });
+    
+        if (dropdown.classList.contains("current")) {
+            dropdown.classList.remove("current");
+            dropdownMenu.classList.remove("show");
+            dropdownMenu.style.visibility = "hidden"; 
+        } 
+        else {
+            dropdown.classList.toggle("current");
+            dropdownMenu.classList.toggle("show");
+            dropdownMenu.style.visibility = "visible"; 
+        }
+      });
+    
+      document.body.addEventListener('click', function() {
+          if (dropdown.classList.contains("current")) {
+            dropdown.classList.remove("current");
+            dropdownMenu.classList.remove("show");
+            dropdownMenu.style.visibility = "hidden"; 
+        }
   });
 }
 
