@@ -1,0 +1,138 @@
+/**
+ * Resizable Panels Styling
+ * Styles for the resize handles and drag interactions
+ */
+
+// Resize handle styling
+.resizable-panel-handle {
+  position: absolute;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  z-index: 100;
+
+  &--right {
+    // Right edge handle (between sidebar and main)
+    right: -3px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+
+    &:hover,
+    &--active {
+      background-color: rgba(0, 211, 169, 0.3);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 40px;
+      background-color: #00d3a9;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      border-radius: 1px;
+    }
+  }
+
+  &--left {
+    // Left edge handle (between main and TOC)
+    left: -3px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+
+    &:hover,
+    &--active {
+      background-color: rgba(0, 211, 169, 0.3);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 40px;
+      background-color: #00d3a9;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      border-radius: 1px;
+    }
+  }
+
+  &--active {
+    background-color: rgba(0, 211, 169, 0.5);
+  }
+}
+
+// Reset button styling
+#reset-panel-widths {
+  white-space: nowrap;
+  font-size: 0.875rem;
+
+  i {
+    margin-right: 0.25rem;
+  }
+
+  &:hover {
+    background-color: #00d3a9;
+    color: #fff;
+  }
+}
+
+// Make panels relatively positioned for absolute handle positioning
+.td-sidebar,
+.td-sidebar-toc {
+  position: relative;
+}
+
+// Smooth transitions for width changes
+.td-sidebar,
+.td-sidebar-toc,
+main[role="main"] {
+  transition: flex: 0.3s ease;
+}
+
+// Ensure row is flex container for proper layout
+.row.flex-xl-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+
+  > aside,
+  > main {
+    overflow-x: hidden;
+  }
+}
+
+// Mobile/Tablet adjustments - disable resize handles on smaller screens
+@media (max-width: 1199.98px) {
+  .resizable-panel-handle {
+    display: none;
+  }
+
+  #reset-panel-widths {
+    display: none;
+  }
+}
+
+// Print styles - hide resize handles
+@media print {
+  .resizable-panel-handle,
+  #reset-panel-widths {
+    display: none !important;
+  }
+}
