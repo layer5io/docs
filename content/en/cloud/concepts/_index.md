@@ -21,6 +21,8 @@ The following concepts form the foundation of the Layer5 Cloud ecosystem:
 
 This section explains the underlying concepts of Layer5 Cloud — the building blocks that the rest of the documentation assumes you understand.
 
+- [Spaces](spaces/) explains workspaces, environments, and workspace management.
+- [Identity and Security](identity-and-security/) explains organizations, teams, users, access control, roles, keychains, keys, tokens, and sessions.
 - [Meshery Server Registration](meshery-server-registration) — How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, how Cloud identifies an existing registration, and what fields are preserved across re-registration.
 
 ---

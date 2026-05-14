@@ -135,12 +135,12 @@ For detailed instructions on how to write an exam file, define various question 
 
 A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank** — collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
 
-This behavior is controlled by the `number_of_questions` property in the front matter.
+This behavior is controlled by the `numberOfQuestions` property in the front matter.
 
-* If `number_of_questions` is **not defined**, all questions in the test are used in every attempt.
+* If `numberOfQuestions` is **not defined**, all questions in the test are used in every attempt.
 * If it **is defined**, the test is automatically divided into multiple sets, each containing the specified number of questions.
 
-To ensure even division, the **total number of questions** must be a **multiple** of `number_of_questions`.
+To ensure even division, the **total number of questions** must be a **multiple** of `numberOfQuestions`.
 
 By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
 
@@ -194,7 +194,7 @@ An optional exam is supplementary material. Learners can take it, but they **do 
 <details>
   <summary>How do I set an exam as "Optional"?</summary>
   
-You need to add a specific field, `is_optional: true`, to the front matter of the exam's `.md` file. This field tells the system that the exam is not a mandatory requirement to pass the certification.
+You need to add a specific field, `isOptional: true`, to the front matter of the exam's `.md` file. This field tells the system that the exam is not a mandatory requirement to pass the certification.
 </details>
 
 <details>
