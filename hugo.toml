@@ -64,7 +64,7 @@ id = "G-HX135VWX9B"
 
 [languages]
 [languages.en]
-languageName = "English"
+label = "English"
 # Weight used for sorting.
 weight = 1
 direction = "ltr"
@@ -328,7 +328,7 @@ enable = false
   # replacements = "github.com/google/docsy -> ../../docsy"
   [module.hugoVersion]
     extended = true
-    min = "0.110.0"
+    min = "0.112.0"
   [[module.imports]]
     path = "github.com/google/docsy"
     disable = false
