@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Catalog on Layer5 Documentation</title><link>/categories/catalog/</link><description>Recent content in Catalog on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/catalog/index.xml" rel="self" type="application/rss+xml"/><item><title>Metrics</title><link>/cloud/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Catalog on Layer5 Documentation</title><link>/categories/catalog/</link><description>Recent content in Catalog on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/categories/catalog/index.xml" rel="self" type="application/rss+xml"/><item><title>Metrics</title><link>/cloud/concepts/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
 &lt;p&gt;The design catalog can be accessed from the &lt;em&gt;Layer5 Cloud&lt;/em&gt; catalog page at &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt;.&lt;/p&gt;
 
 
@@ -14,7 +14,7 @@
 &lt;/div&gt;
 
 
-&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
+&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/concepts/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -23,7 +23,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[2 144 417 414 175 101]" src="../../cloud/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[47 169 215 168 394 352]" src="../../cloud/concepts/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -35,7 +35,7 @@
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Understanding Metrics&lt;/h4&gt;
  
- Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="../../cloud/catalog/metrics/"&gt;Metrics&lt;/a&gt;
+ Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="../../cloud/concepts/catalog/metrics/"&gt;Metrics&lt;/a&gt;
  
 &lt;/div&gt;
 
@@ -45,7 +45,7 @@
  How to Access the Leaderboard
  &lt;a href="#how-to-access-the-leaderboard" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;You can reach the Leaderboard page in two ways:&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
+&lt;p&gt;You can reach the Leaderboard page in two ways:&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -54,7 +54,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[157 349 212 127 149 420]" src="../../cloud/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[417 197 114 137 5 298]" src="../../cloud/concepts/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -68,15 +68,15 @@
  Top Performers
  &lt;a href="#top-performers" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="../../cloud/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Catalog</title><link>/cloud/catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/catalog/</guid><description>&lt;div class="pageinfo"&gt;
+&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="../../cloud/concepts/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Catalog</title><link>/cloud/concepts/catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/</guid><description>&lt;div class="pageinfo"&gt;
 &lt;p&gt;Public Catalog: &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
-&lt;!-- &lt;figure class="image-center-shadow"&gt;&lt;img src="../../cloud/catalog/images/delivering-catalog-content.svg"
+&lt;!-- &lt;figure class="image-center-shadow"&gt;&lt;img src="../../cloud/concepts/catalog/images/delivering-catalog-content.svg"
  alt="Delivering-catalog-content"&gt;
 &lt;/figure&gt;
  --&gt;
-&lt;img src="../../cloud/catalog/images/delivering-catalog-content.svg" alt="Delivering-catalog-content" /&gt;
+&lt;img src="../../cloud/concepts/catalog/images/delivering-catalog-content.svg" alt="Delivering-catalog-content" /&gt;
 &lt;p&gt;The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of existing designs. Designs that are published into the catalog can be, but are not always curated for known best practices and patterns. Content is published at &lt;a href="https://cloud.layer5.io/catalog"&gt;cloud.layer5.io/catalog&lt;/a&gt;, and one-click import of catalog content into Meshery Server is seamlessly integrated.&lt;/p&gt;
 &lt;p&gt;
 
@@ -86,7 +86,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[339 104 405 276 18 348]" src="./images/Slide51.svg" onclick="openModal(this.id)" alt="Flow for sharing design" 
+ &lt;img id="[124 145 246 92 114 274]" src="./images/Slide51.svg" onclick="openModal(this.id)" alt="Flow for sharing design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 

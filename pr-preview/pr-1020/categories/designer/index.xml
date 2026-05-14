@@ -33,7 +33,7 @@
 &lt;p&gt;To activate this full render mode, you will need to add the &lt;code&gt;render=full&lt;/code&gt; parameter to your Kanvas design URL. This mode ensures all elements, including &lt;strong&gt;TagSets&lt;/strong&gt;, are displayed, which might otherwise be hidden for performance optimization.&lt;/p&gt;</description></item><item><title>Getting Started with Designs</title><link>/kanvas/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Follow Along with Jordan and Five&lt;/h4&gt;
  
- Throughout the Kanvas docs, you&amp;rsquo;ll follow &lt;strong&gt;Jordan Reyes&lt;/strong&gt; — a developer and designer at Orbital Labs — as she creates, shares, and iterates on infrastructure designs. &lt;strong&gt;Five&lt;/strong&gt; reviews her work and occasionally discovers that a design works better in practice than it does in theory. Their starting point is the &lt;code&gt;microservices-baseline&lt;/code&gt; design in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace. &lt;a href="../../cloud/about/"&gt;Meet the full cast →&lt;/a&gt;
+ Throughout the Kanvas docs, you&amp;rsquo;ll follow &lt;strong&gt;Jordan Reyes&lt;/strong&gt; — a developer and designer at Orbital Labs — as she creates, shares, and iterates on infrastructure designs. &lt;strong&gt;Five&lt;/strong&gt; reviews her work and occasionally discovers that a design works better in practice than it does in theory. Their starting point is the &lt;code&gt;microservices-baseline&lt;/code&gt; design in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace. &lt;a href="../../cloud/getting-started/meet-five/"&gt;Meet the full cast →&lt;/a&gt;
  
 &lt;/div&gt;
 
@@ -65,7 +65,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[170 152 413 352 139 277]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[329 388 332 166 243 156]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -106,7 +106,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[497 397 473 15 118 447]" src="../../kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[308 459 20 319 339 71]" src="../../kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -189,7 +189,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[348 153 452 361 236 463]" src="../../kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[266 444 246 150 208 3]" src="../../kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -200,7 +200,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[269 274 203 30 330 402]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[364 84 230 433 101 237]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -239,7 +239,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[350 22 128 108 302 52]" src="../../kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[235 385 193 461 151 158]" src="../../kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -679,7 +679,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[446 431 66 404 241 327]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[123 465 406 169 339 200]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -695,7 +695,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[473 248 378 1 217 203]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[180 18 420 158 1 287]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -711,7 +711,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[280 145 111 364 386 176]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[131 45 395 74 463 92]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -727,7 +727,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[159 151 243 83 163 390]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[306 56 226 485 468 92]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -743,7 +743,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[81 460 349 36 344 210]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[227 268 128 79 280 9]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -759,7 +759,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[368 138 32 288 493 347]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[474 136 204 488 384 336]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -775,7 +775,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[154 44 432 454 146 409]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[88 289 267 483 74 192]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -791,7 +791,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[298 19 52 100 338 314]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[86 489 485 198 269 214]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -807,7 +807,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[499 204 14 380 20 30]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[242 13 336 398 20 285]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -823,7 +823,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[474 170 348 253 388 492]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[328 160 465 72 121 15]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -841,7 +841,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[235 336 301 419 139 27]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[489 95 17 24 422 500]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -915,7 +915,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[94 29 153 125 277 226]" src="../../kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[414 88 336 4 440 455]" src="../../kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -934,7 +934,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[69 404 93 462 468 239]" src="../../kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[425 87 475 350 431 37]" src="../../kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Exploring Designer</title><link>/kanvas/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/</guid><description>&lt;p&gt;Kanvas Designer is the visual canvas where you create, edit, and collaborate on cloud-native infrastructure designs. Using a drag-and-drop palette of components — from managed Kubernetes clusters and serverless functions to databases and object storage — you can model entire environments, annotate connections, and share living diagrams with your team, all without leaving your browser.&lt;/p&gt;
 
@@ -971,7 +971,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[304 56 77 63 469 2]" src="../../kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[475 171 286 151 153 451]" src="../../kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -1010,9 +1010,356 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[303 253 173 8 254 455]" src="../../kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[24 344 229 41 326 483]" src="../../kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;div class="pageinfo"&gt;
+&lt;p&gt;Page under construction.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+
+There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+
+90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
+
+&gt; There should be no margin above this first sentence.
+&gt;
+&gt; Blockquotes should be a lighter gray with a border along the left side in the secondary color.
+&gt;
+&gt; There should be no margin below this final sentence.
+
+## First Header 2
+
+This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
+
+Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
+
+On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
+
+Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&amp;B. **I love this life we live in**.
+
+
+## Second Header 2
+
+&gt; This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
+### Header 3
+
+```
+This is a code block following a header.
+```
+
+Next level leggings before they sold out, PBR&amp;B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
+
+#### Header 4
+
+* This is an unordered list following a header.
+* This is an unordered list following a header.
+* This is an unordered list following a header.
+
+##### Header 5
+
+1. This is an ordered list following a header.
+2. This is an ordered list following a header.
+3. This is an ordered list following a header.
+
+###### Header 6
+
+| What | Follows |
+|-----------|-----------------|
+| A table | A header |
+| A table | A header |
+| A table | A header |
+
+----------------
+
+There's a horizontal rule above and below this.
+
+----------------
+
+Here is an unordered list:
+
+* Liverpool F.C.
+* Chelsea F.C.
+* Manchester United F.C.
+
+And an ordered list:
+
+1. Michael Brecker
+2. Seamus Blake
+3. Branford Marsalis
+
+And an unordered task list:
+
+- [x] Create a Hugo theme
+- [x] Add task lists to it
+- [ ] Take a vacation
+
+And a "mixed" task list:
+
+- [ ] Pack bags
+- ?
+- [ ] Travel!
+
+And a nested list:
+
+* Jackson 5
+ * Michael
+ * Tito
+ * Jackie
+ * Marlon
+ * Jermaine
+* TMNT
+ * Leonardo
+ * Michelangelo
+ * Donatello
+ * Raphael
+
+Definition lists can be used with Markdown syntax. Definition headers are bold.
+
+Name
+: Godzilla
+
+Born
+: 1952
+
+Birthplace
+: Japan
+
+Color
+: Green
+
+
+----------------
+
+Tables should have bold headings and alternating shaded rows.
+
+| Artist | Album | Year |
+|-------------------|-----------------|------|
+| Michael Jackson | Thriller | 1982 |
+| Prince | Purple Rain | 1984 |
+| Beastie Boys | License to Ill | 1986 |
+
+If a table is too wide, it should scroll horizontally.
+
+| Artist | Album | Year | Label | Awards | Songs |
+|-------------------|-----------------|------|-------------|----------|-----------|
+| Michael Jackson | Thriller | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
+| Prince | Purple Rain | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
+| Beastie Boys | License to Ill | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin &amp; Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
+
+----------------
+
+Code snippets like `var foo = "bar";` can be shown inline.
+
+Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
+
+Code can also be shown in a block element.
+
+```
+foo := "bar";
+bar := "foo";
+```
+
+Code can also use syntax highlighting.
+
+```go
+func main() {
+ input := `var foo = "bar";`
+
+ lexer := lexers.Get("javascript")
+ iterator, _ := lexer.Tokenise(nil, input)
+ style := styles.Get("github")
+ formatter := html.New(html.WithLineNumbers())
+
+ var buff bytes.Buffer
+ formatter.Format(&amp;buff, style, iterator)
+
+ fmt.Println(buff.String())
+}
+```
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+Inline code inside table cells should still be distinguishable.
+
+| Language | Code |
+|-------------|--------------------|
+| Javascript | `var foo = "bar";` |
+| Ruby | `foo = "bar"{` |
+
+----------------
+
+Small images should be shown at their actual size.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
+
+Large images should always scale down and fit in the content container.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
+
+_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
+
+
+## Components
+
+### Alerts
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Success&lt;/h4&gt;
+ 
+ This is an alert.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
+ 
+ This is an alert with a title.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
+ 
+ This is an alert with a title and &lt;strong&gt;Markdown&lt;/strong&gt;.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+&lt;div class="alert alert-success" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Success&lt;/h4&gt;
+ 
+ This is a successful alert.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+&lt;div class="alert alert-warning" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Warning&lt;/h4&gt;
+ 
+ This is a warning.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-warning" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Warning&lt;/h4&gt;
+ 
+ This is a warning with a title.
+ 
+&lt;/div&gt;
+
+
+
+
+## Another Heading
+
+Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+
+### This Document
+
+Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
+
+
+### Pixel Count
+
+Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&amp;B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
+
+### Contact Info
+
+Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
+
+
+### External Links
+
+Stumptown PBR&amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
+
+```
+This is the final element on the page and there should be no margin below this.
+``` --&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
 
 
 
@@ -1093,9 +1440,38 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[160 253 132 51 458 26]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[82 439 247 108 254 271]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Note&lt;/h4&gt;
+ 
+ This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic understanding of Kubernetes objects (Service, Pod, Container)&lt;/li&gt;
+&lt;li&gt;Access to the &lt;em&gt;Kanvas Playground&lt;/em&gt;. If you don&amp;rsquo;t have an account, sign up at &lt;a href="https://play.meshery.io/"&gt;Kanvas Playground&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="lab-scenario" class="heading-link"&gt;
+ Lab Scenario
+ &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;We will explore a simple application architecture in Kubernetes.&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
 &lt;h2 id="publishing-workflow" class="heading-link"&gt;
  Publishing Workflow
@@ -1142,7 +1518,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[134 203 47 279 330 407]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[347 478 327 143 54 85]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Design Review Mechanics</title><link>/videos/getting-started/comments/design-reviews-full/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/design-reviews-full/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LaG3AykTx0M?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
