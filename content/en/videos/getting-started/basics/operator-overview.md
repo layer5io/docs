@@ -1,5 +1,5 @@
 ---
-title: "Kanvas Visualizer"
+title: "Kanvas Visualizer Overview"
 description: >
    With thousands of components available, you can collaboratively design and operate your multi-cloud and cloud native infrastructure.
 videoId: "QANUEikEwQY"
