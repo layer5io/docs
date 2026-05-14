@@ -41,7 +41,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[150 453 20 330 440 490]" src="../../kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[219 401 21 41 347 402]" src="../../kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -55,7 +55,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
  Overview
  &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &amp;ldquo;last mile&amp;rdquo; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the &lt;code&gt;kubectl exec&lt;/code&gt; command, but web-based.&lt;/p&gt;</description></item><item><title>Kanvas Visualizer</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &amp;ldquo;last mile&amp;rdquo; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the &lt;code&gt;kubectl exec&lt;/code&gt; command, but web-based.&lt;/p&gt;</description></item><item><title>Kanvas Visualizer Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QANUEikEwQY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
