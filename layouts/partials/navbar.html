@@ -224,32 +224,37 @@
     event.stopPropagation();
 
     // hide any other active dropdowns
-    const allActiveDropdowns = document.querySelectorAll(".nav-link.current");
+    // Added [data-toggle='dropdown'] so it ignores active page links like #cloud or #kanvas
+    const allActiveDropdowns = document.querySelectorAll(".nav-link.current[data-toggle='dropdown']");
     allActiveDropdowns.forEach((otherDropdown) => {
       if (otherDropdown !== dropdown) {
         otherDropdown.classList.remove("current");
-        otherDropdown.nextElementSibling.classList.remove("show");
-        otherDropdown.nextElementSibling.style.visibility = "hidden"; 
-      }
-    });
-
-    if (dropdown.classList.contains("current")) {
-        dropdown.classList.remove("current");
-        dropdownMenu.classList.remove("show");
-        dropdownMenu.style.visibility = "hidden"; 
-    } else {
-    dropdown.classList.toggle("current");
-    dropdownMenu.classList.toggle("show");
-    dropdownMenu.style.visibility = "visible"; 
-    }
-  });
-
-    document.body.addEventListener('click', function() {
-      if (dropdown.classList.contains("current")) {
-        dropdown.classList.remove("current");
-        dropdownMenu.classList.remove("show");
-        dropdownMenu.style.visibility = "hidden"; 
-    }
+            const menu = otherDropdown.nextElementSibling;
+            if (menu) {
+                menu.classList.remove("show");
+                menu.style.visibility = "hidden";
+            }
+          }
+        });
+    
+        if (dropdown.classList.contains("current")) {
+            dropdown.classList.remove("current");
+            dropdownMenu.classList.remove("show");
+            dropdownMenu.style.visibility = "hidden"; 
+        } 
+        else {
+            dropdown.classList.toggle("current");
+            dropdownMenu.classList.toggle("show");
+            dropdownMenu.style.visibility = "visible"; 
+        }
+      });
+    
+      document.body.addEventListener('click', function() {
+          if (dropdown.classList.contains("current")) {
+            dropdown.classList.remove("current");
+            dropdownMenu.classList.remove("show");
+            dropdownMenu.style.visibility = "hidden"; 
+        }
   });
 }
 
