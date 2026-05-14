@@ -1,0 +1,13 @@
+{{ with .Params.relatedDocs }}
+<section class="related-docs">
+  <h2>Related Docs</h2>
+  <ul>
+    {{ range . }}
+    {{ $relatedPage := $.Site.GetPage . }}
+    {{ if $relatedPage }}
+    <li><a href="{{ $relatedPage.RelPermalink }}">{{ $relatedPage.Title }}</a></li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
