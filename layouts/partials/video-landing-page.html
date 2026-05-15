@@ -7,7 +7,7 @@
     <div class="category-tabs">
       {{ $currentPage := . }}
       {{ range $index, $section := $videoContentDir.Sections }}
-        <a href="#category-{{ $index }}" class="category-tab" data-category="{{ $index }}">
+        <a href="{{ .RelPermalink }}#category-{{ $index }}-subcategory-0" class="category-tab{{ if eq $index 0 }} active{{ end }}" data-category="{{ $index }}">
           <div class="tab-icon">
             {{ if .Params.icon }}
               {{ if hasPrefix .Params.icon "bi" }}
@@ -27,7 +27,7 @@
     <!-- subcategory container -->
     <div class="subcategory-container">
         {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
-          <div class="subcategory-group" id="subcategory-group-{{ $mainIndex }}" style="display: none;">
+          <div class="subcategory-group{{ if eq $mainIndex 0 }} is-active{{ end }}" id="subcategory-group-{{ $mainIndex }}">
             <div class="subcategory-buttons">
                 <!-- if a category has at least 1 subcategory -->
               {{ if gt (len .Sections) 0 }}
@@ -39,8 +39,8 @@
                 {{ end }}
               {{ else }}
                 <!-- if no subcategories i.e. videos are directly in category folder: set a default "All" subcategory  -->
-                <a href="#category-{{ $mainIndex }}-subcategory-main" class="subcategory-btn" 
-                   data-main-category="{{ $mainIndex }}" data-subcategory="main">
+                 <a href="#category-{{ $mainIndex }}-subcategory-0" class="subcategory-btn{{ if eq $mainIndex 0 }} active{{ end }}" 
+                   data-main-category="{{ $mainIndex }}" data-subcategory="0">
                   All
                 </a>
               {{ end }}
@@ -223,14 +223,6 @@
    
            window.location.hash = `category-${mainCategoryIndex}-subcategory-${subCategoryIndex}`;
          }
-         
-         // Add click handlers to main category tabs
-         categoryTabs.forEach((tab, index) => {
-           tab.addEventListener('click', function(e) {
-             e.preventDefault();
-             updateContent(index);
-           });
-         });
          
          // Add click handlers to subcategory buttons
          subcategoryBtns.forEach(btn => {
