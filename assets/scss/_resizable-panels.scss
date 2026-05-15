@@ -17,10 +17,11 @@
     bottom: 0;
     width: 6px;
     cursor: col-resize;
+    background-color: rgba(0, 211, 169, 0.15);
 
     &:hover,
     &--active {
-      background-color: rgba(0, 211, 169, 0.3);
+      background-color: rgba(0, 211, 169, 0.4);
 
       &::after {
         opacity: 1;
@@ -30,15 +31,16 @@
     &::after {
       content: '';
       position: absolute;
-      right: 0;
+      right: 1px;
       top: 50%;
       transform: translateY(-50%);
-      width: 2px;
-      height: 40px;
+      width: 3px;
+      height: 50px;
       background-color: #00d3a9;
-      opacity: 0;
+      opacity: 0.3;
       transition: opacity 0.2s ease;
-      border-radius: 1px;
+      border-radius: 2px;
+      box-shadow: 0 0 4px rgba(0, 211, 169, 0.5);
     }
   }
 
@@ -49,10 +51,11 @@
     bottom: 0;
     width: 6px;
     cursor: col-resize;
+    background-color: rgba(0, 211, 169, 0.15);
 
     &:hover,
     &--active {
-      background-color: rgba(0, 211, 169, 0.3);
+      background-color: rgba(0, 211, 169, 0.4);
 
       &::after {
         opacity: 1;
@@ -62,15 +65,16 @@
     &::after {
       content: '';
       position: absolute;
-      left: 0;
+      left: 1px;
       top: 50%;
       transform: translateY(-50%);
-      width: 2px;
-      height: 40px;
+      width: 3px;
+      height: 50px;
       background-color: #00d3a9;
-      opacity: 0;
+      opacity: 0.3;
       transition: opacity 0.2s ease;
-      border-radius: 1px;
+      border-radius: 2px;
+      box-shadow: 0 0 4px rgba(0, 211, 169, 0.5);
     }
   }
 
@@ -98,6 +102,11 @@
 .td-sidebar,
 .td-sidebar-toc {
   position: relative;
+}
+
+// Ensure sidebar nav has proper scrolling with resizable panels
+.td-sidebar-nav {
+  padding-bottom: 2rem;
 }
 
 // Smooth transitions for width changes
