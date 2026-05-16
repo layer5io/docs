@@ -6,5 +6,7 @@ videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
+tags: [meshery]
+duration: "0:53"
 ---
 {{< youtube id=Do7htKrRzDA class="yt-embed-container" >}}

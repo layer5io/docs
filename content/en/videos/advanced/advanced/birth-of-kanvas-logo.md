@@ -6,6 +6,8 @@ videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
+tags: [kanvas]
+duration: "0:16"
 ---
 
 {{< youtube id=4WcofErPTx4 class="yt-embed-container" >}}
