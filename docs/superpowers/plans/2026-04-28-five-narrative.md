@@ -4,7 +4,7 @@
 
 **Goal:** Establish a continuous narrative in Layer5 Cloud docs built around Five (the mascot) and a cast of six fictional characters across three fictional organizations, with a companion research plan page and 12 filed follow-up GitHub issues.
 
-**Architecture:** A dedicated `/cloud/about/` Hugo section hosts the canonical narrative page (`_index.md`) and research plan (`five-narrative-plan.md`). Five SVG assets are copied from the `layer5` repo into `docs/static/images/five/`. The Getting Started index gets a short intro paragraph linking to `/cloud/about`. No new Hugo shortcodes are needed — the existing `{{< cardpane >}}`, `{{% card %}}`, and `{{< alert >}}` shortcodes cover all layout needs.
+**Architecture:** A dedicated `/cloud/getting-started/meet-five/` Hugo section hosts the canonical narrative page (`_index.md`) and research plan (`five-narrative-plan.md`). Five SVG assets are copied from the `layer5` repo into `docs/static/images/five/`. The Getting Started index gets a short intro paragraph linking to `/cloud/getting-started/meet-five`. No new Hugo shortcodes are needed — the existing `{{< cardpane >}}`, `{{% card %}}`, and `{{< alert >}}` shortcodes cover all layout needs.
 
 **Tech Stack:** Hugo (static site generator), Markdown, Hugo shortcodes (`cardpane`, `card`, `alert`), GitHub CLI (`gh`) for filing issues.
 
@@ -21,9 +21,9 @@
 | Copy | `static/images/five/1.svg` through `19.svg` | Character profile illustrations |
 | Copy | `static/images/five/resources-sign.svg` | Sidebar/callout illustration |
 | Copy | `static/images/five/stick-figures.svg` | Team overview illustration |
-| Create | `content/en/cloud/about/_index.md` | Narrative + cast reference page |
-| Create | `content/en/cloud/about/five-narrative-plan.md` | Research plan / integration roadmap |
-| Modify | `content/en/cloud/getting-started/_index.md` | Add intro paragraph + link to /cloud/about |
+| Create | `content/en/cloud/getting-started/meet-five/_index.md` | Narrative + cast reference page |
+| Create | `content/en/cloud/getting-started/meet-five/five-narrative-plan.md` | Research plan / integration roadmap |
+| Modify | `content/en/cloud/getting-started/_index.md` | Add intro paragraph + link to /cloud/getting-started/meet-five |
 
 ---
 
@@ -84,11 +84,11 @@ git commit -s -m "[Docs] Add Five mascot SVG assets from layer5 repo"
 ## Task 2: Create the About Section Skeleton
 
 **Files:**
-- Create: `content/en/cloud/about/_index.md`
+- Create: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Create the directory and skeleton file**
 
-Create `content/en/cloud/about/_index.md` with this exact content:
+Create `content/en/cloud/getting-started/meet-five/_index.md` with this exact content:
 
 ```markdown
 ---
@@ -125,8 +125,8 @@ Expected: `Build clean` (no errors or warnings related to the new file)
 - [ ] **Step 3: Commit**
 
 ```bash
-git add content/en/cloud/about/_index.md
-git commit -s -m "[Docs] Add cloud/about section skeleton for Five narrative"
+git add content/en/cloud/getting-started/meet-five/_index.md
+git commit -s -m "[Docs] Add cloud/getting-started/meet-five section skeleton for Five narrative"
 ```
 
 ---
@@ -134,7 +134,7 @@ git commit -s -m "[Docs] Add cloud/about section skeleton for Five narrative"
 ## Task 3: Write the Origin Story
 
 **Files:**
-- Modify: `content/en/cloud/about/_index.md`
+- Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the origin story comment with the prose**
 
@@ -160,8 +160,8 @@ Expected: `Build clean`
 - [ ] **Step 3: Commit**
 
 ```bash
-git add content/en/cloud/about/_index.md
-git commit -s -m "[Docs] Add Five narrative origin story to cloud/about"
+git add content/en/cloud/getting-started/meet-five/_index.md
+git commit -s -m "[Docs] Add Five narrative origin story to cloud/getting-started/meet-five"
 ```
 
 ---
@@ -169,7 +169,7 @@ git commit -s -m "[Docs] Add Five narrative origin story to cloud/about"
 ## Task 4: Write the Organizations Section
 
 **Files:**
-- Modify: `content/en/cloud/about/_index.md`
+- Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the organizations comment with this content**
 
@@ -215,7 +215,7 @@ Expected: `Build clean`
 - [ ] **Step 3: Commit**
 
 ```bash
-git add content/en/cloud/about/_index.md
+git add content/en/cloud/getting-started/meet-five/_index.md
 git commit -s -m "[Docs] Add Organizations section to Five narrative page"
 ```
 
@@ -224,7 +224,7 @@ git commit -s -m "[Docs] Add Organizations section to Five narrative page"
 ## Task 5: Write the Cast Section
 
 **Files:**
-- Modify: `content/en/cloud/about/_index.md`
+- Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the cast comment with this content**
 
@@ -327,7 +327,7 @@ Expected: `Build clean`
 - [ ] **Step 3: Commit**
 
 ```bash
-git add content/en/cloud/about/_index.md
+git add content/en/cloud/getting-started/meet-five/_index.md
 git commit -s -m "[Docs] Add Cast section to Five narrative page"
 ```
 
@@ -336,7 +336,7 @@ git commit -s -m "[Docs] Add Cast section to Five narrative page"
 ## Task 6: Write the Hierarchy Table and Seed Inventory
 
 **Files:**
-- Modify: `content/en/cloud/about/_index.md`
+- Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the hierarchy comment with this content**
 
@@ -406,7 +406,7 @@ Expected: `Build clean`
 - [ ] **Step 4: Commit**
 
 ```bash
-git add content/en/cloud/about/_index.md
+git add content/en/cloud/getting-started/meet-five/_index.md
 git commit -s -m "[Docs] Add hierarchy table and seed inventory to Five narrative page"
 ```
 
@@ -415,7 +415,7 @@ git commit -s -m "[Docs] Add hierarchy table and seed inventory to Five narrativ
 ## Task 7: Write the "Using This Narrative" Callout and Finalize Narrative Page
 
 **Files:**
-- Modify: `content/en/cloud/about/_index.md`
+- Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the callout comment with this content**
 
@@ -440,7 +440,7 @@ hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 
 Expected: `Build clean`
 
-Then run `make site` and open `http://localhost:1313/cloud/about/` in a browser. Verify:
+Then run `make site` and open `http://localhost:1313/cloud/getting-started/meet-five/` in a browser. Verify:
 - Page appears in the left sidebar under Cloud
 - Origin story prose renders
 - Three org cards render side-by-side
@@ -451,7 +451,7 @@ Then run `make site` and open `http://localhost:1313/cloud/about/` in a browser.
 - [ ] **Step 3: Commit**
 
 ```bash
-git add content/en/cloud/about/_index.md
+git add content/en/cloud/getting-started/meet-five/_index.md
 git commit -s -m "[Docs] Complete Five narrative page with Using This Narrative callout"
 ```
 
@@ -460,7 +460,7 @@ git commit -s -m "[Docs] Complete Five narrative page with Using This Narrative 
 ## Task 8: Create the Research Plan Page
 
 **Files:**
-- Create: `content/en/cloud/about/five-narrative-plan.md`
+- Create: `content/en/cloud/getting-started/meet-five/five-narrative-plan.md`
 
 - [ ] **Step 1: Create the research plan file with this exact content**
 
@@ -545,7 +545,7 @@ When capturing screenshots for any section that references the Five narrative, f
 ## Priority Order
 
 ### Ship with this PR
-- `cloud/getting-started` — add intro paragraph + link to `/cloud/about` (see Task 10 of the implementation plan)
+- `cloud/getting-started` — add intro paragraph + link to `/cloud/getting-started/meet-five` (see Task 10 of the implementation plan)
 
 ### Next Sprint — Batch 1: Identity (Low difficulty)
 1. `cloud/identity/users` — Five's profile card
@@ -577,12 +577,12 @@ hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 
 Expected: `Build clean`
 
-Then verify `http://localhost:1313/cloud/about/five-narrative-plan/` renders and the integration map table is readable.
+Then verify `http://localhost:1313/cloud/getting-started/meet-five/five-narrative-plan/` renders and the integration map table is readable.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add content/en/cloud/about/five-narrative-plan.md
+git add content/en/cloud/getting-started/meet-five/five-narrative-plan.md
 git commit -s -m "[Docs] Add Five narrative research plan page"
 ```
 
@@ -595,11 +595,11 @@ git commit -s -m "[Docs] Add Five narrative research plan page"
 
 - [ ] **Step 1: Add the intro paragraph before the existing image**
 
-In `content/en/cloud/getting-started/_index.md`, insert the following **before** the line `![layer5-cloud-provider](images/layer5-cloud-provider.svg "image-center-shadow")`:
+In `content/en/cloud/getting-started/_index.md`, insert the following **before** the line `## Core Workflow`:
 
 ```markdown
 {{< alert type="info" title="Follow Along with Five" >}}
-Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →](/cloud/about)
+Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →](/cloud/getting-started/meet-five)
 {{< /alert >}}
 
 ```
@@ -614,7 +614,7 @@ weight: 1
 ---
 <!-- ... existing comments ... -->
 {{< alert type="info" title="Follow Along with Five" >}}
-Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →](/cloud/about)
+Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →](/cloud/getting-started/meet-five)
 {{< /alert >}}
 
 ![layer5-cloud-provider](images/layer5-cloud-provider.svg "image-center-shadow")
@@ -629,7 +629,7 @@ hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 
 Expected: `Build clean`
 
-Then verify `http://localhost:1313/cloud/getting-started/` shows the alert callout with the link to `/cloud/about`.
+Then verify `http://localhost:1313/cloud/getting-started/` shows the alert callout with the link to `/cloud/getting-started/meet-five`.
 
 - [ ] **Step 3: Commit**
 
@@ -652,16 +652,16 @@ gh issue create --repo layer5io/docs \
   --label "kind/enhancement,help wanted,issue/willfix" \
   --body "$(cat <<'EOF'
 ## Overview
-The `cloud/identity/users` page has an existing `<!-- TODO -->` placeholder for Five's user profile. Replace it with a character card using the canonical Five profile defined in https://docs.layer5.io/cloud/about.
+The `cloud/identity/users` page has an existing `<!-- TODO -->` placeholder for Five's user profile. Replace it with a character card using the canonical Five profile defined in https://docs.layer5.io/cloud/getting-started/meet-five.
 
 ## Tasks
 - [ ] Remove the `<!-- TODO -->` comment block from `content/en/cloud/identity/users/_index.md`
 - [ ] Add a `{{< cardpane >}}` character card for Five showing: name, role (Platform Engineer, User), org (Orbital Labs), plan (Team), and `/images/five/1.svg`
 - [ ] Add a second card for Maya Chen as the Org Admin example
-- [ ] Link both cards to `/cloud/about` for full cast reference
+- [ ] Link both cards to `/cloud/getting-started/meet-five` for full cast reference
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Low
 EOF
@@ -678,10 +678,10 @@ Update `cloud/identity/organizations` to use Orbital Labs and Stellar Dynamics a
 - [ ] Add Orbital Labs as the example org in the org-creation walkthrough
 - [ ] Add Stellar Dynamics as the enterprise tenant example (cross-org access scenario)
 - [ ] Reference the org chart with Constellation Cloud as the provider/MSP
-- [ ] Link to `/cloud/about` for full narrative context
+- [ ] Link to `/cloud/getting-started/meet-five` for full narrative context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Low
 EOF
@@ -698,10 +698,10 @@ Update `cloud/identity/teams` to use Orbital Labs' Infrastructure team (Zara, Fi
 - [ ] Add the Infrastructure team (admin: Zara Osei, members: Five) as the primary team example
 - [ ] Add the Development team (admin: Maya Chen, members: Rex Park, Jordan Reyes) as a second example
 - [ ] Add `team-of-fives.svg` illustration (`/images/five/team-of-fives.svg`) at an appropriate point
-- [ ] Link to `/cloud/about` for full cast reference
+- [ ] Link to `/cloud/getting-started/meet-five` for full cast reference
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Low
 EOF
@@ -723,10 +723,10 @@ Update `cloud/security/roles` to use Dr. Aiko Sato (Provider Admin at Constellat
 - [ ] Add Maya Chen as the Org Admin example
 - [ ] Add Zara Osei as the Team Admin example
 - [ ] Use `layer5-five-mascot-means-business.svg` in the admin section header
-- [ ] Link to `/cloud/about` for full cast context
+- [ ] Link to `/cloud/getting-started/meet-five` for full cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Medium
 EOF
@@ -742,11 +742,11 @@ Update `cloud/security/keychains` to use Zara Osei configuring a keychain scoped
 ## Tasks
 - [ ] Add scenario: Zara creates a keychain for the Infrastructure team
 - [ ] Show keychain scoped to `orbital-production` workspace and `prod-aws` environment
-- [ ] Add screenshot (log in as Zara: `zara@orbital-labs.example`) following screenshot standards in `/cloud/about/five-narrative-plan`
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Add screenshot (log in as Zara: `zara@orbital-labs.example`) following screenshot standards in `/cloud/getting-started/meet-five/five-narrative-plan`
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Medium
 EOF
@@ -762,11 +762,11 @@ Update `cloud/spaces/workspaces` to use Five creating `orbital-staging` and Maya
 ## Tasks
 - [ ] Add scenario: Five creates the `orbital-staging` workspace
 - [ ] Show Maya assigning Infrastructure team and Development team to the workspace
-- [ ] Add screenshot(s) following screenshot standards in `/cloud/about/five-narrative-plan`
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Add screenshot(s) following screenshot standards in `/cloud/getting-started/meet-five/five-narrative-plan`
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Medium
 EOF
@@ -783,11 +783,11 @@ Update `cloud/spaces/environments` to use Five connecting `prod-aws` (EKS + RDS 
 - [ ] Add scenario: Five connects the `prod-aws` environment (AWS services: EKS, RDS, S3, CloudFront, SQS)
 - [ ] Add scenario: Five connects the `prod-gcp` environment (GCP services: GKE, Cloud SQL, Cloud Storage, Pub/Sub)
 - [ ] Show both environments assigned to the `orbital-production` workspace
-- [ ] Add screenshots following screenshot standards in `/cloud/about/five-narrative-plan`
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Add screenshots following screenshot standards in `/cloud/getting-started/meet-five/five-narrative-plan`
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Medium
 EOF
@@ -808,10 +808,10 @@ Rewrite `cloud/tutorials/sharing-a-workspace` so Five shares `orbital-dev` with 
 - [ ] Rewrite tutorial using Five as the workspace owner sharing `orbital-dev`
 - [ ] Add Rex Park (Developer team) as the recipient
 - [ ] Update or replace screenshots (log in as Five: `five@orbital-labs.example`)
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Low–Medium
 EOF
@@ -830,10 +830,10 @@ Add a new tutorial to `cloud/tutorials/` covering the promotion of `prod-deploym
 - [ ] Show Zara's approval step (Team Admin of Infrastructure, which controls prod access)
 - [ ] Add screenshots (Five: `five@orbital-labs.example`; Zara: `zara@orbital-labs.example`)
 - [ ] Cloud services in scope: EKS, RDS (PostgreSQL), S3, CloudFront
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Medium
 EOF
@@ -850,10 +850,10 @@ Update `kanvas/getting-started` so Jordan Reyes opens the `microservices-baselin
 - [ ] Introduce Jordan as the user opening Kanvas Designer with `microservices-baseline`
 - [ ] Add Five as the reviewer/collaborator
 - [ ] Update screenshots to use narrative accounts
-- [ ] Link to `/cloud/about` for full cast context
+- [ ] Link to `/cloud/getting-started/meet-five` for full cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: Medium
 EOF
@@ -875,10 +875,10 @@ Update the Kanvas Designer documentation to use Jordan Reyes and Rex Park walkin
 - [ ] Use Jordan as the designer, Rex as the collaborator/reviewer
 - [ ] Cover: opening the design, adding/connecting AWS components, sharing for review
 - [ ] Update screenshots (Jordan: `jordan@orbital-labs.example`)
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: High
 EOF
@@ -894,11 +894,11 @@ Add or update advanced Kanvas tutorials using `data-pipeline-gcp` (Zara's GCP wo
 ## Tasks
 - [ ] Add/update a tutorial covering `data-pipeline-gcp` (owner: Zara Osei, workspace: `orbital-production`)
 - [ ] Add/update a tutorial covering `stellar-saas-platform` (owner: Marcus Webb, workspace: `stellar-main`) to demonstrate cross-org design access
-- [ ] Add screenshots per screenshot standards in `/cloud/about/five-narrative-plan`
-- [ ] Link to `/cloud/about` for cast context
+- [ ] Add screenshots per screenshot standards in `/cloud/getting-started/meet-five/five-narrative-plan`
+- [ ] Link to `/cloud/getting-started/meet-five` for cast context
 
 ## Reference
-- Narrative: `/cloud/about`
+- Narrative: `/cloud/getting-started/meet-five`
 - Spec: `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 - Difficulty: High
 EOF
@@ -940,10 +940,10 @@ Expected: `All clear`
 - [ ] **Step 3: Check the about page appears in navigation**
 
 Start `make site` and verify:
-- `http://localhost:1313/cloud/about/` — narrative page loads, all 3 org cards visible, all 6 character cards visible, images render
-- `http://localhost:1313/cloud/about/five-narrative-plan/` — research plan loads, integration map table renders
+- `http://localhost:1313/cloud/getting-started/meet-five/` — narrative page loads, all 3 org cards visible, all 6 character cards visible, images render
+- `http://localhost:1313/cloud/getting-started/meet-five/five-narrative-plan/` — research plan loads, integration map table renders
 - `http://localhost:1313/cloud/getting-started/` — alert callout with Five link is visible
-- Click the "Meet Five and the full cast →" link from Getting Started — navigates to `/cloud/about/`
+- Click the "Meet Five and the full cast →" link from Getting Started — navigates to `/cloud/getting-started/meet-five/`
 
 - [ ] **Step 4: Final commit (if any fixes were needed)**
 
@@ -973,9 +973,9 @@ gh pr create \
 
 Implements [issue #457](https://github.com/layer5io/docs/issues/457) — establishes a continuous narrative in Layer5 Cloud docs built around Five (the mascot) and a cast of fictional characters.
 
-- Adds `/cloud/about` — the canonical "Meet Five and the Cast" reference page with origin story, three fictional orgs (Constellation Cloud, Orbital Labs, Stellar Dynamics), six named characters with role/personality profiles, and a seed inventory of canonical workspace/environment/design names for use across all docs
-- Adds `/cloud/about/five-narrative-plan` — section-by-section integration map, mascot usage guide, screenshot standards, and priority order for rolling out narrative updates
-- Updates `cloud/getting-started` with a Five intro callout linking to `/cloud/about`
+- Adds `/cloud/getting-started/meet-five` — the canonical "Meet Five and the Cast" reference page with origin story, three fictional orgs (Constellation Cloud, Orbital Labs, Stellar Dynamics), six named characters with role/personality profiles, and a seed inventory of canonical workspace/environment/design names for use across all docs
+- Adds `/cloud/getting-started/meet-five/five-narrative-plan` — section-by-section integration map, mascot usage guide, screenshot standards, and priority order for rolling out narrative updates
+- Updates `cloud/getting-started` with a Five intro callout linking to `/cloud/getting-started/meet-five`
 - Copies Five SVG assets from `layer5` repo into `static/images/five/`
 - Files 12 follow-up issues (4 batches) for phased narrative integration across Cloud and Kanvas docs
 
@@ -991,9 +991,9 @@ Dr. Aiko Sato (Provider Admin), Five (Platform Engineer), Maya Chen (Org Admin +
 
 ## Test plan
 - [ ] `make clean` completes without errors
-- [ ] `/cloud/about/` renders: org cards, character cards, hierarchy table, seed inventory, callout
-- [ ] `/cloud/about/five-narrative-plan/` renders: integration map table, mascot guide, screenshot standards
-- [ ] `/cloud/getting-started/` shows Five intro callout with working link to `/cloud/about`
+- [ ] `/cloud/getting-started/meet-five/` renders: org cards, character cards, hierarchy table, seed inventory, callout
+- [ ] `/cloud/getting-started/meet-five/five-narrative-plan/` renders: integration map table, mascot guide, screenshot standards
+- [ ] `/cloud/getting-started/` shows Five intro callout with working link to `/cloud/getting-started/meet-five`
 - [ ] All 12 follow-up issues filed and visible in repo issue tracker
 
 Closes #457

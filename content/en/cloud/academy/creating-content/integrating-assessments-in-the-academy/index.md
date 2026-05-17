@@ -93,7 +93,7 @@ Pass `learning-path-name/exam.md` → Entire learning path is marked as complete
 
 You can make any assessment **optional** by adding this to its frontmatter:
   ```yaml
-  is_optional: true
+  isOptional: true
   ```
 This means the Optional sections are **excluded** from prerequisite checks.
 
@@ -108,25 +108,29 @@ Each assessment file must contain the following YAML frontmatter:
 ```yaml
 ---
 title: "Assessment Example"
-id: "assessment-id"                 
-pass_percentage: 70               
+id: "assessment-id"
+passPercentage: 70
 type: "test"
 layout: "test"
-is_optional: true                 
-final: false                     
-questions:                     
-  - id: "q1"                       
-    text: "Your question text here" 
-    type: "single-answer"                     
-    marks: 2                        
-    options:                       
+isOptional: true
+final: false
+questions:
+  - id: "q1"
+    text: "Your question text here"
+    type: "single-answer"
+    marks: 2
+    options:
       - id: "a"
         text: "Option A text"
-      - id: "b" 
+      - id: "b"
         text: "Option B text"
-        is_correct: true
+        isCorrect: true
 ---
 ```
+
+{{< alert type="info" title="Frontmatter naming convention" >}}
+Quiz frontmatter uses **camelCase** (`passPercentage`, `isOptional`, `isCorrect`, `correctAnswer`, `timeLimit`, `maxAttempts`, `numberOfQuestions`, `caseSensitive`, `multipleAnswers`). Older snake_case keys (e.g., `pass_percentage`, `is_optional`) are still accepted by the Hugo theme for backward compatibility but are deprecated; new content should be authored in camelCase to align with the canonical academy quiz schema.
+{{< /alert >}}
 
 ### Assessment Frontmatter Fields
 
@@ -136,10 +140,13 @@ questions:
 | :--- | :--- | :--- | :--- |
 | **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
 | | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
-| | `pass_percentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
+| | `passPercentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
 | | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
 | | `layout` | - | Metadata type for the assessment. The value must be `test`. |
-| | `is_optional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
+| | `isOptional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
+| | `timeLimit` | - | Duration of the test in minutes. Use `0` (the default) for no limit. |
+| | `maxAttempts` | - | Maximum number of attempts allowed. Defaults to the number of question sets when a question bank is configured. |
+| | `numberOfQuestions` | - | Size of each question set when the test should draw from a larger question bank. Total questions must be a multiple of this value. |
 | | `final` | - | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
 | | `questions` | ✅  | An array containing one or more question objects.                                                         |
 | **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`).                              |
@@ -174,7 +181,7 @@ Layer5 Academy supports four question formats:
         options:
           - id: "a"
             text: "Option A"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "b"
             text: "Option B"
     ---
@@ -193,7 +200,7 @@ Layer5 Academy supports four question formats:
         options:
           - id: "true"
             text: "True"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "false"
             text: "False"
     ---
@@ -217,12 +224,12 @@ Layer5 Academy supports four question formats:
         options:
           - id: "a"
             text: "Option A"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "b"
             text: "Option B"
           - id: "c"
             text: "Option C"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
     ---
   </code></pre>
 </details>
@@ -244,15 +251,14 @@ Layer5 Academy supports four question formats:
         type: "short-answer"                # choose the type
         marks: 2
         instructions: "Just type the command"
-        correct_answer: "default"           # expected answer
+        correctAnswer: "default"           # expected answer
 
       - id: "question5"
         text: "Which kubectl command lists all pods?"
         type: "short-answer"                # choose the type
         marks: 2
-        correct_answer: "kubectl get pods"  # expected answer
+        correctAnswer: "kubectl get pods"  # expected answer
     ---
-  </code></pre>
 </details>
   
 
@@ -281,7 +287,7 @@ This assessment allows you to review your educational progress. Give it a try!
    * If none are marked, the **last exam** (by file path) is treated as final.
    * There must be **only one** explicitly marked final exam per section.
 3. A **final exam cannot be optional**.
-   * This applies even when only one exam is present — it cannot have `is_optional: true`.
+   * This applies even when only one exam is present — it cannot have `isOptional: true`.
 
 ### Final Exam Determination Logic
 A exam is considered final if:
@@ -317,7 +323,7 @@ Instructions can be override in frontmatter by defining a custom intruction for 
         type: "short-answer"                
         marks: 2
         instructions: "Just type the command" #custom instruction
-        correct_answer: "default"           
+        correctAnswer: "default"           
 
       questions:                              # will display the default instructions for question type
       - id: "question3"
@@ -327,31 +333,30 @@ Instructions can be override in frontmatter by defining a custom intruction for 
         options:
           - id: "a"
             text: "Option A"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
           - id: "b"
             text: "Option B"
           - id: "c"
             text: "Option C"
-            is_correct: true    # correct option
+            isCorrect: true    # correct option
     ---
-  </code></pre>
 </details>
   
 
 ## Scoring
 
-The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `pass_percentage` for the assessment. Here is how the system processes the scores:
+The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passPercentage` for the assessment. Here is how the system processes the scores:
 
 ### How Scores Are Calculated
 
 1.  **Total Possible Marks**: The total score for a assessment is automatically calculated by summing the `marks` value of every question within that assessment. You do not need to define this total manually.
 2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
-3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `pass_percentage` you set, the assessment is marked as "Passed".
+3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passPercentage` you set, the assessment is marked as "Passed".
 
 ### Scoring Rules for Question Types
 
 - **Multiple-Choice Questions**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
-- **Short Answer Questions**: The learner's input is compared against the `correct_answer` field. The comparison is **case-insensitive**, and leading/trailing whitespace is ignored to avoid penalizing minor typing variations.
+- **Short Answer Questions**: The learner's input is compared against the `correctAnswer` field. The comparison is **case-insensitive** by default; set `caseSensitive: true` on a question to require exact case matching. Leading/trailing whitespace is always ignored to avoid penalizing minor typing variations.
 
 ### The Result of Scoring
 

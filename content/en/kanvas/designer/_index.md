@@ -28,5 +28,5 @@ Rex opens `api-platform-aws` in Kanvas Designer and traces the connection paths 
 Jordan sees the notification and comes back to the canvas. They hash it out in the comment thread, land on the ALB approach, and Jordan draws a new connection representing the internal Application Load Balancer sitting between Lambda and the cluster's service mesh entry point. The design updates in place — no version-named duplicates, no stale exported images — and Rex can reload and see the revised architecture immediately.
 
 {{< alert type="info" title="Meet the team" >}}
-Meet Jordan, Rex, and the rest of the Orbital Labs team in [Meet Five and the Cast](/cloud/about).
+Meet Jordan, Rex, and the rest of the Orbital Labs team in [Meet Five and the Cast](/cloud/getting-started/meet-five).
 {{< /alert >}}

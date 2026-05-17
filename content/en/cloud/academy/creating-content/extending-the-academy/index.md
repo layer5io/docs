@@ -172,7 +172,7 @@ The Layer5 Academy platform supports all Hugo shortcode features. For more advan
 
 ### Branded Email Communications
 
-When using the Academy with [white-labeling](/cloud/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
+When using the Academy with [white-labeling](/cloud/guides/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
 
 Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
 

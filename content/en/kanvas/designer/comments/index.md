@@ -209,7 +209,7 @@ Collaborators (users you have shared the design with) do not receive notificatio
 
 ### Enable Email Notifications
 
-Customize your [notification preferences](/cloud/identity/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
+Customize your [notification preferences](/cloud/concepts/identity-and-security/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
 
 ### Muting Comment Notifications
 
@@ -224,7 +224,7 @@ Customize your notification preferences to mute email notifications for comments
 Muting a comment thread applies only to participants in that thread. Design owners continue to receive notifications for all activity within their design regardless of thread-level muting.
 {{< /alert >}}
 
-You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/identity/users/notification-preferences/)**.
+You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/concepts/identity-and-security/users/notification-preferences/)**.
 
 <figure>
   <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">

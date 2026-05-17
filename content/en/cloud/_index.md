@@ -72,6 +72,20 @@ cascade:
 </div>
 {{% /pageinfo %}}
 
+## What is Layer5 Cloud?
+
+Layer5 Cloud is the centralized management console and identity provider for the Layer5 ecosystem — specifically for **Kanvas** and **Meshery** deployments. It provides an extensible, highly flexible authorization framework that enables organizations to govern complex, multi-cloud infrastructure with confidence. Think of it as the command center where your teams, workspaces, and cloud-native assets come together under a single, unified platform.
+
+Layer5 Cloud is available both as a fully managed service and as a [self-hosted](/cloud/guides/self-hosted/) deployment, giving organizations the flexibility to meet their own security and compliance requirements.
+
+## Why use Layer5 Cloud?
+
+- **Unified Identity and Access Management**: Define and enforce granular Role-Based Access Control (RBAC) across your organizations, teams, and users — all from one place.
+- **Collaborative Infrastructure Design**: Like Google Workspace for teams or Figma for designers, Layer5 Cloud enables real-time, multi-player collaboration on infrastructure patterns and deployments.
+- **Content Catalog**: Publish, discover, and reuse cloud-native architectures and patterns — either publicly or privately within your organization.
+- **Multi-Tenancy and Organizational Hierarchy**: Support service provider-grade structures with tenant entitlement services and a flexible organizational model that scales with your business.
+- **Flexible Deployment**: Run Layer5 Cloud as a SaaS product or bring it on-premises — your infrastructure, your rules.
+
 <!-- {{< blocks/section color="dark" type="row" >}}
 {{% blocks/feature icon="fa-lightbulb" title="Fastest OS **on the planet**!" %}}
 The new **TechOS** operating system is an open source project. It is a new project, but with grand ambitions.

@@ -81,5 +81,5 @@ Five receives an in-app notification. When he opens the design, he can see all f
 The `data-pipeline-gcp` design is now live in `orbital-production`, connected to real infrastructure, and ready for collaborative review.
 
 {{< alert type="info" >}}
-Meet Zara and the rest of the team at [Meet Five and the Cast](/cloud/about).
+Meet Zara and the rest of the team at [Meet Five and the Cast](/cloud/getting-started/meet-five).
 {{< /alert >}}

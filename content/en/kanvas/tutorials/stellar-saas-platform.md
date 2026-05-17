@@ -73,7 +73,7 @@ Marcus opens the **Share** panel on `stellar-saas-platform`. He types Five's nam
 Marcus clicks **Share**. Five receives an in-app notification in his Orbital Labs account.
 
 {{< alert type="info" title="Cross-Org Access" >}}
-Cross-organization design sharing requires that both organizations exist under a shared Provider (Constellation Cloud in this scenario). The Provider Admin (Dr. Aiko Sato) must have configured cross-org permissions before sharing can occur. See [Roles and Keychains](/cloud/security/roles/) for the permission model.
+Cross-organization design sharing requires that both organizations exist under a shared Provider (Constellation Cloud in this scenario). The Provider Admin (Dr. Aiko Sato) must have configured cross-org permissions before sharing can occur. See [Roles and Keychains](/cloud/concepts/identity-and-security/roles/) for the permission model.
 {{< /alert >}}
 
 ### Step 6: Five reviews the design from Orbital Labs
@@ -101,5 +101,5 @@ Marcus resolves Five's WAF comment and replies: "Added Application Gateway (WAF 
 The `stellar-saas-platform` design now reflects the correct architecture, the review loop is documented in the comment history, and the cross-org collaboration happened entirely within Kanvas — no design files exported, no screenshots emailed.
 
 {{< alert type="info" >}}
-Meet Marcus, Five, Dr. Aiko, and the rest of the cast at [Meet Five and the Cast](/cloud/about).
+Meet Marcus, Five, Dr. Aiko, and the rest of the cast at [Meet Five and the Cast](/cloud/getting-started/meet-five).
 {{< /alert >}}

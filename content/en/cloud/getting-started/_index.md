@@ -22,8 +22,6 @@ Layer5 Cloud functions as a Remote Provider for Meshery. To get started:
 2.  **Select Provider:** On the login screen, select **Layer5 Cloud** from the provider dropdown.
 3.  **Authenticate:** You will be redirected to the Layer5 Cloud authentication page. Log in with your preferred identity provider (GitHub, Google, etc.).
 
-![layer5-cloud-provider](images/layer5-cloud-provider.svg "image-center-shadow")
-
 ## Core Workflow
 
 Once authenticated, you can begin organizing your infrastructure using the following hierarchy:
@@ -46,5 +44,5 @@ To verify your setup, try deploying a sample design:
 If you run into issues during setup, join our [Slack Community](http://slack.layer5.io) or check the [Troubleshooting Guide](/docs/troubleshooting).
 
 {{< alert type="info" title="Follow Along with Five" >}}
-Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →]({{< relref "/cloud/about/_index.md" >}})
+Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →]({{< relref "/cloud/getting-started/meet-five/_index.md" >}})
 {{< /alert >}}

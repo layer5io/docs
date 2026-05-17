@@ -1,6 +1,6 @@
 ---
 title: Academy
-weight: 5
+weight: 4
 description: >
   Learn how to use, build, manage, and extend the Layer5 Academy.
 categories: [Academy]
