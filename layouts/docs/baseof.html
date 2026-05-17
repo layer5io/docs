@@ -10,8 +10,10 @@
   <div class="container-fluid td-outer">
     <div class="td-main">
       <div class="row flex-xl-nowrap">
-        <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+        <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none" id="left-sidebar">
           {{ partial "sidebar.html" . }}
+          <!-- Add the resizer handle here! -->
+          <div class="sidebar-resizer" id="left-resizer"></div>
         </aside>
         <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
           {{ partial "page-meta-links.html" . }}
@@ -38,6 +40,13 @@
   </div>
   {{ partial "scripts.html" . }}
   {{ partial "image-modal.html" . }}
+
+    {{ with resources.Get "js/sidebar-resizer.js" }}
+  <script src="{{ .RelPermalink }}" defer></script>
+  {{ end }}
 </body>
+
+</body>
+
 
 </html>

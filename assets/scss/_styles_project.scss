@@ -262,7 +262,7 @@ a:not([href]):not([class]):hover {
 
 // Left sidebar
 .td-sidebar-nav {
-  overflow: hidden;
+  max-height: none;
   padding: 0px;
 
   &__section-title {
@@ -816,3 +816,56 @@ html {
 h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 1rem;
 }
+/* Sidebar Resizer Handle */
+/* Sidebar Resizer Handle */
+@include media-breakpoint-up(md)
+{
+  .sidebar-resizer {
+  width: 10px; 
+  cursor: col-resize;
+  position: absolute;
+  top: 0;
+  right: 8px; /* Push it outside the scrollbar */
+  bottom: 0;
+  z-index: 100;
+  background-color: transparent;
+
+  /* Grip icon using a pseudo-element */
+  &::after {
+    content: "⋮";
+    position: sticky; 
+    top: 40vh;
+    display: block;
+    text-align: center;
+    color: var(--secondary);
+    font-size: 18px;
+    opacity: 0.9;
+  }
+
+  &:hover::after, &:active::after {
+    opacity: 1; 
+  }
+}
+#left-sidebar {
+    min-width: 20vw;
+    max-width: 35vw; 
+  }
+  #left-sidebar.is-resetting {
+  transition: width 0.3s ease, max-width 0.3s ease;
+}
+
+
+}
+@include media-breakpoint-down(sm) {
+ #left-sidebar {
+    /* Force mobile width and override any JS inline styles */
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 100% !important; 
+  }
+}
+
+
+
+
+
