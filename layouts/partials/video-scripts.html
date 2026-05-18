@@ -1,11 +1,18 @@
-<!-- Partial: video-scripts.html - rewrites /videos links to include category hashes -->
 {{ $videoHashMap := dict }}
 {{ $videos := .Site.GetPage "section" "videos" }}
 {{ if $videos }}
   {{ range $mainIndex, $mainSection := $videos.Sections }}
-    {{ $videoHashMap = merge $videoHashMap (dict $mainSection.RelPermalink (printf "category-%d-subcategory-0" $mainIndex)) }}
+    {{ $mainPath := $mainSection.RelPermalink }}
+    {{ if not (hasPrefix $mainPath "/") }}
+      {{ $mainPath = "/" | add $mainPath }}
+    {{ end }}
+    {{ $videoHashMap = merge $videoHashMap (dict $mainPath (printf "category-%d-subcategory-0" $mainIndex)) }}
     {{ range $subIndex, $subSection := $mainSection.Sections }}
-      {{ $videoHashMap = merge $videoHashMap (dict $subSection.RelPermalink (printf "category-%d-subcategory-%d" $mainIndex $subIndex)) }}
+      {{ $subPath := $subSection.RelPermalink }}
+      {{ if not (hasPrefix $subPath "/") }}
+        {{ $subPath = "/" | add $subPath }}
+      {{ end }}
+      {{ $videoHashMap = merge $videoHashMap (dict $subPath (printf "category-%d-subcategory-%d" $mainIndex $subIndex)) }}
     {{ end }}
   {{ end }}
 {{ end }}
@@ -16,19 +23,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const mapEl = document.getElementById('video-hash-map');
   const videoHashMap = mapEl ? JSON.parse(mapEl.dataset.map || '{}') : {};
 
-  const normalize = (href) => {
-    try {
-      const u = new URL(href, location.origin);
-      let p = u.pathname;
-      if (!p.endsWith('/')) p += '/';
-      return p;
-    } catch (_) { return href || ''; }
+  const extractVideoPath = (pathname) => {
+    const match = pathname.match(/\/videos\/.*?(?:\?|$)/);
+    if (!match) return '';
+    const path = match[0].replace(/\?.*$/, '');
+    return path.endsWith('/') ? path : path + '/';
   };
 
+  const currentPath = extractVideoPath(window.location.pathname);
+  if (currentPath && !window.location.hash && videoHashMap[currentPath]) {
+    window.location.hash = videoHashMap[currentPath];
+  }
+
   document.querySelectorAll("a[href^='/videos/'], a[href*='/videos/']").forEach(link => {
-    const key = normalize(link.getAttribute('href') || '');
-    const hash = videoHashMap[key];
-    if (hash) link.setAttribute('href', key + '#' + hash);
+    const href = link.getAttribute('href') || '';
+    const videoPath = extractVideoPath(href);
+    const hash = videoPath && videoHashMap[videoPath];
+    if (hash) link.setAttribute('href', videoPath + '#' + hash);
   });
 });
 </script>
