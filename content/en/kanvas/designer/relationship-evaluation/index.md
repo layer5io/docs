@@ -147,8 +147,8 @@ Relationship Evaluation Diagnostics view so the issue can be reproduced:
 - A description of the expected relationships versus what Kanvas showed, and the
   design (or a minimal reproduction) if you can share it.
 
-{{< alert type="info" title="Related reading" >}} For what relationships are and
-the kinds Kanvas supports, see
+{{< alert type="info" title="Related reading" >}} For an overview of what
+relationships are and the kinds Kanvas supports, see
 [Understanding Relationships](/kanvas/concepts/relationships/). For creating and
 managing relationships in a design, see
 [Creating Relationships](/kanvas/getting-started/creating-relationships/).
