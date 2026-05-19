@@ -129,7 +129,7 @@ below).
 
 Evaluation re-runs automatically whenever you change the design — for example,
 by adding, removing, or reconfiguring a component, or by toggling a relationship
-kind on or off from the relationships section of the design. Making any such
+kind on or off from the **Relationships** section of the Designer. Making any such
 change re-triggers evaluation with the active engine. If the indicator was in
 the error state, a successful re-evaluation clears it.
 
