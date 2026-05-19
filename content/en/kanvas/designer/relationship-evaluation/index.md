@@ -1,5 +1,5 @@
 ---
-title: Relationship Evaluation Engine
+title: Policy Engine
 description: >
   Choose how Kanvas evaluates relationships in your designs, understand the
   relationship indicator states, and diagnose failing or unexpected relationship
@@ -7,8 +7,6 @@ description: >
 weight: 11
 categories: [Designer]
 tags: [designs, relationships, components, troubleshooting]
-aliases:
-  - /meshmap/designer/relationship-evaluation
 ---
 
 As you build a design, Kanvas continuously evaluates the
@@ -21,15 +19,15 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 
 Kanvas can run relationship evaluation using one of two interchangeable engines:
 
-- **Meshery server** — the policy engine running inside your Meshery server. It
+- **Server-side** — the policy engine running inside your Meshery server. It
   is always available and is the default.
-- **Client-side (WASM)** — the same policy engine, compiled to WebAssembly and
+- **Client-side** — the same policy engine, compiled to WebAssembly and
   run inside a background worker in your browser. Because it runs locally, there
   are no round-trips to the server, so evaluation is typically faster. It is
   available only when your Meshery server provides the WebAssembly artifact.
 
 Both engines produce the same relationship results. The choice affects
-performance, not correctness.
+performance, and where toil (evaluation) is done, not correctness.
 
 {{< alert type="info" title="Editing is never blocked" >}} Relationship
 evaluation runs alongside your work — it never blocks editing or saving a
