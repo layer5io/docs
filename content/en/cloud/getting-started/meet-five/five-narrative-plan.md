@@ -4,7 +4,7 @@ description: >
   Section-by-section map for infusing the Five narrative into Layer5 Cloud and Kanvas documentation.
 linkTitle: Narrative Research Plan
 weight: 1
-draft: true
+draft: false
 categories: [About]
 aliases:
   - /cloud/about/five-narrative-plan/
