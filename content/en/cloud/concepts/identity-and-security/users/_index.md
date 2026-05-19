@@ -67,14 +67,14 @@ Only Provider Admins and Organization Admin can create users. For more informati
 
 ## Account Linking
 
-You can link your Layer5 account to supported social sign-in providers after sign up, and you can unlink previously added providers at any time. Layer5 Cloud can also link providers automatically during sign-in when the provider returns a verified email address that already belongs to your account. This is how it works:
+You can link your Layer5 account to supported social sign-in providers after signing up, and you can unlink previously added providers at any time. Layer5 Cloud can also link providers automatically during sign-in when the provider returns a verified email address that already belongs to your account. This is how it works:
 
 1. You create an account with the email address `alice@example.com` and a password.
 2. When signing in later, click to sign in with a social sign-in provider such as GitHub or Google that returns the same **verified** email address `alice@example.com`.
-3. Layer5 Cloud recognizes that the verified email address already belongs to your existing account and automatically links that provider to the same account. You are not prompted to re-enter your password for this linking step.
+3. Layer5 Cloud recognizes that the verified email address already belongs to your existing account and automatically links that provider. You are not prompted to re-enter your password for this linking step.
 4. After the link is created, you can sign in with either your password or any linked social sign-in provider.
 
-If a provider that is already linked to your account later reports a different verified email address, Layer5 Cloud still signs you in to the same account. The email already stored on your Layer5 account is not silently replaced; instead, the change is recorded for later review.
+If a provider that is already linked to your account later reports a different verified email address, Layer5 Cloud still signs you in to the same account. The email already stored on your Layer5 account is not silently replaced or automatically updated.
 
 **Rules and Limitations**
 
