@@ -1,5 +1,5 @@
 ---
-title: "Kanvas Designer Overview"
+title: "Kanvas Operator Overview"
 description: >
    With thousands of components available, you can collaboratively design and operate your multi-cloud and cloud native infrastructure.
 videoId: "QANUEikEwQY"
@@ -14,5 +14,4 @@ duration: "2:11"
 
 ### Related Docs
 
-- [Exploring Designer](/kanvas/operator/)
-- 
+- [Exploring Operator](/kanvas/operator/)

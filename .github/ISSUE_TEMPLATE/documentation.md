@@ -5,10 +5,10 @@ title: '[Docs]'
 labels: 'area/docs, framework/hugo, language/markdown, help wanted'
 assignees: ''
 ---
-#### Current State
+### Current State
 
 
-#### Desired State
+### Desired State
 
 
 ---
