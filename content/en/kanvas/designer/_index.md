@@ -23,7 +23,7 @@ Kanvas Designer provides an intuitive visual interface to model complex architec
 ### Collaborative Review & Comments
 - **Contextual Commenting**: Pin feedback and discussion threads directly to specific components or edges rather than having conversations lost in external ticketing systems or chat channels.
 - **Granular Share Permissions**: Share your designs with teammates or external partners, granting precise role-scoped access (e.g., Viewer, Reviewer, Editor, or Admin) to control who can modify vs. inspect the canvas.
-- **Real-Time Workspace Updates**: Edit and review designs simultaneously with your team. Updates are saved automatically and synced in real-time, eliminating version-named duplicates and stale image exports.
+- **Real-Time Workspace Updates**: Edit and review designs simultaneously with your team. Updates are saved automatically and synced in real-time, eliminating versioned duplicates and stale image exports.
 
 ### Real-world Integrations & Validation
 - **Environment Binding**: Attach your designs to target deployment environments (e.g., `dev-local`, `prod-aws`) to align visual designs with actual cloud and cluster configurations.
