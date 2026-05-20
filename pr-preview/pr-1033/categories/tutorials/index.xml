@@ -32,7 +32,21 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the
+resources responsible for exposing applications inside and outside the cluster.
+Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform
+hands-on labs to gain practical experience with Kubernetes Services, without
+writing any YAML.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider
+starting with the
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
+tutorial first or
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
 
 
 
@@ -84,7 +98,10 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
  Lab Scenario
  &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;We will explore a simple application architecture in Kubernetes.&lt;/p&gt;</description></item><item><title>Deploy AWS EC2 Instances with Meshery</title><link>/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+&lt;p&gt;We will explore a simple application architecture in Kubernetes.&lt;/p&gt;</description></item><item><title>Kubernetes</title><link>/kanvas/tutorials/kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/</guid><description>&lt;p&gt;Work through hands-on Kubernetes scenarios in
+&lt;a href="https://playground.meshery.io/"&gt;Meshery Playground&lt;/a&gt; — an interactive live
+cluster environment — using Kanvas to design, deploy, and explore core
+Kubernetes resources without writing YAML.&lt;/p&gt;</description></item><item><title>Deploy AWS EC2 Instances with Meshery</title><link>/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
@@ -134,7 +151,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[80 404 123 247 184 89]" src="../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
+ &lt;img id="[114 46 150 210 228 460]" src="../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
 In this tutorial, we will explore Kubernetes CronJobs, a resource that allows you to run jobs periodically at specified intervals. We will use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for working with CronJobs in Kubernetes.&lt;/p&gt;
@@ -189,13 +206,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  Lab Scenario
  &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the resources responsible for exposing applications inside and outside the cluster. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on labs to gain practical experience with the Kubernetes Services, without writing any YAML.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="../../kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a &lt;strong&gt;diagram built in Meshery Kanvas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a &lt;strong&gt;diagram built in Meshery Kanvas&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to Artifact Hub</title><link>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction

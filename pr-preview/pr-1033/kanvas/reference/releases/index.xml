@@ -1,4 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.22-1</title><link>/kanvas/reference/releases/v1.0.22-1/</link><pubDate>Tue, 12 May 2026 18:40:22 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.22-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.24-6</title><link>/kanvas/reference/releases/v1.0.24-6/</link><pubDate>Tue, 19 May 2026 16:25:03 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-6/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-5</title><link>/kanvas/reference/releases/v1.0.24-5/</link><pubDate>Tue, 19 May 2026 15:14:26 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-5/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-4</title><link>/kanvas/reference/releases/v1.0.24-4/</link><pubDate>Tue, 19 May 2026 13:56:16 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-4/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-3</title><link>/kanvas/reference/releases/v1.0.24-3/</link><pubDate>Tue, 19 May 2026 13:10:35 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-3/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-2</title><link>/kanvas/reference/releases/v1.0.24-2/</link><pubDate>Tue, 19 May 2026 12:46:23 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-1</title><link>/kanvas/reference/releases/v1.0.24-1/</link><pubDate>Tue, 19 May 2026 11:32:32 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.23-1</title><link>/kanvas/reference/releases/v1.0.23-1/</link><pubDate>Tue, 19 May 2026 05:29:34 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.23-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.22-1</title><link>/kanvas/reference/releases/v1.0.22-1/</link><pubDate>Tue, 12 May 2026 18:40:22 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.22-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -412,20 +545,20 @@
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/690"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/691"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/692"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/690"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/691"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/692"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.7-2</title><link>/kanvas/reference/releases/v1.0.7-2/</link><pubDate>Mon, 13 Apr 2026 17:36:14 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.7-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.7-2</title><link>/kanvas/reference/releases/v1.0.7-2/</link><pubDate>Mon, 13 Apr 2026 17:36:14 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.7-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

@@ -786,7 +786,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[387 147 448 105 309 163]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[223 382 436 128 241 379]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -802,7 +802,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[423 203 324 179 204 268]" src="./cloud/concepts/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[236 385 17 340 21 381]" src="./cloud/concepts/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -916,7 +916,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[40 351 421 248 42 443]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[389 118 126 277 286 351]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -957,7 +957,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[17 272 296 116 79 442]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[319 232 385 481 163 50]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -1070,7 +1070,21 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 &lt;p&gt;Navigate to the &lt;strong&gt;Actions&lt;/strong&gt; button at the top of the Design canvas.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
+&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the
+resources responsible for exposing applications inside and outside the cluster.
+Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform
+hands-on labs to gain practical experience with Kubernetes Services, without
+writing any YAML.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider
+starting with the
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
+tutorial first or
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -1079,7 +1093,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[468 200 216 65 215 209]" src="./cloud/concepts/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[211 291 179 327 439 225]" src="./cloud/concepts/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1151,7 +1165,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[9 339 25 172 475 295]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[470 245 434 44 4 332]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1162,7 +1176,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[13 145 86 275 417 192]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[305 357 260 144 106 500]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1201,7 +1215,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[209 467 374 181 200 215]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[352 278 16 242 322 262]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1641,7 +1655,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[189 311 42 436 198 353]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[159 433 319 325 284 74]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1657,7 +1671,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[371 50 469 7 124 390]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[205 80 233 436 155 82]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1673,7 +1687,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[222 308 370 476 465 31]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[24 495 64 125 186 489]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1689,7 +1703,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[57 73 153 178 6 65]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[419 80 112 46 155 392]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1705,7 +1719,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[187 342 91 75 234 411]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[348 388 90 6 419 407]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1721,7 +1735,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[108 493 216 314 221 24]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[268 26 139 468 293 171]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1737,7 +1751,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[411 61 348 18 235 53]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[285 152 368 259 384 148]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1753,7 +1767,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[202 389 248 405 422 299]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[313 301 197 279 285 432]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1769,7 +1783,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[319 430 481 83 240 169]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[172 93 470 35 189 438]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1785,7 +1799,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[371 312 493 486 116 429]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[488 332 19 447 193 61]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1824,7 +1838,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[252 318 32 69 444 191]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[264 79 193 37 491 332]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1941,7 +1955,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[414 45 5 400 257 498]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[298 182 77 216 317 393]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1960,7 +1974,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[391 363 331 474 162 348]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[76 345 143 259 367 43]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -2053,7 +2067,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[231 33 351 470 172 134]" src="./cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[20 442 257 249 280 243]" src="./cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2074,7 +2088,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[198 42 390 477 8 110]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[299 354 385 228 58 14]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2109,7 +2123,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[85 16 329 156 215 203]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[58 2 189 486 303 100]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2121,7 +2135,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[70 95 47 184 219 81]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[426 113 50 183 3 133]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2147,7 +2161,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[444 317 2 492 163 198]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[109 484 77 118 451 168]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;div class="pageinfo"&gt;
 &lt;p&gt;Page under construction.&lt;/p&gt;
@@ -2628,7 +2642,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[493 137 254 190 284 144]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[186 352 486 12 171 465]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2661,7 +2675,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[136 294 24 474 430 404]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[345 66 374 24 318 192]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2749,7 +2763,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[273 103 407 496 356 132]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[255 240 350 76 253 403]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -2837,9 +2851,19 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[181 321 454 465 196 302]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[199 140 480 442 380 48]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
+&lt;a href="./kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
+identify connections, validate them, and keep related configuration in sync.
+This page explains how you can choose which engine performs that evaluation, how
+to read the relationship indicator, and how to diagnose results that look wrong.&lt;/p&gt;
+
+&lt;h2 id="how-relationships-are-evaluated" class="heading-link"&gt;
+ How Relationships Are Evaluated
+ &lt;a href="#how-relationships-are-evaluated" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kanvas can run relationship evaluation using one of two interchangeable engines:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
 &lt;img src="./cloud/concepts/identity-and-security/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
@@ -2860,7 +2884,186 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.75</title><link>/cloud/reference/releases/v1.0.75/</link><pubDate>Tue, 12 May 2026 18:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.75/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.24-6</title><link>/kanvas/reference/releases/v1.0.24-6/</link><pubDate>Tue, 19 May 2026 16:25:03 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-6/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-5</title><link>/kanvas/reference/releases/v1.0.24-5/</link><pubDate>Tue, 19 May 2026 15:14:26 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-5/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-4</title><link>/kanvas/reference/releases/v1.0.24-4/</link><pubDate>Tue, 19 May 2026 13:56:16 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-4/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-3</title><link>/kanvas/reference/releases/v1.0.24-3/</link><pubDate>Tue, 19 May 2026 13:10:35 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-3/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-2</title><link>/kanvas/reference/releases/v1.0.24-2/</link><pubDate>Tue, 19 May 2026 12:46:23 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-1</title><link>/kanvas/reference/releases/v1.0.24-1/</link><pubDate>Tue, 19 May 2026 11:32:32 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.23-1</title><link>/kanvas/reference/releases/v1.0.23-1/</link><pubDate>Tue, 19 May 2026 05:29:34 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.23-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.78</title><link>/cloud/reference/releases/v1.0.78/</link><pubDate>Tue, 19 May 2026 04:30:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.78/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): restore certificate signature/expiry, unblock test loader and dashboard @hortison (#5307)&lt;/li&gt;
+&lt;li&gt;[chore] Change layer5labs org reference @miacycle (#5306)&lt;/li&gt;
+&lt;li&gt;Ui/upgrade to typscript @miacycle (#5290)&lt;/li&gt;
+&lt;li&gt;docs(impl-plan): R2 revision for design-doc commit d66a8e78 @hortison (#5295)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu, @l5io, @leecalcote, @miacycle, @pontusringblom and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.77</title><link>/cloud/reference/releases/v1.0.77/</link><pubDate>Mon, 18 May 2026 01:37:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.77/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer5 v0.8.18 content update @l5io (#5293)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.35 content update @l5io (#5292)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.25 content update @l5io (#5291)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.76</title><link>/cloud/reference/releases/v1.0.76/</link><pubDate>Mon, 18 May 2026 01:23:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.76/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): normalize certificate snake_case fields from content JSON @CodexRaunak (#5287)&lt;/li&gt;
+&lt;li&gt;fix(ui): send profile country and region as objects @PragalvaXFREZ (#5286)&lt;/li&gt;
+&lt;li&gt;fix(ui): resolve all TypeScript errors across tsconfig targets @ritzorama (#5289)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meshery v0.4.24 content update @l5io (#5288)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @PragalvaXFREZ, @l5io, @meshery-ci, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.75</title><link>/cloud/reference/releases/v1.0.75/</link><pubDate>Tue, 12 May 2026 18:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.75/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(academy): stabilize test submission flow @CodexRaunak (#5285)&lt;/li&gt;
 &lt;li&gt;docs(auth): merge user-journey walkthroughs into auth-flows and org-id-resolution @leecalcote (#5263)&lt;/li&gt;
 &lt;/ul&gt;
@@ -4072,20 +4275,20 @@ ull; replaced with nullish coalescing @jamieplu (#5115)&lt;/li&gt;
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/690"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/691"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/692"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/690"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/691"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/692"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8</title><link>/cloud/reference/releases/v1.0.8/</link><pubDate>Wed, 15 Apr 2026 01:38:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.8/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8</title><link>/cloud/reference/releases/v1.0.8/</link><pubDate>Wed, 15 Apr 2026 01:38:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.8/</guid><description>&lt;ul&gt;
 &lt;li&gt;tests(TP-014): implement P0+P1 frontend component &amp;amp; page test cases @leecalcote (#5016)&lt;/li&gt;
 &lt;li&gt;tests(TP-004): implement P0+P1 teams &amp;amp; RBAC test cases @leecalcote (#5014)&lt;/li&gt;
 &lt;li&gt;tests(TP-009): implement P0+P1 billing &amp;amp; subscriptions test cases @leecalcote (#5020)&lt;/li&gt;
@@ -90678,7 +90881,7 @@ Thank you to our contributors for making this release possible:
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[80 404 123 247 184 89]" src="./kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
+ &lt;img id="[114 46 150 210 228 460]" src="./kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/concepts/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
 Environments allow you to logically group related &lt;a href="./cloud/concepts/spaces/environments/#connections"&gt;Connections&lt;/a&gt; and their associated &lt;a href="./cloud/concepts/spaces/environments/#credentials"&gt;Credentials&lt;/a&gt;. Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
@@ -90734,13 +90937,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  Lab Scenario
  &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the resources responsible for exposing applications inside and outside the cluster. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on labs to gain practical experience with the Kubernetes Services, without writing any YAML.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="./kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="./kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Helm Kanvas Snapshot</title><link>/kanvas/concepts/helm-kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/helm-kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="text-align: left; position:relative; display:inline; height: 32px; width: 32px;" src="./kanvas/concepts/images/helm-chart-color.svg" /&gt; The &lt;strong&gt;Kanvas Snapshot Helm Plugin&lt;/strong&gt; allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Helm Kanvas Snapshot</title><link>/kanvas/concepts/helm-kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/helm-kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="text-align: left; position:relative; display:inline; height: 32px; width: 32px;" src="./kanvas/concepts/images/helm-chart-color.svg" /&gt; The &lt;strong&gt;Kanvas Snapshot Helm Plugin&lt;/strong&gt; allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id="overview" class="heading-link"&gt;
  Overview
@@ -90757,7 +90954,14 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="./kanvas/designer/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;/ul&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
+&lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
+&lt;img src="./kanvas/concepts/images/kanvas-snapshot.png" /&gt;
+&lt;/details&gt;
+&lt;h3&gt;Installing Kanvas Snapshot: Github Pull Request&lt;/h3&gt;
+&lt;p&gt;Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.&lt;/p&gt;</description></item><item><title>Kanvas Operator Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QANUEikEwQY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
@@ -90767,16 +90971,8 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  &lt;a href="#related-docs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="./kanvas/operator/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
-&lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
-&lt;img src="./kanvas/concepts/images/kanvas-snapshot.png" /&gt;
-&lt;/details&gt;
-&lt;h3&gt;Installing Kanvas Snapshot: Github Pull Request&lt;/h3&gt;
-&lt;p&gt;Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.&lt;/p&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;li&gt;&lt;a href="./kanvas/operator/"&gt;Exploring Operator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 &lt;p&gt;Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:&lt;/p&gt;
 

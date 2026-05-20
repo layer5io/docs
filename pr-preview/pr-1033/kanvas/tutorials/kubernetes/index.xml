@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Layer5 Documentation</title><link>/kanvas/tutorials/kubernetes/</link><description>Recent content in Kubernetes on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/tutorials/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploying Apache Cassandra with a StatefulSet in Meshery Playground</title><link>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Layer5 Documentation</title><link>/kanvas/tutorials/kubernetes/</link><description>Recent content in Kubernetes on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/tutorials/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the
+resources responsible for exposing applications inside and outside the cluster.
+Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform
+hands-on labs to gain practical experience with Kubernetes Services, without
+writing any YAML.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider
+starting with the
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
+tutorial first or
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Deploying Apache Cassandra with a StatefulSet in Meshery Playground</title><link>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
@@ -72,13 +86,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  Lab Scenario
  &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the resources responsible for exposing applications inside and outside the cluster. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on labs to gain practical experience with the Kubernetes Services, without writing any YAML.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="../../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="../../../kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a &lt;strong&gt;diagram built in Meshery Kanvas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a &lt;strong&gt;diagram built in Meshery Kanvas&lt;/strong&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
