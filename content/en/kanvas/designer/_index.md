@@ -18,7 +18,7 @@ Kanvas Designer provides an intuitive visual interface to model complex architec
 ### Visual Canvas & Component Palette
 - **Drag-and-Drop Modeling**: Build complex multi-cloud topologies by dragging resources directly onto the canvas from a comprehensive library of Kubernetes, cloud provider, and application components.
 - **Interactive Edges (Connections)**: Draw logical or network connections between components to define data flows, dependencies, and service-to-service relationships.
-- **Layout & Organization**: Easily group components using workspaces, environments, and tagsets to keep your diagrams organized and readable.
+- **Layout & Organization**: Easily group components using workspaces, environments, and tags to keep your diagrams organized and readable.
 
 ### Collaborative Review & Comments
 - **Contextual Commenting**: Pin feedback and discussion threads directly to specific components or edges rather than having conversations lost in external ticketing systems or chat channels.
