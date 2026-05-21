@@ -23,16 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const mapEl = document.getElementById('video-hash-map');
   const pathToHashMap = mapEl ? JSON.parse(mapEl.dataset.map || '{}') : {};
 
-  const normalize = (href) => {
-    try {
-      const u = new URL(href, location.origin);
-      const p = u.pathname;
-      return p.endsWith('/') ? p : p + '/';
-    } catch (_) { return href || ''; }
+  const extractVideoPath = (pathname) => {
+    const match = pathname.match(/\/videos\/.*/);
+    if (!match) return null;
+    const path = match[0];
+    return path.endsWith('/') ? path : path + '/';
   };
 
-  const currentPath = normalize(window.location.pathname);
-  if (!window.location.hash && pathToHashMap[currentPath]) {
+  const currentPath = extractVideoPath(window.location.pathname);
+  if (currentPath && !window.location.hash && pathToHashMap[currentPath]) {
     window.location.hash = pathToHashMap[currentPath];
   }
 
@@ -40,10 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
       const url = new URL(link.href);
       if (url.origin !== window.location.origin || url.hash) return;
-      const pathKey = url.pathname.endsWith('/') ? url.pathname : url.pathname + '/';
-      const hash = pathToHashMap[pathKey];
-      if (hash) {
-        url.hash = hash;
+      const pathKey = extractVideoPath(url.pathname);
+      if (pathKey && pathToHashMap[pathKey]) {
+        url.hash = pathToHashMap[pathKey];
         link.href = url.toString();
       }
     } catch (_) {}
