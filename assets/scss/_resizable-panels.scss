@@ -1,8 +1,8 @@
 /**
  * Resizable docs side panels.
  *
- * Desktop widths are driven by CSS variables set from resizable-panels.js.
- * Smaller breakpoints keep the existing Bootstrap column behavior.
+ * Docs widths are driven by CSS variables set from resizable-panels.js.
+ * Mobile keeps the existing Bootstrap column behavior.
  */
 
 .resizable-panel-handle,
@@ -10,10 +10,11 @@
   display: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .row.flex-xl-nowrap.resizable-panels-ready {
     --docs-sidebar-width: 16.6667%;
     --docs-main-width: 66.6666%;
+    --docs-main-without-toc-width: 83.3333%;
     --docs-toc-width: 16.6667%;
 
     display: flex;
@@ -27,16 +28,10 @@
   }
 
   .row.flex-xl-nowrap.resizable-panels-ready > main[role='main'] {
-    flex: 0 0 var(--docs-main-width);
-    max-width: var(--docs-main-width);
+    flex: 0 0 var(--docs-main-without-toc-width);
+    max-width: var(--docs-main-without-toc-width);
     min-width: 0;
     order: 2;
-  }
-
-  .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
-    flex: 0 0 var(--docs-toc-width);
-    max-width: var(--docs-toc-width);
-    order: 3;
   }
 
   .td-sidebar,
@@ -90,6 +85,7 @@
     }
 
     &--toc {
+      display: none;
       left: 0;
 
       &::after {
@@ -131,6 +127,23 @@
     a {
       pointer-events: none;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .row.flex-xl-nowrap.resizable-panels-ready > main[role='main'] {
+    flex-basis: var(--docs-main-width);
+    max-width: var(--docs-main-width);
+  }
+
+  .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
+    flex: 0 0 var(--docs-toc-width);
+    max-width: var(--docs-toc-width);
+    order: 3;
+  }
+
+  .resizable-panel-handle--toc {
+    display: block;
   }
 }
 

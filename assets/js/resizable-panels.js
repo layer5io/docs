@@ -8,7 +8,7 @@
   'use strict';
 
   const STORAGE_KEY = 'layer5-docs-panel-widths';
-  const DESKTOP_QUERY = '(min-width: 1200px)';
+  const RESIZABLE_QUERY = '(min-width: 768px)';
   const STEP = 1;
   const DEFAULT_WIDTHS = {
     sidebar: 16.6667,
@@ -26,7 +26,7 @@
       this.sidebar = row.querySelector('.td-sidebar');
       this.main = row.querySelector('main[role="main"]');
       this.toc = row.querySelector('.td-sidebar-toc');
-      this.mediaQuery = window.matchMedia(DESKTOP_QUERY);
+      this.mediaQuery = window.matchMedia(RESIZABLE_QUERY);
       this.activeHandle = null;
       this.startX = 0;
       this.startWidths = null;
@@ -54,11 +54,17 @@
       document.addEventListener('pointerup', () => this.stopResize());
       document.addEventListener('pointercancel', () => this.stopResize());
 
-      this.mediaQuery.addEventListener('change', () => {
+      const onBreakpointChange = () => {
         if (this.mediaQuery.matches) {
           this.applyWidths(this.widths);
         }
-      });
+      };
+
+      if (this.mediaQuery.addEventListener) {
+        this.mediaQuery.addEventListener('change', onBreakpointChange);
+      } else {
+        this.mediaQuery.addListener(onBreakpointChange);
+      }
     }
 
     createHandles() {
@@ -198,6 +204,10 @@
       );
       this.row.style.setProperty('--docs-toc-width', `${normalized.toc}%`);
       this.row.style.setProperty('--docs-main-width', `${mainWidth}%`);
+      this.row.style.setProperty(
+        '--docs-main-without-toc-width',
+        `${100 - normalized.sidebar}%`,
+      );
       this.updateHandleValues(normalized);
     }
 
