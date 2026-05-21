@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.79</title><link>/cloud/reference/releases/v1.0.79/</link><pubDate>Wed, 20 May 2026 21:26:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.79/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.80</title><link>/cloud/reference/releases/v1.0.80/</link><pubDate>Thu, 21 May 2026 01:47:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.80/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui/academy): guard window access in AcademyProvider for SSR @hortison (#5345)&lt;/li&gt;
+&lt;li&gt;claude/fix test typescript errors @hortison (#5344)&lt;/li&gt;
+&lt;li&gt;claude/fix test typescript errors @hortison (#5343)&lt;/li&gt;
+&lt;li&gt;fix: pass empty object to useGetCatalogContentClassesQuery in catalog requests @hortison (#5341)&lt;/li&gt;
+&lt;li&gt;fix(security): close IDOR on /api/integrations/credentials @hortison (#5329)&lt;/li&gt;
+&lt;li&gt;fix: remove blue focus outline from MUI v9 modal dialogs @hortison (#5339)&lt;/li&gt;
+&lt;li&gt;fix(ui): bump @sistent/sistent to v0.21.13 (hydration fix) + wire Identity Providers nav entry @hortison (#5338)&lt;/li&gt;
+&lt;li&gt;[UI] Fix TypeScript build errors @hortison (#5340)&lt;/li&gt;
+&lt;li&gt;fix(ui): move Identity Providers admin page out of [orgId] dynamic segment — fixes 404 in production @hortison (#5335)&lt;/li&gt;
+&lt;li&gt;fix(ui): repair the six failing Jest suites surfaced in CI @hortison (#5323)&lt;/li&gt;
+&lt;li&gt;fix(ui/nav-menu): restore sistent NavigationNavbar (icon spacing + showOnWeb) @hortison (#5327)&lt;/li&gt;
+&lt;li&gt;fix(seed): correct &amp;rsquo;enterpice&amp;rsquo; typo to &amp;rsquo;enterprise&amp;rsquo; in test plan seed data @hortison (#5328)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io, @leecalcote and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.79</title><link>/cloud/reference/releases/v1.0.79/</link><pubDate>Wed, 20 May 2026 21:26:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.79/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): drop return_to=&amp;lt;pagePath&amp;gt; from /api/auth/flow/init — unblocks login spinner @hortison (#5326)&lt;/li&gt;
 &lt;li&gt;fix(dev): export HYDRA_ADMIN_PROXY_PORT under &lt;code&gt;make ui-server-local&lt;/code&gt;; add host-gateway to kratos container @hortison (#5324)&lt;/li&gt;
 &lt;li&gt;docs+config: follow-up to PR #5319 — local-dev Hydra-admin proxy docs + Linux extra_hosts @hortison (#5320)&lt;/li&gt;
