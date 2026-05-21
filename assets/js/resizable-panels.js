@@ -1,259 +1,316 @@
 /**
- * Resizable Panels Feature
- * Allows users to adjust the width of side panels (left sidebar and right TOC)
- * Preferences are saved to localStorage and restored on page load
- * Includes reset functionality to restore default widths
+ * Resizable docs panels.
+ *
+ * Lets readers adjust the left navigation and right TOC widths, persists those
+ * preferences in localStorage, and provides a reset control.
  */
-
-(function() {
+(function () {
   'use strict';
 
   const STORAGE_KEY = 'layer5-docs-panel-widths';
+  const DESKTOP_QUERY = '(min-width: 1200px)';
+  const STEP = 1;
   const DEFAULT_WIDTHS = {
-    sidebar: 2,      // col-xl-2 = ~16.66%
-    toc: 2,          // col-xl-2 = ~16.66%
-    main: 8          // col-xl-8 = ~66.66%
+    sidebar: 16.6667,
+    toc: 16.6667,
   };
-
-  // CSS class shortcuts for Bootstrap grid columns
-  const COL_CLASSES = {
-    'col-1': 8.33,
-    'col-2': 16.66,
-    'col-3': 25,
-    'col-4': 33.33,
-    'col-5': 41.66,
-    'col-6': 50,
-    'col-7': 58.33,
-    'col-8': 66.66,
-    'col-9': 75,
-    'col-10': 83.33,
-    'col-11': 91.66,
-    'col-12': 100
+  const LIMITS = {
+    sidebar: { min: 12, max: 32 },
+    toc: { min: 10, max: 28 },
+    main: { min: 42 },
   };
 
   class ResizablePanels {
-    constructor() {
-      this.sidebar = document.querySelector('.td-sidebar');
-      this.toc = document.querySelector('.td-sidebar-toc');
-      this.main = document.querySelector('main[role="main"]');
-      this.row = document.querySelector('.row.flex-xl-nowrap');
+    constructor(row) {
+      this.row = row;
+      this.sidebar = row.querySelector('.td-sidebar');
+      this.main = row.querySelector('main[role="main"]');
+      this.toc = row.querySelector('.td-sidebar-toc');
+      this.mediaQuery = window.matchMedia(DESKTOP_QUERY);
+      this.activeHandle = null;
+      this.startX = 0;
+      this.startWidths = null;
+      this.widths = this.getStoredWidths();
 
-      if (!this.row || !this.sidebar || !this.main) {
-        console.warn('Resizable panels: Required elements not found');
+      if (!this.sidebar || !this.main) {
         return;
       }
-
-      this.isResizing = false;
-      this.currentResizeTarget = null;
-      this.startX = 0;
-      this.startWidth = 0;
 
       this.init();
     }
 
     init() {
-      // Load saved widths from localStorage
-      this.loadSavedWidths();
-
-      // Create resize handles
-      this.createResizeHandles();
-
-      // Add event listeners
-      this.addEventListeners();
-
-      // Add reset button
-      this.addResetButton();
+      this.row.classList.add('resizable-panels-ready');
+      this.applyWidths(this.widths);
+      this.createHandles();
+      this.createResetButton();
+      this.bindEvents();
     }
 
-    loadSavedWidths() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          const widths = JSON.parse(saved);
-          this.applyWidths(widths);
+    bindEvents() {
+      document.addEventListener('pointermove', (event) =>
+        this.onPointerMove(event),
+      );
+      document.addEventListener('pointerup', () => this.stopResize());
+      document.addEventListener('pointercancel', () => this.stopResize());
+
+      this.mediaQuery.addEventListener('change', () => {
+        if (this.mediaQuery.matches) {
+          this.applyWidths(this.widths);
         }
-      } catch (error) {
-        console.error('Error loading saved panel widths:', error);
-      }
+      });
     }
 
-    createResizeHandles() {
-      // Create resize handle between sidebar and main content
-      const sidebarHandle = document.createElement('div');
-      sidebarHandle.className = 'resizable-panel-handle resizable-panel-handle--right';
-      sidebarHandle.setAttribute('data-resize-target', 'sidebar');
-      sidebarHandle.setAttribute('title', 'Drag to resize sidebar');
-      this.sidebar.appendChild(sidebarHandle);
+    createHandles() {
+      this.sidebarHandle = this.createHandle(
+        'sidebar',
+        'Resize navigation sidebar',
+      );
+      this.sidebar.appendChild(this.sidebarHandle);
 
-      // Create resize handle for TOC (if it exists)
       if (this.toc) {
-        const tocHandle = document.createElement('div');
-        tocHandle.className = 'resizable-panel-handle resizable-panel-handle--left';
-        tocHandle.setAttribute('data-resize-target', 'toc');
-        tocHandle.setAttribute('title', 'Drag to resize table of contents');
-        this.toc.appendChild(tocHandle);
+        this.tocHandle = this.createHandle('toc', 'Resize table of contents');
+        this.toc.appendChild(this.tocHandle);
       }
     }
 
-    addEventListeners() {
-      document.addEventListener('mousedown', (e) => this.onMouseDown(e));
-      document.addEventListener('mousemove', (e) => this.onMouseMove(e));
-      document.addEventListener('mouseup', (e) => this.onMouseUp(e));
+    createHandle(target, label) {
+      const handle = document.createElement('div');
+      handle.className = `resizable-panel-handle resizable-panel-handle--${target}`;
+      handle.dataset.resizeTarget = target;
+      handle.tabIndex = 0;
+      handle.setAttribute('aria-label', label);
+      handle.setAttribute('aria-orientation', 'vertical');
+      handle.setAttribute('role', 'separator');
+      handle.title = label;
+
+      handle.addEventListener('pointerdown', (event) =>
+        this.startResize(event, handle),
+      );
+      handle.addEventListener('keydown', (event) =>
+        this.onHandleKeydown(event, target),
+      );
+
+      return handle;
     }
 
-    onMouseDown(e) {
-      if (!e.target.classList.contains('resizable-panel-handle')) {
+    createResetButton() {
+      const resetButton = document.createElement('button');
+      resetButton.type = 'button';
+      resetButton.id = 'reset-panel-widths';
+      resetButton.className = 'resizable-panel-reset';
+      resetButton.innerHTML =
+        '<i class="bi bi-arrow-clockwise" aria-hidden="true"></i><span>Reset layout</span>';
+      resetButton.title = 'Reset panel widths to default';
+      resetButton.addEventListener('click', () => this.reset());
+
+      this.sidebar.appendChild(resetButton);
+    }
+
+    startResize(event, handle) {
+      if (!this.mediaQuery.matches) {
         return;
       }
 
-      this.isResizing = true;
-      this.currentResizeTarget = e.target.getAttribute('data-resize-target');
-      this.startX = e.clientX;
-
-      // Store current widths for delta calculation
-      this.startWidths = this.getCurrentWidths();
-
-      // Add active state
-      e.target.classList.add('resizable-panel-handle--active');
-      document.body.style.userSelect = 'none';
-      document.body.style.cursor = 'col-resize';
+      event.preventDefault();
+      this.activeHandle = handle;
+      this.startX = event.clientX;
+      this.startWidths = { ...this.widths };
+      handle.classList.add('resizable-panel-handle--active');
+      handle.setPointerCapture(event.pointerId);
+      document.body.classList.add('resizable-panels-dragging');
     }
 
-    onMouseMove(e) {
-      if (!this.isResizing) return;
-
-      const delta = e.clientX - this.startX;
-      const adjustment = delta / window.innerWidth; // Convert pixels to percentage-like ratio
-
-      let newWidths = { ...this.startWidths };
-
-      if (this.currentResizeTarget === 'sidebar') {
-        // Resizing left sidebar
-        const sidebarPercent = (this.startWidths.sidebar * 100) / 12; // Convert col units to percentage
-        const mainPercent = (this.startWidths.main * 100) / 12;
-
-        const newSidebarPercent = sidebarPercent + (adjustment * 100);
-        const newMainPercent = mainPercent - (adjustment * 100);
-
-        // Constrain widths: min 1 col, max 5 cols for sidebar; min 4 cols for main
-        if (newSidebarPercent >= 8.33 && newSidebarPercent <= 41.66 && newMainPercent >= 33.33) {
-          newWidths.sidebar = Math.round((newSidebarPercent / 100) * 12);
-          newWidths.main = Math.round((newMainPercent / 100) * 12);
-        }
-      } else if (this.currentResizeTarget === 'toc') {
-        // Resizing right TOC panel
-        const tocPercent = (this.startWidths.toc * 100) / 12;
-        const mainPercent = (this.startWidths.main * 100) / 12;
-
-        const newTocPercent = tocPercent - (adjustment * 100);
-        const newMainPercent = mainPercent + (adjustment * 100);
-
-        // Constrain widths: min 1 col, max 5 cols for toc; min 4 cols for main
-        if (newTocPercent >= 8.33 && newTocPercent <= 41.66 && newMainPercent >= 33.33) {
-          newWidths.toc = Math.round((newTocPercent / 100) * 12);
-          newWidths.main = Math.round((newMainPercent / 100) * 12);
-        }
+    onPointerMove(event) {
+      if (!this.activeHandle || !this.startWidths) {
+        return;
       }
 
-      this.applyWidths(newWidths);
+      const rowWidth = this.row.getBoundingClientRect().width;
+      if (!rowWidth) {
+        return;
+      }
+
+      const target = this.activeHandle.dataset.resizeTarget;
+      const delta = ((event.clientX - this.startX) / rowWidth) * 100;
+      const nextWidths = { ...this.startWidths };
+
+      if (target === 'sidebar') {
+        nextWidths.sidebar = this.startWidths.sidebar + delta;
+      }
+
+      if (target === 'toc') {
+        nextWidths.toc = this.startWidths.toc - delta;
+      }
+
+      this.widths = this.normalizeWidths(nextWidths);
+      this.applyWidths(this.widths);
     }
 
-    onMouseUp(e) {
-      if (!this.isResizing) return;
-
-      this.isResizing = false;
-      const handle = document.querySelector('.resizable-panel-handle--active');
-      if (handle) {
-        handle.classList.remove('resizable-panel-handle--active');
+    stopResize() {
+      if (!this.activeHandle) {
+        return;
       }
 
-      document.body.style.userSelect = '';
-      document.body.style.cursor = '';
+      this.activeHandle.classList.remove('resizable-panel-handle--active');
+      this.activeHandle = null;
+      this.startWidths = null;
+      document.body.classList.remove('resizable-panels-dragging');
+      this.saveWidths();
+    }
 
-      // Save widths to localStorage
-      this.savePanelWidths();
+    onHandleKeydown(event, target) {
+      if (!this.mediaQuery.matches) {
+        return;
+      }
+
+      const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
+      if (!keys.includes(event.key)) {
+        return;
+      }
+
+      event.preventDefault();
+      const nextWidths = { ...this.widths };
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+
+      if (event.key === 'Home') {
+        nextWidths[target] = LIMITS[target].min;
+      } else if (event.key === 'End') {
+        nextWidths[target] = LIMITS[target].max;
+      } else if (target === 'toc') {
+        nextWidths.toc -= direction * STEP;
+      } else {
+        nextWidths.sidebar += direction * STEP;
+      }
+
+      this.widths = this.normalizeWidths(nextWidths);
+      this.applyWidths(this.widths);
+      this.saveWidths();
     }
 
     applyWidths(widths) {
-      const { sidebar, toc, main } = widths;
+      const normalized = this.normalizeWidths(widths);
+      const mainWidth = 100 - normalized.sidebar - normalized.toc;
 
-      // Update sidebar
-      this.removeBootstrapColClasses(this.sidebar);
-      this.sidebar.classList.add(`col-xl-${sidebar}`);
+      this.row.style.setProperty(
+        '--docs-sidebar-width',
+        `${normalized.sidebar}%`,
+      );
+      this.row.style.setProperty('--docs-toc-width', `${normalized.toc}%`);
+      this.row.style.setProperty('--docs-main-width', `${mainWidth}%`);
+      this.updateHandleValues(normalized);
+    }
 
-      // Update main
-      this.removeBootstrapColClasses(this.main);
-      this.main.classList.add(`col-xl-${main}`);
+    updateHandleValues(widths) {
+      if (this.sidebarHandle) {
+        this.sidebarHandle.setAttribute('aria-valuemin', LIMITS.sidebar.min);
+        this.sidebarHandle.setAttribute('aria-valuemax', LIMITS.sidebar.max);
+        this.sidebarHandle.setAttribute(
+          'aria-valuenow',
+          Math.round(widths.sidebar),
+        );
+      }
 
-      // Update TOC if it exists
-      if (this.toc) {
-        this.removeBootstrapColClasses(this.toc);
-        this.toc.classList.add(`col-xl-${toc}`);
+      if (this.tocHandle) {
+        this.tocHandle.setAttribute('aria-valuemin', LIMITS.toc.min);
+        this.tocHandle.setAttribute('aria-valuemax', LIMITS.toc.max);
+        this.tocHandle.setAttribute('aria-valuenow', Math.round(widths.toc));
       }
     }
 
-    getCurrentWidths() {
-      const getColNumber = (element) => {
-        const classes = element.className.split(' ');
-        const colClass = classes.find(c => c.match(/col-xl-\d+/));
-        return colClass ? parseInt(colClass.split('-')[2]) : null;
+    reset() {
+      this.widths = { ...DEFAULT_WIDTHS };
+      this.applyWidths(this.widths);
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    getStoredWidths() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (
+          saved &&
+          (saved.sidebar <= 12 || saved.toc <= 12 || saved.main <= 12)
+        ) {
+          return this.normalizeWidths({
+            sidebar: saved.sidebar
+              ? (saved.sidebar / 12) * 100
+              : DEFAULT_WIDTHS.sidebar,
+            toc: saved.toc ? (saved.toc / 12) * 100 : DEFAULT_WIDTHS.toc,
+          });
+        }
+
+        return this.normalizeWidths(saved || DEFAULT_WIDTHS);
+      } catch (error) {
+        return { ...DEFAULT_WIDTHS };
+      }
+    }
+
+    saveWidths() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.widths));
+      } catch (error) {
+        // Ignore storage failures so resizing still works in private modes.
+      }
+    }
+
+    normalizeWidths(widths) {
+      const next = {
+        sidebar: this.clamp(
+          Number(widths && widths.sidebar),
+          LIMITS.sidebar.min,
+          LIMITS.sidebar.max,
+          DEFAULT_WIDTHS.sidebar,
+        ),
+        toc: this.toc
+          ? this.clamp(
+              Number(widths && widths.toc),
+              LIMITS.toc.min,
+              LIMITS.toc.max,
+              DEFAULT_WIDTHS.toc,
+            )
+          : 0,
       };
+
+      const availableForPanels = 100 - LIMITS.main.min;
+      const panelTotal = next.sidebar + next.toc;
+
+      if (panelTotal > availableForPanels) {
+        const overflow = panelTotal - availableForPanels;
+
+        if (next.sidebar >= next.toc) {
+          next.sidebar = Math.max(LIMITS.sidebar.min, next.sidebar - overflow);
+        } else {
+          next.toc = Math.max(LIMITS.toc.min, next.toc - overflow);
+        }
+      }
 
       return {
-        sidebar: getColNumber(this.sidebar) || DEFAULT_WIDTHS.sidebar,
-        toc: this.toc ? (getColNumber(this.toc) || DEFAULT_WIDTHS.toc) : DEFAULT_WIDTHS.toc,
-        main: getColNumber(this.main) || DEFAULT_WIDTHS.main
+        sidebar: Number(next.sidebar.toFixed(4)),
+        toc: Number(next.toc.toFixed(4)),
       };
     }
 
-    removeBootstrapColClasses(element) {
-      const classes = element.className.split(' ').filter(c => !c.match(/col-xl-\d+/));
-      element.className = classes.join(' ').trim();
-    }
-
-    savePanelWidths() {
-      try {
-        const widths = this.getCurrentWidths();
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(widths));
-      } catch (error) {
-        console.error('Error saving panel widths:', error);
+    clamp(value, min, max, fallback) {
+      if (!Number.isFinite(value)) {
+        return fallback;
       }
-    }
 
-    addResetButton() {
-      // Find the feature-info-container or page-header to add reset button
-      const pageHeader = document.querySelector('.page-header');
-      if (!pageHeader) return;
-
-      const resetButton = document.createElement('button');
-      resetButton.id = 'reset-panel-widths';
-      resetButton.className = 'btn btn-sm btn-outline-secondary ms-2';
-      resetButton.innerHTML = '<i class="bi bi-arrow-clockwise"></i> Reset Layout';
-      resetButton.setAttribute('title', 'Reset panel widths to default');
-
-      resetButton.addEventListener('click', () => this.resetPanelWidths());
-
-      // Find a good place to insert the button
-      const featureContainer = pageHeader.querySelector('.feature-info-container');
-      if (featureContainer) {
-        featureContainer.insertAdjacentElement('beforeend', resetButton);
-      } else {
-        pageHeader.insertAdjacentElement('beforeend', resetButton);
-      }
-    }
-
-    resetPanelWidths() {
-      this.applyWidths(DEFAULT_WIDTHS);
-      this.savePanelWidths();
+      return Math.min(max, Math.max(min, value));
     }
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      new ResizablePanels();
+  function initResizablePanels() {
+    document.querySelectorAll('.row.flex-xl-nowrap').forEach((row) => {
+      if (!row.dataset.resizablePanelsInitialized) {
+        row.dataset.resizablePanelsInitialized = 'true';
+        new ResizablePanels(row);
+      }
     });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initResizablePanels);
   } else {
-    new ResizablePanels();
+    initResizablePanels();
   }
 })();
