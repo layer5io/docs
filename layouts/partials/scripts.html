@@ -1,5 +1,9 @@
 <!-- Page scripts -->
-<script defer src="{{ "js/resizable-panels.js" | relURL }}"></script>
+{{ $resizablePanels := resources.Get "js/resizable-panels.js" -}}
+{{ if $resizablePanels }}
+  <script defer src="{{ $resizablePanels.RelPermalink }}"></script>
+{{ end -}}
+
 {{ $kanvasTransition := resources.Get "js/kanvas-architectural-transition.js" -}}
 {{ if $kanvasTransition }}
   <script defer src="{{ $kanvasTransition.RelPermalink }}"></script>
