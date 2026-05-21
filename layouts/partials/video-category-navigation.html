@@ -1,0 +1,47 @@
+{{ $pathToHashMap := dict }}
+{{ $videos := .Site.GetPage "section" "videos" }}
+{{ if $videos }}
+  {{ range $mainIndex, $mainSection := $videos.Sections }}
+    {{ $mainPath := $mainSection.RelPermalink }}
+    {{ if not (hasPrefix $mainPath "/") }}
+      {{ $mainPath = "/" | add $mainPath }}
+    {{ end }}
+    {{ $pathToHashMap = merge $pathToHashMap (dict $mainPath (printf "category-%d-subcategory-0" $mainIndex)) }}
+    {{ range $subIndex, $subSection := $mainSection.Sections }}
+      {{ $subPath := $subSection.RelPermalink }}
+      {{ if not (hasPrefix $subPath "/") }}
+        {{ $subPath = "/" | add $subPath }}
+      {{ end }}
+      {{ $pathToHashMap = merge $pathToHashMap (dict $subPath (printf "category-%d-subcategory-%d" $mainIndex $subIndex)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div id="video-hash-map" data-map='{{ $pathToHashMap | jsonify | safeHTMLAttr }}' style="display:none"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mapEl = document.getElementById('video-hash-map');
+  const pathToHashMap = mapEl ? JSON.parse(mapEl.dataset.map || '{}') : {};
+
+  const normalize = (href) => {
+    try {
+      const u = new URL(href, location.origin);
+      const p = u.pathname;
+      return p.endsWith('/') ? p : p + '/';
+    } catch (_) { return href || ''; }
+  };
+
+  const currentPath = normalize(window.location.pathname);
+  if (!window.location.hash && pathToHashMap[currentPath]) {
+    window.location.hash = pathToHashMap[currentPath];
+  }
+
+  document.querySelectorAll("a[href^='/videos/'], a[href*='/videos/']").forEach(link => {
+    const key = normalize(link.getAttribute('href') || '');
+    const hash = pathToHashMap[key];
+    if (hash) link.setAttribute('href', key + '#' + hash);
+  });
+});
+</script>
+
+
