@@ -23166,6 +23166,98 @@ details > ul {
   .kanvas-transition-container .kanvas-supporting-arrows.in-view {
     opacity: 1; }
 
+/**
+ * Resizable Panels Styling
+ * Styles for the resize handles and drag interactions
+ */
+.resizable-panel-handle {
+  position: absolute;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+  z-index: 100; }
+  .resizable-panel-handle--right {
+    right: -3px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize; }
+    .resizable-panel-handle--right:hover, .resizable-panel-handle--right--active {
+      background-color: rgba(0, 211, 169, 0.3); }
+      .resizable-panel-handle--right:hover::after, .resizable-panel-handle--right--active::after {
+        opacity: 1; }
+    .resizable-panel-handle--right::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 40px;
+      background-color: #00d3a9;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      border-radius: 1px; }
+  .resizable-panel-handle--left {
+    left: -3px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize; }
+    .resizable-panel-handle--left:hover, .resizable-panel-handle--left--active {
+      background-color: rgba(0, 211, 169, 0.3); }
+      .resizable-panel-handle--left:hover::after, .resizable-panel-handle--left--active::after {
+        opacity: 1; }
+    .resizable-panel-handle--left::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 40px;
+      background-color: #00d3a9;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      border-radius: 1px; }
+  .resizable-panel-handle--active {
+    background-color: rgba(0, 211, 169, 0.5); }
+
+#reset-panel-widths {
+  white-space: nowrap;
+  font-size: 0.875rem; }
+  #reset-panel-widths i {
+    margin-right: 0.25rem; }
+  #reset-panel-widths:hover {
+    background-color: #00d3a9;
+    color: #fff; }
+
+.td-sidebar,
+.td-sidebar-toc {
+  position: relative; }
+
+.td-sidebar,
+.td-sidebar-toc,
+main[role="main"] {
+  transition: width 0.3s ease; }
+
+.row.flex-xl-nowrap {
+  display: flex;
+  flex-wrap: nowrap; }
+  .row.flex-xl-nowrap > aside,
+  .row.flex-xl-nowrap > main {
+    overflow-x: hidden; }
+
+@media (max-width: 1199.98px) {
+  .resizable-panel-handle {
+    display: none; }
+  #reset-panel-widths {
+    display: none; } }
+
+@media print {
+  .resizable-panel-handle,
+  #reset-panel-widths {
+    display: none !important; } }
+
 .navbar-dark {
   min-height: 5rem;
   padding: 0 5rem;
