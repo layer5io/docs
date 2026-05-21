@@ -20,6 +20,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+    min-width: 0;
   }
 
   /**
@@ -27,9 +28,12 @@
    */
   .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar {
     flex: 0 0 var(--docs-sidebar-width);
-    max-width: var(--docs-sidebar-width);
-    min-width: 220px;
+    width: var(--docs-sidebar-width);
+    max-width: 420px;
+    min-width: 240px;
     position: relative;
+    overflow-x: hidden;
+    padding-right: 12px;
     order: 1;
   }
 
@@ -38,18 +42,32 @@
    */
   .row.flex-xl-nowrap.resizable-panels-ready > main[role='main'] {
     flex: 1 1 auto;
+    flex-basis: var(--docs-main-without-toc-width);
     max-width: var(--docs-main-without-toc-width);
-    min-width: 0;
-    overflow-x: hidden;
+    min-width: 500px;
+    overflow-x: auto;
     position: relative;
     order: 2;
+  }
+
+  /**
+   * Better readable content width
+   */
+  main[role='main'] article {
+    max-width: 900px;
   }
 
   /**
    * TOC SIDEBAR
    */
   .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
+    width: var(--docs-toc-width);
+    max-width: 320px;
+    min-width: 220px;
     position: relative;
+    overflow-x: hidden;
+    padding-left: 12px;
+    order: 3;
   }
 
   /**
@@ -59,6 +77,21 @@
   .td-sidebar-toc {
     position: sticky;
     scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  /**
+   * Prevent text clipping
+   */
+  .td-sidebar nav,
+  .td-sidebar-toc nav {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .td-sidebar a,
+  .td-sidebar-toc a {
+    display: block;
+    max-width: 100%;
   }
 
   /**
@@ -79,7 +112,19 @@
   }
 
   /**
-   * HANDLE VISUAL INDICATOR
+   * Subtle divider line
+   */
+  .resizable-panel-handle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /**
+   * Handle visual indicator
    */
   .resizable-panel-handle::after {
     content: '';
@@ -87,9 +132,9 @@
     top: 50%;
     transform: translateY(-50%);
     width: 2px;
-    height: 48px;
+    height: 32px;
     border-radius: 999px;
-    background-color: rgba(0, 211, 169, 0.9);
+    background-color: rgba(0, 211, 169, 0.55);
     opacity: 0;
     transition: opacity 0.16s ease;
   }
@@ -110,6 +155,7 @@
     right: 0;
   }
 
+  .resizable-panel-handle--sidebar::before,
   .resizable-panel-handle--sidebar::after {
     right: 1px;
   }
@@ -122,6 +168,7 @@
     left: 0;
   }
 
+  .resizable-panel-handle--toc::before,
   .resizable-panel-handle--toc::after {
     left: 1px;
   }
@@ -141,6 +188,7 @@
   .row.flex-xl-nowrap.resizable-panels-ready
     > .td-sidebar-toc::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 999px;
   }
 
   .row.flex-xl-nowrap.resizable-panels-ready
@@ -155,6 +203,8 @@
    */
   .resizable-panel-reset {
     align-items: center;
+    justify-content: center;
+    width: 100%;
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(0, 211, 169, 0.45);
     border-radius: 4px;
@@ -165,7 +215,7 @@
     gap: 0.35rem;
     line-height: 1.2;
     margin: 1rem 0 0;
-    padding: 0.35rem 0.55rem;
+    padding: 0.45rem 0.65rem;
     white-space: nowrap;
   }
 
@@ -203,9 +253,6 @@
 
   .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
     flex: 0 0 var(--docs-toc-width);
-    max-width: var(--docs-toc-width);
-    min-width: 220px;
-    order: 3;
   }
 
   .resizable-panel-handle--toc {
