@@ -23167,95 +23167,104 @@ details > ul {
     opacity: 1; }
 
 /**
- * Resizable Panels Styling
- * Styles for the resize handles and drag interactions
+ * Resizable docs side panels.
+ *
+ * Desktop widths are driven by CSS variables set from resizable-panels.js.
+ * Smaller breakpoints keep the existing Bootstrap column behavior.
  */
-.resizable-panel-handle {
-  position: absolute;
-  background-color: transparent;
-  transition: background-color 0.2s ease;
-  z-index: 100; }
-  .resizable-panel-handle--right {
-    right: -3px;
-    top: 0;
-    bottom: 0;
-    width: 6px;
-    cursor: col-resize; }
-    .resizable-panel-handle--right:hover, .resizable-panel-handle--right--active {
-      background-color: rgba(0, 211, 169, 0.3); }
-      .resizable-panel-handle--right:hover::after, .resizable-panel-handle--right--active::after {
-        opacity: 1; }
-    .resizable-panel-handle--right::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2px;
-      height: 40px;
-      background-color: #00d3a9;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      border-radius: 1px; }
-  .resizable-panel-handle--left {
-    left: -3px;
-    top: 0;
-    bottom: 0;
-    width: 6px;
-    cursor: col-resize; }
-    .resizable-panel-handle--left:hover, .resizable-panel-handle--left--active {
-      background-color: rgba(0, 211, 169, 0.3); }
-      .resizable-panel-handle--left:hover::after, .resizable-panel-handle--left--active::after {
-        opacity: 1; }
-    .resizable-panel-handle--left::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2px;
-      height: 40px;
-      background-color: #00d3a9;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      border-radius: 1px; }
-  .resizable-panel-handle--active {
-    background-color: rgba(0, 211, 169, 0.5); }
+.resizable-panel-handle,
+.resizable-panel-reset {
+  display: none; }
 
-#reset-panel-widths {
-  white-space: nowrap;
-  font-size: 0.875rem; }
-  #reset-panel-widths i {
-    margin-right: 0.25rem; }
-  #reset-panel-widths:hover {
-    background-color: #00d3a9;
-    color: #fff; }
-
-.td-sidebar,
-.td-sidebar-toc {
-  position: relative; }
-
-.td-sidebar,
-.td-sidebar-toc,
-main[role="main"] {
-  transition: width 0.3s ease; }
-
-.row.flex-xl-nowrap {
-  display: flex;
-  flex-wrap: nowrap; }
-  .row.flex-xl-nowrap > aside,
-  .row.flex-xl-nowrap > main {
-    overflow-x: hidden; }
-
-@media (max-width: 1199.98px) {
+@media (min-width: 1200px) {
+  .row.flex-xl-nowrap.resizable-panels-ready {
+    --docs-sidebar-width: 16.6667%;
+    --docs-main-width: 66.6666%;
+    --docs-toc-width: 16.6667%;
+    display: flex;
+    flex-wrap: nowrap; }
+  .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar {
+    flex: 0 0 var(--docs-sidebar-width);
+    max-width: var(--docs-sidebar-width);
+    order: 1; }
+  .row.flex-xl-nowrap.resizable-panels-ready > main[role='main'] {
+    flex: 0 0 var(--docs-main-width);
+    max-width: var(--docs-main-width);
+    min-width: 0;
+    order: 2; }
+  .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
+    flex: 0 0 var(--docs-toc-width);
+    max-width: var(--docs-toc-width);
+    order: 3; }
+  .td-sidebar,
+  .td-sidebar-toc {
+    position: sticky; }
   .resizable-panel-handle {
-    display: none; }
-  #reset-panel-widths {
-    display: none; } }
+    appearance: none;
+    background: transparent;
+    border: 0;
+    bottom: 0;
+    cursor: col-resize;
+    display: block;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 12px;
+    z-index: 20; }
+    .resizable-panel-handle::after {
+      background-color: #00d3a9;
+      border-radius: 1px;
+      content: '';
+      height: 44px;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity 0.16s ease;
+      width: 2px; }
+    .resizable-panel-handle:hover, .resizable-panel-handle:focus-visible, .resizable-panel-handle--active {
+      background-color: rgba(0, 211, 169, 0.16);
+      outline: none; }
+      .resizable-panel-handle:hover::after, .resizable-panel-handle:focus-visible::after, .resizable-panel-handle--active::after {
+        opacity: 1; }
+    .resizable-panel-handle--sidebar {
+      right: -6px; }
+      .resizable-panel-handle--sidebar::after {
+        right: 5px; }
+    .resizable-panel-handle--toc {
+      left: -6px; }
+      .resizable-panel-handle--toc::after {
+        left: 5px; }
+  .resizable-panel-reset {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 211, 169, 0.45);
+    border-radius: 4px;
+    color: #ccc;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 0.8125rem;
+    gap: 0.35rem;
+    line-height: 1.2;
+    margin: 1rem 0 0;
+    padding: 0.35rem 0.55rem;
+    white-space: nowrap; }
+    .resizable-panel-reset:hover, .resizable-panel-reset:focus-visible {
+      background: #00d3a9;
+      border-color: #00d3a9;
+      color: #000;
+      outline: none; }
+  .resizable-panels-dragging {
+    cursor: col-resize;
+    user-select: none; }
+    .resizable-panels-dragging iframe,
+    .resizable-panels-dragging img,
+    .resizable-panels-dragging a {
+      pointer-events: none; } }
 
 @media print {
   .resizable-panel-handle,
-  #reset-panel-widths {
+  .resizable-panel-reset {
     display: none !important; } }
 
 .navbar-dark {
