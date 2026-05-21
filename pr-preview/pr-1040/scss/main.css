@@ -23195,58 +23195,53 @@ details > ul {
     order: 2; }
   .td-sidebar,
   .td-sidebar-toc {
-    position: sticky; }
+    position: sticky;
+    scrollbar-color: rgba(255, 255, 255, 0.28) transparent; }
   .resizable-panel-handle {
     appearance: none;
-    background: transparent;
-    border: 0;
-    bottom: 0;
+    background: rgba(4, 10, 10, 0.92);
+    border: 1px solid rgba(0, 211, 169, 0.55);
+    border-radius: 999px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.28);
     cursor: col-resize;
     display: block;
+    height: 64px;
     padding: 0;
     position: absolute;
-    top: 0;
-    width: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
     z-index: 50; }
-    .resizable-panel-handle::before {
-      background-color: rgba(0, 211, 169, 0.22);
-      bottom: 0;
-      content: '';
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      transition: opacity 0.16s ease;
-      width: 1px; }
     .resizable-panel-handle::after {
-      background-color: #00d3a9;
+      background-image: radial-gradient(circle, #00d3a9 1.5px, transparent 2px);
+      background-size: 4px 8px;
       border-radius: 999px;
-      box-shadow: 0 0 0 3px rgba(0, 211, 169, 0.12);
       content: '';
-      height: 56px;
-      opacity: 0.45;
+      height: 30px;
+      left: 50%;
+      opacity: 0.8;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translate(-50%, -50%);
       transition: opacity 0.16s ease;
       width: 4px; }
     .resizable-panel-handle:hover, .resizable-panel-handle:focus-visible, .resizable-panel-handle--active {
-      background: rgba(0, 211, 169, 0.06);
+      background: rgba(0, 38, 34, 0.96);
+      border-color: #00d3a9;
       outline: none; }
-      .resizable-panel-handle:hover::before, .resizable-panel-handle:hover::after, .resizable-panel-handle:focus-visible::before, .resizable-panel-handle:focus-visible::after, .resizable-panel-handle--active::before, .resizable-panel-handle--active::after {
+      .resizable-panel-handle:hover::after, .resizable-panel-handle:focus-visible::after, .resizable-panel-handle--active::after {
         opacity: 1; }
     .resizable-panel-handle--sidebar {
-      right: 0; }
-      .resizable-panel-handle--sidebar::before {
-        right: 0; }
-      .resizable-panel-handle--sidebar::after {
-        right: 4px; }
+      right: 10px; }
     .resizable-panel-handle--toc {
       display: none;
-      left: 0; }
-      .resizable-panel-handle--toc::before {
-        left: 0; }
-      .resizable-panel-handle--toc::after {
-        left: 4px; }
+      left: 10px; }
+  .td-sidebar::-webkit-scrollbar-thumb,
+  .td-sidebar-toc::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.28); }
+  .td-sidebar::-webkit-scrollbar-thumb:hover,
+  .td-sidebar-toc::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.42); }
   .resizable-panel-reset {
     align-items: center;
     background: rgba(0, 0, 0, 0.25);
