@@ -104,7 +104,7 @@
 .td-sidebar,
 .td-sidebar-toc,
 main[role="main"] {
-  transition: flex: 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 // Ensure row is flex container for proper layout
