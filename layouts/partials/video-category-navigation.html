@@ -1,4 +1,4 @@
-{{ $pathToHashMap := dict }}
+{{ $.Scratch.Set "pathToHashMap" dict }}
 {{ $videos := .Site.GetPage "section" "videos" }}
 {{ if $videos }}
   {{ range $mainIndex, $mainSection := $videos.Sections }}
@@ -6,18 +6,18 @@
     {{ if not (hasPrefix $mainPath "/") }}
       {{ $mainPath = "/" | add $mainPath }}
     {{ end }}
-    {{ $pathToHashMap = merge $pathToHashMap (dict $mainPath (printf "category-%d-subcategory-0" $mainIndex)) }}
+    {{ $.Scratch.SetInMap "pathToHashMap" $mainPath (printf "category-%d-subcategory-0" $mainIndex) }}
     {{ range $subIndex, $subSection := $mainSection.Sections }}
       {{ $subPath := $subSection.RelPermalink }}
       {{ if not (hasPrefix $subPath "/") }}
         {{ $subPath = "/" | add $subPath }}
       {{ end }}
-      {{ $pathToHashMap = merge $pathToHashMap (dict $subPath (printf "category-%d-subcategory-%d" $mainIndex $subIndex)) }}
+      {{ $.Scratch.SetInMap "pathToHashMap" $subPath (printf "category-%d-subcategory-%d" $mainIndex $subIndex) }}
     {{ end }}
   {{ end }}
 {{ end }}
 
-<div id="video-hash-map" data-map='{{ $pathToHashMap | jsonify | safeHTMLAttr }}' style="display:none"></div>
+<div id="video-hash-map" data-map='{{ $.Scratch.Get "pathToHashMap" | jsonify }}' style="display:none"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const mapEl = document.getElementById('video-hash-map');
@@ -36,10 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.hash = pathToHashMap[currentPath];
   }
 
-  document.querySelectorAll("a[href^='/videos/'], a[href*='/videos/']").forEach(link => {
-    const key = normalize(link.getAttribute('href') || '');
-    const hash = pathToHashMap[key];
-    if (hash) link.setAttribute('href', key + '#' + hash);
+  document.querySelectorAll("a[href*='/videos/']").forEach(link => {
+    try {
+      const url = new URL(link.href);
+      if (url.origin !== window.location.origin || url.hash) return;
+      const pathKey = url.pathname.endsWith('/') ? url.pathname : url.pathname + '/';
+      const hash = pathToHashMap[pathKey];
+      if (hash) {
+        url.hash = hash;
+        link.href = url.toString();
+      }
+    } catch (_) {}
   });
 });
 </script>
