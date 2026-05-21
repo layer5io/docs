@@ -15,7 +15,6 @@
 @import "elements_project";
 @import "summary.scss";
 @import "_kanvas-corner-popup.scss";
-@import "_resizable-panels.scss";
 
 .navbar-dark {
   min-height: 5rem;
@@ -273,6 +272,7 @@ a:not([href]):not([class]):hover {
       color: $gray-400;
       font-weight: $font-weight-bold;
     }
+    margin-top: 0.5rem;
   }
 
   .td-sidebar-link {
