@@ -67,19 +67,23 @@ Only Provider Admins and Organization Admin can create users. For more informati
 
 ## Account Linking
 
-You can link your Layer5 account to social sign-in providers after sign up, as well as unlink social sign-in providers that you might have previously added. You can link your social sign-in accounts on login automatically using a secure flow. This is how it works:
+You can link your Layer5 account to supported social sign-in providers after signing up, and you can unlink previously added providers at any time. Layer5 Cloud can also link providers automatically during sign-in when the provider returns a verified email address that already belongs to your account. This is how it works:
 
 1. You create an account with the email address `alice@example.com` and a password.
-2. When signing in later, click to sign in with a social sign-in provider (e.g. GitHub or Google) that contains the same email address `alice@example.com`.
-3. Since your same email address is aleady associated to an your existing account, registered already, you will be prompted to enter the password of your existing account.
-4. After entering the correct password, your social sign-in is linked to your existing account. Now, you can sign in with either password or social sign-in provider.
+2. When signing in later, click to sign in with a social sign-in provider such as GitHub or Google that returns the same **verified** email address `alice@example.com`.
+3. Layer5 Cloud recognizes that the verified email address already belongs to your existing account and automatically links that provider. You are not prompted to re-enter your password for this linking step.
+4. After the link is created, you can sign in with either your password or any linked social sign-in provider.
+
+If a provider that is already linked to your account later reports a different verified email address, Layer5 Cloud still signs you in to the same account. The email already stored on your Layer5 account is not silently replaced or automatically updated.
 
 **Rules and Limitations**
 
 1. You cannot link the same social sign-in to multiple Layer5 accounts
 2. If you delete your account, any linked OAuth providers (e.g., GitHub) are automatically unlinked  
 3. Re-registering with the same email **does not** automatically re-link the OAuth provider  
-4. You may unlink a social sign-in provider at any time
+4. Automatic linking depends on the provider returning a verified email address
+5. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account instead of replacing it automatically
+6. You may unlink a social sign-in provider at any time
 
 ## Account Deletion
 
