@@ -23198,7 +23198,7 @@ details > ul {
     position: sticky; }
   .resizable-panel-handle {
     appearance: none;
-    background: rgba(0, 211, 169, 0.12);
+    background: transparent;
     border: 0;
     bottom: 0;
     cursor: col-resize;
@@ -23206,33 +23206,47 @@ details > ul {
     padding: 0;
     position: absolute;
     top: 0;
-    width: 14px;
+    width: 12px;
     z-index: 50; }
+    .resizable-panel-handle::before {
+      background-color: rgba(0, 211, 169, 0.22);
+      bottom: 0;
+      content: '';
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 0.16s ease;
+      width: 1px; }
     .resizable-panel-handle::after {
       background-color: #00d3a9;
-      border-radius: 1px;
+      border-radius: 999px;
+      box-shadow: 0 0 0 3px rgba(0, 211, 169, 0.12);
       content: '';
-      height: 44px;
-      opacity: 0.75;
+      height: 56px;
+      opacity: 0.45;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       transition: opacity 0.16s ease;
-      width: 2px; }
+      width: 4px; }
     .resizable-panel-handle:hover, .resizable-panel-handle:focus-visible, .resizable-panel-handle--active {
-      background-color: rgba(0, 211, 169, 0.16);
+      background: rgba(0, 211, 169, 0.06);
       outline: none; }
-      .resizable-panel-handle:hover::after, .resizable-panel-handle:focus-visible::after, .resizable-panel-handle--active::after {
+      .resizable-panel-handle:hover::before, .resizable-panel-handle:hover::after, .resizable-panel-handle:focus-visible::before, .resizable-panel-handle:focus-visible::after, .resizable-panel-handle--active::before, .resizable-panel-handle--active::after {
         opacity: 1; }
     .resizable-panel-handle--sidebar {
       right: 0; }
+      .resizable-panel-handle--sidebar::before {
+        right: 0; }
       .resizable-panel-handle--sidebar::after {
-        right: 6px; }
+        right: 4px; }
     .resizable-panel-handle--toc {
       display: none;
       left: 0; }
+      .resizable-panel-handle--toc::before {
+        left: 0; }
       .resizable-panel-handle--toc::after {
-        left: 6px; }
+        left: 4px; }
   .resizable-panel-reset {
     align-items: center;
     background: rgba(0, 0, 0, 0.25);
