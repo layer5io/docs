@@ -151,7 +151,7 @@ Kubernetes resources without writing YAML.&lt;/p&gt;</description></item><item><
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[47 297 404 18 167 184]" src="../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
+ &lt;img id="[30 109 390 364 161 358]" src="../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
 In this tutorial, we will explore Kubernetes CronJobs, a resource that allows you to run jobs periodically at specified intervals. We will use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for working with CronJobs in Kubernetes.&lt;/p&gt;
