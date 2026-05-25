@@ -1,4 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.80</title><link>/cloud/reference/releases/v1.0.80/</link><pubDate>Thu, 21 May 2026 01:47:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.80/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.93</title><link>/cloud/reference/releases/v1.0.93/</link><pubDate>Fri, 22 May 2026 22:55:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.93/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): rename IdP teardown CTA and fix Edit Org modal button contrast @hortison (#5378)&lt;/li&gt;
+&lt;li&gt;Revert #5372 (Provider Org IdP seed subcommand) @hortison (#5377)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.92</title><link>/cloud/reference/releases/v1.0.92/</link><pubDate>Fri, 22 May 2026 21:38:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.92/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): carry W2 state payload in oidc_pending cookie, not the URL @hortison (#5373)&lt;/li&gt;
+&lt;li&gt;fix(layout): remove dynamic AppShell wrapper that duplicated the layout @hortison (#5375)&lt;/li&gt;
+&lt;li&gt;fix(auth): preserve query string on org-switch bridge redirect @hortison (#5374)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.91</title><link>/cloud/reference/releases/v1.0.91/</link><pubDate>Fri, 22 May 2026 20:36:56 +0000</pubDate><guid>/cloud/reference/releases/v1.0.91/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): operator-invoked Provider Org IdP seed (subcommand + resolver) @hortison (#5372)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.90</title><link>/cloud/reference/releases/v1.0.90/</link><pubDate>Fri, 22 May 2026 18:18:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.90/</guid><description>&lt;ul&gt;
+&lt;li&gt;perf(auth): collapse login bundle and Kratos init double round-trip @hortison (#5369)&lt;/li&gt;
+&lt;li&gt;perf(login): gzip + immutable cache for /_next, lazy-load Monaco and PDF stack @hortison (#5368)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.89</title><link>/cloud/reference/releases/v1.0.89/</link><pubDate>Fri, 22 May 2026 17:34:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.89/</guid><description>&lt;ul&gt;
+&lt;li&gt;Disable push triggers in release workflow @leecalcote (#5370)&lt;/li&gt;
+&lt;li&gt;config(oidc): wire CLOUD_OIDC_STATE_HMAC_KEY through every deploy path @hortison (#5367)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.88</title><link>/cloud/reference/releases/v1.0.88/</link><pubDate>Fri, 22 May 2026 13:06:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.88/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): route OIDC sign-in through W2 handler on custom domains @hortison (#5366)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.87</title><link>/cloud/reference/releases/v1.0.87/</link><pubDate>Fri, 22 May 2026 04:53:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.87/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): bridge session on org switch to off-eTLD custom domains @hortison (#5365)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.86</title><link>/cloud/reference/releases/v1.0.86/</link><pubDate>Fri, 22 May 2026 00:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.86/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): keep custom-domain visitors on host through HandleHome login bounce @hortison (#5364)&lt;/li&gt;
+&lt;li&gt;fix(ui): polish Edit Org modal IdP tab + restore org table columns @hortison (#5362)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.85</title><link>/cloud/reference/releases/v1.0.85/</link><pubDate>Thu, 21 May 2026 22:47:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.85/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: correct malformed CLOUD_CREDENTIAL_ENCRYPTION_KEY + add fail-loud guards @hortison (#5363)&lt;/li&gt;
+&lt;li&gt;fix(ui): SSR-safe useWindowDimensions + guarded catalog catch-all unslugify @hortison (#5360)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.84</title><link>/cloud/reference/releases/v1.0.84/</link><pubDate>Thu, 21 May 2026 22:04:25 +0000</pubDate><guid>/cloud/reference/releases/v1.0.84/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.14 @l5io (#5361)&lt;/li&gt;
+&lt;li&gt;[Deploy]: AES Encryption Key set&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.83</title><link>/cloud/reference/releases/v1.0.83/</link><pubDate>Thu, 21 May 2026 20:00:48 +0000</pubDate><guid>/cloud/reference/releases/v1.0.83/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): unblock static-export build (window is not defined + unslugify split) @leecalcote (#5359)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.82</title><link>/cloud/reference/releases/v1.0.82/</link><pubDate>Thu, 21 May 2026 18:52:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.82/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(auth): skip auth-required API calls for anonymous users @jamieplu (#5055)&lt;/li&gt;
+&lt;li&gt;feat(capabilities): resolve providerName per-org from request context @hortison (#5355)&lt;/li&gt;
+&lt;li&gt;Speed up organization switching @hortison (#5352)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.81</title><link>/cloud/reference/releases/v1.0.81/</link><pubDate>Thu, 21 May 2026 17:11:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.81/</guid><description>&lt;ul&gt;
+&lt;li&gt;ci: improve GH_ACCESS_TOKEN dispatch error handling in pull-request-build.yml @hortison (#5354)&lt;/li&gt;
+&lt;li&gt;[UI] add Identity Providers tab to Edit Organization modal @hortison (#5349)&lt;/li&gt;
+&lt;li&gt;[UI] address IdP tab review feedback (PR #5349) @leecalcote (#5353)&lt;/li&gt;
+&lt;li&gt;fix: resolve all CI test failures (server, UI, e2e) @hortison (#5347)&lt;/li&gt;
+&lt;li&gt;fix(router): stub _devPagesManifest.json for static-export builds @hortison (#5351)&lt;/li&gt;
+&lt;li&gt;[UI] Fix overview card brand color to use Keppel base @hortison (#5350)&lt;/li&gt;
+&lt;li&gt;[UI] Preserve authenticated navbar on /user pages @hortison (#5346)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@claude, @hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.80</title><link>/cloud/reference/releases/v1.0.80/</link><pubDate>Thu, 21 May 2026 01:47:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.80/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(ui/academy): guard window access in AcademyProvider for SSR @hortison (#5345)&lt;/li&gt;
 &lt;li&gt;claude/fix test typescript errors @hortison (#5344)&lt;/li&gt;
 &lt;li&gt;claude/fix test typescript errors @hortison (#5343)&lt;/li&gt;
