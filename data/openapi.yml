@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.2.22
+  version: v1.3.0
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -24,6 +24,8 @@ tags:
     description: Operations related to features and entitlements
   - name: Support_Support
     description: Operations related to help and support requests
+  - name: System_API_System
+    description: Operational endpoints for Meshery Server.
   - name: Badge_Badge
     description: Operations related to user and organization badges.
   - name: credential_credentials
@@ -530,6 +532,52 @@ paths:
                 type: string
         '500':
           description: Internal server error
+  /api/system/version:
+    get:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - System_API_System
+      summary: Get the running Meshery server's version metadata
+      description: Returns version metadata for the running Meshery service.
+      operationId: getSystemVersion
+      security: []
+      responses:
+        '200':
+          description: Server version metadata
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Version metadata for a running Meshery service.
+                additionalProperties: false
+                properties:
+                  version:
+                    type: string
+                    description: Meshery Cloud deployment version.
+                    maxLength: 128
+                  build:
+                    type: string
+                    description: Build identifier (typically the git tag of the running binary).
+                    maxLength: 128
+                  latest:
+                    type: string
+                    description: Latest available Meshery release tag fetched from GitHub.
+                    maxLength: 128
+                  outdated:
+                    type: boolean
+                    description: True when the running build is older than the latest available release.
+                  commitsha:
+                    type: string
+                    description: Git commit SHA of the running service. The wire field is `commitsha`.
+                    maxLength: 64
+                  releaseChannel:
+                    type: string
+                    description: Release channel of the running binary (e.g. `stable`, `edge`).
+                    maxLength: 64
+        '500':
+          description: Encoding error while serializing the version payload.
   /api/organizations/badges/{badgeId}:
     delete:
       x-internal:
