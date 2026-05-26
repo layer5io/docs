@@ -1,0 +1,12 @@
+{{/* 
+  URL Preview Partial
+  Shows the complete URL that will be requested
+  Context expects: operationId, path, servers
+*/}}
+<div class="rest-api-url-preview" data-url-preview>
+  {{ if gt (len .servers) 0 }}
+    {{ index (index .servers 0) "url" }}{{ .path }}
+  {{ else }}
+    https://cloud.layer5.io{{ .path }}
+  {{ end }}
+</div>

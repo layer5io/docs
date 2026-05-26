@@ -1,0 +1,21 @@
+{{/* 
+  Server Selector Partial
+  Allows users to select which API server to target
+  Context expects: servers, operationId
+*/}}
+{{ if gt (len .servers) 0 }}
+  <div class="rest-api-server-selector">
+    <label for="server-select-{{ .operationId }}">API Server</label>
+    <select 
+      id="server-select-{{ .operationId }}" 
+      class="rest-api-server-select" 
+      data-server-select
+    >
+      {{ range $index, $server := .servers }}
+        <option value="{{ index $server "url" }}" {{ if eq $index 0 }}selected{{ end }}>
+          {{ index $server "description" | default (index $server "url") }}
+        </option>
+      {{ end }}
+    </select>
+  </div>
+{{ end }}

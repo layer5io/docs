@@ -1,0 +1,15 @@
+{{/* 
+  Execute Button Partial
+  Provides the button to trigger API request execution
+  Context expects: operationId, method, path
+*/}}
+<button 
+  type="button" 
+  class="rest-api-execute-button" 
+  data-execute-request 
+  data-operation-id="{{ .operationId }}"
+  aria-label="Execute {{ .method }} {{ .path }} request"
+>
+  <span class="rest-api-execute-button__icon">▶</span>
+  <span class="rest-api-execute-button__text">Execute Request</span>
+</button>
