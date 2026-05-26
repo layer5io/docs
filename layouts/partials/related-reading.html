@@ -1,0 +1,55 @@
+{{ $currentPage := .Page }}
+{{ $currentTags := .Params.tags | default (slice) }}
+{{ $currentCategories := .Params.categories | default (slice) }}
+{{ $limit := 6 }}
+
+{{ $relatedReadingConfig := .Site.Params.relatedReading | default dict }}
+{{ $pageTypes := $relatedReadingConfig.pageTypes | default (slice) }}
+{{ $sections := $relatedReadingConfig.sections | default (slice) }}
+
+{{ $readingPages := .Site.RegularPages }}
+{{ if gt (len $pageTypes) 0 }}
+  {{ $readingPages = where $readingPages "Type" "in" $pageTypes }}
+{{ end }}
+{{ if gt (len $sections) 0 }}
+  {{ $readingPages = where $readingPages "Section" "in" $sections }}
+{{ end }}
+{{ $readingPages = where $readingPages ".Params.videoId" "==" nil }}
+{{ $matchingPages := slice }}
+
+{{ range $readingPages }}
+  {{ $page := . }}
+  {{ $matchScore := 0 }}
+
+  {{ if ne $page.RelPermalink $currentPage.RelPermalink }}
+    {{ range $currentTags }}
+      {{ if in ($page.Params.tags | default (slice)) . }}
+        {{ $matchScore = add $matchScore 1 }}
+      {{ end }}
+    {{ end }}
+
+    {{ range $currentCategories }}
+      {{ if in ($page.Params.categories | default (slice)) . }}
+        {{ $matchScore = add $matchScore 2 }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt $matchScore 0 }}
+      {{ $matchingPages = $matchingPages | append (dict "page" $page "score" $matchScore) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $relatedPages := first $limit (sort $matchingPages "score" "desc") }}
+
+{{ if gt (len $relatedPages) 0 }}
+<h2>Related Reading</h2>
+<ul>
+  {{ range $relatedPages }}
+    {{ $page := .page }}
+    <li style="line-height:1.75rem;padding:0.3rem 0.4rem;">
+      <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

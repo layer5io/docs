@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ .Render "content" }}
-  
+
+{{ partial "related-reading.html" . -}}
 {{ partial "video-section-related.html" . -}}
 <div style="margin-top: 2rem;">
 {{ partial "recent-discussions.html" . -}}
