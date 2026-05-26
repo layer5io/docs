@@ -19,68 +19,59 @@
     toc: { min: 10, max: 28 },
     main: { min: 42 },
   };
+  const LEGACY_GRID_COLUMNS = 12;
 
-  class ResizablePanels {
-    constructor(row) {
-      this.row = row;
-      this.sidebar = row.querySelector('.td-sidebar');
-      this.main = row.querySelector('main[role="main"]');
-      this.toc = row.querySelector('.td-sidebar-toc');
-      this.mediaQuery = window.matchMedia(RESIZABLE_QUERY);
-      this.activeHandle = null;
-      this.startX = 0;
-      this.startWidths = null;
-      this.widths = this.getStoredWidths();
+  function setupResizablePanels(row) {
+    const sidebar = row.querySelector('.td-sidebar');
+    const main = row.querySelector('main[role="main"]');
+    const toc = row.querySelector('.td-sidebar-toc');
+    const mediaQuery = window.matchMedia(RESIZABLE_QUERY);
+    let activeHandle = null;
+    let sidebarHandle = null;
+    let tocHandle = null;
+    let startX = 0;
+    let startWidths = null;
+    let widths = getStoredWidths();
 
-      if (!this.sidebar || !this.main) {
-        return;
-      }
-
-      this.init();
+    if (!sidebar || !main) {
+      return;
     }
 
-    init() {
-      this.row.classList.add('resizable-panels-ready');
-      this.applyWidths(this.widths);
-      this.createHandles();
-      this.createResetButton();
-      this.bindEvents();
-    }
+    row.classList.add('resizable-panels-ready');
+    applyWidths(widths);
+    createHandles();
+    createResetButton();
+    bindEvents();
 
-    bindEvents() {
-      document.addEventListener('pointermove', (event) =>
-        this.onPointerMove(event),
-      );
-      document.addEventListener('pointerup', () => this.stopResize());
-      document.addEventListener('pointercancel', () => this.stopResize());
+    function bindEvents() {
+      document.addEventListener('pointermove', onPointerMove);
+      document.addEventListener('pointerup', stopResize);
+      document.addEventListener('pointercancel', stopResize);
 
       const onBreakpointChange = () => {
-        if (this.mediaQuery.matches) {
-          this.applyWidths(this.widths);
+        if (mediaQuery.matches) {
+          applyWidths(widths);
         }
       };
 
-      if (this.mediaQuery.addEventListener) {
-        this.mediaQuery.addEventListener('change', onBreakpointChange);
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener('change', onBreakpointChange);
       } else {
-        this.mediaQuery.addListener(onBreakpointChange);
+        mediaQuery.addListener(onBreakpointChange);
       }
     }
 
-    createHandles() {
-      this.sidebarHandle = this.createHandle(
-        'sidebar',
-        'Resize navigation sidebar',
-      );
-      this.sidebar.appendChild(this.sidebarHandle);
+    function createHandles() {
+      sidebarHandle = createHandle('sidebar', 'Resize navigation sidebar');
+      sidebar.appendChild(sidebarHandle);
 
-      if (this.toc) {
-        this.tocHandle = this.createHandle('toc', 'Resize table of contents');
-        this.toc.appendChild(this.tocHandle);
+      if (toc) {
+        tocHandle = createHandle('toc', 'Resize table of contents');
+        toc.appendChild(tocHandle);
       }
     }
 
-    createHandle(target, label) {
+    function createHandle(target, label) {
       const handle = document.createElement('div');
       handle.className = `resizable-panel-handle resizable-panel-handle--${target}`;
       handle.dataset.resizeTarget = target;
@@ -90,17 +81,17 @@
       handle.setAttribute('role', 'separator');
       handle.title = label;
 
-      handle.addEventListener('pointerdown', (event) =>
-        this.startResize(event, handle),
-      );
-      handle.addEventListener('keydown', (event) =>
-        this.onHandleKeydown(event, target),
-      );
+      handle.addEventListener('pointerdown', (event) => {
+        startResize(event, handle);
+      });
+      handle.addEventListener('keydown', (event) => {
+        onHandleKeydown(event, target);
+      });
 
       return handle;
     }
 
-    createResetButton() {
+    function createResetButton() {
       const resetButton = document.createElement('button');
       resetButton.type = 'button';
       resetButton.id = 'reset-panel-widths';
@@ -108,65 +99,65 @@
       resetButton.innerHTML =
         '<i class="bi bi-arrow-clockwise" aria-hidden="true"></i><span>Reset layout</span>';
       resetButton.title = 'Reset panel widths to default';
-      resetButton.addEventListener('click', () => this.reset());
+      resetButton.addEventListener('click', reset);
 
-      this.sidebar.appendChild(resetButton);
+      sidebar.appendChild(resetButton);
     }
 
-    startResize(event, handle) {
-      if (!this.mediaQuery.matches) {
+    function startResize(event, handle) {
+      if (!mediaQuery.matches) {
         return;
       }
 
       event.preventDefault();
-      this.activeHandle = handle;
-      this.startX = event.clientX;
-      this.startWidths = { ...this.widths };
+      activeHandle = handle;
+      startX = event.clientX;
+      startWidths = { ...widths };
       handle.classList.add('resizable-panel-handle--active');
       handle.setPointerCapture(event.pointerId);
       document.body.classList.add('resizable-panels-dragging');
     }
 
-    onPointerMove(event) {
-      if (!this.activeHandle || !this.startWidths) {
+    function onPointerMove(event) {
+      if (!activeHandle || !startWidths) {
         return;
       }
 
-      const rowWidth = this.row.getBoundingClientRect().width;
+      const rowWidth = row.getBoundingClientRect().width;
       if (!rowWidth) {
         return;
       }
 
-      const target = this.activeHandle.dataset.resizeTarget;
-      const delta = ((event.clientX - this.startX) / rowWidth) * 100;
-      const nextWidths = { ...this.startWidths };
+      const target = activeHandle.dataset.resizeTarget;
+      const delta = ((event.clientX - startX) / rowWidth) * 100;
+      const nextWidths = { ...startWidths };
 
       if (target === 'sidebar') {
-        nextWidths.sidebar = this.startWidths.sidebar + delta;
+        nextWidths.sidebar = startWidths.sidebar + delta;
       }
 
       if (target === 'toc') {
-        nextWidths.toc = this.startWidths.toc - delta;
+        nextWidths.toc = startWidths.toc - delta;
       }
 
-      this.widths = this.normalizeWidths(nextWidths);
-      this.applyWidths(this.widths);
+      widths = normalizeWidths(nextWidths);
+      applyWidths(widths);
     }
 
-    stopResize() {
-      if (!this.activeHandle) {
+    function stopResize() {
+      if (!activeHandle) {
         return;
       }
 
-      this.activeHandle.classList.remove('resizable-panel-handle--active');
-      this.activeHandle = null;
-      this.startWidths = null;
+      activeHandle.classList.remove('resizable-panel-handle--active');
+      activeHandle = null;
+      startWidths = null;
       document.body.classList.remove('resizable-panels-dragging');
-      this.saveWidths();
+      saveWidths();
     }
 
-    onHandleKeydown(event, target) {
-      if (!this.mediaQuery.matches) {
+    function onHandleKeydown(event, target) {
+      if (!mediaQuery.matches) {
         return;
       }
 
@@ -176,7 +167,7 @@
       }
 
       event.preventDefault();
-      const nextWidths = { ...this.widths };
+      const nextWidths = { ...widths };
       const direction = event.key === 'ArrowRight' ? 1 : -1;
 
       if (event.key === 'Home') {
@@ -189,91 +180,105 @@
         nextWidths.sidebar += direction * STEP;
       }
 
-      this.widths = this.normalizeWidths(nextWidths);
-      this.applyWidths(this.widths);
-      this.saveWidths();
+      widths = normalizeWidths(nextWidths);
+      applyWidths(widths);
+      saveWidths();
     }
 
-    applyWidths(widths) {
-      const normalized = this.normalizeWidths(widths);
+    function applyWidths(nextWidths) {
+      const normalized = normalizeWidths(nextWidths);
       const mainWidth = 100 - normalized.sidebar - normalized.toc;
 
-      this.row.style.setProperty(
-        '--docs-sidebar-width',
-        `${normalized.sidebar}%`,
-      );
-      this.row.style.setProperty('--docs-toc-width', `${normalized.toc}%`);
-      this.row.style.setProperty('--docs-main-width', `${mainWidth}%`);
-      this.row.style.setProperty(
+      row.style.setProperty('--docs-sidebar-width', `${normalized.sidebar}%`);
+      row.style.setProperty('--docs-toc-width', `${normalized.toc}%`);
+      row.style.setProperty('--docs-main-width', `${mainWidth}%`);
+      row.style.setProperty(
         '--docs-main-without-toc-width',
         `${100 - normalized.sidebar}%`,
       );
-      this.updateHandleValues(normalized);
+      updateHandleValues(normalized);
     }
 
-    updateHandleValues(widths) {
-      if (this.sidebarHandle) {
-        this.sidebarHandle.setAttribute('aria-valuemin', LIMITS.sidebar.min);
-        this.sidebarHandle.setAttribute('aria-valuemax', LIMITS.sidebar.max);
-        this.sidebarHandle.setAttribute(
+    function updateHandleValues(nextWidths) {
+      if (sidebarHandle) {
+        sidebarHandle.setAttribute('aria-valuemin', LIMITS.sidebar.min);
+        sidebarHandle.setAttribute('aria-valuemax', LIMITS.sidebar.max);
+        sidebarHandle.setAttribute(
           'aria-valuenow',
-          Math.round(widths.sidebar),
+          Math.round(nextWidths.sidebar),
         );
       }
 
-      if (this.tocHandle) {
-        this.tocHandle.setAttribute('aria-valuemin', LIMITS.toc.min);
-        this.tocHandle.setAttribute('aria-valuemax', LIMITS.toc.max);
-        this.tocHandle.setAttribute('aria-valuenow', Math.round(widths.toc));
+      if (tocHandle) {
+        tocHandle.setAttribute('aria-valuemin', LIMITS.toc.min);
+        tocHandle.setAttribute('aria-valuemax', LIMITS.toc.max);
+        tocHandle.setAttribute('aria-valuenow', Math.round(nextWidths.toc));
       }
     }
 
-    reset() {
-      this.widths = { ...DEFAULT_WIDTHS };
-      this.applyWidths(this.widths);
+    function reset() {
+      widths = { ...DEFAULT_WIDTHS };
+      applyWidths(widths);
       localStorage.removeItem(STORAGE_KEY);
     }
 
-    getStoredWidths() {
+    function getStoredWidths() {
       try {
         const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-        if (
-          saved &&
-          (saved.sidebar <= 12 || saved.toc <= 12 || saved.main <= 12)
-        ) {
-          return this.normalizeWidths({
+
+        if (isLegacyColumnWidths(saved)) {
+          return normalizeWidths({
             sidebar: saved.sidebar
-              ? (saved.sidebar / 12) * 100
+              ? (saved.sidebar / LEGACY_GRID_COLUMNS) * 100
               : DEFAULT_WIDTHS.sidebar,
-            toc: saved.toc ? (saved.toc / 12) * 100 : DEFAULT_WIDTHS.toc,
+            toc: saved.toc
+              ? (saved.toc / LEGACY_GRID_COLUMNS) * 100
+              : DEFAULT_WIDTHS.toc,
           });
         }
 
-        return this.normalizeWidths(saved || DEFAULT_WIDTHS);
+        return normalizeWidths(saved || DEFAULT_WIDTHS);
       } catch (error) {
         return { ...DEFAULT_WIDTHS };
       }
     }
 
-    saveWidths() {
+    function isLegacyColumnWidths(saved) {
+      if (!saved) {
+        return false;
+      }
+
+      return ['sidebar', 'toc', 'main'].some((key) => {
+        const value = Number(saved[key]);
+        const limit = LIMITS[key];
+
+        if (!Number.isFinite(value) || !limit) {
+          return false;
+        }
+
+        return value < limit.min || (limit.max && value > limit.max);
+      });
+    }
+
+    function saveWidths() {
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(this.widths));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(widths));
       } catch (error) {
         // Ignore storage failures so resizing still works in private modes.
       }
     }
 
-    normalizeWidths(widths) {
+    function normalizeWidths(nextWidths) {
       const next = {
-        sidebar: this.clamp(
-          Number(widths && widths.sidebar),
+        sidebar: clamp(
+          Number(nextWidths && nextWidths.sidebar),
           LIMITS.sidebar.min,
           LIMITS.sidebar.max,
           DEFAULT_WIDTHS.sidebar,
         ),
-        toc: this.toc
-          ? this.clamp(
-              Number(widths && widths.toc),
+        toc: toc
+          ? clamp(
+              Number(nextWidths && nextWidths.toc),
               LIMITS.toc.min,
               LIMITS.toc.max,
               DEFAULT_WIDTHS.toc,
@@ -300,7 +305,7 @@
       };
     }
 
-    clamp(value, min, max, fallback) {
+    function clamp(value, min, max, fallback) {
       if (!Number.isFinite(value)) {
         return fallback;
       }
@@ -313,7 +318,7 @@
     document.querySelectorAll('.row.flex-xl-nowrap').forEach((row) => {
       if (!row.dataset.resizablePanelsInitialized) {
         row.dataset.resizablePanelsInitialized = 'true';
-        new ResizablePanels(row);
+        setupResizablePanels(row);
       }
     });
   }
