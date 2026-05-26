@@ -1,20 +1,13 @@
 <!-- Page scripts -->
-{{ $resizablePanels := resources.Get "js/resizable-panels.js" -}}
-{{ if $resizablePanels }}
-  <script defer src="{{ $resizablePanels.RelPermalink }}"></script>
-{{ end -}}
+{{ $scripts := slice
+  "js/resizable-panels.js"
+  "js/kanvas-architectural-transition.js"
+  "js/kanvas-corner-popup.js"
+  "js/offline-search.js"
+-}}
 
-{{ $kanvasTransition := resources.Get "js/kanvas-architectural-transition.js" -}}
-{{ if $kanvasTransition }}
-  <script defer src="{{ $kanvasTransition.RelPermalink }}"></script>
-{{ end -}}
-
-{{ $kanvasPopup := resources.Get "js/kanvas-corner-popup.js" -}}
-{{ if $kanvasPopup }}
-  <script defer src="{{ $kanvasPopup.RelPermalink }}"></script>
-{{ end -}}
-
-{{ $offlineSearch := resources.Get "js/offline-search.js" -}}
-{{ if $offlineSearch }}
-  <script defer src="{{ $offlineSearch.RelPermalink }}"></script>
+{{ range $scripts -}}
+  {{ with resources.Get . -}}
+    <script defer src="{{ .RelPermalink }}"></script>
+  {{ end -}}
 {{ end -}}
