@@ -372,5 +372,7 @@ function handleVisibilityChange() {
   checkUserAuth();
 
   document.addEventListener('visibilitychange', handleVisibilityChange);
+  window.addEventListener('focus', handleVisibilityChange);
+  window.addEventListener('pageshow', handleVisibilityChange);
   </script>
 </header>
