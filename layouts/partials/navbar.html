@@ -276,6 +276,7 @@
   
   const cloudAppUrl = "{{ $cloudAppUrl }}";
   let isUserAuthenticated = false;
+  let isCheckingAuth = false;
   let expiredToken = "";
 
   function removeCookie(cookieName) {
@@ -294,6 +295,11 @@
   }
 
   const checkUserAuth = async () => {
+    if (isCheckingAuth) {
+      return;
+    }
+
+    isCheckingAuth = true;
     try {
      const token = getCookieValue("provider_token");
       if (!token || token === expiredToken) { // cookie doesn't exist or has expired (due to user logout)
@@ -324,6 +330,8 @@
   } catch (error) {
     // console.error("could not set user details.", error);
     showSignInButton();
+  } finally {
+    isCheckingAuth = false;
   }
 };
   function getAvatarUrl(response) {
