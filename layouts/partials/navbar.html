@@ -294,6 +294,21 @@
     return null;
   }
 
+  function getAccessToken() {
+    const rawToken = getCookieValue("provider_token");
+
+    if (!rawToken) {
+      return null;
+    }
+
+    try {
+      const decodedToken = JSON.parse(atob(decodeURIComponent(rawToken)));
+      return decodedToken?.access_token || null;
+    } catch (error) {
+      return null;
+    }
+  }
+
   const checkUserAuth = async () => {
     if (isCheckingAuth) {
       return;
@@ -301,19 +316,23 @@
 
     isCheckingAuth = true;
     try {
-     const token = getCookieValue("provider_token");
+      const token = getAccessToken();
+
       if (!token || token === expiredToken) { // cookie doesn't exist or has expired (due to user logout)
         if (isUserAuthenticated) {
           showSignInButton();
           isUserAuthenticated = false;
         }
-      throw new Error("missing or expired cookie");
-    }
+        throw new Error("missing or expired cookie");
+      }
+
       const re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
         },
+        credentials: 'include',
+        cache: 'no-store',
       });
 
       if (re.status === 401) { // cookie has expired
