@@ -295,17 +295,16 @@
   }
 
   function getAccessToken() {
-    const rawToken = getCookieValue("provider_token");
-
-    if (!rawToken) {
+    const tokenCookie = getCookieValue("provider_token");
+    if (!tokenCookie) {
       return null;
     }
 
     try {
-      const decodedToken = JSON.parse(atob(decodeURIComponent(rawToken)));
-      return decodedToken?.access_token || null;
+      const parsedToken = JSON.parse(atob(tokenCookie));
+      return parsedToken?.access_token || tokenCookie;
     } catch (error) {
-      return null;
+      return tokenCookie;
     }
   }
 
@@ -316,27 +315,30 @@
 
     isCheckingAuth = true;
     try {
-      const token = getAccessToken();
+      const accessToken = getAccessToken();
 
-      if (!token || token === expiredToken) { // cookie doesn't exist or has expired (due to user logout)
-        if (isUserAuthenticated) {
-          showSignInButton();
-          isUserAuthenticated = false;
-        }
-        throw new Error("missing or expired cookie");
+      const requestOptions = {
+        method: 'GET',
+        credentials: 'include',
+      };
+
+      if (accessToken && accessToken !== expiredToken) {
+        requestOptions.headers = {
+          'Authorization': `Bearer ${accessToken}`,
+        };
       }
 
-      const re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-        credentials: 'include',
-        cache: 'no-store',
-      });
+      let re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, requestOptions);
 
-      if (re.status === 401) { // cookie has expired
-        expiredToken = token;
+      if (re.status === 401 && accessToken && accessToken !== expiredToken) {
+        expiredToken = accessToken;
+        re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, {
+          method: 'GET',
+          credentials: 'include',
+        });
+      }
+
+      if (re.status === 401) {
         throw new Error("unauthorized");
       }
       if (re.status !== 200) {
@@ -347,7 +349,6 @@
       updateUI(response);
 
   } catch (error) {
-    // console.error("could not set user details.", error);
     showSignInButton();
   } finally {
     isCheckingAuth = false;
@@ -360,7 +361,7 @@
   }
 
   function getUserProfileUrl(response) {
-    const userId = response?.id;
+    const userId = response?.userId || response?.id;
     if (userId) {
       return `${cloudAppUrl}/user/${encodeURIComponent(userId)}`;
     }
