@@ -23,30 +23,30 @@ This tutorial assumes that you have created a design or have an existing one. If
    
    ![Export Design](/kanvas/tutorials/images/embedding-design-in-wordpress/quickaction-exportdesign.png)
 
-3. This will show the `js` file to download and the HTML code snipped to copy.
+3. This will show the `js` file to download and the HTML code snippet to copy.
    
    ![Embed Design](/kanvas/tutorials/images/embedding-design-in-wordpress/embeddesign-HTML.png)
 
-4. Now, create a `js` folder in the path of your current wordpress theme
+4. Now, create a `js` folder in the path of your current WordPress theme
 
 5. Next, copy the downloaded `js` file into this folder.
    
    ![Copy JS](/kanvas/tutorials/images/embedding-design-in-wordpress/copy-js.png)
 
-6. To the following script, replace `design_file_name.js` with the name of the `js` file which you just downloaded. Once this is done,  go to the `functions.php` file in your current Wordpress theme and copy script.
+6. To the following script, replace `design.js` with the name of the `js` file which you just downloaded. Once this is done,  go to the `functions.php` file in your current WordPress theme and copy the script.
 
-```
-function kanvas_design_script() {
-        $script_uri = get_template_directory_uri() . design_file_name.js';
-        wp_enqueue_script_module(
-                        'kanvas-design', 
-                        $script_uri, 
-                        array(), 
-                        '1.1.0', 
-            );
-}
-add_action('wp_enqueue_scripts', 'kanvas_design_script');
-```
+   ```
+   function kanvas_design_script() {
+         $script_uri = get_template_directory_uri() . '/js/design.js';
+         wp_enqueue_script_module(
+                           'kanvas-design', 
+                           $script_uri, 
+                           array(), 
+                           '1.1.0', 
+               );
+   }
+   add_action('wp_enqueue_scripts', 'kanvas_design_script');
+   ```
 
    ![Copy Script](/kanvas/tutorials/images/embedding-design-in-wordpress/copy-script.png)
 
@@ -54,7 +54,7 @@ add_action('wp_enqueue_scripts', 'kanvas_design_script');
 
    ![Copy URL](/kanvas/tutorials/images/embedding-design-in-wordpress/add-custom-html.png)
 
-8. Paste the **Embed Code** copied from **Kanvas**. 
+8. Paste the div element from the Embed Code copied from Kanvas. 
 
    ![Copy URL](/kanvas/tutorials/images/embedding-design-in-wordpress/add-embedded-html.png)
 
