@@ -263,6 +263,7 @@ a:not([href]):not([class]):hover {
 
 // Left sidebar
 .td-sidebar-nav {
+  max-height: none;
   overflow: hidden;
   padding: 0px;
 

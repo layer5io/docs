@@ -1,0 +1,51 @@
+{{ $limit := 6 }}
+
+{{ $relatedReadingConfig := .Site.Params.relatedReading | default dict }}
+{{ $pageTypes := $relatedReadingConfig.pageTypes | default (slice) }}
+{{ $sections := $relatedReadingConfig.sections | default (slice) }}
+
+{{ $readingPages := .Site.RegularPages.Related . }}
+{{ if gt (len $pageTypes) 0 }}
+  {{ $readingPages = where $readingPages "Type" "in" $pageTypes }}
+{{ end }}
+{{ if gt (len $sections) 0 }}
+  {{ $readingPages = where $readingPages "Section" "in" $sections }}
+{{ end }}
+{{ $readingPages = where $readingPages ".Params.videoId" "==" nil }}
+{{ $relatedPages := first $limit $readingPages }}
+
+{{ if eq (len $relatedPages) 0 }}
+  {{ $taxonomyPages := slice }}
+  {{ range (.Params.categories | default (slice)) }}
+    {{ with index site.Taxonomies.categories . }}
+      {{ $taxonomyPages = $taxonomyPages | append .Pages }}
+    {{ end }}
+  {{ end }}
+  {{ range (.Params.tags | default (slice)) }}
+    {{ with index site.Taxonomies.tags . }}
+      {{ $taxonomyPages = $taxonomyPages | append .Pages }}
+    {{ end }}
+  {{ end }}
+
+  {{ $readingPages = uniq $taxonomyPages }}
+  {{ $readingPages = where $readingPages "RelPermalink" "!=" .RelPermalink }}
+  {{ if gt (len $pageTypes) 0 }}
+    {{ $readingPages = where $readingPages "Type" "in" $pageTypes }}
+  {{ end }}
+  {{ if gt (len $sections) 0 }}
+    {{ $readingPages = where $readingPages "Section" "in" $sections }}
+  {{ end }}
+  {{ $readingPages = where $readingPages ".Params.videoId" "==" nil }}
+  {{ $relatedPages = first $limit $readingPages }}
+{{ end }}
+
+{{ if gt (len $relatedPages) 0 }}
+<h2>Related Reading</h2>
+<ul>
+  {{ range $relatedPages }}
+    <li style="line-height:1.75rem;padding:0.3rem 0.4rem;">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

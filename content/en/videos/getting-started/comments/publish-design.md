@@ -10,7 +10,7 @@ loop: true #optional
 categories: [Designer]
 formats: [video]
 tags: [catalog, designs, publishing]
-duraiton: 0:39
+duration: "0:39"
 ---
 
 {{< youtube id=UCKS4eSB7AY class="yt-embed-container" >}}
