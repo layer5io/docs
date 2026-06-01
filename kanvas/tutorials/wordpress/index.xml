@@ -4,17 +4,20 @@
 &lt;/h3&gt;
 &lt;p&gt;In this tutorial, we will learn how to embed a &lt;strong&gt;Meshery Design&lt;/strong&gt; in a WordPress post using the &lt;strong&gt;Embed&lt;/strong&gt; option in &lt;strong&gt;Kanvas&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;This tutorial assumes that you have created a design or have an existing one. If not, you can use one of the numerous public designs available in &lt;strong&gt;Kanvas&lt;/strong&gt; for this tutorial.&lt;/p&gt;
+
+&lt;h3 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;WordPress&lt;/strong&gt;: A running WordPress instance or deployment, serving as the sample application for this tutorial.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Meshery Catalog Extension&lt;/strong&gt;: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="steps" class="heading-link"&gt;
+ Steps
+ &lt;a href="#steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Expand the &lt;strong&gt;Designs&lt;/strong&gt; menu on the left.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img id="[339 394 275 332 106 353]" src="../../../kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png" onclick="openModal(this.id)" alt="Expand Designs" 
- class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Expand the &lt;strong&gt;Actions&lt;/strong&gt; menu on the left and select export.&lt;/p&gt;</description></item></channel></rss>
