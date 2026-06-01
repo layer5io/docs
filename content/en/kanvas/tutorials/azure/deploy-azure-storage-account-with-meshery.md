@@ -28,6 +28,7 @@ Before you begin, ensure you have the following:
    Installed and authenticated (`az login`) in your local shell.
 5. **cert-manager**
    Installed in your Kubernetes cluster (required by Azure Service Operator).
+6. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
 
 
 ### Table of Contents
