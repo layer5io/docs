@@ -182,6 +182,18 @@ $ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
 <!-- FUTURE: SUPPORT FOR HTTPS 
 Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It can take up to 24 hours before this option is available. -->
 
+### Social sign-in on a custom domain
+
+Whether social sign-in (Google and GitHub) works on a custom domain depends on how that domain relates to the **base domain** of your Layer5 Cloud deployment — its registrable domain, technically the [eTLD+1](https://developer.mozilla.org/en-US/docs/Glossary/eTLD) (for example `layer5.io` or `example.com`).
+
+- **Same base domain.** If the custom domain is a subdomain of your deployment's base domain — for example a deployment at `cloud.example.com` with a `meshery.example.com` custom domain (or, on the hosted service, a Layer5-provisioned partner subdomain such as `partner.layer5.io`) — the sign-in session is shared across that base domain, so **Google and GitHub sign-in work out of the box** with the deployment's default identity providers. No per-organization setup is required.
+
+- **Different base domain (fully-custom).** If the custom domain sits on a different base domain — for example you CNAME `meshery.yourcompany.com` to the hosted `cloud.layer5.io`, where `yourcompany.com` and `layer5.io` are different base domains — the secure social sign-in handshake cannot hand off between the two unrelated domains using the shared default identity providers. **Social sign-in on a fully-custom domain therefore requires your organization to bring its own identity provider credentials (BYOC)**: your own Google OAuth client and GitHub OAuth App, registered against your domain.
+
+{{< alert title="Social buttons are hidden until your own identity providers are configured" color="info" >}}
+On a fully-custom domain **without** its own identity providers, the Google and GitHub buttons are **hidden** on the login and sign-up screens — they would otherwise lead to a sign-in that cannot complete. **Email-and-password sign-in remains fully available**, and the social buttons reappear automatically once your organization configures its own identity providers. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/) for what BYOC is and when it is required.
+{{< /alert >}}
+
 ## Frequently asked questions about white labeling
 
 <details>
