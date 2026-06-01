@@ -15,11 +15,18 @@ In this tutorial, we will learn how to embed a **Meshery Design** in a WordPress
 
 This tutorial assumes that you have created a design or have an existing one. If not, you can use one of the numerous public designs available in **Kanvas** for this tutorial.
 
+### Prerequisites
+
+1. **WordPress**: A running WordPress instance or deployment, serving as the sample application for this tutorial.
+1. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
+
+### Steps
+
 1. Expand the **Actions** menu on the left and select export.
    
    ![Expand Designs](/kanvas/tutorials/images/embedding-design-in-wordpress/expand-designs-kanvas.png)
 
-2. Click the download icon next to **Embed Design**.
+2. Click the download icon next to **Embed Design**
    
    ![Export Design](/kanvas/tutorials/images/embedding-design-in-wordpress/quickaction-exportdesign.png)
 
