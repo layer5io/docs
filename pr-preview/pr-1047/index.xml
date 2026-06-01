@@ -786,7 +786,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[427 467 279 20 160 266]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[15 353 324 61 207 246]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -802,7 +802,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[494 345 214 175 223 55]" src="./cloud/concepts/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[460 393 186 354 281 49]" src="./cloud/concepts/catalog/images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -916,7 +916,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[377 236 456 20 486 329]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[458 465 294 64 349 131]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -957,7 +957,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[323 446 62 96 38 437]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[324 310 500 207 288 413]" src="./kanvas/getting-started/images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -1070,7 +1070,21 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 &lt;p&gt;Navigate to the &lt;strong&gt;Actions&lt;/strong&gt; button at the top of the Design canvas.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
+&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the
+resources responsible for exposing applications inside and outside the cluster.
+Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform
+hands-on labs to gain practical experience with Kubernetes Services, without
+writing any YAML.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider
+starting with the
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
+tutorial first or
+&lt;a href="https://docs.meshery.io/guides/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -1079,7 +1093,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[253 127 5 173 462 347]" src="./cloud/concepts/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[381 77 419 279 257 216]" src="./cloud/concepts/catalog/images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1151,7 +1165,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[41 315 370 344 1 437]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[411 371 384 426 5 122]" src="./kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1162,7 +1176,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[216 119 456 79 196 65]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[367 291 386 149 21 305]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1201,7 +1215,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[136 61 111 441 482 76]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[401 306 462 480 69 288]" src="./kanvas/getting-started/images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1641,7 +1655,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[286 227 287 198 80 277]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[487 106 27 198 301 1]" src="./default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1657,7 +1671,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[423 328 262 201 215 385]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[341 190 333 71 366 162]" src="./click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1673,7 +1687,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[353 22 203 232 297 166]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[426 158 167 142 89 85]" src="./click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1689,7 +1703,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[246 339 341 355 171 74]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[46 465 467 312 141 397]" src="./double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1705,7 +1719,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[119 414 411 382 288 469]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[113 339 119 457 232 294]" src="./text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1721,7 +1735,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[77 499 22 79 176 175]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[395 142 134 478 269 232]" src="./right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1737,7 +1751,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[191 487 371 437 66 68]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[192 82 50 278 423 179]" src="./select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1753,7 +1767,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[313 356 188 225 171 214]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[314 337 300 294 95 61]" src="./scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1769,7 +1783,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[368 254 11 90 68 219]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[96 255 20 166 147 315]" src="./zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1785,7 +1799,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[276 484 298 473 31 42]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[194 471 283 252 298 236]" src="./scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1824,7 +1838,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[85 92 294 136 177 61]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[61 256 463 209 396 185]" src="./overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1941,7 +1955,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[56 242 488 284 84 131]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[487 350 223 396 324 130]" src="./kanvas/getting-started/images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1960,7 +1974,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[156 319 333 322 240 75]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[216 276 26 154 164 202]" src="./kanvas/getting-started/images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -2053,7 +2067,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[274 294 53 77 486 182]" src="./cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[212 471 124 151 237 353]" src="./cloud/concepts/identity-and-security/users/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2074,7 +2088,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[370 368 480 165 268 340]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[95 273 289 142 426 472]" src="./kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2109,7 +2123,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[359 101 223 483 102 96]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[142 26 327 363 328 314]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2121,7 +2135,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[79 178 61 227 328 277]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[110 269 24 81 266 70]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2147,7 +2161,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[411 275 200 306 281 291]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[294 308 166 28 453 135]" src="./kanvas/getting-started/images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;div class="pageinfo"&gt;
 &lt;p&gt;Page under construction.&lt;/p&gt;
@@ -2628,7 +2642,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[264 229 149 154 424 477]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[325 164 6 371 444 181]" src="./kanvas/operator/images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2661,7 +2675,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[166 123 354 367 375 82]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[163 444 92 51 363 68]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2749,7 +2763,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[318 15 20 55 240 120]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[252 449 402 117 193 213]" src="./export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -2837,9 +2851,19 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[272 333 90 268 188 397]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[391 448 439 383 445 107]" src="pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
+&lt;a href="./kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
+identify connections, validate them, and keep related configuration in sync.
+This page explains how you can choose which engine performs that evaluation, how
+to read the relationship indicator, and how to diagnose results that look wrong.&lt;/p&gt;
+
+&lt;h2 id="how-relationships-are-evaluated" class="heading-link"&gt;
+ How Relationships Are Evaluated
+ &lt;a href="#how-relationships-are-evaluated" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kanvas can run relationship evaluation using one of two interchangeable engines:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
 &lt;img src="./cloud/concepts/identity-and-security/users/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
@@ -2860,7 +2884,718 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.109</title><link>/cloud/reference/releases/v1.0.109/</link><pubDate>Sat, 30 May 2026 19:34:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.109/</guid><description>&lt;ul&gt;
+&lt;li&gt;Migrate Academy to v1beta3 phase 1 and 2 @CodexRaunak (#5423)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak&lt;/p&gt;</description></item><item><title>v1.0.108</title><link>/cloud/reference/releases/v1.0.108/</link><pubDate>Fri, 29 May 2026 21:40:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.108/</guid><description>&lt;ul&gt;
+&lt;li&gt;docs(academy): plan for v1beta3 (camelCase) consumer migration @hortison (#5379)&lt;/li&gt;
+&lt;li&gt;docs(oidc): design plan for eTLD-agnostic server-side state store @hortison (#5411)&lt;/li&gt;
+&lt;li&gt;docs(auth): document GitHub OAuth App host-root callback requirement @hortison (#5414)&lt;/li&gt;
+&lt;li&gt;Align /api/system/version with canonical schema @PragalvaXFREZ (#5325)&lt;/li&gt;
+&lt;li&gt;Phase 0a: Add academy canonical casing compatibility fallbacks @CodexRaunak (#5409)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Exoscale v0.6.37 content update @l5io (#5418)&lt;/li&gt;
+&lt;li&gt;Layer5 v0.8.20 content update @l5io (#5417)&lt;/li&gt;
+&lt;li&gt;DigitalOcean v0.1.17 content update @l5io (#5416)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.27 content update @l5io (#5415)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @PragalvaXFREZ, @hortison, @l5io, @leecalcote and @marblom007&lt;/p&gt;</description></item><item><title>v1.0.34-1</title><link>/kanvas/reference/releases/v1.0.34-1/</link><pubDate>Fri, 29 May 2026 19:33:27 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.34-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.107</title><link>/cloud/reference/releases/v1.0.107/</link><pubDate>Thu, 28 May 2026 19:54:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.107/</guid><description>&lt;ul&gt;
+&lt;li&gt;docs(auth): consolidate identity docs; retire \W2\ workstream codenames @hortison (#5413)&lt;/li&gt;
+&lt;li&gt;perf(authz): cache custom-domain org resolution; skip resolver for probes @leecalcote (#5412)&lt;/li&gt;
+&lt;li&gt;Fix Broken Academy tests and module prerequisite completion @CodexRaunak (#5380)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @hortison, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.106</title><link>/cloud/reference/releases/v1.0.106/</link><pubDate>Thu, 28 May 2026 14:35:42 +0000</pubDate><guid>/cloud/reference/releases/v1.0.106/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(authz): correct cookie-value casting and cache Provider Admin per request @leecalcote (#5407)&lt;/li&gt;
+&lt;li&gt;fix(ui/profile): send country/region as JSONB objects, restore Autocomplete null guards @leecalcote (#5405)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.33-1</title><link>/kanvas/reference/releases/v1.0.33-1/</link><pubDate>Thu, 28 May 2026 06:48:13 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.33-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.105</title><link>/cloud/reference/releases/v1.0.105/</link><pubDate>Thu, 28 May 2026 05:55:25 +0000</pubDate><guid>/cloud/reference/releases/v1.0.105/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): thread tenant host through Hydra state for post-callback bridge @leecalcote (#5404)&lt;/li&gt;
+&lt;li&gt;chore(oidc): rename Layer5- cookies/headers to X- (product-neutral) @hamza-mohd (#5403)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.104</title><link>/cloud/reference/releases/v1.0.104/</link><pubDate>Thu, 28 May 2026 04:51:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.104/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): stamp ProviderOrgID in state for anchored fallback (1723 regression) @hamza-mohd (#5402)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.103</title><link>/cloud/reference/releases/v1.0.103/</link><pubDate>Thu, 28 May 2026 01:26:02 +0000</pubDate><guid>/cloud/reference/releases/v1.0.103/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(oidc): retire env-var IdP fallback; Provider Org uses DB-backed Connections + Credentials @hamza-mohd (#5401)&lt;/li&gt;
+&lt;li&gt;fix(ui): gate W2 cloud-native OIDC on login_challenge presence @hortison (#5391)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison, @leecalcote and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.102</title><link>/cloud/reference/releases/v1.0.102/</link><pubDate>Wed, 27 May 2026 21:34:39 +0000</pubDate><guid>/cloud/reference/releases/v1.0.102/</guid><description>&lt;ul&gt;
+&lt;li&gt;CORS: allow custom domain for tcs org @alexquincy (#5399)&lt;/li&gt;
+&lt;li&gt;Install: custom domain for tcs org @alexquincy (#5398)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @leecalcote and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.101</title><link>/cloud/reference/releases/v1.0.101/</link><pubDate>Wed, 27 May 2026 16:57:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.101/</guid><description>&lt;h2 id="hotfix---custom-domain-orgs-with-anchored-fallback-credentials-hit-1722-at-callback" class="heading-link"&gt;
+ Hotfix - custom-domain orgs with anchored-fallback credentials hit 1722 at callback
+ &lt;a href="#hotfix---custom-domain-orgs-with-anchored-fallback-credentials-hit-1722-at-callback" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Custom-domain orgs without their own BYOC IdP credentials (e.g. &lt;code&gt;exoscale.layer5.io&lt;/code&gt;) ran into &lt;code&gt;meshery-cloud-1722 \state validation failed\&lt;/code&gt; immediately after GitHub redirected back to &lt;code&gt;/oidc/callback/github&lt;/code&gt;. The W2 state binding stamped the request host (&lt;code&gt;exoscale.layer5.io&lt;/code&gt;), but the callback legitimately lands at the canonical host (&lt;code&gt;cloud.layer5.io&lt;/code&gt;) because the fallback chain anchors &lt;code&gt;redirect_uri&lt;/code&gt; there. The validator&amp;rsquo;s strict host-binding equality refused the cross-host bounce.&lt;/p&gt;</description></item><item><title>v1.0.100</title><link>/cloud/reference/releases/v1.0.100/</link><pubDate>Wed, 27 May 2026 13:55:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.100/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): revert canonical-host W2 routing - keep Kratos for canonical @hamza-mohd (#5394)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @leecalcote and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.99</title><link>/cloud/reference/releases/v1.0.99/</link><pubDate>Wed, 27 May 2026 13:21:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.99/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): hairpin-free Hydra bounce via cluster-internal URL @hamza-mohd (#5393)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @leecalcote and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.98</title><link>/cloud/reference/releases/v1.0.98/</link><pubDate>Wed, 27 May 2026 13:01:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.98/</guid><description>&lt;h2 id="hotfix---production-sign-in-restored-on-cloudlayer5io-v1097-regression" class="heading-link"&gt;
+ Hotfix - production sign-in restored on cloud.layer5.io (v1.0.97 regression)
+ &lt;a href="#hotfix---production-sign-in-restored-on-cloudlayer5io-v1097-regression" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Fixes a regression introduced in v1.0.97 where sign-in via GitHub / Google on &lt;code&gt;cloud.layer5.io&lt;/code&gt; failed with &lt;code&gt;meshery-cloud-1729&lt;/code&gt; \direct OIDC sign-in without a Hydra login_challenge is not yet supported\ (Cloudflare shows this as 502 from some POPs). The legacy Kratos selfservice OIDC flow initiated the Hydra login challenge internally; W2&amp;rsquo;s &lt;code&gt;/oidc/start&lt;/code&gt; had no equivalent, so the React &lt;code&gt;/login&lt;/code&gt; page&amp;rsquo;s \Sign in with&amp;hellip;\ button forwarded to W2 without a &lt;code&gt;login_challenge&lt;/code&gt; and OIDCCallback fell into its fail-closed branch.&lt;/p&gt;</description></item><item><title>v1.0.97</title><link>/cloud/reference/releases/v1.0.97/</link><pubDate>Wed, 27 May 2026 07:13:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.97/</guid><description>&lt;h2 id="hotfix---production-sign-in-restored-on-cloudlayer5io" class="heading-link"&gt;
+ Hotfix - production sign-in restored on cloud.layer5.io
+ &lt;a href="#hotfix---production-sign-in-restored-on-cloudlayer5io" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Fixes a regression where clicking &lt;strong&gt;Sign in with GitHub&lt;/strong&gt; / &lt;strong&gt;Sign in with Google&lt;/strong&gt; on &lt;code&gt;cloud.layer5.io/login&lt;/code&gt; redirected users to the upstream OAuth provider with a &lt;code&gt;redirect_uri&lt;/code&gt; of &lt;code&gt;https://cloud.layer5.io/kratos/self-service/methods/oidc/callback/{provider}&lt;/code&gt;, which GitHub / Google rejected as edirect_uri is not associated with this application\ after the production OAuth App callback URL was updated to the W2 native path &lt;code&gt;/oidc/callback/{provider}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id="what-changed" class="heading-link"&gt;
+ What changed
+ &lt;a href="#what-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;OrgAuthData&lt;/code&gt; exposes a new &lt;code&gt;UseCloudNativeOidc&lt;/code&gt; boolean that is true for both registered custom-domain hosts AND for the canonical Provider Org host (&lt;code&gt;SERVER_BASE_URL&lt;/code&gt;&amp;rsquo;s host). The React login / registration pages now gate the W2 cloud-native redirect on this field, so canonical-host sign-in no longer falls through to the legacy Kratos OIDC flow.&lt;/li&gt;
+&lt;li&gt;A new &lt;code&gt;resolveOIDCOrgID(req)&lt;/code&gt; helper in the server handlers prefers the middleware-resolved org and falls back to &lt;code&gt;ProviderOrgID&lt;/code&gt; when the request lands on the canonical host. Both &lt;code&gt;OIDCStart&lt;/code&gt; and &lt;code&gt;OIDCCallback&lt;/code&gt; consume the helper so the state binding&amp;rsquo;s &lt;code&gt;orgId&lt;/code&gt; is symmetric across the round trip on the canonical host.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="rollout-notes" class="heading-link"&gt;
+ Rollout notes
+ &lt;a href="#rollout-notes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The Layer5 production GitHub OAuth App&amp;rsquo;s Authorization callback URL is already &lt;code&gt;https://cloud.layer5.io/oidc/callback/github&lt;/code&gt; and this deploy restores canonical-host sign-in without further OAuth App changes.&lt;/p&gt;</description></item><item><title>v1.0.96</title><link>/cloud/reference/releases/v1.0.96/</link><pubDate>Wed, 27 May 2026 06:13:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.96/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): anchor redirect_uri at Provider Org host on fallback @hortison (#5389)&lt;/li&gt;
+&lt;li&gt;[fix]: hide anonymous users from email sends and the share-modal picker @leecalcote (#5388)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.95</title><link>/cloud/reference/releases/v1.0.95/</link><pubDate>Tue, 26 May 2026 14:08:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.95/</guid><description>&lt;ul&gt;
+&lt;li&gt;[fix]: restore catalog card click navigation @hortison (#5384)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.94</title><link>/cloud/reference/releases/v1.0.94/</link><pubDate>Tue, 26 May 2026 06:37:03 +0000</pubDate><guid>/cloud/reference/releases/v1.0.94/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): fall back to AuthConfig env vars when Provider Org IdP seed missing @hortison (#5385)&lt;/li&gt;
+&lt;li&gt;[feat]: update usage of InfoOutlinedIcon from local asset to sistent @banana-three-join (#5383)&lt;/li&gt;
+&lt;li&gt;add evaluate relationships key @aabidsofi19 (#5381)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @banana-three-join, @hortison, @l5io, @leecalcote, @meshery-ci and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.29-1</title><link>/kanvas/reference/releases/v1.0.29-1/</link><pubDate>Mon, 25 May 2026 20:23:06 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.29-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.28-1</title><link>/kanvas/reference/releases/v1.0.28-1/</link><pubDate>Fri, 22 May 2026 23:27:17 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.28-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.93</title><link>/cloud/reference/releases/v1.0.93/</link><pubDate>Fri, 22 May 2026 22:55:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.93/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): rename IdP teardown CTA and fix Edit Org modal button contrast @hortison (#5378)&lt;/li&gt;
+&lt;li&gt;Revert #5372 (Provider Org IdP seed subcommand) @hortison (#5377)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.92</title><link>/cloud/reference/releases/v1.0.92/</link><pubDate>Fri, 22 May 2026 21:38:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.92/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): carry W2 state payload in oidc_pending cookie, not the URL @hortison (#5373)&lt;/li&gt;
+&lt;li&gt;fix(layout): remove dynamic AppShell wrapper that duplicated the layout @hortison (#5375)&lt;/li&gt;
+&lt;li&gt;fix(auth): preserve query string on org-switch bridge redirect @hortison (#5374)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.91</title><link>/cloud/reference/releases/v1.0.91/</link><pubDate>Fri, 22 May 2026 20:36:56 +0000</pubDate><guid>/cloud/reference/releases/v1.0.91/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): operator-invoked Provider Org IdP seed (subcommand + resolver) @hortison (#5372)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.90</title><link>/cloud/reference/releases/v1.0.90/</link><pubDate>Fri, 22 May 2026 18:18:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.90/</guid><description>&lt;ul&gt;
+&lt;li&gt;perf(auth): collapse login bundle and Kratos init double round-trip @hortison (#5369)&lt;/li&gt;
+&lt;li&gt;perf(login): gzip + immutable cache for /_next, lazy-load Monaco and PDF stack @hortison (#5368)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.89</title><link>/cloud/reference/releases/v1.0.89/</link><pubDate>Fri, 22 May 2026 17:34:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.89/</guid><description>&lt;ul&gt;
+&lt;li&gt;Disable push triggers in release workflow @leecalcote (#5370)&lt;/li&gt;
+&lt;li&gt;config(oidc): wire CLOUD_OIDC_STATE_HMAC_KEY through every deploy path @hortison (#5367)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.88</title><link>/cloud/reference/releases/v1.0.88/</link><pubDate>Fri, 22 May 2026 13:06:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.88/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): route OIDC sign-in through W2 handler on custom domains @hortison (#5366)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.87</title><link>/cloud/reference/releases/v1.0.87/</link><pubDate>Fri, 22 May 2026 04:53:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.87/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): bridge session on org switch to off-eTLD custom domains @hortison (#5365)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.26-2</title><link>/kanvas/reference/releases/v1.0.26-2/</link><pubDate>Fri, 22 May 2026 03:18:05 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.26-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.26-1</title><link>/kanvas/reference/releases/v1.0.26-1/</link><pubDate>Fri, 22 May 2026 02:07:52 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.26-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.86</title><link>/cloud/reference/releases/v1.0.86/</link><pubDate>Fri, 22 May 2026 00:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.86/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): keep custom-domain visitors on host through HandleHome login bounce @hortison (#5364)&lt;/li&gt;
+&lt;li&gt;fix(ui): polish Edit Org modal IdP tab + restore org table columns @hortison (#5362)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.85</title><link>/cloud/reference/releases/v1.0.85/</link><pubDate>Thu, 21 May 2026 22:47:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.85/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: correct malformed CLOUD_CREDENTIAL_ENCRYPTION_KEY + add fail-loud guards @hortison (#5363)&lt;/li&gt;
+&lt;li&gt;fix(ui): SSR-safe useWindowDimensions + guarded catalog catch-all unslugify @hortison (#5360)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.84</title><link>/cloud/reference/releases/v1.0.84/</link><pubDate>Thu, 21 May 2026 22:04:25 +0000</pubDate><guid>/cloud/reference/releases/v1.0.84/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.14 @l5io (#5361)&lt;/li&gt;
+&lt;li&gt;[Deploy]: AES Encryption Key set&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.83</title><link>/cloud/reference/releases/v1.0.83/</link><pubDate>Thu, 21 May 2026 20:00:48 +0000</pubDate><guid>/cloud/reference/releases/v1.0.83/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): unblock static-export build (window is not defined + unslugify split) @leecalcote (#5359)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.82</title><link>/cloud/reference/releases/v1.0.82/</link><pubDate>Thu, 21 May 2026 18:52:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.82/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(auth): skip auth-required API calls for anonymous users @jamieplu (#5055)&lt;/li&gt;
+&lt;li&gt;feat(capabilities): resolve providerName per-org from request context @hortison (#5355)&lt;/li&gt;
+&lt;li&gt;Speed up organization switching @hortison (#5352)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.81</title><link>/cloud/reference/releases/v1.0.81/</link><pubDate>Thu, 21 May 2026 17:11:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.81/</guid><description>&lt;ul&gt;
+&lt;li&gt;ci: improve GH_ACCESS_TOKEN dispatch error handling in pull-request-build.yml @hortison (#5354)&lt;/li&gt;
+&lt;li&gt;[UI] add Identity Providers tab to Edit Organization modal @hortison (#5349)&lt;/li&gt;
+&lt;li&gt;[UI] address IdP tab review feedback (PR #5349) @leecalcote (#5353)&lt;/li&gt;
+&lt;li&gt;fix: resolve all CI test failures (server, UI, e2e) @hortison (#5347)&lt;/li&gt;
+&lt;li&gt;fix(router): stub _devPagesManifest.json for static-export builds @hortison (#5351)&lt;/li&gt;
+&lt;li&gt;[UI] Fix overview card brand color to use Keppel base @hortison (#5350)&lt;/li&gt;
+&lt;li&gt;[UI] Preserve authenticated navbar on /user pages @hortison (#5346)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@claude, @hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.80</title><link>/cloud/reference/releases/v1.0.80/</link><pubDate>Thu, 21 May 2026 01:47:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.80/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui/academy): guard window access in AcademyProvider for SSR @hortison (#5345)&lt;/li&gt;
+&lt;li&gt;claude/fix test typescript errors @hortison (#5344)&lt;/li&gt;
+&lt;li&gt;claude/fix test typescript errors @hortison (#5343)&lt;/li&gt;
+&lt;li&gt;fix: pass empty object to useGetCatalogContentClassesQuery in catalog requests @hortison (#5341)&lt;/li&gt;
+&lt;li&gt;fix(security): close IDOR on /api/integrations/credentials @hortison (#5329)&lt;/li&gt;
+&lt;li&gt;fix: remove blue focus outline from MUI v9 modal dialogs @hortison (#5339)&lt;/li&gt;
+&lt;li&gt;fix(ui): bump @sistent/sistent to v0.21.13 (hydration fix) + wire Identity Providers nav entry @hortison (#5338)&lt;/li&gt;
+&lt;li&gt;[UI] Fix TypeScript build errors @hortison (#5340)&lt;/li&gt;
+&lt;li&gt;fix(ui): move Identity Providers admin page out of [orgId] dynamic segment — fixes 404 in production @hortison (#5335)&lt;/li&gt;
+&lt;li&gt;fix(ui): repair the six failing Jest suites surfaced in CI @hortison (#5323)&lt;/li&gt;
+&lt;li&gt;fix(ui/nav-menu): restore sistent NavigationNavbar (icon spacing + showOnWeb) @hortison (#5327)&lt;/li&gt;
+&lt;li&gt;fix(seed): correct &amp;rsquo;enterpice&amp;rsquo; typo to &amp;rsquo;enterprise&amp;rsquo; in test plan seed data @hortison (#5328)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io, @leecalcote and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.79</title><link>/cloud/reference/releases/v1.0.79/</link><pubDate>Wed, 20 May 2026 21:26:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.79/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): drop return_to=&amp;lt;pagePath&amp;gt; from /api/auth/flow/init — unblocks login spinner @hortison (#5326)&lt;/li&gt;
+&lt;li&gt;fix(dev): export HYDRA_ADMIN_PROXY_PORT under &lt;code&gt;make ui-server-local&lt;/code&gt;; add host-gateway to kratos container @hortison (#5324)&lt;/li&gt;
+&lt;li&gt;docs+config: follow-up to PR #5319 — local-dev Hydra-admin proxy docs + Linux extra_hosts @hortison (#5320)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth/W2-followup): Kratos identity upsert link + email-changed cases @hortison (#5317)&lt;/li&gt;
+&lt;li&gt;docs(custom-domain-auth/W8-followup): re-apply dropped README + provider-init + architecture + auth-flows appends + TP-003 60-row CDA expansion @hortison (#5316)&lt;/li&gt;
+&lt;li&gt;fix(dev): add oauth2_provider.url to development kratos.yml — unblocks local login @hortison (#5319)&lt;/li&gt;
+&lt;li&gt;fix: restore server build and Go tests @hortison (#5318)&lt;/li&gt;
+&lt;li&gt;fix(ui): remove duplicate spread in next.config.js experimental block @hortison (#5314)&lt;/li&gt;
+&lt;li&gt;chore(ui): remove deprecated inflight transitive dependency @hortison (#5315)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth): R2 — per-org BYOC OIDC, Hydra fronting, Kratos return-URL guard, IdP admin UI @hortison (#5310)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth/W2): Cloud-native OIDC handlers + state HMAC + fallback chain @hortison (#5309)&lt;/li&gt;
+&lt;li&gt;docs(custom-domain-auth/W8): customer-facing setup, runbooks, and existing-doc extensions @hortison (#5300)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth/W6): IdP admin panel + provider-aware sign-in button + branding @hortison (#5308)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;DigitalOcean v0.1.16 content update @l5io (#5333)&lt;/li&gt;
+&lt;li&gt;Layer5 v0.8.19 content update @l5io (#5332)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.36 content update @l5io (#5331)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.26 content update @l5io (#5330)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.24-6</title><link>/kanvas/reference/releases/v1.0.24-6/</link><pubDate>Tue, 19 May 2026 16:25:03 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-6/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-5</title><link>/kanvas/reference/releases/v1.0.24-5/</link><pubDate>Tue, 19 May 2026 15:14:26 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-5/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-4</title><link>/kanvas/reference/releases/v1.0.24-4/</link><pubDate>Tue, 19 May 2026 13:56:16 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-4/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-3</title><link>/kanvas/reference/releases/v1.0.24-3/</link><pubDate>Tue, 19 May 2026 13:10:35 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-3/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-2</title><link>/kanvas/reference/releases/v1.0.24-2/</link><pubDate>Tue, 19 May 2026 12:46:23 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.24-1</title><link>/kanvas/reference/releases/v1.0.24-1/</link><pubDate>Tue, 19 May 2026 11:32:32 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.24-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.23-1</title><link>/kanvas/reference/releases/v1.0.23-1/</link><pubDate>Tue, 19 May 2026 05:29:34 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.23-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.78</title><link>/cloud/reference/releases/v1.0.78/</link><pubDate>Tue, 19 May 2026 04:30:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.78/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): restore certificate signature/expiry, unblock test loader and dashboard @hortison (#5307)&lt;/li&gt;
+&lt;li&gt;[chore] Change layer5labs org reference @miacycle (#5306)&lt;/li&gt;
+&lt;li&gt;Ui/upgrade to typscript @miacycle (#5290)&lt;/li&gt;
+&lt;li&gt;docs(impl-plan): R2 revision for design-doc commit d66a8e78 @hortison (#5295)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu, @l5io, @leecalcote, @miacycle, @pontusringblom and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.77</title><link>/cloud/reference/releases/v1.0.77/</link><pubDate>Mon, 18 May 2026 01:37:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.77/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer5 v0.8.18 content update @l5io (#5293)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.35 content update @l5io (#5292)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.25 content update @l5io (#5291)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.76</title><link>/cloud/reference/releases/v1.0.76/</link><pubDate>Mon, 18 May 2026 01:23:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.76/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): normalize certificate snake_case fields from content JSON @CodexRaunak (#5287)&lt;/li&gt;
+&lt;li&gt;fix(ui): send profile country and region as objects @PragalvaXFREZ (#5286)&lt;/li&gt;
+&lt;li&gt;fix(ui): resolve all TypeScript errors across tsconfig targets @ritzorama (#5289)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meshery v0.4.24 content update @l5io (#5288)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @PragalvaXFREZ, @l5io, @meshery-ci, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.75</title><link>/cloud/reference/releases/v1.0.75/</link><pubDate>Tue, 12 May 2026 18:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.75/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): stabilize test submission flow @CodexRaunak (#5285)&lt;/li&gt;
+&lt;li&gt;docs(auth): merge user-journey walkthroughs into auth-flows and org-id-resolution @leecalcote (#5263)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @arjunmehta-git, @jamieplu, @leecalcote and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.22-1</title><link>/kanvas/reference/releases/v1.0.22-1/</link><pubDate>Tue, 12 May 2026 18:40:22 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.22-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.21-1</title><link>/kanvas/reference/releases/v1.0.21-1/</link><pubDate>Tue, 12 May 2026 15:56:42 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.21-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): upgrade @sistent/sistent to 0.21.9 @leecalcote (#4238)&lt;/li&gt;
+&lt;li&gt;fix(kanvas): reinstate anonymous-user flow on kanvas.new @leecalcote (#4236)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.74</title><link>/cloud/reference/releases/v1.0.74/</link><pubDate>Tue, 12 May 2026 03:50:16 +0000</pubDate><guid>/cloud/reference/releases/v1.0.74/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.11 @l5io (#5269)&lt;/li&gt;
+&lt;li&gt;fix(invitations): align table column names with camelCase wire format @leecalcote (#5264)&lt;/li&gt;
+&lt;li&gt;Custom domain auth plan @marblom007 (#5275)&lt;/li&gt;
+&lt;li&gt;docs: lock in custom-domain auth decisions (BYOC, Hydra fronting, per-org templates, OAuth Apps) @hortison (#5274)&lt;/li&gt;
+&lt;li&gt;chore: finish sistent v0.21.10 / schemas v1.2.18 accommodation @leecalcote (#5272)&lt;/li&gt;
+&lt;li&gt;chore: upgrade sistent and schemas @yi-nuo426 (#5271)&lt;/li&gt;
+&lt;li&gt;fix(academy): recover camelCase orgId in quiz decode + refresh enroll test mocks @hortison (#5267)&lt;/li&gt;
+&lt;li&gt;docs: plan for custom-domain authentication flows @hortison (#5268)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.9 @l5io (#5261)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @arjunmehta-git, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
  📚 Academy
  &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -4007,20 +4742,20 @@ ull; replaced with nullish coalescing @jamieplu (#5115)&lt;/li&gt;
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/690"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/691"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/692"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-2&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8-1</title><link>/kanvas/reference/releases/v1.0.8-1/</link><pubDate>Wed, 15 Apr 2026 05:53:12 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.8-1/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/690"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/691"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/pull/692"&gt;https://github.com/layer5labs/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ci: set KANVAS_TIMEOUT_MULTIPLIER for Docker-based e2e tests by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/690"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: gracefully handle single-shard E2E test runs by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/691"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/691&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: pin upload-artifact to v4 and use find for shard outcome discovery by @leecalcote in &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/pull/692"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/pull/692&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/layer5labs/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8</title><link>/cloud/reference/releases/v1.0.8/</link><pubDate>Wed, 15 Apr 2026 01:38:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.8/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1"&gt;https://github.com/meshery-extensions/meshery-extensions-packages/compare/v1.0.7-2...v1.0.8-1&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.8</title><link>/cloud/reference/releases/v1.0.8/</link><pubDate>Wed, 15 Apr 2026 01:38:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.8/</guid><description>&lt;ul&gt;
 &lt;li&gt;tests(TP-014): implement P0+P1 frontend component &amp;amp; page test cases @leecalcote (#5016)&lt;/li&gt;
 &lt;li&gt;tests(TP-004): implement P0+P1 teams &amp;amp; RBAC test cases @leecalcote (#5014)&lt;/li&gt;
 &lt;li&gt;tests(TP-009): implement P0+P1 billing &amp;amp; subscriptions test cases @leecalcote (#5020)&lt;/li&gt;
@@ -90658,13 +91393,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  Lab Scenario
  &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the resources responsible for exposing applications inside and outside the cluster. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on labs to gain practical experience with the Kubernetes Services, without writing any YAML.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="./kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first or &lt;a href="./kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Helm Kanvas Snapshot</title><link>/kanvas/concepts/helm-kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/helm-kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="text-align: left; position:relative; display:inline; height: 32px; width: 32px;" src="./kanvas/concepts/images/helm-chart-color.svg" /&gt; The &lt;strong&gt;Kanvas Snapshot Helm Plugin&lt;/strong&gt; allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Helm Kanvas Snapshot</title><link>/kanvas/concepts/helm-kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/helm-kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="text-align: left; position:relative; display:inline; height: 32px; width: 32px;" src="./kanvas/concepts/images/helm-chart-color.svg" /&gt; The &lt;strong&gt;Kanvas Snapshot Helm Plugin&lt;/strong&gt; allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.&lt;/p&gt;</description></item><item><title>Interactive Terminal</title><link>/kanvas/operator/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/interactive-terminal/</guid><description>&lt;p&gt;When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The &lt;strong&gt;Interactive Terminal&lt;/strong&gt; in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like &lt;code&gt;kubectl&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id="overview" class="heading-link"&gt;
  Overview
@@ -90681,7 +91410,14 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="./kanvas/designer/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;/ul&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
+&lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
+&lt;img src="./kanvas/concepts/images/kanvas-snapshot.png" /&gt;
+&lt;/details&gt;
+&lt;h3&gt;Installing Kanvas Snapshot: Github Pull Request&lt;/h3&gt;
+&lt;p&gt;Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.&lt;/p&gt;</description></item><item><title>Kanvas Operator Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QANUEikEwQY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
@@ -90691,16 +91427,8 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
  &lt;a href="#related-docs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="./kanvas/operator/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="./kanvas/concepts/images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
-&lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
-&lt;img src="./kanvas/concepts/images/kanvas-snapshot.png" /&gt;
-&lt;/details&gt;
-&lt;h3&gt;Installing Kanvas Snapshot: Github Pull Request&lt;/h3&gt;
-&lt;p&gt;Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.&lt;/p&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;li&gt;&lt;a href="./kanvas/operator/"&gt;Exploring Operator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 &lt;p&gt;Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:&lt;/p&gt;
 

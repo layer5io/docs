@@ -1,4 +1,430 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.109</title><link>/cloud/reference/releases/v1.0.109/</link><pubDate>Sat, 30 May 2026 19:34:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.109/</guid><description>&lt;ul&gt;
+&lt;li&gt;Migrate Academy to v1beta3 phase 1 and 2 @CodexRaunak (#5423)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak&lt;/p&gt;</description></item><item><title>v1.0.108</title><link>/cloud/reference/releases/v1.0.108/</link><pubDate>Fri, 29 May 2026 21:40:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.108/</guid><description>&lt;ul&gt;
+&lt;li&gt;docs(academy): plan for v1beta3 (camelCase) consumer migration @hortison (#5379)&lt;/li&gt;
+&lt;li&gt;docs(oidc): design plan for eTLD-agnostic server-side state store @hortison (#5411)&lt;/li&gt;
+&lt;li&gt;docs(auth): document GitHub OAuth App host-root callback requirement @hortison (#5414)&lt;/li&gt;
+&lt;li&gt;Align /api/system/version with canonical schema @PragalvaXFREZ (#5325)&lt;/li&gt;
+&lt;li&gt;Phase 0a: Add academy canonical casing compatibility fallbacks @CodexRaunak (#5409)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Exoscale v0.6.37 content update @l5io (#5418)&lt;/li&gt;
+&lt;li&gt;Layer5 v0.8.20 content update @l5io (#5417)&lt;/li&gt;
+&lt;li&gt;DigitalOcean v0.1.17 content update @l5io (#5416)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.27 content update @l5io (#5415)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @PragalvaXFREZ, @hortison, @l5io, @leecalcote and @marblom007&lt;/p&gt;</description></item><item><title>v1.0.107</title><link>/cloud/reference/releases/v1.0.107/</link><pubDate>Thu, 28 May 2026 19:54:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.107/</guid><description>&lt;ul&gt;
+&lt;li&gt;docs(auth): consolidate identity docs; retire \W2\ workstream codenames @hortison (#5413)&lt;/li&gt;
+&lt;li&gt;perf(authz): cache custom-domain org resolution; skip resolver for probes @leecalcote (#5412)&lt;/li&gt;
+&lt;li&gt;Fix Broken Academy tests and module prerequisite completion @CodexRaunak (#5380)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @hortison, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.106</title><link>/cloud/reference/releases/v1.0.106/</link><pubDate>Thu, 28 May 2026 14:35:42 +0000</pubDate><guid>/cloud/reference/releases/v1.0.106/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(authz): correct cookie-value casting and cache Provider Admin per request @leecalcote (#5407)&lt;/li&gt;
+&lt;li&gt;fix(ui/profile): send country/region as JSONB objects, restore Autocomplete null guards @leecalcote (#5405)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.105</title><link>/cloud/reference/releases/v1.0.105/</link><pubDate>Thu, 28 May 2026 05:55:25 +0000</pubDate><guid>/cloud/reference/releases/v1.0.105/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): thread tenant host through Hydra state for post-callback bridge @leecalcote (#5404)&lt;/li&gt;
+&lt;li&gt;chore(oidc): rename Layer5- cookies/headers to X- (product-neutral) @hamza-mohd (#5403)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.104</title><link>/cloud/reference/releases/v1.0.104/</link><pubDate>Thu, 28 May 2026 04:51:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.104/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): stamp ProviderOrgID in state for anchored fallback (1723 regression) @hamza-mohd (#5402)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.103</title><link>/cloud/reference/releases/v1.0.103/</link><pubDate>Thu, 28 May 2026 01:26:02 +0000</pubDate><guid>/cloud/reference/releases/v1.0.103/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(oidc): retire env-var IdP fallback; Provider Org uses DB-backed Connections + Credentials @hamza-mohd (#5401)&lt;/li&gt;
+&lt;li&gt;fix(ui): gate W2 cloud-native OIDC on login_challenge presence @hortison (#5391)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison, @leecalcote and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.102</title><link>/cloud/reference/releases/v1.0.102/</link><pubDate>Wed, 27 May 2026 21:34:39 +0000</pubDate><guid>/cloud/reference/releases/v1.0.102/</guid><description>&lt;ul&gt;
+&lt;li&gt;CORS: allow custom domain for tcs org @alexquincy (#5399)&lt;/li&gt;
+&lt;li&gt;Install: custom domain for tcs org @alexquincy (#5398)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @leecalcote and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.101</title><link>/cloud/reference/releases/v1.0.101/</link><pubDate>Wed, 27 May 2026 16:57:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.101/</guid><description>&lt;h2 id="hotfix---custom-domain-orgs-with-anchored-fallback-credentials-hit-1722-at-callback" class="heading-link"&gt;
+ Hotfix - custom-domain orgs with anchored-fallback credentials hit 1722 at callback
+ &lt;a href="#hotfix---custom-domain-orgs-with-anchored-fallback-credentials-hit-1722-at-callback" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Custom-domain orgs without their own BYOC IdP credentials (e.g. &lt;code&gt;exoscale.layer5.io&lt;/code&gt;) ran into &lt;code&gt;meshery-cloud-1722 \state validation failed\&lt;/code&gt; immediately after GitHub redirected back to &lt;code&gt;/oidc/callback/github&lt;/code&gt;. The W2 state binding stamped the request host (&lt;code&gt;exoscale.layer5.io&lt;/code&gt;), but the callback legitimately lands at the canonical host (&lt;code&gt;cloud.layer5.io&lt;/code&gt;) because the fallback chain anchors &lt;code&gt;redirect_uri&lt;/code&gt; there. The validator&amp;rsquo;s strict host-binding equality refused the cross-host bounce.&lt;/p&gt;</description></item><item><title>v1.0.100</title><link>/cloud/reference/releases/v1.0.100/</link><pubDate>Wed, 27 May 2026 13:55:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.100/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): revert canonical-host W2 routing - keep Kratos for canonical @hamza-mohd (#5394)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @leecalcote and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.99</title><link>/cloud/reference/releases/v1.0.99/</link><pubDate>Wed, 27 May 2026 13:21:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.99/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): hairpin-free Hydra bounce via cluster-internal URL @hamza-mohd (#5393)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @leecalcote and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.98</title><link>/cloud/reference/releases/v1.0.98/</link><pubDate>Wed, 27 May 2026 13:01:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.98/</guid><description>&lt;h2 id="hotfix---production-sign-in-restored-on-cloudlayer5io-v1097-regression" class="heading-link"&gt;
+ Hotfix - production sign-in restored on cloud.layer5.io (v1.0.97 regression)
+ &lt;a href="#hotfix---production-sign-in-restored-on-cloudlayer5io-v1097-regression" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Fixes a regression introduced in v1.0.97 where sign-in via GitHub / Google on &lt;code&gt;cloud.layer5.io&lt;/code&gt; failed with &lt;code&gt;meshery-cloud-1729&lt;/code&gt; \direct OIDC sign-in without a Hydra login_challenge is not yet supported\ (Cloudflare shows this as 502 from some POPs). The legacy Kratos selfservice OIDC flow initiated the Hydra login challenge internally; W2&amp;rsquo;s &lt;code&gt;/oidc/start&lt;/code&gt; had no equivalent, so the React &lt;code&gt;/login&lt;/code&gt; page&amp;rsquo;s \Sign in with&amp;hellip;\ button forwarded to W2 without a &lt;code&gt;login_challenge&lt;/code&gt; and OIDCCallback fell into its fail-closed branch.&lt;/p&gt;</description></item><item><title>v1.0.97</title><link>/cloud/reference/releases/v1.0.97/</link><pubDate>Wed, 27 May 2026 07:13:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.97/</guid><description>&lt;h2 id="hotfix---production-sign-in-restored-on-cloudlayer5io" class="heading-link"&gt;
+ Hotfix - production sign-in restored on cloud.layer5.io
+ &lt;a href="#hotfix---production-sign-in-restored-on-cloudlayer5io" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Fixes a regression where clicking &lt;strong&gt;Sign in with GitHub&lt;/strong&gt; / &lt;strong&gt;Sign in with Google&lt;/strong&gt; on &lt;code&gt;cloud.layer5.io/login&lt;/code&gt; redirected users to the upstream OAuth provider with a &lt;code&gt;redirect_uri&lt;/code&gt; of &lt;code&gt;https://cloud.layer5.io/kratos/self-service/methods/oidc/callback/{provider}&lt;/code&gt;, which GitHub / Google rejected as edirect_uri is not associated with this application\ after the production OAuth App callback URL was updated to the W2 native path &lt;code&gt;/oidc/callback/{provider}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id="what-changed" class="heading-link"&gt;
+ What changed
+ &lt;a href="#what-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;OrgAuthData&lt;/code&gt; exposes a new &lt;code&gt;UseCloudNativeOidc&lt;/code&gt; boolean that is true for both registered custom-domain hosts AND for the canonical Provider Org host (&lt;code&gt;SERVER_BASE_URL&lt;/code&gt;&amp;rsquo;s host). The React login / registration pages now gate the W2 cloud-native redirect on this field, so canonical-host sign-in no longer falls through to the legacy Kratos OIDC flow.&lt;/li&gt;
+&lt;li&gt;A new &lt;code&gt;resolveOIDCOrgID(req)&lt;/code&gt; helper in the server handlers prefers the middleware-resolved org and falls back to &lt;code&gt;ProviderOrgID&lt;/code&gt; when the request lands on the canonical host. Both &lt;code&gt;OIDCStart&lt;/code&gt; and &lt;code&gt;OIDCCallback&lt;/code&gt; consume the helper so the state binding&amp;rsquo;s &lt;code&gt;orgId&lt;/code&gt; is symmetric across the round trip on the canonical host.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="rollout-notes" class="heading-link"&gt;
+ Rollout notes
+ &lt;a href="#rollout-notes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The Layer5 production GitHub OAuth App&amp;rsquo;s Authorization callback URL is already &lt;code&gt;https://cloud.layer5.io/oidc/callback/github&lt;/code&gt; and this deploy restores canonical-host sign-in without further OAuth App changes.&lt;/p&gt;</description></item><item><title>v1.0.96</title><link>/cloud/reference/releases/v1.0.96/</link><pubDate>Wed, 27 May 2026 06:13:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.96/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): anchor redirect_uri at Provider Org host on fallback @hortison (#5389)&lt;/li&gt;
+&lt;li&gt;[fix]: hide anonymous users from email sends and the share-modal picker @leecalcote (#5388)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.95</title><link>/cloud/reference/releases/v1.0.95/</link><pubDate>Tue, 26 May 2026 14:08:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.95/</guid><description>&lt;ul&gt;
+&lt;li&gt;[fix]: restore catalog card click navigation @hortison (#5384)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.94</title><link>/cloud/reference/releases/v1.0.94/</link><pubDate>Tue, 26 May 2026 06:37:03 +0000</pubDate><guid>/cloud/reference/releases/v1.0.94/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): fall back to AuthConfig env vars when Provider Org IdP seed missing @hortison (#5385)&lt;/li&gt;
+&lt;li&gt;[feat]: update usage of InfoOutlinedIcon from local asset to sistent @banana-three-join (#5383)&lt;/li&gt;
+&lt;li&gt;add evaluate relationships key @aabidsofi19 (#5381)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @banana-three-join, @hortison, @l5io, @leecalcote, @meshery-ci and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.93</title><link>/cloud/reference/releases/v1.0.93/</link><pubDate>Fri, 22 May 2026 22:55:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.93/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): rename IdP teardown CTA and fix Edit Org modal button contrast @hortison (#5378)&lt;/li&gt;
+&lt;li&gt;Revert #5372 (Provider Org IdP seed subcommand) @hortison (#5377)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.92</title><link>/cloud/reference/releases/v1.0.92/</link><pubDate>Fri, 22 May 2026 21:38:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.92/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(oidc): carry W2 state payload in oidc_pending cookie, not the URL @hortison (#5373)&lt;/li&gt;
+&lt;li&gt;fix(layout): remove dynamic AppShell wrapper that duplicated the layout @hortison (#5375)&lt;/li&gt;
+&lt;li&gt;fix(auth): preserve query string on org-switch bridge redirect @hortison (#5374)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.91</title><link>/cloud/reference/releases/v1.0.91/</link><pubDate>Fri, 22 May 2026 20:36:56 +0000</pubDate><guid>/cloud/reference/releases/v1.0.91/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): operator-invoked Provider Org IdP seed (subcommand + resolver) @hortison (#5372)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.90</title><link>/cloud/reference/releases/v1.0.90/</link><pubDate>Fri, 22 May 2026 18:18:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.90/</guid><description>&lt;ul&gt;
+&lt;li&gt;perf(auth): collapse login bundle and Kratos init double round-trip @hortison (#5369)&lt;/li&gt;
+&lt;li&gt;perf(login): gzip + immutable cache for /_next, lazy-load Monaco and PDF stack @hortison (#5368)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.89</title><link>/cloud/reference/releases/v1.0.89/</link><pubDate>Fri, 22 May 2026 17:34:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.89/</guid><description>&lt;ul&gt;
+&lt;li&gt;Disable push triggers in release workflow @leecalcote (#5370)&lt;/li&gt;
+&lt;li&gt;config(oidc): wire CLOUD_OIDC_STATE_HMAC_KEY through every deploy path @hortison (#5367)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.88</title><link>/cloud/reference/releases/v1.0.88/</link><pubDate>Fri, 22 May 2026 13:06:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.88/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): route OIDC sign-in through W2 handler on custom domains @hortison (#5366)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.87</title><link>/cloud/reference/releases/v1.0.87/</link><pubDate>Fri, 22 May 2026 04:53:43 +0000</pubDate><guid>/cloud/reference/releases/v1.0.87/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): bridge session on org switch to off-eTLD custom domains @hortison (#5365)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.86</title><link>/cloud/reference/releases/v1.0.86/</link><pubDate>Fri, 22 May 2026 00:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.86/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): keep custom-domain visitors on host through HandleHome login bounce @hortison (#5364)&lt;/li&gt;
+&lt;li&gt;fix(ui): polish Edit Org modal IdP tab + restore org table columns @hortison (#5362)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.85</title><link>/cloud/reference/releases/v1.0.85/</link><pubDate>Thu, 21 May 2026 22:47:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.85/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: correct malformed CLOUD_CREDENTIAL_ENCRYPTION_KEY + add fail-loud guards @hortison (#5363)&lt;/li&gt;
+&lt;li&gt;fix(ui): SSR-safe useWindowDimensions + guarded catalog catch-all unslugify @hortison (#5360)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.84</title><link>/cloud/reference/releases/v1.0.84/</link><pubDate>Thu, 21 May 2026 22:04:25 +0000</pubDate><guid>/cloud/reference/releases/v1.0.84/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.14 @l5io (#5361)&lt;/li&gt;
+&lt;li&gt;[Deploy]: AES Encryption Key set&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.83</title><link>/cloud/reference/releases/v1.0.83/</link><pubDate>Thu, 21 May 2026 20:00:48 +0000</pubDate><guid>/cloud/reference/releases/v1.0.83/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): unblock static-export build (window is not defined + unslugify split) @leecalcote (#5359)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.82</title><link>/cloud/reference/releases/v1.0.82/</link><pubDate>Thu, 21 May 2026 18:52:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.82/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(auth): skip auth-required API calls for anonymous users @jamieplu (#5055)&lt;/li&gt;
+&lt;li&gt;feat(capabilities): resolve providerName per-org from request context @hortison (#5355)&lt;/li&gt;
+&lt;li&gt;Speed up organization switching @hortison (#5352)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.81</title><link>/cloud/reference/releases/v1.0.81/</link><pubDate>Thu, 21 May 2026 17:11:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.81/</guid><description>&lt;ul&gt;
+&lt;li&gt;ci: improve GH_ACCESS_TOKEN dispatch error handling in pull-request-build.yml @hortison (#5354)&lt;/li&gt;
+&lt;li&gt;[UI] add Identity Providers tab to Edit Organization modal @hortison (#5349)&lt;/li&gt;
+&lt;li&gt;[UI] address IdP tab review feedback (PR #5349) @leecalcote (#5353)&lt;/li&gt;
+&lt;li&gt;fix: resolve all CI test failures (server, UI, e2e) @hortison (#5347)&lt;/li&gt;
+&lt;li&gt;fix(router): stub _devPagesManifest.json for static-export builds @hortison (#5351)&lt;/li&gt;
+&lt;li&gt;[UI] Fix overview card brand color to use Keppel base @hortison (#5350)&lt;/li&gt;
+&lt;li&gt;[UI] Preserve authenticated navbar on /user pages @hortison (#5346)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@claude, @hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.80</title><link>/cloud/reference/releases/v1.0.80/</link><pubDate>Thu, 21 May 2026 01:47:11 +0000</pubDate><guid>/cloud/reference/releases/v1.0.80/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui/academy): guard window access in AcademyProvider for SSR @hortison (#5345)&lt;/li&gt;
+&lt;li&gt;claude/fix test typescript errors @hortison (#5344)&lt;/li&gt;
+&lt;li&gt;claude/fix test typescript errors @hortison (#5343)&lt;/li&gt;
+&lt;li&gt;fix: pass empty object to useGetCatalogContentClassesQuery in catalog requests @hortison (#5341)&lt;/li&gt;
+&lt;li&gt;fix(security): close IDOR on /api/integrations/credentials @hortison (#5329)&lt;/li&gt;
+&lt;li&gt;fix: remove blue focus outline from MUI v9 modal dialogs @hortison (#5339)&lt;/li&gt;
+&lt;li&gt;fix(ui): bump @sistent/sistent to v0.21.13 (hydration fix) + wire Identity Providers nav entry @hortison (#5338)&lt;/li&gt;
+&lt;li&gt;[UI] Fix TypeScript build errors @hortison (#5340)&lt;/li&gt;
+&lt;li&gt;fix(ui): move Identity Providers admin page out of [orgId] dynamic segment — fixes 404 in production @hortison (#5335)&lt;/li&gt;
+&lt;li&gt;fix(ui): repair the six failing Jest suites surfaced in CI @hortison (#5323)&lt;/li&gt;
+&lt;li&gt;fix(ui/nav-menu): restore sistent NavigationNavbar (icon spacing + showOnWeb) @hortison (#5327)&lt;/li&gt;
+&lt;li&gt;fix(seed): correct &amp;rsquo;enterpice&amp;rsquo; typo to &amp;rsquo;enterprise&amp;rsquo; in test plan seed data @hortison (#5328)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io, @leecalcote and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.79</title><link>/cloud/reference/releases/v1.0.79/</link><pubDate>Wed, 20 May 2026 21:26:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.79/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): drop return_to=&amp;lt;pagePath&amp;gt; from /api/auth/flow/init — unblocks login spinner @hortison (#5326)&lt;/li&gt;
+&lt;li&gt;fix(dev): export HYDRA_ADMIN_PROXY_PORT under &lt;code&gt;make ui-server-local&lt;/code&gt;; add host-gateway to kratos container @hortison (#5324)&lt;/li&gt;
+&lt;li&gt;docs+config: follow-up to PR #5319 — local-dev Hydra-admin proxy docs + Linux extra_hosts @hortison (#5320)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth/W2-followup): Kratos identity upsert link + email-changed cases @hortison (#5317)&lt;/li&gt;
+&lt;li&gt;docs(custom-domain-auth/W8-followup): re-apply dropped README + provider-init + architecture + auth-flows appends + TP-003 60-row CDA expansion @hortison (#5316)&lt;/li&gt;
+&lt;li&gt;fix(dev): add oauth2_provider.url to development kratos.yml — unblocks local login @hortison (#5319)&lt;/li&gt;
+&lt;li&gt;fix: restore server build and Go tests @hortison (#5318)&lt;/li&gt;
+&lt;li&gt;fix(ui): remove duplicate spread in next.config.js experimental block @hortison (#5314)&lt;/li&gt;
+&lt;li&gt;chore(ui): remove deprecated inflight transitive dependency @hortison (#5315)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth): R2 — per-org BYOC OIDC, Hydra fronting, Kratos return-URL guard, IdP admin UI @hortison (#5310)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth/W2): Cloud-native OIDC handlers + state HMAC + fallback chain @hortison (#5309)&lt;/li&gt;
+&lt;li&gt;docs(custom-domain-auth/W8): customer-facing setup, runbooks, and existing-doc extensions @hortison (#5300)&lt;/li&gt;
+&lt;li&gt;feat(custom-domain-auth/W6): IdP admin panel + provider-aware sign-in button + branding @hortison (#5308)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;DigitalOcean v0.1.16 content update @l5io (#5333)&lt;/li&gt;
+&lt;li&gt;Layer5 v0.8.19 content update @l5io (#5332)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.36 content update @l5io (#5331)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.26 content update @l5io (#5330)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.78</title><link>/cloud/reference/releases/v1.0.78/</link><pubDate>Tue, 19 May 2026 04:30:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.78/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): restore certificate signature/expiry, unblock test loader and dashboard @hortison (#5307)&lt;/li&gt;
+&lt;li&gt;[chore] Change layer5labs org reference @miacycle (#5306)&lt;/li&gt;
+&lt;li&gt;Ui/upgrade to typscript @miacycle (#5290)&lt;/li&gt;
+&lt;li&gt;docs(impl-plan): R2 revision for design-doc commit d66a8e78 @hortison (#5295)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu, @l5io, @leecalcote, @miacycle, @pontusringblom and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.77</title><link>/cloud/reference/releases/v1.0.77/</link><pubDate>Mon, 18 May 2026 01:37:44 +0000</pubDate><guid>/cloud/reference/releases/v1.0.77/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Layer5 v0.8.18 content update @l5io (#5293)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.35 content update @l5io (#5292)&lt;/li&gt;
+&lt;li&gt;Meshery v0.4.25 content update @l5io (#5291)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.76</title><link>/cloud/reference/releases/v1.0.76/</link><pubDate>Mon, 18 May 2026 01:23:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.76/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): normalize certificate snake_case fields from content JSON @CodexRaunak (#5287)&lt;/li&gt;
+&lt;li&gt;fix(ui): send profile country and region as objects @PragalvaXFREZ (#5286)&lt;/li&gt;
+&lt;li&gt;fix(ui): resolve all TypeScript errors across tsconfig targets @ritzorama (#5289)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meshery v0.4.24 content update @l5io (#5288)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @PragalvaXFREZ, @l5io, @meshery-ci, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.75</title><link>/cloud/reference/releases/v1.0.75/</link><pubDate>Tue, 12 May 2026 18:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.75/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): stabilize test submission flow @CodexRaunak (#5285)&lt;/li&gt;
+&lt;li&gt;docs(auth): merge user-journey walkthroughs into auth-flows and org-id-resolution @leecalcote (#5263)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @arjunmehta-git, @jamieplu, @leecalcote and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.74</title><link>/cloud/reference/releases/v1.0.74/</link><pubDate>Tue, 12 May 2026 03:50:16 +0000</pubDate><guid>/cloud/reference/releases/v1.0.74/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.11 @l5io (#5269)&lt;/li&gt;
+&lt;li&gt;fix(invitations): align table column names with camelCase wire format @leecalcote (#5264)&lt;/li&gt;
+&lt;li&gt;Custom domain auth plan @marblom007 (#5275)&lt;/li&gt;
+&lt;li&gt;docs: lock in custom-domain auth decisions (BYOC, Hydra fronting, per-org templates, OAuth Apps) @hortison (#5274)&lt;/li&gt;
+&lt;li&gt;chore: finish sistent v0.21.10 / schemas v1.2.18 accommodation @leecalcote (#5272)&lt;/li&gt;
+&lt;li&gt;chore: upgrade sistent and schemas @yi-nuo426 (#5271)&lt;/li&gt;
+&lt;li&gt;fix(academy): recover camelCase orgId in quiz decode + refresh enroll test mocks @hortison (#5267)&lt;/li&gt;
+&lt;li&gt;docs: plan for custom-domain authentication flows @hortison (#5268)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.9 @l5io (#5261)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak, @arjunmehta-git, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.73</title><link>/cloud/reference/releases/v1.0.73/</link><pubDate>Fri, 08 May 2026 20:59:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.73/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
  📚 Academy
  &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
