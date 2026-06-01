@@ -40,7 +40,7 @@ Whether BYOC is *optional* or *required* depends on your organization's [custom 
 | No custom domain, or a subdomain of the deployment's base domain (e.g. `team.example.com` on a `cloud.example.com` deployment) | Social sign-in works out of the box | **Optional** — only for your own branding, scale, or isolation |
 | A fully-custom domain on a different base domain (e.g. `meshery.yourcompany.com` pointed at the hosted `cloud.layer5.io`) | Social sign-in cannot complete | **Required** for Google / GitHub sign-in |
 
-On a fully-custom domain **without** BYOC, the Google and GitHub buttons are hidden on the login and sign-up screens. Email-and-password sign-in and sign-up both remain available — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden; configuring the organization's own identity providers restores them on that domain.
+On a fully-custom domain **without** BYOC, the Google and GitHub buttons are hidden on the login and sign-up screens. Email-and-password sign-in and sign-up both remain fully available — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden; configuring the organization's own identity providers restores them on that domain.
 
 {{< alert type="info" >}}
 For the custom-domain setup walkthrough and the on-eTLD vs. off-eTLD distinction, see [White-labeling → Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain).
