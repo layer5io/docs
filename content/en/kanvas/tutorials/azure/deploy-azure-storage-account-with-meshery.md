@@ -107,7 +107,7 @@ Azure Service Operator requires a Kubernetes secret with your Azure identity:
 
 ### 4. Design and Deploy an Azure Storage Account
 
-1. Click on **Components** and start by searching **Azure Storage** and putting the **Storage Account** to design area.
+1. Click on **Components**, search for **Azure Storage**, and add the **Storage Account** to the design area.
 [Select Components](../images/deploy-azure-storage-account-with-meshery/select-components.png)
 [Search Storage Account](../images/deploy-azure-storage-account-with-meshery/search-storage-account.png)
 2. Configure the **Storage Account** to fit your needs.

@@ -121,7 +121,7 @@ Azure Service Operator requires a Kubernetes secret with your Azure identity:
 [Start From Template](../images/deploy-azure-resources-with-meshery/start-from-template.png)
 2. Search for the **Azure Service Operator** design.
 [Search Azure Operator](../images/deploy-azure-resources-with-meshery/search-azure-operator.png)
-3. Once found, click on the **Azure Service Operator** design, after that, click on **Clone** to add it to your canvas.
+3. Once found, click on the **Azure Service Operator** design, then click **Clone** to add it to your canvas.
 [Clone Azure Operator](../images/deploy-azure-resources-with-meshery/clone-azure-operator.png)
 4. Update the secret **aso-controller-settings** in the design template. The details are also mentioned in the catalog.
 [Configure Secret Settings](../images/deploy-azure-resources-with-meshery/configure-secret-settings.png)
@@ -131,7 +131,7 @@ Azure Service Operator requires a Kubernetes secret with your Azure identity:
 
 ### 5. Start deployment of Azure resources using Kanvas
 
-1. Click on **Components** and start by searching **Azure Storage** and putting the **Storage Account** to design area.
+1. Click on **Components**, search for **Azure Storage**, and add the **Storage Account** to the design area.
 [Select Components](../images/deploy-azure-storage-account-with-meshery/select-components.png)
 [Search Storage Account](../images/deploy-azure-storage-account-with-meshery/search-storage-account.png)
 2. Configure the **Storage Account** to fit your needs.
