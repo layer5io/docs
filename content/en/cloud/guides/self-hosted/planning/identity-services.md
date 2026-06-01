@@ -29,7 +29,7 @@ By default, every organization signs users in through your deployment's **shared
 
 ### Bring Your Own Credentials (BYOC)
 
-An organization can optionally **bring its own credentials (BYOC)**: its own Google OAuth client and GitHub OAuth App. With BYOC, the upstream consent screen, the registered redirect URL, and the entire OAuth round trip carry the organization's own branding and stay on the organization's own domain. BYOC is enabled per organization by a [Provider Administrator](/cloud/concepts/identity-and-security/roles/provider-admin-roles/); an organization owner then registers the OAuth client ID and secret.
+An organization can optionally **bring its own credentials (BYOC)**: its own Google OAuth client and GitHub OAuth App. With BYOC, the upstream consent screen, the registered redirect URL, and the entire OAuth round trip carry the organization's own branding and stay on the organization's own domain. BYOC is enabled per organization by a [Provider Administrator](/cloud/concepts/identity-and-security/roles/#provider-admin-role); an organization owner then registers the OAuth client ID and secret.
 
 ### When BYOC is optional vs. required
 
