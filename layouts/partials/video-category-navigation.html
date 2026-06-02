@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const currentPath = extractVideoPath(window.location.pathname);
   if (currentPath && !window.location.hash && pathToHashMap[currentPath]) {
-    window.location.hash = pathToHashMap[currentPath];
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${pathToHashMap[currentPath]}`);
   }
 
   document.querySelectorAll("a[href*='/videos/']").forEach(link => {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     } catch (_) {}
   });
-});
+}, true);
 </script>
 
 

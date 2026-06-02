@@ -39,8 +39,8 @@
                 {{ end }}
               {{ else }}
                 <!-- if no subcategories i.e. videos are directly in category folder: set a default "All" subcategory  -->
-                <a href="{{ $mainSection.RelPermalink }}#category-{{ $mainIndex }}-subcategory-main" class="subcategory-btn" 
-                   data-main-category="{{ $mainIndex }}" data-subcategory="main">
+                <a href="{{ $mainSection.RelPermalink }}#category-{{ $mainIndex }}-subcategory-0" class="subcategory-btn" 
+                   data-main-category="{{ $mainIndex }}" data-subcategory="0">
                   All
                 </a>
               {{ end }}
