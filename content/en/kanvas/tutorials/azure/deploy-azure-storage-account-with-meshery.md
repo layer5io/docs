@@ -28,6 +28,7 @@ Before you begin, ensure you have the following:
    Installed and authenticated (`az login`) in your local shell.
 5. **cert-manager**
    Installed in your Kubernetes cluster (required by Azure Service Operator).
+6. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
 
 
 ### Table of Contents
@@ -107,23 +108,23 @@ Azure Service Operator requires a Kubernetes secret with your Azure identity:
 
 ### 4. Design and Deploy an Azure Storage Account
 
-1. In the Meshery UI, navigate to **Kanvas**.
-2. Click **Catalog**, filter by **Azure**, and select the **StorageAccount** design.
-3. Click **Clone** to add it to your canvas.
-4. Configure the following properties:
-
+1. Click on **Components**, search for **Azure Storage**, and add the **Storage Account** to the design area.
+[Select Components](../images/deploy-azure-storage-account-with-meshery/select-components.png)
+[Search Storage Account](../images/deploy-azure-storage-account-with-meshery/search-storage-account.png)
+2. Configure the **Storage Account** to fit your needs.
+[Config Storage Account](../images/deploy-azure-storage-account-with-meshery/config-storage-account.png)
+3. Configure the following properties:
    * `resourceGroupName`
    * `location` (e.g., `eastus`)
    * `accountName`
    * `accessTier` (`Hot` or `Cool`)
-5. Click **Actions → Deploy**.
-
+4. Click **Actions → Deploy**.
+[Deploy Storage Account](../images/deploy-azure-storage-account-with-meshery/deploy-storage-account.png)
 
 
 ### 5. Verify Deployment
 
 * **Azure Portal**: Confirm the new Storage Account appears in your specified resource group.
-
 
 
 ### 6. Conclusion

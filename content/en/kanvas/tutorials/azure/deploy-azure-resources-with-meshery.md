@@ -28,6 +28,7 @@ Before you begin, ensure you have the following:
    Installed and authenticated (`az login`) in your local shell.
 5. **cert-manager**
    Installed in your Kubernetes cluster (required by Azure Service Operator).
+6. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
 
 
 ### Table of Contents
@@ -117,21 +118,28 @@ Azure Service Operator requires a Kubernetes secret with your Azure identity:
 
 ### 4. Deploy Azure Service Operator using Kanvas
 
-1. In the Meshery UI, navigate to **Kanvas**.
-2. Click **Catalog**, filter by **Azure**, and select the **Azure Operator** design.
-3. Click **Clone** to add it to your canvas.
-4. Update the secret **aso-controller-settings** in the design template. The details are also mentioned in the catalog
+1. Click **Start from template**.
+[Start From Template](../images/deploy-azure-resources-with-meshery/start-from-template.png)
+2. Search for the **Azure Service Operator** design.
+[Search Azure Operator](../images/deploy-azure-resources-with-meshery/search-azure-operator.png)
+3. Once found, click on the **Azure Service Operator** design, then click **Clone** to add it to your canvas.
+[Clone Azure Operator](../images/deploy-azure-resources-with-meshery/clone-azure-operator.png)
+4. Update the secret **aso-controller-settings** in the design template. The details are also mentioned in the catalog.
+[Configure Secret Settings](../images/deploy-azure-resources-with-meshery/configure-secret-settings.png)
 5. Click **Actions → Deploy**.
-
+[Deploy Azure Operator](../images/deploy-azure-resources-with-meshery/deploy-azure-operator.png)
 
 
 ### 5. Start deployment of Azure resources using Kanvas
 
-* Go to Kanvas and start by picking up Azure components and putting it to design area.
-* Click **Actions → Deploy**.
-* **Azure Portal**: Confirm the new Storage Account appears in your specified resource group.
-
-
+1. Click on **Components**, search for **Azure Storage**, and add the **Storage Account** to the design area.
+[Select Components](../images/deploy-azure-storage-account-with-meshery/select-components.png)
+[Search Storage Account](../images/deploy-azure-storage-account-with-meshery/search-storage-account.png)
+2. Configure the **Storage Account** to fit your needs.
+[Config Storage Account](../images/deploy-azure-storage-account-with-meshery/config-storage-account.png)
+3. Click **Actions → Deploy**.
+[Deploy Storage Account](../images/deploy-azure-storage-account-with-meshery/deploy-storage-account.png)
+4. **Azure Portal**: Confirm the new Storage Account appears in your specified resource group.
 
 ### 6. Conclusion
 

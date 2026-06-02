@@ -23,6 +23,16 @@ enableGitInfo = true
 tag = "tags"
 category = "categories"
 
+[related]
+threshold = 1
+includeNewer = true
+[[related.indices]]
+name = "tags"
+weight = 100
+[[related.indices]]
+name = "categories"
+weight = 200
+
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
 taxonomyCloud = ["tags", "categories"]
@@ -146,6 +156,9 @@ offlineSearch = true
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
+
+[params.relatedReading]
+pageTypes = ["docs"]
 
 # User interface configuration
 [params.ui]

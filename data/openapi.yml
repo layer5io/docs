@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.0
+  version: v1.3.3
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -30235,10 +30235,11 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/performance-profiles:
+  /api/performance/profiles:
     get:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: getPerformanceProfiles
@@ -30387,6 +30388,7 @@ paths:
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: load_generators
+                            gorm: type:text[]
                             json: loadGenerators
                         endpoints:
                           type: array
@@ -30404,6 +30406,7 @@ paths:
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: endpoints
+                            gorm: type:text[]
                             json: endpoints
                         serviceMesh:
                           type: string
@@ -30571,6 +30574,7 @@ paths:
     post:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: upsertPerformanceProfile
@@ -30822,6 +30826,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: load_generators
+                      gorm: type:text[]
                       json: loadGenerators
                   endpoints:
                     type: array
@@ -30839,6 +30844,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: endpoints
+                      gorm: type:text[]
                       json: endpoints
                   serviceMesh:
                     type: string
@@ -31003,10 +31009,11 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/performance-profiles/{performanceProfileId}:
+  /api/performance/profiles/{performanceProfileId}:
     get:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: getPerformanceProfile
@@ -31112,6 +31119,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: load_generators
+                      gorm: type:text[]
                       json: loadGenerators
                   endpoints:
                     type: array
@@ -31129,6 +31137,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: endpoints
+                      gorm: type:text[]
                       json: endpoints
                   serviceMesh:
                     type: string
@@ -31302,6 +31311,7 @@ paths:
     put:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: updatePerformanceProfile
@@ -31565,6 +31575,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: load_generators
+                      gorm: type:text[]
                       json: loadGenerators
                   endpoints:
                     type: array
@@ -31582,6 +31593,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: endpoints
+                      gorm: type:text[]
                       json: endpoints
                   serviceMesh:
                     type: string
@@ -31755,6 +31767,7 @@ paths:
     delete:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: deletePerformanceProfile
@@ -31791,6 +31804,654 @@ paths:
                 type: string
         '404':
           description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/performance/profiles/{performanceProfileId}/results:
+    get:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - Performance_Profile_performance
+      operationId: getPerformanceProfileResults
+      summary: List performance results for a profile
+      description: Returns paginated load-test results associated with the performance profile identified by the path parameter.
+      parameters:
+        - name: performanceProfileId
+          in: path
+          description: Performance profile ID.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+          required: true
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: string
+        - name: pagesize
+          in: query
+          description: Get responses by pagesize
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Get responses that match search param value
+          schema:
+            type: string
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Performance results
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of performance results.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - results
+                properties:
+                  page:
+                    type: integer
+                    description: Zero-based page index returned in this response.
+                    minimum: 0
+                    maximum: 1000000
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Maximum number of items returned on each page.
+                    minimum: 1
+                    maximum: 1000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of performance results across all pages.
+                    minimum: 0
+                    maximum: 100000000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
+                  results:
+                    type: array
+                    description: Performance results in this page.
+                    x-go-type-skip-optional-pointer: true
+                    items:
+                      x-go-type: PerformanceResult
+                      type: object
+                      description: Load-test result captured for a Meshery performance profile.
+                      additionalProperties: false
+                      properties:
+                        mesheryId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: mesheryId,omitempty
+                        name:
+                          type: string
+                          description: Human-readable name of the performance result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: name
+                            json: name,omitempty
+                        mesh:
+                          type: string
+                          description: Service mesh under test for this result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: mesh
+                            json: mesh,omitempty
+                        performanceProfile:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          nullable: true
+                          x-oapi-codegen-extra-tags:
+                            db: performance_profile
+                            json: performanceProfile,omitempty
+                        testId:
+                          type: string
+                          description: Provider-assigned test identifier for this result.
+                          maxLength: 255
+                          x-go-name: TestID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            json: testId,omitempty
+                        runnerResults:
+                          type: object
+                          description: Raw load-generator output for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: runner_results
+                            json: runnerResults,omitempty
+                        serverMetrics:
+                          type: object
+                          description: Server-side metrics collected for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_metrics
+                            json: serverMetrics,omitempty
+                        serverBoardConfig:
+                          type: object
+                          description: Server board configuration associated with this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_board_config
+                            json: serverBoardConfig,omitempty
+                        testStartTime:
+                          type: string
+                          format: date-time
+                          description: Time when the load test started.
+                          x-oapi-codegen-extra-tags:
+                            db: test_start_time
+                            json: testStartTime,omitempty
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: UserID
+                          x-oapi-codegen-extra-tags:
+                            db: user_id
+                            json: userId,omitempty
+                        createdAt:
+                          description: Timestamp when the performance result was created.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            yaml: created_at
+                            json: createdAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: CreatedAt
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp when the performance result was last updated.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            yaml: updated_at
+                            json: updatedAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: UpdatedAt
+                          x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/performance/profiles/{performanceProfileId}/results/{resultId}:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Performance_Profile_performance
+      operationId: getPerformanceProfileResult
+      summary: Get a performance result for a profile
+      description: Returns one load-test result associated with the performance profile identified by the path parameter.
+      parameters:
+        - name: performanceProfileId
+          in: path
+          description: Performance profile ID.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+          required: true
+        - name: resultId
+          in: path
+          description: Performance result ID.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+          required: true
+      responses:
+        '200':
+          description: Performance result
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Load-test result captured for a Meshery performance profile.
+                additionalProperties: false
+                properties:
+                  mesheryId:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                    x-go-name: ID
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                      json: mesheryId,omitempty
+                  name:
+                    type: string
+                    description: Human-readable name of the performance result.
+                    maxLength: 255
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: name
+                      json: name,omitempty
+                  mesh:
+                    type: string
+                    description: Service mesh under test for this result.
+                    maxLength: 255
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: mesh
+                      json: mesh,omitempty
+                  performanceProfile:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                    nullable: true
+                    x-oapi-codegen-extra-tags:
+                      db: performance_profile
+                      json: performanceProfile,omitempty
+                  testId:
+                    type: string
+                    description: Provider-assigned test identifier for this result.
+                    maxLength: 255
+                    x-go-name: TestID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: testId,omitempty
+                  runnerResults:
+                    type: object
+                    description: Raw load-generator output for this performance result.
+                    additionalProperties: true
+                    x-go-type: core.Map
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: runner_results
+                      json: runnerResults,omitempty
+                  serverMetrics:
+                    type: object
+                    description: Server-side metrics collected for this performance result.
+                    additionalProperties: true
+                    x-go-type: core.Map
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: server_metrics
+                      json: serverMetrics,omitempty
+                  serverBoardConfig:
+                    type: object
+                    description: Server board configuration associated with this performance result.
+                    additionalProperties: true
+                    x-go-type: core.Map
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: server_board_config
+                      json: serverBoardConfig,omitempty
+                  testStartTime:
+                    type: string
+                    format: date-time
+                    description: Time when the load test started.
+                    x-oapi-codegen-extra-tags:
+                      db: test_start_time
+                      json: testStartTime,omitempty
+                  userId:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                    x-go-name: UserID
+                    x-oapi-codegen-extra-tags:
+                      db: user_id
+                      json: userId,omitempty
+                  createdAt:
+                    description: Timestamp when the performance result was created.
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                      yaml: created_at
+                      json: createdAt,omitempty
+                    x-go-type: time.Time
+                    type: string
+                    format: date-time
+                    x-go-name: CreatedAt
+                    x-go-type-skip-optional-pointer: true
+                  updatedAt:
+                    description: Timestamp when the performance result was last updated.
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                      yaml: updated_at
+                      json: updatedAt,omitempty
+                    x-go-type: time.Time
+                    type: string
+                    format: date-time
+                    x-go-name: UpdatedAt
+                    x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/performance/results:
+    get:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - Performance_Profile_performance
+      operationId: getPerformanceResults
+      summary: List all performance results
+      description: Returns paginated load-test results visible to the authenticated user.
+      parameters:
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: string
+        - name: pagesize
+          in: query
+          description: Get responses by pagesize
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Get responses that match search param value
+          schema:
+            type: string
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+        - name: from
+          in: query
+          description: Start date for filtering results by test start time, in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          description: End date for filtering results by test start time, in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Performance results
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of performance results.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - results
+                properties:
+                  page:
+                    type: integer
+                    description: Zero-based page index returned in this response.
+                    minimum: 0
+                    maximum: 1000000
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Maximum number of items returned on each page.
+                    minimum: 1
+                    maximum: 1000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of performance results across all pages.
+                    minimum: 0
+                    maximum: 100000000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
+                  results:
+                    type: array
+                    description: Performance results in this page.
+                    x-go-type-skip-optional-pointer: true
+                    items:
+                      x-go-type: PerformanceResult
+                      type: object
+                      description: Load-test result captured for a Meshery performance profile.
+                      additionalProperties: false
+                      properties:
+                        mesheryId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: mesheryId,omitempty
+                        name:
+                          type: string
+                          description: Human-readable name of the performance result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: name
+                            json: name,omitempty
+                        mesh:
+                          type: string
+                          description: Service mesh under test for this result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: mesh
+                            json: mesh,omitempty
+                        performanceProfile:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          nullable: true
+                          x-oapi-codegen-extra-tags:
+                            db: performance_profile
+                            json: performanceProfile,omitempty
+                        testId:
+                          type: string
+                          description: Provider-assigned test identifier for this result.
+                          maxLength: 255
+                          x-go-name: TestID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            json: testId,omitempty
+                        runnerResults:
+                          type: object
+                          description: Raw load-generator output for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: runner_results
+                            json: runnerResults,omitempty
+                        serverMetrics:
+                          type: object
+                          description: Server-side metrics collected for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_metrics
+                            json: serverMetrics,omitempty
+                        serverBoardConfig:
+                          type: object
+                          description: Server board configuration associated with this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_board_config
+                            json: serverBoardConfig,omitempty
+                        testStartTime:
+                          type: string
+                          format: date-time
+                          description: Time when the load test started.
+                          x-oapi-codegen-extra-tags:
+                            db: test_start_time
+                            json: testStartTime,omitempty
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: UserID
+                          x-oapi-codegen-extra-tags:
+                            db: user_id
+                            json: userId,omitempty
+                        createdAt:
+                          description: Timestamp when the performance result was created.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            yaml: created_at
+                            json: createdAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: CreatedAt
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp when the performance result was last updated.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            yaml: updated_at
+                            json: updatedAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: UpdatedAt
+                          x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
           content:
             text/plain:
               schema:
