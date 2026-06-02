@@ -6,7 +6,7 @@ params:
 categories: [tutorials]
 description: Step by step example for how to export Meshery Designs and publish them to an Artifact Hub repository.
 aliases:
-- /kanvas/tutorials/publish-to-Artifacthub
+- /kanvas/tutorials/publish-to-artifacthub
 ---
 
 ## Introduction
