@@ -20,31 +20,31 @@ In this tutorial, we'll see how to export a Design from Meshery which we will us
 ## Steps
 
 ### 1. Open the hamburger menu in Kanvas
-![](/kanvas/tutorials/images/publish-to-Artifacthub/2024-07-30_1.png)
+![](/kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_1.png)
 
 
 ### 2. Click Open
-![](/kanvas/tutorials/images/publish-to-Artifacthub/2024-07-30_2.png)
+![](/kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_2.png)
 
 
 ### 3. Find the Design in the Panel
-![](/kanvas/tutorials/images/publish-to-Artifacthub/2024-07-30_3.png)
+![](/kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_3.png)
 
 
 ### 4. Click Export Design
-![](/kanvas/tutorials/images/publish-to-Artifacthub/2024-07-30_4.png)
+![](/kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_4.png)
 
 ### 5. Click on EXPORT under OCI
-![](/kanvas/tutorials/images/publish-to-Artifacthub/2024-07-30_5.png)
+![](/kanvas/tutorials/images/publish-to-artifacthub/2024-07-30_5.png)
 
 ### Prepare your Artifact Hub repo
-You will need to have an Artifact Hub repository already created with `Kind` as `Meshery Designs`. See [Artifact Hub documentation](https://Artifacthub.io/docs/topics/repositories/meshery-designs/) for more information on managing repositories.
+You will need to have an Artifact Hub repository already created with `Kind` as `Meshery Designs`. See [Artifact Hub documentation](https://artifacthub.io/docs/topics/repositories/meshery-designs/) for more information on managing repositories.
 
 ### Push Design to Artifact Hub repository
 After exporting your design as a Meshery Design (OCI image) from Kanvas, a `.tar` archive will be downloaded.
 1. Extract the downloaded .tar archive.
 2. Inside the extracted contents, locate and extract the second archive.
-3. After extraction, you should find the following files: `artifacthub-pkg.yml` and `design.yml`
+3. After extraction, you should find the following files: `artifacthub-pkg.yml` and `design.yml`.
 4. Move these files into your prepared Artifact Hub repository.
 5. Commit and push the changes to your repository.
 
