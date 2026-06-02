@@ -39,8 +39,8 @@
                 {{ end }}
               {{ else }}
                 <!-- if no subcategories i.e. videos are directly in category folder: set a default "All" subcategory  -->
-                <a href="#category-{{ $mainIndex }}-subcategory-main" class="subcategory-btn" 
-                   data-main-category="{{ $mainIndex }}" data-subcategory="main">
+                <a href="#category-{{ $mainIndex }}-subcategory-0" class="subcategory-btn" 
+                   data-main-category="{{ $mainIndex }}" data-subcategory="0">
                   All
                 </a>
               {{ end }}
@@ -55,7 +55,7 @@
         {{ range $mainIndex, $mainSection := $videoContentDir.Sections }}
           <!-- display videos from subcategories -->
           {{ range $subIndex, $subSection := .Sections }}
-            <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}" style="display: none;">
+            <div class="video-group" id="video-group-{{ $mainIndex }}-{{ $subIndex }}">
               <div class="video-grid">
                 {{ range $subSection.Pages }}
                   <div class="video-card" 
@@ -106,7 +106,7 @@
           
           <!-- for direct videos in main category (when no subcategories) -->
           {{ if eq (len .Sections) 0 }}
-            <div class="video-group" id="video-group-{{ $mainIndex }}-0" style="display: none;">
+            <div class="video-group" id="video-group-{{ $mainIndex }}-0">
               <div class="video-grid">
                 {{ range where $mainSection.Pages "Kind" "page" }}
                   <div class="video-card"
@@ -208,39 +208,30 @@
            if (currentSubcategoryBtns.length > 0 && subCategoryIndex < currentSubcategoryBtns.length) {
              currentSubcategoryBtns[subCategoryIndex].classList.add('active');
            }
-           
+
+
            // show/hide video groups
            const videoGroups = document.querySelectorAll('.video-group');
-           videoGroups.forEach(group => group.style.display = 'none');
+           videoGroups.forEach(group => {
+             group.style.opacity = '0';
+             group.style.pointerEvents = 'none';
+           });
            const activeVideoGroup = document.getElementById(`video-group-${mainCategoryIndex}-${subCategoryIndex}`);
            if (activeVideoGroup) {
-             activeVideoGroup.style.display = 'block';
+             activeVideoGroup.style.opacity = '1';
+             activeVideoGroup.style.pointerEvents = 'auto';
+             syncContainerHeight(activeVideoGroup);
            }
-           
-           // update url hash, can later modify this to have 
-           // this: category-getting-started-subcategory-onboarding
-           // instead of: category-0-subcategory-1
-   
-           window.location.hash = `category-${mainCategoryIndex}-subcategory-${subCategoryIndex}`;
          }
          
-         // Add click handlers to main category tabs
-         categoryTabs.forEach((tab, index) => {
-           tab.addEventListener('click', function(e) {
-             e.preventDefault();
-             updateContent(index);
-           });
-         });
-         
-         // Add click handlers to subcategory buttons
-         subcategoryBtns.forEach(btn => {
-           btn.addEventListener('click', function(e) {
-             e.preventDefault();
-             const mainCategoryIndex = parseInt(this.getAttribute('data-main-category'));
-             const subCategoryIndex = parseInt(this.getAttribute('data-subcategory'));
-             updateContent(mainCategoryIndex, subCategoryIndex);
-           });
-         });
+         // sync container height to prevent collapse
+         function syncContainerHeight(activeGroup) {
+           const containerEl = document.querySelector('.video-grid-container');
+           if (activeGroup && containerEl) {
+             const height = activeGroup.scrollHeight;
+             containerEl.style.minHeight = height + 'px';
+           }
+         }
          
          // handle initial load and urL hash changes
          function handleHashChange() {
