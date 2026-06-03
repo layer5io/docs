@@ -20,9 +20,7 @@ browsers. */ -}}
 {{ end -}}
 
 {{ with $css -}}
-  <link href="{{ .RelPermalink }}" rel="stylesheet"
-  {{- with .Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end -}}
-  >
+  <link href="{{ .RelPermalink | absURL }}" rel="stylesheet">
 {{ else -}}
   {{ errorf "Resource not found or error building CSS: %s" $scssMain -}}
 {{ end -}}
