@@ -7,7 +7,7 @@ description: >
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
 
 <div class="dash-sign-container">
-<h1 class="dashboard">Expect more from your infrastructure</h1>
+<h1 class="dashboard">Expect more from Bhyour infrastructure</h1>
 
 <a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
 
