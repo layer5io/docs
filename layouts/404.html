@@ -1,12 +1,6 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
-  {{ if in .Permalink "/pr-preview/" }}
-    <base href="{{ "/" | relURL }}">
-  {{ else }}
-    <base href="/" />
-  {{ end }}
-
   {{ partial "head.html" . }}
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
@@ -37,6 +31,7 @@
       </div>
       {{ partial "footer.html" . }}
     </div>
+    {{ partial "scripts.html" . }}
   </body>
 </html>
 
