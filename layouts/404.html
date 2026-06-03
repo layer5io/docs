@@ -1,14 +1,14 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
-  {{ if in .Site.BaseURL "/pr-preview/" }}
-    <base href="{{ .Site.BaseURL }}">
+  {{ if in .Permalink "/pr-preview/" }}
+    <base href="{{ "/" | relURL }}">
   {{ else }}
     <base href="/" />
   {{ end }}
 
   {{ partial "head.html" . }}
-</head>
+  </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
     <header>
       {{ partial "navbar.html" . }}
