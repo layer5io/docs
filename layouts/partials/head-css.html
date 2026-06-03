@@ -16,11 +16,13 @@ browsers. */ -}}
 
 {{ if hugo.IsProduction -}}
   {{ $css = $css | minify | fingerprint -}}
-  <link rel="preload" href="{{ $css.RelPermalink }}" as="style" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+  <link rel="preload" href="{{ $css.Permalink }}" as="style" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
 {{ end -}}
 
 {{ with $css -}}
-  <link href="{{ .RelPermalink | absURL }}" rel="stylesheet">
+  <link href="{{ .Permalink }}" rel="stylesheet"
+  {{- with .Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end -}}
+  >
 {{ else -}}
   {{ errorf "Resource not found or error building CSS: %s" $scssMain -}}
 {{ end -}}
