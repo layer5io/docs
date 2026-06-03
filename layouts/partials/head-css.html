@@ -15,7 +15,7 @@ browsers. */ -}}
 {{ end -}}
 
 {{ if hugo.IsProduction -}}
-  {{ $css = $css | minify | fingerprint -}}
+  {{ $css = $css | minify }}
   <link rel="preload" href="{{ $css.RelPermalink }}" as="style" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
 {{ end -}}
 
