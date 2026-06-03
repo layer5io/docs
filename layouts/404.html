@@ -1,6 +1,7 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
+    <base href="{{ .Site.BaseURL }}">
     {{ partial "head.html" . }}
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
