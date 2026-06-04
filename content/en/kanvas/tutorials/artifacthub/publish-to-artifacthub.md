@@ -39,6 +39,14 @@ In this tutorial, we'll see how to export a Design from Meshery which we will us
 
 ### Prepare your Artifact Hub repo
 You will need to have an Artifact Hub repository already created with `Kind` as `Meshery Designs`. See [Artifact Hub documentation](https://artifacthub.io/docs/topics/repositories/meshery-designs/) for more information on managing repositories.
+1. Navigate to the Artifact Hub control panel.
+2. Click **ADD** to create a new repository.
+
+![](/kanvas/tutorials/images/publish-to-artifacthub/add_repo.png)
+
+3. Select `Meshery designs` as the repository kind and fill in the repository details.
+
+![](/kanvas/tutorials/images/publish-to-artifacthub/kind_design_repo.png)
 
 ### Push Design to Artifact Hub repository
 After exporting your design as a Meshery Design (OCI image) from Kanvas, a `.tar` archive will be downloaded.
@@ -50,3 +58,4 @@ After exporting your design as a Meshery Design (OCI image) from Kanvas, a `.tar
 
 ### Verify Repository in Artifact Hub
 After pushing the files, wait for Artifact Hub to index your repository. Once indexing is complete, verify the published Meshery Design from the Artifact Hub control panel.
+![](/kanvas/tutorials/images/publish-to-artifacthub/artifacthub_control_panel.png)
