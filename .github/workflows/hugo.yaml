@@ -57,7 +57,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "/"
+            --baseURL "https://docs.layer5.io/"
           cp CNAME public/CNAME
           touch public/.nojekyll
       - name: Deploy to GitHub Pages

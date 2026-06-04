@@ -1,6 +1,19 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
+    {{- $baseHref := .Site.BaseURL -}}
+    {{- with getenv "HUGO_PREVIEW_BASE_URL" -}}
+      {{- $baseHref = . -}}
+    {{- end }}
+    <script>
+      (function () {
+        var previewBase = window.location.pathname.match(/^\/pr-preview\/pr-\d+\//);
+        if (previewBase && window.location.pathname !== previewBase[0] + "404.html") {
+          window.location.replace(previewBase[0] + "404.html");
+        }
+      })();
+    </script>
+    <base href="{{ $baseHref }}">
     {{ partial "head.html" . }}
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
