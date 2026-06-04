@@ -5,6 +5,9 @@
     {{- with getenv "HUGO_PREVIEW_BASE_URL" -}}
       {{- $baseHref = . -}}
     {{- end }}
+    {{- if not (strings.HasSuffix $baseHref "/") -}}
+      {{- $baseHref = printf "%s/" $baseHref -}}
+    {{- end }}
     <script>
       (function () {
         var previewBase = window.location.pathname.match(/^\/pr-preview\/pr-\d+\//);
@@ -47,4 +50,3 @@
     {{ partial "scripts.html" . }}
   </body>
 </html>
-
