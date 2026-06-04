@@ -3,10 +3,7 @@
   <head>
     {{- $baseHref := .Site.BaseURL -}}
     {{- with getenv "HUGO_PREVIEW_BASE_URL" -}}
-      {{- $baseHref = . -}}
-    {{- end }}
-    {{- if not (strings.HasSuffix $baseHref "/") -}}
-      {{- $baseHref = printf "%s/" $baseHref -}}
+      {{- $baseHref = printf "%s/" (strings.TrimSuffix "/" .) -}}
     {{- end }}
     <script>
       (function () {
