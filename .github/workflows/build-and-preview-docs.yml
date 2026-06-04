@@ -72,6 +72,7 @@ jobs:
         if: github.event.action != 'closed'
         env:
           HUGO_PREVIEW: 'true'
+          HUGO_PREVIEW_BASE_URL: https://docs.layer5.io/pr-preview/pr-${{ github.event.pull_request.number }}/
         run: |
           npm run build:preview
           cat > public/robots.txt <<'EOF'
@@ -145,7 +146,7 @@ jobs:
         with:
           header: pr-preview
           message: |
-            🚀 Preview deployment: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+            🚀 Preview deployment: https://docs.layer5.io/pr-preview/pr-${{ github.event.pull_request.number }}/
             > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
 
       - name: Comment on pruned previews
