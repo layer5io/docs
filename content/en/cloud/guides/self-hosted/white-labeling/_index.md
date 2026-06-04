@@ -194,6 +194,8 @@ Whether social sign-in (Google and GitHub) works on a custom domain depends on h
 On a fully-custom domain **without** its own identity providers, the Google and GitHub buttons are **hidden** on the login and sign-up screens — they would otherwise lead to a sign-in that cannot complete. **Email-and-password sign-in and sign-up both remain fully available** — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden. They reappear automatically once your organization configures its own identity providers. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/) for what BYOC is and when it is required.
 {{< /alert >}}
 
+The same base domain / different base domain split above is not only about whether social buttons appear — it also marks an **authentication boundary**. Organizations that share an identity provider (the canonical host and on-eTLD custom subdomains that use the shared, central provider) sit within the same security boundary, while an organization that brings its own (BYOC) provider is a distinct one: **same identity provider source means the same security boundary**, regardless of how the host is named. See [Identity Services → The identity provider is the security boundary](/cloud/guides/self-hosted/planning/identity-services/#the-identity-provider-is-the-security-boundary) and [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries).
+
 ## Frequently asked questions about white labeling
 
 <details>

@@ -42,6 +42,25 @@ Whether BYOC is *optional* or *required* depends on your organization's [custom 
 
 On a fully-custom domain **without** BYOC, the Google and GitHub buttons are hidden on the login and sign-up screens. Email-and-password sign-in and sign-up both remain fully available — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden; configuring the organization's own identity providers restores them on that domain.
 
+### The identity provider is the security boundary
+
+When you are reasoning about which organizations sit inside the *same* authentication boundary, look at the connected identity provider — not at the name or DNS shape of the host:
+
+> **Same identity provider source means the same security boundary.**
+
+Organizations that share an identity provider sit within the same authentication boundary; an organization that brings its own provider (BYOC) is a distinct authentication boundary. This holds regardless of which *class* of host an organization is reached on:
+
+| Host class | Example | Identity provider it uses | Authentication boundary |
+| --- | --- | --- | --- |
+| **Canonical host** | `cloud.layer5.io` | The deployment's shared, central provider | The shared boundary |
+| **On-eTLD custom host** (a subdomain under the same base domain as the canonical host) | `partner.layer5.io` on a `cloud.layer5.io` deployment | The same shared, central provider | The **same** shared boundary as the canonical host |
+| **Off-eTLD custom host** (a fully-custom domain on a different base domain) | `meshery.yourcompany.com` pointed at `cloud.layer5.io` | The organization's own (BYOC) provider | A **distinct** boundary |
+| **Any host, with BYOC** | any of the above, after configuring BYOC | The organization's own dedicated provider | A **distinct** boundary |
+
+The canonical host and on-eTLD custom hosts typically draw on the shared, central identity provider, so organizations reached through them are within one shared authentication boundary. An organization with its own (BYOC) identity provider is its own boundary, no matter how its host is named. The DNS shape of the host is not the boundary — the identity provider behind it is.
+
+This is the authentication (host-class) view of the boundary. It composes with the **authorization** view — where each organization context independently scopes what a user is permitted to do via [keys, keychains, and roles](/cloud/concepts/identity-and-security/keys/) — and with **granular** resource-access sharing that can cross organizations. For the complete picture of how these layers fit together, see [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries).
+
 {{< alert type="info" >}}
 For the custom-domain setup walkthrough and the on-eTLD vs. off-eTLD distinction, see [White-labeling → Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain).
 {{< /alert >}}

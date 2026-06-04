@@ -21,6 +21,8 @@ For instance, consider a system shipped default key `Create Organization`, which
 
 {{< /alert >}}
 
+Because every key is evaluated in the context of an organization, a user's *effective* set of keys can — and will — differ from one organization to another. The same person holds whatever capabilities their role(s) grant them **within each specific organization**, so being able to perform an action in one organization implies nothing about the same action in another. This is why an organization context is itself an authorization boundary. For how this fits with authentication and cross-organization resource sharing, see [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries).
+
 ### Keys Types
 
 Generally, there are four types of keys:
