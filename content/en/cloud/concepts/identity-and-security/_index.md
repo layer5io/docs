@@ -67,9 +67,9 @@ Because identity and authorization are layered, "where is the boundary?" has two
 
 **The organization is the unit of tenancy and the core security boundary.** Everything else — teams, workspaces, roles, keychains, keys — composes on top of the organization. Resources, billing, and access control are isolated per organization.
 
-**From the authorization perspective, an organization context is itself a boundary.** Because keys, keychains, and roles are evaluated per (user, organization), a user acting in the context of one organization has an independently-scoped set of capabilities from the same user acting in another — including when those organizations are reached through different per-organization subdomains. Operating "inside" one organization's subdomain does not carry a user's permissions from another organization with them.
+**From the authorization perspective, an organization context is itself a boundary.** Because keys, keychains, and roles are evaluated per (user, organization), a user acting in the context of one organization has an independently scoped set of capabilities from the same user acting in another — including when those organizations are reached through different per-organization subdomains. Operating "inside" one organization's subdomain does not carry a user's permissions from another organization with them.
 
-**From the host perspective, the authentication boundary is set by the connected identity provider — not by the shape of the URL.** Layer5 Cloud organizations may be reached on the canonical host, on a custom subdomain that sits under the same parent (base) domain as that canonical host, or on a fully-custom domain on a different base domain. Across all of these:
+**From the host perspective, the authentication boundary is set by the connected identity provider — not by the shape of the URL.** Layer5 Cloud organizations may be reached on the canonical host, on a custom subdomain that sits under the same parent (base) domain as that canonical host, or on a fully custom domain on a different base domain. Across all of these:
 
 > **Same identity provider source means the same security boundary.**
 
