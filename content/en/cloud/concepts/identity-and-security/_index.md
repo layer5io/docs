@@ -51,6 +51,30 @@ Access is granted through Role-Based Access Control (RBAC). Roles are assigned a
 
 ![permission](images/permissions.svg "image-center-shadow")
 
+## How Identity, Access, and Authorization Fit Together
+
+It is tempting to assume that organization membership alone decides what a user can see and do. It does not. Identity, access, and authorization in Layer5 Cloud are decided by a *combination* of three independent mechanisms that compose on top of the organization:
+
+* **Authentication — the organization's connected identity provider (IdP).** Each organization is connected to an identity provider that establishes *who* a user is. More than one organization can — and commonly does — share the same identity provider. An organization may instead **bring its own** identity provider (BYOC), in which case it authenticates against its own dedicated provider. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/).
+* **Generic authorization — keys → keychains → roles.** Permission [keys](/cloud/concepts/identity-and-security/keys/) roll up into [keychains](/cloud/concepts/identity-and-security/keychains/), which are assigned to [roles](/cloud/concepts/identity-and-security/roles/), which are assigned to users. This decides *what operations* a user may perform — and it is evaluated per organization. The same person can hold different roles, and therefore a different effective set of capabilities, in each organization they belong to.
+* **Granular access — resource-access mappings.** A specific resource (for example, a single design) can be shared with an individual user. These mappings grant access to that one resource and **deliberately cross organizational boundaries**: a user does not need to be a member of an organization to open a resource in it when a mapping grants that access. This is by design — it is what makes cross-organization collaboration possible.
+
+The practical consequence is that the same human can be a member of several organizations and have a *different* set of capabilities in each, while also being able to reach individual shared resources in organizations they do not belong to at all.
+
+## Security Boundaries
+
+Because identity and authorization are layered, "where is the boundary?" has two complementary answers, depending on which layer you mean.
+
+**The organization is the unit of tenancy and the core security boundary.** Everything else — teams, workspaces, roles, keychains, keys — composes on top of the organization. Resources, billing, and access control are isolated per organization.
+
+**From the authorization perspective, an organization context is itself a boundary.** Because keys, keychains, and roles are evaluated per (user, organization), a user acting in the context of one organization has an independently scoped set of capabilities from the same user acting in another — including when those organizations are reached through different per-organization subdomains. Operating "inside" one organization's subdomain does not carry a user's permissions from another organization with them.
+
+**From the host perspective, the authentication boundary is set by the connected identity provider — not by the shape of the URL.** Layer5 Cloud organizations may be reached on the canonical host, on a custom subdomain that sits under the same parent (base) domain as that canonical host, or on a fully custom domain on a different base domain. Across all of these:
+
+> **Same identity provider source means the same security boundary.**
+
+Organizations that share an identity provider — typical for the canonical host and for custom subdomains that use the shared, central provider — sit within the *same* authentication boundary. An organization that brings its own identity provider (BYOC) is a *distinct* authentication boundary, regardless of how its host is named. The DNS shape of the host is not the boundary; the identity provider behind it is. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/) and [Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain) for how this plays out across host types.
+
 ## Key Management and Tokens
 
 Beyond structural roles, Layer5 Cloud uses cryptographic and session-based security:
