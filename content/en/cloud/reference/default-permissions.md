@@ -13,12 +13,14 @@ tags: [perms]
 - ✅* user must be resource owner in order to perform action.
 - ✅ user is allowed to perform action regardless of resource ownership.
 
-  {{< tabpane text=true >}}
-  {{< tab header="**Sort by**:" disabled=true />}}
-  {{< tab header="Categories" lang="en" >}}
-  {{< csvtable >}}
-  {{< /tab >}}
-  {{< tab header="Roles" lang="en" >}}
-  {{< csvtable-roles >}}
-  {{< /tab >}}
-  {{< /tabpane >}}
+<div class="permissions-tabpane">
+{{< tabpane text=true >}}
+{{< tab header="**Sort by**:" disabled=true />}}
+{{< tab header="Categories" lang="en" >}}
+{{< csvtable >}}
+{{< /tab >}}
+{{< tab header="Roles" lang="en" >}}
+{{< csvtable-roles >}}
+{{< /tab >}}
+{{< /tabpane >}}
+</div>
