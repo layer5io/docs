@@ -214,6 +214,11 @@ h6 {
   border-color: rgba(0, 179, 159, 0.33);
 }
 
+.csvtable + h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
 .td-initial thead {
   display: table-header-group;
   vertical-align: bottom;
