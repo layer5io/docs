@@ -5,7 +5,7 @@
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/concepts/identity-and-security/images/organization-roles.svg" link="images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
+ &lt;img src="../images/organization-roles.svg" link="../images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -41,7 +41,7 @@
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/concepts/identity-and-security/images/workspace-roles.svg" link="images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
+ &lt;img src="../images/workspace-roles.svg" link="../images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -80,7 +80,7 @@
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/concepts/identity-and-security/images/team-roles.svg" link="images/team-roles.svg" width="100%" alt="Team Roles" /&gt;
+ &lt;img src="../images/team-roles.svg" link="../images/team-roles.svg" width="100%" alt="Team Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -123,7 +123,7 @@
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/concepts/identity-and-security/images/user-role.svg" link="images/user-role.svg" width="100%" alt="User Role" /&gt;
+ &lt;img src="images/user-role.svg" link="images/user-role.svg" width="100%" alt="User Role" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -161,7 +161,7 @@
  &lt;/div&gt;
 &lt;div class="card-body"&gt;
  &lt;p class="card-text"&gt;
- &lt;img src="../../cloud/concepts/identity-and-security/images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
+ &lt;img src="images/academy-admin.svg" link="images/academy-admin.svg" width="100%" alt="Academy Administrator Roles" /&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;
@@ -206,7 +206,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[215 7 475 402 287 277]" src="../../cloud/concepts/identity-and-security/images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
+ &lt;img id="[358 500 268 312 333 294]" src="images/roles-overview.svg" onclick="openModal(this.id)" alt="roles" 
  class="md-image-responsive image-center-no-shadow" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -229,7 +229,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[41 153 55 250 120 331]" src="../../cloud/concepts/identity-and-security/images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
+ &lt;img id="[216 59 110 357 319 381]" src="images/role-provider-admin.svg" onclick="openModal(this.id)" alt="role-provider" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/p&gt;
