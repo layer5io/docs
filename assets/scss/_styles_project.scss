@@ -346,7 +346,7 @@ a:not([href]):not([class]):hover {
   @supports (position: sticky) {
     position: sticky;
     top: 5.5rem;
-    padding-top: 1rem;
+    padding-top: 2.15rem;
     height: calc(100vh - 5.5rem);
     overflow-y: auto;
   }
