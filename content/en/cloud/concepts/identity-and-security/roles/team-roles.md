@@ -56,7 +56,7 @@ aliases:
 
 - Organization Administrator or Team owner
 
-**When this role first assigned?**
+**When is this role first assigned?**
 
 - Manually by Organization Administrator or Team Owner
 
