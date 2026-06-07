@@ -58,7 +58,7 @@ aliases:
 
 **When is this role first assigned?**
 
-- Manually by Organization Administrator or Team Owner
+- Manually by Organization Administrator or Team owner
 
 **How many instances of these roles?**
 
