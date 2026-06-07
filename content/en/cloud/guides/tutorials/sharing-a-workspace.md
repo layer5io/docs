@@ -25,7 +25,7 @@ In your browser, go to [Layer5 Cloud](https://cloud.layer5.io).
 4. Set the permission level — Five gives Rex **edit** access so he can deploy and modify the design.
 5. Click **Send**.
 
-![Flow for sharing designs](/cloud/concepts/catalog/images/Slide51.svg)
+![Flow for sharing designs](../../../images/Slide51.svg)
 
 Rex receives an invitation and can now open `microservices-baseline` in the `orbital-dev` workspace.
 
@@ -92,5 +92,5 @@ Someone you don't know might be viewing your design because:
 - Someone who can edit your design shared it further.
 
 {{< alert type="info" >}}
-See [Meet Five and the Cast](/cloud/getting-started/meet-five) for the full Orbital Labs workspace and character reference.
+See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full Orbital Labs workspace and character reference.
 {{< /alert >}}

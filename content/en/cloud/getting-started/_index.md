@@ -41,8 +41,8 @@ To verify your setup, try deploying a sample design:
 ---
 
 ### Need Help?
-If you run into issues during setup, join our [Slack Community](http://slack.layer5.io) or check the [Troubleshooting Guide](/docs/troubleshooting).
+If you run into issues during setup, join our [Slack Community](http://slack.layer5.io)
 
 {{< alert type="info" title="Follow Along with Five" >}}
-Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →]({{< relref "/cloud/getting-started/meet-five/_index.md" >}})
+Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →]({{< relref "cloud/getting-started/meet-five/_index.md" >}})
 {{< /alert >}}

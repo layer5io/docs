@@ -71,6 +71,7 @@ jobs:
       - name: Build PR preview
         if: github.event.action != 'closed'
         env:
+          BASE_URL: /${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
           HUGO_PREVIEW: 'true'
         run: |
           npm run build:preview

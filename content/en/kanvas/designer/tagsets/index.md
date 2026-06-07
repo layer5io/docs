@@ -19,13 +19,13 @@ Kubernetes resources are capable of being assigned Label and Annotation key/valu
 
 To group components using tags, follow these steps.
 
-![Tags](./tagsets.gif)
+![Tags](images/tagsets.gif)
 
 ## Labels and Annotations
 
 Designs support two different types of tags: Labels and Annotations. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
 
-<img alt="Labels and Annotations" src="./group-components.png" width="50%" />
+<img alt="Labels and Annotations" src="../../images/group-components.png" width="50%" />
 
 {{< alert title="Performance Consideration" type="warning">}}
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.

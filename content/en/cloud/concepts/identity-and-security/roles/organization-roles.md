@@ -12,7 +12,7 @@ aliases:
 
 {{< cardpane >}}
 {{% card header="Default Organization Roles" %}}
-<img src="/cloud/concepts/identity-and-security/images/organization-roles.svg" link="images/organization-roles.svg"  width="100%" alt="Organization Roles" />
+<img src="../images/organization-roles.svg" link="../images/organization-roles.svg"  width="100%" alt="Organization Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -43,7 +43,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference](/cloud/reference/default-permissions/)
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -73,7 +73,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference](/cloud/reference/default-permissions/)
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
 {{< /cardpane >}}

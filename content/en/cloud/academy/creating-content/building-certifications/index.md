@@ -128,7 +128,7 @@ A certification is primarily composed of exams. However, you can also include st
 {{< alert type="info" title="How to Create and Configure Exams" >}}
 Every "Exam" file within a certification follows the unified Academy assessment standard.
 
-For detailed instructions on how to write an exam file, define various question types, set scoring and passing percentages, and use advanced options, please refer to our comprehensive [Integrating Assessments in the Academy](../integrating-assessments-in-the-academy/) guide.
+For detailed instructions on how to write an exam file, define various question types, set scoring and passing percentages, and use advanced options, please refer to our comprehensive [Integrating Assessments in the Academy]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) guide.
 {{< /alert >}}
 
 ### 4. Managing Question Pools and Test Attempts

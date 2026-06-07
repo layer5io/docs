@@ -12,7 +12,7 @@ aliases:
 
 {{< cardpane >}}
 {{% card header="Default Team Roles" %}}
-<img src="/cloud/concepts/identity-and-security/images/team-roles.svg" link="images/team-roles.svg"  width="100%" alt="Team Roles" />
+<img src="../images/team-roles.svg" link="../images/team-roles.svg"  width="100%" alt="Team Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -42,7 +42,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference](/cloud/reference/default-permissions/)
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
 {{< /cardpane >}}
