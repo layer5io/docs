@@ -22,9 +22,11 @@ Using Meshery Playground, an interactive live cluster environment, we'll perform
 hands-on labs to gain practical experience with Kubernetes Services, without
 writing any YAML.
 
-> **NOTE:** If this is your first time working with Meshery Playground,
-> consider exploring introductory Kubernetes tutorials available in the
-> Meshery documentation before proceeding.
+> **NOTE:** If this is your first time working with Meshery Playground, consider
+> starting with the
+> [Exploring Kubernetes Pods with Meshery Playground](/kanvas/tutorials/kubernetes-pods)
+> tutorial first or
+> [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes-deployments).
 
 ## Prerequisites
 
