@@ -23325,7 +23325,7 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
-  padding-top: 1rem;
+  padding-top: 0rem;
   margin-top: 0;
   overflow-x: hidden; }
   @media (min-width: 768px) {
@@ -23384,12 +23384,17 @@ a:not([href]):not([class]):hover {
     .td-sidebar-toc {
       position: sticky;
       top: 5.5rem;
-      padding-top: 2.15rem;
+      padding-top: 1rem;
       height: calc(100vh - 5.5rem);
       overflow-y: auto; } }
   .td-sidebar-toc .taxo-categories {
     margin-top: 2rem; }
-
+  @media screen and (max-width: 768px) {
+    @supports (position: sticky) {
+      .td-sidebar-toc {
+        top: 0;
+        padding-top: 0;
+        height: auto; } } }
 .td-page-meta a {
   display: block;
   color: #ced4da;
