@@ -171,7 +171,7 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 {{< /cardpane >}}
 
 {{< cardpane >}}
-{{% card header="<a href='https://docs.layer5.io/cloud/reference/default-permissions/#Team+Admin' target='_blank'>Team Administrator</a>" %}}
+{{% card header="### <a href='https://docs.layer5.io/cloud/reference/default-permissions/#Team+Admin' target='_blank'>Team Administrator</a>" %}}
 **What is the purpose of this role?**
 
 - Administration of teams
