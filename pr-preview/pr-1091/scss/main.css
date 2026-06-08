@@ -20081,7 +20081,7 @@ h6,
   vertical-align: top;
   border-color: rgba(0, 179, 159, 0.33); }
 
-.csvtable + h2, .csvtable + .h2 {
+.td-initial + h2, .td-initial + .h2 {
   margin-top: 3rem;
   margin-bottom: 1rem; }
 
