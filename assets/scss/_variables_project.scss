@@ -49,6 +49,34 @@ $td-sidebar-border-color: $border-color;
 // Righthand sidebar with intra-page table of contents
 $td-sidebar-toc-bg-color: rgba($dark, 0.5);
 
+
+// Variables for Consistent Sidebar Styling
+:root {
+  // Colors
+  --sidebar-bg-color: rgba(18, 18, 18, 0.7);
+  --sidebar-border-color: rgba(0, 179, 159, 0.33);
+  --sidebar-text-color: #cccccc;
+  --sidebar-link-color: #cccccc;
+  --sidebar-link-hover-color: #ffffff;
+  --sidebar-link-active-color: #ffffff;
+  --sidebar-secondary-text-color: #cccccc;
+  
+  // Spacing
+  --sidebar-padding-vertical: 1rem;
+  --sidebar-padding-horizontal: 1rem;
+  --sidebar-border-width: 1px;
+  
+  // Fonts
+  --sidebar-section-title-color: var(--bs-secondary-color);
+  --sidebar-link-font-weight: 300;
+  --sidebar-active-link-font-weight: 700;
+  
+  // Interactions
+  --sidebar-link-transition: color 0.2s ease, background-color 0.2s ease;
+  --sidebar-link-hover-bg: rgba(0, 211, 169, 0.1);
+  --sidebar-link-focus-bg: rgba(0, 211, 169, 0.15);
+}
+
 // Background colors for the sections on home page etc. It is a paint by number
 // system, starting at 0, where the number is taken from the shortcode's ordinal
 // if not provided by the user. These colors are all part of the theme palette,

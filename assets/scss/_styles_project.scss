@@ -335,18 +335,15 @@ a:not([href]):not([class]):hover {
 .td-sidebar-toc {
   margin-top: 0rem;
   line-height: 1.25rem;
-  border-left: 1px solid $border-color;
-  background-image: linear-gradient(to top,
-      #1e2117,
-      #1d1912,
-      #18120e,
-      #0f0a09,
-      #000000);
+  border-left: var(--sidebar-border-width) solid var(--sidebar-border-color);
+  background-color: var(--sidebar-bg-color);
+  padding-left: var(--sidebar-padding-horizontal);
+  padding-right: var(--sidebar-padding-horizontal);
 
   @supports (position: sticky) {
     position: sticky;
     top: 5.5rem;
-    padding-top: $sidebar-top-alignment;
+    padding-top: var(--sidebar-padding-vertical);
     height: calc(100vh - 5.5rem);
     overflow-y: auto;
   }
@@ -367,12 +364,13 @@ a:not([href]):not([class]):hover {
 .td-page-meta {
   a {
     display: block;
-    color: $gray-400;
+    color: var(--sidebar-secondary-text-color);
     line-height: 1.65rem;
     font-weight: $font-weight-medium;
+    transition: var(--sidebar-link-transition);
 
     &:hover {
-      color: $white;
+      color: var(--sidebar-link-hover-color);
       text-decoration: none;
     }
   }
@@ -387,16 +385,16 @@ a:not([href]):not([class]):hover {
 
   #TableOfContents {
     a {
-      color: $lightslategray;
+      color: var(--sidebar-secondary-text-color);
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition: var(--sidebar-link-transition);
 
       &:hover,
       &:focus-visible {
-        color: $white;
+        color: var(--sidebar-link-hover-color);
         text-decoration: none;
-        background-color: rgba($primary, 0.15);
+        background-color: var(--sidebar-link-hover-bg);
       }
     }
   }
