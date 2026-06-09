@@ -55,6 +55,34 @@ Below the top-level organization, you can add as many teams as you want - at the
 If you are the current team owner, you can’t remove yourself from the team until you transfer ownership to another team administrator.
 {{< /alert >}}
 
+## Delete a Team
+
+Deleting a team permanently removes the team and its memberships from the organization. This action dissolves the team but does not delete user accounts or associated resources.
+
+### What Happens When a Team Is Deleted?
+
+* The team is permanently removed.
+* All memberships associated with the team are removed.
+* User accounts remain in the organization.
+* Associated resources remain intact.
+* Team ownership is removed along with the team.
+
+{{< alert type="info" title="Team Deletion" >}}
+Deleting a team removes team memberships and ownership, but does not delete user accounts or associated resources.
+{{< /alert >}}
+
+### Example
+
+Suppose Team A contains Alice and Bob and is associated with several resources.
+
+After deleting Team A:
+
+* Team A no longer exists.
+* Alice and Bob remain users in the organization.
+* Team memberships are removed.
+* Associated resources continue to exist.
+
+
 ## Open Team Invite
 
 The "Open Team Invite" feature allows administrators to use shareable "Team Invite Links" for users to join a particular team. This link-based invitation method functions much like an [Open Org Invite Link](https://docs.layer5.io/cloud/guides/organizations/org-management/), but is tailored for team-specific invitations and provides a direct alternative to adding members manually.
