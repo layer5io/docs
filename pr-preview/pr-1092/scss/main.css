@@ -23346,7 +23346,7 @@ a:not([href]):not([class]):hover {
 
 .td-sidebar-nav {
   max-height: none;
-  overflow: hidden;
+  overflow: visible;
   padding: 0px; }
   .td-sidebar-nav__section-title a {
     color: #ced4da;
