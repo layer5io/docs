@@ -120,6 +120,10 @@ Each of the prebuilt widgets can be added to a dashboard only once. If you find 
 
 ## Custom Domain Name and Login Screen
 
+{{< alert type="info" >}}
+Not sure whether you want a subdomain of the platform or your own separate custom domain — and whether you'll need your own identity provider? The [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) guide names each combination (Hosted, Branded, White-Label) and explains when to choose one over the next.
+{{< /alert >}}
+
 Layer5 Cloud supports customizing the login screen based on custom domain name. Redirect your users to your own domain name. For example, if your domain name is `mycompany.com`, you can redirect users to `meshery.mycompany.com`.
 
 <!-- {{< youtube id=hZuhmP7lenk title="Example: Replace the Layer5 logo with your own logo." >}} -->
