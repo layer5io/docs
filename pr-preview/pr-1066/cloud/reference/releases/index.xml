@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.121</title><link>/cloud/reference/releases/v1.0.121/</link><pubDate>Sat, 06 Jun 2026 00:35:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.121/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.125</title><link>/cloud/reference/releases/v1.0.125/</link><pubDate>Tue, 09 Jun 2026 21:00:20 +0000</pubDate><guid>/cloud/reference/releases/v1.0.125/</guid><description>&lt;ul&gt;
+&lt;li&gt;keep Docsy main surface theme-owned not overriding it @CodexRaunak (#5460)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodexRaunak&lt;/p&gt;</description></item><item><title>v1.0.124</title><link>/cloud/reference/releases/v1.0.124/</link><pubDate>Tue, 09 Jun 2026 17:09:26 +0000</pubDate><guid>/cloud/reference/releases/v1.0.124/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meshery v0.4.29 content update @l5io (#5459)&lt;/li&gt;
+&lt;li&gt;Layer5 v0.8.22 content update @l5io (#5458)&lt;/li&gt;
+&lt;li&gt;DigitalOcean v0.1.20 content update @l5io (#5457)&lt;/li&gt;
+&lt;li&gt;Exoscale v0.6.38 content update @l5io (#5456)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.123</title><link>/cloud/reference/releases/v1.0.123/</link><pubDate>Tue, 09 Jun 2026 12:10:39 +0000</pubDate><guid>/cloud/reference/releases/v1.0.123/</guid><description>&lt;ul&gt;
+&lt;li&gt;Revert ix(auth): custom-domain email signup - verify-click loop + require open signup to join\ @leecalcote (#5455)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.122</title><link>/cloud/reference/releases/v1.0.122/</link><pubDate>Tue, 09 Jun 2026 02:52:56 +0000</pubDate><guid>/cloud/reference/releases/v1.0.122/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): custom-domain email signup - verify-click loop + require open signup to join @ritzorama (#5454)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.121</title><link>/cloud/reference/releases/v1.0.121/</link><pubDate>Sat, 06 Jun 2026 00:35:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.121/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(auth): org button colors, per-org legal/support links, and carousel toggle @leecalcote (#5434)&lt;/li&gt;
 &lt;li&gt;fix(ui): restore make ui-build — import InfoOutlinedIcon directly from sistent 0.21.19 @leecalcote (#5453)&lt;/li&gt;
 &lt;li&gt;fix(ui): restore InfoOutlinedIcon import — unbreak &lt;code&gt;make ui-build&lt;/code&gt; on master @leecalcote (#5452)&lt;/li&gt;
