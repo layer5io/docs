@@ -11,7 +11,7 @@ aliases:
   - /cloud/identity/organizations/configuration-scenarios/
 ---
 
-Every organization in Layer5 Cloud is configured along two simple choices:
+Every organization in Layer5 Cloud is configured around two simple choices:
 **where your users sign in** (your front door) and **whose identity
 provider authenticates them**. Those two choices combine into a small set
 of named scenarios. This guide names each one, describes what your users
@@ -127,7 +127,7 @@ provider for single sign-on.
 ### White-Label (Password-Only)
 
 Your organization runs on **your own domain** (`cloud.acme.com`, on a
-different base domain than the deployment), but still uses the deployment's
+different base domain from the deployment), but still uses the deployment's
 **default** identity providers.
 
 - **Branding:** fully white-labeled sign-in pages on your own domain.
@@ -136,7 +136,7 @@ different base domain than the deployment), but still uses the deployment's
   handshake cannot hand off between two unrelated domains using the shared
   apps. The **Log In / Sign Up** toggle stays visible, so users can still
   register and sign in with email and password.
-- **Choose it when:** you want your own domain quickly and email/password
+- **Choose it when:** you want your own domain quickly and email-and-password
   sign-in meets your needs for now. **To turn the social buttons back on,
   add your own identity provider** and you become a full *White-Label*
   organization (below). See the
@@ -172,11 +172,11 @@ A quick way to land on the right scenario:
 2. **Do you need your own identity provider** — your own Google/GitHub apps,
    your own consent-screen branding, or your corporate single sign-on?
    - On a **subdomain**: No → **Branded**. Yes → **Branded + BYOC**.
-   - On **your own domain**: No → **White-Label (Password-Only)** (email/
+   - On **your own domain**: No → **White-Label (Password-Only)** (email and
      password only). Yes → **White-Label** (the full experience).
 
 {{< alert type="info" >}}
-**Rule of thumb.** Your own domain on a *different* base domain than the
+**Rule of thumb.** Your own domain on a *different* base domain from the
 deployment? Bringing your own identity provider is **required** for social
 sign-in. A subdomain of the deployment's base domain? It's **optional** —
 only for your own branding, scale, or isolation. The full optional-vs-required
