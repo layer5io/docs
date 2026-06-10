@@ -44,10 +44,6 @@
     bindEvents();
 
     function bindEvents() {
-      document.addEventListener('pointermove', onPointerMove);
-      document.addEventListener('pointerup', stopResize);
-      document.addEventListener('pointercancel', stopResize);
-
       const onBreakpointChange = () => {
         if (mediaQuery.matches) {
           applyWidths(widths);
@@ -116,6 +112,10 @@
       handle.classList.add('resizable-panel-handle--active');
       handle.setPointerCapture(event.pointerId);
       document.body.classList.add('resizable-panels-dragging');
+
+      document.addEventListener('pointermove', onPointerMove);
+      document.addEventListener('pointerup', stopResize);
+      document.addEventListener('pointercancel', stopResize);
     }
 
     function onPointerMove(event) {
@@ -148,6 +148,10 @@
       if (!activeHandle) {
         return;
       }
+
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerup', stopResize);
+      document.removeEventListener('pointercancel', stopResize);
 
       activeHandle.classList.remove('resizable-panel-handle--active');
       activeHandle = null;
@@ -315,12 +319,11 @@
   }
 
   function initResizablePanels() {
-    document.querySelectorAll('.row.flex-xl-nowrap').forEach((row) => {
-      if (!row.dataset.resizablePanelsInitialized) {
-        row.dataset.resizablePanelsInitialized = 'true';
-        setupResizablePanels(row);
-      }
-    });
+    const row = document.querySelector('.row.flex-xl-nowrap');
+    if (row && !row.dataset.resizablePanelsInitialized) {
+      row.dataset.resizablePanelsInitialized = 'true';
+      setupResizablePanels(row);
+    }
   }
 
   if (document.readyState === 'loading') {
