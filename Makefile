@@ -20,22 +20,28 @@ setup:
 	npm install
 
 ## Run docs.layer5.io on your local machine with draft and future content enabled.
-site: check-go
-	hugo server -D -F
+site: check-deps check-go
+	npm run dev:site
 
 ## Build docs.layer5.io on your local machine.
-build:
-	hugo
+build: check-deps check-go
+	npm run dev:build
 
 docs-build-production:
 	npm run build:production
 
 ## Empty build cache and run docs.layer5.io on your local machine.
-clean: 
-	hugo --cleanDestinationDir
+clean: check-deps check-go
+	npm run dev:clean
 	make site
 
-.PHONY: setup build site clean check-go docker
+.PHONY: setup build site clean check-deps check-go docker
+
+check-deps:
+	@echo "Checking dependencies..."
+	@command -v npm > /dev/null || (echo "npm is not installed. Please install it before proceeding."; exit 1)
+	@if [ ! -d "node_modules" ]; then echo "Dependencies not installed. Please run 'make setup' first."; exit 1; fi
+	@echo "Dependencies are installed."
 
 check-go:
 	@echo "Checking if Go is installed..."

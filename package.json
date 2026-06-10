@@ -9,6 +9,9 @@
   "bugs": "https://github.com/layer5io/docs/issues",
   "spelling": "cSpell:ignore HTMLTEST precheck postbuild -",
   "scripts": {
+    "dev:site": "hugo server -D -F",
+    "dev:build": "hugo",
+    "dev:clean": "hugo --cleanDestinationDir",
     "_build": "npm run _hugo-dev",
     "_check:links": "echo IMPLEMENTATION PENDING for check-links; echo",
     "_hugo": "hugo --cleanDestinationDir",
