@@ -11,7 +11,7 @@ aliases:
   - /cloud/identity/organizations/configuration-scenarios/
 ---
 
-Every organization in Layer5 Cloud is configured around two simple choices:
+Every organization in Layer5 Cloud is configured based on two simple choices:
 **where your users sign in** (your front door) and **whose identity
 provider authenticates them**. Those two choices combine into a small set
 of named scenarios. This guide names each one, describes what your users
@@ -29,8 +29,8 @@ Before the scenarios, two roles an organization can play (illustrated with
 [Five and the cast at Orbital Labs](/cloud/getting-started/meet-five)):
 
 - **Provider Organization** — the top-level organization that operates the
-  deployment. On the hosted service that is Layer5 itself; on a self-hosted
-  deployment it is your platform team (in the cast, **Constellation Cloud**).
+  deployment. On the hosted service, this is Layer5 itself; on a self-hosted
+  deployment, it is your platform team (in the cast, **Constellation Cloud**).
   The Provider Organization owns the deployment's **default identity
   providers** — the Google and GitHub apps every other organization falls
   back to — and a Provider Administrator manages platform-wide settings.
@@ -59,7 +59,7 @@ Email-and-password sign-in works in *every* scenario; whether the social
 buttons appear depends on how your domain and identity provider line up —
 which is exactly what the named scenarios capture. (See
 [White-labeling → Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain)
-for the why.)
+for details.)
 
 ## The scenarios at a glance
 
@@ -68,14 +68,14 @@ for the why.)
 | **Hosted** | Shared (`cloud.layer5.io`) | Shared/default | ✅ Works | You just want an organization — no custom URL, no setup. |
 | **Branded** | Branded subdomain (`acme.layer5.io`) | Shared/default | ✅ Works | You want a branded sign-in URL and pages, but are happy using the platform's Google/GitHub apps. |
 | **Branded + BYOC** | Branded subdomain | Your own (BYOC) | ✅ Works (your consent screen) | You want a branded subdomain **and** your own OAuth apps or single sign-on. |
-| **White-Label (Password-Only)** | Custom domain (`cloud.acme.com`) | Shared/default | ⚠️ Hidden | You want your own domain quickly and email/password sign-in is enough for now. |
+| **White-Label (Password-Only)** | Custom domain (`cloud.acme.com`) | Shared/default | ⚠️ Hidden | You want your own domain quickly and email-and-password sign-in is enough for now. |
 | **White-Label** | Custom domain | Your own (BYOC) | ✅ Works (your consent screen) | You want a fully branded deployment on your own domain, end to end. |
 
 Read the table top-to-bottom as a ladder: each rung gives your organization
 more of its own identity. One combination is intentionally **not possible**
 — the Shared front door always uses the shared identity provider, so
 "Shared + your own identity provider" does not exist. **To use your own
-identity provider, take a Branded subdomain or a Custom domain first.**
+identity provider, configure a Branded subdomain or a Custom domain first.**
 
 ## The scenarios in detail
 
@@ -88,7 +88,7 @@ organization switcher.
 - **Branding:** your theme colors and logo appear once users are inside the
   app; the sign-in page itself is the platform's (it is shared by everyone
   on that address).
-- **Sign-in:** email/password **and** Google/GitHub both work out of the box.
+- **Sign-in:** email and password, as well as Google and GitHub, both work out of the box.
 - **Choose it when:** you're getting started, running an internal team, or
   simply don't need a branded URL. This is the default — no configuration
   required.
@@ -100,7 +100,7 @@ domain — for example `acme.layer5.io` on the hosted service. Your sign-in,
 sign-up, and error pages carry your colors, logo, and links.
 
 - **Branding:** full branding on the sign-in pages **and** inside the app.
-- **Sign-in:** email/password and Google/GitHub both work — the social
+- **Sign-in:** email and password, as well as Google and GitHub, both work — the social
   buttons use the platform's Google/GitHub apps, so the upstream consent
   screen shows the platform's name.
 - **Choose it when:** you want a branded, memorable URL and a branded login
@@ -116,7 +116,7 @@ provider for single sign-on.
 
 - **Branding:** branded sign-in pages **and** your own brand on the Google /
   GitHub consent screen.
-- **Sign-in:** email/password and social sign-in, all through *your* apps —
+- **Sign-in:** email and password, as well as social sign-in, all through *your* apps —
   your consent screen, your rate limits, your audit trail, your rotation.
 - **Choose it when:** you want a branded subdomain and also need control of
   your OAuth client or want to connect your corporate single sign-on. Note
@@ -131,7 +131,7 @@ different base domain from the deployment), but still uses the deployment's
 **default** identity providers.
 
 - **Branding:** fully white-labeled sign-in pages on your own domain.
-- **Sign-in:** email/password works fully — sign-up and sign-in both. The
+- **Sign-in:** email and password work fully — both sign-up and sign-in. The
   **Google/GitHub buttons are hidden**, because the secure social-sign-in
   handshake cannot hand off between two unrelated domains using the shared
   apps. The **Log In / Sign Up** toggle stays visible, so users can still
@@ -150,7 +150,7 @@ entirely through your own apps.
 
 - **Branding:** your domain, your sign-in pages, and your brand on the
   Google / GitHub / OIDC consent screen.
-- **Sign-in:** email/password and social sign-in all work, entirely on your
+- **Sign-in:** email and password, as well as social sign-in, all work, entirely on your
   own domain and through your own apps.
 - **Choose it when:** you want a true white-label deployment — your domain,
   your brand on every screen, your identity provider, your security

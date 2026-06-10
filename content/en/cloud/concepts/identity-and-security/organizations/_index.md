@@ -16,7 +16,7 @@ Outside of grouping users together, teams offer control access to workspaces and
 
 <img src="/cloud/concepts/identity-and-security/images/organization_units.svg" alt="Organizational units" style="width: 35%;" />
 
-An organization plays one of two roles: a **Provider Organization** — the single top-level organization that operates the deployment and owns its default identity providers — or a **Tenant Organization**, every other organization that runs on top. A tenant can then be configured in a handful of named ways (Hosted, Branded, or White-Label) depending on the domain it uses and whose identity provider signs its users in. For the full catalog and how to choose between them, see [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/).
+An organization plays one of two roles: a **Provider Organization** — the single top-level organization that operates the deployment and owns its default identity providers — or a **Tenant Organization**, every other organization that runs on top. A tenant can then be configured in one of three named ways (Hosted, Branded, or White-Label) depending on the domain it uses and which identity provider authenticates its users. For the full catalog and how to choose between them, see [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/).
 
 ## Example: The Orbital Labs Ecosystem
 
