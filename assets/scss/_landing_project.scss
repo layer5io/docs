@@ -81,10 +81,10 @@
 } 
 .playground-section {
   &.playground-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/meshery-light-icon.svg");
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/meshery-light-icon.svg");
   }
   &.video-play-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/video-play.svg");
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/video-play.svg");
   }
     &.playground-logo, &.video-play-logo {
     background-repeat: no-repeat;
@@ -102,13 +102,13 @@
 
 .catalog-section {
   &.catalog-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/catalog.svg");
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/catalog.svg");
   }
   &.academy-logo{
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/academy.svg");
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/academy.svg");
   }
   &.recognition-program-logo{
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/recognition-program.png");
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/recognition-program.png");
   }
   &.catalog-logo, &.academy-logo , &.recognition-program-logo {
     background-repeat: no-repeat;

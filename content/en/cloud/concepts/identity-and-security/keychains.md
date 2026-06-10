@@ -9,7 +9,7 @@ aliases:
 
 ---
 
-In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a [role](/cloud/concepts/identity-and-security/roles). Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.
+In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a [role]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}). Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.
 
 For instance, consider a system shipped default keychain `Team Management`, which is a collection of eight keys: `View All Teams`, `Add User to Team`, `Invite User to Team`, `Remove User from Team`, `Create Team`, `Delete Team`, `Remove User Role from Team`, and `Assign User Role in a Team`. This implies that you can perform all these operations only if your user account possesses a role to which `Team Management` keychain is assigned in a given organization.
 
@@ -67,9 +67,9 @@ If you don't have permission to view keychains for your selected organization, y
 
 1. Select the organization for which you wish to assign keychains to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
 2. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
-3. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/concepts/identity-and-security/roles).
+3. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 4. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
-5. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users](/cloud/concepts/identity-and-security/users).
+5. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users]({{< ref "cloud/concepts/identity-and-security/users/_index.md" >}}).
 
 {{< alert title="Note" >}}
 

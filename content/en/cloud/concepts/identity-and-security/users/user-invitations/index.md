@@ -102,7 +102,7 @@ From the table you can perform the following management actions on each invitati
 
 The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit — for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
 
-To see the individual users who are now members of the organization, navigate to the [User Management](/cloud/concepts/identity-and-security/users/user-management/) page. Members who joined via invitation appear there alongside their assigned roles.
+To see the individual users who are now members of the organization, navigate to the [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}) page. Members who joined via invitation appear there alongside their assigned roles.
 
 ### What happens when a user accepts an invitation
 

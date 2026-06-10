@@ -19,10 +19,10 @@ Navigate to Meshery [Kanvas Designer](https://playground.meshery.io/extension/me
 Publish designs through two methods. Click the **info ("i")** button for details.
 
 - **Option 1:** View designs in the sidebar
-  ![Sidebar Design List](/kanvas/designer/publishing-designs/images/designs-select-sidebar.png)
+  ![Sidebar Design List](images/designs-select-sidebar.png)
 
 - **Option 2:** Go to Configuration → Designs
-  ![Design Details](/kanvas/designer/publishing-designs/images/designs-select-design.png)
+  ![Design Details](images/designs-select-design.png)
 
 ### Step 3: Submit Design Metadata
 Fill out the publication form:
@@ -32,7 +32,7 @@ Fill out the publication form:
 - **Description:** Explain purpose and usage
 - **Caveats:** Add important considerations
 
-![Publish Modal](/kanvas/designer/publishing-designs/images/publish-form.png)
+![Publish Modal](images/publish-form.png)
 
 ### Step 4: Review Process
 Approval workflow based on user role:
@@ -41,7 +41,7 @@ Approval workflow based on user role:
 
 Submissions in the “Pending Review” state will remain unpublished until they are manually reviewed and either approved or rejected by an Organization Admin or Provider Admin. This review process may take some time depending on the availability of reviewers. Regardless of approval or rejection, submitters will receive an email notification with the decision.
 
-![Approval Queue](/kanvas/designer/publishing-designs/images/approval-queue.png)
+![Approval Queue](images/approval-queue.png)
 
 ### Step 5: Post-Approval Status
 Once the review process is complete, you will receive an email notification informing you of the decision.  
@@ -68,7 +68,7 @@ To modify published designs:
 ### 1. Design State Lifecycle
 A design transitions through multiple states from creation to publication. The diagram below visually represents this process.
 
-![Publishing Flow](/kanvas/designer/publishing-designs/images/Publishing-flow.svg)
+![Publishing Flow](images/Publishing-flow.svg)
 
 #### Phases of Publishing Process
 - **Pre-Publish:** Users freely create and edit designs.  

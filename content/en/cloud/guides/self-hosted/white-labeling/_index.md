@@ -38,7 +38,7 @@ This example includes a custom branding with colors and full-sized logo.
 
 Layer5 Cloud supports customizing themes on a per organization basis. This includes the ability to upload your own logo and define your own color scheme. Your logo will be displayed in the top left corner of the dashboard. Both a full-sized logo and a logo mark are supported.
 
-As an [Organization Administrator](/cloud/concepts/identity-and-security/roles/organization-roles/), you can add your organization's logo to the global navigation bar, which supports a large, horizontal logo for desktop users and a small, square logo for mobile users. The logo appears at the top of each user's window for all Layer5 Cloud pages within your organization.
+As an [Organization Administrator]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}), you can add your organization's logo to the global navigation bar, which supports a large, horizontal logo for desktop users and a small, square logo for mobile users. The logo appears at the top of each user's window for all Layer5 Cloud pages within your organization.
 
 {{% card header="Preference Example" footer="<i>Example: Selection of theme</i>" %}}
 This example shows how to customize through different themes
@@ -145,7 +145,7 @@ To set up a www or custom subdomain, such as `www.example.com` or `meshery.examp
 
 In Layer5 Cloud, navigate to your Provider Organization.
 
-Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator](/cloud/concepts/identity-and-security/roles).
+Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 
 Under "Custom domain", type your custom domain, then click Save. This will create a server configuration that will require a reboot in order to take effect.
 
@@ -195,10 +195,10 @@ Whether social sign-in (Google and GitHub) works on a custom domain depends on h
 - **Different base domain (fully-custom).** If the custom domain sits on a different base domain — for example you CNAME `meshery.yourcompany.com` to the hosted `cloud.layer5.io`, where `yourcompany.com` and `layer5.io` are different base domains — the secure social sign-in handshake cannot hand off between the two unrelated domains using the shared default identity providers. **Social sign-in on a fully-custom domain therefore requires your organization to bring its own identity provider credentials (BYOC)**: your own Google OAuth client and GitHub OAuth App, registered against your domain.
 
 {{< alert title="Social buttons are hidden until your own identity providers are configured" color="info" >}}
-On a fully-custom domain **without** its own identity providers, the Google and GitHub buttons are **hidden** on the login and sign-up screens — they would otherwise lead to a sign-in that cannot complete. **Email-and-password sign-in and sign-up both remain fully available** — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden. They reappear automatically once your organization configures its own identity providers. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/) for what BYOC is and when it is required.
+On a fully-custom domain **without** its own identity providers, the Google and GitHub buttons are **hidden** on the login and sign-up screens — they would otherwise lead to a sign-in that cannot complete. **Email-and-password sign-in and sign-up both remain fully available** — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden. They reappear automatically once your organization configures its own identity providers. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}) for what BYOC is and when it is required.
 {{< /alert >}}
 
-The same base domain / different base domain split above is not only about whether social buttons appear — it also marks an **authentication boundary**. Organizations that share an identity provider (the canonical host and on-eTLD custom subdomains that use the shared, central provider) sit within the same authentication boundary, while an organization that brings its own (BYOC) provider is a distinct authentication boundary: **same identity provider source means the same security boundary**, regardless of how the host is named. See [Identity Services → The identity provider is the security boundary](/cloud/guides/self-hosted/planning/identity-services/#the-identity-provider-is-the-security-boundary) and [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries).
+The same base domain / different base domain split above is not only about whether social buttons appear — it also marks an **authentication boundary**. Organizations that share an identity provider (the canonical host and on-eTLD custom subdomains that use the shared, central provider) sit within the same authentication boundary, while an organization that brings its own (BYOC) provider is a distinct authentication boundary: **same identity provider source means the same security boundary**, regardless of how the host is named. See [Identity Services → The identity provider is the security boundary]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md#the-identity-provider-is-the-security-boundary" >}}) and [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
 
 ## Frequently asked questions about white labeling
 

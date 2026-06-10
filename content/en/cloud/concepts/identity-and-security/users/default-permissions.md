@@ -32,4 +32,4 @@ aliases:
 {{< alert title="*Organization Owner" type="warning" >}}
 _Permissions marked with * apply only if you are the owner of the organization._{{< /alert >}}
 
-{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains](/cloud/concepts/identity-and-security/keychains/) and [roles](/cloud/concepts/identity-and-security/roles).{{< /alert >}}
+{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}
