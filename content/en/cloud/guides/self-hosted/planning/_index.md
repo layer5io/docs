@@ -148,4 +148,4 @@ Layer5 acknowledges the importance of air-gapped deployments and ensures content
 
 Plan for comprehensive observability across your Layer5 Cloud deployment, including metrics, logs, tracing, dashboards, and alerting. Establish SLOs for latency, availability, and saturation; size telemetry storage appropriately; and ensure privacy and access controls for operational data.
 
-See: [Monitoring](/cloud/guides/self-hosted/planning/monitoring/)
+See: [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}})

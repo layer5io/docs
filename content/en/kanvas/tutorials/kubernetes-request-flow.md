@@ -41,7 +41,7 @@ We will visually explore how all the Kubernetes components come together using K
 
 Start by opening the prebuilt design from here:
 
-[![Kubernetes Flow Diagram](/kanvas/tutorials/images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
+[![Kubernetes Flow Diagram](../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
 
 {{< alert type="info" title="Note" >}}
 Click the image above to open the interactive design in Kanvas.
@@ -111,7 +111,7 @@ If we want to recreate this flow from scratch, we can drag and drop the same com
 
 ### Diagram Screenshot
 
-[![Kubernetes Flow Diagram](/kanvas/tutorials/images/kubernetes-request-flow/k8s-request-flow.png)](/kanvas/tutorials/images/kubernetes-request-flow/k8s-request-flow.png)
+[![Kubernetes Flow Diagram](../images/kubernetes-request-flow/k8s-request-flow.png)](../images/kubernetes-request-flow/k8s-request-flow.png)
 
 {{< alert type="info" title="Note" >}}
 You can design this yourself using the components in Kanvas.

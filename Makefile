@@ -27,6 +27,9 @@ site: check-go
 build:
 	hugo
 
+docs-build-production:
+	npm run build:production
+
 ## Empty build cache and run docs.layer5.io on your local machine.
 clean: 
 	hugo --cleanDestinationDir

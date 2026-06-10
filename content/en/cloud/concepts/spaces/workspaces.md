@@ -41,7 +41,7 @@ Like a shared drive (or shared collection of files), Workspaces are your Google 
 - Same environment can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Assigning Environments to Workspaces" >}}
-Assign any number of Environments to one or more Workspaces. See [Environments](/cloud/concepts/spaces/environments) section for more information.
+Assign any number of Environments to one or more Workspaces. See [Environments]({{< ref "cloud/concepts/spaces/environments.md" >}}) section for more information.
 {{< /alert >}}
 
 ### Designs
@@ -61,7 +61,7 @@ Designs belong to only one Workspace at any given time. See [Designs](https://do
 - Same team can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Team Access Control in Workspaces" >}}
-Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams](/cloud/concepts/identity-and-security/teams).
+Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
 {{< /alert >}}
 
 ### Connections
@@ -85,12 +85,12 @@ To make the most of Workspaces, here are some best practices:
 Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature.
 
 {{< alert type="info" title="Looking for Practical Workspace Management?" >}}
-For a step-by-step guide on how to create, edit, and manage your workspaces, see the [Managing Workspaces](/cloud/guides/workspaces/managing-workspaces/) documentation.
+For a step-by-step guide on how to create, edit, and manage your workspaces, see the [Managing Workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}) documentation.
 {{< /alert >}}
 
 ## Example: Orbital Labs Workspace Setup
 
-The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows. See [Meet Five and the Cast](/cloud/getting-started/meet-five) for the full seed inventory.
+The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full seed inventory.
 
 ### Workspace Inventory
 

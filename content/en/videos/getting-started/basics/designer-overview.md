@@ -14,4 +14,4 @@ duration: "1:38"
 
 ### Related Docs
 
-- [Exploring Designer](/kanvas/designer/)
+- [Exploring Designer]({{< ref "kanvas/designer/_index.md" >}})

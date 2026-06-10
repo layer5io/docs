@@ -167,13 +167,36 @@ You can override the default styles and add new ones:
 
 ### Image styling
 
-By default, Markdown images are written like this:
+### Link and asset paths
+
+Use Hugo `ref` when linking from one documentation page to another documentation page:
 
 ```markdown
-![Alt text](/path/to/image.png)
+[About]({{</* ref "about.md" */>}})
 ```
 
-These are rendered with:
+For images and other assets that live next to `index.md` or `_index.md`, or inside that page bundle, use a normal relative path:
+
+```markdown
+![Alt text](images/example.png)
+```
+
+If you need HTML for custom sizing, keep the same relative path:
+
+```html
+<img src="images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
+```
+
+For global shared assets that physically live under `static/`, use the `static` shortcode:
+
+```markdown
+![Layer5 logo]({{</* static "images/logo.svg" */>}})
+```
+
+Do not use the `static` shortcode for assets under `content/`.
+
+By default, Markdown images are rendered with:
+
 * `max-width: 70%` of the viewport
 * `max-height: 80vh` of the viewport height
 * centered block layout
@@ -181,14 +204,14 @@ These are rendered with:
 This default styling works well for most landscape (horizontal) images. However, if an image is very tall, narrow, or otherwise looks awkward, you can override the default by embedding raw HTML and specifying a custom size:
 
 ```html
-<img src="./images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
+<img src="images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
 ```
 
 If you want your image to include a caption for explanation or accessibility, you can use the `<figure>` element:
 
 ```html
 <figure>
-  <img src="./images/example.png" alt="Example description" />
+  <img src="images/example.png" alt="Example description" />
   <figcaption>Example: Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
 ```

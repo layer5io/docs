@@ -4,7 +4,7 @@
   <!----------------->
   <div class="row footer-top">
     <div class="col-lg-6">
-      <a href="/" aria-label="Home">
+      <a href="{{ "" | relURL }}" aria-label="Home">
         {{ $svg := resources.Get "icons/logo.svg" }}
         <img class="footer-logo" src="{{ $svg.Permalink }}" alt="Footer Logo Layer5" data-modal="false">
       </a>

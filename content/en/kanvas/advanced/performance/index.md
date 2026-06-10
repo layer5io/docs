@@ -43,11 +43,11 @@ Kanvas supports up to 1,000 relationships per design. Exceeding this limit can i
 
 #### Maximum Number of TagSet Relationships
 
-![Labels and Annotations](../../designer/tagsets/group-components.png)
+![Labels and Annotations](../../images/group-components.png)
 
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
 
-Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags](/kanvas/designer/tagsets/).
+Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags]({{< ref "kanvas/designer/tagsets/index.md" >}}).
 
 <!--
 #### Maximum Number of Relationships per Component
@@ -55,7 +55,7 @@ Upon loading a design exceeds that exceeds 20 tags within a single design, Kanva
 
 ### Maximum Number of Users
 
-Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simultaneously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services](/cloud/guides/self-hosted/planning/peer-to-peer-communication) for more details.
+Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simultaneously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services]({{< ref "cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md" >}}) for more details.
 
 ### Impact of Images
 
@@ -72,7 +72,7 @@ Under the Free subscription plan, Kanvas support a single image size of up to 50
 To improve the performance of your design, consider optimizing by disabling one or more layers.
 
 <figure>
-  <img src="./layers-panel.png" alt="Layers panel in Kanvas Designer" />
+  <img src="images/layers-panel.png" alt="Layers panel in Kanvas Designer" />
   <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ To optimize performance, consider the following:
 As your designs grow in complexity, certain design patterns can impact how smoothly Kanvas responds. Understanding these factors helps you create designs that remain fast and responsive.
 
 {{< alert type="info" title="Related performance controls" >}}
-This page covers the design patterns and tuning levers that affect Kanvas performance. For the per-mode rendering ladder (Full, Medium, Wireframe, View-Only) and automatic fidelity management, see [Render Modes](/kanvas/advanced/render-modes/). For the drag-to-edge viewport pan and its per-render-mode size thresholds, see [Auto-pan on Drag](/kanvas/advanced/autopan/).
+This page covers the design patterns and tuning levers that affect Kanvas performance. For the per-mode rendering ladder (Full, Medium, Wireframe, View-Only) and automatic fidelity management, see [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}). For the drag-to-edge viewport pan and its per-render-mode size thresholds, see [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}).
 {{< /alert >}}
 
 ### Working with Grouped Components
@@ -118,7 +118,7 @@ When you create groups of components (placing multiple components inside a paren
 - Screen updates appear slower during interactions
 
 {{< alert type="warning" title="Large Groups" >}}
-Groups containing 100 or more components may experience noticeable lag during drag operations. Consider breaking large groups into smaller, logical subgroups for better performance. If dragging across a design that extends past your viewport feels slow, see [Auto-pan on Drag](/kanvas/advanced/autopan/) for the per-render-mode thresholds that gate the drag-to-edge pan.
+Groups containing 100 or more components may experience noticeable lag during drag operations. Consider breaking large groups into smaller, logical subgroups for better performance. If dragging across a design that extends past your viewport feels slow, see [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}) for the per-render-mode thresholds that gate the drag-to-edge pan.
 {{< /alert >}}
 
 ### How Kanvas Optimizes Your Design
@@ -341,6 +341,6 @@ Kanvas can paint the same design at four distinct fidelity levels — **Full**, 
 
 Render modes are the primary performance lever once a design grows past a few hundred components. Rather than duplicate the details here, see:
 
-- [Render Modes](/kanvas/advanced/render-modes/) — what each mode renders, the per-mode feature-size gates, and how Adaptive mode decides when to upshift or downshift.
-- [Auto-pan on Drag](/kanvas/advanced/autopan/) — the most visible feature that is gated per render mode (autopan disables itself on graphs past 100 / 500 / 1,000 elements for Full / Medium / Wireframe respectively).
-- [Design Render Quality](/kanvas/advanced/url-parameters/) — URL parameters (`render=full|medium|wireframe|viewOnly`, `adaptive=true`) for forcing a render mode or enabling adaptive behavior on a specific link.
+- [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) — what each mode renders, the per-mode feature-size gates, and how Adaptive mode decides when to upshift or downshift.
+- [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}) — the most visible feature that is gated per render mode (autopan disables itself on graphs past 100 / 500 / 1,000 elements for Full / Medium / Wireframe respectively).
+- [Design Render Quality]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) — URL parameters (`render=full|medium|wireframe|viewOnly`, `adaptive=true`) for forcing a render mode or enabling adaptive behavior on a specific link.

@@ -55,8 +55,8 @@ Access is granted through Role-Based Access Control (RBAC). Roles are assigned a
 
 It is tempting to assume that organization membership alone decides what a user can see and do. It does not. Identity, access, and authorization in Layer5 Cloud are decided by a *combination* of three independent mechanisms that compose on top of the organization:
 
-* **Authentication — the organization's connected identity provider (IdP).** Each organization is connected to an identity provider that establishes *who* a user is. More than one organization can — and commonly does — share the same identity provider. An organization may instead **bring its own** identity provider (BYOC), in which case it authenticates against its own dedicated provider. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/).
-* **Generic authorization — keys → keychains → roles.** Permission [keys](/cloud/concepts/identity-and-security/keys/) roll up into [keychains](/cloud/concepts/identity-and-security/keychains/), which are assigned to [roles](/cloud/concepts/identity-and-security/roles/), which are assigned to users. This decides *what operations* a user may perform — and it is evaluated per organization. The same person can hold different roles, and therefore a different effective set of capabilities, in each organization they belong to.
+* **Authentication — the organization's connected identity provider (IdP).** Each organization is connected to an identity provider that establishes *who* a user is. More than one organization can — and commonly does — share the same identity provider. An organization may instead **bring its own** identity provider (BYOC), in which case it authenticates against its own dedicated provider. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}).
+* **Generic authorization — keys → keychains → roles.** Permission [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) roll up into [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}), which are assigned to [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}), which are assigned to users. This decides *what operations* a user may perform — and it is evaluated per organization. The same person can hold different roles, and therefore a different effective set of capabilities, in each organization they belong to.
 * **Granular access — resource-access mappings.** A specific resource (for example, a single design) can be shared with an individual user. These mappings grant access to that one resource and **deliberately cross organizational boundaries**: a user does not need to be a member of an organization to open a resource in it when a mapping grants that access. This is by design — it is what makes cross-organization collaboration possible.
 
 The practical consequence is that the same human can be a member of several organizations and have a *different* set of capabilities in each, while also being able to reach individual shared resources in organizations they do not belong to at all.
@@ -73,7 +73,7 @@ Because identity and authorization are layered, "where is the boundary?" has two
 
 > **Same identity provider source means the same security boundary.**
 
-Organizations that share an identity provider — typical for the canonical host and for custom subdomains that use the shared, central provider — sit within the *same* authentication boundary. An organization that brings its own identity provider (BYOC) is a *distinct* authentication boundary, regardless of how its host is named. The DNS shape of the host is not the boundary; the identity provider behind it is. See [Identity Services](/cloud/guides/self-hosted/planning/identity-services/) and [Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain) for how this plays out across host types.
+Organizations that share an identity provider — typical for the canonical host and for custom subdomains that use the shared, central provider — sit within the *same* authentication boundary. An organization that brings its own identity provider (BYOC) is a *distinct* authentication boundary, regardless of how its host is named. The DNS shape of the host is not the boundary; the identity provider behind it is. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}) and [Social sign-in on a custom domain]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md#social-sign-in-on-a-custom-domain" >}}) for how this plays out across host types.
 
 ## Key Management and Tokens
 
@@ -96,4 +96,4 @@ Tokens provide temporary, secure access to the platform.
 
 ### Need more detail?
 
-Check out the [Roles Reference](/cloud/concepts/identity-and-security/roles/) for a complete matrix of permissions for each role.
+Check out the [Roles Reference]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) for a complete matrix of permissions for each role.
