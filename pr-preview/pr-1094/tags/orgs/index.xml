@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[261 392 362 304 365 318]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[428 125 59 222 119 56]" src="../../cloud/guides/organizations/org-management/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -99,7 +99,7 @@
  Order of Precedence for Organization Settings
  &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organization Configuration Scenarios</title><link>/cloud/guides/organizations/configuration-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/configuration-scenarios/</guid><description>&lt;p&gt;Every organization in Layer5 Cloud is configured along two simple choices:
+&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organization Configuration Scenarios</title><link>/cloud/guides/organizations/configuration-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/configuration-scenarios/</guid><description>&lt;p&gt;Every organization in Layer5 Cloud is configured around two simple choices:
 &lt;strong&gt;where your users sign in&lt;/strong&gt; (your front door) and &lt;strong&gt;whose identity
 provider authenticates them&lt;/strong&gt;. Those two choices combine into a small set
 of named scenarios. This guide names each one, describes what your users
