@@ -25,6 +25,10 @@ The following diagram illustrates the architecture of Layer5 Cloud.
 
 ## Identity providers and custom domains
 
+{{< alert type="info" >}}
+This page covers the *mechanics* of identity providers and authentication boundaries. For the named, end-to-end **organization configurations** that combine these choices with custom domains — and guidance on when to pick each — see [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/).
+{{< /alert >}}
+
 By default, every organization signs users in through your deployment's **shared (default) identity providers** — the Google and GitHub OAuth applications configured for the Provider Organization. Users see those applications' name and logo on the Google or GitHub consent screen, and no per-organization setup is required.
 
 ### Bring Your Own Credentials (BYOC)
