@@ -10,21 +10,21 @@ writing any YAML.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider
 starting with the
-&lt;a href="../../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
+&lt;a href="/kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
 tutorial first or
-&lt;a href="../../../kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Deploying Apache Cassandra with a StatefulSet in Meshery Playground</title><link>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+&lt;a href="/kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Deploying Apache Cassandra with a StatefulSet in Meshery Playground</title><link>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;In this tutorial, we will learn how to deploy a &lt;strong&gt;Apache Cassandra with a StatefulSet&lt;/strong&gt; using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="../../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;</description></item><item><title>Deploying PHP Guestbook application with Redis in Meshery</title><link>/kanvas/tutorials/kubernetes/deploy-php-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-php-redis/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;</description></item><item><title>Deploying PHP Guestbook application with Redis in Meshery</title><link>/kanvas/tutorials/kubernetes/deploy-php-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-php-redis/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;In this tutorial, we will learn how to deploy a &lt;strong&gt;PHP Guestbook application with Redis&lt;/strong&gt; using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="../../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;</description></item><item><title>Deploying WordPress and MySQL with Persistent Volumes with Meshery</title><link>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</guid><description>&lt;h2 id="deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;</description></item><item><title>Deploying WordPress and MySQL with Persistent Volumes with Meshery</title><link>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</guid><description>&lt;h2 id="deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery" class="heading-link"&gt;
  Deploying WordPress and MySql with Persistent Volumes with Meshery
  &lt;a href="#deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -48,7 +48,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;/h3&gt;
 &lt;p&gt;In this tutorial, we&amp;rsquo;ll learn about Kubernetes &lt;strong&gt;Deployments&lt;/strong&gt;. Using Meshery Playground, an interactive live environment, we&amp;rsquo;ll perform hands-on exercises to gain practical experience in deploying, managing, and understanding a Kubernetes &lt;em&gt;Deployment&lt;/em&gt; without writing any YAML.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="../../../kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id="prerequisites" class="heading-link"&gt;
@@ -94,4 +94,4 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;/h2&gt;
 &lt;p&gt;In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. &lt;em&gt;ConfigMaps&lt;/em&gt; are used to manage configuration data, while &lt;em&gt;Secrets&lt;/em&gt; are used for sensitive information such as passwords. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on exercises to gain practical knowledge into working with these Kubernetes objects.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; If this is your fist time working with Meshery Playground start with the &lt;a href="../../../kanvas/tutorials/images/kubernetes-pods.md"&gt;Kubernetes Pods with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; If this is your fist time working with Meshery Playground start with the &lt;a href="/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Kubernetes Pods with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
