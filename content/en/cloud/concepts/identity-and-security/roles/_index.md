@@ -12,13 +12,13 @@ aliases:
 
 Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions.
 
-![roles](/cloud/concepts/identity-and-security/images/roles-overview.svg "image-center-no-shadow")
+![roles](images/roles-overview.svg "image-center-no-shadow")
 
 ## Provider Admin Role
 
 {{< cardpane >}}
 {{% card header="<a href='https://docs.layer5.io/cloud/reference/default-permissions/#Provider+Admin' target='_blank'>Provider Admin Role</a>" %}}
-![role-provider](/cloud/concepts/identity-and-security/images/role-provider-admin.svg)
+![role-provider](images/role-provider-admin.svg)
 {{% /card %}}
 {{% card %}}
 
@@ -55,7 +55,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 {{< cardpane >}}
 {{% card %}}
-![organization-administrator and manager](/cloud/concepts/identity-and-security/images/organization-roles.svg)
+![organization-administrator and manager](images/organization-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -116,14 +116,14 @@ Organization owners carry the organization administrator role, and may be joined
 
 The entitlement of "organization owner" is automatically bestowed to the creator of a organization. The individual user who created a given organization initially is therefore granted certain administrative privileges beyond that of other organization administrators. Specifically, organization owners retain the sole permission to delete the organization.
 
-For more information, see [Organization](/cloud/concepts/identity-and-security/organizations).
+For more information, see [Organization]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}).
 {{< /alert >}}
 
 ## Workspace Roles
 
 {{< cardpane >}}
 {{% card %}}
-![workspace-administrator](/cloud/concepts/identity-and-security/images/workspace-roles.svg)
+![workspace-administrator](images/workspace-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -166,12 +166,12 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 
 {{< cardpane >}}
 {{% card %}}
-![team-admins-and-manager](/cloud/concepts/identity-and-security/images/team-roles.svg)
+![team-admins-and-manager](images/team-roles.svg)
 {{% /card %}}
 {{< /cardpane >}}
 
 {{< cardpane >}}
-{{% card header="<a href='https://docs.layer5.io/cloud/reference/default-permissions/#Team+Admin' target='_blank'>Team Administrator</a>" %}}
+{{% card header="### <a href='https://docs.layer5.io/cloud/reference/default-permissions/#Team+Admin' target='_blank'>Team Administrator</a>" %}}
 **What is the purpose of this role?**
 
 - Administration of teams
@@ -215,14 +215,14 @@ Team owners carry the team administrator role, and may be joined in their team a
 
 The entitlement of "team owner" is automatically bestowed to the creator of a team. The individual user who created a given team initially is therefore granted certain administrative privileges beyond that of other team administrators. Specifically, team owners retain the sole permission to delete the team.
 
-For more information, see [Teams](/cloud/concepts/identity-and-security/teams).
+For more information, see [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
 {{< /alert >}}
 
 ## Example: The Orbital Labs Role Hierarchy
 
-The following illustrates how Provider Admin, Org Admin, and Team Admin roles stack in practice across the Orbital Labs ecosystem. See [Meet Five and the Cast](/cloud/getting-started/meet-five) for the full narrative.
+The following illustrates how Provider Admin, Org Admin, and Team Admin roles stack in practice across the Orbital Labs ecosystem. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full narrative.
 
-<img src="/images/five/layer5-five-mascot-means-business.svg" alt="Five means business" style="width:90px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
+<img src='../../../images/five/layer5-five-mascot-means-business.svg' alt="Five means business" style="width:90px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
 
 {{< cardpane >}}
 {{% card header="**Dr. Aiko Sato** — Provider Admin" %}}

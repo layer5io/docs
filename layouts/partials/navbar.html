@@ -6,10 +6,10 @@
     class="td-navbar navbar-dark js-navbar-scroll td-navbar-cover navbar-bg-onscroll--fade"
   >
     <div class="container-fluid flex-column flex-md-row">
-      <a class="navbar-brand" href="/" aria-label="Home">
+      <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}" aria-label="Home">
         <span class="navbar-brand__logo navbar-logo">
           {{ $svg := resources.Get "icons/logo.svg" }}
-          <img class="footer-logo" src="/images/logo.svg" alt="logo" data-modal="false" />
+          <img class="footer-logo" src="{{ "images/logo.svg" | relURL }}" alt="logo" data-modal="false" />
         </span>
         <span class="navbar-brand__name"></span
       ></a>
@@ -25,10 +25,10 @@
                     </li> -->
                     <div class="d-flex">
                       <li class="nav-item">
-                        <a id="cloud" class="nav-link" href="/cloud/"> Cloud</a>
+                        <a id="cloud" class="nav-link" href="{{ "cloud/" | relURL }}"> Cloud</a>
                       </li>
                       <li class="nav-item">
-                        <a id="kanvas" class="nav-link" href="/kanvas/"> Kanvas</a>
+                        <a id="kanvas" class="nav-link" href="{{ "kanvas/" | relURL }}"> Kanvas</a>
                       </li>
                       <li class="nav-item dropdown" data-bs-theme="dark">
                         <div
@@ -48,7 +48,7 @@
                           >
                             <div class="logo-container">
                               <img
-                                src="/images/academy-icon.svg"
+                                src="{{ "images/academy-icon.svg" | relURL }}"
                                 alt="Meshery Logo"
                               />
                             </div>
@@ -57,12 +57,12 @@
                           <div class="dropdown-divider"></div>
                           <a
                           class="dropdown-item dropdown-item--row"
-                          href="/videos"
+                          href="{{ "videos" | relURL }}"
                           aria-label="Videos"
                           >
                             <div class="logo-container">
                               <img
-                                src="/images/video-play.svg"
+                                src="{{ "images/video-play.svg" | relURL }}"
                                 alt="Meshery Logo"
                               />
                             </div>
@@ -91,7 +91,7 @@
             data-toggle="dropdown"
             style="padding-top:6px"
             >
-            <img width="28px" src="/images/grid-icon.svg" alt="Products" class="grid-icon" data-modal="false" />
+            <img width="28px" src="{{ "images/grid-icon.svg" | relURL }}" alt="Products" class="grid-icon" data-modal="false" />
 
           </div>
           <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-4.5rem;visibility:hidden;">
@@ -103,7 +103,7 @@
             >
               <div class="logo-container">
                 <img
-                  src="/images/logos/meshery-light-icon.svg"
+                  src="{{ "images/logos/meshery-light-icon.svg" | relURL }}"
                   alt="Meshery Logo"
                 />
               </div>
@@ -118,7 +118,7 @@
               >
                 <div class="logo-container">
                   <img
-                    src="/images/logos/kanvas-icon-color.svg"
+                    src="{{ "images/logos/kanvas-icon-color.svg" | relURL }}"
                     alt="Layer5 Kanvas Logo"
                     style="height:40px; width:40px;"
                   />
@@ -135,7 +135,7 @@
               >
                 <div class="logo-container">
                   <img
-                    src="/images/logos/catalog.svg"
+                    src="{{ "images/logos/catalog.svg" | relURL }}"
                     alt="Layer5 Catalog Logo"
                   />
                 </div>
@@ -151,7 +151,7 @@
               >
                 <div class="logo-container">
                   <img
-                    src="/images/logos/smp-light.png"
+                    src="{{ "images/logos/smp-light.png" | relURL }}"
                     alt="Layer5 Cloud Native Performance Logo"
                   />
                 </div>
@@ -167,7 +167,7 @@
               >
                 <div class="logo-container">
                   <img
-                    src="/images/logos/nighthawk-logo.svg"
+                    src="{{ "images/logos/nighthawk-logo.svg" | relURL }}"
                     alt="Layer5 Nighthawk Logo"
                   />
                 </div>
@@ -184,7 +184,7 @@
               >
                 <div class="logo-container">
                   <img
-                    src="/images/logos/academy.svg"
+                    src="{{ "images/logos/academy.svg" | relURL }}"
                     alt="Layer5 Academy Logo"
                   />
                 </div>

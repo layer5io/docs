@@ -17,7 +17,7 @@ To embed your Kanvas design, follow these steps:
 
 1. **Access Embed Option**: Within the [Kanvas Designer](https://kanvas.new/), select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the "Embed" option.
 
-   ![Embed Designs from Kanvas](./embed-designs.gif)
+   ![Embed Designs from Kanvas](images/embed-designs.gif)
 
 2. **Download the Embedding Script**: Click on the download icon presented in the same modal to download the embedding script.
 

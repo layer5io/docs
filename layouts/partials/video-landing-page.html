@@ -70,10 +70,10 @@
                         {{ else if .Params.thumbnail }}
                           <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
                         {{ else }}
-                          <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                          <img src="{{ "images/video-placeholder-thumbnail.jpg" | relURL }}" alt="{{ .Title }}">
                         {{ end }}
                       {{ else }}
-                        <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                        <img src="{{ "images/video-placeholder-thumbnail.jpg" | relURL }}" alt="{{ .Title }}">
                       {{ end }}
                       <div class="play-button-overlay">
                         <div class="play-button">
@@ -92,7 +92,7 @@
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms" style="margin-bottom: 0.6rem;">
                         {{ range .Params.tags }}
-                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                          <a href="{{ printf "tags/%s" . | relURL }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
                         {{ end }}
                       </div>
                     {{ end }}
@@ -121,10 +121,10 @@
                         {{ else if .Params.thumbnail }}
                           <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
                         {{ else }}
-                          <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                          <img src="{{ "images/video-placeholder-thumbnail.jpg" | relURL }}" alt="{{ .Title }}">
                         {{ end }}
                       {{ else }}
-                        <img src="/images/video-placeholder-thumbnail.jpg" alt="{{ .Title }}">
+                        <img src="{{ "images/video-placeholder-thumbnail.jpg" | relURL }}" alt="{{ .Title }}">
                       {{ end }}
                       <div class="play-button-overlay">
                         <div class="play-button">
@@ -143,7 +143,7 @@
                       {{ if .Params.tags }}
                       <div class="taxonomy-terms">
                         {{ range .Params.tags }}
-                          <a href="/tags/{{ . }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
+                          <a href="{{ printf "tags/%s" . | relURL }}" class="video-tag"><span class="taxonomy-term" style="font-size: .9rem">{{ . }}</span></a>
                         {{ end }}
                       </div>
                     {{ end }}

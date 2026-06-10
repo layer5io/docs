@@ -28,16 +28,16 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 
 | Action                         | Cursor Style        | Behavior                                                                     | Example                                                                 |
 |--------------------------------|---------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| **Hover**                      | `default (arrow)`   | Nothing                                                                      | ![Click](./default.gif)                                                |
-| **Click-and-drag**             | `move`              | Moves component in the direction of the mouse                                | ![Click and drag](./click_and_drag.gif)                                |
-| **Click**                      | `default (arrow)`   | Displays component toolbar, resize box, and connection handles               | ![Click](./click.png)                                                  |
-| **Double-click (component)**   | `pointer`           | Opens the component configurator                                             | ![Double-click component](./double_click.png)                          |
-| **Double-click (textbox)**     | `text`              | Enables text editing inside the component                                    | ![Double-click textbox](./text-box-double-click.gif)                   |
-| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | ![Right-click](./right_click.png)                                      |
-| **Click-and-hold**             | `crosshair`         | Initiates box selection for selecting multiple components                    | ![Box selection](./select.gif)                                         |
-| **Scroll wheel**               | `default (arrow)`   | Pan up or down                                                               | ![Scroll](./scroll_up_down.gif)                                        |
-| **Scroll wheel + CMD/CTRL**    | `default (arrow)`   | Zoom in/out                                                                  | ![Zoom](./zoom_in_out.gif)                                             |
-| **Horizontal scroll wheel**    | `default (arrow)`   | Pan left or right                                                            | ![Scroll left/right](./scroll_left_right.gif)                          |
+| **Hover**                      | `default (arrow)`   | Nothing                                                                      | ![Click](images/default.gif)                                                |
+| **Click-and-drag**             | `move`              | Moves component in the direction of the mouse                                | ![Click and drag](images/click_and_drag.gif)                                |
+| **Click**                      | `default (arrow)`   | Displays component toolbar, resize box, and connection handles               | ![Click](images/click.png)                                                  |
+| **Double-click (component)**   | `pointer`           | Opens the component configurator                                             | ![Double-click component](images/double_click.png)                          |
+| **Double-click (textbox)**     | `text`              | Enables text editing inside the component                                    | ![Double-click textbox](images/text-box-double-click.gif)                   |
+| **Right-click**                | `default (arrow)`   | Opens the circular component context menu                                    | ![Right-click](images/right_click.png)                                      |
+| **Click-and-hold**             | `crosshair`         | Initiates box selection for selecting multiple components                    | ![Box selection](images/select.gif)                                         |
+| **Scroll wheel**               | `default (arrow)`   | Pan up or down                                                               | ![Scroll](images/scroll_up_down.gif)                                        |
+| **Scroll wheel + CMD/CTRL**    | `default (arrow)`   | Zoom in/out                                                                  | ![Zoom](images/zoom_in_out.gif)                                             |
+| **Horizontal scroll wheel**    | `default (arrow)`   | Pan left or right                                                            | ![Scroll left/right](images/scroll_left_right.gif)                          |
 
 {{< /tab >}}
 
@@ -47,13 +47,13 @@ Pencil lines do not connect individual components, but offer annotating capabili
 
 | Action                      | Cursor Style        | Behavior                                              | Example                                                        |
 |-----------------------------|---------------------|--------------------------------------------------------|----------------------------------------------------------------|
-| **Hover**                   | `custom(pencil)`    | Nothing                                                | ![Pencil hover](./pencil_hover.gif)                            |
-| **Mouse down + drag**       | `custom(pencil)`    | Start drawing a freeform line                          | ![Freeform line](./pencil.gif)                                 |
-| **Mouse down + SHIFT**      | `custom(pencil)`    | Start drawing a straight vertical or horizontal line   | ![Straight line](./mouse_down_plus_shift.gif)                  |
-| **Mouse up**                | `custom(pencil)`    | Complete the line and render into a styled component   | ![Mouse up](./mouse_up.gif)                                    |
-| **Click**                   | `custom(pencil)`    | Draws ink from the pencil                              | ![Ink](./pencil_ink.gif)                                       |
-| **Scroll wheel**            | `custom(pencil)`    | Nothing                                                | ![Mouse down](./mouse_down.gif)                                |
-| **Scroll wheel + CMD/CTRL** | `custom(pencil)`    | Nothing                                                | ![Zoom](./zoom_in_out.gif)                                     |
+| **Hover**                   | `custom(pencil)`    | Nothing                                                | ![Pencil hover](images/pencil_hover.gif)                            |
+| **Mouse down + drag**       | `custom(pencil)`    | Start drawing a freeform line                          | ![Freeform line](images/pencil.gif)                                 |
+| **Mouse down + SHIFT**      | `custom(pencil)`    | Start drawing a straight vertical or horizontal line   | ![Straight line](images/mouse_down_plus_shift.gif)                  |
+| **Mouse up**                | `custom(pencil)`    | Complete the line and render into a styled component   | ![Mouse up](images/mouse_up.gif)                                    |
+| **Click**                   | `custom(pencil)`    | Draws ink from the pencil                              | ![Ink](images/pencil_ink.gif)                                       |
+| **Scroll wheel**            | `custom(pencil)`    | Nothing                                                | ![Mouse down](images/mouse_down.gif)                                |
+| **Scroll wheel + CMD/CTRL** | `custom(pencil)`    | Nothing                                                | ![Zoom](images/zoom_in_out.gif)                                     |
 
 <!-- *Developer notes:*
 1. *In the future, the canvas moves with the pen/pencil as they near the edge of the viewport.*
@@ -77,9 +77,9 @@ The Pen tool operates as a creator of annotation edges. Note that the pen tool h
 
 | Phase                         | Cursor Style | Behavior                                                     | Example                                                         |
 |------------------------------|--------------|--------------------------------------------------------------|-----------------------------------------------------------------|
-| **1. Click & release**       | `pen`        | Initiate connection                                           | ![Phase 1](./click_release_ptm.gif)                            |
-| **2. Click-and-move**        | `pen`        | Move the ghost edge around if a connection was initiated      | ![Phase 2](./click_move_ptm.gif)                               |
-| **3. Click while connecting**| `pen`        | Establish and render the connection                           | ![Phase 3](./click_while_connecting_ptm.gif)                   |
+| **1. Click & release**       | `pen`        | Initiate connection                                           | ![Phase 1](images/click_release_ptm.gif)                            |
+| **2. Click-and-move**        | `pen`        | Move the ghost edge around if a connection was initiated      | ![Phase 2](images/click_move_ptm.gif)                               |
+| **3. Click while connecting**| `pen`        | Establish and render the connection                           | ![Phase 3](images/click_while_connecting_ptm.gif)                   |
 
 <!--
 *Developer notes:*

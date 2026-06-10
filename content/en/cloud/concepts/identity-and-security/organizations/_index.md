@@ -14,11 +14,11 @@ Organizations are the basic unit of multi-tenancy — and the core security boun
 
 Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections
 
-<img src="/cloud/concepts/identity-and-security/images/organization_units.svg" alt="Organizational units" style="width: 35%;" />
+<img src="images/organization_units.svg" alt="Organizational units" style="width: 35%;" />
 
 ## Example: The Orbital Labs Ecosystem
 
-The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using [Five and the cast at Orbital Labs](/cloud/getting-started/meet-five).
+The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using [Five and the cast at Orbital Labs]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
 
 {{< cardpane >}}
 {{% card header="**Constellation Cloud** — Provider" %}}
@@ -57,9 +57,9 @@ Users of one organization may be granted access to resources (workspaces, design
 Cross-organization access works through **resource-access mappings** — a grant attached to an individual resource (such as a single design) that names the user it is shared with. These mappings **deliberately cross the organization boundary**: a user does *not* need to be a member of an organization to open a resource that has been shared with them there. For example, when Maya at Orbital Labs shares the `stellar-saas-platform` design with Marcus at Stellar Dynamics, Marcus can open that one design even though he is not a member of Orbital Labs. This is intentional — it is the mechanism that makes cross-org collaboration possible — and it is distinct from organization membership and from the org-scoped roles described below. Sharing a single resource grants access to *that resource only*; it does not make the recipient a member of the organization or grant them any of its other resources.
 
 {{< alert type="info" >}}
-Identity and authorization are decided by a combination of mechanisms, not by organization membership alone. For how the connected identity provider, org-scoped roles, and resource-access mappings fit together — and what counts as a security boundary — see [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries).
+Identity and authorization are decided by a combination of mechanisms, not by organization membership alone. For how the connected identity provider, org-scoped roles, and resource-access mappings fit together — and what counts as a security boundary — see [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
 {{< /alert >}}
 
 {{< alert type="info" >}}
-See [Meet Five and the Cast](/cloud/getting-started/meet-five) for the full narrative reference, including team structure and workspace inventory.
+See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full narrative reference, including team structure and workspace inventory.
 {{< /alert >}}

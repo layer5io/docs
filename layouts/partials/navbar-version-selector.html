@@ -1,0 +1,18 @@
+<div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{- .Site.Params.version_menu -}}
+  </a>
+  <ul class="dropdown-menu">
+    {{ $path := "" -}}
+    {{ if .Site.Params.version_menu_pagelinks -}}
+      {{ $path = strings.TrimPrefix .Site.Home.RelPermalink .Page.RelPermalink -}}
+    {{ end -}}
+    {{ range .Site.Params.versions -}}
+      {{ $url := .url -}}
+      {{ if not (or (hasPrefix $url "http://") (hasPrefix $url "https://") (hasPrefix $url "//")) -}}
+        {{ $url = $url | relURL -}}
+      {{ end -}}
+      <li><a class="dropdown-item" href="{{ $url }}{{ $path }}">{{ .version }}</a></li>
+    {{ end -}}
+  </ul>
+</div>

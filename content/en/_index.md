@@ -14,27 +14,31 @@ description: >
 </div>
 <div>
 <h1 style="margin:4.5rem auto 1.5rem auto">Explore tutorials & documentation</h1>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/cloud" aria-label="Cloud Docs"
-onmouseover="changeImage('layer5', 'images/logos/layer5-light.svg')" onmouseout="restoreImage('layer5', 'images/logos/5-light-no-trim.svg')">
-    <img id="layer5" src="images/logos/5-light-no-trim.svg" alt="Layer5 Cloud Docs Logo" />
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="{{< ref "cloud/_index.md" >}}" aria-label="Cloud Docs"
+data-hover='{{< static "images/logos/layer5-light.svg" >}}' data-default='{{< static "images/logos/5-light-no-trim.svg" >}}'
+onmouseover="changeImage('layer5', this.dataset.hover)" onmouseout="restoreImage('layer5', this.dataset.default)">
+    <img id="layer5" src='{{< static "images/logos/5-light-no-trim.svg" >}}' alt="Layer5 Cloud Docs Logo" />
     Cloud Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="/kanvas" aria-label="Kanvas Docs"
-onmouseover="changeImage('Kanvas', 'images/logos/kanvas-light.svg')" onmouseout="restoreImage('Kanvas', 'images/logos/kanvas-icon-color.svg')">
-    <img id="Kanvas" src="images/logos/kanvas-icon-color.svg" alt="Layer5 Kanvas Docs Logo" />
+<a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="{{< ref "kanvas/_index.md" >}}" aria-label="Kanvas Docs"
+data-hover='{{< static "images/logos/kanvas-light.svg" >}}' data-default='{{< static "images/logos/kanvas-icon-color.svg" >}}'
+onmouseover="changeImage('Kanvas', this.dataset.hover)" onmouseout="restoreImage('Kanvas', this.dataset.default)">
+    <img id="Kanvas" src='{{< static "images/logos/kanvas-icon-color.svg" >}}' alt="Layer5 Kanvas Docs Logo" />
     Kanvas Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://docs.meshery.io" aria-label="Meshery Docs"
-onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseout="restoreImage('meshery', 'images/logos/meshery-light-icon.svg')">
-    <img id="meshery" src="images/logos/meshery-light-icon.svg" alt="Meshery Docs Logo" />
+data-hover='{{< static "images/logos/meshery-light.svg" >}}' data-default='{{< static "images/logos/meshery-light-icon.svg" >}}'
+onmouseover="changeImage('meshery', this.dataset.hover)" onmouseout="restoreImage('meshery', this.dataset.default)">
+    <img id="meshery" src='{{< static "images/logos/meshery-light-icon.svg" >}}' alt="Meshery Docs Logo" />
     Meshery Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <a class="btn btn-lg btn-primary me-3 mb-4 l5btn" href="https://getnighthawk.dev" aria-label="Nighthawk Docs"
-  onmouseover="changeImage('nighthawk', 'images/logos/nighthawk-light.svg')" onmouseout="restoreImage('nighthawk', 'images/logos/nighthawk-logo.svg')">
-    <img id="nighthawk" src="images/logos/nighthawk-logo.svg" alt="Layer5 Nighthawk Docs Logo" />
+data-hover='{{< static "images/logos/nighthawk-light.svg" >}}' data-default='{{< static "images/logos/nighthawk-logo.svg" >}}'
+onmouseover="changeImage('nighthawk', this.dataset.hover)" onmouseout="restoreImage('nighthawk', this.dataset.default)">
+    <img id="nighthawk" src='{{< static "images/logos/nighthawk-logo.svg" >}}' alt="Layer5 Nighthawk Docs Logo" />
     Nighthawk Docs
     <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
@@ -48,7 +52,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
 
   <!-- Video Library -->
   <div class="playground-card grow-1">
-    <a href="/videos">
+    <a href="{{< ref "videos/_index.md" >}}">
     <!-- Wave Visualizer Background
     <canvas id="visualizer" style="position:absolute; top:0; left:0; margin:auto;  width:300px; height:300px;"></canvas> -->
       <div class="landing-card">
@@ -121,7 +125,7 @@ onmouseover="changeImage('meshery', 'images/logos/meshery-light.svg')" onmouseou
               <p>Get help. Find your answer on the forum. Share your knowledge with others.</p>
           </div>
           <div class="forum-image">
-              <img src="images/landing/discuss.png" alt="Discussion Forum Image" />
+              <img src='images/landing/discuss.png' alt="Discussion Forum Image" />
           </div>
         </div>
       </a>
