@@ -32,7 +32,7 @@ docs-build-production:
 
 ## Empty build cache and run docs.layer5.io on your local machine.
 clean: check-deps check-go
-	npm run dev:clean
+	npm run clean
 	make site
 
 .PHONY: setup build site clean check-deps check-go docker
