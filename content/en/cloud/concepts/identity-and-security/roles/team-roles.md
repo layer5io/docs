@@ -46,7 +46,9 @@ aliases:
 
 {{% /card %}}
 
-{{% card header="## Team Manager (Coming Soon)" %}}
+{{% card header="## Team Manager" %}}
+
+**(Coming Soon)**
 
 **What is the purpose of this role?**
 
