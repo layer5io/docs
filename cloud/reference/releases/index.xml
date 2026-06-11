@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.126</title><link>/cloud/reference/releases/v1.0.126/</link><pubDate>Wed, 10 Jun 2026 19:17:10 +0000</pubDate><guid>/cloud/reference/releases/v1.0.126/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.127</title><link>/cloud/reference/releases/v1.0.127/</link><pubDate>Thu, 11 Jun 2026 03:01:32 +0000</pubDate><guid>/cloud/reference/releases/v1.0.127/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: prevent invitation link hydration mismatch @arjunmehta-git (#5465)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @arjunmehta-git and @hortison&lt;/p&gt;</description></item><item><title>v1.0.126</title><link>/cloud/reference/releases/v1.0.126/</link><pubDate>Wed, 10 Jun 2026 19:17:10 +0000</pubDate><guid>/cloud/reference/releases/v1.0.126/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(identity-providers): report true BYOC state to org admins/owners @leecalcote (#5464)&lt;/li&gt;
 &lt;li&gt;docs: canonical Organizations reference + identity/auth doc consolidation @leecalcote (#5461)&lt;/li&gt;
 &lt;/ul&gt;
