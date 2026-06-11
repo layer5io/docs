@@ -21,6 +21,7 @@
   padding: 0 5rem;
   border-bottom: 1px solid #333;
   background-color: $dark !important;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     padding: 0 1rem;
@@ -69,6 +70,24 @@
   // background-color: linear-gradient(to right, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
 }
 
+// Global sizing and overflow fixes
+html {
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 // Page Layout Sections
 .td-home {
   background-color: $dark;
@@ -98,11 +117,16 @@
 }
 
 body {
-  overflow-x: hidden;
   padding-top: 5.5rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
   
   @media (max-width: 768px) {
+    overflow-x: hidden;
     padding-top: 4.5rem;
+    scrollbar-width: none; /* Firefox */
   }
 
   @media (max-width: 576px) {
@@ -259,6 +283,9 @@ a:not([href]):not([class]):hover {
   padding-top: 0rem;
   margin-top: 0;
   overflow-x: hidden;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: $primary transparent; /* Firefox */
+
   &__inner {
     @include media-breakpoint-up(md) {
       @supports (position: sticky) {
@@ -361,6 +388,8 @@ a:not([href]):not([class]):hover {
   background-color: var(--sidebar-bg-color);
   padding-left: var(--sidebar-padding-horizontal);
   padding-right: var(--sidebar-padding-horizontal);
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: $primary transparent; /* Firefox */
 
   @supports (position: sticky) {
     position: sticky;

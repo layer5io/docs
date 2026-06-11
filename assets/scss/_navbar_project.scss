@@ -2,17 +2,23 @@
   width: 280.06px;
   height: auto;
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   @media (max-width: 768px) {
-    width: 200px;
+    width: 240px;
   }
 
   @media (max-width: 576px) {
-    width: 150px;
+    width: 200px;
   }
 }
 
 .nav-item {
   margin-right: 0.75rem;
+  box-sizing: border-box;
 
   .current {
     color: $primary;

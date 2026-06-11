@@ -175,28 +175,36 @@ h6 {
   }
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: transparent;
+@media (min-width: 768px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $secondary;
+  }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: transparent;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $primary;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: $secondary;
+@media (max-width: 767.98px) {
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
 }
 
 .td-initial table {
