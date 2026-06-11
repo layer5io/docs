@@ -42,6 +42,12 @@ div.tip {
     float: left;
     margin: 1rem 1.25rem 1rem 0rem;
     box-shadow: 0px 5px 10px 1px $primary;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      float: none;
+      margin: 1rem 0;
+    }
   }
 
   .image-right {
@@ -49,16 +55,34 @@ div.tip {
     float: right;
     margin: 1rem 0rem 1rem 1.25rem;
     box-shadow: 0px 5px 10px 1px $primary;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      float: none;
+      margin: 1rem 0;
+    }
   }
   .image-right-no-shadow {
     width: 40%;
     float: right;
     margin: 1rem 0rem 1rem 1rem;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      float: none;
+      margin: 1rem 0;
+    }
   }
   .image-left-no-shadow {
     width: 40%;
     float: left;
     margin: 1rem 1rem 1rem 0rem;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      float: none;
+      margin: 1rem 0;
+    }
   }
   .image-center-shadow {
     display: block;
@@ -112,11 +136,16 @@ div.tip {
     }
 
 .pagination-nav {
-      grid-gap: 1rem;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
+}
 
 
 .pagination-nav__link {

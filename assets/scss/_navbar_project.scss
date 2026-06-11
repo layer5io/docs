@@ -1,6 +1,14 @@
 .navbar-brand {
   width: 280.06px;
   height: auto;
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+
+  @media (max-width: 576px) {
+    width: 150px;
+  }
 }
 
 .nav-item {
@@ -27,6 +35,12 @@
     // padding: 0;
     transform: translate(-15%, 2.5rem);
     border-radius: 0.75rem;
+    
+    @media (max-width: 576px) {
+      width: 150px;
+      transform: translate(-20%, 2.5rem);
+    }
+    
     &::after{
       content: "";
       width: 5rem;
@@ -42,6 +56,12 @@
       flex-direction: column;
       align-items: center;
       border-radius: 0.75rem;
+      
+      @media (max-width: 576px) {
+        height: 4rem;
+        width: 4rem;
+      }
+      
       .logo-container {
         height: 2rem;
         width: 2rem;

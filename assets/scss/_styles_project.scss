@@ -22,6 +22,16 @@
   border-bottom: 1px solid #333;
   background-color: $dark !important;
 
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    min-height: 4rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 0.75rem;
+    min-height: 3.5rem;
+  }
+
   .dropdown-menu {
     background-color: $dark;
     box-shadow: 0px 4px 20px 0px rgba(0, 211, 169, 0.2);
@@ -76,6 +86,10 @@
 }
 
 .td-main main {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
+  
   @include media-breakpoint-up(md) {
     padding-top: 4rem;
     padding-left: 1rem;
@@ -86,6 +100,14 @@
 body {
   overflow-x: hidden;
   padding-top: 5.5rem;
+  
+  @media (max-width: 768px) {
+    padding-top: 4.5rem;
+  }
+
+  @media (max-width: 576px) {
+    padding-top: 4rem;
+  }
 }
 
 // Main Middle Body
@@ -481,6 +503,8 @@ a:not([href]):not([class]):hover {
   color: $white;
   transition: color 0.8s;
   transition: background-color 0.8s;
+  width: 100%;
+  max-width: 277px;
 
   >img {
     width: 2rem;
@@ -492,7 +516,15 @@ a:not([href]):not([class]):hover {
   }
 
   @media (max-width: 768px) {
-    width: 277px;
+    width: 100%;
+    max-width: 277px;
+    padding: 1rem;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem;
   }
 }
 
@@ -584,10 +616,7 @@ a:not([href]):not([class]):hover {
   }
 
   @media (max-width: 768px) {
-    width: 129.14rem;
-    top: 7rem;
-    right: -70rem;
-    position: fixed;
+    display: none;
   }
 }
 
@@ -611,6 +640,10 @@ a:not([href]):not([class]):hover {
 
     z-index: -5;
   }
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 @keyframes tipsy {
@@ -628,6 +661,7 @@ a:not([href]):not([class]):hover {
   align-items: center;
   justify-content: space-between; 
   text-align: right;
+  padding: 0 1rem;
 
   h1.dashboard {
     max-width: 70%;        
@@ -642,11 +676,16 @@ a:not([href]):not([class]):hover {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    padding: 0 0.5rem;
 
     h1.dashboard {
       max-width: 100%;
       text-align: center;
     }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0;
   }
 
   a.dash-sign {
@@ -671,6 +710,14 @@ a:not([href]):not([class]):hover {
 
     @media (max-width: 768px) {
       margin: 2rem 0 0 0;
+      padding: 1.5rem;
+      font-size: 24px;
+    }
+
+    @media (max-width: 576px) {
+      margin: 1rem 0 0 0;
+      padding: 1rem;
+      font-size: 18px;
     }
   }
 
