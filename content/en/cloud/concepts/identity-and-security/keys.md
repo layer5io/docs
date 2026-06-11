@@ -9,7 +9,7 @@ aliases:
 
 ---
 
-In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a [keychain](/cloud/concepts/identity-and-security/keychains). Then this keychain can be assigned to a [role](/cloud/concepts/identity-and-security/roles) and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.
+In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a [keychain]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}). Then this keychain can be assigned to a [role]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.
 
 For instance, consider a system shipped default key `Create Organization`, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have `Create Organization` key assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
@@ -21,7 +21,7 @@ For instance, consider a system shipped default key `Create Organization`, which
 
 {{< /alert >}}
 
-Because every key is evaluated in the context of an organization, a user's *effective* set of keys can — and will — differ from one organization to another. The same person holds whatever capabilities their role(s) grant them **within each specific organization**, so being able to perform an action in one organization implies nothing about the same action in another. This is why an organization context is itself an authorization boundary. For how this fits with authentication and cross-organization resource sharing, see [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries).
+Because every key is evaluated in the context of an organization, a user's *effective* set of keys can — and will — differ from one organization to another. The same person holds whatever capabilities their role(s) grant them **within each specific organization**, so being able to perform an action in one organization implies nothing about the same action in another. This is why an organization context is itself an authorization boundary. For how this fits with authentication and cross-organization resource sharing, see [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
 
 ### Keys Types
 
@@ -32,13 +32,13 @@ Generally, there are four types of keys:
 3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
 4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
 
-There are also some special types of keys which don't fall into the standard CRUD (CREATE, READ, UPDATE, DELETE) category. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog](/cloud/concepts/catalog) or `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your [workspace](/cloud/concepts/spaces/workspaces) in context of any organization.
+There are also some special types of keys which don't fall into the standard CRUD (CREATE, READ, UPDATE, DELETE) category. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}) or `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) in context of any organization.
 
 
 ### Keys Enforcement
 
 The primary purpose of key enforcement is to ensure that you can only perform actions for which you have the necessary permissions within the context of your selected/available organization. This is achieved by disabling or hiding the UI elements associated with actions for which you lack the required permissions. This approach not only provides clarity regarding what actions you are authorized to perform but also prevents you from attempting actions that you do not have authorization to execute.
-For more information on managing permissions within an organization and use of organization context switcher, see [Organizations](/cloud/concepts/identity-and-security/organizations).
+For more information on managing permissions within an organization and use of organization context switcher, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}).
 
 Each key is enforced at specific UI elements. For instance, the `Create Organization` key is enforced at the **Create Organization** button in the **Organizations** page. This implies that the button is disabled if you don't have the `Create Organization` assigned to a keychain, which, in turn, is assigned to a role that's associated with your user account for a given organization.
 
@@ -59,12 +59,12 @@ If you don't have permission to view keys for your selected organization, you wi
 
 1. Select the organization for which you wish to assign keys to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
 2. Navigate to [Keychains](https://cloud.layer5.io/security/keychains) page.
-3. Choose from the existing set of keychains or create a new keychain to which you want to assign keys. For more information, see [Keychains](/cloud/concepts/identity-and-security/keychains).
+3. Choose from the existing set of keychains or create a new keychain to which you want to assign keys. For more information, see [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
 4. Choose one more of your desired keys from the list of available keys.
 5. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
-6. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles](/cloud/concepts/identity-and-security/roles).
+6. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 7. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
-8. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users](/cloud/concepts/identity-and-security/users).
+8. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users]({{< ref "cloud/concepts/identity-and-security/users/_index.md" >}}).
 
 {{< alert title="Note" >}}
 

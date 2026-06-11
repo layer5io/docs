@@ -40,7 +40,7 @@ This is a common real-world pattern seen in microservices architectures and back
 ### Accessing the Visual Guide Design
 
 - Start by opening the prebuilt design from here:
-  [![Kubernetes Flow Diagram](/kanvas/tutorials/images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
+  [![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
 
 >  Click the image above to open the interactive design in Meshery Kanvas.
 
@@ -115,7 +115,7 @@ If we want to recreate this flow from scratch, we can drag and drop the same com
 
 ### Diagram Screenshot
 
-[![Kubernetes Flow Diagram](/kanvas/tutorials/images/kubernetes-request-flow/k8s-request-flow.png)](/kanvas/tutorials/images/kubernetes-request-flow/k8s-request-flow.png)
+[![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](../../images/kubernetes-request-flow/k8s-request-flow.png)
 
 > Note: You can design this yourself using the components in Meshery Kanvas.
 

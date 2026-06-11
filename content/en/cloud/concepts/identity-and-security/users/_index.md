@@ -16,7 +16,7 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 
 {{< cardpane >}}
 {{% card header="**Five** — Platform Engineer" %}}
-<img src="/images/five/1.svg" alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
+<img src='../../../images/five/1.svg' alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** User (Platform Engineer)  
@@ -24,10 +24,10 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 
 Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
 
-[See full cast →](/cloud/getting-started/meet-five)
+[See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
 {{% card header="**Maya Chen** — Org Admin" %}}
-<img src="/images/five/2.svg" alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
+<img src='../../../images/five/2.svg' alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** Org Admin + Development Team Admin  
@@ -35,7 +35,7 @@ Curious, enthusiastic, and reliably the first to discover that a feature works d
 
 Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM.
 
-[See full cast →](/cloud/getting-started/meet-five)
+[See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -52,7 +52,7 @@ For more information, see [Layer5 subscription plans](https://layer5.io/pricing)
 Teams allow you to organize users into groups and conveniently assign access to workspaces or to assign roles with associated keychains and keys to control permissions.
 
 {{< alert type="info" >}}
-You need to have the default `Team Admin` role to assign permissions to users in your team. For more information, see [Teams](/cloud/concepts/identity-and-security/teams).
+You need to have the default `Team Admin` role to assign permissions to users in your team. For more information, see [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
 {{< /alert >}}
 
 Organizations may have any number of teams and teams may have any number of users. User accounts are treated as sovereign entities that are owned by individual individuals, not by corporations.
@@ -62,7 +62,7 @@ Organization and teams may have any number of users accounts. User accounts are 
 Users and their tokens may be authorized to access resources. Users can be created and managed by the Provider Admins, Organization Admins, or Team Admins. Users of one organization may be granted access to resources (e.g. Workspaces and Designs) of another organization. User entitlement, roles and permissions are org-scoped, meaning that the entitlements and permissions that a given user has in one organization does not necessarily reflect the same level of access that their membership in another oganziation does.
 
 {{< alert type="info" >}}
-Only Provider Admins and Organization Admin can create users. For more information, see [Roles](/cloud/concepts/identity-and-security/roles/).
+Only Provider Admins and Organization Admin can create users. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 {{< /alert >}}
 
 ## Account Linking

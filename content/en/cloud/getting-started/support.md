@@ -30,4 +30,4 @@ If you've forgotten your Layer5 Cloud account password, don't worry. You can eas
 
 6. After successfully resetting your password, you can now login to your Layer5 Cloud account using your new password.
 
-{{< meshery-design-embed  src="/export-designs/embedded-design-account-recovery.js"  id="embedded-design-f4d47d8d-0a16-46d3-ae79-829a1d16b2fa" >}}
+{{< meshery-design-embed  src="export-designs/embedded-design-account-recovery.js"  id="embedded-design-f4d47d8d-0a16-46d3-ae79-829a1d16b2fa" >}}

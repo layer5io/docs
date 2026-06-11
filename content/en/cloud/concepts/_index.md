@@ -38,4 +38,4 @@ To get the most out of Layer5 Cloud, it is important to understand how these com
 | **Design to Catalog** | Many-to-One | Designs can be published to a catalog for broader consumption and version control. |
 
 ### Next Steps
-For a deeper dive into the technical implementation of these concepts, please refer to our [Architecture Documentation](/docs/architecture).
+For a deeper dive into the technical implementation of these concepts, please refer to our [Architecture Documentation](https://docs.meshery.io/architecture).

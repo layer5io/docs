@@ -1,6 +1,6 @@
 {{ $scssMain := "scss/main.scss" -}}
 {{ $css := resources.Get $scssMain
-      | toCSS (dict "enableSourceMap" (not hugo.IsProduction)) -}}
+      | toCSS (dict "enableSourceMap" (not hugo.IsProduction) "targetPath" "css/main.css") -}}
 
 {{/* NOTE: we only apply `postCSS` in production or for RTL languages. This
 makes it snappier to develop in Chrome, but it may look sub-optimal in other
@@ -9,7 +9,7 @@ browsers. */ -}}
 {{ if eq .Site.Language.Direction "rtl" -}}
   {{ $css = $css
       | postCSS (dict "use" "autoprefixer rtlcss" "noMap" true)
-      | resources.Copy (replace $scssMain "." ".rtl.") -}}
+      | resources.Copy "css/main.rtl.css" -}}
 {{ else if hugo.IsProduction -}}
   {{ $css = $css | postCSS -}}
 {{ end -}}
