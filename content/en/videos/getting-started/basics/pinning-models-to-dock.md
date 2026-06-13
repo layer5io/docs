@@ -23,6 +23,6 @@ When a model is pinned you can still browse all components or search for a speci
 
 When you no longer want a model pinned to the dock, you can remove the pin by revisiting the model in its original location and choosing to “remove from dock”.
 
-## Related Docs
+ Related Docs:
 - [Pinning Models to the Dock]({{< ref "kanvas/designer/pin-model-to-dock/index.md" >}})
 - [Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}})
