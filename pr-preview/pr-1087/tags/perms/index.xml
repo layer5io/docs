@@ -595,8 +595,6 @@
  
  
  
- 
- 
  &lt;h2&gt;Catalog Permissions&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
@@ -635,17 +633,6 @@
  
  
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -771,17 +758,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -845,17 +821,6 @@
  &lt;td&gt;
  
  Clone any published design to customise it according to your use cases
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -1163,17 +1128,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -1290,17 +1244,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -1378,17 +1321,6 @@
  &lt;td&gt;
  
  View all public and published designs of other team members and private of signed-in user
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -1544,17 +1476,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -1618,17 +1539,6 @@
  &lt;td&gt;
  
  Import a design
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -1776,17 +1686,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -1850,17 +1749,6 @@
  &lt;td&gt;
  
  Unpublish a design
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -2008,17 +1896,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -2082,17 +1959,6 @@
  &lt;td&gt;
  
  Deploy a design
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -2198,17 +2064,6 @@
  &lt;td&gt;
  
  Retract all resources used in a Meshery design from the cluster
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -2356,17 +2211,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -2461,17 +2305,6 @@
  &lt;td&gt;
  
  
- ✅ *
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -2546,17 +2379,6 @@
  &lt;td&gt;
  
  Delete a design
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅ *
- 
  
  &lt;/td&gt;
  
@@ -2662,17 +2484,6 @@
  &lt;td&gt;
  
  Download a Meshery design in OCI or YAML format
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -2961,17 +2772,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -3051,17 +2851,6 @@
  &lt;td&gt;
  
  View all public and published filters of other team members and private of signed-in user
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -3237,17 +3026,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -3311,17 +3089,6 @@
  &lt;td&gt;
  
  Download a WASM filter
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -3469,17 +3236,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -3543,17 +3299,6 @@
  &lt;td&gt;
  
  Edit WASM filter
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅ *
- 
  
  &lt;/td&gt;
  
@@ -3701,17 +3446,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -3775,17 +3509,6 @@
  &lt;td&gt;
  
  Delete WASM filter permanently from catalog.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅ *
- 
  
  &lt;/td&gt;
  
@@ -4062,17 +3785,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -4154,17 +3866,6 @@
  &lt;td&gt;
  
  View the catalog publication request queue
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -4301,17 +4002,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -4386,17 +4076,6 @@
  &lt;td&gt;
  
  Deny catalog publication requests
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -4707,17 +4386,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -4892,17 +4560,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -4955,17 +4612,6 @@
  &lt;td&gt;
  
  View all user preferences in Meshery UI 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -5071,17 +4717,6 @@
  &lt;td&gt;
  
  View all extensions on the extension page
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -5352,17 +4987,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -5490,17 +5114,6 @@
  &lt;td&gt;
  
  View all configured Kubernetes clusters
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -5769,17 +5382,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -5951,17 +5553,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -6035,17 +5626,6 @@
  
  
  ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -6183,17 +5763,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -6267,17 +5836,6 @@
  
  
  ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -6404,17 +5962,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -6520,17 +6067,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -6615,17 +6151,6 @@
  
  
  ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -6774,17 +6299,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -6847,17 +6361,6 @@
  
  
  ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -6995,17 +6498,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -7111,17 +6603,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -7195,17 +6676,6 @@
  
  
  ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -7440,17 +6910,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -7657,17 +7116,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -7720,17 +7168,6 @@
  &lt;td&gt;
  
  Edit organiaztions and add teams to it
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -7878,17 +7315,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -7952,17 +7378,6 @@
  &lt;td&gt;
  
  Send a request for a user to join an organization.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -8110,17 +7525,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8184,17 +7588,6 @@
  &lt;td&gt;
  
  Elevate or remove organization level administrative privileges.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -8372,17 +7765,6 @@
  
  
  
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
  
  
  
@@ -8416,17 +7798,6 @@
  &lt;td&gt;
  
  See all organizations of which you are an administrator. See all members of those organizations.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -8585,17 +7956,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8701,17 +8061,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8764,17 +8113,6 @@
  &lt;td&gt;
  
  Assign roles to users in an organization
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -8997,17 +8335,6 @@
  
  
  
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
@@ -9214,17 +8541,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9299,17 +8615,6 @@
  &lt;td&gt;
  
  Change connection state
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -9446,17 +8751,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9562,17 +8856,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9647,17 +8930,6 @@
  &lt;td&gt;
  
  Delete a connection
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -9843,17 +9115,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -9974,17 +9235,6 @@
  
  
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10222,17 +9472,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -10296,17 +9535,6 @@
  &lt;td&gt;
  
  Configure and connect to Meshery adapters
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -10465,17 +9693,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -10528,17 +9745,6 @@
  &lt;td&gt;
  
  View already configured metrics
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -10644,17 +9850,6 @@
  &lt;td&gt;
  
  Explore entities within capabilities registry 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -10877,17 +10072,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -10961,17 +10145,6 @@
  
  
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11230,17 +10403,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -11293,17 +10455,6 @@
  &lt;td&gt;
  
  Run a test on performance profile
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -11451,17 +10602,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -11578,17 +10718,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -11641,17 +10770,6 @@
  &lt;td&gt;
  
  Delete performance test
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -11757,17 +10875,6 @@
  &lt;td&gt;
  
  View all performance profiles
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -11948,17 +11055,6 @@
  
  
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12229,17 +11325,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -12292,17 +11377,6 @@
  &lt;td&gt;
  
  Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -12461,17 +11535,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -12524,17 +11587,6 @@
  &lt;td&gt;
  
  Validate cloud native infrastructure configuration against best practices like Analyze Running Configuration, SMI conformance
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -12693,17 +11745,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -12756,17 +11797,6 @@
  &lt;td&gt;
  
  This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -12925,17 +11955,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -12988,17 +12007,6 @@
  &lt;td&gt;
  
  This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
  
  &lt;/td&gt;
  
@@ -13163,17 +12171,6 @@
  
  
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13451,17 +12448,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -13525,17 +12511,6 @@
  &lt;td&gt;
  
  Create a new environment
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -13672,17 +12647,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -13757,17 +12721,6 @@
  &lt;td&gt;
  
  Edit environment and it connection membership
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -13904,17 +12857,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -13989,17 +12931,6 @@
  &lt;td&gt;
  
  Remove connections from environment, 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -14150,17 +13081,6 @@
  
  
  &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14452,17 +13372,6 @@
  &lt;td&gt;
  
  
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ❌
  
  
@@ -14526,17 +13435,6 @@
  &lt;td&gt;
  
  Dissolve workspace and all team and environment memberships. Leave associated resources intact
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -14673,17 +13571,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -14758,17 +13645,6 @@
  &lt;td&gt;
  
  Create new workspace
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -14905,17 +13781,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -14990,17 +13855,6 @@
  &lt;td&gt;
  
  Remove team from workspace
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -15137,17 +13991,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -15222,17 +14065,6 @@
  &lt;td&gt;
  
  Remove environment from workspace
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -15369,17 +14201,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -15454,17 +14275,6 @@
  &lt;td&gt;
  
  Remove designs from workspaces
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -15663,16 +14473,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;div class="csvtable-div"&gt;
  
  
@@ -15748,21 +14548,9 @@
  
  
  
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -16067,11 +14855,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Clone Design &lt;/td&gt;
  &lt;td&gt;Clone any published design to customise it according to your use cases&lt;/td&gt;
@@ -16178,20 +14961,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Designs &lt;/td&gt;
  &lt;td&gt;View all public and published designs of other team members and private of signed-in user&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -16688,35 +15461,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create new design &lt;/td&gt;
  &lt;td&gt;Create new Meshery design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -16925,11 +15673,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Publish Design &lt;/td&gt;
  &lt;td&gt;Publish a design&lt;/td&gt;
@@ -17036,20 +15779,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Unpublish Design &lt;/td&gt;
  &lt;td&gt;Unpublish a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -17450,30 +16183,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Details of design &lt;/td&gt;
  &lt;td&gt;Set design information or details of a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -17682,20 +16395,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete a design &lt;/td&gt;
  &lt;td&gt;Delete a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -17904,20 +16607,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Import Filter &lt;/td&gt;
  &lt;td&gt;Import a filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -18126,20 +16819,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Details of WASM Filter &lt;/td&gt;
  &lt;td&gt;Check information or details of a WASM filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -18348,20 +17031,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Clone WASM Filter &lt;/td&gt;
  &lt;td&gt;Clone WASM filter from catalog, which allows customizing filter and use it in design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -18666,25 +17339,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Meshery User Preferences &lt;/td&gt;
  &lt;td&gt;View all user preferences in Meshery UI &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -18893,20 +17551,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View All Kubernetes Clusters &lt;/td&gt;
  &lt;td&gt;View all configured Kubernetes clusters&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -19115,20 +17763,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Teams &lt;/td&gt;
  &lt;td&gt;See all teams of which you are an administrator. See all members of those teams.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -19337,20 +17975,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add User to Team &lt;/td&gt;
  &lt;td&gt;Directly create a new user account within a team.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -19559,11 +18187,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove User from Team &lt;/td&gt;
  &lt;td&gt;Discontinue user membership of a team and team resources.&lt;/td&gt;
@@ -19670,20 +18293,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create Team &lt;/td&gt;
  &lt;td&gt;Establish new team for organizing groups of users and resource access.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -19892,20 +18505,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Team &lt;/td&gt;
  &lt;td&gt;Edit a team and add new members to it. &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -20114,11 +18717,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign Roles to Team members &lt;/td&gt;
  &lt;td&gt;Assign roles to users in a team&lt;/td&gt;
@@ -20225,50 +18823,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Open Team Invite &lt;/td&gt;
  &lt;td&gt;This governs the team&amp;#39;s invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -21917,75 +20475,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Settings &lt;/td&gt;
  &lt;td&gt;View settings in Meshery&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -22386,11 +20879,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Registry &lt;/td&gt;
  &lt;td&gt;Explore entities within capabilities registry &lt;/td&gt;
@@ -22689,40 +21177,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Results &lt;/td&gt;
  &lt;td&gt;View results of performance tests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -23795,46 +22253,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View cloud native infrastructure &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.&lt;/td&gt;
@@ -23941,20 +22359,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Connections &lt;/td&gt;
  &lt;td&gt;View all connections within an environment&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -24643,36 +23051,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Catalog &lt;/td&gt;
  &lt;td&gt;View all items in catalog&lt;/td&gt;
@@ -24779,10187 +23157,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
  &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
- &lt;/div&gt;
- 
- &lt;div class="csvtable-div"&gt;
- 
- 
- 
- 
- 
- &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Manager Role&lt;/a&gt;&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Share Design &lt;/td&gt;
- &lt;td&gt;Share design with anyone within your organization, and make your design easily accessible to all relevant team members.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Clone Design &lt;/td&gt;
- &lt;td&gt;Clone any published design to customise it according to your use cases&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Designs &lt;/td&gt;
- &lt;td&gt;View all public and published designs of other team members and private of signed-in user&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Filters &lt;/td&gt;
- &lt;td&gt;View all public and published filters of other team members and private of signed-in user&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Create new design &lt;/td&gt;
- &lt;td&gt;Create new Meshery design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Import Design &lt;/td&gt;
- &lt;td&gt;Import a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Publish Design &lt;/td&gt;
- &lt;td&gt;Publish a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Unpublish Design &lt;/td&gt;
- &lt;td&gt;Unpublish a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Validate Design &lt;/td&gt;
- &lt;td&gt;Validate a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Details of design &lt;/td&gt;
- &lt;td&gt;Set design information or details of a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Edit design &lt;/td&gt;
- &lt;td&gt;Edit a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Delete a design &lt;/td&gt;
- &lt;td&gt;Delete a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Download a design &lt;/td&gt;
- &lt;td&gt;Download a Meshery design in OCI or YAML format&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Import Filter &lt;/td&gt;
- &lt;td&gt;Import a filter&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Download a WASM filter &lt;/td&gt;
- &lt;td&gt;Download a WASM filter&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Details of WASM Filter &lt;/td&gt;
- &lt;td&gt;Check information or details of a WASM filter&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Edit WASM filter &lt;/td&gt;
- &lt;td&gt;Edit WASM filter&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Clone WASM Filter &lt;/td&gt;
- &lt;td&gt;Clone WASM filter from catalog, which allows customizing filter and use it in design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Delete WASM Filter &lt;/td&gt;
- &lt;td&gt;Delete WASM filter permanently from catalog.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Meshery User Preferences &lt;/td&gt;
- &lt;td&gt;View all user preferences in Meshery UI &lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Extensions &lt;/td&gt;
- &lt;td&gt;View all extensions on the extension page&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View All Kubernetes Clusters &lt;/td&gt;
- &lt;td&gt;View all configured Kubernetes clusters&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Team &lt;/td&gt;
- &lt;td&gt;See only teams to which you are a member. See all other members within those teams.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Teams &lt;/td&gt;
- &lt;td&gt;See all teams of which you are an administrator. See all members of those teams.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View All Teams &lt;/td&gt;
- &lt;td&gt;See all teams within an organization. See all members of all teams.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Add User to Team &lt;/td&gt;
- &lt;td&gt;Directly create a new user account within a team.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Invite User to Team &lt;/td&gt;
- &lt;td&gt;Send a request for a user to join a team.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Remove User from Team &lt;/td&gt;
- &lt;td&gt;Discontinue user membership of a team and team resources.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Create Team &lt;/td&gt;
- &lt;td&gt;Establish new team for organizing groups of users and resource access.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Edit Team &lt;/td&gt;
- &lt;td&gt;Edit a team and add new members to it. &lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
- &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Assign Roles to Team members &lt;/td&gt;
- &lt;td&gt;Assign roles to users in a team&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Open Team Invite &lt;/td&gt;
- &lt;td&gt;This governs the team&amp;#39;s invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Org &lt;/td&gt;
- &lt;td&gt;See only organizations to which you are a member. See all other members within your membership teams.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Settings &lt;/td&gt;
- &lt;td&gt;View settings in Meshery&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Metrics &lt;/td&gt;
- &lt;td&gt;View already configured metrics&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Registry &lt;/td&gt;
- &lt;td&gt;Explore entities within capabilities registry &lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Results &lt;/td&gt;
- &lt;td&gt;View results of performance tests&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View performance profiles &lt;/td&gt;
- &lt;td&gt;View all performance profiles&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View cloud native infrastructure &lt;/td&gt;
- &lt;td&gt;This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Connections &lt;/td&gt;
- &lt;td&gt;View all connections within an environment&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Environment &lt;/td&gt;
- &lt;td&gt;See all environments within an workspace.&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Catalog &lt;/td&gt;
- &lt;td&gt;View all items in catalog&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- &lt;td&gt;View Workspace &lt;/td&gt;
- &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -36002,21 +24203,9 @@
  
  
  
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -36321,20 +24510,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Clone Design &lt;/td&gt;
  &lt;td&gt;Clone any published design to customise it according to your use cases&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -36543,20 +24722,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Filters &lt;/td&gt;
  &lt;td&gt;View all public and published filters of other team members and private of signed-in user&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -36765,20 +24934,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Approve Catalog Request &lt;/td&gt;
  &lt;td&gt;Approve catalog publication requests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -36987,20 +25146,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create new design &lt;/td&gt;
  &lt;td&gt;Create new Meshery design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -37209,20 +25358,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Publish Design &lt;/td&gt;
  &lt;td&gt;Publish a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -37431,20 +25570,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Validate Design &lt;/td&gt;
  &lt;td&gt;Validate a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -37653,20 +25782,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Undeploy Design &lt;/td&gt;
  &lt;td&gt;Retract all resources used in a Meshery design from the cluster&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -37875,20 +25994,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit design &lt;/td&gt;
  &lt;td&gt;Edit a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -38097,20 +26206,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Download a design &lt;/td&gt;
  &lt;td&gt;Download a Meshery design in OCI or YAML format&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -38319,20 +26418,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Download a WASM filter &lt;/td&gt;
  &lt;td&gt;Download a WASM filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -38541,11 +26630,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit WASM filter &lt;/td&gt;
  &lt;td&gt;Edit WASM filter&lt;/td&gt;
@@ -38652,20 +26736,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Clone WASM Filter &lt;/td&gt;
  &lt;td&gt;Clone WASM filter from catalog, which allows customizing filter and use it in design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -38970,25 +27044,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Meshery User Preferences &lt;/td&gt;
  &lt;td&gt;View all user preferences in Meshery UI &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -39197,20 +27256,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View All Kubernetes Clusters &lt;/td&gt;
  &lt;td&gt;View all configured Kubernetes clusters&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -39419,20 +27468,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Teams &lt;/td&gt;
  &lt;td&gt;See all teams of which you are an administrator. See all members of those teams.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -40217,50 +28256,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
  &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -40469,50 +28468,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Open Team Invite &lt;/td&gt;
  &lt;td&gt;This governs the team&amp;#39;s invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -41681,40 +29640,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add cluster &lt;/td&gt;
  &lt;td&gt;Add Kubernetes cluster&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -41923,20 +29852,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Flush Meshsync data &lt;/td&gt;
  &lt;td&gt;Clearing the database by clicking on the `Flush MeshSync`&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -42145,20 +30064,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete a connection &lt;/td&gt;
  &lt;td&gt;Delete a connection&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -42559,30 +30468,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Metrics &lt;/td&gt;
  &lt;td&gt;View already configured metrics&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -42983,40 +30872,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Results &lt;/td&gt;
  &lt;td&gt;View results of performance tests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -44089,55 +31948,10 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View cloud native infrastructure &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to view all cloud native infrastructure in Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -44346,20 +32160,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Environment &lt;/td&gt;
  &lt;td&gt;See all environments within an workspace.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -44568,20 +32372,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete Environment &lt;/td&gt;
  &lt;td&gt;Dissolve environment and all connection memberships. Leave associated resources intact.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -44790,20 +32584,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign connections to environment &lt;/td&gt;
  &lt;td&gt;Add new connections to environments&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -45012,20 +32796,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Catalog &lt;/td&gt;
  &lt;td&gt;View all items in catalog&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -45234,20 +33008,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete Workspace &lt;/td&gt;
  &lt;td&gt;Dissolve workspace and all team and environment memberships. Leave associated resources intact&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -45456,20 +33220,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create Workspace &lt;/td&gt;
  &lt;td&gt;Create new workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -45678,20 +33432,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove team from workspace &lt;/td&gt;
  &lt;td&gt;Remove team from workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -45900,20 +33644,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove environment from workspace &lt;/td&gt;
  &lt;td&gt;Remove environment from workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -46122,20 +33856,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Designs from Workspaces &lt;/td&gt;
  &lt;td&gt;Remove designs from workspaces&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -46314,231 +34038,9 @@
  
  
  
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -50875,20 +38377,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Invite User to Organization &lt;/td&gt;
  &lt;td&gt;Send a request for a user to join an organization.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -51097,20 +38589,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Promote or Demote User to Org Admin &lt;/td&gt;
  &lt;td&gt;Elevate or remove organization level administrative privileges.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -51319,245 +38801,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Organizations &lt;/td&gt;
  &lt;td&gt;See all organizations of which you are an administrator. See all members of those organizations.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -56056,21 +43303,9 @@
  
  
  
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -56375,20 +43610,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Clone Design &lt;/td&gt;
  &lt;td&gt;Clone any published design to customise it according to your use cases&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -56597,20 +43822,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Filters &lt;/td&gt;
  &lt;td&gt;View all public and published filters of other team members and private of signed-in user&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -56819,20 +44034,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Approve Catalog Request &lt;/td&gt;
  &lt;td&gt;Approve catalog publication requests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -57041,20 +44246,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create new design &lt;/td&gt;
  &lt;td&gt;Create new Meshery design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -57263,20 +44458,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Publish Design &lt;/td&gt;
  &lt;td&gt;Publish a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -57485,20 +44670,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Validate Design &lt;/td&gt;
  &lt;td&gt;Validate a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -57707,20 +44882,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Undeploy Design &lt;/td&gt;
  &lt;td&gt;Retract all resources used in a Meshery design from the cluster&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -57929,20 +45094,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit design &lt;/td&gt;
  &lt;td&gt;Edit a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -58151,20 +45306,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Download a design &lt;/td&gt;
  &lt;td&gt;Download a Meshery design in OCI or YAML format&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -58373,20 +45518,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Download a WASM filter &lt;/td&gt;
  &lt;td&gt;Download a WASM filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -58595,20 +45730,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit WASM filter &lt;/td&gt;
  &lt;td&gt;Edit WASM filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -58817,20 +45942,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete WASM Filter &lt;/td&gt;
  &lt;td&gt;Delete WASM filter permanently from catalog.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -59039,20 +46154,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Meshery User Preferences &lt;/td&gt;
  &lt;td&gt;View all user preferences in Meshery UI &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -59261,20 +46366,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View All Kubernetes Clusters &lt;/td&gt;
  &lt;td&gt;View all configured Kubernetes clusters&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -59483,20 +46578,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Teams &lt;/td&gt;
  &lt;td&gt;See all teams of which you are an administrator. See all members of those teams.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -59705,20 +46790,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add User to Team &lt;/td&gt;
  &lt;td&gt;Directly create a new user account within a team.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -59927,20 +47002,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove User from Team &lt;/td&gt;
  &lt;td&gt;Discontinue user membership of a team and team resources.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -60149,20 +47214,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete Team &lt;/td&gt;
  &lt;td&gt;Dissolve a team and all user memberships. Leave associated resources intact.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -60371,20 +47426,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
  &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -60593,20 +47638,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Open Team Invite &lt;/td&gt;
  &lt;td&gt;This governs the team&amp;#39;s invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -60815,20 +47850,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Organization &lt;/td&gt;
  &lt;td&gt;Edit organiaztions and add teams to it&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -61037,20 +48062,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Invite User to Organization &lt;/td&gt;
  &lt;td&gt;Send a request for a user to join an organization.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -61259,20 +48274,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Promote or Demote User to Org Admin &lt;/td&gt;
  &lt;td&gt;Elevate or remove organization level administrative privileges.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -61481,20 +48486,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Organizations &lt;/td&gt;
  &lt;td&gt;See all organizations of which you are an administrator. See all members of those organizations.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -61703,20 +48698,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Organization members &lt;/td&gt;
  &lt;td&gt;Remove roles from users in an organization&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -61925,20 +48910,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add cluster &lt;/td&gt;
  &lt;td&gt;Add Kubernetes cluster&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -62147,20 +49122,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Flush Meshsync data &lt;/td&gt;
  &lt;td&gt;Clearing the database by clicking on the `Flush MeshSync`&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -62369,20 +49334,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete a connection &lt;/td&gt;
  &lt;td&gt;Delete a connection&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -62591,20 +49546,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Connect adapter &lt;/td&gt;
  &lt;td&gt;Configure and connect to Meshery adapters&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -62813,20 +49758,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Metrics &lt;/td&gt;
  &lt;td&gt;View already configured metrics&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -63035,20 +49970,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add performace profile &lt;/td&gt;
  &lt;td&gt;Add a new performace profile&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -63257,20 +50182,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Results &lt;/td&gt;
  &lt;td&gt;View results of performance tests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -63479,20 +50394,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete performance test &lt;/td&gt;
  &lt;td&gt;Delete performance test&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -63701,20 +50606,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Manage cloud native infrastructure life cycle &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -63923,20 +50818,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Apply cloud native infrastructure configuration &lt;/td&gt;
  &lt;td&gt;Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -64145,20 +51030,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Apply custom cloud native configuration &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -64367,20 +51242,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Undeploy cloud native infrastructure &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -64589,20 +51454,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Connections &lt;/td&gt;
  &lt;td&gt;View all connections within an environment&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -64811,20 +51666,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create Environment &lt;/td&gt;
  &lt;td&gt;Create a new environment&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -65033,20 +51878,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Environment &lt;/td&gt;
  &lt;td&gt;Edit environment and it connection membership&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -65255,20 +52090,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove connections from environments &lt;/td&gt;
  &lt;td&gt;Remove connections from environment, &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -65477,20 +52302,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
  &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -65699,20 +52514,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Workspace &lt;/td&gt;
  &lt;td&gt;Edit workspace and it&amp;#39;s team and environment membership&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -65921,20 +52726,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign team to workspace &lt;/td&gt;
  &lt;td&gt;Add new team to workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -66143,20 +52938,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign environment to workspace &lt;/td&gt;
  &lt;td&gt;Add new environment to workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -66365,11 +53150,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign Designs to Workspaces &lt;/td&gt;
  &lt;td&gt;Assign designs to workspaces&lt;/td&gt;
@@ -66476,20 +53256,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Designs from Workspaces &lt;/td&gt;
  &lt;td&gt;Remove designs from workspaces&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -66678,21 +53448,9 @@
  
  
  
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -66997,20 +53755,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Clone Design &lt;/td&gt;
  &lt;td&gt;Clone any published design to customise it according to your use cases&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -67219,20 +53967,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Filters &lt;/td&gt;
  &lt;td&gt;View all public and published filters of other team members and private of signed-in user&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -67441,20 +54179,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Approve Catalog Request &lt;/td&gt;
  &lt;td&gt;Approve catalog publication requests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -67663,20 +54391,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create new design &lt;/td&gt;
  &lt;td&gt;Create new Meshery design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -67885,20 +54603,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Publish Design &lt;/td&gt;
  &lt;td&gt;Publish a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -68107,20 +54815,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Validate Design &lt;/td&gt;
  &lt;td&gt;Validate a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -68329,20 +55027,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Undeploy Design &lt;/td&gt;
  &lt;td&gt;Retract all resources used in a Meshery design from the cluster&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -68551,20 +55239,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit design &lt;/td&gt;
  &lt;td&gt;Edit a design&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -68773,20 +55451,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Download a design &lt;/td&gt;
  &lt;td&gt;Download a Meshery design in OCI or YAML format&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -68995,20 +55663,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Download a WASM filter &lt;/td&gt;
  &lt;td&gt;Download a WASM filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -69217,20 +55875,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit WASM filter &lt;/td&gt;
  &lt;td&gt;Edit WASM filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -69439,20 +56087,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete WASM Filter &lt;/td&gt;
  &lt;td&gt;Delete WASM filter permanently from catalog.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -69661,20 +56299,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Meshery User Preferences &lt;/td&gt;
  &lt;td&gt;View all user preferences in Meshery UI &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -69883,20 +56511,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View All Kubernetes Clusters &lt;/td&gt;
  &lt;td&gt;View all configured Kubernetes clusters&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -70105,20 +56723,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Teams &lt;/td&gt;
  &lt;td&gt;See all teams of which you are an administrator. See all members of those teams.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -70327,20 +56935,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add User to Team &lt;/td&gt;
  &lt;td&gt;Directly create a new user account within a team.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -70549,20 +57147,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove User from Team &lt;/td&gt;
  &lt;td&gt;Discontinue user membership of a team and team resources.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -70771,20 +57359,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete Team &lt;/td&gt;
  &lt;td&gt;Dissolve a team and all user memberships. Leave associated resources intact.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -70993,20 +57571,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
  &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -71215,20 +57783,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Open Team Invite &lt;/td&gt;
  &lt;td&gt;This governs the team&amp;#39;s invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -71437,20 +57995,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Organization &lt;/td&gt;
  &lt;td&gt;Edit organiaztions and add teams to it&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -71659,20 +58207,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Invite User to Organization &lt;/td&gt;
  &lt;td&gt;Send a request for a user to join an organization.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -71881,20 +58419,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Promote or Demote User to Org Admin &lt;/td&gt;
  &lt;td&gt;Elevate or remove organization level administrative privileges.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -72103,20 +58631,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Organizations &lt;/td&gt;
  &lt;td&gt;See all organizations of which you are an administrator. See all members of those organizations.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -72325,20 +58843,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Organization members &lt;/td&gt;
  &lt;td&gt;Remove roles from users in an organization&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -72547,20 +59055,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add cluster &lt;/td&gt;
  &lt;td&gt;Add Kubernetes cluster&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -72769,20 +59267,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Flush Meshsync data &lt;/td&gt;
  &lt;td&gt;Clearing the database by clicking on the `Flush MeshSync`&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -72991,20 +59479,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete a connection &lt;/td&gt;
  &lt;td&gt;Delete a connection&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -73213,20 +59691,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Connect adapter &lt;/td&gt;
  &lt;td&gt;Configure and connect to Meshery adapters&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -73435,20 +59903,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Metrics &lt;/td&gt;
  &lt;td&gt;View already configured metrics&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -73657,20 +60115,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Add performace profile &lt;/td&gt;
  &lt;td&gt;Add a new performace profile&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -73879,20 +60327,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Results &lt;/td&gt;
  &lt;td&gt;View results of performance tests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -74101,20 +60539,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Delete performance test &lt;/td&gt;
  &lt;td&gt;Delete performance test&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -74323,20 +60751,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Manage cloud native infrastructure life cycle &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to manage infrastructure life cycles within meshery. Meshery allows users to visualize, work on and manage various cloud native technologies.&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -74545,20 +60963,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Apply cloud native infrastructure configuration &lt;/td&gt;
  &lt;td&gt;Configure infrastructure with some predefined options like Automatic Sidecar injection, Envoy Filter, Policy&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -74767,20 +61175,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Apply custom cloud native configuration &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to apply custom configuration and customize existing configuration of thier cloud native infrastructure&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -74989,20 +61387,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Undeploy cloud native infrastructure &lt;/td&gt;
  &lt;td&gt;This permission grants the user the ability to undeploy their infrastructure from a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -75211,20 +61599,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Connections &lt;/td&gt;
  &lt;td&gt;View all connections within an environment&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -75433,20 +61811,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Create Environment &lt;/td&gt;
  &lt;td&gt;Create a new environment&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -75655,20 +62023,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Environment &lt;/td&gt;
  &lt;td&gt;Edit environment and it connection membership&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -75877,20 +62235,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove connections from environments &lt;/td&gt;
  &lt;td&gt;Remove connections from environment, &lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -76099,20 +62447,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
  &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -76321,20 +62659,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Edit Workspace &lt;/td&gt;
  &lt;td&gt;Edit workspace and it&amp;#39;s team and environment membership&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -76543,20 +62871,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign team to workspace &lt;/td&gt;
  &lt;td&gt;Add new team to workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -76765,20 +63083,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign environment to workspace &lt;/td&gt;
  &lt;td&gt;Add new environment to workspace&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
@@ -76987,11 +63295,6 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Assign Designs to Workspaces &lt;/td&gt;
  &lt;td&gt;Assign designs to workspaces&lt;/td&gt;
@@ -77098,20 +63401,10 @@
  
  
  
- 
- 
- 
- 
- 
  &lt;tr&gt;
  &lt;td&gt;Remove Designs from Workspaces &lt;/td&gt;
  &lt;td&gt;Remove designs from workspaces&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
  
  
  
