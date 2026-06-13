@@ -6567,9 +6567,10 @@ limitations under the License.
         } else {
           results.forEach((r) => {
             const doc = resultDetails.get(r.ref);
-            const href =
-              $searchInput.data('offline-search-base-href') +
-              r.ref.replace(/^\//, '');
+            const href = resolveSearchResultHref(
+              $targetSearchInput.data('offline-search-base-href'),
+              r.ref
+            );
   
             const $entry = $('<div>').addClass('mt-4');
   
@@ -6607,6 +6608,33 @@ limitations under the License.
           placement: 'bottom',
         });
         popover.show();
+      };
+
+      const resolveSearchResultHref = (baseHref, ref) => {
+        if (!ref || typeof ref !== 'string') return ref;
+        if (/^(?:[a-z]+:)?\/\//i.test(ref)) return ref;
+        if (/^(?:data:|mailto:|tel:|#)/i.test(ref)) return ref;
+
+        const basePath = new URL(baseHref || '/', window.location.origin)
+          .pathname
+          .replace(/\/+$/, '/');
+
+        if (ref.startsWith('/')) {
+          const baseWithoutTrailingSlash = basePath.replace(/\/$/, '');
+
+          if (
+            basePath === '/' ||
+            ref === baseWithoutTrailingSlash ||
+            ref.startsWith(basePath)
+          ) {
+            return ref;
+          }
+
+          return `${basePath}${ref.replace(/^\//, '')}`;
+        }
+
+        const resolvedUrl = new URL(ref, new URL(basePath, window.location.origin));
+        return `${resolvedUrl.pathname}${resolvedUrl.search}${resolvedUrl.hash}`;
       };
 
       //Bring focus to search bar

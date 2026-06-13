@@ -19830,129 +19830,129 @@ body {
 
 @font-face {
   font-family: "Qanelas Soft Black";
-  src: url("/fonts/qanelas-soft/QanelasSoftBlack.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftBlack.otf") format("opentype");
   font-weight: normal;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Black Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftBlackItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftBlackItalic.otf") format("opentype");
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Heavy";
-  src: url("/fonts/qanelas-soft/QanelasSoftHeavy.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftHeavy.otf") format("opentype");
   font-weight: 900;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Heavy Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftHeavyItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftHeavyItalic.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft ExtraBold";
-  src: url("/fonts/qanelas-soft/QanelasSoftExtraBold.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftExtraBold.otf") format("opentype");
   font-weight: 800;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft ExtraBold Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftExtraBoldItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftExtraBoldItalic.otf") format("opentype");
   font-weight: 800;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Bold";
-  src: url("/fonts/qanelas-soft/QanelasSoftBold.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftBold.otf") format("opentype");
   font-weight: bold;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Bold Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftBoldItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftBoldItalic.otf") format("opentype");
   font-weight: bold;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft";
-  src: url("/fonts/qanelas-soft/QanelasSoftSemiBold.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftSemiBold.otf") format("opentype");
   font-weight: 600;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft SemiBold Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftSemiBoldItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftSemiBoldItalic.otf") format("opentype");
   font-weight: 600;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Medium";
-  src: url("/fonts/qanelas-soft/QanelasSoftMedium.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftMedium.otf") format("opentype");
   font-weight: 500;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Medium Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftMediumItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftMediumItalic.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft";
-  src: url("/fonts/qanelas-soft/QanelasSoftRegular.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftRegular.otf") format("opentype");
   font-weight: 400;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Regular Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftRegularItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftRegularItalic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Light";
-  src: url("/fonts/qanelas-soft/QanelasSoftLight.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftLight.otf") format("opentype");
   font-weight: 300;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Light Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftLightItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftLightItalic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft UltraLight";
-  src: url("/fonts/qanelas-soft/QanelasSoftUltraLight.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftUltraLight.otf") format("opentype");
   font-weight: 200;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft UltraLight Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftUltraLightItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftUltraLightItalic.otf") format("opentype");
   font-weight: 200;
   font-style: italic;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Thin";
-  src: url("/fonts/qanelas-soft/QanelasSoftThin.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftThin.otf") format("opentype");
   font-weight: 100;
   font-display: swap; }
 
 @font-face {
   font-family: "Qanelas Soft Thin Italic";
-  src: url("/fonts/qanelas-soft/QanelasSoftThinItalic.otf") format("opentype");
+  src: url("../fonts/qanelas-soft/QanelasSoftThinItalic.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
   font-display: swap; }
@@ -20081,6 +20081,10 @@ h6,
   vertical-align: top;
   border-color: rgba(0, 179, 159, 0.33); }
 
+.td-initial + h2, .td-initial + .h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem; }
+
 .td-initial thead {
   display: table-header-group;
   vertical-align: bottom;
@@ -20130,6 +20134,31 @@ th {
 .table-container {
   overflow-x: auto;
   max-width: 100%; }
+
+.td-content .permissions-tabpane {
+  max-width: 100%;
+  width: 100%;
+  overflow: visible;
+  margin-top: 1rem; }
+  .td-content .permissions-tabpane .nav-tabs,
+  .td-content .permissions-tabpane .tab-content,
+  .td-content .permissions-tabpane .tab-pane,
+  .td-content .permissions-tabpane .csvtable-div,
+  .td-content .permissions-tabpane table.csvtable {
+    width: 100%;
+    max-width: 100%; }
+  .td-content .permissions-tabpane table.csvtable th:nth-child(n+3),
+  .td-content .permissions-tabpane table.csvtable td:nth-child(n+3) {
+    text-align: center; }
+  .td-content .permissions-tabpane .csvtable-div table.csvtable {
+    table-layout: fixed; }
+    .td-content .permissions-tabpane .csvtable-div table.csvtable th:first-child,
+    .td-content .permissions-tabpane .csvtable-div table.csvtable td:first-child {
+      width: 25%; }
+    .td-content .permissions-tabpane .csvtable-div table.csvtable th:nth-child(2),
+    .td-content .permissions-tabpane .csvtable-div table.csvtable td:nth-child(2) {
+      width: 75%;
+      max-width: none; }
 
 /* The markdown image container */
 .md__image {
@@ -20780,9 +20809,9 @@ div.tip {
   align-content: space-between;
   gap: 20px; }
   .playground-section.playground-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/meshery-light-icon.svg"); }
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/meshery-light-icon.svg"); }
   .playground-section.video-play-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/video-play.svg"); }
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/video-play.svg"); }
   .playground-section.playground-logo, .playground-section.video-play-logo {
     background-repeat: no-repeat;
     background-position: center;
@@ -20797,11 +20826,11 @@ div.tip {
   align-content: space-between;
   gap: 20px; }
   .catalog-section.catalog-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/catalog.svg"); }
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/catalog.svg"); }
   .catalog-section.academy-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/academy.svg"); }
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/academy.svg"); }
   .catalog-section.recognition-program-logo {
-    background-image: url("/images/logos/black-semi-opaque.svg"), url("/images/logos/recognition-program.png"); }
+    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/recognition-program.png"); }
   .catalog-section.catalog-logo, .catalog-section.academy-logo, .catalog-section.recognition-program-logo {
     background-repeat: no-repeat;
     background-position: center;
@@ -23346,7 +23375,7 @@ a:not([href]):not([class]):hover {
 
 .td-sidebar-nav {
   max-height: none;
-  overflow: hidden;
+  overflow: visible;
   padding: 0px; }
   .td-sidebar-nav__section-title a {
     color: #ced4da;
