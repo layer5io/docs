@@ -214,6 +214,11 @@ h6 {
   border-color: rgba(0, 179, 159, 0.33);
 }
 
+.td-initial + h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
 .td-initial thead {
   display: table-header-group;
   vertical-align: bottom;
@@ -269,4 +274,44 @@ th {
 .table-container {
   overflow-x: auto;
   max-width: 100%;
+}
+
+.td-content .permissions-tabpane {
+  max-width: 100%;
+  width: 100%;
+  overflow: visible;
+  margin-top: 1rem;
+
+  .nav-tabs,
+  .tab-content,
+  .tab-pane,
+  .csvtable-div,
+  table.csvtable {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table.csvtable {
+    th:nth-child(n+3),
+    td:nth-child(n+3) {
+      text-align: center;
+    }
+  }
+
+  .csvtable-div {
+    table.csvtable {
+      table-layout: fixed;
+
+      th:first-child,
+      td:first-child {
+        width: 25%;
+      }
+
+      th:nth-child(2),
+      td:nth-child(2) {
+        width: 75%;
+        max-width: none;
+      }
+    }
+  }
 }

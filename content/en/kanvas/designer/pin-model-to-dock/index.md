@@ -23,13 +23,13 @@ Pinning a model adds it to the dock at the bottom of the Designer interface. Thi
 3. The model will now appear in the dock at the bottom of the Designer.
 
 
-![Pin To Dock action](pin-to-dock.png)
+![Pin To Dock action](images/pin-to-dock.png)
 
 ## Pinned Model in the Dock
 
 After you pin a model, it appears as an icon in the dock at the bottom of the Designer and remains there for quick access throughout your workflow. This makes it easy to find and reuse your favorite models at any time.
 
-![Pinned model displayed in the dock](pinned-model-location.png)
+![Pinned model displayed in the dock](images/pinned-model-location.png)
 
 ## How to Use a Pinned Model
 
@@ -39,7 +39,7 @@ Clicking a pinned model in the dock gives you quick access to all its components
 Only models can be pinned to the dock. Individual components within a model cannot be pinned directly.
 {{< /alert >}}
 
-![How to use pinned model's components](use-pinned-models-components.png)
+![How to use pinned model's components](images/use-pinned-models-components.png)
 
 ## How to Remove a Model from the Dock
 
@@ -51,14 +51,14 @@ You can remove a model from the dock in two ways:
 2. Click the pin icon again (the tooltip will show "Remove From Dock").
 
 
-![Remove From Dock action](unpin-model-1.png)
+![Remove From Dock action](images/unpin-model-1.png)
 
 ### Method 2: Using the Close Button
 
 1. Click the X (close) button on the pinned model icon in the dock to remove it instantly.
 
 
-![Unpin using close button](unpin-model-2.png)
+![Unpin using close button](images/unpin-model-2.png)
 
 
 {{< alert type="info" title="Good to Know" >}}

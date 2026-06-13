@@ -24,9 +24,9 @@ writing any YAML.
 
 > **NOTE:** If this is your first time working with Meshery Playground, consider
 > starting with the
-> [Exploring Kubernetes Pods with Meshery Playground](https://docs.meshery.io/guides/tutorials/kubernetes-pods)
+> [Exploring Kubernetes Pods with Meshery Playground](/kanvas/tutorials/kubernetes-pods)
 > tutorial first or
-> [Exploring Kubernetes Deployments with Meshery](https://docs.meshery.io/guides/tutorials/kubernetes-deployments).
+> [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes-deployments).
 
 ## Prerequisites
 

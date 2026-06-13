@@ -6,19 +6,21 @@ categories: [Identity]
 tags: [perms]
 ---
 
-{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains](/cloud/concepts/identity-and-security/keychains/#keychains-management) and [roles](/cloud/concepts/identity-and-security/roles).{{< /alert >}}
+{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md#keychains-management" >}}) and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}
 
 **Legend:**
 
 - ✅* user must be resource owner in order to perform action.
 - ✅ user is allowed to perform action regardless of resource ownership.
 
-  {{< tabpane text=true >}}
-  {{< tab header="**Sort by**:" disabled=true />}}
-  {{< tab header="Categories" lang="en" >}}
-  {{< csvtable >}}
-  {{< /tab >}}
-  {{< tab header="Roles" lang="en" >}}
-  {{< csvtable-roles >}}
-  {{< /tab >}}
-  {{< /tabpane >}}
+<div class="permissions-tabpane">
+{{< tabpane text=true >}}
+{{< tab header="**Sort by**:" disabled=true />}}
+{{< tab header="Categories" lang="en" >}}
+{{< csvtable >}}
+{{< /tab >}}
+{{< tab header="Roles" lang="en" >}}
+{{< csvtable-roles >}}
+{{< /tab >}}
+{{< /tabpane >}}
+</div>

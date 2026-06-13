@@ -17,7 +17,7 @@ The first steps in starting with Layer5 are to create an account, verify your em
 To sign up for an account on Layer5 Cloud, navigate to <https://cloud.layer5.io/signup>.
 You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
 
-{{< meshery-design-embed src="/export-designs/embedded-design-flows.js" id="embedded-design-8c9106f6-2b0e-4bd1-8eea-8ccdab5c117d" >}}
+{{< meshery-design-embed src="export-designs/embedded-design-flows.js" id="embedded-design-8c9106f6-2b0e-4bd1-8eea-8ccdab5c117d" >}}
 
 
 
@@ -44,7 +44,7 @@ On successful login, you will be prompted to setup your first organization and w
 Organization are unit of tenant in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. You can create your own organization or join an existing one. By default you are the owner of the organization you create.
 
 {{< alert type="info" >}}
-For more information, see [Organizations](/cloud/concepts/identity-and-security/organizations/)
+For more information, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}})
 {{< /alert >}}
 
 
@@ -55,7 +55,7 @@ Give your organization a name and a description. For more information, see "Crea
 Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resources in your workspaces through teams.
 
 {{< alert type="info" >}}
-For more information, see [Workspaces](/cloud/concepts/spaces/workspaces/)
+For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}})
 {{< /alert >}}
 
 Give your workspace a name and a description. For more information, see "Creating a workspace."

@@ -13,7 +13,7 @@ aliases:
 
 {{< cardpane >}}
 {{% card %}}
-<img src="/cloud/concepts/identity-and-security/images/role-provider-admin.svg" />
+<img src="../images/role-provider-admin.svg" />
 {{% /card %}}
 {{% card header="## Provider Administrator" %}}
 

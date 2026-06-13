@@ -18,12 +18,12 @@ To activate this full render mode, you will need to add the `render=full` parame
 The images below illustrate the difference this parameter makes:
 
 <figure>
-  <img src="/kanvas/advanced/url-parameters/no-tagsets.png" alt="Design rendering in Kanvas with default settings" />
+  <img src="images/no-tagsets.png" alt="Design rendering in Kanvas with default settings" />
   <figcaption>A design with default rendering; TagSets may not be visible</figcaption>
 </figure>
 
 <figure>
-  <img src="/kanvas/advanced/url-parameters/with-tagsets.png" alt="The design in Kanvas showing full details" />
+  <img src="images/with-tagsets.png" alt="The design in Kanvas showing full details" />
   <figcaption>The same design with `render=full` applied; TagSets and all other details are now visible</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ You can specify render modes via the `render` parameter:
 
 For example: `https://kanvas.new/extension/meshmap?render=wireframe&mode=design&design=xxxx`
 
-See [Render Modes](/kanvas/advanced/render-modes/) for detailed descriptions of each mode.
+See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for detailed descriptions of each mode.
 
 ## Adaptive Mode Parameter
 
@@ -73,4 +73,4 @@ You can enable Adaptive mode via URL parameter:
 
 `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
 
-When `adaptive=true` is set, Kanvas will automatically monitor performance and switch render modes as needed. The current render mode (set via the `render` parameter or the default) becomes the ceiling -- the highest fidelity Adaptive mode will use. See [Render Modes](/kanvas/advanced/render-modes/) for details.
+When `adaptive=true` is set, Kanvas will automatically monitor performance and switch render modes as needed. The current render mode (set via the `render` parameter or the default) becomes the ceiling -- the highest fidelity Adaptive mode will use. See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for details.

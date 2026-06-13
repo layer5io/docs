@@ -14,4 +14,4 @@ duration: "2:11"
 
 ### Related Docs
 
-- [Exploring Operator](/kanvas/operator/)
+- [Exploring Operator]({{< ref "kanvas/operator/_index.md" >}})

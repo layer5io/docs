@@ -13,7 +13,7 @@ aliases:
 
 This guide covers creating new organizations, editing their details, inviting members, and deleting organizations when necessary.
 
-![Organization Overview](/cloud/guides/organizations/org-management/org_overview.png)
+![Organization Overview](images/org_overview.png)
 
 {{< alert title="Permissions Required" type="info" >}}
 Operations described on this page for managing your Organization typically require Organization Administrator or similar administrative roles. To understand the specific roles needed for each action, please refer to the [Default Permissions reference](https://docs.layer5.io/cloud/reference/default-permissions/).
@@ -32,7 +32,7 @@ An Organization provides a way to structure your teams, users, and resource acce
     -   Region (Optional): Choose the time zone for your Organization.
     -   Add Organization Members (Optional): You can begin adding **existing** Layer5 Cloud users to your new Organization in this field.
 
-<img src="/cloud/guides/organizations/org-management/create_org.png" alt="Filling out new Organization details" style="width: 30%;" />
+<img src="images/create_org.png" alt="Filling out new Organization details" style="width: 30%;" />
 
 {{< alert type="info" title="Unable to Create More Organizations?" >}}
 If the "Add Organization" button is disabled, it means your current role does not permit creating additional Organizations. Only users with roles like Organization Administrator or Provider Administrator can create new Organizations.
@@ -51,7 +51,7 @@ You can update your Organization's name, location, associated teams, branding, a
     -   Logos: Upload specific logo versions for various display contexts by clicking the respective **"Upload"** buttons.
     -   Invitations: Access a shareable link to invite users to your Organization.
 
-<img src="/cloud/guides/organizations/org-management/edit_org.png" alt="Editing Organization Details" style="width: 30%;" />
+<img src="images/edit_org.png" alt="Editing Organization Details" style="width: 30%;" />
 
 ## Using the Open Organization Invitation Link
 
@@ -62,7 +62,7 @@ To invite multiple users to your organization at once, or to allow open sign-ups
 * Public Sign-ups: To let people sign up openly, for instance, by posting the link on a community page or another public resource.
 * Cross-Organizational Collaboration: To make it easy for collaborators from other organizations or external partners to join.
 
-![Obtain Organization Invite Link](/cloud/guides/organizations/org-management/org_open_invite.gif)
+![Obtain Organization Invite Link](images/org_open_invite.gif)
 
 {{< alert title="Inviting Users to Specific Teams" type="info" >}}
 If you want to invite users directly to a specific team within your organization, please refer to the documentation on [Open Team Invites](https://docs.layer5.io/cloud/concepts/identity-and-security/teams/)
@@ -115,6 +115,6 @@ Avoid deleting an Organization if:
 2.  A confirmation modal will appear, requiring you to verify this action.
 3. Click the "Delete" button to permanently remove the Organization. To abort the deletion, click "Cancel".
 
-<img src="/cloud/guides/organizations/org-management/delete_org.png" alt="Delete Organization" style="width: 30%;" />
+<img src="images/delete_org.png" alt="Delete Organization" style="width: 30%;" />
 
 [^1]: Existing users who click this invitation link might encounter a "Page not found" error. This is a temporary bug and is being addressed.

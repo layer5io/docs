@@ -13,7 +13,7 @@ aliases:
 
 This guide walks through how Five promotes the `prod-deployment-v2` design from the `orbital-staging` workspace to `orbital-production`, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.
 
-See [Meet Five and the Cast](/cloud/getting-started/meet-five) for the full Orbital Labs narrative reference.
+See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full Orbital Labs narrative reference.
 
 ## Overview
 
@@ -69,7 +69,7 @@ If your organization requires Team Admin approval before production deployments,
 3. She clicks **Approve** — the deployment proceeds to `prod-aws`.
 
 {{< alert type="info" title="Why does Zara need to approve?" >}}
-The Infrastructure team's keychain grants `orbital-production` workspace access and `prod-aws` environment deployment rights only to members who have been explicitly granted those keys. Zara, as Team Admin, holds the approval authority for production environment assignments. See [Keychains](/cloud/concepts/identity-and-security/keychains/) for how this is configured.
+The Infrastructure team's keychain grants `orbital-production` workspace access and `prod-aws` environment deployment rights only to members who have been explicitly granted those keys. Zara, as Team Admin, holds the approval authority for production environment assignments. See [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) for how this is configured.
 {{< /alert >}}
 
 ### Step 5 — Verify the deployment
@@ -82,6 +82,6 @@ After approval:
 
 ## What's Next
 
-- To give the Development team visibility into the production design (read-only), Five can share the design individually with Rex and Jordan. See [Sharing a Workspace](/cloud/guides/tutorials/sharing-a-workspace/).
+- To give the Development team visibility into the production design (read-only), Five can share the design individually with Rex and Jordan. See [Sharing a Workspace]({{< ref "cloud/guides/tutorials/sharing-a-workspace.md" >}}).
 - To set up a parallel deployment to `prod-gcp`, Five repeats Steps 3–5 selecting `prod-gcp` as the environment.
 - To roll back, Five transfers `prod-deployment-v2` back to `orbital-staging` and deploys the previous version from there.
