@@ -14,6 +14,8 @@
 
 include .github/build/Makefile.show-help.mk
 
+.PHONY: setup check-deps check-go build site clean docker format
+
 ## Install docs.layer5.io dependencies on your local machine.
 ## See https://gohugo.io/categories/installation
 setup:
@@ -31,17 +33,15 @@ docs-build-production:
 	npm run build:production
 
 ## Empty build cache and run docs.layer5.io on your local machine.
-clean: check-deps check-go
+clean:
 	npm run clean
-	make site
-
-.PHONY: setup build site clean check-deps check-go docker
+	$(MAKE) site
 
 check-deps:
-	@echo "Checking dependencies..."
-	@command -v npm > /dev/null || (echo "npm is not installed. Please install it before proceeding."; exit 1)
-	@if [ ! -d "node_modules" ]; then echo "Dependencies not installed. Please run 'make setup' first."; exit 1; fi
-	@echo "Dependencies are installed."
+	@echo "Checking if 'npm' and local 'hugo' binary are present..."
+	@command -v npm > /dev/null || { echo "Error: 'npm' not found. Please install Node.js and npm."; exit 1; }
+	@test -x node_modules/.bin/hugo || { echo "Error: Hugo binary not found in node_modules. Please run 'make setup' first."; exit 1; }
+	@echo "Dependencies check passed."
 
 check-go:
 	@echo "Checking if Go is installed..."
