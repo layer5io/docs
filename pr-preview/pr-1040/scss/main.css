@@ -23195,7 +23195,6 @@ details > ul {
     max-width: 420px;
     min-width: 240px;
     position: relative;
-    overflow-x: hidden;
     padding-right: 12px;
     order: 1; }
   /**
@@ -23210,11 +23209,6 @@ details > ul {
     position: relative;
     order: 2; }
   /**
-   * Better readable content width
-   */
-  main[role='main'] article {
-    max-width: 900px; }
-  /**
    * TOC SIDEBAR
    */
   .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
@@ -23222,27 +23216,8 @@ details > ul {
     max-width: 320px;
     min-width: 220px;
     position: relative;
-    overflow-x: hidden;
     padding-left: 12px;
     order: 3; }
-  /**
-   * EXISTING SIDEBAR STYLING
-   */
-  .td-sidebar,
-  .td-sidebar-toc {
-    position: sticky;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; }
-  /**
-   * Prevent text clipping
-   */
-  .td-sidebar nav,
-  .td-sidebar-toc nav {
-    overflow-wrap: break-word;
-    word-break: break-word; }
-  .td-sidebar a,
-  .td-sidebar-toc a {
-    display: block;
-    max-width: 100%; }
   /**
    * RESIZE HANDLE
    */
@@ -23306,25 +23281,6 @@ details > ul {
   .resizable-panel-handle--toc::before,
   .resizable-panel-handle--toc::after {
     left: 1px; }
-  /**
-   * CUSTOM SCROLLBARS
-   */
-  .row.flex-xl-nowrap.resizable-panels-ready
-> .td-sidebar::-webkit-scrollbar,
-  .row.flex-xl-nowrap.resizable-panels-ready
-> .td-sidebar-toc::-webkit-scrollbar {
-    width: 8px; }
-  .row.flex-xl-nowrap.resizable-panels-ready
-> .td-sidebar::-webkit-scrollbar-thumb,
-  .row.flex-xl-nowrap.resizable-panels-ready
-> .td-sidebar-toc::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3) !important;
-    border-radius: 999px; }
-  .row.flex-xl-nowrap.resizable-panels-ready
-> .td-sidebar::-webkit-scrollbar-thumb:hover,
-  .row.flex-xl-nowrap.resizable-panels-ready
-> .td-sidebar-toc::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.45) !important; }
   /**
    * RESET BUTTON
    */
@@ -23422,6 +23378,9 @@ details > ul {
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 1rem; } }
+
+.td-main main article {
+  max-width: 900px; }
 
 body {
   overflow-x: hidden;
@@ -23530,7 +23489,21 @@ a:not([href]):not([class]):hover {
   overflow-y: auto;
   padding-top: 1rem;
   margin-top: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent; }
+  .td-sidebar nav {
+    overflow-wrap: break-word;
+    word-break: break-word; }
+  .td-sidebar a {
+    display: block;
+    max-width: 100%; }
+  .td-sidebar::-webkit-scrollbar {
+    width: 8px; }
+  .td-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 999px; }
+    .td-sidebar::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.45) !important; }
   @media (min-width: 768px) {
     @supports (position: sticky) {
       .td-sidebar__inner {
@@ -23561,7 +23534,7 @@ a:not([href]):not([class]):hover {
     font-weight: 300; }
   .td-sidebar-nav .td-sidebar-link__section {
     margin-top: 1rem;
-    font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+    font-family: 'Qanelas Soft', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
   .td-sidebar-nav a:hover {
     color: #fff;
     text-decoration: none; }
@@ -23584,7 +23557,21 @@ a:not([href]):not([class]):hover {
   margin-top: 0rem;
   line-height: 1.25rem;
   border-left: 1px solid rgba(0, 179, 159, 0.33);
-  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000); }
+  background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent; }
+  .td-sidebar-toc nav {
+    overflow-wrap: break-word;
+    word-break: break-word; }
+  .td-sidebar-toc a {
+    display: block;
+    max-width: 100%; }
+  .td-sidebar-toc::-webkit-scrollbar {
+    width: 8px; }
+  .td-sidebar-toc::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 999px; }
+    .td-sidebar-toc::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.45) !important; }
   @supports (position: sticky) {
     .td-sidebar-toc {
       position: sticky;
@@ -23622,14 +23609,14 @@ a:not([href]):not([class]):hover {
 .pageinfo {
   font-weight: 500;
   background: #000;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   border-style: solid;
   border-color: #00b39f; }
 
 .matterinfo {
   font-weight: 500;
   background: #000;
-  font-family: "Qanelas Soft";
+  font-family: 'Qanelas Soft';
   border-color: #00b39f;
   border-radius: 10px; }
 
@@ -23642,7 +23629,7 @@ a:not([href]):not([class]):hover {
   color: #b1b6b8; }
 
 .matterinfo .plan-support {
-  padding: .5rem;
+  padding: 0.5rem;
   border: 0.5px solid rgba(0, 179, 159, 0.33);
   display: flex;
   align-items: center;
@@ -23702,7 +23689,7 @@ a:not([href]):not([class]):hover {
 .td-content figure > img {
   width: auto;
   max-width: 100%;
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);
   transition: box-shadow 0.2s; }
 
@@ -23712,7 +23699,7 @@ a:not([href]):not([class]):hover {
   padding: 0.5rem 1rem;
   background-color: #7a848e;
   color: #121212;
-  border-radius: 0 0 .5rem .5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   box-sizing: border-box; }
 
 .dashboard {
@@ -23821,13 +23808,13 @@ a:not([href]):not([class]):hover {
     margin: 0;
     transform: translateX(0%) translateY(0%); }
     .dash-sign-container a.dash-sign:hover {
-      color: #EBC017; }
+      color: #ebc017; }
     @media (max-width: 768px) {
       .dash-sign-container a.dash-sign {
         margin: 2rem 0 0 0; } }
   .dash-sign-container a.dash-sign:before,
   .dash-sign-container a.dash-sign:after {
-    content: "";
+    content: '';
     padding: 0.9em 0.4em;
     position: absolute;
     left: 50%;
@@ -23938,7 +23925,18 @@ html {
     margin-left: auto;
     margin-right: auto; } }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, .td-alert-heading, h5, .h5, h6, .h6 {
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+.td-alert-heading,
+h5,
+.h5,
+h6,
+.h6 {
   scroll-margin-top: 1rem; }
 
 @media (max-width: 767px) {
