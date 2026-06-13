@@ -90,7 +90,6 @@
     function createResetButton() {
       const resetButton = document.createElement('button');
       resetButton.type = 'button';
-      resetButton.id = 'reset-panel-widths';
       resetButton.className = 'resizable-panel-reset';
       resetButton.innerHTML =
         '<i class="bi bi-arrow-clockwise" aria-hidden="true"></i><span>Reset layout</span>';
@@ -113,9 +112,17 @@
       handle.setPointerCapture(event.pointerId);
       document.body.classList.add('resizable-panels-dragging');
 
-      document.addEventListener('pointermove', onPointerMove);
-      document.addEventListener('pointerup', stopResize);
-      document.addEventListener('pointercancel', stopResize);
+      const controller = new AbortController();
+      const { signal } = controller;
+
+      const endResize = () => {
+        stopResize();
+        controller.abort();
+      };
+
+      document.addEventListener('pointermove', onPointerMove, { signal });
+      document.addEventListener('pointerup', endResize, { signal });
+      document.addEventListener('pointercancel', endResize, { signal });
     }
 
     function onPointerMove(event) {
@@ -148,10 +155,6 @@
       if (!activeHandle) {
         return;
       }
-
-      document.removeEventListener('pointermove', onPointerMove);
-      document.removeEventListener('pointerup', stopResize);
-      document.removeEventListener('pointercancel', stopResize);
 
       activeHandle.classList.remove('resizable-panel-handle--active');
       activeHandle = null;
@@ -282,11 +285,11 @@
         ),
         toc: toc
           ? clamp(
-              Number(nextWidths && nextWidths.toc),
-              LIMITS.toc.min,
-              LIMITS.toc.max,
-              DEFAULT_WIDTHS.toc,
-            )
+            Number(nextWidths && nextWidths.toc),
+            LIMITS.toc.min,
+            LIMITS.toc.max,
+            DEFAULT_WIDTHS.toc,
+          )
           : 0,
       };
 

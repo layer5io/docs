@@ -32,7 +32,6 @@
     max-width: 420px;
     min-width: 240px;
     position: relative;
-    overflow-x: hidden;
     padding-right: 12px;
     order: 1;
   }
@@ -51,13 +50,6 @@
   }
 
   /**
-   * Better readable content width
-   */
-  main[role='main'] article {
-    max-width: 900px;
-  }
-
-  /**
    * TOC SIDEBAR
    */
   .row.flex-xl-nowrap.resizable-panels-ready > .td-sidebar-toc {
@@ -65,33 +57,8 @@
     max-width: 320px;
     min-width: 220px;
     position: relative;
-    overflow-x: hidden;
     padding-left: 12px;
     order: 3;
-  }
-
-  /**
-   * EXISTING SIDEBAR STYLING
-   */
-  .td-sidebar,
-  .td-sidebar-toc {
-    position: sticky;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-  }
-
-  /**
-   * Prevent text clipping
-   */
-  .td-sidebar nav,
-  .td-sidebar-toc nav {
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-
-  .td-sidebar a,
-  .td-sidebar-toc a {
-    display: block;
-    max-width: 100%;
   }
 
   /**
@@ -171,31 +138,6 @@
   .resizable-panel-handle--toc::before,
   .resizable-panel-handle--toc::after {
     left: 1px;
-  }
-
-  /**
-   * CUSTOM SCROLLBARS
-   */
-  .row.flex-xl-nowrap.resizable-panels-ready
-    > .td-sidebar::-webkit-scrollbar,
-  .row.flex-xl-nowrap.resizable-panels-ready
-    > .td-sidebar-toc::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .row.flex-xl-nowrap.resizable-panels-ready
-    > .td-sidebar::-webkit-scrollbar-thumb,
-  .row.flex-xl-nowrap.resizable-panels-ready
-    > .td-sidebar-toc::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3) !important;
-    border-radius: 999px;
-  }
-
-  .row.flex-xl-nowrap.resizable-panels-ready
-    > .td-sidebar::-webkit-scrollbar-thumb:hover,
-  .row.flex-xl-nowrap.resizable-panels-ready
-    > .td-sidebar-toc::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.45) !important;
   }
 
   /**

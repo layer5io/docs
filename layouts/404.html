@@ -1,5 +1,5 @@
 <!doctype html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
+<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Name }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
     {{ partial "head.html" . }}
   </head>
@@ -34,7 +34,8 @@
     {{ partial "scripts.html" . }}
     {{ $resizablePanels := resources.Get "js/resizable-panels.js" -}}
     {{ if $resizablePanels }}
-      <script defer src="{{ $resizablePanels.RelPermalink }}"></script>
+      {{ $resizablePanels = $resizablePanels | minify | fingerprint -}}
+      <script defer src="{{ $resizablePanels.RelPermalink }}" integrity="{{ $resizablePanels.Data.Integrity }}" crossorigin="anonymous"></script>
     {{ end -}}
   </body>
 </html>

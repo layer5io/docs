@@ -1,21 +1,21 @@
-@import "fonts_project.scss";
-@import "content_project.scss";
-@import "image-modal_project.scss";
-@import "elements_project.scss";
-@import "footer_project.scss";
-@import "variables_project.scss";
-@import "landing_project.scss";
-@import "_navbar_project.scss";
-@import "tax_project.scss";
-@import "search_project.scss";
-@import "_videos_project.scss";
-@import "subscription.scss";
-@import "rest-api-reference.scss";
-@import "_video-landing_project.scss";
-@import "elements_project";
-@import "summary.scss";
-@import "_kanvas-corner-popup.scss";
-@import "_resizable-panels.scss";
+@import 'fonts_project.scss';
+@import 'content_project.scss';
+@import 'image-modal_project.scss';
+@import 'elements_project.scss';
+@import 'footer_project.scss';
+@import 'variables_project.scss';
+@import 'landing_project.scss';
+@import '_navbar_project.scss';
+@import 'tax_project.scss';
+@import 'search_project.scss';
+@import '_videos_project.scss';
+@import 'subscription.scss';
+@import 'rest-api-reference.scss';
+@import '_video-landing_project.scss';
+@import 'elements_project';
+@import 'summary.scss';
+@import '_kanvas-corner-popup.scss';
+@import '_resizable-panels.scss';
 
 .navbar-dark {
   min-height: 5rem;
@@ -45,10 +45,13 @@
 .nav-link.active {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to bottom,
+  border-image: linear-gradient(
+      to bottom,
       rgba($dark, 0.2) 30%,
       rgba($primary, 0.3) 60%,
-      $primary 90% 100%) 1;
+      $primary 90% 100%
+    )
+    1;
   padding-bottom: 0.3rem;
   align-items: center;
   justify-content: center;
@@ -82,6 +85,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  article {
+    max-width: 900px;
+  }
 }
 
 body {
@@ -97,7 +104,7 @@ body {
 
   // Inline code
   p code,
-  li>code,
+  li > code,
   table code {
     color: inherit;
     padding: 0.2em 0.4em;
@@ -118,7 +125,7 @@ body {
     background-color: $gray-900;
     padding: $spacer;
 
-    >code {
+    > code {
       background-color: inherit !important;
       padding: 0;
       margin: 0;
@@ -144,7 +151,7 @@ body {
   overflow-x: hidden;
 }
 .td-content .card img {
-  width: 100% ;
+  width: 100%;
 }
 
 // Links
@@ -175,7 +182,6 @@ a:not([href]):not([class]):hover {
   // .taxonomy-terms-cloud
 
   .taxonomy-term {
-
     border-width: 0;
     border-radius: 0 3px 3px 0;
     display: inline-block;
@@ -190,13 +196,10 @@ a:not([href]):not([class]):hover {
     transition: color 0.2s;
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
 
-
     &:hover {
       background-color: $primary;
       color: $white;
-
     }
-
   }
 
   .article-teaser {
@@ -225,12 +228,14 @@ a:not([href]):not([class]):hover {
 }
 
 .td-sidebar {
-  background-image: linear-gradient(to top,
-      #1e2117,
-      #1d1912,
-      #18120e,
-      #0f0a09,
-      #000000);
+  background-image: linear-gradient(
+    to top,
+    #1e2117,
+    #1d1912,
+    #18120e,
+    #0f0a09,
+    #000000
+  );
   position: sticky;
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
@@ -238,6 +243,31 @@ a:not([href]):not([class]):hover {
   padding-top: 1rem;
   margin-top: 0;
   overflow-x: hidden;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+
+  nav {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  a {
+    display: block;
+    max-width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 999px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.45) !important;
+    }
+  }
+
   &__inner {
     @include media-breakpoint-up(md) {
       @supports (position: sticky) {
@@ -285,17 +315,17 @@ a:not([href]):not([class]):hover {
     &__section {
       margin-top: 1rem;
       font-family:
-        "Qanelas Soft",
+        'Qanelas Soft',
         sans-serif,
         -apple-system,
         BlinkMacSystemFont,
-        "Segoe UI",
+        'Segoe UI',
         Roboto,
-        "Helvetica Neue",
+        'Helvetica Neue',
         Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol";
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
     }
   }
 
@@ -308,14 +338,20 @@ a:not([href]):not([class]):hover {
     &.active:not(.tree-root) {
       border-width: 1px;
       border-style: solid;
-      border-image: linear-gradient(to left,
+      border-image: linear-gradient(
+          to left,
           rgba($dark, 0) 30%,
           rgba($primary, 0.3) 60%,
-          $primary 90% 100%) 1;
-      background-image: linear-gradient(to left,
+          $primary 90% 100%
+        )
+        1;
+      background-image: linear-gradient(
+          to left,
           rgba($dark, 0.2) 30%,
           rgba($primary, 0.3) 60%,
-          $primary 90% 100%) 1;
+          $primary 90% 100%
+        )
+        1;
       padding: 0.25rem;
       padding-left: 0.5rem !important;
       // background-image: linear-gradient(to left, rgba($dark,.33),rgba($dark,.5),rgba($dark,.75),#1e2117, #31412b, #3b6447, #378b6d, #00b39f);
@@ -338,12 +374,38 @@ a:not([href]):not([class]):hover {
   margin-top: 0rem;
   line-height: 1.25rem;
   border-left: 1px solid $border-color;
-  background-image: linear-gradient(to top,
-      #1e2117,
-      #1d1912,
-      #18120e,
-      #0f0a09,
-      #000000);
+  background-image: linear-gradient(
+    to top,
+    #1e2117,
+    #1d1912,
+    #18120e,
+    #0f0a09,
+    #000000
+  );
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+
+  nav {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  a {
+    display: block;
+    max-width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 999px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.45) !important;
+    }
+  }
 
   @supports (position: sticky) {
     position: sticky;
@@ -384,7 +446,9 @@ a:not([href]):not([class]):hover {
       color: $lightslategray;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 
       &:hover,
       &:focus-visible {
@@ -400,7 +464,7 @@ a:not([href]):not([class]):hover {
 .pageinfo {
   font-weight: $font-weight-medium;
   background: $black;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   border-style: solid;
   border-color: #00b39f;
 }
@@ -409,7 +473,7 @@ a:not([href]):not([class]):hover {
 .matterinfo {
   font-weight: $font-weight-medium;
   background: $black;
-  font-family: "Qanelas Soft";
+  font-family: 'Qanelas Soft';
   border-color: #00b39f;
   border-radius: 10px;
 }
@@ -425,13 +489,13 @@ a:not([href]):not([class]):hover {
 }
 
 .matterinfo .plan-support {
-  padding: .5rem;
-  border: .5px solid $border-color;
+  padding: 0.5rem;
+  border: 0.5px solid $border-color;
   display: flex;
   align-items: center;
   color: $casper;
   &:hover {
-    background-color: rgba($primary, 0.3)
+    background-color: rgba($primary, 0.3);
   }
 }
 
@@ -450,7 +514,6 @@ a:not([href]):not([class]):hover {
   padding: 0 5px;
   color: $casper;
 }
-
 
 // Style alert boxes.
 
@@ -478,12 +541,12 @@ a:not([href]):not([class]):hover {
   transition: color 0.8s;
   transition: background-color 0.8s;
 
-  >img {
+  > img {
     width: 2rem;
     margin-right: 0.5rem;
   }
 
-  >img:hover {
+  > img:hover {
     filter: brightness(0) invert(1);
   }
 
@@ -506,7 +569,7 @@ a:not([href]):not([class]):hover {
 .td-content figure > img {
   width: auto;
   max-width: 100%;
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   box-shadow: 0 0 0.5rem rgba(0, 179, 159, 0.4);
   transition: box-shadow 0.2s;
 }
@@ -517,7 +580,7 @@ a:not([href]):not([class]):hover {
   padding: 0.5rem 1rem;
   background-color: rgba($lightslategray, 1);
   color: $dark;
-  border-radius: 0 0 .5rem .5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   box-sizing: border-box;
 }
 
@@ -526,8 +589,13 @@ a:not([href]):not([class]):hover {
   margin-bottom: 4rem;
   font-size: 5rem;
   text-align: left;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, .9) 0px, rgb(0, 211, 169) 34%, rgb(235, 192, 23) 71%, rgb(255,243,197) 100%);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9) 0px,
+    rgb(0, 211, 169) 34%,
+    rgb(235, 192, 23) 71%,
+    rgb(255, 243, 197) 100%
+  );
   background-position:
     0% 0%,
     0% 0%;
@@ -556,16 +624,17 @@ a:not([href]):not([class]):hover {
   }
 }
 
-
 .dash-tangle {
   width: 78.14231rem;
   height: 74.72rem;
   transform: rotate(-55.68deg);
   flex-shrink: 0;
   overflow: hidden;
-  background-image: linear-gradient(180deg,
-      rgba(0, 179, 115, 0) 0%,
-      rgba(0, 179, 159, 0.3) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 179, 115, 0) 0%,
+    rgba(0, 179, 159, 0.3) 100%
+  );
   position: absolute;
   top: -18rem;
   right: -32rem;
@@ -594,13 +663,15 @@ a:not([href]):not([class]):hover {
   left: -24rem;
   overflow: hidden;
 
-  >.dash-ircle {
+  > .dash-ircle {
     width: 74.125rem;
     height: 74.125rem;
     flex-shrink: 0;
-    background: radial-gradient(50% 50% at 50% 50%,
-        rgba(0, 179, 159, 0.2) 0%,
-        rgba(0, 179, 159, 0) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 179, 159, 0.2) 0%,
+      rgba(0, 179, 159, 0) 100%
+    );
     position: absolute;
     overflow: hidden;
     background-clip: border-box;
@@ -622,11 +693,11 @@ a:not([href]):not([class]):hover {
 .dash-sign-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   text-align: right;
 
   h1.dashboard {
-    max-width: 70%;        
+    max-width: 70%;
     text-align: left;
     flex-shrink: 0;
     @media (max-width: 768px) {
@@ -662,7 +733,7 @@ a:not([href]):not([class]):hover {
     transform: translateX(0%) translateY(0%);
 
     &:hover {
-      color: #EBC017;
+      color: #ebc017;
     }
 
     @media (max-width: 768px) {
@@ -672,7 +743,7 @@ a:not([href]):not([class]):hover {
 
   a.dash-sign:before,
   a.dash-sign:after {
-    content: "";
+    content: '';
     padding: 0.9em 0.4em;
     position: absolute;
     left: 50%;
@@ -747,8 +818,8 @@ a:not([href]):not([class]):hover {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .nav-tabs::-webkit-scrollbar {
@@ -817,7 +888,12 @@ html {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   scroll-margin-top: 1rem;
 }
 
