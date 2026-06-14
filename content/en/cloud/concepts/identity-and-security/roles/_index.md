@@ -1,26 +1,27 @@
 ---
 title: Roles
 description: >
-  Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions.
+  Roles map permissions to users. Roles contain any number of keychains, which
+  contain any number of keys (permissions). Assign roles to users to grant
+  permissions.
 weight: 4
 categories: [Security]
 tags: [roles, permissions]
 aliases:
   - /cloud/security/roles/
-
 ---
 
-Roles map permissions to users. Roles contain any number of keychains, which contain any number of keys (permissions). Assign roles to users to grant permissions.
+Roles map permissions to users. Roles contain any number of keychains, which
+contain any number of keys (permissions). Assign roles to users to grant
+permissions.
 
-![roles](images/roles-overview.svg "image-center-no-shadow")
+![roles](images/roles-overview.svg 'image-center-no-shadow')
 
 ## Provider Admin Role
 
 {{< cardpane >}}
 {{% card header="<a href='https://docs.layer5.io/cloud/reference/default-permissions/#Provider+Admin' target='_blank'>Provider Admin Role</a>" %}}
-![role-provider](images/role-provider-admin.svg)
-{{% /card %}}
-{{% card %}}
+![role-provider](images/role-provider-admin.svg) {{% /card %}} {{% card %}}
 
 **What is the purpose of this role?**
 
@@ -48,16 +49,13 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 - Can perform CRUD on all resources
 
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
 ## Organization Roles
 
-{{< cardpane >}}
-{{% card %}}
+{{< cardpane >}} {{% card %}}
 ![organization-administrator and manager](images/organization-roles.svg)
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
 {{< cardpane >}}
 {{% card header="### <a href='https://docs.layer5.io/cloud/reference/default-permissions/#Org+Admin' target='_blank'>Organization Administrator</a>" %}}
@@ -77,7 +75,8 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 **How many instances of these roles?**
 
 - Min: 1, Max: many (based on plan)
-- By default, the first Organization Admin is the owner (the creator of the organization).
+- By default, the first Organization Admin is the owner (the creator of the
+  organization).
 
 **Who can remove assignment of this role?**
 
@@ -88,7 +87,8 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 **What is the purpose of this role?**
 
-- Administration of subscriptions, plans, payments, billing methods and information, spending limits, invoice mgmt etc.
+- Administration of subscriptions, plans, payments, billing methods and
+  information, spending limits, invoice mgmt etc.
 
 **Who can assign this role?**
 
@@ -106,25 +106,30 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 - Organization Owner
 
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
-{{< alert title="Organization owners as entitlements" >}}
-It's essential to understand that owners are not roles, but entitlements.
+{{< alert title="Organization owners as entitlements" >}} It's essential to
+understand that owners are not roles, but entitlements.
 
-Organization owners carry the organization administrator role, and may be joined in their organization administration duties by any number of other users carrying the organization administrator role. However, the organization owner also has the administrative privilege to delete the organization.
+Organization owners carry the organization administrator role, and may be joined
+in their organization administration duties by any number of other users
+carrying the organization administrator role. However, the organization owner
+also has the administrative privilege to delete the organization.
 
-The entitlement of "organization owner" is automatically bestowed to the creator of a organization. The individual user who created a given organization initially is therefore granted certain administrative privileges beyond that of other organization administrators. Specifically, organization owners retain the sole permission to delete the organization.
+The entitlement of "organization owner" is automatically bestowed to the creator
+of a organization. The individual user who created a given organization
+initially is therefore granted certain administrative privileges beyond that of
+other organization administrators. Specifically, organization owners retain the
+sole permission to delete the organization.
 
-For more information, see [Organization]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}).
+For more information, see
+[Organization]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}).
 {{< /alert >}}
 
 ## Workspace Roles
 
-{{< cardpane >}}
-{{% card %}}
-![workspace-administrator](images/workspace-roles.svg)
-{{% /card %}}
+{{< cardpane >}} {{% card %}}
+![workspace-administrator](images/workspace-roles.svg) {{% /card %}}
 {{< /cardpane >}}
 
 {{< cardpane >}}
@@ -132,7 +137,9 @@ For more information, see [Organization]({{< ref "cloud/concepts/identity-and-se
 
 **What is the purpose of this role?**
 
-- Administration of a workspace along with curation of content for an organization's catalog (for each organization for which the user has this role assigned)
+- Administration of a workspace along with curation of content for an
+  organization's catalog (for each organization for which the user has this role
+  assigned)
 
 **Who can assign this role?**
 
@@ -145,30 +152,33 @@ For more information, see [Organization]({{< ref "cloud/concepts/identity-and-se
 **How many instances of these roles?**
 
 - Min: 1, Max: many
-- By default, the first Workspace Administrator is the owner (the creator) of the workspace.
+- By default, the first Workspace Administrator is the owner (the creator) of
+  the workspace.
 
 **Who can remove assignment of this role?**
 
 - Organization Administrators or Workspace Owner
 
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
-{{< alert title="Workspace owners as entitlements" >}}
-It's essential to understand that owners are not roles, but entitlements.
+{{< alert title="Workspace owners as entitlements" >}} It's essential to
+understand that owners are not roles, but entitlements.
 
-Workspace owners carry the organization administrator role, and may be joined in their workspace administration duties by any number of other users carrying the workspace administrator role. However, the workspace owner also has the administrative privilege to delete the workspace.
+Workspace owners carry the organization administrator role, and may be joined in
+their workspace administration duties by any number of other users carrying the
+workspace administrator role. However, the workspace owner also has the
+administrative privilege to delete the workspace.
 
-The entitlement of "workspace owner" is automatically bestowed to the creator of a workspace. The individual user who created a given workspace initially is therefore granted certain administrative privileges beyond that of other workspace administrators. Specifically, workspace owners retain the sole permission to delete the workspace.
-{{< /alert >}}
+The entitlement of "workspace owner" is automatically bestowed to the creator of
+a workspace. The individual user who created a given workspace initially is
+therefore granted certain administrative privileges beyond that of other
+workspace administrators. Specifically, workspace owners retain the sole
+permission to delete the workspace. {{< /alert >}}
 
 ## Team Roles
 
-{{< cardpane >}}
-{{% card %}}
-![team-admins-and-manager](images/team-roles.svg)
-{{% /card %}}
-{{< /cardpane >}}
+{{< cardpane >}} {{% card %}} ![team-admins-and-manager](images/team-roles.svg)
+{{% /card %}} {{< /cardpane >}}
 
 {{< cardpane >}}
 {{% card header="### <a href='https://docs.layer5.io/cloud/reference/default-permissions/#Team+Admin' target='_blank'>Team Administrator</a>" %}}
@@ -185,12 +195,10 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 - Creation of new team or User Account creation
 - By default, the first Team Admin is owner (the team creator)
 
-**How many instances of these roles?**
-Min: 1, Max: many
+**How many instances of these roles?** Min: 1, Max: many
 
-{{% /card %}}
-{{% card header="### Team Manager" %}}
-**What is the purpose of this role?**
+{{% /card %}} {{% card header="### Team Manager" %}} **What is the purpose of
+this role?**
 
 - Administration of teams (without delete access)
 
@@ -204,48 +212,63 @@ Min: 1, Max: many
 
 **How many instances of these roles?**
 
-- Min: 0, Max: many
-  {{% /card %}}
-  {{< /cardpane >}}
+- Min: 0, Max: many {{% /card %}} {{< /cardpane >}}
 
-{{< alert title="Owners as entitlements, not roles" >}}
-It's essential to understand that owners are not roles, but entitlements.
+{{< alert title="Owners as entitlements, not roles" >}} It's essential to
+understand that owners are not roles, but entitlements.
 
-Team owners carry the team administrator role, and may be joined in their team administration duties by any number of other users carrying the team administrator role. However, the team owner also has the administrative privilege to delete the team.
+Team owners carry the team administrator role, and may be joined in their team
+administration duties by any number of other users carrying the team
+administrator role. However, the team owner also has the administrative
+privilege to delete the team.
 
-The entitlement of "team owner" is automatically bestowed to the creator of a team. The individual user who created a given team initially is therefore granted certain administrative privileges beyond that of other team administrators. Specifically, team owners retain the sole permission to delete the team.
+The entitlement of "team owner" is automatically bestowed to the creator of a
+team. The individual user who created a given team initially is therefore
+granted certain administrative privileges beyond that of other team
+administrators. Specifically, team owners retain the sole permission to delete
+the team.
 
-For more information, see [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
+For more information, see
+[Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
 {{< /alert >}}
 
 ## Example: The Orbital Labs Role Hierarchy
 
-The following illustrates how Provider Admin, Org Admin, and Team Admin roles stack in practice across the Orbital Labs ecosystem. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full narrative.
+The following illustrates how Provider Admin, Org Admin, and Team Admin roles
+stack in practice across the Orbital Labs ecosystem. See [Meet Five and the
+Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full
+narrative.
 
 <img src='../../../images/five/layer5-five-mascot-means-business.svg' alt="Five means business" style="width:90px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
 
-{{< cardpane >}}
-{{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
+{{< cardpane >}} {{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
 **Organization:** Constellation Cloud  
 **Scope:** All tenants (Orbital Labs, Stellar Dynamics, and others)
 
-Dr. Aiko Sato holds the Provider Admin role at Constellation Cloud, the MSP that manages Orbital Labs as a tenant. Provider Admins can perform CRUD on all resources across all tenant organizations. Dr. Sato has seen every misconfigured RBAC policy known to humankind, which is why she documents each one.
-{{% /card %}}
-{{% card header="**Maya Chen** — Organization Administrator" %}}
+Dr. Aiko Sato holds the Provider Admin role at Constellation Cloud, the MSP that
+manages Orbital Labs as a tenant. Provider Admins can perform CRUD on all
+resources across all tenant organizations. Dr. Sato has seen every misconfigured
+RBAC policy known to humankind, which is why she documents each one.
+{{% /card %}} {{% card header="**Maya Chen** — Organization Administrator" %}}
 **Organization:** Orbital Labs  
 **Scope:** All resources within Orbital Labs
 
-Maya Chen holds the Org Admin role for Orbital Labs. She manages user accounts, team membership, workspace creation, and role assignments within Orbital Labs. She also serves as Team Admin for the Development team — an Org Admin may administer any team in their organization.
-{{% /card %}}
-{{% card header="**Zara Osei** — Team Administrator" %}}
-**Organization:** Orbital Labs  
+Maya Chen holds the Org Admin role for Orbital Labs. She manages user accounts,
+team membership, workspace creation, and role assignments within Orbital Labs.
+She also serves as Team Admin for the Development team — an Org Admin may
+administer any team in their organization. {{% /card %}}
+{{% card header="**Zara Osei** — Team Administrator" %}} **Organization:**
+Orbital Labs  
 **Team:** Infrastructure  
 **Scope:** Infrastructure team members and their workspace access
 
-Zara Osei holds the Team Admin role for Orbital Labs' Infrastructure team. She manages keychain assignments for Five and controls which environments the Infrastructure team can access. Access requests go through Zara's 48-hour SLA — no exceptions, no matter how urgent Five thinks the situation is.
-{{% /card %}}
+Zara Osei holds the Team Admin role for Orbital Labs' Infrastructure team. She
+manages keychain assignments for Five and controls which environments the
+Infrastructure team can access. Access requests go through Zara's 48-hour SLA —
+no exceptions, no matter how urgent Five thinks the situation is. {{% /card %}}
 {{< /cardpane >}}
 
-{{< alert type="info" >}}
-Role assignments are org-scoped. Dr. Aiko's Provider Admin role spans all tenants; Maya's Org Admin role applies only within Orbital Labs; Zara's Team Admin role applies only to the Infrastructure team within Orbital Labs.
-{{< /alert >}}
+{{< alert type="info" >}} Role assignments are org-scoped. Dr. Aiko's Provider
+Admin role spans all tenants; Maya's Org Admin role applies only within Orbital
+Labs; Zara's Team Admin role applies only to the Infrastructure team within
+Orbital Labs. {{< /alert >}}

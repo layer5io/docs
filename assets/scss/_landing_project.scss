@@ -8,7 +8,7 @@
   align-items: stretch;
   gap: 20px;
   // margin-top: 6rem;
-  @media (max-width:992px){
+  @media (max-width: 992px) {
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  @media (max-width:768px){
+  @media (max-width: 768px) {
     flex-wrap: wrap;
   }
 }
@@ -35,12 +35,11 @@
   gap: 20px;
 }
 
-
 .grow-1 {
   flex-grow: 1;
-  a{
-    .landing-card{
-      @media (max-width:1400px){
+  a {
+    .landing-card {
+      @media (max-width: 1400px) {
         min-height: 100%;
       }
     }
@@ -67,7 +66,7 @@
   }
   p {
     font-weight: 400;
-    color: $casper; 
+    color: $casper;
     margin-top: 0.5rem;
   }
 }
@@ -78,15 +77,20 @@
   text-transform: uppercase;
   gap: 20px;
   white-space: wrap;
-} 
+}
 .playground-section {
   &.playground-logo {
-    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/meshery-light-icon.svg");
+    background-image:
+      url('../images/logos/black-semi-opaque.svg'),
+      url('../images/logos/meshery-light-icon.svg');
   }
   &.video-play-logo {
-    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/video-play.svg");
+    background-image:
+      url('../images/logos/black-semi-opaque.svg'),
+      url('../images/video-play.svg');
   }
-    &.playground-logo, &.video-play-logo {
+  &.playground-logo,
+  &.video-play-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -102,15 +106,23 @@
 
 .catalog-section {
   &.catalog-logo {
-    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/catalog.svg");
+    background-image:
+      url('../images/logos/black-semi-opaque.svg'),
+      url('../images/logos/catalog.svg');
   }
-  &.academy-logo{
-    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/academy.svg");
+  &.academy-logo {
+    background-image:
+      url('../images/logos/black-semi-opaque.svg'),
+      url('../images/logos/academy.svg');
   }
-  &.recognition-program-logo{
-    background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/recognition-program.png");
+  &.recognition-program-logo {
+    background-image:
+      url('../images/logos/black-semi-opaque.svg'),
+      url('../images/logos/recognition-program.png');
   }
-  &.catalog-logo, &.academy-logo , &.recognition-program-logo {
+  &.catalog-logo,
+  &.academy-logo,
+  &.recognition-program-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -126,13 +138,18 @@
 .handbook-section {
   display: flex;
   align-items: center;
-  background: linear-gradient(112deg, #000 34.88%, rgba(0, 110, 88, 0.82) 92.89%, #000 159.16%);
+  background: linear-gradient(
+    112deg,
+    #000 34.88%,
+    rgba(0, 110, 88, 0.82) 92.89%,
+    #000 159.16%
+  );
 
   @media (max-width: 768px) {
     flex-direction: column;
   }
 }
-.handbook-image{
+.handbook-image {
   width: 110%;
   height: 100%;
   display: flex;
@@ -140,16 +157,16 @@
   align-items: center;
   @media (max-width: 768px) {
     width: 100%;
-
   }
-  img{
-    box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
+  img {
+    box-shadow:
+      -8px 4px 25px 0px rgba(0, 211, 169, 0.5),
+      0px -8px 25px 0px rgba(0, 211, 169, 0.5);
     border-radius: 20px;
     width: 100%;
   }
-  
 }
-.landing-card-text{
+.landing-card-text {
   display: flex;
   line-height: 30px;
   width: 90%;
@@ -163,7 +180,9 @@
 .forum-image {
   padding: 3.85rem 0 0 1.5rem;
   img {
-    box-shadow: -8px 4px 25px 0px rgba(0, 211, 169, 0.50), 0px -8px 25px 0px rgba(0, 211, 169, 0.50);
+    box-shadow:
+      -8px 4px 25px 0px rgba(0, 211, 169, 0.5),
+      0px -8px 25px 0px rgba(0, 211, 169, 0.5);
     border-radius: 20px 0 0 0;
     height: 25.5rem;
     width: auto;
@@ -191,21 +210,21 @@
   padding-bottom: 0;
   max-height: 620px;
   overflow: hidden;
-  @media (max-width:1535px){
+  @media (max-width: 1535px) {
     max-height: 100%;
   }
 }
 
 .academy-card {
   max-width: 351.88px;
-  @media (max-width:768px){
+  @media (max-width: 768px) {
     max-width: 100%;
   }
 }
 
 .catalog-card {
   max-width: 351.9px;
-  @media (max-width:768px){
+  @media (max-width: 768px) {
     max-width: 100%;
   }
 }
@@ -218,16 +237,15 @@
   max-width: 550.78px;
 
   overflow: hidden;
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     max-width: 100%;
   }
 }
 
-
 .logo-container {
   width: 50px;
   margin: auto;
-  margin-right: .65rem;
+  margin-right: 0.65rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -235,4 +253,3 @@
     display: none;
   }
 }
-

@@ -5,4 +5,5 @@ weight: 2
 categories: [Identity]
 ---
 
-Use these guides to create, edit, invite members to, navigate, and delete organizations in Layer5 Cloud.
+Use these guides to create, edit, invite members to, navigate, and delete
+organizations in Layer5 Cloud.

@@ -1,12 +1,25 @@
 # Five Narrative Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use
+> superpowers:subagent-driven-development (recommended) or
+> superpowers:executing-plans to implement this plan task-by-task. Steps use
+> checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Establish a continuous narrative in Layer5 Cloud docs built around Five (the mascot) and a cast of six fictional characters across three fictional organizations, with a companion research plan page and 12 filed follow-up GitHub issues.
+**Goal:** Establish a continuous narrative in Layer5 Cloud docs built around
+Five (the mascot) and a cast of six fictional characters across three fictional
+organizations, with a companion research plan page and 12 filed follow-up GitHub
+issues.
 
-**Architecture:** A dedicated `/cloud/getting-started/meet-five/` Hugo section hosts the canonical narrative page (`_index.md`) and research plan (`five-narrative-plan.md`). Five SVG assets are copied from the `layer5` repo into `docs/static/images/five/`. The Getting Started index gets a short intro paragraph linking to `/cloud/getting-started/meet-five`. No new Hugo shortcodes are needed — the existing `{{< cardpane >}}`, `{{% card %}}`, and `{{< alert >}}` shortcodes cover all layout needs.
+**Architecture:** A dedicated `/cloud/getting-started/meet-five/` Hugo section
+hosts the canonical narrative page (`_index.md`) and research plan
+(`five-narrative-plan.md`). Five SVG assets are copied from the `layer5` repo
+into `docs/static/images/five/`. The Getting Started index gets a short intro
+paragraph linking to `/cloud/getting-started/meet-five`. No new Hugo shortcodes
+are needed — the existing `{{< cardpane >}}`, `{{% card %}}`, and
+`{{< alert >}}` shortcodes cover all layout needs.
 
-**Tech Stack:** Hugo (static site generator), Markdown, Hugo shortcodes (`cardpane`, `card`, `alert`), GitHub CLI (`gh`) for filing issues.
+**Tech Stack:** Hugo (static site generator), Markdown, Hugo shortcodes
+(`cardpane`, `card`, `alert`), GitHub CLI (`gh`) for filing issues.
 
 **Spec:** `docs/superpowers/specs/2026-04-28-five-narrative-design.md`
 
@@ -14,22 +27,23 @@
 
 ## File Map
 
-| Action | Path | Responsibility |
-|---|---|---|
-| Copy | `static/images/five/team-of-fives.svg` | Team illustration for cast header |
-| Copy | `static/images/five/layer5-five-mascot-means-business.svg` | Enterprise/admin context illustration |
-| Copy | `static/images/five/1.svg` through `19.svg` | Character profile illustrations |
-| Copy | `static/images/five/resources-sign.svg` | Sidebar/callout illustration |
-| Copy | `static/images/five/stick-figures.svg` | Team overview illustration |
-| Create | `content/en/cloud/getting-started/meet-five/_index.md` | Narrative + cast reference page |
-| Create | `content/en/cloud/getting-started/meet-five/five-narrative-plan.md` | Research plan / integration roadmap |
-| Modify | `content/en/cloud/getting-started/_index.md` | Add intro paragraph + link to /cloud/getting-started/meet-five |
+| Action | Path                                                                | Responsibility                                                 |
+| ------ | ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Copy   | `static/images/five/team-of-fives.svg`                              | Team illustration for cast header                              |
+| Copy   | `static/images/five/layer5-five-mascot-means-business.svg`          | Enterprise/admin context illustration                          |
+| Copy   | `static/images/five/1.svg` through `19.svg`                         | Character profile illustrations                                |
+| Copy   | `static/images/five/resources-sign.svg`                             | Sidebar/callout illustration                                   |
+| Copy   | `static/images/five/stick-figures.svg`                              | Team overview illustration                                     |
+| Create | `content/en/cloud/getting-started/meet-five/_index.md`              | Narrative + cast reference page                                |
+| Create | `content/en/cloud/getting-started/meet-five/five-narrative-plan.md` | Research plan / integration roadmap                            |
+| Modify | `content/en/cloud/getting-started/_index.md`                        | Add intro paragraph + link to /cloud/getting-started/meet-five |
 
 ---
 
 ## Task 1: Copy Five SVG Assets
 
 **Files:**
+
 - Copy from: `~/code/layer5/src/assets/images/five/SVG/`
 - Copy to: `static/images/five/`
 
@@ -69,7 +83,9 @@ done
 ls static/images/five/
 ```
 
-Expected: 24 files (19 numbered SVGs + team-of-fives.svg + layer5-five-mascot-means-business.svg + .gif + resources-sign.svg + stick-figures.svg)
+Expected: 24 files (19 numbered SVGs + team-of-fives.svg +
+layer5-five-mascot-means-business.svg + .gif + resources-sign.svg +
+stick-figures.svg)
 
 - [ ] **Step 4: Commit**
 
@@ -84,17 +100,20 @@ git commit -s -m "[Docs] Add Five mascot SVG assets from layer5 repo"
 ## Task 2: Create the About Section Skeleton
 
 **Files:**
+
 - Create: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Create the directory and skeleton file**
 
-Create `content/en/cloud/getting-started/meet-five/_index.md` with this exact content:
+Create `content/en/cloud/getting-started/meet-five/_index.md` with this exact
+content:
 
 ```markdown
 ---
 title: Meet Five and the Cast
 description: >
-  The continuous narrative behind Layer5 Cloud documentation — Five, his team at Orbital Labs, and the cloud-native universe they inhabit.
+  The continuous narrative behind Layer5 Cloud documentation — Five, his team at
+  Orbital Labs, and the cloud-native universe they inhabit.
 linkTitle: About
 weight: 0
 categories: [About]
@@ -134,6 +153,7 @@ git commit -s -m "[Docs] Add cloud/getting-started/meet-five section skeleton fo
 ## Task 3: Write the Origin Story
 
 **Files:**
+
 - Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the origin story comment with the prose**
@@ -141,11 +161,27 @@ git commit -s -m "[Docs] Add cloud/getting-started/meet-five section skeleton fo
 Replace `<!-- Origin story goes here in Task 3 -->` with:
 
 ```markdown
-Five is a Platform Engineer at Orbital Labs with an unshakeable belief that every problem is solvable with the right tool, the right permissions, and — ideally — access to production. He arrived at Layer5 Cloud the same way most engineers arrive at operations tooling: via a 3 AM paging incident that politely suggested he learn something new. He did. He also learned about role-based access control the hard way, but that is what the rest of these docs are for.
+Five is a Platform Engineer at Orbital Labs with an unshakeable belief that
+every problem is solvable with the right tool, the right permissions, and —
+ideally — access to production. He arrived at Layer5 Cloud the same way most
+engineers arrive at operations tooling: via a 3 AM paging incident that politely
+suggested he learn something new. He did. He also learned about role-based
+access control the hard way, but that is what the rest of these docs are for.
 
-Orbital Labs is a cloud-native startup on the steeper part of the growth curve — the part where "we'll sort out permissions later" has finally become "we should have sorted out permissions earlier." Orbital Labs runs workloads across AWS, GCP, and a legacy Azure footprint inherited from an acquisition nobody likes to talk about. Their infrastructure is managed through Kanvas, their environments are wrangled by Five and Zara, and their Friday afternoons are protected by Maya Chen.
+Orbital Labs is a cloud-native startup on the steeper part of the growth curve —
+the part where "we'll sort out permissions later" has finally become "we should
+have sorted out permissions earlier." Orbital Labs runs workloads across AWS,
+GCP, and a legacy Azure footprint inherited from an acquisition nobody likes to
+talk about. Their infrastructure is managed through Kanvas, their environments
+are wrangled by Five and Zara, and their Friday afternoons are protected by Maya
+Chen.
 
-Orbital Labs operates as a tenant of Constellation Cloud, an MSP whose Provider Admin, Dr. Aiko Sato, manages their account alongside a roster of other organizations — including Stellar Dynamics, Orbital Labs' largest enterprise client. Stellar Dynamics has a Fortune 500 budget, a legacy-everything architecture, and Marcus Webb, an Org Admin who CC's his VP on support tickets. The relationship is productive. Mostly.
+Orbital Labs operates as a tenant of Constellation Cloud, an MSP whose Provider
+Admin, Dr. Aiko Sato, manages their account alongside a roster of other
+organizations — including Stellar Dynamics, Orbital Labs' largest enterprise
+client. Stellar Dynamics has a Fortune 500 budget, a legacy-everything
+architecture, and Marcus Webb, an Org Admin who CC's his VP on support tickets.
+The relationship is productive. Mostly.
 ```
 
 - [ ] **Step 2: Verify Hugo builds without error**
@@ -169,6 +205,7 @@ git commit -s -m "[Docs] Add Five narrative origin story to cloud/getting-starte
 ## Task 4: Write the Organizations Section
 
 **Files:**
+
 - Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the organizations comment with this content**
@@ -178,28 +215,24 @@ Replace `<!-- Organizations section goes here in Task 4 -->` with:
 ```markdown
 ## The Organizations
 
-{{< cardpane >}}
-{{% card header="**Constellation Cloud**" %}}
-**Type:** Managed Service Provider  
+{{< cardpane >}} {{% card header="**Constellation Cloud**" %}} **Type:** Managed
+Service Provider  
 **Plan:** Enterprise  
-**Role in this narrative:** Provider — manages Orbital Labs and Stellar Dynamics as tenants
+**Role in this narrative:** Provider — manages Orbital Labs and Stellar Dynamics
+as tenants
 
-*"We keep the lights on so you don't have to."*
-{{% /card %}}
-{{% card header="**Orbital Labs**" %}}
-**Type:** Cloud-native startup  
+_"We keep the lights on so you don't have to."_ {{% /card %}}
+{{% card header="**Orbital Labs**" %}} **Type:** Cloud-native startup  
 **Plan:** Team  
 **Role in this narrative:** Five's employer — primary protagonist organization
 
-*"Moving fast and occasionally breaking staging."*
-{{% /card %}}
-{{% card header="**Stellar Dynamics**" %}}
-**Type:** Enterprise client  
+_"Moving fast and occasionally breaking staging."_ {{% /card %}}
+{{% card header="**Stellar Dynamics**" %}} **Type:** Enterprise client  
 **Plan:** Enterprise  
-**Role in this narrative:** Orbital Labs' biggest customer — illustrates cross-org access and enterprise entitlements
+**Role in this narrative:** Orbital Labs' biggest customer — illustrates
+cross-org access and enterprise entitlements
 
-*"Fortune 500, cloud-native ambitions, legacy everything."*
-{{% /card %}}
+_"Fortune 500, cloud-native ambitions, legacy everything."_ {{% /card %}}
 {{< /cardpane >}}
 ```
 
@@ -224,6 +257,7 @@ git commit -s -m "[Docs] Add Organizations section to Five narrative page"
 ## Task 5: Write the Cast Section
 
 **Files:**
+
 - Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the cast comment with this content**
@@ -235,30 +269,28 @@ Replace `<!-- Cast section goes here in Task 5 -->` with:
 
 ### Constellation Cloud
 
-{{< cardpane >}}
-{{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
+{{< cardpane >}} {{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
 <img src="/images/five/layer5-five-mascot-means-business.svg" alt="Five mascot in business mode" style="width:80px; float:right; margin-left:1rem;" />
 
 **Organization:** Constellation Cloud  
 **Role:** Provider Admin  
 **Plan:** Enterprise
 
-Has seen every misconfigured RBAC policy known to humankind. Responds to Slack messages with bullet-pointed summaries because prose is inefficient.
-{{% /card %}}
-{{< /cardpane >}}
+Has seen every misconfigured RBAC policy known to humankind. Responds to Slack
+messages with bullet-pointed summaries because prose is inefficient.
+{{% /card %}} {{< /cardpane >}}
 
 ### Orbital Labs
 
-{{< cardpane >}}
-{{% card header="**Five** — Platform Engineer" %}}
+{{< cardpane >}} {{% card header="**Five** — Platform Engineer" %}}
 <img src="/images/five/1.svg" alt="Five" style="width:80px; float:right; margin-left:1rem;" />
 
 **Organization:** Orbital Labs  
 **Role:** User (Platform Engineer)  
 **Plan:** Team
 
-The protagonist — curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
-{{% /card %}}
+The protagonist — curious, enthusiastic, and reliably the first to discover that
+a feature works differently than the docs say it does. {{% /card %}}
 {{% card header="**Maya Chen** — Org Admin & Development Team Admin" %}}
 <img src="/images/five/2.svg" alt="Maya" style="width:80px; float:right; margin-left:1rem;" />
 
@@ -266,20 +298,19 @@ The protagonist — curious, enthusiastic, and reliably the first to discover th
 **Role:** Org Admin + Development Team Admin  
 **Plan:** Team
 
-Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM. (Org Admins may also administer teams; Maya does both.)
-{{% /card %}}
-{{< /cardpane >}}
+Voice of reason. Has a calendar block called "Preventing Five from touching
+prod" that recurs every Friday at 4:45 PM. (Org Admins may also administer
+teams; Maya does both.) {{% /card %}} {{< /cardpane >}}
 
-{{< cardpane >}}
-{{% card header="**Zara Osei** — Infrastructure Team Admin" %}}
+{{< cardpane >}} {{% card header="**Zara Osei** — Infrastructure Team Admin" %}}
 <img src="/images/five/3.svg" alt="Zara" style="width:80px; float:right; margin-left:1rem;" />
 
 **Organization:** Orbital Labs  
 **Role:** Team Admin, Infrastructure Team  
 **Plan:** Team
 
-Sole keeper of the keychain permission matrix. Responds to access requests with a 48-hour SLA and a knowing look.
-{{% /card %}}
+Sole keeper of the keychain permission matrix. Responds to access requests with
+a 48-hour SLA and a knowing look. {{% /card %}}
 {{% card header="**Rex Park** — Developer" %}}
 <img src="/images/five/4.svg" alt="Rex" style="width:80px; float:right; margin-left:1rem;" />
 
@@ -287,8 +318,8 @@ Sole keeper of the keychain permission matrix. Responds to access requests with 
 **Role:** User, Developer Team  
 **Plan:** Team
 
-Opens design review requests and immediately asks Five if they have been approved yet. Deploys with confidence; reads error logs with less.
-{{% /card %}}
+Opens design review requests and immediately asks Five if they have been
+approved yet. Deploys with confidence; reads error logs with less. {{% /card %}}
 {{% card header="**Jordan Reyes** — Developer & Designer" %}}
 <img src="/images/five/5.svg" alt="Jordan" style="width:80px; float:right; margin-left:1rem;" />
 
@@ -296,23 +327,20 @@ Opens design review requests and immediately asks Five if they have been approve
 **Role:** User, Developer Team  
 **Plan:** Team
 
-Crafts Kanvas designs of alarming elegance. Considers a 47-component architecture diagram "a rough draft."
-{{% /card %}}
-{{< /cardpane >}}
+Crafts Kanvas designs of alarming elegance. Considers a 47-component
+architecture diagram "a rough draft." {{% /card %}} {{< /cardpane >}}
 
 ### Stellar Dynamics
 
-{{< cardpane >}}
-{{% card header="**Marcus Webb** — Org Admin" %}}
+{{< cardpane >}} {{% card header="**Marcus Webb** — Org Admin" %}}
 <img src="/images/five/layer5-five-mascot-means-business.svg" alt="Five mascot in business mode" style="width:80px; float:right; margin-left:1rem;" />
 
 **Organization:** Stellar Dynamics  
 **Role:** Org Admin  
 **Plan:** Enterprise
 
-Files support tickets with executive summaries, numbered findings, and a risk matrix. CC's his VP on all of them.
-{{% /card %}}
-{{< /cardpane >}}
+Files support tickets with executive summaries, numbered findings, and a risk
+matrix. CC's his VP on all of them. {{% /card %}} {{< /cardpane >}}
 ```
 
 - [ ] **Step 2: Verify Hugo builds without error**
@@ -336,6 +364,7 @@ git commit -s -m "[Docs] Add Cast section to Five narrative page"
 ## Task 6: Write the Hierarchy Table and Seed Inventory
 
 **Files:**
+
 - Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the hierarchy comment with this content**
@@ -345,12 +374,12 @@ Replace `<!-- Hierarchy table goes here in Task 6 -->` with:
 ```markdown
 ## Team & Org Hierarchy
 
-| Organization | Team | Members | Roles |
-|---|---|---|---|
-| Constellation Cloud | — | Dr. Aiko Sato | Provider Admin |
-| Orbital Labs | Infrastructure | Five, Zara Osei | Team Admin (Zara), User (Five) |
-| Orbital Labs | Development | Rex Park, Jordan Reyes | Team Admin (Maya Chen), User (Rex, Jordan) |
-| Stellar Dynamics | Platform | Marcus Webb | Org Admin (Marcus) |
+| Organization        | Team           | Members                | Roles                                      |
+| ------------------- | -------------- | ---------------------- | ------------------------------------------ |
+| Constellation Cloud | —              | Dr. Aiko Sato          | Provider Admin                             |
+| Orbital Labs        | Infrastructure | Five, Zara Osei        | Team Admin (Zara), User (Five)             |
+| Orbital Labs        | Development    | Rex Park, Jordan Reyes | Team Admin (Maya Chen), User (Rex, Jordan) |
+| Stellar Dynamics    | Platform       | Marcus Webb            | Org Admin (Marcus)                         |
 ```
 
 - [ ] **Step 2: Replace the seed inventory comment with this content**
@@ -360,38 +389,40 @@ Replace `<!-- Seed inventory goes here in Task 6 -->` with:
 ```markdown
 ## Seed Inventory
 
-Use these canonical names in all screenshots, tutorials, and example walkthroughs. Do not invent alternate names for these resources in other docs pages.
+Use these canonical names in all screenshots, tutorials, and example
+walkthroughs. Do not invent alternate names for these resources in other docs
+pages.
 
 ### Workspaces
 
-| Workspace | Owner Org | Teams with Access | Purpose in Docs |
-|---|---|---|---|
-| `orbital-production` | Orbital Labs | Infrastructure | Prod access controls, environment assignment demos |
-| `orbital-staging` | Orbital Labs | Infrastructure, Development | Cross-team workspace sharing demos |
-| `orbital-dev` | Orbital Labs | Development | Team-scoped workspace, design iteration tutorials |
-| `stellar-main` | Stellar Dynamics | Platform | Enterprise org, cross-org access scenarios |
+| Workspace            | Owner Org        | Teams with Access           | Purpose in Docs                                    |
+| -------------------- | ---------------- | --------------------------- | -------------------------------------------------- |
+| `orbital-production` | Orbital Labs     | Infrastructure              | Prod access controls, environment assignment demos |
+| `orbital-staging`    | Orbital Labs     | Infrastructure, Development | Cross-team workspace sharing demos                 |
+| `orbital-dev`        | Orbital Labs     | Development                 | Team-scoped workspace, design iteration tutorials  |
+| `stellar-main`       | Stellar Dynamics | Platform                    | Enterprise org, cross-org access scenarios         |
 
 ### Environments
 
-| Environment | Workspace | Connections | Purpose in Docs |
-|---|---|---|---|
-| `prod-aws` | orbital-production | EKS, RDS (PostgreSQL), S3, CloudFront, SQS | Prod demos; managed AWS service connections |
-| `prod-gcp` | orbital-production | GKE, Cloud SQL, Cloud Storage, Pub/Sub | Multi-cloud prod; GCP service connections |
-| `staging-aws` | orbital-staging | EKS, S3, ElastiCache | Cross-team staging; feature branch deployments |
-| `staging-azure` | orbital-staging | AKS, Azure Blob Storage, Azure Service Bus | Azure connections; Stellar Dynamics mirror environment |
-| `dev-local` | orbital-dev | local k8s (kind), LocalStack (AWS emulation) | Getting-started tutorials; no cloud credentials required |
-| `stellar-enterprise` | stellar-main | AKS, Azure SQL, Azure API Management, Azure AD | Enterprise entitlements; cross-org access demos |
+| Environment          | Workspace          | Connections                                    | Purpose in Docs                                          |
+| -------------------- | ------------------ | ---------------------------------------------- | -------------------------------------------------------- |
+| `prod-aws`           | orbital-production | EKS, RDS (PostgreSQL), S3, CloudFront, SQS     | Prod demos; managed AWS service connections              |
+| `prod-gcp`           | orbital-production | GKE, Cloud SQL, Cloud Storage, Pub/Sub         | Multi-cloud prod; GCP service connections                |
+| `staging-aws`        | orbital-staging    | EKS, S3, ElastiCache                           | Cross-team staging; feature branch deployments           |
+| `staging-azure`      | orbital-staging    | AKS, Azure Blob Storage, Azure Service Bus     | Azure connections; Stellar Dynamics mirror environment   |
+| `dev-local`          | orbital-dev        | local k8s (kind), LocalStack (AWS emulation)   | Getting-started tutorials; no cloud credentials required |
+| `stellar-enterprise` | stellar-main       | AKS, Azure SQL, Azure API Management, Azure AD | Enterprise entitlements; cross-org access demos          |
 
 ### Designs
 
-| Design | Owner | Workspace | Cloud Services | Purpose in Docs |
-|---|---|---|---|---|
-| `microservices-baseline` | Jordan Reyes | orbital-dev | local/kind only | Tutorial: creating and sharing a design |
-| `api-platform-aws` | Five | orbital-production | EKS + API Gateway + Lambda + RDS + S3 | Tutorial: deploying a multi-service AWS workload |
-| `data-pipeline-gcp` | Zara Osei | orbital-production | GKE + Pub/Sub + BigQuery + Cloud Storage + Dataflow | GCP-native service design; environment assignment |
-| `frontend-cdn-azure` | Rex Park | orbital-staging | AKS + Azure Front Door + Azure Blob + Azure CDN | Azure workload; staging → prod promotion |
-| `stellar-saas-platform` | Marcus Webb | stellar-main | AKS + Azure SQL + Azure API Management + Azure AD + Event Hub | Cross-org design access; enterprise entitlements |
-| `prod-deployment-v2` | Five | orbital-production | EKS + RDS + S3 + CloudFront | Tutorial: promoting a design from staging to prod |
+| Design                   | Owner        | Workspace          | Cloud Services                                                | Purpose in Docs                                   |
+| ------------------------ | ------------ | ------------------ | ------------------------------------------------------------- | ------------------------------------------------- |
+| `microservices-baseline` | Jordan Reyes | orbital-dev        | local/kind only                                               | Tutorial: creating and sharing a design           |
+| `api-platform-aws`       | Five         | orbital-production | EKS + API Gateway + Lambda + RDS + S3                         | Tutorial: deploying a multi-service AWS workload  |
+| `data-pipeline-gcp`      | Zara Osei    | orbital-production | GKE + Pub/Sub + BigQuery + Cloud Storage + Dataflow           | GCP-native service design; environment assignment |
+| `frontend-cdn-azure`     | Rex Park     | orbital-staging    | AKS + Azure Front Door + Azure Blob + Azure CDN               | Azure workload; staging → prod promotion          |
+| `stellar-saas-platform`  | Marcus Webb  | stellar-main       | AKS + Azure SQL + Azure API Management + Azure AD + Event Hub | Cross-org design access; enterprise entitlements  |
+| `prod-deployment-v2`     | Five         | orbital-production | EKS + RDS + S3 + CloudFront                                   | Tutorial: promoting a design from staging to prod |
 ```
 
 - [ ] **Step 3: Verify Hugo builds without error**
@@ -415,6 +446,7 @@ git commit -s -m "[Docs] Add hierarchy table and seed inventory to Five narrativ
 ## Task 7: Write the "Using This Narrative" Callout and Finalize Narrative Page
 
 **Files:**
+
 - Modify: `content/en/cloud/getting-started/meet-five/_index.md`
 
 - [ ] **Step 1: Replace the callout comment with this content**
@@ -424,11 +456,15 @@ Replace `<!-- Using This Narrative callout goes here in Task 7 -->` with:
 ```markdown
 ## Using This Narrative
 
-{{< alert type="info" title="For Documentation Contributors" >}}
-The characters, organizations, workspaces, environments, and designs on this page are the canonical reference for all Layer5 Cloud and Kanvas documentation. When writing new docs, updating screenshots, or building tutorials, use these names and scenarios rather than inventing new examples.
+{{< alert type="info" title="For Documentation Contributors" >}} The characters,
+organizations, workspaces, environments, and designs on this page are the
+canonical reference for all Layer5 Cloud and Kanvas documentation. When writing
+new docs, updating screenshots, or building tutorials, use these names and
+scenarios rather than inventing new examples.
 
-See the [Five Narrative Research Plan](five-narrative-plan) for a section-by-section map of where each character and scenario belongs, which Five illustrations to use, and screenshot conventions.
-{{< /alert >}}
+See the [Five Narrative Research Plan](five-narrative-plan) for a
+section-by-section map of where each character and scenario belongs, which Five
+illustrations to use, and screenshot conventions. {{< /alert >}}
 ```
 
 - [ ] **Step 2: Full Hugo build and spot-check the rendered page**
@@ -440,11 +476,14 @@ hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 
 Expected: `Build clean`
 
-Then run `make site` and open `http://localhost:1313/cloud/getting-started/meet-five/` in a browser. Verify:
+Then run `make site` and open
+`http://localhost:1313/cloud/getting-started/meet-five/` in a browser. Verify:
+
 - Page appears in the left sidebar under Cloud
 - Origin story prose renders
 - Three org cards render side-by-side
-- Character cards render with images (if images are missing, SVG paths need adjusting)
+- Character cards render with images (if images are missing, SVG paths need
+  adjusting)
 - Tables render correctly
 - Alert callout renders with info styling
 
@@ -460,6 +499,7 @@ git commit -s -m "[Docs] Complete Five narrative page with Using This Narrative 
 ## Task 8: Create the Research Plan Page
 
 **Files:**
+
 - Create: `content/en/cloud/getting-started/meet-five/five-narrative-plan.md`
 
 - [ ] **Step 1: Create the research plan file with this exact content**
@@ -468,102 +508,125 @@ git commit -s -m "[Docs] Complete Five narrative page with Using This Narrative 
 ---
 title: Five Narrative — Research Plan
 description: >
-  Section-by-section map for infusing the Five narrative into Layer5 Cloud and Kanvas documentation.
+  Section-by-section map for infusing the Five narrative into Layer5 Cloud and
+  Kanvas documentation.
 linkTitle: Narrative Research Plan
 weight: 1
 categories: [About]
 ---
 
-{{< alert type="info" >}}
-This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see [Meet Five and the Cast](.).
-{{< /alert >}}
+{{< alert type="info" >}} This page is a working document for documentation
+contributors. For the narrative itself — characters, organizations, and seed
+data — see [Meet Five and the Cast](.). {{< /alert >}}
 
 ## Objective
 
-Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders ("User A", "Organization X"), every major docs section uses the canonical cast and scenarios defined in [Meet Five and the Cast](.). This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.
+Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on
+Five and his colleagues at Orbital Labs. Rather than using generic placeholders
+("User A", "Organization X"), every major docs section uses the canonical cast
+and scenarios defined in [Meet Five and the Cast](.). This plan maps which
+characters and scenarios belong in which sections, which Five illustrations to
+use, and the priority order for rolling out updates.
 
 ## Integration Map
 
 The **Difficulty** column rates the effort to update that section:
-- **Low** — add character names and a short scenario sentence; no screenshot changes needed
-- **Medium** — rewrite examples with scenario context; one or more screenshots need updating
+
+- **Low** — add character names and a short scenario sentence; no screenshot
+  changes needed
+- **Medium** — rewrite examples with scenario context; one or more screenshots
+  need updating
 - **High** — significant content restructuring or new tutorial content required
 
-| Docs Section | Characters | Scenario | Five Illustration | Difficulty | Status |
-|---|---|---|---|---|---|
-| `cloud/identity/users` | Five, Maya | Five's profile card; Maya as Org Admin example | `/images/five/1.svg` | Low | Open |
-| `cloud/identity/organizations` | Maya, Marcus | Orbital Labs org creation walkthrough; Stellar Dynamics as enterprise tenant | — | Low | Open |
-| `cloud/identity/teams` | Zara, Rex, Jordan | Infrastructure team vs. Development team setup | `/images/five/team-of-fives.svg` | Low | Open |
-| `cloud/security/roles` | Dr. Aiko, Maya, Zara | Provider Admin (Dr. Aiko) → Org Admin (Maya) → Team Admin (Zara) chain | `/images/five/layer5-five-mascot-means-business.svg` | Medium | Open |
-| `cloud/security/keychains` | Zara | Zara configuring a keychain scoped to the Infrastructure team, locking down `prod-aws` access | — | Medium | Open |
-| `cloud/spaces/workspaces` | Five, Maya | Five creates `orbital-staging`; Maya assigns Infrastructure and Development teams | — | Medium | Open |
-| `cloud/spaces/environments` | Five, Zara | Five connects `prod-aws` (EKS + RDS + S3) and `prod-gcp` (GKE + Pub/Sub); Zara approves | — | Medium | Open |
-| `cloud/getting-started` | Five | Five's first login, first workspace (`orbital-dev`), first design (`microservices-baseline`) | `/images/five/1.svg` | Low | Open |
-| `cloud/tutorials/sharing-a-workspace` | Five, Rex | Five shares `orbital-dev` with Rex's Developer team | — | Low | Open |
-| `kanvas/getting-started` | Jordan, Five | Jordan opens `microservices-baseline` in Designer; Five reviews and leaves a comment | — | Medium | Open |
-| `kanvas/designer` | Jordan, Rex | Full walkthrough of `api-platform-aws` design (EKS + API Gateway + Lambda + RDS + S3) | — | High | Open |
+| Docs Section                          | Characters           | Scenario                                                                                      | Five Illustration                                    | Difficulty | Status |
+| ------------------------------------- | -------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------- | ------ |
+| `cloud/identity/users`                | Five, Maya           | Five's profile card; Maya as Org Admin example                                                | `/images/five/1.svg`                                 | Low        | Open   |
+| `cloud/identity/organizations`        | Maya, Marcus         | Orbital Labs org creation walkthrough; Stellar Dynamics as enterprise tenant                  | —                                                    | Low        | Open   |
+| `cloud/identity/teams`                | Zara, Rex, Jordan    | Infrastructure team vs. Development team setup                                                | `/images/five/team-of-fives.svg`                     | Low        | Open   |
+| `cloud/security/roles`                | Dr. Aiko, Maya, Zara | Provider Admin (Dr. Aiko) → Org Admin (Maya) → Team Admin (Zara) chain                        | `/images/five/layer5-five-mascot-means-business.svg` | Medium     | Open   |
+| `cloud/security/keychains`            | Zara                 | Zara configuring a keychain scoped to the Infrastructure team, locking down `prod-aws` access | —                                                    | Medium     | Open   |
+| `cloud/spaces/workspaces`             | Five, Maya           | Five creates `orbital-staging`; Maya assigns Infrastructure and Development teams             | —                                                    | Medium     | Open   |
+| `cloud/spaces/environments`           | Five, Zara           | Five connects `prod-aws` (EKS + RDS + S3) and `prod-gcp` (GKE + Pub/Sub); Zara approves       | —                                                    | Medium     | Open   |
+| `cloud/getting-started`               | Five                 | Five's first login, first workspace (`orbital-dev`), first design (`microservices-baseline`)  | `/images/five/1.svg`                                 | Low        | Open   |
+| `cloud/tutorials/sharing-a-workspace` | Five, Rex            | Five shares `orbital-dev` with Rex's Developer team                                           | —                                                    | Low        | Open   |
+| `kanvas/getting-started`              | Jordan, Five         | Jordan opens `microservices-baseline` in Designer; Five reviews and leaves a comment          | —                                                    | Medium     | Open   |
+| `kanvas/designer`                     | Jordan, Rex          | Full walkthrough of `api-platform-aws` design (EKS + API Gateway + Lambda + RDS + S3)         | —                                                    | High       | Open   |
 
 ## Mascot Usage Guide
 
-Five's illustrations are sourced from `static/images/five/` in this repo (copied from the `layer5` repo). Use this guide to select the right illustration for context. Open each SVG in a browser to preview before assigning.
+Five's illustrations are sourced from `static/images/five/` in this repo (copied
+from the `layer5` repo). Use this guide to select the right illustration for
+context. Open each SVG in a browser to preview before assigning.
 
-| File | Best Used For |
-|---|---|
-| `1.svg` | Five's personal profile card; general protagonist introduction |
-| `2.svg`–`5.svg` | Orbital Labs team member illustrations (Maya, Zara, Rex, Jordan respectively) |
-| `6.svg`–`10.svg` | Action/task illustrations: deploying, connecting, configuring |
-| `11.svg`–`15.svg` | Learning/exploration illustrations: getting-started, tutorials |
-| `16.svg`–`19.svg` | Warning/error/pitfall illustrations: common mistakes, troubleshooting |
-| `team-of-fives.svg` | Team-level concepts: teams, organizations, multi-user collaboration |
-| `layer5-five-mascot-means-business.svg` | Admin-level concepts: Provider Admin, Org Admin, Enterprise features |
-| `resources-sign.svg` | Reference pages, callouts pointing to external resources |
-| `stick-figures.svg` | General collaboration, multi-user scenarios |
+| File                                    | Best Used For                                                                 |
+| --------------------------------------- | ----------------------------------------------------------------------------- |
+| `1.svg`                                 | Five's personal profile card; general protagonist introduction                |
+| `2.svg`–`5.svg`                         | Orbital Labs team member illustrations (Maya, Zara, Rex, Jordan respectively) |
+| `6.svg`–`10.svg`                        | Action/task illustrations: deploying, connecting, configuring                 |
+| `11.svg`–`15.svg`                       | Learning/exploration illustrations: getting-started, tutorials                |
+| `16.svg`–`19.svg`                       | Warning/error/pitfall illustrations: common mistakes, troubleshooting         |
+| `team-of-fives.svg`                     | Team-level concepts: teams, organizations, multi-user collaboration           |
+| `layer5-five-mascot-means-business.svg` | Admin-level concepts: Provider Admin, Org Admin, Enterprise features          |
+| `resources-sign.svg`                    | Reference pages, callouts pointing to external resources                      |
+| `stick-figures.svg`                     | General collaboration, multi-user scenarios                                   |
 
-{{< alert type="warning" title="Preview Before Using" >}}
-The numbered SVG assignments above (6–19) are directional guidance. Open each SVG to confirm it fits the context before publishing. Update this table as assignments are confirmed.
-{{< /alert >}}
+{{< alert type="warning" title="Preview Before Using" >}} The numbered SVG
+assignments above (6–19) are directional guidance. Open each SVG to confirm it
+fits the context before publishing. Update this table as assignments are
+confirmed. {{< /alert >}}
 
 ## Screenshot Standards
 
-When capturing screenshots for any section that references the Five narrative, follow these conventions:
+When capturing screenshots for any section that references the Five narrative,
+follow these conventions:
 
 **Which account to use:**
 
-| Screenshot Type | Log in as | Account email pattern |
-|---|---|---|
-| Getting started, user profile | Five | `five@orbital-labs.example` |
-| Org Admin actions | Maya | `maya@orbital-labs.example` |
-| Team Admin / keychain / permissions | Zara | `zara@orbital-labs.example` |
-| Developer workflow, design review | Rex or Jordan | `rex@orbital-labs.example` / `jordan@orbital-labs.example` |
-| Provider Admin, cross-tenant | Dr. Aiko | `aiko@constellation-cloud.example` |
-| Enterprise org, cross-org access | Marcus | `marcus@stellar-dynamics.example` |
+| Screenshot Type                     | Log in as     | Account email pattern                                      |
+| ----------------------------------- | ------------- | ---------------------------------------------------------- |
+| Getting started, user profile       | Five          | `five@orbital-labs.example`                                |
+| Org Admin actions                   | Maya          | `maya@orbital-labs.example`                                |
+| Team Admin / keychain / permissions | Zara          | `zara@orbital-labs.example`                                |
+| Developer workflow, design review   | Rex or Jordan | `rex@orbital-labs.example` / `jordan@orbital-labs.example` |
+| Provider Admin, cross-tenant        | Dr. Aiko      | `aiko@constellation-cloud.example`                         |
+| Enterprise org, cross-org access    | Marcus        | `marcus@stellar-dynamics.example`                          |
 
-**Which workspace/environment to use:** Match the section's purpose to the Seed Inventory table in [Meet Five and the Cast](.). Use `dev-local` for all getting-started screenshots (no real cloud credentials required).
+**Which workspace/environment to use:** Match the section's purpose to the Seed
+Inventory table in [Meet Five and the Cast](.). Use `dev-local` for all
+getting-started screenshots (no real cloud credentials required).
 
-**File naming:** `<section>-<scenario>-<YYYY-MM-DD>.png`, e.g., `workspaces-orbital-staging-creation-2026-04-28.png`. Store in the `images/` subdirectory of the relevant content section.
+**File naming:** `<section>-<scenario>-<YYYY-MM-DD>.png`, e.g.,
+`workspaces-orbital-staging-creation-2026-04-28.png`. Store in the `images/`
+subdirectory of the relevant content section.
 
 ## Priority Order
 
 ### Ship with this PR
-- `cloud/getting-started` — add intro paragraph + link to `/cloud/getting-started/meet-five` (see Task 10 of the implementation plan)
+
+- `cloud/getting-started` — add intro paragraph + link to
+  `/cloud/getting-started/meet-five` (see Task 10 of the implementation plan)
 
 ### Next Sprint — Batch 1: Identity (Low difficulty)
+
 1. `cloud/identity/users` — Five's profile card
 2. `cloud/identity/organizations` — Orbital Labs + Stellar Dynamics examples
 3. `cloud/identity/teams` — Infrastructure + Development team examples
 
 ### Next Sprint — Batch 2: Security & Spaces (Medium difficulty)
+
 4. `cloud/security/roles` — Provider Admin → Org Admin → Team Admin chain
 5. `cloud/security/keychains` — Zara's Infrastructure team keychain
 6. `cloud/spaces/workspaces` — `orbital-staging` creation and team assignment
 7. `cloud/spaces/environments` — `prod-aws` and `prod-gcp` setup
 
 ### Backlog — Batch 3: Tutorials & Screenshots (Medium–High)
+
 8. `cloud/tutorials/sharing-a-workspace` — Five + Rex scenario
 9. New tutorial: Promoting a design from staging to prod
 10. `kanvas/getting-started` — narrative character references
 
 ### Backlog — Batch 4: Kanvas Deep Integration (High)
+
 11. `kanvas/designer` — `api-platform-aws` design walkthrough
 12. Advanced Kanvas tutorials — `data-pipeline-gcp` and `stellar-saas-platform`
 ```
@@ -577,7 +640,9 @@ hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 
 Expected: `Build clean`
 
-Then verify `http://localhost:1313/cloud/getting-started/meet-five/five-narrative-plan/` renders and the integration map table is readable.
+Then verify
+`http://localhost:1313/cloud/getting-started/meet-five/five-narrative-plan/`
+renders and the integration map table is readable.
 
 - [ ] **Step 3: Commit**
 
@@ -591,17 +656,20 @@ git commit -s -m "[Docs] Add Five narrative research plan page"
 ## Task 9: Update the Getting Started Page
 
 **Files:**
+
 - Modify: `content/en/cloud/getting-started/_index.md`
 
 - [ ] **Step 1: Add the intro paragraph before the existing image**
 
-In `content/en/cloud/getting-started/_index.md`, insert the following **before** the line `## Core Workflow`:
+In `content/en/cloud/getting-started/_index.md`, insert the following **before**
+the line `## Core Workflow`:
 
 ```markdown
-{{< alert type="info" title="Follow Along with Five" >}}
-Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →](/cloud/getting-started/meet-five)
-{{< /alert >}}
-
+{{< alert type="info" title="Follow Along with Five" >}} Throughout these docs
+you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as
+they set up organizations, configure workspaces, deploy designs, and navigate
+the occasional Friday-afternoon incident.
+[Meet Five and the full cast →](/cloud/getting-started/meet-five) {{< /alert >}}
 ```
 
 The final file should read:
@@ -609,15 +677,21 @@ The final file should read:
 ```markdown
 ---
 title: Getting Started
-description: Learn how to effectively manage your organizations, teams, users, workspaces, environments, and more.
+description:
+  Learn how to effectively manage your organizations, teams, users, workspaces,
+  environments, and more.
 weight: 1
 ---
-<!-- ... existing comments ... -->
-{{< alert type="info" title="Follow Along with Five" >}}
-Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →](/cloud/getting-started/meet-five)
-{{< /alert >}}
 
-![layer5-cloud-provider](images/layer5-cloud-provider.svg "image-center-shadow")
+<!-- ... existing comments ... -->
+
+{{< alert type="info" title="Follow Along with Five" >}} Throughout these docs
+you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as
+they set up organizations, configure workspaces, deploy designs, and navigate
+the occasional Friday-afternoon incident.
+[Meet Five and the full cast →](/cloud/getting-started/meet-five) {{< /alert >}}
+
+![layer5-cloud-provider](images/layer5-cloud-provider.svg 'image-center-shadow')
 ```
 
 - [ ] **Step 2: Verify Hugo builds without error**
@@ -629,7 +703,8 @@ hugo --quiet 2>&1 | grep -i "error\|warn" || echo "Build clean"
 
 Expected: `Build clean`
 
-Then verify `http://localhost:1313/cloud/getting-started/` shows the alert callout with the link to `/cloud/getting-started/meet-five`.
+Then verify `http://localhost:1313/cloud/getting-started/` shows the alert
+callout with the link to `/cloud/getting-started/meet-five`.
 
 - [ ] **Step 3: Commit**
 
@@ -642,7 +717,8 @@ git commit -s -m "[Docs] Add Five narrative intro callout to cloud/getting-start
 
 ## Task 10: File the 12 Follow-up GitHub Issues
 
-Run these `gh issue create` commands. Each command opens a new issue on `layer5io/docs`.
+Run these `gh issue create` commands. Each command opens a new issue on
+`layer5io/docs`.
 
 - [ ] **Step 1: File Batch 1 — Identity issues**
 
@@ -940,10 +1016,15 @@ Expected: `All clear`
 - [ ] **Step 3: Check the about page appears in navigation**
 
 Start `make site` and verify:
-- `http://localhost:1313/cloud/getting-started/meet-five/` — narrative page loads, all 3 org cards visible, all 6 character cards visible, images render
-- `http://localhost:1313/cloud/getting-started/meet-five/five-narrative-plan/` — research plan loads, integration map table renders
-- `http://localhost:1313/cloud/getting-started/` — alert callout with Five link is visible
-- Click the "Meet Five and the full cast →" link from Getting Started — navigates to `/cloud/getting-started/meet-five/`
+
+- `http://localhost:1313/cloud/getting-started/meet-five/` — narrative page
+  loads, all 3 org cards visible, all 6 character cards visible, images render
+- `http://localhost:1313/cloud/getting-started/meet-five/five-narrative-plan/` —
+  research plan loads, integration map table renders
+- `http://localhost:1313/cloud/getting-started/` — alert callout with Five link
+  is visible
+- Click the "Meet Five and the full cast →" link from Getting Started —
+  navigates to `/cloud/getting-started/meet-five/`
 
 - [ ] **Step 4: Final commit (if any fixes were needed)**
 
@@ -1006,12 +1087,18 @@ EOF
 ## Self-Review Checklist
 
 **Spec coverage:**
-- [x] Narrative page with origin story, orgs, cast, hierarchy, seed inventory — Tasks 2–7
+
+- [x] Narrative page with origin story, orgs, cast, hierarchy, seed inventory —
+      Tasks 2–7
 - [x] Research plan page — Task 8
 - [x] Getting Started modification — Task 9
 - [x] 12 follow-up GitHub issues — Task 10
 - [x] SVG assets copied — Task 1
 
-**Placeholder scan:** No TBD/TODO in any task steps. The mascot guide SVG assignments (6–19) are marked as directional with an explicit alert to preview before using — intentional, not a placeholder.
+**Placeholder scan:** No TBD/TODO in any task steps. The mascot guide SVG
+assignments (6–19) are marked as directional with an explicit alert to preview
+before using — intentional, not a placeholder.
 
-**Type consistency:** No code types; all file paths, shortcode names, and image paths are consistent throughout (e.g., `/images/five/1.svg` used identically in Tasks 5 and 8).
+**Type consistency:** No code types; all file paths, shortcode names, and image
+paths are consistent throughout (e.g., `/images/five/1.svg` used identically in
+Tasks 5 and 8).

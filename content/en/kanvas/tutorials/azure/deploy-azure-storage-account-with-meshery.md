@@ -1,51 +1,58 @@
 ---
 title: Deploy Azure Storage Account with Meshery
-description: Learn how to deploy and manage Azure Storage account through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
+description:
+  Learn how to deploy and manage Azure Storage account through Kubernetes with
+  Meshery, utilizing ASO operator to enhance cloud resource management
 model: azure
 params:
-   kind: StorageAccount
+  kind: StorageAccount
 categories: [tutorials]
 aliases:
-- /kanvas/tutorials/deploy-azure-storage-account-with-meshery
+  - /kanvas/tutorials/deploy-azure-storage-account-with-meshery
 ---
 
 ### Introduction
 
-Meshery enables you to manage Azure Storage Accounts declaratively through Kubernetes by leveraging the Azure Service Operator (ASO). In this tutorial, you'll install the ASO operator (without CRD pattern configurations, which Meshery will manage), create a Service Principal and a Kubernetes secret with your Azure credentials, and use Meshery's UI to visually design and deploy a Storage Account resource to your Azure subscription.
-
+Meshery enables you to manage Azure Storage Accounts declaratively through
+Kubernetes by leveraging the Azure Service Operator (ASO). In this tutorial,
+you'll install the ASO operator (without CRD pattern configurations, which
+Meshery will manage), create a Service Principal and a Kubernetes secret with
+your Azure credentials, and use Meshery's UI to visually design and deploy a
+Storage Account resource to your Azure subscription.
 
 ### Prerequisites
 
 Before you begin, ensure you have the following:
 
-1. **Meshery Installed**
-   A self-hosted Meshery instance running on your Kubernetes cluster (in-cluster or out-of-cluster).
-2. **Kubernetes Cluster**
-   A running Kubernetes cluster (v1.16+) with `kubectl` configured.
-3. **Azure Subscription**
-   An active Azure subscription where Storage Accounts will be provisioned.
-4. **Azure CLI**
-   Installed and authenticated (`az login`) in your local shell.
-5. **cert-manager**
-   Installed in your Kubernetes cluster (required by Azure Service Operator).
-6. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
-
+1. **Meshery Installed** A self-hosted Meshery instance running on your
+   Kubernetes cluster (in-cluster or out-of-cluster).
+2. **Kubernetes Cluster** A running Kubernetes cluster (v1.16+) with `kubectl`
+   configured.
+3. **Azure Subscription** An active Azure subscription where Storage Accounts
+   will be provisioned.
+4. **Azure CLI** Installed and authenticated (`az login`) in your local shell.
+5. **cert-manager** Installed in your Kubernetes cluster (required by Azure
+   Service Operator).
+6. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within
+   your Meshery environment to access pre-configured cloud-native design
+   patterns.
 
 ### Table of Contents
 
 1. [Create Azure Service Principal](#1-create-azure-service-principal)
 2. [Connect Meshery to Your Cluster](#2-connect-meshery-to-your-cluster)
 3. [Install Azure Service Operator (Operator Only)](#3-install-azure-service-operator-operator-only)
+   - 3.1 [Deploy ASO Operator](#31-deploy-aso-operator)
+   - 3.2 [Create Azure Credentials Secret](#32-create-azure-credentials-secret)
 
-   * 3.1 [Deploy ASO Operator](#31-deploy-aso-operator)
-   * 3.2 [Create Azure Credentials Secret](#32-create-azure-credentials-secret)
 4. [Design and Deploy an Azure Storage Account](#4-design-and-deploy-an-azure-storage-account)
 5. [Verify Deployment](#5-verify-deployment)
 6. [Conclusion](#6-conclusion)
 
 ### 1. Create Azure Service Principal
 
-If you do not already have a Service Principal (SP) for Meshery, create one using the Azure CLI:
+If you do not already have a Service Principal (SP) for Meshery, create one
+using the Azure CLI:
 
 <pre class="codeblock-pre"><div class="codeblock">
 <code class="clipboardjs">az ad sp create-for-rbac -n azure-service-operator --role contributor --scopes /subscriptions/&lt;AZURE_SUBSCRIPTION_ID&gt;
@@ -54,11 +61,11 @@ If you do not already have a Service Principal (SP) for Meshery, create one usin
 
 This command outputs the following credentials:
 
-* `appId`: Application ID (Client ID)
-* `displayName`: Service Principal Name
-* `name`: Azure Service Principal URL
-* `password`: Client Secret
-* `tenant`: Tenant ID
+- `appId`: Application ID (Client ID)
+- `displayName`: Service Principal Name
+- `name`: Azure Service Principal URL
+- `password`: Client Secret
+- `tenant`: Tenant ID
 
 To export them, manually enter:
 
@@ -70,7 +77,6 @@ export AZURE_SUBSCRIPTION_ID=&lt;subscriptionId&gt;
 </code>
 </div></pre>
 
-
 ### 2. Connect Meshery to Your Cluster
 
 If you haven’t already connected your cluster to Meshery, run:
@@ -80,10 +86,9 @@ If you haven’t already connected your cluster to Meshery, run:
 </code>
 </div></pre>
 
-
-Then open the Meshery UI (default: [`http://localhost:9081`](http://localhost:9081)) and ensure your cluster appears under **Lifecycle → Connections**.
-
-
+Then open the Meshery UI (default:
+[`http://localhost:9081`](http://localhost:9081)) and ensure your cluster
+appears under **Lifecycle → Connections**.
 
 ### 3. Install Azure Service Operator (Operator Only)
 
@@ -105,38 +110,38 @@ Azure Service Operator requires a Kubernetes secret with your Azure identity:
 </code>
 </div></pre>
 
-
 ### 4. Design and Deploy an Azure Storage Account
 
-1. Click on **Components**, search for **Azure Storage**, and add the **Storage Account** to the design area.
-[Select Components](../images/deploy-azure-storage-account-with-meshery/select-components.png)
-[Search Storage Account](../images/deploy-azure-storage-account-with-meshery/search-storage-account.png)
+1. Click on **Components**, search for **Azure Storage**, and add the **Storage
+   Account** to the design area.
+   [Select Components](../images/deploy-azure-storage-account-with-meshery/select-components.png)
+   [Search Storage Account](../images/deploy-azure-storage-account-with-meshery/search-storage-account.png)
 2. Configure the **Storage Account** to fit your needs.
-[Config Storage Account](../images/deploy-azure-storage-account-with-meshery/config-storage-account.png)
+   [Config Storage Account](../images/deploy-azure-storage-account-with-meshery/config-storage-account.png)
 3. Configure the following properties:
-   * `resourceGroupName`
-   * `location` (e.g., `eastus`)
-   * `accountName`
-   * `accessTier` (`Hot` or `Cool`)
+   - `resourceGroupName`
+   - `location` (e.g., `eastus`)
+   - `accountName`
+   - `accessTier` (`Hot` or `Cool`)
 4. Click **Actions → Deploy**.
-[Deploy Storage Account](../images/deploy-azure-storage-account-with-meshery/deploy-storage-account.png)
-
+   [Deploy Storage Account](../images/deploy-azure-storage-account-with-meshery/deploy-storage-account.png)
 
 ### 5. Verify Deployment
 
-* **Azure Portal**: Confirm the new Storage Account appears in your specified resource group.
-
+- **Azure Portal**: Confirm the new Storage Account appears in your specified
+  resource group.
 
 ### 6. Conclusion
 
 You have successfully:
 
-* Created an Azure Service Principal for Meshery
-* Connected your Kubernetes cluster to Meshery
-* Installed the Azure Service Operator (Meshery managed CRDs)
-* Created a Kubernetes secret for Azure credentials
-* Designed and deployed an Azure Storage Account using Meshery’s Kanvas
+- Created an Azure Service Principal for Meshery
+- Connected your Kubernetes cluster to Meshery
+- Installed the Azure Service Operator (Meshery managed CRDs)
+- Created a Kubernetes secret for Azure credentials
+- Designed and deployed an Azure Storage Account using Meshery’s Kanvas
 
 ---
 
-If you want to learn more about Azure Service Operator, visit the [official ASO documentation](https://azure.github.io/azure-service-operator/).
+If you want to learn more about Azure Service Operator, visit the
+[official ASO documentation](https://azure.github.io/azure-service-operator/).

@@ -9,9 +9,7 @@ aliases:
   - /meshmap/tutorials/collaborative-editing
 ---
 
-{{% pageinfo %}}
-Page under construction.
-{{% /pageinfo %}}
+{{% pageinfo %}} Page under construction. {{% /pageinfo %}}
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 

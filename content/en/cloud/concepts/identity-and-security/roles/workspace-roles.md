@@ -7,14 +7,11 @@ categories: [Security]
 tags: [workspaces, roles]
 aliases:
   - /cloud/security/roles/workspace-roles/
-
 ---
 
-{{< cardpane >}}
-{{% card %}}
+{{< cardpane >}} {{% card %}}
 <img src="../images/workspace-roles.svg" link="../images/workspace-roles.svg"  width="100%" alt="Workspace Roles" />
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
 {{< cardpane >}}
 
@@ -22,7 +19,9 @@ aliases:
 
 **What is the purpose of this role?**
 
-- Administration of a workspace along with curation of content for the organization's catalog (for each organization for which the user has this role assigned)
+- Administration of a workspace along with curation of content for the
+  organization's catalog (for each organization for which the user has this role
+  assigned)
 
 **Who can assign this role?**
 
@@ -35,7 +34,8 @@ aliases:
 **How many instances of these roles?**
 
 - Min: 1, Max: many
-- By default, the first Workspace Administrator is the owner (the creator) of the Workspace.
+- By default, the first Workspace Administrator is the owner (the creator) of
+  the Workspace.
 
 **Who can remove assignment of this role?**
 
@@ -43,7 +43,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
+- Check [Permissions
+  Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}

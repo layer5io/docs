@@ -6,7 +6,10 @@ $method-delete: #dd4a54;
 $method-options: #607680;
 $method-head: #7d8790;
 
-@mixin rest-api-surface($background: rgba($dark, 0.82), $border: rgba($white, 0.08)) {
+@mixin rest-api-surface(
+  $background: rgba($dark, 0.82),
+  $border: rgba($white, 0.08)
+) {
   background: $background;
   border: 1px solid $border;
   border-radius: 1.1rem;
@@ -154,7 +157,10 @@ $method-head: #7d8790;
     color: $white;
     font: inherit;
     padding: 0.9rem 1rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
   }
 
   .rest-api-search::placeholder {
@@ -186,7 +192,11 @@ $method-head: #7d8790;
     font: inherit;
     font-size: 0.92rem;
     cursor: pointer;
-    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .rest-api-category-button:hover,
@@ -201,7 +211,9 @@ $method-head: #7d8790;
     background: rgba($primary, 0.2);
     border-color: rgba($secondary, 0.95);
     color: $white;
-    box-shadow: 0 0 0 2px rgba($primary, 0.16), 0 12px 24px rgba($black, 0.14);
+    box-shadow:
+      0 0 0 2px rgba($primary, 0.16),
+      0 12px 24px rgba($black, 0.14);
   }
 
   .rest-api-category-button__count,
@@ -266,7 +278,10 @@ $method-head: #7d8790;
     background: rgba($white, 0.04);
     color: $white;
     cursor: pointer;
-    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .rest-api-nav-control:hover,
@@ -297,7 +312,9 @@ $method-head: #7d8790;
     background: currentColor;
   }
 
-  .rest-api-nav-control[data-toggle-mode="expand"] .rest-api-nav-control__icon span:last-child {
+  .rest-api-nav-control[data-toggle-mode='expand']
+    .rest-api-nav-control__icon
+    span:last-child {
     width: 0.5rem;
   }
 
@@ -413,7 +430,9 @@ $method-head: #7d8790;
     border-bottom: 2px solid $casper;
     transform: rotate(-45deg);
     transform-origin: center;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .rest-api-nav-subgroup.is-open .rest-api-nav-subgroup__chevron {
@@ -449,7 +468,10 @@ $method-head: #7d8790;
     border: 1px solid rgba($white, 0.08);
     background: rgba($white, 0.02);
     padding: 0.85rem;
-    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .rest-api-nav-link:hover {
@@ -934,18 +956,40 @@ $method-head: #7d8790;
     letter-spacing: 0.05em;
   }
 
-  .rest-api-method-badge--get { @include method-badge($method-get); }
-  .rest-api-method-badge--post { @include method-badge($method-post); }
-  .rest-api-method-badge--put { @include method-badge($method-put); }
-  .rest-api-method-badge--patch { @include method-badge($method-patch); }
-  .rest-api-method-badge--delete { @include method-badge($method-delete); }
-  .rest-api-method-badge--options { @include method-badge($method-options); }
-  .rest-api-method-badge--head { @include method-badge($method-head); }
+  .rest-api-method-badge--get {
+    @include method-badge($method-get);
+  }
+  .rest-api-method-badge--post {
+    @include method-badge($method-post);
+  }
+  .rest-api-method-badge--put {
+    @include method-badge($method-put);
+  }
+  .rest-api-method-badge--patch {
+    @include method-badge($method-patch);
+  }
+  .rest-api-method-badge--delete {
+    @include method-badge($method-delete);
+  }
+  .rest-api-method-badge--options {
+    @include method-badge($method-options);
+  }
+  .rest-api-method-badge--head {
+    @include method-badge($method-head);
+  }
 
-  .rest-api-response--success .rest-api-status { color: rgba($method-post, 0.95); }
-  .rest-api-response--info .rest-api-status { color: rgba($method-put, 0.95); }
-  .rest-api-response--warning .rest-api-status { color: rgba(#d8952d, 0.95); }
-  .rest-api-response--danger .rest-api-status { color: rgba($method-delete, 0.95); }
+  .rest-api-response--success .rest-api-status {
+    color: rgba($method-post, 0.95);
+  }
+  .rest-api-response--info .rest-api-status {
+    color: rgba($method-put, 0.95);
+  }
+  .rest-api-response--warning .rest-api-status {
+    color: rgba(#d8952d, 0.95);
+  }
+  .rest-api-response--danger .rest-api-status {
+    color: rgba($method-delete, 0.95);
+  }
 
   .rest-api-muted {
     color: $casper;

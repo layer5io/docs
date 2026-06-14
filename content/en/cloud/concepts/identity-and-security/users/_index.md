@@ -1,88 +1,128 @@
 ---
 title: Users
 description: >
-  Each user account represents an individual collaborator. Individual user accounts exist beyond the bounds of organizations.
+  Each user account represents an individual collaborator. Individual user
+  accounts exist beyond the bounds of organizations.
 weight: 3
 categories: [Identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/
-
 ---
 
 ## User Accounts
 
-Anyone who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five's profile.
+Anyone who uses Layer5 Cloud signs into a user account. Your user account is
+your identity on Layer5 Cloud and has a username and profile. For example, see
+Five's profile.
 
-{{< cardpane >}}
-{{% card header="**Five** — Platform Engineer" %}}
+{{< cardpane >}} {{% card header="**Five** — Platform Engineer" %}}
 <img src='../../../images/five/1.svg' alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** User (Platform Engineer)  
 **Plan:** Team
 
-Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
+Curious, enthusiastic, and reliably the first to discover that a feature works
+differently than the docs say it does.
 
 [See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
-{{% /card %}}
-{{% card header="**Maya Chen** — Org Admin" %}}
+{{% /card %}} {{% card header="**Maya Chen** — Org Admin" %}}
 <img src='../../../images/five/2.svg' alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** Org Admin + Development Team Admin  
 **Plan:** Team
 
-Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM.
+Voice of reason. Has a calendar block called "Preventing Five from touching
+prod" that recurs every Friday at 4:45 PM.
 
 [See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
-Your user account can own resources such as workspaces, designs, connections, credentials, tokens, Any time you take any action on Layer5 Cloud such as creating a design or reviewing a deployment request, the action is attributed to your user account.
+Your user account can own resources such as workspaces, designs, connections,
+credentials, tokens, Any time you take any action on Layer5 Cloud such as
+creating a design or reviewing a deployment request, the action is attributed to
+your user account.
 
-Each user account is subscribed to a plan: Free, Team, or Enterprise. All user accounts can own an unlimited number of public and private workspaces, with an unlimited number of collaborators on those workspaces. If you use Layer5 Free, private workspaces owned by your user account have a limited feature set. You can upgrade to Layer5 Enterprise to get a full feature set for private workspaces.
+Each user account is subscribed to a plan: Free, Team, or Enterprise. All user
+accounts can own an unlimited number of public and private workspaces, with an
+unlimited number of collaborators on those workspaces. If you use Layer5 Free,
+private workspaces owned by your user account have a limited feature set. You
+can upgrade to Layer5 Enterprise to get a full feature set for private
+workspaces.
 
-Note: Free plan users are limited to a single organization — their initial default organization, typically named "My Organization".
+Note: Free plan users are limited to a single organization — their initial
+default organization, typically named "My Organization".
 
-{{< alert type="info" >}}
-For more information, see [Layer5 subscription plans](https://layer5.io/pricing).
+{{< alert type="info" >}} For more information, see
+[Layer5 subscription plans](https://layer5.io/pricing). {{< /alert >}}
+
+Teams allow you to organize users into groups and conveniently assign access to
+workspaces or to assign roles with associated keychains and keys to control
+permissions.
+
+{{< alert type="info" >}} You need to have the default `Team Admin` role to
+assign permissions to users in your team. For more information, see
+[Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
 {{< /alert >}}
 
-Teams allow you to organize users into groups and conveniently assign access to workspaces or to assign roles with associated keychains and keys to control permissions.
+Organizations may have any number of teams and teams may have any number of
+users. User accounts are treated as sovereign entities that are owned by
+individual individuals, not by corporations.
 
-{{< alert type="info" >}}
-You need to have the default `Team Admin` role to assign permissions to users in your team. For more information, see [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
-{{< /alert >}}
+Organization and teams may have any number of users accounts. User accounts are
+treated as sovereign entities that are owned by individual individuals, not by
+corporations.
 
-Organizations may have any number of teams and teams may have any number of users. User accounts are treated as sovereign entities that are owned by individual individuals, not by corporations.
+Users and their tokens may be authorized to access resources. Users can be
+created and managed by the Provider Admins, Organization Admins, or Team Admins.
+Users of one organization may be granted access to resources (e.g. Workspaces
+and Designs) of another organization. User entitlement, roles and permissions
+are org-scoped, meaning that the entitlements and permissions that a given user
+has in one organization does not necessarily reflect the same level of access
+that their membership in another oganziation does.
 
-Organization and teams may have any number of users accounts. User accounts are treated as sovereign entities that are owned by individual individuals, not by corporations.
-
-Users and their tokens may be authorized to access resources. Users can be created and managed by the Provider Admins, Organization Admins, or Team Admins. Users of one organization may be granted access to resources (e.g. Workspaces and Designs) of another organization. User entitlement, roles and permissions are org-scoped, meaning that the entitlements and permissions that a given user has in one organization does not necessarily reflect the same level of access that their membership in another oganziation does.
-
-{{< alert type="info" >}}
-Only Provider Admins and Organization Admin can create users. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+{{< alert type="info" >}} Only Provider Admins and Organization Admin can create
+users. For more information, see
+[Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 {{< /alert >}}
 
 ## Account Linking
 
-You can link your Layer5 account to supported social sign-in providers after signing up, and you can unlink previously added providers at any time. Layer5 Cloud can also link providers automatically during sign-in when the provider returns a verified email address that already belongs to your account. This is how it works:
+You can link your Layer5 account to supported social sign-in providers after
+signing up, and you can unlink previously added providers at any time. Layer5
+Cloud can also link providers automatically during sign-in when the provider
+returns a verified email address that already belongs to your account. This is
+how it works:
 
-1. You create an account with the email address `alice@example.com` and a password.
-2. When signing in later, click to sign in with a social sign-in provider such as GitHub or Google that returns the same **verified** email address `alice@example.com`.
-3. Layer5 Cloud recognizes that the verified email address already belongs to your existing account and automatically links that provider. You are not prompted to re-enter your password for this linking step.
-4. After the link is created, you can sign in with either your password or any linked social sign-in provider.
+1. You create an account with the email address `alice@example.com` and a
+   password.
+2. When signing in later, click to sign in with a social sign-in provider such
+   as GitHub or Google that returns the same **verified** email address
+   `alice@example.com`.
+3. Layer5 Cloud recognizes that the verified email address already belongs to
+   your existing account and automatically links that provider. You are not
+   prompted to re-enter your password for this linking step.
+4. After the link is created, you can sign in with either your password or any
+   linked social sign-in provider.
 
-If a provider that is already linked to your account later reports a different verified email address, Layer5 Cloud still signs you in to the same account. The email already stored on your Layer5 account is not silently replaced or automatically updated.
+If a provider that is already linked to your account later reports a different
+verified email address, Layer5 Cloud still signs you in to the same account. The
+email already stored on your Layer5 account is not silently replaced or
+automatically updated.
 
 **Rules and Limitations**
 
 1. You cannot link the same social sign-in to multiple Layer5 accounts
-2. If you delete your account, any linked OAuth providers (e.g., GitHub) are automatically unlinked  
-3. Re-registering with the same email **does not** automatically re-link the OAuth provider  
+2. If you delete your account, any linked OAuth providers (e.g., GitHub) are
+   automatically unlinked
+3. Re-registering with the same email **does not** automatically re-link the
+   OAuth provider
 4. Automatic linking depends on the provider returning a verified email address
-5. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account instead of replacing it automatically
+5. If a linked provider later reports a different verified email address, Layer5
+   Cloud preserves the email already stored on your account instead of replacing
+   it automatically
 6. You may unlink a social sign-in provider at any time
 
 ## Account Deletion
@@ -96,41 +136,50 @@ When a user deletes their account, the following behaviors apply:
 
 **2. Published Content**
 
-- Published content (e.g., items in the [Catalog](https://cloud.layer5.io/catalog)) remains accessible to the public
-- This ensures that published work continues to benefit the community, even after the account is deleted.
+- Published content (e.g., items in the
+  [Catalog](https://cloud.layer5.io/catalog)) remains accessible to the public
+- This ensures that published work continues to benefit the community, even
+  after the account is deleted.
 
 **3. Organization Ownership**
 
-- If you are the [only Org Admin or Owner](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/), the organization may become **unmanageable** after you delete your account.
+- If you are the
+  [only Org Admin or Owner](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/),
+  the organization may become **unmanageable** after you delete your account.
 - It is strongly recommended to assign multiple admins before deletion.
 
 **4. Organization Deletion**
 
 - Organizations cannot be deleted just by leaving or deleting accounts.
-- Only Org Owners can delete an organization, and it must be done as an explicit, manual action.
+- Only Org Owners can delete an organization, and it must be done as an
+  explicit, manual action.
 - Org Admins do not have this permission.
 
 **5. Re-registering with the Same Email**
 
-- Signing up again with the same email address creates a **new, separate account**.
+- Signing up again with the same email address creates a **new, separate
+  account**.
 - The new account:
-  - Will not automatically regain access to resources linked to the deleted account.
-  - May, in rare cases, display inconsistent profile data (e.g., old display name in design attribution).
+  - Will not automatically regain access to resources linked to the deleted
+    account.
+  - May, in rare cases, display inconsistent profile data (e.g., old display
+    name in design attribution).
 
-{{< alert type="info" >}}
-This is a known issue. Future versions of Layer5 Cloud will address it through UUID-based identity linking.
-{{< /alert >}}
+{{< alert type="info" >}} This is a known issue. Future versions of Layer5 Cloud
+will address it through UUID-based identity linking. {{< /alert >}}
 
 **6. Deployed Designs**
 
-- Deployed designs are **not automatically removed** when a user deletes their account.
+- Deployed designs are **not automatically removed** when a user deletes their
+  account.
 - This ensures that deployments remain stable unless explicitly taken down.
 
-{{< alert type="info" >}}
-While account deletion is permanent for end-users, future versions of Layer5 Cloud may introduce:
+{{< alert type="info" >}} While account deletion is permanent for end-users,
+future versions of Layer5 Cloud may introduce:
 
-- A pre-deletion flow for reviewing and exporting data  
-- The ability to transfer ownership of resources (e.g., workspaces, teams, organizations)  
+- A pre-deletion flow for reviewing and exporting data
+- The ability to transfer ownership of resources (e.g., workspaces, teams,
+  organizations)
 - Support for recovering accounts or restoring deleted data
 
 {{< /alert >}}

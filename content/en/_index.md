@@ -1,7 +1,8 @@
 ---
 title: Layer5
 description: >
-  Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
+  Explore tutorials and documentation by product in the docs.layer5.io website;
+  documentation and developer resources of Layer5 products.
 ---
 
 {{< blocks/cover title="" image_anchor="top" height="full" >}}
@@ -9,7 +10,8 @@ description: >
 <div class="dash-sign-container">
 <h1 class="dashboard">Expect more from your infrastructure</h1>
 
-<a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design your path</a>
+<a href="https://www.youtube.com/watch?v=034nVaQUyME&list=PL3A-A6hPO2IO_yzN83wSJJUNQActzCJvO&index=9" class="dash-sign">Design
+your path</a>
 
 </div>
 <div>

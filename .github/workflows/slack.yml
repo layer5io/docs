@@ -27,7 +27,9 @@ jobs:
             text: "<https://github.com/${{ github.actor }}|${{ github.actor }}> just starred <https://github.com/${{ github.repository }}/stargazers|${{ github.repository }}> bringing the total ⭐️ count up to: ${{ env.STARS }}"
 
   good-first-issue-notify:
-    if: github.event_name == 'issues' && (github.event.label.name == 'good first issue' || github.event.label.name == 'first-timers-only')
+    if:
+      github.event_name == 'issues' && (github.event.label.name == 'good first
+      issue' || github.event.label.name == 'first-timers-only')
     name: Notify Slack for new good-first-issue
     runs-on: ubuntu-latest
     steps:

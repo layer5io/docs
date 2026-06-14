@@ -1,7 +1,9 @@
 ---
 title: Starting from scratch
 description: >
- Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
+  Welcome to Kanvas, your comprehensive tool for creating and managing cloud
+  native deployment designs. This documentation will guide you through the
+  steps, emphasizing the underlying system behavior for each action you take.
 weight: 2
 categories: [Designer]
 tags: [designs]
@@ -9,69 +11,107 @@ aliases:
   - /meshmap/getting-started/starting-scratch
 ---
 
-
 ## Step 1: Accessing Designer Mode
 
-Upon entering Kanvas, seamlessly transition to the "Designer" mode by selecting the "Designer" tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.
+Upon entering Kanvas, seamlessly transition to the "Designer" mode by selecting
+the "Designer" tab from the main menu. This action dynamically switches to the
+Designer mode, initializing the necessary tools for design creation.
 
-**Example Analogy:**
-Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.
+**Example Analogy:** Think of Designer mode as your blueprint studio. Just like
+architects use specific tools to design buildings, you, as a cloud architect,
+use Kanvas to design your cloud native applications.
 
 ## Step 2: Giving Your Design a Name
 
-Initiate the design process by clicking on the "New Design" button in the Designer panel. Provide a meaningful name for your design, reflecting its purpose or key components. This action initializes a unique design entity, establishing it within the system.
+Initiate the design process by clicking on the "New Design" button in the
+Designer panel. Provide a meaningful name for your design, reflecting its
+purpose or key components. This action initializes a unique design entity,
+establishing it within the system.
 
-**Example Analogy:**
-Naming your design is like labeling a blueprint for a mobile app. It helps everyone involved understand the app's purpose and functionality.
+**Example Analogy:** Naming your design is like labeling a blueprint for a
+mobile app. It helps everyone involved understand the app's purpose and
+functionality.
 
 ## Step 3: Browsing Available Components
 
-Explore the extensive toolbox in Designer mode, offering a diverse array of components such as microservices, databases, and event queues. Each component seamlessly integrates into your infrastructure. As you explore components, Kanvas dynamically previews their integration into your design, ensuring a harmonious fit.
+Explore the extensive toolbox in Designer mode, offering a diverse array of
+components such as microservices, databases, and event queues. Each component
+seamlessly integrates into your infrastructure. As you explore components,
+Kanvas dynamically previews their integration into your design, ensuring a
+harmonious fit.
 
-**Example Analogy:**
-Think of the toolbox as a palette of building blocks for your cloud native app. Just like selecting different materials for a construction project, you choose components for your app's architecture.
+**Example Analogy:** Think of the toolbox as a palette of building blocks for
+your cloud native app. Just like selecting different materials for a
+construction project, you choose components for your app's architecture.
 
 ## Step 4: Selecting Specific Versions
 
-To ensure precision in your design, select the specific version of each component you need. Kanvas supports a variety of versions for different components, allowing you to tailor your design to meet your exact requirements. A compatibility check is conducted, ensuring that selected versions align seamlessly within your design.
+To ensure precision in your design, select the specific version of each
+component you need. Kanvas supports a variety of versions for different
+components, allowing you to tailor your design to meet your exact requirements.
+A compatibility check is conducted, ensuring that selected versions align
+seamlessly within your design.
 
-**Example Analogy:**
-Choosing component versions is similar to selecting software versions for your cloud native app. It's like picking the right versions of libraries to ensure your app functions smoothly.
+**Example Analogy:** Choosing component versions is similar to selecting
+software versions for your cloud native app. It's like picking the right
+versions of libraries to ensure your app functions smoothly.
 
 ## Step 5: Building Complex cloud native Deployments
 
-With the Designer toolbox at your disposal, effortlessly construct complex cloud native deployments. Simply drag and drop components onto the Kanvas canvas, arranging them in a way that suits your architecture. Kanvas renders your design in real-time as you drag and drop components, providing immediate visual feedback.
+With the Designer toolbox at your disposal, effortlessly construct complex cloud
+native deployments. Simply drag and drop components onto the Kanvas canvas,
+arranging them in a way that suits your architecture. Kanvas renders your design
+in real-time as you drag and drop components, providing immediate visual
+feedback.
 
-**Example Analogy:**
-Building your deployment is like assembling a puzzle. Each component fits together to create a cohesive picture—the architecture of your cloud native app.
+**Example Analogy:** Building your deployment is like assembling a puzzle. Each
+component fits together to create a cohesive picture—the architecture of your
+cloud native app.
 
 ## Step 6: Configuring Each Component
 
-Fine-tune your design by configuring each component using the Configuration panel. Kanvas's intuitive interface enables you to adjust settings and parameters effortlessly. Your design will automatically update with each change made. Kanvas's auto-sync feature ensures that configuration changes are instantly reflected in the design canvas.
+Fine-tune your design by configuring each component using the Configuration
+panel. Kanvas's intuitive interface enables you to adjust settings and
+parameters effortlessly. Your design will automatically update with each change
+made. Kanvas's auto-sync feature ensures that configuration changes are
+instantly reflected in the design canvas.
 
-**Example Analogy:**
-Configuring components is like customizing app settings. You tweak each component to ensure they work seamlessly together, just like adjusting preferences in a mobile app.
+**Example Analogy:** Configuring components is like customizing app settings.
+You tweak each component to ensure they work seamlessly together, just like
+adjusting preferences in a mobile app.
 
 ## Step 7: Design Actions and Interactions
 
-Explore additional design actions by right-clicking on components. Group components together or establish connections between them according to your needs. Kanvas responds in real-time to design actions, providing a fluid and responsive user experience.
+Explore additional design actions by right-clicking on components. Group
+components together or establish connections between them according to your
+needs. Kanvas responds in real-time to design actions, providing a fluid and
+responsive user experience.
 
-**Example Analogy:**
-Design actions are akin to arranging app features. You organize components like arranging app features on a dashboard, creating an intuitive and user-friendly experience.
+**Example Analogy:** Design actions are akin to arranging app features. You
+organize components like arranging app features on a dashboard, creating an
+intuitive and user-friendly experience.
 
 ## Step 8: Merging Designs
 
-For enhanced collaboration and scalability, seamlessly merge existing designs into your canvas by dragging and dropping. This feature enables you to consolidate multiple designs, creating a unified and comprehensive view of your infrastructure. Kanvas orchestrates the merging process internally, creating a unified design that incorporates components from the dragged designs. Importantly, users do not lose their original designs during the merging process. Kanvas retains records of each design, preserving their individuality. The act of merging designs dynamically adjusts the visibility of the merged design, aligning with user intentions and access controls.
+For enhanced collaboration and scalability, seamlessly merge existing designs
+into your canvas by dragging and dropping. This feature enables you to
+consolidate multiple designs, creating a unified and comprehensive view of your
+infrastructure. Kanvas orchestrates the merging process internally, creating a
+unified design that incorporates components from the dragged designs.
+Importantly, users do not lose their original designs during the merging
+process. Kanvas retains records of each design, preserving their individuality.
+The act of merging designs dynamically adjusts the visibility of the merged
+design, aligning with user intentions and access controls.
 
-**Example Analogy:**
-Merging designs is like integrating features from different app versions. You bring together different elements to create a cohesive and feature-rich user experience without losing the uniqueness of each version.
+**Example Analogy:** Merging designs is like integrating features from different
+app versions. You bring together different elements to create a cohesive and
+feature-rich user experience without losing the uniqueness of each version.
 
-Congratulations! You've successfully navigated the Designer mode in Kanvas, orchestrating a robust and tailored cloud native deployment. Continue exploring Kanvas's features to optimize and manage your designs effectively.
+Congratulations! You've successfully navigated the Designer mode in Kanvas,
+orchestrating a robust and tailored cloud native deployment. Continue exploring
+Kanvas's features to optimize and manage your designs effectively.
 
 Happy designing!
-
-
-
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 

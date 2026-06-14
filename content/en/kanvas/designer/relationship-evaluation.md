@@ -10,20 +10,21 @@ tags: [designs, relationships, components, troubleshooting]
 ---
 
 As you build a design, Kanvas continuously evaluates the
-[relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) between your components — to
-identify connections, validate them, and keep related configuration in sync.
-This page explains how you can choose which engine performs that evaluation, how
-to read the relationship indicator, and how to diagnose results that look wrong.
+[relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) between
+your components — to identify connections, validate them, and keep related
+configuration in sync. This page explains how you can choose which engine
+performs that evaluation, how to read the relationship indicator, and how to
+diagnose results that look wrong.
 
 ## How Relationships Are Evaluated
 
 Kanvas can run relationship evaluation using one of two interchangeable engines:
 
-- **Server-side** — the policy engine running inside your Meshery server. It
-  is always available and is the default.
-- **Client-side** — the same policy engine, compiled to WebAssembly and
-  run inside a background worker in your browser. Because it runs locally, there
-  are no round-trips to the server, so evaluation is typically faster. It is
+- **Server-side** — the policy engine running inside your Meshery server. It is
+  always available and is the default.
+- **Client-side** — the same policy engine, compiled to WebAssembly and run
+  inside a background worker in your browser. Because it runs locally, there are
+  no round-trips to the server, so evaluation is typically faster. It is
   available only when your Meshery server provides the WebAssembly artifact.
 
 Both engines produce the same relationship results. The choice affects
@@ -129,9 +130,9 @@ below).
 
 Evaluation re-runs automatically whenever you change the design — for example,
 by adding, removing, or reconfiguring a component, or by toggling a relationship
-kind on or off from the **Relationships** section of the Designer. Making any such
-change re-triggers evaluation with the active engine. If the indicator was in
-the error state, a successful re-evaluation clears it.
+kind on or off from the **Relationships** section of the Designer. Making any
+such change re-triggers evaluation with the active engine. If the indicator was
+in the error state, a successful re-evaluation clears it.
 
 ### Step 5 — When and how to file a bug
 
@@ -148,8 +149,8 @@ Relationship Evaluation Diagnostics view so the issue can be reproduced:
   design (or a minimal reproduction) if you can share it.
 
 {{< alert type="info" title="Related reading" >}} For an overview of what
-relationships are and the kinds Kanvas supports, see
-[Understanding Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}). For creating and
-managing relationships in a design, see
-[Creating Relationships]({{< ref "kanvas/getting-started/creating-relationships/index.md" >}}).
+relationships are and the kinds Kanvas supports, see [Understanding
+Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}). For
+creating and managing relationships in a design, see [Creating
+Relationships]({{< ref "kanvas/getting-started/creating-relationships/index.md" >}}).
 {{< /alert >}}

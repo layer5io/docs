@@ -42,10 +42,10 @@ jobs:
         id: commit-changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "Updated feature data from spreadsheet"
+          commit_message: 'Updated feature data from spreadsheet'
           file_pattern: ${{ env.FEATURES_FILE }}
           branch: master
-          commit_options: "--signoff"
+          commit_options: '--signoff'
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
           commit_author: 'l5io <l5io@users.noreply.github.com>'

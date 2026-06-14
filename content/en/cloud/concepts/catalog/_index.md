@@ -2,23 +2,25 @@
 title: Catalog
 weight: 5
 description: >
-  The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
+  The Cloud Catalog is a web-based, public catalog to facilitate easy sharing
+  and discovery of common cloud native architectures and design patterns.
 categories: [Catalog]
 tags: [Designer]
 aliases:
   - /cloud/catalog/
-
 ---
 
-{{%pageinfo%}}
-Public Catalog: https://cloud.layer5.io/catalog
-{{%/pageinfo%}}
+{{%pageinfo%}} Public Catalog: https://cloud.layer5.io/catalog {{%/pageinfo%}}
 
 <!-- {{< figure src="images/delivering-catalog-content.svg" alt="Delivering-catalog-content" class="image-center-shadow" >}} -->
 
 <img src="images/delivering-catalog-content.svg" alt="Delivering-catalog-content" />
 
-The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of existing designs. Designs that are published into the catalog can be, but are not always curated for known best practices and patterns. Content is published at [cloud.layer5.io/catalog](https://cloud.layer5.io/catalog), and one-click import of catalog content into Meshery Server is seamlessly integrated.
+The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of
+existing designs. Designs that are published into the catalog can be, but are
+not always curated for known best practices and patterns. Content is published
+at [cloud.layer5.io/catalog](https://cloud.layer5.io/catalog), and one-click
+import of catalog content into Meshery Server is seamlessly integrated.
 
 ![Flow for sharing design](../../images/Slide51.svg)
 
@@ -31,6 +33,7 @@ Each item in the catalog comes with an associated level of visibility.
 - Private: View and edit permissions only for design owner.
 
 ### Content Types
+
 - Deployment
 - Traffic Management
 - Security
@@ -42,11 +45,16 @@ Each item in the catalog comes with an associated level of visibility.
 ### Content Categories
 
 Catalog content is categorized in a number of ways:
-- **Patterns**: Cloud native patterns enable the business function in simple language.
-- **Filters**: Embedded in the data plane of a service mesh, WebAssembly filters offer fine-grained control over service requests.
-- **Programs**: Embedded in the data plane of a service mesh, eBPF programs performant, fine-grained control over service requests.
-- **Policies**: Applied across the cloud native infrastructure under management, policies may be applied broadly and specifically.
- 
+
+- **Patterns**: Cloud native patterns enable the business function in simple
+  language.
+- **Filters**: Embedded in the data plane of a service mesh, WebAssembly filters
+  offer fine-grained control over service requests.
+- **Programs**: Embedded in the data plane of a service mesh, eBPF programs
+  performant, fine-grained control over service requests.
+- **Policies**: Applied across the cloud native infrastructure under management,
+  policies may be applied broadly and specifically.
+
 <!-- List design metadata and descriptions here -->
 
 ### Publishing from Kanvas 🔗
@@ -56,8 +64,10 @@ To publish a design into the catalog:
 1. Open your design in Kanvas (for example from **My Designs**).
 1. Click the **hamburger menu** in the top-left of Kanvas.
 1. Choose **Share… → Publish to catalog**.
-1. In the design details dialog, review or update the **name**, **type**, and **description**, then click **Publish To Catalog**.
-1. After the request is submitted, maintainers approve it, and the design appears in the [public catalog](https://cloud.layer5.io/catalog).
+1. In the design details dialog, review or update the **name**, **type**, and
+   **description**, then click **Publish To Catalog**.
+1. After the request is submitted, maintainers approve it, and the design
+   appears in the [public catalog](https://cloud.layer5.io/catalog).
 
 ### Content Tags
 

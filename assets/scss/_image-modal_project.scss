@@ -14,7 +14,7 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 /* Modal Content */
@@ -48,7 +48,7 @@
   overflow: hidden;
   border: 0;
   z-index: 99;
-} 
+}
 
 .modal-close::after {
   position: absolute;
@@ -56,7 +56,7 @@
   top: 0.2em;
   left: 0.1em;
   text-indent: 0;
-  content: "\00D7"
+  content: '\00D7';
 }
 
 .modal-close:hover,

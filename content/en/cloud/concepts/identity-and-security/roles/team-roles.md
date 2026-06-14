@@ -1,23 +1,20 @@
 ---
 title: Default Team Roles
 description: >
-  By default, Organizations have two roles available: Team Admins and Team Managers.
+  By default, Organizations have two roles available: Team Admins and Team
+  Managers.
 weight: 3
 categories: [Security]
 tags: [teams, roles]
 aliases:
   - /cloud/security/roles/team-roles/
-
 ---
 
-{{< cardpane >}}
-{{% card header="Default Team Roles" %}}
+{{< cardpane >}} {{% card header="Default Team Roles" %}}
 <img src="../images/team-roles.svg" link="../images/team-roles.svg"  width="100%" alt="Team Roles" />
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}
 
-{{< cardpane >}}
-{{% card header="## Team Administrator" %}}
+{{< cardpane >}} {{% card header="## Team Administrator" %}}
 
 **What is the purpose of this role?**
 
@@ -42,7 +39,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
+- Check [Permissions
+  Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}

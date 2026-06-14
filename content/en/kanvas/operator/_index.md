@@ -2,21 +2,26 @@
 title: Navigating Operator
 weight: 5
 description: >
-  Operator mode is for operating your Kubernetes clusters and cloud native infrastructure. 
+  Operator mode is for operating your Kubernetes clusters and cloud native
+  infrastructure.
 categories: [Operator]
 aliases:
   - /meshmap/operator
 ---
 
-Discover and examine your Kubernetes clusters and cloud native infrastructure using Operator mode.
+Discover and examine your Kubernetes clusters and cloud native infrastructure
+using Operator mode.
 
 ## Using Filters
 
-Using filters you can select the Kubernetes resources you want to view. Apply one or more filters to narrow down the resources you want to view.
+Using filters you can select the Kubernetes resources you want to view. Apply
+one or more filters to narrow down the resources you want to view.
 
 ## Search and Select Specific Resources
 
-Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Operator canvas. Details of the selected resources are displayed in the right panel.
+Using the search bar, you can search for specific resources and select them. The
+selected resources are highlighted in the Operator canvas. Details of the
+selected resources are displayed in the right panel.
 
 <!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
@@ -24,5 +29,9 @@ Using the search bar, you can search for specific resources and select them. The
 
 Operator supports connecting to Kubernetes pods via the following methods.
 
-- [Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
-- [Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}): Learn how to establish an interactive shell session with your containers.
+- [Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}): Learn
+  how to live-tail logs from your Kubernetes pods and containers directly within
+  the visual topology.
+- [Interactive
+  Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}): Learn
+  how to establish an interactive shell session with your containers.

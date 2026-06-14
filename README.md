@@ -23,7 +23,12 @@
 
 # About Layer5
 
-[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables engineers to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
+[Layer5](https://layer5.io)'s cloud native application and infrastructure
+management software enables engineers to expect more from their infrastructure.
+We embrace _developer_-defined infrastructure. We empower developers to change
+how they write applications, support _operators_ in rethinking how they run
+modern infrastructure, and enable _product owners_ to regain full-control over
+their product portfolio.
 
 ### Contributions Welcome
 
@@ -52,38 +57,45 @@ Now to setup and run the site locally execute:
 2. `make site`
 3. visit http://localhost:1313
 
-If you pull down new code from GitHub, you will occasionally need to run `make setup` again. Otherwise, there's no need to re-run `make setup` each time the site is run, you can just run `make site` to get it going and have it automatically reload as you make and save site edits.
+If you pull down new code from GitHub, you will occasionally need to run
+`make setup` again. Otherwise, there's no need to re-run `make setup` each time
+the site is run, you can just run `make site` to get it going and have it
+automatically reload as you make and save site edits.
 
 </details>
 <details>
 
 <summary><h3>Build Docs with Docker</h3></summary>
 
-
-Running the site locally is simple. Provided you have Docker installed, clone this repo, run `make docker`, and then visit <http://localhost:1313>.
+Running the site locally is simple. Provided you have Docker installed, clone
+this repo, run `make docker`, and then visit <http://localhost:1313>.
 
 > [!IMPORTANT]  
-> This requires Docker Desktop version **4.24** or later, or Docker Engine with Docker
-> Compose version [**2.22**](https://docs.docker.com/compose/file-watch/) or later.
+> This requires Docker Desktop version **4.24** or later, or Docker Engine with
+> Docker Compose version [**2.22**](https://docs.docker.com/compose/file-watch/)
+> or later.
 
 </details>
 
-      
 ### Contribution Guidelines
 
-**--> See https://docs.layer5.io/contributing <--** for a detailed contribution guide.
-
+**--> See https://docs.layer5.io/contributing <--** for a detailed contribution
+guide.
 
 ## Documentation Structure
 
-The following is the high-level outline and information architecture for Layer5 documentation.
+The following is the high-level outline and information architecture for Layer5
+documentation.
 
-**Goal:** Offer comprehensive, organized, and accessible documentation for diverse audiences, from new users to expert contributors.
+**Goal:** Offer comprehensive, organized, and accessible documentation for
+diverse audiences, from new users to expert contributors.
 
 **Target Audience:**
 
-- **Personas:** Beginners, developers, admins, operators, security specialists, contributors, users of all experience levels.
-- **Needs:** Varied - learning fundamentals, managing tasks, understanding advanced concepts, contributing code.
+- **Personas:** Beginners, developers, admins, operators, security specialists,
+  contributors, users of all experience levels.
+- **Needs:** Varied - learning fundamentals, managing tasks, understanding
+  advanced concepts, contributing code.
 
 <details>
 <summary><h3>Cloud Section: Information Architecture</h3></summary>
@@ -112,7 +124,8 @@ An overview of Layer5 Cloud concepts and their relationships to one another.
 
 #### Catalog
 
-The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and discovery of common cloud native architectures and design patterns.
+The Cloud Catalog is a web-based, public catalog to facilitate easy sharing and
+discovery of common cloud native architectures and design patterns.
 
 #### Workspaces
 
@@ -126,7 +139,8 @@ Workspaces serve as a virtual space for your team-based work.
 
 ### Self-Hosted
 
-Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
+Keep your Kanvas designs internal to your workplace. Get remote support from
+Layer5 when you need it.
 
 ### Reference
 
@@ -139,41 +153,56 @@ Low-level ReST API reference for extending Layer5 Cloud.
 
 ### Getting Started with Designs
 
-- **Starting from a pattern:** A Pattern is an entity that augments the operational behavior of a deployed instance of a Design.
-- **Creating Relationships:** Relationships identify and facilitate genealogy between Components.
-- **Working with Components:** Components represent entities in the ecosystem, exposing capabilities of the underlying platform.
-- **Starting from scratch:** Emphasize the underlying system behavior for each action you take.
+- **Starting from a pattern:** A Pattern is an entity that augments the
+  operational behavior of a deployed instance of a Design.
+- **Creating Relationships:** Relationships identify and facilitate genealogy
+  between Components.
+- **Working with Components:** Components represent entities in the ecosystem,
+  exposing capabilities of the underlying platform.
+- **Starting from scratch:** Emphasize the underlying system behavior for each
+  action you take.
 
 ### Exploring Designer
 
-- **Reviewing Designs:** Learn how to leverage comments in Kanvas’s Designer Mode to enhance collaboration and streamline design reviews.
+- **Reviewing Designs:** Learn how to leverage comments in Kanvas’s Designer
+  Mode to enhance collaboration and streamline design reviews.
 - **Whiteboarding:** Whiteboarding and Freestyle Drawing inside Kanvas
-- **Export Designs:** How to export your designs for backup, sharing or offline use.
+- **Export Designs:** How to export your designs for backup, sharing or offline
+  use.
 
 ### Working with Components
 
-Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured
+Designs are descriptive, declarative characterizations of how your Kubernetes
+infrastructure should be configured
 
 ### Navigating Operator
 
-Operator mode is for operating your Kubernetes clusters and cloud native infrastructure.
+Operator mode is for operating your Kubernetes clusters and cloud native
+infrastructure.
 
 ### Core Tasks
 
-- **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
-- **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying Designs, Cloning a Design
+- **Whiteboarding:** Kanvas Designer supports freestyle design, meaning that you
+  can customize the appearance and layout of your diagrams without any
+  constraints.
+- **Deploying Designs:** Validating Designs, Undeploying Designs, Deploying
+  Designs, Cloning a Design
 
 ### Reference
 
-- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+- **Keyboard Shortcuts:** Learn the keyboard shortcuts for Kanvas to enhance
+  your designing experience.
 - **Troubleshooting Kanvas:** Learn to Troubleshoot the Kanvas
 
 </details>
 
 <hr/>
 
-<a name="contributing"></a><a name="community"></a>
-Our projects are community-driven and open to collaboration. 👍 Be sure to see the <a href="https://layer5.io/community/newcomers">Layer5 Community Welcome Guide</a> for a tour of resources available to you. You can also join our <a href="http://slack.layer5.io">Slack</a> to get involved.
+<a name="contributing"></a><a name="community"></a> Our projects are
+community-driven and open to collaboration. 👍 Be sure to see the
+<a href="https://layer5.io/community/newcomers">Layer5 Community Welcome
+Guide</a> for a tour of resources available to you. You can also join our
+<a href="http://slack.layer5.io">Slack</a> to get involved.
 
 <p style="clear:both;">
 <a href ="https://layer5.io/community/meshmates"><img alt="MeshMates" src=".github/readme/images/layer5-community-sign.png" style="margin-right:10px; margin-bottom:15px;" width="28%" align="left"/></a>
@@ -184,8 +213,9 @@ Our projects are community-driven and open to collaboration. 👍 Be sure to see
   Become a <b>Meshtee</b> today!
 </p>
 
-Find out more on the <a href="https://layer5.io/community">Layer5 community</a>. <br />
-<br /><br /><br /><br />
+Find out more on the <a href="https://layer5.io/community">Layer5 community</a>.
+<br /> <br /><br /><br /><br />
+
 </p>
 
 <div>&nbsp;</div>

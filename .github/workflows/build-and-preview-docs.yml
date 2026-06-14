@@ -150,7 +150,9 @@ jobs:
             > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
 
       - name: Comment on pruned previews
-        if: github.event.action != 'closed' && steps.prune-previews.outputs.removed_prs_json != '[]'
+        if:
+          github.event.action != 'closed' &&
+          steps.prune-previews.outputs.removed_prs_json != '[]'
         uses: actions/github-script@v7
         env:
           REMOVED_PRS_JSON: ${{ steps.prune-previews.outputs.removed_prs_json }}

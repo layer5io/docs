@@ -13,30 +13,32 @@ aliases:
 
 Kanvas let's you export a design in several formats, so you can:
 
-* keep versioned backups  
-* collaborate offline  
-* push artifacts to OCI-compatible registries or Helm repositories  
-* integrate designs into CI/CD or GitOps pipelines  
-* embed interactive diagrams in documentation and blogs  
+- keep versioned backups
+- collaborate offline
+- push artifacts to OCI-compatible registries or Helm repositories
+- integrate designs into CI/CD or GitOps pipelines
+- embed interactive diagrams in documentation and blogs
 
 ## Export in Two Steps
 
-1. Open the export menu 
-   Within the [Kanvas Designer](https://playground.meshery.io/extension/meshmap), select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design. 
-2. Pick an export format 
-   Choose the option that matches your workflow (see table below).
+1. Open the export menu Within the
+   [Kanvas Designer](https://playground.meshery.io/extension/meshmap), select
+   the design you wish to export in the design drawer. Click on the export icon
+   in the menu for the selected design.
+2. Pick an export format Choose the option that matches your workflow (see table
+   below).
 
 ![Export Icon](images/export-modal.gif)
 
 ## Quick Reference: Export Formats
 
-| Format                          | Keeps full design metadata? | Typical uses                                       |
-|---------------------------------|-----------------------------|----------------------------------------------------|
-| Design (YAML)           | ✔                           | Backups, sharing, re-import into Kanvas           |
-| Design (OCI image)      | ✔                           | Store in Docker Hub/GHCR; registry-based versioning|
-| Kubernetes Manifest (YAML)      | ✖ (lossy)                   | `kubectl apply`; raw K8s deployment                |
-| Helm Chart (.tar.gz)            | ✖ (lossy)                   | Helm repos, GitOps (Argo CD/Flux), Artifact Hub    |
-| Embed Design (JS snippet)       | -                           | Interactive diagrams in docs or dashboards         |
+| Format                     | Keeps full design metadata? | Typical uses                                        |
+| -------------------------- | --------------------------- | --------------------------------------------------- |
+| Design (YAML)              | ✔                           | Backups, sharing, re-import into Kanvas             |
+| Design (OCI image)         | ✔                           | Store in Docker Hub/GHCR; registry-based versioning |
+| Kubernetes Manifest (YAML) | ✖ (lossy)                   | `kubectl apply`; raw K8s deployment                 |
+| Helm Chart (.tar.gz)       | ✖ (lossy)                   | Helm repos, GitOps (Argo CD/Flux), Artifact Hub     |
+| Embed Design (JS snippet)  | -                           | Interactive diagrams in docs or dashboards          |
 
 ## Detailed Format Guide
 
@@ -45,72 +47,88 @@ Kanvas let's you export a design in several formats, so you can:
 Exports a complete, lossless copy of your design.  
 This format preserves all Meshery-specific metadata, including:
 
-- Visual layout  
-- Annotations and comments  
-- Component grouping and configuration  
+- Visual layout
+- Annotations and comments
+- Component grouping and configuration
 
-Use it to back up or move designs between Meshery instances. The file is saved as `<design-name>.yml`.
+Use it to back up or move designs between Meshery instances. The file is saved
+as `<design-name>.yml`.
 
 ### Design (OCI Image)
 
 Exports your design as an OCI-compliant container image.  
-This format preserves all design metadata, just like the Design (YAML), but in a form suitable for container registries.
+This format preserves all design metadata, just like the Design (YAML), but in a
+form suitable for container registries.
 
 When to use:
 
-- Version and distribute your design via Docker Hub, GitHub Container Registry, AWS ECR, etc.  
-- Integrate with registry-based workflows or team collaboration tools  
+- Version and distribute your design via Docker Hub, GitHub Container Registry,
+  AWS ECR, etc.
+- Integrate with registry-based workflows or team collaboration tools
 - Store designs alongside application artifacts
 
-The exported file is named `<design-name>.tar`, and can be pushed using tools like `docker push` or `oras push`.
+The exported file is named `<design-name>.tar`, and can be pushed using tools
+like `docker push` or `oras push`.
 
-### Kubernetes Manifest (YAML)  *Lossy Export*
+### Kubernetes Manifest (YAML) _Lossy Export_
 
 Exports your design as raw Kubernetes YAML files, ready to apply with `kubectl`.
 
 Best used when:
+
 - You want to deploy directly to a cluster
 - You're integrating with CI/CD tools that expect plain manifests
 - You no longer need visual layout, annotations, or design metadata
 
-This format strips out Meshery-specific context and includes only standard Kubernetes resource definitions.
+This format strips out Meshery-specific context and includes only standard
+Kubernetes resource definitions.
 
-> If you want to preserve the full editable design, use **Design (YAML)** instead.
+> If you want to preserve the full editable design, use **Design (YAML)**
+> instead.
 
-### Helm Chart (.tar.gz)  *Lossy Export*
+### Helm Chart (.tar.gz) _Lossy Export_
 
 Packages your design as a standard Helm chart archive (`.tar.gz`).
 
 Best used when:
+
 - You want to deploy via Helm (`helm install`)
 - You're working with GitOps tools like Argo CD or Flux
 - You plan to publish to a Helm repository or Artifact Hub
 
-This format includes only Kubernetes resource definitions.  Design layout, annotations, and other Meshery-specific metadata will not be included.
+This format includes only Kubernetes resource definitions. Design layout,
+annotations, and other Meshery-specific metadata will not be included.
 
-> If you want to keep your design fully editable in Meshery, use **Design (YAML)** instead.
+> If you want to keep your design fully editable in Meshery, use **Design
+> (YAML)** instead.
 
 ### Embed Design (JavaScript Snippet)
 
-Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. 
+Exporting your design as an embedding allows you to integrate it into websites,
+blogs, or other platforms that support HTML, CSS, and JavaScript.
 
-The embedded design version offers a visually interactive representation of your design, making it easy to share with infrastructure stakeholders.
-> [Learn more]({{< ref "kanvas/designer/embedding-designs/index.md" >}}) about Embedding Designs.
+The embedded design version offers a visually interactive representation of your
+design, making it easy to share with infrastructure stakeholders.
+
+> [Learn more]({{< ref "kanvas/designer/embedding-designs/index.md" >}}) about
+> Embedding Designs.
 
 ## Best Practices and Tips
 
-| Need | Recommended format |
-|------|--------------------|
+| Need                         | Recommended format         |
+| ---------------------------- | -------------------------- |
 | Preserve every design detail | Design (YAML) or OCI image |
-| One-off deployment           | Kubernetes Manifest |
-| Share a reusable package     | Helm Chart |
-| Show an interactive diagram  | Embed Design |
-| Publish to Helm repo         | Helm Chart (.tar.gz) |
-| Store in container registry  | Design (OCI image) |
+| One-off deployment           | Kubernetes Manifest        |
+| Share a reusable package     | Helm Chart                 |
+| Show an interactive diagram  | Embed Design               |
+| Publish to Helm repo         | Helm Chart (.tar.gz)       |
+| Store in container registry  | Design (OCI image)         |
 
 Note:
-1. If you plan to keep editing in Meshery, avoid lossy formats.  
-2. A Helm `.tar.gz` can be placed in any Helm repo and installed with `helm install`.  
+
+1. If you plan to keep editing in Meshery, avoid lossy formats.
+2. A Helm `.tar.gz` can be placed in any Helm repo and installed with
+   `helm install`.
 3. An OCI image can be versioned and pulled just like an application image.
 
 ## Frequently Asked Questions

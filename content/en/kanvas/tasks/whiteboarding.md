@@ -1,7 +1,8 @@
 ---
 title: Whiteboarding
 description: >
-  Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+  Kanvas Designer supports freestyle design, meaning that you can customize the
+  appearance and layout of your diagrams without any constraints.
 weight: 2
 categories: [Designer]
 tags: [designs]
@@ -9,19 +10,30 @@ aliases:
   - /meshmap/tasks/whiteboarding
 ---
 
-With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
-
+With Kanvas Designer you can draw shapes, lines, text, add custom styles, images
+and icons to represent the components and relationships of your Kubernetes
+clusters as you see fit. Kanvas supports freestyle design, meaning that you can
+customize the appearance and layout of your diagrams without any constraints.
+Kanvas also enables real-time collaboration, meaning that you can invite others
+to join your sessions and edit the diagrams together.
 
 ## Using the Shapes Palette
 
-
 ## Converting Shapes
-Existing shapes can be converted to other shapes. For example, you can convert a rectangle to a circle, or a triangle to a rectangle. This is useful if you want to change the shape of a shape without losing its position, size, and formatting.
-If you'd rather use a different shape while keeping the same position, size, and formatting, you can change the shape.
+
+Existing shapes can be converted to other shapes. For example, you can convert a
+rectangle to a circle, or a triangle to a rectangle. This is useful if you want
+to change the shape of a shape without losing its position, size, and
+formatting. If you'd rather use a different shape while keeping the same
+position, size, and formatting, you can change the shape.
 
 ## Copying, pasting, and deleting shapes
-Using the context menu, click on the shape while holding the right click and select copy to copy a shape. To paste the copied shape, move the mouse to the desired place, right-click, and select paste. To delete a shape, click on the shape while holding the right click and hover to the delete tab on the circular popup.
 
+Using the context menu, click on the shape while holding the right click and
+select copy to copy a shape. To paste the copied shape, move the mouse to the
+desired place, right-click, and select paste. To delete a shape, click on the
+shape while holding the right click and hover to the delete tab on the circular
+popup.
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 

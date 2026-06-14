@@ -6,10 +6,19 @@ description: >
 categories: [Operator]
 ---
 
-In Kanvas, the Instance Details tab provides a detailed view of Kubernetes resources such as Nodes, Pods, Deployments, and more. This tab is essential for understanding the configuration and status of individual resources within your Kubernetes cluster.
-The Instance Details tab is accessible when you select a specific Kubernetes resource from the Resources tab. It allows you to view and manage the details of that resource, including its configuration, status, and associated events.
+In Kanvas, the Instance Details tab provides a detailed view of Kubernetes
+resources such as Nodes, Pods, Deployments, and more. This tab is essential for
+understanding the configuration and status of individual resources within your
+Kubernetes cluster. The Instance Details tab is accessible when you select a
+specific Kubernetes resource from the Resources tab. It allows you to view and
+manage the details of that resource, including its configuration, status, and
+associated events.
 
-Depending on the type of resource selected, the Instance Details tab will display relevant information. For example, if you select a Node, it will show details about the node's status, capacity, and conditions. If you select a Pod, it will display information about the pod's containers, their statuses, and any associated labels.
+Depending on the type of resource selected, the Instance Details tab will
+display relevant information. For example, if you select a Node, it will show
+details about the node's status, capacity, and conditions. If you select a Pod,
+it will display information about the pod's containers, their statuses, and any
+associated labels.
 
 <div style="display:flex;justify-content:center;">
 {{< cardpane >}}

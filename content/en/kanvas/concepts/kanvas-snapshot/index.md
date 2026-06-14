@@ -1,13 +1,18 @@
 ---
 title: Kanvas GitHub Snapshot
-description: Capture a screenshot of your infrastructure as a comment in your GitHub pull request.
+description:
+  Capture a screenshot of your infrastructure as a comment in your GitHub pull
+  request.
 display_title: false
 categories: [kanvas]
-aliases: 
-- /kanvas/concepts/snapshot
+aliases:
+  - /kanvas/concepts/snapshot
 ---
 
-<img style="height: 32px; width: 32px;" src="images/kanvas-icon-color.svg" /> Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.
+<img style="height: 32px; width: 32px;" src="images/kanvas-icon-color.svg" />
+Kanvas Snapshot is a screenshot service provided via Kanvas for your designs.
+Visualize changes to your code-base with each pull request made. The SnapShot
+GitHub Action is configurable from within your Cloud account.
 
 <details>
 <summary>How the SnapShot service works</summary>
@@ -19,7 +24,9 @@ aliases:
 
 <h3>Installing Kanvas Snapshot: Github Pull Request</h3>
 
-Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.
+Connect MeshMap to your GitHub repo and see changes pull request-to-pull
+request. Get snapshots of your infrastructure directly in your PRs.
+
 <ul>
   <li>Open Layer5 Cloud.</li>
   <li>Navigate to your Spaces --> Integrations.</li>
@@ -29,7 +36,8 @@ Connect MeshMap to your GitHub repo and see changes pull request-to-pull request
 
 ## Configurating the SnapShot Service
 
-The Kanvas Snapshot service does not need access to your infrastructure deployment. It is a standalone service.
+The Kanvas Snapshot service does not need access to your infrastructure
+deployment. It is a standalone service.
 
 ### When Infrastructure is located in the file-system
 
@@ -41,7 +49,7 @@ on: # rebuild any PRs and main branch changes
     branches:
       - main
       - master
-      - "releases/*"
+      - 'releases/*'
 
 jobs:
   test: # make sure the action works on a clean machine without building
@@ -62,21 +70,21 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }} # github's personal access token example: "ghp_...."
           providerToken: ${{ secrets.PROVIDER_TOKEN }} # Meshery Cloud Authentication token, signin to meshery-cloud to get one, example: ey.....
           prNumber: ${{ env.PULL_NO }} # auto-filled from the above step
-          application_type: "Kubernetes Manifest" # your application type, could be any of three: "Kubernetes Manifest", "Docker Compose", "Helm Chart"
-          filePath: "action/__tests__/manifest-test" # relative file-path from the root directory in the github-runner env, you might require to checkout the repository as described in step 2
+          application_type: 'Kubernetes Manifest' # your application type, could be any of three: "Kubernetes Manifest", "Docker Compose", "Helm Chart"
+          filePath: 'action/__tests__/manifest-test' # relative file-path from the root directory in the github-runner env, you might require to checkout the repository as described in step 2
 ```
 
 ### When Infrastructure is identified via URL
 
 ```yaml
-name: "Kanvas Snapshot (from remote URL)"
+name: 'Kanvas Snapshot (from remote URL)'
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
     branches:
       - main
       - master
-      - "releases/*"
+      - 'releases/*'
 
 jobs:
   test: # make sure the action works on a clean machine without building
@@ -96,39 +104,46 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }} # github's personal access token example: "ghp_...."
           providerToken: ${{ secrets.PROVIDER_TOKEN }} # Meshery Cloud Authentication token, signin to meshery-cloud to get one, example: ey.....
           prNumber: ${{ env.PULL_NO }} # auto-filled from the above step
-          application_type: "Helm Chart" # your application type, could be any of three: "Kubernetes Manifest", "Docker Compose", "Helm Chart"
-          application_url: "https://github.com/meshery/meshery.io/raw/master/charts/meshery-v0.6.88.tgz"
+          application_type: 'Helm Chart' # your application type, could be any of three: "Kubernetes Manifest", "Docker Compose", "Helm Chart"
+          application_url: 'https://github.com/meshery/meshery.io/raw/master/charts/meshery-v0.6.88.tgz'
 ```
 
 #### FileSystem Approach Notes
 
-The filesystem-approach asks for your relative file-path and automatically merges all the yaml files together to bundle up into one. So you might like to give the root directory where all the yamls are located. It doesn't move recursevely in internal folders, so only the first level yaml files are checked.
+The filesystem-approach asks for your relative file-path and automatically
+merges all the yaml files together to bundle up into one. So you might like to
+give the root directory where all the yamls are located. It doesn't move
+recursevely in internal folders, so only the first level yaml files are checked.
 
 ### List of input variables supported
 
 ```yaml
 designId: # id of input  #deprecated
-  description: "The design uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662"
+  description: 'The design uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662'
   required: false
-  default: "{}"
+  default: '{}'
 applicationId: #deprecated
-  description: "The application uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662"
+  description:
+    'The application uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662'
   required: false
 githubToken:
-  description: "Github PAT token"
+  description: 'Github PAT token'
   required: true
 providerToken:
-  description: "Meshery Authentication Provider Token"
+  description: 'Meshery Authentication Provider Token'
   required: true
 prNumber:
-  description: "The Pull request on which comment has to be made"
+  description: 'The Pull request on which comment has to be made'
   required: false
   default: 0
 filePath:
-  description: "The relative filepath of the location where the manifests are stored"
+  description:
+    'The relative filepath of the location where the manifests are stored'
   required: false
 application_type:
-  description: "Application upload type, any of the three, Kubernetes Manifest, Docker Compose, Helm Chart"
+  description:
+    'Application upload type, any of the three, Kubernetes Manifest, Docker
+    Compose, Helm Chart'
   required: true
 application_url:
   description: "Application's source url where the manifests or data is stored"
@@ -137,19 +152,28 @@ application_url:
 
 ### Customizing Snapshot Workflow Triggers in Kanvas Snapshot
 
-You can configure your workflows to run when specific activity on GitHub happens, at a scheduled time, or when an event outside of GitHub occurs.
+You can configure your workflows to run when specific activity on GitHub
+happens, at a scheduled time, or when an event outside of GitHub occurs.
 
 ### About events that trigger workflows
 
-GitHub Actions provides a variety of events that can trigger workflows, allowing you to automate your software development process. Each event corresponds to a specific activity, such as creating a pull request, pushing code to a repository, or releasing a new version.
+GitHub Actions provides a variety of events that can trigger workflows, allowing
+you to automate your software development process. Each event corresponds to a
+specific activity, such as creating a pull request, pushing code to a
+repository, or releasing a new version.
 
 ### Supported Events
 
-The Kanvas Snapshot Action supports all of the events listed in the GitHub documentation. For detailed information about each event, including its properties and payloads, refer to the [GitHub Actions documentation](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
+The Kanvas Snapshot Action supports all of the events listed in the GitHub
+documentation. For detailed information about each event, including its
+properties and payloads, refer to the
+[GitHub Actions documentation](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
 
 ### Workflow Syntax for Event Filtering
 
-When defining workflows, you can use the `on` keyword to specify which events trigger the workflow. You can further filter the triggering conditions by using the `types`, `branches`, `tags`, and other options. For example:
+When defining workflows, you can use the `on` keyword to specify which events
+trigger the workflow. You can further filter the triggering conditions by using
+the `types`, `branches`, `tags`, and other options. For example:
 
 ```yaml
 on:
@@ -164,33 +188,47 @@ on:
 
 Specific events that are relevant to the Kanvas Snapshot Action are:
 
-- **push:** This event is triggered when code is pushed to the repository. It is the most common event used to trigger workflows.
-- **pull_request:** This event is triggered when a pull request is opened or updated. It is often used to trigger workflows that run tests or linters on the pull request's code.
+- **push:** This event is triggered when code is pushed to the repository. It is
+  the most common event used to trigger workflows.
+- **pull_request:** This event is triggered when a pull request is opened or
+  updated. It is often used to trigger workflows that run tests or linters on
+  the pull request's code.
 
-- **workflow_dispatch:** This event is triggered when a workflow is manually triggered. It can be used to trigger workflows on demand, such as for publishing a new release or addressing critical bugs.
+- **workflow_dispatch:** This event is triggered when a workflow is manually
+  triggered. It can be used to trigger workflows on demand, such as for
+  publishing a new release or addressing critical bugs.
 
-For a comprehensive list of events that can be used in GitHub Actions, please refer to the Supported Events section above.
+For a comprehensive list of events that can be used in GitHub Actions, please
+refer to the Supported Events section above.
 
 ## What Happens to Workflow Customizations on Upgrade?
 
-Customizations to the trigger criteria for the Kanvas Snapshot actions are preserved when upgrading to a new version of the action. However, there may be some cases where customizations are lost, such as when the syntax for specifying the trigger criteria changes in a new version of the action.
+Customizations to the trigger criteria for the Kanvas Snapshot actions are
+preserved when upgrading to a new version of the action. However, there may be
+some cases where customizations are lost, such as when the syntax for specifying
+the trigger criteria changes in a new version of the action.
 
 Here are some examples of cases where customizations may be lost:
 
-- You currently have a workflow that is triggered on the push event, and the syntax for specifying the push event changes in a new version of the action.
+- You currently have a workflow that is triggered on the push event, and the
+  syntax for specifying the push event changes in a new version of the action.
 
-- You have a workflow that is triggered on a custom event, and the custom event is no longer supported in a new version of the action.
+- You have a workflow that is triggered on a custom event, and the custom event
+  is no longer supported in a new version of the action.
 
-It is always a good practice to test your workflows after upgrading to a new version of the Kanvas Snapshot Action to make sure that your customizations are still working as expected.
+It is always a good practice to test your workflows after upgrading to a new
+version of the Kanvas Snapshot Action to make sure that your customizations are
+still working as expected.
 
 ## Usage:
 
-After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md) to reference the stable and latest V1 action
+After testing you can
+[create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
+to reference the stable and latest V1 action
 
 # General Upgrade Guide
 
 [Kanvas Snapshot Release Page](https://github.com/layer5labs/kanvas-snapshot/releases)
-
 
 ```
  - id: test_result
@@ -201,5 +239,7 @@ After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/
 
 ## Upgrade/Migrate Guide
 
-1. Given changes done in `kanvas.yml` in Kanvas Snapshot, updating the workflows is required.
-2. Given changes done other than in `kanvas.yml` in Kanvas Snapshot, the update in the `.github/worflows` is not a hard requirement, but doesnt hurt.
+1. Given changes done in `kanvas.yml` in Kanvas Snapshot, updating the workflows
+   is required.
+2. Given changes done other than in `kanvas.yml` in Kanvas Snapshot, the update
+   in the `.github/worflows` is not a hard requirement, but doesnt hurt.

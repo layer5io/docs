@@ -9,17 +9,17 @@ h4,
 h5,
 h6 {
   font-family:
-    "Qanelas Soft",
+    'Qanelas Soft',
     sans-serif,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
-    "Helvetica Neue",
+    'Helvetica Neue',
     Arial,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
 }
 
 .td-content {
@@ -34,66 +34,66 @@ h6 {
     // }
   }
 
-  >h1 {
+  > h1 {
     font-family:
-      "Qanelas Soft",
+      'Qanelas Soft',
       sans-serif,
       -apple-system,
       BlinkMacSystemFont,
-      "Segoe UI",
+      'Segoe UI',
       Roboto,
-      "Helvetica Neue",
+      'Helvetica Neue',
       Arial,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol";
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol';
     font-weight: $font-weight-bold;
     margin-bottom: 1rem;
     color: $casper;
   }
 
-  >h2 {
+  > h2 {
     font-family:
-      "Qanelas Soft",
+      'Qanelas Soft',
       sans-serif,
       -apple-system,
       BlinkMacSystemFont,
-      "Segoe UI",
+      'Segoe UI',
       Roboto,
-      "Helvetica Neue",
+      'Helvetica Neue',
       Arial,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol";
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol';
     margin-bottom: 1rem;
     color: $casper;
   }
 
-  >h2:not(:first-child) {
+  > h2:not(:first-child) {
     margin-top: 3rem;
     color: $casper;
   }
 
-  >h2+h3 {
+  > h2 + h3 {
     margin-top: 1rem;
   }
 
-  >h3,
-  >h4,
-  >h5,
-  >h6 {
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
     font-family:
-      "Qanelas Soft",
+      'Qanelas Soft',
       sans-serif,
       -apple-system,
       BlinkMacSystemFont,
-      "Segoe UI",
+      'Segoe UI',
       Roboto,
-      "Helvetica Neue",
+      'Helvetica Neue',
       Arial,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol";
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol';
     margin-bottom: 1rem;
     margin-top: 2rem;
     color: $lightslategray;
@@ -140,19 +140,19 @@ h6 {
       scroll-margin-top: 6rem;
     }
   }
-  >.alert,
-  >.highlight,
-  >.lead,
-  >.td-table,
-  >blockquote,
-  >dl dd,
-  >h1,
-  >h2,
-  >ol,
-  >p,
-  >pre,
-  >details,
-  >ul {
+  > .alert,
+  > .highlight,
+  > .lead,
+  > .td-table,
+  > blockquote,
+  > dl dd,
+  > h1,
+  > h2,
+  > ol,
+  > p,
+  > pre,
+  > details,
+  > ul {
     @extend .td-max-width-on-larger-screens;
   }
 
@@ -292,8 +292,8 @@ th {
   }
 
   table.csvtable {
-    th:nth-child(n+3),
-    td:nth-child(n+3) {
+    th:nth-child(n + 3),
+    td:nth-child(n + 3) {
       text-align: center;
     }
   }

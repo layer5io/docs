@@ -6,41 +6,56 @@ categories: [Reference]
 tags: [extensibility]
 ---
 
-To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.
+To create integrations, retrieve data, and automate your cloud native
+infrastructure, build with the Layer5 Cloud REST API.
 
 ## Authenticating with the API
 
-In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
+In order to authenticate to Layer5 Cloud's REST API, you need to generate and
+use a [security
+token]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}). Visit your
+[user account's security tokens](https://cloud.layer5.io/security/tokens) and
+generate a long-lived token. Security tokens remain valid until you revoke them,
+and you can issue as many as you need.
 
-To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
+To authenticate with the API, pass the token as a bearer token in the
+`Authorization` header. For example, in cURL:
 
 ```bash
 curl <protocol>://<Layer5-cloud-hostname>/api/identity/users/profile \
 -H "Authorization: Bearer <token>"
 ```
 
-- Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance.
-- Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
+- Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud
+  instance.
+- Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your
+  hosted Layer5 Cloud instance. For example,
+  [`https://cloud.layer5.io`](https://cloud.layer5.io).
 - Replace the path with the API endpoint you want to access.
 - Replace `<token>` with the security token you generated.
 
 ## Specifying Organization Context
 
-{{< alert type="info" title="API Tokens are User-Scoped" >}}
-Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of. For users who belong to multiple organizations, you need to explicitly specify which organization your API requests should operate on.
+{{< alert type="info" title="API Tokens are User-Scoped" >}} Layer5 Cloud API
+tokens are scoped to your user account, not to a specific organization. This
+means a single API token provides access to all organizations you are a member
+of. For users who belong to multiple organizations, you need to explicitly
+specify which organization your API requests should operate on.
 
-This is similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work, where a single token grants access to all repositories and organizations the user has access to.
-{{< /alert >}}
+This is similar to how
+[GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+work, where a single token grants access to all repositories and organizations
+the user has access to. {{< /alert >}}
 
 There are two ways to control the organization context for your API requests:
 
 ### Using the `layer5-current-orgid` Header
 
-Include the `layer5-current-orgid` header with your organization's ID to specify the target organization for a request:
+Include the `layer5-current-orgid` header with your organization's ID to specify
+the target organization for a request:
 
-{{< tabpane >}}
-{{< tab header="cURL"  >}}
-curl -X GET "https://cloud.layer5.io/api/environments" \
+{{< tabpane >}} {{< tab header="cURL"  >}} curl -X GET
+"https://cloud.layer5.io/api/environments" \
  -H "Authorization: Bearer <Your-Token>" \
  -H "layer5-current-orgid: <Your-Organization-ID>"
 
@@ -48,20 +63,12 @@ curl -X GET "https://cloud.layer5.io/api/environments" \
 
 {{< tab header="JavaScript" >}}
 
-const token = "Your-Token";
-const orgId = "Your-Organization-ID";
+const token = "Your-Token"; const orgId = "Your-Organization-ID";
 
-async function listEnvironments() {
-  const res = await fetch("https://cloud.layer5.io/api/environments", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "layer5-current-orgid": orgId,
-    },
-  });
-  const data = await res.json();
-  console.log(data);
-}
+async function listEnvironments() { const res = await
+fetch("https://cloud.layer5.io/api/environments", { method: "GET", headers: {
+Authorization: `Bearer ${token}`, "layer5-current-orgid": orgId, }, }); const
+data = await res.json(); console.log(data); }
 
 listEnvironments();
 
@@ -71,14 +78,10 @@ listEnvironments();
 
 import requests
 
-url = "https://cloud.layer5.io/api/environments"
-headers = {
-    "Authorization": "Bearer <Your-Token>",
-    "layer5-current-orgid": "<Your-Organization-ID>"
-}
+url = "https://cloud.layer5.io/api/environments" headers = { "Authorization":
+"Bearer <Your-Token>", "layer5-current-orgid": "<Your-Organization-ID>" }
 
-res = requests.get(url, headers=headers)
-print(res.json())
+res = requests.get(url, headers=headers) print(res.json())
 
 {{< /tab >}}
 
@@ -86,18 +89,19 @@ print(res.json())
 
 ### Setting Organization and Workspace Preferences
 
-Alternatively, you can set your default organization and workspace using the Preferences API. This sets your user preferences so that subsequent API requests will use the specified organization and workspace context:
+Alternatively, you can set your default organization and workspace using the
+Preferences API. This sets your user preferences so that subsequent API requests
+will use the specified organization and workspace context:
 
-{{< tabpane >}}
-{{< tab header="cURL"  >}}
+{{< tabpane >}} {{< tab header="cURL"  >}}
+
 # Set organization and workspace preferences
+
 curl -X PUT "https://cloud.layer5.io/api/identity/users/preferences" \
  -H "Authorization: Bearer <Your-Token>" \
  -H "Content-Type: application/json" \
- -d '{
-   "selectedOrganization": "<Your-Organization-ID>",
-   "selectedWorkspace": "<Your-Workspace-ID>"
- }'
+ -d '{ "selectedOrganization": "<Your-Organization-ID>", "selectedWorkspace":
+"<Your-Workspace-ID>" }'
 
 {{< /tab >}}
 
@@ -105,21 +109,12 @@ curl -X PUT "https://cloud.layer5.io/api/identity/users/preferences" \
 
 const token = "Your-Token";
 
-async function setPreferences() {
-  const res = await fetch("https://cloud.layer5.io/api/identity/users/preferences", {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      selectedOrganization: "<Your-Organization-ID>",
-      selectedWorkspace: "<Your-Workspace-ID>",
-    }),
-  });
-  const data = await res.json();
-  console.log(data);
-}
+async function setPreferences() { const res = await
+fetch("https://cloud.layer5.io/api/identity/users/preferences", { method: "PUT",
+headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json",
+}, body: JSON.stringify({ selectedOrganization: "<Your-Organization-ID>",
+selectedWorkspace: "<Your-Workspace-ID>", }), }); const data = await res.json();
+console.log(data); }
 
 setPreferences();
 
@@ -127,18 +122,12 @@ setPreferences();
 
 {{< tab header="Python" >}}
 
-import requests
-import json
+import requests import json
 
-url = "https://cloud.layer5.io/api/identity/users/preferences"
-headers = {
-    "Authorization": "Bearer <Your-Token>",
-    "Content-Type": "application/json"
-}
-payload = {
-    "selectedOrganization": "<Your-Organization-ID>",
-    "selectedWorkspace": "<Your-Workspace-ID>"
-}
+url = "https://cloud.layer5.io/api/identity/users/preferences" headers = {
+"Authorization": "Bearer <Your-Token>", "Content-Type": "application/json" }
+payload = { "selectedOrganization": "<Your-Organization-ID>",
+"selectedWorkspace": "<Your-Workspace-ID>" }
 
 res = requests.put(url, headers=headers, data=json.dumps(payload))
 print(res.json())
@@ -149,18 +138,23 @@ print(res.json())
 
 ## API Example
 
-The following example demonstrate how to retrieve information from the Academy REST APIs.
+The following example demonstrate how to retrieve information from the Academy
+REST APIs.
 
 ### Get the total number of registered learners in Academy
 
-Use the Layer5 Cloud API to retrieve the *total* number of registered learners. Pass your [Security Token](https://docs.layer5.io/cloud/concepts/identity-and-security/tokens/) as a Bearer token in the `Authorization` header (as shown in [Authenticating with API]({{< ref "cloud/reference/api-reference/_index.md#authenticating-with-the-api" >}})). The response JSON includes an array of user objects.
+Use the Layer5 Cloud API to retrieve the _total_ number of registered learners.
+Pass your
+[Security Token](https://docs.layer5.io/cloud/concepts/identity-and-security/tokens/)
+as a Bearer token in the `Authorization` header (as shown in [Authenticating
+with
+API]({{< ref "cloud/reference/api-reference/_index.md#authenticating-with-the-api" >}})).
+The response JSON includes an array of user objects.
 
-
-{{< tabpane >}}
-{{< tab header="cURL"  >}}
-curl -s -X GET "https://cloud.layer5.io/api/academy/cirricula"  \
- -H "Authorization: Bearer <Your-Token>"  \
-  | jq '[.data[].registration_count] | add'
+{{< tabpane >}} {{< tab header="cURL"  >}} curl -s -X GET
+"https://cloud.layer5.io/api/academy/cirricula" \
+ -H "Authorization: Bearer <Your-Token>" \
+ | jq '[.data[].registration_count] | add'
 
 {{< /tab >}}
 
@@ -168,14 +162,11 @@ curl -s -X GET "https://cloud.layer5.io/api/academy/cirricula"  \
 
 const token = "Your-Token"
 
-async function getTotalLearners() {
-  const res = await fetch("https://cloud.layer5.io/api/academy/cirricula", {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  const data = await res.json();
-  const total = data.data.reduce((sum, path) => sum + path.registration_count, 0);
-  console.log(total);
-}
+async function getTotalLearners() { const res = await
+fetch("https://cloud.layer5.io/api/academy/cirricula", { headers: {
+Authorization: `Bearer ${token}` }, }); const data = await res.json(); const
+total = data.data.reduce((sum, path) => sum + path.registration_count, 0);
+console.log(total); }
 
 getTotalLearners();
 
@@ -185,13 +176,11 @@ getTotalLearners();
 
 import requests
 
-url = "https://cloud.layer5.io/api/academy/cirricula"
-headers = {"Authorization": "Bearer <Your-Token>"}
+url = "https://cloud.layer5.io/api/academy/cirricula" headers =
+{"Authorization": "Bearer <Your-Token>"}
 
-res = requests.get(url, headers=headers)
-data = res.json()
-total = sum(item["registration_count"] for item in data["data"])
-print(total)
+res = requests.get(url, headers=headers) data = res.json() total =
+sum(item["registration_count"] for item in data["data"]) print(total)
 
 {{< /tab >}}
 
@@ -199,47 +188,38 @@ print(total)
 
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
-)
+import ( "encoding/json" "fmt" "io" "net/http" )
 
-type Path struct {
-	RegistrationCount int `json:"registration_count"`
-}
+type Path struct { RegistrationCount int `json:"registration_count"` }
 
-type Response struct {
-	Data []Path `json:"data"`
-}
+type Response struct { Data []Path `json:"data"` }
 
-func main() {
-	url := "https://cloud.layer5.io/api/academy/cirricula"
+func main() { url := "https://cloud.layer5.io/api/academy/cirricula"
 
-	req, _ := http.NewRequest("GET", url, nil)
-	req.Header.Set("Authorization", "Bearer <your-token>")
+    req, _ := http.NewRequest("GET", url, nil)
+    req.Header.Set("Authorization", "Bearer <your-token>")
 
-	client := &http.Client{}
-	res, err := client.Do(req)
-	if err != nil {
-		panic(err)
-	}
-	defer res.Body.Close()
+    client := &http.Client{}
+    res, err := client.Do(req)
+    if err != nil {
+    	panic(err)
+    }
+    defer res.Body.Close()
 
-	body, _ := io.ReadAll(res.Body)
+    body, _ := io.ReadAll(res.Body)
 
-	var response Response
-	if err := json.Unmarshal(body, &response); err != nil {
-		panic(err)
-	}
+    var response Response
+    if err := json.Unmarshal(body, &response); err != nil {
+    	panic(err)
+    }
 
-	total := 0
-	for _, path := range response.Data {
-		total += path.RegistrationCount
-	}
+    total := 0
+    for _, path := range response.Data {
+    	total += path.RegistrationCount
+    }
 
-	fmt.Println(total)
+    fmt.Println(total)
+
 }
 
 {{< /tab >}}
@@ -247,6 +227,7 @@ func main() {
 {{< /tabpane >}}
 
 This returns the number of Total registered learners:
+
 ```
 130
 ```

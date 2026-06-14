@@ -23,7 +23,9 @@
   justify-content: center;
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
 
   @media (max-width: 1000px) {
     max-width: 22rem;
@@ -86,7 +88,7 @@
   }
 
   @media (max-width: 640px) {
-    top: 0.30rem;
+    top: 0.3rem;
     right: 0.45rem;
 
     svg {
@@ -152,7 +154,9 @@
   font-size: 0.95rem;
   border-radius: 4px;
   text-decoration: none;
-  transition: filter 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     filter: brightness(1.1);
@@ -178,7 +182,11 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse at 50% 0%, rgba(0, 211, 169, 0.18) 0%, transparent 70%);
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      rgba(0, 211, 169, 0.18) 0%,
+      transparent 70%
+    );
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: inherit;
@@ -203,7 +211,6 @@
     position: relative;
     z-index: 1;
   }
-
 
   .kanvas-layer {
     position: absolute;

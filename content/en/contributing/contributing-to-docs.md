@@ -11,38 +11,51 @@ Welcome to the GitHub repository for Layer5's documentation website!
 
 The docs website is hosted at <https://docs.layer5.io>.
 
-We use [Hugo](https://gohugo.io/) with the [google/docsy](https://github.com/google/docsy) theme for styling and site structure, and [Netlify](https://www.netlify.com/) to manage the deployment of the site.
+We use [Hugo](https://gohugo.io/) with the
+[google/docsy](https://github.com/google/docsy) theme for styling and site
+structure, and [Netlify](https://www.netlify.com/) to manage the deployment of
+the site.
 
 ## Quickstart
 
 Here's a quick guide to updating the docs:
 
-1. Fork the [layer5io/docs repository](https://github.com/layer5io/docs) on GitHub.
+1. Fork the [layer5io/docs repository](https://github.com/layer5io/docs) on
+   GitHub.
 
 2. Make your changes and send a pull request (PR).
 
-3. If you're not yet ready for a review, add "WIP" to the PR name to indicate it's a work in progress.
+3. If you're not yet ready for a review, add "WIP" to the PR name to indicate
+   it's a work in progress.
 
-4. Wait for the automated PR workflow to do some checks.
-   When it's ready, you should see a comment like this: `deploy/netlify — Deploy preview ready!`
+4. Wait for the automated PR workflow to do some checks. When it's ready, you
+   should see a comment like this: `deploy/netlify — Deploy preview ready!`
 
-5. Click **Details** to the right of "Deploy preview ready" to see a preview of your updates.
+5. Click **Details** to the right of "Deploy preview ready" to see a preview of
+   your updates.
 
-6. Continue updating your doc and pushing your changes until you're happy with the content.
+6. Continue updating your doc and pushing your changes until you're happy with
+   the content.
 
-7. When you're ready for a review, add a comment to the PR, remove any holds or "WIP" markers, and assign a reviewer/approver. See the [Layer5 contributor guide](https://layer5.io/community/handbook/contribution).
+7. When you're ready for a review, add a comment to the PR, remove any holds or
+   "WIP" markers, and assign a reviewer/approver. See the
+   [Layer5 contributor guide](https://layer5.io/community/handbook/contribution).
 
-If you need more help with the GitHub workflow, follow  this [guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/CONTRIBUTING-gitflow.md).
+If you need more help with the GitHub workflow, follow this
+[guide to a standard GitHub workflow](https://github.com/layer5io/docs/blob/master/CONTRIBUTING-gitflow.md).
 
 ## Local development
 
-This section will show you how to develop the website locally, by running a local Hugo server.
+This section will show you how to develop the website locally, by running a
+local Hugo server.
 
 ### Install Hugo
 
-To install Hugo, follow the [instructions for your system type](https://gohugo.io/getting-started/installing/).
+To install Hugo, follow the
+[instructions for your system type](https://gohugo.io/getting-started/installing/).
 
-**NOTE:** we recommend that you use Hugo version `v0.140.2`, as this is currently the version we deploy to Netlify.
+**NOTE:** we recommend that you use Hugo version `v0.140.2`, as this is
+currently the version we deploy to Netlify.
 
 For example, using homebrew to install hugo on macOS or linux:
 
@@ -53,10 +66,13 @@ brew install hugo
 
 ### Install Node Packages
 
-If you plan to make changes to the site styling, you need to install some **node libraries** as well.
-(See the [Docsy setup guide](https://www.docsy.dev/docs/getting-started/#install-postcss) for more information)
+If you plan to make changes to the site styling, you need to install some **node
+libraries** as well. (See the
+[Docsy setup guide](https://www.docsy.dev/docs/getting-started/#install-postcss)
+for more information)
 
-You can install the same versions we use in Netlify (defined in `package.json`) with the following command:
+You can install the same versions we use in Netlify (defined in `package.json`)
+with the following command:
 
 ```bash
 npm install -D
@@ -64,55 +80,61 @@ npm install -D
 
 ### Run local hugo server
 
-Follow the usual GitHub workflow of forking the repository on GitHub and then cloning your fork to your local machine.
+Follow the usual GitHub workflow of forking the repository on GitHub and then
+cloning your fork to your local machine.
 
-1. **Fork** the [layer5io/docs repository](https://github.com/layer5io/docs) in the GitHub UI.
+1. **Fork** the [layer5io/docs repository](https://github.com/layer5io/docs) in
+   the GitHub UI.
 
 2. Clone your fork locally:
 
-    ```bash
-    git clone git@github.com:<your-github-username>/docs.git
-    cd website/
-    ```
+   ```bash
+   git clone git@github.com:<your-github-username>/docs.git
+   cd website/
+   ```
 
 3. Initialize the Docsy submodule:
 
-    ```bash
-    git submodule update --init --recursive
-    ```
+   ```bash
+   git submodule update --init --recursive
+   ```
 
 4. Install Docsy dependencies:
 
-    ```bash
-    # NOTE: ensure you have node 18 installed
-    (cd themes/docsy/ && npm install)
-    ```
+   ```bash
+   # NOTE: ensure you have node 18 installed
+   (cd themes/docsy/ && npm install)
+   ```
 
 5. Start your local Hugo server:
 
-    ```bash
-    hugo server -D
-    ```
+   ```bash
+   hugo server -D
+   ```
 
-6. You can access your website at [http://localhost:1313/](http://localhost:1313/)
+6. You can access your website at
+   [http://localhost:1313/](http://localhost:1313/)
 
 ### Useful docs
 
-* [User guide for the Docsy theme](https://www.docsy.dev/docs/getting-started/)
-* [Hugo installation guide](https://gohugo.io/getting-started/installing/)
-* [Hugo basic usage](https://gohugo.io/getting-started/usage/)
-* [Hugo site directory structure](https://gohugo.io/getting-started/directory-structure/)
-* [hugo server reference](https://gohugo.io/commands/hugo_server/)
+- [User guide for the Docsy theme](https://www.docsy.dev/docs/getting-started/)
+- [Hugo installation guide](https://gohugo.io/getting-started/installing/)
+- [Hugo basic usage](https://gohugo.io/getting-started/usage/)
+- [Hugo site directory structure](https://gohugo.io/getting-started/directory-structure/)
+- [hugo server reference](https://gohugo.io/commands/hugo_server/)
 
 ## Menu structure
 
-The site theme has one Hugo menu (`main`), which defines the top navigation bar. You can find and adjust the definition
-of the menu in the [site configuration file](https://github.com/layer5io/docs/blob/master/hugo.toml).
+The site theme has one Hugo menu (`main`), which defines the top navigation bar.
+You can find and adjust the definition of the menu in the
+[site configuration file](https://github.com/layer5io/docs/blob/master/hugo.toml).
 
-The left-hand navigation panel is defined by the directory structure under the [`content/en` directory](https://github.com/layer5io/docs/tree/master/content/en).
+The left-hand navigation panel is defined by the directory structure under the
+[`content/en` directory](https://github.com/layer5io/docs/tree/master/content/en).
 
-A `weight` property in the _front matter_ of each page determines the position of the page relative to the others in the same directory.
-The lower the weight, the earlier the page appears in the section.
+A `weight` property in the _front matter_ of each page determines the position
+of the page relative to the others in the same directory. The lower the weight,
+the earlier the page appears in the section.
 
 Here is an example `_index.md` file:
 
@@ -126,12 +148,16 @@ weight = 1
 
 ## Docsy Theme
 
-We use the [Docsy](https://www.docsy.dev/) theme for the website.
-The theme files are managed with a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in the `themes/docsy` directory.
+We use the [Docsy](https://www.docsy.dev/) theme for the website. The theme
+files are managed with a
+[git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in the
+`themes/docsy` directory.
 
-**Do not change these files**, they are not actually inside this repo, but are part of the [google/docsy](https://github.com/google/docsy) repo.
+**Do not change these files**, they are not actually inside this repo, but are
+part of the [google/docsy](https://github.com/google/docsy) repo.
 
-To update referenced docsy commit, run the following command at the root of the repo:
+To update referenced docsy commit, run the following command at the root of the
+repo:
 
 ```bash
 # for example, to update docsy to v0.6.0
@@ -143,39 +169,56 @@ git -C themes/docsy checkout tags/v0.6.0
 
 ## Documentation style guide
 
-For guidance on writing effective documentation, see the style guide for the Layer5 docs.
+For guidance on writing effective documentation, see the style guide for the
+Layer5 docs.
 
 ### Overriding theme styles
 
-The theme holds its styles in the [`assets/scss` directory](https://github.com/layer5io/docs/tree/master/assets/scss).
+The theme holds its styles in the
+[`assets/scss` directory](https://github.com/layer5io/docs/tree/master/assets/scss).
 
-**Do not change these files**, they are not actually inside this repo, but are part of the [google/docsy](https://github.com/google/docsy) repo. These files are managed as a Git submodule and may be updated or replaced when the theme is upgraded. Any changes made directly to the theme files will be lost during updates and are not preserved in version control.
+**Do not change these files**, they are not actually inside this repo, but are
+part of the [google/docsy](https://github.com/google/docsy) repo. These files
+are managed as a Git submodule and may be updated or replaced when the theme is
+upgraded. Any changes made directly to the theme files will be lost during
+updates and are not preserved in version control.
 
 You can override the default styles and add new ones:
 
-* In general, put your files in the project directory structure under `website` rather than in the theme directory.
-  Use the same file name as the theme does, and put the file in the same relative position.
-  Hugo looks first at the file in the main project directories, if present, then at the files under the theme directory.
-  
-  For example, the Layer5 website's [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html) overrides the theme's `layouts/partials/navbar.html`
+- In general, put your files in the project directory structure under `website`
+  rather than in the theme directory. Use the same file name as the theme does,
+  and put the file in the same relative position. Hugo looks first at the file
+  in the main project directories, if present, then at the files under the theme
+  directory.
 
-* You can update the Layer5 website's project variables in the [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
-  Values in that file override the [Docsy variables](https://github.com/google/docsy/blob/main/assets/scss/_variables.scss).
-  You can also use `_variables_project.scss` to specify your own values for any of the default [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
+  For example, the Layer5 website's
+  [`layouts/partials/navbar.html`](https://github.com/layer5io/docs/blob/master/layouts/partials/navbar.html)
+  overrides the theme's `layouts/partials/navbar.html`
 
-* For adding custom CSS rules, use the `_styles_project.scss` file in the same `assets/scss/` directory.
+- You can update the Layer5 website's project variables in the
+  [`_variables_project.scss` file](https://github.com/layer5io/docs/blob/master/assets/scss/_variables_project.scss).
+  Values in that file override the
+  [Docsy variables](https://github.com/google/docsy/blob/main/assets/scss/_variables.scss).
+  You can also use `_variables_project.scss` to specify your own values for any
+  of the default
+  [Bootstrap 4 variables](https://getbootstrap.com/docs/4.0/getting-started/theming/).
+
+- For adding custom CSS rules, use the `_styles_project.scss` file in the same
+  `assets/scss/` directory.
 
 ### Image styling
 
 ### Link and asset paths
 
-Use Hugo `ref` when linking from one documentation page to another documentation page:
+Use Hugo `ref` when linking from one documentation page to another documentation
+page:
 
 ```markdown
 [About]({{</* ref "about.md" */>}})
 ```
 
-For images and other assets that live next to `index.md` or `_index.md`, or inside that page bundle, use a normal relative path:
+For images and other assets that live next to `index.md` or `_index.md`, or
+inside that page bundle, use a normal relative path:
 
 ```markdown
 ![Alt text](images/example.png)
@@ -184,10 +227,15 @@ For images and other assets that live next to `index.md` or `_index.md`, or insi
 If you need HTML for custom sizing, keep the same relative path:
 
 ```html
-<img src="images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
+<img
+  src="images/example.png"
+  alt="Example description"
+  style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;"
+/>
 ```
 
-For global shared assets that physically live under `static/`, use the `static` shortcode:
+For global shared assets that physically live under `static/`, use the `static`
+shortcode:
 
 ```markdown
 ![Layer5 logo]({{</* static "images/logo.svg" */>}})
@@ -197,52 +245,69 @@ Do not use the `static` shortcode for assets under `content/`.
 
 By default, Markdown images are rendered with:
 
-* `max-width: 70%` of the viewport
-* `max-height: 80vh` of the viewport height
-* centered block layout
+- `max-width: 70%` of the viewport
+- `max-height: 80vh` of the viewport height
+- centered block layout
 
-This default styling works well for most landscape (horizontal) images. However, if an image is very tall, narrow, or otherwise looks awkward, you can override the default by embedding raw HTML and specifying a custom size:
+This default styling works well for most landscape (horizontal) images. However,
+if an image is very tall, narrow, or otherwise looks awkward, you can override
+the default by embedding raw HTML and specifying a custom size:
 
 ```html
-<img src="images/example.png" alt="Example description" style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;" />
+<img
+  src="images/example.png"
+  alt="Example description"
+  style="max-width: 40vw; max-height: 60vh; display: block; margin: 1rem auto;"
+/>
 ```
 
-If you want your image to include a caption for explanation or accessibility, you can use the `<figure>` element:
+If you want your image to include a caption for explanation or accessibility,
+you can use the `<figure>` element:
 
 ```html
 <figure>
   <img src="images/example.png" alt="Example description" />
-  <figcaption>Example: Control which layers of your design are visible using the Layers panel.</figcaption>
+  <figcaption>
+    Example: Control which layers of your design are visible using the Layers
+    panel.
+  </figcaption>
 </figure>
 ```
 
-Using `<figure>` allows you to pair an image with a caption while preserving semantic structure and visual consistency. It's particularly useful for annotated screenshots or UI illustrations.
+Using `<figure>` allows you to pair an image with a caption while preserving
+semantic structure and visual consistency. It's particularly useful for
+annotated screenshots or UI illustrations.
 
 ### Additional resources
 
-* **Bootstrap image utilities:**  
-  <https://getbootstrap.com/docs/4.0/content/images/>  
-* **Bootstrap utilities (borders, floats, etc.):**  
-  <https://getbootstrap.com/docs/4.0/utilities/>  
+- **Bootstrap image utilities:**  
+  <https://getbootstrap.com/docs/4.0/content/images/>
+- **Bootstrap utilities (borders, floats, etc.):**  
+  <https://getbootstrap.com/docs/4.0/utilities/>
 
 ## Using Hugo shortcodes
 
-Sometimes it's useful to define a snippet of information in one place and reuse it wherever we need it.
-For example, we want to be able to refer to the minimum version of various frameworks/libraries throughout the docs,
-without causing a maintenance nightmare.
+Sometimes it's useful to define a snippet of information in one place and reuse
+it wherever we need it. For example, we want to be able to refer to the minimum
+version of various frameworks/libraries throughout the docs, without causing a
+maintenance nightmare.
 
-For this purpose, we use Hugo's "shortcodes".
-Shortcodes are similar to Django variables. You define a shortcode in a file, then use a specific markup
-to invoke the shortcode in the docs. That markup is replaced by the content of the shortcode file when the page is built.
+For this purpose, we use Hugo's "shortcodes". Shortcodes are similar to Django
+variables. You define a shortcode in a file, then use a specific markup to
+invoke the shortcode in the docs. That markup is replaced by the content of the
+shortcode file when the page is built.
 
 To create a shortcode:
 
-1. Add an HTML file in the `/docs/layouts/shortcodes/` directory.
-   The file name must be short and meaningful, as it determines the shortcode you and others use in the docs.
+1. Add an HTML file in the `/docs/layouts/shortcodes/` directory. The file name
+   must be short and meaningful, as it determines the shortcode you and others
+   use in the docs.
 
-2. For the file content, add the text and HTML markup that should replace the shortcode markup when the web page is built.
+2. For the file content, add the text and HTML markup that should replace the
+   shortcode markup when the web page is built.
 
-To use a shortcode in a document, wrap the name of the shortcode in braces and percent signs like this:
+To use a shortcode in a document, wrap the name of the shortcode in braces and
+percent signs like this:
 
 ```code
   { {% shortcode-name %}}
@@ -250,21 +315,22 @@ To use a shortcode in a document, wrap the name of the shortcode in braces and p
 
 The shortcode name is the file name minus the `.html` file extension.
 
-**Example:** The following shortcode defines the minimum required version of Kubernetes:
+**Example:** The following shortcode defines the minimum required version of
+Kubernetes:
 
-* File name of the shortcode:
+- File name of the shortcode:
 
   ```
   kubernetes-min-version.html
   ```
 
-* Content of the shortcode:
+- Content of the shortcode:
 
   ```
   1.8
   ```
 
-* Usage in a document:
+- Usage in a document:
 
   ```
   You need Kubernetes version 1.28 or later.
@@ -272,7 +338,7 @@ The shortcode name is the file name minus the `.html` file extension.
 
 The following shortcode defines the minimum required version of Kubernetes:
 
-* File name of the shortcode:
+- File name of the shortcode:
 
   ```
   kubernetes-min-version.html
@@ -280,16 +346,18 @@ The following shortcode defines the minimum required version of Kubernetes:
 
 Useful Hugo docs:
 
-* [Shortcode templates](https://gohugo.io/templates/shortcode-templates/)
-* [Shortcodes](https://gohugo.io/content-management/shortcodes/)
+- [Shortcode templates](https://gohugo.io/templates/shortcode-templates/)
+- [Shortcodes](https://gohugo.io/content-management/shortcodes/)
 
-Whenever any documents reference any source code, you should use the version shortcode in the links, like so:
+Whenever any documents reference any source code, you should use the version
+shortcode in the links, like so:
 
 ```
 https://github.com/layer5io/docs/blob/master/scripts/gke/deploy.sh
 ```
 
-This ensures that all the links in a versioned webpage point to the correct branch.
+This ensures that all the links in a versioned webpage point to the correct
+branch.
 
 <!-- ## Versioning of the docs
 For each stable release, we create a new branch for the relevant documentation.
@@ -301,31 +369,63 @@ For information on how to update the website to a new version, see the [Layer5 r
 
 ## Markdown
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
+Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io)
+should be blue with no underlines (unless hovered over).
 
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
+There should be whitespace between paragraphs. Vape migas chillwave sriracha
+poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party
+heirloom letterpress air plant pop-up. Sustainable chia skateboard art party
+banjo cardigan normcore affogato vexillologist quinoa meggings man bun master
+cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan
+iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel,
+actually keffiyeh thundercats photo booth pour-over twee fam food truck
+microdosing banh mi. Vice activated charcoal raclette unicorn live-edge
+post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo
+park humblebrag tilde.
 
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
+90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh
+humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh
+swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu,
+artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual.
+Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb
+marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan
+vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
 
 > There should be no margin above this first sentence.
 >
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
+> Blockquotes should be a lighter gray with a border along the left side in the
+> secondary color.
 >
 > There should be no margin below this final sentence.
 
 ## First Header 2
 
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape _single-origin coffee_ brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
+This is a normal paragraph following a header. Knausgaard kale chips snackwave
+microdosing cronut copper mug swag synth bitters letterpress glossier **craft
+beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean
+shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery
+activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed
+locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you
+probably haven't heard of them copper mug, crucifix green juice vape
+_single-origin coffee_ brunch actually. Mustache etsy vexillologist raclette
+authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my
+job, I love my friends, I love Chardonnay!
 
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
+Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me
+plumas fila quin afuerunt copia haec o neque.
 
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
+On big screens, paragraphs and headings should not take up the full container
+width, but we want tables, code blocks and similar to take the full width.
 
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
+Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork
+belly 8-bit yuccie PBR&B. **I love this life we live in**.
 
 ## Second Header 2
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone
+> doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock
+> rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow
+> shoulder short ribs biltong.
 
 ### Header 3
 
@@ -333,13 +433,16 @@ Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork b
 This is a code block following a header.
 ```
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
+Next level leggings before they sold out, PBR&B church-key shaman echo park.
+Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub
+Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape,
+chia messenger bag plaid cardigan.
 
 #### Header 4
 
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
+- This is an unordered list following a header.
+- This is an unordered list following a header.
+- This is an unordered list following a header.
 
 ##### Header 5
 
@@ -349,23 +452,23 @@ Next level leggings before they sold out, PBR&B church-key shaman echo park. Kal
 
 ###### Header 6
 
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
+| What    | Follows  |
+| ------- | -------- |
+| A table | A header |
+| A table | A header |
+| A table | A header |
 
-----------------
+---
 
 There's a horizontal rule above and below this.
 
-----------------
+---
 
 Here is an unordered list:
 
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
+- Liverpool F.C.
+- Chelsea F.C.
+- Manchester United F.C.
 
 And an ordered list:
 
@@ -375,63 +478,59 @@ And an ordered list:
 
 And an unordered task list:
 
-* [x] Create a Hugo theme
-* [x] Add task lists to it
-* [ ] Take a vacation
+- [x] Create a Hugo theme
+- [x] Add task lists to it
+- [ ] Take a vacation
 
 And a "mixed" task list:
 
-* [ ] Pack bags
-* Don’t forget your passport!
-* [ ] Travel!
+- [ ] Pack bags
+- Don’t forget your passport!
+- [ ] Travel!
 
 And a nested list:
 
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
+- Jackson 5
+  - Michael
+  - Tito
+  - Jackie
+  - Marlon
+  - Jermaine
+- TMNT
+  - Leonardo
+  - Michelangelo
+  - Donatello
+  - Raphael
 
 Definition lists can be used with Markdown syntax. Definition headers are bold.
 
-Name
-: Godzilla
+Name : Godzilla
 
-Born
-: 1952
+Born : 1952
 
-Birthplace
-: Japan
+Birthplace : Japan
 
-Color
-: Green
+Color : Green
 
-----------------
+---
 
 Tables should have bold headings and alternating shaded rows.
 
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
+| Artist          | Album          | Year |
+| --------------- | -------------- | ---- |
+| Michael Jackson | Thriller       | 1982 |
+| Prince          | Purple Rain    | 1984 |
+| Beastie Boys    | License to Ill | 1986 |
 
 If a table is too wide, it should scroll horizontally.
 
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | No awards, but this table cell is wide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
+| Artist          | Album          | Year | Label                   | Awards                                                                                                                                                                                                                                                                          | Songs                                                                                                                                                                                                                     |
+| --------------- | -------------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Michael Jackson | Thriller       | 1982 | Epic Records            | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical                                                | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life                                                               |
+| Prince          | Purple Rain    | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain                                                                           |
+| Beastie Boys    | License to Ill | 1986 | Mercury Records         | No awards, but this table cell is wide                                                                                                                                                                                                                                          | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
 
-----------------
+---
 
 Code snippets like `var foo = "bar";` can be shown inline.
 
@@ -468,12 +567,12 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 
 Inline code inside table cells should still be distinguishable.
 
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
+| Language   | Code               |
+| ---------- | ------------------ |
+| Javascript | `var foo = "bar";` |
+| Ruby       | `foo = "bar"{`     |
 
-----------------
+---
 
 Small images should be shown at their actual size.
 
@@ -483,38 +582,55 @@ Large images should always scale down and fit in the content container.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
 
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
+_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik
+Pedersen, CC-BY-SA._
 
 ## Components
 
 ### Alerts
 
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
+{{< alert >}}This is an alert.{{< /alert >}} {{< alert title="Note" >}}This is
+an alert with a title.{{< /alert >}} {{% alert title="Note" %}}This is an alert
+with a title and **Markdown**.{{% /alert %}} {{< alert color="success" >}}This
+is a successful alert.{{< /alert >}} {{< alert color="warning" >}}This is a
+warning.{{< /alert >}} {{< alert color="warning" title="Warning" >}}This is a
+warning with a title.{{< /alert >}}
 
 ## Another Heading
 
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet
+t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham
+hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow
+shoulder short ribs biltong.
 
 ### This Document
 
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam _eripitur_? Sitim noceat signa _probat quidem_. Sua longis _fugatis_ quidem genae.
+Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi.
+Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum
+ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam
+_eripitur_? Sitim noceat signa _probat quidem_. Sua longis _fugatis_ quidem
+genae.
 
 ### Pixel Count
 
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
+Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha
+vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard
+ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl
+gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
 
 ### Contact Info
 
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
+Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3
+wolf moon blue bottle raw denim normcore poutine pork belly.
 
 ### External Links
 
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
+Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato
+green juice listicle pickled everyday carry hashtag. Organic sustainable
+letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it
+stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui
+cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie
+williamsburg chillwave shoreditch forage waistcoat.
 
 ```
 This is the final element on the page and there should be no margin below this.
@@ -522,14 +638,9 @@ This is the final element on the page and there should be no margin below this.
 
 ### TabPane
 
-{{< tabpane text=true >}}
-{{< tab name="Example Tab 1" >}}
-This is the content inside Example Tab 1.
-{{< /tab >}}
-{{< tab name="Example Tab 2" >}}
-This is the content inside Example Tab 2.
-{{< /tab >}}
-{{< /tabpane >}}
+{{< tabpane text=true >}} {{< tab name="Example Tab 1" >}} This is the content
+inside Example Tab 1. {{< /tab >}} {{< tab name="Example Tab 2" >}} This is the
+content inside Example Tab 2. {{< /tab >}} {{< /tabpane >}}
 
 ### Footnotes
 

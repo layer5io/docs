@@ -8,14 +8,10 @@ tags: [permissions]
 draft: true
 aliases:
   - /cloud/security/roles/provider-admin-roles/
-
 ---
 
-{{< cardpane >}}
-{{% card %}}
-<img src="../images/role-provider-admin.svg" />
-{{% /card %}}
-{{% card header="## Provider Administrator" %}}
+{{< cardpane >}} {{% card %}} <img src="../images/role-provider-admin.svg" />
+{{% /card %}} {{% card header="## Provider Administrator" %}}
 
 **What is the purpose of this role?**
 
@@ -43,5 +39,4 @@ aliases:
 
 - Can perform CRUD on all resources
 
-{{% /card %}}
-{{< /cardpane >}}
+{{% /card %}} {{< /cardpane >}}

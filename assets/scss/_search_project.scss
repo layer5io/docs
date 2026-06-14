@@ -95,7 +95,7 @@
     .td-search__icon {
       display: flex;
       color: $input-placeholder-color;
-      padding-right: 0.2rem;      
+      padding-right: 0.2rem;
     }
   }
 }
@@ -133,7 +133,7 @@
 
   .td-navbar-nav-scroll {
     // max-width: fit-content;
-    @media (max-width: 991.98px){
+    @media (max-width: 991.98px) {
       padding-bottom: 3rem;
     }
   }
@@ -170,11 +170,13 @@
 .form-control {
   border: 1px solid #ced4da;
 }
-input[type="search"]::-webkit-search-cancel-button {
-  filter: invert(55%) sepia(75%) saturate(380%) hue-rotate(135deg) brightness(95%) contrast(90%);
+input[type='search']::-webkit-search-cancel-button {
+  filter: invert(55%) sepia(75%) saturate(380%) hue-rotate(135deg)
+    brightness(95%) contrast(90%);
   cursor: pointer;
   transform: scale(1.1);
 }
-input[type="search"]::-webkit-search-cancel-button:hover {
-  filter: invert(60%) sepia(95%) saturate(500%) hue-rotate(140deg) brightness(100%) contrast(100%);
+input[type='search']::-webkit-search-cancel-button:hover {
+  filter: invert(60%) sepia(95%) saturate(500%) hue-rotate(140deg)
+    brightness(100%) contrast(100%);
 }

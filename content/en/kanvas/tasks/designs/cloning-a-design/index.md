@@ -1,7 +1,8 @@
 ---
 title: Cloning a Design
 description: >
-  Treat designs as templates by cloning an existing design to modify and build upon.
+  Treat designs as templates by cloning an existing design to modify and build
+  upon.
 weight: 5
 categories: [Designer]
 tags: [designs]
@@ -14,23 +15,25 @@ aliases:
 1. Switch to Kanvas Designer mode, if not already in it.
 2. In the left ☰ menu, click New → From a template.
 3. Select a design from the list that appears in the panel.
-4. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
+4. A modal will pop up requesting you to clone (create a copy of) the design
+   you’ve selected.
 
 ![Copy of a Design](images/deploy-designs/clone-design.gif)
 
 This will create a copy of the catalog item to a new design, now owned by you.
 
-1. Click “clone” and a copy of the design will appear on your Kanvas canvas. You can then configure the design to suit your purposes.
-2. To access your newly cloned design, click the three-shapes icon, then click through: Workspaces → My Workspaces → Explore Workspaces → My Designs.
+1. Click “clone” and a copy of the design will appear on your Kanvas canvas. You
+   can then configure the design to suit your purposes.
+2. To access your newly cloned design, click the three-shapes icon, then click
+   through: Workspaces → My Workspaces → Explore Workspaces → My Designs.
 
 ![Copy of a Design](images/deploy-designs/my-designs.gif)
 
-You are now free to deploy it as it is or modify it further. 
+You are now free to deploy it as it is or modify it further.
 
-
-{{< alert title="Learn about Designs" >}}Learn more about what a [Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits into Meshery's approach to cloud native management.
-{{< /alert >}}
-
+{{< alert title="Learn about Designs" >}}Learn more about what a
+[Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits
+into Meshery's approach to cloud native management. {{< /alert >}}
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 

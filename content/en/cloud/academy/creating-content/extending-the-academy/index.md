@@ -2,63 +2,97 @@
 title: Extending the Academy
 weight: 2
 description: >
-   A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
+  A high-level guide to understanding the architecture, features, and workflow
+  for creating custom content on the Layer5 Academy platform.
 categories: [Academy]
 tags: [Academy]
-aliases: 
-- /cloud/academy/extending-the-academy/
+aliases:
+  - /cloud/academy/extending-the-academy/
 ---
 
-The [Layer5 Cloud Academy](https://cloud.layer5.io/academy) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
+The [Layer5 Cloud Academy](https://cloud.layer5.io/academy) is a modular
+learning management system (LMS) designed for building learning paths and
+interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud
+ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud
+native infrastructure. This integration allows you to embed live visualizations,
+interactive designs, and contextual experiences directly into your courses.
 
-This approach transforms learning from passive reading into active, hands-on practice.
+This approach transforms learning from passive reading into active, hands-on
+practice.
 
 ![Example of Academy](./images/overview.png)
 
 ### Who Can Create Content
 
-The ability to create, manage, and publish content is available to organizations on our **Enterprise Plan**. This plan includes full support for:
+The ability to create, manage, and publish content is available to organizations
+on our **Enterprise Plan**. This plan includes full support for:
 
-  - **Multi-tenancy:** Your content, users, and data are securely isolated from all other organizations.
-  - **White-labeling:** You can brand the Academy with your own logo and color scheme.
-  - **Customization:** You have complete control over the learning paths and challenges you create.
+- **Multi-tenancy:** Your content, users, and data are securely isolated from
+  all other organizations.
+- **White-labeling:** You can brand the Academy with your own logo and color
+  scheme.
+- **Customization:** You have complete control over the learning paths and
+  challenges you create.
 
-> You can learn more about our subscription plans on the [Layer5 Pricing](https://layer5.io/pricing) page.
+> You can learn more about our subscription plans on the
+> [Layer5 Pricing](https://layer5.io/pricing) page.
 
 ### Content Creation Process
 
-We believe you should always own your content. That’s why the Academy is designed around a Git-native workflow that avoids vendor lock-in.
+We believe you should always own your content. That’s why the Academy is
+designed around a Git-native workflow that avoids vendor lock-in.
 
-Instead of using a restrictive web UI, you manage all your learning content within **your own Git repositories**. This gives you the full power of version control, collaboration through pull requests, and a workflow that your developers are already comfortable with. 
+Instead of using a restrictive web UI, you manage all your learning content
+within **your own Git repositories**. This gives you the full power of version
+control, collaboration through pull requests, and a workflow that your
+developers are already comfortable with.
 
-The entire experience is powered by **[Hugo](https://gohugo.io/)**, a powerful static site engine, but we've abstracted away the complexity. You and your team only need to write in simple Markdown.
+The entire experience is powered by **[Hugo](https://gohugo.io/)**, a powerful
+static site engine, but we've abstracted away the complexity. You and your team
+only need to write in simple Markdown.
 
-{{< alert type="info" title="No Web Development Skills Needed" >}}
-You don't need to be a web developer to create beautiful and effective learning content. The provided theme handles all the layouts, styling, and complex components, letting you focus solely on the quality of your material.
-{{< /alert >}}
+{{< alert type="info" title="No Web Development Skills Needed" >}} You don't
+need to be a web developer to create beautiful and effective learning content.
+The provided theme handles all the layouts, styling, and complex components,
+letting you focus solely on the quality of your material. {{< /alert >}}
 
 ### Organizing Your Learning Paths
 
-Your content is structured hierarchically to create a clear and logical learning experience for your users.
+Your content is structured hierarchically to create a clear and logical learning
+experience for your users.
 
-At the highest level, you have a **Learning Path**, which contains one or more **Courses**. Each Course is broken down into **Modules**, and each Module consists of individual learning activities like **Pages** (for text) and **Labs** (for hands-on practice). In addition, **Tests** can be integrated at various levels of this hierarchy. This modular structure makes your content easy to navigate, manage, and update.
+At the highest level, you have a **Learning Path**, which contains one or more
+**Courses**. Each Course is broken down into **Modules**, and each Module
+consists of individual learning activities like **Pages** (for text) and
+**Labs** (for hands-on practice). In addition, **Tests** can be integrated at
+various levels of this hierarchy. This modular structure makes your content easy
+to navigate, manage, and update.
 
 For example, a **Learning Path** named **"Mastering Kubernetes"** might contain:
-  * A **Course** on **"Core Concepts"**, which is broken down into multiple modules:
-      * **Module 1: "Workload Fundamentals"**, containing a **Page** on the "Anatomy of a Pod" and a hands-on **Lab** for "Scaling Deployments".
-      * **Module 2: "Networking Principles"**, containing a **Page** that covers "Services and Ingress" and a **Tests** on networking concepts.
 
-{{< alert type="warning" title="Content Isolation" >}}
-To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}).
+- A **Course** on **"Core Concepts"**, which is broken down into multiple
+  modules:
+  - **Module 1: "Workload Fundamentals"**, containing a **Page** on the "Anatomy
+    of a Pod" and a hands-on **Lab** for "Scaling Deployments".
+  - **Module 2: "Networking Principles"**, containing a **Page** that covers
+    "Services and Ingress" and a **Tests** on networking concepts.
+
+{{< alert type="warning" title="Content Isolation" >}} To ensure security and
+isolation, all of your content files must be placed within a directory named for
+your organization UUID. You'll learn the specifics of how to do this in our
+[hands-on
+tutorial]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}).
 {{< /alert >}}
 
 ### Advanced Content Features
 
-Create custom Hugo shortcodes, mix HTML with Markdown, and add custom CSS styling to enhance your Academy content.
+Create custom Hugo shortcodes, mix HTML with Markdown, and add custom CSS
+styling to enhance your Academy content.
 
 #### Content Format Support
 
-The Academy platform supports **Markdown + HTML mixing** and **custom CSS styling**.
+The Academy platform supports **Markdown + HTML mixing** and **custom CSS
+styling**.
 
 ##### HTML + Markdown Integration
 
@@ -83,11 +117,12 @@ The platform supports CSS through multiple methods:
 2. **CSS in shortcodes** (demonstrated below)
 3. **CSS classes** in HTML elements
 
-{{< styled-callout title="Live Example" >}}
-This example demonstrates custom CSS styling within the Academy platform. The styling includes custom colors, padding, borders, and typography.
-{{< /styled-callout >}}
+{{< styled-callout title="Live Example" >}} This example demonstrates custom CSS
+styling within the Academy platform. The styling includes custom colors,
+padding, borders, and typography. {{< /styled-callout >}}
 
 When properly rendered, you will see:
+
 - Markdown formatting (bold, italic, links) processed within HTML elements
 - Custom CSS styles applied (colors, spacing, borders)
 - Seamless integration without layout conflicts
@@ -95,11 +130,13 @@ When properly rendered, you will see:
 
 #### Creating Custom Shortcodes
 
-Custom shortcodes are reusable components that enhance Academy content. They function as templates that accept parameters and generate HTML output.
+Custom shortcodes are reusable components that enhance Academy content. They
+function as templates that accept parameters and generate HTML output.
 
 ##### Basic Shortcode
 
-**Step 1:** Create the shortcode file in your organization's directory ([example](https://github.com/layer5io/academy-example/tree/master/layouts)):
+**Step 1:** Create the shortcode file in your organization's directory
+([example](https://github.com/layer5io/academy-example/tree/master/layouts)):
 
 ```shell
 layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
@@ -109,10 +146,7 @@ layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
 
 ```html
 {{ $names := .Get "names" }}
-<div class="custom shortcode">
-  {{ $names }}
- Hey! This is a custom shortcode
-</div>
+<div class="custom shortcode">{{ $names }} Hey! This is a custom shortcode</div>
 ```
 
 **Step 3:** Use the shortcode in your content:
@@ -122,6 +156,7 @@ layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
 ```
 
 **How it works:**
+
 - `{{ .Get "names" }}` retrieves the "names" parameter
 - The shortcode outputs: "Alex, Bob, Charely Hey! This is a custom shortcode"
 - You can reuse this shortcode throughout your Academy content
@@ -131,15 +166,16 @@ layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
 Add CSS styling to make shortcodes visually appealing.
 
 **Example:** `layouts/shortcodes/<your-org-uuid>/styled-callout.html`
+
 ```html
 <style>
-.custom-callout { 
-  padding: 1rem; 
-  margin: 1rem 0; 
-  border-radius: 4px; 
-  border-left: 4px solid #007bff;
-  background: #f8f9fa;
-}
+  .custom-callout {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    border-left: 4px solid #007bff;
+    background: #f8f9fa;
+  }
 </style>
 <div class="custom-callout">
   <strong>{{ .Get "title" | default "Note" }}:</strong> {{ .Inner }}
@@ -147,18 +183,17 @@ Add CSS styling to make shortcodes visually appealing.
 ```
 
 **Usage:**
+
 ```markdown
-{{</* styled-callout title="Custom CSS Example" */>}}
-This is a styled callout with custom CSS.
-{{</* /styled-callout */>}}
+{{</* styled-callout title="Custom CSS Example" */>}} This is a styled callout
+with custom CSS. {{</* /styled-callout */>}}
 ```
 
-**Result:**
-{{< styled-callout title="Custom CSS Example" >}}
-This is a styled callout with custom CSS.
-{{< /styled-callout >}}
+**Result:** {{< styled-callout title="Custom CSS Example" >}} This is a styled
+callout with custom CSS. {{< /styled-callout >}}
 
 **How CSS works in shortcodes:**
+
 - `<style>` tags define the visual appearance
 - `.custom-callout` creates a CSS class for styling
 - The shortcode applies padding, margins, colors, and borders
@@ -166,17 +201,24 @@ This is a styled callout with custom CSS.
 
 ##### Advanced Hugo Features
 
-{{< alert type="info" title="Email Customization" >}}
-The Layer5 Academy platform supports all Hugo shortcode features. For more advanced functionality, see the [Hugo documentation](https://gohugo.io/content-management/shortcodes/). 
+{{< alert type="info" title="Email Customization" >}} The Layer5 Academy
+platform supports all Hugo shortcode features. For more advanced functionality,
+see the [Hugo documentation](https://gohugo.io/content-management/shortcodes/).
 {{< /alert >}}
 
 ### Branded Email Communications
 
-When using the Academy with [white-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
+When using the Academy with
+[white-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}})
+enabled, all system-generated emails (badge awards, certificate awards,
+challenge registrations) automatically reflect your organization's branding.
 
-Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
+Below is an example email template showing how badge award notifications appear
+when white-labeling is enabled. The parts enclosed in `{{}}` are automatically
+replaced with your organization's specific information:
 
 **Email Template Structure:**
+
 ```
 From: no-reply@{{OrganizationDomain}}                    ← Your custom domain
 Subject: New badge(s) awarded by {{OrganizationName}}    ← Your organization name
@@ -191,7 +233,7 @@ Subject: New badge(s) awarded by {{OrganizationName}}    ← Your organization n
     Share your achievements with the world:
     X | LinkedIn | Facebook
 ---
-{{OrganizationName}} Academy | Powered by Layer5 Cloud 
+{{OrganizationName}} Academy | Powered by Layer5 Cloud
 ```
 
 Here is a real-world example of the email:
@@ -200,6 +242,9 @@ Here is a real-world example of the email:
 When users click the badge, they will go to the details in the Academy:
 ![Example of Badge](./images/example_badge.png)
 
-{{< alert type="info" title="Email Customization" >}}
-Email templates automatically incorporate your organization's logo and primary brand color as configured in your [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations). Custom email templates can be provided for Enterprise customers with specific branding requirements.
-{{< /alert >}}
+{{< alert type="info" title="Email Customization" >}} Email templates
+automatically incorporate your organization's logo and primary brand color as
+configured in your
+[Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations).
+Custom email templates can be provided for Enterprise customers with specific
+branding requirements. {{< /alert >}}

@@ -15,7 +15,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Fetch discussions data for kanvas tag
-        run: curl https://discuss.layer5.io/tag/kanvas.json -o data/kanvas_discuss.json
+        run:
+          curl https://discuss.layer5.io/tag/kanvas.json -o
+          data/kanvas_discuss.json
 
       - name: Pull changes from remote
         run: git pull origin master
@@ -25,7 +27,8 @@ jobs:
         with:
           commit_user_name: Discuss bot
           commit_user_email: discussions@meshery.io
-          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          commit_options: "--signoff"
-          commit_message: "latest discussion data files added"
+          commit_author:
+            ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit_options: '--signoff'
+          commit_message: 'latest discussion data files added'
           branch: master

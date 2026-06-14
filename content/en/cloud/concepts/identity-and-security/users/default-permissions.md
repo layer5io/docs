@@ -7,29 +7,32 @@ categories: [Identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/default-permissions/
-
 ---
 
-| Permissions                                                     | User        |
-|-----------------------------------------------------------------|-------------|
-| View All Users                                                  | ✅         |
-| View user Profile                                               | ✅         |
-| View user Designs                                               | ✅         |
-| View user Badges                                                | ✅         |
-| View user Activity                                              | ✅         |
-| View Keys                                                       | ✅         |
-| View Catalog                                                    | ✅         |
-| Invite Users                                                    | ✅         |
-| Update User Profile                                             | ❌         |
-| Delete a user account                                           | ❌         |
-| Create a new user                                               | ❌         |
-| Leave a Team                                                    | ❌         |
-| View Roles                                                      | ❌         |
-| Assign roles to team members                                    | ❌         |
-| Assign keys and keychains to the team members                   | ❌         |
+| Permissions                                   | User |
+| --------------------------------------------- | ---- |
+| View All Users                                | ✅   |
+| View user Profile                             | ✅   |
+| View user Designs                             | ✅   |
+| View user Badges                              | ✅   |
+| View user Activity                            | ✅   |
+| View Keys                                     | ✅   |
+| View Catalog                                  | ✅   |
+| Invite Users                                  | ✅   |
+| Update User Profile                           | ❌   |
+| Delete a user account                         | ❌   |
+| Create a new user                             | ❌   |
+| Leave a Team                                  | ❌   |
+| View Roles                                    | ❌   |
+| Assign roles to team members                  | ❌   |
+| Assign keys and keychains to the team members | ❌   |
+
 {.td-initial}
 
-{{< alert title="*Organization Owner" type="warning" >}}
-_Permissions marked with * apply only if you are the owner of the organization._{{< /alert >}}
+{{< alert title="*Organization Owner" type="warning" >}} _Permissions marked
+with \* apply only if you are the owner of the organization._{{< /alert >}}
 
-{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}
+{{< alert title="Customizable Permissions" type="info" >}}Default permissions
+can be easily customized by simply creating your own
+[keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) and
+[roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}
