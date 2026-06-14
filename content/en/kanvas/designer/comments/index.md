@@ -88,7 +88,7 @@ Manage your comment history by clicking on the "View Comment History" button. Th
 
 From the comment history panel, you can manage individual threads without leaving the review flow:
 
-- **Resolve individual comments** once a discussion is complete while keeping the thread available for future reference.
+- **Resolve comment threads** once a discussion is complete while keeping the thread available for future reference.
 - **Mute notifications** for a specific comment thread when you want to reduce email noise without changing your broader comment notification preferences.
 - **Delete individual comments** when a thread should be removed entirely instead of kept as part of the design's historical record.
 
