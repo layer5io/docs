@@ -1,13 +1,13 @@
 {{ with .Params.relatedDocs }}
 <section class="related-docs">
-  <h2>Related Docs</h2>
-  <ul>
+  <p>Related Docs:</p>
+  <ol start="1">
     {{ range . }}
     {{ $relatedPage := $.Site.GetPage . }}
     {{ if $relatedPage }}
     <li><a href="{{ $relatedPage.RelPermalink }}">{{ $relatedPage.Title }}</a></li>
     {{ end }}
     {{ end }}
-  </ul>
+  </ol>
 </section>
 {{ end }}
