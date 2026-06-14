@@ -20230,8 +20230,8 @@ div.tip {
   padding: 2rem;
   font-style: italic;
   font-size: 0.8rem;
-  border-top: '1px solid $secondary';
-  border-bottom: '1px solid $secondary';
+  border-top: 1px solid #00d3a9;
+  border-bottom: 1px solid #00d3a9;
   border-left: 1px dashed #00d3a9;
   border-right: 1px dashed #00d3a9;
   margin-bottom: 1rem;
@@ -22816,8 +22816,8 @@ div.tip {
   padding: 2rem;
   font-style: italic;
   font-size: 0.8rem;
-  border-top: '1px solid $secondary';
-  border-bottom: '1px solid $secondary';
+  border-top: 1px solid #00d3a9;
+  border-bottom: 1px solid #00d3a9;
   border-left: 1px dashed #00d3a9;
   border-right: 1px dashed #00d3a9;
   margin-bottom: 1rem;
