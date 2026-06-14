@@ -90,7 +90,7 @@ From the comment history panel, you can manage individual threads without leavin
 
 - **Resolve comment threads** once a discussion is complete while keeping the thread available for future reference.
 - **Mute notifications** for a specific comment thread when you want to reduce email noise without changing your broader comment notification preferences.
-- **Delete individual comments** when a thread should be removed entirely instead of kept as part of the design's historical record.
+- **Delete individual comments** when they should be removed entirely instead of kept as part of the design's historical record.
 
 For most review workflows, resolving a comment is preferred over deleting it because resolution preserves context and lets you reopen the thread later if needed.
 
