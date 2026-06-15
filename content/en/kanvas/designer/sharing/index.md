@@ -12,7 +12,7 @@ aliases:
 In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
 {{< alert title="Sharing Views" type="info">}}
-You can share and control access to [Views](/kanvas/operator/views) in the same fashion as you do for Designs.
+You can share and control access to [Views]({{< ref "kanvas/operator/views/index.md" >}}) in the same fashion as you do for Designs.
 {{< /alert >}}
 
 ## Understanding visibility levels
@@ -27,7 +27,7 @@ Designs have visibility statuses that defines who can access your designs. These
 Public status is useful for sharing designs broadly, for example, as open-source templates, public demonstrations, or for soliciting feedback from a wider community. If your goal is to share broadly only within your organization, consider using a combination of private designs shared with specific organization-wide teams or workspaces.
 {{< /alert >}}
 
-- **Published:**  The published visibility setting is designed for sharing designs with a wider audience. Published designs become discoverable to other users and allow them to view, download, and clone the design. Users can find published designs through [Cloud Catalog](/cloud/concepts/catalog) ([open catalog](https://cloud.layer5.io/catalog)).
+- **Published:**  The published visibility setting is designed for sharing designs with a wider audience. Published designs become discoverable to other users and allow them to view, download, and clone the design. Users can find published designs through [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}) ([open catalog](https://cloud.layer5.io/catalog)).
 
 ## Granting access to individual users
 
@@ -45,11 +45,11 @@ There are two primary ways to open the "Share" modal for a design:
     * Click the **more options icon** (often represented by three vertical dots ⋮) associated with that design.
     * Select **"Share"** from the context menu that appears.
 
-![Ways to open Share modal](/kanvas/designer/sharing/model-where.gif)
+![Ways to open Share modal](images/model-where.gif)
 
 Once the "Share" modal is open, type the names or email addresses of the users or teams you want to invite as Collaborators. From the "Share" modal, you can also typically change the overall visibility status of the design (e.g., switching between Private and Public).
 
-![Share Modal](/kanvas/designer/sharing/share-model.png)
+![Share Modal](images/share-model.png)
 
 ## Owner vs. Collaborator
 
@@ -94,7 +94,7 @@ As the Owner of a design, you can manage who has access to it at any time using 
 
 {{< alert title="Implications of adding a Design to a Workspace">}}
 When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private. Review your workspace's team assignments in order to verify which users will be granted access.
-Learn more about [auditing and assigning Workspace access](/cloud/concepts/spaces/workspaces/).
+Learn more about [auditing and assigning Workspace access]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
 {{< /alert >}}
 
 ## Sharing Your Design with a Link
@@ -128,7 +128,7 @@ There are two primary ways to share designs with teams:
         2.  Assign one or more Teams to that same Workspace.
         3.  By this association, members of the assigned Team(s) should then inherit access to the **designs** within that Workspace, including Private designs.
 
-> Learn more about auditing the access permission within [workspace](/cloud/concepts/spaces/workspaces/)
+> Learn more about auditing the access permission within [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}})
 
 [^1]: This functionality is not fully implemented yet. Users might occasionally observe that even when a team is assigned to a workspace, members of that team may not be able to access private designs within that workspace without explicit individual or team-level sharing for the design itself.
 [^2]: This feature (direct sharing with teams via the "Share" modal) is not yet fully implemented and is planned for a future update.

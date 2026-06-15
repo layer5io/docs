@@ -20,6 +20,9 @@
   The `src` attribute specifies the script location, as provided by the user. 
 -->
 {{ $script := .Get "src" }}
+{{ if and (not (hasPrefix $script "../")) (not (hasPrefix $script "./")) (not (hasPrefix $script "http://")) (not (hasPrefix $script "https://")) (not (hasPrefix $script "//")) }}
+  {{ $script = $script | relURL }}
+{{ end }}
 
 <!-- 
   Retrieve the unique ID for the embedded Meshery design. 

@@ -46,4 +46,3 @@ Jordan shares the design with Rex Park, granting him reviewer access so he can i
 Rex opens `api-platform-aws` in Kanvas Designer and traces the connection paths Jordan laid out. He sees the Lambda-to-EKS link and adds his own comment on it: *"Should Lambda connect directly to EKS or go through an internal ALB? Worth discussing before we deploy."* The comment pins to the connection, not to a chat thread.
 
 Jordan sees the notification and comes back to the canvas. They hash it out in the comment thread, land on the ALB approach, and Jordan draws a new connection representing the internal Application Load Balancer sitting between Lambda and the cluster's service mesh entry point. The design updates in place — no version-named duplicates, no stale exported images — and Rex can reload and see the revised architecture immediately.
-

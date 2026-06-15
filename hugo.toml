@@ -1,6 +1,6 @@
 baseURL = "https://docs.layer5.io"
 title = "Layer5 Documentation"
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = false
 
 # Language settings
@@ -22,6 +22,16 @@ enableGitInfo = true
 [taxonomies]
 tag = "tags"
 category = "categories"
+
+[related]
+threshold = 1
+includeNewer = true
+[[related.indices]]
+name = "tags"
+weight = 100
+[[related.indices]]
+name = "categories"
+weight = 200
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
@@ -147,6 +157,9 @@ offlineSearch = true
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
 
+[params.relatedReading]
+pageTypes = ["docs"]
+
 # User interface configuration
 [params.ui]
 #  Set to true to disable breadcrumb navigation.
@@ -162,7 +175,7 @@ navbar_translucent_over_cover_disable = false
 # Enable to show the side bar menu in its compact state.
 sidebar_menu_compact = true
 # Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = false
+sidebar_search_disable = true
 # Enable to show toggle arrows
 sidebar_menu_foldable = false
 # Limit the number of levels deep the menu displays

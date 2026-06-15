@@ -11,12 +11,12 @@ categories: [About]
 ---
 
 {{< alert type="info" >}}
-This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see [Meet Five and the Cast](/cloud/getting-started/meet-five/).
+This page is a working document for documentation contributors. For the narrative itself — characters, organizations, and seed data — see [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
 {{< /alert >}}
 
 ## Objective
 
-Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders ("User A", "Organization X"), every major docs section uses the canonical cast and scenarios defined in [Meet Five and the Cast](/cloud/getting-started/meet-five/). This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.
+Layer5 Cloud and Kanvas documentation adopts a continuous narrative centered on Five and his colleagues at Orbital Labs. Rather than using generic placeholders ("User A", "Organization X"), every major docs section uses the canonical cast and scenarios defined in [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}). This plan maps which characters and scenarios belong in which sections, which Five illustrations to use, and the priority order for rolling out updates.
 
 ## Integration Map
 
@@ -74,7 +74,7 @@ When capturing screenshots for any section that references the Five narrative, f
 | Provider Admin, cross-tenant | Dr. Aiko | `aiko@constellation-cloud.example` |
 | Enterprise org, cross-org access | Marcus | `marcus@stellar-dynamics.example` |
 
-**Which workspace/environment to use:** Match the section's purpose to the Seed Inventory table in [Meet Five and the Cast](/cloud/getting-started/meet-five/). Use `dev-local` for all getting-started screenshots (no real cloud credentials required).
+**Which workspace/environment to use:** Match the section's purpose to the Seed Inventory table in [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}). Use `dev-local` for all getting-started screenshots (no real cloud credentials required).
 
 **File naming:** `<section>-<scenario>-<YYYY-MM-DD>.png`, e.g., `workspaces-orbital-staging-creation-2026-04-28.png`. Store in the `images/` subdirectory of the relevant content section.
 

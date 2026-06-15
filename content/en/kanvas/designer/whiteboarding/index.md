@@ -10,7 +10,7 @@ aliases:
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-![Shapes Introduction](./overview.png)
+![Shapes Introduction](images/overview.png)
 
 The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
 
@@ -32,7 +32,7 @@ If not already enabled, follow these steps to access the whiteboarding feature w
 ### Step 1: Accessing Preferences
 
 1. Navigate to canvas preferences and enable "Whiteboard Beta"
-![Canvas Preferences](./canvas-preferences.png)
+![Canvas Preferences](images/canvas-preferences.png)
 1. **Toggle Whiteboard Feature**
    1. Inside the 'Preferences' menu, find the section related to 'Canvas Settings' or 'Features'.
    1. Look for the option labeled 'Whiteboard' or similar.
@@ -77,19 +77,19 @@ The Whiteboard (Beta) feature might undergo updates or improvements during its b
 
 #### Shape Customization
 
-![Shapes Customization](./shapes_introduction.gif)
+![Shapes Customization](images/shapes_introduction.gif)
 
 Shapes within the canvas offer flexibility. Select any shape to access a tooltip with options to resize, reshape, and change colors. This allows for precise adjustments similar to popular design software.
 
 #### Text Annotation Customization
 
-![Text Box](./text-customization.png)
+![Text Box](images/text-customization.png)
 
 Text annotations come with various options. Customize fonts, sizes, alignments, and styles easily. Text boxes resize for seamless integration with the canvas.
 
 #### Interactive Tooltip Interface
 
-![Tooltip](./tooltip.png)
+![Tooltip](images/tooltip.png)
 
 The tooltip is your gateway to customization. It's simple and intuitive, offering a range of editing options upon selection. It's designed for easy navigation, mirroring popular design software.
 
@@ -101,13 +101,13 @@ Manage layers, group elements, for better organization. These advanced tools ens
 
 You have the flexibility to customize lines to fit your design needs and architectural specifications. Lines can represent various relationships, such as data flow, dependencies, or communication between components. By adjusting line properties like curve style, arrow style, and line type (e.g., solid or dashed), you can visually convey different meanings, making your design easier for others to interpret. Use the design tooltip to adjust these visual elements and create clear, meaningful connections between components in your architecture.
 
-![Edit Line](./line-editing.gif)
+![Edit Line](images/line-editing.gif)
 
 #### Adding Line Animations
 
 Take your designs a step further by adding animations to the lines, like the `marching ants` effect, to emphasize flow or movement between components. This feature improves visual clarity by highlighting the direction and movement of processes or data throughout your system, making interactions more intuitive. Adding this animation is simple, just click on the line and use the design tooltip.
 
-![Marching Ants Animation](./marching-ants.gif)
+![Marching Ants Animation](images/marching-ants.gif)
 
 #### Consistent Functionality
 

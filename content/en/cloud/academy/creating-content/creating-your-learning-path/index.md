@@ -217,7 +217,7 @@ competencies:
 
 # List of resource that are recommended to complete before taking the test
 # Not strictly enforced, but recommended
-prerequisite_knowledge:
+prerequisiteKnowledge:
   - title: "Learning Path: Cloud Computing Basics"
     link: "https://academy-domain.com/learning-paths/cloud-computing-basics"
   - title: "Basic Certification: Networking Basics"
@@ -226,7 +226,7 @@ prerequisite_knowledge:
     link: "https://linuxcommand.org/"
 
 # List of additional resources for further reading 
-related_resources:
+relatedResources:
   - title: "Documentation"
     link: "https://docs.example.com/"
   - title: "Instructions"
@@ -235,7 +235,7 @@ related_resources:
     link: "https://www.youtube.com/c/example" 
 
 # Additional attributes about the test
-additional_attributes: 
+additionalAttributes: 
   - title: "Retake Policy"
     description: "One Retake allowed after 30 days"
   - title: "Labs"

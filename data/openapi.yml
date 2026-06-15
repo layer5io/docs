@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.2.22
+  version: v1.3.8
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -24,6 +24,8 @@ tags:
     description: Operations related to features and entitlements
   - name: Support_Support
     description: Operations related to help and support requests
+  - name: System_API_System
+    description: Operational endpoints for Meshery Server.
   - name: Badge_Badge
     description: Operations related to user and organization badges.
   - name: credential_credentials
@@ -85,10 +87,21 @@ paths:
     get:
       x-internal:
         - cloud
-      operationId: getFeatures
       tags:
         - Feature_Features
-      summary: Get all features associated with plans
+      summary: Get all features defined across plans
+      operationId: getFeatures
+      parameters:
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: string
+        - name: pagesize
+          in: query
+          description: Get responses by pagesize
+          schema:
+            type: string
       responses:
         '200':
           description: Features response
@@ -96,75 +109,95 @@ paths:
             application/json:
               schema:
                 type: array
+                description: List of features.
                 items:
                   x-go-type: Feature
                   type: object
+                  additionalProperties: false
+                  description: >-
+                    A feature is a quantified entitlement granted to an organization through its subscription plan, such
+                    as the number of components allowed in a design.
                   required:
                     - id
                     - plan_id
-                    - quantity
                     - name
+                    - quantity
+                    - created_at
+                    - updated_at
                   properties:
                     id:
+                      description: Unique identifier for the feature.
+                      x-go-name: ID
                       x-oapi-codegen-extra-tags:
                         db: id
+                        csv: id
+                      x-order: 1
                       type: string
                       format: uuid
-                      description: >-
-                        A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                        definition is used across different schemas.
                       x-go-type: uuid.UUID
                       x-go-type-import:
                         path: github.com/gofrs/uuid
                     plan_id:
+                      description: Identifier of the plan granting this feature.
+                      x-go-name: PlanId
                       x-oapi-codegen-extra-tags:
                         db: plan_id
+                        csv: plan_id
+                      x-order: 2
                       type: string
                       format: uuid
-                      description: >-
-                        A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                        definition is used across different schemas.
                       x-go-type: uuid.UUID
                       x-go-type-import:
                         path: github.com/gofrs/uuid
                     plan:
-                      x-go-type: planv1beta1.Plan
+                      description: The plan granting this feature. Populated only when the association is explicitly loaded.
+                      x-go-type: planv1beta3.Plan
                       x-go-type-import:
-                        path: github.com/meshery/schemas/models/v1beta1/plan
-                        name: planv1beta1
+                        path: github.com/meshery/schemas/models/v1beta3/plan
+                        name: planv1beta3
                       x-oapi-codegen-extra-tags:
                         belongs_to: plans
                         fk_id: PlanId
                         json: plan,omitempty
+                      x-order: 3
                       type: object
+                      additionalProperties: false
+                      required:
+                        - id
+                        - name
+                        - cadence
+                        - unit
+                        - pricePerUnit
+                        - minimumUnits
+                        - currency
                       properties:
                         id:
+                          description: Unique identifier for the plan.
                           x-oapi-codegen-extra-tags:
                             db: id
                             json: id
                             csv: id
                           type: string
                           format: uuid
-                          description: >-
-                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                            definition is used across different schemas.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                         name:
-                          type: string
+                          description: Display name of the plan.
                           x-go-type: PlanName
                           x-oapi-codegen-extra-tags:
                             db: name
                             json: name
                             csv: name
-                          description: Name of the plan
+                          type: string
+                          x-enum-casing-exempt: true
                           enum:
                             - Free
                             - Team Designer
                             - Team Operator
                             - Enterprise
                         cadence:
+                          description: Billing cadence for the plan (monthly, annually, or none).
                           x-go-type: PlanCadence
                           x-oapi-codegen-extra-tags:
                             db: cadence
@@ -172,9 +205,11 @@ paths:
                             csv: cadence
                           type: string
                           enum:
+                            - none
                             - monthly
-                            - yearly
+                            - annually
                         unit:
+                          description: Unit of consumption this plan charges against (e.g. user).
                           x-go-type: PlanUnit
                           x-oapi-codegen-extra-tags:
                             db: unit
@@ -184,21 +219,24 @@ paths:
                           enum:
                             - user
                             - free
-                        minimum_units:
+                        minimumUnits:
                           type: integer
-                          description: Minimum number of units required for the plan
+                          description: Minimum number of units required for the plan.
                           x-oapi-codegen-extra-tags:
                             db: minimum_units
-                            json: minimum_units
+                            json: minimumUnits
                             csv: minimum_units
-                        price_per_unit:
+                          minimum: 0
+                        pricePerUnit:
                           type: number
-                          description: Price per unit of the plan
+                          description: Price per unit of the plan.
                           x-oapi-codegen-extra-tags:
                             db: price_per_unit
-                            json: price_per_unit
+                            json: pricePerUnit
                             csv: price_per_unit
+                          minimum: 0
                         currency:
+                          description: Currency in which the plan is priced.
                           x-go-type: Currency
                           x-oapi-codegen-extra-tags:
                             db: currency
@@ -207,18 +245,13 @@ paths:
                           type: string
                           enum:
                             - usd
-                      required:
-                        - id
-                        - name
-                        - cadence
-                        - unit
-                        - price_per_unit
-                        - minimum_units
-                        - currency
                     name:
+                      description: Name of the entitled feature.
                       x-go-type: FeatureName
                       x-oapi-codegen-extra-tags:
                         db: name
+                        csv: name
+                      x-order: 4
                       type: string
                       x-enum-casing-exempt: true
                       enum:
@@ -228,26 +261,37 @@ paths:
                         - WorkspacesInOrganization
                         - ImageSizeInDesign
                         - SizePerDesign
-                      description: Enumeration of possible feature types
                     quantity:
                       type: number
-                      description: Quantity of the feature allowed, use 9999999999 for unlimited
+                      format: double
+                      description: Quantity of the feature granted by the plan. The sentinel value 999999999999 denotes unlimited.
+                      minimum: 0
                       x-oapi-codegen-extra-tags:
                         db: quantity
-                      minimum: 0
+                        csv: quantity
+                      x-order: 5
                     created_at:
+                      x-order: 6
+                      description: Timestamp when the resource was created.
+                      x-go-type: time.Time
+                      type: string
+                      format: date-time
+                      x-go-name: CreatedAt
                       x-oapi-codegen-extra-tags:
                         db: created_at
-                      type: string
-                      format: date-time
+                        yaml: created_at
                       x-go-type-skip-optional-pointer: true
                     updated_at:
-                      x-oapi-codegen-extra-tags:
-                        db: updated_at
+                      x-order: 7
+                      description: Timestamp when the resource was updated.
+                      x-go-type: time.Time
                       type: string
                       format: date-time
+                      x-go-name: UpdatedAt
+                      x-oapi-codegen-extra-tags:
+                        db: updated_at
+                        yaml: updated_at
                       x-go-type-skip-optional-pointer: true
-                  additionalProperties: false
         '400':
           description: Invalid request body or request param
           content:
@@ -266,16 +310,16 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/entitlement/subscriptions/organizations/{organizationId}/features:
+  /api/entitlement/subscriptions/organizations/{orgId}/features:
     get:
       x-internal:
         - cloud
-      operationId: getFeaturesByOrganization
       tags:
         - Feature_Features
-      summary: Get all features associated with plans
+      summary: Get the active features entitled to an organization through its subscriptions
+      operationId: getFeaturesByOrganization
       parameters:
-        - name: organizationId
+        - name: orgId
           in: path
           description: The ID of the organization
           required: true
@@ -295,75 +339,95 @@ paths:
             application/json:
               schema:
                 type: array
+                description: List of features.
                 items:
                   x-go-type: Feature
                   type: object
+                  additionalProperties: false
+                  description: >-
+                    A feature is a quantified entitlement granted to an organization through its subscription plan, such
+                    as the number of components allowed in a design.
                   required:
                     - id
                     - plan_id
-                    - quantity
                     - name
+                    - quantity
+                    - created_at
+                    - updated_at
                   properties:
                     id:
+                      description: Unique identifier for the feature.
+                      x-go-name: ID
                       x-oapi-codegen-extra-tags:
                         db: id
+                        csv: id
+                      x-order: 1
                       type: string
                       format: uuid
-                      description: >-
-                        A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                        definition is used across different schemas.
                       x-go-type: uuid.UUID
                       x-go-type-import:
                         path: github.com/gofrs/uuid
                     plan_id:
+                      description: Identifier of the plan granting this feature.
+                      x-go-name: PlanId
                       x-oapi-codegen-extra-tags:
                         db: plan_id
+                        csv: plan_id
+                      x-order: 2
                       type: string
                       format: uuid
-                      description: >-
-                        A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                        definition is used across different schemas.
                       x-go-type: uuid.UUID
                       x-go-type-import:
                         path: github.com/gofrs/uuid
                     plan:
-                      x-go-type: planv1beta1.Plan
+                      description: The plan granting this feature. Populated only when the association is explicitly loaded.
+                      x-go-type: planv1beta3.Plan
                       x-go-type-import:
-                        path: github.com/meshery/schemas/models/v1beta1/plan
-                        name: planv1beta1
+                        path: github.com/meshery/schemas/models/v1beta3/plan
+                        name: planv1beta3
                       x-oapi-codegen-extra-tags:
                         belongs_to: plans
                         fk_id: PlanId
                         json: plan,omitempty
+                      x-order: 3
                       type: object
+                      additionalProperties: false
+                      required:
+                        - id
+                        - name
+                        - cadence
+                        - unit
+                        - pricePerUnit
+                        - minimumUnits
+                        - currency
                       properties:
                         id:
+                          description: Unique identifier for the plan.
                           x-oapi-codegen-extra-tags:
                             db: id
                             json: id
                             csv: id
                           type: string
                           format: uuid
-                          description: >-
-                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                            definition is used across different schemas.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                         name:
-                          type: string
+                          description: Display name of the plan.
                           x-go-type: PlanName
                           x-oapi-codegen-extra-tags:
                             db: name
                             json: name
                             csv: name
-                          description: Name of the plan
+                          type: string
+                          x-enum-casing-exempt: true
                           enum:
                             - Free
                             - Team Designer
                             - Team Operator
                             - Enterprise
                         cadence:
+                          description: Billing cadence for the plan (monthly, annually, or none).
                           x-go-type: PlanCadence
                           x-oapi-codegen-extra-tags:
                             db: cadence
@@ -371,9 +435,11 @@ paths:
                             csv: cadence
                           type: string
                           enum:
+                            - none
                             - monthly
-                            - yearly
+                            - annually
                         unit:
+                          description: Unit of consumption this plan charges against (e.g. user).
                           x-go-type: PlanUnit
                           x-oapi-codegen-extra-tags:
                             db: unit
@@ -383,21 +449,24 @@ paths:
                           enum:
                             - user
                             - free
-                        minimum_units:
+                        minimumUnits:
                           type: integer
-                          description: Minimum number of units required for the plan
+                          description: Minimum number of units required for the plan.
                           x-oapi-codegen-extra-tags:
                             db: minimum_units
-                            json: minimum_units
+                            json: minimumUnits
                             csv: minimum_units
-                        price_per_unit:
+                          minimum: 0
+                        pricePerUnit:
                           type: number
-                          description: Price per unit of the plan
+                          description: Price per unit of the plan.
                           x-oapi-codegen-extra-tags:
                             db: price_per_unit
-                            json: price_per_unit
+                            json: pricePerUnit
                             csv: price_per_unit
+                          minimum: 0
                         currency:
+                          description: Currency in which the plan is priced.
                           x-go-type: Currency
                           x-oapi-codegen-extra-tags:
                             db: currency
@@ -406,18 +475,13 @@ paths:
                           type: string
                           enum:
                             - usd
-                      required:
-                        - id
-                        - name
-                        - cadence
-                        - unit
-                        - price_per_unit
-                        - minimum_units
-                        - currency
                     name:
+                      description: Name of the entitled feature.
                       x-go-type: FeatureName
                       x-oapi-codegen-extra-tags:
                         db: name
+                        csv: name
+                      x-order: 4
                       type: string
                       x-enum-casing-exempt: true
                       enum:
@@ -427,26 +491,37 @@ paths:
                         - WorkspacesInOrganization
                         - ImageSizeInDesign
                         - SizePerDesign
-                      description: Enumeration of possible feature types
                     quantity:
                       type: number
-                      description: Quantity of the feature allowed, use 9999999999 for unlimited
+                      format: double
+                      description: Quantity of the feature granted by the plan. The sentinel value 999999999999 denotes unlimited.
+                      minimum: 0
                       x-oapi-codegen-extra-tags:
                         db: quantity
-                      minimum: 0
+                        csv: quantity
+                      x-order: 5
                     created_at:
+                      x-order: 6
+                      description: Timestamp when the resource was created.
+                      x-go-type: time.Time
+                      type: string
+                      format: date-time
+                      x-go-name: CreatedAt
                       x-oapi-codegen-extra-tags:
                         db: created_at
-                      type: string
-                      format: date-time
+                        yaml: created_at
                       x-go-type-skip-optional-pointer: true
                     updated_at:
-                      x-oapi-codegen-extra-tags:
-                        db: updated_at
+                      x-order: 7
+                      description: Timestamp when the resource was updated.
+                      x-go-type: time.Time
                       type: string
                       format: date-time
+                      x-go-name: UpdatedAt
+                      x-oapi-codegen-extra-tags:
+                        db: updated_at
+                        yaml: updated_at
                       x-go-type-skip-optional-pointer: true
-                  additionalProperties: false
         '400':
           description: Invalid request body or request param
           content:
@@ -530,6 +605,52 @@ paths:
                 type: string
         '500':
           description: Internal server error
+  /api/system/version:
+    get:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - System_API_System
+      summary: Get the running Meshery server's version metadata
+      description: Returns version metadata for the running Meshery service.
+      operationId: getSystemVersion
+      security: []
+      responses:
+        '200':
+          description: Server version metadata
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Version metadata for a running Meshery service.
+                additionalProperties: false
+                properties:
+                  version:
+                    type: string
+                    description: Meshery Cloud deployment version.
+                    maxLength: 128
+                  build:
+                    type: string
+                    description: Build identifier (typically the git tag of the running binary).
+                    maxLength: 128
+                  latest:
+                    type: string
+                    description: Latest available Meshery release tag fetched from GitHub.
+                    maxLength: 128
+                  outdated:
+                    type: boolean
+                    description: True when the running build is older than the latest available release.
+                  commitsha:
+                    type: string
+                    description: Git commit SHA of the running service. The wire field is `commitsha`.
+                    maxLength: 64
+                  releaseChannel:
+                    type: string
+                    description: Release channel of the running binary (e.g. `stable`, `edge`).
+                    maxLength: 64
+        '500':
+          description: Encoding error while serializing the version payload.
   /api/organizations/badges/{badgeId}:
     delete:
       x-internal:
@@ -4010,6 +4131,43 @@ paths:
                                   type: object
                                   description: Preferences specific to dashboard behavior.
                                   additionalProperties: true
+                                links:
+                                  x-go-type: Links
+                                  type: object
+                                  x-internal:
+                                    - cloud
+                                  description: >-
+                                    Per-organization overrides for the legal and support links shown on the auth pages
+                                    and the error page. termsOfService and privacy are the named legal links; support is
+                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
+                                    to the platform defaults.
+                                  properties:
+                                    termsOfService:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Terms of Service page.
+                                    privacy:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Privacy Policy page.
+                                    support:
+                                      type: object
+                                      additionalProperties:
+                                        type: string
+                                        maxLength: 2048
+                                      description: >-
+                                        Open-ended set of named support contacts/links rendered on the auth and error
+                                        pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
+                                        free text. For example a "slack" entry pointing at https://slack.meshery.io, a
+                                        "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                showAuthCarousel:
+                                  type: boolean
+                                  default: true
+                                  description: >-
+                                    Whether the feature carousel renders on the organization's auth pages. Unset is
+                                    treated as true (shown); set false to hide it.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -4190,6 +4348,42 @@ paths:
                       type: object
                       description: Preferences specific to dashboard behavior.
                       additionalProperties: true
+                    links:
+                      x-go-type: Links
+                      type: object
+                      x-internal:
+                        - cloud
+                      description: >-
+                        Per-organization overrides for the legal and support links shown on the auth pages and the error
+                        page. termsOfService and privacy are the named legal links; support is an open-ended set of
+                        named support contacts/links. Empty or omitted fields fall back to the platform defaults.
+                      properties:
+                        termsOfService:
+                          type: string
+                          format: uri
+                          maxLength: 2048
+                          description: URL of the organization's Terms of Service page.
+                        privacy:
+                          type: string
+                          format: uri
+                          maxLength: 2048
+                          description: URL of the organization's Privacy Policy page.
+                        support:
+                          type: object
+                          additionalProperties:
+                            type: string
+                            maxLength: 2048
+                          description: >-
+                            Open-ended set of named support contacts/links rendered on the auth and error pages, keyed
+                            by display name with a value that is a URL, a mailto:/tel: link, or free text. For example a
+                            "slack" entry pointing at https://slack.meshery.io, a "discussion forum" entry, or a
+                            "support desk" entry holding a phone number.
+                    showAuthCarousel:
+                      type: boolean
+                      default: true
+                      description: >-
+                        Whether the feature carousel renders on the organization's auth pages. Unset is treated as true
+                        (shown); set false to hide it.
       responses:
         '201':
           description: Single-organization page response
@@ -4363,6 +4557,43 @@ paths:
                                   type: object
                                   description: Preferences specific to dashboard behavior.
                                   additionalProperties: true
+                                links:
+                                  x-go-type: Links
+                                  type: object
+                                  x-internal:
+                                    - cloud
+                                  description: >-
+                                    Per-organization overrides for the legal and support links shown on the auth pages
+                                    and the error page. termsOfService and privacy are the named legal links; support is
+                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
+                                    to the platform defaults.
+                                  properties:
+                                    termsOfService:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Terms of Service page.
+                                    privacy:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Privacy Policy page.
+                                    support:
+                                      type: object
+                                      additionalProperties:
+                                        type: string
+                                        maxLength: 2048
+                                      description: >-
+                                        Open-ended set of named support contacts/links rendered on the auth and error
+                                        pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
+                                        free text. For example a "slack" entry pointing at https://slack.meshery.io, a
+                                        "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                showAuthCarousel:
+                                  type: boolean
+                                  default: true
+                                  description: >-
+                                    Whether the feature carousel renders on the organization's auth pages. Unset is
+                                    treated as true (shown); set false to hide it.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -4752,6 +4983,43 @@ paths:
                                   type: object
                                   description: Preferences specific to dashboard behavior.
                                   additionalProperties: true
+                                links:
+                                  x-go-type: Links
+                                  type: object
+                                  x-internal:
+                                    - cloud
+                                  description: >-
+                                    Per-organization overrides for the legal and support links shown on the auth pages
+                                    and the error page. termsOfService and privacy are the named legal links; support is
+                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
+                                    to the platform defaults.
+                                  properties:
+                                    termsOfService:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Terms of Service page.
+                                    privacy:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Privacy Policy page.
+                                    support:
+                                      type: object
+                                      additionalProperties:
+                                        type: string
+                                        maxLength: 2048
+                                      description: >-
+                                        Open-ended set of named support contacts/links rendered on the auth and error
+                                        pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
+                                        free text. For example a "slack" entry pointing at https://slack.meshery.io, a
+                                        "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                showAuthCarousel:
+                                  type: boolean
+                                  default: true
+                                  description: >-
+                                    Whether the feature carousel renders on the organization's auth pages. Unset is
+                                    treated as true (shown); set false to hide it.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -5006,6 +5274,42 @@ paths:
                       type: object
                       description: Preferences specific to dashboard behavior.
                       additionalProperties: true
+                    links:
+                      x-go-type: Links
+                      type: object
+                      x-internal:
+                        - cloud
+                      description: >-
+                        Per-organization overrides for the legal and support links shown on the auth pages and the error
+                        page. termsOfService and privacy are the named legal links; support is an open-ended set of
+                        named support contacts/links. Empty or omitted fields fall back to the platform defaults.
+                      properties:
+                        termsOfService:
+                          type: string
+                          format: uri
+                          maxLength: 2048
+                          description: URL of the organization's Terms of Service page.
+                        privacy:
+                          type: string
+                          format: uri
+                          maxLength: 2048
+                          description: URL of the organization's Privacy Policy page.
+                        support:
+                          type: object
+                          additionalProperties:
+                            type: string
+                            maxLength: 2048
+                          description: >-
+                            Open-ended set of named support contacts/links rendered on the auth and error pages, keyed
+                            by display name with a value that is a URL, a mailto:/tel: link, or free text. For example a
+                            "slack" entry pointing at https://slack.meshery.io, a "discussion forum" entry, or a
+                            "support desk" entry holding a phone number.
+                    showAuthCarousel:
+                      type: boolean
+                      default: true
+                      description: >-
+                        Whether the feature carousel renders on the organization's auth pages. Unset is treated as true
+                        (shown); set false to hide it.
       responses:
         '200':
           description: Single-organization page response for the updated organization
@@ -5179,6 +5483,43 @@ paths:
                                   type: object
                                   description: Preferences specific to dashboard behavior.
                                   additionalProperties: true
+                                links:
+                                  x-go-type: Links
+                                  type: object
+                                  x-internal:
+                                    - cloud
+                                  description: >-
+                                    Per-organization overrides for the legal and support links shown on the auth pages
+                                    and the error page. termsOfService and privacy are the named legal links; support is
+                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
+                                    to the platform defaults.
+                                  properties:
+                                    termsOfService:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Terms of Service page.
+                                    privacy:
+                                      type: string
+                                      format: uri
+                                      maxLength: 2048
+                                      description: URL of the organization's Privacy Policy page.
+                                    support:
+                                      type: object
+                                      additionalProperties:
+                                        type: string
+                                        maxLength: 2048
+                                      description: >-
+                                        Open-ended set of named support contacts/links rendered on the auth and error
+                                        pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
+                                        free text. For example a "slack" entry pointing at https://slack.meshery.io, a
+                                        "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                showAuthCarousel:
+                                  type: boolean
+                                  default: true
+                                  description: >-
+                                    Whether the feature carousel renders on the organization's auth pages. Unset is
+                                    treated as true (shown); set false to hide it.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -5370,6 +5711,42 @@ paths:
                         type: object
                         description: Preferences specific to dashboard behavior.
                         additionalProperties: true
+                      links:
+                        x-go-type: Links
+                        type: object
+                        x-internal:
+                          - cloud
+                        description: >-
+                          Per-organization overrides for the legal and support links shown on the auth pages and the
+                          error page. termsOfService and privacy are the named legal links; support is an open-ended set
+                          of named support contacts/links. Empty or omitted fields fall back to the platform defaults.
+                        properties:
+                          termsOfService:
+                            type: string
+                            format: uri
+                            maxLength: 2048
+                            description: URL of the organization's Terms of Service page.
+                          privacy:
+                            type: string
+                            format: uri
+                            maxLength: 2048
+                            description: URL of the organization's Privacy Policy page.
+                          support:
+                            type: object
+                            additionalProperties:
+                              type: string
+                              maxLength: 2048
+                            description: >-
+                              Open-ended set of named support contacts/links rendered on the auth and error pages, keyed
+                              by display name with a value that is a URL, a mailto:/tel: link, or free text. For example
+                              a "slack" entry pointing at https://slack.meshery.io, a "discussion forum" entry, or a
+                              "support desk" entry holding a phone number.
+                      showAuthCarousel:
+                        type: boolean
+                        default: true
+                        description: >-
+                          Whether the feature carousel renders on the organization's auth pages. Unset is treated as
+                          true (shown); set false to hide it.
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -30187,10 +30564,11 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/performance-profiles:
+  /api/performance/profiles:
     get:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: getPerformanceProfiles
@@ -30339,6 +30717,7 @@ paths:
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: load_generators
+                            gorm: type:text[]
                             json: loadGenerators
                         endpoints:
                           type: array
@@ -30356,6 +30735,7 @@ paths:
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: endpoints
+                            gorm: type:text[]
                             json: endpoints
                         serviceMesh:
                           type: string
@@ -30523,6 +30903,7 @@ paths:
     post:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: upsertPerformanceProfile
@@ -30774,6 +31155,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: load_generators
+                      gorm: type:text[]
                       json: loadGenerators
                   endpoints:
                     type: array
@@ -30791,6 +31173,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: endpoints
+                      gorm: type:text[]
                       json: endpoints
                   serviceMesh:
                     type: string
@@ -30955,10 +31338,11 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/performance-profiles/{performanceProfileId}:
+  /api/performance/profiles/{performanceProfileId}:
     get:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: getPerformanceProfile
@@ -31064,6 +31448,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: load_generators
+                      gorm: type:text[]
                       json: loadGenerators
                   endpoints:
                     type: array
@@ -31081,6 +31466,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: endpoints
+                      gorm: type:text[]
                       json: endpoints
                   serviceMesh:
                     type: string
@@ -31254,6 +31640,7 @@ paths:
     put:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: updatePerformanceProfile
@@ -31517,6 +31904,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: load_generators
+                      gorm: type:text[]
                       json: loadGenerators
                   endpoints:
                     type: array
@@ -31534,6 +31922,7 @@ paths:
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: endpoints
+                      gorm: type:text[]
                       json: endpoints
                   serviceMesh:
                     type: string
@@ -31707,6 +32096,7 @@ paths:
     delete:
       x-internal:
         - cloud
+        - meshery
       tags:
         - Performance_Profile_performance
       operationId: deletePerformanceProfile
@@ -31743,6 +32133,654 @@ paths:
                 type: string
         '404':
           description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/performance/profiles/{performanceProfileId}/results:
+    get:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - Performance_Profile_performance
+      operationId: getPerformanceProfileResults
+      summary: List performance results for a profile
+      description: Returns paginated load-test results associated with the performance profile identified by the path parameter.
+      parameters:
+        - name: performanceProfileId
+          in: path
+          description: Performance profile ID.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+          required: true
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: string
+        - name: pagesize
+          in: query
+          description: Get responses by pagesize
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Get responses that match search param value
+          schema:
+            type: string
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Performance results
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of performance results.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - results
+                properties:
+                  page:
+                    type: integer
+                    description: Zero-based page index returned in this response.
+                    minimum: 0
+                    maximum: 1000000
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Maximum number of items returned on each page.
+                    minimum: 1
+                    maximum: 1000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of performance results across all pages.
+                    minimum: 0
+                    maximum: 100000000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
+                  results:
+                    type: array
+                    description: Performance results in this page.
+                    x-go-type-skip-optional-pointer: true
+                    items:
+                      x-go-type: PerformanceResult
+                      type: object
+                      description: Load-test result captured for a Meshery performance profile.
+                      additionalProperties: false
+                      properties:
+                        mesheryId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: mesheryId,omitempty
+                        name:
+                          type: string
+                          description: Human-readable name of the performance result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: name
+                            json: name,omitempty
+                        mesh:
+                          type: string
+                          description: Service mesh under test for this result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: mesh
+                            json: mesh,omitempty
+                        performanceProfile:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          nullable: true
+                          x-oapi-codegen-extra-tags:
+                            db: performance_profile
+                            json: performanceProfile,omitempty
+                        testId:
+                          type: string
+                          description: Provider-assigned test identifier for this result.
+                          maxLength: 255
+                          x-go-name: TestID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            json: testId,omitempty
+                        runnerResults:
+                          type: object
+                          description: Raw load-generator output for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: runner_results
+                            json: runnerResults,omitempty
+                        serverMetrics:
+                          type: object
+                          description: Server-side metrics collected for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_metrics
+                            json: serverMetrics,omitempty
+                        serverBoardConfig:
+                          type: object
+                          description: Server board configuration associated with this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_board_config
+                            json: serverBoardConfig,omitempty
+                        testStartTime:
+                          type: string
+                          format: date-time
+                          description: Time when the load test started.
+                          x-oapi-codegen-extra-tags:
+                            db: test_start_time
+                            json: testStartTime,omitempty
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: UserID
+                          x-oapi-codegen-extra-tags:
+                            db: user_id
+                            json: userId,omitempty
+                        createdAt:
+                          description: Timestamp when the performance result was created.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            yaml: created_at
+                            json: createdAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: CreatedAt
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp when the performance result was last updated.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            yaml: updated_at
+                            json: updatedAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: UpdatedAt
+                          x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/performance/profiles/{performanceProfileId}/results/{resultId}:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Performance_Profile_performance
+      operationId: getPerformanceProfileResult
+      summary: Get a performance result for a profile
+      description: Returns one load-test result associated with the performance profile identified by the path parameter.
+      parameters:
+        - name: performanceProfileId
+          in: path
+          description: Performance profile ID.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+          required: true
+        - name: resultId
+          in: path
+          description: Performance result ID.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+          required: true
+      responses:
+        '200':
+          description: Performance result
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Load-test result captured for a Meshery performance profile.
+                additionalProperties: false
+                properties:
+                  mesheryId:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                    x-go-name: ID
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                      json: mesheryId,omitempty
+                  name:
+                    type: string
+                    description: Human-readable name of the performance result.
+                    maxLength: 255
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: name
+                      json: name,omitempty
+                  mesh:
+                    type: string
+                    description: Service mesh under test for this result.
+                    maxLength: 255
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: mesh
+                      json: mesh,omitempty
+                  performanceProfile:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                    nullable: true
+                    x-oapi-codegen-extra-tags:
+                      db: performance_profile
+                      json: performanceProfile,omitempty
+                  testId:
+                    type: string
+                    description: Provider-assigned test identifier for this result.
+                    maxLength: 255
+                    x-go-name: TestID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: testId,omitempty
+                  runnerResults:
+                    type: object
+                    description: Raw load-generator output for this performance result.
+                    additionalProperties: true
+                    x-go-type: core.Map
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: runner_results
+                      json: runnerResults,omitempty
+                  serverMetrics:
+                    type: object
+                    description: Server-side metrics collected for this performance result.
+                    additionalProperties: true
+                    x-go-type: core.Map
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: server_metrics
+                      json: serverMetrics,omitempty
+                  serverBoardConfig:
+                    type: object
+                    description: Server board configuration associated with this performance result.
+                    additionalProperties: true
+                    x-go-type: core.Map
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: server_board_config
+                      json: serverBoardConfig,omitempty
+                  testStartTime:
+                    type: string
+                    format: date-time
+                    description: Time when the load test started.
+                    x-oapi-codegen-extra-tags:
+                      db: test_start_time
+                      json: testStartTime,omitempty
+                  userId:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                    x-go-name: UserID
+                    x-oapi-codegen-extra-tags:
+                      db: user_id
+                      json: userId,omitempty
+                  createdAt:
+                    description: Timestamp when the performance result was created.
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                      yaml: created_at
+                      json: createdAt,omitempty
+                    x-go-type: time.Time
+                    type: string
+                    format: date-time
+                    x-go-name: CreatedAt
+                    x-go-type-skip-optional-pointer: true
+                  updatedAt:
+                    description: Timestamp when the performance result was last updated.
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                      yaml: updated_at
+                      json: updatedAt,omitempty
+                    x-go-type: time.Time
+                    type: string
+                    format: date-time
+                    x-go-name: UpdatedAt
+                    x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/performance/results:
+    get:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - Performance_Profile_performance
+      operationId: getPerformanceResults
+      summary: List all performance results
+      description: Returns paginated load-test results visible to the authenticated user.
+      parameters:
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: string
+        - name: pagesize
+          in: query
+          description: Get responses by pagesize
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Get responses that match search param value
+          schema:
+            type: string
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+        - name: from
+          in: query
+          description: Start date for filtering results by test start time, in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          description: End date for filtering results by test start time, in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Performance results
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of performance results.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - results
+                properties:
+                  page:
+                    type: integer
+                    description: Zero-based page index returned in this response.
+                    minimum: 0
+                    maximum: 1000000
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Maximum number of items returned on each page.
+                    minimum: 1
+                    maximum: 1000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of performance results across all pages.
+                    minimum: 0
+                    maximum: 100000000
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
+                  results:
+                    type: array
+                    description: Performance results in this page.
+                    x-go-type-skip-optional-pointer: true
+                    items:
+                      x-go-type: PerformanceResult
+                      type: object
+                      description: Load-test result captured for a Meshery performance profile.
+                      additionalProperties: false
+                      properties:
+                        mesheryId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: mesheryId,omitempty
+                        name:
+                          type: string
+                          description: Human-readable name of the performance result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: name
+                            json: name,omitempty
+                        mesh:
+                          type: string
+                          description: Service mesh under test for this result.
+                          maxLength: 255
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: mesh
+                            json: mesh,omitempty
+                        performanceProfile:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          nullable: true
+                          x-oapi-codegen-extra-tags:
+                            db: performance_profile
+                            json: performanceProfile,omitempty
+                        testId:
+                          type: string
+                          description: Provider-assigned test identifier for this result.
+                          maxLength: 255
+                          x-go-name: TestID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            json: testId,omitempty
+                        runnerResults:
+                          type: object
+                          description: Raw load-generator output for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: runner_results
+                            json: runnerResults,omitempty
+                        serverMetrics:
+                          type: object
+                          description: Server-side metrics collected for this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_metrics
+                            json: serverMetrics,omitempty
+                        serverBoardConfig:
+                          type: object
+                          description: Server board configuration associated with this performance result.
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: server_board_config
+                            json: serverBoardConfig,omitempty
+                        testStartTime:
+                          type: string
+                          format: date-time
+                          description: Time when the load test started.
+                          x-oapi-codegen-extra-tags:
+                            db: test_start_time
+                            json: testStartTime,omitempty
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: UserID
+                          x-oapi-codegen-extra-tags:
+                            db: user_id
+                            json: userId,omitempty
+                        createdAt:
+                          description: Timestamp when the performance result was created.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            yaml: created_at
+                            json: createdAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: CreatedAt
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp when the performance result was last updated.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            yaml: updated_at
+                            json: updatedAt,omitempty
+                          x-go-type: time.Time
+                          type: string
+                          format: date-time
+                          x-go-name: UpdatedAt
+                          x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
           content:
             text/plain:
               schema:

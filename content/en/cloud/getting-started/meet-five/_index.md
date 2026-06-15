@@ -48,7 +48,7 @@ Orbital Labs operates as a tenant of Constellation Cloud, an MSP whose Provider 
 
 {{< cardpane >}}
 {{% card header="**Dr. Aiko Sato** — Provider Admin" %}}
-<img src="/images/five/layer5-five-mascot-means-business.svg" alt="Dr. Aiko Sato — Provider Admin at Constellation Cloud" style="background:#fff;" />
+<img src='../../images/five/layer5-five-mascot-means-business.svg' alt="Dr. Aiko Sato — Provider Admin at Constellation Cloud" style="background:#fff;" />
 
 **Organization:** Constellation Cloud  
 **Role:** Provider Admin  
@@ -62,7 +62,7 @@ Has seen every misconfigured RBAC policy known to humankind. Responds to Slack m
 
 {{< cardpane >}}
 {{% card header="**Five** — Platform Engineer" %}}
-<img src="/images/five/1.svg" alt="Five — Platform Engineer at Orbital Labs" style="background:#fff;" />
+<img src='../../images/five/1.svg' alt="Five — Platform Engineer at Orbital Labs" style="background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** User (Platform Engineer)  
@@ -71,7 +71,7 @@ Has seen every misconfigured RBAC policy known to humankind. Responds to Slack m
 The protagonist — curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
 {{% /card %}}
 {{% card header="**Maya Chen** — Org Admin & Development Team Admin" %}}
-<img src="/images/five/2.svg" alt="Maya Chen — Org Admin and Development Team Admin at Orbital Labs" style="background:#fff;" />
+<img src='../../images/five/2.svg' alt="Maya Chen — Org Admin and Development Team Admin at Orbital Labs" style="background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** Org Admin + Development Team Admin  
@@ -83,7 +83,7 @@ Voice of reason. Has a calendar block called "Preventing Five from touching prod
 
 {{< cardpane >}}
 {{% card header="**Zara Osei** — Infrastructure Team Admin" %}}
-<img src="/images/five/3.svg" alt="Zara Osei — Infrastructure Team Admin at Orbital Labs" style="background:#fff;" />
+<img src='images/five/3.svg' alt="Zara Osei — Infrastructure Team Admin at Orbital Labs" style="background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** Team Admin, Infrastructure Team  
@@ -92,7 +92,7 @@ Voice of reason. Has a calendar block called "Preventing Five from touching prod
 Sole keeper of the keychain permission matrix. Responds to access requests with a 48-hour SLA and a knowing look.
 {{% /card %}}
 {{% card header="**Rex Park** — Developer" %}}
-<img src="/images/five/4.svg" alt="Rex Park — Developer at Orbital Labs" style="background:#fff;" />
+<img src='images/five/4.svg' alt="Rex Park — Developer at Orbital Labs" style="background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** User, Developer Team  
@@ -101,7 +101,7 @@ Sole keeper of the keychain permission matrix. Responds to access requests with 
 Opens design review requests and immediately asks Five if they have been approved yet. Deploys with confidence; reads error logs with less.
 {{% /card %}}
 {{% card header="**Jordan Reyes** — Developer & Designer" %}}
-<img src="/images/five/5.svg" alt="Jordan Reyes — Developer and Designer at Orbital Labs" style="background:#fff;" />
+<img src='images/five/5.svg' alt="Jordan Reyes — Developer and Designer at Orbital Labs" style="background:#fff;" />
 
 **Organization:** Orbital Labs  
 **Role:** User, Developer Team  
@@ -115,7 +115,7 @@ Crafts Kanvas designs of alarming elegance. Considers a 47-component architectur
 
 {{< cardpane >}}
 {{% card header="**Marcus Webb** — Org Admin" %}}
-<img src="/images/five/layer5-five-mascot-means-business.svg" alt="Marcus Webb — Org Admin at Stellar Dynamics" style="background:#fff;" />
+<img src='../../images/five/layer5-five-mascot-means-business.svg' alt="Marcus Webb — Org Admin at Stellar Dynamics" style="background:#fff;" />
 
 **Organization:** Stellar Dynamics  
 **Role:** Org Admin  

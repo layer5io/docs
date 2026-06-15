@@ -13,7 +13,7 @@ aliases:
 Kanvas's Designer enables you to place comments "inline" with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
 
 <figure>
-  <img src="./kanvas-comment.png" alt="Comments in Designer" />
+  <img src="images/kanvas-comment.png" alt="Comments in Designer" />
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ You can add comments in a number of convenient ways. Since designs are public by
 2. You can also create a comment by dragging and dropping the comment icon from the Dock to your design. This method allows you to place comments directly on specific elements or areas of your design.
 
 <figure>
-<img src="./comment-dock.png" alt="Create a comment from the Dock" />
+<img src="images/comment-dock.png" alt="Create a comment from the Dock" />
   <figcaption>Create a comment from the Dock</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ You can add comments in a number of convenient ways. Since designs are public by
 Context-click on any area of your design, and from the contextual menu, select "Add a Comment". Using this context-click method allows for inline placement of your remarks right where you need them - _in context_.
 
 <figure>
-<img src="./comment-canvas.png" alt="Comment by context-clicking on your design" />
+<img src="images/comment-canvas.png" alt="Comment by context-clicking on your design" />
   <figcaption>Comment by context-clicking on your design</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ Context-click on any area of your design, and from the contextual menu, select "
 ## Design review using comments
 
 <figure>
-  <img src="./conversation-screenshot.png" alt="Peer review using comments in Designer" />
+  <img src="images/conversation-screenshot.png" alt="Peer review using comments in Designer" />
   <figcaption>Peer review using comments in Designer</figcaption>
 </figure>
 
@@ -80,7 +80,7 @@ You can also reopen comments.
 ### View Comment History
 
 <figure>
-  <img src="./comments-conversation.gif" alt="View comment history" />
+  <img src="images/comments-conversation.gif" alt="View comment history" />
   <figcaption>View comment history</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ Copying a comment into another design does **not** change the target design’s 
 - Participants from the original thread may not have access
 - Notifications may still be sent, but users might not be able to view or respond
 
-Learn more about [sharing settings](/kanvas/designer/sharing).
+Learn more about [sharing settings]({{< ref "kanvas/designer/sharing/index.md" >}}).
 
 {{< /alert >}}
 
@@ -124,7 +124,7 @@ Learn more about [sharing settings](/kanvas/designer/sharing).
 - **Right-click and Copy**: Choose **Copy** to manually paste it later.
 
   <figure>
-    <img src="./comment-copy.gif" alt="Copy a comment" />
+    <img src="images/comment-copy.gif" alt="Copy a comment" />
     <figcaption>Copy a comment</figcaption>
   </figure>
 
@@ -159,7 +159,7 @@ You can temporarily hide or reveal open comments using the Layers panel—just l
 This helps you focus on the most important parts of your design and improves clarity during reviews.
 
 <figure>
-  <img src="./comments-hide.png" alt="Hide comments using Layers" />
+  <img src="images/comments-hide.png" alt="Hide comments using Layers" />
   <figcaption>Hide comments using the Layers panel</figcaption>
 </figure>
 
@@ -172,7 +172,7 @@ Want to improve the performance of your workspace? [Learn more about using the L
 If you plan to keep certain comments in your design for documentation, team reference, or historical context, it's a good idea to give them meaningful names. This simple habit improves clarity for both you and your team—especially when reviewing or revisiting designs later.
 
 <figure>
-  <img src="./naming-comments.png" alt="Naming a comment in Designer" />
+  <img src="images/naming-comments.png" alt="Naming a comment in Designer" />
     <figcaption>Naming a comment in Designer</figcaption>
 </figure>
 
@@ -188,7 +188,7 @@ If a comment is resolved by mistake, it can be reopened. Adding a new comment to
 Follow the steps below to reopen a comment:
 
 <figure>
-<img src="./comments-unresolved.gif" alt="Unresolving comments in designer" />
+<img src="images/comments-unresolved.gif" alt="Unresolving comments in designer" />
   <figcaption>Unresolving comments in designer</figcaption>
 </figure>
 
@@ -197,7 +197,7 @@ Follow the steps below to reopen a comment:
 Each time that a new comment is made in a design, remark placed into existing comment, a comment is resolved or reopened, you and your collaborators might receive notification via email.
 
 <figure>
-<img src="./example-notification-email.png" alt="Example email notification received when design comment is made" />
+<img src="images/example-notification-email.png" alt="Example email notification received when design comment is made" />
   <figcaption>Example email notification received when design comment is made.</figcaption>
 </figure>
 
@@ -209,14 +209,14 @@ Collaborators (users you have shared the design with) do not receive notificatio
 
 ### Enable Email Notifications
 
-Customize your [notification preferences](/cloud/concepts/identity-and-security/users/notification-preferences) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
+Customize your [notification preferences]({{< ref "cloud/concepts/identity-and-security/users/notification-preferences/index.md" >}}) to receive emails for comments on your design. When this is enabled, you'll be notified when comments are made on your design, you're mentioned in a comment, or someone adds a comment to a thread you've previously engaged with.
 
 ### Muting Comment Notifications
 
 Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
 
 <figure>
-  <img src="./comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
+  <img src="images/comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
   <figcaption>Example of comments in Designer</figcaption>
 </figure>
 
@@ -227,7 +227,7 @@ Muting a comment thread applies only to participants in that thread. Design owne
 You can also manage all your comment notification settings centrally through the **Cloud -> Account -> [Preference](https://docs.layer5.io/cloud/concepts/identity-and-security/users/notification-preferences/)**.
 
 <figure>
-  <img src="./comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
+  <img src="images/comment-cloud-manage.png" alt="Manage comment notifications in the Cloud Portal" style="width:auto">
   <figcaption>Manage all comment notifications centrally in the Cloud</figcaption>
 </figure>
 
@@ -264,7 +264,7 @@ You can use color to visually categorize your comments. Here is one common examp
 
 
 <figure>
-  <img src="./comments-color.png" alt="Categorize Comments" />
+  <img src="images/comments-color.png" alt="Categorize Comments" />
   <figcaption>Use color to visually categorize your comments</figcaption>
 </figure>
 
@@ -282,7 +282,7 @@ Link your comment to a specific part of the design using **annotation arrows**. 
 Follow the steps about how to annotate the comment:
 
 <figure>
-<img src="./kanvas-annotations.gif" alt="use of annotation arrows" />
+<img src="images/kanvas-annotations.gif" alt="use of annotation arrows" />
   <figcaption>Annotating a comment</figcaption>
 </figure>
 
@@ -293,7 +293,7 @@ Lock comments in place to keep them visible even as you continue working. This i
 
 Example on how to lock your comment:
 <figure>
-<img src="./locking-comment.gif" alt="Lock the comment" />
+<img src="images/locking-comment.gif" alt="Lock the comment" />
   <figcaption>Locking comments </figcaption>
 </figure>
 
@@ -302,7 +302,7 @@ Example on how to lock your comment:
 Bundle multiple related comments using the **Group** feature. This keeps threads organized and easier to track, especially for complex designs with many parts.
 
 <figure>
-<img src="./grouping -comments.gif" alt="Grouping of Comments" />
+<img src="images/grouping -comments.gif" alt="Grouping of Comments" />
   <figcaption>Two related comments Grouped</figcaption>
 </figure>
 

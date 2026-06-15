@@ -241,6 +241,20 @@ a#videoPageLink:focus {
     margin-bottom: 2rem;
 }
 
+.video-grid-container {
+    position: relative;
+    min-height: 500px;
+    transition: min-height 0.15s ease;
+}
+
+.video-group {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
 .video-card {
     background-color: rgba(18,18,18,1);
     border-radius: 12px;

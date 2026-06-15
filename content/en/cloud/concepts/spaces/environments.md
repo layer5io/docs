@@ -12,7 +12,7 @@ Environments allow you to logically group related [Connections](#connections) an
 
 ### Assigning Resources to Environments
 
-Assign any number of Connections to an environment whether that Connection is managed or unmanaged (see [MeshSync](https://docs.meshery.io/concepts/architecture/meshsync) to learn more about managed and unmanaged Connections). In-turn, assign any number of Environments to one or more [Workspaces](../workspaces). Connections (and any associated Credentials) that are assigned to an Environment become immediately available for use in any associated Workspace.
+Assign any number of Connections to an environment whether that Connection is managed or unmanaged (see [MeshSync](https://docs.meshery.io/concepts/architecture/meshsync) to learn more about managed and unmanaged Connections). In-turn, assign any number of Environments to one or more [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}). Connections (and any associated Credentials) that are assigned to an Environment become immediately available for use in any associated Workspace.
 
 ### Sharing Resources between Environments
 
@@ -30,7 +30,7 @@ Environments represent a collection of resources in the form of Connections - bo
 
 - **Logical Grouping** Environments allow you to logically group related connections and their associated credentials. This makes it easier to manage, share, and work with a subset of resources instead of dealing with all your connections individually.
 
-- **Resource Sharing** Environments can be seamlessly assigned to [Workspaces](../workspaces), another essential concept in Meshery. When you assign an Environment to a Workspace, you enable resource sharing among team members. This collaborative approach simplifies the sharing of connections and resources, making it easier to work together in cloud native environments.
+- **Resource Sharing** Environments can be seamlessly assigned to [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}), another essential concept in Meshery. When you assign an Environment to a Workspace, you enable resource sharing among team members. This collaborative approach simplifies the sharing of connections and resources, making it easier to work together in cloud native environments.
 
 ## Key Components
 
@@ -48,7 +48,7 @@ Credentials in an Environment are the keys to securely authenticate and access m
 
 ## Example: Orbital Labs Environment Setup
 
-The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure. See [Meet Five and the Cast](/cloud/getting-started/meet-five) for the full seed inventory.
+The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full seed inventory.
 
 ### Environment Inventory
 

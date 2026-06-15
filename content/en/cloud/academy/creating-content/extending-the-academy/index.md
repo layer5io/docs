@@ -49,7 +49,7 @@ For example, a **Learning Path** named **"Mastering Kubernetes"** might contain:
       * **Module 2: "Networking Principles"**, containing a **Page** that covers "Services and Ingress" and a **Tests** on networking concepts.
 
 {{< alert type="warning" title="Content Isolation" >}}
-To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial](/cloud/academy/creating-your-learning-path/).
+To ensure security and isolation, all of your content files must be placed within a directory named for your organization UUID. You'll learn the specifics of how to do this in our [hands-on tutorial]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}).
 {{< /alert >}}
 
 ### Advanced Content Features
@@ -172,7 +172,7 @@ The Layer5 Academy platform supports all Hugo shortcode features. For more advan
 
 ### Branded Email Communications
 
-When using the Academy with [white-labeling](/cloud/guides/self-hosted/white-labeling) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
+When using the Academy with [white-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
 
 Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
 

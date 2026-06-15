@@ -11,5 +11,4 @@ tags: [] # example: [review, collaboration, comments] # also available as hyperl
 duration: 2:30 # optional, duration of the video in minutes:seconds format, "min" is automatically appended the duration
 ---
 
-{{< youtube id=videoId class="youtube-embed-container" >}}
-<!-- example:  {{< youtube bb6J--aApk8 >}} -->
+{{< youtube id=bb6J--aApk8 class="yt-embed-container" >}}

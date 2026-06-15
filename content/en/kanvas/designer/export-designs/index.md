@@ -26,7 +26,7 @@ Kanvas let's you export a design in several formats, so you can:
 2. Pick an export format 
    Choose the option that matches your workflow (see table below).
 
-![Export Icon](./export-modal.gif)
+![Export Icon](images/export-modal.gif)
 
 ## Quick Reference: Export Formats
 
@@ -95,7 +95,7 @@ This format includes only Kubernetes resource definitions.  Design layout, annot
 Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. 
 
 The embedded design version offers a visually interactive representation of your design, making it easy to share with infrastructure stakeholders.
-> [Learn more](../embedding-designs) about Embedding Designs.
+> [Learn more]({{< ref "kanvas/designer/embedding-designs/index.md" >}}) about Embedding Designs.
 
 ## Best Practices and Tips
 

@@ -24,5 +24,5 @@ Using the search bar, you can search for specific resources and select them. The
 
 Operator supports connecting to Kubernetes pods via the following methods.
 
-- [Log Streaming](/kanvas/operator/log-streaming): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
-- [Interactive Terminal](/kanvas/operator/interactive-terminal): Learn how to establish an interactive shell session with your containers.
+- [Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
+- [Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}): Learn how to establish an interactive shell session with your containers.

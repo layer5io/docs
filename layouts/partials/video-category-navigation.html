@@ -1,0 +1,52 @@
+{{ $.Scratch.Set "pathToHashMap" dict }}
+{{ $videos := .Site.GetPage "section" "videos" }}
+{{ if $videos }}
+  {{ range $mainIndex, $mainSection := $videos.Sections }}
+    {{ $mainPath := $mainSection.RelPermalink }}
+    {{ if not (hasPrefix $mainPath "/") }}
+      {{ $mainPath = "/" | add $mainPath }}
+    {{ end }}
+    {{ $.Scratch.SetInMap "pathToHashMap" $mainPath (printf "category-%d-subcategory-0" $mainIndex) }}
+    {{ range $subIndex, $subSection := $mainSection.Sections }}
+      {{ $subPath := $subSection.RelPermalink }}
+      {{ if not (hasPrefix $subPath "/") }}
+        {{ $subPath = "/" | add $subPath }}
+      {{ end }}
+      {{ $.Scratch.SetInMap "pathToHashMap" $subPath (printf "category-%d-subcategory-%d" $mainIndex $subIndex) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div id="video-hash-map" data-map='{{ $.Scratch.Get "pathToHashMap" | jsonify }}' style="display:none"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mapEl = document.getElementById('video-hash-map');
+  const pathToHashMap = mapEl ? JSON.parse(mapEl.dataset.map || '{}') : {};
+
+  const extractVideoPath = (pathname) => {
+    const match = pathname.match(/\/videos\/.*/);
+    if (!match) return null;
+    const path = match[0];
+    return path.endsWith('/') ? path : path + '/';
+  };
+
+  const currentPath = extractVideoPath(window.location.pathname);
+  if (currentPath && !window.location.hash && pathToHashMap[currentPath]) {
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${pathToHashMap[currentPath]}`);
+  }
+
+  document.querySelectorAll("a[href*='/videos/']").forEach(link => {
+    try {
+      const url = new URL(link.href);
+      if (url.origin !== window.location.origin || url.hash) return;
+      const pathKey = extractVideoPath(url.pathname);
+      if (pathKey && pathToHashMap[pathKey]) {
+        url.hash = pathToHashMap[pathKey];
+        link.href = url.toString();
+      }
+    } catch (_) {}
+  });
+}, true);
+</script>
+
+
