@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.136</title><link>/cloud/reference/releases/v1.0.136/</link><pubDate>Wed, 17 Jun 2026 18:37:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.136/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.137</title><link>/cloud/reference/releases/v1.0.137/</link><pubDate>Wed, 17 Jun 2026 22:27:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.137/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): marshal metadata_admin to []byte in OIDC email-changed audit (meshery-cloud-1736) @leecalcote (#5494)&lt;/li&gt;
+&lt;li&gt;fix(auth): stop pinning return_to=/registered on the registration flow-init @leecalcote (#5500)&lt;/li&gt;
+&lt;li&gt;fix(auth): treat an absent OIDC inbound email as sign-in, not an email-change @leecalcote (#5499)&lt;/li&gt;
+&lt;li&gt;fix(environments): resolve \Invalid schema: undefined\ crash at its source @leecalcote (#5498)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.136</title><link>/cloud/reference/releases/v1.0.136/</link><pubDate>Wed, 17 Jun 2026 18:37:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.136/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): keep CreateUser OIDC-safe so the re-activated webhook doesn&amp;rsquo;t break Google/GitHub sign-in @leecalcote (#5492)&lt;/li&gt;
 &lt;/ul&gt;
 
