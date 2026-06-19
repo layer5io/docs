@@ -210,27 +210,24 @@
            }
 
 
-           // show/hide video groups
-           const videoGroups = document.querySelectorAll('.video-group');
-           videoGroups.forEach(group => {
-             group.style.opacity = '0';
-             group.style.pointerEvents = 'none';
-           });
-           const activeVideoGroup = document.getElementById(`video-group-${mainCategoryIndex}-${subCategoryIndex}`);
-           if (activeVideoGroup) {
-             activeVideoGroup.style.opacity = '1';
-             activeVideoGroup.style.pointerEvents = 'auto';
-             syncContainerHeight(activeVideoGroup);
-           }
-         }
-         
-         // sync container height to prevent collapse
-         function syncContainerHeight(activeGroup) {
-           const containerEl = document.querySelector('.video-grid-container');
-           if (activeGroup && containerEl) {
-             const height = activeGroup.scrollHeight;
-             containerEl.style.minHeight = height + 'px';
-           }
+            // show/hide video groups
+            document.querySelectorAll('.video-group').forEach(group => {
+              const active = group.id === `video-group-${mainCategoryIndex}-${subCategoryIndex}`;
+              group.style.opacity = active ? '1' : '0';
+              group.style.pointerEvents = active ? 'auto' : 'none';
+              group.style.position = active ? 'relative' : 'absolute';
+              group.style.top = active ? '' : '0';
+              group.style.left = active ? '' : '0';
+              group.style.width = active ? '' : '100%';
+
+              // Accessibility: prevent screen readers & keyboard focus on hidden links
+              group.setAttribute('aria-hidden', active ? 'false' : 'true');
+              if (active) {
+                group.removeAttribute('inert');
+              } else {
+                group.setAttribute('inert', '');
+              }
+            });
          }
          
          // handle initial load and urL hash changes
