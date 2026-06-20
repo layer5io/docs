@@ -120,7 +120,7 @@ docker-update-modules:
 	if [ -n "$(MODULE)" ]; then \
 		module_base="$${MODULE%@*}"; \
 		hugo mod get "$(MODULE)"; \
-		resolved=$$(grep -m 1 "$$module_base" go.mod | awk '{print $$1 "@" $$2}'); \
+		resolved=$$(go list -m "$$module_base" | awk '{print $$1 "@" $$2}'); \
 		go mod edit -replace "$$module_base=$$resolved"; \
 	else \
 		echo "no module set"; \
@@ -130,7 +130,10 @@ docker-update-modules:
 ## Build docs while ignoring vendored paths for an upstream module.
 docker-build-upstream:
 	@test -n "$(UPSTREAM_MODULE_NAME)" || (echo "UPSTREAM_MODULE_NAME is required"; exit 1)
-	hugo --ignoreVendorPaths "github.com/$(UPSTREAM_MODULE_NAME)" -d /out
+	@test -n "$(UPSTREAM_REPO)" || (echo "UPSTREAM_REPO is required"; exit 1)
+	@test -n "$(UPSTREAM_COMMIT)" || (echo "UPSTREAM_COMMIT is required"; exit 1)
+	HUGO_MODULE_REPLACEMENTS="github.com/$(UPSTREAM_MODULE_NAME) -> github.com/$(UPSTREAM_REPO) $(UPSTREAM_COMMIT)" \
+		hugo --ignoreVendorPaths "github.com/$(UPSTREAM_MODULE_NAME)" -d /out
 
 ## Build and run docs website within a Docker container
 docker:
