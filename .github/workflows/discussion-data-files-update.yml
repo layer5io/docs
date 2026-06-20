@@ -15,7 +15,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Fetch discussions data for kanvas tag
-        run: curl -sf https://discuss.meshery.io/tag/kanvas.json -o data/kanvas_discuss.json
+        run: curl -sfL https://discuss.meshery.io/tag/kanvas.json -o data/kanvas_discuss.json
+
+      - name: Validate fetched discussion data
+        run: node -e "JSON.parse(require('fs').readFileSync('data/kanvas_discuss.json','utf8'))"
 
       - name: Pull changes from remote
         run: git pull origin master
