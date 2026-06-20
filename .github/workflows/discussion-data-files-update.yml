@@ -15,7 +15,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Fetch discussions data for kanvas tag
-        run: curl https://discuss.layer5.io/tag/kanvas.json -o data/kanvas_discuss.json
+        run: curl -sf https://discuss.meshery.io/tag/kanvas.json -o data/kanvas_discuss.json
 
       - name: Pull changes from remote
         run: git pull origin master
