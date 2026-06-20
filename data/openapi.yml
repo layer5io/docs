@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.9
+  version: v1.4.0
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -15011,7 +15011,7 @@ paths:
                         description: Invitation entity schema.
                         required:
                           - id
-                          - ownerId
+                          - owner
                           - name
                           - description
                           - orgId
@@ -15037,7 +15037,7 @@ paths:
                             x-oapi-codegen-extra-tags:
                               db: id
                               json: id
-                          ownerId:
+                          owner:
                             type: string
                             format: uuid
                             description: >-
@@ -15046,10 +15046,10 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
-                            x-go-name: OwnerID
+                            x-go-name: Owner
                             x-oapi-codegen-extra-tags:
-                              db: owner_id
-                              json: ownerId
+                              db: owner
+                              json: owner
                           isDefault:
                             type: boolean
                             description: >-
@@ -15630,7 +15630,7 @@ paths:
                         description: Invitation entity schema.
                         required:
                           - id
-                          - ownerId
+                          - owner
                           - name
                           - description
                           - orgId
@@ -15656,7 +15656,7 @@ paths:
                             x-oapi-codegen-extra-tags:
                               db: id
                               json: id
-                          ownerId:
+                          owner:
                             type: string
                             format: uuid
                             description: >-
@@ -15665,10 +15665,10 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
-                            x-go-name: OwnerID
+                            x-go-name: Owner
                             x-oapi-codegen-extra-tags:
-                              db: owner_id
-                              json: ownerId
+                              db: owner
+                              json: owner
                           isDefault:
                             type: boolean
                             description: >-
@@ -20243,11 +20243,11 @@ paths:
                             gorm: type:bytes;serializer:json
                             json: transitionMap,omitempty
                           x-order: 18
-                        userId:
-                          x-go-name: UserID
+                        owner:
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                           x-order: 11
                           description: User ID who owns this connection
                           type: string
@@ -22680,11 +22680,11 @@ paths:
                       gorm: type:bytes;serializer:json
                       json: transitionMap,omitempty
                     x-order: 18
-                  userId:
-                    x-go-name: UserID
+                  owner:
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     x-order: 11
                     description: User ID who owns this connection
                     type: string
@@ -24630,11 +24630,11 @@ paths:
                       gorm: type:bytes;serializer:json
                       json: transitionMap,omitempty
                     x-order: 18
-                  userId:
-                    x-go-name: UserID
+                  owner:
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     x-order: 11
                     description: User ID who owns this connection
                     type: string
@@ -27050,11 +27050,11 @@ paths:
                       gorm: type:bytes;serializer:json
                       json: transitionMap,omitempty
                     x-order: 18
-                  userId:
-                    x-go-name: UserID
+                  owner:
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     x-order: 11
                     description: User ID who owns this connection
                     type: string
@@ -32090,7 +32090,7 @@ paths:
                       required:
                         - id
                         - name
-                        - userId
+                        - owner
                         - createdAt
                         - updatedAt
                       properties:
@@ -32110,7 +32110,7 @@ paths:
                           minLength: 1
                           maxLength: 255
                           x-order: 2
-                        userId:
+                        owner:
                           type: string
                           format: uuid
                           description: >-
@@ -32120,7 +32120,8 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                           x-oapi-codegen-extra-tags:
-                            db: user_id
+                            db: owner
+                            json: owner
                           x-order: 3
                         filterFile:
                           type: string
@@ -34293,18 +34294,18 @@ paths:
                       additionalProperties: false
                       description: EventResult entity schema.
                       properties:
-                        userId:
+                        owner:
                           type: string
                           format: uuid
                           description: UUID of the user associated with the event.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                         systemId:
                           type: string
                           description: System identifier of the event source.
@@ -34352,7 +34353,7 @@ paths:
                             db: created_at
                             json: createdAt
                       required:
-                        - userId
+                        - owner
                         - category
                         - action
                     description: The events returned on the current page.
@@ -34477,18 +34478,18 @@ paths:
                       additionalProperties: false
                       description: EventResult entity schema.
                       properties:
-                        userId:
+                        owner:
                           type: string
                           format: uuid
                           description: UUID of the user associated with the event.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                         systemId:
                           type: string
                           description: System identifier of the event source.
@@ -34536,7 +34537,7 @@ paths:
                             db: created_at
                             json: createdAt
                       required:
-                        - userId
+                        - owner
                         - category
                         - action
                     description: The events returned on the current page.
@@ -34755,7 +34756,7 @@ paths:
                       required:
                         - id
                         - name
-                        - userId
+                        - owner
                         - createdAt
                         - updatedAt
                       properties:
@@ -34773,10 +34774,11 @@ paths:
                           minLength: 1
                           maxLength: 255
                           x-order: 2
-                        userId:
+                        owner:
                           description: Owning user ID.
                           x-oapi-codegen-extra-tags:
-                            db: user_id
+                            db: owner
+                            json: owner
                           x-order: 3
                           type: string
                           format: uuid
@@ -35166,7 +35168,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -35184,10 +35186,11 @@ paths:
                     minLength: 1
                     maxLength: 255
                     x-order: 2
-                  userId:
+                  owner:
                     description: Owning user ID.
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
+                      json: owner
                     x-order: 3
                     type: string
                     format: uuid
@@ -35467,7 +35470,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -35485,10 +35488,11 @@ paths:
                     minLength: 1
                     maxLength: 255
                     x-order: 2
-                  userId:
+                  owner:
                     description: Owning user ID.
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
+                      json: owner
                     x-order: 3
                     type: string
                     format: uuid
@@ -35872,7 +35876,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -35890,10 +35894,11 @@ paths:
                     minLength: 1
                     maxLength: 255
                     x-order: 2
-                  userId:
+                  owner:
                     description: Owning user ID.
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
+                      json: owner
                     x-order: 3
                     type: string
                     format: uuid
@@ -36176,7 +36181,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -36194,10 +36199,11 @@ paths:
                     minLength: 1
                     maxLength: 255
                     x-order: 2
-                  userId:
+                  owner:
                     description: Owning user ID.
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
+                      json: owner
                     x-order: 3
                     type: string
                     format: uuid
@@ -36456,7 +36462,7 @@ paths:
                 description: Invitation entity schema.
                 required:
                   - id
-                  - ownerId
+                  - owner
                   - name
                   - description
                   - orgId
@@ -36480,14 +36486,14 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
-                  ownerId:
+                  owner:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
-                    x-go-name: OwnerID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: owner_id
-                      json: ownerId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -36818,7 +36824,7 @@ paths:
                 description: Invitation entity schema.
                 required:
                   - id
-                  - ownerId
+                  - owner
                   - name
                   - description
                   - orgId
@@ -36842,14 +36848,14 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
-                  ownerId:
+                  owner:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
-                    x-go-name: OwnerID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: owner_id
-                      json: ownerId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -37032,7 +37038,7 @@ paths:
                       description: Invitation entity schema.
                       required:
                         - id
-                        - ownerId
+                        - owner
                         - name
                         - description
                         - orgId
@@ -37056,14 +37062,14 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        ownerId:
+                        owner:
                           description: >-
                             ID of the user who created the invitation. Tracks who created the invitation for auditing
                             purposes.
-                          x-go-name: OwnerID
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: owner_id
-                            json: ownerId
+                            db: owner
+                            json: owner
                           type: string
                           format: uuid
                           x-go-type: uuid.UUID
@@ -37350,7 +37356,7 @@ paths:
                 description: Invitation entity schema.
                 required:
                   - id
-                  - ownerId
+                  - owner
                   - name
                   - description
                   - orgId
@@ -37374,14 +37380,14 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
-                  ownerId:
+                  owner:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
-                    x-go-name: OwnerID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: owner_id
-                      json: ownerId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -37557,7 +37563,7 @@ paths:
                 description: Invitation entity schema.
                 required:
                   - id
-                  - ownerId
+                  - owner
                   - name
                   - description
                   - orgId
@@ -37581,14 +37587,14 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
-                  ownerId:
+                  owner:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
-                    x-go-name: OwnerID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: owner_id
-                      json: ownerId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -38103,7 +38109,7 @@ paths:
                       required:
                         - id
                         - name
-                        - userId
+                        - owner
                         - createdAt
                         - updatedAt
                       properties:
@@ -38129,13 +38135,13 @@ paths:
                           x-oapi-codegen-extra-tags:
                             db: name
                             json: name
-                        userId:
+                        owner:
                           description: User ID of the profile owner.
                           x-order: 3
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                           type: string
                           format: uuid
                           x-go-type: uuid.UUID
@@ -38541,7 +38547,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -38567,13 +38573,13 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: name
                       json: name
-                  userId:
+                  owner:
                     description: User ID of the profile owner.
                     x-order: 3
-                    x-go-name: UserID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -38834,7 +38840,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -38860,13 +38866,13 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: name
                       json: name
-                  userId:
+                  owner:
                     description: User ID of the profile owner.
                     x-order: 3
-                    x-go-name: UserID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -39290,7 +39296,7 @@ paths:
                 required:
                   - id
                   - name
-                  - userId
+                  - owner
                   - createdAt
                   - updatedAt
                 properties:
@@ -39316,13 +39322,13 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: name
                       json: name
-                  userId:
+                  owner:
                     description: User ID of the profile owner.
                     x-order: 3
-                    x-go-name: UserID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     type: string
                     format: uuid
                     x-go-type: uuid.UUID
@@ -41635,7 +41641,7 @@ paths:
                       description: Represents a user-owned API token or OAuth session.
                       required:
                         - id
-                        - userId
+                        - owner
                         - provider
                       properties:
                         id:
@@ -41649,12 +41655,12 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        userId:
+                        owner:
                           description: UUID of the user who owns the token.
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                           x-order: 2
                           type: string
                           format: uuid
@@ -41812,7 +41818,7 @@ paths:
                       description: Represents a user-owned API token or OAuth session.
                       required:
                         - id
-                        - userId
+                        - owner
                         - provider
                       properties:
                         id:
@@ -41826,12 +41832,12 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        userId:
+                        owner:
                           description: UUID of the user who owns the token.
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                           x-order: 2
                           type: string
                           format: uuid
@@ -41994,7 +42000,7 @@ paths:
                       description: Represents a user-owned API token or OAuth session.
                       required:
                         - id
-                        - userId
+                        - owner
                         - provider
                       properties:
                         id:
@@ -42008,12 +42014,12 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        userId:
+                        owner:
                           description: UUID of the user who owns the token.
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                           x-order: 2
                           type: string
                           format: uuid
@@ -42165,7 +42171,7 @@ paths:
                 description: Represents a user-owned API token or OAuth session.
                 required:
                   - id
-                  - userId
+                  - owner
                   - provider
                 properties:
                   id:
@@ -42179,12 +42185,12 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
-                  userId:
+                  owner:
                     description: UUID of the user who owns the token.
-                    x-go-name: UserID
+                    x-go-name: Owner
                     x-oapi-codegen-extra-tags:
-                      db: user_id
-                      json: userId
+                      db: owner
+                      json: owner
                     x-order: 2
                     type: string
                     format: uuid
@@ -42331,7 +42337,7 @@ paths:
                       description: Represents a user-owned API token or OAuth session.
                       required:
                         - id
-                        - userId
+                        - owner
                         - provider
                       properties:
                         id:
@@ -42345,12 +42351,12 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        userId:
+                        owner:
                           description: UUID of the user who owns the token.
-                          x-go-name: UserID
+                          x-go-name: Owner
                           x-oapi-codegen-extra-tags:
-                            db: user_id
-                            json: userId
+                            db: owner
+                            json: owner
                           x-order: 2
                           type: string
                           format: uuid
