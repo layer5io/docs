@@ -30,7 +30,7 @@ A Deployment provides declarative updates for Pods and ReplicaSets. It allows yo
 
 * **`revisionHistoryLimit`** *(integer)*
   * **What it does:** Specifies the number of old ReplicaSets to retain to allow rollback.
-  * **Behavior:** Defaults to 10. If set to `0`, you cannot roll back to previous versions of the Deployment.
+  * **Behavior:** Defaults to `10`. If set to `0`, you cannot roll back to previous versions of the Deployment.
 
 * **`paused`** *(boolean)*
   * **What it does:** Indicates whether the deployment is paused.
@@ -50,7 +50,7 @@ A Deployment provides declarative updates for Pods and ReplicaSets. It allows yo
 
 * **`progressDeadlineSeconds`** *(integer)*
   * **What it does:** The maximum time in seconds the Deployment controller waits for a rollout to make progress before considering it "failed".
-  * **Behavior:** If a new Pod gets stuck in a crash loop due to a bad configuration or image, the Deployment will stop trying to roll out after this deadline (defaults to 600s) and report a `ProgressDeadlineExceeded` error condition.
+  * **Behavior:** If a new Pod gets stuck in a crash loop due to a bad configuration or image, the Deployment will stop trying to roll out after this deadline (defaults to `600s`) and report a `ProgressDeadlineExceeded` error condition.
 
 ---
 
@@ -70,7 +70,7 @@ A Service is an abstract way to expose an application running on a set of Pods a
 
 * **`selector`** *(object)*
   * **What it does:** Key-value pairs used to identify which Pods this Service should route traffic to.
-  * **Behavior:** If a Service has a selector of `app: frontend`, it will automatically discover and load-balance traffic across all Pods in the namespace that possess the `app: frontend` label. 
+  * **Behavior:** If a Service has a selector of `app: frontend`, it will automatically discover and load-balance traffic across all Pods in the namespace that possess the `app: frontend` label.
 
 * **`ports`** *(array)*
   * **What it does:** Defines the network ports exposed by the Service.
