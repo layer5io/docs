@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.139</title><link>/cloud/reference/releases/v1.0.139/</link><pubDate>Sat, 20 Jun 2026 01:27:15 +0000</pubDate><guid>/cloud/reference/releases/v1.0.139/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.140</title><link>/cloud/reference/releases/v1.0.140/</link><pubDate>Sun, 21 Jun 2026 06:05:02 +0000</pubDate><guid>/cloud/reference/releases/v1.0.140/</guid><description>&lt;ul&gt;
+&lt;li&gt;refactor: pre-compute static role UUIDs and drop redundant uuidMust test helper @leecalcote (#5518)&lt;/li&gt;
+&lt;li&gt;Migrate from userID to owner. @leecalcote (#5510)&lt;/li&gt;
+&lt;li&gt;feat(deps): migrate to meshery/schemas v1.3.12 + meshkit v1.0.14 (gofrs-&amp;gt;google/uuid) @leecalcote (#5513)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @ritzorama and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.139</title><link>/cloud/reference/releases/v1.0.139/</link><pubDate>Sat, 20 Jun 2026 01:27:15 +0000</pubDate><guid>/cloud/reference/releases/v1.0.139/</guid><description>&lt;ul&gt;
 &lt;li&gt;Rename discussion forum and support custom contact properties on organizations @sarajkrishnasingh (#5509)&lt;/li&gt;
 &lt;li&gt;refactor: consolidate owner field naming to match meshery/schemas v1.3.10 @leecalcote (#5506)&lt;/li&gt;
 &lt;li&gt;fix(auth): brand the login/signup toggle and tidy helper-link layout @hortison (#5508)&lt;/li&gt;
