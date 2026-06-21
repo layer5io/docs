@@ -61,11 +61,11 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[137 423 176 309 35 249]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[410 472 259 206 337 125]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Starting from Existing Infrastructure</title><link>/pr-preview/pr-1109/kanvas/getting-started/starting-from-existing-infrastructure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1109/kanvas/getting-started/starting-from-existing-infrastructure/</guid><description>&lt;p&gt;Kanvas now &lt;strong&gt;supports importing existing Kubernetes resource manifests&lt;/strong&gt; (including Pods) from your cluster. To bring an existing pod into Kanvas, first export it from Kubernetes, then import the YAML into Kanvas. This allows you to visualize and edit live infrastructure as a design. In the example below, we export Pods from namespace &lt;code&gt;default&lt;/code&gt; and then import them into Kanvas to create a new design:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#8a8a8a;background-color:#1c1c1c;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl get pods -n default -o yaml &amp;gt; exported-pods.yaml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command saves all Pods in the &lt;code&gt;default&lt;/code&gt; namespace into a YAML file. You can now open Kanvas (Designer) and use the &lt;strong&gt;Import&lt;/strong&gt; feature to load &lt;code&gt;exported-pods.yaml&lt;/code&gt;. The Kanvas UI (☰ hamburger menu → &lt;strong&gt;Import&lt;/strong&gt; or drag-and-drop the file onto the canvas) will read the file and render each Pod as a node on the canvas.&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/pr-preview/pr-1109/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1109/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command saves all Pods in the &lt;code&gt;default&lt;/code&gt; namespace into a YAML file. You can now open Kanvas (Designer) and use the &lt;strong&gt;Import&lt;/strong&gt; feature to load &lt;code&gt;exported-pods.yaml&lt;/code&gt;. The Kanvas UI (☰ hamburger menu → &lt;strong&gt;Import&lt;/strong&gt; or drag and drop the file onto the canvas) will read the file and render each Pod as a node on the canvas.&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/pr-preview/pr-1109/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1109/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
  Benefits of Using Relationships
  &lt;a href="#benefits-of-using-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -94,7 +94,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[73 240 211 229 163 74]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[453 334 219 207 489 398]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
