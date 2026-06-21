@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Layer5 Documentation</title><link>/pr-preview/pr-1110/tags/kubernetes/</link><description>Recent content in Kubernetes on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1110/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes Components Reference</title><link>/pr-preview/pr-1110/kanvas/reference/kubernetes-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1110/kanvas/reference/kubernetes-components/</guid><description>&lt;p&gt;When designing infrastructure in Kanvas, dragging complex Kubernetes components (like a Service or Deployment) onto the canvas opens a configuration panel. This panel exposes the underlying YAML specification as editable fields.&lt;/p&gt;
+&lt;p&gt;This reference guide explains the most commonly used configuration properties for Kubernetes components, providing clarity on expected syntax, typical values, and how these settings affect your cluster&amp;rsquo;s behavior.&lt;/p&gt;
+
+&lt;h2 id="kubernetes-deployment" class="heading-link"&gt;
+ Kubernetes Deployment
+ &lt;a href="#kubernetes-deployment" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A Deployment provides declarative updates for Pods and ReplicaSets. It allows you to describe an application&amp;rsquo;s lifecycle, such as which images to run, how many replicas there should be, and the strategy for updating them.&lt;/p&gt;</description></item></channel></rss>
