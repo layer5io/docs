@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1099/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1099/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.135</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.135/</link><pubDate>Wed, 17 Jun 2026 00:51:30 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.135/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1099/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1099/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.143</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.143/</link><pubDate>Sun, 21 Jun 2026 15:15:18 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.143/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix: revert gofrs-&amp;gt;google/uuid migration to restore pop compatibility (prod auth 500s) @ritzorama (#5523)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.142</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.142/</link><pubDate>Sun, 21 Jun 2026 14:20:51 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.142/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(db): drop OWNER TO postgres from ownership consolidation migration (prod 42501) @ritzorama (#5520)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.141</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.141/</link><pubDate>Sun, 21 Jun 2026 13:20:42 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.141/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ci): notify production deploy + helm release on release event @hortison (#5519)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.140</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.140/</link><pubDate>Sun, 21 Jun 2026 06:05:02 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.140/</guid><description>&lt;ul&gt;
+&lt;li&gt;refactor: pre-compute static role UUIDs and drop redundant uuidMust test helper @leecalcote (#5518)&lt;/li&gt;
+&lt;li&gt;Migrate from userID to owner. @leecalcote (#5510)&lt;/li&gt;
+&lt;li&gt;feat(deps): migrate to meshery/schemas v1.3.12 + meshkit v1.0.14 (gofrs-&amp;gt;google/uuid) @leecalcote (#5513)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @ritzorama and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.139</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.139/</link><pubDate>Sat, 20 Jun 2026 01:27:15 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.139/</guid><description>&lt;ul&gt;
+&lt;li&gt;Rename discussion forum and support custom contact properties on organizations @sarajkrishnasingh (#5509)&lt;/li&gt;
+&lt;li&gt;refactor: consolidate owner field naming to match meshery/schemas v1.3.10 @leecalcote (#5506)&lt;/li&gt;
+&lt;li&gt;fix(auth): brand the login/signup toggle and tidy helper-link layout @hortison (#5508)&lt;/li&gt;
+&lt;li&gt;fix(ui/dashboard): restore widgets drawer layout and styling @rishiraj38 (#5505)&lt;/li&gt;
+&lt;li&gt;Process open-org invitations for existing users on sign-in @aabidsofi19 (#5504)&lt;/li&gt;
+&lt;li&gt;fix(ui): display active organization roles in 404/permission error page @rishiraj38 (#5501)&lt;/li&gt;
+&lt;li&gt;fix(email): resolve broken discussion forum social icon link in footer @rishiraj38 (#5502)&lt;/li&gt;
+&lt;li&gt;fix(users): harden GetUserByEmail against account fragmentation (#5410) @leecalcote (#5503)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna, @aabidsofi19, @hortison, @leecalcote, @meshery-ci, @rishiraj38 and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.138</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.138/</link><pubDate>Thu, 18 Jun 2026 16:52:49 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.138/</guid><description>&lt;ul&gt;
+&lt;li&gt;test(dao): replace SQLite test harness with Postgres-only tests @leecalcote (#5497)&lt;/li&gt;
+&lt;li&gt;fix(ui): use theme token for checkbox contrast in welcome modal footer @leecalcote (#5495)&lt;/li&gt;
+&lt;li&gt;Treat cloud.meshery.io as a standard custom-domain org; keep custom-domain sign-in on its own domain @leecalcote (#5496)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @meshery-ci and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.137</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.137/</link><pubDate>Wed, 17 Jun 2026 22:27:55 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.137/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): marshal metadata_admin to []byte in OIDC email-changed audit (meshery-cloud-1736) @leecalcote (#5494)&lt;/li&gt;
+&lt;li&gt;fix(auth): stop pinning return_to=/registered on the registration flow-init @leecalcote (#5500)&lt;/li&gt;
+&lt;li&gt;fix(auth): treat an absent OIDC inbound email as sign-in, not an email-change @leecalcote (#5499)&lt;/li&gt;
+&lt;li&gt;fix(environments): resolve \Invalid schema: undefined\ crash at its source @leecalcote (#5498)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.136</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.136/</link><pubDate>Wed, 17 Jun 2026 18:37:23 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.136/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): keep CreateUser OIDC-safe so the re-activated webhook doesn&amp;rsquo;t break Google/GitHub sign-in @leecalcote (#5492)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.135</title><link>/pr-preview/pr-1099/cloud/reference/releases/v1.0.135/</link><pubDate>Wed, 17 Jun 2026 00:51:30 +0000</pubDate><guid>/pr-preview/pr-1099/cloud/reference/releases/v1.0.135/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): make Kratos webhook passkey runtime-configurable to unblock email signup @leecalcote (#5491)&lt;/li&gt;
 &lt;li&gt;chore(ui): update @sistent/sistent to v0.21.22 @rishiraj38 (#5490)&lt;/li&gt;
 &lt;li&gt;chore(performance-profile): migrate to schema-generated models @PragalvaXFREZ (#5485)&lt;/li&gt;
