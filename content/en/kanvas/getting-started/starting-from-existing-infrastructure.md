@@ -14,7 +14,7 @@ Kanvas now **supports importing existing Kubernetes resource manifests** (includ
 kubectl get pods -n default -o yaml > exported-pods.yaml
 ```
 
-This command saves all Pods in the `default` namespace into a YAML file. You can now open Kanvas (Designer) and use the **Import** feature to load `exported-pods.yaml`. The Kanvas UI (☰ hamburger menu → **Import** or drag-and-drop the file onto the canvas) will read the file and render each Pod as a node on the canvas.
+This command saves all Pods in the `default` namespace into a YAML file. You can now open Kanvas (Designer) and use the **Import** feature to load `exported-pods.yaml`. The Kanvas UI (☰ hamburger menu → **Import** or drag and drop the file onto the canvas) will read the file and render each Pod as a node on the canvas.
 
 * **Example:** If `exported-pods.yaml` contains two Pod definitions (`frontend-pod` and `backend-pod`), Kanvas will create two corresponding components on the canvas, labeled "frontend-pod" and "backend-pod".
 
@@ -24,7 +24,7 @@ After importing, each Pod appears as a stand-alone node. If the Pod YAML include
 
 * **File format:** Kanvas accepts standard Kubernetes manifests in YAML. In practice, using `kubectl get pods -o yaml` produces a multi-document YAML file with all Pods. Kanvas parses each `---` document as a separate resource.
 * **Supported resources:** Although this example is about Pods, Kanvas's import supports any Kubernetes resource in a manifest (e.g. Deployments, Services, ConfigMaps, etc.). All such resources in the file will be added.
-* **Import methods:** You can import via the Kanvas **Import** dialog (hamburger menu), via drag-and-drop, or via a cloud URL. For example, dragging `exported-pods.yaml` directly onto a blank Kanvas canvas will also load it. (The Kanvas Import dialog offers flexibility to choose file or URL inputs.)
+* **Import methods:** You can import via the Kanvas **Import** dialog (hamburger menu), via drag and drop, or via a cloud URL. For example, dragging `exported-pods.yaml` directly onto a blank Kanvas canvas will also load it. (The Kanvas Import dialog offers flexibility to choose file or URL inputs.)
 * **Resulting canvas:** Once imported, Kanvas displays each Pod with its name and key details. You can click a Pod node to view its spec and metadata. Kanvas might also arrange related components automatically (e.g. grouping by namespace or label) depending on current design filters.
 * **Namespace handling:** The namespace in the metadata is preserved. If you import pods from a different namespace, Kanvas can filter or color-code by namespace.
 * **Re-importing:** If you later edit the manifest or get updated YAML, you can re-import. Kanvas will create new nodes; you may need to delete or reconcile duplicates manually.
@@ -70,7 +70,7 @@ Dragging or importing this file into Kanvas will produce two pod components. Eac
 
 ### Limits and Performance
 
-* **No hard component limit:** Kanvas does not impose a fixed upper limit on the number of imported components; it is designed to handle typical cluster sizes. For example, if you export 100 Pods, Kanvas should ingest them without issue. We have successfully imported designs with hundreds of resources on a modern browser. However, very large designs (thousands of components or relationships) may slow down browser rendering. We recommend breaking very large infrastructures into smaller imports or using Kanvas's filtering.
+* **Component limits and performance:** While Kanvas's import parser does not impose a fixed technical limit on the number of components it can process, your subscription plan may limit the total number of components in a design (e.g., free accounts are limited to 100 components). For larger clusters, we recommend breaking imports into smaller designs or upgrading your plan. Additionally, very large designs (thousands of components) may slow down browser rendering, so we recommend using Kanvas's filtering to manage complexity.
 * **Relationship complexity:** The more resources (and relationship definitions) you import, the more edges Kanvas must draw. Kanvas's layout engine will draw all defined relationships (e.g. ownerReferences, label matches, or manually created connections). A higher number of edges primarily affects render time and visual complexity but does not otherwise limit import. For most use cases, the practical limit is the browser's ability to display and interact with the graph. If you notice performance issues, try reducing the number of resources per design.
 
 ### "kubectl describe" is Not Supported
