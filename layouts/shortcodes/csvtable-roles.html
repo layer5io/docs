@@ -1,6 +1,6 @@
 {{ $data := "" }} 
-{{ $p := "static/data/csv/keys-backup.csv" }} 
-{{ $excludedColumns := slice 0 10 11 12 13 14 15 16 17 18 }} 
+{{ $p := "static/data/csv/keys.csv" }} 
+{{ $excludedColumns := slice 0 11 12 13 14 15 16 17 18 19 20 }} 
 
 {{ if os.FileExists $p }} 
   {{ $opts := dict "delimiter" "," }} 
@@ -39,6 +39,10 @@
         {{ $urlPath = "roles/organization-roles" }}
       {{ else if hasPrefix $sectionName "provider" }}
         {{ $urlPath = "roles/#provider-admin-role" }}
+      {{ else if or (hasPrefix $sectionName "academy") }}
+        {{ $urlPath = "roles/academy-roles" }}
+      {{ else if or (hasPrefix $sectionName "leaner") }}
+        {{ $urlPath = "roles/academy-roles/#learner" }}
       {{ else }}
         {{ $urlPath = print "roles/" $sectionName | urlize }}
       {{ end }}
