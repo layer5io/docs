@@ -25,8 +25,6 @@
   min-height: 4rem;
   margin: auto;
   z-index: 32;
-  box-sizing: border-box;
-  width: 100%;
   padding: 0 !important;
 
   .navbar-brand {
@@ -46,7 +44,6 @@
   .navbar-nav {
     padding-top: $spacer * 0.5;
     white-space: nowrap;
-    box-sizing: border-box;
   }
 
   .nav-link {
@@ -74,25 +71,10 @@
     .td-navbar-nav-scroll {
       width: 100%;
       max-width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-      height: 3.5rem;
-      font-size: 0.9rem;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-
-      &::-webkit-scrollbar {
-        display: none !important; /* Chrome, Safari and Opera */
-      }
-    }
-
-    .navbar-brand {
-      // margin-right: 0;
     }
 
     .navbar-nav {
-      padding-bottom: 2rem;
-      overflow-x: visible;
+      flex-wrap: nowrap;
     }
   }
 

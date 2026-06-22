@@ -40,8 +40,14 @@
     .dropdown-item {
       color: $white;
 
-      &:hover {
+      &:hover, &:focus:hover {
         background: $primary;
+      }
+
+      &:focus, &:active, &.active {
+        background: transparent;
+        color: $white;
+        outline: none;
       }
     }
 
@@ -75,11 +81,6 @@ html {
   box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-
-  @media (max-width: 768px) {
-    scrollbar-width: none; /* Firefox */
-  }
 }
 
 *,
@@ -118,15 +119,10 @@ html {
 
 body {
   padding-top: 5.5rem;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  box-sizing: border-box;
   
   @media (max-width: 768px) {
     overflow-x: hidden;
     padding-top: 4.5rem;
-    scrollbar-width: none; /* Firefox */
   }
 
   @media (max-width: 576px) {

@@ -5,7 +5,6 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 
@@ -40,7 +39,6 @@
   &__input {
     width: 100%;
     text-indent: 1.25em;
-    box-sizing: border-box;
 
     &:not(:focus) {
       background: transparent;
@@ -57,7 +55,6 @@
       .td-navbar & {
         border: none;
         color: $navbar-dark-color;
-        box-sizing: border-box;
 
         @include placeholder {
           color: $navbar-dark-color;
@@ -136,12 +133,10 @@
 .td-navbar {
   min-height: 6rem;
   background-color: $body-bg !important;
-  box-sizing: border-box;
   width: 100%;
 
   .td-navbar-nav-scroll {
     // max-width: fit-content;
-    box-sizing: border-box;
     @media (max-width: 991.98px){
       padding-bottom: 3rem;
     }
@@ -158,7 +153,6 @@
     // background-color: #EBC017;
     background-color: #2e2e31;
     border-radius: 1rem;
-    box-sizing: border-box;
     margin: 0 0.5rem;
     flex: 1;
     max-width: calc(100% - 1rem);
@@ -167,7 +161,6 @@
       width: 100%;
       text-indent: 1.25em;
       border-radius: 1rem;
-      box-sizing: border-box;
     }
     .td-search__input:not(:focus) {
       background: transparent;
@@ -184,7 +177,6 @@
 
 .form-control {
   border: 1px solid #ced4da;
-  box-sizing: border-box;
 }
 input[type="search"]::-webkit-search-cancel-button {
   filter: invert(55%) sepia(75%) saturate(380%) hue-rotate(135deg) brightness(95%) contrast(90%);
