@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.13
+  version: v1.3.14
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -13900,7 +13900,7 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
                   status:
                     x-go-type: AcademyRegistrationStatus
                     description: Status of the user's course registration
@@ -14127,7 +14127,7 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
                   status:
                     x-go-type: AcademyRegistrationStatus
                     description: Status of the user's course registration
@@ -15890,7 +15890,7 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-oapi-codegen-extra-tags:
-                      db: user_id
+                      db: owner
                   status:
                     x-go-type: AcademyRegistrationStatus
                     description: Status of the user's course registration
