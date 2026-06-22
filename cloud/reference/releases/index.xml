@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.144</title><link>/cloud/reference/releases/v1.0.144/</link><pubDate>Sun, 21 Jun 2026 23:22:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.144/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.145</title><link>/cloud/reference/releases/v1.0.145/</link><pubDate>Mon, 22 Jun 2026 01:49:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.145/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): bump @meshery/schemas to v1.3.14 to restore enrollment @ritzorama (#5526)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@ritzorama&lt;/p&gt;</description></item><item><title>v1.0.144</title><link>/cloud/reference/releases/v1.0.144/</link><pubDate>Sun, 21 Jun 2026 23:22:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.144/</guid><description>&lt;ul&gt;
 &lt;li&gt;[uuid] Migrate academy/dao to gofrs/uuid; pin schemas v1.3.13 + meshkit v1.0.16 @ritzorama (#5525)&lt;/li&gt;
 &lt;/ul&gt;
 
