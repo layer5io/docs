@@ -52,9 +52,9 @@
                   {{ $urlPath = "roles/#provider-admin-role" }}
                 {{ else if hasPrefix $sectionName "user" }}
                   {{ $urlPath = "roles/user-role" }}
-                {{ else if or (hasPrefix $sectionName "academy") }}
+                {{ else if hasPrefix $sectionName "academy" }}
                   {{ $urlPath = "roles/academy-roles" }}
-                {{ else if or (hasPrefix $sectionName "leaner") }}
+                {{ else if or (hasPrefix $sectionName "learner") (hasPrefix $sectionName "leaner") }}
                   {{ $urlPath = "roles/academy-roles/#learner" }}
                 {{ else }}
                   {{ $urlPath = print "roles/" }}

@@ -41,7 +41,7 @@
         {{ $urlPath = "roles/#provider-admin-role" }}
       {{ else if hasPrefix $sectionName "academy" }}
         {{ $urlPath = "roles/academy-roles" }}
-      {{ else if hasPrefix $sectionName "learner" }}
+      {{ else if or (hasPrefix $sectionName "learner") (hasPrefix $sectionName "leaner") }}
         {{ $urlPath = "roles/academy-roles/#learner" }}
       {{ else }}
         {{ $urlPath = print "roles/" $sectionName | urlize }}
