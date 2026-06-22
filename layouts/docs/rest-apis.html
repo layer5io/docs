@@ -17,13 +17,12 @@
     <br />
     {{- partial "disqus-comment.html" . -}}
   {{ end -}}
+  {{ partial "related-reading.html" . -}}
+  {{ partial "video-section-related.html" . -}}
+  <div style="margin-top: 2rem;">
+    {{ partial "recent-discussions.html" . -}}
+  </div>
   {{ partial "pager.html" . }}
   {{ partial "page-meta-lastmod.html" . }}
-</div>
-
-{{ partial "related-reading.html" . -}}
-{{ partial "video-section-related.html" . -}}
-<div style="margin-top: 2rem;">
-  {{ partial "recent-discussions.html" . -}}
 </div>
 {{ end }}

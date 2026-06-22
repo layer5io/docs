@@ -22,10 +22,12 @@
       {{- partial "disqus-comment.html" . -}}
    {{ end -}}
    
-   {{ partial "pager.html" . }}
-   {{ partial "page-meta-lastmod.html" . -}}
    {{ partial "related-reading.html" . -}}
    {{ partial "video-section-related.html" . -}}
-   {{ partial "recent-discussions.html" . -}}
+   <div style="margin-top: 2rem;">
+      {{ partial "recent-discussions.html" . -}}
+   </div>
+   {{ partial "pager.html" . }}
+   {{ partial "page-meta-lastmod.html" . }}
 </div>
 {{ end -}}
