@@ -1,0 +1,2 @@
+{{ $resizerScript := resources.Get "js/sidebar-load-width.js" | minify | fingerprint }}
+<script src="{{ $resizerScript.RelPermalink }}"></script>
