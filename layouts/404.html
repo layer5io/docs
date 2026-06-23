@@ -2,6 +2,7 @@
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
     {{ partial "head.html" . }}
+    {{ partial "load-sidebars-width.html" . }}
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
     <header>
@@ -34,8 +35,6 @@
             <p>Please let us know about <a href="https://github.com/layer5io/docs/issues/new/choose">this issue</a> and return to the <a href="{{ "" | relURL }}">home page</a>.</p>
             {{ end }}
           </main>
-
-          {{ partial "load-sidebars-width.html" . }}
         </div>
       </div>
       {{ partial "footer.html" . }}

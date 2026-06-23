@@ -1,3 +1,2 @@
-<!-- load-sidebars should be called after the HTML for the grid has been defined -->
 {{ $resizerScript := resources.Get "js/sidebar-load-width.js" | minify | fingerprint }}
 <script src="{{ $resizerScript.RelPermalink }}"></script>
