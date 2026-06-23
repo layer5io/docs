@@ -234,7 +234,7 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
-  padding-top: 1rem;
+  padding-top: 0rem;
   margin-top: 0;
   overflow-x: hidden;
   &__inner {
@@ -335,18 +335,20 @@ a:not([href]):not([class]):hover {
 .td-sidebar-toc {
   margin-top: 0rem;
   line-height: 1.25rem;
-  border-left: 1px solid $border-color;
+  border-left: var(--sidebar-border-width) solid var(--sidebar-border-color);
   background-image: linear-gradient(to top,
       #1e2117,
       #1d1912,
       #18120e,
       #0f0a09,
       #000000);
+  padding-left: var(--sidebar-padding-horizontal);
+  padding-right: var(--sidebar-padding-horizontal);
 
   @supports (position: sticky) {
     position: sticky;
     top: 5.5rem;
-    padding-top: 1rem;
+    padding-top: var(--sidebar-padding-vertical);
     height: calc(100vh - 5.5rem);
     overflow-y: auto;
   }
