@@ -49,19 +49,11 @@ $td-sidebar-border-color: $border-color;
 // Righthand sidebar with intra-page table of contents
 $td-sidebar-toc-bg-color: rgba($dark, 0.5);
 
-// Variables for Consistent Sidebar Alignment and Styling
 :root {
-  // Spacing
   --sidebar-padding-vertical: 1rem;
   --sidebar-padding-horizontal: 1rem;
   --sidebar-border-width: 1px;
-  
-  // Shared border color (matches original left sidebar border)
   --sidebar-border-color: rgba(0, 179, 159, 0.33);
-
-  // Interactions
-  --sidebar-link-transition: color 0.2s ease, background-color 0.2s ease;
-  --sidebar-link-hover-bg: rgba(0, 211, 169, 0.1);
 }
 
 // Background colors for the sections on home page etc. It is a paint by number

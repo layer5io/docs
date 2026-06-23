@@ -18,8 +18,6 @@
     // box is displayed regardless of the value of sidebar_search_disable:
     &.td-sidebar-nav--search-disabled {
       @include media-breakpoint-up(lg) {
-        // There's no search box so add top padding
-        // and adjust max-height:
         padding-top: 0;
   
         @supports (position: sticky) {
@@ -120,7 +118,6 @@
     @include link-decoration;
   
     @include media-breakpoint-up(md) {
-      padding-top: 0;
       background-color: var(--bs-body-tertiary-bg);
       padding-right: var(--sidebar-padding-horizontal);
       padding-left: var(--sidebar-padding-horizontal);
@@ -136,8 +133,7 @@
     }
   
     &__search {
-      padding: 0 0;
-      padding-bottom: 1rem;
+      padding: 0 0 1rem;
     }
   
     &__inner {
