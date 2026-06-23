@@ -23478,8 +23478,8 @@ a:not([href]):not([class]):hover {
   #left-resizer {
     grid-column: 2;
     grid-row: 1;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
     box-sizing: border-box; }
   main[role="main"] {
     grid-column: 3;
@@ -23492,8 +23492,8 @@ a:not([href]):not([class]):hover {
   #right-resizer {
     grid-column: 4;
     grid-row: 1;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
     box-sizing: border-box; }
   .td-sidebar-toc {
     grid-column: 5;
