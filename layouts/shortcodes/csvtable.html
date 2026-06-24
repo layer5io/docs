@@ -1,6 +1,6 @@
 {{ $data := "" }}
 
-{{ $p := "static/data/csv/keys-backup.csv" }}
+{{ $p := "static/data/csv/keys.csv" }}
 {{ $excludedColumns := slice "Category" "Keychain ID" "Key ID" "Inserted" "Local Provider" }} <!-- Add the names of the columns to exclude -->
 
 {{ if os.FileExists $p }}
@@ -52,6 +52,10 @@
                   {{ $urlPath = "roles/#provider-admin-role" }}
                 {{ else if hasPrefix $sectionName "user" }}
                   {{ $urlPath = "roles/user-role" }}
+                {{ else if hasPrefix $sectionName "academy" }}
+                  {{ $urlPath = "roles/academy-roles" }}
+                {{ else if or (hasPrefix $sectionName "learner") (hasPrefix $sectionName "leaner") }}
+                  {{ $urlPath = "roles/academy-roles/#learner" }}
                 {{ else }}
                   {{ $urlPath = print "roles/" }}
                 {{ end }}
@@ -69,7 +73,7 @@
                 {{ $col := index $header $j }}
                 {{ if not (in $excludedColumns $col) }}
                   <td>
-                    {{ if and (gt $j 2) (lt $j 10) }}
+                    {{ if and (gt $j 2) (lt $j 11) }}
                       {{ if eq $cell "X" }}
                         ✅
                       {{ else if eq $cell "X*" }}
