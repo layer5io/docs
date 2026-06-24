@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.151</title><link>/cloud/reference/releases/v1.0.151/</link><pubDate>Tue, 23 Jun 2026 22:04:07 +0000</pubDate><guid>/cloud/reference/releases/v1.0.151/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.152</title><link>/cloud/reference/releases/v1.0.152/</link><pubDate>Wed, 24 Jun 2026 06:21:05 +0000</pubDate><guid>/cloud/reference/releases/v1.0.152/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(academy): make At a Glance section content- and context-aware @leecalcote (#5570)&lt;/li&gt;
+&lt;li&gt;docs: refactor CLAUDE.md/AGENTS.md into a progressive-disclosure index @leecalcote (#5569)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.151</title><link>/cloud/reference/releases/v1.0.151/</link><pubDate>Tue, 23 Jun 2026 22:04:07 +0000</pubDate><guid>/cloud/reference/releases/v1.0.151/</guid><description>&lt;ul&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.21.23 @l5io (#5568)&lt;/li&gt;
 &lt;li&gt;refactor: adopt meshery/schemas#947 — schema-owned membership types + free-form roleNames @leecalcote (#5563)&lt;/li&gt;
 &lt;li&gt;docs(runbook): add \Cutting a Layer5 Cloud Release\ runbook @leecalcote (#5567)&lt;/li&gt;
