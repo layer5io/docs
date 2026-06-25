@@ -23354,11 +23354,9 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
+  padding-top: 1rem;
   margin-top: 0;
   overflow-x: hidden; }
-  @media (min-width: 768px) {
-    .td-sidebar {
-      padding-top: 1rem; } }
   @media (min-width: 768px) {
     @supports (position: sticky) {
       .td-sidebar__inner {
