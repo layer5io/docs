@@ -253,13 +253,13 @@ enable = false
 		url = "https://layer5.io/learn/service-mesh-books"
 	[[params.links.footer.resources.items]]
 		name = "Cloud Native Workshops"
-		url = "https://layer5.io/learn/service-mesh-workshops"
+		url = "https://layer5.io/learn/workshops"
 	[[params.links.footer.resources.items]]
 		name = "Service Mesh Comparison"
 		url = "https://layer5.io/service-mesh-landscape#service-mesh-comaprison-matrix"
 	[[params.links.footer.resources.items]]
 		name = "Cloud Native Interactive Labs"
-		url = "https://layer5.io/learn/service-mesh-labs"
+		url = "https://layer5.io/learn/kanvas-labs"
 
 
 	[[params.links.footer.community.items]]
