@@ -23389,7 +23389,7 @@ a:not([href]):not([class]):hover {
     color: #ced4da;
     font-weight: 300; }
   .td-sidebar-nav .td-sidebar-link__section {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     font-family: "Qanelas Soft", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
   .td-sidebar-nav a:hover {
     color: #fff;
