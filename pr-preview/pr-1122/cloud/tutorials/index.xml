@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Layer5 Documentation</title><link>/cloud/tutorials/</link><description>Recent content in Tutorials on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Kanvas Snapshots</title><link>/cloud/tutorials/gitops-snapshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/gitops-snapshots/</guid><description>&lt;p&gt;Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.&lt;/p&gt;
+
+&lt;h2 id="layer5-github-app" class="heading-link"&gt;
+ Layer5 GitHub App
+ &lt;a href="#layer5-github-app" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Sharing a Workspace</title><link>/cloud/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
+ Share designs from Workspaces
+ &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;You can share the designs and connections that you store in a workspace with anyone in your organization, but your organization may limit how you can share designs with other people.&lt;/p&gt;
+&lt;p&gt;When you share, you can control whether people can edit, comment on, or only open the design. When you share content, the default workspace policies apply.&lt;/p&gt;
+&lt;p&gt;Step 1: Find the design you want to share&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
+ 
+ See all Achievement and all Project badges in the &lt;a href="https://badges.layer5.io"&gt;Badge Gallery&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+&lt;!-- 
+Pending Leaderboard completion
+See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). --&gt;
+
+&lt;h3 id="how-to-earn-badges" class="heading-link"&gt;
+ How to Earn Badges
+ &lt;a href="#how-to-earn-badges" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item></channel></rss>
