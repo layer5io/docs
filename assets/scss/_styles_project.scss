@@ -234,9 +234,7 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
-  @include media-breakpoint-up(md) {
-    padding-top: $sidebar-padding-vertical;
-  }
+  padding-top: $sidebar-padding-vertical;
   margin-top: 0;
   overflow-x: hidden;
   &__inner {
