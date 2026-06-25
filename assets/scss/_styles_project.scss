@@ -234,7 +234,7 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   top: 5.5rem;
   overflow-y: auto;
-  padding-top: 1rem;
+  padding-top: $sidebar-padding-vertical;
   margin-top: 0;
   overflow-x: hidden;
   &__inner {
@@ -265,7 +265,13 @@ a:not([href]):not([class]):hover {
 .td-sidebar-nav {
   max-height: none;
   overflow: visible;
-  padding: 0px;
+  padding: 0;
+
+  &.td-sidebar-nav--search-disabled {
+    @include media-breakpoint-up(lg) {
+      padding-top: 0;
+    }
+  }
 
   &__section-title {
     a {
@@ -281,7 +287,7 @@ a:not([href]):not([class]):hover {
     }
 
     &__section {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       font-family:
         "Qanelas Soft",
         sans-serif,
@@ -342,11 +348,13 @@ a:not([href]):not([class]):hover {
       #18120e,
       #0f0a09,
       #000000);
+  padding-left: $sidebar-padding-horizontal;
+  padding-right: $sidebar-padding-horizontal;
 
   @supports (position: sticky) {
     position: sticky;
     top: 5.5rem;
-    padding-top: 1rem;
+    padding-top: $sidebar-padding-vertical;
     height: calc(100vh - 5.5rem);
     overflow-y: auto;
   }
