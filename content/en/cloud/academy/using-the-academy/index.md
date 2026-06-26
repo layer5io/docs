@@ -29,6 +29,12 @@ First you will see a collection of content cards. Each card gives you a quick ov
 
 ![Academy Catalog Overview](./images/academy-catalog.gif)
 
+Use the filters on the left - **Level**, **Content Type**, and, when browsing the full Layer5 Academy, **Organization** - to narrow the catalog to what you are looking for.
+
+{{< alert type="info" title="Browsing an Organization's Own Academy" >}}
+When you visit an organization's own Academy on its custom domain (for example, `exoscale.layer5.io`), the catalog is automatically scoped to that organization's content and the **Organization** filter is hidden, so you stay focused on that academy's offerings. To browse the full cross-organization catalog, visit the main Layer5 Academy at [cloud.layer5.io/academy](https://cloud.layer5.io/academy), where the **Organization** filter is available.
+{{< /alert >}}
+
 ### Understanding Content Types
 
 To help you choose the right content for your goals, we offer three distinct types. You can use the Content Type filter on the left to narrow your search.
