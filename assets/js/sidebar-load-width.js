@@ -9,7 +9,7 @@
 
         if (cssStyles) {
             var styleTag = document.createElement("style");
-            styleTag.innerHTML = ".td-resizable-grid .td-main > .row.flex-xl-nowrap {" + cssStyles + "}";
+            styleTag.innerHTML = ".r-grid-container {" + cssStyles + "}";
             document.head.appendChild(styleTag);
         }
     } catch (e) {

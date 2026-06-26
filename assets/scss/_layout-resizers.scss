@@ -63,11 +63,11 @@
     .r-grid-container {
     display: grid;
     grid-template-columns:
-      var(--left-sidebar-width)
-      var(--sidebar-resize-width)
-      1fr
-      var(--sidebar-resize-width)
-      var(--toc-width);
+        var(--left-sidebar-width)
+        var(--sidebar-resize-width)
+        1fr
+        var(--sidebar-resize-width)
+        var(--toc-width);
 
 
     #right-resizer {
@@ -83,9 +83,17 @@
         grid-row: 1;
     }
 
-    .r-main {
-        grid-column: 3;
-        grid-row: 1;
+    &--without-toc {
+        display: grid;
+        grid-template-columns:
+            var(--left-sidebar-width)
+            var(--sidebar-resize-width)
+            1fr;
+
+        #right-resizer,
+        .r-grid-container {
+            display: none;
+        }
     }
   }
 }
