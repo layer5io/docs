@@ -23262,9 +23262,12 @@ details > ul {
     .r-grid-container .r-sidebar-toc {
       grid-column: 5;
       grid-row: 1; }
-    .r-grid-container .r-main {
-      grid-column: 3;
-      grid-row: 1; } }
+    .r-grid-container--without-toc {
+      display: grid;
+      grid-template-columns: var(--left-sidebar-width) var(--sidebar-resize-width) 1fr; }
+      .r-grid-container--without-toc #right-resizer,
+      .r-grid-container--without-toc .r-grid-container {
+        display: none; } }
 
 .navbar-dark {
   min-height: 5rem;
