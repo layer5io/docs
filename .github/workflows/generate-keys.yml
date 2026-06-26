@@ -29,7 +29,11 @@ jobs:
 
       - name: Dump keys from the spreadsheet
         run: |
-          curl -L "$spreadsheet_uri" -o "./keys.csv";
+          curl -f -L "$spreadsheet_uri" -o "./keys.csv"
+          if ! grep -q "Category,Function,Feature" "./keys.csv"; then
+            echo "Error: Downloaded keys.csv is invalid or corrupted."
+            exit 1
+          fi
       - name: Create permissions folder
         run: |
           [ ! -d "./static/data/csv" ] && mkdir -p "./static/data/csv";

@@ -1,6 +1,12 @@
 .navbar-brand {
-  width: 280.06px;
+  max-width: 280.06px;
+  width: 100%;
   height: auto;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .nav-item {
