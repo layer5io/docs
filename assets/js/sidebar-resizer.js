@@ -1,6 +1,6 @@
 (function () {
     document.addEventListener("DOMContentLoaded", () => {
-        const gridContainer = document.querySelector(".td-resizable-grid .td-main > .row.flex-xl-nowrap");
+        const gridContainer = document.querySelector(".r-grid-container");
         const leftResizer = document.getElementById("left-resizer");
         const rightResizer = document.getElementById("right-resizer");
 
