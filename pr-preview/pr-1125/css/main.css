@@ -20928,6 +20928,9 @@ div.tip {
   max-width: 280.06px;
   width: 100%;
   height: auto; }
+  .navbar-brand img {
+    max-width: 100%;
+    height: auto; }
 
 .nav-item {
   margin-right: 0.75rem; }
