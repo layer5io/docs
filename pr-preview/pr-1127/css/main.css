@@ -23480,7 +23480,7 @@ a:not([href]):not([class]):hover {
 .td-resizable-grid main[role="main"] {
   width: auto; }
 
-@media (max-width: 767px) {
+@media (max-width: 575.98px) {
   .td-resizable-grid .td-sidebar {
     width: 100%; } }
 
