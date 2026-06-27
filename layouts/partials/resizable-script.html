@@ -1,0 +1,8 @@
+{{ with resources.Get "js/resizable.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $js := . | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+  {{ else }}
+    <script src="{{ .RelPermalink }}"></script>
+  {{ end }}
+{{ end }}

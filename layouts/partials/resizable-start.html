@@ -1,0 +1,17 @@
+{{- /* Params: draggable-side ("right"|"left"), localStorage key for persisting the width (unique, required),
+       min, max, default (px), class (optional extra classes) */ -}}
+{{- $side := .side | default "right" -}}
+{{- $key  := .key -}}
+{{- $min  := .min | default 180 -}}
+{{- $max  := .max | default 500 -}}
+{{- $def  := .default | default 300 -}}
+{{- $class := .class | default "" -}}
+<div class="resizable resizable--{{ $side }}{{ with $class }} {{ . }}{{ end }}"
+     data-resizable
+     data-resizable-side="{{ $side }}"
+     data-resizable-key="{{ $key }}"
+     data-resizable-min="{{ $min }}"
+     data-resizable-max="{{ $max }}"
+     data-resizable-default="{{ $def }}"
+     style="--resizable-default: {{ $def }}px; --resizable-min: {{ $min }}px; --resizable-max: {{ $max }}px;">
+  <div class="resizable__inner">

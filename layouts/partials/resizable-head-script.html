@@ -1,0 +1,20 @@
+<script>
+(function () {
+  try {
+    var css = "";
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k.indexOf("resizable:") !== 0) continue;
+      var key = k.slice("resizable:".length);
+      var w = parseFloat(localStorage.getItem(k));
+      if (isNaN(w)) continue;
+      css += '[data-resizable-key="' + key + '"]{--resizable-w:' + w + 'px}';
+    }
+    if (css) {
+      var s = document.createElement("style");
+      s.textContent = css;
+      document.head.appendChild(s);
+    }
+  } catch (e) {}
+})();
+</script>
