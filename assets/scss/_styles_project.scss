@@ -439,7 +439,7 @@ a:not([href]):not([class]):hover {
   width: auto;
 }
 
-@media (max-width: 767px) {
+@include media-breakpoint-down(sm) {
   .td-resizable-grid .td-sidebar {
     width: 100%;
   }
