@@ -69,7 +69,7 @@ Leave comments on specific elements within the design, whether it's a shape, tex
 
 ### Resolving a Comment
 
-Resolving a comment thread indicates that the conversation on that topic has concluded. When a comment is resolved, the comment component is removed from view on the canvas.
+Resolving a comment thread indicates that the conversation on that topic has concluded. When a comment is resolved, the comment component is removed from view on the canvas. You can resolve comment threads either directly on the canvas or from the comment history panel.
 
 As a practice, resolving comments can help expedite issue resolution on a particular topic. The action of resolving a comment is like a "soft delete" in that Kanvas designs retain history of each comment made and discussions within.
 
@@ -85,6 +85,14 @@ You can also reopen comments.
 </figure>
 
 Manage your comment history by clicking on the "View Comment History" button. This allows you to revisit past discussions and decisions, ensuring that important context is never lost.
+
+From the comment history panel, you can manage individual threads without leaving the review flow:
+
+- **Resolve comment threads** once a discussion is complete while keeping the thread available for future reference.
+- **Mute notifications** for a specific comment thread when you want to reduce email noise without changing your broader comment notification preferences.
+- **Delete individual comments** when they should be removed entirely instead of kept as part of the design's historical record.
+
+For most review workflows, resolving a comment is preferred over deleting it because resolution preserves context and lets you reopen the thread later if needed.
 
 ### Duplicating / Copying Comments
 
@@ -213,7 +221,7 @@ Customize your [notification preferences]({{< ref "cloud/concepts/identity-and-s
 
 ### Muting Comment Notifications
 
-Customize your notification preferences to mute email notifications for comments on your design. With notifications for new comments silenced, you won't receive email notifications for new comments on your design. This can be useful if you want to temporarily pause notifications or reduce email clutter.
+You can mute email notifications for a specific comment thread directly from the comment box by clicking the notification bell icon, or from the comment history panel. Muting is useful when you want to temporarily pause updates on a specific discussion or reduce overall email clutter.
 
 <figure>
   <img src="images/comment-notificationBell.png" alt="Turn Off notification from comments in designer" style="width:auto">
@@ -308,13 +316,13 @@ Bundle multiple related comments using the **Group** feature. This keeps threads
 
 ### Resolving vs deleting comments
 
-Resolving a comment hides it from the canvas but keeps its history, so you can always revisit or reopen it later. Deleting a comment removes it entirely — including all threads and history — and cannot be undone.
+Resolving a comment hides it from the canvas but keeps its history, so you can always revisit or reopen it later. Deleting a comment removes it entirely — including all threads and history — and cannot be undone. You can delete individual comments from the comment history panel.
 
 ### Be specific and actionable
 
 Provide specific feedback that the designer can act on. Vague comments can lead to misunderstandings and delays in the design process. Support your feedback with examples or references. This can help clarify your point and provide the designer with tangible suggestions for improvement.
 
-### Balance positive and contructive feedback
+### Balance positive and constructive feedback
 
 Frame feedback in a constructive manner, focusing on how things can be improved rather than just pointing out flaws. Acknowledge what works well in the design before delving into areas that need improvement. This helps maintain a positive and collaborative atmosphere.
 
