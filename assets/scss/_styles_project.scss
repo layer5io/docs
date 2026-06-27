@@ -439,6 +439,12 @@ a:not([href]):not([class]):hover {
   width: auto;
 }
 
+@media (max-width: 767px) {
+  .td-resizable-grid .td-sidebar {
+    width: 100%;
+  }
+}
+
 @media (min-width: 768px) {
   .td-resizable-grid .td-main > .row.flex-xl-nowrap {
     display: grid;
