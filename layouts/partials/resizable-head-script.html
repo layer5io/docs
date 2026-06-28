@@ -1,0 +1,24 @@
+<script>
+// Restore saved resizable widths before first paint to avoid a width flash.
+// Must target the same custom property the component reads (--resizable-w),
+// scoped to each element by its data-resizable-key, so the value lands on the
+// element rather than an unread :root variable.
+(function () {
+  try {
+    var css = "";
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (!k || k.indexOf("resizable:") !== 0) continue;
+      var key = k.slice("resizable:".length);
+      var w = parseFloat(localStorage.getItem(k));
+      if (isNaN(w)) continue;
+      css += '.resizable[data-resizable-key="' + key + '"]{--resizable-w:' + w + 'px}';
+    }
+    if (css) {
+      var s = document.createElement("style");
+      s.textContent = css;
+      document.head.appendChild(s);
+    }
+  } catch (e) {}
+})();
+</script>

@@ -1,0 +1,86 @@
+/* resizable-bootstrap-overrides.scss — load ONLY in Bootstrap/Docsy consumers.
+   Reason: Bootstrap applies `.row > * { width:100%; max-width:100%; padding-inline }`
+   to every direct row child. Since .resizable is now a direct child of .row,
+   that rule overrides the component's own width. These selectors are 0,2,0,
+   so they win over `.row > *` (0,1,0) without !important.
+   Do NOT fold these into resizable.scss — they assume a Bootstrap `.row`. */
+
+.row > .resizable {
+  flex: 0 0 auto;
+  width: var(--resizable-w, 260px);
+  max-width: var(--resizable-max, 480px);
+  min-width: 0;
+  padding-inline: 0;          // clear Bootstrap's gutter padding on the wrapper
+}
+
+/* Sidebar(s) are now fixed-px wrappers, not percentage columns, so main must
+   absorb the remaining space instead of holding col-xl-8's 66.66% max-width. */
+.row > main {
+  flex: 1 1 0;
+  max-width: none;
+  width: auto;
+}
+
+/* ── Sidebar wrapper inherits the sticky + full-height role ──
+   .td-sidebar was sticky as a direct .row child. Now .resizable is the
+   direct .row child, so the wrapper must carry sticky/height. Values match
+   .td-sidebar's originals (top: 5.5rem, height: calc(100vh - 5.5rem)). */
+[data-resizable-key="sidebar"] {
+  position: sticky;
+  top: 5.5rem;
+  height: calc(100vh - 5.5rem);
+  align-self: flex-start;     // stick instead of stretching to row height
+  overflow: hidden;           // wrapper clips; the aside scrolls internally
+}
+
+[data-resizable-key="sidebar"] .resizable__inner {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Demote the aside: the wrapper is sticky now, so .td-sidebar becomes a
+   plain full-height scroll panel. Keeps its gradient + padding; only the
+   positioning role moves up to the wrapper. */
+[data-resizable-key="sidebar"] .td-sidebar {
+  position: static;
+  height: 100%;               // fill wrapper, not 100vh
+  top: auto;
+  // background-image, padding-top, overflow-y: auto, overflow-x: hidden
+  // all remain from the base rule and still apply.
+}
+
+@media screen and (max-width: 768px) {
+  /* Break the nowrap row so children can stack on their own lines. */
+  .row.flex-xl-nowrap {
+    flex-wrap: wrap;
+  }
+
+  /* Sidebar: its own full-width row, on top, not resizable. */
+  .row > .resizable[data-resizable-key="sidebar"] {
+    position: relative;        /* NOT static — keeps handle anchored if shown; prevents overlap */
+    flex: 1 1 100%;            /* full row */
+    top: auto;
+    width: 100%;
+    max-width: none;
+    height: auto;             /* was fit-content — auto is safer for stacked flow */
+    overflow: visible;
+    order: 0;                 /* ensure it comes before main */
+    box-sizing: border-box;    /* padding counts inside the 100%, not added to it */
+    padding-inline: 0;         /* clear Bootstrap's gutter that returns at mobile */
+  }
+
+  /* Inner + aside follow the auto height instead of the desktop 100vh. */
+  [data-resizable-key="sidebar"] .resizable__inner { height: auto; overflow: visible; }
+  [data-resizable-key="sidebar"] .td-sidebar { height: auto; }
+
+  .row > main {
+    flex: 1 1 100%;
+    max-width: none;
+    order: 1;                 /* after the sidebar */
+  }
+
+  .resizable .resizable__handle {
+    display: none;
+    pointer-events: none;
+  }
+}

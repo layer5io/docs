@@ -1,11 +1,11 @@
 ---
 title: Kanvas Documentation
-description: Kanvas delivers a collaborative experience for engineers similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. 
+description: Kanvas delivers a collaborative experience for engineers similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling.
 linkTitle: Kanvas
 type: docs
 menu: {main: {weight: 3}}
 weight: 1
-cascade: 
+cascade:
     type: docs
 aliases:
     - /meshmap/
@@ -20,60 +20,16 @@ aliases:
 
 {{% pageinfo %}}
 
-<style>
-    .highlight-box {
-      display: flex;
-      align-items: center;
-      font-style: italic;
-      gap: 0.5rem;
-      padding: 1rem;
-      margin: auto -1rem;
-      box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
-      transition: box-shadow 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-    .hidden-highlight-box {
-      display: flex;
-      align-items: center;
-      font-style: italic;
-      gap: 0.5rem;
-      padding: 1rem;
-      margin: auto -1rem;
-      box-shadow: none;
-      transition: box-shadow 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-    .hidden-highlight-box:hover {
-      box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
-    }
-    /* New rule to hide highlight-box shadow when hidden-highlight-box is hovered or focused */
-    .hidden-highlight-box:hover ~ .highlight-box,
-    .hidden-highlight-box:focus ~ .highlight-box {
-      box-shadow: none;
-    }
-</style>  
 ## Understanding the Layer5 Ecosystem
 
-<a href="{{< ref "cloud/_index.md" >}}">
-<div class="hidden-highlight-box"  style="display:flex; gap: 1.5rem;">
-<div style="min-width:50px;align-self:center;line-height:1.85rem;">{{< svg name="cloud" >}}</div>
-<div style="margin:auto;color:#ccc;">
-  <strong>Layer5 Cloud</strong> is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
-</div>
-</div>
-</a>
+{{< ecosystem-box link="cloud/_index.md" icon="cloud" class="hidden-highlight-box" title="Layer5 Cloud" >}}
+is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+{{< /ecosystem-box >}}
 
+{{< ecosystem-box icon="images/logos/kanvas-icon-color.svg" image="true" title="Kanvas" >}}
+delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+{{< /ecosystem-box >}}
 
-<a href="{{< ref "kanvas/_index.md" >}}">
-<div class="highlight-box" style="display:flex; gap: .5rem;">
-<div style="min-width:50px;align-self:center;">
-<img src='{{< static "images/logos/kanvas-icon-color.svg" >}}' style="height:65px;width:65px;margin-left:-.45rem; border:0px;  background-color: transparent;" alt="kanvas logo"/></div>
-<div style="margin:auto; padding-left:1rem; color:#ccc; line-height:1.85rem;">
-<strong>Kanvas</strong> delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.</div></div>
-</a>
-</div>
 {{% /pageinfo %}}
 
 ## What is Kanvas?
