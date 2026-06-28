@@ -10,7 +10,6 @@
     var key     = el.dataset.resizableKey;
     if (!key) return;
     var storeKey = "resizable:" + key;
-    var rootVar  = "--resizable-w-" + key;
     var min     = parseFloat(el.dataset.resizableMin) || 0;
     var max     = parseFloat(el.dataset.resizableMax) || Infinity;
     var def     = parseFloat(el.dataset.resizableDefault) || min || 280;
@@ -20,9 +19,9 @@
     el.__resizableReady = true;
 
     function setWidth(px) {
-      var v = clamp(px, min, max) + "px";
-      el.style.setProperty("--resizable-w", v);
-      document.documentElement.style.setProperty(rootVar, v);
+      var w = clamp(px, min, max);
+      el.style.setProperty("--resizable-w", w + "px");
+      handle.setAttribute("aria-valuenow", String(Math.round(w)));
     }
 
     function save() {
@@ -39,9 +38,12 @@
       setWidth(startW + delta);
     }
     function onUp(e) {
-      handle.releasePointerCapture(e.pointerId);
+      // Capture may already be released (e.g. the element was detached); guard it
+      // so a stray pointercancel can't leave listeners and is-resizing state stuck.
+      if (handle.hasPointerCapture(e.pointerId)) handle.releasePointerCapture(e.pointerId);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
       el.classList.remove("is-resizing");
       document.body.classList.remove("is-resizing");
       save();
@@ -56,6 +58,7 @@
       document.body.classList.add("is-resizing");
       window.addEventListener("pointermove", onMove);
       window.addEventListener("pointerup", onUp);
+      window.addEventListener("pointercancel", onUp);
     });
 
     handle.addEventListener("dblclick", function () { setWidth(def); save(); });
@@ -63,6 +66,9 @@
     // Keyboard accessibility
     handle.setAttribute("role", "separator");
     handle.setAttribute("aria-orientation", "vertical");
+    handle.setAttribute("aria-label", "Resize " + key + " panel");
+    handle.setAttribute("aria-valuemin", String(Math.round(min)));
+    if (isFinite(max)) handle.setAttribute("aria-valuemax", String(Math.round(max)));
     handle.setAttribute("tabindex", "0");
     handle.addEventListener("keydown", function (e) {
       var grow = side === "right" ? "ArrowRight" : "ArrowLeft";

@@ -20161,44 +20161,32 @@ th {
       width: 75%;
       max-width: none; }
 
-.highlight-box {
+.hidden-highlight-box, .highlight-box {
   display: flex;
   align-items: center;
   font-style: italic;
   gap: 0.5rem;
   padding: 1rem;
   margin: auto -1rem;
-  box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
   transition: box-shadow 0.3s ease;
   text-decoration: none;
   color: inherit; }
+  .hidden-highlight-box img, .highlight-box img {
+    height: 65px;
+    width: 65px;
+    border: 0;
+    background: transparent; }
+
+.highlight-box {
+  box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733; }
 
 .hidden-highlight-box {
-  display: flex;
-  align-items: center;
-  font-style: italic;
-  gap: 0.5rem;
-  padding: 1rem;
-  margin: auto -1rem;
   box-shadow: none;
-  transition: box-shadow 0.3s ease;
-  text-decoration: none;
-  color: inherit;
   /* Hide the sibling highlight-box's shadow when this one is hovered/focused */ }
   .hidden-highlight-box:hover {
     box-shadow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733; }
   .hidden-highlight-box:hover ~ .highlight-box, .hidden-highlight-box:focus ~ .highlight-box {
     box-shadow: none; }
-
-.hidden-highlight-box img,
-.highlight-box img {
-  height: 65px;
-  width: 65px;
-  border: 0;
-  background: transparent; }
-
-.hidden-highlight-box .ecosystem-box__text {
-  padding-left: 1rem; }
 
 /* The markdown image container */
 .md__image {
