@@ -6,7 +6,8 @@
     {{< /ecosystem-box >}}
 
   Params:
-    link  - ref path to the target page (required)
+    link  - (optional) ref path to the target page. Omit for the box that
+            represents the current page so it doesn't render as a self-link.
     icon  - svg name (from assets/icons/) OR image path if image="true"
     title - bold lead-in before the description
     image - (optional) "true" to treat `icon` as an image src instead of an svg name
@@ -19,7 +20,11 @@
 {{- $class   := .Get "class" | default "highlight-box" -}}
 {{- $isImage := eq (.Get "image") "true" -}}
 
-<a href="{{ ref . $link }}" class="{{ $class }}" style="display:flex; gap:1.5rem; text-decoration:none; color:inherit;">
+{{- /* Keep the wrapper a literal <a> so Goldmark recognises this as a raw HTML
+       block and preserves it verbatim. Emit href only when a link is supplied;
+       an href-less <a> is a non-link, which avoids a self-referential link on
+       the box that represents the current page. */ -}}
+<a{{ with $link }} href="{{ ref $ . }}"{{ end }} class="{{ $class }}" style="display:flex; gap:1.5rem; text-decoration:none; color:inherit;">
   <span style="min-width:50px; align-self:center; line-height:1.85rem;">
     {{- if $isImage -}}
       <img src="{{ $icon | relURL }}" alt="{{ $title }} logo" style="height:65px; width:65px; border:0; background:transparent;">

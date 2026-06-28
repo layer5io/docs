@@ -26,7 +26,7 @@ aliases:
 is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
 {{< /ecosystem-box >}}
 
-{{< ecosystem-box link="kanvas/_index.md" icon="images/logos/kanvas-icon-color.svg" image="true" title="Kanvas" >}}
+{{< ecosystem-box icon="images/logos/kanvas-icon-color.svg" image="true" title="Kanvas" >}}
 delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
 {{< /ecosystem-box >}}
 

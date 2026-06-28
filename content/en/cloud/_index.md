@@ -13,7 +13,7 @@ cascade:
 
 ## Understanding the Layer5 Ecosystem
 
-{{< ecosystem-box link="cloud/_index.md" icon="cloud" title="Layer5 Cloud" >}}
+{{< ecosystem-box icon="cloud" title="Layer5 Cloud" >}}
 is an identity provider and global console for Kanvas and Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
 {{< /ecosystem-box >}}
 
