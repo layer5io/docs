@@ -1,18 +1,18 @@
 <script>
 (function () {
   try {
-    var css = "";
+    var rootCss = "";
     for (var i = 0; i < localStorage.length; i++) {
       var k = localStorage.key(i);
       if (k.indexOf("resizable:") !== 0) continue;
       var key = k.slice("resizable:".length);
       var w = parseFloat(localStorage.getItem(k));
       if (isNaN(w)) continue;
-      css += '[data-resizable-key="' + key + '"]{--resizable-w:' + w + 'px}';
+      rootCss += ':root{--resizable-w-' + key + ':' + w + 'px}';
     }
-    if (css) {
+    if (rootCss) {
       var s = document.createElement("style");
-      s.textContent = css;
+      s.textContent = rootCss;
       document.head.appendChild(s);
     }
   } catch (e) {}

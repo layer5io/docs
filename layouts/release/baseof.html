@@ -8,6 +8,7 @@
 >
   <head>
     {{ partial "head.html" . }}
+    {{ partial "resizable-head-script.html" . }}
   </head>
   <body
     class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}"

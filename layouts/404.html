@@ -2,6 +2,7 @@
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}" class="no-js">
   <head>
     {{ partial "head.html" . }}
+    {{ partial "resizable-head-script.html" . }}
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
     <header>
