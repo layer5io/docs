@@ -5,24 +5,31 @@
 
   function init(el) {
     if (el.__resizableReady) return;
+
+    var side    = el.dataset.resizableSide || "right";
+    var key     = el.dataset.resizableKey;
+    if (!key) return;
+    var storeKey = "resizable:" + key;
+    var rootVar  = "--resizable-w-" + key;
+    var min     = parseFloat(el.dataset.resizableMin) || 0;
+    var max     = parseFloat(el.dataset.resizableMax) || Infinity;
+    var def     = parseFloat(el.dataset.resizableDefault) || min || 280;
+    var handle  = el.querySelector(":scope > .resizable__handle");
+    if (!handle) return;
+
     el.__resizableReady = true;
 
-    var side   = el.dataset.resizableSide || "right";
-    var key    = "resizable:" + el.dataset.resizableKey;
-    var min    = parseFloat(el.dataset.resizableMin) || 0;
-    var max    = parseFloat(el.dataset.resizableMax) || Infinity;
-    var def    = parseFloat(el.dataset.resizableDefault) || min || 280;
-    var handle = el.querySelector(":scope > .resizable__handle");
-    if (!handle || !el.dataset.resizableKey) return;
-
     function setWidth(px) {
-      el.style.setProperty("--resizable-w", clamp(px, min, max) + "px");
-    }
-    function save() {
-      localStorage.setItem(key, parseFloat(getComputedStyle(el).width));
+      var v = clamp(px, min, max) + "px";
+      el.style.setProperty("--resizable-w", v);
+      document.documentElement.style.setProperty(rootVar, v);
     }
 
-    var saved = parseFloat(localStorage.getItem(key));
+    function save() {
+      localStorage.setItem(storeKey, parseFloat(getComputedStyle(el).width));
+    }
+
+    var saved = parseFloat(localStorage.getItem(storeKey));
     setWidth(isNaN(saved) ? def : saved);
 
     var startX = 0, startW = 0;
