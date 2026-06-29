@@ -17,7 +17,7 @@
         class="td-navbar-nav-scroll main-nav-items flex-grow-1"
         id="main_navbar" 
       >
-        <ul class="navbar-nav d-flex align-items-center" style="padding:16px">
+        <ul class="navbar-nav d-flex align-items-center">
           <!-- <li class="nav-item nav-external">
                         <a class="nav-link nav-link-external" href="https://playground.meshery.io" target="_blank">
                             <span>Playground</span>
@@ -39,7 +39,7 @@
                         >
                         Resources<span class="down-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg></span>
                         </div>
-                        <div class="dropdown-menu dropdown-menu--col" aria-labelledby="resourcesDropdown" style="visibility:hidden;">
+                        <div class="dropdown-menu dropdown-menu--col" aria-labelledby="resourcesDropdown">
                           <a
                           class="dropdown-item dropdown-item--row"
                           href="{{ $cloudAcademyUrl }}"
@@ -83,7 +83,7 @@
                                 </div> -->
             {{ partial "search-input-nav.html" . }}
           </li>
-          <li class="nav-item dropdown" data-bs-theme="dark">
+          <li class="nav-item dropdown apps-dropdown" data-bs-theme="dark">
             <div
             class="nav-link"
             id="productsDropdown"
@@ -94,7 +94,7 @@
             <img width="28px" src="{{ "images/grid-icon.svg" | relURL }}" alt="Products" class="grid-icon" data-modal="false" />
 
           </div>
-          <div class="dropdown-menu" aria-labelledby="productsDropdown" style="margin-left:-4.5rem;visibility:hidden;">
+          <div class="dropdown-menu" aria-labelledby="productsDropdown">
             <a
             class="dropdown-item"
             href="https://docs.meshery.io/"
@@ -232,7 +232,6 @@
             const menu = otherDropdown.nextElementSibling;
             if (menu) {
                 menu.classList.remove("show");
-                menu.style.visibility = "hidden";
             }
           }
         });
@@ -240,12 +239,10 @@
         if (dropdown.classList.contains("current")) {
             dropdown.classList.remove("current");
             dropdownMenu.classList.remove("show");
-            dropdownMenu.style.visibility = "hidden"; 
-        } 
+        }
         else {
             dropdown.classList.toggle("current");
             dropdownMenu.classList.toggle("show");
-            dropdownMenu.style.visibility = "visible"; 
         }
       });
     
@@ -253,7 +250,6 @@
           if (dropdown.classList.contains("current")) {
             dropdown.classList.remove("current");
             dropdownMenu.classList.remove("show");
-            dropdownMenu.style.visibility = "hidden"; 
         }
   });
 }

@@ -9,6 +9,59 @@
   }
 }
 
+.navbar-dark {
+  min-height: 5rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid #333;
+  background-color: $dark !important;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 5rem;
+  }
+
+  .dropdown-menu {
+    background-color: $dark;
+    box-shadow: 0px 4px 20px 0px rgba(0, 211, 169, 0.2);
+
+    .dropdown-item {
+      color: $white;
+     
+      &:hover {
+        box-shadow: $ecosystem-box-glow;
+      }
+
+      &:active {
+        background-color: "red";
+      }
+    }
+    .dropdown-item.active {
+      background-color: "black";
+    }
+    .dropdown-divider {
+      margin: 0.5rem 1rem;
+      border-top: 1px solid $primary;
+    }
+  }
+}
+
+.nav-link.active {
+  border-width: 1px;
+  // border-style: solid;
+  // border-image: linear-gradient(to bottom,
+  //     rgba($dark, 0.2) 30%,
+  //     rgba($primary, 0.3) 60%,
+  //     $primary 90% 100%) 1;
+  padding-bottom: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  align-content: center;
+  padding: auto;
+  margin: auto;
+  // background-color: linear-gradient(to right, rgba($dark,.2) 30%, rgba($primary,.3) 60%, $primary 90% 100%) 1;
+}
+
 .nav-item {
   margin-right: 0.75rem;
 
@@ -33,6 +86,18 @@
     // padding: 0;
     transform: translate(-15%, 2.5rem);
     border-radius: 0.75rem;
+    // Hidden by default; the navbar script toggles `.show` to reveal. Animate
+    // via opacity + visibility (not display) so showing and hiding fade smoothly.
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+    }
     &::after{
       content: "";
       width: 5rem;
@@ -48,6 +113,11 @@
       flex-direction: column;
       align-items: center;
       border-radius: 0.75rem;
+      // Smooth hover in/out for each application tile.
+      transition: background-color 0.25s ease, color 0.25s ease;
+      &:active {
+        background-color: "none";
+      }
       .logo-container {
         height: 2rem;
         width: 2rem;
@@ -57,6 +127,7 @@
         justify-content: center;
         img {
           width: 100%;
+          transition: filter 0.25s ease;
         }
       }
       // span {
@@ -64,8 +135,9 @@
       // }
       &:hover {
         color: $black;
+        box-shadow: $ecosystem-box-glow;
         img {
-          filter: brightness(0) invert(1);
+          filter: brightness(100) invert(1);
         }
       }
       &--row{
@@ -83,6 +155,35 @@
 
 .dropdown{
   position: static;
+}
+
+// Apps/products switcher. The menu is anchored to the navbar itself (its
+// nearest positioned ancestor) rather than the list item, so its containing
+// block sits *above* the `.navbar-nav` scroll container. That lets it escape
+// the `overflow: auto` clip that container applies below 992px, while staying
+// right-aligned so the list is always fully on-screen, just below the navbar
+// near the button - no matter how narrow the viewport is.
+.apps-dropdown .dropdown-menu {
+  top: calc(100% + 0.25rem);
+  right: 4.5rem;
+  left: auto;
+  // Tidy 2-column tile grid with even spacing between each application.
+  display: grid;
+  grid-template-columns: repeat(2, 5rem);
+  gap: 1rem;
+  padding: 0.75rem;
+  width: auto;
+  max-width: calc(100vw - 1rem);
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  // Slide down into place on show (overrides the shared positioning transform).
+  transform: translateY(-0.5rem);
+  &.show {
+    transform: translateY(0);
+  }
+  // The flex spacer and dividers are inert in this grid; gap handles spacing.
+  &::after { content: none; }
+  .dropdown-divider { display: none; }
 }
 
 .avatar-container {
@@ -106,9 +207,57 @@
   height: 100%;
   object-fit: cover;
 }
+// Button to toggle the apps/products switcher menu. The button is a square with a
+// grid icon in the center. The icon is a single image with a transparent background
+// and a grid of dots in the foreground. The button is styled to have a border and
+// a background color that matches the navbar. The button is also styled to have a
+// hover effect that changes the background color and the icon color. The button is
+// also styled to have a focus effect that changes the border color and the icon color.
 img.grid-icon {
   transition: filter 0.15s ease-in-out;
   &:hover {
     filter: invert(.6);
+  }
+}
+
+// Shared ecosystem callout box (emitted by the `ecosystem-box` shortcode).
+$ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
+
+%ecosystem-box-base {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin: auto -1rem;
+  transition: box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+
+  img {
+    height: 65px;
+    width: 65px;
+    border: 0;
+    background: transparent;
+  }
+}
+
+.highlight-box {
+  @extend %ecosystem-box-base;
+  box-shadow: $ecosystem-box-glow;
+}
+
+.hidden-highlight-box {
+  @extend %ecosystem-box-base;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: $ecosystem-box-glow;
+  }
+
+  /* Hide the sibling highlight-box's shadow when this one is hovered/focused */
+  &:hover ~ .highlight-box,
+  &:focus ~ .highlight-box {
+    box-shadow: none;
   }
 }

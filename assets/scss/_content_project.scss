@@ -140,20 +140,26 @@ h6 {
       scroll-margin-top: 6rem;
     }
   }
-  >.alert,
-  >.highlight,
-  >.lead,
-  >.td-table,
-  >blockquote,
-  >dl dd,
-  >h1,
-  >h2,
-  >ol,
-  >p,
-  >pre,
-  >details,
-  >ul {
-    @extend .td-max-width-on-larger-screens;
+  // Use the full column width on large screens. Docsy caps .td-content children -
+  // and its card, alert, tab, and footnote shortcodes - at 80% (via the
+  // `.td-max-width-on-larger-screens` utility) for line-length readability; this
+  // site prefers content to fill the available width. Figures/images keep their
+  // own clamps.
+  //
+  // The first selector is scoped under `.td-main` purely to out-specify Docsy's
+  // class-based direct-child rules (e.g. `.td-content > .alert`, `> .highlight`,
+  // `> .lead`, `> .td-table` are 0,2,0 - a bare `.td-content > *` at 0,1,1 loses).
+  // At 0,2,2 it also covers `.td-box .td-content > table`. The remaining selectors
+  // mirror Docsy's nested shortcode rules (cards, card groups, tab panes,
+  // footnotes) so those are lifted too (matched/greater specificity, later source).
+  @include media-breakpoint-up(lg) {
+    .td-main & > :not(figure):not(img),
+    > .tab-content .tab-pane,
+    .footnotes,
+    .td-card.card,
+    .td-card-group.card-group {
+      max-width: 100%;
+    }
   }
 
   .alert:not(:first-child) {
