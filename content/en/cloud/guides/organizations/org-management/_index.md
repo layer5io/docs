@@ -40,7 +40,7 @@ If the "Add Organization" button is disabled, it means your current role does no
 
 ## Editing Your Organization
 
-You can update your Organization's name, location, associated teams, branding, identity providers, and access its invitation link by editing its details.
+You can update your Organization's name, location, associated teams, branding, and identity providers, as well as access its invitation link, by editing its details.
 
 ### How to Edit Your Organization
 
@@ -60,8 +60,8 @@ The **Identity Providers** tab controls which OAuth applications power sign-in f
 
 The tab opens in one of two states:
 
--   **Using Layer5's default identity providers** (the default for every Organization): sign-in uses Layer5's shared OAuth applications. A Provider Administrator can select **Enable bring-your-own credentials** to begin configuring the Organization's own providers.
--   **Bring-your-own credentials (BYOC) enabled**: a row is shown for each configured provider. Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider — each walkthrough displays the exact redirect URI to add to your OAuth application — and **Edit** or **Remove** to rotate or delete a provider's credentials. **Delete Identity Providers** reverts the Organization to Layer5's defaults.
+-   **Using Layer5's default identity providers** (the default for every Organization): Sign in uses Layer5's shared OAuth applications. A Provider Administrator can select **Enable bring-your-own credentials** to begin configuring the Organization's own providers.
+-   **Bring-your-own credentials (BYOC) enabled**: A row is shown for each configured provider. Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider — each walkthrough displays the exact redirect URI to add to your OAuth application — and **Edit** or **Remove** to rotate or delete a provider's credentials. **Delete Identity Providers** reverts the Organization to Layer5's defaults.
 
 {{< alert title="Who can configure this" type="info" >}}
 Enabling or tearing down bring-your-own credentials is a Provider Administrator action, and Provider Administrators can manage the Identity Providers configuration of **any** Organization — whether or not they are a member of it. Adding, rotating, and removing individual provider connections is available to Organization Administrators and Owners.
