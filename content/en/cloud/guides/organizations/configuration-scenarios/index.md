@@ -54,10 +54,11 @@ host with the default identity providers.
 | **Front door** — where your users sign in | **Shared** (the deployment's address, e.g. `cloud.layer5.io`) · **Branded subdomain** (a subdomain of the deployment's base domain, e.g. `acme.layer5.io`) · **Custom domain** (your own domain, e.g. `cloud.acme.com`) |
 | **Identity provider** — who runs sign-in | **Shared/default** (the deployment's Google + GitHub apps) · **Your own (BYOC)** (your own Google, GitHub, and/or OIDC single sign-on) |
 
-The interesting wrinkle is **social sign-in** (the Google / GitHub buttons).
-Email-and-password sign-in works in *every* scenario; whether the social
-buttons appear depends on how your domain and identity provider line up —
-which is exactly what the named scenarios capture. (See
+Both email-and-password and social sign-in (the Google / GitHub buttons)
+work in *every* scenario, including on a fully-custom domain using the
+deployment's default identity providers. What the named scenarios capture is
+*whose* identity provider authenticates your users and *whose* brand appears
+on the consent screen - not whether social sign-in is available. (See
 [White-labeling → Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain)
 for details.)
 
@@ -68,8 +69,8 @@ for details.)
 | **Hosted** | Shared (`cloud.layer5.io`) | Shared/default | ✅ Works | You just want an organization — no custom URL, no setup. |
 | **Branded** | Branded subdomain (`acme.layer5.io`) | Shared/default | ✅ Works | You want a branded sign-in URL and pages, but are happy using the platform's Google/GitHub apps. |
 | **Branded + BYOC** | Branded subdomain | Your own (BYOC) | ✅ Works (your consent screen) | You want a branded subdomain **and** your own OAuth apps or single sign-on. |
-| **White-Label (Password-Only)** | Custom domain (`cloud.acme.com`) | Shared/default | ⚠️ Hidden | You want your own domain quickly and email-and-password sign-in is enough for now. |
-| **White-Label** | Custom domain | Your own (BYOC) | ✅ Works (your consent screen) | You want a fully branded deployment on your own domain, end to end. |
+| **White-Label** | Custom domain (`cloud.acme.com`) | Shared/default | ✅ Works | You want your own domain, with social sign-in working out of the box on the platform's Google/GitHub apps. |
+| **White-Label + BYOC** | Custom domain | Your own (BYOC) | ✅ Works (your consent screen) | You want a fully branded deployment on your own domain, end to end. |
 
 Read the table top-to-bottom as a ladder: each rung gives your organization
 more of its own identity. One combination is intentionally **not possible**
@@ -124,25 +125,24 @@ provider for single sign-on.
   **distinct authentication boundary** — see [Identity Services → The
   identity provider is the security boundary](/cloud/guides/self-hosted/planning/identity-services/#the-identity-provider-is-the-security-boundary).
 
-### White-Label (Password-Only)
+### White-Label
 
 Your organization runs on **your own domain** (`cloud.acme.com`, on a
-different base domain from the deployment), but still uses the deployment's
+different base domain from the deployment), using the deployment's
 **default** identity providers.
 
 - **Branding:** fully white-labeled sign-in pages on your own domain.
-- **Sign-in:** email and password work fully — both sign-up and sign-in. The
-  **Google/GitHub buttons are hidden**, because the secure social-sign-in
-  handshake cannot hand off between two unrelated domains using the shared
-  apps. The **Log In / Sign Up** toggle stays visible, so users can still
-  register and sign in with email and password.
-- **Choose it when:** you want your own domain quickly and email-and-password
-  sign-in meets your needs for now. **To turn the social buttons back on,
-  add your own identity provider** and you become a full *White-Label*
-  organization (below). See the
-  [note on hidden social buttons](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain).
+- **Sign-in:** email and password, as well as Google and GitHub, all work out
+  of the box - the social buttons use the platform's Google/GitHub apps, so
+  the upstream consent screen shows the platform's name.
+- **Choose it when:** you want your own domain with social sign-in working
+  immediately, and you don't need your own OAuth apps or consent-screen
+  branding. **To bring your own OAuth apps or corporate single sign-on, add
+  your own identity provider** and you become a *White-Label + BYOC*
+  organization (below). Set up the custom domain in
+  [White-labeling → Custom Domain Name and Login Screen](/cloud/guides/self-hosted/white-labeling/#custom-domain-name-and-login-screen).
 
-### White-Label
+### White-Label + BYOC
 
 The top of the ladder: **your own domain** *and* **your own identity
 provider**. Your organization is branded end to end and authenticates
@@ -172,15 +172,17 @@ A quick way to land on the right scenario:
 2. **Do you need your own identity provider** — your own Google/GitHub apps,
    your own consent-screen branding, or your corporate single sign-on?
    - On a **subdomain**: No → **Branded**. Yes → **Branded + BYOC**.
-   - On **your own domain**: No → **White-Label (Password-Only)** (email and
-     password only). Yes → **White-Label** (the full experience).
+   - On **your own domain**: No → **White-Label** (social sign-in works on the
+     platform's apps). Yes → **White-Label + BYOC** (the full experience).
 
 {{< alert type="info" >}}
-**Rule of thumb.** Your own domain on a *different* base domain from the
-deployment? Bringing your own identity provider is **required** for social
-sign-in. A subdomain of the deployment's base domain? It's **optional** —
-only for your own branding, scale, or isolation. The full optional-vs-required
-breakdown is in [Identity Services → When BYOC is optional vs. required](/cloud/guides/self-hosted/planning/identity-services/#when-byoc-is-optional-vs-required).
+**Rule of thumb.** Social sign-in works out of the box in every scenario -
+including on your own domain on a *different* base domain from the deployment -
+using the platform's identity providers. Bringing your own identity provider
+is **always optional**, whatever your domain: choose it only when you want
+your own consent-screen branding, your own OAuth rate limits and audit trail,
+corporate single sign-on, or a distinct authentication boundary. The full
+breakdown is in [Identity Services → BYOC is always optional](/cloud/guides/self-hosted/planning/identity-services/#byoc-is-always-optional).
 {{< /alert >}}
 
 ## These choices are independent of who can join
