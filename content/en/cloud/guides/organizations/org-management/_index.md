@@ -40,7 +40,7 @@ If the "Add Organization" button is disabled, it means your current role does no
 
 ## Editing Your Organization
 
-You can update your Organization's name, location, associated teams, branding, and access its invitation link by editing its details.
+You can update your Organization's name, location, associated teams, branding, identity providers, and access its invitation link by editing its details.
 
 ### How to Edit Your Organization
 
@@ -50,8 +50,24 @@ You can update your Organization's name, location, associated teams, branding, a
     -   Theme: Customize your Organization's visual theme by selecting from the available color swatches.
     -   Logos: Upload specific logo versions for various display contexts by clicking the respective **"Upload"** buttons.
     -   Invitations: Access a shareable link to invite users to your Organization.
+    -   Identity Providers: Configure which OAuth applications power your Organization's sign-in (see [Configuring Identity Providers](#configuring-identity-providers-bring-your-own-credentials) below).
 
 <img src="images/edit_org.png" alt="Editing Organization Details" style="width: 30%;" />
+
+### Configuring Identity Providers (Bring-Your-Own Credentials)
+
+The **Identity Providers** tab controls which OAuth applications power sign-in for your Organization. This is most useful when your Organization uses a custom domain and you want your own brand — not Layer5's — shown on the Google, GitHub, or OIDC consent screen.
+
+The tab opens in one of two states:
+
+-   **Using Layer5's default identity providers** (the default for every Organization): sign-in uses Layer5's shared OAuth applications. A Provider Administrator can select **Enable bring-your-own credentials** to begin configuring the Organization's own providers.
+-   **Bring-your-own credentials (BYOC) enabled**: a row is shown for each configured provider. Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider — each walkthrough displays the exact redirect URI to add to your OAuth application — and **Edit** or **Remove** to rotate or delete a provider's credentials. **Delete Identity Providers** reverts the Organization to Layer5's defaults.
+
+{{< alert title="Who can configure this" type="info" >}}
+Enabling or tearing down bring-your-own credentials is a Provider Administrator action, and Provider Administrators can manage the Identity Providers configuration of **any** Organization — whether or not they are a member of it. Adding, rotating, and removing individual provider connections is available to Organization Administrators and Owners.
+{{< /alert >}}
+
+Switching identity providers does not affect existing user accounts or login history. Users who signed in through a provider you later remove may need to re-authenticate.
 
 ## Using the Open Organization Invitation Link
 
