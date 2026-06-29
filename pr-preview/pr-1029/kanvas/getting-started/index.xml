@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started with Designs on Layer5 Documentation</title><link>/pr-preview/pr-1029/kanvas/getting-started/</link><description>Recent content in Getting Started with Designs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1029/kanvas/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Starting from scratch</title><link>/pr-preview/pr-1029/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1029/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started with Designs on Layer5 Documentation</title><link>/kanvas/getting-started/</link><description>Recent content in Getting Started with Designs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
  Step 1: Accessing Designer Mode
  &lt;a href="#step-1-accessing-designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Upon entering Kanvas, seamlessly transition to the &amp;ldquo;Designer&amp;rdquo; mode by selecting the &amp;ldquo;Designer&amp;rdquo; tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example Analogy:&lt;/strong&gt;
-Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/pr-preview/pr-1029/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1029/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
+Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
 
 &lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
  Accessing the Import Functionality
@@ -61,9 +61,9 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[494 56 91 163 100 95]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[73 222 136 285 418 8]" src="../../kanvas/getting-started/images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/pr-preview/pr-1029/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1029/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
  Benefits of Using Relationships
  &lt;a href="#benefits-of-using-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -79,7 +79,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
  What are Relationships
  &lt;a href="#what-are-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure&amp;rsquo;s architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.&lt;/p&gt;</description></item><item><title>Working with Components</title><link>/pr-preview/pr-1029/kanvas/getting-started/working-with-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1029/kanvas/getting-started/working-with-components/</guid><description>&lt;h2 id="configuring-components" class="heading-link"&gt;
+&lt;p&gt;Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure&amp;rsquo;s architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.&lt;/p&gt;</description></item><item><title>Working with Components</title><link>/kanvas/getting-started/working-with-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/working-with-components/</guid><description>&lt;h2 id="configuring-components" class="heading-link"&gt;
  Configuring Components
  &lt;a href="#configuring-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -92,7 +92,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[260 219 121 476 1 447]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[373 226 455 416 421 101]" src="../../kanvas/getting-started/images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;

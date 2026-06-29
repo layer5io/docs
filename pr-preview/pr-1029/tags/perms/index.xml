@@ -1,22 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Perms on Layer5 Documentation</title><link>/pr-preview/pr-1029/tags/perms/</link><description>Recent content in Perms on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1029/tags/perms/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Permissions</title><link>/pr-preview/pr-1029/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1029/cloud/reference/default-permissions/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Perms on Layer5 Documentation</title><link>/tags/perms/</link><description>Recent content in Perms on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/perms/index.xml" rel="self" type="application/rss+xml"/><item><title>Default Permissions</title><link>/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/default-permissions/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Customizable Permissions&lt;/h4&gt;
  
- Default permissions can be easily customized by simply creating your own &lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/"&gt;roles&lt;/a&gt;.
+ Default permissions can be easily customized by simply creating your own &lt;a href="../../cloud/concepts/identity-and-security/keychains/#keychains-management"&gt;keychains&lt;/a&gt; and &lt;a href="../../cloud/concepts/identity-and-security/roles/"&gt;roles&lt;/a&gt;.
  
 &lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Legend:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;✅* user must be resource owner in order to perform action.&lt;/li&gt;
-&lt;li&gt;✅ user is allowed to perform action regardless of resource ownership.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="permissions-tabpane"&gt;
+&lt;li&gt;
+&lt;p&gt;✅* user must be resource owner in order to perform action.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✅ user is allowed to perform action regardless of resource ownership.&lt;/p&gt;
 
-
-
-
-&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist"&gt;
+ 
+ 
+ 
+ &lt;ul class="nav nav-tabs" id="tabs-1" role="tablist"&gt;
  &lt;li class="nav-item"&gt;
  &lt;button class="nav-link disabled"
  id="tabs-01-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-01-00" role="tab"
@@ -46,21 +47,12 @@
  &lt;div class="tab-body tab-pane fade show active"
  id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab" tabindex="1"&gt;
  
-
-
-
  
-
-
  
  
-
-
-
  
  
  
-
  
  
  
@@ -92,7 +84,6 @@
  
  
  
-
  
  
  
@@ -603,19 +594,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  &lt;h2&gt;Catalog Permissions&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
@@ -643,7 +621,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -654,7 +632,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -665,7 +643,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -676,7 +654,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -687,7 +665,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -698,29 +676,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -781,28 +737,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -918,28 +852,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -992,10 +904,6 @@
  
  
  &lt;/tr&gt;
- 
- 
- 
- 
  
  
  
@@ -1209,28 +1117,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -1307,8 +1193,6 @@
  
  
  
- 
- 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -1338,7 +1222,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1349,7 +1233,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1360,7 +1244,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1371,7 +1255,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1382,7 +1266,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1393,29 +1277,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -1490,28 +1352,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -1575,8 +1415,6 @@
  
  
  
- 
- 
  &lt;tr&gt;
  
  
@@ -1617,28 +1455,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -1754,28 +1570,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -1881,28 +1675,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -1986,7 +1758,7 @@
  &lt;td&gt;
  
  
- ✅ *
+ ✅
  
  
  &lt;/td&gt;
@@ -1997,29 +1769,7 @@
  &lt;td&gt;
  
  
- ✅ *
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
+ ✅
  
  
  &lt;/td&gt;
@@ -2135,28 +1885,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -2231,28 +1959,6 @@
  &lt;td&gt;
  
  Deploy a design
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -2389,28 +2095,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -2506,28 +2190,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -2643,28 +2305,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -2760,155 +2400,6 @@
  
  
  ✅ *
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- 
- 
- 
- &lt;tr&gt;
- 
- 
- 
- 
- 
- 
- &lt;td&gt;
- 
- Evaluate Relationships
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- Evaluate relationships inside a design
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -3024,28 +2515,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -3098,8 +2567,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -3283,7 +2750,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3294,7 +2761,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3305,7 +2772,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3316,7 +2783,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3327,7 +2794,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3338,29 +2805,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -3437,28 +2882,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -3511,10 +2934,6 @@
  
  
  &lt;/tr&gt;
- 
- 
- 
- 
  
  
  
@@ -3596,28 +3015,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -3713,28 +3110,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -3850,28 +3225,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -3967,28 +3320,6 @@
  
  
  ✅ *
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -4104,28 +3435,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -4231,28 +3540,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -4305,8 +3592,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -4478,7 +3763,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4489,7 +3774,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4500,7 +3785,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4511,7 +3796,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4522,7 +3807,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4533,29 +3818,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -4603,28 +3866,6 @@
  &lt;td&gt;
  
  View the catalog publication request queue
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -4761,28 +4002,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -4888,28 +4107,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -4962,457 +4159,6 @@
  
  
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
- 
- &lt;h2&gt; Permissions&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- 
- 
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- 
- 
- 
- 
  
  
  
@@ -5618,7 +4364,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5629,7 +4375,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5640,7 +4386,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5651,7 +4397,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5662,7 +4408,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5673,29 +4419,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -5710,10 +4434,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -5787,28 +4507,6 @@
  &lt;td&gt;
  
  Install or enable or disabble extensions in Meshery
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -5945,28 +4643,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -6072,28 +4748,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -6146,8 +4800,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -6313,7 +4965,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6324,7 +4976,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6335,7 +4987,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6346,7 +4998,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6357,7 +5009,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6368,29 +5020,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6405,10 +5035,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -6519,28 +5145,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -6593,8 +5197,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -6758,7 +5360,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6769,7 +5371,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6780,7 +5382,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6791,7 +5393,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6802,7 +5404,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6813,29 +5415,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -6850,10 +5430,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -6956,28 +5532,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -7093,28 +5647,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -7210,28 +5742,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -7369,28 +5879,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -7464,28 +5952,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -7623,28 +6089,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -7718,28 +6162,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -7877,28 +6299,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8004,28 +6404,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8077,7 +6455,7 @@
  
  &lt;td&gt;
  
- Remove roles from users in a team.
+ Remove roles from users in a team
  
  &lt;/td&gt;
  
@@ -8099,28 +6477,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -8236,28 +6592,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8363,28 +6697,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8437,8 +6749,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -8578,7 +6888,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8589,7 +6899,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8600,7 +6910,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8611,7 +6921,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8622,7 +6932,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8633,29 +6943,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -8670,10 +6958,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -8832,28 +7116,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -8906,28 +7168,6 @@
  &lt;td&gt;
  
  Edit organiaztions and add teams to it
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -9075,28 +7315,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9160,28 +7378,6 @@
  &lt;td&gt;
  
  Send a request for a user to join an organization.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -9329,28 +7525,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9414,28 +7588,6 @@
  &lt;td&gt;
  
  Elevate or remove organization level administrative privileges.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -9572,28 +7724,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9710,28 +7840,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -9794,29 +7902,7 @@
  
  &lt;td&gt;
  
- See all organizations within a Cloud deployment. See all organizations, teams, and users.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
+ See all organizations within a Layer5 Cloud deployment. See all organizations, teams, and users.
  
  &lt;/td&gt;
  
@@ -9975,28 +8061,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -10102,28 +8166,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -10154,8 +8196,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -10273,7 +8313,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10284,7 +8324,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10295,7 +8335,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10306,7 +8346,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10317,7 +8357,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10328,29 +8368,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -10365,10 +8383,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -10527,28 +8541,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -10623,28 +8615,6 @@
  &lt;td&gt;
  
  Change connection state
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -10781,28 +8751,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -10908,28 +8856,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -11004,28 +8930,6 @@
  &lt;td&gt;
  
  Delete a connection
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -11200,28 +9104,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -11274,8 +9156,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -11343,7 +9223,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11354,7 +9234,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11365,7 +9245,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11376,7 +9256,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11387,7 +9267,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11398,29 +9278,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -11435,10 +9293,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -11607,28 +9461,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -11703,28 +9535,6 @@
  &lt;td&gt;
  
  Configure and connect to Meshery adapters
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -11883,28 +9693,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -11978,28 +9766,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -12105,28 +9871,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -12328,28 +10072,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -12380,8 +10102,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  &lt;/tbody&gt;
@@ -12413,7 +10133,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12424,7 +10144,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12435,7 +10155,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12446,7 +10166,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12457,7 +10177,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12468,29 +10188,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -12505,10 +10203,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -12709,28 +10403,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -12783,28 +10455,6 @@
  &lt;td&gt;
  
  Run a test on performance profile
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -12941,28 +10591,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -13090,28 +10718,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -13164,28 +10770,6 @@
  &lt;td&gt;
  
  Delete performance test
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -13322,28 +10906,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -13396,8 +10958,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -13483,7 +11043,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13494,7 +11054,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13505,7 +11065,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13516,7 +11076,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13527,7 +11087,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13538,29 +11098,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -13575,10 +11113,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -13791,28 +11325,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -13865,28 +11377,6 @@
  &lt;td&gt;
  
  Manage configuration for applications like EmojiVoto, HTTPBin, Image Hub, Istio Book Info
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -14045,28 +11535,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -14119,28 +11587,6 @@
  &lt;td&gt;
  
  Validate cloud native infrastructure configuration against best practices like Analyze Running Configuration, SMI conformance
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -14299,28 +11745,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -14373,28 +11797,6 @@
  &lt;td&gt;
  
  This permission grants the user the ability to deploy their infrastructure to a cluster through Meshery. Meshery allows users to visualize, work on and manage various cloud native technologies
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -14553,28 +11955,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -14658,28 +12038,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -14732,8 +12090,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -14803,7 +12159,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14814,7 +12170,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14825,7 +12181,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14836,7 +12192,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14847,7 +12203,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14858,29 +12214,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -14895,10 +12229,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -15107,28 +12437,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -15203,28 +12511,6 @@
  &lt;td&gt;
  
  Create a new environment
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -15361,28 +12647,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -15457,28 +12721,6 @@
  &lt;td&gt;
  
  Edit environment and it connection membership
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -15615,28 +12857,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -15742,28 +12962,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -15816,8 +13014,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -15873,7 +13069,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -15884,7 +13080,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -15895,7 +13091,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -15906,7 +13102,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -15917,7 +13113,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -15928,29 +13124,7 @@
  
  
  
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
  
  
  
@@ -15965,10 +13139,6 @@
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
  
  
  
@@ -16159,7 +13329,7 @@
  
  &lt;td&gt;
  
- See all workspaces within an organization
+ See all workspaces within an organisation
  
  &lt;/td&gt;
  
@@ -16181,28 +13351,6 @@
  
  
  ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
  
  
  &lt;/td&gt;
@@ -16287,28 +13435,6 @@
  &lt;td&gt;
  
  Dissolve workspace and all team and environment memberships. Leave associated resources intact
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -16445,28 +13571,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -16541,28 +13645,6 @@
  &lt;td&gt;
  
  Create new workspace
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -16699,28 +13781,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -16795,28 +13855,6 @@
  &lt;td&gt;
  
  Remove team from workspace
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -16953,28 +13991,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -17049,28 +14065,6 @@
  &lt;td&gt;
  
  Remove environment from workspace
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
  
  &lt;/td&gt;
  
@@ -17207,28 +14201,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -17334,28 +14306,6 @@
  &lt;td&gt;
  
  
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
  ✅
  
  
@@ -17408,8 +14358,6 @@
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -17417,455 +14365,10 @@
  &lt;/tbody&gt;
  &lt;/table&gt;
  
- &lt;h2&gt;Administration Permissions&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
  
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- 
- 
- 
- 
- 
- 
- &lt;td&gt;
- 
- Access the Academy console
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- View and assess the performance of learners and of your organization&amp;#39;s academy content.
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
  
 
-
-
-
+ 
  &lt;/div&gt;
  &lt;div class="tab-body tab-pane fade"
  id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab" tabindex="1"&gt;
@@ -17873,16 +14376,13 @@
  
  
  
-
  
  
  
  
-
  
  
  
-
  
  
  
@@ -17894,7 +14394,6 @@
  
  
  
-
  
  
  
@@ -17904,7 +14403,6 @@
  
  
  
-
  
  
  
@@ -17914,7 +14412,6 @@
  
  
  
-
  
  
  
@@ -17924,7 +14421,6 @@
  
  
  
-
  
  
  
@@ -17934,7 +14430,6 @@
  
  
  
-
  
  
  
@@ -17944,7 +14439,6 @@
  
  
  
-
  
  
  
@@ -17954,7 +14448,6 @@
  
  
  
-
  
  
  
@@ -17966,29 +14459,19 @@
  
  
  
-
  
  
  
  
  
-
  
  
  
  
  
-
  
  
  
- 
- 
-
- 
- 
- 
-
  
  &lt;div class="csvtable-div"&gt;
  
@@ -17996,7 +14479,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -18065,14 +14548,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
@@ -18087,7 +14562,6 @@
  
  
  
-
  
  
  
@@ -18180,7 +14654,6 @@
  
  
  
-
  
  
  
@@ -18193,7 +14666,6 @@
  
  
  
-
  
  
  
@@ -18275,23 +14747,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -18309,7 +14764,6 @@
  
  
  
-
  
  
  
@@ -18399,15 +14853,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -18425,7 +14870,6 @@
  
  
  
-
  
  
  
@@ -18515,15 +14959,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -18541,7 +14976,6 @@
  
  
  
-
  
  
  
@@ -18631,15 +15065,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -18657,7 +15082,6 @@
  
  
  
-
  
  
  
@@ -18750,7 +15174,6 @@
  
  
  
-
  
  
  
@@ -18763,7 +15186,6 @@
  
  
  
-
  
  
  
@@ -18856,7 +15278,6 @@
  
  
  
-
  
  
  
@@ -18869,7 +15290,6 @@
  
  
  
-
  
  
  
@@ -18962,7 +15382,6 @@
  
  
  
-
  
  
  
@@ -18975,7 +15394,6 @@
  
  
  
-
  
  
  
@@ -19041,145 +15459,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -19197,7 +15476,6 @@
  
  
  
-
  
  
  
@@ -19287,15 +15565,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -19313,7 +15582,6 @@
  
  
  
-
  
  
  
@@ -19403,15 +15671,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -19429,7 +15688,6 @@
  
  
  
-
  
  
  
@@ -19519,15 +15777,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -19545,7 +15794,6 @@
  
  
  
-
  
  
  
@@ -19635,15 +15883,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -19661,7 +15900,6 @@
  
  
  
-
  
  
  
@@ -19754,7 +15992,6 @@
  
  
  
-
  
  
  
@@ -19767,7 +16004,6 @@
  
  
  
-
  
  
  
@@ -19860,7 +16096,6 @@
  
  
  
-
  
  
  
@@ -19873,7 +16108,6 @@
  
  
  
-
  
  
  
@@ -19947,31 +16181,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -19989,7 +16198,6 @@
  
  
  
-
  
  
  
@@ -20079,15 +16287,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20105,7 +16304,6 @@
  
  
  
-
  
  
  
@@ -20195,15 +16393,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20221,7 +16410,6 @@
  
  
  
-
  
  
  
@@ -20311,131 +16499,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Evaluate Relationships &lt;/td&gt;
- &lt;td&gt;Evaluate relationships inside a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20453,7 +16516,6 @@
  
  
  
-
  
  
  
@@ -20543,15 +16605,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20569,7 +16622,6 @@
  
  
  
-
  
  
  
@@ -20659,15 +16711,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20685,7 +16728,6 @@
  
  
  
-
  
  
  
@@ -20775,15 +16817,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20801,7 +16834,6 @@
  
  
  
-
  
  
  
@@ -20891,15 +16923,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -20917,7 +16940,6 @@
  
  
  
-
  
  
  
@@ -21007,15 +17029,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21033,7 +17046,6 @@
  
  
  
-
  
  
  
@@ -21123,15 +17135,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21149,7 +17152,6 @@
  
  
  
-
  
  
  
@@ -21242,7 +17244,6 @@
  
  
  
-
  
  
  
@@ -21255,7 +17256,6 @@
  
  
  
-
  
  
  
@@ -21337,23 +17337,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21371,7 +17354,6 @@
  
  
  
-
  
  
  
@@ -21461,15 +17443,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21487,7 +17460,6 @@
  
  
  
-
  
  
  
@@ -21577,15 +17549,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21603,7 +17566,6 @@
  
  
  
-
  
  
  
@@ -21693,15 +17655,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21719,7 +17672,6 @@
  
  
  
-
  
  
  
@@ -21809,15 +17761,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21835,7 +17778,6 @@
  
  
  
-
  
  
  
@@ -21925,15 +17867,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -21951,7 +17884,6 @@
  
  
  
-
  
  
  
@@ -22041,15 +17973,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22067,7 +17990,6 @@
  
  
  
-
  
  
  
@@ -22157,15 +18079,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22183,7 +18096,6 @@
  
  
  
-
  
  
  
@@ -22273,15 +18185,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22299,7 +18202,6 @@
  
  
  
-
  
  
  
@@ -22389,15 +18291,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22415,7 +18308,6 @@
  
  
  
-
  
  
  
@@ -22505,15 +18397,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22531,7 +18414,6 @@
  
  
  
-
  
  
  
@@ -22621,15 +18503,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22647,7 +18520,6 @@
  
  
  
-
  
  
  
@@ -22737,20 +18609,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
- &lt;td&gt;Remove roles from users in a team.&lt;/td&gt;
+ &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -22763,7 +18626,6 @@
  
  
  
-
  
  
  
@@ -22853,15 +18715,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22879,7 +18732,6 @@
  
  
  
-
  
  
  
@@ -22969,15 +18821,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -22995,7 +18838,6 @@
  
  
  
-
  
  
  
@@ -23088,7 +18930,6 @@
  
  
  
-
  
  
  
@@ -23101,7 +18942,6 @@
  
  
  
-
  
  
  
@@ -23194,7 +19034,6 @@
  
  
  
-
  
  
  
@@ -23207,7 +19046,6 @@
  
  
  
-
  
  
  
@@ -23300,7 +19138,6 @@
  
  
  
-
  
  
  
@@ -23313,7 +19150,6 @@
  
  
  
-
  
  
  
@@ -23406,7 +19242,6 @@
  
  
  
-
  
  
  
@@ -23419,7 +19254,6 @@
  
  
  
-
  
  
  
@@ -23512,7 +19346,6 @@
  
  
  
-
  
  
  
@@ -23525,7 +19358,6 @@
  
  
  
-
  
  
  
@@ -23618,7 +19450,6 @@
  
  
  
-
  
  
  
@@ -23631,7 +19462,6 @@
  
  
  
-
  
  
  
@@ -23673,63 +19503,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -23747,7 +19520,6 @@
  
  
  
-
  
  
  
@@ -23840,7 +19612,6 @@
  
  
  
-
  
  
  
@@ -23853,7 +19624,6 @@
  
  
  
-
  
  
  
@@ -23946,7 +19716,6 @@
  
  
  
-
  
  
  
@@ -23959,7 +19728,6 @@
  
  
  
-
  
  
  
@@ -24052,7 +19820,6 @@
  
  
  
-
  
  
  
@@ -24065,7 +19832,6 @@
  
  
  
-
  
  
  
@@ -24158,7 +19924,6 @@
  
  
  
-
  
  
  
@@ -24171,7 +19936,6 @@
  
  
  
-
  
  
  
@@ -24264,7 +20028,6 @@
  
  
  
-
  
  
  
@@ -24277,7 +20040,6 @@
  
  
  
-
  
  
  
@@ -24370,7 +20132,6 @@
  
  
  
-
  
  
  
@@ -24383,7 +20144,6 @@
  
  
  
-
  
  
  
@@ -24476,7 +20236,6 @@
  
  
  
-
  
  
  
@@ -24489,7 +20248,6 @@
  
  
  
-
  
  
  
@@ -24582,7 +20340,6 @@
  
  
  
-
  
  
  
@@ -24595,7 +20352,6 @@
  
  
  
-
  
  
  
@@ -24688,7 +20444,6 @@
  
  
  
-
  
  
  
@@ -24701,7 +20456,6 @@
  
  
  
-
  
  
  
@@ -24719,87 +20473,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -24817,7 +20490,6 @@
  
  
  
-
  
  
  
@@ -24910,7 +20582,6 @@
  
  
  
-
  
  
  
@@ -24923,7 +20594,6 @@
  
  
  
-
  
  
  
@@ -25016,7 +20686,6 @@
  
  
  
-
  
  
  
@@ -25029,7 +20698,6 @@
  
  
  
-
  
  
  
@@ -25103,31 +20771,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -25145,7 +20788,6 @@
  
  
  
-
  
  
  
@@ -25235,15 +20877,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -25261,7 +20894,6 @@
  
  
  
-
  
  
  
@@ -25354,7 +20986,6 @@
  
  
  
-
  
  
  
@@ -25367,7 +20998,6 @@
  
  
  
-
  
  
  
@@ -25460,7 +21090,6 @@
  
  
  
-
  
  
  
@@ -25473,7 +21102,6 @@
  
  
  
-
  
  
  
@@ -25547,31 +21175,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -25589,7 +21192,6 @@
  
  
  
-
  
  
  
@@ -25682,7 +21284,6 @@
  
  
  
-
  
  
  
@@ -25695,7 +21296,6 @@
  
  
  
-
  
  
  
@@ -25788,7 +21388,6 @@
  
  
  
-
  
  
  
@@ -25801,7 +21400,6 @@
  
  
  
-
  
  
  
@@ -25875,31 +21473,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -25917,7 +21490,6 @@
  
  
  
-
  
  
  
@@ -26010,7 +21582,6 @@
  
  
  
-
  
  
  
@@ -26023,7 +21594,6 @@
  
  
  
-
  
  
  
@@ -26116,7 +21686,6 @@
  
  
  
-
  
  
  
@@ -26129,7 +21698,6 @@
  
  
  
-
  
  
  
@@ -26222,7 +21790,6 @@
  
  
  
-
  
  
  
@@ -26235,7 +21802,6 @@
  
  
  
-
  
  
  
@@ -26328,7 +21894,6 @@
  
  
  
-
  
  
  
@@ -26341,7 +21906,6 @@
  
  
  
-
  
  
  
@@ -26434,7 +21998,6 @@
  
  
  
-
  
  
  
@@ -26447,7 +22010,6 @@
  
  
  
-
  
  
  
@@ -26540,7 +22102,6 @@
  
  
  
-
  
  
  
@@ -26553,7 +22114,6 @@
  
  
  
-
  
  
  
@@ -26646,7 +22206,6 @@
  
  
  
-
  
  
  
@@ -26659,7 +22218,6 @@
  
  
  
-
  
  
  
@@ -26693,71 +22251,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -26775,7 +22268,6 @@
  
  
  
-
  
  
  
@@ -26865,15 +22357,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -26891,7 +22374,6 @@
  
  
  
-
  
  
  
@@ -26981,15 +22463,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -27007,7 +22480,6 @@
  
  
  
-
  
  
  
@@ -27100,7 +22572,6 @@
  
  
  
-
  
  
  
@@ -27113,7 +22584,6 @@
  
  
  
-
  
  
  
@@ -27206,7 +22676,6 @@
  
  
  
-
  
  
  
@@ -27219,7 +22688,6 @@
  
  
  
-
  
  
  
@@ -27312,7 +22780,6 @@
  
  
  
-
  
  
  
@@ -27325,7 +22792,6 @@
  
  
  
-
  
  
  
@@ -27418,7 +22884,6 @@
  
  
  
-
  
  
  
@@ -27431,7 +22896,6 @@
  
  
  
-
  
  
  
@@ -27524,7 +22988,6 @@
  
  
  
-
  
  
  
@@ -27537,7 +23000,6 @@
  
  
  
-
  
  
  
@@ -27587,55 +23049,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -27653,7 +23066,6 @@
  
  
  
-
  
  
  
@@ -27743,20 +23155,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
- &lt;td&gt;See all workspaces within an organization&lt;/td&gt;
+ &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -27769,7 +23172,6 @@
  
  
  
-
  
  
  
@@ -27862,7 +23264,6 @@
  
  
  
-
  
  
  
@@ -27875,7 +23276,6 @@
  
  
  
-
  
  
  
@@ -27968,7 +23368,6 @@
  
  
  
-
  
  
  
@@ -27981,7 +23380,6 @@
  
  
  
-
  
  
  
@@ -28074,7 +23472,6 @@
  
  
  
-
  
  
  
@@ -28087,7 +23484,6 @@
  
  
  
-
  
  
  
@@ -28180,7 +23576,6 @@
  
  
  
-
  
  
  
@@ -28193,7 +23588,6 @@
  
  
  
-
  
  
  
@@ -28286,7 +23680,6 @@
  
  
  
-
  
  
  
@@ -28299,7 +23692,6 @@
  
  
  
-
  
  
  
@@ -28392,7 +23784,6 @@
  
  
  
-
  
  
  
@@ -28405,7 +23796,6 @@
  
  
  
-
  
  
  
@@ -28498,7 +23888,6 @@
  
  
  
-
  
  
  
@@ -28511,7 +23900,6 @@
  
  
  
-
  
  
  
@@ -28604,7 +23992,6 @@
  
  
  
-
  
  
  
@@ -28617,7 +24004,6 @@
  
  
  
-
  
  
  
@@ -28710,7 +24096,6 @@
  
  
  
-
  
  
  
@@ -28723,7 +24108,6 @@
  
  
  
-
  
  
  
@@ -28736,193 +24120,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  
@@ -28937,7 +24134,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -29006,14 +24203,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
@@ -29028,7 +24217,6 @@
  
  
  
-
  
  
  
@@ -29121,7 +24309,6 @@
  
  
  
-
  
  
  
@@ -29134,7 +24321,6 @@
  
  
  
-
  
  
  
@@ -29216,20985 +24402,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
- &lt;/div&gt;
- 
- &lt;div class="csvtable-div"&gt;
- 
- 
- 
- 
- 
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner Role&lt;/a&gt;&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
- &lt;/div&gt;
- 
- &lt;div class="csvtable-div"&gt;
- 
- 
- 
- 
- 
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin Role&lt;/a&gt;&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50212,7 +24419,6 @@
  
  
  
-
  
  
  
@@ -50302,15 +24508,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50328,7 +24525,6 @@
  
  
  
-
  
  
  
@@ -50418,15 +24614,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50444,7 +24631,6 @@
  
  
  
-
  
  
  
@@ -50534,15 +24720,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50560,7 +24737,6 @@
  
  
  
-
  
  
  
@@ -50650,15 +24826,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50676,7 +24843,6 @@
  
  
  
-
  
  
  
@@ -50766,15 +24932,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50792,7 +24949,6 @@
  
  
  
-
  
  
  
@@ -50882,15 +25038,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -50908,7 +25055,6 @@
  
  
  
-
  
  
  
@@ -50998,121 +25144,6 @@
  
  
  
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51130,7 +25161,6 @@
  
  
  
-
  
  
  
@@ -51220,15 +25250,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51246,7 +25267,6 @@
  
  
  
-
  
  
  
@@ -51336,15 +25356,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51362,7 +25373,6 @@
  
  
  
-
  
  
  
@@ -51452,15 +25462,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51478,7 +25479,6 @@
  
  
  
-
  
  
  
@@ -51568,15 +25568,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51594,7 +25585,6 @@
  
  
  
-
  
  
  
@@ -51684,15 +25674,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51710,7 +25691,6 @@
  
  
  
-
  
  
  
@@ -51800,15 +25780,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51826,7 +25797,6 @@
  
  
  
-
  
  
  
@@ -51916,15 +25886,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -51942,7 +25903,6 @@
  
  
  
-
  
  
  
@@ -52032,15 +25992,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52058,7 +26009,6 @@
  
  
  
-
  
  
  
@@ -52148,15 +26098,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52174,7 +26115,6 @@
  
  
  
-
  
  
  
@@ -52264,131 +26204,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Evaluate Relationships &lt;/td&gt;
- &lt;td&gt;Evaluate relationships inside a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52406,7 +26221,6 @@
  
  
  
-
  
  
  
@@ -52496,15 +26310,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52522,7 +26327,6 @@
  
  
  
-
  
  
  
@@ -52612,15 +26416,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52638,7 +26433,6 @@
  
  
  
-
  
  
  
@@ -52728,15 +26522,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52754,7 +26539,6 @@
  
  
  
-
  
  
  
@@ -52844,15 +26628,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52870,7 +26645,6 @@
  
  
  
-
  
  
  
@@ -52960,15 +26734,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -52986,7 +26751,6 @@
  
  
  
-
  
  
  
@@ -53076,15 +26840,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53102,7 +26857,6 @@
  
  
  
-
  
  
  
@@ -53195,7 +26949,6 @@
  
  
  
-
  
  
  
@@ -53208,7 +26961,6 @@
  
  
  
-
  
  
  
@@ -53290,23 +27042,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53324,7 +27059,6 @@
  
  
  
-
  
  
  
@@ -53414,15 +27148,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53440,7 +27165,6 @@
  
  
  
-
  
  
  
@@ -53530,15 +27254,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53556,7 +27271,6 @@
  
  
  
-
  
  
  
@@ -53646,15 +27360,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53672,7 +27377,6 @@
  
  
  
-
  
  
  
@@ -53762,15 +27466,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53788,7 +27483,6 @@
  
  
  
-
  
  
  
@@ -53878,15 +27572,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -53904,7 +27589,6 @@
  
  
  
-
  
  
  
@@ -53997,7 +27681,6 @@
  
  
  
-
  
  
  
@@ -54010,7 +27693,6 @@
  
  
  
-
  
  
  
@@ -54103,7 +27785,6 @@
  
  
  
-
  
  
  
@@ -54116,7 +27797,6 @@
  
  
  
-
  
  
  
@@ -54209,7 +27889,6 @@
  
  
  
-
  
  
  
@@ -54222,7 +27901,6 @@
  
  
  
-
  
  
  
@@ -54315,7 +27993,6 @@
  
  
  
-
  
  
  
@@ -54328,7 +28005,6 @@
  
  
  
-
  
  
  
@@ -54421,7 +28097,6 @@
  
  
  
-
  
  
  
@@ -54434,7 +28109,6 @@
  
  
  
-
  
  
  
@@ -54527,7 +28201,6 @@
  
  
  
-
  
  
  
@@ -54540,7 +28213,6 @@
  
  
  
-
  
  
  
@@ -54582,68 +28254,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
- &lt;td&gt;Remove roles from users in a team.&lt;/td&gt;
+ &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -54656,7 +28271,6 @@
  
  
  
-
  
  
  
@@ -54746,15 +28360,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -54772,7 +28377,6 @@
  
  
  
-
  
  
  
@@ -54862,15 +28466,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -54888,7 +28483,6 @@
  
  
  
-
  
  
  
@@ -54981,7 +28575,6 @@
  
  
  
-
  
  
  
@@ -54994,7 +28587,6 @@
  
  
  
-
  
  
  
@@ -55087,7 +28679,6 @@
  
  
  
-
  
  
  
@@ -55100,7 +28691,6 @@
  
  
  
-
  
  
  
@@ -55193,7 +28783,6 @@
  
  
  
-
  
  
  
@@ -55206,7 +28795,6 @@
  
  
  
-
  
  
  
@@ -55299,7 +28887,6 @@
  
  
  
-
  
  
  
@@ -55312,7 +28899,6 @@
  
  
  
-
  
  
  
@@ -55405,7 +28991,6 @@
  
  
  
-
  
  
  
@@ -55418,7 +29003,6 @@
  
  
  
-
  
  
  
@@ -55511,7 +29095,6 @@
  
  
  
-
  
  
  
@@ -55524,7 +29107,6 @@
  
  
  
-
  
  
  
@@ -55566,63 +29148,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -55640,7 +29165,6 @@
  
  
  
-
  
  
  
@@ -55733,7 +29257,6 @@
  
  
  
-
  
  
  
@@ -55746,7 +29269,6 @@
  
  
  
-
  
  
  
@@ -55839,7 +29361,6 @@
  
  
  
-
  
  
  
@@ -55852,7 +29373,6 @@
  
  
  
-
  
  
  
@@ -55945,7 +29465,6 @@
  
  
  
-
  
  
  
@@ -55958,7 +29477,6 @@
  
  
  
-
  
  
  
@@ -56051,7 +29569,6 @@
  
  
  
-
  
  
  
@@ -56064,7 +29581,6 @@
  
  
  
-
  
  
  
@@ -56122,47 +29638,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -56180,7 +29655,6 @@
  
  
  
-
  
  
  
@@ -56270,15 +29744,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -56296,7 +29761,6 @@
  
  
  
-
  
  
  
@@ -56386,15 +29850,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -56412,7 +29867,6 @@
  
  
  
-
  
  
  
@@ -56502,15 +29956,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -56528,7 +29973,6 @@
  
  
  
-
  
  
  
@@ -56618,15 +30062,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -56644,7 +30079,6 @@
  
  
  
-
  
  
  
@@ -56734,15 +30168,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -56760,7 +30185,6 @@
  
  
  
-
  
  
  
@@ -56853,7 +30277,6 @@
  
  
  
-
  
  
  
@@ -56866,7 +30289,6 @@
  
  
  
-
  
  
  
@@ -56959,7 +30381,6 @@
  
  
  
-
  
  
  
@@ -56972,7 +30393,6 @@
  
  
  
-
  
  
  
@@ -57046,31 +30466,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -57088,7 +30483,6 @@
  
  
  
-
  
  
  
@@ -57178,15 +30572,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -57204,7 +30589,6 @@
  
  
  
-
  
  
  
@@ -57297,7 +30681,6 @@
  
  
  
-
  
  
  
@@ -57310,7 +30693,6 @@
  
  
  
-
  
  
  
@@ -57403,7 +30785,6 @@
  
  
  
-
  
  
  
@@ -57416,7 +30797,6 @@
  
  
  
-
  
  
  
@@ -57490,31 +30870,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -57532,7 +30887,6 @@
  
  
  
-
  
  
  
@@ -57625,7 +30979,6 @@
  
  
  
-
  
  
  
@@ -57638,7 +30991,6 @@
  
  
  
-
  
  
  
@@ -57731,7 +31083,6 @@
  
  
  
-
  
  
  
@@ -57744,7 +31095,6 @@
  
  
  
-
  
  
  
@@ -57818,31 +31168,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -57860,7 +31185,6 @@
  
  
  
-
  
  
  
@@ -57953,7 +31277,6 @@
  
  
  
-
  
  
  
@@ -57966,7 +31289,6 @@
  
  
  
-
  
  
  
@@ -58059,7 +31381,6 @@
  
  
  
-
  
  
  
@@ -58072,7 +31393,6 @@
  
  
  
-
  
  
  
@@ -58165,7 +31485,6 @@
  
  
  
-
  
  
  
@@ -58178,7 +31497,6 @@
  
  
  
-
  
  
  
@@ -58271,7 +31589,6 @@
  
  
  
-
  
  
  
@@ -58284,7 +31601,6 @@
  
  
  
-
  
  
  
@@ -58377,7 +31693,6 @@
  
  
  
-
  
  
  
@@ -58390,7 +31705,6 @@
  
  
  
-
  
  
  
@@ -58483,7 +31797,6 @@
  
  
  
-
  
  
  
@@ -58496,7 +31809,6 @@
  
  
  
-
  
  
  
@@ -58589,7 +31901,6 @@
  
  
  
-
  
  
  
@@ -58602,7 +31913,6 @@
  
  
  
-
  
  
  
@@ -58636,71 +31946,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -58718,7 +31963,6 @@
  
  
  
-
  
  
  
@@ -58808,15 +32052,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -58834,7 +32069,6 @@
  
  
  
-
  
  
  
@@ -58924,15 +32158,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -58950,7 +32175,6 @@
  
  
  
-
  
  
  
@@ -59040,15 +32264,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59066,7 +32281,6 @@
  
  
  
-
  
  
  
@@ -59156,15 +32370,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59182,7 +32387,6 @@
  
  
  
-
  
  
  
@@ -59272,15 +32476,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59298,7 +32493,6 @@
  
  
  
-
  
  
  
@@ -59388,15 +32582,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59414,7 +32599,6 @@
  
  
  
-
  
  
  
@@ -59504,15 +32688,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59530,7 +32705,6 @@
  
  
  
-
  
  
  
@@ -59620,15 +32794,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59646,7 +32811,6 @@
  
  
  
-
  
  
  
@@ -59736,20 +32900,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
- &lt;td&gt;See all workspaces within an organization&lt;/td&gt;
+ &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -59762,7 +32917,6 @@
  
  
  
-
  
  
  
@@ -59852,15 +33006,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59878,7 +33023,6 @@
  
  
  
-
  
  
  
@@ -59968,15 +33112,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -59994,7 +33129,6 @@
  
  
  
-
  
  
  
@@ -60084,15 +33218,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60110,7 +33235,6 @@
  
  
  
-
  
  
  
@@ -60200,15 +33324,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60226,7 +33341,6 @@
  
  
  
-
  
  
  
@@ -60316,15 +33430,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60342,7 +33447,6 @@
  
  
  
-
  
  
  
@@ -60432,15 +33536,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60458,7 +33553,6 @@
  
  
  
-
  
  
  
@@ -60548,15 +33642,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60574,7 +33659,6 @@
  
  
  
-
  
  
  
@@ -60664,15 +33748,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60690,7 +33765,6 @@
  
  
  
-
  
  
  
@@ -60780,15 +33854,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -60806,7 +33871,6 @@
  
  
  
-
  
  
  
@@ -60891,121 +33955,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  
@@ -61020,7 +33969,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -61089,14 +34038,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
@@ -61111,7 +34052,6 @@
  
  
  
-
  
  
  
@@ -61204,7 +34144,6 @@
  
  
  
-
  
  
  
@@ -61217,7 +34156,6 @@
  
  
  
-
  
  
  
@@ -61310,7 +34248,6 @@
  
  
  
-
  
  
  
@@ -61323,7 +34260,6 @@
  
  
  
-
  
  
  
@@ -61416,7 +34352,6 @@
  
  
  
-
  
  
  
@@ -61429,7 +34364,6 @@
  
  
  
-
  
  
  
@@ -61522,7 +34456,6 @@
  
  
  
-
  
  
  
@@ -61535,7 +34468,6 @@
  
  
  
-
  
  
  
@@ -61628,7 +34560,6 @@
  
  
  
-
  
  
  
@@ -61641,7 +34572,6 @@
  
  
  
-
  
  
  
@@ -61734,7 +34664,6 @@
  
  
  
-
  
  
  
@@ -61747,7 +34676,6 @@
  
  
  
-
  
  
  
@@ -61840,7 +34768,6 @@
  
  
  
-
  
  
  
@@ -61853,7 +34780,6 @@
  
  
  
-
  
  
  
@@ -61946,7 +34872,6 @@
  
  
  
-
  
  
  
@@ -61959,7 +34884,6 @@
  
  
  
-
  
  
  
@@ -62052,7 +34976,6 @@
  
  
  
-
  
  
  
@@ -62065,7 +34988,6 @@
  
  
  
-
  
  
  
@@ -62158,7 +35080,6 @@
  
  
  
-
  
  
  
@@ -62171,7 +35092,6 @@
  
  
  
-
  
  
  
@@ -62264,7 +35184,6 @@
  
  
  
-
  
  
  
@@ -62277,7 +35196,6 @@
  
  
  
-
  
  
  
@@ -62370,7 +35288,6 @@
  
  
  
-
  
  
  
@@ -62383,7 +35300,6 @@
  
  
  
-
  
  
  
@@ -62476,7 +35392,6 @@
  
  
  
-
  
  
  
@@ -62489,7 +35404,6 @@
  
  
  
-
  
  
  
@@ -62582,7 +35496,6 @@
  
  
  
-
  
  
  
@@ -62595,7 +35508,6 @@
  
  
  
-
  
  
  
@@ -62688,7 +35600,6 @@
  
  
  
-
  
  
  
@@ -62701,7 +35612,6 @@
  
  
  
-
  
  
  
@@ -62794,7 +35704,6 @@
  
  
  
-
  
  
  
@@ -62807,7 +35716,6 @@
  
  
  
-
  
  
  
@@ -62900,7 +35808,6 @@
  
  
  
-
  
  
  
@@ -62913,7 +35820,6 @@
  
  
  
-
  
  
  
@@ -63006,7 +35912,6 @@
  
  
  
-
  
  
  
@@ -63019,7 +35924,6 @@
  
  
  
-
  
  
  
@@ -63112,7 +36016,6 @@
  
  
  
-
  
  
  
@@ -63125,7 +36028,6 @@
  
  
  
-
  
  
  
@@ -63218,7 +36120,6 @@
  
  
  
-
  
  
  
@@ -63231,7 +36132,6 @@
  
  
  
-
  
  
  
@@ -63324,7 +36224,6 @@
  
  
  
-
  
  
  
@@ -63337,7 +36236,6 @@
  
  
  
-
  
  
  
@@ -63430,7 +36328,6 @@
  
  
  
-
  
  
  
@@ -63443,7 +36340,6 @@
  
  
  
-
  
  
  
@@ -63536,7 +36432,6 @@
  
  
  
-
  
  
  
@@ -63549,7 +36444,6 @@
  
  
  
-
  
  
  
@@ -63642,7 +36536,6 @@
  
  
  
-
  
  
  
@@ -63655,7 +36548,6 @@
  
  
  
-
  
  
  
@@ -63748,7 +36640,6 @@
  
  
  
-
  
  
  
@@ -63761,7 +36652,6 @@
  
  
  
-
  
  
  
@@ -63854,7 +36744,6 @@
  
  
  
-
  
  
  
@@ -63867,7 +36756,6 @@
  
  
  
-
  
  
  
@@ -63960,7 +36848,6 @@
  
  
  
-
  
  
  
@@ -63973,7 +36860,6 @@
  
  
  
-
  
  
  
@@ -64066,7 +36952,6 @@
  
  
  
-
  
  
  
@@ -64079,7 +36964,6 @@
  
  
  
-
  
  
  
@@ -64172,7 +37056,6 @@
  
  
  
-
  
  
  
@@ -64185,7 +37068,6 @@
  
  
  
-
  
  
  
@@ -64278,7 +37160,6 @@
  
  
  
-
  
  
  
@@ -64291,7 +37172,6 @@
  
  
  
-
  
  
  
@@ -64384,7 +37264,6 @@
  
  
  
-
  
  
  
@@ -64397,7 +37276,6 @@
  
  
  
-
  
  
  
@@ -64490,7 +37368,6 @@
  
  
  
-
  
  
  
@@ -64503,7 +37380,6 @@
  
  
  
-
  
  
  
@@ -64596,7 +37472,6 @@
  
  
  
-
  
  
  
@@ -64609,7 +37484,6 @@
  
  
  
-
  
  
  
@@ -64702,7 +37576,6 @@
  
  
  
-
  
  
  
@@ -64715,7 +37588,6 @@
  
  
  
-
  
  
  
@@ -64808,7 +37680,6 @@
  
  
  
-
  
  
  
@@ -64821,7 +37692,6 @@
  
  
  
-
  
  
  
@@ -64914,7 +37784,6 @@
  
  
  
-
  
  
  
@@ -64927,7 +37796,6 @@
  
  
  
-
  
  
  
@@ -65020,7 +37888,6 @@
  
  
  
-
  
  
  
@@ -65033,7 +37900,6 @@
  
  
  
-
  
  
  
@@ -65126,7 +37992,6 @@
  
  
  
-
  
  
  
@@ -65139,7 +38004,6 @@
  
  
  
-
  
  
  
@@ -65232,7 +38096,6 @@
  
  
  
-
  
  
  
@@ -65245,7 +38108,6 @@
  
  
  
-
  
  
  
@@ -65338,7 +38200,6 @@
  
  
  
-
  
  
  
@@ -65351,7 +38212,6 @@
  
  
  
-
  
  
  
@@ -65409,577 +38269,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -65997,7 +38286,6 @@
  
  
  
-
  
  
  
@@ -66087,15 +38375,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -66113,7 +38392,6 @@
  
  
  
-
  
  
  
@@ -66203,15 +38481,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -66229,7 +38498,6 @@
  
  
  
-
  
  
  
@@ -66319,15 +38587,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -66345,7 +38604,6 @@
  
  
  
-
  
  
  
@@ -66435,15 +38693,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -66461,7 +38710,6 @@
  
  
  
-
  
  
  
@@ -66551,15 +38799,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -66577,7 +38816,6 @@
  
  
  
-
  
  
  
@@ -66670,7 +38908,6 @@
  
  
  
-
  
  
  
@@ -66683,7 +38920,6 @@
  
  
  
-
  
  
  
@@ -66776,7 +39012,6 @@
  
  
  
-
  
  
  
@@ -66789,7 +39024,6 @@
  
  
  
-
  
  
  
@@ -66882,7 +39116,6 @@
  
  
  
-
  
  
  
@@ -66895,7 +39128,6 @@
  
  
  
-
  
  
  
@@ -66988,7 +39220,6 @@
  
  
  
-
  
  
  
@@ -67001,7 +39232,6 @@
  
  
  
-
  
  
  
@@ -67094,7 +39324,6 @@
  
  
  
-
  
  
  
@@ -67107,7 +39336,6 @@
  
  
  
-
  
  
  
@@ -67200,7 +39428,6 @@
  
  
  
-
  
  
  
@@ -67213,7 +39440,6 @@
  
  
  
-
  
  
  
@@ -67306,7 +39532,6 @@
  
  
  
-
  
  
  
@@ -67319,7 +39544,6 @@
  
  
  
-
  
  
  
@@ -67412,7 +39636,6 @@
  
  
  
-
  
  
  
@@ -67425,7 +39648,6 @@
  
  
  
-
  
  
  
@@ -67518,7 +39740,6 @@
  
  
  
-
  
  
  
@@ -67531,7 +39752,6 @@
  
  
  
-
  
  
  
@@ -67624,7 +39844,6 @@
  
  
  
-
  
  
  
@@ -67637,7 +39856,6 @@
  
  
  
-
  
  
  
@@ -67730,7 +39948,6 @@
  
  
  
-
  
  
  
@@ -67743,7 +39960,6 @@
  
  
  
-
  
  
  
@@ -67836,7 +40052,6 @@
  
  
  
-
  
  
  
@@ -67849,7 +40064,6 @@
  
  
  
-
  
  
  
@@ -67942,7 +40156,6 @@
  
  
  
-
  
  
  
@@ -67955,7 +40168,6 @@
  
  
  
-
  
  
  
@@ -68048,7 +40260,6 @@
  
  
  
-
  
  
  
@@ -68061,7 +40272,6 @@
  
  
  
-
  
  
  
@@ -68154,7 +40364,6 @@
  
  
  
-
  
  
  
@@ -68167,7 +40376,6 @@
  
  
  
-
  
  
  
@@ -68260,7 +40468,6 @@
  
  
  
-
  
  
  
@@ -68273,7 +40480,6 @@
  
  
  
-
  
  
  
@@ -68366,7 +40572,6 @@
  
  
  
-
  
  
  
@@ -68379,7 +40584,6 @@
  
  
  
-
  
  
  
@@ -68472,7 +40676,6 @@
  
  
  
-
  
  
  
@@ -68485,7 +40688,6 @@
  
  
  
-
  
  
  
@@ -68578,7 +40780,6 @@
  
  
  
-
  
  
  
@@ -68591,7 +40792,6 @@
  
  
  
-
  
  
  
@@ -68684,7 +40884,6 @@
  
  
  
-
  
  
  
@@ -68697,7 +40896,6 @@
  
  
  
-
  
  
  
@@ -68790,7 +40988,6 @@
  
  
  
-
  
  
  
@@ -68803,7 +41000,6 @@
  
  
  
-
  
  
  
@@ -68896,7 +41092,6 @@
  
  
  
-
  
  
  
@@ -68909,7 +41104,6 @@
  
  
  
-
  
  
  
@@ -69002,7 +41196,6 @@
  
  
  
-
  
  
  
@@ -69015,7 +41208,6 @@
  
  
  
-
  
  
  
@@ -69108,7 +41300,6 @@
  
  
  
-
  
  
  
@@ -69121,7 +41312,6 @@
  
  
  
-
  
  
  
@@ -69214,7 +41404,6 @@
  
  
  
-
  
  
  
@@ -69227,7 +41416,6 @@
  
  
  
-
  
  
  
@@ -69320,7 +41508,6 @@
  
  
  
-
  
  
  
@@ -69333,7 +41520,6 @@
  
  
  
-
  
  
  
@@ -69426,7 +41612,6 @@
  
  
  
-
  
  
  
@@ -69439,7 +41624,6 @@
  
  
  
-
  
  
  
@@ -69532,7 +41716,6 @@
  
  
  
-
  
  
  
@@ -69545,7 +41728,6 @@
  
  
  
-
  
  
  
@@ -69638,7 +41820,6 @@
  
  
  
-
  
  
  
@@ -69651,7 +41832,6 @@
  
  
  
-
  
  
  
@@ -69744,7 +41924,6 @@
  
  
  
-
  
  
  
@@ -69757,7 +41936,6 @@
  
  
  
-
  
  
  
@@ -69850,7 +42028,6 @@
  
  
  
-
  
  
  
@@ -69863,7 +42040,6 @@
  
  
  
-
  
  
  
@@ -69956,7 +42132,6 @@
  
  
  
-
  
  
  
@@ -69969,7 +42144,6 @@
  
  
  
-
  
  
  
@@ -70062,7 +42236,6 @@
  
  
  
-
  
  
  
@@ -70075,7 +42248,6 @@
  
  
  
-
  
  
  
@@ -70168,7 +42340,6 @@
  
  
  
-
  
  
  
@@ -70181,7 +42352,6 @@
  
  
  
-
  
  
  
@@ -70274,7 +42444,6 @@
  
  
  
-
  
  
  
@@ -70287,7 +42456,6 @@
  
  
  
-
  
  
  
@@ -70380,7 +42548,6 @@
  
  
  
-
  
  
  
@@ -70393,7 +42560,6 @@
  
  
  
-
  
  
  
@@ -70486,7 +42652,6 @@
  
  
  
-
  
  
  
@@ -70499,7 +42664,6 @@
  
  
  
-
  
  
  
@@ -70592,7 +42756,6 @@
  
  
  
-
  
  
  
@@ -70605,7 +42768,6 @@
  
  
  
-
  
  
  
@@ -70698,7 +42860,6 @@
  
  
  
-
  
  
  
@@ -70711,7 +42872,6 @@
  
  
  
-
  
  
  
@@ -70804,7 +42964,6 @@
  
  
  
-
  
  
  
@@ -70817,7 +42976,6 @@
  
  
  
-
  
  
  
@@ -70910,7 +43068,6 @@
  
  
  
-
  
  
  
@@ -70923,7 +43080,6 @@
  
  
  
-
  
  
  
@@ -71016,7 +43172,6 @@
  
  
  
-
  
  
  
@@ -71029,7 +43184,6 @@
  
  
  
-
  
  
  
@@ -71066,487 +43220,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  
@@ -71561,7 +43234,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -71630,14 +43303,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
@@ -71652,7 +43317,6 @@
  
  
  
-
  
  
  
@@ -71745,7 +43409,6 @@
  
  
  
-
  
  
  
@@ -71758,7 +43421,6 @@
  
  
  
-
  
  
  
@@ -71840,23 +43502,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -71874,7 +43519,6 @@
  
  
  
-
  
  
  
@@ -71964,15 +43608,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -71990,7 +43625,6 @@
  
  
  
-
  
  
  
@@ -72080,15 +43714,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72106,7 +43731,6 @@
  
  
  
-
  
  
  
@@ -72196,15 +43820,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72222,7 +43837,6 @@
  
  
  
-
  
  
  
@@ -72312,15 +43926,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72338,7 +43943,6 @@
  
  
  
-
  
  
  
@@ -72428,15 +44032,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72454,7 +44049,6 @@
  
  
  
-
  
  
  
@@ -72544,15 +44138,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72570,7 +44155,6 @@
  
  
  
-
  
  
  
@@ -72660,121 +44244,6 @@
  
  
  
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72792,7 +44261,6 @@
  
  
  
-
  
  
  
@@ -72882,15 +44350,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -72908,7 +44367,6 @@
  
  
  
-
  
  
  
@@ -72998,15 +44456,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73024,7 +44473,6 @@
  
  
  
-
  
  
  
@@ -73114,15 +44562,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73140,7 +44579,6 @@
  
  
  
-
  
  
  
@@ -73230,15 +44668,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73256,7 +44685,6 @@
  
  
  
-
  
  
  
@@ -73346,15 +44774,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73372,7 +44791,6 @@
  
  
  
-
  
  
  
@@ -73462,15 +44880,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73488,7 +44897,6 @@
  
  
  
-
  
  
  
@@ -73578,15 +44986,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73604,7 +45003,6 @@
  
  
  
-
  
  
  
@@ -73694,15 +45092,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73720,7 +45109,6 @@
  
  
  
-
  
  
  
@@ -73810,15 +45198,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -73836,7 +45215,6 @@
  
  
  
-
  
  
  
@@ -73926,131 +45304,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Evaluate Relationships &lt;/td&gt;
- &lt;td&gt;Evaluate relationships inside a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74068,7 +45321,6 @@
  
  
  
-
  
  
  
@@ -74158,15 +45410,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74184,7 +45427,6 @@
  
  
  
-
  
  
  
@@ -74274,15 +45516,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74300,7 +45533,6 @@
  
  
  
-
  
  
  
@@ -74390,15 +45622,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74416,7 +45639,6 @@
  
  
  
-
  
  
  
@@ -74506,15 +45728,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74532,7 +45745,6 @@
  
  
  
-
  
  
  
@@ -74622,15 +45834,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74648,7 +45851,6 @@
  
  
  
-
  
  
  
@@ -74738,15 +45940,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74764,7 +45957,6 @@
  
  
  
-
  
  
  
@@ -74854,15 +46046,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74880,7 +46063,6 @@
  
  
  
-
  
  
  
@@ -74970,15 +46152,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -74996,7 +46169,6 @@
  
  
  
-
  
  
  
@@ -75086,15 +46258,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75112,7 +46275,6 @@
  
  
  
-
  
  
  
@@ -75202,15 +46364,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75228,7 +46381,6 @@
  
  
  
-
  
  
  
@@ -75318,15 +46470,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75344,7 +46487,6 @@
  
  
  
-
  
  
  
@@ -75434,15 +46576,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75460,7 +46593,6 @@
  
  
  
-
  
  
  
@@ -75550,15 +46682,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75576,7 +46699,6 @@
  
  
  
-
  
  
  
@@ -75666,15 +46788,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75692,7 +46805,6 @@
  
  
  
-
  
  
  
@@ -75782,15 +46894,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75808,7 +46911,6 @@
  
  
  
-
  
  
  
@@ -75898,15 +47000,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -75924,7 +47017,6 @@
  
  
  
-
  
  
  
@@ -76014,15 +47106,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76040,7 +47123,6 @@
  
  
  
-
  
  
  
@@ -76130,15 +47212,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76156,7 +47229,6 @@
  
  
  
-
  
  
  
@@ -76246,15 +47318,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76272,7 +47335,6 @@
  
  
  
-
  
  
  
@@ -76362,20 +47424,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
- &lt;td&gt;Remove roles from users in a team.&lt;/td&gt;
+ &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -76388,7 +47441,6 @@
  
  
  
-
  
  
  
@@ -76478,15 +47530,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76504,7 +47547,6 @@
  
  
  
-
  
  
  
@@ -76594,15 +47636,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76620,7 +47653,6 @@
  
  
  
-
  
  
  
@@ -76710,15 +47742,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76736,7 +47759,6 @@
  
  
  
-
  
  
  
@@ -76826,15 +47848,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76852,7 +47865,6 @@
  
  
  
-
  
  
  
@@ -76942,15 +47954,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -76968,7 +47971,6 @@
  
  
  
-
  
  
  
@@ -77058,15 +48060,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77084,7 +48077,6 @@
  
  
  
-
  
  
  
@@ -77174,15 +48166,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77200,7 +48183,6 @@
  
  
  
-
  
  
  
@@ -77290,15 +48272,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77316,7 +48289,6 @@
  
  
  
-
  
  
  
@@ -77406,15 +48378,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77432,7 +48395,6 @@
  
  
  
-
  
  
  
@@ -77522,15 +48484,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77548,7 +48501,6 @@
  
  
  
-
  
  
  
@@ -77638,20 +48590,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;View All Organizations &lt;/td&gt;
- &lt;td&gt;See all organizations within a Cloud deployment. See all organizations, teams, and users.&lt;/td&gt;
+ &lt;td&gt;See all organizations within a Layer5 Cloud deployment. See all organizations, teams, and users.&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -77664,7 +48607,6 @@
  
  
  
-
  
  
  
@@ -77754,15 +48696,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77780,7 +48713,6 @@
  
  
  
-
  
  
  
@@ -77870,15 +48802,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -77896,7 +48819,6 @@
  
  
  
-
  
  
  
@@ -77986,15 +48908,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78012,7 +48925,6 @@
  
  
  
-
  
  
  
@@ -78102,15 +49014,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78128,7 +49031,6 @@
  
  
  
-
  
  
  
@@ -78218,15 +49120,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78244,7 +49137,6 @@
  
  
  
-
  
  
  
@@ -78334,15 +49226,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78360,7 +49243,6 @@
  
  
  
-
  
  
  
@@ -78450,15 +49332,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78476,7 +49349,6 @@
  
  
  
-
  
  
  
@@ -78566,15 +49438,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78592,7 +49455,6 @@
  
  
  
-
  
  
  
@@ -78682,15 +49544,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78708,7 +49561,6 @@
  
  
  
-
  
  
  
@@ -78798,15 +49650,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78824,7 +49667,6 @@
  
  
  
-
  
  
  
@@ -78914,15 +49756,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -78940,7 +49773,6 @@
  
  
  
-
  
  
  
@@ -79030,15 +49862,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79056,7 +49879,6 @@
  
  
  
-
  
  
  
@@ -79146,15 +49968,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79172,7 +49985,6 @@
  
  
  
-
  
  
  
@@ -79262,15 +50074,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79288,7 +50091,6 @@
  
  
  
-
  
  
  
@@ -79378,15 +50180,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79404,7 +50197,6 @@
  
  
  
-
  
  
  
@@ -79494,15 +50286,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79520,7 +50303,6 @@
  
  
  
-
  
  
  
@@ -79610,15 +50392,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79636,7 +50409,6 @@
  
  
  
-
  
  
  
@@ -79726,15 +50498,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79752,7 +50515,6 @@
  
  
  
-
  
  
  
@@ -79842,15 +50604,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79868,7 +50621,6 @@
  
  
  
-
  
  
  
@@ -79958,15 +50710,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -79984,7 +50727,6 @@
  
  
  
-
  
  
  
@@ -80074,15 +50816,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80100,7 +50833,6 @@
  
  
  
-
  
  
  
@@ -80190,15 +50922,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80216,7 +50939,6 @@
  
  
  
-
  
  
  
@@ -80306,15 +51028,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80332,7 +51045,6 @@
  
  
  
-
  
  
  
@@ -80422,15 +51134,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80448,7 +51151,6 @@
  
  
  
-
  
  
  
@@ -80538,15 +51240,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80564,7 +51257,6 @@
  
  
  
-
  
  
  
@@ -80654,15 +51346,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80680,7 +51363,6 @@
  
  
  
-
  
  
  
@@ -80770,15 +51452,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80796,7 +51469,6 @@
  
  
  
-
  
  
  
@@ -80886,15 +51558,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -80912,7 +51575,6 @@
  
  
  
-
  
  
  
@@ -81002,15 +51664,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81028,7 +51681,6 @@
  
  
  
-
  
  
  
@@ -81118,15 +51770,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81144,7 +51787,6 @@
  
  
  
-
  
  
  
@@ -81234,15 +51876,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81260,7 +51893,6 @@
  
  
  
-
  
  
  
@@ -81350,15 +51982,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81376,7 +51999,6 @@
  
  
  
-
  
  
  
@@ -81466,15 +52088,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81492,7 +52105,6 @@
  
  
  
-
  
  
  
@@ -81582,15 +52194,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81608,7 +52211,6 @@
  
  
  
-
  
  
  
@@ -81698,20 +52300,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
- &lt;td&gt;See all workspaces within an organization&lt;/td&gt;
+ &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -81724,7 +52317,6 @@
  
  
  
-
  
  
  
@@ -81814,15 +52406,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81840,7 +52423,6 @@
  
  
  
-
  
  
  
@@ -81930,15 +52512,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -81956,7 +52529,6 @@
  
  
  
-
  
  
  
@@ -82046,15 +52618,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82072,7 +52635,6 @@
  
  
  
-
  
  
  
@@ -82162,15 +52724,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82188,7 +52741,6 @@
  
  
  
-
  
  
  
@@ -82278,15 +52830,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82304,7 +52847,6 @@
  
  
  
-
  
  
  
@@ -82394,15 +52936,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82420,7 +52953,6 @@
  
  
  
-
  
  
  
@@ -82510,15 +53042,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82536,7 +53059,6 @@
  
  
  
-
  
  
  
@@ -82626,15 +53148,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82652,7 +53165,6 @@
  
  
  
-
  
  
  
@@ -82742,15 +53254,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -82768,7 +53271,6 @@
  
  
  
-
  
  
  
@@ -82858,127 +53360,12 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;Reset Database &lt;/td&gt;
  &lt;td&gt;Reset Meshery database&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -82992,7 +53379,7 @@
  
  
  
- &lt;h2&gt;&lt;a href="/pr-preview/pr-1029/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
+ &lt;h2&gt;&lt;a href="../../cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin Role&lt;/a&gt;&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -83061,14 +53448,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
@@ -83083,7 +53462,6 @@
  
  
  
-
  
  
  
@@ -83176,7 +53554,6 @@
  
  
  
-
  
  
  
@@ -83189,7 +53566,6 @@
  
  
  
-
  
  
  
@@ -83271,23 +53647,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -83305,7 +53664,6 @@
  
  
  
-
  
  
  
@@ -83395,15 +53753,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -83421,7 +53770,6 @@
  
  
  
-
  
  
  
@@ -83511,15 +53859,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -83537,7 +53876,6 @@
  
  
  
-
  
  
  
@@ -83627,15 +53965,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -83653,7 +53982,6 @@
  
  
  
-
  
  
  
@@ -83743,15 +54071,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -83769,7 +54088,6 @@
  
  
  
-
  
  
  
@@ -83859,15 +54177,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -83885,7 +54194,6 @@
  
  
  
-
  
  
  
@@ -83975,15 +54283,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84001,7 +54300,6 @@
  
  
  
-
  
  
  
@@ -84091,121 +54389,6 @@
  
  
  
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84223,7 +54406,6 @@
  
  
  
-
  
  
  
@@ -84313,15 +54495,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84339,7 +54512,6 @@
  
  
  
-
  
  
  
@@ -84429,15 +54601,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84455,7 +54618,6 @@
  
  
  
-
  
  
  
@@ -84545,15 +54707,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84571,7 +54724,6 @@
  
  
  
-
  
  
  
@@ -84661,15 +54813,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84687,7 +54830,6 @@
  
  
  
-
  
  
  
@@ -84777,15 +54919,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84803,7 +54936,6 @@
  
  
  
-
  
  
  
@@ -84893,15 +55025,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -84919,7 +55042,6 @@
  
  
  
-
  
  
  
@@ -85009,15 +55131,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85035,7 +55148,6 @@
  
  
  
-
  
  
  
@@ -85125,15 +55237,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85151,7 +55254,6 @@
  
  
  
-
  
  
  
@@ -85241,15 +55343,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85267,7 +55360,6 @@
  
  
  
-
  
  
  
@@ -85357,131 +55449,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- &lt;tr&gt;
- &lt;td&gt;Evaluate Relationships &lt;/td&gt;
- &lt;td&gt;Evaluate relationships inside a design&lt;/td&gt;
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85499,7 +55466,6 @@
  
  
  
-
  
  
  
@@ -85589,15 +55555,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85615,7 +55572,6 @@
  
  
  
-
  
  
  
@@ -85705,15 +55661,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85731,7 +55678,6 @@
  
  
  
-
  
  
  
@@ -85821,15 +55767,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85847,7 +55784,6 @@
  
  
  
-
  
  
  
@@ -85937,15 +55873,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -85963,7 +55890,6 @@
  
  
  
-
  
  
  
@@ -86053,15 +55979,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86079,7 +55996,6 @@
  
  
  
-
  
  
  
@@ -86169,15 +56085,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86195,7 +56102,6 @@
  
  
  
-
  
  
  
@@ -86285,15 +56191,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86311,7 +56208,6 @@
  
  
  
-
  
  
  
@@ -86401,15 +56297,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86427,7 +56314,6 @@
  
  
  
-
  
  
  
@@ -86517,15 +56403,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86543,7 +56420,6 @@
  
  
  
-
  
  
  
@@ -86633,15 +56509,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86659,7 +56526,6 @@
  
  
  
-
  
  
  
@@ -86749,15 +56615,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86775,7 +56632,6 @@
  
  
  
-
  
  
  
@@ -86865,15 +56721,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -86891,7 +56738,6 @@
  
  
  
-
  
  
  
@@ -86981,15 +56827,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87007,7 +56844,6 @@
  
  
  
-
  
  
  
@@ -87097,15 +56933,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87123,7 +56950,6 @@
  
  
  
-
  
  
  
@@ -87213,15 +57039,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87239,7 +57056,6 @@
  
  
  
-
  
  
  
@@ -87329,15 +57145,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87355,7 +57162,6 @@
  
  
  
-
  
  
  
@@ -87445,15 +57251,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87471,7 +57268,6 @@
  
  
  
-
  
  
  
@@ -87561,15 +57357,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87587,7 +57374,6 @@
  
  
  
-
  
  
  
@@ -87677,15 +57463,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87703,7 +57480,6 @@
  
  
  
-
  
  
  
@@ -87793,20 +57569,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;Remove Roles from Team members &lt;/td&gt;
- &lt;td&gt;Remove roles from users in a team.&lt;/td&gt;
+ &lt;td&gt;Remove roles from users in a team&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -87819,7 +57586,6 @@
  
  
  
-
  
  
  
@@ -87909,15 +57675,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -87935,7 +57692,6 @@
  
  
  
-
  
  
  
@@ -88025,15 +57781,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88051,7 +57798,6 @@
  
  
  
-
  
  
  
@@ -88141,15 +57887,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88167,7 +57904,6 @@
  
  
  
-
  
  
  
@@ -88257,15 +57993,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88283,7 +58010,6 @@
  
  
  
-
  
  
  
@@ -88373,15 +58099,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88399,7 +58116,6 @@
  
  
  
-
  
  
  
@@ -88489,15 +58205,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88515,7 +58222,6 @@
  
  
  
-
  
  
  
@@ -88605,15 +58311,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88631,7 +58328,6 @@
  
  
  
-
  
  
  
@@ -88721,15 +58417,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88747,7 +58434,6 @@
  
  
  
-
  
  
  
@@ -88837,15 +58523,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88863,7 +58540,6 @@
  
  
  
-
  
  
  
@@ -88953,15 +58629,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -88979,7 +58646,6 @@
  
  
  
-
  
  
  
@@ -89069,20 +58735,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;View All Organizations &lt;/td&gt;
- &lt;td&gt;See all organizations within a Cloud deployment. See all organizations, teams, and users.&lt;/td&gt;
+ &lt;td&gt;See all organizations within a Layer5 Cloud deployment. See all organizations, teams, and users.&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -89095,7 +58752,6 @@
  
  
  
-
  
  
  
@@ -89185,15 +58841,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89211,7 +58858,6 @@
  
  
  
-
  
  
  
@@ -89301,15 +58947,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89327,7 +58964,6 @@
  
  
  
-
  
  
  
@@ -89417,15 +59053,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89443,7 +59070,6 @@
  
  
  
-
  
  
  
@@ -89533,15 +59159,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89559,7 +59176,6 @@
  
  
  
-
  
  
  
@@ -89649,15 +59265,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89675,7 +59282,6 @@
  
  
  
-
  
  
  
@@ -89765,15 +59371,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89791,7 +59388,6 @@
  
  
  
-
  
  
  
@@ -89881,15 +59477,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -89907,7 +59494,6 @@
  
  
  
-
  
  
  
@@ -89997,15 +59583,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90023,7 +59600,6 @@
  
  
  
-
  
  
  
@@ -90113,15 +59689,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90139,7 +59706,6 @@
  
  
  
-
  
  
  
@@ -90229,15 +59795,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90255,7 +59812,6 @@
  
  
  
-
  
  
  
@@ -90345,15 +59901,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90371,7 +59918,6 @@
  
  
  
-
  
  
  
@@ -90461,15 +60007,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90487,7 +60024,6 @@
  
  
  
-
  
  
  
@@ -90577,15 +60113,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90603,7 +60130,6 @@
  
  
  
-
  
  
  
@@ -90693,15 +60219,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90719,7 +60236,6 @@
  
  
  
-
  
  
  
@@ -90809,15 +60325,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90835,7 +60342,6 @@
  
  
  
-
  
  
  
@@ -90925,15 +60431,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -90951,7 +60448,6 @@
  
  
  
-
  
  
  
@@ -91041,15 +60537,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91067,7 +60554,6 @@
  
  
  
-
  
  
  
@@ -91157,15 +60643,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91183,7 +60660,6 @@
  
  
  
-
  
  
  
@@ -91273,15 +60749,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91299,7 +60766,6 @@
  
  
  
-
  
  
  
@@ -91389,15 +60855,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91415,7 +60872,6 @@
  
  
  
-
  
  
  
@@ -91505,15 +60961,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91531,7 +60978,6 @@
  
  
  
-
  
  
  
@@ -91621,15 +61067,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91647,7 +61084,6 @@
  
  
  
-
  
  
  
@@ -91737,15 +61173,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91763,7 +61190,6 @@
  
  
  
-
  
  
  
@@ -91853,15 +61279,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91879,7 +61296,6 @@
  
  
  
-
  
  
  
@@ -91969,15 +61385,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -91995,7 +61402,6 @@
  
  
  
-
  
  
  
@@ -92085,15 +61491,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92111,7 +61508,6 @@
  
  
  
-
  
  
  
@@ -92201,15 +61597,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92227,7 +61614,6 @@
  
  
  
-
  
  
  
@@ -92317,15 +61703,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92343,7 +61720,6 @@
  
  
  
-
  
  
  
@@ -92433,15 +61809,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92459,7 +61826,6 @@
  
  
  
-
  
  
  
@@ -92549,15 +61915,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92575,7 +61932,6 @@
  
  
  
-
  
  
  
@@ -92665,15 +62021,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92691,7 +62038,6 @@
  
  
  
-
  
  
  
@@ -92781,15 +62127,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92807,7 +62144,6 @@
  
  
  
-
  
  
  
@@ -92897,15 +62233,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -92923,7 +62250,6 @@
  
  
  
-
  
  
  
@@ -93013,15 +62339,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93039,7 +62356,6 @@
  
  
  
-
  
  
  
@@ -93129,20 +62445,11 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
  &lt;td&gt;View Workspace &lt;/td&gt;
- &lt;td&gt;See all workspaces within an organization&lt;/td&gt;
+ &lt;td&gt;See all workspaces within an organisation&lt;/td&gt;
  &lt;/tr&gt;
  
  
@@ -93155,7 +62462,6 @@
  
  
  
-
  
  
  
@@ -93245,15 +62551,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93271,7 +62568,6 @@
  
  
  
-
  
  
  
@@ -93361,15 +62657,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93387,7 +62674,6 @@
  
  
  
-
  
  
  
@@ -93477,15 +62763,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93503,7 +62780,6 @@
  
  
  
-
  
  
  
@@ -93593,15 +62869,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93619,7 +62886,6 @@
  
  
  
-
  
  
  
@@ -93709,15 +62975,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93735,7 +62992,6 @@
  
  
  
-
  
  
  
@@ -93825,15 +63081,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93851,7 +63098,6 @@
  
  
  
-
  
  
  
@@ -93941,15 +63187,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -93967,7 +63204,6 @@
  
  
  
-
  
  
  
@@ -94057,15 +63293,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -94083,7 +63310,6 @@
  
  
  
-
  
  
  
@@ -94173,15 +63399,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -94199,7 +63416,6 @@
  
  
  
-
  
  
  
@@ -94289,15 +63505,6 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
  
  
  &lt;tr&gt;
@@ -94307,120 +63514,15 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
  &lt;/tbody&gt;
  &lt;/table&gt;
  &lt;/div&gt;
  
+ 
 
-
-
+ 
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;</description></item></channel></rss>
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
