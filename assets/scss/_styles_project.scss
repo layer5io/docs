@@ -198,6 +198,7 @@ a:not([href]):not([class]):hover {
   top: 5.5rem;
   overflow-y: auto;
   padding-top: $sidebar-padding-vertical;
+  padding-left: 0.5rem;
   margin-top: 0;
   overflow-x: hidden;
   &__inner {
