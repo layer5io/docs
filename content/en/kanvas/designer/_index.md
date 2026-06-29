@@ -11,7 +11,27 @@ aliases:
 
 Kanvas Designer is the visual canvas where you create, edit, and collaborate on cloud-native infrastructure designs. Using a drag-and-drop palette of components — from managed Kubernetes clusters and serverless functions to databases and object storage — you can model entire environments, annotate connections, and share living diagrams with your team, all without leaving your browser.
 
-## Building the `api-platform-aws` Design
+## Core Features of Kanvas Designer
+
+Kanvas Designer provides an intuitive visual interface to model complex architectures cleanly and collaborate in real-time.
+
+### Visual Canvas & Component Palette
+- **Drag-and-Drop Modeling**: Build complex multi-cloud topologies by dragging resources directly onto the canvas from a comprehensive library of Kubernetes, cloud provider, and application components.
+- **Interactive Edges (Connections)**: Draw logical or network connections between components to define data flows, dependencies, and service-to-service relationships.
+- **Layout & Organization**: Easily group components using workspaces, environments, and tags to keep your diagrams organized and readable.
+
+### Collaborative Review & Comments
+- **Contextual Commenting**: Pin feedback and discussion threads directly to specific components or edges rather than having conversations lost in external ticketing systems or chat channels.
+- **Granular Share Permissions**: Share your designs with teammates or external partners, granting precise role-scoped access (e.g., Viewer, Reviewer, Editor, or Admin) to control who can modify vs. inspect the canvas.
+- **Real-Time Workspace Updates**: Edit and review designs simultaneously with your team. Updates are saved automatically and synced in real-time, eliminating versioned duplicates and stale image exports.
+
+### Real-world Integrations & Validation
+- **Environment Binding**: Attach your designs to target deployment environments (e.g., `dev-local`, `prod-aws`) to align visual designs with actual cloud and cluster configurations.
+- **Automated Validation**: Run real-time architectural validation to instantly identify empty configurations, dangling connections, or environment binding mismatches.
+
+## Walkthrough: Building the `api-platform-aws` Design
+
+The following walkthrough illustrates how Five, Jordan, and Rex collaborate to build out a multi-service AWS design within the `orbital-production` workspace. Follow the full narrative and team structure at [Meet Five and the Cast](/cloud/getting-started/meet-five).
 
 Five owns the `api-platform-aws` design in the `orbital-production` workspace and asked Jordan Reyes — the Orbital Labs team's go-to designer — to build out the architecture. Jordan opens the design in Kanvas Designer, takes one look at the blank canvas, and gets to work.
 
@@ -26,7 +46,3 @@ Jordan shares the design with Rex Park, granting him reviewer access so he can i
 Rex opens `api-platform-aws` in Kanvas Designer and traces the connection paths Jordan laid out. He sees the Lambda-to-EKS link and adds his own comment on it: *"Should Lambda connect directly to EKS or go through an internal ALB? Worth discussing before we deploy."* The comment pins to the connection, not to a chat thread.
 
 Jordan sees the notification and comes back to the canvas. They hash it out in the comment thread, land on the ALB approach, and Jordan draws a new connection representing the internal Application Load Balancer sitting between Lambda and the cluster's service mesh entry point. The design updates in place — no version-named duplicates, no stale exported images — and Rex can reload and see the revised architecture immediately.
-
-{{< alert type="info" title="Meet the team" >}}
-Meet Jordan, Rex, and the rest of the Orbital Labs team in [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
-{{< /alert >}}
