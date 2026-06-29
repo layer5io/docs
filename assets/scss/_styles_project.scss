@@ -83,7 +83,11 @@
 
 .td-main main {
   @include media-breakpoint-up(md) {
-    padding-top: 4rem;
+    // `body` already reserves 5.5rem to clear the fixed navbar (see below), so
+    // this is just breathing room beneath it - not navbar clearance. The former
+    // 4rem stacked on top of the body padding and pushed content ~64px down on
+    // every docs page, leaving a large blank band above the content.
+    padding-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
