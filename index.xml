@@ -735,7 +735,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[210 145 335 357 16 89]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[310 15 220 104 170 78]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -751,7 +751,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[277 17 440 337 329 29]" src="images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[374 89 356 109 458 13]" src="images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -874,7 +874,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[78 467 122 25 144 228]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[149 10 271 293 306 374]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -915,7 +915,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[421 16 25 451 273 196]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[421 185 168 251 117 113]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -1051,7 +1051,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[218 321 5 339 182 388]" src="images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[453 291 266 312 426 18]" src="images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1123,7 +1123,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[73 106 369 245 88 353]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[21 170 272 6 32 399]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1134,7 +1134,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[126 131 424 436 194 249]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[221 158 354 303 252 406]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1173,7 +1173,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[12 374 435 163 334 315]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[331 326 169 44 467 22]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1613,7 +1613,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[125 62 421 270 321 180]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[401 7 450 433 317 208]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1629,7 +1629,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[83 219 137 476 22 173]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[500 304 240 65 207 327]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1645,7 +1645,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[274 135 231 250 227 430]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[404 487 7 477 375 337]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1661,7 +1661,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[390 41 161 275 75 348]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[106 264 193 46 324 416]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1677,7 +1677,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[344 226 120 405 354 169]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[62 240 212 256 342 401]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1693,7 +1693,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[448 459 377 168 177 494]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[149 19 353 435 417 493]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1709,7 +1709,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[421 60 417 440 145 471]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[322 128 363 192 462 284]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1725,7 +1725,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[327 65 114 494 331 276]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[276 288 161 75 57 376]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1741,7 +1741,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[173 366 129 77 104 339]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[112 114 46 367 276 329]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1757,7 +1757,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[283 496 352 43 109 165]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[307 387 26 218 154 30]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1796,7 +1796,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[278 68 223 409 404 115]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[296 478 85 13 181 116]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1913,7 +1913,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[341 386 453 403 77 334]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[235 392 434 180 289 361]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1932,7 +1932,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[384 247 279 111 371 418]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[494 100 458 93 262 11]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -2020,7 +2020,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[242 429 461 354 216 48]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[480 61 74 407 463 59]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2041,7 +2041,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[355 155 324 105 281 485]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[150 213 313 114 161 308]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2076,7 +2076,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[30 351 136 306 189 63]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[260 351 80 258 230 94]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2088,7 +2088,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[298 28 140 145 315 192]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[391 155 433 157 419 428]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2114,7 +2114,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[440 278 331 11 16 269]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[401 387 23 142 227 253]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/concepts/identity-and-security/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
@@ -2248,7 +2248,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[331 249 210 148 270 235]" src="images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
+ &lt;img id="[74 159 277 88 91 244]" src="images/Views.svg" onclick="openModal(this.id)" alt="Operator Views" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2281,7 +2281,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[436 330 386 311 131 422]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[483 252 230 239 385 249]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2369,7 +2369,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[42 491 476 355 334 33]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[280 234 435 317 171 163]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -2457,7 +2457,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[472 222 402 462 5 93]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[234 338 111 420 162 379]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
@@ -2490,7 +2490,18 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.164</title><link>/cloud/reference/releases/v1.0.164/</link><pubDate>Tue, 30 Jun 2026 16:27:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.164/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.165</title><link>/cloud/reference/releases/v1.0.165/</link><pubDate>Tue, 30 Jun 2026 20:38:55 +0000</pubDate><guid>/cloud/reference/releases/v1.0.165/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(flow-emails): custom-domain signup verification links use the org host, not cloud.layer5.io @leecalcote (#5597)&lt;/li&gt;
+&lt;li&gt;style: customize scrollbar in widget picker drawer @rishiraj38 (#5601)&lt;/li&gt;
+&lt;li&gt;[server] Fix hidden 2042-2044 error-code collision; add collision guard @hortison (#5599)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @hortison, @jamieplu, @leecalcote and @rishiraj38&lt;/p&gt;</description></item><item><title>v1.0.164</title><link>/cloud/reference/releases/v1.0.164/</link><pubDate>Tue, 30 Jun 2026 16:27:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.164/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(profile): route profile updates through the Kratos admin API, not self-service @leecalcote (#5600)&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -29564,8 +29575,6 @@ Thank you to our contributors for making this release possible:
  
  
  
- 
- 
  &lt;tr&gt;
  
  
@@ -29690,6 +29699,8 @@ Thank you to our contributors for making this release possible:
  
  
  &lt;/tr&gt;
+ 
+ 
  
  
  
@@ -29983,8 +29994,6 @@ Thank you to our contributors for making this release possible:
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -31691,6 +31700,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -32202,8 +32213,6 @@ Thank you to our contributors for making this release possible:
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -33154,6 +33163,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -33870,469 +33881,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tbody&gt;
  &lt;/table&gt;
  
- &lt;h2&gt; Permissions&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- 
- 
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
- 
  &lt;h2&gt;Extensions Permissions&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
@@ -34451,8 +33999,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -35043,6 +34589,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -35164,8 +34712,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -35631,6 +35177,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -35752,8 +35300,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -37469,6 +37015,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -37590,8 +37138,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -39182,6 +38728,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -39303,8 +38851,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -40270,6 +39816,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -40391,8 +39939,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -41358,6 +40904,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -41479,8 +41027,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -42446,6 +41992,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -42567,8 +42115,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -43784,6 +43330,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -43905,8 +43453,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -44872,6 +44418,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -44993,8 +44541,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -46460,6 +46006,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -46581,8 +46129,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -46923,6 +46469,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -47044,8 +46592,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -47761,6 +47307,8 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -47882,8 +47430,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -48224,10 +47770,475 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
  &lt;h2&gt;Tokens Permissions&lt;/h2&gt;
+ &lt;table class="csvtable td-initial"&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;Permission&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;Description&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ Download Token
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+ &lt;/table&gt;
+ 
+ &lt;h2&gt;Roles Permissions&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -48570,7 +48581,7 @@ Thank you to our contributors for making this release possible:
  
  &lt;td&gt;
  
- Download Token
+ Assign User Roles
  
  &lt;/td&gt;
  
@@ -48579,28 +48590,6 @@ Thank you to our contributors for making this release possible:
  
  &lt;td&gt;
  
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -48633,7 +48622,29 @@ Thank you to our contributors for making this release possible:
  &lt;td&gt;
  
  
- ✅
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
  
  
  &lt;/td&gt;
@@ -49706,112 +49717,6 @@ Thank you to our contributors for making this release possible:
  &lt;td&gt;Unpublish WASM Filter &lt;/td&gt;
  &lt;td&gt;Unpublish WASM Filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -60766,6 +60671,112 @@ Thank you to our contributors for making this release possible:
  &lt;td&gt;Download Token &lt;/td&gt;
  &lt;td&gt;&lt;/td&gt;
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
  
  
  
@@ -84983,112 +84994,6 @@ Thank you to our contributors for making this release possible:
  
  
  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -95794,6 +95699,112 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  &lt;/div&gt;
@@ -95884,112 +95895,6 @@ Thank you to our contributors for making this release possible:
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -101668,6 +101573,112 @@ Thank you to our contributors for making this release possible:
  &lt;td&gt;View Organizations &lt;/td&gt;
  &lt;td&gt;See all organizations of which you are an administrator. See all members of those organizations.&lt;/td&gt;
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
  
  
  
@@ -108633,112 +108644,6 @@ Thank you to our contributors for making this release possible:
  
  
  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -119754,6 +119659,122 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ &lt;tr&gt;
+ &lt;td&gt;Assign User Roles &lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  &lt;/div&gt;
@@ -120994,112 +121015,6 @@ Thank you to our contributors for making this release possible:
  &lt;td&gt;Deny Catalog Request &lt;/td&gt;
  &lt;td&gt;Deny catalog publication requests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -132229,6 +132144,122 @@ Thank you to our contributors for making this release possible:
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ &lt;tr&gt;
+ &lt;td&gt;Assign User Roles &lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  &lt;/div&gt;
@@ -132476,7 +132507,7 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[118 252 426 158 383 6]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
+ &lt;img id="[374 346 328 78 478 204]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Search Results</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;h2 id="meshery-extension" class="heading-link"&gt;
  Meshery Extension

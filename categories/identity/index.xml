@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[170 18 43 154 433 373]" src="images/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[2 361 242 381 487 309]" src="images/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -129,7 +129,7 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[242 429 461 354 216 48]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[480 61 74 407 463 59]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1469,8 +1469,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
- 
- 
  &lt;tr&gt;
  
  
@@ -1595,6 +1593,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  &lt;/tr&gt;
+ 
+ 
  
  
  
@@ -1888,8 +1888,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -3596,6 +3594,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -4107,8 +4107,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  &lt;/tr&gt;
- 
- 
  
  
  
@@ -5059,6 +5057,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -5775,469 +5775,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tbody&gt;
  &lt;/table&gt;
  
- &lt;h2&gt; Permissions&lt;/h2&gt;
- &lt;table class="csvtable td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Permission&lt;/th&gt;
- 
- 
- 
- 
- 
- &lt;th&gt;Description&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;tr&gt;
- 
- 
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ❌
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;/tbody&gt;
- &lt;/table&gt;
- 
  &lt;h2&gt;Extensions Permissions&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
@@ -6356,8 +5893,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -6948,6 +6483,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -7069,8 +6606,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -7536,6 +7071,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -7657,8 +7194,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -9374,6 +8909,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -9495,8 +9032,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -11087,6 +10622,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -11208,8 +10745,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -12175,6 +11710,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -12296,8 +11833,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -13263,6 +12798,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -13384,8 +12921,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -14351,6 +13886,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -14472,8 +14009,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -15689,6 +15224,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -15810,8 +15347,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -16777,6 +16312,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -16898,8 +16435,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -18365,6 +17900,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -18486,8 +18023,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -18828,6 +18363,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -18949,8 +18486,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -19666,6 +19201,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
@@ -19787,8 +19324,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
  
  
  
@@ -20129,10 +19664,475 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  
  &lt;h2&gt;Tokens Permissions&lt;/h2&gt;
+ &lt;table class="csvtable td-initial"&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;Permission&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;Description&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/user-role"&gt;User&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/team-roles"&gt;Team Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles"&gt;Academy Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/academy-roles/#learner"&gt;Leaner&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/workspace-roles"&gt;Workspace Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Billing Manager&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/organization-roles"&gt;Org Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;th&gt;&lt;a href="/cloud/concepts/identity-and-security/roles/#provider-admin-role"&gt;Provider Admin&lt;/a&gt;&lt;/th&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ Download Token
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ✅
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+ &lt;/table&gt;
+ 
+ &lt;h2&gt;Roles Permissions&lt;/h2&gt;
  &lt;table class="csvtable td-initial"&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -20475,7 +20475,7 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  &lt;td&gt;
  
- Download Token
+ Assign User Roles
  
  &lt;/td&gt;
  
@@ -20484,28 +20484,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  &lt;td&gt;
  
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
- 
- 
- &lt;/td&gt;
- 
- 
- 
- 
- &lt;td&gt;
- 
- 
- ✅
  
  
  &lt;/td&gt;
@@ -20538,7 +20516,29 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;td&gt;
  
  
- ✅
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
+ 
+ 
+ &lt;/td&gt;
+ 
+ 
+ 
+ 
+ &lt;td&gt;
+ 
+ 
+ ❌
  
  
  &lt;/td&gt;
@@ -21611,112 +21611,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;td&gt;Unpublish WASM Filter &lt;/td&gt;
  &lt;td&gt;Unpublish WASM Filter&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -32671,6 +32565,112 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;td&gt;Download Token &lt;/td&gt;
  &lt;td&gt;&lt;/td&gt;
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
  
  
  
@@ -56888,112 +56888,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -67699,6 +67593,112 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  &lt;/div&gt;
@@ -67789,112 +67789,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;/tr&gt;
  &lt;/thead&gt;
  &lt;tbody&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -73573,6 +73467,112 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;td&gt;View Organizations &lt;/td&gt;
  &lt;td&gt;See all organizations of which you are an administrator. See all members of those organizations.&lt;/td&gt;
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
  
  
  
@@ -80538,112 +80538,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -91659,6 +91553,122 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ &lt;tr&gt;
+ &lt;td&gt;Assign User Roles &lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
  &lt;/tbody&gt;
  &lt;/table&gt;
  &lt;/div&gt;
@@ -92899,112 +92909,6 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;td&gt;Deny Catalog Request &lt;/td&gt;
  &lt;td&gt;Deny catalog publication requests&lt;/td&gt;
  &lt;/tr&gt;
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
  
  
  
@@ -104129,6 +104033,122 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  
  &lt;tr&gt;
  &lt;td&gt;Download Token &lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ &lt;tr&gt;
+ &lt;td&gt;Assign User Roles &lt;/td&gt;
  &lt;td&gt;&lt;/td&gt;
  &lt;/tr&gt;
  
