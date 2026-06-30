@@ -58,13 +58,16 @@ You can update your Organization's name, location, associated teams, branding, a
 
 The **Identity Providers** tab controls which OAuth applications power sign-in for your Organization. This is most useful when your Organization uses a custom domain and you want your own brand — not Layer5's — shown on the Google, GitHub, or OIDC consent screen.
 
-The tab opens in one of two states:
+By default, your Organization uses Layer5's shared OAuth applications. To override them, simply add your own provider — there is no separate "enable" step:
 
--   **Using Layer5's default identity providers** (the default for every Organization): Sign in uses Layer5's shared OAuth applications. A Provider Administrator can select **Enable bring-your-own credentials** to begin configuring the Organization's own providers.
--   **Bring-your-own credentials (BYOC) enabled**: A row is shown for each configured provider. Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider — each walkthrough displays the exact redirect URI to add to your OAuth application — and **Edit** or **Remove** to rotate or delete a provider's credentials. **Delete Identity Providers** reverts the Organization to Layer5's defaults.
+-   Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider. Each walkthrough displays the exact redirect URI to add to your OAuth application. Saving your first provider switches the Organization to its own identity providers automatically.
+-   Use **Edit** to rotate a provider's credentials, or **Remove** to delete a single provider. Removing your last provider reverts the Organization to Layer5's defaults.
+-   **Delete All Identity Providers** removes every configured provider at once and reverts to Layer5's defaults.
+
+Every removal asks you to confirm and explains the consequences before it proceeds.
 
 {{< alert title="Who can configure this" type="info" >}}
-Enabling or tearing down bring-your-own credentials is a Provider Administrator action, and Provider Administrators can manage the Identity Providers configuration of **any** Organization — whether or not they are a member of it. Adding, rotating, and removing individual provider connections is available to Organization Administrators and Owners.
+Organization Administrators and Owners can add, rotate, and remove their Organization's identity providers themselves. Provider Administrators can additionally manage the Identity Providers configuration of **any** Organization — whether or not they are a member of it.
 {{< /alert >}}
 
 Switching identity providers does not affect existing user accounts or login history. Users who signed in through a provider you later remove may need to re-authenticate.
