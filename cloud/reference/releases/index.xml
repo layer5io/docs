@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.162</title><link>/cloud/reference/releases/v1.0.162/</link><pubDate>Tue, 30 Jun 2026 01:59:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.162/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.163</title><link>/cloud/reference/releases/v1.0.163/</link><pubDate>Tue, 30 Jun 2026 12:47:20 +0000</pubDate><guid>/cloud/reference/releases/v1.0.163/</guid><description>&lt;ul&gt;
+&lt;li&gt;test(domain_routing): deflake concurrent evict-vs-refresh cache test @leecalcote (#5596)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-server" class="heading-link"&gt;
+ 💻 Server
+ &lt;a href="#-server" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(migrations): renumber colliding oidc_pending_states migration + version-collision CI guard @leecalcote (#5598)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(migrations): renumber colliding oidc_pending_states migration + version-collision CI guard @leecalcote (#5598)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.162</title><link>/cloud/reference/releases/v1.0.162/</link><pubDate>Tue, 30 Jun 2026 01:59:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.162/</guid><description>&lt;ul&gt;
 &lt;li&gt;[DAO] Guard organization-scoped queries against empty org scope (supersedes #5559) @leecalcote (#5587)&lt;/li&gt;
 &lt;li&gt;feat(idp): create/tear down Identity Providers Environment on-behalf @leecalcote (#5593)&lt;/li&gt;
 &lt;li&gt;fix(ui): Identity Providers tab shows default state (not an error) for orgs without BYOC @leecalcote (#5588)&lt;/li&gt;
