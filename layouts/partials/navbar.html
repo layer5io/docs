@@ -291,23 +291,29 @@
 
   const checkUserAuth = async () => {
     try {
-     const token = getCookieValue("provider_token");
-      if (!token || token === expiredToken) { // cookie doesn't exist or has expired (due to user logout)
-        if (isUserAuthenticated) {
-          showSignInButton();
-          isUserAuthenticated = false;
-        }
-      throw new Error("missing or expired cookie");
-    }
-      const re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
+      const token = getCookieValue("provider_token");
 
-      if (re.status === 401) { // cookie has expired
-        expiredToken = token;
+      if (token && token === expiredToken) {
+        throw new Error("expired cookie");
+      }
+
+      const fetchOptions = {
+        method: 'GET',
+        credentials: 'include',
+      };
+
+      if (token) {
+        fetchOptions.headers = {
+          'Authorization': `Bearer ${token}`,
+        };
+      }
+
+      const re = await fetch(`${cloudAppUrl}/api/identity/users/profile`, fetchOptions);
+
+      if (re.status === 401) {
+        if (token) {
+          expiredToken = token;
+        }
         throw new Error("unauthorized");
       }
       if (re.status !== 200) {
@@ -318,11 +324,13 @@
       updateUI(response);
 
   } catch (error) {
-    // console.error("could not set user details.", error);
     showSignInButton();
+    if (isUserAuthenticated) {
+      isUserAuthenticated = false;
+    }
   }
 };
-  function getAvatarUrl(response) {
+    function getAvatarUrl(response) {
     const avatarUrl = response?.avatarUrl;
 
     return (typeof avatarUrl === 'string' && avatarUrl.trim()) || '';
