@@ -35,16 +35,16 @@ By default, every organization signs users in through your deployment's **shared
 
 An organization can optionally **bring its own credentials (BYOC)**: its own Google OAuth client and GitHub OAuth App. With BYOC, the upstream consent screen, the registered redirect URL, and the entire OAuth round trip carry the organization's own branding and stay on the organization's own domain. BYOC is enabled per organization by a [Provider Administrator]({{< ref "cloud/concepts/identity-and-security/roles/_index.md#provider-admin-role" >}}); an organization owner then registers the OAuth client ID and secret.
 
-### When BYOC is optional vs. required
+### BYOC is always optional
 
-Whether BYOC is *optional* or *required* depends on your organization's [custom domain]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md#social-sign-in-on-a-custom-domain" >}}) and how it relates to the **base domain** (the registrable domain, or eTLD+1) of your deployment:
+BYOC is **always optional**. Social sign-in (Google and GitHub) works out of the box on every [custom domain]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md#social-sign-in-on-a-custom-domain" >}}) — including a fully-custom domain on a different **base domain** (the registrable domain, or eTLD+1) from your deployment — using the deployment's default identity providers. You bring your own credentials only when you want your own brand, controls, or isolation, never to make social sign-in available:
 
 | Organization's domain | Default identity providers | BYOC |
 | --- | --- | --- |
 | No custom domain, or a subdomain of the deployment's base domain (e.g. `team.example.com` on a `cloud.example.com` deployment) | Social sign-in works out of the box | **Optional** — only for your own branding, scale, or isolation |
-| A fully-custom domain on a different base domain (e.g. `meshery.yourcompany.com` pointed at the hosted `cloud.layer5.io`) | Social sign-in cannot complete | **Required** for Google / GitHub sign-in |
+| A fully-custom domain on a different base domain (e.g. `meshery.yourcompany.com` pointed at the hosted `cloud.layer5.io`) | Social sign-in works out of the box | **Optional** — only for your own branding, scale, or isolation |
 
-On a fully-custom domain **without** BYOC, the Google and GitHub buttons are hidden on the login and sign-up screens. Email-and-password sign-in and sign-up both remain fully available — the **Log In / Sign Up** toggle stays visible, so new users can still register and existing users can still sign in. Only the social buttons are hidden; configuring the organization's own identity providers restores them on that domain.
+On a fully-custom domain, the Google and GitHub buttons are shown alongside email-and-password sign-in and work without any per-organization configuration. Configuring the organization's own identity providers (BYOC) changes *whose* OAuth apps and consent screen are used — it does not gate whether social sign-in is available.
 
 ### The identity provider is the security boundary
 
@@ -58,10 +58,10 @@ Organizations that share an identity provider sit within the same authentication
 | --- | --- | --- | --- |
 | **Canonical host** | `cloud.layer5.io` | The deployment's shared, central provider | The shared boundary |
 | **On-eTLD custom host** (a subdomain under the same base domain as the canonical host) | `partner.layer5.io` on a `cloud.layer5.io` deployment | The same shared, central provider | The **same** shared boundary as the canonical host |
-| **Off-eTLD custom host** (a fully-custom domain on a different base domain) | `meshery.yourcompany.com` pointed at `cloud.layer5.io` | The organization's own (BYOC) provider | A **distinct** boundary |
+| **Off-eTLD custom host** (a fully-custom domain on a different base domain) | `meshery.yourcompany.com` pointed at `cloud.layer5.io` | The same shared, central provider (unless BYOC is configured) | The **same** shared boundary as the canonical host (unless BYOC is configured) |
 | **Any host, with BYOC** | any of the above, after configuring BYOC | The organization's own dedicated provider | A **distinct** boundary |
 
-The canonical host and on-eTLD custom hosts typically draw on the shared, central identity provider, so organizations reached through them are within one shared authentication boundary. An organization with its own (BYOC) identity provider is its own boundary, no matter how its host is named. The DNS shape of the host is not the boundary — the identity provider behind it is.
+By default, every host class — canonical, on-eTLD, and off-eTLD — draws on the shared, central identity provider, so organizations reached through them sit within one shared authentication boundary. An organization with its own (BYOC) identity provider is its own boundary, no matter how its host is named. The DNS shape of the host is not the boundary — the identity provider behind it is.
 
 This is the authentication (host-class) view of the boundary. It composes with the **authorization** view — where each organization context independently scopes what a user is permitted to do via [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}), [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}), and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) — and with **granular** resource-access sharing that can cross organizations. For the complete picture of how these layers fit together, see [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
 
