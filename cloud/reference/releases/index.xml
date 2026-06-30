@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.159</title><link>/cloud/reference/releases/v1.0.159/</link><pubDate>Mon, 29 Jun 2026 22:02:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.159/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.160</title><link>/cloud/reference/releases/v1.0.160/</link><pubDate>Tue, 30 Jun 2026 01:22:26 +0000</pubDate><guid>/cloud/reference/releases/v1.0.160/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(webhook): configure GITHUB_WEBHOOK_SECRET and surface misconfig once at startup @leecalcote (#5594)&lt;/li&gt;
+&lt;li&gt;[chore] add MeshKit-error PreToolUse guard for the Go backend @leecalcote (#5592)&lt;/li&gt;
+&lt;li&gt;[chore] register no-ai-attribution PreToolUse hook in settings @leecalcote (#5591)&lt;/li&gt;
+&lt;li&gt;[server] fix: catalog Technology dropdown shows full model registry (honor camelCase pageSize) @leecalcote (#5589)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.159</title><link>/cloud/reference/releases/v1.0.159/</link><pubDate>Mon, 29 Jun 2026 22:02:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.159/</guid><description>&lt;ul&gt;
 &lt;li&gt;[docs] Plan: rename built-in roles (admin -&amp;gt; provider admin, Anonymous User -&amp;gt; anonymous user) @leecalcote (#5586)&lt;/li&gt;
 &lt;li&gt;docs: resolve TP-003 test-ID collision and sweep em-dashes @leecalcote (#5585)&lt;/li&gt;
 &lt;li&gt;docs: reorganize and consolidate internal documentation @leecalcote (#5584)&lt;/li&gt;
