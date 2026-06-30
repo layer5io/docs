@@ -58,7 +58,7 @@ Both email-and-password and social sign-in (the Google / GitHub buttons)
 work in *every* scenario, including on a fully-custom domain using the
 deployment's default identity providers. What the named scenarios capture is
 *whose* identity provider authenticates your users and *whose* brand appears
-on the consent screen - not whether social sign-in is available. (See
+on the consent screen — not whether social sign-in is available. (See
 [White-labeling → Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain)
 for details.)
 
@@ -133,7 +133,7 @@ different base domain from the deployment), using the deployment's
 
 - **Branding:** fully white-labeled sign-in pages on your own domain.
 - **Sign-in:** email and password, as well as Google and GitHub, all work out
-  of the box - the social buttons use the platform's Google/GitHub apps, so
+  of the box — the social buttons use the platform's Google/GitHub apps, so
   the upstream consent screen shows the platform's name.
 - **Choose it when:** you want your own domain with social sign-in working
   immediately, and you don't need your own OAuth apps or consent-screen
@@ -176,8 +176,8 @@ A quick way to land on the right scenario:
      platform's apps). Yes → **White-Label + BYOC** (the full experience).
 
 {{< alert type="info" >}}
-**Rule of thumb.** Social sign-in works out of the box in every scenario -
-including on your own domain on a *different* base domain from the deployment -
+**Rule of thumb.** Social sign-in works out of the box in every scenario —
+including on your own domain on a *different* base domain from the deployment —
 using the platform's identity providers. Bringing your own identity provider
 is **always optional**, whatever your domain: choose it only when you want
 your own consent-screen branding, your own OAuth rate limits and audit trail,
