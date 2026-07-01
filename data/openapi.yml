@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.21
+  version: v1.3.22
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -1285,9 +1285,18 @@ paths:
           description: Get responses by page
           schema:
             type: string
+        - name: pageSize
+          in: query
+          description: >-
+            Number of responses to return per page. Canonical camelCase pagination parameter; prefer this over the
+            deprecated all-lowercase `pagesize`.
+          schema:
+            type: integer
+            minimum: 1
         - name: pagesize
           in: query
-          description: Get responses by pagesize
+          description: Get responses by pagesize. Deprecated alias of pageSize.
+          deprecated: true
           schema:
             type: string
         - name: search
@@ -1310,9 +1319,9 @@ paths:
                 description: A paginated list of credentials.
                 required:
                   - credentials
-                  - total_count
+                  - totalCount
                   - page
-                  - page_size
+                  - pageSize
                 properties:
                   credentials:
                     type: array
@@ -1407,7 +1416,7 @@ paths:
                             db: deleted_at
                     x-order: 1
                     description: The credentials returned on the current page.
-                  total_count:
+                  totalCount:
                     type: integer
                     description: Total number of credentials across all pages.
                     x-order: 2
@@ -1417,7 +1426,7 @@ paths:
                     description: Current page number (zero-based).
                     x-order: 3
                     minimum: 0
-                  page_size:
+                  pageSize:
                     type: integer
                     description: Number of credentials per page.
                     x-order: 4
@@ -8179,9 +8188,18 @@ paths:
           description: Get responses by page
           schema:
             type: string
+        - name: pageSize
+          in: query
+          description: >-
+            Number of responses to return per page. Canonical camelCase pagination parameter; prefer this over the
+            deprecated all-lowercase `pagesize`.
+          schema:
+            type: integer
+            minimum: 1
         - name: pagesize
           in: query
-          description: Get responses by pagesize
+          description: Get responses by pagesize. Deprecated alias of pageSize.
+          deprecated: true
           schema:
             type: string
       responses:
@@ -8197,11 +8215,11 @@ paths:
                     type: integer
                     description: Current page number of the result set.
                     minimum: 0
-                  page_size:
+                  pageSize:
                     type: integer
                     description: Number of items per page.
                     minimum: 1
-                  total_count:
+                  totalCount:
                     type: integer
                     description: Total number of items available.
                     minimum: 0
@@ -8523,9 +8541,18 @@ paths:
           description: Get responses by page
           schema:
             type: string
+        - name: pageSize
+          in: query
+          description: >-
+            Number of responses to return per page. Canonical camelCase pagination parameter; prefer this over the
+            deprecated all-lowercase `pagesize`.
+          schema:
+            type: integer
+            minimum: 1
         - name: pagesize
           in: query
-          description: Get responses by pagesize
+          description: Get responses by pagesize. Deprecated alias of pageSize.
+          deprecated: true
           schema:
             type: string
       responses:
@@ -8541,11 +8568,11 @@ paths:
                     type: integer
                     description: Current page number of the result set.
                     minimum: 0
-                  page_size:
+                  pageSize:
                     type: integer
                     description: Number of items per page.
                     minimum: 1
-                  total_count:
+                  totalCount:
                     type: integer
                     description: Total number of items available.
                     minimum: 0
@@ -8942,9 +8969,18 @@ paths:
           description: Get responses by page
           schema:
             type: string
+        - name: pageSize
+          in: query
+          description: >-
+            Number of responses to return per page. Canonical camelCase pagination parameter; prefer this over the
+            deprecated all-lowercase `pagesize`.
+          schema:
+            type: integer
+            minimum: 1
         - name: pagesize
           in: query
-          description: Get responses by pagesize
+          description: Get responses by pagesize. Deprecated alias of pageSize.
+          deprecated: true
           schema:
             type: string
       responses:
@@ -8960,11 +8996,11 @@ paths:
                     type: integer
                     description: Current page number of the result set.
                     minimum: 0
-                  page_size:
+                  pageSize:
                     type: integer
                     description: Number of items per page.
                     minimum: 1
-                  total_count:
+                  totalCount:
                     type: integer
                     description: Total number of items available.
                     minimum: 0
