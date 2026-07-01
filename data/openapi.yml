@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.18
+  version: v1.3.19
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -34982,7 +34982,33 @@ paths:
       operationId: getInvitations
       tags:
         - Invitation_Invitation
-      summary: Get all invitations for the organization
+      summary: Get a paginated list of invitations for the organization
+      parameters:
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: string
+        - name: pagesize
+          in: query
+          description: Get responses by pagesize
+          schema:
+            type: string
+        - name: search
+          in: query
+          description: Get responses that match search param value
+          schema:
+            type: string
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+        - name: filter
+          in: query
+          description: Get filtered reponses
+          schema:
+            type: string
       responses:
         '200':
           description: Invitations page
@@ -34991,10 +35017,26 @@ paths:
               schema:
                 type: object
                 description: Paginated list of invitations for an organization.
-                required:
-                  - data
-                  - total
                 properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
                   data:
                     type: array
                     items:
@@ -35171,12 +35213,6 @@ paths:
                     description: Invitations returned on the current page.
                     x-oapi-codegen-extra-tags:
                       json: data
-                  total:
-                    type: integer
-                    description: Total number of invitations available.
-                    x-oapi-codegen-extra-tags:
-                      json: total
-                    minimum: 0
         '400':
           description: Invalid request body or request param
           content:
@@ -39610,6 +39646,12 @@ paths:
                         - id
                         - owner
                         - provider
+                        - accessToken
+                        - name
+                        - purpose
+                        - isOauth
+                        - createdAt
+                        - updatedAt
                       properties:
                         id:
                           description: Unique identifier for the token.
@@ -39787,6 +39829,12 @@ paths:
                         - id
                         - owner
                         - provider
+                        - accessToken
+                        - name
+                        - purpose
+                        - isOauth
+                        - createdAt
+                        - updatedAt
                       properties:
                         id:
                           description: Unique identifier for the token.
@@ -39969,6 +40017,12 @@ paths:
                         - id
                         - owner
                         - provider
+                        - accessToken
+                        - name
+                        - purpose
+                        - isOauth
+                        - createdAt
+                        - updatedAt
                       properties:
                         id:
                           description: Unique identifier for the token.
@@ -40110,9 +40164,11 @@ paths:
         - cloud
       tags:
         - token_tokens
-      summary: Get token by ID
-      operationId: getUserTokensById
-      description: Retrieves a specific token by its ID.
+      summary: Download token
+      operationId: downloadToken
+      description: >-
+        Downloads a specific token by its ID for use as a local credential file (e.g. mesheryctl's auth.json). Gated by
+        the Download Token permission and recorded as a distinct audit event from viewing or listing tokens.
       parameters:
         - name: tokenId
           in: path
@@ -40140,6 +40196,12 @@ paths:
                   - id
                   - owner
                   - provider
+                  - accessToken
+                  - name
+                  - purpose
+                  - isOauth
+                  - createdAt
+                  - updatedAt
                 properties:
                   id:
                     description: Unique identifier for the token.
@@ -40306,6 +40368,12 @@ paths:
                         - id
                         - owner
                         - provider
+                        - accessToken
+                        - name
+                        - purpose
+                        - isOauth
+                        - createdAt
+                        - updatedAt
                       properties:
                         id:
                           description: Unique identifier for the token.
