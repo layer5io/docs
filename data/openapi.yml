@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.17
+  version: v1.3.18
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -11567,6 +11567,262 @@ paths:
                 additionalProperties: false
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/identity/users/self/account-deletion-eligibility:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - User_users
+      operationId: getAccountDeletionEligibility
+      summary: Get account deletion eligibility
+      description: >-
+        Pre-check evaluated before an account self-deletion is confirmed. Reports whether deleting the caller's account
+        would also require or permit hard-deleting their organization, whether that organization is the shared Layer5
+        provider organization or carries an active paid subscription, how many of its resources are also shared into
+        other surviving organizations, and the per-resource blast radius of the deletion.
+      parameters:
+        - name: organizationId
+          in: query
+          required: false
+          description: >-
+            Organization to evaluate for deletion alongside the account. When omitted, the caller's currently selected
+            organization is evaluated.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+      responses:
+        '200':
+          description: Account deletion eligibility for the caller
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: >-
+                  Pre-check result returned before an account self-deletion is confirmed. Describes whether deleting the
+                  caller's account would also require or permit hard-deleting their organization and quantifies the
+                  blast radius. All fields are always present so the client can render the confirmation state
+                  deterministically.
+                required:
+                  - isSoleActiveMember
+                  - organizationId
+                  - organizationName
+                  - isProviderOrg
+                  - hasActivePaidSubscription
+                  - crossTenantSharedResourceCount
+                  - impact
+                properties:
+                  isSoleActiveMember:
+                    type: boolean
+                    description: >-
+                      True when the caller is the only active member of the organization, so deleting their account
+                      would leave the organization without any active members.
+                  organizationId:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  organizationName:
+                    type: string
+                    maxLength: 255
+                    description: >-
+                      Human-readable name of the organization evaluated for deletion. The client echoes this value back
+                      as organizationNameConfirmation when requesting deletion.
+                  isProviderOrg:
+                    type: boolean
+                    description: >-
+                      True when this is the shared Layer5 provider organization, which is never deletable regardless of
+                      membership.
+                  hasActivePaidSubscription:
+                    type: boolean
+                    description: >-
+                      True when the organization has an active paid (non-"Personal"/free) plan subscription that must be
+                      cancelled before the organization can be hard-deleted.
+                  crossTenantSharedResourceCount:
+                    type: integer
+                    minimum: 0
+                    description: >-
+                      Count of resources reachable from this organization that are also shared into a different,
+                      surviving organization; destroying them affects other tenants. When greater than zero the client
+                      must set confirmSharedResourceDestruction to proceed.
+                  impact:
+                    type: object
+                    additionalProperties: false
+                    description: >-
+                      Per-resource counts of the objects that would be destroyed when an organization is hard-deleted
+                      alongside the account.
+                    required:
+                      - workspaces
+                      - environments
+                      - designs
+                      - views
+                      - connections
+                      - credentials
+                      - members
+                      - invitations
+                      - academyRecords
+                    properties:
+                      workspaces:
+                        type: integer
+                        minimum: 0
+                        description: Number of workspaces that would be destroyed.
+                      environments:
+                        type: integer
+                        minimum: 0
+                        description: Number of environments that would be destroyed.
+                      designs:
+                        type: integer
+                        minimum: 0
+                        description: Number of designs that would be destroyed.
+                      views:
+                        type: integer
+                        minimum: 0
+                        description: Number of views that would be destroyed.
+                      connections:
+                        type: integer
+                        minimum: 0
+                        description: Number of connections that would be destroyed.
+                      credentials:
+                        type: integer
+                        minimum: 0
+                        description: Number of credentials that would be destroyed.
+                      members:
+                        type: integer
+                        minimum: 0
+                        description: Number of organization members that would lose access.
+                      invitations:
+                        type: integer
+                        minimum: 0
+                        description: Number of pending invitations that would be revoked.
+                      academyRecords:
+                        type: integer
+                        minimum: 0
+                        description: Number of academy records (challenges, certifications) that would be destroyed.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/identity/users/self:
+    delete:
+      x-internal:
+        - cloud
+      tags:
+        - User_users
+      operationId: deleteUserAccount
+      summary: Delete the caller's own account
+      description: >-
+        Soft-deletes the caller's Layer5 Cloud user record and hard-deletes the backing identity. When
+        deleteOrganization is true, the caller's organization is hard-deleted in the same operation, subject to
+        server-side re-validation: the organization must not be the shared Layer5 provider organization, must not have
+        an active paid subscription, and organizationNameConfirmation must match the stored organization name. When the
+        organization shares resources into other surviving organizations, confirmSharedResourceDestruction must also be
+        true. Inputs are passed as query parameters because DELETE request bodies are unreliable across the extension
+        proxy and intermediate HTTP clients.
+      parameters:
+        - name: deleteOrganization
+          in: query
+          required: false
+          description: >-
+            When true, hard-delete the caller's organization along with the account. Defaults to false (delete only the
+            account).
+          schema:
+            type: boolean
+        - name: organizationId
+          in: query
+          required: false
+          description: Identifier of the organization to hard-delete. Required by the server when deleteOrganization is true.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+        - name: organizationNameConfirmation
+          in: query
+          required: false
+          description: >-
+            User-typed organization name. The server re-validates this against the stored organization name when
+            deleteOrganization is true and rejects the request on mismatch.
+          schema:
+            type: string
+        - name: confirmSharedResourceDestruction
+          in: query
+          required: false
+          description: >-
+            Explicit acknowledgement that resources shared into other surviving organizations will be destroyed.
+            Required by the server when the organization's crossTenantSharedResourceCount is greater than zero.
+          schema:
+            type: boolean
+      responses:
+        '204':
+          description: Account (and organization, when requested) deleted
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Deletion preconditions were not met. Returned when the target organization is the shared Layer5 provider
+            organization, has an active paid subscription, the caller is not its sole active member, the typed
+            organizationNameConfirmation did not match, or destruction of shared resources was required but not
+            confirmed.
           content:
             text/plain:
               schema:
