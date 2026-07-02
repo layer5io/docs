@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.168</title><link>/cloud/reference/releases/v1.0.168/</link><pubDate>Wed, 01 Jul 2026 23:33:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.168/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.169</title><link>/cloud/reference/releases/v1.0.169/</link><pubDate>Thu, 02 Jul 2026 15:26:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.169/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): resolve infinite scroll-reset loop on subscriptions page @rishiraj38 (#5630)&lt;/li&gt;
+&lt;li&gt;Fix Connections modal layout padding and scroll overlap @rishiraj38 (#5631)&lt;/li&gt;
+&lt;li&gt;[UI] Hide author data columns and add leaderboard filter @claude (#5626)&lt;/li&gt;
+&lt;li&gt;[server] Retire local connection/design/roles models onto @meshery/schemas (plan 3.1 resource group) @leecalcote (#5629)&lt;/li&gt;
+&lt;li&gt;[server/models] Retire local Team onto schemas team.Team (plan 3.1 org group) @leecalcote (#5628)&lt;/li&gt;
+&lt;li&gt;[Server/UI] Consume schemas v1.3.22 pagination envelopes; collapse totalCount dual-reads @leecalcote (#5625)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@claude, @leecalcote and @rishiraj38&lt;/p&gt;</description></item><item><title>v1.0.168</title><link>/cloud/reference/releases/v1.0.168/</link><pubDate>Wed, 01 Jul 2026 23:33:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.168/</guid><description>&lt;ul&gt;
 &lt;li&gt;Add full and full-release modes for iterate-pr @miacycle (#5623)&lt;/li&gt;
 &lt;li&gt;[Server] Consume schemas team.TeamPayload; retire local model_team_payload.go @leecalcote (#5622)&lt;/li&gt;
 &lt;li&gt;chore(db): refresh cloud-schema.sql from prod (owner-consolidation) + uniformity remediation plan @leecalcote (#5620)&lt;/li&gt;
