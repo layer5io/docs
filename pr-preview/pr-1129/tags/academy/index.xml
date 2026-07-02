@@ -17,7 +17,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[456 418 215 483 174 335]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[269 91 290 328 4 35]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/pr-preview/pr-1129/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1129/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
 &lt;p&gt;Here, you can achieve:&lt;/p&gt;
@@ -38,15 +38,27 @@
  Prerequisites
  &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Academy</title><link>/pr-preview/pr-1129/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1129/cloud/academy/</guid><description>&lt;p&gt;&lt;strong&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is a platform that provides a comprehensive learning experience for anyone beginning their journey into cloud native infrastructure or advancing along that path.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Academy</title><link>/pr-preview/pr-1129/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1129/cloud/academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is a platform that provides a comprehensive learning experience for anyone beginning their journey into cloud native infrastructure or advancing along that path.&lt;/p&gt;
 
-&lt;h5 id="it-organizes-content-into-three-key-formats" class="heading-link"&gt;
- It organizes content into three key formats:
- &lt;a href="#it-organizes-content-into-three-key-formats" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h5 id="three-types-of-academy-content-formats" class="heading-link"&gt;
+ Three types of Academy content formats
+ &lt;a href="#three-types-of-academy-content-formats" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;Learning Paths&lt;/strong&gt;: Guided sequences of courses that break down complex topics into manageable modules.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Challenges&lt;/strong&gt;: Practical exercises that focus on solving specific problems, often structured in a competitive or scenario-based format.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Certifications&lt;/strong&gt;: Formal assessments that validate professional skills and provide recognized credentials.&lt;/p&gt;</description></item><item><title>Default Academy Roles</title><link>/pr-preview/pr-1129/cloud/concepts/identity-and-security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1129/cloud/concepts/identity-and-security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Learning Paths&lt;/strong&gt;: Guided sequences of courses that break down complex topics into manageable modules.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Challenges&lt;/strong&gt;: Practical exercises that focus on solving specific problems, often structured in a competitive or scenario-based format.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Certifications&lt;/strong&gt;: Formal assessments that validate professional skills and provide recognized credentials.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id="roles-served" class="heading-link"&gt;
+ Roles Served
+ &lt;a href="#roles-served" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.layer5.io/cloud/academy/using-the-academy/"&gt;Learners&lt;/a&gt;: Engage with Learning paths, challenges, and certifications to build and validate cloud-native skills&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.layer5.io/cloud/academy/creating-content/"&gt;Content Creators (Instructors)&lt;/a&gt;: Develop and publish structured materials, and manage the overall learning experience&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.layer5.io/cloud/academy/platform-development/"&gt;Platform Developers&lt;/a&gt;: Extend and maintain the Academy platform, enabling new features and integrations&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Default Academy Roles</title><link>/pr-preview/pr-1129/cloud/concepts/identity-and-security/roles/academy-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1129/cloud/concepts/identity-and-security/roles/academy-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
 &lt;div class="td-card card border me-4"&gt;
 &lt;div class="card-header"&gt;
  Academy Administrator
@@ -133,7 +145,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[102 199 141 219 44 466]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[396 332 138 218 353 322]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/pr-preview/pr-1129/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1129/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -145,7 +157,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[95 157 120 320 140 104]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[180 213 490 182 364 336]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -168,7 +180,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[233 483 469 454 322 6]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[320 171 44 151 1 259]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
