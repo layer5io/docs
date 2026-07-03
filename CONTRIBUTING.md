@@ -43,7 +43,7 @@ Make sure you have the following prerequisites installed on your operating syste
   go version
   ```
 
-**Note:** The extended Hugo version and PostCSS are automatically managed via npm when you run `make setup`, so you do not need to install them globally.
+
 
 **Note:** If you're on a _Windows environment_ then it is highly recommended that you install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install) both for performance and ease of use.
 

@@ -44,11 +44,11 @@ Explore tutorials and documentation by product in the https://docs.layer5.io web
 <details>
 
 <summary><h3>Build Docs with Golang</h3></summary>
-If your local development environment has a supported version (v1.21.0+) of Golang installed, you are ready to proceed. The extended Hugo version (which has necessary SCSS/SASS support) is automatically managed by npm, so you do not need to install it globally.
+If your local development environment has a supported version (v1.21.0+) of Golang installed, you are ready to proceed.
 
 Now to setup and run the site locally execute:
 
-1. `make setup` (This installs local dependencies, including Hugo)
+1. `make setup`
 2. `make site`
 3. visit http://localhost:1313
 
