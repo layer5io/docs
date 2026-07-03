@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.169</title><link>/cloud/reference/releases/v1.0.169/</link><pubDate>Thu, 02 Jul 2026 15:26:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.169/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.170</title><link>/cloud/reference/releases/v1.0.170/</link><pubDate>Fri, 03 Jul 2026 05:19:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.170/</guid><description>&lt;ul&gt;
+&lt;li&gt;[server] Correct EventSummary user_id db tag; audit ownership-consolidation constructs (#5615) @ritzorama (#5640)&lt;/li&gt;
+&lt;li&gt;[UI] Update Account Link Cards Layout @NSTKrishna (#5641)&lt;/li&gt;
+&lt;li&gt;Fix: Prevent role-fetching crashes from interfering with password resets @NSTKrishna (#5635)&lt;/li&gt;
+&lt;li&gt;refactor(filters): migrate off homegrown UniversalFilter onto Sistent @alexquincy (#5638)&lt;/li&gt;
+&lt;li&gt;Add claude GitHub actions 1783029322939 @ritzorama (#5639)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.30 @l5io (#5633)&lt;/li&gt;
+&lt;li&gt;[UI] Fix stretched background layout on Account Profile link @NSTKrishna (#5636)&lt;/li&gt;
+&lt;li&gt;[UI] Migrate data-table filters to the shared @sistent/sistent UniversalFilter @claude (#5634)&lt;/li&gt;
+&lt;li&gt;[UI] Use the shared UniversalFilter for the catalog leaderboard @claude (#5632)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): Bump github.com/ozontech/allure-go/pkg/framework from 0.6.32 to 0.8.2 @dependabot (#5607)&lt;/li&gt;
+&lt;li&gt;chore(deps): Bump github.com/bradleyfalzon/ghinstallation/v2 from 2.17.0 to 2.19.0 @dependabot (#5602)&lt;/li&gt;
+&lt;li&gt;chore(deps): Bump go.opentelemetry.io/otel/trace from 1.43.0 to 1.44.0 @dependabot (#5604)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna, @alexquincy, @arjunmehta-git, @claude, @dependabot, @l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.169</title><link>/cloud/reference/releases/v1.0.169/</link><pubDate>Thu, 02 Jul 2026 15:26:06 +0000</pubDate><guid>/cloud/reference/releases/v1.0.169/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(ui): resolve infinite scroll-reset loop on subscriptions page @rishiraj38 (#5630)&lt;/li&gt;
 &lt;li&gt;Fix Connections modal layout padding and scroll overlap @rishiraj38 (#5631)&lt;/li&gt;
 &lt;li&gt;[UI] Hide author data columns and add leaderboard filter @claude (#5626)&lt;/li&gt;
