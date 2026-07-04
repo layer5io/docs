@@ -9,11 +9,11 @@ tags: [users]
 
 Layer5 Cloud recognizes one account per verified email address, no matter which method you use to sign in.
 
-## What changed for me
+## What is changing for me
 
 Previously, signing in with email/password, GitHub, or Google could each create a **separate** account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to "disappear" when you signed in with another.
 
-Layer5 Cloud has consolidated these previously split accounts in a one-time maintenance operation. For each affected person, all resources were transferred to a single retained account, including:
+Layer5 Cloud is consolidating these previously split accounts in a one-time maintenance operation. For each affected person, all resources will be transferred to a single retained account, including:
 
 - Designs and views
 - Workspaces
@@ -22,10 +22,10 @@ Layer5 Cloud has consolidated these previously split accounts in a one-time main
 - Schedules
 - Organization and team memberships and roles
 
-Duplicate, auto-created "My Organization" organizations that had no other members were removed. Organizations with other members were preserved, and ownership transferred to the retained account. If a connection name collided during the merge, the duplicate was renamed with a " (merged)" suffix so both remain identifiable.
+Duplicate, auto-created "My Organization" organizations with no other members will be removed. Organizations with other members are preserved, and ownership transfers to the retained account. If a connection name collides during the merge, the duplicate is renamed with a " (merged)" suffix so both remain identifiable.
 
 {{< alert type="info" title="No action required" >}}
-Consolidation happened automatically. You do not need to do anything, and you keep access to everything you had before, now under one account.
+Consolidation rolls out automatically as a maintenance operation. You do not need to do anything, and you keep access to everything you have, under one account. If you sign in with a different method and resources appear to be missing, your accounts may not have been consolidated yet - [contact support]({{< ref "cloud/getting-started/support.md" >}}).
 {{< /alert >}}
 
 ## Signing in with multiple methods
@@ -36,7 +36,7 @@ Going forward, signing in with email/password, GitHub, or Google using the same 
 2. Later, you sign in with a different method (for example, Google instead of GitHub) using a provider that returns the same verified email address.
 3. Layer5 Cloud recognizes the verified email address and signs you into your existing account rather than creating a new one.
 
-Your designs, organizations, and workspaces are always available, regardless of which sign-in method you used to create them or which one you use on a given day.
+Your designs, organizations, and workspaces are always available, regardless of which sign-in method you used to create them or which one you use on a given day. For accounts that were previously split across sign-in methods, this applies once the one-time consolidation completes.
 
 ## Your email addresses
 
@@ -49,11 +49,11 @@ Your account has exactly one **primary** email address at a time, shown on your 
 
 ## Wanting separate accounts
 
-After consolidation, each email address maps to exactly one account. If you deliberately want separate accounts, for example to keep a testing environment separate from production, use a distinct email address for each account. This is standard behavior for any SaaS platform that supports single sign-on: identity is tied to the verified email address, not to the sign-in method you happen to use that day.
+After consolidation completes, each email address maps to exactly one account. If you deliberately want separate accounts, for example to keep a testing environment separate from production, use a distinct email address for each account. This is standard behavior for any SaaS platform that supports single sign-on: identity is tied to the verified email address, not to the sign-in method you happen to use that day.
 
 ## For organization admins: billing impact
 
-If duplicate accounts previously inflated the seat count on your organization's subscription, consolidation corrects that seat count downward automatically. Your subscription quantity updates on the next billing reconciliation cycle, you don't need to adjust it manually.
+If duplicate accounts have inflated the seat count on your organization's subscription, consolidation corrects that seat count downward automatically once it runs. Your subscription quantity updates on the next billing reconciliation cycle after consolidation; you do not need to adjust it manually.
 
 {{< alert type="info" title="Minimum-seat plans" >}}
 If your plan is already at its minimum-seat floor, consolidation has no effect on your seat count or billing.
