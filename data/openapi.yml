@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.24
+  version: v1.3.25
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -18,6 +18,8 @@ servers:
   - url: http://localhost:9876
     description: Meshery Cloud development server URL (controlled via PORT environment variable)
 tags:
+  - name: Meshery_Controllers_Configuration_controllers
+    description: APIs for configuring Meshery Operator, MeshSync, and Meshery Broker.
   - name: Evaluation_Evaluation
     description: Operations related to design evaluation
   - name: Feature_Features
@@ -4059,7 +4061,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -4336,7 +4339,8 @@ paths:
                                     type: string
                                     minLength: 2
                                     maxLength: 100
-                                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                    pattern: >-
+                                      ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                     example:
                                       - v1
                                       - v1alpha1
@@ -4448,7 +4452,8 @@ paths:
                               type: string
                               minLength: 2
                               maxLength: 100
-                              pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                              pattern: >-
+                                ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                               example:
                                 - v1
                                 - v1alpha1
@@ -4651,7 +4656,8 @@ paths:
                                     type: string
                                     minLength: 2
                                     maxLength: 100
-                                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                    pattern: >-
+                                      ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                     example:
                                       - v1
                                       - v1alpha1
@@ -7511,7 +7517,6 @@ paths:
     get:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: getTeamById
@@ -7667,7 +7672,6 @@ paths:
     put:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: updateTeam
@@ -7840,7 +7844,6 @@ paths:
     delete:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: deleteTeam
@@ -9594,7 +9597,6 @@ paths:
     get:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: getTeams
@@ -9779,7 +9781,6 @@ paths:
     post:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: createTeam
@@ -9947,7 +9948,6 @@ paths:
     get:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: getTeamUsers
@@ -10130,7 +10130,6 @@ paths:
     post:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: addUserToTeam
@@ -10285,7 +10284,6 @@ paths:
     delete:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: removeUserFromTeam
@@ -10361,7 +10359,6 @@ paths:
     get:
       x-internal:
         - cloud
-        - meshery
       tags:
         - Team_teams
       operationId: listUsersNotInTeam
@@ -22964,7 +22961,8 @@ paths:
                                 type: string
                                 minLength: 2
                                 maxLength: 100
-                                pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                pattern: >-
+                                  ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                 example:
                                   - v1
                                   - v1alpha1
@@ -23073,7 +23071,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -24377,7 +24376,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -24484,7 +24484,7 @@ paths:
                     type: string
                     minLength: 2
                     maxLength: 100
-                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                     example:
                       - v1
                       - v1alpha1
@@ -25303,7 +25303,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -25410,7 +25411,7 @@ paths:
                     type: string
                     minLength: 2
                     maxLength: 100
-                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                     example:
                       - v1
                       - v1alpha1
@@ -26699,7 +26700,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -26806,7 +26808,7 @@ paths:
                     type: string
                     minLength: 2
                     maxLength: 100
-                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                     example:
                       - v1
                       - v1alpha1
@@ -27374,7 +27376,7 @@ paths:
                   type: string
                   minLength: 2
                   maxLength: 100
-                  pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                  pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                   example:
                     - v1
                     - v1alpha1
@@ -28099,7 +28101,7 @@ paths:
                   type: string
                   minLength: 2
                   maxLength: 100
-                  pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                  pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                   example:
                     - v1
                     - v1alpha1
@@ -36898,7 +36900,7 @@ paths:
                     type: string
                     minLength: 2
                     maxLength: 100
-                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                    pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                     example:
                       - v1
                       - v1alpha1
@@ -37137,7 +37139,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -37353,7 +37356,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -37609,7 +37613,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -48816,7 +48821,8 @@ paths:
                           type: string
                           minLength: 2
                           maxLength: 100
-                          pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                          pattern: >-
+                            ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                           example:
                             - v1
                             - v1alpha1
@@ -49412,7 +49418,8 @@ paths:
                               type: string
                               minLength: 2
                               maxLength: 100
-                              pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                              pattern: >-
+                                ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                               example:
                                 - v1
                                 - v1alpha1
@@ -49553,7 +49560,8 @@ paths:
                                         type: string
                                         minLength: 2
                                         maxLength: 100
-                                        pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                        pattern: >-
+                                          ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                         example:
                                           - v1
                                           - v1alpha1
@@ -49642,7 +49650,8 @@ paths:
                                             type: string
                                             minLength: 2
                                             maxLength: 100
-                                            pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                            pattern: >-
+                                              ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                             example:
                                               - v1
                                               - v1alpha1
@@ -49944,7 +49953,8 @@ paths:
                                                       type: string
                                                       minLength: 2
                                                       maxLength: 100
-                                                      pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                                      pattern: >-
+                                                        ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                                       example:
                                                         - v1
                                                         - v1alpha1
@@ -50062,7 +50072,8 @@ paths:
                                                 type: string
                                                 minLength: 2
                                                 maxLength: 100
-                                                pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                                pattern: >-
+                                                  ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                                 example:
                                                   - v1
                                                   - v1alpha1
@@ -50274,7 +50285,8 @@ paths:
                                                       type: string
                                                       minLength: 2
                                                       maxLength: 100
-                                                      pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                                      pattern: >-
+                                                        ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                                       example:
                                                         - v1
                                                         - v1alpha1
@@ -51197,7 +51209,8 @@ paths:
                                               type: string
                                               minLength: 2
                                               maxLength: 100
-                                              pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                              pattern: >-
+                                                ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                               example:
                                                 - v1
                                                 - v1alpha1
@@ -51648,7 +51661,8 @@ paths:
                                         type: string
                                         minLength: 2
                                         maxLength: 100
-                                        pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                        pattern: >-
+                                          ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                         example:
                                           - v1
                                           - v1alpha1
@@ -51756,7 +51770,8 @@ paths:
                                               type: string
                                               minLength: 2
                                               maxLength: 100
-                                              pattern: ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+)([.-][a-z0-9]+)*$
+                                              pattern: >-
+                                                ^([a-z][a-z0-9.-]*\/)?v(alpha|beta|[0-9]+(alpha[0-9]*|beta[0-9]*|rc[0-9]*)?)([.-][a-z0-9]+)*$
                                               example:
                                                 - v1
                                                 - v1alpha1
