@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Layer5 Documentation</title><link>/pr-preview/pr-1136/categories/tutorials/</link><description>Recent content in Tutorials on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1136/categories/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Sharing a Workspace</title><link>/pr-preview/pr-1136/cloud/guides/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/cloud/guides/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
+ Share designs from Workspaces
+ &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the &lt;code&gt;microservices-baseline&lt;/code&gt; design and test his service changes without touching staging.&lt;/p&gt;
+&lt;p&gt;Here is how Five shares the &lt;code&gt;orbital-dev&lt;/code&gt; workspace with Rex.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/pr-preview/pr-1136/cloud/guides/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/cloud/guides/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This guide walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/pr-preview/pr-1136/cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline:&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Workspace&lt;/th&gt;
+ &lt;th&gt;Environment&lt;/th&gt;
+ &lt;th&gt;Teams with Access&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;orbital-staging&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;staging-aws&lt;/code&gt; (EKS + S3 + ElastiCache), &lt;code&gt;staging-azure&lt;/code&gt; (AKS + Azure Blob + Azure Service Bus)&lt;/td&gt;
+ &lt;td&gt;Infrastructure + Development&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;orbital-production&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;prod-aws&lt;/code&gt; (EKS + RDS + S3 + CloudFront + SQS), &lt;code&gt;prod-gcp&lt;/code&gt; (GKE + Cloud SQL + Cloud Storage + Pub/Sub)&lt;/td&gt;
+ &lt;td&gt;Infrastructure only&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Services with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn to implement Kubernetes &lt;strong&gt;Services&lt;/strong&gt;, the
+resources responsible for exposing applications inside and outside the cluster.
+Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform
+hands-on labs to gain practical experience with Kubernetes Services, without
+writing any YAML.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider
+starting with the
+&lt;a href="/pr-preview/pr-1136/kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
+tutorial first or
+&lt;a href="/pr-preview/pr-1136/kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/pr-preview/pr-1136/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
+ 
+ See all Achievement and all Project badges in the &lt;a href="https://badges.layer5.io"&gt;Badge Gallery&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+&lt;!-- 
+Pending Leaderboard completion
+See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). --&gt;
+
+&lt;h3 id="how-to-earn-badges" class="heading-link"&gt;
+ How to Earn Badges
+ &lt;a href="#how-to-earn-badges" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/pr-preview/pr-1136/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/pr-preview/pr-1136/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Note&lt;/h4&gt;
+ 
+ This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic understanding of Kubernetes objects (Service, Pod, Container)&lt;/li&gt;
+&lt;li&gt;Access to the &lt;em&gt;Kanvas Playground&lt;/em&gt;. If you don&amp;rsquo;t have an account, sign up at &lt;a href="https://play.meshery.io/"&gt;Kanvas Playground&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="lab-scenario" class="heading-link"&gt;
+ Lab Scenario
+ &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;We will explore a simple application architecture in Kubernetes.&lt;/p&gt;</description></item><item><title>Kubernetes</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/</guid><description>&lt;p&gt;Work through hands-on Kubernetes scenarios in
+&lt;a href="https://playground.meshery.io/"&gt;Meshery Playground&lt;/a&gt; — an interactive live
+cluster environment — using Kanvas to design, deploy, and explore core
+Kubernetes resources without writing YAML.&lt;/p&gt;</description></item><item><title>Deploy AWS EC2 Instances with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Meshery is a powerful multi-cloud management platform that enables you to configure, deploy, and manage AWS resources, such as EC2 instances. In order to manage AWS resources, Meshery uses &lt;a href="https://aws.amazon.com/blogs/containers/aws-controllers-for-kubernetes-ack/"&gt;AWS Controllers for Kubernetes (ACK)&lt;/a&gt;. ACK facilitates the bridge between Kubernetes and AWS services, enabling Meshery to manage AWS resources and Meshery enabling you to benefit from the enhanced experience that Meshery and its extensions offer.&lt;/p&gt;</description></item><item><title>Deploy Azure resources with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/azure/deploy-azure-resources-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/azure/deploy-azure-resources-with-meshery/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Meshery now supports managing Azure resources declaratively through Kubernetes by integrating with Azure Service Operator (ASO). With this capability, you can visually design, deploy, and manage a variety of Azure resources—such as Storage Accounts, Key Vaults, SQL Servers, and more—directly from Meshery’s UI. In this tutorial, you’ll install the ASO operator (without CRD pattern configurations, as Meshery will handle them), create a Service Principal and a Kubernetes secret with your Azure credentials, and use Meshery to provision Azure resources seamlessly into your subscription.&lt;/p&gt;</description></item><item><title>Deploy Azure Storage Account with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/azure/deploy-azure-storage-account-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/azure/deploy-azure-storage-account-with-meshery/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Meshery enables you to manage Azure Storage Accounts declaratively through Kubernetes by leveraging the Azure Service Operator (ASO). In this tutorial, you&amp;rsquo;ll install the ASO operator (without CRD pattern configurations, which Meshery will manage), create a Service Principal and a Kubernetes secret with your Azure credentials, and use Meshery&amp;rsquo;s UI to visually design and deploy a Storage Account resource to your Azure subscription.&lt;/p&gt;</description></item><item><title>Deploying Apache Cassandra with a StatefulSet in Meshery Playground</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we will learn how to deploy a &lt;strong&gt;Apache Cassandra with a StatefulSet&lt;/strong&gt; using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;</description></item><item><title>Deploying PHP Guestbook application with Redis in Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/deploy-php-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/deploy-php-redis/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we will learn how to deploy a &lt;strong&gt;PHP Guestbook application with Redis&lt;/strong&gt; using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;</description></item><item><title>Deploying WordPress and MySQL with Persistent Volumes with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</guid><description>&lt;h2 id="deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery" class="heading-link"&gt;
+ Deploying WordPress and MySql with Persistent Volumes with Meshery
+ &lt;a href="#deploying-wordpress-and-mysql-with-persistent-volumes-with-meshery" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we will learn how to deploy a &lt;strong&gt;WordPress site and a MySQL database with Persistent Volumes&lt;/strong&gt; using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.&lt;/p&gt;</description></item><item><title>Embedding a Meshery Design in a WordPress Post</title><link>/pr-preview/pr-1136/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we will learn how to embed a &lt;strong&gt;Meshery Design&lt;/strong&gt; in a WordPress post using the &lt;strong&gt;Embed&lt;/strong&gt; option in &lt;strong&gt;Kanvas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This tutorial assumes that you have created a design or have an existing one. If not, you can use one of the numerous public designs available in &lt;strong&gt;Kanvas&lt;/strong&gt; for this tutorial.&lt;/p&gt;
+
+&lt;h3 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;WordPress&lt;/strong&gt;: A running WordPress instance or deployment, serving as the sample application for this tutorial.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Meshery Catalog Extension&lt;/strong&gt;: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="steps" class="heading-link"&gt;
+ Steps
+ &lt;a href="#steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Expand the &lt;strong&gt;Actions&lt;/strong&gt; menu on the left and select export.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
+In this tutorial, we will explore Kubernetes CronJobs, a resource that allows you to run jobs periodically at specified intervals. We will use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for working with CronJobs in Kubernetes.&lt;/p&gt;
+&lt;p&gt;Prerequisites:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic understanding of Kubernetes concepts.&lt;/li&gt;
+&lt;li&gt;Meshery Playground access. If you don&amp;rsquo;t have an account, you can sign up at &lt;a href="https://play.meshery.io"&gt;Meshery Playground&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lab Scenario: Scheduled Backups using CronJobs&lt;/p&gt;
+&lt;p&gt;Objective:
+Learn how to use Kubernetes CronJobs to schedule and automate periodic backups of a sample application.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Deployments with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-deployments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-deployments/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn about Kubernetes &lt;strong&gt;Deployments&lt;/strong&gt;. Using Meshery Playground, an interactive live environment, we&amp;rsquo;ll perform hands-on exercises to gain practical experience in deploying, managing, and understanding a Kubernetes &lt;em&gt;Deployment&lt;/em&gt; without writing any YAML.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If this is your first time working with Meshery Playground, consider starting with the &lt;a href="/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt; tutorial first.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic understanding of containerization and Kubernetes concepts.&lt;/li&gt;
+&lt;li&gt;Access to the &lt;em&gt;Meshery Playground&lt;/em&gt;. If you don&amp;rsquo;t have an account, sign up at &lt;a href="https://play.meshery.io/"&gt;Meshery Playground&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="lab-scenario" class="heading-link"&gt;
+ Lab Scenario
+ &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Launch a sample app in a Kubernetes cluster using &lt;em&gt;Deployments&lt;/em&gt;.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes Pods with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-pods/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-pods/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll learn the fundamentals of Pods, the smallest deployable units in the Kubernetes ecosystem. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on labs to gain practical experience in deploying, managing, and understanding some of the concepts related to Pods.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; This tutorial demonstrates stand alone pods, i.e. pods not managed through deployments.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic understanding of containerization and Kubernetes concepts.&lt;/li&gt;
+&lt;li&gt;Access to the &lt;em&gt;Meshery Playground&lt;/em&gt;. If you don&amp;rsquo;t have an account, sign up at &lt;a href="https://play.meshery.io/"&gt;Meshery Playground&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="lab-scenario" class="heading-link"&gt;
+ Lab Scenario
+ &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a &lt;strong&gt;diagram built in Meshery Kanvas&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to Artifact Hub</title><link>/pr-preview/pr-1136/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we&amp;rsquo;ll see how to export a Design from Meshery which we will use to populate an Artifact Hub repository.&lt;/p&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A prepared Artifact Hub repository with &lt;code&gt;Kind&lt;/code&gt; set to &lt;a href="https://artifacthub.io/docs/topics/repositories/meshery-designs"&gt;Meshery Designs&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="steps" class="heading-link"&gt;
+ Steps
+ &lt;a href="#steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="1-open-the-hamburger-menu-in-kanvas" class="heading-link"&gt;
+ 1. Open the hamburger menu in Kanvas
+ &lt;a href="#1-open-the-hamburger-menu-in-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img id="[208 488 6 275 54 30]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ Introduction
+ &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. &lt;em&gt;ConfigMaps&lt;/em&gt; are used to manage configuration data, while &lt;em&gt;Secrets&lt;/em&gt; are used for sensitive information such as passwords. Using Meshery Playground, an interactive live cluster environment, we&amp;rsquo;ll perform hands-on exercises to gain practical knowledge into working with these Kubernetes objects.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; If this is your fist time working with Meshery Playground start with the &lt;a href="/pr-preview/pr-1136/kanvas/tutorials/kubernetes/kubernetes-pods/"&gt;Kubernetes Pods with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
