@@ -23376,7 +23376,7 @@ details > ul {
   right: -5px; }
 
 .resizable--left .resizable__handle {
-  left: -5.3px; }
+  left: -6px; }
 
 .resizable__handle::after {
   content: "";
