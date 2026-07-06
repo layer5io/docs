@@ -347,6 +347,12 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 .highlight-box {
   @extend %ecosystem-box-base;
   box-shadow: $ecosystem-box-glow;
+
+  /* Yield the glow when a following hidden box is hovered/focused */
+  &:has(~ .hidden-highlight-box:hover),
+  &:has(~ .hidden-highlight-box:focus) {
+    box-shadow: none;
+  }
 }
 
 .hidden-highlight-box {
