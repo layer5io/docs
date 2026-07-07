@@ -323,8 +323,6 @@ th {
 }
 
 // Shared ecosystem callout box (emitted by the `ecosystem-box` shortcode).
-$ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em 1em #ebc01733;
-
 %ecosystem-box-base {
   display: flex;
   align-items: center;
