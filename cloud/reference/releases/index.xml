@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.178</title><link>/cloud/reference/releases/v1.0.178/</link><pubDate>Tue, 07 Jul 2026 00:33:16 +0000</pubDate><guid>/cloud/reference/releases/v1.0.178/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.179</title><link>/cloud/reference/releases/v1.0.179/</link><pubDate>Tue, 07 Jul 2026 04:51:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.179/</guid><description>&lt;ul&gt;
+&lt;li&gt;[server] Type CheckNotificationPreference against models.UserPreference alias @hortison (#5682)&lt;/li&gt;
+&lt;li&gt;chore(errors): add ErrEmailAlreadyInUse (3211) to the error catalog @leecalcote (#5681)&lt;/li&gt;
+&lt;li&gt;[docs] Comprehensive make targets, agent-tooling index, and environment-connection runbook @ritzorama (#5679)&lt;/li&gt;
+&lt;li&gt;docs(consolidation): add reusable outcome report SQL @leecalcote (#5680)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote, @ritzorama, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.178</title><link>/cloud/reference/releases/v1.0.178/</link><pubDate>Tue, 07 Jul 2026 00:33:16 +0000</pubDate><guid>/cloud/reference/releases/v1.0.178/</guid><description>&lt;ul&gt;
 &lt;li&gt;refactor(dao): single-source the canonical-user ORDER BY @leecalcote (#5678)&lt;/li&gt;
 &lt;li&gt;feat(users): graceful 409 on duplicate-email create @leecalcote (#5677)&lt;/li&gt;
 &lt;li&gt;fix(consolidation): retire a merged-away user&amp;rsquo;s email addresses on merge @leecalcote (#5675)&lt;/li&gt;
