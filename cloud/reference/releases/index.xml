@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.179</title><link>/cloud/reference/releases/v1.0.179/</link><pubDate>Tue, 07 Jul 2026 04:51:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.179/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.180</title><link>/cloud/reference/releases/v1.0.180/</link><pubDate>Tue, 07 Jul 2026 19:22:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.180/</guid><description>&lt;ul&gt;
+&lt;li&gt;[db] Materialized-view cleanup: retire pattern_metrics, fix summary_by_user owner anchor @hortison (#5688)&lt;/li&gt;
+&lt;li&gt;fix(dev): stop lsof port-kill hang on smbfs mounts; drop meshery_filters seeding @leecalcote (#5690)&lt;/li&gt;
+&lt;li&gt;fix(db): correct seed user first_name and per-user workspace scope @leecalcote (#5689)&lt;/li&gt;
+&lt;li&gt;fix(db): repoint seed scripts off dropped users.user_id column @leecalcote (#5687)&lt;/li&gt;
+&lt;li&gt;chore(deploy): bump MIN_MESHERY_VERSION to v1.0.55 for the v1beta3 cutover @leecalcote (#5685)&lt;/li&gt;
+&lt;li&gt;feat(users): Phase 4 hard cutover - drop users.user_id, re-key JWT sub to users.id (#5410) @leecalcote (#5683)&lt;/li&gt;
+&lt;li&gt;[docs] Add optional BYOC signup scenario matrix to TP-003 @hortison (#5684)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald, @hortison, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.179</title><link>/cloud/reference/releases/v1.0.179/</link><pubDate>Tue, 07 Jul 2026 04:51:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.179/</guid><description>&lt;ul&gt;
 &lt;li&gt;[server] Type CheckNotificationPreference against models.UserPreference alias @hortison (#5682)&lt;/li&gt;
 &lt;li&gt;chore(errors): add ErrEmailAlreadyInUse (3211) to the error catalog @leecalcote (#5681)&lt;/li&gt;
 &lt;li&gt;[docs] Comprehensive make targets, agent-tooling index, and environment-connection runbook @ritzorama (#5679)&lt;/li&gt;
