@@ -35,7 +35,7 @@
   z-index: 30;
 }
 .resizable--right .resizable__handle { right: -5px; }
-.resizable--left  .resizable__handle { left: -5px; }
+.resizable--left  .resizable__handle { left: -6px; }
 
 .resizable__handle::after {
   content: "";
