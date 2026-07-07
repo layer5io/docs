@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.25
+  version: v1.3.26
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -4523,6 +4523,7 @@ paths:
                                 gorm: name
                               default: Uncategorized
                               description: The category of the model that determines the main grouping.
+                              helperText: Select a model category
                               enum:
                                 - Analytics
                                 - App Definition and Development
@@ -14226,6 +14227,7 @@ paths:
                       x-go-type: uuid.UUID
                       x-go-type-import:
                         path: github.com/gofrs/uuid
+                      x-go-name: UserID
                       x-oapi-codegen-extra-tags:
                         db: owner
                         json: userId
@@ -50149,6 +50151,7 @@ paths:
                                                   gorm: name
                                                 default: Uncategorized
                                                 description: The category of the model that determines the main grouping.
+                                                helperText: Select a model category
                                                 enum:
                                                   - Analytics
                                                   - App Definition and Development
