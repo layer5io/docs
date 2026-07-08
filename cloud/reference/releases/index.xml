@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.180</title><link>/cloud/reference/releases/v1.0.180/</link><pubDate>Tue, 07 Jul 2026 19:22:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.180/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.181</title><link>/cloud/reference/releases/v1.0.181/</link><pubDate>Wed, 08 Jul 2026 21:18:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.181/</guid><description>&lt;ul&gt;
+&lt;li&gt;chore: address deferred review feedback (locale date, PID echo, static titles) @leecalcote (#5700)&lt;/li&gt;
+&lt;li&gt;fix(auth): fold + allowlist-check directionless order columns (closes #5691 gap) @leecalcote (#5699)&lt;/li&gt;
+&lt;li&gt;fix(ui): derive error-page type in render to kill the session-expired modal flash @leecalcote (#5698)&lt;/li&gt;
+&lt;li&gt;feat(ui): present 404, 403, and version-incompatibility as distinct error concerns @leecalcote (#5697)&lt;/li&gt;
+&lt;li&gt;fix(ui): render the incompatible-version error instead of a login loop; quiet SPA 404 log @leecalcote (#5695)&lt;/li&gt;
+&lt;li&gt;fix(auth): compare Meshery core version so kanvas v1.0.55-1 passes the min-version gate @leecalcote (#5694)&lt;/li&gt;
+&lt;li&gt;Icon cleanup and import naming compliance @leecalcote (#5546)&lt;/li&gt;
+&lt;li&gt;refactor(auth): guard custom-org-domain resolve behind the org-context check @leecalcote (#5693)&lt;/li&gt;
+&lt;li&gt;fix(auth): silence benign org-domain ERROR on sign-in; clarify linked-account debug logs @leecalcote (#5692)&lt;/li&gt;
+&lt;li&gt;fix(roles): translate camelCase sort column so ?order=roleName works (fixes roles 500) @leecalcote (#5691)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.180</title><link>/cloud/reference/releases/v1.0.180/</link><pubDate>Tue, 07 Jul 2026 19:22:54 +0000</pubDate><guid>/cloud/reference/releases/v1.0.180/</guid><description>&lt;ul&gt;
 &lt;li&gt;[db] Materialized-view cleanup: retire pattern_metrics, fix summary_by_user owner anchor @hortison (#5688)&lt;/li&gt;
 &lt;li&gt;fix(dev): stop lsof port-kill hang on smbfs mounts; drop meshery_filters seeding @leecalcote (#5690)&lt;/li&gt;
 &lt;li&gt;fix(db): correct seed user first_name and per-user workspace scope @leecalcote (#5689)&lt;/li&gt;
