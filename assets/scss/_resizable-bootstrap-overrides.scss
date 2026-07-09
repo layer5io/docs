@@ -50,7 +50,7 @@
   // all remain from the base rule and still apply.
 }
 
-@media screen and (max-width: 991.98px) {
+@include media-breakpoint-down(lg) {
   /* Break the nowrap row so children can stack on their own lines. */
   .row.flex-xl-nowrap {
     flex-wrap: wrap;
