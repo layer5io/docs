@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authentication on Layer5 Documentation</title><link>/pr-preview/pr-1141/tags/authentication/</link><description>Recent content in Authentication on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1141/tags/authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>Identity and Security</title><link>/pr-preview/pr-1141/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1141/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
+&lt;p&gt;Below is an overview of the core identity components within the Layer5 Cloud.&lt;/p&gt;
+
+&lt;h2 id="identity" class="heading-link"&gt;
+ Identity
+ &lt;a href="#identity" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.&lt;/p&gt;</description></item></channel></rss>
