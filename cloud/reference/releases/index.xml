@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.181</title><link>/cloud/reference/releases/v1.0.181/</link><pubDate>Wed, 08 Jul 2026 21:18:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.181/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.182</title><link>/cloud/reference/releases/v1.0.182/</link><pubDate>Thu, 09 Jul 2026 14:59:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.182/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(cron): run anonymous-user maintenance on the in-process scheduler (#5701) @hortison (#5705)&lt;/li&gt;
+&lt;li&gt;[docs] Correct stale pg_cron references; Layer5 Cloud uses its own scheduler @ritzorama (#5702)&lt;/li&gt;
+&lt;li&gt;Fix horizontal overflow and add custom scrollbars to mobile pricing table @NSTKrishna (#5670)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.31 @l5io (#5703)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna, @hortison, @l5io, @leecalcote and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.181</title><link>/cloud/reference/releases/v1.0.181/</link><pubDate>Wed, 08 Jul 2026 21:18:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.181/</guid><description>&lt;ul&gt;
 &lt;li&gt;chore: address deferred review feedback (locale date, PID echo, static titles) @leecalcote (#5700)&lt;/li&gt;
 &lt;li&gt;fix(auth): fold + allowlist-check directionless order columns (closes #5691 gap) @leecalcote (#5699)&lt;/li&gt;
 &lt;li&gt;fix(ui): derive error-page type in render to kill the session-expired modal flash @leecalcote (#5698)&lt;/li&gt;
