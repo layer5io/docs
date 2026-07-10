@@ -82,12 +82,8 @@ const copyCode = (codeSample) => {
     text = codeSample.textContent;
   }
   text = text ? text.trim() : '';
-  if (navigator.clipboard) {
-    return navigator.clipboard.writeText(text + '\n');
-  }
-  console.warn('Clipboard API is not supported in this environment.');
-  return Promise.reject(new Error('Clipboard API is not supported in this environment.'));
-};
+  return navigator.clipboard.writeText(text + '\n');
+  };
 
 const pruneUnselectableElements = (sourceNode, cloneNode) => {
   const sourceChildren = sourceNode.children;
