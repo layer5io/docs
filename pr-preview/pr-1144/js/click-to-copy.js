@@ -3,10 +3,6 @@ let codeListings = document.querySelectorAll('.highlight > pre');
 for (let index = 0; index < codeListings.length; index++) {
   const codeSample = codeListings[index].querySelector('code');
   
-  if (!codeSample) {
-    continue; 
-  }
-
   const copyButton = document.createElement('button');
   const buttonAttributes = {
     type: 'button',
