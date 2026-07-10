@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.182</title><link>/cloud/reference/releases/v1.0.182/</link><pubDate>Thu, 09 Jul 2026 14:59:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.182/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.183</title><link>/cloud/reference/releases/v1.0.183/</link><pubDate>Fri, 10 Jul 2026 15:49:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.183/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Events] Hide Organization filter for single-org members @ritzorama (#5704)&lt;/li&gt;
+&lt;li&gt;[ui][server] Fix My Designs edit crash, repetitive related designs, and image rendering @ritzorama (#5696)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.32 @l5io (#5706)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @marblom007, @meshery-ci, @rishiraj38 and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.182</title><link>/cloud/reference/releases/v1.0.182/</link><pubDate>Thu, 09 Jul 2026 14:59:34 +0000</pubDate><guid>/cloud/reference/releases/v1.0.182/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(cron): run anonymous-user maintenance on the in-process scheduler (#5701) @hortison (#5705)&lt;/li&gt;
 &lt;li&gt;[docs] Correct stale pg_cron references; Layer5 Cloud uses its own scheduler @ritzorama (#5702)&lt;/li&gt;
 &lt;li&gt;Fix horizontal overflow and add custom scrollbars to mobile pricing table @NSTKrishna (#5670)&lt;/li&gt;
