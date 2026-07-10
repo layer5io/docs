@@ -53,14 +53,6 @@ for (let index = 0; index < codeListings.length; index++) {
       }, 2500);
     });
 };
-
-  copyButton.onmouseout = () => {
-    if (!copyButton.classList.contains('td-click-to-copy--copied')) {
-      copyButton.setAttribute('data-bs-original-title', 'Copy to clipboard');
-      tooltip.hide();
-    }
-  };
-
   const buttonDiv = document.createElement('div');
   buttonDiv.classList.add('click-to-copy');
   buttonDiv.append(copyButton);
