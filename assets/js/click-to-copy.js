@@ -32,21 +32,31 @@ for (let index = 0; index < codeListings.length; index++) {
   let revertTimeout;
 
   copyButton.onclick = () => {
-    copyCode(codeSample);
-    copyButton.setAttribute('data-bs-original-title', 'Copied!');
-    tooltip.show();
-
-    copyButton.classList.remove('fa-copy');
-    copyButton.classList.add('fa-check', 'td-click-to-copy--copied');
-
-    clearTimeout(revertTimeout);
-    revertTimeout = setTimeout(() => {
-      copyButton.classList.remove('fa-check', 'td-click-to-copy--copied');
-      copyButton.classList.add('fa-copy');
-      copyButton.setAttribute('data-bs-original-title', 'Copy to clipboard');
-      tooltip.hide();
-    }, 2500);
-  };
+  copyCode(codeSample)
+    .then(() => {
+      copyButton.setAttribute('data-bs-original-title', 'Copied!');
+      tooltip.show();
+      copyButton.classList.remove('fa-copy');
+      copyButton.classList.add('fa-check', 'td-click-to-copy--copied');
+      clearTimeout(revertTimeout);
+      revertTimeout = setTimeout(() => {
+        copyButton.classList.remove('fa-check', 'td-click-to-copy--copied');
+        copyButton.classList.add('fa-copy');
+        copyButton.setAttribute('data-bs-original-title', 'Copy to clipboard');
+        tooltip.hide();
+      }, 2500);
+    })
+    .catch((err) => {
+      console.warn('Failed to copy code to clipboard:', err);
+      copyButton.setAttribute('data-bs-original-title', 'Failed to copy');
+      tooltip.show();
+      clearTimeout(revertTimeout);
+      revertTimeout = setTimeout(() => {
+        copyButton.setAttribute('data-bs-original-title', 'Copy to clipboard');
+        tooltip.hide();
+      }, 2500);
+    });
+};
 
   copyButton.onmouseout = () => {
     if (!copyButton.classList.contains('td-click-to-copy--copied')) {
@@ -77,10 +87,10 @@ const copyCode = (codeSample) => {
   }
   text = text ? text.trim() : '';
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(text + '\n');
-  } else {
-    console.warn('Clipboard API is not supported in this environment.');
+    return navigator.clipboard.writeText(text + '\n');
   }
+  console.warn('Clipboard API is not supported in this environment.');
+  return Promise.reject(new Error('Clipboard API is not supported in this environment.'));
 };
 
 const pruneUnselectableElements = (sourceNode, cloneNode) => {
