@@ -92,7 +92,7 @@ const pruneUnselectableElements = (sourceNode, cloneNode) => {
   for (let i = sourceChildren.length - 1; i >= 0; i--) {
     const sourceChild = sourceChildren[i];
     const cloneChild = cloneChildren[i];
-   const style = window.getComputedStyle(sourceChild);
+    const style = window.getComputedStyle(sourceChild);
     const unselectable =
       style && (style.userSelect === 'none' || style.webkitUserSelect === 'none');
     if (unselectable) {
