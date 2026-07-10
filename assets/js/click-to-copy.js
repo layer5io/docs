@@ -2,6 +2,11 @@ let codeListings = document.querySelectorAll('.highlight > pre');
 
 for (let index = 0; index < codeListings.length; index++) {
   const codeSample = codeListings[index].querySelector('code');
+  
+  if (!codeSample) {
+    continue; 
+  }
+
   const copyButton = document.createElement('button');
   const buttonAttributes = {
     type: 'button',
@@ -71,7 +76,11 @@ const copyCode = (codeSample) => {
     text = codeSample.textContent;
   }
   text = text ? text.trim() : '';
-  navigator.clipboard.writeText(text + '\n');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text + '\n');
+  } else {
+    console.warn('Clipboard API is not supported in this environment.');
+  }
 };
 
 const pruneUnselectableElements = (sourceNode, cloneNode) => {
@@ -81,10 +90,9 @@ const pruneUnselectableElements = (sourceNode, cloneNode) => {
   for (let i = sourceChildren.length - 1; i >= 0; i--) {
     const sourceChild = sourceChildren[i];
     const cloneChild = cloneChildren[i];
-    const style = window.getComputedStyle(sourceChild);
+   const style = window.getComputedStyle(sourceChild);
     const unselectable =
-      style.userSelect === 'none' || style.webkitUserSelect === 'none';
-
+      style && (style.userSelect === 'none' || style.webkitUserSelect === 'none');
     if (unselectable) {
       cloneChild.remove();
       continue;
