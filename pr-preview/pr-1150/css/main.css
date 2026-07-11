@@ -23533,6 +23533,8 @@ body {
   .td-content .highlight {
     overflow-x: auto;
     max-width: 100%; }
+    .td-content .highlight pre {
+      overflow-x: visible; }
   .td-content img,
   .td-content .md__image img,
   .td-content img.md-image-responsive {
