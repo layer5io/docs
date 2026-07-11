@@ -96,6 +96,10 @@ body {
   .highlight {
     overflow-x: auto;
     max-width: 100%;
+
+    pre {
+      overflow-x: visible;
+    }
   }
 
   img,
