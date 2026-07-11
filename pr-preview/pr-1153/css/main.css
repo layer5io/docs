@@ -23625,8 +23625,9 @@ a:not([href]):not([class]):hover {
   @media (min-width: 992px) {
     .td-sidebar-nav.td-sidebar-nav--search-disabled {
       padding-top: 0; } }
-  .td-sidebar-nav__section .ul-1 ul {
-    padding-left: 1.5em; }
+  @media (max-width: 768px) {
+    .td-sidebar-nav__section .ul-1 ul {
+      padding-left: 1.5em; } }
   .td-sidebar-nav__section-title a {
     color: #ced4da;
     font-weight: 700; }
