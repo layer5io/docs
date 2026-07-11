@@ -237,8 +237,10 @@ a:not([href]):not([class]):hover {
     }
   }
 
-  &__section .ul-1 ul {
-    padding-left: 1.5em;
+  @media (max-width: 768px) {
+    &__section .ul-1 ul {
+      padding-left: 1.5em;
+    }
   }
 
   &__section-title {
