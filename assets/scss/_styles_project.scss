@@ -79,6 +79,8 @@ body {
     word-wrap: normal;
     background-color: $gray-900;
     padding: $spacer;
+    overflow-x: auto;
+    max-width: 100%;
 
     >code {
       background-color: inherit !important;
@@ -89,6 +91,11 @@ body {
       white-space: pre;
       border: 0;
     }
+  }
+
+  .highlight {
+    overflow-x: auto;
+    max-width: 100%;
   }
 
   img,

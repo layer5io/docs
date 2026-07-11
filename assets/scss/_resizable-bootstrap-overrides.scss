@@ -17,6 +17,7 @@
    absorb the remaining space instead of holding col-xl-8's 66.66% max-width. */
 .row > main {
   flex: 1 1 0;
+  min-width: 0;
   max-width: none;
   width: auto;
 }
