@@ -21551,9 +21551,9 @@ input[type="search"]::-webkit-search-cancel-button:hover {
     opacity: 1; }
   .related-videos .carousel-control-prev-icon,
   .related-videos .carousel-control-next-icon {
-    mix-blend-mode: difference;
+    filter: invert(100%) contrast(200%);
     transform: scale(1.5);
-    transition: transform 0.3s ease; }
+    transition: transform 0.3s ease, filter 0.3s ease; }
   .related-videos .carousel-control-prev:hover .carousel-control-prev-icon,
   .related-videos .carousel-control-next:hover .carousel-control-next-icon {
     transform: scale(1.8); }
