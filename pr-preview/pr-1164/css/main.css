@@ -21556,7 +21556,7 @@ input[type="search"]::-webkit-search-cancel-button:hover {
     padding: 1.25rem;
     background-size: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease; }
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; }
   .related-videos .carousel-control-prev:hover .carousel-control-prev-icon,
   .related-videos .carousel-control-next:hover .carousel-control-next-icon {
     background-color: #00b39f;
@@ -21569,7 +21569,7 @@ input[type="search"]::-webkit-search-cancel-button:hover {
     height: 4px;
     border-radius: 2px;
     opacity: 0.5;
-    transition: all 0.3s ease; }
+    transition: background-color 0.3s ease, width 0.3s ease; }
   .related-videos .carousel-indicators button.active {
     background-color: #00b39f;
     opacity: 1;
@@ -23424,7 +23424,6 @@ body.is-resizing * {
    absorb the remaining space instead of holding col-xl-8's 66.66% max-width. */
 .row > main {
   flex: 1 1 0;
-  min-width: 0;
   max-width: none;
   width: auto; }
 
@@ -23451,7 +23450,7 @@ body.is-resizing * {
   height: 100%;
   top: auto; }
 
-@media (max-width: 991.98px) {
+@media screen and (max-width: 768px) {
   /* Break the nowrap row so children can stack on their own lines. */
   .row.flex-xl-nowrap {
     flex-wrap: wrap; }
