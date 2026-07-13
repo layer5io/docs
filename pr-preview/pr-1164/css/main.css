@@ -21551,17 +21551,12 @@ input[type="search"]::-webkit-search-cancel-button:hover {
     opacity: 1; }
   .related-videos .carousel-control-prev-icon,
   .related-videos .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    padding: 1.25rem;
-    background-size: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; }
+    mix-blend-mode: difference;
+    transform: scale(1.5);
+    transition: transform 0.3s ease; }
   .related-videos .carousel-control-prev:hover .carousel-control-prev-icon,
   .related-videos .carousel-control-next:hover .carousel-control-next-icon {
-    background-color: #00b39f;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    transform: scale(1.1); }
+    transform: scale(1.8); }
   .related-videos .carousel-indicators {
     bottom: -50px; }
   .related-videos .carousel-indicators button {
