@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.27
+  version: v1.3.28
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -2643,7 +2643,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/auth/key/{keyId}:
+  /api/auth/keys/{keyId}:
     get:
       x-internal:
         - cloud
@@ -30918,6 +30918,12 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: metrics
+          in: query
+          required: false
+          description: Whether to include usage metrics in the response.
+          schema:
+            type: boolean
       responses:
         '200':
           description: Design response
@@ -42091,6 +42097,81 @@ paths:
       tags:
         - Invitation_Invitation
       summary: Approve a signup request
+      parameters:
+        - name: id
+          in: query
+          required: true
+          description: The ID of the signup request being approved or denied.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+        - name: firstName
+          in: query
+          required: false
+          description: First name of the requester.
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: false
+          description: Last name of the requester.
+          schema:
+            type: string
+        - name: email
+          in: query
+          required: false
+          description: Email address of the requester.
+          schema:
+            type: string
+            format: email
+        - name: occupation
+          in: query
+          required: false
+          description: Occupation of the requester.
+          schema:
+            type: string
+        - name: organization
+          in: query
+          required: false
+          description: Organization of the requester.
+          schema:
+            type: string
+        - name: role
+          in: query
+          required: false
+          description: Requested role.
+          schema:
+            type: string
+        - name: formType
+          in: query
+          required: false
+          description: The signup form variant the request originated from.
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          description: Status to record on the signup request.
+          schema:
+            type: string
+        - name: taskId
+          in: query
+          required: false
+          description: Tracking task identifier associated with the request.
+          schema:
+            type: string
+        - name: taskLink
+          in: query
+          required: false
+          description: Tracking task link associated with the request.
+          schema:
+            type: string
       responses:
         '200':
           description: Signup request approved
@@ -42125,6 +42206,81 @@ paths:
       tags:
         - Invitation_Invitation
       summary: Deny a signup request
+      parameters:
+        - name: id
+          in: query
+          required: true
+          description: The ID of the signup request being approved or denied.
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+        - name: firstName
+          in: query
+          required: false
+          description: First name of the requester.
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: false
+          description: Last name of the requester.
+          schema:
+            type: string
+        - name: email
+          in: query
+          required: false
+          description: Email address of the requester.
+          schema:
+            type: string
+            format: email
+        - name: occupation
+          in: query
+          required: false
+          description: Occupation of the requester.
+          schema:
+            type: string
+        - name: organization
+          in: query
+          required: false
+          description: Organization of the requester.
+          schema:
+            type: string
+        - name: role
+          in: query
+          required: false
+          description: Requested role.
+          schema:
+            type: string
+        - name: formType
+          in: query
+          required: false
+          description: The signup form variant the request originated from.
+          schema:
+            type: string
+        - name: status
+          in: query
+          required: false
+          description: Status to record on the signup request.
+          schema:
+            type: string
+        - name: taskId
+          in: query
+          required: false
+          description: Tracking task identifier associated with the request.
+          schema:
+            type: string
+        - name: taskLink
+          in: query
+          required: false
+          description: Tracking task link associated with the request.
+          schema:
+            type: string
       responses:
         '200':
           description: Signup request denied
@@ -47327,7 +47483,7 @@ paths:
       operationId: issueIndefiniteLifetimeToken
       description: Creates a non-expiring user token for provider admin use cases.
       parameters:
-        - name: owner
+        - name: userId
           in: query
           description: UUID of the user to issue the indefinite token for.
           required: true
