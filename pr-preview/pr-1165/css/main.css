@@ -21547,32 +21547,30 @@ input[type="search"]::-webkit-search-cancel-button:hover {
 
 .related-videos {
   margin: 2rem 0; }
-  .related-videos .carousel-item {
-    padding: 1rem; }
-  .related-videos .carousel-control-prev,
-  .related-videos .carousel-control-next {
-    width: 8%;
-    opacity: 1; }
-  .related-videos .carousel-control-prev-icon,
-  .related-videos .carousel-control-next-icon {
-    filter: invert(100%) contrast(200%);
-    transition: filter 0.3s ease; }
-  .related-videos .carousel-control-prev:hover .carousel-control-prev-icon,
-  .related-videos .carousel-control-next:hover .carousel-control-next-icon {
-    /* Optional: add a slight hover effect, but no scale */
-    filter: invert(100%) contrast(200%) drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); }
-  .related-videos .carousel-indicators {
-    bottom: -50px; }
-  .related-videos .carousel-indicators button {
-    background-color: #b1b6b8;
-    height: 4px;
-    border-radius: 2px;
-    opacity: 0.5;
-    transition: background-color 0.3s ease, width 0.3s ease; }
-  .related-videos .carousel-indicators button.active {
-    background-color: #00b39f;
-    opacity: 1;
-    width: 35px; }
+
+.carousel-item {
+  padding: 1rem; }
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.7; }
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1; }
+
+.carousel-indicators {
+  bottom: -40px; }
+
+.carousel-indicators button {
+  background-color: #666;
+  height: 3px;
+  opacity: 0.5; }
+
+.carousel-indicators button.active {
+  background-color: #fff;
+  opacity: 1; }
 
 .yt-embed-container {
   position: relative;
