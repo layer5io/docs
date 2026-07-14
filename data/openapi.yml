@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.26
+  version: v1.3.27
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -18680,6 +18680,7 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
+                            readOnly: true
                             x-go-name: ID
                             x-oapi-codegen-extra-tags:
                               db: id
@@ -18693,6 +18694,7 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
+                            readOnly: true
                             x-go-name: Owner
                             x-oapi-codegen-extra-tags:
                               db: owner
@@ -18721,12 +18723,14 @@ paths:
                             maxLength: 5000
                           emails:
                             type: array
+                            nullable: true
                             description: >-
                               Email addresses or patterns for which the invitation is valid. Null means the invitation
                               is valid for any email address.
                             x-go-type: pq.StringArray
                             x-go-type-import:
                               path: github.com/lib/pq
+                            x-go-type-skip-optional-pointer: true
                             items:
                               type: string
                               pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -18741,6 +18745,7 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
+                            readOnly: true
                             x-go-name: OrgID
                             x-oapi-codegen-extra-tags:
                               db: org_id
@@ -18748,6 +18753,7 @@ paths:
                           expiresAt:
                             type: string
                             format: date-time
+                            nullable: true
                             description: >-
                               Timestamp when the invitation expires, if applicable. Null or empty means the invitation
                               does not expire.
@@ -18762,12 +18768,14 @@ paths:
                             minimum: 0
                           acceptedBy:
                             type: array
+                            readOnly: true
                             description: >-
                               List of user ids that have already accepted the invitation. Empty means the invitation has
                               not been used yet.
                             x-go-type: pq.StringArray
                             x-go-type-import:
                               path: github.com/lib/pq
+                            x-go-type-skip-optional-pointer: true
                             items:
                               type: string
                             x-oapi-codegen-extra-tags:
@@ -18805,22 +18813,29 @@ paths:
                           createdAt:
                             type: string
                             format: date-time
+                            readOnly: true
                             description: Timestamp when the invitation was created.
+                            x-go-type-skip-optional-pointer: true
                             x-oapi-codegen-extra-tags:
                               db: created_at
                               json: createdAt
                           updatedAt:
                             type: string
                             format: date-time
+                            readOnly: true
                             description: Timestamp when the invitation was last updated.
+                            x-go-type-skip-optional-pointer: true
                             x-oapi-codegen-extra-tags:
                               db: updated_at
                               json: updatedAt
                           deletedAt:
                             type: string
                             format: date-time
+                            readOnly: true
+                            nullable: true
                             description: Timestamp when the invitation was deleted, if applicable.
                             x-go-type: core.NullTime
+                            x-go-type-skip-optional-pointer: true
                             x-go-type-import:
                               path: github.com/meshery/schemas/models/core
                             x-oapi-codegen-extra-tags:
@@ -19299,6 +19314,7 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
+                            readOnly: true
                             x-go-name: ID
                             x-oapi-codegen-extra-tags:
                               db: id
@@ -19312,6 +19328,7 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
+                            readOnly: true
                             x-go-name: Owner
                             x-oapi-codegen-extra-tags:
                               db: owner
@@ -19340,12 +19357,14 @@ paths:
                             maxLength: 5000
                           emails:
                             type: array
+                            nullable: true
                             description: >-
                               Email addresses or patterns for which the invitation is valid. Null means the invitation
                               is valid for any email address.
                             x-go-type: pq.StringArray
                             x-go-type-import:
                               path: github.com/lib/pq
+                            x-go-type-skip-optional-pointer: true
                             items:
                               type: string
                               pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -19360,6 +19379,7 @@ paths:
                             x-go-type: uuid.UUID
                             x-go-type-import:
                               path: github.com/gofrs/uuid
+                            readOnly: true
                             x-go-name: OrgID
                             x-oapi-codegen-extra-tags:
                               db: org_id
@@ -19367,6 +19387,7 @@ paths:
                           expiresAt:
                             type: string
                             format: date-time
+                            nullable: true
                             description: >-
                               Timestamp when the invitation expires, if applicable. Null or empty means the invitation
                               does not expire.
@@ -19381,12 +19402,14 @@ paths:
                             minimum: 0
                           acceptedBy:
                             type: array
+                            readOnly: true
                             description: >-
                               List of user ids that have already accepted the invitation. Empty means the invitation has
                               not been used yet.
                             x-go-type: pq.StringArray
                             x-go-type-import:
                               path: github.com/lib/pq
+                            x-go-type-skip-optional-pointer: true
                             items:
                               type: string
                             x-oapi-codegen-extra-tags:
@@ -19424,22 +19447,29 @@ paths:
                           createdAt:
                             type: string
                             format: date-time
+                            readOnly: true
                             description: Timestamp when the invitation was created.
+                            x-go-type-skip-optional-pointer: true
                             x-oapi-codegen-extra-tags:
                               db: created_at
                               json: createdAt
                           updatedAt:
                             type: string
                             format: date-time
+                            readOnly: true
                             description: Timestamp when the invitation was last updated.
+                            x-go-type-skip-optional-pointer: true
                             x-oapi-codegen-extra-tags:
                               db: updated_at
                               json: updatedAt
                           deletedAt:
                             type: string
                             format: date-time
+                            readOnly: true
+                            nullable: true
                             description: Timestamp when the invitation was deleted, if applicable.
                             x-go-type: core.NullTime
+                            x-go-type-skip-optional-pointer: true
                             x-go-type-import:
                               path: github.com/meshery/schemas/models/core
                             x-oapi-codegen-extra-tags:
@@ -40493,6 +40523,7 @@ paths:
                 properties:
                   id:
                     description: Unique identifier for the invitation, also used as the invitation code.
+                    readOnly: true
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       db: id
@@ -40506,6 +40537,7 @@ paths:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
+                    readOnly: true
                     x-go-name: Owner
                     x-oapi-codegen-extra-tags:
                       db: owner
@@ -40537,12 +40569,14 @@ paths:
                     maxLength: 5000
                   emails:
                     type: array
+                    nullable: true
                     description: >-
                       Email addresses or patterns for which the invitation is valid. Null means the invitation is valid
                       for any email address.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                       pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -40550,6 +40584,7 @@ paths:
                       x-go-type: string
                   orgId:
                     description: ID of the organization to which the user is invited.
+                    readOnly: true
                     x-go-name: OrgID
                     x-oapi-codegen-extra-tags:
                       db: org_id
@@ -40562,6 +40597,7 @@ paths:
                   expiresAt:
                     type: string
                     format: date-time
+                    nullable: true
                     description: >-
                       Timestamp when the invitation expires, if applicable. Null or empty means the invitation does not
                       expire.
@@ -40576,12 +40612,14 @@ paths:
                     minimum: 0
                   acceptedBy:
                     type: array
+                    readOnly: true
                     description: >-
                       List of user ids that have already accepted the invitation. Empty means the invitation has not
                       been used yet.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                     x-oapi-codegen-extra-tags:
@@ -40619,22 +40657,29 @@ paths:
                   createdAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was created.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: created_at
                       json: createdAt
                   updatedAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was last updated.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                       json: updatedAt
                   deletedAt:
                     type: string
                     format: date-time
+                    readOnly: true
+                    nullable: true
                     description: Timestamp when the invitation was deleted, if applicable.
                     x-go-type: core.NullTime
+                    x-go-type-skip-optional-pointer: true
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-oapi-codegen-extra-tags:
@@ -40855,6 +40900,7 @@ paths:
                 properties:
                   id:
                     description: Unique identifier for the invitation, also used as the invitation code.
+                    readOnly: true
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       db: id
@@ -40868,6 +40914,7 @@ paths:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
+                    readOnly: true
                     x-go-name: Owner
                     x-oapi-codegen-extra-tags:
                       db: owner
@@ -40899,12 +40946,14 @@ paths:
                     maxLength: 5000
                   emails:
                     type: array
+                    nullable: true
                     description: >-
                       Email addresses or patterns for which the invitation is valid. Null means the invitation is valid
                       for any email address.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                       pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -40912,6 +40961,7 @@ paths:
                       x-go-type: string
                   orgId:
                     description: ID of the organization to which the user is invited.
+                    readOnly: true
                     x-go-name: OrgID
                     x-oapi-codegen-extra-tags:
                       db: org_id
@@ -40924,6 +40974,7 @@ paths:
                   expiresAt:
                     type: string
                     format: date-time
+                    nullable: true
                     description: >-
                       Timestamp when the invitation expires, if applicable. Null or empty means the invitation does not
                       expire.
@@ -40938,12 +40989,14 @@ paths:
                     minimum: 0
                   acceptedBy:
                     type: array
+                    readOnly: true
                     description: >-
                       List of user ids that have already accepted the invitation. Empty means the invitation has not
                       been used yet.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                     x-oapi-codegen-extra-tags:
@@ -40981,22 +41034,29 @@ paths:
                   createdAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was created.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: created_at
                       json: createdAt
                   updatedAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was last updated.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                       json: updatedAt
                   deletedAt:
                     type: string
                     format: date-time
+                    readOnly: true
+                    nullable: true
                     description: Timestamp when the invitation was deleted, if applicable.
                     x-go-type: core.NullTime
+                    x-go-type-skip-optional-pointer: true
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-oapi-codegen-extra-tags:
@@ -41111,6 +41171,7 @@ paths:
                       properties:
                         id:
                           description: Unique identifier for the invitation, also used as the invitation code.
+                          readOnly: true
                           x-go-name: ID
                           x-oapi-codegen-extra-tags:
                             db: id
@@ -41124,6 +41185,7 @@ paths:
                           description: >-
                             ID of the user who created the invitation. Tracks who created the invitation for auditing
                             purposes.
+                          readOnly: true
                           x-go-name: Owner
                           x-oapi-codegen-extra-tags:
                             db: owner
@@ -41157,12 +41219,14 @@ paths:
                           maxLength: 5000
                         emails:
                           type: array
+                          nullable: true
                           description: >-
                             Email addresses or patterns for which the invitation is valid. Null means the invitation is
                             valid for any email address.
                           x-go-type: pq.StringArray
                           x-go-type-import:
                             path: github.com/lib/pq
+                          x-go-type-skip-optional-pointer: true
                           items:
                             type: string
                             pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -41170,6 +41234,7 @@ paths:
                             x-go-type: string
                         orgId:
                           description: ID of the organization to which the user is invited.
+                          readOnly: true
                           x-go-name: OrgID
                           x-oapi-codegen-extra-tags:
                             db: org_id
@@ -41182,6 +41247,7 @@ paths:
                         expiresAt:
                           type: string
                           format: date-time
+                          nullable: true
                           description: >-
                             Timestamp when the invitation expires, if applicable. Null or empty means the invitation
                             does not expire.
@@ -41196,12 +41262,14 @@ paths:
                           minimum: 0
                         acceptedBy:
                           type: array
+                          readOnly: true
                           description: >-
                             List of user ids that have already accepted the invitation. Empty means the invitation has
                             not been used yet.
                           x-go-type: pq.StringArray
                           x-go-type-import:
                             path: github.com/lib/pq
+                          x-go-type-skip-optional-pointer: true
                           items:
                             type: string
                           x-oapi-codegen-extra-tags:
@@ -41239,22 +41307,29 @@ paths:
                         createdAt:
                           type: string
                           format: date-time
+                          readOnly: true
                           description: Timestamp when the invitation was created.
+                          x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: created_at
                             json: createdAt
                         updatedAt:
                           type: string
                           format: date-time
+                          readOnly: true
                           description: Timestamp when the invitation was last updated.
+                          x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: updated_at
                             json: updatedAt
                         deletedAt:
                           type: string
                           format: date-time
+                          readOnly: true
+                          nullable: true
                           description: Timestamp when the invitation was deleted, if applicable.
                           x-go-type: core.NullTime
+                          x-go-type-skip-optional-pointer: true
                           x-go-type-import:
                             path: github.com/meshery/schemas/models/core
                           x-oapi-codegen-extra-tags:
@@ -41423,6 +41498,7 @@ paths:
                 properties:
                   id:
                     description: Unique identifier for the invitation, also used as the invitation code.
+                    readOnly: true
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       db: id
@@ -41436,6 +41512,7 @@ paths:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
+                    readOnly: true
                     x-go-name: Owner
                     x-oapi-codegen-extra-tags:
                       db: owner
@@ -41467,12 +41544,14 @@ paths:
                     maxLength: 5000
                   emails:
                     type: array
+                    nullable: true
                     description: >-
                       Email addresses or patterns for which the invitation is valid. Null means the invitation is valid
                       for any email address.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                       pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -41480,6 +41559,7 @@ paths:
                       x-go-type: string
                   orgId:
                     description: ID of the organization to which the user is invited.
+                    readOnly: true
                     x-go-name: OrgID
                     x-oapi-codegen-extra-tags:
                       db: org_id
@@ -41492,6 +41572,7 @@ paths:
                   expiresAt:
                     type: string
                     format: date-time
+                    nullable: true
                     description: >-
                       Timestamp when the invitation expires, if applicable. Null or empty means the invitation does not
                       expire.
@@ -41506,12 +41587,14 @@ paths:
                     minimum: 0
                   acceptedBy:
                     type: array
+                    readOnly: true
                     description: >-
                       List of user ids that have already accepted the invitation. Empty means the invitation has not
                       been used yet.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                     x-oapi-codegen-extra-tags:
@@ -41549,22 +41632,29 @@ paths:
                   createdAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was created.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: created_at
                       json: createdAt
                   updatedAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was last updated.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                       json: updatedAt
                   deletedAt:
                     type: string
                     format: date-time
+                    readOnly: true
+                    nullable: true
                     description: Timestamp when the invitation was deleted, if applicable.
                     x-go-type: core.NullTime
+                    x-go-type-skip-optional-pointer: true
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-oapi-codegen-extra-tags:
@@ -41630,6 +41720,7 @@ paths:
                 properties:
                   id:
                     description: Unique identifier for the invitation, also used as the invitation code.
+                    readOnly: true
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       db: id
@@ -41643,6 +41734,7 @@ paths:
                     description: >-
                       ID of the user who created the invitation. Tracks who created the invitation for auditing
                       purposes.
+                    readOnly: true
                     x-go-name: Owner
                     x-oapi-codegen-extra-tags:
                       db: owner
@@ -41674,12 +41766,14 @@ paths:
                     maxLength: 5000
                   emails:
                     type: array
+                    nullable: true
                     description: >-
                       Email addresses or patterns for which the invitation is valid. Null means the invitation is valid
                       for any email address.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                       pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
@@ -41687,6 +41781,7 @@ paths:
                       x-go-type: string
                   orgId:
                     description: ID of the organization to which the user is invited.
+                    readOnly: true
                     x-go-name: OrgID
                     x-oapi-codegen-extra-tags:
                       db: org_id
@@ -41699,6 +41794,7 @@ paths:
                   expiresAt:
                     type: string
                     format: date-time
+                    nullable: true
                     description: >-
                       Timestamp when the invitation expires, if applicable. Null or empty means the invitation does not
                       expire.
@@ -41713,12 +41809,14 @@ paths:
                     minimum: 0
                   acceptedBy:
                     type: array
+                    readOnly: true
                     description: >-
                       List of user ids that have already accepted the invitation. Empty means the invitation has not
                       been used yet.
                     x-go-type: pq.StringArray
                     x-go-type-import:
                       path: github.com/lib/pq
+                    x-go-type-skip-optional-pointer: true
                     items:
                       type: string
                     x-oapi-codegen-extra-tags:
@@ -41756,22 +41854,29 @@ paths:
                   createdAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was created.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: created_at
                       json: createdAt
                   updatedAt:
                     type: string
                     format: date-time
+                    readOnly: true
                     description: Timestamp when the invitation was last updated.
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                       json: updatedAt
                   deletedAt:
                     type: string
                     format: date-time
+                    readOnly: true
+                    nullable: true
                     description: Timestamp when the invitation was deleted, if applicable.
                     x-go-type: core.NullTime
+                    x-go-type-skip-optional-pointer: true
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-oapi-codegen-extra-tags:
