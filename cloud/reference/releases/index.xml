@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.190</title><link>/cloud/reference/releases/v1.0.190/</link><pubDate>Wed, 15 Jul 2026 04:59:42 +0000</pubDate><guid>/cloud/reference/releases/v1.0.190/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.191</title><link>/cloud/reference/releases/v1.0.191/</link><pubDate>Wed, 15 Jul 2026 17:37:05 +0000</pubDate><guid>/cloud/reference/releases/v1.0.191/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.35 @l5io (#5728)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tata Consulting v2.2.2 content update @l5io (#5729)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io and @rishiraj38&lt;/p&gt;</description></item><item><title>v1.0.190</title><link>/cloud/reference/releases/v1.0.190/</link><pubDate>Wed, 15 Jul 2026 04:59:42 +0000</pubDate><guid>/cloud/reference/releases/v1.0.190/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(startup): non-blocking cron first-run + legible end of data seeding @hortison (#5726)&lt;/li&gt;
 &lt;li&gt;Stamp the RTK consumer-swap execution log complete @hortison (#5725)&lt;/li&gt;
 &lt;/ul&gt;
