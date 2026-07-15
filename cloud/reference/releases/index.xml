@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.192</title><link>/cloud/reference/releases/v1.0.192/</link><pubDate>Wed, 15 Jul 2026 22:46:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.192/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.193</title><link>/cloud/reference/releases/v1.0.193/</link><pubDate>Wed, 15 Jul 2026 23:28:13 +0000</pubDate><guid>/cloud/reference/releases/v1.0.193/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Fix] Exclude soft-deleted events from event queries and severity counts @NSTKrishna (#5719)&lt;/li&gt;
+&lt;li&gt;[Cloud] Invitation fixes: retain linked invitation cross-org, unlimited-quota accounting, per-acceptance audit events @hortison (#5732)&lt;/li&gt;
+&lt;li&gt;[dao] Exclude severity filter from breakdown, close remaining soft-delete gaps @hortison (#5734)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna, @hortison and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.192</title><link>/cloud/reference/releases/v1.0.192/</link><pubDate>Wed, 15 Jul 2026 22:46:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.192/</guid><description>&lt;ul&gt;
 &lt;li&gt;[Server] Fix GetUserKeys to read org ID from URL path param on org switch @rishiraj38 (#5730)&lt;/li&gt;
 &lt;li&gt;[Server] Harden GetUserKeys org resolution and add tests (review fixes for #5730) @hortison (#5733)&lt;/li&gt;
 &lt;li&gt;[UI] Never flash the sign-in carousel when an org has it disabled @hortison (#5731)&lt;/li&gt;
