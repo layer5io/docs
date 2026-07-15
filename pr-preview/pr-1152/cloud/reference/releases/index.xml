@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1152/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1152/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.183</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.183/</link><pubDate>Fri, 10 Jul 2026 15:49:41 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.183/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1152/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1152/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.190</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.190/</link><pubDate>Wed, 15 Jul 2026 04:59:42 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.190/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(startup): non-blocking cron first-run + legible end of data seeding @hortison (#5726)&lt;/li&gt;
+&lt;li&gt;Stamp the RTK consumer-swap execution log complete @hortison (#5725)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison&lt;/p&gt;</description></item><item><title>v1.0.189</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.189/</link><pubDate>Wed, 15 Jul 2026 02:35:57 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.189/</guid><description>&lt;ul&gt;
+&lt;li&gt;Align Go meshery/schemas pin with npm at v1.3.30 @hortison (#5724)&lt;/li&gt;
+&lt;li&gt;Retire the 136 hand-authored RTK endpoints duplicating the generated cloudApi @hortison (#5723)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.188</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.188/</link><pubDate>Wed, 15 Jul 2026 00:10:38 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.188/</guid><description>&lt;ul&gt;
+&lt;li&gt;Bridge cache invalidation and auth sync across the two RTK APIs @hortison (#5722)&lt;/li&gt;
+&lt;li&gt;Accept canonical pageSize in every direct query-param reader @hortison (#5720)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.34 @l5io (#5717)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tata Consulting v2.2.0 content update @l5io (#5721)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@KhushamBansal, @hortison, @l5io and @rishiraj38&lt;/p&gt;</description></item><item><title>v1.0.187</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.187/</link><pubDate>Tue, 14 Jul 2026 04:24:59 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.187/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tata Consulting v2.1.11 content update @l5io (#5716)&lt;/li&gt;
+&lt;li&gt;Tata Consulting v2.1.10 content update @l5io (#5715)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io&lt;/p&gt;</description></item><item><title>v1.0.186</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.186/</link><pubDate>Tue, 14 Jul 2026 00:16:06 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.186/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(invitations): display linked open invitation in edit-org form; implement GET /invitations/:id @leecalcote (#5714)&lt;/li&gt;
+&lt;li&gt;fix(invitations): allow nil emails &amp;amp; surface expiresAt in edit form (#5712) @leecalcote (#5713)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.185</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.185/</link><pubDate>Mon, 13 Jul 2026 21:31:59 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.185/</guid><description>&lt;h2 id="-academy" class="heading-link"&gt;
+ 📚 Academy
+ &lt;a href="#-academy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Academy latest content update @l5io (#5711)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@banana-three-join and @l5io&lt;/p&gt;</description></item><item><title>v1.0.184</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.184/</link><pubDate>Sat, 11 Jul 2026 12:18:36 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.184/</guid><description>&lt;ul&gt;
+&lt;li&gt;[Auth] Stop public Academy pages from 401ing anonymous visitors @ritzorama (#5708)&lt;/li&gt;
+&lt;li&gt;Bump @sistent/sistent 0.21.32 to 0.21.33 @KhushamBansal (#5710)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@KhushamBansal, @leecalcote, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.183</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.183/</link><pubDate>Fri, 10 Jul 2026 15:49:41 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.183/</guid><description>&lt;ul&gt;
 &lt;li&gt;[Events] Hide Organization filter for single-org members @ritzorama (#5704)&lt;/li&gt;
 &lt;li&gt;[ui][server] Fix My Designs edit crash, repetitive related designs, and image rendering @ritzorama (#5696)&lt;/li&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.21.32 @l5io (#5706)&lt;/li&gt;

@@ -23413,6 +23413,7 @@ body.is-resizing * {
    absorb the remaining space instead of holding col-xl-8's 66.66% max-width. */
 .row > main {
   flex: 1 1 0;
+  min-width: 0;
   max-width: none;
   width: auto; }
 
@@ -23439,7 +23440,7 @@ body.is-resizing * {
   height: 100%;
   top: auto; }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 991.98px) {
   /* Break the nowrap row so children can stack on their own lines. */
   .row.flex-xl-nowrap {
     flex-wrap: wrap; }
@@ -23942,6 +23943,10 @@ a:not([href]):not([class]):hover {
   background-color: #121212 !important; }
   .click-to-copy button:hover {
     color: #cccccc !important; }
+  .click-to-copy button:active {
+    transform: none !important; }
+  .click-to-copy button.td-click-to-copy--copied {
+    color: #198754 !important; }
 
 .tooltip .tooltip-inner {
   background-color: #121212;
