@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.188</title><link>/cloud/reference/releases/v1.0.188/</link><pubDate>Wed, 15 Jul 2026 00:10:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.188/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.189</title><link>/cloud/reference/releases/v1.0.189/</link><pubDate>Wed, 15 Jul 2026 02:35:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.189/</guid><description>&lt;ul&gt;
+&lt;li&gt;Align Go meshery/schemas pin with npm at v1.3.30 @hortison (#5724)&lt;/li&gt;
+&lt;li&gt;Retire the 136 hand-authored RTK endpoints duplicating the generated cloudApi @hortison (#5723)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.188</title><link>/cloud/reference/releases/v1.0.188/</link><pubDate>Wed, 15 Jul 2026 00:10:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.188/</guid><description>&lt;ul&gt;
 &lt;li&gt;Bridge cache invalidation and auth sync across the two RTK APIs @hortison (#5722)&lt;/li&gt;
 &lt;li&gt;Accept canonical pageSize in every direct query-param reader @hortison (#5720)&lt;/li&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.21.34 @l5io (#5717)&lt;/li&gt;
