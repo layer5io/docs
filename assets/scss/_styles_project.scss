@@ -705,6 +705,14 @@ a:not([href]):not([class]):hover {
   &:hover {
     color: $body-color !important;
   }
+
+  &:active {
+    transform: none !important;
+  }
+
+  &.td-click-to-copy--copied {
+    color: $success !important;
+  }
 }
 
 .tooltip .tooltip-inner {
