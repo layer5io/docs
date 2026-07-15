@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.29
+  version: v1.3.30
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -1365,7 +1365,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -2083,7 +2083,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -2276,7 +2276,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -2862,7 +2862,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -3629,7 +3629,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -8323,7 +8323,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: Get responses by page size
@@ -8804,7 +8804,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: Get responses by page size
@@ -9116,7 +9116,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: Get responses by page size
@@ -9649,7 +9649,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -10000,7 +10000,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -10366,7 +10366,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -14582,7 +14582,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -37775,7 +37775,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -38554,7 +38554,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -43894,7 +43894,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pagesize
           in: query
           description: Get responses by pagesize
@@ -45488,7 +45488,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pagesize
           in: query
           description: Get responses by pagesize
@@ -45897,7 +45897,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pagesize
           in: query
           description: Get responses by pagesize
@@ -48405,7 +48405,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -49243,7 +49243,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -49684,7 +49684,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -50188,7 +50188,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
@@ -55074,7 +55074,7 @@ paths:
           in: query
           description: Get responses by page
           schema:
-            type: string
+            type: integer
         - name: pageSize
           in: query
           description: >-
