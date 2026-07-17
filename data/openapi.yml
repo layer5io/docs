@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.31
+  version: v1.3.32
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -27107,43 +27107,51 @@ paths:
                           x-oapi-codegen-extra-tags:
                             json: server,omitempty
                         owner:
-                          description: ID of the user who owns the underlying connection.
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                           x-oapi-codegen-extra-tags:
                             json: owner,omitempty
+                        createdBy:
                           type: string
                           format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        createdBy:
-                          description: ID of the user who registered the context.
                           x-oapi-codegen-extra-tags:
                             json: createdBy,omitempty
+                        mesheryInstanceId:
                           type: string
                           format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        mesheryInstanceId:
-                          description: ID of the Meshery instance the context is registered with.
                           x-go-name: MesheryInstanceID
                           x-oapi-codegen-extra-tags:
                             json: mesheryInstanceId,omitempty
+                        kubernetesServerId:
                           type: string
                           format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
-                        kubernetesServerId:
-                          description: ID of the Kubernetes server associated with the context.
                           x-go-name: KubernetesServerID
                           x-oapi-codegen-extra-tags:
                             json: kubernetesServerId,omitempty
-                          type: string
-                          format: uuid
-                          x-go-type: uuid.UUID
-                          x-go-type-import:
-                            path: github.com/gofrs/uuid
                         deploymentType:
                           type: string
                           description: How Meshery is deployed relative to the cluster (e.g. in_cluster, out_of_cluster).
@@ -27173,16 +27181,28 @@ paths:
                           x-oapi-codegen-extra-tags:
                             json: updatedAt,omitempty
                         connectionId:
-                          description: ID of the connection this context was projected from.
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                           x-go-name: ConnectionID
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             json: connectionId,omitempty
-                          type: string
-                          format: uuid
-                          x-go-type: uuid.UUID
-                          x-go-type-import:
-                            path: github.com/gofrs/uuid
+                        reachable:
+                          description: >-
+                            Whether this context's API server answered the probe run while its kubeconfig was processed.
+                            Discovery and import surface unreachable contexts too, so they can still be registered;
+                            reachability only gates the connected transition.
+                          x-go-type: bool
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            json: reachable
+                          type: boolean
                     x-oapi-codegen-extra-tags:
                       json: contexts
         '401':
