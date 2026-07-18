@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.33
+  version: v1.3.34
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -24,6 +24,8 @@ tags:
     description: Operations related to design evaluation
   - name: Feature_Features
     description: Operations related to features and entitlements
+  - name: Registry_Registry
+    description: Operations on Meshery's capabilities registry.
   - name: Support_Support
     description: Operations related to help and support requests
   - name: System_API_System
@@ -3830,148 +3832,6 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/meshmodels/register:
-    post:
-      x-internal:
-        - cloud
-        - meshery
-      tags:
-        - Model_Models
-      summary: Register mesh models
-      operationId: registerMeshmodels
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - importBody
-                - uploadType
-                - register
-              properties:
-                importBody:
-                  oneOf:
-                    - title: File Import
-                      type: object
-                      required:
-                        - fileName
-                        - modelFile
-                      properties:
-                        fileName:
-                          type: string
-                          description: Name of the file being uploaded.
-                          maxLength: 255
-                        modelFile:
-                          type: string
-                          description: >-
-                            Supported model file formats are: .tar, .tar.gz, and .tgz. See [Import Models
-                            Documentation](https://docs.meshery.io/guides/configuration-management/importing-models#import-models-using-meshery-ui)
-                            for details
-                    - title: URL Import
-                      type: object
-                      required:
-                        - url
-                      properties:
-                        url:
-                          type: string
-                          format: uri
-                          description: >-
-                            A direct URL to a single model file, for example:
-                            https://raw.github.com/your-model-file.tar. Supported model file formats are: .tar, .tar.gz,
-                            and .tgz. \n\nFor bulk import of your model use the GitHub connection or CSV files. See
-                            [Import Models
-                            Documentation](https://docs.meshery.io/guides/configuration-management/importing-models#import-models-using-meshery-ui)
-                            for details
-                    - title: CSV Import
-                      type: object
-                      required:
-                        - modelCsv
-                        - componentCsv
-                        - relationshipCsv
-                      properties:
-                        modelCsv:
-                          type: string
-                          format: binary
-                          description: Upload a CSV file containing model definitions
-                        componentCsv:
-                          type: string
-                          format: binary
-                          description: Upload a CSV file containing component definitions
-                        relationshipCsv:
-                          type: string
-                          format: binary
-                          description: Upload a CSV file containing relationship definitions
-                    - title: Model Create
-                      type: object
-                      required:
-                        - model
-                        - url
-                      properties:
-                        url:
-                          type: string
-                          description: URI to the source code or package of the model.
-                          format: uri
-                          oneOf:
-                            - title: GitHub
-                              type: string
-                              pattern: ^git://github\.com/[\w.-]+/[\w.-]+(/[\w.-]+/[\w/-]+)?$
-                              description: Git protocol URL for GitHub repository or specific resource path
-                              example: git://github.com/cert-manager/cert-manager/master/deploy/crds
-                              x-metadata:
-                                uiType: url
-                                validationHint: Enter a git protocol URL (e.g., git://github.com/owner/repo)
-                            - title: Artifact Hub
-                              type: string
-                              pattern: >-
-                                ^https:\/\/artifacthub\.io\/packages\/(search\?ts_query_web=[\w.-]+|[\w.-]+\/[\w.-]+\/[\w.-]+)$
-                              description: Artifact Hub package URL or search query URL with model name parameter
-                              example: https://artifacthub.io/packages/search?ts_query_web={model-name}
-                              x-metadata:
-                                uiType: url
-                                validationHint: >-
-                                  Enter an Artifact Hub URL (e.g.,
-                                  https://artifacthub.io/packages/search?ts_query_web={meshery-operator})
-                uploadType:
-                  type: string
-                  title: Upload method
-                  x-enum-casing-exempt: true
-                  enum:
-                    - file
-                    - urlImport
-                    - csv
-                    - url
-                  enumDescriptions:
-                    - Upload a model file (.tar, .tar.gz, .tgz) from your local system
-                    - Import a model file using a direct URL to the source
-                    - Upload separate CSV files for model definitions, components, and their relationships
-                  description: >-
-                    Choose the method you prefer to upload your model file. Select 'File Import' or 'CSV Import' if you
-                    have the file on your local system or 'URL Import' if you have the file hosted online.
-                register:
-                  type: boolean
-                  nullable: false
-                  description: The register of the importrequest.
-      responses:
-        '201':
-          description: Model registered
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-        '400':
-          description: Invalid request format
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
   /api/integrations/meshmodels/models:
     get:
       x-internal:
@@ -27320,7 +27180,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/meshmodels/connections:
+  /api/registry/connections:
     get:
       x-internal:
         - cloud
@@ -28106,7 +27966,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/meshmodels/connections/{connectionDefinitionId}:
+  /api/registry/connections/{connectionDefinitionId}:
     get:
       x-internal:
         - cloud
