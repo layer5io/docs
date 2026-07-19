@@ -46,6 +46,14 @@ Credentials in an Environment are the keys to securely authenticate and access m
 
 > See "[Credentials](https://docs.meshery.io/concepts/logical/credentials)" in Meshery Docs for more information.
 
+## Access Control for Connections and Credentials
+
+Access to a Connection and therefore its associated Credentials is allowed if **any** of the following is true:
+
+1. **Direct ownership:** The Connection Owner (UserID) matches the current user's ID.
+
+2. **Indirect access:** The Connection is assigned to an Environment that is linked to a Workspace, and the current user is a member of a Team that has access to that Workspace. In other words, if a user is a member of a team that has access to a workspace that is linked to an environment containing the connection, then the user automatically inherits access control and authorization over the linked Environments, Connections, Credentials, Designs, and Views.
+
 ## Example: Orbital Labs Environment Setup
 
 The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full seed inventory.
