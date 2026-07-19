@@ -92,17 +92,17 @@ spec:
 
 Hierarchical relationships involve either an ancestral connection of the components (i.e. the creation/deletion of a component higher up affects the existence of the components below in the lineage) or a connection which involves the inheritence of features from one component to the other. There are 2 subtypes of the hierarchical relationship.
 
-**i. Hierarchical-Inventory**
+**i. Hierarchical-Parent-Inventory**
 
   This is a relationship between components where the configuration settings of one component, known as the parent, are combined or integrated with the configuration settings of another component, known as the child. This implies that changes or updates made to the parent component can affect or influence the configuration of the child component. Here's an example of a Hierarchical-Inventory relationship
 
-   ![example of edge-permission relationship](images/Hierachical_Inventory_Relationships.svg)
+   ![example of hierarchical-parent-inventory relationship](../../getting-started/creating-relationships/images/relationships/create-parent-child.gif)
 
-**ii. Hierarchical-Parent**
+**ii. Hierarchical-Parent-Wallet**
 
-A parent-child relationship implies that the parent component must be present or established before the child component can be created. For instance, in Kubernetes, a 'Namespace' can serve as a parent to 'Pods' within that namespace. Therefore, the namespace must be created beforehand for pods to be deployed within it. Here's an example of a Hierarchical-Parent relationship
+ This is a relationship between components where one component is directly attached to a host component, acting as an integrated inventory item. This implies a reverse configuration dependency: the configuration settings of the parent component are mutated or updated to synchronize with the attached child component. For example, attaching a sidecar container or a WebAssembly (WASM) filter to a workload will automatically modify the host workload's configuration to include the new item. On the canvas, these attached items are visualized as a numeric design inventory badge on the parent component rather than as standalone shapes. Here's an example of a Hierarchical-Parent-wallet relationship
 
-   ![example of edge-permission relationship](images/Hierarchical_Parent_Relationship.svg)
+   ![example of hierarchical-wallet relationship](../../getting-started/creating-relationships/images/relationships/create-inventory-wallet.gif)
 
 ### 3. TagSets Relationships
 
