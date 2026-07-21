@@ -3,6 +3,7 @@ title: Log Streaming
 description: >
   Learn about Log Streaming in Operator mode 
 categories: [Operator]
+tags: [troubleshooting]
 ---
 
 Efficient troubleshooting requires immediate visibility into your application's behavior. The **Log Streamer** in Kanvas allows you to live-tail logs from your Kubernetes pods and containers directly within the visual topology. Unlike static log files, this feature provides a real-time, multiplexed view of your infrastructure's activities, enabling you to debug interactions between services without leaving the Kanvas interface.
@@ -61,10 +62,3 @@ Once the stream is active, the Log Streamer panel will display the output.
 The Log Streamer utilizes a robust architecture where the **Meshery Operator** signals the **MeshSync** controller to start the log flow. Data is streamed using **NATS** to the Meshery Broker, preprocessed, and then delivered to your browser via a **WebSocket** connection using GraphQL subscriptions. This ensures minimal latency and high performance, even when streaming data from multiple active containers.
 
 ![log-stream-sequence-diagram](images/log-stream-sequence-diagram.svg)
-
-***
-
-### See Also
-
-* **[Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}):** Learn how to establish an interactive shell session with your containers.
-* **[Performance Management]({{< ref "kanvas/advanced/performance/index.md" >}}):** Run ad-hoc performance tests alongside your log monitoring.

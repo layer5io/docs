@@ -22,6 +22,3 @@ There is no limit to the number of models that you can pin to the dock.
 When a model is pinned you can still browse all components or search for a specific component. Drag and drop or click to place a new component into your design.
 
 When you no longer want a model pinned to the dock, you can remove the pin by revisiting the model in its original location and choosing to “remove from dock”.
-
-Related Docs:
-1. https://docs.layer5.io/kanvas/designer/understanding-tool-modes/
