@@ -22,6 +22,12 @@ Access tokens are opaque tokens that conform to the OAuth 2.0 framework. They co
 Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of, similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work. For users who belong to multiple organizations, see [Specifying Organization Context]({{< ref "cloud/reference/api-reference/_index.md#specifying-organization-context" >}}) in the REST API documentation to learn how to control which organization your API requests operate on.
 {{< /alert >}}
 
+## Privilege Scoping
+
+API tokens in Layer5 are **identity-scoped**. This means they inherently carry the exact same privileges, roles, and permissions as your user account within the organization and environment selected by the request context.
+
+Users can have different roles and permissions in different organizations, meaning a token does not grant one uniform privilege set across every organization. However, Layer5 does not currently support fine-grained, token-specific privilege scopes (for example, generating a strictly "read-only" token if you have "read-write" permissions).
+
 ## Creating tokens
 
 You can create a token for your user account at any time. Tokens never expire, but can be revoked. You can also give the token a descriptive label. This label will be shown in the list of tokens on your user account's security tokens page.
