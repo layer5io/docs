@@ -11,9 +11,10 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: read
 
 concurrency:
-  group: preview-${{ github.event.workflow_run.pull_requests[0].number || github.event.pull_request.number || github.run_id }}
+  group: preview-${{ github.event.workflow_run.id || github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
 
 defaults:
@@ -30,24 +31,47 @@ jobs:
       PREVIEW_RETENTION_LIMIT: 6
 
     steps:
-      - name: Get PR number
+      - name: Download preview artifact
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: pr-preview-site
+          path: ./public
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Resolve PR number
         id: pr-info
         run: |
           if [ "${{ github.event_name }}" = "workflow_run" ]; then
-            PR_NUM="${{ github.event.workflow_run.pull_requests[0].number }}"
+            if [ -f ./public/PR_NUMBER.txt ]; then
+              PR_NUM=$(cat ./public/PR_NUMBER.txt | tr -d '[:space:]')
+            else
+              PR_NUM="${{ github.event.workflow_run.pull_requests[0].number }}"
+            fi
           else
             PR_NUM="${{ github.event.pull_request.number }}"
           fi
           echo "pr_number=$PR_NUM" >> "$GITHUB_OUTPUT"
 
-      - name: Download preview artifact
+      - name: Check PR status
+        id: check-pr
         if: github.event_name == 'workflow_run'
-        uses: actions/download-artifact@v4
+        uses: actions/github-script@v7
         with:
-          name: pr-preview-site-${{ steps.pr-info.outputs.pr_number }}
-          path: ./public
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
+          script: |
+            const prNumber = '${{ steps.pr-info.outputs.pr_number }}';
+            if (!prNumber) {
+              core.setFailed('Could not determine PR number');
+              return;
+            }
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number(prNumber)
+            });
+            core.info(`PR #${prNumber} state: ${pr.state}`);
+            core.setOutput('is_open', pr.state === 'open');
 
       - name: Checkout for cleanup
         if: github.event_name == 'pull_request_target' && github.event.action == 'closed'
@@ -57,7 +81,7 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy PR preview
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && steps.check-pr.outputs.is_open == 'true'
         uses: rossjrw/pr-preview-action@v1.6.3
         with:
           source-dir: ./public
@@ -67,7 +91,7 @@ jobs:
           comment: false
 
       - name: Checkout gh-pages for preview retention
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && steps.check-pr.outputs.is_open == 'true'
         uses: actions/checkout@v6
         with:
           ref: gh-pages
@@ -76,7 +100,7 @@ jobs:
 
       - name: Prune old PR previews
         id: prune-previews
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && steps.check-pr.outputs.is_open == 'true'
         run: |
           cd gh-pages-maintenance
           mkdir -p pr-preview
@@ -117,7 +141,7 @@ jobs:
           echo "removed_prs_json=$(printf '%s\n' "${removed_prs[@]}" | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
 
       - name: Comment PR with Preview URL
-        if: github.event_name == 'workflow_run'
+        if: github.event_name == 'workflow_run' && steps.check-pr.outputs.is_open == 'true'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: pr-preview
@@ -127,7 +151,7 @@ jobs:
             > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
 
       - name: Comment on pruned previews
-        if: github.event_name == 'workflow_run' && steps.prune-previews.outputs.removed_prs_json != '[]'
+        if: github.event_name == 'workflow_run' && steps.check-pr.outputs.is_open == 'true' && steps.prune-previews.outputs.removed_prs_json != '[]'
         uses: actions/github-script@v7
         env:
           REMOVED_PRS_JSON: ${{ steps.prune-previews.outputs.removed_prs_json }}

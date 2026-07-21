@@ -26,6 +26,7 @@ jobs:
       - name: Checkout PR code
         uses: actions/checkout@v6
         with:
+          persist-credentials: false
           submodules: recursive
           fetch-depth: 0
 
@@ -46,7 +47,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
+          if [[ -f package-lock.json || -f npm-shrinkwrap.json ]]; then
+            npm ci
+          fi
 
       - name: Build PR preview
         env:
@@ -63,6 +66,6 @@ jobs:
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pr-preview-site-${{ github.event.pull_request.number }}
+          name: pr-preview-site
           path: public/
           retention-days: 1
