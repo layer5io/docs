@@ -24,9 +24,9 @@ Layer5 Cloud API tokens are scoped to your user account, not to a specific organ
 
 ## Privilege Scoping
 
-API tokens in Layer5 are **identity-scoped**. This means they inherently carry the exact same privileges, roles, and permissions as your user account.
+API tokens in Layer5 are **identity-scoped**. This means they inherently carry the exact same privileges, roles, and permissions as your user account within the organization and environment selected by the request context.
 
-Layer5 does not currently support fine-grained, token-specific privilege scopes (for example, generating a strictly "read-only" token if you have "read-write" permissions). The token grants the bearer the same level of access you have across all environments and organizations you are a member of.
+Users can have different roles and permissions in different organizations, meaning a token does not grant one uniform privilege set across every organization. However, Layer5 does not currently support fine-grained, token-specific privilege scopes (for example, generating a strictly "read-only" token if you have "read-write" permissions).
 
 ## Creating tokens
 
