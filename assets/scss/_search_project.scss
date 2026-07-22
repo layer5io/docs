@@ -126,10 +126,11 @@
   background-color: #2e2e31;
 }
 
+// TODO: I'm not sure if navbar styles should be in
+// this file. Might be a good idea to move them elsewhere.
 // Global Navigation Bar
 .td-navbar {
   min-height: 6rem;
-  background-color: $body-bg !important;
 
   .td-navbar-nav-scroll {
     // max-width: fit-content;
