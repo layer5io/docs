@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.203</title><link>/cloud/reference/releases/v1.0.203/</link><pubDate>Fri, 24 Jul 2026 05:56:20 +0000</pubDate><guid>/cloud/reference/releases/v1.0.203/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.204</title><link>/cloud/reference/releases/v1.0.204/</link><pubDate>Fri, 24 Jul 2026 21:06:18 +0000</pubDate><guid>/cloud/reference/releases/v1.0.204/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(email): org-first footer contacts and a catalog deep link in the approval mail @jijillery (#5767)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.43 @l5io (#5768)&lt;/li&gt;
+&lt;li&gt;[Auth] Fix custom-domain sign-in stranding: mint a Hydra login challenge on every sign-in entry @CodeAhmedJamil (#5769)&lt;/li&gt;
+&lt;li&gt;test(ui): add browser coverage for the permission gates repaired by #5762 @jijillery (#5766)&lt;/li&gt;
+&lt;li&gt;fix(ui): resolve error on user edit action @rishiraj38 (#5758)&lt;/li&gt;
+&lt;li&gt;feat(ui): Mount PermissionProvider in AppShell and add permissionKey to NavigationNavbar items @rishiraj38 (#5757)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @carlosriosilva, @hamza-mohd, @jamieplu, @jijillery, @l5io, @leecalcote, @mascot-five, @miacycle, @pontusringblom, @rishiraj38, @ritzorama and @suttonskate&lt;/p&gt;</description></item><item><title>v1.0.203</title><link>/cloud/reference/releases/v1.0.203/</link><pubDate>Fri, 24 Jul 2026 05:56:20 +0000</pubDate><guid>/cloud/reference/releases/v1.0.203/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): write schema-complete Kratos rows in OIDC credential link (meshery-cloud-1735) @mascot-five (#5761)&lt;/li&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.21.42 @l5io (#5760)&lt;/li&gt;
 &lt;li&gt;fix(ui): repair orphaned permission-key references breaking next build @jamieplu (#5762)&lt;/li&gt;
