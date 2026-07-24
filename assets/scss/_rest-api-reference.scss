@@ -1004,10 +1004,6 @@ $method-head: #7d8790;
     word-break: break-word;
   }
 
-  [hidden] {
-    display: none !important;
-  }
-
   @media (max-width: 800px) {
     .rest-api-overview,
     .rest-api-controls,

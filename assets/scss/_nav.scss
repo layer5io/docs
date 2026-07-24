@@ -1,6 +1,5 @@
 .td-navbar-cover {
   @include media-breakpoint-up(md) {
-    background: transparent !important;
 
     .nav-link {
       text-shadow: 1px 1px 2px $dark;
@@ -13,7 +12,6 @@
 }
 
 .navbar-bg-onscroll {
-  background: $primary !important;
   opacity: inherit;
 }
 

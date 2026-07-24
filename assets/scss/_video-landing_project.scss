@@ -9,13 +9,12 @@
     overflow: hidden;
 
     nav {
-        //background-color: rgba(0, 0, 0, 0.3) !important;
-        background-color: transparent !important;
+        background-color: transparent ;
         border: none;
     }
     nav.scrolled {
-        background-color: $dark !important;
-        border: 1px solid #333 !important;
+        background-color: $dark;
+        border: 1px solid #333;
     }
 }
 
