@@ -94,6 +94,44 @@ On the [Organizations page](https://cloud.layer5.io/identity/organizations), you
 1. Click Select file to upload and select the logo image on your computer. You'll see a preview of your logo.
 1. Click Save, if satisfied. You may change your custom logo images at any time.
 
+## Contact Information in Email Notifications
+
+White-labeling extends past the browser: the footer shared by every transactional email Layer5 Cloud sends - invitations, welcome mail, role changes, catalog publish decisions, design comment mentions, email verification and password recovery codes - is built from your organization's own contact information rather than Layer5's.
+
+The same five link fields drive both your sign-in pages and your email footers. Set them as an [Organization Administrator]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) on the [Organizations page](https://cloud.layer5.io/identity/organizations): click the pencil icon next to your organization name, then fill in the fields under **Login page links**.
+
+| Field | Where it appears in email |
+|---|---|
+| Support Email | The "email" contact link in the footer |
+| Discussion Forum URL | The "forum" contact link and the forum icon |
+| Slack URL | The "slack" contact link and the Slack icon |
+| Privacy Policy URL | The "privacy policy" link in the footer's legal line |
+| Terms of Service URL | The "terms of service" link in the footer's legal line |
+
+### How each field is resolved
+
+Resolution is **per field, not all-or-nothing**. Each of the five fields is resolved independently, in this order:
+
+1. **Your organization's value**, when you have set that field.
+2. Otherwise, the **Provider Organization's** value for that field - the contact details configured on the provider organization that owns the deployment.
+3. Otherwise, the Layer5 default baked into the email template (`support@layer5.io`, `discuss.meshery.io`, `slack.layer5.io`, and the Layer5 Cloud legal pages).
+
+Because the fallback is per field, filling in one field never blanks the others. An organization that publishes only its own support inbox keeps the Provider Organization's forum, Slack, privacy policy, and terms of service alongside that inbox. A field left blank - or containing only whitespace - counts as unset and does not shadow the value it would otherwise fall back to.
+
+{{< alert title="Self-hosted deployments: configure the Provider Organization" color="info" >}}
+On a self-hosted deployment, the second tier of this fallback is *your* Provider Organization, not Layer5. Setting the five link fields on your Provider Organization gives every organization in your deployment a sensible branded default, so a member organization that has not filled in its own contact details still never surfaces Layer5's support channels to your users. See [Configuring a subdomain](#configuring-a-subdomain) for how to reach your Provider Organization.
+{{< /alert >}}
+
+### Value formats
+
+Values are normalized before they are rendered into an email, so the link is always followable from a mail client:
+
+- A **root-relative** value such as `/legal/privacy-policy.html` is resolved against your organization's own host - your custom domain when you have configured one, and the deployment's base URL otherwise. Recipients therefore stay on your domain rather than being sent to the canonical Layer5 Cloud host.
+- A **bare email address** such as `support@example.com` is turned into a `mailto:` link.
+- **Absolute** `http://`, `https://`, `mailto:`, and `tel:` values are used as given.
+
+As on the sign-in pages, values are sanitized server-side. `javascript:`, `data:`, and protocol-relative (`//host`) values are dropped, and the field then falls back as though it were unset.
+
 ## Organization Dashboard Customization
 
 Layer5 Cloud supports customizing dashboard layouts on a per organization basis. As an administrator of your organization, you can customize the dashboard experience for all members of your organization. To customize your organization's dashboard, select from a collection of widgets to include or exclude.
