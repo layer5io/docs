@@ -106,9 +106,13 @@ def main():
         print(f"Usage: {sys.argv[0]} <content_dir> <output_file> <title>")
         sys.exit(1)
 
-    content_dir = Path(sys.argv[1])
-    output_file = Path(sys.argv[2])
+    content_dir = Path(sys.argv[1]).resolve()
+    output_file = Path(sys.argv[2]).resolve()
     doc_title = sys.argv[3]
+
+    if not content_dir.is_dir():
+        print(f"Error: content directory '{content_dir}' does not exist or is not a directory.", file=sys.stderr)
+        sys.exit(1)
 
     # Collect all markdown files, excluding releases and helm-chart-values
     md_files = []
