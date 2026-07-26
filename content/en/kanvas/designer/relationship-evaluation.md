@@ -15,6 +15,14 @@ identify connections, validate them, and keep related configuration in sync.
 This page explains how you can choose which engine performs that evaluation, how
 to read the relationship indicator, and how to diagnose results that look wrong.
 
+## Understanding the Evaluation Engine
+
+The evaluation engine is a dynamic runtime engine (not a static linter) that analyzes and mutates the design based on registered rules. When processing, it enforces:
+
+- **Semantic Validity**: Validates if manually drawn connections are actually allowed by a registered `RelationshipDefinition` in the registry. 
+- **Dependency Fulfillment**: Flags missing required components and can auto-inject them (e.g., automatically adding a Namespace if a Pod requires one).
+- **Configuration Mutability (Patching)**: Validates and applies patches (e.g., automatically injecting Component B's IP address or selector into Component A's configuration based on the policy).
+
 ## How Relationships Are Evaluated
 
 Kanvas can run relationship evaluation using one of two interchangeable engines:
