@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.210</title><link>/cloud/reference/releases/v1.0.210/</link><pubDate>Mon, 27 Jul 2026 13:31:30 +0000</pubDate><guid>/cloud/reference/releases/v1.0.210/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.211</title><link>/cloud/reference/releases/v1.0.211/</link><pubDate>Mon, 27 Jul 2026 16:18:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.211/</guid><description>&lt;ul&gt;
+&lt;li&gt;Fix Edit User Profile modal layout, arm Save on notification changes @leecalcote (#5777)&lt;/li&gt;
+&lt;li&gt;test(connect): cover the GitHub wizard, fix its app-URL and the modal mapping @suttonskate (#5802)&lt;/li&gt;
+&lt;li&gt;Stop deriving the plans row type from generated data; guard the module-scope reads that 500 every route @leecalcote (#5778)&lt;/li&gt;
+&lt;li&gt;fix(workspaces): answer a malformed listing filter with a 400 naming the resource @leecalcote (#5799)&lt;/li&gt;
+&lt;li&gt;fix(collaboration): make client IDs collision-resistant and fail closed @carlosriosilva (#5797)&lt;/li&gt;
+&lt;li&gt;chore(ui): clear the 91 pre-existing prettier violations so &lt;code&gt;make ui-lint&lt;/code&gt; is green @winkletinkle (#5801)&lt;/li&gt;
+&lt;li&gt;fix(handlers): stop nil-user panic in the admin-gated events endpoints @hortison (#5794)&lt;/li&gt;
+&lt;li&gt;fix(handlers): stop InstallGithubAction deadlocking and racing on a shared err @miacycle (#5798)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@carlosriosilva, @hortison, @leecalcote, @marblom007, @miacycle, @ritzorama, @suttonskate and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.210</title><link>/cloud/reference/releases/v1.0.210/</link><pubDate>Mon, 27 Jul 2026 13:31:30 +0000</pubDate><guid>/cloud/reference/releases/v1.0.210/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): bound and quote the state-decoded ref on the Hydra callback log line @hamza-mohd (#5796)&lt;/li&gt;
 &lt;li&gt;test(e2e): make 2FA OAuth sign-in tooling runnable against a local ngrok custom-domain target @jijillery (#5790)&lt;/li&gt;
 &lt;li&gt;fix(credentials): resolve TypeError on modal close/cancel/continue @rishiraj38 (#5789)&lt;/li&gt;
