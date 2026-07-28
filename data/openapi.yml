@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.39
+  version: v1.3.40
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -1127,6 +1127,14 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Badge label conflict. The badge label is already owned by a different organization, so the upsert was
+            refused rather than overwriting another organization's badge.
           content:
             text/plain:
               schema:
