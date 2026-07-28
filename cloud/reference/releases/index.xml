@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.214</title><link>/cloud/reference/releases/v1.0.214/</link><pubDate>Tue, 28 Jul 2026 15:57:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.214/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.215</title><link>/cloud/reference/releases/v1.0.215/</link><pubDate>Tue, 28 Jul 2026 22:43:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.215/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): stop serving user email addresses to anonymous catalog callers @jijillery (#5821)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jamieplu, @jijillery and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.214</title><link>/cloud/reference/releases/v1.0.214/</link><pubDate>Tue, 28 Jul 2026 15:57:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.214/</guid><description>&lt;ul&gt;
 &lt;li&gt;chore(skills): consolidate agent skills into .agents/skills as single source of truth @leecalcote (#5815)&lt;/li&gt;
 &lt;li&gt;fix(server): restrict what unauthenticated and anonymous-status callers receive from the public user endpoints @leecalcote (#5812)&lt;/li&gt;
 &lt;li&gt;fix(handlers): Stop badge delete from printing SQL and tenant IDs to stdout @leecalcote (#5813)&lt;/li&gt;
