@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.63-1</title><link>/kanvas/reference/releases/v1.0.63-1/</link><pubDate>Sun, 26 Jul 2026 16:02:01 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.63-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.63-2</title><link>/kanvas/reference/releases/v1.0.63-2/</link><pubDate>Thu, 30 Jul 2026 20:35:19 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.63-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;refactor(ui): remove 8,123 lines of unreachable code, no functional change @jijillery (#4313)&lt;/li&gt;
+&lt;li&gt;[UI] Drop the ConfigurationSubscription prop @aabidsofi19 (#4289)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.44 @l5io (#4312)&lt;/li&gt;
+&lt;li&gt;chore(skills): consolidate agent skills into a single .agents/skills source of truth @sarajkrishnasingh (#4311)&lt;/li&gt;
+&lt;li&gt;refactor(ui): import permission keys from schemas @rishiraj38 (#4297)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@aabidsofi19, @jijillery, @l5io, @leecalcote, @miacycle, @pontusringblom, @rishiraj38, @sarajkrishnasingh, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.63-1</title><link>/kanvas/reference/releases/v1.0.63-1/</link><pubDate>Sun, 26 Jul 2026 16:02:01 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.63-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
