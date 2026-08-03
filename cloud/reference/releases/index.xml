@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.217</title><link>/cloud/reference/releases/v1.0.217/</link><pubDate>Sat, 01 Aug 2026 05:14:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.217/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.218</title><link>/cloud/reference/releases/v1.0.218/</link><pubDate>Mon, 03 Aug 2026 06:15:25 +0000</pubDate><guid>/cloud/reference/releases/v1.0.218/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(roles): let a Provider Admin list organization and team roles @jijillery (#5847)&lt;/li&gt;
+&lt;li&gt;[UI] Wire allure-playwright e2e reporter so the Layer5 Cloud QA report can repopulate @fitzergerald (#5846)&lt;/li&gt;
+&lt;li&gt;chore: track shared Claude Code hook registrations and harden the guards @jijillery (#5830)&lt;/li&gt;
+&lt;li&gt;chore(skills): fix iterate-pr feedback fetcher and bump vendored skill to 2.3.1 @jijillery (#5827)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;details&gt;
+&lt;summary&gt;9 changes&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump github.com/labstack/echo/v4 from 4.15.1 to 4.15.4 @dependabot (#5843)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @mui/material from 9.1.2 to 9.2.0 in /ui @dependabot (#5842)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @stripe/stripe-js from 9.8.0 to 9.12.1 in /ui @dependabot (#5840)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/PuerkitoBio/goquery from 1.11.0 to 1.12.0 @dependabot (#5838)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/oapi-codegen/runtime from 1.4.2 to 1.6.0 @dependabot (#5839)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @casl/react from 7.0.0 to 7.0.1 in /ui @dependabot (#5837)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @rjsf/validator-ajv8 from 6.6.2 to 6.7.1 in /ui @dependabot (#5836)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/net from 0.56.0 to 0.57.0 @dependabot (#5844)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump npm from 11.18.0 to 12.0.1 in /ui @dependabot (#5845)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@carlosriosilva, @dependabot, @fitzergerald, @hortison, @jijillery, @leecalcote, @meshery-ci, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.217</title><link>/cloud/reference/releases/v1.0.217/</link><pubDate>Sat, 01 Aug 2026 05:14:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.217/</guid><description>&lt;ul&gt;
 &lt;li&gt;chore(auth): front dev Kratos at /kratos and pin its ngrok base_url for local OIDC @willcalcote (#5835)&lt;/li&gt;
 &lt;/ul&gt;
 
