@@ -48,3 +48,14 @@ jobs:
           commit_user_name: l5io
           commit_user_email: ci@layer5.io
           commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          # Same stale-base hazard as cloud-release-docs.yml: the checkout is
+          # pinned to the dispatch SHA, so any commit landing on master during
+          # the run makes this push non-fast-forward and discards the notes.
+          # Safe to rebase: this job only touches build/meshery-extensions.version
+          # and its own release-notes page, which nothing else writes.
+          # The action passes its identity per-command and never configures it,
+          # so the rebase has to be handed the same one or it picks up whatever
+          # the runner guesses.
+          before_push_hook: >-
+            git -c user.name="$INPUT_COMMIT_USER_NAME" -c user.email="$INPUT_COMMIT_USER_EMAIL"
+            pull --rebase --autostash origin "$INPUT_BRANCH"
