@@ -6,9 +6,12 @@ on:
     types: [opened, synchronize, reopened]
     paths:
       - 'content/**'
+      - 'assets/**'
+      - 'layouts/**'
+      - 'data/**'
       - '**.md'
       - '**.go'
-      - 'hugo.yaml'
+      - 'hugo.toml'
       - '.github/workflows/build-docs-preview.yml'
       - '.github/workflows/deploy-docs-preview.yml'
 
