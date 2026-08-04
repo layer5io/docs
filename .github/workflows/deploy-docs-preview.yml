@@ -73,8 +73,7 @@ jobs:
           pr-number: ${{ steps.meta.outputs.pr_number }}
           pages-base-url: docs.layer5.io
           action: deploy
-          # Polls the Deployments API so the comment lands on a live preview.
-          wait-for-pages-deployment: true
+          wait-for-pages-deployment: false
           comment: false
 
       - name: Comment PR with Preview URL
@@ -84,6 +83,7 @@ jobs:
           number: ${{ steps.meta.outputs.pr_number }}
           message: |
             🚀 Preview deployment: https://docs.layer5.io/pr-preview/pr-${{ steps.meta.outputs.pr_number }}/
+            > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
 
   prune:
     # Both jobs push to gh-pages, but only prune retries a lost race, so deploy
