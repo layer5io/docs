@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.223</title><link>/cloud/reference/releases/v1.0.223/</link><pubDate>Tue, 04 Aug 2026 05:52:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.223/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.224</title><link>/cloud/reference/releases/v1.0.224/</link><pubDate>Tue, 04 Aug 2026 15:55:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.224/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): shield nav sections whose pages the user cannot reach @willcalcote (#5874)&lt;/li&gt;
+&lt;li&gt;fix(badges): repair mis-labelled and consolidation-stranded badge data @jijillery (#5871)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.21.45 @l5io (#5870)&lt;/li&gt;
+&lt;li&gt;docs(testing): verify PR #5822 hard-delete paths on a real stack; record deletion semantics @jijillery (#5828)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @fitzergerald, @hamza-mohd, @hortison, @jijillery, @l5io, @rishiraj38, @suttonskate and @willcalcote&lt;/p&gt;</description></item><item><title>v1.0.223</title><link>/cloud/reference/releases/v1.0.223/</link><pubDate>Tue, 04 Aug 2026 05:52:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.223/</guid><description>&lt;ul&gt;
 &lt;li&gt;docs(testing): verify PR #5822 hard-delete paths on a real stack; record deletion semantics @jijillery (#5828)&lt;/li&gt;
 &lt;li&gt;fix(badges): refuse destructive empty badge writes, stop silent award failures @jijillery (#5865)&lt;/li&gt;
 &lt;li&gt;feat(ui): pair Join Date with Last Active on the public profile @jijillery (#5862)&lt;/li&gt;
