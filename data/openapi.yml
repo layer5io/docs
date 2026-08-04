@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.35
+  version: v1.3.44
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -20,6 +20,8 @@ servers:
 tags:
   - name: Meshery_Controllers_Configuration_controllers
     description: APIs for configuring Meshery Operator, MeshSync, and Meshery Broker.
+  - name: Console_API_Console
+    description: Interactive terminal and log consoles against a connection's resources.
   - name: Evaluation_Evaluation
     description: Operations related to design evaluation
   - name: Feature_Features
@@ -1127,6 +1129,14 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Badge label conflict. The badge label is already owned by a different organization, so the upsert was
+            refused rather than overwriting another organization's badge.
           content:
             text/plain:
               schema:
@@ -5783,6 +5793,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -6265,6 +6281,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -6315,6 +6337,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -6890,6 +6918,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -7144,6 +7178,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -7392,6 +7432,12 @@ paths:
           description: Bad request
         '401':
           description: Unauthorized
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Not found
         '500':
@@ -7535,6 +7581,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -7711,6 +7763,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -7773,6 +7831,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -7929,6 +7993,12 @@ paths:
           description: Bad request
         '401':
           description: Unauthorized
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Not found
         '500':
@@ -7991,6 +8061,12 @@ paths:
                 type: string
         '401':
           description: Unauthorized
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -8045,6 +8121,12 @@ paths:
           description: User removed from organization
         '401':
           description: Unauthorized
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -9818,6 +9900,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -9938,6 +10026,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -10097,6 +10191,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -10167,6 +10267,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -10305,6 +10411,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -11000,6 +11112,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -11643,6 +11761,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -12266,6 +12390,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -12308,6 +12438,12 @@ paths:
                     x-go-name: PatternsCount
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -12601,6 +12737,12 @@ paths:
           description: Mention notifications dispatched
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -13140,6 +13282,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -13299,6 +13447,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -13453,6 +13607,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -13530,6 +13690,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -18919,9 +19085,13 @@ paths:
                   properties:
                     id:
                       type: string
-                      description: CurriculaCurrentItemData ID.
+                      description: >-
+                        CurriculaCurrentItemData ID. Identifies the Hugo content page the learner currently has open,
+                        not a database row, so it is an opaque content-scoped string. Not a UUID - production values
+                        include slugs, full permalink URLs and the empty string.
+                      example: kubernetes-quickstart
                       maxLength: 500
-                      format: uuid
+                      x-id-format: external
                     lastOpened:
                       type: string
                       format: date-time
@@ -18969,9 +19139,13 @@ paths:
                           properties:
                             id:
                               type: string
-                              description: CurriculaCurrentItemData ID.
+                              description: >-
+                                CurriculaCurrentItemData ID. Identifies the Hugo content page the learner currently has
+                                open, not a database row, so it is an opaque content-scoped string. Not a UUID -
+                                production values include slugs, full permalink URLs and the empty string.
+                              example: kubernetes-quickstart
                               maxLength: 500
-                              format: uuid
+                              x-id-format: external
                             lastOpened:
                               type: string
                               format: date-time
@@ -19062,13 +19236,16 @@ paths:
                                   x-go-name: ID
                                   x-oapi-codegen-extra-tags:
                                     json: id
-                                  description: Quiz ID.
+                                  description: >-
+                                    Quiz ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                    content-scoped string. Not a UUID - stored records carry authored slugs.
+                                  example: corporate-sustainability
                                   maxLength: 500
-                                  format: uuid
+                                  x-id-format: external
                                 orgId:
                                   type: string
                                   description: Organization ID that owns this quiz
-                                  example: meshery
+                                  example: d011fd20-a3f5-4480-883b-dfb34321d168
                                   x-oapi-codegen-extra-tags:
                                     db: org_id
                                     json: orgId
@@ -19133,9 +19310,18 @@ paths:
                                   description: The pass percentage of the quiz.
                                   minimum: 0
                                 timeLimit:
-                                  description: Time limit for the quiz in minutes. A value of 0 indicates no time limit.
-                                  type: integer
-                                  minimum: 0
+                                  description: >-
+                                    Time limit for the quiz in minutes. A value of 0 indicates no time limit. Accepts a
+                                    number or a string because both forms are real production data - the Hugo theme
+                                    emits a JSON number, while payloads persisted by earlier revisions hold a string
+                                    such as "25" or the non-numeric sentinel "infinite". A string that does not parse to
+                                    a positive number means "no time limit" and normalizes to 0.
+                                  oneOf:
+                                    - type: integer
+                                      minimum: 0
+                                    - type: string
+                                  x-go-type: QuizTimeLimit
+                                  x-go-type-skip-optional-pointer: true
                                 maxAttempts:
                                   description: >-
                                     Maximum number of attempts allowed for the quiz. A value of 0 indicates unlimited
@@ -19157,9 +19343,12 @@ paths:
                                     properties:
                                       id:
                                         type: string
-                                        description: Question ID.
+                                        description: >-
+                                          Question ID. Authored in the quiz's Hugo front matter, not a database row, so
+                                          it is an opaque content-scoped string. Not a UUID.
+                                        example: q1
                                         maxLength: 500
-                                        format: uuid
+                                        x-id-format: external
                                       text:
                                         type: string
                                         description: The text of the question.
@@ -19196,9 +19385,12 @@ paths:
                                           properties:
                                             id:
                                               type: string
-                                              description: QuestionOption ID.
+                                              description: >-
+                                                QuestionOption ID. Authored in the quiz's Hugo front matter, not a
+                                                database row, so it is an opaque content-scoped string. Not a UUID.
+                                              example: a
                                               maxLength: 500
-                                              format: uuid
+                                              x-id-format: external
                                             text:
                                               type: string
                                               description: The text of the questionoption.
@@ -19241,9 +19433,12 @@ paths:
                                     properties:
                                       id:
                                         type: string
-                                        description: Parent ID.
+                                        description: >-
+                                          Parent ID. Identifies a Hugo content page, not a database row, so it is an
+                                          opaque content-scoped string. Not a UUID. See `Quiz.id`.
+                                        example: introduction-to-devops-and-sre
                                         maxLength: 500
-                                        format: uuid
+                                        x-id-format: external
                                       title:
                                         type: string
                                         description: The title of the parent.
@@ -19268,9 +19463,12 @@ paths:
                                   properties:
                                     id:
                                       type: string
-                                      description: Parent ID.
+                                      description: >-
+                                        Parent ID. Identifies a Hugo content page, not a database row, so it is an
+                                        opaque content-scoped string. Not a UUID. See `Quiz.id`.
+                                      example: introduction-to-devops-and-sre
                                       maxLength: 500
-                                      format: uuid
+                                      x-id-format: external
                                     title:
                                       type: string
                                       description: The title of the parent.
@@ -19294,9 +19492,12 @@ paths:
                                   properties:
                                     id:
                                       type: string
-                                      description: Parent ID.
+                                      description: >-
+                                        Parent ID. Identifies a Hugo content page, not a database row, so it is an
+                                        opaque content-scoped string. Not a UUID. See `Quiz.id`.
+                                      example: introduction-to-devops-and-sre
                                       maxLength: 500
-                                      format: uuid
+                                      x-id-format: external
                                     title:
                                       type: string
                                       description: The title of the parent.
@@ -19347,9 +19548,12 @@ paths:
                               properties:
                                 id:
                                   type: string
-                                  description: Parent ID.
+                                  description: >-
+                                    Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                    content-scoped string. Not a UUID. See `Quiz.id`.
+                                  example: introduction-to-devops-and-sre
                                   maxLength: 500
-                                  format: uuid
+                                  x-id-format: external
                                 title:
                                   type: string
                                   description: The title of the parent.
@@ -19387,9 +19591,13 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: CurriculaCurrentItemData ID.
+                        description: >-
+                          CurriculaCurrentItemData ID. Identifies the Hugo content page the learner currently has open,
+                          not a database row, so it is an opaque content-scoped string. Not a UUID - production values
+                          include slugs, full permalink URLs and the empty string.
+                        example: kubernetes-quickstart
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       lastOpened:
                         type: string
                         format: date-time
@@ -19499,13 +19707,16 @@ paths:
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       json: id
-                    description: Quiz ID.
+                    description: >-
+                      Quiz ID. Identifies a Hugo content page, not a database row, so it is an opaque content-scoped
+                      string. Not a UUID - stored records carry authored slugs.
+                    example: corporate-sustainability
                     maxLength: 500
-                    format: uuid
+                    x-id-format: external
                   orgId:
                     type: string
                     description: Organization ID that owns this quiz
-                    example: meshery
+                    example: d011fd20-a3f5-4480-883b-dfb34321d168
                     x-oapi-codegen-extra-tags:
                       db: org_id
                       json: orgId
@@ -19570,9 +19781,18 @@ paths:
                     description: The pass percentage of the quiz.
                     minimum: 0
                   timeLimit:
-                    description: Time limit for the quiz in minutes. A value of 0 indicates no time limit.
-                    type: integer
-                    minimum: 0
+                    description: >-
+                      Time limit for the quiz in minutes. A value of 0 indicates no time limit. Accepts a number or a
+                      string because both forms are real production data - the Hugo theme emits a JSON number, while
+                      payloads persisted by earlier revisions hold a string such as "25" or the non-numeric sentinel
+                      "infinite". A string that does not parse to a positive number means "no time limit" and normalizes
+                      to 0.
+                    oneOf:
+                      - type: integer
+                        minimum: 0
+                      - type: string
+                    x-go-type: QuizTimeLimit
+                    x-go-type-skip-optional-pointer: true
                   maxAttempts:
                     description: Maximum number of attempts allowed for the quiz. A value of 0 indicates unlimited attempts.
                     type: integer
@@ -19592,9 +19812,12 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: Question ID.
+                          description: >-
+                            Question ID. Authored in the quiz's Hugo front matter, not a database row, so it is an
+                            opaque content-scoped string. Not a UUID.
+                          example: q1
                           maxLength: 500
-                          format: uuid
+                          x-id-format: external
                         text:
                           type: string
                           description: The text of the question.
@@ -19631,9 +19854,12 @@ paths:
                             properties:
                               id:
                                 type: string
-                                description: QuestionOption ID.
+                                description: >-
+                                  QuestionOption ID. Authored in the quiz's Hugo front matter, not a database row, so it
+                                  is an opaque content-scoped string. Not a UUID.
+                                example: a
                                 maxLength: 500
-                                format: uuid
+                                x-id-format: external
                               text:
                                 type: string
                                 description: The text of the questionoption.
@@ -19676,9 +19902,12 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: Parent ID.
+                          description: >-
+                            Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                            content-scoped string. Not a UUID. See `Quiz.id`.
+                          example: introduction-to-devops-and-sre
                           maxLength: 500
-                          format: uuid
+                          x-id-format: external
                         title:
                           type: string
                           description: The title of the parent.
@@ -19703,9 +19932,12 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: Parent ID.
+                        description: >-
+                          Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                          content-scoped string. Not a UUID. See `Quiz.id`.
+                        example: introduction-to-devops-and-sre
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       title:
                         type: string
                         description: The title of the parent.
@@ -19729,9 +19961,12 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: Parent ID.
+                        description: >-
+                          Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                          content-scoped string. Not a UUID. See `Quiz.id`.
+                        example: introduction-to-devops-and-sre
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       title:
                         type: string
                         description: The title of the parent.
@@ -19824,13 +20059,16 @@ paths:
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       json: id
-                    description: Quiz ID.
+                    description: >-
+                      Quiz ID. Identifies a Hugo content page, not a database row, so it is an opaque content-scoped
+                      string. Not a UUID - stored records carry authored slugs.
+                    example: corporate-sustainability
                     maxLength: 500
-                    format: uuid
+                    x-id-format: external
                   orgId:
                     type: string
                     description: Organization ID that owns this quiz
-                    example: meshery
+                    example: d011fd20-a3f5-4480-883b-dfb34321d168
                     x-oapi-codegen-extra-tags:
                       db: org_id
                       json: orgId
@@ -19895,9 +20133,18 @@ paths:
                     description: The pass percentage of the quiz.
                     minimum: 0
                   timeLimit:
-                    description: Time limit for the quiz in minutes. A value of 0 indicates no time limit.
-                    type: integer
-                    minimum: 0
+                    description: >-
+                      Time limit for the quiz in minutes. A value of 0 indicates no time limit. Accepts a number or a
+                      string because both forms are real production data - the Hugo theme emits a JSON number, while
+                      payloads persisted by earlier revisions hold a string such as "25" or the non-numeric sentinel
+                      "infinite". A string that does not parse to a positive number means "no time limit" and normalizes
+                      to 0.
+                    oneOf:
+                      - type: integer
+                        minimum: 0
+                      - type: string
+                    x-go-type: QuizTimeLimit
+                    x-go-type-skip-optional-pointer: true
                   maxAttempts:
                     description: Maximum number of attempts allowed for the quiz. A value of 0 indicates unlimited attempts.
                     type: integer
@@ -19917,9 +20164,12 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: Question ID.
+                          description: >-
+                            Question ID. Authored in the quiz's Hugo front matter, not a database row, so it is an
+                            opaque content-scoped string. Not a UUID.
+                          example: q1
                           maxLength: 500
-                          format: uuid
+                          x-id-format: external
                         text:
                           type: string
                           description: The text of the question.
@@ -19956,9 +20206,12 @@ paths:
                             properties:
                               id:
                                 type: string
-                                description: QuestionOption ID.
+                                description: >-
+                                  QuestionOption ID. Authored in the quiz's Hugo front matter, not a database row, so it
+                                  is an opaque content-scoped string. Not a UUID.
+                                example: a
                                 maxLength: 500
-                                format: uuid
+                                x-id-format: external
                               text:
                                 type: string
                                 description: The text of the questionoption.
@@ -20001,9 +20254,12 @@ paths:
                       properties:
                         id:
                           type: string
-                          description: Parent ID.
+                          description: >-
+                            Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                            content-scoped string. Not a UUID. See `Quiz.id`.
+                          example: introduction-to-devops-and-sre
                           maxLength: 500
-                          format: uuid
+                          x-id-format: external
                         title:
                           type: string
                           description: The title of the parent.
@@ -20028,9 +20284,12 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: Parent ID.
+                        description: >-
+                          Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                          content-scoped string. Not a UUID. See `Quiz.id`.
+                        example: introduction-to-devops-and-sre
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       title:
                         type: string
                         description: The title of the parent.
@@ -20054,9 +20313,12 @@ paths:
                     properties:
                       id:
                         type: string
-                        description: Parent ID.
+                        description: >-
+                          Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                          content-scoped string. Not a UUID. See `Quiz.id`.
+                        example: introduction-to-devops-and-sre
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       title:
                         type: string
                         description: The title of the parent.
@@ -20199,13 +20461,16 @@ paths:
                             x-go-name: ID
                             x-oapi-codegen-extra-tags:
                               json: id
-                            description: Quiz ID.
+                            description: >-
+                              Quiz ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                              content-scoped string. Not a UUID - stored records carry authored slugs.
+                            example: corporate-sustainability
                             maxLength: 500
-                            format: uuid
+                            x-id-format: external
                           orgId:
                             type: string
                             description: Organization ID that owns this quiz
-                            example: meshery
+                            example: d011fd20-a3f5-4480-883b-dfb34321d168
                             x-oapi-codegen-extra-tags:
                               db: org_id
                               json: orgId
@@ -20270,9 +20535,18 @@ paths:
                             description: The pass percentage of the quiz.
                             minimum: 0
                           timeLimit:
-                            description: Time limit for the quiz in minutes. A value of 0 indicates no time limit.
-                            type: integer
-                            minimum: 0
+                            description: >-
+                              Time limit for the quiz in minutes. A value of 0 indicates no time limit. Accepts a number
+                              or a string because both forms are real production data - the Hugo theme emits a JSON
+                              number, while payloads persisted by earlier revisions hold a string such as "25" or the
+                              non-numeric sentinel "infinite". A string that does not parse to a positive number means
+                              "no time limit" and normalizes to 0.
+                            oneOf:
+                              - type: integer
+                                minimum: 0
+                              - type: string
+                            x-go-type: QuizTimeLimit
+                            x-go-type-skip-optional-pointer: true
                           maxAttempts:
                             description: >-
                               Maximum number of attempts allowed for the quiz. A value of 0 indicates unlimited
@@ -20294,9 +20568,12 @@ paths:
                               properties:
                                 id:
                                   type: string
-                                  description: Question ID.
+                                  description: >-
+                                    Question ID. Authored in the quiz's Hugo front matter, not a database row, so it is
+                                    an opaque content-scoped string. Not a UUID.
+                                  example: q1
                                   maxLength: 500
-                                  format: uuid
+                                  x-id-format: external
                                 text:
                                   type: string
                                   description: The text of the question.
@@ -20333,9 +20610,12 @@ paths:
                                     properties:
                                       id:
                                         type: string
-                                        description: QuestionOption ID.
+                                        description: >-
+                                          QuestionOption ID. Authored in the quiz's Hugo front matter, not a database
+                                          row, so it is an opaque content-scoped string. Not a UUID.
+                                        example: a
                                         maxLength: 500
-                                        format: uuid
+                                        x-id-format: external
                                       text:
                                         type: string
                                         description: The text of the questionoption.
@@ -20378,9 +20658,12 @@ paths:
                               properties:
                                 id:
                                   type: string
-                                  description: Parent ID.
+                                  description: >-
+                                    Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                    content-scoped string. Not a UUID. See `Quiz.id`.
+                                  example: introduction-to-devops-and-sre
                                   maxLength: 500
-                                  format: uuid
+                                  x-id-format: external
                                 title:
                                   type: string
                                   description: The title of the parent.
@@ -20405,9 +20688,12 @@ paths:
                             properties:
                               id:
                                 type: string
-                                description: Parent ID.
+                                description: >-
+                                  Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                  content-scoped string. Not a UUID. See `Quiz.id`.
+                                example: introduction-to-devops-and-sre
                                 maxLength: 500
-                                format: uuid
+                                x-id-format: external
                               title:
                                 type: string
                                 description: The title of the parent.
@@ -20431,9 +20717,12 @@ paths:
                             properties:
                               id:
                                 type: string
-                                description: Parent ID.
+                                description: >-
+                                  Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                  content-scoped string. Not a UUID. See `Quiz.id`.
+                                example: introduction-to-devops-and-sre
                                 maxLength: 500
-                                format: uuid
+                                x-id-format: external
                               title:
                                 type: string
                                 description: The title of the parent.
@@ -20480,11 +20769,15 @@ paths:
           application/json:
             schema:
               type: object
+              description: >-
+                A learner's answers to a quiz. Submitted as the `submitQuiz` request body and persisted verbatim as
+                `TestSubmission.submissionData`. `registrationId` and `userId` are a convenience echo of the
+                authoritative values on the enclosing `TestSubmission` (`registrationId` / `userId`, backed by the
+                `registration_id` and `owner` `uuid NOT NULL` columns); read them from the enclosing submission, not
+                from here.
               required:
                 - quizAbsPath
-                - registrationId
                 - testSessionId
-                - userId
                 - answers
               properties:
                 testSessionId:
@@ -20502,14 +20795,26 @@ paths:
                   maxLength: 500
                 registrationId:
                   type: string
-                  description: ID of the associated registration.
+                  description: >-
+                    ID of the associated registration. Optional, because a submission may not carry this echo; when it
+                    is absent the authoritative value is `TestSubmission.registrationId`. Absence MUST be expressed as
+                    `null` or an omitted property - the empty string is not a valid identifier.
                   maxLength: 500
                   format: uuid
+                  nullable: true
+                  x-oapi-codegen-extra-tags:
+                    json: registrationId,omitempty
                 userId:
                   type: string
-                  description: ID of the user who owns or created this resource.
+                  description: >-
+                    ID of the user who owns or created this resource. Optional, because a submission may not carry this
+                    echo; when it is absent the authoritative value is `TestSubmission.userId`. Absence MUST be
+                    expressed as `null` or an omitted property - the empty string is not a valid identifier.
                   maxLength: 500
                   format: uuid
+                  nullable: true
+                  x-oapi-codegen-extra-tags:
+                    json: userId,omitempty
                 answers:
                   type: array
                   items:
@@ -20522,9 +20827,12 @@ paths:
                     properties:
                       questionId:
                         type: string
-                        description: ID of the associated question.
+                        description: >-
+                          ID of the associated question. Mirrors `Question.id`, a content-authored string rather than a
+                          database row identifier, so it is not a UUID.
+                        example: q1
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       selectedOptionId:
                         type: object
                         additionalProperties:
@@ -20615,13 +20923,16 @@ paths:
                         x-go-name: ID
                         x-oapi-codegen-extra-tags:
                           json: id
-                        description: Quiz ID.
+                        description: >-
+                          Quiz ID. Identifies a Hugo content page, not a database row, so it is an opaque content-scoped
+                          string. Not a UUID - stored records carry authored slugs.
+                        example: corporate-sustainability
                         maxLength: 500
-                        format: uuid
+                        x-id-format: external
                       orgId:
                         type: string
                         description: Organization ID that owns this quiz
-                        example: meshery
+                        example: d011fd20-a3f5-4480-883b-dfb34321d168
                         x-oapi-codegen-extra-tags:
                           db: org_id
                           json: orgId
@@ -20686,9 +20997,18 @@ paths:
                         description: The pass percentage of the quiz.
                         minimum: 0
                       timeLimit:
-                        description: Time limit for the quiz in minutes. A value of 0 indicates no time limit.
-                        type: integer
-                        minimum: 0
+                        description: >-
+                          Time limit for the quiz in minutes. A value of 0 indicates no time limit. Accepts a number or
+                          a string because both forms are real production data - the Hugo theme emits a JSON number,
+                          while payloads persisted by earlier revisions hold a string such as "25" or the non-numeric
+                          sentinel "infinite". A string that does not parse to a positive number means "no time limit"
+                          and normalizes to 0.
+                        oneOf:
+                          - type: integer
+                            minimum: 0
+                          - type: string
+                        x-go-type: QuizTimeLimit
+                        x-go-type-skip-optional-pointer: true
                       maxAttempts:
                         description: Maximum number of attempts allowed for the quiz. A value of 0 indicates unlimited attempts.
                         type: integer
@@ -20708,9 +21028,12 @@ paths:
                           properties:
                             id:
                               type: string
-                              description: Question ID.
+                              description: >-
+                                Question ID. Authored in the quiz's Hugo front matter, not a database row, so it is an
+                                opaque content-scoped string. Not a UUID.
+                              example: q1
                               maxLength: 500
-                              format: uuid
+                              x-id-format: external
                             text:
                               type: string
                               description: The text of the question.
@@ -20747,9 +21070,12 @@ paths:
                                 properties:
                                   id:
                                     type: string
-                                    description: QuestionOption ID.
+                                    description: >-
+                                      QuestionOption ID. Authored in the quiz's Hugo front matter, not a database row,
+                                      so it is an opaque content-scoped string. Not a UUID.
+                                    example: a
                                     maxLength: 500
-                                    format: uuid
+                                    x-id-format: external
                                   text:
                                     type: string
                                     description: The text of the questionoption.
@@ -20792,9 +21118,12 @@ paths:
                           properties:
                             id:
                               type: string
-                              description: Parent ID.
+                              description: >-
+                                Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                content-scoped string. Not a UUID. See `Quiz.id`.
+                              example: introduction-to-devops-and-sre
                               maxLength: 500
-                              format: uuid
+                              x-id-format: external
                             title:
                               type: string
                               description: The title of the parent.
@@ -20819,9 +21148,12 @@ paths:
                         properties:
                           id:
                             type: string
-                            description: Parent ID.
+                            description: >-
+                              Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                              content-scoped string. Not a UUID. See `Quiz.id`.
+                            example: introduction-to-devops-and-sre
                             maxLength: 500
-                            format: uuid
+                            x-id-format: external
                           title:
                             type: string
                             description: The title of the parent.
@@ -20845,9 +21177,12 @@ paths:
                         properties:
                           id:
                             type: string
-                            description: Parent ID.
+                            description: >-
+                              Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                              content-scoped string. Not a UUID. See `Quiz.id`.
+                            example: introduction-to-devops-and-sre
                             maxLength: 500
-                            format: uuid
+                            x-id-format: external
                           title:
                             type: string
                             description: The title of the parent.
@@ -21015,13 +21350,16 @@ paths:
                               x-go-name: ID
                               x-oapi-codegen-extra-tags:
                                 json: id
-                              description: Quiz ID.
+                              description: >-
+                                Quiz ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                content-scoped string. Not a UUID - stored records carry authored slugs.
+                              example: corporate-sustainability
                               maxLength: 500
-                              format: uuid
+                              x-id-format: external
                             orgId:
                               type: string
                               description: Organization ID that owns this quiz
-                              example: meshery
+                              example: d011fd20-a3f5-4480-883b-dfb34321d168
                               x-oapi-codegen-extra-tags:
                                 db: org_id
                                 json: orgId
@@ -21086,9 +21424,18 @@ paths:
                               description: The pass percentage of the quiz.
                               minimum: 0
                             timeLimit:
-                              description: Time limit for the quiz in minutes. A value of 0 indicates no time limit.
-                              type: integer
-                              minimum: 0
+                              description: >-
+                                Time limit for the quiz in minutes. A value of 0 indicates no time limit. Accepts a
+                                number or a string because both forms are real production data - the Hugo theme emits a
+                                JSON number, while payloads persisted by earlier revisions hold a string such as "25" or
+                                the non-numeric sentinel "infinite". A string that does not parse to a positive number
+                                means "no time limit" and normalizes to 0.
+                              oneOf:
+                                - type: integer
+                                  minimum: 0
+                                - type: string
+                              x-go-type: QuizTimeLimit
+                              x-go-type-skip-optional-pointer: true
                             maxAttempts:
                               description: >-
                                 Maximum number of attempts allowed for the quiz. A value of 0 indicates unlimited
@@ -21110,9 +21457,12 @@ paths:
                                 properties:
                                   id:
                                     type: string
-                                    description: Question ID.
+                                    description: >-
+                                      Question ID. Authored in the quiz's Hugo front matter, not a database row, so it
+                                      is an opaque content-scoped string. Not a UUID.
+                                    example: q1
                                     maxLength: 500
-                                    format: uuid
+                                    x-id-format: external
                                   text:
                                     type: string
                                     description: The text of the question.
@@ -21149,9 +21499,12 @@ paths:
                                       properties:
                                         id:
                                           type: string
-                                          description: QuestionOption ID.
+                                          description: >-
+                                            QuestionOption ID. Authored in the quiz's Hugo front matter, not a database
+                                            row, so it is an opaque content-scoped string. Not a UUID.
+                                          example: a
                                           maxLength: 500
-                                          format: uuid
+                                          x-id-format: external
                                         text:
                                           type: string
                                           description: The text of the questionoption.
@@ -21194,9 +21547,12 @@ paths:
                                 properties:
                                   id:
                                     type: string
-                                    description: Parent ID.
+                                    description: >-
+                                      Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                      content-scoped string. Not a UUID. See `Quiz.id`.
+                                    example: introduction-to-devops-and-sre
                                     maxLength: 500
-                                    format: uuid
+                                    x-id-format: external
                                   title:
                                     type: string
                                     description: The title of the parent.
@@ -21221,9 +21577,12 @@ paths:
                               properties:
                                 id:
                                   type: string
-                                  description: Parent ID.
+                                  description: >-
+                                    Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                    content-scoped string. Not a UUID. See `Quiz.id`.
+                                  example: introduction-to-devops-and-sre
                                   maxLength: 500
-                                  format: uuid
+                                  x-id-format: external
                                 title:
                                   type: string
                                   description: The title of the parent.
@@ -21247,9 +21606,12 @@ paths:
                               properties:
                                 id:
                                   type: string
-                                  description: Parent ID.
+                                  description: >-
+                                    Parent ID. Identifies a Hugo content page, not a database row, so it is an opaque
+                                    content-scoped string. Not a UUID. See `Quiz.id`.
+                                  example: introduction-to-devops-and-sre
                                   maxLength: 500
-                                  format: uuid
+                                  x-id-format: external
                                 title:
                                   type: string
                                   description: The title of the parent.
@@ -37863,7 +38225,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /events/{eventId}:
+  /api/events/{eventId}:
     delete:
       x-internal:
         - cloud
@@ -37907,69 +38269,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /events:
-    post:
-      x-internal:
-        - cloud
-        - meshery
-      tags:
-        - Events_events
-      operationId: createEvent
-      summary: Create a new event
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              description: Payload for creating a new event.
-              additionalProperties: true
-              properties:
-                owner:
-                  type: string
-                  format: uuid
-                  description: UUID of the user associated with the event.
-                  x-go-type: uuid.UUID
-                  x-go-type-import:
-                    path: github.com/gofrs/uuid
-                  x-go-name: Owner
-                  x-oapi-codegen-extra-tags:
-                    db: owner
-                    json: owner,omitempty
-                category:
-                  type: string
-                  description: The category of the event.
-                  maxLength: 500
-                action:
-                  type: string
-                  description: The action of the event.
-                  maxLength: 500
-                description:
-                  type: string
-                  description: Description of the event.
-                  maxLength: 5000
-      responses:
-        '201':
-          description: Event created
-        '400':
-          description: Invalid request body or request param
-          content:
-            text/plain:
-              schema:
-                type: string
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
-          content:
-            text/plain:
-              schema:
-                type: string
-  /events/delete:
+  /api/events/delete:
     post:
       x-internal:
         - cloud
@@ -38033,7 +38333,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /events/status:
+  /api/events/status:
     put:
       x-internal:
         - cloud
@@ -38103,7 +38403,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /events/{eventId}/status:
+  /api/events/{eventId}/status:
     put:
       x-internal:
         - cloud
@@ -38389,6 +38689,67 @@ paths:
           description: Not found
         '500':
           description: Server error
+    post:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - Events_events
+      operationId: createEvent
+      summary: Create a new event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Payload for creating a new event.
+              additionalProperties: true
+              properties:
+                owner:
+                  type: string
+                  format: uuid
+                  description: UUID of the user associated with the event.
+                  x-go-type: uuid.UUID
+                  x-go-type-import:
+                    path: github.com/gofrs/uuid
+                  x-go-name: Owner
+                  x-oapi-codegen-extra-tags:
+                    db: owner
+                    json: owner,omitempty
+                category:
+                  type: string
+                  description: The category of the event.
+                  maxLength: 500
+                action:
+                  type: string
+                  description: The action of the event.
+                  maxLength: 500
+                description:
+                  type: string
+                  description: Description of the event.
+                  maxLength: 5000
+      responses:
+        '201':
+          description: Event created
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
   /api/events/list:
     get:
       x-internal:

@@ -212,7 +212,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 <a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
 
 ## <a name="contributing-docs">Documentation Contribution Flow</a>
-Please contribute! Layer5 documentation uses Jekyll and GitHub Pages to host docs sites. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
+Please contribute! Layer5 documentation is built with Hugo and the Docsy theme. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
 
 1. Create a fork, if you have not already, by following the steps described [here](./CONTRIBUTING-gitflow.md)
 1. In the local copy of your fork, navigate to the docs folder.

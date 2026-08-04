@@ -1,0 +1,92 @@
+name: Build Docs Preview
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'content/**'
+      - '**.md'
+      - '**.go'
+      - 'hugo.yaml'
+      - '.github/workflows/build-docs-preview.yml'
+      - '.github/workflows/deploy-docs-preview.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-preview-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    env:
+      HUGO_VERSION: 0.158.0
+
+    steps:
+      # Hugo Module fetching hits proxy.golang.org and sum.golang.org. Harmless
+      # under egress-policy: audit, but if this is promoted to block, those two
+      # plus objects.githubusercontent.com must be in allowed-endpoints or the
+      # build dies at module resolution.
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Checkout PR
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: recursive
+
+      - name: Setup Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build PR preview
+        env:
+          HUGO_PREVIEW: "true"
+          BASE_URL: /pr-preview/pr-${{ github.event.pull_request.number }}/
+        run: |
+          npm run build:preview
+          cat > public/robots.txt <<'ROBOTS'
+          User-agent: *
+          Disallow: /
+          ROBOTS
+
+      - name: Save PR Metadata
+        run: |
+          mkdir -p pr
+          echo "${{ github.event.action }}" > pr/action
+          echo "${{ github.event.number }}" > pr/number
+          echo "${{ github.event.pull_request.head.sha }}" > pr/sha
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: docs-preview-build
+          path: |
+            public/
+            pr/
+          if-no-files-found: error
+          retention-days: 7
