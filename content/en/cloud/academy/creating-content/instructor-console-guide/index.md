@@ -53,20 +53,33 @@ Below the creation tool is the main dashboard, which provides an overview of you
 
 These charts display your most important, high-level statistics, giving you a snapshot of your academy's health:
 
+<!-- Screenshot out of date: it shows the old three-card row (Total Learners / Active Learners /
+     Total Test Taken). The shipped Overview has the five cards listed below. Recapture against the
+     current console. Tracked in layer5io/docs#1184. -->
 ![Core Metrics Dashboard](./images/core-metrics.png)
 
 - **Total Learners**: Represents the overall reach of your academy. This is the total number of people who have ever shown interest in your content.
-- **Active Learners**: Measures current engagement. This is the number of learners currently working through content, giving you an idea of your active student body.
-- **Total Test Taken**: Indicates the level of interaction with your assessments.
+- **Active Learners**: Measures current engagement. This is the number of distinct learners who have worked with your content this calendar month, giving you an idea of your active student body.
+- **Registrations**: Every registration in the organization, whatever the state of the content it points at. This is the same total the [Learner Registration](#learner-registration) chart breaks down, so the two always agree.
+- **Completion Rate**: Registrations marked completed as a share of all registrations.
+- **Quiz Pass Rate**: The share of quiz attempts that passed, across every test in your organization. The card's subtitle carries the underlying counts (for example "762 of 1,036 attempts passed"), so the raw attempt total is still visible.
+
+A rate card with nothing to divide renders as `-`, not `0%`. "Nobody has attempted this quiz yet" and "everybody failed it" are different facts, and reporting the first as zero would send you looking for a problem that isn't there.
 
 **Strategic Uses**
 - Monitor Total Learners growth - steady increases indicate growing academy reach
-- Analyze Total Test Taken - high counts suggest challenging material requiring retakes, low counts may indicate learners avoiding assessments, assessments not being mandatory, or content being too easy
+- Analyze Quiz Pass Rate - a low rate suggests challenging material or unclear content, a very high rate may indicate assessments that are too easy. The attempt count in the card's subtitle distinguishes a low rate over many attempts (a real difficulty signal) from one over a handful (not yet meaningful).
 
 {{< alert type="info" title="What Defines an 'Active Learner'?" >}}
-The **Active Learners** metric is a key indicator for engagement and billing, calculated based on the current status of content registrations.
+The **Active Learners** metric is a key indicator for engagement and billing. It counts *learners*, not registrations, and it is scoped to the current calendar month.
 
-Specifically, it counts the number of registrations that are currently in the `Registered` status. This represents learners who have enrolled in your content but have not yet `Completed` it. It gives you a clear picture of your "in-progress" student body.
+A learner counts as active this month if, against academy content that is still live, they either created or touched a registration during the month, or submitted a quiz attempt during the month. A learner who does both counts once. A learner who enrolled months ago and sits a quiz this month is active this month, even though their registration row has not changed.
+
+Because it counts distinct people rather than open registrations, it is smaller than the number of registrations in progress, and it resets its window each month rather than accumulating.
+{{< /alert >}}
+
+{{< alert type="info" title="'Registrations' vs. 'Registrations Here'" >}}
+The **Curricula** tab has its own registrations card, named **Registrations Here**, which deliberately counts something narrower: only registrations against the published curricula listed on that tab. It is normally a smaller number than the Overview's **Registrations** card, which counts every registration in the organization including those against draft or retired content. That gap is expected, not a discrepancy - the card carries a tooltip explaining the difference.
 {{< /alert >}}
 
 ### Content Details
@@ -166,9 +179,11 @@ These statistics provide a high-level summary of all test activities in your aca
 -   **Pass/Fail Summary Bar:** This bar chart gives you an at-a-glance comparison of the total number of passed attempts (green) versus failed attempts (red) across all tests.
 
 -   **Insight Cards:** These three cards automatically surface key trends and outliers from your data:
-    -   **Most Difficult Test:** The quiz with the lowest pass-to-fail ratio, helping you identify challenging content.
-    -   **Easiest Test:** The quiz with the highest pass-to-fail ratio.
+    -   **Lowest Pass Rate:** The quiz with the smallest share of passing attempts, helping you identify challenging content.
+    -   **Highest Pass Rate:** The quiz with the largest share of passing attempts.
     -   **Most Attempted Test:** The quiz that learners have attempted the most times, regardless of the outcome.
+
+    The two rate cards rank on pass rate rather than on raw pass and fail counts, and only tests with at least five attempts are ranked. Ranking on counts would measure popularity instead of difficulty - the test the most people sit holds both the most passes and the most failures - and the attempts floor stops a single learner failing a brand-new quiz from crowning it the hardest test. In a young academy where no test has reached five attempts yet, the ranking falls back to the full set.
 
 #### Test Metrics
 
@@ -181,7 +196,7 @@ Use this list to quickly identify which specific assessments are causing the mos
 {{< /alert >}}
 
 **Strategic Uses**
-- Investigate difficult tests - when a quiz appears in the **Most Difficult Test** card with low pass rates, review the content and questions for clarity
+- Investigate difficult tests - when a quiz appears in the **Lowest Pass Rate** card, review the content and questions for clarity
 - Monitor test attempt patterns - if **Most Attempted Test** has low pass rates, learners may be struggling with fundamental concepts
 - Use pass rate trends - improving pass rates suggest content optimization success, declining rates may indicate new content is too challenging
 
@@ -199,7 +214,7 @@ Currently, the Instructor Console does not have a built-in feature to export the
 </details>
 
 <details>
-<summary>Does "Total Test Taken" show the number of unique learners who took tests?</summary>
+<summary>Does "Quiz Pass Rate" count unique learners?</summary>
 
-No. The "Total Test Taken" metric is a raw count of all attempts, including retakes by the same user. It is a measure of overall testing activity, not the number of unique learners who have been tested.
+No. It is computed over attempts, not people: retakes by the same learner each count, so a learner who fails twice and then passes contributes two failures and one pass. It measures assessment outcomes, not how many distinct learners have been tested. For a headcount, use Total Learners or Active Learners.
 </details>
