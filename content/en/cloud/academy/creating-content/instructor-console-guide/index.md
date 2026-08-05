@@ -58,6 +58,8 @@ These charts display your most important, high-level statistics, giving you a sn
      current console. Tracked in layer5io/docs#1184. -->
 ![Core Metrics Dashboard](./images/core-metrics.png)
 
+*This screenshot predates the current layout and is pending recapture. The console now shows the five cards described below.*
+
 - **Total Learners**: Represents the overall reach of your academy. This is the total number of people who have ever shown interest in your content.
 - **Active Learners**: Measures current engagement. This is the number of distinct learners who have worked with your content this calendar month, giving you an idea of your active student body.
 - **Registrations**: Every registration in the organization, whatever the state of the content it points at. This is the same total the [Learner Registration](#learner-registration) chart breaks down, so the two always agree.
@@ -73,9 +75,9 @@ A rate card with nothing to divide renders as `-`, not `0%`. "Nobody has attempt
 {{< alert type="info" title="What Defines an 'Active Learner'?" >}}
 The **Active Learners** metric is a key indicator for engagement and billing. It counts *learners*, not registrations, and it is scoped to the current calendar month.
 
-A learner counts as active this month if, against academy content that is still live, they either created or touched a registration during the month, or submitted a quiz attempt during the month. A learner who does both counts once. A learner who enrolled months ago and sits a quiz this month is active this month, even though their registration row has not changed.
+A learner counts as active this month if, against academy content that is still live, they either created or touched a registration during the month, or submitted a quiz attempt during the month. A learner who does both counts once. A learner who enrolled months ago and takes a quiz this month is active this month, even though their registration row has not changed.
 
-Because it counts distinct people rather than open registrations, it is smaller than the number of registrations in progress, and it resets its window each month rather than accumulating.
+Because it counts distinct people over a monthly window rather than counting registrations, it is not directly comparable to the registration totals beside it, and it resets each month rather than accumulating. A learner who finished a curriculum long ago still counts as active in any month they take a quiz.
 {{< /alert >}}
 
 {{< alert type="info" title="'Registrations' vs. 'Registrations Here'" >}}
@@ -185,7 +187,7 @@ These statistics provide a high-level summary of all test activities in your aca
     -   **Highest Pass Rate:** The quiz with the largest share of passing attempts.
     -   **Most Attempted Test:** The quiz that learners have attempted the most times, regardless of the outcome.
 
-    The two rate cards rank on pass rate rather than on raw pass and fail counts, and only tests with at least five attempts are ranked. Ranking on counts would measure popularity instead of difficulty - the test the most people sit holds both the most passes and the most failures - and the attempts floor stops a single learner failing a brand-new quiz from crowning it the hardest test. In a young academy where no test has reached five attempts yet, the ranking falls back to the full set.
+    The two rate cards rank on pass rate rather than on raw pass and fail counts, and only tests with at least five attempts are ranked. Ranking on counts would measure popularity instead of difficulty - the test the most people take holds both the most passes and the most failures - and the attempts floor stops a single learner failing a brand-new quiz from crowning it the hardest test. In a young academy where no test has reached five attempts yet, the ranking falls back to the full set.
 
 #### Test Metrics
 
