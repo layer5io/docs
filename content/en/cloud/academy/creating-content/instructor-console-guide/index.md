@@ -107,9 +107,11 @@ This chart provides an immediate visual summary of your learner base.
 
 ![Learner Registration](./images/learner-registration.png)
 
-While the chart will only display statuses that currently have data, the system recognizes the following definitions, each represented by a specific color:
-  -   `Registered` (Blue): The learner has enrolled but has not yet completed the content.
+While the chart will only display statuses that currently have data, the system recognizes the following five definitions, each represented by a specific color:
+  -   `Registered` (Blue): The learner has enrolled but has not yet started the content.
+  -   `In Progress` (Amber): The learner has started the content but has not yet finished it.
   -   `Completed` (Green): The learner has successfully finished all required parts of the content.
+  -   `Failed` (Crimson): The learner did not pass the content.
   -   `Withdrawn` (Red): The learner has unenrolled from the content.
 
 **Strategic Uses**
