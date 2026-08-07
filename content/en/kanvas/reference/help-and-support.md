@@ -11,7 +11,7 @@ Kanvas offers a **Help and Support** form for sending a support request to the L
 
 A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider's support intake:
 
-```
+```text
 Kanvas (browser)  ->  Meshery Server extension proxy  ->  Remote provider support webhook
 ```
 
@@ -19,7 +19,7 @@ For [Layer5 Cloud](/cloud) that intake is Layer5's support queue. For a self-hos
 
 ## Help and Support requires a remote provider
 
-Because the submission travels through Meshery Server's extension proxy, Help and Support only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider (`None`) Meshery Server has no support intake to forward to, and the request is rejected as *not implemented*.
+Because the submission travels through Meshery Server's extension proxy, Help and Support only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider (`None`) Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`.
 
 This puts Help and Support in line with every other Cloud-bound Kanvas capability - [sharing designs and views](/kanvas/designer/sharing), the [catalog](/cloud/concepts/catalog), and resource access - all of which likewise require a remote provider.
 
