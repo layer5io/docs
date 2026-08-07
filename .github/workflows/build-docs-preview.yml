@@ -95,7 +95,7 @@ jobs:
         with:
           name: docs-preview-build
           path: |
-            ${{ github.event.action != 'closed' && 'public' || '' }}
+            public/
             pr/
           if-no-files-found: error
           retention-days: 7
