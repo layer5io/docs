@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.226</title><link>/cloud/reference/releases/v1.0.226/</link><pubDate>Wed, 05 Aug 2026 04:53:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.226/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.227</title><link>/cloud/reference/releases/v1.0.227/</link><pubDate>Fri, 07 Aug 2026 04:11:19 +0000</pubDate><guid>/cloud/reference/releases/v1.0.227/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): restore green hover glow on Learning Cards @rishiraj38 (#5906)&lt;/li&gt;
+&lt;li&gt;[skills] iterate-pr 2.4.0: never report an unfetched PR as a clean one @arjunmehta-git (#5904)&lt;/li&gt;
+&lt;li&gt;feat(academy): add six Instructor Console statistics derived from the existing summary payload @willcalcote (#5903)&lt;/li&gt;
+&lt;li&gt;fix(ui): run e2e against a pre-built static export and fix the two defects it exposed @willcalcote (#5900)&lt;/li&gt;
+&lt;li&gt;fix(connections): answer 404 for a delete addressed to an unknown id @willcalcote (#5898)&lt;/li&gt;
+&lt;li&gt;fix(events): attribute organization session events to their real actor @jijillery (#5881)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @hamza-mohd, @hortison, @jamieplu, @jijillery, @leecalcote, @rishiraj38, @simihablo, @willcalcote and tester&lt;/p&gt;</description></item><item><title>v1.0.226</title><link>/cloud/reference/releases/v1.0.226/</link><pubDate>Wed, 05 Aug 2026 04:53:51 +0000</pubDate><guid>/cloud/reference/releases/v1.0.226/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(handlers): preserve unmentioned keys on the whole-document preference write @jijillery (#5875)&lt;/li&gt;
 &lt;li&gt;fix(ui): bump @meshery/schemas to v1.3.44 to restore event recording @jijillery (#5883)&lt;/li&gt;
 &lt;li&gt;fix(academy): the outage ate no attempts; restore five passes a rename orphaned @carlosriosilva (#5877)&lt;/li&gt;
