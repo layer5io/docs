@@ -59,6 +59,23 @@ To publish a design into the catalog:
 1. In the design details dialog, review or update the **name**, **type**, and **description**, then click **Publish To Catalog**.
 1. After the request is submitted, maintainers approve it, and the design appears in the [public catalog](https://cloud.layer5.io/catalog).
 
+### Importing Filters
+
+WebAssembly filters can be brought into Layer5 Cloud in two ways:
+
+- **File Upload**: select the filter file from your machine and give it a name.
+- **URL Upload**: give a name and the `http` or `https` URL that serves the filter body directly.
+
+An imported filter is saved under the name you enter on the import form, whichever method you use.
+
+{{< alert title="URL import cannot reach private networks" >}}
+Layer5 Cloud is a hosted, multi-tenant service, so a URL import is fetched from Cloud's own network rather than from your machine. A URL whose host resolves - or redirects - to a loopback, link-local, private, carrier-grade NAT, or IPv6 unique-local address is refused, and only `http` and `https` URLs are accepted.
+
+If your filter lives on an internal host, a private network, or anything else Cloud cannot reach from the public internet - an internal Git server, for example - use **File Upload** instead. It is the supported path for those sources and no capability is lost. There is deliberately no allowlist or opt-out setting.
+{{< /alert >}}
+
+If an import URL is mistyped, has moved, or answers with anything other than a success status, the import fails with **400 Bad Request**: the URL is the problem, so check that it is reachable from the public internet and serves the filter body itself rather than a download page. A `500` or `502` means the fetch itself failed in transit (for example a connection, TLS, or timeout failure) against a URL that was otherwise permitted.
+
 ### Content Tags
 
 - Arbitrary strings for categorization.
