@@ -102,13 +102,20 @@ def heading_depth(relpath: Path, is_index: bool) -> int:
 
 
 def main():
+    """Parse arguments, collect markdown files, and write the digest."""
     if len(sys.argv) != 4:
         print(f"Usage: {sys.argv[0]} <content_dir> <output_file> <title>")
         sys.exit(1)
 
-    content_dir = Path(sys.argv[1])
-    output_file = Path(sys.argv[2])
+    content_dir_display = sys.argv[1]
+    output_file_display = sys.argv[2]
+    content_dir = Path(content_dir_display).resolve()
+    output_file = Path(output_file_display).resolve()
     doc_title = sys.argv[3]
+
+    if not content_dir.is_dir():
+        print(f"Error: content directory '{content_dir_display}' does not exist or is not a directory.", file=sys.stderr)
+        sys.exit(1)
 
     # Collect all markdown files, excluding releases and helm-chart-values
     md_files = []
@@ -128,7 +135,7 @@ def main():
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out_lines = [
         f"# {doc_title}\n",
-        f"> Auto-generated documentation digest. Source: `{content_dir}`  ",
+        f"> Auto-generated documentation digest. Source: `{content_dir_display}`  ",
         f"> Generated: {now}\n",
         "---\n",
     ]
@@ -157,7 +164,7 @@ def main():
 
     output_file.write_text('\n'.join(out_lines), encoding='utf-8')
     total_lines = sum(1 for _ in output_file.read_text().split('\n'))
-    print(f"Done: {total_lines} lines, {file_count} documents written to {output_file}")
+    print(f"Done: {total_lines} lines, {file_count} documents written to {output_file_display}")
 
 
 if __name__ == '__main__':
