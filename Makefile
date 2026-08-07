@@ -15,10 +15,13 @@
 include .github/build/Makefile.core.mk
 include .github/build/Makefile.show-help.mk
 
-## Install docs.layer5.io dependencies on your local machine.
-## See https://gohugo.io/categories/installation
-setup:
-	npm install
+# ---------------------------------------------------------------------------
+# Docs
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# MAINTENANCE: Show help for available targets
+# ---------------------------------------------------------------------------
 
 ## Verify required commands and local dependencies are present.
 check-deps:
@@ -27,20 +30,31 @@ check-deps:
 	@test -x node_modules/.bin/hugo || { echo "Error: Hugo binary not found in node_modules. Please run 'make setup' first."; exit 1; }
 	@echo "Dependencies check passed."
 
-## Run docs.layer5.io on your local machine with draft and future content enabled.
-site: check-deps check-go
-	npm run dev:site
+## Validate Go is installed
+check-go:
+	@echo "Checking if Go is installed..."
+	@command -v go > /dev/null || { echo "Go is not installed. Please install it before proceeding."; exit 1; }
+	@echo "Go is installed."
 
-## Run docs.layer5.io on your local machine in serve mode (without file watching).
-serve: check-deps check-go
-	npm run dev:serve
+#----------------------------------------------------------------------------
+# LOCAL_BUILDS: Show help for available targets
+#----------------------------------------------------------------------------
+
+## Install docs.layer5.io dependencies on your local machine.
+## See https://gohugo.io/categories/installation
+setup:
+	npm install
 
 ## Build docs.layer5.io on your local machine.
-build: check-deps check-go
+build: check-go check-deps
 	npm run dev:build
 
+## Build docs.layer5.io for preview
+build-preview: check-go check-deps
+	npm run build:preview
+
 ## Build docs.layer5.io for production with optional base URL.
-build-production: check-deps
+build-production: check-go check-deps
 	set -e; \
 	if [ -n "$(BASE_URL)" ]; then \
 		base_url="$(BASE_URL)"; \
@@ -50,20 +64,31 @@ build-production: check-deps
 		npm run build:production -- --gc; \
 	fi
 
-## Empty build cache and run docs.layer5.io on your local machine.
-clean: check-deps
-	npm run dev:clean
-	$(MAKE) site
+## Build and run docs.layer5.io locally in serve mode.
+serve: check-go check-deps
+	npm run serve
 
-## Verify Go is installed locally.
-check-go:
-	@echo "Checking if Go is installed..."
-	@command -v go > /dev/null || (echo "Go is not installed. Please install it before proceeding."; exit 1)
-	@echo "Go is installed."
+## Run docs.layer5.io on your local machine with draft and future content enabled.
+site: check-go check-deps
+	npm run dev:site
+
+## Empty build cache and run docs.layer5.io on your local machine.
+clean:
+	npm run clean
+	$(MAKE) setup
+	$(MAKE) site
 
 ## Format code using Prettier
 format:
 	npm run format
+
+#----------------------------------------------------------------------------
+# DOCKER_BUILDS: Docker-based targets for CI/CD
+#----------------------------------------------------------------------------
+
+## Build and run docs website within a Docker container
+docker:
+	docker compose watch
 
 ## Install base OS dependencies needed in Docker-based docs builds.
 docker-install-base-deps:
@@ -135,19 +160,16 @@ docker-build-upstream:
 	HUGO_MODULE_REPLACEMENTS="github.com/$(UPSTREAM_MODULE_NAME) -> github.com/$(UPSTREAM_REPO) $(UPSTREAM_COMMIT)" \
 		hugo --ignoreVendorPaths "github.com/$(UPSTREAM_MODULE_NAME)" -d /out
 
-## Build and run docs website within a Docker container
-docker:
-	docker compose watch
-
 .PHONY: \
 	setup \
 	check-deps \
-	build \
-	build-production \
-	site \
-	serve \
-	clean \
 	check-go \
+	build \
+	build-preview \
+	build-production \
+	serve \
+	site \
+	clean \
 	format \
 	docker \
 	docker-install-base-deps \
