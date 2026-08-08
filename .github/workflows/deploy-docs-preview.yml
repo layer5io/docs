@@ -46,7 +46,7 @@ jobs:
         run: |
           ACTION=$(head -n1 temp-artifact/pr/action 2>/dev/null | tr -d '[:space:]')
           case "$ACTION" in
-            opened|reopened|synchronize) ;;
+            opened|reopened|synchronize|closed) ;;
             *) echo "::error::invalid or missing action: '$ACTION'"; exit 1 ;;
           esac
 
@@ -72,7 +72,7 @@ jobs:
           umbrella-dir: pr-preview
           pr-number: ${{ steps.meta.outputs.pr_number }}
           pages-base-url: docs.layer5.io
-          action: deploy
+          action: ${{ steps.meta.outputs.action == 'closed' && 'remove' || 'deploy' }}
           wait-for-pages-deployment: false
           comment: false
 
@@ -82,8 +82,9 @@ jobs:
           header: pr-preview
           number: ${{ steps.meta.outputs.pr_number }}
           message: |
-            🚀 Preview deployment: https://docs.layer5.io/pr-preview/pr-${{ steps.meta.outputs.pr_number }}/
-            > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/${{ github.repository }}/actions/workflows/pages/pages-build-deployment)*
+            ${{ steps.meta.outputs.action == 'closed' && 'Preview removed because the pull request was closed.'
+            || format('🚀 Preview deployment: https://docs.layer5.io/pr-preview/pr-{0}/
+            > *Note: Preview may take a moment (GitHub Pages deployment in progress). Please wait and refresh. Track deployment [here](https://github.com/{1}/actions/workflows/pages/pages-build-deployment)*', steps.meta.outputs.pr_number, github.repository) }}
 
   prune:
     # Both jobs push to gh-pages, but only prune retries a lost race, so deploy

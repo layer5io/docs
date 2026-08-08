@@ -3,7 +3,7 @@ name: Build Docs Preview
 on:
   pull_request:
     branches: [master]
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, closed]
     paths:
       - 'content/**'
       - 'assets/**'
@@ -38,27 +38,32 @@ jobs:
       # plus objects.githubusercontent.com must be in allowed-endpoints or the
       # build dies at module resolution.
       - name: Harden Runner
+        if: github.event.action != 'closed'
         uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
         with:
           egress-policy: audit
 
       - name: Checkout PR
+        if: github.event.action != 'closed'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           submodules: recursive
 
       - name: Setup Go
+        if: github.event.action != 'closed'
         uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version-file: go.mod
 
       - name: Setup Node
+        if: github.event.action != 'closed'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "22"
 
       - name: Install dependencies
+        if: github.event.action != 'closed'
         run: |
           if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci
@@ -67,6 +72,7 @@ jobs:
           fi
 
       - name: Build PR preview
+        if: github.event.action != 'closed'
         env:
           HUGO_PREVIEW: "true"
           BASE_URL: /pr-preview/pr-${{ github.event.pull_request.number }}/
