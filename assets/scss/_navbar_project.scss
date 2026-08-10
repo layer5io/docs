@@ -13,7 +13,7 @@
   min-height: 5rem;
   padding: 0 1rem;
   border-bottom: 1px solid #333;
-  background-color: $dark !important;
+  background-color: $body-bg;
 
   @include media-breakpoint-up(md) {
     padding: 0 5rem;

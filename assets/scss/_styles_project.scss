@@ -81,7 +81,6 @@ body {
     padding: $spacer;
 
     >code {
-      background-color: inherit !important;
       padding: 0;
       margin: 0;
       font-size: 100%;
@@ -292,7 +291,7 @@ a:not([href]):not([class]):hover {
     }
 
     &.active.tree-root {
-      border: 2px solid $lightslategray !important;
+      border: 2px solid $lightslategray;
       padding: 0.25rem;
       padding-left: 0.5rem !important;
       background-color: rgba($lightslategray, 0.1);
@@ -695,23 +694,23 @@ a:not([href]):not([class]):hover {
   color: red;
 }
 
-.click-to-copy button {
+.td-content .highlight pre button.td-click-to-copy {
   aspect-ratio: 1;
-  top: 6px !important;
-  right: 10px !important;
-  color: $lightslategray !important;
-  background-color: $dark !important;
+  top: 6px;
+  right: 10px;
+  color: $lightslategray;
+  background-color: $dark;
 
   &:hover {
-    color: $body-color !important;
+    color: $body-color;
   }
 
   &:active {
-    transform: none !important;
+    transform: none;
   }
 
   &.td-click-to-copy--copied {
-    color: $success !important;
+    color: $success;
   }
 }
 
