@@ -23611,7 +23611,7 @@ a:not([href]):not([class]):hover {
     .td-sidebar-nav.td-sidebar-nav--search-disabled {
       padding-top: 0; } }
   @media (max-width: 768px) {
-    .td-sidebar-nav .ul-1 ul {
+    .td-sidebar-nav__section .ul-1 ul {
       padding-left: 1.5em; } }
   .td-sidebar-nav__section-title a {
     color: #ced4da;
