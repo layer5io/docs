@@ -23585,6 +23585,17 @@ a:not([href]):not([class]):hover {
   padding-left: 0.5rem;
   margin-top: 0;
   overflow-x: hidden; }
+  .td-sidebar::-webkit-scrollbar {
+    width: 6px; }
+  .td-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .td-sidebar::-webkit-scrollbar-thumb {
+    background-color: #00b39f;
+    border-radius: 4px; }
+    .td-sidebar::-webkit-scrollbar-thumb:hover {
+      background-color: #00e6cc; }
   @media (min-width: 768px) {
     @supports (position: sticky) {
       .td-sidebar__inner {
