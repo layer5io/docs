@@ -30,7 +30,7 @@ Designs support two different types of tags: Labels and Annotations. Labels are 
 {{< alert title="Performance Consideration" type="warning">}}
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
 
-Upon loading a design exceeds that exceeds 10 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock.
+Upon loading a design that exceeds 10 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock.
 {{< /alert >}}
 
 {{< alert title="Related Concept">}}
