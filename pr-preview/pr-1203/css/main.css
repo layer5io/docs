@@ -23648,14 +23648,12 @@ a:not([href]):not([class]):hover {
   height: calc(100vh - 5.5rem);
   overflow-y: auto;
   scrollbar-gutter: stable;
-  margin-right: 8px;
-  /* Decouples from browser window scrollbar */ }
+  margin-right: 8px; }
   .td-sidebar-toc::-webkit-scrollbar {
     width: 6px; }
   .td-sidebar-toc::-webkit-scrollbar-track {
     background: transparent;
     margin-top: 0.5rem;
-    /* Leaves top space so the rounded tip is 100% visible */
     margin-bottom: 0.5rem; }
   .td-sidebar-toc::-webkit-scrollbar-thumb {
     background-color: #00b39f;
