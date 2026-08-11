@@ -23,7 +23,6 @@
   background-color: $dark;
   overflow-x: hidden;
 }
-
 // .td-cover-block--height-full {
 //   min-height: 90vh;
 
@@ -299,7 +298,6 @@ a:not([href]):not([class]):hover {
     }
   }
 }
-
 // Right sidebar
 .td-sidebar-toc {
   margin-top: 0rem;
@@ -312,14 +310,35 @@ a:not([href]):not([class]):hover {
       #0f0a09,
       #000000);
   padding-left: $sidebar-padding-horizontal;
-  padding-right: $sidebar-padding-horizontal;
+  padding-right: calc(#{$sidebar-padding-horizontal} + 8px);
 
-  @supports (position: sticky) {
-    position: sticky;
-    top: 5.5rem;
-    padding-top: $sidebar-padding-vertical;
-    height: calc(100vh - 5.5rem);
-    overflow-y: auto;
+  position: sticky;
+  top: 5.5rem;
+  padding-top: $sidebar-padding-vertical;
+  height: calc(100vh - 5.5rem);
+  overflow-y: auto;
+
+  // --- FIX FOR SCROLLBAR OVERLAP & TIP VISIBILITY (#1172) ---
+  scrollbar-gutter: stable;
+  margin-right: 8px; /* Decouples from browser window scrollbar */
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 0.5rem;   /* Leaves top space so the rounded tip is 100% visible */
+    margin-bottom: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: lighten($primary, 10%);
+    }
   }
 
   .taxo-categories {
