@@ -23,10 +23,6 @@
   background-color: $dark;
   overflow-x: hidden;
 }
-// .td-cover-block--height-full {
-//   min-height: 90vh;
-
-// }
 
 //main sections
 .td-outer {
@@ -35,10 +31,6 @@
 
 .td-main main {
   @include media-breakpoint-up(md) {
-    // `body` already reserves 5.5rem to clear the fixed navbar (see below), so
-    // this is just breathing room beneath it - not navbar clearance. The former
-    // 4rem stacked on top of the body padding and pushed content ~64px down on
-    // every docs page, leaving a large blank band above the content.
     padding-top: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -103,12 +95,12 @@ body {
 
   overflow-x: hidden;
 }
+
 .td-content .card img {
-  width: 100% ;
+  width: 100%;
 }
 
 // Links
-
 a {
   color: $primary;
   text-decoration: none;
@@ -132,10 +124,7 @@ a:not([href]):not([class]):hover {
 }
 
 .taxonomy {
-  // .taxonomy-terms-cloud
-
   .taxonomy-term {
-
     border-width: 0;
     border-radius: 0 3px 3px 0;
     display: inline-block;
@@ -150,13 +139,10 @@ a:not([href]):not([class]):hover {
     transition: color 0.2s;
     clip-path: polygon(100% 0, 100% 100%, 0.8em 100%, 0 50%, 0.8em 0);
 
-
     &:hover {
       background-color: $primary;
       color: $white;
-
     }
-
   }
 
   .article-teaser {
@@ -180,7 +166,6 @@ a:not([href]):not([class]):hover {
 // Footer
 .td-footer {
   background-color: $black;
-  // bottom: 0%;
   z-index: 5;
 }
 
@@ -199,6 +184,7 @@ a:not([href]):not([class]):hover {
   padding-left: 0.5rem;
   margin-top: 0;
   overflow-x: hidden;
+
   &__inner {
     @include media-breakpoint-up(md) {
       @supports (position: sticky) {
@@ -284,8 +270,6 @@ a:not([href]):not([class]):hover {
           $primary 90% 100%) 1;
       padding: 0.25rem;
       padding-left: 0.5rem !important;
-      // background-image: linear-gradient(to left, rgba($dark,.33),rgba($dark,.5),rgba($dark,.75),#1e2117, #31412b, #3b6447, #378b6d, #00b39f);
-      // background-color: rgba($primary, .05);
       color: $secondary;
     }
 
@@ -298,6 +282,7 @@ a:not([href]):not([class]):hover {
     }
   }
 }
+
 // Right sidebar
 .td-sidebar-toc {
   margin-top: 0rem;
@@ -311,7 +296,6 @@ a:not([href]):not([class]):hover {
       #000000);
   padding-left: $sidebar-padding-horizontal;
   padding-right: calc(#{$sidebar-padding-horizontal} + 8px);
-
   position: sticky;
   top: 5.5rem;
   padding-top: $sidebar-padding-vertical;
@@ -320,7 +304,7 @@ a:not([href]):not([class]):hover {
 
   // --- FIX FOR SCROLLBAR OVERLAP & TIP VISIBILITY (#1172) ---
   scrollbar-gutter: stable;
-  margin-right: 8px; /* Decouples from browser window scrollbar */
+  margin-right: 8px;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -328,7 +312,7 @@ a:not([href]):not([class]):hover {
 
   &::-webkit-scrollbar-track {
     background: transparent;
-    margin-top: 0.5rem;   /* Leaves top space so the rounded tip is 100% visible */
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
@@ -418,8 +402,9 @@ a:not([href]):not([class]):hover {
   display: flex;
   align-items: center;
   color: $casper;
+
   &:hover {
-    background-color: rgba($primary, 0.3)
+    background-color: rgba($primary, 0.3);
   }
 }
 
@@ -439,9 +424,7 @@ a:not([href]):not([class]):hover {
   color: $casper;
 }
 
-
 // Style alert boxes.
-
 .alert {
   font-weight: $font-weight-medium;
   background: $gray-900;
@@ -456,7 +439,6 @@ a:not([href]):not([class]):hover {
 }
 
 // Dashboard
-
 .l5btn {
   padding: 1.25rem;
   border-radius: 0.75rem;
@@ -515,7 +497,7 @@ a:not([href]):not([class]):hover {
   font-size: 5rem;
   text-align: left;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, .9) 0px, rgb(0, 211, 169) 34%, rgb(235, 192, 23) 71%, rgb(255,243,197) 100%);
+    linear-gradient(to right, rgba(255, 255, 255, .9) 0px, rgb(0, 211, 169) 34%, rgb(235, 192, 23) 71%, rgb(255, 243, 197) 100%);
   background-position:
     0% 0%,
     0% 0%;
@@ -543,7 +525,6 @@ a:not([href]):not([class]):hover {
     background-position: -200%;
   }
 }
-
 
 .dash-tangle {
   width: 78.14231rem;
@@ -617,6 +598,7 @@ a:not([href]):not([class]):hover {
     max-width: 70%;
     text-align: left;
     flex-shrink: 0;
+
     @media (max-width: 768px) {
       max-width: 60%;
     }
@@ -743,8 +725,8 @@ a:not([href]):not([class]):hover {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .nav-tabs::-webkit-scrollbar {
