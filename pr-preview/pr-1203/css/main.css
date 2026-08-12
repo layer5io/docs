@@ -23652,7 +23652,7 @@ a:not([href]):not([class]):hover {
   border-left: 1px solid rgba(0, 179, 159, 0.33);
   background-image: linear-gradient(to top, #1e2117, #1d1912, #18120e, #0f0a09, #000000);
   padding-left: 1rem;
-  padding-right: calc(1rem + 8px);
+  padding-right: 1rem;
   position: sticky;
   top: 5.5rem;
   padding-top: 1rem;
