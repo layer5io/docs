@@ -314,7 +314,7 @@ a:not([href]):not([class]):hover {
       #0f0a09,
       #000000);
   padding-left: $sidebar-padding-horizontal;
-  padding-right: calc(#{$sidebar-padding-horizontal} + 8px);
+  padding-right: $sidebar-padding-horizontal;
   position: sticky;
   top: 5.5rem;
   padding-top: $sidebar-padding-vertical;
