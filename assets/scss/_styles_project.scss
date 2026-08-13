@@ -321,8 +321,6 @@ a:not([href]):not([class]):hover {
   padding-top: $sidebar-padding-vertical;
   height: calc(100vh - 5.5rem);
   overflow-y: auto;
-
-  // --- FIX FOR SCROLLBAR OVERLAP & TIP VISIBILITY (#1172) ---
   scrollbar-gutter: stable;
   margin-right: 8px;
 
