@@ -15,6 +15,10 @@ In Kanvas, you can share your designs with other members of your organization an
 You can share and control access to [Views]({{< ref "kanvas/operator/views/index.md" >}}) in the same fashion as you do for Designs.
 {{< /alert >}}
 
+{{< alert title="Verify People with Access after sharing" type="warning">}}
+In some earlier cases, the Share modal could report success while the grant or revoke was not applied. If you shared a design or view and collaborators still cannot open it—or someone you removed still has access—open **Share** on that resource and re-check the **People with Access** list. Re-add anyone who is missing, remove anyone who should not retain access, and confirm that collaborators can open the resource. Always treat **People with Access** as the source of truth after every share.
+{{< /alert >}}
+
 ## Understanding visibility levels
 
 Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:
@@ -129,6 +133,20 @@ There are two primary ways to share designs with teams:
         3.  By this association, members of the assigned Team(s) should then inherit access to the **designs** within that Workspace, including Private designs.
 
 > Learn more about auditing the access permission within [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}})
+
+## Share and visibility notifications
+
+Kanvas surfaces explicit notifications when a share or visibility action cannot complete. These messages replace earlier silent failures so you can tell success apart from an incomplete request.
+
+| Situation | What you see | What to do |
+| --- | --- | --- |
+| You change visibility on a resource kind that does not support a visibility mutation | A notification that the visibility change is **unsupported** for that resource (not a success message) | Keep the resource's current visibility, or use a resource kind that supports Private / Public / Published transitions. |
+| You click **Share** while the design or view body is still loading, or after the body failed to load | A notification that **sharing is unavailable** | Wait until the resource finishes loading, then open Share again. If the body failed to load, refresh or reopen the resource and retry once it loads successfully. |
+| The Share modal cannot load the access list | A notification that the **access list failed to load**, instead of an empty collaborator list | Close and reopen Share, or refresh the page. Do not assume that an empty list means nobody has access—until the list loads, the owner row and existing grants may be hidden, which also blocks revoke actions. |
+
+{{< alert title="People with Access is authoritative" type="note">}}
+After any grant or revoke, confirm the result in **People with Access** before you rely on the change. A success path updates that list; if the list did not load or the expected user is missing, treat the share as incomplete and retry.
+{{< /alert >}}
 
 [^1]: This functionality is not fully implemented yet. Users might occasionally observe that even when a team is assigned to a workspace, members of that team may not be able to access private designs within that workspace without explicit individual or team-level sharing for the design itself.
 [^2]: This feature (direct sharing with teams via the "Share" modal) is not yet fully implemented and is planned for a future update.
