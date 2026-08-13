@@ -19,6 +19,20 @@
 
 
 
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #EBC017;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #EBC017;"&gt;Verify People with Access after sharing&lt;/h4&gt;
+ 
+ In some earlier cases, the Share modal could report success while the grant or revoke was not applied. If you shared a design or view and collaborators still cannot open it—or someone you removed still has access—open &lt;strong&gt;Share&lt;/strong&gt; on that resource and re-check the &lt;strong&gt;People with Access&lt;/strong&gt; list. Re-add anyone who is missing, remove anyone who should not retain access, and confirm that collaborators can open the resource. Always treat &lt;strong&gt;People with Access&lt;/strong&gt; as the source of truth after every share.
+ 
+&lt;/div&gt;
+
+
+
 &lt;h2 id="understanding-visibility-levels" class="heading-link"&gt;
  Understanding visibility levels
  &lt;a href="#understanding-visibility-levels" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
