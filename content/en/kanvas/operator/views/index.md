@@ -30,7 +30,7 @@ Here's what you can do with views in Operator:
 
   Sharing a view lets you collaborate with team members. In the share modal, you can add the user you want to share the view with. You can also set your view access as either public or private. When it's set to public, anyone with the link to the view can edit the view. When it's set to private, others can view but only the owner can edit.
 
-  Views use the same Share modal and access list as designs. After you grant or revoke access, confirm the result under **People with Access**. For re-check guidance after the share-access fix and for the notifications Kanvas shows when share or visibility actions cannot complete, see [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
+  Views use the same Share modal and access list as designs. After you grant or revoke access, confirm the result under **People with Access**. For guidance on verifying access and for the notifications Kanvas shows when share or visibility actions cannot complete, see [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
 
   To share a view,
 

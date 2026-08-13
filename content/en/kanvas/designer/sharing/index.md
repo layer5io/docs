@@ -16,7 +16,7 @@ You can share and control access to [Views]({{< ref "kanvas/operator/views/index
 {{< /alert >}}
 
 {{< alert title="Verify People with Access after sharing" type="warning">}}
-Before the share-access fix in `@sistent/sistent` 0.22.0 (picked up by Kanvas when the host UI supplies that version), the Share modal could report success while the cloud API did not apply the grant or revoke. If you shared a design or view while that bug was live, open **Share** on each resource and re-check the **People with Access** list. Re-add anyone who is missing, and confirm that collaborators can open the resource. Going forward, treat **People with Access** as the source of truth after every share.
+In some earlier cases, the Share modal could report success while the grant or revoke was not applied. If you shared a design or view and collaborators still cannot open it—or someone you removed still has access—open **Share** on that resource and re-check the **People with Access** list. Re-add anyone who is missing, remove anyone who should not retain access, and confirm that collaborators can open the resource. Always treat **People with Access** as the source of truth after every share.
 {{< /alert >}}
 
 ## Understanding visibility levels
