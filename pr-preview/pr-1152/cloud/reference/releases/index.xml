@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1152/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1152/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.228</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.228/</link><pubDate>Sun, 09 Aug 2026 23:59:14 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.228/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1152/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1152/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.234</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.234/</link><pubDate>Thu, 13 Aug 2026 05:26:11 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.234/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): brand the email-change verification email for its reader @yi-nuo426 (#5967)&lt;/li&gt;
+&lt;li&gt;docs(testing): map the feedback email senders&amp;rsquo; test functions to TP-011 cases @yi-nuo426 (#5968)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.22.2 @l5io (#5964)&lt;/li&gt;
+&lt;li&gt;fix(ui): remove hardcoded product brand from user-visible copy @yi-nuo426 (#5962)&lt;/li&gt;
+&lt;li&gt;docs: correct stale org-admin credential, list missing test users @leecalcote (#5963)&lt;/li&gt;
+&lt;li&gt;fix(email): resolve hardcoded template hosts and repair the dead filter publish notification @yi-nuo426 (#5956)&lt;/li&gt;
+&lt;li&gt;fix(ui): make the credential form&amp;rsquo;s secret object the persisted value @alexquincy (#5955)&lt;/li&gt;
+&lt;li&gt;fix(ui): read the badge form from the construct version the server binds @alexquincy (#5954)&lt;/li&gt;
+&lt;li&gt;fix(ui): restore the 403 permission-key work that #5892 merged without @yi-nuo426 (#5952)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;feat(ui): filter OrgSwitcher to show only accessible orgs on 403 page @rishiraj38 (#5961)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @jamieplu, @l5io, @leecalcote, @pontusringblom, @rishiraj38, @willcalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.233</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.233/</link><pubDate>Wed, 12 Aug 2026 13:05:36 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.233/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): offer the whole organization list in the workspace and environment pickers @yi-nuo426 (#5937)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @pontusringblom, @yi-nuo426 and Ahmed Jamil&lt;/p&gt;</description></item><item><title>v1.0.232</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.232/</link><pubDate>Wed, 12 Aug 2026 00:18:34 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.232/</guid><description>&lt;ul&gt;
+&lt;li&gt;Hide unpermitted nav items and gate dashboard widgets by permission @rishiraj38 (#5931)&lt;/li&gt;
+&lt;li&gt;feat(ui): display page-specific permission keys on 403 error page @rishiraj38 (#5892)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.22.1 @l5io (#5936)&lt;/li&gt;
+&lt;li&gt;fix(users): report role-read failures instead of rendering a role-less user @yi-nuo426 (#5939)&lt;/li&gt;
+&lt;li&gt;chore: remove the tracked .mcp.json shared MCP configuration @yi-nuo426 (#5938)&lt;/li&gt;
+&lt;li&gt;fix(email): link the full page URL in the feedback triage notification @yi-nuo426 (#5929)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @rishiraj38, @willcalcote, @winkletinkle, @yi-nuo426 and Ahmed Jamil&lt;/p&gt;</description></item><item><title>v1.0.231</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.231/</link><pubDate>Tue, 11 Aug 2026 17:37:07 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.231/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): report the submitter&amp;rsquo;s real roles and reader-correct branding in feedback emails @yi-nuo426 (#5928)&lt;/li&gt;
+&lt;li&gt;fix(handlers): scope id-addressed writes and subscription routes to the owning tenant @willcalcote (#5913)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @westcalcote, @willcalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.230</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.230/</link><pubDate>Mon, 10 Aug 2026 22:08:14 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.230/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): create/edit workspace form addresses the canonical organizationId field @yi-nuo426 (#5922)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jijillery, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.229</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.229/</link><pubDate>Mon, 10 Aug 2026 21:07:21 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.229/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(database): backfill owner on unattributed session audit events @jijillery (#5910)&lt;/li&gt;
+&lt;li&gt;fix(ui): stop the Help &amp;amp; Support modal discarding the user&amp;rsquo;s description @yi-nuo426 (#5919)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @ritzorama and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.228</title><link>/pr-preview/pr-1152/cloud/reference/releases/v1.0.228/</link><pubDate>Sun, 09 Aug 2026 23:59:14 +0000</pubDate><guid>/pr-preview/pr-1152/cloud/reference/releases/v1.0.228/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): anchor every Hydra authorize hop on the tenant custom domain @jijillery (#5912)&lt;/li&gt;
 &lt;li&gt;fix: stop disabled nav icons from flickering on hover @NSTKrishna (#5893)&lt;/li&gt;
 &lt;li&gt;[Chore]: Update to Sistent v0.22.0 @l5io (#5915)&lt;/li&gt;
