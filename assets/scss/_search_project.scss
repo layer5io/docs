@@ -167,27 +167,37 @@
 // Light theme search adjustments
 [data-theme="light"],
 [data-bs-theme="light"] {
-  .td-navbar .td-search {
-    background-color: #f0f4f4;
-    border: 1px solid rgba(60, 73, 79, 0.15);
+  .td-navbar .td-search,
+  .td-search {
+    background-color: #eaedee !important;
+    border: 1px solid #d2d8da !important;
 
     .td-search__input {
-      color: #3c494f;
+      color: #000d12 !important;
 
       &::placeholder {
-        color: #666666;
+        color: #647176 !important;
+      }
+
+      &:focus {
+        color: #000d12 !important;
       }
     }
 
     .td-search__icon {
-      color: #666666;
+      color: #647176 !important;
+    }
+
+    &:focus-within {
+      border-color: $primary !important;
+      box-shadow: none !important;
     }
   }
 
   .popover-body {
     background-color: #ffffff;
     color: #3c494f;
-    border: 1px solid rgba(60, 73, 79, 0.15);
+    border: 1px solid #eaedee;
   }
 }
 
