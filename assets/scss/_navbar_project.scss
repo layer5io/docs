@@ -262,100 +262,144 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   }
 }
 
+// Navbar Brand Logo Light/Dark Support
+.navbar-brand {
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: inline-block;
+  }
+}
+
 // Theme Toggle Button
 .theme-toggle-nav-item {
   margin-right: 0.75rem;
+  margin-left: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .theme-toggle {
-  --size: 1.4rem;
+  --size: 1.35rem;
   appearance: none;
-  border: none;
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
-  width: var(--size);
-  height: var(--size);
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  color: #00b39f;
-  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0 0;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  transition: all 0.3s ease;
   vertical-align: middle;
   outline: none;
 
+  .theme-toggle-icon {
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    color: $secondary;
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   &:hover {
-    color: #00d3a9;
-    transform: scale(1.08);
+    background: rgba(0, 211, 169, 0.15);
+    border-color: $secondary;
+    transform: scale(1.05);
+
+    .theme-toggle-icon {
+      color: $secondary;
+    }
   }
 
   &:focus-visible {
-    outline: 2px solid #00b39f;
-    outline-offset: 3px;
+    outline: 2px solid $primary;
+    outline-offset: 2px;
   }
 }
 
 // Light theme state for toggle button
-[data-theme="light"] .theme-toggle,
-[data-bs-theme="light"] .theme-toggle {
-  --ray-size: calc(var(--size) * -0.4);
-  --offset-orthogonal: calc(var(--size) * 0.65);
-  --offset-diagonal: calc(var(--size) * 0.45);
-  transform: scale(0.8);
-  color: #b45309;
-  box-shadow: inset 0 0 0 var(--size),
-    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
-    var(--offset-orthogonal) 0 0 var(--ray-size),
-    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
-    0 var(--offset-orthogonal) 0 var(--ray-size),
-    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
-    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
-    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
-    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
-
-  &:hover {
-    color: #78350f;
-    transform: scale(0.9);
-  }
-
-  &:focus-visible {
-    outline: 2px solid #007a6c;
-    outline-offset: 3px;
-  }
-}
-
-// Light theme adjustments for the Navbar
 [data-theme="light"],
 [data-bs-theme="light"] {
+  .navbar-brand {
+    .logo-light {
+      display: inline-block;
+    }
+    .logo-dark {
+      display: none;
+    }
+  }
+
+  .theme-toggle {
+    background: rgba(60, 73, 79, 0.08);
+    border: 1px solid rgba(60, 73, 79, 0.18);
+
+    .theme-toggle-icon {
+      --ray-size: calc(var(--size) * -0.4);
+      --offset-orthogonal: calc(var(--size) * 0.65);
+      --offset-diagonal: calc(var(--size) * 0.45);
+      transform: scale(0.75);
+      color: $saffron;
+      box-shadow: inset 0 0 0 var(--size),
+        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+        var(--offset-orthogonal) 0 0 var(--ray-size),
+        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+        0 var(--offset-orthogonal) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+        var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+        var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+    }
+
+    &:hover {
+      background: rgba(235, 192, 23, 0.15);
+      border-color: $saffron;
+      transform: scale(1.05);
+
+      .theme-toggle-icon {
+        color: #d49b00;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
+  }
+
   .td-navbar,
   .navbar-dark {
     background-color: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid rgba(60, 73, 79, 0.12);
 
     .nav-link {
-      color: #374151;
+      color: #3C494F;
+      font-weight: 600;
 
       &:hover {
         color: $primary;
       }
 
-      &.current {
+      &.current,
+      &.active {
         color: $primary;
       }
     }
 
     .dropdown-menu {
       background-color: #ffffff;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(60, 73, 79, 0.12);
+      box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.08);
 
       .dropdown-item {
-        color: #1f2937;
+        color: #3C494F;
 
         &:hover {
           background-color: rgba(0, 179, 159, 0.08);
@@ -369,28 +413,28 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
       }
 
       .dropdown-divider {
-        border-top: 1px solid #e5e7eb;
+        border-top: 1px solid rgba(60, 73, 79, 0.12);
       }
     }
   }
 
   .apps-dropdown .dropdown-menu {
     background-color: #ffffff;
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgba(60, 73, 79, 0.12);
 
     .dropdown-item {
       background-color: #f8f9fa;
-      border: 1px solid #e5e7eb;
-      color: #1f2937;
+      border: 1px solid rgba(60, 73, 79, 0.12);
+      color: #3C494F;
 
       span {
-        color: #1f2937;
+        color: #3C494F;
       }
 
       &:hover {
         background-color: #ffffff;
         border-color: $primary;
-        box-shadow: 0 0 10px rgba(0, 179, 159, 0.25);
+        box-shadow: 0 0 12px rgba(0, 179, 159, 0.25);
         color: $primary;
 
         span {
@@ -403,7 +447,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   img.grid-icon {
     filter: invert(0.2);
     &:hover {
-      filter: invert(0.5);
+      filter: invert(0.4);
     }
   }
 }

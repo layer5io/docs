@@ -146,7 +146,6 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    // background-color: #EBC017;
     background-color: #2e2e31;
     border-radius: 1rem;
 
@@ -163,8 +162,32 @@
       color: inherit;
     }
   }
-  .td-search__input.form-control:focus {
-    // background-color: #EBC017;
+}
+
+// Light theme search adjustments
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .td-navbar .td-search {
+    background-color: #f0f4f4;
+    border: 1px solid rgba(60, 73, 79, 0.15);
+
+    .td-search__input {
+      color: #3c494f;
+
+      &::placeholder {
+        color: #666666;
+      }
+    }
+
+    .td-search__icon {
+      color: #666666;
+    }
+  }
+
+  .popover-body {
+    background-color: #ffffff;
+    color: #3c494f;
+    border: 1px solid rgba(60, 73, 79, 0.15);
   }
 }
 
