@@ -809,3 +809,395 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0;
   }
 }
+
+// ==========================================
+// LIGHT THEME STYLING
+// ==========================================
+[data-theme="light"],
+[data-bs-theme="light"] {
+  background-color: #ffffff;
+  color: #1f2937;
+
+  body {
+    background-color: #ffffff;
+    color: #1f2937;
+  }
+
+  .td-home {
+    background-color: #ffffff;
+  }
+
+  .td-main main {
+    background-color: #ffffff;
+  }
+
+  .td-content {
+    color: #1f2937;
+
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      color: #111827;
+    }
+
+    h2 {
+      color: #111827;
+    }
+
+    p,
+    li,
+    td {
+      color: #374151;
+    }
+
+    .lead {
+      color: #4b5563;
+    }
+
+    p code,
+    li > code,
+    table code {
+      background-color: #f3f4f6;
+      color: #0f766e;
+      border: 1px solid #e5e7eb;
+    }
+
+    blockquote {
+      color: #4b5563;
+      border-left-color: $primary;
+      background-color: #f9fafb;
+      padding: 0.75rem 1rem;
+      border-radius: 0 0.375rem 0.375rem 0;
+    }
+  }
+
+  a:hover {
+    color: $primary;
+  }
+
+  // Left sidebar in light mode
+  .td-sidebar {
+    background-image: none;
+    background-color: #f8f9fa;
+    border-right: 1px solid #e5e7eb;
+
+    .td-sidebar-nav {
+      &__section-title a {
+        color: #111827;
+      }
+
+      .td-sidebar-link__page {
+        color: #4b5563;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      a:hover {
+        color: $primary;
+      }
+
+      a.active:not(.tree-root) {
+        background-image: none;
+        background-color: rgba(0, 179, 159, 0.1);
+        border-left: 3px solid $primary;
+        color: $primary;
+      }
+
+      a.active.tree-root {
+        background-color: rgba(0, 179, 159, 0.1);
+        border: 1px solid $primary;
+        color: $primary;
+      }
+
+      .td-sidebar-link.tree-root {
+        border-bottom: 1px solid #e5e7eb;
+        color: #111827;
+      }
+    }
+  }
+
+  // Right TOC sidebar in light mode
+  .td-sidebar-toc {
+    background-image: none;
+    background-color: #ffffff;
+    border-left: 1px solid #e5e7eb;
+
+    .td-toc #TableOfContents a {
+      color: #4b5563;
+
+      &:hover,
+      &:focus-visible {
+        color: $primary;
+        background-color: rgba(0, 179, 159, 0.08);
+      }
+    }
+
+    .td-page-meta a {
+      color: #6b7280;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  // Cards
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+  }
+
+  // Alerts
+  .alert {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+
+    &.alert-warning {
+      background-color: #fffbeb;
+      border-color: #fde68a;
+      color: #92400e;
+    }
+
+    &.alert-danger {
+      background-color: #fef2f2;
+      border-color: #fecaca;
+      color: #991b1b;
+    }
+
+    &.alert-info {
+      background-color: #f0f9ff;
+      border-color: #bae6fd;
+      color: #075985;
+    }
+  }
+
+  // Nav tabs
+  .nav-tabs .nav-link {
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+
+    &:not(.active):hover {
+      background-color: #f3f4f6;
+      color: $primary;
+    }
+
+    &.active {
+      background-color: #ffffff;
+      color: $primary;
+      border-color: #e5e7eb #e5e7eb transparent #e5e7eb;
+    }
+  }
+
+  .tab-content .tab-pane {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+  }
+
+  // Tables
+  .td-initial table {
+    color: #1f2937;
+    border-color: #e5e7eb;
+
+    th {
+      background-color: #f9fafb;
+      color: #111827;
+      border-bottom: 2px solid #e5e7eb;
+      box-shadow: none;
+    }
+
+    td {
+      background-color: transparent;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: none;
+    }
+  }
+
+  // Front matter info / Page info
+  .matterinfo,
+  .pageinfo {
+    background: #f9fafb;
+    border-color: rgba(0, 179, 159, 0.4);
+    color: #1f2937;
+
+    .matterheader {
+      color: #111827;
+    }
+
+    .plan-support {
+      border-color: #e5e7eb;
+      color: #374151;
+
+      &:hover {
+        background-color: rgba(0, 179, 159, 0.08);
+      }
+    }
+
+    .tier {
+      color: #111827;
+    }
+  }
+
+  // Buttons & Dash signs
+  .l5btn {
+    background: #ffffff;
+    border-color: $primary;
+    color: #111827;
+
+    > img {
+      filter: invert(0.8);
+    }
+  }
+
+  .dashboard {
+    background-image: linear-gradient(to right, #111827 0px, #008f7e 34%, #d97706 71%, #059669 100%);
+  }
+
+  .dash-sign-container a.dash-sign {
+    color: #111827;
+    text-shadow: none;
+
+    &:visited {
+      color: #111827;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  // Landing page components
+  .landing-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+
+    .landing-card-title {
+      color: #111827;
+    }
+
+    p {
+      color: #4b5563;
+    }
+
+    &:hover {
+      border-color: $primary;
+      box-shadow: 0px 6px 16px 0px rgba(0, 179, 159, 0.15);
+
+      .landing-card-title {
+        color: $primary;
+      }
+
+      p {
+        color: #111827;
+      }
+    }
+  }
+
+  .product-section a {
+    color: #111827;
+  }
+
+  .forum-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      border-color: $primary;
+    }
+  }
+
+  .handbook-section {
+    background: linear-gradient(112deg, #f9fafb 34.88%, rgba(0, 211, 169, 0.15) 92.89%, #ffffff 159.16%);
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+  }
+
+  // Search input on navbar
+  .td-navbar .td-search {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+
+    .td-search__input {
+      color: #1f2937;
+
+      &::placeholder {
+        color: #9ca3af;
+      }
+    }
+
+    .td-search__icon {
+      color: #6b7280;
+    }
+  }
+
+  .td-offline-search-results {
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      color: #1f2937;
+    }
+  }
+
+  // Video and Taxonomies
+  .video > .card-title {
+    color: #111827;
+  }
+
+  .video > .card-text {
+    color: #6b7280;
+  }
+
+  .article-teaser.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+  }
+
+  .article-meta-bg {
+    background-color: #f3f4f6;
+    color: #4b5563;
+  }
+
+  .taxonomy-count {
+    background-color: #f3f4f6;
+    color: #1f2937;
+  }
+
+  .taxonomy-term {
+    background: #e5e7eb;
+    color: #1f2937;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  // Pagination navigation
+  .pagination-nav__link {
+    border-color: #e5e7eb;
+    background-color: #ffffff;
+    color: #1f2937;
+
+    &:hover {
+      border-color: $primary;
+    }
+  }
+
+  .pagination-nav__sublabel {
+    color: #6b7280;
+  }
+
+  .pagination-nav__label {
+    color: #111827;
+  }
+}

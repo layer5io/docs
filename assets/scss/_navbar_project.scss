@@ -261,3 +261,144 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
     box-shadow: none;
   }
 }
+
+// Theme Toggle Button
+.theme-toggle-nav-item {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle {
+  --size: 1.4rem;
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #00b39f;
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0 0;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  outline: none;
+
+  &:hover {
+    color: #00d3a9;
+    transform: scale(1.08);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #00b39f;
+    outline-offset: 3px;
+  }
+}
+
+// Light theme state for toggle button
+[data-theme="light"] .theme-toggle,
+[data-bs-theme="light"] .theme-toggle {
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
+  transform: scale(0.8);
+  color: #ebc017;
+  box-shadow: inset 0 0 0 var(--size),
+    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+    var(--offset-orthogonal) 0 0 var(--ray-size),
+    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+    0 var(--offset-orthogonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+
+  &:hover {
+    color: #f59e0b;
+    transform: scale(0.9);
+  }
+}
+
+// Light theme adjustments for the Navbar
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .td-navbar,
+  .navbar-dark {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    .nav-link {
+      color: #374151;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.current {
+        color: $primary;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+
+      .dropdown-item {
+        color: #1f2937;
+
+        &:hover {
+          background-color: rgba(0, 179, 159, 0.08);
+          color: $primary;
+          box-shadow: 0 0 10px rgba(0, 179, 159, 0.2);
+
+          img {
+            filter: none;
+          }
+        }
+      }
+
+      .dropdown-divider {
+        border-top: 1px solid #e5e7eb;
+      }
+    }
+  }
+
+  .apps-dropdown .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+
+    .dropdown-item {
+      background-color: #f8f9fa;
+      border: 1px solid #e5e7eb;
+      color: #1f2937;
+
+      span {
+        color: #1f2937;
+      }
+
+      &:hover {
+        background-color: #ffffff;
+        border-color: $primary;
+        box-shadow: 0 0 10px rgba(0, 179, 159, 0.25);
+        color: $primary;
+
+        span {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  img.grid-icon {
+    filter: invert(0.2);
+    &:hover {
+      filter: invert(0.5);
+    }
+  }
+}
