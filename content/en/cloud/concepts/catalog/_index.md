@@ -49,7 +49,7 @@ Catalog content is categorized in a number of ways:
  
 <!-- List design metadata and descriptions here -->
 
-### Publishing from Kanvas 🔗
+### Publishing from Kanvas
 
 To publish a design into the catalog:
 
