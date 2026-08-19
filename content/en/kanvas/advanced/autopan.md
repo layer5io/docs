@@ -107,9 +107,3 @@ If autopan is disabled on a design where you would like it to be active, you hav
 1. **Switch to a lower-fidelity render mode.** Wireframe and View-Only raise the threshold to 1,000 nodes. See the [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) page for what each mode costs and what it hides.
 2. **Reduce the live listener count.** The [Layers Panel]({{< ref "kanvas/advanced/performance/index.md" >}}) lets you disable layers of visual information (badges, tags, feasibility indicators) that contribute to the pan fan-out. Turning off a layer effectively moves the threshold upward because there are fewer listeners to amplify each pan.
 3. **Break the design into smaller designs.** If you are consistently bumping the threshold in your preferred render mode, the design might be past the scale Kanvas targets for interactive editing. Splitting it into referenced sub-designs keeps each one within the sweet spot.
-
-### Related pages
-
-- [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) — what each mode renders, what it hides, and how Adaptive Render Mode flips between them automatically.
-- [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}) — overall Kanvas performance envelope and the Layers Panel.
-- [Design Render Quality]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) — overriding the render mode via URL parameters (useful for snapshots and embeds).

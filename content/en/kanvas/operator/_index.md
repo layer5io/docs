@@ -4,6 +4,7 @@ weight: 5
 description: >
   Operator mode is for operating your Kubernetes clusters and cloud native infrastructure. 
 categories: [Operator]
+tags: [operator-overview]
 aliases:
   - /meshmap/operator
 ---
