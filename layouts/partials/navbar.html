@@ -392,15 +392,20 @@ function handleVisibilityChange() {
   (function() {
     const toggleBtn = document.getElementById('theme-toggle');
 
+    function normalizeTheme(theme) {
+      return theme === 'light' ? 'light' : 'dark';
+    }
+
     function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      document.documentElement.setAttribute('data-bs-theme', theme);
+      const normalizedTheme = normalizeTheme(theme);
+      document.documentElement.setAttribute('data-theme', normalizedTheme);
+      document.documentElement.setAttribute('data-bs-theme', normalizedTheme);
       try {
-        localStorage.setItem('theme', theme);
+        localStorage.setItem('theme', normalizedTheme);
       } catch (e) {}
 
       if (toggleBtn) {
-        const isDark = theme === 'dark';
+        const isDark = normalizedTheme === 'dark';
         const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
         toggleBtn.setAttribute('aria-label', label);
         toggleBtn.setAttribute('title', label);
@@ -409,7 +414,7 @@ function handleVisibilityChange() {
 
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const currentTheme = normalizeTheme(document.documentElement.getAttribute('data-theme'));
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         applyTheme(newTheme);
       });
@@ -417,7 +422,7 @@ function handleVisibilityChange() {
 
     // Set initial label and title based on active theme
     try {
-      const activeTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'dark';
+      const activeTheme = normalizeTheme(document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme'));
       applyTheme(activeTheme);
     } catch (e) {
       applyTheme('dark');
@@ -426,7 +431,7 @@ function handleVisibilityChange() {
     // Sync across open browser tabs
     window.addEventListener('storage', function(e) {
       if (e.key === 'theme' && e.newValue) {
-        applyTheme(e.newValue);
+        applyTheme(normalizeTheme(e.newValue));
       }
     });
   })();

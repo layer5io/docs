@@ -307,7 +307,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   --offset-orthogonal: calc(var(--size) * 0.65);
   --offset-diagonal: calc(var(--size) * 0.45);
   transform: scale(0.8);
-  color: #ebc017;
+  color: #b45309;
   box-shadow: inset 0 0 0 var(--size),
     calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
     var(--offset-orthogonal) 0 0 var(--ray-size),
@@ -319,8 +319,13 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
     var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 
   &:hover {
-    color: #f59e0b;
+    color: #78350f;
     transform: scale(0.9);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #007a6c;
+    outline-offset: 3px;
   }
 }
 
