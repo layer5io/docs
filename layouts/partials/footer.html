@@ -5,8 +5,8 @@
   <div class="row footer-top">
     <div class="col-lg-6">
       <a href="{{ "" | relURL }}" aria-label="Home">
-        {{ $svg := resources.Get "icons/logo.svg" }}
-        <img class="footer-logo" src="{{ $svg.Permalink }}" alt="Footer Logo Layer5" data-modal="false">
+        <img class="footer-logo logo-dark" src="{{ "images/logo.svg" | relURL }}" alt="Footer Logo Layer5" data-modal="false">
+        <img class="footer-logo logo-light" src="{{ "images/logo-light.svg" | relURL }}" alt="Footer Logo Layer5" data-modal="false">
       </a>
     </div>
     <div class="col-lg-6 footer-info footer-icons">

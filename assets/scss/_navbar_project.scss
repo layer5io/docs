@@ -374,21 +374,49 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   }
 
   .td-navbar,
-  .navbar-dark {
+  .navbar-dark,
+  .td-navbar-cover {
     background-color: #ffffff !important;
     border-bottom: 1px solid #eaedee !important;
 
     .nav-link {
-      color: #3c494f;
+      color: #3c494f !important;
       font-weight: 600;
+      text-shadow: none !important;
 
       &:hover {
-        color: $primary;
+        color: $primary !important;
+        text-shadow: none !important;
       }
 
       &.current,
       &.active {
-        color: $primary;
+        color: $primary !important;
+        text-shadow: none !important;
+      }
+    }
+
+    #resourcesDropdown {
+      color: #3c494f !important;
+      text-shadow: none !important;
+
+      .down-icon svg {
+        fill: currentColor;
+      }
+
+      &:hover,
+      &.current {
+        color: $primary !important;
+      }
+    }
+
+    #signin-button .nav-link {
+      color: #142126 !important;
+      font-weight: 600;
+      text-shadow: none !important;
+
+      &:hover {
+        color: $primary !important;
       }
     }
 

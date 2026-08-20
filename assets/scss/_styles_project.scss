@@ -827,6 +827,26 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #f6f8f8;
   }
 
+  .td-footer,
+  footer.td-footer,
+  .bg-dark.d-print-none {
+    background-color: #f6f8f8 !important;
+    color: #647176 !important;
+    border-top: 1px solid #d2d8da !important;
+
+    * {
+      color: #647176 !important;
+    }
+
+    a {
+      color: #647176 !important;
+
+      &:hover {
+        color: $primary !important;
+      }
+    }
+  }
+
   .td-main main {
     background-color: #ffffff;
   }
