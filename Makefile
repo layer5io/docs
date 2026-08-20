@@ -52,7 +52,7 @@ include .github/build/Makefile.show-help.mk
 
 ## Verify required commands and local dependencies are present.
 check-deps:
-	@echo "Checking if 'npm' and local 'hugo' binary are present..."
+	@echo "Checking if 'npm' is installed and the npm-packaged 'hugo' binary is present..."
 	@command -v npm > /dev/null || { echo "Error: 'npm' not found. Please install Node.js and npm."; exit 1; }
 	@test -x node_modules/.bin/hugo || { echo "Error: Hugo binary not found in node_modules. Please run 'make setup' first."; exit 1; }
 	@echo "Dependencies check passed."
