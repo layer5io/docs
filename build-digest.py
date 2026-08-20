@@ -162,6 +162,7 @@ def main():
         out_lines.append("\n\n---\n")
         file_count += 1
 
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     output_file.write_text('\n'.join(out_lines), encoding='utf-8')
     total_lines = sum(1 for _ in output_file.read_text().split('\n'))
     print(f"Done: {total_lines} lines, {file_count} documents written to {output_file_display}")
