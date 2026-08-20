@@ -603,12 +603,12 @@
   }
 }
 
-// Light theme styling for Footer (Sistent Design System)
+// Light theme styling for Footer (MeshKit / Sistent Design System)
 [data-theme="light"],
 [data-bs-theme="light"] {
   .footer {
     background-color: #f6f8f8 !important;
-    color: #3c494f !important;
+    color: #28353a !important;
     border-top: 1px solid #d2d8da !important;
 
     .logo-dark {
@@ -620,15 +620,15 @@
 
     .footer-desc p,
     .footer-desc {
-      color: #3c494f !important;
+      color: #28353a !important;
     }
 
     .section-title {
-      color: #142126 !important;
+      color: #000d12 !important;
       font-weight: 700;
 
       a {
-        color: #142126 !important;
+        color: #000d12 !important;
 
         &:hover {
           color: $primary !important;
@@ -668,7 +668,8 @@
 
     .subscribe {
       p {
-        color: #142126 !important;
+        color: #000d12 !important;
+        font-weight: 600;
       }
     }
 
@@ -693,7 +694,7 @@
       color: #ffffff !important;
 
       &:hover {
-        background-color: #008f7e !important;
+        background-color: #007763 !important;
       }
     }
 
@@ -720,7 +721,7 @@
       .status-link {
         background-color: #eaedee !important;
         border: 1px solid #d2d8da !important;
-        color: #3c494f !important;
+        color: #28353a !important;
 
         &:hover {
           color: $primary !important;

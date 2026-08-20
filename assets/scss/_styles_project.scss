@@ -20,8 +20,22 @@
 
 // Page Layout Sections
 .td-home {
-  background-color: $dark;
+  background-color: $body-bg;
   overflow-x: hidden;
+}
+
+// Dark mode: whole page wrapper uses true black
+.td-outer,
+.td-default {
+  background-color: $body-bg;
+}
+
+.td-main {
+  background-color: $body-bg;
+}
+
+.td-main main {
+  background-color: #000000;
 }
 
 // .td-cover-block--height-full {
@@ -818,33 +832,26 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f6f8f8;
   color: #28353a;
 
+  html,
   body {
-    background-color: #f6f8f8;
+    background-color: #f6f8f8 !important;
     color: #28353a;
+  }
+
+  // docs page outer wrappers
+  .td-outer,
+  .td-default,
+  .container-fluid.td-outer,
+  .container-fluid.td-default.td-outer {
+    background-color: #f6f8f8 !important;
   }
 
   .td-home {
     background-color: #f6f8f8;
   }
 
-  .td-footer,
-  footer.td-footer,
-  .bg-dark.d-print-none {
+  .td-main {
     background-color: #f6f8f8 !important;
-    color: #647176 !important;
-    border-top: 1px solid #d2d8da !important;
-
-    * {
-      color: #647176 !important;
-    }
-
-    a {
-      color: #647176 !important;
-
-      &:hover {
-        color: $primary !important;
-      }
-    }
   }
 
   .td-main main {
@@ -1109,17 +1116,24 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // Cover block and overlay for landing page in light mode
+  // Cover block and overlay for landing page in light mode (Sistent / MeshKit #FAFAFA canvas)
   .td-cover-block,
+  .td-cover-block--height-full,
+  .td-overlay,
   .td-overlay--dark,
   .-bg-dark {
-    background-color: #f6f8f8 !important;
+    background: #fafafa !important;
+    background-color: #fafafa !important;
     background-image: none !important;
     color: #28353a !important;
 
-    &::before {
+    &::before,
+    &::after {
+      background: none !important;
       background-color: transparent !important;
+      opacity: 0 !important;
       display: none !important;
+      content: none !important;
     }
 
     h1, h2, h3, h4, h5, h6 {
