@@ -20,7 +20,9 @@
   </div>
   <div class="footer-info">
     <div class="col-lg-3 footer-desc">
-      <p>Layer5 empowers engineers to build better, together. As the stewards of Meshery, and the creators of Kanvas, we deliver a Google Workspace-like experience for your infrastructure. From infrastructure as design to confident deployment, we simplify cloud management through real-time collaboration and orchestratable diagrams.</p>
+      <p>Layer5 empowers engineers to build better, together. As the stewards of Meshery, and the creators of Kanvas, we
+        deliver a Google Workspace-like experience for your infrastructure. From infrastructure as design to confident
+        deployment, we simplify cloud management through real-time collaboration and orchestratable diagrams.</p>
     </div>
 
     <div class="col-lg-9">
@@ -66,7 +68,8 @@
               <p>
                 Subscribe to our Newsletter
               </p>
-              <input class="footer-input" type="email" id="footer-email" name="email" placeholder="Email Address" aria-label="Email Address">
+              <input class="footer-input" type="email" id="footer-email" name="email" placeholder="Email Address"
+                aria-label="Email Address">
               <button class="footer-button" title="Subscribe" type="submit">Subscribe</button>
             </div>
           </form>
@@ -85,8 +88,13 @@
       <span>
         <span class="edit-page">
           {{ with .File }}
-          <a href="https://github.com/layer5io/docs/tree/master{{ strings.TrimPrefix hugo.WorkingDir .Filename }}" target="_blank"
-            rel="noreferrer">Edit This Page</a>
+          <a href="https://github.com/layer5io/docs/tree/master{{ strings.TrimPrefix hugo.WorkingDir .Filename }}"
+            target="_blank" rel="noreferrer">Edit This Page</a>
+          {{ end }}
+        </span>
+                <span class="view-markdown">
+          {{ with .File }}
+          <a href="{{ $.RelPermalink }}index.md" target="_blank" rel="noreferrer">View as Markdown</a>
           {{ end }}
         </span>
         <span>
