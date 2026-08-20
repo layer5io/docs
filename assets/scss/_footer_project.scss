@@ -686,6 +686,8 @@
         border-color: $primary !important;
         background-color: #ffffff !important;
         color: #000d12 !important;
+        outline: 2px solid $primary;
+        outline-offset: 2px;
       }
     }
 

@@ -1214,33 +1214,6 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // Search input on navbar
-  .td-navbar .td-search,
-  .td-search {
-    background-color: #eaedee !important;
-    border: 1px solid #d2d8da !important;
-
-    .td-search__input {
-      color: #000d12 !important;
-
-      &::placeholder {
-        color: #647176 !important;
-      }
-
-      &:focus {
-        color: #000d12 !important;
-      }
-    }
-
-    .td-search__icon {
-      color: #647176 !important;
-    }
-
-    &:focus-within {
-      border-color: $primary !important;
-      box-shadow: none !important;
-    }
-  }
 
   .td-offline-search-results {
     .card {

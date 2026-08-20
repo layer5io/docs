@@ -189,7 +189,12 @@ button#searchKey,
   cursor: pointer !important;
   align-self: center !important;
   margin: 0 8px 0 -26px !important;
-  outline: none !important;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid $primary !important;
+    outline-offset: 2px !important;
+  }
 }
 
 // Light theme search adjustments
