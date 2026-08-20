@@ -96,11 +96,29 @@ description = "Product Documentation"
     # guessSyntax = "true"
 
 # Everything below this are Site Params
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
 
+[outputFormats]
+  [outputFormats.markdown]
+    name = "markdown"
+    mediaType = "text/markdown"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = false
+  [outputFormats.llms]
+    name = "llms"
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
+	
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-  home = ["HTML", "RSS", "SITEMAP"]
-  section = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "SITEMAP", "markdown", "llms"]
+  page = ["HTML", "markdown"]
+  section = ["HTML", "RSS", "markdown"]
   taxonomy = ["HTML", "RSS"]
   term = ["HTML", "RSS"]
 
