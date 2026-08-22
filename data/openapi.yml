@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.44
+  version: v1.3.45
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -33224,14 +33224,865 @@ paths:
                       maxLength: 255
       responses:
         '200':
-          description: Successful Import
+          description: >-
+            Successful import. The response body is a JSON array of the saved designs, not a message envelope. The
+            import path saves exactly one design, so the array carries a single element and consumers read the imported
+            design as the first element.
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+                type: array
+                description: Designs persisted by the import, in the order they were saved. Always a single element on this path.
+                minItems: 1
+                items:
+                  type: object
+                  description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                  properties:
+                    id:
+                      description: Server-generated design ID.
+                      type: string
+                      format: uuid
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
+                      x-go-type-skip-optional-pointer: true
+                    name:
+                      description: Human-readable design name.
+                      type: string
+                      x-go-type-skip-optional-pointer: true
+                    catalogData:
+                      description: Catalog metadata attached to the design when published.
+                      x-go-type: catalogv1alpha2.CatalogData
+                      x-go-type-import:
+                        path: github.com/meshery/schemas/models/v1alpha2/catalog
+                        name: catalogv1alpha2
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        publishedVersion:
+                          description: Tracks the specific content version that has been made available in the Catalog.
+                          type: string
+                          maxLength: 500
+                        class:
+                          description: >-
+                            Published content is classifed by its support level. Content classes help you understand the
+                            origin and expected support level for each piece of content. It is important to note that
+                            the level of support may vary within each class, and you should exercise discretion when
+                            using community-contributed content. Content produced and fully supported by Meshery
+                            maintainers. This represents the highest level of support and is considered the most
+                            reliable. Content produced by partners and verified by Meshery maintainers. While not
+                            directly maintained by Meshery, it has undergone a verification process to ensure quality
+                            and compatibility. Content produced and supported by the respective project or organization
+                            responsible for the specific technology. This class offers a level of support from the
+                            project maintainers themselves. Content produced and shared by Meshery users. This includes
+                            a wide range of content, such as performance profiles, test results, filters, patterns, and
+                            applications. Community content may have varying levels of support and reliability.
+                          type: string
+                          oneOf:
+                            - const: official
+                              description: >-
+                                Content produced and fully supported by Meshery maintainers. This represents the highest
+                                level of support and is considered the most reliable.
+                            - const: verified
+                              description: >-
+                                Content produced by partners and verified by Meshery maintainers. While not directly
+                                maintained by Meshery, it has undergone a verification process to ensure quality and
+                                compatibility.
+                            - const: reference architecture
+                              description: >-
+                                Content produced and shared by Meshery users. This includes a wide range of content,
+                                such as performance profiles, test results, filters, patterns, and applications.
+                                Reference architecture content may have varying levels of support and reliability.
+                          maxLength: 500
+                        compatibility:
+                          type: array
+                          title: Model
+                          items:
+                            enum:
+                              - kubernetes
+                            type: string
+                          uniqueItems: true
+                          minItems: 1
+                          description: >-
+                            One or more models associated with this catalog item. For designs, a list of one or more
+                            models implicated by components within the design. For models, this is self-referential.
+                        patternCaveats:
+                          type: string
+                          title: Caveats and Considerations
+                          description: Specific stipulations to consider and known behaviors to be aware of when using this design.
+                          maxLength: 500
+                        patternInfo:
+                          type: string
+                          title: Description
+                          minLength: 1
+                          description: Purpose of the design along with its intended and unintended uses.
+                        type:
+                          type: string
+                          title: Type
+                          x-enum-casing-exempt: true
+                          enum:
+                            - Deployment
+                            - Observability
+                            - Resiliency
+                            - Scaling
+                            - Security
+                            - Traffic-management
+                            - Troubleshooting
+                            - Workloads
+                          default: Deployment
+                          description: Categorization of the type of design or operational flow depicted in this design.
+                        snapshotURL:
+                          type: array
+                          items:
+                            type: string
+                            format: uri
+                            pattern: ^(https?|http?|oci)://
+                          description: Contains reference to the dark and light mode snapshots of the design.
+                      required:
+                        - compatibility
+                        - patternCaveats
+                        - patternInfo
+                        - type
+                    userId:
+                      description: Owning user ID.
+                      x-oapi-codegen-extra-tags:
+                        db: owner
+                      type: string
+                      format: uuid
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
+                      x-go-type-skip-optional-pointer: true
+                    user:
+                      description: >
+                        Owning user record, joined inline by the catalog list/get handlers when shaping responses.
+                        Server-projected from the users table via the design's userId; not a column on the
+                        meshery_patterns table itself, so the generated Go field is tagged `db:"-"` to keep it out of
+                        ORM column scans.
+                      nullable: true
+                      x-go-type: '*userV1beta.User'
+                      x-go-type-import:
+                        path: github.com/meshery/schemas/models/v1beta2/user
+                        name: userV1beta
+                      x-oapi-codegen-extra-tags:
+                        db: '-'
+                      type: object
+                      required:
+                        - id
+                        - userId
+                        - provider
+                        - email
+                        - firstName
+                        - lastName
+                        - status
+                        - createdAt
+                        - updatedAt
+                        - lastLoginTime
+                        - deletedAt
+                      properties:
+                        id:
+                          description: Unique identifier for the user
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: id
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        userId:
+                          type: string
+                          maxLength: 200
+                          deprecated: true
+                          description: Legacy IdP-derived identifier. Removed in v1beta3; resolve users by id or email.
+                          x-oapi-codegen-extra-tags:
+                            db: user_id
+                            json: userId
+                          x-id-format: external
+                        provider:
+                          type: string
+                          maxLength: 100
+                          description: Authentication provider (e.g., Google, Github)
+                          example:
+                            - local
+                            - github
+                            - google
+                            - twitter
+                          x-oapi-codegen-extra-tags:
+                            db: provider
+                            json: provider
+                        email:
+                          type: string
+                          format: email
+                          maxLength: 300
+                          description: User's email address
+                          x-oapi-codegen-extra-tags:
+                            db: email
+                            json: email
+                        firstName:
+                          type: string
+                          maxLength: 200
+                          description: User's first name
+                          x-oapi-codegen-extra-tags:
+                            db: first_name
+                            json: firstName
+                        lastName:
+                          type: string
+                          maxLength: 300
+                          description: User's last name
+                          x-oapi-codegen-extra-tags:
+                            db: last_name
+                            json: lastName
+                        avatarUrl:
+                          type: string
+                          format: uri
+                          maxLength: 500
+                          description: URL to user's avatar image
+                          x-oapi-codegen-extra-tags:
+                            db: avatar_url
+                            json: avatarUrl
+                        status:
+                          type: string
+                          maxLength: 100
+                          enum:
+                            - active
+                            - inactive
+                            - pending
+                            - anonymous
+                          description: User account status
+                          x-oapi-codegen-extra-tags:
+                            db: status
+                            json: status
+                        bio:
+                          type: string
+                          maxLength: 1000
+                          default: ''
+                          description: User's biography or description
+                          x-oapi-codegen-extra-tags:
+                            db: bio
+                            json: bio
+                        country:
+                          type: object
+                          description: User's country information stored as JSONB
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: country
+                            json: country
+                        region:
+                          type: object
+                          description: User's region information stored as JSONB
+                          additionalProperties: true
+                          x-go-type: core.Map
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: region
+                            json: region
+                        preferences:
+                          x-go-type: Preference
+                          description: User preferences stored as JSONB
+                          x-oapi-codegen-extra-tags:
+                            db: preferences
+                            json: preferences
+                          x-generate-db-helpers: true
+                          type: object
+                          required:
+                            - anonymousUsageStats
+                            - anonymousPerfResults
+                            - updatedAt
+                            - dashboardPreferences
+                            - selectedOrganizationId
+                            - selectedWorkspaceForOrganizations
+                            - usersExtensionPreferences
+                            - remoteProviderPreferences
+                          properties:
+                            meshAdapters:
+                              type: array
+                              items:
+                                x-go-type: Adapter
+                                type: object
+                                description: Placeholder for Adapter struct definition.
+                              description: The mesh adapters of the preference.
+                            grafana:
+                              x-go-type: Grafana
+                              type: object
+                              properties:
+                                grafanaUrl:
+                                  type: string
+                                  description: Grafana URL for the user configuration.
+                                  maxLength: 500
+                                grafanaApiKey:
+                                  type: string
+                                  description: Grafana API key for the user configuration.
+                                  maxLength: 500
+                                selectedBoardsConfigs:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      board:
+                                        type: object
+                                        description: Placeholder for GrafanaBoard definition (define fields as needed)
+                                      panels:
+                                        type: array
+                                        items:
+                                          type: object
+                                          description: Grafana panel structure imported from github.com/grafana-tools/sdk
+                                        description: Panels selected for the Grafana board configuration.
+                                      templateVars:
+                                        type: array
+                                        items:
+                                          type: string
+                                        description: Template variables applied to the selected Grafana board configuration.
+                                  description: Selected Grafana board configurations for the user.
+                            prometheus:
+                              x-go-type: Prometheus
+                              type: object
+                              properties:
+                                prometheusUrl:
+                                  type: string
+                                  description: The prometheus URL of the prometheus.
+                                  maxLength: 500
+                                selectedPrometheusBoardsConfigs:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      board:
+                                        type: object
+                                        description: Placeholder for GrafanaBoard definition (define fields as needed)
+                                      panels:
+                                        type: array
+                                        items:
+                                          type: object
+                                          description: Grafana panel structure imported from github.com/grafana-tools/sdk
+                                        description: Panels selected for the Grafana board configuration.
+                                      templateVars:
+                                        type: array
+                                        items:
+                                          type: string
+                                        description: Template variables applied to the selected Grafana board configuration.
+                                  description: The selected prometheus boards configs of the prometheus.
+                            loadTestPrefs:
+                              x-go-type: LoadTestPreferences
+                              type: object
+                              properties:
+                                c:
+                                  type: integer
+                                  description: Concurrent requests
+                                  minimum: 0
+                                qps:
+                                  type: integer
+                                  description: Queries per second
+                                  minimum: 0
+                                t:
+                                  type: string
+                                  description: Duration
+                                  maxLength: 500
+                                gen:
+                                  type: string
+                                  description: Load generator
+                                  maxLength: 500
+                            anonymousUsageStats:
+                              type: boolean
+                              description: The anonymous usage stats of the preference.
+                            anonymousPerfResults:
+                              type: boolean
+                              description: The anonymous perf results of the preference.
+                            updatedAt:
+                              type: string
+                              format: date-time
+                              description: Timestamp of when the resource was last updated.
+                            dashboardPreferences:
+                              type: object
+                              additionalProperties: true
+                              description: The dashboard preferences of the preference.
+                            selectedOrganizationId:
+                              type: string
+                              description: ID of the associated selectedOrganization.
+                              maxLength: 500
+                              format: uuid
+                            selectedWorkspaceForOrganizations:
+                              type: object
+                              additionalProperties:
+                                type: string
+                              description: The selected workspace for organizations of the preference.
+                            usersExtensionPreferences:
+                              type: object
+                              additionalProperties: true
+                              description: The users extension preferences of the preference.
+                            remoteProviderPreferences:
+                              type: object
+                              additionalProperties: true
+                              description: The remote provider preferences of the preference.
+                        acceptedTermsAt:
+                          description: Timestamp when user accepted terms and conditions
+                          x-oapi-codegen-extra-tags:
+                            db: accepted_terms_at
+                            json: acceptedTermsAt
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        firstLoginTime:
+                          description: Timestamp of user's first login
+                          x-oapi-codegen-extra-tags:
+                            db: first_login_time
+                            json: firstLoginTime
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        lastLoginTime:
+                          description: Timestamp of user's most recent login
+                          x-oapi-codegen-extra-tags:
+                            db: last_login_time
+                            json: lastLoginTime
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        createdAt:
+                          description: Timestamp when the user record was created
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            json: createdAt
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp when the user record was last updated
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            json: updatedAt
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        socials:
+                          type: array
+                          description: Various online profiles associated with the user account
+                          x-go-type: UserSocials
+                          items:
+                            x-go-type: Social
+                            description: >-
+                              Various online profiles associated with the user account, like GitHub, LinkedIn, X, and so
+                              on.
+                            type: object
+                            properties:
+                              site:
+                                type: string
+                                maxLength: 50
+                                description: The site of the social.
+                              link:
+                                type: string
+                                format: uri
+                                description: The link of the social.
+                            required:
+                              - site
+                              - link
+                          x-oapi-codegen-extra-tags:
+                            db: socials
+                            json: socials
+                        deletedAt:
+                          type: string
+                          format: date-time
+                          nullable: true
+                          description: Timestamp when the user record was soft-deleted (null if not deleted)
+                          x-go-type: core.NullTime
+                          x-oapi-codegen-extra-tags:
+                            db: deleted_at
+                            json: deletedAt
+                        roleNames:
+                          type: array
+                          x-go-type: pq.StringArray
+                          x-go-type-import:
+                            path: github.com/lib/pq
+                          x-go-type-skip-optional-pointer: true
+                          items:
+                            type: string
+                          description: >-
+                            Names of the global roles assigned to the user. Free-form, user-generated values sourced
+                            from the roles table (role_name is a varchar, not a fixed enumeration); the seeded system
+                            roles such as "admin", "organization admin" and "user" are a subset, not the whole set.
+                          example:
+                            - organization admin
+                            - user
+                          x-oapi-codegen-extra-tags:
+                            db: role_names
+                            json: roleNames
+                        teams:
+                          type: object
+                          description: Teams the user belongs to with role information
+                          x-oapi-codegen-extra-tags:
+                            db: teams
+                            json: teams
+                          properties:
+                            teamsWithRoles:
+                              type: array
+                              description: Team memberships for the user with their assigned roles.
+                              items:
+                                type: object
+                                additionalProperties: false
+                                description: >-
+                                  A team the user is a member of, together with the names of the roles assigned to that
+                                  user within the team. Returned as an item of User.teams.teamsWithRoles. The role names
+                                  are dynamic, user-generated values (no fixed enumeration).
+                                required:
+                                  - id
+                                  - name
+                                  - roleNames
+                                properties:
+                                  id:
+                                    description: Unique identifier of the team.
+                                    x-go-name: ID
+                                    x-order: 1
+                                    x-oapi-codegen-extra-tags:
+                                      db: id
+                                      json: id,omitempty
+                                    type: string
+                                    format: uuid
+                                    x-go-type: uuid.UUID
+                                    x-go-type-import:
+                                      path: github.com/gofrs/uuid
+                                  name:
+                                    type: string
+                                    description: Name of the team.
+                                    x-order: 2
+                                    x-oapi-codegen-extra-tags:
+                                      db: name
+                                      json: name,omitempty
+                                  description:
+                                    type: string
+                                    description: Human readable description of the team.
+                                    x-order: 3
+                                    x-oapi-codegen-extra-tags:
+                                      db: description
+                                      json: description,omitempty
+                                  owner:
+                                    description: Identifier of the team owner.
+                                    x-order: 4
+                                    x-oapi-codegen-extra-tags:
+                                      db: owner
+                                      json: owner,omitempty
+                                    type: string
+                                    format: uuid
+                                    x-go-type: uuid.UUID
+                                    x-go-type-import:
+                                      path: github.com/gofrs/uuid
+                                  metadata:
+                                    type: object
+                                    additionalProperties: true
+                                    description: Free-form metadata associated with the team.
+                                    x-go-type: core.Map
+                                    x-go-type-skip-optional-pointer: true
+                                    x-order: 5
+                                    x-oapi-codegen-extra-tags:
+                                      db: metadata
+                                      json: metadata,omitempty
+                                  createdAt:
+                                    description: Timestamp when the team was created.
+                                    x-order: 6
+                                    x-oapi-codegen-extra-tags:
+                                      db: created_at
+                                      json: createdAt,omitempty
+                                    type: string
+                                    format: date-time
+                                    x-go-type-skip-optional-pointer: true
+                                  updatedAt:
+                                    description: Timestamp when the team was last updated.
+                                    x-order: 7
+                                    x-oapi-codegen-extra-tags:
+                                      db: updated_at
+                                      json: updatedAt,omitempty
+                                    type: string
+                                    format: date-time
+                                    x-go-type-skip-optional-pointer: true
+                                  deletedAt:
+                                    type: string
+                                    format: date-time
+                                    nullable: true
+                                    description: Timestamp when the team was soft-deleted (null if not deleted).
+                                    x-go-type: core.NullTime
+                                    x-order: 8
+                                    x-oapi-codegen-extra-tags:
+                                      db: deleted_at
+                                      json: deletedAt,omitempty
+                                  roleNames:
+                                    type: array
+                                    x-go-type: pq.StringArray
+                                    x-go-type-import:
+                                      path: github.com/lib/pq
+                                    description: >-
+                                      Names of the roles assigned to the user within this team. Free-form,
+                                      user-generated role names; not a fixed enumeration.
+                                    items:
+                                      type: string
+                                    x-order: 9
+                                    x-oapi-codegen-extra-tags:
+                                      db: role_names
+                                      json: roleNames
+                              x-oapi-codegen-extra-tags:
+                                db: teams_with_roles
+                                json: teamsWithRoles
+                            totalCount:
+                              type: integer
+                              description: Total number of team memberships returned for the user.
+                              minimum: 0
+                              x-oapi-codegen-extra-tags:
+                                db: total_count
+                                json: totalCount
+                        organizations:
+                          type: object
+                          description: Organizations the user belongs to with role information
+                          x-oapi-codegen-extra-tags:
+                            db: organizations
+                            json: organizations
+                          properties:
+                            organizationsWithRoles:
+                              type: array
+                              description: Organization memberships for the user with their assigned roles.
+                              items:
+                                type: object
+                                additionalProperties: false
+                                description: >-
+                                  An organization the user is a member of, together with the names of the roles assigned
+                                  to that user within the organization. Returned as an item of
+                                  User.organizations.organizationsWithRoles. The role names are dynamic, user-generated
+                                  values (no fixed enumeration).
+                                required:
+                                  - id
+                                  - name
+                                  - roleNames
+                                properties:
+                                  id:
+                                    description: Unique identifier of the organization.
+                                    x-go-name: ID
+                                    x-order: 1
+                                    x-oapi-codegen-extra-tags:
+                                      db: id
+                                      json: id,omitempty
+                                    type: string
+                                    format: uuid
+                                    x-go-type: uuid.UUID
+                                    x-go-type-import:
+                                      path: github.com/gofrs/uuid
+                                  name:
+                                    type: string
+                                    description: Name of the organization.
+                                    x-order: 2
+                                    x-oapi-codegen-extra-tags:
+                                      db: name
+                                      json: name,omitempty
+                                  description:
+                                    type: string
+                                    description: Human readable description of the organization.
+                                    x-order: 3
+                                    x-oapi-codegen-extra-tags:
+                                      db: description
+                                      json: description,omitempty
+                                  country:
+                                    type: string
+                                    description: Country associated with the organization.
+                                    x-order: 4
+                                    x-oapi-codegen-extra-tags:
+                                      db: country
+                                      json: country,omitempty
+                                  region:
+                                    type: string
+                                    description: Region associated with the organization.
+                                    x-order: 5
+                                    x-oapi-codegen-extra-tags:
+                                      db: region
+                                      json: region,omitempty
+                                  owner:
+                                    description: Identifier of the organization owner.
+                                    x-order: 6
+                                    x-oapi-codegen-extra-tags:
+                                      db: owner
+                                      json: owner,omitempty
+                                    type: string
+                                    format: uuid
+                                    x-go-type: uuid.UUID
+                                    x-go-type-import:
+                                      path: github.com/gofrs/uuid
+                                  createdAt:
+                                    description: Timestamp when the organization was created.
+                                    x-order: 7
+                                    x-oapi-codegen-extra-tags:
+                                      db: created_at
+                                      json: createdAt,omitempty
+                                    type: string
+                                    format: date-time
+                                    x-go-type-skip-optional-pointer: true
+                                  updatedAt:
+                                    description: Timestamp when the organization was last updated.
+                                    x-order: 8
+                                    x-oapi-codegen-extra-tags:
+                                      db: updated_at
+                                      json: updatedAt,omitempty
+                                    type: string
+                                    format: date-time
+                                    x-go-type-skip-optional-pointer: true
+                                  deletedAt:
+                                    type: string
+                                    format: date-time
+                                    nullable: true
+                                    description: Timestamp when the organization was soft-deleted (null if not deleted).
+                                    x-go-type: core.NullTime
+                                    x-order: 9
+                                    x-oapi-codegen-extra-tags:
+                                      db: deleted_at
+                                      json: deletedAt,omitempty
+                                  roleNames:
+                                    type: array
+                                    x-go-type: pq.StringArray
+                                    x-go-type-import:
+                                      path: github.com/lib/pq
+                                    description: >-
+                                      Names of the roles assigned to the user within this organization. Free-form,
+                                      user-generated role names; not a fixed enumeration.
+                                    items:
+                                      type: string
+                                    x-order: 10
+                                    x-oapi-codegen-extra-tags:
+                                      db: role_names
+                                      json: roleNames
+                              x-oapi-codegen-extra-tags:
+                                db: organizations_with_roles
+                                json: organizationsWithRoles
+                            totalCount:
+                              type: integer
+                              description: Total number of organization memberships returned for the user.
+                              minimum: 0
+                              x-oapi-codegen-extra-tags:
+                                db: total_count
+                                json: totalCount
+                      additionalProperties: false
+                    location:
+                      description: Optional structured location metadata (branch, host, path, ...).
+                      type: object
+                      additionalProperties:
+                        type: string
+                      x-go-type-skip-optional-pointer: true
+                    patternFile:
+                      type: string
+                      description: >
+                        Raw design body as it is persisted in the meshery_patterns table's `pattern_file` column. The
+                        wire form is the YAML/JSON string the server stores verbatim; consumers that need the structured
+                        form transcode at the boundary by parsing the string into a PatternFile (see
+                        #/components/schemas/PatternFile) and marshalling it back when they write. Keeping the wire
+                        shape as a string mirrors the column's actual representation and avoids forcing every consumer
+                        through the structured-vs- string union that the previous *PatternFile typing implied.
+                      maxLength: 16777216
+                      x-oapi-codegen-extra-tags:
+                        db: pattern_file
+                    visibility:
+                      type: string
+                      description: >
+                        Visibility scope of the design — controls whether non-owners may read or list it. `private` is
+                        owner-only, `public` is readable by anyone in the org, and `published` is visible in the
+                        catalog.
+                      enum:
+                        - private
+                        - public
+                        - published
+                      x-enum-casing-exempt: true
+                      maxLength: 32
+                      x-oapi-codegen-extra-tags:
+                        db: visibility
+                    designType:
+                      type: string
+                      description: >
+                        Discriminator identifying the source format of the design body, persisted in the
+                        meshery_patterns table's `source_type` column (nullable; null for legacy rows imported before
+                        the column was introduced). For catalog listings the server may also project this field from the
+                        attached catalog metadata. Use this field to branch rendering between native Meshery designs and
+                        imported Helm charts, Kubernetes manifests, and Docker Compose files.
+                      x-enum-casing-exempt: true
+                      nullable: true
+                      enum:
+                        - Design
+                        - Helm Chart
+                        - Docker Compose
+                        - Kubernetes Manifest
+                      maxLength: 64
+                      x-oapi-codegen-extra-tags:
+                        db: source_type
+                    sourceContent:
+                      type: string
+                      format: byte
+                      nullable: true
+                      description: >
+                        Raw bytes of the imported source artifact (Helm chart tarball, Kubernetes manifest, Docker
+                        Compose file, etc.) preserved in the meshery_patterns table's `source_content` column for
+                        non-Meshery-Design imports. Empty / null for native Meshery designs. Server-managed: populated
+                        by the import and upload handlers and scrubbed to null on most read responses, so clients should
+                        treat this as opaque base64-encoded bytes when it does appear on the wire.
+                      x-oapi-codegen-extra-tags:
+                        db: source_content
+                        json: sourceContent,omitempty
+                    viewCount:
+                      type: integer
+                      description: >
+                        Server-aggregated count of views on this design in the catalog. Present on list/catalog
+                        responses; server-managed and ignored on writes.
+                      minimum: 0
+                      default: 0
+                      x-oapi-codegen-extra-tags:
+                        db: view_count
+                        json: viewCount,omitempty
+                    downloadCount:
+                      type: integer
+                      description: >
+                        Server-aggregated count of downloads of this design from the catalog. Server-managed and ignored
+                        on writes.
+                      minimum: 0
+                      default: 0
+                      x-oapi-codegen-extra-tags:
+                        db: download_count
+                        json: downloadCount,omitempty
+                    cloneCount:
+                      type: integer
+                      description: >
+                        Server-aggregated count of times this design has been cloned from the catalog. Server-managed
+                        and ignored on writes.
+                      minimum: 0
+                      default: 0
+                      x-oapi-codegen-extra-tags:
+                        db: clone_count
+                        json: cloneCount,omitempty
+                    deploymentCount:
+                      type: integer
+                      description: >
+                        Server-aggregated count of deployments originated from this design. Server-managed and ignored
+                        on writes.
+                      minimum: 0
+                      default: 0
+                      x-oapi-codegen-extra-tags:
+                        db: deployment_count
+                        json: deploymentCount,omitempty
+                    shareCount:
+                      type: integer
+                      description: |
+                        Server-aggregated count of share events for this design. Server-managed and ignored on writes.
+                      minimum: 0
+                      default: 0
+                      x-oapi-codegen-extra-tags:
+                        db: share_count
+                        json: shareCount,omitempty
+                    createdAt:
+                      description: Timestamp of design creation.
+                      x-oapi-codegen-extra-tags:
+                        db: created_at
+                      type: string
+                      format: date-time
+                      x-go-type-skip-optional-pointer: true
+                    updatedAt:
+                      description: Timestamp of last design modification.
+                      x-oapi-codegen-extra-tags:
+                        db: updated_at
+                      type: string
+                      format: date-time
+                      x-go-type-skip-optional-pointer: true
         '400':
           description: Invalid request format
         '401':
@@ -46192,6 +47043,746 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - Subscription_Subscriptions
+      operationId: upsertSubscription
+      summary: Update an existing subscription
+      description: >-
+        Updates the subscription named by `id` in the request body. Despite the historical "upsert" name, this route
+        does not create: a body carrying no `id` is refused with 400. Subscriptions are minted from the payment
+        processor's own response, either by the checkout flow (`POST /api/entitlement/subscriptions/create`) or by the
+        payment-processor webhook, and neither of those reaches this route.
+
+
+        Two independent authorization gates guard this route and they answer differently. The route's own middleware
+        runs first. It authorizes against the organization named by the route's `orgId` path parameter when the route
+        has one, and otherwise against whichever organization the caller currently has *selected* - and this route has
+        no `orgId` parameter, so here it is the selected one. A caller who is not a provider admin, an Organization
+        Admin or an Organization Owner of that organization is refused with 403 before the body is read at all. The
+        handler then re-checks against the *stored* subscription's own organization, which need not be the selected one:
+        the caller must be a provider admin, or an Organization Admin or Organization Owner of that organization, and a
+        caller who is not receives 404 - the same answer an absent subscription gives, and deliberately
+        indistinguishable from it, so that the route cannot be used to discover which subscription IDs exist.
+
+
+        The fields the payment processor and the webhook own are pinned to the stored row before the write, and any
+        client-supplied value for them is ignored rather than honoured: `orgId`, `billingId`, `status`, `startDate` and
+        `endDate`. The writable surface is `planId` and `quantity`, and the write replaces both - a body that omits one
+        stores that field's zero value rather than preserving the stored one, so send both on every call.
+
+
+        The 200 body is a `SubscriptionPage` carrying the single updated subscription (`page` 0, `pageSize` 1,
+        `totalCount` 1), not a bare subscription object.
+      security:
+        - Subscription_jwt: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: >-
+                Body of an update to an existing subscription (`POST /api/entitlement/subscriptions`).
+
+
+                This is an update payload, never a create payload: `id` names the subscription to update and the server
+                refuses a body without one. It is also a full replacement of the writable surface rather than a partial
+                merge, which is why `planId` and `quantity` are both required - omitting either stores its zero value.
+
+
+                The fields the payment processor and the webhook own - `orgId`, `billingId`, `status`, `startDate` and
+                `endDate` - are deliberately absent: the server pins each of them to the stored row and ignores any
+                value supplied for them.
+              required:
+                - planId
+                - quantity
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                  description: >-
+                    A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                    definition is used across different schemas.
+                  x-go-type: uuid.UUID
+                  x-go-type-import:
+                    path: github.com/gofrs/uuid
+                planId:
+                  type: string
+                  format: uuid
+                  description: >-
+                    A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                    definition is used across different schemas.
+                  x-go-type: uuid.UUID
+                  x-go-type-import:
+                    path: github.com/gofrs/uuid
+                  x-go-name: PlanID
+                quantity:
+                  type: integer
+                  description: Number of units subscribed (eg number of users).
+                  minimum: 0
+      responses:
+        '200':
+          description: Subscription updated
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of subscriptions.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - subscriptions
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
+                  subscriptions:
+                    type: array
+                    items:
+                      x-go-type: Subscription
+                      type: object
+                      additionalProperties: false
+                      description: Subscription entity schema.
+                      required:
+                        - id
+                        - orgId
+                        - planId
+                        - billingId
+                        - status
+                        - quantity
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: id
+                        orgId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: OrgID
+                          x-oapi-codegen-extra-tags:
+                            db: org_id
+                            json: orgId
+                        planId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: PlanID
+                          x-oapi-codegen-extra-tags:
+                            db: plan_id
+                            json: planId
+                        plan:
+                          description: Eager-loaded plan associated with this subscription.
+                          x-go-type: planv1beta3.Plan
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/v1beta3/plan
+                            name: planv1beta3
+                          x-oapi-codegen-extra-tags:
+                            belongs_to: plans
+                            fk_id: PlanID
+                            json: plan,omitempty
+                          type: object
+                          additionalProperties: false
+                          required:
+                            - id
+                            - name
+                            - cadence
+                            - unit
+                            - pricePerUnit
+                            - minimumUnits
+                            - currency
+                          properties:
+                            id:
+                              type: string
+                              format: uuid
+                              description: >-
+                                A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                                core definition is used across different schemas.
+                              x-go-type: uuid.UUID
+                              x-go-type-import:
+                                path: github.com/gofrs/uuid
+                              x-oapi-codegen-extra-tags:
+                                db: id
+                                json: id
+                                csv: id
+                            name:
+                              description: Display name of the plan.
+                              x-go-type: PlanName
+                              x-oapi-codegen-extra-tags:
+                                db: name
+                                json: name
+                                csv: name
+                              type: string
+                              x-enum-casing-exempt: true
+                              enum:
+                                - Free
+                                - Team Designer
+                                - Team Operator
+                                - Enterprise
+                            cadence:
+                              description: Billing cadence for the plan (monthly, annually, or none).
+                              x-go-type: PlanCadence
+                              x-oapi-codegen-extra-tags:
+                                db: cadence
+                                json: cadence
+                                csv: cadence
+                              type: string
+                              enum:
+                                - none
+                                - monthly
+                                - annually
+                            unit:
+                              description: Unit of consumption this plan charges against (e.g. user).
+                              x-go-type: PlanUnit
+                              x-oapi-codegen-extra-tags:
+                                db: unit
+                                json: unit
+                                csv: unit
+                              type: string
+                              enum:
+                                - user
+                                - free
+                            minimumUnits:
+                              type: integer
+                              description: Minimum number of units required for the plan.
+                              x-oapi-codegen-extra-tags:
+                                db: minimum_units
+                                json: minimumUnits
+                                csv: minimum_units
+                              minimum: 0
+                            pricePerUnit:
+                              type: number
+                              description: Price per unit of the plan.
+                              x-oapi-codegen-extra-tags:
+                                db: price_per_unit
+                                json: pricePerUnit
+                                csv: price_per_unit
+                              minimum: 0
+                            currency:
+                              description: Currency in which the plan is priced.
+                              x-go-type: Currency
+                              x-oapi-codegen-extra-tags:
+                                db: currency
+                                json: currency
+                                csv: currency
+                              type: string
+                              enum:
+                                - usd
+                        quantity:
+                          type: integer
+                          description: Number of units subscribed (eg number of users).
+                          x-oapi-codegen-extra-tags:
+                            db: quantity
+                            json: quantity
+                          minimum: 0
+                        startDate:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the subscription period started.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: start_date
+                            json: startDate
+                        endDate:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the current subscription period ends.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: end_date
+                            json: endDate
+                        status:
+                          description: Current status of the subscription (e.g. active, past_due, canceled).
+                          x-go-type: SubscriptionStatus
+                          x-oapi-codegen-extra-tags:
+                            db: status
+                            json: status
+                          type: string
+                          enum:
+                            - incomplete
+                            - incomplete_expired
+                            - trialing
+                            - active
+                            - past_due
+                            - canceled
+                            - unpaid
+                          x-enumDescriptions:
+                            incomplete: >-
+                              The subscription has been created, but the initial payment is pending. It may transition
+                              to 'active' or 'incomplete_expired'.
+                            incomplete_expired: >-
+                              The subscription was created but never activated due to failed initial payment. It is now
+                              expired.
+                            trialing: The subscription is currently in a trial period before the first payment is due.
+                            active: The subscription is active, and billing is functioning normally.
+                            past_due: >-
+                              The latest payment attempt failed, but the subscription remains active. Stripe may retry
+                              the charge.
+                            canceled: The subscription has been canceled and will no longer generate invoices.
+                            unpaid: >-
+                              The subscription is still technically active but has unpaid invoices and is no longer
+                              generating new invoices.
+                        createdAt:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the subscription was created.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            json: createdAt
+                        updatedAt:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the subscription was last updated.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            json: updatedAt
+                        deletedAt:
+                          description: Timestamp when the subscription was soft-deleted, if applicable.
+                          x-oapi-codegen-extra-tags:
+                            db: deleted_at
+                            json: deletedAt,omitempty
+                          type: string
+                          format: date-time
+                          x-go-type: sql.NullTime
+                          x-go-type-import:
+                            path: database/sql
+                          x-go-type-skip-optional-pointer: true
+                        billingId:
+                          type: string
+                          description: >-
+                            Billing ID of the subscription. The ID of the subscription in the external billing system
+                            (for example, Stripe).
+                          x-id-format: external
+                          x-go-name: BillingID
+                          x-oapi-codegen-extra-tags:
+                            db: billing_id
+                            json: billingId
+                          maxLength: 500
+                          pattern: ^[A-Za-z0-9_\-]+$
+                    description: Subscriptions returned on the current page.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/entitlement/subscriptions/{subscriptionId}:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Subscription_Subscriptions
+      operationId: getSubscriptionById
+      summary: Read a single subscription
+      description: >-
+        Returns the subscription named by `subscriptionId`.
+
+
+        Authorization is evaluated against the subscription's own organization, the same bar the org-scoped list route
+        (`GET /api/entitlement/subscriptions`) enforces over the same data: the caller must be a provider admin, or an
+        Organization Admin or Organization Owner of that organization. A caller who is not receives 404, deliberately
+        indistinguishable from an absent subscription, so that the route cannot be used to enumerate subscription IDs.
+
+
+        Unlike the update route, this one is registered without any organization-scoped middleware, so it never answers
+        403: every authorization denial, whether "not yours" or "not there", is that same 404. A malformed request still
+        answers 400 and an unauthenticated one 401, as below.
+
+
+        A `subscriptionId` that is not a UUID is refused with 400, and an unauthenticated caller with 401.
+
+
+        The 200 body is a `SubscriptionPage` carrying the single subscription (`page` 0, `pageSize` 1, `totalCount` 1),
+        not a bare subscription object.
+      security:
+        - Subscription_jwt: []
+      parameters:
+        - name: subscriptionId
+          in: path
+          required: true
+          description: Subscription ID
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Subscription response
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of subscriptions.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - subscriptions
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                    x-go-type-skip-optional-pointer: true
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: pageSize
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      json: totalCount
+                  subscriptions:
+                    type: array
+                    items:
+                      x-go-type: Subscription
+                      type: object
+                      additionalProperties: false
+                      description: Subscription entity schema.
+                      required:
+                        - id
+                        - orgId
+                        - planId
+                        - billingId
+                        - status
+                        - quantity
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: id
+                        orgId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: OrgID
+                          x-oapi-codegen-extra-tags:
+                            db: org_id
+                            json: orgId
+                        planId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: PlanID
+                          x-oapi-codegen-extra-tags:
+                            db: plan_id
+                            json: planId
+                        plan:
+                          description: Eager-loaded plan associated with this subscription.
+                          x-go-type: planv1beta3.Plan
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/v1beta3/plan
+                            name: planv1beta3
+                          x-oapi-codegen-extra-tags:
+                            belongs_to: plans
+                            fk_id: PlanID
+                            json: plan,omitempty
+                          type: object
+                          additionalProperties: false
+                          required:
+                            - id
+                            - name
+                            - cadence
+                            - unit
+                            - pricePerUnit
+                            - minimumUnits
+                            - currency
+                          properties:
+                            id:
+                              type: string
+                              format: uuid
+                              description: >-
+                                A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                                core definition is used across different schemas.
+                              x-go-type: uuid.UUID
+                              x-go-type-import:
+                                path: github.com/gofrs/uuid
+                              x-oapi-codegen-extra-tags:
+                                db: id
+                                json: id
+                                csv: id
+                            name:
+                              description: Display name of the plan.
+                              x-go-type: PlanName
+                              x-oapi-codegen-extra-tags:
+                                db: name
+                                json: name
+                                csv: name
+                              type: string
+                              x-enum-casing-exempt: true
+                              enum:
+                                - Free
+                                - Team Designer
+                                - Team Operator
+                                - Enterprise
+                            cadence:
+                              description: Billing cadence for the plan (monthly, annually, or none).
+                              x-go-type: PlanCadence
+                              x-oapi-codegen-extra-tags:
+                                db: cadence
+                                json: cadence
+                                csv: cadence
+                              type: string
+                              enum:
+                                - none
+                                - monthly
+                                - annually
+                            unit:
+                              description: Unit of consumption this plan charges against (e.g. user).
+                              x-go-type: PlanUnit
+                              x-oapi-codegen-extra-tags:
+                                db: unit
+                                json: unit
+                                csv: unit
+                              type: string
+                              enum:
+                                - user
+                                - free
+                            minimumUnits:
+                              type: integer
+                              description: Minimum number of units required for the plan.
+                              x-oapi-codegen-extra-tags:
+                                db: minimum_units
+                                json: minimumUnits
+                                csv: minimum_units
+                              minimum: 0
+                            pricePerUnit:
+                              type: number
+                              description: Price per unit of the plan.
+                              x-oapi-codegen-extra-tags:
+                                db: price_per_unit
+                                json: pricePerUnit
+                                csv: price_per_unit
+                              minimum: 0
+                            currency:
+                              description: Currency in which the plan is priced.
+                              x-go-type: Currency
+                              x-oapi-codegen-extra-tags:
+                                db: currency
+                                json: currency
+                                csv: currency
+                              type: string
+                              enum:
+                                - usd
+                        quantity:
+                          type: integer
+                          description: Number of units subscribed (eg number of users).
+                          x-oapi-codegen-extra-tags:
+                            db: quantity
+                            json: quantity
+                          minimum: 0
+                        startDate:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the subscription period started.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: start_date
+                            json: startDate
+                        endDate:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the current subscription period ends.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: end_date
+                            json: endDate
+                        status:
+                          description: Current status of the subscription (e.g. active, past_due, canceled).
+                          x-go-type: SubscriptionStatus
+                          x-oapi-codegen-extra-tags:
+                            db: status
+                            json: status
+                          type: string
+                          enum:
+                            - incomplete
+                            - incomplete_expired
+                            - trialing
+                            - active
+                            - past_due
+                            - canceled
+                            - unpaid
+                          x-enumDescriptions:
+                            incomplete: >-
+                              The subscription has been created, but the initial payment is pending. It may transition
+                              to 'active' or 'incomplete_expired'.
+                            incomplete_expired: >-
+                              The subscription was created but never activated due to failed initial payment. It is now
+                              expired.
+                            trialing: The subscription is currently in a trial period before the first payment is due.
+                            active: The subscription is active, and billing is functioning normally.
+                            past_due: >-
+                              The latest payment attempt failed, but the subscription remains active. Stripe may retry
+                              the charge.
+                            canceled: The subscription has been canceled and will no longer generate invoices.
+                            unpaid: >-
+                              The subscription is still technically active but has unpaid invoices and is no longer
+                              generating new invoices.
+                        createdAt:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the subscription was created.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            json: createdAt
+                        updatedAt:
+                          type: string
+                          format: date-time
+                          description: Timestamp when the subscription was last updated.
+                          x-go-type: time.Time
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            json: updatedAt
+                        deletedAt:
+                          description: Timestamp when the subscription was soft-deleted, if applicable.
+                          x-oapi-codegen-extra-tags:
+                            db: deleted_at
+                            json: deletedAt,omitempty
+                          type: string
+                          format: date-time
+                          x-go-type: sql.NullTime
+                          x-go-type-import:
+                            path: database/sql
+                          x-go-type-skip-optional-pointer: true
+                        billingId:
+                          type: string
+                          description: >-
+                            Billing ID of the subscription. The ID of the subscription in the external billing system
+                            (for example, Stripe).
+                          x-id-format: external
+                          x-go-name: BillingID
+                          x-oapi-codegen-extra-tags:
+                            db: billing_id
+                            json: billingId
+                          maxLength: 500
+                          pattern: ^[A-Za-z0-9_\-]+$
+                    description: Subscriptions returned on the current page.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -46511,6 +48102,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -46605,6 +48202,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -46920,6 +48523,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -46993,6 +48602,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
