@@ -24,6 +24,12 @@ By default, organizations are **closed**: there is no open registration. A user 
 
 When no default invitation is set, new users who arrive at your organization's registration page are registered as platform users but are **not** automatically added to your organization. They will have no organization membership and no roles until an administrator adds them or they accept an invitation link.
 
+{{< alert type="info" title="Two ways to designate the open signup invitation" >}}
+An organization's open signup invitation can be set in two places: the invitation picker in **Edit Organization**, or the `isDefault` setting on the invitation itself.
+
+The **Edit Organization** selection takes precedence. The `isDefault` marker is used when no selection has been made there, or when the invitation that selection points at no longer exists.
+{{< /alert >}}
+
 {{< alert type="info" title="Roles are not assigned automatically" >}}
 When a user joins an organization via invitation, they receive only the roles explicitly listed on that invitation. If the invitation has no roles configured, the user joins with no role. Use the `roles` field on each invitation to ensure new members receive the correct initial permissions.
 {{< /alert >}}
@@ -79,7 +85,7 @@ After an invitation is created, a notification email is sent only to addresses l
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
 | `name` | A human-readable name used to identify the invitation. |
 | `description` | Additional information about the invitation's purpose, for internal reference. |
-| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation should be designated as the default at a time. |
+| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time — designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
 
 ### Managing existing invitations
 
