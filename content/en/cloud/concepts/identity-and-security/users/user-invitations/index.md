@@ -98,6 +98,8 @@ From the table you can perform the following management actions on each invitati
 * **Edit Invitation**: Click the pencil icon to open the edit dialog and modify any invitation properties.
 * **Delete Invitation**: Click the trash icon to permanently remove the invitation. This action cannot be undone.
 
+If another administrator deletes an invitation while your edit dialog is open, saving reports that the invitation was not found rather than reporting success. Close the dialog and reload the invitations table to see the current list. Whenever an edit cannot be saved, the dialog reports the specific reason it was refused.
+
 ### Tracking who has accepted an invitation
 
 The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit — for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
@@ -115,6 +117,26 @@ When a user clicks an acceptance link and is logged in, the system performs the 
 5. **Adds the user to teams** — the user is added to all teams configured on the invitation.
 
 Role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
+
+### How the open signup invitation is applied at sign-in
+
+The open signup invitation is not limited to first-time registration. It is applied whenever someone signs in through your organization's own address, such as its custom domain, on every sign-in method that address offers, including email and password as well as social sign-in. Someone who already has a Layer5 Cloud account and has never been a member of your organization becomes a member on that sign-in, with the roles and teams the invitation configures.
+
+It is applied only to people who are not already members, which has two consequences worth knowing:
+
+- **Roles and teams are never re-applied to an existing member.** If you remove a role or a team from someone who joined this way, signing in again does not restore it.
+- **Each person is counted once.** Repeated sign-ins by the same person do not increase the invitation's acceptance count or add them to the organization a second time.
+
+{{< alert type="warning" title="When open signup adds nobody" >}}
+A person can sign in successfully and still not join your organization. The open signup invitation is applied only when all of the following hold:
+
+- Its status is `enabled`.
+- Its expiration date has not passed.
+- Its quota has not been reached.
+- The person's email address matches its `emails` list. An empty list matches everyone.
+
+When one of them does not hold, the person signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
+{{< /alert >}}
 
 ### Use cases and examples
 
