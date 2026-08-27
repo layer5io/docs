@@ -135,7 +135,7 @@ A person can sign in successfully and still not join your organization. The open
 - Its quota has not been reached.
 - The person's email address matches its `emails` list. An empty list matches everyone.
 
-When one of them does not hold, the person signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
+When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
 {{< /alert >}}
 
 ### Use cases and examples
