@@ -165,7 +165,7 @@ Yes. Any published design can be exported, not just your own.
 <details>
   <summary>Can I export an earlier version of a design?</summary>
 
-No. Every export - in any format - is generated from the **current** state of the design. A design carries a single version number, which increments as the design is updated, and the export and download endpoints take no version argument.
+No. Every export - in any format - is generated from the **current** state of the design. A design carries a single version number, which increments as the design is updated, and neither exporting nor downloading offers a way to ask for an earlier one.
 
 The **View Save History** button in Kanvas (on the save-status indicator) shows the design's save history as a list of events. It is an audit trail of who changed the design and when; it is not a set of restorable snapshots, and you cannot export from it.
 

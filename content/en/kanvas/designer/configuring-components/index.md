@@ -2,14 +2,14 @@
 title: Configuring Components
 weight: 16
 description: >
-  Edit a component's configuration on the canvas, using the schema-driven form and its inline help.
+  Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
 categories: [Designer]
 tags: [designs]
 ---
 
 A component is the fundamental building block of a design - it represents one piece of the infrastructure under management, and its configuration is what will actually be applied when the design is deployed. The component configurator is where that configuration is edited.
 
-Kanvas does not ask you to write YAML for this. The form is generated from the component's own schema, which comes from the model that defines it, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.
+Kanvas does not ask you to write YAML for this. The form is built from the component's own definition, as published by the model it belongs to, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.
 
 ## Opening the configurator
 
@@ -25,8 +25,8 @@ The configurator opens in a panel beside the canvas. The component stays selecte
 | Control | What it does |
 | --- | --- |
 | Component icon | Hovering shows the model version the component is using. |
-| Version menu | Appears when the model has more than one version available. Switching versions re-generates the form against that version's schema. |
-| Search | Filters the form down to matching fields. On a large schema this is far quicker than scrolling; if nothing matches, the form says so rather than appearing empty. |
+| Version menu | Appears when the model has more than one version available. Switching versions rebuilds the form against that version's definition. |
+| Search | Filters the form down to matching fields. On a component with many fields this is far quicker than scrolling; if nothing matches, the form says so rather than appearing empty. |
 | Help | Shows the component's own description, as published by its model. |
 | Expand / collapse | Maximizes the configurator to fill the workspace, and restores it. |
 | Delete | Removes the component from the design. |
@@ -42,9 +42,9 @@ The configurator is organized into tabs. Which are present depends on the compon
 
 ## Field help and validation
 
-Each field carries its documentation with it. A **?** icon at the right of a field opens a tooltip containing that field's description, taken straight from the component's schema - so the guidance you get is the upstream project's own, not a Kanvas paraphrase. Nested objects and arrays carry the same help on their group headings.
+Each field carries its documentation with it. A **?** icon at the right of a field opens a tooltip containing that field's description, taken straight from the component's definition - so the guidance you get is the upstream project's own, not a Kanvas paraphrase. Nested objects and arrays carry the same help on their group headings.
 
-When a value does not satisfy the schema, a red error icon appears alongside, and its tooltip gives the validation message. The component itself also picks up a validation warning badge on the canvas, so a problem you scroll past in the form is still visible when you close the panel. See [Interpreting Component Badges]({{< ref "kanvas/designer/interpreting-component-badges/index.md" >}}).
+When a value is not valid for that field, a red error icon appears alongside, and its tooltip gives the validation message. The component itself also picks up a validation warning badge on the canvas, so a problem you scroll past in the form is still visible when you close the panel. See [Interpreting Component Badges]({{< ref "kanvas/designer/interpreting-component-badges/index.md" >}}).
 
 ## Changes take effect as you type
 

@@ -22,6 +22,12 @@ redirect stub for each one. `content/en/kanvas/operator/_index.md` and
 `content/en/kanvas/operator/views/index.md` are the working examples. Verify after a build
 by checking the generated `<outdir>/<dead-path>/index.html` for the `url=` refresh target.
 
+Heading anchors are linked from outside this repo too, so renaming a heading silently breaks
+those links. Goldmark heading attributes are enabled: keep the old anchor by writing
+`### New Wording {#old-anchor-slug}`. To prove no anchor was lost, build master and your branch
+to separate directories and diff the `id=` attributes of every `<h1>`-`<h6>` across both trees;
+`content/en/cloud/academy/creating-content/building-certifications/index.md` is a worked example.
+
 ## Appending to a page bundle
 
 Several `index.md` files end without a trailing newline, and some end inside a raw HTML
