@@ -11,8 +11,6 @@ Right-clicking an empty part of the canvas - anywhere no component sits - opens 
 
 The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer, right-click context menu open on empty canvas, showing the full Canvas Actions menu with its groups -->
-
 ## Editing actions
 
 | Action | Shortcut | Behavior |

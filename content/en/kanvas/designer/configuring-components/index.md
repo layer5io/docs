@@ -20,8 +20,6 @@ With a component on the canvas:
 
 The configurator opens in a panel beside the canvas. The component stays selected while it is open, so you can see what you are editing.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer, component configurator open for a Kubernetes Deployment, showing the header (icon, name, search, help, expand) and the Config tab with several fields -->
-
 ## The header
 
 | Control | What it does |
@@ -47,8 +45,6 @@ The configurator is organised into tabs. Which are present depends on the compon
 Each field carries its documentation with it. A **?** icon at the right of a field opens a tooltip containing that field's description, taken straight from the component's schema - so the guidance you get is the upstream project's own, not a Kanvas paraphrase. Nested objects and arrays carry the same help on their group headings.
 
 When a value does not satisfy the schema, a red error icon appears alongside, and its tooltip gives the validation message. The component itself also picks up a validation warning badge on the canvas, so a problem you scroll past in the form is still visible when you close the panel. See [Interpreting Component Badges]({{< ref "kanvas/designer/interpreting-component-badges/index.md" >}}).
-
-<!-- SCREENSHOT NEEDED: Kanvas Designer, component configurator with a field's "?" help tooltip open showing the schema description, and ideally a second field showing a validation error tooltip -->
 
 ## Changes take effect as you type
 

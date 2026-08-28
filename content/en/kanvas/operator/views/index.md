@@ -83,7 +83,12 @@ Here's what you can do with views in Operator:
 
   A view is edited by changing what it shows. With the view open, adjust the filters in the Layers panel - namespaces, kinds, labels - or type into the search bar, and rename the view in the Name field at the top of the canvas. Kanvas saves those changes back to the view automatically; the cloud icon beside the name reports whether the current state has been persisted.
 
-  You can only edit a view that you own. If you open someone else's public view and change its filters, save your own copy with **Save as...** instead - see [Duplicate a view](#9-duplicate-a-view).
+  Who may edit a view follows its visibility, and the two behave very differently:
+
+  - **Public views are editable by anyone in your organization.** Changes are saved to the view itself, so everyone who opens it afterwards sees them. If you only wanted your own variation, take a copy with **Save as...** instead - see [Duplicate a view](#9-duplicate-a-view).
+  - **Private views are editable by their owner**, by anyone the owner has granted access to through the share modal, and by organization administrators. Everyone else is refused.
+
+  Deleting is stricter than editing: only the owner, or an organization administrator, can delete a view, whatever its visibility.
 
 ### 9. Duplicate a view
 
@@ -94,5 +99,3 @@ Here's what you can do with views in Operator:
   A view is a window onto real resources, so every component drawn on the Operator canvas can be inspected in place. Click a component and the Details panel on the right shows that resource's live state as MeshSync reports it - status and conditions, labels and annotations, containers, and the relationships that connect it to the rest of the cluster.
 
   For a full description of what the panel shows for each kind of resource, and of the actions available from it, see [Instance Details]({{< ref "kanvas/operator/resource-details/index.md" >}}).
-
-<!-- SCREENSHOT NEEDED: Kanvas Operator, a saved view open with a Pod selected, showing the Views tab list on the right alongside the Details panel for the selected Pod -->

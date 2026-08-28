@@ -25,8 +25,6 @@ If the indicator sits on "Unable to save" for more than a moment, stop making ch
 
 Clicking the indicator forces a save immediately rather than waiting for the next automatic one.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer, the save indicator hovered so its tooltip is showing, with "All changes saved" and the relative time and the View Save History button visible -->
-
 ## Save history
 
 Hovering the save indicator on a saved design offers **View Save History**, which opens the design's version history. Because saving is continuous, history rather than manual save points is how you get back to an earlier state of a design.

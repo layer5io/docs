@@ -63,13 +63,16 @@ Operator mode surfaces the standard Kubernetes signals you would otherwise gathe
 
 ### Node capacity metrics
 
-Select a Node and the Details panel renders three gauges - CPU, memory and ephemeral storage - each showing the proportion of the node's total capacity that is already reserved, derived from the node's `capacity` and `allocatable` figures. The gauges are color-banded, shifting from green through amber to red as reservation climbs past 30%, 60% and 90%, so an over-committed node is obvious at a glance. Full `Capacity` and `Allocatable` tables sit alongside the gauges for the exact numbers.
+Select a Node and the Details panel renders three gauges - CPU, memory and ephemeral storage - derived from the two figures Kubernetes reports in the node's status:
 
-{{< alert type="note" title="Reserved, not consumed" >}}
-These gauges report how much of the node has been <em>reserved</em> by the Kubernetes scheduler, not how much the workloads on it are currently <em>consuming</em>. For live utilization figures, pair Kanvas with your metrics stack.
+- **`capacity`** - the total resources the node has.
+- **`allocatable`** - the portion of that capacity available to ordinary Pods, after Kubernetes holds back what it reserves for the kubelet, the container runtime, the operating system and the eviction threshold.
+
+Each gauge shows the difference between the two as a percentage of capacity - in other words, the share of the node that is **not** available to your workloads. The gauges are color-banded, shifting from green through amber to red as that share climbs past 30%, 60% and 90%, so a node with unusually little left for Pods stands out. Full `Capacity` and `Allocatable` tables sit alongside the gauges for the exact numbers.
+
+{{< alert type="note" title="System reserve, not utilization" >}}
+These gauges describe how the node's capacity is divided between Kubernetes itself and the Pods it can schedule. They say nothing about what the Pods currently running on the node are <em>requesting</em> or <em>consuming</em> - Operator mode does not render live utilization figures or time series. For those, pair Kanvas with your metrics stack.
 {{< /alert >}}
-
-<!-- SCREENSHOT NEEDED: Kanvas Operator Details panel, a Kubernetes Node selected, showing the CPU / memory / ephemeral-storage gauges and the Capacity and Allocatable tables -->
 
 ### Workload state
 
@@ -80,5 +83,3 @@ For Pods, Deployments, StatefulSets and DaemonSets the panel reports ready and a
 MeshSync discovers Kubernetes `Event` objects like any other resource, so events can be drawn on the Operator canvas alongside the resources they describe. Open the Layers panel, expand **Monitoring**, and enable **Events**. Selecting an event component shows its full detail - reason, message, involved object, count and timestamps - in the Details panel.
 
 Because events are namespaced and short-lived, they are most useful narrowed down: filter to the namespace you are investigating before enabling the Events layer.
-
-<!-- SCREENSHOT NEEDED: Kanvas Operator, Layers panel open with Monitoring expanded and Events enabled, Event components visible on the canvas -->

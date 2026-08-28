@@ -18,8 +18,6 @@ What happens next depends on what is already on the canvas:
 - **The canvas is empty.** The dropped design is simply loaded. There is nothing to lose, so Kanvas does not ask.
 - **The canvas already has components.** Kanvas opens the **Merge Design** dialog, telling you which design you are about to bring in, how many components it contains, and which design it would be merged into.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer, the Merge Design dialog open over a canvas that already holds components, showing the design name, component count and the three buttons -->
-
 ## Choosing what happens
 
 The Merge Design dialog offers three choices:

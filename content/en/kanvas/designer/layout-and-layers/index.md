@@ -7,7 +7,9 @@ categories: [Designer]
 tags: [designs]
 ---
 
-Two controls decide how a design reads on screen. **Layout** arranges the components - where they sit relative to one another. **Layers** decides which of them are drawn at all. Neither changes the design itself: a hidden component is still part of the design and is still deployed, and re-running a layout does not alter any component's configuration.
+Two controls decide how a design reads on screen. **Layout** arranges the components - where they sit relative to one another. **Layers** decide which of them are drawn at all.
+
+Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components' positions, and the Layers panel writes their visibility into the design's preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is **configuration** - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.
 
 ## Change design layout
 
@@ -22,13 +24,11 @@ The layout control sits in the toolbar at the bottom of the canvas, beside the z
 | Bus | A breadth-first arrangement fanning out from a root | Tracing what a component reaches, level by level |
 | Ring | A single circle | Small designs, and comparing components at a glance |
 
-A design opened for the first time uses the Constrained layout. Once you drag components by hand, those positions are what the design stores; re-running a layout replaces them, so use undo if an automatic arrangement was not what you wanted.
+A design opened for the first time uses the Constrained layout. Once you drag components by hand, those positions are what the design stores; re-running a layout overwrites them for everyone, so use undo if an automatic arrangement was not what you wanted.
 
 {{< alert type="note" title="Layouts on large designs" >}}
 Re-running a layout across a very large design is the most expensive operation on the canvas. If a design is slow to arrange, see [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}).
 {{< /alert >}}
-
-<!-- SCREENSHOT NEEDED: Kanvas Designer, the layout control at the bottom left of the canvas expanded, showing all six layout options with their tooltips -->
 
 ## Configure visible layers
 
@@ -45,7 +45,7 @@ In Designer mode the panel is organized into four sections:
 
 The header of the panel expands or collapses every section at once.
 
-Layer visibility is stored with the design, in its preferences, rather than in your browser. Someone else opening the same design sees the same components hidden, which makes the Layers panel a way of presenting a design as much as a way of reading one.
+Because visibility travels with the design, the Layers panel is a way of presenting a design as much as a way of reading one - hide the noise before you hand a design to someone else and they will open it the way you left it.
 
 {{< alert type="note" title="Layers in Operator mode" >}}
 The Layers panel is present in Operator mode too, but it filters rather than hides: instead of design components it lists the Kubernetes resource kinds MeshSync has discovered - Cluster, Workloads, Configurations, Networking, Storage, Monitoring and Custom Resources - and choosing among them changes which resources are fetched and drawn. Those choices are what a saved [view]({{< ref "kanvas/operator/views/index.md" >}}) records.
