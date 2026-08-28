@@ -18,7 +18,7 @@ Every action described in this guide is governed by roles and permissions. Butto
 
 ## View Environments
 
-The [Environments page](https://cloud.layer5.io/spaces/environments) lists every Environment in the organization you currently have selected. Switching organizations with the organization context switcher in the top navigation bar changes the list.
+The [Environments page](https://cloud.layer5.io/spaces/environments) - **Environment** in the Spaces navigation, alongside Overview, Workspaces and Integrations - lists every Environment in the organization you currently have selected. Switching organizations with the organization context switcher in the top navigation bar changes the list.
 
 Environments are presented as cards, ten to a page, with pagination beneath the grid. Each card shows:
 
@@ -30,11 +30,11 @@ Flip a card over to reveal its management actions - the **pencil** (edit) and **
 
 If the organization has no Environments yet, the page shows a **No environments available** empty state instead of the grid.
 
-<!-- SCREENSHOT NEEDED: Layer5 Cloud Environments page (https://cloud.layer5.io/spaces/environments), default state with several environments present, must show the card grid with names, descriptions and the Assigned Connections count tile, the Create button and the search control -->
+![The Environments page, showing an environment card with its name, its "No description" placeholder and the Assigned Connections tile, above the pagination control](images/environments-grid.png)
 
 ### Finding an Environment
 
-Use the **search** control in the toolbar to filter the list by name. Searching resets you to the first page of results, so a match on a later page is still found.
+Click the **magnifier** in the toolbar to expand the search box, then filter the list by name. Searching resets you to the first page of results, so a match on a later page is still found.
 
 <!-- SCREENSHOT NEEDED: Environments page, card flipped to its back face, must show the pencil and trash can icons, the bulk-select checkbox, and the Created At / Updated At timestamps -->
 
