@@ -12,16 +12,21 @@ Kanvas provides several keyboard shortcuts to improve your design workflow. Thes
 
 ### Designer Shortcuts
 
-As a designer in Kanvas, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently:
+As a designer in Kanvas, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently.
 
-- <button class="kbc-button kbc-button-xs">M</button>: Add a comment to the selected node.
+On macOS, press <button class="kbc-button kbc-button-xs">⌘</button> wherever <button class="kbc-button kbc-button-xs">Ctrl</button> is shown below. Every combination on this page is bound to both keys.
+
+- <button class="kbc-button kbc-button-xs">M</button>: Add a comment to the canvas.
+- <button class="kbc-button kbc-button-xs">T</button>: Add a textbox to the canvas.
+- <button class="kbc-button kbc-button-xs">S</button>: Add a section to the canvas.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">C</button>: Copy the selected node or collection into your clipboard.
-- <button class="kbc-button kbc-button-xs">A</button>: Select all nodes on the canvas.<a 
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Delete</button> or <button class="kbc-button kbc-button-xs">⌘</button> + <button class="kbc-button kbc-button-xs">Backspace</button> (on Mac): Delete the selected node or collection of nodes from the canvas.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">D</button>: Duplicate the selected node or collection of nodes.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">A</button>: Select all nodes on the canvas.
+- <button class="kbc-button kbc-button-xs">Delete</button> or <button class="kbc-button kbc-button-xs">Backspace</button>: Delete the selected node or collection of nodes from the canvas.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">V</button>: Paste a node or collection of nodes from your clipboard.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes by dragging your mouse over an area.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Z</button>: Undo your last create or delete action.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Y</button> or <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">Z</button>: Redo your last create or delete action.
+- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Y</button> or <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">Z</button>: Redo your last create or delete action.
 - <button class="kbc-button kbc-button-xs">Right-click</button> or <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Hold</button>: Open the context menu to choose an action to perform.
 - <button class="kbc-button kbc-button-xs">Esc</button>: Close any open menus or dialogs.
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">+</button>: Zoom in on the canvas.
