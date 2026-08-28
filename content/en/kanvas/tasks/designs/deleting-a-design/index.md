@@ -13,15 +13,13 @@ Deleting a design removes it permanently. There is no trash, no recycle bin, and
 
 Deleting a design requires the **Delete a design** permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design's owner, or a provider administrator, can delete it.
 
-If the **Delete** action is greyed out for you, your role does not carry the permission. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold it by default, and [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) for how an organization administrator can grant it.
+If the **Delete** action is grayed out for you, your role does not carry the permission. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold it by default, and [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) for how an organization administrator can grant it.
 
 ## Deleting a Single Design
 
 1. Go to [My Designs](https://cloud.layer5.io/catalog/content/my-designs) in Layer5 Cloud, or open the design's detail page.
 2. Choose **Delete** from the design's actions.
 3. A confirmation dialog opens, naming the design. Click **Delete** to confirm, or dismiss the dialog to cancel.
-
-<!-- SCREENSHOT NEEDED: Layer5 Cloud My Designs, delete confirmation dialog open for a single design, must show the "Delete Catalog item?" dialog with the design name in the subtitle and the Delete and Cancel buttons -->
 
 Once the deletion succeeds you are returned to **My Designs** and the design is gone from the list.
 
@@ -33,8 +31,6 @@ The table view of **My Designs** supports bulk deletion.
 2. Select the rows you want to delete using the checkboxes.
 3. Choose **Delete** from the bulk actions.
 4. Confirm in the dialog, which names how many designs will be deleted.
-
-<!-- SCREENSHOT NEEDED: Layer5 Cloud My Designs table view, three rows selected with the bulk delete confirmation dialog open, must show the row checkboxes, the bulk action bar, and the "Delete Selected Catalog items?" dialog -->
 
 Each design in the selection is deleted independently. If one of them fails - for example because you do not own it - the rest still go through, so check the list afterwards rather than assuming the whole batch succeeded.
 

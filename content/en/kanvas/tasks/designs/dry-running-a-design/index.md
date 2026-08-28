@@ -21,8 +21,6 @@ Each component in your design is submitted to the Kubernetes API server of every
 
 3. Select the Kubernetes cluster or clusters you want to simulate against, then run the simulation. If no clusters are selected, the dry run targets all connected clusters.
 
-<!-- SCREENSHOT NEEDED: Kanvas designer, Dry Run modal open on a design with at least one connected Kubernetes cluster, must show the cluster selection and the run control before results are returned -->
-
 4. Review the results to identify any potential issues.
 
 5. Make necessary adjustments to your configuration based on the feedback provided by the dry run.

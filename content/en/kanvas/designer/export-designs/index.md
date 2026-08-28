@@ -7,7 +7,7 @@ categories: [Designer]
 tags: [designs, export]
 aliases:
   - /meshmap/designer/export-designs
-# Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
+# Should this page ever be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 #
 # The explicit heading IDs below (#exporting-as-a-design-file, #exporting-as-an-oci-image,
@@ -16,7 +16,7 @@ aliases:
 # ID alongside if a section is retitled.
 ---
 
-Kanvas let's you export a design in several formats, so you can:
+Kanvas lets you export a design in several formats, so you can:
 
 * keep versioned backups  
 * collaborate offline  

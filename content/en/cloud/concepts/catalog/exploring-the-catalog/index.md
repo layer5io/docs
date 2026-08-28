@@ -161,10 +161,16 @@ Editing/Unpublish published designs requires specific user roles and permissions
 
 Deletion is not the same as [Unpublish](#unpublish). Unpublishing withdraws a design from the public catalog and keeps it in your account; deleting destroys it, and unassigns it from every workspace it belonged to at the same time. There is no trash and no undo.
 
-You must own the item to delete it, and you need the **Delete a design** permission; a user who holds the permission but does not own the item is still refused. The **Delete** action is disabled when your role does not carry the permission.
+You must own the item to delete it, and you need the delete permission for that item's type; a user who holds the permission but does not own the item is still refused. The permissions are type-specific:
+
+| Catalog item | Permission required |
+| --- | --- |
+| Design | **Delete a design** |
+| WASM filter | **Delete WASM Filter** |
+| View | **Delete View** |
+
+The **Delete** action is disabled when your role does not carry the permission for that item's type. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold each of them by default.
 
 The table view of [My Designs](https://cloud.layer5.io/catalog/content/my-designs) also supports deleting several items at once: select rows with their checkboxes and use the bulk **Delete** action. Each selected item is deleted independently, so a failure on one does not stop the others - check the list afterwards.
-
-<!-- SCREENSHOT NEEDED: Layer5 Cloud catalog content list, delete confirmation dialog open for a single catalog item, must show the "Delete Catalog item?" dialog title, the item name in the subtitle, and the Delete and Cancel buttons -->
 
 > For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design]({{< ref "kanvas/tasks/designs/deleting-a-design/index.md" >}}).
