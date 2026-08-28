@@ -33,7 +33,7 @@ The configurator opens in a panel beside the canvas. The component stays selecte
 
 ## Tabs
 
-The configurator is organised into tabs. Which are present depends on the component and on your permissions:
+The configurator is organized into tabs. Which are present depends on the component and on your permissions:
 
 - **Config** - the component's specification. This is where the substantive configuration is done.
 - **Labels** - Kubernetes labels and annotations for the component, edited separately from the rest of the spec so that metadata does not crowd out configuration.

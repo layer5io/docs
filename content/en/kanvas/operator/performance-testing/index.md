@@ -13,7 +13,7 @@ Operator mode gives you continuous visibility across all of your clusters and wo
 
 The Operator canvas draws every resource MeshSync has discovered across the Kubernetes clusters connected to your Meshery deployment. Filters in the Layers panel narrow that down to the clusters, namespaces and kinds you care about, and a saved [view]({{< ref "kanvas/operator/views/index.md" >}}) makes a given slice repeatable. Because discovery is continuous, resources appear, change status and disappear on the canvas as they do in the cluster - you are never looking at a stale export.
 
-From there, the Details panel gives you the state of any single resource, [log streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}) and the [interactive terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}) give you its behaviour, and performance testing gives you its response under load.
+From there, the Details panel gives you the state of any single resource, [log streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}) and the [interactive terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}) give you its behavior, and performance testing gives you its response under load.
 
 ## Initiating a performance test
 
