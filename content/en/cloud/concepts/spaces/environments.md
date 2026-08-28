@@ -24,7 +24,7 @@ Environments can share resources. For example, you might create an environment n
 
 ### Deleting an Environment
 
-Deleting an environment does not delete any resources (e.g. connections) currently contained with the environment. Resources that belong to others environments will continue to belong to those other environments. Learn more about the behavior of [lifecycle of connections](https://docs.meshery.io/concepts/logical/connections). For the steps themselves, see [Delete an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#delete-an-environment" >}}).
+Deleting an environment does not delete any resources (e.g. connections) currently contained in the environment. Resources that belong to other environments will continue to belong to those other environments. Learn more about the behavior of [lifecycle of connections](https://docs.meshery.io/concepts/logical/connections). For the steps themselves, see [Delete an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#delete-an-environment" >}}).
 
 ## Summary
 

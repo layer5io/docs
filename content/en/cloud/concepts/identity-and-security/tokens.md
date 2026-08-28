@@ -57,6 +57,3 @@ Deleting a token requires the **Delete Token** key. Without it the trash can ico
 Your browser sign-ins are represented by their own tokens and are listed on the [Sessions](https://cloud.layer5.io/security/sessions) page rather than here. There the same action is presented as **Logout** instead of Delete, and it ends that session. See [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}).
 {{< /alert >}}
 
-<!-- SCREENSHOT NEEDED: Layer5 Cloud Tokens page (https://cloud.layer5.io/security/tokens) with at least two tokens listed, must show the ID / Name / Purpose / Creation Date columns and the download and trash can icons in the Actions column -->
-
-<!-- SCREENSHOT NEEDED: Delete Token confirmation dialog on the Tokens page, must show the "Are you sure you want to delete the following token?" text with the token name and the Proceed button -->

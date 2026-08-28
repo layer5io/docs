@@ -9,7 +9,7 @@ tags: [Academy]
 
 In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Challenge** is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.
 
-### When to Use a Challenge
+## When to Use a Challenge
 
 | Feature | Learning Path | Challenge | Certification |
 | :--- | :--- | :--- | :--- |
@@ -85,7 +85,7 @@ The `_index.md` at the root of the challenge folder carries its metadata. Here i
 ```yaml
 ---
 title: "CNCF Autoscaling Challenge"
-description: "Learn event-driven autoscaling in Kubernetes. Work with scaled objects in KEDA, monitoring with Prometheus, Open Telemetry & CloudEvents and advanced KEDA configurations."
+description: "Learn event-driven autoscaling in Kubernetes. Work with scaled objects in KEDA, monitoring with Prometheus, OpenTelemetry & CloudEvents and advanced KEDA configurations."
 banner: "keda-icon.svg"
 id: "<your-challenge-uuid>"
 weight: 1

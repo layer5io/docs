@@ -69,14 +69,12 @@ An Environment can be linked to more than one Workspace, and a Workspace can hav
 Creating an Environment requires the **Create Environment** key. Without it the **Create** button is disabled.
 {{< /alert >}}
 
-1. On the [Environments page](https://cloud.layer5.io/spaces/environments), click **Create**.
-2. In the **Create Environment** dialog, select the **Organization** that will own the Environment. This is a required field and cannot be changed afterwards, so choose carefully.
+1. Switch to the organization that will own the Environment using the organization context switcher in the top navigation bar. The new Environment is automatically created in the currently selected organization.
+2. On the [Environments page](https://cloud.layer5.io/spaces/environments), click **Create**.
 3. Enter a **Name** (required) and an optional **Description**.
 4. Click **Save**.
 
 The new Environment appears in the grid with no Connections assigned. Assigning them is a separate step - see [Assign Connections to an Environment](#assign-connections-to-an-environment).
-
-<!-- SCREENSHOT NEEDED: Create Environment dialog on the Environments page, empty form, must show the Organization select, Name and Description fields, the help text, and the Save button -->
 
 ## Edit an Environment
 

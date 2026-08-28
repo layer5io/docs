@@ -32,7 +32,7 @@ Generally, there are four types of keys:
 3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
 4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
 
-Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}), and the `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) in the context of any organization.
+Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud-native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}), and the `Connect GitHub Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) in the context of any organization.
 
 
 ### Keys Enforcement
@@ -70,7 +70,6 @@ Filter by **Actor ID** to follow one user's activity, or by **Category** and **A
 
 Workspaces additionally keep their own activity log, scoped to that one workspace - see [View Recent Activity]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#view-recent-activity" >}}).
 
-<!-- SCREENSHOT NEEDED: Layer5 Cloud Audit Logs page (https://cloud.layer5.io/events/audit), populated with events, must show the Acted Upon / User ID / Category / Action / Description / Created At columns and the filter control -->
 
 #### Assign Keys
 
