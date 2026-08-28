@@ -59,6 +59,6 @@ This is the quickest way to put a design into a pull request, an incident write-
 | Keyboard Shortcuts | The same shortcut reference the Shortcuts action opens. |
 | Support | A form for contacting the Kanvas team with a problem or a piece of feedback. |
 
-Quick Tips and Keyboard Shortcuts open in a drawer alongside the canvas, so you can keep working while you read them; the remaining cards open in a new tab. The Help Center is also reachable from the help button at the right-hand end of the dock.
+Quick Tips and Keyboard Shortcuts open in a drawer alongside the canvas, so you can keep working while you read them. Support opens its form in a modal over the canvas. The remaining five cards open in a new tab. The Help Center is also reachable from the help button at the right-hand end of the dock.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer, Help Center modal open, showing all eight cards -->
+![The Kanvas Help Center, with all eight cards](images/help-center.png)
