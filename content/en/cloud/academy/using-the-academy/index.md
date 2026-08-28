@@ -143,7 +143,7 @@ Completing content in the Academy earns you valuable credentials that you can sh
 
 **Badges**: You earn a digital badge for successfully completing all the required components of a Learning Path, Challenge, or Certification. Badges are how the Academy marks the milestones you reach: each one is tied to a specific piece of content, is awarded only once you have finished everything that content requires, and stays on your public profile afterward. They are free and serve as a great way to showcase your new skills.
 
-Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn` - tracks your progress towards that milestone in the meantime, and is what your instructors see in their console.
+Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn` - tracks your progress toward that milestone in the meantime, and is what your instructors see in their console.
 
 > See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
 

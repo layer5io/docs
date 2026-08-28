@@ -36,7 +36,6 @@ If the organization has no Environments yet, the page shows a **No environments 
 
 Click the **magnifier** in the toolbar to expand the search box, then filter the list by name. Searching resets you to the first page of results, so a match on a later page is still found.
 
-<!-- SCREENSHOT NEEDED: Environments page, card flipped to its back face, must show the pencil and trash can icons, the bulk-select checkbox, and the Created At / Updated At timestamps -->
 
 ## View the Connections in an Environment
 
@@ -51,7 +50,6 @@ The heading of each list carries its total, so the dialog answers "what is in th
 Assigning a Connection to an Environment implicitly makes its Credentials available too. Who can then use them is governed by the Workspaces the Environment is linked to - see [Access Control for Connections and Credentials]({{< ref "cloud/concepts/spaces/environments.md#access-control-for-connections-and-credentials" >}}).
 {{< /alert >}}
 
-<!-- SCREENSHOT NEEDED: Environment Resources dialog (opened from the Assigned Connections tile), with connections present on both sides, must show the "Available Connections (n)" and "Assigned Connections (n)" headings, the four arrow buttons between the lists, and the Save / Cancel footer -->
 
 ## See the Environments in a Workspace
 
@@ -69,8 +67,8 @@ An Environment can be linked to more than one Workspace, and a Workspace can hav
 Creating an Environment requires the **Create Environment** key. Without it the **Create** button is disabled.
 {{< /alert >}}
 
-1. Switch to the organization that will own the Environment using the organization context switcher in the top navigation bar. The new Environment is automatically created in the currently selected organization.
-2. On the [Environments page](https://cloud.layer5.io/spaces/environments), click **Create**.
+1. On the [Environments page](https://cloud.layer5.io/spaces/environments), click **Create**.
+2. In the **Create Environment** dialog, confirm the **Organization** that will own the Environment. The select is pre-filled with the organization you currently have in context and lists every organization you are a member of, so change it here if the Environment belongs elsewhere. The field is required and is fixed once the Environment exists, so choose carefully.
 3. Enter a **Name** (required) and an optional **Description**.
 4. Click **Save**.
 

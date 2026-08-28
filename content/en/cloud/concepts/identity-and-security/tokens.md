@@ -56,4 +56,3 @@ Deleting a token requires the **Delete Token** key. Without it the trash can ico
 {{< alert type="info" title="Sessions Are Deleted the Same Way" >}}
 Your browser sign-ins are represented by their own tokens and are listed on the [Sessions](https://cloud.layer5.io/security/sessions) page rather than here. There the same action is presented as **Logout** instead of Delete, and it ends that session. See [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}).
 {{< /alert >}}
-

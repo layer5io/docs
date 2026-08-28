@@ -70,7 +70,6 @@ Filter by **Actor ID** to follow one user's activity, or by **Category** and **A
 
 Workspaces additionally keep their own activity log, scoped to that one workspace - see [View Recent Activity]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#view-recent-activity" >}}).
 
-
 #### Assign Keys
 
 1. Select the organization for which you wish to assign keys to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.

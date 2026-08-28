@@ -49,7 +49,7 @@ All challenges live under `content/challenges/<your-organization-uuid>`, each in
 
 A challenge is typically one scenario broken into a few sections:
 
-```
+```text
 content/challenges/<your-organization-uuid>
 └── keda-autoscaling-challenge/     <-- The <challenge-name> directory
     ├── _index.md                   <-- Defines the challenge's metadata
@@ -64,7 +64,7 @@ content/challenges/<your-organization-uuid>
 
 A challenge that ships an interactive lab and a graded exam adds them as their own sections alongside the task:
 
-```
+```text
 content/challenges/<your-organization-uuid>
 └── heal-the-mesh/
     ├── _index.md
