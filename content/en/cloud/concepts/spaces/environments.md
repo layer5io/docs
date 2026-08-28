@@ -10,6 +10,10 @@ aliases:
 Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
 Environments allow you to logically group related [Connections](#connections) and their associated [Credentials](#credentials). Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.
 
+{{< alert type="info" title="Looking for Practical Environment Management?" >}}
+For step-by-step instructions on how to view, create, and edit environments, and how to assign connections to an environment or remove them from it, see the [Managing Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}) guide.
+{{< /alert >}}
+
 ### Assigning Resources to Environments
 
 Assign any number of Connections to an environment whether that Connection is managed or unmanaged (see [MeshSync](https://docs.meshery.io/concepts/architecture/meshsync) to learn more about managed and unmanaged Connections). In-turn, assign any number of Environments to one or more [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}). Connections (and any associated Credentials) that are assigned to an Environment become immediately available for use in any associated Workspace.
@@ -20,7 +24,7 @@ Environments can share resources. For example, you might create an environment n
 
 ### Deleting an Environment
 
-Deleting an environment does not delete any resources (e.g. connections) currently contained with the environment. Resources that belong to others environments will continue to belong to those other environments. Learn more about the behavior of [lifecycle of connections](https://docs.meshery.io/concepts/logical/connections).
+Deleting an environment does not delete any resources (e.g. connections) currently contained with the environment. Resources that belong to others environments will continue to belong to those other environments. Learn more about the behavior of [lifecycle of connections](https://docs.meshery.io/concepts/logical/connections). For the steps themselves, see [Delete an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#delete-an-environment" >}}).
 
 ## Summary
 
@@ -75,7 +79,7 @@ The following illustrates how Five and Zara set up multi-cloud environments at O
 
 Five connects Orbital Labs' primary AWS production environment to Layer5 Cloud:
 
-1. Navigate to **Environments** and click **Create Environment**
+1. Navigate to **Environments** and click **Create** (see [Create an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#create-an-environment" >}}))
 2. Name it `prod-aws` and save
 3. Add connections one at a time — each connection is a discrete cloud resource:
    - **EKS cluster** — the compute layer for deployed workloads

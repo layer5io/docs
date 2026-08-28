@@ -45,6 +45,20 @@ To help you choose the right content for your goals, we offer three distinct typ
 
 3. **Challenge**: Choose this when you want a hands-on, practical task to solve a specific problem, often in a competitive scenario.
 
+### Viewing All Content of One Type
+
+The **Content Type** filter is also how you browse one type exhaustively rather than searching for a particular title:
+
+- Set it to **Learning Path** to list every learning path available to you.
+- Set it to **Challenge** to list every challenge.
+- Set it to **Certification** to list every certification.
+
+Combine it with **Level** to narrow further - for example every beginner learning path - and, on the main [Layer5 Academy](https://cloud.layer5.io/academy) catalog, with **Organization** to see one organization's content only. Clearing the filters returns the full catalog.
+
+{{< alert type="info" title="What You See Depends on Where You Are" >}}
+The main Layer5 Academy catalog spans organizations, so listing all learning paths there lists everyone's public learning paths. An organization's own Academy on its custom domain is scoped to that organization's content, so the same filter lists only theirs.
+{{< /alert >}}
+
 ## Starting Your Learning Journey
 
 Once you've found a content that interests you, it's time to begin.
@@ -127,7 +141,9 @@ Completing content in the Academy earns you valuable credentials that you can sh
 
 ### Earning Badges and Certificates
 
-**Badges**: You earn a digital badge for successfully completing all the required components of a Learning Path or Challenge. These are free and serve as a great way to showcase your new skills.
+**Badges**: You earn a digital badge for successfully completing all the required components of a Learning Path or Challenge. Badges are how the Academy marks the milestones you reach: each one is tied to a specific piece of content, is awarded only once you have finished everything that content requires, and stays on your public profile afterwards. They are free and serve as a great way to showcase your new skills.
+
+Your enrolment status - `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn` - tracks your progress towards that milestone in the meantime, and is what your instructors see in their console.
 
 > See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
 

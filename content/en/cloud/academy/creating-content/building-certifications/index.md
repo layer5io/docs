@@ -25,7 +25,7 @@ To understand its unique role, here is a comparison with other content types in 
 | Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
 
 {{< alert type="info" title="Certification: Focus on Assessment, Not Instruction" >}}
-A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise.
+A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise. If the objective is instead for the learner to solve a concrete, hands-on problem, build a [Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) rather than a Certification.
 {{< /alert >}}
 
 ## How to Create Your Certification
