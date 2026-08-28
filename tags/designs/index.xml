@@ -79,7 +79,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[467 206 476 69 286 404]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[29 144 264 208 403 263]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -120,32 +120,16 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[244 335 79 425 423 297]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[379 461 304 420 155 60]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
 &lt;h2 id="using-the-shapes-palette" class="heading-link"&gt;
- Using the Shapes Palette
+ Using the shapes palette
  &lt;a href="#using-the-shapes-palette" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-
-&lt;h2 id="converting-shapes" class="heading-link"&gt;
- Converting Shapes
- &lt;a href="#converting-shapes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Existing shapes can be converted to other shapes. For example, you can convert a rectangle to a circle, or a triangle to a rectangle. This is useful if you want to change the shape of a shape without losing its position, size, and formatting.
-If you&amp;rsquo;d rather use a different shape while keeping the same position, size, and formatting, you can change the shape.&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
-
-&lt;h2 id="performing-dry-run" class="heading-link"&gt;
- Performing Dry Run
- &lt;a href="#performing-dry-run" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Navigate to the &lt;strong&gt;Actions&lt;/strong&gt; button at the top of the Design canvas.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click on the &lt;strong&gt;Dry Run&lt;/strong&gt; icon.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
+&lt;p&gt;Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See &lt;a href="/kanvas/designer/canvas-objects/#adding-shapes"&gt;Adding shapes&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
+&lt;p&gt;Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
 
 &lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
  Accessing the Import Functionality
@@ -202,7 +186,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[9 92 209 67 465 261]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[129 45 376 341 365 399]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -213,7 +197,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[342 467 312 165 46 41]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[57 459 195 410 143 430]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -252,7 +236,7 @@ If you&amp;rsquo;d rather use a different shape while keeping the same position,
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[420 87 190 280 20 88]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[148 190 144 6 332 67]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -692,7 +676,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[406 431 409 248 48 23]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[426 165 88 89 361 275]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -708,7 +692,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[408 393 355 289 462 56]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[59 180 137 283 205 138]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -724,7 +708,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[285 410 142 396 467 54]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[113 213 333 444 309 288]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -740,7 +724,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[6 427 48 34 483 79]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[227 266 237 469 433 65]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -756,7 +740,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[428 344 98 119 269 175]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[184 185 141 440 407 353]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -772,7 +756,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[167 365 11 413 428 44]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[104 218 67 258 442 214]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -788,7 +772,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[344 20 178 151 389 206]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[33 131 449 190 251 285]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -804,7 +788,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[358 149 46 294 110 224]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[432 161 481 20 346 422]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -820,7 +804,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[105 443 476 143 19 317]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[435 64 67 204 7 16]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -836,7 +820,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[117 16 265 321 119 14]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[266 302 467 359 57 98]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -854,10 +838,15 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[33 403 16 189 210 356]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[139 141 420 260 310 353]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
+&lt;div class="alert alert-primary" role="alert"&gt;
+ &lt;h4 class="alert-heading"&gt;Looking for a specific operation?&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt; This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see &amp;lt;a href=&amp;quot;/kanvas/designer/canvas-objects/&amp;quot;&amp;gt;Working with Canvas Objects&amp;lt;/a&amp;gt;.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id="key-functionality" class="heading-link"&gt;
  Key Functionality
@@ -928,7 +917,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[120 260 322 259 78 437]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[210 394 263 399 242 483]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -947,7 +936,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[465 484 139 426 73 174]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[389 267 330 270 424 214]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
@@ -977,7 +966,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[362 308 39 309 373 304]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[161 358 309 136 311 218]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -1016,7 +1005,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[134 223 339 486 240 119]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[186 32 170 18 219 123]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
 
@@ -1052,7 +1041,13 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Understanding visibility levels
  &lt;a href="#understanding-visibility-levels" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
+&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Deleting a Design</title><link>/kanvas/tasks/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes it permanently. There is no trash, no recycle bin, and no undo: the design record is destroyed, and every workspace it was assigned to loses it at the same time. Before you delete, check that what you actually want is not one of the two softer actions described under &lt;a href="/kanvas/tasks/designs/deleting-a-design/#related-actions-that-are-not-deletion"&gt;Related actions that are not deletion&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="who-can-delete-a-design" class="heading-link"&gt;
+ Who Can Delete a Design
+ &lt;a href="#who-can-delete-a-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Deleting a design requires the &lt;strong&gt;Delete a design&lt;/strong&gt; permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design&amp;rsquo;s owner, or a provider administrator, can delete it.&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
 
 &lt;h2 id="embedding-your-design" class="heading-link"&gt;
  Embedding Your Design
@@ -1086,7 +1081,13 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Grouping Components with Tags
  &lt;a href="#grouping-components-with-tags" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas let&amp;rsquo;s you export a design in several formats, so you can:&lt;/p&gt;
+&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
+&lt;p&gt;Everything you place on a Kanvas Designer canvas is an object, and every object answers to the same
+small set of gestures. You add it, you style it, you copy or clone it, you lock it so nobody nudges
+it, you resize it, and eventually you delete it. That is true whether the object is an Amazon EKS
+cluster, a dashed &lt;strong&gt;section&lt;/strong&gt; drawn around a group of services, a &lt;strong&gt;textbox&lt;/strong&gt; holding a caption, or
+a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas lets you export a design in several formats, so you can:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;keep versioned backups&lt;/li&gt;
 &lt;li&gt;collaborate offline&lt;/li&gt;
@@ -1113,7 +1114,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[141 377 357 119 130 229]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[392 472 485 322 270 349]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
