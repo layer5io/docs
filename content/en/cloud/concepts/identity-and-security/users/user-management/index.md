@@ -73,7 +73,7 @@ Removal does **not** affect:
 * Their membership in any other organization, or in teams belonging to those organizations.
 * Designs, environments, and other resources they created, which remain in the organization.
 
-Removal is not reversible from the Users tab. To restore someone's access, add them to the organization again and reassign their organization roles and team memberships - neither returns on its own.
+Removal is not reversible from the Users tab. To restore someone's access, add them to the organization again and reassign their organization roles and team memberships. Neither returns on its own.
 
 {{< alert type="warning" title="Team Access Is Not Itemized in the Confirmation" >}}
 The confirmation shown after a removal reports only that the member was removed from the organization. It does not list the team memberships that ended with it. Review the member's teams before removing them if you need a record of what their removal revoked.
