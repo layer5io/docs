@@ -36,7 +36,7 @@ The **Layers** panel controls what the canvas draws. Open it from the Layers but
 
 <img src="../../advanced/performance/images/layers-panel.png" alt="The Layers panel in Kanvas Designer" />
 
-In Designer mode the panel is organised into four sections:
+In Designer mode the panel is organized into four sections:
 
 - **By type** - a single toggle each for **Annotations** (comments, shapes, text and other non-semantic components) and **Configurable Components** (the semantic components that actually get deployed). Turning annotations off is the fastest way to see the deployable shape of a design on its own. The count beside each is the number of components of that type in the design.
 - **Component Badges** - **Validation Warnings**, **Deployment Errors** and **Inventory** badges. These are the small markers Kanvas draws on components; hiding them declutters a design that is mid-review. See [Interpreting Component Badges]({{< ref "kanvas/designer/interpreting-component-badges/index.md" >}}).

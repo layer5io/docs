@@ -30,7 +30,7 @@ The configurator opens in a panel beside the canvas. The component stays selecte
 | Version menu | Appears when the model has more than one version available. Switching versions re-generates the form against that version's schema. |
 | Search | Filters the form down to matching fields. On a large schema this is far quicker than scrolling; if nothing matches, the form says so rather than appearing empty. |
 | Help | Shows the component's own description, as published by its model. |
-| Expand / collapse | Maximises the configurator to fill the workspace, and restores it. |
+| Expand / collapse | Maximizes the configurator to fill the workspace, and restores it. |
 | Delete | Removes the component from the design. |
 
 ## Tabs

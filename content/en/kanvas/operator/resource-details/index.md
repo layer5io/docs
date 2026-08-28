@@ -63,7 +63,7 @@ Operator mode surfaces the standard Kubernetes signals you would otherwise gathe
 
 ### Node capacity metrics
 
-Select a Node and the Details panel renders three gauges - CPU, memory and ephemeral storage - each showing the proportion of the node's total capacity that is already reserved, derived from the node's `capacity` and `allocatable` figures. The gauges are colour-banded, shifting from green through amber to red as reservation climbs past 30%, 60% and 90%, so an over-committed node is obvious at a glance. Full `Capacity` and `Allocatable` tables sit alongside the gauges for the exact numbers.
+Select a Node and the Details panel renders three gauges - CPU, memory and ephemeral storage - each showing the proportion of the node's total capacity that is already reserved, derived from the node's `capacity` and `allocatable` figures. The gauges are color-banded, shifting from green through amber to red as reservation climbs past 30%, 60% and 90%, so an over-committed node is obvious at a glance. Full `Capacity` and `Allocatable` tables sit alongside the gauges for the exact numbers.
 
 {{< alert type="note" title="Reserved, not consumed" >}}
 These gauges report how much of the node has been <em>reserved</em> by the Kubernetes scheduler, not how much the workloads on it are currently <em>consuming</em>. For live utilization figures, pair Kanvas with your metrics stack.
