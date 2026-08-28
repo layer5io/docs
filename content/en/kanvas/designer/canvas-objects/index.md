@@ -79,10 +79,14 @@ Drag the textbox tool from the dock onto the canvas, or press
 <button class="kbc-button kbc-button-xs">T</button>. The keyboard route places the textbox near the
 centre of the canvas and puts the cursor straight into it, so you can start typing immediately.
 
-A new textbox arrives 60 pixels tall with a dashed grey border and a transparent fill. To edit the
-text of an existing textbox - or of any shape, since shapes accept body text too - double-click it.
+A new textbox arrives 60 pixels tall with a dashed grey border and a transparent fill, and its text
+sits at the top left of the box. To edit the text of an existing textbox - or of any shape, since
+shapes accept body text too - double-click it.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer canvas, a textbox in edit mode with the cursor in it and some typed text, dashed border visible -->
+<figure>
+  <img src="images/textbox-on-canvas.png" alt="A textbox on the Kanvas Designer canvas with a dashed border, a transparent fill and the caption 'Ingress tier - north/south traffic'" />
+  <figcaption>A textbox carrying a caption, with its dashed border and transparent fill</figcaption>
+</figure>
 
 ## Selecting and acting on objects {#object-menu}
 
