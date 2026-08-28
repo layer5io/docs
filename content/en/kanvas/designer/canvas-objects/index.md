@@ -26,7 +26,7 @@ behaves differently. If you are looking for the freestyle pen and pencil tools i
 | --- | --- | --- |
 | **Component** | A real piece of infrastructure under management - a Deployment, an S3 bucket, a Lambda function. Components carry configuration and can be deployed. | The components and Kubernetes tools in the dock, or an import. |
 | **Shape** | A purely visual primitive - circle, hexagon, arrow, flowchart symbol, cloud-provider glyph. Shapes carry no configuration and are never deployed. | The shapes tool in the dock. |
-| **Section** | A labelled, dashed rectangle used to fence off a region of the canvas. Other objects dropped inside a section become its children and move with it. | The section tool in the dock, or <button class="kbc-button kbc-button-xs">S</button>. |
+| **Section** | A labeled, dashed rectangle used to fence off a region of the canvas. Other objects dropped inside a section become its children and move with it. | The section tool in the dock, or <button class="kbc-button kbc-button-xs">S</button>. |
 | **Textbox** | A resizable box whose content is text. Used for titles, callouts and annotations that are not tied to a single component. | The textbox tool in the dock, or <button class="kbc-button kbc-button-xs">T</button>. |
 
 Shapes, sections and textboxes are **annotations**, and Kanvas keeps them distinct from the
@@ -64,22 +64,20 @@ reaching for the same library repeatedly, pin it to the dock - see
 ### Adding sections {#adding-sections}
 
 Drag the section tool from the dock onto the canvas, or press
-<button class="kbc-button kbc-button-xs">S</button> to drop a section near the centre of the canvas.
+<button class="kbc-button kbc-button-xs">S</button> to drop a section near the center of the canvas.
 
 A new section arrives as an 80-pixel-tall rectangle with a dashed border, a transparent fill and a
 label rendered along its top edge rather than through its middle - so the region it encloses stays
 readable. Drag other objects into it and they become children of the section: move the section and
 they move with it.
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer canvas, a section containing two or three components, section selected, section label visible along the top edge and its dashed border visible -->
-
 ### Adding textboxes {#adding-textboxes}
 
 Drag the textbox tool from the dock onto the canvas, or press
 <button class="kbc-button kbc-button-xs">T</button>. The keyboard route places the textbox near the
-centre of the canvas and puts the cursor straight into it, so you can start typing immediately.
+center of the canvas and puts the cursor straight into it, so you can start typing immediately.
 
-A new textbox arrives 60 pixels tall with a dashed grey border and a transparent fill, and its text
+A new textbox arrives 60 pixels tall with a dashed gray border and a transparent fill, and its text
 sits at the top left of the box. To edit the text of an existing textbox - or of any shape, since
 shapes accept body text too - double-click it.
 
@@ -102,7 +100,10 @@ shown.
 | Delete | <button class="kbc-button kbc-button-xs">Delete</button> or <button class="kbc-button kbc-button-xs">Backspace</button> | Removes the object from the design |
 | Reset styles | - | Restores the object's styling to its model's defaults |
 
-<!-- SCREENSHOT NEEDED: Kanvas Designer canvas, right-click context menu open on a selected shape, showing Lock, Delete, Duplicate, Copy and Reset styles entries -->
+<figure>
+  <img src="images/object-context-menu.png" alt="The circular context menu open on a selected object in Kanvas Designer, with Lock, Reset styles, Copy, Duplicate and Delete around the object" />
+  <figcaption>The circular context menu, open on a selected object</figcaption>
+</figure>
 
 Every one of these acts on your whole selection, not just the object under the cursor. To build a
 selection first, hold <button class="kbc-button kbc-button-xs">Shift</button> or
@@ -118,7 +119,7 @@ Copy writes the selected objects to your system clipboard, so you can paste them
 into the same design, into a different design, or into a different browser tab running Kanvas.
 Pasted objects land at your cursor.
 
-Copy carries the object's styling with it. A shape you have recoloured, re-bordered and captioned
+Copy carries the object's styling with it. A shape you have recolored, re-bordered and captioned
 arrives in the target design looking exactly as it did in the source.
 
 ### Cloning {#cloning}
@@ -163,17 +164,15 @@ Select any object and Kanvas floats a style toolbar above it. The toolbar is whe
 property of the object lives:
 
 - **Shape** - swap the object's outline for any of the primitives in the shape switcher.
-- **Background** - fill colour from the editor palette, plus an opacity slider from 0 to 1.
-- **Border** - colour, thickness (0-25) and style: solid, dotted, dashed or double.
+- **Background** - fill color from the editor palette, plus an opacity slider from 0 to 1.
+- **Border** - color, thickness (0-25) and style: solid, dotted, dashed or double.
 - **Layer order** - push the object forward or back through the stack.
 - **Name** - the label drawn with the object.
 - **Link** - an external URL the object points at.
 - **Image** - a background image, supplied by URL.
-- **Text** - font size, weight, colour, decoration, and horizontal and vertical alignment for the
+- **Text** - font size, weight, color, decoration, and horizontal and vertical alignment for the
   object's body text.
 - **Animation** - none, blink, ripple, bounce or pulse.
-
-<!-- SCREENSHOT NEEDED: Kanvas Designer canvas, a hexagon shape selected with its style toolbar open above it and the border sub-panel expanded, all toolbar buttons visible -->
 
 With more than one object selected, a change made in the toolbar applies to **every** object in the
 selection. That is the fastest way to bring a whole region of a design onto one palette.
@@ -188,7 +187,7 @@ have selected.
 | Shape, background, border, layer order, name, link, image, animation | Yes | Yes | Yes |
 | Text styling | Yes | **No** | Yes |
 | Accepts other objects as children | Yes | Yes | Yes |
-| Default appearance | Solid 1px border, 10% fill opacity | Dashed 1px border, transparent fill, label on the top edge | Dashed 1px grey border, transparent fill |
+| Default appearance | Solid 1px border, 10% fill opacity | Dashed 1px border, transparent fill, label on the top edge | Dashed 1px gray border, transparent fill |
 
 Sections deliberately carry no body text: a section is a frame, and its identity is the label along
 its top edge. If you want prose inside a region, put a textbox in it.
@@ -202,7 +201,7 @@ panel - see [Working with Components](https://docs.layer5.io/kanvas/getting-star
 ## Resetting styles {#resetting-styles}
 
 **Reset styles**, in the object's context menu, re-applies the styling recorded in the object's
-model definition - shape, colours, border, dimensions, background image and text styling - throwing
+model definition - shape, colors, border, dimensions, background image and text styling - throwing
 away every change you made in the style toolbar.
 
 Reset works from the definition, not from an edit history, so it is not an undo: it returns the
@@ -222,8 +221,6 @@ corner and one at the midpoint of each edge.
 - Drag an **edge** handle to resize in one axis only.
 - Hold <button class="kbc-button kbc-button-xs">Shift</button> while dragging to preserve the
   object's aspect ratio.
-
-<!-- SCREENSHOT NEEDED: Kanvas Designer canvas, a single component selected showing its bounding box and all eight resize handles -->
 
 The new dimensions are stored on the object and saved with the design. Empty sections and textboxes
 are resized exactly the same way - grow a textbox to fit a longer caption, or a section before you
@@ -250,21 +247,21 @@ corresponding control simply does not appear on the canvas.
 | <span id="clone-shapes"></span>Clone shapes | Duplicate a shape into the same design | [Cloning](#cloning) |
 | <span id="lock-shapes"></span>Lock shapes | Fix and release a shape's position | [Locking and unlocking](#locking) |
 | <span id="delete-shapes"></span>Delete shapes | Remove a shape from the design | [Deleting](#deleting) |
-| <span id="configure-shape-styles"></span>Configure shape styles | Change a shape's outline, colours, border, layers, image, text and animation | [Configuring styles](#configuring-styles) |
+| <span id="configure-shape-styles"></span>Configure shape styles | Change a shape's outline, colors, border, layers, image, text and animation | [Configuring styles](#configuring-styles) |
 | <span id="reset-shape-styles"></span>Reset shape styles | Restore a shape to its model's default styling | [Resetting styles](#resetting-styles) |
 | <span id="add-sections"></span>Add sections | Place sections onto the canvas | [Adding sections](#adding-sections) |
 | <span id="copy-sections"></span>Copy sections | Copy a section to the clipboard for pasting elsewhere | [Copying](#copying) |
 | <span id="clone-sections"></span>Clone sections | Duplicate a section into the same design | [Cloning](#cloning) |
 | <span id="lock-sections"></span>Lock sections | Fix and release a section's position | [Locking and unlocking](#locking) |
 | <span id="delete-sections"></span>Delete sections | Remove a section from the design (its contents are kept) | [Deleting](#deleting) |
-| <span id="configure-section-styles"></span>Configure section styles | Change a section's outline, colours, border, layers, image and animation | [Configuring styles](#configuring-styles) |
+| <span id="configure-section-styles"></span>Configure section styles | Change a section's outline, colors, border, layers, image and animation | [Configuring styles](#configuring-styles) |
 | <span id="reset-section-styles"></span>Reset section styles | Restore a section to its model's default styling | [Resetting styles](#resetting-styles) |
 | <span id="add-textboxes"></span>Add textboxes | Place textboxes onto the canvas | [Adding textboxes](#adding-textboxes) |
 | <span id="copy-textboxes"></span>Copy textboxes | Copy a textbox to the clipboard for pasting elsewhere | [Copying](#copying) |
 | <span id="clone-textboxes"></span>Clone textboxes | Duplicate a textbox into the same design | [Cloning](#cloning) |
 | <span id="lock-textboxes"></span>Lock textboxes | Fix and release a textbox's position | [Locking and unlocking](#locking) |
 | <span id="delete-textboxes"></span>Delete textboxes | Remove a textbox from the design | [Deleting](#deleting) |
-| <span id="configure-textbox-styles"></span>Configure textbox styles | Change a textbox's outline, colours, border, layers, image, text and animation | [Configuring styles](#configuring-styles) |
+| <span id="configure-textbox-styles"></span>Configure textbox styles | Change a textbox's outline, colors, border, layers, image, text and animation | [Configuring styles](#configuring-styles) |
 | <span id="reset-textbox-styles"></span>Reset textbox styles | Restore a textbox to its model's default styling | [Resetting styles](#resetting-styles) |
 | <span id="reset-component-styles"></span>Reset component styles | Restore a component to its model's default styling | [Resetting styles](#resetting-styles) |
 | <span id="resize-components"></span>Resize components | Change a component's width and height with the resize handles | [Resizing](#resizing) |
