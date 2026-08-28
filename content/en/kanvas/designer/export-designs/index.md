@@ -9,6 +9,11 @@ aliases:
   - /meshmap/designer/export-designs
 # Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
+#
+# The explicit heading IDs below (#exporting-as-a-design-file, #exporting-as-an-oci-image,
+# #exporting-as-embedding, #exporting-in-a-source-type-format) are linked to from inside the
+# product and from the Features & Permissions sheet. Do not rename or remove them; add a new
+# ID alongside if a section is retitled.
 ---
 
 Kanvas let's you export a design in several formats, so you can:
@@ -40,7 +45,7 @@ Kanvas let's you export a design in several formats, so you can:
 
 ## Detailed Format Guide
 
-### Design (YAML)
+### Design (YAML) {#exporting-as-a-design-file}
 
 Exports a complete, lossless copy of your design.  
 This format preserves all Meshery-specific metadata, including:
@@ -51,7 +56,7 @@ This format preserves all Meshery-specific metadata, including:
 
 Use it to back up or move designs between Meshery instances. The file is saved as `<design-name>.yml`.
 
-### Design (OCI Image)
+### Design (OCI Image) {#exporting-as-an-oci-image}
 
 Exports your design as an OCI-compliant container image.  
 This format preserves all design metadata, just like the Design (YAML), but in a form suitable for container registries.
@@ -64,7 +69,13 @@ When to use:
 
 The exported file is named `<design-name>.tar`, and can be pushed using tools like `docker push` or `oras push`.
 
-### Kubernetes Manifest (YAML)  *Lossy Export*
+### Source-Type Formats {#exporting-in-a-source-type-format}
+
+A design can also be exported back out as the kind of source it was built from. Two source types are supported: **Kubernetes Manifest** and **Helm Chart**. Both are lossy - the Kanvas-specific layout, annotations, and comments are dropped, because neither format has anywhere to carry them.
+
+Docker Compose is an *import* source only. There is no Docker Compose export; converting a design to Compose is not supported.
+
+#### Kubernetes Manifest (YAML)  *Lossy Export* {#exporting-as-a-kubernetes-manifest}
 
 Exports your design as raw Kubernetes YAML files, ready to apply with `kubectl`.
 
@@ -77,7 +88,7 @@ This format strips out Meshery-specific context and includes only standard Kuber
 
 > If you want to preserve the full editable design, use **Design (YAML)** instead.
 
-### Helm Chart (.tar.gz)  *Lossy Export*
+#### Helm Chart (.tar.gz)  *Lossy Export* {#exporting-as-a-helm-chart}
 
 Packages your design as a standard Helm chart archive (`.tar.gz`).
 
@@ -90,7 +101,7 @@ This format includes only Kubernetes resource definitions.  Design layout, annot
 
 > If you want to keep your design fully editable in Meshery, use **Design (YAML)** instead.
 
-### Embed Design (JavaScript Snippet)
+### Embed Design (JavaScript Snippet) {#exporting-as-embedding}
 
 Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. 
 
@@ -149,6 +160,16 @@ No, login is not required. You can export as a guest user.
   <summary>Can I export someone else's published design?</summary>
   
 Yes. Any published design can be exported, not just your own.
+</details>
+
+<details>
+  <summary>Can I export an earlier version of a design?</summary>
+
+No. Every export - in any format - is generated from the **current** state of the design. A design carries a single version number, which increments as the design is updated, and the export and download endpoints take no version argument.
+
+The **View Save History** button in Kanvas (on the save-status indicator) shows the design's save history as a list of events. It is an audit trail of who changed the design and when; it is not a set of restorable snapshots, and you cannot export from it.
+
+If you need a version you can come back to, export a copy at the point you care about - **Design (YAML)** or **Design (OCI image)** are the two lossless formats - and keep it, or push the OCI image to a registry under a tag.
 </details>
 
 <details>

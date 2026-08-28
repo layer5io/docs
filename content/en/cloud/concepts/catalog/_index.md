@@ -59,6 +59,20 @@ To publish a design into the catalog:
 1. In the design details dialog, review or update the **name**, **type**, and **description**, then click **Publish To Catalog**.
 1. After the request is submitted, maintainers approve it, and the design appears in the [public catalog](https://cloud.layer5.io/catalog).
 
+### Viewing Filters
+
+Your filter list at [My Filters](https://cloud.layer5.io/catalog/content/my-filters) is not limited to filters you created. When you are signed in, it returns:
+
+- every **public** and **published** filter, whoever owns it - including those belonging to other members of your teams;
+- your own **private** filters;
+- any filter that has been shared with you directly.
+
+Private filters belonging to other people are never returned. The one exception is a provider administrator, who can see private content across the provider.
+
+Signed-out visitors browsing someone's public profile see only that person's public and published filters.
+
+Filters can be browsed in grid view or table view, and searched and sorted from either. For the operations you can perform on a filter once you have found it - import, publish, unpublish, clone, download, edit, view details, and delete - see [Envoy WASM Filter Management](https://docs.meshery.io/guides/infrastructure-management/filter-management) in the Meshery documentation.
+
 ### Importing Filters
 
 WebAssembly filters can be brought into Layer5 Cloud in two ways:
