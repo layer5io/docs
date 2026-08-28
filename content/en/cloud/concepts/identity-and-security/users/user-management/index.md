@@ -58,6 +58,31 @@ You can remove users from an organization one by one or several at once. This ac
 
 ![Removing Users from an Organization](images/remove_user.png)
 
+#### What Removal Ends
+
+Removing a member ends every access-bearing relationship they hold **inside that organization**, as a single operation:
+
+* **Their organization membership**, together with the organization [roles]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) attached to it.
+* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/concepts/identity-and-security/roles/team-roles.md" >}}) attached to those memberships.
+
+Both matter, because permissions reach a user through the roles carried on those memberships. A [keychain]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) granted by a team role is revoked by the removal just as an organization role's keychain is, so a removed member is left holding no [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) in the organization by either route. Both removal methods above behave identically in this respect; removing several members at once applies the same operation to each one.
+
+Removal does **not** affect:
+
+* The person's Layer5 Cloud user account, which continues to exist.
+* Their membership in any other organization, or in teams belonging to those organizations.
+* Designs, environments, and other resources they created, which remain in the organization.
+
+Removal is not reversible from the Users tab. To restore someone's access, add them to the organization again and reassign their organization roles and team memberships - neither returns on its own.
+
+{{< alert type="warning" title="Team Access Is Not Itemized in the Confirmation" >}}
+The confirmation shown after a removal reports only that the member was removed from the organization. It does not list the team memberships that ended with it. Review the member's teams before removing them if you need a record of what their removal revoked.
+{{< /alert >}}
+
+{{< alert type="info" title="Organization Owners Cannot Be Removed" >}}
+An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Organization Roles]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}).
+{{< /alert >}}
+
 ## Invite User via Email
 
 You can invite new or existing users to join one of your organizations by sending them an email invitation.
