@@ -4,9 +4,14 @@ weight: 5
 description: >
   Learn about Views in Operator mode 
 categories: [Operator]
+aliases:
+  - /kanvas/operator/operator-views
+  - /kanvas/visualizer/visualizer-views
 ---
 
-The Views tab is located on the right side of the screen just beside the Details tab in Kanvas Operator. It allows you to see all containers the present in your Kubernetes cluster. Think of views for Operator mode as you would design for the Designer mode.
+The Views tab is located on the right side of the screen just beside the Details tab in Kanvas Operator. It lists every view you can reach in the current workspace - the ones you created and the ones teammates have made public - so that you can move between saved perspectives of your clusters without rebuilding the filters each time. Think of views for Operator mode as you would designs for Designer mode.
+
+A view is a named, saved set of filters over the resources that MeshSync has discovered in your connected clusters: the namespaces, kinds, labels and search terms that decide which resources are drawn on the Operator canvas. Saving those filters as a view means the same slice of your infrastructure comes back on demand, for you and for your team.
 
 ![Operator Views](images/Views.svg)
 
@@ -65,3 +70,29 @@ Here's what you can do with views in Operator:
   View info shows you the owner of the design, the view visibility (whether it's set to public or private), the date the design was created and the date it was last modified. If you're the owner of the view, you'll also see an input field where you can add notes about the design.
 
   ![View Info](images/ViewInfo.png)
+
+### 7. Open a view
+
+  Open a saved view to return to the slice of infrastructure it describes. Kanvas re-applies the view's filters and redraws the canvas against the current state of your clusters, so an opened view always shows live resources rather than a snapshot.
+
+  - From the Views tab, click the view you want to open.
+  - From the file menu at the top left of Kanvas, choose **Open...** and pick the view from your workspace.
+  - From Layer5 Cloud, open the workspace that the view is assigned to and select it there.
+
+### 8. Edit a view
+
+  A view is edited by changing what it shows. With the view open, adjust the filters in the Layers panel - namespaces, kinds, labels - or type into the search bar, and rename the view in the Name field at the top of the canvas. Kanvas saves those changes back to the view automatically; the cloud icon beside the name reports whether the current state has been persisted.
+
+  You can only edit a view that you own. If you open someone else's public view and change its filters, save your own copy with **Save as...** instead - see [Duplicate a view](#9-duplicate-a-view).
+
+### 9. Duplicate a view
+
+  To work from an existing view without altering it, open the view and choose **Save as...** from the file menu. Give the copy a name and Kanvas stores it as a new, independent view owned by you. The original is left untouched, and the copy starts out private until you change its visibility.
+
+### 10. View component details
+
+  A view is a window onto real resources, so every component drawn on the Operator canvas can be inspected in place. Click a component and the Details panel on the right shows that resource's live state as MeshSync reports it - status and conditions, labels and annotations, containers, and the relationships that connect it to the rest of the cluster.
+
+  For a full description of what the panel shows for each kind of resource, and of the actions available from it, see [Instance Details]({{< ref "kanvas/operator/resource-details/index.md" >}}).
+
+<!-- SCREENSHOT NEEDED: Kanvas Operator, a saved view open with a Pod selected, showing the Views tab list on the right alongside the Details panel for the selected Pod -->
