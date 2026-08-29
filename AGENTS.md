@@ -35,6 +35,11 @@ block. Appending a Markdown heading directly after a closing `</div>` leaves it 
 rendered as literal `## text`. Always leave a blank line between raw HTML and following
 Markdown, and check the built HTML for the heading's `id=` anchor.
 
+A literal backslash inside inline HTML is a related trap: Goldmark reads the `\<` in
+`<button>\</button>` as an escaped `<` and the tag never closes. Write the key as `&#92;`
+(`content/en/kanvas/reference/keyboard-shortcuts.md` is the worked example) and confirm the
+built HTML, not the source, before committing.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
