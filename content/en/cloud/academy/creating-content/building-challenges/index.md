@@ -75,7 +75,7 @@ content/challenges/<your-organization-uuid>
 ```
 
 {{< alert type="info" title="Sections Are Yours to Name" >}}
-`description`, `getting-started` and `faq` are a convention, not a fixed schema - the folder hierarchy you create is what the Academy renders as the challenge's navigation. Use the sections your scenario actually needs.
+`description`, `getting-started` and `faq` are a convention, not a fixed structure - the folder hierarchy you create is what the Academy renders as the challenge's navigation. Use the sections your scenario actually needs.
 {{< /alert >}}
 
 ### 2. Define the Challenge with Front Matter
