@@ -46,7 +46,7 @@ Roles map permissions to users. Roles contain any number of keychains, which con
 
 **What permissions does this role have?**
 
-- Can perform CRUD on all resources
+- Can create, view, edit and delete every resource
 
 {{% /card %}}
 {{< /cardpane >}}
@@ -229,7 +229,7 @@ The following illustrates how Provider Admin, Org Admin, and Team Admin roles st
 **Organization:** Constellation Cloud  
 **Scope:** All tenants (Orbital Labs, Stellar Dynamics, and others)
 
-Dr. Aiko Sato holds the Provider Admin role at Constellation Cloud, the MSP that manages Orbital Labs as a tenant. Provider Admins can perform CRUD on all resources across all tenant organizations. Dr. Sato has seen every misconfigured RBAC policy known to humankind, which is why she documents each one.
+Dr. Aiko Sato holds the Provider Admin role at Constellation Cloud, the MSP that manages Orbital Labs as a tenant. Provider Admins can create, view, edit and delete every resource across all tenant organizations. Dr. Sato has seen every misconfigured RBAC policy known to humankind, which is why she documents each one.
 {{% /card %}}
 {{% card header="**Maya Chen** — Organization Administrator" %}}
 **Organization:** Orbital Labs  

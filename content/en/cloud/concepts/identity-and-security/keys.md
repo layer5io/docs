@@ -32,7 +32,7 @@ Generally, there are four types of keys:
 3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
 4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
 
-There are also some special types of keys which don't fall into the standard CRUD (CREATE, READ, UPDATE, DELETE) category. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}) or `Connect Github Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) in context of any organization.
+Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud-native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}), and the `Connect GitHub Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) in the context of any organization.
 
 
 ### Keys Enforcement
@@ -54,6 +54,21 @@ Review Keys assigned to your user account by navigating to the [Keys](https://cl
 If you don't have permission to view keys for your selected organization, you will see a disabled Keys tab. In that case, consider switching to a different organization for which you have permission to view keys, or contact your organization admin to assign you access to the keys page.
 
 {{< /alert >}}
+
+#### Review Key Usage
+
+Keys themselves do not carry a usage counter - there is no "last used" column on the Keys page. What a key's use leaves behind is the event that the action itself produced, and those events are what you audit.
+
+Every action a user takes is recorded on the [Audit Logs](https://cloud.layer5.io/events/audit) page, which answers *who did what, and when*:
+
+- **User ID** - the account that performed the action, which is the account whose key was exercised.
+- **Category** and **Action** - what was done, for example a workspace being created or a team being deleted. These correspond to the capability the key grants.
+- **Acted Upon** - the resource the action was performed on.
+- **Description** and **Created At** - the detail of the event and the time it occurred.
+
+Filter by **Actor ID** to follow one user's activity, or by **Category** and **Action** to see everyone who exercised a particular capability over a period. Because keys are evaluated in the context of an organization, the log you are reading is the log for the organization you currently have selected.
+
+Workspaces additionally keep their own activity log, scoped to that one workspace - see [View Recent Activity]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#view-recent-activity" >}}).
 
 #### Assign Keys
 
