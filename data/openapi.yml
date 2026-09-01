@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.47
+  version: v1.3.48
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -1462,17 +1462,32 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
+                        orgOwner:
+                          description: >-
+                            UUID of the organization designated as the owner of this credential, for credentials that
+                            belong to a brand profile rather than to a person. Optional and independent of userId:
+                            userId continues to identify the user who created and owns the record, while orgOwner
+                            designates the organization the credential is for.
+                          x-order: 4
+                          x-go-name: OrgOwner
+                          x-oapi-codegen-extra-tags:
+                            db: org_owner
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                         type:
                           type: string
                           description: Credential type (e.g. token, basic, AWS).
-                          x-order: 4
+                          x-order: 5
                           x-oapi-codegen-extra-tags:
                             db: type
                           maxLength: 255
                         secret:
                           type: object
                           description: Key-value pairs containing the sensitive credential data.
-                          x-order: 5
+                          x-order: 6
                           x-go-type: core.Map
                           x-go-type-import:
                             path: github.com/meshery/schemas/models/core
@@ -1485,7 +1500,7 @@ paths:
                           description: Timestamp when the credential was created.
                           x-go-type: time.Time
                           x-go-type-skip-optional-pointer: true
-                          x-order: 6
+                          x-order: 7
                           x-oapi-codegen-extra-tags:
                             db: created_at
                         updatedAt:
@@ -1494,7 +1509,7 @@ paths:
                           description: Timestamp when the credential was last updated.
                           x-go-type: time.Time
                           x-go-type-skip-optional-pointer: true
-                          x-order: 7
+                          x-order: 8
                           x-oapi-codegen-extra-tags:
                             db: updated_at
                         deletedAt:
@@ -1505,7 +1520,7 @@ paths:
                           x-go-type-import:
                             path: github.com/meshery/schemas/models/core
                           x-go-type-skip-optional-pointer: true
-                          x-order: 8
+                          x-order: 9
                           x-oapi-codegen-extra-tags:
                             db: deleted_at
                     x-order: 1
@@ -1583,15 +1598,29 @@ paths:
                   x-go-type: uuid.UUID
                   x-go-type-import:
                     path: github.com/gofrs/uuid
+                orgOwner:
+                  description: >-
+                    UUID of the organization to designate as the owner of this credential. A caller may supply this
+                    field; the server authorizes it against the authenticated principal and rejects the request when
+                    that principal may not write for the named organization.
+                  x-order: 4
+                  x-go-name: OrgOwner
+                  x-oapi-codegen-extra-tags:
+                    json: orgOwner,omitempty
+                  type: string
+                  format: uuid
+                  x-go-type: uuid.UUID
+                  x-go-type-import:
+                    path: github.com/gofrs/uuid
                 type:
                   type: string
                   description: Credential type (e.g. token, basic, AWS).
-                  x-order: 4
+                  x-order: 5
                   maxLength: 255
                 secret:
                   type: object
                   description: Key-value pairs containing the sensitive credential data.
-                  x-order: 5
+                  x-order: 6
                   x-go-type: core.Map
                   x-go-type-import:
                     path: github.com/meshery/schemas/models/core
@@ -1643,17 +1672,32 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
+                  orgOwner:
+                    description: >-
+                      UUID of the organization designated as the owner of this credential, for credentials that belong
+                      to a brand profile rather than to a person. Optional and independent of userId: userId continues
+                      to identify the user who created and owns the record, while orgOwner designates the organization
+                      the credential is for.
+                    x-order: 4
+                    x-go-name: OrgOwner
+                    x-oapi-codegen-extra-tags:
+                      db: org_owner
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   type:
                     type: string
                     description: Credential type (e.g. token, basic, AWS).
-                    x-order: 4
+                    x-order: 5
                     x-oapi-codegen-extra-tags:
                       db: type
                     maxLength: 255
                   secret:
                     type: object
                     description: Key-value pairs containing the sensitive credential data.
-                    x-order: 5
+                    x-order: 6
                     x-go-type: core.Map
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
@@ -1666,7 +1710,7 @@ paths:
                     description: Timestamp when the credential was created.
                     x-go-type: time.Time
                     x-go-type-skip-optional-pointer: true
-                    x-order: 6
+                    x-order: 7
                     x-oapi-codegen-extra-tags:
                       db: created_at
                   updatedAt:
@@ -1675,7 +1719,7 @@ paths:
                     description: Timestamp when the credential was last updated.
                     x-go-type: time.Time
                     x-go-type-skip-optional-pointer: true
-                    x-order: 7
+                    x-order: 8
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                   deletedAt:
@@ -1686,7 +1730,7 @@ paths:
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-go-type-skip-optional-pointer: true
-                    x-order: 8
+                    x-order: 9
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
         '400':
@@ -1753,15 +1797,29 @@ paths:
                   x-go-type: uuid.UUID
                   x-go-type-import:
                     path: github.com/gofrs/uuid
+                orgOwner:
+                  description: >-
+                    UUID of the organization to designate as the owner of this credential. A caller may supply this
+                    field; the server authorizes it against the authenticated principal and rejects the request when
+                    that principal may not write for the named organization.
+                  x-order: 4
+                  x-go-name: OrgOwner
+                  x-oapi-codegen-extra-tags:
+                    json: orgOwner,omitempty
+                  type: string
+                  format: uuid
+                  x-go-type: uuid.UUID
+                  x-go-type-import:
+                    path: github.com/gofrs/uuid
                 type:
                   type: string
                   description: Credential type (e.g. token, basic, AWS).
-                  x-order: 4
+                  x-order: 5
                   maxLength: 255
                 secret:
                   type: object
                   description: Key-value pairs containing the sensitive credential data.
-                  x-order: 5
+                  x-order: 6
                   x-go-type: core.Map
                   x-go-type-import:
                     path: github.com/meshery/schemas/models/core
@@ -1813,17 +1871,32 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
+                  orgOwner:
+                    description: >-
+                      UUID of the organization designated as the owner of this credential, for credentials that belong
+                      to a brand profile rather than to a person. Optional and independent of userId: userId continues
+                      to identify the user who created and owns the record, while orgOwner designates the organization
+                      the credential is for.
+                    x-order: 4
+                    x-go-name: OrgOwner
+                    x-oapi-codegen-extra-tags:
+                      db: org_owner
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   type:
                     type: string
                     description: Credential type (e.g. token, basic, AWS).
-                    x-order: 4
+                    x-order: 5
                     x-oapi-codegen-extra-tags:
                       db: type
                     maxLength: 255
                   secret:
                     type: object
                     description: Key-value pairs containing the sensitive credential data.
-                    x-order: 5
+                    x-order: 6
                     x-go-type: core.Map
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
@@ -1836,7 +1909,7 @@ paths:
                     description: Timestamp when the credential was created.
                     x-go-type: time.Time
                     x-go-type-skip-optional-pointer: true
-                    x-order: 6
+                    x-order: 7
                     x-oapi-codegen-extra-tags:
                       db: created_at
                   updatedAt:
@@ -1845,7 +1918,7 @@ paths:
                     description: Timestamp when the credential was last updated.
                     x-go-type: time.Time
                     x-go-type-skip-optional-pointer: true
-                    x-order: 7
+                    x-order: 8
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                   deletedAt:
@@ -1856,7 +1929,7 @@ paths:
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-go-type-skip-optional-pointer: true
-                    x-order: 8
+                    x-order: 9
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
         '400':
@@ -2004,17 +2077,32 @@ paths:
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
+                  orgOwner:
+                    description: >-
+                      UUID of the organization designated as the owner of this credential, for credentials that belong
+                      to a brand profile rather than to a person. Optional and independent of userId: userId continues
+                      to identify the user who created and owns the record, while orgOwner designates the organization
+                      the credential is for.
+                    x-order: 4
+                    x-go-name: OrgOwner
+                    x-oapi-codegen-extra-tags:
+                      db: org_owner
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   type:
                     type: string
                     description: Credential type (e.g. token, basic, AWS).
-                    x-order: 4
+                    x-order: 5
                     x-oapi-codegen-extra-tags:
                       db: type
                     maxLength: 255
                   secret:
                     type: object
                     description: Key-value pairs containing the sensitive credential data.
-                    x-order: 5
+                    x-order: 6
                     x-go-type: core.Map
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
@@ -2027,7 +2115,7 @@ paths:
                     description: Timestamp when the credential was created.
                     x-go-type: time.Time
                     x-go-type-skip-optional-pointer: true
-                    x-order: 6
+                    x-order: 7
                     x-oapi-codegen-extra-tags:
                       db: created_at
                   updatedAt:
@@ -2036,7 +2124,7 @@ paths:
                     description: Timestamp when the credential was last updated.
                     x-go-type: time.Time
                     x-go-type-skip-optional-pointer: true
-                    x-order: 7
+                    x-order: 8
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                   deletedAt:
@@ -2047,7 +2135,7 @@ paths:
                     x-go-type-import:
                       path: github.com/meshery/schemas/models/core
                     x-go-type-skip-optional-pointer: true
-                    x-order: 8
+                    x-order: 9
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
         '401':
@@ -5181,10 +5269,11 @@ paths:
                                   x-internal:
                                     - cloud
                                   description: >-
-                                    Per-organization overrides for the legal and support links shown on the auth pages
-                                    and the error page. termsOfService and privacy are the named legal links; support is
-                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
-                                    to the platform defaults.
+                                    Per-organization overrides for the legal, support, and social links shown on the
+                                    auth pages and the error page. termsOfService and privacy are the named legal links;
+                                    support is an open-ended set of named support contacts/links; social carries the
+                                    organization's brand profiles. Empty or omitted fields fall back to the platform
+                                    defaults.
                                   properties:
                                     termsOfService:
                                       type: string
@@ -5206,6 +5295,30 @@ paths:
                                         pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
                                         free text. For example a "slack" entry pointing at https://slack.meshery.io, a
                                         "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                    social:
+                                      x-go-type: Social
+                                      type: object
+                                      x-internal:
+                                        - cloud
+                                      description: >-
+                                        The organization's social brand profiles. Deliberately a sibling of support
+                                        rather than an entry in it: support renders as support contacts on the auth and
+                                        error pages, where a brand profile does not belong. Each platform is a named,
+                                        individually validated URL so consumers can render the matching platform icon.
+                                        Empty or omitted fields fall back to the platform defaults.
+                                      properties:
+                                        linkedin:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's LinkedIn profile.
+                                          x-go-name: LinkedIn
+                                        x:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's X (formerly Twitter) profile.
+                                          x-go-name: X
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -5455,9 +5568,10 @@ paths:
                       x-internal:
                         - cloud
                       description: >-
-                        Per-organization overrides for the legal and support links shown on the auth pages and the error
-                        page. termsOfService and privacy are the named legal links; support is an open-ended set of
-                        named support contacts/links. Empty or omitted fields fall back to the platform defaults.
+                        Per-organization overrides for the legal, support, and social links shown on the auth pages and
+                        the error page. termsOfService and privacy are the named legal links; support is an open-ended
+                        set of named support contacts/links; social carries the organization's brand profiles. Empty or
+                        omitted fields fall back to the platform defaults.
                       properties:
                         termsOfService:
                           type: string
@@ -5479,6 +5593,30 @@ paths:
                             by display name with a value that is a URL, a mailto:/tel: link, or free text. For example a
                             "slack" entry pointing at https://slack.meshery.io, a "discussion forum" entry, or a
                             "support desk" entry holding a phone number.
+                        social:
+                          x-go-type: Social
+                          type: object
+                          x-internal:
+                            - cloud
+                          description: >-
+                            The organization's social brand profiles. Deliberately a sibling of support rather than an
+                            entry in it: support renders as support contacts on the auth and error pages, where a brand
+                            profile does not belong. Each platform is a named, individually validated URL so consumers
+                            can render the matching platform icon. Empty or omitted fields fall back to the platform
+                            defaults.
+                          properties:
+                            linkedin:
+                              type: string
+                              format: uri
+                              maxLength: 2048
+                              description: URL of the organization's LinkedIn profile.
+                              x-go-name: LinkedIn
+                            x:
+                              type: string
+                              format: uri
+                              maxLength: 2048
+                              description: URL of the organization's X (formerly Twitter) profile.
+                              x-go-name: X
                     showAuthCarousel:
                       type: boolean
                       default: true
@@ -5726,10 +5864,11 @@ paths:
                                   x-internal:
                                     - cloud
                                   description: >-
-                                    Per-organization overrides for the legal and support links shown on the auth pages
-                                    and the error page. termsOfService and privacy are the named legal links; support is
-                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
-                                    to the platform defaults.
+                                    Per-organization overrides for the legal, support, and social links shown on the
+                                    auth pages and the error page. termsOfService and privacy are the named legal links;
+                                    support is an open-ended set of named support contacts/links; social carries the
+                                    organization's brand profiles. Empty or omitted fields fall back to the platform
+                                    defaults.
                                   properties:
                                     termsOfService:
                                       type: string
@@ -5751,6 +5890,30 @@ paths:
                                         pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
                                         free text. For example a "slack" entry pointing at https://slack.meshery.io, a
                                         "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                    social:
+                                      x-go-type: Social
+                                      type: object
+                                      x-internal:
+                                        - cloud
+                                      description: >-
+                                        The organization's social brand profiles. Deliberately a sibling of support
+                                        rather than an entry in it: support renders as support contacts on the auth and
+                                        error pages, where a brand profile does not belong. Each platform is a named,
+                                        individually validated URL so consumers can render the matching platform icon.
+                                        Empty or omitted fields fall back to the platform defaults.
+                                      properties:
+                                        linkedin:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's LinkedIn profile.
+                                          x-go-name: LinkedIn
+                                        x:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's X (formerly Twitter) profile.
+                                          x-go-name: X
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -6220,10 +6383,11 @@ paths:
                                   x-internal:
                                     - cloud
                                   description: >-
-                                    Per-organization overrides for the legal and support links shown on the auth pages
-                                    and the error page. termsOfService and privacy are the named legal links; support is
-                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
-                                    to the platform defaults.
+                                    Per-organization overrides for the legal, support, and social links shown on the
+                                    auth pages and the error page. termsOfService and privacy are the named legal links;
+                                    support is an open-ended set of named support contacts/links; social carries the
+                                    organization's brand profiles. Empty or omitted fields fall back to the platform
+                                    defaults.
                                   properties:
                                     termsOfService:
                                       type: string
@@ -6245,6 +6409,30 @@ paths:
                                         pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
                                         free text. For example a "slack" entry pointing at https://slack.meshery.io, a
                                         "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                    social:
+                                      x-go-type: Social
+                                      type: object
+                                      x-internal:
+                                        - cloud
+                                      description: >-
+                                        The organization's social brand profiles. Deliberately a sibling of support
+                                        rather than an entry in it: support renders as support contacts on the auth and
+                                        error pages, where a brand profile does not belong. Each platform is a named,
+                                        individually validated URL so consumers can render the matching platform icon.
+                                        Empty or omitted fields fall back to the platform defaults.
+                                      properties:
+                                        linkedin:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's LinkedIn profile.
+                                          x-go-name: LinkedIn
+                                        x:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's X (formerly Twitter) profile.
+                                          x-go-name: X
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -6580,9 +6768,10 @@ paths:
                       x-internal:
                         - cloud
                       description: >-
-                        Per-organization overrides for the legal and support links shown on the auth pages and the error
-                        page. termsOfService and privacy are the named legal links; support is an open-ended set of
-                        named support contacts/links. Empty or omitted fields fall back to the platform defaults.
+                        Per-organization overrides for the legal, support, and social links shown on the auth pages and
+                        the error page. termsOfService and privacy are the named legal links; support is an open-ended
+                        set of named support contacts/links; social carries the organization's brand profiles. Empty or
+                        omitted fields fall back to the platform defaults.
                       properties:
                         termsOfService:
                           type: string
@@ -6604,6 +6793,30 @@ paths:
                             by display name with a value that is a URL, a mailto:/tel: link, or free text. For example a
                             "slack" entry pointing at https://slack.meshery.io, a "discussion forum" entry, or a
                             "support desk" entry holding a phone number.
+                        social:
+                          x-go-type: Social
+                          type: object
+                          x-internal:
+                            - cloud
+                          description: >-
+                            The organization's social brand profiles. Deliberately a sibling of support rather than an
+                            entry in it: support renders as support contacts on the auth and error pages, where a brand
+                            profile does not belong. Each platform is a named, individually validated URL so consumers
+                            can render the matching platform icon. Empty or omitted fields fall back to the platform
+                            defaults.
+                          properties:
+                            linkedin:
+                              type: string
+                              format: uri
+                              maxLength: 2048
+                              description: URL of the organization's LinkedIn profile.
+                              x-go-name: LinkedIn
+                            x:
+                              type: string
+                              format: uri
+                              maxLength: 2048
+                              description: URL of the organization's X (formerly Twitter) profile.
+                              x-go-name: X
                     showAuthCarousel:
                       type: boolean
                       default: true
@@ -6851,10 +7064,11 @@ paths:
                                   x-internal:
                                     - cloud
                                   description: >-
-                                    Per-organization overrides for the legal and support links shown on the auth pages
-                                    and the error page. termsOfService and privacy are the named legal links; support is
-                                    an open-ended set of named support contacts/links. Empty or omitted fields fall back
-                                    to the platform defaults.
+                                    Per-organization overrides for the legal, support, and social links shown on the
+                                    auth pages and the error page. termsOfService and privacy are the named legal links;
+                                    support is an open-ended set of named support contacts/links; social carries the
+                                    organization's brand profiles. Empty or omitted fields fall back to the platform
+                                    defaults.
                                   properties:
                                     termsOfService:
                                       type: string
@@ -6876,6 +7090,30 @@ paths:
                                         pages, keyed by display name with a value that is a URL, a mailto:/tel: link, or
                                         free text. For example a "slack" entry pointing at https://slack.meshery.io, a
                                         "discussion forum" entry, or a "support desk" entry holding a phone number.
+                                    social:
+                                      x-go-type: Social
+                                      type: object
+                                      x-internal:
+                                        - cloud
+                                      description: >-
+                                        The organization's social brand profiles. Deliberately a sibling of support
+                                        rather than an entry in it: support renders as support contacts on the auth and
+                                        error pages, where a brand profile does not belong. Each platform is a named,
+                                        individually validated URL so consumers can render the matching platform icon.
+                                        Empty or omitted fields fall back to the platform defaults.
+                                      properties:
+                                        linkedin:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's LinkedIn profile.
+                                          x-go-name: LinkedIn
+                                        x:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's X (formerly Twitter) profile.
+                                          x-go-name: X
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -7142,9 +7380,10 @@ paths:
                         x-internal:
                           - cloud
                         description: >-
-                          Per-organization overrides for the legal and support links shown on the auth pages and the
-                          error page. termsOfService and privacy are the named legal links; support is an open-ended set
-                          of named support contacts/links. Empty or omitted fields fall back to the platform defaults.
+                          Per-organization overrides for the legal, support, and social links shown on the auth pages
+                          and the error page. termsOfService and privacy are the named legal links; support is an
+                          open-ended set of named support contacts/links; social carries the organization's brand
+                          profiles. Empty or omitted fields fall back to the platform defaults.
                         properties:
                           termsOfService:
                             type: string
@@ -7166,6 +7405,30 @@ paths:
                               by display name with a value that is a URL, a mailto:/tel: link, or free text. For example
                               a "slack" entry pointing at https://slack.meshery.io, a "discussion forum" entry, or a
                               "support desk" entry holding a phone number.
+                          social:
+                            x-go-type: Social
+                            type: object
+                            x-internal:
+                              - cloud
+                            description: >-
+                              The organization's social brand profiles. Deliberately a sibling of support rather than an
+                              entry in it: support renders as support contacts on the auth and error pages, where a
+                              brand profile does not belong. Each platform is a named, individually validated URL so
+                              consumers can render the matching platform icon. Empty or omitted fields fall back to the
+                              platform defaults.
+                            properties:
+                              linkedin:
+                                type: string
+                                format: uri
+                                maxLength: 2048
+                                description: URL of the organization's LinkedIn profile.
+                                x-go-name: LinkedIn
+                              x:
+                                type: string
+                                format: uri
+                                maxLength: 2048
+                                description: URL of the organization's X (formerly Twitter) profile.
+                                x-go-name: X
                       showAuthCarousel:
                         type: boolean
                         default: true
