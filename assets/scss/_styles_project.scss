@@ -1069,12 +1069,12 @@ h1, h2, h3, h4, h5, h6 {
 
     &:not(.active):hover {
       background-color: #eaedee;
-      color: $primary;
+      color: #007763;
     }
 
     &.active {
       background-color: #ffffff;
-      color: $primary;
+      color: #007763;
       border-color: #d2d8da #d2d8da transparent #d2d8da;
       font-weight: 600;
     }
@@ -1199,7 +1199,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .dashboard {
-    background-image: linear-gradient(to right, #142126 0px, #00b39f 34%, #ebc017 71%, #477e96 100%);
+    background-image: linear-gradient(to right, #3c494f 0px, #00b39f 34%, #ebc017 71%, #477e96 100%);
   }
 
   .dash-sign-container {
