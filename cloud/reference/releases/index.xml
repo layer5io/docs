@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.243</title><link>/cloud/reference/releases/v1.0.243/</link><pubDate>Thu, 03 Sep 2026 17:50:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.243/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.245</title><link>/cloud/reference/releases/v1.0.245/</link><pubDate>Thu, 03 Sep 2026 22:18:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.245/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(users): reassign organization-owned credentials on account deletion @leecalcote (#6029)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and meshery-cloud-credentials-org-reassign-on-delete&lt;/p&gt;</description></item><item><title>v1.0.243</title><link>/cloud/reference/releases/v1.0.243/</link><pubDate>Thu, 03 Sep 2026 17:50:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.243/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(permissions): grant anonymous sessions the roles and key Kanvas Designer needs @ritzorama (#6026)&lt;/li&gt;
 &lt;/ul&gt;
 
