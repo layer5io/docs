@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.247</title><link>/cloud/reference/releases/v1.0.247/</link><pubDate>Fri, 04 Sep 2026 05:52:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.247/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.248</title><link>/cloud/reference/releases/v1.0.248/</link><pubDate>Fri, 04 Sep 2026 08:47:46 +0000</pubDate><guid>/cloud/reference/releases/v1.0.248/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): authenticate the Kratos flow-email endpoint with the webhook secret @pontusringblom (#6035)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.247</title><link>/cloud/reference/releases/v1.0.247/</link><pubDate>Fri, 04 Sep 2026 05:52:41 +0000</pubDate><guid>/cloud/reference/releases/v1.0.247/</guid><description>&lt;ul&gt;
 &lt;li&gt;docs: design for per-organization SMTP @miacycle (#6032)&lt;/li&gt;
 &lt;li&gt;chore(deps): bump @meshery/schemas to v1.3.51 @pontusringblom (#6034)&lt;/li&gt;
 &lt;li&gt;docs(permissions): cover granting an existing permission key to another keychain or role @pontusringblom (#6033)&lt;/li&gt;
