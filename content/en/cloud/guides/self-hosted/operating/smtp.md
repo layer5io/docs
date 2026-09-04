@@ -27,12 +27,16 @@ LOG_LEVEL=5
 
 ## Testing Email Configuration
 
-### 1. Email Configuration Test Endpoint
+### 1. Email Configuration Test Endpoint (Provider Admin Only) {#1-email-configuration-test-endpoint}
 
-Test the basic email configuration without sending actual emails:
+Check that the four `SMTP_*` values are configured, without sending an email.
+**Both verbs of this endpoint require authentication and the provider admin
+role**, so the `GET` must carry a credential. It validates configuration only -
+it does not dial the SMTP server.
 
 ```bash
-curl -X GET "https://your-domain.com/api/system/email/test"
+curl -X GET "https://your-domain.com/api/system/email/test" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
 **Expected Response (Success):**
@@ -40,17 +44,33 @@ curl -X GET "https://your-domain.com/api/system/email/test"
 {
   "status": "success",
   "message": "Email configuration is valid",
-  "timestamp": "1695312000",
-  "smtp_host": "smtp.gmail.com",
-  "smtp_port": "587",
-  "smtp_username": "your-email@domain.com"
+  "timestamp": "1695312000"
 }
 ```
 
-**Expected Response (Error):**
+The response carries the verdict only. It does not report `smtp_host`,
+`smtp_port` or `smtp_username`: those are the deployment's own relay settings,
+and `SMTP_USERNAME` is an email address. Read the configured values from your
+deployment configuration instead.
+
+**Expected Response (Error):** `500 Internal Server Error`, as plain text
+rather than JSON:
+
+```text
+Email configuration verification failed: SMTP configuration error for field 'SMTP_HOST'
+```
+
+**Expected Response (Unauthenticated):** `401 Unauthorized`
 ```json
 {
-  "error": "Email configuration test failed: SMTP_HOST environment variable is not set"
+  "message": "user must be logged in to perform this operation"
+}
+```
+
+**Expected Response (Authenticated, not a provider admin):** `403 Forbidden`
+```json
+{
+  "message": "user you@example.com must be Provider Admin to perform this operation"
 }
 ```
 
@@ -126,7 +146,7 @@ When `LOG_LEVEL=5`, you'll see detailed debug logs for email operations:
 ### 1. SMTP Configuration Validation
 
 ```log
-DEBUG SMTP Configuration Debug host=smtp.gmail.com port=587 username=user@domain.com password_set=true password_length=16
+DEBUG SMTP Configuration Debug host=smtp.gmail.com port=587 username=user@domain.com password_set=true
 ```
 
 ### 2. Template Processing
@@ -254,7 +274,7 @@ Consider setting up monitoring for email-related metrics:
 
 - [ ] Check `LOG_LEVEL` is set to 5 or 6 for debug logging
 - [ ] Verify all SMTP environment variables are configured
-- [ ] Test email configuration using `/api/system/email/test` endpoint
+- [ ] Test email configuration using the provider-admin-only `/api/system/email/test` endpoint, authenticating the request
 - [ ] Check network connectivity to SMTP server
 - [ ] Validate email template files exist and are accessible
 - [ ] Verify recipient email addresses are valid
