@@ -104,6 +104,12 @@ The **>>** and **<<** buttons act on the whole list, so they stay disabled until
 
 **Save** stays disabled until you have actually changed something, and one **Save** commits every addition and removal you made in the dialog together.
 
+{{< alert type="info" title="Some Environments Are Managed for You" >}}
+A few Environments are provisioned for your organization rather than created by someone in it, and they hold configuration the platform itself relies on - the Environment behind your organization's own identity providers is one. Their Connections are managed from the settings page that owns that feature, so assigning or removing Connections here is refused.
+
+You can still open such an Environment and see what belongs to it. Only changes made through this dialog are declined.
+{{< /alert >}}
+
 ## Remove Connections from an Environment
 
 Removal is the same dialog in the other direction:
@@ -126,6 +132,12 @@ You can delete a single Environment or several at once.
 
 {{< alert type="danger" title="What Happens When an Environment is Deleted?" >}}
 Deleting an Environment does **not** delete the Connections inside it. Connections that also belong to other Environments continue to belong to those Environments. The Environment is detached from any Workspaces it was linked to, and the resources it made available to those Workspaces stop being available through it.
+{{< /alert >}}
+
+{{< alert type="info" title="Managed Environments Cannot Be Deleted Here" >}}
+Deleting an Environment your organization did not create - one provisioned to hold configuration the platform relies on, such as the Environment behind your own identity providers - is refused. Remove the feature's configuration from the settings page that owns it and the Environment is taken away with it.
+
+This is why deletion is refused rather than simply hidden: an Environment that still holds live configuration should not disappear from a grid where you can see everything else you own.
 {{< /alert >}}
 
 While an Environment is bulk-selected its card cannot be flipped and its individual edit and delete icons are suppressed, so the bulk toolbar is the only way to act on it. Clear the selection to get the per-card actions back.
