@@ -103,10 +103,6 @@ To optimize performance, consider the following:
 
 As your designs grow in complexity, certain design patterns can impact how smoothly Kanvas responds. Understanding these factors helps you create designs that remain fast and responsive.
 
-{{< alert type="info" title="Related performance controls" >}}
-This page covers the design patterns and tuning levers that affect Kanvas performance. For the per-mode rendering ladder (Full, Medium, Wireframe, View-Only) and automatic fidelity management, see [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}). For the drag-to-edge viewport pan and its per-render-mode size thresholds, see [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}).
-{{< /alert >}}
-
 ### Working with Grouped Components
 
 When you create groups of components (placing multiple components inside a parent container), you might notice performance differences as the number of grouped items increases. Here's what you might experience:
