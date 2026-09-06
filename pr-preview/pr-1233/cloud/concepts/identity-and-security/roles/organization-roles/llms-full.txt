@@ -1,0 +1,68 @@
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;Default Organization Roles&#34; %}}
+&lt;img src=&#34;../images/organization-roles.svg&#34; link=&#34;../images/organization-roles.svg&#34;  width=&#34;100%&#34; alt=&#34;Organization Roles&#34; /&gt;
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+{{&lt; cardpane &gt;}}
+
+{{% card header=&#34;## Organization Administrators&#34; %}}
+
+**What is the purpose of this role?**
+
+- Administration of an organization (for each organization for which the user has this role assigned)
+
+**Who can assign this role?**
+
+- The Organization Owner
+
+**When this role first assigned?**
+
+- Creation of new organization or User Account creation
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many (based on plan)
+- By default, the first Organization Admin is the owner (the creator of the organization).
+
+**Who can remove assignment of this role?**
+
+- Organization Owner
+
+**What permissions does this role have?**
+
+- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;## Organization Billing Managers&#34; %}}
+
+**What is the purpose of this role?**
+
+- Administration of subscriptions, plans, payments, billing methods and information, spending limits, invoice mgmt etc.
+
+**Who can assign this role?**
+
+- Organization Owner
+
+**When this role first assigned?**
+
+- Manually by Organization Owner
+
+**How many instances of these roles?**
+
+- Min: 0, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Owner
+
+**What permissions does this role have?**
+
+- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+
+{{% /card %}}
+{{&lt; /cardpane &gt;}}

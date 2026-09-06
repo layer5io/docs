@@ -1,0 +1,202 @@
+
+In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Certification** is a formal assessment designed to validate a learner&#39;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&#39;s primary goal is evaluation.
+
+The successful completion of a Certification results in an official, shareable **Certificate of Completion** and a valuable badge, signifying a verified level of proficiency.
+
+![example image](./images/index-page.png)
+
+### When to Use a Certification
+
+To understand its unique role, here is a comparison with other content types in the Academy. Use this table to decide if a Certification is the right format for your content.
+
+| Feature | Learning Path | Challenge | Certification |
+| :--- | :--- | :--- | :--- |
+| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
+| Structure | Hierarchical (Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
+| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
+| Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
+
+{{&lt; alert type=&#34;info&#34; title=&#34;Certification: Focus on Assessment, Not Instruction&#34; &gt;}}
+A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise. If the objective is instead for the learner to solve a concrete, hands-on problem, build a [Challenge]({{&lt; ref &#34;cloud/academy/creating-content/building-challenges/index.md&#34; &gt;}}) rather than a Certification.
+{{&lt; /alert &gt;}}
+
+## How to Create Your Certification
+
+Building a new certification involves setting up the correct directory structure and defining its properties through Markdown frontmatter.
+
+### Find Your Organization ID and Certification ID {#find-your-organization-uuid-and-certification-id}
+
+{{&lt; alert type=&#34;warning&#34; title=&#34;Important: Replace the Placeholder IDs&#34; &gt;}}
+Throughout this guide, you&#39;ll see references to `&lt;your-organization-uuid&gt;` and `&lt;your-certification-uuid&gt;` placeholders. Make sure to replace all of these with your actual IDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when you build your certification.
+{{&lt; /alert &gt;}}
+
+Each certification is tied to a specific organization and secured by a unique identifier. Layer5 Cloud generates these IDs for you, and they are what keep your content visible only under your own organization.
+
+You&#39;ll need two IDs:
+- **Certification ID**: A unique identifier for your specific certification that gets added to the front matter of your certification&#39;s index file
+- **Organization ID**: Your organization&#39;s own ID, used in directory paths
+
+{{&lt; alert type=&#34;info&#34; title=&#34;Generating Your IDs from the Instructor Console&#34; &gt;}}
+
+The easiest way to get the correct IDs is by using the content creation tool.
+
+- Navigate to the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) in Layer5 Cloud.
+- Use the &#34;Create New Content&#34; tool and fill in the information for your new content
+- The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
+
+[Learn more](https://cloud.layer5.io/academy/instructors-console) about the Academy Console.
+{{&lt; /alert &gt;}}
+
+### 1. Set Up the Directory Structure
+
+All content for a new certification must reside within the `content/certifications/&lt;your-organization-uuid&gt;` directory. To keep content organized, each certification has its own folder named with a descriptive, URL-friendly slug.
+
+The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/&lt;your-organization-uuid&gt;/&lt;certification-folder-name&gt;/`
+
+Below is the standard file structure:
+
+```
+content/certifications/&lt;your-organization-uuid&gt;
+└── layer5-certification-exam/   &lt;-- The &lt;certification-name&gt; directory
+    ├── _index.md                      &lt;-- Defines the certification&#39;s metadata
+    ├── exam-1.md                      &lt;-- (Optional) A standard content page for introduction
+    ├── optional-exam-2.md             &lt;-- An optional supplementary exam
+    └── exam-3.md                      &lt;-- A mandatory exam, accessible after completing all previous required units.
+```
+
+**Key Files:**
+- **`_index.md`**: The entry point for your certification containing all metadata (title, description, banner, etc.)
+- **Exam Files (`*.md`)**: Individual Markdown files containing the exams. Order and optional status are controlled by frontmatter, not filename.
+
+### 2. Define the Certification with Frontmatter
+
+The `_index.md` file&#39;s frontmatter controls how the certification is presented to users..
+
+Here&#39;s a complete example of the YAML frontmatter for a certification&#39;s `_index.md` file:
+
+```yaml
+---
+type: &#34;certification&#34;
+id: &#34;&lt;your-certification-uuid&gt;&#34;
+title: &#34;Layer5 Network Certification&#34;
+description: &#34;Validate your expertise in Layer5 networking technologies through comprehensive assessment&#34;
+banner: &#34;images/layer5-icon.svg&#34;
+weight: 1
+tags: [layer5, cloud, infrastructure]
+level: &#34;beginner&#34;
+categories: &#34;platform&#34;
+badge: 
+    png: &#34;https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png&#34;
+    svg: &#34;https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png&#34;
+    title: &#34;Layer5 Certified&#34;
+    description: &#34;Earn the Certification badge to showcase your expertise in Layer5 cloud services.&#34;
+---
+```
+
+#### Frontmatter Fields Reference
+
+&gt; In this table, fields marked with ✅  are required, while those marked with – are optional.
+
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `type` | ✅  | Must be set to `&#34;certification&#34;` to identify this content correctly. |
+| `id` | ✅  | **Crucial.** A stable ID used to track learner progress. **Do not change.** |
+| `title` | ✅  | The human-readable title that will be displayed to users. |
+| `description` | ✅  | A comprehensive summary of the certification&#39;s scope and objectives. |
+| `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
+| `banner` | - | Path to a banner image located in the same folder (Page Bundle).  |
+| `tags` | - | Keywords for content discovery. Multiple tags can be selected. |
+| `level` | - | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+| `categories` | - | A string that assigns the certification to a specific category. |
+| `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., layer5-badge.svg).|
+
+### 3. Add Content and Exams
+
+A certification is primarily composed of exams. However, you can also include standard content pages to provide context.
+
+  - **Exams:** The core assessable components. A certification can contain one or multiple exams.
+  - **Informational Pages:** Standard Markdown pages that can serve as an introduction, a study guide, or a list of helpful resources.
+
+{{&lt; alert type=&#34;info&#34; title=&#34;How to Create and Configure Exams&#34; &gt;}}
+Every &#34;Exam&#34; file within a certification follows the unified Academy assessment standard.
+
+For detailed instructions on how to write an exam file, define various question types, set scoring and passing percentages, and use advanced options, please refer to our comprehensive [Integrating Assessments in the Academy]({{&lt; ref &#34;cloud/academy/creating-content/integrating-assessments-in-the-academy.md&#34; &gt;}}) guide.
+{{&lt; /alert &gt;}}
+
+### 4. Managing Question Pools and Test Attempts
+
+A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank** — collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
+
+This behavior is controlled by the `numberOfQuestions` property in the front matter.
+
+* If `numberOfQuestions` is **not defined**, all questions in the test are used in every attempt.
+* If it **is defined**, the test is automatically divided into multiple sets, each containing the specified number of questions.
+
+To ensure even division, the **total number of questions** must be a **multiple** of `numberOfQuestions`.
+
+By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
+
+{{&lt; alert type=&#34;warning&#34; title=&#34;Multi-Exam Certification Settings&#34; &gt;}}
+For certifications containing multiple exams, each exam may have its own test bank, question count, and retry settings.  
+These configurations are defined per test and may differ across exams within the same certification.
+{{&lt; /alert &gt;}}
+
+
+
+
+## Learner Outcomes: Badges and Certificates
+
+Successfully completing a certification provides learners with valuable, verifiable credentials.
+
+### Badges
+
+Upon successful completion of all mandatory exams, learners are awarded a digital badge. This badge serves as a verifiable credential that is perfect for sharing on professional profiles to showcase the achievement.
+
+See a live example on a [user&#39;s profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
+
+![example badge image](./images/badge.png)
+
+### Official Certificates
+
+The ultimate outcome of a certification is an **official Certificate of Completion**.
+
+A key feature unique to the Certification content type is that while the learning materials and exams are offered for free, the **issuance of the official certificate is a paid feature**. This model allows anyone to learn and validate their skills at no cost, with the option to purchase the formal certificate to document their accomplishment.
+
+
+## Frequently Asked Questions
+
+&lt;details&gt;
+  &lt;summary&gt;Can my certification have only one exam?&lt;/summary&gt;
+  
+Yes, it can. The simplest form of a certification consists of a single final exam. You can also include multiple independent exams if you wish to assess different skills.
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;When should I choose to create a &#34;Certification&#34; instead of a &#34;Learning Path&#34;?&lt;/summary&gt;
+  
+You should choose a Certification when your primary goal is to **test and assess** a learner&#39;s existing knowledge, rather than **teaching them** from scratch. A Learning Path focuses on instruction, while a Certification focuses on assessment.
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;What does an &#34;Optional&#34; exam mean, and how does it affect a learner&#39;s progress?&lt;/summary&gt;
+  
+An optional exam is supplementary material. Learners can take it, but they **do not** have to pass it to earn the final certificate. Its score **does not count** towards the certification&#39;s passing requirements. This is typically used for extra practice or to test non-core knowledge.
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;How do I set an exam as &#34;Optional&#34;?&lt;/summary&gt;
+  
+You need to add a specific field, `isOptional: true`, to the front matter of the exam&#39;s `.md` file. This field tells the system that the exam is not a mandatory requirement to pass the certification.
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;Can I control the order of multiple exams within a certification?&lt;/summary&gt;
+  
+Yes, you can. Each exam file&#39;s front matter has a `weight` field. Lower numbers result in an earlier display order. If you don&#39;t set a `weight`, the exams will be sorted alphabetically by file title by default.
+&lt;/details&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;As a content creator, do I need to handle the certificate payment process?&lt;/summary&gt;
+  
+No, you don&#39;t. The payment and certificate issuance process is handled by the Layer5 platform. You only need to focus on creating high-quality assessment content.
+&lt;/details&gt;

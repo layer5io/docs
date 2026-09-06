@@ -1,0 +1,21 @@
+# v0.8.202-3
+
+date: 2026-01-30
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Fix/missing-resize-handles @marblom007 (#4009)
+
+## 🐛 Bug Fixes
+
+- Fix/missing-resize-handles @marblom007 (#4009)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald, @hortison, @l5io, @leecalcote and @marblom007
+

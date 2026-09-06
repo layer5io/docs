@@ -1,0 +1,22 @@
+# v0.8.116
+
+date: 2025-01-04
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- make audit filter options sorted @sudhanshutech (#3103)
+
+## 💻 Server
+
+- Revert \[catalog]: unauth access to download designs\ @aabidsofi19 (#3104)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @sudhanshutech
+
+

@@ -1,0 +1,17 @@
+# v0.8.147-2
+
+date: 2025-10-31
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- add referer policy to youtube embed @aabidsofi19 (#3873)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

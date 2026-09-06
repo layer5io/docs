@@ -1,0 +1,17 @@
+# v0.8.293
+
+date: 2025-07-15
+
+
+
+## What's New
+## 🔤 General
+* Remove .git from .dockerignore. 
+* Switch back to Alpine with custom Hugo-extended install.
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

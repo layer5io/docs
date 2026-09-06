@@ -1,0 +1,20 @@
+# v0.8.37
+
+date: 2024-10-24
+
+
+
+## What's New
+## 🔤 General
+- bump schemas @aabidsofi19 (#2862)
+
+## 🖥 Cloud UI
+
+- Fix spaces/overview nav menu not redirect issue @amitamrutiya (#2860)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15, @aabidsofi19, @amitamrutiya and @l5io
+
+

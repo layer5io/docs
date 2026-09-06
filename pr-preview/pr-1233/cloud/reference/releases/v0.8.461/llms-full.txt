@@ -1,0 +1,22 @@
+
+- chore: Update dependencies in go.mod and go.sum @leecalcote (#4177)
+
+## 🖥 Cloud UI
+
+- Addon minor fix @Namanv0509 (#4181)
+
+## 💻 Server
+
+- fix custom domain routing in dev @aabidsofi19 (#4183)
+- add cloud.meshery.io to cors list @aabidsofi19 (#4182)
+- MeshKit log and error handling for connections and environments @leecalcote (#4178)
+
+## 🐛 Bug Fixes
+
+- Addon minor fix @Namanv0509 (#4181)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @l5io and @leecalcote
+

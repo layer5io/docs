@@ -1,0 +1,23 @@
+# v0.8.345
+
+date: 2025-08-02
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Add support for certifications and fix ui issues @aabidsofi19 (#3860)
+
+## 💻 Server
+
+- Add support for certifications and fix ui issues @aabidsofi19 (#3860)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+
+

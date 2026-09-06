@@ -1,0 +1,25 @@
+# v0.8.514
+
+date: 2025-10-17
+
+
+
+## 🖥 Cloud UI
+
+- Add support for Org open invite @aabidsofi19 (#4366)
+
+## 💻 Server
+
+- escape URL parameters in GitHub and invitation redirects @leecalcote (#4368)
+- Add support for Org open invite @aabidsofi19 (#4366)
+
+## 🦴 Infrastructure
+
+- Add support for Org open invite @aabidsofi19 (#4366)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

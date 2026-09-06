@@ -1,0 +1,127 @@
+
+This guide covers creating new organizations, editing their details, inviting members, and deleting organizations when necessary.
+
+![Organization Overview](images/org_overview.png)
+
+{{&lt; alert title=&#34;Permissions Required&#34; type=&#34;info&#34; &gt;}}
+Operations described on this page for managing your Organization typically require Organization Administrator or similar administrative roles. To understand the specific roles needed for each action, please refer to the [Default Permissions reference](https://docs.layer5.io/cloud/reference/default-permissions/).
+{{&lt; /alert &gt;}}
+
+## Creating an Organization
+
+An Organization provides a way to structure your teams, users, and resource access for different projects or initiatives.
+
+### How to create an Organization
+
+1.  Go to the Organizations section, click the **Add Organization** button
+2.  The &#34;Create New Organization&#34; modal will appear:
+    -   Organization Name: Enter a unique name for your new Organization. This is a required field.
+    -   Country (Optional): Select the country for your Organization.
+    -   Region (Optional): Choose the time zone for your Organization.
+    -   Add Organization Members (Optional): You can begin adding **existing** Layer5 Cloud users to your new Organization in this field.
+
+&lt;img src=&#34;images/create_org.png&#34; alt=&#34;Filling out new Organization details&#34; style=&#34;width: 30%;&#34; /&gt;
+
+{{&lt; alert type=&#34;info&#34; title=&#34;Unable to Create More Organizations?&#34; &gt;}}
+If the &#34;Add Organization&#34; button is disabled, it means your current role does not permit creating additional Organizations. Only users with roles like Organization Administrator or Provider Administrator can create new Organizations.
+{{&lt; /alert &gt;}}
+
+## Editing Your Organization
+
+You can update your Organization&#39;s name, location, associated teams, branding, and identity providers, as well as access its invitation link, by editing its details.
+
+### How to Edit Your Organization
+
+1.  Select the Organization you want to modify and click its **&#34;Edit&#34;** button.
+2.  The &#34;Edit Organization&#34; modal will open:
+    -   Add Team: Associate existing Teams with this Organization.
+    -   Theme: Customize your Organization&#39;s visual theme by selecting from the available color swatches.
+    -   Logos: Upload specific logo versions for various display contexts by clicking the respective **&#34;Upload&#34;** buttons.
+    -   Invitations: Access a shareable link to invite users to your Organization.
+    -   Identity Providers: Configure which OAuth applications power your Organization&#39;s sign-in (see [Configuring Identity Providers](#configuring-identity-providers-bring-your-own-credentials) below).
+
+&lt;img src=&#34;images/edit_org.png&#34; alt=&#34;Editing Organization Details&#34; style=&#34;width: 30%;&#34; /&gt;
+
+### Configuring Identity Providers (Bring-Your-Own Credentials)
+
+The **Identity Providers** tab controls which OAuth applications power sign-in for your Organization. This is most useful when your Organization uses a custom domain and you want your own brand — not Layer5&#39;s — shown on the Google, GitHub, or OIDC consent screen.
+
+By default, your Organization uses Layer5&#39;s shared OAuth applications. To override them, simply add your own provider — there is no separate &#34;enable&#34; step:
+
+-   Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider. Each walkthrough displays the exact redirect URI to add to your OAuth application. Saving your first provider switches the Organization to its own identity providers automatically.
+-   Use **Edit** to rotate a provider&#39;s credentials, or **Remove** to delete a single provider. Removing your last provider reverts the Organization to Layer5&#39;s defaults.
+-   Use **Delete All &#34;Identity Providers&#34;** to delete the environment named, &#34;Identity Providers&#34;, therein deleting every configured provider at once, reverting to Provider Organization&#39;s defaults.
+
+Every removal asks you to confirm and explains the consequences before it proceeds.
+
+{{&lt; alert title=&#34;Who can configure this&#34; type=&#34;info&#34; &gt;}}
+Organization Administrators and Owners can add, rotate, and remove their Organization&#39;s identity providers themselves. Provider Administrators can additionally manage the Identity Providers configuration (and the configuration of other aspects) of **any** Organization - whether or not they are members of it.
+{{&lt; /alert &gt;}}
+
+Switching identity providers does not affect existing user accounts or login history. Users who signed in through a provider you later remove may need to re-authenticate.
+
+## Using the Open Organization Invitation Link
+
+To invite multiple users to your organization at once, or to allow open sign-ups (for example, for a public community), you can use the &#34;Open Organization Invitation Link.&#34; This is a shareable link that lets users join directly.
+
+### When to Use This Link
+* Bulk Onboarding: To quickly onboard many users without sending individual emails.
+* Public Sign-ups: To let people sign up openly, for instance, by posting the link on a community page or another public resource.
+* Cross-Organizational Collaboration: To make it easy for collaborators from other organizations or external partners to join.
+
+![Obtain Organization Invite Link](images/org_open_invite.gif)
+
+{{&lt; alert title=&#34;Inviting Users to Specific Teams&#34; type=&#34;info&#34; &gt;}}
+If you want to invite users directly to a specific team within your organization, please refer to the documentation on [Open Team Invites](https://docs.layer5.io/cloud/concepts/identity-and-security/teams/)
+{{&lt; /alert &gt;}}
+
+### How it Works
+
+-  For New Users (without an existing Layer5 Cloud account):
+    * When a new user clicks the invitation link, they will be directed to the sign-up page.
+    * After creating their account, they will be automatically added to the organization associated with the invite link.
+
+-  For Existing Users (with a Layer5 Cloud account):
+    * An existing user who clicks the invitation link will be able to join the organization using their current account.[^1]
+
+## Deleting Your Organization
+
+Deleting an Organization is a permanent action that removes it entirely, including all associated teams, user memberships within that Organization, and its resources. 
+
+{{&lt; alert type=&#34;warning&#34; title=&#34;Deletion is Permanent and Unrecoverable&#34; &gt;}}
+Once an Organization is deleted, **this action cannot be undone**.
+{{&lt; /alert &gt;}}
+
+### Consequences of Deletion
+
+Upon confirming deletion, the following are **permanently and irretrievably removed**:
+* The Organization Itself: Including all its unique settings and configurations.
+* All Associated Teams: All teams belonging to this Organization.
+* User Access to this Organization: Users&#39; memberships, roles, and permissions specific to this Organization are revoked. (Note: Users&#39; individual accounts themselves are not deleted from the system).
+* Owned Workspaces: All Workspaces belonging to this Organization.
+* Designs and Environments: All Designs and Environments within the Organization&#39;s deleted Workspaces will also be permanently removed.
+
+### When NOT to Delete
+Avoid deleting an Organization if:
+* You might need the Organization or its data later.
+* Critical resources within it have not been backed up or migrated.
+* Other users or services still depend on it.
+* You only need to modify memberships or restructure parts of it.
+* You are unsure about the full extent of its data or dependencies.
+
+### When Deletion May Be Appropriate
+
+* The Organization was for a temporary project or test and is no longer needed.
+* It was created in error or is now redundant due to consolidation.
+* Permanent removal of all its data is required for compliance or data lifecycle management.
+* You are certain all its resources are obsolete or migrated, and no dependencies remain.
+
+### How to Delete Your Organization
+
+1.  Select the Organization you want to delete and click its **&#34;Delete&#34;** button.
+2.  A confirmation modal will appear, requiring you to verify this action.
+3. Click the &#34;Delete&#34; button to permanently remove the Organization. To abort the deletion, click &#34;Cancel&#34;.
+
+&lt;img src=&#34;images/delete_org.png&#34; alt=&#34;Delete Organization&#34; style=&#34;width: 30%;&#34; /&gt;
+
+[^1]: Existing users who click this invitation link might encounter a &#34;Page not found&#34; error. This is a temporary bug and is being addressed.

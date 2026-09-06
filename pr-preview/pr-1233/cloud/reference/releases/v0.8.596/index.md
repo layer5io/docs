@@ -1,0 +1,20 @@
+# v0.8.596
+
+date: 2025-12-14
+
+
+
+## 📚 Academy
+
+- Layer5 v0.8.12 content update @l5io (#4636)
+
+## 🦴 Infrastructure
+
+- fix staging hydra values.yaml @aabidsofi19 (#4635)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

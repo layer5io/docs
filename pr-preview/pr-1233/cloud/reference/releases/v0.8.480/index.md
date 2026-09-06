@@ -1,0 +1,24 @@
+# v0.8.480
+
+date: 2025-10-03
+
+
+
+## 🖥 Cloud UI
+
+- Change Refetch Options to Refresh in rjsf @Namanv0509 (#4272)
+- Subscription proration , upgrade and cancel @aabidsofi19 (#4257)
+- add withdraw registration action @aabidsofi19 (#4267)
+
+## 💻 Server
+
+- fix: invitation not getting attached to curricula in update flow @aabidsofi19 (#4270)
+- Subscription proration , upgrade and cancel @aabidsofi19 (#4257)
+- add withdraw registration action @aabidsofi19 (#4267)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @l5io and @meshery-ci
+
+

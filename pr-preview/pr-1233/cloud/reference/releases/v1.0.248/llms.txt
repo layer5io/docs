@@ -1,0 +1,3 @@
+# v1.0.248
+
+ fix(auth): authenticate the Kratos flow-email endpoint with the webhook secret @pontusringblom (#6035) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @hortison, @leecalcote and @pontusringblom

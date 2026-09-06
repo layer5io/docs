@@ -1,0 +1,17 @@
+# v0.7.126-2
+
+date: 2024-10-25
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- replace safeLoad (removed) with load (safe by default ) @aabidsofi19 (#3054)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

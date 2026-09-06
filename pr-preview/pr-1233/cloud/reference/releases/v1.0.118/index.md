@@ -1,0 +1,15 @@
+# v1.0.118
+
+date: 2026-06-04
+
+
+
+- fix(auth): stop dropping off-eTLD signups on /error after the password step @leecalcote (#5444)
+- [Chore]: Update to Sistent v0.21.19 @l5io (#5443)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu, @l5io, @leecalcote and @meshery-ci
+
+

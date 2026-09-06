@@ -1,0 +1,20 @@
+
+- Email Body Color Fix @Namanv0509 (#4115)
+
+## 🖥 Cloud UI
+
+- Add support for creating badges from academy modal @aabidsofi19 (#4132)
+
+## 💻 Server
+
+- all users getting added to org while violating validity of invitation @aabidsofi19 (#4125)
+
+## 🦴 Infrastructure
+
+- Add update strategy configuration for deployment in values.yaml @leecalcote (#4134)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @l5io and @leecalcote
+

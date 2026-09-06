@@ -1,0 +1,8 @@
+# Design Reviews: Adding Comments 1
+
+
+> Add comments to your designs in Kanvas's Designer Mode to enhance collaboration and streamline design reviews. 
+
+
+
+{{< youtube id=bb6J--aApk8 class="yt-embed-container" >}}

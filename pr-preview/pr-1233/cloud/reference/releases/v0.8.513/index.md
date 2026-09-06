@@ -1,0 +1,22 @@
+# v0.8.513
+
+date: 2025-10-17
+
+
+
+## 🖥 Cloud UI
+
+- Revert \Fix Logout and login from custom domain \ @aabidsofi19 (#4365)
+- [Chore]: Update to Sistent v0.15.11 @l5io (#4363)
+- [Chore]: Update to Sistent v0.15.10 @l5io (#4362)
+
+## 💻 Server
+
+- Revert \Fix Logout and login from custom domain \ @aabidsofi19 (#4365)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

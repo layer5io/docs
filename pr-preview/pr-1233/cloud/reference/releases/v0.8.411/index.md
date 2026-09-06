@@ -1,0 +1,17 @@
+# v0.8.411
+
+date: 2025-08-28
+
+
+
+## 🖥 Cloud UI
+
+- Update checkout.js to roundoff pricing @Namanv0509 (#4025)
+- Styling and Comparison update @Namanv0509 (#4017)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @l5io and @leecalcote
+
+

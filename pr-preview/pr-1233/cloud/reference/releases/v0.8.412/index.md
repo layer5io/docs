@@ -1,0 +1,31 @@
+# v0.8.412
+
+date: 2025-08-29
+
+
+
+## 🖥 Cloud UI
+
+- feat: Add 'Remove User' as a supported bulk action @hortison (#4031)
+- Revert \User Management: Support for Remove User as a bulk action\ @hortison (#4032)
+- Use Kratos v1.1.0 for development environments @leecalcote (#4030)
+- User Management: Support for Remove User as a bulk action @leecalcote (#4029)
+- Updating Pricing Style @Namanv0509 (#4027)
+
+## 💻 Server
+
+- close sqlx connection pool @aabidsofi19 (#4023)
+
+## 🦴 Infrastructure
+
+- feat: Add 'Remove User' as a supported bulk action @hortison (#4031)
+- Revert \User Management: Support for Remove User as a bulk action\ @hortison (#4032)
+- Use Kratos v1.1.0 for development environments @leecalcote (#4030)
+- User Management: Support for Remove User as a bulk action @leecalcote (#4029)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @google-labs-jules[bot], @hortison, @l5io and @leecalcote
+
+

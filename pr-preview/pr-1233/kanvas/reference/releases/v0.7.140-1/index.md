@@ -1,0 +1,25 @@
+# v0.7.140-1
+
+date: 2024-11-08
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- update logo @aabidsofi19 (#3129)
+
+## 🐛 Bug Fixes
+
+- test: fix draw whiteboard @jerensl (#3126)
+
+## 🧰 Maintenance
+
+- test: fix draw whiteboard @jerensl (#3126)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @jerensl, @l5io and @leecalcote
+

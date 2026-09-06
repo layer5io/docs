@@ -1,0 +1,8 @@
+# Undeploying Designs
+
+Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
+
+
+To undeploy the resources
+Navigate to the Actions button at the top of the Design canvas.
+Click on the Undeploy icon.

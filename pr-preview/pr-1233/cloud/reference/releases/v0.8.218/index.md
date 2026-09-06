@@ -1,0 +1,22 @@
+# v0.8.218
+
+date: 2025-05-20
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- formate: code @amitamrutiya (#3507)
+
+## 💻 Server
+
+- add visibility filter in workspace design endpoint @amitamrutiya (#3505)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
+

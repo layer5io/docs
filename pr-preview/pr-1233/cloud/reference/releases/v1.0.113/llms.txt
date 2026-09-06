@@ -1,0 +1,3 @@
+# v1.0.113
+
+ fix(auth): keep recovery/verification flows on the org&rsquo;s custom domain + friendly error redirect @leecalcote (#5432) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @leecalcote, @ritzorama and @theBeginner86

@@ -1,0 +1,20 @@
+# v0.8.46
+
+date: 2024-10-30
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Add Kanvas icon and remove Meshmap icon @leecalcote (#2886)
+- fix: open catalog detail page into new tab @amitamrutiya (#2885)
+- Convert catalog detail page into separate sistent component @amitamrutiya (#2874)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+
+

@@ -1,0 +1,15 @@
+# v1.0.106
+
+date: 2026-05-28
+
+
+
+- fix(authz): correct cookie-value casting and cache Provider Admin per request @leecalcote (#5407)
+- fix(ui/profile): send country/region as JSONB objects, restore Autocomplete null guards @leecalcote (#5405)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

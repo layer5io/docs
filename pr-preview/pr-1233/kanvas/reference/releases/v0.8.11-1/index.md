@@ -1,0 +1,18 @@
+# v0.8.11-1
+
+date: 2025-01-14
+
+
+
+## What's New
+## 🔤 General
+## 🧰 Maintenance
+
+- Update to ubuntu-24.04 in workflows @leecalcote (#3318)
+- Update to ubuntu-24.04 for build-and-release.yml @leecalcote (#3317)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @winkletinkle
+

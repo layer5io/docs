@@ -1,0 +1,22 @@
+# v0.7.132-1
+
+date: 2024-11-01
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- make error file saving more bigger and brighter @amitamrutiya (#3085)
+- increse file upload limit size to 500kb @amitamrutiya (#3083)
+
+## 🧰 Maintenance
+
+- test: add teardown for seeded design and refactor rest ot test to typ… @jerensl (#3079)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @jerensl, @l5io and @leecalcote
+

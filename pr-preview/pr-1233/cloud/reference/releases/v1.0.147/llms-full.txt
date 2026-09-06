@@ -1,0 +1,12 @@
+
+- fix(ui): informative, recoverable error states (academy broken links &#43; bare error responses) @leecalcote (#5539)
+- docs: document email template systems and cross-reference between trees @leecalcote (#5537)
+- docs(sso): enterprise SSO &#43; IdP role-to-authorization mapping design spec @leecalcote (#5543)
+- fix(auth): toggle brand-info panel via display, not visibility @hortison (#5535)
+- restructure: consolidate scripts, tools, and kratos-templates into canonical locations @leecalcote (#5530)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @ritzorama
+

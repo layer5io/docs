@@ -1,0 +1,24 @@
+# v0.8.421
+
+date: 2025-09-01
+
+
+
+## 🖥 Cloud UI
+
+- update: feat: Enhanced Badge Management System with Create & Update Operations and Improved UI @FaheemOnHub (#4048)
+- add org column to ui @aabidsofi19 (#4055)
+- update: replacement of Loading... with CircularProgress across academy. @FaheemOnHub (#4054)
+
+## 💻 Server
+
+- use base url when redirecting to signup @aabidsofi19 (#4063)
+- reduce reconcillation duration @aabidsofi19 (#4061)
+- fix allow provider admins to see all invites @aabidsofi19 (#4053)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19 and @l5io
+
+

@@ -1,0 +1,19 @@
+
+{{&lt; alert title=&#34;Customizable Permissions&#34; type=&#34;info&#34; &gt;}}Default permissions can be easily customized by simply creating your own [keychains]({{&lt; ref &#34;cloud/concepts/identity-and-security/keychains.md#keychains-management&#34; &gt;}}) and [roles]({{&lt; ref &#34;cloud/concepts/identity-and-security/roles/_index.md&#34; &gt;}}).{{&lt; /alert &gt;}}
+
+**Legend:**
+
+- ✅* user must be resource owner in order to perform action.
+- ✅ user is allowed to perform action regardless of resource ownership.
+
+&lt;div class=&#34;permissions-tabpane&#34;&gt;
+{{&lt; tabpane text=true &gt;}}
+{{&lt; tab header=&#34;**Sort by**:&#34; disabled=true /&gt;}}
+{{&lt; tab header=&#34;Categories&#34; lang=&#34;en&#34; &gt;}}
+{{&lt; csvtable &gt;}}
+{{&lt; /tab &gt;}}
+{{&lt; tab header=&#34;Roles&#34; lang=&#34;en&#34; &gt;}}
+{{&lt; csvtable-roles &gt;}}
+{{&lt; /tab &gt;}}
+{{&lt; /tabpane &gt;}}
+&lt;/div&gt;

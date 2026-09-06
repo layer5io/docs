@@ -1,0 +1,3 @@
+# v1.0.213
+
+ fix(handlers): scope badge catalog writes to the caller&rsquo;s organization @jijillery (#5808) Make the Helm chart publish survive a concurrent push to layer5io/docs @winkletinkle (#5805) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @arjunmehta-git, @hortison, @jijillery, @leecalcote, @winkletinkle and @yi-nuo426

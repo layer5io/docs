@@ -1,0 +1,16 @@
+# v0.8.193-1
+
+date: 2025-12-30
+
+
+
+## What's New
+## 🔤 General
+- Revert \Ci/remove graphql plugin\ @aabidsofi19 (#3947)
+- [CI] Delete bundle.sh and out files @marblom007 (#3946)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @marblom007
+

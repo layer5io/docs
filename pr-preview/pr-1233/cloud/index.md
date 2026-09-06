@@ -1,0 +1,46 @@
+# Cloud Documentation
+
+> Layer5 Cloud provides a powerful platform for managing and deploying your cloud infrastructure with flexibility and ease.
+
+
+
+{{% pageinfo %}}
+
+## Understanding the Layer5 Ecosystem
+
+{{< ecosystem-box icon="cloud" title="Layer5 Cloud" >}}
+is an identity provider and global console for Kanvas and Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+{{< /ecosystem-box >}}
+
+{{< ecosystem-box link="kanvas/_index.md" icon="images/logos/kanvas-icon-color.svg" image="true" class="hidden-highlight-box" title="Kanvas" >}}
+delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+{{< /ecosystem-box >}}
+
+{{% /pageinfo %}}
+
+## What is Layer5 Cloud?
+
+Layer5 Cloud is the centralized management console and identity provider for the Layer5 ecosystem — specifically for **Kanvas** and **Meshery** deployments. It provides an extensible, highly flexible authorization framework that enables organizations to govern complex, multi-cloud infrastructure with confidence. Think of it as the command center where your teams, workspaces, and cloud-native assets come together under a single, unified platform.
+
+Layer5 Cloud is available both as a fully managed service and as a [self-hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}) deployment, giving organizations the flexibility to meet their own security and compliance requirements.
+
+## Why use Layer5 Cloud?
+
+- **Unified Identity and Access Management**: Define and enforce granular Role-Based Access Control (RBAC) across your organizations, teams, and users — all from one place.
+- **Collaborative Infrastructure Design**: Like Google Workspace for teams or Figma for designers, Layer5 Cloud enables real-time, multi-player collaboration on infrastructure patterns and deployments.
+- **Content Catalog**: Publish, discover, and reuse cloud-native architectures and patterns — either publicly or privately within your organization.
+- **Multi-Tenancy and Organizational Hierarchy**: Support service provider-grade structures with tenant entitlement services and a flexible organizational model that scales with your business.
+- **Flexible Deployment**: Run Layer5 Cloud as a SaaS product or bring it on-premises — your infrastructure, your rules.
+
+<!-- {{< blocks/section color="dark" type="row" >}}
+{{% blocks/feature icon="fa-lightbulb" title="Fastest OS **on the planet**!" %}}
+The new **TechOS** operating system is an open source project. It is a new project, but with grand ambitions.
+Please follow this space for updates!
+{{% /blocks/feature %}}
+{{% blocks/feature icon="fa-brands fa-github" title="Contributions welcome!" url="https://github.com/gohugoio/hugo" %}}
+We do a [Pull Request](https://github.com/gohugoio/hugo/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% /blocks/feature %}}
+{{% blocks/feature icon="./featured-background.png" title="Kanvas" url="/kanvas" %}}
+**Kanvas** provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. Kanvas aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
+{{% /blocks/feature %}}
+{{< /blocks/section >}} -->

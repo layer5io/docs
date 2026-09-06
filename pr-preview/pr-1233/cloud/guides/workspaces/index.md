@@ -1,0 +1,7 @@
+# Workspaces
+
+> Guides for creating, configuring, and managing Layer5 Cloud workspaces.
+
+
+Use these guides to manage workspace lifecycle, access, environments, designs, views, and activity in Layer5 Cloud.
+

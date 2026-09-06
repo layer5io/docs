@@ -1,0 +1,24 @@
+# v0.8.258
+
+date: 2025-06-19
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Added a filter: \status:pending\ parameter to the useGetSignupRequestsQuery call @leecalcote (#3652)
+- fix: user-profile edit button is not working , pushes user to identity page. @FaheemOnHub (#3636)
+- Fix: Edit User Profile Modal @vr-varad (#3650)
+
+## 🐛 Bug Fixes
+
+- Fix: Edit User Profile Modal @vr-varad (#3650)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @l5io, @leecalcote and @vr-varad
+
+

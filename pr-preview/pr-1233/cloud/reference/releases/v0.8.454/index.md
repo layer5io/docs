@@ -1,0 +1,22 @@
+# v0.8.454
+
+date: 2025-09-20
+
+
+
+- MeshKit logger for event debug @leecalcote (#4162)
+
+## 🖥 Cloud UI
+
+- UI maintainence @leecalcote (#4160)
+
+## 💻 Server
+
+- only count active users @aabidsofi19 (#4163)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

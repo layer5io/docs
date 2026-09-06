@@ -1,0 +1,9 @@
+
+- fix: correct malformed CLOUD_CREDENTIAL_ENCRYPTION_KEY &#43; add fail-loud guards @hortison (#5363)
+- fix(ui): SSR-safe useWindowDimensions &#43; guarded catalog catch-all unslugify @hortison (#5360)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison and @leecalcote
+

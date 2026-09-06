@@ -1,0 +1,22 @@
+# v0.8.85
+
+date: 2024-11-15
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- server: refactor to improve error handler on gh wizard  @jerensl (#2982)
+
+## 🐛 Bug Fixes
+
+- server: refactor to improve error handler on gh wizard  @jerensl (#2982)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jerensl and @l5io
+
+

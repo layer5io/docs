@@ -1,0 +1,15 @@
+# v1.0.20
+
+date: 2026-04-23
+
+
+
+- [server/handlers] Harden kratos handlers: remove debug prints, PII log leaks, and panicky assertions @jamieplu (#5077)
+- fix: stop advertising broken Meshery applications capability @jamieplu (#5076)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu, @l5io, @leecalcote and @miacycle
+
+

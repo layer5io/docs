@@ -1,0 +1,16 @@
+# Embedding a Meshery Design in a WordPress Post
+
+Learn how to Embed a Meshery Design in a WordPress Post
+
+ Introduction 🔗 In this tutorial, we will learn how to embed a Meshery Design in a WordPress post using the Embed option in Kanvas.
+This tutorial assumes that you have created a design or have an existing one. If not, you can use one of the numerous public designs available in Kanvas for this tutorial.
+Prerequisites 🔗 WordPress: A running WordPress instance or deployment, serving as the sample application for this tutorial. Meshery Catalog Extension: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns. Steps 🔗 Expand the Actions menu on the left and select export.
+Click the download icon next to Embed Design
+This will show the js file to download and the HTML code snippet to copy.
+Now, create a js folder in the path of your current WordPress theme
+Next, copy the downloaded js file into this folder.
+To the following script, replace design.js with the name of the js file which you just downloaded. Once this is done, go to the functions.php file in your current WordPress theme and copy the script.
+function kanvas_design_script() { $script_uri = get_template_directory_uri() . &#39;/js/design.js&#39;; wp_enqueue_script_module( &#39;kanvas-design&#39;, $script_uri, array(), &#39;1.1.0&#39;, ); } add_action(&#39;wp_enqueue_scripts&#39;, &#39;kanvas_design_script&#39;); Open the WordPress post where you want to embed the design in edit mode and add a Custom HTML block.
+Paste the div element from the Embed Code copied from Kanvas.
+Click Preview to validate that the design is rendered.
+Publish the WordPress post and share.

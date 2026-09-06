@@ -1,0 +1,14 @@
+# v1.0.245
+
+date: 2026-09-03
+
+
+
+- fix(users): reassign organization-owned credentials on account deletion @leecalcote (#6029)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and meshery-cloud-credentials-org-reassign-on-delete
+
+

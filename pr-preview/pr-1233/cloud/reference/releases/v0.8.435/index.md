@@ -1,0 +1,21 @@
+# v0.8.435
+
+date: 2025-09-08
+
+
+
+## 🖥 Cloud UI
+
+- update: workspace and environment cards / icons honour org_colors. @FaheemOnHub (#4080)
+- User: Public Profile fails to save changes @leecalcote (#4111)
+
+## 🐛 Bug Fixes
+
+- update: workspace and environment cards / icons honour org_colors. @FaheemOnHub (#4080)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @l5io and @leecalcote
+
+

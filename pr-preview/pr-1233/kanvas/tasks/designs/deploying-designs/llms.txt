@@ -1,0 +1,16 @@
+# Deploying Designs
+
+Each Meshery design is deployable to one or more Kubernetes clusters.
+
+
+ To deploy a design, navigate to the Actions button at the top of the Design canvas.
+Click on the Deploy icon.
+This opens a modal that will take you through all the steps before the final deployment.
+Click on Open In Operator to see the pre-filtered view of the deployed resources in the cluster
+Click Finish
+Deployment Errors 🔗 Missing Namespace: This error occurs when you attempt to create a Kubernetes resource without specifying a namespace. Kubernetes requires that all resources have an associated namespace. Empty Label Selector: This error indicates an empty label selector. Troubleshooting Errors 🔗 When reviewing validation, dry run, or deployment issues, you’ll notice specific error codes denoted from time to time.
+As a system, Meshery itemizes different errors that occur and assigns a unique error code to each along with details on how to remediate the issue at hand.
+For the comprehensive list of error codes refer to Error Code Reference in the Meshery documentation.
+If you encounter persistent issues consider consulting the Meshery Community forum
+Using the Notification Center for Troubleshooting 🔗 The Notification Center in Meshery helps manage events during the deployment process. It provides real-time updates and alerts on the status of the deployment. This feature can be particularly useful for troubleshooting, as it:
+Displays immediate feedback on the success or failure of each deployment step. Highlights specific error messages and codes, helping you quickly identify and understand issues. Offers links to detailed documentation and guides for resolving common problems. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions. By actively monitoring the Notification Center, you can promptly address issues as they arise, ensuring a smoother deployment process. Learn more about Managing Events with the Notification Center.

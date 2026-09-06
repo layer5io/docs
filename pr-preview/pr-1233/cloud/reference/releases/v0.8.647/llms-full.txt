@@ -1,0 +1,10 @@
+
+- bugfix: User account &#39;country&#39; and &#39;region&#39; values being overwritten on sign-in @leecalcote (#4774)
+- [Chore]: Update to Sistent v0.15.22 @l5io (#4773)
+- Remove support for Service Mesh Interface (SMI) @ritzorama (#4772)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @marblom007 and @ritzorama
+

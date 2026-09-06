@@ -1,0 +1,18 @@
+# v1.0.191
+
+date: 2026-07-15
+
+
+
+- [Chore]: Update to Sistent v0.21.35 @l5io (#5728)
+
+## 📚 Academy
+
+- Tata Consulting v2.2.2 content update @l5io (#5729)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @rishiraj38
+
+

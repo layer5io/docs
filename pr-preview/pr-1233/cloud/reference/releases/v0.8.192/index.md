@@ -1,0 +1,18 @@
+# v0.8.192
+
+date: 2025-04-10
+
+
+
+## What's New
+## 🔤 General
+- Chore golang pkgs upgrades @leecalcote (#3391)
+- Chore: upgrade golang.org/x/text @leecalcote (#3390)
+- Chore: upgrade viper @leecalcote (#3389)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

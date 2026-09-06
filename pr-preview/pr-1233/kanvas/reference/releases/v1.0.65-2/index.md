@@ -1,0 +1,16 @@
+# v1.0.65-2
+
+date: 2026-08-07
+
+
+
+## What's New
+## 🔤 General
+- fix(ui): route Help \&amp; Support submissions through Meshery Server @willcalcote (#4321)
+- fix(ui): repoint duplicated RTK endpoints at @meshery/schemas clients @willcalcote (#4320)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @ritzorama and @willcalcote
+

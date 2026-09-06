@@ -1,0 +1,20 @@
+# v0.8.501
+
+date: 2025-10-14
+
+
+
+## 📚 Academy
+
+- Meshery v0.3.2 content update @l5io (#4337)
+
+## 🖥 Cloud UI
+
+- Show description always @aabidsofi19 (#4336)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

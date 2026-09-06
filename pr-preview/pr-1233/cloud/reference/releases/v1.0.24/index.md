@@ -1,0 +1,16 @@
+# v1.0.24
+
+date: 2026-04-24
+
+
+
+- chore(ui): revert useGetAvailableBadgesQuery({}) workaround @jamieplu (#5104)
+- fix(ui): guard useGetAvailableBadgesQuery against no-arg orgId TypeError @miacycle (#5102)
+- docs: cross-reference the identifier-naming contributor guide @miacycle (#5103)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu, @leecalcote and @miacycle
+
+

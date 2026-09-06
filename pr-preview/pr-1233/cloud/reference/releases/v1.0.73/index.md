@@ -1,0 +1,17 @@
+# v1.0.73
+
+date: 2026-05-08
+
+
+
+## 📚 Academy
+
+- DigitalOcean v0.1.15 content update @l5io (#5262)
+- Exoscale v0.6.34 content update @l5io (#5260)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io
+
+

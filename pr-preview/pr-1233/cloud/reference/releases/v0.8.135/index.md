@@ -1,0 +1,18 @@
+# v0.8.135
+
+date: 2025-01-28
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Fix Signup login @aabidsofi19 (#3151)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

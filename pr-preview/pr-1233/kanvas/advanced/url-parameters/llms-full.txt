@@ -1,0 +1,68 @@
+
+By default, Kanvas optimizes the rendering of your designs to ensure good performance and responsiveness. This means that some computationally intensive visual elements, such as advanced relationships like **TagSets** (groups of components visually demarcated), might not be displayed initially to reduce system load.
+
+&gt; To learn more about defining relationships between components, including the detailed use and creation of **TagSets**, please see the [Creating Relationships | Layer5 Documentation](https://docs.layer5.io/kanvas/getting-started/creating-relationships/).
+
+## Enable Full Render Mode
+
+To activate this full render mode, you will need to add the `render=full` parameter to your Kanvas design URL. This mode ensures all elements, including **TagSets**, are displayed, which might otherwise be hidden for performance optimization.
+
+The images below illustrate the difference this parameter makes:
+
+&lt;figure&gt;
+  &lt;img src=&#34;images/no-tagsets.png&#34; alt=&#34;Design rendering in Kanvas with default settings&#34; /&gt;
+  &lt;figcaption&gt;A design with default rendering; TagSets may not be visible&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+  &lt;img src=&#34;images/with-tagsets.png&#34; alt=&#34;The design in Kanvas showing full details&#34; /&gt;
+  &lt;figcaption&gt;The same design with `render=full` applied; TagSets and all other details are now visible&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+For example, to apply this to a Kanvas design URL, you would modify it as follows: `https://kanvas.new/extension/meshmap?render=full&amp;mode=design&amp;design=xxxx`
+
+{{&lt; alert title=&#34;Advanced Usage Note&#34; type=&#34;info&#34;&gt;}}
+This is an advanced feature primarily intended for power users, debugging scenarios, or system-level integrations. You will not need to manually adjust this parameter for everyday design work.
+{{&lt; /alert &gt;}}
+
+## Why Use Full Render Mode?
+
+This capability is particularly valuable for:
+
+* **Detailed Inspection &amp; Debugging:** When you need to meticulously review, debug, or verify all components, relationships, and intricate details within a design.
+* **Comprehensive Documentation:** For creating thorough screenshots or technical documentation that requires all visual elements to be accurately represented.
+* **System &amp; Integration Testing:** During testing phases to ensure all parts of a design are processed and displayed by the rendering engine exactly as expected.
+
+## Best Practices
+
+To use full render mode effectively:
+
+1. **Use Selectively for Performance**  
+   Activate `render=full` mainly when you need to inspect specific designs in detail. Since it can impact performance on large or complex designs, stick to the default optimized mode for general browsing to maintain responsiveness.
+
+2. **Promote Consistent Shared Views**  
+   When sharing a design link with `render=full` for review, advise collaborators to also enable the relevant toggles in their **Layers panel**. This helps prevent discrepancies caused by individual layer settings, ensuring everyone sees the same details.
+
+3. **Check the Layers Panel if Details Are Missing**  
+   If `render=full` is active in your URL but expected elements (like **TagSets**) are not visible, verify that their visibility is enabled in your **Layers panel**. Your Layers settings can hide elements even when full render is requested.
+
+## Additional Render Mode Parameters
+
+You can specify render modes via the `render` parameter:
+
+- `render=full` -- Full rendering with all details
+- `render=medium` -- Style-only rendering without badges and TagSets
+- `render=wireframe` -- Outline-only rendering
+- `render=viewOnly` -- Non-interactive wireframe snapshot
+
+For example: `https://kanvas.new/extension/meshmap?render=wireframe&amp;mode=design&amp;design=xxxx`
+
+See [Render Modes]({{&lt; ref &#34;kanvas/advanced/render-modes.md&#34; &gt;}}) for detailed descriptions of each mode.
+
+## Adaptive Mode Parameter
+
+You can enable Adaptive mode via URL parameter:
+
+`https://kanvas.new/extension/meshmap?adaptive=true&amp;mode=design&amp;design=xxxx`
+
+When `adaptive=true` is set, Kanvas will automatically monitor performance and switch render modes as needed. The current render mode (set via the `render` parameter or the default) becomes the ceiling -- the highest fidelity Adaptive mode will use. See [Render Modes]({{&lt; ref &#34;kanvas/advanced/render-modes.md&#34; &gt;}}) for details.

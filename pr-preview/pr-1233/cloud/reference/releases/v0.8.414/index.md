@@ -1,0 +1,25 @@
+# v0.8.414
+
+date: 2025-08-29
+
+
+
+## 🖥 Cloud UI
+
+- Add-on Styling fix @Namanv0509 (#4034)
+- Adding commas for better Readibility at checkout @Namanv0509 (#4037)
+
+## 🦴 Infrastructure
+
+- Upgrade prod to Kratos v1.1.0 @leecalcote (#4040)
+
+## 🐛 Bug Fixes
+
+- Add-on Styling fix @Namanv0509 (#4034)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @l5io and @leecalcote
+
+

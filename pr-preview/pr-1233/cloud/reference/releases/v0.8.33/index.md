@@ -1,0 +1,20 @@
+# v0.8.33
+
+date: 2024-10-16
+
+
+
+## What's New
+## 🔤 General
+- Bump golang.org/x/text from 0.17.0 to 0.18.0 @dependabot (#2804)
+
+## 🖥 Cloud UI
+
+- renaming in progress @vishalvivekm (#2818)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@dependabot, @l5io, @leecalcote and @vishalvivekm
+
+

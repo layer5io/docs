@@ -1,0 +1,17 @@
+# v0.7.128-2
+
+date: 2024-10-28
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Change some suggested stying in the bottom dock @amitamrutiya (#3067)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

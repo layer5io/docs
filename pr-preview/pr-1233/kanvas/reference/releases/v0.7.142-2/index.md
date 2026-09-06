@@ -1,0 +1,21 @@
+# v0.7.142-2
+
+date: 2024-11-11
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- remove options speedial @aabidsofi19 (#3138)
+- increase save debounce to 3 secs @aabidsofi19 (#3137)
+- Undo/Redo notification message changed @leecalcote (#3135)
+- Remove logs @aabidsofi19 (#3136)
+- clone design on open from tutorials @aabidsofi19 (#3134)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+

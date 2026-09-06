@@ -1,0 +1,3 @@
+# v1.0.223
+
+ docs(testing): verify PR #5822 hard-delete paths on a real stack; record deletion semantics @jijillery (#5828) fix(badges): refuse destructive empty badge writes, stop silent award failures @jijillery (#5865) feat(ui): pair Join Date with Last Active on the public profile @jijillery (#5862) fix(academy): enforce registration ownership before starting a test session or reading a progress tracker @jijillery (#5860) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @carlosriosilva, @hamza-mohd, @hortison, @jijillery and @yi-nuo426

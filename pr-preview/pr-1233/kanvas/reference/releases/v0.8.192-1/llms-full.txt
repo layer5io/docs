@@ -1,0 +1,29 @@
+
+## What&#39;s New
+## 🔤 General
+- Add golangci-lint config to resolve Go version compatibility @[copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) (#3933)
+- Revert \Bump immer from 9.0.21 to 11.0.1 in /meshmap\ @aabidsofi19 (#3930)
+
+## 🕸️ Operator
+
+- chore: regenerate graphql @ritzorama (#3931)
+- chore: go 1.25.5 @ritzorama (#3929)
+
+## 🐛 Bug Fixes
+
+- Optimize resize handles and migrate resizing to use 2dcanvas renderer instead of html plugin @aabidsofi19 (#3885)
+
+## 🧰 Maintenance
+
+- Bump globals from 16.0.0 to 16.5.0 in /meshmap @[dependabot[bot]](https://github.com/apps/dependabot) (#3925)
+- Bump immer from 9.0.21 to 11.0.1 in /meshmap @[dependabot[bot]](https://github.com/apps/dependabot) (#3926)
+- chore: go 1.25.5 @ritzorama (#3929)
+
+## 📖 Documentation
+
+- chore: go 1.25.5 @ritzorama (#3929)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Copilot, @aabidsofi19, @jamieplu, @l5io, @leecalcote, @marblom007, @ritzorama, [copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) and [dependabot[bot]](https://github.com/apps/dependabot)

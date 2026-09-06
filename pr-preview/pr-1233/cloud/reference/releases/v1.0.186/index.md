@@ -1,0 +1,15 @@
+# v1.0.186
+
+date: 2026-07-14
+
+
+
+- fix(invitations): display linked open invitation in edit-org form; implement GET /invitations/:id @leecalcote (#5714)
+- fix(invitations): allow nil emails & surface expiresAt in edit form (#5712) @leecalcote (#5713)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

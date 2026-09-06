@@ -1,0 +1,15 @@
+# v1.0.26
+
+date: 2026-04-25
+
+
+
+- fix(catalog): sanitize order param to honor camelCase wire contract @miacycle (#5110)
+- chore(application): remove unsupported MesheryApplication construct end-to-end @miacycle (#5109)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hamza-mohd, @l5io, @leecalcote and @miacycle
+
+

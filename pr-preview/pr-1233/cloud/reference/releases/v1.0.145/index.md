@@ -1,0 +1,14 @@
+# v1.0.145
+
+date: 2026-06-22
+
+
+
+- fix(academy): bump @meshery/schemas to v1.3.14 to restore enrollment @ritzorama (#5526)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@ritzorama
+
+

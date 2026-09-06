@@ -1,0 +1,38 @@
+
+{{&lt; cardpane &gt;}}
+{{% card %}}
+&lt;img src=&#34;../images/workspace-roles.svg&#34; link=&#34;../images/workspace-roles.svg&#34;  width=&#34;100%&#34; alt=&#34;Workspace Roles&#34; /&gt;
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+{{&lt; cardpane &gt;}}
+
+{{% card header=&#34;## Workspace Administrator&#34; %}}
+
+**What is the purpose of this role?**
+
+- Administration of a workspace along with curation of content for the organization&#39;s catalog (for each organization for which the user has this role assigned)
+
+**Who can assign this role?**
+
+- Organization Administrators or Workspace Owner
+
+**When this role first assigned?**
+
+- Creation of a new workspace
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+- By default, the first Workspace Administrator is the owner (the creator) of the Workspace.
+
+**Who can remove assignment of this role?**
+
+- Organization Administrators or Workspace Owner
+
+**What permissions does this role have?**
+
+- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+
+{{% /card %}}
+{{&lt; /cardpane &gt;}}

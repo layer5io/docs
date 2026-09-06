@@ -1,0 +1,12 @@
+# Default User Role
+
+By default, members of an Organization are provided a User role.
+
+
+ Default User Role User 🔗 What is the purpose of this role?
+To grant Organization members access to basic features and resources within the context of that Organization. Who can assign this role?
+Organization Administrators, Workspace Administrators and Team Administrators When this role first assigned?
+Automatically assigned to members on joining an Organization. How many instances of these roles?
+Min: 1, Max: many Who can remove assignment of this role?
+Organization Administrators, Workspace Administrators and Team Administrators What permissions does this role have?
+Check Permissions Reference 

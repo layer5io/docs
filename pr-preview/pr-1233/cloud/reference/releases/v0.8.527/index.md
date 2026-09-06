@@ -1,0 +1,20 @@
+# v0.8.527
+
+date: 2025-10-21
+
+
+
+## 🖥 Cloud UI
+
+- use org domain for credential urls in card @aabidsofi19 (#4412)
+
+## 🐛 Bug Fixes
+
+- use org domain for credential urls in card @aabidsofi19 (#4412)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

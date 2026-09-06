@@ -1,0 +1,16 @@
+# v0.8.24
+
+date: 2024-10-05
+
+
+
+## What's New
+**General**
+- fix cloud ui build @MUzairS15 (#2817)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15 and @l5io
+
+

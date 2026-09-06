@@ -1,0 +1,62 @@
+&lt;!-- set of custom keyboard button classes --&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css&#34; /&gt;
+
+Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:
+
+### Designer Shortcuts
+
+As a designer in Kanvas, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently.
+
+On macOS, press &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;⌘&lt;/button&gt; wherever &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; is shown below. Every combination on this page is bound to both keys.
+
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;M&lt;/button&gt;: Add a comment to the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;T&lt;/button&gt;: Add a textbox to the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;S&lt;/button&gt;: Add a section to the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;I&lt;/button&gt;: Open the image picker to place an image on the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;P&lt;/button&gt;: Turn the pencil tool on or off, for drawing freehand on the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;E&lt;/button&gt;: Turn the pen tool on or off, for drawing connecting lines on the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;C&lt;/button&gt;: Copy the selected node or collection into your clipboard.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;D&lt;/button&gt;: Duplicate the selected node or collection of nodes.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;A&lt;/button&gt;: Select all nodes on the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Delete&lt;/button&gt; or &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Backspace&lt;/button&gt;: Delete the selected node or collection of nodes from the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;V&lt;/button&gt;: Paste a node or collection of nodes from your clipboard.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Left-click&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Drag&lt;/button&gt;: Create a selection box to select multiple nodes by dragging your mouse over an area.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Z&lt;/button&gt;: Undo your last create or delete action.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Y&lt;/button&gt; or &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Shift&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Z&lt;/button&gt;: Redo your last create or delete action.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Right-click&lt;/button&gt; or &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Left-click&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Hold&lt;/button&gt;: Open the context menu to choose an action to perform.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;H&lt;/button&gt;: Switch to hand mode to pan around the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Space&lt;/button&gt; (held down): Pan around the canvas for as long as you hold the key, then return to the mode you were in.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;V&lt;/button&gt;: Switch back to selection mode.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Esc&lt;/button&gt;: Leave the mode you are in and return to selection mode, or close any open menu or dialog.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;&#43;&lt;/button&gt;: Zoom in on the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;-&lt;/button&gt;: Zoom out on the canvas.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;&amp;#92;&lt;/button&gt; (Backslash): Open the Layers panel.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;/&lt;/button&gt;: Open this keyboard shortcut reference in the help drawer.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Shift&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;/&lt;/button&gt;: Open the Help Center.
+
+Zooming the page itself, rather than the canvas, is left to your browser. Kanvas binds no shortcut for it, so use your browser&#39;s own zoom controls.
+
+These designer shortcuts are essential for a smooth and efficient design workflow within Kanvas.
+
+### Operator Shortcuts
+
+Kanvas&#39;s operator provides a set of keyboard shortcuts to enhance your experience when working with the visualized data. These shortcuts help you navigate and manage the environment effectively:
+
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Left-click&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Drag&lt;/button&gt;: Create a selection box to select multiple nodes in Operator by dragging your mouse over an area.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Ctrl&lt;/button&gt; &#43; &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Left-click&lt;/button&gt; (mouse): Select multiple nodes individually.
+- &lt;button class=&#34;kbc-button kbc-button-xs&#34;&gt;Esc&lt;/button&gt;: Close the interactive terminal while it has focus.
+
+You open the interactive terminal itself from the resource rather than from the keyboard - through the terminal badge on a pod, or the Terminal tab of the Details panel. See [Interactive Terminal]({{&lt; ref &#34;kanvas/operator/interactive-terminal/index.md&#34; &gt;}}).
+
+These operator shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
+
+### Searching for Components
+
+Kanvas offers a powerful search feature that allows you to find specific components based on various criteria, such as object name, kinds, and namespaces. Here are the steps to effectively search for components in your Kanvas environment:
+
+
+1. Start typing your search query, such as the object name, kinds, or namespaces you&#39;re interested in. As you type, Kanvas will dynamically filter and display components that match your criteria.
+
+2. By clicking on a keyword or component in the search results, you can further filter out the components to focus on specific items.
+
+This search functionality makes it easy to quickly locate and access the components you need in your Kanvas environment.

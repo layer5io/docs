@@ -1,0 +1,36 @@
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;Default User Role&#34; %}}
+&lt;img src=&#34;images/user-role.svg&#34; link=&#34;images/user-role.svg&#34;  width=&#34;100%&#34; alt=&#34;User Role&#34; /&gt;
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;## User&#34; %}}
+
+**What is the purpose of this role?**
+
+- To grant Organization members access to basic features and resources within the context of that Organization.
+
+**Who can assign this role?**
+
+- Organization Administrators, Workspace Administrators and Team Administrators
+
+**When this role first assigned?**
+
+- Automatically assigned to members on joining an Organization.
+
+**How many instances of these roles?**
+
+- Min: 1, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Administrators, Workspace Administrators and Team Administrators
+
+**What permissions does this role have?**
+
+- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+
+{{% /card %}}
+{{&lt; /cardpane &gt;}}

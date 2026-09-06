@@ -1,0 +1,16 @@
+
+## What&#39;s New
+## 🔤 General
+## 💻 Server
+
+- Comment out verbose log for token unmarshalling errors @leecalcote (#3384)
+
+## 🦴 Infrastructure
+
+- update smtp password with app password @vishalvivekm (#3383)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @vishalvivekm
+

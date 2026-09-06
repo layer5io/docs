@@ -1,0 +1,9 @@
+
+- perf(auth): collapse login bundle and Kratos init double round-trip @hortison (#5369)
+- perf(login): gzip &#43; immutable cache for /_next, lazy-load Monaco and PDF stack @hortison (#5368)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison and @leecalcote
+

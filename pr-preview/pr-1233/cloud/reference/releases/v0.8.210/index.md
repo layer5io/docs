@@ -1,0 +1,22 @@
+# v0.8.210
+
+date: 2025-04-30
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- Revert \Add Feature Entitlement Enforcement\ @leecalcote (#3453)
+
+## 🦴 Infrastructure
+
+- Revert \Add Feature Entitlement Enforcement\ @leecalcote (#3453)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+
+

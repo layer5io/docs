@@ -1,0 +1,22 @@
+# v0.8.170
+
+date: 2025-03-05
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix: issue with the new bump up sistent @amitamrutiya (#3271)
+
+## 🐛 Bug Fixes
+
+- fix: issue with the new bump up sistent @amitamrutiya (#3271)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+
+

@@ -1,0 +1,24 @@
+# v0.8.152
+
+date: 2025-02-20
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix: workspace design redirect from table issue @amitamrutiya (#3204)
+- fix: delete design in catalog my-designs detail page @amitamrutiya (#3203)
+
+## 🐛 Bug Fixes
+
+- fix: workspace design redirect from table issue @amitamrutiya (#3204)
+- fix: delete design in catalog my-designs detail page @amitamrutiya (#3203)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya
+
+

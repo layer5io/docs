@@ -1,0 +1,21 @@
+# v0.8.386
+
+date: 2025-08-14
+
+
+
+## 🖥 Cloud UI
+
+- Add support dynamic custom theming @aabidsofi19 (#3953)
+- [Chore]: Update to Sistent v0.15.0 @l5io (#3960)
+
+## 🐛 Bug Fixes
+
+- fix: 404 image looks distorted on safari @FaheemOnHub (#3951)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @l5io and @leecalcote
+
+

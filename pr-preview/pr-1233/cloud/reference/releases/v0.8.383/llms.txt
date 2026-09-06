@@ -1,0 +1,3 @@
+# v0.8.383
+
+ 🔤 General 🔗 🖥 Cloud UI 🔗 Plans: Change \Upgrade Plan\ from Link to Button @leecalcote (#3946) Fix: Themed Icon Coloring @vr-varad (#3944) 🦴 Infrastructure 🔗 CI: Update staging deployment values and prod for github identity.jsonnet @leecalcote (#3947) Update GitHub app credentials and add new private keys for staging environment @leecalcote (#3945) 🐛 Bug Fixes 🔗 Fix: Themed Icon Coloring @vr-varad (#3944) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @l5io, @leecalcote and @vr-varad

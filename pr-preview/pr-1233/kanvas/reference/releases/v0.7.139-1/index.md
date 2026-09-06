@@ -1,0 +1,23 @@
+# v0.7.139-1
+
+date: 2024-11-08
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- add logo text @aabidsofi19 (#3124)
+- position network label in center @aabidsofi19 (#3125)
+- Design Save Issues and Read Only Mode @aabidsofi19 (#3097)
+
+## 🐛 Bug Fixes
+
+- ci: go deps sync not thrown an error @jerensl (#3123)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @jerensl and @l5io
+

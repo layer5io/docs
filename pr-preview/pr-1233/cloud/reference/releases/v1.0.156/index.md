@@ -1,0 +1,15 @@
+# v1.0.156
+
+date: 2026-06-25
+
+
+
+- fix(connections): bump github.com/meshery/schemas to v1.3.16 (resolves connection_definition_dbs 500) @leecalcote (#5581)
+- [UI] update the color for consistency @leecalcote (#5545)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@NSTKrishna and @leecalcote
+
+

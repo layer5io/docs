@@ -1,0 +1,25 @@
+# v0.8.174
+
+date: 2025-03-07
+
+
+
+## What's New
+## 🔤 General
+- add missing img element @vishalvivekm (#3293)
+
+## 🖥 Cloud UI
+
+- Update Typography: Standardize Heading Fonts Across UI @Vidit-Kushwaha (#3292)
+- [Chore]: Bump Sistent v0.14.164 @l5io (#3291)
+
+## 🐛 Bug Fixes
+
+- Update Typography: Standardize Heading Fonts Across UI @Vidit-Kushwaha (#3292)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Vidit-Kushwaha, @amitamrutiya, @l5io, @leecalcote and @vishalvivekm
+
+

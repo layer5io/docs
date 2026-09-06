@@ -1,0 +1,27 @@
+# v0.7.147-1
+
+date: 2024-11-13
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- implement passthrough pan on elements when in pan mode @aabidsofi19 (#3154)
+- [Chore]: Bump v0.14.117 @l5io (#3156)
+- fix shift+vert-scroll not working on macos @aabidsofi19 (#3153)
+
+## 🤼 Collaboration
+
+- replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#3155)
+
+## 🧰 Maintenance
+
+- replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#3155)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

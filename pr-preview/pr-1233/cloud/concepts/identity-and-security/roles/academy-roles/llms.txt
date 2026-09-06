@@ -1,0 +1,20 @@
+# Default Academy Roles
+
+By default, Academy has two roles available: Academy Administrator and Learner.
+
+
+ Academy Administrator Academy Administrator 🔗 What is the purpose of this role?
+Management of an organization&rsquo;s academy, learner management, and access to academy instructor console. Who can assign this role?
+Organization Administrators When this role first assigned?
+Manually assigned by an Organization Administrator. How many instances of these roles?
+Min: 0, Max: many Who can remove assignment of this role?
+Organization Administrators What permissions does this role have?
+Check Permissions Reference Learner Learner = A User who has registered for academy content. Managing Learner Costs While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization&rsquo;s subscription plan. Please be mindful of your subscription to manage costs effectively. Learner 🔗 What is the purpose of this role?
+To enroll in academy content within the organization&rsquo;s academy. Who can assign this role?
+Organization Administrators or Academy Administrators When this role first assigned?
+Automatically to users who join through a special learner invite link Manually by an Organization Administrator or Academy Administrator How many instances of these roles?
+Min: 0, Max: many Who can remove assignment of this role?
+Organization Administrators or Academy Administrators What permissions does this role have?
+Check Permissions Reference Status as a Learner
+Each individual academy content item (learning path, certification, or challenge) that a learner enrolls in tracks one of the following 4 status types:
+Status What it means registered (enrolled) They signed up but haven&rsquo;t started completed They finished the course failed They didn&rsquo;t pass withdrawn They left the course 

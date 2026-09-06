@@ -1,0 +1,21 @@
+# v0.8.60-1
+
+date: 2025-04-22
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Configuration tooltip bugs @aabidsofi19 (#3556)
+
+## 🧰 Maintenance
+
+- Bump @babel/preset-typescript from 7.26.0 to 7.27.0 in /meshmap @[dependabot[bot]](https://github.com/apps/dependabot) (#3555)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @dependabot[bot], @l5io, @miacycle and [dependabot[bot]](https://github.com/apps/dependabot)
+

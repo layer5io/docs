@@ -1,0 +1,10 @@
+# Layer5 Helm Repository
+
+Layer5 Helm Repository contains a collection of charts, including Layer5 Cloud, which can be deployed in any Kubernetes cluster on-premises or in Cloud using Helm.
+
+ Repository Only This page only contains a brief synopsis of the Helm repository.
+See the Self-Hosted section of the Layer5 Cloud documentation for deployment prerequisites, considerations, and instructions.
+Repository Contents 🔗 Contained in the Layer5 Helm repository is the Meshery Remote Provider charts (and it&rsquo;s subcharts) for Layer5 Cloud. See the repository&rsquo;s full index of Layer5 Helm charts.
+Chart Source 🔗 The source for this chart is located in the layer5io/meshery-cloud repository under install/kubernetes/.
+Complete Deployment Instructions Layer5 Cloud&rsquo;s Helm chart supports a number of configuration options
+See the Self-Hosted section of the Layer5 Cloud documentation for deployment prerequisites, considerations, and instructions.

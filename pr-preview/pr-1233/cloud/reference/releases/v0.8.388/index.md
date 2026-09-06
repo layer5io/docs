@@ -1,0 +1,32 @@
+# v0.8.388
+
+date: 2025-08-16
+
+
+
+## 📚 Academy
+
+- Certificates @aabidsofi19 (#3965)
+
+## 🖥 Cloud UI
+
+- Certificates @aabidsofi19 (#3965)
+
+## 💻 Server
+
+- Certificates @aabidsofi19 (#3965)
+
+## 🦴 Infrastructure
+
+- Certificates @aabidsofi19 (#3965)
+
+## 🧰 Maintenance
+
+- Certificates @aabidsofi19 (#3965)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

@@ -1,0 +1,15 @@
+# v0.8.176-6
+
+date: 2025-11-26
+
+
+
+## What's New
+## 🔤 General
+- delete capabilities.json from root @aabidsofi19 (#3904)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

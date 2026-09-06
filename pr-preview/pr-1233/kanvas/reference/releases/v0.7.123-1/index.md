@@ -1,0 +1,28 @@
+# v0.7.123-1
+
+date: 2024-10-17
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix : opacity border width out of sync in pamela @aabidsofi19 (#3008)
+
+## 🐛 Bug Fixes
+
+- fix : opacity border width out of sync in pamela @aabidsofi19 (#3008)
+- ci: fix release draft @jerensl (#3005)
+
+## 🧰 Maintenance
+
+- ci: refactor extensions test pr workflow @jerensl (#3010)
+- ci: change the release draft title @jerensl (#3006)
+- ci: fix release draft @jerensl (#3005)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @aabidsofi19, @jerensl and @l5io
+

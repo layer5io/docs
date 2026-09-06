@@ -1,0 +1,24 @@
+
+## What&#39;s New
+## 🔤 General
+- switch from user-access to user-access-cloud @vishalvivekm (#2952)
+
+## 🖥 Cloud UI
+
+- bump sistent package @sudhanshutech (#2955)
+- fix: handle click issue in the details component @amitamrutiya (#2953)
+
+## 🐛 Bug Fixes
+
+- fix: handle click issue in the details component @amitamrutiya (#2953)
+
+## 🧰 Maintenance
+
+- Update helm-chart-releaser.yaml to resync with remote/master @leecalcote (#2951)
+- [CI] Staging: Temporarily disable build and deploy for staging-meshery.layer5.io @leecalcote (#2950)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io, @leecalcote, @sudhanshutech, @vishalvivekm and MUzairS15
+

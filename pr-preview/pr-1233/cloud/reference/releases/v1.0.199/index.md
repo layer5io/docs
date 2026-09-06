@@ -1,0 +1,17 @@
+# v1.0.199
+
+date: 2026-07-22
+
+
+
+- [Chore]: Update to Sistent v0.21.41 @l5io (#5747)
+- [Chore]: Update to Sistent v0.21.39 @l5io (#5746)
+- [Chore]: Update to Sistent v0.21.38 @l5io (#5744)
+- refactor: replace local permission constants with Keys from schemas @rishiraj38 (#5707)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @marblom007, @meshery-ci, @rishiraj38 and @ritzorama
+
+

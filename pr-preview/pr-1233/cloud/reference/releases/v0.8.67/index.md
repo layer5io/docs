@@ -1,0 +1,27 @@
+# v0.8.67
+
+date: 2024-11-08
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- enhance catalog details page  @sudhanshutech (#2946)
+- Setup typescript environment @sudhanshutech (#2948)
+
+## 💻 Server
+
+- create a special query handler for anonymous user keys @aabidsofi19 (#2933)
+
+## 🦴 Infrastructure
+
+- Setup typescript environment @sudhanshutech (#2948)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @sudhanshutech
+
+

@@ -1,0 +1,18 @@
+
+## What&#39;s New
+## 🔤 General
+## 🖌️ Designer
+
+- scope undo redo to per design session @aabidsofi19 (#3148)
+- handle catalog table when there is null data @amitamrutiya (#3150)
+- temp disable some keys @aabidsofi19 (#3149)
+- fix: comment thread getting empty after making a change in popover @aabidsofi19 (#3146)
+
+## 🐛 Bug Fixes
+
+- handle catalog table when there is null data @amitamrutiya (#3150)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io

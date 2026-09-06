@@ -1,0 +1,25 @@
+# v0.8.157
+
+date: 2025-02-24
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Souvik/fix/GitHub wizard fixes @souvikinator (#3218)
+- [Chore]: Bump Sistent v0.14.159 @l5io (#3216)
+- use correct token for the meshery logo @amitamrutiya (#3215)
+
+## 🐛 Bug Fixes
+
+- Souvik/fix/GitHub wizard fixes @souvikinator (#3218)
+- use correct token for the meshery logo @amitamrutiya (#3215)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io, @leecalcote and @souvikinator
+
+

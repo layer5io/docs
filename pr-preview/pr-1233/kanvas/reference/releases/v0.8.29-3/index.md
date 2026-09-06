@@ -1,0 +1,21 @@
+# v0.8.29-3
+
+date: 2025-02-11
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Revert dd missing packages and revert : revert of crd changes\ @aabidsofi19 (#3407)
+
+## 🐛 Bug Fixes
+
+- Revert dd missing packages and revert : revert of crd changes\ @aabidsofi19 (#3407)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

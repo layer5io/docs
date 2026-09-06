@@ -1,0 +1,26 @@
+# v0.7.125-4
+
+date: 2024-10-24
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- test: add playground command @jerensl (#3050)
+- Add support for hyperlinks in Textbox  @aabidsofi19 (#3044)
+- [Empty State] Catalog Cards: taller cards, more space between @leecalcote (#3047)
+- [Empty State] Tweak catalog icon @leecalcote (#3046)
+- remove wrong errors @aabidsofi19 (#3045)
+
+## 🧰 Maintenance
+
+- test: change to more flexible approach @jerensl (#3049)
+- test: test production kanvas @jerensl (#3048)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @jerensl, @l5io and @leecalcote
+

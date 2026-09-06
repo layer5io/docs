@@ -1,0 +1,15 @@
+# v1.0.221
+
+date: 2026-08-03
+
+
+
+- fix(dao): constrain membership mappings and repair index-unsafe role writes @jijillery (#5822)
+- [identity] Exclude Last column from default Users table columns @hortison (#5853)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @leecalcote and @simihablo
+
+

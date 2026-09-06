@@ -1,0 +1,18 @@
+# v0.8.179
+
+date: 2025-04-05
+
+
+
+## What's New
+## 🔤 General
+## 🦴 Infrastructure
+
+- fixed docker build @aabidsofi19 (#3370)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

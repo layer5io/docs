@@ -1,0 +1,16 @@
+# v0.8.503
+
+date: 2025-10-15
+
+
+
+## 🦴 Infrastructure
+
+- Update README.md @hamza-mohd (#4331)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hamza-mohd and @hortison
+
+

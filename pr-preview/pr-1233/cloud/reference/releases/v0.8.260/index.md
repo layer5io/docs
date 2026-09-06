@@ -1,0 +1,22 @@
+# v0.8.260
+
+date: 2025-06-20
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Remove package.json and update @babel/core version in package.json and package-lock.json @leecalcote (#3662)
+
+## 🐛 Bug Fixes
+
+- Remove package.json and update @babel/core version in package.json and package-lock.json @leecalcote (#3662)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

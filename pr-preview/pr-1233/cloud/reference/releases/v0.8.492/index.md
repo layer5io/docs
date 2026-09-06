@@ -1,0 +1,18 @@
+# v0.8.492
+
+date: 2025-10-08
+
+
+
+- Add recognition tag and endpoints for badge assignment functionality @leecalcote (#4295)
+
+## 💻 Server
+
+- update curricula insert from markdown and add more logs @aabidsofi19 (#4299)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @meshery-ci
+
+

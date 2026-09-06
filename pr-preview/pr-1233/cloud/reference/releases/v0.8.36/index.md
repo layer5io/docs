@@ -1,0 +1,31 @@
+# v0.8.36
+
+date: 2024-10-23
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix search author bug in catalog @sudhanshutech (#2859)
+- fix bug download token @sudhanshutech (#2856)
+
+## 💻 Server
+
+- fix comment notifications @aabidsofi19 (#2855)
+
+## ☁️ Api Specifications
+
+- fix comment notifications @aabidsofi19 (#2855)
+
+## 🐛 Bug Fixes
+
+- fix search author bug in catalog @sudhanshutech (#2859)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15, @aabidsofi19, @l5io, @leecalcote and @sudhanshutech
+
+

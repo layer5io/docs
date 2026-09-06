@@ -1,0 +1,16 @@
+# v0.8.548
+
+date: 2025-11-04
+
+
+
+## 💻 Server
+
+- Refactor readiness probe logging and clean up comments @leecalcote (#4478)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

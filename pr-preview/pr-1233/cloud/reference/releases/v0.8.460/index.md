@@ -1,0 +1,20 @@
+# v0.8.460
+
+date: 2025-09-22
+
+
+
+## 🖥 Cloud UI
+
+- add manage subscriptions  key @aabidsofi19 (#4176)
+
+## 🦴 Infrastructure
+
+- add manage subscriptions  key @aabidsofi19 (#4176)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

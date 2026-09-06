@@ -1,0 +1,12 @@
+# v1.0.65
+
+date: 2026-05-07
+
+
+
+## What's Changed
+* fix(auth): stop bouncing custom-domain /login + /logout to SERVER_BASE_URL (resolves Cloudflare 502 redirect-loop) by @leecalcote in https://github.com/layer5io/meshery-cloud/pull/5239
+
+
+**Full Changelog**: https://github.com/layer5io/meshery-cloud/compare/v1.0.64...v1.0.65
+

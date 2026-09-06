@@ -1,0 +1,15 @@
+# v1.0.15
+
+date: 2026-04-20
+
+
+
+- [ui] Fix organization logo regression @jamieplu (#5051)
+- fix(users): stop UpdateProfile from erasing first_name/last_name @jamieplu (#5052)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu and @leecalcote
+
+

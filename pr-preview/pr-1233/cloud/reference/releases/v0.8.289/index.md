@@ -1,0 +1,30 @@
+# v0.8.289
+
+date: 2025-07-14
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix: The user profile mascot 'Five' are too small @FaheemOnHub (#3763)
+- refactor: replace router for internal links && window.open for external links @FaheemOnHub (#3691)
+- [Chore]: Bump Sistent v0.14.204 @l5io (#3754)
+- Add HelperText support to Leave Org modal. @FaheemOnHub (#3746)
+
+## 💻 Server
+
+- fix: panic if error occurs when create environment @n2h9 (#3760)
+
+## 🐛 Bug Fixes
+
+- fix: panic if error occurs when create environment @n2h9 (#3760)
+- fix: The user profile mascot 'Five' are too small @FaheemOnHub (#3763)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @l5io, @leecalcote, @meshery-ci, @n2h9 and @zihanKuang
+
+

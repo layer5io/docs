@@ -1,0 +1,18 @@
+# v0.8.94
+
+date: 2024-11-21
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.120 @l5io (#3012)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and MUzairS15
+
+

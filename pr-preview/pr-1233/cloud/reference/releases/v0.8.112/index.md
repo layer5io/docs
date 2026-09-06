@@ -1,0 +1,35 @@
+# v0.8.112
+
+date: 2024-12-20
+
+
+
+## What's New
+## 🔤 General
+- Update README.md @leecalcote (#3080)
+- Chore: update actions/checkoutv4 @leecalcote (#3079)
+
+## 🖥 Cloud UI
+
+- replace trim with the populate params @amitamrutiya (#3068)
+- fix bug to search users @sudhanshutech (#3075)
+- Fix: Ensure consistent color shading for all menu and submenu icons @Vidit-Kushwaha (#3061)
+
+## 💻 Server
+
+- fix design url in email template while share @sudhanshutech (#3081)
+
+## ☁️ Api Specifications
+
+- replace trim with the populate params @amitamrutiya (#3068)
+
+## 🐛 Bug Fixes
+
+- Fix: Ensure consistent color shading for all menu and submenu icons @Vidit-Kushwaha (#3061)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Vidit-Kushwaha, @aabidsofi19, @amitamrutiya, @l5io, @leecalcote, @sudhanshutech and MUzairS15
+
+

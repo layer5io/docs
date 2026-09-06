@@ -1,0 +1,11 @@
+
+- swap staging-cloud name @miacycle (#5656)
+- [ci] Fix meshery-qa-planner skill symlink (breaks claude-review on all PRs) @leecalcote (#5655)
+- docs: progressive-disclosure refactor of AGENTS.md; align ecosystem engineering directives @leecalcote (#5644)
+- [docs] Add multi-email-per-account gap to fragmentation plan @leecalcote (#5642)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @meshery-ci, @miacycle and @pontusringblom
+

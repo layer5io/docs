@@ -1,0 +1,15 @@
+# v0.8.642
+
+date: 2026-01-10
+
+
+
+- Fix unwanted gap between navbar and content  @Rajesh-Nagarajan-11 (#4758)
+- [Chore]: Update to Sistent v0.15.21 @l5io (#4760)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11, @l5io, @leecalcote and @marblom007
+
+

@@ -1,0 +1,73 @@
+
+&lt;!-- {{% pageinfo %}}
+
+**Kanvas** is a visual and collaborative configuration management tool for cloud native infrastructure. It simplifies the complexity of Kubernetes and multi-cloud infrastructure management, making it accessible to all.
+
+{{% /pageinfo %}} --&gt;
+&lt;!-- {{&lt; figure src=&#34;layer5-cloud-provider.svg&#34;  class=&#34;image-center-shadow&#34; &gt;}} --&gt;
+
+{{% pageinfo %}}
+
+## Understanding the Layer5 Ecosystem
+
+{{&lt; ecosystem-box link=&#34;cloud/_index.md&#34; icon=&#34;cloud&#34; class=&#34;hidden-highlight-box&#34; title=&#34;Layer5 Cloud&#34; &gt;}}
+is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+{{&lt; /ecosystem-box &gt;}}
+
+{{&lt; ecosystem-box icon=&#34;images/logos/kanvas-icon-color.svg&#34; image=&#34;true&#34; title=&#34;Kanvas&#34; &gt;}}
+delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+{{&lt; /ecosystem-box &gt;}}
+
+{{% /pageinfo %}}
+
+## What is Kanvas?
+
+&lt;p style=&#34;display:flex;text-align:center;margin:1rem auto;color:white;&#34;&gt;&lt;i&gt;Kanvas is like Google Workspace for DevOps, as it allows you to create, test, and deploy cloud native architectures collaboratively and easily.&lt;/i&gt;&lt;/p&gt;
+
+Kanvas is a web-based application that allows you to create and share orchestratable diagrams of cloud native infrastructure for Kubernetes and public cloud services. You can draw shapes, lines, text, and icons to represent your infrastructure components and their relationships. Kanvas also supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. Kanvas is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes and multi-cloud services.
+
+### Choose your mode
+
+Choose your mode of operation for Kanvas.
+
+&lt;div style=&#34;display:flex;justify-content:center;&#34;&gt;
+{{&lt; cardpane &gt;}}
+    &lt;a href=&#34;{{&lt; ref &#34;kanvas/designer/_index.md&#34; &gt;}}&#34;&gt;
+  {{&lt; card header=&#34;Designer&#34; &gt;}}
+    &lt;a href=&#34;{{&lt; ref &#34;kanvas/designer/_index.md&#34; &gt;}}&#34;&gt;Designer&lt;/a&gt; mode is for those who want to create their own Kanvas, using the palette of components.
+    &lt;p&gt;Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.&lt;/p&gt;
+    &lt;p&gt;Use context-aware relationships configure your infrastructure intuitively.&lt;/p&gt;
+  {{&lt; /card &gt;}}
+    &lt;/a&gt;
+  &lt;a href=&#34;{{&lt; ref &#34;kanvas/operator/_index.md&#34; &gt;}}&#34;&gt;
+  {{&lt; card header=&#34;Operator&#34; &gt;}}
+    &lt;a href=&#34;{{&lt; ref &#34;kanvas/operator/_index.md&#34; &gt;}}&#34;&gt;Operator&lt;/a&gt; mode is for operating your Kubernetes clusters and cloud native infrastructure.
+    &lt;p&gt;Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.&lt;/p&gt;
+    &lt;p&gt;Interactively connect to pods and containers to debug and troubleshoot.&lt;/p&gt;
+  {{&lt; /card &gt;}}
+  &lt;/a&gt;
+{{&lt; /cardpane &gt;}}
+&lt;/div&gt;
+
+
+&lt;!-- ## What is Kanvas?
+
+Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
+
+## Why do I want it?
+
+Help your user know if your project will help them. Useful information can include:
+
+* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
+
+* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren&#39;t for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
+
+* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
+
+## Where should I go next?
+
+Give your users next steps from the Overview. For example:
+
+* [Getting Started](/docs/getting-started/): Get started with $project
+* [Examples](/docs/examples/): Check out some example code!
+ --&gt;

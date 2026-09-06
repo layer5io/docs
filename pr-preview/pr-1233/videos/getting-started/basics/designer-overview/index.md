@@ -1,0 +1,12 @@
+# Kanvas Designer Overview
+
+
+> With thousands of components available, you can collaboratively design and operate your multi-cloud and cloud native infrastructure.
+
+
+
+{{< youtube id=qaoYRP3oLok class="yt-embed-container" >}}
+
+### Related Docs
+
+- [Exploring Designer]({{< ref "kanvas/designer/_index.md" >}})

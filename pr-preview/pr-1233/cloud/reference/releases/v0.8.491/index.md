@@ -1,0 +1,16 @@
+# v0.8.491
+
+date: 2025-10-07
+
+
+
+## 💻 Server
+
+- Enhance AssignBadge method to include detailed logging for notification preferences and existing badges @leecalcote (#4298)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,19 @@
+
+## What&#39;s New
+## 🔤 General
+- Bump golang.org/x/text from 0.18.0 to 0.19.0 @dependabot (#2897)
+
+## 💻 Server
+
+- fix count of cloud models in catalog w/signoff @Jougan-0 (#2907)
+- support pagsize upto 100 @sudhanshutech (#2908)
+
+## 🐛 Bug Fixes
+
+- fix count of cloud models in catalog w/signoff @Jougan-0 (#2907)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @dependabot, @l5io, @leecalcote, @sudhanshutech and MUzairS15
+

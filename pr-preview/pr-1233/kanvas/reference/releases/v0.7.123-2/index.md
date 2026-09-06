@@ -1,0 +1,18 @@
+# v0.7.123-2
+
+date: 2024-10-17
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- [style fix] user account required modal: Use Sistent Links, not a tags @leecalcote (#3012)
+- update the height and width of the quick tip @amitamrutiya (#3009)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+

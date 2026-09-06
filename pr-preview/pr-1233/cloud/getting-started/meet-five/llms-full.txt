@@ -1,0 +1,167 @@
+
+Five is a Platform Engineer at Orbital Labs with an unshakeable belief that every problem is solvable with the right tool, the right permissions, and — ideally — access to production. He arrived at Layer5 Cloud the same way most engineers arrive at operations tooling: via a 3 AM paging incident that politely suggested he learn something new. He did. He also learned about role-based access control the hard way, but that is what the rest of these docs are for.
+
+Orbital Labs is a cloud-native startup on the steeper part of the growth curve — the part where &#34;we&#39;ll sort out permissions later&#34; has finally become &#34;we should have sorted out permissions earlier.&#34; Orbital Labs runs workloads across AWS, GCP, and a legacy Azure footprint inherited from an acquisition nobody likes to talk about. Their infrastructure is managed through Kanvas, their environments are wrangled by Five and Zara, and their Friday afternoons are protected by Maya Chen.
+
+Orbital Labs operates as a tenant of Constellation Cloud, an MSP whose Provider Admin, Dr. Aiko Sato, manages their account alongside a roster of other organizations — including Stellar Dynamics, Orbital Labs&#39; largest enterprise client. Stellar Dynamics has a Fortune 500 budget, a legacy-everything architecture, and Marcus Webb, an Org Admin who CC&#39;s his VP on support tickets. The relationship is productive. Mostly.
+
+## The Organizations
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;**Constellation Cloud**&#34; %}}
+**Type:** Managed Service Provider  
+**Plan:** Enterprise  
+**Role in this narrative:** Provider — manages Orbital Labs and Stellar Dynamics as tenants
+
+*&#34;We keep the lights on so you don&#39;t have to.&#34;*
+{{% /card %}}
+{{% card header=&#34;**Orbital Labs**&#34; %}}
+**Type:** Cloud-native startup  
+**Plan:** Team  
+**Role in this narrative:** Five&#39;s employer — primary protagonist organization
+
+*&#34;Moving fast and occasionally breaking staging.&#34;*
+{{% /card %}}
+{{% card header=&#34;**Stellar Dynamics**&#34; %}}
+**Type:** Enterprise client  
+**Plan:** Enterprise  
+**Role in this narrative:** Orbital Labs&#39; biggest customer — illustrates cross-org access and enterprise entitlements
+
+*&#34;Fortune 500, cloud-native ambitions, legacy everything.&#34;*
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+## The Cast
+
+### Constellation Cloud
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;**Dr. Aiko Sato** — Provider Admin&#34; %}}
+&lt;img src=&#39;../../images/five/layer5-five-mascot-means-business.svg&#39; alt=&#34;Dr. Aiko Sato — Provider Admin at Constellation Cloud&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Constellation Cloud  
+**Role:** Provider Admin  
+**Plan:** Enterprise
+
+Has seen every misconfigured RBAC policy known to humankind. Responds to Slack messages with bullet-pointed summaries because prose is inefficient.
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+### Orbital Labs
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;**Five** — Platform Engineer&#34; %}}
+&lt;img src=&#39;../../images/five/1.svg&#39; alt=&#34;Five — Platform Engineer at Orbital Labs&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Orbital Labs  
+**Role:** User (Platform Engineer)  
+**Plan:** Team
+
+The protagonist — curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
+{{% /card %}}
+{{% card header=&#34;**Maya Chen** — Org Admin &amp; Development Team Admin&#34; %}}
+&lt;img src=&#39;../../images/five/2.svg&#39; alt=&#34;Maya Chen — Org Admin and Development Team Admin at Orbital Labs&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Orbital Labs  
+**Role:** Org Admin &#43; Development Team Admin  
+**Plan:** Team
+
+Voice of reason. Has a calendar block called &#34;Preventing Five from touching prod&#34; that recurs every Friday at 4:45 PM. (Org Admins may also administer teams; Maya does both.)
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;**Zara Osei** — Infrastructure Team Admin&#34; %}}
+&lt;img src=&#39;images/five/3.svg&#39; alt=&#34;Zara Osei — Infrastructure Team Admin at Orbital Labs&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Orbital Labs  
+**Role:** Team Admin, Infrastructure Team  
+**Plan:** Team
+
+Sole keeper of the keychain permission matrix. Responds to access requests with a 48-hour SLA and a knowing look.
+{{% /card %}}
+{{% card header=&#34;**Rex Park** — Developer&#34; %}}
+&lt;img src=&#39;images/five/4.svg&#39; alt=&#34;Rex Park — Developer at Orbital Labs&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Orbital Labs  
+**Role:** User, Developer Team  
+**Plan:** Team
+
+Opens design review requests and immediately asks Five if they have been approved yet. Deploys with confidence; reads error logs with less.
+{{% /card %}}
+{{% card header=&#34;**Jordan Reyes** — Developer &amp; Designer&#34; %}}
+&lt;img src=&#39;images/five/5.svg&#39; alt=&#34;Jordan Reyes — Developer and Designer at Orbital Labs&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Orbital Labs  
+**Role:** User, Developer Team  
+**Plan:** Team
+
+Crafts Kanvas designs of alarming elegance. Considers a 47-component architecture diagram &#34;a rough draft.&#34;
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+### Stellar Dynamics
+
+{{&lt; cardpane &gt;}}
+{{% card header=&#34;**Marcus Webb** — Org Admin&#34; %}}
+&lt;img src=&#39;../../images/five/layer5-five-mascot-means-business.svg&#39; alt=&#34;Marcus Webb — Org Admin at Stellar Dynamics&#34; style=&#34;background:#fff;&#34; /&gt;
+
+**Organization:** Stellar Dynamics  
+**Role:** Org Admin  
+**Plan:** Enterprise
+
+Files support tickets with executive summaries, numbered findings, and a risk matrix. CC&#39;s his VP on all of them.
+{{% /card %}}
+{{&lt; /cardpane &gt;}}
+
+## Team &amp; Org Hierarchy
+
+| Organization | Team | Members | Roles |
+|---|---|---|---|
+| Constellation Cloud | — | Dr. Aiko Sato | Provider Admin |
+| Orbital Labs | Infrastructure | Five, Zara Osei | Team Admin (Zara), User (Five) |
+| Orbital Labs | Development | Maya Chen, Rex Park, Jordan Reyes | Team Admin (Maya), User (Rex, Jordan) |
+| Stellar Dynamics | Platform | Marcus Webb | Org Admin (Marcus) |
+
+## Seed Inventory
+
+Use these canonical names in all screenshots, tutorials, and example walkthroughs. Do not invent alternate names for these resources in other docs pages.
+
+### Workspaces
+
+| Workspace | Owner Org | Teams with Access | Purpose in Docs |
+|---|---|---|---|
+| `orbital-production` | Orbital Labs | Infrastructure | Prod access controls, environment assignment demos |
+| `orbital-staging` | Orbital Labs | Infrastructure, Development | Cross-team workspace sharing demos |
+| `orbital-dev` | Orbital Labs | Development | Team-scoped workspace, design iteration tutorials |
+| `stellar-main` | Stellar Dynamics | Platform | Enterprise org, cross-org access scenarios |
+
+### Environments
+
+| Environment | Workspace | Connections | Purpose in Docs |
+|---|---|---|---|
+| `prod-aws` | orbital-production | EKS, RDS (PostgreSQL), S3, CloudFront, SQS | Prod demos; managed AWS service connections |
+| `prod-gcp` | orbital-production | GKE, Cloud SQL, Cloud Storage, Pub/Sub | Multi-cloud prod; GCP service connections |
+| `staging-aws` | orbital-staging | EKS, S3, ElastiCache | Cross-team staging; feature branch deployments |
+| `staging-azure` | orbital-staging | AKS, Azure Blob Storage, Azure Service Bus | Azure connections; Stellar Dynamics mirror environment |
+| `dev-local` | orbital-dev | local k8s (kind), LocalStack (AWS emulation) | Getting-started tutorials; no cloud credentials required |
+| `stellar-enterprise` | stellar-main | AKS, Azure SQL, Azure API Management, Azure AD | Enterprise entitlements; cross-org access demos |
+
+### Designs
+
+| Design | Owner | Workspace | Cloud Services | Purpose in Docs |
+|---|---|---|---|---|
+| `microservices-baseline` | Jordan Reyes | orbital-dev | local/kind only | Tutorial: creating and sharing a design |
+| `api-platform-aws` | Five | orbital-production | EKS &#43; API Gateway &#43; Lambda &#43; RDS &#43; S3 | Tutorial: deploying a multi-service AWS workload |
+| `data-pipeline-gcp` | Zara Osei | orbital-production | GKE &#43; Pub/Sub &#43; BigQuery &#43; Cloud Storage &#43; Dataflow | GCP-native service design; environment assignment |
+| `frontend-cdn-azure` | Rex Park | orbital-staging | AKS &#43; Azure Front Door &#43; Azure Blob &#43; Azure CDN | Azure workload; staging → prod promotion |
+| `stellar-saas-platform` | Marcus Webb | stellar-main | AKS &#43; Azure SQL &#43; Azure API Management &#43; Azure AD &#43; Event Hub | Cross-org design access; enterprise entitlements |
+| `prod-deployment-v2` | Five | orbital-production | EKS &#43; RDS &#43; S3 &#43; CloudFront | Tutorial: promoting a design from staging to prod |
+
+## Using This Narrative
+
+{{&lt; alert type=&#34;info&#34; title=&#34;For Documentation Contributors&#34; &gt;}}
+The characters, organizations, workspaces, environments, and designs on this page are the canonical reference for all Layer5 Cloud and Kanvas documentation. When writing new docs, updating screenshots, or building tutorials, use these names and scenarios rather than inventing new examples.
+
+See the [Five Narrative Research Plan](five-narrative-plan) for a section-by-section map of where each character and scenario belongs, which Five illustrations to use, and screenshot conventions.
+{{&lt; /alert &gt;}}

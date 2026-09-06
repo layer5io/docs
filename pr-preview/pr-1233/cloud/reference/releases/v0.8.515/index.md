@@ -1,0 +1,20 @@
+# v0.8.515
+
+date: 2025-10-17
+
+
+
+## 🖥 Cloud UI
+
+- \Fix Logout and login from custom domain \ @aabidsofi19 (#4367)
+
+## 💻 Server
+
+- \Fix Logout and login from custom domain \ @aabidsofi19 (#4367)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+
