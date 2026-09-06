@@ -1,9 +1,9 @@
 # {{ .Site.Title }}
 
-> {{ with .Site.Params.description }}{{ . }}{{ else }}Layer5 product documentation.{{ end }}
+> {{ with .Site.Home.Description }}{{ . }}{{ else }}Layer5 product documentation.{{ end }}
 
 ## Docs
 
 {{ range .Site.RegularPages -}}
-- [{{ .Title }}]({{ .Permalink }}index.md){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .Permalink }}{{ end }}){{ with .Description }}: {{ . }}{{ end }}
 {{ end -}}

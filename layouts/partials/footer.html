@@ -92,9 +92,9 @@
             target="_blank" rel="noreferrer">Edit This Page</a>
           {{ end }}
         </span>
-                <span class="view-markdown">
-          {{ with .File }}
-          <a href="{{ $.RelPermalink }}index.md" target="_blank" rel="noreferrer">View as Markdown</a>
+        <span class="view-markdown">
+          {{ with .OutputFormats.Get "markdown" }}
+          <a href="{{ .RelPermalink }}" target="_blank" rel="noreferrer">View as Markdown</a>
           {{ end }}
         </span>
         <span>

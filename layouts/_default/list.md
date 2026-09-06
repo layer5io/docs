@@ -1,8 +1,8 @@
-{{- .Title }}
+# {{ .Title }}
 {{ with .Description }}
 > {{ . }}
 {{ end }}
 {{ .RawContent }}
 {{ range .Pages }}
-- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .RelPermalink }}{{ end }}){{ with .Description }}: {{ . }}{{ end }}
 {{- end -}}
