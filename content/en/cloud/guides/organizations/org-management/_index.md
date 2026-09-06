@@ -51,6 +51,7 @@ You can update your Organization's name, location, associated teams, branding, a
     -   Logos: Upload specific logo versions for various display contexts by clicking the respective **"Upload"** buttons.
     -   Invitations: Access a shareable link to invite users to your Organization.
     -   Identity Providers: Configure which OAuth applications power your Organization's sign-in (see [Configuring Identity Providers](#configuring-identity-providers-bring-your-own-credentials) below).
+    -   Email: Configure your Organization's own outbound mail server, so email reaches your members from your own domain (see [Configuring your own mail server](#configuring-your-own-mail-server) below).
 
 <img src="images/edit_org.png" alt="Editing Organization Details" style="width: 30%;" />
 
@@ -71,6 +72,64 @@ Organization Administrators and Owners can add, rotate, and remove their Organiz
 {{< /alert >}}
 
 Switching identity providers does not affect existing user accounts or login history. Users who signed in through a provider you later remove may need to re-authenticate.
+
+### Configuring your own mail server
+
+The **Email** tab lets your Organization send its email through **its own SMTP server**, from **its own address**, instead of through Layer5's shared mail server.
+
+By default, every notification, invitation, account-verification and password-recovery email for your Organization is delivered by Layer5 and arrives from a Layer5 address. The body of the message already carries your branding; only the envelope does not. Bringing your own mail server changes the envelope too, so your email aligns with your own SPF and DMARC policy.
+
+{{< alert title="This carries your sign-in email too" type="warning" >}}
+Your mail server carries account verification and password recovery, not just notifications. A delivery problem therefore becomes a sign-in problem for your members. That is why **Fall back to the shared mail server** is switched on by default — leave it on unless you have a specific reason not to.
+{{< /alert >}}
+
+#### What you will need
+
+-   The hostname and submission port of your SMTP server, and whether it uses STARTTLS or implicit TLS. Ports 25, 465, 587 and 2525 are supported.
+-   A username and password your server accepts. For most hosted providers this is an **app password** or a dedicated SMTP credential, not your normal account password.
+-   A **from address** on a domain you can prove you control — either your Organization's registered custom domain, or a domain you can publish a DNS TXT record on.
+
+Your mail server must be reachable on the public internet. A relay on a private or internal network cannot be used.
+
+#### How to configure it
+
+1.  Open **Edit Organization** and select the **Email** tab, then click **Configure mail server**.
+2.  Optionally pick a **Provider preset** — Gmail / Google Workspace, Microsoft 365, Amazon SES, SendGrid or Postmark. A preset fills only the host, port and encryption; the username and from address are always yours to enter.
+3.  Fill in the rest of the form and click **Save mail server**. Nothing about your email changes yet — mail keeps going out through Layer5 while you finish setting up.
+4.  **Verify your from domain.** If it matches your Organization's registered custom domain, it is verified immediately with no DNS record. Otherwise the page shows the exact TXT record to publish; publish it, then click **Re-check now**. DNS changes take time to propagate, so the first re-check often reports that no record was found.
+5.  **Send a test message.** You can address it to anyone; left empty it goes to you. Once a message is delivered successfully, your Organization's email starts going out through your own server.
+
+#### Reading the status
+
+The Email tab shows one of four states, and the difference between them matters:
+
+| Status | What it means |
+| --- | --- |
+| **Not yet proven** | Configured, but no message has been delivered through it yet. Email is still going out through Layer5. |
+| **Delivering** | The last delivery succeeded. Your Organization's email is going out through your server. |
+| **Failing** | Repeated failures stopped your server being contacted. What happens to a message now depends on your fallback setting. |
+| **Turned off** | An administrator turned it off. Email is going out through Layer5. |
+
+If a test message is refused, the page explains what went wrong, the probable cause, and what to try — for example, an authentication rejection usually means your provider requires an app password rather than your account password.
+
+#### About your stored password
+
+Your password is encrypted before it is stored and is **never shown again**, on this page or through the API.
+
+Because of that, the settings form does not include a password field at all — saving your settings can never change or clear your stored password. Replacing it is a separate **Replace password** action, and its field is always empty when the page loads.
+
+#### Turning it off or removing it
+
+-   **Turn off** returns your Organization to Layer5's shared mail server but keeps your configuration and stored password, so you can turn it back on later.
+-   **Remove mail server** deletes the configuration and the stored password. Your email is not interrupted — every message goes through Layer5's shared server from that moment — but re-adding means entering everything again and verifying your domain again.
+
+{{< alert title="Who can configure this" type="info" >}}
+Organization Administrators and Owners can configure, test and remove their Organization's mail server themselves.
+{{< /alert >}}
+
+{{< alert title="Microsoft 365 tenants requiring AUTH LOGIN" type="warning" >}}
+Mail servers that require the `AUTH LOGIN` mechanism are not supported yet. If your Microsoft 365 tenant requires it, use an account that accepts `AUTH PLAIN`, or a Microsoft 365 high-volume SMTP relay.
+{{< /alert >}}
 
 ## Using the Open Organization Invitation Link
 
