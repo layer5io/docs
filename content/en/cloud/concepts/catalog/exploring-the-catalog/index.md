@@ -101,7 +101,11 @@ As you scroll down the page, you will find other useful sections:
 
 ### Open in Playground
 
-Clicking **Open in Playground** loads the design directly into [Kanvas](https://kanvas.new/).
+Clicking **Open in Playground** opens the design in the Kanvas designer running at [playground.meshery.io](https://playground.meshery.io/extension/meshmap), in a new browser tab. The catalog page you were on stays open behind it.
+
+The Playground is a hosted, ready-to-use Kanvas instance. It is the fastest way to look inside a catalog design - you can pan, zoom, open components, and inspect relationships without installing Meshery or signing in. Changes you make there are not written back to the catalog design; to keep your own editable copy, [Clone](#clone) it instead.
+
+The link Layer5 Cloud builds carries the design's identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) for what those parameters mean and how to construct such a link yourself.
 
 ### Clone
 
@@ -150,3 +154,23 @@ If you no longer want a design to be published in the catalog, you can use the *
 {{< alert type="info" title="Permissions Required" >}}
 Editing/Unpublish published designs requires specific user roles and permissions. Learn more: [Default Permissions documentation]({{< ref "cloud/reference/default-permissions.md" >}}).
 {{< /alert >}}
+
+### Delete
+
+**Delete** removes a catalog item permanently. It applies to the catalog content you own - designs, views, and filters - and the confirmation dialog is titled **Delete Catalog item?**.
+
+Deletion is not the same as [Unpublish](#unpublish). Unpublishing withdraws a design from the public catalog and keeps it in your account; deleting destroys it, and unassigns it from every workspace it belonged to at the same time. There is no trash and no undo.
+
+You must own the item to delete it, and you need the delete permission for that item's type; a user who holds the permission but does not own the item is still refused. The permissions are type-specific:
+
+| Catalog item | Permission required |
+| --- | --- |
+| Design | **Delete a design** |
+| WASM filter | **Delete WASM Filter** |
+| View | **Delete View** |
+
+The **Delete** action is disabled when your role does not carry the permission for that item's type. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold each of them by default.
+
+The table view of [My Designs](https://cloud.layer5.io/catalog/content/my-designs) also supports deleting several items at once: select rows with their checkboxes and use the bulk **Delete** action. Each selected item is deleted independently, so a failure on one does not stop the others - check the list afterwards.
+
+> For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design]({{< ref "kanvas/tasks/designs/deleting-a-design/index.md" >}}).

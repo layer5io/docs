@@ -24,6 +24,12 @@ By default, organizations are **closed**: there is no open registration. A user 
 
 When no default invitation is set, new users who arrive at your organization's registration page are registered as platform users but are **not** automatically added to your organization. They will have no organization membership and no roles until an administrator adds them or they accept an invitation link.
 
+{{< alert type="info" title="Two ways to designate the open signup invitation" >}}
+An organization's open signup invitation can be set in two places: the invitation picker in **Edit Organization**, or the `isDefault` setting on the invitation itself.
+
+The **Edit Organization** selection takes precedence. The `isDefault` marker is used when no selection has been made there, or when the invitation that selection points at no longer exists.
+{{< /alert >}}
+
 {{< alert type="info" title="Roles are not assigned automatically" >}}
 When a user joins an organization via invitation, they receive only the roles explicitly listed on that invitation. If the invitation has no roles configured, the user joins with no role. Use the `roles` field on each invitation to ensure new members receive the correct initial permissions.
 {{< /alert >}}
@@ -79,7 +85,7 @@ After an invitation is created, a notification email is sent only to addresses l
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
 | `name` | A human-readable name used to identify the invitation. |
 | `description` | Additional information about the invitation's purpose, for internal reference. |
-| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation should be designated as the default at a time. |
+| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time — designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
 
 ### Managing existing invitations
 
@@ -98,6 +104,8 @@ From the table you can perform the following management actions on each invitati
 * **Edit Invitation**: Click the pencil icon to open the edit dialog and modify any invitation properties.
 * **Delete Invitation**: Click the trash icon to permanently remove the invitation. This action cannot be undone.
 
+If another administrator deletes an invitation while your edit dialog is open, saving reports that the invitation was not found rather than reporting success. Close the dialog and reload the invitations table to see the current list. Whenever an edit cannot be saved, the dialog reports the specific reason it was refused.
+
 ### Tracking who has accepted an invitation
 
 The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit — for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
@@ -115,6 +123,26 @@ When a user clicks an acceptance link and is logged in, the system performs the 
 5. **Adds the user to teams** — the user is added to all teams configured on the invitation.
 
 Role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
+
+### How the open signup invitation is applied at sign-in
+
+The open signup invitation is not limited to first-time registration. It is applied whenever someone signs in through your organization's own address, such as its custom domain, on every sign-in method that address offers, including email and password as well as social sign-in. Someone who already has a Layer5 Cloud account and has never been a member of your organization becomes a member on that sign-in, with the roles and teams the invitation configures.
+
+It is applied only to people who are not already members, which has two consequences worth knowing:
+
+- **Roles and teams are never re-applied to an existing member.** If you remove a role or a team from someone who joined this way, signing in again does not restore it.
+- **Each person is counted once.** Repeated sign-ins by the same person do not increase the invitation's acceptance count or add them to the organization a second time.
+
+{{< alert type="warning" title="When open signup adds nobody" >}}
+A person can sign in successfully and still not join your organization. The open signup invitation is applied only when all of the following hold:
+
+- Its status is `enabled`.
+- Its expiration date has not passed.
+- Its quota has not been reached.
+- The person's email address matches its `emails` list. An empty list matches everyone.
+
+When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
+{{< /alert >}}
 
 ### Use cases and examples
 

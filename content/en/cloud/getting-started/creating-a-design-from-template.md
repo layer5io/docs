@@ -2,6 +2,8 @@
 title: Creating a Design from Meshery Catalog Templates
 description: With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog. 
 weight: 2
+aliases:
+  - /cloud/getting-started/creating-a-design-from-templete.md/
 ---
 
 [Meshery Catalog](https://cloud.layer5.io/catalog) functions much like a cloud marketplace, providing a user-friendly interface for browsing, discovering, and sharing configurations and patterns for cloud native infrastructure. With Meshery Catalog, you can easily find,clone and deploy Kubernetes-based infrastructure and tools, making it easy to streamline your cloud native development and operations processes.

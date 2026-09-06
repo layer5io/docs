@@ -55,6 +55,10 @@ Below the top-level organization, you can add as many teams as you want - at the
 If you are the current team owner, you can’t remove yourself from the team until you transfer ownership to another team administrator.
 {{< /alert >}}
 
+{{< alert type="info" title="Removing a Member from the Organization" >}}
+Removing a member from an organization also ends their membership in that organization's teams, and the permissions those team memberships granted. See [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
+{{< /alert >}}
+
 ## Delete a Team
 
 Deleting a team permanently removes the team and its memberships from the organization. This action dissolves the team but does not delete user accounts or associated resources.

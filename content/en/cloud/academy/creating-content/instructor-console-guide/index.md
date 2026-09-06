@@ -37,7 +37,7 @@ This tool walks you through three quick steps to create your content's boilerpla
 
 2. **Content Details**: Next, you'll refine additional properties for the content.
 
-> Need help understanding these properties? [Learn more]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#2-structure-your-learning-path" >}}).
+> Need help understanding these properties? [Learn more]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#3-structure-your-content" >}}).
 
 3. **Copy Template**: Finally, the Creation Tool presents you with a **"Generated Front Matter & Setup Guide"**. You'll copy this YAML configuration and place it at the top of the corresponding `_index.md` file in your content repository.
 
@@ -100,7 +100,7 @@ This widget provides a quick inventory of your academy's content:
 {{< alert type="info" title="Content Versioning and Release Process" >}}
 If you've recently published new content but don't see the version number updated here, it is likely due to the platform's two-stage release process. Your updates become fully live only after both your content repository's GitHub Release is created and the subsequent Layer5 Cloud release is deployed. 
 
-For a complete walkthrough of this workflow, see the [Publishing Your Content Guide]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#5-publishing-your-learning-path" >}}).
+For a complete walkthrough of this workflow, see the [Publishing Your Content Guide]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#6-publishing-your-content" >}}).
 {{< /alert >}}
 
 ### Learner Registration

@@ -146,6 +146,19 @@ It requires you to authorize the Meshery GitHub App, which then allows you to br
 </details>
 
 <details>
+  <summary>Can I import a design from GitLab or Bitbucket?</summary>
+
+Not as a repository connection. GitHub is the only source-code host Meshery integrates with directly: it is the only repository connection kind the platform defines, and the import form itself offers just two upload methods, **File Upload** and **URL Import**.
+
+You can still bring in a design that lives in GitLab or Bitbucket, by either route:
+
+- **URL Import** - give the import form a direct URL to the raw file. It must serve the file body itself, not a web page that renders it, and it must be reachable from the public internet.
+- **File Upload** - download the file from your repository first, then upload it. This is the route to use for a self-hosted or otherwise private GitLab or Bitbucket server, which Meshery cannot reach.
+
+What you do not get on either route is the persistent, repository-wide connection the GitHub integration provides - browsing repositories from the Meshery UI, and the GitOps workflow that posts visual snapshots of design changes onto pull requests.
+</details>
+
+<details>
   <summary>Is there a file size limit for imported designs?</summary>
   
 There is no strict limit on the file size itself (e.g., in MB). However, there are limits on the number of **components** a design can contain, which is determined by your current subscription plan. Free accounts are limited to 100 components.

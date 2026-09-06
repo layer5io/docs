@@ -26,3 +26,9 @@ Operator supports connecting to Kubernetes pods via the following methods.
 
 - [Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
 - [Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}): Learn how to establish an interactive shell session with your containers.
+
+## Working in Operator Mode
+
+- [Views]({{< ref "kanvas/operator/views/index.md" >}}): Save, open, share and export named perspectives of your clusters.
+- [Instance Details]({{< ref "kanvas/operator/resource-details/index.md" >}}): Inspect the live state, metrics and events of any discovered resource.
+- [Performance Testing]({{< ref "kanvas/operator/performance-testing/index.md" >}}): Generate load against a Service or Ingress using a saved performance profile.
