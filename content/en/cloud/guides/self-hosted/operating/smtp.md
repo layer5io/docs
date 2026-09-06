@@ -16,6 +16,20 @@ This guide explains how to diagnose email sending issues in Layer5 Cloud deploym
 
 Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.
 
+{{< alert title="Which mail server is this guide about?" type="info" >}}
+This guide covers the **deployment-wide** mail server - the one configured by
+the four `SMTP_*` values, which carries mail for every organization by default,
+including sign-up verification and password-recovery codes.
+
+An individual organization can instead register **its own** outbound mail
+server, on the **Email** tab of Edit Organization. Where one is configured and
+delivering, mail for that organization's members leaves through it and from its
+own address rather than through the server described here - so when you are
+diagnosing mail for one organization, check that tab before reaching for the
+`SMTP_*` values. See
+[Configuring your own mail server]({{< ref "cloud/guides/organizations/org-management/_index.md" >}}#configuring-your-own-mail-server).
+{{< /alert >}}
+
 ## Debug Log Levels
 
 To enable email debugging, set the `LOG_LEVEL` environment variable to `5` (Debug) or `6` (Trace):
@@ -121,10 +135,12 @@ curl -X POST "https://cloud.layer5.io/api/system/email/test" \
 ```
 
 **Expected Response (Error - Email Configuration):**
-```json
-{
-  "error": "Email configuration validation failed: SMTP authentication failed"
-}
+
+This path answers **plain text**, not JSON - it is written with `http.Error`,
+so there is no `{"error": ...}` envelope to parse:
+
+```text
+Email configuration validation failed: SMTP authentication was refused by the mail server
 ```
 
 ### 3. Required Environment Variables
@@ -200,7 +216,12 @@ Flow emails (registration, password recovery, etc.) use a separate logging mecha
 
 ### 2. Authentication Failures
 
-**Issue:** `SMTP authentication failed for user 'sender@domain.com'`
+**Issue:** `SMTP authentication was refused by the mail server`
+
+The refused username and the mail server endpoint are deliberately **not** in
+that message - an SMTP username is an email address, so both are written to the
+log instead, as `authenticating as <username> at <host:port>`. Read the server
+log rather than the response when you need to know which identity was refused.
 
 **Solution:**
 - Verify SMTP username and password are correct
@@ -224,6 +245,12 @@ Flow emails (registration, password recovery, etc.) use a separate logging mecha
 - Verify email addresses are valid and properly formatted
 - Check for empty recipient lists
 - Validate email addresses contain `@` symbol
+- Check for a carriage return or line feed inside an address. Those are refused
+  rather than cleaned: a line break in a recipient or `Cc` value would end the
+  header and start a new one, so an address carrying one is rejected outright.
+  Subject lines are treated differently - a line break there is collapsed to a
+  space rather than refused, which is why a delivered subject can be a single
+  trimmed line where its template spanned several.
 
 ### 5. Network Connectivity Issues
 
@@ -247,11 +274,11 @@ INFO Development mode - Email details recipients=user@example.com subject="Test 
 | Error Code | Description | Common Causes |
 |------------|-------------|---------------|
 | meshery_cloud-1092 | Failed to send email | Network issues, SMTP server down |
-| meshery_cloud-1144 | SMTP authentication failed | Invalid credentials |
+| meshery_cloud-1144 | SMTP authentication was refused by the mail server | Invalid credentials. The refused username and endpoint reach the log only, never the response |
 | meshery_cloud-1145 | SMTP send mail error | Server rejection, quota exceeded |
 | meshery_cloud-1146 | SMTP configuration error | Missing environment variables |
 | meshery_cloud-1147 | Email template missing | Template files not found |
-| meshery_cloud-1148 | Email recipient validation failed | Invalid email addresses |
+| meshery_cloud-1148 | Email recipient validation failed | Invalid email addresses, including any address containing a carriage return or line feed - those are refused outright, because a line break in a recipient would split the header block |
 
 ## Monitoring and Alerting
 
