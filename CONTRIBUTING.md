@@ -26,10 +26,10 @@ Every rendered documentation page exposes a **View as markdown** link. The link
 targets the page's `llms.txt` output, which contains the page title, description,
 and rendered content without the site's navigation, sidebar, footer, or styling.
 
-This has been achieve by using Hugo Module for llms.txt and llms-full.txt 
-### References
-- (Module post)[https://discourse.gohugo.io/t/hugo-module-for-llms-txt-and-llms-full-txt/56990]
-- (Github)[https://github.com/gethugothemes/hugo-modules/tree/master/llms-txt]
+This has been achieved by using the Hugo Module for llms.txt and llms-full.txt.
+## References
+- [Module post](https://discourse.gohugo.io/t/hugo-module-for-llms-txt-and-llms-full-txt/56990)
+- [GitHub](https://github.com/gethugothemes/hugo-modules/tree/master/llms-txt)
 
 ## Prerequisites
 
