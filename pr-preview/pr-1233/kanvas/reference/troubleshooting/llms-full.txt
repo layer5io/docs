@@ -1,13 +1,13 @@
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Asking for help from within Kanvas&#34; &gt;}}
-Kanvas&#39;s **Get Help** action opens the Help and Support form. It requires a remote provider and a resolved signed-in identity - see [Help and Support](/kanvas/reference/help-and-support) if the form does not open or a submission is rejected.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Asking for help from within Kanvas" >}}
+Kanvas's **Get Help** action opens the Help and Support form. It requires a remote provider and a resolved signed-in identity - see [Help and Support](/kanvas/reference/help-and-support) if the form does not open or a submission is rejected.
+{{< /alert >}}
 
 ## Meshery Extension
 
 ### Designer Mode
 
-Upon Meshery extension&#39;s first load, a GET request initializes the Kanvas plugin. Errors are classified into two types: plugin not found or built on a different version. Kanvas loads, and Designer is functional if no errors occur.
+Upon Meshery extension's first load, a GET request initializes the Kanvas plugin. Errors are classified into two types: plugin not found or built on a different version. Kanvas loads, and Designer is functional if no errors occur.
 
 ### Operator Mode
 

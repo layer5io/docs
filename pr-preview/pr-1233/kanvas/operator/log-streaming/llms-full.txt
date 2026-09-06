@@ -1,5 +1,5 @@
 
-Efficient troubleshooting requires immediate visibility into your application&#39;s behavior. The **Log Streamer** in Kanvas allows you to live-tail logs from your Kubernetes pods and containers directly within the visual topology. Unlike static log files, this feature provides a real-time, multiplexed view of your infrastructure&#39;s activities, enabling you to debug interactions between services without leaving the Kanvas interface.
+Efficient troubleshooting requires immediate visibility into your application's behavior. The **Log Streamer** in Kanvas allows you to live-tail logs from your Kubernetes pods and containers directly within the visual topology. Unlike static log files, this feature provides a real-time, multiplexed view of your infrastructure's activities, enabling you to debug interactions between services without leaving the Kanvas interface.
 
 ## Overview
 
@@ -35,7 +35,7 @@ Once the stream is active, the Log Streamer panel will display the output.
 ### 1. Troubleshooting CrashLoopBackOff
 
 **Scenario:** A newly deployed pod is failing to start, entering a `CrashLoopBackOff` state.
-**Action:** Select the failing pod in Kanvas. The Log Streamer immediately captures the container&#39;s startup output.
+**Action:** Select the failing pod in Kanvas. The Log Streamer immediately captures the container's startup output.
 **Benefit:** You can instantly see the specific runtime error or missing environment variable causing the crash without manually running `kubectl logs -f` commands in a separate terminal window.
 
 ### 2. Correlating Microservice Interactions
@@ -60,5 +60,5 @@ The Log Streamer utilizes a robust architecture where the **Meshery Operator** s
 
 ### See Also
 
-* **[Interactive Terminal]({{&lt; ref &#34;kanvas/operator/interactive-terminal/index.md&#34; &gt;}}):** Learn how to establish an interactive shell session with your containers.
-* **[Performance Management]({{&lt; ref &#34;kanvas/advanced/performance/index.md&#34; &gt;}}):** Run ad-hoc performance tests alongside your log monitoring.
+* **[Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}):** Learn how to establish an interactive shell session with your containers.
+* **[Performance Management]({{< ref "kanvas/advanced/performance/index.md" >}}):** Run ad-hoc performance tests alongside your log monitoring.

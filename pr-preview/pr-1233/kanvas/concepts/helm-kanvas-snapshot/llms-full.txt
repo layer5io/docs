@@ -1,4 +1,4 @@
-&lt;img style=&#34;text-align: left; position:relative; display:inline; height: 32px; width: 32px;&#34; src=&#34;images/helm-chart-color.svg&#34; /&gt; The **Kanvas Snapshot Helm Plugin** allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.
+<img style="text-align: left; position:relative; display:inline; height: 32px; width: 32px;" src="images/helm-chart-color.svg" /> The **Kanvas Snapshot Helm Plugin** allows users to generate a visual snapshot of their Helm charts directly from the command line. It simplifies the process of creating Meshery Snapshots, providing a visual representation of packaged Helm charts. This plugin integrates with Meshery Cloud and GitHub Actions to automate the workflow of snapshot creation, which is especially useful for Helm users who need to quickly visualize their chart configurations.
 
 Helm charts can be complex, especially when custom configurations are applied via `values.yaml` files. This Meshery extension bridges the gap between Helm chart configurations and their visual representation by converting Helm charts into **Kanvas Snapshots**. These snapshots can be received either via email or as a URL displayed directly in the terminal.
 
@@ -22,20 +22,20 @@ To install the Kanvas Snapshot Helm Plugin, use the following steps:
 
 1. Run the following command to install the Helm Kanvas Snapshot plugin:
 
-&lt;pre class=&#34;codeblock-pre&#34;&gt;
-  &lt;div class=&#34;codeblock&#34;&gt;
-     &lt;div class=&#34;clipboardjs&#34;&gt; helm plugin install https://github.com/meshery/helm-kanvas-snapshot &lt;/div&gt;
-   &lt;/div&gt;
-&lt;/pre&gt;
+<pre class="codeblock-pre">
+  <div class="codeblock">
+     <div class="clipboardjs"> helm plugin install https://github.com/meshery/helm-kanvas-snapshot </div>
+   </div>
+</pre>
 
 3. Verify the installation by running:
 
 
-&lt;pre class=&#34;codeblock-pre&#34;&gt;
-  &lt;div class=&#34;codeblock&#34;&gt;
-     &lt;div class=&#34;clipboardjs&#34;&gt;helm plugin list&lt;/div&gt;
-   &lt;/div&gt;
-&lt;/pre&gt;
+<pre class="codeblock-pre">
+  <div class="codeblock">
+     <div class="clipboardjs">helm plugin list</div>
+   </div>
+</pre>
 
    You should see the Kanvas Snapshot listed as `helm-kanvas-snapshot`.
 
@@ -46,11 +46,11 @@ To install the Kanvas Snapshot Helm Plugin, use the following steps:
 Once the plugin is installed, you can generate a snapshot using either a packaged or unpackaged Helm chart.
 
 
-&lt;pre class=&#34;codeblock-pre&#34;&gt;
-  &lt;div class=&#34;codeblock&#34;&gt;
-     &lt;div class=&#34;clipboardjs&#34;&gt;helm snapshot --f &amp;lt;chart-URI&amp;gt; [--name &amp;lt;snapshot-name&amp;gt;] [--email &amp;lt;email&amp;gt;]&lt;/div&gt;
-   &lt;/div&gt;
-&lt;/pre&gt;
+<pre class="codeblock-pre">
+  <div class="codeblock">
+     <div class="clipboardjs">helm snapshot --f &lt;chart-URI&gt; [--name &lt;snapshot-name&gt;] [--email &lt;email&gt;]</div>
+   </div>
+</pre>
 
 - **`-f`**, **`--file`**: (required) path or URL to the Helm chart (required).
 - **`--name`**: (optional) name for the snapshot. If not provided, a name will be auto-generated based on the chart name.
@@ -60,8 +60,8 @@ Once the plugin is installed, you can generate a snapshot using either a package
 
 To generate a snapshot for a Helm chart located at `https://meshery.github.io/meshery.io/charts/meshery-v1.0.20.tgz`, you can use:
 
-&lt;pre class=&#34;codeblock-pre&#34;&gt;
-  &lt;div class=&#34;codeblock&#34;&gt;
-     &lt;div class=&#34;clipboardjs&#34;&gt;helm snapshot -f https://meshery.github.io/meshery.io/charts/meshery-v1.0.20.tgz --name meshery-chart&lt;/div&gt;
-   &lt;/div&gt;
-&lt;/pre&gt;
+<pre class="codeblock-pre">
+  <div class="codeblock">
+     <div class="clipboardjs">helm snapshot -f https://meshery.github.io/meshery.io/charts/meshery-v1.0.20.tgz --name meshery-chart</div>
+   </div>
+</pre>

@@ -1,23 +1,23 @@
 
-&lt;img style=&#34;height: 32px; width: 32px;&#34; src=&#34;images/kanvas-icon-color.svg&#34; /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.
+<img style="height: 32px; width: 32px;" src="images/kanvas-icon-color.svg" /> Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.
 
-&lt;details&gt;
-&lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
+<details>
+<summary>How the SnapShot service works</summary>
 
-&lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
+<h3>Functional Sequence Diagram</h3>
 
-&lt;img src=&#34;images/kanvas-snapshot.png&#34; /&gt;
-&lt;/details&gt;
+<img src="images/kanvas-snapshot.png" />
+</details>
 
-&lt;h3&gt;Installing Kanvas Snapshot: Github Pull Request&lt;/h3&gt;
+<h3>Installing Kanvas Snapshot: Github Pull Request</h3>
 
 Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.
-&lt;ul&gt;
-  &lt;li&gt;Open Layer5 Cloud.&lt;/li&gt;
-  &lt;li&gt;Navigate to your Spaces --&gt; Integrations.&lt;/li&gt;
-  &lt;li&gt;Open your &#34;GitHub&#34; connection(s).&lt;/li&gt;
-  &lt;li&gt;Configure the integration to snapshot your specific infrastructure file.&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>Open Layer5 Cloud.</li>
+  <li>Navigate to your Spaces --> Integrations.</li>
+  <li>Open your "GitHub" connection(s).</li>
+  <li>Configure the integration to snapshot your specific infrastructure file.</li>
+</ul>
 
 ## Configurating the SnapShot Service
 
@@ -33,7 +33,7 @@ on: # rebuild any PRs and main branch changes
     branches:
       - main
       - master
-      - &#34;releases/*&#34;
+      - "releases/*"
 
 jobs:
   test: # make sure the action works on a clean machine without building
@@ -41,8 +41,8 @@ jobs:
     steps:
       - name: Set PR number # To comment the final status on the Pull-request opened in any repository
         run: |
-          export pull_number=$(jq --raw-output .pull_request.number &#34;$GITHUB_EVENT_PATH&#34;)
-          echo &#34;PULL_NO=$pull_number&#34; &gt;&gt; $GITHUB_ENV
+          export pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          echo "PULL_NO=$pull_number" >> $GITHUB_ENV
       - uses: actions/checkout@v3 # the repository where your infrastructure is located
       - uses: actions/checkout@v3 #this step would go and would be no longer needed to be written
         with:
@@ -51,24 +51,24 @@ jobs:
       - id: test_result
         uses: layer5labs/MeshMap-Snapshot@v0.0.4
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }} # github&#39;s personal access token example: &#34;ghp_....&#34;
+          githubToken: ${{ secrets.GITHUB_TOKEN }} # github's personal access token example: "ghp_...."
           providerToken: ${{ secrets.PROVIDER_TOKEN }} # Meshery Cloud Authentication token, signin to meshery-cloud to get one, example: ey.....
           prNumber: ${{ env.PULL_NO }} # auto-filled from the above step
-          application_type: &#34;Kubernetes Manifest&#34; # your application type, could be any of three: &#34;Kubernetes Manifest&#34;, &#34;Docker Compose&#34;, &#34;Helm Chart&#34;
-          filePath: &#34;action/__tests__/manifest-test&#34; # relative file-path from the root directory in the github-runner env, you might require to checkout the repository as described in step 2
+          application_type: "Kubernetes Manifest" # your application type, could be any of three: "Kubernetes Manifest", "Docker Compose", "Helm Chart"
+          filePath: "action/__tests__/manifest-test" # relative file-path from the root directory in the github-runner env, you might require to checkout the repository as described in step 2
 ```
 
 ### When Infrastructure is identified via URL
 
 ```yaml
-name: &#34;Kanvas Snapshot (from remote URL)&#34;
+name: "Kanvas Snapshot (from remote URL)"
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
     branches:
       - main
       - master
-      - &#34;releases/*&#34;
+      - "releases/*"
 
 jobs:
   test: # make sure the action works on a clean machine without building
@@ -76,8 +76,8 @@ jobs:
     steps:
       - name: Set PR number # To comment the final status on the Pull-request opened in any repository
         run: |
-          export pull_number=$(jq --raw-output .pull_request.number &#34;$GITHUB_EVENT_PATH&#34;)
-          echo &#34;PULL_NO=$pull_number&#34; &gt;&gt; $GITHUB_ENV
+          export pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          echo "PULL_NO=$pull_number" >> $GITHUB_ENV
       - uses: actions/checkout@v6 #this step would go and would be no longer needed to be written
         with:
           path: action
@@ -85,45 +85,45 @@ jobs:
       - id: test_result
         uses: layer5labs/Kanvas-Snapshot@v0.2.44
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }} # github&#39;s personal access token example: &#34;ghp_....&#34;
+          githubToken: ${{ secrets.GITHUB_TOKEN }} # github's personal access token example: "ghp_...."
           providerToken: ${{ secrets.PROVIDER_TOKEN }} # Meshery Cloud Authentication token, signin to meshery-cloud to get one, example: ey.....
           prNumber: ${{ env.PULL_NO }} # auto-filled from the above step
-          application_type: &#34;Helm Chart&#34; # your application type, could be any of three: &#34;Kubernetes Manifest&#34;, &#34;Docker Compose&#34;, &#34;Helm Chart&#34;
-          application_url: &#34;https://github.com/meshery/meshery.io/raw/master/charts/meshery-v0.6.88.tgz&#34;
+          application_type: "Helm Chart" # your application type, could be any of three: "Kubernetes Manifest", "Docker Compose", "Helm Chart"
+          application_url: "https://github.com/meshery/meshery.io/raw/master/charts/meshery-v0.6.88.tgz"
 ```
 
 #### FileSystem Approach Notes
 
-The filesystem-approach asks for your relative file-path and automatically merges all the yaml files together to bundle up into one. So you might like to give the root directory where all the yamls are located. It doesn&#39;t move recursevely in internal folders, so only the first level yaml files are checked.
+The filesystem-approach asks for your relative file-path and automatically merges all the yaml files together to bundle up into one. So you might like to give the root directory where all the yamls are located. It doesn't move recursevely in internal folders, so only the first level yaml files are checked.
 
 ### List of input variables supported
 
 ```yaml
 designId: # id of input  #deprecated
-  description: &#34;The design uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662&#34;
+  description: "The design uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662"
   required: false
-  default: &#34;{}&#34;
+  default: "{}"
 applicationId: #deprecated
-  description: &#34;The application uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662&#34;
+  description: "The application uuid, example: 3c116d0a-49ea-4294-addc-d9ab34210662"
   required: false
 githubToken:
-  description: &#34;Github PAT token&#34;
+  description: "Github PAT token"
   required: true
 providerToken:
-  description: &#34;Meshery Authentication Provider Token&#34;
+  description: "Meshery Authentication Provider Token"
   required: true
 prNumber:
-  description: &#34;The Pull request on which comment has to be made&#34;
+  description: "The Pull request on which comment has to be made"
   required: false
   default: 0
 filePath:
-  description: &#34;The relative filepath of the location where the manifests are stored&#34;
+  description: "The relative filepath of the location where the manifests are stored"
   required: false
 application_type:
-  description: &#34;Application upload type, any of the three, Kubernetes Manifest, Docker Compose, Helm Chart&#34;
+  description: "Application upload type, any of the three, Kubernetes Manifest, Docker Compose, Helm Chart"
   required: true
 application_url:
-  description: &#34;Application&#39;s source url where the manifests or data is stored&#34;
+  description: "Application's source url where the manifests or data is stored"
   required: false
 ```
 
@@ -157,7 +157,7 @@ on:
 Specific events that are relevant to the Kanvas Snapshot Action are:
 
 - **push:** This event is triggered when code is pushed to the repository. It is the most common event used to trigger workflows.
-- **pull_request:** This event is triggered when a pull request is opened or updated. It is often used to trigger workflows that run tests or linters on the pull request&#39;s code.
+- **pull_request:** This event is triggered when a pull request is opened or updated. It is often used to trigger workflows that run tests or linters on the pull request's code.
 
 - **workflow_dispatch:** This event is triggered when a workflow is manually triggered. It can be used to trigger workflows on demand, such as for publishing a new release or addressing critical bugs.
 
@@ -186,7 +186,7 @@ After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/
 
 ```
  - id: test_result
-        uses: layer5labs/Kanvas-Snapshot@v0.2.44 # &lt;-- Update the version to latest from the Kanvas-Snapshot release page
+        uses: layer5labs/Kanvas-Snapshot@v0.2.44 # <-- Update the version to latest from the Kanvas-Snapshot release page
         with:
         ...
 ```

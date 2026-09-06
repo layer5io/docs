@@ -5,7 +5,7 @@ Design Embedding enables you to export a design in a format that can be seamless
 
 To embed your Kanvas design, follow these steps:
 
-1. **Access Embed Option**: Within the [Kanvas Designer](https://kanvas.new/), select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &#34;Embed&#34; option.
+1. **Access Embed Option**: Within the [Kanvas Designer](https://kanvas.new/), select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the "Embed" option.
 
    ![Embed Designs from Kanvas](images/embed-designs.gif)
 
@@ -16,8 +16,8 @@ To embed your Kanvas design, follow these steps:
    The embed code for static site:
 
    ```html
-   &lt;div id=&#34;embedded-design-embedding-example&#34;&gt;&lt;/div&gt;
-   &lt;script src=&#34;./embedded-design-embedding-example.js&#34; type=&#34;module&#34;&gt;&lt;/script&gt;
+   <div id="embedded-design-embedding-example"></div>
+   <script src="./embedded-design-embedding-example.js" type="module"></script>
    ```
 
    Make sure the `src` attribute in the script tag points to the location of the downloaded embedding script on your local filesystem or server.
@@ -28,7 +28,7 @@ You can customize the styles for the embedded design in two ways: globally via C
 
 #### Global Styling (via CSS Classes)
 
-For advanced global styling, you can override the default CSS rules in your site&#39;s stylesheet. This will affect all embedded designs on your site. The main classes are:
+For advanced global styling, you can override the default CSS rules in your site's stylesheet. This will affect all embedded designs on your site. The main classes are:
 
 - `.meshery-embed-container`: The main container for the embedded design. You can target its `.full` or `.half` variants for specific sizing adjustments.
 - `.cy-container`: The canvas element within the container where the design itself is rendered.
@@ -36,13 +36,13 @@ For advanced global styling, you can override the default CSS rules in your site
 Here is an example of how you could override these classes:
 
 ```html
-&lt;style&gt;
+<style>
   /* Make all embed containers have a different border and background */
   .meshery-embed-container {
     border: 2px solid #00B39F;
     background-color: #f5f5f5;
   }
-&lt;/style&gt;
+</style>
 ```
 
 #### Instance-specific Styling (via `style` Parameter)
@@ -50,11 +50,11 @@ Here is an example of how you could override these classes:
 For styling a single instance, the recommended method is to use the `style` parameter directly in the shortcode. This provides maximum control and will override any default styles or global CSS.
 
 ```html
-{{&lt;/* meshery-design-embed
-    src=&#34;...&#34;
-    id=&#34;...&#34;
-    style=&#34;width: 60%; height: 28rem; border-radius: 1.5rem;&#34;
-*/&gt;}}
+{{</* meshery-design-embed
+    src="..."
+    id="..."
+    style="width: 60%; height: 28rem; border-radius: 1.5rem;"
+*/>}}
 ```
 
 ## Embedding in React Projects
@@ -66,41 +66,41 @@ For styling a single instance, the recommended method is to use the `style` para
 2. **Incorporate the Component**: Use the component to seamlessly embed designs within React and its associated frameworks.
 
 ```jsx
-import MesheryDesignEmbed from &#39;@layer5/meshery-design-embed&#39;
+import MesheryDesignEmbed from '@layer5/meshery-design-embed'
 
 function Design() {
   return (
-    &lt;&gt;
-      &lt;div&gt;
-        &lt;MesheryDesignEmbed
-          embedScriptSrc=&#34;embedded-design-embed1.js&#34;  // path to the embed script
-          embedId=&#34;embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644&#34; // id of the embedding
-        /&gt;
-      &lt;/div&gt;
-    &lt;/&gt;
+    <>
+      <div>
+        <MesheryDesignEmbed
+          embedScriptSrc="embedded-design-embed1.js"  // path to the embed script
+          embedId="embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644" // id of the embedding
+        />
+      </div>
+    </>
   );
 }
 ```
 
 Make sure the `embedScriptSrc` attribute in the component points to the location of the downloaded embedding script on your react filesystem.
-Usually the script is located &#34;static&#34; folder
+Usually the script is located "static" folder
 
 ## Embedding with Hugo
 
-To prepare your Hugo site to support design embedding, perform the one-time task of adding the following shortcode definition to your site&#39;s set of supported shortcodes.
+To prepare your Hugo site to support design embedding, perform the one-time task of adding the following shortcode definition to your site's set of supported shortcodes.
 
 ### Shortcode Definition
 
-&lt;details&gt;
-&lt;summary&gt;Click to expand the full Shortcode Definition&lt;/summary&gt;
+<details>
+<summary>Click to expand the full Shortcode Definition</summary>
 
 ```html
-{{ $script := .Get &#34;src&#34; }}
-{{ $id := .Get &#34;id&#34; }}
-{{ $size := .Get &#34;size&#34; | default &#34;full&#34; }}
-{{ $style := .Get &#34;style&#34; }}
+{{ $script := .Get "src" }}
+{{ $id := .Get "id" }}
+{{ $size := .Get "size" | default "full" }}
+{{ $style := .Get "style" }}
 
-&lt;style&gt;
+<style>
 .meshery-embed-container {
   border: 1px solid #eee;
   border-radius: 4px;
@@ -119,27 +119,27 @@ To prepare your Hugo site to support design embedding, perform the one-time task
   width: 100%;
   height: 100%;
 }
-&lt;/style&gt;
+</style>
 
-&lt;div
-    id=&#34;{{ $id }}&#34;
+<div
+    id="{{ $id }}"
     {{- if $style -}}
-        style=&#34;{{ $style | safeCSS }}&#34;
+        style="{{ $style | safeCSS }}"
     {{- else -}}
-        class=&#34;meshery-embed-container {{ $size }}&#34;
+        class="meshery-embed-container {{ $size }}"
     {{- end -}}
-&gt;&lt;/div&gt;
+></div>
 
-&lt;script src=&#34;{{ $script }}&#34; type=&#34;module&#34;&gt;&lt;/script&gt;
+<script src="{{ $script }}" type="module"></script>
 ```
-&lt;/details&gt;
+</details>
 
 ### Shortcode Explanation
 
 - **`src`** (Required): The path to the exported JavaScript file for your design.
 - **`id`** (Required): A unique ID for the embedded design container.
 - **`size`** (Optional): A preset for simple sizing.
-  - Accepts `&#34;full&#34;` (default) or `&#34;half&#34;`.
+  - Accepts `"full"` (default) or `"half"`.
   - This parameter is ignored if `style` is used.
 - **`style`** (Optional): For advanced customization.
   - Allows you to provide any custom CSS inline styles.
@@ -149,7 +149,7 @@ Now that your site has shortcode support for embedding Kanvas designs, you can u
 
 ### Using the Shortcode
 
-To embed a Design in your Hugo pages, use the `meshery-design-embed` shortcode. You will need the design&#39;s exported JavaScript file and its unique ID.
+To embed a Design in your Hugo pages, use the `meshery-design-embed` shortcode. You will need the design's exported JavaScript file and its unique ID.
 
 ### Usage Examples
 
@@ -158,43 +158,43 @@ Place the exported `.js` file in an appropriate folder (e.g., a nearby `images` 
 **Default (full-width) display:**
 
 ```html
-{{&lt;/* meshery-design-embed
-    src=&#34;../path/to/your-design.js&#34;
-    id=&#34;your-unique-design-id-full&#34;
-*/&gt;}}
+{{</* meshery-design-embed
+    src="../path/to/your-design.js"
+    id="your-unique-design-id-full"
+*/>}}
 ```
 
 **Half-width display:**
 
 ```html
-{{&lt;/* meshery-design-embed
-    src=&#34;../path/to/your-design.js&#34;
-    id=&#34;your-unique-design-id-half&#34;
-    size=&#34;half&#34;
-*/&gt;}}
+{{</* meshery-design-embed
+    src="../path/to/your-design.js"
+    id="your-unique-design-id-half"
+    size="half"
+*/>}}
 ```
 
 **Custom styling:**
 
 ```html
-{{&lt;/* meshery-design-embed
-    src=&#34;../path/to/your-design.js&#34;
-    id=&#34;your-unique-design-id-custom&#34;
-    style=&#34;width: 60%; height: 28rem; border-radius: 1.5rem;&#34;
-*/&gt;}}
+{{</* meshery-design-embed
+    src="../path/to/your-design.js"
+    id="your-unique-design-id-custom"
+    style="width: 60%; height: 28rem; border-radius: 1.5rem;"
+*/>}}
 ```
 
 ### Embedded Design Example
 
 When Hugo builds your website, it will process the shortcode and generate the necessary HTML and JavaScript to embed the interactive Kanvas design. 
 
-Here&#39;s an example of how an embedded design appears:
+Here's an example of how an embedded design appears:
 
-&lt;!-- Design Embed Container  --&gt;
+<!-- Design Embed Container  -->
 ```html
-{{&lt;/* meshery-design-embed  
-src=&#34;../export-designs/embedded-design-dapr.js&#34;  
-id=&#34;embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4&#34; */&gt;}}
+{{</* meshery-design-embed  
+src="../export-designs/embedded-design-dapr.js"  
+id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" */>}}
 ```
 
-{{&lt; meshery-design-embed  src=&#34;../export-designs/embedded-design-dapr.js&#34;  id=&#34;embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4&#34; &gt;}}
+{{< meshery-design-embed  src="../export-designs/embedded-design-dapr.js"  id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" >}}

@@ -12,9 +12,9 @@
 - Refactor: Move architecture docs to dedicated file @leecalcote (#4960)
 - Ignore next-env.d.ts to prevent dev/prod flip-flopping @leecalcote (#4958)
 - Fix Pop migration: replace JSONB ? operator with jsonb_exists() @leecalcote (#4957)
-- Add comprehensive test strategy with 16 test plans and 1,275&#43; test cases @leecalcote (#4956)
+- Add comprehensive test strategy with 16 test plans and 1,275+ test cases @leecalcote (#4956)
 - Fix Google OAuth avatar not populated during registration @leecalcote (#4953)
-- fix: pass orgId to useGetWorkspacesQuery to prevent &#39;invalid org id&#39; error @leecalcote (#4955)
+- fix: pass orgId to useGetWorkspacesQuery to prevent 'invalid org id' error @leecalcote (#4955)
 - Fix 3 bugs: Missing names, workspace @leecalcote (#4954)
 - chore: upgrade meshery/schemas to v1.0.3 and meshkit to v1.0.2 @leecalcote (#4951)
 - Cleanup api docs @CodexRaunak (#4944)
@@ -33,8 +33,8 @@
 
 ## ⬆️ Dependencies
 
-&lt;details&gt;
-&lt;summary&gt;7 changes&lt;/summary&gt;
+<details>
+<summary>7 changes</summary>
 
 - chore(deps): bump golang.org/x/net from 0.51.0 to 0.52.0 @dependabot (#4937)
 - chore(deps): bump github.com/ozontech/allure-go/pkg/allure from 0.8.1 to 0.8.2 @dependabot (#4935)
@@ -43,7 +43,7 @@
 - chore(deps): bump github.com/lib/pq from 1.11.2 to 1.12.1 @dependabot (#4934)
 - chore(deps): bump recharts from 3.8.0 to 3.8.1 in /ui @dependabot (#4942)
 - chore(deps): bump xstate from 5.28.0 to 5.30.0 in /ui @dependabot (#4940)
-&lt;/details&gt;
+</details>
 
 ### 👨🏽‍💻 Contributors
 

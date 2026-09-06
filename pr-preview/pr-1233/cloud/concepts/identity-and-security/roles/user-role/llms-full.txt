@@ -1,12 +1,12 @@
 
-{{&lt; cardpane &gt;}}
-{{% card header=&#34;Default User Role&#34; %}}
-&lt;img src=&#34;images/user-role.svg&#34; link=&#34;images/user-role.svg&#34;  width=&#34;100%&#34; alt=&#34;User Role&#34; /&gt;
+{{< cardpane >}}
+{{% card header="Default User Role" %}}
+<img src="images/user-role.svg" link="images/user-role.svg"  width="100%" alt="User Role" />
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}
 
-{{&lt; cardpane &gt;}}
-{{% card header=&#34;## User&#34; %}}
+{{< cardpane >}}
+{{% card header="## User" %}}
 
 **What is the purpose of this role?**
 
@@ -30,7 +30,7 @@
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}

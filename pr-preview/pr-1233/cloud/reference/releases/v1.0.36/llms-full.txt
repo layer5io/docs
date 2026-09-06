@@ -7,7 +7,7 @@
 - fix(wire-format): flip MeshModels JSON tags to canonical camelCase @leecalcote (#5136)
 - fix(wire-format): flip Workspace-resource JSON tags to canonical camelCase @leecalcote (#5129)
 - fix(wire-format): flip User-resource JSON tags to canonical camelCase @leecalcote (#5133)
-- fix(wire-format): flip Collaboration &#43; Academy JSON tags to canonical camelCase @leecalcote (#5134)
+- fix(wire-format): flip Collaboration + Academy JSON tags to canonical camelCase @leecalcote (#5134)
 - fix(wire-format): flip mapping/small-model JSON tags to canonical camelCase @leecalcote (#5135)
 - fix(wire-format): flip MesheryPattern-resource JSON tags to canonical camelCase @leecalcote (#5130)
 - fix(wire-format): flip MesheryResults / PerformanceProfile JSON tags to canonical camelCase @leecalcote (#5131)
@@ -15,7 +15,7 @@
 - fix(wire-format): flip Role-resource JSON tags to canonical camelCase @leecalcote (#5127)
 - fix(wire-format): flip Event-resource JSON tags to canonical camelCase @leecalcote (#5126)
 - fix(wire-format): use camelCase sort order strings throughout UI @leecalcote (#5122)
-- chore(claude): GitHub MCP server &#43; environment &amp; cross-repo guidance in AGENTS.md @leecalcote (#5125)
+- chore(claude): GitHub MCP server + environment & cross-repo guidance in AGENTS.md @leecalcote (#5125)
 
 ### 👨🏽‍💻 Contributors
 

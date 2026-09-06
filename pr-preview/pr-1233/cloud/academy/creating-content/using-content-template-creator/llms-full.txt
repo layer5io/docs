@@ -5,32 +5,32 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 ## Getting Started
 ![Academy Content Template Creator](images/template-creator.png)
-1. Access the Creator: Click on the &#34;Create New Content&#34; card in your Academy dashboard
+1. Access the Creator: Click on the "Create New Content" card in your Academy dashboard
 2. Create Your Content: The wizard will guide you through **5 essential steps** to create your content template
 
-Since it&#39;s straightforward, let&#39;s walk through a practical example to demonstrate the process.
+Since it's straightforward, let's walk through a practical example to demonstrate the process.
 
-## Example: Creating &#34;Meshery Contributors Certification&#34;
+## Example: Creating "Meshery Contributors Certification"
 
 This example demonstrates how to use the **Academy Content Template Creator** to build a **certification** program for **Meshery contributors**. Each step shows what information to enter, followed by specific example values.
 
 ### Step 1: Basic Information
 ![Step 1: Basic Information](images/template-creator-step1.png)
-- Type: Choose &#34;Certification&#34; from Learning Path, Challenge, or Certification
-- Title: &#34;Meshery Contributors Certification&#34;
-- Description: &#34;A comprehensive certification program for developers looking to become active contributors to Meshery&#34;
+- Type: Choose "Certification" from Learning Path, Challenge, or Certification
+- Title: "Meshery Contributors Certification"
+- Description: "A comprehensive certification program for developers looking to become active contributors to Meshery"
 
 ### Step 2: Content Details
 ![Step 2: Content Details](images/template-creator-step2.png)
-&lt;!-- - Level: Intermediate (assumes basic cloud-native knowledge) --&gt;
-- Categories: &#34;open-source, cloud-native&#34;
-- Add Tags: &#34;meshery&#34;, &#34;kubernetes&#34;, &#34;golang&#34;, &#34;contribution&#34;, &#34;open-source&#34;
-- Banner Image: &#34;images/meshery-contributors-banner.svg&#34;
+<!-- - Level: Intermediate (assumes basic cloud-native knowledge) -->
+- Categories: "open-source, cloud-native"
+- Add Tags: "meshery", "kubernetes", "golang", "contribution", "open-source"
+- Banner Image: "images/meshery-contributors-banner.svg"
 
 ### Step 3: Content Access
 ![Step 3: Content Access](images/template-creator-step3.png)
-- Workspace: &#34;Meshery Academy&#34;
-- Team: &#34;Contributors Program&#34;
+- Workspace: "Meshery Academy"
+- Team: "Contributors Program"
 - Access Status: Enabled
 - Content Access End Date: Leave blank for permanent access (Meshery always welcomes contributors)
 
@@ -72,17 +72,17 @@ The Recognition step defines the badge or certificate awarded upon completion. Y
 - **Create New Recognition**: Design a custom badge with an image URL
 
 **For our example:**
-- Create a &#34;Meshery Contributor&#34; badge with the Meshery logo
+- Create a "Meshery Contributor" badge with the Meshery logo
 
 
 ### Step 5: Generate Template
 ![Step 5: Generate Template](images/template-creator-step5.png)
 
-After clicking &#34;Continue&#34; in Step 4, a success notification appears in the bottom-right corner confirming your template has been created successfully.
+After clicking "Continue" in Step 4, a success notification appears in the bottom-right corner confirming your template has been created successfully.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Navigation Between Steps&#34; &gt;}}
+{{< alert type="info" title="Navigation Between Steps" >}}
 You can navigate back to any previous step to make modifications. When you return to earlier steps and make changes, your entries in the subsequent steps will remain intact.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 
 **Generated Template Output for Meshery Contributors Certification:**
@@ -91,28 +91,28 @@ This template provides the YAML front matter metadata for static site generators
 
 ```yaml
 ---
-type: &#34;certification&#34;
-title: &#34;Meshery Contributors Certification&#34;
-description: &#34;A comprehensive certification program for developers looking to become active contributors to Meshery&#34;
+type: "certification"
+title: "Meshery Contributors Certification"
+description: "A comprehensive certification program for developers looking to become active contributors to Meshery"
 weight: 1
-banner: &#34;images/meshery-contributors-banner.svg&#34;
-id: &#34;unique-content-id&#34;
-level: &#34;beginner&#34;
+banner: "images/meshery-contributors-banner.svg"
+id: "unique-content-id"
+level: "beginner"
 ---
 
 Provide a brief summary of what learners will gain.
-&lt;!-- Add your Academy content here --&gt;
+<!-- Add your Academy content here -->
 ```
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Important Reference IDs&#34; &gt;}}
+{{< alert type="info" title="Important Reference IDs" >}}
 Make note of two key identifiers for your content files:
 - **Content ID**: Unique identifier for this specific content
-- **Organization ID**: Your organization&#39;s identifier (remains constant)
-{{&lt; /alert &gt;}}
+- **Organization ID**: Your organization's identifier (remains constant)
+{{< /alert >}}
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Content ID Updates&#34; &gt;}}
-If you click &#34;Back&#34; and return to Step 5, a new Content ID will be generated. Simply use the new ID and discard the previous one.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Content ID Updates" >}}
+If you click "Back" and return to Step 5, a new Content ID will be generated. Simply use the new ID and discard the previous one.
+{{< /alert >}}
 
 ### Next Steps
 
@@ -129,7 +129,7 @@ After generating our template:
 Navigate to **Identity → Invitations** to find your automatically created invitation.
 ![](images/auto-invitation.png)
 
-The first column labeled &#34;INVITATION&#34; contains a shareable link that you can copy.
+The first column labeled "INVITATION" contains a shareable link that you can copy.
 
 ## What Can the Invitation Link Do for You?
 
@@ -140,7 +140,7 @@ The auto-generated invitation link is a powerful tool that helps instructors eff
 Your invitation link provides targeted access management:
 
 - **Specific Team Access**: Only members of your selected teams can access the content through this link
-- **Automatic Role Assignment**: Users who accept the invitation automatically receive the &#34;Academy Learner&#34; role
+- **Automatic Role Assignment**: Users who accept the invitation automatically receive the "Academy Learner" role
 - **Organization Boundary Protection**: Only users within your [organization](https://docs.layer5.io/cloud/concepts/identity-and-security/organizations/) can use this invitation
 
 ### 2. Flexible Sharing and Distribution
@@ -164,14 +164,14 @@ Click the pencil icon to access the invitation customization form.
 The invitation form contains eight properties. Three are automatically generated by the system for convenience, which you can modify according to your needs:
 
 **Auto-Generated Properties:**
-1. **Name**: Automatically formatted as &#34;Academy Invitation for [your-content-name]&#34;
-   *Example: &#34;Academy Invitation for meshery-contributors-certification&#34; (lowercase with dash)*
-2. **Description**: &#34;Invitation to join organization [organization-name] for academy curricula [course-name]&#34;
-3. **Roles**: Defaults to &#34;Academy Learner&#34; - [Learn more about Academy roles](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/academy-roles/)
+1. **Name**: Automatically formatted as "Academy Invitation for [your-content-name]"
+   *Example: "Academy Invitation for meshery-contributors-certification" (lowercase with dash)*
+2. **Description**: "Invitation to join organization [organization-name] for academy curricula [course-name]"
+3. **Roles**: Defaults to "Academy Learner" - [Learn more about Academy roles](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/academy-roles/)
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Admin Role Invitations&#34; &gt;}}
-Academy admins can invite other instructors to become co-admins by changing the **Roles** property from &#34;Academy Learner&#34; to &#34;Academy Admin&#34; during invitation customization.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Admin Role Invitations" >}}
+Academy admins can invite other instructors to become co-admins by changing the **Roles** property from "Academy Learner" to "Academy Admin" during invitation customization.
+{{< /alert >}}
 
 **Customizable Properties:**
 
@@ -219,7 +219,7 @@ Specify which teams invited users will join:
 - **Multiple Teams**: You can assign users to multiple teams
 - **No Teams Available**: If your organization has no teams, [create them](https://docs.layer5.io/cloud/concepts/identity-and-security/teams/) first. Users will be added to all successfully configured teams
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Team Structure Changes&#34; &gt;}}
+{{< alert type="info" title="Team Structure Changes" >}}
 **During Organization Restructuring:**
 - If team structure changes after invitations are sent
 - Some teams may be merged or deleted
@@ -229,15 +229,15 @@ Specify which teams invited users will join:
 - Team permission policies may change
 - Some teams might close to new users
 - Other teams continue accepting new members normally
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ### 5. Status - Enabled/Disabled
 
 Control invitation accessibility:
 
 - **Enabled**: Invitation functions normally
-- **Disabled**: If users open a disabled invitation link, they can choose to &#34;Retry&#34; or &#34;Go to Dashboard&#34;
+- **Disabled**: If users open a disabled invitation link, they can choose to "Retry" or "Go to Dashboard"
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Invitation Idempotency&#34; &gt;}}
+{{< alert type="info" title="Invitation Idempotency" >}}
 Users only need to accept one invitation, regardless of how many invitation emails they receive. Once accepted, additional invitations to the same user are automatically ignored.
-{{&lt; /alert &gt;}}
+{{< /alert >}}

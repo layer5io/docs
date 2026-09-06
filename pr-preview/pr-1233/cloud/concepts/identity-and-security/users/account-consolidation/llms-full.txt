@@ -3,7 +3,7 @@ Layer5 Cloud recognizes one account per verified email address, no matter which 
 
 ## What changed
 
-Previously, signing in with email/password, GitHub, or Google could each create a **separate** account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &#34;disappear&#34; when you signed in with another.
+Previously, signing in with email/password, GitHub, or Google could each create a **separate** account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to "disappear" when you signed in with another.
 
 In July 2026, Layer5 Cloud consolidated these previously split accounts in a one-time maintenance operation. For each affected person, all resources were transferred to a single retained account, including:
 
@@ -17,13 +17,13 @@ In July 2026, Layer5 Cloud consolidated these previously split accounts in a one
 
 Anything else a duplicate account owned - owned teams, academy registrations, and resource access grants among them - moved with it.
 
-Organizations were handled separately from that transfer. An organization owned by a duplicate account with no other active members - typically the &#34;My Organization&#34; that Layer5 Cloud creates for every new account - was removed. Any workspace in it that still held content was first re-homed to the retained account&#39;s default organization, so no workspace content was lost. An organization that did have other members was preserved, and its ownership transferred to the retained account.
+Organizations were handled separately from that transfer. An organization owned by a duplicate account with no other active members - typically the "My Organization" that Layer5 Cloud creates for every new account - was removed. Any workspace in it that still held content was first re-homed to the retained account's default organization, so no workspace content was lost. An organization that did have other members was preserved, and its ownership transferred to the retained account.
 
 If a connection name collided during the merge, the duplicate was renamed with a `(merged)` suffix - and `(merged, 2)`, `(merged, 3)`, and so on for any further collisions on the same name - so both remain identifiable.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Nothing for you to do&#34; &gt;}}
-Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, [contact support]({{&lt; ref &#34;cloud/getting-started/support.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Nothing for you to do" >}}
+Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, [contact support]({{< ref "cloud/getting-started/support.md" >}}).
+{{< /alert >}}
 
 ## Signing in with multiple methods
 
@@ -52,12 +52,12 @@ Each email address maps to exactly one account. If you deliberately want separat
 
 ## For organization admins: billing impact
 
-If duplicate accounts had inflated the seat count on your organization&#39;s subscription, consolidation corrected that seat count downward. Layer5 Cloud recounts billable seats automatically on a recurring reconciliation cycle and pushes the corrected quantity to the payment processor, so there is nothing to adjust manually.
+If duplicate accounts had inflated the seat count on your organization's subscription, consolidation corrected that seat count downward. Layer5 Cloud recounts billable seats automatically on a recurring reconciliation cycle and pushes the corrected quantity to the payment processor, so there is nothing to adjust manually.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Minimum-seat plans&#34; &gt;}}
-Billable seats never drop below your plan&#39;s minimum. If your plan was already at its minimum-seat floor, consolidation had no effect on your seat count or billing.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Minimum-seat plans" >}}
+Billable seats never drop below your plan's minimum. If your plan was already at its minimum-seat floor, consolidation had no effect on your seat count or billing.
+{{< /alert >}}
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Related reading&#34; &gt;}}
-For how sign-in providers link to your account, see [Account Linking]({{&lt; ref &#34;cloud/concepts/identity-and-security/users/_index.md#account-linking&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Related reading" >}}
+For how sign-in providers link to your account, see [Account Linking]({{< ref "cloud/concepts/identity-and-security/users/_index.md#account-linking" >}}).
+{{< /alert >}}

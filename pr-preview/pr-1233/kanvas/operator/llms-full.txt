@@ -9,17 +9,17 @@ Using filters you can select the Kubernetes resources you want to view. Apply on
 
 Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Operator canvas. Details of the selected resources are displayed in the right panel.
 
-&lt;!-- {{&lt; figure src=&#34;images/operator-filters.png&#34; link=&#34;images/operator-filters.png&#34;  width=&#34;100%&#34;  &gt;}} --&gt;
+<!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
 ## Connecting with Kubernetes Pods
 
 Operator supports connecting to Kubernetes pods via the following methods.
 
-- [Log Streaming]({{&lt; ref &#34;kanvas/operator/log-streaming/index.md&#34; &gt;}}): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
-- [Interactive Terminal]({{&lt; ref &#34;kanvas/operator/interactive-terminal/index.md&#34; &gt;}}): Learn how to establish an interactive shell session with your containers.
+- [Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}): Learn how to live-tail logs from your Kubernetes pods and containers directly within the visual topology.
+- [Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}): Learn how to establish an interactive shell session with your containers.
 
 ## Working in Operator Mode
 
-- [Views]({{&lt; ref &#34;kanvas/operator/views/index.md&#34; &gt;}}): Save, open, share and export named perspectives of your clusters.
-- [Instance Details]({{&lt; ref &#34;kanvas/operator/resource-details/index.md&#34; &gt;}}): Inspect the live state, metrics and events of any discovered resource.
-- [Performance Testing]({{&lt; ref &#34;kanvas/operator/performance-testing/index.md&#34; &gt;}}): Generate load against a Service or Ingress using a saved performance profile.
+- [Views]({{< ref "kanvas/operator/views/index.md" >}}): Save, open, share and export named perspectives of your clusters.
+- [Instance Details]({{< ref "kanvas/operator/resource-details/index.md" >}}): Inspect the live state, metrics and events of any discovered resource.
+- [Performance Testing]({{< ref "kanvas/operator/performance-testing/index.md" >}}): Generate load against a Service or Ingress using a saved performance profile.

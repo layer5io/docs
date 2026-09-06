@@ -1,14 +1,14 @@
 
 ### Introduction
 
-In this tutorial, we&#39;ll learn the fundamentals of Pods, the smallest deployable units in the Kubernetes ecosystem. Using Meshery Playground, an interactive live cluster environment, we&#39;ll perform hands-on labs to gain practical experience in deploying, managing, and understanding some of the concepts related to Pods.
+In this tutorial, we'll learn the fundamentals of Pods, the smallest deployable units in the Kubernetes ecosystem. Using Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to gain practical experience in deploying, managing, and understanding some of the concepts related to Pods.
 
-&gt; **_NOTE:_** This tutorial demonstrates stand alone pods, i.e. pods not managed through deployments.
+> **_NOTE:_** This tutorial demonstrates stand alone pods, i.e. pods not managed through deployments.
 
 ### Prerequisites
 
 - Basic understanding of containerization and Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don&#39;t have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
 ### Lab Scenario
 
@@ -25,7 +25,7 @@ Learn how to create, manage, and explore _Kubernetes Pods and Services_ within t
 - Log in to the [Meshery Playground](https://play.meshery.io) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
 - Click **Explore** in the Cloud Native Playground tile to navigate to _Kanvas_.
 
-&gt; **_NOTE:_** Kanvas is still in beta.
+> **_NOTE:_** Kanvas is still in beta.
 
 #### Create a simple stand-alone Pod
 
@@ -44,7 +44,7 @@ Learn how to create, manage, and explore _Kubernetes Pods and Services_ within t
 
 The pod at this stage does not have a container, so we will add one. This is similar to defining the containers in the _spec:_ section of a YAML file. For this hands-on we will make some basic and necessary configurations only.
 
-7. Scroll down within the Pod configuration modal to the Containers section. Click **&#43;** to add a container.
+7. Scroll down within the Pod configuration modal to the Containers section. Click **+** to add a container.
     ![](images/kubernetes-pods/2024-02-23_11-54.png)
 8. Expand **Containers-0**.
     ![](images/kubernetes-pods/2024-02-23_11-54_1.png)
@@ -52,7 +52,7 @@ The pod at this stage does not have a container, so we will add one. This is sim
 10. Give the container a name.
     ![](images/kubernetes-pods/2024-02-23_11-57.png)
 11. Additionally, we will also give it a label. This will server many advantages later in this exercise. To do so, click the label icon on the modal.
-12. Click **&#43;** next to _Labels_.
+12. Click **+** next to _Labels_.
 13. Set any label of choice. Preferably, give a unique label since the playground is a shared environment.
     ![](images/kubernetes-pods/2024-02-25_18-18.png)
 14. Click outside to close the modal.
@@ -112,7 +112,7 @@ Meshery Playground provides terminal capabilities to connect to the container(s)
 
 #### Exposing a Pod with a Service
 
-&gt; **_NOTE:_** As of this writing, Meshery Playground supports only NodePort at the moment.
+> **_NOTE:_** As of this writing, Meshery Playground supports only NodePort at the moment.
 
 1.  Go back to the _Design_ view.
 2.  From **Components** search for _service_ and the drag the service component to the design canvas.
@@ -121,13 +121,13 @@ Meshery Playground provides terminal capabilities to connect to the container(s)
 4.  Rename it if required.
 5.  Change _Type_ to **NodePort** for this tutorial.
     ![](images/kubernetes-pods/2024-02-28_11-35.png)
-6.  Click **&#43;** to add a Port.
+6.  Click **+** to add a Port.
 7.  Expand the **Ports-0** service port to make changes.
     ![](images/kubernetes-pods/2024-02-28_11-37.png)
 8.  For this tutorial we set the **Target Port** value to 80.
 9.  We also set the **Port** value to 80.
     ![](images/kubernetes-pods/2024-02-28_11-45.png)
-10. Click **&#43;** next to Selector and add the key value pair **app:9870**. This is the same pair that is used as label in the Pod.
+10. Click **+** next to Selector and add the key value pair **app:9870**. This is the same pair that is used as label in the Pod.
     ![](images/kubernetes-pods/2024-02-28_11-48.png)
 11. Finally label this service too, with the same key value pair. This also helps in filtering resources specific to us in the Visualize screen.
     ![](images/kubernetes-pods/2024-02-28_11-53.png)
@@ -150,5 +150,5 @@ To recreate, use the **Deploy** option.
 
 ### Conclusion
 
-Congratulations! You&#39;ve successfully completed the lab on exploring Kubernetes Pods using Meshery Playground. This hands-on experience should have provided valuable insights into the deployment, management, and interaction with Pods in a Kubernetes environment. Continue exploring more scenarios in the Meshery Playground to enhance your skills.
+Congratulations! You've successfully completed the lab on exploring Kubernetes Pods using Meshery Playground. This hands-on experience should have provided valuable insights into the deployment, management, and interaction with Pods in a Kubernetes environment. Continue exploring more scenarios in the Meshery Playground to enhance your skills.
 

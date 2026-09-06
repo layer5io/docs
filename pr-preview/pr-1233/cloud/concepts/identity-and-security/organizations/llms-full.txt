@@ -3,43 +3,43 @@ Organizations are the basic unit of multi-tenancy — and the core security boun
 
 Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections
 
-&lt;img src=&#34;images/organization_units.svg&#34; alt=&#34;Organizational units&#34; style=&#34;width: 35%;&#34; /&gt;
+<img src="images/organization_units.svg" alt="Organizational units" style="width: 35%;" />
 
 An organization plays one of two roles: a **Provider Organization** — the single top-level organization that operates the deployment and owns its default identity providers — or a **Tenant Organization**, every other organization that runs on top. A tenant can then be configured in one of three named ways (Hosted, Branded, or White-Label) depending on the domain it uses and which identity provider authenticates its users. For the full catalog and how to choose between them, see [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/).
 
 ## Example: The Orbital Labs Ecosystem
 
-The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using [Five and the cast at Orbital Labs]({{&lt; ref &#34;cloud/getting-started/meet-five/_index.md&#34; &gt;}}).
+The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using [Five and the cast at Orbital Labs]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
 
-{{&lt; cardpane &gt;}}
-{{% card header=&#34;**Constellation Cloud** — Provider&#34; %}}
+{{< cardpane >}}
+{{% card header="**Constellation Cloud** — Provider" %}}
 **Type:** Managed Service Provider  
 **Plan:** Enterprise  
 **Provider Admin:** Dr. Aiko Sato
 
 Constellation Cloud manages multiple tenant organizations, including Orbital Labs and Stellar Dynamics. As the provider, it controls the top-level entitlement configuration for all tenants.
 
-*&#34;We keep the lights on so you don&#39;t have to.&#34;*
+*"We keep the lights on so you don't have to."*
 {{% /card %}}
-{{% card header=&#34;**Orbital Labs** — Startup Tenant&#34; %}}
+{{% card header="**Orbital Labs** — Startup Tenant" %}}
 **Type:** Cloud-native startup  
 **Plan:** Team  
 **Org Admin:** Maya Chen
 
 Orbital Labs is a tenant of Constellation Cloud. Users at Orbital Labs belong to one or more teams (Infrastructure, Development) and access workspaces within their organization.
 
-*&#34;Moving fast and occasionally breaking staging.&#34;*
+*"Moving fast and occasionally breaking staging."*
 {{% /card %}}
-{{% card header=&#34;**Stellar Dynamics** — Enterprise Tenant&#34; %}}
+{{% card header="**Stellar Dynamics** — Enterprise Tenant" %}}
 **Type:** Enterprise client  
 **Plan:** Enterprise  
 **Org Admin:** Marcus Webb
 
 Stellar Dynamics is a separate tenant of Constellation Cloud and an enterprise client of Orbital Labs. Users at Stellar Dynamics can be granted access to specific Orbital Labs workspaces and designs via cross-org access controls.
 
-*&#34;Fortune 500, cloud-native ambitions, legacy everything.&#34;*
+*"Fortune 500, cloud-native ambitions, legacy everything."*
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}
 
 ### Cross-Organization Access
 
@@ -47,10 +47,10 @@ Users of one organization may be granted access to resources (workspaces, design
 
 Cross-organization access works through **resource-access mappings** — a grant attached to an individual resource (such as a single design) that names the user it is shared with. These mappings **deliberately cross the organization boundary**: a user does *not* need to be a member of an organization to open a resource that has been shared with them there. For example, when Maya at Orbital Labs shares the `stellar-saas-platform` design with Marcus at Stellar Dynamics, Marcus can open that one design even though he is not a member of Orbital Labs. This is intentional — it is the mechanism that makes cross-org collaboration possible — and it is distinct from organization membership and from the org-scoped roles described below. Sharing a single resource grants access to *that resource only*; it does not make the recipient a member of the organization or grant them any of its other resources.
 
-{{&lt; alert type=&#34;info&#34; &gt;}}
-Identity and authorization are decided by a combination of mechanisms, not by organization membership alone. For how the connected identity provider, org-scoped roles, and resource-access mappings fit together — and what counts as a security boundary — see [Identity and Security → Security Boundaries]({{&lt; ref &#34;cloud/concepts/identity-and-security/_index.md#security-boundaries&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" >}}
+Identity and authorization are decided by a combination of mechanisms, not by organization membership alone. For how the connected identity provider, org-scoped roles, and resource-access mappings fit together — and what counts as a security boundary — see [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
+{{< /alert >}}
 
-{{&lt; alert type=&#34;info&#34; &gt;}}
-See [Meet Five and the Cast]({{&lt; ref &#34;cloud/getting-started/meet-five/_index.md&#34; &gt;}}) for the full narrative reference, including team structure and workspace inventory.
-{{&lt; /alert &gt;}}
+{{< alert type="info" >}}
+See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full narrative reference, including team structure and workspace inventory.
+{{< /alert >}}

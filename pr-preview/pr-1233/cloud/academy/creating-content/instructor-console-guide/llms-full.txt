@@ -5,21 +5,21 @@ The [Academy Instructor Console](https://cloud.layer5.io/academy/instructors-con
 
 To view the Instructor Console, you must have the **Academy Admin** role or be an **organization admin**.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Enterprise Feature&#34; &gt;}}
+{{< alert type="info" title="Enterprise Feature" >}}
 The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. [Learn more](https://layer5.io/pricing)
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ![Academy Admin Role](./images/academy-admin.svg)
 
 ### Using the Content Creation Tool
 
-The Instructor Console includes a Content Creation Tool to help you develop new learning materials. It&#39;s a simple, guided process that generates the initial configuration for your content.
+The Instructor Console includes a Content Creation Tool to help you develop new learning materials. It's a simple, guided process that generates the initial configuration for your content.
 
-This tool walks you through three quick steps to create your content&#39;s boilerplate configuration.
+This tool walks you through three quick steps to create your content's boilerplate configuration.
 
 ![Content Creation Tool](./images/create-content-model.gif)
 
-1. **Basic Information**: First, you&#39;ll provide the essential details for your new content, such as its **Content Type** (Learning Path/Certification/Challenge), **Title**, and **Description**.
+1. **Basic Information**: First, you'll provide the essential details for your new content, such as its **Content Type** (Learning Path/Certification/Challenge), **Title**, and **Description**.
 
     | Feature | Learning Path | Challenge | Certification |
     | :--- | :--- | :--- | :--- |
@@ -27,27 +27,27 @@ This tool walks you through three quick steps to create your content&#39;s boile
     | Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
     | Outcome | Acquired knowledge and skills. | A score and rank status. | An optional, paid official certificate and a verifiable badge.|
 
-2. **Content Details**: Next, you&#39;ll refine additional properties for the content.
+2. **Content Details**: Next, you'll refine additional properties for the content.
 
-&gt; Need help understanding these properties? [Learn more]({{&lt; ref &#34;cloud/academy/creating-content/creating-your-learning-path/index.md#3-structure-your-content&#34; &gt;}}).
+> Need help understanding these properties? [Learn more]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#3-structure-your-content" >}}).
 
-3. **Copy Template**: Finally, the Creation Tool presents you with a **&#34;Generated Front Matter &amp; Setup Guide&#34;**. You&#39;ll copy this YAML configuration and place it at the top of the corresponding `_index.md` file in your content repository.
+3. **Copy Template**: Finally, the Creation Tool presents you with a **"Generated Front Matter & Setup Guide"**. You'll copy this YAML configuration and place it at the top of the corresponding `_index.md` file in your content repository.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Console Creation Tool vs. Full Guides&#34; &gt;}}
-Think of the console&#39;s creation tool as a &#39;quick start&#39; generator. It generates the necessary configuration boilerplate, but the detailed work of writing, structuring files, and publishing your content is done in your Git repository. For that, you&#39;ll need to follow our [comprehensive guides]({{&lt; ref &#34;cloud/academy/creating-content/_index.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Console Creation Tool vs. Full Guides" >}}
+Think of the console's creation tool as a 'quick start' generator. It generates the necessary configuration boilerplate, but the detailed work of writing, structuring files, and publishing your content is done in your Git repository. For that, you'll need to follow our [comprehensive guides]({{< ref "cloud/academy/creating-content/_index.md" >}}).
+{{< /alert >}}
 
 ## Understanding the Dashboard
 
-Below the creation tool is the main dashboard, which provides an overview of your academy&#39;s statistics through a series of widgets.
+Below the creation tool is the main dashboard, which provides an overview of your academy's statistics through a series of widgets.
 
 ### Core Metrics
 
-These charts display your most important, high-level statistics, giving you a snapshot of your academy&#39;s health:
+These charts display your most important, high-level statistics, giving you a snapshot of your academy's health:
 
-&lt;!-- Screenshot out of date: it shows the old three-card row (Total Learners / Active Learners /
+<!-- Screenshot out of date: it shows the old three-card row (Total Learners / Active Learners /
      Total Test Taken). The shipped Overview has the five cards listed below. Recapture against the
-     current console. Tracked in layer5io/docs#1184. --&gt;
+     current console. Tracked in layer5io/docs#1184. -->
 ![Core Metrics Dashboard](./images/core-metrics.png)
 
 *This screenshot predates the current layout and is pending recapture. The console now shows the five cards described below.*
@@ -56,44 +56,44 @@ These charts display your most important, high-level statistics, giving you a sn
 - **Active Learners**: Measures current engagement. This is the number of distinct learners who have worked with your content this calendar month, giving you an idea of your active student body.
 - **Registrations**: Every registration in the organization, whatever the state of the content it points at. This is the same total the [Learner Registration](#learner-registration) chart breaks down, so the two always agree.
 - **Completion Rate**: Registrations marked completed as a share of all registrations.
-- **Quiz Pass Rate**: The share of quiz attempts that passed, across every test in your organization. The card&#39;s subtitle carries the underlying counts (for example &#34;762 of 1,036 attempts passed&#34;), so the raw attempt total is still visible.
+- **Quiz Pass Rate**: The share of quiz attempts that passed, across every test in your organization. The card's subtitle carries the underlying counts (for example "762 of 1,036 attempts passed"), so the raw attempt total is still visible.
 
-A rate card with nothing to divide renders as `-`, not `0%`. &#34;Nobody has attempted this quiz yet&#34; and &#34;everybody failed it&#34; are different facts, and reporting the first as zero would send you looking for a problem that isn&#39;t there.
+A rate card with nothing to divide renders as `-`, not `0%`. "Nobody has attempted this quiz yet" and "everybody failed it" are different facts, and reporting the first as zero would send you looking for a problem that isn't there.
 
 **Strategic Uses**
 - Monitor Total Learners growth - steady increases indicate growing academy reach
-- Analyze Quiz Pass Rate - a low rate suggests challenging material or unclear content, a very high rate may indicate assessments that are too easy. The attempt count in the card&#39;s subtitle distinguishes a low rate over many attempts (a real difficulty signal) from one over a handful (not yet meaningful).
+- Analyze Quiz Pass Rate - a low rate suggests challenging material or unclear content, a very high rate may indicate assessments that are too easy. The attempt count in the card's subtitle distinguishes a low rate over many attempts (a real difficulty signal) from one over a handful (not yet meaningful).
 
-{{&lt; alert type=&#34;info&#34; title=&#34;What Defines an &#39;Active Learner&#39;?&#34; &gt;}}
+{{< alert type="info" title="What Defines an 'Active Learner'?" >}}
 The **Active Learners** metric is a key indicator for engagement and billing. It counts *learners*, not registrations, and it is scoped to the current calendar month.
 
 A learner counts as active this month if, against academy content that is still live, they either created or touched a registration during the month, or submitted a quiz attempt during the month. A learner who does both counts once. A learner who enrolled months ago and takes a quiz this month is active this month, even though their registration row has not changed.
 
 Because it counts distinct people over a monthly window rather than counting registrations, it is not directly comparable to the registration totals beside it, and it resets each month rather than accumulating. A learner who finished a curriculum long ago still counts as active in any month they take a quiz.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
-{{&lt; alert type=&#34;info&#34; title=&#34;&#39;Registrations&#39; vs. &#39;Registrations Here&#39;&#34; &gt;}}
-The **Curricula** tab has its own registrations card, named **Registrations Here**, which deliberately counts something narrower: only registrations against the published curricula listed on that tab. It is normally a smaller number than the Overview&#39;s **Registrations** card, which counts every registration in the organization including those against draft or retired content. That gap is expected, not a discrepancy - the card carries a tooltip explaining the difference.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="'Registrations' vs. 'Registrations Here'" >}}
+The **Curricula** tab has its own registrations card, named **Registrations Here**, which deliberately counts something narrower: only registrations against the published curricula listed on that tab. It is normally a smaller number than the Overview's **Registrations** card, which counts every registration in the organization including those against draft or retired content. That gap is expected, not a discrepancy - the card carries a tooltip explaining the difference.
+{{< /alert >}}
 
 ### Content Details
 
-This widget provides a quick inventory of your academy&#39;s content:
+This widget provides a quick inventory of your academy's content:
 
 - **Content Version**: Shows the version of the academy content your learners are using. 
-- **Content Stats**: Shows a quick count of the different types of content you&#39;ve published. Each category is interactive; clicking on one will take you to the Academy Catalog, pre-filtered to show all your content of that type.
+- **Content Stats**: Shows a quick count of the different types of content you've published. Each category is interactive; clicking on one will take you to the Academy Catalog, pre-filtered to show all your content of that type.
 
 ![Content Details](./images/content-details.png)
 
 **Strategic Uses**
-- Monitor content version updates - when version numbers don&#39;t change, check if your GitHub releases and Layer5 Cloud deployments are complete
+- Monitor content version updates - when version numbers don't change, check if your GitHub releases and Layer5 Cloud deployments are complete
 - Track content distribution - if one content type dominates, consider diversifying your academy offerings
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Content Versioning and Release Process&#34; &gt;}}
-If you&#39;ve recently published new content but don&#39;t see the version number updated here, it is likely due to the platform&#39;s two-stage release process. Your updates become fully live only after both your content repository&#39;s GitHub Release is created and the subsequent Layer5 Cloud release is deployed. 
+{{< alert type="info" title="Content Versioning and Release Process" >}}
+If you've recently published new content but don't see the version number updated here, it is likely due to the platform's two-stage release process. Your updates become fully live only after both your content repository's GitHub Release is created and the subsequent Layer5 Cloud release is deployed. 
 
-For a complete walkthrough of this workflow, see the [Publishing Your Content Guide]({{&lt; ref &#34;cloud/academy/creating-content/creating-your-learning-path/index.md#6-publishing-your-content&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+For a complete walkthrough of this workflow, see the [Publishing Your Content Guide]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#6-publishing-your-content" >}}).
+{{< /alert >}}
 
 ### Learner Registration
 
@@ -132,19 +132,19 @@ The All Learners section provides a detailed, interactive table that allows you 
 
 #### Understanding the Table
 
-Each row in the table represents a single user&#39;s registration for a specific content. Here&#39;s what each column means:
+Each row in the table represents a single user's registration for a specific content. Here's what each column means:
 
--   **USER**: The learner&#39;s information. Clicking the avatar will take you to their public user profile.
+-   **USER**: The learner's information. Clicking the avatar will take you to their public user profile.
 -   **CURRICULA**: The specific content the user is enrolled in. Clicking the title will navigate you directly to that content.
--   **REGISTERED AT**: A timestamp indicating when the user enrolled. This is shown as a relative time (e.g., &#34;6 hours ago&#34;) and will display the full date on hover.
--   **STATUS**: The learner&#39;s current standing in the content. The definition for each status is provided in the Learner Registration section [above](#learner-registration).
+-   **REGISTERED AT**: A timestamp indicating when the user enrolled. This is shown as a relative time (e.g., "6 hours ago") and will display the full date on hover.
+-   **STATUS**: The learner's current standing in the content. The definition for each status is provided in the Learner Registration section [above](#learner-registration).
 
 #### Filtering and Finding Learners
 
 To find specific groups of learners, use the filter control at the top-right of the table.
 
--   **Filter by Content Type**: Want to see everyone enrolled only in Certifications? Select `Certification` from the &#39;Content Type&#39; filter.
--   **Filter by Status**: Need a list of everyone who has successfully finished content? Select `Completed` from the &#39;Status&#39; filter.
+-   **Filter by Content Type**: Want to see everyone enrolled only in Certifications? Select `Certification` from the 'Content Type' filter.
+-   **Filter by Status**: Need a list of everyone who has successfully finished content? Select `Completed` from the 'Status' filter.
 
 #### Customizing Your View
 
@@ -187,9 +187,9 @@ The **Test Metrics** list provides a detailed performance breakdown for each ind
 
 The percentage (e.g., `33%`) shows the overall pass rate for that specific test.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Identifying Problem Areas&#34; &gt;}}
+{{< alert type="info" title="Identifying Problem Areas" >}}
 Use this list to quickly identify which specific assessments are causing the most trouble for your learners. A low pass rate on a particular assessment might indicate that the source material needs clarification or that the questions themselves are unclear.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 **Strategic Uses**
 - Investigate difficult tests - when a quiz appears in the **Lowest Pass Rate** card, review the content and questions for clarity
@@ -198,19 +198,19 @@ Use this list to quickly identify which specific assessments are causing the mos
 
 ## Frequently Asked Questions
 
-&lt;details&gt;
-&lt;summary&gt;I&#39;m my organization&#39;s administrator. Can I assign Academy Admin roles?&lt;/summary&gt;
+<details>
+<summary>I'm my organization's administrator. Can I assign Academy Admin roles?</summary>
 Yes, you can assign Academy Admin roles to users within your organization. As an administrator, you have the ability to manage user permissions and roles in [user page](https://cloud.layer5.io/identity/users).
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;Can I export the All Learners Report to a CSV or Excel file?&lt;/summary&gt;
+<details>
+<summary>Can I export the All Learners Report to a CSV or Excel file?</summary>
 
 Currently, the Instructor Console does not have a built-in feature to export the report directly to a file format like CSV. If you need this functionality urgently, please contact us at https://layer5.io/company/contact
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;Does &#34;Quiz Pass Rate&#34; count unique learners?&lt;/summary&gt;
+<details>
+<summary>Does "Quiz Pass Rate" count unique learners?</summary>
 
 No. It is computed over attempts, not people: retakes by the same learner each count, so a learner who fails twice and then passes contributes two failures and one pass. It measures assessment outcomes, not how many distinct learners have been tested. For a headcount, use Total Learners or Active Learners.
-&lt;/details&gt;
+</details>

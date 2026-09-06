@@ -1,6 +1,6 @@
 
 - chore: address deferred review feedback (locale date, PID echo, static titles) @leecalcote (#5700)
-- fix(auth): fold &#43; allowlist-check directionless order columns (closes #5691 gap) @leecalcote (#5699)
+- fix(auth): fold + allowlist-check directionless order columns (closes #5691 gap) @leecalcote (#5699)
 - fix(ui): derive error-page type in render to kill the session-expired modal flash @leecalcote (#5698)
 - feat(ui): present 404, 403, and version-incompatibility as distinct error concerns @leecalcote (#5697)
 - fix(ui): render the incompatible-version error instead of a login loop; quiet SPA 404 log @leecalcote (#5695)

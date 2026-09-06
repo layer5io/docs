@@ -1,14 +1,14 @@
 
 ## Introduction
 
-In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. _ConfigMaps_ are used to manage configuration data, while _Secrets_ are used for sensitive information such as passwords. Using Meshery Playground, an interactive live cluster environment, we&#39;ll perform hands-on exercises to gain practical knowledge into working with these Kubernetes objects.
+In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. _ConfigMaps_ are used to manage configuration data, while _Secrets_ are used for sensitive information such as passwords. Using Meshery Playground, an interactive live cluster environment, we'll perform hands-on exercises to gain practical knowledge into working with these Kubernetes objects.
 
-&gt; **_NOTE:_** If this is your fist time working with Meshery Playground start with the [Kubernetes Pods with Meshery]({{&lt; ref &#34;kanvas/tutorials/kubernetes/kubernetes-pods/index.md&#34; &gt;}}).
+> **_NOTE:_** If this is your fist time working with Meshery Playground start with the [Kubernetes Pods with Meshery]({{< ref "kanvas/tutorials/kubernetes/kubernetes-pods/index.md" >}}).
 
 ## Prerequisites
 
 - Basic understanding of containerization and Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don&#39;t have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
 ## Lab Scenario
 
@@ -27,13 +27,13 @@ Learn how to create and manage _Kubernetes ConfigMaps and Secrets_ within the co
 - Log in to the [Meshery Playground](http://playground.meshery.io/) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
 - Click **Kanvas** in the navigation menu to navigate to _Kanvas_.
 
-&gt; **_NOTE:_** Kanvas is still in beta.
+> **_NOTE:_** Kanvas is still in beta.
 
 ### Clone the starter design
 
 For this tutorial we will start with an existing design and later add _ConfigMap_ and _Secret_ components to it. The design is a simple MySQL pod.
 
-Select the **Catalog** tab and search for the word _&#39;tutorial&#39;_ (1). Click on the **[Tutorial] Simple MySQL Pod** (2) design and when prompted click **Clone** (3).
+Select the **Catalog** tab and search for the word _'tutorial'_ (1). Click on the **[Tutorial] Simple MySQL Pod** (2) design and when prompted click **Clone** (3).
 
 ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-17_20-01.png)
 
@@ -49,7 +49,7 @@ Click Kubernetes from the dock and select Config Map from the list. This will pu
 Click the _ConfigMap_ component to load the configuration window.
 
  1. Change the **Name** if required. (Using a unique name helps with easier identification later)
- 2. Click **&#43;** next to Data and set the ConfigMap data as a key value pair. In this example, the _Key_ is **CREATEDB** and the _Value_ is **myDB**.
+ 2. Click **+** next to Data and set the ConfigMap data as a key value pair. In this example, the _Key_ is **CREATEDB** and the _Value_ is **myDB**.
 
     ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-13.png)
 
@@ -75,7 +75,7 @@ Click on the _Secret_ component to load the configuration window.
 
  1. Set a _name_.
  2. Set _Type_ as **Opaque**.
- 3. Click **&#43;** next to _Data_ and add the secret as a key value pair. For this tutorial, the _Key_ is **SUPERSECRETPASSWORD** and the _Value_ is **c3Ryb25ncGFzc3dvcmQ=**.
+ 3. Click **+** next to _Data_ and add the secret as a key value pair. For this tutorial, the _Key_ is **SUPERSECRETPASSWORD** and the _Value_ is **c3Ryb25ncGFzc3dvcmQ=**.
 
     ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_18-25.png)
 
@@ -99,7 +99,7 @@ Click on the _Pod_ component to load its configuration window. We will set the S
 
     ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-56.png)
 
- 5. Next, click **&#43;** next to Env to add a second environment variable. 
+ 5. Next, click **+** next to Env to add a second environment variable. 
 
     ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-57.png)
 
@@ -143,4 +143,4 @@ To delete the resources, use the **Undeploy** option from the _Design_ view.
 
 
 ## Conclusion
-Congratulations! You&#39;ve successfully completed a tutorial on Kubernetes ConfigMaps and Secrets using the Meshery Playground. This hands-on experience should have equipped you with practical knowledge on managing configuration data and sensitive information in Kubernetes. Continue exploring more such scenarios in the Meshery Playground to enhance your skills.
+Congratulations! You've successfully completed a tutorial on Kubernetes ConfigMaps and Secrets using the Meshery Playground. This hands-on experience should have equipped you with practical knowledge on managing configuration data and sensitive information in Kubernetes. Continue exploring more such scenarios in the Meshery Playground to enhance your skills.

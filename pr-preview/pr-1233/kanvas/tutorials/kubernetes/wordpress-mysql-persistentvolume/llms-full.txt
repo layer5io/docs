@@ -5,12 +5,12 @@
 
 In this tutorial, we will learn how to deploy a **WordPress site and a MySQL database with Persistent Volumes** using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.
 
-&gt; **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{&lt; ref &#34;kanvas/tutorials/kubernetes/kubernetes-pods/index.md&#34; &gt;}}) tutorial first.
+> **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{< ref "kanvas/tutorials/kubernetes/kubernetes-pods/index.md" >}}) tutorial first.
 
 ### Prerequisites
 
 - Basic understanding of Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don&#39;t have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
 ### Lab Scenario
 
@@ -45,9 +45,9 @@ These YAML files contain the Service definitions, Persistent Volume Claims, and 
 1. In the left sidebar, click on the upward arrow symbol(import icon) to import the designs into Meshery.
 
 2. In the modal that appears:
-   - Enter a name for your design in the &#34;Design File Name&#34; field (e.g.`mysql-deployment`).
+   - Enter a name for your design in the "Design File Name" field (e.g.`mysql-deployment`).
 
-   - Select `Kubernetes Manifest` from the &#34;Design Type&#34; dropdown menu.
+   - Select `Kubernetes Manifest` from the "Design Type" dropdown menu.
 
         ![Import modal](images/wordpress-mysql-persistentvolume/wp1.png)
 
@@ -57,7 +57,7 @@ These YAML files contain the Service definitions, Persistent Volume Claims, and 
 
         ![Import mysql-deployment](images/wordpress-mysql-persistentvolume/wp2.png)
 
-3. Under the &#34;Designs&#34; tab, you will see that we have successfully imported the `mysql-deployment` design.
+3. Under the "Designs" tab, you will see that we have successfully imported the `mysql-deployment` design.
 
    When you click on the names of the designs on the `Designs` tab, you can see the visual representations of the various Kubernetes resources and their relationships on the canvas.
 
@@ -107,7 +107,7 @@ Before you proceed, choose a password and convert it into base64 format. You can
 
     - Set the _name_ as `mysql-pass`
     - Set the _Type_ as `Opaque`.
-    - Click **&#43;** next to Data and add the secret as a key value pair `password:cGFzc3dvcmQ=`
+    - Click **+** next to Data and add the secret as a key value pair `password:cGFzc3dvcmQ=`
 
         ![Configure secret](images/wordpress-mysql-persistentvolume/wp9.png)
 
@@ -119,47 +119,47 @@ MySQL and WordPress each require a [Persistent Volume(PV)](https://kubernetes.io
 
 For this tutorial, we will use the `manual` StorageClassName and set the Persistent Volume to use the `hostPath` type.
 
-Please note that using `hostPath` for Persistent Volumes is generally not recommended for production environments because it ties the volume to the node&#39;s filesystem, which can lead to data loss if the node fails. However, we can use it in this tutorial for development purposes.
+Please note that using `hostPath` for Persistent Volumes is generally not recommended for production environments because it ties the volume to the node's filesystem, which can lead to data loss if the node fails. However, we can use it in this tutorial for development purposes.
 
-1. Click on the Kubernetes icon on the dock, search for `Persistent Volume`, and select it. We will create two PV&#39;s.
+1. Click on the Kubernetes icon on the dock, search for `Persistent Volume`, and select it. We will create two PV's.
 
     ![Create persistent volume](images/wordpress-mysql-persistentvolume/wp10.png)
 
 2. Click on the wordpress PV to open the configuration window.
 
-    - Change the &#34;name&#34; to `wp-pv`
-    - Set the &#34;StorageClassName&#34; as `manual`
-    - Click **&#43;** next to &#34;AccessMode&#34; and enter `ReadWriteOnce`
+    - Change the "name" to `wp-pv`
+    - Set the "StorageClassName" as `manual`
+    - Click **+** next to "AccessMode" and enter `ReadWriteOnce`
 
         ![Configure persistent volume](images/wordpress-mysql-persistentvolume/wp11.png)
 
-    - Scroll down to &#34;Capacity&#34; and enter in the key pair `storage:20Gi`
+    - Scroll down to "Capacity" and enter in the key pair `storage:20Gi`
 
         ![Persistent volume capacity](images/wordpress-mysql-persistentvolume/wp12.png)
 
-    - Scroll down to &#34;Hostpath&#34; and input `mnt/data/wp-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
+    - Scroll down to "Hostpath" and input `mnt/data/wp-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
 
         ![Persistent volume hostpath](images/wordpress-mysql-persistentvolume/wp13.png)
 
 3. Repeat similar steps for the Mysql Persistent Volume
 
     - Click on the MySQL PV to open the configuration window.
-    - Change the &#34;name&#34; to `mysql-pv`
-    - Set the &#34;StorageClassName&#34; to `manual`
-    - Click **&#43;** next to &#34;AccessMode&#34; and set it to `ReadWriteOnce`
-    - Scroll down to &#34;Capacity&#34;, and enter the key pair `storage:20Gi`
-    - Scroll down to &#34;Hostpath&#34; and input `mnt/data/mysql-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
+    - Change the "name" to `mysql-pv`
+    - Set the "StorageClassName" to `manual`
+    - Click **+** next to "AccessMode" and set it to `ReadWriteOnce`
+    - Scroll down to "Capacity", and enter the key pair `storage:20Gi`
+    - Scroll down to "Hostpath" and input `mnt/data/mysql-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
 
-4. Click on `wp-pv-claim` and `mysql-pv-claim` and set their &#34;StorageClassName&#34; as `manual`
+4. Click on `wp-pv-claim` and `mysql-pv-claim` and set their "StorageClassName" as `manual`
 
 #### Add Labels
 
-To make it easier to filter and manage our resources during visualization, let&#39;s add labels to all of them.
+To make it easier to filter and manage our resources during visualization, let's add labels to all of them.
 
  You can also choose to use the existing label, `app:wordpress`, but a new one, `dev:tutorial`, is recommended for this tutorial to prevent our resources from getting mixed up with others in the public playground cluster.
 
 1. Click on the label icon.
-2. Click the **&#43;** sign next to Labels.
+2. Click the **+** sign next to Labels.
 3. Add the label `dev:tutorial`.
 4. Do this for **all** the resources on the canvas.
 
@@ -207,8 +207,8 @@ To view the resources deployed we will use the Visualize section of the _Kanvas_
 1. Move to the Visualize tab.
 2. Click the filter icon and choose the appropriate filters
 
-    - For &#34;Kinds&#34; select `Deployment`, `Service`, `PersistentVolume`, `PersistentVolumeClaim` and `Secret`
-    - For the &#34;label&#34; select `dev=tutorial`
+    - For "Kinds" select `Deployment`, `Service`, `PersistentVolume`, `PersistentVolumeClaim` and `Secret`
+    - For the "label" select `dev=tutorial`
 
 3. You can also use the icons on the right sidebar to filter the resources.
 
@@ -218,7 +218,7 @@ To view the resources deployed we will use the Visualize section of the _Kanvas_
 
 #### Resource Details
 
-You can click on any resource to view more details about it in the &#34;Details&#34; section on the right sidebar.
+You can click on any resource to view more details about it in the "Details" section on the right sidebar.
 
 **Deployment**
 

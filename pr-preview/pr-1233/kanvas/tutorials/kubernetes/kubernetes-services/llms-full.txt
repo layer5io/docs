@@ -1,22 +1,22 @@
 
 ## Introduction
 
-In this tutorial, we&#39;ll learn to implement Kubernetes **Services**, the
+In this tutorial, we'll learn to implement Kubernetes **Services**, the
 resources responsible for exposing applications inside and outside the cluster.
-Using Meshery Playground, an interactive live cluster environment, we&#39;ll perform
+Using Meshery Playground, an interactive live cluster environment, we'll perform
 hands-on labs to gain practical experience with Kubernetes Services, without
 writing any YAML.
 
-&gt; **NOTE:** If this is your first time working with Meshery Playground, consider
-&gt; starting with the
-&gt; [Exploring Kubernetes Pods with Meshery Playground](/kanvas/tutorials/kubernetes-pods)
-&gt; tutorial first or
-&gt; [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes-deployments).
+> **NOTE:** If this is your first time working with Meshery Playground, consider
+> starting with the
+> [Exploring Kubernetes Pods with Meshery Playground](/kanvas/tutorials/kubernetes-pods)
+> tutorial first or
+> [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes-deployments).
 
 ## Prerequisites
 
 - Basic understanding of containerization and Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don&#39;t have an account, sign up at
+- Access to the _Meshery Playground_. If you don't have an account, sign up at
   [Meshery Playground](https://playground.meshery.io/).
 
 ## Lab Scenario
@@ -43,7 +43,7 @@ applications within the context of a microservices architecture.
 
   ![Kanvas Design page in Meshery Playground showing the empty design canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-deployments/2025-02-27_16-59.png)
 
-&gt; **_NOTE:_** Kanvas is still in beta.
+> **_NOTE:_** Kanvas is still in beta.
 
 ### Create a Deployment
 
@@ -77,7 +77,7 @@ applications within the context of a microservices architecture.
    ![Adding the matching label app:9988110 under Template Metadata Labels](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/metadata.png)
 
 7. While still under **Template**, click **Spec** to load the _spec_
-   configuration modal. Then scroll down and click **&#43; Add Item** next to
+   configuration modal. Then scroll down and click **+ Add Item** next to
    **Containers**. This will create a container **Containers 1**. Click on it
    and add:
    - **Image**: `meshery/meshery-milestone:latest`
@@ -108,7 +108,7 @@ applications within the context of a microservices architecture.
 
 2. In the service configuration modal:
    - Set **Type** to `ClusterIP`.
-   - Click on **&#43; Add Item** under Ports to add a port called **Ports 1**. Click
+   - Click on **+ Add Item** under Ports to add a port called **Ports 1**. Click
      on it and add:
      - **Port**: `80`
      - **TargetPort**: `80` (these match the container port that our image
@@ -155,7 +155,7 @@ To allow external access, we’ll use a NodePort service. For simplicity, I will
 switch from using a Deployment to a Pod for our next Service.
 
 1. Back in Design mode, drag a Pod from the dock onto the canvas. Scroll down
-   within the Pod configuration modal to the Containers section. Click **&#43;** to
+   within the Pod configuration modal to the Containers section. Click **+** to
    add a container. Expand **Containers-1**. Next, fill out some of the required
    container specifications. Start by entering the container image — we will use
    _meshery/meshery-milestone:latest_ for this exercise. Give the container a
@@ -172,7 +172,7 @@ switch from using a Deployment to a Pod for our next Service.
 
    ![Service type set to NodePort with selector matching the Pod label](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_14.png)
 
-4. Click on **&#43; Add Item** under Ports to reveal **Ports 1**, expand **Ports
+4. Click on **+ Add Item** under Ports to reveal **Ports 1**, expand **Ports
    1**, and add:
    - **Port**: `80`
    - **TargetPort**: `80`
@@ -194,7 +194,7 @@ IP address**.
 
 Expand the details section and you will see a NodePort value (30091); this means
 the service is exposed on each Node’s IP at port 30091. You can access the app
-externally via `http://&lt;NodeIP&gt;:30091`.
+externally via `http://<NodeIP>:30091`.
 
 ![NodePort details showing the assigned port 30091 in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_17.png)
 
@@ -204,10 +204,10 @@ Details about the Pod. Click on the Pod to reveal the
 
 ![Pod details panel showing the Initiate Terminal Session option in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_5.png)
 
-&gt; **_NOTE:_** In Meshery Playground, Node IPs may not be directly reachable from
-&gt; your local machine due to the sandboxed environment. The NodePort value
-&gt; confirms that the Service is correctly exposed by Kubernetes, even if direct
-&gt; browser access is restricted.
+> **_NOTE:_** In Meshery Playground, Node IPs may not be directly reachable from
+> your local machine due to the sandboxed environment. The NodePort value
+> confirms that the Service is correctly exposed by Kubernetes, even if direct
+> browser access is restricted.
 
 ---
 
@@ -226,7 +226,7 @@ how the service object is defined, even though a real cloud IP isn’t provided.
 3. In the service’s Configure panel, set **Type** to `LoadBalancer`. Under
    Selector, add `app:8080`.
 
-4. Under Ports, click **&#43; Add Item**. Expand **Ports 1** and set:
+4. Under Ports, click **+ Add Item**. Expand **Ports 1** and set:
    - **Port**: `80`
    - **TargetPort**: `80`
 
@@ -253,7 +253,7 @@ Services from the cluster.
 
 ## Conclusion
 
-Congratulations! You&#39;ve successfully completed the lab on exploring Kubernetes
+Congratulations! You've successfully completed the lab on exploring Kubernetes
 Services with Meshery Playground. You created and deployed a sample application,
 then exposed it with different Service types (ClusterIP, NodePort,
 LoadBalancer).

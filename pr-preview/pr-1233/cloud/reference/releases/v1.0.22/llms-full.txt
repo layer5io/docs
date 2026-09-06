@@ -1,5 +1,5 @@
 
-- fix(handlers): return 404&#43;JSON from GetUserProfileById and plug fall-through @miacycle (#5098)
+- fix(handlers): return 404+JSON from GetUserProfileById and plug fall-through @miacycle (#5098)
 - [server/auth] Prevent DevTools probe from hijacking post-login redirect @miacycle (#5099)
 
 ### 👨🏽‍💻 Contributors

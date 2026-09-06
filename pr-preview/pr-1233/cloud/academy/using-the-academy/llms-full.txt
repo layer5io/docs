@@ -10,7 +10,7 @@ Here, you can achieve:
 
 ## Exploring the Content Catalog
 
-Your journey begins at the Academy&#39;s main catalog page, where you can discover all available learning content.
+Your journey begins at the Academy's main catalog page, where you can discover all available learning content.
 
 ### Navigating the Catalog
 
@@ -20,15 +20,15 @@ First you will see a collection of content cards. Each card gives you a quick ov
 
 Use the filters on the left - **Level**, **Content Type**, and, when browsing the full Layer5 Academy, **Organization** - to narrow the catalog to what you are looking for.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Browsing an Organization&#39;s Own Academy&#34; &gt;}}
-When you visit an organization&#39;s own Academy on its custom domain (for example, `exoscale.layer5.io`), the catalog is automatically scoped to that organization&#39;s content and the **Organization** filter is hidden, so you stay focused on that academy&#39;s offerings. To browse the full cross-organization catalog, visit the main Layer5 Academy at [cloud.layer5.io/academy](https://cloud.layer5.io/academy), where the **Organization** filter is available.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Browsing an Organization's Own Academy" >}}
+When you visit an organization's own Academy on its custom domain (for example, `exoscale.layer5.io`), the catalog is automatically scoped to that organization's content and the **Organization** filter is hidden, so you stay focused on that academy's offerings. To browse the full cross-organization catalog, visit the main Layer5 Academy at [cloud.layer5.io/academy](https://cloud.layer5.io/academy), where the **Organization** filter is available.
+{{< /alert >}}
 
 ### Understanding Content Types
 
 To help you choose the right content for your goals, we offer three distinct types. You can use the Content Type filter on the left to narrow your search.
 
-1. **Learning Path**: Choose this when you want to systematically learn a new subject from start to finish. It&#39;s a comprehensive curriculum designed to build your knowledge from the ground up.
+1. **Learning Path**: Choose this when you want to systematically learn a new subject from start to finish. It's a comprehensive curriculum designed to build your knowledge from the ground up.
 
 2. **Certification**: Choose this when you already have the knowledge and want to formally prove your skills. It focuses on assessment and evaluation through exams.
 
@@ -42,19 +42,19 @@ The **Content Type** filter is also how you browse one type exhaustively rather 
 - Set it to **Challenge** to list every challenge.
 - Set it to **Certification** to list every certification.
 
-Combine it with **Level** to narrow further - for example every beginner learning path - and, on the main [Layer5 Academy](https://cloud.layer5.io/academy) catalog, with **Organization** to see one organization&#39;s content only. Clearing the filters returns the full catalog.
+Combine it with **Level** to narrow further - for example every beginner learning path - and, on the main [Layer5 Academy](https://cloud.layer5.io/academy) catalog, with **Organization** to see one organization's content only. Clearing the filters returns the full catalog.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;What You See Depends on Where You Are&#34; &gt;}}
-The main Layer5 Academy catalog spans organizations, so listing all learning paths there lists everyone&#39;s public learning paths. An organization&#39;s own Academy on its custom domain is scoped to that organization&#39;s content, so the same filter lists only theirs.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="What You See Depends on Where You Are" >}}
+The main Layer5 Academy catalog spans organizations, so listing all learning paths there lists everyone's public learning paths. An organization's own Academy on its custom domain is scoped to that organization's content, so the same filter lists only theirs.
+{{< /alert >}}
 
 ## Starting Your Learning Journey
 
-Once you&#39;ve found a content that interests you, it&#39;s time to begin.
+Once you've found a content that interests you, it's time to begin.
 
 ### Enrolling in a learning path
 
-The content detail page gives you a full overview of what you&#39;ll learn. To start, simply click the &#34;Enroll Now&#34; button.
+The content detail page gives you a full overview of what you'll learn. To start, simply click the "Enroll Now" button.
 
 ![Learning Path Detail Page](./images/learning-path-page.png)
 
@@ -64,11 +64,11 @@ Enrolling is a key step because it allows the Academy to track your progress. On
 
 ### The Learning Interface
 
-After enrolling, you&#39;ll be taken to the main learning interface. This is where you&#39;ll spend most of your time.
+After enrolling, you'll be taken to the main learning interface. This is where you'll spend most of your time.
 
 ![Learning Interface Overview](./images/page-overview.png)
 
-We&#39;ve designed it to be simple and intuitive. Think of it in three parts:
+We've designed it to be simple and intuitive. Think of it in three parts:
 
 1. **Your Learning Map (Left Sidebar)**: This is the complete outline of your course. It shows where you are currently positioned.
 
@@ -76,9 +76,9 @@ We&#39;ve designed it to be simple and intuitive. Think of it in three parts:
 
 3. **Discover More (Right Sidebar)**: Here, you can find tags and categories across all the content, helping you discover other relevant content in the Academy. You can click to see all related content.
    
-{{&lt; alert type=&#34;info&#34; title=&#34;Discover More&#34; &gt;}}
+{{< alert type="info" title="Discover More" >}}
 After finishing a course, check out the **Tags** and **Categories** on the right. They are a great way to discover other related topics that might interest you.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ## Testing Your Knowledge
 
@@ -92,13 +92,13 @@ Some assessments may be marked as **Optional**. You can take these for extra pra
 
 ### Answering Questions and Scoring
 
-When you encounter an assessment, you&#39;ll see a clean interface with questions and answer options.
+When you encounter an assessment, you'll see a clean interface with questions and answer options.
 
 **Answering**: Select your answer(s) by clicking the corresponding radio button (for single-choice) or checkbox (for multiple-choice). For short-answer questions, type your response directly into the text field.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Need a Refresher?&#34; &gt;}}
-If you&#39;re ever unsure about a concept, you can always use the Back button to revisit previous courses.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Need a Refresher?" >}}
+If you're ever unsure about a concept, you can always use the Back button to revisit previous courses.
+{{< /alert >}}
 
 **Scoring Rules:**
 
@@ -114,13 +114,13 @@ If you&#39;re ever unsure about a concept, you can always use the Back button to
 
 ![Short Answer Question Example](./images/q-short-answer.png)
 
-**Submitting**: Once you&#39;ve answered all questions, click the &#34;Submit&#34; button at the end of the quiz. Your results, including your score and pass/fail status, will be displayed immediately.
+**Submitting**: Once you've answered all questions, click the "Submit" button at the end of the quiz. Your results, including your score and pass/fail status, will be displayed immediately.
 
 **If you fail**: You can retake the assessment. The system will highlight the successful parts, allowing you to precisely identify where you need improvement.
 
 ![Quiz Result - Failed](./images/q-result-failed.png)
 
-**If you pass**: Congratulations! You&#39;ve successfully completed the assessment and can proceed to the next section.
+**If you pass**: Congratulations! You've successfully completed the assessment and can proceed to the next section.
 
 ![Quiz Result - Passed](./images/q-result-pass.png)
 
@@ -134,7 +134,7 @@ Completing content in the Academy earns you valuable credentials that you can sh
 
 Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn` - tracks your progress toward that milestone in the meantime, and is what your instructors see in their console.
 
-&gt; See a live example on a [user&#39;s profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
+> See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
 
 ![Example badge image](./images/badge.png)
 
@@ -142,55 +142,55 @@ Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `
 
 ## Frequently Asked Questions
 
-&gt; Expand a section below to learn more.
+> Expand a section below to learn more.
 
-&lt;details&gt;
-&lt;summary&gt;Will my learning progress be saved if I leave and come back later?&lt;/summary&gt;
+<details>
+<summary>Will my learning progress be saved if I leave and come back later?</summary>
 
 Yes, as long as you are enrolled in a content, your progress is saved automatically. You can always return and continue from your last completed course.
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;Can I skip courses and jump directly to the exam?&lt;/summary&gt;
+<details>
+<summary>Can I skip courses and jump directly to the exam?</summary>
 
 You can navigate to any course at any time using the sidebar. However, for a Learning Path to be marked as complete, you typically need to pass all required quizzes and the final test in sequence.
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;Can I download content materials for offline study?&lt;/summary&gt;
+<details>
+<summary>Can I download content materials for offline study?</summary>
 
 Currently, all content is designed to be accessed online through the Academy platform. Offline or downloadable materials are not available at this time.
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;Where can I ask questions or discuss the content material?&lt;/summary&gt;
+<details>
+<summary>Where can I ask questions or discuss the content material?</summary>
 
 Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to open new or participate in existing topics in the community [discussion forum](https://discuss.layer5.io). We also warmly welcome you to join the [Layer5 Community Slack](https://slack.layer5.io).
-&lt;/details&gt;
+</details>
 
-&lt;/details&gt;
+</details>
 
 ---
 
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Certification and Assessment&lt;/strong&gt;&lt;/summary&gt;
+<details>
+<summary><strong>Certification and Assessment</strong></summary>
 
 
-&lt;details&gt;
-&lt;summary&gt;If I fail an assessment, can I retake it?&lt;/summary&gt;
+<details>
+<summary>If I fail an assessment, can I retake it?</summary>
 
 It depends on the certification. Some certifications allow multiple attempts, while others do not offer retries. Please refer to the specific certification’s guidelines to confirm whether retakes are permitted.
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;Does my certificate expire?&lt;/summary&gt;
+<details>
+<summary>Does my certificate expire?</summary>
 
 Yes. Meshery Academy certifications may have an expiration date. Please check the specific certification details for validity duration.
-&lt;/details&gt;
+</details>
 
-&lt;details&gt;
-&lt;summary&gt;How can I showcase my credential?&lt;/summary&gt;
+<details>
+<summary>How can I showcase my credential?</summary>
 
 Upon successful completion, you’ll receive a verifiable digital certificate. You can share your achievement by adding it to your professional profiles (for example, on LinkedIn) or including it on your resume. A shareable verification link is available within your certification dashboard, which you can use to confirm your credential publicly.
-&lt;/details&gt;
+</details>
 

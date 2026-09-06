@@ -9,35 +9,35 @@ Meshery Catalog displays all published designs in an organized, searchable forma
 
 ### Top Performers
 
-At the top of the page, you can find the **Top Performers** section. This provides a snapshot of the **Leaderboard**, highlighting the most popular designs based on various [metrics]({{&lt; ref &#34;cloud/concepts/catalog/metrics/index.md&#34; &gt;}}).
+At the top of the page, you can find the **Top Performers** section. This provides a snapshot of the **Leaderboard**, highlighting the most popular designs based on various [metrics]({{< ref "cloud/concepts/catalog/metrics/index.md" >}}).
 
 - To see the complete rankings, click the **Open Leaderboard** button.
 - You can toggle the visibility of this section using the **Hide Performers** / **Show Performers** button.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Learn More About Leaderboard&#34; &gt;}}
-To learn more about Leaderboard, see the [Leaderboard documentation]({{&lt; ref &#34;cloud/concepts/catalog/leaderboard/index.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Learn More About Leaderboard" >}}
+To learn more about Leaderboard, see the [Leaderboard documentation]({{< ref "cloud/concepts/catalog/leaderboard/index.md" >}}).
+{{< /alert >}}
 
 ### Grid View
 
-The grid view offers a visual, card-based layout that&#39;s ideal for browsing designs by their thumbnail.
+The grid view offers a visual, card-based layout that's ideal for browsing designs by their thumbnail.
 
 Each card provides key information at a glance:
 
-- **Class:** The banner in the top-left corner shows the design&#39;s classification (e.g., Official)
-- **Type:** The tag in the top-right corner indicates the design&#39;s category (e.g., Deployment)
+- **Class:** The banner in the top-left corner shows the design's classification (e.g., Official)
+- **Type:** The tag in the top-right corner indicates the design's category (e.g., Deployment)
 - **Metrics:** A row of icons at the bottom displays key usage statistics (Opens, Downloads, Deploys, Clones, Shares)
 - **Detailed Information (on hover):** When you hover over a card, it flips to reveal more details, including the author, design version, technologies used, and the last updated time
 
-&lt;img src=&#34;images/card-view.png&#34; alt=&#34;Card View&#34; style=&#34;width: 40%&#34; /&gt;
+<img src="images/card-view.png" alt="Card View" style="width: 40%" />
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Understanding Design Metrics&#34; &gt;}}
-To better understand what these Metrics represent, you can learn more about [design metrics]({{&lt; ref &#34;cloud/concepts/catalog/metrics/index.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Understanding Design Metrics" >}}
+To better understand what these Metrics represent, you can learn more about [design metrics]({{< ref "cloud/concepts/catalog/metrics/index.md" >}}).
+{{< /alert >}}
 
 ### Table View
 
-Table view provides a dense, list-based format that&#39;s ideal for sorting and comparing items based on specific metrics.
+Table view provides a dense, list-based format that's ideal for sorting and comparing items based on specific metrics.
 
 To customize the information displayed in this view, click the **View Columns icon** and select the attributes you want to see, such as Author, Created At, or Downloads.
 
@@ -53,7 +53,7 @@ You can order all items in the catalog based on different criteria, such as alph
 
 ### Owner
 
-Filter designs based on their owner, whether it&#39;s your entire Organization, specific Teams, or an individual Author.
+Filter designs based on their owner, whether it's your entire Organization, specific Teams, or an individual Author.
 
 ### Class
 
@@ -72,14 +72,14 @@ These filters correspond to the metadata authors provide when they publish desig
 
 ## Viewing Design Details
 
-When you click on any design, you&#39;ll see its detail page. This page provides a complete overview of the design&#39;s purpose, technical details, and how you can use it.
+When you click on any design, you'll see its detail page. This page provides a complete overview of the design's purpose, technical details, and how you can use it.
 
 ![Catalog modal](../images/design_model.png)
 
 ### Key Information
 
-- **Class, Created By, and Dates:** See the design&#39;s class, its original author, and when it was created and last updated.
-- **Version:** The design&#39;s version number. This increments automatically each time the design is updated.
+- **Class, Created By, and Dates:** See the design's class, its original author, and when it was created and last updated.
+- **Version:** The design's version number. This increments automatically each time the design is updated.
 - **Visibility:** The status of the design. For all designs found in the public catalog, this will be **Published**.
 
 As you scroll down the page, you will find other useful sections:
@@ -95,7 +95,7 @@ Clicking **Open in Playground** opens the design in the Kanvas designer running 
 
 The Playground is a hosted, ready-to-use Kanvas instance. It is the fastest way to look inside a catalog design - you can pan, zoom, open components, and inspect relationships without installing Meshery or signing in. Changes you make there are not written back to the catalog design; to keep your own editable copy, [Clone](#clone) it instead.
 
-The link Layer5 Cloud builds carries the design&#39;s identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters]({{&lt; ref &#34;kanvas/advanced/url-parameters/index.md&#34; &gt;}}) for what those parameters mean and how to construct such a link yourself.
+The link Layer5 Cloud builds carries the design's identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) for what those parameters mean and how to construct such a link yourself.
 
 ### Clone
 
@@ -111,39 +111,39 @@ When you clone a design:
 
 The **Download** button allows you to save the design as a `Design (YAML)` file. This is useful for offline backups or sharing the file directly.
 
-&gt; For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs]({{&lt; ref &#34;kanvas/designer/export-designs/index.md&#34; &gt;}}).
+> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}).
 
-{{&lt; alert type=&#34;warning&#34; title=&#34;Metadata Not Included in Download&#34; &gt;}}
+{{< alert type="warning" title="Metadata Not Included in Download" >}}
 Design downloads include only the core YAML definition, excluding associated catalog metadata such as descriptions, technology, or class.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ### Edit
 
-After you&#39;ve published a design, you might need to update its metadata or description. Clicking the **Edit** button opens a dialog where you can make your changes.
+After you've published a design, you might need to update its metadata or description. Clicking the **Edit** button opens a dialog where you can make your changes.
 
 ![Design edit modal](images/design-edit.png)
 
 You can modify the following fields:
 
-- **Type:** Change the design&#39;s category.
+- **Type:** Change the design's category.
 - **Technology:** Add or remove associated technology tags.
 - **Description:** Update the main purpose and intended uses of the design.
 - **Caveats and Considerations:** Revise any special stipulations or known behaviors.
 
-{{&lt; alert type=&#34;warning&#34; title=&#34;Immutable Properties&#34; &gt;}}
+{{< alert type="warning" title="Immutable Properties" >}}
 Some properties of a published design are immutable and cannot be changed:
 
 - **Name:** The original name of the published design cannot be modified.
-- **Visibility:** You cannot change a published design&#39;s visibility directly. To remove it from the catalog, you must **Unpublish** it instead.
-{{&lt; /alert &gt;}}
+- **Visibility:** You cannot change a published design's visibility directly. To remove it from the catalog, you must **Unpublish** it instead.
+{{< /alert >}}
 
 ### Unpublish
 
 If you no longer want a design to be published in the catalog, you can use the **Unpublish** button. This action will remove the design from  Meshery Catalog but does **not delete** it. The design will remain as a private design in your account.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Permissions Required&#34; &gt;}}
-Editing/Unpublish published designs requires specific user roles and permissions. Learn more: [Default Permissions documentation]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Permissions Required" >}}
+Editing/Unpublish published designs requires specific user roles and permissions. Learn more: [Default Permissions documentation]({{< ref "cloud/reference/default-permissions.md" >}}).
+{{< /alert >}}
 
 ### Delete
 
@@ -151,7 +151,7 @@ Editing/Unpublish published designs requires specific user roles and permissions
 
 Deletion is not the same as [Unpublish](#unpublish). Unpublishing withdraws a design from the public catalog and keeps it in your account; deleting destroys it, and unassigns it from every workspace it belonged to at the same time. There is no trash and no undo.
 
-You must own the item to delete it, and you need the delete permission for that item&#39;s type; a user who holds the permission but does not own the item is still refused. The permissions are type-specific:
+You must own the item to delete it, and you need the delete permission for that item's type; a user who holds the permission but does not own the item is still refused. The permissions are type-specific:
 
 | Catalog item | Permission required |
 | --- | --- |
@@ -159,8 +159,8 @@ You must own the item to delete it, and you need the delete permission for that 
 | WASM filter | **Delete WASM Filter** |
 | View | **Delete View** |
 
-The **Delete** action is disabled when your role does not carry the permission for that item&#39;s type. See [Default Permissions]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}}) for which roles hold each of them by default.
+The **Delete** action is disabled when your role does not carry the permission for that item's type. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold each of them by default.
 
 The table view of [My Designs](https://cloud.layer5.io/catalog/content/my-designs) also supports deleting several items at once: select rows with their checkboxes and use the bulk **Delete** action. Each selected item is deleted independently, so a failure on one does not stop the others - check the list afterwards.
 
-&gt; For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design]({{&lt; ref &#34;kanvas/tasks/designs/deleting-a-design/index.md&#34; &gt;}}).
+> For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design]({{< ref "kanvas/tasks/designs/deleting-a-design/index.md" >}}).

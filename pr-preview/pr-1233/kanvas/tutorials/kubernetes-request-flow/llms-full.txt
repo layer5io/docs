@@ -1,14 +1,14 @@
 
-In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &#34;Enter&#34; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a **diagram built in Kanvas**.
+In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits "Enter" in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a **diagram built in Kanvas**.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Note&#34; &gt;}}
+{{< alert type="info" title="Note" >}}
 This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ## Prerequisites
 
 - Basic understanding of Kubernetes objects (Service, Pod, Container)
-- Access to the _Kanvas Playground_. If you don&#39;t have an account, sign up at [Kanvas Playground](https://play.meshery.io/).
+- Access to the _Kanvas Playground_. If you don't have an account, sign up at [Kanvas Playground](https://play.meshery.io/).
 
 ## Lab Scenario
 
@@ -31,13 +31,13 @@ We will visually explore how all the Kubernetes components come together using K
 
 Start by opening the prebuilt design from here:
 
-[![Kubernetes Flow Diagram](../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&amp;design=629b6039-ebb3-4bd8-9b1b-19184fade225)
+[![Kubernetes Flow Diagram](../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Note&#34; &gt;}}
+{{< alert type="info" title="Note" >}}
 Click the image above to open the interactive design in Kanvas.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
-Once inside Kanvas, we will see a complete layout of how a request flows through the Kubernetes architecture. We are going to understand what&#39;s happening in this architecture.
+Once inside Kanvas, we will see a complete layout of how a request flows through the Kubernetes architecture. We are going to understand what's happening in this architecture.
 
 If it looks a bit overwhelming at first, zoom in/out or drag around the canvas to get comfortable with the layout.
 
@@ -45,7 +45,7 @@ If it looks a bit overwhelming at first, zoom in/out or drag around the canvas t
 
 #### 1. User
 
-This isn&#39;t a Kubernetes object, but it&#39;s been included to show where the request begins, like someone opening the app in a browser or making an API call.
+This isn't a Kubernetes object, but it's been included to show where the request begins, like someone opening the app in a browser or making an API call.
 
 #### 2. Service (ClusterIP)
 
@@ -55,8 +55,8 @@ This isn&#39;t a Kubernetes object, but it&#39;s been included to show where the
 
 #### 3. Deployment
 
-- It handles the app&#39;s lifecycle — scaling, rolling updates, and keeping replicas alive. It also ensures self-healing (restarts crashed Pods).
-- The Deployment here is meant to represent how Kubernetes manages Pods and acts as a layer of abstraction so we don&#39;t interact with Pods directly.
+- It handles the app's lifecycle — scaling, rolling updates, and keeping replicas alive. It also ensures self-healing (restarts crashed Pods).
+- The Deployment here is meant to represent how Kubernetes manages Pods and acts as a layer of abstraction so we don't interact with Pods directly.
 - Typically, we would see replica counts and labels defined. These labels are crucial because they are how the Deployment matches with Pods.
 
 #### 4. Pod
@@ -68,7 +68,7 @@ This isn&#39;t a Kubernetes object, but it&#39;s been included to show where the
 #### 5. Containers (Inside the Pod)
 
 - In this design, we have two containers inside the Pod — like roommates sharing the same space and network.
-- Container 1: **Application Logic** – the app&#39;s backend or frontend code.
+- Container 1: **Application Logic** – the app's backend or frontend code.
 - Container 2: **DB Layer** – a simple service handling persistence, cache, or a local DB.
 - This is super helpful if we are trying to understand how traffic flows into our app or how containers talk to each other inside the Pod.
 - In a real design, containers show details like image names, ports, and environment variables. This layout is simplified, but helps visualize the app structure.
@@ -79,7 +79,7 @@ At first glance, Kubernetes might seem like a maze of abstract objects like Serv
 
 Understanding this path helps us:
 
-- **Debug faster** — &#34;Why am I not getting a response?&#34; becomes easier to track when we know who is responsible for routing and serving.
+- **Debug faster** — "Why am I not getting a response?" becomes easier to track when we know who is responsible for routing and serving.
 - **Scale smarter** — Once we know where the load hits, we can add replicas where it actually matters.
 - **Design better** — From tracing logs to optimizing performance, knowing the flow helps us place the right tools in the right spots.
 
@@ -87,7 +87,7 @@ Think of this request path as the backbone of your Kubernetes understanding. Eve
 
 ### Operate This Flow
 
-If we want to go beyond just &#34;viewing&#34; the flow, we can switch to **Kanvas → Operator Mode** to interact with real Kubernetes clusters. This lets us:
+If we want to go beyond just "viewing" the flow, we can switch to **Kanvas → Operator Mode** to interact with real Kubernetes clusters. This lets us:
 
 - Swap containers inside Pods
 - Change replica counts for Deployments
@@ -97,15 +97,15 @@ All of this happens visually, without having to write or apply any YAML.
 
 ## Want to Try Building It Yourself?
 
-If we want to recreate this flow from scratch, we can drag and drop the same components inside **Kanvas → Designer Mode**. It&#39;s a great way to test our understanding and see how things fit together.
+If we want to recreate this flow from scratch, we can drag and drop the same components inside **Kanvas → Designer Mode**. It's a great way to test our understanding and see how things fit together.
 
 ### Diagram Screenshot
 
 [![Kubernetes Flow Diagram](../images/kubernetes-request-flow/k8s-request-flow.png)](../images/kubernetes-request-flow/k8s-request-flow.png)
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Note&#34; &gt;}}
+{{< alert type="info" title="Note" >}}
 You can design this yourself using the components in Kanvas.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ## Conclusion
 

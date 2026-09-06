@@ -3,14 +3,14 @@ When operating cloud native infrastructure, deep diagnostics often require direc
 
 ## Overview
 
-The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &#34;last mile&#34; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the `kubectl exec` command, but web-based.
+The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for "last mile" debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the `kubectl exec` command, but web-based.
 
 ### Key Features
 
 * **Direct Shell Access:** Instantly `exec` into any running container within your Kubernetes cluster to run standard shell commands (e.g., `ls`, `curl`, `top`).
 * **Multi-Session Support:** Open concurrent terminal sessions for different pods to compare environments or run simultaneous tests.
 * **Integrated Workflow:** Debug specific nodes while maintaining visibility of the surrounding infrastructure topology.
-* **Session Management:** Configure preferences such as &#34;Auto-close Terminal Sessions&#34; to manage resources efficiently.
+* **Session Management:** Configure preferences such as "Auto-close Terminal Sessions" to manage resources efficiently.
 
 ## How to Access the Terminal
 
@@ -47,7 +47,7 @@ To use the Interactive Terminal, ensure you are in **Operator Mode** and have a 
 ### 4. Environment Variable Validation
 
 **Scenario:** A deployment fails to authenticate with an external API.
-**Action:** Run the `env` command within the container&#39;s terminal.
+**Action:** Run the `env` command within the container's terminal.
 **Benefit:** Allows you to instantly verify if secret keys and API endpoints were injected correctly as environment variables during startup.
 
 ## Technical Architecture
@@ -59,11 +59,11 @@ The Interactive Terminal is built on an event-driven architecture designed for s
 3. **Data Transport:** Input and output data are streamed via **NATS** through the Meshery Broker. Shell output is preprocessed and transcribed before being delivered to the UI.
 4. **Session Isolation:** Each terminal session is mapped to a unique topic ID within the subscription, ensuring that data streams for multiple open terminals do not overlap.
 
-{{&lt; alert type=&#34;note&#34; title=&#34;Distinct Capabilities&#34; &gt;}} Note that each component offers its own capabilities, and that these capabilities differ between Designer mode and Operator mode. For example, in operator mode, if you right-click (and hold) on a Kubernetes pod, you will see actions unique to the Pod component, which are to open either an interactive terminal to one or all of the containers in the pod or to start streaming logs from any/all of the containers in the pod. {{&lt; /alert &gt;}}
+{{< alert type="note" title="Distinct Capabilities" >}} Note that each component offers its own capabilities, and that these capabilities differ between Designer mode and Operator mode. For example, in operator mode, if you right-click (and hold) on a Kubernetes pod, you will see actions unique to the Pod component, which are to open either an interactive terminal to one or all of the containers in the pod or to start streaming logs from any/all of the containers in the pod. {{< /alert >}}
 
-While using the interactive terminal, understand that you can only open one session per container. Each session&#39;s data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas. The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection establishes a unique session ID.
+While using the interactive terminal, understand that you can only open one session per container. Each session's data is streamed via Meshery Broker (NATS) from MeshSync to Meshery Server / Kanvas. The GraphQL subscription between your web browser running Kanvas and Meshery Server provides isolation between other users who might be concurrently sharing an interactive terminal. Each connection establishes a unique session ID.
 
-&lt;!-- {{&lt; figure src=&#34;images/interactive-terminal-sequence-diagram.svg&#34; link=&#34;images/interactive-terminal-sequence-diagram.svg&#34;  width=&#34;100%&#34; alt=&#34;interactive-terminal-sequence-diagram&#34; &gt;}} --&gt;
+<!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
 
 ![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
 
@@ -71,5 +71,5 @@ While using the interactive terminal, understand that you can only open one sess
 
 ### See Also
 
-* **[Log Streaming]({{&lt; ref &#34;kanvas/operator/log-streaming/index.md&#34; &gt;}}):** Learn how to live-tail logs for real-time application monitoring.
-&lt;!-- * **[Performance Management]({{&lt; ref &#34;kanvas/advanced/performance/index.md&#34; &gt;}}):** Run load tests and analyze performance profiles. --&gt;
+* **[Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}):** Learn how to live-tail logs for real-time application monitoring.
+<!-- * **[Performance Management]({{< ref "kanvas/advanced/performance/index.md" >}}):** Run load tests and analyze performance profiles. -->

@@ -10,7 +10,7 @@ Characteristics of the peer-to-peer communication include:
 - Very little server load
 - Not suited for a large amount of collaborators on a single document (each peer is connected to each other)
 
-![kanvas-collaboration-networking](images/kanvas-collaboration-networking.svg &#34;image-center-no-shadow&#34;)
+![kanvas-collaboration-networking](images/kanvas-collaboration-networking.svg "image-center-no-shadow")
 
 ### Default Configuration
 
@@ -21,4 +21,4 @@ By default, Layer5 Cloud uses the public signaling server provided by Layer5. Th
 Minimum: 20
 Maximum: 34
 
-Layer5 Cloud uses a min and max range for the total number of users in multi-player mode in one document at-a-time in order to prevent users forming clusters (groups), that can&#39;t connect to other users. The min and max range is randomly selected for each document editing session.
+Layer5 Cloud uses a min and max range for the total number of users in multi-player mode in one document at-a-time in order to prevent users forming clusters (groups), that can't connect to other users. The min and max range is randomly selected for each document editing session.

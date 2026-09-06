@@ -1,6 +1,6 @@
 
 - fix(handlers): nil-guard anonymous public-resource reads (prod panic) @leecalcote (#5147)
-- chore(wire-format): delete K8sContext dual-emit Marshal/Unmarshal &#43; update DAO snake_case lookups (Phase 6 tail) @leecalcote (#5143)
+- chore(wire-format): delete K8sContext dual-emit Marshal/Unmarshal + update DAO snake_case lookups (Phase 6 tail) @leecalcote (#5143)
 - [Chore]: Update to Sistent v0.20.1 @l5io (#5142)
 
 ### 👨🏽‍💻 Contributors

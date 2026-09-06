@@ -1,5 +1,5 @@
 
-- fix: revert gofrs-&gt;google/uuid migration to restore pop compatibility (prod auth 500s) @ritzorama (#5523)
+- fix: revert gofrs->google/uuid migration to restore pop compatibility (prod auth 500s) @ritzorama (#5523)
 
 ### 👨🏽‍💻 Contributors
 

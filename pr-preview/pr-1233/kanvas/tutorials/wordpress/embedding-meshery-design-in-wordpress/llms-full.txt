@@ -34,15 +34,15 @@ This tutorial assumes that you have created a design or have an existing one. If
 
    ```
    function kanvas_design_script() {
-         $script_uri = get_template_directory_uri() . &#39;/js/design.js&#39;;
+         $script_uri = get_template_directory_uri() . '/js/design.js';
          wp_enqueue_script_module(
-                           &#39;kanvas-design&#39;, 
+                           'kanvas-design', 
                            $script_uri, 
                            array(), 
-                           &#39;1.1.0&#39;, 
+                           '1.1.0', 
                );
    }
-   add_action(&#39;wp_enqueue_scripts&#39;, &#39;kanvas_design_script&#39;);
+   add_action('wp_enqueue_scripts', 'kanvas_design_script');
    ```
 
    ![Copy Script](images/embedding-design-in-wordpress/copy-script.png)

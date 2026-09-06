@@ -1,5 +1,5 @@
 
-- feat(oidc): retire env-var IdP fallback; Provider Org uses DB-backed Connections &#43; Credentials @hamza-mohd (#5401)
+- feat(oidc): retire env-var IdP fallback; Provider Org uses DB-backed Connections + Credentials @hamza-mohd (#5401)
 - fix(ui): gate W2 cloud-native OIDC on login_challenge presence @hortison (#5391)
 
 ### 👨🏽‍💻 Contributors

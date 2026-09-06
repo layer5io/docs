@@ -3,14 +3,14 @@ Deleting a design removes it permanently. There is no trash, no recycle bin, and
 
 ## Who Can Delete a Design
 
-Deleting a design requires the **Delete a design** permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design&#39;s owner, or a provider administrator, can delete it.
+Deleting a design requires the **Delete a design** permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design's owner, or a provider administrator, can delete it.
 
-If the **Delete** action is grayed out for you, your role does not carry the permission. See [Default Permissions]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}}) for which roles hold it by default, and [Keychains]({{&lt; ref &#34;cloud/concepts/identity-and-security/keychains.md&#34; &gt;}}) for how an organization administrator can grant it.
+If the **Delete** action is grayed out for you, your role does not carry the permission. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold it by default, and [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) for how an organization administrator can grant it.
 
 ## Deleting a Single Design
 
-1. Go to [My Designs](https://cloud.layer5.io/catalog/content/my-designs) in Layer5 Cloud, or open the design&#39;s detail page.
-2. Choose **Delete** from the design&#39;s actions.
+1. Go to [My Designs](https://cloud.layer5.io/catalog/content/my-designs) in Layer5 Cloud, or open the design's detail page.
+2. Choose **Delete** from the design's actions.
 3. A confirmation dialog opens, naming the design. Click **Delete** to confirm, or dismiss the dialog to cancel.
 
 Once the deletion succeeds you are returned to **My Designs** and the design is gone from the list.
@@ -31,7 +31,7 @@ Each design in the selection is deleted independently. If one of them fails - fo
 - The design itself, including its design file, name, and metadata.
 - Its assignment to **every** workspace it belonged to. Collaborators who reached the design through a shared workspace lose access to it, because there is nothing left to reach.
 
-Deleting a design does not affect infrastructure. If the design was deployed, the deployed resources stay running in your clusters. [Undeploy]({{&lt; ref &#34;kanvas/tasks/designs/undeploying-designs/index.md&#34; &gt;}}) the design first if you want its resources removed as well - once the design is deleted, you no longer have the definition Meshery would need in order to undeploy it.
+Deleting a design does not affect infrastructure. If the design was deployed, the deployed resources stay running in your clusters. [Undeploy]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) the design first if you want its resources removed as well - once the design is deleted, you no longer have the definition Meshery would need in order to undeploy it.
 
 ## Related Actions That Are Not Deletion
 
@@ -42,8 +42,8 @@ Two nearby actions are frequently mistaken for deletion. Neither destroys the de
 | **Unpublish** | Removes a design from the public catalog. The design remains in your account as a private design. | You want to withdraw a design from public view but keep it. |
 | **Remove from workspace** | Unassigns the design from one workspace. The design and its other workspace assignments are untouched. | You want to tidy a workspace, not lose the design. |
 
-Removing a design from a workspace is labelled **Delete** in the workspace&#39;s design table, and its confirmation dialog says &#34;from workspace *name*&#34;. That phrase is the thing to check: if the dialog names a workspace, you are unassigning; if it does not, you are deleting the design outright.
+Removing a design from a workspace is labelled **Delete** in the workspace's design table, and its confirmation dialog says "from workspace *name*". That phrase is the thing to check: if the dialog names a workspace, you are unassigning; if it does not, you are deleting the design outright.
 
-{{&lt; alert type=&#34;warning&#34; title=&#34;Deletion is permanent&#34; &gt;}}
-There is no recovery path for a deleted design. If you may want the design later, [export it]({{&lt; ref &#34;kanvas/designer/export-designs/index.md&#34; &gt;}}) as a **Design (YAML)** or **Design (OCI image)** file before deleting - both formats are lossless and can be imported back into Kanvas.
-{{&lt; /alert &gt;}}
+{{< alert type="warning" title="Deletion is permanent" >}}
+There is no recovery path for a deleted design. If you may want the design later, [export it]({{< ref "kanvas/designer/export-designs/index.md" >}}) as a **Design (YAML)** or **Design (OCI image)** file before deleting - both formats are lossless and can be imported back into Kanvas.
+{{< /alert >}}

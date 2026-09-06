@@ -3,16 +3,16 @@ Leaderboard provides a clear and engaging way to view and compare the performanc
 
 ![Leaderboard page overview](images/leaderboard-page.gif)
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Understanding Metrics&#34; &gt;}}
-Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about [Metrics]({{&lt; ref &#34;cloud/concepts/catalog/metrics/index.md&#34; &gt;}})
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Understanding Metrics" >}}
+Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about [Metrics]({{< ref "cloud/concepts/catalog/metrics/index.md" >}})
+{{< /alert >}}
 
 ### How to Access the Leaderboard
 
 You can reach the Leaderboard page in two ways:
 
 1. **Global Navigation Bar:** Click the Leaderboard icon in the main navigation bar for quick access.
-2. **From the Catalog Page:** While Browse the Catalog, you can click the &#39;Open Leaderboard&#39; button in the **Top Performers** section
+2. **From the Catalog Page:** While Browse the Catalog, you can click the 'Open Leaderboard' button in the **Top Performers** section
 
 ![Leaderboard Button](images/leaderboard_button.png)
 

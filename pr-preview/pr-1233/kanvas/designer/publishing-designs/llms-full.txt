@@ -7,7 +7,7 @@ Publishing a design makes it visible to all Meshery Cloud users and anonymous vi
 Navigate to Meshery [Kanvas Designer](https://playground.meshery.io/extension/meshmap) from the main dashboard.
 
 ### Step 2: Select Design in Sidebar
-Publish designs through two methods. Click the **info (&#34;i&#34;)** button for details.
+Publish designs through two methods. Click the **info ("i")** button for details.
 
 - **Option 1:** View designs in the sidebar
   ![Sidebar Design List](images/designs-select-sidebar.png)
@@ -28,7 +28,7 @@ Fill out the publication form:
 ### Step 4: Review Process
 Approval workflow based on user role:
 - **Admin submissions:** Published immediately
-- **User submissions:** Enter &#34;Pending Review&#34;
+- **User submissions:** Enter "Pending Review"
 
 Submissions in the “Pending Review” state will remain unpublished until they are manually reviewed and either approved or rejected by an Organization Admin or Provider Admin. This review process may take some time depending on the availability of reviewers. Regardless of approval or rejection, submitters will receive an email notification with the decision.
 
@@ -38,7 +38,7 @@ Submissions in the “Pending Review” state will remain unpublished until they
 Once the review process is complete, you will receive an email notification informing you of the decision.  
 
 - If your design is approved: 
-  - It will no longer appear in &#34;My Designs.&#34;  
+  - It will no longer appear in "My Designs."  
   - Instead, it will be listed in the **[Catalog](https://cloud.layer5.io/catalog)** as a publicly available entry.  
   - This ensures that published designs remain accessible to all users while keeping personal design spaces uncluttered.  
 
@@ -71,9 +71,9 @@ A design transitions through multiple states from creation to publication. The d
 
 | **State Stage**    | **Visibility**                    | **Operability**                                | **Key Restrictions**                                              |
 |--------------------|----------------------------------|------------------------------------------------|--------------------------------------------------------------------|
-| **Pre-Publish**    | Sidebar Design List &amp; Configuration → Designs               | Free edit/delete/rename (editable by anyone)   |  No restrictions                                                                    |
-| **Pending Review** | Sidebar Design List &amp; Configuration → Designs                | Editable by all users (including guests)       | Deleting during this stage creates dead entries in the approval list |
-| **Published**      | Category List (hidden in sidebar) | View-only copies (auto-appended &#34;_copy&#34;)       | Original design permanently locked (edit in category only updates metadata) |
+| **Pre-Publish**    | Sidebar Design List & Configuration → Designs               | Free edit/delete/rename (editable by anyone)   |  No restrictions                                                                    |
+| **Pending Review** | Sidebar Design List & Configuration → Designs                | Editable by all users (including guests)       | Deleting during this stage creates dead entries in the approval list |
+| **Published**      | Category List (hidden in sidebar) | View-only copies (auto-appended "_copy")       | Original design permanently locked (edit in category only updates metadata) |
 | **Withdrawn**      | Returns to sidebar as private     | Free edit/delete/rename                        | Original cannot be republished; must create a new canvas with identical content |
 
 **Critical Rules:**
@@ -96,8 +96,8 @@ For more about roles and permissions, refer to [Role Descriptions](https://docs.
 
 ## FAQ
 
-### 1. When my design is in &#34;Pending Review,&#34; can I still edit it? Will the changes take effect?
-Yes, you can edit your design while it is in the &#34;Pending Review&#34; state, and any modifications will be automatically reflected in the submitted design. No need to resubmit the request.
+### 1. When my design is in "Pending Review," can I still edit it? Will the changes take effect?
+Yes, you can edit your design while it is in the "Pending Review" state, and any modifications will be automatically reflected in the submitted design. No need to resubmit the request.
 
 ### 2. After my design is approved and published, can I modify it? Will the category be updated?
 No, once a design is **published**, it becomes **immutable**. You cannot directly edit or modify the contents. The category and metadata remain locked to ensure version consistency. However, you can create a new version by cloning the design and making modifications.

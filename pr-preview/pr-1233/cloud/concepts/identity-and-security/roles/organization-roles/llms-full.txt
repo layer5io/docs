@@ -1,13 +1,13 @@
 
-{{&lt; cardpane &gt;}}
-{{% card header=&#34;Default Organization Roles&#34; %}}
-&lt;img src=&#34;../images/organization-roles.svg&#34; link=&#34;../images/organization-roles.svg&#34;  width=&#34;100%&#34; alt=&#34;Organization Roles&#34; /&gt;
+{{< cardpane >}}
+{{% card header="Default Organization Roles" %}}
+<img src="../images/organization-roles.svg" link="../images/organization-roles.svg"  width="100%" alt="Organization Roles" />
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}
 
-{{&lt; cardpane &gt;}}
+{{< cardpane >}}
 
-{{% card header=&#34;## Organization Administrators&#34; %}}
+{{% card header="## Organization Administrators" %}}
 
 **What is the purpose of this role?**
 
@@ -32,13 +32,13 @@
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}
 
-{{&lt; cardpane &gt;}}
-{{% card header=&#34;## Organization Billing Managers&#34; %}}
+{{< cardpane >}}
+{{% card header="## Organization Billing Managers" %}}
 
 **What is the purpose of this role?**
 
@@ -62,7 +62,7 @@
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}

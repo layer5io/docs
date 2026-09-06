@@ -1,5 +1,5 @@
 
-## What&#39;s New
+## What's New
 ## 🔤 General
 ## 🖌️ Designer
 
@@ -16,8 +16,8 @@
 ## 🧰 Maintenance
 
 - [CI] Add Checkout Repo @leecalcote (#3002)
-- [CI] Enhance to use full base&#43;extension versioning (Attempt #2) @leecalcote (#3001)
-- [CI] Enhance to use full base&#43;extension versioning @leecalcote (#3000)
+- [CI] Enhance to use full base+extension versioning (Attempt #2) @leecalcote (#3001)
+- [CI] Enhance to use full base+extension versioning @leecalcote (#3000)
 - add extension version logic to release drafter w/singoff @Jougan-0 (#2999)
 - uncomment go mod code w/singoff @Jougan-0 (#2998)
 - build(deps-dev): bump eslint-plugin-react from 7.33.2 to 7.37.1 in /meshmap @dependabot (#2993)

@@ -5,7 +5,7 @@ Meshery is a powerful multi-cloud management platform that enables you to config
 
 Meshery has a number of extensions, adapters, and plugins. In this tutorial, we will use the [Kanvas](https://docs.meshery.io/extensions/kanvas) extension to provide an intuitive, visual experience for configuring and deploying an AWS EC2 instance. Among other aspects, Kanvas provides an alternative to command-line tools like `kubectl` by offering infrastructure as design. Once you connect your Kubernetes cluster to Meshery, you can configure, deploy, and manage AWS resources directly from the Kanvas interface, making deployments more intuitive and collaborative 
 
-In this guide, you’ll explore how to deploy AWS resources, including setup and architecture details. This guide also covers how to access pre-configured designs from [Meshery Catalog](https://meshery.io/catalog) and demonstrates how to visualize deployed resources using Kanvas&#39; operator mode, offering a comprehensive understanding of AWS resource management.
+In this guide, you’ll explore how to deploy AWS resources, including setup and architecture details. This guide also covers how to access pre-configured designs from [Meshery Catalog](https://meshery.io/catalog) and demonstrates how to visualize deployed resources using Kanvas' operator mode, offering a comprehensive understanding of AWS resource management.
 
 ### Prerequisites
 
@@ -78,8 +78,8 @@ To connect the EC2 controller to AWS, create a Kubernetes secret containing your
 1. Double-click the Secret component to open its configuration.
 
 1. Under **Data**, add the base 64 encoded values of your AWS keys.
-    - **AWS_ACCESS_KEY_ID**: `&lt;base64-encoded-key&gt;`
-    - **AWS_SECRET_ACCESS_KEY**: `&lt;base64-encoded-secret&gt;`
+    - **AWS_ACCESS_KEY_ID**: `<base64-encoded-key>`
+    - **AWS_SECRET_ACCESS_KEY**: `<base64-encoded-secret>`
 
     Encode your AWS key and secret with a [base64 encoder](https://www.base64encode.org/), then enter them in the configuration.
 
@@ -87,11 +87,11 @@ To connect the EC2 controller to AWS, create a Kubernetes secret containing your
 
 #### Configure the EC2 Controller Pod to Use the Secret
 
-While this step is already handled in the design, but it&#39;s worth clarifying how the controller pod connects to the secret through environment variables.
+While this step is already handled in the design, but it's worth clarifying how the controller pod connects to the secret through environment variables.
 
 1. Double-click the EC2 controller pod to open its configuration tab.
 
-1. In the **Containers** section, scroll to **env** and click the **&#43;** to add two environment variables:
+1. In the **Containers** section, scroll to **env** and click the **+** to add two environment variables:
 
     - **AWS_ACCESS_KEY_ID**: For the name, put in `AWS_ACCESS_KEY_ID`, click on the `secret Key Ref` dropdown and put in the **key** as `AWS_ACCESS_KEY_ID` and the secret resource **name** as `aws_creds`.
     - **AWS_SECRET_ACCESS_KEY**: Set the `AWS_SECRET_ACCESS_KEY` similarly, using the same secret key reference.
@@ -142,8 +142,8 @@ With the VPC and networking resources set up, deploy the EC2 instances within th
 
 2. Open the design on the Playground and deploy the instances.
 
-3. Navigate to the AWS Management Console to confirm the instances&#39; successful deployment.
+3. Navigate to the AWS Management Console to confirm the instances' successful deployment.
 
 ### Conclusion
 
-This guide covered the steps to deploy and manage EC2 instances using Meshery. It demonstrated how to leverage pre-configured catalog designs, configure and deploy resources, set up the controller and necessary secrets, configure VPC networking resources, and ultimately deploy the EC2 instances. It also showed how to visualize Kubernetes resources using Kanvas&#39;s operator mode. This process highlights the ease of managing AWS resources visually through Meshery’s Kanvas interface, eliminating the need for CLI commands.
+This guide covered the steps to deploy and manage EC2 instances using Meshery. It demonstrated how to leverage pre-configured catalog designs, configure and deploy resources, set up the controller and necessary secrets, configure VPC networking resources, and ultimately deploy the EC2 instances. It also showed how to visualize Kubernetes resources using Kanvas's operator mode. This process highlights the ease of managing AWS resources visually through Meshery’s Kanvas interface, eliminating the need for CLI commands.

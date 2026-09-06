@@ -12,7 +12,7 @@ Pinning a model adds it to the dock at the bottom of the Designer interface. Thi
 ## How to Pin a Model
 
 1. Hover over the model you want to pin in the component list on the left side of the Designer.
-2. Click the pin icon that appears next to the model name. A tooltip will show &#34;Pin To Dock&#34;.
+2. Click the pin icon that appears next to the model name. A tooltip will show "Pin To Dock".
 3. The model will now appear in the dock at the bottom of the Designer.
 
 
@@ -28,11 +28,11 @@ After you pin a model, it appears as an icon in the dock at the bottom of the De
 
 Clicking a pinned model in the dock gives you quick access to all its components. You can use these components in your design by either clicking to add them or dragging them onto the canvas for easy placement and configuration.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Note&#34; &gt;}}
+{{< alert type="info" title="Note" >}}
 Only models can be pinned to the dock. Individual components within a model cannot be pinned directly.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
-![How to use pinned model&#39;s components](images/use-pinned-models-components.png)
+![How to use pinned model's components](images/use-pinned-models-components.png)
 
 ## How to Remove a Model from the Dock
 
@@ -41,7 +41,7 @@ You can remove a model from the dock in two ways:
 ### Method 1: Using the Pin Icon
 
 1. Hover over the pinned model in the dock or in the component list.
-2. Click the pin icon again (the tooltip will show &#34;Remove From Dock&#34;).
+2. Click the pin icon again (the tooltip will show "Remove From Dock").
 
 
 ![Remove From Dock action](images/unpin-model-1.png)
@@ -54,6 +54,6 @@ You can remove a model from the dock in two ways:
 ![Unpin using close button](images/unpin-model-2.png)
 
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Good to Know&#34; &gt;}}
+{{< alert type="info" title="Good to Know" >}}
 You can pin as many models as your workflow needs and swap them out anytime as your project evolves.
-{{&lt; /alert &gt;}}
+{{< /alert >}}

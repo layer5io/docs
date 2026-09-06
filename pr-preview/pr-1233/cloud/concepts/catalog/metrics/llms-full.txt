@@ -3,14 +3,14 @@ Metrics provide valuable insights into how users engage with the designs, allowi
 
 The design catalog can be accessed from the _Layer5 Cloud_ catalog page at [Layer5 Cloud Catalog](https://cloud.layer5.io/catalog).
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Design Capabilities&#34; &gt;}}
+{{< alert type="info" title="Design Capabilities" >}}
 
-Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about [Designs]({{&lt; ref &#34;kanvas/getting-started/_index.md&#34; &gt;}})
+Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about [Designs]({{< ref "kanvas/getting-started/_index.md" >}})
 
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 You can view the metrics of a Design in two ways:
-1. Below each Design&#39;s catalog card, you can see its metrics.
+1. Below each Design's catalog card, you can see its metrics.
 ![Catalog card](images/cards.png)
 
 2. By clicking on the catalog card, a modal will pop up displaying all the information about the Design, including its metrics.

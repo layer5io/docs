@@ -26,21 +26,21 @@ role**, so the `GET` must carry a credential. It validates configuration only -
 it does not dial the SMTP server.
 
 ```bash
-curl -X GET &#34;https://your-domain.com/api/system/email/test&#34; \
-  -H &#34;Authorization: Bearer YOUR_JWT_TOKEN&#34;
+curl -X GET "https://your-domain.com/api/system/email/test" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
 **Expected Response (Success):**
 ```json
 {
-  &#34;status&#34;: &#34;success&#34;,
-  &#34;message&#34;: &#34;Email configuration is valid&#34;,
-  &#34;timestamp&#34;: &#34;1695312000&#34;
+  "status": "success",
+  "message": "Email configuration is valid",
+  "timestamp": "1695312000"
 }
 ```
 
 The response carries the verdict only. It does not report `smtp_host`,
-`smtp_port` or `smtp_username`: those are the deployment&#39;s own relay settings,
+`smtp_port` or `smtp_username`: those are the deployment's own relay settings,
 and `SMTP_USERNAME` is an email address. Read the configured values from your
 deployment configuration instead.
 
@@ -48,20 +48,20 @@ deployment configuration instead.
 rather than JSON:
 
 ```text
-Email configuration verification failed: SMTP configuration error for field &#39;SMTP_HOST&#39;
+Email configuration verification failed: SMTP configuration error for field 'SMTP_HOST'
 ```
 
 **Expected Response (Unauthenticated):** `401 Unauthorized`
 ```json
 {
-  &#34;message&#34;: &#34;user must be logged in to perform this operation&#34;
+  "message": "user must be logged in to perform this operation"
 }
 ```
 
 **Expected Response (Authenticated, not a provider admin):** `403 Forbidden`
 ```json
 {
-  &#34;message&#34;: &#34;user you@example.com must be Provider Admin to perform this operation&#34;
+  "message": "user you@example.com must be Provider Admin to perform this operation"
 }
 ```
 
@@ -70,51 +70,51 @@ Email configuration verification failed: SMTP configuration error for field &#39
 Send an actual test email to verify end-to-end email functionality. This endpoint requires authentication and provider admin role:
 
 ```bash
-curl -X POST &#34;https://cloud.layer5.io/api/system/email/test&#34; \
-  -H &#34;Content-Type: application/json&#34; \
-  -H &#34;Authorization: Bearer YOUR_JWT_TOKEN&#34; \
-  -d &#39;{
-    &#34;to&#34;: &#34;test@example.com&#34;,
-    &#34;subject&#34;: &#34;Layer5 Cloud Email Test&#34;
-  }&#39;
+curl -X POST "https://cloud.layer5.io/api/system/email/test" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -d '{
+    "to": "test@example.com",
+    "subject": "Layer5 Cloud Email Test"
+  }'
 ```
 
 **Request Body:**
 ```json
 {
-  &#34;to&#34;: &#34;test@example.com&#34;,
-  &#34;subject&#34;: &#34;Layer5 Cloud Email Test (optional)&#34;
+  "to": "test@example.com",
+  "subject": "Layer5 Cloud Email Test (optional)"
 }
 ```
 
 **Expected Response (Success):**
 ```json
 {
-  &#34;status&#34;: &#34;success&#34;,
-  &#34;message&#34;: &#34;Test email sent successfully&#34;,
-  &#34;timestamp&#34;: &#34;1695312000&#34;,
-  &#34;sent_to&#34;: &#34;test@example.com&#34;
+  "status": "success",
+  "message": "Test email sent successfully",
+  "timestamp": "1695312000",
+  "sent_to": "test@example.com"
 }
 ```
 
 **Expected Response (Error - Unauthorized):**
 ```json
 {
-  &#34;error&#34;: &#34;Unauthorized: provider admin role required&#34;
+  "error": "Unauthorized: provider admin role required"
 }
 ```
 
 **Expected Response (Error - Invalid Email):**
 ```json
 {
-  &#34;error&#34;: &#34;Invalid email address format&#34;
+  "error": "Invalid email address format"
 }
 ```
 
 **Expected Response (Error - Email Configuration):**
 ```json
 {
-  &#34;error&#34;: &#34;Email configuration validation failed: SMTP authentication failed&#34;
+  "error": "Email configuration validation failed: SMTP authentication failed"
 }
 ```
 
@@ -132,7 +132,7 @@ SMTP_PASSWORD=your-app-password
 
 ## Debug Log Examples
 
-When `LOG_LEVEL=5`, you&#39;ll see detailed debug logs for email operations:
+When `LOG_LEVEL=5`, you'll see detailed debug logs for email operations:
 
 ### 1. SMTP Configuration Validation
 
@@ -154,13 +154,13 @@ DEBUG Email template executed successfully body_length=2048 email_type=welcome
 ```log
 DEBUG Email construction completed final_email_size=2156 has_cc=false cc_count=0 recipient_count=1
 DEBUG Attempting SMTP send smtp_endpoint=smtp.gmail.com:587 from_user=sender@domain.com to_recipients=[user@example.com] email_size_bytes=2156
-INFO Email sent successfully recipients=user@example.com subject=&#34;Welcome to Layer5 Cloud&#34;
+INFO Email sent successfully recipients=user@example.com subject="Welcome to Layer5 Cloud"
 ```
 
 ### 4. Error Scenarios
 
 ```log
-ERROR SMTP send failed - detailed error info error_type=*net.OpError error_message=&#34;dial tcp: lookup smtp.gmail.com: no such host&#34; smtp_host=smtp.gmail.com smtp_port=587 smtp_username=sender@domain.com recipients=[user@example.com]
+ERROR SMTP send failed - detailed error info error_type=*net.OpError error_message="dial tcp: lookup smtp.gmail.com: no such host" smtp_host=smtp.gmail.com smtp_port=587 smtp_username=sender@domain.com recipients=[user@example.com]
 ```
 
 ## Flow Emails (Kratos Integration)
@@ -191,7 +191,7 @@ Flow emails (registration, password recovery, etc.) use a separate logging mecha
 
 ### 2. Authentication Failures
 
-**Issue:** `SMTP authentication failed for user &#39;sender@domain.com&#39;`
+**Issue:** `SMTP authentication failed for user 'sender@domain.com'`
 
 **Solution:**
 - Verify SMTP username and password are correct
@@ -230,7 +230,7 @@ Flow emails (registration, password recovery, etc.) use a separate logging mecha
 In development environment (`ENVIRONMENT=development`), email content is logged instead of being sent:
 
 ```log
-INFO Development mode - Email details recipients=user@example.com subject=&#34;Test Email&#34; body=&#34;&lt;html&gt;...&lt;/html&gt;&#34;
+INFO Development mode - Email details recipients=user@example.com subject="Test Email" body="<html>...</html>"
 ```
 
 ## Error Codes Reference

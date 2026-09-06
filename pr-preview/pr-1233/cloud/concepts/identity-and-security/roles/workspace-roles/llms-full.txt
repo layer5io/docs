@@ -1,17 +1,17 @@
 
-{{&lt; cardpane &gt;}}
+{{< cardpane >}}
 {{% card %}}
-&lt;img src=&#34;../images/workspace-roles.svg&#34; link=&#34;../images/workspace-roles.svg&#34;  width=&#34;100%&#34; alt=&#34;Workspace Roles&#34; /&gt;
+<img src="../images/workspace-roles.svg" link="../images/workspace-roles.svg"  width="100%" alt="Workspace Roles" />
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}
 
-{{&lt; cardpane &gt;}}
+{{< cardpane >}}
 
-{{% card header=&#34;## Workspace Administrator&#34; %}}
+{{% card header="## Workspace Administrator" %}}
 
 **What is the purpose of this role?**
 
-- Administration of a workspace along with curation of content for the organization&#39;s catalog (for each organization for which the user has this role assigned)
+- Administration of a workspace along with curation of content for the organization's catalog (for each organization for which the user has this role assigned)
 
 **Who can assign this role?**
 
@@ -32,7 +32,7 @@
 
 **What permissions does this role have?**
 
-- Check [Permissions Reference]({{&lt; ref &#34;cloud/reference/default-permissions.md&#34; &gt;}})
+- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}

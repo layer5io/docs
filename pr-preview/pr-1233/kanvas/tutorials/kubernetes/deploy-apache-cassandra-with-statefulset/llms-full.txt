@@ -3,12 +3,12 @@
 
 In this tutorial, we will learn how to deploy a **Apache Cassandra with a StatefulSet** using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.
 
-&gt; **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{&lt; ref &#34;kanvas/tutorials/kubernetes/kubernetes-pods/index.md&#34; &gt;}}) tutorial first.
+> **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{< ref "kanvas/tutorials/kubernetes/kubernetes-pods/index.md" >}}) tutorial first.
 
 ### Prerequisites
 
 - Basic understanding of Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don&#39;t have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
 ### Lab Scenario
 
@@ -43,9 +43,9 @@ These YAML files contain the Cassandra Service and Cassandra StatefulSet manifes
 1. In the left sidebar, click on the upward arrow symbol(import icon) to import the designs into Meshery.
 
 2. In the modal that appears:
-   - Enter a name for your design in the &#34;Design File Name&#34; field (e.g.`cassandra-service`).
+   - Enter a name for your design in the "Design File Name" field (e.g.`cassandra-service`).
 
-   - Select `Kubernetes Manifest` from the &#34;Design Type&#34; dropdown menu.
+   - Select `Kubernetes Manifest` from the "Design Type" dropdown menu.
 
         ![Import modal](images/screenshots/cassandra-1.png)
 
@@ -55,7 +55,7 @@ These YAML files contain the Cassandra Service and Cassandra StatefulSet manifes
 
         ![Import cassandra-service](images/screenshots/cassandra-2.png)
 
-3. Under the &#34;Designs&#34; tab, you will see that we have successfully imported the `cassandra-service` design.
+3. Under the "Designs" tab, you will see that we have successfully imported the `cassandra-service` design.
 
    When you click on the names of the designs on the `Designs` tab, you can see the visual representations of the various Kubernetes resources and their relationships on the canvas.
 
@@ -90,8 +90,8 @@ To view the resources deployed we will use the Visualize section of the _MeshMap
 1. Move to the Visualize tab.
 2. Click the filter icon and choose the appropriate filters
 
-    - For &#34;Kinds&#34; select `StatefulSet`, `Service` and `StorageClass`
-    - For the &#34;label&#34; select `dev=tutorial`
+    - For "Kinds" select `StatefulSet`, `Service` and `StorageClass`
+    - For the "label" select `dev=tutorial`
 
 3. You can also use the icons on the right sidebar to filter the resources.
 
@@ -101,7 +101,7 @@ To view the resources deployed we will use the Visualize section of the _MeshMap
 
 #### Resource Details
 
-You can click on any resource to view more details about it in the &#34;Details&#34; section on the right sidebar.
+You can click on any resource to view more details about it in the "Details" section on the right sidebar.
 
 **Deployment**
 
@@ -113,4 +113,4 @@ To delete the resources, use the `Undeploy` option from the Action dropdown in t
 
 #### Conclusion
 
-Congratulations! You’ve successfully completed the tutorial on deploying Apache Cassandra on Kubernetes using StatefulSets in Meshery Playground. This hands-on experience should have given you valuable insights into managing Cassandra instances with persistent storage, automatic discovery, and seamless scalability. You also explored how Kubernetes&#39; StatefulSet feature ensures robust application state management and high availability in Meshery Playground.
+Congratulations! You’ve successfully completed the tutorial on deploying Apache Cassandra on Kubernetes using StatefulSets in Meshery Playground. This hands-on experience should have given you valuable insights into managing Cassandra instances with persistent storage, automatic discovery, and seamless scalability. You also explored how Kubernetes' StatefulSet feature ensures robust application state management and high availability in Meshery Playground.

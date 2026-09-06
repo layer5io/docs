@@ -17,7 +17,7 @@ By configuring components effectively, you ensure that your cloud-native deploym
 
 ## Using the Radial Context Menu to Lock, Style, Duplicate, and Delete Components
 
-Kanvas&#39; **radial context menu** provides an intuitive way to interact with components on your design canvas. This menu allows you to quickly perform key actions such as locking, styling, duplicating, and deleting components without leaving the design canvas.
+Kanvas' **radial context menu** provides an intuitive way to interact with components on your design canvas. This menu allows you to quickly perform key actions such as locking, styling, duplicating, and deleting components without leaving the design canvas.
 
 ### Key Functions of the Radial Context Menu:
 
@@ -61,17 +61,17 @@ Annotations in MeshMap are a powerful feature that enables you to add contextual
 
 ### Importance of Annotations:
 
-Annotations play a crucial role in collaborative design processes. They provide a way to document decisions, share knowledge, and offer feedback directly within the design environment. This minimizes miscommunication and ensures all team members are aligned on the design&#39;s intent and structure.
+Annotations play a crucial role in collaborative design processes. They provide a way to document decisions, share knowledge, and offer feedback directly within the design environment. This minimizes miscommunication and ensures all team members are aligned on the design's intent and structure.
 
 By effectively using annotations, you enhance the clarity and transparency of your designs, ensuring that they are well-documented and easy for all collaborators to understand.
 
 ## Copy and Paste Components
 
-You can copy and paste one or more components — even if you&#39;re going from one design to another.
+You can copy and paste one or more components — even if you're going from one design to another.
 
 ### Use the right-click menu or keyboard shortcuts
 
-You might be able to copy and paste with the right-click menu, but for security reasons, most browsers don&#39;t allow web apps (like Kanvas) to use your computer&#39;s clipboard through menus.
+You might be able to copy and paste with the right-click menu, but for security reasons, most browsers don't allow web apps (like Kanvas) to use your computer's clipboard through menus.
 
 ![copy-paste](images/working-with-components/copy-paste.png)
 
@@ -79,21 +79,21 @@ To copy and paste, you can use keyboard shortcuts:
 
 To copy and paste:
 
-1. Use [keyboard shortcuts]({{&lt; ref &#34;kanvas/reference/keyboard-shortcuts.md&#34; &gt;}})
+1. Use [keyboard shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}})
 1. Use the right-click menu
 
-&lt;!-- Image needed --&gt;
+<!-- Image needed -->
 ### Select All with Keyboard Shortcuts
 
-1. Select all components on the Kanvas by pressing CMD&#43;A (Mac) or CTRL&#43;A (Windows).
-2. Copy the selection by pressing CMD&#43;C (Mac) or CTRL&#43;C (Windows).
-3. Paste the components by pressing CMD&#43;V (Mac) or CTRL&#43;V (Windows).
+1. Select all components on the Kanvas by pressing CMD+A (Mac) or CTRL+A (Windows).
+2. Copy the selection by pressing CMD+C (Mac) or CTRL+C (Windows).
+3. Paste the components by pressing CMD+V (Mac) or CTRL+V (Windows).
 
 ### Use the Right-Click Menu
 
 1. Right-click on the canvas and select Select All Components.
    ![copy-paste-rightclick-select](images/working-with-components/copy-paste-rightclick-select.png)
-2. Right-click again and choose Paste or press CMD&#43;V (Mac) or CTRL&#43;V (Windows) to paste the copied components.
+2. Right-click again and choose Paste or press CMD+V (Mac) or CTRL+V (Windows) to paste the copied components.
    ![copy-paste-rightclick-paste](images/working-with-components/copy-paste-rightclick-paste.png)
 
 ### Use the Save As Option
@@ -105,5 +105,5 @@ To copy and paste:
 
 ### Select with SHIFT or CTRL
 1. Press and hold either SHIFT or CTRL, then click and drag over all the components you want to select.
-2. Copy the selected components with CMD&#43;C (Mac) or CTRL&#43;C (Windows).
-3. Paste the components with CMD&#43;V (Mac) or CTRL&#43;V (Windows).
+2. Copy the selected components with CMD+C (Mac) or CTRL+C (Windows).
+3. Paste the components with CMD+V (Mac) or CTRL+V (Windows).

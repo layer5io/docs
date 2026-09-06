@@ -1,6 +1,6 @@
 
 As you build a design, Kanvas continuously evaluates the
-[relationships]({{&lt; ref &#34;kanvas/concepts/relationships/index.md&#34; &gt;}}) between your components — to
+[relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) between your components — to
 identify connections, validate them, and keep related configuration in sync.
 This page explains how you can choose which engine performs that evaluation, how
 to read the relationship indicator, and how to diagnose results that look wrong.
@@ -19,10 +19,10 @@ Kanvas can run relationship evaluation using one of two interchangeable engines:
 Both engines produce the same relationship results. The choice affects
 performance, and where toil (evaluation) is done, not correctness.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Editing is never blocked&#34; &gt;}} Relationship
+{{< alert type="info" title="Editing is never blocked" >}} Relationship
 evaluation runs alongside your work — it never blocks editing or saving a
 design. If evaluation fails for any reason, you can keep designing and saving
-normally; only the relationship results are affected. {{&lt; /alert &gt;}}
+normally; only the relationship results are affected. {{< /alert >}}
 
 ## Changing the Evaluation Engine Preference
 
@@ -35,18 +35,18 @@ The engine is controlled by the **Relationship Evaluation Engine** preference.
 | Value                       | What it does                                                                                                                                                                                 |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Automatic** (recommended) | Runs a one-time health check at the start of the session. If the client-side (WASM) engine passes a self-test, it is used for the rest of the session; otherwise the Meshery server is used. |
-| **Meshery server**          | Always uses the Meshery server&#39;s policy engine.                                                                                                                                              |
+| **Meshery server**          | Always uses the Meshery server's policy engine.                                                                                                                                              |
 | **Client-side (WASM)**      | Uses the in-browser WebAssembly engine.                                                                                                                                                      |
 
 The engine is selected **once per session**. Changing the preference takes full
 effect on the next session (for example, after reloading Kanvas).
 
-{{&lt; alert type=&#34;info&#34; title=&#34;When to prefer the server engine&#34; &gt;}} Leave the
+{{< alert type="info" title="When to prefer the server engine" >}} Leave the
 preference on **Automatic** unless you have a specific reason to change it. If
 client-side results ever look wrong, switching to **Meshery server** is the most
 reliable way to rule out the engine as the cause — see
 [Diagnosing failing or unexpected results](#diagnosing-failing-or-unexpected-relationship-results).
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ## Reading the Relationship Indicator
 
@@ -57,7 +57,7 @@ The relationship indicator tells you the state of the most recent evaluation:
 - **Evaluated** — evaluation completed successfully and the relationships shown
   on the canvas are up to date.
 - **Error** — the most recent evaluation failed. This is a distinct state from
-  &#34;no relationships evaluated yet&#34;. When evaluation fails:
+  "no relationships evaluated yet". When evaluation fails:
   - The last successful relationship results stay on screen so your design
     remains readable.
   - A one-time, non-blocking notification appears to let you know.
@@ -109,7 +109,7 @@ If you suspect the client-side engine is producing incorrect results:
 1. Open **Settings**.
 2. Set **Relationship Evaluation Engine** to **Meshery server**.
 3. Reload Kanvas so the new engine is used for the session.
-4. Re-check the design&#39;s relationships.
+4. Re-check the design's relationships.
 
 If the relationships are correct with the server engine but wrong with the
 client-side engine, that points to a client engine issue worth reporting (see
@@ -137,9 +137,9 @@ Relationship Evaluation Diagnostics view so the issue can be reproduced:
 - A description of the expected relationships versus what Kanvas showed, and the
   design (or a minimal reproduction) if you can share it.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Related reading&#34; &gt;}} For an overview of what
+{{< alert type="info" title="Related reading" >}} For an overview of what
 relationships are and the kinds Kanvas supports, see
-[Understanding Relationships]({{&lt; ref &#34;kanvas/concepts/relationships/index.md&#34; &gt;}}). For creating and
+[Understanding Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}). For creating and
 managing relationships in a design, see
-[Creating Relationships]({{&lt; ref &#34;kanvas/getting-started/creating-relationships/index.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+[Creating Relationships]({{< ref "kanvas/getting-started/creating-relationships/index.md" >}}).
+{{< /alert >}}

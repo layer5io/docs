@@ -1,5 +1,5 @@
 
-Designs are rarely built from nothing. A platform design usually starts from an existing one - a team&#39;s base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.
+Designs are rarely built from nothing. A platform design usually starts from an existing one - a team's base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.
 
 ## Dragging a design onto the canvas
 
@@ -16,7 +16,7 @@ The Merge Design dialog offers three choices:
 
 | Choice | Result |
 | --- | --- |
-| **Merge into current** | The dropped design&#39;s components are added to the canvas alongside the existing ones, positioned where you dropped them. |
+| **Merge into current** | The dropped design's components are added to the canvas alongside the existing ones, positioned where you dropped them. |
 | **Open as new** | The dropped design is opened on its own, displacing what is currently on the canvas. |
 | **Cancel** | Nothing changes. |
 
@@ -28,17 +28,17 @@ Merging does not consume the design you dragged. It remains in your design list,
 
 ### Displace the current nodes on the canvas
 
-**Open as new** does the opposite: the dropped design becomes the design you are working on, and whatever was on the canvas is replaced by it. Use it when the drag was really a &#34;let me look at that one instead&#34; rather than a merge.
+**Open as new** does the opposite: the dropped design becomes the design you are working on, and whatever was on the canvas is replaced by it. Use it when the drag was really a "let me look at that one instead" rather than a merge.
 
 Because this discards what is on the canvas, Kanvas will not do it silently if you have unsaved changes - you are asked to confirm first. Saved designs are safe either way: the design being displaced is not deleted, only closed, and you can open it again from your design list.
 
 ## Importing rather than dragging
 
-The same merge decision appears when you import a design from a file, a Helm chart, a Kubernetes manifest or a Docker Compose file while a design is already open. If the canvas is empty the import is loaded directly; if it is not, you are asked whether to merge or to open the import as a new design. See [Importing Designs]({{&lt; ref &#34;kanvas/getting-started/import-designs/index.md&#34; &gt;}}).
+The same merge decision appears when you import a design from a file, a Helm chart, a Kubernetes manifest or a Docker Compose file while a design is already open. If the canvas is empty the import is loaded directly; if it is not, you are asked whether to merge or to open the import as a new design. See [Importing Designs]({{< ref "kanvas/getting-started/import-designs/index.md" >}}).
 
 ***
 
 ### See Also
 
-* **[Saving Designs]({{&lt; ref &#34;kanvas/designer/saving-designs/index.md&#34; &gt;}}):** How Kanvas persists the result.
-* **[Starting from scratch]({{&lt; ref &#34;kanvas/getting-started/starting-scratch.md&#34; &gt;}}):** The end-to-end walkthrough of building a design.
+* **[Saving Designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}):** How Kanvas persists the result.
+* **[Starting from scratch]({{< ref "kanvas/getting-started/starting-scratch.md" >}}):** The end-to-end walkthrough of building a design.

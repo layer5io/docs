@@ -22,17 +22,17 @@ The `INIT_CONFIG` environment variable accepts a YAML configuration with the fol
 
 ```yaml
 organization:
-  name: &#34;Layer5&#34;
-  description: &#34;The uber organization for all things Layer5.&#34;
-  country: &#34;United States&#34;
-  region: &#34;North America&#34;
+  name: "Layer5"
+  description: "The uber organization for all things Layer5."
+  country: "United States"
+  region: "North America"
 
 user:
-  first_name: &#34;Admin&#34;
-  last_name: &#34;User&#34;
-  email: &#34;admin@layer5.io&#34;
-  username: &#34;admin@layer5.io&#34;  # Optional, defaults to email if not provided
-  password: &#34;change-me-on-first-login&#34;  # Required
+  first_name: "Admin"
+  last_name: "User"
+  email: "admin@layer5.io"
+  username: "admin@layer5.io"  # Optional, defaults to email if not provided
+  password: "change-me-on-first-login"  # Required
 ```
 
 #### Setting the Environment Variable
@@ -40,18 +40,18 @@ user:
 To enable Provider Admin organization initialization, set the `INIT_CONFIG` environment variable with the entire YAML configuration as its value:
 
 ```bash
-INIT_CONFIG=&#39;organization:
-  name: &#34;Layer5&#34;
-  description: &#34;The uber organization for all things Layer5.&#34;
-  country: &#34;United States&#34;
-  region: &#34;North America&#34;
+INIT_CONFIG='organization:
+  name: "Layer5"
+  description: "The uber organization for all things Layer5."
+  country: "United States"
+  region: "North America"
 
 user:
-  first_name: &#34;Admin&#34;
-  last_name: &#34;User&#34;
-  email: &#34;admin@layer5.io&#34;
-  username: &#34;admin@layer5.io&#34;
-  password: &#34;change-me-on-first-login&#34;&#39;
+  first_name: "Admin"
+  last_name: "User"
+  email: "admin@layer5.io"
+  username: "admin@layer5.io"
+  password: "change-me-on-first-login"'
 ```
 
 #### Required and Optional Fields
@@ -122,16 +122,16 @@ The `INIT_CONFIG` environment variable allows you to pre-configure your provider
 
 For detailed configuration options, see the configuration schema below.
 
-{{&lt; alert type=&#34;warning&#34; title=&#34;Important&#34; &gt;}}
+{{< alert type="warning" title="Important" >}}
 Plan your INIT_CONFIG carefully as it is only processed during initial startup. Changes require redeployment or manual configuration updates.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ### Considerations of Air-Gapped Deployments
 
-Layer5 acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Layer5&#39;s commitment to versatile deployment scenarios.
+Layer5 acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Layer5's commitment to versatile deployment scenarios.
 
 ### Monitoring Considerations
 
 Plan for comprehensive observability across your Layer5 Cloud deployment, including metrics, logs, tracing, dashboards, and alerting. Establish SLOs for latency, availability, and saturation; size telemetry storage appropriately; and ensure privacy and access controls for operational data.
 
-See: [Monitoring]({{&lt; ref &#34;cloud/guides/self-hosted/planning/monitoring.md&#34; &gt;}})
+See: [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}})

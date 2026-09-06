@@ -18,10 +18,10 @@ Kanvas introduces the Kanvas Snapshot GitHub Actions, a tool that allows you to 
 
 ### Configuring Kanvas Snapshots
 
-For setup steps, see the [Kanvas Snapshots tutorial]({{&lt; ref &#34;cloud/guides/tutorials/gitops-snapshots.md&#34; &gt;}}).
+For setup steps, see the [Kanvas Snapshots tutorial]({{< ref "cloud/guides/tutorials/gitops-snapshots.md" >}}).
 
 {{%pageinfo%}}
-The Kanvas GitHub App requires authorization to interact with your repositories. If you would like to use your GitHub user&#39;s personal access token, instead, [please let us know](https://cloud.layer5.io/support). {{%/pageinfo%}}
+The Kanvas GitHub App requires authorization to interact with your repositories. If you would like to use your GitHub user's personal access token, instead, [please let us know](https://cloud.layer5.io/support). {{%/pageinfo%}}
 
 
 ## Customizing Snapshot Workflow Triggers in Kanvas Snapshot
@@ -32,7 +32,7 @@ You can configure your workflows to run when specific activity on GitHub happens
 
 GitHub Actions provides a variety of events that can trigger workflows, allowing you to automate your software development process. Each event corresponds to a specific activity, such as creating a pull request, pushing code to a repository, or releasing a new version.
 
-## Using Kanvas&#39;s Performance Testing GitHub Action
+## Using Kanvas's Performance Testing GitHub Action
 
 You can create your own performance profiles to run repeatable tests with Kanvas. You can configure this action to trigger with each of your releases, on every pull request. or any GitHub workflow trigger event. A sample configuration of the action is shown below.
 

@@ -12,8 +12,8 @@ This guide provides all the necessary documentation for building high-quality ed
 
 Each content type also has a dedicated build guide:
 
-* [Creating Content for the Academy]({{&lt; ref &#34;cloud/academy/creating-content/creating-your-learning-path/index.md&#34; &gt;}}) - repository setup and learning paths.
-* [Building Challenges]({{&lt; ref &#34;cloud/academy/creating-content/building-challenges/index.md&#34; &gt;}}) - hands-on, scenario-based tasks.
-* [Building Certifications]({{&lt; ref &#34;cloud/academy/creating-content/building-certifications/index.md&#34; &gt;}}) - formal assessments and certificates.
+* [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) - repository setup and learning paths.
+* [Building Challenges]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) - hands-on, scenario-based tasks.
+* [Building Certifications]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}) - formal assessments and certificates.
 
-We&#39;re excited to see what you&#39;ll build!
+We're excited to see what you'll build!

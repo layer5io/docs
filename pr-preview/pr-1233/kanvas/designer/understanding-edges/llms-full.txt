@@ -14,9 +14,9 @@ These edges represent real infrastructure relationships that Kanvas can understa
 - Volume mounts between containers
 - Dependencies between components
 
-What makes semantic edges special is their ability to automatically configure components in real-time as you design. When you draw a semantic edge, Kanvas immediately interprets the relationship and updates the components&#39; configurations - for instance, a TCP connection edge automatically configures port bindings, while a volume mount edge updates container specifications. This real-time configuration makes semantic edges not just visual connectors, but active configuration tools that shape your infrastructure as you build it.
+What makes semantic edges special is their ability to automatically configure components in real-time as you design. When you draw a semantic edge, Kanvas immediately interprets the relationship and updates the components' configurations - for instance, a TCP connection edge automatically configures port bindings, while a volume mount edge updates container specifications. This real-time configuration makes semantic edges not just visual connectors, but active configuration tools that shape your infrastructure as you build it.
 
-&gt; For detailed information about each relationship type and their configuration effects, visit [Relationships Documentation](https://docs.layer5.io/kanvas/concepts/relationships/)
+> For detailed information about each relationship type and their configuration effects, visit [Relationships Documentation](https://docs.layer5.io/kanvas/concepts/relationships/)
 
 ### Non-semantic Edges: Annotating Your Designs
 
@@ -38,14 +38,14 @@ To help you quickly understand your designs, Kanvas uses specific default styles
 - Color: Grey/Blue
 - Use: For all real infrastructure connections
 
-{{&lt; meshery-design-embed src=&#34;../understanding-edges/images/embedded-design-untitled-design.js&#34; id=&#34;embedded-design-d0a031d0-b4d7-4d60-be17-c4b5d2480ee6&#34; size=&#34;half&#34; &gt;}}
+{{< meshery-design-embed src="../understanding-edges/images/embedded-design-untitled-design.js" id="embedded-design-d0a031d0-b4d7-4d60-be17-c4b5d2480ee6" size="half" >}}
 
 **For Non-semantic Edges**:
 - Style: Solid line with an arrowhead
 - Color: Green
 - Use: For all visual annotations and notes
 
-{{&lt; meshery-design-embed src=&#34;../understanding-edges/images/embedded-design-edge-annotation-relationship-copy.js&#34; id=&#34;embedded-design-daecd14f-6c65-45d9-b74a-4fc536a7868f&#34; size=&#34;half&#34; &gt;}}
+{{< meshery-design-embed src="../understanding-edges/images/embedded-design-edge-annotation-relationship-copy.js" id="embedded-design-daecd14f-6c65-45d9-b74a-4fc536a7868f" size="half" >}}
 
 ### Customizing Edge Styles
 
@@ -61,12 +61,12 @@ While the default styles are designed to be clear and consistent, Kanvas gives y
 
 #### Defining Connection Points
 - Arrow Head (Default): Shows general direction or flow
-- Filled Diamond: For &#34;whole-part&#34; relationships (aggregation)
+- Filled Diamond: For "whole-part" relationships (aggregation)
 - Filled Square: For strong ownership relationships (composition)
-- Filled Triangle: For inheritance or &#34;is-a&#34; relationships
+- Filled Triangle: For inheritance or "is-a" relationships
 - Filled Circle: For loose containment relationships
 
-&gt; **Note**: While Kanvas supports these UML-style relationships, the most commonly used styles are straight lines, dotted lines, and arrow heads. Use other styles when you need to express specific types of relationships in your designs.
+> **Note**: While Kanvas supports these UML-style relationships, the most commonly used styles are straight lines, dotted lines, and arrow heads. Use other styles when you need to express specific types of relationships in your designs.
 
 #### Using Color for Visual Cues
 
@@ -83,17 +83,17 @@ Colors help you create a visual language in your designs. While Kanvas has defau
 #### Adding Labels
 
 You can add text directly to edges to provide more information. This is especially useful for:
-- Describing traffic flow (e.g., &#34;User Traffic → API Gateway&#34;)
-- Adding process steps (e.g., &#34;Requires Manual Review&#34;)
-- Noting important details (e.g., &#34;Backup Route (Low Priority)&#34;)
-- Specifying protocols (e.g., &#34;gRPC / 50051&#34;)
+- Describing traffic flow (e.g., "User Traffic → API Gateway")
+- Adding process steps (e.g., "Requires Manual Review")
+- Noting important details (e.g., "Backup Route (Low Priority)")
+- Specifying protocols (e.g., "gRPC / 50051")
 
 #### Applying Visual Effects
 
-The &#34;Marching-ants&#34; animation effect can be added to any edge to:
+The "Marching-ants" animation effect can be added to any edge to:
 - Highlight specific connections in team reviews
 - Emphasize critical paths
 
-{{&lt; alert title=&#34;Learn More About Interpreting Designs&#34; type=&#34;info&#34; &gt;}}
+{{< alert title="Learn More About Interpreting Designs" type="info" >}}
 To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the [Layer5 Academy](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs).
-{{&lt; /alert &gt;}}
+{{< /alert >}}

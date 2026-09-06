@@ -1,5 +1,5 @@
 
-Layer5 Cloud is a [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers). When a Meshery Server is configured to use Layer5 Cloud (SaaS or self-hosted), the server *registers itself* with Cloud on behalf of the authenticated user. Registration is what makes a particular Meshery Server visible inside Cloud — it appears as a `meshery` Connection on the user&#39;s account, scoped to their Organization, and becomes the anchor point for everything else the user does through that server (designs, environments, workspaces, events, capabilities).
+Layer5 Cloud is a [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers). When a Meshery Server is configured to use Layer5 Cloud (SaaS or self-hosted), the server *registers itself* with Cloud on behalf of the authenticated user. Registration is what makes a particular Meshery Server visible inside Cloud — it appears as a `meshery` Connection on the user's account, scoped to their Organization, and becomes the anchor point for everything else the user does through that server (designs, environments, workspaces, events, capabilities).
 
 This page documents the registration behavior implemented by Layer5 Cloud: what the server sends, how Cloud identifies an existing registration vs a new one, and what fields are preserved across re-registration.
 
@@ -14,12 +14,12 @@ A registration record satisfies both: it associates a unique server identifier w
 
 ## Identifying a Meshery Server
 
-A Meshery Server is identified by a stable `server_id` it generates on first start and persists locally. The `server_id` travels in the Connection&#39;s `metadata` payload.
+A Meshery Server is identified by a stable `server_id` it generates on first start and persists locally. The `server_id` travels in the Connection's `metadata` payload.
 
-Cloud&#39;s uniqueness rule for an existing Meshery registration is the triple:
+Cloud's uniqueness rule for an existing Meshery registration is the triple:
 
 ```
-(kind = &#39;meshery&#39;, user_id, metadata.server_id)
+(kind = 'meshery', user_id, metadata.server_id)
 ```
 
 The lookup is implemented in `ConnectionDAO.CheckMesheryServerExistence`. A given user can register many Meshery Servers, and the same Meshery Server can register for many users — but a given `(user, server_id)` pair maps to exactly one Connection row.
@@ -32,7 +32,7 @@ Meshery Server registers by `POST`ing a connection payload to:
 POST /api/integrations/connections
 ```
 
-The request must carry a valid Cloud session (Kratos browser session or JWT). The handler resolves the caller from session context and uses that user&#39;s ID as the owning `user_id`.
+The request must carry a valid Cloud session (Kratos browser session or JWT). The handler resolves the caller from session context and uses that user's ID as the owning `user_id`.
 
 Required payload fields:
 
@@ -45,10 +45,10 @@ Optional payload fields:
 
 | Field      | Description |
 |------------|-------------|
-| `name`     | Human-readable display name. If omitted, Cloud generates `meshery-&lt;random&gt;`. |
+| `name`     | Human-readable display name. If omitted, Cloud generates `meshery-<random>`. |
 | `type` / `sub_type` | Free-form classification fields. |
 | `metadata` | Additional JSON metadata (e.g. server version, hostname). |
-| `status`   | Initial status (defaults to the system&#39;s registered state). |
+| `status`   | Initial status (defaults to the system's registered state). |
 
 The handler chain is `RegisterConnection` → `MesheryConnectionUtilityHandlerRegistration` → either `CreateConnection` or `UpdateConnection`.
 
@@ -57,7 +57,7 @@ The handler chain is `RegisterConnection` → `MesheryConnectionUtilityHandlerRe
 1. The handler validates that the resolved session has a non-nil `user_id`. The `connections.user_id` column is `NOT NULL`; a missing user at this point is a hard error and the request is rejected.
 2. `CheckMesheryServerExistence` looks for a row matching `(meshery, user_id, server_id)`.
 3. No match is found, so a new row is inserted via `CreateConnection`.
-4. The new Connection inherits the user&#39;s Organization for tenant isolation.
+4. The new Connection inherits the user's Organization for tenant isolation.
 
 ## What Happens on Re-Registration
 
@@ -65,26 +65,26 @@ A re-registration is any subsequent call from the same Meshery Server (same `ser
 
 The handler:
 
-1. Validates the session&#39;s `user_id` (same as first registration).
+1. Validates the session's `user_id` (same as first registration).
 2. Finds the existing row via `CheckMesheryServerExistence`.
-3. **Preserves the existing row&#39;s stable identity fields** — `name`, `kind`, `type`, `sub_type`, `status` — so a freshly-minted random name from a payload that omitted `name` cannot rename the existing Meshery Server, and missing `type` / `sub_type` cannot blank them.
-4. **Preserves the existing row&#39;s `created_at`**, sets `updated_at = now()`.
-5. **Preserves a previously-set `user_id`**: if the row already has an owner, the existing owner wins; if the row&#39;s `user_id` is somehow nil, the validated incoming `user_id` is kept (this guard exists because a historical narrow `SELECT id, metadata` projection in the DAO could leave the in-memory row&#39;s UserID nil, which would otherwise UPDATE the row to a null `user_id` and violate the NOT NULL constraint).
+3. **Preserves the existing row's stable identity fields** — `name`, `kind`, `type`, `sub_type`, `status` — so a freshly-minted random name from a payload that omitted `name` cannot rename the existing Meshery Server, and missing `type` / `sub_type` cannot blank them.
+4. **Preserves the existing row's `created_at`**, sets `updated_at = now()`.
+5. **Preserves a previously-set `user_id`**: if the row already has an owner, the existing owner wins; if the row's `user_id` is somehow nil, the validated incoming `user_id` is kept (this guard exists because a historical narrow `SELECT id, metadata` projection in the DAO could leave the in-memory row's UserID nil, which would otherwise UPDATE the row to a null `user_id` and violate the NOT NULL constraint).
 6. Calls `UpdateConnection`, which updates every column except `status`.
 
 The net effect: re-registering a Meshery Server is **safe and idempotent** with respect to identity. Only `metadata` and `updated_at` are intended to change across re-registrations.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Why status is excluded from updates&#34; &gt;}}
-Connection status transitions are managed through dedicated lifecycle endpoints (e.g. connect / disconnect, ignore, delete), not through registration. A re-registration call cannot reset a previously-disconnected Meshery Server&#39;s status by accident.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Why status is excluded from updates" >}}
+Connection status transitions are managed through dedicated lifecycle endpoints (e.g. connect / disconnect, ignore, delete), not through registration. A re-registration call cannot reset a previously-disconnected Meshery Server's status by accident.
+{{< /alert >}}
 
 ## Validation and Error Cases
 
 | Condition | Behavior |
 |-----------|----------|
 | Session has no resolvable user | Registration is rejected before any DAO call. The caller sees an HTTP 500 with an error describing the missing `user_id`. |
-| `kind` is not in the supported list | HTTP 500 with an &#34;unsupported connection kind&#34; error. |
-| `server_id` is missing from `metadata` | The lookup degenerates to `metadata-&gt;&gt;&#39;server_id&#39; IS NULL`, which will not match any prior registration; a fresh row will be created. Always send a stable `server_id`. |
+| `kind` is not in the supported list | HTTP 500 with an "unsupported connection kind" error. |
+| `server_id` is missing from `metadata` | The lookup degenerates to `metadata->>'server_id' IS NULL`, which will not match any prior registration; a fresh row will be created. Always send a stable `server_id`. |
 | DB error during lookup or write | Wrapped in a structured MeshKit error and returned to the caller. |
 
 ## Operator Guidance
@@ -93,7 +93,7 @@ If you operate a self-hosted Layer5 Cloud and see registration-related errors, t
 
 - **`Postgres 23502` / `meshery-server-1345`** during auth completion — the registration call reached the DAO with a nil `user_id`. This is now caught by the handler-level guard described above; if you see it on a build that pre-dates that guard, upgrade. If you see it on a post-guard build, the session resolution itself is failing — check the logs around the request for missing JWT / Kratos session context.
 - **A Meshery Server appears under the wrong user** — check whether the operator authenticated as a different account against the Cloud session. The `user_id` is taken from the session, not the payload.
-- **A Meshery Server&#39;s display name keeps changing** — pre-fix builds would rename existing rows when the payload omitted `name`. Upgrade to a build that preserves stable identity fields on re-registration (the behavior documented above).
+- **A Meshery Server's display name keeps changing** — pre-fix builds would rename existing rows when the payload omitted `name`. Upgrade to a build that preserves stable identity fields on re-registration (the behavior documented above).
 
 ## Where the Code Lives
 

@@ -3,8 +3,8 @@
 
 The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
 
-{{% alert title=&#34;Looking for a specific operation?&#34; %}}
-This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see [Working with Canvas Objects]({{&lt; ref &#34;kanvas/designer/canvas-objects/index.md&#34; &gt;}}).
+{{% alert title="Looking for a specific operation?" %}}
+This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
 {{% /alert %}}
 
 ## Key Functionality
@@ -24,13 +24,13 @@ If not already enabled, follow these steps to access the whiteboarding feature w
 
 ### Step 1: Accessing Preferences
 
-1. Navigate to canvas preferences and enable &#34;Whiteboard Beta&#34;
+1. Navigate to canvas preferences and enable "Whiteboard Beta"
 ![Canvas Preferences](images/canvas-preferences.png)
 1. **Toggle Whiteboard Feature**
-   1. Inside the &#39;Preferences&#39; menu, find the section related to &#39;Canvas Settings&#39; or &#39;Features&#39;.
-   1. Look for the option labeled &#39;Whiteboard&#39; or similar.
+   1. Inside the 'Preferences' menu, find the section related to 'Canvas Settings' or 'Features'.
+   1. Look for the option labeled 'Whiteboard' or similar.
 1. **Activate the Whiteboard**
-   1. Toggle the switch or checkbox next to &#39;Whiteboard&#39; to enable this feature.
+   1. Toggle the switch or checkbox next to 'Whiteboard' to enable this feature.
 
 ### Step 2: Confirmation and Access
 
@@ -47,7 +47,7 @@ If not already enabled, follow these steps to access the whiteboarding feature w
 4. **Collaborative Usage**
    1. Share access with collaborators or team members to engage in real-time collaborative drawing sessions.
 
-{{% alert title=&#34;Note&#34; %}}
+{{% alert title="Note" %}}
 The Whiteboard (Beta) feature might undergo updates or improvements during its beta phase. Provide feedback or report issues encountered while using the whiteboard to contribute to its refinement.
 {{% /alert %}}
 
@@ -84,7 +84,7 @@ Text annotations come with various options. Customize fonts, sizes, alignments, 
 
 ![Tooltip](images/tooltip.png)
 
-The tooltip is your gateway to customization. It&#39;s simple and intuitive, offering a range of editing options upon selection. It&#39;s designed for easy navigation, mirroring popular design software.
+The tooltip is your gateway to customization. It's simple and intuitive, offering a range of editing options upon selection. It's designed for easy navigation, mirroring popular design software.
 
 #### Advanced Customization Features
 
@@ -128,4 +128,4 @@ The customization tools apply uniformly to all annotation types. Changes made wi
 
 ### Conclusion
 
-The whiteboarding and freestyle drawing feature enriches Kanvas&#39;s visual infrastructure designer tool by seamlessly integrating drawing capabilities without compromising the integrity of the underlying infrastructure. Its versatility in enabling real-time collaboration, preserving data integrity, and fostering a safe creative space positions it as a powerful asset for effective communication, efficient collaboration, and innovative ideation within diverse professional settings.
+The whiteboarding and freestyle drawing feature enriches Kanvas's visual infrastructure designer tool by seamlessly integrating drawing capabilities without compromising the integrity of the underlying infrastructure. Its versatility in enabling real-time collaboration, preserving data integrity, and fostering a safe creative space positions it as a powerful asset for effective communication, efficient collaboration, and innovative ideation within diverse professional settings.

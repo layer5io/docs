@@ -3,11 +3,11 @@
 
 In this tutorial, we will learn how to deploy a **PHP Guestbook application with Redis** using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.
 
-&gt; **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{&lt; ref &#34;kanvas/tutorials/kubernetes/kubernetes-pods/index.md&#34; &gt;}}) tutorial first.
+> **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{< ref "kanvas/tutorials/kubernetes/kubernetes-pods/index.md" >}}) tutorial first.
 
 ### Prerequisites
 - Basic understanding of Kubernetes concepts.
-- Meshery Playground access. If you don&#39;t have an account, sign up at [Meshery Playground](https://play.meshery.io).
+- Meshery Playground access. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io).
 
 ### Lab Scenario
 - Import the PHP and Redis manifest files into Meshery Playground.
@@ -47,9 +47,9 @@ These YAML files contain the Service definitions and Deployment configurations f
 
 1. In the left sidebar, click on the upward arrow symbol(import icon) to import the designs into Meshery.
 
-2. On doing so, a modal appears.In the modal that appears, enter a name for your design in the &#34;Design File Name&#34; field (e.g.`redis-leader-deployment`).
+2. On doing so, a modal appears.In the modal that appears, enter a name for your design in the "Design File Name" field (e.g.`redis-leader-deployment`).
 
-3. Now select `Kubernetes Manifest` from the &#34;Design Type&#34; dropdown menu.
+3. Now select `Kubernetes Manifest` from the "Design Type" dropdown menu.
 
 4. Then choose `URL Import` for the upload method.
 
@@ -62,7 +62,7 @@ These YAML files contain the Service definitions and Deployment configurations f
 
 Now, follow the same steps (1-6) to import the rest of the files.
 
-Under the “Designs” tab, you will see that we have successfully imported the manifest as designs, then you can drag and drop them in the canvas. This will &#34;Merge&#34; all the designs since it&#39;s all just one application
+Under the “Designs” tab, you will see that we have successfully imported the manifest as designs, then you can drag and drop them in the canvas. This will "Merge" all the designs since it's all just one application
 
 ![merging all designs](images/screenshots/app-canvas.png)
 
@@ -86,7 +86,7 @@ Under the “Designs” tab, you will see that we have successfully imported the
 #### 5. **Updating the Deployments:**
 
 ```bash
-kubectl set image deployment/&lt;deployment-name&gt; &lt;container-name&gt;=new-image:tag
+kubectl set image deployment/<deployment-name> <container-name>=new-image:tag
 ```
 
 
@@ -120,4 +120,4 @@ To delete the resources, use the **Undeploy** option from the _Design_ view.
 
 
 ### Conclusion
-Congratulations! You&#39;ve successfully completed the lab on exploring Kubernetes Deployments using Meshery Playground. This hands-on experience has equipped you with practical knowledge on deploying, updating, and monitoring applications in a Kubernetes environment. Continue exploring more scenarios in the Meshery Playground to enhance your skills in container orchestration.
+Congratulations! You've successfully completed the lab on exploring Kubernetes Deployments using Meshery Playground. This hands-on experience has equipped you with practical knowledge on deploying, updating, and monitoring applications in a Kubernetes environment. Continue exploring more scenarios in the Meshery Playground to enhance your skills in container orchestration.

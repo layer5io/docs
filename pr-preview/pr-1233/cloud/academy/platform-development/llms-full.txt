@@ -1,9 +1,9 @@
 
-This guide walks you through the Layer5 Academy platform&#39;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.
+This guide walks you through the Layer5 Academy platform's multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.
 
 ## The Multi-Repository Model
 
-The [Layer5 Academy platform](https://cloud.layer5.io/academy) is built on a &#34;separation of concerns&#34; architecture. Instead of a single monolithic repository, we use a multi-repository model where content, style, and build configurations are managed independently. This approach keeps the system modular, simplifies maintenance, and allows teams to work on different parts of the platform concurrently.
+The [Layer5 Academy platform](https://cloud.layer5.io/academy) is built on a "separation of concerns" architecture. Instead of a single monolithic repository, we use a multi-repository model where content, style, and build configurations are managed independently. This approach keeps the system modular, simplifies maintenance, and allows teams to work on different parts of the platform concurrently.
 
 At a high level, the `academy-theme` provides the visual style for content from repositories like `academy-example`, and the `academy-build` repository acts as the central factory, assembling everything into the final website.
 
@@ -13,27 +13,27 @@ The Layer5 Academy platform is composed of several core repositories.
 
 ### [academy-theme](https://github.com/layer5io/academy-theme)
 
-This repository is the &#34;skin&#34; for the entire Academy. It controls the website&#39;s design, including all the layouts, colors, and fonts.
+This repository is the "skin" for the entire Academy. It controls the website's design, including all the layouts, colors, and fonts.
 
 Content repositories automatically import this theme as a Go Module. As a content creator, you do not need to fork or clone this repository; your academy will use these styles by default. 
 
-&gt; Currently, we only support customizing shortcodes in your content repository, not full theme customization. For requests regarding new archetypes, layouts, or theme enhancements, please open an issue in the [academy-theme repository](https://github.com/layer5io/academy-theme/issues).
+> Currently, we only support customizing shortcodes in your content repository, not full theme customization. For requests regarding new archetypes, layouts, or theme enhancements, please open an issue in the [academy-theme repository](https://github.com/layer5io/academy-theme/issues).
 
 ### [academy-example](https://github.com/layer5io/academy-example)
 
-This is the &#34;starter kit&#34; for anyone new to creating Academy content. It provides a pre-configured site that new organizations can fork to get started quickly.
+This is the "starter kit" for anyone new to creating Academy content. It provides a pre-configured site that new organizations can fork to get started quickly.
 
-&gt; [Learn How]({{&lt; ref &#34;cloud/academy/creating-content/creating-your-learning-path/index.md&#34; &gt;}}) to create your own learning path
+> [Learn How]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) to create your own learning path
 
-This content repository doesn&#39;t build the final website itself. Instead, it uses an automated workflow to act as a &#34;gatekeeper&#34; for new content. When you create a new GitHub Release, it triggers the following process:
+This content repository doesn't build the final website itself. Instead, it uses an automated workflow to act as a "gatekeeper" for new content. When you create a new GitHub Release, it triggers the following process:
 
 1. **Sanity Check**: It first runs a local build to ensure the new content has no fundamental errors that would break the site.
 
 2. **Publishing Notification**: If the check passes, it calls a reusable action from the `academy-build` repository. This action securely sends a request to the Layer5 Cloud API, using your configured `ACADEMY_ORG_ID` and `ACADEMY_TOKEN` secrets.
 
-{{&lt; alert type=&#34;info&#34; title=&#34;Publishing Trigger&#34; &gt;}}
-This request effectively says: &#34;A new version of content is ready for this organization. Please update it.&#34; This workflow does not build the final site; it only validates the content and notifies the build system.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="Publishing Trigger" >}}
+This request effectively says: "A new version of content is ready for this organization. Please update it." This workflow does not build the final site; it only validates the content and notifies the build system.
+{{< /alert >}}
 
 ### [academy-build](https://github.com/layer5io/academy-build)
 
@@ -43,7 +43,7 @@ When its workflow is triggered, an automated process acts like a master assembly
 
 1.  **Collects Parts**: It begins by gathering all the necessary components—`academy-theme` and all the course content from the various content repositories.
 
-2.  **Assembles the Website**: Next, it combines everything. It applies the theme&#39;s design to all the course content, building a single, complete website.
+2.  **Assembles the Website**: Next, it combines everything. It applies the theme's design to all the course content, building a single, complete website.
 
 3.  **Deploys Online**: Finally, it takes the newly built website and automatically pushes it to the cloud platform, making the updates live for everyone to see.
 
@@ -51,11 +51,11 @@ When its workflow is triggered, an automated process acts like a master assembly
 
 ### How to Develop and Preview Locally
 
-Use this workflow for rapid local development and iteration. If you&#39;re only changing Markdown files and want a fast preview loop, run these commands within a content repository (such as `layer5-academy`):
+Use this workflow for rapid local development and iteration. If you're only changing Markdown files and want a fast preview loop, run these commands within a content repository (such as `layer5-academy`):
 
-{{&lt; alert type=&#34;info&#34; title=&#34;layer5-academy as an Example&#34; &gt;}}
-We&#39;ll use [layer5-academy](https://github.com/layer5io/layer5-academy) for these examples because it hosts all official Layer5 learning paths. It serves as a feature-complete reference, allowing you to see how a complex, real-world content repository is structured.
-{{&lt; /alert &gt;}}
+{{< alert type="info" title="layer5-academy as an Example" >}}
+We'll use [layer5-academy](https://github.com/layer5io/layer5-academy) for these examples because it hosts all official Layer5 learning paths. It serves as a feature-complete reference, allowing you to see how a complex, real-world content repository is structured.
+{{< /alert >}}
 
 1. `go mod tidy`: Cleans up and verifies Go module dependencies.
 2. `make setup`: Installs necessary tools and modules.
@@ -65,12 +65,12 @@ You can then view your content by navigating to `http://localhost:1313/academy`.
 
 ### How to Develop the Academy Theme
 
-If you need to modify the `academy-theme` and see its effect on real content, you&#39;ll use the `go mod replace` directive:
+If you need to modify the `academy-theme` and see its effect on real content, you'll use the `go mod replace` directive:
 
 1. **Modify the Theme**: Make your code changes in your local clone of the `academy-theme` repository.
-2. **Redirect the Dependency**: In the `go.mod` file of the content repository you&#39;re using for previewing (e.g., `layer5-academy`), add a `replace` directive to point Hugo to your local theme directory:
+2. **Redirect the Dependency**: In the `go.mod` file of the content repository you're using for previewing (e.g., `layer5-academy`), add a `replace` directive to point Hugo to your local theme directory:
    ```go
-   replace github.com/layer5io/academy-theme =&gt; ../academy-theme
+   replace github.com/layer5io/academy-theme => ../academy-theme
    ```
 3. **Apply Changes and Relaunch**: Run `go mod tidy` to apply the `replace` directive you just added. Then, restart the server with `make site`. The local server will now use your local theme code, allowing you to see your changes instantly.
 
@@ -85,10 +85,10 @@ All steps in this section should be performed from the root of your local `acade
     make setup
     ```
 
-2. **Prepare Local Dependencies**: If you&#39;re testing local changes from other repositories (like a theme or content module), edit the `go.mod` file in `academy-build` to point to your local versions using a replace directive:
+2. **Prepare Local Dependencies**: If you're testing local changes from other repositories (like a theme or content module), edit the `go.mod` file in `academy-build` to point to your local versions using a replace directive:
    ```go
-   replace github.com/layer5io/academy-theme =&gt; ../academy-theme
-   replace github.com/layer5io/layer5-academy =&gt; ../layer5-academy
+   replace github.com/layer5io/academy-theme => ../academy-theme
+   replace github.com/layer5io/layer5-academy => ../layer5-academy
    ```
 
 3.  **Build for Staging**: Run the command to build the entire Academy site specifically for the staging environment.
@@ -103,11 +103,11 @@ All steps in this section should be performed from the root of your local `acade
 
 5. **Preview on Staging**: Your changes will be available on the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
 
-{{&lt; alert type=&#34;warning&#34; title=&#34;Local vs. Cloud Discrepancies&#34; &gt;}}
+{{< alert type="warning" title="Local vs. Cloud Discrepancies" >}}
 The local preview (`make site`) is excellent for rapid development, but it is **not** a 100% accurate representation of the final product. The Cloud UI acts as a wrapper around the Academy content, which can introduce subtle differences. These are often caused by CSS class conflicts or variations in JavaScript execution within the larger application.
 
 **Always verify your changes in the staging environment before considering them complete.**
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ### When to Use a Holistic Build Test
 

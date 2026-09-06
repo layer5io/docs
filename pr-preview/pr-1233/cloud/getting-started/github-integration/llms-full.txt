@@ -1,7 +1,7 @@
 
 ## Introduction
 
-Meshery&#39;s GitHub Integration is a powerful feature that lets you authorize your GitHub account and import infrastructure files into Meshery. These files are then readily available in the Meshery catalog and can be easily opened in the Meshery Playground for viewing and configuration.
+Meshery's GitHub Integration is a powerful feature that lets you authorize your GitHub account and import infrastructure files into Meshery. These files are then readily available in the Meshery catalog and can be easily opened in the Meshery Playground for viewing and configuration.
 
 The GitHub integration offers an alternative to [importing designs from the canvas or through mesheryctl](https://docs.meshery.io/guides/configuration-management/importing-designs). It simplifies configuration management and enhances deployment workflow efficiency. By leveraging this integration, you ensure your infrastructure designs are easily accessible and always up-to-date.
 
@@ -15,7 +15,7 @@ This integration offers the following benefits:
 
 ## How to Integrate GitHub with Meshery
 
-You can commence the integration process from the &#34;**Extensions Page in Meshery**&#34;, or alternatively from the “**Layer5 Cloud Dashboard**”.
+You can commence the integration process from the "**Extensions Page in Meshery**", or alternatively from the “**Layer5 Cloud Dashboard**”.
 
 ### Access Integrations Page from the Meshery Extensions Page
 
@@ -43,7 +43,7 @@ You can commence the integration process from the &#34;**Extensions Page in Mesh
 
 Let’s go through the steps required to connect your GitHub account and import files from your repository.
 
-1. **Connect GitHub App**: This initiates the authorization process where you&#39;ll link your GitHub account with Meshery.
+1. **Connect GitHub App**: This initiates the authorization process where you'll link your GitHub account with Meshery.
     - Click **Connect**.
 
       ![Connect GitHub](images/github/github.png)
@@ -59,7 +59,7 @@ Let’s go through the steps required to connect your GitHub account and import 
 
       ![Install and Authorize](images/github/authorize.png)
 
-&gt; Note: When you install a GitHub App on your account or organization, you grant the app permission to access the organization and repository resources that it requested. You also specify which repositories the app can access.
+> Note: When you install a GitHub App on your account or organization, you grant the app permission to access the organization and repository resources that it requested. You also specify which repositories the app can access.
 
 2. **Select Repositories**: After authorization, you will be redirected back to this page to select the GitHub repository you want to import files from.
 
@@ -93,9 +93,9 @@ Let’s go through the steps required to connect your GitHub account and import 
     - If you want to go back and change your selection or choose a different repository, click **Back**.
 
       ![Select Files](images/github/select_file.png)
-    - After the import, the files that were imported successfully and those that weren&#39;t will be indicated on the screen.
+    - After the import, the files that were imported successfully and those that weren't will be indicated on the screen.
 
-      &lt;!-- ![After Import](/cloud/getting-started/images/github/png) --&gt;
+      <!-- ![After Import](/cloud/getting-started/images/github/png) -->
 
 ### [Optional] Enabling Snapshots
 
@@ -152,13 +152,13 @@ To view imported designs:
 
 ## View GitHub Integration Connection on Meshery Playground
 
-To view and manage the GitHub connection, on the left sidebar of the playground, click on **Lifecycle** &gt; **Connections**.
+To view and manage the GitHub connection, on the left sidebar of the playground, click on **Lifecycle** > **Connections**.
 
 ![View GitHub Connection](images/github/connections.png)
 
 ## Delete GitHub Integration
 
-You can delete the GitHub Integration Connection from the “**Connections page in Meshery**&#34; shown in the preceding section or “**Integrations page in Layer5 cloud**&#34;.
+You can delete the GitHub Integration Connection from the “**Connections page in Meshery**" shown in the preceding section or “**Integrations page in Layer5 cloud**".
 
 On the Connections page in Meshery:
 

@@ -19,9 +19,9 @@ Each component in your design is submitted to the Kubernetes API server of every
 
 ### Reading the Results
 
-Results are grouped by component, with the number of errors beside each component&#39;s name. Expand a component to see its individual errors, each one naming the kind of problem, the field path it was found at, and the message the Kubernetes API server returned.
+Results are grouped by component, with the number of errors beside each component's name. Expand a component to see its individual errors, each one naming the kind of problem, the field path it was found at, and the message the Kubernetes API server returned.
 
-Click an error to jump straight to the offending field: Kanvas opens that component&#39;s configurator with the field in question in view, so you can correct it without hunting for it.
+Click an error to jump straight to the offending field: Kanvas opens that component's configurator with the field in question in view, so you can correct it without hunting for it.
 
 A dry run reports on Kubernetes-configurable components only. Annotation components - text, shapes, comments, and other visual elements - carry no infrastructure and are counted separately in the summary rather than validated.
 
@@ -31,7 +31,7 @@ A dry run reports on Kubernetes-configurable components only. Annotation compone
 
 | | Validate | Dry Run |
 |---|---|---|
-| Checks against | The component&#39;s own schema, in Meshery | Your live Kubernetes cluster |
+| Checks against | The component's own schema, in Meshery | Your live Kubernetes cluster |
 | Catches | Malformed or missing configuration | Everything Validate catches, plus admission failures, missing CRDs, and cluster-specific policy |
 | Needs a cluster | No | Yes |
 
@@ -46,7 +46,7 @@ Within that step you can also:
 - **Include Dependencies** - extend the simulation to the resources your components depend on.
 - **Bypass errors and initiate deployment** - proceed despite reported errors. Use it deliberately; the errors were reported by the cluster you are about to deploy to.
 
-In the undeploy flow the same step simulates removal instead of creation, so you can see what an [undeploy]({{&lt; ref &#34;kanvas/tasks/designs/undeploying-designs/index.md&#34; &gt;}}) would touch before you commit to it.
+In the undeploy flow the same step simulates removal instead of creation, so you can see what an [undeploy]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) would touch before you commit to it.
 
 ## Dry Run Errors
 

@@ -1,5 +1,5 @@
 
-- fix(auth): keep CreateUser OIDC-safe so the re-activated webhook doesn&#39;t break Google/GitHub sign-in @leecalcote (#5492)
+- fix(auth): keep CreateUser OIDC-safe so the re-activated webhook doesn't break Google/GitHub sign-in @leecalcote (#5492)
 
 ### 👨🏽‍💻 Contributors
 

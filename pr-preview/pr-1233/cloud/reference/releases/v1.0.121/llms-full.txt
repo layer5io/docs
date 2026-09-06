@@ -4,7 +4,7 @@
 - fix(ui): restore InfoOutlinedIcon import — unbreak `make ui-build` on master @leecalcote (#5452)
 - fix(server): restore `go test ./server/...` under the go 1.26.4 toolchain @leecalcote (#5451)
 - fix(ci): re-run schema-origin guard on label changes @leecalcote (#5450)
-- fix(catalog): stop catalog &amp; my-designs filter sync from perpetually scrolling to top @leecalcote (#5449)
+- fix(catalog): stop catalog & my-designs filter sync from perpetually scrolling to top @leecalcote (#5449)
 - [chore] schemas: upgrade to v1.3.7 @CodeAhmedJamil (#5448)
 
 ### 👨🏽‍💻 Contributors

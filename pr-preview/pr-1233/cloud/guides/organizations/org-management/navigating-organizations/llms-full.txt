@@ -9,9 +9,9 @@ When you work in Layer5 Cloud, your current organization context determines:
 - Where new resources are created when you add them
 - What permissions and access levels apply to your actions
 
-{{&lt; alert title=&#34;Organization-Scoped Experience&#34; type=&#34;info&#34; &gt;}}
+{{< alert title="Organization-Scoped Experience" type="info" >}}
 An organization session scopes the UI, meaning all queries and resources displayed are only from the selected organization. Any new designs, environments, or other resources you create are automatically placed in the currently selected organization.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ## Order of Precedence for Organization Settings
 
@@ -31,7 +31,7 @@ Organization context can be specified via URL query parameters. This is useful f
 
 ### 4. API Parameter (Managed Organizations)
 
-When making API calls, the organization context can be explicitly specified as an API parameter, giving programmatic control over which organization&#39;s resources are accessed.
+When making API calls, the organization context can be explicitly specified as an API parameter, giving programmatic control over which organization's resources are accessed.
 
 ## Switching Organizations
 
@@ -42,9 +42,9 @@ To navigate between organizations in Layer5 Cloud:
 3. Select the organization you want to switch to.
 4. The UI will refresh to display resources from the newly selected organization.
 
-{{&lt; alert title=&#34;Access Requirements&#34; type=&#34;info&#34; &gt;}}
+{{< alert title="Access Requirements" type="info" >}}
 You can only switch to organizations where you have active membership. If you need access to an additional organization, contact an Organization Administrator or use an invitation link.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ## Impact of Organization Context
 
@@ -62,13 +62,13 @@ When you switch organizations, the following resources update to reflect the sel
 
 All new resources you create are automatically associated with your currently selected organization:
 
-- New designs are created within the selected organization&#39;s context.
+- New designs are created within the selected organization's context.
 - New workspaces are established under the selected organization.
 - New connections and credentials are scoped to the selected organization.
 
-{{&lt; alert title=&#34;Verify Your Organization Before Creating Resources&#34; type=&#34;warning&#34; &gt;}}
+{{< alert title="Verify Your Organization Before Creating Resources" type="warning" >}}
 Before creating important resources, always verify that you have the correct organization selected. Moving resources between organizations after creation may not always be possible or may require administrative assistance.
-{{&lt; /alert &gt;}}
+{{< /alert >}}
 
 ### Permissions and Roles
 
@@ -78,4 +78,4 @@ Your roles and permissions are organization-scoped. This means:
 - Administrative capabilities in one organization do not automatically grant administrative access in another.
 - Team memberships and their associated permissions are specific to each organization.
 
-For more details about roles and permissions, see the [Roles documentation]({{&lt; ref &#34;cloud/concepts/identity-and-security/roles/_index.md&#34; &gt;}}).
+For more details about roles and permissions, see the [Roles documentation]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).

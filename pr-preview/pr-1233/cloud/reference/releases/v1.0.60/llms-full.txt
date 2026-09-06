@@ -1,5 +1,5 @@
 
-## What&#39;s Changed
+## What's Changed
 
 ### Fixes
 - fix(jsonb): defensively strip legacy `notification_preferences` on every write to prevent re-persisting deprecated JSONB key after Phase C cutover

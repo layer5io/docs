@@ -1,7 +1,7 @@
 
-## What&#39;s New
+## What's New
 ## 🔤 General
-- Fix proxy-revoked crash \Cannot perform &#39;get&#39; on a proxy that has been revoked\ @leecalcote (#4152)
+- Fix proxy-revoked crash \Cannot perform 'get' on a proxy that has been revoked\ @leecalcote (#4152)
 - Fix make targets that use sibling-repo relative paths for git worktree support @leecalcote (#4150)
 - Fix z-index for newly created components and GraphQL worktrees @leecalcote (#4149)
 - fix(operator): plainify draft refs in saveView and updateViewRoute @leecalcote (#4144)

@@ -7,11 +7,11 @@ A view is a named, saved set of filters over the resources that MeshSync has dis
 
 ## Managing Views
 
-Here&#39;s what you can do with views in Operator:
+Here's what you can do with views in Operator:
 
 ### 1. Save a view
 
-  To save a view, simply give your view a title in the Name field at the top of the canvas. Any changes made to the view will be automatically saved. Alternatively, click on the &#34;Save as&#34; button at the top of the canvas. A modal will pop up for you to give your view a name and save it.
+  To save a view, simply give your view a title in the Name field at the top of the canvas. Any changes made to the view will be automatically saved. Alternatively, click on the "Save as" button at the top of the canvas. A modal will pop up for you to give your view a name and save it.
 
 ![Save a view](images/SaveView.png)
   
@@ -23,9 +23,9 @@ Here&#39;s what you can do with views in Operator:
   
 ### 3. Share a view
 
-  Sharing a view lets you collaborate with team members. In the share modal, you can add the user you want to share the view with. You can also set your view access as either public or private. When it&#39;s set to public, anyone with the link to the view can edit the view. When it&#39;s set to private, others can view but only the owner can edit.
+  Sharing a view lets you collaborate with team members. In the share modal, you can add the user you want to share the view with. You can also set your view access as either public or private. When it's set to public, anyone with the link to the view can edit the view. When it's set to private, others can view but only the owner can edit.
 
-  Views use the same Share modal and access list as designs. After you grant or revoke access, confirm the result under **People with Access**. For guidance on verifying access and for the notifications Kanvas shows when share or visibility actions cannot complete, see [Sharing Designs]({{&lt; ref &#34;kanvas/designer/sharing/index.md&#34; &gt;}}).
+  Views use the same Share modal and access list as designs. After you grant or revoke access, confirm the result under **People with Access**. For guidance on verifying access and for the notifications Kanvas shows when share or visibility actions cannot complete, see [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
 
   To share a view,
 
@@ -33,7 +33,7 @@ Here&#39;s what you can do with views in Operator:
 
      ![Actions](images/ActionsIcon.png)
 
-  2. You&#39;ll find a list of actions. Share is the third icon from the left
+  2. You'll find a list of actions. Share is the third icon from the left
 
      ![Share a view](images/ShareView.png)
 
@@ -57,13 +57,13 @@ Here&#39;s what you can do with views in Operator:
 
 ### 6. View info
 
-  View info shows you the owner of the design, the view visibility (whether it&#39;s set to public or private), the date the design was created and the date it was last modified. If you&#39;re the owner of the view, you&#39;ll also see an input field where you can add notes about the design.
+  View info shows you the owner of the design, the view visibility (whether it's set to public or private), the date the design was created and the date it was last modified. If you're the owner of the view, you'll also see an input field where you can add notes about the design.
 
   ![View Info](images/ViewInfo.png)
 
 ### 7. Open a view
 
-  Open a saved view to return to the slice of infrastructure it describes. Kanvas re-applies the view&#39;s filters and redraws the canvas against the current state of your clusters, so an opened view always shows live resources rather than a snapshot.
+  Open a saved view to return to the slice of infrastructure it describes. Kanvas re-applies the view's filters and redraws the canvas against the current state of your clusters, so an opened view always shows live resources rather than a snapshot.
 
   - From the Views tab, click the view you want to open.
   - From the file menu at the top left of Kanvas, choose **Open...** and pick the view from your workspace.
@@ -86,6 +86,6 @@ Here&#39;s what you can do with views in Operator:
 
 ### 10. View component details
 
-  A view is a window onto real resources, so every component drawn on the Operator canvas can be inspected in place. Click a component and the Details panel on the right shows that resource&#39;s live state as MeshSync reports it - status and conditions, labels and annotations, containers, and the relationships that connect it to the rest of the cluster.
+  A view is a window onto real resources, so every component drawn on the Operator canvas can be inspected in place. Click a component and the Details panel on the right shows that resource's live state as MeshSync reports it - status and conditions, labels and annotations, containers, and the relationships that connect it to the rest of the cluster.
 
-  For a full description of what the panel shows for each kind of resource, and of the actions available from it, see [Instance Details]({{&lt; ref &#34;kanvas/operator/resource-details/index.md&#34; &gt;}}).
+  For a full description of what the panel shows for each kind of resource, and of the actions available from it, see [Instance Details]({{< ref "kanvas/operator/resource-details/index.md" >}}).

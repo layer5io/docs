@@ -1,12 +1,12 @@
-In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits &#34;Enter&#34; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a **diagram built in Meshery Kanvas**.
+In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster from the moment a user hits "Enter" in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request - from the user to the container, using a **diagram built in Meshery Kanvas**.
 
-&gt; **_Note:_** This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
+> **_Note:_** This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
 
 
 ### Prerequisites
 
 - Basic understanding of Kubernetes objects (Service, Pod, Container)
-- Access to the _Meshery Playground_. If you don&#39;t have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
 
 ### Lab Scenario
@@ -30,9 +30,9 @@ This is a common real-world pattern seen in microservices architectures and back
 ### Accessing the Visual Guide Design
 
 - Start by opening the prebuilt design from here:
-  [![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&amp;design=629b6039-ebb3-4bd8-9b1b-19184fade225)
+  [![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
 
-&gt;  Click the image above to open the interactive design in Meshery Kanvas.
+>  Click the image above to open the interactive design in Meshery Kanvas.
 
 - Once inside Kanvas, we will see a complete layout of how a request flows through the Kubernetes architecture. We are going to understand what’s happening in this architecture.
 - If it looks a bit overwhelming at first, zoom in/out or drag around the canvas to get comfortable with the layout.
@@ -42,7 +42,7 @@ This is a common real-world pattern seen in microservices architectures and back
 
 #### 1. User
 
-- This isn&#39;t a Kubernetes object, but it&#39;s been included to show where the request begins, like someone opening the app in a browser or making an API call. 
+- This isn't a Kubernetes object, but it's been included to show where the request begins, like someone opening the app in a browser or making an API call. 
 
 #### 2. Service (ClusterIP)
 
@@ -52,8 +52,8 @@ This is a common real-world pattern seen in microservices architectures and back
 
 #### 3. Deployment
 
-- It handles the app&#39;s lifecycle — scaling, rolling updates, and keeping replicas alive. It also ensures self-healing (restarts crashed Pods).
-- The Deployment here is meant to represent how Kubernetes manages Pods and acts as a layer of abstraction so we don&#39;t interact with Pods directly.
+- It handles the app's lifecycle — scaling, rolling updates, and keeping replicas alive. It also ensures self-healing (restarts crashed Pods).
+- The Deployment here is meant to represent how Kubernetes manages Pods and acts as a layer of abstraction so we don't interact with Pods directly.
 - Typically, we would see replica counts and labels defined. These labels are crucial because they are how the Deployment matches with Pods.
 
 #### 4. Pod
@@ -77,7 +77,7 @@ At first glance, Kubernetes might seem like a maze of abstract objects like Serv
 
 Understanding this path helps us:
 
-- Debug faster — &#34;Why am I not getting a response?&#34; becomes easier to track when we know who is responsible for routing and serving.
+- Debug faster — "Why am I not getting a response?" becomes easier to track when we know who is responsible for routing and serving.
 
 - Scale smarter — Once we know where the load hits, we can add replicas where it actually matters.
 
@@ -107,7 +107,7 @@ If we want to recreate this flow from scratch, we can drag and drop the same com
 
 [![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](../../images/kubernetes-request-flow/k8s-request-flow.png)
 
-&gt; Note: You can design this yourself using the components in Meshery Kanvas.
+> Note: You can design this yourself using the components in Meshery Kanvas.
 
 
 ## Conclusion

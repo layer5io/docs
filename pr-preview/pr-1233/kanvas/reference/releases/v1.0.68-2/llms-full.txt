@@ -1,7 +1,7 @@
 
-## What&#39;s New
+## What's New
 ## 🔤 General
-- fix(ui): break the renderer -&gt; editor import cycle that throws TDZ errors at runtime @ritzorama (#4353)
+- fix(ui): break the renderer -> editor import cycle that throws TDZ errors at runtime @ritzorama (#4353)
 - fix: resolve the 17 Kanvas E2E failures, most of them real product defects @ritzorama (#4355)
 - [Chore]: Update to Sistent v0.22.6 @l5io (#4354)
 

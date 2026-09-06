@@ -1,5 +1,5 @@
 
-Zara Osei is the Team Admin for Orbital Labs&#39; Infrastructure Team. Her mandate: model the team&#39;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, `data-pipeline-gcp`, in the `orbital-production` workspace.
+Zara Osei is the Team Admin for Orbital Labs' Infrastructure Team. Her mandate: model the team's GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, `data-pipeline-gcp`, in the `orbital-production` workspace.
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ Zara Osei is the Team Admin for Orbital Labs&#39; Infrastructure Team. Her manda
 
 ### Step 1: Create the design
 
-Zara opens Kanvas and navigates to the **Designer** view. From the workspace selector she picks `orbital-production` — the workspace where Orbital Labs&#39; production infrastructure designs live.
+Zara opens Kanvas and navigates to the **Designer** view. From the workspace selector she picks `orbital-production` — the workspace where Orbital Labs' production infrastructure designs live.
 
 She selects **New Design**, enters `data-pipeline-gcp` as the design name, and confirms. Kanvas creates the design and opens a blank canvas. From this point everything she does is auto-saved and tracked in design history.
 
@@ -67,12 +67,12 @@ The validator returns one warning: the `pipeline-cluster` GKE component has no n
 
 ### Step 7: Save and share with Five
 
-With validation passing, Zara opens the **Share** panel. She searches for Five (her Orbital Labs teammate with Platform Engineer access) and grants him **view &#43; comment** permissions. She adds a note: &#34;First pass on the pipeline topology — please flag anything that looks off before I wire up the Dataflow job config.&#34;
+With validation passing, Zara opens the **Share** panel. She searches for Five (her Orbital Labs teammate with Platform Engineer access) and grants him **view + comment** permissions. She adds a note: "First pass on the pipeline topology — please flag anything that looks off before I wire up the Dataflow job config."
 
 Five receives an in-app notification. When he opens the design, he can see all five components and their connections, inspect the `prod-gcp` environment bindings, and leave threaded comments — but the canvas is read-only for him until Zara promotes his permission to editor.
 
 The `data-pipeline-gcp` design is now live in `orbital-production`, connected to real infrastructure, and ready for collaborative review.
 
-{{&lt; alert type=&#34;info&#34; &gt;}}
-Meet Zara and the rest of the team at [Meet Five and the Cast]({{&lt; ref &#34;cloud/getting-started/meet-five/_index.md&#34; &gt;}}).
-{{&lt; /alert &gt;}}
+{{< alert type="info" >}}
+Meet Zara and the rest of the team at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
+{{< /alert >}}

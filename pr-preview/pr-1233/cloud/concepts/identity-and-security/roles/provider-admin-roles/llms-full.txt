@@ -1,9 +1,9 @@
 
-{{&lt; cardpane &gt;}}
+{{< cardpane >}}
 {{% card %}}
-&lt;img src=&#34;../images/role-provider-admin.svg&#34; /&gt;
+<img src="../images/role-provider-admin.svg" />
 {{% /card %}}
-{{% card header=&#34;## Provider Administrator&#34; %}}
+{{% card header="## Provider Administrator" %}}
 
 **What is the purpose of this role?**
 
@@ -32,4 +32,4 @@
 - Can create, view, edit and delete every resource
 
 {{% /card %}}
-{{&lt; /cardpane &gt;}}
+{{< /cardpane >}}

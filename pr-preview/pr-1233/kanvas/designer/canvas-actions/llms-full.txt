@@ -7,24 +7,24 @@ The menu adapts to the mode you are in. Commenting and pasting, for example, are
 
 | Action | Shortcut | Behavior |
 | --- | --- | --- |
-| Add Comment | &lt;kbd&gt;M&lt;/kbd&gt; | Drops a comment at the point you right-clicked. Designer mode only. See [Reviewing Designs]({{&lt; ref &#34;kanvas/designer/comments/index.md&#34; &gt;}}). |
-| Undo | &lt;kbd&gt;Cmd/Ctrl&lt;/kbd&gt; &#43; &lt;kbd&gt;Z&lt;/kbd&gt; | Reverses the last change. |
-| Redo | &lt;kbd&gt;Cmd/Ctrl&lt;/kbd&gt; &#43; &lt;kbd&gt;Shift&lt;/kbd&gt; &#43; &lt;kbd&gt;Z&lt;/kbd&gt; | Re-applies the last undone change. |
-| Paste | &lt;kbd&gt;Cmd/Ctrl&lt;/kbd&gt; &#43; &lt;kbd&gt;V&lt;/kbd&gt; | Pastes the clipboard contents at the cursor position. Designer mode only. |
-| Select All | &lt;kbd&gt;Cmd/Ctrl&lt;/kbd&gt; &#43; &lt;kbd&gt;A&lt;/kbd&gt; | Selects every component on the canvas. |
+| Add Comment | <kbd>M</kbd> | Drops a comment at the point you right-clicked. Designer mode only. See [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}). |
+| Undo | <kbd>Cmd/Ctrl</kbd> + <kbd>Z</kbd> | Reverses the last change. |
+| Redo | <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Re-applies the last undone change. |
+| Paste | <kbd>Cmd/Ctrl</kbd> + <kbd>V</kbd> | Pastes the clipboard contents at the cursor position. Designer mode only. |
+| Select All | <kbd>Cmd/Ctrl</kbd> + <kbd>A</kbd> | Selects every component on the canvas. |
 | Reset Design | | Clears every component from the canvas. Designer mode only, and destructive - see below. |
 
 ### Reset Design
 
-Reset Design removes everything currently on the canvas. Kanvas asks you to confirm before it does, and the confirmation reminds you that undo is usually the better tool if you only want to step back a few changes. The confirmation dialog carries a &#34;don&#39;t show this again&#34; checkbox; ticking it stores that preference against your user settings, and the reset then happens immediately on every subsequent use.
+Reset Design removes everything currently on the canvas. Kanvas asks you to confirm before it does, and the confirmation reminds you that undo is usually the better tool if you only want to step back a few changes. The confirmation dialog carries a "don't show this again" checkbox; ticking it stores that preference against your user settings, and the reset then happens immediately on every subsequent use.
 
 ## Screenshot Canvas
 
-**Take Screenshot** captures the canvas exactly as it is drawn - components, relationships, annotations and all - and downloads it to your machine as a PNG. The file is named `Kanvas-&lt;timestamp&gt;.png`, so repeated captures of the same design do not overwrite one another.
+**Take Screenshot** captures the canvas exactly as it is drawn - components, relationships, annotations and all - and downloads it to your machine as a PNG. The file is named `Kanvas-<timestamp>.png`, so repeated captures of the same design do not overwrite one another.
 
 The capture is of the canvas rather than of your browser window: panels, the dock and the toolbar are not included, and the image is rendered from the design itself rather than screen-grabbed, so it is not limited to the part of the design currently scrolled into view.
 
-This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs]({{&lt; ref &#34;kanvas/designer/export-designs/index.md&#34; &gt;}}) instead.
+This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}) instead.
 
 ## Options
 
@@ -32,11 +32,11 @@ This is the quickest way to put a design into a pull request, an incident write-
 
 ## Shortcuts
 
-**Shortcuts** (&lt;kbd&gt;Cmd/Ctrl&lt;/kbd&gt; &#43; &lt;kbd&gt;/&lt;/kbd&gt;) opens the keyboard shortcut reference in the help drawer, listing the shortcuts available in both Designer and Operator modes.
+**Shortcuts** (<kbd>Cmd/Ctrl</kbd> + <kbd>/</kbd>) opens the keyboard shortcut reference in the help drawer, listing the shortcuts available in both Designer and Operator modes.
 
 ## View help center
 
-**Help Center** (&lt;kbd&gt;Cmd/Ctrl&lt;/kbd&gt; &#43; &lt;kbd&gt;Shift&lt;/kbd&gt; &#43; &lt;kbd&gt;/&lt;/kbd&gt;) opens the in-app help modal. It gathers, in one place, every route by which you can learn more about Kanvas or reach someone who can help:
+**Help Center** (<kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd>) opens the in-app help modal. It gathers, in one place, every route by which you can learn more about Kanvas or reach someone who can help:
 
 | Card | What it opens |
 | --- | --- |

@@ -78,7 +78,7 @@ Estimate telemetry volume early to avoid unexpected costs.
 
 ## Reference Architecture (example)
 
-- Metrics: Prometheus &#43; Alertmanager; long-term storage via remote-write (e.g., Thanos, Mimir)
+- Metrics: Prometheus + Alertmanager; long-term storage via remote-write (e.g., Thanos, Mimir)
 - Logs: Loki (or Elasticsearch) with LogQL saved views and retention tiers
 - Traces: Tempo/Jaeger with OpenTelemetry SDKs/collectors
 - Dashboards: Grafana with folders for platform, services, and business metrics

@@ -1,6 +1,6 @@
 
 - feat(auth): skip reCAPTCHA on registration for fully-custom-eTLD orgs @leecalcote (#5437)
-- chore(governance): enforce schema-first for server/models (hooks &#43; CI &#43; docs) @leecalcote (#5436)
+- chore(governance): enforce schema-first for server/models (hooks + CI + docs) @leecalcote (#5436)
 
 ### 👨🏽‍💻 Contributors
 
