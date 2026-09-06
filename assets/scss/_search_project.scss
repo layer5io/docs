@@ -145,15 +145,16 @@
   .td-search {
     display: flex;
     justify-content: center;
-    align-content: center;
-    // background-color: #EBC017;
+    align-items: center;
     background-color: #2e2e31;
     border-radius: 1rem;
+    position: relative;
 
     .td-search__input {
       width: 100%;
       text-indent: 1.25em;
       border-radius: 1rem;
+      padding-right: 28px;
     }
     .td-search__input:not(:focus) {
       background: transparent;
@@ -161,10 +162,84 @@
     }
     .td-search__input.form-control:focus {
       color: inherit;
+      box-shadow: none;
     }
   }
-  .td-search__input.form-control:focus {
-    // background-color: #EBC017;
+}
+
+// Search shortcut badge
+#searchKey,
+button#searchKey,
+.kbc-button.kbc-button-xs {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+  color: #a0a0a5 !important;
+  font-size: 11px !important;
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  padding: 0 5px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  line-height: 16px !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  align-self: center !important;
+  margin: 0 8px 0 -26px !important;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid $primary !important;
+    outline-offset: 2px !important;
+  }
+}
+
+// Light theme search adjustments
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .td-navbar .td-search,
+  .td-search {
+    background-color: #eaedee !important;
+    border: 1px solid #d2d8da !important;
+
+    .td-search__input {
+      color: #000d12 !important;
+
+      &::placeholder {
+        color: #647176 !important;
+      }
+
+      &:focus {
+        color: #000d12 !important;
+      }
+    }
+
+    .td-search__icon {
+      color: #647176 !important;
+    }
+
+    &:focus-within {
+      border-color: $primary !important;
+      box-shadow: none !important;
+    }
+  }
+
+  #searchKey,
+  button#searchKey,
+  .kbc-button.kbc-button-xs {
+    background: #ffffff !important;
+    border: 1px solid #d2d8da !important;
+    color: #647176 !important;
+    box-shadow: none !important;
+  }
+
+  .popover-body {
+    background-color: #ffffff;
+    color: #3c494f;
+    border: 1px solid #eaedee;
   }
 }
 
