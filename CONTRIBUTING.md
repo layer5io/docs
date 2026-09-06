@@ -19,6 +19,18 @@ Relevant coding style guidelines are the Go Code Review Comments and the Formatt
 
 In order to contribute to Layer5 docs, please follow the fork-and-pull request workflow described [here](./CONTRIBUTING-gitflow.md).
 
+
+# LLM-friendly page output
+
+Every rendered documentation page exposes a **View as markdown** link. The link
+targets the page's `llms.txt` output, which contains the page title, description,
+and rendered content without the site's navigation, sidebar, footer, or styling.
+
+This has been achieve by using Hugo Module for llms.txt and llms-full.txt 
+### References
+- (Module post)[https://discourse.gohugo.io/t/hugo-module-for-llms-txt-and-llms-full-txt/56990]
+- (Github)[https://github.com/gethugothemes/hugo-modules/tree/master/llms-txt]
+
 ## Prerequisites
 
 Make sure you have the following prerequisites installed on your operating system before you start contributing:

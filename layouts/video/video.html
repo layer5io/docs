@@ -11,6 +11,7 @@
         </div>
   <div class="hero-section-wrapper">
     <h1>{{ .Title }}</h1>
+    {{ partial "page-llms-link.html" . }}
     <p class="hero-subtitle">{{ .Description }}</p>
     
     {{ if .Params.featured_video }}

@@ -99,10 +99,10 @@ description = "Product Documentation"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-  home = ["HTML", "RSS", "SITEMAP", "llms", "llmsfull","md"]
+  home = ["HTML", "RSS", "SITEMAP", "llms", "llmsfull", "md"]
   page = ["HTML", "llms", "llmsfull", "md"]
-  section = ["HTML", "RSS", "llms", "llmsfull","md"]
-  taxonomy = ["HTML", "RSS", "llms", "llmsfull","md"]
+  section = ["HTML", "RSS", "llms", "llmsfull", "md"]
+  taxonomy = ["HTML", "RSS", "llms", "llmsfull", "md"]
   term = ["HTML", "RSS", "llms", "llmsfull", "md"]
 
 [sitemap]
