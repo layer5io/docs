@@ -372,8 +372,6 @@ enable = false
   isPlainText = true
   notAlternative = true
 
-[llms]
-  enable = true
-  enable_full = true
-  include = []
-  exclude = []
+[params.llms]
+  generate_llms_txt = true
+  generate_llms_full_txt = true
