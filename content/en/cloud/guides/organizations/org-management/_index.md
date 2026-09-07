@@ -51,6 +51,7 @@ You can update your Organization's name, location, associated teams, branding, a
     -   Logos: Upload specific logo versions for various display contexts by clicking the respective **"Upload"** buttons.
     -   Invitations: Access a shareable link to invite users to your Organization.
     -   Identity Providers: Configure which OAuth applications power your Organization's sign-in (see [Configuring Identity Providers](#configuring-identity-providers-bring-your-own-credentials) below).
+    -   Email: Send your Organization's email through your own mail server, from your own domain (see [Configuring Your Own Mail Server](#configuring-your-own-mail-server) below).
 
 <img src="images/edit_org.png" alt="Editing Organization Details" style="width: 30%;" />
 
@@ -71,6 +72,18 @@ Organization Administrators and Owners can add, rotate, and remove their Organiz
 {{< /alert >}}
 
 Switching identity providers does not affect existing user accounts or login history. Users who signed in through a provider you later remove may need to re-authenticate.
+
+### Configuring Your Own Mail Server
+
+The **Email** tab lets your Organization send application mail such as invitations and notifications through **its own SMTP server**, from **its own domain**, instead of through Layer5's shared mail server. Nothing about the message then points to a shared provider.
+
+Setting it up has three steps, and mail keeps leaving through Layer5's shared server until all three are done: register the server and its credentials, prove control of the sending domain by publishing a DNS TXT record, and pass a connection test before turning the server on. The tab reports delivery health afterwards, and a fallback setting decides what happens to a message your server refuses.
+
+The full walkthrough, including the Google Workspace paths and a troubleshooting table for every failure the tab reports, is in [Bring Your Own Mail Server](bring-your-own-mail-server/).
+
+{{< alert title="Who can configure this" type="info" >}}
+Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server, under the same gate as the Identity Providers tab.
+{{< /alert >}}
 
 ## Using the Open Organization Invitation Link
 
