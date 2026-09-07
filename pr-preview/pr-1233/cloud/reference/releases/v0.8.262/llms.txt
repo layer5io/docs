@@ -1,4 +1,13 @@
 # v0.8.262
 
- What&rsquo;s New 🔗 🔤 General 🔗 This release updates the Dockerfile, so that it build meshery-cloud from the new server folder.
-add new targets; account for new server folder @leecalcote (#3664) 👨🏽‍💻 The most amazing contributors 🦸‍♂️ 🔗 @leecalcote
+
+## What's New
+## 🔤 General
+This release updates the Dockerfile, so that it build meshery-cloud from the new `server` folder.
+
+- add new targets; account for new server folder @leecalcote (#3664)
+
+## 👨🏽‍💻 The most amazing contributors 🦸‍♂️ 
+
+@leecalcote
+

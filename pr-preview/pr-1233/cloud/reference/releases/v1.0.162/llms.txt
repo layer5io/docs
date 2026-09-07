@@ -1,3 +1,12 @@
 # v1.0.162
 
- [DAO] Guard organization-scoped queries against empty org scope (supersedes #5559) @leecalcote (#5587) feat(idp): create/tear down Identity Providers Environment on-behalf @leecalcote (#5593) fix(ui): Identity Providers tab shows default state (not an error) for orgs without BYOC @leecalcote (#5588) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @fitzergerald and @leecalcote
+
+- [DAO] Guard organization-scoped queries against empty org scope (supersedes #5559) @leecalcote (#5587)
+- feat(idp): create/tear down Identity Providers Environment on-behalf @leecalcote (#5593)
+- fix(ui): Identity Providers tab shows default state (not an error) for orgs without BYOC @leecalcote (#5588)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald and @leecalcote
+

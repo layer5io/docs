@@ -1,3 +1,23 @@
 # v0.8.512
 
- 📚 Academy 🔗 Layer5 v0.8.3 content update @l5io (#4359) Exoscale v0.6.19 content update @l5io (#4357) 🖥 Cloud UI 🔗 Academy: rearrange test details @leecalcote (#4358) Fix Logout and login from custom domain @aabidsofi19 (#4360) 💻 Server 🔗 Remove logging of SystemID in EventTrackersMiddleware @leecalcote (#4361) Fix Logout and login from custom domain @aabidsofi19 (#4360) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @aabidsofi19, @l5io, @leecalcote and @meshery-ci
+
+## 📚 Academy
+
+- Layer5 v0.8.3 content update @l5io (#4359)
+- Exoscale v0.6.19 content update @l5io (#4357)
+
+## 🖥 Cloud UI
+
+- Academy: rearrange test details @leecalcote (#4358)
+- Fix Logout and login from custom domain  @aabidsofi19 (#4360)
+
+## 💻 Server
+
+- Remove logging of SystemID in EventTrackersMiddleware @leecalcote (#4361)
+- Fix Logout and login from custom domain  @aabidsofi19 (#4360)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @meshery-ci
+

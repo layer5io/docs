@@ -1,3 +1,12 @@
 # v1.0.177
 
- [server] Map env/workspace single-resource GET not-found to 404 instead of 500 @ritzorama (#5676) feat(db): enforce email uniqueness (Phase 3, #5410 Gate B) @leecalcote (#5672) Fix OIDC account linking parameter propagation @NSTKrishna (#5658) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @NSTKrishna, @leecalcote, @pontusringblom and @ritzorama
+
+- [server] Map env/workspace single-resource GET not-found to 404 instead of 500 @ritzorama (#5676)
+- feat(db): enforce email uniqueness (Phase 3, #5410 Gate B) @leecalcote (#5672)
+- Fix OIDC account linking parameter propagation @NSTKrishna (#5658)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@NSTKrishna, @leecalcote, @pontusringblom and @ritzorama
+

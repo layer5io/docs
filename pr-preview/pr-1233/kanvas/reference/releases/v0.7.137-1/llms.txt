@@ -1,3 +1,22 @@
 # v0.7.137-1
 
- What&rsquo;s New 🔗 🔤 General 🔗 🖌️ Designer 🔗 Fix pan scroll sensitivity and direction @aabidsofi19 (#3122) Add filter by owner functionlity in the catalog modal @amitamrutiya (#3106) optimize rendering : lockdown rerenders to 10 per sec @aabidsofi19 (#3121) [Chore]: Bump @layer5/sistent v0.14.111 @l5io (#3120) [Chore]: Bump Sistent v0.14.111 @l5io (#3119) Panels: bringing their styling closer together @leecalcote (#3117) 🐛 Bug Fixes 🔗 fix: smoke test wrong version env @jerensl (#3118) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @aabidsofi19, @amitamrutiya, @jerensl, @l5io and @leecalcote
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Fix pan scroll sensitivity and direction @aabidsofi19 (#3122)
+- Add filter by owner functionlity in the catalog modal @amitamrutiya (#3106)
+- optimize rendering : lockdown rerenders to 10 per sec @aabidsofi19 (#3121)
+- [Chore]: Bump @layer5/sistent v0.14.111 @l5io (#3120)
+- [Chore]: Bump Sistent v0.14.111 @l5io (#3119)
+- Panels: bringing their styling closer together @leecalcote (#3117)
+
+## 🐛 Bug Fixes
+
+- fix: smoke test wrong version env @jerensl (#3118)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @jerensl, @l5io and @leecalcote

@@ -1,3 +1,11 @@
 # v1.0.38-2
 
- What&rsquo;s New 🔗 🔤 General 🔗 fix(designer): render imported Kubernetes manifests by normalizing model reference @leecalcote (#4264) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @l5io and @leecalcote
+
+## What's New
+## 🔤 General
+- fix(designer): render imported Kubernetes manifests by normalizing model reference @leecalcote (#4264)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote

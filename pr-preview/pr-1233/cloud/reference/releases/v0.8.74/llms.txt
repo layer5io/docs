@@ -1,3 +1,38 @@
 # v0.8.74
 
- What&rsquo;s New 🔗 🔤 General 🔗 🖥 Cloud UI 🔗 [Chore]: Bump v0.14.117 @l5io (#2976) replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#2974) fix redirection of designs from cloud to playground @sudhanshutech (#2973) fix: passing undefined orgs id in rtk query @jerensl (#2968) change configure github workflow step design @amitamrutiya (#2967) Changing the placement of button presnet in the cards in the integrat… @NishantSinghhhhh (#2934) 💻 Server 🔗 remove accidental status check @aabidsofi19 (#2975) fix import from github w/signoff @Jougan-0 (#2970) 🦴 Infrastructure 🔗 replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#2974) ☁️ Api Specifications 🔗 replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#2974) 🐛 Bug Fixes 🔗 fix import from github w/signoff @Jougan-0 (#2970) fix: passing undefined orgs id in rtk query @jerensl (#2968) change configure github workflow step design @amitamrutiya (#2967) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @Jougan-0, @NishantSinghhhhh, @aabidsofi19, @amitamrutiya, @jerensl, @l5io and @sudhanshutech
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump v0.14.117 @l5io (#2976)
+- replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#2974)
+- fix redirection of designs from cloud to playground @sudhanshutech (#2973)
+- fix: passing undefined orgs id in rtk query @jerensl (#2968)
+- change configure github workflow step design @amitamrutiya (#2967)
+- Changing the placement of button presnet in the cards in the integrat… @NishantSinghhhhh (#2934)
+
+## 💻 Server
+
+- remove accidental status check @aabidsofi19 (#2975)
+- fix import from github w/signoff @Jougan-0 (#2970)
+
+## 🦴 Infrastructure
+
+- replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#2974)
+
+## ☁️ Api Specifications
+
+- replace meshery.layer5.io with cloud.layer5.io @aabidsofi19 (#2974)
+
+## 🐛 Bug Fixes
+
+- fix import from github w/signoff @Jougan-0 (#2970)
+- fix: passing undefined orgs id in rtk query @jerensl (#2968)
+- change configure github workflow step design @amitamrutiya (#2967)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @NishantSinghhhhh, @aabidsofi19, @amitamrutiya, @jerensl, @l5io and @sudhanshutech
+

@@ -1,3 +1,29 @@
 # v0.8.482
 
- 🖥 Cloud UI 🔗 Bump @mui/styles from 6.4.11 to 6.5.0 in /ui @dependabot (#4241) Bump babel-loader from 9.2.1 to 10.0.0 in /ui @dependabot (#4242) Update Dynamic Course Type in Learning Card @Namanv0509 (#4271) Changed secondary color @ARYANSHAH1567 (#4273) 💻 Server 🔗 fix: update email recipients to include team@layer5.io @leecalcote (#4277) 🐛 Bug Fixes 🔗 Changed secondary color @ARYANSHAH1567 (#4273) ⬆️ Dependencies 🔗 Bump @mui/styles from 6.4.11 to 6.5.0 in /ui @dependabot (#4241) Bump babel-loader from 9.2.1 to 10.0.0 in /ui @dependabot (#4242) Bump github.com/lestrrat-go/jwx from 1.2.30 to 1.2.31 @dependabot (#3459) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @ARYANSHAH1567, @Namanv0509, @dependabot, @dependabot[bot], @l5io and @leecalcote
+
+## 🖥 Cloud UI
+
+- Bump @mui/styles from 6.4.11 to 6.5.0 in /ui @dependabot (#4241)
+- Bump babel-loader from 9.2.1 to 10.0.0 in /ui @dependabot (#4242)
+- Update Dynamic Course Type in Learning Card @Namanv0509 (#4271)
+- Changed secondary color @ARYANSHAH1567 (#4273)
+
+## 💻 Server
+
+- fix: update email recipients to include team@layer5.io @leecalcote (#4277)
+
+## 🐛 Bug Fixes
+
+- Changed secondary color @ARYANSHAH1567 (#4273)
+
+## ⬆️ Dependencies
+
+- Bump @mui/styles from 6.4.11 to 6.5.0 in /ui @dependabot (#4241)
+- Bump babel-loader from 9.2.1 to 10.0.0 in /ui @dependabot (#4242)
+- Bump github.com/lestrrat-go/jwx from 1.2.30 to 1.2.31 @dependabot (#3459)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@ARYANSHAH1567, @Namanv0509, @dependabot, @dependabot[bot], @l5io and @leecalcote
+

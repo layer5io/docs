@@ -1,3 +1,13 @@
 # v1.0.160
 
- fix(webhook): configure GITHUB_WEBHOOK_SECRET and surface misconfig once at startup @leecalcote (#5594) [chore] add MeshKit-error PreToolUse guard for the Go backend @leecalcote (#5592) [chore] register no-ai-attribution PreToolUse hook in settings @leecalcote (#5591) [server] fix: catalog Technology dropdown shows full model registry (honor camelCase pageSize) @leecalcote (#5589) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @fitzergerald and @leecalcote
+
+- fix(webhook): configure GITHUB_WEBHOOK_SECRET and surface misconfig once at startup @leecalcote (#5594)
+- [chore] add MeshKit-error PreToolUse guard for the Go backend @leecalcote (#5592)
+- [chore] register no-ai-attribution PreToolUse hook in settings @leecalcote (#5591)
+- [server] fix: catalog Technology dropdown shows full model registry (honor camelCase pageSize) @leecalcote (#5589)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald and @leecalcote
+

@@ -1,3 +1,25 @@
 # v0.8.54
 
- What&rsquo;s New 🔗 🔤 General 🔗 🖥 Cloud UI 🔗 close dropdown on selection of author @sudhanshutech (#2909) 💻 Server 🔗 revert: revert the send snapshot email and comment the api changes @jerensl (#2906) Fix/email format @jerensl (#2902) 🐛 Bug Fixes 🔗 Revert ix: dicussion forum missing a tag opener in footer\ @jerensl (#2905) fix: dicussion forum missing a tag opener in footer @jerensl (#2903) Fix/email format @jerensl (#2902) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @Jougan-0, @jerensl, @l5io and @sudhanshutech
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- close dropdown on selection of author @sudhanshutech (#2909)
+
+## 💻 Server
+
+- revert: revert the send snapshot email and comment the api changes @jerensl (#2906)
+- Fix/email format @jerensl (#2902)
+
+## 🐛 Bug Fixes
+
+- Revert ix: dicussion forum missing a tag opener in footer\ @jerensl (#2905)
+- fix: dicussion forum missing a tag opener in footer @jerensl (#2903)
+- Fix/email format @jerensl (#2902)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @jerensl, @l5io and @sudhanshutech
+

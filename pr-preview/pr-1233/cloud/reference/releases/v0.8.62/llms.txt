@@ -1,3 +1,27 @@
 # v0.8.62
 
- What&rsquo;s New 🔗 🔤 General 🔗 bump go sum w/signoff @Jougan-0 (#2941) bump schemas @aabidsofi19 (#2938) 🖥 Cloud UI 🔗 merge filter section with the existing filter bar in catalog @amitamrutiya (#2866) [Chore]: Bump @layer5/sistent v0.14.111 @l5io (#2935) [Chore]: Bump Sistent v0.14.111 @l5io (#2931) 💻 Server 🔗 uncomment issue session token w/signoff @Jougan-0 (#2942) 🐛 Bug Fixes 🔗 uncomment issue session token w/signoff @Jougan-0 (#2942) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @Jougan-0, @aabidsofi19, @amitamrutiya and @l5io
+
+## What's New
+## 🔤 General
+- bump go sum w/signoff @Jougan-0 (#2941)
+- bump schemas @aabidsofi19 (#2938)
+
+## 🖥 Cloud UI
+
+- merge filter section with the existing filter bar in catalog @amitamrutiya (#2866)
+- [Chore]: Bump @layer5/sistent v0.14.111 @l5io (#2935)
+- [Chore]: Bump Sistent v0.14.111 @l5io (#2931)
+
+## 💻 Server
+
+- uncomment issue session token w/signoff @Jougan-0 (#2942)
+
+## 🐛 Bug Fixes
+
+- uncomment issue session token w/signoff @Jougan-0 (#2942)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @aabidsofi19, @amitamrutiya and @l5io
+

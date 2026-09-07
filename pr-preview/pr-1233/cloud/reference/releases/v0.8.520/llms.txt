@@ -1,3 +1,21 @@
 # v0.8.520
 
- 📚 Academy 🔗 Meshery v0.4.5 content update @l5io (#4387) Exoscale v0.6.22 content update @l5io (#4382) 🖥 Cloud UI 🔗 Add useGetUserByEmailQuery hook and integrate into relevant components @leecalcote (#4364) Avoid variable name collison: Refactor keys variable in Stats component @leecalcote (#4386) Update image_url property title and adjust Recognition Management modal title for clarity @leecalcote (#4385) Rename \Badge\ to \Recognition\ in BadgeManagementModal and ManageBadgesBtn for consistency @leecalcote (#4384) Academy/: Accordian insted of List for resources @leecalcote (#4383) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @l5io and @leecalcote
+
+## 📚 Academy
+
+- Meshery v0.4.5 content update @l5io (#4387)
+- Exoscale v0.6.22 content update @l5io (#4382)
+
+## 🖥 Cloud UI
+
+- Add useGetUserByEmailQuery hook and integrate into relevant components @leecalcote (#4364)
+- Avoid variable name collison: Refactor `keys` variable in Stats component @leecalcote (#4386)
+- Update image_url property title and adjust Recognition Management modal title for clarity @leecalcote (#4385)
+- Rename \Badge\ to \Recognition\ in BadgeManagementModal and ManageBadgesBtn for consistency @leecalcote (#4384)
+- Academy/: Accordian insted of List for resources @leecalcote (#4383)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+

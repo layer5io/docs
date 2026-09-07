@@ -1,3 +1,28 @@
 # v0.8.31
 
- What&rsquo;s New 🔗 🔤 General 🔗 Convert catalog filter menu sistent filter @amitamrutiya (#2824) Keda design challenge @Alero-Awani (#2829) 🖥 Cloud UI 🔗 Bump sistent version and make changes based on new sistent version @amitamrutiya (#2844) use catalog search field and sort menu to sistent @amitamrutiya (#2825) Use cloud hamburger menu into a reusabel sistent component @amitamrutiya (#2822) 🧰 Maintenance 🔗 ci: remove redundancy label workflow and fix label server @jerensl (#2843) fix: change to master branch @jerensl (#2842) fix: change input number to input string @jerensl (#2841) Fix/dispatch cloud build on pr @jerensl (#2840) fix: change token @jerensl (#2839) ci: add build cloud ui dispatch @jerensl (#2837) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @Alero-Awani, @MUzairS15, @amitamrutiya, @jerensl, @l5io and @leecalcote
+
+## What's New
+## 🔤 General
+- Convert catalog filter menu sistent filter @amitamrutiya (#2824)
+- Keda design challenge @Alero-Awani (#2829)
+
+## 🖥 Cloud UI
+
+- Bump sistent version and make changes based on new sistent version @amitamrutiya (#2844)
+- use catalog search field and sort menu to sistent  @amitamrutiya (#2825)
+- Use cloud hamburger menu into a reusabel sistent component @amitamrutiya (#2822)
+
+## 🧰 Maintenance
+
+- ci: remove redundancy label workflow and fix label server @jerensl (#2843)
+- fix: change to master branch @jerensl (#2842)
+- fix: change input number to input string @jerensl (#2841)
+- Fix/dispatch cloud build on pr @jerensl (#2840)
+- fix: change token @jerensl (#2839)
+- ci: add build cloud ui dispatch @jerensl (#2837)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Alero-Awani, @MUzairS15, @amitamrutiya, @jerensl, @l5io and @leecalcote
+

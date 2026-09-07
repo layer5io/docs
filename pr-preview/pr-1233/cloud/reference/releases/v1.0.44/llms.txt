@@ -1,3 +1,12 @@
 # v1.0.44
 
- fix(academy): restore active-learner count and remove /academy// dashboard href @pontusringblom (#5156) [Server][UI] Add [CAPTCHA_FLOW] structured logging for signup verification @pontusringblom (#5159) fix(dashboard): right-size CONTENT DETAILS widget and zero placeholders @pontusringblom (#5157) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @jamieplu, @leecalcote and @pontusringblom
+
+- fix(academy): restore active-learner count and remove /academy// dashboard href @pontusringblom (#5156)
+- [Server][UI] Add [CAPTCHA_FLOW] structured logging for signup verification @pontusringblom (#5159)
+- fix(dashboard): right-size CONTENT DETAILS widget and zero placeholders @pontusringblom (#5157)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu, @leecalcote and @pontusringblom
+

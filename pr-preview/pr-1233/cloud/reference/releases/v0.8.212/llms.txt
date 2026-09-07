@@ -1,3 +1,36 @@
 # v0.8.212
 
- What&rsquo;s New 🔗 🔤 General 🔗 🖥 Cloud UI 🔗 Fix: Responsive RSS Feed Button @vr-varad (#3469) Fix: Responsive Toolbar in Catalog @vr-varad (#3470) Fix breadcrumb route to prevent full page reload in &lsquo;My Designs&rsquo; @FaheemOnHub (#3446) Fix: Order of Details in Catalog (small screen) @vr-varad (#3471) Bump @babel/preset-react from 7.26.3 to 7.27.1 in /ui @dependabot (#3464) fix: email field is empty in design table @amitamrutiya (#3458) 💻 Server 🔗 fix share resource ownerships checks @aabidsofi19 (#3457) 🐛 Bug Fixes 🔗 Fix: Responsive RSS Feed Button @vr-varad (#3469) Fix: Responsive Toolbar in Catalog @vr-varad (#3470) Fix breadcrumb route to prevent full page reload in &lsquo;My Designs&rsquo; @FaheemOnHub (#3446) Fix: Order of Details in Catalog (small screen) @vr-varad (#3471) fix: email field is empty in design table @amitamrutiya (#3458) ⬆️ Dependencies 🔗 Bump github.com/layer5io/meshkit from 0.8.25 to 0.8.27 @dependabot (#3460) Bump @babel/preset-react from 7.26.3 to 7.27.1 in /ui @dependabot (#3464) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @FaheemOnHub, @aabidsofi19, @amitamrutiya, @dependabot, @dependabot[bot], @l5io, @leecalcote, @vr-varad and MUzairS15
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Fix: Responsive RSS Feed Button @vr-varad (#3469)
+- Fix: Responsive Toolbar in Catalog @vr-varad (#3470)
+- Fix breadcrumb route to prevent full page reload in 'My Designs' @FaheemOnHub (#3446)
+- Fix: Order of Details in Catalog (small screen) @vr-varad (#3471)
+- Bump @babel/preset-react from 7.26.3 to 7.27.1 in /ui @dependabot (#3464)
+- fix: email field is empty in design table @amitamrutiya (#3458)
+
+## 💻 Server
+
+- fix share resource ownerships checks @aabidsofi19 (#3457)
+
+## 🐛 Bug Fixes
+
+- Fix: Responsive RSS Feed Button @vr-varad (#3469)
+- Fix: Responsive Toolbar in Catalog @vr-varad (#3470)
+- Fix breadcrumb route to prevent full page reload in 'My Designs' @FaheemOnHub (#3446)
+- Fix: Order of Details in Catalog (small screen) @vr-varad (#3471)
+- fix: email field is empty in design table @amitamrutiya (#3458)
+
+## ⬆️ Dependencies
+
+- Bump github.com/layer5io/meshkit from 0.8.25 to 0.8.27 @dependabot (#3460)
+- Bump @babel/preset-react from 7.26.3 to 7.27.1 in /ui @dependabot (#3464)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @amitamrutiya, @dependabot, @dependabot[bot], @l5io, @leecalcote, @vr-varad and MUzairS15
+

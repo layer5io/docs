@@ -1,3 +1,24 @@
 # v0.7.121-7
 
- What&rsquo;s New 🔗 🔤 General 🔗 🖌️ Kanvas 🔗 ci: add logical and for label kanvas @jerensl (#2990) fix: labels and annotations not expanding by default @aabidsofi19 (#2988) fix: double border stroke not legible in pamela @aabidsofi19 (#2987) [Enhance] Mode Switcher: New Operator mode name and icon @leecalcote (#2986) [Enhancement] Distinct arrowhead icon for annotation arrows @leecalcote (#2985) fix border width value always zero in pamela @aabidsofi19 (#2984) 🧰 Maintenance 🔗 ci: disable auto label from release draft @jerensl (#2991) ci: add logical and for label kanvas @jerensl (#2990) Ci/chore auto labeler @jerensl (#2989) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release possible: @aabidsofi19, @jerensl, @l5io and @leecalcote
+
+## What's New
+## 🔤 General
+## 🖌️ Kanvas
+
+- ci: add logical and for label kanvas @jerensl (#2990)
+- fix: labels and annotations not expanding by default @aabidsofi19 (#2988)
+- fix: double border stroke not legible in pamela @aabidsofi19 (#2987)
+- [Enhance] Mode Switcher: New Operator mode name and icon @leecalcote (#2986)
+- [Enhancement] Distinct arrowhead icon for annotation arrows @leecalcote (#2985)
+- fix border width value always zero in pamela @aabidsofi19 (#2984)
+
+## 🧰 Maintenance
+
+- ci: disable auto label from release draft @jerensl (#2991)
+- ci: add logical and for label kanvas @jerensl (#2990)
+- Ci/chore auto labeler @jerensl (#2989)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @jerensl, @l5io and @leecalcote
