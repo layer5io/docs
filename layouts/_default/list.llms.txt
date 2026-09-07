@@ -2,4 +2,4 @@
 
 {{ with .Description }}{{ . }}
 
-{{ end }}{{ .Plain }}
+{{ end }}{{ .RawContent }}

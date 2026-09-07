@@ -359,19 +359,6 @@ enable = false
   [[module.imports]]
     path = "github.com/gethugothemes/hugo-modules/llms-txt"
 
-# Output formats for llms and llmsfull
-[outputFormats.llms]
-  baseName    = "llms"
-  mediaType   = "text/plain"
-  isPlainText = true
-  notAlternative = true
-
-[outputFormats.llmsfull]
-  baseName    = "llms-full"
-  mediaType   = "text/plain"
-  isPlainText = true
-  notAlternative = true
-
 [params.llms]
   generate_llms_txt = true
   generate_llms_full_txt = true
