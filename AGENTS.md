@@ -55,6 +55,17 @@ the arbiter - they have described behavior the handlers do not implement. Confir
 has a producer in the Go or TSX before writing it up: a contract enum member or a runbook
 sentence is not proof the feature ships.
 
+`meshery-cloud` is a PRIVATE repository, so never link one of its pull requests, issues or
+files from a content page - the link 404s for every reader of docs.layer5.io. Cite the released
+version instead (`v1.0.253`), which an operator can check against their own deployment, and keep
+the pull-request reference in the commit message and the docs pull request, where the audience
+can open it.
+
+Behavior can also disagree with `data/openapi.yml`. The server is the arbiter for what a
+response looks like: that file declares `401` as `text/plain` on every route, while any handler
+behind `AuthorizationMiddlewareForAdmin` answers `echo.NewHTTPError`, which echo serializes as
+JSON. Document what the handler sends and flag the specification.
+
 ## Maintaining this file
 
 Keep this file for knowledge useful to almost every future agent session in this project.
