@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[34 269 205 391 356 200]" src="images/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img id="[394 13 1 228 141 9]" src="images/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -76,7 +76,8 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  Example: Orbital Labs Teams
  &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href=""&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
+&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href=""&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
 &lt;p&gt;Below is an overview of the core identity components within the Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="identity" class="heading-link"&gt;
@@ -129,7 +130,7 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[127 436 102 111 21 51]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[210 449 327 485 326 192]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 

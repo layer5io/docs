@@ -735,7 +735,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[242 262 212 134 23 14]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[295 181 190 132 210 379]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -751,7 +751,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[408 379 342 490 473 152]" src="images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[349 54 469 21 276 212]" src="images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -875,7 +875,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[210 55 388 235 491 251]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[51 379 138 176 316 251]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -916,7 +916,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[240 396 348 450 459 163]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[95 254 331 450 419 111]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -925,7 +925,8 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
  &lt;a href="#using-the-shapes-palette" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See &lt;a href="/kanvas/designer/canvas-objects/#adding-shapes"&gt;Adding shapes&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Auto-pan on Drag</title><link>/kanvas/advanced/autopan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/autopan/</guid><description>&lt;p&gt;&lt;strong&gt;Auto-pan on Drag&lt;/strong&gt; (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.&lt;/p&gt;
-&lt;p&gt;Autopan is the difference between &lt;strong&gt;&amp;ldquo;move this component to another part of the design&amp;rdquo;&lt;/strong&gt; being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the &lt;strong&gt;Options&lt;/strong&gt; panel.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
+&lt;p&gt;Autopan is the difference between &lt;strong&gt;&amp;ldquo;move this component to another part of the design&amp;rdquo;&lt;/strong&gt; being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the &lt;strong&gt;Options&lt;/strong&gt; panel.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
 
 &lt;h3 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -1036,7 +1037,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[362 234 318 237 217 135]" src="images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[183 392 400 37 149 148]" src="images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1108,7 +1109,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[305 49 345 117 56 368]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[219 178 141 363 330 127]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1119,7 +1120,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[36 177 41 231 360 452]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[247 28 467 295 21 274]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1158,7 +1159,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[484 229 474 18 269 313]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[364 488 499 36 242 231]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1598,7 +1599,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[274 200 201 215 416 153]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[235 23 30 245 41 370]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1614,7 +1615,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[328 434 283 363 25 228]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[205 35 221 336 175 132]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1630,7 +1631,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[174 314 463 487 178 444]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[303 45 193 440 97 125]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1646,7 +1647,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[202 42 226 84 30 312]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[125 318 11 9 232 22]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1662,7 +1663,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[104 472 374 96 97 368]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[64 401 160 443 273 384]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1678,7 +1679,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[350 395 203 465 129 228]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[277 486 336 363 50 340]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1694,7 +1695,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[251 120 422 40 176 102]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[386 462 273 91 131 67]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1710,7 +1711,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[367 359 494 338 402 145]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[361 97 391 407 150 301]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1726,7 +1727,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[78 461 94 84 219 238]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[187 204 397 70 291 156]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1742,7 +1743,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[394 417 324 402 24 479]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[121 93 26 369 365 391]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1781,7 +1782,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[485 437 95 281 273 341]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[130 461 421 426 34 197]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1903,7 +1904,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[154 303 121 466 61 334]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[257 437 214 106 286 167]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1922,7 +1923,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[117 60 40 379 279 433]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[228 476 484 10 294 131]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -2010,7 +2011,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[127 436 102 111 21 51]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[210 449 327 485 326 192]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2031,7 +2032,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[295 93 448 458 316 283]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[311 383 74 38 373 467]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2066,7 +2067,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[70 194 290 235 348 11]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[416 233 195 428 217 14]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2078,7 +2079,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[332 8 491 358 113 254]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[9 432 244 390 27 148]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2165,7 +2166,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[337 442 163 342 75 109]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[175 103 415 87 345 58]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/cloud/concepts/identity-and-security/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/default-permissions/</guid><description>&lt;table class="td-initial"&gt;
  &lt;thead&gt;
@@ -2341,7 +2342,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[161 291 254 182 88 171]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[143 355 473 348 273 202]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2435,7 +2436,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[426 123 494 266 410 277]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[289 174 425 339 479 389]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -2523,7 +2524,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[85 51 181 184 479 29]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[56 59 305 105 37 418]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
@@ -134118,7 +134119,7 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[162 9 248 291 400 123]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
+ &lt;img id="[424 104 32 147 58 285]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Search Results</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Asking for help from within Kanvas&lt;/h4&gt;
