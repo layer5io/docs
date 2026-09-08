@@ -61,6 +61,12 @@ See [Link Environments to a Workspace]({{< ref "cloud/guides/workspaces/managing
 An Environment can be linked to more than one Workspace, and a Workspace can have more than one Environment. An Environment that appears in no Workspace is still perfectly valid - it simply is not shared with any team yet.
 {{< /alert >}}
 
+{{< alert type="info" title="Managed Environments Cannot Be Linked to a Workspace" >}}
+Linking an Environment that Layer5 Cloud provisioned for your organization - the Environment behind your own identity providers, for instance - to a Workspace is refused. Linking one grants every member of that Workspace's teams read access to the Environment's Connections and the Credentials behind them, and your organization's identity-provider credentials are not shared that way.
+
+Unlinking is not refused. If such an Environment was linked to a Workspace before this restriction existed, you can still remove it from that Workspace.
+{{< /alert >}}
+
 ## Create an Environment
 
 {{< alert type="info" title="Permissions Required" >}}
@@ -105,9 +111,9 @@ The **>>** and **<<** buttons act on the whole list, so they stay disabled until
 **Save** stays disabled until you have actually changed something, and one **Save** commits every addition and removal you made in the dialog together.
 
 {{< alert type="info" title="Some Environments Are Managed for You" >}}
-A few Environments are provisioned for your organization rather than created by someone in it, and they hold configuration the platform itself relies on - the Environment behind your organization's own identity providers is one. Their Connections are managed from the settings page that owns that feature, so assigning or removing Connections here is refused.
+A few Environments are provisioned for your organization by Layer5 Cloud rather than created by someone in it, and they hold organization-level configuration Layer5 Cloud itself relies on - the Environment behind your organization's own identity providers is one. Their Connections are managed from the [Identity Providers tab]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}) of Edit Organization, so assigning or removing Connections here is refused.
 
-You can still open such an Environment and see what belongs to it. Only changes made through this dialog are declined.
+You can still open such an Environment, see what belongs to it, and change its name and description. Only Connection membership, deletion, and linking it to a Workspace are declined.
 {{< /alert >}}
 
 ## Remove Connections from an Environment
@@ -135,9 +141,9 @@ Deleting an Environment does **not** delete the Connections inside it. Connectio
 {{< /alert >}}
 
 {{< alert type="info" title="Managed Environments Cannot Be Deleted Here" >}}
-Deleting an Environment your organization did not create - one provisioned to hold configuration the platform relies on, such as the Environment behind your own identity providers - is refused. Remove the feature's configuration from the settings page that owns it and the Environment is taken away with it.
+Deleting an Environment your organization did not create - one Layer5 Cloud provisioned to hold organization-level configuration, such as the Environment behind your own identity providers - is refused, whether you delete it singly or as part of a bulk selection. Use **Delete All Identity Providers** on the [Identity Providers tab]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}) instead, and the Environment is taken away with the configuration it holds.
 
-This is why deletion is refused rather than simply hidden: an Environment that still holds live configuration should not disappear from a grid where you can see everything else you own.
+This is why deletion is refused rather than the Environment simply being hidden: an Environment that still holds live configuration should not disappear from a grid where you can see everything else you own.
 {{< /alert >}}
 
 While an Environment is bulk-selected its card cannot be flipped and its individual edit and delete icons are suppressed, so the bulk toolbar is the only way to act on it. Clear the selection to get the per-card actions back.

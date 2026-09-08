@@ -63,7 +63,7 @@ By default, your Organization uses Layer5's shared OAuth applications. To overri
 
 -   Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider. Each walkthrough displays the exact redirect URI to add to your OAuth application. Saving your first provider switches the Organization to its own identity providers automatically.
 -   Use **Edit** to rotate a provider's credentials, or **Remove** to delete a single provider. Removing your last provider reverts the Organization to Layer5's defaults.
--   Use **Delete All "Identity Providers"** to delete the environment named, "Identity Providers", therein deleting every configured provider at once, reverting to Provider Organization's defaults.
+-   Use **Delete All Identity Providers** to remove every configured provider at once. This deletes the Environment that Layer5 Cloud provisioned to hold them, and the Organization reverts to Layer5's default identity providers.
 
 Every removal asks you to confirm and explains the consequences before it proceeds.
 
