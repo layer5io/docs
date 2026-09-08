@@ -22,8 +22,21 @@ Organization Administrators and Owners can configure, test, turn on, turn off, a
 Have these in hand before you open the Email tab:
 
 -   **The hostname and submission port of your SMTP server**, and whether it uses STARTTLS or implicit TLS.
--   **A username and password the server accepts.** For hosted providers this is an app password or a dedicated SMTP credential, not the password you sign in with. Each provider mints it somewhere different: see [Google Workspace](#google-workspace), [Microsoft 365](#microsoft-365), [Amazon SES](#amazon-ses), [SendGrid](#sendgrid) and [Postmark](#postmark) below.
+-   **A username and password the server accepts.** Which credential that is differs by provider, and for most of them it is not the password you sign in with. The table below says which one each provider expects.
 -   **A from address on a domain whose DNS you control.** You prove control by publishing a TXT record, so you need access to the domain's DNS zone.
+
+### Where each provider's credential comes from
+
+Every provider on this page mints its SMTP credential somewhere different, and getting the wrong one produces the same result in every case: "The server rejected the username and password." Follow the link for how to create it and what else that provider requires.
+
+| Provider | Username | Password |
+| --- | --- | --- |
+| [Google Workspace](#google-workspace) | the sending account's full address | an app password for that account, never its account password |
+| [Microsoft 365](#microsoft-365) | the mailbox's sign-in address | that mailbox's own sign-in password. This is the exception on this page: client submission authenticates with the account credential itself, and only where the tenant permits it |
+| [Amazon SES](#amazon-ses) | your SES SMTP user name | your SES SMTP password, which is not an AWS access key |
+| [SendGrid](#sendgrid) | the literal string `apikey` | your SendGrid API key |
+| [Postmark](#postmark) | your Postmark server API token | the same server API token again |
+| [Any other provider](#any-other-provider) | whatever that provider documents for SMTP submission | |
 
 ### Requirements on the mail server
 
@@ -222,7 +235,7 @@ This path needs [no Admin console change](https://knowledge.workspace.google.com
 
 Google states the sending limit for this server is 2,000 messages per day.
 
-The constraint is the from address. In practice, Gmail's SMTP server replaces the From address with the signed-in account's address unless that address is one of the account's configured **Send mail as** addresses. Google's help pages do not state this rewrite; it is what happens. Your members then see mail arrive from the account rather than from the address you configured, and the connection test cannot catch it, because it hangs up before naming a sender. If you want to send as `no-reply@example.com` through this path, [add it as a Send mail as address](https://support.google.com/mail/answer/22370) on the authenticating account and complete Google's confirmation step first. For a white-labelled sender, Path A is the better choice precisely because the relay service has no such constraint: with **Only addresses in my domains** it sends as any address in your domain.
+The constraint is the from address. In practice, Gmail's SMTP server replaces the From address with the signed-in account's address unless that address is one of the account's configured **Send mail as** addresses. Google's help pages do not state this rewrite; it is what happens. Your members then see mail arrive from the account rather than from the address you configured, and the connection test cannot catch it, because it hangs up before naming a sender. If you want to send as `no-reply@example.com` through this path, [add it as a Send mail as address](https://support.google.com/mail/answer/22370) on the authenticating account and complete Google's confirmation step first. For a white-labeled sender, Path A is the better choice precisely because the relay service has no such constraint: with **Only addresses in my domains** it sends as any address in your domain.
 
 ### Both paths
 
@@ -240,8 +253,10 @@ The **Microsoft 365** preset fills Microsoft's [client SMTP submission](https://
 | Encryption | `starttls` |
 | Authentication | `plain` |
 | Username | the sign-in address of a licensed mailbox in your tenant |
-| Password | that mailbox's password |
+| Password | that mailbox's own sign-in password, where the tenant permits it |
 | From Address | that same mailbox's address, unless you grant **Send As** (below) |
+
+Microsoft 365 is the one provider on this page whose SMTP credential **is** the account's sign-in password rather than a separate token or app password, so the caveats below are about whether your tenant still allows that, not about where to mint something else.
 
 Microsoft names port 587 or 25 for this path and requires TLS 1.2 or later. It also states that a device defaulting to port 465 "doesn't support the required versions of TLS for client SMTP submission", so choose `starttls` on 587 and not `tls` on 465.
 
@@ -255,7 +270,7 @@ Four things decide whether this works, and each of them produces a specific fail
 Microsoft's stated limits for this path are 10,000 recipients per day and 30 messages per minute.
 
 {{< alert title="Basic authentication for client submission is being retired" type="warning" >}}
-Microsoft has [published a deprecation timeline](https://techcommunity.microsoft.com/blog/exchange/updated-exchange-online-smtp-auth-basic-authentication-deprecation-timeline/4489835) for basic authentication on client SMTP submission: behaviour is unchanged through December 2026, after which it is disabled by default for existing tenants and unavailable to new ones, with a final removal date to be announced in the second half of 2027. Because Layer5 Cloud authenticates with a username and password, a tenant that reaches that cut-off without the setting re-enabled will start failing with "The server rejected the username and password." Plan a move to a provider on this page that authenticates with a token, or keep the setting enabled while Microsoft still allows it.
+Microsoft has [published a deprecation timeline](https://techcommunity.microsoft.com/blog/exchange/updated-exchange-online-smtp-auth-basic-authentication-deprecation-timeline/4489835) for basic authentication on client SMTP submission: behavior is unchanged through December 2026, after which it is disabled by default for existing tenants and unavailable to new ones, with a final removal date to be announced in the second half of 2027. Because Layer5 Cloud authenticates with a username and password, a tenant that reaches that cut-off without the setting re-enabled will start failing with "The server rejected the username and password." Plan a move to a provider on this page that authenticates with a token, or keep the setting enabled while Microsoft still allows it.
 {{< /alert >}}
 
 Microsoft's two alternatives to client submission do not substitute cleanly here, and it is worth knowing why before you try them:
