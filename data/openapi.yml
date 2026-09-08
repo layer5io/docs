@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.53
+  version: v1.3.54
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -8295,6 +8295,12 @@ paths:
                                           maxLength: 2048
                                           description: URL of the organization's X (formerly Twitter) profile.
                                           x-go-name: X
+                                        youtube:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's YouTube channel.
+                                          x-go-name: YouTube
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -8593,6 +8599,12 @@ paths:
                               maxLength: 2048
                               description: URL of the organization's X (formerly Twitter) profile.
                               x-go-name: X
+                            youtube:
+                              type: string
+                              format: uri
+                              maxLength: 2048
+                              description: URL of the organization's YouTube channel.
+                              x-go-name: YouTube
                     showAuthCarousel:
                       type: boolean
                       default: true
@@ -8890,6 +8902,12 @@ paths:
                                           maxLength: 2048
                                           description: URL of the organization's X (formerly Twitter) profile.
                                           x-go-name: X
+                                        youtube:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's YouTube channel.
+                                          x-go-name: YouTube
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -9409,6 +9427,12 @@ paths:
                                           maxLength: 2048
                                           description: URL of the organization's X (formerly Twitter) profile.
                                           x-go-name: X
+                                        youtube:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's YouTube channel.
+                                          x-go-name: YouTube
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -9793,6 +9817,12 @@ paths:
                               maxLength: 2048
                               description: URL of the organization's X (formerly Twitter) profile.
                               x-go-name: X
+                            youtube:
+                              type: string
+                              format: uri
+                              maxLength: 2048
+                              description: URL of the organization's YouTube channel.
+                              x-go-name: YouTube
                     showAuthCarousel:
                       type: boolean
                       default: true
@@ -10090,6 +10120,12 @@ paths:
                                           maxLength: 2048
                                           description: URL of the organization's X (formerly Twitter) profile.
                                           x-go-name: X
+                                        youtube:
+                                          type: string
+                                          format: uri
+                                          maxLength: 2048
+                                          description: URL of the organization's YouTube channel.
+                                          x-go-name: YouTube
                                 showAuthCarousel:
                                   type: boolean
                                   default: true
@@ -10405,6 +10441,12 @@ paths:
                                 maxLength: 2048
                                 description: URL of the organization's X (formerly Twitter) profile.
                                 x-go-name: X
+                              youtube:
+                                type: string
+                                format: uri
+                                maxLength: 2048
+                                description: URL of the organization's YouTube channel.
+                                x-go-name: YouTube
                       showAuthCarousel:
                         type: boolean
                         default: true
