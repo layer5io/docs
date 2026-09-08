@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.55
+  version: v1.3.56
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -1076,7 +1076,7 @@ paths:
                       there is no failure threshold, and the status does not by itself stop the server being dialled for
                       the next message. Read it as "the last attempt failed", not as "this server has been taken out of
                       rotation" - the circuit breaker that would do the latter is planned, not built, and is tracked in
-                      layer5io/meshery-cloud#6057. `ignored` means an administrator turned it off.
+                      meshery-cloud#6057. `ignored` means an administrator turned it off.
 
 
                       The writers are disjoint on purpose: only an administrator writes `ignored`, and only a delivery
@@ -1179,7 +1179,7 @@ paths:
                       count as protection already in place. The circuit breaker that would consume this count - and
                       which needs a threshold, a reset policy, and a decision about its interaction with
                       `fallbackToProvider`, where an open circuit with fallback off drops account-verification and
-                      password-recovery mail - is planned under layer5io/meshery-cloud#6057.
+                      password-recovery mail - is planned under meshery-cloud#6057.
                     minimum: 0
                     default: 0
                     x-order: 20
@@ -1612,7 +1612,7 @@ paths:
                       there is no failure threshold, and the status does not by itself stop the server being dialled for
                       the next message. Read it as "the last attempt failed", not as "this server has been taken out of
                       rotation" - the circuit breaker that would do the latter is planned, not built, and is tracked in
-                      layer5io/meshery-cloud#6057. `ignored` means an administrator turned it off.
+                      meshery-cloud#6057. `ignored` means an administrator turned it off.
 
 
                       The writers are disjoint on purpose: only an administrator writes `ignored`, and only a delivery
@@ -1715,7 +1715,7 @@ paths:
                       count as protection already in place. The circuit breaker that would consume this count - and
                       which needs a threshold, a reset policy, and a decision about its interaction with
                       `fallbackToProvider`, where an open circuit with fallback off drops account-verification and
-                      password-recovery mail - is planned under layer5io/meshery-cloud#6057.
+                      password-recovery mail - is planned under meshery-cloud#6057.
                     minimum: 0
                     default: 0
                     x-order: 20
@@ -2121,7 +2121,7 @@ paths:
                       there is no failure threshold, and the status does not by itself stop the server being dialled for
                       the next message. Read it as "the last attempt failed", not as "this server has been taken out of
                       rotation" - the circuit breaker that would do the latter is planned, not built, and is tracked in
-                      layer5io/meshery-cloud#6057. `ignored` means an administrator turned it off.
+                      meshery-cloud#6057. `ignored` means an administrator turned it off.
 
 
                       The writers are disjoint on purpose: only an administrator writes `ignored`, and only a delivery
@@ -2224,7 +2224,7 @@ paths:
                       count as protection already in place. The circuit breaker that would consume this count - and
                       which needs a threshold, a reset policy, and a decision about its interaction with
                       `fallbackToProvider`, where an open circuit with fallback off drops account-verification and
-                      password-recovery mail - is planned under layer5io/meshery-cloud#6057.
+                      password-recovery mail - is planned under meshery-cloud#6057.
                     minimum: 0
                     default: 0
                     x-order: 20
@@ -2554,7 +2554,7 @@ paths:
                       there is no failure threshold, and the status does not by itself stop the server being dialled for
                       the next message. Read it as "the last attempt failed", not as "this server has been taken out of
                       rotation" - the circuit breaker that would do the latter is planned, not built, and is tracked in
-                      layer5io/meshery-cloud#6057. `ignored` means an administrator turned it off.
+                      meshery-cloud#6057. `ignored` means an administrator turned it off.
 
 
                       The writers are disjoint on purpose: only an administrator writes `ignored`, and only a delivery
@@ -2657,7 +2657,7 @@ paths:
                       count as protection already in place. The circuit breaker that would consume this count - and
                       which needs a threshold, a reset policy, and a decision about its interaction with
                       `fallbackToProvider`, where an open circuit with fallback off drops account-verification and
-                      password-recovery mail - is planned under layer5io/meshery-cloud#6057.
+                      password-recovery mail - is planned under meshery-cloud#6057.
                     minimum: 0
                     default: 0
                     x-order: 20
@@ -2989,7 +2989,7 @@ paths:
                       there is no failure threshold, and the status does not by itself stop the server being dialled for
                       the next message. Read it as "the last attempt failed", not as "this server has been taken out of
                       rotation" - the circuit breaker that would do the latter is planned, not built, and is tracked in
-                      layer5io/meshery-cloud#6057. `ignored` means an administrator turned it off.
+                      meshery-cloud#6057. `ignored` means an administrator turned it off.
 
 
                       The writers are disjoint on purpose: only an administrator writes `ignored`, and only a delivery
@@ -3092,7 +3092,7 @@ paths:
                       count as protection already in place. The circuit breaker that would consume this count - and
                       which needs a threshold, a reset policy, and a decision about its interaction with
                       `fallbackToProvider`, where an open circuit with fallback off drops account-verification and
-                      password-recovery mail - is planned under layer5io/meshery-cloud#6057.
+                      password-recovery mail - is planned under meshery-cloud#6057.
                     minimum: 0
                     default: 0
                     x-order: 20
