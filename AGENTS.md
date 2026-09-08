@@ -44,14 +44,14 @@ A literal backslash inside inline HTML is a related trap: Goldmark reads the `\<
 (`content/en/kanvas/reference/keyboard-shortcuts.md` is the worked example) and confirm the
 built HTML, not the source, before committing.
 
-## Documenting Layer5 Cloud behaviour
+## Documenting Layer5 Cloud behavior
 
 The cloud guides describe a product that lives in `meshery-cloud`, so every product claim is
 verified against `origin/master` there, never against a summary. The screen strings are in
-`ui/components/identity/org-management/`; the behaviour behind them is in `server/handlers/`.
+`ui/components/identity/org-management/`; the behavior behind them is in `server/handlers/`.
 
 That repo's own `docs/reference/` and `docs/runbooks/` are the best starting point but are not
-the arbiter - they have described behaviour the handlers do not implement. Confirm a capability
+the arbiter - they have described behavior the handlers do not implement. Confirm a capability
 has a producer in the Go or TSX before writing it up: a contract enum member or a runbook
 sentence is not proof the feature ships.
 
