@@ -23,7 +23,11 @@ redirect stub for each one. `content/en/kanvas/operator/_index.md` and
 by checking the generated `<outdir>/<dead-path>/index.html` for the `url=` refresh target.
 
 Heading anchors are linked from outside this repo too, so renaming a heading silently breaks
-those links. Goldmark heading attributes are enabled: keep the old anchor by writing
+those links. The Layer5 Cloud UI hardcodes some of them: `MAIL_DOCS_URL` in
+meshery-cloud's `ui/components/identity/org-management/org-smtp-tab.tsx` points every
+"Learn more" link on the Email tab at
+`/cloud/guides/organizations/org-management/#configuring-your-own-mail-server`. Grep
+meshery-cloud's `ui/` for `docs.layer5.io` before renaming a heading on a cloud guide. Goldmark heading attributes are enabled: keep the old anchor by writing
 `### New Wording {#old-anchor-slug}`. To prove no anchor was lost, build master and your branch
 to separate directories and diff the `id=` attributes of every `<h1>`-`<h6>` across both trees;
 `content/en/cloud/academy/creating-content/building-certifications/index.md` is a worked example.
