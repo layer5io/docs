@@ -77,9 +77,9 @@ Switching identity providers does not affect existing user accounts or login his
 
 The **Email** tab lets your Organization send application mail such as invitations and notifications through **its own SMTP server**, from **its own domain**, instead of through Layer5's shared mail server. Nothing about the message then points to a shared provider.
 
-Setting it up has three steps, and mail keeps leaving through Layer5's shared server until all three are done: register the server and its credentials, prove control of the sending domain by publishing a DNS TXT record, and pass a connection test before turning the server on. The tab reports delivery health afterwards, and a fallback setting decides what happens to a message your server refuses.
+Setting it up has three steps, and mail keeps leaving through Layer5's shared server until all three are done: register the server and its credentials, prove control of the sending domain by publishing a DNS TXT record, and pass a connection test before turning the server on. The tab reports delivery health afterwards, and a fallback setting decides what happens to a message your server does not accept.
 
-The full walkthrough, including the Google Workspace paths and a troubleshooting table for every failure the tab reports, is in [Bring Your Own Mail Server](bring-your-own-mail-server/).
+The full walkthrough, including a worked example for Google Workspace, Microsoft 365, Amazon SES, SendGrid and Postmark, and a troubleshooting table for every failure the tab reports, is in [Bring Your Own Mail Server](bring-your-own-mail-server/).
 
 {{< alert title="Who can configure this" type="info" >}}
 Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server, under the same gate as the Identity Providers tab.
