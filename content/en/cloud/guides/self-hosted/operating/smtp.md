@@ -118,7 +118,7 @@ curl -X POST "https://cloud.layer5.io/api/system/email/test" \
   "status": "success",
   "message": "Test email sent successfully",
   "timestamp": "1695312000",
-  "sent_to": "test@example.com"
+  "sentTo": "test@example.com"
 }
 ```
 
@@ -150,9 +150,9 @@ Failed to send email with subject 'Layer5 Cloud Email Test' to recipients: test@
 
 ### 3. Required Environment Variables
 
-All four values must be set. A deployment that leaves them empty is a supported
-state - it simply sends no mail - but a deployment that sets some of them and
-not others does not start.
+Either set all four values or leave all four empty. A deployment that leaves
+them empty is a supported state - it simply sends no mail - but a deployment
+that sets some of them and not others does not start.
 
 ```bash
 # Required SMTP Configuration
@@ -170,8 +170,7 @@ before you change either value.
 
 ## Constraints on the Shared Mail Server
 
-Since [layer5io/meshery-cloud#6067](https://github.com/layer5io/meshery-cloud/pull/6067),
-mail is routed per Organization: an Organization that has
+Since **v1.0.253**, mail is routed per Organization: an Organization that has
 [brought its own mail server]({{< ref "cloud/guides/organizations/org-management/bring-your-own-mail-server.md" >}})
 sends through that server, and everyone else sends through the shared mail
 server your deployment configures. Both now go through **one** send primitive,
@@ -241,8 +240,7 @@ When `LOG_LEVEL=5`, you'll see detailed debug logs for email operations.
 
 {{< alert title="The transport is no longer described in the send logs" type="info" >}}
 The lines that echoed the relay host, port and SMTP username before every send
-were removed with
-[layer5io/meshery-cloud#6067](https://github.com/layer5io/meshery-cloud/pull/6067).
+were removed in **v1.0.253**.
 The transport is now chosen in one place for both senders, so it is reported
 once at startup instead of being restated by every message - and `SMTP_USERNAME`
 is an email address, which does not belong in a line emitted per send. If you
@@ -437,7 +435,7 @@ though the deployment started.
 | meshery_cloud-3297 | a key is unset, `SMTP_PORT` is not a number, or `SMTP_USERNAME` is not an RFC 5322 address | correct the named key |
 | meshery_cloud-3262 | the host is empty, or carries whitespace or a line break | correct `SMTP_HOST` |
 | meshery_cloud-3263 | the port is not a submission port, or the host resolved into internal address space | correct `SMTP_PORT`, or point `SMTP_HOST` at a publicly routable relay |
-| meshery_cloud-3265 | the relay answered and does not offer STARTTLS | enable STARTTLS on the relay, or move it to `465` for implicit TLS |
+| meshery_cloud-3265 | the relay answered and does not offer STARTTLS. Only reachable on a port other than `465`, which never negotiates STARTTLS | enable STARTTLS on the relay, or move it to `465` for implicit TLS |
 
 ### 7. The Server's Certificate Is Not Trusted
 
@@ -476,15 +474,14 @@ deployment at a local catch-all mailbox on port `1025` does not work.
 
 ### Mail routing and the shared mail server
 
-These codes arrived with per-Organization mail routing
-([layer5io/meshery-cloud#6067](https://github.com/layer5io/meshery-cloud/pull/6067)).
+These codes arrived with per-Organization mail routing in **v1.0.253**.
 The four marked **send path** describe a message that belonged to an
 Organization with its own mail server; the rest describe the shared mail server
 this deployment configures.
 
 | Error Code | At startup | Meaning |
 |------------|------------|---------|
-| meshery_cloud-3297 | cause of 3301 | The shared mail server is not usable as configured: a key is unset, `SMTP_PORT` is not a port number, or `SMTP_USERNAME` is not an address. The log names the key, never its value. It is also what `/api/system/email/test` and a send report for the same faults |
+| meshery_cloud-3297 | cause of 3301 | The shared mail server is not usable as configured: a key is unset, `SMTP_PORT` is not a port number, or `SMTP_USERNAME` is not an address. The log names the key, never its value. The same faults are reported under this code by `/api/system/email/test` and by a send |
 | meshery_cloud-3298 | send path | An Organization's mail server configuration could not be read, so the message went over the shared mail server |
 | meshery_cloud-3299 | send path | A delivery over an Organization's own mail server failed. The endpoint is in the log only |
 | meshery_cloud-3300 | send path | Nothing was sent: an Organization's mail server refused the message and its fallback is turned off |
