@@ -1,0 +1,9 @@
+# {{ .Site.Title }}
+
+> {{ with .Site.Home.Description }}{{ . }}{{ else }}Layer5 product documentation.{{ end }}
+
+## Docs
+
+{{ range .Site.RegularPages -}}
+- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .Permalink }}{{ end }}){{ with .Description }}: {{ . }}{{ end }}
+{{ end -}}
