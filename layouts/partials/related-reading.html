@@ -4,7 +4,8 @@
 {{ $pageTypes := $relatedReadingConfig.pageTypes | default (slice) }}
 {{ $sections := $relatedReadingConfig.sections | default (slice) }}
 
-{{ $readingPages := .Site.RegularPages.Related . }}
+{{ $candidatePages := where .Site.Pages "Kind" "in" (slice "page" "section") }}
+{{ $readingPages := $candidatePages.Related . }}
 {{ if gt (len $pageTypes) 0 }}
   {{ $readingPages = where $readingPages "Type" "in" $pageTypes }}
 {{ end }}

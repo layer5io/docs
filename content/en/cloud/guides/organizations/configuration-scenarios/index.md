@@ -194,10 +194,3 @@ email-domain allowlists, role and team assignment, quotas, and expiry). Any
 scenario above can be paired with any membership policy. See
 [Organization Management → Inviting members](/cloud/guides/organizations/org-management/)
 and [User Invitations](/cloud/concepts/identity-and-security/users/user-invitations/).
-
-## Related
-
-- [White-labeling (Rebranding)](/cloud/guides/self-hosted/white-labeling/) — themes, logos, custom domains, and the social-sign-in details.
-- [Identity Services](/cloud/guides/self-hosted/planning/identity-services/) — BYOC, OIDC single sign-on, and authentication boundaries.
-- [Organizations (concept)](/cloud/concepts/identity-and-security/organizations/) — organizations as the unit of multi-tenancy.
-- [Identity and Security → Security Boundaries](/cloud/concepts/identity-and-security/#security-boundaries) — how authentication and authorization boundaries compose.

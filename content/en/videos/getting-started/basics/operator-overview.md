@@ -6,12 +6,8 @@ videoId: "QANUEikEwQY"
 videoType: youtube 
 categories: [Operator]
 formats: [video]
-tags: [basics]
+tags: [basics, operator-overview]
 duration: "2:11"
 ---
 
 {{< youtube id=QANUEikEwQY class="yt-embed-container" >}}
-
-### Related Docs
-
-- [Exploring Operator]({{< ref "kanvas/operator/_index.md" >}})

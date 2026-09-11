@@ -6,12 +6,8 @@ videoId: "qaoYRP3oLok"
 videoType: youtube 
 categories: [Designer]
 formats: [video]
-tags: [basics]
+tags: [basics, designer-overview]
 duration: "1:38"
 ---
 
 {{< youtube id=qaoYRP3oLok class="yt-embed-container" >}}
-
-### Related Docs
-
-- [Exploring Designer]({{< ref "kanvas/designer/_index.md" >}})

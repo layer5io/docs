@@ -4,7 +4,7 @@ description: >
   Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Learn how to interact with components and the canvas in each mode.
 weight: 3
 categories: [Designer]
-tags: [designs]
+tags: [designs, Dock]
 aliases:
 ---
 

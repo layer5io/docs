@@ -5,7 +5,7 @@ description: >
   Organizations, teams, users, roles, keychains, keys, sessions, and tokens.
 weight: 3
 categories: [Identity, Security]
-tags: [permissions, identity, authentication]
+tags: [permissions, identity, authentication, orgs]
 aliases:
   - /cloud/identity/
   - /cloud/security/
