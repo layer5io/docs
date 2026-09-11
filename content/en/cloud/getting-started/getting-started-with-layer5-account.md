@@ -23,7 +23,11 @@ You may choose to either signup with your personal email or any of our supported
 
 ### 2. Verifying your email address
 
-To ensure you can use all the features in your Layer5 plan, verify your email address after signing up for a new account. For more information, see "Verifying your email address."
+After signing up, Layer5 Cloud sends a verification email to the email address associated with your account. The email contains a verification code and a verification link. You can complete your email verification using either method.
+
+If you are using a custom domain for your Layer5 Cloud organization, the verification link stays on your organization's domain instead of redirecting to the default Layer5 Cloud domain.
+
+Verification links sent before the email-verification fix cannot be repaired. Verification links are valid for 720 hours (30 days). If you have an older or expired link, request a new verification email and use the latest verification link.
 
 
 <!-- considering we would want to use 2FA in future
