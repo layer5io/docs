@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.266</title><link>/cloud/reference/releases/v1.0.266/</link><pubDate>Fri, 11 Sep 2026 14:34:30 +0000</pubDate><guid>/cloud/reference/releases/v1.0.266/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.267</title><link>/cloud/reference/releases/v1.0.267/</link><pubDate>Fri, 11 Sep 2026 16:20:08 +0000</pubDate><guid>/cloud/reference/releases/v1.0.267/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): allowlist and bind the resource-share listings&amp;rsquo; filter and order @miacycle (#6109)&lt;/li&gt;
+&lt;li&gt;docs(organizations): audit every path that creates a membership against the membership rule @arjunmehta-git (#6108)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @fitzergerald, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.266</title><link>/cloud/reference/releases/v1.0.266/</link><pubDate>Fri, 11 Sep 2026 14:34:30 +0000</pubDate><guid>/cloud/reference/releases/v1.0.266/</guid><description>&lt;ul&gt;
 &lt;li&gt;test: repair master&amp;rsquo;s red UI Tests (#6074, #6094) and fail a stale ui/node_modules by name @ritzorama (#6099)&lt;/li&gt;
 &lt;/ul&gt;
 
