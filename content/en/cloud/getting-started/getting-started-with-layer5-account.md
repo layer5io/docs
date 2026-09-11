@@ -27,7 +27,7 @@ After signing up, Layer5 Cloud sends a verification email to the email address a
 
 If you are using a custom domain for your Layer5 Cloud organization, the verification link stays on your organization's domain instead of redirecting to the default Layer5 Cloud domain.
 
-Verification links sent before the email-verification fix cannot be repaired. Verification links are valid for 720 hours (30 days). If you have an older or expired link, request a new verification email and use the latest verification link.
+On custom domains, verification links sent before the email-verification fix cannot be completed. Verification links are valid for 720 hours (30 days). If you have a pre-fix link on a custom domain or an expired link, request a new verification email and use the latest verification link.
 
 
 <!-- considering we would want to use 2FA in future
