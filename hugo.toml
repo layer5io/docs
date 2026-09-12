@@ -99,10 +99,11 @@ description = "Product Documentation"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-  home = ["HTML", "RSS", "SITEMAP"]
-  section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  term = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "SITEMAP", "llms", "llmsfull", "md"]
+  page = ["HTML", "llms", "llmsfull", "md"]
+  section = ["HTML", "RSS", "llms", "llmsfull", "md"]
+  taxonomy = ["HTML", "RSS", "llms", "llmsfull", "md"]
+  term = ["HTML", "RSS", "llms", "llmsfull", "md"]
 
 [sitemap]
   changefreq = "daily"
@@ -354,3 +355,10 @@ enable = false
   [[module.mounts]]
     source = "charts"
     target = "static/charts"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/llms-txt"
+
+[params.llms]
+  generate_llms_txt = true
+  generate_llms_full_txt = true
