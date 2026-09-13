@@ -98,6 +98,8 @@ On the [Organizations page](https://cloud.layer5.io/identity/organizations), you
 
 White-labeling extends past the browser: the footer shared by every transactional email Layer5 Cloud sends - invitations, welcome mail, role changes, catalog publish decisions, design comment mentions, email verification and password recovery codes - is built from your organization's own contact information rather than Layer5's.
 
+That covers what the message says. The address it arrives from is a separate setting: by default every message leaves through Layer5's shared mail server, so a fully branded email still arrives from a Layer5 address. An organization can instead register its own mail server on the **Email** tab of Edit Organization. Once the sending domain is verified, a connection test has passed and the server is turned on, application mail such as invitations and notifications leaves through that server from the organization's own domain, subject to its fallback setting. See [Bring Your Own Mail Server]({{< ref "cloud/guides/organizations/org-management/bring-your-own-mail-server.md" >}}).
+
 The same five link fields drive both your sign-in pages and your email footers. Set them as an [Organization Administrator]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) on the [Organizations page](https://cloud.layer5.io/identity/organizations): click the pencil icon next to your organization name, then fill in the fields under **Login page links**.
 
 | Field | Where it appears in email |
