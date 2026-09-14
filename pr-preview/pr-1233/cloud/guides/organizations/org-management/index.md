@@ -44,6 +44,7 @@ You can update your Organization's name, location, associated teams, branding, a
     -   Logos: Upload specific logo versions for various display contexts by clicking the respective **"Upload"** buttons.
     -   Invitations: Access a shareable link to invite users to your Organization.
     -   Identity Providers: Configure which OAuth applications power your Organization's sign-in (see [Configuring Identity Providers](#configuring-identity-providers-bring-your-own-credentials) below).
+    -   Email: Send your Organization's email through your own mail server, from your own domain (see [Configuring Your Own Mail Server](#configuring-your-own-mail-server) below).
 
 <img src="images/edit_org.png" alt="Editing Organization Details" style="width: 30%;" />
 
@@ -55,7 +56,7 @@ By default, your Organization uses Layer5's shared OAuth applications. To overri
 
 -   Use **Add Google**, **Add GitHub**, or **Add OIDC** to register a provider. Each walkthrough displays the exact redirect URI to add to your OAuth application. Saving your first provider switches the Organization to its own identity providers automatically.
 -   Use **Edit** to rotate a provider's credentials, or **Remove** to delete a single provider. Removing your last provider reverts the Organization to Layer5's defaults.
--   Use **Delete All "Identity Providers"** to delete the environment named, "Identity Providers", therein deleting every configured provider at once, reverting to Provider Organization's defaults.
+-   Use **Delete All Identity Providers** to remove every configured provider at once. This deletes the Environment that Layer5 Cloud provisioned to hold them, and the Organization reverts to Layer5's default identity providers.
 
 Every removal asks you to confirm and explains the consequences before it proceeds.
 
@@ -64,6 +65,18 @@ Organization Administrators and Owners can add, rotate, and remove their Organiz
 {{< /alert >}}
 
 Switching identity providers does not affect existing user accounts or login history. Users who signed in through a provider you later remove may need to re-authenticate.
+
+### Configuring Your Own Mail Server
+
+The **Email** tab lets your Organization send application mail such as invitations and notifications through **its own SMTP server**, from **its own domain**, instead of through Layer5's shared mail server. Nothing about the message then points to a shared provider.
+
+Setting it up has three steps: register the server and its credentials, prove control of the sending domain by publishing a DNS TXT record, and pass a connection test. Completing them changes nothing on its own - mail keeps leaving through Layer5's shared server until an administrator clicks **Turn on**, which is what switches routing over. The tab reports delivery health afterwards, and a fallback setting decides what happens to a message your server does not accept.
+
+The full walkthrough, including a worked example for Google Workspace, Microsoft 365, Amazon SES, SendGrid and Postmark, and a troubleshooting table for every failure the tab reports, is in [Bring Your Own Mail Server](bring-your-own-mail-server/).
+
+{{< alert title="Who can configure this" type="info" >}}
+Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server, under the same gate as the Identity Providers tab.
+{{< /alert >}}
 
 ## Using the Open Organization Invitation Link
 

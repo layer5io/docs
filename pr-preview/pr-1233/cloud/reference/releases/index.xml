@@ -1,4 +1,158 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1233/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1233/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.251</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</link><pubDate>Sat, 05 Sep 2026 21:55:16 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1233/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1233/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.267</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.267/</link><pubDate>Fri, 11 Sep 2026 16:20:08 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.267/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): allowlist and bind the resource-share listings&amp;rsquo; filter and order @miacycle (#6109)&lt;/li&gt;
+&lt;li&gt;docs(organizations): audit every path that creates a membership against the membership rule @arjunmehta-git (#6108)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @fitzergerald, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.266</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.266/</link><pubDate>Fri, 11 Sep 2026 14:34:30 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.266/</guid><description>&lt;ul&gt;
+&lt;li&gt;test: repair master&amp;rsquo;s red UI Tests (#6074, #6094) and fail a stale ui/node_modules by name @ritzorama (#6099)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.265</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.265/</link><pubDate>Thu, 10 Sep 2026 17:08:18 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.265/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(signup): never bind a registration to an organization that has no row @sarajkrishnasingh (#6097)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@pontusringblom and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.264</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.264/</link><pubDate>Thu, 10 Sep 2026 14:09:44 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.264/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): keep an emailed verification link on the tenant&amp;rsquo;s own host @suttonskate (#6094)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@pontusringblom and @suttonskate&lt;/p&gt;</description></item><item><title>v1.0.263</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.263/</link><pubDate>Thu, 10 Sep 2026 00:47:17 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.263/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(identity-email): flip production&amp;rsquo;s courier onto the HTTP leg @suttonskate (#6091)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@miacycle and @suttonskate&lt;/p&gt;</description></item><item><title>v1.0.262</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.262/</link><pubDate>Wed, 09 Sep 2026 23:54:12 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.262/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(identity-email): resolve a signup&amp;rsquo;s tenant all the way to its verification mail @hamza-mohd (#6089)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.261</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.261/</link><pubDate>Wed, 09 Sep 2026 23:02:41 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.261/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): answer structured MeshKit JSON on resource share and restore design sharing @miacycle (#6088)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @arjunmehta-git, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.260</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.260/</link><pubDate>Wed, 09 Sep 2026 19:45:57 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.260/</guid><description>&lt;ul&gt;
+&lt;li&gt;Seed RBAC keys for Registry and Controllers Config @rishiraj38 (#5990)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@miacycle, @pontusringblom and @rishiraj38&lt;/p&gt;</description></item><item><title>v1.0.259</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.259/</link><pubDate>Wed, 09 Sep 2026 17:08:12 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.259/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): restore verification and password reset, and stop Kratos rendering our org-branded templates @CodeAhmedJamil (#6084)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.258</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.258/</link><pubDate>Wed, 09 Sep 2026 16:55:46 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.258/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(invitations): serve an organization&amp;rsquo;s resolved open invitation, not the raw column @miacycle (#6074)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @miacycle and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.257</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.257/</link><pubDate>Wed, 09 Sep 2026 16:50:40 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.257/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): anchor badge, roster and certificate links on the reader organization&amp;rsquo;s host @miacycle (#6082)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @marblom007 and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.256</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.256/</link><pubDate>Wed, 09 Sep 2026 15:58:19 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.256/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(authz): grant Organization Admins user administration, scoped to their own organization @marblom007 (#6080)&lt;/li&gt;
+&lt;li&gt;fix(ui): an unreadable identity-provider list no longer reads as \using the defaults, and cannot be bulk-deleted @carlosriosilva (#6081)&lt;/li&gt;
+&lt;li&gt;fix(ui): stop the global auth CTA rule painting the login password eye @miacycle (#6078)&lt;/li&gt;
+&lt;li&gt;fix(ui): restore the per-field information affordance on every RJSF form @jijillery (#6072)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @carlosriosilva, @fitzergerald, @hortison, @jijillery, @leecalcote, @marblom007, @miacycle and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.255</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.255/</link><pubDate>Tue, 08 Sep 2026 22:33:01 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.255/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): a custom-branded organization&amp;rsquo;s footer carries only its own links @miacycle (#6073)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@miacycle and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.254</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.254/</link><pubDate>Tue, 08 Sep 2026 21:09:13 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.254/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): drop the provider&amp;rsquo;s brand from Edit Organization modal copy @miacycle (#6070)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.253</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.253/</link><pubDate>Tue, 08 Sep 2026 11:55:37 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.253/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(smtp): derive the published mail-relay status from one function so the Email tab can turn a relay on @miacycle (#6066)&lt;/li&gt;
+&lt;li&gt;feat(smtp): route an organization&amp;rsquo;s mail through its own relay @miacycle (#6067)&lt;/li&gt;
+&lt;li&gt;fix(smtp): classify AUTH refusals, answer unmatched writes, rotate atomically @pontusringblom (#6063)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @chellej, @hortison, @miacycle, @pontusringblom, @ritzorama and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.252</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.252/</link><pubDate>Mon, 07 Sep 2026 18:30:34 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.252/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(ui): add the organization Email tab for a bring-your-own mail server @pontusringblom (#6053)&lt;/li&gt;
+&lt;li&gt;fix(smtp): publish the mail-relay test contract and stop rendering mail errors into responses @pontusringblom (#6056)&lt;/li&gt;
+&lt;li&gt;fix(kratos): dispatch every courier template type and arm the flow subject guard @pontusringblom (#6051)&lt;/li&gt;
+&lt;li&gt;feat(smtp): per-organization SMTP storage and the published mail-relay API surface @pontusringblom (#6050)&lt;/li&gt;
+&lt;li&gt;fix(environment): key identity-provider resolution on server-owned purpose @pontusringblom (#6049)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@chellej, @hortison, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.251</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</link><pubDate>Sat, 05 Sep 2026 21:55:16 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

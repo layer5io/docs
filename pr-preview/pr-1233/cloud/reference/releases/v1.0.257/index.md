@@ -1,0 +1,14 @@
+# v1.0.257
+
+date: 2026-09-09
+
+
+
+- fix(email): anchor badge, roster and certificate links on the reader organization's host @miacycle (#6082)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @marblom007 and @miacycle
+
+

@@ -786,7 +786,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[356 244 207 194 233 133]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img id="[390 71 47 394 259 405]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/pr-preview/pr-1233/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
@@ -802,7 +802,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[305 237 375 179 462 97]" src="images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
+ &lt;img id="[220 353 332 125 278 465]" src="images/leaderboard-page.gif" onclick="openModal(this.id)" alt="Leaderboard page overview" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -926,7 +926,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[479 105 438 58 132 130]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[391 488 101 244 233 9]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -967,7 +967,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[121 437 267 261 372 323]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[131 257 47 278 414 88]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/pr-preview/pr-1233/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -976,7 +976,8 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
  &lt;a href="#using-the-shapes-palette" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See &lt;a href="/pr-preview/pr-1233/kanvas/designer/canvas-objects/#adding-shapes"&gt;Adding shapes&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Auto-pan on Drag</title><link>/pr-preview/pr-1233/kanvas/advanced/autopan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/advanced/autopan/</guid><description>&lt;p&gt;&lt;strong&gt;Auto-pan on Drag&lt;/strong&gt; (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.&lt;/p&gt;
-&lt;p&gt;Autopan is the difference between &lt;strong&gt;&amp;ldquo;move this component to another part of the design&amp;rdquo;&lt;/strong&gt; being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the &lt;strong&gt;Options&lt;/strong&gt; panel.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/pr-preview/pr-1233/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
+&lt;p&gt;Autopan is the difference between &lt;strong&gt;&amp;ldquo;move this component to another part of the design&amp;rdquo;&lt;/strong&gt; being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the &lt;strong&gt;Options&lt;/strong&gt; panel.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/pr-preview/pr-1233/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/pr-preview/pr-1233/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
 
 &lt;h3 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -1087,7 +1088,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[78 112 463 120 349 102]" src="images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
+ &lt;img id="[388 433 455 280 500 334]" src="images/catalog-view.gif" onclick="openModal(this.id)" alt="Catalog main page view" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1159,7 +1160,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[275 382 211 253 364 467]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[366 84 318 326 343 438]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/pr-preview/pr-1233/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -1170,7 +1171,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[114 313 286 342 179 317]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[26 449 307 228 375 406]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1209,7 +1210,7 @@ tutorial first or
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[216 474 343 77 147 32]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[297 481 26 96 344 176]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -1649,7 +1650,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[211 80 101 425 265 68]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[384 147 71 448 378 207]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1665,7 +1666,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[80 113 172 375 277 324]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[23 172 345 66 319 281]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1681,7 +1682,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[451 71 461 418 134 128]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[132 298 216 18 72 232]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1697,7 +1698,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[299 230 40 165 472 134]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[208 171 81 374 122 355]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1713,7 +1714,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[474 134 247 56 75 469]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[334 95 32 175 352 220]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1729,7 +1730,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[273 148 400 242 207 496]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[331 250 194 193 73 261]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1745,7 +1746,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[191 334 493 254 1 321]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[157 321 45 322 77 57]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1761,7 +1762,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[176 217 493 167 166 476]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[106 200 265 245 408 249]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1777,7 +1778,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[216 198 333 99 493 94]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[331 185 56 325 491 158]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1793,7 +1794,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[472 84 345 278 448 100]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[369 173 210 13 467 55]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -1832,7 +1833,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[215 64 97 420 130 42]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[382 424 391 470 401 153]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -1954,7 +1955,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[207 443 82 475 138 379]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[163 199 213 400 22 51]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -1973,7 +1974,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[187 100 104 264 289 156]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[41 234 373 77 152 209]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/pr-preview/pr-1233/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
@@ -2066,7 +2067,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[465 286 222 197 288 449]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
+ &lt;img id="[92 52 57 253 310 46]" src="images/org_invite.png" onclick="openModal(this.id)" alt="User Management options" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2087,7 +2088,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[76 461 419 453 271 147]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[456 335 296 60 271 336]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -2122,7 +2123,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[261 226 397 35 327 447]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img id="[120 474 424 59 479 353]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/pr-preview/pr-1233/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -2134,7 +2135,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[259 136 44 62 61 78]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img id="[343 500 36 236 64 66]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -2221,7 +2222,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[236 319 197 250 464 342]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[121 338 447 296 247 173]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/pr-preview/pr-1233/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/tutorials/collaborative-editing/</guid><description>&lt;div class="pageinfo"&gt;
 &lt;p&gt;Page under construction.&lt;/p&gt;
@@ -2744,7 +2745,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[445 259 484 242 386 21]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img id="[334 188 253 421 153 84]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -2838,7 +2839,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[404 248 213 21 382 353]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[177 432 311 194 38 59]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/pr-preview/pr-1233/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -2926,7 +2927,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[260 245 83 155 492 201]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[482 147 203 111 326 36]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/pr-preview/pr-1233/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/pr-preview/pr-1233/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
@@ -2975,7 +2976,161 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.251</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</link><pubDate>Sat, 05 Sep 2026 21:55:16 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.267</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.267/</link><pubDate>Fri, 11 Sep 2026 16:20:08 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.267/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): allowlist and bind the resource-share listings&amp;rsquo; filter and order @miacycle (#6109)&lt;/li&gt;
+&lt;li&gt;docs(organizations): audit every path that creates a membership against the membership rule @arjunmehta-git (#6108)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @fitzergerald, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.266</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.266/</link><pubDate>Fri, 11 Sep 2026 14:34:30 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.266/</guid><description>&lt;ul&gt;
+&lt;li&gt;test: repair master&amp;rsquo;s red UI Tests (#6074, #6094) and fail a stale ui/node_modules by name @ritzorama (#6099)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.265</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.265/</link><pubDate>Thu, 10 Sep 2026 17:08:18 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.265/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(signup): never bind a registration to an organization that has no row @sarajkrishnasingh (#6097)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@pontusringblom and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.264</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.264/</link><pubDate>Thu, 10 Sep 2026 14:09:44 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.264/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): keep an emailed verification link on the tenant&amp;rsquo;s own host @suttonskate (#6094)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@pontusringblom and @suttonskate&lt;/p&gt;</description></item><item><title>v1.0.263</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.263/</link><pubDate>Thu, 10 Sep 2026 00:47:17 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.263/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(identity-email): flip production&amp;rsquo;s courier onto the HTTP leg @suttonskate (#6091)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@miacycle and @suttonskate&lt;/p&gt;</description></item><item><title>v1.0.262</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.262/</link><pubDate>Wed, 09 Sep 2026 23:54:12 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.262/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(identity-email): resolve a signup&amp;rsquo;s tenant all the way to its verification mail @hamza-mohd (#6089)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.261</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.261/</link><pubDate>Wed, 09 Sep 2026 23:02:41 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.261/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): answer structured MeshKit JSON on resource share and restore design sharing @miacycle (#6088)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @arjunmehta-git, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.260</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.260/</link><pubDate>Wed, 09 Sep 2026 19:45:57 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.260/</guid><description>&lt;ul&gt;
+&lt;li&gt;Seed RBAC keys for Registry and Controllers Config @rishiraj38 (#5990)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@miacycle, @pontusringblom and @rishiraj38&lt;/p&gt;</description></item><item><title>v1.0.259</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.259/</link><pubDate>Wed, 09 Sep 2026 17:08:12 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.259/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): restore verification and password reset, and stop Kratos rendering our org-branded templates @CodeAhmedJamil (#6084)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.258</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.258/</link><pubDate>Wed, 09 Sep 2026 16:55:46 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.258/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(invitations): serve an organization&amp;rsquo;s resolved open invitation, not the raw column @miacycle (#6074)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @miacycle and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.257</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.257/</link><pubDate>Wed, 09 Sep 2026 16:50:40 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.257/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): anchor badge, roster and certificate links on the reader organization&amp;rsquo;s host @miacycle (#6082)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @marblom007 and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.256</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.256/</link><pubDate>Wed, 09 Sep 2026 15:58:19 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.256/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(authz): grant Organization Admins user administration, scoped to their own organization @marblom007 (#6080)&lt;/li&gt;
+&lt;li&gt;fix(ui): an unreadable identity-provider list no longer reads as \using the defaults, and cannot be bulk-deleted @carlosriosilva (#6081)&lt;/li&gt;
+&lt;li&gt;fix(ui): stop the global auth CTA rule painting the login password eye @miacycle (#6078)&lt;/li&gt;
+&lt;li&gt;fix(ui): restore the per-field information affordance on every RJSF form @jijillery (#6072)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @carlosriosilva, @fitzergerald, @hortison, @jijillery, @leecalcote, @marblom007, @miacycle and @ritzorama&lt;/p&gt;</description></item><item><title>v1.0.255</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.255/</link><pubDate>Tue, 08 Sep 2026 22:33:01 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.255/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(email): a custom-branded organization&amp;rsquo;s footer carries only its own links @miacycle (#6073)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@miacycle and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.254</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.254/</link><pubDate>Tue, 08 Sep 2026 21:09:13 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.254/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): drop the provider&amp;rsquo;s brand from Edit Organization modal copy @miacycle (#6070)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.253</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.253/</link><pubDate>Tue, 08 Sep 2026 11:55:37 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.253/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(smtp): derive the published mail-relay status from one function so the Email tab can turn a relay on @miacycle (#6066)&lt;/li&gt;
+&lt;li&gt;feat(smtp): route an organization&amp;rsquo;s mail through its own relay @miacycle (#6067)&lt;/li&gt;
+&lt;li&gt;fix(smtp): classify AUTH refusals, answer unmatched writes, rotate atomically @pontusringblom (#6063)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@arjunmehta-git, @chellej, @hortison, @miacycle, @pontusringblom, @ritzorama and @simihablo&lt;/p&gt;</description></item><item><title>v1.0.252</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.252/</link><pubDate>Mon, 07 Sep 2026 18:30:34 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.252/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(ui): add the organization Email tab for a bring-your-own mail server @pontusringblom (#6053)&lt;/li&gt;
+&lt;li&gt;fix(smtp): publish the mail-relay test contract and stop rendering mail errors into responses @pontusringblom (#6056)&lt;/li&gt;
+&lt;li&gt;fix(kratos): dispatch every courier template type and arm the flow subject guard @pontusringblom (#6051)&lt;/li&gt;
+&lt;li&gt;feat(smtp): per-organization SMTP storage and the published mail-relay API surface @pontusringblom (#6050)&lt;/li&gt;
+&lt;li&gt;fix(environment): key identity-provider resolution on server-owned purpose @pontusringblom (#6049)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@chellej, @hortison, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.251</title><link>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</link><pubDate>Sat, 05 Sep 2026 21:55:16 +0000</pubDate><guid>/pr-preview/pr-1233/cloud/reference/releases/v1.0.251/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -134497,7 +134652,7 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[293 500 486 356 375 97]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
+ &lt;img id="[411 220 483 186 364 363]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Search Results</title><link>/pr-preview/pr-1233/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/pr-preview/pr-1233/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1233/kanvas/reference/troubleshooting/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Asking for help from within Kanvas&lt;/h4&gt;
