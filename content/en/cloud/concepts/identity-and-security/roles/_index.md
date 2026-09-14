@@ -189,7 +189,10 @@ The entitlement of "workspace owner" is automatically bestowed to the creator of
 Min: 1, Max: many
 
 {{% /card %}}
-{{% card header="### Team Manager" %}}
+{{% card header="### <a href='https://docs.layer5.io/cloud/reference/default-permissions/#Team+Manager' target='_blank'>Team Manager</a>" %}}
+
+**(Coming Soon)**
+
 **What is the purpose of this role?**
 
 - Administration of teams (without delete access)
