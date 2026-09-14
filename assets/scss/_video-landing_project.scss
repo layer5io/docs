@@ -477,11 +477,116 @@ a#videoPageLink:focus {
         margin-bottom: 2rem;
     }
 
-    .subcategory-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.875rem;
-    }
     .category-tab {
         width: 50%;
+    }
+}
+
+// Light theme styling for Video Landing page
+[data-theme="light"],
+[data-bs-theme="light"] {
+    .video-page-container {
+        background: linear-gradient(270deg, rgba(71, 126, 150, 0.15) 0%, rgba(0, 179, 159, 0.25) 100%);
+
+        nav.scrolled {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaedee;
+        }
+    }
+
+    .hero-section-wrapper {
+        color: #000d12;
+
+        .hero-subtitle {
+            color: #3c494f;
+        }
+    }
+
+    .video-tabs-container {
+        background: #ffffff;
+        border: 1px solid #eaedee;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .category-tab {
+        color: #647176;
+
+        .tab-icon {
+            background-color: #eaedee;
+
+            i {
+                color: #3c494f;
+            }
+        }
+
+        &:hover {
+            color: $primary;
+
+            .tab-icon {
+                background-color: #daf3eb;
+
+                i {
+                    color: $primary;
+                }
+            }
+        }
+
+        &.active {
+            color: $primary;
+            border-bottom: 2px solid $primary;
+
+            .tab-icon {
+                background-color: $primary;
+
+                i {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .subcategory-btn {
+        background-color: #eaedee;
+        color: #3c494f;
+        box-shadow: none;
+        border: 1px solid #d2d8da;
+
+        &:hover {
+            background-color: #daf3eb;
+            color: #007763;
+            border-color: $primary;
+        }
+
+        &.active {
+            background-color: $primary;
+            color: #ffffff;
+            border-color: $primary;
+        }
+    }
+
+    .video-card {
+        background-color: #ffffff;
+        border: 1px solid #eaedee;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        .video-info {
+            h3 {
+                color: #000d12;
+            }
+
+            p.video-description {
+                color: #3c494f;
+            }
+
+            &:hover {
+                h3 {
+                    color: $primary;
+                }
+
+                p.video-description {
+                    color: #000d12;
+                }
+            }
+        }
     }
 }
