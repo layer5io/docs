@@ -23,7 +23,7 @@ You may choose to either signup with your personal email or any of our supported
 
 ### 2. Verifying your email address
 
-After signing up, a verification email is sent to the email address associated with your account.
+After signing up, a verification email is sent to the email address associated with your account. The email contains a verification code and a verification link. You can complete your email verification using either method.
 
 If you are using a custom domain, the verification link stays on your organization's domain instead of redirecting to the default domain.
 
