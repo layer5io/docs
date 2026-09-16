@@ -2,7 +2,7 @@
 title: Exploring Designer
 description: >
   Designer mode is for those who want to create their own Kanvas, using the palette of components provided by Meshery.
-weight: 4
+weight: 3
 categories: [Designer]
 # tags: [designs]
 aliases:

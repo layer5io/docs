@@ -12,13 +12,11 @@ Discover and examine your Kubernetes clusters and cloud native infrastructure us
 
 ## Using Filters
 
-Using filters you can select the Kubernetes resources you want to view. Apply one or more filters to narrow down the resources you want to view.
+Use filters to select the Kubernetes resources you want to view. Apply one or more filters — for example by namespace, kind, model, or label — to narrow the topology to the resources that matter. Combine filters to focus on a subset of your cluster without leaving Operator.
 
 ## Search and Select Specific Resources
 
 Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Operator canvas. Details of the selected resources are displayed in the right panel.
-
-<!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
 ## Connecting with Kubernetes Pods
 
