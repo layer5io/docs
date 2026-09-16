@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Designs
-description: Learn how to create, import, and share cloud native infrastructure designs in Kanvas — from your first canvas to deployable architecture.
+description: Learn how to create, import, and share cloud native infrastructure designs in Kanvas — from your first design to deployable architecture.
 weight: 2
 categories: [Designer]
 tags: [designs]
