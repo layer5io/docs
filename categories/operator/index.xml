@@ -26,7 +26,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
  Using Filters
  &lt;a href="#using-filters" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Using filters you can select the Kubernetes resources you want to view. Apply one or more filters to narrow down the resources you want to view.&lt;/p&gt;
+&lt;p&gt;Use filters to select the Kubernetes resources you want to view. Apply one or more filters — for example by namespace, kind, model, or label — to narrow the topology to the resources that matter. Combine filters to focus on a subset of your cluster without leaving Operator.&lt;/p&gt;
 
 &lt;h2 id="search-and-select-specific-resources" class="heading-link"&gt;
  Search and Select Specific Resources

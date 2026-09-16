@@ -39,18 +39,17 @@
 
 
 
-&lt;h2 id="use-kanvas-for-your-diagrams" class="heading-link"&gt;
- Use Kanvas for your Diagrams
- &lt;a href="#use-kanvas-for-your-diagrams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h2 id="start-here" class="heading-link"&gt;
+ Start here
+ &lt;a href="#start-here" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;div class="td-card-group card-group p-0 mb-4"&gt;
-&lt;div class="td-card card border me-4"&gt;
-&lt;div class="card-header"&gt;
- Dev Env Documentation
- &lt;/div&gt;
-&lt;div class="card-body"&gt;
- &lt;p class="card-text"&gt;
- &lt;p&gt;The dev environment is an often overlooked but critical part of an organization&amp;rsquo;s infrastructure. Knowing what clusters and services are used, how to run and test services locally, and how to troubleshoot are critical parts for getting a team up and running quickly. With Layer5, you can easily embed designs into your How To and Getting Started guides, making it easy to create, maintain and update concise documentation.&lt;/p&gt;</description></item><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="/kanvas/getting-started/starting-scratch/"&gt;Starting from scratch&lt;/a&gt; — open Designer and create your first design.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/kanvas/getting-started/import-designs/"&gt;Importing a Design&lt;/a&gt; — bring in Kubernetes, Helm, Compose, or existing Meshery designs.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/kanvas/getting-started/working-with-components/"&gt;Working with Components&lt;/a&gt; — configure, copy, and arrange components on the canvas.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/kanvas/getting-started/creating-relationships/"&gt;Creating Relationships&lt;/a&gt; — connect components with context-aware edges.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Choose &lt;strong&gt;Designer&lt;/strong&gt; when you are authoring infrastructure; switch to &lt;strong&gt;Operator&lt;/strong&gt; when you are inspecting live clusters. See the &lt;a href="/kanvas/"&gt;Kanvas overview&lt;/a&gt; for the mode chooser.&lt;/p&gt;</description></item><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
  Step 1: Accessing Designer Mode
  &lt;a href="#step-1-accessing-designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -65,7 +64,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[67 349 298 234 88 341]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img id="[293 364 215 442 408 69]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -106,7 +105,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[289 221 180 326 282 217]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img id="[96 252 251 270 84 61]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -116,7 +115,13 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 &lt;/h2&gt;
 &lt;p&gt;Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See &lt;a href="/kanvas/designer/canvas-objects/#adding-shapes"&gt;Adding shapes&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Auto-pan on Drag</title><link>/kanvas/advanced/autopan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/autopan/</guid><description>&lt;p&gt;&lt;strong&gt;Auto-pan on Drag&lt;/strong&gt; (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.&lt;/p&gt;
 &lt;p&gt;Autopan is the difference between &lt;strong&gt;&amp;ldquo;move this component to another part of the design&amp;rdquo;&lt;/strong&gt; being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the &lt;strong&gt;Options&lt;/strong&gt; panel.&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
-&lt;p&gt;Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
+&lt;p&gt;Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.&lt;/p&gt;</description></item><item><title>Exploring Designer</title><link>/kanvas/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/</guid><description>&lt;p&gt;Kanvas Designer is the visual canvas where you create, edit, and collaborate on cloud-native infrastructure designs. Using a drag-and-drop palette of components — from managed Kubernetes clusters and serverless functions to databases and object storage — you can model entire environments, annotate connections, and share living diagrams with your team, all without leaving your browser.&lt;/p&gt;
+
+&lt;h2 id="building-the-api-platform-aws-design" class="heading-link"&gt;
+ Building the &lt;code&gt;api-platform-aws&lt;/code&gt; Design
+ &lt;a href="#building-the-api-platform-aws-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Five owns the &lt;code&gt;api-platform-aws&lt;/code&gt; design in the &lt;code&gt;orbital-production&lt;/code&gt; workspace and asked Jordan Reyes — the Orbital Labs team&amp;rsquo;s go-to designer — to build out the architecture. Jordan opens the design in Kanvas Designer, takes one look at the blank canvas, and gets to work.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
 
 &lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
  Accessing the Import Functionality
@@ -173,7 +178,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[472 40 416 440 488 273]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[122 473 137 92 46 85]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -184,7 +189,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[38 26 171 200 344 452]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img id="[88 63 437 109 277 304]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -223,7 +228,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[157 456 51 281 225 331]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img id="[188 434 227 447 250 299]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -663,7 +668,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[411 35 427 101 464 414]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[250 17 47 387 245 351]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -679,7 +684,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[43 189 105 483 444 92]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img id="[199 395 351 226 494 195]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -695,7 +700,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[170 120 269 390 460 161]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img id="[91 448 477 366 280 225]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -711,7 +716,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[434 10 58 332 358 35]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img id="[38 472 103 387 391 390]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -727,7 +732,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[108 455 428 424 46 385]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img id="[423 207 373 297 104 208]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -743,7 +748,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[463 66 76 184 471 322]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img id="[293 56 226 213 346 9]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -759,7 +764,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[220 373 56 207 377 221]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img id="[195 86 318 229 166 38]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -775,7 +780,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[124 428 353 50 56 417]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img id="[296 395 148 329 468 357]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -791,7 +796,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[199 359 333 364 350 170]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img id="[259 472 49 269 50 435]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -807,7 +812,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[42 95 228 487 17 130]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img id="[29 304 73 476 303 402]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -825,7 +830,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[446 482 13 263 78 62]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
+ &lt;img id="[430 159 166 422 208 155]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
@@ -904,7 +909,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[324 79 247 388 460 394]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img id="[75 157 281 116 282 249]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -923,15 +928,9 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[419 88 204 229 104 167]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img id="[254 238 36 8 245 488]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Exploring Designer</title><link>/kanvas/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/</guid><description>&lt;p&gt;Kanvas Designer is the visual canvas where you create, edit, and collaborate on cloud-native infrastructure designs. Using a drag-and-drop palette of components — from managed Kubernetes clusters and serverless functions to databases and object storage — you can model entire environments, annotate connections, and share living diagrams with your team, all without leaving your browser.&lt;/p&gt;
-
-&lt;h2 id="building-the-api-platform-aws-design" class="heading-link"&gt;
- Building the &lt;code&gt;api-platform-aws&lt;/code&gt; Design
- &lt;a href="#building-the-api-platform-aws-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Five owns the &lt;code&gt;api-platform-aws&lt;/code&gt; design in the &lt;code&gt;orbital-production&lt;/code&gt; workspace and asked Jordan Reyes — the Orbital Labs team&amp;rsquo;s go-to designer — to build out the architecture. Jordan opens the design in Kanvas Designer, takes one look at the blank canvas, and gets to work.&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Render Modes</title><link>/kanvas/advanced/render-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/render-modes/</guid><description>&lt;p&gt;Kanvas can draw the same design at &lt;strong&gt;four different levels of visual fidelity&lt;/strong&gt;. The level is called the &lt;strong&gt;render mode&lt;/strong&gt;, and it controls how much of Kanvas&amp;rsquo;s visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you&amp;rsquo;re polishing or presenting.&lt;/p&gt;
 &lt;p&gt;The render mode is a &lt;strong&gt;performance tool&lt;/strong&gt;, not a document property. Switching modes does not change your design — components, relationships, layers, and metadata are identical. It only changes what Kanvas chooses to render on screen.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/kanvas-comment.png" alt="Comments in Designer" /&gt;
@@ -960,7 +959,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[27 44 367 452 477 24]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[368 205 412 211 335 482]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -999,7 +998,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[80 472 348 54 37 191]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img id="[489 214 217 164 480 388]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
 
@@ -1108,7 +1107,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[296 130 301 136 480 489]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img id="[469 441 39 38 301 365]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
@@ -1186,7 +1185,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[342 461 431 323 404 183]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img id="[320 441 129 184 359 457]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
