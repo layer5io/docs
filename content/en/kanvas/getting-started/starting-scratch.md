@@ -14,7 +14,7 @@ aliases:
 
 Upon entering Kanvas, seamlessly transition to the "Designer" mode by selecting the "Designer" tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.
 
-![Untitled design Getting Started hub with file menu and layout callouts](../designer/images/audit-2026-09/designer-getting-started.png)
+![Untitled design Getting Started hub with file menu and layout callouts](../../designer/images/audit-2026-09/designer-getting-started.png)
 *New design Getting Started hub (anonymous capture, Sep 2026): walk-throughs, templates, and import, plus callouts for the file menu and layout control. Comments/Share may be inactive until you sign in.*
 
 **Example Analogy:**
