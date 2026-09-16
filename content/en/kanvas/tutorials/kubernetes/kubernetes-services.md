@@ -56,7 +56,7 @@ applications within the context of a microservices architecture.
 - Click **Kanvas** from the left menu to navigate to the
   [_Kanvas_ design](https://kanvas.new/extension/meshmap) page.
 
-  ![Kanvas Design page in Meshery Playground showing the empty design canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-deployments/2025-02-27_16-59.png)
+  ![Kanvas Design page in Meshery Playground showing the empty design canvas](../kubernetes-deployments/images/kubernetes-deployments/2025-02-27_16-59.png)
 
 > **_NOTE:_** Kanvas is still in beta.
 
@@ -65,18 +65,18 @@ applications within the context of a microservices architecture.
 1. In the _Kanvas Design_ page, start by renaming the design to a name of your
    choice for easier identification later.
 
-   ![Kanvas design renamed from Untitled Design to a custom name](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_02.png)
+   ![Kanvas design renamed from Untitled Design to a custom name](../../images/kubernetes-services/2025-09-04_02.png)
 
 2. From the floating dock below, click the **Kubernetes** icon and then click
    **Deployment** from the list. This will create the _Deployment_ component on
    the design canvas.
 
-   ![Selecting the Deployment component from the Kubernetes icon in the floating dock](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_03.png)
+   ![Selecting the Deployment component from the Kubernetes icon in the floating dock](../../images/kubernetes-services/2025-09-04_03.png)
 
 3. Click or Drag the _Deployment_ component onto the canvas and the
    **Configure** tab automatically opens.
 
-   ![Configure tab opening after dragging the Deployment component onto the canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_04.png)
+   ![Configure tab opening after dragging the Deployment component onto the canvas](../../images/kubernetes-services/2025-09-04_04.png)
 
 4. Change the **Name** of the deployment and the **Namespace** if required. For
    this demonstration, we will leave them as they are and deploy this to the
@@ -85,11 +85,11 @@ applications within the context of a microservices architecture.
 5. Set **Replicas** to `2`. Under **Selector** and **MatchLabels**, set a
    _matchLabel_ pair. Here we have set `app:9988110`.
 
-   ![Replicas set to 2 with matchLabels app:9988110 under the Selector section](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_05.png)
+   ![Replicas set to 2 with matchLabels app:9988110 under the Selector section](../../images/kubernetes-services/2025-09-04_05.png)
 
 6. Under **Template → Metadata → Labels**, add the same label `app:9988110`.
 
-   ![Adding the matching label app:9988110 under Template Metadata Labels](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/metadata.png)
+   ![Adding the matching label app:9988110 under Template Metadata Labels](../../images/kubernetes-services/metadata.png)
 
 7. While still under **Template**, click **Spec** to load the _spec_
    configuration modal. Then scroll down and click **+ Add Item** next to
@@ -98,12 +98,12 @@ applications within the context of a microservices architecture.
    - **Image**: `meshery/meshery-milestone:latest`
    - **Name**: `meshery-milestone`
 
-   ![Containers 1 configured with image meshery/meshery-milestone:latest and name meshery-milestone](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_06.png)
+   ![Containers 1 configured with image meshery/meshery-milestone:latest and name meshery-milestone](../../images/kubernetes-services/2025-09-04_06.png)
 
 8. Click outside to close the modal. The deployment is now ready and it will
    look similar to this:
 
-   ![Completed Deployment component on the Kanvas design canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_07.png)
+   ![Completed Deployment component on the Kanvas design canvas](../../images/kubernetes-services/2025-09-04_07.png)
 
 9. Validate and Deploy the design: Click Validate (**Actions** toolbar), ensure
    that there are no errors and then click Deploy. Wait for the deployment to
@@ -119,7 +119,7 @@ applications within the context of a microservices architecture.
    the service, here I will go with `service-clusterip`. Click on the service
    component to open its config modal.
 
-   ![Service component renamed to service-clusterip on the Kanvas canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_08.png)
+   ![Service component renamed to service-clusterip on the Kanvas canvas](../../images/kubernetes-services/2025-09-04_08.png)
 
 2. In the service configuration modal:
    - Set **Type** to `ClusterIP`.
@@ -133,25 +133,25 @@ applications within the context of a microservices architecture.
    - We will also add the same label as the deployment for easier identification
      in Operator Mode.
 
-   ![ClusterIP service configured with port 80, targetPort 80, and selector app:9988110](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/edit-01.png)
+   ![ClusterIP service configured with port 80, targetPort 80, and selector app:9988110](../../images/kubernetes-services/edit-01.png)
 
 3. Connect the Service to the Deployment: Click over the service component until
    green dots appear, click the arrow and select network. Drag to the
    deployment. This creates a Network link.
 
-   ![Network link drawn between the Service and Deployment components](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_1.png)
+   ![Network link drawn between the Service and Deployment components](../../images/kubernetes-services/2025-12-13_1.png)
 
 From the Actions Tab, Undeploy the deployment first and then validate and
 dry-run the new design, resolving any errors that may arise. Now, deploy the
 design. A pop-up in the bottom right will confirm that the design is
 successfully configured.
 
-![Deploy success pop-up in the bottom right corner of the Kanvas page](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_2.png)
+![Deploy success pop-up in the bottom right corner of the Kanvas page](../../images/kubernetes-services/2025-12-13_2.png)
 
 Switch to Operator mode and explore the Service details. Select the
 `service-clusterip` resource to see its details.
 
-![service-clusterip details panel in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-05_11.png)
+![service-clusterip details panel in Operator mode](../../images/kubernetes-services/2025-09-05_11.png)
 
 Notice the ClusterIP listed under Addresses and that no external IP or NodePort
 is assigned. This confirms that a ClusterIP service provides an internal IP
@@ -160,7 +160,7 @@ and a selector (app=9988110). Any Pod with that label automatically becomes part
 of the Service’s backend. This label-to-Pod binding is how a ClusterIP Service
 internally routes traffic to its backing workloads.
 
-![ClusterIP address and selector details for service-clusterip in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-05_12.png)
+![ClusterIP address and selector details for service-clusterip in Operator mode](../../images/kubernetes-services/2025-09-05_12.png)
 
 ---
 
@@ -177,7 +177,7 @@ switch from using a Deployment to a Pod for our next Service.
    name and a unique label (this unique label will be used by the service
    selector).
 
-   ![Pod component with a container configured using meshery/meshery-milestone:latest and a unique label](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_13.png)
+   ![Pod component with a container configured using meshery/meshery-milestone:latest and a unique label](../../images/kubernetes-services/2025-09-06_13.png)
 
 2. Now, drag a Service component onto the canvas and rename it to
    `service-nodeport`.
@@ -185,7 +185,7 @@ switch from using a Deployment to a Pod for our next Service.
 3. Under the config modal, set **Type** to `NodePort` and the same selector as
    the Pod label, so that our Service is able to connect with our Pod.
 
-   ![Service type set to NodePort with selector matching the Pod label](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_14.png)
+   ![Service type set to NodePort with selector matching the Pod label](../../images/kubernetes-services/2025-09-06_14.png)
 
 4. Click on **+ Add Item** under Ports to reveal **Ports 1**, expand **Ports
    1**, and add:
@@ -193,16 +193,16 @@ switch from using a Deployment to a Pod for our next Service.
    - **TargetPort**: `80`
    - **NodePort**: `30091` (or leave blank to auto-assign).
 
-   ![NodePort service configured with port 80, targetPort 80, and nodePort 30091](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_15.png)
+   ![NodePort service configured with port 80, targetPort 80, and nodePort 30091](../../images/kubernetes-services/2025-09-06_15.png)
 
 5. Validate and deploy from the Action tab at the top right.
 
-   ![Deploy action confirmation for the NodePort design](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_3.png)
+   ![Deploy action confirmation for the NodePort design](../../images/kubernetes-services/2025-12-13_3.png)
 
 Now switch to Operator mode and click on any component to view details (like
 type or selector) about the Service or the Pod.
 
-![NodePort service component details in Operator mode showing service type and selector](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_4.png)
+![NodePort service component details in Operator mode showing service type and selector](../../images/kubernetes-services/2025-12-13_4.png)
 
 Note that this service is mapped to a NodePort and is accessible on the **Node’s
 IP address**.
@@ -211,13 +211,13 @@ Expand the details section and you will see a NodePort value (30091); this means
 the service is exposed on each Node’s IP at port 30091. You can access the app
 externally via `http://<NodeIP>:30091`.
 
-![NodePort details showing the assigned port 30091 in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_17.png)
+![NodePort details showing the assigned port 30091 in Operator mode](../../images/kubernetes-services/2025-09-06_17.png)
 
 The Operator mode also provides an interactive terminal, along with other
 Details about the Pod. Click on the Pod to reveal the
 `Initiate Terminal Session` option.
 
-![Pod details panel showing the Initiate Terminal Session option in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_5.png)
+![Pod details panel showing the Initiate Terminal Session option in Operator mode](../../images/kubernetes-services/2025-12-13_5.png)
 
 > **_NOTE:_** In Meshery Playground, Node IPs may not be directly reachable from
 > your local machine due to the sandboxed environment. The NodePort value
@@ -247,14 +247,14 @@ how the service object is defined, even though a real cloud IP isn’t provided.
 
 5. Close the panel.
 
-   ![LoadBalancer service-loadbalancer configured with type LoadBalancer and selector app:8080](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_6.png)
+   ![LoadBalancer service-loadbalancer configured with type LoadBalancer and selector app:8080](../../images/kubernetes-services/2025-12-13_6.png)
 
 6. Validate and Deploy (undeploy the old design first).
 
 In Operator mode, observe the LoadBalancer service. In a real Kubernetes
 environment, a LoadBalancer provides an **external IP address**.
 
-![LoadBalancer service details in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_7.png)
+![LoadBalancer service details in Operator mode](../../images/kubernetes-services/2025-12-13_7.png)
 
 ---
 
