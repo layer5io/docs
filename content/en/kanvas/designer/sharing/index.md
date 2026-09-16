@@ -55,6 +55,9 @@ Once the "Share" modal is open, type the names or email addresses of the users o
 
 ![Share Modal](images/share-model.png)
 
+![Share design modal with People with Access and visibility controls](../images/audit-2026-09/designer-share.png)
+*Updated Share modal (anonymous capture, Sep 2026): add users, **People with Access**, Private/Public visibility, and **Copy Link**. Owner shown as an anonymous session.*
+
 ## Owner vs. Collaborator
 
 When you share a design, or when a design is shared with you, what you can do with it depends on whether you are the **Owner** or a **Collaborator**. 
