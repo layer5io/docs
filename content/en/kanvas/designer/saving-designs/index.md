@@ -13,12 +13,12 @@ That leaves two things worth knowing: how to tell whether a change has actually 
 
 ## The save indicator
 
-The cloud icon beside the design name reports the state of the design against your account.
+The indicator beside the design name reports the state of the design against your account.
 
 | Indicator | Meaning |
 | --- | --- |
 | Cloud with a tick, plus a brief "Saved" | Every change is persisted. Hovering shows how long ago the last save completed. |
-| Cloud with an arrow, plus "Saving..." | A change is in flight. |
+| Circling arrows, plus "Saving..." | A change is in flight. |
 | Struck-through cloud, plus "Unable to save. Retrying..." | A save failed. Kanvas retries on its own; the message clears once one succeeds. |
 
 If the indicator sits on "Unable to save" for more than a moment, stop making changes until it clears - your recent edits exist only in the browser until a save succeeds. The usual causes are a lost connection to Layer5 Cloud or an expired session.

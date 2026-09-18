@@ -13,7 +13,7 @@ Both are recorded in the design rather than in your browser, so they travel with
 
 ## Change design layout
 
-The layout control sits in the toolbar at the bottom of the canvas, beside the zoom controls, showing the icon of the layout currently in use. Clicking it fans out the available layouts; picking one re-arranges every component on the canvas with an animated transition, so you can see where things moved to.
+The layout control sits in the bottom-left corner of the canvas, showing the icon of the layout currently in use. Clicking it fans out the available layouts; picking one re-arranges every component on the canvas with an animated transition, so you can see where things moved to. The zoom controls sit at the opposite corner, bottom-right.
 
 | Layout | Shape it produces | Suits |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ Re-running a layout across a very large design is the most expensive operation o
 
 ## Configure visible layers
 
-The **Layers** panel controls what the canvas draws. Open it from the Layers button in the dock, or from the Layers action in the toolbar. Every entry has an eye toggle: switch it off and that entity disappears from the canvas until you switch it back on.
+The **Layers** panel controls what the canvas draws. Open it from the **Layers** button in the toolbar above the canvas, beside Comments, Actions and Share. Every entry has an eye toggle: switch it off and that entity disappears from the canvas until you switch it back on.
 
 <img src="../../advanced/performance/images/layers-panel.png" alt="The Layers panel in Kanvas Designer" />
 
