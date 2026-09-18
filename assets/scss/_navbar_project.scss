@@ -261,3 +261,247 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
     box-shadow: none;
   }
 }
+
+// Navbar Brand Logo Light/Dark Support
+.navbar-brand {
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: inline-block;
+  }
+}
+
+// Theme Toggle Button
+.theme-toggle-nav-item {
+  margin-right: 0.75rem;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle {
+  --size: 1.35rem;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+  outline: none;
+
+  .theme-toggle-icon {
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    color: $secondary;
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover {
+    background: rgba(0, 211, 169, 0.15);
+    border-color: $secondary;
+    transform: scale(1.05);
+
+    .theme-toggle-icon {
+      color: $secondary;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
+// Light theme state for toggle button
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .navbar-brand {
+    .logo-light {
+      display: inline-block;
+    }
+    .logo-dark {
+      display: none;
+    }
+  }
+
+  .theme-toggle {
+    background: rgba(60, 73, 79, 0.08);
+    border: 1px solid rgba(60, 73, 79, 0.18);
+
+    .theme-toggle-icon {
+      --ray-size: calc(var(--size) * -0.4);
+      --offset-orthogonal: calc(var(--size) * 0.65);
+      --offset-diagonal: calc(var(--size) * 0.45);
+      transform: scale(0.75);
+      color: $saffron;
+      box-shadow: inset 0 0 0 var(--size),
+        calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+        var(--offset-orthogonal) 0 0 var(--ray-size),
+        0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+        0 var(--offset-orthogonal) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+        var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+        calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+        var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+    }
+
+    &:hover {
+      background: rgba(235, 192, 23, 0.12);
+      border-color: #ebc017;
+
+      .theme-toggle-icon {
+        color: #d49b00;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
+  }
+
+  .td-navbar,
+  .navbar-dark,
+  .td-navbar-cover {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #eaedee !important;
+
+    .nav-link {
+      color: #3c494f !important;
+      font-weight: 600;
+      text-shadow: none !important;
+
+      &:hover {
+        color: $primary !important;
+        text-shadow: none !important;
+      }
+
+      &.current,
+      &.active {
+        color: $primary !important;
+        text-shadow: none !important;
+      }
+    }
+
+    #resourcesDropdown {
+      color: #3c494f !important;
+      text-shadow: none !important;
+
+      .down-icon svg {
+        fill: currentColor;
+      }
+
+      &:hover,
+      &.current {
+        color: $primary !important;
+      }
+    }
+
+    #signin-button .nav-link {
+      color: #142126 !important;
+      font-weight: 600;
+      text-shadow: none !important;
+
+      &:hover {
+        color: $primary !important;
+      }
+    }
+
+    .td-search {
+      background-color: #eaedee !important;
+      border: 1px solid #d2d8da !important;
+      border-radius: 1rem !important;
+
+      .td-search__input {
+        background: transparent !important;
+        color: #000d12 !important;
+
+        &::placeholder {
+          color: #647176 !important;
+        }
+
+        &:focus {
+          color: #000d12 !important;
+        }
+      }
+
+      .td-search__icon {
+        color: #647176 !important;
+      }
+
+      &:focus-within {
+        border-color: $primary !important;
+        box-shadow: none !important;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #ffffff;
+      border: 1px solid #eaedee;
+      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+
+      .dropdown-item {
+        color: #3c494f;
+
+        &:hover {
+          background-color: rgba(0, 179, 159, 0.08);
+          color: $primary;
+
+          img {
+            filter: none;
+          }
+        }
+      }
+
+      .dropdown-divider {
+        border-top: 1px solid #eaedee;
+      }
+    }
+  }
+
+  .apps-dropdown .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #eaedee;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+
+    .dropdown-item {
+      background-color: #f6f8f8;
+      border: 1px solid #eaedee;
+      color: #3c494f;
+
+      span {
+        color: #3c494f;
+      }
+
+      &:hover {
+        background-color: #ffffff;
+        border-color: $primary;
+        color: $primary;
+
+        span {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  img.grid-icon {
+    filter: invert(0.2);
+    &:hover {
+      filter: invert(0.4);
+    }
+  }
+}
