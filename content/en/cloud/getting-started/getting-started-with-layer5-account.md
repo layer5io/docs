@@ -23,7 +23,11 @@ You may choose to either signup with your personal email or any of our supported
 
 ### 2. Verifying your email address
 
-To ensure you can use all the features in your Layer5 plan, verify your email address after signing up for a new account. For more information, see "Verifying your email address."
+After signing up, a verification email is sent to the email address associated with your account. The email contains a verification code and a verification link. You can complete your email verification using either method.
+
+If you are using a custom domain, the verification link stays on your organization's domain instead of redirecting to the default domain.
+
+On custom domains, verification links sent before the email-verification fix cannot be completed. Verification links are valid for 720 hours (30 days). If you have a pre-fix link on a custom domain or an expired link, request a new verification email and use the latest verification link.
 
 
 <!-- considering we would want to use 2FA in future
