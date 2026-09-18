@@ -49,7 +49,7 @@ Open design details from either:
 In the Details dialog you will typically see fields such as name, owner, visibility, type, technology, description, caveats, dates, and version — plus actions including **Copy Link**, **Publish to Catalog**, and **Save**.
 
 <figure>
-  <img src="images/publishing-to-catalog/designer-details-publish.png" alt="Kanvas Designer Details dialog with Publish to Catalog action" />
+  <img src="../images/publishing-to-catalog/designer-details-publish.png" alt="Kanvas Designer Details dialog with Publish to Catalog action" />
   <figcaption>Details dialog: metadata fields and Publish to Catalog (primary publish entry point)</figcaption>
 </figure>
 

@@ -13,7 +13,6 @@ Kanvas tutorials walk through real-world design scenarios using two fictional or
 Meet Five, Maya, Zara, Marcus, Dr. Aiko, and the full cast at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
 {{< /alert >}}
 
-
 ## Collaboration and Catalog
 
 {{< cardpane >}}
@@ -23,7 +22,7 @@ Meet Five, Maya, Zara, Marcus, Dr. Aiko, and the full cast at [Meet Five and the
 {{% card header="Publishing to Catalog" %}}
 [Publishing to Catalog]({{< ref "kanvas/tutorials/publishing-to-catalog.md" >}}) — publish from Details → Publish to Catalog, then follow review and Catalog visibility.
 {{% /card %}}
-{{% /cardpane >}}
+{{% /cardpane %}}
 
 ## Featured tutorials
 

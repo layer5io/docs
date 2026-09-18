@@ -55,7 +55,7 @@ In the Share modal you should see:
 - **Copy Link** — shareable URL to the design
 
 <figure>
-  <img src="images/collaborative-editing/designer-share.png" alt="Kanvas Designer Share modal showing Add Users, People with Access, Private/Public, and Copy Link" />
+  <img src="../images/collaborative-editing/designer-share.png" alt="Kanvas Designer Share modal showing Add Users, People with Access, Private/Public, and Copy Link" />
   <figcaption>Designer Share: Add Users, People with Access, Private/Public, and Copy Link</figcaption>
 </figure>
 
@@ -102,7 +102,7 @@ Comments are the primary async review tool on the canvas.
 
 <figure>
   <!-- Prefer a signed-in comments thread screenshot when available; audit capture shows empty Comments panel with docs learn-more link. -->
-  <img src="images/collaborative-editing/designer-comments.png" alt="Kanvas Designer Comments panel" />
+  <img src="../images/collaborative-editing/designer-comments.png" alt="Kanvas Designer Comments panel showing the empty No Comments state with a Who sees comments note and Learn more link" />
   <figcaption>Comments panel in Designer (empty state includes a learn-more link to the comments docs)</figcaption>
 </figure>
 
