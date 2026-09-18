@@ -1,7 +1,0 @@
-# Spaces
-
-> Meshery Spaces serve as a gathering point for your team-based work by grouping resources and  controlling their access.
-
-
-Meshery Spaces serve as a gathering point for your team-based work by grouping resources and  controlling their access.
-

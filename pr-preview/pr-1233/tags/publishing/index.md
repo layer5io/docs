@@ -1,4 +1,0 @@
-# Publishing
-
-
-<no value>

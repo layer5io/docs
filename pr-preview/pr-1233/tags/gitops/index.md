@@ -1,4 +1,0 @@
-# Gitops
-
-
-<no value>

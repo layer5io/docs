@@ -1,4 +1,0 @@
-# Rendering
-
-
-<no value>
