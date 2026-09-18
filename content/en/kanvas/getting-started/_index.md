@@ -16,8 +16,10 @@ Throughout the Kanvas docs, you'll follow **Jordan Reyes** — a developer and d
 
 Kanvas can be explored anonymously, but saving to your account, sharing with teammates, and deploying require sign-in.
 
-![Layer5 Cloud login with GitHub, Google, and email options](images/auth-login.png)
-*Sign-in page: continue with GitHub or Google, or log in with email.*
+<figure>
+  <img src="images/auth-login.png" alt="Layer5 Cloud login with GitHub, Google, and email options" />
+  <figcaption>Sign-in page: continue with GitHub or Google, or log in with email.</figcaption>
+</figure>
 
 ## Start here
 

@@ -31,15 +31,19 @@ This comprehensive validation ensures that:
 
 ![Click on the Validate icon](images/validating-designs/performing-validation-2.png)
 
-![Actions menu with Validate available; Dry Run, Deploy, and Undeploy disabled while signed out](../../../designer/images/audit-2026-09/designer-actions.png)
-*Actions menu (anonymous capture, Sep 2026): **Validate** is available without sign-in; Dry Run / Deploy / Undeploy stay disabled until you have a signed-in session and target context.*
+<figure>
+  <img src="../../../designer/images/audit-2026-09/designer-actions.png" alt="Actions menu with Validate available; Dry Run, Deploy, and Undeploy disabled while signed out" />
+  <figcaption>Actions menu (anonymous capture, Sep 2026): <strong>Validate</strong> is available without sign-in; Dry Run / Deploy / Undeploy stay disabled until you have a signed-in session and target context.</figcaption>
+</figure>
 
 If the validation is successful, you will see a modal displaying the number of components validated and the number of annotations, similar to the one shown below:
 
 ![Successful Validation](images/validating-designs/successful-validation.png)
 
-![Validation complete notification toasts after running Validate](../../../designer/images/audit-2026-09/designer-validate-results.png)
-*Validation result toasts (same anonymous session as the autosave capture). Prefer the modal above for the component/annotation counts UI when it matches your build.*
+<figure>
+  <img src="../../../designer/images/audit-2026-09/designer-validate-results.png" alt="Validation complete notification toasts after running Validate" />
+  <figcaption>Validation result toasts (same anonymous session as the autosave capture). Prefer the modal above for the component/annotation counts UI when it matches your build.</figcaption>
+</figure>
 
 ## Handling Validation Errors
 

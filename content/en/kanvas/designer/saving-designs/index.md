@@ -25,8 +25,10 @@ If the indicator sits on "Unable to save" for more than a moment, stop making ch
 
 Clicking the indicator forces a save immediately rather than waiting for the next automatic one.
 
-![Autosave indicator showing Saving… beside the design name](../images/audit-2026-09/designer-autosave.png)
-*Anonymous capture (Sep 2026): the cloud indicator reads **Saving…** while the design syncs. Notification toasts from a recent Validate may also appear in this view.*
+<figure>
+  <img src="../images/audit-2026-09/designer-autosave.png" alt="Autosave indicator showing Saving… beside the design name" />
+  <figcaption>Anonymous capture (Sep 2026): the cloud indicator reads <strong>Saving…</strong> while the design syncs. Notification toasts from a recent Validate may also appear in this view.</figcaption>
+</figure>
 
 ## Save history
 
@@ -44,8 +46,10 @@ Use it to:
 
 **Save as...** is disabled while the canvas is empty.
 
-![File menu listing Save as… and other design operations](../images/audit-2026-09/designer-file-menu.png)
-*File menu (hamburger): New, Open, Import, **Save as…**, Export, Share, View in Operator, Details, and Delete.*
+<figure>
+  <img src="../images/audit-2026-09/designer-file-menu.png" alt="File menu listing Save as… and other design operations" />
+  <figcaption>File menu (hamburger): New, Open, Import, <strong>Save as…</strong>, Export, Share, View in Operator, Details, and Delete.</figcaption>
+</figure>
 
 ## Signed out
 
