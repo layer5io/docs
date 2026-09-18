@@ -1,10 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Layer5 Documentation</title><link>/pr-preview/pr-1245/kanvas/tutorials/</link><description>Recent content in Tutorials on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 18 Sep 2026 12:38:43 +0000</lastBuildDate><atom:link href="/pr-preview/pr-1245/kanvas/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Publishing to Catalog</title><link>/pr-preview/pr-1245/kanvas/tutorials/publishing-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/publishing-to-catalog/</guid><description>&lt;div class="pageinfo"&gt;
-&lt;p&gt;This tutorial is under construction. An end-to-end catalog publish walkthrough will be documented here. Until then, see &lt;a href="/pr-preview/pr-1245/kanvas/designer/publishing-designs/"&gt;Publishing Designs&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Layer5 Documentation</title><link>/pr-preview/pr-1245/kanvas/tutorials/</link><description>Recent content in Tutorials on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 18 Sep 2026 18:44:37 -0500</lastBuildDate><atom:link href="/pr-preview/pr-1245/kanvas/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Publishing to Catalog</title><link>/pr-preview/pr-1245/kanvas/tutorials/publishing-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/publishing-to-catalog/</guid><description>&lt;p&gt;Publishing a design submits it to the &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt; so others can discover, view, and clone it. In Kanvas Designer, the primary publish action lives in &lt;strong&gt;Details&lt;/strong&gt;, not in the Share modal.&lt;/p&gt;
+&lt;p&gt;Share controls &lt;strong&gt;who can open and edit&lt;/strong&gt; your working design (&lt;strong&gt;Private / Public&lt;/strong&gt;, invites, &lt;strong&gt;Copy Link&lt;/strong&gt;). Publish moves a design through the &lt;strong&gt;catalog publication&lt;/strong&gt; lifecycle (pending review → published). For the full state machine, roles, and FAQs, see &lt;a href="/pr-preview/pr-1245/kanvas/designer/publishing-designs/"&gt;Publishing Designs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/pr-preview/pr-1245/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;Kanvas Designer supports team collaboration on infrastructure designs: you can share access, control who can open a design, review with inline comments, and work alongside teammates when they join the same design. This tutorial walks through a practical share-and-review flow on &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For deeper reference, see &lt;a href="/pr-preview/pr-1245/kanvas/designer/sharing/"&gt;Sharing Designs&lt;/a&gt; and &lt;a href="/pr-preview/pr-1245/kanvas/designer/comments/"&gt;Reviewing Designs&lt;/a&gt;.&lt;/p&gt;
 
-&lt;/div&gt;</description></item><item><title>Collaborative Editing</title><link>/pr-preview/pr-1245/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/collaborative-editing/</guid><description>&lt;div class="pageinfo"&gt;
-&lt;p&gt;This tutorial is under construction. Real-time collaboration in Kanvas (multiplayer cursors, join/leave, and shared editing) will be documented here. Until then, see &lt;a href="/pr-preview/pr-1245/kanvas/designer/comments/"&gt;Reviewing Designs&lt;/a&gt; and &lt;a href="/pr-preview/pr-1245/kanvas/designer/sharing/"&gt;Sharing Designs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="what-you-will-do" class="heading-link"&gt;
+ What you will do
+ &lt;a href="#what-you-will-do" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open a design in Designer and share it&lt;/li&gt;
+&lt;li&gt;Choose &lt;strong&gt;Private&lt;/strong&gt; or &lt;strong&gt;Public&lt;/strong&gt; visibility and invite people&lt;/li&gt;
+&lt;li&gt;Copy a share link and verify &lt;strong&gt;People with Access&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Leave comments for design review&lt;/li&gt;
+&lt;li&gt;Set honest expectations for live collaborators (cursors / presence)&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;/div&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/pr-preview/pr-1245/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/pr-preview/pr-1245/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/pr-preview/pr-1245/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Access to &lt;a href="https://kanvas.new"&gt;Kanvas Designer&lt;/a&gt; (anonymous browsing works for Share on Designer; sign in for full identity, invites, and catalog flows)&lt;/li&gt;
+&lt;li&gt;A design you own or can edit (clone a sample design if you are starting fresh)&lt;/li&gt;
+&lt;li&gt;Optional: a teammate&amp;rsquo;s Layer5 Cloud username or email to invite&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Designer vs Operator Share&lt;/h4&gt;
+ 
+ This tutorial covers &lt;strong&gt;Designer&lt;/strong&gt; designs. Designer Share works for anonymous sessions on hosted Kanvas. Operator view Share can fail when no Kubernetes context / view is loaded — do not assume the same share UX in Operator.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="step-1-open-your-design-in-designer" class="heading-link"&gt;
+ Step 1: Open your design in Designer
+ &lt;a href="#step-1-open-your-design-in-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt; and open &lt;strong&gt;Designer&lt;/strong&gt; (center mode toggle).&lt;/li&gt;
+&lt;li&gt;Open an existing design from &lt;strong&gt;File → Open…&lt;/strong&gt;, or clone a sample design and rename it.&lt;/li&gt;
+&lt;li&gt;Confirm the design name and autosave indicator appear in the top bar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You are ready to share when the canvas has loaded and the top-bar &lt;strong&gt;Share&lt;/strong&gt; control is available.&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/pr-preview/pr-1245/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/pr-preview/pr-1245/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/pr-preview/pr-1245/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1245/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
 
 
