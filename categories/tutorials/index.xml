@@ -46,7 +46,8 @@ writing any YAML.&lt;/p&gt;
 starting with the
 &lt;a href="/kanvas/tutorials/kubernetes-pods"&gt;Exploring Kubernetes Pods with Meshery Playground&lt;/a&gt;
 tutorial first or
-&lt;a href="/kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+&lt;a href="/kanvas/tutorials/kubernetes-deployments"&gt;Exploring Kubernetes Deployments with Meshery&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Publishing to Catalog</title><link>/kanvas/tutorials/publishing-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/publishing-to-catalog/</guid><description>&lt;p&gt;Publishing a design submits it to the &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt; so others can discover, view, and clone it. In Kanvas Designer, the primary publish action lives in &lt;strong&gt;Details&lt;/strong&gt;, not in the Share modal.&lt;/p&gt;
+&lt;p&gt;Share controls &lt;strong&gt;who can open and edit&lt;/strong&gt; your working design (&lt;strong&gt;Private / Public&lt;/strong&gt;, invites, &lt;strong&gt;Copy Link&lt;/strong&gt;). Publish moves a design through the &lt;strong&gt;catalog publication&lt;/strong&gt; lifecycle (pending review → published). For the full state machine, roles, and FAQs, see &lt;a href="/kanvas/designer/publishing-designs/"&gt;Publishing Designs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
 
 
 
@@ -69,7 +70,55 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
  How to Earn Badges
  &lt;a href="#how-to-earn-badges" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;Kanvas Designer supports team collaboration on infrastructure designs: you can share access, control who can open a design, review with inline comments, and work alongside teammates when they join the same design. This tutorial walks through a practical share-and-review flow on &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For deeper reference, see &lt;a href="/kanvas/designer/sharing/"&gt;Sharing Designs&lt;/a&gt; and &lt;a href="/kanvas/designer/comments/"&gt;Reviewing Designs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="what-you-will-do" class="heading-link"&gt;
+ What you will do
+ &lt;a href="#what-you-will-do" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open a design in Designer and share it&lt;/li&gt;
+&lt;li&gt;Choose &lt;strong&gt;Private&lt;/strong&gt; or &lt;strong&gt;Public&lt;/strong&gt; visibility and invite people&lt;/li&gt;
+&lt;li&gt;Copy a share link and verify &lt;strong&gt;People with Access&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Leave comments for design review&lt;/li&gt;
+&lt;li&gt;Set honest expectations for live collaborators (cursors / presence)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Access to &lt;a href="https://kanvas.new"&gt;Kanvas Designer&lt;/a&gt; (anonymous browsing works for Share on Designer; sign in for full identity, invites, and catalog flows)&lt;/li&gt;
+&lt;li&gt;A design you own or can edit (clone a sample design if you are starting fresh)&lt;/li&gt;
+&lt;li&gt;Optional: a teammate&amp;rsquo;s Layer5 Cloud username or email to invite&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Designer vs Operator Share&lt;/h4&gt;
+ 
+ This tutorial covers &lt;strong&gt;Designer&lt;/strong&gt; designs. Designer Share works for anonymous sessions on hosted Kanvas. Operator view Share can fail when no Kubernetes context / view is loaded — do not assume the same share UX in Operator.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="step-1-open-your-design-in-designer" class="heading-link"&gt;
+ Step 1: Open your design in Designer
+ &lt;a href="#step-1-open-your-design-in-designer" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt; and open &lt;strong&gt;Designer&lt;/strong&gt; (center mode toggle).&lt;/li&gt;
+&lt;li&gt;Open an existing design from &lt;strong&gt;File → Open…&lt;/strong&gt;, or clone a sample design and rename it.&lt;/li&gt;
+&lt;li&gt;Confirm the design name and autosave indicator appear in the top bar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You are ready to share when the canvas has loaded and the top-bar &lt;strong&gt;Share&lt;/strong&gt; control is available.&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Cross-Org Design Access: stellar-saas-platform</title><link>/kanvas/tutorials/stellar-saas-platform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/stellar-saas-platform/</guid><description>&lt;p&gt;Stellar Dynamics is Orbital Labs&amp;rsquo; biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build &lt;code&gt;stellar-saas-platform&lt;/code&gt; in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs&amp;rsquo; Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
 
 
 
@@ -242,7 +291,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[310 464 186 4 276 67]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
+ &lt;img id="[428 237 58 334 241 118]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
