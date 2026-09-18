@@ -2,12 +2,13 @@
   magnific modal popup. Use format ![alt text](/path/to/image.img) -->
 <!-- Place this file in layouts > _default > _markup > render-image.html -->
 <!-- Also place the image-modal.css and partial/image-modal.html appropriately. -->
-<!-- Id for the image on the page is set to a random 6 numbers, chosen from 1 to 500 -->
-<!-- Onclick opens the modal, and displays/overlays the the image that has the id for the 
-  clicked image. -->
+<!-- The image is passed to openModal directly, so no generated id is needed. The previous
+  `first 6 (shuffle (seq 1 500))` emitted a whole slice, e.g. id="[487 38 279 330 254 290]",
+  which is not a valid HTML id. openModal accepts an <img> element as well as an id. -->
+<!-- Onclick opens the modal, and displays/overlays the clicked image. -->
 <!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
 
 <div class="md__image">
-  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" 
+  <img src="{{ .Destination | safeURL }}" onclick="openModal(this)" alt="{{ .Text }}"
   class="md-image-responsive{{ with .Title }} {{ . }}{{ end }}" />
 </div>
