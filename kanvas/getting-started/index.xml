@@ -3,6 +3,10 @@
  &lt;a href="#step-1-accessing-designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Upon entering Kanvas, seamlessly transition to the &amp;ldquo;Designer&amp;rdquo; mode by selecting the &amp;ldquo;Designer&amp;rdquo; tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img src="../../designer/images/audit-2026-09/designer-getting-started.png" alt="Untitled design Getting Started hub with file menu and layout callouts" /&gt;
+ &lt;figcaption&gt;New design Getting Started hub (anonymous capture, Sep 2026): walk-throughs, templates, and import, plus callouts for the file menu and layout control. Comments/Share may be inactive until you sign in.&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;Example Analogy:&lt;/strong&gt;
 Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
 
@@ -61,7 +65,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[183 357 387 160 438 125]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img id="[465 347 259 61 240 470]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
  Benefits of Using Relationships
@@ -92,7 +96,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[478 34 33 403 396 446]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img id="[119 120 206 170 428 286]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
