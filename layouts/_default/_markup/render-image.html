@@ -1,13 +1,44 @@
-<!-- Images that use the standard image format for markdown will be displayed in a 
+<!-- Images that use the standard image format for markdown will be displayed in a
   magnific modal popup. Use format ![alt text](/path/to/image.img) -->
 <!-- Place this file in layouts > _default > _markup > render-image.html -->
 <!-- Also place the image-modal.css and partial/image-modal.html appropriately. -->
-<!-- Id for the image on the page is set to a random 6 numbers, chosen from 1 to 500 -->
-<!-- Onclick opens the modal, and displays/overlays the the image that has the id for the 
-  clicked image. -->
+<!-- PNG and JPEG sources are encoded to WebP at build time and offered through
+  <picture>. The original stays as the <img> fallback, so nothing in content has
+  to change and browsers without WebP support still get a working image.
+  Content is mounted at assets/contentimg (see hugo.toml) because Hugo can only
+  process files that are resources. -->
+<!-- Onclick opens the modal, and displays/overlays the clicked image. -->
 <!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
 
+{{- $dest := .Destination -}}
+{{- $alt := .Text -}}
+{{- $class := "md-image-responsive" -}}
+{{- with .Title }}{{ $class = printf "md-image-responsive %s" . }}{{ end -}}
+{{- $img := "" -}}
+{{- $ext := lower (path.Ext $dest) -}}
+
+{{- if and (in (slice ".png" ".jpg" ".jpeg") $ext) (not (urls.Parse $dest).Scheme) (not (hasPrefix $dest "//")) -}}
+  {{- $rel := $dest -}}
+  {{- if not (hasPrefix $dest "/") -}}
+    {{- with .Page.File -}}
+      {{- $rel = path.Join (replace .Dir "\\" "/") $dest -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $img = resources.Get (path.Join "contentimg" $rel) -}}
+  {{- if not $img -}}{{- $img = resources.Get $rel -}}{{- end -}}
+{{- end -}}
+
 <div class="md__image">
-  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" 
-  class="md-image-responsive{{ with .Title }} {{ . }}{{ end }}" />
+{{- with $img }}
+  {{- $webp := .Process "webp q85" }}
+  <picture>
+    <source srcset="{{ $webp.RelPermalink }}" type="image/webp" width="{{ .Width }}" height="{{ .Height }}">
+    <img src="{{ $dest | safeURL }}" onclick="openModal(this)" alt="{{ $alt }}"
+    width="{{ .Width }}" height="{{ .Height }}"
+    class="{{ $class }}" />
+  </picture>
+{{- else }}
+  <img src="{{ $dest | safeURL }}" onclick="openModal(this)" alt="{{ $alt }}"
+  class="{{ $class }}" />
+{{- end }}
 </div>
