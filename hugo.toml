@@ -349,6 +349,14 @@ enable = false
     path = "github.com/google/docsy/dependencies"
     disable = false
   [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  # Content images are mounted into assets so the image render hook can
+  # process them (Hugo can only process files that are resources).
+  [[module.mounts]]
+    source = "content/en"
+    target = "assets/contentimg"
+  [[module.mounts]]
     source = "static"
     target = "static"
   [[module.mounts]]
