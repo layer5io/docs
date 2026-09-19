@@ -12,7 +12,7 @@ aliases:
 
 ![Shapes Introduction](images/overview.png)
 
-The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
+The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
 
 {{% alert title="Looking for a specific operation?" %}}
 This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
@@ -29,38 +29,13 @@ This page introduces whiteboarding and the drawing tools. For the per-object ope
 3. **Non-Invasive Annotations**
    - Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.
 
-## Enable the Whiteboarding Beta Feature
+## Access Whiteboarding
 
-If not already enabled, follow these steps to access the whiteboarding feature within Kanvas:
+Whiteboarding is available by default in Kanvas. No feature toggle is required.
 
-### Step 1: Accessing Preferences
-
-1. Navigate to canvas preferences and enable "Whiteboard Beta"
-![Canvas Preferences](images/canvas-preferences.png)
-1. **Toggle Whiteboard Feature**
-   1. Inside the 'Preferences' menu, find the section related to 'Canvas Settings' or 'Features'.
-   1. Look for the option labeled 'Whiteboard' or similar.
-1. **Activate the Whiteboard**
-   1. Toggle the switch or checkbox next to 'Whiteboard' to enable this feature.
-
-### Step 2: Confirmation and Access
-
-2. **Accessing Whiteboard**
-   1. Once enabled, exit the Preferences menu.
-   1. Look for a new bottom dock which houses shapes , annotations and other whichboarding tools .
-
-### Step 3: Utilizing Whiteboard Tools
-
-3. **Explore Drawing Tools**
-   1. Access the newly enabled whiteboard tools within the canvas interface.
-   1. Experiment with drawing, annotation, and collaboration functionalities available in the whiteboard toolbar.
-
-4. **Collaborative Usage**
-   1. Share access with collaborators or team members to engage in real-time collaborative drawing sessions.
-
-{{% alert title="Note" %}}
-The Whiteboard (Beta) feature might undergo updates or improvements during its beta phase. Provide feedback or report issues encountered while using the whiteboard to contribute to its refinement.
-{{% /alert %}}
+1. Open the Kanvas design canvas.
+2. Locate the bottom dock, which contains shapes, annotations, and other whiteboarding tools.
+3. Use the whiteboarding toolbar to draw, annotate, and collaborate in real time.
 
 ### Feature Highlights
 
