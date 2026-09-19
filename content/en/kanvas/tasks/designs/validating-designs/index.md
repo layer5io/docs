@@ -43,7 +43,7 @@ If your design fails validation checks, the modal will indicate the number of er
 
 A common validation error is:
 
-**Missing Required Field:** This happens when a required field is not provided. For example, in the image below, the first error indicates that the field ".spec.template.spec.containers.0.env.0" must have a value.
+**Missing Required Field:** This happens when a required field is not provided. For example, in the image below, the component is missing three required properties under ".spec", and the first error names `instanceCount`. Click the component's row in the modal to expand its errors.
 
 ![Validation Error](images/validating-designs/validation-error.png)
 
