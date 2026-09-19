@@ -35,11 +35,17 @@ This page introduces whiteboarding and the drawing tools. For the per-object ope
 
 Whiteboarding is on by default in every design. Its tools wait in the dock at the bottom of the Designer canvas: shapes, comments, images, sections, and the pen and pencil. The pencil draws freeform notes without connecting components, and the pen - Connector mode, <kbd>Command</kbd>+<kbd>E</kbd> or <kbd>Ctrl</kbd>+<kbd>E</kbd> - draws annotation edges that explain relationships and flow. See [Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}) for how each mode behaves.
 
+![The Kanvas Designer dock](images/whiteboard-dock.png)
+
+The dock, left to right: the select and hand tools, components, Kubernetes, shapes, comments, images, text, sections, then the pen and the pencil.
+
 Everyone working in the design sees each shape, annotation, and edit as it happens, and each collaborator is identified by their avatar.
 
 ### Turning the Tools On or Off {#enable-the-whiteboarding-beta-feature}
 
 To hide or restore the whiteboard dock, right-click an empty area of the canvas, choose **Options**, and toggle **Enable Dock**. **Enable Pen** and **Enable Pencil** in the same panel show or hide those two tools.
+
+![The Options panel, with Enable Dock, Enable Pencil, and Enable Pen turned on](images/canvas-options.png)
 
 ### Feature Highlights
 
