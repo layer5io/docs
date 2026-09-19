@@ -17,7 +17,7 @@ At 2:47 AM, checkout latency is climbing and the architecture diagram cannot be 
 ## Chapters
 
 - [0:00](https://www.youtube.com/watch?v=o58hO4RDCR4&t=0s) Three sources of truth
-- [0:37](https://www.youtube.com/watch?v=o58hO4RDCR4&t=37s) The canvas becomes the war room
+- [0:37](https://www.youtube.com/watch?v=o58hO4RDCR4&t=37s) Kanvas becomes the war room
 - [1:12](https://www.youtube.com/watch?v=o58hO4RDCR4&t=72s) Sketch the blast radius
 - [1:48](https://www.youtube.com/watch?v=o58hO4RDCR4&t=108s) Style without changing configuration
 - [2:17](https://www.youtube.com/watch?v=o58hO4RDCR4&t=137s) Put the evidence in context
