@@ -27,7 +27,7 @@ Clicking the indicator forces a save immediately rather than waiting for the nex
 
 <figure>
   <img src="../images/audit-2026-09/designer-autosave.png" alt="Autosave indicator showing Saving… beside the design name" />
-  <figcaption>Anonymous capture (Sep 2026): the cloud indicator reads <strong>Saving…</strong> while the design syncs. Notification toasts from a recent Validate may also appear in this view.</figcaption>
+  <figcaption>Anonymous capture (Sep 2026): the save indicator reads <strong>Saving…</strong> while the design syncs. Notification toasts from a recent Validate may also appear in this view.</figcaption>
 </figure>
 
 ## Save history
