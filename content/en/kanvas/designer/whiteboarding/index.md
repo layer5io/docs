@@ -14,7 +14,7 @@ aliases:
 
 *[Whiteboarding in Kanvas]({{< ref "videos/features/kanvas/whiteboarding-in-kanvas.md" >}}) (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.*
 
-The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
+The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
 
 {{< alert title="Looking for a specific operation?" >}}
 This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
