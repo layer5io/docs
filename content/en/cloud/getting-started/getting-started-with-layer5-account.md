@@ -27,7 +27,7 @@ After signing up, a verification email is sent to the email address associated w
 
 If you are using a custom domain, the verification link stays on your organization's domain instead of redirecting to the default domain.
 
-On custom domains, verification links sent before the email-verification fix cannot be completed. Verification links are valid for 720 hours (30 days). If you have a pre-fix link on a custom domain or an expired link, request a new verification email and use the latest verification link.
+On custom domains, verification links sent before the email-verification fix was released cannot be completed. Verification links are valid for 720 hours (30 days). If your link expired — or was sent before the fix — request a new verification email and use the latest verification link.
 
 
 <!-- considering we would want to use 2FA in future
