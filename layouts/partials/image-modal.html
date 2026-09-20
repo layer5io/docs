@@ -46,7 +46,7 @@ function openModal(image) {
   modalTrigger = image.closest(".md__image-trigger");
 
   modalPic.src = src;
-  modalPic.alt = image.alt || "Image preview";
+  modalPic.alt = image.alt;
   modal.style.display = "block";
 
   closeButton.focus();
@@ -127,6 +127,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (image) {
         openModal(image);
       }
+    });
+  });
+
+  document.querySelectorAll("img:not(.md__image-trigger img)").forEach(function (img) {
+    if (img.dataset.modal === "false" || img.closest("#myModal")) {
+      return;
+    }
+
+    img.addEventListener("click", function () {
+      openModal(img);
     });
   });
 
