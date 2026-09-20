@@ -26,6 +26,11 @@ The layout control sits in the toolbar at the bottom of the canvas, beside the z
 
 A design opened for the first time uses the Constrained layout. Once you drag components by hand, those positions are what the design stores; re-running a layout overwrites them for everyone, so use undo if an automatic arrangement was not what you wanted.
 
+<figure>
+  <img src="../images/audit-2026-09/designer-layouts.png" alt="Empty design canvas with callout pointing to the layout control" />
+  <figcaption>Layout control callout on a new design (anonymous capture, Sep 2026). Open the control near the bottom-left of the canvas to pick Grid, Constrained, Hierarchical, and related layouts.</figcaption>
+</figure>
+
 {{< alert type="note" title="Layouts on large designs" >}}
 Re-running a layout across a very large design is the most expensive operation on the canvas. If a design is slow to arrange, see [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}).
 {{< /alert >}}
@@ -35,6 +40,11 @@ Re-running a layout across a very large design is the most expensive operation o
 The **Layers** panel controls what the canvas draws. Open it from the Layers button in the dock, or from the Layers action in the toolbar. Every entry has an eye toggle: switch it off and that entity disappears from the canvas until you switch it back on.
 
 <img src="../../advanced/performance/images/layers-panel.png" alt="The Layers panel in Kanvas Designer" />
+
+<figure>
+  <img src="../images/audit-2026-09/designer-configurator.png" alt="Layers panel listing annotations, configurable components, badges, and component kinds" />
+  <figcaption>Layers panel (anonymous capture, Sep 2026): By Type, Component Badges, and Components. Filename in the audit set is historical — this shot is the Layers drawer, not the per-component configurator.</figcaption>
+</figure>
 
 In Designer mode the panel is organized into four sections:
 

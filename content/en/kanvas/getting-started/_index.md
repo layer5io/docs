@@ -12,6 +12,15 @@ aliases:
 Throughout the Kanvas docs, you'll follow **Jordan Reyes** — a developer and designer at Orbital Labs — as she creates, shares, and iterates on infrastructure designs. **Five** reviews her work and occasionally discovers that a design works better in practice than it does in theory. Their starting point is the `microservices-baseline` design in the `orbital-dev` workspace. [Meet the full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{< /alert >}}
 
+## Sign in
+
+Kanvas can be explored anonymously, but saving to your account, sharing with teammates, and deploying require sign-in.
+
+<figure>
+  <img src="images/auth-login.png" alt="Layer5 Cloud login with GitHub, Google, and email options" />
+  <figcaption>Sign-in page: continue with GitHub or Google, or log in with email.</figcaption>
+</figure>
+
 ## Start here
 
 1. [Starting from scratch]({{< ref "kanvas/getting-started/starting-scratch.md" >}}) — open Designer and create your first design.

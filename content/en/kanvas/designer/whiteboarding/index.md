@@ -3,20 +3,22 @@ title: Whiteboarding
 description: Whiteboarding and Freestyle Drawing inside Kanvas
 weight: 3
 categories: [Designer]
-tags: [designs]
+tags: [designs, whiteboarding, annotations, shapes, collaboration]
 aliases:
   - /meshmap/designer/whiteboarding
 # Should this page every be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 ---
 
-![Shapes Introduction](images/overview.png)
+{{< youtube id=o58hO4RDCR4 class="yt-embed-container" >}}
+
+*[Whiteboarding in Kanvas]({{< ref "videos/features/kanvas/whiteboarding-in-kanvas.md" >}}) (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.*
 
 The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
 
-{{% alert title="Looking for a specific operation?" %}}
+{{< alert title="Looking for a specific operation?" >}}
 This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
-{{% /alert %}}
+{{< /alert >}}
 
 ## Key Functionality
 
@@ -29,13 +31,21 @@ This page introduces whiteboarding and the drawing tools. For the per-object ope
 3. **Non-Invasive Annotations**
    - Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.
 
-## Access Whiteboarding
+## Using the Whiteboard Tools {#step-3-utilizing-whiteboard-tools}
 
-Whiteboarding is available by default in Kanvas. No feature toggle is required.
+Whiteboarding is on by default in every design. Its tools wait in the dock at the bottom of the Designer canvas: shapes, comments, images, sections, and the pen and pencil. The pencil draws freeform notes without connecting components, and the pen - Connector mode, <kbd>Command</kbd>+<kbd>E</kbd> or <kbd>Ctrl</kbd>+<kbd>E</kbd> - draws annotation edges that explain relationships and flow. See [Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}) for how each mode behaves.
 
-1. Open the Kanvas design canvas.
-2. Locate the bottom dock, which contains shapes, annotations, and other whiteboarding tools.
-3. Use the whiteboarding toolbar to draw, annotate, and collaborate in real time.
+![The Kanvas Designer dock](images/whiteboard-dock.png)
+
+The dock, left to right: the select and hand tools, components, Kubernetes, shapes, comments, images, text, sections, then the pen and the pencil.
+
+Everyone working in the design sees each shape, annotation, and edit as it happens, and each collaborator is identified by their avatar.
+
+### Turning the Tools On or Off {#enable-the-whiteboarding-beta-feature}
+
+To hide or restore the whiteboard dock, right-click an empty area of the canvas, choose **Options**, and toggle **Enable Dock**. **Enable Pen** and **Enable Pencil** in the same panel show or hide those two tools.
+
+![The Options panel, with Enable Dock, Enable Pencil, and Enable Pen turned on](images/canvas-options.png)
 
 ### Feature Highlights
 
