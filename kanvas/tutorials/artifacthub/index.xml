@@ -29,6 +29,22 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[358 322 33 160 351 22]" src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this.id)" alt="" 
+ &lt;img src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this)" alt=""
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id="2-click-open" class="heading-link"&gt;
+ 2. Click Open
+ &lt;a href="#2-click-open" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img src="images/publish-to-artifacthub/2024-07-30_2.png" onclick="openModal(this)" alt=""
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -19,7 +19,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[219 410 183 189 203 332]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img src="images/style-edge.gif" onclick="openModal(this)" alt="Examples of changing edge styles in Kanvas"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -27,7 +27,13 @@
  Understanding Edge Types
  &lt;a href="#understanding-edge-types" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In Kanvas, there are two main types of edges, each serving a different purpose:&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
+&lt;p&gt;In Kanvas, there are two main types of edges, each serving a different purpose:&lt;/p&gt;
+
+&lt;h3 id="semantic-edges-representing-real-infrastructure" class="heading-link"&gt;
+ Semantic Edges: Representing Real Infrastructure
+ &lt;a href="#semantic-edges-representing-real-infrastructure" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -36,7 +42,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[364 28 14 107 120 476]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img src="images/example.png" onclick="openModal(this)" alt="Example"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -152,7 +158,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[450 359 92 272 231 59]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img src="images/default.gif" onclick="openModal(this)" alt="Click"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -168,7 +174,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[124 50 16 138 38 30]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img src="images/click_and_drag.gif" onclick="openModal(this)" alt="Click and drag"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -184,7 +190,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[62 465 108 344 156 255]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img src="images/click.png" onclick="openModal(this)" alt="Click"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -200,7 +206,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[398 99 75 51 27 319]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img src="images/double_click.png" onclick="openModal(this)" alt="Double-click component"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -216,7 +222,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[314 8 392 241 383 366]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img src="images/text-box-double-click.gif" onclick="openModal(this)" alt="Double-click textbox"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -232,7 +238,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[222 42 494 480 445 499]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img src="images/right_click.png" onclick="openModal(this)" alt="Right-click"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -248,7 +254,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[307 453 56 288 194 299]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img src="images/select.gif" onclick="openModal(this)" alt="Box selection"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -264,7 +270,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[338 379 148 256 406 491]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img src="images/scroll_up_down.gif" onclick="openModal(this)" alt="Scroll"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -280,7 +286,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[482 190 80 261 16 242]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img src="images/zoom_in_out.gif" onclick="openModal(this)" alt="Zoom"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -296,7 +302,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[409 261 3 434 156 367]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img src="images/scroll_left_right.gif" onclick="openModal(this)" alt="Scroll left/right"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -417,7 +423,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[373 168 441 22 4 153]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img src="images/export-modal.gif" onclick="openModal(this)" alt="Export Icon"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
@@ -466,7 +472,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[121 275 168 208 331 272]" src="images/pin-to-dock.png" onclick="openModal(this.id)" alt="Pin To Dock action" 
+ &lt;img src="images/pin-to-dock.png" onclick="openModal(this)" alt="Pin To Dock action"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
