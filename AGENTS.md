@@ -244,7 +244,8 @@ install` once, then build with the local binaries on PATH:
 
 `npm run build` (see the `scripts` section in `package.json`) does the same via
 the pinned Hugo, so the manual PATH adjustment is only needed for direct `hugo`
-invocations. `npm run lint` runs the Markdown linter.
+invocations. Confirm the available npm scripts in `package.json` before relying
+on any other repository command such as `npm run lint`.
 
 ## Keeping old URLs alive
 
