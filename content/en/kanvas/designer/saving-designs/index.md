@@ -13,17 +13,22 @@ That leaves two things worth knowing: how to tell whether a change has actually 
 
 ## The save indicator
 
-The cloud icon beside the design name reports the state of the design against your account.
+The indicator beside the design name reports the state of the design against your account.
 
 | Indicator | Meaning |
 | --- | --- |
 | Cloud with a tick, plus a brief "Saved" | Every change is persisted. Hovering shows how long ago the last save completed. |
-| Cloud with an arrow, plus "Saving..." | A change is in flight. |
+| Circling arrows, plus "Saving..." | A change is in flight. |
 | Struck-through cloud, plus "Unable to save. Retrying..." | A save failed. Kanvas retries on its own; the message clears once one succeeds. |
 
 If the indicator sits on "Unable to save" for more than a moment, stop making changes until it clears - your recent edits exist only in the browser until a save succeeds. The usual causes are a lost connection to Layer5 Cloud or an expired session.
 
 Clicking the indicator forces a save immediately rather than waiting for the next automatic one.
+
+<figure>
+  <img src="../images/audit-2026-09/designer-autosave.png" alt="Autosave indicator showing Saving… beside the design name" />
+  <figcaption>Anonymous capture (Sep 2026): the save indicator reads <strong>Saving…</strong> while the design syncs. Notification toasts from a recent Validate may also appear in this view.</figcaption>
+</figure>
 
 ## Save history
 
@@ -40,6 +45,11 @@ Use it to:
 - turn a design opened from the catalog into one of your own.
 
 **Save as...** is disabled while the canvas is empty.
+
+<figure>
+  <img src="../images/audit-2026-09/designer-file-menu.png" alt="File menu listing Save as… and other design operations" />
+  <figcaption>File menu (hamburger): New, Open, Import, <strong>Save as…</strong>, Export, Share, View in Operator, Details, and Delete.</figcaption>
+</figure>
 
 ## Signed out
 
