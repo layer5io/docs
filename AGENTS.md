@@ -286,8 +286,10 @@ worked example) and confirm the built HTML, not the source, before committing.
 
 The Cloud guides describe a product that lives in `meshery-cloud`, so every
 product claim is verified against `origin/master` there, never against a
-summary. The screen strings are in `ui/components/identity/org-management/`; the
-behavior behind them is in `server/handlers/`.
+summary. Start from the UI and handler code that owns the feature you are
+documenting. For organization-management docs specifically, the screen strings
+are in `ui/components/identity/org-management/`, and the behavior behind them
+is in `server/handlers/`.
 
 That repo's own `docs/reference/` and `docs/runbooks/` are the best starting
 point but are not the arbiter - they have described behavior the handlers do not
