@@ -76,7 +76,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[412 125 344 438 273 42]" src="images/style-edge.gif" onclick="openModal(this.id)" alt="Examples of changing edge styles in Kanvas" 
+ &lt;img src="images/style-edge.gif" onclick="openModal(this)" alt="Examples of changing edge styles in Kanvas"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -84,7 +84,13 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
  Understanding Edge Types
  &lt;a href="#understanding-edge-types" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;In Kanvas, there are two main types of edges, each serving a different purpose:&lt;/p&gt;</description></item><item><title>Validating Designs</title><link>/pr-preview/pr-1251/kanvas/tasks/designs/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/tasks/designs/validating-designs/</guid><description>&lt;h2 id="how-validation-works" class="heading-link"&gt;
+&lt;p&gt;In Kanvas, there are two main types of edges, each serving a different purpose:&lt;/p&gt;
+
+&lt;h3 id="semantic-edges-representing-real-infrastructure" class="heading-link"&gt;
+ Semantic Edges: Representing Real Infrastructure
+ &lt;a href="#semantic-edges-representing-real-infrastructure" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:&lt;/p&gt;</description></item><item><title>Validating Designs</title><link>/pr-preview/pr-1251/kanvas/tasks/designs/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/tasks/designs/validating-designs/</guid><description>&lt;h2 id="how-validation-works" class="heading-link"&gt;
  How Validation Works
  &lt;a href="#how-validation-works" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -117,7 +123,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[301 497 281 338 339 430]" src="images/validating-designs/performing-validation-1.png" onclick="openModal(this.id)" alt="Navigate to Actions button" 
+ &lt;img src="images/validating-designs/performing-validation-1.png" onclick="openModal(this)" alt="Navigate to Actions button"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/pr-preview/pr-1251/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
 
@@ -183,7 +189,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[385 232 414 81 236 481]" src="images/importing-designs/drag-drop.gif" onclick="openModal(this.id)" alt="Drag and Drop Import" 
+ &lt;img src="images/importing-designs/drag-drop.gif" onclick="openModal(this)" alt="Drag and Drop Import"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/pr-preview/pr-1251/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
@@ -194,7 +200,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[248 373 272 353 181 106]" src="images/example.png" onclick="openModal(this.id)" alt="Example" 
+ &lt;img src="images/example.png" onclick="openModal(this)" alt="Example"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -233,7 +239,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[286 244 446 352 113 368]" src="images/undeploying-designs/undeploy.png" onclick="openModal(this.id)" alt="undeploying designs" 
+ &lt;img src="images/undeploying-designs/undeploy.png" onclick="openModal(this)" alt="undeploying designs"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
@@ -673,7 +679,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[352 200 227 382 392 302]" src="images/default.gif" onclick="openModal(this.id)" alt="Click" 
+ &lt;img src="images/default.gif" onclick="openModal(this)" alt="Click"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -689,7 +695,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[363 288 392 425 185 128]" src="images/click_and_drag.gif" onclick="openModal(this.id)" alt="Click and drag" 
+ &lt;img src="images/click_and_drag.gif" onclick="openModal(this)" alt="Click and drag"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -705,7 +711,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[240 30 198 303 81 176]" src="images/click.png" onclick="openModal(this.id)" alt="Click" 
+ &lt;img src="images/click.png" onclick="openModal(this)" alt="Click"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -721,7 +727,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[497 7 116 242 175 87]" src="images/double_click.png" onclick="openModal(this.id)" alt="Double-click component" 
+ &lt;img src="images/double_click.png" onclick="openModal(this)" alt="Double-click component"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -737,7 +743,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[241 208 176 58 207 25]" src="images/text-box-double-click.gif" onclick="openModal(this.id)" alt="Double-click textbox" 
+ &lt;img src="images/text-box-double-click.gif" onclick="openModal(this)" alt="Double-click textbox"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -753,7 +759,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[36 480 335 26 46 227]" src="images/right_click.png" onclick="openModal(this.id)" alt="Right-click" 
+ &lt;img src="images/right_click.png" onclick="openModal(this)" alt="Right-click"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -769,7 +775,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[440 83 284 113 399 211]" src="images/select.gif" onclick="openModal(this.id)" alt="Box selection" 
+ &lt;img src="images/select.gif" onclick="openModal(this)" alt="Box selection"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -785,7 +791,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[12 17 343 367 293 309]" src="images/scroll_up_down.gif" onclick="openModal(this.id)" alt="Scroll" 
+ &lt;img src="images/scroll_up_down.gif" onclick="openModal(this)" alt="Scroll"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -801,7 +807,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[145 295 419 261 405 107]" src="images/zoom_in_out.gif" onclick="openModal(this.id)" alt="Zoom" 
+ &lt;img src="images/zoom_in_out.gif" onclick="openModal(this)" alt="Zoom"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -817,7 +823,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[73 116 170 159 445 195]" src="images/scroll_left_right.gif" onclick="openModal(this.id)" alt="Scroll left/right" 
+ &lt;img src="images/scroll_left_right.gif" onclick="openModal(this)" alt="Scroll left/right"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/td&gt;
  &lt;/tr&gt;
@@ -827,53 +833,12 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  &lt;/div&gt;
  &lt;div class="tab-body tab-pane fade"
  id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
- &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/pr-preview/pr-1251/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/whiteboarding/</guid><description>&lt;p&gt;
+ &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/pr-preview/pr-1251/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
 
-
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img id="[140 149 456 282 357 500]" src="images/overview.png" onclick="openModal(this.id)" alt="Shapes Introduction" 
- class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Enabling the whiteboard feature augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Looking for a specific operation?&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt; This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see &amp;lt;a href=&amp;quot;/pr-preview/pr-1251/kanvas/designer/canvas-objects/&amp;quot;&amp;gt;Working with Canvas Objects&amp;lt;/a&amp;gt;.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id="key-functionality" class="heading-link"&gt;
- Key Functionality
- &lt;a href="#key-functionality" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Drawing Tools Integration&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;Incorporates a comprehensive set of drawing tools resembling popular whiteboard applications.&lt;/li&gt;
-&lt;li&gt;Enables you to draw shapes, group components , annotate, and highlight specific elements within the infrastructure design canvas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Real-time Collaboration&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;Facilitates simultaneous collaboration among multiple users within the tool.&lt;/li&gt;
-&lt;li&gt;Supports live editing and instant visualization of changes made by collaborators.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Non-Invasive Annotations&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="enable-the-whiteboarding-beta-feature" class="heading-link"&gt;
- Enable the Whiteboarding Beta Feature
- &lt;a href="#enable-the-whiteboarding-beta-feature" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;If not already enabled, follow these steps to access the whiteboarding feature within Kanvas:&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/pr-preview/pr-1251/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href="/pr-preview/pr-1251/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/pr-preview/pr-1251/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
  Benefits of Using Relationships
  &lt;a href="#benefits-of-using-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -914,7 +879,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[28 372 180 417 36 282]" src="images/deploy-designs/success-deploy.png" onclick="openModal(this.id)" alt="success-deploy" 
+ &lt;img src="images/deploy-designs/success-deploy.png" onclick="openModal(this)" alt="success-deploy"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -933,7 +898,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[210 408 225 150 320 154]" src="images/deploy-designs/missing-ns.png" onclick="openModal(this.id)" alt="missing-ns" 
+ &lt;img src="images/deploy-designs/missing-ns.png" onclick="openModal(this)" alt="missing-ns"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing to Catalog</title><link>/pr-preview/pr-1251/kanvas/tutorials/publishing-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/tutorials/publishing-to-catalog/</guid><description>&lt;p&gt;Publishing a design submits it to the &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt; so others can discover, view, and clone it. In Kanvas Designer, the primary publish action lives in &lt;strong&gt;Details&lt;/strong&gt;, not in the Share modal.&lt;/p&gt;
 &lt;p&gt;Share controls &lt;strong&gt;who can open and edit&lt;/strong&gt; your working design (&lt;strong&gt;Private / Public&lt;/strong&gt;, invites, &lt;strong&gt;Copy Link&lt;/strong&gt;). Publish moves a design through the &lt;strong&gt;catalog publication&lt;/strong&gt; lifecycle (pending review → published). For the full state machine, roles, and FAQs, see &lt;a href="/pr-preview/pr-1251/kanvas/designer/publishing-designs/"&gt;Publishing Designs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/pr-preview/pr-1251/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
@@ -964,7 +929,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[146 128 419 436 143 45]" src="images/working-with-components/configuration-panel.png" onclick="openModal(this.id)" alt="configuration-panel" 
+ &lt;img src="images/working-with-components/configuration-panel.png" onclick="openModal(this)" alt="configuration-panel"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
@@ -1003,9 +968,10 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[48 387 353 70 491 204]" src="images/deploy-designs/clone-design.gif" onclick="openModal(this.id)" alt="Copy of a Design" 
+ &lt;img src="images/deploy-designs/clone-design.gif" onclick="openModal(this)" alt="Copy of a Design"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/pr-preview/pr-1251/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;This will create a copy of the catalog item to a new design, now owned by you.&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/pr-preview/pr-1251/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
 
 
 
@@ -1112,7 +1078,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[432 75 395 493 23 233]" src="images/export-modal.gif" onclick="openModal(this.id)" alt="Export Icon" 
+ &lt;img src="images/export-modal.gif" onclick="openModal(this)" alt="Export Icon"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/pr-preview/pr-1251/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 

@@ -7,7 +7,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[225 71 300 493 86 21]" src="images/org_overview.png" onclick="openModal(this.id)" alt="Organization Overview" 
+ &lt;img src="images/org_overview.png" onclick="openModal(this)" alt="Organization Overview"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
