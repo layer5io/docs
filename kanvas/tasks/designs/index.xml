@@ -28,12 +28,15 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tasks/designs/validating-designs/images/validating-designs/performing-validation-1_hu_69e1d225111cb837.webp" type="image/webp" width="1338" height="582"&gt;
  &lt;img src="images/validating-designs/performing-validation-1.png" onclick="openModal(this)" alt="Navigate to Actions button"
+ width="1338" height="582"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
 &lt;p&gt;Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.&lt;/p&gt;</description></item><item><title>Undeploying Designs</title><link>/kanvas/tasks/designs/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/undeploying-designs/</guid><description>&lt;p&gt;To undeploy the resources&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -48,12 +51,15 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tasks/designs/undeploying-designs/images/undeploying-designs/undeploy_hu_ed4a4465979d0499.webp" type="image/webp" width="1276" height="1125"&gt;
  &lt;img src="images/undeploying-designs/undeploy.png" onclick="openModal(this)" alt="undeploying designs"
+ width="1276" height="1125"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 
 There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
@@ -419,12 +425,15 @@ This is the final element on the page and there should be no margin below this.
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tasks/designs/deploying-designs/images/deploy-designs/success-deploy_hu_bcb1f57ed3224ad7.webp" type="image/webp" width="1275" height="1122"&gt;
  &lt;img src="images/deploy-designs/success-deploy.png" onclick="openModal(this)" alt="success-deploy"
+ width="1275" height="1122"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h3 id="deployment-errors" class="heading-link"&gt;
  Deployment Errors
@@ -438,12 +447,15 @@ This is the final element on the page and there should be no margin below this.
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tasks/designs/deploying-designs/images/deploy-designs/missing-ns_hu_ce9078de4b895068.webp" type="image/webp" width="1148" height="566"&gt;
  &lt;img src="images/deploy-designs/missing-ns.png" onclick="openModal(this)" alt="missing-ns"
+ width="1148" height="566"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
  Steps to cloning a design from Catalog using Kanvas
  &lt;a href="#steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -458,12 +470,11 @@ This is the final element on the page and there should be no margin below this.
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/deploy-designs/clone-design.gif" onclick="openModal(this)" alt="Copy of a Design"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;p&gt;This will create a copy of the catalog item to a new design, now owned by you.&lt;/p&gt;</description></item><item><title>Deleting a Design</title><link>/kanvas/tasks/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes it permanently. There is no trash, no recycle bin, and no undo: the design record is destroyed, and every workspace it was assigned to loses it at the same time. Before you delete, check that what you actually want is not one of the two softer actions described under &lt;a href="/kanvas/tasks/designs/deleting-a-design/#related-actions-that-are-not-deletion"&gt;Related actions that are not deletion&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id="who-can-delete-a-design" class="heading-link"&gt;

@@ -62,12 +62,11 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/importing-designs/drag-drop.gif" onclick="openModal(this)" alt="Drag and Drop Import"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
  Benefits of Using Relationships
  &lt;a href="#benefits-of-using-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -93,12 +92,15 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/getting-started/working-with-components/images/working-with-components/configuration-panel_hu_fd04d7811b478f64.webp" type="image/webp" width="2940" height="1266"&gt;
  &lt;img src="images/working-with-components/configuration-panel.png" onclick="openModal(this)" alt="configuration-panel"
+ width="2940" height="1266"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

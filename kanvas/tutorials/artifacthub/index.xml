@@ -26,12 +26,15 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tutorials/artifacthub/publish-to-artifacthub/images/publish-to-artifacthub/2024-07-30_1_hu_ccf745aaec17101b.webp" type="image/webp" width="538" height="720"&gt;
  &lt;img src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this)" alt=""
+ width="538" height="720"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h3 id="2-click-open" class="heading-link"&gt;
  2. Click Open
@@ -42,9 +45,12 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tutorials/artifacthub/publish-to-artifacthub/images/publish-to-artifacthub/2024-07-30_2_hu_e7606f6d3d3a8159.webp" type="image/webp" width="2940" height="1656"&gt;
  &lt;img src="images/publish-to-artifacthub/2024-07-30_2.png" onclick="openModal(this)" alt=""
+ width="2940" height="1656"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item></channel></rss>
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item></channel></rss>

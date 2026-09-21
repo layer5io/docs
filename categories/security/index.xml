@@ -210,12 +210,11 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/roles-overview.svg" onclick="openModal(this)" alt="roles"
  class="md-image-responsive image-center-no-shadow" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h2 id="provider-admin-role" class="heading-link"&gt;
  Provider Admin Role
@@ -233,12 +232,11 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/role-provider-admin.svg" onclick="openModal(this)" alt="role-provider"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/p&gt;
  &lt;/div&gt;
  &lt;/div&gt;

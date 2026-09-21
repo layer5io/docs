@@ -288,12 +288,15 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tutorials/artifacthub/publish-to-artifacthub/images/publish-to-artifacthub/2024-07-30_1_hu_ccf745aaec17101b.webp" type="image/webp" width="538" height="720"&gt;
  &lt;img src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this)" alt=""
+ width="538" height="720"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h3 id="2-click-open" class="heading-link"&gt;
  2. Click Open
@@ -304,12 +307,15 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/tutorials/artifacthub/publish-to-artifacthub/images/publish-to-artifacthub/2024-07-30_2_hu_e7606f6d3d3a8159.webp" type="image/webp" width="2940" height="1656"&gt;
  &lt;img src="images/publish-to-artifacthub/2024-07-30_2.png" onclick="openModal(this)" alt=""
+ width="2940" height="1656"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Understanding Kubernetes ConfigMaps and Secrets with Meshery</title><link>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
  Introduction
  &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

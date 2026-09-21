@@ -41,12 +41,15 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/cloud/concepts/identity-and-security/users/user-management/images/org_invite_hu_8dc70b7353643a06.webp" type="image/webp" width="2260" height="982"&gt;
  &lt;img src="images/org_invite.png" onclick="openModal(this)" alt="User Management options"
+ width="2260" height="982"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h2 id="create-user-account" class="heading-link"&gt;
  Create User Account

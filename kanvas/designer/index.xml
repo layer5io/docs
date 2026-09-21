@@ -16,12 +16,11 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/style-edge.gif" onclick="openModal(this)" alt="Examples of changing edge styles in Kanvas"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h2 id="understanding-edge-types" class="heading-link"&gt;
  Understanding Edge Types
@@ -39,12 +38,15 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/designer/interpreting-component-badges/images/example_hu_89a7072c2a03db4b.webp" type="image/webp" width="1531" height="801"&gt;
  &lt;img src="images/example.png" onclick="openModal(this)" alt="Example"
+ width="1531" height="801"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 
 
@@ -155,12 +157,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/default.gif" onclick="openModal(this)" alt="Click"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Click-and-drag&lt;/strong&gt;&lt;/td&gt;
@@ -171,12 +172,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/click_and_drag.gif" onclick="openModal(this)" alt="Click and drag"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Click&lt;/strong&gt;&lt;/td&gt;
@@ -187,12 +187,15 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/designer/understanding-tool-modes/images/click_hu_e81bf5123ff045fd.webp" type="image/webp" width="1126" height="462"&gt;
  &lt;img src="images/click.png" onclick="openModal(this)" alt="Click"
+ width="1126" height="462"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Double-click (component)&lt;/strong&gt;&lt;/td&gt;
@@ -203,12 +206,15 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/designer/understanding-tool-modes/images/double_click_hu_83b454c3a6721403.webp" type="image/webp" width="1286" height="1120"&gt;
  &lt;img src="images/double_click.png" onclick="openModal(this)" alt="Double-click component"
+ width="1286" height="1120"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Double-click (textbox)&lt;/strong&gt;&lt;/td&gt;
@@ -219,12 +225,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/text-box-double-click.gif" onclick="openModal(this)" alt="Double-click textbox"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Right-click&lt;/strong&gt;&lt;/td&gt;
@@ -235,12 +240,15 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/designer/understanding-tool-modes/images/right_click_hu_bc3b42b8509b13b4.webp" type="image/webp" width="743" height="702"&gt;
  &lt;img src="images/right_click.png" onclick="openModal(this)" alt="Right-click"
+ width="743" height="702"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Click-and-hold&lt;/strong&gt;&lt;/td&gt;
@@ -251,12 +259,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/select.gif" onclick="openModal(this)" alt="Box selection"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Scroll wheel&lt;/strong&gt;&lt;/td&gt;
@@ -267,12 +274,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/scroll_up_down.gif" onclick="openModal(this)" alt="Scroll"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Scroll wheel + CMD/CTRL&lt;/strong&gt;&lt;/td&gt;
@@ -283,12 +289,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/zoom_in_out.gif" onclick="openModal(this)" alt="Zoom"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;Horizontal scroll wheel&lt;/strong&gt;&lt;/td&gt;
@@ -299,12 +304,11 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/scroll_left_right.gif" onclick="openModal(this)" alt="Scroll left/right"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/td&gt;
+&lt;/div&gt;
+&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
@@ -420,12 +424,11 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="images/export-modal.gif" onclick="openModal(this)" alt="Export Icon"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
 &lt;h2 id="publishing-workflow" class="heading-link"&gt;
  Publishing Workflow
@@ -469,12 +472,15 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/kanvas/designer/pin-model-to-dock/images/pin-to-dock_hu_c3c62d21f63f4f37.webp" type="image/webp" width="1646" height="758"&gt;
  &lt;img src="images/pin-to-dock.png" onclick="openModal(this)" alt="Pin To Dock action"
+ width="1646" height="758"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
 identify connections, validate them, and keep related configuration in sync.
 This page explains how you can choose which engine performs that evaluation, how

@@ -14,12 +14,15 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/cloud/academy/creating-content/extending-the-academy/images/overview_hu_be86832c49259e3b.webp" type="image/webp" width="1534" height="993"&gt;
  &lt;img src="./images/overview.png" onclick="openModal(this)" alt="Example of Academy"
+ width="1534" height="993"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h3 id="who-can-create-content" class="heading-link"&gt;
  Who Can Create Content
@@ -148,24 +151,26 @@
 
 
 
-
-
 &lt;div class="md__image"&gt;
  &lt;img src="./images/academy-admin.svg" onclick="openModal(this)" alt="Academy Admin Role"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
 &lt;p&gt;
 
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/cloud/academy/creating-content/building-certifications/images/index-page_hu_68368cf0e80d09b4.webp" type="image/webp" width="1684" height="1384"&gt;
  &lt;img src="./images/index-page.png" onclick="openModal(this)" alt="example image"
+ width="1684" height="1384"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 
 &lt;h3 id="when-to-use-a-certification" class="heading-link"&gt;
  When to Use a Certification
@@ -244,12 +249,15 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 
-
-
 &lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/cloud/academy/creating-content/using-content-template-creator/images/template-creator_hu_7864663dcbca87fe.webp" type="image/webp" width="1674" height="906"&gt;
  &lt;img src="images/template-creator.png" onclick="openModal(this)" alt="Academy Content Template Creator"
+ width="1674" height="906"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Access the Creator: Click on the &amp;ldquo;Create New Content&amp;rdquo; card in your Academy dashboard&lt;/li&gt;
 &lt;li&gt;Create Your Content: The wizard will guide you through &lt;strong&gt;5 essential steps&lt;/strong&gt; to create your content template&lt;/li&gt;
