@@ -242,8 +242,8 @@ install` once, then build with the local binaries on PATH:
     npm install
     PATH="$PWD/node_modules/.bin:$PATH" hugo -d <outdir>
 
-`npm run build` (see `package.json`) does the same via the pinned Hugo. `npm run
-lint` runs the Markdown linter.
+`npm run build` (see the `scripts` section in `package.json`) does the same via
+the pinned Hugo. `npm run lint` runs the Markdown linter.
 
 ## Keeping old URLs alive
 
