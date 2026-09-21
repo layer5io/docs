@@ -431,7 +431,10 @@ function handleVisibilityChange() {
     // Sync across open browser tabs
     window.addEventListener('storage', function(e) {
       if (e.key === 'theme' && e.newValue) {
-        applyTheme(normalizeTheme(e.newValue));
+        const normalized = normalizeTheme(e.newValue);
+        if (document.documentElement.getAttribute('data-theme') !== normalized) {
+          applyTheme(normalized);
+        }
       }
     });
   })();
