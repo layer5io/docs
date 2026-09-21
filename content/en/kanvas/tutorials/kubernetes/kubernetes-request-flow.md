@@ -32,6 +32,8 @@ We will explore a simple application architecture in Kubernetes.
 - A **Deployment** managing a **Pod**
 - The **Pod** running **two containers**: one for logic and one for database interactions
 
+A ClusterIP Service is reachable only from inside the cluster, so in a real setup external traffic first enters through an Ingress, LoadBalancer, or NodePort. This design leaves that layer out to keep the focus on the in-cluster request path.
+
 This is a common real-world pattern seen in microservices architectures and backend systems.
 
 ## Objective
@@ -44,7 +46,7 @@ We will visually explore how all the Kubernetes components come together using K
 
 Start by opening the prebuilt design from here:
 
-[![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
+[![Diagram of a Kubernetes request flowing from a user through a Service, Deployment, and Pod to two containers](../../images/kubernetes-request-flow/k8s-request-flow.png)](https://kanvas.new/extension/meshmap?mode=design&design=629b6039-ebb3-4bd8-9b1b-19184fade225)
 
 {{< alert type="info" title="Note" >}}
 Click the image above to open the interactive design in Kanvas.
@@ -114,7 +116,7 @@ If we want to recreate this flow from scratch, we can drag and drop the same com
 
 ### Diagram Screenshot
 
-[![Kubernetes Flow Diagram](../../images/kubernetes-request-flow/k8s-request-flow.png)](../../images/kubernetes-request-flow/k8s-request-flow.png)
+[![Diagram of a Kubernetes request flowing from a user through a Service, Deployment, and Pod to two containers](../../images/kubernetes-request-flow/k8s-request-flow.png)](../../images/kubernetes-request-flow/k8s-request-flow.png)
 
 {{< alert type="info" title="Note" >}}
 You can design this yourself using the components in Kanvas.
