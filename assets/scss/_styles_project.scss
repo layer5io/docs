@@ -794,7 +794,7 @@ html {
   scroll-behavior: smooth;
 }
 
-// Max-width constraint for large screens to prevent layout stretch
+// Max-width constraint for large screens to prevent centering of content
 @media (min-width: $site-max-width) {
   .td-navbar {
     > .container-fluid {
