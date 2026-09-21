@@ -28,7 +28,7 @@ Meet Five, Maya, Zara, Marcus, Dr. Aiko, and the full cast at [Meet Five and the
 
 {{< cardpane >}}
 {{% card header="Kubernetes" %}}
-Hands-on Playground tutorials for pods, deployments, services, and more — plus a [visual request-flow walkthrough]({{< ref "kanvas/tutorials/kubernetes-request-flow.md" >}}). Start at the [Kubernetes tutorials hub]({{< ref "kanvas/tutorials/kubernetes/_index.md" >}}).
+Hands-on Playground tutorials for pods, deployments, services, and more — plus a [visual request-flow walkthrough]({{< ref "kanvas/tutorials/kubernetes/kubernetes-request-flow.md" >}}). Start at the [Kubernetes tutorials hub]({{< ref "kanvas/tutorials/kubernetes/_index.md" >}}).
 {{% /card %}}
 {{% card header="GCP Data Pipeline" %}}
 [Building a GCP Data Pipeline Design]({{< ref "kanvas/tutorials/data-pipeline-gcp.md" >}}) — model Pub/Sub, Dataflow, BigQuery, and GKE in Designer.
