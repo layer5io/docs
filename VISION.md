@@ -2,12 +2,12 @@
 
 Layer5 Docs exists to give users and contributors a trustworthy path through Layer5 products and their public developer resources.
 It publishes the documentation at `docs.layer5.io`, with first-party Cloud and Kanvas content in this repository and clear routes to canonical documentation for projects such as Meshery and Nighthawk.
-It owns the public documentation contract for the content maintained here. Product implementations remain the authority for what the software actually does.
+It owns the public documentation contract for the content maintained here. For Layer5 Cloud content, the implementation remains the authority for what the software actually does.
 
 ## Shipped behavior is the source of truth
 
 Layer5 Docs documents behavior that can be verified in the relevant implementation or released product.
-When summaries, runbooks, API descriptions, or older prose disagree with shipped behavior, documentation follows the implementation and flags the mismatch instead of repeating it.
+When repository reference material disagrees with shipped behavior, documentation follows the implementation and flags the mismatch instead of repeating it.
 For Layer5 Cloud, behavior claims are checked against the handlers and UI that produce the behavior, not only against secondary descriptions.
 Private implementation repositories are evidence for maintainers, not public destinations for readers; public pages cite released versions or other reader-accessible references instead.
 Release-note automation tracks released Cloud and Kanvas versions so version history remains tied to published artifacts.

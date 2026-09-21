@@ -10,7 +10,7 @@ This document provides claim-by-claim traceability for `VISION.md` to concrete e
   * **Evidence**: `README.md` describes `docs.layer5.io` as documentation and developer resources for Layer5 products and explicitly welcomes contributions.
 * **Claim**: "It publishes the documentation at `docs.layer5.io`, with first-party Cloud and Kanvas content in this repository and clear routes to canonical documentation for projects such as Meshery and Nighthawk."
   * **Evidence**: `package.json` identifies the project as "Layer5 Product Documentation" with homepage `https://docs.layer5.io`; `content/en/_index.md` links to Cloud Docs and Kanvas Docs in this site, and links readers to `docs.meshery.io` and `getnighthawk.dev`.
-* **Claim**: "It owns the public documentation contract for the content maintained here. Product implementations remain the authority for what the software actually does."
+* **Claim**: "It owns the public documentation contract for the content maintained here. For Layer5 Cloud content, the implementation remains the authority for what the software actually does."
   * **Evidence**: `AGENTS.md` states that Layer5 Cloud behavior must be verified against `meshery-cloud` implementation and that server behavior is the arbiter when documentation or API descriptions disagree.
 
 ---
@@ -19,8 +19,8 @@ This document provides claim-by-claim traceability for `VISION.md` to concrete e
 
 * **Claim**: "Layer5 Docs documents behavior that can be verified in the relevant implementation or released product."
   * **Evidence**: `AGENTS.md`, "Documenting Layer5 Cloud behavior", requires product claims to be verified against `origin/master` in `meshery-cloud`.
-* **Claim**: "When summaries, runbooks, API descriptions, or older prose disagree with shipped behavior, documentation follows the implementation and flags the mismatch instead of repeating it."
-  * **Evidence**: `AGENTS.md` says repository reference material is a starting point rather than the arbiter and gives `data/openapi.yml` as a concrete example where server behavior must win.
+* **Claim**: "When repository reference material disagrees with shipped behavior, documentation follows the implementation and flags the mismatch instead of repeating it."
+  * **Evidence**: `AGENTS.md` says repository reference material is a starting point rather than the arbiter and requires contributors to document handler responses and flag the `data/openapi.yml` mismatch.
 * **Claim**: "For Layer5 Cloud, behavior claims are checked against the handlers and UI that produce the behavior, not only against secondary descriptions."
   * **Evidence**: `AGENTS.md` points contributors to `ui/components/identity/org-management/` for screen strings and `server/handlers/` for behavior.
 * **Claim**: "Private implementation repositories are evidence for maintainers, not public destinations for readers; public pages cite released versions or other reader-accessible references instead."
