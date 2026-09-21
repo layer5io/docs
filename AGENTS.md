@@ -300,10 +300,10 @@ ships.
 
 `meshery-cloud` is a private repository, so never link one of its pull
 requests, issues, or files from published docs content - the link 404s for
-readers of docs.layer5.io. Cite the released version instead (`v1.0.253`),
-which an operator can check against their own deployment. Private repository
-references are still acceptable in commit messages and in the docs pull request
-discussion, where the reviewer audience can open them.
+readers of docs.layer5.io. Cite the released version that matches the behavior
+you verified instead, so operators can compare against their own deployment.
+Private repository references are still acceptable in commit messages and in
+the docs pull request discussion, where the reviewer audience can open them.
 
 Behavior can also disagree with `data/openapi.yml`. The server is the arbiter
 for what a response looks like: that file declares `401` as `text/plain` on
