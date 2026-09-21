@@ -1,6 +1,9 @@
 <div class="md__image">
+
 {{- with $img }}
+
   {{- $webp := .Process "webp q85" }}
+
   <button
     type="button"
     class="md__image-trigger"
@@ -20,7 +23,9 @@
       />
     </picture>
   </button>
+
 {{- else }}
+
   <button
     type="button"
     class="md__image-trigger"
@@ -32,5 +37,7 @@
       class="{{ $class }}"
     />
   </button>
+
 {{- end }}
+
 </div>

@@ -46,10 +46,16 @@ function openModal(image) {
   modalTrigger = image.closest(".md__image-trigger");
 
   modalPic.src = src;
+<<<<<<< HEAD
   modalPic.alt = image.alt;
+=======
+  modalPic.alt = image.alt || "Image preview";
+>>>>>>> 5d542cec899 (fix: preserve image modal behavior)
   modal.style.display = "block";
 
-  closeButton.focus();
+  if (closeButton) {
+    closeButton.focus();
+  }
 }
 
 function closeModal() {
