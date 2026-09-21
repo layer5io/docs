@@ -8,9 +8,15 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[265 105 41 234 347 263]" src="./images/overview.png" onclick="openModal(this.id)" alt="Example of Academy" 
+ &lt;img src="./images/overview.png" onclick="openModal(this)" alt="Example of Academy"
  class="md-image-responsive" /&gt;
-&lt;/div&gt;&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/pr-preview/pr-1264/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1264/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3 id="who-can-create-content" class="heading-link"&gt;
+ Who Can Create Content
+ &lt;a href="#who-can-create-content" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/pr-preview/pr-1264/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1264/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
 
 &lt;h3 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -60,7 +66,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[477 61 41 368 112 482]" src="./images/academy-admin.svg" onclick="openModal(this.id)" alt="Academy Admin Role" 
+ &lt;img src="./images/academy-admin.svg" onclick="openModal(this)" alt="Academy Admin Role"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/pr-preview/pr-1264/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1264/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
 &lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
@@ -72,7 +78,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[230 398 53 50 191 401]" src="./images/index-page.png" onclick="openModal(this.id)" alt="example image" 
+ &lt;img src="./images/index-page.png" onclick="openModal(this)" alt="example image"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
@@ -156,7 +162,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;img id="[384 196 194 473 404 1]" src="images/template-creator.png" onclick="openModal(this.id)" alt="Academy Content Template Creator" 
+ &lt;img src="images/template-creator.png" onclick="openModal(this)" alt="Academy Content Template Creator"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;ol&gt;
