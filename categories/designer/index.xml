@@ -1142,36 +1142,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  &lt;img src="images/export-modal.gif" onclick="openModal(this)" alt="Export Icon"
  class="md-image-responsive" /&gt;
 &lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow – A Visual Guide</title><link>/kanvas/tutorials/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes-request-flow/</guid><description>&lt;p&gt;In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits &amp;ldquo;Enter&amp;rdquo; in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a &lt;strong&gt;diagram built in Kanvas&lt;/strong&gt;.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Note&lt;/h4&gt;
- 
- This tutorial is completely visual and beginner-friendly. No YAML or CLI is required.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="prerequisites" class="heading-link"&gt;
- Prerequisites
- &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Basic understanding of Kubernetes objects (Service, Pod, Container)&lt;/li&gt;
-&lt;li&gt;Access to the &lt;em&gt;Kanvas Playground&lt;/em&gt;. If you don&amp;rsquo;t have an account, sign up at &lt;a href="https://play.meshery.io/"&gt;Kanvas Playground&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="lab-scenario" class="heading-link"&gt;
- Lab Scenario
- &lt;a href="#lab-scenario" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;We will explore a simple application architecture in Kubernetes.&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
+&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
 
 &lt;h2 id="publishing-workflow" class="heading-link"&gt;
  Publishing Workflow
