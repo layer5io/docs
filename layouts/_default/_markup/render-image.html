@@ -1,7 +1,10 @@
+{{- $alt := .Text -}}
+{{- $dest := .Destination -}}
+{{- $class := .Title -}}
+{{- $img := resources.Get (strings.TrimPrefix "/" $dest) -}}
+
 <div class="md__image">
-
 {{- with $img }}
-
   {{- $webp := .Process "webp q85" }}
 
   <button
@@ -39,5 +42,4 @@
   </button>
 
 {{- end }}
-
 </div>
