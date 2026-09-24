@@ -31,14 +31,18 @@
 <div class="md__image">
 {{- with $img }}
   {{- $webp := .Process "webp q85" }}
-  <picture>
-    <source srcset="{{ $webp.RelPermalink }}" type="image/webp" width="{{ .Width }}" height="{{ .Height }}">
-    <img src="{{ $dest | safeURL }}" onclick="openModal(this)" alt="{{ $alt }}"
-    width="{{ .Width }}" height="{{ .Height }}"
-    class="{{ $class }}" />
-  </picture>
+  <button type="button" class="md__image-trigger" disabled aria-label="Expand image{{ with $alt }}: {{ . }}{{ end }}">
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" width="{{ .Width }}" height="{{ .Height }}">
+      <img src="{{ $dest | safeURL }}" alt="{{ $alt }}"
+      width="{{ .Width }}" height="{{ .Height }}"
+      class="{{ $class }}" />
+    </picture>
+  </button>
 {{- else }}
-  <img src="{{ $dest | safeURL }}" onclick="openModal(this)" alt="{{ $alt }}"
-  class="{{ $class }}" />
+  <button type="button" class="md__image-trigger" disabled aria-label="Expand image{{ with $alt }}: {{ . }}{{ end }}">
+    <img src="{{ $dest | safeURL }}" alt="{{ $alt }}"
+    class="{{ $class }}" />
+  </button>
 {{- end }}
 </div>
