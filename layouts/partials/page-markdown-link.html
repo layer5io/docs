@@ -1,0 +1,5 @@
+{{ with .OutputFormats.Get "md" -}}
+<a href="{{ .RelPermalink | safeURL }}" type="{{ .MediaType.Type }}">
+  <i class="fa-solid fa-file-lines fa-fw"></i> View as Markdown
+</a>
+{{ end -}}
