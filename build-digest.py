@@ -7,7 +7,6 @@ Excludes: release notes, helm chart values, images, videos, HTML comments, Hugo 
 """
 
 import sys
-import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -102,13 +101,24 @@ def heading_depth(relpath: Path, is_index: bool) -> int:
 
 
 def main():
+    """Parse arguments, collect markdown files, and write the digest."""
     if len(sys.argv) != 4:
         print(f"Usage: {sys.argv[0]} <content_dir> <output_file> <title>")
         sys.exit(1)
 
-    content_dir = Path(sys.argv[1])
-    output_file = Path(sys.argv[2])
+    content_dir_display = sys.argv[1]
+    output_file_display = sys.argv[2]
+    try:
+        content_dir = Path(content_dir_display).resolve()
+        output_file = Path(output_file_display).resolve()
+    except (OSError, RuntimeError) as e:
+        print(f"Error: invalid path: {e}", file=sys.stderr)
+        sys.exit(1)
     doc_title = sys.argv[3]
+
+    if not content_dir.is_dir():
+        print(f"Error: content directory '{content_dir_display}' does not exist or is not a directory.", file=sys.stderr)
+        sys.exit(1)
 
     # Collect all markdown files, excluding releases and helm-chart-values
     md_files = []
@@ -122,13 +132,16 @@ def main():
         # Exclude helm chart values
         if f.name == 'helm-chart-values.md':
             continue
+        # Exclude the output file itself when placed inside content_dir
+        if f.resolve() == output_file:
+            continue
 
         md_files.append(f)
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out_lines = [
         f"# {doc_title}\n",
-        f"> Auto-generated documentation digest. Source: `{content_dir}`  ",
+        f"> Auto-generated documentation digest. Source: `{content_dir_display}`  ",
         f"> Generated: {now}\n",
         "---\n",
     ]
@@ -155,9 +168,14 @@ def main():
         out_lines.append("\n\n---\n")
         file_count += 1
 
+    try:
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+    except OSError as e:
+        print(f"Error: cannot create output directory: {e}", file=sys.stderr)
+        sys.exit(1)
     output_file.write_text('\n'.join(out_lines), encoding='utf-8')
     total_lines = sum(1 for _ in output_file.read_text().split('\n'))
-    print(f"Done: {total_lines} lines, {file_count} documents written to {output_file}")
+    print(f"Done: {total_lines} lines, {file_count} documents written to {output_file_display}")
 
 
 if __name__ == '__main__':
