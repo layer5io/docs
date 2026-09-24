@@ -1,61 +1,220 @@
-<div id="myModal" class="modal">
-  <button class="modal-close" onclick="closeModal()">close</button>
+<div
+  id="myModal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Image preview"
+>
+  <button
+    type="button"
+    class="modal-close"
+    onclick="closeModal()"
+    aria-label="Close image preview"
+  >
+    close
+  </button>
   <div class="modal-cont">
-    <img class="modal-pic" id="modalPic" onclick="closeModal()" style="max-width: 100%; max-height: 80vh; margin: auto;" alt="Modal-pic">
+    <img
+      class="modal-pic"
+      id="modalPic"
+      onclick="closeModal()"
+      style="max-width: 100%; max-height: 80vh; margin: auto;"
+      alt=""
+    >
   </div>
 </div>
 
 <script>
+var modalTrigger = null;
+
 // Open the Modal
 function openModal(imageIdOrElement) {
-  var src;
+  var image = null;
+  var trigger = null;
 
-  if (typeof imageIdOrElement === 'string') {
-    // If it's a string (image ID), get the source using the ID
-    src = document.getElementById(imageIdOrElement).src;
+  if (typeof imageIdOrElement === "string") {
+    image = document.getElementById(imageIdOrElement);
   } else if (imageIdOrElement instanceof HTMLImageElement) {
-    // If <img>, get the source directly. currentSrc is what the browser actually
-    // chose, so inside a <picture> the modal reuses the already-fetched WebP
-    // rather than downloading the larger original.
-    src = imageIdOrElement.currentSrc || imageIdOrElement.src;
+    image = imageIdOrElement;
+    trigger = image.closest(".md__image-trigger");
+  } else if (imageIdOrElement instanceof HTMLElement) {
+    trigger = imageIdOrElement.closest(".md__image-trigger") || imageIdOrElement;
+    image = imageIdOrElement.querySelector("img") || imageIdOrElement;
   }
 
+  if (!image || !(image instanceof HTMLImageElement)) {
+    return;
+  }
+
+  // Use currentSrc if available (e.g. inside a <picture>) so the modal reuses
+  // the already-fetched WebP image rather than downloading the larger fallback.
+  var src = image.currentSrc || image.src;
   if (src && src.includes("#")) {
     src = src.substring(0, src.indexOf("#"));
   }
 
-  document.getElementById("modalPic").src = src;
-  document.getElementById("myModal").style.display = "block";
+  var modal = document.getElementById("myModal");
+  var modalPic = document.getElementById("modalPic");
+  var closeButton = modal ? modal.querySelector(".modal-close") : null;
+
+  // Track the trigger element to restore focus on close:
+  // 1. .md__image-trigger button if present
+  // 2. The image element itself (give tabindex="-1" so it can receive programmatic focus)
+  // 3. Currently active element as fallback
+  if (trigger) {
+    modalTrigger = trigger;
+  } else if (image.closest && image.closest(".md__image-trigger")) {
+    modalTrigger = image.closest(".md__image-trigger");
+  } else if (image) {
+    modalTrigger = image;
+  } else {
+    modalTrigger =
+      document.activeElement && document.activeElement !== document.body
+        ? document.activeElement
+        : null;
+  }
+
+  if (modalTrigger && modalTrigger === image && !image.hasAttribute("tabindex")) {
+    image.setAttribute("tabindex", "-1");
+  }
+
+  if (modalPic) {
+    modalPic.src = src;
+    modalPic.alt = image.alt || "";
+  }
+
+  if (modal) {
+    modal.style.display = "block";
+  }
+
+  if (closeButton) {
+    closeButton.focus();
+  }
 }
 
 // Close the Modal
-function closeModal() { 
-  document.getElementById("modalPic").src = "";
-  document.getElementById("myModal").style.display = "none";
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  var modalPic = document.getElementById("modalPic");
+  var trigger = modalTrigger;
+
+  if (modalPic) {
+    modalPic.src = "";
+    modalPic.alt = "";
+  }
+
+  if (modal) {
+    modal.style.display = "none";
+  }
+
+  modalTrigger = null;
+
+  if (trigger && typeof trigger.focus === "function" && document.contains(trigger)) {
+    trigger.focus();
+  }
 }
 
-// Listen for the Escape key to close the modal
+function isModalOpen() {
+  var modal = document.getElementById("myModal");
+  return modal && modal.style.display === "block";
+}
+
+// Trap keyboard focus within the modal dialog
+function trapModalFocus(event) {
+  if (event.key !== "Tab" || !isModalOpen()) {
+    return;
+  }
+
+  var modal = document.getElementById("myModal");
+  var focusableElements = modal.querySelectorAll(
+    'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+
+  if (!focusableElements.length) {
+    event.preventDefault();
+    return;
+  }
+
+  var firstElement = focusableElements[0];
+  var lastElement = focusableElements[focusableElements.length - 1];
+
+  if (!modal.contains(document.activeElement)) {
+    event.preventDefault();
+    firstElement.focus();
+    return;
+  }
+
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault();
+    lastElement.focus();
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault();
+    firstElement.focus();
+  }
+}
+
+// Listen for Escape key and Tab key
 document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
+  if (event.key === "Escape" && isModalOpen()) {
+    event.preventDefault();
     closeModal();
+    return;
+  }
+
+  trapModalFocus(event);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("myModal");
+
+  // Handle Markdown image triggers
+  var imageTriggers = document.querySelectorAll(".md__image-trigger");
+  imageTriggers.forEach(function (trigger) {
+    // If the image is inside an anchor link, avoid nesting interactive elements.
+    var link = trigger.closest("a");
+    if (link) {
+      var linkedImg = trigger.querySelector("img");
+      if (linkedImg) {
+        linkedImg.dataset.modal = "false";
+      }
+      while (trigger.firstChild) {
+        trigger.parentNode.insertBefore(trigger.firstChild, trigger);
+      }
+      trigger.remove();
+      return;
+    }
+
+    trigger.disabled = false;
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault();
+      openModal(trigger);
+    });
+  });
+
+  // Attach click handler to any raw content <img> not inside .md__image-trigger or <a>
+  document.querySelectorAll("img").forEach(function (img) {
+    if (
+      img.dataset.modal === "false" ||
+      img.closest("#myModal") ||
+      img.closest("a") ||
+      img.closest(".md__image-trigger")
+    ) {
+      return;
+    }
+
+    img.addEventListener("click", function () {
+      openModal(img);
+    });
+  });
+
+  // Close modal when clicking directly on the overlay background
+  if (modal) {
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
   }
 });
-
-// Attach onclick attribute to all <img> after DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  var imgTags = document.querySelectorAll("img");
-  imgTags.forEach(function (img) {
-    img.onclick = function () {
-      if (img.dataset.modal !== "false") {
-        openModal(img);
-      }
-    };
-  });
-
-  // Close modal when clicking anywhere inside #myModal
-  var modal = document.getElementById("myModal");
-  modal.addEventListener("click", function () {
-    closeModal();
-  });
-});
 </script>
+
