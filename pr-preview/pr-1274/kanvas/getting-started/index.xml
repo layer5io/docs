@@ -63,7 +63,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Drag and Drop Import"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Drag and Drop Import"&gt;
  &lt;img src="images/importing-designs/drag-drop.gif" alt="Drag and Drop Import"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -95,7 +95,7 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: configuration-panel"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: configuration-panel"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/kanvas/getting-started/working-with-components/images/working-with-components/configuration-panel_hu_fd04d7811b478f64.webp" type="image/webp" width="2940" height="1266"&gt;
  &lt;img src="images/working-with-components/configuration-panel.png" alt="configuration-panel"

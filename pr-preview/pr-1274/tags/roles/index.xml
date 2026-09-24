@@ -204,7 +204,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: roles"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: roles"&gt;
  &lt;img src="images/roles-overview.svg" alt="roles"
  class="md-image-responsive image-center-no-shadow" /&gt;
  &lt;/button&gt;
@@ -228,7 +228,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: role-provider"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: role-provider"&gt;
  &lt;img src="images/role-provider-admin.svg" alt="role-provider"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;

@@ -23,7 +23,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Export Icon"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Export Icon"&gt;
  &lt;img src="images/export-modal.gif" alt="Export Icon"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;

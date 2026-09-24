@@ -21,7 +21,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Leaderboard page overview"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Leaderboard page overview"&gt;
  &lt;img src="images/leaderboard-page.gif" alt="Leaderboard page overview"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -53,7 +53,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Catalog main page view"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Catalog main page view"&gt;
  &lt;img src="images/catalog-view.gif" alt="Catalog main page view"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -86,7 +86,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Flow for sharing design"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Flow for sharing design"&gt;
  &lt;img src="../../images/Slide51.svg" alt="Flow for sharing design"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;

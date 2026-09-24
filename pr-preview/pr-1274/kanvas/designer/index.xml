@@ -17,7 +17,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Examples of changing edge styles in Kanvas"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Examples of changing edge styles in Kanvas"&gt;
  &lt;img src="images/style-edge.gif" alt="Examples of changing edge styles in Kanvas"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -35,7 +35,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Example"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Example"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/kanvas/designer/interpreting-component-badges/images/example_hu_89a7072c2a03db4b.webp" type="image/webp" width="1531" height="801"&gt;
  &lt;img src="images/example.png" alt="Example"
@@ -156,7 +156,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Click"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Click"&gt;
  &lt;img src="images/default.gif" alt="Click"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -173,7 +173,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Click and drag"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Click and drag"&gt;
  &lt;img src="images/click_and_drag.gif" alt="Click and drag"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -190,7 +190,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Click"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Click"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/kanvas/designer/understanding-tool-modes/images/click_hu_e81bf5123ff045fd.webp" type="image/webp" width="1126" height="462"&gt;
  &lt;img src="images/click.png" alt="Click"
@@ -211,7 +211,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Double-click component"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Double-click component"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/kanvas/designer/understanding-tool-modes/images/double_click_hu_83b454c3a6721403.webp" type="image/webp" width="1286" height="1120"&gt;
  &lt;img src="images/double_click.png" alt="Double-click component"
@@ -232,7 +232,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Double-click textbox"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Double-click textbox"&gt;
  &lt;img src="images/text-box-double-click.gif" alt="Double-click textbox"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -249,7 +249,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Right-click"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Right-click"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/kanvas/designer/understanding-tool-modes/images/right_click_hu_bc3b42b8509b13b4.webp" type="image/webp" width="743" height="702"&gt;
  &lt;img src="images/right_click.png" alt="Right-click"
@@ -270,7 +270,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Box selection"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Box selection"&gt;
  &lt;img src="images/select.gif" alt="Box selection"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -287,7 +287,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Scroll"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Scroll"&gt;
  &lt;img src="images/scroll_up_down.gif" alt="Scroll"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -304,7 +304,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Zoom"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Zoom"&gt;
  &lt;img src="images/zoom_in_out.gif" alt="Zoom"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -321,7 +321,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Scroll left/right"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Scroll left/right"&gt;
  &lt;img src="images/scroll_left_right.gif" alt="Scroll left/right"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -443,7 +443,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Export Icon"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Export Icon"&gt;
  &lt;img src="images/export-modal.gif" alt="Export Icon"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -493,7 +493,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Pin To Dock action"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Pin To Dock action"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/kanvas/designer/pin-model-to-dock/images/pin-to-dock_hu_c3c62d21f63f4f37.webp" type="image/webp" width="1646" height="758"&gt;
  &lt;img src="images/pin-to-dock.png" alt="Pin To Dock action"

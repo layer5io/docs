@@ -20208,6 +20208,8 @@ th {
   text-align: inherit;
   cursor: pointer;
   border-radius: 4px; }
+  .md__image-trigger:disabled {
+    cursor: default; }
   .md__image-trigger:focus-visible {
     outline: 2px solid #00b39f;
     outline-offset: 4px; }

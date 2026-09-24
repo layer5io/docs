@@ -15,7 +15,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Example of Academy"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Example of Academy"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/cloud/academy/creating-content/extending-the-academy/images/overview_hu_be86832c49259e3b.webp" type="image/webp" width="1534" height="993"&gt;
  &lt;img src="./images/overview.png" alt="Example of Academy"
@@ -148,7 +148,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Academy Admin Role"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Academy Admin Role"&gt;
  &lt;img src="./images/academy-admin.svg" alt="Academy Admin Role"
  class="md-image-responsive" /&gt;
  &lt;/button&gt;
@@ -161,7 +161,7 @@
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: example image"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: example image"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/cloud/academy/creating-content/building-certifications/images/index-page_hu_68368cf0e80d09b4.webp" type="image/webp" width="1684" height="1384"&gt;
  &lt;img src="./images/index-page.png" alt="example image"
@@ -250,7 +250,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 
 &lt;div class="md__image"&gt;
- &lt;button type="button" class="md__image-trigger" aria-label="Expand image: Academy Content Template Creator"&gt;
+ &lt;button type="button" class="md__image-trigger" disabled aria-label="Expand image: Academy Content Template Creator"&gt;
  &lt;picture&gt;
  &lt;source srcset="/pr-preview/pr-1274/contentimg/cloud/academy/creating-content/using-content-template-creator/images/template-creator_hu_7864663dcbca87fe.webp" type="image/webp" width="1674" height="906"&gt;
  &lt;img src="images/template-creator.png" alt="Academy Content Template Creator"
