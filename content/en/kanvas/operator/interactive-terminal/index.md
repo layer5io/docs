@@ -3,6 +3,7 @@ title: Interactive Terminal
 description: >
   Learn about Interactive Terminal in Operator mode 
 categories: [Operator]
+tags: [troubleshooting]
 ---
 
 When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The **Interactive Terminal** in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like `kubectl`.
@@ -72,10 +73,3 @@ While using the interactive terminal, understand that you can only open one sess
 <!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
 
 ![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
-
-***
-
-### See Also
-
-* **[Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}):** Learn how to live-tail logs for real-time application monitoring.
-<!-- * **[Performance Management]({{< ref "kanvas/advanced/performance/index.md" >}}):** Run load tests and analyze performance profiles. -->
