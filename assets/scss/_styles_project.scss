@@ -794,21 +794,17 @@ html {
   scroll-behavior: smooth;
 }
 
-// Max-width constraint for large screens to prevent layout stretch
+// Max-width constraint for large screens to prevent centering of content
 @media (min-width: $site-max-width) {
   .td-navbar {
     > .container-fluid {
-      max-width: $site-max-width;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: none;
     }
   }
 
   .container-fluid.td-outer {
     > .td-main {
-      max-width: $site-max-width;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: none;
     }
   }
 }
