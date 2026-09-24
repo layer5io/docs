@@ -1,34 +1,70 @@
-{{- $alt := .Text -}}
+<!-- Images that use the standard image format for markdown will be displayed in a
+  magnific modal popup. Use format ![alt text](/path/to/image.img) -->
+<!-- Place this file in layouts > _default > _markup > render-image.html -->
+<!-- Also place the image-modal.css and partial/image-modal.html appropriately. -->
+<!-- PNG and JPEG sources are encoded to WebP at build time and offered through
+  <picture>. The original stays as the <img> fallback, so nothing in content has
+  to change and browsers without WebP support still get a working image.
+  Content is mounted at assets/contentimg (see hugo.toml) because Hugo can only
+  process files that are resources. -->
+<!-- Onclick opens the modal, and displays/overlays the clicked image. -->
+<!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
+
 {{- $dest := .Destination -}}
-{{- $class := .Title -}}
-{{- $img := resources.Get (strings.TrimPrefix "/" $dest) -}}
+{{- $alt := .Text -}}
+{{- $class := "md-image-responsive" -}}
+{{- with .Title }}{{ $class = printf "md-image-responsive %s" . }}{{ end -}}
+{{- $img := "" -}}
+{{- $ext := lower (path.Ext $dest) -}}
+
+{{- if and (in (slice ".png" ".jpg" ".jpeg") $ext) (not (urls.Parse $dest).Scheme) (not (hasPrefix $dest "//")) -}}
+  {{- $rel := $dest -}}
+  {{- if not (hasPrefix $dest "/") -}}
+    {{- with .Page.File -}}
+      {{- $rel = path.Join (replace .Dir "\\" "/") $dest -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $img = resources.Get (path.Join "contentimg" $rel) -}}
+  {{- if not $img -}}{{- $img = resources.Get $rel -}}{{- end -}}
+{{- end -}}
 
 <div class="md__image">
 {{- with $img }}
-  {{- $webp := .Process "webp q85" }}
-
-  <button
-    type="button"
-    class="md__image-trigger"
-    aria-label="Expand image{{ with $alt }}: {{ . }}{{ end }}"
-  >
-    <picture>
-      <source
-        srcset="{{ $webp.RelPermalink }}"
-        type="image/webp"
-      >
+  {{- if reflect.IsImageResourceProcessable . }}
+    {{- $webp := .Process "webp q85" }}
+    <button
+      type="button"
+      class="md__image-trigger"
+      aria-label="Expand image{{ with $alt }}: {{ . }}{{ end }}"
+    >
+      <picture>
+        <source
+          srcset="{{ $webp.RelPermalink }}"
+          type="image/webp"
+        >
+        <img
+          src="{{ $dest | safeURL }}"
+          alt="{{ $alt }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          class="{{ $class }}"
+        />
+      </picture>
+    </button>
+  {{- else }}
+    <button
+      type="button"
+      class="md__image-trigger"
+      aria-label="Expand image{{ with $alt }}: {{ . }}{{ end }}"
+    >
       <img
         src="{{ $dest | safeURL }}"
         alt="{{ $alt }}"
-        width="{{ .Width }}"
-        height="{{ .Height }}"
         class="{{ $class }}"
       />
-    </picture>
-  </button>
-
+    </button>
+  {{- end }}
 {{- else }}
-
   <button
     type="button"
     class="md__image-trigger"
@@ -40,6 +76,5 @@
       class="{{ $class }}"
     />
   </button>
-
 {{- end }}
 </div>

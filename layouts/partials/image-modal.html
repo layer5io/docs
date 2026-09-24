@@ -1,153 +1,159 @@
-<div 
-  id="myModal" 
-  class="modal" 
-  role="dialog" 
-  aria-modal="true" 
-  aria-label="Image preview" 
-> 
-  <button 
-    type="button" 
-    class="modal-close" 
-    onclick="closeModal()" 
-    aria-label="Close image" 
-  > 
-    close 
-  </button> 
- 
-  <div class="modal-cont"> 
-    <img 
-      class="modal-pic" 
-      id="modalPic" 
-      onclick="closeModal()" 
-      style="max-width: 100%; max-height: 80vh; margin: auto;" 
-      alt="Image preview" 
-    > 
-  </div> 
-</div> 
- 
-<script> 
-var modalTrigger = null; 
- 
-function openModal(image) { 
-  if (!(image instanceof HTMLImageElement)) { 
-    return; 
-  } 
- 
-  var src = image.currentSrc || image.src; 
- 
-  if (src && src.includes("#")) { 
-    src = src.substring(0, src.indexOf("#")); 
-  } 
- 
-  var modal = document.getElementById("myModal"); 
-  var modalPic = document.getElementById("modalPic"); 
-  var closeButton = modal.querySelector(".modal-close"); 
- 
-  modalTrigger = image.closest(".md__image-trigger"); 
- 
-  modalPic.src = src; 
-  modalPic.alt = image.alt || "Image preview"; 
-  modal.style.display = "block"; 
- 
-  if (closeButton) { 
-    closeButton.focus(); 
-  } 
-} 
- 
-function closeModal() { 
-  var modal = document.getElementById("myModal"); 
-  var modalPic = document.getElementById("modalPic"); 
-  var trigger = modalTrigger; 
- 
-  modalPic.src = ""; 
-  modal.style.display = "none"; 
-  modalTrigger = null; 
- 
-  if (trigger && document.contains(trigger)) { 
-    trigger.focus(); 
-  } 
-} 
- 
-function isModalOpen() { 
-  return document.getElementById("myModal").style.display === "block"; 
-} 
- 
-function trapModalFocus(event) { 
-  if (event.key !== "Tab" || !isModalOpen()) { 
-    return; 
-  } 
- 
-  var modal = document.getElementById("myModal"); 
- 
-  var focusableElements = modal.querySelectorAll( 
-    'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])' 
-  ); 
- 
-  if (!focusableElements.length) { 
-    event.preventDefault(); 
-    return; 
-  } 
- 
-  var firstElement = focusableElements[0]; 
-  var lastElement = focusableElements[focusableElements.length - 1]; 
- 
-  if (event.shiftKey && document.activeElement === firstElement) { 
-    event.preventDefault(); 
-    lastElement.focus(); 
-  } else if (!event.shiftKey && document.activeElement === lastElement) { 
-    event.preventDefault(); 
-    firstElement.focus(); 
-  } 
-} 
- 
-document.addEventListener("keydown", function (event) { 
-  if (event.key === "Escape" && isModalOpen()) { 
-    event.preventDefault(); 
-    closeModal(); 
-    return; 
-  } 
- 
-  trapModalFocus(event); 
-}); 
- 
-document.addEventListener("DOMContentLoaded", function () { 
-  var modal = document.getElementById("myModal"); 
- 
-  var imageTriggers = document.querySelectorAll(".md__image-trigger"); 
- 
-  imageTriggers.forEach(function (trigger) { 
-    var link = trigger.closest("a"); 
-    var image = trigger.querySelector("img"); 
- 
-    if (link && image) { 
-      image.dataset.modal = "false"; 
-      trigger.replaceWith(image); 
-      return; 
-    } 
- 
-    trigger.addEventListener("click", function () { 
-      if (image) { 
-        openModal(image); 
-      } 
-    }); 
-  }); 
- 
-  document.querySelectorAll("img:not(.md__image-trigger img)").forEach(function (img) { 
-    if (img.dataset.modal === "false" || img.closest("#myModal")) { 
-      return; 
-    } 
- 
-    img.addEventListener("click", function () { 
-      openModal(img); 
-    }); 
-  }); 
- 
-  if (modal) { 
-    modal.addEventListener("click", function (event) { 
-      if (event.target === modal) { 
-        closeModal(); 
-      } 
-    }); 
-  } 
-}); 
+<div
+  id="myModal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Image preview"
+>
+  <button
+    type="button"
+    class="modal-close"
+    onclick="closeModal()"
+    aria-label="Close image"
+  >
+    close
+  </button>
+
+  <div class="modal-cont">
+    <img
+      class="modal-pic"
+      id="modalPic"
+      onclick="closeModal()"
+      style="max-width: 100%; max-height: 80vh; margin: auto;"
+      alt="Image preview"
+    >
+  </div>
+</div>
+
+<script>
+var modalTrigger = null;
+var modalFallbackFocus = null;
+
+function openModal(image) {
+  if (!(image instanceof HTMLImageElement)) {
+    return;
+  }
+
+  var src = image.currentSrc || image.src;
+
+  if (src && src.includes("#")) {
+    src = src.substring(0, src.indexOf("#"));
+  }
+
+  var modal = document.getElementById("myModal");
+  var modalPic = document.getElementById("modalPic");
+  var closeButton = modal.querySelector(".modal-close");
+
+  modalTrigger = image.closest(".md__image-trigger");
+  modalFallbackFocus = document.activeElement;
+
+  modalPic.src = src;
+  modalPic.alt = image.alt || "Image preview";
+  modal.style.display = "block";
+
+  if (closeButton) {
+    closeButton.focus();
+  }
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  var modalPic = document.getElementById("modalPic");
+  var trigger = modalTrigger;
+  var fallbackFocus = modalFallbackFocus;
+
+  modalPic.src = "";
+  modal.style.display = "none";
+  modalTrigger = null;
+  modalFallbackFocus = null;
+
+  if (trigger && document.contains(trigger)) {
+    trigger.focus();
+  } else if (fallbackFocus && document.contains(fallbackFocus)) {
+    fallbackFocus.focus();
+  }
+}
+
+function isModalOpen() {
+  return document.getElementById("myModal").style.display === "block";
+}
+
+function trapModalFocus(event) {
+  if (event.key !== "Tab" || !isModalOpen()) {
+    return;
+  }
+
+  var modal = document.getElementById("myModal");
+
+  var focusableElements = modal.querySelectorAll(
+    'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+
+  if (!focusableElements.length) {
+    event.preventDefault();
+    return;
+  }
+
+  var firstElement = focusableElements[0];
+  var lastElement = focusableElements[focusableElements.length - 1];
+
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault();
+    lastElement.focus();
+  } else if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault();
+    firstElement.focus();
+  }
+}
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && isModalOpen()) {
+    event.preventDefault();
+    closeModal();
+    return;
+  }
+
+  trapModalFocus(event);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("myModal");
+
+  var imageTriggers = document.querySelectorAll(".md__image-trigger");
+
+  imageTriggers.forEach(function (trigger) {
+    var link = trigger.closest("a");
+    var image = trigger.querySelector("img");
+
+    if (link && image) {
+      image.dataset.modal = "false";
+      trigger.replaceWith(image);
+      return;
+    }
+
+    trigger.addEventListener("click", function () {
+      if (image) {
+        openModal(image);
+      }
+    });
+  });
+
+  document.querySelectorAll("img:not(.md__image-trigger img)").forEach(function (img) {
+    if (img.dataset.modal === "false" || img.closest("#myModal")) {
+      return;
+    }
+
+    img.addEventListener("click", function () {
+      openModal(img);
+    });
+  });
+
+  if (modal) {
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+});
 </script>
