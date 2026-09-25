@@ -2597,7 +2597,16 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.269</title><link>/cloud/reference/releases/v1.0.269/</link><pubDate>Fri, 25 Sep 2026 02:50:22 +0000</pubDate><guid>/cloud/reference/releases/v1.0.269/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.270</title><link>/cloud/reference/releases/v1.0.270/</link><pubDate>Fri, 25 Sep 2026 04:47:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.270/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(academy): accept list filters as repeated query keys @NSTKrishna (#6123)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.269</title><link>/cloud/reference/releases/v1.0.269/</link><pubDate>Fri, 25 Sep 2026 02:50:22 +0000</pubDate><guid>/cloud/reference/releases/v1.0.269/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(server): stop users from awarding themselves badges @leecalcote (#6124)&lt;/li&gt;
 &lt;li&gt;docs(ux): Canvas-first GitHub onboarding — Cloud follow-on pointer @leecalcote (#6115)&lt;/li&gt;
 &lt;li&gt;feat(ui): migrate dashboard to Sistent DashboardLayout and WidgetPicker @NSTKrishna (#5992)&lt;/li&gt;
