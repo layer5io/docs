@@ -3,7 +3,7 @@ title: Saving Designs
 weight: 15
 description: >
   How Kanvas persists your work, what the save indicator is telling you, and how to save a copy.
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

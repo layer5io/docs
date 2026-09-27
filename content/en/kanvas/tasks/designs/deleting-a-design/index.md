@@ -3,7 +3,7 @@ title: Deleting a Design
 description: >
   Permanently delete a design you own, and understand how deleting differs from unpublishing a design or removing it from a workspace.
 weight: 6
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

@@ -3,7 +3,7 @@ title: Account Consolidation
 description: >
   Layer5 Cloud resolves email/password, GitHub sign-in, and Google sign-in to a single account per verified email address.
 weight: 6
-categories: [Identity]
+categories: [identity]
 tags: [users]
 ---
 
