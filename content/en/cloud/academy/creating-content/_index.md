@@ -20,4 +20,10 @@ This guide provides all the necessary documentation for building high-quality ed
 * Designing effective quizzes and assessments.
 * Managing and publishing your content.
 
+Each content type also has a dedicated build guide:
+
+* [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) - repository setup and learning paths.
+* [Building Challenges]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) - hands-on, scenario-based tasks.
+* [Building Certifications]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}) - formal assessments and certificates.
+
 We're excited to see what you'll build!

@@ -41,7 +41,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Can perform CRUD on all resources
+- Can create, view, edit and delete every resource
 
 {{% /card %}}
 {{< /cardpane >}}

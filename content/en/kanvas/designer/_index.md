@@ -2,7 +2,7 @@
 title: Exploring Designer
 description: >
   Designer mode is for those who want to create their own Kanvas, using the palette of components provided by Meshery.
-weight: 4
+weight: 3
 categories: [designer]
 tags: [designer]
 aliases:
@@ -10,6 +10,11 @@ aliases:
 ---
 
 Kanvas Designer is the visual canvas where you create, edit, and collaborate on cloud-native infrastructure designs. Using a drag-and-drop palette of components — from managed Kubernetes clusters and serverless functions to databases and object storage — you can model entire environments, annotate connections, and share living diagrams with your team, all without leaving your browser.
+
+<figure>
+  <img src="images/audit-2026-09/designer-dock.png" alt="Kanvas Designer workspace with bottom dock, Layers panel, and Share controls" />
+  <figcaption>Designer workspace (anonymous capture, Sep 2026): bottom dock tools, Layers panel, and Layers / Comments / Actions / Share in the header. Chrome may differ slightly from older MeshMap-era screenshots elsewhere in these docs.</figcaption>
+</figure>
 
 ## Building the `api-platform-aws` Design
 

@@ -1,3 +1,5 @@
+// TODO: a lot of classes here seem to straight up not exist
+// in the actual templates. Verify this and clean up this file.
 
 // Taxonomies - e.g. Tags, Categories, ...
 
@@ -139,6 +141,7 @@
     }
   }
   
+
   // Example for simple tags layout
   .taxo-text-tags {
     .taxonomy-term {
@@ -161,9 +164,6 @@
         background: none;
         color: $link-color;
   
-        .taxonomy-count {
-          color: $dark !important;
-        }
       }
   
       &:hover::before {
@@ -188,10 +188,6 @@
       background: none;
       vertical-align: super;
       font-size: 0.75em;
-    }
-  
-    .taxonomy-term:hover {
-      color: $link-color !important;
     }
   }
   

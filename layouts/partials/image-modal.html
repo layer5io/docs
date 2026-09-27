@@ -14,8 +14,10 @@ function openModal(imageIdOrElement) {
     // If it's a string (image ID), get the source using the ID
     src = document.getElementById(imageIdOrElement).src;
   } else if (imageIdOrElement instanceof HTMLImageElement) {
-    // If <img>, get the source directly
-    src = imageIdOrElement.src;
+    // If <img>, get the source directly. currentSrc is what the browser actually
+    // chose, so inside a <picture> the modal reuses the already-fetched WebP
+    // rather than downloading the larger original.
+    src = imageIdOrElement.currentSrc || imageIdOrElement.src;
   }
 
   if (src && src.includes("#")) {

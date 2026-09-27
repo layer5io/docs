@@ -16,7 +16,7 @@ Layer5 Cloud's webhook configurations are managed through environment variables 
 
 ### Step 1: Locate the .env File
 
-Found **.env** files in the `config` directory of your Layer5 Cloud installation. These file contains environment variables that control various aspects of the application, including webhook URLs.
+Find the **.env** file in the `config` directory of your Layer5 Cloud installation. This file contains environment variables that control various aspects of the application, including webhook URLs.
 
 ### Step 2: Define Custom Webhooks in the .env file
 
@@ -29,7 +29,7 @@ Add your custom webhook URLs to the **.env** file by modifying the existing vari
 # Below is the list of webhooks that Layer5 Cloud uses internally.
 # You can replace the values of these variables with your own webhook URLs.
 
-# Triggers when a user fills the help and support form.  
+# Triggers when a user fills the help and support form, in Layer5 Cloud or in Kanvas.  
 WEBHOOK_HELP_AND_SUPPORT="https://your-custom-webhook-url.com/help-support"
 
 # Webhook to send an email notification to the user when they receive a Kanvas entitlement
@@ -40,12 +40,18 @@ WEBHOOK_SIGNUP_REQUEST="https://your-custom-webhook-url.com/signup-request"
 
 ```
 
+{{< alert type="note" title="WEBHOOK_HELP_AND_SUPPORT also receives Kanvas support requests" >}}
+`WEBHOOK_HELP_AND_SUPPORT` is no longer fired only by the Layer5 Cloud Help and Support form. Support requests raised inside [Kanvas](/kanvas/reference/help-and-support) travel from the browser to Meshery Server, which forwards them to your Layer5 Cloud deployment, which in turn fires this same webhook. Both sources deliver the same `memberFormOne` payload shape, so no change to your webhook endpoint is required - expect the additional volume and the new origin.
+
+Because Kanvas's request is relayed through Meshery Server to your remote provider, Kanvas users must be connected to your Layer5 Cloud deployment (or another remote provider) for Help and Support to work at all; under Meshery's local provider the request is rejected as not implemented.
+{{< /alert >}}
+
 It is advisable not to change variable names to avoid potential conflicts. If you are customizing the remote provider to support additional webhooks, you can add new variables following the naming convention starting with WEBHOOK.
 
-### Step 4: Applying the Configuration
+### Step 3: Applying the Configuration
 
 After updating the **.env** file, apply the changes to your Layer5 Cloud installation. This typically involves restarting the services.
 
-### Step 5: Testing the Webhooks
+### Step 4: Testing the Webhooks
 
 Once the configuration is applied, test the webhooks to ensure they are functioning correctly. You can trigger each webhook by performing the associated actions (e.g., filling out the help and support form, triggering a Kanvas entitlement, or processing a signup request).

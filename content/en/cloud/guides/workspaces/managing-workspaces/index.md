@@ -127,8 +127,14 @@ When you link an [Environment]({{< ref "cloud/concepts/spaces/environments.md" >
 The process of linking environments is almost the same as assigning teams.
 ![Animation showing environment assignment process](images/assign_environment.png)
 
+Opening the **Environments** tile is also how you see which Environments a Workspace currently draws on: the dialog's assigned list is that Workspace's Environments.
+
 {{< alert type="info" title="Many-to-Many Relationship" >}}
 An Environment can be linked to multiple Workspaces, and a Workspace can have multiple Environments. This allows you to share common environments across different projects.
+{{< /alert >}}
+
+{{< alert type="info" title="Managing the Environments Themselves" >}}
+Creating an Environment, editing it, and choosing which Connections belong to it are done on the Environments page rather than here. See [Managing Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}).
 {{< /alert >}}
 
 ### Move Designs and Views Between Workspaces

@@ -1,6 +1,6 @@
 ---
 title: Kanvas Documentation
-description: Kanvas delivers a collaborative experience for engineers similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling.
+description: Kanvas delivers a collaborative experience for engineers similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling.
 linkTitle: Kanvas
 type: docs
 menu: {main: {weight: 3}}
@@ -11,13 +11,6 @@ aliases:
     - /meshmap/
 ---
 
-<!-- {{% pageinfo %}}
-
-**Kanvas** is a visual and collaborative configuration management tool for cloud native infrastructure. It simplifies the complexity of Kubernetes and multi-cloud infrastructure management, making it accessible to all.
-
-{{% /pageinfo %}} -->
-<!-- {{< figure src="layer5-cloud-provider.svg"  class="image-center-shadow" >}} -->
-
 {{% pageinfo %}}
 
 ## Understanding the Layer5 Ecosystem
@@ -27,7 +20,7 @@ is an identity provider and global console for deployments with an extensible an
 {{< /ecosystem-box >}}
 
 {{< ecosystem-box icon="images/logos/kanvas-icon-color.svg" image="true" title="Kanvas" >}}
-delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+delivers a collaborative experience similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
 {{< /ecosystem-box >}}
 
 {{% /pageinfo %}}
@@ -60,26 +53,3 @@ Choose your mode of operation for Kanvas.
   </a>
 {{< /cardpane >}}
 </div>
-
-
-<!-- ## What is Kanvas?
-
-Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
-
-## Why do I want it?
-
-Help your user know if your project will help them. Useful information can include:
-
-* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
-
-* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
-
-* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
-
-## Where should I go next?
-
-Give your users next steps from the Overview. For example:
-
-* [Getting Started](/docs/getting-started/): Get started with $project
-* [Examples](/docs/examples/): Check out some example code!
- -->
