@@ -1,7 +1,7 @@
 ---
 title: Deploying Layer5 Cloud
 description: "Layer5 Cloud is a collection of services that can be deployed on-premises using Helm."
-categories: [Self-Hosted]
+categories: [self-hosted]
 tags: [helm]
 weight: 2
 aliases:

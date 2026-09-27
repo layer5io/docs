@@ -3,7 +3,7 @@ title: Auto-pan on Drag
 description: >
     Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
 weight: 3
-categories: [Designer]
+categories: [designer]
 tags: [performance, interaction]
 ---
 

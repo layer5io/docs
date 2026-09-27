@@ -2,8 +2,8 @@
 title: Default Permissions
 description: >
   List of default permissions granted to the Organizations, Teams and Users roles.
-categories: [Identity]
-tags: [perms]
+categories: [identity]
+tags: [permissions]
 ---
 
 {{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md#keychains-management" >}}) and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}

@@ -3,7 +3,7 @@ title: Render Modes
 description: >
     Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
 weight: 4
-categories: [Designer, Operator]
+categories: [designer, operator]
 tags: [performance, rendering]
 ---
 

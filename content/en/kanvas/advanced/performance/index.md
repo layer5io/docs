@@ -3,7 +3,7 @@ title: Performance Limits and Tuning
 description: >
     Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
 weight: 1
-categories: [Designer, Operator]
+categories: [designer, operator]
 tags: [performance]
 ---
 
@@ -76,9 +76,9 @@ To improve the performance of your design, consider optimizing by disabling one 
   <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
 
-Some layers specifically offer control of **visibility of components**, while other layers offer control over the **ongoing evaluation of relationships** between components. 
+Some layers specifically offer control of **visibility of components**, while other layers offer control over the **ongoing evaluation of relationships** between components.
 
-Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the **number and type** of components in view. 
+Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the **number and type** of components in view.
 
 > Even though you might hide components, those components are not deleted or removed from your design. These components are simply hidden from current view.
 
@@ -102,6 +102,10 @@ To optimize performance, consider the following:
 ## What Affects Performance
 
 As your designs grow in complexity, certain design patterns can impact how smoothly Kanvas responds. Understanding these factors helps you create designs that remain fast and responsive.
+
+{{< alert type="info" title="Related performance controls" >}}
+This page covers the design patterns and tuning levers that affect Kanvas performance. For the per-mode rendering ladder (Full, Medium, Wireframe, View-Only) and automatic fidelity management, see [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}). For the drag-to-edge viewport pan and its per-render-mode size thresholds, see [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}).
+{{< /alert >}}
 
 ### Working with Grouped Components
 

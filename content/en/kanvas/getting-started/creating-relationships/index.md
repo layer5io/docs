@@ -3,7 +3,7 @@ title: Creating Relationships
 description: >
   Relationships identify and facilitate genealogy between Components.
 weight: 4
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 draft: false
 aliases:

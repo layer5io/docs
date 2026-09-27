@@ -5,7 +5,7 @@ description: >
   Branded, and White-Label — and how to choose between them based on your
   domain, identity provider, and sign-in needs.
 weight: 2
-categories: [Identity]
+categories: [identity]
 tags: [orgs, custom-domain, identity, byoc, white-labeling]
 aliases:
   - /cloud/identity/organizations/configuration-scenarios/

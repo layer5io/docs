@@ -2,7 +2,7 @@
 title: Getting Started with Designs
 description: What does your user need to know to try your project?
 weight: 2
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/getting-started

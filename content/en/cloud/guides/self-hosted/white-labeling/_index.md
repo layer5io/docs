@@ -1,7 +1,7 @@
 ---
 title: White-labeling (Rebranding)
 weight: 1
-categories: [Self-Hosted]
+categories: [self-hosted]
 tags: [white-labeling, custom-domain, orgs]
 description: >
   Customize the appearance and branding of your engineering platform powered by Layer5 Cloud. 

@@ -1,6 +1,6 @@
 ---
 title: Email / SMTP Troubleshooting
-categories: [Self-Hosted]
+categories: [self-hosted]
 description: >
   This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features. 
 aliases:

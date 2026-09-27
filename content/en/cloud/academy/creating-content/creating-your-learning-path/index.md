@@ -3,8 +3,8 @@ title: Creating Content for the Academy
 weight: 3
 description: >
   A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 aliases:
 - /cloud/academy/creating-your-learning-path/
 - /cloud/academy/creating-academy-content/
@@ -16,11 +16,11 @@ This guide provides a step-by-step walkthrough for creating and organizing new c
 
 ### Prerequisites
 
-Before you dive into creating your first Academy content, it's helpful to be familiar with the core technologies and concepts used by the Academy platform. 
+Before you dive into creating your first Academy content, it's helpful to be familiar with the core technologies and concepts used by the Academy platform.
 
 - **Git and GitHub**: All learning content is managed in a Git repository.
-- **Markdown**: All content is written in standard Markdown. 
-- **Hugo**: The entire Academy platform is built on the [Hugo](https://gohugo.io/) static site generator. 
+- **Markdown**: All content is written in standard Markdown.
+- **Hugo**: The entire Academy platform is built on the [Hugo](https://gohugo.io/) static site generator.
 - **Academy Template & Theme**: We provide an `academy-example` repository that serves as a pre-configured template. [Layer5 Academy theme](https://github.com/layer5io/academy-theme) to ensure your content is styled correctly right out of the box.
 - **A Layer5 Cloud Account**: Required to obtain your Organization ID and Personal Access Token for publishing.
 
@@ -35,7 +35,7 @@ Start by preparing a dedicated Git repository for your learning content. Using o
 
 ### 2. Clone Your Fork Locally
 
-- Use the `git clone` command to download your forked repository. 
+- Use the `git clone` command to download your forked repository.
 - Example:
   ```bash
   # Replace `<your-username>` with your actual GitHub username
@@ -47,11 +47,11 @@ Start by preparing a dedicated Git repository for your learning content. Using o
 ### 3. Update the Go Module Path
 
 1. Open the `go.mod` file located at the root of your `academy-example` project.
-2. The first line will be: 
+2. The first line will be:
   ```go
   module github.com/layer5io/academy-example
   ```
-3. Change this line to match your fork's path: 
+3. Change this line to match your fork's path:
   ```go
   module github.com/<your-username>/<your-repo-name>
   ```
@@ -119,18 +119,18 @@ A high-level view of the learning path structure looks like this:
 
  ```text
  learning-paths/<your-organization-uuid>
- └── {learning-path-name}/ 
-     ├── _index.md                            
+ └── {learning-path-name}/
+     ├── _index.md
      ├── course-1/
-     │   └── _index.md                        
-     └── course-2/  
-         ├── _index.md   
-         ├── course-exam.md  
-         └── module-1/ 
-             ├── _index.md                    
+     │   └── _index.md
+     └── course-2/
+         ├── _index.md
+         ├── course-exam.md
+         └── module-1/
+             ├── _index.md
              ├── page-1/
-             │   └── _index.md 
-             ├── test.md 
+             │   └── _index.md
+             ├── test.md
  ```
 
 #### Certification Structure
@@ -139,9 +139,9 @@ A **Certification** typically contains one or more **Exams** and optional study 
 ```text
 certifications/<your-organization-uuid>
 └── {certification-name}/
-    ├── _index.md  
+    ├── _index.md
     ├── exam/
-    │   ├── _index.md  
+    │   ├── _index.md
     ├── test-1/
     ├── test-2/
     └── test-3/
@@ -153,11 +153,11 @@ A **Challenge** is typically a single scenario-based task with lab and exam comp
 ```text
 challenges/<your-organization-uuid>
 └── {challenge-name}/
-    ├── _index.md 
+    ├── _index.md
     ├── lab/
-    │   ├── _index.md 
+    │   ├── _index.md
     ├── exam/
-    │   ├── _index.md 
+    │   ├── _index.md
     └── content/
         ├── description/
         ├── getting-started/
@@ -188,7 +188,7 @@ weight: 5
 banner: "kubernetes-icon.svg"
 id: "<your-content-uuid>"
 tags: [kubernetes, infrastructure]
-categories: "cloud"
+categories: [cloud]
 level: "beginner"
 
 # Table of content covered in the test
@@ -197,7 +197,7 @@ level: "beginner"
 competencies:
   - title: "Domain 1"
     percentage: 10 # Weightage of this domain in the test
-    items: 
+    items:
        -  "Subdomain 1"
        -  "Subdomain 2"
 
@@ -225,17 +225,17 @@ prerequisiteKnowledge:
   - title: "Basic knowledge of Linux command line"
     link: "https://linuxcommand.org/"
 
-# List of additional resources for further reading 
+# List of additional resources for further reading
 relatedResources:
   - title: "Documentation"
     link: "https://docs.example.com/"
   - title: "Instructions"
     link: "https://instructions.example.com/"
   - title: "YouTube Channel"
-    link: "https://www.youtube.com/c/example" 
+    link: "https://www.youtube.com/c/example"
 
 # Additional attributes about the test
-additionalAttributes: 
+additionalAttributes:
   - title: "Retake Policy"
     description: "One Retake allowed after 30 days"
   - title: "Labs"
@@ -243,7 +243,7 @@ additionalAttributes:
 
 ---
 ```
- 
+
  **Summary of Required Fields**
 
  > In this table, fields marked with ✅ are required, while those marked with – are optional.
@@ -288,7 +288,7 @@ While there's no hard-coded size limit, we enforce these practical constraints:
 
 ### How to Add an Image
 
-1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `01-pods.md`). 
+1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `01-pods.md`).
 
 2.  In your `01-pods.md` file, embed the image using a **standard Markdown link**. The path should just be the filename.
 
@@ -391,17 +391,17 @@ Now, create the two required secrets in your repository.
 1.  Navigate to your GitHub repository and go to `Settings` > `Secrets and variables` > `Actions`.
 2.  Ensure you are on the **Secrets** tab.
 3.  Click `New repository secret` to add the following two secrets:
-    1. **Name:** `ACADEMY_ORG_ID` 
+    1. **Name:** `ACADEMY_ORG_ID`
 
        **Value:** Paste your unique Organization ID string.
 
-    2. **Name:** `ACADEMY_TOKEN` 
+    2. **Name:** `ACADEMY_TOKEN`
 
        **Value:** Paste the personal access token generated from Layer5 Cloud by following the instructions below.
 
 {{< alert type="info" title="How to Correctly Copy Your Token" >}}
 When you generate a token from the [Layer5 Cloud Tokens page](https://cloud.layer5.io/security/tokens), you will get a JSON object like this:
-`{"meshery-provider":"Meshery","token":"eyj...your-long-token-string..."}` You must copy only the token string itself—the value inside the quotes for the `"token"` key. 
+`{"meshery-provider":"Meshery","token":"eyj...your-long-token-string..."}` You must copy only the token string itself—the value inside the quotes for the `"token"` key.
 
 Do NOT include the curly braces `{}`, the `"token":` key, or the surrounding quotes. The value you paste into the secret should begin with `eyj...`.
 {{< /alert >}}
@@ -440,13 +440,13 @@ Once your content is live, you may need to perform routine tasks to keep your lo
 ### Updating the Academy Theme
 The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the core layout, style, and features for your Academy content. Regularly updating it ensures you benefit from the latest improvements and bug fixes.
 
-To upgrade to the latest theme version, run: 
+To upgrade to the latest theme version, run:
 ```bash
 make theme-update
 ```
 
 You will see output similar to this as Hugo fetches the new modules:
-```bash 
+```bash
 hugo mod get -u
 hugo: collected modules in 1707 ms
 go: downloading github.com/layer5io/academy-theme v0.1.6
@@ -470,25 +470,25 @@ make clean
 
 <details>
   <summary>1. Why is my workflow failing with a <code>401 Unauthorized</code> or <code>User must be logged in</code> error?</summary>
-  
+
 This error indicates an issue with your <code>ACADEMY_TOKEN</code>. Please ensure you have correctly copied only the token string and not the entire JSON object from the downloaded file.
 </details>
 
 <details>
   <summary>2. Why is my workflow failing with a URL containing a double slash </code>( // )</code>?</summary>
-  
+
 A double slash in the URL (e.g., <code>.../api/academy//update/...</code>) means your <strong>ACADEMY_ORG_ID</strong> was not found. This typically happens when the secret name in your repository does not <strong>exactly match</strong> the name expected by the workflow file (e.g., <code>ORG_ID</code>).
 </details>
 
 <details>
   <summary>3. How do I handle updates or corrections after my content is live?</summary>
-  
+
 All content updates are managed through your Git repository. Simply commit and push your changes, then <strong>create a new GitHub Release</strong> with a new version number (e.g., <code>v1.0.2</code>). This automatically triggers the publishing workflow and updates your content on the Academy platform.
 </details>
 
 <details>
   <summary>4. What happens if my new content has an error?</summary>
-  
+
 The publishing process is designed to be safe. If your new content causes a build error, the workflow will fail, and the previously working version of the Academy will remain unchanged. Your broken update will not be published.
 </details>
 
@@ -500,13 +500,13 @@ The structure is defined by your folder hierarchy. A learning path is a director
 
 <details>
   <summary>6. Why does my local build fail when adding large videos?</summary>
-  
+
 The ideal size should be less than 10MB for our service performance and sustainability, and server resource management. If your asset size is larger than 10MB, we recommend using external hosting as listed.
 </details>
- 
+
 <details>
   <summary>7. How to securely host private training videos?</summary>
-  
+
 Use AWS S3 with signed URLs:
 ```html
 <video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
@@ -517,7 +517,7 @@ Use AWS S3 with signed URLs:
   <summary>8. How do I debug using Layer5 Cloud Events?</summary>
 
 If your content is not appearing in the Academy after a GitHub release, it may have failed to publish. You can troubleshoot these issues using the **Events** section in [Layer5 Cloud](https://cloud.layer5.io).
- 
+
 To view publishing logs:
 1. Navigate to **Settings > Events**
 2. Switch to the **Audit** tab

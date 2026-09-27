@@ -18,12 +18,12 @@
 {{ if eq (len $relatedPages) 0 }}
   {{ $taxonomyPages := slice }}
   {{ range (.Params.categories | default (slice)) }}
-    {{ with index site.Taxonomies.categories . }}
+    {{ with index site.Taxonomies.categories (lower .) }}
       {{ $taxonomyPages = $taxonomyPages | append .Pages }}
     {{ end }}
   {{ end }}
   {{ range (.Params.tags | default (slice)) }}
-    {{ with index site.Taxonomies.tags . }}
+    {{ with index site.Taxonomies.tags (lower .) }}
       {{ $taxonomyPages = $taxonomyPages | append .Pages }}
     {{ end }}
   {{ end }}

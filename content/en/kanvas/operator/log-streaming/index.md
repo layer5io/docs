@@ -2,7 +2,7 @@
 title: Log Streaming
 description: >
   Learn about Log Streaming in Operator mode 
-categories: [Operator]
+categories: [operator]
 tags: [troubleshooting]
 ---
 

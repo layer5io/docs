@@ -2,7 +2,7 @@
 title: Interactive Terminal
 description: >
   Learn about Interactive Terminal in Operator mode 
-categories: [Operator]
+categories: [operator]
 tags: [troubleshooting]
 ---
 

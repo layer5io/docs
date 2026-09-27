@@ -3,7 +3,7 @@ title: Cloning a Design
 description: >
   Treat designs as templates by cloning an existing design to modify and build upon.
 weight: 5
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/cloning-a-design

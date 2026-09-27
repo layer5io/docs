@@ -3,7 +3,7 @@ title: Sharing a Workspace
 description: >
   Learn how to control access to workspaces and their resources.
 weight: 1
-categories: [Tutorials]
+categories: [tutorials]
 tags: [workspaces, sharing, designs]
 aliases:
   - /cloud/tutorials/sharing-a-workspace/

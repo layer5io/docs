@@ -3,7 +3,7 @@ title: "Kubernetes Request Flow – A Visual Guide"
 description: >
   A visual walkthrough of how user requests flow through Kubernetes components using Kanvas.
 weight: 8
-categories: [Designer, Tutorials]
+categories: [designer, tutorials]
 aliases:
   - /guides/tutorials/kubernetes-request-flow
   - /guides/tutorials/kubernetes/kubernetes-request-flow

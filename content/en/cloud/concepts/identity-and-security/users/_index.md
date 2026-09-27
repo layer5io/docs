@@ -3,7 +3,7 @@ title: Users
 description: >
   Each user account represents an individual collaborator. Individual user accounts exist beyond the bounds of organizations.
 weight: 3
-categories: [Identity]
+categories: [identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/

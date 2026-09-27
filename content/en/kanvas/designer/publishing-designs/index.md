@@ -2,7 +2,7 @@
 title: Publishing Designs
 description: Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
 weight: 9
-categories: [Designer]
+categories: [designer]
 tags: [designs, publishing]
 aliases:
   - /meshmap/designer/publish-designs

@@ -3,7 +3,7 @@ title: Sharing Designs
 description: >
   Share designs with other users and use access controls to manage design permissions and visibility.
 weight: 5
-categories: [Designer]
+categories: [designer]
 tags: [designs, collaboration, review]
 aliases:
   - /meshmap/designer/share-resource

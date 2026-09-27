@@ -3,7 +3,7 @@ title: Views in Operator
 weight: 5
 description: >
   Learn about Views in Operator mode 
-categories: [Operator]
+categories: [operator]
 ---
 
 The Views tab is located on the right side of the screen just beside the Details tab in Kanvas Operator. It allows you to see all containers the present in your Kubernetes cluster. Think of views for Operator mode as you would design for the Designer mode.

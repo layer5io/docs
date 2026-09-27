@@ -3,7 +3,7 @@ title: Undeploying Designs
 description: >
   Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
 weight: 3
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/undeploying-designs

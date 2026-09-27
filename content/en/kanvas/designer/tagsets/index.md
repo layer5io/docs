@@ -3,7 +3,7 @@ title: Working with Tags
 description: >
   Share design with other users and use control access to manage design access permissions and visibility.
 weight: 6
-categories: [Designer]
+categories: [designer]
 tags: [designs, collaboration, review] 
 aliases:
   - /meshmap/designer/tagsets

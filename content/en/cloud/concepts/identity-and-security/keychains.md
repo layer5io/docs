@@ -2,7 +2,7 @@
 title: Keychains
 description: Keychains are a collection of keys
 weight: 5
-categories: [Security]
+categories: [security]
 tags: [keychains, permissions]
 aliases:
   - /cloud/security/keychains/

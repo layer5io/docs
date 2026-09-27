@@ -2,7 +2,7 @@
 title: Kubernetes
 description: Hands-on Kubernetes tutorials using Meshery Playground and Kanvas.
 weight: 9
-categories: [Tutorials]
+categories: [tutorials]
 ---
 
 Work through hands-on Kubernetes scenarios in

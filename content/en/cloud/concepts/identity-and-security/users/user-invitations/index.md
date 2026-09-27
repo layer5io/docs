@@ -3,7 +3,7 @@ title: User Invitations
 description: >
  Learn how to create custom, secure, and flexible invitations for new members.
 weight: 3
-categories: [Identity]
+categories: [identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/user-invitations/

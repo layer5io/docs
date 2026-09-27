@@ -5,7 +5,7 @@ description: >
   relationship indicator states, and diagnose failing or unexpected relationship
   results.
 weight: 11
-categories: [Designer]
+categories: [designer]
 tags: [designs, relationships, components, troubleshooting]
 ---
 

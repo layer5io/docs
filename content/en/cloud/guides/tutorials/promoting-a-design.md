@@ -3,7 +3,7 @@ title: Promoting a Design from Staging to Prod
 description: >
   Learn how to move a design from a staging workspace to a production workspace, with environment assignment and access approval.
 weight: 2
-categories: [Tutorials]
+categories: [tutorials]
 tags: [designs, workspaces, environments]
 aliases:
   - /cloud/tutorials/promoting-a-design/

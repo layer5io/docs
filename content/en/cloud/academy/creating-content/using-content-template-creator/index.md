@@ -3,8 +3,8 @@ title: Using Academy Content Template Creator
 weight: 6
 description: >
 
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 aliases:
 - /cloud/academy/using-academy-content-template-creator
 - /cloud/academy/using-content-template-creator

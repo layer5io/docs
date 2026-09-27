@@ -135,7 +135,7 @@ Plan your INIT_CONFIG carefully as it is only processed during initial startup. 
 {{< /alert >}}
  Layer5 Cloud Deployment
 description: "Understand deployment prerequisites and prepare your environment for a secure and scalable Layer5 Cloud deployment."
-categories: [Self-Hosted]
+categories: [self-hosted]
 #tags: [helm]
 weight: 1
 ---

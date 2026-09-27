@@ -3,7 +3,7 @@ title: Collaborative Editing
 description: >
   Learn about Collaborative Editing
 weight: 5
-categories: [Designer]
+categories: [designer]
 draft: true
 aliases:
   - /meshmap/tutorials/collaborative-editing
