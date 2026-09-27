@@ -1,7 +1,7 @@
 ---
 title: Log Streaming
 description: >
-  Learn about Log Streaming in Operator mode 
+  Learn about Log Streaming in Operator mode
 categories: [operator]
 tags: [troubleshooting]
 ---
@@ -56,6 +56,8 @@ Once the stream is active, the Log Streamer panel will display the output.
 **Scenario:** You have applied a new canary rollout pattern and want to verify traffic distribution.
 **Action:** Stream logs from the new version of your deployment while filtering for specific traffic headers or successful HTTP 200 codes.
 **Benefit:** Visually verify that the application logic is processing requests as expected during the deployment window.
+
++To see how the service holds up under load during the same window, run a test from [Performance Testing in Operator]({{< ref "kanvas/operator/performance-testing/index.md" >}}) while the stream is open.
 
 ## Technical Note
 

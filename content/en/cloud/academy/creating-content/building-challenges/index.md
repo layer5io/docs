@@ -91,7 +91,7 @@ id: "<your-challenge-uuid>"
 weight: 1
 tags: [meshery, keda, open source]
 level: "advanced"
-categories: "platform"
+categories: [platform]
 
 prerequisite_knowledge:
   - title: "Access to Meshery"
