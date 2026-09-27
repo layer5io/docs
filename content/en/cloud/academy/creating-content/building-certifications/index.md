@@ -93,7 +93,7 @@ weight: 1
 tags: [layer5, cloud, infrastructure]
 level: "beginner"
 categories: [platform]
-badge:
+badge: 
     png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
     svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
     title: "Layer5 Certified"
@@ -145,7 +145,7 @@ To ensure even division, the **total number of questions** must be a **multiple*
 By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
 
 {{< alert type="warning" title="Multi-Exam Certification Settings" >}}
-For certifications containing multiple exams, each exam may have its own test bank, question count, and retry settings.
+For certifications containing multiple exams, each exam may have its own test bank, question count, and retry settings.  
 These configurations are defined per test and may differ across exams within the same certification.
 {{< /alert >}}
 
@@ -175,36 +175,36 @@ A key feature unique to the Certification content type is that while the learnin
 
 <details>
   <summary>Can my certification have only one exam?</summary>
-
+  
 Yes, it can. The simplest form of a certification consists of a single final exam. You can also include multiple independent exams if you wish to assess different skills.
 </details>
 
 <details>
   <summary>When should I choose to create a "Certification" instead of a "Learning Path"?</summary>
-
+  
 You should choose a Certification when your primary goal is to **test and assess** a learner's existing knowledge, rather than **teaching them** from scratch. A Learning Path focuses on instruction, while a Certification focuses on assessment.
 </details>
 
 <details>
   <summary>What does an "Optional" exam mean, and how does it affect a learner's progress?</summary>
-
+  
 An optional exam is supplementary material. Learners can take it, but they **do not** have to pass it to earn the final certificate. Its score **does not count** towards the certification's passing requirements. This is typically used for extra practice or to test non-core knowledge.
 </details>
 
 <details>
   <summary>How do I set an exam as "Optional"?</summary>
-
+  
 You need to add a specific field, `isOptional: true`, to the front matter of the exam's `.md` file. This field tells the system that the exam is not a mandatory requirement to pass the certification.
 </details>
 
 <details>
   <summary>Can I control the order of multiple exams within a certification?</summary>
-
+  
 Yes, you can. Each exam file's front matter has a `weight` field. Lower numbers result in an earlier display order. If you don't set a `weight`, the exams will be sorted alphabetically by file title by default.
 </details>
 
 <details>
   <summary>As a content creator, do I need to handle the certificate payment process?</summary>
-
+  
 No, you don't. The payment and certificate issuance process is handled by the Layer5 platform. You only need to focus on creating high-quality assessment content.
 </details>

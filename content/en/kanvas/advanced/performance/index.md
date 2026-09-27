@@ -76,9 +76,9 @@ To improve the performance of your design, consider optimizing by disabling one 
   <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
 </figure>
 
-Some layers specifically offer control of **visibility of components**, while other layers offer control over the **ongoing evaluation of relationships** between components.
+Some layers specifically offer control of **visibility of components**, while other layers offer control over the **ongoing evaluation of relationships** between components. 
 
-Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the **number and type** of components in view.
+Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the **number and type** of components in view. 
 
 > Even though you might hide components, those components are not deleted or removed from your design. These components are simply hidden from current view.
 

@@ -24,14 +24,15 @@ tag = "tags"
 category = "categories"
 
 [related]
-    threshold = 80
-    toLower = true
-    [[related.indices]]
-        name = "tags"
-        weight = 100
-    [[related.indices]]
-        name = "categories"
-        weight = 200
+threshold = 80
+includeNewer = true
+toLower = true
+[[related.indices]]
+name = "categories"
+weight = 100
+[[related.indices]]
+name = "tags"
+weight = 50
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
