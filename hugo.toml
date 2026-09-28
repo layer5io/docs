@@ -342,7 +342,7 @@ enable = false
   # replacements = "github.com/google/docsy -> ../../docsy"
   [module.hugoVersion]
     extended = true
-    min = "0.112.0"
+    min = "0.147.2"
   [[module.imports]]
     path = "github.com/google/docsy"
     disable = false
@@ -370,3 +370,4 @@ enable = false
 [params.llms]
   generate_llms_txt = true
   generate_llms_full_txt = true
+  exclude = ["/tags/**", "/categories/**", "/search/"]
