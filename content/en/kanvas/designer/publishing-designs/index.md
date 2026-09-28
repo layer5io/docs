@@ -24,6 +24,13 @@ Publish designs through two methods. Click the **info ("i")** button for details
 - **Option 2:** Go to Configuration → Designs
   ![Design Details](images/designs-select-design.png)
 
+You can also open **Details** from the File menu on an open design:
+
+<figure>
+  <img src="../images/audit-2026-09/designer-details-publish.png" alt="Design Details modal with Publish to Catalog" />
+  <figcaption>Design Details (anonymous capture, Sep 2026): metadata, visibility, and <strong>Publish To Catalog</strong>. Publish is disabled while signed out.</figcaption>
+</figure>
+
 ### Step 3: Submit Design Metadata
 Fill out the publication form:
 

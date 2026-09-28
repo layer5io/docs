@@ -23,7 +23,11 @@ redirect stub for each one. `content/en/kanvas/operator/_index.md` and
 by checking the generated `<outdir>/<dead-path>/index.html` for the `url=` refresh target.
 
 Heading anchors are linked from outside this repo too, so renaming a heading silently breaks
-those links. Goldmark heading attributes are enabled: keep the old anchor by writing
+those links. The Layer5 Cloud UI hardcodes some of them: `MAIL_DOCS_URL` in
+meshery-cloud's `ui/components/identity/org-management/org-smtp-tab.tsx` points every
+"Learn more" link on the Email tab at
+`/cloud/guides/organizations/org-management/#configuring-your-own-mail-server`. Grep
+meshery-cloud's `ui/` for `docs.layer5.io` before renaming a heading on a cloud guide. Goldmark heading attributes are enabled: keep the old anchor by writing
 `### New Wording {#old-anchor-slug}`. To prove no anchor was lost, build master and your branch
 to separate directories and diff the `id=` attributes of every `<h1>`-`<h6>` across both trees;
 `content/en/cloud/academy/creating-content/building-certifications/index.md` is a worked example.
@@ -39,6 +43,28 @@ A literal backslash inside inline HTML is a related trap: Goldmark reads the `\<
 `<button>\</button>` as an escaped `<` and the tag never closes. Write the key as `&#92;`
 (`content/en/kanvas/reference/keyboard-shortcuts.md` is the worked example) and confirm the
 built HTML, not the source, before committing.
+
+## Documenting Layer5 Cloud behavior
+
+The cloud guides describe a product that lives in `meshery-cloud`, so every product claim is
+verified against `origin/master` there, never against a summary. The screen strings are in
+`ui/components/identity/org-management/`; the behavior behind them is in `server/handlers/`.
+
+That repo's own `docs/reference/` and `docs/runbooks/` are the best starting point but are not
+the arbiter - they have described behavior the handlers do not implement. Confirm a capability
+has a producer in the Go or TSX before writing it up: a contract enum member or a runbook
+sentence is not proof the feature ships.
+
+`meshery-cloud` is a PRIVATE repository, so never link one of its pull requests, issues or
+files from a content page - the link 404s for every reader of docs.layer5.io. Cite the released
+version instead (`v1.0.253`), which an operator can check against their own deployment, and keep
+the pull-request reference in the commit message and the docs pull request, where the audience
+can open it.
+
+Behavior can also disagree with `data/openapi.yml`. The server is the arbiter for what a
+response looks like: that file declares `401` as `text/plain` on every route, while any handler
+behind `AuthorizationMiddlewareForAdmin` answers `echo.NewHTTPError`, which echo serializes as
+JSON. Document what the handler sends and flag the specification.
 
 ## Maintaining this file
 

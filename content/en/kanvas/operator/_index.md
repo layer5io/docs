@@ -10,15 +10,23 @@ aliases:
 
 Discover and examine your Kubernetes clusters and cloud native infrastructure using Operator mode.
 
+<figure>
+  <img src="images/operator-no-context.png" alt="Operator empty state when no Kubernetes context is selected" />
+  <figcaption>Operator with no Kubernetes context selected — choose one or more clusters to populate the topology (anonymous capture, Sep 2026).</figcaption>
+</figure>
+
 ## Using Filters
 
-Using filters you can select the Kubernetes resources you want to view. Apply one or more filters to narrow down the resources you want to view.
+Use filters to select the Kubernetes resources you want to view. Apply one or more filters — for example by namespace, kind, model, or label — to narrow the topology to the resources that matter. Combine filters to focus on a subset of your cluster without leaving Operator.
+
+<figure>
+  <img src="images/operator-filters.png" alt="Operator Filter Resources menu listing search, namespaces, kinds, models, and labels" />
+  <figcaption>Filter Resources in Operator: search, namespaces, kinds, models, and labels. Captured without a cluster context selected (anonymous, Sep 2026).</figcaption>
+</figure>
 
 ## Search and Select Specific Resources
 
 Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Operator canvas. Details of the selected resources are displayed in the right panel.
-
-<!-- {{< figure src="images/operator-filters.png" link="images/operator-filters.png"  width="100%"  >}} -->
 
 ## Connecting with Kubernetes Pods
 

@@ -19,6 +19,11 @@ Kanvas's Designer enables you to place comments "inline" with your infrastructur
 
 Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.
 
+<figure>
+  <img src="../images/audit-2026-09/designer-comments.png" alt="Comments panel empty state in Kanvas Designer" />
+  <figcaption>Comments panel empty state (anonymous capture, Sep 2026). Figures elsewhere on this page show populated threads from earlier chrome.</figcaption>
+</figure>
+
 ## Commenting on a Design
 
 You can add comments in a number of convenient ways. Since designs are public by default, you can add comments to your designs without having to share them first. This is particularly useful for gathering feedback from team members or stakeholders before finalizing the design.

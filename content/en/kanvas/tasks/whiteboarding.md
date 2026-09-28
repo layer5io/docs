@@ -4,7 +4,7 @@ description: >
   Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
 weight: 2
 categories: [Designer]
-tags: [designs]
+tags: [designs, whiteboarding, shapes]
 aliases:
   - /meshmap/tasks/whiteboarding
 ---
