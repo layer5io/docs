@@ -3,4 +3,7 @@
 {{ with .Content }}
 {{ . }}
 {{ end }}
+<div class="container td-page-meta py-3">
+  {{ partial "page-markdown-link.html" . }}
+</div>
 {{ end }}
