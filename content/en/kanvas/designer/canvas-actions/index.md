@@ -3,7 +3,7 @@ title: Canvas Actions
 weight: 12
 description: >
   The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

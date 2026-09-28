@@ -1,8 +1,8 @@
 ---
 title: Identity Services
 description: "Understand identity services prerequisites and how to integrate your existing identity with OIDC."
-categories: [Self-Hosted]
-tags: [identity]
+categories: [self-hosted]
+tags: [identity, byoc, orgs]
 weight: 3
 aliases:
   - /cloud/self-hosted/planning/identity-services/

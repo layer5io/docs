@@ -3,8 +3,8 @@ title: Extending the Academy
 weight: 2
 description: >
    A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 aliases: 
 - /cloud/academy/extending-the-academy/
 ---

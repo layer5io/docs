@@ -58,8 +58,8 @@ videoType: youtube # Required: currently supports "youtube" (support for "local"
 
 # Categories and tags help match videos with documentation pages by scoring relevance, 
 # see the guide at bottom to know how
-categories: [Designer] 
-tags: [review, collaboration, comments] # Available as hyperlinked tags in the video card and individual video page
+categories: [designer] 
+tags: [review, collaboration, comments] # available as hyperlinked tags in the video card and individual video page
 duration: 2:30 # Optional: duration in minutes:seconds format ("min" is automatically added)
 ---
 
@@ -86,7 +86,7 @@ To display `Related Videos` carousel on documentation pages section pages and in
 
 If a documentation page has:
 ```yaml
-categories: [Designer]
+categories: [designer]
 tags: [catalog, publishing]
 ```
 
@@ -94,13 +94,13 @@ And there are two videos:
 
 **Video A**:
 ```yaml
-categories: [Designer]
+categories: [designer]
 tags: [catalog, review]
 ```
 
 **Video B**:
 ```yaml
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ```
 

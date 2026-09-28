@@ -1,7 +1,7 @@
 ---
 title: Environments
 description: "Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into resource groups."
-categories: [Spaces]
+categories: [spaces]
 aliases:
   - /cloud/spaces/environments/
 

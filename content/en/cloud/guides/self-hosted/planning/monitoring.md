@@ -1,7 +1,7 @@
 ---
 title: Monitoring
 description: "Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts."
-categories: [Self-Hosted]
+categories: [self-hosted]
 tags: [monitoring]
 weight: 4
 aliases:

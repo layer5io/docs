@@ -1,7 +1,7 @@
 ---
 title: Networking
 description: "Prepare and configure network services for your Layer5 Cloud deployment."
-categories: [Self-Hosted]
+categories: [self-hosted]
 tags: [identity]
 weight: 2
 aliases:

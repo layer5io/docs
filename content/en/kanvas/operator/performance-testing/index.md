@@ -3,7 +3,7 @@ title: Performance Testing in Operator
 weight: 6
 description: >
   Measure the behavior of a running service from the Operator canvas, using saved performance profiles.
-categories: [Operator]
+categories: [operator]
 tags: [performance]
 ---
 

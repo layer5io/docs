@@ -2,7 +2,7 @@
 title: Managing Workspaces
 description: "Learn how to create, edit, delete, and configure your Workspaces."
 weight: 1
-categories: [Spaces]
+categories: [spaces]
 aliases:
   - /cloud/spaces/managing-workspaces/
   - /cloud/concepts/spaces/managing-workspaces/

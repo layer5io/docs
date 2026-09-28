@@ -24,14 +24,15 @@ tag = "tags"
 category = "categories"
 
 [related]
-threshold = 1
+threshold = 80
 includeNewer = true
-[[related.indices]]
-name = "tags"
-weight = 100
+toLower = true
 [[related.indices]]
 name = "categories"
-weight = 200
+weight = 100
+[[related.indices]]
+name = "tags"
+weight = 50
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
@@ -327,7 +328,7 @@ enable = false
 		url = "https://layer5.io/careers"
 	[[params.links.footer.company.items]]
 		name = "FAQ"
-		url = "https://layer5.io/company/faq"		
+		url = "https://layer5.io/company/faq"
 	[[params.links.footer.company.items]]
 		name = "Partners"
 		url = "https://layer5.io/partners"

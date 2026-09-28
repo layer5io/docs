@@ -3,7 +3,7 @@ title: Working with Canvas Objects
 description: >
   Add, copy, clone, lock, delete, style, reset and resize the shapes, sections, textboxes and components on your Kanvas Designer canvas.
 weight: 7
-categories: [Designer]
+categories: [designer]
 tags: [designs, shapes, sections, textboxes, annotations]
 ---
 

@@ -3,7 +3,7 @@ title: Understanding Edge Styles
 description: >
   Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
 weight: 2
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

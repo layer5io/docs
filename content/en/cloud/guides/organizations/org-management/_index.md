@@ -3,7 +3,7 @@ title: Organization Management
 description: >
     Create, edit, invite members to, and delete your Organizations within Layer5 Cloud.
 weight: 1
-categories: [Identity]
+categories: [identity]
 tags: [orgs]
 aliases:
   - /cloud/identity/organizations/org-management/

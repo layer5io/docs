@@ -3,7 +3,7 @@ title: Configuring Components
 weight: 16
 description: >
   Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

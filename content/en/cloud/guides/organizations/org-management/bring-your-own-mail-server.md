@@ -3,7 +3,7 @@ title: Bring Your Own Mail Server
 description: >
     Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
 weight: 3
-categories: [Identity]
+categories: [identity]
 tags: [orgs, email, white-labeling]
 ---
 

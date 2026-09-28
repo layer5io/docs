@@ -3,8 +3,8 @@ title: Integrating Assessments in the Academy
 weight: 4
 description: >
   Learn how to spice up the Academy with interactive assessments that keep learners engaged.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 aliases: 
 - /cloud/academy/integrating-assessments-in-the-academy/
 ---

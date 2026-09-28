@@ -3,7 +3,7 @@ title: "Building a GCP Data Pipeline Design"
 description: >
   Walk through creating the data-pipeline-gcp design in Kanvas, connecting GCP services in orbital-production.
 weight: 6
-categories: [Designer, Tutorials]
+categories: [designer, tutorials]
 ---
 
 Zara Osei is the Team Admin for Orbital Labs' Infrastructure Team. Her mandate: model the team's GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, `data-pipeline-gcp`, in the `orbital-production` workspace.

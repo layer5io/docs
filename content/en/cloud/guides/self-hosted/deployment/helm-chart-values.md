@@ -1,6 +1,6 @@
 ---
 title: "Customizing Layer5 Cloud Deployment with Helm"
-categories: [Self-Hosted]
+categories: [self-hosted]
 description: "Layer5’s Helm charts support a number of configuration options. Please refer to following table of configuration options."
 weight: 2
 aliases:

@@ -3,7 +3,7 @@ title: Importing a Design
 description: >
   Learn how to import designs from various sources and formats, including Kubernetes manifests, Helm charts, Docker Compose files, and more.
 weight: 3
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/getting-started/starting-helm

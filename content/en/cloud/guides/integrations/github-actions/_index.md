@@ -2,7 +2,7 @@
 title: GitHub Actions
 description: GitHub Actions with Kanvas automates the synchronization of Git repositories and visually validates pull requests for efficient development.
 weight: 1
-categories: [Workspaces]
+categories: [workspaces]
 tags: [gitops, github-actions, kanvas]
 aliases:
   - /cloud/github-actions/

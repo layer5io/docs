@@ -3,7 +3,7 @@ title: Sessions
 description: >
   User sessions are created each time a user successfully authenticates.
 weight: 7
-categories: [Security]
+categories: [security]
 tags: [sessions, permissions]
 aliases:
   - /cloud/security/sessions/

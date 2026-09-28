@@ -5,7 +5,7 @@ description: >
 linkTitle: Narrative Research Plan
 weight: 1
 draft: true
-categories: [About]
+categories: [about]
 aliases:
   - /cloud/about/five-narrative-plan/
   - /cloud/getting-started/about/five-narrative-plan/
