@@ -1,0 +1,18 @@
+# v0.8.284
+
+date: 2025-07-02
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- fix: first-design badge assignment logic @leecalcote (#3730)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama
+
+

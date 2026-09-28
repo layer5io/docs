@@ -1,0 +1,26 @@
+# v0.8.222
+
+date: 2025-05-23
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix:error-profile-fetch @FaheemOnHub (#3524)
+
+## 💻 Server
+
+- Add support for Org and workspace preferences @aabidsofi19 (#3526)
+
+## 🐛 Bug Fixes
+
+- fix:error-profile-fetch @FaheemOnHub (#3524)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @amitamrutiya and @l5io
+
+

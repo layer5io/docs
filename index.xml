@@ -134122,7 +134122,6 @@ Thank you to our contributors for making this release possible:
  &lt;/div&gt;
 
 &lt;p&gt;Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
-&lt;p&gt;Related Documentation: &lt;a href="https://docs.layer5.io/kanvas/designer/comments/"&gt;Design Reviews&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Lessons learned in this Peer Review module:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Collaboration is Key:&lt;/strong&gt; Kanvas facilitates collaborative design through peer reviews. It emphasizes both asynchronous (commenting, notifications) and synchronous (real-time discussion) methods.&lt;/li&gt;
@@ -134233,16 +134232,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;/h2&gt;
 &lt;p&gt;The Kanvas Interactive Terminal allows operators to establish a secure, low-latency shell session with one or more pods simultaneously. This feature is essential for &amp;ldquo;last mile&amp;rdquo; debugging where metrics and logs alone are insufficient. The interactive terminal behaves in a fashion similar to the behavior of the &lt;code&gt;kubectl exec&lt;/code&gt; command, but web-based.&lt;/p&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/designer-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/designer-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qaoYRP3oLok?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-
-&lt;h3 id="related-docs" class="heading-link"&gt;
- Related Docs
- &lt;a href="#related-docs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="/kanvas/designer/"&gt;Exploring Designer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
+ &lt;/div&gt;</description></item><item><title>Kanvas GitHub Snapshot</title><link>/kanvas/concepts/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kanvas-snapshot/</guid><description>&lt;p&gt;&lt;img style="height: 32px; width: 32px;" src="images/kanvas-icon-color.svg" /&gt; Kanvas Snapshot is a screenshot service provided via Kanvas for your designs. Visualize changes to your code-base with each pull request made. The SnapShot GitHub Action is configurable from within your Cloud account.&lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;How the SnapShot service works&lt;/summary&gt;
 &lt;h3&gt;Functional Sequence Diagram&lt;/h3&gt;
@@ -134251,16 +134241,7 @@ Learn how to use Kubernetes CronJobs to schedule and automate periodic backups o
 &lt;h3&gt;Installing Kanvas Snapshot: Github Pull Request&lt;/h3&gt;
 &lt;p&gt;Connect MeshMap to your GitHub repo and see changes pull request-to-pull request. Get snapshots of your infrastructure directly in your PRs.&lt;/p&gt;</description></item><item><title>Kanvas Operator Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QANUEikEwQY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-
-&lt;h3 id="related-docs" class="heading-link"&gt;
- Related Docs
- &lt;a href="#related-docs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="/kanvas/operator/"&gt;Exploring Operator&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+ &lt;/div&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 &lt;p&gt;Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:&lt;/p&gt;
 

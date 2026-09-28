@@ -1,0 +1,18 @@
+# v0.8.39
+
+date: 2024-10-25
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- fix all patterns fetching @sudhanshutech (#2854)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @sudhanshutech
+
+

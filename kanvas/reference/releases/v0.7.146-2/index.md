@@ -1,0 +1,22 @@
+# v0.7.146-2
+
+date: 2024-11-13
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- hide name field for comments and remove redundant top background for search results @aabidsofi19 (#3151)
+- fix options modal not opening @aabidsofi19 (#3152)
+
+## 🐛 Bug Fixes
+
+- fix options modal not opening @aabidsofi19 (#3152)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

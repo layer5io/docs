@@ -1,0 +1,20 @@
+# v0.8.401
+
+date: 2025-08-25
+
+
+
+## 🖥 Cloud UI
+
+- Enterprise Add-on: tooltip overflow @leecalcote (#4001)
+
+## 🦴 Infrastructure
+
+- Enterprise Add-on: tooltip overflow @leecalcote (#4001)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama
+
+
