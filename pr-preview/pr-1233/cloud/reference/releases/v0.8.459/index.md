@@ -1,0 +1,17 @@
+# v0.8.459
+
+date: 2025-09-22
+
+
+
+## 🖥 Cloud UI
+
+- add my academy widget @aabidsofi19 (#4175)
+- fix tables @aabidsofi19 (#4174)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

@@ -1,0 +1,28 @@
+# v0.8.42
+
+date: 2024-10-28
+
+
+
+## What's New
+## 🔤 General
+## 🚀 Features
+
+- change design widget to default @sudhanshutech (#2873)
+
+## 🖥 Cloud UI
+
+- change design widget to default @sudhanshutech (#2873)
+- Catalog items in sitemap @sudhanshutech (#2852)
+- update navigation navbar width based on update of sistent component @amitamrutiya (#2858)
+
+## 💻 Server
+
+- Chore: add version tag on index.js kanvas to invalidate cache @jerensl (#2871)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @jerensl, @l5io and @sudhanshutech
+
+

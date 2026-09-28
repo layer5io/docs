@@ -1,0 +1,19 @@
+# v0.8.69
+
+date: 2024-11-11
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- use design and catalog table into sistent component @amitamrutiya (#2954)
+- [Chore]: Bump v @l5io (#2956)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
+

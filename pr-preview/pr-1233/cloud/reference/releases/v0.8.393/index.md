@@ -1,0 +1,25 @@
+# v0.8.393
+
+date: 2025-08-19
+
+
+
+## 🖥 Cloud UI
+
+- Fix: Modals Converted to Sistent Modals @vr-varad (#3955)
+
+## 🦴 Infrastructure
+
+- Fix missing key in secret error @sangramrath (#3978)
+
+## 🐛 Bug Fixes
+
+- Fix: Modals Converted to Sistent Modals @vr-varad (#3955)
+- Fix missing key in secret error @sangramrath (#3978)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote, @sangramrath and @vr-varad
+
+

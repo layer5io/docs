@@ -1,0 +1,18 @@
+# v0.7.151-1
+
+date: 2024-11-14
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Fix : state config getting used when tabs are switched in config tooltip @aabidsofi19 (#3163)
+- Remove redundant requests in while setting up Collab  @aabidsofi19 (#3162)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @aabidsofi19 and @l5io
+

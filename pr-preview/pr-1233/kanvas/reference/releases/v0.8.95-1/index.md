@@ -1,0 +1,15 @@
+# v0.8.95-1
+
+date: 2025-06-03
+
+
+
+## What's New
+## 🔤 General
+- update package dependencies to replace @layer5/sistent with @sistent/sistent version 0.14.199 @leecalcote (#3727)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @marblom007
+

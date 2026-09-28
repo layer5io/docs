@@ -1,0 +1,19 @@
+# v0.8.122
+
+date: 2025-01-16
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.140 @l5io (#3116)
+- [Security] Disallow use of logspot\ in name or email fields. @leecalcote 
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

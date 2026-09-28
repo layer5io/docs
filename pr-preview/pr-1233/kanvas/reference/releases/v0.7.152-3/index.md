@@ -1,0 +1,22 @@
+# v0.7.152-3
+
+date: 2024-11-15
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: skip empty snapshots @aabidsofi19 (#3170)
+- change the getting started icon with the rocket icon @amitamrutiya (#3169)
+
+## 🐛 Bug Fixes
+
+- change the getting started icon with the rocket icon @amitamrutiya (#3169)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

@@ -1,0 +1,16 @@
+# v0.8.50
+
+date: 2024-10-31
+
+
+
+## What's New
+## 🔤 General
+* Refactor carousel images and update UI text across flow pages
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io
+
+

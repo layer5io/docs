@@ -1,0 +1,22 @@
+# v0.8.342
+
+date: 2025-08-01
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- feat: Add GitHub private key handling and improve JWT generation @leecalcote (#3849)
+
+## 🦴 Infrastructure
+
+- feat: Add GitHub private key handling and improve JWT generation @leecalcote (#3849)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @ritzorama
+
+
