@@ -24075,6 +24075,21 @@ You can opt out of all email notifications by toggling the button located on the
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.271"
+url: /cloud/reference/releases/v1.0.271/index.md
+date: "2026-09-29"
+--------------------------------------------------------------------------------
+
+- fix(auth): clear logout cookies at the scopes their setters write @leecalcote (#5556)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jijillery, @leecalcote and @meshery-ci
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.270"
 url: /cloud/reference/releases/v1.0.270/index.md
 date: "2026-09-25"

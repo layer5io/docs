@@ -2597,7 +2597,16 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.270</title><link>/cloud/reference/releases/v1.0.270/</link><pubDate>Fri, 25 Sep 2026 04:47:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.270/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.271</title><link>/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): clear logout cookies at the scopes their setters write @leecalcote (#5556)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jijillery, @leecalcote and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.270</title><link>/cloud/reference/releases/v1.0.270/</link><pubDate>Fri, 25 Sep 2026 04:47:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.270/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(academy): accept list filters as repeated query keys @NSTKrishna (#6123)&lt;/li&gt;
 &lt;/ul&gt;
 
