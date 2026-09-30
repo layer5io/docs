@@ -1,0 +1,14 @@
+# v1.0.87
+
+date: 2026-05-22
+
+
+
+- fix(auth): bridge session on org switch to off-eTLD custom domains @hortison (#5365)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote
+
+

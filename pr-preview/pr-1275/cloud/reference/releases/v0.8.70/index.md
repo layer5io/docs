@@ -1,0 +1,23 @@
+# v0.8.70
+
+date: 2024-11-11
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Revert amit/design table @amitamrutiya (#2960)
+- fix: open in playground button issue in catalog detail @amitamrutiya (#2959)
+
+## 🐛 Bug Fixes
+
+- fix: open in playground button issue in catalog detail @amitamrutiya (#2959)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
+

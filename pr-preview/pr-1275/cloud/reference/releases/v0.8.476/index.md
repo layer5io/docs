@@ -1,0 +1,20 @@
+# v0.8.476
+
+date: 2025-09-30
+
+
+
+## 💻 Server
+
+- add error logs and fix query @aabidsofi19 (#4231)
+
+## 🐛 Bug Fixes
+
+- add error logs and fix query @aabidsofi19 (#4231)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

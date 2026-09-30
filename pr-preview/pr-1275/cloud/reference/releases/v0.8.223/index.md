@@ -1,0 +1,26 @@
+# v0.8.223
+
+date: 2025-05-26
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.191 @l5io (#3517)
+- Update organization invitation link tooltip @zihanKuang (#3520)
+- Refine User Management Button Labels @zihanKuang (#3521)
+
+## 💻 Server
+
+- prevent deleting the last remaining workspace in  an organization @aabidsofi19 (#3531)
+- add default workspace when creating a organization @aabidsofi19 (#3532)
+- Add support for moving designs/views between workspaces @aabidsofi19 (#3533)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @winkletinkle and @zihanKuang
+
+

@@ -1,0 +1,26 @@
+# v0.8.82
+
+date: 2024-11-14
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Replace Catalog Chart with the performance section @amitamrutiya (#2969)
+
+## 💻 Server
+
+- fix: add missing logic for redirect w/signoff @Jougan-0 (#2985)
+
+## 🐛 Bug Fixes
+
+- fix: add missing logic for redirect w/signoff @Jougan-0 (#2985)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @amitamrutiya and @l5io
+
+

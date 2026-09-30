@@ -1,0 +1,24 @@
+# v0.8.215
+
+date: 2025-05-08
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Dashboard: new Learn by Videos widget @leecalcote (#3487)
+- fix: crash of view share page @amitamrutiya (#3486)
+- [Chore]: Bump Sistent v0.14.185 @l5io (#3485)
+
+## 💻 Server
+
+- Improve handling of anonymous user sessions @leecalcote (#3488)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+
+
