@@ -1,0 +1,15 @@
+# v0.8.181-1
+
+date: 2025-12-17
+
+
+
+## What's New
+## 🔤 General
+- optimize operator resources  and add support for getting resource by id @aabidsofi19 (#3927)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

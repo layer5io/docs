@@ -1,0 +1,23 @@
+# v0.8.365
+
+date: 2025-08-08
+
+
+
+### 🔤 General
+## 🖥 Cloud UI
+
+- fix filter @aabidsofi19 (#3912)
+- academy artifacts updated
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+## What's Changed
+* fix org id by @aabidsofi19 in https://github.com/layer5io/meshery-cloud/pull/3912
+
+
+**Full Changelog**: https://github.com/layer5io/meshery-cloud/compare/v0.8.364...v0.8.365
+

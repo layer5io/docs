@@ -1,0 +1,18 @@
+# v0.8.255
+
+date: 2025-06-18
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- fix org metadata parsing @aabidsofi19 (#3637)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

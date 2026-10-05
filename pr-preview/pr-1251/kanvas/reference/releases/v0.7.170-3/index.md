@@ -1,0 +1,18 @@
+# v0.7.170-3
+
+date: 2024-12-16
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- close operator panels on toggling to designer @aabidsofi19 (#3246)
+- Fix Operator Empty state styling @aabidsofi19 (#3245)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

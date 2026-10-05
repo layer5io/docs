@@ -1,0 +1,25 @@
+# v0.8.423
+
+date: 2025-09-02
+
+
+
+## 🖥 Cloud UI
+
+- fix create content stepper @aabidsofi19 (#4068)
+- fix reconcile query @aabidsofi19 (#4067)
+
+## 💻 Server
+
+- fix reconcile query @aabidsofi19 (#4067)
+
+## ⬆️ Dependencies
+
+- Bump golang.org/x/net from 0.41.0 to 0.43.0 @dependabot (#4058)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @dependabot, @dependabot[bot], @l5io and @leecalcote
+
+

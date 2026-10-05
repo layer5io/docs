@@ -1,0 +1,17 @@
+# v0.8.84-2
+
+date: 2025-05-21
+
+
+
+## What's New
+## 🔤 General
+- bug: use comma instead of semi-colon @leecalcote (#3685)
+- Fix: Tutorial Section in Help Modal @vr-varad (#3658)
+- Feat: Full Screen Toggle for Kanvas Help Modal @vr-varad (#3660)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @vr-varad
+

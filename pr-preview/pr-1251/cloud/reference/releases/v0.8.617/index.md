@@ -1,0 +1,18 @@
+# v0.8.617
+
+date: 2025-12-23
+
+
+
+## 💻 Server
+
+- refactor user preferences @aabidsofi19 (#4688)
+- return user with roles for get profile @aabidsofi19 (#4686)
+- refactor: update error handling to use MeshKit @jamieplu (#4687)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @jamieplu, @l5io and @leecalcote
+
+

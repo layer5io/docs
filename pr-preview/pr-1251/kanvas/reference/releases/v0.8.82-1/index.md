@@ -1,0 +1,15 @@
+# v0.8.82-1
+
+date: 2025-05-16
+
+
+
+## What's New
+## 🔤 General
+- Fix: Adding More Help Items - Videos, Academy @vr-varad (#3649)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @vr-varad
+

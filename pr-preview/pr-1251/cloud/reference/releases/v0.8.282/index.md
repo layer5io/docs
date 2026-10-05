@@ -1,0 +1,35 @@
+# v0.8.282
+
+date: 2025-07-02
+
+
+
+## What's New
+## 🔤 General
+- chore: use snake_case in go filenames @leecalcote (#3718)
+
+## 🖥 Cloud UI
+
+- Bump billboard.js from 3.15.1 to 3.16.0 in /ui @dependabot (#3712)
+
+## 🦴 Infrastructure
+
+- leecalcote/ci/database error @leecalcote (#3720)
+- [ci] chore: move docker-compose to new docker directory @leecalcote (#3721)
+
+## 🧰 Maintenance
+
+- Bump github.com/go-viper/mapstructure/v2 from 2.2.1 to 2.3.0 @dependabot (#3715)
+- Update pull-request-build.yml for Dependabot permissions @leecalcote (#3723)
+
+## ⬆️ Dependencies
+
+- Bump billboard.js from 3.15.1 to 3.16.0 in /ui @dependabot (#3712)
+- Bump github.com/go-viper/mapstructure/v2 from 2.2.1 to 2.3.0 @dependabot (#3715)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@dependabot, @dependabot[bot], @l5io, @leecalcote and @meshery-ci
+
+

@@ -1,0 +1,22 @@
+# v0.8.72
+
+date: 2024-11-12
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add trim param to catalog api w/signoff @Jougan-0 (#2965)
+
+## ☁️ Api Specifications
+
+- add trim param to catalog api w/signoff @Jougan-0 (#2965)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @l5io and @sudhanshutech
+
+

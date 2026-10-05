@@ -1,0 +1,26 @@
+# v0.8.87
+
+date: 2024-11-17
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Removed the popup functionality that used to come in the request page. @NishantSinghhhhh (#2917)
+
+## 💻 Server
+
+- remove capabiltity fetch w/signoff @Jougan-0 (#2993)
+
+## 🐛 Bug Fixes
+
+- remove capabiltity fetch w/signoff @Jougan-0 (#2993)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @NishantSinghhhhh, @l5io and @sudhanshutech
+
+

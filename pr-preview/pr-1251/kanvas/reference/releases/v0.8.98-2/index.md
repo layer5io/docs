@@ -1,0 +1,17 @@
+# v0.8.98-2
+
+date: 2025-06-06
+
+
+
+## What's New
+## 🔤 General
+- add support for adding external link to components @aabidsofi19 (#3731)
+- Docs: Kanvas Developer Guide @vr-varad (#3732)
+- Add: EventApi Support to Extension \&\& Enhance:Save Design based on backend. @FaheemOnHub (#3699)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @l5io, @leecalcote and @vr-varad
+
