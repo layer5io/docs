@@ -278,3 +278,49 @@
     opacity: 1;
   }
 }
+
+// ── Light theme overrides (Sistent / MeshKit tokens) ──────────────────────────
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .kanvas-corner-popup .popup-inner {
+    background: #ffffff;
+    border-color: #00b39f;
+    box-shadow: 0 4px 24px rgba(0, 179, 159, 0.18), 0 1px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .kanvas-corner-popup .close-btn {
+    color: #28353a;
+
+    &:hover {
+      color: #00b39f;
+      opacity: 1;
+    }
+  }
+
+  .kanvas-corner-popup .popup-text {
+    h1 {
+      color: #000d12;
+    }
+
+    h4 {
+      color: #647176;
+    }
+  }
+
+  .kanvas-corner-popup .try-it-text {
+    span {
+      color: #647176;
+    }
+
+    strong {
+      color: #000d12;
+    }
+  }
+
+  // Keep the Kanvas illustration canvas always dark so it looks right
+  .kanvas-transition-container {
+    .canvas-grid {
+      background: radial-gradient(ellipse at 50% 0%, rgba(0, 211, 169, 0.15) 0%, transparent 70%);
+    }
+  }
+}
