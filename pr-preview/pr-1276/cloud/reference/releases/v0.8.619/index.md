@@ -1,0 +1,20 @@
+# v0.8.619
+
+date: 2025-12-26
+
+
+
+## 💻 Server
+
+- fix anonymous user creation @aabidsofi19 (#4694)
+
+## 🐛 Bug Fixes
+
+- fix anonymous user creation @aabidsofi19 (#4694)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

@@ -1,0 +1,22 @@
+# v0.8.189
+
+date: 2025-04-08
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- Comment out verbose log for token unmarshalling errors @leecalcote (#3384)
+
+## 🦴 Infrastructure
+
+- update smtp password with app password @vishalvivekm (#3383)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @vishalvivekm
+
+

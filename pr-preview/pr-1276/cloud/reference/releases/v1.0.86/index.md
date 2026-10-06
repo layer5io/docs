@@ -1,0 +1,15 @@
+# v1.0.86
+
+date: 2026-05-22
+
+
+
+- fix(auth): keep custom-domain visitors on host through HandleHome login bounce @hortison (#5364)
+- fix(ui): polish Edit Org modal IdP tab + restore org table columns @hortison (#5362)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote
+
+

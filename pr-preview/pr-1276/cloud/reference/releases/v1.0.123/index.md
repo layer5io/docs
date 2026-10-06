@@ -1,0 +1,14 @@
+# v1.0.123
+
+date: 2026-06-09
+
+
+
+- Revert ix(auth): custom-domain email signup - verify-click loop + require open signup to join\ @leecalcote (#5455)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

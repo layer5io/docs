@@ -1,0 +1,22 @@
+# v0.8.127
+
+date: 2025-01-22
+
+
+
+## What's New
+## 🔤 General
+- Chore: Generate new error codes @leecalcote (#3132)
+- Prevent immediate submission of signup form. @leecalcote 
+
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.144 @l5io (#3134)
+- move api dir compile to typescript @sudhanshutech (#2949)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io, @leecalcote and @sudhanshutech
+
+

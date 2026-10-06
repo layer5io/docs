@@ -1,0 +1,11 @@
+# v0.8.27
+
+date: 2024-10-12
+
+
+
+## What's New
+## 🔤 General
+- Use sistent filp card in catalog @amitamrutiya (#2827)
+- [Chore] Making references to \Meshery Catalog\ just 
+

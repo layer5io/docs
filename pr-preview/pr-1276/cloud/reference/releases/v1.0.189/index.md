@@ -1,0 +1,15 @@
+# v1.0.189
+
+date: 2026-07-15
+
+
+
+- Align Go meshery/schemas pin with npm at v1.3.30 @hortison (#5724)
+- Retire the 136 hand-authored RTK endpoints duplicating the generated cloudApi @hortison (#5723)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison and @meshery-ci
+
+

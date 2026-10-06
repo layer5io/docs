@@ -1,0 +1,16 @@
+# v1.0.216
+
+date: 2026-07-30
+
+
+
+- fix(auth): gate anonymous-session minting and bound pseudo-JWT lifetimes @jijillery (#5819)
+- [UI] Add permission shields to Keys page action icons @rishiraj38 (#5824)
+- [Chore]: Update to Sistent v0.21.44 @l5io (#5823)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jijillery, @l5io, @leecalcote, @rishiraj38 and @winkletinkle
+
+

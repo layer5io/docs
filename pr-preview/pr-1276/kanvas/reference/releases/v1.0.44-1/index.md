@@ -1,0 +1,16 @@
+# v1.0.44-1
+
+date: 2026-06-21
+
+
+
+## What's New
+## 🔤 General
+- chore(graphql): migrate connection UUID handling to google/uuid @leecalcote (#4268)
+- [Chore]: Update to Sistent v0.21.21 @l5io (#4266)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu, @l5io and @leecalcote
+

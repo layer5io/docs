@@ -1,0 +1,15 @@
+# v1.0.85
+
+date: 2026-05-21
+
+
+
+- fix: correct malformed CLOUD_CREDENTIAL_ENCRYPTION_KEY + add fail-loud guards @hortison (#5363)
+- fix(ui): SSR-safe useWindowDimensions + guarded catalog catch-all unslugify @hortison (#5360)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison and @leecalcote
+
+

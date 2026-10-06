@@ -1,0 +1,24 @@
+# v0.8.95
+
+date: 2024-11-21
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Changed position of cancel button in workspace modal. @Pratik-050 (#3010)
+- Added loading info for clone operation. @Pratik-050 (#3007)
+- Support for orgId for views and honor org switch change @sudhanshutech (#2999)
+
+## ☁️ Api Specifications
+
+- Support for orgId for views and honor org switch change @sudhanshutech (#2999)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Pratik-050, @amitamrutiya, @l5io and @sudhanshutech
+
+

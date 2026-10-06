@@ -1,0 +1,19 @@
+# v0.8.41
+
+date: 2024-10-28
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump @layer5/sistent v0.14.106 @l5io (#2872)
+- Add create design modal @sudhanshutech (#2868)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15, @jerensl, @l5io and @sudhanshutech
+
+

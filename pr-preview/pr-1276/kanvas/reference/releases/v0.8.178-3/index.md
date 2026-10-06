@@ -1,0 +1,21 @@
+# v0.8.178-3
+
+date: 2025-12-10
+
+
+
+## What's New
+## 🔤 General
+## 🐛 Bug Fixes
+
+- [meshmap] Fix TypeScript type errors across core components @[copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) (#3900)
+
+## 🧰 Maintenance
+
+- E2e tests @aabidsofi19 (#3913)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io and [copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent)
+
