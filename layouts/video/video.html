@@ -12,9 +12,6 @@
   <div class="hero-section-wrapper">
     <h1>{{ .Title }}</h1>
     <p class="hero-subtitle">{{ .Description }}</p>
-    <div class="td-page-meta">
-      {{ partial "page-markdown-link.html" . }}
-    </div>
     
     {{ if .Params.featured_video }}
     {{ $featuredImage := .Params.featured_image }}
