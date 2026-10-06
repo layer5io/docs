@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.57
+  version: v1.3.58
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -54961,13 +54961,16 @@ paths:
                 properties:
                   page:
                     type: integer
-                    x-go-type-skip-optional-pointer: true
-                  page_size:
+                    description: Current page number of the result set.
+                    minimum: 0
+                  pageSize:
                     type: integer
-                    x-go-type-skip-optional-pointer: true
-                  total_count:
+                    description: Number of items per page.
+                    minimum: 1
+                  totalCount:
                     type: integer
-                    x-go-type-skip-optional-pointer: true
+                    description: Total number of items available.
+                    minimum: 0
                   teams:
                     type: array
                     x-go-type-skip-optional-pointer: true
@@ -54984,6 +54987,8 @@ paths:
                       required:
                         - id
                         - name
+                        - createdAt
+                        - updatedAt
                       properties:
                         id:
                           description: Team ID
@@ -54991,7 +54996,6 @@ paths:
                           x-go-name: ID
                           x-oapi-codegen-extra-tags:
                             db: id
-                            yaml: id
                           type: string
                           format: uuid
                           x-go-type: uuid.UUID
@@ -55000,7 +55004,6 @@ paths:
                         name:
                           x-oapi-codegen-extra-tags:
                             db: name
-                            yaml: name
                           x-order: 2
                           type: string
                           description: Team name
@@ -55009,7 +55012,6 @@ paths:
                         description:
                           x-oapi-codegen-extra-tags:
                             db: description
-                            yaml: description
                           x-order: 3
                           type: string
                           description: Team description
@@ -55017,7 +55019,6 @@ paths:
                         owner:
                           x-oapi-codegen-extra-tags:
                             db: owner
-                            yaml: owner
                           x-order: 4
                           description: User ID of the owner of the team
                           type: string
@@ -55028,38 +55029,36 @@ paths:
                         metadata:
                           x-oapi-codegen-extra-tags:
                             db: metadata
-                            yaml: metadata
                           x-order: 5
                           x-go-type: core.Map
                           x-go-type-skip-optional-pointer: true
                           type: object
                           description: Additional metadata for the team
-                        created_at:
+                        createdAt:
+                          description: Timestamp when the team was created.
                           x-oapi-codegen-extra-tags:
                             db: created_at
-                            yaml: created_at
+                            json: createdAt
                           x-order: 6
                           type: string
                           format: date-time
                           x-go-type-skip-optional-pointer: true
-                        updated_at:
+                        updatedAt:
+                          description: Timestamp when the team was last updated.
                           x-oapi-codegen-extra-tags:
                             db: updated_at
-                            yaml: updated_at
+                            json: updatedAt
                           x-order: 7
                           type: string
                           format: date-time
                           x-go-type-skip-optional-pointer: true
-                        deleted_at:
+                        deletedAt:
+                          description: Timestamp when the team was soft-deleted, if applicable.
                           x-oapi-codegen-extra-tags:
                             db: deleted_at
-                            yaml: deleted_at
+                            json: deletedAt
                           x-order: 8
-                          description: SQL null Timestamp to handle null values of time.
-                          x-go-type: meshcore.NullTime
-                          x-go-type-import:
-                            name: meshcore
-                            path: github.com/meshery/schemas/models/core
+                          x-go-type: NullTime
                           type: string
                           format: date-time
                           x-go-type-skip-optional-pointer: true
@@ -55139,24 +55138,24 @@ paths:
                 description: Paginated list of workspace-team mappings.
                 properties:
                   page:
-                    type: integer
-                    x-go-type-skip-optional-pointer: true
                     description: Zero-based page index returned in this response.
                     minimum: 0
-                  pageSize:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  pageSize:
                     description: Maximum number of items returned on each page.
                     minimum: 1
                     x-oapi-codegen-extra-tags:
                       json: pageSize,omitempty
-                  totalCount:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  totalCount:
                     description: Total number of items across all pages.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       json: totalCount,omitempty
+                    type: integer
+                    x-go-type-skip-optional-pointer: true
                   workspacesTeamsMapping:
                     type: array
                     description: Workspace-team mapping entries.
@@ -55694,24 +55693,24 @@ paths:
                 description: Paginated list of workspace-environment mappings.
                 properties:
                   page:
-                    type: integer
-                    x-go-type-skip-optional-pointer: true
                     description: Zero-based page index returned in this response.
                     minimum: 0
-                  pageSize:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  pageSize:
                     description: Maximum number of items returned on each page.
                     minimum: 1
                     x-oapi-codegen-extra-tags:
                       json: pageSize,omitempty
-                  totalCount:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  totalCount:
                     description: Total number of items across all pages.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       json: totalCount,omitempty
+                    type: integer
+                    x-go-type-skip-optional-pointer: true
                   workspacesEnvironmentsMapping:
                     type: array
                     description: Workspace-environment mapping entries.
@@ -55958,24 +55957,24 @@ paths:
                 description: Paginated list of designs.
                 properties:
                   page:
-                    type: integer
-                    x-go-type-skip-optional-pointer: true
                     description: Zero-based page index returned in this response.
                     minimum: 0
-                  pageSize:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  pageSize:
                     description: Maximum number of items returned on each page.
                     minimum: 1
                     x-oapi-codegen-extra-tags:
                       json: pageSize,omitempty
-                  totalCount:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  totalCount:
                     description: Total number of items across all pages.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       json: totalCount,omitempty
+                    type: integer
+                    x-go-type-skip-optional-pointer: true
                   designs:
                     type: array
                     description: Designs in this page.
@@ -60576,24 +60575,24 @@ paths:
                 description: Paginated list of workspace-design mappings.
                 properties:
                   page:
-                    type: integer
-                    x-go-type-skip-optional-pointer: true
                     description: Zero-based page index returned in this response.
                     minimum: 0
-                  pageSize:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  pageSize:
                     description: Maximum number of items returned on each page.
                     minimum: 1
                     x-oapi-codegen-extra-tags:
                       json: pageSize,omitempty
-                  totalCount:
                     type: integer
                     x-go-type-skip-optional-pointer: true
+                  totalCount:
                     description: Total number of items across all pages.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       json: totalCount,omitempty
+                    type: integer
+                    x-go-type-skip-optional-pointer: true
                   workspacesDesignsMapping:
                     type: array
                     description: Workspace-design mapping entries.
