@@ -24075,6 +24075,29 @@ You can opt out of all email notifications by toggling the button located on the
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.272"
+url: /cloud/reference/releases/v1.0.272/index.md
+date: "2026-10-06"
+--------------------------------------------------------------------------------
+
+- fix(ui): clear production build TS errors from schemas 1.3.57 nullability @miacycle (#6151)
+- [chore-UI] Fix badge overflow in Users table @Katotodan (#6150)
+- fix(catalog): show tooltip with full label on truncated sort dropdown @Maanvi212006 (#6149)
+- Enforce the share permission keys on every share route. @jijillery (#6137)
+- fix(handlers): bound design URL import with the shared filter-import fetch guard @jijillery (#6135)
+- test(ui): type-check the jest project in npm run typecheck and clear its errors @leecalcote (#6134)
+- build(ui): untrack build-written next-env.d.ts and guard against tracked ignored files @leecalcote (#6132)
+- test(handlers): report a stale schemas pin as drift instead of failing the suite @leecalcote (#6131)
+- fix(auth): revoke the OAuth grant on sign-out when logout flow creation fails @jijillery (#6127)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Katotodan, @Maanvi212006, @alexquincy, @jijillery, @leecalcote, @meshery-ci, @miacycle, @pontusringblom, @simihablo, @suttonskate and @winkletinkle
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.271"
 url: /cloud/reference/releases/v1.0.271/index.md
 date: "2026-09-29"

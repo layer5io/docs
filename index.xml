@@ -2597,7 +2597,24 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.271</title><link>/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.272</title><link>/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): clear production build TS errors from schemas 1.3.57 nullability @miacycle (#6151)&lt;/li&gt;
+&lt;li&gt;[chore-UI] Fix badge overflow in Users table @Katotodan (#6150)&lt;/li&gt;
+&lt;li&gt;fix(catalog): show tooltip with full label on truncated sort dropdown @Maanvi212006 (#6149)&lt;/li&gt;
+&lt;li&gt;Enforce the share permission keys on every share route. @jijillery (#6137)&lt;/li&gt;
+&lt;li&gt;fix(handlers): bound design URL import with the shared filter-import fetch guard @jijillery (#6135)&lt;/li&gt;
+&lt;li&gt;test(ui): type-check the jest project in npm run typecheck and clear its errors @leecalcote (#6134)&lt;/li&gt;
+&lt;li&gt;build(ui): untrack build-written next-env.d.ts and guard against tracked ignored files @leecalcote (#6132)&lt;/li&gt;
+&lt;li&gt;test(handlers): report a stale schemas pin as drift instead of failing the suite @leecalcote (#6131)&lt;/li&gt;
+&lt;li&gt;fix(auth): revoke the OAuth grant on sign-out when logout flow creation fails @jijillery (#6127)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Katotodan, @Maanvi212006, @alexquincy, @jijillery, @leecalcote, @meshery-ci, @miacycle, @pontusringblom, @simihablo, @suttonskate and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.271</title><link>/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): clear logout cookies at the scopes their setters write @leecalcote (#5556)&lt;/li&gt;
 &lt;/ul&gt;
 
