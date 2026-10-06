@@ -13,6 +13,21 @@ In Kanvas, you can share your designs with other members of your organization an
 
 
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Sharing requires an account</h4>
+  
+      Anonymous visitors to <a href="https://kanvas.new">kanvas.new</a> can create and edit designs without signing in, but sharing a design requires a signed-in account. Choosing <strong>Share</strong> as an anonymous visitor prompts you to sign in; once you do, share as described below.
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Sharing Views</h4>
   
       You can share and control access to <a href="/kanvas/operator/views/">Views</a> in the same fashion as you do for Designs.
@@ -85,7 +100,7 @@ Once the "Share" modal is open, type the names or email addresses of the users o
 
 <figure>
   <img src="../images/audit-2026-09/designer-share.png" alt="Share design modal with People with Access and visibility controls" />
-  <figcaption>Updated Share modal (anonymous capture, Sep 2026): add users, <strong>People with Access</strong>, Private/Public visibility, and <strong>Copy Link</strong>. Owner shown as an anonymous session.</figcaption>
+  <figcaption>Updated Share modal (Sep 2026): add users, <strong>People with Access</strong>, Private/Public visibility, and <strong>Copy Link</strong>.</figcaption>
 </figure>
 
 ## Owner vs. Collaborator

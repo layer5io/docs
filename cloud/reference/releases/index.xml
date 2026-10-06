@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.272</title><link>/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.273</title><link>/cloud/reference/releases/v1.0.273/</link><pubDate>Tue, 06 Oct 2026 23:41:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.273/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): render unmeasured memberships as unknown @miacycle (#6152)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.272</title><link>/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(ui): clear production build TS errors from schemas 1.3.57 nullability @miacycle (#6151)&lt;/li&gt;
 &lt;li&gt;[chore-UI] Fix badge overflow in Users table @Katotodan (#6150)&lt;/li&gt;
 &lt;li&gt;fix(catalog): show tooltip with full label on truncated sort dropdown @Maanvi212006 (#6149)&lt;/li&gt;

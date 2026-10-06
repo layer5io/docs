@@ -2327,6 +2327,20 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing requires an account&lt;/h4&gt;
+ 
+ Anonymous visitors to &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt; can create and edit designs without signing in, but sharing a design requires a signed-in account. Choosing &lt;strong&gt;Share&lt;/strong&gt; as an anonymous visitor prompts you to sign in; once you do, share as described below.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing Views&lt;/h4&gt;
  
  You can share and control access to &lt;a href="/kanvas/operator/views/"&gt;Views&lt;/a&gt; in the same fashion as you do for Designs.
@@ -2597,7 +2611,16 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.272</title><link>/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.273</title><link>/cloud/reference/releases/v1.0.273/</link><pubDate>Tue, 06 Oct 2026 23:41:40 +0000</pubDate><guid>/cloud/reference/releases/v1.0.273/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): render unmeasured memberships as unknown @miacycle (#6152)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.272</title><link>/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(ui): clear production build TS errors from schemas 1.3.57 nullability @miacycle (#6151)&lt;/li&gt;
 &lt;li&gt;[chore-UI] Fix badge overflow in Users table @Katotodan (#6150)&lt;/li&gt;
 &lt;li&gt;fix(catalog): show tooltip with full label on truncated sort dropdown @Maanvi212006 (#6149)&lt;/li&gt;
