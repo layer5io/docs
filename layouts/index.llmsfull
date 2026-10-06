@@ -40,6 +40,7 @@
   {{- if not (in $includeList .) -}}
     {{- $excludeList = $excludeList | append . -}}
   {{- end -}}
+{{- end -}}
 
 {{- /* Local override: keep only the newest N pages under each section in params.llms.limit_sections */ -}}
 {{- range $path, $n := $llms.limit_sections | default dict -}}
@@ -48,7 +49,6 @@
       {{- $excludeList = $excludeList | append .RelPermalink -}}
     {{- end -}}
   {{- end -}}
-{{- end -}}
 {{- end -}}
 
 # {{ site.Title }}
