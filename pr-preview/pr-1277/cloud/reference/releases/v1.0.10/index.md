@@ -1,0 +1,15 @@
+# v1.0.10
+
+date: 2026-04-16
+
+
+
+- fix(middleware): return 404 when environment not found in owner authz @alexquincy (#5039)
+- chore: remove local openapi-schema and dead doc-serving code @PragalvaXFREZ (#4997)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@PragalvaXFREZ, @alexquincy, @l5io and @leecalcote
+
+

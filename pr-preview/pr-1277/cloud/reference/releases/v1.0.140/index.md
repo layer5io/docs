@@ -1,0 +1,16 @@
+# v1.0.140
+
+date: 2026-06-21
+
+
+
+- refactor: pre-compute static role UUIDs and drop redundant uuidMust test helper @leecalcote (#5518)
+- Migrate from userID to owner. @leecalcote (#5510)
+- feat(deps): migrate to meshery/schemas v1.3.12 + meshkit v1.0.14 (gofrs->google/uuid) @leecalcote (#5513)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @ritzorama and @sarajkrishnasingh
+
+

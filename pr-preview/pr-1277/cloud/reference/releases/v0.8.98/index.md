@@ -1,0 +1,23 @@
+# v0.8.98
+
+date: 2024-11-26
+
+
+
+## What's New
+## 🔤 General
+## 🚀 Features
+
+- Add Edit design support in details page @sudhanshutech (#3019)
+
+## 🖥 Cloud UI
+
+- Add Edit design support in details page @sudhanshutech (#3019)
+- [Chore]: Bump Sistent v0.14.122 @l5io (#3026)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @sudhanshutech
+
+

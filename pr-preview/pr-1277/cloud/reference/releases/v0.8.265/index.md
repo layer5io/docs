@@ -1,0 +1,16 @@
+# v0.8.265
+
+date: 2025-06-22
+
+
+
+## What's New
+## 🔤 General
+- Fix: main.go config file location @leecalcote (#3672)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

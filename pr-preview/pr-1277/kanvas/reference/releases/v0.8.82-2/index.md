@@ -1,0 +1,15 @@
+# v0.8.82-2
+
+date: 2025-05-16
+
+
+
+## What's New
+## 🔤 General
+- Fix: Help Modal Bugs @vr-varad (#3662)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @vr-varad
+

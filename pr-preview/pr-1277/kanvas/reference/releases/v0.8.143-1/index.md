@@ -1,0 +1,17 @@
+# v0.8.143-1
+
+date: 2025-10-24
+
+
+
+## What's New
+## 🔤 General
+- add move out of parent action @aabidsofi19 (#3862)
+- publish and render design validation event @aabidsofi19 (#3860)
+- [Chore]: Update to Sistent v0.15.12 @l5io (#3861)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+

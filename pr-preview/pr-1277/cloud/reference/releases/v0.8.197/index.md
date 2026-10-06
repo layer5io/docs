@@ -1,0 +1,24 @@
+# v0.8.197
+
+date: 2025-04-17
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix: issue with badge alignment and theme @amitamrutiya (#3400)
+- rem to px for svg @leecalcote (#3399)
+- [UI] Update Account Deletion Prompt @M-DEV-1 (#3373)
+
+## 🐛 Bug Fixes
+
+- fix: issue with badge alignment and theme @amitamrutiya (#3400)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@M-DEV-1, @amitamrutiya, @l5io, @leecalcote and @zihanKuang
+
+

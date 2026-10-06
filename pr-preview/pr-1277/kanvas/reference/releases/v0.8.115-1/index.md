@@ -1,0 +1,16 @@
+# v0.8.115-1
+
+date: 2025-07-08
+
+
+
+## What's New
+## 🔤 General
+- Refactor and Fix Component drag drop from pickers @aabidsofi19 (#3803)
+- fix debounced changes getting lost when quickly closing component configurator @aabidsofi19 (#3804)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

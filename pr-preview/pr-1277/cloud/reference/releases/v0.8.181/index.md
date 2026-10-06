@@ -1,0 +1,33 @@
+# v0.8.181
+
+date: 2025-04-08
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- remove @mui/material v5 library @amitamrutiya (#3375)
+- [Chore]: Bump Sistent v0.14.171 @l5io (#3376)
+- Migrating components from Mui to Sistent @FaheemOnHub (#3274)
+- [Chore]: Bump Sistent v0.14.170 @l5io (#3369)
+
+## 🦴 Infrastructure
+
+- Migrating components from Mui to Sistent @FaheemOnHub (#3274)
+
+## ☁️ API Specifications
+
+- Migrating components from Mui to Sistent @FaheemOnHub (#3274)
+
+## 🧰 Maintenance
+
+- Migrating components from Mui to Sistent @FaheemOnHub (#3274)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @amitamrutiya, @l5io and MUzairS15
+
+

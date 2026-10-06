@@ -1,0 +1,14 @@
+# v0.8.683
+
+date: 2026-03-19
+
+
+
+- Fix academy Ui and backend @aabidsofi19 (#4897)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @yi-nuo426
+
+

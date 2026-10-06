@@ -1,0 +1,20 @@
+# v0.8.516
+
+date: 2025-10-17
+
+
+
+## 🖥 Cloud UI
+
+- fix org sync on academy public pages @aabidsofi19 (#4369)
+
+## 💻 Server
+
+- disable token verification @aabidsofi19 (#4370)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+
