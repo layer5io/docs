@@ -24013,9 +24013,15 @@ html {
 
 @media (min-width: 1920px) {
   .td-navbar > .container-fluid, .td-navbar > .container-sm, .td-navbar > .container-md, .td-navbar > .container-lg, .td-navbar > .container-xl, .td-navbar > .container-xxl {
-    max-width: none; }
+    max-width: 1920px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
   .container-fluid.td-outer > .td-main, .td-outer.container-sm > .td-main, .td-outer.container-md > .td-main, .td-outer.container-lg > .td-main, .td-outer.container-xl > .td-main, .td-outer.container-xxl > .td-main {
-    max-width: none; } }
+    max-width: 1920px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; } }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, .td-alert-heading, h5, .h5, h6, .h6 {
   scroll-margin-top: 1rem; }
