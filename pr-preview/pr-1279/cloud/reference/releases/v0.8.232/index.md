@@ -1,0 +1,22 @@
+# v0.8.232
+
+date: 2025-06-08
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- upgrade ui grid to v2 . @FaheemOnHub (#3563)
+
+## 🐛 Bug Fixes
+
+- upgrade ui grid to v2 . @FaheemOnHub (#3563)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @l5io and @winkletinkle
+
+

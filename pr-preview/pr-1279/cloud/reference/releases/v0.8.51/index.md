@@ -1,0 +1,18 @@
+# v0.8.51
+
+date: 2024-10-31
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Refactor carousel images and update UI text across flow pages @leecalcote (#2891)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,18 @@
+# v0.8.437
+
+date: 2025-09-09
+
+
+
+## 🖥 Cloud UI
+
+- Addon Styling update @Namanv0509 (#4044)
+- fix widget sizing @aabidsofi19 (#4120)
+- fix profile save broken @aabidsofi19 (#4119)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19 and @l5io
+
+

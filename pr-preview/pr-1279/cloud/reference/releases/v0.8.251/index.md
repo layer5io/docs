@@ -1,0 +1,29 @@
+# v0.8.251
+
+date: 2025-06-18
+
+
+
+## What's New
+## 🔤 General
+- bugfix: eliminate ERRO[0044] error retrieving organization by domain localhost:9876: sql: no rows in result set @leecalcote (#3631)
+
+## 🖥 Cloud UI
+
+- Enable Search Across Columns in Cloud Tables && Add remaining columns to audit table. @FaheemOnHub (#3624)
+- dynamic shadow @AmankeldinovaMadina (#3615)
+
+## 💻 Server
+
+- Enable Search Across Columns in Cloud Tables && Add remaining columns to audit table. @FaheemOnHub (#3624)
+
+## 🐛 Bug Fixes
+
+- dynamic shadow @AmankeldinovaMadina (#3615)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@AmankeldinovaMadina, @FaheemOnHub, @l5io, @leecalcote and @ritzorama
+
+

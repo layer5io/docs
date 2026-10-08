@@ -1,0 +1,18 @@
+# v0.8.302
+
+date: 2025-07-20
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix link theme @aabidsofi19 (#3786)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @meshery-ci
+
+

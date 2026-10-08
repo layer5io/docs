@@ -1,0 +1,24 @@
+# v0.8.131
+
+date: 2025-01-24
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add support to assign views @sudhanshutech (#3057)
+- fix: extension build failed issue @amitamrutiya (#3139)
+- [Chore]: Bump Sistent v0.14.145 @l5io (#3137)
+
+## 🐛 Bug Fixes
+
+- fix: extension build failed issue @amitamrutiya (#3139)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io, @leecalcote and @sudhanshutech
+
+

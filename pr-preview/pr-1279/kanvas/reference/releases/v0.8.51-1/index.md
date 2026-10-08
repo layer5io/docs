@@ -1,0 +1,19 @@
+# v0.8.51-1
+
+date: 2025-03-21
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix and enhance selection groups @aabidsofi19 (#3518)
+- sync resized node with bounding box directly @aabidsofi19 (#3519)
+- [Chore]: Bump Sistent v0.14.167 @l5io (#3516)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

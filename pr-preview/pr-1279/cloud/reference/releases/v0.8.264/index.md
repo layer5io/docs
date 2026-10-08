@@ -1,0 +1,18 @@
+# v0.8.264
+
+date: 2025-06-22
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix: refactor ImageCard and optimize useCallback in UserDetails and WorkspaceDataTable components @leecalcote (#3671)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

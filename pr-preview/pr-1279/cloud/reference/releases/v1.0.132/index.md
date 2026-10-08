@@ -1,0 +1,15 @@
+# v1.0.132
+
+date: 2026-06-13
+
+
+
+- Key-based authorization: membership-aware provider-org resolution, scope contract, route/UI key gates (#5474) @jamieplu (#5477)
+- fix(router): key Kanvas workspace-views routes to their canonical permissions @jamieplu (#5483)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu and @leecalcote
+
+

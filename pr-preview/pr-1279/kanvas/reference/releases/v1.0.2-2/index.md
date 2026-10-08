@@ -1,0 +1,15 @@
+# v1.0.2-2
+
+date: 2026-04-07
+
+
+
+## What's New
+## 🔤 General
+- fix: polyfill ReactDOM.findDOMNode for React 19 compat @yi-nuo426 (#4086)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @yi-nuo426
+

@@ -1,0 +1,16 @@
+# v1.0.153
+
+date: 2026-06-24
+
+
+
+- fix(dashboard, authz): keep dashboard background end-to-end; unblock Provider Admins on org-scoped Academy @leecalcote (#5572)
+- fix(auth): honor relative return_to in GetRefURL so academy enroll returns to the learning path @leecalcote (#5573)
+- fix(ui): make user-profile Edit button open the edit modal reliably @leecalcote (#5571)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @suttonskate
+
+

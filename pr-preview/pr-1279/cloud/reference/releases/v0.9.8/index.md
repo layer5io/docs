@@ -1,0 +1,14 @@
+# v0.9.8
+
+date: 2026-03-24
+
+
+
+- Fix workspace endpoint imports to use local API slice @leecalcote (#4924)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @yi-nuo426
+
+

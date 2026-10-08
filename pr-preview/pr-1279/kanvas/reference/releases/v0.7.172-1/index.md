@@ -1,0 +1,18 @@
+# v0.7.172-1
+
+date: 2024-12-20
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- remove trim params from catalog and patter api and use populate @amitamrutiya (#3252)
+- fix z-index for popover in panel @aabidsofi19 (#3257)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

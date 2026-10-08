@@ -1,0 +1,18 @@
+# v0.8.177-1
+
+date: 2025-12-05
+
+
+
+## What's New
+## 🔤 General
+## 🧰 Maintenance
+
+- Add Copilot PR Handler workflow @leecalcote (#3909)
+- Update Kanvas Coding Agent configuration @leecalcote (#3907)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
