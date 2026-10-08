@@ -25,6 +25,8 @@ When you work in Layer5 Cloud, your current organization context determines:
 An organization session scopes the UI, meaning all queries and resources displayed are only from the selected organization. Any new designs, environments, or other resources you create are automatically placed in the currently selected organization.
 {{< /alert >}}
 
+An organization can also have child organizations. Your active organization is always the one you have selected, and you can switch only into organizations you are a member of, so see [Child Organizations](../child-organizations/) for how a parent administrator relates to a child.
+
 ## Order of Precedence for Organization Settings
 
 Layer5 Cloud uses the following order of precedence to determine your active organization context:
