@@ -3,6 +3,30 @@
   cursor: pointer;
 }
 
+/* Native button used as the keyboard-accessible image trigger */
+.md__image-trigger {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #00b39f;
+    outline-offset: 4px;
+  }
+}
+
 /* The Modal (background) */
 .modal {
   display: none;
@@ -48,6 +72,11 @@
   overflow: hidden;
   border: 0;
   z-index: 99;
+
+  &:focus-visible {
+    outline: 2px solid #00b39f;
+    outline-offset: 2px;
+  }
 } 
 
 .modal-close::after {
@@ -56,7 +85,7 @@
   top: 0.2em;
   left: 0.1em;
   text-indent: 0;
-  content: "\00D7"
+  content: "\00D7";
 }
 
 .modal-close:hover,
