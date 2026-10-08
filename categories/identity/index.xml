@@ -58,12 +58,7 @@
 &lt;/div&gt;
 
 
-
-&lt;h2 id="order-of-precedence-for-organization-settings" class="heading-link"&gt;
- Order of Precedence for Organization Settings
- &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Organization Configuration Scenarios</title><link>/cloud/guides/organizations/configuration-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/configuration-scenarios/</guid><description>&lt;p&gt;Every organization in Layer5 Cloud is configured based on two simple choices:
+&lt;p&gt;An organization can also have child organizations. Your active organization is always the one you have selected, and you can switch only into organizations you are a member of, so see &lt;a href="../child-organizations/"&gt;Child Organizations&lt;/a&gt; for how a parent administrator relates to a child.&lt;/p&gt;</description></item><item><title>Organization Configuration Scenarios</title><link>/cloud/guides/organizations/configuration-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/configuration-scenarios/</guid><description>&lt;p&gt;Every organization in Layer5 Cloud is configured based on two simple choices:
 &lt;strong&gt;where your users sign in&lt;/strong&gt; (your front door) and &lt;strong&gt;whose identity
 provider authenticates them&lt;/strong&gt;. Those two choices combine into a small set
 of named scenarios. This guide names each one, describes what your users
@@ -80,7 +75,33 @@ the map; those are the turn-by-turn directions.&lt;/p&gt;</description></item><i
  &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at &lt;a href=""&gt;Meet Five and the Cast&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Child Organizations</title><link>/cloud/guides/organizations/org-management/child-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/child-organizations/</guid><description>&lt;p&gt;A &lt;strong&gt;child organization&lt;/strong&gt; is an organization created inside another organization, called its &lt;strong&gt;parent&lt;/strong&gt;. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child&amp;rsquo;s settings and membership from the parent.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Permissions Required&lt;/h4&gt;
+ 
+ Creating a child organization requires the &lt;strong&gt;Create Organization&lt;/strong&gt; permission in the parent. Seeing the list of a parent&amp;rsquo;s children requires &lt;strong&gt;View Organizations&lt;/strong&gt; in the parent. Editing, deleting, or adding members to a child from the parent requires the Organization Administrator or Owner role in the parent. To understand the specific roles needed for each action, please refer to the &lt;a href="https://docs.layer5.io/cloud/reference/default-permissions/"&gt;Default Permissions reference&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="how-organizations-nest" class="heading-link"&gt;
+ How Organizations Nest
+ &lt;a href="#how-organizations-nest" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An organization can have any number of child organizations.&lt;/li&gt;
+&lt;li&gt;A child can have child organizations of its own, and those can have children of their own. There is no limit on depth.&lt;/li&gt;
+&lt;li&gt;Every top-level organization sits directly under the &lt;strong&gt;provider organization&lt;/strong&gt; of your Layer5 Cloud deployment. The provider organization is never itself a child, and it does not appear in the child organizations section.&lt;/li&gt;
+&lt;li&gt;A child belongs to exactly one parent. A child cannot be moved to another parent after it is created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A parent administers its &lt;strong&gt;direct&lt;/strong&gt; children only. An administrator of a grandparent does not administer a grandchild by virtue of that role; the administrator of the intermediate organization does.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is highly flexible: organizations can have any number of teams, teams can have any number of users, and users can belong to any number of teams and organizations.&lt;/p&gt;
 &lt;p&gt;Below is an overview of the core identity components within the Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="identity" class="heading-link"&gt;
