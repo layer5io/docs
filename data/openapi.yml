@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.59
+  version: v1.3.60
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -271,10 +271,46 @@ paths:
                         - WorkspacesInOrganization
                         - ImageSizeInDesign
                         - SizePerDesign
+                        - BlowhornProfiles
+                        - BlowhornBrowserAutomation
+                        - BlowhornScheduler
+                        - BlowhornDevicesPerSeat
+                        - BlowhornPlatformLinkedIn
+                        - BlowhornPlatformX
+                        - BlowhornPlatformReddit
+                        - BlowhornPlatformHackerNews
+                        - BlowhornPlatformSlack
+                        - BlowhornPlatformBluesky
+                        - BlowhornPlatformGitHub
+                        - BlowhornPlatformBlog
+                      x-enumDescriptions:
+                        ComponentsInDesign: Maximum number of components in a single design; 999999999999 is unlimited.
+                        RelationshipsInDesign: Maximum number of relationships in a single design; 999999999999 is unlimited.
+                        DesignsInWorkspace: Maximum number of designs in a single workspace; 999999999999 is unlimited.
+                        WorkspacesInOrganization: Maximum number of workspaces in an organization; 999999999999 is unlimited.
+                        ImageSizeInDesign: Maximum size, in bytes, of an image embedded in a design; 999999999999 is unlimited.
+                        SizePerDesign: Maximum size of a single design; 999999999999 is unlimited.
+                        BlowhornProfiles: >-
+                          Maximum number of Blowhorn posting profiles the organization may hold; 999999999999 is
+                          unlimited.
+                        BlowhornBrowserAutomation: Blowhorn may publish through browser automation; granted when quantity is greater than 0.
+                        BlowhornScheduler: Blowhorn may run scheduled publishes; granted when quantity is greater than 0.
+                        BlowhornDevicesPerSeat: Maximum number of devices one Blowhorn seat may publish from; 999999999999 is unlimited.
+                        BlowhornPlatformLinkedIn: Blowhorn may publish to LinkedIn; granted when quantity is greater than 0.
+                        BlowhornPlatformX: Blowhorn may publish to X; granted when quantity is greater than 0.
+                        BlowhornPlatformReddit: Blowhorn may publish to Reddit; granted when quantity is greater than 0.
+                        BlowhornPlatformHackerNews: Blowhorn may publish to Hacker News; granted when quantity is greater than 0.
+                        BlowhornPlatformSlack: Blowhorn may publish to Slack; granted when quantity is greater than 0.
+                        BlowhornPlatformBluesky: Blowhorn may publish to Bluesky; granted when quantity is greater than 0.
+                        BlowhornPlatformGitHub: Blowhorn may publish to GitHub; granted when quantity is greater than 0.
+                        BlowhornPlatformBlog: Blowhorn may publish to a blog; granted when quantity is greater than 0.
                     quantity:
                       type: number
                       format: double
-                      description: Quantity of the feature granted by the plan. The sentinel value 999999999999 denotes unlimited.
+                      description: >-
+                        Quantity of the feature granted by the plan. For a cap-style feature this is the maximum, and
+                        the sentinel value 999999999999 denotes unlimited. For a capability-style feature any value
+                        greater than 0 grants the capability.
                       minimum: 0
                       x-oapi-codegen-extra-tags:
                         db: quantity
@@ -501,10 +537,46 @@ paths:
                         - WorkspacesInOrganization
                         - ImageSizeInDesign
                         - SizePerDesign
+                        - BlowhornProfiles
+                        - BlowhornBrowserAutomation
+                        - BlowhornScheduler
+                        - BlowhornDevicesPerSeat
+                        - BlowhornPlatformLinkedIn
+                        - BlowhornPlatformX
+                        - BlowhornPlatformReddit
+                        - BlowhornPlatformHackerNews
+                        - BlowhornPlatformSlack
+                        - BlowhornPlatformBluesky
+                        - BlowhornPlatformGitHub
+                        - BlowhornPlatformBlog
+                      x-enumDescriptions:
+                        ComponentsInDesign: Maximum number of components in a single design; 999999999999 is unlimited.
+                        RelationshipsInDesign: Maximum number of relationships in a single design; 999999999999 is unlimited.
+                        DesignsInWorkspace: Maximum number of designs in a single workspace; 999999999999 is unlimited.
+                        WorkspacesInOrganization: Maximum number of workspaces in an organization; 999999999999 is unlimited.
+                        ImageSizeInDesign: Maximum size, in bytes, of an image embedded in a design; 999999999999 is unlimited.
+                        SizePerDesign: Maximum size of a single design; 999999999999 is unlimited.
+                        BlowhornProfiles: >-
+                          Maximum number of Blowhorn posting profiles the organization may hold; 999999999999 is
+                          unlimited.
+                        BlowhornBrowserAutomation: Blowhorn may publish through browser automation; granted when quantity is greater than 0.
+                        BlowhornScheduler: Blowhorn may run scheduled publishes; granted when quantity is greater than 0.
+                        BlowhornDevicesPerSeat: Maximum number of devices one Blowhorn seat may publish from; 999999999999 is unlimited.
+                        BlowhornPlatformLinkedIn: Blowhorn may publish to LinkedIn; granted when quantity is greater than 0.
+                        BlowhornPlatformX: Blowhorn may publish to X; granted when quantity is greater than 0.
+                        BlowhornPlatformReddit: Blowhorn may publish to Reddit; granted when quantity is greater than 0.
+                        BlowhornPlatformHackerNews: Blowhorn may publish to Hacker News; granted when quantity is greater than 0.
+                        BlowhornPlatformSlack: Blowhorn may publish to Slack; granted when quantity is greater than 0.
+                        BlowhornPlatformBluesky: Blowhorn may publish to Bluesky; granted when quantity is greater than 0.
+                        BlowhornPlatformGitHub: Blowhorn may publish to GitHub; granted when quantity is greater than 0.
+                        BlowhornPlatformBlog: Blowhorn may publish to a blog; granted when quantity is greater than 0.
                     quantity:
                       type: number
                       format: double
-                      description: Quantity of the feature granted by the plan. The sentinel value 999999999999 denotes unlimited.
+                      description: >-
+                        Quantity of the feature granted by the plan. For a cap-style feature this is the maximum, and
+                        the sentinel value 999999999999 denotes unlimited. For a capability-style feature any value
+                        greater than 0 grants the capability.
                       minimum: 0
                       x-oapi-codegen-extra-tags:
                         db: quantity
