@@ -3,6 +3,19 @@
   cursor: pointer;
 }
 
+/* Native button used as the keyboard-accessible image trigger */
+.md__image-trigger {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
 /* The Modal (background) */
 .modal {
   display: none;
