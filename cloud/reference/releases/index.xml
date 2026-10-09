@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.274</title><link>/cloud/reference/releases/v1.0.274/</link><pubDate>Fri, 09 Oct 2026 03:57:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.274/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.275</title><link>/cloud/reference/releases/v1.0.275/</link><pubDate>Fri, 09 Oct 2026 20:11:01 +0000</pubDate><guid>/cloud/reference/releases/v1.0.275/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(server): seed Blowhorn Free, Solo and Team plans for Cloud entitlement @leecalcote (#6161)&lt;/li&gt;
+&lt;li&gt;refactor(ui): child organizations use the generated schemas client @leecalcote (#6162)&lt;/li&gt;
+&lt;li&gt;feat(server): list an organization&amp;rsquo;s direct children @leecalcote (#6157)&lt;/li&gt;
+&lt;li&gt;fix(organizations): refuse deleting an organization that still has a live child @leecalcote (#6160)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;build(deps): bump @stripe/stripe-js from 9.17.0 to 10.0.0 in /ui @dependabot (#6143)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @dependabot, @leecalcote and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.274</title><link>/cloud/reference/releases/v1.0.274/</link><pubDate>Fri, 09 Oct 2026 03:57:24 +0000</pubDate><guid>/cloud/reference/releases/v1.0.274/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(handlers): hand live Cloud sessions back to kanvas.new sign-in @leecalcote (#6128)&lt;/li&gt;
 &lt;li&gt;feat(organizations): let a parent&amp;rsquo;s Organization Admin or Owner govern a direct child organization @leecalcote (#6156)&lt;/li&gt;
 &lt;li&gt;feat(ui): add a child organizations section to the organizations page @leecalcote (#6159)&lt;/li&gt;
