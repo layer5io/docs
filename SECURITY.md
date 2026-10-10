@@ -4,7 +4,7 @@ Layer5 project security vulnerabilities. We investigate every report thoroughly.
 
 ## Reporting a vulnerability
 To make a report, send an email to the private
-[security-vulns-reports@layer5.io](mailto:security-vulns-reports@layer5.io)
+[security@layer5.io](mailto:security@layer5.io)
 mailing list with the vulnerability details. For normal product bugs
 unrelated to latent security vulnerabilities, please head to
 the appropriate repository and submit a [new issue](../../issues/new/choose).
