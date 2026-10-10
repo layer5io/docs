@@ -1,0 +1,15 @@
+# v1.0.84
+
+date: 2026-05-21
+
+
+
+- [Chore]: Update to Sistent v0.21.14 @l5io (#5361)
+- [Deploy]: AES Encryption Key set
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote
+
+

@@ -1,0 +1,22 @@
+# v0.8.533
+
+date: 2025-10-25
+
+
+
+## 📚 Academy
+
+- Exoscale v0.6.24 content update @l5io (#4438)
+- Layer5 v0.8.7 content update @l5io (#4437)
+- Meshery v0.4.11 content update @l5io (#4436)
+
+## 🖥 Cloud UI
+
+- Remove Hardcoded Addon pricing @Namanv0509 (#4435)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509 and @l5io
+
+

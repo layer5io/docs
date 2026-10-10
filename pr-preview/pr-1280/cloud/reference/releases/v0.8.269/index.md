@@ -1,0 +1,16 @@
+# v0.8.269
+
+date: 2025-06-22
+
+
+
+## What's New
+## 🔤 General
+- permission middleware @aabidsofi19 (#3676)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

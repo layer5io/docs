@@ -1,0 +1,20 @@
+# v0.8.52-1
+
+date: 2025-03-25
+
+
+
+## What's New
+## 🔤 General
+- update redo hotkeys @aabidsofi19 (#3526)
+- [Chore]: Bump Sistent v0.14.168 @l5io (#3522)
+
+## 🖌️ Designer
+
+- Add create and add model functionality in shape and component picker @amitamrutiya (#3525)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

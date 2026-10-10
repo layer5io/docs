@@ -1,0 +1,16 @@
+# v1.0.146
+
+date: 2026-06-22
+
+
+
+## 📚 Academy
+
+- Academy latest content update @l5io (#5527)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

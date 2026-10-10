@@ -1,0 +1,14 @@
+# v1.0.236
+
+date: 2026-08-26
+
+
+
+- fix(dao): end every access-bearing edge when a member is removed from an org @arjunmehta-git (#6000)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@arjunmehta-git, @jamieplu, @yi-nuo426 and probe
+
+

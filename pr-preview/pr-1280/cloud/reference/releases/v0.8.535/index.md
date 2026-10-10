@@ -1,0 +1,23 @@
+# v0.8.535
+
+date: 2025-10-28
+
+
+
+## 📚 Academy
+
+- Meshery v0.4.14 content update @l5io (#4444)
+- Meshery v0.4.13 content update @l5io (#4443)
+- Meshery v0.4.12 content update @l5io (#4442)
+
+## 🖥 Cloud UI
+
+- Revert \Update pricing add on button style\ @Namanv0509 (#4440)
+- Update pricing add on button style @Namanv0509 (#4439)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509 and @l5io
+
+

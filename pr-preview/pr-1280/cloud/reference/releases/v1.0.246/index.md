@@ -1,0 +1,15 @@
+# v1.0.246
+
+date: 2026-09-04
+
+
+
+- fix(auth): revoke deleted user API tokens on the Layer5 Cloud validation paths @ritzorama (#6027)
+- fix(auth): honor org showAuthCarousel on non-flow auth surfaces @jamieplu (#6030)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald, @hortison, @jamieplu, @pontusringblom, @ritzorama and @simihablo
+
+

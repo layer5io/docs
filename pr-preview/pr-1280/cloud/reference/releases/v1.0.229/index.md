@@ -1,0 +1,15 @@
+# v1.0.229
+
+date: 2026-08-10
+
+
+
+- fix(database): backfill owner on unattributed session audit events @jijillery (#5910)
+- fix(ui): stop the Help & Support modal discarding the user's description @yi-nuo426 (#5919)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @ritzorama and @yi-nuo426
+
+
