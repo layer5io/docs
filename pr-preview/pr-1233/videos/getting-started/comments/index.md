@@ -1,4 +1,0 @@
-# Design Review
-
-
-<no value>

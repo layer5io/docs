@@ -1,4 +1,0 @@
-# Whiteboarding
-
-
-<no value>

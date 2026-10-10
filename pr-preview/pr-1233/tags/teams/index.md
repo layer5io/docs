@@ -1,4 +1,0 @@
-# Teams
-
-
-<no value>
