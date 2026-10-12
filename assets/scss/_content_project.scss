@@ -357,9 +357,20 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
     box-shadow: $ecosystem-box-glow;
   }
 
-  /* Hide the sibling highlight-box's shadow when this one is hovered/focused */
+  /* Hide the sibling highlight-box's shadow when this one is hovered/focused.
+     The `~` selector only matches following siblings, so it covers the case
+     where the hidden box comes first. */
   &:hover ~ .highlight-box,
   &:focus ~ .highlight-box {
     box-shadow: none;
   }
+}
+
+/* Cover the reverse order (highlight box first, hidden box second, as on
+   /cloud/): when the hidden box is hovered/focused, dim the highlight box
+   regardless of DOM order. */
+.pageinfo:has(.hidden-highlight-box:hover) .highlight-box,
+.pageinfo:has(.hidden-highlight-box:focus) .highlight-box,
+.pageinfo:has(.hidden-highlight-box:focus-visible) .highlight-box {
+  box-shadow: none;
 }
