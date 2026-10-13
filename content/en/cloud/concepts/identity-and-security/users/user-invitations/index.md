@@ -85,6 +85,7 @@ After an invitation is created, a notification email is sent only to addresses l
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
 | `name` | A human-readable name used to identify the invitation. |
 | `description` | Additional information about the invitation's purpose, for internal reference. |
+| `acceptanceOutcome` | What accepting the invitation does. `direct_membership` (the default) makes the user a member of the inviting organization. `child_organization` instead creates a new organization for the user beneath the inviting organization. See [Choosing what accepting does](#choosing-what-accepting-an-invitation-does). Creating or editing a `child_organization` invitation requires the **Create Organization** permission in the inviting organization. |
 | `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time — designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
 
 ### Managing existing invitations
@@ -123,6 +124,21 @@ When a user clicks an acceptance link and is logged in, the system performs the 
 5. **Adds the user to teams** — the user is added to all teams configured on the invitation.
 
 Role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
+
+### Choosing what accepting an invitation does
+
+Every invitation has an `acceptanceOutcome` that decides where the accepting user ends up.
+
+| `acceptanceOutcome` | Result of accepting |
+| :--- | :--- |
+| `direct_membership` (default) | The user joins the inviting organization with the invitation's roles and teams, as described above. |
+| `child_organization` | A new organization named **My Organization** is created as a child of the inviting organization. The user is its owner and Organization Admin, it gets the standard **My Team** and **My Workspace**, the invitation's roles are granted in it, and teams with the same names and descriptions as the invitation's teams are created in it with the user as a member. The user does not become a member of the inviting organization, and the inviting organization's own teams are unchanged. |
+
+A few things hold for both outcomes:
+
+- Every team listed on an invitation must belong to the inviting organization. An invitation that lists another organization's team is refused when it is created, edited, or accepted.
+- Accepting is counted once per person. Accepting the same invitation again does not create a second child organization or use more of the quota.
+- When someone creates a new account through your organization's open signup invitation, they do not also receive a separate personal organization; the invitation decides where they land. If the invitation turns out not to apply (for example, its quota is used up), a personal organization is created for them as usual.
 
 ### How the open signup invitation is applied at sign-in
 
