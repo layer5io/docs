@@ -13031,6 +13031,10 @@ Role and team assignment failures are non-blocking: the user is still added to t
 
 Every invitation has an `acceptanceOutcome` that decides where the accepting user ends up.
 
+In the **Create New Invitation** and **Edit Invitation** dialogs, choose it under **When accepted**. **Direct membership** is selected by default. **Child organization** appears only if you have the **Create Organization** permission in the current organization. If you lack that permission and edit an invitation that already uses Child organization, the option is shown selected but cannot be changed.
+
+<img src="./images/acceptance-outcome.png" alt="When accepted picker in the Create New Invitation dialog" style="width:50%; height:auto;" />
+
 | `acceptanceOutcome` | Result of accepting |
 | :--- | :--- |
 | `direct_membership` (default) | The user joins the inviting organization with the invitation's roles and teams, as described above. |
