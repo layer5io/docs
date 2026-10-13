@@ -45,4 +45,34 @@ aliases:
 - Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
 
 {{% /card %}}
+
+{{% card header="## Team Manager" %}}
+
+**(Coming Soon)**
+
+**What is the purpose of this role?**
+
+- Administration of teams (without delete access)
+
+**Who can assign this role?**
+
+- Organization Administrator or Team owner
+
+**When is this role first assigned?**
+
+- Manually by Organization Administrator or Team owner
+
+**How many instances of these roles?**
+
+- Min: 0, Max: many
+
+**Who can remove assignment of this role?**
+
+- Organization Administrator or Team owner
+
+**What permissions does this role have?**
+
+- Check [Permissions Reference](/cloud/reference/default-permissions/)
+
+{{% /card %}}
 {{< /cardpane >}}
