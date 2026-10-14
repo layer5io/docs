@@ -4,7 +4,7 @@ weight: 4
 type: docs
 description: >
   Kanvas uses relationships to map how interconnected components interact.
-categories: [Designer]
+categories: [designer]
 tags: [designs, relationships, components]
 aliases:
   - /meshmap/concepts/relationships

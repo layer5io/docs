@@ -5,7 +5,7 @@ description: >
 model: kubernetes
 params:
   kind: deployments
-categories: [Tutorials]
+categories: [tutorials]
 aliases:
   - /kanvas/tutorials/kubernetes-request-flow
   - /guides/tutorials/kubernetes-request-flow

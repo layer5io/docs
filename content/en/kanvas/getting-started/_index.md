@@ -2,7 +2,7 @@
 title: Getting Started with Designs
 description: Learn how to create, import, and share cloud native infrastructure designs in Kanvas — from your first design to deployable architecture.
 weight: 2
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/getting-started

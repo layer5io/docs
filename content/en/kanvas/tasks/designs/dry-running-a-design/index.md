@@ -3,7 +3,7 @@ title: Dry Running a Design
 description: >
   A dry run simulates the deployment of your design in the selected target environment without making any actual changes.
 weight: 3
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/dry-running-a-design

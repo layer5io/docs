@@ -1,7 +1,7 @@
 ---
 title: Self-Hosted
 weight: 6
-categories: [Self-Hosted]
+categories: [self-hosted]
 description: >
   Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
 aliases:

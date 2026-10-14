@@ -7,7 +7,7 @@ videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
-categories: [Designer]
+categories: [designer]
 formats: [video]
 tags: [review, collaboration, comments]
 duration: "2:47"
@@ -16,8 +16,6 @@ duration: "2:47"
 {{< youtube id=LaG3AykTx0M class="yt-embed-container" >}}
 
 Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.
-
-Related Documentation: [Design Reviews](https://docs.layer5.io/kanvas/designer/comments/)
 
 Lessons learned in this Peer Review module:
 

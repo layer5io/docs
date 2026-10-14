@@ -3,7 +3,7 @@ title: Collaborative Editing
 description: >
   Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
 weight: 5
-categories: [Designer, Tutorials]
+categories: [designer, tutorials]
 tags: [collaboration, sharing, comments, review]
 draft: false
 aliases:

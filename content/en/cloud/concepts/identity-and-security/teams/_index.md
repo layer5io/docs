@@ -3,7 +3,7 @@ title: Teams
 description: >
   Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
 weight: 2
-categories: [Identity]
+categories: [identity]
 tags: [teams]
 aliases:
   - /cloud/identity/teams/

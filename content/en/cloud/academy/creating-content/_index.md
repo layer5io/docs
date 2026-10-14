@@ -3,8 +3,8 @@ title: "Content Creator Guide"
 weight: 2
 description: >
   Learn how to create, manage, and publish learning paths, challenges, and certifications on the Layer5 Academy platform.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 aliases: 
 - /cloud/academy/extending-the-academy/
 ---

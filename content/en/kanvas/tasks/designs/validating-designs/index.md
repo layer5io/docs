@@ -3,7 +3,7 @@ title: Validating Designs
 description: >
   Prior to deploying a design, you can validate the configuration that it contains in accordance with the target platform.
 weight: 2
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/validating-designs

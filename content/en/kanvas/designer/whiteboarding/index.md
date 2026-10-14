@@ -2,7 +2,7 @@
 title: Whiteboarding
 description: Whiteboarding and Freestyle Drawing inside Kanvas
 weight: 3
-categories: [Designer]
+categories: [designer]
 tags: [designs, whiteboarding, annotations, shapes, collaboration]
 aliases:
   - /meshmap/designer/whiteboarding

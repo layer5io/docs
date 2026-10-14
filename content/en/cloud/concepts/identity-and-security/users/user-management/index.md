@@ -3,7 +3,7 @@ title: User Management
 description: >
   Learn how to create, add, invite, and manage users within Layer5 Cloud.
 weight: 4
-categories: [Identity]
+categories: [identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/user-management/

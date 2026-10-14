@@ -3,7 +3,7 @@ title: Platform Development Guide
 weight: 5
 description: >
   An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
-categories: [Academy]
+categories: [academy]
 aliases: 
 - /cloud/academy/advanced-contribution-guide/
 - /cloud/academy/platform-development/

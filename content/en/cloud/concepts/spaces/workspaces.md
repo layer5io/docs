@@ -3,7 +3,7 @@ title: Workspaces
 description: >
   Understand the core concepts of Workspaces.
 weight: 6
-categories: [Spaces]
+categories: [spaces]
 aliases:
   - /cloud/spaces/workspaces/
 

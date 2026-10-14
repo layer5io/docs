@@ -3,8 +3,8 @@ title: Academy
 weight: 4
 description: >
   Learn how to use, build, manage, and extend the Layer5 Academy.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 ---
 
 [Layer5 Academy](https://cloud.layer5.io/academy/) is a platform that provides a comprehensive learning experience for anyone beginning their journey into cloud native infrastructure or advancing along that path.

@@ -3,7 +3,7 @@ title: Layout and Layers
 weight: 13
 description: >
   Arrange the components in a design automatically, and choose which entities the canvas draws.
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

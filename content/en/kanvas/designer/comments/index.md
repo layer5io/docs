@@ -3,7 +3,7 @@ title: Reviewing Designs
 description: >
   Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
 weight: 4
-categories: [Designer]
+categories: [designer]
 tags: [designs, collaboration, review, comments]
 format: [video]
 aliases:

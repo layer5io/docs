@@ -3,7 +3,7 @@ title: Instance Details
 weight: 5
 description: >
   Learn about Instance Details in Operator mode
-categories: [Operator]
+categories: [operator]
 ---
 
 In Kanvas, the Instance Details tab provides a detailed view of Kubernetes resources such as Nodes, Pods, Deployments, and more. This tab is essential for understanding the configuration and status of individual resources within your Kubernetes cluster.

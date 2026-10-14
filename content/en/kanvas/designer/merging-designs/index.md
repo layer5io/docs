@@ -3,7 +3,7 @@ title: Merging and Loading Designs
 weight: 14
 description: >
   Drag one design onto another to combine them, or open it in place of what is on the canvas.
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

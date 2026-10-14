@@ -2,7 +2,7 @@
 title: Managing Environments
 description: "Learn how to view, create, and edit Environments, and how to assign Connections to an Environment or remove them from it."
 weight: 2
-categories: [Spaces]
+categories: [spaces]
 aliases:
   - /cloud/spaces/managing-environments/
   - /cloud/concepts/spaces/managing-environments/

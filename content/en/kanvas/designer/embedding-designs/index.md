@@ -3,7 +3,7 @@ title: Embedding Designs
 description: >
   How to embed your designs for sharing on your sites.
 weight: 6
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/designer/embedding-designs

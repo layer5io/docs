@@ -3,7 +3,7 @@ title: Exporting Designs
 description: >
   How to export your designs for backup, sharing or offline use.
 weight: 8
-categories: [Designer]
+categories: [designer]
 tags: [designs, export]
 aliases:
   - /meshmap/designer/export-designs

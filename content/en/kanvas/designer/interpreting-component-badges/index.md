@@ -2,7 +2,7 @@
 title: Interpreting Component Badges
 description: Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
 weight: 3
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

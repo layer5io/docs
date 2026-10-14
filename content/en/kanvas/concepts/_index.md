@@ -4,7 +4,7 @@ weight: 4
 type: docs
 description: >
   Kanvas Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured.
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/concepts

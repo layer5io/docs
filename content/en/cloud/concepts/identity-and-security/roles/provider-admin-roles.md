@@ -3,7 +3,7 @@ title: Provider Admin Role
 description: >
   Provider Administrator Role is used for administration of Layer5 Cloud.
 weight: 1
-categories: [Security]
+categories: [security]
 tags: [permissions]
 draft: true
 aliases:

@@ -3,7 +3,7 @@ title: Organization Management
 description: >
     Create, edit, invite members to, and delete your Organizations within Layer5 Cloud.
 weight: 1
-categories: [Identity]
+categories: [identity]
 tags: [orgs]
 aliases:
   - /cloud/identity/organizations/org-management/
@@ -37,6 +37,10 @@ An Organization provides a way to structure your teams, users, and resource acce
 {{< alert type="info" title="Unable to Create More Organizations?" >}}
 If the "Add Organization" button is disabled, it means your current role does not permit creating additional Organizations. Only users with roles like Organization Administrator or Provider Administrator can create new Organizations.
 {{< /alert >}}
+
+## Child Organizations
+
+An Organization can have child Organizations of its own, to any depth. A child is created from the **Child organizations** section of the Organizations page, and an Organization Administrator or Owner of the parent can edit the child's settings and membership, or delete it, without joining the child. Anything inside the child still requires membership in the child. Deleting an Organization that still has children is refused until the children are deleted. See [Child Organizations](child-organizations/) for details.
 
 ## Editing Your Organization
 

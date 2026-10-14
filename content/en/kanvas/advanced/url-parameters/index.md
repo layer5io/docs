@@ -3,7 +3,7 @@ title: Design Render Quality
 description: >
     Control the level of detail in Kanvas design rendering using advanced URL query parameters.
 weight: 2
-categories: [Designer, Operator]
+categories: [designer, operator]
 tags: [performance]
 ---
 

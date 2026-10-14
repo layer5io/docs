@@ -3,8 +3,8 @@ title: Building Challenges
 weight: 5
 description: >
   A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 ---
 
 In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Challenge** is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.
@@ -91,7 +91,7 @@ id: "<your-challenge-uuid>"
 weight: 1
 tags: [meshery, keda, open source]
 level: "advanced"
-categories: "platform"
+categories: [platform]
 
 prerequisite_knowledge:
   - title: "Access to Meshery"

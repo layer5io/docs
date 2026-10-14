@@ -2,7 +2,7 @@
 title: Keys
 description: Keys are the atomic unit of access control
 weight: 6
-categories: [Security]
+categories: [security]
 tags: [keys, permissions]
 aliases:
   - /cloud/security/keys/

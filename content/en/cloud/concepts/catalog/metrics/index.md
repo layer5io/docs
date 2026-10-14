@@ -3,8 +3,8 @@ title: Metrics
 weight: 1
 description: >
    Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
-categories: [Catalog]
-tags: [Designer]
+categories: [catalog]
+tags: [designer]
 aliases:
   - /cloud/catalog/metrics/
 

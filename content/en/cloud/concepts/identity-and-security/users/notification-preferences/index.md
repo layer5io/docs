@@ -2,7 +2,7 @@
 title: Notification Preferences
 description: Manage your notifications on Layer5 Cloud
 weight: 20
-categories: [Identity]
+categories: [identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/notification-preferences/

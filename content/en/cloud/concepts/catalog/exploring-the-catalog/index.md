@@ -2,8 +2,8 @@
 title: Exploring the Catalog
 weight: 3
 description: "Discover how to browse, find, and interact with designs in the Catalog."
-categories: [Catalog]
-tags: [Designer]
+categories: [catalog]
+tags: [designer]
 aliases:
   - /cloud/catalog/exploring-the-catalog/
 

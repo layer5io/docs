@@ -3,7 +3,7 @@ title: Views in Operator
 weight: 5
 description: >
   Learn about Views in Operator mode 
-categories: [Operator]
+categories: [operator]
 aliases:
   - /kanvas/operator/operator-views
   - /kanvas/visualizer/visualizer-views

@@ -3,8 +3,8 @@ title: Building Certifications
 weight: 5
 description: >
   A step-by-step guide to building a professional certification in the Academy.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 ---
 
 In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Certification** is a formal assessment designed to validate a learner's professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification's primary goal is evaluation.
@@ -92,7 +92,7 @@ banner: "images/layer5-icon.svg"
 weight: 1
 tags: [layer5, cloud, infrastructure]
 level: "beginner"
-categories: "platform"
+categories: [platform]
 badge: 
     png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
     svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"

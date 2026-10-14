@@ -4,7 +4,7 @@ description: >
   One late-night alert, worked from page to postmortem on a single live design: sketch the blast radius, style the flow, put the evidence in context, and fix the configuration where the team can see it.
 videoId: "o58hO4RDCR4"
 videoType: youtube
-categories: [Designer]
+categories: [designer]
 formats: [video]
 tags: [whiteboarding, annotations, shapes, collaboration]
 duration: "3:41"

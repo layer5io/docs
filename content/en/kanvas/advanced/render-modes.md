@@ -3,7 +3,7 @@ title: Render Modes
 description: >
     Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
 weight: 4
-categories: [Designer, Operator]
+categories: [designer, operator]
 tags: [performance, rendering]
 ---
 
@@ -231,9 +231,3 @@ All four render modes work in both Designer and Operator contexts:
 - In **Designer mode**, render modes control the fidelity of your editable design canvas. All modes except View Only allow full editing.
 - In **Operator mode**, the `managed-by-Meshery` and `terminal session` badges follow the same suppression rules as in Designer — they are visible in Full mode and hidden in Medium, Wireframe, and View Only modes.
 - **View Only mode is particularly useful in Operator** for monitoring dashboards where accidental edits should be prevented.
-
-## Related pages
-
-- [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}) — the most visible feature gated per render mode.
-- [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}) — full performance envelope and the Layers Panel.
-- [Design Render Quality]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) — URL parameter overrides for render mode.

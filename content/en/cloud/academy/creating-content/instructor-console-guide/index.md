@@ -3,8 +3,8 @@ title: "Academy Instructor Console Guide"
 weight: 5
 description: >
   A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 ---
 
 The [Academy Instructor Console](https://cloud.layer5.io/academy/instructors-console) serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.

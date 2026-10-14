@@ -3,7 +3,7 @@ title: Publishing to Catalog
 description: >
   Publish a Kanvas design to the Catalog from Details, understand visibility versus publish, and know what happens during review and approval.
 weight: 4
-categories: [Designer, Tutorials]
+categories: [designer, tutorials]
 tags: [catalog, publishing, designs]
 draft: false
 aliases:
