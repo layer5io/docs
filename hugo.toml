@@ -372,3 +372,7 @@ enable = false
   generate_llms_txt = true
   generate_llms_full_txt = true
   exclude = ["/tags/**", "/categories/**", "/search/"]
+  # Keep only the newest N pages (by `date`) of a section in llms.txt / llms-full.txt.
+  # Implemented by the local overrides layouts/index.llms and layouts/index.llmsfull.
+  [params.llms.limit_sections]
+    "/kanvas/reference/releases/" = 5

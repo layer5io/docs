@@ -257,7 +257,9 @@ Layer5 uses ES-Lint to maintain code quality & consistency in our UI Code.
 Every documentation page is also published as Markdown at `<page-url>/index.md`,
 with the page title, description, and body content and no navigation, sidebar,
 footer, or styling. A **View as Markdown** link to it appears in the page's
-right-hand meta column (wide screens). Hugo also generates
+right-hand meta column (wide screens). The home page and the `/videos/` landing
+page have no meta column, so they show no link, but their Markdown is still
+published and listed in `llms.txt`. Hugo also generates
 [`/llms.txt`](https://llmstxt.org/) (an index of pages) and `/llms-full.txt`
 (full content of every page) at the site root for AI agents.
 
@@ -269,10 +271,16 @@ it, and Docsy v0.14.3 has no equivalent; see the
 `layouts/_default/single.md` and `list.md` override the module's templates so
 shortcodes (including `ref` links) are expanded in each page's Markdown.
 
-If you add a new page layout, include `{{ partial "page-markdown-link.html" . }}`
-in it, or reuse `page-meta-links.html`, so the new pages keep the link. To leave
-a path out of `llms.txt` and `llms-full.txt`, add it to `exclude` under
-`[params.llms]` in `hugo.toml`.
+If you add a new page layout, render the link only through
+`{{ partial "page-meta-links.html" . }}` in the right-hand meta column. Don't call
+`page-markdown-link.html` directly, or the link appears outside the meta column.
+
+To leave a path out of `llms.txt` and `llms-full.txt`, add it to `exclude` under
+`[params.llms]` in `hugo.toml`. To keep only the newest N pages of a section
+(by front matter `date`), add it to `[params.llms.limit_sections]`; Kanvas
+releases are capped at 5 this way. That cap lives in `layouts/index.llms` and
+`layouts/index.llmsfull`, which are copies of the module's templates with one
+added block, so re-check them against the module when you update it.
 
 # <a name="maintaining"> Reviews</a>
 All contributors are invited to review pull requests. See this short video on [how to review a pull request](https://www.youtube.com/watch?v=isLfo7jfE6g&feature=youtu.be).

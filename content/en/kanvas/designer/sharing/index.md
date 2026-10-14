@@ -11,6 +11,10 @@ aliases:
 ---
 In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
 
+{{< alert title="Sharing requires an account" type="info">}}
+Anonymous visitors to [kanvas.new](https://kanvas.new) can create and edit designs without signing in, but sharing a design requires a signed-in account. Choosing **Share** as an anonymous visitor prompts you to sign in; once you do, share as described below.
+{{< /alert >}}
+
 {{< alert title="Sharing Views" type="info">}}
 You can share and control access to [Views]({{< ref "kanvas/operator/views/index.md" >}}) in the same fashion as you do for Designs.
 {{< /alert >}}
@@ -57,7 +61,7 @@ Once the "Share" modal is open, type the names or email addresses of the users o
 
 <figure>
   <img src="../images/audit-2026-09/designer-share.png" alt="Share design modal with People with Access and visibility controls" />
-  <figcaption>Updated Share modal (anonymous capture, Sep 2026): add users, <strong>People with Access</strong>, Private/Public visibility, and <strong>Copy Link</strong>. Owner shown as an anonymous session.</figcaption>
+  <figcaption>Updated Share modal (Sep 2026): add users, <strong>People with Access</strong>, Private/Public visibility, and <strong>Copy Link</strong>.</figcaption>
 </figure>
 
 ## Owner vs. Collaborator
