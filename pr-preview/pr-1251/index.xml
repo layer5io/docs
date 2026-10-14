@@ -872,12 +872,7 @@
 &lt;/div&gt;
 
 
-
-&lt;h2 id="order-of-precedence-for-organization-settings" class="heading-link"&gt;
- Order of Precedence for Organization Settings
- &lt;a href="#order-of-precedence-for-organization-settings" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud uses the following order of precedence to determine your active organization context:&lt;/p&gt;</description></item><item><title>Networking</title><link>/pr-preview/pr-1251/cloud/guides/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/guides/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;h2 id="considerations-of-peer-to-peer-communication" class="heading-link"&gt;
+&lt;p&gt;An organization can also have child organizations. Your active organization is always the one you have selected, and you can switch only into organizations you are a member of, so see &lt;a href="../child-organizations/"&gt;Child Organizations&lt;/a&gt; for how a parent administrator relates to a child.&lt;/p&gt;</description></item><item><title>Networking</title><link>/pr-preview/pr-1251/cloud/guides/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/guides/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;h2 id="considerations-of-peer-to-peer-communication" class="heading-link"&gt;
  Considerations of Peer-to-Peer Communication
  &lt;a href="#considerations-of-peer-to-peer-communication" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -997,7 +992,33 @@ Think of Designer mode as your blueprint studio. Just like architects use specif
 &lt;/h2&gt;
 &lt;p&gt;Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See &lt;a href="/pr-preview/pr-1251/kanvas/designer/canvas-objects/#adding-shapes"&gt;Adding shapes&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Auto-pan on Drag</title><link>/pr-preview/pr-1251/kanvas/advanced/autopan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/advanced/autopan/</guid><description>&lt;p&gt;&lt;strong&gt;Auto-pan on Drag&lt;/strong&gt; (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.&lt;/p&gt;
 &lt;p&gt;Autopan is the difference between &lt;strong&gt;&amp;ldquo;move this component to another part of the design&amp;rdquo;&lt;/strong&gt; being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the &lt;strong&gt;Options&lt;/strong&gt; panel.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/pr-preview/pr-1251/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/pr-preview/pr-1251/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Child Organizations</title><link>/pr-preview/pr-1251/cloud/guides/organizations/org-management/child-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/guides/organizations/org-management/child-organizations/</guid><description>&lt;p&gt;A &lt;strong&gt;child organization&lt;/strong&gt; is an organization created inside another organization, called its &lt;strong&gt;parent&lt;/strong&gt;. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child&amp;rsquo;s settings and membership from the parent.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Permissions Required&lt;/h4&gt;
+ 
+ Creating a child organization requires the &lt;strong&gt;Create Organization&lt;/strong&gt; permission in the parent. Seeing the list of a parent&amp;rsquo;s children requires &lt;strong&gt;View Organizations&lt;/strong&gt; in the parent. Editing, deleting, or adding members to a child from the parent requires the Organization Administrator or Owner role in the parent. To understand the specific roles needed for each action, please refer to the &lt;a href="https://docs.layer5.io/cloud/reference/default-permissions/"&gt;Default Permissions reference&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="how-organizations-nest" class="heading-link"&gt;
+ How Organizations Nest
+ &lt;a href="#how-organizations-nest" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An organization can have any number of child organizations.&lt;/li&gt;
+&lt;li&gt;A child can have child organizations of its own, and those can have children of their own. There is no limit on depth.&lt;/li&gt;
+&lt;li&gt;Every top-level organization sits directly under the &lt;strong&gt;provider organization&lt;/strong&gt; of your Layer5 Cloud deployment. The provider organization is never itself a child, and it does not appear in the child organizations section.&lt;/li&gt;
+&lt;li&gt;A child belongs to exactly one parent. A child cannot be moved to another parent after it is created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A parent administers its &lt;strong&gt;direct&lt;/strong&gt; children only. An administrator of a grandparent does not administer a grandchild by virtue of that role; the administrator of the intermediate organization does.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/pr-preview/pr-1251/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
 
 &lt;h3 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -2378,6 +2399,20 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
 
 
 &lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing requires an account&lt;/h4&gt;
+ 
+ Anonymous visitors to &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt; can create and edit designs without signing in, but sharing a design requires a signed-in account. Choosing &lt;strong&gt;Share&lt;/strong&gt; as an anonymous visitor prompts you to sign in; once you do, share as described below.
+ 
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing Views&lt;/h4&gt;
  
  You can share and control access to &lt;a href="/pr-preview/pr-1251/kanvas/operator/views/"&gt;Views&lt;/a&gt; in the same fashion as you do for Designs.
@@ -2648,7 +2683,103 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.271</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>v1.0.71-1</title><link>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.71-1/</link><pubDate>Sun, 11 Oct 2026 22:04:38 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.71-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(videos): add capture script and staging inputs for Layout and Layers film @leecalcote (#4380)&lt;/li&gt;
+&lt;li&gt;fix(ui): install Husky hooks so commits run the CI source checks @leecalcote (#4378)&lt;/li&gt;
+&lt;li&gt;ci(ui): gate ui/-root tooling files with prettier and lint @leecalcote (#4379)&lt;/li&gt;
+&lt;li&gt;build(ui): require exact pins for devDependencies that CI checks load @leecalcote (#4377)&lt;/li&gt;
+&lt;li&gt;build(makefile): defer remote version lookups so make help works offline @leecalcote (#4375)&lt;/li&gt;
+&lt;li&gt;docs: merge misspelled gossary.md into glossary.md @leecalcote (#4376)&lt;/li&gt;
+&lt;li&gt;docs(vision): correct typecheck claims now that the gate is on master @leecalcote (#4374)&lt;/li&gt;
+&lt;li&gt;docs: retire README links to removed cluster and database assets @leecalcote (#4372)&lt;/li&gt;
+&lt;li&gt;fix(editor): keep ?mode and the return address in the Kanvas sign-in hand-off @leecalcote (#4373)&lt;/li&gt;
+&lt;li&gt;fix(videos): restore the EDL build&amp;rsquo;s dropped stillOf brace and gate videos/shared parsing @hortison (#4371)&lt;/li&gt;
+&lt;li&gt;fix(editor): guard host-driven mode transitions against losing unsaved work @leecalcote (#4370)&lt;/li&gt;
+&lt;li&gt;[Videos] Whiteboarding in Kanvas, and the shared toolkit for Layer5 films @jamieplu (#4368)&lt;/li&gt;
+&lt;li&gt;fix(ui): retarget stale Kanvas docs Help/docs URLs @ritzorama (#4365)&lt;/li&gt;
+&lt;li&gt;docs(ux): Canvas-first GitHub onboarding friction report plus remediation outline @leecalcote (#4366)&lt;/li&gt;
+&lt;li&gt;[Kanvas] Fix the discolored Validation Warnings icon in the Layers panel @leecalcote (#4364)&lt;/li&gt;
+&lt;li&gt;test(kanvas): pin the canvas gridline default and document who owns it @yi-nuo426 (#4363)&lt;/li&gt;
+&lt;li&gt;[Kanvas] Correct the WebGL benchmark to the texture-atlas path, and withdraw its result @hortison (#4362)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @hamza-mohd, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @pontusringblom, @ritzorama, @sarajkrishnasingh, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.275</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.275/</link><pubDate>Fri, 09 Oct 2026 20:11:01 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.275/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(server): seed Blowhorn Free, Solo and Team plans for Cloud entitlement @leecalcote (#6161)&lt;/li&gt;
+&lt;li&gt;refactor(ui): child organizations use the generated schemas client @leecalcote (#6162)&lt;/li&gt;
+&lt;li&gt;feat(server): list an organization&amp;rsquo;s direct children @leecalcote (#6157)&lt;/li&gt;
+&lt;li&gt;fix(organizations): refuse deleting an organization that still has a live child @leecalcote (#6160)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;build(deps): bump @stripe/stripe-js from 9.17.0 to 10.0.0 in /ui @dependabot (#6143)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @dependabot, @leecalcote and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.274</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.274/</link><pubDate>Fri, 09 Oct 2026 03:57:24 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.274/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(handlers): hand live Cloud sessions back to kanvas.new sign-in @leecalcote (#6128)&lt;/li&gt;
+&lt;li&gt;feat(organizations): let a parent&amp;rsquo;s Organization Admin or Owner govern a direct child organization @leecalcote (#6156)&lt;/li&gt;
+&lt;li&gt;feat(ui): add a child organizations section to the organizations page @leecalcote (#6159)&lt;/li&gt;
+&lt;li&gt;feat(organizations): create a direct child organization under a parent @leecalcote (#6155)&lt;/li&gt;
+&lt;li&gt;feat(organizations): add nullable parent_id and OrgFromPathParam @leecalcote (#6154)&lt;/li&gt;
+&lt;li&gt;docs: add hierarchical organizations implementation plan @leecalcote (#6125)&lt;/li&gt;
+&lt;li&gt;fix(ui): scroll dashboard widgets that outgrow their cell instead of clipping them @leecalcote (#6136)&lt;/li&gt;
+&lt;li&gt;build(go): upgrade dependencies on go1.27.1 and align Go version references @miacycle (#6153)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna, @alexquincy, @fitzergerald, @hamza-mohd, @jamieplu, @leecalcote, @meshery-ci, @miacycle, @sarajkrishnasingh, @suttonskate and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.273</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.273/</link><pubDate>Tue, 06 Oct 2026 23:41:40 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.273/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): render unmeasured memberships as unknown @miacycle (#6152)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.272</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): clear production build TS errors from schemas 1.3.57 nullability @miacycle (#6151)&lt;/li&gt;
+&lt;li&gt;[chore-UI] Fix badge overflow in Users table @Katotodan (#6150)&lt;/li&gt;
+&lt;li&gt;fix(catalog): show tooltip with full label on truncated sort dropdown @Maanvi212006 (#6149)&lt;/li&gt;
+&lt;li&gt;Enforce the share permission keys on every share route. @jijillery (#6137)&lt;/li&gt;
+&lt;li&gt;fix(handlers): bound design URL import with the shared filter-import fetch guard @jijillery (#6135)&lt;/li&gt;
+&lt;li&gt;test(ui): type-check the jest project in npm run typecheck and clear its errors @leecalcote (#6134)&lt;/li&gt;
+&lt;li&gt;build(ui): untrack build-written next-env.d.ts and guard against tracked ignored files @leecalcote (#6132)&lt;/li&gt;
+&lt;li&gt;test(handlers): report a stale schemas pin as drift instead of failing the suite @leecalcote (#6131)&lt;/li&gt;
+&lt;li&gt;fix(auth): revoke the OAuth grant on sign-out when logout flow creation fails @jijillery (#6127)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Katotodan, @Maanvi212006, @alexquincy, @jijillery, @leecalcote, @meshery-ci, @miacycle, @pontusringblom, @simihablo, @suttonskate and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.271</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): clear logout cookies at the scopes their setters write @leecalcote (#5556)&lt;/li&gt;
 &lt;/ul&gt;
 

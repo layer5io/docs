@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1251/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1251/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.70-1</title><link>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.70-1/</link><pubDate>Mon, 14 Sep 2026 17:20:35 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.70-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1251/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1251/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.71-1</title><link>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.71-1/</link><pubDate>Sun, 11 Oct 2026 22:04:38 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.71-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(videos): add capture script and staging inputs for Layout and Layers film @leecalcote (#4380)&lt;/li&gt;
+&lt;li&gt;fix(ui): install Husky hooks so commits run the CI source checks @leecalcote (#4378)&lt;/li&gt;
+&lt;li&gt;ci(ui): gate ui/-root tooling files with prettier and lint @leecalcote (#4379)&lt;/li&gt;
+&lt;li&gt;build(ui): require exact pins for devDependencies that CI checks load @leecalcote (#4377)&lt;/li&gt;
+&lt;li&gt;build(makefile): defer remote version lookups so make help works offline @leecalcote (#4375)&lt;/li&gt;
+&lt;li&gt;docs: merge misspelled gossary.md into glossary.md @leecalcote (#4376)&lt;/li&gt;
+&lt;li&gt;docs(vision): correct typecheck claims now that the gate is on master @leecalcote (#4374)&lt;/li&gt;
+&lt;li&gt;docs: retire README links to removed cluster and database assets @leecalcote (#4372)&lt;/li&gt;
+&lt;li&gt;fix(editor): keep ?mode and the return address in the Kanvas sign-in hand-off @leecalcote (#4373)&lt;/li&gt;
+&lt;li&gt;fix(videos): restore the EDL build&amp;rsquo;s dropped stillOf brace and gate videos/shared parsing @hortison (#4371)&lt;/li&gt;
+&lt;li&gt;fix(editor): guard host-driven mode transitions against losing unsaved work @leecalcote (#4370)&lt;/li&gt;
+&lt;li&gt;[Videos] Whiteboarding in Kanvas, and the shared toolkit for Layer5 films @jamieplu (#4368)&lt;/li&gt;
+&lt;li&gt;fix(ui): retarget stale Kanvas docs Help/docs URLs @ritzorama (#4365)&lt;/li&gt;
+&lt;li&gt;docs(ux): Canvas-first GitHub onboarding friction report plus remediation outline @leecalcote (#4366)&lt;/li&gt;
+&lt;li&gt;[Kanvas] Fix the discolored Validation Warnings icon in the Layers panel @leecalcote (#4364)&lt;/li&gt;
+&lt;li&gt;test(kanvas): pin the canvas gridline default and document who owns it @yi-nuo426 (#4363)&lt;/li&gt;
+&lt;li&gt;[Kanvas] Correct the WebGL benchmark to the texture-atlas path, and withdraw its result @hortison (#4362)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @hamza-mohd, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @pontusringblom, @ritzorama, @sarajkrishnasingh, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.70-1</title><link>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.70-1/</link><pubDate>Mon, 14 Sep 2026 17:20:35 +0000</pubDate><guid>/pr-preview/pr-1251/kanvas/reference/releases/v1.0.70-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

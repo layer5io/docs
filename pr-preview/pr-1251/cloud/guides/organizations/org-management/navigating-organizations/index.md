@@ -30,6 +30,8 @@ When you work in Layer5 Cloud, your current organization context determines:
 
 
 
+An organization can also have child organizations. Your active organization is always the one you have selected, and you can switch only into organizations you are a member of, so see [Child Organizations](../child-organizations/) for how a parent administrator relates to a child.
+
 ## Order of Precedence for Organization Settings
 
 Layer5 Cloud uses the following order of precedence to determine your active organization context:

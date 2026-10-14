@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1251/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1251/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.271</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1251/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1251/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.275</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.275/</link><pubDate>Fri, 09 Oct 2026 20:11:01 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.275/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(server): seed Blowhorn Free, Solo and Team plans for Cloud entitlement @leecalcote (#6161)&lt;/li&gt;
+&lt;li&gt;refactor(ui): child organizations use the generated schemas client @leecalcote (#6162)&lt;/li&gt;
+&lt;li&gt;feat(server): list an organization&amp;rsquo;s direct children @leecalcote (#6157)&lt;/li&gt;
+&lt;li&gt;fix(organizations): refuse deleting an organization that still has a live child @leecalcote (#6160)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;build(deps): bump @stripe/stripe-js from 9.17.0 to 10.0.0 in /ui @dependabot (#6143)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @dependabot, @leecalcote and @sarajkrishnasingh&lt;/p&gt;</description></item><item><title>v1.0.274</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.274/</link><pubDate>Fri, 09 Oct 2026 03:57:24 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.274/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(handlers): hand live Cloud sessions back to kanvas.new sign-in @leecalcote (#6128)&lt;/li&gt;
+&lt;li&gt;feat(organizations): let a parent&amp;rsquo;s Organization Admin or Owner govern a direct child organization @leecalcote (#6156)&lt;/li&gt;
+&lt;li&gt;feat(ui): add a child organizations section to the organizations page @leecalcote (#6159)&lt;/li&gt;
+&lt;li&gt;feat(organizations): create a direct child organization under a parent @leecalcote (#6155)&lt;/li&gt;
+&lt;li&gt;feat(organizations): add nullable parent_id and OrgFromPathParam @leecalcote (#6154)&lt;/li&gt;
+&lt;li&gt;docs: add hierarchical organizations implementation plan @leecalcote (#6125)&lt;/li&gt;
+&lt;li&gt;fix(ui): scroll dashboard widgets that outgrow their cell instead of clipping them @leecalcote (#6136)&lt;/li&gt;
+&lt;li&gt;build(go): upgrade dependencies on go1.27.1 and align Go version references @miacycle (#6153)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@NSTKrishna, @alexquincy, @fitzergerald, @hamza-mohd, @jamieplu, @leecalcote, @meshery-ci, @miacycle, @sarajkrishnasingh, @suttonskate and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.273</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.273/</link><pubDate>Tue, 06 Oct 2026 23:41:40 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.273/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): render unmeasured memberships as unknown @miacycle (#6152)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.272</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.272/</link><pubDate>Tue, 06 Oct 2026 20:40:36 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.272/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): clear production build TS errors from schemas 1.3.57 nullability @miacycle (#6151)&lt;/li&gt;
+&lt;li&gt;[chore-UI] Fix badge overflow in Users table @Katotodan (#6150)&lt;/li&gt;
+&lt;li&gt;fix(catalog): show tooltip with full label on truncated sort dropdown @Maanvi212006 (#6149)&lt;/li&gt;
+&lt;li&gt;Enforce the share permission keys on every share route. @jijillery (#6137)&lt;/li&gt;
+&lt;li&gt;fix(handlers): bound design URL import with the shared filter-import fetch guard @jijillery (#6135)&lt;/li&gt;
+&lt;li&gt;test(ui): type-check the jest project in npm run typecheck and clear its errors @leecalcote (#6134)&lt;/li&gt;
+&lt;li&gt;build(ui): untrack build-written next-env.d.ts and guard against tracked ignored files @leecalcote (#6132)&lt;/li&gt;
+&lt;li&gt;test(handlers): report a stale schemas pin as drift instead of failing the suite @leecalcote (#6131)&lt;/li&gt;
+&lt;li&gt;fix(auth): revoke the OAuth grant on sign-out when logout flow creation fails @jijillery (#6127)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Katotodan, @Maanvi212006, @alexquincy, @jijillery, @leecalcote, @meshery-ci, @miacycle, @pontusringblom, @simihablo, @suttonskate and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.271</title><link>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</link><pubDate>Tue, 29 Sep 2026 22:41:31 +0000</pubDate><guid>/pr-preview/pr-1251/cloud/reference/releases/v1.0.271/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(auth): clear logout cookies at the scopes their setters write @leecalcote (#5556)&lt;/li&gt;
 &lt;/ul&gt;
 

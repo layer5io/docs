@@ -53,6 +53,10 @@ An Organization provides a way to structure your teams, users, and resource acce
 
 
 
+## Child Organizations
+
+An Organization can have child Organizations of its own, to any depth. A child is created from the **Child organizations** section of the Organizations page, and an Organization Administrator or Owner of the parent can edit the child's settings and membership, or delete it, without joining the child. Anything inside the child still requires membership in the child. Deleting an Organization that still has children is refused until the children are deleted. See [Child Organizations](child-organizations/) for details.
+
 ## Editing Your Organization
 
 You can update your Organization's name, location, associated teams, branding, and identity providers, as well as access its invitation link, by editing its details.
