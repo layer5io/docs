@@ -34,7 +34,7 @@ Add a comment in any of three ways:
 - Right-click the canvas and choose Add Comment. The comment lands where you clicked.
 - Press <kbd>M</kbd>. The comment appears near the center of the canvas, and you can drag it into place.
 
-A comment is an annotation component, so it moves, locks, groups, copies, and deletes like other annotations. See [Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}). The Annotations toggle in the Layers panel hides all annotations, comments included, on your canvas. Hidden comments still sync.
+A comment is an annotation component, so it moves, locks, groups, copies, and deletes like other annotations. See [Canvas Objects]({{< ref "kanvas/reference/canvas-objects/index.md" >}}). The Annotations toggle in the Layers panel hides all annotations, comments included, on your canvas. Hidden comments still sync.
 
 ## Hold a conversation
 
@@ -111,5 +111,5 @@ Account preferences apply to every design. A disabled preference stops those ema
 - [Collaboration Model]({{< ref "kanvas/concepts/collaboration/index.md" >}})
 - [Share a Design]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}})
 - [Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}})
-- [Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}})
+- [Canvas Objects]({{< ref "kanvas/reference/canvas-objects/index.md" >}})
 - [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}})

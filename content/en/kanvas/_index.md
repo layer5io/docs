@@ -26,7 +26,7 @@ This matters because one artifact carries your infrastructure from whiteboard to
 
 Kanvas has two modes. You switch between them at any time; if the open design or resource has unsaved changes, Kanvas asks you to confirm before you leave.
 
-- **[Designer]({{< ref "kanvas/designer/_index.md" >}})** is for authoring. You compose designs from versioned components, define relationships, configure each component, and annotate the result. Whiteboarding is a toolset inside Designer, not a separate mode. Validate, dry-run, deploy, and undeploy actions run from Designer.
+- **[Designer]({{< ref "kanvas/concepts/designer/index.md" >}})** is for authoring. You compose designs from versioned components, define relationships, configure each component, and annotate the result. Whiteboarding is a toolset inside Designer, not a separate mode. Validate, dry-run, deploy, and undeploy actions run from Designer.
 - **[Operator]({{< ref "kanvas/concepts/operator/index.md" >}})** is for running infrastructure. It shows the recorded state of your connected Kubernetes clusters, collected by MeshSync and served through Meshery. Operator can scope its view to the resources a single design deployed.
 
 ### Where each mode is available
@@ -48,7 +48,7 @@ When you invoke a cluster-bound capability on kanvas.new, Kanvas explains that i
 <div style="display:flex;justify-content:center;">
 {{< cardpane >}}
   {{< card header="Designer" >}}
-    <p><a href="{{< ref "kanvas/designer/_index.md" >}}">Designer</a> mode is for creating and editing designs.</p>
+    <p><a href="{{< ref "kanvas/concepts/designer/index.md" >}}">Designer</a> mode is for creating and editing designs.</p>
     <p>Compose infrastructure from a palette of versioned components, connect components with relationships, and configure each one.</p>
     <p>Validate a design, dry-run it against your clusters, and deploy it.</p>
   {{< /card >}}

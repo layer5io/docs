@@ -1,69 +1,78 @@
 ---
 title: Keyboard Shortcuts
-description: |
-  Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+linkTitle: Keyboard Shortcuts
+description: Complete list of Kanvas keyboard shortcuts for Windows, Linux and macOS, with the mode each one works in.
+weight: 80
+diataxis: reference
+categories: [designer]
+tags: [shortcuts, designer, operator]
 aliases:
   - /meshmap/reference/keyboard-shortcuts
 ---
-<!-- set of custom keyboard button classes -->
-<link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
 
-Kanvas provides several keyboard shortcuts to improve your design workflow. These shortcuts can help you quickly perform various actions and tasks. Here is a list of commonly used keyboard shortcuts:
+Kanvas binds every shortcut to both modifier keys. On Windows and Linux use <kbd>Ctrl</kbd>. On macOS use <kbd>Cmd</kbd>. The tables write the modifier as <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>.
 
-### Designer Shortcuts
+Kanvas ignores shortcuts while you type in a text field, so typing a label, a comment or a search never triggers one. Open the same list inside the app with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>/</kbd>.
 
-As a designer in Kanvas, you can take advantage of various keyboard shortcuts to streamline your design process. These shortcuts are designed to help you perform common actions quickly and efficiently.
+## Modes and navigation
 
-On macOS, press <button class="kbc-button kbc-button-xs">⌘</button> wherever <button class="kbc-button kbc-button-xs">Ctrl</button> is shown below. Every combination on this page is bound to both keys.
+| Shortcut | Action | Designer | Operator |
+| --- | --- | --- | --- |
+| <kbd>V</kbd> or <kbd>Esc</kbd> | Switch to the Select tool. <kbd>Esc</kbd> also closes open menus and dialogs. | Yes | Yes |
+| <kbd>H</kbd> | Switch to the Pan tool. | Yes | Yes |
+| <kbd>Space</kbd> (hold) | Pan while the key is down, then return to the Select tool. | Yes | Yes |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>P</kbd> | Turn the Pencil tool on or off. | Yes | No |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>E</kbd> | Turn the Pen tool on or off. | Yes | No |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>+</kbd> | Zoom in. | Yes | Yes |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>-</kbd> | Zoom out. | Yes | Yes |
+| <kbd>&#92;</kbd> (backslash) | Open the Layers panel. | Yes | Yes |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>/</kbd> | Open the shortcut reference in the help drawer. | Yes | Yes |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd> | Open the Help Center. | Yes | Yes |
 
-- <button class="kbc-button kbc-button-xs">M</button>: Add a comment to the canvas.
-- <button class="kbc-button kbc-button-xs">T</button>: Add a textbox to the canvas.
-- <button class="kbc-button kbc-button-xs">S</button>: Add a section to the canvas.
-- <button class="kbc-button kbc-button-xs">I</button>: Open the image picker to place an image on the canvas.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">P</button>: Turn the pencil tool on or off, for drawing freehand on the canvas.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">E</button>: Turn the pen tool on or off, for drawing connecting lines on the canvas.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">C</button>: Copy the selected node or collection into your clipboard.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">D</button>: Duplicate the selected node or collection of nodes.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">A</button>: Select all nodes on the canvas.
-- <button class="kbc-button kbc-button-xs">Delete</button> or <button class="kbc-button kbc-button-xs">Backspace</button>: Delete the selected node or collection of nodes from the canvas.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">V</button>: Paste a node or collection of nodes from your clipboard.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes by dragging your mouse over an area.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Z</button>: Undo your last create or delete action.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Y</button> or <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">Z</button>: Redo your last create or delete action.
-- <button class="kbc-button kbc-button-xs">Right-click</button> or <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Hold</button>: Open the context menu to choose an action to perform.
-- <button class="kbc-button kbc-button-xs">H</button>: Switch to hand mode to pan around the canvas.
-- <button class="kbc-button kbc-button-xs">Space</button> (held down): Pan around the canvas for as long as you hold the key, then return to the mode you were in.
-- <button class="kbc-button kbc-button-xs">V</button>: Switch back to selection mode.
-- <button class="kbc-button kbc-button-xs">Esc</button>: Leave the mode you are in and return to selection mode, or close any open menu or dialog.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">+</button>: Zoom in on the canvas.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">-</button>: Zoom out on the canvas.
-- <button class="kbc-button kbc-button-xs">&#92;</button> (Backslash): Open the Layers panel.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">/</button>: Open this keyboard shortcut reference in the help drawer.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Shift</button> + <button class="kbc-button kbc-button-xs">/</button>: Open the Help Center.
+The tools are described in [Tool Modes]({{< ref "kanvas/reference/tool-modes/index.md" >}}).
 
-Zooming the page itself, rather than the canvas, is left to your browser. Kanvas binds no shortcut for it, so use your browser's own zoom controls.
+## Adding objects
 
-These designer shortcuts are essential for a smooth and efficient design workflow within Kanvas.
+| Shortcut | Action |
+| --- | --- |
+| <kbd>M</kbd> | Add a comment near the center of the canvas. |
+| <kbd>T</kbd> | Add a textbox near the center of the canvas and start typing. |
+| <kbd>S</kbd> | Add a section near the center of the canvas. |
+| <kbd>I</kbd> | Open the image picker to place an image. |
 
-### Operator Shortcuts
+Adding objects works in Designer mode only. See [Canvas Objects]({{< ref "kanvas/reference/canvas-objects/index.md" >}}).
 
-Kanvas's operator provides a set of keyboard shortcuts to enhance your experience when working with the visualized data. These shortcuts help you navigate and manage the environment effectively:
+## Editing
 
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> + <button class="kbc-button kbc-button-xs">Drag</button>: Create a selection box to select multiple nodes in Operator by dragging your mouse over an area.
-- <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> (mouse): Select multiple nodes individually.
-- <button class="kbc-button kbc-button-xs">Esc</button>: Close the interactive terminal while it has focus.
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd> | Undo the last change. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Y</kbd> or <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Redo the last undone change. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd> | Select all components. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>C</kbd> | Copy the selection and the relationships between its members. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>V</kbd> | Paste at the pointer. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>D</kbd> | Duplicate the selection, 50 pixels right and 50 pixels down. |
+| <kbd>Delete</kbd> or <kbd>Backspace</kbd> | Delete the selection. |
 
-You open the interactive terminal itself from the resource rather than from the keyboard - through the terminal badge on a pod, or the Terminal tab of the Details panel. See [Interactive Terminal]({{< ref "kanvas/guides/operating/interactive-terminal/index.md" >}}).
+Undo and redo work in both modes. Copy, paste, duplicate and delete change the design, so they apply in Designer mode only. Cut has no shortcut because Kanvas has no cut action.
 
-These operator shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
+## Mouse and wheel
 
-### Searching for Components
+| Input | Action |
+| --- | --- |
+| Right-click, or press and hold | Open the object menu on an object, or the canvas menu on empty canvas. |
+| Drag on empty canvas (Select tool) | Draw a selection box. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + click | Add an object to the selection or remove it. |
+| Scroll wheel | Pan vertically. |
+| <kbd>Shift</kbd> + scroll wheel, or horizontal scroll | Pan horizontally. |
+| <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + scroll wheel | Zoom toward the pointer. |
 
-Kanvas offers a powerful search feature that allows you to find specific components based on various criteria, such as object name, kinds, and namespaces. Here are the steps to effectively search for components in your Kanvas environment:
+In Operator mode, drag on empty canvas and <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + click select resources in the topology. <kbd>Esc</kbd> closes the interactive terminal while it has focus.
 
+Zooming the page itself, rather than the canvas, is left to your browser. Kanvas binds no shortcut for it.
 
-1. Start typing your search query, such as the object name, kinds, or namespaces you're interested in. As you type, Kanvas will dynamically filter and display components that match your criteria.
+## Shortcuts that are not bound
 
-2. By clicking on a keyword or component in the search results, you can further filter out the components to focus on specific items.
+The interactive terminal has no keyboard shortcut. Open it from the terminal badge on a container or from the resource's details. See [Interactive Terminal]({{< ref "kanvas/guides/operating/interactive-terminal/index.md" >}}).
 
-This search functionality makes it easy to quickly locate and access the components you need in your Kanvas environment.
+Filtering resources in Operator mode is done in the view filters, not with a shortcut. See [Operator Views]({{< ref "kanvas/reference/views/index.md" >}}).

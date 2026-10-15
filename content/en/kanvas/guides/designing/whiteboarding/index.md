@@ -20,7 +20,7 @@ Whiteboarding lets you diagram freely on the same canvas as your infrastructure.
 
 Drawn objects are saved with the design and shared live with collaborators. They are components marked as annotations, so they count toward your plan's components-per-design limit. See [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}).
 
-This guide covers the drawing tools. For per-object operations such as copying, locking, and resizing, see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
+This guide covers the drawing tools. For per-object operations such as copying, locking, and resizing, see [Working with Canvas Objects]({{< ref "kanvas/reference/canvas-objects/index.md" >}}).
 
 ## The dock {#step-3-utilizing-whiteboard-tools}
 
