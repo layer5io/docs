@@ -330,536 +330,6 @@ Kanvas is an extension of Meshery. Its interface loads into Meshery UI, and a co
 
 
 --------------------------------------------------------------------------------
-title: "Performance Limits and Tuning"
-url: /kanvas/advanced/performance/index.md
-description: Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
-
---------------------------------------------------------------------------------
-
-Kanvas is designed to handle a wide range of infrastructure and application configurations. However, there are some performance limits that you should be aware of when working with Kanvas. This guide will help you understand these limits and provide tips for tuning your environment for optimal performance.
-
-## Performance Limits
-
-### Maximum Number of Components
-
-Kanvas has a maximum limit of 1,000 components per design. If you exceed this limit, you may experience performance issues such as slow loading times and laggy interactions. To avoid hitting this limit, consider breaking your design into smaller, more manageable designs.
-
-<!--
-#### Maximum Number of Components per Layer
-  Needs a follow up -->
-
-<!--
-#### Maximum Number of Relationship
-  Needs a follow up -->
-
-#### Maximum Number of Annotation-only Components (non-semantically meaningful components)
-
-{{< alert type="note" title="What is a Non-Semantic Component?" >}}
-A non-semantic component is a component that does not represent a meaningful entity in your design. For example, a textbox, a shape, a line, or a comment are all examples of non-semantic components. These components are used for annotation purposes only and do not have a direct relationship to the underlying infrastructure or application that you are modeling.
-{{< /alert >}}
-
-Kanvas allows up to 1,000 non-semantically meaningful components per design. Some designs have a large number of comments. While comments are a valuable collaboration tool, excessive comments can impact the performance of your design. Consider archiving or deleting old comments to keep your design running smoothly.
-
-#### Maximum Number of Orchestrated Components (semantically meaningful components)
-
-{{< alert type="note" title="What is a Semantic Component?" >}}
-A semantic component is a component that represents a meaningful entity in your design. For example, a server, a database, or a network switch are all examples of semantic components. These components have a direct relationship to the underlying infrastructure or application that you are modeling.
-{{< /alert >}}
-
-### Maximum Number of Relationships
-
-Kanvas supports up to 1,000 relationships per design. Exceeding this limit can impact the performance of your design, especially when rendering complex designs. To optimize performance, try to minimize the number of relationships in your design.
-
-#### Maximum Number of TagSet Relationships
-
-![Labels and Annotations](../../images/group-components.png)
-
-Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
-
-Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).
-
-<!--
-#### Maximum Number of Relationships per Component
-  Needs a follow up -->
-
-### Maximum Number of Users
-
-Under the Free [subscription plan](https://layer5.io/pricing), Kanvas supports at least 20 users per design. As resources allow, up to 34 users may simultaneously collaborate within a given design. If you have a large team collaborating on a design, be mindful of the number of users active at the same time. Too many users can strain the performance of your design, leading to slower response times and potential data loss. See [Layer5 Cloud Networking Services]({{< ref "cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md" >}}) for more details.
-
-### Impact of Images
-
-Be aware that designs are self-contained documents and that all artifacts, like any images (e.g. SVG, PNG, GIF, WEBP, etc.) that are added to your design are embedded into your design document, adding to the overall size of your design file. The embedding of images into your design file ensures portability of your design. You can export your design with the assurity that your images will remain in your design upon (re-)import.
-
-As the number and size of images contained in your design grows, images can significantly increase file size, potentially causing performance issues. With each change made to your design, the entire design file is uploaded to Layer5 Cloud. This same performance consideration applies during collaborative editing sessions with multiple users viewing/editing the same design. Each change to your design made by any user in the collaboration session will be propagated to every other currently collaborating user. If your design contains a large number of images, this can lead to slow performance and increased bandwidth usage.
-
-Under the Free subscription plan, Kanvas support a single image size of up to 500KB of images per design with a total of 10MB per design. If you need to use more images, consider upgrading to a paid [subscription plan](https://layer5.io/pricing).
-
-## Performance Tuning
-
-### Optimize Your Design using the Layers Panel
-
-To improve the performance of your design, consider optimizing by disabling one or more layers.
-
-<figure>
-  <img src="images/layers-panel.png" alt="Layers panel in Kanvas Designer" />
-  <figcaption>Control which layers of your design are visible using the Layers panel.</figcaption>
-</figure>
-
-Some layers specifically offer control of **visibility of components**, while other layers offer control over the **ongoing evaluation of relationships** between components. 
-
-Depending on the type of layer disabled, either specific components or all components by type will display or not be displayed, allowing you to finely tune the performance of you design rendering experience by saving design resources and improving the performance of Kanvas as you adjust both the **number and type** of components in view. 
-
-> Even though you might hide components, those components are not deleted or removed from your design. These components are simply hidden from current view.
-
-In the same way, as you toggle the evaluation of different types of relationships, understand that these relationships between your components still exist. Those relationships are simply **temporarily hidden** from view and the overhead of their evaluation eliminated while the respective type of relationship is disabled.
-
-Using the Layers panel you control the level of sophistication or simplicity of the rendering of components and relationships in your designs. You can both simplify your design layout by removing unnecessary elements and improve performance simultaneously. Alternatively, you can increase the level of detail in your design by enabling additional layers and relationships, while controlling the balance between detail and performance.
-
-{{< alert type="info" title="Keep It Lightweight" >}}
-Hide layers you don't need at the moment to keep your workspace lightweight and responsive.
-{{< /alert >}}
-
-### Optimize use of Images in your Design
-
-To optimize performance, consider the following:
-
-1. Use vector images (SVG) instead of raster images (PNG, JPG, etc.) as they are typically smaller in size and scale without pixelation.
-2. Prioritize using smaller file sizes whenever possible. Use the `webp` image format over `png`, `jpg`, or `gif` as it generally provides significantly better compression, resulting in faster design save times without sacrificing much image quality.
-3. Remove any unnecessary images from your design.
-4. Use image compression tools to reduce the size of your images before adding them to your design.
-
-## What Affects Performance
-
-As your designs grow in complexity, certain design patterns can impact how smoothly Kanvas responds. Understanding these factors helps you create designs that remain fast and responsive.
-
-{{< alert type="info" title="Related performance controls" >}}
-This page covers the design patterns and tuning levers that affect Kanvas performance. For the per-mode rendering ladder (Full, Medium, Wireframe, View-Only) and automatic fidelity management, see [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}). For the drag-to-edge viewport pan and its per-render-mode size thresholds, see [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}).
-{{< /alert >}}
-
-### Working with Grouped Components
-
-When you create groups of components (placing multiple components inside a parent container), you might notice performance differences as the number of grouped items increases. Here's what you might experience:
-
-**Signs of Performance Impact:**
-- Dragging groups feels laggy or choppy
-- Design takes longer to load and display
-- Moving or resizing groups shows delayed response
-- Screen updates appear slower during interactions
-
-{{< alert type="warning" title="Large Groups" >}}
-Groups containing 100 or more components may experience noticeable lag during drag operations. Consider breaking large groups into smaller, logical subgroups for better performance. If dragging across a design that extends past your viewport feels slow, see [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}) for the per-render-mode thresholds that gate the drag-to-edge pan.
-{{< /alert >}}
-
-### How Kanvas Optimizes Your Design
-
-Kanvas automatically works behind the scenes to keep your designs running smoothly:
-
-**Smart Rendering:**
-- Kanvas only updates the parts of your design that actually change, not the entire canvas
-- Components outside your current view aren't fully rendered, saving resources
-- Information badges and labels are displayed efficiently to prevent unnecessary redraws
-
-**What This Means for You:**
-The table below shows typical performance improvements you'll experience:
-
-| Design Scenario | Without Optimization | With Optimization | Your Experience |
-|----------------|----------------------|-------------------|-----------------|
-| Dragging a group of 100 components | Laggy and slow | Smooth and responsive | 90% improvement |
-| Moving grouped components | Choppy interactions | Fluid movement | Significantly better |
-| Overall responsiveness | Delayed reactions | Immediate feedback | Much more responsive |
-
-{{< alert type="success" title="Automatic Optimization" >}}
-These optimizations work automatically. You don't need to configure anything to benefit from better performance.
-{{< /alert >}}
-
-## Managing Design Complexity
-
-Kanvas provides many interactive features that enhance your design experience. Understanding how these features work together helps you maintain optimal performance.
-
-### Features That Impact Performance
-
-Your design experience includes several interactive capabilities that all work together:
-
-**Interactive Features:**
-- **Alignment guides** help you position components precisely as you drag them
-- **Automatic relationship management** keeps connections between components updated
-- **Tooltips and information displays** show helpful context as you work
-- **Resize handles and controls** let you adjust component sizes smoothly
-- **Visual grouping indicators** show which components belong together
-
-When you're working with many components simultaneously, these features all activate together, which can sometimes slow down interactions like dragging.
-
-{{< alert type="info" title="Performance Tip" >}}
-If dragging feels slow, try these strategies:
-- Hide unnecessary layers temporarily using the Layers panel
-- Break your design into smaller, focused sections
-- Work on one area of your design at a time
-- Zoom in to focus on specific components
-{{< /alert >}}
-
-### Practical Tips for Better Performance
-
-**When Creating Large Designs:**
-1. Use the Layers panel to hide components you're not actively editing
-2. Break complex designs into multiple smaller designs that you can link together
-3. Group related components thoughtfully rather than creating very large groups
-4. Remove old comments and annotations you no longer need
-
-**When Experiencing Slowness:**
-1. Check if you have many layers enabled that you're not using
-2. Consider if your design has grown beyond 500 components (approaching the 1,000 limit)
-3. Try hiding relationship layers temporarily while arranging components
-4. Close and reopen your design to refresh the canvas
-
-## How Kanvas Keeps Things Fast
-
-Kanvas includes built-in intelligence to maintain smooth performance as you work on your designs. You don't need to manage these features manually—they work automatically in the background.
-
-### Efficient Updates
-
-**What Happens When You Make Changes:**
-Think of your design like a document. When you edit a single paragraph, you wouldn't want your word processor to reformat the entire document. Similarly, Kanvas only updates the specific components you're changing, not your entire design.
-
-**Benefits You'll Notice:**
-- Quick response when you move or edit components
-- Smooth interactions even in large designs
-- Consistent performance throughout your work session
-- Better experience when multiple people collaborate on the same design
-
-{{< alert type="success" title="Smart Performance" >}}
-Kanvas is designed to only update what needs updating, keeping your design responsive without requiring any configuration from you.
-{{< /alert >}}
-
-### Smooth Interactions During Continuous Operations
-
-When you're actively dragging components, resizing groups, or panning around your design, Kanvas automatically manages how often the screen updates to ensure smooth, responsive interactions.
-
-**What This Means:**
-- Dragging feels fluid, not jerky
-- Your cursor stays synchronized with the component you're moving
-- Multiple simultaneous operations remain responsive
-- The interface doesn't freeze or stutter during intensive operations
-
-## Working with Different Zoom Levels
-
-The zoom level you choose affects both what you see and how your design performs. Kanvas adapts its rendering based on your current zoom level to provide the best experience.
-
-### Progressive Detail Display
-
-Kanvas automatically adjusts the level of detail based on how far you're zoomed in or out:
-
-**Zoomed Out (Overview Mode):**
-- Shows component shapes and primary names
-- Displays main relationships between components
-- Provides a fast, high-level view of your entire design
-- Perfect for understanding overall structure
-
-**Medium Zoom (Working Mode):**
-- Adds relationship details and secondary information
-- Shows more component metadata
-- Good balance between detail and performance
-
-**Zoomed In (Detail Mode):**
-- Displays all badges, annotations, and detailed information
-- Shows validation messages and warnings
-- Reveals complete component properties
-- Best for detailed configuration work
-
-{{< alert type="info" title="Use Zoom Strategically" >}}
-Take advantage of zoom levels: zoom out to get an overview and rearrange major sections, then zoom in when you need to configure specific components in detail.
-{{< /alert >}}
-
-**Performance Benefits:**
-When you're zoomed out, Kanvas doesn't spend resources rendering details you can't see anyway. This keeps panning and navigation fast even in large designs. As you zoom in, more information progressively appears, giving you the detail you need without overwhelming the display.
-
-### Zoom Limits
-
-Kanvas sets reasonable minimum and maximum zoom levels to ensure everything remains usable:
-
-- Text stays readable without becoming pixelated
-- Interactive handles remain large enough to click
-- Badges and indicators maintain appropriate sizes
-- The design looks good on all devices (desktop, tablet, mobile)
-
-{{< alert type="warning" title="Zoom Boundaries" >}}
-If you try to zoom beyond the minimum or maximum limits, Kanvas won't zoom further. These limits are in place to maintain usability and performance.
-{{< /alert >}}
-
-## Testing Your Design's Performance
-
-As you build larger designs, it's helpful to evaluate how well they perform. Here are practical ways to test your design's responsiveness.
-
-### Practical Test Scenarios
-
-Try these scenarios to understand how your design performs:
-
-1. **Small Group Test** (10-20 components in a group)
-   - Does dragging feel instant and smooth?
-   - Do components respond immediately to your actions?
-   - This is the baseline—everything should feel effortless
-
-2. **Medium Design Test** (50-100 components total)
-   - Can you drag groups without noticeable delay?
-   - Does panning around the canvas feel fluid?
-   - Are minor delays acceptable for your workflow?
-
-3. **Large Design Test** (200+ components)
-   - How does dragging large groups feel?
-   - Is there lag when you first load the design?
-   - Does zooming in and out remain responsive?
-
-4. **Complex Nesting Test** (groups within groups, 3+ levels deep)
-   - Can you still move parent groups smoothly?
-   - Do nested relationships display correctly?
-   - Is the design still manageable?
-
-{{< alert type="info" title="Testing Approach" >}}
-Start simple and add complexity gradually. This helps you identify exactly when performance starts to degrade, making it easier to adjust your design approach.
-{{< /alert >}}
-
-### Simple Performance Checks
-
-You don't need specialized tools to evaluate performance. Just ask yourself:
-
-**Responsiveness Check:**
-- Does dragging components feel smooth or choppy?
-- Do components respond immediately when you click them?
-- Can you pan around the design without lag?
-
-**Loading Time Check:**
-- Does your design load within a few seconds?
-- Are badges and indicators visible quickly?
-- Does the design feel "ready" when it first appears?
-
-**Interaction Check:**
-- Can you resize components smoothly?
-- Do relationships update without delay?
-- Does the interface feel responsive or sluggish?
-
-### Using Browser Developer Tools (Optional)
-
-For more detailed performance analysis, you can use your browser's built-in developer tools:
-
-1. **Open Developer Tools**: Press F12 (Windows/Linux) or Cmd+Option+I (Mac)
-2. **Navigate to Performance Tab**: Look for the "Performance" or "Profiler" tab
-3. **Record an Interaction**: Click the record button, perform an action (like dragging), then stop recording
-4. **Review Results**: Look for long operations or frame drops that indicate performance issues
-
-{{< alert type="warning" title="Browser Differences" >}}
-Performance can vary between browsers. If your design feels slow, try testing in Chrome, Firefox, or Safari to see if performance differs.
-{{< /alert >}}
-
-## Future Improvements
-
-We're continuously working to make Kanvas even faster and more responsive. Future updates will bring additional performance enhancements, including:
-
-- Improved rendering techniques for even smoother interactions
-- Smarter optimization of complex designs
-- Better handling of very large designs (1,000+ components)
-- Enhanced performance on lower-powered devices
-
-These improvements will happen automatically through Kanvas updates—you won't need to change your designs or workflows to benefit from them.
-
-{{< alert type="success" title="Continuous Improvement" >}}
-Performance optimization is an ongoing priority. As Kanvas evolves, your existing designs will automatically benefit from new performance enhancements.
-{{< /alert >}}
-
-## Render Modes and URL Overrides
-
-Kanvas can paint the same design at four distinct fidelity levels — **Full**, **Medium**, **Wireframe**, and **View-Only** — and can switch between them automatically via **Adaptive Render Mode** based on live render and interaction latency. The lower-fidelity modes suppress badges, overlays, and texture work, so they stay fast on large designs while keeping the same underlying components, relationships, and metadata.
-
-Render modes are the primary performance lever once a design grows past a few hundred components. Rather than duplicate the details here, see:
-
-- [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) — what each mode renders, the per-mode feature-size gates, and how Adaptive mode decides when to upshift or downshift.
-- [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}) — the most visible feature that is gated per render mode (autopan disables itself on graphs past 100 / 500 / 1,000 elements for Full / Medium / Wireframe respectively).
-- [Design Render Quality]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) — URL parameters (`render=full|medium|wireframe|viewOnly`, `adaptive=true`) for forcing a render mode or enabling adaptive behavior on a specific link.
-
-
---------------------------------------------------------------------------------
-title: "Design Render Quality"
-url: /kanvas/advanced/url-parameters/index.md
-description: Control the level of detail in Kanvas design rendering using advanced URL query parameters.
-
---------------------------------------------------------------------------------
-
-By default, Kanvas optimizes the rendering of your designs to ensure good performance and responsiveness. This means that some computationally intensive visual elements, such as advanced relationships like **TagSets** (groups of components visually demarcated), might not be displayed initially to reduce system load.
-
-> To learn more about defining relationships between components, including the detailed use and creation of **TagSets**, please see the [Creating Relationships | Layer5 Documentation](https://docs.layer5.io/kanvas/getting-started/creating-relationships/).
-
-## Enable Full Render Mode
-
-To activate this full render mode, you will need to add the `render=full` parameter to your Kanvas design URL. This mode ensures all elements, including **TagSets**, are displayed, which might otherwise be hidden for performance optimization.
-
-The images below illustrate the difference this parameter makes:
-
-<figure>
-  <img src="images/no-tagsets.png" alt="Design rendering in Kanvas with default settings" />
-  <figcaption>A design with default rendering; TagSets may not be visible</figcaption>
-</figure>
-
-<figure>
-  <img src="images/with-tagsets.png" alt="The design in Kanvas showing full details" />
-  <figcaption>The same design with `render=full` applied; TagSets and all other details are now visible</figcaption>
-</figure>
-
-For example, to apply this to a Kanvas design URL, you would modify it as follows: `https://kanvas.new/extension/meshmap?render=full&mode=design&design=xxxx`
-
-{{< alert title="Advanced Usage Note" type="info">}}
-This is an advanced feature primarily intended for power users, debugging scenarios, or system-level integrations. You will not need to manually adjust this parameter for everyday design work.
-{{< /alert >}}
-
-## Why Use Full Render Mode?
-
-This capability is particularly valuable for:
-
-* **Detailed Inspection & Debugging:** When you need to meticulously review, debug, or verify all components, relationships, and intricate details within a design.
-* **Comprehensive Documentation:** For creating thorough screenshots or technical documentation that requires all visual elements to be accurately represented.
-* **System & Integration Testing:** During testing phases to ensure all parts of a design are processed and displayed by the rendering engine exactly as expected.
-
-## Best Practices
-
-To use full render mode effectively:
-
-1. **Use Selectively for Performance**  
-   Activate `render=full` mainly when you need to inspect specific designs in detail. Since it can impact performance on large or complex designs, stick to the default optimized mode for general browsing to maintain responsiveness.
-
-2. **Promote Consistent Shared Views**  
-   When sharing a design link with `render=full` for review, advise collaborators to also enable the relevant toggles in their **Layers panel**. This helps prevent discrepancies caused by individual layer settings, ensuring everyone sees the same details.
-
-3. **Check the Layers Panel if Details Are Missing**  
-   If `render=full` is active in your URL but expected elements (like **TagSets**) are not visible, verify that their visibility is enabled in your **Layers panel**. Your Layers settings can hide elements even when full render is requested.
-
-## Additional Render Mode Parameters
-
-You can specify render modes via the `render` parameter:
-
-- `render=full` -- Full rendering with all details
-- `render=medium` -- Style-only rendering without badges and TagSets
-- `render=wireframe` -- Outline-only rendering
-- `render=viewOnly` -- Non-interactive wireframe snapshot
-
-For example: `https://kanvas.new/extension/meshmap?render=wireframe&mode=design&design=xxxx`
-
-See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for detailed descriptions of each mode.
-
-## Adaptive Mode Parameter
-
-You can enable Adaptive mode via URL parameter:
-
-`https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
-
-When `adaptive=true` is set, Kanvas will automatically monitor performance and switch render modes as needed. The current render mode (set via the `render` parameter or the default) becomes the ceiling -- the highest fidelity Adaptive mode will use. See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for details.
-
---------------------------------------------------------------------------------
-title: "Auto-pan on Drag"
-url: /kanvas/advanced/autopan/index.md
-description: Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
-
---------------------------------------------------------------------------------
-
-**Auto-pan on Drag** (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.
-
-Autopan is the difference between **"move this component to another part of the design"** being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the **Options** panel.
-
-## Why Auto-pan Matters
-
-Kanvas designs often grow past the size of your viewport. A microservices topology, a multi-cluster Kubernetes landscape, or a Helm-chart expansion can easily produce a design that is ten or twenty screens wide at typical zoom. Without autopan, moving a component from one side of that canvas to the other means:
-
-1. Grab the component.
-2. Drag it to the edge of the visible canvas.
-3. Release the mouse button.
-4. Pan the canvas using two-finger scroll, the middle mouse button, or the on-screen navigation controls.
-5. Re-grab the component — which is now well inside the viewport again.
-6. Drag it to the next edge.
-7. Repeat until you reach the destination.
-
-With autopan enabled, the same action is a single uninterrupted drag. Kanvas detects that the component is leaving the viewport and scrolls the camera in the direction you are dragging, so you never run out of canvas. The further past the edge you push, the faster the canvas pans.
-
-Autopan is most valuable when:
-
-- **Re-organizing large designs.** Moving a node from one cluster to another, relocating a group, or reshaping the layout of a design that doesn't fit on screen.
-- **Drag-based edge creation.** Pulling a relationship handle from a source component toward a target that is off-screen.
-- **Compound drag-and-drop.** Dropping a child component into a parent group that sits past the viewport edge — the autopan keeps the drop target in view as you approach it.
-
-It is least valuable (and most expensive) when:
-
-- The design is **fully visible without scrolling**. There is nothing past the viewport to pan to.
-- The design is **very large and very detailed**. Every pan triggers a rerender of the canvas, every badge, and every overlay. On a 500-node design in Full render mode, that cost shows up as input lag.
-
-Kanvas is aware of both cases. The first is harmless — autopan simply never activates because the drag never reaches the edge. The second is managed by **per-render-mode performance gates**, covered below.
-
-## Toggling Auto-pan
-
-Open the **Options** panel (the gear icon in the Designer toolbar) and look under **Canvas Settings** for **Auto-pan on Drag**.
-
-- **On (default)** — autopan activates when you drag past the viewport edge, subject to the per-render-mode size gate.
-- **Off** — autopan never activates. You pan manually.
-
-The toggle takes effect immediately. You do not need to refresh the page or re-open the design. If autopan was already running when you flipped the switch, it detaches its drag listeners on the spot; if it was off and you turn it on, it re-attaches them. The switch is per-user (stored as a user preference in your Kanvas profile), so the setting follows you across devices.
-
-{{< alert type="info" title="Finding the setting" >}}
-The toggle lives in the **Options** modal under **Canvas Settings**. If you don't see it, make sure you're in Designer mode — autopan is a Designer-only feature because it affects component dragging, which is disabled in read-only Operator views.
-{{< /alert >}}
-
-## Advanced Performance Considerations
-
-Autopan is cheap on a small graph and expensive on a large one. The reason is not the autopan extension itself — that work is constant per drag event — but the chain of listeners that react when the canvas pans.
-
-### What autopan actually does under the hood
-
-When you drag a component near the edge of the viewport, the `cytoscape-autopan-on-drag` extension listens for each pointer-move event. If the component has crossed the viewport boundary, it calls `cy.panBy(…)` on the canvas engine. That single call produces a `pan viewport` event inside Cytoscape, which fires **every** listener that is subscribed to that event.
-
-In a production Kanvas Designer, those listeners include:
-
-- **Grid redraw** — the gridGuide extension re-renders the dotted grid at the new viewport origin.
-- **Badge and overlay re-layout** — validation warning badges, deployment error badges, inventory badges, comment markers and connection handles are all positioned in canvas space and need to be re-positioned when the camera moves.
-- **React state updates from the overlay hook** — overlays that are rendered in the DOM (not on the canvas) need React to push their new screen positions.
-- **Renderer dirty-paints** — Cytoscape's internal renderer marks the canvas dirty and schedules a repaint.
-
-Each of those listeners is individually cheap, but they all scale with the number of nodes and edges on the canvas. A single pan on a 1,000-node design does roughly ten times as much work as the same pan on a 100-node design.
-
-Pointer-move events fire fast — up to around 120 times a second on high-refresh-rate trackpads. The per-event budget for a smooth 60 fps interaction is about 16 milliseconds, and pointer-move dispatch eats into that budget. When the work done by downstream listeners gets too expensive, autopan stops being a feature and starts being a source of input lag.
-
-### Why the threshold depends on the render mode
-
-Not every Kanvas render mode attaches the same listeners to the pan event. In **Full** mode, every overlay, every badge, and the grid are all live. In **Medium**, overlays and badges are suppressed — the grid and renderer are still active. In **Wireframe** and **View-Only**, even the grid is dropped, leaving only the renderer's own paint.
-
-Since the per-mode listener fan-out differs by a factor of roughly four between Full and Wireframe, the graph size at which autopan starts to lag also differs by about that factor. Kanvas encodes this in a per-mode threshold table, applied automatically: autopan disables itself when the graph exceeds the threshold for the current render mode.
-
-| Render mode            | Safe node/edge count with autopan | Rationale                                                                |
-| ---------------------- | --------------------------------: | ------------------------------------------------------------------------ |
-| Full                   |                               100 | Grid + badges + overlays + renderer all react to every pan               |
-| Medium                 |                               500 | Badges and overlays suppressed — ~2× fan-out reduction                   |
-| Wireframe              |                             1,000 | Grid and overlays suppressed — only the renderer paints                  |
-| View-Only              |                             1,000 | Same fan-out profile as Wireframe, non-interactive                       |
-
-These numbers are empirical — derived from the `autopanPerf_spec.ts` performance-gate test, which measures per-event cost across listener fan-outs and asserts that each threshold stays within the per-event budget. If you modify a downstream listener to do more work on pan (for example, you add a new badge type that redraws on every viewport change), the test will flag which thresholds need to move.
-
-### Automatic disable and re-enable
-
-Autopan is not a static decision taken when you load a design. Kanvas re-evaluates the gate continuously:
-
-- **When the graph grows past the threshold** — for example, paste in a large subtree, import a design fragment, or accept a collaborator's bulk update — Kanvas detects the new element count and disables autopan on the next animation frame. Bursty operations are coalesced into a single re-evaluation rather than thrashing through enable/disable on every element.
-- **When the graph shrinks back under the threshold** — deleting elements or cutting a subgroup drops the count. Kanvas notices and re-enables autopan if your preference allows it.
-- **When you switch render mode** — switching from Full to Wireframe on the same design can shift the gate from "disabled" to "enabled" because the threshold is higher in Wireframe. Kanvas re-evaluates and applies the right state instantly.
-- **When you flip the preference** — toggling **Auto-pan on Drag** in the Options panel takes effect immediately without a remount.
-
-This is driven by the shared `useReactiveFeatureGate` hook in Kanvas's source, which any future feature gated by (user preference × render mode × graph size) can reuse.
-
-{{< alert type="note" title="When autopan is disabled automatically" >}}
-If you are working on a large design and autopan seems to not kick in at the edge, check the [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) page. Your graph has probably exceeded the threshold for the current render mode and Kanvas has disabled autopan for performance. You can either switch to a lower-fidelity render mode — which raises the threshold — or pan manually for the remaining operations.
-{{< /alert >}}
-
-### Tuning autopan for your design
-
-If autopan is disabled on a design where you would like it to be active, you have three levers:
-
-1. **Switch to a lower-fidelity render mode.** Wireframe and View-Only raise the threshold to 1,000 nodes. See the [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) page for what each mode costs and what it hides.
-2. **Reduce the live listener count.** The [Layers Panel]({{< ref "kanvas/advanced/performance/index.md" >}}) lets you disable layers of visual information (badges, tags, feasibility indicators) that contribute to the pan fan-out. Turning off a layer effectively moves the threshold upward because there are fewer listeners to amplify each pan.
-3. **Break the design into smaller designs.** If you are consistently bumping the threshold in your preferred render mode, the design might be past the scale Kanvas targets for interactive editing. Splitting it into referenced sub-designs keeps each one within the sweet spot.
-
-
---------------------------------------------------------------------------------
 title: "Exploring Kubernetes Services with Meshery"
 url: /kanvas/tutorials/kubernetes/kubernetes-services/index.md
 description: Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
@@ -1125,239 +595,6 @@ then exposed it with different Service types (ClusterIP, NodePort,
 LoadBalancer).
 
 Continue exploring more scenarios in the Meshery Kanvas to enhance your skills.
-
-
---------------------------------------------------------------------------------
-title: "Render Modes"
-url: /kanvas/advanced/render-modes/index.md
-description: Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
-
---------------------------------------------------------------------------------
-
-Kanvas can draw the same design at **four different levels of visual fidelity**. The level is called the **render mode**, and it controls how much of Kanvas's visual machinery — badges, overlays, textures, grid, relationship animations — actually runs on each frame. Lower-fidelity modes paint less, so they stay fast on larger designs. Higher-fidelity modes show everything, which is what you want on a design you're polishing or presenting.
-
-The render mode is a **performance tool**, not a document property. Switching modes does not change your design — components, relationships, layers, and metadata are identical. It only changes what Kanvas chooses to render on screen.
-
-## The four render modes
-
-You can switch modes through the **render-mode switcher** in the Options panel (the gear icon on the toolbar, at the bottom of the dialog). Each mode has a distinct purpose.
-
-### Full
-
-**Use when:** finalizing a design, reviewing it with colleagues, publishing, exporting a snapshot, working on the visual polish.
-
-**What renders:** everything Kanvas has — SVG backgrounds and gradient fills, component icons with full texture, feasibility indicators, all badges (compound node, label, external link, expand/collapse, managed-by-Meshery, terminal session, and error badges), TagSets (BubbleSets), mount animations, relationship animations with bezier curves and colored arrows, grid lines, compound-group outlines, and hover overlays. Labels render in their full fidelity with font rendering and shadows where applicable.
-
-**Cost:** highest. Every pan, zoom, or layout update touches every overlay and badge in the visible area. Designed to look best, not go fastest.
-
-**Default:** this is the default mode when you open a design unless adaptive mode has downshifted you — see below.
-
-### Medium
-
-**Use when:** day-to-day editing, adding or arranging components, when you want enough detail to orient yourself but not every live overlay running.
-
-**What renders:** component SVG backgrounds, node shapes, edge styling, expand/collapse badges (essential for navigating compound nodes), error badges, and core interactions. **Suppressed:** decorative badges (compound node, label, external link, managed-by-Meshery, terminal session), TagSets, mount animations, gradient fills, validation / inventory badges, and feasibility indicators. You keep the visual identity of each component but stop paying the per-frame cost of re-positioning dozens of badges.
-
-**Cost:** moderate. Fan-out on pan/zoom is roughly half of Full because the badge and overlay layers don't react to every viewport change.
-
-### Wireframe
-
-**Use when:** working with large designs where structure matters more than detail, doing layout passes, or exporting simplified views. Also the right mode when you are about to pan or zoom heavily on a design with hundreds of components.
-
-**What renders:** component outlines, component shapes, and relationships as straight gray lines. **Suppressed:** SVG background images, textures, images, bezier-curve edge styling, badges, overlays, layout animations, TagSets, and most styling. The canvas effectively becomes a schematic of your design.
-
-**Cost:** low. Only the renderer paints; no badges, no overlays, no image decoding.
-
-### View-Only
-
-**Use when:** embedding a design, sharing a read-only snapshot, presenting a design to an audience, or viewing a design where nobody should be able to accidentally edit.
-
-**What renders:** the same minimal set as Wireframe — outlines, shapes, relationships — but with **every interactive affordance disabled**. All nodes are locked (cannot be moved or resized), all event handlers are removed (no click, hover, grab, drag, resize, or double-click responses), and no keyboard shortcuts that would mutate the design are active. The canvas is visible and pannable but not editable.
-
-**Cost:** lowest. Same paint budget as Wireframe plus the interaction layer is disabled entirely.
-
-{{< alert type="info" >}}
-In View Only mode, users cannot interact with the canvas at all. Switch to another mode to resume editing.
-{{< /alert >}}
-
-{{< alert type="note" title="Render mode vs. Operator mode" >}}
-Don't confuse render mode with **Operator mode**. Operator mode is a separate top-level mode of Kanvas (alongside Designer mode) that visualizes **live infrastructure** rather than authored designs. Render mode is orthogonal — it works the same way inside Designer and Operator.
-{{< /alert >}}
-
-## Switching render modes
-
-### Using the Options panel
-
-The **Render Mode Switcher** is located in the Options panel (the gear icon on the toolbar). To change modes:
-
-1. Open the Options panel from the toolbar.
-2. Click the current mode to open the mode selector.
-3. Select the desired mode. The canvas updates immediately.
-
-### Using URL parameters
-
-You can also set the render mode via URL query parameter. Append the `render` parameter to your Kanvas design URL:
-
-- `render=full` — Full rendering with all details
-- `render=medium` — Style-only rendering without badges and TagSets
-- `render=wireframe` — Outline-only rendering
-- `render=viewOnly` — Non-interactive wireframe snapshot
-
-For example: `https://kanvas.new/extension/meshmap?render=wireframe&mode=design&design=xxxx`
-
-For more details on URL parameters, see [Design Render Quality]({{< ref "kanvas/advanced/url-parameters/index.md" >}}).
-
-## Feature size gates by render mode
-
-Several Kanvas features are too expensive to run unconditionally on large graphs. Each gated feature has a **size threshold** — a node/edge count past which the feature disables itself for the current render mode. The threshold is chosen for the amount of work that feature does per frame and the listener fan-out at that render mode.
-
-Threshold table:
-
-| Feature                      | Full                     | Medium                   | Wireframe                | View-Only                | Notes                                                                                           |
-| ---------------------------- | -----------------------: | -----------------------: | -----------------------: | -----------------------: | ----------------------------------------------------------------------------------------------- |
-| **Auto-pan on Drag**         |                      100 |                      500 |                    1,000 |                    1,000 | See [Auto-pan on Drag]({{< ref "kanvas/advanced/autopan.md" >}}).                                              |
-| **Layout animation**         |                      100 |                       —¹ |                       —¹ |                       —¹ | Animated layouts only run in Full mode with ≤100 edges.                                         |
-| **TagSet visual grouping**   |                    20²  |                      20²  |                      20²  |                      20²  | TagSets display auto-disables past 20 tags; re-enable via **Group Components** in the dock.    |
-| **Feasibility evaluation**   |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       | Gated on zoom, not size — hidden when you zoom out past the detail threshold.                   |
-| **Component style editing**  |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       | Same: revealed only at detailed zoom levels.                                                    |
-
-¹ *Layout animation is a Full-mode-only feature by design. Kanvas falls back to instant (unanimated) layouts in other modes, so the per-mode threshold doesn't apply.*
-² *TagSet threshold is tag count, not node count. See [Working with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).*
-³ *Zoom-gated features activate when your zoom level is above `MIN_ZOOM_FOR_DETAILED_RENDERING`. Zooming out suppresses them regardless of render mode.*
-
-### How size gates interact with render modes
-
-Two rules to remember:
-
-1. **Lower-fidelity render modes raise the size threshold.** Moving from Full to Wireframe is a ten-fold increase in the autopan threshold, because Wireframe isn't doing the badge and overlay work that dominates the pan cost in Full. The same design that feels laggy under Full autopan can feel fine under Wireframe autopan.
-
-2. **Every gate is bidirectionally reactive.** If a gated feature was off because your graph was too big, and you then delete components, cut a subgroup, or simply switch render modes, Kanvas notices and re-enables the feature on the spot. You never need to refresh or re-open the design to recover a feature you've lost to a threshold.
-
-### How to check whether a feature is gated off
-
-The render-mode switcher shows the current mode, and each gated feature exposes its own state — the autopan toggle in Options is a boolean preference, not a live status light. If something feels like it should be working and isn't, the fastest check is:
-
-1. Look at the current render mode in the switcher.
-2. Count roughly how many components/relationships are in your design.
-3. Cross-reference with the threshold table above.
-
-If you're past the threshold for the mode, the feature is gated off. Switch render modes or shrink the graph to get it back.
-
-## Adaptive Render Mode
-
-**Adaptive Render Mode** is Kanvas's automatic fidelity-management system. Instead of you picking a render mode manually and living with it, Kanvas watches its own performance telemetry and slides the render mode up or down to match real conditions — your machine, your browser, your current design's size, and whatever else is running on the page.
-
-### How to turn it on
-
-In the render-mode switcher (Options panel), there is an **Adaptive** toggle at the top. Flip it on and Kanvas enters adaptive mode. Instead of selecting a render mode directly, the mode you pick in the switcher becomes the **ceiling** — the maximum fidelity adaptive mode is allowed to use. An `AUTO` chip appears next to the current mode so you know adaptive is driving.
-
-If you pick Full as your ceiling, adaptive mode will use Full when performance allows and downshift to Medium or Wireframe when it needs to. If you pick Medium as the ceiling, it will never go above Medium but will still downshift to Wireframe under load.
-
-You can also enable Adaptive mode via URL parameter: `?adaptive=true`
-
-For example: `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
-
-### What signals does adaptive mode watch?
-
-Kanvas's performance monitor emits a rolling window of samples covering two latency metrics:
-
-- **Render latency** — the time it takes to paint a single frame (measured at the p95 percentile).
-- **Interaction latency** — the time between a user input (pan, zoom, click, drag, hotkey) and the visible response (measured at the p95 percentile).
-
-Both are tracked as **p95** across a rolling window of the last 20 samples, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many frames before adaptive reacts.
-
-Two thresholds on each metric govern the decision:
-
-- **Downshift** — p95 render latency above about 150 ms, or p95 interaction latency above about 80 ms, means the current mode is too expensive. Adaptive moves to the next lower mode after a short 3-second cooldown.
-- **Upshift** — p95 render latency below about 60 ms **and** p95 interaction latency below about 30 ms, sustained across 10 consecutive good samples, means there is headroom to paint more detail. Adaptive moves to the next higher mode (capped by your ceiling) after a longer delay.
-
-The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
-
-{{< alert type="note" >}}
-Adaptive mode is event-driven — it only samples performance when you interact with the canvas (pan, zoom, edit). There is zero overhead when the canvas is idle.
-{{< /alert >}}
-
-### The mode ladder
-
-Adaptive mode climbs and descends this ladder:
-
-```
-Full  ↕  Medium  ↕  Wireframe
-```
-
-View-Only is **not** part of the ladder. It is a deliberate operator choice (for embedding, sharing, or presenting) rather than a performance tier, so adaptive mode never drops you into View-Only automatically.
-
-### Cooldowns and debouncing
-
-Mode changes are throttled:
-
-- After a downshift, adaptive waits before considering the next change. This prevents a runaway descent from Full → Medium → Wireframe in a single bad second.
-- Upshifts require a **sustained** run of good samples. A momentary improvement doesn't pull you back up to Full.
-
-The combination keeps adaptive mode stable — it reacts to real performance trends, not individual frame jitter.
-
-### When to use adaptive mode
-
-Adaptive is the right default for most users. Turn it on once and forget about it; Kanvas picks the mode that keeps interactions snappy. You only need to revisit the ceiling when:
-
-- **You want to cap the fidelity** — for example, on a shared machine where you know you'll always be below Full capability. Set the ceiling to Medium.
-- **You are presenting or exporting** — for a screenshot, a demo, or a final review, you want a deterministic render mode. Turn adaptive off and pick Full manually so you're not midway through a mode transition when you take the screenshot.
-- **You are debugging a performance problem** — turning adaptive off and manually selecting each mode gives you a clean A/B comparison to isolate what is actually causing the slowdown.
-
-### When to turn it off
-
-Adaptive mode is dynamic by design. That means the canvas you're looking at may change fidelity between one minute and the next. Turn it off when:
-
-- You are **recording a video or capturing screenshots** where mid-capture mode changes would be distracting.
-- You are **teaching or demoing** Kanvas and you want viewers to see a specific render mode.
-- You are **comparing two designs** side-by-side and you want to be sure they are both rendered at the same fidelity.
-
-## Performance guidance
-
-When Adaptive mode downshifts, Kanvas may display suggestions to help you optimize your design. These appear as toast notifications with actionable recommendations:
-
-- **"N tagsets detected"** — Large numbers of TagSets (BubbleSets) are computationally expensive. Consider disabling some via the Layers panel.
-- **"N parent nodes detected"** — Deeply nested compound nodes increase render complexity. Collapsing some parent nodes may help.
-- **"N components visible"** — High-density designs benefit from layer filtering to hide components you are not currently working with.
-- **"N relationships"** — Designs with many relationships render faster in Wireframe mode.
-
-Each suggestion is shown at most once per minute to avoid notification fatigue.
-
-## Cheat sheet
-
-| If you want to…                                            | Do this                                                                                                             |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Keep the canvas snappy without thinking about it           | Turn on **Adaptive** with **Full** as the ceiling.                                                                  |
-| Polish a design visually before sharing                    | Turn off Adaptive. Pick **Full** manually.                                                                          |
-| Lay out a 500+ component design efficiently                | Switch to **Wireframe** for the layout pass, then bump back to Medium or Full for the detail pass.                  |
-| Share a read-only view                                     | Pick **View-Only** and share the design URL.                                                                        |
-| Recover autopan that stopped working                       | Either switch to a lower-fidelity render mode or delete/hide components to drop below the per-mode size threshold.  |
-| Make a snapshot with all badges and TagSets forced visible | Use `?render=full` in the URL — see [Design Render Quality]({{< ref "kanvas/advanced/url-parameters/index.md" >}}).                     |
-
-## Best practices
-
-1. **Start with Adaptive mode** for everyday work — it handles performance automatically and keeps the canvas responsive.
-2. **Use Full mode selectively** — reserve it for final visual review or documentation screenshots.
-3. **Switch to Wireframe for layout work** — it is the fastest mode for rearranging large designs.
-4. **Use View Only for sharing** — when embedding designs or sharing read-only snapshots where editing should be prevented.
-5. **Set an appropriate ceiling** — if you do not need badges or tagsets, set the ceiling to Medium to avoid unnecessary rendering overhead.
-6. **Break large designs into smaller ones** — designs beyond 500 components benefit from being split regardless of render mode. See [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}) for more guidance.
-
-## Known limitations
-
-- Render mode applies globally to the entire canvas — you cannot set different modes for different areas of a design.
-- View Only mode strips all interactivity. You must switch to another mode to resume editing.
-- Adaptive mode thresholds are fixed and cannot be customized per-user or per-design.
-- Mode transitions may cause a brief visual flash as styles update across all elements.
-- The performance guidance system analyzes design structure, not actual GPU or CPU load — suggestions are heuristic-based.
-
-## Render modes in Designer vs Operator
-
-All four render modes work in both Designer and Operator contexts:
-
-- In **Designer mode**, render modes control the fidelity of your editable design canvas. All modes except View Only allow full editing.
-- In **Operator mode**, the `managed-by-Meshery` and `terminal session` badges follow the same suppression rules as in Designer — they are visible in Full mode and hidden in Medium, Wireframe, and View Only modes.
-- **View Only mode is particularly useful in Operator** for monitoring dashboards where accidental edits should be prevented.
 
 
 --------------------------------------------------------------------------------
@@ -3982,7 +3219,7 @@ Kanvas does not pre-check that the endpoint is reachable.
 ## Related
 
 - [Resource Details]({{< ref "kanvas/reference/resource-details/index.md" >}}) shows the live state of the resource you are testing.
-- [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}) covers the limits of Kanvas itself on large designs.
+- [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}) covers the limits of Kanvas itself on large designs.
 
 
 --------------------------------------------------------------------------------
@@ -4469,14 +3706,14 @@ This is the quickest way to put a design into a pull request, an incident write-
 | Show Reset Canvas Confirmation | On | Off makes Reset Design act immediately. |
 | Enable Pencil | On | Shows the Pencil tool in the dock. |
 | Enable Pen | On | Shows the Pen tool in the dock. |
-| Auto-pan on Drag | Off | Pans the view while you drag an object past the canvas edge. Kanvas turns it off on large designs and outside Full render mode. |
+| Auto-pan on Drag | Off | Pans the view while you drag an object past the canvas edge. Kanvas turns it off on large designs, with a limit for each render mode. See [Auto-pan on Drag]({{< ref "kanvas/reference/autopan.md" >}}). |
 | Max Canvas Zoom | 30 | Upper zoom limit, from 0.1 to 30. |
 | Min Canvas Zoom | 0.1 | Lower zoom limit, from 0.1 to 5. |
 | Enable Debugger | Off | Shows debugging aids. |
 | Relationship Evaluation Engine | Automatic (recommended) | Chooses how relationships are evaluated. |
 | Show Tutorial | On | Shows the in-app tutorial. |
 | Show Walkthrough | On | Shows the walkthrough. |
-| Render Fidelity | - | Sets how much detail the canvas draws, from full fidelity down to a wireframe, and can adapt as a design grows. See [Layout and Layers]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}). |
+| Render Fidelity | - | Sets how much detail the canvas draws, from full fidelity down to a wireframe, and can adapt as a design grows. See [Render Modes]({{< ref "kanvas/concepts/render-modes/index.md" >}}). |
 
 Operator mode offers only Show Tutorial and Show Walkthrough.
 
@@ -4820,7 +4057,7 @@ Grouping is automatic. No button creates a TagSet. After you change labels, Kanv
 | Render fidelity | TagSets draw only in Full render fidelity. |
 | Maximum drawn | 30. Past that, Kanvas warns "Skipped rendering of N matchlabels relationships due to limit of 30". |
 | Region outline | Kanvas builds the outline from the first 10 members of a group. Later members are still inside the region. |
-| Adaptive mode | With more than 5 TagSets, Kanvas suggests disabling them to improve performance. |
+| Adaptive mode | TagSets disappear when Adaptive mode steps below Full. |
 
 ## What tags do not do
 
@@ -4993,7 +4230,7 @@ Once you drag components by hand, those positions are what the design stores. Ch
 </figure>
 
 {{< alert type="note" title="Layouts on large designs" >}}
-Re-running a layout across a very large design is the most expensive operation on the canvas. If a design is slow to arrange, see [Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}).
+Re-running a layout across a very large design is the most expensive operation on the canvas. If a design is slow to arrange, see [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}).
 {{< /alert >}}
 
 ## Configure visible layers
@@ -5024,7 +4261,7 @@ The Layers panel is present in Operator mode too, but it filters rather than hid
 
 ## Render mode
 
-Layout and layers decide what is drawn and where. **Render mode**, in the Options drawer, decides how much detail each component is drawn with - from full fidelity down to a wireframe - and can be set to adapt automatically as a design grows. Reach for it when a design has become large enough that panning and zooming feel heavy.
+Layout and layers decide what is drawn and where. **Render mode**, in the Options drawer and the Designer toolbar, decides how much detail each component is drawn with - from full fidelity down to a wireframe - and can be set to adapt automatically when the canvas slows down. Reach for it when a design has become large enough that panning and zooming feel heavy. [Render Modes]({{< ref "kanvas/concepts/render-modes/index.md" >}}) explains the trade-off, and [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}) lists what each mode draws.
 
 
 --------------------------------------------------------------------------------
@@ -5203,6 +4440,77 @@ Layer5 Cloud's catalog designs table offers multi-select delete with the prompt 
 | 400 "please provide a valid design ID" | The id is invalid. |
 | 404 "design not found" | The design does not exist. A missing row can also surface as 500 "failed to get design from database". |
 | 403 | You are not the owner or a provider administrator. |
+
+
+--------------------------------------------------------------------------------
+title: "Render Modes"
+url: /kanvas/concepts/render-modes/index.md
+description: How render modes trade visual detail for canvas speed, how Adaptive mode moves between them, and how render mode interacts with size gates, Layers, Designer, and Operator.
+--------------------------------------------------------------------------------
+
+Render mode sets how much detail Kanvas draws for a design. It works as a fidelity dial for your current session, not a property of the design. Switching modes never changes components, relationships, configuration, or layers, and the mode is not saved with the design. Every session starts in Full unless the URL sets a different mode. The switcher appears in the Options dialog and in the Designer toolbar.
+
+## What each mode trades away
+
+Kanvas has four render modes. Each of the first three gives up something the mode above it draws.
+
+- **Full** draws everything: component images and gradient fills, every badge, TagSets, mount animations on new components, and animated layouts on designs that are small enough.
+- **Medium** keeps component images and relationship styling but drops gradient fills, TagSets, animations, and most badges, including validation and dry-run error badges. It keeps expand and collapse badges so you can still navigate compound components.
+- **Wireframe** reduces the design to its structure. Component images, all badges, and text-box overlays disappear, and edges become thin, straight, light gray lines with simple arrowheads. You can still edit everything.
+- **View-only** draws as sparsely as Wireframe but keeps relationship styling on edges. It also removes interaction: components are locked, and nothing can be grabbed, dragged, selected, resized, or double-clicked.
+
+The exact element-by-element breakdown is on [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}).
+
+## Why less detail is faster
+
+Panning and zooming move the viewport, and every visible element must follow. In Full, that means repositioning badges, redrawing images and gradients, and tracing curved, colored edges on every frame of the gesture. Each mode below Full removes some of that per-frame work, so the same design responds faster as fidelity drops. The design's size does not change; the cost of looking at it does.
+
+## Adaptive mode
+
+Adaptive mode lets Kanvas turn the dial for you. Turning it on in the switcher shows an AUTO chip, and the mode you pick from then on becomes the **ceiling**: the highest fidelity Adaptive mode may use. The default ceiling is Full, and the canvas switches to the ceiling as soon as Adaptive mode turns on.
+
+**What it measures.** While Adaptive mode is on, Kanvas measures how long the canvas takes to show the next frame after each pan or zoom. It keeps the last 20 measurements and acts on the 95th percentile, so a single slow frame does not trigger a change. It measures nothing while the canvas is idle.
+
+**The ladder.** Adaptive mode moves one step at a time between Full, Medium, and Wireframe. It never enters or leaves View-only; that mode is always your choice.
+
+**Down fast, up slow.** When the 95th percentile exceeds 80 ms, Kanvas drops one step, and it can drop another step 3 seconds later if the canvas is still slow. Climbing back requires 10 consecutive fast measurements (under 30 ms), at least 5 seconds since the last change, and a next mode no higher than the ceiling. The asymmetry is deliberate: lag is an immediate problem, and returning too early causes the canvas to flicker between modes.
+
+**How it behaves today:**
+
+- Each automatic change shows a notification, such as "Switched to Medium mode for better performance" or "Performance improved - switched to Full mode".
+- The switcher shows the ceiling, not the mode currently drawn. Use the notifications to tell which mode is active.
+- After a slowdown, Kanvas climbs back at most one step. It stays at that mode until the next slowdown, even when the canvas is fast again.
+- Changing the ceiling while Adaptive mode is on updates the switcher, but the new ceiling takes effect the next time you turn Adaptive mode on.
+- Turning Adaptive mode off leaves the canvas in whichever mode Adaptive mode last chose.
+
+You can also start a session in a given mode or with Adaptive mode on through the URL. When a URL sets both, Adaptive mode starts with a Full ceiling and the URL's mode as the starting mode. See [URL Parameters]({{< ref "kanvas/reference/url-parameters.md" >}}).
+
+## How render mode interacts with other features
+
+**Size gates.** Some features turn themselves off on large designs, and render mode moves the threshold. Auto-pan on drag, which is off by default, runs only while the design's component and edge counts stay under a per-mode limit that rises as fidelity drops. Kanvas re-checks the limit whenever you add or remove elements or change modes, so the feature returns without a reload. Animated layout runs only in Full and only on small designs; in every other case, layouts apply instantly. See [Auto-pan on Drag]({{< ref "kanvas/reference/autopan.md" >}}) and [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}) for the numbers.
+
+**Zoom.** Feasibility evaluation and component style editing depend on zoom level, not render mode. They become available only once you zoom in past a fixed level, in every mode.
+
+**Layers.** Layer visibility is saved with the design and applies in every mode. A hidden layer stays hidden in Full, and switching modes never brings it back. TagSets need both conditions: the TagSets layer must be visible and the mode must be Full. See [Layout and Layers]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}).
+
+## Designer and Operator
+
+Render mode works the same way in [Designer]({{< ref "kanvas/concepts/designer/index.md" >}}) and [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}). Operator's badges, which show resources managed by Meshery and terminal sessions, appear only in Full, like the other decorative badges.
+
+## Choosing a mode
+
+- **Full** - reviewing, presenting, or capturing a design when every badge and TagSet matters.
+- **Medium** - everyday editing on a design large enough that Full feels slow.
+- **Wireframe** - layout passes and heavy panning on large designs where structure matters more than appearance.
+- **View-only** - showing a design to others when nobody should move anything by accident.
+- **Adaptive, Full ceiling** - general work when you would rather not manage the dial. Turn it off for screenshots, recordings, and side-by-side comparisons, where a mode change in the middle would mislead.
+
+## Related pages
+
+- [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}): render-mode matrix, size gates, and limits.
+- [URL Parameters]({{< ref "kanvas/reference/url-parameters.md" >}}): set the render mode and Adaptive mode on load.
+- [Auto-pan on Drag]({{< ref "kanvas/reference/autopan.md" >}}): the setting and its per-mode thresholds.
+- [Layout and Layers]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}): layer visibility and layout behavior.
 
 
 --------------------------------------------------------------------------------
@@ -5689,6 +4997,238 @@ The canvas screenshot (a PNG picture, not a design file) is a separate action. S
 | Docker Compose | Yes | No |
 | Kustomize | Yes | No |
 | JavaScript embed | No | Yes |
+
+
+--------------------------------------------------------------------------------
+title: "URL Parameters"
+url: /kanvas/reference/url-parameters/index.md
+description: Every query parameter Kanvas reads from its address - which design or view to open, how to draw it, and which viewport to restore - with accepted values, defaults and how parameters combine.
+--------------------------------------------------------------------------------
+
+Kanvas reads its starting state from the query string of its address. A link can open a specific design, open Operator on a view, choose how much detail the canvas draws, and restore a zoom and pan position. The links produced by the Share dialog and by Copy Link are built from these parameters.
+
+Append parameters to the Kanvas route of the Meshery you are using. On the hosted app that route is `https://kanvas.new/extension/meshmap`; on the Meshery Playground or a self-hosted Meshery it is `/extension/meshmap` on that host.
+
+```
+https://kanvas.new/extension/meshmap?mode=design&design=<design-id>&render=wireframe
+```
+
+## What to open
+
+| Parameters | Result |
+| --- | --- |
+| `mode=design&design=<design-id>` | Opens the design in Designer. This is the form the Share dialog produces. `name=<design-name>` is optional. |
+| `mode=design&type=design&id=<design-id>&name=<design-name>` | Opens the design. An older form that Kanvas still accepts. |
+| `mode=design&type=catalog&id=<catalog-id>&name=<name>` | Clones the catalog design into the opener's workspace and opens the copy. |
+| `catalog-design=<catalog-id>` | Opens the catalog dialog focused on that design. |
+| `mode=operator` | Opens Operator. |
+| `mode=operator&type=view&id=<view-id>&name=<view-name>` | Opens Operator on a saved view. |
+| `mode=operator&type=view&design_id=<design-id>&design_name=<design-name>` | Opens Operator on a view scoped to a design. |
+
+A link to a private design opens only for people who can read the design. For anyone else the load fails with the message "Failed to render design", followed by the reason. Public designs open for anonymous visitors. See [Collaboration Model]({{< ref "kanvas/concepts/collaboration/index.md" >}}) for who can read what.
+
+## How to draw it
+
+| Parameter | Values | Default | Effect |
+| --- | --- | --- | --- |
+| `render` | `full`, `medium`, `wireframe`, `view-only` | `full` | Sets the render mode when the canvas loads. |
+| `adaptive` | `true` | off | Turns on Adaptive mode when the canvas loads. |
+
+- **Spell the `render` value exactly.** The accepted value for the read-only mode is `view-only`, with a hyphen. Kanvas does not validate the value, and behavior with any other value is unsupported - for example, [auto-pan]({{< ref "kanvas/reference/autopan.md" >}}) stays off.
+- **Full is the default.** A link with no `render` parameter opens in Full, which already draws TagSets, badges and animations. Add `render` to draw less, not to draw more.
+- **`adaptive=true` always starts with a Full ceiling.** Adaptive mode may never exceed its ceiling, and a link cannot set it. Combine the two parameters and `render` sets the starting mode while the ceiling stays Full. Choose a different ceiling in the render mode switcher after the canvas loads.
+- **Both parameters survive navigation inside Kanvas.** Kanvas keeps them in the address when it rewrites it, for example when it changes the mode or the open design.
+- **Neither parameter is stored.** Render mode is session state. It is not saved in the design, not shared with collaborators, and not remembered the next time you open Kanvas without the parameter.
+
+What each mode draws, and what Adaptive mode measures, is on [Performance Limits]({{< ref "kanvas/reference/performance.md" >}}). The reasoning behind the modes is in [Render Modes]({{< ref "kanvas/concepts/render-modes/index.md" >}}).
+
+## Where to restore the view
+
+| Parameter | Value | Effect |
+| --- | --- | --- |
+| `viewport` | An encoded zoom and pan position | Restores that zoom and pan on load. Copy Link adds it so the person who opens the link sees the same region you were looking at. |
+
+The value is produced by Kanvas. Copy it from a link rather than writing it by hand.
+
+## Common links
+
+| Goal | Link |
+| --- | --- |
+| Open a large design without waiting for badges and overlays | `...?mode=design&design=<id>&render=wireframe` |
+| Open a design for review and let Kanvas manage fidelity | `...?mode=design&design=<id>&adaptive=true` |
+| Share a design that nobody should edit by accident | `...?mode=design&design=<id>&render=view-only` |
+| Give a reader a catalog design as a starting point | `...?mode=design&type=catalog&id=<catalog-id>&name=<name>` |
+
+{{< alert type="note" title="View-only is a display choice, not an access control" >}}
+`render=view-only` locks the components on the canvas for that session. It does not change who may edit the design. Anyone with edit access can switch the mode back. Control who can edit with [design access]({{< ref "kanvas/concepts/collaboration/index.md" >}}).
+{{< /alert >}}
+
+
+--------------------------------------------------------------------------------
+title: "Auto-pan on Drag"
+url: /kanvas/reference/autopan/index.md
+description: Reference for the Auto-pan on Drag setting - what triggers it, its default, where it is stored, the design size at which Kanvas turns it off for each render mode, and how it recovers.
+--------------------------------------------------------------------------------
+
+**Auto-pan on Drag** scrolls the canvas for you while you drag a component toward the edge of the view. Without it, moving a component to a part of the design that is off screen takes a drag, a manual pan, and another drag. With it, one continuous drag carries the component there.
+
+Auto-pan is **off by default**. You turn it on as a personal setting, and Kanvas still switches it off while a design is too large for the current [render mode]({{< ref "kanvas/concepts/render-modes/index.md" >}}).
+
+## Behavior
+
+| Property | Value |
+| --- | --- |
+| Default | Off |
+| Scope | Per user. The setting is stored in your Kanvas preferences on the server and follows you across browsers and devices. It is not stored in the design and is not shared with collaborators. |
+| Trigger | Dragging a component to within 50 pixels of the edge of the visible canvas. |
+| Pan speed | Fixed. It is not configurable. |
+| Acts on | Component drags. |
+| Applies in | Designer. The setting is listed with the Designer canvas settings in the Options dialog. |
+| Takes effect | Immediately. Changing the setting needs no reload and no reopened design. |
+
+{{< alert type="warning" title="Check where the component lands" >}}
+Auto-pan ships off because, while it is on, panning during a drag can move the dragged component lower than you intended. Review the final position after a long drag, and turn the setting off if components drift. Undo (<kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd>) restores the previous position.
+{{< /alert >}}
+
+## When Kanvas turns it off
+
+Every pan moves the whole canvas, and every layer that depends on the viewport redraws with it: the grid, badges, overlays and the drawing surface. The work grows with the number of components and relationships, so auto-pan on a large design makes dragging lag instead of helping it.
+
+Kanvas therefore allows auto-pan only while **both** the number of components and the number of relationships drawn on the canvas are at or below a limit set by the render mode:
+
+| Render mode | Auto-pan limit (components and relationships) |
+| --- | ---: |
+| Full | 100 |
+| Medium | 500 |
+| Wireframe | 1,000 |
+| View-only | 1,000 |
+
+The limit rises as the mode draws less, because fewer layers redraw on each pan.
+
+Auto-pan runs only when your setting is on **and** the design is within the limit for the current mode. Kanvas re-checks this continuously:
+
+- **The design grows past the limit.** Pasting a large group, importing a fragment, or receiving a collaborator's bulk change turns auto-pan off. Kanvas checks once per animation frame, so a burst of changes causes one decision, not many.
+- **The design shrinks under the limit.** Deleting components turns auto-pan back on.
+- **You change the render mode.** Moving from Full to Wireframe raises the limit from 100 to 1,000, so a design that blocked auto-pan in Full can allow it in Wireframe.
+- **You change the setting.** The change applies at once.
+
+Nothing on the canvas shows that auto-pan has been turned off by size. If it is on in your settings but does not scroll at the edge, count the components and relationships against the table for your current mode.
+
+## Regain auto-pan on a large design
+
+1. Switch to a lower-fidelity [render mode]({{< ref "kanvas/reference/performance.md" >}}). Wireframe and View-only allow 1,000.
+2. Reduce what draws. Hiding layers in the [Layers panel]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}) takes their components and relationships off the canvas, which lowers the counts Kanvas compares against the limit. Deleting components does the same.
+3. Split the design. A design that regularly passes the limit of the mode you prefer is a candidate for several smaller designs.
+
+## Known discrepancies
+
+- The setting's description in the Options dialog says auto-pan is disabled "outside Full render mode". Kanvas does not behave that way: it allows auto-pan in Medium, Wireframe and View-only within the limits above.
+
+
+--------------------------------------------------------------------------------
+title: "Performance Limits"
+url: /kanvas/reference/performance/index.md
+description: Reference for what each render mode draws, the design sizes and zoom levels at which Kanvas gates features, how Adaptive mode decides to change modes, the enforced limits on a design, and what to adjust when a design feels slow.
+--------------------------------------------------------------------------------
+
+Kanvas draws a design on a canvas and redraws it on every pan, zoom and edit. The cost grows with the number of components and relationships and with how much detail each one carries. Kanvas controls that cost in four ways: the **render mode** you choose, **gates** that turn expensive features off past a design size or below a zoom level, **Adaptive mode**, which changes the render mode for you, and a small number of **enforced limits**.
+
+For the reasoning behind render modes, see [Render Modes]({{< ref "kanvas/concepts/render-modes/index.md" >}}).
+
+## What each render mode draws
+
+Switching render mode never changes the design. Components, relationships, configuration and layers stay as they are. Only what Kanvas draws changes. Full is the default.
+
+| Drawn element | Full | Medium | Wireframe | View-only |
+| --- | :---: | :---: | :---: | :---: |
+| Component images | Yes | Yes | No | No |
+| Gradient fills | Yes | No | No | No |
+| Relationship styling (color, curves, arrow style) | Yes | Yes | No. Thin, straight, light gray lines | Yes |
+| TagSets | Yes | No | No | No |
+| Expand and collapse badges | Yes | Yes | No | No |
+| Compound-component, label and external-link badges | Yes | No | No | No |
+| Validation and dry-run error badges | Yes | No | No | No |
+| Managed-by-Meshery and terminal-session badges (Operator) | Yes | No | No | No |
+| Text-box content | Yes | Yes | No | No |
+| Animation when a component is added | Yes | No | No | No |
+| Animated layouts | Yes, on designs within the limit below | No | No | No |
+| Editing and selecting on the canvas | Yes | Yes | Yes | No. Components are locked and take no pointer input |
+
+Layer visibility from the [Layers panel]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}) applies in every mode. A layer you hide stays hidden.
+
+Render mode applies to Designer and Operator alike, and to the whole canvas at once. It is session state: it is not saved in the design, not shared with collaborators and not remembered across sessions. Set it from the render mode switcher, which appears in the Options dialog and in the Designer toolbar, or from the `render` [URL parameter]({{< ref "kanvas/reference/url-parameters.md" >}}).
+
+## Size and zoom gates
+
+A gate turns a feature off while a condition holds and turns it back on when the condition clears. Kanvas re-checks gates as the design changes, as you change render mode, and as you zoom, so you never reload to recover a feature.
+
+| Feature | Gate | Applies in |
+| --- | --- | --- |
+| [Auto-pan on Drag]({{< ref "kanvas/reference/autopan.md" >}}) | Needs your setting on, and at most 100 components and 100 relationships drawn in Full, 500 in Medium, 1,000 in Wireframe and View-only | Designer |
+| Animated layout | Full mode only, and only while the design has no more than 50 components, no more than 50 relationships and no more than 100 edges drawn. Past that, a layout still applies its positions, without the animation | Designer |
+| TagSets | Full mode only, and at most 30 drawn. Past 30, Kanvas skips the rest and shows the warning "Skipped rendering of N matchlabels relationships due to limit of 30" | Designer |
+| Feasibility evaluation | Zoom above 0.5 divided by the display pixel ratio. That is 0.5 on a standard display and 0.25 on a display with a pixel ratio of 2 | Every mode |
+| Component style toolbar | The same zoom threshold | Every mode |
+
+TagSets are the only relationship type with a rendering limit. See [TagSets]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).
+
+## Adaptive mode
+
+Adaptive mode lowers the render mode when the canvas becomes slow and raises it again when the canvas recovers.
+
+| Property | Value |
+| --- | --- |
+| Turn on | The Adaptive switch in the render mode switcher, or `adaptive=true` in the URL |
+| Default | Off |
+| Ladder | Full, Medium, Wireframe. View-only is never entered or left automatically |
+| Ceiling | The highest mode Adaptive may use. It starts at Full. While Adaptive is on, the switcher shows the ceiling, labeled AUTO, not the mode currently in use |
+| Signal | How long the canvas takes to produce the next frame after each pan or zoom, taken as the 95th percentile of the last 20 samples |
+| Idle cost | None. Kanvas samples only when you pan or zoom |
+| Step down | When the 95th percentile exceeds 80 ms. After a step down, Kanvas ignores samples for 3 seconds |
+| Step up | When the 95th percentile stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling |
+| Notification | "Switched to *mode* mode for better performance" on a step down. "Performance improved - switched to *mode* mode" on a step up |
+
+Behavior to plan around:
+
+- **Turning Adaptive on sets the canvas to the ceiling at once.** With the default ceiling, that is Full.
+- **Recovery is one step.** After a step down, Adaptive recovers at most one step on its own. It steps down again if the canvas slows again, and it does not climb further until then. To return to a higher mode, turn Adaptive off and choose the mode.
+- **A new ceiling applies the next time you turn Adaptive on.** Choosing a ceiling in the switcher while Adaptive is already on updates the label but does not change the running behavior. Turn Adaptive off and on to apply it.
+- **Turning Adaptive off keeps the current mode.** The canvas stays in whichever mode Adaptive last chose, and manual selection resumes.
+- **The thresholds are fixed.** You cannot set them per user or per design.
+
+## Enforced limits
+
+| Limit | Value | Where it is enforced |
+| --- | --- | --- |
+| Components per design | Set by the organization's plan: 100, 200, 100 and 300 for Personal, Team Designer, Team Operator and Enterprise | Layer5 Cloud, when a design is saved or imported. See [Components per design]({{< ref "kanvas/concepts/designs/index.md" >}}) |
+| Image or text file added to a design | 512,000 bytes (about 500 KB) each, the same on every plan | The Kanvas canvas, when a file is dropped, pasted or uploaded. Images are embedded in the design, so each one adds to its size |
+| TagSets drawn | 30 | The canvas, as described above |
+| Canvas zoom | Minimum 0.1 (adjustable from 0.1 to 5), maximum 30 (adjustable from 0.1 to 30) | The Options dialog. Each person sets their own |
+
+Kanvas enforces no cap on the number of relationships in a design or on how many images it holds. Large designs and embedded images still enlarge what Kanvas saves and synchronizes with collaborators, so loading, saving and live editing slow down as a design grows.
+
+## What to change when a design is slow
+
+Work from the cheapest change to the most disruptive.
+
+| If | Then |
+| --- | --- |
+| Panning and zooming feel heavy | Switch to Medium, or turn on Adaptive. Switch to Wireframe for a layout pass on a very large design |
+| Dragging a component to the edge does not scroll | Count components and relationships against the [auto-pan limit]({{< ref "kanvas/reference/autopan.md" >}}) for your mode |
+| Only part of the design matters right now | Hide the layers you do not need in the Layers panel. Hidden components and relationships come off the canvas, and the design keeps them |
+| TagSets are missing | Check the mode is Full, the TagSets layer is on, and the design has no more than 30 |
+| The design saves slowly or collaboration lags | Remove unused embedded images, and prefer SVG or WebP images over PNG, JPEG and GIF files |
+| The design keeps outgrowing the mode you prefer | Split it into several designs |
+| Screenshots or demos need a steady picture | Turn Adaptive off and choose Full, so the mode cannot change mid-capture |
+
+## Experimental WebGL renderer
+
+Kanvas can draw the canvas with WebGL instead of the standard 2D canvas. It is an advanced option for diagnosing rendering, off by default, and available only from the Debug Mode panel, which appears when **Enable Debugger** is on in the Options dialog.
+
+- **Scope.** The choice is stored in your browser, not your account, and applies the next time a canvas loads. Reload after changing it.
+- **Trade-offs.** The WebGL path draws dashed and dotted relationship lines as solid lines, draws every arrowhead as a triangle, and does not hide labels at low zoom.
+- **Fallback.** Above a zoom of 7.99 Kanvas draws with the standard canvas. After a browser loses its WebGL context, Kanvas uses the standard canvas for the rest of the browser session.
+- **Browser support.** The panel reports when the browser does not support WebGL 2.
 
 
 --------------------------------------------------------------------------------
@@ -8382,7 +7922,7 @@ This guide will walk you through setting up your Layer5 account.
 
 ## Configuring your Layer5 account
 
-The first steps in starting with Layer5 are to create an account, verify your email, setup an organization and a workspace, and view your profile.
+The first steps in starting with Layer5 are to create an account, verify your email, sign in, and view your profile. You do not need to set up an organization or a workspace: Layer5 Cloud creates one of each for you when you sign up.
 
  Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.
 
@@ -8399,9 +7939,16 @@ You may choose to either signup with your personal email or any of our supported
 
 After signing up, a verification email is sent to the email address associated with your account. The email contains a verification code and a verification link. You can complete your email verification using either method.
 
+When you sign up with your email, Layer5 Cloud takes you to a **Check your email** page that names the address the verification email was sent to. You can stay on this page while you wait for the email:
+
+- **Resend email** sends a new verification email without leaving the page. Once it is sent, the page also links to a form where you can type the code from the new email instead of opening its link.
+- **Use a different email** takes you back to the sign-up form with your name kept and the email address cleared. Use it if you mistyped your address: an account cannot change its email address before that address is verified, so signing up again with the correct address is how you fix it.
+
+If you reach the **Check your email** page in a different browser tab from the one you signed up in, or your browser blocks site storage, the page cannot name your address. **Resend email** then opens the verification page, which asks for your address before sending a new email.
+
 If you are using a custom domain, the verification link stays on your organization's domain instead of redirecting to the default domain.
 
-On custom domains, verification links sent before the email-verification fix was released cannot be completed. Verification links are valid for 720 hours (30 days). If your link expired — or was sent before the fix — request a new verification email and use the latest verification link.
+On custom domains, verification links sent before the email-verification fix was released cannot be completed. Verification links are valid for 720 hours (30 days). If your link expired - or was sent before the fix - request a new verification email and use the latest verification link.
 
 
 <!-- considering we would want to use 2FA in future
@@ -8414,33 +7961,43 @@ Optionally, after you have configured 2FA, add a passkey to your account to enab
 ### 3. Signing in to Layer5 Cloud
 
 To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
-On successful login, you will be prompted to setup your first organization and workspace.
+
+You are not asked to name an organization or a workspace. Both were created when you signed up, as described in the next two steps. Where your first sign-in takes you depends on where you started:
+
+- **You started from Kanvas.** If you came to Layer5 Cloud from Kanvas and created your account on Layer5 Cloud, your first sign-in opens the **Import from GitHub** page. If you instead signed in with GitHub or Google on the sign-in page Kanvas sent you to, you are returned to Kanvas.
+- **You started on Layer5 Cloud.** Your first sign-in opens your [dashboard](#6-dashboard).
+
+The **Import from GitHub** page holds a single card. It explains that connecting GitHub lets you choose repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs, and it names your organization and workspace, each linked to where you can rename it. Select **Import from GitHub** to start the [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) wizard, or **Skip for now** to go to your dashboard.
+
+{{< alert type="info" >}}
+Layer5 Cloud remembers that you started from Kanvas only for the browser session you signed up in. If you sign in from a different browser, or after closing the browser you signed up in, you may land on your dashboard instead. The **Import from GitHub** page is always available at <https://cloud.layer5.io/register/choose-start>.
+{{< /alert >}}
 
 
-### 4. Creating an organization
+### 4. Your default organization {#4-creating-an-organization}
 
-Organization are unit of tenant in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. You can create your own organization or join an existing one. By default you are the owner of the organization you create.
+Organizations are the unit of tenancy in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. When you sign up, Layer5 Cloud creates an organization named **My Organization** for you and makes you its owner and Organization Admin. Depending on your plan, you can also create more organizations, and you can join existing ones.
 
 {{< alert type="info" >}}
 For more information, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}})
 {{< /alert >}}
 
 
-Give your organization a name and a description. For more information, see "Creating an organization."
+You can rename **My Organization** and change its description at any time. For more information, see [Editing your organization]({{< ref "cloud/guides/organizations/org-management/_index.md#editing-your-organization" >}}).
 
-### 5. Creating a workspace
+### 5. Your default workspace {#5-creating-a-workspace}
 
-Workspaces are logical group of shared set of resources like environments, connections, credentials, infrastructural designs and more. Every user on Layer5 Cloud is part of at least one workspace. You can create your own workspace or join an existing one. By default you are the owner of the workspace you create. You can share access to resources in your workspaces through teams.
+Workspaces are logical groups of shared resources like environments, connections, credentials, infrastructure designs and more. Every user on Layer5 Cloud is part of at least one workspace. When you sign up, Layer5 Cloud creates a workspace named **My Workspace** in your organization, owned by you. You can also create more workspaces or join an existing one. You can share access to resources in your workspaces through teams.
 
 {{< alert type="info" >}}
 For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}})
 {{< /alert >}}
 
-Give your workspace a name and a description. For more information, see "Creating a workspace."
+You can rename **My Workspace** and change its description at any time. For more information, see [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
 
 ### 6. Dashboard
 
-The dashboard is the first page you see when you sign in to Layer5 Cloud. It provides a high-level overview of your Layer5 account. For more information, see "About your dashboard."
+The dashboard is the first page you see when you sign in to Layer5 Cloud, except for the first sign-in of an account created from Kanvas, which opens the **Import from GitHub** page described in [step 3](#3-signing-in-to-layer5-cloud). It provides a high-level overview of your Layer5 account. For more information, see "About your dashboard."
 
 ### 7. Viewing your Layer5 profile
 
@@ -11186,7 +10743,7 @@ Clicking **Open in Playground** opens the design in the Kanvas designer running 
 
 The Playground is a hosted, ready-to-use Kanvas instance. It is the fastest way to look inside a catalog design - you can pan, zoom, open components, and inspect relationships without installing Meshery or signing in. Changes you make there are not written back to the catalog design; to keep your own editable copy, [Clone](#clone) it instead.
 
-The link Layer5 Cloud builds carries the design's identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters]({{< ref "kanvas/advanced/url-parameters/index.md" >}}) for what those parameters mean and how to construct such a link yourself.
+The link Layer5 Cloud builds carries the design's identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters]({{< ref "kanvas/reference/url-parameters.md" >}}) for what those parameters mean and how to construct such a link yourself.
 
 ### Clone
 

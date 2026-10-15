@@ -7,6 +7,7 @@ Use this section when you need an exact answer: whether a feature is in your pla
 
 - **Can Kanvas do it, and on which plan?** Start with [Feature Availability by Plan](/kanvas/reference/feature-availability/).
 - **Can I do it, given my role?** See [Permissions by Role](/kanvas/reference/permissions/).
+- **How do I open a link with a given render mode, or what does each mode draw?** See [URL Parameters](/kanvas/reference/url-parameters/), [Performance Limits](/kanvas/reference/performance/) and [Auto-pan on Drag](/kanvas/reference/autopan/).
 - **How do I reach someone?** See [Help and Support](/kanvas/reference/help-and-support/).
 
 For learning and task-oriented content, see [Getting Started](/kanvas/getting-started/), the [How-to Guides](/kanvas/guides/) and the [Concepts](/kanvas/concepts/).

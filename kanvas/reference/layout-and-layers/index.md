@@ -43,7 +43,7 @@ Once you drag components by hand, those positions are what the design stores. Ch
 <div class="alert alert-custom" style="border-color: #7A848E;" role="alert">
   <h4 class="alert-heading" style="color: #7A848E;">Layouts on large designs</h4>
   
-      Re-running a layout across a very large design is the most expensive operation on the canvas. If a design is slow to arrange, see <a href="/kanvas/advanced/performance/">Performance Limits and Tuning</a>.
+      Re-running a layout across a very large design is the most expensive operation on the canvas. If a design is slow to arrange, see <a href="/kanvas/reference/performance/">Performance Limits</a>.
   
 </div>
 
@@ -90,5 +90,5 @@ Because visibility travels with the design, the Layers panel is a way of present
 
 ## Render mode
 
-Layout and layers decide what is drawn and where. **Render mode**, in the Options drawer, decides how much detail each component is drawn with - from full fidelity down to a wireframe - and can be set to adapt automatically as a design grows. Reach for it when a design has become large enough that panning and zooming feel heavy.
+Layout and layers decide what is drawn and where. **Render mode**, in the Options drawer and the Designer toolbar, decides how much detail each component is drawn with - from full fidelity down to a wireframe - and can be set to adapt automatically when the canvas slows down. Reach for it when a design has become large enough that panning and zooming feel heavy. [Render Modes](/kanvas/concepts/render-modes/) explains the trade-off, and [Performance Limits](/kanvas/reference/performance/) lists what each mode draws.
 

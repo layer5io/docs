@@ -122,7 +122,7 @@ Clicking **Open in Playground** opens the design in the Kanvas designer running 
 
 The Playground is a hosted, ready-to-use Kanvas instance. It is the fastest way to look inside a catalog design - you can pan, zoom, open components, and inspect relationships without installing Meshery or signing in. Changes you make there are not written back to the catalog design; to keep your own editable copy, [Clone](#clone) it instead.
 
-The link Layer5 Cloud builds carries the design's identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters](/kanvas/advanced/url-parameters/) for what those parameters mean and how to construct such a link yourself.
+The link Layer5 Cloud builds carries the design's identifier as URL parameters, so the Playground opens on that specific design rather than an empty canvas. See [URL Parameters](/kanvas/reference/url-parameters/) for what those parameters mean and how to construct such a link yourself.
 
 ### Clone
 

@@ -10,15 +10,7 @@
 ## Kanvas Documentation
 - [Kanvas Documentation](/kanvas/index.md): Kanvas is a visual, collaborative tool for designing, validating, deploying, and operating Kubernetes and cloud infrastructure.
 
-- [Performance Limits and Tuning](/kanvas/advanced/performance/index.md): Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
-
-- [Design Render Quality](/kanvas/advanced/url-parameters/index.md): Control the level of detail in Kanvas design rendering using advanced URL query parameters.
-
-- [Auto-pan on Drag](/kanvas/advanced/autopan/index.md): Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
-
 - [Exploring Kubernetes Services with Meshery](/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
-- [Render Modes](/kanvas/advanced/render-modes/index.md): Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
-
 - [Collaborative Editing](/kanvas/tutorials/collaborative-editing/index.md): Work on one Kanvas design with a teammate in real time, from saving and sharing it to resolving a review thread.
 - [Building a GCP Data Pipeline Design](/kanvas/tutorials/data-pipeline-gcp/index.md): Walk through creating the data-pipeline-gcp design in Kanvas, connecting GCP services in orbital-production.
 
@@ -61,12 +53,16 @@
 - [Publish Designs](/kanvas/guides/designs/publishing-designs/index.md): Publish a design to the Layer5 Cloud catalog, understand request and approval states, unpublish it, and ship it to Artifact Hub yourself.
 - [Component Badges](/kanvas/reference/component-badges/index.md): Reference for every badge Kanvas draws on a component - what it means, where it sits, when it appears, what a click does and how to hide it - in Designer and Operator modes.
 - [Delete a Design](/kanvas/guides/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand what deletion does and does not affect.
+- [Render Modes](/kanvas/concepts/render-modes/index.md): How render modes trade visual detail for canvas speed, how Adaptive mode moves between them, and how render mode interacts with size gates, Layers, Designer, and Operator.
 - [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
 - [Keyboard Shortcuts](/kanvas/reference/keyboard-shortcuts/index.md): Complete list of Kanvas keyboard shortcuts for Windows, Linux and macOS, with the mode each one works in.
 - [Operator Views](/kanvas/reference/views/index.md): What an Operator view stores, how views are saved, shared, opened, exported, and deleted, and who can do what.
 - [Troubleshoot Kanvas](/kanvas/guides/troubleshooting/index.md): Find the symptom you see, learn what causes it, and apply the fix. Covers loading failures, missing cluster data, and failed deployments.
 - [Resource Details](/kanvas/reference/resource-details/index.md): The fields, actions, and capacity gauges the Details panel shows for each Kubernetes resource kind in Operator mode, and what it does not show.
 - [Supported Import and Export Formats](/kanvas/reference/supported-formats/index.md): Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
+- [URL Parameters](/kanvas/reference/url-parameters/index.md): Every query parameter Kanvas reads from its address - which design or view to open, how to draw it, and which viewport to restore - with accepted values, defaults and how parameters combine.
+- [Auto-pan on Drag](/kanvas/reference/autopan/index.md): Reference for the Auto-pan on Drag setting - what triggers it, its default, where it is stored, the design size at which Kanvas turns it off for each render mode, and how it recovers.
+- [Performance Limits](/kanvas/reference/performance/index.md): Reference for what each render mode draws, the design sizes and zoom levels at which Kanvas gates features, how Adaptive mode decides to change modes, the enforced limits on a design, and what to adjust when a design feels slow.
 - [Help and Support](/kanvas/reference/help-and-support/index.md): What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
 - [v1.0.70-1](/kanvas/reference/releases/v1.0.70-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 [Kanvas] Add opt-in Cytoscape WebGL rendering and measure it against Canvas 2D @hortison …

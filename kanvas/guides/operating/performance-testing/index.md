@@ -71,5 +71,5 @@ Kanvas does not pre-check that the endpoint is reachable.
 ## Related
 
 - [Resource Details](/kanvas/reference/resource-details/) shows the live state of the resource you are testing.
-- [Performance Limits and Tuning](/kanvas/advanced/performance/) covers the limits of Kanvas itself on large designs.
+- [Performance Limits](/kanvas/reference/performance/) covers the limits of Kanvas itself on large designs.
 
