@@ -13,8 +13,6 @@ aliases:
 
 This guide walks through how Five promotes the `prod-deployment-v2` design from the `orbital-staging` workspace to `orbital-production`, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.
 
-See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full Orbital Labs narrative reference.
-
 ## Overview
 
 At Orbital Labs, workspaces mirror the deployment pipeline:

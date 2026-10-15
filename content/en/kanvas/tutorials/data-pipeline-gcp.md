@@ -165,6 +165,3 @@ Open `data-pipeline-gcp` and confirm:
 - [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) explains how the registry defines relationships and how Kanvas evaluates them.
 - [Designs]({{< ref "kanvas/concepts/designs/index.md" >}}) explains how designs, workspaces, and autosave fit together.
 
-{{< alert type="info" >}}
-Meet Zara and the rest of the team at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
-{{< /alert >}}

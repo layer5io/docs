@@ -91,6 +91,3 @@ Someone you don't know might be viewing your design because:
 - The design is shared with someone who doesn't have a Layer5 account or isn't signed in.
 - Someone who can edit your design shared it further.
 
-{{< alert type="info" >}}
-See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full Orbital Labs workspace and character reference.
-{{< /alert >}}
