@@ -1,252 +1,155 @@
 ---
 title: Cloud API
-description: >
-  REST APIs for integrating with and extending Layer5 Cloud.
+description: How to authenticate to the Layer5 Cloud REST API, choose the organization a request runs in, page through results, and handle errors.
+weight: 40
+diataxis: reference
 categories: [reference]
-tags: [extensibility]
+tags: [api, extensibility]
 ---
 
-To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.
+The Layer5 Cloud REST API lets you build integrations, retrieve data, and automate your infrastructure. This page states the conventions every endpoint shares: base URL, authentication, organization context, pagination, and errors. For the list of endpoints, see the [REST API Reference]({{< ref "cloud/reference/api-reference/rest.md" >}}).
 
-## Authenticating with the API
+## Base URL
 
-In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
+Every endpoint lives under `/api` on the host of your Layer5 Cloud deployment.
 
-To authenticate with the API, pass the token as a bearer token in the `Authorization` header. For example, in cURL:
+| Deployment | Base URL |
+|---|---|
+| Hosted Layer5 Cloud | `https://cloud.layer5.io/api` |
+| Self-hosted | `https://<your-cloud-host>/api` |
+
+## Authentication
+
+Authenticate with a [security token]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}). Send it as a bearer token in the `Authorization` header:
 
 ```bash
-curl <protocol>://<Layer5-cloud-hostname>/api/identity/users/profile \
--H "Authorization: Bearer <token>"
+curl https://cloud.layer5.io/api/identity/users/profile \
+  -H "Authorization: Bearer <token>"
 ```
 
-- Replace `<protocol>` with `http` or `https` depending on your Layer5 Cloud instance.
-- Replace `<Layer5-cloud-hostname>` with the hostname or IP address of your hosted Layer5 Cloud instance. For example, [`https://cloud.layer5.io`](https://cloud.layer5.io).
-- Replace the path with the API endpoint you want to access.
-- Replace `<token>` with the security token you generated.
+When a request has no `Authorization` header, Layer5 Cloud reads the browser session cookie instead. Scripts and integrations always send the header.
 
-## Specifying Organization Context
+A token belongs to your user account, not to an organization. One token reaches every organization you are a member of, the way a GitHub personal access token reaches every repository its owner can. A request with a missing or invalid credential receives HTTP 401.
 
-{{< alert type="info" title="API Tokens are User-Scoped" >}}
-Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of. For users who belong to multiple organizations, you need to explicitly specify which organization your API requests should operate on.
+What a token can do is the same as what you can do: every guarded endpoint checks that you hold the required permission in the organization the request runs in. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 
-This is similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work, where a single token grants access to all repositories and organizations the user has access to.
-{{< /alert >}}
+## Organization context
 
-There are two ways to control the organization context for your API requests:
+A guarded request runs in one organization. Layer5 Cloud resolves the organization from these sources, in this order:
 
-### Using the `layer5-current-orgid` Header
+1. The `X-Current-Orgid` request header.
+2. The organization saved in your user preferences.
+3. The organization saved in your browser session (browser clients only).
 
-Include the `layer5-current-orgid` header with your organization's ID to specify the target organization for a request:
+Header names are case-insensitive. The first source that holds a value wins.
+
+| Condition | Result |
+|---|---|
+| The value is the ID of an organization you belong to | The request runs in that organization. |
+| The value is not a valid ID, or names an organization you do not belong to | Layer5 Cloud ignores it and runs the request with no organization scope. This is not an error by itself. The endpoint decides what to return. |
+| The value is `all` | The request spans every organization, but only for callers who hold the View All Organizations permission (Provider Admin by default). For everyone else Layer5 Cloud ignores `all`. |
+| A Provider Admin names an organization they do not belong to | The request runs in that organization. |
+
+{{< alert type="warning" title="Check the header name" >}}Layer5 Cloud reads `X-Current-Orgid` only. A header with any other name, including `layer5-current-orgid`, has no effect, and the request silently falls back to your saved organization.{{< /alert >}}
 
 {{< tabpane >}}
-{{< tab header="cURL"  >}}
+{{< tab header="cURL" >}}
 curl -X GET "https://cloud.layer5.io/api/environments" \
- -H "Authorization: Bearer <Your-Token>" \
- -H "layer5-current-orgid: <Your-Organization-ID>"
-
+  -H "Authorization: Bearer <Your-Token>" \
+  -H "X-Current-Orgid: <Your-Organization-ID>"
 {{< /tab >}}
-
 {{< tab header="JavaScript" >}}
+const res = await fetch("https://cloud.layer5.io/api/environments", {
+  headers: {
+    Authorization: `Bearer ${token}`,
+    "X-Current-Orgid": orgId,
+  },
+});
+const data = await res.json();
+{{< /tab >}}
+{{< tab header="Python" >}}
+import requests
 
-const token = "Your-Token";
-const orgId = "Your-Organization-ID";
-
-async function listEnvironments() {
-  const res = await fetch("https://cloud.layer5.io/api/environments", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "layer5-current-orgid": orgId,
+res = requests.get(
+    "https://cloud.layer5.io/api/environments",
+    headers={
+        "Authorization": "Bearer <Your-Token>",
+        "X-Current-Orgid": "<Your-Organization-ID>",
     },
-  });
-  const data = await res.json();
-  console.log(data);
-}
-
-listEnvironments();
-
-{{< /tab >}}
-
-{{< tab header="Python" >}}
-
-import requests
-
-url = "https://cloud.layer5.io/api/environments"
-headers = {
-    "Authorization": "Bearer <Your-Token>",
-    "layer5-current-orgid": "<Your-Organization-ID>"
-}
-
-res = requests.get(url, headers=headers)
-print(res.json())
-
-{{< /tab >}}
-
-{{< /tabpane >}}
-
-### Setting Organization and Workspace Preferences
-
-Alternatively, you can set your default organization and workspace using the Preferences API. This sets your user preferences so that subsequent API requests will use the specified organization and workspace context:
-
-{{< tabpane >}}
-{{< tab header="cURL"  >}}
-# Set organization and workspace preferences
-curl -X PUT "https://cloud.layer5.io/api/identity/users/preferences" \
- -H "Authorization: Bearer <Your-Token>" \
- -H "Content-Type: application/json" \
- -d '{
-   "selectedOrganization": "<Your-Organization-ID>",
-   "selectedWorkspace": "<Your-Workspace-ID>"
- }'
-
-{{< /tab >}}
-
-{{< tab header="JavaScript" >}}
-
-const token = "Your-Token";
-
-async function setPreferences() {
-  const res = await fetch("https://cloud.layer5.io/api/identity/users/preferences", {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      selectedOrganization: "<Your-Organization-ID>",
-      selectedWorkspace: "<Your-Workspace-ID>",
-    }),
-  });
-  const data = await res.json();
-  console.log(data);
-}
-
-setPreferences();
-
-{{< /tab >}}
-
-{{< tab header="Python" >}}
-
-import requests
-import json
-
-url = "https://cloud.layer5.io/api/identity/users/preferences"
-headers = {
-    "Authorization": "Bearer <Your-Token>",
-    "Content-Type": "application/json"
-}
-payload = {
-    "selectedOrganization": "<Your-Organization-ID>",
-    "selectedWorkspace": "<Your-Workspace-ID>"
-}
-
-res = requests.put(url, headers=headers, data=json.dumps(payload))
-print(res.json())
-
-{{< /tab >}}
-
-{{< /tabpane >}}
-
-## API Example
-
-The following example demonstrate how to retrieve information from the Academy REST APIs.
-
-### Get the total number of registered learners in Academy
-
-Use the Layer5 Cloud API to retrieve the *total* number of registered learners. Pass your [Security Token](https://docs.layer5.io/cloud/concepts/identity-and-security/tokens/) as a Bearer token in the `Authorization` header (as shown in [Authenticating with API]({{< ref "cloud/reference/api-reference/_index.md#authenticating-with-the-api" >}})). The response JSON includes an array of user objects.
-
-
-{{< tabpane >}}
-{{< tab header="cURL"  >}}
-curl -s -X GET "https://cloud.layer5.io/api/academy/cirricula"  \
- -H "Authorization: Bearer <Your-Token>"  \
-  | jq '[.data[].registration_count] | add'
-
-{{< /tab >}}
-
-{{< tab header="JavaScript" >}}
-
-const token = "Your-Token"
-
-async function getTotalLearners() {
-  const res = await fetch("https://cloud.layer5.io/api/academy/cirricula", {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  const data = await res.json();
-  const total = data.data.reduce((sum, path) => sum + path.registration_count, 0);
-  console.log(total);
-}
-
-getTotalLearners();
-
-{{< /tab >}}
-
-{{< tab header="Python" >}}
-
-import requests
-
-url = "https://cloud.layer5.io/api/academy/cirricula"
-headers = {"Authorization": "Bearer <Your-Token>"}
-
-res = requests.get(url, headers=headers)
-data = res.json()
-total = sum(item["registration_count"] for item in data["data"])
-print(total)
-
-{{< /tab >}}
-
-{{< tab header="Golang" >}}
-
-package main
-
-import (
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
 )
-
-type Path struct {
-	RegistrationCount int `json:"registration_count"`
-}
-
-type Response struct {
-	Data []Path `json:"data"`
-}
-
-func main() {
-	url := "https://cloud.layer5.io/api/academy/cirricula"
-
-	req, _ := http.NewRequest("GET", url, nil)
-	req.Header.Set("Authorization", "Bearer <your-token>")
-
-	client := &http.Client{}
-	res, err := client.Do(req)
-	if err != nil {
-		panic(err)
-	}
-	defer res.Body.Close()
-
-	body, _ := io.ReadAll(res.Body)
-
-	var response Response
-	if err := json.Unmarshal(body, &response); err != nil {
-		panic(err)
-	}
-
-	total := 0
-	for _, path := range response.Data {
-		total += path.RegistrationCount
-	}
-
-	fmt.Println(total)
-}
-
+print(res.json())
 {{< /tab >}}
-
 {{< /tabpane >}}
 
-This returns the number of Total registered learners:
+### Save a default organization and workspace
+
+To make an organization the default for every request that omits the header, save it in your user preferences:
+
+```bash
+curl -X PUT "https://cloud.layer5.io/api/identity/users/preferences" \
+  -H "Authorization: Bearer <Your-Token>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "selectedOrganizationId": "<Your-Organization-ID>",
+    "selectedWorkspaceForOrganizations": {
+      "<Your-Organization-ID>": "<Your-Workspace-ID>"
+    }
+  }'
 ```
-130
-```
+
+- `selectedOrganizationId` is the default organization. The key is case-insensitive.
+- `selectedWorkspaceForOrganizations` maps an organization ID to the workspace that receives the designs you save in it. When an organization has no saved workspace, Layer5 Cloud uses the first workspace available.
+- A preference key that the request does not mention keeps its stored value. A key the server does not recognize, such as `selectedOrganization`, is ignored.
+- You cannot change your badges through this endpoint.
+
+## Pagination
+
+List endpoints that paginate accept these query parameters.
+
+| Parameter | Default | Behavior |
+|---|---|---|
+| `page` | `0` | Zero-based page number. A negative value becomes `0`. |
+| `pageSize` | `10` | Items per page. The maximum is `100`; a larger value becomes `100`, and zero or a negative value becomes `10`. |
+| `order` | Endpoint-specific | Sort field and direction, for example `updated_at desc`. |
+| `search` | None | Filters items by text. |
+
+The response carries the current page, the page size, the total count, and the array of items.
+
+## Errors
+
+An error response is identified by its HTTP status code. The body takes one of three shapes, depending on the endpoint.
+
+| Shape | Where you see it | Example |
+|---|---|---|
+| JSON with `message` | Authentication failures and some middleware refusals | `{"message": "user must be logged in to perform this operation"}` |
+| JSON with `error` | Permission refusals and endpoints that report structured errors. May also carry `code`, `severity`, `probableCause`, and `suggestedRemediation`. | `{"error": "You do not hold the permission this action requires in this organization", "code": "..."}` |
+| Plain text | Endpoints that report a short message, for example a malformed request body | `malformed request body` |
+
+| Status | Meaning |
+|---|---|
+| 400 | The request is malformed or a required parameter is missing. |
+| 401 | The credential is missing, invalid, or expired. |
+| 403 | You do not hold the permission the endpoint requires in the organization of the request. |
+| 500 | The server could not complete the request. |
+
+Branch on the status code first, then parse the body defensively. The generated [REST API Reference]({{< ref "cloud/reference/api-reference/rest.md" >}}) documents 401 responses as plain text, but the authentication layer answers with JSON.
+
+## Example: count Academy registrations
+
+The Academy curricula endpoint is public. It needs no token. It returns curricula, each with its registration count.
+
+{{< tabpane >}}
+{{< tab header="cURL" >}}
+curl -s "https://cloud.layer5.io/api/academy/curricula" \
+  | jq '[.data[].registration_count] | add'
+{{< /tab >}}
+{{< tab header="Python" >}}
+import requests
+
+res = requests.get("https://cloud.layer5.io/api/academy/curricula")
+total = sum(item["registration_count"] for item in res.json()["data"])
+print(total)
+{{< /tab >}}
+{{< /tabpane >}}
+
+The result is a single number, the total registrations across the curricula returned.
