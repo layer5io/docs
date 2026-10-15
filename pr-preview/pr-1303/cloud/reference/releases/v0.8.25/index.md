@@ -1,0 +1,16 @@
+# v0.8.25
+
+date: 2024-10-07
+
+
+
+## What's New
+**General**
+- Update capabilities and account extensions and Kanvas icon @leecalcote (#2819)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15, @l5io and @leecalcote
+
+

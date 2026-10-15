@@ -1,0 +1,15 @@
+# v1.0.59
+
+date: 2026-05-06
+
+
+
+- fix(auth): proxy Kratos through cloud server; never browser→Kratos direct @leecalcote (#5224)
+- fix(jsonb): notification_preferences Phase C — drop legacy fallback @arjunmehta-git (#5225)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@arjunmehta-git and @leecalcote
+
+

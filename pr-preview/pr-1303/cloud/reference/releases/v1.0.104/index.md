@@ -1,0 +1,14 @@
+# v1.0.104
+
+date: 2026-05-28
+
+
+
+- fix(oidc): stamp ProviderOrgID in state for anchored fallback (1723 regression) @hamza-mohd (#5402)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hamza-mohd and @leecalcote
+
+

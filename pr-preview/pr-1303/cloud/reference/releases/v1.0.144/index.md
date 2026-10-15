@@ -1,0 +1,14 @@
+# v1.0.144
+
+date: 2026-06-21
+
+
+
+- [uuid] Migrate academy/dao to gofrs/uuid; pin schemas v1.3.13 + meshkit v1.0.16 @ritzorama (#5525)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @ritzorama
+
+
