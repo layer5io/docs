@@ -1,0 +1,19 @@
+# v0.7.143-1
+
+date: 2024-11-11
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+-  Create catalog design table into catalog modal @amitamrutiya (#3127)
+- add open in playground button in the catalog detail @amitamrutiya (#3130)
+- [Chore]: Bump v @l5io (#3139)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
