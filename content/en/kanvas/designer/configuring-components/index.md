@@ -54,5 +54,5 @@ There is no Apply button. Edits are written into the design shortly after you st
 
 ### See Also
 
-* **[Understanding Design Components]({{< ref "kanvas/designer/understanding-design-component/index.md" >}}):** What the components on the palette represent.
+* **[Understanding Design Components]({{< ref "kanvas/concepts/designs/index.md" >}}):** What the components on the palette represent.
 * **[Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}):** Every mouse interaction available on the canvas, including the ones that open this panel.
