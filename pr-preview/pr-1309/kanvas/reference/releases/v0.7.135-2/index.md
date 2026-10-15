@@ -1,0 +1,31 @@
+# v0.7.135-2
+
+date: 2024-11-06
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Performance Optimizations @aabidsofi19 (#3114)
+- fix: empty canvas text not able to intract with the bottom dock @amitamrutiya (#3115)
+- [Tutorial] Configure Pod Tutorial added @SAHU-01 (#3116)
+- Pamela and Susan Tooltips: Component and Edge style bar tooltips @leecalcote (#3111)
+- close getting started panel when open overlapping panel @amitamrutiya (#3113)
+- fix: start feasibility indication when dragging component definition from picker/dock @aabidsofi19 (#3112)
+
+## 🐛 Bug Fixes
+
+- fix: empty canvas text not able to intract with the bottom dock @amitamrutiya (#3115)
+- fix: start feasibility indication when dragging component definition from picker/dock @aabidsofi19 (#3112)
+
+## 🧰 Maintenance
+
+- Test: smoke version check \& cleanup design after testing @jerensl (#3095)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@SAHU-01, @aabidsofi19, @amitamrutiya, @jerensl, @l5io and @leecalcote
+

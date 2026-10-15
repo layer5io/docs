@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Validation on Layer5 Documentation</title><link>/pr-preview/pr-1309/tags/validation/</link><description>Recent content in Validation on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1309/tags/validation/index.xml" rel="self" type="application/rss+xml"/><item><title>Validate a Design</title><link>/pr-preview/pr-1309/kanvas/guides/deploying/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1309/kanvas/guides/deploying/validating-designs/</guid><description>&lt;p&gt;Validation checks the configuration of each component in a design against the schema of that component&amp;rsquo;s definition. It runs in your browser, needs no cluster, and changes nothing. Run it while you build to catch missing or malformed fields before a dry run or a deployment spends time on them.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Environment.&lt;/strong&gt; Validation runs in a Meshery you run. The hosted kanvas.new site does not run it and shows a self-hosted-feature prompt instead.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A non-empty design.&lt;/strong&gt; The Actions menu is disabled while the design has no components. An unsaved design validates; Kanvas validates the design as it is on the canvas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; On mobile, the Validate Design permission gates the action. See &lt;a href="/pr-preview/pr-1309/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="what-validation-checks" class="heading-link"&gt;
+ What validation checks
+ &lt;a href="#what-validation-checks" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Checked&lt;/th&gt;
+ &lt;th&gt;Not checked&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Each component&amp;rsquo;s configuration against the JSON schema of its registered definition, with all errors collected per component&lt;/td&gt;
+ &lt;td&gt;Relationships between components&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Required fields, types, and formats, including 32-bit and 64-bit integers and integer-or-string values&lt;/td&gt;
+ &lt;td&gt;Dependencies, namespaces, and cross-references&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;Anything in the target cluster&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item><item><title>Component Badges</title><link>/pr-preview/pr-1309/kanvas/reference/component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1309/kanvas/reference/component-badges/</guid><description>&lt;p&gt;A badge is a small marker Kanvas draws on the edge of a component to report something about it: errors waiting to be fixed, components held inside it, a link, or where it came from. Badges are status, not decoration. A count on a badge tells you there is something to read, and clicking it shows what.&lt;/p&gt;
+&lt;p&gt;Which badges appear depends on the mode. Designer mode draws badges that help you build a valid design. Operator mode draws badges about live resources.&lt;/p&gt;</description></item></channel></rss>
