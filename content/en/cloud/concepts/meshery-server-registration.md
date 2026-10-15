@@ -1,110 +1,104 @@
 ---
 title: Meshery Server Registration
-description: >
-  How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, what data is recorded, and how re-registration is handled.
-weight: 1
+description: How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
+weight: 20
+diataxis: explanation
 categories: [concepts]
 tags: [connections, remote-provider, meshery-server]
 ---
 
-Layer5 Cloud is a [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers). When a Meshery Server is configured to use Layer5 Cloud (SaaS or self-hosted), the server *registers itself* with Cloud on behalf of the authenticated user. Registration is what makes a particular Meshery Server visible inside Cloud — it appears as a `meshery` Connection on the user's account, scoped to their Organization, and becomes the anchor point for everything else the user does through that server (designs, environments, workspaces, events, capabilities).
+Layer5 Cloud is a [Meshery remote provider](https://docs.meshery.io/extensibility/providers). When a Meshery Server uses Layer5 Cloud, hosted or self-hosted, the server registers itself with Cloud on behalf of the signed-in user. Registration is what makes that Meshery Server known to Cloud: it appears as a `meshery` connection owned by that user. This page explains what the server sends, how Cloud tells a new server from one it already knows, what survives re-registration, and what each failure means.
 
-This page documents the registration behavior implemented by Layer5 Cloud: what the server sends, how Cloud identifies an existing registration vs a new one, and what fields are preserved across re-registration.
+For where registration fits in the overall relationship between Cloud and Meshery, see [How Layer5 Cloud Works with Meshery and Kanvas]({{< ref "cloud/concepts/architecture/index.md" >}}).
 
-## Why Registration Exists
+## Why registration exists
 
-The Meshery Server / Remote Provider boundary has two requirements:
+Registration answers two questions for Cloud:
 
-1. **Identity** — Cloud needs to know *which* Meshery Server is calling, so multiple Meshery deployments can talk to the same Cloud tenant without colliding.
-2. **Ownership** — Every Meshery Server registration is owned by exactly one user (and therefore one Organization). All subsequent activity through that server is attributed to that user for audit, RBAC, and tenancy.
+1. **Which Meshery Server is calling?** Many Meshery deployments can work with the same Cloud deployment, and Cloud must keep them apart.
+2. **Who owns it?** Every registration is owned by exactly one user, the user whose session made the request.
 
-A registration record satisfies both: it associates a unique server identifier with a user and an Organization, and it survives across Meshery Server restarts.
+A registration record answers both. It ties a stable server identifier to an owner and survives Meshery Server restarts.
 
-## Identifying a Meshery Server
+## How Cloud identifies a Meshery Server
 
-A Meshery Server is identified by a stable `server_id` it generates on first start and persists locally. The `server_id` travels in the Connection's `metadata` payload.
+A Meshery Server generates a stable server identifier on its first start and keeps it locally. It sends that identifier as `serverId` inside the connection's `metadata`.
 
-Cloud's uniqueness rule for an existing Meshery registration is the triple:
+Cloud recognizes an existing registration by three values together:
 
-```
-(kind = 'meshery', user_id, metadata.server_id)
-```
+- the connection kind, `meshery`
+- the owner, which is the authenticated user
+- `metadata.serverId`
 
-The lookup is implemented in `ConnectionDAO.CheckMesheryServerExistence`. A given user can register many Meshery Servers, and the same Meshery Server can register for many users — but a given `(user, server_id)` pair maps to exactly one Connection row.
+Each owner and `serverId` pair maps to exactly one connection. Cloud places no limit on either side of that pair: one user can register any number of Meshery Servers, and one Meshery Server can be registered by any number of users, with one connection per user.
 
-## Registration Endpoint
+Connections are owned by a user, not by an organization. Each user sees their own connections, including the Meshery Servers they registered.
 
-Meshery Server registers by `POST`ing a connection payload to:
+## The registration request
+
+A Meshery Server registers by sending a connection to:
 
 ```
 POST /api/integrations/connections
 ```
 
-The request must carry a valid Cloud session (Kratos browser session or JWT). The handler resolves the caller from session context and uses that user's ID as the owning `user_id`.
+The request must be authenticated with a Cloud session or a bearer token. Cloud takes the owner from that authentication, never from the request body.
 
-Required payload fields:
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `kind` | Yes | The connection kind. Case-insensitive. Accepted values are `meshery`, `kubernetes`, `prometheus`, and `grafana`. A Meshery Server registers itself with `meshery`. |
+| `metadata.serverId` | Yes, for `meshery` | The stable identifier the Meshery Server generated. The key is camelCase. |
+| `name` | No | A display name. When omitted, Cloud names the connection `<kind>-<random>`, for example `meshery-` followed by a random suffix. |
+| `metadata` (other keys) | No | Additional details about the server, such as its version. Cloud refreshes them on every registration. |
 
-| Field      | Description |
-|------------|-------------|
-| `kind`     | Must be `meshery`. |
-| `metadata.server_id` | Stable UUID generated by the Meshery Server. |
+On success, Cloud responds with HTTP 201 and a one-item page of connections containing the registered connection. Every registration call, first or repeat, records a "registered" event for the connection in the account's event log.
 
-Optional payload fields:
+## First registration
 
-| Field      | Description |
-|------------|-------------|
-| `name`     | Human-readable display name. If omitted, Cloud generates `meshery-<random>`. |
-| `type` / `sub_type` | Free-form classification fields. |
-| `metadata` | Additional JSON metadata (e.g. server version, hostname). |
-| `status`   | Initial status (defaults to the system's registered state). |
+When no connection matches the owner and `serverId`, Cloud creates a new `meshery` connection owned by the authenticated user.
 
-The handler chain is `RegisterConnection` → `MesheryConnectionUtilityHandlerRegistration` → either `CreateConnection` or `UpdateConnection`.
+## Re-registration
 
-## What Happens on First Registration
+A re-registration is any later call from the same Meshery Server, carrying the same `serverId`, for the same user. It typically follows a Meshery Server restart, a new sign-in, or a reconnect.
 
-1. The handler validates that the resolved session has a non-nil `user_id`. The `connections.user_id` column is `NOT NULL`; a missing user at this point is a hard error and the request is rejected.
-2. `CheckMesheryServerExistence` looks for a row matching `(meshery, user_id, server_id)`.
-3. No match is found, so a new row is inserted via `CreateConnection`.
-4. The new Connection inherits the user's Organization for tenant isolation.
+Cloud updates the existing connection in place:
 
-## What Happens on Re-Registration
+| Kept from the stored connection | Refreshed from the request |
+| :--- | :--- |
+| ID, name, kind, type, sub-type, status, owner, and creation time | Metadata and the last-updated time |
 
-A re-registration is any subsequent call from the same Meshery Server (same `server_id`) for the same user — typically after a Meshery Server restart, a new browser session, or a Cloud reconnect.
+Two consequences follow:
 
-The handler:
+- **Re-registering never renames a server.** A request that omits `name`, and would otherwise get a random name, cannot replace the name the connection already has.
+- **Re-registering never resets status.** A Meshery Server you disconnected or ignored stays disconnected or ignored when it registers again.
 
-1. Validates the session's `user_id` (same as first registration).
-2. Finds the existing row via `CheckMesheryServerExistence`.
-3. **Preserves the existing row's stable identity fields** — `name`, `kind`, `type`, `sub_type`, `status` — so a freshly-minted random name from a payload that omitted `name` cannot rename the existing Meshery Server, and missing `type` / `sub_type` cannot blank them.
-4. **Preserves the existing row's `created_at`**, sets `updated_at = now()`.
-5. **Preserves a previously-set `user_id`**: if the row already has an owner, the existing owner wins; if the row's `user_id` is somehow nil, the validated incoming `user_id` is kept (this guard exists because a historical narrow `SELECT id, metadata` projection in the DAO could leave the in-memory row's UserID nil, which would otherwise UPDATE the row to a null `user_id` and violate the NOT NULL constraint).
-6. Calls `UpdateConnection`, which updates every column except `status`.
-
-The net effect: re-registering a Meshery Server is **safe and idempotent** with respect to identity. Only `metadata` and `updated_at` are intended to change across re-registrations.
-
-{{< alert type="info" title="Why status is excluded from updates" >}}
-Connection status transitions are managed through dedicated lifecycle endpoints (e.g. connect / disconnect, ignore, delete), not through registration. A re-registration call cannot reset a previously-disconnected Meshery Server's status by accident.
+{{< alert type="info" title="Status changes through connection lifecycle actions" >}}
+Connection status changes through the dedicated connection lifecycle actions, such as connect, disconnect, ignore, and delete, not through registration. Registration carries the stored status forward, so a restarting server cannot undo a status you set.
 {{< /alert >}}
 
-## Validation and Error Cases
+## Other connection kinds
 
-| Condition | Behavior |
-|-----------|----------|
-| Session has no resolvable user | Registration is rejected before any DAO call. The caller sees an HTTP 500 with an error describing the missing `user_id`. |
-| `kind` is not in the supported list | HTTP 500 with an "unsupported connection kind" error. |
-| `server_id` is missing from `metadata` | The lookup degenerates to `metadata->>'server_id' IS NULL`, which will not match any prior registration; a fresh row will be created. Always send a stable `server_id`. |
-| DB error during lookup or write | Wrapped in a structured MeshKit error and returned to the caller. |
+The same endpoint registers the other accepted kinds, with their own identity rules:
 
-## Operator Guidance
+- **Kubernetes.** Cloud derives the connection's ID from the cluster and the owner, so registering the same cluster again updates the existing connection instead of creating another. Cloud stores the cluster's credential once and keeps the stored status.
+- **Prometheus and Grafana.** Cloud creates the connection or updates the existing one in place.
 
-If you operate a self-hosted Layer5 Cloud and see registration-related errors, the symptoms below map to the most common root causes:
+## Validation and errors
 
-- **`Postgres 23502` / `meshery-server-1345`** during auth completion — the registration call reached the DAO with a nil `user_id`. This is now caught by the handler-level guard described above; if you see it on a build that pre-dates that guard, upgrade. If you see it on a post-guard build, the session resolution itself is failing — check the logs around the request for missing JWT / Kratos session context.
-- **A Meshery Server appears under the wrong user** — check whether the operator authenticated as a different account against the Cloud session. The `user_id` is taken from the session, not the payload.
-- **A Meshery Server's display name keeps changing** — pre-fix builds would rename existing rows when the payload omitted `name`. Upgrade to a build that preserves stable identity fields on re-registration (the behavior documented above).
+| Condition | Result |
+| :--- | :--- |
+| The request carries no Cloud session or bearer token | Rejected. The endpoint requires authentication. |
+| The authentication does not resolve to a user | Rejected before anything is stored, with the error "cannot register meshery connection: missing owner in authenticated session". |
+| `kind` is not one of the accepted values | HTTP 500 with the error "connection kind: `<kind>`, not implemented yet". |
+| `metadata.serverId` is missing or empty on a `meshery` registration | HTTP 500 with the error "empty server id; cannot check for existence". No connection is created. |
 
-## Where the Code Lives
+## Operator guidance
 
-- Handler: [`server/handlers/connections.go`](https://github.com/layer5io/meshery-cloud/blob/master/server/handlers/connections.go) — `RegisterConnection`, `MesheryConnectionUtilityHandlerRegistration`
-- DAO: [`server/dao/connections.go`](https://github.com/layer5io/meshery-cloud/blob/master/server/dao/connections.go) — `CheckMesheryServerExistence`, `CreateConnection`, `UpdateConnection`
-- Schema: [`meshery/schemas` — Connection](https://github.com/meshery/schemas)
+If you operate a self-hosted Layer5 Cloud, these symptoms map to the most common causes:
+
+- **Registration fails with "missing owner in authenticated session".** The request reached Cloud with authentication that does not resolve to a user. Look at the request in your logs and confirm that it carries a valid session or bearer token for an existing account.
+- **Registration fails with "empty server id; cannot check for existence".** The client did not send `serverId` in `metadata`. Cloud does not fall back to creating an unidentified connection. Confirm that the client sends the identifier under the camelCase key `serverId`.
+- **Registration fails with "not implemented yet".** The client sent a `kind` other than `meshery`, `kubernetes`, `prometheus`, or `grafana`.
+- **A Meshery Server appears under the wrong user.** The owner comes from the session, not from the request body. The server was registered while a different account was signed in.
+- **The same Meshery Server appears more than once.** Each owner and `serverId` pair is a separate connection, so a server registered by two users appears once for each of them. If one user sees the same server twice, the server presented a different `serverId`, which happens when it loses the identifier it stored locally and generates a new one.
+- **A Meshery Server's name or status in Cloud does not change when it reconnects.** This is intended. Re-registration preserves the stored name and status; change them through the connection's own actions.
