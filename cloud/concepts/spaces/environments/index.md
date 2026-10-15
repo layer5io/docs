@@ -70,7 +70,7 @@ Access to a Connection — and therefore to its associated Credentials — is gr
 
 ## Example: Orbital Labs Environment Setup
 
-The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure. See [Meet Five and the Cast]() for the full seed inventory.
+The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure.
 
 ### Environment Inventory
 

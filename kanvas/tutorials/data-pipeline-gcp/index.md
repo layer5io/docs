@@ -163,17 +163,3 @@ Open `data-pipeline-gcp` and confirm:
 - [Designs](/kanvas/concepts/designs/) explains how designs, workspaces, and autosave fit together.
 
 
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Info</h4>
-  
-      Meet Zara and the rest of the team at <a href="">Meet Five and the Cast</a>.
-  
-</div>
-
-
-

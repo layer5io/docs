@@ -113,21 +113,16 @@
 - [Whiteboarding in Kanvas](/videos/features/kanvas/whiteboarding-in-kanvas/index.md): One late-night alert, worked from page to postmortem on a single live design: sketch the blast radius, style the flow, put the evidence in context, and fix the configuration where the team can see it.
 
 
-## Cloud Documentation
-- [Cloud Documentation](/cloud/index.md): Layer5 Cloud provides a powerful platform for managing and deploying your cloud infrastructure with flexibility and ease.
-
+## Layer5 Cloud Documentation
+- [Layer5 Cloud Documentation](/cloud/index.md): What Layer5 Cloud does for Kanvas and Meshery, what it leaves to Meshery Server, and where to start.
 
 - [Customizing Webhooks](/cloud/guides/self-hosted/customizing-webhooks/index.md): Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.
 - [Managing Workspaces](/cloud/guides/workspaces/managing-workspaces/index.md): Learn how to create, edit, delete, and configure your Workspaces.
-- [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, what data is recorded, and how re-registration is handled.
-
 - [Metrics](/cloud/concepts/catalog/metrics/index.md): Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
 
-- [Setting up Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
 - [Sharing a Workspace](/cloud/guides/tutorials/sharing-a-workspace/index.md): Learn how to control access to workspaces and their resources.
 
 - [Support](/cloud/getting-started/support/index.md): If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don't hesitate to reach out to us.
-- [Creating a Design from Meshery Catalog Templates](/cloud/getting-started/creating-a-design-from-template/index.md): With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog.
 - [Customizing Layer5 Cloud Deployment with Helm](/cloud/guides/self-hosted/deployment/helm-chart-values/index.md): Layer5’s Helm charts support a number of configuration options. Please refer to following table of configuration options.
 - [Default Organization Roles](/cloud/concepts/identity-and-security/roles/organization-roles/index.md): By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
 
@@ -192,7 +187,12 @@
 
 - [Tokens](/cloud/concepts/identity-and-security/tokens/index.md): API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
 
+- [Create Your Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
+- [How Layer5 Cloud Works with Meshery and Kanvas](/cloud/concepts/architecture/index.md): How Layer5 Cloud acts as the remote provider for Meshery Server and Kanvas, what it supplies to a connected server, how sign-in is handed off, and what it stores.
+- [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
 - [Notification Preferences](/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
+- [Set Up Your Organization](/cloud/getting-started/setting-up-your-organization/index.md): Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
+- [Start from a Catalog Design](/cloud/getting-started/creating-a-design-from-template/index.md): Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
 - [v1.0.278](/cloud/reference/releases/v1.0.278/index.md):  feat(ui): shorten Canvas-first onboarding to land new users on Import from GitHub @jijillery (#6172) 👨🏽‍💻 Contributors …
 - [v1.0.277](/cloud/reference/releases/v1.0.277/index.md):  fix(ui): normalize DEPLOY_ENVIRONMENT aliases for GITHUB_APP_URL resolution @leecalcote (#6169) 👨🏽‍💻 Contributors 🔗 …
 - [v1.0.276](/cloud/reference/releases/v1.0.276/index.md):  fix(connect): navigate to GitHub authorization instead of silently failing on connect @leecalcote (#6166) …

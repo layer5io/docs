@@ -10,7 +10,7 @@ Outside of grouping users together, teams offer control access to workspaces and
 
 ## Example: Orbital Labs Teams
 
-The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at [Meet Five and the Cast]().
+The following teams illustrate how organizations use teams to segment access and responsibilities.
 
 <img src='images/team-of-fives.svg' alt="Team of Fives" style="width:120px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
 

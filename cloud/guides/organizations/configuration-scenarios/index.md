@@ -19,8 +19,7 @@ the map; those are the turn-by-turn directions.
 
 ## First, the two organization types
 
-Before the scenarios, two roles an organization can play (illustrated with
-[Five and the cast at Orbital Labs](/cloud/getting-started/meet-five)):
+Before the scenarios, two roles an organization can play (illustrated by the Orbital Labs cast used in these examples):
 
 - **Provider Organization** — the top-level organization that operates the
   deployment. On the hosted service, this is Layer5 itself; on a self-hosted

@@ -109,17 +109,3 @@ Someone you don't know might be viewing your design because:
 - Someone who can edit your design shared it further.
 
 
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Info</h4>
-  
-      See <a href="">Meet Five and the Cast</a> for the full Orbital Labs workspace and character reference.
-  
-</div>
-
-
-

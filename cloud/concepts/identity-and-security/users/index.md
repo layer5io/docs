@@ -20,7 +20,6 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 <strong>Role:</strong> User (Platform Engineer)<br>
 <strong>Plan:</strong> Team</p>
 <p>Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.</p>
-<p><a href="">See full cast →</a></p>
 </p>
       </div>
   </div>
@@ -36,7 +35,6 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 <strong>Role:</strong> Org Admin + Development Team Admin<br>
 <strong>Plan:</strong> Team</p>
 <p>Voice of reason. Has a calendar block called &ldquo;Preventing Five from touching prod&rdquo; that recurs every Friday at 4:45 PM.</p>
-<p><a href="">See full cast →</a></p>
 </p>
       </div>
   </div>

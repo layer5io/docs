@@ -141,7 +141,7 @@ Workspaces enhance collaboration within your teams, providing a structured envir
 
 ## Example: Orbital Labs Workspace Setup
 
-The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows. See [Meet Five and the Cast]() for the full seed inventory.
+The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows.
 
 ### Workspace Inventory
 

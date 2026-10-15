@@ -1694,7 +1694,7 @@ description: Grant a reviewer in another organization access to a private design
 
 In this tutorial, an Organization Admin at one company asks an engineer at another company to review a private design. By the end, you will have given someone outside your organization access to one design, held a review in a comment thread, and removed that access. Along the way, you will learn what a grant gives someone, where Kanvas checks permissions, and why the review itself has to happen in comments.
 
-The cast is the same one used across these docs (see [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}})). Marcus Webb is the Organization Admin at Stellar Dynamics. Five is a Platform Engineer at Orbital Labs, a separate organization.
+The cast is the same one used across these docs. Marcus Webb is the Organization Admin at Stellar Dynamics. Five is a Platform Engineer at Orbital Labs, a separate organization.
 
 ## Before you begin
 
@@ -2755,9 +2755,6 @@ Open `data-pipeline-gcp` and confirm:
 - [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) explains how the registry defines relationships and how Kanvas evaluates them.
 - [Designs]({{< ref "kanvas/concepts/designs/index.md" >}}) explains how designs, workspaces, and autosave fit together.
 
-{{< alert type="info" >}}
-Meet Zara and the rest of the team at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
-{{< /alert >}}
 
 
 --------------------------------------------------------------------------------
@@ -7035,52 +7032,69 @@ At 2:47 AM, checkout latency is climbing and the architecture diagram cannot be 
 
 
 --------------------------------------------------------------------------------
-title: "Cloud Documentation"
+title: "Layer5 Cloud Documentation"
 url: /cloud/index.md
-description: Layer5 Cloud provides a powerful platform for managing and deploying your cloud infrastructure with flexibility and ease.
-
+description: What Layer5 Cloud does for Kanvas and Meshery, what it leaves to Meshery Server, and where to start.
 --------------------------------------------------------------------------------
+
+Layer5 Cloud is the identity, tenancy, and collaboration service behind Kanvas and Meshery. It signs users in, organizes them into organizations, teams, and workspaces, decides what each of them may do, and stores the designs they create and share. Layer5 Cloud runs as a hosted service and as a [self-hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}) deployment.
 
 {{% pageinfo %}}
 
 ## Understanding the Layer5 Ecosystem
 
 {{< ecosystem-box icon="cloud" title="Layer5 Cloud" >}}
-is an identity provider and global console for Kanvas and Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+is the identity provider and remote provider for Kanvas and Meshery. It owns accounts, organizations, teams, workspaces, roles, and the catalog, and it stores every design and design version. It is available as a hosted service or self-hosted.
 {{< /ecosystem-box >}}
 
 {{< ecosystem-box link="kanvas/_index.md" icon="images/logos/kanvas-icon-color.svg" image="true" class="hidden-highlight-box" title="Kanvas" >}}
-delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+is a visual designer and operator for Kubernetes and multi-cloud infrastructure. It runs as an extension inside Meshery and uses Layer5 Cloud to store, share, and publish designs.
 {{< /ecosystem-box >}}
 
 {{% /pageinfo %}}
 
-## What is Layer5 Cloud?
+## What Layer5 Cloud does
 
-Layer5 Cloud is the centralized management console and identity provider for the Layer5 ecosystem — specifically for **Kanvas** and **Meshery** deployments. It provides an extensible, highly flexible authorization framework that enables organizations to govern complex, multi-cloud infrastructure with confidence. Think of it as the command center where your teams, workspaces, and cloud-native assets come together under a single, unified platform.
+**Sign-in and identity.** Users create an account with an email address and password, with GitHub, or with Google. An organization that configures its own identity providers, including a generic OIDC provider, offers those instead. A signed-in user can link a GitHub or Google account to an existing profile, so either method signs in to the same profile. Email sign-ups verify their address before password sign-in works.
 
-Layer5 Cloud is available both as a fully managed service and as a [self-hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}) deployment, giving organizations the flexibility to meet their own security and compliance requirements.
+**Tenancy.** Organizations own teams and workspaces. A team belongs to the organization it is created in, a workspace can hold any number of teams, and a team can belong to several workspaces. At first sign-in, every new user receives a default organization, team, and workspace: they hold the Organization Admin role on the organization, the Team Admin role on the team, and own the workspace, so they can start working immediately.
 
-## Why use Layer5 Cloud?
+**Authorization.** Roles, keys, and keychains decide what each user may do. A key is a single permission, a keychain groups keys, and a role carries keychains. Users hold roles within an organization, so the same person can have different permissions in different organizations. Built-in roles cover the provider, organization, team, and workspace levels, and organization admins invite users and assign their roles. See [Identity and Security]({{< ref "cloud/concepts/identity-and-security/_index.md" >}}).
 
-- **Unified Identity and Access Management**: Define and enforce granular Role-Based Access Control (RBAC) across your organizations, teams, and users — all from one place.
-- **Collaborative Infrastructure Design**: Like Google Workspace for teams or Figma for designers, Layer5 Cloud enables real-time, multi-player collaboration on infrastructure patterns and deployments.
-- **Content Catalog**: Publish, discover, and reuse cloud-native architectures and patterns — either publicly or privately within your organization.
-- **Multi-Tenancy and Organizational Hierarchy**: Support service provider-grade structures with tenant entitlement services and a flexible organizational model that scales with your business.
-- **Flexible Deployment**: Run Layer5 Cloud as a SaaS product or bring it on-premises — your infrastructure, your rules.
+**Design storage and sharing for Kanvas.** Layer5 Cloud persists every Kanvas design and every version of it, records who each design is shared with, and keeps the event log. A design belongs to at most one workspace at a time. Real-time collaboration in Kanvas starts with a signaling service that Layer5 Cloud hosts; after participants connect, edits synchronize directly between their browsers.
 
-<!-- {{< blocks/section color="dark" type="row" >}}
-{{% blocks/feature icon="fa-lightbulb" title="Fastest OS **on the planet**!" %}}
-The new **TechOS** operating system is an open source project. It is a new project, but with grand ambitions.
-Please follow this space for updates!
-{{% /blocks/feature %}}
-{{% blocks/feature icon="fa-brands fa-github" title="Contributions welcome!" url="https://github.com/gohugoio/hugo" %}}
-We do a [Pull Request](https://github.com/gohugoio/hugo/pulls) contributions workflow on **GitHub**. New users are always welcome!
-{{% /blocks/feature %}}
-{{% blocks/feature icon="./featured-background.png" title="Kanvas" url="/kanvas" %}}
-**Kanvas** provides a visual interface that allows users to create and edit Kubernetes manifests, charts and pipelines, as well as monitor the performance and health of their clusters. Kanvas aims to simplify the complexity of Kubernetes and make it accessible to more users, similar to how Figma democratized design tools for web and mobile applications.
-{{% /blocks/feature %}}
-{{< /blocks/section >}} -->
+**The catalog.** The [catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}) publishes reusable designs. Anyone can browse it. A signed-in user with the right permission can clone a published or public design into their own workspace, download it, or open it in Kanvas on the [Meshery Playground](https://playground.meshery.io).
+
+**Remote provider for Meshery Server.** Meshery Server connects to Layer5 Cloud as its remote provider. Users sign in to Meshery through Layer5 Cloud, Meshery Server registers itself as a connection owned by the signed-in user, and Layer5 Cloud returns a capabilities document that tells Meshery which features to enable for that user. Every new user holds the Kanvas role, which enables the Kanvas extension when their Meshery Server connects.
+
+**Academy.** [Academy]({{< ref "cloud/academy/_index.md" >}}) delivers learning paths, challenges, and certifications, and gives content creators the tools to build and publish their own.
+
+## What Layer5 Cloud does not do
+
+- **It does not deploy to or manage your clusters.** Meshery Server, running in your environment, talks to your Kubernetes clusters through Meshery Operator and MeshSync, and performs every dry-run, deploy, and undeploy.
+- **It does not run Kanvas.** Kanvas is an extension that runs inside Meshery. Kanvas sends its requests to Meshery Server, which forwards design, catalog, and sharing requests to Layer5 Cloud. Real-time collaboration signaling is the only direct path from the browser to Layer5 Cloud.
+
+[How Layer5 Cloud works]({{< ref "cloud/concepts/architecture/index.md" >}}) explains these boundaries in depth, and [How Kanvas Works with Meshery and Layer5 Cloud]({{< ref "kanvas/concepts/architecture/index.md" >}}) covers them from the Kanvas side.
+
+## Choose your path
+
+| Section | Go here to |
+|---|---|
+| [Getting Started]({{< ref "cloud/getting-started/_index.md" >}}) | Create an account and learn what Layer5 Cloud sets up for you at first sign-in. |
+| [Tutorials]({{< ref "cloud/guides/tutorials/_index.md" >}}) | Work through end-to-end examples that build a working mental model. |
+| [How-to Guides]({{< ref "cloud/guides/_index.md" >}}) | Complete a specific task: manage organizations and workspaces, connect integrations, or self-host. |
+| [Concepts]({{< ref "cloud/concepts/_index.md" >}}) | Understand organizations, teams, workspaces, roles, the catalog, and how they relate. |
+| [Reference]({{< ref "cloud/reference/_index.md" >}}) | Look up default permissions by role and the API. |
+| [Academy]({{< ref "cloud/academy/_index.md" >}}) | Take learning paths and certifications, or create and publish your own content. |
+
+To design infrastructure with what Layer5 Cloud stores, go to the [Kanvas documentation]({{< ref "kanvas/_index.md" >}}).
+
+## What each plan includes
+
+The following matrix shows which Layer5 Cloud capabilities each subscription plan includes. For default permissions by role, see the [Reference]({{< ref "cloud/reference/_index.md" >}}) section.
+
+{{< feature-tiers categories="Identity & Access Management|Workspaces|Catalog|Security|Support and Deployment|Academy" >}}
+
 
 --------------------------------------------------------------------------------
 title: "Customizing Webhooks"
@@ -7384,116 +7398,6 @@ This grants members of the assigned Team exclusive access and the permission to 
 
 
 --------------------------------------------------------------------------------
-title: "Meshery Server Registration"
-url: /cloud/concepts/meshery-server-registration/index.md
-description: How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, what data is recorded, and how re-registration is handled.
-
---------------------------------------------------------------------------------
-
-Layer5 Cloud is a [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers). When a Meshery Server is configured to use Layer5 Cloud (SaaS or self-hosted), the server *registers itself* with Cloud on behalf of the authenticated user. Registration is what makes a particular Meshery Server visible inside Cloud — it appears as a `meshery` Connection on the user's account, scoped to their Organization, and becomes the anchor point for everything else the user does through that server (designs, environments, workspaces, events, capabilities).
-
-This page documents the registration behavior implemented by Layer5 Cloud: what the server sends, how Cloud identifies an existing registration vs a new one, and what fields are preserved across re-registration.
-
-## Why Registration Exists
-
-The Meshery Server / Remote Provider boundary has two requirements:
-
-1. **Identity** — Cloud needs to know *which* Meshery Server is calling, so multiple Meshery deployments can talk to the same Cloud tenant without colliding.
-2. **Ownership** — Every Meshery Server registration is owned by exactly one user (and therefore one Organization). All subsequent activity through that server is attributed to that user for audit, RBAC, and tenancy.
-
-A registration record satisfies both: it associates a unique server identifier with a user and an Organization, and it survives across Meshery Server restarts.
-
-## Identifying a Meshery Server
-
-A Meshery Server is identified by a stable `server_id` it generates on first start and persists locally. The `server_id` travels in the Connection's `metadata` payload.
-
-Cloud's uniqueness rule for an existing Meshery registration is the triple:
-
-```
-(kind = 'meshery', user_id, metadata.server_id)
-```
-
-The lookup is implemented in `ConnectionDAO.CheckMesheryServerExistence`. A given user can register many Meshery Servers, and the same Meshery Server can register for many users — but a given `(user, server_id)` pair maps to exactly one Connection row.
-
-## Registration Endpoint
-
-Meshery Server registers by `POST`ing a connection payload to:
-
-```
-POST /api/integrations/connections
-```
-
-The request must carry a valid Cloud session (Kratos browser session or JWT). The handler resolves the caller from session context and uses that user's ID as the owning `user_id`.
-
-Required payload fields:
-
-| Field      | Description |
-|------------|-------------|
-| `kind`     | Must be `meshery`. |
-| `metadata.server_id` | Stable UUID generated by the Meshery Server. |
-
-Optional payload fields:
-
-| Field      | Description |
-|------------|-------------|
-| `name`     | Human-readable display name. If omitted, Cloud generates `meshery-<random>`. |
-| `type` / `sub_type` | Free-form classification fields. |
-| `metadata` | Additional JSON metadata (e.g. server version, hostname). |
-| `status`   | Initial status (defaults to the system's registered state). |
-
-The handler chain is `RegisterConnection` → `MesheryConnectionUtilityHandlerRegistration` → either `CreateConnection` or `UpdateConnection`.
-
-## What Happens on First Registration
-
-1. The handler validates that the resolved session has a non-nil `user_id`. The `connections.user_id` column is `NOT NULL`; a missing user at this point is a hard error and the request is rejected.
-2. `CheckMesheryServerExistence` looks for a row matching `(meshery, user_id, server_id)`.
-3. No match is found, so a new row is inserted via `CreateConnection`.
-4. The new Connection inherits the user's Organization for tenant isolation.
-
-## What Happens on Re-Registration
-
-A re-registration is any subsequent call from the same Meshery Server (same `server_id`) for the same user — typically after a Meshery Server restart, a new browser session, or a Cloud reconnect.
-
-The handler:
-
-1. Validates the session's `user_id` (same as first registration).
-2. Finds the existing row via `CheckMesheryServerExistence`.
-3. **Preserves the existing row's stable identity fields** — `name`, `kind`, `type`, `sub_type`, `status` — so a freshly-minted random name from a payload that omitted `name` cannot rename the existing Meshery Server, and missing `type` / `sub_type` cannot blank them.
-4. **Preserves the existing row's `created_at`**, sets `updated_at = now()`.
-5. **Preserves a previously-set `user_id`**: if the row already has an owner, the existing owner wins; if the row's `user_id` is somehow nil, the validated incoming `user_id` is kept (this guard exists because a historical narrow `SELECT id, metadata` projection in the DAO could leave the in-memory row's UserID nil, which would otherwise UPDATE the row to a null `user_id` and violate the NOT NULL constraint).
-6. Calls `UpdateConnection`, which updates every column except `status`.
-
-The net effect: re-registering a Meshery Server is **safe and idempotent** with respect to identity. Only `metadata` and `updated_at` are intended to change across re-registrations.
-
-{{< alert type="info" title="Why status is excluded from updates" >}}
-Connection status transitions are managed through dedicated lifecycle endpoints (e.g. connect / disconnect, ignore, delete), not through registration. A re-registration call cannot reset a previously-disconnected Meshery Server's status by accident.
-{{< /alert >}}
-
-## Validation and Error Cases
-
-| Condition | Behavior |
-|-----------|----------|
-| Session has no resolvable user | Registration is rejected before any DAO call. The caller sees an HTTP 500 with an error describing the missing `user_id`. |
-| `kind` is not in the supported list | HTTP 500 with an "unsupported connection kind" error. |
-| `server_id` is missing from `metadata` | The lookup degenerates to `metadata->>'server_id' IS NULL`, which will not match any prior registration; a fresh row will be created. Always send a stable `server_id`. |
-| DB error during lookup or write | Wrapped in a structured MeshKit error and returned to the caller. |
-
-## Operator Guidance
-
-If you operate a self-hosted Layer5 Cloud and see registration-related errors, the symptoms below map to the most common root causes:
-
-- **`Postgres 23502` / `meshery-server-1345`** during auth completion — the registration call reached the DAO with a nil `user_id`. This is now caught by the handler-level guard described above; if you see it on a build that pre-dates that guard, upgrade. If you see it on a post-guard build, the session resolution itself is failing — check the logs around the request for missing JWT / Kratos session context.
-- **A Meshery Server appears under the wrong user** — check whether the operator authenticated as a different account against the Cloud session. The `user_id` is taken from the session, not the payload.
-- **A Meshery Server's display name keeps changing** — pre-fix builds would rename existing rows when the payload omitted `name`. Upgrade to a build that preserves stable identity fields on re-registration (the behavior documented above).
-
-## Where the Code Lives
-
-- Handler: [`server/handlers/connections.go`](https://github.com/layer5io/meshery-cloud/blob/master/server/handlers/connections.go) — `RegisterConnection`, `MesheryConnectionUtilityHandlerRegistration`
-- DAO: [`server/dao/connections.go`](https://github.com/layer5io/meshery-cloud/blob/master/server/dao/connections.go) — `CheckMesheryServerExistence`, `CreateConnection`, `UpdateConnection`
-- Schema: [`meshery/schemas` — Connection](https://github.com/meshery/schemas)
-
-
---------------------------------------------------------------------------------
 title: "Metrics"
 url: /cloud/concepts/catalog/metrics/index.md
 description: Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
@@ -7533,98 +7437,6 @@ Cloning metrics indicate how often users are creating copies of a design for mod
 
 ##### 5. Shares
 Shares measure the social aspect of design usage.
-
---------------------------------------------------------------------------------
-title: "Setting up Layer5 Account"
-url: /cloud/getting-started/getting-started-with-layer5-account/index.md
-description: With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
---------------------------------------------------------------------------------
-
-This guide will walk you through setting up your Layer5 account.
-
-## Configuring your Layer5 account
-
-The first steps in starting with Layer5 are to create an account, verify your email, sign in, and view your profile. You do not need to set up an organization or a workspace: Layer5 Cloud creates one of each for you when you sign up.
-
- Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.
-
-### 1. Creating an account
-
-To sign up for an account on Layer5 Cloud, navigate to <https://cloud.layer5.io/signup>.
-You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
-
-{{< meshery-design-embed src="export-designs/embedded-design-flows.js" id="embedded-design-8c9106f6-2b0e-4bd1-8eea-8ccdab5c117d" >}}
-
-
-
-### 2. Verifying your email address
-
-After signing up, a verification email is sent to the email address associated with your account. The email contains a verification code and a verification link. You can complete your email verification using either method.
-
-When you sign up with your email, Layer5 Cloud takes you to a **Check your email** page that names the address the verification email was sent to. You can stay on this page while you wait for the email:
-
-- **Resend email** sends a new verification email without leaving the page. Once it is sent, the page also links to a form where you can type the code from the new email instead of opening its link.
-- **Use a different email** takes you back to the sign-up form with your name kept and the email address cleared. Use it if you mistyped your address: an account cannot change its email address before that address is verified, so signing up again with the correct address is how you fix it.
-
-If you reach the **Check your email** page in a different browser tab from the one you signed up in, or your browser blocks site storage, the page cannot name your address. **Resend email** then opens the verification page, which asks for your address before sending a new email.
-
-If you are using a custom domain, the verification link stays on your organization's domain instead of redirecting to the default domain.
-
-On custom domains, verification links sent before the email-verification fix was released cannot be completed. Verification links are valid for 720 hours (30 days). If your link expired - or was sent before the fix - request a new verification email and use the latest verification link.
-
-
-<!-- considering we would want to use 2FA in future
-4. Configuring two-factor authentication
-
-Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. We strongly urge you to configure 2FA for the safety of your account. For more information, see "About two-factor authentication."
-
-Optionally, after you have configured 2FA, add a passkey to your account to enable a secure, passwordless login. For more information, see "About passkeys" and "Managing your passkeys." -->
-
-### 3. Signing in to Layer5 Cloud
-
-To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
-
-You are not asked to name an organization or a workspace. Both were created when you signed up, as described in the next two steps. Where your first sign-in takes you depends on where you started:
-
-- **You started from Kanvas.** If you came to Layer5 Cloud from Kanvas and created your account on Layer5 Cloud, your first sign-in opens the **Import from GitHub** page. If you instead signed in with GitHub or Google on the sign-in page Kanvas sent you to, you are returned to Kanvas.
-- **You started on Layer5 Cloud.** Your first sign-in opens your [dashboard](#6-dashboard).
-
-The **Import from GitHub** page holds a single card. It explains that connecting GitHub lets you choose repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs, and it names your organization and workspace, each linked to where you can rename it. Select **Import from GitHub** to start the [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) wizard, or **Skip for now** to go to your dashboard.
-
-{{< alert type="info" >}}
-Layer5 Cloud remembers that you started from Kanvas only for the browser session you signed up in. If you sign in from a different browser, or after closing the browser you signed up in, you may land on your dashboard instead. The **Import from GitHub** page is always available at <https://cloud.layer5.io/register/choose-start>.
-{{< /alert >}}
-
-
-### 4. Your default organization {#4-creating-an-organization}
-
-Organizations are the unit of tenancy in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. When you sign up, Layer5 Cloud creates an organization named **My Organization** for you and makes you its owner and Organization Admin. Depending on your plan, you can also create more organizations, and you can join existing ones.
-
-{{< alert type="info" >}}
-For more information, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}})
-{{< /alert >}}
-
-
-You can rename **My Organization** and change its description at any time. For more information, see [Editing your organization]({{< ref "cloud/guides/organizations/org-management/_index.md#editing-your-organization" >}}).
-
-### 5. Your default workspace {#5-creating-a-workspace}
-
-Workspaces are logical groups of shared resources like environments, connections, credentials, infrastructure designs and more. Every user on Layer5 Cloud is part of at least one workspace. When you sign up, Layer5 Cloud creates a workspace named **My Workspace** in your organization, owned by you. You can also create more workspaces or join an existing one. You can share access to resources in your workspaces through teams.
-
-{{< alert type="info" >}}
-For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}})
-{{< /alert >}}
-
-You can rename **My Workspace** and change its description at any time. For more information, see [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
-
-### 6. Dashboard
-
-The dashboard is the first page you see when you sign in to Layer5 Cloud, except for the first sign-in of an account created from Kanvas, which opens the **Import from GitHub** page described in [step 3](#3-signing-in-to-layer5-cloud). It provides a high-level overview of your Layer5 account. For more information, see "About your dashboard."
-
-### 7. Viewing your Layer5 profile
-
-Your Layer5 profile tells people the story of your work through the recent activities, designs that you've published to Cloud catalog and much more. For more information, see "About your profile".
-
 
 --------------------------------------------------------------------------------
 title: "Sharing a Workspace"
@@ -7713,9 +7525,6 @@ Someone you don't know might be viewing your design because:
 - The design is shared with someone who doesn't have a Layer5 account or isn't signed in.
 - Someone who can edit your design shared it further.
 
-{{< alert type="info" >}}
-See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full Orbital Labs workspace and character reference.
-{{< /alert >}}
 
 
 --------------------------------------------------------------------------------
@@ -7752,26 +7561,6 @@ If you've forgotten your Layer5 Cloud account password, don't worry. You can eas
 
 {{< meshery-design-embed  src="export-designs/embedded-design-account-recovery.js"  id="embedded-design-f4d47d8d-0a16-46d3-ae79-829a1d16b2fa" >}}
 
-
---------------------------------------------------------------------------------
-title: "Creating a Design from Meshery Catalog Templates"
-url: /cloud/getting-started/creating-a-design-from-template/index.md
-description: With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog.
---------------------------------------------------------------------------------
-
-[Meshery Catalog](https://cloud.layer5.io/catalog) functions much like a cloud marketplace, providing a user-friendly interface for browsing, discovering, and sharing configurations and patterns for cloud native infrastructure. With Meshery Catalog, you can easily find,clone and deploy Kubernetes-based infrastructure and tools, making it easy to streamline your cloud native development and operations processes.
-
-##  Cloning a design from a template in the Meshery Catalog
-
-1. Sign into [Layer5 Cloud](https://cloud.layer5.io)
-2. Explore the catalogs located in the menu section.
-3. Search by technology or type and find the best template for your infrastructure. You will already see some of the information just by hovering on it.
-4. For detailed information just click on it.
-5. Simply click the green clone button.
-6. Now you have it. Navigate to [Meshery Playground](https://playground.meshery.io/)
-7. Go to the Kanvas and you will see your cloned template here. If you con't see it just reload the page.
-
-You can also publish your own design as a template.
 
 --------------------------------------------------------------------------------
 title: "Customizing Layer5 Cloud Deployment with Helm"
@@ -8920,8 +8709,7 @@ the map; those are the turn-by-turn directions.
 
 ## First, the two organization types
 
-Before the scenarios, two roles an organization can play (illustrated with
-[Five and the cast at Orbital Labs](/cloud/getting-started/meet-five)):
+Before the scenarios, two roles an organization can play (illustrated by the Orbital Labs cast used in these examples):
 
 - **Provider Organization** — the top-level organization that operates the
   deployment. On the hosted service, this is Layer5 itself; on a self-hosted
@@ -9099,8 +8887,6 @@ description: Learn how to move a design from a staging workspace to a production
 --------------------------------------------------------------------------------
 
 This guide walks through how Five promotes the `prod-deployment-v2` design from the `orbital-staging` workspace to `orbital-production`, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.
-
-See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full Orbital Labs narrative reference.
 
 ## Overview
 
@@ -12849,7 +12635,7 @@ For a step-by-step guide on how to create, edit, and manage your workspaces, see
 
 ## Example: Orbital Labs Workspace Setup
 
-The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full seed inventory.
+The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows.
 
 ### Workspace Inventory
 
@@ -12966,6 +12752,327 @@ Your browser sign-ins are represented by their own tokens and are listed on the 
 
 
 --------------------------------------------------------------------------------
+title: "Create Your Layer5 Account"
+url: /cloud/getting-started/getting-started-with-layer5-account/index.md
+description: Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
+--------------------------------------------------------------------------------
+
+Your Layer5 account is your personal identity on Layer5 Cloud. One account can belong to many organizations and teams, and it is how you import and create designs, collaborate through workspaces, and connect Meshery Servers. In this tutorial you create an account, verify it, sign in, and confirm that Layer5 Cloud has prepared an organization, a team, and a workspace for you. You do not set up any of those yourself before you can start working. The **Check your email** page and the **Import from GitHub** first-run page described below arrived in Layer5 Cloud **v1.0.278**.
+
+## 1. Create an account
+
+Sign up at <https://cloud.layer5.io/signup>. The registration page offers these sign-up methods:
+
+| Method | What happens next |
+|---|---|
+| Email and password | Layer5 Cloud sends a verification email. You verify your address before you can sign in with your password. |
+| GitHub | You authorize with GitHub and are signed in straight after registration. No verification email is sent. |
+| Google | You authorize with Google and are signed in straight after registration. No verification email is sent. |
+| Your organization's identity provider | An organization that brings its own identity provider credentials, including a generic OIDC provider, shows that provider on its own sign-up page. |
+
+### What the email sign-up form checks
+
+The email sign-up form asks for your first name, last name, email address, and password. Layer5 Cloud validates each field and keeps what you typed when it shows an error, so you only correct the field at fault.
+
+| Field | Rule |
+|---|---|
+| First and last name | 1 to 50 characters. Letters, combining marks, and spaces only. A spam filter also rejects blocked keywords in names. An invalid name shows "Invalid first name." or "Invalid last name." |
+| Email address | A syntactically valid address. The spam filter also rejects disposable-email domains. An invalid or rejected address shows "Invalid email address or domain not allowed." |
+| Password | At least 8 characters. Must not appear in the Have I Been Pwned breach corpus. Must not be too similar to your email address. |
+
+When the deployment has a reCAPTCHA check enabled, the submit button stays disabled until you solve it. A field-level validation failure keeps your solved captcha. If the server rejects the whole submission after the captcha was sent, the captcha resets and asks you to "Please complete the verification again." If the network fails, the page shows "We couldn't submit your sign-up. Check your connection and try again."
+
+GitHub and Google sign-up skip the spam filter and the captcha.
+
+The sign-up form stays valid for 24 hours. If you leave it open longer, it restarts and you fill it in again.
+
+## 2. Verify your email address
+
+After an email sign-up, Layer5 Cloud sends a verification email that contains both a verification link and a verification code. Either one completes verification. Both stay valid for 720 hours (30 days). Until you verify your address, Layer5 Cloud refuses password sign-in.
+
+Your browser lands on a **Check your email** page that names the address the verification email went to. You can wait on this page:
+
+- **Resend email** sends a new verification email without leaving the page. Once it is sent, the page also offers a form where you type the code from the new email instead of opening its link.
+- **Use a different email** returns you to the sign-up form with your name kept and the email address cleared. Use it if you mistyped your address. An account cannot change its email address before that address is verified, so signing up again with the correct address is the fix.
+
+The page remembers your address only in the browser tab you signed up in. If you open **Check your email** in a different tab, or your browser blocks site storage, the page shows generic text instead of your address. **Resend email** then opens the verification page, which asks for your address before it sends a new email.
+
+If your organization uses a custom domain, the verification link stays on your organization's domain.
+
+If your link has expired, request a new verification email and use the latest link.
+
+## 3. Sign in {#3-signing-in-to-layer5-cloud}
+
+Sign in at <https://cloud.layer5.io/login> with the method you signed up with. If you signed up with GitHub or Google, Layer5 Cloud sends you to that provider to authenticate. The sign-in form stays valid for 12 hours; an expired form restarts.
+
+You are not asked to name an organization or a workspace. Layer5 Cloud creates both on your first successful sign-in, as described in the next steps.
+
+### Where your first sign-in takes you
+
+Your first sign-in normally opens your [dashboard](#6-dashboard). One exception applies: if you started signing up from Kanvas, or from a Meshery Server on your organization's custom domain, and you registered in this browser, your first sign-in opens the **Import from GitHub** page (titled "Get started") once. If the sign-in carries an explicit return address, Layer5 Cloud sends you there instead.
+
+The **Import from GitHub** page holds one card. It explains that connecting GitHub lets you pick repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs. It also names your organization and workspace: "Organizations own workspaces. You're in My Organization, working in My Workspace. Rename either anytime." From there you either start the [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) wizard or skip to your dashboard.
+
+{{< alert type="info" >}}
+Layer5 Cloud remembers where you started only for the browser session you signed up in. If you sign in from a different browser, or after closing the browser you signed up in, you land on your dashboard. The **Import from GitHub** page is always available at <https://cloud.layer5.io/register/choose-start>.
+{{< /alert >}}
+
+## 4. Your default organization {#4-creating-an-organization}
+
+Organizations are the unit of tenancy in Layer5 Cloud, and every user belongs to at least one. On your first sign-in, Layer5 Cloud creates an organization named **My Organization** (description "Default Organization"), makes you its owner, and gives you the Organization Admin role in it. You can create more organizations and join existing ones.
+
+Layer5 Cloud also creates a team named **My Team** (description "Default Team"), attaches it to **My Organization**, and gives you the Team Admin role on it.
+
+{{< alert type="info" >}}
+For more information, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}).
+{{< /alert >}}
+
+You can rename **My Organization** and change its description at any time. See [Editing your organization]({{< ref "cloud/guides/organizations/org-management/_index.md#editing-your-organization" >}}).
+
+## 5. Your default workspace {#5-creating-a-workspace}
+
+Workspaces are logical groups of shared resources such as environments, connections, credentials, and designs. On your first sign-in, Layer5 Cloud creates a workspace named **My Workspace** (description "Default Workspace") in **My Organization**, owned by you. You can create more workspaces and share access to their resources through teams. If any of your organizations ever has no workspace, Layer5 Cloud re-creates **My Workspace** in it.
+
+{{< alert type="info" >}}
+For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
+{{< /alert >}}
+
+You can rename **My Workspace** and change its description at any time. See [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
+
+### Everything your first sign-in sets up
+
+| Created for you | Name | Your access |
+|---|---|---|
+| Organization | My Organization | Owner, Organization Admin role |
+| Team | My Team, attached to My Organization | Team Admin role |
+| Workspace | My Workspace, in My Organization | Owner |
+| Global role | Kanvas | Grants the Kanvas extension capabilities when a Meshery Server connects with your account |
+
+Layer5 Cloud also records your primary email address so that one person signing in by a different method reuses the same account instead of creating a second one. Layer5 Cloud accepts open organization invitation links on every sign-in, not only the first.
+
+## 6. Explore your dashboard {#6-dashboard}
+
+The dashboard is your normal landing page after sign-in. It is a grid of widgets whose layout you can edit; Layer5 Cloud prompts you before you leave with unsaved layout changes. Available widgets include Getting Started, Workspace Activity, Explore Playground, My Academy, Learn by Video, Help Center, Meshery Instances, Kubernetes Clusters Count, Catalog Content Count, Invite Friends, Badges, My Designs, System Version, Catalog Leaderboard, and Catalog Metrics. Academy administrators see additional widgets for Academy content statistics, metrics, test analytics, and registrations.
+
+## 7. Link GitHub or Google to your profile
+
+Whatever method you signed up with, you can later link a GitHub or Google account to your existing profile from your profile page. Once linked, either method signs you in to the same Layer5 Cloud profile. Each provider shows **Link** or **Unlink** depending on its current state. Linking sends you to the provider and then back to your profile.
+
+Profile changes are privileged actions. If your session has been active for more than 15 minutes, Layer5 Cloud asks you to authenticate again before it saves them.
+
+## Check your result
+
+Your account is ready when all of the following are true:
+
+- You can sign in at <https://cloud.layer5.io/login>. For an email account, a successful password sign-in also proves your address is verified.
+- Your dashboard loads after sign-in.
+- Your organization is **My Organization**, and it contains **My Workspace**.
+
+## Next steps
+
+- [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): invite a teammate, create a team, and give it a workspace.
+- [Start from a Catalog Design]({{< ref "cloud/getting-started/creating-a-design-from-template.md" >}}): clone a public design into your workspace.
+
+
+--------------------------------------------------------------------------------
+title: "How Layer5 Cloud Works with Meshery and Kanvas"
+url: /cloud/concepts/architecture/index.md
+description: How Layer5 Cloud acts as the remote provider for Meshery Server and Kanvas, what it supplies to a connected server, how sign-in is handed off, and what it stores.
+--------------------------------------------------------------------------------
+
+Layer5 Cloud is a [Meshery remote provider](https://docs.meshery.io/extensibility/providers). Meshery Server delegates identity, tenancy, and persistence to it, and Kanvas, which runs inside Meshery, reaches it through Meshery Server. Knowing what Cloud supplies, and what it does not touch, explains why some features need an account, why a feature can appear for one user and not another, and why Meshery Server, rather than your browser, is what reaches your clusters.
+
+<figure>
+  <img src="images/cloud-meshery-provider-architecture.webp" alt="Architecture diagram titled Meshery Architecture - Providers. On the left, a Remote Provider and a Local Provider connect to Meshery in the center. On the right, Meshery connects to Kubernetes clusters, where Meshery Operator runs MeshSync and Meshery Broker, and to adapters." />
+  <figcaption>Read the diagram from left to right. Providers sit on the left: Meshery runs with either a remote provider, which is the role Layer5 Cloud plays, or a local provider. The remote provider handles identity, tenancy, and the storage and sharing of designs. Meshery sits in the middle and mediates every request between the provider and your infrastructure. Your clusters sit on the right, where Meshery Operator runs MeshSync and Meshery Broker to report live state back to Meshery. Meshery, not the provider, is drawn connecting to the clusters and adapters on the right.</figcaption>
+</figure>
+
+## What Cloud provides to a connected Meshery Server
+
+When a Meshery Server uses Layer5 Cloud as its provider, Cloud supplies four things:
+
+- **Identity and sign-in.** Cloud authenticates the user and hands Meshery Server a token. Cloud publishes the keys that verify its tokens, as a JSON Web Key Set, at its unauthenticated `/keys` endpoint.
+- **Tenancy.** Cloud holds the organizations, teams, workspaces, environments, and roles that decide what a user can see and do. See [Concepts]({{< ref "cloud/concepts/_index.md" >}}) for how these relate.
+- **Persistence.** Cloud stores designs and their versions, records who each design is shared with, hosts the [catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}), and keeps the event log.
+- **A capabilities document.** Cloud tells Meshery Server which features the provider offers to the current caller, and Meshery and Kanvas enable only those features.
+
+Meshery Server also registers itself with Cloud as a connection owned by the signed-in user. See [Meshery Server Registration]({{< ref "cloud/concepts/meshery-server-registration.md" >}}).
+
+## The sign-in handoff
+
+A Meshery Server, or Kanvas, does not collect credentials itself. It hands the browser to Cloud and waits for a token to come back:
+
+1. The client sends the browser to Cloud's sign-in with a source: the address of its own token callback, encoded in base64url.
+2. The user signs in to Cloud. If the browser already holds a live Cloud session, Cloud skips the sign-in page.
+3. Cloud returns the browser to the source's token endpoint with a token and the original reference in the query string.
+
+The token callback path is `/api/user/token` or `/api/token`. Older Meshery Servers send `/user/login` or `/login`, and Cloud rewrites those to the current paths, so older servers keep working.
+
+If the user was working anonymously and the handoff carries the anonymous identity, Cloud moves the designs created under that anonymous identity to the signed-in account.
+
+### Which sources Cloud returns a token to
+
+Cloud issues a token only to a source it trusts. A source must use https, name a host, and carry no port and no user information. Its host must then be one of three kinds:
+
+| Source host | Accepted when |
+| :--- | :--- |
+| Cloud's own host | The source uses the same scheme as Cloud's configured base URL. |
+| A custom domain of an organization | The domain is configured on a live organization and the source uses https. |
+| A loopback host | The deployment runs in development mode. Outside development mode, loopback sources are refused. |
+
+Every other source is refused with an error and no token is issued. That includes other schemes and any host that is not Cloud's own host or a configured organization domain. There is no built-in list of trusted hosts beyond these rules. If Cloud cannot complete the lookup of an organization's custom domain, it refuses the source rather than accepting it. Cloud never applies the live-session shortcut in step 2 to a source on its own host.
+
+## What a Meshery Server gets from Cloud, by caller
+
+Meshery Server requests the capabilities document with `GET /<meshery-version>/capabilities`, optionally adding `os` and `playground` query parameters. The older unversioned `/capabilities` path is deprecated. The document Cloud returns depends on who is asking:
+
+| Caller | Capabilities returned |
+| :--- | :--- |
+| Anonymous, or no valid token | Default capabilities only. |
+| Signed-in user | Account capabilities: overview, profile, and tokens. |
+| Signed-in user with the Kanvas role | Account capabilities, plus the Kanvas extension capabilities and the latest Kanvas extension package version for the connecting Meshery version. |
+| Provider Admin | Account capabilities, plus administrative capabilities (user management, statistics, and events) and the Kanvas extension capabilities. |
+| Playground (`playground=true`) | Playground capabilities, added to the set the caller would otherwise receive. |
+
+Every new user receives the Kanvas role when their account is created, so a typical signed-in user gets Kanvas in Meshery without any extra setup. A user without that role still signs in but does not receive the Kanvas extension from Cloud.
+
+### The provider name
+
+Meshery shows the provider's name in its interface. When Cloud resolves the caller's organization, the provider name is that organization's name, which is how branded organizations appear under their own name. Otherwise Meshery shows the default provider name.
+
+## What Cloud stores and what stays with you
+
+Cloud and your own deployment hold different things:
+
+| Held by Layer5 Cloud | Held by your Meshery Server and clusters |
+| :--- | :--- |
+| User accounts, organizations, teams, workspaces, environments, and roles | The live state of each cluster, which MeshSync records in Meshery Server |
+| Designs, their versions, and who each is shared with | The workloads and resources a deployed design produces |
+| The catalog and the event log | The connections from Meshery Server to your Kubernetes clusters, through Meshery Operator, MeshSync, and Meshery Broker |
+| Connection registrations, including each registered Meshery Server and its metadata | |
+
+Meshery Server, not your browser, talks to your Kubernetes clusters, through the components it deploys into each one. Deploying, dry-running, and undeploying a design are operations Meshery Server performs against the contexts you select. When Meshery Server registers a Kubernetes connection with Cloud, Cloud records that connection and its credential.
+
+Real-time collaboration is the one path from the browser straight to Cloud: Cloud hosts the signaling service that introduces collaborators, and edits then synchronize directly between their browsers. See [How Kanvas Works with Meshery and Layer5 Cloud]({{< ref "kanvas/concepts/architecture/index.md" >}}) for that path and for the full picture from the Kanvas side.
+
+## Remote provider versus local provider
+
+Meshery runs with either a remote provider or the local provider. In both cases, requests about your connected clusters and their resources stay within Meshery. The difference is what happens to provider-bound requests:
+
+- **With Layer5 Cloud as a remote provider**, Meshery Server forwards provider-bound requests, such as designs, views, the catalog, sharing, and support, to Cloud and relays the answers back.
+- **With the local provider**, there is no remote service behind Meshery, so every provider-bound feature returns HTTP 501 Not Implemented.
+
+Choose a remote provider for any feature that depends on accounts, sharing, or stored designs.
+
+## SaaS versus self-hosted
+
+Layer5 Cloud runs as a hosted service and as a self-hosted deployment, and both act as a remote provider in the same way. The trusted-source rules above are relative to each deployment: a self-hosted Cloud trusts its own configured base URL and the custom domains of its own organizations, not those of the hosted service. To run your own deployment, see [Self-Hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Meshery Server Registration"
+url: /cloud/concepts/meshery-server-registration/index.md
+description: How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
+--------------------------------------------------------------------------------
+
+Layer5 Cloud is a [Meshery remote provider](https://docs.meshery.io/extensibility/providers). When a Meshery Server uses Layer5 Cloud, hosted or self-hosted, the server registers itself with Cloud on behalf of the signed-in user. Registration is what makes that Meshery Server known to Cloud: it appears as a `meshery` connection owned by that user. This page explains what the server sends, how Cloud tells a new server from one it already knows, what survives re-registration, and what each failure means.
+
+For where registration fits in the overall relationship between Cloud and Meshery, see [How Layer5 Cloud Works with Meshery and Kanvas]({{< ref "cloud/concepts/architecture/index.md" >}}).
+
+## Why registration exists
+
+Registration answers two questions for Cloud:
+
+1. **Which Meshery Server is calling?** Many Meshery deployments can work with the same Cloud deployment, and Cloud must keep them apart.
+2. **Who owns it?** Every registration is owned by exactly one user, the user whose session made the request.
+
+A registration record answers both. It ties a stable server identifier to an owner and survives Meshery Server restarts.
+
+## How Cloud identifies a Meshery Server
+
+A Meshery Server generates a stable server identifier on its first start and keeps it locally. It sends that identifier as `serverId` inside the connection's `metadata`.
+
+Cloud recognizes an existing registration by three values together:
+
+- the connection kind, `meshery`
+- the owner, which is the authenticated user
+- `metadata.serverId`
+
+Each owner and `serverId` pair maps to exactly one connection. Cloud places no limit on either side of that pair: one user can register any number of Meshery Servers, and one Meshery Server can be registered by any number of users, with one connection per user.
+
+Connections are owned by a user, not by an organization. Each user sees their own connections, including the Meshery Servers they registered.
+
+## The registration request
+
+A Meshery Server registers by sending a connection to:
+
+```
+POST /api/integrations/connections
+```
+
+The request must be authenticated with a Cloud session or a bearer token. Cloud takes the owner from that authentication, never from the request body.
+
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `kind` | Yes | The connection kind. Case-insensitive. Accepted values are `meshery`, `kubernetes`, `prometheus`, and `grafana`. A Meshery Server registers itself with `meshery`. |
+| `metadata.serverId` | Yes, for `meshery` | The stable identifier the Meshery Server generated. The key is camelCase. |
+| `name` | No | A display name. When omitted, Cloud names the connection `<kind>-<random>`, for example `meshery-` followed by a random suffix. |
+| `metadata` (other keys) | No | Additional details about the server, such as its version. Cloud refreshes them on every registration. |
+
+On success, Cloud responds with HTTP 201 and a one-item page of connections containing the registered connection. Every registration call, first or repeat, records a "registered" event for the connection in the account's event log.
+
+## First registration
+
+When no connection matches the owner and `serverId`, Cloud creates a new `meshery` connection owned by the authenticated user.
+
+## Re-registration
+
+A re-registration is any later call from the same Meshery Server, carrying the same `serverId`, for the same user. It typically follows a Meshery Server restart, a new sign-in, or a reconnect.
+
+Cloud updates the existing connection in place:
+
+| Kept from the stored connection | Refreshed from the request |
+| :--- | :--- |
+| ID, name, kind, type, sub-type, status, owner, and creation time | Metadata and the last-updated time |
+
+Two consequences follow:
+
+- **Re-registering never renames a server.** A request that omits `name`, and would otherwise get a random name, cannot replace the name the connection already has.
+- **Re-registering never resets status.** A Meshery Server you disconnected or ignored stays disconnected or ignored when it registers again.
+
+{{< alert type="info" title="Status changes through connection lifecycle actions" >}}
+Connection status changes through the dedicated connection lifecycle actions, such as connect, disconnect, ignore, and delete, not through registration. Registration carries the stored status forward, so a restarting server cannot undo a status you set.
+{{< /alert >}}
+
+## Other connection kinds
+
+The same endpoint registers the other accepted kinds, with their own identity rules:
+
+- **Kubernetes.** Cloud derives the connection's ID from the cluster and the owner, so registering the same cluster again updates the existing connection instead of creating another. Cloud stores the cluster's credential once and keeps the stored status.
+- **Prometheus and Grafana.** Cloud creates the connection or updates the existing one in place.
+
+## Validation and errors
+
+| Condition | Result |
+| :--- | :--- |
+| The request carries no Cloud session or bearer token | Rejected. The endpoint requires authentication. |
+| The authentication does not resolve to a user | Rejected before anything is stored, with the error "cannot register meshery connection: missing owner in authenticated session". |
+| `kind` is not one of the accepted values | HTTP 500 with the error "connection kind: `<kind>`, not implemented yet". |
+| `metadata.serverId` is missing or empty on a `meshery` registration | HTTP 500 with the error "empty server id; cannot check for existence". No connection is created. |
+
+## Operator guidance
+
+If you operate a self-hosted Layer5 Cloud, these symptoms map to the most common causes:
+
+- **Registration fails with "missing owner in authenticated session".** The request reached Cloud with authentication that does not resolve to a user. Look at the request in your logs and confirm that it carries a valid session or bearer token for an existing account.
+- **Registration fails with "empty server id; cannot check for existence".** The client did not send `serverId` in `metadata`. Cloud does not fall back to creating an unidentified connection. Confirm that the client sends the identifier under the camelCase key `serverId`.
+- **Registration fails with "not implemented yet".** The client sent a `kind` other than `meshery`, `kubernetes`, `prometheus`, or `grafana`.
+- **A Meshery Server appears under the wrong user.** The owner comes from the session, not from the request body. The server was registered while a different account was signed in.
+- **The same Meshery Server appears more than once.** Each owner and `serverId` pair is a separate connection, so a server registered by two users appears once for each of them. If one user sees the same server twice, the server presented a different `serverId`, which happens when it loses the identifier it stored locally and generates a new one.
+- **A Meshery Server's name or status in Cloud does not change when it reconnects.** This is intended. Re-registration preserves the stored name and status; change them through the connection's own actions.
+
+
+--------------------------------------------------------------------------------
 title: "Notification Preferences"
 url: /cloud/concepts/identity-and-security/users/notification-preferences/index.md
 description: Manage your notifications on Layer5 Cloud
@@ -13002,6 +13109,165 @@ Layer5 Cloud offers a range of user-configurable preferences that allows you to 
 5. Click **Save Preferences**
 
 You can opt out of all email notifications by toggling the button located on the right side of the Notifications.
+
+
+--------------------------------------------------------------------------------
+title: "Set Up Your Organization"
+url: /cloud/getting-started/setting-up-your-organization/index.md
+description: Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
+--------------------------------------------------------------------------------
+
+An organization becomes useful when more than one person works in it. In this tutorial you invite a teammate by email, create a team, create a workspace, give the team that workspace, and move one of your designs into it. By the end you know which object controls what: the organization decides who is in, teams group people, and workspaces decide which shared resources those people reach.
+
+## Before you begin
+
+- You have a Layer5 Cloud account. If not, follow [Create Your Layer5 Account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
+- You work in **My Organization**, the organization Layer5 Cloud created for you, where you hold the Organization Admin role. Any organization where your role grants the permissions below works the same way.
+- You own at least one design. If you do not, clone one first with [Start from a Catalog Design]({{< ref "cloud/getting-started/creating-a-design-from-template.md" >}}).
+
+Each step in this tutorial needs a specific permission. The table shows which built-in roles hold each one:
+
+{{< keys-matrix caption="Permissions used in this tutorial" functions="Invite User to Organization|Create Team|Add User to Team|Create Workspace|Assign team to workspace|Assign Designs to Workspaces" >}}
+
+## 1. Invite a teammate by email
+
+Invite your teammate to the organization by email address. Your teammate does not need a Layer5 Cloud account first. An email invitation does all of the following at once:
+
+- Creates a pending account for the address.
+- Adds that account to the organization, and to any teams you choose.
+- Assigns the organization and team roles you choose.
+- Sends an invitation email that names you, the organization, and the teams. Its sign-up link pre-fills your teammate's name and address and carries your organization's identifier.
+
+Layer5 Cloud refuses two kinds of invitation:
+
+| Situation | Result |
+|---|---|
+| The address already belongs to a Layer5 Cloud account | Refused with HTTP 409 ("invite existing user"). |
+| No email address given | Refused with HTTP 400 ("email is required"). |
+
+To bring in someone who already has an account, share your organization's open invitation link instead. Layer5 Cloud accepts that link on every sign-in, not only the first. See [Using the open organization invitation link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}).
+
+## 2. Create a team
+
+Create a team for the people who will share the workspace you build next. A new team belongs to the organization you create it in.
+
+Creating a team and adding people to it are separate actions. Once the team exists, add your teammate to it. When you invite more people later, you can choose this team in the invitation so they join it directly.
+
+## 3. Create a workspace
+
+Create a workspace in the same organization. A workspace groups shared resources such as environments, connections, credentials, and designs. Your **My Workspace** stays as it is; the new workspace is where you and your team collaborate.
+
+## 4. Assign the team to the workspace
+
+Assign your new team to the new workspace. Assignment is its own action, separate from creating either object. The relationship is many-to-many:
+
+- A workspace has zero or more teams.
+- A team can be assigned to several workspaces.
+
+This is how you share access to a workspace's resources: through the teams assigned to it, not person by person.
+
+## 5. Move a design into the workspace
+
+Assign one of your designs to the new workspace. You can assign only designs you own.
+
+Assigning a design moves it. A design belongs to at most one workspace, so assigning it to the new workspace removes it from the workspace it was in before, such as **My Workspace**.
+
+## How the pieces fit together
+
+| Object | What it controls | What you did with it |
+|---|---|---|
+| Organization | Who is a member at all. Teams and workspaces belong to one organization. | Invited a teammate into **My Organization**. |
+| Team | A named group of organization members, each with a team role. | Created a team and added your teammate. |
+| Workspace | A set of shared resources, reached by the teams assigned to it. | Created a workspace and assigned the team to it. |
+| Design | A resource that lives in at most one workspace. | Moved a design you own into the workspace. |
+
+Roles determine what each person may do at each level, as the permission table above shows for the actions in this tutorial.
+
+## Check your result
+
+Your organization is set up when all of the following are true:
+
+- Your teammate's account appears in the organization.
+- The new team lists your teammate.
+- The new workspace lists the new team.
+- The design you moved appears in the new workspace and no longer appears in its previous workspace.
+
+## Go deeper
+
+- [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}): organizations as the unit of tenancy.
+- [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}): how teams group users.
+- [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}): what a workspace holds and how it is shared.
+- [Organization management]({{< ref "cloud/guides/organizations/org-management/_index.md" >}}): editing your organization and managing invitations.
+- [Managing workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}): editing, deleting, and organizing workspaces.
+
+
+--------------------------------------------------------------------------------
+title: "Start from a Catalog Design"
+url: /cloud/getting-started/creating-a-design-from-template/index.md
+description: Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
+--------------------------------------------------------------------------------
+
+The fastest way to a working design is to start from one someone has already published. The [catalog](https://cloud.layer5.io/catalog) is a public collection of designs for cloud native infrastructure. In this tutorial you browse it, try a design without changing anything, and then clone it. You finish with your own private copy in your workspace and a clear picture of what a clone is and what it is not.
+
+## Before you begin
+
+- Browsing the catalog needs no account. Cloning does: if you do not have one, follow [Create Your Layer5 Account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
+- Cloning needs the Clone Design permission. The table shows which built-in roles hold it:
+
+{{< keys-matrix caption="Catalog permissions" functions="Clone Design|View Designs" >}}
+
+## 1. Browse the catalog
+
+Open the [catalog](https://cloud.layer5.io/catalog) and search by technology or type. Sort by **Most Cloned** or **Most Downloaded** to see what other people rely on most. Each design card shows a summary, and opening a design shows its full details. You can also download a design to work with it outside Layer5 Cloud.
+
+## 2. Try a design in the Playground
+
+Before you commit to a copy, open the design in the Playground. **Open in Playground** opens the design in a new browser tab in Kanvas on the [Meshery Playground](https://playground.meshery.io/), loaded straight from the catalog. Nothing is cloned and nothing lands in your workspace, so this is the safe way to explore a design.
+
+## 3. Choose where the copy will go
+
+A clone lands in the workspace you have selected, in the organization you have selected. Pick both before you clone, for example **My Workspace** in **My Organization**.
+
+You must have one specific organization selected. Cloning in the all-organizations scope is refused.
+
+## 4. Clone the design
+
+Clone the design from its catalog entry. If your role lacks the Clone Design permission, the clone action is shown disabled.
+
+Layer5 Cloud then creates your copy:
+
+| Property of the clone | Value |
+|---|---|
+| Name | The original name followed by " (Copy)", for example "My App (Copy)" |
+| Owner | You |
+| Visibility | Private to you |
+| Location | Your selected workspace in your selected organization |
+| Content | The original's catalog data and file location, converted to the current design format |
+
+Cloning also counts toward the original: Layer5 Cloud records a clone event on the original design, which feeds the catalog's **Most Cloned** sort and the catalog leaderboard. If this is the first design you own, your profile earns the first-design badge.
+
+### When cloning is refused
+
+| Situation | Result |
+|---|---|
+| The design is not Published or Public | Refused with HTTP 403 ("unauthorized to clone design"). Only published or public designs can be cloned. |
+| The all-organizations scope is selected | Refused with HTTP 400 ("Creating designs is not allowed for orgID all"). |
+| No organization is selected | Refused with HTTP 400 ("orgID is not provided"). |
+| Your role lacks Clone Design | The clone action is disabled. |
+
+## What a clone is
+
+A clone is a separate, private design that you own. It starts from the original's content and lives in your workspace, where you work on it like any other design you own. Opening a design in the Playground, by contrast, creates nothing in your account: it is a preview.
+
+## Check your result
+
+Your copy is ready when a design named after the original with " (Copy)" appended appears in the workspace you selected, owned by you and private.
+
+## Next steps
+
+- [Kanvas]({{< ref "kanvas/_index.md" >}}): design and edit infrastructure visually.
+- [Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}): how the catalog works.
+- [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): move your copy into a workspace your team shares.
 
 
 --------------------------------------------------------------------------------
@@ -30692,7 +30958,7 @@ Access to a Connection — and therefore to its associated Credentials — is gr
 
 ## Example: Orbital Labs Environment Setup
 
-The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full seed inventory.
+The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure.
 
 ### Environment Inventory
 

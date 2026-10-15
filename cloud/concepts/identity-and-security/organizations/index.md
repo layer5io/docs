@@ -14,7 +14,7 @@ An organization plays one of two roles: a **Provider Organization** — the sing
 
 ## Example: The Orbital Labs Ecosystem
 
-The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using [Five and the cast at Orbital Labs]().
+The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers.
 
 <div class="td-card-group card-group p-0 mb-4">
 <div class="td-card card border me-4">
@@ -84,20 +84,6 @@ Cross-organization access works through **resource-access mappings** — a grant
   
 </div>
 
-
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Info</h4>
-  
-      See <a href="">Meet Five and the Cast</a> for the full narrative reference, including team structure and workspace inventory.
-  
-</div>
 
 
 

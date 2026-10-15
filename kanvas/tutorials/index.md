@@ -17,20 +17,6 @@ Tutorials are for learning. When you already know what you want to do, other par
 The collaboration and GCP tutorials follow two fictional organizations: Orbital Labs, a cloud-native startup on the Team plan, and Stellar Dynamics, their enterprise client on the Enterprise plan. Both organizations are managed under the Constellation Cloud provider. A cast of named characters builds, shares, and reviews designs, so you see how permissions, workspaces, and cross-organization access work together in practice. The cloud deployment and Kubernetes tutorials do not use this scenario.
 
 
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Info</h4>
-  
-      Meet Five, Maya, Zara, Marcus, Dr. Aiko, and the full cast at <a href="">Meet Five and the Cast</a>.
-  
-</div>
-
-
-
 ## Collaborate on a design
 
 These tutorials teach how people work together on one design. Neither deploys anything, so they run anywhere Kanvas runs.
