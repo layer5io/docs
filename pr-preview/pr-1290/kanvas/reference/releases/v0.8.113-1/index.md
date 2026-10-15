@@ -1,0 +1,16 @@
+# v0.8.113-1
+
+date: 2025-06-30
+
+
+
+## What's New
+## 🔤 General
+- add support for highlighting and focussing nested array fields @aabidsofi19 (#3783)
+- fix nested popover calculation in config-tooltip @aabidsofi19 (#3782)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
