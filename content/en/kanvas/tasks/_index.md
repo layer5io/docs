@@ -1,23 +1,8 @@
 ---
-title: Core Tasks
-description: Navigate your way around Kanvas with these common tasks.
-weight: 6
+title: How-to Guides
+layout: moved
+moved_to: /kanvas/guides
 visible: false
-aliases:
-  - /meshmap/tasks
+sitemap:
+  disable: true
 ---
-
-Cookbook-style guides for common Kanvas workflows — from whiteboarding on the canvas to the full design lifecycle.
-
-## On the canvas
-
-- [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}) - freestyle shapes, text, and annotations.
-
-## Design lifecycle
-
-- [Validating Designs]({{< ref "kanvas/tasks/designs/validating-designs/index.md" >}})
-- [Dry Running a Design]({{< ref "kanvas/tasks/designs/dry-running-a-design/index.md" >}})
-- [Deploying Designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}})
-- [Undeploying Designs]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}})
-- [Cloning a Design]({{< ref "kanvas/guides/designs/cloning-a-design/index.md" >}})
-- [Deleting a Design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}})

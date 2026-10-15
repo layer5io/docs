@@ -100,8 +100,8 @@ Return to Designer mode and undeploy the design. Kanvas opens a dialog titled `U
 
 ## Next
 
-- [Validating designs]({{< ref "kanvas/tasks/designs/validating-designs/index.md" >}})
-- [Dry-running a design]({{< ref "kanvas/tasks/designs/dry-running-a-design/index.md" >}})
-- [Deploying designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}})
-- [Undeploying designs]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}})
+- [Validating designs]({{< ref "kanvas/guides/deploying/validating-designs/index.md" >}})
+- [Dry-running a design]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}})
+- [Deploying designs]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}})
+- [Undeploying designs]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}})
 - [Operator]({{< ref "kanvas/operator/_index.md" >}}), to explore views and live cluster state beyond a single design.
