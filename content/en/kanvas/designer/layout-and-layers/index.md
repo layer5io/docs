@@ -58,7 +58,7 @@ The header of the panel expands or collapses every section at once.
 Because visibility travels with the design, the Layers panel is a way of presenting a design as much as a way of reading one - hide the noise before you hand a design to someone else and they will open it the way you left it.
 
 {{< alert type="note" title="Layers in Operator mode" >}}
-The Layers panel is present in Operator mode too, but it filters rather than hides: instead of design components it lists the Kubernetes resource kinds MeshSync has discovered - Cluster, Workloads, Configurations, Networking, Storage, Monitoring and Custom Resources - and choosing among them changes which resources are fetched and drawn. Those choices are what a saved [view]({{< ref "kanvas/operator/views/index.md" >}}) records.
+The Layers panel is present in Operator mode too, but it filters rather than hides: instead of design components it lists the Kubernetes resource kinds MeshSync has discovered - Cluster, Workloads, Configurations, Networking, Storage, Monitoring and Custom Resources - and choosing among them changes which resources are fetched and drawn. Those choices are what a saved [view]({{< ref "kanvas/reference/views/index.md" >}}) records.
 {{< /alert >}}
 
 ## Render mode

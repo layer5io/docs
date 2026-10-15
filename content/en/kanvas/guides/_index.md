@@ -69,9 +69,9 @@ See [Collaborate and Review]({{< ref "kanvas/guides/collaborating/_index.md" >}}
 
 | Goal | Guide |
 |---|---|
-| Open a shell in a running container | [Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}) |
-| Follow a container's logs | [Log Streaming]({{< ref "kanvas/operator/log-streaming/index.md" >}}) |
-| Measure a running service | [Performance Testing in Operator]({{< ref "kanvas/operator/performance-testing/index.md" >}}) |
+| Open a shell in a running container | [Interactive Terminal]({{< ref "kanvas/guides/operating/interactive-terminal/index.md" >}}) |
+| Follow a container's logs | [Log Streaming]({{< ref "kanvas/guides/operating/log-streaming/index.md" >}}) |
+| Measure a running service | [Performance Testing in Operator]({{< ref "kanvas/guides/operating/performance-testing/index.md" >}}) |
 
 ## Fix problems
 

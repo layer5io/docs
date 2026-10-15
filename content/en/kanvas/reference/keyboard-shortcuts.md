@@ -53,7 +53,7 @@ Kanvas's operator provides a set of keyboard shortcuts to enhance your experienc
 - <button class="kbc-button kbc-button-xs">Ctrl</button> + <button class="kbc-button kbc-button-xs">Left-click</button> (mouse): Select multiple nodes individually.
 - <button class="kbc-button kbc-button-xs">Esc</button>: Close the interactive terminal while it has focus.
 
-You open the interactive terminal itself from the resource rather than from the keyboard - through the terminal badge on a pod, or the Terminal tab of the Details panel. See [Interactive Terminal]({{< ref "kanvas/operator/interactive-terminal/index.md" >}}).
+You open the interactive terminal itself from the resource rather than from the keyboard - through the terminal badge on a pod, or the Terminal tab of the Details panel. See [Interactive Terminal]({{< ref "kanvas/guides/operating/interactive-terminal/index.md" >}}).
 
 These operator shortcuts are designed to streamline your interactions with the visualized data and provide you with the tools you need for efficient navigation and management.
 

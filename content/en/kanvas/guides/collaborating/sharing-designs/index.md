@@ -27,7 +27,7 @@ This guide covers the task. For the reasoning behind the access model, read [Col
 | An unpublished design | Share is hidden for a published design. |
 | A remote provider | Under the local provider, sharing returns HTTP 501 Not Implemented. See [Feature Availability by Plan]({{< ref "kanvas/reference/feature-availability.md" >}}). |
 
-Views use the same dialog and the same grant model. Sharing a view needs the Share Views permission instead of Share Design. See [Views]({{< ref "kanvas/operator/views/index.md" >}}).
+Views use the same dialog and the same grant model. Sharing a view needs the Share Views permission instead of Share Design. See [Views]({{< ref "kanvas/reference/views/index.md" >}}).
 
 ## Visibility levels
 

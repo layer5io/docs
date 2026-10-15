@@ -21,7 +21,7 @@ You need:
 
 - **The `web-app` design** from the previous tutorial, saved and open in Designer mode.
 - **A Meshery you run**, either the Meshery Playground or a self-hosted Meshery, signed in with Layer5 Cloud as its provider. Operator views are stored in Layer5 Cloud, so the local provider cannot show them.
-- **A connected Kubernetes cluster** with Meshery Operator deployed. Meshery Operator installs MeshSync and Meshery Broker in the cluster; MeshSync streams the cluster's live state to Meshery Server, and that stream is what Operator mode displays. See [Operator]({{< ref "kanvas/operator/_index.md" >}}).
+- **A connected Kubernetes cluster** with Meshery Operator deployed. Meshery Operator installs MeshSync and Meshery Broker in the cluster; MeshSync streams the cluster's live state to Meshery Server, and that stream is what Operator mode displays. See [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}).
 - **Permissions** in your organization for each action. Validate Design permits both validation and dry runs, Deploy Design permits deploying, and Undeploy Design permits undeploying. When you lack one of these permissions, the matching action is not available to you.
 
 ## Step 1: Validate the design
@@ -66,7 +66,7 @@ Switch from Designer to Operator mode.
 
 If the design has unsaved changes, Kanvas asks "You have unsaved changes. Are you sure you want to leave?" before it switches. Confirm only if you are ready to lose those changes; otherwise stay, let the design save, and switch again.
 
-**What Kanvas does:** Operator mode shows live cluster state through views. A view is a saved set of filters. A new, empty view shows Nodes and Namespaces across all connected clusters. A design's view is named after the design, `web-app-View`, and filters on the design's `design.meshery.io/id` label, so it shows only the resources this design created.
+**What Kanvas does:** Operator mode shows the recorded state of your clusters through views. A view is a saved set of filters. A new, empty view shows Nodes and Namespaces across the clusters you select. A design's view is named after the design, `web-app-View`, and filters on the design's `design.meshery.io/id` label, so it shows only the resources this design created.
 
 **What you should see:** in the design's view, the running Deployment, Service, and ConfigMap from your design, and nothing else from the cluster.
 
@@ -94,7 +94,7 @@ Return to Designer mode and undeploy the design. Kanvas opens a dialog titled `U
 
 - Validation checks a design against component schemas; a dry run checks it against a cluster. Neither changes the cluster.
 - Deploy and undeploy act on the contexts you select, and on every connected cluster when you select none.
-- Every deployed resource is labeled with the design's ID, which is how Operator mode filters live state down to one design.
+- Every deployed resource is labeled with the design's ID, which is how Operator mode filters the cluster inventory down to one design.
 - Switching modes with unsaved changes asks for confirmation.
 - Each action is gated by its own permission.
 
@@ -104,4 +104,4 @@ Return to Designer mode and undeploy the design. Kanvas opens a dialog titled `U
 - [Dry-running a design]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}})
 - [Deploying designs]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}})
 - [Undeploying designs]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}})
-- [Operator]({{< ref "kanvas/operator/_index.md" >}}), to explore views and live cluster state beyond a single design.
+- [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}), to explore views and live cluster state beyond a single design.
