@@ -1,0 +1,23 @@
+# v0.8.75
+
+date: 2024-11-13
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+-  add trim option to my designs in Patterns component @amitamrutiya (#2971)
+- add open in playground button visible for all user @amitamrutiya (#2978)
+
+## 🐛 Bug Fixes
+
+- add open in playground button visible for all user @amitamrutiya (#2978)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
+
