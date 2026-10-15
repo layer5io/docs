@@ -1,108 +1,127 @@
-# Exploring Kubernetes Deployments with Meshery
+# Explore Deployments
 
 
-> Explore a Kubernetes Deployment using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
+> Build a replicated NGINX Deployment in Kanvas, scale it, roll it to a new image, and watch the ReplicaSets and Pods it manages in Operator.
 
 
-### Introduction
+In this tutorial you build an NGINX Deployment with two replicas, deploy it, scale it to three, and roll it to a new image version, inspecting the result in Operator after each change. A Deployment is the controller most stateless applications run under: you declare how many Pods you want and what they look like, and Kubernetes keeps that many running and replaces them gradually when the template changes. Seeing the ReplicaSets and Pods appear and change shows you what the controller does on your behalf.
 
-In this tutorial, we'll learn about Kubernetes **Deployments**. Using Meshery Playground, an interactive live environment, we'll perform hands-on exercises to gain practical experience in deploying, managing, and understanding a Kubernetes _Deployment_ without writing any YAML.
+## What you will learn
 
-> **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground](/kanvas/tutorials/kubernetes/kubernetes-pods/) tutorial first.
+- A Deployment owns ReplicaSets, and each ReplicaSet owns Pods built from one version of the Pod template.
+- The Deployment's selector must match its Pod template's labels, and Kubernetes never lets you change the selector afterward.
+- Scaling changes how many Pods run without creating a new ReplicaSet; changing the template starts a rolling update with a new ReplicaSet.
+- Deploying a changed design from Kanvas replaces the object in place, which is how you update a running workload.
 
-### Prerequisites
+## Before you begin
 
-- Basic understanding of containerization and Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+- **A cluster-backed environment.** Use Meshery Playground (https://play.meshery.io), a shared live cluster, or a self-hosted Meshery with a connected Kubernetes cluster. Hosted kanvas.new has no cluster actions; Validate, Deploy, and Undeploy there open a prompt to self-host instead.
+- **An environment that holds your cluster's connection.** Deploy targets Meshery environments and the Kubernetes connections assigned to them. See [Environments](https://docs.meshery.io/concepts/logical/environments).
+- **Operator mode** for the inspection phases, which needs Meshery Operator and MeshSync running in the cluster. Where Operator mode is turned off, its switch is disabled; the deploy summary still confirms each object.
+- **A unique prefix.** Playground is shared. Use your own prefix in every name and label; this tutorial uses `alex`.
+- **The Pods tutorial.** [Explore Pods](/kanvas/tutorials/kubernetes/kubernetes-pods/) introduces the configurator, Validate, Dry Run, Deploy, and Operator, which this tutorial uses without re-explaining.
 
-### Lab Scenario
+## The scenario
 
-Launch a sample app in a Kubernetes cluster using _Deployments_. 
+```text
+Deployment  alex-web   replicas 2, selector app=alex-web, label app=alex-web
+    |
+    +-- ReplicaSet  alex-web-<template hash>          (created by Kubernetes)
+            +-- Pod  alex-web-<template hash>-<id>    (created by Kubernetes)
+            +-- Pod  alex-web-<template hash>-<id>
+```
 
-### Objective
+You design only the Deployment. Kubernetes creates the ReplicaSet and Pods from it.
 
-Learn how to create, manage, and explore _Kubernetes Deployments_ within the context of a microservices architecture.
+## Build the Deployment
 
-### Steps
+1. Create a new design named `alex-deployments` and add a **Deployment** component. The configurator opens as soon as the component lands on the canvas.
+2. Set the name to `alex-web` and leave the namespace as `default`.
+3. Set replicas to `2`.
+4. Set the selector's match labels to `app: alex-web`.
+5. In the Pod template, set the template's metadata labels to `app: alex-web`, the same pair as the selector.
+6. In the Pod template's spec, add one container: name `web`, image `nginx:1.27`, container port `80`.
+7. In the configurator's **Labels** tab, add the label `app: alex-web` to the Deployment itself. You use it later to find everything the Deployment owns.
 
-#### Access Meshery Playground
+**What just happened.** The Deployment's configuration mirrors its manifest. The selector tells the Deployment which Pods belong to it, and the template is the blueprint for those Pods. Nested objects such as the selector and the template open in their own forms. The component is equivalent to:
 
-- Log in to the [Meshery Playground](https://playground.meshery.io) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
-- Click **Kanvas** from the left menu to navigate to the _Kanvas_ design page.
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alex-web
+  labels:
+    app: alex-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: alex-web
+  template:
+    metadata:
+      labels:
+        app: alex-web
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27
+          ports:
+            - containerPort: 80
+```
 
-  ![](images/kubernetes-deployments/2025-02-27_16-59.png)
+**Check your work.** Run **Validate** and then **Dry Run** from the **Actions** menu. Validate checks the schema in your browser; Dry Run asks the cluster's API server, which also checks rules the schema cannot express. If the selector and the template labels differ, the dry run fails with a `Field Value Invalid` error on the template labels, stating that the selector does not match the template labels. Fix the pair and run the dry run again.
 
-> **_NOTE:_** Kanvas is still in beta.
+## Deploy and see what Kubernetes created
 
-#### Create a Deployment
+1. Run **Deploy** from the **Actions** menu, select the environment that holds your cluster's connection, and confirm once the dry run reports no errors.
+2. Switch to **Operator**. With the design open, Operator shows a view scoped to this design: the objects that carry this design's id label.
+3. Select the `alex-web` Deployment and switch its details panel to **Details**.
+4. Select the `app=alex-web` label chip in the details panel. This adds the label to the view's filter, and the view reloads.
 
-1. In the _Kanvas Design_ page, start by renaming the design to a name of your choice for easier identification later.
-    ![](images/kubernetes-deployments/2025-02-27_17-03.png)
-2. From the floating dock below, click the **Kubernetes** icon and then click **Deployment** from the list. This will create the _Deployment_ component on the design canvas. 
-    ![](images/kubernetes-deployments/2025-02-27_17-16.png)
-3. Click once to select the _Deployment_ component and choose **Configure**.
-    ![](images/kubernetes-deployments/2025-02-27_17-20.png)
-4. Change the **Name** of the deployment and the **Namespace** if required. For this demonstration, we will leave them as they are and deploy this to the _default_ namespace.
-5. A deployment consists of replicas. We must set a value for **Replicas**. If nothing is set, the default is 1. For this example we will set it to **2**. We must also set the _Selector_ property. To do this, expand **Selector** and click **MatchLabels**. Set a _matchLabel_ pair. Here we have set `tutorial:deployment`.
-    ![](images/kubernetes-deployments/2025-02-27_17-51.png)
-6. Next, expand **Templates** and open **Metadata** configuration modal. On the _metadata_ modal, click **+** next to **Labels** and set the label to the same key-value pair as in the previous step. Here it is `tutorial:deployment`.
-    ![](images/kubernetes-deployments/2025-02-27_18-21.png)
-7. While still under **Template** and click **Spec** to load the _spec_ configuration modal. Then scroll down and click **+** next to **Containers**. This will create a container.
-    ![](images/kubernetes-deployments/2025-02-27_17-55.png)
-8. Expand **Containers-1** and fill in the mandatory details such as _Image_ and _Name_. For this example we set the **Image** to `meshery/meshery-milestone:latest` and **Name** to `meshery-milestone`. 
-    ![](images/kubernetes-deployments/2025-02-27_18-00.png)
-9. Click on an empty area in the canvas to close the configuration modals. This completes designing the _Deployment_ and should looks similar to the screenshot below.
-    ![](images/kubernetes-deployments/2025-02-27_18-32.png)
+**What just happened.** Kanvas sent one object, the Deployment, and labeled it with the design id. The Deployment controller then created a ReplicaSet, and the ReplicaSet created two Pods. Those objects come from the controller, not from Kanvas, so they carry the template's labels (plus a `pod-template-hash` label that Kubernetes adds) instead of anything Kanvas applies. Label filters in a view match objects that carry any of the listed labels, so adding `app=alex-web` brings the ReplicaSet and the Pods into the view alongside the Deployment.
 
-#### Validating and deploying the Deployment
+The names show the ownership chain: the ReplicaSet is named after the Deployment plus a hash of the Pod template, and each Pod is named after its ReplicaSet plus a random suffix.
 
-In the next set of steps we will validate the design and deploying it.
+**Check your work.** The Deployment's details show pods `2 / 2` (available out of desired), the selector `app=alex-web`, and the image `nginx:1.27`. The view holds one ReplicaSet and two `Running` Pods. Operator shows a snapshot, so if Pods are still starting, change a filter or switch back to Operator to load a fresh one. If the summary reported `Failed to deploy Deployment "alex-web"`, open its error card; on a shared cluster the most common cause is a name another user already deployed.
 
-1. To validate the design, click **Actions** and then **Validate** from the top menu.
-    ![](images/kubernetes-deployments/2025-02-27_18-03.png)
+## Scale the Deployment
 
-    This should show a pop-up with details such as the number of components, annotations and validation errors (if any). Ensure there are no errors before deploying. If there are errors, fix them before moving forward.
+1. Switch to **Designer** and change replicas from `2` to `3`.
+2. Run **Deploy** again with the same environment.
+3. Switch to **Operator** to load a fresh snapshot.
 
-2. To deploy, click **Actions** and then **Deploy** to load the deployment workflow. The first step is design validation which should already be marked as done. Click **Next**.
-    ![](images/kubernetes-deployments/2025-02-27_18-08.png)
+**What just happened.** Deploy replaced the existing Deployment in place with your new configuration; it did not create a second one. The controller saw that the desired count rose to three and told the existing ReplicaSet to create one more Pod. Scaling does not touch the Pod template, so no new ReplicaSet appears.
 
-3. In the following step, select the _Deployment Targets_ where you want to deploy this. When done click **Next**.
-    ![](images/kubernetes-deployments/2025-02-27_18-09.png)
+**Check your work.** The Deployment shows pods `3 / 3`, and the same ReplicaSet now owns three Pods. Two Pods keep their original names and ages; the new one is younger.
 
-4. In the third step, a _Dry Run_ is performed. Fix any errors displayed here.
-    ![](images/kubernetes-deployments/2025-02-27_18-23.png)
+## Roll out a new image
 
-5. Finally, click **Deploy** in the next step. You may choose to open the design in _Operate_ mode after this step to explore the resources by checking the **Open in Operator** checkbox.
-    ![](images/kubernetes-deployments/2025-02-27_18-26.png)
+1. Switch to **Designer** and change the container image from `nginx:1.27` to `nginx:1.28`.
+2. Run **Deploy** again.
+3. Switch to **Operator** and look at the ReplicaSets and Pods.
 
-6. Click **Finish** to close the workflow. 
-    ![](images/kubernetes-deployments/2025-02-27_18-27.png)
+**What just happened.** Changing the Pod template gave it a new hash, so the controller created a new ReplicaSet and shifted Pods to it gradually. With the default rolling update strategy, Kubernetes starts new Pods before removing old ones and keeps at least three quarters of the desired Pods available throughout. The old ReplicaSet stays at zero replicas so that Kubernetes can roll back to it.
 
-You should see a few alerts on the bottom right about the deployment.
+**Check your work.** The view holds two ReplicaSets: the new one owns three Pods with fresh names, and the old one owns none. The Deployment's details show the image `nginx:1.28`. A snapshot taken mid-rollout shows Pods under both ReplicaSets; load a fresh snapshot to see the finished state. If you mistype the image tag, the new Pods cannot pull it and stay not ready, the rollout stalls, and the old Pods keep serving. Correct the tag and deploy again.
 
-#### Viewing and Operating the Deployment
+A change to a field Kubernetes treats as immutable, such as the Deployment's selector, does not apply, and the Deploy summary still reports `Deployed`. To change the selector, undeploy the Deployment and deploy it again.
 
-To view and perform operations on the resources deployed, i.e. the _Deployment_ in this exmaple, we will use the **Operate** functionality of _Kanvas_. You can open the design in _Operate_ mode during the _Deploy_ workflow or later by click the **Operate** tab. It will load the deployed resources in _Operate_ view similar to the screenshot below.
-![](images/kubernetes-deployments/2025-02-28_15-03.png)
+## Clean up
 
-You can click on any of the resources to view various details and actions applicable to them. For example, click on the _Deployment_ i.e. `deployment-bl` in this case (shown with a green border in the image below), to view deployment details such as _Age_, _Kind_, _Pods_, _Replicas_, _Namespace_ etc. 
-![](images/kubernetes-deployments/2025-02-28_15-10.png)
+Run **Undeploy** from the **Actions** menu and select the same environment. Undeploy deletes the `alex-web` Deployment by kind, name, and namespace; Kubernetes garbage collection then removes the ReplicaSets and Pods it owns. Undeploy matches by name, not by the design label, so a same-named Deployment created by someone else in the same namespace is deleted too. If the dry-run step reports the Deployment as not found, it is already gone; select the bypass option to finish.
 
-Take some time to explore other resources such as _Pod_, _Container_ etc.
+The design stays in your account until you delete it from the design's file menu. Deleting a design never removes cluster objects.
 
+## What you learned
 
-#### Deleting the Deployment
+- You declare a Deployment; Kubernetes creates the ReplicaSets and Pods and keeps the desired count running.
+- The selector must match the template labels and is immutable once deployed.
+- Scaling reuses the existing ReplicaSet; a template change creates a new ReplicaSet and rolls Pods over to it, keeping the old one for rollback.
+- Deploying a changed design replaces the object in place, and a label filter in Operator reveals objects that Kubernetes created on your behalf.
 
-To delete the deployment, click **Actions** and select **Undeploy**.
-![](images/kubernetes-deployments/2025-02-27_22-20.png)
+## Next steps
 
-Follow the _Undeploy_ workflow (similar to the _Deploy_ workflow) and click **Undeploy** in the Finalize Deployment step.
-![](images/kubernetes-deployments/2025-02-27_22-22.png)
-
-### Conclusion
-
-Congratulations! You've successfully completed the lab on Exploring Kubernetes Deployments with Meshery Playground. 
-
-Continue exploring more scenarios in the Meshery Playground to enhance your skills.
-
+- Continue with [Explore Services](/kanvas/tutorials/kubernetes/kubernetes-services/) to put a stable address in front of these Pods.
+- Read [Deploying designs](/kanvas/guides/deploying/deploying-designs/) for every option in the Deploy workflow.
+- Read [Operator](/kanvas/concepts/operator/) to understand views, filters, and snapshots.
 
