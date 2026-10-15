@@ -1,4 +1,9 @@
 {{ $currentPage := .Page.Permalink }}
+{{/* A page owns its permalink and every alias, so a callout follows the page when it moves. */}}
+{{ $pagePaths := slice (path.Clean (urls.Parse .Page.Permalink).Path) }}
+{{ range .Page.Aliases }}
+{{ $pagePaths = $pagePaths | append (path.Clean (printf "/%s" (strings.TrimPrefix "/" .))) }}
+{{ end }}
 {{ $features :=hugo.Data.feature_data }}
 {{ if not $features }}
 {{ with readFile "data/feature_data.json" }}
@@ -29,10 +34,9 @@
 {{ end }}
 
 {{ range $docUrl, $urlFeatures := $featuresByUrl }}
-{{ $currentPagePath := path.Clean (urls.Parse $currentPage).Path }}
 {{ $cleanDocUrlPath := path.Clean (urls.Parse $docUrl).Path }}
 
-{{ if eq $cleanDocUrlPath $currentPagePath }}
+{{ if in $pagePaths $cleanDocUrlPath }}
 {{ $tiers := slice }}
 {{ range $feature := $urlFeatures }}
 {{ if $feature.comparisonTiers.free }}
