@@ -10,7 +10,7 @@ tags: [designs]
 
 These guides cover the tasks you perform while authoring a design in Designer mode. Each one accomplishes a single task and assumes you know what a design, a component, and a relationship are. If you do not, read [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}) and [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) first.
 
-Authoring happens only in Designer mode. Operator mode shows live cluster state and blocks adding, editing, duplicating, and deleting components.
+Authoring happens only in Designer mode. Operator mode shows the recorded state of your clusters and blocks adding, editing, duplicating, and deleting components.
 
 | Goal | Guide |
 |---|---|

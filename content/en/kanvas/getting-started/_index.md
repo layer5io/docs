@@ -23,7 +23,7 @@ Kanvas turns cloud native infrastructure into a design you can see, check, and d
 1. **Design.** In Designer mode you describe infrastructure as a design: components (such as a Kubernetes Deployment or Service), the relationships between them, and their configuration.
 2. **Validate.** Kanvas checks the design against each component's schema and attaches every error to the component and field that caused it; a dry run then checks the design against a real cluster without changing it.
 3. **Deploy.** Kanvas applies the design to the Kubernetes clusters you select and labels every resource it creates with the design's identity.
-4. **Operate.** In Operator mode you see the live state of your clusters and can filter it to the resources that belong to one design.
+4. **Operate.** In Operator mode you see the recorded state of your clusters and can filter it to the resources that belong to one design.
 
 ## Where do you want to work?
 
