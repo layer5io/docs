@@ -11,7 +11,7 @@ Kanvas gives you two ways to get help without leaving the canvas: the **Help Cen
 
 ## Help Center
 
-The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the **Get Help** action in the [troubleshooting]({{< ref "kanvas/reference/troubleshooting.md" >}}) panel.
+The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the **Get Help** action in the [troubleshooting]({{< ref "kanvas/guides/troubleshooting.md" >}}) panel.
 
 | Entry | What it gives you |
 |---|---|
@@ -60,7 +60,7 @@ Every request carries the requester's name and email so the team can reply. Kanv
 - When the profile resolves, the form appears addressed with your identity.
 - When the profile cannot be resolved, for example because the session expired, the form does not appear and nothing is submitted. A request with no way to reply has no value.
 
-If the form does not appear, sign in to your provider again and reopen it. If it still does not appear, see [Troubleshooting Kanvas]({{< ref "kanvas/reference/troubleshooting.md" >}}).
+If the form does not appear, sign in to your provider again and reopen it. If it still does not appear, see [Troubleshooting Kanvas]({{< ref "kanvas/guides/troubleshooting.md" >}}).
 
 ## Type of inquiry
 
