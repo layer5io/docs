@@ -1,0 +1,37 @@
+# v0.8.494
+
+date: 2025-10-10
+
+
+
+## 📚 Academy
+
+- Meshery v0.1.3 content update @l5io (#4312)
+- Layer5 v0.8.0 content update @l5io (#4304)
+
+## 🖥 Cloud UI
+
+- Certification enhancements @aabidsofi19 (#4308)
+- update org activity event @aabidsofi19 (#4311)
+- Fix catalog class icon color @Namanv0509 (#4307)
+
+## 💻 Server
+
+- Certification enhancements @aabidsofi19 (#4308)
+- make academy pages other than overview and index authenticated @aabidsofi19 (#4310)
+- Revert nhance user preference update logging with additional metada… @aabidsofi19 (#4309)
+
+## 🦴 Infrastructure
+
+- Certification enhancements @aabidsofi19 (#4308)
+
+## 🧰 Maintenance
+
+- Init Copilot Instructions @leecalcote (#4306)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @l5io and @leecalcote
+
+

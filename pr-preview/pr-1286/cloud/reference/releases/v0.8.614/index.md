@@ -1,0 +1,20 @@
+# v0.8.614
+
+date: 2025-12-23
+
+
+
+## 💻 Server
+
+- [WIP] Fix build problem in meshery-cloud @copilot-swe-agent (#4679)
+
+## 🐛 Bug Fixes
+
+- [WIP] Fix build problem in meshery-cloud @copilot-swe-agent (#4679)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Copilot, @copilot-swe-agent, @l5io and @miacycle
+
+

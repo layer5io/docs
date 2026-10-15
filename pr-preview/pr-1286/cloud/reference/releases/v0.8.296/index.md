@@ -1,0 +1,21 @@
+# v0.8.296
+
+date: 2025-07-16
+
+
+
+## What's New
+## 🔤 General
+- Dockerfile 'as' casing @leecalcote (#3775)
+- fix academy path @aabidsofi19 (#3774)
+
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.205 @l5io (#3776)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote, @marblom007 and @ritzorama
+
+
