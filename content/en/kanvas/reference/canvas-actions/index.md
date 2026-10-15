@@ -50,14 +50,14 @@ This is the quickest way to put a design into a pull request, an incident write-
 | Show Reset Canvas Confirmation | On | Off makes Reset Design act immediately. |
 | Enable Pencil | On | Shows the Pencil tool in the dock. |
 | Enable Pen | On | Shows the Pen tool in the dock. |
-| Auto-pan on Drag | Off | Pans the view while you drag an object past the canvas edge. Kanvas turns it off on large designs and outside Full render mode. |
+| Auto-pan on Drag | Off | Pans the view while you drag an object past the canvas edge. Kanvas turns it off on large designs, with a limit for each render mode. See [Auto-pan on Drag]({{< ref "kanvas/reference/autopan.md" >}}). |
 | Max Canvas Zoom | 30 | Upper zoom limit, from 0.1 to 30. |
 | Min Canvas Zoom | 0.1 | Lower zoom limit, from 0.1 to 5. |
 | Enable Debugger | Off | Shows debugging aids. |
 | Relationship Evaluation Engine | Automatic (recommended) | Chooses how relationships are evaluated. |
 | Show Tutorial | On | Shows the in-app tutorial. |
 | Show Walkthrough | On | Shows the walkthrough. |
-| Render Fidelity | - | Sets how much detail the canvas draws, from full fidelity down to a wireframe, and can adapt as a design grows. See [Layout and Layers]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}). |
+| Render Fidelity | - | Sets how much detail the canvas draws, from full fidelity down to a wireframe, and can adapt as a design grows. See [Render Modes]({{< ref "kanvas/concepts/render-modes/index.md" >}}). |
 
 Operator mode offers only Show Tutorial and Show Walkthrough.
 
