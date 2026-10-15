@@ -15662,6 +15662,38 @@ You can opt out of all email notifications by toggling the button located on the
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.277"
+url: /pr-preview/pr-1251/cloud/reference/releases/v1.0.277/index.md
+date: "2026-10-15"
+--------------------------------------------------------------------------------
+
+- fix(ui): normalize DEPLOY_ENVIRONMENT aliases for GITHUB_APP_URL resolution @leecalcote (#6169)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+
+
+--------------------------------------------------------------------------------
+title: "v1.0.276"
+url: /pr-preview/pr-1251/cloud/reference/releases/v1.0.276/index.md
+date: "2026-10-15"
+--------------------------------------------------------------------------------
+
+- fix(connect): navigate to GitHub authorization instead of silently failing on connect @leecalcote (#6166)
+- fix(handlers): validate sign-in source against org custom domains @leecalcote (#6165)
+- feat(blowhorn): serve GET /api/blowhorn/health @leecalcote (#6168)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @meshery-ci
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.275"
 url: /pr-preview/pr-1251/cloud/reference/releases/v1.0.275/index.md
 date: "2026-10-09"
