@@ -376,7 +376,7 @@ Kanvas supports up to 1,000 relationships per design. Exceeding this limit can i
 
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
 
-Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags]({{< ref "kanvas/designer/tagsets/index.md" >}}).
+Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).
 
 <!--
 #### Maximum Number of Relationships per Component
@@ -1147,32 +1147,6 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 ```
 This is the final element on the page and there should be no margin below this.
 ``` -->
-
-
---------------------------------------------------------------------------------
-title: "Whiteboarding"
-url: /kanvas/tasks/whiteboarding/index.md
-description: Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
-
---------------------------------------------------------------------------------
-
-With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.
-
-## Using the shapes palette
-
-Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See [Adding shapes]({{< ref "kanvas/designer/canvas-objects/index.md" >}}#adding-shapes).
-
-## Converting shapes
-
-An existing shape can be swapped for a different one while keeping its position, size and formatting. Select the shape and pick a new outline from the shape switcher in its style toolbar. See [Configuring styles]({{< ref "kanvas/designer/canvas-objects/index.md" >}}#configuring-styles).
-
-## Copying, cloning and deleting shapes
-
-Context-click a shape to copy it to your clipboard, duplicate it into the same design, or delete it. See [Selecting and acting on objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}#object-menu).
-
-## Drawing freehand
-
-For the pen and pencil tools, line styling and line animations, see [Whiteboarding]({{< ref "kanvas/designer/whiteboarding/index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -2240,252 +2214,6 @@ The table below outlines the mouse interaction modes available in <strong>Kanvas
 
 
 --------------------------------------------------------------------------------
-title: "Whiteboarding"
-url: /kanvas/designer/whiteboarding/index.md
-description: Whiteboarding and Freestyle Drawing inside Kanvas
---------------------------------------------------------------------------------
-
-{{< youtube id=o58hO4RDCR4 class="yt-embed-container" >}}
-
-*[Whiteboarding in Kanvas]({{< ref "videos/features/kanvas/whiteboarding-in-kanvas.md" >}}) (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.*
-
-The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.
-
-{{< alert title="Looking for a specific operation?" >}}
-This page introduces whiteboarding and the drawing tools. For the per-object operations - adding, copying, cloning, locking, deleting, styling, resetting styles and resizing shapes, sections and textboxes - see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
-{{< /alert >}}
-
-## Key Functionality
-
-1. **Drawing Tools Integration**
-   - Incorporates a comprehensive set of drawing tools resembling popular whiteboard applications.
-   - Enables you to draw shapes, group components , annotate, and highlight specific elements within the infrastructure design canvas.
-2. **Real-time Collaboration**
-   - Facilitates simultaneous collaboration among multiple users within the tool.
-   - Supports live editing and instant visualization of changes made by collaborators.
-3. **Non-Invasive Annotations**
-   - Annotations, shapes, or drawings created within the tool remain separate visual aids, not altering the actual infrastructure components.
-
-## Using the Whiteboard Tools {#step-3-utilizing-whiteboard-tools}
-
-Whiteboarding is on by default in every design. Its tools wait in the dock at the bottom of the Designer canvas: shapes, comments, images, sections, and the pen and pencil. The pencil draws freeform notes without connecting components, and the pen - Connector mode, <kbd>Command</kbd>+<kbd>E</kbd> or <kbd>Ctrl</kbd>+<kbd>E</kbd> - draws annotation edges that explain relationships and flow. See [Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}) for how each mode behaves.
-
-![The Kanvas Designer dock](images/whiteboard-dock.png)
-
-The dock, left to right: the select and hand tools, components, Kubernetes, shapes, comments, images, text, sections, then the pen and the pencil.
-
-Everyone working in the design sees each shape, annotation, and edit as it happens, and each collaborator is identified by their avatar.
-
-### Turning the Tools On or Off {#enable-the-whiteboarding-beta-feature}
-
-To hide or restore the whiteboard dock, right-click an empty area of the canvas, choose **Options**, and toggle **Enable Dock**. **Enable Pen** and **Enable Pencil** in the same panel show or hide those two tools.
-
-![The Options panel, with Enable Dock, Enable Pencil, and Enable Pen turned on](images/canvas-options.png)
-
-### Feature Highlights
-
-- **Diverse Drawing Capabilities**
-
-  - Shapes, text, and annotation tools for expressive design enhancements.
-
-- **Effortless Collaboration**
-
-  - Seamless real-time collaboration empowers teams to brainstorm and iterate designs collectively.
-  - Identification of collaborators through avatars ensures clarity in collaborative sessions.
-
-- **Preservation of Infrastructure Integrity**
-  - Annotations exist solely as visual overlays, leaving the underlying infrastructure unaltered.
-  - Undo/Redo functionalities allow for design exploration without permanent modifications.
-
-### Customizing Annotations and Shapes
-
-#### Shape Customization
-
-![Shapes Customization](images/shapes_introduction.gif)
-
-Shapes within the canvas offer flexibility. Select any shape to access a tooltip with options to resize, reshape, and change colors. This allows for precise adjustments similar to popular design software.
-
-#### Text Annotation Customization
-
-![Text Box](images/text-customization.png)
-
-Text annotations come with various options. Customize fonts, sizes, alignments, and styles easily. Text boxes resize for seamless integration with the canvas.
-
-#### Interactive Tooltip Interface
-
-![Tooltip](images/tooltip.png)
-
-The tooltip is your gateway to customization. It's simple and intuitive, offering a range of editing options upon selection. It's designed for easy navigation, mirroring popular design software.
-
-#### Advanced Customization Features
-
-Manage layers, group elements, for better organization. These advanced tools ensure collaborative work while preserving design integrity.
-
-#### Customizing Line Styles
-
-You have the flexibility to customize lines to fit your design needs and architectural specifications. Lines can represent various relationships, such as data flow, dependencies, or communication between components. By adjusting line properties like curve style, arrow style, and line type (e.g., solid or dashed), you can visually convey different meanings, making your design easier for others to interpret. Use the design tooltip to adjust these visual elements and create clear, meaningful connections between components in your architecture.
-
-![Edit Line](images/line-editing.gif)
-
-#### Adding Line Animations
-
-Take your designs a step further by adding animations to the lines, like the `marching ants` effect, to emphasize flow or movement between components. This feature improves visual clarity by highlighting the direction and movement of processes or data throughout your system, making interactions more intuitive. Adding this animation is simple, just click on the line and use the design tooltip.
-
-![Marching Ants Animation](images/marching-ants.gif)
-
-#### Consistent Functionality
-
-The customization tools apply uniformly to all annotation types. Changes made within the tooltip reflect instantly on the canvas, facilitating real-time collaboration.
-
-### Benefits
-
-1. **Enhanced Communication**
-   - Facilitates clearer communication by allowing visual annotations on specific design components.
-   - Reduces ambiguity and ensures better understanding of design intentions.
-
-2. **Efficient Collaborative Workflows**
-   - Real-time collaboration accelerates feedback loops, enhancing team productivity.
-   - Enables instant sharing of ideas and design iterations among team members.
-
-3. **Safe Environment for Creativity**
-   - Offers a risk-free environment for drawing, experimenting, and ideation without impacting the actual infrastructure.
-   - Encourages creativity and exploration within the design canvas.
-
-### Use Cases
-
-- **Team Collaboration:** Multiple users collaborating on infrastructure designs, adding annotations and insights simultaneously.
-- **Educational Context:** Instructors and students using the tool for visualizing concepts or workflows in remote learning environments.
-- **Architecture and Healthcare Planning:** Professionals in architecture or healthcare visualizing and annotating designs collaboratively.
-
-### Conclusion
-
-The whiteboarding and freestyle drawing feature enriches Kanvas's visual infrastructure designer tool by seamlessly integrating drawing capabilities without compromising the integrity of the underlying infrastructure. Its versatility in enabling real-time collaboration, preserving data integrity, and fostering a safe creative space positions it as a powerful asset for effective communication, efficient collaboration, and innovative ideation within diverse professional settings.
-
-
---------------------------------------------------------------------------------
-title: "Creating Relationships"
-url: /kanvas/getting-started/creating-relationships/index.md
-description: Relationships identify and facilitate genealogy between Components.
-
---------------------------------------------------------------------------------
-
-## Benefits of Using Relationships
-
-- **Improved Visibility**: Clear visual representation of connections between components
-- **Enhanced Design**: Make informed decisions about component selection and placement
-- **Automated Configuration**: Relationship-driven actions automate configuration of components
-- **Increased Flexibility**: Use of selectors and operators provides flexibility in defining relationships
-- **Better Understanding**: Easily comprehend the overall structure and dependencies of your managed systems
-
-## What are Relationships
-
-Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure's architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.
-
-Meshery recognizes different kinds of relationships:
-- **Hierarchical Relationships**: Parent-child relationships showing clear lineage
-- **Edge Relationships**: Connections depicting how components interact with each other
-- **TagSets Relationships**: Connections based on shared Labels or Annotations
-
-👉 [Learn more about relationships]({{< ref "kanvas/concepts/relationships/index.md" >}})
-
-## Creating Relationships in Kanvas
-
-Kanvas provides an interactive interface to create and visualize relationships in your designs. Different types of relationships can be initiated in various ways:
-
-### Creating Edge Relationships
-
-Edge relationships represent connections between components that interact with each other. These include network connections, bindings, permissions, and firewall rules. To create an edge relationship:
-
-1. Single-tap on a component to open the edge picker
-2. Select the desired relationship type from the edge picker
-3. Drag the connection line to a compatible target component
-4. Release to establish the relationship
-
-Kanvas will highlight compatible target components as you drag the connection line, making it easier to identify potential relationships.
-
-![Edge Network Relationships](images/relationships/EdgeNetwork.gif)
-
-### Creating Hierarchical Parent-Child Relationships
-
-Hierarchical relationships represent parent-child connections between components. To create a hierarchical relationship:
-
-1. Simply drag a child component and drop it inside the parent component
-2. The parent-child relationship will be automatically established
-
-For example, dragging a Kubernetes Pod into a Namespace creates a hierarchical relationship where the Namespace is the parent of the Pod.
-
-
-![Create Parent Child Relationships](images/relationships/create-parent-child.gif)
-
-### Creating Inventory Wallet Relationships 
-
-Similar to Parent-Child relationships, Inventory Wallet relationships represent a relationship where a component is directly attached to another component, such as a sidecar container or WASM filter. These are visualized as a badge at the bottom right corner of the parent component with the number of inventory items displayed as a label.
-
-To create an Inventory Wallet relationship:
-1. Drag the attachment component (like a sidecar) to the host component
-2. After successful creation, a green badge will appear on the host component
-3. Clicking on this badge reveals all inventory items
-
-
-![Create Inventory Wallet Relationships](images/relationships/create-inventory-wallet.gif)
-
-### Creating MatchLabel Relationships
-
-MatchLabel relationships (also referred to as TagSets) are automatically created when you input matching labels in the configuration for components. These relationships represent connections between components that share the same Labels or Annotations.
-
-For example, if you add the same label `app: frontend` to both a Service and a Deployment, Kanvas will automatically establish a MatchLabel relationship between them and visualize it as a tagset around the matching components.
-
-
-![Create MatchLabel Relationships](images/relationships/create-matchlabels.gif)
-
-## Keeping Configuration in Sync
-
-Kanvas leverages Meshery's evaluation engine to maintain dependencies between related components. When components are bound by a relationship, changes in one component can automatically update the configuration of related components.
-
-For example, if you create a network relationship between a Service and a Deployment, updating the port in the Service will automatically reflect in the container port configuration of the Deployment. This eliminates the need to manually find and update configurations across multiple components.
-
-The direction of syncronisation depends on the kind of relationships . for parent child relationships implicated configuration of child is updated to match with parent ( eg the value of namespace will be set to name of the parent namespace) . for edge relationships the configuration of the target will be syncronised with the source component eg the port number inside the deployment will be mutated to match the port number in service and similarly for inventory relationships the configuration of parent will get mutated to syncronise with the inventory item 
-
-
-## Deleting Relationships 
-
-Similar to creation, relationships of different kinds can be deleted in different ways:
-
-1. **Edge Relationships**: Can be deleted by clicking the delete button on the edge menu which can be opened by tapping on the edge
-
-![Delete Edge Relationships](images/relationships/delete-edge.gif)
-
-2. **Hierarchical Parent-Child Relationships**: Can be deleted by dragging the child component out of the parent
-
-![Delete Parent Child Relationships](images/relationships/delete-parent-child.gif)
-
-<!-- Not implemented yet
-3. **Inventory Wallet Relationships**: Can be deleted by clicking the cross icon on the wallet item (coming soon)
-4. **MatchLabel Relationships**: Can be deleted by right-clicking on the tagset and selecting delete (coming soon) -->
-
-## What to Expect from Relationships
-
-Relationships help define semantic connections and dependencies between components, showing how one component can influence or modify others. Kanvas relationship visualization makes it easy to understand complex infrastructure details, such as:
-
-- How traffic flows through services and components (using network relationships)
-- How resources are sandboxed or provisioned (using parent-child relationships)
-- Which components affect or enhance other components through volume mounts, permissions, etc.
-
-## Managing Evaluation/Visualization for Relationships
-
-Individual relationship kinds can be toggled on or off from the relationships section of the designs. When a relationship is toggled off:
-
-- It won't be considered for evaluation or visualization
-- It will no longer be identified, validated, synchronized, or visualized in your design
-
-This gives you control over which types of relationships you want to focus on in your infrastructure design.
-
-
-![Relationships Layers Panel](images/relationships/layers-panel-relationships.gif)
-
-
-
---------------------------------------------------------------------------------
 title: "Deploying Designs"
 url: /kanvas/tasks/designs/deploying-designs/index.md
 description: Each Meshery design is deployable to one or more Kubernetes clusters.
@@ -2994,7 +2722,7 @@ Threshold table:
 | **Component style editing**  |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       | Same: revealed only at detailed zoom levels.                                                    |
 
 ¹ *Layout animation is a Full-mode-only feature by design. Kanvas falls back to instant (unanimated) layouts in other modes, so the per-mode threshold doesn't apply.*
-² *TagSet threshold is tag count, not node count. See [Working with Tags]({{< ref "kanvas/designer/tagsets/index.md" >}}).*
+² *TagSet threshold is tag count, not node count. See [Working with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).*
 ³ *Zoom-gated features activate when your zoom level is above `MIN_ZOOM_FOR_DETAILED_RENDERING`. Zooming out suppresses them regardless of render mode.*
 
 ### How size gates interact with render modes
@@ -3475,230 +3203,6 @@ Highlight the most critical feedback first. This ensures that the designer focus
 If someone resolves a comment while you're still typing in it, the comment will immediately close for both of you. You'll see a message letting you know that the thread was resolved.
  -->
 
-
---------------------------------------------------------------------------------
-title: "Understanding  Relationships"
-url: /kanvas/concepts/relationships/index.md
-description: Kanvas uses relationships to map how interconnected components interact.
-
---------------------------------------------------------------------------------
-
-## What are Relationships?
-
-Relationships define the nature of interaction between interconnected components in Kanvas. They represent various types of connections and dependencies between components no matter the genealogy of the relationship such as parent, siblings, binding.
-
-## Types of Relationships
-
-Relationships are categorized into different kinds, types, and subtypes, so that can be expressive of the specific manner in which one or more components relate to one another.
-
-Here is a list of the different types of relationships that Kanvas supports:
-
-### 1. Edge Relationships
-
-Edge relationships indicate the possibility of traffic flow between two components. They enable communication and interaction between different Components within the system. There are 4 subtypes of the edge relationship.
-
-**i. Edge-Network:**
-
-The Edge-Network relationship type configures the networking between one or more components. This deals with IP addresses and DNS names and provides stable endpoints for communication. For instance, a “Service” provides a stable endpoint for accessing multiple replicas of a “Deployment”. Here's a visual representation of this kind of relationship.
-
-  ![example of edge-network relationship](images/EdgeNetworkRelationship.svg)
-
-**ii. Edge-Firewall**
-
-This acts as intermediary for communications which include standard networking protocols like TCP and UDP. It can enforce network policies to control traffic between components, for example between two Pods.
-
-   ![example of edge-firewall relationship](images/edge_firewall_relationship_pod_to_pod.svg)
-
-**iii. Edge-Mount**
-
-   This subtype addresses the storage and access possibility between involved components. For example, a “PersistentVolume” can be mounted to a “Pod” to provide persistent storage for the pod’s data.
-
-   ![example of edge-mount relationship](images/EdgeMountRelationship.svg)
-
-**iv. Edge-Permission**
-
-   This defines the permissions for components if they can have a possible relationship with other components. It ensures that only authorized components can interact with each other. For example, a “Role” can define permissions for Components to access specific resources.
-
-   ![example of edge-permission relationship](images/edge_permission_relationship_cluster_role_service_account.svg)
-
-
-
-**v. Edge-Reference**
-
-The **Edge-Reference** relationship type represents a **logical or declarative link** between two components, where one component **refers to another by name, identifier, type, or scope**. This relationship allows components to dynamically locate, associate with, or depend on other components without being tightly coupled to them. It forms the basis for indirect communication, configuration reuse, ownership tracking, and dependency resolution in distributed systems.
-
-This type of relationship does **not directly provide communication, access, or permission**, but **enables such interactions by declaring intent or pointing to another component**.
-
-
-**Example of an Edge-Reference Relationship**
-
-* A component that refers to a configuration object (e.g., referencing a config file or environment settings).
-* A workload component referencing a credentials object or identity provider.
-* A service referencing a volume or storage claim.
-* A managed resource referencing its controller or owner entity.
-
-**Kubernetes-Based Example**
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: example-pod
-spec:
-  containers:
-    - name: app
-      image: nginx
-      envFrom:
-        - configMapRef:
-            name: app-config  # <- Reference to configuration object
-  volumes:
-    - name: secret-volume
-      secret:
-        secretName: app-secret  # <- Reference to secret
-```
-
-
-
-   ![example of edge-reference relationship](images/reference-deployment-configmap.png)
-
-### 2. Hierarchical Relationships
-
-Hierarchical relationships involve either an ancestral connection of the components (i.e. the creation/deletion of a component higher up affects the existence of the components below in the lineage) or a connection which involves the inheritence of features from one component to the other. There are 2 subtypes of the hierarchical relationship.
-
-**i. Hierarchical-Inventory**
-
-  This is a relationship between components where the configuration settings of one component, known as the parent, are combined or integrated with the configuration settings of another component, known as the child. This implies that changes or updates made to the parent component can affect or influence the configuration of the child component. Here's an example of a Hierarchical-Inventory relationship
-
-   ![example of edge-permission relationship](images/Hierachical_Inventory_Relationships.svg)
-
-**ii. Hierarchical-Parent**
-
-A parent-child relationship implies that the parent component must be present or established before the child component can be created. For instance, in Kubernetes, a 'Namespace' can serve as a parent to 'Pods' within that namespace. Therefore, the namespace must be created beforehand for pods to be deployed within it. Here's an example of a Hierarchical-Parent relationship
-
-   ![example of edge-permission relationship](images/Hierarchical_Parent_Relationship.svg)
-
-### 3. TagSets Relationships
-
-These represent relationships between components of same Labels or Annotations key/value pairs. Labels and Annotations are two different types of Tags. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
-
-![example of Tag sets](images/tags.png)
-
-
---------------------------------------------------------------------------------
-title: "Working with Components"
-url: /kanvas/getting-started/working-with-components/index.md
-description: Meshery Components are reusable, interactive elements that can be used to build your designs. Learn how to work with components.
-
---------------------------------------------------------------------------------
-
-## Configuring Components
-
-Once you’ve added components to your design in Kanvas, configuring them is a critical step in customizing and optimizing your cloud-native infrastructure. Configuring components allows you to fine-tune their behavior, set specific parameters, and ensure they meet the precise needs of your architecture.
-
-![configuration-panel](images/working-with-components/configuration-panel.png)
-
-**Steps to Configure Components:**
-
-1. **Select the Component:** Click on the component on the Kanvas canvas that you want to configure. This action opens the Configuration Panel.
-
-2. **Adjust Component Settings:** In the Configuration Panel, you can modify various settings, such as resource limits, environment variables, replicas, and more, depending on the type of component you’re working with (e.g., microservices, databases).
-
-3. **Real-time Updates:** As you adjust configurations, Kanvas will reflect those changes in real-time, allowing you to visualize how the changes affect your overall design. This feature ensures that the design is always up-to-date with the latest configurations.
-
-By configuring components effectively, you ensure that your cloud-native deployments run smoothly and efficiently, tailored to your specific use case.
-
-## Using the Radial Context Menu to Lock, Style, Duplicate, and Delete Components
-
-Kanvas' **radial context menu** provides an intuitive way to interact with components on your design canvas. This menu allows you to quickly perform key actions such as locking, styling, duplicating, and deleting components without leaving the design canvas.
-
-### Key Functions of the Radial Context Menu:
-
-1. **Locking Components:** Locking a component ensures it stays fixed in its position on the canvas. This feature is useful when you want to prevent accidental movement of important components during collaboration or further editing. To lock a component, right-click on it to open the radial menu and select the “Lock” option.
-
-    **Use Case:** Locking is helpful when finalizing the design layout, ensuring key components remain in place even when other collaborators make adjustments.
-
-2. **Styling Components:** The styling option allows you to modify the appearance of the component, such as changing its color or label. This feature is especially useful for visually organizing components, making it easier to distinguish between different types or states within the architecture.
-
-    **Use Case:** Style components to represent various application states, environments (production vs. development), or priority levels in your infrastructure design.
-
-![radial-menu](images/working-with-components/radial-menu.png)
-
-3. **Duplicating Components:** The radial menu also provides a quick way to duplicate a component. This feature is beneficial when you need multiple instances of the same component with identical configurations.
-
-    **Use Case:** Quickly create replicas of services or microservices with consistent settings without having to reconfigure each one manually.
-
-4. **Deleting Components:** Removing components is as simple as selecting the “Delete” option from the radial menu. This action helps keep the design clean and organized by removing unnecessary or outdated components.
-
-    **Use Case:** Delete components when modifying or refactoring your design to remove legacy infrastructure or redundant elements.
-
-The radial context menu offers an efficient, user-friendly way to manage components within Kanvas, streamlining the design process.
-
-## Annotations
-
-Annotations in MeshMap are a powerful feature that enables you to add contextual information to your designs directly on the canvas. These annotations can take the form of comments, labels, or freehand drawings, allowing for more detailed communication and documentation throughout the design process.
-
-### Types of Annotations:
-
-1. **Text Annotations:** Text annotations allow you to add notes or explanations alongside components. This is useful for providing instructions, detailing configurations, or documenting key decisions made during the design process.
-
-    **Use Case:** Leave detailed instructions for collaborators about specific components or workflows within the design. Annotations are especially helpful when multiple team members are working on a project.
-
-2. **Pencil and Pen Tool:** The whiteboard feature in MeshMap allows you to use freehand drawings to annotate the design. This is useful for highlighting connections between components, drawing attention to specific areas, or visually brainstorming ideas on the canvas.
-
-    **Use Case:** Use freehand annotations to draw attention to critical connections between services or infrastructure components, or to mark areas that require further review or adjustment.
-
-3. **Pinning Comments to Components:** In addition to standalone annotations, you can pin comments directly to specific components. This ensures that feedback or instructions remain attached to the component, even if the design evolves or components are moved around.
-
-    **Use Case:** Pin a comment to a database component explaining the configuration and deployment strategy so that future collaborators can easily understand the logic behind it.
-
-### Importance of Annotations:
-
-Annotations play a crucial role in collaborative design processes. They provide a way to document decisions, share knowledge, and offer feedback directly within the design environment. This minimizes miscommunication and ensures all team members are aligned on the design's intent and structure.
-
-By effectively using annotations, you enhance the clarity and transparency of your designs, ensuring that they are well-documented and easy for all collaborators to understand.
-
-## Copy and Paste Components
-
-You can copy and paste one or more components — even if you're going from one design to another.
-
-### Use the right-click menu or keyboard shortcuts
-
-You might be able to copy and paste with the right-click menu, but for security reasons, most browsers don't allow web apps (like Kanvas) to use your computer's clipboard through menus.
-
-![copy-paste](images/working-with-components/copy-paste.png)
-
-To copy and paste, you can use keyboard shortcuts:
-
-To copy and paste:
-
-1. Use [keyboard shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}})
-1. Use the right-click menu
-
-<!-- Image needed -->
-### Select All with Keyboard Shortcuts
-
-1. Select all components on the Kanvas by pressing CMD+A (Mac) or CTRL+A (Windows).
-2. Copy the selection by pressing CMD+C (Mac) or CTRL+C (Windows).
-3. Paste the components by pressing CMD+V (Mac) or CTRL+V (Windows).
-
-### Use the Right-Click Menu
-
-1. Right-click on the canvas and select Select All Components.
-   ![copy-paste-rightclick-select](images/working-with-components/copy-paste-rightclick-select.png)
-2. Right-click again and choose Paste or press CMD+V (Mac) or CTRL+V (Windows) to paste the copied components.
-   ![copy-paste-rightclick-paste](images/working-with-components/copy-paste-rightclick-paste.png)
-
-### Use the Save As Option
-
-1. Go to the design toolbar and select Save As.
-   ![copy-paste-save](images/working-with-components/copy-paste-save.png)
-2. A copy of all components will be saved in your new design file, which you can then paste into another design.
-
-
-### Select with SHIFT or CTRL
-1. Press and hold either SHIFT or CTRL, then click and drag over all the components you want to select.
-2. Copy the selected components with CMD+C (Mac) or CTRL+C (Windows).
-3. Paste the components with CMD+V (Mac) or CTRL+V (Windows).
 
 --------------------------------------------------------------------------------
 title: "Cloning a Design"
@@ -4864,40 +4368,6 @@ Saved profiles, historical results and comparisons between runs live in Meshery'
 
 
 --------------------------------------------------------------------------------
-title: "Working with Tags"
-url: /kanvas/designer/tagsets/index.md
-description: Share design with other users and use control access to manage design access permissions and visibility.
-
---------------------------------------------------------------------------------
-
-You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.
-
-{{< alert title="Related Concept">}}
-Kubernetes resources are capable of being assigned Label and Annotation key/value pairs. When pairs of Labels or Annotations match, a relationship is formed and visualized as shown below.
-{{< /alert >}}
-
-## Grouping Components with Tags
-
-To group components using tags, follow these steps.
-
-![Tags](images/tagsets.gif)
-
-## Labels and Annotations
-
-Designs support two different types of tags: Labels and Annotations. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
-
-<img alt="Labels and Annotations" src="../../images/group-components.png" width="50%" />
-
-{{< alert title="Performance Consideration" type="warning">}}
-Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
-
-Upon loading a design exceeds that exceeds 10 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock.
-{{< /alert >}}
-
-{{< alert title="Related Concept">}}
-{{< /alert >}}
-
---------------------------------------------------------------------------------
 title: "Cross-Org Design Access: stellar-saas-platform"
 url: /kanvas/tutorials/stellar-saas-platform/index.md
 description: Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
@@ -5021,7 +4491,7 @@ a plain **shape** used as a legend key.
 
 This page documents those gestures once and calls out the places where a particular kind of object
 behaves differently. If you are looking for the freestyle pen and pencil tools instead, see
-[Whiteboarding]({{< ref "kanvas/designer/whiteboarding/index.md" >}}).
+[Whiteboarding]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}).
 
 ## The four kinds of canvas object {#canvas-objects}
 
@@ -5062,7 +4532,7 @@ Diamond, Explosion, Flash, HalfFrame, Heptagon, Hexagon and more.
 
 Drag a shape from the picker onto the canvas to place it where you want it. If you find yourself
 reaching for the same library repeatedly, pin it to the dock - see
-[Pinning a Model to the Dock]({{< ref "kanvas/designer/pin-model-to-dock/index.md" >}}).
+[Pinning a Model to the Dock]({{< ref "kanvas/guides/designing/pin-model-to-dock/index.md" >}}).
 
 ### Adding sections {#adding-sections}
 
@@ -5271,10 +4741,10 @@ corresponding control simply does not appear on the canvas.
 
 ## Related reading
 
-- [Whiteboarding]({{< ref "kanvas/designer/whiteboarding/index.md" >}}) - the pen and pencil tools, and line styling.
+- [Whiteboarding]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}) - the pen and pencil tools, and line styling.
 - [Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}) - selection, pan and connector modes.
 - [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}}) - the full shortcut reference.
-- [Working with Components]({{< ref "kanvas/getting-started/working-with-components/index.md" >}}) - configuring the components you place.
+- [Working with Components]({{< ref "kanvas/guides/designing/configuring-components/index.md" >}}) - configuring the components you place.
 - [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}) - comments, which are annotations with their own lifecycle.
 
 
@@ -5579,6 +5049,153 @@ Only Admins and Owner can unpublish designs. Regular users and guests cannot per
 | **Public**   | Visible to all Meshery Cloud users | Fully editable | Available for all users to access |
 | **Private**  | Only visible to the owner and organization members | Fully editable | Used for drafts and internal work |
 | **Published** | Approved and locked for public access | Cannot be modified | Ensures design consistency and prevents unauthorized edits |  
+
+
+--------------------------------------------------------------------------------
+title: "Add and Configure Components"
+url: /kanvas/guides/designing/configuring-components/index.md
+description: Find and place components on the canvas, edit their configuration with the form Kanvas builds from the component definition, and lock, duplicate, copy, and paste them.
+--------------------------------------------------------------------------------
+
+A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.
+
+You need a design open in Designer mode. Designer is the only mode that allows authoring.
+
+## Add a component
+
+Kanvas offers several ways to place a component. All of them produce the same result: a component in the design, with its configurator open beside it.
+
+| Method | Behavior |
+|---|---|
+| Drag from the component palette | The component lands where you release it. |
+| Click a component in the palette or in a dock picker | The component lands at a random position near the center of the canvas. |
+| Drop a component onto another component | If the pair can form a parent-child relationship, Kanvas creates it. See [Create Relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}). |
+| Drop or paste a file | Image and text files become objects on the canvas. Infrastructure files (YAML, JSON, and archives such as TAR, GZ, ZIP, RAR, and 7Z) start an import. |
+
+Text boxes, sections, and comments are annotation objects rather than infrastructure. They have their own keys: <kbd>T</kbd>, <kbd>S</kbd>, and <kbd>M</kbd>. Press <kbd>I</kbd> to pick an image file. See [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}).
+
+### Find the right model and version
+
+The palette groups models by category. Open a category to list its models, then expand a model to load its components. Each model has a version selector, sorted newest first, with the first version selected by default. The dock's compact pickers offer an "All Versions" choice and hide duplicate components, keeping the highest version.
+
+Typing in the palette search box queries the Meshery registry after you pause for one second. Results appear in two groups, Models and Components, and an empty result reads "Sorry, no matching records found". Search matches model and component names only. It does not match labels.
+
+The palette applies no filter of its own for deprecated or ignored models: it lists whatever the registry returns. Components whose schema is invalid appear dimmed, but you can still drag or click them.
+
+The Kubernetes picker in the dock lists every Kubernetes component in a grid with a version filter. It hides List kinds, such as `PodList`.
+
+### File drop limits
+
+| File | Result | Limit |
+|---|---|---|
+| Image (PNG, JPG, GIF, BMP, WebP, SVG) | An image object, embedded in the design as data | 512,000 bytes (about 500 KB) |
+| Text (`.txt`) | A text box holding the file text | 512,000 bytes (about 500 KB) |
+| YAML, JSON, TAR, GZ, TGZ, ZIP, RAR, 7Z | An import placed at the drop position | None applied by the canvas |
+| Anything else | Ignored with no message | - |
+
+A file over the limit is rejected with an error message. The limit is fixed and identical on every plan, although the message refers to your plan.
+
+## Edit a component's configuration
+
+Open the configurator with any of these:
+
+- Double-click the component (two taps within 500 ms).
+- Select the component and use the Configure control in its floating style toolbar. The toolbar appears when you are zoomed in far enough to see component detail.
+- Add a new component. Its configurator opens automatically.
+- Select a validation warning badge on the component. The configurator opens with the offending field highlighted.
+
+The configurator is a panel anchored to the component, on the right when there is room and on the left otherwise. The right-click menu has no Configure item.
+
+![The component configurator showing the Config tab for a Kubernetes component](images/working-with-components/configuration-panel.png)
+
+### The header
+
+| Control | Behavior |
+|---|---|
+| Component icon | Hover to see the component version. |
+| Title | The component kind, in sentence case. |
+| Versions menu | Appears when the component exists in more than one model version. Choosing a version swaps the component's definition and model reference to that version. |
+| Search | Narrows the form to matching fields. When nothing matches, the form says so. |
+| Help | Shows the component's own description from its schema. |
+| Expand and collapse | Switches the panel width between 32 rem and 45 rem. |
+| Delete | Removes the component immediately, with no confirmation. |
+
+Switching versions keeps your configuration values as they are. Kanvas does not migrate them, and validation then flags any value the new version does not accept. The switch also replaces custom styling with the new version's defaults.
+
+### The tabs
+
+A tab strip on the left appears when two or more tabs apply to the component. Which tabs are enabled depends on the capabilities the component's definition declares. Role permissions do not decide this. A tab that does not apply appears dimmed.
+
+| Tab | What it holds |
+|---|---|
+| Config | The component's specification, as a form built from its JSON schema. |
+| Labels | Key-value maps for labels and annotations. Not offered for alias components. |
+| Json Schema | A read-only view of the component definition, with an Open in Registry button. |
+| Relationships | The relationships this component participates in, grouped by kind, with a Show only active switch. |
+
+Comment components open a chat thread instead of tabs.
+
+### Required fields, defaults, and validation
+
+- Fields are rendered from the component's schema, and defaults come from the schema. A namespaced kind shows a Namespace field that defaults to `default`.
+- A red asterisk marks a required field. An empty required field shows "This field is required". Kanvas enforces first-level required fields up front, and an object whose children are all optional is not treated as required.
+- The form does not validate as you type. Kanvas validates each changed component against its JSON schema after the change. Errors appear as a small red triangle beside the field label, with the messages in its tooltip, and the field is outlined.
+- The component also shows a validation warning badge on the canvas, so an error you scrolled past stays visible after you close the panel. See [Component Badges]({{< ref "kanvas/designer/interpreting-component-badges/index.md" >}}).
+
+### How edits are saved
+
+There is no Apply button. Kanvas writes an edit to the design 300 ms after you stop typing. Each write triggers three follow-ups: the design autosaves after a 3 second pause, the component is validated, and relationships are re-evaluated. Configuration that a relationship controls can therefore change shortly after you edit a related component. See [Policy Evaluation]({{< ref "kanvas/concepts/relationship-evaluation/index.md" >}}).
+
+Undo reverses configuration changes like any other edit. See [Saving Designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}).
+
+### Alias components
+
+An alias component stands for one field inside its parent component. Its form edits that field of the parent, using the field's sub-schema, and omits the Labels tab. Deleting an alias clears that field's configuration on the parent.
+
+## Lock, duplicate, copy, and delete
+
+Right-click a component to open its action menu. Items appear only when they apply.
+
+| Action | Shortcut | Behavior |
+|---|---|---|
+| Lock and Unlock | - | Fixes the component's position so it cannot be dragged. Configuration, labels, and style stay editable. The lock is saved with the design. |
+| Duplicate | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>D</kbd> | Creates a copy offset 50 px right and 50 px down, with a new id. Relationships between duplicated components are copied too. Names do not change. |
+| Copy | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>C</kbd> | Copies the component. The menu item copies one component without relationships. |
+| Delete | <kbd>Delete</kbd> or <kbd>Backspace</kbd> | Removes the component. Relationships that touched it are marked deleted, and the next evaluation reverses their effects on configuration. |
+| Reset styles | - | Restores the model's default appearance. |
+| Move Out of Parent | - | Detaches a component from the parent it sits in. |
+
+The menu labels Delete as <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Delete</kbd>, but <kbd>Delete</kbd> or <kbd>Backspace</kbd> alone performs the deletion.
+
+Other items appear in Operator mode, such as terminal, log, and performance sessions. See [Operator]({{< ref "kanvas/operator/_index.md" >}}).
+
+### Style a component
+
+A floating toolbar above a selected component offers the controls the component declares: shape (24 outlines), fill color with opacity from 0 to 1, border color, style, and thickness from 0 to 25, layer order, label, external link, image, and animation (none, blink, ripple, bounce, or pulse). Each control is shown only when the component supports it.
+
+## Copy and paste across designs
+
+| Task | Shortcut |
+|---|---|
+| Select every component | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>A</kbd> |
+| Select several | Hold <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> and drag a selection box, or <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+click each one |
+| Copy the selection | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>C</kbd> |
+| Paste | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>V</kbd> |
+| Undo and redo | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Z</kbd>, <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Y</kbd> or <kbd>Shift</kbd>+<kbd>Z</kbd> |
+
+A keyboard copy carries the selected components with their configuration, styles, and labels, plus every relationship whose two ends are both in the selection. Kanvas writes this to the system clipboard, so you can paste into another design, another browser tab, or another Kanvas session. Paste lands at the pointer when it is over the canvas and at the canvas center otherwise. The pasted group keeps its layout, and every id is regenerated.
+
+Browsers allow clipboard access only after a user gesture. If the browser denies access, paste does nothing and shows no message. Use the keyboard shortcuts. The full list is in [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}}).
+
+## Limits and errors
+
+- A design has a maximum number of components that depends on your plan. Layer5 Cloud enforces it when you save or import, not when you add a component. A save over the limit is rejected with a 403 response. Drawn objects such as shapes and text boxes count as components. See [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}) for the per-plan values.
+- When zoomed out, the canvas hides text, labels, and badges and prompts you to zoom in before interacting with elements.
+
+## See also
+
+- [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}): what the Relationships tab lists.
+- [Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}): every mouse interaction available on the canvas.
 
 
 --------------------------------------------------------------------------------
@@ -5935,225 +5552,6 @@ The support channels and response commitments each plan includes are listed in [
 
 
 --------------------------------------------------------------------------------
-title: "Pinning Models to the Dock"
-url: /kanvas/designer/pin-model-to-dock/index.md
-description: Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
---------------------------------------------------------------------------------
-
-The Kanvas Designer dock allows you to keep your most-used models and tools within easy reach. You can pin any model to the dock for quick access, and unpin it just as easily.
-
-## Overview
-
-Pinning a model adds it to the dock at the bottom of the Designer interface. This helps you:
-
-- Quickly access frequently used models
-- Customize your workspace
-- Streamline your design workflow
-
-## How to Pin a Model
-
-1. Hover over the model you want to pin in the component list on the left side of the Designer.
-2. Click the pin icon that appears next to the model name. A tooltip will show "Pin To Dock".
-3. The model will now appear in the dock at the bottom of the Designer.
-
-
-![Pin To Dock action](images/pin-to-dock.png)
-
-## Pinned Model in the Dock
-
-After you pin a model, it appears as an icon in the dock at the bottom of the Designer and remains there for quick access throughout your workflow. This makes it easy to find and reuse your favorite models at any time.
-
-![Pinned model displayed in the dock](images/pinned-model-location.png)
-
-## How to Use a Pinned Model
-
-Clicking a pinned model in the dock gives you quick access to all its components. You can use these components in your design by either clicking to add them or dragging them onto the canvas for easy placement and configuration.
-
-{{< alert type="info" title="Note" >}}
-Only models can be pinned to the dock. Individual components within a model cannot be pinned directly.
-{{< /alert >}}
-
-![How to use pinned model's components](images/use-pinned-models-components.png)
-
-## How to Remove a Model from the Dock
-
-You can remove a model from the dock in two ways:
-
-### Method 1: Using the Pin Icon
-
-1. Hover over the pinned model in the dock or in the component list.
-2. Click the pin icon again (the tooltip will show "Remove From Dock").
-
-
-![Remove From Dock action](images/unpin-model-1.png)
-
-### Method 2: Using the Close Button
-
-1. Click the X (close) button on the pinned model icon in the dock to remove it instantly.
-
-
-![Unpin using close button](images/unpin-model-2.png)
-
-
-{{< alert type="info" title="Good to Know" >}}
-You can pin as many models as your workflow needs and swap them out anytime as your project evolves.
-{{< /alert >}}
-
-
---------------------------------------------------------------------------------
-title: "Policy Engine"
-url: /kanvas/designer/relationship-evaluation/index.md
-description: Choose how Kanvas evaluates relationships in your designs, understand the relationship indicator states, and diagnose failing or unexpected relationship results.
-
---------------------------------------------------------------------------------
-
-As you build a design, Kanvas continuously evaluates the
-[relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) between your components — to
-identify connections, validate them, and keep related configuration in sync.
-This page explains how you can choose which engine performs that evaluation, how
-to read the relationship indicator, and how to diagnose results that look wrong.
-
-## How Relationships Are Evaluated
-
-Kanvas can run relationship evaluation using one of two interchangeable engines:
-
-- **Server-side** — the policy engine running inside your Meshery server. It
-  is always available and is the default.
-- **Client-side** — the same policy engine, compiled to WebAssembly and
-  run inside a background worker in your browser. Because it runs locally, there
-  are no round-trips to the server, so evaluation is typically faster. It is
-  available only when your Meshery server provides the WebAssembly artifact.
-
-Both engines produce the same relationship results. The choice affects
-performance, and where toil (evaluation) is done, not correctness.
-
-{{< alert type="info" title="Editing is never blocked" >}} Relationship
-evaluation runs alongside your work — it never blocks editing or saving a
-design. If evaluation fails for any reason, you can keep designing and saving
-normally; only the relationship results are affected. {{< /alert >}}
-
-## Changing the Evaluation Engine Preference
-
-The engine is controlled by the **Relationship Evaluation Engine** preference.
-
-1. In Kanvas Designer, open **Settings**.
-2. Find the **Relationship Evaluation Engine** preference.
-3. Choose one of the following values:
-
-| Value                       | What it does                                                                                                                                                                                 |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Automatic** (recommended) | Runs a one-time health check at the start of the session. If the client-side (WASM) engine passes a self-test, it is used for the rest of the session; otherwise the Meshery server is used. |
-| **Meshery server**          | Always uses the Meshery server's policy engine.                                                                                                                                              |
-| **Client-side (WASM)**      | Uses the in-browser WebAssembly engine.                                                                                                                                                      |
-
-The engine is selected **once per session**. Changing the preference takes full
-effect on the next session (for example, after reloading Kanvas).
-
-{{< alert type="info" title="When to prefer the server engine" >}} Leave the
-preference on **Automatic** unless you have a specific reason to change it. If
-client-side results ever look wrong, switching to **Meshery server** is the most
-reliable way to rule out the engine as the cause — see
-[Diagnosing failing or unexpected results](#diagnosing-failing-or-unexpected-relationship-results).
-{{< /alert >}}
-
-## Reading the Relationship Indicator
-
-The relationship indicator tells you the state of the most recent evaluation:
-
-- **Evaluating** — evaluation is in progress. This is normal after you add,
-  remove, or reconfigure components.
-- **Evaluated** — evaluation completed successfully and the relationships shown
-  on the canvas are up to date.
-- **Error** — the most recent evaluation failed. This is a distinct state from
-  "no relationships evaluated yet". When evaluation fails:
-  - The last successful relationship results stay on screen so your design
-    remains readable.
-  - A one-time, non-blocking notification appears to let you know.
-  - You can continue editing and saving the design without interruption.
-
-If the client-side (WASM) engine was active and faults during the session, it
-automatically self-heals: Kanvas falls back to the Meshery server engine for the
-remainder of the session, without requiring any action from you.
-
-### What the one-time notifications mean
-
-When evaluation first fails, or when Kanvas falls back from the client-side
-engine to the server engine, a single non-blocking notification is shown. It is
-informational — it does not require a response, and it will not repeat for every
-subsequent evaluation in that session. Its purpose is to let you know that
-relationship results may be stale or that the active engine changed.
-
-## Diagnosing Failing or Unexpected Relationship Results
-
-If relationships are missing, look wrong, or the indicator shows an error, use
-the **Relationship Evaluation Diagnostics** view to investigate.
-
-### Step 1 — Enable the debugger preference
-
-The Diagnostics view is exposed under the Designer **debugger** preference.
-
-1. In Kanvas Designer, open **Settings**.
-2. Enable the **debugger** preference.
-3. Open the **Relationship Evaluation Diagnostics** view.
-
-### Step 2 — Read the Diagnostics view
-
-The Diagnostics view reports the current state of relationship evaluation:
-
-- **Active engine and why** — which engine is in use (Meshery server or
-  client-side WASM) and the reason it was selected (for example, the result of
-  the Automatic health check, an explicit preference, or a runtime fallback).
-- **Contract / version** — the evaluation contract and engine version, used to
-  confirm the client and server are compatible.
-- **Last error** — the most recent evaluation error, if any.
-- **Fallback count** — how many times Kanvas has fallen back from the
-  client-side engine to the server engine this session.
-- **Latency** — how long recent evaluations took.
-
-### Step 3 — Force the server engine if client results look wrong
-
-If you suspect the client-side engine is producing incorrect results:
-
-1. Open **Settings**.
-2. Set **Relationship Evaluation Engine** to **Meshery server**.
-3. Reload Kanvas so the new engine is used for the session.
-4. Re-check the design's relationships.
-
-If the relationships are correct with the server engine but wrong with the
-client-side engine, that points to a client engine issue worth reporting (see
-below).
-
-### Step 4 — Re-trigger evaluation
-
-Evaluation re-runs automatically whenever you change the design — for example,
-by adding, removing, or reconfiguring a component, or by toggling a relationship
-kind on or off from the **Relationships** section of the Designer. Making any such
-change re-triggers evaluation with the active engine. If the indicator was in
-the error state, a successful re-evaluation clears it.
-
-### Step 5 — When and how to file a bug
-
-If relationship results are still wrong or evaluation keeps failing after the
-steps above — especially if the **Meshery server** engine also produces
-incorrect or failing results — file a bug. Include the following from the
-Relationship Evaluation Diagnostics view so the issue can be reproduced:
-
-- The **active engine** and the reason it was selected.
-- The **contract / version** shown in the Diagnostics view.
-- The **last error** text.
-- The **fallback count**, if relevant.
-- A description of the expected relationships versus what Kanvas showed, and the
-  design (or a minimal reproduction) if you can share it.
-
-{{< alert type="info" title="Related reading" >}} For an overview of what
-relationships are and the kinds Kanvas supports, see
-[Understanding Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}). For creating and
-managing relationships in a design, see
-[Creating Relationships]({{< ref "kanvas/getting-started/creating-relationships/index.md" >}}).
-{{< /alert >}}
-
-
---------------------------------------------------------------------------------
 title: "Canvas Actions"
 url: /kanvas/designer/canvas-actions/index.md
 description: The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
@@ -6398,61 +5796,94 @@ Saving requires an account. If you are working in Kanvas without signing in - in
 
 
 --------------------------------------------------------------------------------
-title: "Configuring Components"
-url: /kanvas/designer/configuring-components/index.md
-description: Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
-
+title: "Create Relationships"
+url: /kanvas/guides/designing/creating-relationships/index.md
+description: Connect components with edges, nest them in parents, and remove or hide relationships. Covers which relationships you draw and which Kanvas forms for you.
 --------------------------------------------------------------------------------
 
-A component is the fundamental building block of a design - it represents one piece of the infrastructure under management, and its configuration is what will actually be applied when the design is deployed. The component configurator is where that configuration is edited.
+Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.
 
-Kanvas does not ask you to write YAML for this. The form is built from the component's own definition, as published by the model it belongs to, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.
+Relationships work only in Designer mode. For what each kind means, read [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}).
 
-## Opening the configurator
+| Kind | You create it by | You remove it by |
+|---|---|---|
+| Edge (network, mount, reference, and other edge subtypes) | Picking an edge from a component's handle and dragging to a target | Selecting the edge and choosing Delete |
+| Hierarchical, inventory | Dropping a component onto a compatible parent | Dragging it out, or choosing Move Out of Parent |
+| Hierarchical, wallet | Dropping a component onto a compatible host | Deleting the component, or choosing Move Out of Parent |
+| Hierarchical, alias | Kanvas creates it during evaluation | Deleting the alias component |
+| TagSets (shared labels) | Giving components matching labels | Changing the labels so they stop matching |
+| Annotation edge | Drawing with the Pen tool | Selecting the edge and choosing Delete |
 
-With a component on the canvas:
+## Create an edge relationship
 
-- **Double-click** the component, or
-- **Right-click** it and choose **Configure**.
+Edge relationships connect components that exchange traffic or depend on one another, such as a Service and a Deployment.
 
-The configurator opens in a panel beside the canvas. The component stays selected while it is open, so you can see what you are editing.
+1. Hover a component to reveal arrow handles on its bottom, left, and right sides, then select one. A circular menu opens.
+2. Pick a relationship from the menu. It lists every edge relationship in the registry that can start from this component, with the subtype in a tooltip. A binding relationship lists one item per component that can sit between the two ends.
+3. Drag from the source to a target. Compatible targets in view get a green outline, and incompatible components dim to half opacity. Kanvas checks only the components visible in the viewport.
+4. Release on a compatible target.
 
-## The header
+Releasing on an incompatible component, a non-component, or empty canvas cancels the creation without a message. A binding relationship also places its binding component between the two ends.
 
-| Control | What it does |
-| --- | --- |
-| Component icon | Hovering shows the model version the component is using. |
-| Version menu | Appears when the model has more than one version available. Switching versions rebuilds the form against that version's definition. |
-| Search | Filters the form down to matching fields. On a component with many fields this is far quicker than scrolling; if nothing matches, the form says so rather than appearing empty. |
-| Help | Shows the component's own description, as published by its model. |
-| Expand / collapse | Maximizes the configurator to fill the workspace, and restores it. |
-| Delete | Removes the component from the design. |
+![Creating a network edge between two components](images/relationships/EdgeNetwork.gif)
 
-## Tabs
+The edge shows an arrow and a label. Network edges label the source and target ports and protocols, read from the configuration the relationship manages.
 
-The configurator is organized into tabs. Which are present depends on the component and on your permissions:
+## Nest components in a parent
 
-- **Config** - the component's specification. This is where the substantive configuration is done.
-- **Labels** - Kubernetes labels and annotations for the component, edited separately from the rest of the spec so that metadata does not crowd out configuration.
-- **Json Schema** - the raw schema the form was generated from, in a JSON viewer. Useful when you want to see exactly what a field expects, and it links out to the component's entry in the Meshery registry.
-- **Relationships** - the relationships this component participates in, and the components at the other end of them.
+Drag a component onto another and release. Valid targets are the components that form an inventory or wallet relationship with it, and Kanvas outlines them in green while you drag. The same drop works when you drag a component from the palette onto an existing component.
 
-## Field help and validation
+- **Inventory.** The child is drawn inside the parent. For example, a Pod dropped on a Namespace becomes its child. You can collapse and expand parents.
+- **Wallet.** The child is absorbed into the host and shown as a green badge at the host's bottom-right corner with the item count. Select the badge to list the items, then select an item to open its configurator. A sidecar attached to a workload is an example.
 
-Each field carries its documentation with it. A **?** icon at the right of a field opens a tooltip containing that field's description, taken straight from the component's definition - so the guidance you get is the upstream project's own, not a Kanvas paraphrase. Nested objects and arrays carry the same help on their group headings.
+A component has at most one parent. Dropping it into a new parent replaces the old relationship, and dropping it on empty canvas removes it.
 
-When a value is not valid for that field, a red error icon appears alongside, and its tooltip gives the validation message. The component itself also picks up a validation warning badge on the canvas, so a problem you scroll past in the form is still visible when you close the panel. See [Interpreting Component Badges]({{< ref "kanvas/designer/interpreting-component-badges/index.md" >}}).
+![Dropping a child component into a parent](images/relationships/create-parent-child.gif)
 
-## Changes take effect as you type
+![A wallet badge showing attached items on the host component](images/relationships/create-inventory-wallet.gif)
 
-There is no Apply button. Edits are written into the design shortly after you stop typing, the canvas updates to match, and the design is saved to your account - see [Saving Designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}). Undo reverses a configuration change like any other edit.
+## Let labels form TagSets
 
-***
+You never draw a TagSet. When components carry labels or annotations that match under a registry relationship definition, the next evaluation creates a TagSet and draws a translucent region around the group. See [Work with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).
 
-### See Also
+![Components with matching labels grouped into a TagSet](images/relationships/create-matchlabels.gif)
 
-* **[Understanding Design Components]({{< ref "kanvas/concepts/designs/index.md" >}}):** What the components on the palette represent.
-* **[Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}):** Every mouse interaction available on the canvas, including the ones that open this panel.
+## Remove a relationship
+
+- **Edge.** Select the edge and choose Delete in its toolbar. Kanvas marks the relationship deleted, and the next evaluation reverses its effects on configuration.
+- **Inventory.** Drag the child out of the parent, or right-click it and choose Move Out of Parent.
+- **Wallet.** No control deletes a wallet relationship by itself. Delete the component, or choose Move Out of Parent.
+- **TagSet.** No control deletes a TagSet. Change the labels so they no longer match, or hide the layer.
+
+![Deleting an edge relationship](images/relationships/delete-edge.gif)
+
+![Dragging a child out of a parent](images/relationships/delete-parent-child.gif)
+
+## Style an edge
+
+Select an edge to open its toolbar. It offers line color, line style (solid, dashed, or dotted), curve and arrow style, a label, and an animation (none or marching ants). Styling changes only appearance.
+
+## Hide a kind of relationship
+
+The Layers panel lists eight relationship kinds, each with a count and a show or hide toggle: hierarchical inventory, wallet, and alias; TagSets; and edge mount, network, annotation, and reference. Open the panel with the backslash key or from the design toolbar.
+
+Hiding a kind removes it from the canvas. It does not stop evaluation. Kanvas still evaluates the whole design, so configuration that a hidden relationship manages keeps syncing. The toggles are stored in the design, so they are saved with it, restored when it reopens, and shared with collaborators. Everything is visible by default.
+
+![The Layers panel with relationship toggles](images/relationships/layers-panel-relationships.gif)
+
+## Configuration sync
+
+When two components are related, the registry definition names which fields on each side are linked, and Kanvas writes values across them each time it evaluates the design. For example, changing a Service's port updates the matching container port on a related Deployment. The relationship definition decides the direction, so it can differ by kind. See [Policy Evaluation]({{< ref "kanvas/concepts/relationship-evaluation/index.md" >}}).
+
+## Limits
+
+- Kanvas draws at most 30 TagSets. Beyond that, it shows the warning "Skipped rendering of N matchlabels relationships due to limit of 30".
+- TagSets render only in Full render fidelity.
+- No other kind has a rendering limit.
+
+## See also
+
+- [Add and Configure Components]({{< ref "kanvas/guides/designing/configuring-components/index.md" >}}): the Relationships tab lists each component's relationships.
 
 
 --------------------------------------------------------------------------------
@@ -6633,6 +6064,365 @@ The Kanvas interface does not check a permission before it opens a terminal sess
 ## Customizing access
 
 Enterprise plans can define custom roles built from keychains, so you can grant a group exactly the permissions it needs, such as Validate Design without Deploy Design. In the Kanvas interface, a custom role changes what is offered only for the actions listed in [Where Kanvas checks a permission](#where-kanvas-checks-a-permission); Layer5 Cloud applies its own checks to sharing, private designs, and workspace assignments. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Relationships"
+url: /kanvas/concepts/relationships/index.md
+description: What relationships are, the kinds Kanvas draws and evaluates, how each one forms, and how relationships keep component configuration consistent.
+--------------------------------------------------------------------------------
+
+A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other's storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.
+
+## Kinds of relationship
+
+The Layers panel lists eight kinds of relationship, which fall into three families.
+
+### Edge relationships
+
+An edge is a line between two components that interact. You draw it by hand. Kanvas lists the edges the registry allows from the component you start on, and highlights the targets that are compatible.
+
+| Subtype | Meaning | Example |
+|---|---|---|
+| Network | Traffic can flow between the components. The edge labels source and target ports and protocols. | A Service gives a stable endpoint to a Deployment's replicas. |
+| Mount | One component gives storage or files to another, through a binding component placed between them. | A PersistentVolume mounted into a Pod. |
+| Reference | One component points to another by name, identifier, or scope. It declares a dependency and does not itself grant access or carry traffic. | A Pod that references a ConfigMap or a Secret. |
+| Annotation | A line you draw with the Pen tool to explain flow. It has no effect on configuration. | A traced request path on a diagram. |
+
+![An edge network relationship between a Service and a Deployment](images/EdgeNetworkRelationship.svg)
+
+![An edge mount relationship between a PersistentVolume and a Pod](images/EdgeMountRelationship.svg)
+
+![An edge reference relationship from a Deployment to a ConfigMap](images/reference-deployment-configmap.png)
+
+The registry can define other edge subtypes. They appear in the edge picker when they can start from the selected component.
+
+### Hierarchical relationships
+
+A hierarchical relationship nests one component in another. A component has at most one parent.
+
+- **Inventory.** The child is drawn inside its parent, as a Pod sits inside a Namespace. Because the Namespace's name is the Pod's namespace, the parent's configuration flows to the child.
+- **Wallet.** The child is absorbed into its host and shown as a count badge on the host, as a sidecar is attached to a workload.
+- **Alias.** The child stands for one field inside its parent. Editing the alias edits that field of the parent.
+
+![A hierarchical parent relationship between a Namespace and a Pod](images/Hierarchical_Parent_Relationship.svg)
+
+### TagSets
+
+Components that carry matching labels or annotations form a TagSet. Kanvas never asks you to draw one. It appears when the labels match and disappears when they stop matching. See [Work with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).
+
+![A TagSet drawn around components with matching labels](images/tags.png)
+
+## How relationships form
+
+Three mechanisms create relationships:
+
+| Mechanism | Kinds |
+|---|---|
+| You create them: drag an edge, drop a component into a parent, or draw with the Pen | Edge, inventory, wallet, annotation |
+| Evaluation creates them from the registry definitions | TagSets, alias, and any relationship the definitions say should exist |
+| Paste or duplicate copies them with the components | Any relationship whose two ends are both in the copied set |
+
+Deleting a component marks the relationships that touched it as deleted. The next evaluation then reverses their effects on configuration.
+
+## Relationships keep configuration in sync
+
+Evaluation is the process that applies relationship definitions to a design. It runs shortly after a change, writes values across related fields, and can add or remove components and relationships. The direction of a write depends on the definition and the kind.
+
+| Kind | Typical direction | Example |
+|---|---|---|
+| Inventory | Parent to child | The child takes its namespace from the parent Namespace. |
+| Edge | Source to target | A Service's port is written into the related Deployment's container port. |
+| Wallet | Attached item to host | The host takes the item's configuration. |
+
+Treat these as typical. The relationship definition is the authority, and Kanvas does not hard-code a direction. [Policy Evaluation]({{< ref "kanvas/concepts/relationship-evaluation/index.md" >}}) explains when evaluation runs and why results can change after you stop editing.
+
+## What relationships mean at deploy time
+
+Annotation edges, TagSets, and the drawing of any relationship never change what Kanvas deploys by themselves. What gets deployed is the configuration of each component. Relationships matter because they decided what that configuration is.
+
+## Related pages
+
+- [Create Relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}): create, remove, and hide relationships.
+- [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}): what a design contains.
+
+
+--------------------------------------------------------------------------------
+title: "Policy Evaluation"
+url: /kanvas/concepts/relationship-evaluation/index.md
+description: How Kanvas evaluates the relationships in a design continuously, which engine runs the evaluation, what triggers it, and why results can change after you stop editing.
+--------------------------------------------------------------------------------
+
+Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry's [relationship]({{< ref "kanvas/concepts/relationships/index.md" >}}) definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.
+
+Evaluation never blocks editing. You can keep designing while it runs, and a new edit supersedes the evaluation in progress.
+
+## What triggers evaluation
+
+Evaluation runs after any of these changes:
+
+- A configuration value or a display name changes.
+- A relationship is added or removed.
+- A component is added, removed, duplicated, or merged.
+- A design loads, or an import or merge completes.
+
+Kanvas waits until changes stop for about one second, then evaluates. Another change during evaluation restarts the cycle. Selecting the indicator icon forces an evaluation, and a new design resets evaluation state.
+
+## Two interchangeable engines
+
+| Engine | Where it runs | Properties |
+|---|---|---|
+| Meshery server | In your Meshery server | Always available. |
+| Client-side (WASM) | In a background worker in your browser | No round trips to the server, so it is typically faster. A WASM evaluation times out after 10 seconds. |
+
+Both engines apply the same policy engine and the same definitions. The choice changes where the work happens.
+
+### Choosing the engine
+
+The Relationship Evaluation Engine preference lives in the Options dialog, which you open from the canvas right-click menu.
+
+| Value | Behavior |
+|---|---|
+| Automatic (recommended) | The default. At load, Kanvas tries to start the WASM engine and waits up to 30 seconds for it to report ready. If it starts, WASM is used. If not, the Meshery server is used. |
+| Meshery server | Always uses the server. |
+| Client-side (WASM) | Always uses WASM. |
+
+The preference is saved to your user preferences, so it applies on all your devices and designs. Kanvas chooses the engine once, when Designer loads, so reload Kanvas for a change to take effect.
+
+Two behaviors to know:
+
+- Forcing Client-side (WASM) gives no fallback. If the engine fails to start, evaluations fail silently and relationships stop updating. Switch to Automatic or Meshery server and reload.
+- Automatic checks only that the engine initializes. It does not fall back to the server later if the WASM engine fails after a successful start.
+
+## Reading the indicator
+
+The top toolbar shows an icon for relationship evaluation. Its state is in the tooltip.
+
+| State | Tooltip |
+|---|---|
+| Running | "Evaluating relationships..." with a spinning icon |
+| Done | "Relationships evaluated" and the time elapsed, a summary of the actions the evaluator applied, and a View Evaluation History button |
+| Nothing evaluated | "No relationships evaluated yet" |
+
+There is no error state. A failed evaluation clears the last-evaluation details, so the tooltip returns to "No relationships evaluated yet", and the failure is logged to the browser console only. If relationships stop updating, check the engine first.
+
+When Kanvas applies an evaluation result and decides to skip it, it shows the notice "Skipping evaluation application", with a reason when one is known. A successful evaluation shows no message.
+
+## Diagnosing unexpected results
+
+1. Turn on Enable Debugger in the Options dialog. It is off by default.
+2. Open the debugger and go to its Evaluation Engine tab.
+3. Read the status: Initialized, Not Initialized, or Not Available. Read the engine type, WASM or SERVER, and any initialization error. The tab refreshes every second.
+4. If WASM is not initialized, or results look wrong, set the engine to Meshery server, reload, and compare.
+5. Make any change to re-trigger evaluation.
+
+If the server engine also gives wrong results, file an issue that includes the engine type, any initialization error, the relationships you expected, and the design or a minimal version of it.
+
+## Large designs
+
+Evaluation covers the whole design regardless of which relationship layers you hide. In Adaptive render mode, Kanvas can suggest cost-saving changes when a design grows: disabling TagSets when there are more than 5, collapsing parents when there are more than 10, hiding unused components when there are more than 200, and using Wireframe mode when there are more than 100 relationships. Each suggestion appears at most once per 60 seconds.
+
+## Related pages
+
+- [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}): the kinds that evaluation applies.
+- [Create Relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}): what you create by hand.
+
+
+--------------------------------------------------------------------------------
+title: "Whiteboard on the Canvas"
+url: /kanvas/guides/designing/whiteboarding/index.md
+description: Sketch freehand, draw annotation lines, and add shapes, text, sections, images, and comments alongside real components.
+--------------------------------------------------------------------------------
+
+{{< youtube id=o58hO4RDCR4 class="yt-embed-container" >}}
+
+*[Whiteboarding in Kanvas]({{< ref "videos/features/kanvas/whiteboarding-in-kanvas.md" >}}) (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.*
+
+Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.
+
+Drawn objects are saved with the design and shared live with collaborators. They are components marked as annotations, so they count toward your plan's components-per-design limit. See [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}).
+
+This guide covers the drawing tools. For per-object operations such as copying, locking, and resizing, see [Working with Canvas Objects]({{< ref "kanvas/designer/canvas-objects/index.md" >}}).
+
+## The dock {#step-3-utilizing-whiteboard-tools}
+
+The dock sits at the bottom of the canvas in Designer mode. Its tools, left to right:
+
+| Tool | Shortcut | What it does |
+|---|---|---|
+| Select | <kbd>V</kbd> | Select, move, and configure objects. |
+| Hand | <kbd>H</kbd>, or hold <kbd>Space</kbd> | Pan the canvas. |
+| Components | - | Open the component palette. |
+| Kubernetes | - | Open every Kubernetes component. |
+| Shapes | - | Browse shape categories. |
+| Comment | <kbd>M</kbd> | Drop a comment thread. |
+| Image | <kbd>I</kbd> | Pick an image file and place it. |
+| TextBox | <kbd>T</kbd> | Add a text box. |
+| Section | <kbd>S</kbd> | Add a labeled, dashed region that holds other objects. |
+| Pen | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>E</kbd> | Draw annotation lines. |
+| Pencil | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>P</kbd> | Draw freehand. |
+| Help Center | <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> | Open help. |
+
+The Pen and Pencil icons turn green while their mode is active. Press <kbd>Esc</kbd> to leave a mode. Pinned models appear after a divider at the right end. See [Pin Models to the Dock]({{< ref "kanvas/guides/designing/pin-model-to-dock/index.md" >}}).
+
+![The Kanvas Designer dock](images/whiteboard-dock.png)
+
+The dock scrolls horizontally when it overflows, and it is greyed out while the app is in an error state, for example after a failed save. In Operator mode only the Select and Hand tools, Help Center, and minimized panels remain.
+
+### Turn tools on or off
+
+The canvas right-click menu opens an Options dialog with these toggles, all on by default:
+
+- **Enable Dock** hides or shows the entire dock, including component pickers, not only the drawing tools.
+- **Enable Pencil** and **Enable Pen** hide or show those two icons.
+
+Each change saves to your user preferences, so it applies to all your designs and devices. The toggles hide icons only. The keyboard shortcuts for Pen, Pencil, <kbd>M</kbd>, <kbd>T</kbd>, <kbd>S</kbd>, and <kbd>I</kbd> keep working.
+
+![The Options dialog with Enable Dock, Enable Pencil, and Enable Pen turned on](images/canvas-options.png)
+
+No permission key gates drawing. Tier listings show Pencil, Pen, and 500 built-in shapes on Free, Team Designer, Team Operator, and Enterprise.
+
+## Draw freehand with the Pencil
+
+Each stroke becomes one filled shape. Defaults are caribbean green, thickness 1, and opacity 1. There is no color or thickness control before you draw. Afterward, select the stroke and use its style toolbar to change fill color, opacity, and border.
+
+## Draw lines with the Pen
+
+The Pen is Connector mode. Click empty canvas to place a small terminal point, then click elsewhere to place another and join them with a line. Repeated clicks draw a connected polyline. Starting from a component's edge handle also works. Cancelling mid-draw removes the dangling point.
+
+Pen lines are annotation edges. They explain flow and do not change any component's configuration. Style them like any edge: color, line style, arrow and curve style, label, and animation.
+
+Pan and box selection are off while you draw with the Pen or Pencil.
+
+## Add shapes, text, sections, images, and comments
+
+- **Shapes.** Choose from the shape categories. A shape carries no configuration and is never deployed. You can swap any object's outline for one of 24 shapes while keeping its content, position, and size.
+- **Text boxes.** Double-click to edit text inline. Text options include color, weight (regular, medium, semi bold, bold, black), underline or strikethrough, alignment, and font size.
+- **Sections.** A section groups the objects dropped inside it, and they move with it.
+- **Images.** Images up to 512,000 bytes are embedded in the design. Larger files are rejected.
+- **Comments.** A comment opens a discussion thread on the canvas. Resolved threads disappear from the canvas until reopened. See [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}).
+
+![Shapes customization on the canvas](images/shapes_introduction.gif)
+
+## Style objects and lines
+
+Select an object to open its toolbar. Controls appear only when the object supports them.
+
+![The style tooltip for a text box](images/text-customization.png)
+
+| Control | Options |
+|---|---|
+| Fill | 13 swatches including transparent, with opacity from 0 to 1 |
+| Border | Color, style (solid, dotted, dashed, double), thickness from 0 to 25 |
+| Layer order | Move to front, forward, backward, to back |
+| Animation | None, blink, ripple, bounce, pulse |
+| Line style | Solid, dashed, or dotted; ten curve styles; eleven arrow heads |
+| Line animation | Marching ants, which shows the direction of flow |
+
+![Editing a line's style](images/line-editing.gif)
+
+![The marching ants animation on a line](images/marching-ants.gif)
+
+## Collaborate
+
+Every change, including drawn objects, syncs live between everyone in the design through a shared document over a peer-to-peer session. Each collaborator appears as an avatar in the toolbar, and live cursors and selections are shared. Undo and redo cover the shared document: components, configuration, styles, relationships, drawn objects, and layer toggles.
+
+## Limits and behavior
+
+- Drawn objects are saved with the design. Kanvas never deploys annotations.
+- Images and text files over about 500 KB are rejected, whatever your plan.
+
+
+--------------------------------------------------------------------------------
+title: "Pin Models to the Dock"
+url: /kanvas/guides/designing/pin-model-to-dock/index.md
+description: Keep the models you use most one step away in the dock, and remove them when you no longer need them.
+--------------------------------------------------------------------------------
+
+Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.
+
+Pinning works in Designer mode. In Operator mode the dock does not show pinned models.
+
+## Pin a model
+
+Hover a model row in the component palette and use the pin icon. Its tooltip reads "Pin To Dock". The shape palette offers the same pin on each shape category row.
+
+![The Pin To Dock action on a model in the component list](images/pin-to-dock.png)
+
+Only models and shape categories can be pinned. Individual components cannot. There is no limit on how many models you pin. Kanvas matches pins by model name, so pinning the same model at a different version is the same pin.
+
+## Use a pinned model
+
+Pinned models appear after a divider at the right end of the dock.
+
+![A pinned model displayed in the dock](images/pinned-model-location.png)
+
+Select a pinned model to open a picker with its components. Click a component to add it near the center of the canvas, or drag it to a specific spot. The picker has its own search box and a version selector with an "All Versions" choice. A pinned model whose lookup returns nothing is not drawn.
+
+![Components of a pinned model in the picker](images/use-pinned-models-components.png)
+
+## Remove a pin
+
+Either of these removes the pin without affecting any design:
+
+- Select the pin icon again on the model row. Its tooltip reads "Remove From Dock".
+- Hover the pinned model in the dock and select the close (X) badge.
+
+![The Remove From Dock action](images/unpin-model-1.png)
+
+![Unpinning with the close badge](images/unpin-model-2.png)
+
+## Default dock
+
+With nothing pinned the dock holds Select, Hand, Components, Kubernetes, Shapes, Comment, Image, TextBox, Section, Pen, Pencil, and Help Center. See [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Work with Tags"
+url: /kanvas/guides/designing/tagsets/index.md
+description: Add labels and annotations to components and see components that share labels grouped into TagSets on the canvas.
+--------------------------------------------------------------------------------
+
+Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.
+
+## Add labels and annotations
+
+Open a component's configurator and go to its Labels tab. It holds two key-value maps:
+
+- **Labels** identify and select Kubernetes components.
+- **Annotations** attach extra metadata to a component.
+
+Values are strings and default to empty. The form checks only the type, so it does not enforce Kubernetes label syntax. Edits are written 300 ms after you stop typing and trigger a relationship evaluation. See [Add and Configure Components]({{< ref "kanvas/guides/designing/configuring-components/index.md" >}}).
+
+![Adding labels to components](images/tagsets.gif)
+
+<img alt="Components with matching labels grouped into one TagSet" src="images/group-components.png" width="50%" />
+
+## How grouping works
+
+Grouping is automatic. No button creates a TagSet. After you change labels, Kanvas evaluates the design, and where the registry's relationship definitions say labels match, it creates a TagSet and draws a translucent steel-blue region around the group. The Layers panel lists these as hierarchical TagSets.
+
+- To remove a TagSet, change the labels so they no longer match.
+- To hide TagSets, switch off their toggle in the Layers panel. Evaluation continues.
+
+## Limits
+
+| Limit | Behavior |
+|---|---|
+| Render fidelity | TagSets draw only in Full render fidelity. |
+| Maximum drawn | 30. Past that, Kanvas warns "Skipped rendering of N matchlabels relationships due to limit of 30". |
+| Region outline | Kanvas builds the outline from the first 10 members of a group. Later members are still inside the region. |
+| Adaptive mode | With more than 5 TagSets, Kanvas suggests disabling them to improve performance. |
+
+## What tags do not do
+
+- Designer has no filter that shows only components with a given tag. Operator mode filters live resources by namespace, kind, model, label, and free-text search.
+- Palette search matches model and component names, not labels.
+
+## See also
+
+- [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}): how TagSets fit with the other kinds.
+- [Create Relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}): hiding relationship kinds.
 
 
 --------------------------------------------------------------------------------
@@ -6888,6 +6678,12 @@ date: "2026-08-26"
 
 Thank you to our contributors for making this release possible:
 @CodeAhmedJamil, @chellej, @hamza-mohd, @l5io, @rishiraj38, @ritzorama and @willcalcote
+
+
+--------------------------------------------------------------------------------
+title: "Configuring Components"
+url: /kanvas/designer/configuring-components/index.md
+--------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------
@@ -9238,6 +9034,12 @@ To delete the resources, use the **Undeploy** option from the _Design_ view.
 
 ## Conclusion
 Congratulations! You've successfully completed a tutorial on Kubernetes ConfigMaps and Secrets using the Meshery Playground. This hands-on experience should have equipped you with practical knowledge on managing configuration data and sensitive information in Kubernetes. Continue exploring more such scenarios in the Meshery Playground to enhance your skills.
+
+
+--------------------------------------------------------------------------------
+title: "Whiteboarding"
+url: /kanvas/designer/whiteboarding/index.md
+--------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------

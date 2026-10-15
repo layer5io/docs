@@ -92,13 +92,7 @@
  class="md-image-responsive" /&gt;
  &lt;/picture&gt;
 &lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/tasks/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/whiteboarding/</guid><description>&lt;p&gt;With Kanvas Designer you can draw shapes, lines, text, add custom styles, images and icons to represent the components and relationships of your Kubernetes clusters as you see fit. Kanvas supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas also enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together.&lt;/p&gt;
-
-&lt;h2 id="using-the-shapes-palette" class="heading-link"&gt;
- Using the shapes palette
- &lt;a href="#using-the-shapes-palette" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Open the shapes tool in the dock to browse the shape libraries and drag a shape onto the canvas. See &lt;a href="/kanvas/designer/canvas-objects/#adding-shapes"&gt;Adding shapes&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
+&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
 &lt;p&gt;Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
 
 &lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
@@ -807,28 +801,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  &lt;/div&gt;
  &lt;div class="tab-body tab-pane fade"
  id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
- &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;</description></item><item><title>Creating Relationships</title><link>/kanvas/getting-started/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/creating-relationships/</guid><description>&lt;h2 id="benefits-of-using-relationships" class="heading-link"&gt;
- Benefits of Using Relationships
- &lt;a href="#benefits-of-using-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Improved Visibility&lt;/strong&gt;: Clear visual representation of connections between components&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Enhanced Design&lt;/strong&gt;: Make informed decisions about component selection and placement&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Automated Configuration&lt;/strong&gt;: Relationship-driven actions automate configuration of components&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Increased Flexibility&lt;/strong&gt;: Use of selectors and operators provides flexibility in defining relationships&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Better Understanding&lt;/strong&gt;: Easily comprehend the overall structure and dependencies of your managed systems&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="what-are-relationships" class="heading-link"&gt;
- What are Relationships
- &lt;a href="#what-are-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Relationships in Meshery characterize how components connect and interact with each other. They define the structure and dependencies between components in your designs, providing a clear representation of your infrastructure&amp;rsquo;s architecture. Relationships are highly expressive, capturing various forms of interaction between interconnected components regardless of their genealogy.&lt;/p&gt;</description></item><item><title>Deploying Designs</title><link>/kanvas/tasks/designs/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deploying-designs/</guid><description>&lt;ol&gt;
+ &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Deploying Designs</title><link>/kanvas/tasks/designs/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deploying-designs/</guid><description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;To deploy a design, navigate to the &lt;strong&gt;Actions&lt;/strong&gt; button at the top of the Design canvas.&lt;/p&gt;
 &lt;/li&gt;
@@ -886,39 +859,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  &lt;img src="images/kanvas-comment.png" alt="Comments in Designer" /&gt;
  &lt;figcaption&gt;Example of comments in Designer&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;p&gt;Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.&lt;/p&gt;</description></item><item><title>Understanding Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;h2 id="what-are-relationships" class="heading-link"&gt;
- What are Relationships?
- &lt;a href="#what-are-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Relationships define the nature of interaction between interconnected components in Kanvas. They represent various types of connections and dependencies between components no matter the genealogy of the relationship such as parent, siblings, binding.&lt;/p&gt;
-
-&lt;h2 id="types-of-relationships" class="heading-link"&gt;
- Types of Relationships
- &lt;a href="#types-of-relationships" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Relationships are categorized into different kinds, types, and subtypes, so that can be expressive of the specific manner in which one or more components relate to one another.&lt;/p&gt;</description></item><item><title>Working with Components</title><link>/kanvas/getting-started/working-with-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/working-with-components/</guid><description>&lt;h2 id="configuring-components" class="heading-link"&gt;
- Configuring Components
- &lt;a href="#configuring-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Once you’ve added components to your design in Kanvas, configuring them is a critical step in customizing and optimizing your cloud-native infrastructure. Configuring components allows you to fine-tune their behavior, set specific parameters, and ensure they meet the precise needs of your architecture.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/getting-started/working-with-components/images/working-with-components/configuration-panel_hu_fd04d7811b478f64.webp" type="image/webp" width="2940" height="1266"&gt;
- &lt;img src="images/working-with-components/configuration-panel.png" onclick="openModal(this)" alt="configuration-panel"
- width="2940" height="1266"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Select the Component:&lt;/strong&gt; Click on the component on the Kanvas canvas that you want to configure. This action opens the Configuration Panel.&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
+&lt;p&gt;Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
  Steps to cloning a design from Catalog using Kanvas
  &lt;a href="#steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -1001,32 +942,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 &lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Working with Tags</title><link>/kanvas/designer/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/tagsets/</guid><description>&lt;p&gt;You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Related Concept&lt;/h4&gt;
- 
- Kubernetes resources are capable of being assigned Label and Annotation key/value pairs. When pairs of Labels or Annotations match, a relationship is formed and visualized as shown below.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="grouping-components-with-tags" class="heading-link"&gt;
- Grouping Components with Tags
- &lt;a href="#grouping-components-with-tags" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 &lt;p&gt;Everything you place on a Kanvas Designer canvas is an object, and every object answers to the same
 small set of gestures. You add it, you style it, you copy or clone it, you lock it so nobody nudges
@@ -1077,7 +993,46 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Step 2: Select Design in Sidebar
  &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
+&lt;p&gt;You need a design open in Designer mode. Designer is the only mode that allows authoring.&lt;/p&gt;
+
+&lt;h2 id="add-a-component" class="heading-link"&gt;
+ Add a component
+ &lt;a href="#add-a-component" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kanvas offers several ways to place a component. All of them produce the same result: a component in the design, with its configurator open beside it.&lt;/p&gt;</description></item><item><title>Build Designs</title><link>/kanvas/guides/designing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/</guid><description>&lt;p&gt;These guides cover the tasks you perform while authoring a design in Designer mode. Each one accomplishes a single task and assumes you know what a design, a component, and a relationship are. If you do not, read &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; and &lt;a href="/kanvas/concepts/relationships/"&gt;Relationships&lt;/a&gt; first.&lt;/p&gt;
+&lt;p&gt;Authoring happens only in Designer mode. Operator mode shows live cluster state and blocks adding, editing, duplicating, and deleting components.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Goal&lt;/th&gt;
+ &lt;th&gt;Guide&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Add components, edit their configuration, lock, duplicate, copy, and paste them&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/designing/configuring-components/"&gt;Add and Configure Components&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Connect components and remove connections&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/designing/creating-relationships/"&gt;Create Relationships&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Draw, label, and annotate a design with shapes, text, and lines&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/designing/whiteboarding/"&gt;Whiteboard on the Canvas&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Keep frequently used models one step away in the dock&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/designing/pin-model-to-dock/"&gt;Pin Models to the Dock&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Group components by shared labels&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/designing/tagsets/"&gt;Work with Tags&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For how Kanvas decides which relationships exist and keeps their configuration in sync, read &lt;a href="/kanvas/concepts/relationship-evaluation/"&gt;Policy Evaluation&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Along the way you learn what a design is made of, how relationships express the way components depend on each other, and when and how Kanvas saves your work.&lt;/p&gt;</description></item><item><title>Designs and Components</title><link>/kanvas/concepts/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designs/</guid><description>&lt;p&gt;A design is the unit of work in Kanvas. It is a declarative description of infrastructure that you author on a canvas, save as a versioned document, share with others, and deploy to your clusters. Components are the building blocks of a design: some represent real infrastructure that Kanvas deploys, and others are annotations that only explain the design. Knowing which is which, and how a design behaves when you save, share, and deploy it, tells you exactly what Kanvas will do with your work.&lt;/p&gt;</description></item><item><title>Getting Started</title><link>/kanvas/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/</guid><description>&lt;p&gt;Kanvas turns cloud native infrastructure into a design you can see, check, and deploy. This section takes you from an empty canvas to resources running in a Kubernetes cluster. Along the way you learn the four ideas that every other Kanvas page builds on, and which parts of Kanvas need a Meshery deployment of your own.&lt;/p&gt;
 
 &lt;h2 id="what-you-will-learn" class="heading-link"&gt;
@@ -1106,17 +1061,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Where do you want to work?
  &lt;a href="#where-do-you-want-to-work" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kanvas runs in two places. Both use the same Designer, but only a Meshery you run can reach your clusters.&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
-&lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
-identify connections, validate them, and keep related configuration in sync.
-This page explains how you can choose which engine performs that evaluation, how
-to read the relationship indicator, and how to diagnose results that look wrong.&lt;/p&gt;
-
-&lt;h2 id="how-relationships-are-evaluated" class="heading-link"&gt;
- How Relationships Are Evaluated
- &lt;a href="#how-relationships-are-evaluated" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Kanvas can run relationship evaluation using one of two interchangeable engines:&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
+&lt;p&gt;Kanvas runs in two places. Both use the same Designer, but only a Meshery you run can reach your clusters.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
 &lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
 &lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Merging and Loading Designs</title><link>/kanvas/designer/merging-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/merging-designs/</guid><description>&lt;p&gt;Designs are rarely built from nothing. A platform design usually starts from an existing one - a team&amp;rsquo;s base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.&lt;/p&gt;
 
@@ -1125,16 +1070,74 @@ to read the relationship indicator, and how to diagnose results that look wrong.
  &lt;a href="#dragging-a-design-onto-the-canvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Drag a design from the design list, the catalog or your workspace and drop it onto the canvas.&lt;/p&gt;</description></item><item><title>Saving Designs</title><link>/kanvas/designer/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/saving-designs/</guid><description>&lt;p&gt;While you are signed in, Kanvas saves for you. There is no save button you must remember to press before closing the tab: every change you make to a design - adding a component, moving it, editing its configuration, drawing a relationship, renaming the design - is persisted to your account as you make it.&lt;/p&gt;
-&lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Configuring Components</title><link>/kanvas/designer/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/configuring-components/</guid><description>&lt;p&gt;A component is the fundamental building block of a design - it represents one piece of the infrastructure under management, and its configuration is what will actually be applied when the design is deployed. The component configurator is where that configuration is edited.&lt;/p&gt;
-&lt;p&gt;Kanvas does not ask you to write YAML for this. The form is built from the component&amp;rsquo;s own definition, as published by the model it belongs to, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.&lt;/p&gt;</description></item><item><title>Deploy and Observe Your First Design</title><link>/kanvas/getting-started/design-to-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/design-to-deployment/</guid><description>&lt;p&gt;In this tutorial you take the design you saved in &lt;a href="/kanvas/getting-started/starting-scratch/"&gt;Create Your First Design&lt;/a&gt; to a live Kubernetes cluster. You validate it, dry-run it against the cluster, deploy it, and then switch to Operator mode to see the running resources that belong to the design. You finish by undeploying it.&lt;/p&gt;
-&lt;p&gt;Along the way you learn the difference between checking a design against its schemas and checking it against a cluster, how Kanvas chooses where to deploy, and how Kanvas keeps track of the resources a design creates.&lt;/p&gt;</description></item><item><title>Concepts</title><link>/kanvas/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/</guid><description>&lt;p&gt;Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.&lt;/p&gt;
+&lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Create Relationships</title><link>/kanvas/guides/designing/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/creating-relationships/</guid><description>&lt;p&gt;Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.&lt;/p&gt;
+&lt;p&gt;Relationships work only in Designer mode. For what each kind means, read &lt;a href="/kanvas/concepts/relationships/"&gt;Relationships&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Kind&lt;/th&gt;
+ &lt;th&gt;You create it by&lt;/th&gt;
+ &lt;th&gt;You remove it by&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Edge (network, mount, reference, and other edge subtypes)&lt;/td&gt;
+ &lt;td&gt;Picking an edge from a component&amp;rsquo;s handle and dragging to a target&lt;/td&gt;
+ &lt;td&gt;Selecting the edge and choosing Delete&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Hierarchical, inventory&lt;/td&gt;
+ &lt;td&gt;Dropping a component onto a compatible parent&lt;/td&gt;
+ &lt;td&gt;Dragging it out, or choosing Move Out of Parent&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Hierarchical, wallet&lt;/td&gt;
+ &lt;td&gt;Dropping a component onto a compatible host&lt;/td&gt;
+ &lt;td&gt;Deleting the component, or choosing Move Out of Parent&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Hierarchical, alias&lt;/td&gt;
+ &lt;td&gt;Kanvas creates it during evaluation&lt;/td&gt;
+ &lt;td&gt;Deleting the alias component&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;TagSets (shared labels)&lt;/td&gt;
+ &lt;td&gt;Giving components matching labels&lt;/td&gt;
+ &lt;td&gt;Changing the labels so they stop matching&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Annotation edge&lt;/td&gt;
+ &lt;td&gt;Drawing with the Pen tool&lt;/td&gt;
+ &lt;td&gt;Selecting the edge and choosing Delete&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="create-an-edge-relationship" class="heading-link"&gt;
+ Create an edge relationship
+ &lt;a href="#create-an-edge-relationship" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Edge relationships connect components that exchange traffic or depend on one another, such as a Service and a Deployment.&lt;/p&gt;</description></item><item><title>Deploy and Observe Your First Design</title><link>/kanvas/getting-started/design-to-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/design-to-deployment/</guid><description>&lt;p&gt;In this tutorial you take the design you saved in &lt;a href="/kanvas/getting-started/starting-scratch/"&gt;Create Your First Design&lt;/a&gt; to a live Kubernetes cluster. You validate it, dry-run it against the cluster, deploy it, and then switch to Operator mode to see the running resources that belong to the design. You finish by undeploying it.&lt;/p&gt;
+&lt;p&gt;Along the way you learn the difference between checking a design against its schemas and checking it against a cluster, how Kanvas chooses where to deploy, and how Kanvas keeps track of the resources a design creates.&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Whiteboard on the Canvas</title><link>/kanvas/guides/designing/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.&lt;/p&gt;</description></item><item><title>Concepts</title><link>/kanvas/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/</guid><description>&lt;p&gt;Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.&lt;/p&gt;
 &lt;p&gt;Each part of Kanvas plays one role around that design:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Designer authors the design.&lt;/strong&gt; You place components, connect them, and configure them on a shared canvas. Every save creates a new version, and collaborators can edit the same design at the same time.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Meshery validates and deploys the design.&lt;/strong&gt; It checks the design against component schemas, dry-runs it against target clusters, and deploys or undeploys it on the Kubernetes contexts you choose.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Operator shows the running result.&lt;/strong&gt; It displays live cluster state and links it back to the design: every resource Kanvas deploys carries the identity of its source design, so Operator can show exactly what one design produced.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; explains visibility in full.&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/videos/getting-started/comments/publish-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/publish-design/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; explains visibility in full.&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
+
+&lt;h2 id="add-labels-and-annotations" class="heading-link"&gt;
+ Add labels and annotations
+ &lt;a href="#add-labels-and-annotations" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open a component&amp;rsquo;s configurator and go to its Labels tab. It holds two key-value maps:&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/videos/getting-started/comments/publish-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/publish-design/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/UCKS4eSB7AY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 

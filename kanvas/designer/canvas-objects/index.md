@@ -16,7 +16,7 @@ a plain **shape** used as a legend key.
 
 This page documents those gestures once and calls out the places where a particular kind of object
 behaves differently. If you are looking for the freestyle pen and pencil tools instead, see
-[Whiteboarding](/kanvas/designer/whiteboarding/).
+[Whiteboarding](/kanvas/guides/designing/whiteboarding/).
 
 ## The four kinds of canvas object {#canvas-objects}
 
@@ -57,7 +57,7 @@ Diamond, Explosion, Flash, HalfFrame, Heptagon, Hexagon and more.
 
 Drag a shape from the picker onto the canvas to place it where you want it. If you find yourself
 reaching for the same library repeatedly, pin it to the dock - see
-[Pinning a Model to the Dock](/kanvas/designer/pin-model-to-dock/).
+[Pinning a Model to the Dock](/kanvas/guides/designing/pin-model-to-dock/).
 
 ### Adding sections {#adding-sections}
 
@@ -299,9 +299,9 @@ corresponding control simply does not appear on the canvas.
 
 ## Related reading
 
-- [Whiteboarding](/kanvas/designer/whiteboarding/) - the pen and pencil tools, and line styling.
+- [Whiteboarding](/kanvas/guides/designing/whiteboarding/) - the pen and pencil tools, and line styling.
 - [Understanding Tool Modes](/kanvas/designer/understanding-tool-modes/) - selection, pan and connector modes.
 - [Keyboard Shortcuts](/kanvas/reference/keyboard-shortcuts/) - the full shortcut reference.
-- [Working with Components](/kanvas/getting-started/working-with-components/) - configuring the components you place.
+- [Working with Components](/kanvas/guides/designing/configuring-components/) - configuring the components you place.
 - [Reviewing Designs](/kanvas/designer/comments/) - comments, which are annotations with their own lifecycle.
 

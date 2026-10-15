@@ -304,12 +304,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  &lt;/div&gt;
  &lt;div class="tab-body tab-pane fade"
  id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
- &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
+ &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/kanvas-comment.png" alt="Comments in Designer" /&gt;
  &lt;figcaption&gt;Example of comments in Designer&lt;/figcaption&gt;
@@ -371,32 +366,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 &lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Working with Tags</title><link>/kanvas/designer/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/tagsets/</guid><description>&lt;p&gt;You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Related Concept&lt;/h4&gt;
- 
- Kubernetes resources are capable of being assigned Label and Annotation key/value pairs. When pairs of Labels or Annotations match, a relationship is formed and visualized as shown below.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="grouping-components-with-tags" class="heading-link"&gt;
- Grouping Components with Tags
- &lt;a href="#grouping-components-with-tags" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 &lt;p&gt;Everything you place on a Kanvas Designer canvas is an object, and every object answers to the same
 small set of gestures. You add it, you style it, you copy or clone it, you lock it so nobody nudges
@@ -447,52 +417,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Step 2: Select Design in Sidebar
  &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Pinning Models to the Dock</title><link>/kanvas/designer/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/pin-model-to-dock/</guid><description>&lt;p&gt;The Kanvas Designer dock allows you to keep your most-used models and tools within easy reach. You can pin any model to the dock for quick access, and unpin it just as easily.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Pinning a model adds it to the dock at the bottom of the Designer interface. This helps you:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Quickly access frequently used models&lt;/li&gt;
-&lt;li&gt;Customize your workspace&lt;/li&gt;
-&lt;li&gt;Streamline your design workflow&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="how-to-pin-a-model" class="heading-link"&gt;
- How to Pin a Model
- &lt;a href="#how-to-pin-a-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Hover over the model you want to pin in the component list on the left side of the Designer.&lt;/li&gt;
-&lt;li&gt;Click the pin icon that appears next to the model name. A tooltip will show &amp;ldquo;Pin To Dock&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;The model will now appear in the dock at the bottom of the Designer.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/designer/pin-model-to-dock/images/pin-to-dock_hu_c3c62d21f63f4f37.webp" type="image/webp" width="1646" height="758"&gt;
- &lt;img src="images/pin-to-dock.png" onclick="openModal(this)" alt="Pin To Dock action"
- width="1646" height="758"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
-&lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
-identify connections, validate them, and keep related configuration in sync.
-This page explains how you can choose which engine performs that evaluation, how
-to read the relationship indicator, and how to diagnose results that look wrong.&lt;/p&gt;
-
-&lt;h2 id="how-relationships-are-evaluated" class="heading-link"&gt;
- How Relationships Are Evaluated
- &lt;a href="#how-relationships-are-evaluated" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Kanvas can run relationship evaluation using one of two interchangeable engines:&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
+&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
 &lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
 &lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Merging and Loading Designs</title><link>/kanvas/designer/merging-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/merging-designs/</guid><description>&lt;p&gt;Designs are rarely built from nothing. A platform design usually starts from an existing one - a team&amp;rsquo;s base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.&lt;/p&gt;
 
@@ -501,5 +426,4 @@ to read the relationship indicator, and how to diagnose results that look wrong.
  &lt;a href="#dragging-a-design-onto-the-canvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Drag a design from the design list, the catalog or your workspace and drop it onto the canvas.&lt;/p&gt;</description></item><item><title>Saving Designs</title><link>/kanvas/designer/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/saving-designs/</guid><description>&lt;p&gt;While you are signed in, Kanvas saves for you. There is no save button you must remember to press before closing the tab: every change you make to a design - adding a component, moving it, editing its configuration, drawing a relationship, renaming the design - is persisted to your account as you make it.&lt;/p&gt;
-&lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Configuring Components</title><link>/kanvas/designer/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/configuring-components/</guid><description>&lt;p&gt;A component is the fundamental building block of a design - it represents one piece of the infrastructure under management, and its configuration is what will actually be applied when the design is deployed. The component configurator is where that configuration is edited.&lt;/p&gt;
-&lt;p&gt;Kanvas does not ask you to write YAML for this. The form is built from the component&amp;rsquo;s own definition, as published by the model it belongs to, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Configuring Components</title><link>/kanvas/designer/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/configuring-components/</guid><description/></item><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description/></item></channel></rss>

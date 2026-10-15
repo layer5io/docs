@@ -116,7 +116,7 @@ Threshold table:
 | **Component style editing**  |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       | Same: revealed only at detailed zoom levels.                                                    |
 
 ¹ *Layout animation is a Full-mode-only feature by design. Kanvas falls back to instant (unanimated) layouts in other modes, so the per-mode threshold doesn't apply.*
-² *TagSet threshold is tag count, not node count. See [Working with Tags](/kanvas/designer/tagsets/).*
+² *TagSet threshold is tag count, not node count. See [Working with Tags](/kanvas/guides/designing/tagsets/).*
 ³ *Zoom-gated features activate when your zoom level is above `MIN_ZOOM_FOR_DETAILED_RENDERING`. Zooming out suppresses them regardless of render mode.*
 
 ### How size gates interact with render modes

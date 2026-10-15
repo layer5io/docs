@@ -1,107 +1,80 @@
-# Understanding  Relationships
+# Relationships
 
 
-> Kanvas uses relationships to map how interconnected components interact.
+> What relationships are, the kinds Kanvas draws and evaluates, how each one forms, and how relationships keep component configuration consistent.
 
 
+A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other's storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.
 
-## What are Relationships?
+## Kinds of relationship
 
-Relationships define the nature of interaction between interconnected components in Kanvas. They represent various types of connections and dependencies between components no matter the genealogy of the relationship such as parent, siblings, binding.
+The Layers panel lists eight kinds of relationship, which fall into three families.
 
-## Types of Relationships
+### Edge relationships
 
-Relationships are categorized into different kinds, types, and subtypes, so that can be expressive of the specific manner in which one or more components relate to one another.
+An edge is a line between two components that interact. You draw it by hand. Kanvas lists the edges the registry allows from the component you start on, and highlights the targets that are compatible.
 
-Here is a list of the different types of relationships that Kanvas supports:
+| Subtype | Meaning | Example |
+|---|---|---|
+| Network | Traffic can flow between the components. The edge labels source and target ports and protocols. | A Service gives a stable endpoint to a Deployment's replicas. |
+| Mount | One component gives storage or files to another, through a binding component placed between them. | A PersistentVolume mounted into a Pod. |
+| Reference | One component points to another by name, identifier, or scope. It declares a dependency and does not itself grant access or carry traffic. | A Pod that references a ConfigMap or a Secret. |
+| Annotation | A line you draw with the Pen tool to explain flow. It has no effect on configuration. | A traced request path on a diagram. |
 
-### 1. Edge Relationships
+![An edge network relationship between a Service and a Deployment](images/EdgeNetworkRelationship.svg)
 
-Edge relationships indicate the possibility of traffic flow between two components. They enable communication and interaction between different Components within the system. There are 4 subtypes of the edge relationship.
+![An edge mount relationship between a PersistentVolume and a Pod](images/EdgeMountRelationship.svg)
 
-**i. Edge-Network:**
+![An edge reference relationship from a Deployment to a ConfigMap](images/reference-deployment-configmap.png)
 
-The Edge-Network relationship type configures the networking between one or more components. This deals with IP addresses and DNS names and provides stable endpoints for communication. For instance, a “Service” provides a stable endpoint for accessing multiple replicas of a “Deployment”. Here's a visual representation of this kind of relationship.
+The registry can define other edge subtypes. They appear in the edge picker when they can start from the selected component.
 
-  ![example of edge-network relationship](images/EdgeNetworkRelationship.svg)
+### Hierarchical relationships
 
-**ii. Edge-Firewall**
+A hierarchical relationship nests one component in another. A component has at most one parent.
 
-This acts as intermediary for communications which include standard networking protocols like TCP and UDP. It can enforce network policies to control traffic between components, for example between two Pods.
+- **Inventory.** The child is drawn inside its parent, as a Pod sits inside a Namespace. Because the Namespace's name is the Pod's namespace, the parent's configuration flows to the child.
+- **Wallet.** The child is absorbed into its host and shown as a count badge on the host, as a sidecar is attached to a workload.
+- **Alias.** The child stands for one field inside its parent. Editing the alias edits that field of the parent.
 
-   ![example of edge-firewall relationship](images/edge_firewall_relationship_pod_to_pod.svg)
+![A hierarchical parent relationship between a Namespace and a Pod](images/Hierarchical_Parent_Relationship.svg)
 
-**iii. Edge-Mount**
+### TagSets
 
-   This subtype addresses the storage and access possibility between involved components. For example, a “PersistentVolume” can be mounted to a “Pod” to provide persistent storage for the pod’s data.
+Components that carry matching labels or annotations form a TagSet. Kanvas never asks you to draw one. It appears when the labels match and disappears when they stop matching. See [Work with Tags](/kanvas/guides/designing/tagsets/).
 
-   ![example of edge-mount relationship](images/EdgeMountRelationship.svg)
+![A TagSet drawn around components with matching labels](images/tags.png)
 
-**iv. Edge-Permission**
+## How relationships form
 
-   This defines the permissions for components if they can have a possible relationship with other components. It ensures that only authorized components can interact with each other. For example, a “Role” can define permissions for Components to access specific resources.
+Three mechanisms create relationships:
 
-   ![example of edge-permission relationship](images/edge_permission_relationship_cluster_role_service_account.svg)
+| Mechanism | Kinds |
+|---|---|
+| You create them: drag an edge, drop a component into a parent, or draw with the Pen | Edge, inventory, wallet, annotation |
+| Evaluation creates them from the registry definitions | TagSets, alias, and any relationship the definitions say should exist |
+| Paste or duplicate copies them with the components | Any relationship whose two ends are both in the copied set |
 
+Deleting a component marks the relationships that touched it as deleted. The next evaluation then reverses their effects on configuration.
 
+## Relationships keep configuration in sync
 
-**v. Edge-Reference**
+Evaluation is the process that applies relationship definitions to a design. It runs shortly after a change, writes values across related fields, and can add or remove components and relationships. The direction of a write depends on the definition and the kind.
 
-The **Edge-Reference** relationship type represents a **logical or declarative link** between two components, where one component **refers to another by name, identifier, type, or scope**. This relationship allows components to dynamically locate, associate with, or depend on other components without being tightly coupled to them. It forms the basis for indirect communication, configuration reuse, ownership tracking, and dependency resolution in distributed systems.
+| Kind | Typical direction | Example |
+|---|---|---|
+| Inventory | Parent to child | The child takes its namespace from the parent Namespace. |
+| Edge | Source to target | A Service's port is written into the related Deployment's container port. |
+| Wallet | Attached item to host | The host takes the item's configuration. |
 
-This type of relationship does **not directly provide communication, access, or permission**, but **enables such interactions by declaring intent or pointing to another component**.
+Treat these as typical. The relationship definition is the authority, and Kanvas does not hard-code a direction. [Policy Evaluation](/kanvas/concepts/relationship-evaluation/) explains when evaluation runs and why results can change after you stop editing.
 
+## What relationships mean at deploy time
 
-**Example of an Edge-Reference Relationship**
+Annotation edges, TagSets, and the drawing of any relationship never change what Kanvas deploys by themselves. What gets deployed is the configuration of each component. Relationships matter because they decided what that configuration is.
 
-* A component that refers to a configuration object (e.g., referencing a config file or environment settings).
-* A workload component referencing a credentials object or identity provider.
-* A service referencing a volume or storage claim.
-* A managed resource referencing its controller or owner entity.
+## Related pages
 
-**Kubernetes-Based Example**
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: example-pod
-spec:
-  containers:
-    - name: app
-      image: nginx
-      envFrom:
-        - configMapRef:
-            name: app-config  # <- Reference to configuration object
-  volumes:
-    - name: secret-volume
-      secret:
-        secretName: app-secret  # <- Reference to secret
-```
-
-
-
-   ![example of edge-reference relationship](images/reference-deployment-configmap.png)
-
-### 2. Hierarchical Relationships
-
-Hierarchical relationships involve either an ancestral connection of the components (i.e. the creation/deletion of a component higher up affects the existence of the components below in the lineage) or a connection which involves the inheritence of features from one component to the other. There are 2 subtypes of the hierarchical relationship.
-
-**i. Hierarchical-Inventory**
-
-  This is a relationship between components where the configuration settings of one component, known as the parent, are combined or integrated with the configuration settings of another component, known as the child. This implies that changes or updates made to the parent component can affect or influence the configuration of the child component. Here's an example of a Hierarchical-Inventory relationship
-
-   ![example of edge-permission relationship](images/Hierachical_Inventory_Relationships.svg)
-
-**ii. Hierarchical-Parent**
-
-A parent-child relationship implies that the parent component must be present or established before the child component can be created. For instance, in Kubernetes, a 'Namespace' can serve as a parent to 'Pods' within that namespace. Therefore, the namespace must be created beforehand for pods to be deployed within it. Here's an example of a Hierarchical-Parent relationship
-
-   ![example of edge-permission relationship](images/Hierarchical_Parent_Relationship.svg)
-
-### 3. TagSets Relationships
-
-These represent relationships between components of same Labels or Annotations key/value pairs. Labels and Annotations are two different types of Tags. Labels are often used to identify components and are visible on the design canvas. Annotations are often used to provide additional information about components.
-
-![example of Tag sets](images/tags.png)
+- [Create Relationships](/kanvas/guides/designing/creating-relationships/): create, remove, and hide relationships.
+- [Designs and Components](/kanvas/concepts/designs/): what a design contains.
 

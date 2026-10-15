@@ -9,14 +9,15 @@ Every action in these guides runs under your permissions. Kanvas hides or disabl
 
 ## Build designs
 
+Tasks you perform on the canvas. See [Build Designs](/kanvas/guides/designing/) for the group.
+
 | Goal | Guide |
 |---|---|
-| Edit a component's configuration | [Configuring Components](/kanvas/designer/configuring-components/) |
-| Add and arrange components on the canvas | [Working with Components](/kanvas/getting-started/working-with-components/) |
-| Connect components | [Creating Relationships](/kanvas/getting-started/creating-relationships/) |
-| Draw shapes, text, and annotations | [Whiteboarding](/kanvas/designer/whiteboarding/) |
-| Keep frequently used models within reach | [Pinning Models to the Dock](/kanvas/designer/pin-model-to-dock/) |
-| Use tags on designs | [Working with Tags](/kanvas/designer/tagsets/) |
+| Add components, edit their configuration, lock, duplicate, copy, and paste them | [Add and Configure Components](/kanvas/guides/designing/configuring-components/) |
+| Connect components and remove connections | [Create Relationships](/kanvas/guides/designing/creating-relationships/) |
+| Draw, label, and annotate a design | [Whiteboard on the Canvas](/kanvas/guides/designing/whiteboarding/) |
+| Keep frequently used models within reach | [Pin Models to the Dock](/kanvas/guides/designing/pin-model-to-dock/) |
+| Group components by shared labels | [Work with Tags](/kanvas/guides/designing/tagsets/) |
 
 ## Manage designs
 

@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Collaboration on Layer5 Documentation</title><link>/tags/collaboration/</link><description>Recent content in Collaboration on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/collaboration/index.xml" rel="self" type="application/rss+xml"/><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The whiteboarding feature introduces versatile, freestyle drawing capabilities within Kanvas. Whiteboarding is enabled by default for all users and augments your ability to diagram with a suite of predefined shapes, and pen and pencil annotation, allowing you full freedom of expression of your engineering diagrams.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Collaboration on Layer5 Documentation</title><link>/tags/collaboration/</link><description>Recent content in Collaboration on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/collaboration/index.xml" rel="self" type="application/rss+xml"/><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/kanvas-comment.png" alt="Comments in Designer" /&gt;
  &lt;figcaption&gt;Example of comments in Designer&lt;/figcaption&gt;
@@ -104,32 +99,12 @@
  Understanding visibility levels
  &lt;a href="#understanding-visibility-levels" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Working with Tags</title><link>/kanvas/designer/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/tagsets/</guid><description>&lt;p&gt;You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.&lt;/p&gt;
+&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Whiteboard on the Canvas</title><link>/kanvas/guides/designing/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
 
-
-
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Related Concept&lt;/h4&gt;
- 
- Kubernetes resources are capable of being assigned Label and Annotation key/value pairs. When pairs of Labels or Annotations match, a relationship is formed and visualized as shown below.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="grouping-components-with-tags" class="heading-link"&gt;
- Grouping Components with Tags
- &lt;a href="#grouping-components-with-tags" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;To group components using tags, follow these steps.&lt;/p&gt;</description></item><item><title>Design Review Mechanics</title><link>/videos/getting-started/comments/design-reviews-full/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/design-reviews-full/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.&lt;/p&gt;</description></item><item><title>Design Review Mechanics</title><link>/videos/getting-started/comments/design-reviews-full/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/design-reviews-full/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LaG3AykTx0M?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
