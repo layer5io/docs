@@ -60,10 +60,12 @@ See [Collaborate and Review]({{< ref "kanvas/guides/collaborating/_index.md" >}}
 
 ## Visualize pull requests and charts
 
+See [Kanvas Snapshot]({{< ref "kanvas/guides/snapshots/_index.md" >}}) for the group, which lists supported inputs and platforms.
+
 | Goal | Guide |
 |---|---|
-| Post an infrastructure snapshot on a GitHub pull request | [Kanvas GitHub Snapshot]({{< ref "kanvas/concepts/kanvas-snapshot/index.md" >}}) |
-| Render a snapshot of a Helm chart | [Helm Kanvas Snapshot]({{< ref "kanvas/concepts/helm-kanvas-snapshot/index.md" >}}) |
+| Post an infrastructure snapshot on a GitHub pull request | [Visualize Pull Requests with Kanvas Snapshot]({{< ref "kanvas/guides/snapshots/kanvas-snapshot/index.md" >}}) |
+| Render a snapshot of a Helm chart from a terminal | [Snapshot a Helm Chart]({{< ref "kanvas/guides/snapshots/helm-kanvas-snapshot/index.md" >}}) |
 
 ## Operate infrastructure
 
