@@ -12,14 +12,15 @@ Every action in these guides runs under your permissions. Kanvas hides or disabl
 
 ## Build designs
 
+Tasks you perform on the canvas. See [Build Designs]({{< ref "kanvas/guides/designing/_index.md" >}}) for the group.
+
 | Goal | Guide |
 |---|---|
-| Edit a component's configuration | [Configuring Components]({{< ref "kanvas/designer/configuring-components/index.md" >}}) |
-| Add and arrange components on the canvas | [Working with Components]({{< ref "kanvas/getting-started/working-with-components/index.md" >}}) |
-| Connect components | [Creating Relationships]({{< ref "kanvas/getting-started/creating-relationships/index.md" >}}) |
-| Draw shapes, text, and annotations | [Whiteboarding]({{< ref "kanvas/designer/whiteboarding/index.md" >}}) |
-| Keep frequently used models within reach | [Pinning Models to the Dock]({{< ref "kanvas/designer/pin-model-to-dock/index.md" >}}) |
-| Use tags on designs | [Working with Tags]({{< ref "kanvas/designer/tagsets/index.md" >}}) |
+| Add components, edit their configuration, lock, duplicate, copy, and paste them | [Add and Configure Components]({{< ref "kanvas/guides/designing/configuring-components/index.md" >}}) |
+| Connect components and remove connections | [Create Relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}) |
+| Draw, label, and annotate a design | [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}) |
+| Keep frequently used models within reach | [Pin Models to the Dock]({{< ref "kanvas/guides/designing/pin-model-to-dock/index.md" >}}) |
+| Group components by shared labels | [Work with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}) |
 
 ## Manage designs
 
