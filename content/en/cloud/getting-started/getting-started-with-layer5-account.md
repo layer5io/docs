@@ -8,7 +8,7 @@ This guide will walk you through setting up your Layer5 account.
 
 ## Configuring your Layer5 account
 
-The first steps in starting with Layer5 are to create an account, verify your email, sign in, and view your profile. You do not need to set up an organization or a workspace: Layer5 Cloud creates one of each for you when you sign up.
+The first steps in starting with Layer5 are to create an account, verify your email, sign in, and view your profile. You do not need to set up an organization or a workspace: Layer5 Cloud creates one of each for you when you sign up. The **Check your email** page and the **Import from GitHub** first-run page described below arrived in Layer5 Cloud **v1.0.278**.
 
  Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.
 
