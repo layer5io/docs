@@ -1,0 +1,16 @@
+# v1.0.92
+
+date: 2026-05-22
+
+
+
+- fix(oidc): carry W2 state payload in oidc_pending cookie, not the URL @hortison (#5373)
+- fix(layout): remove dynamic AppShell wrapper that duplicated the layout @hortison (#5375)
+- fix(auth): preserve query string on org-switch bridge redirect @hortison (#5374)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @pontusringblom
+
+
