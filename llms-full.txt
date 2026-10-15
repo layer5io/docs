@@ -5872,6 +5872,69 @@ This metadata powers Operator's per-design view. A design's view is named "&lt;d
 
 
 --------------------------------------------------------------------------------
+title: "Feature Availability by Plan"
+url: /kanvas/reference/feature-availability/index.md
+description: Which Kanvas capabilities each Layer5 plan includes, and the role, provider, and hosting conditions that also decide whether a capability is available to you.
+--------------------------------------------------------------------------------
+
+This page tells you which Kanvas capabilities each Layer5 plan includes. Your plan is the first condition for using a capability, not the only one: your role, your provider, and where you run Kanvas also decide what you can do. Those conditions follow the matrix.
+
+## Plans
+
+The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization's plan. Current pricing and plan details are listed at [layer5.io/pricing](https://layer5.io/pricing).
+
+## Reading the matrix
+
+- A check mark means the plan includes the capability.
+- A dash means the plan does not include it.
+- Each table covers one category of capability. The **What it does** column describes the capability in one sentence.
+
+The matrix is refreshed automatically from the Layer5 product feature list. It lists the capabilities that have a documentation page. A capability that does not appear here is not necessarily unavailable; check the page that documents it.
+
+## Capabilities by plan
+
+{{< feature-tiers categories="Configuration Management|Lifecycle Management|Kanvas|Collaboration|Performance Management" >}}
+
+## Availability depends on more than your plan
+
+A capability is available to you only when all of the following hold: your plan includes it, your role grants it, your provider supports it, and your Kanvas deployment can reach a cluster when the capability needs one.
+
+### Your role
+
+Your organization assigns you roles, and each role grants a set of permissions. Kanvas checks a permission before it offers Validate, Dry run, Deploy, Undeploy, Share, and Publish. An action your role does not grant is not offered, even when your plan includes it. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}) for which role holds which permission.
+
+### Your provider
+
+Kanvas stores designs, views, the catalog, and sharing records with a remote provider, Layer5 Cloud. Meshery can also run with a local provider, which has no remote service behind it. Under the local provider, every provider-bound feature, including views, the catalog, sharing, and support requests, returns HTTP 501 Not Implemented. Run Meshery with a remote provider to use these features.
+
+### Where you run Kanvas
+
+The hosted Kanvas at [kanvas.new](https://kanvas.new) is for authoring designs. Every capability that needs a cluster requires a Meshery deployment that you run: the [Meshery Playground](https://playground.meshery.io) or your own self-hosted Meshery.
+
+| Capability | kanvas.new | Meshery you run |
+|---|---|---|
+| Author and edit designs | Available | Available |
+| Validate | Shows a prompt | Available |
+| Dry run | Shows a prompt | Available |
+| Deploy | Shows a prompt | Available |
+| Undeploy | Shows a prompt | Available |
+| Connect clusters | Shows a prompt | Available |
+| Operator mode | Shows a prompt | Available |
+| Share | Requires an account | Requires an account |
+| Publish | Requires an account | Requires an account |
+
+On kanvas.new, a cluster-bound capability opens a prompt that directs you to the Meshery Playground or a self-hosted Meshery deployment. Share and Publish open a sign-in prompt when you are not signed in. For why the hosted site differs, see [How Kanvas Works with Meshery and Layer5 Cloud]({{< ref "kanvas/concepts/architecture/index.md" >}}).
+
+## Limits by plan
+
+Each plan caps the number of components in a single design, and Kanvas enforces the cap whenever you save or import a design. The limit for each plan and the error you receive when a design exceeds it are in [Components per design]({{< ref "kanvas/concepts/designs/index.md#components-per-design" >}}).
+
+## Support by plan
+
+The support channels and response commitments each plan includes are listed in [Support channels by plan]({{< ref "kanvas/reference/help-and-support.md#support-channels-by-plan" >}}).
+
+
+--------------------------------------------------------------------------------
 title: "Pinning Models to the Dock"
 url: /kanvas/designer/pin-model-to-dock/index.md
 description: Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
@@ -6499,47 +6562,77 @@ Return to Designer mode and undeploy the design. Kanvas opens a dialog titled `U
 
 
 --------------------------------------------------------------------------------
-title: "Help and Support"
-url: /kanvas/reference/help-and-support/index.md
-description: How Kanvas submits support requests, and the two preconditions - a remote provider and a signed-in identity - that Help and Support requires.
-
+title: "Permissions by Role"
+url: /kanvas/reference/permissions/index.md
+description: Which Kanvas actions are checked against a permission, which default role grants each permission, what anonymous users can do, and which actions are limited by mode and ownership instead.
 --------------------------------------------------------------------------------
 
-Kanvas offers a **Help and Support** form for sending a support request to the Layer5 team. You can open it from the Help menu, and from the **Get Help** action in Kanvas's troubleshooting panel.
+This page tells you which Kanvas actions require a permission, which default roles grant each permission, and which actions are limited by something other than a permission. Use it to find out why an action is missing for a user and which role grants it.
 
-## How a support request is delivered
+## How permissions work
 
-A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider's support intake:
+A permission is a named key, such as Deploy Design, that allows one action. Keys are grouped into keychains, and a role bundles one or more keychains. Your organization assigns roles to users. Before Kanvas offers certain actions, it checks whether the user holds the matching key. Kanvas uses the shared Layer5 permission set and defines no permissions of its own. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) and [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
 
-```text
-Kanvas (browser)  ->  Meshery Server extension proxy  ->  Remote provider support webhook
-```
+## Where Kanvas checks a permission
 
-For [Layer5 Cloud](/cloud) that intake is Layer5's support queue. For a self-hosted Layer5 Cloud deployment it is whatever endpoint the operator has configured - see [Customizing Webhooks](/cloud/guides/self-hosted/customizing-webhooks).
+Kanvas checks a permission before it offers each of the following actions:
 
-## Help and Support requires a remote provider
+| Action | Permission checked | Also note |
+|---|---|---|
+| Validate and Dry run | Validate Design | One permission controls both actions. Disabled while the design is empty. |
+| Deploy | Deploy Design | Disabled while the design is empty. |
+| Undeploy | Undeploy Design | Disabled while the design is empty. |
+| Share | Share Design | Also hidden while the design is empty or published. |
+| Publish | Publish Design | Anonymous users get a sign-in prompt instead. |
+| Operator mode | None | The provider enables Operator mode. When the provider does not enable it, the Operator switch is disabled. |
 
-Because the submission travels through Meshery Server's extension proxy, Help and Support only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider (`None`) Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`.
+When a user does not hold the permission, Kanvas does not offer the action: the toolbar hides it or shows it disabled, and the action sheet on small screens omits it.
 
-This puts Help and Support in line with every other Cloud-bound Kanvas capability - [sharing designs and views](/kanvas/designer/sharing), the [catalog](/cloud/concepts/catalog), and resource access - all of which likewise require a remote provider.
+Layer5 Cloud also enforces permissions when it receives a request, independently of the Kanvas interface. It checks Share Design when a design is shared, View Designs when a user reads other members' private designs, the workspace permissions when designs or views are assigned to or removed from a workspace, and Share Views when a view is shared.
 
-**If Help and Support fails under the local provider:** switch Meshery to a remote provider (Meshery UI, **Providers** in the profile menu, then sign in) and submit the request again. If you cannot switch providers, reach the Layer5 team through the [community forum](https://discuss.layer5.io) or [Slack](https://slack.layer5.io) instead.
+## Default role access
 
-## Help and Support requires a signed-in identity
+The tables below show which default roles grant each design and view permission. They are refreshed automatically from the Layer5 permission list.
 
-Every support request carries the requester's name and email so the team can reply. Kanvas resolves your signed-in profile when you open Help and Support, rather than asking you to retype it:
+- A check mark means the role grants the permission.
+- A check mark with an asterisk means the role grants the permission only on resources the user owns.
+- A dash means the role does not grant the permission.
 
-- While the profile is being fetched, the dialog shows a loading state and the form is not yet available for input.
-- Once the profile resolves, the form appears, pre-addressed with your identity.
-- If the profile cannot be resolved - an expired or degraded session, for example - the form is not shown and nothing is submitted, because a support request with no way to reply is of no use.
+{{< keys-matrix caption="Design lifecycle" functions="Validate Design|Deploy Design|Undeploy Design|Share Design|Publish Design|Unpublish Design|Clone Design|View Designs|Assign Designs to Workspaces|Remove Designs from Workspaces" >}}
 
-**If the form does not appear:** sign in to your provider again, then reopen Help and Support. If it still does not appear, see [Troubleshooting Kanvas](/kanvas/reference/troubleshooting).
+{{< keys-matrix caption="Views and clusters" functions="View Views|Assign Views to Workspace|Unassign Views from Workspace|Add cluster|View All Kubernetes Clusters" >}}
 
-## Type of Inquiry
+Org Admin is the Organization Admin role. The roles not shown, Org Billing Manager and the Academy roles, hold none of these permissions. Provider Admin holds every permission.
 
-Each request carries a **Type of Inquiry** - one of **Support**, **Community**, **Account**, or **Commercial** - which the support intake uses to route your request. **Support** is selected by default. These are the same categories used by the Layer5 Cloud Help and Support form, so a request raised from Kanvas is triaged exactly like one raised from Layer5 Cloud.
+## Anonymous users
 
-If a submission fails, your subject, description, and type of inquiry are preserved so you can retry without retyping them.
+A user is anonymous when no one is signed in or the signed-in account has anonymous status. An anonymous user authors and edits designs. Sharing or publishing a design opens a sign-in prompt that names the feature and offers a single Sign in action.
+
+Anonymous users receive the anonymous role. It holds the same canvas permissions as the User role, plus Screenshot Canvas and View help center. It does not hold the Operator terminal, metrics, or component details permissions.
+
+On [kanvas.new](https://kanvas.new), Validate, Dry run, Deploy, Undeploy, connecting a cluster, and Operator mode open a prompt that directs the user to the [Meshery Playground](https://playground.meshery.io) or a self-hosted Meshery deployment. This applies to signed-in users on kanvas.new as well. See [Feature Availability by Plan]({{< ref "kanvas/reference/feature-availability.md" >}}).
+
+## What is not gated per action
+
+### Canvas editing
+
+Kanvas does not check a permission for individual canvas edits: adding, deleting, cloning, copying, locking, and styling components, shapes, text boxes, sections, and comments; undo and redo; and the pen and pencil tools. Roles carry permissions with these names, but removing them from a role does not prevent the edit. Three things limit canvas editing instead:
+
+- **Mode.** Designer mode allows authoring. Operator mode does not.
+- **Node kind.** Live nodes, the resources Kanvas reads from a connected cluster, are read-only in every mode.
+- **Design ownership and sharing.** A user edits a design they own or one that is shared with them.
+
+### Operator mode
+
+Operator mode blocks canvas authoring: dropping, editing, duplicating, deleting, and renaming nodes are not allowed. Operator mode is not read-only, though. From Operator, a user still opens terminal and exec sessions and generates load.
+
+### Terminal, log streaming, and performance tests
+
+The Kanvas interface does not check a permission before it opens a terminal session, streams container logs, or runs a performance test. Layer5 Cloud defines the permissions Stream container logs, Perform performance test in Operator, and Select performance profile in Operator. By default, only Organization Admin and Provider Admin hold them.
+
+## Customizing access
+
+Enterprise plans can define custom roles built from keychains, so you can grant a group exactly the permissions it needs, such as Validate Design without Deploy Design. In the Kanvas interface, a custom role changes what is offered only for the actions listed in [Where Kanvas checks a permission](#where-kanvas-checks-a-permission); Layer5 Cloud applies its own checks to sharing, private designs, and workspace assignments. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -6620,6 +6713,81 @@ What you see when you reach a boundary:
 ## The local provider limitation
 
 Meshery can run with a local provider instead of a remote one. Under the local provider there is no remote service to forward requests to, so every provider-bound feature, including views, the catalog, sharing, and support requests, returns HTTP 501 Not Implemented. Use a remote provider such as Layer5 Cloud for any feature that depends on it.
+
+
+--------------------------------------------------------------------------------
+title: "Help and Support"
+url: /kanvas/reference/help-and-support/index.md
+description: What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
+--------------------------------------------------------------------------------
+
+Kanvas gives you two ways to get help without leaving the canvas: the **Help Center**, a single place for documentation, learning material and community channels, and the **support form**, which sends a request to the Layer5 team. This page lists what each one contains, which support channels each plan includes, and the conditions the support form needs to work.
+
+## Help Center
+
+The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the **Get Help** action in the [troubleshooting]({{< ref "kanvas/reference/troubleshooting.md" >}}) panel.
+
+| Entry | What it gives you |
+|---|---|
+| Documentation | These docs, opened in a new tab. |
+| Video Tutorials | The Layer5 video library, opened in a new tab. |
+| Quick Tips | An in-app tour of the core Kanvas workflow: placing and configuring components, connecting and grouping them, loading and combining designs, sharing, validating, deploying and undeploying, and collaborating. In Operator mode it covers filtering the resources under observation, health and details, quick operations, performance tests, the terminal and log streaming. |
+| Academy | Structured learning paths in Layer5 Cloud, opened in a new tab. |
+| Discussion Forum | The community forum at [discuss.layer5.io](https://discuss.layer5.io). |
+| Slack | The Layer5 community Slack at [slack.layer5.io](https://slack.layer5.io). |
+| Keyboard Shortcuts | A side panel listing shortcuts for Designer and Operator modes. The full list is in [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}}). |
+| Support | Opens the support form described below. |
+
+The Help Center footer shows the installed Kanvas version and links to that version's release notes.
+
+## Support channels by plan
+
+Every plan includes community support. Standard and Premium support add direct contact with the Layer5 team. The table below is rendered from the product feature list and updates with it.
+
+{{< feature-tiers categories="Support and Deployment" functions="Community Support|Standard Support|Premium Support" >}}
+
+For the channels themselves, see [Layer5 Cloud support]({{< ref "cloud/getting-started/support.md" >}}).
+
+## How a support request is delivered
+
+A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider's support intake:
+
+```text
+Kanvas (browser)  ->  Meshery Server extension proxy  ->  Remote provider support webhook
+```
+
+For [Layer5 Cloud]({{< ref "cloud/_index.md" >}}) that intake is Layer5's support queue, the same one the Layer5 Cloud Help and Support form uses, so a request raised from Kanvas is triaged exactly like one raised from Layer5 Cloud. For a self-hosted Layer5 Cloud deployment it is whatever endpoint the operator has configured - see [Customizing Webhooks]({{< ref "cloud/guides/self-hosted/customizing-webhooks.md" >}}).
+
+## Requirements
+
+### A remote provider
+
+Because the submission travels through Meshery Server's extension proxy, the support form only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider, Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`. This matches every other provider-bound Kanvas capability, including [sharing]({{< ref "kanvas/designer/sharing/index.md" >}}), the catalog and views.
+
+If the form fails under the local provider, switch Meshery to a remote provider and submit again. If you cannot switch, reach the Layer5 team through the [community forum](https://discuss.layer5.io) or [Slack](https://slack.layer5.io).
+
+### A signed-in identity
+
+Every request carries the requester's name and email so the team can reply. Kanvas resolves your signed-in profile when you open the form instead of asking you to retype it:
+
+- While the profile loads, the dialog shows a loading state and the form is unavailable.
+- When the profile resolves, the form appears addressed with your identity.
+- When the profile cannot be resolved, for example because the session expired, the form does not appear and nothing is submitted. A request with no way to reply has no value.
+
+If the form does not appear, sign in to your provider again and reopen it. If it still does not appear, see [Troubleshooting Kanvas]({{< ref "kanvas/reference/troubleshooting.md" >}}).
+
+## Type of inquiry
+
+Each request carries a type that the support intake uses to route it.
+
+| Type | Default |
+|---|---|
+| Support | Yes |
+| Community | No |
+| Account | No |
+| Commercial | No |
+
+If a submission fails, Kanvas keeps your subject, description and type so you can retry without retyping them.
 
 
 --------------------------------------------------------------------------------

@@ -76,6 +76,7 @@
 - [Publishing Designs](/kanvas/designer/publishing-designs/index.md): Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
 - [Create Your First Design](/kanvas/getting-started/starting-scratch/index.md): Build a small web application design from an empty canvas, connect its components through relationships, and save it, while learning how Kanvas models and stores designs.
 - [Designs and Components](/kanvas/concepts/designs/index.md): What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
+- [Feature Availability by Plan](/kanvas/reference/feature-availability/index.md): Which Kanvas capabilities each Layer5 plan includes, and the role, provider, and hosting conditions that also decide whether a capability is available to you.
 - [Pinning Models to the Dock](/kanvas/designer/pin-model-to-dock/index.md): Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
 - [Policy Engine](/kanvas/designer/relationship-evaluation/index.md): Choose how Kanvas evaluates relationships in your designs, understand the relationship indicator states, and diagnose failing or unexpected relationship results.
 
@@ -90,9 +91,9 @@
 - [Configuring Components](/kanvas/designer/configuring-components/index.md): Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
 
 - [Deploy and Observe Your First Design](/kanvas/getting-started/design-to-deployment/index.md): Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
-- [Help and Support](/kanvas/reference/help-and-support/index.md): How Kanvas submits support requests, and the two preconditions - a remote provider and a signed-in identity - that Help and Support requires.
-
+- [Permissions by Role](/kanvas/reference/permissions/index.md): Which Kanvas actions are checked against a permission, which default role grants each permission, what anonymous users can do, and which actions are limited by mode and ownership instead.
 - [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
+- [Help and Support](/kanvas/reference/help-and-support/index.md): What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
 - [v1.0.70-1](/kanvas/reference/releases/v1.0.70-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 [Kanvas] Add opt-in Cytoscape WebGL rendering and measure it against Canvas 2D @hortison …
 - [v1.0.69-1](/kanvas/reference/releases/v1.0.69-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 No changes 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release …
