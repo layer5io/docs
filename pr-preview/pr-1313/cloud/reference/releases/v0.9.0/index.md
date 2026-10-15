@@ -1,0 +1,16 @@
+# v0.9.0
+
+date: 2026-03-23
+
+
+
+- Leecalcote/migrate apis UI @leecalcote (#4911)
+- fix: handle missing organization IDs in GetWorkspaceByID @lekaf974 (#4913)
+- docs: refresh shared schemas migration status @leecalcote (#4909)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @l5io, @leecalcote, @lekaf974, @meshery-ci and @yi-nuo426
+
+

@@ -1,0 +1,31 @@
+# v0.8.148
+
+date: 2025-02-14
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Upgrade node version 18 to node 20 @amitamrutiya (#3189)
+- [Chore]: Bump Sistent v0.14.154 @l5io (#3190)
+
+## 💻 Server
+
+- Fix: Non Meshery design uploads from GitHub fails to open in playground  @souvikinator (#3187)
+
+## 🐛 Bug Fixes
+
+- Fix: Non Meshery design uploads from GitHub fails to open in playground  @souvikinator (#3187)
+
+## 🧰 Maintenance
+
+- Upgrade node version 18 to node 20 @amitamrutiya (#3189)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io, @leecalcote and @souvikinator
+
+
