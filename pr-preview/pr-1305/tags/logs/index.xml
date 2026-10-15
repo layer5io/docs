@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Logs on Layer5 Documentation</title><link>/pr-preview/pr-1305/tags/logs/</link><description>Recent content in Logs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1305/tags/logs/index.xml" rel="self" type="application/rss+xml"/><item><title>Stream Container Logs</title><link>/pr-preview/pr-1305/kanvas/guides/operating/log-streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1305/kanvas/guides/operating/log-streaming/</guid><description>&lt;p&gt;Log streaming live-tails the output of a pod&amp;rsquo;s containers inside the Operator canvas. Each stream starts with the most recent lines and then follows new output as it is written, so you can watch a rollout, a crash loop, or a request path next to the topology that produced it.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Operator mode on a Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not offer Operator mode.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A connected cluster with Meshery Operator deployed.&lt;/strong&gt; MeshSync reads the logs and Meshery Server relays them through the broker, the same path the terminal uses. See &lt;a href="/pr-preview/pr-1305/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Containers that exist.&lt;/strong&gt; Logs come from the Kubernetes log API, so a container that has not started has nothing to stream.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="start-a-stream" class="heading-link"&gt;
+ Start a stream
+ &lt;a href="#start-a-stream" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The action is named &lt;strong&gt;Initiate Log Session&lt;/strong&gt; and is offered on &lt;strong&gt;Pod&lt;/strong&gt; and &lt;strong&gt;Container&lt;/strong&gt; resources only. Right-click the resource, or select it and use the action in the header of the Details panel. The stream opens in the same bottom-left panel as &lt;a href="/pr-preview/pr-1305/kanvas/guides/operating/interactive-terminal/"&gt;terminal sessions&lt;/a&gt;, as a tab.&lt;/p&gt;</description></item></channel></rss>

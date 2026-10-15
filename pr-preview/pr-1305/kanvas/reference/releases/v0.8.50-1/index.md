@@ -1,0 +1,22 @@
+# v0.8.50-1
+
+date: 2025-03-17
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: scroll issue for kubernetes picker  @amitamrutiya (#3506)
+- Add support for filter by model in operator mode @amitamrutiya (#3505)
+
+## 🐛 Bug Fixes
+
+- fix: scroll issue for kubernetes picker  @amitamrutiya (#3506)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+
