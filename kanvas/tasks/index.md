@@ -15,6 +15,6 @@ Cookbook-style guides for common Kanvas workflows — from whiteboarding on the 
 - [Dry Running a Design](/kanvas/tasks/designs/dry-running-a-design/)
 - [Deploying Designs](/kanvas/tasks/designs/deploying-designs/)
 - [Undeploying Designs](/kanvas/tasks/designs/undeploying-designs/)
-- [Cloning a Design](/kanvas/tasks/designs/cloning-a-design/)
-- [Deleting a Design](/kanvas/tasks/designs/deleting-a-design/)
+- [Cloning a Design](/kanvas/guides/designs/cloning-a-design/)
+- [Deleting a Design](/kanvas/guides/designs/deleting-a-design/)
 

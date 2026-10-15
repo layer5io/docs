@@ -1608,170 +1608,6 @@ Continue exploring more scenarios in the Meshery Kanvas to enhance your skills.
 
 
 --------------------------------------------------------------------------------
-title: "Importing a Design"
-url: /kanvas/getting-started/import-designs/index.md
-description: Learn how to import designs from various sources and formats, including Kubernetes manifests, Helm charts, Docker Compose files, and more.
-
---------------------------------------------------------------------------------
-
-[Kanvas](https://kanvas.new) acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.
-
-## Accessing the Import Functionality
-
-There are multiple ways to import a design.
-
-{{< tabpane text=true >}}
-
-{{% tab header="Drag and Drop" lang="en" active="true" %}}
-
-You can drag a file from your local computer directly onto the Kanvas canvas to import a design.
-![Drag and Drop Import](images/importing-designs/drag-drop.gif)
-
-{{< /tab >}}
-
-{{% tab header="From Kanvas Toolbar" lang="en" %}}
-
-The most direct method is to click the **hamburger menu** (☰) in the top-left corner, then select the "Import" button in the Kanvas toolbar.
-![File Import Process](images/importing-designs/file-import.gif)
-
-{{< /tab >}}
-
-{{% tab header="From Layer5 Cloud" lang="en" %}}
-
-Navigate to the [My Designs](https://cloud.layer5.io/catalog/content/my-designs) page and click the "Import" button.
-![Cloud Import Process](images/importing-designs/cloud-url.gif)
-
-{{< /tab >}}
-
-{{% tab header="Via GitHub Integration" lang="en" %}}
-
-For a more advanced, repository-based workflow, you can establish a persistent connection between your GitHub account and Meshery. This allows you to browse your repositories and import multiple designs directly.
-> Learn more about [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}).
-
-{{< /tab >}}
-
-{{< /tabpane >}}
-
-{{< alert type="info" title="Recommendation: Use Kanvas Import" >}}
-For the most flexibility, we recommend initiating the import from within Kanvas. This interface gives you the option to either import the configuration as a brand-new design or merge it into a design you currently have open.
-{{< /alert >}}
-
-## Importing by Infrastructure Type
-
-Kanvas supports a diverse set of infrastructure types and packaging formats. The following sections provide detailed requirements and instructions for each.
-
-{{< alert type="info" title="Cannot Import Folders Directly" >}}
-You can't directly import folders. If your infrastructure definition (like Kustomize or Helm) is in a folder, you must compress it into a single archive file before uploading.
-{{< /alert >}}
-
-{{< tabpane text=true >}}
-
-{{% tab header="From Kubernetes Manifests" lang="en" active="true" %}}
-
-Importing from a Kubernetes manifest is the most direct way to bring your existing configurations into Kanvas. This method is suitable for any standard `.yaml` or `.yml` file that conforms to the Kubernetes API specification, as well as for projects managed by Kustomize.
-
-**1. Importing Plain Kubernetes Manifests:** If you have Kubernetes configurations available as standard manifest files, you can import them directly.
-
-- **Supported Packaging Formats:** A standard `.yaml` or `.yml` file containing one or more Kubernetes resource definitions.
-
-**2. Importing a Kustomize Project:** If you manage your Kubernetes configurations with Kustomize, a popular template-free tool for customization, you can import your entire project.
-
-A key requirement when importing a Kustomize project is that you **must provide the entire project directory**, not just the `kustomization.yaml` file. This is because the `kustomization.yaml` file only contains instructions and references to other base manifest files. To correctly render the final configuration, Kanvas needs access to all of these related files.
-
-- **Supported Packaging Formats:** A archive (such as `.zip`, `.tar`, or `.tar.gz`) containing the complete Kustomize project directory. This archive must include the `kustomization.yaml` file and all of its referenced resources.
-
-{{< /tab >}}
-
-{{% tab header="From a Helm Chart" lang="en" %}}
-
-Helm is the standard package manager for Kubernetes. Importing a Helm chart into Kanvas allows you to visualize, manage, and customize complex applications. To ensure a successful import, you must provide the complete packaged chart. Importing individual chart files like `Chart.yaml` or `values.yaml` is not supported.
-
-- **Supported Packaging Formats:**
-  - **Chart Archive (`.tgz`, `.tar`, or `.tar.gz`):** The standard gzipped tarball format for distributing Helm charts.
-  - **OCI Artifact:** A modern packaging standard. When exported as a file for upload, this can be imported via an `oci://` URI from a container registry.
-
-{{< /tab >}}
-
-{{% tab header="From Docker Compose" lang="en" %}}
-
-This import method provides a convenient bridge for developers looking to migrate their applications from a local Docker-based environment to Kubernetes. Kanvas will parse your `docker-compose.yaml` file and automatically translate your services into their equivalent Kubernetes resources.
-
-- **Supported Packaging Formats:** A standard `.yaml` or `.yml` file. For best compatibility, ensure your Compose file includes a `version` key (e.g., `version: '3.8'`) at the top level.
-
-{{< /tab >}}
-
-{{% tab header="From a Design" lang="en" %}}
-
-This is Meshery's native format and provides a lossless way to save and import your designs. It preserves all of an application's component configurations as well as the visual layout, annotations, and metadata from the Kanvas designer.
-
-- **Supported Packaging Formats:**
-    - **YAML File (`.yml`):** The standard, human-readable file generated when you export a design.
-    - **OCI Artifact:** Designs can also be packaged as OCI artifacts, allowing them to be versioned and distributed via container registries.
-
-{{< /tab >}}
-
-{{< /tabpane >}}
-
-## Frequently Asked Questions
-
-<details>
-  <summary>What happens if I drag and drop multiple files onto Kanvas at once?</summary>
-  
-Each supported file will be imported as a separate, new design. For example, if you drag three different Kubernetes manifest files onto Kanvas, three distinct designs will be created.
-</details>
-
-<details>
-  <summary>What happens if I select multiple files in the File Upload dialog?</summary>
-  
-The "File Upload" dialog is designed to process one file or package at a time. If you select multiple files in your operating system's file browser, only the last file in the selection will be processed for import. To import from multiple files, please import them individually.
-</details>
-
-<details>
-  <summary>After importing a file, can I download my original, unaltered file?</summary>
-  
-No. When a file is imported, it is converted into a native Design. The original source file is not stored and cannot be downloaded later. The export function will generate a new file based on the **current** state of your design.
-> For more details, see the [Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}) guide.
-
-</details>
-
-
-<details>
-  <summary>When I import from a Kubernetes manifest, Helm chart, or other type, and choose to merge this file into an existing design, can I download my original file?</summary>
-  
-When you choose to **merge** a new design into an existing one, Meshery first creates a separate design from your imported file before performing the merge. You can find this newly created design on your [My Designs](https://cloud.layer5.io/catalog/content/my-designs) page.
-</details>
-
-<details>
-  <summary>Are there any differences, limitations, or special requirements for importing via File Upload, URL, or the GitHub Integration?</summary>
-  
-Yes. File Upload and URL Import are simple, one-time actions for importing a single design. In contrast, the **GitHub Integration** creates a deep, persistent connection to your GitHub account.
-
-It requires you to authorize the Meshery GitHub App, which then allows you to browse your repositories and select designs directly from the Meshery UI. Most importantly, this integration can enable a GitOps workflow by adding a GitHub Action to your repository that provides visual snapshots of design changes in your pull requests.
-</details>
-
-<details>
-  <summary>Can I import a design from GitLab or Bitbucket?</summary>
-
-Not as a repository connection. GitHub is the only source-code host Meshery integrates with directly: it is the only repository connection kind the platform defines, and the import form itself offers just two upload methods, **File Upload** and **URL Import**.
-
-You can still bring in a design that lives in GitLab or Bitbucket, by either route:
-
-- **URL Import** - give the import form a direct URL to the raw file. It must serve the file body itself, not a web page that renders it, and it must be reachable from the public internet.
-- **File Upload** - download the file from your repository first, then upload it. This is the route to use for a self-hosted or otherwise private GitLab or Bitbucket server, which Meshery cannot reach.
-
-What you do not get on either route is the persistent, repository-wide connection the GitHub integration provides - browsing repositories from the Meshery UI, and the GitOps workflow that posts visual snapshots of design changes onto pull requests.
-</details>
-
-<details>
-  <summary>Is there a file size limit for imported designs?</summary>
-  
-There is no strict limit on the file size itself (e.g., in MB). However, there are limits on the number of **components** a design can contain, which is determined by your current subscription plan. Free accounts are limited to 100 components.
-
-If you attempt to import a design that contains more components than your plan allows, the import will fail with a message stating that the component limit has been exceeded.
-> Learn more about [plans](https://layer5.io/pricing).
-</details>
-
---------------------------------------------------------------------------------
 title: "Interpreting Component Badges"
 url: /kanvas/designer/interpreting-component-badges/index.md
 description: Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
@@ -2497,137 +2333,6 @@ This is the final element on the page and there should be no margin below this.
 
 
 --------------------------------------------------------------------------------
-title: "Publishing to Catalog"
-url: /kanvas/tutorials/publishing-to-catalog/index.md
-description: Publish a Kanvas design to the Catalog from Details, understand visibility versus publish, and know what happens during review and approval.
-
---------------------------------------------------------------------------------
-
-Publishing a design submits it to the [Layer5 Cloud Catalog](https://cloud.layer5.io/catalog) so others can discover, view, and clone it. In Kanvas Designer, the primary publish action lives in **Details**, not in the Share modal.
-
-Share controls **who can open and edit** your working design (**Private / Public**, invites, **Copy Link**). Publish moves a design through the **catalog publication** lifecycle (pending review → published). For the full state machine, roles, and FAQs, see [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}}).
-
-## What you will do
-
-1. Open design **Details** and locate **Publish to Catalog**
-2. Fill publish metadata (type, technology, description, caveats)
-3. Submit and understand pending review vs immediate publish
-4. Know how Published differs from Public, and what you can change afterward
-
-## Prerequisites
-
-- Signed in to Layer5 Cloud (GitHub, Google, or email) — **Publish to Catalog** is disabled for anonymous / some private sample sessions
-- A design you own in [Kanvas Designer](https://kanvas.new)
-- Permission to submit designs for catalog review in your organization
-
-{{< alert type="info" title="Share is not Publish" >}}
-**Share** = Add Users, People with Access, Private/Public, Copy Link.  
-**Details → Publish to Catalog** = submit the design to the public Catalog workflow.  
-Making a design **Public** does **not** publish it to the Catalog.
-{{< /alert >}}
-
-## Step 1: Open your design
-
-1. Open [kanvas.new](https://kanvas.new) in **Designer**.
-2. Create or open the design you want to publish.
-3. Optionally validate the design (**Actions → Validate**) and tidy the canvas so catalog clones look intentional.
-
-## Step 2: Open Details
-
-Open design details from either:
-
-1. **File → Details**, or  
-2. The design info / details entry point in the designer chrome (when available)
-
-In the Details dialog you will typically see fields such as name, owner, visibility, type, technology, description, caveats, dates, and version — plus actions including **Copy Link**, **Publish to Catalog**, and **Save**.
-
-<figure>
-  <img src="../images/publishing-to-catalog/designer-details-publish.png" alt="Kanvas Designer Details dialog with Publish to Catalog action" />
-  <figcaption>Details dialog: metadata fields and Publish to Catalog (primary publish entry point)</figcaption>
-</figure>
-
-If **Publish to Catalog** is greyed out:
-
-- Sign in if you are anonymous
-- Confirm you own the design (or have submit permission)
-- Ensure the design has finished loading
-
-## Step 3: Complete publish metadata
-
-When you choose **Publish to Catalog**, provide catalog metadata (labels may match the Details fields):
-
-| Field | Purpose |
-|-------|---------|
-| **Type** | Design category for catalog browsing |
-| **Technology** | Related technology / stack |
-| **Description** | What the design is for and how to use it |
-| **Caveats** | Limitations, assumptions, or operational warnings |
-
-Write the description and caveats for someone cloning the design cold — they will not have your workspace context.
-
-<!-- SCREENSHOT: Publish metadata form / confirmation after clicking Publish to Catalog (type, technology, description, caveats). Existing reference shots live under designer/publishing-designs/images/ if needed. -->
-
-## Step 4: Submit and wait for review
-
-Approval depends on role (see [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}})):
-
-- **Admin submissions** — may publish immediately
-- **Regular user submissions** — enter **Pending Review** until an Organization Admin or Provider Admin approves or rejects
-
-While pending:
-
-- You can usually still edit the design; changes apply to the submission without re-filing
-- Avoid deleting a pending design (can leave dead entries in approval queues)
-- You should receive an email when the decision is made
-
-After **approval**:
-
-- The design becomes **Published** and appears in the [Catalog](https://cloud.layer5.io/catalog)
-- Published content is treated as **immutable** for catalog consistency — clone to create a new editable version
-- It may no longer appear the same way under personal “My Designs” lists
-
-After **rejection**:
-
-- You cannot simply resubmit the same entry
-- **Clone** the design, revise, and submit as a new catalog entry
-
-## Step 5: Visibility vs Catalog publish (cheat sheet)
-
-| State | Meaning | Editable? |
-|-------|---------|-----------|
-| **Private** | Limited to owner + explicit grants | Yes |
-| **Public** | Reachable via link / public channels; still your working design | Yes |
-| **Published** | Approved Catalog entry; discoverable to clone | Original locked; clone to modify |
-
-Unpublish (when available) is limited to Owner / Admin roles — not guests or typical collaborators.
-
-## Optional path: Share while preparing to publish
-
-You can share a design for internal review **before** catalog publish:
-
-1. Use **Share** to invite reviewers (**Private** + **People with Access**)
-2. Collect feedback with [Comments]({{< ref "kanvas/designer/comments/index.md" >}})
-3. When ready, use **Details → Publish to Catalog**
-
-That keeps pre-publish collaboration separate from the Catalog approval workflow. See also [Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}}).
-
-## Recap
-
-1. Open the design in Designer  
-2. **File → Details**  
-3. Click **Publish to Catalog** and complete metadata  
-4. Await review (unless you are an admin with immediate publish)  
-5. After approval, find it in the Catalog; clone to iterate  
-
-## Related reading
-
-- [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}}) — lifecycle, permissions, FAQ  
-- [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}) — Private / Public / invites  
-- [Cloud Catalog concepts]({{< ref "cloud/concepts/catalog/_index.md" >}})  
-- Tutorial: [Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}})  
-
-
---------------------------------------------------------------------------------
 title: "Render Modes"
 url: /kanvas/advanced/render-modes/index.md
 description: Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
@@ -3205,262 +2910,6 @@ If someone resolves a comment while you're still typing in it, the comment will 
 
 
 --------------------------------------------------------------------------------
-title: "Cloning a Design"
-url: /kanvas/tasks/designs/cloning-a-design/index.md
-description: Treat designs as templates by cloning an existing design to modify and build upon.
-
---------------------------------------------------------------------------------
-
-## Steps to cloning a design from Catalog using Kanvas
-
-1. Switch to Kanvas Designer mode, if not already in it.
-2. In the left ☰ menu, click New → From a template.
-3. Select a design from the list that appears in the panel.
-4. A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.
-
-![Copy of a Design](images/deploy-designs/clone-design.gif)
-
-This will create a copy of the catalog item to a new design, now owned by you.
-
-1. Click “clone” and a copy of the design will appear on your Kanvas canvas. You can then configure the design to suit your purposes.
-2. To access your newly cloned design, click the three-shapes icon, then click through: Workspaces → My Workspaces → Explore Workspaces → My Designs.
-
-![Copy of a Design](images/deploy-designs/my-designs.gif)
-
-You are now free to deploy it as it is or modify it further. 
-
-
-{{< alert title="Learn about Designs" >}}Learn more about what a [Design](https://docs.meshery.io/concepts/logical/designs) is and how it fits into Meshery's approach to cloud native management.
-{{< /alert >}}
-
-
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
-
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
-
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
-
-
-## Second Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
-
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
-
-
---------------------------------------------------------------------------------
 title: "Collaborative Editing"
 url: /kanvas/tutorials/collaborative-editing/index.md
 description: Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
@@ -3533,7 +2982,7 @@ Notes:
 
 - **Copy Link** works for both Private and Public designs.
 - For **Private** designs, the link alone is not enough — recipients must also appear under **People with Access**.
-- **Published** (Catalog) is a separate lifecycle from Private/Public share. Publishing is covered in [Publishing to Catalog]({{< ref "kanvas/tutorials/publishing-to-catalog.md" >}}) and [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}}).
+- **Published** (Catalog) is a separate lifecycle from Private/Public share. Publishing is covered in [Publish Designs]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}}).
 
 ## Step 4: Invite collaborators
 
@@ -3600,8 +3049,7 @@ Practical tips while collaborating live:
 
 - [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}})
 - [Reviewing Designs (Comments)]({{< ref "kanvas/designer/comments/index.md" >}})
-- [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}})
-- Tutorial: [Publishing to Catalog]({{< ref "kanvas/tutorials/publishing-to-catalog.md" >}})
+- [Publishing Designs]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}})
 
 
 --------------------------------------------------------------------------------
@@ -4031,271 +3479,6 @@ The `data-pipeline-gcp` design is now live in `orbital-production`, connected to
 {{< alert type="info" >}}
 Meet Zara and the rest of the team at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
 {{< /alert >}}
-
-
---------------------------------------------------------------------------------
-title: "Deleting a Design"
-url: /kanvas/tasks/designs/deleting-a-design/index.md
-description: Permanently delete a design you own, and understand how deleting differs from unpublishing a design or removing it from a workspace.
-
---------------------------------------------------------------------------------
-
-Deleting a design removes it permanently. There is no trash, no recycle bin, and no undo: the design record is destroyed, and every workspace it was assigned to loses it at the same time. Before you delete, check that what you actually want is not one of the two softer actions described under [Related actions that are not deletion](#related-actions-that-are-not-deletion).
-
-## Who Can Delete a Design
-
-Deleting a design requires the **Delete a design** permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design's owner, or a provider administrator, can delete it.
-
-If the **Delete** action is grayed out for you, your role does not carry the permission. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold it by default, and [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) for how an organization administrator can grant it.
-
-## Deleting a Single Design
-
-1. Go to [My Designs](https://cloud.layer5.io/catalog/content/my-designs) in Layer5 Cloud, or open the design's detail page.
-2. Choose **Delete** from the design's actions.
-3. A confirmation dialog opens, naming the design. Click **Delete** to confirm, or dismiss the dialog to cancel.
-
-Once the deletion succeeds you are returned to **My Designs** and the design is gone from the list.
-
-## Deleting Several Designs at Once
-
-The table view of **My Designs** supports bulk deletion.
-
-1. Switch to table view.
-2. Select the rows you want to delete using the checkboxes.
-3. Choose **Delete** from the bulk actions.
-4. Confirm in the dialog, which names how many designs will be deleted.
-
-Each design in the selection is deleted independently. If one of them fails - for example because you do not own it - the rest still go through, so check the list afterwards rather than assuming the whole batch succeeded.
-
-## What Deletion Removes
-
-- The design itself, including its design file, name, and metadata.
-- Its assignment to **every** workspace it belonged to. Collaborators who reached the design through a shared workspace lose access to it, because there is nothing left to reach.
-
-Deleting a design does not affect infrastructure. If the design was deployed, the deployed resources stay running in your clusters. [Undeploy]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) the design first if you want its resources removed as well - once the design is deleted, you no longer have the definition Meshery would need in order to undeploy it.
-
-## Related Actions That Are Not Deletion
-
-Two nearby actions are frequently mistaken for deletion. Neither destroys the design.
-
-| Action | What it does | When to use it |
-|---|---|---|
-| **Unpublish** | Removes a design from the public catalog. The design remains in your account as a private design. | You want to withdraw a design from public view but keep it. |
-| **Remove from workspace** | Unassigns the design from one workspace. The design and its other workspace assignments are untouched. | You want to tidy a workspace, not lose the design. |
-
-Removing a design from a workspace is labelled **Delete** in the workspace's design table, and its confirmation dialog says "from workspace *name*". That phrase is the thing to check: if the dialog names a workspace, you are unassigning; if it does not, you are deleting the design outright.
-
-{{< alert type="warning" title="Deletion is permanent" >}}
-There is no recovery path for a deleted design. If you may want the design later, [export it]({{< ref "kanvas/designer/export-designs/index.md" >}}) as a **Design (YAML)** or **Design (OCI image)** file before deleting - both formats are lossless and can be imported back into Kanvas.
-{{< /alert >}}
-
-
---------------------------------------------------------------------------------
-title: "Embedding Designs"
-url: /kanvas/designer/embedding-designs/index.md
-description: How to embed your designs for sharing on your sites.
-
---------------------------------------------------------------------------------
-
-Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.
-
-## Embedding Your Design
-
-To embed your Kanvas design, follow these steps:
-
-1. **Access Embed Option**: Within the [Kanvas Designer](https://kanvas.new/), select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the "Embed" option.
-
-   ![Embed Designs from Kanvas](images/embed-designs.gif)
-
-2. **Download the Embedding Script**: Click on the download icon presented in the same modal to download the embedding script.
-
-## Embedding in Static Sites
-
-   The embed code for static site:
-
-   ```html
-   <div id="embedded-design-embedding-example"></div>
-   <script src="./embedded-design-embedding-example.js" type="module"></script>
-   ```
-
-   Make sure the `src` attribute in the script tag points to the location of the downloaded embedding script on your local filesystem or server.
-
-### Customization
-
-You can customize the styles for the embedded design in two ways: globally via CSS classes, or for a single instance via an inline style parameter.
-
-#### Global Styling (via CSS Classes)
-
-For advanced global styling, you can override the default CSS rules in your site's stylesheet. This will affect all embedded designs on your site. The main classes are:
-
-- `.meshery-embed-container`: The main container for the embedded design. You can target its `.full` or `.half` variants for specific sizing adjustments.
-- `.cy-container`: The canvas element within the container where the design itself is rendered.
-
-Here is an example of how you could override these classes:
-
-```html
-<style>
-  /* Make all embed containers have a different border and background */
-  .meshery-embed-container {
-    border: 2px solid #00B39F;
-    background-color: #f5f5f5;
-  }
-</style>
-```
-
-#### Instance-specific Styling (via `style` Parameter)
-
-For styling a single instance, the recommended method is to use the `style` parameter directly in the shortcode. This provides maximum control and will override any default styles or global CSS.
-
-```html
-{{</* meshery-design-embed
-    src="..."
-    id="..."
-    style="width: 60%; height: 28rem; border-radius: 1.5rem;"
-*/>}}
-```
-
-## Embedding in React Projects
-
-1. **Install the Package**: To integrate the Design into your React project, start by installing the package via npm:
-```bash
-  npm i meshery-design-embed
-```
-2. **Incorporate the Component**: Use the component to seamlessly embed designs within React and its associated frameworks.
-
-```jsx
-import MesheryDesignEmbed from '@layer5/meshery-design-embed'
-
-function Design() {
-  return (
-    <>
-      <div>
-        <MesheryDesignEmbed
-          embedScriptSrc="embedded-design-embed1.js"  // path to the embed script
-          embedId="embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644" // id of the embedding
-        />
-      </div>
-    </>
-  );
-}
-```
-
-Make sure the `embedScriptSrc` attribute in the component points to the location of the downloaded embedding script on your react filesystem.
-Usually the script is located "static" folder
-
-## Embedding with Hugo
-
-To prepare your Hugo site to support design embedding, perform the one-time task of adding the following shortcode definition to your site's set of supported shortcodes.
-
-### Shortcode Definition
-
-<details>
-<summary>Click to expand the full Shortcode Definition</summary>
-
-```html
-{{ $script := .Get "src" }}
-{{ $id := .Get "id" }}
-{{ $size := .Get "size" | default "full" }}
-{{ $style := .Get "style" }}
-
-<style>
-.meshery-embed-container {
-  border: 1px solid #eee;
-  border-radius: 4px;
-  margin: 0rem auto;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-.meshery-embed-container.full {
-  width: 80%;
-  height: 30rem;
-}
-.meshery-embed-container.half {
-  width: 50%;
-  height: 25rem;
-}
-.meshery-embed-container .cy-container {
-  width: 100%;
-  height: 100%;
-}
-</style>
-
-<div
-    id="{{ $id }}"
-    {{- if $style -}}
-        style="{{ $style | safeCSS }}"
-    {{- else -}}
-        class="meshery-embed-container {{ $size }}"
-    {{- end -}}
-></div>
-
-<script src="{{ $script }}" type="module"></script>
-```
-</details>
-
-### Shortcode Explanation
-
-- **`src`** (Required): The path to the exported JavaScript file for your design.
-- **`id`** (Required): A unique ID for the embedded design container.
-- **`size`** (Optional): A preset for simple sizing.
-  - Accepts `"full"` (default) or `"half"`.
-  - This parameter is ignored if `style` is used.
-- **`style`** (Optional): For advanced customization.
-  - Allows you to provide any custom CSS inline styles.
-  - **This parameter has higher priority and will override the `size` parameter.**
-
-Now that your site has shortcode support for embedding Kanvas designs, you can use the `meshery-design-embed` shortcode in any Hugo markdown file where you want to display embedded designs to your site visitors.
-
-### Using the Shortcode
-
-To embed a Design in your Hugo pages, use the `meshery-design-embed` shortcode. You will need the design's exported JavaScript file and its unique ID.
-
-### Usage Examples
-
-Place the exported `.js` file in an appropriate folder (e.g., a nearby `images` folder) and reference it in the shortcode.
-
-**Default (full-width) display:**
-
-```html
-{{</* meshery-design-embed
-    src="../path/to/your-design.js"
-    id="your-unique-design-id-full"
-*/>}}
-```
-
-**Half-width display:**
-
-```html
-{{</* meshery-design-embed
-    src="../path/to/your-design.js"
-    id="your-unique-design-id-half"
-    size="half"
-*/>}}
-```
-
-**Custom styling:**
-
-```html
-{{</* meshery-design-embed
-    src="../path/to/your-design.js"
-    id="your-unique-design-id-custom"
-    style="width: 60%; height: 28rem; border-radius: 1.5rem;"
-*/>}}
-```
-
-### Embedded Design Example
-
-When Hugo builds your website, it will process the shortcode and generate the necessary HTML and JavaScript to embed the interactive Kanvas design. 
-
-Here's an example of how an embedded design appears:
-
-<!-- Design Embed Container  -->
-```html
-{{</* meshery-design-embed  
-src="../export-designs/embedded-design-dapr.js"  
-id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" */>}}
-```
-
-{{< meshery-design-embed  src="../export-designs/embedded-design-dapr.js"  id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" >}}
 
 
 --------------------------------------------------------------------------------
@@ -4749,309 +3932,6 @@ corresponding control simply does not appear on the canvas.
 
 
 --------------------------------------------------------------------------------
-title: "Exporting Designs"
-url: /kanvas/designer/export-designs/index.md
-description: How to export your designs for backup, sharing or offline use.
-
---------------------------------------------------------------------------------
-
-Kanvas lets you export a design in several formats, so you can:
-
-* keep versioned backups  
-* collaborate offline  
-* push artifacts to OCI-compatible registries or Helm repositories  
-* integrate designs into CI/CD or GitOps pipelines  
-* embed interactive diagrams in documentation and blogs  
-
-## Export in Two Steps
-
-1. Open the export menu 
-   Within the [Kanvas Designer](https://playground.meshery.io/extension/meshmap), select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design. 
-2. Pick an export format 
-   Choose the option that matches your workflow (see table below).
-
-![Export Icon](images/export-modal.gif)
-
-## Quick Reference: Export Formats
-
-| Format                          | Keeps full design metadata? | Typical uses                                       |
-|---------------------------------|-----------------------------|----------------------------------------------------|
-| Design (YAML)           | ✔                           | Backups, sharing, re-import into Kanvas           |
-| Design (OCI image)      | ✔                           | Store in Docker Hub/GHCR; registry-based versioning|
-| Kubernetes Manifest (YAML)      | ✖ (lossy)                   | `kubectl apply`; raw K8s deployment                |
-| Helm Chart (.tar.gz)            | ✖ (lossy)                   | Helm repos, GitOps (Argo CD/Flux), Artifact Hub    |
-| Embed Design (JS snippet)       | -                           | Interactive diagrams in docs or dashboards         |
-
-## Detailed Format Guide
-
-### Design (YAML) {#exporting-as-a-design-file}
-
-Exports a complete, lossless copy of your design.  
-This format preserves all Meshery-specific metadata, including:
-
-- Visual layout  
-- Annotations and comments  
-- Component grouping and configuration  
-
-Use it to back up or move designs between Meshery instances. The file is saved as `<design-name>.yml`.
-
-### Design (OCI Image) {#exporting-as-an-oci-image}
-
-Exports your design as an OCI-compliant container image.  
-This format preserves all design metadata, just like the Design (YAML), but in a form suitable for container registries.
-
-When to use:
-
-- Version and distribute your design via Docker Hub, GitHub Container Registry, AWS ECR, etc.  
-- Integrate with registry-based workflows or team collaboration tools  
-- Store designs alongside application artifacts
-
-The exported file is named `<design-name>.tar`, and can be pushed using tools like `docker push` or `oras push`.
-
-### Source-Type Formats {#exporting-in-a-source-type-format}
-
-A design can also be exported back out as the kind of source it was built from. Two source types are supported: **Kubernetes Manifest** and **Helm Chart**. Both are lossy - the Kanvas-specific layout, annotations, and comments are dropped, because neither format has anywhere to carry them.
-
-Docker Compose is an *import* source only. There is no Docker Compose export; converting a design to Compose is not supported.
-
-#### Kubernetes Manifest (YAML)  *Lossy Export* {#exporting-as-a-kubernetes-manifest}
-
-Exports your design as raw Kubernetes YAML files, ready to apply with `kubectl`.
-
-Best used when:
-- You want to deploy directly to a cluster
-- You're integrating with CI/CD tools that expect plain manifests
-- You no longer need visual layout, annotations, or design metadata
-
-This format strips out Meshery-specific context and includes only standard Kubernetes resource definitions.
-
-> If you want to preserve the full editable design, use **Design (YAML)** instead.
-
-#### Helm Chart (.tar.gz)  *Lossy Export* {#exporting-as-a-helm-chart}
-
-Packages your design as a standard Helm chart archive (`.tar.gz`).
-
-Best used when:
-- You want to deploy via Helm (`helm install`)
-- You're working with GitOps tools like Argo CD or Flux
-- You plan to publish to a Helm repository or Artifact Hub
-
-This format includes only Kubernetes resource definitions.  Design layout, annotations, and other Meshery-specific metadata will not be included.
-
-> If you want to keep your design fully editable in Meshery, use **Design (YAML)** instead.
-
-### Embed Design (JavaScript Snippet) {#exporting-as-embedding}
-
-Exporting your design as an embedding allows you to integrate it into websites, blogs, or other platforms that support HTML, CSS, and JavaScript. 
-
-The embedded design version offers a visually interactive representation of your design, making it easy to share with infrastructure stakeholders.
-> [Learn more]({{< ref "kanvas/designer/embedding-designs/index.md" >}}) about Embedding Designs.
-
-## Best Practices and Tips
-
-| Need | Recommended format |
-|------|--------------------|
-| Preserve every design detail | Design (YAML) or OCI image |
-| One-off deployment           | Kubernetes Manifest |
-| Share a reusable package     | Helm Chart |
-| Show an interactive diagram  | Embed Design |
-| Publish to Helm repo         | Helm Chart (.tar.gz) |
-| Store in container registry  | Design (OCI image) |
-
-Note:
-1. If you plan to keep editing in Meshery, avoid lossy formats.  
-2. A Helm `.tar.gz` can be placed in any Helm repo and installed with `helm install`.  
-3. An OCI image can be versioned and pulled just like an application image.
-
-## Frequently Asked Questions
-
-<details>
-  <summary>Can I re-import a Helm Chart or Kubernetes manifest into Meshery for editing?</summary>
-  
-You can import the resources, but design-time metadata (layout, annotations) is lost, so the graph will not reappear as originally designed.
-</details>
-
-<details>
-  <summary>What gets removed in a lossy export?</summary>
-  
-Layout coordinates, visual grouping, comments, and any Meshery-only metadata.
-</details>
-
-<details>
-  <summary>Is the Helm `.tar.gz` ready for `helm install`?</summary>
-  
-Yes. After export, run `helm install <release> <chart.tgz>` or add it to a Helm repo.
-</details>
-
-<details>
-  <summary>Should I use Helm Chart or OCI image for sharing?</summary>
-  
-Use Helm if your consumers deploy via Helm; use OCI if you rely on container registries for versioning.
-</details>
-
-<details>
-  <summary>Do I need to be logged in to export a design?</summary>
-  
-No, login is not required. You can export as a guest user.
-</details>
-
-<details>
-  <summary>Can I export someone else's published design?</summary>
-  
-Yes. Any published design can be exported, not just your own.
-</details>
-
-<details>
-  <summary>Can I export an earlier version of a design?</summary>
-
-No. Every export - in any format - is generated from the **current** state of the design. A design carries a single version number, which increments as the design is updated, and neither exporting nor downloading offers a way to ask for an earlier one.
-
-The **View Save History** button in Kanvas (on the save-status indicator) shows the design's save history as a list of events. It is an audit trail of who changed the design and when; it is not a set of restorable snapshots, and you cannot export from it.
-
-If you need a version you can come back to, export a copy at the point you care about - **Design (YAML)** or **Design (OCI image)** are the two lossless formats - and keep it, or push the OCI image to a registry under a tag.
-</details>
-
-<details>
-  <summary>Where does the exported file go?</summary>
-  
-After export, your browser will either prompt you to choose a save location or automatically download the file to your default downloads folder.
-</details>
-
---------------------------------------------------------------------------------
-title: "Publishing Designs"
-url: /kanvas/designer/publishing-designs/index.md
-description: Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
---------------------------------------------------------------------------------
-
-Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.
-
-## Publishing Workflow
-
-### Step 1: Access Extensions UI
-Navigate to Meshery [Kanvas Designer](https://playground.meshery.io/extension/meshmap) from the main dashboard.
-
-### Step 2: Select Design in Sidebar
-Publish designs through two methods. Click the **info ("i")** button for details.
-
-- **Option 1:** View designs in the sidebar
-  ![Sidebar Design List](images/designs-select-sidebar.png)
-
-- **Option 2:** Go to Configuration → Designs
-  ![Design Details](images/designs-select-design.png)
-
-You can also open **Details** from the File menu on an open design:
-
-<figure>
-  <img src="../images/audit-2026-09/designer-details-publish.png" alt="Design Details modal with Publish to Catalog" />
-  <figcaption>Design Details (anonymous capture, Sep 2026): metadata, visibility, and <strong>Publish To Catalog</strong>. Publish is disabled while signed out.</figcaption>
-</figure>
-
-### Step 3: Submit Design Metadata
-Fill out the publication form:
-
-- **Type:** Select design category
-- **Technology:** Specify related technology
-- **Description:** Explain purpose and usage
-- **Caveats:** Add important considerations
-
-![Publish Modal](images/publish-form.png)
-
-### Step 4: Review Process
-Approval workflow based on user role:
-- **Admin submissions:** Published immediately
-- **User submissions:** Enter "Pending Review"
-
-Submissions in the “Pending Review” state will remain unpublished until they are manually reviewed and either approved or rejected by an Organization Admin or Provider Admin. This review process may take some time depending on the availability of reviewers. Regardless of approval or rejection, submitters will receive an email notification with the decision.
-
-![Approval Queue](images/approval-queue.png)
-
-### Step 5: Post-Approval Status
-Once the review process is complete, you will receive an email notification informing you of the decision.  
-
-- If your design is approved: 
-  - It will no longer appear in "My Designs."  
-  - Instead, it will be listed in the **[Catalog](https://cloud.layer5.io/catalog)** as a publicly available entry.  
-  - This ensures that published designs remain accessible to all users while keeping personal design spaces uncluttered.  
-
-- If your design is rejected:
-  - You will receive an email notification with a rejection reason. 
-  - Rejected designs **cannot be resubmitted** directly.  
-  - If you want to revise and submit it again, you must clone the design, make changes, and submit it as a new entry.
-
-## Cloning a Design
-To modify published designs:
-
-1. Select design from [Catalog](https://cloud.layer5.io/catalog)
-2. Click **Clone** to create editable copy
-3. Make changes and submit as new version
-
-## State Management
-
-### 1. Design State Lifecycle
-A design transitions through multiple states from creation to publication. The diagram below visually represents this process.
-
-![Publishing Flow](images/Publishing-flow.svg)
-
-#### Phases of Publishing Process
-- **Pre-Publish:** Users freely create and edit designs.  
-- **Pending Review:** Submitted designs undergo an approval process.  
-- **Published:** Approved designs are locked and listed publicly.  
-- **Withdrawn:** Unpublished designs return to private storage.
-
-### 2. Design State Characteristics
-
-| **State Stage**    | **Visibility**                    | **Operability**                                | **Key Restrictions**                                              |
-|--------------------|----------------------------------|------------------------------------------------|--------------------------------------------------------------------|
-| **Pre-Publish**    | Sidebar Design List & Configuration → Designs               | Free edit/delete/rename (editable by anyone)   |  No restrictions                                                                    |
-| **Pending Review** | Sidebar Design List & Configuration → Designs                | Editable by all users (including guests)       | Deleting during this stage creates dead entries in the approval list |
-| **Published**      | Category List (hidden in sidebar) | View-only copies (auto-appended "_copy")       | Original design permanently locked (edit in category only updates metadata) |
-| **Withdrawn**      | Returns to sidebar as private     | Free edit/delete/rename                        | Original cannot be republished; must create a new canvas with identical content |
-
-**Critical Rules:**
-- Withdrawn designs require re-submission as new entries.
-- Published designs are immutable.
-
-### 3. Publishing Permissions
-
-| **Operation**       | **Guest** | **Regular User** | **Owner** | **Organization Admin** | **Provider Admin** |
-|---------------------|-----------|------------------|-----------|------------------------|--------------------|
-| Edit Pending Design | ✔         | ✔                | ✔         | ✔                      | ✔                  |
-| Submit for Review     | ✔         | ✔                | ✔         | ✔                      | ✔                  |
-| Unpublish           | ✘         | ✘                | ✔         | ✔                      | ✔                  |
-
-For more about roles and permissions, refer to [Role Descriptions](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/) and [Default Permissions](https://docs.layer5.io/cloud/reference/default-permissions/).
-
-**Key Notes:**
-- Provider Admins have root-level visibility and can see private designs from all organizations.
-- Catalog approval queues are org-specific—only members of an organization can see its pending approvals, unless the user is a Provider Admin.
-
-## FAQ
-
-### 1. When my design is in "Pending Review," can I still edit it? Will the changes take effect?
-Yes, you can edit your design while it is in the "Pending Review" state, and any modifications will be automatically reflected in the submitted design. No need to resubmit the request.
-
-### 2. After my design is approved and published, can I modify it? Will the category be updated?
-No, once a design is **published**, it becomes **immutable**. You cannot directly edit or modify the contents. The category and metadata remain locked to ensure version consistency. However, you can create a new version by cloning the design and making modifications.
-
-### 3. After my design is published, can I modify the category field?
-No, the category field **cannot be changed** after the design is published. If a category update is required, you must clone the design, update the category, and submit it as a new entry.
-
-### 4. If my design is denied (rejected), can I submit it again?  
-No, once a design is denied, it **cannot be resubmitted**. However, you can clone the design, make adjustments, and submit it as a new entry for review.
-
-### 5. Can I unpublish a design after it has been published?  
-Only Admins and Owner can unpublish designs. Regular users and guests cannot perform this action.
-
-### 6. What is the difference between Public, Private, and Published?  
-
-| **State**    | **Visibility** | **Editability** | **Notes** |
-|-------------|---------------|----------------|-----------|
-| **Public**   | Visible to all Meshery Cloud users | Fully editable | Available for all users to access |
-| **Private**  | Only visible to the owner and organization members | Fully editable | Used for drafts and internal work |
-| **Published** | Approved and locked for public access | Cannot be modified | Ensures design consistency and prevents unauthorized edits |  
-
-
---------------------------------------------------------------------------------
 title: "Add and Configure Components"
 url: /kanvas/guides/designing/configuring-components/index.md
 description: Find and place components on the canvas, edit their configuration with the form Kanvas builds from the component definition, and lock, duplicate, copy, and paste them.
@@ -5146,7 +4026,7 @@ Comment components open a chat thread instead of tabs.
 
 There is no Apply button. Kanvas writes an edit to the design 300 ms after you stop typing. Each write triggers three follow-ups: the design autosaves after a 3 second pause, the component is validated, and relationships are re-evaluated. Configuration that a relationship controls can therefore change shortly after you edit a related component. See [Policy Evaluation]({{< ref "kanvas/concepts/relationship-evaluation/index.md" >}}).
 
-Undo reverses configuration changes like any other edit. See [Saving Designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}).
+Undo reverses configuration changes like any other edit. See [Saving Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}).
 
 ### Alias components
 
@@ -5275,7 +4155,7 @@ Kanvas saves for you. Once the design is saveable, Kanvas saves pending changes 
 Three things happen when a design is saved:
 
 - **A new version is created.** Every save increments the design's version, so a design accumulates a history of versions as you work.
-- **A new design starts as public.** The first save of a new design sets its visibility to public. Later saves keep whatever visibility the design has at that point. Designs can also be private or published; [Saving designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}) explains each.
+- **A new design starts as public.** The first save of a new design sets its visibility to public. Later saves keep whatever visibility the design has at that point. Designs can also be private or published; [Saving designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}) explains each.
 - **Your plan's component limit is checked.** Each plan sets a maximum number of components per design, and Kanvas checks it on every save and import. A design over the limit is not saved; Kanvas reports "Design exceeds maximum limit of N components supported by your current plan". Reduce the number of components or upgrade the plan. See [Layer5 pricing](https://layer5.io/pricing) for the limit on each plan.
 
 This three-component design is well within every plan's limit.
@@ -5284,7 +4164,7 @@ This three-component design is well within every plan's limit.
 
 ## Optional: Merge another design into this one
 
-You can bring an existing design into the canvas you are working on. Kanvas merges its components and relationships into the current design and leaves the original design unchanged. Use this to assemble a larger system from designs you already have. See [Merging designs]({{< ref "kanvas/designer/merging-designs/index.md" >}}).
+You can bring an existing design into the canvas you are working on. Kanvas merges its components and relationships into the current design and leaves the original design unchanged. Use this to assemble a larger system from designs you already have. See [Merging designs]({{< ref "kanvas/guides/designs/import-designs/index.md" >}}).
 
 ## What you built
 
@@ -5552,6 +4432,94 @@ The support channels and response commitments each plan includes are listed in [
 
 
 --------------------------------------------------------------------------------
+title: "Import and Merge Designs"
+url: /kanvas/guides/designs/import-designs/index.md
+description: Bring Kubernetes manifests, Helm charts, Docker Compose files, Kustomize projects, and Meshery designs into Kanvas, and merge one design into another.
+--------------------------------------------------------------------------------
+
+Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.
+
+Import works in Designer mode. The import action is hidden in Operator mode.
+
+## Choose how to import
+
+| Method | Accepts | Result |
+|---|---|---|
+| Import dialog, File Upload | One local file | New design, or merge into the open design |
+| Import dialog, URL Import | One direct http or https URL to a single file | New design, or merge into the open design |
+| Drag or paste onto the canvas | One or more files | One new design per file, or a merge prompt if the canvas is not empty |
+| Catalog clone or open | A published design | Copy of the design, see [Clone a Design]({{< ref "kanvas/guides/designs/cloning-a-design/index.md" >}}) |
+| GitHub integration in Layer5 Cloud | Files and folders in a connected repository | One private design per valid file |
+
+The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.
+
+The import dialog takes a name (1 to 255 characters, default "Untitled Design"). Names are not required to be unique. If you leave the name empty, Kanvas uses the name inside the file, and drops use the file name.
+
+## Supported formats
+
+Kanvas accepts `.yml`, `.yaml`, `.json`, `.tar`, `.tar.gz`, `.tgz`, `.gz`, and `.zip`. Any other extension is rejected. Archives are extracted safely and entries that try to escape the archive directory are refused.
+
+Kanvas decides the format by content, not by the file name, and takes the first match in this order:
+
+1. **Meshery design.** A YAML or JSON design file, or an OCI image archive (`.tar`, `.tgz`, `.zip`) whose layers contain a design file. Only the first design in an archive is taken. An OCI archive without a design file fails.
+2. **Kubernetes manifest.** A `.yml` or `.yaml` file with one or more documents. Unknown resource kinds are kept as generic objects.
+3. **Helm chart.** A packaged chart archive. An uncompressed `.tar` is reported as needing gzip compression. Individual chart files such as `Chart.yaml` cannot be imported, and values overrides are not an import option.
+4. **Docker Compose.** Compose services are first converted to Kubernetes resources, so the design contains Kubernetes components.
+5. **Kustomize.** A single kustomization file, or an archive that contains `kustomization.yaml` and every file it references.
+
+The full matrix is in [Supported Import and Export Formats]({{< ref "kanvas/reference/supported-formats.md" >}}).
+
+## Import a file as a new design or merge it
+
+When the canvas is empty, import loads the new design. When a design is open, the dialog offers **Import as new** and **Merge into current**.
+
+- **Import as new** saves the file as a design and opens it. If the open design has unsaved changes, the browser asks you to confirm before leaving. Declining cancels the load, but the imported design stays saved in your account.
+- **Merge into current** saves the file as its own design, then appends its components and relationships to the open design.
+
+Files dropped on a non-empty canvas raise a **Merge Design** prompt that names the incoming design and its component count. It offers Cancel, Open as new, and Merge into current. Cancel does not delete the design the import already saved.
+
+Dropping several files imports each as a separate design. The import dialog processes a single file at a time.
+
+## How a merge behaves
+
+Merging happens in the editor and changes only the open design.
+
+- **Identity.** Every component and relationship in the incoming design receives a new identifier. Kanvas does not match or de-duplicate against existing components, so merging the same design twice doubles its components.
+- **Preserved.** Names, kinds, configuration, styles, and the internal layout of the incoming block.
+- **Placement.** The block's top-left corner moves to the drop position when you dropped a file. Otherwise it lands 50 pixels right and 50 pixels down from its original coordinates, and it can overlap existing components.
+- **Not carried over.** The incoming design's name, id, version, visibility, catalog data, layer preferences, and workspace. The open design keeps its own.
+- **After the merge.** Relationship evaluation runs as for any edit, and autosave persists the result after three seconds. If the merged design exceeds your plan's component limit, the save fails and the merged components remain unsaved on the canvas. See [Save Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}).
+
+Merging needs no permission key, but the incoming design must be one you can read: your own, public, published, or shared with you.
+
+## Where the imported design lands
+
+The imported design is owned by you, placed in your selected workspace, public, at version 0.0.1, and records its detected source type. Imports from a GitHub repository are the exception: each file becomes a private design named after the file, and the connection records its repository, path, and branch. Invalid files in a selection are reported per path and do not stop valid files from importing.
+
+The components-per-design plan limit applies to URL imports and to every save. GitHub imports are not checked at import time. They are checked the first time the design is saved.
+
+## URL import limits
+
+The server fetches a URL under these limits:
+
+- Only http and https, checked again on every redirect, with at most 5 redirects.
+- 10 seconds to connect and 30 seconds for the request.
+- 16 MiB maximum body.
+- Destinations that resolve to loopback, private, or link-local addresses are refused.
+
+## Failures
+
+Every failed import shows the same message, `Failed to import design "<name>"`, whether the cause is an unrecognized format, an invalid archive, a plan limit, or an unreachable server. Nothing is saved when the server rejects the file. A failed merge shows `Failed to merge design: <reason>`.
+
+Files dropped on the canvas follow separate rules. Images and `.txt` files become canvas objects, not designs, and files over 500 KB are rejected whatever your plan. Archive types RAR and 7Z pass the drop check but fail at import. Other file types are ignored without a message.
+
+## Related
+
+- [Save Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}) covers plan limits and failures after an import.
+- [GitHub Integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) covers connecting a repository.
+
+
+--------------------------------------------------------------------------------
 title: "Canvas Actions"
 url: /kanvas/designer/canvas-actions/index.md
 description: The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
@@ -5583,7 +4551,7 @@ Reset Design removes everything currently on the canvas. Kanvas asks you to conf
 
 The capture is of the canvas rather than of your browser window: panels, the dock and the toolbar are not included, and the image is rendered from the design itself rather than screen-grabbed, so it is not limited to the part of the design currently scrolled into view.
 
-This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}) instead.
+This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}) instead.
 
 ## Options
 
@@ -5677,122 +4645,6 @@ The Layers panel is present in Operator mode too, but it filters rather than hid
 ## Render mode
 
 Layout and layers decide what is drawn and where. **Render mode**, in the Options drawer, decides how much detail each component is drawn with - from full fidelity down to a wireframe - and can be set to adapt automatically as a design grows. Reach for it when a design has become large enough that panning and zooming feel heavy.
-
-
---------------------------------------------------------------------------------
-title: "Merging and Loading Designs"
-url: /kanvas/designer/merging-designs/index.md
-description: Drag one design onto another to combine them, or open it in place of what is on the canvas.
-
---------------------------------------------------------------------------------
-
-Designs are rarely built from nothing. A platform design usually starts from an existing one - a team's base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.
-
-## Dragging a design onto the canvas
-
-Drag a design from the design list, the catalog or your workspace and drop it onto the canvas.
-
-What happens next depends on what is already on the canvas:
-
-- **The canvas is empty.** The dropped design is simply loaded. There is nothing to lose, so Kanvas does not ask.
-- **The canvas already has components.** Kanvas opens the **Merge Design** dialog, telling you which design you are about to bring in, how many components it contains, and which design it would be merged into.
-
-## Choosing what happens
-
-The Merge Design dialog offers three choices:
-
-| Choice | Result |
-| --- | --- |
-| **Merge into current** | The dropped design's components are added to the canvas alongside the existing ones, positioned where you dropped them. |
-| **Open as new** | The dropped design is opened on its own, displacing what is currently on the canvas. |
-| **Cancel** | Nothing changes. |
-
-### Merge with existing nodes on the canvas
-
-**Merge into current** combines the two designs. Every component and relationship from the dropped design is added to the design you already have open, landing at the point on the canvas where you dropped it so that the incoming components arrive as a group rather than scattered through the existing ones. The merged result is saved to the design you have open as soon as the merge completes.
-
-Merging does not consume the design you dragged. It remains in your design list, unchanged and independently owned - what you have merged is a copy of its contents into the design in front of you.
-
-### Displace the current nodes on the canvas
-
-**Open as new** does the opposite: the dropped design becomes the design you are working on, and whatever was on the canvas is replaced by it. Use it when the drag was really a "let me look at that one instead" rather than a merge.
-
-Because this discards what is on the canvas, Kanvas will not do it silently if you have unsaved changes - you are asked to confirm first. Saved designs are safe either way: the design being displaced is not deleted, only closed, and you can open it again from your design list.
-
-## Importing rather than dragging
-
-The same merge decision appears when you import a design from a file, a Helm chart, a Kubernetes manifest or a Docker Compose file while a design is already open. If the canvas is empty the import is loaded directly; if it is not, you are asked whether to merge or to open the import as a new design. See [Importing Designs]({{< ref "kanvas/getting-started/import-designs/index.md" >}}).
-
-***
-
-### See Also
-
-* **[Saving Designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}):** How Kanvas persists the result.
-* **[Starting from scratch]({{< ref "kanvas/getting-started/starting-scratch.md" >}}):** The end-to-end walkthrough of building a design.
-
-
---------------------------------------------------------------------------------
-title: "Saving Designs"
-url: /kanvas/designer/saving-designs/index.md
-description: How Kanvas persists your work, what the save indicator is telling you, and how to save a copy.
-
---------------------------------------------------------------------------------
-
-While you are signed in, Kanvas saves for you. There is no save button you must remember to press before closing the tab: every change you make to a design - adding a component, moving it, editing its configuration, drawing a relationship, renaming the design - is persisted to your account as you make it.
-
-That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.
-
-## The save indicator
-
-The indicator beside the design name reports the state of the design against your account.
-
-| Indicator | Meaning |
-| --- | --- |
-| Cloud with a tick, plus a brief "Saved" | Every change is persisted. Hovering shows how long ago the last save completed. |
-| Circling arrows, plus "Saving..." | A change is in flight. |
-| Struck-through cloud, plus "Unable to save. Retrying..." | A save failed. Kanvas retries on its own; the message clears once one succeeds. |
-
-If the indicator sits on "Unable to save" for more than a moment, stop making changes until it clears - your recent edits exist only in the browser until a save succeeds. The usual causes are a lost connection to Layer5 Cloud or an expired session.
-
-Clicking the indicator forces a save immediately rather than waiting for the next automatic one.
-
-<figure>
-  <img src="../images/audit-2026-09/designer-autosave.png" alt="Autosave indicator showing Saving… beside the design name" />
-  <figcaption>Anonymous capture (Sep 2026): the save indicator reads <strong>Saving…</strong> while the design syncs. Notification toasts from a recent Validate may also appear in this view.</figcaption>
-</figure>
-
-## Save history
-
-Hovering the save indicator on a saved design offers **View Save History**, which opens the design's version history. Because saving is continuous, history rather than manual save points is how you get back to an earlier state of a design.
-
-## Save as
-
-**Save as...** in the file menu creates a *new* design from what is currently on the canvas. You give the copy a name, Kanvas stores it as a separate design owned by you, and the canvas switches to that new design - so any further edits go to the copy, not to the original.
-
-Use it to:
-
-- take a private working copy of a design someone shared with you,
-- branch a design before making a change you may not keep,
-- turn a design opened from the catalog into one of your own.
-
-**Save as...** is disabled while the canvas is empty.
-
-<figure>
-  <img src="../images/audit-2026-09/designer-file-menu.png" alt="File menu listing Save as… and other design operations" />
-  <figcaption>File menu (hamburger): New, Open, Import, <strong>Save as…</strong>, Export, Share, View in Operator, Details, and Delete.</figcaption>
-</figure>
-
-## Signed out
-
-Saving requires an account. If you are working in Kanvas without signing in - in the playground, for example - the design lives in your browser only. [Exporting the design]({{< ref "kanvas/designer/export-designs/index.md" >}}) is how you keep it.
-
-***
-
-### See Also
-
-* **[Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}):** Give other people access to a saved design.
-* **[Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}):** Take a design out of Kanvas as a file.
-* **[Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}}):** Offer a design to the catalog.
 
 
 --------------------------------------------------------------------------------
@@ -6148,6 +5000,132 @@ Annotation edges, TagSets, and the drawing of any relationship never change what
 
 
 --------------------------------------------------------------------------------
+title: "Save Designs"
+url: /kanvas/guides/designs/saving-designs/index.md
+description: How Kanvas saves a design automatically, what the save indicator reports, how to save a copy, and what happens when a save fails.
+--------------------------------------------------------------------------------
+
+Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.
+
+Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.
+
+## What triggers a save, and what does not
+
+A new design with no id is saved only once it has at least one component, or a name that is neither empty nor "Untitled Design". A design that was saved before is always saved.
+
+Kanvas does not save when you load a design, when the server assigns the id after the first save, when you open a component configurator, or when collaborators' document updates arrive.
+
+The first save creates the design, and the address bar updates to `?mode=design&design=<id>`. If you edit again before the first save returns, Kanvas holds the second save until the id arrives, so no duplicate design is created.
+
+## Read the save indicator
+
+The cloud icon in the top bar reports the state and doubles as a manual save trigger.
+
+| State | Indicator |
+|---|---|
+| Saving | Animated icon and "Saving..." |
+| Saved | "Saved" for 3 seconds, then a tooltip reading "All changes saved" with the time |
+| Failed | Red cloud-off icon and "Unable to save. Retrying..." |
+
+The tooltip on any saved design includes **View Save History**.
+
+## Save a copy
+
+**Save as** saves the open design as a new design with a name you enter. It proposes `<current name>-copy`. The copy gets a new id, you as owner, your selected workspace, public visibility, and version 0.0.1, then Kanvas loads it. The original is unchanged. Save as is disabled on an empty canvas. The name is required but not checked for length or uniqueness.
+
+A new blank design is named "Untitled Design" until you rename it.
+
+## Versions and history
+
+Each save raises the patch number of the design's version: the first save is 0.0.1, the next 0.0.2, and so on. Autosaves, visibility changes, and catalog data edits all count, so the version tracks how often the design was saved, not meaningful releases. Cloning and imports reset the version to 0.0.1. There is no way to bump the major or minor number.
+
+**View Save History** opens a list titled "Design Version History". It is an event log of who changed the design and when. You cannot restore, diff, or export an earlier version from it. If you need a version you can return to, export a copy at that point. See [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}).
+
+## Concurrent edits
+
+Saving sends the whole design and the server overwrites the stored copy. The last save wins. Collaborators editing the same open design are reconciled live in the editor by the collaboration session, not at the storage layer.
+
+## Plan limit: components per design
+
+The server rejects a save when the design has more components than your plan allows.
+
+| Plan | Components per design |
+|---|---|
+| Personal | 100 |
+| Team Designer | 200 |
+| Team Operator | 100 |
+| Enterprise | 300 |
+
+These are the seeded plan values. A deployment can differ. The limit applies to every save, to Save as, to merges, and to URL imports. It does not apply to cloning. A cloned design that exceeds your limit opens normally but fails its first save.
+
+The server answers 403 with the message "Design exeeds maximum limit of N components supported by your current plan" (the misspelling ships) and an upgrade remediation. Kanvas does not show that message. You see only "Unable to save. Retrying..." and the edits stay on the canvas, unsaved. Reduce the component count below the limit to save again. An organization with no active subscription that grants the feature gets "Org is not entitled to adding components to a design".
+
+For the other limits Layer5 lists per plan, see [Feature Availability]({{< ref "kanvas/reference/feature-availability.md" >}}). Plan limits other than components per design are not enforced when you save.
+
+## When a save fails
+
+| Message | Meaning |
+|---|---|
+| Failed to reach the cloud. Any changes made may not be saved. | The server was unreachable (HTTP 503). |
+| Failed to save Design with name: <name> | Any other failure, including the plan limit. |
+| Failed to save Design with name: <name> Design is invalid or empty | The design payload was empty or invalid. |
+
+After a failure the editor enters an error mode: the top bar is tinted, and design-changing actions are ignored until the next command resets it. Autosave retries with exponential backoff, waiting 3 seconds times 2 to the power of the attempt number (6, 12, 24 seconds, and so on), up to 100 attempts. Any new edit resets the count.
+
+Closing the tab or switching designs with unsaved changes asks "You have unsaved changes. Are you sure you want to leave?"
+
+## Who can save what
+
+Anonymous users save normally into a guest account with its own organization and workspace. On sign-in, guest designs migrate to the account.
+
+Updating an existing design keeps the original owner, visibility, and source type when the update does not state them. Operator mode blocks design edits, so it never saves a design. See [Manage Designs]({{< ref "kanvas/guides/designs/_index.md" >}}) for the defaults.
+
+
+--------------------------------------------------------------------------------
+title: "Clone a Design"
+url: /kanvas/guides/designs/cloning-a-design/index.md
+description: Copy a public or published design into your own workspace to use as a template, and learn what carries over.
+--------------------------------------------------------------------------------
+
+Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.
+
+## What you can clone
+
+The server clones only designs whose visibility is public or published. A request for any other design fails with 403 "unauthorized to clone design". That includes your own private designs. To copy one of those, open it and use Save as. See [Save Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}). A missing source design returns 500 "could not find design".
+
+## Where to start a clone
+
+Kanvas has no Clone item for the design that is open. You clone from these places:
+
+- **The catalog.** The catalog modal's Clone action, and catalog design cards in Layer5 Cloud.
+- **A catalog link.** Opening a link with `mode=design&type=catalog&id=<id>` clones that design and opens your copy.
+- **Tutorials.** Opening a tutorial's design clones it.
+
+The client names a catalog clone `<design name> (Copy)`, and a tutorial clone `<tutorial title> (Copy)`. The server stores whatever name it receives and rejects an empty request body with 400. When the clone completes, Kanvas loads it. If the open design has unsaved changes, you confirm first.
+
+Layer5 Cloud shows the Clone action only to roles with the Clone Design permission. The server checks visibility, not the key. See [Permissions]({{< ref "kanvas/reference/permissions.md" >}}).
+
+## What carries over
+
+| Carried over | Reset or changed |
+|---|---|
+| Components, relationships, styles, configuration, annotations, and preferences, converted to the current design format | New id |
+| The origin of the source design | Version 0.0.1 |
+| Catalog data (compatibility, type, info, caveats, content class, published version, snapshot URLs) | Owner is you |
+| | Visibility private |
+| | Workspace is your selected workspace |
+| | Source file and usage counters are not copied |
+
+Cloning is the only path that creates a private design. Every other new design is public.
+
+## Limits and failure behavior
+
+Cloning does not check your plan's components-per-design limit. A clone from a larger plan can exceed yours and then fail its first autosave with a plan-limit error. See [Save Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}).
+
+Kanvas shows `Cloning design "<name>"` while the clone runs. It shows no failure message. Because the clone copies the catalog data block, a private clone can display catalog metadata even though it is not published.
+
+
+--------------------------------------------------------------------------------
 title: "Policy Evaluation"
 url: /kanvas/concepts/relationship-evaluation/index.md
 description: How Kanvas evaluates the relationships in a design continuously, which engine runs the evaluation, what triggers it, and why results can change after you stop editing.
@@ -6334,6 +5312,68 @@ Every change, including drawn objects, syncs live between everyone in the design
 
 
 --------------------------------------------------------------------------------
+title: "Export Designs"
+url: /kanvas/guides/designs/export-designs/index.md
+description: Export a design as a design file, an OCI image, a Kubernetes manifest, a Helm chart, or an embeddable script, and know what each format keeps.
+--------------------------------------------------------------------------------
+
+Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or `kubectl`, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.
+
+Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as `<view name>.json`.
+
+## Choose a format
+
+| Format | Keeps layout, annotations, and metadata | Use it for |
+|---|---|---|
+| Design file (YAML) | Yes | Backups, moving designs, re-import into Kanvas |
+| Design (OCI image) | Yes | Storing and versioning a design in a container registry |
+| Kubernetes manifest | No | `kubectl apply` and pipelines that expect plain manifests |
+| Helm chart | No | Helm repositories, Argo CD, Flux, Artifact Hub |
+| Embed design (JavaScript) | Snapshot of the canvas | Showing a design on a web page |
+
+Kanvas offers at least one of the first four. Which ones appear can depend on the capabilities of your Layer5 Cloud account. Per-format options and size limits are not exposed. To capture the canvas as a PNG picture, use Take Screenshot instead. See [Canvas Actions]({{< ref "kanvas/designer/canvas-actions/index.md" >}}).
+
+## Design file (YAML) {#exporting-as-a-design-file}
+
+A complete copy of the design, including layout, annotations, component grouping, and configuration. The download is named `<design name>.yml`. Kanvas can import it back without loss.
+
+## Design (OCI image) {#exporting-as-an-oci-image}
+
+The same lossless content packaged as an OCI image archive. Push it with a registry tool such as `docker push` or `oras push` to version and distribute designs alongside application artifacts. Kanvas imports the archive back, taking the design file in its layers. See [Import and Merge Designs]({{< ref "kanvas/guides/designs/import-designs/index.md" >}}).
+
+## Source-type formats {#exporting-in-a-source-type-format}
+
+A design can be exported as the kind of source it was built from. Both formats are lossy: layout, annotations, and comments are dropped because neither format can carry them. To keep a design fully editable, export the design file instead.
+
+Docker Compose is an import source only. A design cannot be exported to Compose.
+
+### Kubernetes manifest {#exporting-as-a-kubernetes-manifest}
+
+Plain Kubernetes resource definitions, ready for `kubectl apply`.
+
+### Helm chart {#exporting-as-a-helm-chart}
+
+A `.tar.gz` chart archive that contains the Kubernetes resource definitions. Install it with `helm install <release> <chart>.tgz` or place it in a Helm repository.
+
+Re-importing a manifest or chart restores the resources, but not the layout, so the graph does not reappear as you drew it.
+
+## Embed design (JavaScript) {#exporting-as-embedding}
+
+The Embed Design option downloads a JavaScript module and shows a two-line snippet to paste into an HTML page. The embed is a static snapshot, not a live view. See [Embed Designs]({{< ref "kanvas/guides/designs/embedding-designs/index.md" >}}).
+
+## Access and tiers
+
+- Exporting needs no sign-in for a public or published design. Anonymous callers can download the design file of any public or published design, not just their own. A private design is downloadable by its owner, a provider administrator, a user the design is shared with, or a user holding the View Designs permission.
+- Each download of the design file writes an audit event and raises the design's download count. Anonymous downloads record as "Anonymous viewer downloaded".
+- No plan tier gates export, and exporting your own design needs no permission key. Layer5 Cloud's catalog table shows its Download action to roles with the Download a Design permission.
+- The browser either prompts for a save location or saves to your downloads folder. Success shows `<name> design downloaded`. Failure shows "Failed to download design".
+
+## Keep a version you can return to
+
+A design has a single current version, and the save history is an event log, not a set of snapshots. To keep a restorable point, export a design file or an OCI image at that moment and store it. For an OCI image, push it to a registry under a tag.
+
+
+--------------------------------------------------------------------------------
 title: "Pin Models to the Dock"
 url: /kanvas/guides/designing/pin-model-to-dock/index.md
 description: Keep the models you use most one step away in the dock, and remove them when you no longer need them.
@@ -6375,6 +5415,157 @@ Either of these removes the pin without affecting any design:
 ## Default dock
 
 With nothing pinned the dock holds Select, Hand, Components, Kubernetes, Shapes, Comment, Image, TextBox, Section, Pen, Pencil, and Help Center. See [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Embed Designs"
+url: /kanvas/guides/designs/embedding-designs/index.md
+description: Show a design on a web page, blog, or documentation site with an exported JavaScript snapshot, including WordPress, React, and Hugo.
+--------------------------------------------------------------------------------
+
+An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.
+
+## How an embed works
+
+- **It is a snapshot.** The file holds the canvas as it was at export time: node positions, element styles, and inline background images converted to data URLs where the fetch succeeded. Later edits to the design do not change an exported file. Re-export to refresh it.
+- **It needs no Layer5 Cloud at view time.** The page makes no request to Layer5 Cloud, so the embed works for private designs and keeps working if the design is deleted. Anyone who can read your page can read the embedded design data.
+- **It is view only.** Layout is fixed to the exported positions. Selection and box selection are disabled, zoom is limited to 0.5x to 6.6x, and there is no editing, component configuration, relationship evaluation, or live cluster data.
+- **It loads one library.** The page fetches the Cytoscape library (version 3.27.0) from a public CDN, so viewers need outbound access to it. A Meshery logo link, which opens meshery.io, is drawn at the bottom right of the canvas. No option removes it.
+- **It has no parameters.** Width, height, theme, background, and zoom are not options. The container's CSS sets the size.
+- **There is no iframe embed.** Kanvas offers no embed URL for the app itself.
+
+Embedding needs no permission key and no paid plan.
+
+## Embed a design in an HTML page
+
+1. Open the design, choose Export, and select **Embed Design**. Kanvas loads the design if it is not the open one, waits for it to render plus 3 seconds, and then generates the file. A failure shows "Failed to generate Embed Code for <name>".
+2. Download the JavaScript file, then copy the embed code.
+3. Place the file next to your page, or anywhere your page can reference, and paste the snippet:
+
+```html
+<div id="embedded-design-<design id>" style="height:100%;width:100%"></div>
+<script src="./embedded-design-<design name>.js" type="module"></script>
+```
+
+The container id is `embedded-design-` plus the design id, lowercased, with spaces replaced by hyphens. The script file name is `embedded-design-` plus the design name, lowercased, with spaces replaced by hyphens, plus `.js`. Other characters in the name are not changed, so avoid unusual characters in design names. Keep the `id` in the snippet equal to the id the script expects.
+
+Two requirements follow from this snippet:
+
+- Serve the page over HTTP or HTTPS. Module scripts do not load from `file://`.
+- Give the container a real height. The div fills 100 percent of its parent, which collapses to zero in a parent with no height.
+
+## Embed in WordPress
+
+WordPress has no Kanvas-specific plugin. You add the script to your theme and the snippet to a Custom HTML block.
+
+1. Create a `js` folder in your active theme and copy the downloaded file into it.
+2. Enqueue the file as a script module from the theme's `functions.php`, replacing `design.js` with your file name:
+
+```php
+function kanvas_design_script() {
+    $script_uri = get_template_directory_uri() . '/js/design.js';
+    wp_enqueue_script_module('kanvas-design', $script_uri, array(), '1.1.0');
+}
+add_action('wp_enqueue_scripts', 'kanvas_design_script');
+```
+
+3. In the post, add a Custom HTML block containing only the `<div>` from the snippet. Because the theme already loads the module, leave out the `<script>` tag.
+
+## Embed in a React project
+
+Install the component package and point it at the exported file and container id.
+
+```bash
+npm i @layer5/meshery-design-embed
+```
+
+```jsx
+import MesheryDesignEmbed from '@layer5/meshery-design-embed'
+
+function Design() {
+  return (
+    <MesheryDesignEmbed
+      embedScriptSrc="embedded-design-embed1.js"
+      embedId="embedded-design-a3d3f26e-4366-44e6-b211-1ba4e1a3e644"
+    />
+  )
+}
+```
+
+`embedScriptSrc` is the path to the exported file, typically in your static folder. `embedId` is the container id from the snippet.
+
+## Embed in a Hugo site
+
+Hugo sites wrap the snippet in a shortcode. Add this definition once to your site's shortcodes, as `meshery-design-embed.html`.
+
+<details>
+<summary>Click to expand the full Shortcode Definition</summary>
+
+```html
+{{ $script := .Get "src" }}
+{{ $id := .Get "id" }}
+{{ $size := .Get "size" | default "full" }}
+{{ $style := .Get "style" }}
+
+<style>
+.meshery-embed-container {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin: 0rem auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.meshery-embed-container.full {
+  width: 80%;
+  height: 30rem;
+}
+.meshery-embed-container.half {
+  width: 50%;
+  height: 25rem;
+}
+.meshery-embed-container .cy-container {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div
+    id="{{ $id }}"
+    {{- if $style -}}
+        style="{{ $style | safeCSS }}"
+    {{- else -}}
+        class="meshery-embed-container {{ $size }}"
+    {{- end -}}
+></div>
+
+<script src="{{ $script }}" type="module"></script>
+```
+</details>
+
+| Parameter | Required | Meaning |
+|---|---|---|
+| `src` | Yes | Path to the exported JavaScript file. |
+| `id` | Yes | Unique container id for this embed on the page. |
+| `size` | No | `full` (default, 80 percent wide) or `half` (50 percent wide). Ignored when `style` is set. |
+| `style` | No | Inline CSS for the container. Overrides `size`. |
+
+Place the exported file near the page and reference it:
+
+```html
+{{</* meshery-design-embed
+    src="../path/to/your-design.js"
+    id="your-unique-design-id"
+    size="half"
+*/>}}
+```
+
+A live example, rendered from a design exported from Kanvas:
+
+{{< meshery-design-embed  src="../export-designs/embedded-design-dapr.js"  id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" >}}
+
+## Related
+
+- [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}) covers the other formats.
+- [Share Designs]({{< ref "kanvas/designer/sharing/index.md" >}}) covers live access to a design for specific people.
 
 
 --------------------------------------------------------------------------------
@@ -6423,6 +5614,124 @@ Grouping is automatic. No button creates a TagSet. After you change labels, Kanv
 
 - [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}): how TagSets fit with the other kinds.
 - [Create Relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}): hiding relationship kinds.
+
+
+--------------------------------------------------------------------------------
+title: "Publish Designs"
+url: /kanvas/guides/designs/publishing-designs/index.md
+description: Publish a design to the Layer5 Cloud catalog, understand request and approval states, unpublish it, and ship it to Artifact Hub yourself.
+--------------------------------------------------------------------------------
+
+Publishing makes a design discoverable in the Layer5 Cloud catalog, where anyone can view and [clone]({{< ref "kanvas/guides/designs/cloning-a-design/index.md" >}}) it. Publishing is separate from visibility: making a design public does not publish it.
+
+## Visibility and publication states
+
+| State | Who can read it | How it gets there |
+|---|---|---|
+| Private | Owner, provider administrators, and users with a share grant | Cloning, unpublishing, or switching a public design to private |
+| Public | Anyone, including anonymous callers, who has the design's id or link | The default for every newly saved design |
+| Published | Everyone through the catalog | An approved publish request, or a direct publish by an approver |
+
+The owner can toggle a design between private and public until it is published. A published design cannot be toggled. The toggle saves through the normal save path, so it raises the version and re-checks the components limit.
+
+## Publish a design
+
+Publishing needs a signed-in account. Anonymous users see a "Sign in to publish" prompt. The Publish to Catalog action sits in the design's details, and is available from the Share menu. It is disabled until the design has loaded.
+
+The form asks for:
+
+- **Type:** the design category used for catalog browsing.
+- **Compatibility:** the technologies the design applies to. Select at least one, or the form stops with "Please select at least one technology."
+- **Pattern info:** the purpose and intended use.
+- **Pattern caveats:** limitations, assumptions, and operational warnings.
+
+Write for a reader who clones the design without your context. The form shows "Upon submitting your catalog item, an approval flow will be initiated." Once the design is published, the button reads "Published" and is disabled. Save stores catalog data and visibility without publishing.
+
+Publishing needs the Publish Design permission in the interface. The server accepts any caller who passes the checks below.
+
+## What happens on submit
+
+The server requires a catalog data object, lowercases the type and compatibility values, and sets the light and dark snapshot image URLs from the design id. A design that already has a publish request in any state (pending, approved, or denied) is rejected with `catalog request for content with id "<id>" already exist from user <name>`. That includes a design whose earlier request was denied or whose publication was later removed.
+
+Then the outcome depends on your role:
+
+| Your permission | Outcome |
+|---|---|
+| Approve Catalog Request | The design publishes at once. Visibility becomes published, the content class is "official", and the published version is the design's current version. A workflow adds it to the public catalog repository. If that workflow fails, the publish stands and an error event is recorded. |
+| Anyone else | A request is created with status pending and content class "community". Visibility does not change. The catalog maintainers receive an email titled "New Catalog publish request", and you receive a copy. |
+
+Content classes are official, verified, and community. A direct publish by an approver is always official.
+
+## Review a request
+
+Users with the View Catalog Requests permission see the queue in Layer5 Cloud. Users with Approve Catalog Request or Deny Catalog Request decide each request.
+
+- Only a pending request can be decided. Deciding any other request returns 409 "publish request already exists with status: <status>". A caller without the key gets 403 "unauthorized to approve catalog publish request".
+- Approving sets visibility to published, records the approver's chosen content class, and records the published version. It does not start the workflow that adds the design to the public catalog repository, which only a direct publish by an approver starts.
+- Denying sets the request to denied and leaves visibility unchanged.
+- The design owner receives an approval or denial email unless their notification preferences turn it off.
+
+Server-side validation of catalog data is minimal. The interface form enforces the required fields.
+
+## Unpublish a design
+
+The design's creator, or any user with Approve Catalog Request, can unpublish it. The Unpublish Design permission controls the action in the Layer5 Cloud interface. Others get 403 "unauthorized to unpublish to catalog".
+
+Unpublishing sets visibility to private (not public), starts a delete-from-catalog workflow, and records an event. Catalog data stays on the design. The earlier publish request record is not cleared, so submitting the same design again hits the existing-request rule above.
+
+Deleting a published design also starts the delete-from-catalog workflow. See [Delete a Design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}}).
+
+## Publish to Artifact Hub
+
+Kanvas has no direct Artifact Hub publishing. To list a design there, export it as a Helm chart and publish that chart to a Helm repository, then register the repository in Artifact Hub using its own documentation. See [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}). Exporting to a Helm chart drops layout and annotations.
+
+## Tiers
+
+No plan feature is checked when you publish. Publishing is governed by the permissions above. See [Permissions]({{< ref "kanvas/reference/permissions.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Delete a Design"
+url: /kanvas/guides/designs/deleting-a-design/index.md
+description: Permanently delete a design you own, and understand what deletion does and does not affect.
+--------------------------------------------------------------------------------
+
+Deleting a design removes the design record and its workspace mappings in one transaction. There is no trash and no restore. Export a copy first if you might need it. See [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}).
+
+## Who can delete
+
+The server allows the design's owner or a provider administrator. Organization administrators, workspace owners, and collaborators with a share grant cannot delete a design (403 "unauthorized for the operation"). Layer5 Cloud hides its Delete action for roles without the Delete a Design permission, but the server decides by ownership, not by the key. To remove a design from a workspace without deleting it, use the workspace's remove action instead.
+
+## Delete from Kanvas
+
+Delete is a File menu action, disabled on an empty canvas. A confirmation reads `Delete <name> design` with the text `Are you sure you want to delete <name>?`. You confirm with a single button. There is no type-to-confirm step.
+
+If you delete the open design, the editor resets to a new blank design. Deleting a different design from a list does not change the canvas. Kanvas shows no success message for a delete, while Layer5 Cloud shows `<name> deleted`.
+
+## What deletion affects
+
+| Item | Effect |
+|---|---|
+| Deployed resources | None. Deleting does not undeploy anything from clusters. [Undeploy]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) first if you want the resources gone. |
+| Clones, Save as copies, merged-in components | Untouched. They are independent. |
+| Share grants | Removed with the design. |
+| Collaboration session | Ends when the canvas resets. |
+| Published design | A delete-from-catalog workflow runs against the catalog repository. If it fails, the failure is logged only. The catalog request record stays. |
+| Catalog clones made by others | Remain. |
+
+An event records who deleted which design.
+
+## Delete several designs
+
+Layer5 Cloud's catalog designs table offers multi-select delete with the prompt `Are you sure that you want to delete <N> designs?`. It issues one delete per selected design, so a partial failure shows per-design errors. Kanvas has no multi-select delete.
+
+## Errors
+
+| Response | Cause |
+|---|---|
+| 400 "please provide a valid design ID" | The id is invalid. |
+| 404 "design not found" | The design does not exist. A missing row can also surface as 500 "failed to get design from database". |
+| 403 | You are not the owner or a provider administrator. |
 
 
 --------------------------------------------------------------------------------
@@ -6503,6 +5812,67 @@ What you see when you reach a boundary:
 ## The local provider limitation
 
 Meshery can run with a local provider instead of a remote one. Under the local provider there is no remote service to forward requests to, so every provider-bound feature, including views, the catalog, sharing, and support requests, returns HTTP 501 Not Implemented. Use a remote provider such as Layer5 Cloud for any feature that depends on it.
+
+
+--------------------------------------------------------------------------------
+title: "Supported Import and Export Formats"
+url: /kanvas/reference/supported-formats/index.md
+description: Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
+--------------------------------------------------------------------------------
+
+This page lists exactly what Kanvas accepts and produces. For the steps, see [Import and Merge Designs]({{< ref "kanvas/guides/designs/import-designs/index.md" >}}) and [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}).
+
+## Import
+
+Kanvas accepts the extensions `.yml`, `.yaml`, `.json`, `.tar`, `.tar.gz`, `.tgz`, `.gz`, and `.zip`. Detection is by content and takes the first match in the order below.
+
+| Order | Format | Extensions | Detected when | Notes |
+|---|---|---|---|---|
+| 1 | Meshery design | `.yml` `.yaml` `.json` | The schema version is a supported design version | Lossless round trip of a design file export |
+| 1 | Meshery design as OCI image | `.tar` `.tgz` `.tar.gz` `.zip` | The archive's layers contain a design file | Only the first design is taken. Other layer files are ignored. No design file means failure. |
+| 2 | Kubernetes manifest | `.yml` `.yaml` | One or more valid Kubernetes documents | Multi-document files work. Unknown kinds are kept as generic objects. |
+| 3 | Helm chart | `.tgz` `.tar.gz` `.gz` `.tar` `.zip` | A valid packaged chart | An uncompressed `.tar` is reported as needing gzip. No values overrides. |
+| 4 | Docker Compose | `.yml` `.yaml` | Converts as a Compose file | The result is Kubernetes components. |
+| 5 | Kustomize | `.yml` `.yaml` (kustomization), or an archive containing `kustomization.yaml` | The project builds | Archive must contain every referenced file. |
+
+If nothing matches, the import fails and lists why each format was rejected. The interface shows only the generic failure message.
+
+### Import sources
+
+| Source | Supported | Limits |
+|---|---|---|
+| Local file in the import dialog | Yes | One file at a time. No size limit in the client. |
+| Single-file http or https URL in the import dialog | Yes | 16 MiB body, 5 redirects, 10 second connect, 30 second request. Internal addresses are refused. |
+| Drag or paste on the canvas | Yes | One design per file. Images and `.txt` files become canvas objects, limited to 500 KB on every plan. |
+| Catalog clone or open | Yes | Public or published designs only. |
+| Files and folders in a repository connected through the GitHub integration | Yes | One private design per valid file. |
+| Git clone URL, Helm repository URL, `oci://` reference, directory, or pasted text | No | |
+| RAR and 7Z archives | No | The drop check lets them through and the import fails. |
+
+## Export
+
+| Output | Keeps layout, annotations, metadata | Re-importable | Notes |
+|---|---|---|---|
+| Design file (YAML) | Yes | Yes, lossless | Downloads as `<design name>.yml`. |
+| Design (OCI image) | Yes | Yes | Archive of an OCI image. Push it with a registry tool. |
+| Kubernetes manifest | No | Resources only | Plain Kubernetes YAML. |
+| Helm chart | No | Resources only | `.tar.gz` chart archive. |
+| Embeddable JavaScript module | Canvas snapshot | No | Static snapshot for web pages. See [Embed Designs]({{< ref "kanvas/guides/designs/embedding-designs/index.md" >}}). |
+| View as JSON | Not applicable | No | Operator mode only. Downloads as `<view name>.json`. |
+
+The canvas screenshot (a PNG picture, not a design file) is a separate action. See [Canvas Actions]({{< ref "kanvas/designer/canvas-actions/index.md" >}}). Not available: Docker Compose export, SVG image export, export of an earlier version, and per-format export options. The catalog's light and dark snapshot images are produced by an automated workflow after publishing and are not user exports.
+
+## Format by operation
+
+| Format | Import | Export |
+|---|---|---|
+| Meshery design (YAML or JSON) | Yes | Yes (YAML) |
+| Meshery design (OCI image) | Yes | Yes |
+| Kubernetes manifest | Yes | Yes |
+| Helm chart | Yes | Yes |
+| Docker Compose | Yes | No |
+| Kustomize | Yes | No |
+| JavaScript embed | No | Yes |
 
 
 --------------------------------------------------------------------------------
@@ -7632,74 +7002,6 @@ Congratulations! You’ve successfully completed the tutorial on deploying a Wor
 
 
 --------------------------------------------------------------------------------
-title: "Embedding a Meshery Design in a WordPress Post"
-url: /kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/index.md
-description: Learn how to Embed a Meshery Design in a WordPress Post
---------------------------------------------------------------------------------
-
-### Introduction
-
-In this tutorial, we will learn how to embed a **Meshery Design** in a WordPress post using the **Embed** option in **Kanvas**.
-
-This tutorial assumes that you have created a design or have an existing one. If not, you can use one of the numerous public designs available in **Kanvas** for this tutorial.
-
-### Prerequisites
-
-1. **WordPress**: A running WordPress instance or deployment, serving as the sample application for this tutorial.
-1. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
-
-### Steps
-
-1. Expand the **Actions** menu on the left and select export.
-   
-   ![Expand Designs](images/embedding-design-in-wordpress/expand-designs-kanvas.png)
-
-2. Click the download icon next to **Embed Design**
-   
-   ![Export Design](images/embedding-design-in-wordpress/quickaction-exportdesign.png)
-
-3. This will show the `js` file to download and the HTML code snippet to copy.
-   
-   ![Embed Design](images/embedding-design-in-wordpress/embeddesign-HTML.png)
-
-4. Now, create a `js` folder in the path of your current WordPress theme
-
-5. Next, copy the downloaded `js` file into this folder.
-   
-   ![Copy JS](images/embedding-design-in-wordpress/copy-js.png)
-
-6. To the following script, replace `design.js` with the name of the `js` file which you just downloaded. Once this is done,  go to the `functions.php` file in your current WordPress theme and copy the script.
-
-   ```
-   function kanvas_design_script() {
-         $script_uri = get_template_directory_uri() . '/js/design.js';
-         wp_enqueue_script_module(
-                           'kanvas-design', 
-                           $script_uri, 
-                           array(), 
-                           '1.1.0', 
-               );
-   }
-   add_action('wp_enqueue_scripts', 'kanvas_design_script');
-   ```
-
-   ![Copy Script](images/embedding-design-in-wordpress/copy-script.png)
-
-7. Open the WordPress post where you want to embed the design in edit mode and add a _Custom HTML_ block.
-
-   ![Copy URL](images/embedding-design-in-wordpress/add-custom-html.png)
-
-8. Paste the div element from the Embed Code copied from Kanvas. 
-
-   ![Copy URL](images/embedding-design-in-wordpress/add-embedded-html.png)
-
-9. Click **Preview** to validate that the design is rendered.
-   
-   ![Copy URL](images/embedding-design-in-wordpress/embedded-design-preview.png)
-
-10. Publish the WordPress post and share.
-
---------------------------------------------------------------------------------
 title: "Exploring Kubernetes CronJobs"
 url: /kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/index.md
 description: In this tutorial, we will explore how to use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for managing Kubernetes CronJobs.
@@ -8769,63 +8071,6 @@ The Log Streamer utilizes a robust architecture where the **Meshery Operator** s
 
 
 --------------------------------------------------------------------------------
-title: "Publishing Meshery Designs to Artifact Hub"
-url: /kanvas/tutorials/artifacthub/publish-to-artifacthub/index.md
-description: Step by step example for how to export Meshery Designs and publish them to an Artifact Hub repository.
---------------------------------------------------------------------------------
-
-## Introduction
-
-In this tutorial, we'll see how to export a Design from Meshery which we will use to populate an Artifact Hub repository.
-
-## Prerequisites
-
-- A prepared Artifact Hub repository with `Kind` set to [Meshery Designs](https://artifacthub.io/docs/topics/repositories/meshery-designs).
-
-## Steps
-
-### 1. Open the hamburger menu in Kanvas
-![](images/publish-to-artifacthub/2024-07-30_1.png)
-
-
-### 2. Click Open
-![](images/publish-to-artifacthub/2024-07-30_2.png)
-
-
-### 3. Find the Design in the Panel
-![](images/publish-to-artifacthub/2024-07-30_3.png)
-
-
-### 4. Click Export Design
-![](images/publish-to-artifacthub/2024-07-30_4.png)
-
-### 5. Click on EXPORT under OCI
-![](images/publish-to-artifacthub/2024-07-30_5.png)
-
-### 6. Prepare your Artifact Hub repo
-You will need to have an Artifact Hub repository already created with `Kind` as `Meshery Designs`. See [Artifact Hub documentation](https://artifacthub.io/docs/topics/repositories/meshery-designs/) for more information on managing repositories.
-1. Navigate to the Artifact Hub control panel.
-2. Click **ADD** to create a new repository.
-
-![](images/publish-to-artifacthub/add_repo.png)
-
-3. Select `Meshery designs` as the repository kind and fill in the repository details.
-
-![](images/publish-to-artifacthub/kind_design_repo.png)
-
-### 7. Push Design to Artifact Hub repository
-After exporting your design as a Meshery Design (OCI image) from Kanvas, a `.tar` archive will be downloaded.
-1. Extract the downloaded .tar archive.
-2. Inside the extracted contents, locate the `.tar.gz` archive and extract it.
-3. After extraction, you should find the following files: `artifacthub-pkg.yml` and `design.yml`.
-4. Move these files into your prepared Artifact Hub repository.
-5. Commit and push the changes to your repository.
-
-### 8. Verify Repository in Artifact Hub
-After pushing the files, wait for Artifact Hub to index your repository. Once indexing is complete, verify the published Meshery Design from the Artifact Hub control panel.
-![](images/publish-to-artifacthub/artifacthub_control_panel.png)
-
---------------------------------------------------------------------------------
 title: "Troubleshooting Kanvas"
 url: /kanvas/reference/troubleshooting/index.md
 description: Learn to Troubleshoot the Kanvas
@@ -9663,7 +8908,7 @@ Currently, there are no specific space or file count limitations for Workspaces.
 
 #### 7. How can I make my design publicly available, but read-only to other users?
 
-To make a Design available to everyone but in a read-only state, you should **[Publish]({{< ref "kanvas/designer/publishing-designs/index.md" >}})** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
+To make a Design available to everyone but in a read-only state, you should **[Publish]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}})** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
 
 #### 8. How do I share a private design with a specific team for collaboration?
 
@@ -12659,7 +11904,7 @@ When you clone a design:
 
 The **Download** button allows you to save the design as a `Design (YAML)` file. This is useful for offline backups or sharing the file directly.
 
-> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}).
+> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}).
 
 {{< alert type="warning" title="Metadata Not Included in Download" >}}
 Design downloads include only the core YAML definition, excluding associated catalog metadata such as descriptions, technology, or class.
@@ -12711,7 +11956,7 @@ The **Delete** action is disabled when your role does not carry the permission f
 
 The table view of [My Designs](https://cloud.layer5.io/catalog/content/my-designs) also supports deleting several items at once: select rows with their checkboxes and use the bulk **Delete** action. Each selected item is deleted independently, so a failure on one does not stop the others - check the list afterwards.
 
-> For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design]({{< ref "kanvas/tasks/designs/deleting-a-design/index.md" >}}).
+> For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}}).
 
 
 --------------------------------------------------------------------------------

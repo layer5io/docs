@@ -340,7 +340,7 @@ Currently, there are no specific space or file count limitations for Workspaces.
 
 #### 7. How can I make my design publicly available, but read-only to other users?
 
-To make a Design available to everyone but in a read-only state, you should **[Publish](/kanvas/designer/publishing-designs/)** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
+To make a Design available to everyone but in a read-only state, you should **[Publish](/kanvas/guides/designs/publishing-designs/)** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
 
 #### 8. How do I share a private design with a specific team for collaboration?
 

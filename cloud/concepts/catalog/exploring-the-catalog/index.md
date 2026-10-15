@@ -138,7 +138,7 @@ When you clone a design:
 
 The **Download** button allows you to save the design as a `Design (YAML)` file. This is useful for offline backups or sharing the file directly.
 
-> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs](/kanvas/designer/export-designs/).
+> For more advanced use cases, Meshery also supports exporting designs into other formats. To learn more, see the guide on [Exporting Designs](/kanvas/guides/designs/export-designs/).
 
 
 
@@ -224,5 +224,5 @@ The **Delete** action is disabled when your role does not carry the permission f
 
 The table view of [My Designs](https://cloud.layer5.io/catalog/content/my-designs) also supports deleting several items at once: select rows with their checkboxes and use the bulk **Delete** action. Each selected item is deleted independently, so a failure on one does not stop the others - check the list afterwards.
 
-> For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design](/kanvas/tasks/designs/deleting-a-design/).
+> For the full walkthrough, including how deletion differs from removing a design from a workspace, see [Deleting a Design](/kanvas/guides/designs/deleting-a-design/).
 

@@ -357,73 +357,12 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Understanding visibility levels
  &lt;a href="#understanding-visibility-levels" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
-
-&lt;h2 id="embedding-your-design" class="heading-link"&gt;
- Embedding Your Design
- &lt;a href="#embedding-your-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 &lt;p&gt;Everything you place on a Kanvas Designer canvas is an object, and every object answers to the same
 small set of gestures. You add it, you style it, you copy or clone it, you lock it so nobody nudges
 it, you resize it, and eventually you delete it. That is true whether the object is an Amazon EKS
 cluster, a dashed &lt;strong&gt;section&lt;/strong&gt; drawn around a group of services, a &lt;strong&gt;textbox&lt;/strong&gt; holding a caption, or
-a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas lets you export a design in several formats, so you can:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;keep versioned backups&lt;/li&gt;
-&lt;li&gt;collaborate offline&lt;/li&gt;
-&lt;li&gt;push artifacts to OCI-compatible registries or Helm repositories&lt;/li&gt;
-&lt;li&gt;integrate designs into CI/CD or GitOps pipelines&lt;/li&gt;
-&lt;li&gt;embed interactive diagrams in documentation and blogs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="export-in-two-steps" class="heading-link"&gt;
- Export in Two Steps
- &lt;a href="#export-in-two-steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Open the export menu
-Within the &lt;a href="https://playground.meshery.io/extension/meshmap"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.&lt;/li&gt;
-&lt;li&gt;Pick an export format
-Choose the option that matches your workflow (see table below).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/export-modal.gif" onclick="openModal(this)" alt="Export Icon"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
-
-&lt;h2 id="publishing-workflow" class="heading-link"&gt;
- Publishing Workflow
- &lt;a href="#publishing-workflow" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h3 id="step-1-access-extensions-ui" class="heading-link"&gt;
- Step 1: Access Extensions UI
- &lt;a href="#step-1-access-extensions-ui" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Navigate to Meshery &lt;a href="https://playground.meshery.io/extension/meshmap"&gt;Kanvas Designer&lt;/a&gt; from the main dashboard.&lt;/p&gt;
-
-&lt;h3 id="step-2-select-design-in-sidebar" class="heading-link"&gt;
- Step 2: Select Design in Sidebar
- &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
+a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
 &lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
-&lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Merging and Loading Designs</title><link>/kanvas/designer/merging-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/merging-designs/</guid><description>&lt;p&gt;Designs are rarely built from nothing. A platform design usually starts from an existing one - a team&amp;rsquo;s base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.&lt;/p&gt;
-
-&lt;h2 id="dragging-a-design-onto-the-canvas" class="heading-link"&gt;
- Dragging a design onto the canvas
- &lt;a href="#dragging-a-design-onto-the-canvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Drag a design from the design list, the catalog or your workspace and drop it onto the canvas.&lt;/p&gt;</description></item><item><title>Saving Designs</title><link>/kanvas/designer/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/saving-designs/</guid><description>&lt;p&gt;While you are signed in, Kanvas saves for you. There is no save button you must remember to press before closing the tab: every change you make to a design - adding a component, moving it, editing its configuration, drawing a relationship, renaming the design - is persisted to your account as you make it.&lt;/p&gt;
-&lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Configuring Components</title><link>/kanvas/designer/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/configuring-components/</guid><description/></item><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description/></item></channel></rss>
+&lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Configuring Components</title><link>/kanvas/designer/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/configuring-components/</guid><description/></item><item><title>Whiteboarding</title><link>/kanvas/designer/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/whiteboarding/</guid><description/></item></channel></rss>

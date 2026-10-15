@@ -23,8 +23,6 @@
 - [Dry Running a Design](/kanvas/tasks/designs/dry-running-a-design/index.md): A dry run simulates the deployment of your design in the selected target environment without making any actual changes.
 
 - [Exploring Kubernetes Services with Meshery](/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
-- [Importing a Design](/kanvas/getting-started/import-designs/index.md): Learn how to import designs from various sources and formats, including Kubernetes manifests, Helm charts, Docker Compose files, and more.
-
 - [Interpreting Component Badges](/kanvas/designer/interpreting-component-badges/index.md): Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
 - [Undeploying Designs](/kanvas/tasks/designs/undeploying-designs/index.md): Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
 
@@ -32,13 +30,9 @@
 
 - [Deploying Designs](/kanvas/tasks/designs/deploying-designs/index.md): Each Meshery design is deployable to one or more Kubernetes clusters.
 
-- [Publishing to Catalog](/kanvas/tutorials/publishing-to-catalog/index.md): Publish a Kanvas design to the Catalog from Details, understand visibility versus publish, and know what happens during review and approval.
-
 - [Render Modes](/kanvas/advanced/render-modes/index.md): Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
 
 - [Reviewing Designs](/kanvas/designer/comments/index.md): Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
-
-- [Cloning a Design](/kanvas/tasks/designs/cloning-a-design/index.md): Treat designs as templates by cloning an existing design to modify and build upon.
 
 - [Collaborative Editing](/kanvas/tutorials/collaborative-editing/index.md): Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
 
@@ -50,40 +44,37 @@
 
 - [Building a GCP Data Pipeline Design](/kanvas/tutorials/data-pipeline-gcp/index.md): Walk through creating the data-pipeline-gcp design in Kanvas, connecting GCP services in orbital-production.
 
-- [Deleting a Design](/kanvas/tasks/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand how deleting differs from unpublishing a design or removing it from a workspace.
-
-- [Embedding Designs](/kanvas/designer/embedding-designs/index.md): How to embed your designs for sharing on your sites.
-
 - [Performance Testing in Operator](/kanvas/operator/performance-testing/index.md): Measure the behavior of a running service from the Operator canvas, using saved performance profiles.
 
 - [Cross-Org Design Access: stellar-saas-platform](/kanvas/tutorials/stellar-saas-platform/index.md): Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
 
 - [Working with Canvas Objects](/kanvas/designer/canvas-objects/index.md): Add, copy, clone, lock, delete, style, reset and resize the shapes, sections, textboxes and components on your Kanvas Designer canvas.
 
-- [Exporting Designs](/kanvas/designer/export-designs/index.md): How to export your designs for backup, sharing or offline use.
-
-- [Publishing Designs](/kanvas/designer/publishing-designs/index.md): Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
 - [Add and Configure Components](/kanvas/guides/designing/configuring-components/index.md): Find and place components on the canvas, edit their configuration with the form Kanvas builds from the component definition, and lock, duplicate, copy, and paste them.
 - [Create Your First Design](/kanvas/getting-started/starting-scratch/index.md): Build a small web application design from an empty canvas, connect its components through relationships, and save it, while learning how Kanvas models and stores designs.
 - [Designs and Components](/kanvas/concepts/designs/index.md): What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
 - [Feature Availability by Plan](/kanvas/reference/feature-availability/index.md): Which Kanvas capabilities each Layer5 plan includes, and the role, provider, and hosting conditions that also decide whether a capability is available to you.
+- [Import and Merge Designs](/kanvas/guides/designs/import-designs/index.md): Bring Kubernetes manifests, Helm charts, Docker Compose files, Kustomize projects, and Meshery designs into Kanvas, and merge one design into another.
 - [Canvas Actions](/kanvas/designer/canvas-actions/index.md): The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
 
 - [Layout and Layers](/kanvas/designer/layout-and-layers/index.md): Arrange the components in a design automatically, and choose which entities the canvas draws.
-
-- [Merging and Loading Designs](/kanvas/designer/merging-designs/index.md): Drag one design onto another to combine them, or open it in place of what is on the canvas.
-
-- [Saving Designs](/kanvas/designer/saving-designs/index.md): How Kanvas persists your work, what the save indicator is telling you, and how to save a copy.
 
 - [Create Relationships](/kanvas/guides/designing/creating-relationships/index.md): Connect components with edges, nest them in parents, and remove or hide relationships. Covers which relationships you draw and which Kanvas forms for you.
 - [Deploy and Observe Your First Design](/kanvas/getting-started/design-to-deployment/index.md): Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
 - [Permissions by Role](/kanvas/reference/permissions/index.md): Which Kanvas actions are checked against a permission, which default role grants each permission, what anonymous users can do, and which actions are limited by mode and ownership instead.
 - [Relationships](/kanvas/concepts/relationships/index.md): What relationships are, the kinds Kanvas draws and evaluates, how each one forms, and how relationships keep component configuration consistent.
+- [Save Designs](/kanvas/guides/designs/saving-designs/index.md): How Kanvas saves a design automatically, what the save indicator reports, how to save a copy, and what happens when a save fails.
+- [Clone a Design](/kanvas/guides/designs/cloning-a-design/index.md): Copy a public or published design into your own workspace to use as a template, and learn what carries over.
 - [Policy Evaluation](/kanvas/concepts/relationship-evaluation/index.md): How Kanvas evaluates the relationships in a design continuously, which engine runs the evaluation, what triggers it, and why results can change after you stop editing.
 - [Whiteboard on the Canvas](/kanvas/guides/designing/whiteboarding/index.md): Sketch freehand, draw annotation lines, and add shapes, text, sections, images, and comments alongside real components.
+- [Export Designs](/kanvas/guides/designs/export-designs/index.md): Export a design as a design file, an OCI image, a Kubernetes manifest, a Helm chart, or an embeddable script, and know what each format keeps.
 - [Pin Models to the Dock](/kanvas/guides/designing/pin-model-to-dock/index.md): Keep the models you use most one step away in the dock, and remove them when you no longer need them.
+- [Embed Designs](/kanvas/guides/designs/embedding-designs/index.md): Show a design on a web page, blog, or documentation site with an exported JavaScript snapshot, including WordPress, React, and Hugo.
 - [Work with Tags](/kanvas/guides/designing/tagsets/index.md): Add labels and annotations to components and see components that share labels grouped into TagSets on the canvas.
+- [Publish Designs](/kanvas/guides/designs/publishing-designs/index.md): Publish a design to the Layer5 Cloud catalog, understand request and approval states, unpublish it, and ship it to Artifact Hub yourself.
+- [Delete a Design](/kanvas/guides/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand what deletion does and does not affect.
 - [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
+- [Supported Import and Export Formats](/kanvas/reference/supported-formats/index.md): Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
 - [Help and Support](/kanvas/reference/help-and-support/index.md): What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
 - [v1.0.70-1](/kanvas/reference/releases/v1.0.70-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 [Kanvas] Add opt-in Cytoscape WebGL rendering and measure it against Canvas 2D @hortison …
@@ -97,7 +88,6 @@
 - [Deploying Apache Cassandra with a StatefulSet in Meshery Playground](/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/index.md): Deploy Apache Cassandra with a StatefulSet using Meshery Playground in an interactive live cluster environment.
 - [Deploying PHP Guestbook application with Redis in Meshery](/kanvas/tutorials/kubernetes/deploy-php-redis/index.md): In this tutorial, we will deploy guest book built with PHP and Redis in Kubernetes. We will make use of Meshery Playground in an interactive live cluster environment.
 - [Deploying WordPress and MySQL with Persistent Volumes with Meshery](/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/index.md): Deploy a WordPress site and a MySQL database with Persistent Volumes using Meshery Playground in an interactive live cluster environment.
-- [Embedding a Meshery Design in a WordPress Post](/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/index.md): Learn how to Embed a Meshery Design in a WordPress Post
 - [Exploring Kubernetes CronJobs](/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/index.md): In this tutorial, we will explore how to use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for managing Kubernetes CronJobs.
 - [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes/kubernetes-deployments/index.md): Explore a Kubernetes Deployment using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
 - [Exploring Kubernetes Pods with Meshery](/kanvas/tutorials/kubernetes/kubernetes-pods/index.md): Explore Kubernetes Pods using Meshery in an interactive live cluster environment, through a series of hands-on exercises.
@@ -111,7 +101,6 @@
 
 - [Log Streaming](/kanvas/operator/log-streaming/index.md): Learn about Log Streaming in Operator mode
 
-- [Publishing Meshery Designs to Artifact Hub](/kanvas/tutorials/artifacthub/publish-to-artifacthub/index.md): Step by step example for how to export Meshery Designs and publish them to an Artifact Hub repository.
 - [Troubleshooting Kanvas](/kanvas/reference/troubleshooting/index.md): Learn to Troubleshoot the Kanvas
 - [Understanding Kubernetes ConfigMaps and Secrets with Meshery](/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md): In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
 - [Whiteboarding](/kanvas/designer/whiteboarding/index.md)

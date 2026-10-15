@@ -455,30 +455,4 @@ This is the final element on the page and there should be no margin below this.
  class="md-image-responsive" /&gt;
  &lt;/picture&gt;
 &lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
- Steps to cloning a design from Catalog using Kanvas
- &lt;a href="#steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Switch to Kanvas Designer mode, if not already in it.&lt;/li&gt;
-&lt;li&gt;In the left ☰ menu, click New → From a template.&lt;/li&gt;
-&lt;li&gt;Select a design from the list that appears in the panel.&lt;/li&gt;
-&lt;li&gt;A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/deploy-designs/clone-design.gif" onclick="openModal(this)" alt="Copy of a Design"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;This will create a copy of the catalog item to a new design, now owned by you.&lt;/p&gt;</description></item><item><title>Deleting a Design</title><link>/kanvas/tasks/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes it permanently. There is no trash, no recycle bin, and no undo: the design record is destroyed, and every workspace it was assigned to loses it at the same time. Before you delete, check that what you actually want is not one of the two softer actions described under &lt;a href="/kanvas/tasks/designs/deleting-a-design/#related-actions-that-are-not-deletion"&gt;Related actions that are not deletion&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id="who-can-delete-a-design" class="heading-link"&gt;
- Who Can Delete a Design
- &lt;a href="#who-can-delete-a-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Deleting a design requires the &lt;strong&gt;Delete a design&lt;/strong&gt; permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design&amp;rsquo;s owner, or a provider administrator, can delete it.&lt;/p&gt;</description></item></channel></rss>
+&lt;/p&gt;</description></item></channel></rss>

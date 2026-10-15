@@ -21,16 +21,17 @@ Tasks you perform on the canvas. See [Build Designs](/kanvas/guides/designing/) 
 
 ## Manage designs
 
+See [Manage Designs](/kanvas/guides/designs/) for the group.
+
 | Goal | Guide |
 |---|---|
-| Bring in a manifest, Helm chart, Compose file, or design | [Importing a Design](/kanvas/getting-started/import-designs/) |
-| Combine two designs, or open one in place of the canvas | [Merging and Loading Designs](/kanvas/designer/merging-designs/) |
-| Understand and control how work is saved | [Saving Designs](/kanvas/designer/saving-designs/) |
-| Start from an existing design | [Cloning a Design](/kanvas/tasks/designs/cloning-a-design/) |
-| Back up a design or use it offline | [Exporting Designs](/kanvas/designer/export-designs/) |
-| Show a design on another site | [Embedding Designs](/kanvas/designer/embedding-designs/) |
-| Make a design available in the catalog | [Publishing Designs](/kanvas/designer/publishing-designs/) |
-| Remove a design permanently | [Deleting a Design](/kanvas/tasks/designs/deleting-a-design/) |
+| Bring in a manifest, Helm chart, Compose file, Kustomize project, or design, or merge one design into another | [Import and Merge Designs](/kanvas/guides/designs/import-designs/) |
+| Understand and control how work is saved | [Save Designs](/kanvas/guides/designs/saving-designs/) |
+| Start from a public or published design | [Clone a Design](/kanvas/guides/designs/cloning-a-design/) |
+| Back up a design or use it offline | [Export Designs](/kanvas/guides/designs/export-designs/) |
+| Show a design on another site | [Embed Designs](/kanvas/guides/designs/embedding-designs/) |
+| Make a design available in the catalog | [Publish Designs](/kanvas/guides/designs/publishing-designs/) |
+| Remove a design permanently | [Delete a Design](/kanvas/guides/designs/deleting-a-design/) |
 
 ## Validate and deploy
 

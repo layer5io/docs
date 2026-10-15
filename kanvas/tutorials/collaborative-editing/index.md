@@ -93,7 +93,7 @@ Notes:
 
 - **Copy Link** works for both Private and Public designs.
 - For **Private** designs, the link alone is not enough — recipients must also appear under **People with Access**.
-- **Published** (Catalog) is a separate lifecycle from Private/Public share. Publishing is covered in [Publishing to Catalog](/kanvas/tutorials/publishing-to-catalog/) and [Publishing Designs](/kanvas/designer/publishing-designs/).
+- **Published** (Catalog) is a separate lifecycle from Private/Public share. Publishing is covered in [Publish Designs](/kanvas/guides/designs/publishing-designs/).
 
 ## Step 4: Invite collaborators
 
@@ -172,6 +172,5 @@ Practical tips while collaborating live:
 
 - [Sharing Designs](/kanvas/designer/sharing/)
 - [Reviewing Designs (Comments)](/kanvas/designer/comments/)
-- [Publishing Designs](/kanvas/designer/publishing-designs/)
-- Tutorial: [Publishing to Catalog](/kanvas/tutorials/publishing-to-catalog/)
+- [Publishing Designs](/kanvas/guides/designs/publishing-designs/)
 

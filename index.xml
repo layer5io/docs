@@ -1064,65 +1064,7 @@ tutorial first or
  &lt;a href="#top-performers" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="/cloud/concepts/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="/cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).&lt;/p&gt;</description></item><item><title>Importing a Design</title><link>/kanvas/getting-started/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/import-designs/</guid><description>&lt;p&gt;&lt;a href="https://kanvas.new"&gt;Kanvas&lt;/a&gt; acts as a powerful bridge, enabling you to import your existing application and infrastructure configurations from a wide variety of standard formats. It transforms these configurations into visual, editable, deployable, and shareable designs. This guide covers how to import designs, the supported formats, and important considerations.&lt;/p&gt;
-
-&lt;h2 id="accessing-the-import-functionality" class="heading-link"&gt;
- Accessing the Import Functionality
- &lt;a href="#accessing-the-import-functionality" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;There are multiple ways to import a design.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist"&gt;
- &lt;li class="nav-item"&gt;
- &lt;button class="nav-link active"
- id="tabs-00-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-00" role="tab"
- data-td-tp-persist="drag and drop" aria-controls="tabs-00-00" aria-selected="true"&gt;
- Drag and Drop
- &lt;/button&gt;
- &lt;/li&gt;&lt;li class="nav-item"&gt;
- &lt;button class="nav-link"
- id="tabs-00-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-01" role="tab"
- data-td-tp-persist="from kanvas toolbar" aria-controls="tabs-00-01" aria-selected="false"&gt;
- From Kanvas Toolbar
- &lt;/button&gt;
- &lt;/li&gt;&lt;li class="nav-item"&gt;
- &lt;button class="nav-link"
- id="tabs-00-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-02" role="tab"
- data-td-tp-persist="from layer5 cloud" aria-controls="tabs-00-02" aria-selected="false"&gt;
- From Layer5 Cloud
- &lt;/button&gt;
- &lt;/li&gt;&lt;li class="nav-item"&gt;
- &lt;button class="nav-link"
- id="tabs-00-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-03" role="tab"
- data-td-tp-persist="via github integration" aria-controls="tabs-00-03" aria-selected="false"&gt;
- Via GitHub Integration
- &lt;/button&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="tab-content" id="tabs-0-content"&gt;
- &lt;div class="tab-body tab-pane fade show active"
- id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab" tabindex="0"&gt;
- &lt;p&gt;You can drag a file from your local computer directly onto the Kanvas canvas to import a design.
-
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/importing-designs/drag-drop.gif" onclick="openModal(this)" alt="Drag and Drop Import"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -1926,8 +1868,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  Metrics
  &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Publishing to Catalog</title><link>/kanvas/tutorials/publishing-to-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/publishing-to-catalog/</guid><description>&lt;p&gt;Publishing a design submits it to the &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt; so others can discover, view, and clone it. In Kanvas Designer, the primary publish action lives in &lt;strong&gt;Details&lt;/strong&gt;, not in the Share modal.&lt;/p&gt;
-&lt;p&gt;Share controls &lt;strong&gt;who can open and edit&lt;/strong&gt; your working design (&lt;strong&gt;Private / Public&lt;/strong&gt;, invites, &lt;strong&gt;Copy Link&lt;/strong&gt;). Publish moves a design through the &lt;strong&gt;catalog publication&lt;/strong&gt; lifecycle (pending review → published). For the full state machine, roles, and FAQs, see &lt;a href="/kanvas/designer/publishing-designs/"&gt;Publishing Designs&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
 
 
 
@@ -2088,27 +2029,7 @@ See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderbo
  How to Create Your Challenge
  &lt;a href="#how-to-create-your-challenge" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Challenges are authored the same way as every other Academy content type: as Markdown in your organization&amp;rsquo;s Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Creating Content for the Academy&lt;/a&gt;, which covers the repository setup once for all three content types.&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
- Steps to cloning a design from Catalog using Kanvas
- &lt;a href="#steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Switch to Kanvas Designer mode, if not already in it.&lt;/li&gt;
-&lt;li&gt;In the left ☰ menu, click New → From a template.&lt;/li&gt;
-&lt;li&gt;Select a design from the list that appears in the panel.&lt;/li&gt;
-&lt;li&gt;A modal will pop up requesting you to clone (create a copy of) the design you’ve selected.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/deploy-designs/clone-design.gif" onclick="openModal(this)" alt="Copy of a Design"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;This will create a copy of the catalog item to a new design, now owned by you.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;Kanvas Designer supports team collaboration on infrastructure designs: you can share access, control who can open a design, review with inline comments, and work alongside teammates when they join the same design. This tutorial walks through a practical share-and-review flow on &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Challenges are authored the same way as every other Academy content type: as Markdown in your organization&amp;rsquo;s Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Creating Content for the Academy&lt;/a&gt;, which covers the repository setup once for all three content types.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;Kanvas Designer supports team collaboration on infrastructure designs: you can share access, control who can open a design, review with inline comments, and work alongside teammates when they join the same design. This tutorial walks through a practical share-and-review flow on &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For deeper reference, see &lt;a href="/kanvas/designer/sharing/"&gt;Sharing Designs&lt;/a&gt; and &lt;a href="/kanvas/designer/comments/"&gt;Reviewing Designs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id="what-you-will-do" class="heading-link"&gt;
@@ -2313,22 +2234,7 @@ The Instance Details tab is accessible when you select a specific Kubernetes res
  What changed
  &lt;a href="#what-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Previously, signing in with email/password, GitHub, or Google could each create a &lt;strong&gt;separate&lt;/strong&gt; account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &amp;ldquo;disappear&amp;rdquo; when you signed in with another.&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Deleting a Design</title><link>/kanvas/tasks/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes it permanently. There is no trash, no recycle bin, and no undo: the design record is destroyed, and every workspace it was assigned to loses it at the same time. Before you delete, check that what you actually want is not one of the two softer actions described under &lt;a href="/kanvas/tasks/designs/deleting-a-design/#related-actions-that-are-not-deletion"&gt;Related actions that are not deletion&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id="who-can-delete-a-design" class="heading-link"&gt;
- Who Can Delete a Design
- &lt;a href="#who-can-delete-a-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Deleting a design requires the &lt;strong&gt;Delete a design&lt;/strong&gt; permission, and beyond that you must own the design. A user who holds the permission but is not the owner is refused - only the design&amp;rsquo;s owner, or a provider administrator, can delete it.&lt;/p&gt;</description></item><item><title>Embedding Designs</title><link>/kanvas/designer/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/embedding-designs/</guid><description>&lt;p&gt;Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.&lt;/p&gt;
-
-&lt;h2 id="embedding-your-design" class="heading-link"&gt;
- Embedding Your Design
- &lt;a href="#embedding-your-design" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;To embed your Kanvas design, follow these steps:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Access Embed Option&lt;/strong&gt;: Within the &lt;a href="https://kanvas.new/"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to embed. Click on the export icon in the menu for the selected design. The export modal will appear, click on the &amp;ldquo;Embed&amp;rdquo; option.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/concepts/identity-and-security/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/keys/</guid><description>&lt;p&gt;In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;keychain&lt;/a&gt;. Then this keychain can be assigned to a &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;role&lt;/a&gt; and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.&lt;/p&gt;
+&lt;p&gt;Previously, signing in with email/password, GitHub, or Google could each create a &lt;strong&gt;separate&lt;/strong&gt; account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &amp;ldquo;disappear&amp;rdquo; when you signed in with another.&lt;/p&gt;</description></item><item><title>Building a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;Zara Osei is the Team Admin for Orbital Labs&amp;rsquo; Infrastructure Team. Her mandate: model the team&amp;rsquo;s GCP-native data pipeline in Kanvas so that the architecture lives alongside the infrastructure it describes — versioned, shareable, and auditable. The pipeline ingests events via Cloud Pub/Sub, processes them with Dataflow, stores analytical results in BigQuery, and archives raw payloads to Cloud Storage — all orchestrated on a GKE cluster. This tutorial walks through how Zara builds that design, &lt;code&gt;data-pipeline-gcp&lt;/code&gt;, in the &lt;code&gt;orbital-production&lt;/code&gt; workspace.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/concepts/identity-and-security/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/keys/</guid><description>&lt;p&gt;In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;keychain&lt;/a&gt;. Then this keychain can be assigned to a &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;role&lt;/a&gt; and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.&lt;/p&gt;
 &lt;p&gt;For instance, consider a system shipped default key &lt;code&gt;Create Organization&lt;/code&gt;, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have &lt;code&gt;Create Organization&lt;/code&gt; key assigned to a keychain, which, in turn, is assigned to a role that&amp;rsquo;s associated with your user account for a given organization.&lt;/p&gt;</description></item><item><title>Performance Testing in Operator</title><link>/kanvas/operator/performance-testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/operator/performance-testing/</guid><description>&lt;p&gt;Operator mode gives you continuous visibility across all of your clusters and workloads: MeshSync discovers every resource in every connected cluster and streams changes back to Kanvas, so the canvas is a live picture rather than a periodic snapshot. Performance testing closes the loop on that picture. Having found the service you are interested in, you can generate load against it in place and keep the result as a reusable performance profile.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
 creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.&lt;/p&gt;
 
@@ -2389,35 +2295,7 @@ creating learning paths, challenges, and certifications by collecting all necess
 small set of gestures. You add it, you style it, you copy or clone it, you lock it so nobody nudges
 it, you resize it, and eventually you delete it. That is true whether the object is an Amazon EKS
 cluster, a dashed &lt;strong&gt;section&lt;/strong&gt; drawn around a group of services, a &lt;strong&gt;textbox&lt;/strong&gt; holding a caption, or
-a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</description></item><item><title>Exporting Designs</title><link>/kanvas/designer/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/export-designs/</guid><description>&lt;p&gt;Kanvas lets you export a design in several formats, so you can:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;keep versioned backups&lt;/li&gt;
-&lt;li&gt;collaborate offline&lt;/li&gt;
-&lt;li&gt;push artifacts to OCI-compatible registries or Helm repositories&lt;/li&gt;
-&lt;li&gt;integrate designs into CI/CD or GitOps pipelines&lt;/li&gt;
-&lt;li&gt;embed interactive diagrams in documentation and blogs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="export-in-two-steps" class="heading-link"&gt;
- Export in Two Steps
- &lt;a href="#export-in-two-steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Open the export menu
-Within the &lt;a href="https://playground.meshery.io/extension/meshmap"&gt;Kanvas Designer&lt;/a&gt;, select the design you wish to export in the design drawer. Click on the export icon in the menu for the selected design.&lt;/li&gt;
-&lt;li&gt;Pick an export format
-Choose the option that matches your workflow (see table below).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/export-modal.gif" onclick="openModal(this)" alt="Export Icon"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Tokens</title><link>/cloud/concepts/identity-and-security/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/tokens/</guid><description>&lt;h2 id="what-tokens-are" class="heading-link"&gt;
+a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</description></item><item><title>Tokens</title><link>/cloud/concepts/identity-and-security/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/tokens/</guid><description>&lt;h2 id="what-tokens-are" class="heading-link"&gt;
  What tokens are
  &lt;a href="#what-tokens-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -2427,24 +2305,7 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Access tokens
  &lt;a href="#access-tokens" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud REST API uses &lt;a href="https://oauth.net/2/"&gt;OAuth 2.0&lt;/a&gt; for authentication and authorization. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.&lt;/p&gt;</description></item><item><title>Publishing Designs</title><link>/kanvas/designer/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/publishing-designs/</guid><description>&lt;p&gt;Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.&lt;/p&gt;
-
-&lt;h2 id="publishing-workflow" class="heading-link"&gt;
- Publishing Workflow
- &lt;a href="#publishing-workflow" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h3 id="step-1-access-extensions-ui" class="heading-link"&gt;
- Step 1: Access Extensions UI
- &lt;a href="#step-1-access-extensions-ui" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Navigate to Meshery &lt;a href="https://playground.meshery.io/extension/meshmap"&gt;Kanvas Designer&lt;/a&gt; from the main dashboard.&lt;/p&gt;
-
-&lt;h3 id="step-2-select-design-in-sidebar" class="heading-link"&gt;
- Step 2: Select Design in Sidebar
- &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud REST API uses &lt;a href="https://oauth.net/2/"&gt;OAuth 2.0&lt;/a&gt; for authentication and authorization. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
 &lt;p&gt;You need a design open in Designer mode. Designer is the only mode that allows authoring.&lt;/p&gt;
 
 &lt;h2 id="add-a-component" class="heading-link"&gt;
@@ -2458,16 +2319,52 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Plans
  &lt;a href="#plans" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization&amp;rsquo;s plan. Current pricing and plan details are listed at &lt;a href="https://layer5.io/pricing"&gt;layer5.io/pricing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
-&lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
-&lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Merging and Loading Designs</title><link>/kanvas/designer/merging-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/merging-designs/</guid><description>&lt;p&gt;Designs are rarely built from nothing. A platform design usually starts from an existing one - a team&amp;rsquo;s base cluster layout, a reference architecture from the catalog, a design a colleague already published - which you then extend. Kanvas supports that by letting you drag a design straight onto the canvas and decide, at that moment, whether it should join what is already there or replace it.&lt;/p&gt;
+&lt;p&gt;The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization&amp;rsquo;s plan. Current pricing and plan details are listed at &lt;a href="https://layer5.io/pricing"&gt;layer5.io/pricing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Import and Merge Designs</title><link>/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.&lt;/p&gt;
+&lt;p&gt;Import works in Designer mode. The import action is hidden in Operator mode.&lt;/p&gt;
 
-&lt;h2 id="dragging-a-design-onto-the-canvas" class="heading-link"&gt;
- Dragging a design onto the canvas
- &lt;a href="#dragging-a-design-onto-the-canvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h2 id="choose-how-to-import" class="heading-link"&gt;
+ Choose how to import
+ &lt;a href="#choose-how-to-import" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Drag a design from the design list, the catalog or your workspace and drop it onto the canvas.&lt;/p&gt;</description></item><item><title>Saving Designs</title><link>/kanvas/designer/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/saving-designs/</guid><description>&lt;p&gt;While you are signed in, Kanvas saves for you. There is no save button you must remember to press before closing the tab: every change you make to a design - adding a component, moving it, editing its configuration, drawing a relationship, renaming the design - is persisted to your account as you make it.&lt;/p&gt;
-&lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Create Relationships</title><link>/kanvas/guides/designing/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/creating-relationships/</guid><description>&lt;p&gt;Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Method&lt;/th&gt;
+ &lt;th&gt;Accepts&lt;/th&gt;
+ &lt;th&gt;Result&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Import dialog, File Upload&lt;/td&gt;
+ &lt;td&gt;One local file&lt;/td&gt;
+ &lt;td&gt;New design, or merge into the open design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Import dialog, URL Import&lt;/td&gt;
+ &lt;td&gt;One direct http or https URL to a single file&lt;/td&gt;
+ &lt;td&gt;New design, or merge into the open design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Drag or paste onto the canvas&lt;/td&gt;
+ &lt;td&gt;One or more files&lt;/td&gt;
+ &lt;td&gt;One new design per file, or a merge prompt if the canvas is not empty&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Catalog clone or open&lt;/td&gt;
+ &lt;td&gt;A published design&lt;/td&gt;
+ &lt;td&gt;Copy of the design, see &lt;a href="/kanvas/guides/designs/cloning-a-design/"&gt;Clone a Design&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;GitHub integration in Layer5 Cloud&lt;/td&gt;
+ &lt;td&gt;Files and folders in a connected repository&lt;/td&gt;
+ &lt;td&gt;One private design per valid file&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
+&lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
+&lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Create Relationships</title><link>/kanvas/guides/designing/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/creating-relationships/</guid><description>&lt;p&gt;Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.&lt;/p&gt;
 &lt;p&gt;Relationships work only in Designer mode. For what each kind means, read &lt;a href="/kanvas/concepts/relationships/"&gt;Relationships&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -2543,25 +2440,147 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  How permissions work
  &lt;a href="#how-permissions-work" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;A permission is a named key, such as Deploy Design, that allows one action. Keys are grouped into keychains, and a role bundles one or more keychains. Your organization assigns roles to users. Before Kanvas offers certain actions, it checks whether the user holds the matching key. Kanvas uses the shared Layer5 permission set and defines no permissions of its own. See &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;Roles&lt;/a&gt; and &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;Keychains&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Whiteboard on the Canvas</title><link>/kanvas/guides/designing/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;A permission is a named key, such as Deploy Design, that allows one action. Keys are grouped into keychains, and a role bundles one or more keychains. Your organization assigns roles to users. Before Kanvas offers certain actions, it checks whether the user holds the matching key. Kanvas uses the shared Layer5 permission set and defines no permissions of its own. See &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;Roles&lt;/a&gt; and &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;Keychains&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Save Designs</title><link>/kanvas/guides/designs/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/saving-designs/</guid><description>&lt;p&gt;Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.&lt;/p&gt;
+&lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
+
+&lt;h2 id="what-you-can-clone" class="heading-link"&gt;
+ What you can clone
+ &lt;a href="#what-you-can-clone" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The server clones only designs whose visibility is public or published. A request for any other design fails with 403 &amp;ldquo;unauthorized to clone design&amp;rdquo;. That includes your own private designs. To copy one of those, open it and use Save as. See &lt;a href="/kanvas/guides/designs/saving-designs/"&gt;Save Designs&lt;/a&gt;. A missing source design returns 500 &amp;ldquo;could not find design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Whiteboard on the Canvas</title><link>/kanvas/guides/designing/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.&lt;/p&gt;</description></item><item><title>Pin Models to the Dock</title><link>/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
+&lt;p&gt;Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.&lt;/p&gt;</description></item><item><title>Export Designs</title><link>/kanvas/guides/designs/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/export-designs/</guid><description>&lt;p&gt;Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or &lt;code&gt;kubectl&lt;/code&gt;, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.&lt;/p&gt;
+&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Pin Models to the Dock</title><link>/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
 &lt;p&gt;Pinning works in Designer mode. In Operator mode the dock does not show pinned models.&lt;/p&gt;
 
 &lt;h2 id="pin-a-model" class="heading-link"&gt;
  Pin a model
  &lt;a href="#pin-a-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Hover a model row in the component palette and use the pin icon. Its tooltip reads &amp;ldquo;Pin To Dock&amp;rdquo;. The shape palette offers the same pin on each shape category row.&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
+&lt;p&gt;Hover a model row in the component palette and use the pin icon. Its tooltip reads &amp;ldquo;Pin To Dock&amp;rdquo;. The shape palette offers the same pin on each shape category row.&lt;/p&gt;</description></item><item><title>Embed Designs</title><link>/kanvas/guides/designs/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/embedding-designs/</guid><description>&lt;p&gt;An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.&lt;/p&gt;
+
+&lt;h2 id="how-an-embed-works" class="heading-link"&gt;
+ How an embed works
+ &lt;a href="#how-an-embed-works" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It is a snapshot.&lt;/strong&gt; The file holds the canvas as it was at export time: node positions, element styles, and inline background images converted to data URLs where the fetch succeeded. Later edits to the design do not change an exported file. Re-export to refresh it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It needs no Layer5 Cloud at view time.&lt;/strong&gt; The page makes no request to Layer5 Cloud, so the embed works for private designs and keeps working if the design is deleted. Anyone who can read your page can read the embedded design data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It is view only.&lt;/strong&gt; Layout is fixed to the exported positions. Selection and box selection are disabled, zoom is limited to 0.5x to 6.6x, and there is no editing, component configuration, relationship evaluation, or live cluster data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It loads one library.&lt;/strong&gt; The page fetches the Cytoscape library (version 3.27.0) from a public CDN, so viewers need outbound access to it. A Meshery logo link, which opens meshery.io, is drawn at the bottom right of the canvas. No option removes it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It has no parameters.&lt;/strong&gt; Width, height, theme, background, and zoom are not options. The container&amp;rsquo;s CSS sets the size.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;There is no iframe embed.&lt;/strong&gt; Kanvas offers no embed URL for the app itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Embedding needs no permission key and no paid plan.&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
 
 &lt;h2 id="add-labels-and-annotations" class="heading-link"&gt;
  Add labels and annotations
  &lt;a href="#add-labels-and-annotations" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Open a component&amp;rsquo;s configurator and go to its Labels tab. It holds two key-value maps:&lt;/p&gt;</description></item><item><title>How Kanvas Works with Meshery and Layer5 Cloud</title><link>/kanvas/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/architecture/</guid><description>&lt;p&gt;Kanvas is not a standalone service. It is an extension that runs inside Meshery, relies on Meshery Server to reach your clusters, and relies on a remote provider, Layer5 Cloud, to store and share designs. Knowing which part does what explains why some features need a cluster connection, why others need an account, and why the hosted Kanvas at kanvas.new offers a subset of what a self-hosted Meshery deployment offers.&lt;/p&gt;</description></item><item><title>Help and Support</title><link>/kanvas/reference/help-and-support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/help-and-support/</guid><description>&lt;p&gt;Kanvas gives you two ways to get help without leaving the canvas: the &lt;strong&gt;Help Center&lt;/strong&gt;, a single place for documentation, learning material and community channels, and the &lt;strong&gt;support form&lt;/strong&gt;, which sends a request to the Layer5 team. This page lists what each one contains, which support channels each plan includes, and the conditions the support form needs to work.&lt;/p&gt;
+&lt;p&gt;Open a component&amp;rsquo;s configurator and go to its Labels tab. It holds two key-value maps:&lt;/p&gt;</description></item><item><title>Publish Designs</title><link>/kanvas/guides/designs/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/publishing-designs/</guid><description>&lt;p&gt;Publishing makes a design discoverable in the Layer5 Cloud catalog, where anyone can view and &lt;a href="/kanvas/guides/designs/cloning-a-design/"&gt;clone&lt;/a&gt; it. Publishing is separate from visibility: making a design public does not publish it.&lt;/p&gt;
+
+&lt;h2 id="visibility-and-publication-states" class="heading-link"&gt;
+ Visibility and publication states
+ &lt;a href="#visibility-and-publication-states" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;State&lt;/th&gt;
+ &lt;th&gt;Who can read it&lt;/th&gt;
+ &lt;th&gt;How it gets there&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Private&lt;/td&gt;
+ &lt;td&gt;Owner, provider administrators, and users with a share grant&lt;/td&gt;
+ &lt;td&gt;Cloning, unpublishing, or switching a public design to private&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Public&lt;/td&gt;
+ &lt;td&gt;Anyone, including anonymous callers, who has the design&amp;rsquo;s id or link&lt;/td&gt;
+ &lt;td&gt;The default for every newly saved design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Published&lt;/td&gt;
+ &lt;td&gt;Everyone through the catalog&lt;/td&gt;
+ &lt;td&gt;An approved publish request, or a direct publish by an approver&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The owner can toggle a design between private and public until it is published. A published design cannot be toggled. The toggle saves through the normal save path, so it raises the version and re-checks the components limit.&lt;/p&gt;</description></item><item><title>Delete a Design</title><link>/kanvas/guides/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes the design record and its workspace mappings in one transaction. There is no trash and no restore. Export a copy first if you might need it. See &lt;a href="/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="who-can-delete" class="heading-link"&gt;
+ Who can delete
+ &lt;a href="#who-can-delete" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The server allows the design&amp;rsquo;s owner or a provider administrator. Organization administrators, workspace owners, and collaborators with a share grant cannot delete a design (403 &amp;ldquo;unauthorized for the operation&amp;rdquo;). Layer5 Cloud hides its Delete action for roles without the Delete a Design permission, but the server decides by ownership, not by the key. To remove a design from a workspace without deleting it, use the workspace&amp;rsquo;s remove action instead.&lt;/p&gt;</description></item><item><title>How Kanvas Works with Meshery and Layer5 Cloud</title><link>/kanvas/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/architecture/</guid><description>&lt;p&gt;Kanvas is not a standalone service. It is an extension that runs inside Meshery, relies on Meshery Server to reach your clusters, and relies on a remote provider, Layer5 Cloud, to store and share designs. Knowing which part does what explains why some features need a cluster connection, why others need an account, and why the hosted Kanvas at kanvas.new offers a subset of what a self-hosted Meshery deployment offers.&lt;/p&gt;</description></item><item><title>Supported Import and Export Formats</title><link>/kanvas/reference/supported-formats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/supported-formats/</guid><description>&lt;p&gt;This page lists exactly what Kanvas accepts and produces. For the steps, see &lt;a href="/kanvas/guides/designs/import-designs/"&gt;Import and Merge Designs&lt;/a&gt; and &lt;a href="/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="import" class="heading-link"&gt;
+ Import
+ &lt;a href="#import" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kanvas accepts the extensions &lt;code&gt;.yml&lt;/code&gt;, &lt;code&gt;.yaml&lt;/code&gt;, &lt;code&gt;.json&lt;/code&gt;, &lt;code&gt;.tar&lt;/code&gt;, &lt;code&gt;.tar.gz&lt;/code&gt;, &lt;code&gt;.tgz&lt;/code&gt;, &lt;code&gt;.gz&lt;/code&gt;, and &lt;code&gt;.zip&lt;/code&gt;. Detection is by content and takes the first match in the order below.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Order&lt;/th&gt;
+ &lt;th&gt;Format&lt;/th&gt;
+ &lt;th&gt;Extensions&lt;/th&gt;
+ &lt;th&gt;Detected when&lt;/th&gt;
+ &lt;th&gt;Notes&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;Meshery design&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;.yml&lt;/code&gt; &lt;code&gt;.yaml&lt;/code&gt; &lt;code&gt;.json&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;The schema version is a supported design version&lt;/td&gt;
+ &lt;td&gt;Lossless round trip of a design file export&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;Meshery design as OCI image&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;.tar&lt;/code&gt; &lt;code&gt;.tgz&lt;/code&gt; &lt;code&gt;.tar.gz&lt;/code&gt; &lt;code&gt;.zip&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;The archive&amp;rsquo;s layers contain a design file&lt;/td&gt;
+ &lt;td&gt;Only the first design is taken. Other layer files are ignored. No design file means failure.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;Kubernetes manifest&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;.yml&lt;/code&gt; &lt;code&gt;.yaml&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;One or more valid Kubernetes documents&lt;/td&gt;
+ &lt;td&gt;Multi-document files work. Unknown kinds are kept as generic objects.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;3&lt;/td&gt;
+ &lt;td&gt;Helm chart&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;.tgz&lt;/code&gt; &lt;code&gt;.tar.gz&lt;/code&gt; &lt;code&gt;.gz&lt;/code&gt; &lt;code&gt;.tar&lt;/code&gt; &lt;code&gt;.zip&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A valid packaged chart&lt;/td&gt;
+ &lt;td&gt;An uncompressed &lt;code&gt;.tar&lt;/code&gt; is reported as needing gzip. No values overrides.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;4&lt;/td&gt;
+ &lt;td&gt;Docker Compose&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;.yml&lt;/code&gt; &lt;code&gt;.yaml&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Converts as a Compose file&lt;/td&gt;
+ &lt;td&gt;The result is Kubernetes components.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;5&lt;/td&gt;
+ &lt;td&gt;Kustomize&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;.yml&lt;/code&gt; &lt;code&gt;.yaml&lt;/code&gt; (kustomization), or an archive containing &lt;code&gt;kustomization.yaml&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;The project builds&lt;/td&gt;
+ &lt;td&gt;Archive must contain every referenced file.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If nothing matches, the import fails and lists why each format was rejected. The interface shows only the generic failure message.&lt;/p&gt;</description></item><item><title>Help and Support</title><link>/kanvas/reference/help-and-support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/help-and-support/</guid><description>&lt;p&gt;Kanvas gives you two ways to get help without leaving the canvas: the &lt;strong&gt;Help Center&lt;/strong&gt;, a single place for documentation, learning material and community channels, and the &lt;strong&gt;support form&lt;/strong&gt;, which sends a request to the Layer5 team. This page lists what each one contains, which support channels each plan includes, and the conditions the support form needs to work.&lt;/p&gt;
 
 &lt;h2 id="help-center" class="heading-link"&gt;
  Help Center
@@ -134252,29 +134271,7 @@ Thank you to our contributors for making this release possible:
  Overview
  &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.&lt;/p&gt;</description></item><item><title>Embedding a Meshery Design in a WordPress Post</title><link>/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/</guid><description>&lt;h3 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;In this tutorial, we will learn how to embed a &lt;strong&gt;Meshery Design&lt;/strong&gt; in a WordPress post using the &lt;strong&gt;Embed&lt;/strong&gt; option in &lt;strong&gt;Kanvas&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;This tutorial assumes that you have created a design or have an existing one. If not, you can use one of the numerous public designs available in &lt;strong&gt;Kanvas&lt;/strong&gt; for this tutorial.&lt;/p&gt;
-
-&lt;h3 id="prerequisites" class="heading-link"&gt;
- Prerequisites
- &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;WordPress&lt;/strong&gt;: A running WordPress instance or deployment, serving as the sample application for this tutorial.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Meshery Catalog Extension&lt;/strong&gt;: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id="steps" class="heading-link"&gt;
- Steps
- &lt;a href="#steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Expand the &lt;strong&gt;Actions&lt;/strong&gt; menu on the left and select export.&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/concepts/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
+&lt;p&gt;Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.&lt;/p&gt;</description></item><item><title>Environments</title><link>/cloud/concepts/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/spaces/environments/</guid><description>&lt;p&gt;Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
 Environments allow you to logically group related &lt;a href="/cloud/concepts/spaces/environments/#connections"&gt;Connections&lt;/a&gt; and their associated &lt;a href="/cloud/concepts/spaces/environments/#credentials"&gt;Credentials&lt;/a&gt;. Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.&lt;/p&gt;</description></item><item><title>Exploring Kubernetes CronJobs</title><link>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/</guid><description>&lt;p&gt;Introduction:
 In this tutorial, we will explore Kubernetes CronJobs, a resource that allows you to run jobs periodically at specified intervals. We will use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for working with CronJobs in Kubernetes.&lt;/p&gt;
 &lt;p&gt;Prerequisites:&lt;/p&gt;
@@ -134402,62 +134399,7 @@ To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the mode
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/UCKS4eSB7AY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
-&lt;p&gt;Publishing a design lets you make your content visible to any anonymous visitor of &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt; and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.&lt;/p&gt;</description></item><item><title>Publishing Meshery Designs to Artifact Hub</title><link>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/artifacthub/publish-to-artifacthub/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;In this tutorial, we&amp;rsquo;ll see how to export a Design from Meshery which we will use to populate an Artifact Hub repository.&lt;/p&gt;
-
-&lt;h2 id="prerequisites" class="heading-link"&gt;
- Prerequisites
- &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;A prepared Artifact Hub repository with &lt;code&gt;Kind&lt;/code&gt; set to &lt;a href="https://artifacthub.io/docs/topics/repositories/meshery-designs"&gt;Meshery Designs&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="steps" class="heading-link"&gt;
- Steps
- &lt;a href="#steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-&lt;h3 id="1-open-the-hamburger-menu-in-kanvas" class="heading-link"&gt;
- 1. Open the hamburger menu in Kanvas
- &lt;a href="#1-open-the-hamburger-menu-in-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/tutorials/artifacthub/publish-to-artifacthub/images/publish-to-artifacthub/2024-07-30_1_hu_ccf745aaec17101b.webp" type="image/webp" width="538" height="720"&gt;
- &lt;img src="images/publish-to-artifacthub/2024-07-30_1.png" onclick="openModal(this)" alt=""
- width="538" height="720"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id="2-click-open" class="heading-link"&gt;
- 2. Click Open
- &lt;a href="#2-click-open" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/tutorials/artifacthub/publish-to-artifacthub/images/publish-to-artifacthub/2024-07-30_2_hu_e7606f6d3d3a8159.webp" type="image/webp" width="2940" height="1656"&gt;
- &lt;img src="images/publish-to-artifacthub/2024-07-30_2.png" onclick="openModal(this)" alt=""
- width="2940" height="1656"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Search Results</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+&lt;p&gt;Publishing a design lets you make your content visible to any anonymous visitor of &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt; and any Layer5 Cloud user. Anyone with the link can view the design. You can publish the design into your Cloud Catalog.&lt;/p&gt;</description></item><item><title>Search Results</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>Troubleshooting Kanvas</title><link>/kanvas/reference/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/troubleshooting/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
  &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Asking for help from within Kanvas&lt;/h4&gt;
  
  Kanvas&amp;rsquo;s &lt;strong&gt;Get Help&lt;/strong&gt; action opens the Help and Support form. It requires a remote provider and a resolved signed-in identity - see &lt;a href="/kanvas/reference/help-and-support/"&gt;Help and Support&lt;/a&gt; if the form does not open or a submission is rejected.

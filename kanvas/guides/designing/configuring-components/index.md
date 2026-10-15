@@ -93,7 +93,7 @@ Comment components open a chat thread instead of tabs.
 
 There is no Apply button. Kanvas writes an edit to the design 300 ms after you stop typing. Each write triggers three follow-ups: the design autosaves after a 3 second pause, the component is validated, and relationships are re-evaluated. Configuration that a relationship controls can therefore change shortly after you edit a related component. See [Policy Evaluation](/kanvas/concepts/relationship-evaluation/).
 
-Undo reverses configuration changes like any other edit. See [Saving Designs](/kanvas/designer/saving-designs/).
+Undo reverses configuration changes like any other edit. See [Saving Designs](/kanvas/guides/designs/saving-designs/).
 
 ### Alias components
 

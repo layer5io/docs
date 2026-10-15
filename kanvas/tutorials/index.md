@@ -34,17 +34,6 @@ Kanvas tutorials walk through real-world design scenarios using two fictional or
       </div>
   </div>
 
-<div class="td-card card border me-4">
-<div class="card-header">
-      Publishing to Catalog
-    </div>
-<div class="card-body">
-    <p class="card-text">
-        <p><a href="/kanvas/tutorials/publishing-to-catalog/">Publishing to Catalog</a> — publish from Details → Publish to Catalog, then follow review and Catalog visibility.</p>
-</p>
-      </div>
-  </div>
-
 </div>
 
 
@@ -110,32 +99,7 @@ Kanvas tutorials walk through real-world design scenarios using two fictional or
       </div>
   </div>
 
-<div class="td-card card border me-4">
-<div class="card-header">
-      Artifact Hub
-    </div>
-<div class="card-body">
-    <p class="card-text">
-        <p><a href="/kanvas/tutorials/artifacthub/publish-to-artifacthub/">Publishing Meshery Designs to Artifact Hub</a> — export and publish designs to a repository.</p>
-</p>
-      </div>
-  </div>
-
 </div>
 
-
-<div class="td-card-group card-group p-0 mb-4">
-<div class="td-card card border me-4">
-<div class="card-header">
-      WordPress
-    </div>
-<div class="card-body">
-    <p class="card-text">
-        <p><a href="/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/">Embedding a Meshery Design in a WordPress Post</a> — publish interactive designs on your site.</p>
-</p>
-      </div>
-  </div>
-
-</div>
 
 
