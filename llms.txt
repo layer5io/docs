@@ -8,14 +8,11 @@
 - [Layer5 Helm Repository](/charts/index.md): Layer5 Helm Repository contains a collection of charts, including Layer5 Cloud, which can be deployed in any Kubernetes cluster on-premises or in Cloud using Helm.
 
 ## Kanvas Documentation
-- [Kanvas Documentation](/kanvas/index.md): Kanvas delivers a collaborative experience for engineers similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling.
+- [Kanvas Documentation](/kanvas/index.md): Kanvas is a visual, collaborative tool for designing, validating, deploying, and operating Kubernetes and cloud infrastructure.
 
 - [Performance Limits and Tuning](/kanvas/advanced/performance/index.md): Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
 
-- [Understanding Design Components](/kanvas/designer/understanding-design-component/index.md): A complete reference for all components available in the Kanvas designer.
 - [Design Render Quality](/kanvas/advanced/url-parameters/index.md): Control the level of detail in Kanvas design rendering using advanced URL query parameters.
-
-- [Starting from scratch](/kanvas/getting-started/starting-scratch/index.md): Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
 
 - [Understanding Edge Styles](/kanvas/designer/understanding-edges/index.md): Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
 
@@ -77,6 +74,8 @@
 - [Exporting Designs](/kanvas/designer/export-designs/index.md): How to export your designs for backup, sharing or offline use.
 
 - [Publishing Designs](/kanvas/designer/publishing-designs/index.md): Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
+- [Create Your First Design](/kanvas/getting-started/starting-scratch/index.md): Build a small web application design from an empty canvas, connect its components through relationships, and save it, while learning how Kanvas models and stores designs.
+- [Designs and Components](/kanvas/concepts/designs/index.md): What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
 - [Pinning Models to the Dock](/kanvas/designer/pin-model-to-dock/index.md): Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
 - [Policy Engine](/kanvas/designer/relationship-evaluation/index.md): Choose how Kanvas evaluates relationships in your designs, understand the relationship indicator states, and diagnose failing or unexpected relationship results.
 
@@ -90,8 +89,10 @@
 
 - [Configuring Components](/kanvas/designer/configuring-components/index.md): Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
 
+- [Deploy and Observe Your First Design](/kanvas/getting-started/design-to-deployment/index.md): Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
 - [Help and Support](/kanvas/reference/help-and-support/index.md): How Kanvas submits support requests, and the two preconditions - a remote provider and a signed-in identity - that Help and Support requires.
 
+- [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
 - [v1.0.70-1](/kanvas/reference/releases/v1.0.70-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 [Kanvas] Add opt-in Cytoscape WebGL rendering and measure it against Canvas 2D @hortison …
 - [v1.0.69-1](/kanvas/reference/releases/v1.0.69-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 No changes 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release …

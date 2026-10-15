@@ -9,19 +9,7 @@
  Maximum Number of Components
  &lt;a href="#maximum-number-of-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Kanvas has a maximum limit of 1,000 components per design. If you exceed this limit, you may experience performance issues such as slow loading times and laggy interactions. To avoid hitting this limit, consider breaking your design into smaller, more manageable designs.&lt;/p&gt;</description></item><item><title>Understanding Design Components</title><link>/kanvas/designer/understanding-design-component/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-design-component/</guid><description>&lt;p&gt;When you&amp;rsquo;re designing and visualizing in &lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;, you&amp;rsquo;ll encounter a rich library of components. This guide will help you understand what these components mean and how they behave in your designs.&lt;/p&gt;
-
-&lt;h2 id="core-component-categories" class="heading-link"&gt;
- Core Component Categories
- &lt;a href="#core-component-categories" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://docs.meshery.io/concepts/logical/components"&gt;Components&lt;/a&gt; in Kanvas fall into two fundamental categories, distinguished by whether they can be orchestrated (managed) during deployment.&lt;/p&gt;
-
-&lt;h3 id="semantic-components-orchestratable" class="heading-link"&gt;
- Semantic Components (Orchestratable)
- &lt;a href="#semantic-components-orchestratable" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;These components represent actual infrastructure resources that Kanvas can understand and manage during deployment. They are &amp;ldquo;meaningful&amp;rdquo; because they map directly to real infrastructure elements. Examples include:&lt;/p&gt;</description></item><item><title>Design Render Quality</title><link>/kanvas/advanced/url-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/url-parameters/</guid><description>&lt;p&gt;By default, Kanvas optimizes the rendering of your designs to ensure good performance and responsiveness. This means that some computationally intensive visual elements, such as advanced relationships like &lt;strong&gt;TagSets&lt;/strong&gt; (groups of components visually demarcated), might not be displayed initially to reduce system load.&lt;/p&gt;
+&lt;p&gt;Kanvas has a maximum limit of 1,000 components per design. If you exceed this limit, you may experience performance issues such as slow loading times and laggy interactions. To avoid hitting this limit, consider breaking your design into smaller, more manageable designs.&lt;/p&gt;</description></item><item><title>Design Render Quality</title><link>/kanvas/advanced/url-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/advanced/url-parameters/</guid><description>&lt;p&gt;By default, Kanvas optimizes the rendering of your designs to ensure good performance and responsiveness. This means that some computationally intensive visual elements, such as advanced relationships like &lt;strong&gt;TagSets&lt;/strong&gt; (groups of components visually demarcated), might not be displayed initially to reduce system load.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;To learn more about defining relationships between components, including the detailed use and creation of &lt;strong&gt;TagSets&lt;/strong&gt;, please see the &lt;a href="https://docs.layer5.io/kanvas/getting-started/creating-relationships/"&gt;Creating Relationships | Layer5 Documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -30,30 +18,7 @@
  Enable Full Render Mode
  &lt;a href="#enable-full-render-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;To activate this full render mode, you will need to add the &lt;code&gt;render=full&lt;/code&gt; parameter to your Kanvas design URL. This mode ensures all elements, including &lt;strong&gt;TagSets&lt;/strong&gt;, are displayed, which might otherwise be hidden for performance optimization.&lt;/p&gt;</description></item><item><title>Getting Started with Designs</title><link>/kanvas/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Follow Along with Jordan and Five&lt;/h4&gt;
- 
- Throughout the Kanvas docs, you&amp;rsquo;ll follow &lt;strong&gt;Jordan Reyes&lt;/strong&gt; — a developer and designer at Orbital Labs — as she creates, shares, and iterates on infrastructure designs. &lt;strong&gt;Five&lt;/strong&gt; reviews her work and occasionally discovers that a design works better in practice than it does in theory. Their starting point is the &lt;code&gt;microservices-baseline&lt;/code&gt; design in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace. &lt;a href=""&gt;Meet the full cast →&lt;/a&gt;
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="sign-in" class="heading-link"&gt;
- Sign in
- &lt;a href="#sign-in" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Kanvas can be explored anonymously, but saving to your account, sharing with teammates, and deploying require sign-in.&lt;/p&gt;</description></item><item><title>Starting from scratch</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;h2 id="step-1-accessing-designer-mode" class="heading-link"&gt;
- Step 1: Accessing Designer Mode
- &lt;a href="#step-1-accessing-designer-mode" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Upon entering Kanvas, seamlessly transition to the &amp;ldquo;Designer&amp;rdquo; mode by selecting the &amp;ldquo;Designer&amp;rdquo; tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.&lt;/p&gt;
-&lt;figure&gt;
- &lt;img src="../../designer/images/audit-2026-09/designer-getting-started.png" alt="Untitled design Getting Started hub with file menu and layout callouts" /&gt;
- &lt;figcaption&gt;New design Getting Started hub (anonymous capture, Sep 2026): walk-throughs, templates, and import, plus callouts for the file menu and layout control. Comments/Share may be inactive until you sign in.&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;Example Analogy:&lt;/strong&gt;
-Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.&lt;/p&gt;</description></item><item><title>Understanding Edge Styles</title><link>/kanvas/designer/understanding-edges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-edges/</guid><description>&lt;p&gt;When you connect components in &lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;, the line you draw is called an &lt;strong&gt;edge&lt;/strong&gt;. Each edge visually represents a &lt;a href="https://docs.layer5.io/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; between your components. This guide explains how to use different edge styles to create clear and effective infrastructure designs.&lt;/p&gt;
+&lt;p&gt;To activate this full render mode, you will need to add the &lt;code&gt;render=full&lt;/code&gt; parameter to your Kanvas design URL. This mode ensures all elements, including &lt;strong&gt;TagSets&lt;/strong&gt;, are displayed, which might otherwise be hidden for performance optimization.&lt;/p&gt;</description></item><item><title>Understanding Edge Styles</title><link>/kanvas/designer/understanding-edges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-edges/</guid><description>&lt;p&gt;When you connect components in &lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;, the line you draw is called an &lt;strong&gt;edge&lt;/strong&gt;. Each edge visually represents a &lt;a href="https://docs.layer5.io/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; between your components. This guide explains how to use different edge styles to create clear and effective infrastructure designs.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -951,22 +916,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
 &lt;p&gt;&lt;strong&gt;Steps to Configure Components:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Select the Component:&lt;/strong&gt; Click on the component on the Kanvas canvas that you want to configure. This action opens the Configuration Panel.&lt;/p&gt;</description></item><item><title>Working with Designs</title><link>/kanvas/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/</guid><description>&lt;h2 id="designs" class="heading-link"&gt;
- Designs
- &lt;a href="#designs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Designs are declarative, descriptive characterizations of how your Kubernetes infrastructure should be configured. Designs are versioned and can be shared with other users and teams. Designs are the primary tool for collaborative authorship of your infrastructure and services.&lt;/p&gt;
-
-&lt;h3 id="using-designs" class="heading-link"&gt;
- Using Designs
- &lt;a href="#using-designs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-
-&lt;h3 id="controlling-access-to-designs" class="heading-link"&gt;
- Controlling Access to Designs
- &lt;a href="#controlling-access-to-designs" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;When creating a new design, by default its visibility will be set to &lt;strong&gt;public&lt;/strong&gt; unless you are an active Layer5 Cloud subscriber, in which case you can change this default to &lt;strong&gt;private&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
+&lt;p&gt;&lt;strong&gt;Select the Component:&lt;/strong&gt; Click on the component on the Kanvas canvas that you want to configure. This action opens the Configuration Panel.&lt;/p&gt;</description></item><item><title>Cloning a Design</title><link>/kanvas/tasks/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/cloning-a-design/</guid><description>&lt;h2 id="steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-link"&gt;
  Steps to cloning a design from Catalog using Kanvas
  &lt;a href="#steps-to-cloning-a-design-from-catalog-using-kanvas" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -1173,7 +1123,36 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  Step 2: Select Design in Sidebar
  &lt;a href="#step-2-select-design-in-sidebar" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Pinning Models to the Dock</title><link>/kanvas/designer/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/pin-model-to-dock/</guid><description>&lt;p&gt;The Kanvas Designer dock allows you to keep your most-used models and tools within easy reach. You can pin any model to the dock for quick access, and unpin it just as easily.&lt;/p&gt;
+&lt;p&gt;Publish designs through two methods. Click the &lt;strong&gt;info (&amp;ldquo;i&amp;rdquo;)&lt;/strong&gt; button for details.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Along the way you learn what a design is made of, how relationships express the way components depend on each other, and when and how Kanvas saves your work.&lt;/p&gt;</description></item><item><title>Designs and Components</title><link>/kanvas/concepts/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designs/</guid><description>&lt;p&gt;A design is the unit of work in Kanvas. It is a declarative description of infrastructure that you author on a canvas, save as a versioned document, share with others, and deploy to your clusters. Components are the building blocks of a design: some represent real infrastructure that Kanvas deploys, and others are annotations that only explain the design. Knowing which is which, and how a design behaves when you save, share, and deploy it, tells you exactly what Kanvas will do with your work.&lt;/p&gt;</description></item><item><title>Getting Started</title><link>/kanvas/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/</guid><description>&lt;p&gt;Kanvas turns cloud native infrastructure into a design you can see, check, and deploy. This section takes you from an empty canvas to resources running in a Kubernetes cluster. Along the way you learn the four ideas that every other Kanvas page builds on, and which parts of Kanvas need a Meshery deployment of your own.&lt;/p&gt;
+
+&lt;h2 id="what-you-will-learn" class="heading-link"&gt;
+ What you will learn
+ &lt;a href="#what-you-will-learn" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;How a design is built from components, relationships, and configuration, and how Kanvas saves it.&lt;/li&gt;
+&lt;li&gt;How Kanvas checks a design before it touches a cluster.&lt;/li&gt;
+&lt;li&gt;How a design becomes running resources, and how Kanvas tracks them afterward.&lt;/li&gt;
+&lt;li&gt;Which capabilities work on hosted Kanvas and which need a Meshery you run.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="the-model-in-four-steps" class="heading-link"&gt;
+ The model in four steps
+ &lt;a href="#the-model-in-four-steps" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Design.&lt;/strong&gt; In Designer mode you describe infrastructure as a design: components (such as a Kubernetes Deployment or Service), the relationships between them, and their configuration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validate.&lt;/strong&gt; Kanvas checks the design against each component&amp;rsquo;s schema and attaches every error to the component and field that caused it; a dry run then checks the design against a real cluster without changing it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deploy.&lt;/strong&gt; Kanvas applies the design to the Kubernetes clusters you select and labels every resource it creates with the design&amp;rsquo;s identity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operate.&lt;/strong&gt; In Operator mode you see the live state of your clusters and can filter it to the resources that belong to one design.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="where-do-you-want-to-work" class="heading-link"&gt;
+ Where do you want to work?
+ &lt;a href="#where-do-you-want-to-work" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Kanvas runs in two places. Both use the same Designer, but only a Meshery you run can reach your clusters.&lt;/p&gt;</description></item><item><title>Pinning Models to the Dock</title><link>/kanvas/designer/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/pin-model-to-dock/</guid><description>&lt;p&gt;The Kanvas Designer dock allows you to keep your most-used models and tools within easy reach. You can pin any model to the dock for quick access, and unpin it just as easily.&lt;/p&gt;
 
 &lt;h2 id="overview" class="heading-link"&gt;
  Overview
@@ -1228,7 +1207,15 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;Drag a design from the design list, the catalog or your workspace and drop it onto the canvas.&lt;/p&gt;</description></item><item><title>Saving Designs</title><link>/kanvas/designer/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/saving-designs/</guid><description>&lt;p&gt;While you are signed in, Kanvas saves for you. There is no save button you must remember to press before closing the tab: every change you make to a design - adding a component, moving it, editing its configuration, drawing a relationship, renaming the design - is persisted to your account as you make it.&lt;/p&gt;
 &lt;p&gt;That leaves two things worth knowing: how to tell whether a change has actually landed, and how to deliberately create a second, separate copy.&lt;/p&gt;</description></item><item><title>Configuring Components</title><link>/kanvas/designer/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/configuring-components/</guid><description>&lt;p&gt;A component is the fundamental building block of a design - it represents one piece of the infrastructure under management, and its configuration is what will actually be applied when the design is deployed. The component configurator is where that configuration is edited.&lt;/p&gt;
-&lt;p&gt;Kanvas does not ask you to write YAML for this. The form is built from the component&amp;rsquo;s own definition, as published by the model it belongs to, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.&lt;/p&gt;</description></item><item><title>Design Review Mechanics</title><link>/videos/getting-started/comments/design-reviews-full/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/design-reviews-full/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;Kanvas does not ask you to write YAML for this. The form is built from the component&amp;rsquo;s own definition, as published by the model it belongs to, so the fields you see are exactly the fields that component supports, in the version of the model you have selected.&lt;/p&gt;</description></item><item><title>Deploy and Observe Your First Design</title><link>/kanvas/getting-started/design-to-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/design-to-deployment/</guid><description>&lt;p&gt;In this tutorial you take the design you saved in &lt;a href="/kanvas/getting-started/starting-scratch/"&gt;Create Your First Design&lt;/a&gt; to a live Kubernetes cluster. You validate it, dry-run it against the cluster, deploy it, and then switch to Operator mode to see the running resources that belong to the design. You finish by undeploying it.&lt;/p&gt;
+&lt;p&gt;Along the way you learn the difference between checking a design against its schemas and checking it against a cluster, how Kanvas chooses where to deploy, and how Kanvas keeps track of the resources a design creates.&lt;/p&gt;</description></item><item><title>Concepts</title><link>/kanvas/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/</guid><description>&lt;p&gt;Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.&lt;/p&gt;
+&lt;p&gt;Each part of Kanvas plays one role around that design:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Designer authors the design.&lt;/strong&gt; You place components, connect them, and configure them on a shared canvas. Every save creates a new version, and collaborators can edit the same design at the same time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Meshery validates and deploys the design.&lt;/strong&gt; It checks the design against component schemas, dry-runs it against target clusters, and deploys or undeploys it on the Kubernetes contexts you choose.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operator shows the running result.&lt;/strong&gt; It displays live cluster state and links it back to the design: every resource Kanvas deploys carries the identity of its source design, so Operator can show exactly what one design produced.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; explains visibility in full.&lt;/p&gt;</description></item><item><title>How Kanvas Works with Meshery and Layer5 Cloud</title><link>/kanvas/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/architecture/</guid><description>&lt;p&gt;Kanvas is not a standalone service. It is an extension that runs inside Meshery, relies on Meshery Server to reach your clusters, and relies on a remote provider, Layer5 Cloud, to store and share designs. Knowing which part does what explains why some features need a cluster connection, why others need an account, and why the hosted Kanvas at kanvas.new offers a subset of what a self-hosted Meshery deployment offers.&lt;/p&gt;</description></item><item><title>Design Review Mechanics</title><link>/videos/getting-started/comments/design-reviews-full/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/comments/design-reviews-full/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LaG3AykTx0M?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 

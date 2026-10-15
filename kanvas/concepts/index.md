@@ -1,37 +1,24 @@
-# Working with Designs
+# Concepts
 
-> Kanvas Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured.
-
-
-
-## Designs
-
-Designs are declarative, descriptive characterizations of how your Kubernetes infrastructure should be configured. Designs are versioned and can be shared with other users and teams. Designs are the primary tool for collaborative authorship of your infrastructure and services.
-
-### Using Designs
-
-
-### Controlling Access to Designs
-When creating a new design, by default its visibility will be set to __public__ unless you are an active Layer5 Cloud subscriber, in which case you can change this default to __private__.
+> The core mental model behind Kanvas: designs, components, relationships, the two modes, and how Kanvas works with Meshery and Layer5 Cloud.
 
 
 
+Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.
 
+Each part of Kanvas plays one role around that design:
 
+- **Designer authors the design.** You place components, connect them, and configure them on a shared canvas. Every save creates a new version, and collaborators can edit the same design at the same time.
+- **Meshery validates and deploys the design.** It checks the design against component schemas, dry-runs it against target clusters, and deploys or undeploys it on the Kubernetes contexts you choose.
+- **Operator shows the running result.** It displays live cluster state and links it back to the design: every resource Kanvas deploys carries the identity of its source design, so Operator can show exactly what one design produced.
 
+Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; [Designs and Components](/kanvas/concepts/designs/) explains visibility in full.
 
+## Concept pages
 
-
-
-
-
-<div class="alert alert-primary" role="alert">
-  <h4 class="alert-heading">Google Docs Analogy</h4>
-  
-      Google Docs are a useful analogy for understanding designs. In many ways a Meshery design is like a single Google Doc in that they are collaboratively authored, versioned, permissioned and can move from workspace to workspace. Workspaces, a shared collection of designs, can be likened to a Google Drive, a shared collection of files.
-  
-</div>
-
-
-
+- **[Designs and Components](/kanvas/concepts/designs/)** - what a design contains, how it is saved and versioned, what components are, and how a design maps to deployed resources.
+- **[How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/)** - the extension model, where designs live, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
+- **[Relationships](/kanvas/concepts/relationships/)** - how Kanvas maps the ways connected components interact.
+- **[Designer](/kanvas/designer/)** - the authoring mode: its purpose, scope, and tools.
+- **[Operator](/kanvas/operator/)** - the operating mode: live cluster state and per-design views.
 

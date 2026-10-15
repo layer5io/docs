@@ -265,51 +265,68 @@ See the [Self-Hosted section]({{< ref "cloud/guides/self-hosted/_index.md" >}}) 
 --------------------------------------------------------------------------------
 title: "Kanvas Documentation"
 url: /kanvas/index.md
-description: Kanvas delivers a collaborative experience for engineers similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling.
+description: Kanvas is a visual, collaborative tool for designing, validating, deploying, and operating Kubernetes and cloud infrastructure.
 --------------------------------------------------------------------------------
 
-{{% pageinfo %}}
-
-## Understanding the Layer5 Ecosystem
-
-{{< ecosystem-box icon="images/logos/kanvas-icon-color.svg" image="true" title="Kanvas" >}}
-delivers a collaborative experience similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
-{{< /ecosystem-box >}}
-
-{{< ecosystem-box link="cloud/_index.md" icon="cloud" class="hidden-highlight-box" title="Layer5 Cloud" >}}
-is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
-{{< /ecosystem-box >}}
-
-{{% /pageinfo %}}
+Kanvas lets you design Kubernetes and cloud infrastructure visually, validate and deploy that design to your clusters, and then operate what is running, all from one shared canvas. Teams work on the same design at the same time, so the diagram you discuss is the configuration you deploy.
 
 ## What is Kanvas?
 
-<p style="display:flex;text-align:center;margin:1rem auto;color:white;"><i>Kanvas is like Google Workspace for DevOps, as it allows you to create, test, and deploy cloud native architectures collaboratively and easily.</i></p>
+Kanvas is a web application for creating and sharing orchestratable designs of cloud native infrastructure. A design is a declarative description of infrastructure: the components it contains, the relationships between them, their configuration, and any annotations you add to explain it. You build a design by placing components on a canvas, connecting them, and configuring each one. You can also draw shapes, lines, text, and icons to document your intent; Kanvas treats those as annotations and never deploys them.
 
-Kanvas is a web-based application that allows you to create and share orchestratable diagrams of cloud native infrastructure for Kubernetes and public cloud services. You can draw shapes, lines, text, and icons to represent your infrastructure components and their relationships. Kanvas also supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. Kanvas is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes and multi-cloud services.
+A design does not stop at the diagram. Kanvas validates a design against the schema of every component in it, dry-runs it against your target clusters without applying anything, and deploys or undeploys it on the Kubernetes contexts you select. Every save creates a new version of the design, and multiple people can edit the same design together in real time.
+
+This matters because one artifact carries your infrastructure from whiteboard to running cluster. Reviewers read the same design that operators deploy, and every resource Kanvas deploys carries the identity of the design that produced it, so you can trace running workloads back to their source.
+
+## Two modes: Designer and Operator
+
+Kanvas has two modes. You switch between them at any time; if the open design or resource has unsaved changes, Kanvas asks you to confirm before you leave.
+
+- **[Designer]({{< ref "kanvas/designer/_index.md" >}})** is for authoring. You compose designs from versioned components, define relationships, configure each component, and annotate the result. Whiteboarding is a toolset inside Designer, not a separate mode. Validate, dry-run, deploy, and undeploy actions run from Designer.
+- **[Operator]({{< ref "kanvas/operator/_index.md" >}})** is for running infrastructure. It shows the live state of your connected Kubernetes clusters, streamed from the clusters through Meshery. Operator can scope its view to the resources a single design deployed.
+
+### Where each mode is available
+
+Designer is available everywhere Kanvas runs, including the hosted Kanvas at [kanvas.new](https://kanvas.new). Operator mode, and every action that touches a cluster, needs a Meshery deployment that can reach your clusters.
+
+| Capability | Hosted Kanvas (kanvas.new) | Meshery Playground or self-hosted Meshery |
+|---|---|---|
+| Designer: author and import designs | Available | Available |
+| Share and publish designs | Requires sign-in | Requires sign-in |
+| Validate, dry-run, deploy, and undeploy | Not available | Available |
+| Connect clusters | Not available | Available |
+| Operator mode | Not available | Available |
+
+When you invoke a cluster-bound capability on kanvas.new, Kanvas explains that it is not available there and points you to the [Meshery Playground](https://playground.meshery.io) or a self-hosted Meshery deployment. Plan details live at [layer5.io/pricing](https://layer5.io/pricing).
 
 ### Choose your mode
 
-Choose your mode of operation for Kanvas.
-
 <div style="display:flex;justify-content:center;">
 {{< cardpane >}}
-    <a href="{{< ref "kanvas/designer/_index.md" >}}">
   {{< card header="Designer" >}}
-    <a href="{{< ref "kanvas/designer/_index.md" >}}">Designer</a> mode is for those who want to create their own Kanvas, using the palette of components.
-    <p>Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.</p>
-    <p>Use context-aware relationships configure your infrastructure intuitively.</p>
+    <p><a href="{{< ref "kanvas/designer/_index.md" >}}">Designer</a> mode is for creating and editing designs.</p>
+    <p>Compose infrastructure from a palette of versioned components, connect components with relationships, and configure each one.</p>
+    <p>Validate a design, dry-run it against your clusters, and deploy it.</p>
   {{< /card >}}
-    </a>
-  <a href="{{< ref "kanvas/operator/_index.md" >}}">
   {{< card header="Operator" >}}
-    <a href="{{< ref "kanvas/operator/_index.md" >}}">Operator</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
-    <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
-    <p>Interactively connect to pods and containers to debug and troubleshoot.</p>
+    <p><a href="{{< ref "kanvas/operator/_index.md" >}}">Operator</a> mode is for operating your Kubernetes clusters and the infrastructure running on them.</p>
+    <p>See live cluster state across every connected cluster.</p>
+    <p>Filter the view to the resources that a specific design deployed.</p>
   {{< /card >}}
-  </a>
 {{< /cardpane >}}
 </div>
+
+## How Kanvas relates to Meshery and Layer5 Cloud
+
+Kanvas is an extension of Meshery. Its interface loads into Meshery UI, and a companion plugin runs inside Meshery Server. Meshery Server is the component that talks to your clusters: it deploys and observes infrastructure on Kanvas's behalf. [Layer5 Cloud]({{< ref "cloud/_index.md" >}}) is the remote provider behind Kanvas: it stores your designs and their versions and handles identity, sharing, the catalog, and events. [How Kanvas Works with Meshery and Layer5 Cloud]({{< ref "kanvas/concepts/architecture/index.md" >}}) explains how requests move between these parts.
+
+## Where to go next
+
+- **[Getting Started]({{< ref "kanvas/getting-started/_index.md" >}})** - create your first design and reach a working result fast.
+- **[Tutorials]({{< ref "kanvas/tutorials/_index.md" >}})** - learn Kanvas by building realistic designs end to end.
+- **[How-to Guides]({{< ref "kanvas/guides/_index.md" >}})** - accomplish a specific task, such as deploying or sharing a design.
+- **[Concepts]({{< ref "kanvas/concepts/_index.md" >}})** - understand designs, components, relationships, and how Kanvas works.
+- **[Reference]({{< ref "kanvas/reference/_index.md" >}})** - look up exact options, limits, permissions, and shortcuts.
 
 
 --------------------------------------------------------------------------------
@@ -659,139 +676,6 @@ Render modes are the primary performance lever once a design grows past a few hu
 
 
 --------------------------------------------------------------------------------
-title: "Understanding Design Components"
-url: /kanvas/designer/understanding-design-component/index.md
-description: A complete reference for all components available in the Kanvas designer.
---------------------------------------------------------------------------------
-
-When you're designing and visualizing in [Kanvas](https://kanvas.new/), you'll encounter a rich library of components. This guide will help you understand what these components mean and how they behave in your designs.
-
-## Core Component Categories
-
-[Components](https://docs.meshery.io/concepts/logical/components) in Kanvas fall into two fundamental categories, distinguished by whether they can be orchestrated (managed) during deployment.
-
-### Semantic Components (Orchestratable)
-These components represent actual infrastructure resources that Kanvas can understand and manage during deployment. They are "meaningful" because they map directly to real infrastructure elements. Examples include:
-- Kubernetes resources (Pods, Services, Deployments)
-- Cloud provider resources (AWS S3 buckets, Azure Functions)
-- Infrastructure components (Load Balancers, Databases)
-
-These components are orchestratable because Kanvas can create, configure, and manage their lifecycle during deployment.
-
-{{< alert title="Visual Distinction Rule" type="info">}}
-To help users quickly distinguish between component types, Kanvas follows a clear visual design rule:
-- Semantic (Configurable) Components: Have a background to represent their status as "real" infrastructure resources
-- Non-semantic (Annotation) Components: Have transparent backgrounds, as they are purely visual aids
-{{< /alert >}}
-
-### Non-semantic Components (Annotation-Only)
-These components are visual and organizational elements that help document and organize your designs. They are "meaningless" in terms of infrastructure because they don't represent deployable resources. Examples include:
-- Text boxes and comments
-- Shapes and containers for grouping
-- Arrows and lines for relationships
-- Labels and tags
-
-Kanvas ignores these components during deployment as they are purely visual/organizational elements.
-
-{{< alert title="Visual Customization" type="info">}}
-All components, whether semantic or non-semantic, support rich visual customization. For example, you can change a Kubernetes Pod's color from blue to green, modify its shape, or replace its background logo - it's all configurable!
-{{< /alert >}}
-
-## Semantic Components
-
-These components represent real infrastructure that Kanvas can manage. They can be either built-in (like Kubernetes components) or custom components that you [create](https://docs.meshery.io/guides/configuration-management/creating-models).
-
-![Example of using integrated components in Kanvas](images/component_style.gif)
-
-Kanvas provides a rich ecosystem of semantic components through various integrations. While Kubernetes is a commonly used example, all integration models (like KEDA, Istio, AWS, etc.) provide components with the same orchestratable capabilities. To help you navigate this ecosystem, Kanvas organizes these components in a clear hierarchy:
-
-{{< alert title="Integration Hierarchy" type="info">}}
-Kanvas organizes integrated components in a clear hierarchy:
-1. **Categories:** High-level groups (e.g., "Cloud Native Network", "Database")
-2. **Integration Models:** Specific technologies (e.g., "AWS App Mesh", "Prometheus", "Kubernetes")
-3. **Semantic Components:** Functional building blocks that can be deployed and managed
-{{< /alert >}}
-
-### Kubernetes Components Example
-
-To illustrate how semantic components work in practice, let's examine Kubernetes components. As one of the most widely used integration models, Kubernetes components demonstrate how Kanvas implements its design principles while maintaining a distinct visual style:
-
-![Example of using kubernetes components in Kanvas](images/k8s_style.gif)
-
-For Kubernetes resources, Kanvas employs a thoughtful design system built on these key principles:
-
-**Principle 1: Color and Structure**
-- **Uniform Color Scheme:** Kubernetes component icons typically use a **distinctive blue background** as a standard identifier
-- **Standardized Icon Structure:** The fundamental structure is consistent: an outer container shape with the blue background, encompassing a unique inner white symbol
-- **Meaningful Inner Symbols:** The white symbol inside each icon is the crucial unique identifier for that specific Kubernetes Kind
-
-**Principle 2: Shape as an Indicator**
-
-The blue background is framed by different outer shapes that help identify the component's role:
-
-- **Triangles:** Used for core networking resources like `Service` and `API Service`
-- **Hexagons:** Used for foundational workload controllers like `StatefulSet`
-- **Unique Polygons:** Used for specialized resources like `Endpoints`, `PriorityClass`, or `ValidatingWebhookConfiguration`
-
-{{< alert title="Exploring All Integrations" type="info">}}
-This guide covers the visual style of components. For a complete catalog of all technologies that Kanvas integrates, visit the <a href="https://docs.meshery.io/extensions/integrations">integrations directory</a>.
-{{< /alert >}}
-
-## Non-semantic Components
-
-These components help you document and organize your designs without affecting the actual infrastructure. They include:
-
-![Example of non-semantic components](images/shape_style.gif)
-
-### Generic Shapes
-
-The "Shapes" palette offers a diverse collection of annotation-only components for general-purpose diagramming. These are purely visual elements that won't be deployed.
-
-![Generic shapes palette in Kanvas](images/shapes.png)
-
-### Arrows
-
-Arrows are annotation-only components for showing direction or creating simple visual annotations. They are static shapes intended for illustration.
-
-![Static arrow shapes palette in Kanvas](images/arrows.png)
-
-{{< alert title="Looking for Dynamic Connections?" type="info">}}
-The arrows shown here are static visual aids. To represent actual, functional relationships between semantic components (like network traffic or dependencies), you should use the Edge system instead. <a href="https://docs.meshery.io/extensions/edges-shape-guide">Learn more</a>
-{{< /alert >}}
-
-### Flowchart Shapes
-
-Kanvas includes a dedicated palette of standard flowchart shapes. These are annotation-only components that help document your design's logic and flow.
-
-![Flowchart shapes palette in Kanvas](images/flowchart.png)
-
-### Simple Line Icons
-
-Kanvas provides a comprehensive library of **Simple Line Icons** as annotation-only components. These icons are intended for user-driven annotations and visual enhancement.
-
-![Simple line icons palette in Kanvas](images/simple_line_icons.png)
-
-## Component Visuals in Different Contexts
-
-A single semantic component will be visually represented differently depending on where you encounter it in Kanvas. Let's take the Deployment component as an example:
-
-1. **Deployment component with its distinctive shape and badge:**
-
-<img src="./images/deployment-shape.png" alt="Deployment Component Shape" style="width:30%; height:auto;" />
-
-2. **Deployment icon as it appears in a component selection panel:**
-
-![Deployment icon in a component selection panel](images/deployment-icon.png)
-
-3. **Deployment component as seen in a cluster resource overview:**
-
-![Deployment component in a cluster resource overview](images/deployment-dashboard.png)
-
-{{< alert title="Learn More About Interpreting Designs" type="info">}}
-To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the <a href="https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs">Layer5 Academy</a>.
-{{< /alert >}}
-
---------------------------------------------------------------------------------
 title: "Design Render Quality"
 url: /kanvas/advanced/url-parameters/index.md
 description: Control the level of detail in Kanvas design rendering using advanced URL query parameters.
@@ -865,310 +749,6 @@ You can enable Adaptive mode via URL parameter:
 `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
 
 When `adaptive=true` is set, Kanvas will automatically monitor performance and switch render modes as needed. The current render mode (set via the `render` parameter or the default) becomes the ceiling -- the highest fidelity Adaptive mode will use. See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for details.
-
---------------------------------------------------------------------------------
-title: "Starting from scratch"
-url: /kanvas/getting-started/starting-scratch/index.md
-description: Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
-
---------------------------------------------------------------------------------
-
-
-## Step 1: Accessing Designer Mode
-
-Upon entering Kanvas, seamlessly transition to the "Designer" mode by selecting the "Designer" tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.
-
-<figure>
-  <img src="../../designer/images/audit-2026-09/designer-getting-started.png" alt="Untitled design Getting Started hub with file menu and layout callouts" />
-  <figcaption>New design Getting Started hub (anonymous capture, Sep 2026): walk-throughs, templates, and import, plus callouts for the file menu and layout control. Comments/Share may be inactive until you sign in.</figcaption>
-</figure>
-
-**Example Analogy:**
-Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.
-
-## Step 2: Giving Your Design a Name
-
-Initiate the design process by clicking on the "New Design" button in the Designer panel. Provide a meaningful name for your design, reflecting its purpose or key components. This action initializes a unique design entity, establishing it within the system.
-
-**Example Analogy:**
-Naming your design is like labeling a blueprint for a mobile app. It helps everyone involved understand the app's purpose and functionality.
-
-## Step 3: Browsing Available Components
-
-Explore the extensive toolbox in Designer mode, offering a diverse array of components such as microservices, databases, and event queues. Each component seamlessly integrates into your infrastructure. As you explore components, Kanvas dynamically previews their integration into your design, ensuring a harmonious fit.
-
-**Example Analogy:**
-Think of the toolbox as a palette of building blocks for your cloud native app. Just like selecting different materials for a construction project, you choose components for your app's architecture.
-
-## Step 4: Selecting Specific Versions
-
-To ensure precision in your design, select the specific version of each component you need. Kanvas supports a variety of versions for different components, allowing you to tailor your design to meet your exact requirements. A compatibility check is conducted, ensuring that selected versions align seamlessly within your design.
-
-**Example Analogy:**
-Choosing component versions is similar to selecting software versions for your cloud native app. It's like picking the right versions of libraries to ensure your app functions smoothly.
-
-## Step 5: Building Complex cloud native Deployments
-
-With the Designer toolbox at your disposal, effortlessly construct complex cloud native deployments. Simply drag and drop components onto the Kanvas canvas, arranging them in a way that suits your architecture. Kanvas renders your design in real-time as you drag and drop components, providing immediate visual feedback.
-
-**Example Analogy:**
-Building your deployment is like assembling a puzzle. Each component fits together to create a cohesive picture—the architecture of your cloud native app.
-
-## Step 6: Configuring Each Component
-
-Fine-tune your design by configuring each component using the Configuration panel. Kanvas's intuitive interface enables you to adjust settings and parameters effortlessly. Your design will automatically update with each change made. Kanvas's auto-sync feature ensures that configuration changes are instantly reflected in the design canvas.
-
-**Example Analogy:**
-Configuring components is like customizing app settings. You tweak each component to ensure they work seamlessly together, just like adjusting preferences in a mobile app.
-
-## Step 7: Design Actions and Interactions
-
-Explore additional design actions by right-clicking on components. Group components together or establish connections between them according to your needs. Kanvas responds in real-time to design actions, providing a fluid and responsive user experience.
-
-**Example Analogy:**
-Design actions are akin to arranging app features. You organize components like arranging app features on a dashboard, creating an intuitive and user-friendly experience.
-
-## Step 8: Merging Designs
-
-For enhanced collaboration and scalability, seamlessly merge existing designs into your canvas by dragging and dropping. This feature enables you to consolidate multiple designs, creating a unified and comprehensive view of your infrastructure. Kanvas orchestrates the merging process internally, creating a unified design that incorporates components from the dragged designs. Importantly, users do not lose their original designs during the merging process. Kanvas retains records of each design, preserving their individuality. The act of merging designs dynamically adjusts the visibility of the merged design, aligning with user intentions and access controls.
-
-**Example Analogy:**
-Merging designs is like integrating features from different app versions. You bring together different elements to create a cohesive and feature-rich user experience without losing the uniqueness of each version.
-
-Congratulations! You've successfully navigated the Designer mode in Kanvas, orchestrating a robust and tailored cloud native deployment. Continue exploring Kanvas's features to optimize and manage your designs effectively.
-
-Happy designing!
-
-
-
-
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
-
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
-
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
-
-
-## Second Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
-
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
-
 
 --------------------------------------------------------------------------------
 title: "Understanding Edge Styles"
@@ -6002,6 +5582,296 @@ Only Admins and Owner can unpublish designs. Regular users and guests cannot per
 
 
 --------------------------------------------------------------------------------
+title: "Create Your First Design"
+url: /kanvas/getting-started/starting-scratch/index.md
+description: Build a small web application design from an empty canvas, connect its components through relationships, and save it, while learning how Kanvas models and stores designs.
+--------------------------------------------------------------------------------
+
+In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for [Deploy and Observe Your First Design]({{< ref "kanvas/getting-started/design-to-deployment/index.md" >}}).
+
+Along the way you learn what a design is made of, how relationships express the way components depend on each other, and when and how Kanvas saves your work.
+
+## Before you begin
+
+- Open Kanvas in Designer mode, either at kanvas.new or in a Meshery you run. Either works for this tutorial. If you plan to deploy the design in the next tutorial, start in a Meshery you run so the design is already where you need it. See [Where do you want to work?]({{< ref "kanvas/getting-started/_index.md#where-do-you-want-to-work" >}}).
+- Work inside a specific organization. Kanvas does not create designs while the "all organizations" scope is selected.
+
+## Step 1: Start an empty design
+
+Start a new design. Kanvas opens an empty canvas and names the design "Untitled Design".
+
+That default name matters. Kanvas does not save a new design that has an empty canvas and no name of its own. A new design becomes saveable as soon as it has at least one component, or a name that is not empty and is not "Untitled Design".
+
+Give the design a name that describes its purpose, such as `web-app`. A meaningful name makes the design easy to find later, and Kanvas also uses it to label the design's deploy steps and its Operator view.
+
+**What you should see:** an empty canvas with your design name in place of "Untitled Design".
+
+## Step 2: Add the application components
+
+A **component** is one piece of infrastructure in your design: a single, typed resource such as a Kubernetes Deployment, Service, or ConfigMap, together with its configuration. Each component comes from a model, and many components exist in more than one version. Choose the version that matches the cluster you intend to deploy to.
+
+Add three components from the Kubernetes model to the canvas:
+
+- a **Deployment**, which will run the web application,
+- a **ConfigMap**, which will hold the application's settings,
+- a **Service**, which will give the application a stable network endpoint.
+
+Kanvas renders each component on the canvas as soon as you place it. Arrange them so you can see all three.
+
+Not everything on a canvas is infrastructure. Shapes, text, and drawings that you add for explanation are **annotation-only**: they make the design easier to read but are not resources. A connector you draw for illustration is an annotation edge for the same reason. Use annotations freely to document a design; they do not change what the design describes.
+
+**What you should see:** three components on the canvas, each showing its kind.
+
+## Step 3: Configure each component
+
+Every component carries configuration based on its schema. Open a component's configuration panel to set its fields. The canvas updates as you change them.
+
+Configure the three components so they refer to each other:
+
+1. On the **ConfigMap**, set a name such as `web-app-config` and add one key, for example `GREETING`.
+2. On the **Deployment**, set a name, a container image (for example `nginx`), and a label such as `app: web-app` on its pod template. Reference the ConfigMap by its name so the container reads its settings from it.
+3. On the **Service**, add the same label (`app: web-app`) and set a port.
+
+These references are the same ones you would write in Kubernetes manifests. Kanvas evaluates them to work out how the components relate.
+
+**What you should see:** each component shows the name you gave it.
+
+## Step 4: Connect the components with relationships
+
+A **relationship** describes how two components interact or depend on each other. Kanvas draws relationships on the canvas as edges between components, or as nesting when one component contains another. Relationships fall into families:
+
+- **Edge relationships** describe interaction between components. A Service in front of a Deployment is a network relationship. A Deployment that reads a ConfigMap is a reference relationship: one component refers to another by name.
+- **Hierarchical relationships** describe containment and inheritance, such as a Namespace that must exist before the Pods inside it.
+
+Relationships come from two sources: configuration you set, and connections you make on the canvas. Components that carry the same label form a label-match relationship automatically, so the Service and the Deployment in this design are now related. You can also drag a connection line from one component to a compatible target to create an edge relationship yourself. [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}) describes every kind and what each one means.
+
+Check that your design shows a relationship between the Service and the Deployment, and one between the Deployment and the ConfigMap. If one is missing, compare the names and labels you set in Step 3, or drag a connection between the two components.
+
+In large designs, Kanvas can skip drawing some relationships of one kind once that kind passes its rendering limit. When that happens it shows a warning of the form "Skipped rendering of N &lt;kind&gt; relationships due to limit of M". The relationships still belong to the design; only their drawing is skipped.
+
+**What you should see:** the Deployment connected to both the Service and the ConfigMap.
+
+## Step 5: Save the design
+
+Kanvas saves for you. Once the design is saveable, Kanvas saves pending changes 3 seconds after you stop editing. If a save fails, Kanvas retries with a doubling delay (3 seconds, then 6, then 12, and so on) for up to 100 attempts.
+
+Three things happen when a design is saved:
+
+- **A new version is created.** Every save increments the design's version, so a design accumulates a history of versions as you work.
+- **A new design starts as public.** The first save of a new design sets its visibility to public. Later saves keep whatever visibility the design has at that point. Designs can also be private or published; [Saving designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}) explains each.
+- **Your plan's component limit is checked.** Each plan sets a maximum number of components per design, and Kanvas checks it on every save and import. A design over the limit is not saved; Kanvas reports "Design exceeds maximum limit of N components supported by your current plan". Reduce the number of components or upgrade the plan. See [Layer5 pricing](https://layer5.io/pricing) for the limit on each plan.
+
+This three-component design is well within every plan's limit.
+
+**What you should see:** your design saved under its new name, with no unsaved changes pending.
+
+## Optional: Merge another design into this one
+
+You can bring an existing design into the canvas you are working on. Kanvas merges its components and relationships into the current design and leaves the original design unchanged. Use this to assemble a larger system from designs you already have. See [Merging designs]({{< ref "kanvas/designer/merging-designs/index.md" >}}).
+
+## What you built
+
+You now have a saved design named `web-app` that describes a web application:
+
+- three infrastructure components, each configured from its schema,
+- relationships that record how the Service reaches the Deployment and how the Deployment reads the ConfigMap,
+- a version history that grows with every save.
+
+You also learned the core rules of saving: a new design needs a component or a real name before it can be saved, autosave runs 3 seconds after you stop editing, a new design starts as public, and your plan limits the number of components in a design.
+
+## Next
+
+Take this design to a cluster in [Deploy and Observe Your First Design]({{< ref "kanvas/getting-started/design-to-deployment/index.md" >}}). You will validate it, dry-run it, deploy it, and watch the resulting resources in Operator mode.
+
+
+--------------------------------------------------------------------------------
+title: "Designs and Components"
+url: /kanvas/concepts/designs/index.md
+description: What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
+--------------------------------------------------------------------------------
+
+A design is the unit of work in Kanvas. It is a declarative description of infrastructure that you author on a canvas, save as a versioned document, share with others, and deploy to your clusters. Components are the building blocks of a design: some represent real infrastructure that Kanvas deploys, and others are annotations that only explain the design. Knowing which is which, and how a design behaves when you save, share, and deploy it, tells you exactly what Kanvas will do with your work.
+
+## What a design contains
+
+A design holds four kinds of content:
+
+- **Components** - the infrastructure resources in the design, such as Kubernetes Deployments, Services, or cloud provider resources, each with its own configuration.
+- **Relationships** - the connections between components and what those connections mean. See [Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}}).
+- **Configuration** - the settings of each component.
+- **Annotations** - shapes, arrows, text, and icons that document the design. Kanvas never deploys annotations.
+
+## How designs are saved
+
+### Naming and the saveability rule
+
+A new, unsaved design is named "Untitled Design". Kanvas saves a new design only when it has at least one component, or a name that is not empty and not "Untitled Design". An empty, unnamed canvas is not saved. Once a design has been saved, it can always be saved again, even after you remove every component.
+
+You cannot create a design while your organization scope is set to all organizations. Select a single organization first.
+
+### Autosave
+
+Kanvas saves pending changes automatically 3 seconds after you stop editing. If a save fails, Kanvas retries with a doubling delay (3 seconds, then 6, then 12, and so on) for up to 100 attempts.
+
+### Versions
+
+Every save creates a new version of the design. You never overwrite a previous version by saving.
+
+## Who can see a design
+
+A design has one of three visibility values:
+
+| Visibility | Meaning |
+|---|---|
+| Public | Visible beyond its owner. Every newly created design starts as public. |
+| Private | Visible to its owner. Other organization members need the "View Designs" permission to view private designs. |
+| Published | Listed in the catalog. Unpublishing a design sets its visibility back to private. |
+
+Saving an existing design never changes its visibility. Non-owners read private and published designs only when the design is shared with them or when they hold administrator rights.
+
+## Components
+
+[Components](https://docs.meshery.io/concepts/logical/components) in Kanvas fall into two categories, distinguished by whether Kanvas can orchestrate them during deployment.
+
+### Semantic components (orchestratable)
+
+Semantic components represent actual infrastructure resources. They map directly to real infrastructure elements, so Kanvas can create, configure, and manage their lifecycle during deployment. Examples include:
+
+- Kubernetes resources (Pods, Services, Deployments)
+- Cloud provider resources (AWS S3 buckets, Azure Functions)
+- Infrastructure components (load balancers, databases)
+
+Semantic components are either built in, like the Kubernetes components, or custom components that you [create](https://docs.meshery.io/guides/configuration-management/creating-models).
+
+![Animation of a semantic component being styled on the Kanvas canvas](images/component_style.gif)
+
+### Non-semantic components (annotation-only)
+
+Non-semantic components are visual and organizational elements that document and organize your design. They do not represent deployable resources, and Kanvas ignores them during deployment. Examples include:
+
+- Text boxes and comments
+- Shapes and containers for grouping
+- Arrows and lines
+- Labels and tags
+
+{{< alert title="Visual distinction rule" type="info" >}}
+Semantic components have a background, which marks them as real infrastructure resources. Non-semantic components have a transparent background, which marks them as visual aids only.
+{{< /alert >}}
+
+Both kinds support visual customization. You can change a Kubernetes Pod's color, modify its shape, or replace its background logo without changing what Kanvas deploys.
+
+### How components are organized
+
+Kanvas draws semantic components from integration models. Kubernetes is the most common, and every integration model, such as KEDA, Prometheus, or AWS, provides components with the same orchestratable capabilities. Kanvas organizes them in a three-level hierarchy:
+
+1. **Categories** - high-level groups, such as "Cloud Native Network" or "Database".
+2. **Integration models** - specific technologies, such as Prometheus or Kubernetes.
+3. **Components** - the deployable building blocks within a model.
+
+For the full list of technologies Kanvas integrates, see the [integrations directory](https://docs.meshery.io/extensions/integrations).
+
+### Kubernetes component conventions
+
+Kubernetes components follow a consistent visual system, so you can identify a resource kind at a glance.
+
+![Animation of Kubernetes components with blue backgrounds and distinct outer shapes on the Kanvas canvas](images/k8s_style.gif)
+
+**Color and structure**
+
+- Kubernetes component icons use a distinctive blue background.
+- Every icon has the same structure: an outer shape filled with blue that encloses a white inner symbol.
+- The white inner symbol identifies the specific Kubernetes kind.
+
+**Shape as an indicator**
+
+The outer shape identifies the component's role:
+
+- **Triangles** mark core networking resources, such as `Service` and `APIService`.
+- **Hexagons** mark foundational workload controllers, such as `StatefulSet`.
+- **Unique polygons** mark specialized resources, such as `Endpoints`, `PriorityClass`, or `ValidatingWebhookConfiguration`.
+
+### Non-semantic palettes
+
+Kanvas provides four palettes of annotation-only components. None of them is ever deployed.
+
+![Animation of non-semantic shapes being placed and styled on the Kanvas canvas](images/shape_style.gif)
+
+**Generic shapes** cover general-purpose diagramming.
+
+![The Shapes palette in Kanvas, showing generic annotation shapes](images/shapes.png)
+
+**Arrows** show direction or create simple visual annotations. They are static shapes for illustration only. To represent a functional relationship between semantic components, such as network traffic or a dependency, use an edge instead; see the [edges shape guide](https://docs.meshery.io/extensions/edges-shape-guide).
+
+![The Arrows palette in Kanvas, showing static arrow shapes](images/arrows.png)
+
+**Flowchart shapes** document a design's logic and flow with standard flowchart symbols.
+
+![The Flowchart palette in Kanvas, showing standard flowchart shapes](images/flowchart.png)
+
+**Simple Line Icons** add icons for annotation and visual emphasis.
+
+![The Simple Line Icons palette in Kanvas](images/simple_line_icons.png)
+
+### One component, several representations
+
+A semantic component looks different depending on where it appears. The Deployment component is a good example:
+
+1. On the canvas, it has its distinctive shape and badge.
+
+   <img src="./images/deployment-shape.png" alt="The Deployment component on the Kanvas canvas, showing its shape and badge" style="width:30%; height:auto;" />
+
+2. In a component selection panel, it appears as an icon.
+
+   ![The Deployment icon in a component selection panel](images/deployment-icon.png)
+
+3. In a cluster resource overview, it appears as a resource entry.
+
+   ![The Deployment component in a cluster resource overview](images/deployment-dashboard.png)
+
+To practice reading designs, see [interpreting Meshery designs](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs) in the Layer5 Academy.
+
+## Limits as shipped
+
+The limits below describe Kanvas as it ships today. Current plans and their entitlements are listed at [layer5.io/pricing](https://layer5.io/pricing).
+
+### Components per design
+
+Kanvas enforces a maximum number of components per design whenever you save or import a design. The limit depends on your organization's plan and is the same for monthly and annual billing.
+
+| Plan | Components per design |
+|---|---|
+| Personal | 100 |
+| Team Designer | 200 |
+| Team Operator | 100 |
+| Enterprise | 300 |
+
+When a design exceeds the limit, the save or import is rejected with HTTP 403 and the message "Design exceeds maximum limit of N components supported by your current plan", where N is your plan's limit. To proceed, reduce the number of components in the design or upgrade your plan.
+
+If your organization is not entitled to add components to a design at all, the save fails with HTTP 500 and the message "Org is not entitled to adding components to a design".
+
+### Files dropped on the canvas
+
+You can drop files directly onto the canvas:
+
+- **Image and text files** up to 500 KB are accepted. Larger files are rejected. The rejection message says "Your current plan allows files up to 500 KB", but the 500 KB limit is the same on every plan.
+- **Infrastructure-as-code files**, such as Kubernetes manifests, are imported as a design.
+
+## How a design maps to deployed resources
+
+When Kanvas deploys a design, every resource it creates carries the identity of its source design:
+
+| Metadata | Key | Value |
+|---|---|---|
+| Label | `design.meshery.io/id` | The id of the source design |
+| Annotation | `design.meshery.io/version` | The version of the design that was deployed |
+| Annotation | `component.meshery.io/id` | The id of the component in the design |
+
+A resource that carries the design id label is managed by Meshery. Because the label is a standard Kubernetes label, you can also select a design's resources with your own tooling.
+
+This metadata powers Operator's per-design view. A design's view is named "&lt;design name&gt;-View" and shows only the resources whose design id label matches that design, so you see exactly what one design produced across your clusters. See [Operator]({{< ref "kanvas/operator/_index.md" >}}).
+
+
+--------------------------------------------------------------------------------
 title: "Pinning Models to the Dock"
 url: /kanvas/designer/pin-model-to-dock/index.md
 description: Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
@@ -6518,8 +6388,114 @@ There is no Apply button. Edits are written into the design shortly after you st
 
 ### See Also
 
-* **[Understanding Design Components]({{< ref "kanvas/designer/understanding-design-component/index.md" >}}):** What the components on the palette represent.
+* **[Understanding Design Components]({{< ref "kanvas/concepts/designs/index.md" >}}):** What the components on the palette represent.
 * **[Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}):** Every mouse interaction available on the canvas, including the ones that open this panel.
+
+
+--------------------------------------------------------------------------------
+title: "Deploy and Observe Your First Design"
+url: /kanvas/getting-started/design-to-deployment/index.md
+description: Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
+--------------------------------------------------------------------------------
+
+In this tutorial you take the design you saved in [Create Your First Design]({{< ref "kanvas/getting-started/starting-scratch.md" >}}) to a live Kubernetes cluster. You validate it, dry-run it against the cluster, deploy it, and then switch to Operator mode to see the running resources that belong to the design. You finish by undeploying it.
+
+Along the way you learn the difference between checking a design against its schemas and checking it against a cluster, how Kanvas chooses where to deploy, and how Kanvas keeps track of the resources a design creates.
+
+{{< alert type="info" title="This tutorial needs a Meshery you run" >}}
+Hosted Kanvas at kanvas.new cannot validate, dry-run, deploy, or undeploy designs, and it does not offer Operator mode. On kanvas.new these actions open a prompt that sends you to a Meshery you run instead. Use the [Meshery Playground](https://playground.meshery.io) or [install Meshery](https://docs.meshery.io/installation/) in your own environment, then open your design there.
+{{< /alert >}}
+
+## Before you begin
+
+You need:
+
+- **The `web-app` design** from the previous tutorial, saved and open in Designer mode.
+- **A Meshery you run**, either the Meshery Playground or a self-hosted Meshery, signed in with Layer5 Cloud as its provider. Operator views are stored in Layer5 Cloud, so the local provider cannot show them.
+- **A connected Kubernetes cluster** with Meshery Operator deployed. Meshery Operator installs MeshSync and Meshery Broker in the cluster; MeshSync streams the cluster's live state to Meshery Server, and that stream is what Operator mode displays. See [Operator]({{< ref "kanvas/operator/_index.md" >}}).
+- **Permissions** in your organization for each action. Validate Design permits both validation and dry runs, Deploy Design permits deploying, and Undeploy Design permits undeploying. When you lack one of these permissions, the matching action is not available to you.
+
+## Step 1: Validate the design
+
+Validate the design from the design's action toolbar. Kanvas shows "Validating design" and opens a dialog titled `Validate design "web-app"`.
+
+**What Kanvas does:** validation checks every component in the design against that component's schema. It does not contact any cluster. Each error is attached to the component and the field that caused it, so you fix problems where they are, not in a separate list. When validation of the whole design completes, Kanvas records a validation event in your Layer5 Cloud event log.
+
+**What you should see:** no errors for this design. If validation finds problems, Kanvas shows "Design validation error" and marks the affected components. Open each marked component, correct the field, and validate again.
+
+## Step 2: Dry-run the design against the cluster
+
+Start a dry run. Kanvas opens a dialog titled `Dryrun design "web-app"`.
+
+**What Kanvas does:** a dry run sends the design to the target cluster for checking without applying anything. It catches problems that schemas cannot, the ones only the cluster knows about. Dry-run errors attach to components in the same way as schema errors, so both kinds appear side by side on the affected component.
+
+Validation answers "is this design well formed?". A dry run answers "would this cluster accept it?". Run both before every deployment.
+
+**What you should see:** a dry run that completes without errors. Nothing has changed in the cluster yet.
+
+## Step 3: Deploy the design
+
+Deploy the design. Kanvas opens a dialog titled `Deploy design "web-app"` that walks you through the deployment.
+
+**What Kanvas does:** Kanvas applies the design to the Kubernetes contexts you select. If you do not select any, Kanvas deploys to **all** connected clusters. Choose your target deliberately when more than one cluster is connected.
+
+Every resource Kanvas creates carries the design's identity:
+
+| Metadata | Key | Value |
+|---|---|---|
+| Label | `design.meshery.io/id` | The design's ID |
+| Annotation | `design.meshery.io/version` | The design version that was deployed |
+| Annotation | `component.meshery.io/id` | The ID of the component the resource came from |
+
+The label is what makes a resource "managed by Meshery". It also lets you find the design's resources with your own tools, for example `kubectl get all -l design.meshery.io/id=<design-id>`.
+
+**What you should see:** the deployment completes, and the Deployment, Service, and ConfigMap exist in the cluster.
+
+## Step 4: Observe the design in Operator mode
+
+Switch from Designer to Operator mode.
+
+If the design has unsaved changes, Kanvas asks "You have unsaved changes. Are you sure you want to leave?" before it switches. Confirm only if you are ready to lose those changes; otherwise stay, let the design save, and switch again.
+
+**What Kanvas does:** Operator mode shows live cluster state through views. A view is a saved set of filters. A new, empty view shows Nodes and Namespaces across all connected clusters. A design's view is named after the design, `web-app-View`, and filters on the design's `design.meshery.io/id` label, so it shows only the resources this design created.
+
+**What you should see:** in the design's view, the running Deployment, Service, and ConfigMap from your design, and nothing else from the cluster.
+
+## Step 5: Undeploy the design
+
+Return to Designer mode and undeploy the design. Kanvas opens a dialog titled `Undeploy design "web-app"`.
+
+**What Kanvas does:** undeploy removes the design's resources from the Kubernetes contexts you select. As with deploy, selecting no context targets **all** connected clusters. You can dry-run an undeploy first to see what it would do.
+
+**What you should see:** the undeploy completes and the resources are removed from the cluster. The design itself stays saved, ready to deploy again.
+
+## If something goes wrong
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| A prompt says Operator mode is not available on kanvas.new. | Hosted Kanvas cannot validate, deploy, undeploy, connect clusters, or open Operator mode. | Open the design in the Meshery Playground or a self-hosted Meshery. |
+| Validate, dry run, deploy, and undeploy are disabled. | The design is empty. These actions need at least one component. | Add components to the design, or open the saved `web-app` design. |
+| One of the actions is not available to you. | Your role in the organization lacks the matching permission: Validate Design, Deploy Design, or Undeploy Design. | Ask an organization administrator to grant the permission. |
+| "Design validation error" appears. | One or more components fail their schema. | Open each marked component, correct the field the error is attached to, and validate again. |
+| A dry run reports errors on components. | The target cluster would reject part of the design. | Correct the marked components, then run the dry run again before you deploy. |
+| Kanvas asks "You have unsaved changes. Are you sure you want to leave?" | The design has changes that are not saved yet. | Cancel, let autosave finish or save the design, then switch modes. |
+| Resources appeared in clusters you did not intend. | No Kubernetes context was selected, so the action targeted all connected clusters. | Undeploy from the unintended clusters, then select contexts explicitly before you deploy again. |
+
+## What you learned
+
+- Validation checks a design against component schemas; a dry run checks it against a cluster. Neither changes the cluster.
+- Deploy and undeploy act on the contexts you select, and on every connected cluster when you select none.
+- Every deployed resource is labeled with the design's ID, which is how Operator mode filters live state down to one design.
+- Switching modes with unsaved changes asks for confirmation.
+- Each action is gated by its own permission.
+
+## Next
+
+- [Validating designs]({{< ref "kanvas/tasks/designs/validating-designs/index.md" >}})
+- [Dry-running a design]({{< ref "kanvas/tasks/designs/dry-running-a-design/index.md" >}})
+- [Deploying designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}})
+- [Undeploying designs]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}})
+- [Operator]({{< ref "kanvas/operator/_index.md" >}}), to explore views and live cluster state beyond a single design.
 
 
 --------------------------------------------------------------------------------
@@ -6564,6 +6540,86 @@ Every support request carries the requester's name and email so the team can rep
 Each request carries a **Type of Inquiry** - one of **Support**, **Community**, **Account**, or **Commercial** - which the support intake uses to route your request. **Support** is selected by default. These are the same categories used by the Layer5 Cloud Help and Support form, so a request raised from Kanvas is triaged exactly like one raised from Layer5 Cloud.
 
 If a submission fails, your subject, description, and type of inquiry are preserved so you can retry without retyping them.
+
+
+--------------------------------------------------------------------------------
+title: "How Kanvas Works with Meshery and Layer5 Cloud"
+url: /kanvas/concepts/architecture/index.md
+description: How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
+--------------------------------------------------------------------------------
+
+Kanvas is not a standalone service. It is an extension that runs inside Meshery, relies on Meshery Server to reach your clusters, and relies on a remote provider, Layer5 Cloud, to store and share designs. Knowing which part does what explains why some features need a cluster connection, why others need an account, and why the hosted Kanvas at kanvas.new offers a subset of what a self-hosted Meshery deployment offers.
+
+<figure>
+  <img src="images/kanvas-meshery-provider-architecture.webp" alt="Architecture diagram titled Meshery Architecture - Providers. On the left, a Remote Provider and a Local Provider connect to Meshery in the center. On the right, Meshery connects to Kubernetes clusters, where Meshery Operator runs MeshSync and Meshery Broker, and to adapters." />
+  <figcaption>Read the diagram from left to right. Providers sit on the left: Meshery runs with either a remote provider (Layer5 Cloud for Kanvas), which stores designs and handles identity and sharing, or a local provider. Meshery sits in the middle and mediates every request. Your clusters sit on the right, where Meshery Operator runs MeshSync and Meshery Broker to report live state back to Meshery.</figcaption>
+</figure>
+
+## Kanvas is a Meshery extension
+
+Kanvas has two parts, and both run inside Meshery:
+
+- **The Kanvas interface** loads into Meshery UI at runtime. Designer and Operator modes are screens of Meshery UI supplied by the extension.
+- **A server-side plugin** is loaded by Meshery Server and adds Kanvas behavior to it.
+
+Because Kanvas lives inside Meshery, it inherits Meshery's connections to your clusters and Meshery's choice of provider.
+
+## Every request goes through Meshery Server
+
+Kanvas sends every request to Meshery Server. Meshery Server then does one of two things:
+
+- **Answers local requests itself.** Requests about your connected clusters and their resources stay within Meshery.
+- **Forwards provider-bound requests to the remote provider.** Requests for designs, views, the catalog, sharing, and support go to Layer5 Cloud, and Meshery Server relays the response back to Kanvas.
+
+Kanvas never calls Layer5 Cloud directly, with one exception: real-time collaboration, described below.
+
+The provider also decides which features Kanvas offers. Each provider publishes a capability document that lists the features it supports, and Kanvas enables only those features. The hosted Kanvas at kanvas.new ships its own capability document.
+
+## Where designs live
+
+The remote provider persists your designs. Layer5 Cloud stores each design and every version of it, records who a design is shared with, hosts the catalog of published designs, and keeps the event log. For example, when Kanvas completes a validation of a whole design, it publishes a validation event to the Layer5 Cloud event log.
+
+## What talks to your clusters
+
+Meshery Server, not your browser, talks to your Kubernetes clusters. It reaches them through components it deploys into each cluster:
+
+- **Meshery Operator** runs in the cluster and deploys MeshSync and Meshery Broker there.
+- **MeshSync** streams the live state of the cluster to Meshery Server.
+
+Meshery Server feeds the live state from MeshSync into Operator mode, which is why Operator shows changes as they happen in the cluster. When you dry-run, deploy, or undeploy a design, Meshery performs the operation against the Kubernetes contexts you selected, or against all connected contexts when you select none. Meshery can also connect to adapters, which Kanvas does not require for designing or deploying.
+
+Every resource Kanvas deploys carries a label with the id of its source design and annotations with the design version and component id. Operator's per-design view uses that label to show exactly what one design produced. See [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}).
+
+## Real-time collaboration: the one direct path
+
+Real-time collaboration is the only path from your browser straight to Layer5 Cloud. When you edit a design with others, your browser connects to a signaling service hosted by Layer5 Cloud, which introduces the participants to each other. After that, edits synchronize directly between participants' browsers, peer to peer over WebRTC, rather than through Meshery Server.
+
+## Hosted kanvas.new versus self-hosted Meshery
+
+The hosted Kanvas at [kanvas.new](https://kanvas.new) is for authoring designs. Every capability that needs a cluster is reserved for Meshery deployments: the [Meshery Playground](https://playground.meshery.io) or your own self-hosted Meshery.
+
+| Capability | kanvas.new, anonymous | kanvas.new, signed in | Meshery Playground or self-hosted Meshery, signed in |
+|---|---|---|---|
+| Author and edit designs | Available | Available | Available |
+| Import designs | Available | Available | Available |
+| Share and publish designs | Requires sign-in | Available | Available |
+| Validate | Not available | Not available | Available |
+| Dry-run | Not available | Not available | Available |
+| Deploy and undeploy | Not available | Not available | Available |
+| Operator mode | Not available | Not available | Available |
+| Connect clusters | Not available | Not available | Available |
+
+Every action in the table also requires the matching permission in your organization. Validate, dry-run, deploy, and undeploy are disabled while the design is empty.
+
+What you see when you reach a boundary:
+
+- **A cluster-bound capability on kanvas.new** opens a prompt that explains Operator mode is not available on kanvas.new and directs you to the Meshery Playground or a self-hosted Meshery deployment.
+- **Sharing or publishing while anonymous** opens a "Sign in to" prompt that names the feature and offers a single Sign in action. You are anonymous when no user is signed in or the signed-in user has anonymous status.
+- **Signing in** navigates the whole page to the provider and returns you to the page you started from. If the provider address is malformed, sign-in does not start and Kanvas shows the error "Sign-in could not start:" followed by the reason.
+
+## The local provider limitation
+
+Meshery can run with a local provider instead of a remote one. Under the local provider there is no remote service to forward requests to, so every provider-bound feature, including views, the catalog, sharing, and support requests, returns HTTP 501 Not Implemented. Use a remote provider such as Layer5 Cloud for any feature that depends on it.
 
 
 --------------------------------------------------------------------------------
