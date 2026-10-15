@@ -36,4 +36,5 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item><item><title>Component Badges</title><link>/kanvas/reference/component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/component-badges/</guid><description>&lt;p&gt;A badge is a small marker Kanvas draws on the edge of a component to report something about it: errors waiting to be fixed, components held inside it, a link, or where it came from. Badges are status, not decoration. A count on a badge tells you there is something to read, and clicking it shows what.&lt;/p&gt;
+&lt;p&gt;Which badges appear depends on the mode. Designer mode draws badges that help you build a valid design. Operator mode draws badges about live resources.&lt;/p&gt;</description></item></channel></rss>

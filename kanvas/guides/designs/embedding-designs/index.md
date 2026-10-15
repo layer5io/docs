@@ -204,5 +204,5 @@ A live example, rendered from a design exported from Kanvas:
 ## Related
 
 - [Export Designs](/kanvas/guides/designs/export-designs/) covers the other formats.
-- [Share Designs](/kanvas/designer/sharing/) covers live access to a design for specific people.
+- [Share Designs](/kanvas/guides/collaborating/sharing-designs/) covers live access to a design for specific people.
 

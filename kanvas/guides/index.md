@@ -46,25 +46,29 @@ See [Validate and Deploy](/kanvas/guides/deploying/) for the group. Run the step
 
 ## Collaborate and review
 
+See [Collaborate and Review](/kanvas/guides/collaborating/) for the group.
+
 | Goal | Guide |
 |---|---|
-| Give other people access to a design | [Sharing Designs](/kanvas/designer/sharing/) |
-| Discuss a design with comments | [Reviewing Designs](/kanvas/designer/comments/) |
+| Give other people access to a design | [Share a Design](/kanvas/guides/collaborating/sharing-designs/) |
+| Discuss a design with comments | [Review a Design with Comments](/kanvas/guides/collaborating/reviewing-designs/) |
 
 ## Visualize pull requests and charts
 
+See [Kanvas Snapshot](/kanvas/guides/snapshots/) for the group, which lists supported inputs and platforms.
+
 | Goal | Guide |
 |---|---|
-| Post an infrastructure snapshot on a GitHub pull request | [Kanvas GitHub Snapshot](/kanvas/concepts/kanvas-snapshot/) |
-| Render a snapshot of a Helm chart | [Helm Kanvas Snapshot](/kanvas/concepts/helm-kanvas-snapshot/) |
+| Post an infrastructure snapshot on a GitHub pull request | [Visualize Pull Requests with Kanvas Snapshot](/kanvas/guides/snapshots/kanvas-snapshot/) |
+| Render a snapshot of a Helm chart from a terminal | [Snapshot a Helm Chart](/kanvas/guides/snapshots/helm-kanvas-snapshot/) |
 
 ## Operate infrastructure
 
 | Goal | Guide |
 |---|---|
-| Open a shell in a running container | [Interactive Terminal](/kanvas/operator/interactive-terminal/) |
-| Follow a container's logs | [Log Streaming](/kanvas/operator/log-streaming/) |
-| Measure a running service | [Performance Testing in Operator](/kanvas/operator/performance-testing/) |
+| Open a shell in a running container | [Interactive Terminal](/kanvas/guides/operating/interactive-terminal/) |
+| Follow a container's logs | [Log Streaming](/kanvas/guides/operating/log-streaming/) |
+| Measure a running service | [Performance Testing in Operator](/kanvas/guides/operating/performance-testing/) |
 
 ## Fix problems
 

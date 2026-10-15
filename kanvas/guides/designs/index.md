@@ -17,7 +17,7 @@ Two defaults shape everything below. A design saved for the first time is public
 | Make a design available in the catalog | [Publish Designs](/kanvas/guides/designs/publishing-designs/) |
 | Remove a design permanently | [Delete a Design](/kanvas/guides/designs/deleting-a-design/) |
 
-For the exact formats Kanvas accepts and produces, see [Supported Import and Export Formats](/kanvas/reference/supported-formats/). To share a design with specific people, see [Share Designs](/kanvas/designer/sharing/).
+For the exact formats Kanvas accepts and produces, see [Supported Import and Export Formats](/kanvas/reference/supported-formats/). To share a design with specific people, see [Share Designs](/kanvas/guides/collaborating/sharing-designs/).
 
 ## Where designs go
 

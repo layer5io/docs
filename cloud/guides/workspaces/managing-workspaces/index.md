@@ -332,7 +332,7 @@ Currently, it is **not possible** to receive direct notifications or see a colla
 
 No. A user with whom you share a private Design cannot re-share it with others.
 
-> [learn more about sharing designs](/kanvas/designer/sharing/).
+> [learn more about sharing designs](/kanvas/guides/collaborating/sharing-designs/).
 
 #### 6. Does a workspace have space limitations or file count limitations?
 

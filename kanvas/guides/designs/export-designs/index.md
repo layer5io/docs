@@ -18,7 +18,7 @@ Export is a File menu action, disabled on an empty design. In Operator mode, Exp
 | Helm chart | No | Helm repositories, Argo CD, Flux, Artifact Hub |
 | Embed design (JavaScript) | Snapshot of the canvas | Showing a design on a web page |
 
-Kanvas offers at least one of the first four. Which ones appear can depend on the capabilities of your Layer5 Cloud account. Per-format options and size limits are not exposed. To capture the canvas as a PNG picture, use Take Screenshot instead. See [Canvas Actions](/kanvas/designer/canvas-actions/).
+Kanvas offers at least one of the first four. Which ones appear can depend on the capabilities of your Layer5 Cloud account. Per-format options and size limits are not exposed. To capture the canvas as a PNG picture, use Take Screenshot instead. See [Canvas Actions](/kanvas/reference/canvas-actions/).
 
 ## Design file (YAML) {#exporting-as-a-design-file}
 

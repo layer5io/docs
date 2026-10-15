@@ -29,7 +29,18 @@ Kanvas tutorials walk through real-world design scenarios using two fictional or
     </div>
 <div class="card-body">
     <p class="card-text">
-        <p><a href="/kanvas/tutorials/collaborative-editing/">Collaborative Editing</a> — share a design, set Private or Public visibility, invite collaborators, and review with comments.</p>
+        <p><a href="/kanvas/tutorials/collaborative-editing/">Collaborative Editing</a> - save and share a design, edit it live with a teammate, and run a review in a comment thread.</p>
+</p>
+      </div>
+  </div>
+
+<div class="td-card card border me-4">
+<div class="card-header">
+      Cross-Organization Access
+    </div>
+<div class="card-body">
+    <p class="card-text">
+        <p><a href="/kanvas/tutorials/stellar-saas-platform/">Share a Design Across Organizations</a> - give a reviewer in another organization access to a private design, review in comments, and revoke access.</p>
 </p>
       </div>
   </div>

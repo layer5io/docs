@@ -15,7 +15,7 @@ Whiteboarding lets you diagram freely on the same canvas as your infrastructure.
 
 Drawn objects are saved with the design and shared live with collaborators. They are components marked as annotations, so they count toward your plan's components-per-design limit. See [Designs and Components](/kanvas/concepts/designs/).
 
-This guide covers the drawing tools. For per-object operations such as copying, locking, and resizing, see [Working with Canvas Objects](/kanvas/designer/canvas-objects/).
+This guide covers the drawing tools. For per-object operations such as copying, locking, and resizing, see [Working with Canvas Objects](/kanvas/reference/canvas-objects/).
 
 ## The dock {#step-3-utilizing-whiteboard-tools}
 
@@ -73,7 +73,7 @@ Pan and box selection are off while you draw with the Pen or Pencil.
 - **Text boxes.** Double-click to edit text inline. Text options include color, weight (regular, medium, semi bold, bold, black), underline or strikethrough, alignment, and font size.
 - **Sections.** A section groups the objects dropped inside it, and they move with it.
 - **Images.** Images up to 512,000 bytes are embedded in the design. Larger files are rejected.
-- **Comments.** A comment opens a discussion thread on the canvas. Resolved threads disappear from the canvas until reopened. See [Reviewing Designs](/kanvas/designer/comments/).
+- **Comments.** A comment opens a discussion thread on the canvas. Resolved threads disappear from the canvas until reopened. See [Review a Design with Comments](/kanvas/guides/collaborating/reviewing-designs/).
 
 ![Shapes customization on the canvas](images/shapes_introduction.gif)
 

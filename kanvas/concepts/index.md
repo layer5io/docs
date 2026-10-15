@@ -19,6 +19,7 @@ Layer5 Cloud, as the remote provider, stores designs and their versions and gove
 - **[Designs and Components](/kanvas/concepts/designs/)** - what a design contains, how it is saved and versioned, what components are, and how a design maps to deployed resources.
 - **[How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/)** - the extension model, where designs live, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
 - **[Relationships](/kanvas/concepts/relationships/)** - how Kanvas maps the ways connected components interact.
-- **[Designer](/kanvas/designer/)** - the authoring mode: its purpose, scope, and tools.
-- **[Operator](/kanvas/operator/)** - the operating mode: live cluster state and per-design views.
+- **[Collaboration Model](/kanvas/concepts/collaboration/)** - how live co-editing, design access, and comments work together, and what each one controls.
+- **[Designer](/kanvas/concepts/designer/)** - the authoring mode: its purpose, scope, and tools.
+- **[Operator](/kanvas/concepts/operator/)** - the operating mode: live cluster state and per-design views.
 

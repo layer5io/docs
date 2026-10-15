@@ -54,7 +54,7 @@ Error cards, codes, and remediations are described in [Deploy a Design](/kanvas/
 
 ## Operator mode shows no data
 
-Operator reads live cluster state that MeshSync reports through the Meshery broker. Designer keeps working when this is down.
+Operator reads the cluster inventory that MeshSync reports through the Meshery broker. Designer keeps working when this is down.
 
 | Message | Cause | Fix |
 |---|---|---|

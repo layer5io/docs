@@ -32,372 +32,7 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Understanding Edge Styles</title><link>/kanvas/designer/understanding-edges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-edges/</guid><description>&lt;p&gt;When you connect components in &lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;, the line you draw is called an &lt;strong&gt;edge&lt;/strong&gt;. Each edge visually represents a &lt;a href="https://docs.layer5.io/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; between your components. This guide explains how to use different edge styles to create clear and effective infrastructure designs.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/style-edge.gif" onclick="openModal(this)" alt="Examples of changing edge styles in Kanvas"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id="understanding-edge-types" class="heading-link"&gt;
- Understanding Edge Types
- &lt;a href="#understanding-edge-types" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;In Kanvas, there are two main types of edges, each serving a different purpose:&lt;/p&gt;
-
-&lt;h3 id="semantic-edges-representing-real-infrastructure" class="heading-link"&gt;
- Semantic Edges: Representing Real Infrastructure
- &lt;a href="#semantic-edges-representing-real-infrastructure" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/designer/interpreting-component-badges/images/example_hu_89a7072c2a03db4b.webp" type="image/webp" width="1531" height="801"&gt;
- &lt;img src="images/example.png" onclick="openModal(this)" alt="Example"
- width="1531" height="801"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;A Tale of Two Modes&lt;/h4&gt;
- 
- A badge&amp;rsquo;s meaning changes completely depending on your current mode. In &lt;strong&gt;Designer&lt;/strong&gt;, badges help you build a valid blueprint. In &lt;strong&gt;Operator&lt;/strong&gt;, they switch to providing real-time operational data from your live instances.
- 
-&lt;/div&gt;
-
-
-
-&lt;h3 id="what-each-corner-means" class="heading-link"&gt;
- What Each Corner Means
- &lt;a href="#what-each-corner-means" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;While the specific badges change depending on your mode, they all follow a consistent placement philosophy. Badges are organized into four quadrants around a component, with each corner reserved for a specific type of information.&lt;/p&gt;</description></item><item><title>Understanding Tool Modes</title><link>/kanvas/designer/understanding-tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-tool-modes/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
-&lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
-Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Understanding these modes is essential for effectively interacting with components and the canvas.
-&lt;p&gt;You can switch between mouse modes using hotkeys or tool selection. Here are hotkeys that control your mode:&lt;/p&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Hotkeys&lt;/th&gt;
- &lt;th&gt;Description&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;button class="kbc-button kbc-button-xs"&gt;Spacebar&lt;/button&gt;&lt;/td&gt;
- &lt;td&gt;Temporarily enables the alternative mouse mode (default mode vs pan mode)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;button class="kbc-button kbc-button-xs"&gt;H&lt;/button&gt;&lt;/td&gt;
- &lt;td&gt;Switches to pan mode (hand icon)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;button class="kbc-button kbc-button-xs"&gt;Escape / V&lt;/button&gt;&lt;/td&gt;
- &lt;td&gt;Switches to default mode irrespective of which mode you are currently using.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id="interacting-with-components" class="heading-link"&gt;
- Interacting with Components
- &lt;a href="#interacting-with-components" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
-
-
-
-
-
-
-
-
-
-&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist"&gt;
- &lt;li class="nav-item"&gt;
- &lt;button class="nav-link active"
- id="tabs-00-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-00" role="tab"
- data-td-tp-persist="select tool" aria-controls="tabs-00-00" aria-selected="true"&gt;
- Select Tool
- &lt;/button&gt;
- &lt;/li&gt;&lt;li class="nav-item"&gt;
- &lt;button class="nav-link"
- id="tabs-00-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-01" role="tab"
- data-td-tp-persist="pencil tool" aria-controls="tabs-00-01" aria-selected="false"&gt;
- Pencil Tool
- &lt;/button&gt;
- &lt;/li&gt;&lt;li class="nav-item"&gt;
- &lt;button class="nav-link"
- id="tabs-00-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-02" role="tab"
- data-td-tp-persist="pen tool" aria-controls="tabs-00-02" aria-selected="false"&gt;
- Pen Tool
- &lt;/button&gt;
- &lt;/li&gt;&lt;li class="nav-item"&gt;
- &lt;button class="nav-link"
- id="tabs-00-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-00-03" role="tab"
- data-td-tp-persist="pan tool" aria-controls="tabs-00-03" aria-selected="false"&gt;
- Pan Tool
- &lt;/button&gt;
- &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="tab-content" id="tabs-0-content"&gt;
- &lt;div class="tab-body tab-pane fade show active"
- id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab" tabindex="0"&gt;
- &lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Action&lt;/th&gt;
- &lt;th&gt;Cursor Style&lt;/th&gt;
- &lt;th&gt;Behavior&lt;/th&gt;
- &lt;th&gt;Example&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Hover&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Nothing&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/default.gif" onclick="openModal(this)" alt="Click"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Click-and-drag&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;move&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Moves component in the direction of the mouse&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/click_and_drag.gif" onclick="openModal(this)" alt="Click and drag"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Click&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Displays component toolbar, resize box, and connection handles&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/designer/understanding-tool-modes/images/click_hu_e81bf5123ff045fd.webp" type="image/webp" width="1126" height="462"&gt;
- &lt;img src="images/click.png" onclick="openModal(this)" alt="Click"
- width="1126" height="462"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Double-click (component)&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;pointer&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Opens the component configurator&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/designer/understanding-tool-modes/images/double_click_hu_83b454c3a6721403.webp" type="image/webp" width="1286" height="1120"&gt;
- &lt;img src="images/double_click.png" onclick="openModal(this)" alt="Double-click component"
- width="1286" height="1120"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Double-click (textbox)&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;text&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Enables text editing inside the component&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/text-box-double-click.gif" onclick="openModal(this)" alt="Double-click textbox"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Right-click&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Opens the circular component context menu&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/designer/understanding-tool-modes/images/right_click_hu_bc3b42b8509b13b4.webp" type="image/webp" width="743" height="702"&gt;
- &lt;img src="images/right_click.png" onclick="openModal(this)" alt="Right-click"
- width="743" height="702"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Click-and-hold&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;crosshair&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Initiates box selection for selecting multiple components&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/select.gif" onclick="openModal(this)" alt="Box selection"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Scroll wheel&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Pan up or down&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/scroll_up_down.gif" onclick="openModal(this)" alt="Scroll"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Scroll wheel + CMD/CTRL&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Zoom in/out&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/zoom_in_out.gif" onclick="openModal(this)" alt="Zoom"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;strong&gt;Horizontal scroll wheel&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;default (arrow)&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Pan left or right&lt;/td&gt;
- &lt;td&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/scroll_left_right.gif" onclick="openModal(this)" alt="Scroll left/right"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-
- &lt;/div&gt;
- &lt;div class="tab-body tab-pane fade"
- id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
- &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
-&lt;figure&gt;
- &lt;img src="images/kanvas-comment.png" alt="Comments in Designer" /&gt;
- &lt;figcaption&gt;Example of comments in Designer&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.&lt;/p&gt;</description></item><item><title>Sharing Designs</title><link>/kanvas/designer/sharing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/sharing/</guid><description>&lt;p&gt;In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing requires an account&lt;/h4&gt;
- 
- Anonymous visitors to &lt;a href="https://kanvas.new"&gt;kanvas.new&lt;/a&gt; can create and edit designs without signing in, but sharing a design requires a signed-in account. Choosing &lt;strong&gt;Share&lt;/strong&gt; as an anonymous visitor prompts you to sign in; once you do, share as described below.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Sharing Views&lt;/h4&gt;
- 
- You can share and control access to &lt;a href="/kanvas/operator/views/"&gt;Views&lt;/a&gt; in the same fashion as you do for Designs.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #EBC017;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #EBC017;"&gt;Verify People with Access after sharing&lt;/h4&gt;
- 
- In some earlier cases, the Share modal could report success while the grant or revoke was not applied. If you shared a design or view and collaborators still cannot open it—or someone you removed still has access—open &lt;strong&gt;Share&lt;/strong&gt; on that resource and re-check the &lt;strong&gt;People with Access&lt;/strong&gt; list. Re-add anyone who is missing, remove anyone who should not retain access, and confirm that collaborators can open the resource. Always treat &lt;strong&gt;People with Access&lt;/strong&gt; as the source of truth after every share.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="understanding-visibility-levels" class="heading-link"&gt;
- Understanding visibility levels
- &lt;a href="#understanding-visibility-levels" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Designs have visibility statuses that defines who can access your designs. These options offer different levels of exposure for content within your workspaces:&lt;/p&gt;</description></item><item><title>Working with Canvas Objects</title><link>/kanvas/designer/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-objects/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
-&lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
-&lt;p&gt;Everything you place on a Kanvas Designer canvas is an object, and every object answers to the same
-small set of gestures. You add it, you style it, you copy or clone it, you lock it so nobody nudges
-it, you resize it, and eventually you delete it. That is true whether the object is an Amazon EKS
-cluster, a dashed &lt;strong&gt;section&lt;/strong&gt; drawn around a group of services, a &lt;strong&gt;textbox&lt;/strong&gt; holding a caption, or
-a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
+&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
 &lt;p&gt;You need a design open in Designer mode. Designer is the only mode that allows authoring.&lt;/p&gt;
 
 &lt;h2 id="add-a-component" class="heading-link"&gt;
@@ -405,7 +40,7 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;a href="#add-a-component" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Kanvas offers several ways to place a component. All of them produce the same result: a component in the design, with its configurator open beside it.&lt;/p&gt;</description></item><item><title>Build Designs</title><link>/kanvas/guides/designing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/</guid><description>&lt;p&gt;These guides cover the tasks you perform while authoring a design in Designer mode. Each one accomplishes a single task and assumes you know what a design, a component, and a relationship are. If you do not, read &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; and &lt;a href="/kanvas/concepts/relationships/"&gt;Relationships&lt;/a&gt; first.&lt;/p&gt;
-&lt;p&gt;Authoring happens only in Designer mode. Operator mode shows live cluster state and blocks adding, editing, duplicating, and deleting components.&lt;/p&gt;
+&lt;p&gt;Authoring happens only in Designer mode. Operator mode shows the recorded state of your clusters and blocks adding, editing, duplicating, and deleting components.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -458,7 +93,7 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
 &lt;li&gt;&lt;strong&gt;Design.&lt;/strong&gt; In Designer mode you describe infrastructure as a design: components (such as a Kubernetes Deployment or Service), the relationships between them, and their configuration.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Validate.&lt;/strong&gt; Kanvas checks the design against each component&amp;rsquo;s schema and attaches every error to the component and field that caused it; a dry run then checks the design against a real cluster without changing it.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Deploy.&lt;/strong&gt; Kanvas applies the design to the Kubernetes clusters you select and labels every resource it creates with the design&amp;rsquo;s identity.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Operate.&lt;/strong&gt; In Operator mode you see the live state of your clusters and can filter it to the resources that belong to one design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operate.&lt;/strong&gt; In Operator mode you see the recorded state of your clusters and can filter it to the resources that belong to one design.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id="where-do-you-want-to-work" class="heading-link"&gt;
@@ -508,7 +143,8 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Validate a Design</title><link>/kanvas/guides/deploying/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/validating-designs/</guid><description>&lt;p&gt;Validation checks the configuration of each component in a design against the schema of that component&amp;rsquo;s definition. It runs in your browser, needs no cluster, and changes nothing. Run it while you build to catch missing or malformed fields before a dry run or a deployment spends time on them.&lt;/p&gt;
+&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Share a Design</title><link>/kanvas/guides/collaborating/sharing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/sharing-designs/</guid><description>&lt;p&gt;Sharing opens a private design to the people you name. Each grant is for one person, and it has no access level: a person who can open the shared design can also edit it and comment on it. You can also change a design&amp;rsquo;s visibility to make it open to everyone, and you can copy a link that points people to it.&lt;/p&gt;
+&lt;p&gt;This guide covers the task. For the reasoning behind the access model, read &lt;a href="/kanvas/concepts/collaboration/"&gt;Collaboration Model&lt;/a&gt;. For a worked example with two people, follow &lt;a href="/kanvas/tutorials/collaborative-editing/"&gt;Collaborative Editing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Validate a Design</title><link>/kanvas/guides/deploying/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/validating-designs/</guid><description>&lt;p&gt;Validation checks the configuration of each component in a design against the schema of that component&amp;rsquo;s definition. It runs in your browser, needs no cluster, and changes nothing. Run it while you build to catch missing or malformed fields before a dry run or a deployment spends time on them.&lt;/p&gt;
 
 &lt;h2 id="before-you-start" class="heading-link"&gt;
  Before you start
@@ -546,9 +182,7 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
-&lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
-&lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Create Relationships</title><link>/kanvas/guides/designing/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/creating-relationships/</guid><description>&lt;p&gt;Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.&lt;/p&gt;
+&lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item><item><title>Create Relationships</title><link>/kanvas/guides/designing/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/creating-relationships/</guid><description>&lt;p&gt;Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.&lt;/p&gt;
 &lt;p&gt;Relationships work only in Designer mode. For what each kind means, read &lt;a href="/kanvas/concepts/relationships/"&gt;Relationships&lt;/a&gt;.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -610,8 +244,10 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
 &lt;li&gt;&lt;strong&gt;A Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not run dry runs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Meshery Server performs the dry run with the kubeconfig it holds. Meshery Operator, MeshSync, and the broker are not required.&lt;/p&gt;</description></item><item><title>Manage Designs</title><link>/kanvas/guides/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/</guid><description>&lt;p&gt;A design is a single record in Layer5 Cloud. It has one owner, lives in one workspace, and carries a visibility (private, public, or published) and a version. These guides cover each way a design enters, changes state, and leaves that record.&lt;/p&gt;
-&lt;p&gt;Two defaults shape everything below. A design saved for the first time is public, whatever visibility the client requests. Every save of an existing design raises its patch version by one (0.0.1, 0.0.2, and so on).&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Save Designs</title><link>/kanvas/guides/designs/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/saving-designs/</guid><description>&lt;p&gt;Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.&lt;/p&gt;
-&lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
+&lt;p&gt;Two defaults shape everything below. A design saved for the first time is public, whatever visibility the client requests. Every save of an existing design raises its patch version by one (0.0.1, 0.0.2, and so on).&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Review a Design with Comments</title><link>/kanvas/guides/collaborating/reviewing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/reviewing-designs/</guid><description>&lt;p&gt;A comment is a note on the canvas that holds a threaded conversation. Use comments to give feedback, record the reason behind a configuration choice, or ask a teammate a question next to the component it concerns. A comment is part of the design: it saves with the design, appears live to everyone who has the design open, and travels with clones and exports.&lt;/p&gt;
+&lt;p&gt;For how comments fit with live editing and access, read &lt;a href="/kanvas/concepts/collaboration/"&gt;Collaboration Model&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Save Designs</title><link>/kanvas/guides/designs/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/saving-designs/</guid><description>&lt;p&gt;Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.&lt;/p&gt;
+&lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Canvas Objects</title><link>/kanvas/reference/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/canvas-objects/</guid><description>&lt;p&gt;Everything on a Designer canvas is an object, and every object answers to the same small set of actions: add, select, copy, duplicate, lock, restyle, resize and delete. This page lists each object kind, each action, every style option and the limits that apply. Edges - the lines that connect objects - have their own section at the end.&lt;/p&gt;
+&lt;p&gt;Designer mode only. In Operator mode you cannot add, edit, duplicate, delete or rename objects, and live nodes discovered from a cluster are read-only in every mode. See &lt;a href="/kanvas/concepts/designer/"&gt;Designer&lt;/a&gt; for how the two modes differ.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
 
 &lt;h2 id="what-you-can-clone" class="heading-link"&gt;
  What you can clone
@@ -671,21 +307,103 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;/div&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;a href="/videos/features/kanvas/whiteboarding-in-kanvas/"&gt;Whiteboarding in Kanvas&lt;/a&gt; (3:41) follows one late-night incident from page to postmortem on a single live design. Its page has chapters and a transcript.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.&lt;/p&gt;</description></item><item><title>Concepts</title><link>/kanvas/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/</guid><description>&lt;p&gt;Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.&lt;/p&gt;
+&lt;p&gt;Whiteboarding lets you diagram freely on the same canvas as your infrastructure. You draw shapes, text, freehand strokes, and lines to explain intent, and they sit beside real components in one design. It is on by default and available on every plan.&lt;/p&gt;</description></item><item><title>Collaborate and Review</title><link>/kanvas/guides/collaborating/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/</guid><description>&lt;p&gt;A design is one record with one owner. These guides cover how other people reach it and how you discuss it with them. Access is per person and has no access level: everyone who can open a design can edit it. Comments are part of the design, and they work in Designer mode.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Goal&lt;/th&gt;
+ &lt;th&gt;Guide&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Give specific people access, change visibility, copy a link, or revoke access&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/collaborating/sharing-designs/"&gt;Share a Design&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Leave threaded comments, mention people, resolve threads, and control email&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/collaborating/reviewing-designs/"&gt;Review a Design with Comments&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Live co-editing needs no setup. When two people have the same saved design open, they see each other&amp;rsquo;s cursors, selections, and edits. &lt;a href="/kanvas/concepts/collaboration/"&gt;Collaboration Model&lt;/a&gt; explains how live editing, access, and comments fit together. To try all three with a teammate, follow the &lt;a href="/kanvas/tutorials/collaborative-editing/"&gt;Collaborative Editing tutorial&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Concepts</title><link>/kanvas/concepts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/</guid><description>&lt;p&gt;Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.&lt;/p&gt;
 &lt;p&gt;Each part of Kanvas plays one role around that design:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Designer authors the design.&lt;/strong&gt; You place components, connect them, and configure them on a shared canvas. Every save creates a new version, and collaborators can edit the same design at the same time.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Meshery validates and deploys the design.&lt;/strong&gt; It checks the design against component schemas, dry-runs it against target clusters, and deploys or undeploys it on the Kubernetes contexts you choose.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Operator shows the running result.&lt;/strong&gt; It displays live cluster state and links it back to the design: every resource Kanvas deploys carries the identity of its source design, so Operator can show exactly what one design produced.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; explains visibility in full.&lt;/p&gt;</description></item><item><title>Export Designs</title><link>/kanvas/guides/designs/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/export-designs/</guid><description>&lt;p&gt;Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or &lt;code&gt;kubectl&lt;/code&gt;, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.&lt;/p&gt;
-&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Undeploy a Design</title><link>/kanvas/guides/deploying/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/undeploying-designs/</guid><description>&lt;p&gt;Undeploying deletes the Kubernetes objects that each component in a design describes, from every cluster in the environments you select. It does not touch the design itself. The design record, its versions, and its Operator view are unchanged.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; explains visibility in full.&lt;/p&gt;</description></item><item><title>Designer</title><link>/kanvas/concepts/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designer/</guid><description>&lt;p&gt;Designer mode is where you author a Kanvas design. You compose infrastructure from versioned components, configure each one against its schema, connect components with relationships, annotate the result, and validate or deploy it, all on one canvas that every collaborator edits at the same time. Designer works on intent: what you want to run. &lt;a href="/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt; works on live state: what is running.&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img src="images/designer-dock.png" alt="Kanvas Designer workspace with the bottom dock of authoring tools, the Layers panel open, and the Share control in the header" /&gt;
+ &lt;figcaption&gt;Designer: the bottom dock holds the tools for adding components and annotations, and the Layers panel controls what the canvas draws.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id="a-design-is-a-shared-document" class="heading-link"&gt;
+ A design is a shared document
+ &lt;a href="#a-design-is-a-shared-document" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Everything on the canvas is an entry in one design document: every component you configure, every relationship, and every annotation you draw. The canvas draws that document. Moving a node, applying a layout, or hiding a layer writes into the design. As a result:&lt;/p&gt;</description></item><item><title>Export Designs</title><link>/kanvas/guides/designs/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/export-designs/</guid><description>&lt;p&gt;Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or &lt;code&gt;kubectl&lt;/code&gt;, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.&lt;/p&gt;
+&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Tool Modes</title><link>/kanvas/reference/tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/tool-modes/</guid><description>&lt;p&gt;The canvas has four tool modes. The mode decides what a mouse drag does: move an object, pan the view, draw freehand or draw a connecting line. Select is the default. This page lists how to enter and leave each mode, what every mouse gesture does in it, and the wheel and zoom controls that work in all of them.&lt;/p&gt;
+
+&lt;h2 id="modes-at-a-glance" class="heading-link"&gt;
+ Modes at a glance
+ &lt;a href="#modes-at-a-glance" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Mode&lt;/th&gt;
+ &lt;th&gt;Purpose&lt;/th&gt;
+ &lt;th&gt;Enter&lt;/th&gt;
+ &lt;th&gt;Leave&lt;/th&gt;
+ &lt;th&gt;Drag on empty canvas&lt;/th&gt;
+ &lt;th&gt;Box selection&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Select&lt;/td&gt;
+ &lt;td&gt;Select, move, configure and style objects. The default.&lt;/td&gt;
+ &lt;td&gt;&lt;kbd&gt;V&lt;/kbd&gt; or &lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
+ &lt;td&gt;Choose another mode&lt;/td&gt;
+ &lt;td&gt;Draws a selection box&lt;/td&gt;
+ &lt;td&gt;On&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Pan&lt;/td&gt;
+ &lt;td&gt;Move the view without touching objects.&lt;/td&gt;
+ &lt;td&gt;&lt;kbd&gt;H&lt;/kbd&gt;, or hold &lt;kbd&gt;Space&lt;/kbd&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;kbd&gt;V&lt;/kbd&gt;, &lt;kbd&gt;Esc&lt;/kbd&gt;, or release &lt;kbd&gt;Space&lt;/kbd&gt;&lt;/td&gt;
+ &lt;td&gt;Pans the view&lt;/td&gt;
+ &lt;td&gt;Off&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Pencil&lt;/td&gt;
+ &lt;td&gt;Draw freehand annotations.&lt;/td&gt;
+ &lt;td&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;P&lt;/kbd&gt;, or the Pencil tool in the dock&lt;/td&gt;
+ &lt;td&gt;The same shortcut, &lt;kbd&gt;V&lt;/kbd&gt; or &lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
+ &lt;td&gt;Draws a stroke&lt;/td&gt;
+ &lt;td&gt;Off&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Pen&lt;/td&gt;
+ &lt;td&gt;Draw connecting lines and annotation edges.&lt;/td&gt;
+ &lt;td&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;E&lt;/kbd&gt;, or the Pen tool in the dock&lt;/td&gt;
+ &lt;td&gt;The same shortcut, &lt;kbd&gt;V&lt;/kbd&gt; or &lt;kbd&gt;Esc&lt;/kbd&gt;&lt;/td&gt;
+ &lt;td&gt;Places points and lines&lt;/td&gt;
+ &lt;td&gt;Off&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The Pencil and Pen dock icons turn green while their mode is active. The mode shortcuts work in Designer mode. Select and Pan also work in Operator mode.&lt;/p&gt;</description></item><item><title>Undeploy a Design</title><link>/kanvas/guides/deploying/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/undeploying-designs/</guid><description>&lt;p&gt;Undeploying deletes the Kubernetes objects that each component in a design describes, from every cluster in the environments you select. It does not touch the design itself. The design record, its versions, and its Operator view are unchanged.&lt;/p&gt;
 
 &lt;h2 id="before-you-start" class="heading-link"&gt;
  Before you start
  &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The prerequisites match &lt;a href="/kanvas/guides/deploying/deploying-designs/"&gt;Deploy a Design&lt;/a&gt;: a Meshery you run with a connected cluster, a non-empty design, and the &lt;strong&gt;Undeploy Design&lt;/strong&gt; permission. The hosted kanvas.new site does not run undeploy. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Embed Designs</title><link>/kanvas/guides/designs/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/embedding-designs/</guid><description>&lt;p&gt;An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.&lt;/p&gt;
+&lt;p&gt;The prerequisites match &lt;a href="/kanvas/guides/deploying/deploying-designs/"&gt;Deploy a Design&lt;/a&gt;: a Meshery you run with a connected cluster, a non-empty design, and the &lt;strong&gt;Undeploy Design&lt;/strong&gt; permission. The hosted kanvas.new site does not run undeploy. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/reference/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
+&lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Embed Designs</title><link>/kanvas/guides/designs/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/embedding-designs/</guid><description>&lt;p&gt;An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.&lt;/p&gt;
 
 &lt;h2 id="how-an-embed-works" class="heading-link"&gt;
  How an embed works
@@ -705,7 +423,8 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  Add labels and annotations
  &lt;a href="#add-labels-and-annotations" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Open a component&amp;rsquo;s configurator and go to its Labels tab. It holds two key-value maps:&lt;/p&gt;</description></item><item><title>Publish Designs</title><link>/kanvas/guides/designs/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/publishing-designs/</guid><description>&lt;p&gt;Publishing makes a design discoverable in the Layer5 Cloud catalog, where anyone can view and &lt;a href="/kanvas/guides/designs/cloning-a-design/"&gt;clone&lt;/a&gt; it. Publishing is separate from visibility: making a design public does not publish it.&lt;/p&gt;
+&lt;p&gt;Open a component&amp;rsquo;s configurator and go to its Labels tab. It holds two key-value maps:&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/reference/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
+&lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Publish Designs</title><link>/kanvas/guides/designs/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/publishing-designs/</guid><description>&lt;p&gt;Publishing makes a design discoverable in the Layer5 Cloud catalog, where anyone can view and &lt;a href="/kanvas/guides/designs/cloning-a-design/"&gt;clone&lt;/a&gt; it. Publishing is separate from visibility: making a design public does not publish it.&lt;/p&gt;
 
 &lt;h2 id="visibility-and-publication-states" class="heading-link"&gt;
  Visibility and publication states
@@ -737,7 +456,8 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The owner can toggle a design between private and public until it is published. A published design cannot be toggled. The toggle saves through the normal save path, so it raises the version and re-checks the components limit.&lt;/p&gt;</description></item><item><title>Delete a Design</title><link>/kanvas/guides/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes the design record and its workspace mappings in one transaction. There is no trash and no restore. Export a copy first if you might need it. See &lt;a href="/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The owner can toggle a design between private and public until it is published. A published design cannot be toggled. The toggle saves through the normal save path, so it raises the version and re-checks the components limit.&lt;/p&gt;</description></item><item><title>Component Badges</title><link>/kanvas/reference/component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/component-badges/</guid><description>&lt;p&gt;A badge is a small marker Kanvas draws on the edge of a component to report something about it: errors waiting to be fixed, components held inside it, a link, or where it came from. Badges are status, not decoration. A count on a badge tells you there is something to read, and clicking it shows what.&lt;/p&gt;
+&lt;p&gt;Which badges appear depends on the mode. Designer mode draws badges that help you build a valid design. Operator mode draws badges about live resources.&lt;/p&gt;</description></item><item><title>Delete a Design</title><link>/kanvas/guides/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes the design record and its workspace mappings in one transaction. There is no trash and no restore. Export a copy first if you might need it. See &lt;a href="/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id="who-can-delete" class="heading-link"&gt;
  Who can delete

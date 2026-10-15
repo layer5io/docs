@@ -736,7 +736,7 @@ For [Layer5 Cloud](/cloud/) that intake is Layer5's support queue, the same one 
 
 ### A remote provider
 
-Because the submission travels through Meshery Server's extension proxy, the support form only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider, Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`. This matches every other provider-bound Kanvas capability, including [sharing](/kanvas/designer/sharing/), the catalog and views.
+Because the submission travels through Meshery Server's extension proxy, the support form only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider, Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`. This matches every other provider-bound Kanvas capability, including [sharing](/kanvas/guides/collaborating/sharing-designs/), the catalog and views.
 
 If the form fails under the local provider, switch Meshery to a remote provider and submit again. If you cannot switch, reach the Layer5 team through the [community forum](https://discuss.layer5.io) or [Slack](https://slack.layer5.io).
 

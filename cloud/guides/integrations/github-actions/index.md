@@ -22,7 +22,7 @@ Kanvas introduces the Kanvas Snapshot GitHub Actions, a tool that allows you to 
 
 ### Configuring Kanvas Snapshots
 
-For setup steps, see the [Kanvas Snapshots tutorial](/cloud/guides/tutorials/gitops-snapshots/).
+For setup steps, see [Visualize Pull Requests with Kanvas Snapshot](/kanvas/guides/snapshots/kanvas-snapshot/).
 
 
 

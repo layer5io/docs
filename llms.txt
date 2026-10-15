@@ -14,63 +14,58 @@
 
 - [Design Render Quality](/kanvas/advanced/url-parameters/index.md): Control the level of detail in Kanvas design rendering using advanced URL query parameters.
 
-- [Understanding Edge Styles](/kanvas/designer/understanding-edges/index.md): Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
-
 - [Auto-pan on Drag](/kanvas/advanced/autopan/index.md): Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
 
 - [Exploring Kubernetes Services with Meshery](/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
-- [Interpreting Component Badges](/kanvas/designer/interpreting-component-badges/index.md): Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
-- [Understanding Tool Modes](/kanvas/designer/understanding-tool-modes/index.md): Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Learn how to interact with components and the canvas in each mode.
-
 - [Render Modes](/kanvas/advanced/render-modes/index.md): Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
 
-- [Reviewing Designs](/kanvas/designer/comments/index.md): Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
-
-- [Collaborative Editing](/kanvas/tutorials/collaborative-editing/index.md): Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
-
-- [Instance Details](/kanvas/operator/resource-details/index.md): Learn about Instance Details in Operator mode
-
-- [Sharing Designs](/kanvas/designer/sharing/index.md): Share designs with other users and use access controls to manage design permissions and visibility.
-
-- [Views in Operator](/kanvas/operator/views/index.md): Learn about Views in Operator mode 
-
+- [Collaborative Editing](/kanvas/tutorials/collaborative-editing/index.md): Work on one Kanvas design with a teammate in real time, from saving and sharing it to resolving a review thread.
 - [Building a GCP Data Pipeline Design](/kanvas/tutorials/data-pipeline-gcp/index.md): Walk through creating the data-pipeline-gcp design in Kanvas, connecting GCP services in orbital-production.
-
-- [Performance Testing in Operator](/kanvas/operator/performance-testing/index.md): Measure the behavior of a running service from the Operator canvas, using saved performance profiles.
-
-- [Cross-Org Design Access: stellar-saas-platform](/kanvas/tutorials/stellar-saas-platform/index.md): Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
-
-- [Working with Canvas Objects](/kanvas/designer/canvas-objects/index.md): Add, copy, clone, lock, delete, style, reset and resize the shapes, sections, textboxes and components on your Kanvas Designer canvas.
 
 - [Add and Configure Components](/kanvas/guides/designing/configuring-components/index.md): Find and place components on the canvas, edit their configuration with the form Kanvas builds from the component definition, and lock, duplicate, copy, and paste them.
 - [Create Your First Design](/kanvas/getting-started/starting-scratch/index.md): Build a small web application design from an empty canvas, connect its components through relationships, and save it, while learning how Kanvas models and stores designs.
 - [Designs and Components](/kanvas/concepts/designs/index.md): What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
 - [Feature Availability by Plan](/kanvas/reference/feature-availability/index.md): Which Kanvas capabilities each Layer5 plan includes, and the role, provider, and hosting conditions that also decide whether a capability is available to you.
 - [Import and Merge Designs](/kanvas/guides/designs/import-designs/index.md): Bring Kubernetes manifests, Helm charts, Docker Compose files, Kustomize projects, and Meshery designs into Kanvas, and merge one design into another.
+- [Open an Interactive Terminal](/kanvas/guides/operating/interactive-terminal/index.md): Open shell sessions into the containers of a running pod from the Operator canvas, and know what the terminal can and cannot do.
+- [Share a Design](/kanvas/guides/collaborating/sharing-designs/index.md): Give specific people access to a design, set its visibility, share a link, and revoke access. Covers who can share, what a grant allows, and what fails.
 - [Validate a Design](/kanvas/guides/deploying/validating-designs/index.md): Check every component's configuration against its schema before you deploy, read the results, and fix what they flag.
-- [Canvas Actions](/kanvas/designer/canvas-actions/index.md): The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
-
-- [Layout and Layers](/kanvas/designer/layout-and-layers/index.md): Arrange the components in a design automatically, and choose which entities the canvas draws.
-
+- [Visualize Pull Requests with Kanvas Snapshot](/kanvas/guides/snapshots/kanvas-snapshot/index.md): Post a rendered snapshot of your infrastructure files as a comment on every GitHub pull request, using the Layer5 GitHub App or your own workflow.
 - [Create Relationships](/kanvas/guides/designing/creating-relationships/index.md): Connect components with edges, nest them in parents, and remove or hide relationships. Covers which relationships you draw and which Kanvas forms for you.
+- [Share a Design Across Organizations](/kanvas/tutorials/stellar-saas-platform/index.md): Grant a reviewer in another organization access to a private design, run the review in comments, and revoke access when the review ends.
 - [Deploy and Observe Your First Design](/kanvas/getting-started/design-to-deployment/index.md): Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
 - [Dry-run a Design](/kanvas/guides/deploying/dry-running-a-design/index.md): Preview what a deployment would do by having each target cluster's Kubernetes API check your design without applying it.
 - [Permissions by Role](/kanvas/reference/permissions/index.md): Which Kanvas actions are checked against a permission, which default role grants each permission, what anonymous users can do, and which actions are limited by mode and ownership instead.
 - [Relationships](/kanvas/concepts/relationships/index.md): What relationships are, the kinds Kanvas draws and evaluates, how each one forms, and how relationships keep component configuration consistent.
+- [Review a Design with Comments](/kanvas/guides/collaborating/reviewing-designs/index.md): Leave threaded comments on a design, mention collaborators, resolve and reopen threads, and control who gets emailed.
 - [Save Designs](/kanvas/guides/designs/saving-designs/index.md): How Kanvas saves a design automatically, what the save indicator reports, how to save a copy, and what happens when a save fails.
+- [Snapshot a Helm Chart](/kanvas/guides/snapshots/helm-kanvas-snapshot/index.md): Generate a rendered image of a Helm chart from the command line with the Kanvas Snapshot Helm plugin, and receive it by URL or email.
+- [Stream Container Logs](/kanvas/guides/operating/log-streaming/index.md): Live-tail the logs of a pod or container from the Operator canvas, search the stream, and know its limits.
+- [Canvas Objects](/kanvas/reference/canvas-objects/index.md): Reference for every object on the Designer canvas - components, shapes, sections, textboxes, images and edges - covering how each is added, what you can do to it, its style options, defaults and limits.
 - [Clone a Design](/kanvas/guides/designs/cloning-a-design/index.md): Copy a public or published design into your own workspace to use as a template, and learn what carries over.
 - [Deploy a Design](/kanvas/guides/deploying/deploying-designs/index.md): Apply a design to one or more Kubernetes clusters, and understand targets, ordering, dependencies, results, and failure behavior.
 - [Policy Evaluation](/kanvas/concepts/relationship-evaluation/index.md): How Kanvas evaluates the relationships in a design continuously, which engine runs the evaluation, what triggers it, and why results can change after you stop editing.
+- [Run a Performance Test](/kanvas/guides/operating/performance-testing/index.md): Generate load against a Service or Ingress from the Operator canvas using a performance profile, and read the results.
 - [Whiteboard on the Canvas](/kanvas/guides/designing/whiteboarding/index.md): Sketch freehand, draw annotation lines, and add shapes, text, sections, images, and comments alongside real components.
+- [Designer](/kanvas/concepts/designer/index.md): How Designer mode turns a shared design document into an editable canvas, what it gates by mode and by permission, and how changes save and sync.
 - [Export Designs](/kanvas/guides/designs/export-designs/index.md): Export a design as a design file, an OCI image, a Kubernetes manifest, a Helm chart, or an embeddable script, and know what each format keeps.
 - [Pin Models to the Dock](/kanvas/guides/designing/pin-model-to-dock/index.md): Keep the models you use most one step away in the dock, and remove them when you no longer need them.
+- [Tool Modes](/kanvas/reference/tool-modes/index.md): Reference for the Designer tool modes - Select, Pan, Pencil and Pen - covering how to enter and leave each, what the mouse does in each, and how wheel and zoom controls behave.
 - [Undeploy a Design](/kanvas/guides/deploying/undeploying-designs/index.md): Remove the resources a design describes from your clusters, and understand exactly what is and is not deleted.
+- [Canvas Actions](/kanvas/reference/canvas-actions/index.md): Reference for the Designer canvas menu - undo and redo, paste, select all, reset, screenshot, options, shortcuts and the Help Center - with the mode in which each action is available.
 - [Embed Designs](/kanvas/guides/designs/embedding-designs/index.md): Show a design on a web page, blog, or documentation site with an exported JavaScript snapshot, including WordPress, React, and Hugo.
+- [Operator](/kanvas/concepts/operator/index.md): How Operator mode shows your clusters, where its data comes from, what it filters and caps, and how terminal and log sessions reach your containers.
 - [Work with Tags](/kanvas/guides/designing/tagsets/index.md): Add labels and annotations to components and see components that share labels grouped into TagSets on the canvas.
+- [Collaboration Model](/kanvas/concepts/collaboration/index.md): How live co-editing, design access, and comments work together in Kanvas, and what each layer does and does not control.
+- [Layout and Layers](/kanvas/reference/layout-and-layers/index.md): Reference for the six automatic layouts and the Layers panel - what each layout produces, when Kanvas lays a design out on its own, and what each layer toggle hides.
 - [Publish Designs](/kanvas/guides/designs/publishing-designs/index.md): Publish a design to the Layer5 Cloud catalog, understand request and approval states, unpublish it, and ship it to Artifact Hub yourself.
+- [Component Badges](/kanvas/reference/component-badges/index.md): Reference for every badge Kanvas draws on a component - what it means, where it sits, when it appears, what a click does and how to hide it - in Designer and Operator modes.
 - [Delete a Design](/kanvas/guides/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand what deletion does and does not affect.
 - [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
+- [Keyboard Shortcuts](/kanvas/reference/keyboard-shortcuts/index.md): Complete list of Kanvas keyboard shortcuts for Windows, Linux and macOS, with the mode each one works in.
+- [Operator Views](/kanvas/reference/views/index.md): What an Operator view stores, how views are saved, shared, opened, exported, and deleted, and who can do what.
 - [Troubleshoot Kanvas](/kanvas/guides/troubleshooting/index.md): Find the symptom you see, learn what causes it, and apply the fix. Covers loading failures, missing cluster data, and failed deployments.
+- [Resource Details](/kanvas/reference/resource-details/index.md): The fields, actions, and capacity gauges the Details panel shows for each Kubernetes resource kind in Operator mode, and what it does not show.
 - [Supported Import and Export Formats](/kanvas/reference/supported-formats/index.md): Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
 - [Help and Support](/kanvas/reference/help-and-support/index.md): What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
@@ -89,19 +84,14 @@
 - [Exploring Kubernetes CronJobs](/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/index.md): In this tutorial, we will explore how to use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for managing Kubernetes CronJobs.
 - [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes/kubernetes-deployments/index.md): Explore a Kubernetes Deployment using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
 - [Exploring Kubernetes Pods with Meshery](/kanvas/tutorials/kubernetes/kubernetes-pods/index.md): Explore Kubernetes Pods using Meshery in an interactive live cluster environment, through a series of hands-on exercises.
-- [Helm Kanvas Snapshot](/kanvas/concepts/helm-kanvas-snapshot/index.md): Helm CLI plugin to visually render a snapshot of your Helm charts.
-- [Interactive Terminal](/kanvas/operator/interactive-terminal/index.md): Learn about Interactive Terminal in Operator mode 
-
-- [Kanvas GitHub Snapshot](/kanvas/concepts/kanvas-snapshot/index.md): Capture a screenshot of your infrastructure as a comment in your GitHub pull request.
-- [Keyboard Shortcuts](/kanvas/reference/keyboard-shortcuts/index.md): Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
-
 - [Kubernetes Request Flow – A Visual Guide](/kanvas/tutorials/kubernetes/kubernetes-request-flow/index.md): A visual walkthrough of how user requests flow through Kubernetes components using Kanvas.
 
-- [Log Streaming](/kanvas/operator/log-streaming/index.md): Learn about Log Streaming in Operator mode
-
+- [Layout and Layers](/kanvas/designer/layout-and-layers/index.md)
 - [Understanding Kubernetes ConfigMaps and Secrets with Meshery](/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md): In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
+- [Understanding Tool Modes](/kanvas/designer/understanding-tool-modes/index.md)
 - [Validate a Design](/kanvas/tasks/designs/validating-designs/index.md)
 - [Whiteboarding](/kanvas/designer/whiteboarding/index.md)
+- [Working with Canvas Objects](/kanvas/designer/canvas-objects/index.md)
 
 ## From Whiteboard to Workload
 - [From Whiteboard to Workload](/videos/index.md): Give your brain a break from YAML. Watch Layer5 tools in-action.
@@ -182,8 +172,6 @@
 - [Default Academy Roles](/cloud/concepts/identity-and-security/roles/academy-roles/index.md): By default, Academy has two roles available: Academy Administrator and Learner.
 
 - [Integrating Assessments in the Academy](/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
-
-- [Kanvas Snapshots](/cloud/guides/tutorials/gitops-snapshots/index.md): Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
 
 - [Monitoring](/cloud/guides/self-hosted/planning/monitoring/index.md): Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts.
 - [Recognizing User and Contributor Milestones](/cloud/guides/tutorials/assigning-user-badges/index.md): Showcasing user and contributor achievements

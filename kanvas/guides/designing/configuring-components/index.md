@@ -87,7 +87,7 @@ Comment components open a chat thread instead of tabs.
 - Fields are rendered from the component's schema, and defaults come from the schema. A namespaced kind shows a Namespace field that defaults to `default`.
 - A red asterisk marks a required field. An empty required field shows "This field is required". Kanvas enforces first-level required fields up front, and an object whose children are all optional is not treated as required.
 - The form does not validate as you type. Kanvas validates each changed component against its JSON schema after the change. Errors appear as a small red triangle beside the field label, with the messages in its tooltip, and the field is outlined.
-- The component also shows a validation warning badge on the canvas, so an error you scrolled past stays visible after you close the panel. See [Component Badges](/kanvas/designer/interpreting-component-badges/).
+- The component also shows a validation warning badge on the canvas, so an error you scrolled past stays visible after you close the panel. See [Component Badges](/kanvas/reference/component-badges/).
 
 ### How edits are saved
 
@@ -114,7 +114,7 @@ Right-click a component to open its action menu. Items appear only when they app
 
 The menu labels Delete as <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Delete</kbd>, but <kbd>Delete</kbd> or <kbd>Backspace</kbd> alone performs the deletion.
 
-Other items appear in Operator mode, such as terminal, log, and performance sessions. See [Operator](/kanvas/operator/).
+Other items appear in Operator mode, such as terminal, log, and performance sessions. See [Operator](/kanvas/concepts/operator/).
 
 ### Style a component
 
@@ -142,5 +142,5 @@ Browsers allow clipboard access only after a user gesture. If the browser denies
 ## See also
 
 - [Relationships](/kanvas/concepts/relationships/): what the Relationships tab lists.
-- [Tool Modes](/kanvas/designer/understanding-tool-modes/): every mouse interaction available on the canvas.
+- [Tool Modes](/kanvas/reference/tool-modes/): every mouse interaction available on the canvas.
 
