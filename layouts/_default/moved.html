@@ -6,6 +6,7 @@
   <title>{{ $target.Title }}</title>
   <link rel="canonical" href="{{ $target.Permalink }}">
   <meta name="robots" content="noindex">
+  <script>location.replace({{ $target.Permalink }} + location.hash);</script>
   <meta http-equiv="refresh" content="0; url={{ $target.Permalink }}">
 </head>
 <body>
