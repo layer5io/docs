@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Views on Layer5 Documentation</title><link>/pr-preview/pr-1306/tags/views/</link><description>Recent content in Views on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1306/tags/views/index.xml" rel="self" type="application/rss+xml"/><item><title>Operator Views</title><link>/pr-preview/pr-1306/kanvas/reference/views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1306/kanvas/reference/views/</guid><description>&lt;p&gt;A view is to Operator mode what a design is to Designer mode: a named, saved definition you reopen later. A view stores &lt;strong&gt;which resources to show&lt;/strong&gt;, not the resources themselves. Opening a view re-applies its filters to the current inventory of your connected clusters.&lt;/p&gt;
+
+&lt;h2 id="what-a-view-stores" class="heading-link"&gt;
+ What a view stores
+ &lt;a href="#what-a-view-stores" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Field&lt;/th&gt;
+ &lt;th&gt;Content&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Name&lt;/td&gt;
+ &lt;td&gt;Defaults to &lt;code&gt;Untitled View&lt;/code&gt;. Up to 255 characters. Not required to be unique.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Filters&lt;/td&gt;
+ &lt;td&gt;Kinds, models, namespaces, labels, and the name search text. See &lt;a href="/pr-preview/pr-1306/kanvas/reference/views/#filters"&gt;Filters&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Visibility&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;public&lt;/code&gt; or &lt;code&gt;private&lt;/code&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Notes&lt;/td&gt;
+ &lt;td&gt;Free text (Markdown) in the view&amp;rsquo;s metadata, edited in View Info.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Owner, created, updated&lt;/td&gt;
+ &lt;td&gt;Set by Layer5 Cloud.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A view does not store layout, zoom, pan, or the selected resource. It does not store cluster selection either: the clusters selected in the Meshery context selector at the time you open the view always win. A copied link includes your current pan and zoom as URL parameters, but they are not saved in the view.&lt;/p&gt;</description></item></channel></rss>

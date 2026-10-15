@@ -1,0 +1,14 @@
+# v1.0.242
+
+date: 2026-09-03
+
+
+
+- fix(auth): stop /introspect rejecting the anonymous session cloud just minted @ritzorama (#6024)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy, @hortison, @meshery-ci and @ritzorama
+
+

@@ -1,0 +1,16 @@
+# v0.8.4
+
+date: 2024-08-31
+
+
+
+## What's New
+**General**
+- Fix admin not able to edit others private design @Yashsharma1911 (#2748)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15, @Yashsharma1911, @l5io and @shubham251972
+
+

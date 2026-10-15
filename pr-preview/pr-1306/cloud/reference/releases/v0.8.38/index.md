@@ -1,0 +1,21 @@
+# v0.8.38
+
+date: 2024-10-24
+
+
+
+## What's New
+## 🔤 General
+- chore: add test id for login page @jerensl (#2863)
+
+## 🖥 Cloud UI
+
+- Add missing api for ui crash @sudhanshutech (#2864)
+- create new workspace activity widget @amitamrutiya (#2857)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @jerensl, @l5io and @sudhanshutech
+
+
