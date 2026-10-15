@@ -1,4 +1,0 @@
-# Collaboration
-
-
-<no value>
