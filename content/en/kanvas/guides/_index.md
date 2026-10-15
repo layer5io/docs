@@ -51,10 +51,12 @@ See [Validate and Deploy]({{< ref "kanvas/guides/deploying/_index.md" >}}) for t
 
 ## Collaborate and review
 
+See [Collaborate and Review]({{< ref "kanvas/guides/collaborating/_index.md" >}}) for the group.
+
 | Goal | Guide |
 |---|---|
-| Give other people access to a design | [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}) |
-| Discuss a design with comments | [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}) |
+| Give other people access to a design | [Share a Design]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}) |
+| Discuss a design with comments | [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}) |
 
 ## Visualize pull requests and charts
 
