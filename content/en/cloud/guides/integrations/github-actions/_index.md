@@ -29,7 +29,7 @@ Kanvas introduces the Kanvas Snapshot GitHub Actions, a tool that allows you to 
 
 ### Configuring Kanvas Snapshots
 
-For setup steps, see the [Kanvas Snapshots tutorial]({{< ref "cloud/guides/tutorials/gitops-snapshots.md" >}}).
+For setup steps, see [Visualize Pull Requests with Kanvas Snapshot]({{< ref "kanvas/guides/snapshots/kanvas-snapshot/index.md" >}}).
 
 {{%pageinfo%}}
 The Kanvas GitHub App requires authorization to interact with your repositories. If you would like to use your GitHub user's personal access token, instead, [please let us know](https://cloud.layer5.io/support). {{%/pageinfo%}}
