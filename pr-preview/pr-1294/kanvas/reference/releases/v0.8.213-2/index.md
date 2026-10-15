@@ -1,0 +1,17 @@
+# v0.8.213-2
+
+date: 2026-03-09
+
+
+
+## What's New
+## 🔤 General
+## 🐛 Bug Fixes
+
+- rjsf fix @leecalcote (#4025)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @pontusringblom
+

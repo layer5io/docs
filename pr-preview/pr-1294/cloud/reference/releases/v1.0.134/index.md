@@ -1,0 +1,16 @@
+# v1.0.134
+
+date: 2026-06-15
+
+
+
+- fix: default AvatarUrl to 'empty' to prevent NOT NULL database constraint violation on user invite @rishiraj38 (#5488)
+- fix(ui): keep the Layout shell mounted so auth hydration can't orphan it @leecalcote (#5489)
+- UI: UniversalFilter for MUI Datatables @miacycle (#5481)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @miacycle, @rishiraj38 and @ritzorama
+
+
