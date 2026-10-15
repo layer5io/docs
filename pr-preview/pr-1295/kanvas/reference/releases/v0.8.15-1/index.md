@@ -1,0 +1,19 @@
+# v0.8.15-1
+
+date: 2025-01-17
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Elimination of pending requests on queue of a new filter request. @aabidsofi19 (#3330)
+- use container formatter for show container data when click on the container node @amitamrutiya (#3333)
+- [Chore]: Bump Sistent v0.14.141 @l5io (#3332)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

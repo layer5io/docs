@@ -1,0 +1,14 @@
+# v1.0.12
+
+date: 2026-04-16
+
+
+
+- Updated link in getting-started @Rajesh-Nagarajan-11 (#5041)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11 and @leecalcote
+
+
