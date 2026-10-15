@@ -28,4 +28,5 @@ Layer5 Cloud, as the remote provider, stores designs and their versions and gove
 - **[Relationships]({{< ref "kanvas/concepts/relationships/index.md" >}})** - how Kanvas maps the ways connected components interact.
 - **[Collaboration Model]({{< ref "kanvas/concepts/collaboration/index.md" >}})** - how live co-editing, design access, and comments work together, and what each one controls.
 - **[Designer]({{< ref "kanvas/concepts/designer/index.md" >}})** - the authoring mode: its purpose, scope, and tools.
+- **[Render Modes]({{< ref "kanvas/concepts/render-modes/index.md" >}})** - how Kanvas trades visual detail for canvas speed, and how Adaptive mode moves between modes.
 - **[Operator]({{< ref "kanvas/concepts/operator/index.md" >}})** - the operating mode: live cluster state and per-design views.
