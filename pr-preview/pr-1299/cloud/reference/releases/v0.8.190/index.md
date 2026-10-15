@@ -1,0 +1,33 @@
+# v0.8.190
+
+date: 2025-04-10
+
+
+
+## What's New
+## 🔤 General
+
+- New app password for no-reply account. @leecalcote 
+
+## 🖥 Cloud UI
+
+- Fix pricing page styling @amitamrutiya (#3386)
+
+## 💻 Server
+
+- Fix pricing page styling @amitamrutiya (#3386)
+
+## 🦴 Infrastructure
+
+- Fix pricing page styling @amitamrutiya (#3386)
+
+## ☁️ API Specifications
+
+- Fix pricing page styling @amitamrutiya (#3386)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+
+
