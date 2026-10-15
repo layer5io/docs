@@ -19,9 +19,6 @@ Meet Five, Maya, Zara, Marcus, Dr. Aiko, and the full cast at [Meet Five and the
 {{% card header="Collaborative Editing" %}}
 [Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}}) — share a design, set Private or Public visibility, invite collaborators, and review with comments.
 {{% /card %}}
-{{% card header="Publishing to Catalog" %}}
-[Publishing to Catalog]({{< ref "kanvas/tutorials/publishing-to-catalog.md" >}}) — publish from Details → Publish to Catalog, then follow review and Catalog visibility.
-{{% /card %}}
 {{% /cardpane %}}
 
 ## Featured tutorials
@@ -45,13 +42,5 @@ Hands-on Playground tutorials for pods, deployments, services, and more — plus
 {{% card header="Azure" %}}
 Deploy [Azure resources]({{< ref "kanvas/tutorials/azure/deploy-azure-resources-with-meshery/index.md" >}}) and an [Azure Storage Account]({{< ref "kanvas/tutorials/azure/deploy-azure-storage-account-with-meshery.md" >}}) with ASO. See the [Azure tutorials hub]({{< ref "kanvas/tutorials/azure/_index.md" >}}).
 {{% /card %}}
-{{% card header="Artifact Hub" %}}
-[Publishing Meshery Designs to Artifact Hub]({{< ref "kanvas/tutorials/artifacthub/publish-to-artifacthub/index.md" >}}) — export and publish designs to a repository.
-{{% /card %}}
 {{% /cardpane %}}
 
-{{< cardpane >}}
-{{% card header="WordPress" %}}
-[Embedding a Meshery Design in a WordPress Post]({{< ref "kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/index.md" >}}) — publish interactive designs on your site.
-{{% /card %}}
-{{% /cardpane %}}

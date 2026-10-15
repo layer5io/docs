@@ -19,5 +19,5 @@ Cookbook-style guides for common Kanvas workflows — from whiteboarding on the 
 - [Dry Running a Design]({{< ref "kanvas/tasks/designs/dry-running-a-design/index.md" >}})
 - [Deploying Designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}})
 - [Undeploying Designs]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}})
-- [Cloning a Design]({{< ref "kanvas/tasks/designs/cloning-a-design/index.md" >}})
-- [Deleting a Design]({{< ref "kanvas/tasks/designs/deleting-a-design/index.md" >}})
+- [Cloning a Design]({{< ref "kanvas/guides/designs/cloning-a-design/index.md" >}})
+- [Deleting a Design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}})
