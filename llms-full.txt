@@ -857,299 +857,6 @@ To learn how to interpret and understand designs in practice, including how comp
 {{< /alert >}}
 
 --------------------------------------------------------------------------------
-title: "Validating Designs"
-url: /kanvas/tasks/designs/validating-designs/index.md
-description: Prior to deploying a design, you can validate the configuration that it contains in accordance with the target platform.
-
---------------------------------------------------------------------------------
-
-## How Validation Works
-
-Meshery uses static analysis to verify your design. It checks all components within your design and all configured and unconfigured properties of your components against well-defined schemas based on Meshery Models.
-
-This comprehensive validation ensures that:
-
-1. The design adheres to the expected structure and format.
-
-2. All components are valid and recognized by Meshery.
-
-3. There are no missing required configurations.
-
-## Performing Validation
-
-1. To validate your design, navigate to the Actions button at the top of the Design canvas.
-
-![Navigate to Actions button](images/validating-designs/performing-validation-1.png)
-
-2. Click on the **Validate** Icon.
-
-![Click on the Validate icon](images/validating-designs/performing-validation-2.png)
-
-<figure>
-  <img src="../../../designer/images/audit-2026-09/designer-actions.png" alt="Actions menu with Validate available; Dry Run, Deploy, and Undeploy disabled while signed out" />
-  <figcaption>Actions menu (anonymous capture, Sep 2026): <strong>Validate</strong> is available without sign-in; Dry Run / Deploy / Undeploy stay disabled until you have a signed-in session and target context.</figcaption>
-</figure>
-
-If the validation is successful, you will see a modal displaying the number of components validated and the number of annotations, similar to the one shown below:
-
-![Successful Validation](images/validating-designs/successful-validation.png)
-
-<figure>
-  <img src="../../../designer/images/audit-2026-09/designer-validate-results.png" alt="Validation complete notification toasts after running Validate" />
-  <figcaption>Validation result toasts (same anonymous session as the autosave capture). Prefer the modal above for the component/annotation counts UI when it matches your build.</figcaption>
-</figure>
-
-## Handling Validation Errors
-
-If your design fails validation checks, the modal will indicate the number of errors detected. Each error will provide specific information about the component or annotation that caused the failure. Use this detailed feedback to identify and correct the issues in your design before proceeding with the deployment.
-
-### Validation Errors
-
-A common validation error is:
-
-**Missing Required Field:** This happens when a required field is not provided. For example, in the image below, the component is missing three required properties under ".spec", and the first error names `instanceCount`. Click the component's row in the modal to expand its errors.
-
-![Validation Error](images/validating-designs/validation-error.png)
-
-
-To troubleshoot and remediate validation issues:
-
-1. Click on the error on the modal.
-2. This will open the configuration tab of the component that has that error.
-3. Fix the configuration using the error details provided.
-4. Re-run validation after any significant changes to your design to ensure all issues are resolved.
-
-The validation process is confined to schema-based checks within Meshery and does not require communication with your target environment.
-
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
-
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
-
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
-
-
-## Second Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
-
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
-
-
---------------------------------------------------------------------------------
 title: "Auto-pan on Drag"
 url: /kanvas/advanced/autopan/index.md
 description: Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
@@ -1256,87 +963,6 @@ If autopan is disabled on a design where you would like it to be active, you hav
 1. **Switch to a lower-fidelity render mode.** Wireframe and View-Only raise the threshold to 1,000 nodes. See the [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) page for what each mode costs and what it hides.
 2. **Reduce the live listener count.** The [Layers Panel]({{< ref "kanvas/advanced/performance/index.md" >}}) lets you disable layers of visual information (badges, tags, feasibility indicators) that contribute to the pan fan-out. Turning off a layer effectively moves the threshold upward because there are fewer listeners to amplify each pan.
 3. **Break the design into smaller designs.** If you are consistently bumping the threshold in your preferred render mode, the design might be past the scale Kanvas targets for interactive editing. Splitting it into referenced sub-designs keeps each one within the sweet spot.
-
-
---------------------------------------------------------------------------------
-title: "Dry Running a Design"
-url: /kanvas/tasks/designs/dry-running-a-design/index.md
-description: A dry run simulates the deployment of your design in the selected target environment without making any actual changes.
-
---------------------------------------------------------------------------------
-
-A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.
-
-Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.
-
-## Performing Dry Run
-
-1. Navigate to the **Actions** button at the top of the Design canvas.
-
-2. Click on the **Dry Run** icon.
-
-3. Select the Kubernetes cluster or clusters you want to simulate against, then run the simulation. If no clusters are selected, the dry run targets all connected clusters.
-
-4. Review the results to identify any potential issues.
-
-5. Make necessary adjustments to your configuration based on the feedback provided by the dry run.
-
-6. Re-run the dry run to ensure all issues have been resolved.
-
-### Reading the Results
-
-Results are grouped by component, with the number of errors beside each component's name. Expand a component to see its individual errors, each one naming the kind of problem, the field path it was found at, and the message the Kubernetes API server returned.
-
-Click an error to jump straight to the offending field: Kanvas opens that component's configurator with the field in question in view, so you can correct it without hunting for it.
-
-A dry run reports on Kubernetes-configurable components only. Annotation components - text, shapes, comments, and other visual elements - carry no infrastructure and are counted separately in the summary rather than validated.
-
-## Dry Run and Validate
-
-**Validate** and **Dry Run** answer different questions, and a design can pass one while failing the other.
-
-| | Validate | Dry Run |
-|---|---|---|
-| Checks against | The component's own schema, in Meshery | Your live Kubernetes cluster |
-| Catches | Malformed or missing configuration | Everything Validate catches, plus admission failures, missing CRDs, and cluster-specific policy |
-| Needs a cluster | No | Yes |
-
-Validate is the faster loop and needs nothing connected; run it while you are still building. Dry Run is the check to run before you deploy, because it is the only one that involves the cluster you are about to deploy to.
-
-## Dry Run Inside Deploy and Undeploy
-
-You do not have to remember to dry run before deploying: **Dry Run** is a built-in step of both the deploy and the undeploy flow. Starting either from the **Actions** menu opens a stepper that runs **Validate Design**, then **Identify Environments**, then **Dry Run**, before you reach **Finalize** and **Finish**.
-
-Within that step you can also:
-
-- **Include Dependencies** - extend the simulation to the resources your components depend on.
-- **Bypass errors and initiate deployment** - proceed despite reported errors. Use it deliberately; the errors were reported by the cluster you are about to deploy to.
-
-In the undeploy flow the same step simulates removal instead of creation, so you can see what an [undeploy]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) would touch before you commit to it.
-
-## Dry Run Errors
-
-### Invalid Field Value
-
-This error indicates that a field has an invalid value. For example, when configuring a Kubernetes Service, the fields `spec.ports[0].port` and `spec.ports[0].targetPort` may have invalid values of 0. These values must be between 1 and 65535, inclusive.
-
-![Invalid Field Value Error](images/dry-running-designs/invalid-field-value-1.png)
-
-![Invalid Field Value Details](images/dry-running-designs/invalid-field-value-2.png)
-
-### Missing Required Field
-
-This error occurs when a required field in the configuration has not been provided. Ensure all required fields are properly configured before running the dry run.
-
-![Missing Required Field Error](images/dry-running-designs/missing-field.png)
-
-### Missing Dependencies
-
-This error occurs because a Kubernetes Custom Resource Definition (CRD) should have been deployed first before attempting to deploy a component that relies on it.
-
-To resolve this, ensure that all necessary dependencies, such as CRDs, are deployed before deploying the components that rely on them.
-
-![Missing Dependencies Error](images/dry-running-designs/missing-resource.png)
 
 
 --------------------------------------------------------------------------------
@@ -1705,247 +1331,6 @@ When fixing a problem with a live service, use the Design Link in Operator Mode.
 Pay close attention to your current mode. A badge's meaning is completely different in Designer than it is in Operator.
 
 --------------------------------------------------------------------------------
-title: "Undeploying Designs"
-url: /kanvas/tasks/designs/undeploying-designs/index.md
-description: Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
-
---------------------------------------------------------------------------------
-
-To undeploy the resources
-
-1. Navigate to the Actions button at the top of the Design canvas.
-
-2. Click on the **Undeploy** icon.
-
-![undeploying designs](images/undeploying-designs/undeploy.png)
-
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
-
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
-
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
-
-
-## Second Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
-
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
-
-
---------------------------------------------------------------------------------
 title: "Understanding Tool Modes"
 url: /kanvas/designer/understanding-tool-modes/index.md
 description: Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Learn how to interact with components and the canvas in each mode.
@@ -2047,289 +1432,6 @@ The table below outlines the mouse interaction modes available in <strong>Kanvas
 {{% /tab %}}
 
 {{< /tabpane >}}
-
-
---------------------------------------------------------------------------------
-title: "Deploying Designs"
-url: /kanvas/tasks/designs/deploying-designs/index.md
-description: Each Meshery design is deployable to one or more Kubernetes clusters.
-
---------------------------------------------------------------------------------
-
-1. To deploy a design, navigate to the **Actions** button at the top of the Design canvas.
-
-2. Click on the **Deploy** icon.
-
-3. This opens a modal that will take you through all the steps before the final deployment.
-
-4. Click on **Open In Operator** to see the pre-filtered view of the deployed resources in the cluster
-
-5. Click **Finish**
-
-![success-deploy](images/deploy-designs/success-deploy.png)
-
-### Deployment Errors
-
-1. **Missing Namespace**: This error occurs when you attempt to create a Kubernetes resource without specifying a namespace. Kubernetes requires that all resources have an associated namespace.
-
-![missing-ns](images/deploy-designs/missing-ns.png)
-
-2. **Empty Label Selector**: This error indicates an empty label selector.
-
-![empty-ls](images/deploy-designs/empty-ls.png)
-
-### Troubleshooting Errors
-
-When reviewing validation, dry run, or deployment issues, you’ll notice specific error codes denoted from time to time.
-
-As a system, Meshery itemizes different errors that occur and assigns a unique error code to each along with details on how to remediate the issue at hand.
-
-For the comprehensive list of error codes refer to [Error Code Reference](https://docs.meshery.io/reference/error-codes) in the Meshery documentation.
-
-If you encounter persistent issues consider consulting the [Meshery Community forum](https://discuss.layer5.io/c/meshery/5)
-
-![error-code](images/deploy-designs/error-code.png)
-
-
-### Using the Notification Center for Troubleshooting
-
-The Notification Center in Meshery helps manage events during the deployment process. It provides real-time updates and alerts on the status of the deployment. This feature can be particularly useful for troubleshooting, as it:
-
-1. Displays immediate feedback on the success or failure of each deployment step.
-1. Highlights specific error messages and codes, helping you quickly identify and understand issues.
-1. Offers links to detailed documentation and guides for resolving common problems.
-1. Keeps a log of past notifications, allowing you to track and review previous errors and their resolutions.
-
-![notification](images/deploy-designs/notification.png) 
-
-![notification-center](images/deploy-designs/notification-center.png)
-
-By actively monitoring the Notification Center, you can promptly address issues as they arise, ensuring a smoother deployment process. Learn more about [Managing Events with the Notification Center](https://docs.meshery.io/guides/events-management).
-
-<!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
-
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
-
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a border along the left side in the secondary color.
->
-> There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&B. **I love this life we live in**.
-
-
-## Second Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
-
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What      | Follows         |
-|-----------|-----------------|
-| A table   | A header        |
-| A table   | A header        |
-| A table   | A header        |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
-  * Michael
-  * Tito
-  * Jackie
-  * Marlon
-  * Jermaine
-* TMNT
-  * Leonardo
-  * Michelangelo
-  * Donatello
-  * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist            | Album           | Year |
-|-------------------|-----------------|------|
-| Michael Jackson   | Thriller        | 1982 |
-| Prince            | Purple Rain     | 1984 |
-| Beastie Boys      | License to Ill  | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
-  input := `var foo = "bar";`
-
-  lexer := lexers.Get("javascript")
-  iterator, _ := lexer.Tokenise(nil, input)
-  style := styles.Get("github")
-  formatter := html.New(html.WithLineNumbers())
-
-  var buff bytes.Buffer
-  formatter.Format(&buff, style, iterator)
-
-  fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language    | Code               |
-|-------------|--------------------|
-| Javascript  | `var foo = "bar";` |
-| Ruby        | `foo = "bar"{`      |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-{{< alert >}}This is an alert.{{< /alert >}}
-{{< alert title="Note" >}}This is an alert with a title.{{< /alert >}}
-{{% alert title="Note" %}}This is an alert with a title and **Markdown**.{{% /alert %}}
-{{< alert color="success" >}}This is a successful alert.{{< /alert >}}
-{{< alert color="warning" >}}This is a warning.{{< /alert >}}
-{{< alert color="warning" title="Warning" >}}This is a warning with a title.{{< /alert >}}
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-```
-This is the final element on the page and there should be no margin below this.
-``` -->
 
 
 --------------------------------------------------------------------------------
@@ -4520,6 +3622,71 @@ Files dropped on the canvas follow separate rules. Images and `.txt` files becom
 
 
 --------------------------------------------------------------------------------
+title: "Validate a Design"
+url: /kanvas/guides/deploying/validating-designs/index.md
+description: Check every component's configuration against its schema before you deploy, read the results, and fix what they flag.
+--------------------------------------------------------------------------------
+
+Validation checks the configuration of each component in a design against the schema of that component's definition. It runs in your browser, needs no cluster, and changes nothing. Run it while you build to catch missing or malformed fields before a dry run or a deployment spends time on them.
+
+## Before you start
+
+- **Environment.** Validation runs in a Meshery you run. The hosted kanvas.new site does not run it and shows a self-hosted-feature prompt instead.
+- **A non-empty design.** The Actions menu is disabled while the design has no components. An unsaved design validates; Kanvas validates the design as it is on the canvas.
+- **Permission.** On mobile, the Validate Design permission gates the action. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}).
+
+## What validation checks
+
+| Checked | Not checked |
+|---|---|
+| Each component's configuration against the JSON schema of its registered definition, with all errors collected per component | Relationships between components |
+| Required fields, types, and formats, including 32-bit and 64-bit integers and integer-or-string values | Dependencies, namespaces, and cross-references |
+| | Anything in the target cluster |
+
+Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.
+
+Two cases pass silently, so a clean result does not prove every component was checked:
+
+- A component whose definition cannot be fetched from the registry is skipped as valid.
+- A design whose schema version is not a supported design version reports 0 components, 0 annotations, and no errors.
+
+## Read the results
+
+The results show a summary line, `<N> component(s) and <M> annotations`, and an error count. With no errors the result reads `No validation errors.`
+
+With errors, each component that has them appears as an expandable row with its name and error count. Each error names the field by its dotted path, for example `Field "spec.ports" must have required property 'apiGroup'`. When the path is empty, the line shows the message alone. Errors are warnings: they never block you from continuing.
+
+To fix an error, open the component and go to the field named in the path. A missing required property names the field you need to fill in.
+
+Validation runs fresh each time you open it, so results always reflect the current design.
+
+## Results on the canvas
+
+Validation also marks the canvas. A component with errors shows a circular badge at its lower left holding the total number of errors, schema and dry-run errors combined. Selecting the badge expands it to two counts: a yellow triangle for schema errors and a red octagon for dry-run errors. Each opens the matching results, scrolled to that component.
+
+Badges appear only when the **Validation Warnings** and **Deployment Errors** entries in the Layers panel are on and the render mode is Full. They are hidden in Wireframe, Medium, and View-only modes. A new validation or dry run replaces them, and loading another design clears them. Editing a component does not clear its badge, so run validation again after you fix something.
+
+## The event it records
+
+Validating the whole design records an informational event in the event log:
+
+> Validation completed for '<design>' with <N> error(s) found.
+
+The event carries the design name, the total error count, and per-component results. Validating a single component records nothing.
+
+## Validate and dry run compared
+
+| | Validate | Dry run |
+|---|---|---|
+| Checks against | Each component's schema | The Kubernetes API of each target cluster |
+| Needs a cluster | No | Yes |
+| Catches | Missing or malformed configuration | Everything the cluster's admission and schema checks reject |
+| Speed | Immediate | One request per cluster |
+
+Validate is the fast loop while you build. Run a [dry run]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}}) before you deploy, because it is the only check that involves the cluster you are deploying to. The [deploy]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}) and [undeploy]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}}) flows run validation as their first step.
+
+
+--------------------------------------------------------------------------------
 title: "Canvas Actions"
 url: /kanvas/designer/canvas-actions/index.md
 description: The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
@@ -4837,11 +4004,86 @@ Return to Designer mode and undeploy the design. Kanvas opens a dialog titled `U
 
 ## Next
 
-- [Validating designs]({{< ref "kanvas/tasks/designs/validating-designs/index.md" >}})
-- [Dry-running a design]({{< ref "kanvas/tasks/designs/dry-running-a-design/index.md" >}})
-- [Deploying designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}})
-- [Undeploying designs]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}})
+- [Validating designs]({{< ref "kanvas/guides/deploying/validating-designs/index.md" >}})
+- [Dry-running a design]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}})
+- [Deploying designs]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}})
+- [Undeploying designs]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}})
 - [Operator]({{< ref "kanvas/operator/_index.md" >}}), to explore views and live cluster state beyond a single design.
+
+
+--------------------------------------------------------------------------------
+title: "Dry-run a Design"
+url: /kanvas/guides/deploying/dry-running-a-design/index.md
+description: Preview what a deployment would do by having each target cluster's Kubernetes API check your design without applying it.
+--------------------------------------------------------------------------------
+
+A dry run submits every component in the design to the Kubernetes API server of each target cluster as a server-side dry-run request. The API server validates the object exactly as it would on a real apply, including schema, field values, and admission, and then discards it. Nothing is created, updated, or persisted, so you can repeat a dry run as often as you like.
+
+## Before you start
+
+- **A connected cluster.** Meshery must hold at least one connected Kubernetes context. With none, the request fails with error `meshery-server-1096`, Kubernetes cluster is unavailable.
+- **A non-empty design.** The Actions menu is disabled for an empty design.
+- **Permission.** Dry run is gated by the Validate Design permission. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}).
+- **A Meshery you run.** The hosted kanvas.new site does not run dry runs.
+
+Meshery Server performs the dry run with the kubeconfig it holds. Meshery Operator, MeshSync, and the broker are not required.
+
+## Run a dry run
+
+You reach a dry run in two ways.
+
+**On its own.** Choose Dry Run from the design's Actions menu. This opens `Dryrun design "<name>"` and runs a deploy-type dry run against your current cluster selection, or against all connected clusters when none is selected. There is no cluster-selection step.
+
+**Inside a deploy or undeploy.** Step 3 of both steppers is a dry run against the environments you chose in step 2. In the deploy stepper it simulates creating the resources. In the undeploy stepper it simulates deleting them. See [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}) and [Undeploy a Design]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}}).
+
+On mobile, Dry Run runs without a modal and shows its results as badges on the canvas.
+
+## What the server does
+
+| Stage | Behavior |
+|---|---|
+| Components | Annotation components are dropped. Each remaining component becomes a Kubernetes object. |
+| Clusters | The object goes to every selected cluster. |
+| Deploy-type | A create with strict field validation and field manager `meshery`. |
+| Undeploy-type | A delete by name. |
+| Namespace | The component's own `metadata.namespace`. Otherwise `default` for namespaced kinds, and none for cluster-scoped kinds. |
+| Persistence | None. The dry run does not create namespaces. |
+
+## Read the results
+
+The summary shows `<N> component(s) and <M> annotations` and the error count. With no errors it reads `No deployment errors.`
+
+Each failing component is an expandable row, `<name> (<count>)`. A component fails when any selected cluster returns a Kubernetes failure for it. Each error shows a bold type and field path, then the message the API server returned:
+
+- The type is the Kubernetes cause in words: Field Value Required, Field Value Invalid, Field Value Not Supported. Anything else shows as Failure.
+- The path reads `<component> > settings > <field>`. Metadata name, namespace, labels, and annotations map to those names. When Kubernetes names no field the path is `unknown`.
+- When the API gives no causes, its status messages appear as plain text.
+
+If the whole call fails rather than a component, a structured error block appears with the entry type `RequestError`, not a per-component row.
+
+Selecting an error closes the results and opens the component's configuration at the field. Errors also feed the red octagon badge on the canvas. See [Validate a Design]({{< ref "kanvas/guides/deploying/validating-designs/index.md" >}}) for where badges appear.
+
+Each dry run records an event: `Dry Run completed for design '<name>'.` at informational severity, even when components failed, or `Failed to dry-run design '<name>'.` at error severity when the call itself failed. A dry run does not change the design's deployment count.
+
+## Common errors
+
+| Error | Cause | Fix |
+|---|---|---|
+| Field Value Invalid | A value is outside what Kubernetes accepts, for example a Service port of 0 where 1 to 65535 is required. | Correct the value in the component's configuration. |
+| Field Value Required | A required field is empty. | Fill in the field. |
+| Resource not found for a component of a kind with an irregular plural | See the limits below. | Bypass the error if the kind is correct. |
+| Missing custom resource definition | The design uses a custom resource whose definition is not on the cluster. | Install the definition on the cluster first, then run the dry run again. |
+
+## Limits of a dry run
+
+- **Irregular plurals.** Dry run builds each resource name from the lowercase kind plus "s". Kinds with irregular plurals, such as Ingress, NetworkPolicy, StorageClass, and Endpoints, can return a not-found error even when the component is correct.
+- **Namespaces the design creates.** A dry run never creates a namespace. A component placed in a namespace that the same design would create reports an error, because the namespace does not exist yet.
+- **Undeploy-type runs.** Deleting an object that is absent returns NotFound. Dry-running the undeploy of a design that was never deployed, or is already removed, shows an error for every component. A real undeploy ignores objects that are already absent.
+- **The Include Dependencies option.** The dry-run step shows an Include Dependencies checkbox. It has no effect on the dry run.
+
+## Bypass errors
+
+In the deploy and undeploy steppers, when a dry run reports errors, the step shows a checkbox, `Bypass errors and initiate deployment`. Next stays disabled while the dry run is running, or while errors exist and the checkbox is off. Use the bypass when you know the errors are false positives from the limits above. The cluster raised each of them, and the real deployment may fail for the same reason.
 
 
 --------------------------------------------------------------------------------
@@ -5123,6 +4365,108 @@ Cloning is the only path that creates a private design. Every other new design i
 Cloning does not check your plan's components-per-design limit. A clone from a larger plan can exceed yours and then fail its first autosave with a plan-limit error. See [Save Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}).
 
 Kanvas shows `Cloning design "<name>"` while the clone runs. It shows no failure message. Because the clone copies the catalog data block, a private clone can display catalog metadata even though it is not published.
+
+
+--------------------------------------------------------------------------------
+title: "Deploy a Design"
+url: /kanvas/guides/deploying/deploying-designs/index.md
+description: Apply a design to one or more Kubernetes clusters, and understand targets, ordering, dependencies, results, and failure behavior.
+--------------------------------------------------------------------------------
+
+Deploying applies the components in a design to the Kubernetes clusters in the environments you choose. Meshery Server does the work with the kubeconfig it holds: it creates each object, or updates it in place when it already exists. Deploying the same design again is safe and idempotent.
+
+## Before you start
+
+- **A Meshery you run, with a connected cluster.** The hosted kanvas.new site does not deploy; it shows a self-hosted-feature prompt. Meshery needs at least one connected Kubernetes context that belongs to an environment in your organization.
+- **A non-empty design.** The Actions menu is disabled for an empty design. An unsaved design deploys as it stands on the canvas.
+- **Permission.** The Deploy Design permission gates the action. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}). Selecting environments from the empty state also needs the Create Environment and Edit Environment permissions.
+- **A provider session.** Without a signed-in session the request fails before any event is raised.
+
+Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.
+
+Validate and dry-run the design first. See [Validate a Design]({{< ref "kanvas/guides/deploying/validating-designs/index.md" >}}) and [Dry-run a Design]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}}). The deploy flow runs both for you.
+
+## The deploy flow
+
+Choose Deploy from the design's Actions menu. The `Deploy design "<name>"` stepper has five steps, with Back and Next throughout.
+
+| Step | What it does |
+|---|---|
+| 1. Validate Design | Runs [validation]({{< ref "kanvas/guides/deploying/validating-designs/index.md" >}}) inline. Next is always enabled, because validation errors are warnings. |
+| 2. Identify Environments | Lists your organization's environments as cards. Ticking an environment selects all of its Kubernetes connections. You need at least one. |
+| 3. Dry Run | Runs a deploy-type [dry run]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}}) against the selected clusters. Next stays disabled while it runs, or when errors exist and the bypass checkbox is off. |
+| 4. Finalize Deployment | Shows the environments you chose and the component count, excluding annotations. The button reads Deploy. A Schedule Deployment checkbox is shown disabled. |
+| 5. Finish | Starts the deployment and shows the results. |
+
+Step 2 shows only Kubernetes connections. When your organization has no environments, it shows `No environments found. Add a new environment.` When an environment has no connections, it shows `No connections configured. Add a connection to get started.` Your selection persists for the session. A cluster that belongs to two selected environments is listed twice and targeted twice.
+
+## Targets
+
+The stepper always sends the explicit clusters you selected. Where no selection exists, such as a one-click action or the mobile sheet, the target is `all`. The server expands a lone `all` to every connected Kubernetes context. Otherwise it keeps only the ids that match a connected context and silently drops unknown ones. If none remain, the request fails with `meshery-server-1096`.
+
+Clusters are deployed in parallel.
+
+## How components are applied
+
+| Aspect | Behavior |
+|---|---|
+| Ordering | Components form a dependency graph. A component starts when every component it depends on has succeeded. Independent components run in parallel. Kanvas applies no other ordering, so deploy custom resource definitions before the resources that use them. |
+| Failed dependency | A component whose dependency failed is withheld: `Withheld <component>: <dependency> did not deploy successfully` (`meshery-server-1480`). |
+| Invalid dependencies | A malformed, unknown, ambiguous, or circular dependency fails the whole request before anything is applied (`meshery-server-1475` through `1479`). |
+| Existing objects | The object is replaced in place. An update to an immutable field, or an attempt to unset a Service's cluster IP, is reported as success but does not take effect. |
+| Namespaces | A missing target namespace is created before the object is applied. A namespaced component with no namespace goes to `default`. |
+| Annotation components | Never applied. |
+
+### Dependencies of non-Kubernetes models
+
+For a component whose model is not the built-in Kubernetes model and whose registrant is an Artifact Hub source, Meshery installs the model's source Helm chart into the component's namespace, creating the namespace if needed. This brings in the custom resource definitions and operators the component needs. The step is fail-forward: if the chart fails, Meshery still applies the component and adds a row to the results, `error deploying dependent helm chart for <component>`.
+
+Meshery always processes these dependencies. The Include Dependencies checkbox in the dry-run step does not change this.
+
+### What Meshery marks on applied objects
+
+| Mark | Value |
+|---|---|
+| Label `design.meshery.io/id` | The design's id |
+| Annotation `design.meshery.io/version` | The design's version |
+| Annotation `component.meshery.io/id` | The component's id |
+
+Operator's per-design view filters on the design-id label. A component carrying it is shown as managed by Meshery.
+
+## Read the results
+
+Every deployment raises an event from Meshery Server. It appears as a toast and as an entry in the notification center. In the Finish step, a summary lists one row per component and cluster: `Deployed <Kind> "<name>"`, or `Failed to deploy <Kind> "<name>"` with an error card. When Operator is enabled, the step offers Open In Operator.
+
+| Outcome | Event |
+|---|---|
+| The request completed | `Deployment completed for design '<name>'.` at informational severity |
+| The request failed before applying (cluster client, dependency graph, malformed design) | `Failed to deploy design '<name>'.` at error severity, with an error card |
+
+A deployment in which some components failed in Kubernetes still raises the completed event. Read the per-component rows in the Finish step to see which ones failed.
+
+Each persisted deploy event, including an error event, adds 1 to the design's deployment count in Layer5 Cloud. Dry runs and undeploys do not change it. The count drives the catalog sort Most Deployed.
+
+### Error cards
+
+An error card shows the event description, then Details, then Probable Cause and Suggested Remediation side by side. In the notification center, the Error Docs menu item opens the matching entry in the [Meshery error code reference](https://docs.meshery.io/reference/error-codes).
+
+| Code | Meaning | Fix |
+|---|---|---|
+| `meshery-server-1073` | Unable to deploy the design. Wraps most hard failures; Details holds the inner error. | Confirm the connection's status is Connected or upload a new kubeconfig, and assign the connection to the selected environment. |
+| `meshery-server-1096` | Kubernetes cluster is unavailable: no selected context resolved. | Upload a new kubeconfig, check the network and the cluster, and verify the server's credentials. |
+| `meshery-server-1095` | Invalid kubeconfig. | Upload a new kubeconfig and make sure the server can reach the API server. |
+| `meshery-server-1070` | Failed to parse the design file. | Check the design definition. |
+| `meshkit-11190` | Error applying a manifest. The Kubernetes API's own reason and remediation replace the generic text. | Make sure the manifest is valid. |
+| `meshery-server-1475` to `1480` | A dependency problem in the design. | Open the design, fix, rename, or remove the dependency, and retry. For 1480, resolve the dependency's failure first. |
+
+## When nothing happens
+
+The Finish step waits for the next deploy event from the server. If the request fails before the server raises an event, such as an expired session, a proxy error, or no provider, Kanvas shows no error and the Finish step keeps spinning. The step has no timeout. Close it, sign in again if your session expired, and check the notification center and the Meshery Server logs.
+
+## Related
+
+- [Undeploy a Design]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}}) removes what a deployment created.
+- [Troubleshoot Kanvas]({{< ref "kanvas/guides/troubleshooting.md" >}}) covers connection and loading problems.
 
 
 --------------------------------------------------------------------------------
@@ -5415,6 +4759,55 @@ Either of these removes the pin without affecting any design:
 ## Default dock
 
 With nothing pinned the dock holds Select, Hand, Components, Kubernetes, Shapes, Comment, Image, TextBox, Section, Pen, Pencil, and Help Center. See [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Undeploy a Design"
+url: /kanvas/guides/deploying/undeploying-designs/index.md
+description: Remove the resources a design describes from your clusters, and understand exactly what is and is not deleted.
+--------------------------------------------------------------------------------
+
+Undeploying deletes the Kubernetes objects that each component in a design describes, from every cluster in the environments you select. It does not touch the design itself. The design record, its versions, and its Operator view are unchanged.
+
+## Before you start
+
+The prerequisites match [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}): a Meshery you run with a connected cluster, a non-empty design, and the **Undeploy Design** permission. The hosted kanvas.new site does not run undeploy. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}).
+
+## The undeploy flow
+
+Choose Undeploy from the design's Actions menu. The `Undeploy design "<name>"` stepper has the same five steps and gates as the deploy stepper:
+
+1. **Validate Design.** Runs validation inline.
+2. **Identify Environments.** Selects the environments, and so the clusters, to remove from.
+3. **Dry Run.** An undeploy-type [dry run]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}}) that deletes by name with server-side dry run. Because an absent object returns NotFound, a design that was never deployed, or is already removed, shows an error for every component here and needs the bypass checkbox to continue.
+4. **Finalize.** Confirms the environments and component count. The button reads Undeploy.
+5. **Finish.** Runs the removal and shows the results.
+
+## What gets deleted
+
+| Behavior | Detail |
+|---|---|
+| What is removed | One delete for each non-annotation component's object, in its namespace, on every selected cluster. |
+| How it is matched | By kind and name from the design, not by label. An object with the same kind and name that was created some other way is deleted too. |
+| Order | Reverse dependency order. A component whose dependent failed to delete is withheld: `Withheld <component>: <dependent> did not undeploy successfully`. |
+| Objects already gone | Ignored. |
+| Namespaces, custom resource definitions, volume claims, Secrets | Deleted only when the design has a component for them. |
+| Dependency charts | For components of non-Kubernetes models, Meshery uninstalls the model's Helm chart: `Undeployed dependent helm chart for <component>`. This can remove custom resource definitions and operators that other designs on the cluster use. |
+| Missing namespace | Created before the delete is attempted. |
+
+Meshery always processes dependency charts on undeploy. The Include Dependencies checkbox in the dry-run step does not change this. Before you undeploy a design that uses custom resource models, check what else on the cluster depends on its definitions.
+
+## Read the results
+
+Success raises the event `undeployed design '<name>'.` at success severity. Failure raises `Failed to undeploy design '<name>'.` at error severity, with an error card. The error codes match those in [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}). The deployment count of the design is not decremented.
+
+In Operator mode, the resources leave the live view once MeshSync reports their deletion.
+
+## Limits
+
+- There is no undeploy-type dry run outside the stepper.
+- Deleting a design does not undeploy it. Undeploy first if you want the resources gone. See [Delete a Design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}}).
+- As with deploy, the Finish step waits for a server event. If the request fails before the server raises one, the step keeps spinning with no error. See [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -5712,7 +5105,7 @@ If you delete the open design, the editor resets to a new blank design. Deleting
 
 | Item | Effect |
 |---|---|
-| Deployed resources | None. Deleting does not undeploy anything from clusters. [Undeploy]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) first if you want the resources gone. |
+| Deployed resources | None. Deleting does not undeploy anything from clusters. [Undeploy]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}}) first if you want the resources gone. |
 | Clones, Save as copies, merged-in components | Untouched. They are independent. |
 | Share grants | Removed with the design. |
 | Collaboration session | Ends when the canvas resets. |
@@ -5815,6 +5208,64 @@ Meshery can run with a local provider instead of a remote one. Under the local p
 
 
 --------------------------------------------------------------------------------
+title: "Troubleshoot Kanvas"
+url: /kanvas/guides/troubleshooting/index.md
+description: Find the symptom you see, learn what causes it, and apply the fix. Covers loading failures, missing cluster data, and failed deployments.
+--------------------------------------------------------------------------------
+
+Kanvas separates two kinds of failure. A design action that fails, such as a dry run or a deployment, produces an event with an error code and a remediation. A Kanvas that fails to load, or an Operator view with no data, produces an in-product message. This page covers both.
+
+{{< alert type="info" title="Ask for help from within Kanvas" >}}
+The **Get Help** action opens the Help and Support form. It needs a remote provider and a signed-in identity. See [Help and Support]({{< ref "kanvas/reference/help-and-support.md" >}}).
+{{< /alert >}}
+
+## Kanvas does not load
+
+If an unhandled error occurs, or the extension fails to load in the Meshery shell, Kanvas shows `Uh-oh! Something went wrong..` (`Uh-oh! Please pardon our mesh.` in the shell) with the error text. The screen offers:
+
+- **Troubleshooting Guide**, a dialog with the checks below.
+- **Get Help**, which opens the Help and Support form.
+- **Switch To Designer**, when Designer mode is available.
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| The Kanvas bundle fails to download, or the error says the bundle has no default component | The Meshery shell downloads the Kanvas UI from the provider. A failed download, or a bundle that was built incorrectly, leaves nothing to render. | Reload. If you build Kanvas yourself, rebuild it and confirm the provider serves the new bundle. |
+| Missing or stale data after an update | The browser holds a previous version. | Hard-reload the page, or open Kanvas in a private window. |
+| Features missing, or errors after upgrading Meshery or Kanvas | The Kanvas version and the Meshery version are out of step. Kanvas has no version-mismatch screen. | Update Meshery, `mesheryctl`, and Kanvas together. The Help Center footer shows the installed Kanvas version. |
+| Operator backend fails to start on a self-built Meshery | The server-side plugin is loaded from the provider's package path. A missing file, or dependency versions that differ from your Meshery build, make Meshery reject it. | Build the plugin from the same version as your Meshery server and place it in the provider package path. |
+
+Designer mode does not depend on a connected cluster. Designing, saving, and validating work with none connected.
+
+## A deployment fails
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| Dry run, deploy, or undeploy fails with `meshery-server-1096` | No selected context resolved to a connected cluster. | Connect a cluster in Meshery, check that its status is Connected, and select an environment that contains it. |
+| `meshery-server-1073` with a note about the environment | The connection is not assigned to the environment you selected, or it cannot reach the cluster. | Assign the connection to the environment, or upload a new kubeconfig. |
+| `meshery-server-1095` | The kubeconfig is invalid. | Upload a new kubeconfig. |
+| Step 2 shows `No environments found` | Your organization has no environment. | Create an environment and assign a connection to it. This needs the Create Environment and Edit Environment permissions. |
+| The Finish step spins and never reports | The request failed before the server raised an event, for example when your session expired. | Sign in again and retry. Check the notification center and the server logs. |
+| A prompt titled `SELF-HOSTED FEATURE` opens | You are on kanvas.new, which does not run validate, dry run, deploy, undeploy, or Operator. | Use a Meshery you run. |
+| Every component fails an undeploy dry run | The objects are not on the cluster. | Check that the design was deployed, or bypass the errors. |
+
+Error cards, codes, and remediations are described in [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}). The notification center's Error Docs entry opens the [Meshery error code reference](https://docs.meshery.io/reference/error-codes).
+
+## Operator mode shows no data
+
+Operator reads live cluster state that MeshSync reports through the Meshery broker. Designer keeps working when this is down.
+
+| Message | Cause | Fix |
+|---|---|---|
+| `No Kubernetes context selected`, `Please select one or more Kubernetes clusters.` | No cluster is selected in the context picker. | Select one or more clusters. |
+| `No data available for the current view` | The view's filters or the search hide every object. | Change the filters or the search. |
+| `Uh-oh. Is MeshSync healthy on the selected cluster?` or `No MeshSync data available for the selected cluster` | MeshSync has reported no objects for the cluster. The broker may be unreachable. | Check that the Meshery broker service has an external address with `kubectl get svc -n meshery`, and check firewalls and VPN software. Docker Desktop commonly fails to give the broker an address. |
+| Toast `Failed to fetch resources: <reason>` | The request for cluster resources failed. | Read the reason, then check the connection and MeshSync as above. |
+| Toast `No container found to create <type> session` | A terminal or log session needs a container and the object has none. | Pick an object that runs a container. |
+
+The Troubleshooting Guide dialog repeats the data checks. It also suggests removing the local Meshery configuration folder as a last resort when stored data is corrupt. That step deletes your local Meshery configuration, so use it only when nothing else restores the data.
+
+
+--------------------------------------------------------------------------------
 title: "Supported Import and Export Formats"
 url: /kanvas/reference/supported-formats/index.md
 description: Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
@@ -5885,7 +5336,7 @@ Kanvas gives you two ways to get help without leaving the canvas: the **Help Cen
 
 ## Help Center
 
-The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the **Get Help** action in the [troubleshooting]({{< ref "kanvas/reference/troubleshooting.md" >}}) panel.
+The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the **Get Help** action in the [troubleshooting]({{< ref "kanvas/guides/troubleshooting.md" >}}) panel.
 
 | Entry | What it gives you |
 |---|---|
@@ -5934,7 +5385,7 @@ Every request carries the requester's name and email so the team can reply. Kanv
 - When the profile resolves, the form appears addressed with your identity.
 - When the profile cannot be resolved, for example because the session expired, the form does not appear and nothing is submitted. A request with no way to reply has no value.
 
-If the form does not appear, sign in to your provider again and reopen it. If it still does not appear, see [Troubleshooting Kanvas]({{< ref "kanvas/reference/troubleshooting.md" >}}).
+If the form does not appear, sign in to your provider again and reopen it. If it still does not appear, see [Troubleshooting Kanvas]({{< ref "kanvas/guides/troubleshooting.md" >}}).
 
 ## Type of inquiry
 
@@ -6053,6 +5504,12 @@ Thank you to our contributors for making this release possible:
 --------------------------------------------------------------------------------
 title: "Configuring Components"
 url: /kanvas/designer/configuring-components/index.md
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+title: "Deploy a Design"
+url: /kanvas/tasks/designs/deploying-designs/index.md
 --------------------------------------------------------------------------------
 
 
@@ -8071,64 +7528,6 @@ The Log Streamer utilizes a robust architecture where the **Meshery Operator** s
 
 
 --------------------------------------------------------------------------------
-title: "Troubleshooting Kanvas"
-url: /kanvas/reference/troubleshooting/index.md
-description: Learn to Troubleshoot the Kanvas
---------------------------------------------------------------------------------
-
-{{< alert type="info" title="Asking for help from within Kanvas" >}}
-Kanvas's **Get Help** action opens the Help and Support form. It requires a remote provider and a resolved signed-in identity - see [Help and Support](/kanvas/reference/help-and-support) if the form does not open or a submission is rejected.
-{{< /alert >}}
-
-## Meshery Extension
-
-### Designer Mode
-
-Upon Meshery extension's first load, a GET request initializes the Kanvas plugin. Errors are classified into two types: plugin not found or built on a different version. Kanvas loads, and Designer is functional if no errors occur.
-
-### Operator Mode
-
-GraphQL queries fetch header data and view data for the Operator canvas. Checks ensure data types and properties are correct, enabling canvas display. If no clusters are connected, a modal prompts the user to select one.
-
-## Fault Scenarios Explained for Kanvas Extension
-
-### 1. MISSING PLUGIN
-
-- **MODE STATE:** Operator and Designer: Inactive, Not Interactable.
-- **CAUSED WHEN:** plugin.so is not in the desired folder.
-- **REMEDIATION:** Confirm plugin versions, run make dev or make prod on the local meshery-extension folder.
-
-### 2. INCOMPATIBLE PLUGIN
-
-- **MODE STATE:** Operator and Designer: Inactive, Not Interactable.
-- **CAUSED WHEN:** go.mod mismatches between meshery/meshery and layer5labs/meshery-extensions.
-- **REMEDIATION:** Ensure identical go.mod files and plugin version matching.
-
-### 3. NO ACTIVE CLUSTER CONNECTIONS
-
-- **MODE STATE:** Operator: Active, Not Interactable; Designer: Active, Interactable.
-- **CAUSED WHEN:** No active Kubernetes cluster connections.
-- **REMEDIATION:** Connect a Kubernetes cluster from settings.
-
-### 4. MISSING MESHSYNC DATA / NATS NOT RUNNING
-
-- **MODE STATE:** Operator: Active, Not Interactable; Designer: Active, Interactable.
-- **CAUSED WHEN:** Meshery Broker lacks an external IP address or networking issues.
-- **REMEDIATION:** Delete meshery-meshsync pod, use Docker Desktop/Kind/Minikube/external cloud provider.
-
-### 5. CORRUPT DATABASE
-
-- **MODE STATE:** Operator: Inactive, Not Interactable; Designer: Active, Interactable.
-- **CAUSED WHEN:** Unable to save/query database.
-- **REMEDIATION:** Use System Reset button or remove the config folder and rebuild Meshery.
-
-### 6. INCOMPATIBLE MESHMAP AND MESHERY VERSION
-
-- **MODE STATE:** Operator and Designer: Active, Interactable.
-- **CAUSED WHEN:** Meshery and Kanvas version mismatches.
-- **REMEDIATION:** Pull/build the latest Kanvas, update Mesheryctl and Meshery.
-
---------------------------------------------------------------------------------
 title: "Understanding Kubernetes ConfigMaps and Secrets with Meshery"
 url: /kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md
 description: In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
@@ -8279,6 +7678,12 @@ To delete the resources, use the **Undeploy** option from the _Design_ view.
 
 ## Conclusion
 Congratulations! You've successfully completed a tutorial on Kubernetes ConfigMaps and Secrets using the Meshery Playground. This hands-on experience should have equipped you with practical knowledge on managing configuration data and sensitive information in Kubernetes. Continue exploring more such scenarios in the Meshery Playground to enhance your skills.
+
+
+--------------------------------------------------------------------------------
+title: "Validate a Design"
+url: /kanvas/tasks/designs/validating-designs/index.md
+--------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------

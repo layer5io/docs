@@ -20,7 +20,7 @@ If you delete the open design, the editor resets to a new blank design. Deleting
 
 | Item | Effect |
 |---|---|
-| Deployed resources | None. Deleting does not undeploy anything from clusters. [Undeploy](/kanvas/tasks/designs/undeploying-designs/) first if you want the resources gone. |
+| Deployed resources | None. Deleting does not undeploy anything from clusters. [Undeploy](/kanvas/guides/deploying/undeploying-designs/) first if you want the resources gone. |
 | Clones, Save as copies, merged-in components | Untouched. They are independent. |
 | Share grants | Removed with the design. |
 | Collaboration session | Ends when the canvas resets. |

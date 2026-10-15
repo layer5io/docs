@@ -16,19 +16,11 @@
 
 - [Understanding Edge Styles](/kanvas/designer/understanding-edges/index.md): Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
 
-- [Validating Designs](/kanvas/tasks/designs/validating-designs/index.md): Prior to deploying a design, you can validate the configuration that it contains in accordance with the target platform.
-
 - [Auto-pan on Drag](/kanvas/advanced/autopan/index.md): Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
-
-- [Dry Running a Design](/kanvas/tasks/designs/dry-running-a-design/index.md): A dry run simulates the deployment of your design in the selected target environment without making any actual changes.
 
 - [Exploring Kubernetes Services with Meshery](/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
 - [Interpreting Component Badges](/kanvas/designer/interpreting-component-badges/index.md): Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
-- [Undeploying Designs](/kanvas/tasks/designs/undeploying-designs/index.md): Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
-
 - [Understanding Tool Modes](/kanvas/designer/understanding-tool-modes/index.md): Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Learn how to interact with components and the canvas in each mode.
-
-- [Deploying Designs](/kanvas/tasks/designs/deploying-designs/index.md): Each Meshery design is deployable to one or more Kubernetes clusters.
 
 - [Render Modes](/kanvas/advanced/render-modes/index.md): Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
 
@@ -55,25 +47,30 @@
 - [Designs and Components](/kanvas/concepts/designs/index.md): What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
 - [Feature Availability by Plan](/kanvas/reference/feature-availability/index.md): Which Kanvas capabilities each Layer5 plan includes, and the role, provider, and hosting conditions that also decide whether a capability is available to you.
 - [Import and Merge Designs](/kanvas/guides/designs/import-designs/index.md): Bring Kubernetes manifests, Helm charts, Docker Compose files, Kustomize projects, and Meshery designs into Kanvas, and merge one design into another.
+- [Validate a Design](/kanvas/guides/deploying/validating-designs/index.md): Check every component's configuration against its schema before you deploy, read the results, and fix what they flag.
 - [Canvas Actions](/kanvas/designer/canvas-actions/index.md): The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
 
 - [Layout and Layers](/kanvas/designer/layout-and-layers/index.md): Arrange the components in a design automatically, and choose which entities the canvas draws.
 
 - [Create Relationships](/kanvas/guides/designing/creating-relationships/index.md): Connect components with edges, nest them in parents, and remove or hide relationships. Covers which relationships you draw and which Kanvas forms for you.
 - [Deploy and Observe Your First Design](/kanvas/getting-started/design-to-deployment/index.md): Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
+- [Dry-run a Design](/kanvas/guides/deploying/dry-running-a-design/index.md): Preview what a deployment would do by having each target cluster's Kubernetes API check your design without applying it.
 - [Permissions by Role](/kanvas/reference/permissions/index.md): Which Kanvas actions are checked against a permission, which default role grants each permission, what anonymous users can do, and which actions are limited by mode and ownership instead.
 - [Relationships](/kanvas/concepts/relationships/index.md): What relationships are, the kinds Kanvas draws and evaluates, how each one forms, and how relationships keep component configuration consistent.
 - [Save Designs](/kanvas/guides/designs/saving-designs/index.md): How Kanvas saves a design automatically, what the save indicator reports, how to save a copy, and what happens when a save fails.
 - [Clone a Design](/kanvas/guides/designs/cloning-a-design/index.md): Copy a public or published design into your own workspace to use as a template, and learn what carries over.
+- [Deploy a Design](/kanvas/guides/deploying/deploying-designs/index.md): Apply a design to one or more Kubernetes clusters, and understand targets, ordering, dependencies, results, and failure behavior.
 - [Policy Evaluation](/kanvas/concepts/relationship-evaluation/index.md): How Kanvas evaluates the relationships in a design continuously, which engine runs the evaluation, what triggers it, and why results can change after you stop editing.
 - [Whiteboard on the Canvas](/kanvas/guides/designing/whiteboarding/index.md): Sketch freehand, draw annotation lines, and add shapes, text, sections, images, and comments alongside real components.
 - [Export Designs](/kanvas/guides/designs/export-designs/index.md): Export a design as a design file, an OCI image, a Kubernetes manifest, a Helm chart, or an embeddable script, and know what each format keeps.
 - [Pin Models to the Dock](/kanvas/guides/designing/pin-model-to-dock/index.md): Keep the models you use most one step away in the dock, and remove them when you no longer need them.
+- [Undeploy a Design](/kanvas/guides/deploying/undeploying-designs/index.md): Remove the resources a design describes from your clusters, and understand exactly what is and is not deleted.
 - [Embed Designs](/kanvas/guides/designs/embedding-designs/index.md): Show a design on a web page, blog, or documentation site with an exported JavaScript snapshot, including WordPress, React, and Hugo.
 - [Work with Tags](/kanvas/guides/designing/tagsets/index.md): Add labels and annotations to components and see components that share labels grouped into TagSets on the canvas.
 - [Publish Designs](/kanvas/guides/designs/publishing-designs/index.md): Publish a design to the Layer5 Cloud catalog, understand request and approval states, unpublish it, and ship it to Artifact Hub yourself.
 - [Delete a Design](/kanvas/guides/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand what deletion does and does not affect.
 - [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
+- [Troubleshoot Kanvas](/kanvas/guides/troubleshooting/index.md): Find the symptom you see, learn what causes it, and apply the fix. Covers loading failures, missing cluster data, and failed deployments.
 - [Supported Import and Export Formats](/kanvas/reference/supported-formats/index.md): Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
 - [Help and Support](/kanvas/reference/help-and-support/index.md): What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
@@ -82,6 +79,7 @@
 - [v1.0.68-3](/kanvas/reference/releases/v1.0.68-3/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 fix(kanvas): restore the persist-anonymous-user provider capability @ritzorama (#4359) …
 - [v1.0.68-2](/kanvas/reference/releases/v1.0.68-2/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 fix(ui): break the renderer -&gt; editor import cycle that throws TDZ errors at runtime …
 - [Configuring Components](/kanvas/designer/configuring-components/index.md)
+- [Deploy a Design](/kanvas/tasks/designs/deploying-designs/index.md)
 - [Deploy AWS EC2 Instances with Meshery](/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/index.md): Learn how to deploy and manage AWS EC2 instances through Kubernetes with Meshery, utilizing AWS Controllers for Kubernetes (ACK) to enhance cloud resource management
 - [Deploy Azure resources with Meshery](/kanvas/tutorials/azure/deploy-azure-resources-with-meshery/index.md): Learn how to deploy and manage Azure resources through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
 - [Deploy Azure Storage Account with Meshery](/kanvas/tutorials/azure/deploy-azure-storage-account-with-meshery/index.md): Learn how to deploy and manage Azure Storage account through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
@@ -101,8 +99,8 @@
 
 - [Log Streaming](/kanvas/operator/log-streaming/index.md): Learn about Log Streaming in Operator mode
 
-- [Troubleshooting Kanvas](/kanvas/reference/troubleshooting/index.md): Learn to Troubleshoot the Kanvas
 - [Understanding Kubernetes ConfigMaps and Secrets with Meshery](/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md): In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
+- [Validate a Design](/kanvas/tasks/designs/validating-designs/index.md)
 - [Whiteboarding](/kanvas/designer/whiteboarding/index.md)
 
 ## From Whiteboard to Workload

@@ -35,14 +35,14 @@ See [Manage Designs](/kanvas/guides/designs/) for the group.
 
 ## Validate and deploy
 
-Run the steps in this order. Validation catches configuration errors in the design, a dry run checks the design against the target clusters, and a deployment applies it.
+See [Validate and Deploy](/kanvas/guides/deploying/) for the group. Run the steps in this order. Validation catches configuration errors in the design, a dry run checks the design against the target clusters, and a deployment applies it.
 
 | Goal | Guide |
 |---|---|
-| Check a design's configuration | [Validating Designs](/kanvas/tasks/designs/validating-designs/) |
-| Simulate a deployment without changes | [Dry Running a Design](/kanvas/tasks/designs/dry-running-a-design/) |
-| Apply a design to one or more clusters | [Deploying Designs](/kanvas/tasks/designs/deploying-designs/) |
-| Roll a deployment back | [Undeploying Designs](/kanvas/tasks/designs/undeploying-designs/) |
+| Check a design's configuration | [Validate a Design](/kanvas/guides/deploying/validating-designs/) |
+| Simulate a deployment without changes | [Dry-run a Design](/kanvas/guides/deploying/dry-running-a-design/) |
+| Apply a design to one or more clusters | [Deploy a Design](/kanvas/guides/deploying/deploying-designs/) |
+| Roll a deployment back | [Undeploy a Design](/kanvas/guides/deploying/undeploying-designs/) |
 
 ## Collaborate and review
 
@@ -70,5 +70,5 @@ Run the steps in this order. Validation catches configuration errors in the desi
 
 | Goal | Guide |
 |---|---|
-| Diagnose and resolve a Kanvas problem | [Troubleshooting Kanvas](/kanvas/reference/troubleshooting/) |
+| Diagnose and resolve a Kanvas problem | [Troubleshoot Kanvas](/kanvas/guides/troubleshooting/) |
 

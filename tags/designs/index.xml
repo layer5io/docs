@@ -54,46 +54,7 @@
  Semantic Edges: Representing Real Infrastructure
  &lt;a href="#semantic-edges-representing-real-infrastructure" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:&lt;/p&gt;</description></item><item><title>Validating Designs</title><link>/kanvas/tasks/designs/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/validating-designs/</guid><description>&lt;h2 id="how-validation-works" class="heading-link"&gt;
- How Validation Works
- &lt;a href="#how-validation-works" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Meshery uses static analysis to verify your design. It checks all components within your design and all configured and unconfigured properties of your components against well-defined schemas based on Meshery Models.&lt;/p&gt;
-&lt;p&gt;This comprehensive validation ensures that:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;The design adheres to the expected structure and format.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;All components are valid and recognized by Meshery.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;There are no missing required configurations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="performing-validation" class="heading-link"&gt;
- Performing Validation
- &lt;a href="#performing-validation" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;To validate your design, navigate to the Actions button at the top of the Design canvas.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/tasks/designs/validating-designs/images/validating-designs/performing-validation-1_hu_69e1d225111cb837.webp" type="image/webp" width="1338" height="582"&gt;
- &lt;img src="images/validating-designs/performing-validation-1.png" onclick="openModal(this)" alt="Navigate to Actions button"
- width="1338" height="582"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Dry Running a Design</title><link>/kanvas/tasks/designs/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/dry-running-a-design/</guid><description>&lt;p&gt;A dry run in Meshery simulates the deployment of your design in the selected target environment without making any actual changes. This step is highly beneficial as it helps identify potential issues before they occur, ensuring a smoother and more reliable deployment process.&lt;/p&gt;
-&lt;p&gt;Each component in your design is submitted to the Kubernetes API server of every selected cluster as a dry-run request. The API server validates the resource exactly as it would on a real apply - schema, field values, admission - and then discards it. Nothing is created, updated, or persisted, so a dry run is safe to repeat as often as you like.&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
+&lt;p&gt;These edges represent real infrastructure relationships that Kanvas can understand and manage. For example:&lt;/p&gt;</description></item><item><title>Interpreting Component Badges</title><link>/kanvas/designer/interpreting-component-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/interpreting-component-badges/</guid><description>&lt;p&gt;Ever wondered what those little icons in the corners of your components are? Think of them as your component&amp;rsquo;s real-time status display. These indicators, called &lt;strong&gt;badges&lt;/strong&gt;, give you at-a-glance information about everything from configuration errors to live performance.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -127,373 +88,7 @@
  What Each Corner Means
  &lt;a href="#what-each-corner-means" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;While the specific badges change depending on your mode, they all follow a consistent placement philosophy. Badges are organized into four quadrants around a component, with each corner reserved for a specific type of information.&lt;/p&gt;</description></item><item><title>Undeploying Designs</title><link>/kanvas/tasks/designs/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/undeploying-designs/</guid><description>&lt;p&gt;To undeploy the resources&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Navigate to the Actions button at the top of the Design canvas.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click on the &lt;strong&gt;Undeploy&lt;/strong&gt; icon.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/tasks/designs/undeploying-designs/images/undeploying-designs/undeploy_hu_ed4a4465979d0499.webp" type="image/webp" width="1276" height="1125"&gt;
- &lt;img src="images/undeploying-designs/undeploy.png" onclick="openModal(this)" alt="undeploying designs"
- width="1276" height="1125"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;!-- Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
-
-There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.
-
-90's four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps **kale chips**.
-
-&gt; There should be no margin above this first sentence.
-&gt;
-&gt; Blockquotes should be a lighter gray with a border along the left side in the secondary color.
-&gt;
-&gt; There should be no margin below this final sentence.
-
-## First Header 2
-
-This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier **craft beer**. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven't heard of them copper mug, crucifix green juice vape *single-origin coffee* brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!
-
-Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.
-
-On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.
-
-Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&amp;B. **I love this life we live in**.
-
-
-## Second Header 2
-
-&gt; This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-Next level leggings before they sold out, PBR&amp;B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
-
-#### Header 4
-
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-* This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What | Follows |
-|-----------|-----------------|
-| A table | A header |
-| A table | A header |
-| A table | A header |
-
-----------------
-
-There's a horizontal rule above and below this.
-
-----------------
-
-Here is an unordered list:
-
-* Liverpool F.C.
-* Chelsea F.C.
-* Manchester United F.C.
-
-And an ordered list:
-
-1. Michael Brecker
-2. Seamus Blake
-3. Branford Marsalis
-
-And an unordered task list:
-
-- [x] Create a Hugo theme
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Pack bags
-- ?
-- [ ] Travel!
-
-And a nested list:
-
-* Jackson 5
- * Michael
- * Tito
- * Jackie
- * Marlon
- * Jermaine
-* TMNT
- * Leonardo
- * Michelangelo
- * Donatello
- * Raphael
-
-Definition lists can be used with Markdown syntax. Definition headers are bold.
-
-Name
-: Godzilla
-
-Born
-: 1952
-
-Birthplace
-: Japan
-
-Color
-: Green
-
-
-----------------
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist | Album | Year |
-|-------------------|-----------------|------|
-| Michael Jackson | Thriller | 1982 |
-| Prince | Purple Rain | 1984 |
-| Beastie Boys | License to Ill | 1986 |
-
-If a table is too wide, it should scroll horizontally.
-
-| Artist | Album | Year | Label | Awards | Songs |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson | Thriller | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince | Purple Rain | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys | License to Ill | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin &amp; Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-----------------
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-foo := "bar";
-bar := "foo";
-```
-
-Code can also use syntax highlighting.
-
-```go
-func main() {
- input := `var foo = "bar";`
-
- lexer := lexers.Get("javascript")
- iterator, _ := lexer.Tokenise(nil, input)
- style := styles.Get("github")
- formatter := html.New(html.WithLineNumbers())
-
- var buff bytes.Buffer
- formatter.Format(&amp;buff, style, iterator)
-
- fmt.Println(buff.String())
-}
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language | Code |
-|-------------|--------------------|
-| Javascript | `var foo = "bar";` |
-| Ruby | `foo = "bar"{` |
-
-----------------
-
-Small images should be shown at their actual size.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-Large images should always scale down and fit in the content container.
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg)
-
-_The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA._
-
-
-## Components
-
-### Alerts
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
-
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Success&lt;/h4&gt;
- 
- This is an alert.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
- 
- This is an alert with a title.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-primary" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Note&lt;/h4&gt;
- 
- This is an alert with a title and &lt;strong&gt;Markdown&lt;/strong&gt;.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
-
-&lt;div class="alert alert-success" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Success&lt;/h4&gt;
- 
- This is a successful alert.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
-
-&lt;div class="alert alert-warning" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Warning&lt;/h4&gt;
- 
- This is a warning.
- 
-&lt;/div&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;div class="alert alert-warning" role="alert"&gt;
- &lt;h4 class="alert-heading"&gt;Warning&lt;/h4&gt;
- 
- This is a warning with a title.
- 
-&lt;/div&gt;
-
-
-
-
-## Another Heading
-
-Add some sections here to see how the ToC looks like. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### This Document
-
-Inguina genus: Anaphen post: lingua violente voce suae meus aetate diversi. Orbis unam nec flammaeque status deam Silenum erat et a ferrea. Excitus rigidum ait: vestro et Herculis convicia: nitidae deseruit coniuge Proteaque adiciam *eripitur*? Sitim noceat signa *probat quidem*. Sua longis *fugatis* quidem genae.
-
-
-### Pixel Count
-
-Tilde photo booth wayfarers cliche lomo intelligentsia man braid kombucha vaporware farm-to-table mixtape portland. PBR&amp;B pickled cornhole ugh try-hard ethical subway tile. Fixie paleo intelligentsia pabst. Ennui waistcoat vinyl gochujang. Poutine salvia authentic affogato, chambray lumbersexual shabby chic.
-
-### Contact Info
-
-Plaid hell of cred microdosing, succulents tilde pour-over. Offal shabby chic 3 wolf moon blue bottle raw denim normcore poutine pork belly.
-
-
-### External Links
-
-Stumptown PBR&amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.
-
-```
-This is the final element on the page and there should be no margin below this.
-``` --&gt;</description></item><item><title>Understanding Tool Modes</title><link>/kanvas/designer/understanding-tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-tool-modes/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
+&lt;p&gt;While the specific badges change depending on your mode, they all follow a consistent placement philosophy. Badges are organized into four quadrants around a component, with each corner reserved for a specific type of information.&lt;/p&gt;</description></item><item><title>Understanding Tool Modes</title><link>/kanvas/designer/understanding-tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/understanding-tool-modes/</guid><description>&lt;!-- set of custom keyboard button classes --&gt;
 &lt;link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" /&gt;
 Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Understanding these modes is essential for effectively interacting with components and the canvas.
 &lt;p&gt;You can switch between mouse modes using hotkeys or tool selection. Here are hotkeys that control your mode:&lt;/p&gt;
@@ -743,59 +338,7 @@ Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave
  &lt;/div&gt;
  &lt;div class="tab-body tab-pane fade"
  id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0"&gt;
- &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Deploying Designs</title><link>/kanvas/tasks/designs/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tasks/designs/deploying-designs/</guid><description>&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;To deploy a design, navigate to the &lt;strong&gt;Actions&lt;/strong&gt; button at the top of the Design canvas.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click on the &lt;strong&gt;Deploy&lt;/strong&gt; icon.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;This opens a modal that will take you through all the steps before the final deployment.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click on &lt;strong&gt;Open In Operator&lt;/strong&gt; to see the pre-filtered view of the deployed resources in the cluster&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Click &lt;strong&gt;Finish&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/tasks/designs/deploying-designs/images/deploy-designs/success-deploy_hu_bcb1f57ed3224ad7.webp" type="image/webp" width="1275" height="1122"&gt;
- &lt;img src="images/deploy-designs/success-deploy.png" onclick="openModal(this)" alt="success-deploy"
- width="1275" height="1122"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id="deployment-errors" class="heading-link"&gt;
- Deployment Errors
- &lt;a href="#deployment-errors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Missing Namespace&lt;/strong&gt;: This error occurs when you attempt to create a Kubernetes resource without specifying a namespace. Kubernetes requires that all resources have an associated namespace.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/kanvas/tasks/designs/deploying-designs/images/deploy-designs/missing-ns_hu_ce9078de4b895068.webp" type="image/webp" width="1148" height="566"&gt;
- &lt;img src="images/deploy-designs/missing-ns.png" onclick="openModal(this)" alt="missing-ns"
- width="1148" height="566"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
+ &lt;p&gt;Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.&lt;/p&gt;</description></item><item><title>Reviewing Designs</title><link>/kanvas/designer/comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/comments/</guid><description>&lt;p&gt;Kanvas&amp;rsquo;s Designer enables you to place comments &amp;ldquo;inline&amp;rdquo; with your infrastructure as code. Use comments to offer feedback to team members, take detailed design notes, capture helpful tips for your team members, and include justification as to your infrastructure and application configuration decisions. Pay it forward to your future self by leaving historical record for reference later.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/kanvas-comment.png" alt="Comments in Designer" /&gt;
  &lt;figcaption&gt;Example of comments in Designer&lt;/figcaption&gt;
@@ -965,7 +508,45 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
+&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Validate a Design</title><link>/kanvas/guides/deploying/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/validating-designs/</guid><description>&lt;p&gt;Validation checks the configuration of each component in a design against the schema of that component&amp;rsquo;s definition. It runs in your browser, needs no cluster, and changes nothing. Run it while you build to catch missing or malformed fields before a dry run or a deployment spends time on them.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Environment.&lt;/strong&gt; Validation runs in a Meshery you run. The hosted kanvas.new site does not run it and shows a self-hosted-feature prompt instead.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A non-empty design.&lt;/strong&gt; The Actions menu is disabled while the design has no components. An unsaved design validates; Kanvas validates the design as it is on the canvas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; On mobile, the Validate Design permission gates the action. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="what-validation-checks" class="heading-link"&gt;
+ What validation checks
+ &lt;a href="#what-validation-checks" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Checked&lt;/th&gt;
+ &lt;th&gt;Not checked&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Each component&amp;rsquo;s configuration against the JSON schema of its registered definition, with all errors collected per component&lt;/td&gt;
+ &lt;td&gt;Relationships between components&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Required fields, types, and formats, including 32-bit and 64-bit integers and integer-or-string values&lt;/td&gt;
+ &lt;td&gt;Dependencies, namespaces, and cross-references&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;Anything in the target cluster&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item><item><title>Canvas Actions</title><link>/kanvas/designer/canvas-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/canvas-actions/</guid><description>&lt;p&gt;Right-clicking an empty part of the canvas - anywhere no component sits - opens the &lt;strong&gt;Canvas Actions&lt;/strong&gt; menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.&lt;/p&gt;
 &lt;p&gt;The menu adapts to the mode you are in. Commenting and pasting, for example, are offered in Designer mode but not in Operator mode, where the canvas reflects discovered infrastructure rather than a design you are authoring.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/designer/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
 &lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Create Relationships</title><link>/kanvas/guides/designing/creating-relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/creating-relationships/</guid><description>&lt;p&gt;Relationships record how components connect, and Kanvas keeps related configuration in sync once they exist. You create some relationships by hand and Kanvas creates others when it evaluates the design. This guide shows which is which, how to create each kind, and how to remove or hide them.&lt;/p&gt;
 &lt;p&gt;Relationships work only in Designer mode. For what each kind means, read &lt;a href="/kanvas/concepts/relationships/"&gt;Relationships&lt;/a&gt;.&lt;/p&gt;
@@ -1016,7 +597,19 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  &lt;a href="#create-an-edge-relationship" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Edge relationships connect components that exchange traffic or depend on one another, such as a Service and a Deployment.&lt;/p&gt;</description></item><item><title>Deploy and Observe Your First Design</title><link>/kanvas/getting-started/design-to-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/design-to-deployment/</guid><description>&lt;p&gt;In this tutorial you take the design you saved in &lt;a href="/kanvas/getting-started/starting-scratch/"&gt;Create Your First Design&lt;/a&gt; to a live Kubernetes cluster. You validate it, dry-run it against the cluster, deploy it, and then switch to Operator mode to see the running resources that belong to the design. You finish by undeploying it.&lt;/p&gt;
-&lt;p&gt;Along the way you learn the difference between checking a design against its schemas and checking it against a cluster, how Kanvas chooses where to deploy, and how Kanvas keeps track of the resources a design creates.&lt;/p&gt;</description></item><item><title>Manage Designs</title><link>/kanvas/guides/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/</guid><description>&lt;p&gt;A design is a single record in Layer5 Cloud. It has one owner, lives in one workspace, and carries a visibility (private, public, or published) and a version. These guides cover each way a design enters, changes state, and leaves that record.&lt;/p&gt;
+&lt;p&gt;Along the way you learn the difference between checking a design against its schemas and checking it against a cluster, how Kanvas chooses where to deploy, and how Kanvas keeps track of the resources a design creates.&lt;/p&gt;</description></item><item><title>Dry-run a Design</title><link>/kanvas/guides/deploying/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/dry-running-a-design/</guid><description>&lt;p&gt;A dry run submits every component in the design to the Kubernetes API server of each target cluster as a server-side dry-run request. The API server validates the object exactly as it would on a real apply, including schema, field values, and admission, and then discards it. Nothing is created, updated, or persisted, so you can repeat a dry run as often as you like.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A connected cluster.&lt;/strong&gt; Meshery must hold at least one connected Kubernetes context. With none, the request fails with error &lt;code&gt;meshery-server-1096&lt;/code&gt;, Kubernetes cluster is unavailable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A non-empty design.&lt;/strong&gt; The Actions menu is disabled for an empty design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; Dry run is gated by the Validate Design permission. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not run dry runs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Meshery Server performs the dry run with the kubeconfig it holds. Meshery Operator, MeshSync, and the broker are not required.&lt;/p&gt;</description></item><item><title>Manage Designs</title><link>/kanvas/guides/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/</guid><description>&lt;p&gt;A design is a single record in Layer5 Cloud. It has one owner, lives in one workspace, and carries a visibility (private, public, or published) and a version. These guides cover each way a design enters, changes state, and leaves that record.&lt;/p&gt;
 &lt;p&gt;Two defaults shape everything below. A design saved for the first time is public, whatever visibility the client requests. Every save of an existing design raises its patch version by one (0.0.1, 0.0.2, and so on).&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Save Designs</title><link>/kanvas/guides/designs/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/saving-designs/</guid><description>&lt;p&gt;Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.&lt;/p&gt;
 &lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
 
@@ -1024,7 +617,56 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
  What you can clone
  &lt;a href="#what-you-can-clone" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The server clones only designs whose visibility is public or published. A request for any other design fails with 403 &amp;ldquo;unauthorized to clone design&amp;rdquo;. That includes your own private designs. To copy one of those, open it and use Save as. See &lt;a href="/kanvas/guides/designs/saving-designs/"&gt;Save Designs&lt;/a&gt;. A missing source design returns 500 &amp;ldquo;could not find design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Whiteboard on the Canvas</title><link>/kanvas/guides/designing/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
+&lt;p&gt;The server clones only designs whose visibility is public or published. A request for any other design fails with 403 &amp;ldquo;unauthorized to clone design&amp;rdquo;. That includes your own private designs. To copy one of those, open it and use Save as. See &lt;a href="/kanvas/guides/designs/saving-designs/"&gt;Save Designs&lt;/a&gt;. A missing source design returns 500 &amp;ldquo;could not find design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Deploy a Design</title><link>/kanvas/guides/deploying/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/deploying-designs/</guid><description>&lt;p&gt;Deploying applies the components in a design to the Kubernetes clusters in the environments you choose. Meshery Server does the work with the kubeconfig it holds: it creates each object, or updates it in place when it already exists. Deploying the same design again is safe and idempotent.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Meshery you run, with a connected cluster.&lt;/strong&gt; The hosted kanvas.new site does not deploy; it shows a self-hosted-feature prompt. Meshery needs at least one connected Kubernetes context that belongs to an environment in your organization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A non-empty design.&lt;/strong&gt; The Actions menu is disabled for an empty design. An unsaved design deploys as it stands on the canvas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; The Deploy Design permission gates the action. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;. Selecting environments from the empty state also needs the Create Environment and Edit Environment permissions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A provider session.&lt;/strong&gt; Without a signed-in session the request fails before any event is raised.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Validate and Deploy</title><link>/kanvas/guides/deploying/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/</guid><description>&lt;p&gt;Four actions take a design from the canvas to running infrastructure and back. Run them in this order. Each one is stricter than the last and costs a little more.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;th&gt;Checks or changes&lt;/th&gt;
+ &lt;th&gt;Needs a cluster&lt;/th&gt;
+ &lt;th&gt;Changes the cluster&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/deploying/validating-designs/"&gt;Validate&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Each component&amp;rsquo;s configuration against its schema, in your browser&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/deploying/dry-running-a-design/"&gt;Dry run&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;The design against the Kubernetes API of each target cluster&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/deploying/deploying-designs/"&gt;Deploy&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Creates or updates every component&amp;rsquo;s object on the target clusters&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/kanvas/guides/deploying/undeploying-designs/"&gt;Undeploy&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Deletes every component&amp;rsquo;s object from the target clusters&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The deploy and undeploy flows are five-step wizards that run validation and a dry run for you, so you do not need to run them separately first.&lt;/p&gt;</description></item><item><title>Whiteboard on the Canvas</title><link>/kanvas/guides/designing/whiteboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/whiteboarding/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/o58hO4RDCR4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
@@ -1037,7 +679,13 @@ a plain &lt;strong&gt;shape&lt;/strong&gt; used as a legend key.&lt;/p&gt;</desc
 &lt;li&gt;&lt;strong&gt;Operator shows the running result.&lt;/strong&gt; It displays live cluster state and links it back to the design: every resource Kanvas deploys carries the identity of its source design, so Operator can show exactly what one design produced.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; &lt;a href="/kanvas/concepts/designs/"&gt;Designs and Components&lt;/a&gt; explains visibility in full.&lt;/p&gt;</description></item><item><title>Export Designs</title><link>/kanvas/guides/designs/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/export-designs/</guid><description>&lt;p&gt;Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or &lt;code&gt;kubectl&lt;/code&gt;, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.&lt;/p&gt;
-&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Embed Designs</title><link>/kanvas/guides/designs/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/embedding-designs/</guid><description>&lt;p&gt;An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.&lt;/p&gt;
+&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Undeploy a Design</title><link>/kanvas/guides/deploying/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/undeploying-designs/</guid><description>&lt;p&gt;Undeploying deletes the Kubernetes objects that each component in a design describes, from every cluster in the environments you select. It does not touch the design itself. The design record, its versions, and its Operator view are unchanged.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The prerequisites match &lt;a href="/kanvas/guides/deploying/deploying-designs/"&gt;Deploy a Design&lt;/a&gt;: a Meshery you run with a connected cluster, a non-empty design, and the &lt;strong&gt;Undeploy Design&lt;/strong&gt; permission. The hosted kanvas.new site does not run undeploy. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Embed Designs</title><link>/kanvas/guides/designs/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/embedding-designs/</guid><description>&lt;p&gt;An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.&lt;/p&gt;
 
 &lt;h2 id="how-an-embed-works" class="heading-link"&gt;
  How an embed works
