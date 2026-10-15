@@ -80,7 +80,7 @@ Kanvas saves for you. Once the design is saveable, Kanvas saves pending changes 
 Three things happen when a design is saved:
 
 - **A new version is created.** Every save increments the design's version, so a design accumulates a history of versions as you work.
-- **A new design starts as public.** The first save of a new design sets its visibility to public. Later saves keep whatever visibility the design has at that point. Designs can also be private or published; [Saving designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}) explains each.
+- **A new design starts as public.** The first save of a new design sets its visibility to public. Later saves keep whatever visibility the design has at that point. Designs can also be private or published; [Saving designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}) explains each.
 - **Your plan's component limit is checked.** Each plan sets a maximum number of components per design, and Kanvas checks it on every save and import. A design over the limit is not saved; Kanvas reports "Design exceeds maximum limit of N components supported by your current plan". Reduce the number of components or upgrade the plan. See [Layer5 pricing](https://layer5.io/pricing) for the limit on each plan.
 
 This three-component design is well within every plan's limit.
@@ -89,7 +89,7 @@ This three-component design is well within every plan's limit.
 
 ## Optional: Merge another design into this one
 
-You can bring an existing design into the canvas you are working on. Kanvas merges its components and relationships into the current design and leaves the original design unchanged. Use this to assemble a larger system from designs you already have. See [Merging designs]({{< ref "kanvas/designer/merging-designs/index.md" >}}).
+You can bring an existing design into the canvas you are working on. Kanvas merges its components and relationships into the current design and leaves the original design unchanged. Use this to assemble a larger system from designs you already have. See [Merging designs]({{< ref "kanvas/guides/designs/import-designs/index.md" >}}).
 
 ## What you built
 
