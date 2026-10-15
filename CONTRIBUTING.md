@@ -12,12 +12,14 @@ Not sure where to start? First, see the [newcomers welcome guide](https://layer5
 - <a href="#prerequisites">Prerequisites</a>
 - <a href="#set-up-your-local-development-environment">Set up your Local Development Environment</a>
 - <a href="#commit-signing">Developer Certificate of Origin</a>
+- <a href="#markdown-export">LLM-friendly page output</a>
 
 Relevant coding style guidelines are the Go Code Review Comments and the Formatting and style section of Peter Bourgon's Go: Best Practices for Production Environments.
 
 # <a name="contributing">General Contribution Flow</a>
 
 In order to contribute to Layer5 docs, please follow the fork-and-pull request workflow described [here](./CONTRIBUTING-gitflow.md).
+
 
 ## Prerequisites
 
@@ -212,7 +214,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 <a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
 
 ## <a name="contributing-docs">Documentation Contribution Flow</a>
-Please contribute! Layer5 documentation uses Jekyll and GitHub Pages to host docs sites. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
+Please contribute! Layer5 documentation is built with Hugo and the Docsy theme. Learn more about [Layer5's documentation framework](https://docs.google.com/document/d/17guuaxb0xsfutBCzyj2CT6OZiFnMu9w4PzoILXhRXSo/edit?usp=sharing). The process of contributing follows this flow:
 
 1. Create a fork, if you have not already, by following the steps described [here](./CONTRIBUTING-gitflow.md)
 1. In the local copy of your fork, navigate to the docs folder.
@@ -249,6 +251,36 @@ make docker
 ### UI Lint Rules
 
 Layer5 uses ES-Lint to maintain code quality & consistency in our UI Code.
+
+## <a name="markdown-export">LLM-friendly page output</a>
+
+Every documentation page is also published as Markdown at `<page-url>/index.md`,
+with the page title, description, and body content and no navigation, sidebar,
+footer, or styling. A **View as Markdown** link to it appears in the page's
+right-hand meta column (wide screens). The home page and the `/videos/` landing
+page have no meta column, so they show no link, but their Markdown is still
+published and listed in `llms.txt`. Hugo also generates
+[`/llms.txt`](https://llmstxt.org/) (an index of pages) and `/llms-full.txt`
+(full content of every page) at the site root for AI agents.
+
+This comes from the [llms-txt Hugo module](https://github.com/gethugothemes/hugo-modules/tree/master/llms-txt),
+imported in `hugo.toml`, which registers the `llms`, `llmsfull`, and `md` output
+formats. Hugo core defines a `markdown` output format but ships no templates for
+it, and Docsy v0.14.3 has no equivalent; see the
+[module announcement](https://discourse.gohugo.io/t/hugo-module-for-llms-txt-and-llms-full-txt/56990).
+`layouts/_default/single.md` and `list.md` override the module's templates so
+shortcodes (including `ref` links) are expanded in each page's Markdown.
+
+If you add a new page layout, render the link only through
+`{{ partial "page-meta-links.html" . }}` in the right-hand meta column. Don't call
+`page-markdown-link.html` directly, or the link appears outside the meta column.
+
+To leave a path out of `llms.txt` and `llms-full.txt`, add it to `exclude` under
+`[params.llms]` in `hugo.toml`. To keep only the newest N pages of a section
+(by front matter `date`), add it to `[params.llms.limit_sections]`; Kanvas
+releases are capped at 5 this way. That cap lives in `layouts/index.llms` and
+`layouts/index.llmsfull`, which are copies of the module's templates with one
+added block, so re-check them against the module when you update it.
 
 # <a name="maintaining"> Reviews</a>
 All contributors are invited to review pull requests. See this short video on [how to review a pull request](https://www.youtube.com/watch?v=isLfo7jfE6g&feature=youtu.be).

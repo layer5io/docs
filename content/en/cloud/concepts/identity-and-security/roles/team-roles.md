@@ -3,7 +3,7 @@ title: Default Team Roles
 description: >
   By default, Organizations have two roles available: Team Admins and Team Managers.
 weight: 3
-categories: [Security]
+categories: [security]
 tags: [teams, roles]
 aliases:
   - /cloud/security/roles/team-roles/

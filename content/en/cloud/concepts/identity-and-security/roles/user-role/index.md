@@ -3,7 +3,7 @@ title: Default User Role
 description: >
   By default, members of an Organization are provided a User role.
 weight: 3
-categories: [Security]
+categories: [security]
 tags: [user, roles]
 aliases:
   - /cloud/security/roles/user-role/

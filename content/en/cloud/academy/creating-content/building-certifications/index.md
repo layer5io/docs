@@ -3,8 +3,8 @@ title: Building Certifications
 weight: 5
 description: >
   A step-by-step guide to building a professional certification in the Academy.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 ---
 
 In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Certification** is a formal assessment designed to validate a learner's professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification's primary goal is evaluation.
@@ -25,24 +25,24 @@ To understand its unique role, here is a comparison with other content types in 
 | Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
 
 {{< alert type="info" title="Certification: Focus on Assessment, Not Instruction" >}}
-A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise.
+A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise. If the objective is instead for the learner to solve a concrete, hands-on problem, build a [Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) rather than a Certification.
 {{< /alert >}}
 
 ## How to Create Your Certification
 
 Building a new certification involves setting up the correct directory structure and defining its properties through Markdown frontmatter.
 
-### Find Your Organization UUID and Certification ID
+### Find Your Organization ID and Certification ID {#find-your-organization-uuid-and-certification-id}
 
-{{< alert type="warning" title="Important: Replace UUIDs" >}}
-Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-certification-uuid>` placeholders. Make sure to replace all of these with your actual UUIDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when implementing your certification.
+{{< alert type="warning" title="Important: Replace the Placeholder IDs" >}}
+Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-certification-uuid>` placeholders. Make sure to replace all of these with your actual IDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when you build your certification.
 {{< /alert >}}
 
-Each certification is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
+Each certification is tied to a specific organization and secured by a unique identifier. Layer5 Cloud generates these IDs for you, and they are what keep your content visible only under your own organization.
 
-You'll need two types of UUIDs:
+You'll need two IDs:
 - **Certification ID**: A unique identifier for your specific certification that gets added to the front matter of your certification's index file
-- **Organization ID**: Your organization's UUID that's used in directory paths
+- **Organization ID**: Your organization's own ID, used in directory paths
 
 {{< alert type="info" title="Generating Your IDs from the Instructor Console" >}}
 
@@ -92,7 +92,7 @@ banner: "images/layer5-icon.svg"
 weight: 1
 tags: [layer5, cloud, infrastructure]
 level: "beginner"
-categories: "platform"
+categories: [platform]
 badge: 
     png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
     svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
@@ -108,7 +108,7 @@ badge:
 | Field | Required | Description |
 | :--- | :--- | :--- |
 | `type` | ✅  | Must be set to `"certification"` to identify this content correctly. |
-| `id` | ✅  | **Crucial.** A stable UUID for tracking progress. **Do not change.** |
+| `id` | ✅  | **Crucial.** A stable ID used to track learner progress. **Do not change.** |
 | `title` | ✅  | The human-readable title that will be displayed to users. |
 | `description` | ✅  | A comprehensive summary of the certification's scope and objectives. |
 | `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|

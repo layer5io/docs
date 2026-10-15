@@ -2,7 +2,7 @@
 title: Understanding Design Components
 description: A complete reference for all components available in the Kanvas designer.
 weight: 1
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 ---
 

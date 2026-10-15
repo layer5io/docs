@@ -3,7 +3,7 @@ title: Starting from scratch
 description: >
  Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
 weight: 2
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/getting-started/starting-scratch
@@ -13,6 +13,11 @@ aliases:
 ## Step 1: Accessing Designer Mode
 
 Upon entering Kanvas, seamlessly transition to the "Designer" mode by selecting the "Designer" tab from the main menu. This action dynamically switches to the Designer mode, initializing the necessary tools for design creation.
+
+<figure>
+  <img src="../../designer/images/audit-2026-09/designer-getting-started.png" alt="Untitled design Getting Started hub with file menu and layout callouts" />
+  <figcaption>New design Getting Started hub (anonymous capture, Sep 2026): walk-throughs, templates, and import, plus callouts for the file menu and layout control. Comments/Share may be inactive until you sign in.</figcaption>
+</figure>
 
 **Example Analogy:**
 Think of Designer mode as your blueprint studio. Just like architects use specific tools to design buildings, you, as a cloud architect, use Kanvas to design your cloud native applications.

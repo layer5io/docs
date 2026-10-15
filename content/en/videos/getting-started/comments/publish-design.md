@@ -7,7 +7,7 @@ videoType: youtube  # or "local"
 muted: true  # optional
 autoplay: true  # optional
 loop: true #optional
-categories: [Designer]
+categories: [designer]
 formats: [video]
 tags: [catalog, designs, publishing]
 duration: "0:39"

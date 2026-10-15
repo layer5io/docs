@@ -5,6 +5,10 @@ aliases:
   - /meshmap/reference/troubleshooting
 ---
 
+{{< alert type="info" title="Asking for help from within Kanvas" >}}
+Kanvas's **Get Help** action opens the Help and Support form. It requires a remote provider and a resolved signed-in identity - see [Help and Support](/kanvas/reference/help-and-support) if the form does not open or a submission is rejected.
+{{< /alert >}}
+
 ## Meshery Extension
 
 ### Designer Mode

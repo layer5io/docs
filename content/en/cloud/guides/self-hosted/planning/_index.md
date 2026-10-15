@@ -133,12 +133,6 @@ For detailed configuration options, see the configuration schema below.
 {{< alert type="warning" title="Important" >}}
 Plan your INIT_CONFIG carefully as it is only processed during initial startup. Changes require redeployment or manual configuration updates.
 {{< /alert >}}
- Layer5 Cloud Deployment
-description: "Understand deployment prerequisites and prepare your environment for a secure and scalable Layer5 Cloud deployment."
-categories: [Self-Hosted]
-#tags: [helm]
-weight: 1
----
 
 ### Considerations of Air-Gapped Deployments
 

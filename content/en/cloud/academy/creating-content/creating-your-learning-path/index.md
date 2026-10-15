@@ -3,8 +3,8 @@ title: Creating Content for the Academy
 weight: 3
 description: >
   A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
-categories: [Academy]
-tags: [Academy]
+categories: [academy]
+tags: [academy]
 aliases:
 - /cloud/academy/creating-your-learning-path/
 - /cloud/academy/creating-academy-content/
@@ -188,7 +188,7 @@ weight: 5
 banner: "kubernetes-icon.svg"
 id: "<your-content-uuid>"
 tags: [kubernetes, infrastructure]
-categories: "cloud"
+categories: [cloud]
 level: "beginner"
 
 # Table of content covered in the test

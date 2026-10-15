@@ -2,7 +2,7 @@
 title: Integrations
 description: Guides for connecting Layer5 Cloud and Kanvas to external tools and workflows.
 weight: 3
-categories: [Workspaces]
+categories: [workspaces]
 tags: [integrations]
 ---
 

@@ -3,7 +3,7 @@ title: Organizations
 description: >
   Organizations serve as the fundamental component of multi-tenancy within the Layer5 Cloud.
 weight: 1
-categories: [Identity]
+categories: [identity]
 tags: [orgs]
 aliases:
   - /cloud/identity/organizations/

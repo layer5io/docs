@@ -207,7 +207,7 @@
 
     a {
       color: $body-color;
-      font-weight: 400 !important;
+      font-weight: 400;
 
       &:hover {
         color: $primary;
@@ -231,15 +231,15 @@
       &:hover {
         filter: grayscale(0) invert(0);
       }
+
+      &.social-icon {
+        filter: grayscale(0) invert(0.38);
+
+        &:hover {
+          filter: grayscale(0) invert(1);
+        }
+      }
     }
-  }
-
-  .social-icon {
-    filter: grayscale(0) invert(0.38) !important;
-  }
-
-  .social-icon:hover {
-    filter: grayscale(0) invert(1) !important;
   }
 
   .subscribe {
@@ -386,7 +386,11 @@
 
     padding: 2.5rem 0;
     .footer-info {
-      flex-wrap: wrap !important;
+      flex-wrap: wrap;
+
+      > div:nth-child(2) {
+        width: 100%;
+      }
     }
 
     .row {
@@ -400,7 +404,7 @@
       margin: 0;
     }
     .footer-sections {
-      padding: 20px !important;
+      padding: 20px;
     }
     .footer-icons {
       a {
@@ -413,60 +417,56 @@
     .even-col {
       flex: 0 0 40%;
     }
-    .col-lg-3 {
-      width: 100% !important;
-    }
     .footer-desc {
-      padding: 0px 10px 0px 10px !important;
-      text-align: center !important;
-    }
-    .col-lg-9 {
-      width: 100% !important;
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+      width: 100%
     }
     .footer-top {
-      flex-direction: column-reverse !important;
-    }
-    .col-lg-6 {
-      width: 100% !important;
-      text-align: center !important;
+      flex-direction: column-reverse;
+
+      div {
+        width: 100%;
+        text-align: center;
+      }
     }
     .footer-icons {
-      justify-content: center !important;
+      justify-content: center;
     }
     .footer-logo {
-      padding: 10px 10px 0px 10px !important;
+      padding: 10px 10px 0px 10px;
     }
     .subscribe {
-      justify-content: center !important;
+      justify-content: center;
     }
     input.footer-input {
-      width: 13rem !important;
+      width: 13rem;
     }
     .footer-button {
       margin-top: 5px;
-      width: 7.5rem !important;
+      width: 7.5rem;
     }
     .footer-bottom-right {
-      margin: 1.5% !important;
+      margin: 1.5%;
     }
     .footer-bottom-middle {
       padding: 2%;
     }
     .footer-bottom-left {
-      padding: 2% !important;
+      padding: 2%;
     }
   }
 
   /* Media Query for low resolution Tablets, Ipads */
   @media (min-width: 489px) and (max-width: 767px) {
     .footer-info {
-      flex-wrap: wrap !important;
+      flex-wrap: wrap;
     }
     .footer-resources {
-      margin: 0 !important;
+      margin: 0;
     }
     .footer-sections {
-      padding: 20px !important;
+      padding: 20px;
     }
     .odd-col {
       flex: 0 0 60%;
@@ -474,63 +474,59 @@
     .even-col {
       flex: 0 0 40%;
     }
-    .col-lg-3 {
-      width: 100% !important;
-    }
     .footer-desc {
-      padding: 0px 10px 0px 10px !important;
-      text-align: center !important;
-    }
-    .col-lg-9 {
-      width: 100% !important;
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+      width: 100%
     }
     .footer-top {
-      flex-direction: column-reverse !important;
-    }
-    .col-lg-6 {
-      width: 100% !important;
-      text-align: center !important;
+      flex-direction: column-reverse;
+
+      div {
+        width: 100%;
+        text-align: center;
+      }
     }
     .footer-icons {
-      justify-content: center !important;
+      justify-content: center;
       a {
         margin-bottom: 15px;
       }
     }
     .footer-logo {
-      padding: 10px 10px 0px 10px !important;
+      padding: 10px 10px 0px 10px;
     }
     .subscribe {
-      justify-content: center !important;
+      justify-content: center;
     }
     input.footer-input {
-      width: 13rem !important;
+      width: 13rem;
     }
     .footer-button {
       margin-top: 5px;
-      width: 7.5rem !important;
+      width: 7.5rem;
     }
     .footer-bottom-right {
-      margin: 1.5% !important;
+      margin: 1.5%;
     }
     .footer-bottom-middle {
       padding: 2%;
     }
     .footer-bottom-left {
-      padding: 2% !important;
+      padding: 2%;
     }
   }
 
   /* Media Query for Tablets Ipads portrait mode */
   @media (min-width: 768px) and (max-width: 850px) {
     .footer-info {
-      flex-wrap: wrap !important;
+      flex-wrap: wrap;
     }
     .footer-resources {
-      margin: 0 !important;
+      margin: 0;
     }
     .footer-sections {
-      padding: 20px !important;
+      padding: 20px;
     }
     .footer-sections a {
       font-weight: 400;
@@ -544,41 +540,39 @@
     .even-col {
       flex: 0 1 auto;
     }
-    .col-lg-3 {
-      width: 100% !important;
-    }
     .footer-desc {
-      padding: 0px 10px 0px 10px !important;
-      text-align: center !important;
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+      width: 100%;
     }
     .footer-top {
-      flex-direction: column-reverse !important;
-    }
-    .col-lg-6 {
-      width: 100% !important;
-      text-align: center !important;
+      flex-direction: column-reverse;
+
+      div {
+        width: 100%;
+        text-align: center;
+      }
     }
     .footer-icons {
-      justify-content: center !important;
+      justify-content: center;
     }
     .footer-logo {
-      padding: 10px 10px 0px 10px !important;
+      padding: 10px 10px 0px 10px;
     }
     .subscribe {
-      justify-content: center !important;
-      margin-top: -8rem;
+      justify-content: center;
     }
     .footer-button {
-      width: 120px !important;
+      width: 120px;
     }
     .footer-bottom-right {
-      margin: 1.5% !important;
+      margin: 1.5%;
     }
     .footer-bottom-middle {
       padding: 2%;
     }
     .footer-bottom-left {
-      padding: 2% !important;
+      padding: 2%;
     }
   }
 
@@ -589,8 +583,8 @@
     flex: 0 0 40%;
   }
 
-  footer .subscribe{
-    margin-top: 0rem !important;
+  .footer .subscribe{
+    margin-top: 0rem;
   }
 }
 

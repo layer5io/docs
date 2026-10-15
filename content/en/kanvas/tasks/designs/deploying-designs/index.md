@@ -3,7 +3,7 @@ title: Deploying Designs
 description: >
     Each Meshery design is deployable to one or more Kubernetes clusters.
 weight: 4
-categories: [Designer]
+categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/deploying-designs

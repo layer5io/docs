@@ -3,7 +3,7 @@ title: "Cross-Org Design Access: stellar-saas-platform"
 description: >
   Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
 weight: 7
-categories: [Designer, Tutorials]
+categories: [designer, tutorials]
 ---
 
 Stellar Dynamics is Orbital Labs' biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build `stellar-saas-platform` in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs' Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.

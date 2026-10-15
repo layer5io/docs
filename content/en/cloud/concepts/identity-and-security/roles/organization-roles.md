@@ -3,7 +3,7 @@ title: Default Organization Roles
 description: >
   By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
 weight: 2
-categories: [Security]
+categories: [security]
 tags: [orgs, roles]
 aliases:
   - /cloud/security/roles/organization-roles/

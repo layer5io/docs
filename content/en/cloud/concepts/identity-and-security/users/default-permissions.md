@@ -3,7 +3,7 @@ title: Default User Permissions
 description: >
   Complete list of default permissions granted to all users.
 weight: 5
-categories: [Identity]
+categories: [identity]
 tags: [users]
 aliases:
   - /cloud/identity/users/default-permissions/

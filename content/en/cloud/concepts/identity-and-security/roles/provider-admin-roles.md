@@ -3,7 +3,7 @@ title: Provider Admin Role
 description: >
   Provider Administrator Role is used for administration of Layer5 Cloud.
 weight: 1
-categories: [Security]
+categories: [security]
 tags: [permissions]
 draft: true
 aliases:
@@ -41,7 +41,7 @@ aliases:
 
 **What permissions does this role have?**
 
-- Can perform CRUD on all resources
+- Can create, view, edit and delete every resource
 
 {{% /card %}}
 {{< /cardpane >}}

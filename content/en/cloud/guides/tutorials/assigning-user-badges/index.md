@@ -3,7 +3,7 @@ title: Recognizing User and Contributor Milestones
 description: >
   Showcasing user and contributor achievements
 weight: 4
-categories: [Tutorials]
+categories: [tutorials]
 tags: [badges, recognition, profile]
 aliases:
   - /cloud/tutorials/assigning-user-badges/

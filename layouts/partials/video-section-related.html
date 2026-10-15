@@ -6,6 +6,10 @@
     {{ $videoPages := (where .Site.Pages ".Params.videoId" "!=" nil) }}
 
     {{ $matchingVideos := slice }}
+    {{/* One card per video: never the page's own video, and never the same
+         video twice when it is filed under more than one section. */}}
+    {{ $seenVideoIds := slice }}
+    {{ with $currentPage.Params.videoId }}{{ $seenVideoIds = $seenVideoIds | append . }}{{ end }}
 
     {{ range $videoPages }}
     {{ $page := . }}
@@ -23,7 +27,8 @@
     {{ end }}
     {{ end }}
 
-    {{ if gt $matchScore 0 }}
+    {{ if and (gt $matchScore 0) (not (in $seenVideoIds $page.Params.videoId)) }}
+    {{ $seenVideoIds = $seenVideoIds | append $page.Params.videoId }}
     {{ $matchingVideos = $matchingVideos | append (dict "page" $page "score" $matchScore) }}
     {{ end }}
  

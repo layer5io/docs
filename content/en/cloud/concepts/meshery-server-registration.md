@@ -3,7 +3,7 @@ title: Meshery Server Registration
 description: >
   How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, what data is recorded, and how re-registration is handled.
 weight: 1
-categories: [Concepts]
+categories: [concepts]
 tags: [connections, remote-provider, meshery-server]
 ---
 

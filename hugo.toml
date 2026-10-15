@@ -24,14 +24,15 @@ tag = "tags"
 category = "categories"
 
 [related]
-threshold = 1
+threshold = 80
 includeNewer = true
-[[related.indices]]
-name = "tags"
-weight = 100
+toLower = true
 [[related.indices]]
 name = "categories"
-weight = 200
+weight = 100
+[[related.indices]]
+name = "tags"
+weight = 50
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
@@ -99,10 +100,11 @@ description = "Product Documentation"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-  home = ["HTML", "RSS", "SITEMAP"]
-  section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  term = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "SITEMAP", "llms", "llmsfull", "md"]
+  page = ["HTML", "md"]
+  section = ["HTML", "RSS", "md"]
+  taxonomy = ["HTML", "RSS", "md"]
+  term = ["HTML", "RSS", "md"]
 
 [sitemap]
   changefreq = "daily"
@@ -326,7 +328,7 @@ enable = false
 		url = "https://layer5.io/careers"
 	[[params.links.footer.company.items]]
 		name = "FAQ"
-		url = "https://layer5.io/company/faq"		
+		url = "https://layer5.io/company/faq"
 	[[params.links.footer.company.items]]
 		name = "Partners"
 		url = "https://layer5.io/partners"
@@ -341,7 +343,7 @@ enable = false
   # replacements = "github.com/google/docsy -> ../../docsy"
   [module.hugoVersion]
     extended = true
-    min = "0.112.0"
+    min = "0.147.2"
   [[module.imports]]
     path = "github.com/google/docsy"
     disable = false
@@ -349,8 +351,28 @@ enable = false
     path = "github.com/google/docsy/dependencies"
     disable = false
   [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  # Content images are mounted into assets so the image render hook can
+  # process them (Hugo can only process files that are resources).
+  [[module.mounts]]
+    source = "content/en"
+    target = "assets/contentimg"
+  [[module.mounts]]
     source = "static"
     target = "static"
   [[module.mounts]]
     source = "charts"
     target = "static/charts"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/llms-txt"
+
+[params.llms]
+  generate_llms_txt = true
+  generate_llms_full_txt = true
+  exclude = ["/tags/**", "/categories/**", "/search/"]
+  # Keep only the newest N pages (by `date`) of a section in llms.txt / llms-full.txt.
+  # Implemented by the local overrides layouts/index.llms and layouts/index.llmsfull.
+  [params.llms.limit_sections]
+    "/kanvas/reference/releases/" = 5

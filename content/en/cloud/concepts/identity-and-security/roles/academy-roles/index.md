@@ -3,8 +3,8 @@ title: Default Academy Roles
 description: >
   By default, Academy has two roles available: Academy Administrator and Learner.
 weight: 4
-categories: [Security]
-tags: [academy, roles]
+categories: [security, academy]
+tags: [roles]
 aliases:
   - /cloud/security/roles/academy-roles/
 

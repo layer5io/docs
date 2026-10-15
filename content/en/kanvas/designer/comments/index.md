@@ -3,7 +3,7 @@ title: Reviewing Designs
 description: >
   Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
 weight: 4
-categories: [Designer]
+categories: [designer]
 tags: [designs, collaboration, review, comments]
 format: [video]
 aliases:
@@ -18,6 +18,11 @@ Kanvas's Designer enables you to place comments "inline" with your infrastructur
 </figure>
 
 Your comment may be a request for design review, to offer feedback to peers, or to simply record notes.
+
+<figure>
+  <img src="../images/audit-2026-09/designer-comments.png" alt="Comments panel empty state in Kanvas Designer" />
+  <figcaption>Comments panel empty state (anonymous capture, Sep 2026). Figures elsewhere on this page show populated threads from earlier chrome.</figcaption>
+</figure>
 
 ## Commenting on a Design
 

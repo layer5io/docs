@@ -3,7 +3,7 @@ title: Performance Limits and Tuning
 description: >
     Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
 weight: 1
-categories: [Designer, Operator]
+categories: [designer, operator]
 tags: [performance]
 ---
 

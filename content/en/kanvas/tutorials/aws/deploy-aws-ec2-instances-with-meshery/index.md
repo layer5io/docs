@@ -60,7 +60,7 @@ To begin, connect your Kubernetes cluster to Meshery. This guide uses `minikube`
 
 - **Out-of-Cluster Deployment**: Runs Meshery in Docker containers, allowing external connectivity to the Minikube cluster.
 
-For this guide, the `in-cluster deployment` method is used.  Follow this [setup guide for Meshery on Minikube](https://docs.meshery.iohttps://docs.meshery.io/installation/kubernetes/minikube) to deploy Meshery in-cluster. After the deployment, open the Meshery UI at `localhost:9081` to verify that the cluster is listed. Click on the cluster name to ping and confirm connectivity.
+For this guide, the `in-cluster deployment` method is used.  Follow this [setup guide for Meshery on Minikube](https://docs.meshery.io/installation/kubernetes/minikube/) to deploy Meshery in-cluster. After the deployment, open the Meshery UI at `localhost:9081` to verify that the cluster is listed. Click on the cluster name to ping and confirm connectivity.
 
 ![Connect Minikube Cluster](images/aws-controllers/aws-connection.png)
 

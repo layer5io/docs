@@ -109,8 +109,12 @@
   }
   &.recognition-program-logo{
     background-image: url("../images/logos/black-semi-opaque.svg"), url("../images/logos/recognition-program.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%, 50%;
+    min-height: 240px;
   }
-  &.catalog-logo, &.academy-logo , &.recognition-program-logo {
+  &.catalog-logo, &.academy-logo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;

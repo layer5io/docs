@@ -3,7 +3,7 @@ title: Teams
 description: >
   Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.
 weight: 2
-categories: [Identity]
+categories: [identity]
 tags: [teams]
 aliases:
   - /cloud/identity/teams/
@@ -53,6 +53,10 @@ Below the top-level organization, you can add as many teams as you want - at the
 
 {{< alert type="info" title="Team Ownership">}}
 If you are the current team owner, you can’t remove yourself from the team until you transfer ownership to another team administrator.
+{{< /alert >}}
+
+{{< alert type="info" title="Removing a Member from the Organization" >}}
+Removing a member from an organization also ends their membership in that organization's teams, and the permissions those team memberships granted. See [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
 {{< /alert >}}
 
 ## Delete a Team
