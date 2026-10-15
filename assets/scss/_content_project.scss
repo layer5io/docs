@@ -367,3 +367,48 @@ th {
     box-shadow: none;
   }
 }
+
+// Tier and role matrices (emitted by the `feature-tiers` and `keys-matrix` shortcodes).
+.td-content .feature-tiers-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+
+  caption {
+    caption-side: top;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  th,
+  td {
+    vertical-align: top;
+  }
+
+  tbody th[scope="row"] {
+    font-weight: 600;
+    min-width: 9rem;
+  }
+
+  .tier-cell {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+.td-content .feature-tiers {
+  overflow-x: auto;
+}

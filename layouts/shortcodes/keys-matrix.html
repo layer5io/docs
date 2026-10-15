@@ -1,0 +1,53 @@
+{{/*
+  Role-by-permission matrix rendered from static/data/csv/keys.csv, which the generate-keys workflow
+  refreshes from the permissions spreadsheet.
+
+  Parameters:
+    functions  required. Permission names to show, separated by "|". Rows render in this order.
+    roles      optional. Role columns to show, separated by "|". Defaults to the roles below.
+    caption    optional. Table caption.
+*/}}
+{{ $p := "static/data/csv/keys.csv" }}
+{{ if not (os.FileExists $p) }}{{ errorf "keys-matrix: unable to read %q" $p }}{{ end }}
+{{ $data := os.ReadFile $p | transform.Unmarshal (dict "delimiter" ",") }}
+{{ $header := index $data 1 }}
+
+{{ $wanted := slice }}
+{{ with .Get "functions" }}{{ $wanted = split . "|" }}{{ else }}{{ errorf "keys-matrix: set functions (%s)" .Position }}{{ end }}
+{{ $roles := slice "User" "Team Admin" "Workspace Admin" "Org Admin" "Provider Admin" }}
+{{ with .Get "roles" }}{{ $roles = split . "|" }}{{ end }}
+
+{{ $roleIndex := dict }}
+{{ range $i, $name := $header }}{{ if in $roles $name }}{{ $roleIndex = merge $roleIndex (dict $name $i) }}{{ end }}{{ end }}
+
+<div class="feature-tiers">
+<table class="feature-tiers-table keys-matrix">
+  {{ with .Get "caption" }}<caption>{{ . }}</caption>{{ end }}
+  <thead>
+    <tr>
+      <th scope="col">Permission</th>
+      <th scope="col">What it allows</th>
+      {{ range $roles }}<th scope="col">{{ . }}</th>{{ end }}
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $name := $wanted }}
+    {{ $found := false }}
+    {{ range $i, $row := $data }}
+    {{ if and (gt $i 1) (eq (trim (index $row 1) " ") $name) (not $found) }}
+    {{ $found = true }}
+    <tr>
+      <th scope="row">{{ $name }}</th>
+      <td>{{ index $row 2 }}</td>
+      {{ range $role := $roles }}
+      {{ $cell := trim (index $row (index $roleIndex $role)) " " }}
+      <td class="tier-cell">{{ if eq $cell "X" }}<span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span>{{ else if eq $cell "X*" }}<span aria-hidden="true">&#10003;*</span><span class="sr-only">Allowed on resources the user owns</span>{{ else }}<span aria-hidden="true">-</span><span class="sr-only">Not granted</span>{{ end }}</td>
+      {{ end }}
+    </tr>
+    {{ end }}
+    {{ end }}
+    {{ if not $found }}{{ warnf "keys-matrix: no permission named %q in keys.csv (%s)" $name $.Position }}{{ end }}
+    {{ end }}
+  </tbody>
+</table>
+</div>

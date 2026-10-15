@@ -1,0 +1,72 @@
+{{/*
+  Tier-by-capability matrix rendered from data/feature_data.json, which the feature-list workflow
+  refreshes from the features spreadsheet.
+
+  Parameters (at least one is required; separate values with "|"):
+    categories  keep rows whose Category is listed, grouped in this order
+    functions   keep rows whose Function is listed
+*/}}
+{{ $categories := slice }}
+{{ with .Get "categories" }}{{ $categories = split . "|" }}{{ end }}
+{{ $functions := slice }}
+{{ with .Get "functions" }}{{ $functions = split . "|" }}{{ end }}
+{{ if and (not $categories) (not $functions) }}
+{{ errorf "feature-tiers: set categories or functions (%s)" .Position }}
+{{ end }}
+
+{{ $features := hugo.Data.feature_data }}
+{{ if not $features }}
+{{ with readFile "data/feature_data.json" }}
+{{ $features = . | transform.Unmarshal }}
+{{ end }}
+{{ end }}
+
+{{ $groups := slice }}
+{{ range $features }}
+{{ if and (ne .category "Category") (ne .category "") (ne .function "") }}
+{{ $inCategory := or (not $categories) (in $categories .category) }}
+{{ $inFunction := or (not $functions) (in $functions .function) }}
+{{ if and $inCategory $inFunction }}
+{{ if not (in $groups .category) }}{{ $groups = $groups | append .category }}{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ $ordered := slice }}
+{{ range $categories }}{{ if in $groups . }}{{ $ordered = $ordered | append . }}{{ end }}{{ end }}
+{{ range $groups }}{{ if not (in $ordered .) }}{{ $ordered = $ordered | append . }}{{ end }}{{ end }}
+
+<div class="feature-tiers">
+{{ range $category := $ordered }}
+<table class="feature-tiers-table">
+  <caption>{{ $category }}</caption>
+  <thead>
+    <tr>
+      <th scope="col">Capability</th>
+      <th scope="col">What it does</th>
+      <th scope="col">Free</th>
+      <th scope="col">Team Designer</th>
+      <th scope="col">Team Operator</th>
+      <th scope="col">Enterprise</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $features }}
+    {{ if and (eq .category $category) (ne .function "") }}
+    {{ $inFunction := or (not $functions) (in $functions .function) }}
+    {{ if $inFunction }}
+    <tr>
+      <th scope="row">{{ .function }}</th>
+      <td>{{ .feature | markdownify }}</td>
+      {{ $t := .comparisonTiers }}
+      {{ range slice $t.free $t.teamDesigner $t.teamOperator $t.enterprise }}
+      <td class="tier-cell">{{ if . }}<span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span>{{ else }}<span aria-hidden="true">-</span><span class="sr-only">Not included</span>{{ end }}</td>
+      {{ end }}
+    </tr>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </tbody>
+</table>
+{{ end }}
+</div>
