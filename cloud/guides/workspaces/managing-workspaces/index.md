@@ -314,7 +314,7 @@ For teams requiring strict separation between environments, this pattern is esse
   - **Access**: Access to the Design is determined by the Teams assigned to its new Workspace.
   - **Cross-Organization Transfers**: You can move a Design you own into a Workspace in a different Organization, provided you have the necessary permissions in the target Organization. 
 
-> A key restriction is that a user, even with a [Workspace Admin](/cloud/concepts/identity-and-security/roles/workspace-roles/) role, cannot manage a Design they **do not own**. This action requires [Organization Admin](/cloud/concepts/identity-and-security/roles/organization-roles/) or Organization Owner permissions.
+> A key restriction is that a user, even with a [Workspace Admin](/cloud/reference/default-permissions/) role, cannot manage a Design they **do not own**. This action requires [Organization Admin](/cloud/reference/default-permissions/) or Organization Owner permissions.
 
 #### 2. What can other users of a Workspace do with my design? Can they delete my design?
 

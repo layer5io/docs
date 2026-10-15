@@ -36,7 +36,7 @@ If a connection name collided during the merge, the duplicate was renamed with a
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Nothing for you to do</h4>
   
-      Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, <a href="/cloud/getting-started/support/">contact support</a>.
+      Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, <a href="/cloud/reference/support/">contact support</a>.
   
 </div>
 

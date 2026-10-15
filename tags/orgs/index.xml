@@ -38,46 +38,7 @@
  Customizing Themes
  &lt;a href="#customizing-themes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme. Customized theme colors also affect email notifications.&lt;/p&gt;</description></item><item><title>Default Organization Roles</title><link>/cloud/concepts/identity-and-security/roles/organization-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/roles/organization-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
-&lt;div class="td-card card border me-4"&gt;
-&lt;div class="card-header"&gt;
- Default Organization Roles
- &lt;/div&gt;
-&lt;div class="card-body"&gt;
- &lt;p class="card-text"&gt;
- &lt;img src="../images/organization-roles.svg" link="../images/organization-roles.svg" width="100%" alt="Organization Roles" /&gt;
-&lt;/p&gt;
- &lt;/div&gt;
- &lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div class="td-card-group card-group p-0 mb-4"&gt;
-
-&lt;div class="td-card card border me-4"&gt;
-&lt;div class="card-header"&gt;
- 
-&lt;h2 id="organization-administrators" class="heading-link"&gt;
- Organization Administrators
- &lt;a href="#organization-administrators" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-
- &lt;/div&gt;
-&lt;div class="card-body"&gt;
- &lt;p class="card-text"&gt;
- &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Administration of an organization (for each organization for which the user has this role assigned)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The Organization Owner&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;When this role first assigned?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Creation of new organization or User Account creation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;How many instances of these roles?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/guides/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
+&lt;p&gt;The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme. Customized theme colors also affect email notifications.&lt;/p&gt;</description></item><item><title>Navigating Organizations</title><link>/cloud/guides/organizations/org-management/navigating-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/navigating-organizations/</guid><description>&lt;p&gt;This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.&lt;/p&gt;
 
 &lt;h2 id="understanding-organization-context" class="heading-link"&gt;
  Understanding Organization Context

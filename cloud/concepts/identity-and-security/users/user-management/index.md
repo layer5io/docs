@@ -128,8 +128,8 @@ You can remove users from an organization one by one or several at once. This ac
 
 Removing a member ends every access-bearing relationship they hold **inside that organization**, as a single operation:
 
-* **Their organization membership**, together with the organization [roles](/cloud/concepts/identity-and-security/roles/organization-roles/) attached to it.
-* **Their membership in that organization's [teams](/cloud/concepts/identity-and-security/teams/)**, together with the team [roles](/cloud/concepts/identity-and-security/roles/team-roles/) attached to those memberships.
+* **Their organization membership**, together with the organization [roles](/cloud/reference/default-permissions/) attached to it.
+* **Their membership in that organization's [teams](/cloud/concepts/identity-and-security/teams/)**, together with the team [roles](/cloud/reference/default-permissions/) attached to those memberships.
 
 Both matter, because permissions reach a user through the roles carried on those memberships. A [keychain](/cloud/concepts/identity-and-security/keychains/) granted by a team role is revoked by the removal just as an organization role's keychain is, so a removed member is left holding no [keys](/cloud/concepts/identity-and-security/keys/) in the organization by either route. Both removal methods above behave identically in this respect; removing several members at once applies the same operation to each one.
 
@@ -165,7 +165,7 @@ Removal is not reversible from the Users tab. To restore someone's access, add t
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Organization Owners Cannot Be Removed</h4>
   
-      An attempt to remove the organization&rsquo;s owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See <a href="/cloud/concepts/identity-and-security/roles/organization-roles/">Organization Roles</a>.
+      An attempt to remove the organization&rsquo;s owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See <a href="/cloud/reference/default-permissions/">Roles and Permissions</a>.
   
 </div>
 

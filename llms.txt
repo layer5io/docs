@@ -122,12 +122,7 @@
 
 - [Sharing a Workspace](/cloud/guides/tutorials/sharing-a-workspace/index.md): Learn how to control access to workspaces and their resources.
 
-- [Support](/cloud/getting-started/support/index.md): If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don't hesitate to reach out to us.
 - [Customizing Layer5 Cloud Deployment with Helm](/cloud/guides/self-hosted/deployment/helm-chart-values/index.md): Layer5’s Helm charts support a number of configuration options. Please refer to following table of configuration options.
-- [Default Organization Roles](/cloud/concepts/identity-and-security/roles/organization-roles/index.md): By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
-
-- [Default Workspace Roles](/cloud/concepts/identity-and-security/roles/workspace-roles/index.md): By default, Workspaces have one role available: Workspace Administrator.
-
 - [Extending the Academy](/cloud/academy/creating-content/extending-the-academy/index.md): A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
 
 - [Integrating GitHub with Meshery](/cloud/getting-started/github-integration/index.md): Discover how to seamlessly connect your GitHub repository with Meshery, enabling easy import and management of your configuration files.
@@ -149,15 +144,9 @@
 
 - [Creating Content for the Academy](/cloud/academy/creating-content/creating-your-learning-path/index.md): A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
 
-- [Default Team Roles](/cloud/concepts/identity-and-security/roles/team-roles/index.md): By default, Organizations have two roles available: Team Admins and Team Managers.
-
-- [Default User Role](/cloud/concepts/identity-and-security/roles/user-role/index.md): By default, members of an Organization are provided a User role.
-
 - [Exploring the Catalog](/cloud/concepts/catalog/exploring-the-catalog/index.md): Discover how to browse, find, and interact with designs in the Catalog.
 - [Identity Services](/cloud/guides/self-hosted/planning/identity-services/index.md): Understand identity services prerequisites and how to integrate your existing identity with OIDC.
 - [User Invitations](/cloud/concepts/identity-and-security/users/user-invitations/index.md): Learn how to create custom, secure, and flexible invitations for new members.
-
-- [Default Academy Roles](/cloud/concepts/identity-and-security/roles/academy-roles/index.md): By default, Academy has two roles available: Academy Administrator and Learner.
 
 - [Integrating Assessments in the Academy](/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
 
@@ -171,8 +160,6 @@
 - [Building Certifications](/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
 
 - [Building Challenges](/cloud/academy/creating-content/building-challenges/index.md): A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
-
-- [Default User Permissions](/cloud/concepts/identity-and-security/users/default-permissions/index.md): Complete list of default permissions granted to all users.
 
 - [Keychains](/cloud/concepts/identity-and-security/keychains/index.md): Keychains are a collection of keys
 - [Platform Development Guide](/cloud/academy/platform-development/index.md): An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
@@ -188,11 +175,14 @@
 - [Tokens](/cloud/concepts/identity-and-security/tokens/index.md): API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
 
 - [Create Your Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
+- [Feature Availability by Plan](/cloud/reference/feature-availability/index.md): Which Layer5 Cloud capabilities each Layer5 plan includes, the limits each plan records, and the role and deployment conditions that also decide whether a capability is available to you.
 - [How Layer5 Cloud Works with Meshery and Kanvas](/cloud/concepts/architecture/index.md): How Layer5 Cloud acts as the remote provider for Meshery Server and Kanvas, what it supplies to a connected server, how sign-in is handed off, and what it stores.
 - [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
 - [Notification Preferences](/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
+- [Roles and Permissions](/cloud/reference/default-permissions/index.md): Which permissions each default Layer5 Cloud role holds, who assigns each role, and which default keychains group the permissions.
 - [Set Up Your Organization](/cloud/getting-started/setting-up-your-organization/index.md): Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
 - [Start from a Catalog Design](/cloud/getting-started/creating-a-design-from-template/index.md): Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
+- [Support](/cloud/reference/support/index.md): The support channels for Layer5 Cloud, what each Layer5 plan includes, and what the in-product support form sends.
 - [v1.0.278](/cloud/reference/releases/v1.0.278/index.md):  feat(ui): shorten Canvas-first onboarding to land new users on Import from GitHub @jijillery (#6172) 👨🏽‍💻 Contributors …
 - [v1.0.277](/cloud/reference/releases/v1.0.277/index.md):  fix(ui): normalize DEPLOY_ENVIRONMENT aliases for GITHUB_APP_URL resolution @leecalcote (#6169) 👨🏽‍💻 Contributors 🔗 …
 - [v1.0.276](/cloud/reference/releases/v1.0.276/index.md):  fix(connect): navigate to GitHub authorization instead of silently failing on connect @leecalcote (#6166) …
@@ -1044,8 +1034,6 @@ bump schemas @aabidsofi19 (#2739) Contributors 🔗 Thank you to our contributor
 - [v0.8.0-beta.1](/cloud/reference/releases/v0.8.0-beta.1/index.md):  What&rsquo;s New 🔗 General
 Captain/views filters @captain-Akshay (#2736) upgrade schemas to v0.7.26 @MUzairS15 (#2735) …
 - [API Reference](/cloud/reference/api-reference/rest/index.md): Complete reference of all Layer5 Cloud REST API endpoints
-
-- [Default Permissions](/cloud/reference/default-permissions/index.md): List of default permissions granted to the Organizations, Teams and Users roles.
 
 - [Email / SMTP Troubleshooting](/cloud/guides/self-hosted/operating/smtp/index.md): This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.
 

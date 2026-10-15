@@ -2163,7 +2163,7 @@ The Kanvas interface does not check a permission before it opens a terminal sess
 
 ## Customizing access
 
-Enterprise plans can define custom roles built from keychains, so you can grant a group exactly the permissions it needs, such as Validate Design without Deploy Design. In the Kanvas interface, a custom role changes what is offered only for the actions listed in [Where Kanvas checks a permission](#where-kanvas-checks-a-permission); Layer5 Cloud applies its own checks to sharing, private designs, and workspace assignments. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+A custom role bundles keychains that the default roles do not combine, so a group can receive exactly the permissions it needs, such as Validate Design without Deploy Design. Only a Provider Admin creates a custom role. On hosted Layer5 Cloud an organization cannot create one itself; on a self-hosted deployment the operator's Provider Admins can. In the Kanvas interface, a custom role changes what is offered only for the actions listed in [Where Kanvas checks a permission](#where-kanvas-checks-a-permission); Layer5 Cloud applies its own checks to sharing, private designs, and workspace assignments. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -6558,7 +6558,7 @@ Every plan includes community support. Standard and Premium support add direct c
 
 {{< feature-tiers categories="Support and Deployment" functions="Community Support|Standard Support|Premium Support" >}}
 
-For the channels themselves, see [Layer5 Cloud support]({{< ref "cloud/getting-started/support.md" >}}).
+For the channels themselves, see [Layer5 Cloud support]({{< ref "cloud/reference/support.md" >}}).
 
 ## How a support request is delivered
 
@@ -7356,7 +7356,7 @@ For teams requiring strict separation between environments, this pattern is esse
   - **Access**: Access to the Design is determined by the Teams assigned to its new Workspace.
   - **Cross-Organization Transfers**: You can move a Design you own into a Workspace in a different Organization, provided you have the necessary permissions in the target Organization. 
 
-> A key restriction is that a user, even with a [Workspace Admin]({{< ref "cloud/concepts/identity-and-security/roles/workspace-roles.md" >}}) role, cannot manage a Design they **do not own**. This action requires [Organization Admin]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) or Organization Owner permissions.
+> A key restriction is that a user, even with a [Workspace Admin]({{< ref "cloud/reference/default-permissions.md" >}}) role, cannot manage a Design they **do not own**. This action requires [Organization Admin]({{< ref "cloud/reference/default-permissions.md" >}}) or Organization Owner permissions.
 
 #### 2. What can other users of a Workspace do with my design? Can they delete my design?
 
@@ -7528,41 +7528,6 @@ Someone you don't know might be viewing your design because:
 
 
 --------------------------------------------------------------------------------
-title: "Support"
-url: /cloud/getting-started/support/index.md
-description: If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don't hesitate to reach out to us.
---------------------------------------------------------------------------------
-
-At Layer5 Cloud, we're here to help you every step of the way. If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don't hesitate to reach out to us. Our dedicated support team is committed to providing you with the help and guidance you need.
-
-### Contacting Support
-
-You can contact Layer5 support in the following ways:
-
-- **Email**: Send us an email at [support@layer5.io](mailto:support@layer5.io) with your questions or concerns. Our support team will respond to you as soon as possible and assist you with resolving any issues.
-
-- **Community Forum**: Join our vibrant [community forum](https://discuss.layer5.io/) where you can ask questions, share your experiences, and connect with other users. Our community members and moderators are here to help you and provide valuable insights and assistance.
-
-### Account Recovery
-
-If you've forgotten your Layer5 Cloud account password, don't worry. You can easily recover your account using the following steps:
-
-1. Go to the Layer5 Cloud [login page](https://cloud.layer5.io/login).
-
-2. On the login page, click on the "Forgot Password" link below the login form.
-
-3. Enter the email address associated with your Layer5 Cloud account and click "Submit."
-
-4. You'll receive an email with instructions on how to reset your password. Follow the instructions provided in the email to reset your password.
-
-5. Once you've clicked the password reset link in the email, you'll be directed to a page where you can create a new password for your account. Enter your new password and confirm it, then click "Submit" to save your changes.
-
-6. After successfully resetting your password, you can now login to your Layer5 Cloud account using your new password.
-
-{{< meshery-design-embed  src="export-designs/embedded-design-account-recovery.js"  id="embedded-design-f4d47d8d-0a16-46d3-ae79-829a1d16b2fa" >}}
-
-
---------------------------------------------------------------------------------
 title: "Customizing Layer5 Cloud Deployment with Helm"
 url: /cloud/guides/self-hosted/deployment/helm-chart-values/index.md
 description: Layer5’s Helm charts support a number of configuration options. Please refer to following table of configuration options.
@@ -7662,128 +7627,6 @@ description: Layer5’s Helm charts support a number of configuration options. P
 {.td-initial}
 
 </div>
-
---------------------------------------------------------------------------------
-title: "Default Organization Roles"
-url: /cloud/concepts/identity-and-security/roles/organization-roles/index.md
-description: By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
-
---------------------------------------------------------------------------------
-
-{{< cardpane >}}
-{{% card header="Default Organization Roles" %}}
-<img src="../images/organization-roles.svg" link="../images/organization-roles.svg"  width="100%" alt="Organization Roles" />
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-
-{{% card header="## Organization Administrators" %}}
-
-**What is the purpose of this role?**
-
-- Administration of an organization (for each organization for which the user has this role assigned)
-
-**Who can assign this role?**
-
-- The Organization Owner
-
-**When this role first assigned?**
-
-- Creation of new organization or User Account creation
-
-**How many instances of these roles?**
-
-- Min: 1, Max: many (based on plan)
-- By default, the first Organization Admin is the owner (the creator of the organization).
-
-**Who can remove assignment of this role?**
-
-- Organization Owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-{{% card header="## Organization Billing Managers" %}}
-
-**What is the purpose of this role?**
-
-- Administration of subscriptions, plans, payments, billing methods and information, spending limits, invoice mgmt etc.
-
-**Who can assign this role?**
-
-- Organization Owner
-
-**When this role first assigned?**
-
-- Manually by Organization Owner
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
-
-
---------------------------------------------------------------------------------
-title: "Default Workspace Roles"
-url: /cloud/concepts/identity-and-security/roles/workspace-roles/index.md
-description: By default, Workspaces have one role available: Workspace Administrator.
-
---------------------------------------------------------------------------------
-
-{{< cardpane >}}
-{{% card %}}
-<img src="../images/workspace-roles.svg" link="../images/workspace-roles.svg"  width="100%" alt="Workspace Roles" />
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-
-{{% card header="## Workspace Administrator" %}}
-
-**What is the purpose of this role?**
-
-- Administration of a workspace along with curation of content for the organization's catalog (for each organization for which the user has this role assigned)
-
-**Who can assign this role?**
-
-- Organization Administrators or Workspace Owner
-
-**When this role first assigned?**
-
-- Creation of a new workspace
-
-**How many instances of these roles?**
-
-- Min: 1, Max: many
-- By default, the first Workspace Administrator is the owner (the creator) of the Workspace.
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators or Workspace Owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
-
 
 --------------------------------------------------------------------------------
 title: "Extending the Academy"
@@ -9961,95 +9804,6 @@ This will show all attempts to upload content, including which ones failed and w
 
 
 --------------------------------------------------------------------------------
-title: "Default Team Roles"
-url: /cloud/concepts/identity-and-security/roles/team-roles/index.md
-description: By default, Organizations have two roles available: Team Admins and Team Managers.
-
---------------------------------------------------------------------------------
-
-{{< cardpane >}}
-{{% card header="Default Team Roles" %}}
-<img src="../images/team-roles.svg" link="../images/team-roles.svg"  width="100%" alt="Team Roles" />
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-{{% card header="## Team Administrator" %}}
-
-**What is the purpose of this role?**
-
-- Administration of teams
-
-**Who can assign this role?**
-
-- Organization Administrator or Team owner
-
-**When this role first assigned?**
-
-- Creation of new team or User Account creation
-
-**How many instances of these roles?**
-
-- Min: 1, Max: many (based on plan)
-- Only first Team Admin would be the owner
-
-**Who can remove assignment of this role?**
-
-- Organization Administrator or Team owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
-
-
---------------------------------------------------------------------------------
-title: "Default User Role"
-url: /cloud/concepts/identity-and-security/roles/user-role/index.md
-description: By default, members of an Organization are provided a User role.
-
---------------------------------------------------------------------------------
-
-{{< cardpane >}}
-{{% card header="Default User Role" %}}
-<img src="images/user-role.svg" link="images/user-role.svg"  width="100%" alt="User Role" />
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-{{% card header="## User" %}}
-
-**What is the purpose of this role?**
-
-- To grant Organization members access to basic features and resources within the context of that Organization.
-
-**Who can assign this role?**
-
-- Organization Administrators, Workspace Administrators and Team Administrators
-
-**When this role first assigned?**
-
-- Automatically assigned to members on joining an Organization.
-
-**How many instances of these roles?**
-
-- Min: 1, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators, Workspace Administrators and Team Administrators
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
-
-
---------------------------------------------------------------------------------
 title: "Exploring the Catalog"
 url: /cloud/concepts/catalog/exploring-the-catalog/index.md
 description: Discover how to browse, find, and interact with designs in the Catalog.
@@ -10484,106 +10238,6 @@ Setting an expiration date prevents new users from using the invitation link aft
 {{< alert type="warning" title="Public invitations" >}}
 Public links can be forwarded broadly. Always set an expiration date and a quota to limit unintended signups.
 {{< /alert >}}
-
-
---------------------------------------------------------------------------------
-title: "Default Academy Roles"
-url: /cloud/concepts/identity-and-security/roles/academy-roles/index.md
-description: By default, Academy has two roles available: Academy Administrator and Learner.
-
---------------------------------------------------------------------------------
-
-{{< cardpane >}}
-{{% card header="Academy Administrator" %}}
-<img src="images/academy-admin.svg" link="images/academy-admin.svg"  width="100%" alt="Academy Administrator Roles" />
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-
-{{% card header="## Academy Administrator" %}}
-
-**What is the purpose of this role?**
-
-- Management of an organization's academy, learner management, and access to academy instructor console.
-
-**Who can assign this role?**
-
-- Organization Administrators
-
-**When this role first assigned?**
-
-- Manually assigned by an Organization Administrator.
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< cardpane >}}
-{{% card header="Learner" %}}
-Learner = A [User]({{< ref "cloud/concepts/identity-and-security/roles/user-role/index.md" >}}) who has registered for academy content.
-<img src="images/learner.svg" link="images/learner.svg"  width="100%" alt="Learner Roles" />
-{{% /card %}}
-{{< /cardpane >}}
-
-{{< alert title="Managing Learner Costs" color="info" >}}
-While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization's subscription plan. Please be mindful of your subscription to manage costs effectively.
-
-{{< /alert >}}
-
-{{< cardpane >}}
-
-{{% card header="## Learner" %}}
-
-**What is the purpose of this role?**
-
-- To enroll in academy content within the organization's academy.
-
-**Who can assign this role?**
-
-- Organization Administrators or Academy Administrators
-
-**When this role first assigned?**
-
-- Automatically to users who join through a special learner invite link
-- Manually by an Organization Administrator or Academy Administrator
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Administrators or Academy Administrators
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-**Status as a Learner**
-
-Each individual academy content item (learning path, certification, or challenge) that a learner enrolls in tracks one of the following 4 status types:
-
-| Status      | What it means |
-|-------------|-------------|
-| registered (enrolled)  | They signed up but haven't started |
-| completed   | They finished the course |
-| failed      | They didn't pass |
-| withdrawn   | They left the course |
-
-{{% /card %}}
-{{< /cardpane >}}
 
 
 --------------------------------------------------------------------------------
@@ -11197,8 +10851,8 @@ You can remove users from an organization one by one or several at once. This ac
 
 Removing a member ends every access-bearing relationship they hold **inside that organization**, as a single operation:
 
-* **Their organization membership**, together with the organization [roles]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) attached to it.
-* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/concepts/identity-and-security/roles/team-roles.md" >}}) attached to those memberships.
+* **Their organization membership**, together with the organization [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to it.
+* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to those memberships.
 
 Both matter, because permissions reach a user through the roles carried on those memberships. A [keychain]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) granted by a team role is revoked by the removal just as an organization role's keychain is, so a removed member is left holding no [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) in the organization by either route. Both removal methods above behave identically in this respect; removing several members at once applies the same operation to each one.
 
@@ -11215,7 +10869,7 @@ The confirmation shown after a removal reports only that the member was removed 
 {{< /alert >}}
 
 {{< alert type="info" title="Organization Owners Cannot Be Removed" >}}
-An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Organization Roles]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}).
+An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 {{< /alert >}}
 
 ## Invite User via Email
@@ -11869,38 +11523,6 @@ Through the Academy catalog, filtered by **Content Type** → **Challenge**. See
 
 
 --------------------------------------------------------------------------------
-title: "Default User Permissions"
-url: /cloud/concepts/identity-and-security/users/default-permissions/index.md
-description: Complete list of default permissions granted to all users.
-
---------------------------------------------------------------------------------
-
-| Permissions                                                     | User        |
-|-----------------------------------------------------------------|-------------|
-| View All Users                                                  | ✅         |
-| View user Profile                                               | ✅         |
-| View user Designs                                               | ✅         |
-| View user Badges                                                | ✅         |
-| View user Activity                                              | ✅         |
-| View Keys                                                       | ✅         |
-| View Catalog                                                    | ✅         |
-| Invite Users                                                    | ✅         |
-| Update User Profile                                             | ❌         |
-| Delete a user account                                           | ❌         |
-| Create a new user                                               | ❌         |
-| Leave a Team                                                    | ❌         |
-| View Roles                                                      | ❌         |
-| Assign roles to team members                                    | ❌         |
-| Assign keys and keychains to the team members                   | ❌         |
-{.td-initial}
-
-{{< alert title="*Organization Owner" type="warning" >}}
-_Permissions marked with * apply only if you are the owner of the organization._{{< /alert >}}
-
-{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}
-
-
---------------------------------------------------------------------------------
 title: "Keychains"
 url: /cloud/concepts/identity-and-security/keychains/index.md
 description: Keychains are a collection of keys
@@ -12160,7 +11782,7 @@ Organizations were handled separately from that transfer. An organization owned 
 If a connection name collided during the merge, the duplicate was renamed with a `(merged)` suffix - and `(merged, 2)`, `(merged, 3)`, and so on for any further collisions on the same name - so both remain identifiable.
 
 {{< alert type="info" title="Nothing for you to do" >}}
-Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, [contact support]({{< ref "cloud/getting-started/support.md" >}}).
+Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, [contact support]({{< ref "cloud/reference/support.md" >}}).
 {{< /alert >}}
 
 ## Signing in with multiple methods
@@ -12875,6 +12497,77 @@ Your account is ready when all of the following are true:
 
 
 --------------------------------------------------------------------------------
+title: "Feature Availability by Plan"
+url: /cloud/reference/feature-availability/index.md
+description: Which Layer5 Cloud capabilities each Layer5 plan includes, the limits each plan records, and the role and deployment conditions that also decide whether a capability is available to you.
+--------------------------------------------------------------------------------
+
+This page tells you which Layer5 Cloud capabilities each Layer5 plan includes. Your plan is one condition for using a capability, not the only one: your role and where your Layer5 Cloud deployment runs also decide what you can do. Those conditions follow the matrix and the limits table.
+
+## Plans
+
+The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Each plan is offered with monthly and annual billing. The Free plan is the plan that Layer5 Cloud calls Personal in its plan records, so you see that name in subscription and entitlement data. Entitlements follow your organization's plan. Current pricing and plan details are listed at [layer5.io/pricing](https://layer5.io/pricing).
+
+## Reading the matrix
+
+- A check mark means the plan includes the capability.
+- A dash means the plan does not include it.
+- Each table covers one category of capability. The **What it does** column describes the capability in one sentence.
+
+The matrix is refreshed automatically from the Layer5 product feature list. It lists the capabilities that have a documentation page. A capability that does not appear here is not necessarily unavailable; check the page that documents it.
+
+This page covers the Layer5 Cloud categories. For design, deployment, collaboration, and performance capabilities, see [Kanvas Feature Availability by Plan]({{< ref "kanvas/reference/feature-availability.md" >}}).
+
+## Capabilities by plan
+
+{{< feature-tiers categories="Identity & Access Management|Workspaces|Catalog|Security|Managed Service Provider|Support and Deployment|Academy" >}}
+
+## Limits by plan
+
+Each plan records a quantity for the following entitlements.
+
+| Entitlement | Free | Team Designer | Team Operator | Enterprise |
+|---|---|---|---|---|
+| Components per design | 100 | 200 | 100 | 300 |
+| Relationships per design | 100 | 200 | 100 | 300 |
+| Image size in a design | 250 KB | 1 MiB | 1 MiB | 10 MiB |
+| Designs per workspace | Unlimited | Unlimited | Unlimited | Unlimited |
+| Workspaces per organization | See note | 10 | 10 | Unlimited |
+
+For workspaces per organization on the Free plan, the plan records disagree: the monthly billing record sets 1 and the annual billing record sets 10.
+
+### Which limits Layer5 Cloud enforces
+
+Layer5 Cloud enforces one limit today: components per design. When you save or import a design, Layer5 Cloud compares its component count with the limit of your organization's active plan. A design that exceeds the limit is refused with the error `Design exeeds maximum limit of N components supported by your current plan`, where N is the limit. To proceed, reduce the number of components in the design or upgrade the plan. When an organization holds more than one active subscription, the highest component limit among them applies. An organization with no active subscription cannot save or import a design; the request fails with HTTP 500 and the error `Org is not entitled to adding components to a design`.
+
+Layer5 Cloud records every other quantity in the table and lists it through the entitlements API (`GET /api/entitlement/features`), but it does not refuse an action because of any of them. For the API's base URL and authentication, see the [API Reference]({{< ref "cloud/reference/api-reference/_index.md" >}}).
+
+## Availability depends on more than your plan
+
+### Your role
+
+Authorization in Layer5 Cloud is by permission key. Each role you hold grants a set of keys, and your effective permissions are the union of the keys from every role you hold in the organization you are working in. An action your role does not grant is refused with HTTP 403, even when your plan includes the capability. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which role holds which permission.
+
+### Where your deployment runs
+
+Layer5 Cloud runs either as the hosted service that Layer5 operates or as a [self-hosted deployment]({{< ref "cloud/guides/self-hosted/_index.md" >}}) that you operate. Self-hosted Deployment is listed under the Enterprise plan in the **Support and Deployment** table. The difference that matters most for availability is provider administration. The Provider Admin role administers the deployment and passes every permission check; on a self-hosted deployment, your operators assign it.
+
+### Custom roles
+
+Only Provider Admins create custom roles. Layer5 Cloud refuses a role creation request from anyone else with HTTP 403. On hosted Layer5 Cloud, an organization therefore cannot create a custom role itself; on a self-hosted deployment, the operator's Provider Admins can. Roles are defined for the whole deployment, not per organization, so a role change applies in every organization where the role is held.
+
+The **Custom Roles** and **User-defined Roles** rows in the **Identity & Access Management** table describe how those capabilities are packaged into plans. Layer5 Cloud does not check your plan when a custom role is created.
+
+### Plan rows and enforcement
+
+The component limit is the only entitlement Layer5 Cloud enforces by plan. The capability rows in the matrix describe how Layer5 packages its plans. When an action is unavailable and the plan is not the component limit, check your role and your deployment first.
+
+## Support by plan
+
+The support channels and response commitments each plan includes are listed in [Support]({{< ref "cloud/reference/support.md" >}}).
+
+
+--------------------------------------------------------------------------------
 title: "How Layer5 Cloud Works with Meshery and Kanvas"
 url: /cloud/concepts/architecture/index.md
 description: How Layer5 Cloud acts as the remote provider for Meshery Server and Kanvas, what it supplies to a connected server, how sign-in is handed off, and what it stores.
@@ -13112,6 +12805,123 @@ You can opt out of all email notifications by toggling the button located on the
 
 
 --------------------------------------------------------------------------------
+title: "Roles and Permissions"
+url: /cloud/reference/default-permissions/index.md
+description: Which permissions each default Layer5 Cloud role holds, who assigns each role, and which default keychains group the permissions.
+--------------------------------------------------------------------------------
+
+This page tells you which permissions each default Layer5 Cloud role holds. Use it to find out why an action is missing for a user and which role grants it. For how roles, keychains, and permissions fit together, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+
+## How permission checks work
+
+A permission is a named key that allows one action, such as Create Team. A keychain groups keys, and a role groups keychains. Layer5 Cloud checks the key, never the role name. Before it runs a guarded action, Cloud resolves the organization the request names, then checks whether the user holds the key through a role in that organization. A user's permissions are the union of the keys from every role the user holds there.
+
+When a user lacks the key, Cloud refuses the request with HTTP 403 and the message "You do not hold the permission this action requires in this organization". The response body is JSON with an `error` message and a `code`.
+
+Provider Admin passes every permission check, in every organization.
+
+## Default roles
+
+| Role | Scope | Assigned by |
+|---|---|---|
+| Provider Admin | Provider | Provider Admin |
+| Kanvas | Provider | Provider Admin. Every new account receives it automatically. |
+| Curator | Provider | Provider Admin |
+| Organization Admin | Organization | Organization Admin or Provider Admin |
+| User | Organization | Organization Admin or Provider Admin |
+| Workspace Admin | Organization | Organization Admin or Provider Admin |
+| Workspace Manager | Organization | Organization Admin or Provider Admin |
+| Academy Admin | Organization | Organization Admin or Provider Admin |
+| Academy Learner | Organization | Organization Admin or Provider Admin |
+| Team Admin | Team | Team Admin or Provider Admin |
+
+An anonymous user, someone using Kanvas without signing in, receives an internal Anonymous User role. It is not listed and cannot be assigned. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}) for what anonymous users can do in Kanvas.
+
+The Kanvas role holds no keychains. It makes the Kanvas extension available when a Meshery Server connects to Layer5 Cloud.
+
+## Reading the matrices
+
+The matrices below are refreshed automatically from the Layer5 permission list.
+
+- A check mark means the role holds the permission.
+- A check mark with an asterisk means the role holds the permission only on resources the user owns.
+- A dash means the role does not hold the permission.
+
+The columns show the roles that hold permissions in the list. "Org Admin" is the Organization Admin role. Workspace Manager, Curator, Kanvas, and the Academy roles have no column; see [Roles outside the matrices](#roles-outside-the-matrices).
+
+### Designs and catalog
+
+{{< keys-matrix caption="Designs" functions="View Designs|Create new design|Import Design|Edit design|Details of design|Delete a design|Download a design|Validate Design|Evaluate Relationships|Deploy Design|Undeploy Design|Publish Design|Unpublish Design" >}}
+
+{{< keys-matrix caption="Catalog" functions="View Catalog|Share Design|Clone Design|View Catalog Requests|Approve Catalog Request|Deny Catalog Request" >}}
+
+### Teams
+
+{{< keys-matrix caption="Teams" functions="View Team|View Teams|View All Teams|Create Team|Edit Team|Delete Team|Add User to Team|Invite User to Team|Remove User from Team|Assign Roles to Team members|Remove Roles from Team members|Open Team Invite|Leave Team" >}}
+
+### Organizations and roles
+
+{{< keys-matrix caption="Organizations" functions="View Org|View Organizations|View All Organizations|Create Organization|Edit Organization|Add User to Organization|Invite User to Organization|Remove User from Organization|Promote or Demote User to Org Admin|Assign Roles to Organization members|Remove Roles from Organization members" >}}
+
+{{< keys-matrix caption="Roles" functions="Assign User Roles" >}}
+
+### Workspaces, environments, and connections
+
+{{< keys-matrix caption="Workspaces" functions="View Workspace|Create Workspace|Edit Workspace|Delete Workspace|Assign team to workspace|Remove team from workspace|Assign environment to workspace|Remove environment from workspace|Assign Designs to Workspaces|Remove Designs from Workspaces" >}}
+
+{{< keys-matrix caption="Environments" functions="View Environment|Create Environment|Edit Environment|Delete Environment|Assign connections to environment|Remove connections from environment" >}}
+
+{{< keys-matrix caption="Connections" functions="View Connections|Add cluster|Change connection state|Delete a connection|View All Kubernetes Clusters" >}}
+
+### Operator, performance, and settings
+
+{{< keys-matrix caption="Operator views" functions="View Views|Assign Views to Workspace|Unassign Views from Workspace" >}}
+
+{{< keys-matrix caption="Performance" functions="View performance profiles|View Results|Add performace profile|Run test|Edit performance test|Delete performance test" >}}
+
+{{< keys-matrix caption="Settings and extensions" functions="View Settings|View Metrics|View Registry|Connect Metrics|Connect adapter|View Extensions|Install extension" >}}
+
+## Roles outside the matrices
+
+| Role | What it holds by default |
+|---|---|
+| Workspace Manager | The permissions of Workspace Admin for workspaces, environments, teams, and lifecycle actions, plus management of the designs, environments, and connections inside the workspaces where the user holds the role. It does not hold the catalog curation permissions. |
+| Curator | No keychains in a default install. Organization Admin and Workspace Admin hold the catalog curation permissions, including approving and denying publish requests. |
+| Kanvas | No keychains. See [Default roles](#default-roles). |
+| Academy Admin | The Academy management permissions, plus team management and workspace management. |
+| Academy Learner | Access to Academy content and registration. |
+| Anonymous User | The Kanvas design permissions for people who are not signed in. |
+
+## Default keychains
+
+Each default keychain groups the permissions for one area. Roles hold keychains, so granting a keychain to a role grants every permission in it.
+
+| Keychain | What it groups |
+|---|---|
+| User View | Permissions for individual users. |
+| User Management | Managing users and their roles. |
+| Team View | Viewing teams and their members. |
+| Team Management | Managing teams and team membership. |
+| Organization Management | Managing organizations, their teams, and their users. |
+| Events Management | Event management: statistics, audit, and summaries. |
+| Security Management | Managing keys, keychains, credentials, and tokens. |
+
+Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, and the two Kanvas action sets (Designer Actions and Operator Actions). For keychain behavior, see [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
+
+## What the matrices do not show
+
+- **Canvas editing.** The permission list omits the per-edit Kanvas permissions, such as adding, deleting, and styling components. See [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}) for which Kanvas actions check a permission.
+- **Provider Admin.** It holds every permission, including permissions that are not in the list.
+- **Plan limits.** A role grants a permission, and the plan decides whether the capability exists for the organization. See [Feature Availability by Plan]({{< ref "cloud/reference/feature-availability.md" >}}).
+
+## Custom roles
+
+A custom role bundles keychains that the default roles do not combine. Only a Provider Admin can create, edit, or delete a custom role. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so an organization cannot create custom roles itself. On a self-hosted deployment, the operator's Provider Admins can.
+
+Roles and keychains are defined for the whole Layer5 Cloud deployment, not per organization. Changing the keychains of a role changes that role for every organization that uses it. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+
+
+--------------------------------------------------------------------------------
 title: "Set Up Your Organization"
 url: /cloud/getting-started/setting-up-your-organization/index.md
 description: Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
@@ -13268,6 +13078,53 @@ Your copy is ready when a design named after the original with " (Copy)" appende
 - [Kanvas]({{< ref "kanvas/_index.md" >}}): design and edit infrastructure visually.
 - [Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}): how the catalog works.
 - [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): move your copy into a workspace your team shares.
+
+
+--------------------------------------------------------------------------------
+title: "Support"
+url: /cloud/reference/support/index.md
+description: The support channels for Layer5 Cloud, what each Layer5 plan includes, and what the in-product support form sends.
+--------------------------------------------------------------------------------
+
+This page lists the ways to reach Layer5 about Layer5 Cloud and the support each plan includes.
+
+## Contacting support {#contacting-support}
+
+| Channel | Use it for | Available on |
+|---|---|---|
+| Email, [support@layer5.io](mailto:support@layer5.io) | Questions and problems with Layer5 Cloud | Every plan |
+| [Community forum](https://discuss.layer5.io/) | Questions, shared experience, and help from other users and moderators | Every plan |
+| [Slack](https://slack.layer5.io) | Real-time conversation with the community | Every plan |
+| Support form in Layer5 Cloud | A written request routed to Layer5 | Every plan |
+| [FAQs](https://layer5.io/company/faq) | Answers to common questions | Everyone |
+
+### The support form
+
+Layer5 Cloud has a Support page with cards for the documentation, the discussion forum, Slack, and the FAQs, and a contact form. The form takes these fields:
+
+| Field | Rule |
+|---|---|
+| Subject | Required. At least 5 characters. |
+| Issue Description | Required. At least 5 characters. |
+| Type of inquiry | One of Account/Billing, Sales, Support, Partnership, Extension Points, or Community. |
+
+Layer5 Cloud validates the request and delivers it to the support endpoint configured for the deployment. It rejects a request that carries fields it does not recognize with HTTP 400, and it answers HTTP 500 when delivery to the endpoint fails. The page shows a confirmation message after you submit, whatever the server answers, so confirm delivery by email if the request is urgent.
+
+On a self-hosted deployment, your operator configures where the form delivers requests. See [Self-hosted deployment]({{< ref "cloud/guides/self-hosted/_index.md" >}}).
+
+## Support by plan
+
+{{< feature-tiers functions="Community Support|Standard Support|Premium Support" >}}
+
+- **Community Support** is help from the community forum.
+- **Standard Support** adds troubleshooting help from Layer5 over the web.
+- **Premium Support** adds a response-time agreement and 24/7 web and phone support. Terms are part of your order. Current plan details are at [layer5.io/pricing](https://layer5.io/pricing).
+
+These are commercial entitlements. Layer5 Cloud does not check your plan when you submit the support form.
+
+## Account recovery
+
+If you forget your password, the sign-in page offers account recovery by email. Layer5 Cloud sends a recovery link and code to the address on the account. Both are valid for 30 days. Password sign-in is refused until the address on the account is verified, so verify your address before you rely on password sign-in. See [Getting started with a Layer5 account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -30347,33 +30204,6 @@ description: Complete reference of all Layer5 Cloud REST API endpoints
 
 --------------------------------------------------------------------------------
 
-
-
---------------------------------------------------------------------------------
-title: "Default Permissions"
-url: /cloud/reference/default-permissions/index.md
-description: List of default permissions granted to the Organizations, Teams and Users roles.
-
---------------------------------------------------------------------------------
-
-{{< alert title="Customizable Permissions" type="info" >}}Default permissions can be easily customized by simply creating your own [keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md#keychains-management" >}}) and [roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).{{< /alert >}}
-
-**Legend:**
-
-- ✅* user must be resource owner in order to perform action.
-- ✅ user is allowed to perform action regardless of resource ownership.
-
-<div class="permissions-tabpane">
-{{< tabpane text=true >}}
-{{< tab header="**Sort by**:" disabled=true />}}
-{{< tab header="Categories" lang="en" >}}
-{{< csvtable >}}
-{{< /tab >}}
-{{< tab header="Roles" lang="en" >}}
-{{< csvtable-roles >}}
-{{< /tab >}}
-{{< /tabpane >}}
-</div>
 
 
 --------------------------------------------------------------------------------

@@ -720,7 +720,7 @@ Every plan includes community support. Standard and Premium support add direct c
 </div>
 
 
-For the channels themselves, see [Layer5 Cloud support](/cloud/getting-started/support/).
+For the channels themselves, see [Layer5 Cloud support](/cloud/reference/support/).
 
 ## How a support request is delivered
 
