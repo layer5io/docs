@@ -8410,97 +8410,6 @@ While an Environment is bulk-selected its card cannot be flipped and its individ
 
 
 --------------------------------------------------------------------------------
-title: "Navigating Organizations"
-url: /cloud/guides/organizations/org-management/navigating-organizations/index.md
-description: Learn how to navigate between different organizations in Layer5 Cloud and understand the order of precedence for organization settings.
-
---------------------------------------------------------------------------------
-
-This guide explains how to switch between organizations in Layer5 Cloud and describes the order of precedence that determines your active organization context.
-
-## Understanding Organization Context
-
-When you work in Layer5 Cloud, your current organization context determines:
-
-- Which resources you can view (designs, environments, connections, workspaces)
-- Where new resources are created when you add them
-- What permissions and access levels apply to your actions
-
-{{< alert title="Organization-Scoped Experience" type="info" >}}
-An organization session scopes the UI, meaning all queries and resources displayed are only from the selected organization. Any new designs, environments, or other resources you create are automatically placed in the currently selected organization.
-{{< /alert >}}
-
-An organization can also have child organizations. Your active organization is always the one you have selected, and you can switch only into organizations you are a member of, so see [Child Organizations](../child-organizations/) for how a parent administrator relates to a child.
-
-## Order of Precedence for Organization Settings
-
-Layer5 Cloud uses the following order of precedence to determine your active organization context:
-
-### 1. Domain (Session Organization)
-
-When you access Layer5 Cloud through a specific domain configured for an organization, that domain setting takes the highest priority in establishing your organization context.
-
-### 2. User Session (Session Organization)
-
-Your user session stores the organization you have actively selected. When you switch organizations using the organization switcher in the UI, this selection is stored in your session and used for subsequent requests.
-
-### 3. Query String (Managed Organizations)
-
-Organization context can be specified via URL query parameters. This is useful for direct links to resources within a specific organization.
-
-### 4. API Parameter (Managed Organizations)
-
-When making API calls, the organization context can be explicitly specified as an API parameter, giving programmatic control over which organization's resources are accessed.
-
-## Switching Organizations
-
-To navigate between organizations in Layer5 Cloud:
-
-1. Locate the organization switcher in the interface (typically found in the navigation area).
-2. Click to open the list of organizations you have access to.
-3. Select the organization you want to switch to.
-4. The UI will refresh to display resources from the newly selected organization.
-
-{{< alert title="Access Requirements" type="info" >}}
-You can only switch to organizations where you have active membership. If you need access to an additional organization, contact an Organization Administrator or use an invitation link.
-{{< /alert >}}
-
-## Impact of Organization Context
-
-### Resource Visibility
-
-When you switch organizations, the following resources update to reflect the selected organization:
-
-- **Designs**: Only designs belonging to the selected organization are visible.
-- **Workspaces**: Only workspaces within the selected organization are accessible.
-- **Environments**: Environment configurations specific to the organization are shown.
-- **Connections**: Both managed and unmanaged connections scoped to the organization appear.
-- **Team Memberships**: Your team memberships and associated permissions within the organization apply.
-
-### Resource Creation
-
-All new resources you create are automatically associated with your currently selected organization:
-
-- New designs are created within the selected organization's context.
-- New workspaces are established under the selected organization.
-- New connections and credentials are scoped to the selected organization.
-
-{{< alert title="Verify Your Organization Before Creating Resources" type="warning" >}}
-Before creating important resources, always verify that you have the correct organization selected. Moving resources between organizations after creation may not always be possible or may require administrative assistance.
-{{< /alert >}}
-
-### Permissions and Roles
-
-Your roles and permissions are organization-scoped. This means:
-
-- The same user may have different roles in different organizations.
-- Administrative capabilities in one organization do not automatically grant administrative access in another.
-- Team memberships and their associated permissions are specific to each organization.
-
-For more details about roles and permissions, see the [Roles documentation]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
-
-
---------------------------------------------------------------------------------
 title: "Networking"
 url: /cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md
 description: Prepare and configure network services for your Layer5 Cloud deployment.
@@ -8529,197 +8438,6 @@ Minimum: 20
 Maximum: 34
 
 Layer5 Cloud uses a min and max range for the total number of users in multi-player mode in one document at-a-time in order to prevent users forming clusters (groups), that can't connect to other users. The min and max range is randomly selected for each document editing session.
-
-
---------------------------------------------------------------------------------
-title: "Organization Configuration Scenarios"
-url: /cloud/guides/organizations/configuration-scenarios/index.md
-description: The named ways an organization can be configured in Layer5 Cloud — Hosted, Branded, and White-Label — and how to choose between them based on your domain, identity provider, and sign-in needs.
-
---------------------------------------------------------------------------------
-
-Every organization in Layer5 Cloud is configured based on two simple choices:
-**where your users sign in** (your front door) and **whose identity
-provider authenticates them**. Those two choices combine into a small set
-of named scenarios. This guide names each one, describes what your users
-experience, and explains **when you would choose one over the next**.
-
-For the step-by-step setup behind these choices, follow the links into
-[White-labeling](/cloud/guides/self-hosted/white-labeling/) (themes, logos,
-custom domains) and [Identity Services](/cloud/guides/self-hosted/planning/identity-services/)
-(bring-your-own-credentials and authentication boundaries). This page is
-the map; those are the turn-by-turn directions.
-
-## First, the two organization types
-
-Before the scenarios, two roles an organization can play (illustrated by the Orbital Labs cast used in these examples):
-
-- **Provider Organization** — the top-level organization that operates the
-  deployment. On the hosted service, this is Layer5 itself; on a self-hosted
-  deployment, it is your platform team (in the cast, **Constellation Cloud**).
-  The Provider Organization owns the deployment's **default identity
-  providers** — the Google and GitHub apps every other organization falls
-  back to — and a Provider Administrator manages platform-wide settings.
-  There is exactly one.
-
-- **Tenant Organization** — every other organization: your customers,
-  partners, or business units (in the cast, **Orbital Labs** and **Stellar
-  Dynamics**). A tenant is what you configure into one of the scenarios
-  below. There can be any number of them.
-
-{{< alert type="info" >}}
-The scenarios below describe how to configure a **Tenant Organization**.
-The Provider Organization always signs in on the deployment's canonical
-host with the default identity providers.
-{{< /alert >}}
-
-## The two choices
-
-| Choice | Options |
-| --- | --- |
-| **Front door** — where your users sign in | **Shared** (the deployment's address, e.g. `cloud.layer5.io`) · **Branded subdomain** (a subdomain of the deployment's base domain, e.g. `acme.layer5.io`) · **Custom domain** (your own domain, e.g. `cloud.acme.com`) |
-| **Identity provider** — who runs sign-in | **Shared/default** (the deployment's Google + GitHub apps) · **Your own (BYOC)** (your own Google, GitHub, and/or OIDC single sign-on) |
-
-Both email-and-password and social sign-in (the Google / GitHub buttons)
-work in *every* scenario, including on a fully-custom domain using the
-deployment's default identity providers. What the named scenarios capture is
-*whose* identity provider authenticates your users and *whose* brand appears
-on the consent screen — not whether social sign-in is available. (See
-[White-labeling → Social sign-in on a custom domain](/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain)
-for details.)
-
-## The scenarios at a glance
-
-| Scenario | Front door | Identity provider | Social sign-in | Choose it when… |
-| --- | --- | --- | --- | --- |
-| **Hosted** | Shared (`cloud.layer5.io`) | Shared/default | ✅ Works | You just want an organization — no custom URL, no setup. |
-| **Branded** | Branded subdomain (`acme.layer5.io`) | Shared/default | ✅ Works | You want a branded sign-in URL and pages, but are happy using the platform's Google/GitHub apps. |
-| **Branded + BYOC** | Branded subdomain | Your own (BYOC) | ✅ Works (your consent screen) | You want a branded subdomain **and** your own OAuth apps or single sign-on. |
-| **White-Label** | Custom domain (`cloud.acme.com`) | Shared/default | ✅ Works | You want your own domain, with social sign-in working out of the box on the platform's Google/GitHub apps. |
-| **White-Label + BYOC** | Custom domain | Your own (BYOC) | ✅ Works (your consent screen) | You want a fully branded deployment on your own domain, end to end. |
-
-Read the table top-to-bottom as a ladder: each rung gives your organization
-more of its own identity. One combination is intentionally **not possible**
-— the Shared front door always uses the shared identity provider, so
-"Shared + your own identity provider" does not exist. **To use your own
-identity provider, configure a Branded subdomain or a Custom domain first.**
-
-## The scenarios in detail
-
-### Hosted
-
-Your organization lives on the deployment's own address (`cloud.layer5.io`).
-Users reach it by signing in there and selecting your organization from the
-organization switcher.
-
-- **Branding:** your theme colors and logo appear once users are inside the
-  app; the sign-in page itself is the platform's (it is shared by everyone
-  on that address).
-- **Sign-in:** email and password, as well as Google and GitHub, both work out of the box.
-- **Choose it when:** you're getting started, running an internal team, or
-  simply don't need a branded URL. This is the default — no configuration
-  required.
-
-### Branded
-
-Your organization gets a **vanity subdomain** of the deployment's base
-domain — for example `acme.layer5.io` on the hosted service. Your sign-in,
-sign-up, and error pages carry your colors, logo, and links.
-
-- **Branding:** full branding on the sign-in pages **and** inside the app.
-- **Sign-in:** email and password, as well as Google and GitHub, both work — the social
-  buttons use the platform's Google/GitHub apps, so the upstream consent
-  screen shows the platform's name.
-- **Choose it when:** you want a branded, memorable URL and a branded login
-  experience, but you don't need your own OAuth apps or your company's
-  single sign-on. Set up the subdomain in
-  [White-labeling → Custom Domain Name and Login Screen](/cloud/guides/self-hosted/white-labeling/#custom-domain-name-and-login-screen).
-
-### Branded + BYOC
-
-A Branded subdomain, plus **your own identity provider** ([BYOC](/cloud/guides/self-hosted/planning/identity-services/#bring-your-own-credentials-byoc)):
-your own Google OAuth client, GitHub OAuth App, and/or a generic OIDC
-provider for single sign-on.
-
-- **Branding:** branded sign-in pages **and** your own brand on the Google /
-  GitHub consent screen.
-- **Sign-in:** email and password, as well as social sign-in, all through *your* apps —
-  your consent screen, your rate limits, your audit trail, your rotation.
-- **Choose it when:** you want a branded subdomain and also need control of
-  your OAuth client or want to connect your corporate single sign-on. Note
-  that bringing your own identity provider makes your organization a
-  **distinct authentication boundary** — see [Identity Services → The
-  identity provider is the security boundary](/cloud/guides/self-hosted/planning/identity-services/#the-identity-provider-is-the-security-boundary).
-
-### White-Label
-
-Your organization runs on **your own domain** (`cloud.acme.com`, on a
-different base domain from the deployment), using the deployment's
-**default** identity providers.
-
-- **Branding:** fully white-labeled sign-in pages on your own domain.
-- **Sign-in:** email and password, as well as Google and GitHub, all work out
-  of the box — the social buttons use the platform's Google/GitHub apps, so
-  the upstream consent screen shows the platform's name.
-- **Choose it when:** you want your own domain with social sign-in working
-  immediately, and you don't need your own OAuth apps or consent-screen
-  branding. **To bring your own OAuth apps or corporate single sign-on, add
-  your own identity provider** and you become a *White-Label + BYOC*
-  organization (below). Set up the custom domain in
-  [White-labeling → Custom Domain Name and Login Screen](/cloud/guides/self-hosted/white-labeling/#custom-domain-name-and-login-screen).
-
-### White-Label + BYOC
-
-The top of the ladder: **your own domain** *and* **your own identity
-provider**. Your organization is branded end to end and authenticates
-entirely through your own apps.
-
-- **Branding:** your domain, your sign-in pages, and your brand on the
-  Google / GitHub / OIDC consent screen.
-- **Sign-in:** email and password, as well as social sign-in, all work, entirely on your
-  own domain and through your own apps.
-- **Choose it when:** you want a true white-label deployment — your domain,
-  your brand on every screen, your identity provider, your security
-  boundary. This is the typical choice for a partner or reseller offering
-  the platform under their own name. Set up BYOC in
-  [Identity Services → Bring Your Own Credentials](/cloud/guides/self-hosted/planning/identity-services/#bring-your-own-credentials-byoc).
-
-## How to choose
-
-A quick way to land on the right scenario:
-
-1. **Do you need a branded URL?**
-   - No → **Hosted**. You're done.
-   - Yes, a subdomain of the platform is fine → continue at step 2 with
-     **Branded**.
-   - Yes, it must be *my own* domain → continue at step 2 with
-     **White-Label**.
-
-2. **Do you need your own identity provider** — your own Google/GitHub apps,
-   your own consent-screen branding, or your corporate single sign-on?
-   - On a **subdomain**: No → **Branded**. Yes → **Branded + BYOC**.
-   - On **your own domain**: No → **White-Label** (social sign-in works on the
-     platform's apps). Yes → **White-Label + BYOC** (the full experience).
-
-{{< alert type="info" >}}
-**Rule of thumb.** Social sign-in works out of the box in every scenario —
-including on your own domain on a *different* base domain from the deployment —
-using the platform's identity providers. Bringing your own identity provider
-is **always optional**, whatever your domain: choose it only when you want
-your own consent-screen branding, your own OAuth rate limits and audit trail,
-corporate single sign-on, or a distinct authentication boundary. The full
-breakdown is in [Identity Services → BYOC is always optional](/cloud/guides/self-hosted/planning/identity-services/#byoc-is-always-optional).
-{{< /alert >}}
-
-## These choices are independent of who can join
-
-The scenario you pick controls **where and how** users sign in. It does
-**not** control **who is allowed to join** your organization — that is set
-separately through invitations (open self-service vs. invite-only, optional
-email-domain allowlists, role and team assignment, quotas, and expiry). Any
-scenario above can be paired with any membership policy. See
-[Organization Management → Inviting members](/cloud/guides/organizations/org-management/)
-and [User Invitations](/cloud/concepts/identity-and-security/users/user-invitations/).
 
 
 --------------------------------------------------------------------------------
@@ -8801,467 +8519,6 @@ After approval:
 - To give the Development team visibility into the production design (read-only), Five can share the design individually with Rex and Jordan. See [Sharing a Workspace]({{< ref "cloud/guides/tutorials/sharing-a-workspace.md" >}}).
 - To set up a parallel deployment to `prod-gcp`, Five repeats Steps 3–5 selecting `prod-gcp` as the environment.
 - To roll back, Five transfers `prod-deployment-v2` back to `orbital-staging` and deploys the previous version from there.
-
-
---------------------------------------------------------------------------------
-title: "Bring Your Own Mail Server"
-url: /cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md
-description: Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
-
---------------------------------------------------------------------------------
-
-By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5's shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.
-
-The **Email** tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.
-
-This guide walks an Organization Administrator through configuring it, proving the domain, testing the connection, and reading the delivery health it reports afterwards. It then gives a worked example for each provider the tab offers a preset for: [Google Workspace](#google-workspace), [Microsoft 365](#microsoft-365), [Amazon SES](#amazon-ses), [SendGrid](#sendgrid), [Postmark](#postmark), and [any other provider](#any-other-provider).
-
-{{< alert title="Who can configure this" type="info" >}}
-Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server. The same gate applies to the [Identity Providers tab](/cloud/guides/organizations/org-management/#configuring-identity-providers-bring-your-own-credentials).
-{{< /alert >}}
-
-## What You Will Need
-
-Have these in hand before you open the Email tab:
-
--   **The hostname and submission port of your SMTP server**, and whether it uses STARTTLS or implicit TLS.
--   **A username and password the server accepts.** Which credential that is differs by provider, and for most of them it is not the password you sign in with. The table below says which one each provider expects.
--   **A from address on a domain whose DNS you control.** You prove control by publishing a TXT record, so you need access to the domain's DNS zone.
-
-### Where each provider's credential comes from
-
-Every provider on this page mints its SMTP credential somewhere different, and getting the wrong one produces the same result in every case: "The server rejected the username and password." Follow the link for how to create it and what else that provider requires.
-
-| Provider | Username | Password |
-| --- | --- | --- |
-| [Google Workspace](#google-workspace) | the sending account's full address | an app password for that account, never its account password |
-| [Microsoft 365](#microsoft-365) | the mailbox's sign-in address | that mailbox's own sign-in password. This is the exception on this page: client submission authenticates with the account credential itself, and only where the tenant permits it |
-| [Amazon SES](#amazon-ses) | your SES SMTP user name | your SES SMTP password, which is not an AWS access key |
-| [SendGrid](#sendgrid) | the literal string `apikey` | your SendGrid API key |
-| [Postmark](#postmark) | your Postmark server API token | the same server API token again |
-| [Any other provider](#any-other-provider) | whatever that provider documents for SMTP submission | |
-
-### Requirements on the mail server
-
-Layer5 Cloud refuses a configuration that does not meet these, so check them first:
-
-| Requirement | Detail |
-| --- | --- |
-| **Submission port** | Only ports `25`, `465`, `587` and `2525` are permitted. Any other port is refused when the connection is tested. |
-| **Encryption** | Choose **STARTTLS** (usually port 587) or **TLS** (implicit TLS, usually port 465). The unencrypted mode exists for a relay that needs no credentials at all: Layer5 Cloud will not present a password over an unencrypted connection, and refuses that combination rather than sending the password in the clear. |
-| **Publicly reachable address** | The server must resolve to a public address. A host that resolves to a loopback, private, link-local or carrier-shared address is refused at the moment of connection. A relay on your internal network cannot be used from hosted Layer5 Cloud. |
-| **Authentication method** | `PLAIN` or `CRAM-MD5`. Choose **None** only for a relay that authorizes by source address. A mail server that requires `AUTH LOGIN` is not supported. |
-
-## Configuring the Mail Server
-
-1.  Go to the Organizations section, select your Organization and click **Edit**, then open the **Email** tab.
-2.  Click **Configure mail server**. The tab shows the panels **What changes if you bring your own mail server** and **What you will need**, and the form **Add your mail server** opens beneath them.
-3.  Optionally choose a **Provider preset**: **Gmail / Google Workspace**, **Microsoft 365**, **Amazon SES**, **SendGrid**, **Postmark** or **Custom**. A preset fills only the host, port and encryption. It never fills your username, password or from address. Some presets show a warning beneath the picker with a provider-specific caveat, for example that the SendGrid username is the literal string `apikey`.
-4.  Fill in the form:
-    -   **SMTP Host**: your server's hostname.
-    -   **Port (587 for STARTTLS, 465 for TLS)**: the submission port. The port and the encryption mode must agree.
-    -   **Encryption**: `starttls`, `tls` or `none`.
-    -   **Authentication (None only for a relay that authorises by IP)**: `plain`, `cram-md5` or `none`. Any method other than `none` requires both a username and a password.
-    -   **Username** and **Password**: the credential your server accepts. The password is encrypted before it is stored and is never shown again.
-    -   **From Address (its domain must be verified)**: the address your members will see mail arrive from. Its domain is what you prove control of in the next step.
-    -   **From Display Name**: the name shown beside the from address.
-    -   **Reply-To Address**: where replies go. Optional.
-    -   **Fall back to the shared mail server when delivery fails**: on by default. See [Fallback](#fallback) before you turn it off.
-5.  Click **Save mail server**.
-
-The tab confirms with "Saved *your Organization's name*'s mail server. Test the connection, verify the from domain, then turn it on to start routing mail through it." Nothing about your email has changed yet. Mail keeps leaving through Layer5's shared server until you have verified the domain, passed a connection test, and turned the server on.
-
-Once saved, the tab switches to its configured view. The heading names your Organization and states where its mail is going: it reads "*Your Organization* has its own mail server set up." while the server is off, and "*Your Organization* is using its own mail server." once it is on. A status chip sits beside it, followed by the panels **Delivery health**, **From-domain verification**, **Mail server settings**, **Password** and **Stop using your own mail server**.
-
-## Proving You Control the Sending Domain
-
-The Email tab will not let you turn a server on until you have proven you control the domain in its from address. The proof is a DNS TXT record, and every from domain needs one.
-
-The **From-domain verification** panel names the domain taken from your from address, shows a **Not verified** chip, and lists the record to publish:
-
--   **Record name**: `_meshery-mail.` followed by your domain. For a from address of `no-reply@example.com`, the record name is `_meshery-mail.example.com`.
--   **Record value**: a string beginning `meshery-mail-verification=` followed by a token minted for your Organization.
-
-Publish a TXT record with exactly that name and value in the DNS zone for your domain, then click **Re-check now**.
-
-{{< alert title="DNS propagation is not instant" type="info" >}}
-The panel says so itself: "Publish this TXT record, then re-check. DNS changes can take a while to propagate." A re-check made moments after you publish the record commonly reports that no record was found. That is not a defect. Wait for your DNS provider's stated propagation time and re-check again.
-{{< /alert >}}
-
-The check reports one of three failures, and each asks for a different action:
-
-| The panel says | What it means | What to do |
-| --- | --- | --- |
-| "No matching TXT record was found at that name." | The lookup completed and there is no TXT record at the record name. | Publish the record, or wait for propagation if you already have. |
-| "A TXT record exists but does not carry the expected value." | A TXT record exists at that name, but none of its values match the record value shown. | Correct the value. Surrounding whitespace is ignored, but the token must match exactly. |
-| "The DNS lookup did not complete. Try again shortly." | The lookup timed out or the resolver did not answer, so nothing was established about the domain either way. A previous proof is not withdrawn by this result. | Retry in a few minutes. If it persists, check that the domain's nameservers are answering. |
-
-When the check succeeds the chip changes to **Verified** and the panel reads "Control of this domain is proven (last checked ...). Keep the TXT record published - removing it will fail the next re-check." Leave the record in place.
-
-Two things reset verification:
-
--   Changing the **From Address** to an address on a different domain. The panel then shows a new record name and a newly minted record value for the new domain.
--   A re-check that completes and finds the record gone or changed. The proof is withdrawn, and the chip returns to **Not verified** until a re-check finds the record again.
-
-{{< alert title="A personal @gmail.com address cannot be verified" type="warning" >}}
-Domain verification requires publishing a record under the from address's domain. Nobody can publish a DNS record under `gmail.com`, so a personal Gmail address can never complete this step. A custom domain hosted on Google Workspace is fine, because you control its DNS.
-{{< /alert >}}
-
-## Testing the Connection
-
-In the **Delivery health** panel, click **Test connection**.
-
-Understand exactly what the test does. It opens a connection to your server, negotiates the encryption mode you chose, greets the server, presents your username and password, and hangs up. It proves that the server accepts the connection and the credentials, and nothing more. **It sends no message.** There is no recipient to choose, because none is used. On success the tab reports "The mail server accepted the connection. No test message was sent."
-
-{{< alert title="What a passing test does not prove" type="warning" >}}
-Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google's Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account's address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider's side. See [Google Workspace](/cloud/guides/organizations/org-management/bring-your-own-mail-server/#google-workspace).
-{{< /alert >}}
-
-A passing test is a prerequisite for turning the server on, and it stamps **Last success** in the **Delivery health** panel. A failing test names the stage that refused the connection; use [Troubleshooting](#troubleshooting) to act on it.
-
-## Turning the Server On
-
-With the domain verified and a test passed, click **Turn on** in the **Delivery health** panel. The tab confirms with "Mail server turned on. Mail for *your Organization* now goes out through it."
-
-Both preconditions are enforced on the button, and the panel says which one is outstanding: "Pass a connection test before turning this server on." and "Verify the from domain before turning this server on." The API enforces the test independently, refusing to enable a server whose last verdict is not a success with the message "the mail relay must pass a test before it can be enabled; run the test operation first".
-
-From this point, application mail for your Organization's members leaves through your server from your from address. The from display name is the one you configured, and the Reply-To header carries your Reply-To address if you set one.
-
-### Reading the status
-
-The status chip beside the heading reports one of four states. It is derived from two facts - whether the server is turned on, and how the last connection test or delivery through it went - so a decision somebody made is never reported as a fault:
-
-| Chip | Meaning |
-| --- | --- |
-| **Off** | The server is not turned on: either nobody has turned it on yet, or an administrator turned it off. Mail is going out through the shared mail server. This is also what a newly saved configuration reads as, and what any settings save or password rotation returns it to. |
-| **Delivering** | The server is on and the last connection test or delivery through it succeeded. Mail for this Organization is leaving through it. |
-| **Failing** | The server is on and the last connection test or delivery through it failed. The **Last failure** line names the reason, and what happened to that message depends on your fallback setting. Your server is still used for the next message. |
-| **Not yet proven** | The server is on and nothing has succeeded through it yet. Mail for this Organization is leaving through it. You are unlikely to see this: turning a server on requires a passed test, and every settings save turns it back off. |
-
-{{< alert title="Failing does not take your server out of service" type="info" >}}
-There is no circuit that stops using a server after repeated failures. **Failing** describes the last attempt and nothing more; the next message is sent through your server just the same. If it keeps failing, fix the cause named on the **Last failure** line - the status will not recover on its own, and it will not deteriorate into your server being skipped either.
-{{< /alert >}}
-
-The **Delivery health** panel also shows the **Server** host and port, the **From** address, the time of the **Last success**, and the count of **Consecutive failures**. That count means delivery failures since the last success: a failed connection test does not advance it, and neither does a rejection of one recipient's address, which says nothing about the server. When the last attempt failed, a **Last failure** line gives the time and the classified reason, using the same reasons as [Troubleshooting](#troubleshooting).
-
-## Fallback
-
-**Fall back to the shared mail server when delivery fails** is on by default. It decides what happens to a message your server does not accept.
-
-**With fallback on**, a message your server does not accept is re-sent through Layer5's shared mail server, and the failure is recorded against your server's delivery health. "Does not accept" is every way a delivery can fail against your server, not only a refusal it voiced: a host nobody can reach, a connection that times out, a TLS handshake that fails and a rejected password all take the same path. The re-sent message cannot claim your from address, because Layer5's server is not authorized to send as your domain and the message would fail your own SPF and DMARC checks. Instead it arrives from Layer5's address with a display name of your Organization's name followed by "(via Layer5)", and its Reply-To is your Reply-To address, or your from address if you did not set one. Your members still receive the message. Your Organization's name still appears on it.
-
-**With fallback off**, your Organization owns delivery entirely. A message your server does not accept is dropped and is not re-sent. Turning it off is a deliberate decision, so the tab asks you to confirm it with the dialog **Turn off fallback to the shared mail server?**, which states the consequence in full:
-
-> With fallback off this organization owns delivery entirely: a message its mail server will not accept is dropped rather than re-sent. Users of this organization may be unable to verify their email address or reset their password while the mail server is unavailable.
-
-Leave fallback on unless you have a specific reason to accept dropped mail. If you do turn it off, watch the **Delivery health** panel: with fallback off, **Failing** means members did not receive that message.
-
-Two exceptions apply whatever the setting:
-
--   **A password Layer5 Cloud cannot read.** That is a fault on Layer5's side and not a delivery policy you chose, so the message is sent through the shared server regardless and the failure is recorded as "The stored password could not be read."
--   **A server that took the whole message and then went away.** If your server accepts the message body and then drops the connection or stops answering instead of confirming it, the outcome is genuinely unknown - it may have queued the message. Re-sending could deliver it twice, so nothing more is sent, whichever way fallback is set. The failure is still recorded against your server's delivery health.
-
-## Managing the Configuration Afterwards
-
-### Changing settings
-
-The **Mail server settings** panel holds the same fields as the setup form, minus the password, with its own **Provider preset** picker and **Save settings** button. Saving confirms with "Mail server settings saved. The stored password is unchanged." Any settings save returns the server to unproven and turns it off, because a host or port nothing has tested is unproven; the recorded test result, failure reason and failure count are cleared with it. Run the connection test and click **Turn on** again afterwards. Your from-domain proof survives an edit that leaves the from address on the same domain - renaming the display name does not cost you the TXT record - but changing the from address to a different domain resets domain verification.
-
-### Replacing the password
-
-The **Password** panel reports **Stored - hidden** when a password is held, or **None stored** for a relay configured with authentication set to `none`. The stored password is never shown, on this page or through the API, and saving settings can never change or clear it.
-
-To rotate it, enter the new value in **New password (replaces the stored one)** and click **Replace password**. The field's helper text says "Left empty, nothing changes." Rotation returns the server to unproven and turns it off, because a password nothing has tested is as unproven as a host nothing has tested. Test the connection and turn the server on again afterwards.
-
-Paste the password exactly. Leading and trailing whitespace is kept, because it can be part of a password.
-
-### Turning it off
-
-Click **Turn off** in the **Delivery health** panel. The dialog **Turn off this mail server?** explains that mail goes back to Layer5's shared server and stops arriving from your domain, and that the configuration and stored password are kept so you can turn it back on. The tab confirms with "Mail server turned off. Mail is going out through Layer5 again." The chip returns to **Off**, and the recorded test result is kept, so turning it back on needs only the domain to still be verified.
-
-### Removing it
-
-The **Stop using your own mail server** panel's **Remove mail server** button deletes the configuration and the stored password together. The dialog **Remove this mail server?** states that this cannot be undone, and the tab confirms with "Removed *your Organization*'s mail server. Mail is going out through Layer5 again." Mail is not interrupted: every message leaves through Layer5's shared server from the moment the configuration is removed. Re-adding means entering the host, credentials and from address again, and verifying the domain again.
-
-## Google Workspace
-
-Google supports two ways for an application to send through your Workspace domain. Both work with Layer5 Cloud, and both need an app password rather than the account's sign-in password.
-
-{{< alert title="An ordinary account password does not work" type="warning" >}}
-Google Workspace [no longer supports less secure apps](https://knowledge.workspace.google.com/admin/apps/control-access-to-less-secure-apps) that sign in with a username and password, and the setting to allow them has been removed from the Admin console. An application sending over SMTP must present an [app password](https://support.google.com/accounts/answer/185833), which requires 2-Step Verification to be turned on for that account. A sign-in password pasted into the **Password** field produces "The server rejected the username and password." on test. That is Google refusing the credential, not a fault in Layer5 Cloud.
-{{< /alert >}}
-
-### App passwords, and Google's "you must use OAuth"
-
-Google's own pages say that third-party apps must use OAuth, and a reader who finds that paragraph will reasonably ask why this guide asks for an app password. Both are true, and the exception is the point.
-
-What Google turned off on 14 March 2025 is sign-in with the **account** password. Its [transition article](https://knowledge.workspace.google.com/admin/sync/transition-from-less-secure-apps-to-oauth) states that from that date "You will no longer use a password for access (with the exception of app passwords)", and for this exact case - "scanners or other devices using SMTP" - it lists "Configure an app password for use with the device" beside configuring OAuth. [App passwords](https://support.google.com/accounts/answer/185833) remain available, and "can only be used with accounts that have 2-Step Verification turned on".
-
-So an app password is the credential to use here. **Layer5 Cloud does not support OAuth (`XOAUTH2`) for outbound mail**: it authenticates with `PLAIN` or `CRAM-MD5`, which is why it needs a password rather than a token. Google is explicit that it prefers neither - it says app passwords "aren't recommended and are unnecessary in most cases" - and its recommended path for an application is the relay service authenticating by source IP address instead of by credential. Hosted Layer5 Cloud cannot take that path, because it publishes no fixed sending addresses for you to allow. A self-hosted Layer5 Cloud that egresses from a static address can: allow that address on the relay and set **Authentication** to `none`.
-
-### Path A: the SMTP relay service
-
-This is [Google's recommended path for applications and devices](https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google) and it lets you send from any address in your domain, such as `no-reply@`.
-
-In the Google Admin console, go to **Menu > Apps > Google Workspace > Gmail > Routing**, scroll to **SMTP relay service** and click **Configure**. Set:
-
--   **Allowed senders**: **Only addresses in my domains**. Google states that with this option the sender does not have to be a Workspace user, but the address must be in your primary domain or a subdomain of it.
--   **Authentication**: **Require SMTP Authentication**. Google describes this as verifying the connection with a Workspace user's email address and password. Do not rely on the IP-address option on hosted Layer5 Cloud, which publishes no fixed sending addresses to allow; see [App passwords, and Google's "you must use OAuth"](#app-passwords-and-googles-you-must-use-oauth) for the self-hosted exception.
--   **Encryption**: **Require TLS encryption**.
-
-Then on the Email tab:
-
-| Field | Value |
-| --- | --- |
-| SMTP Host | `smtp-relay.gmail.com` |
-| Port | `587` (Google's page names this port for TLS) |
-| Encryption | `starttls` |
-| Authentication | `plain` |
-| Username | the full address of a Workspace user. A dedicated account created for this purpose is recommended, so that a person leaving does not take the mail credential with them. |
-| Password | an app password for that user, with 2-Step Verification on |
-| From Address | any address in your domain, for example `no-reply@example.com` |
-
-Google states a limit for the relay of 10,000 messages per user in a 24-hour period. Google's page also states that when the sender is not in one of your domains the envelope sender is rewritten to `postmaster@` your domain; the settings above keep the sender in your domain, so that rewrite does not apply.
-
-### Path B: the Gmail SMTP server
-
-This path needs [no Admin console change](https://knowledge.workspace.google.com/admin/gmail/send-email-from-a-printer-scanner-or-app) and is what the **Gmail / Google Workspace** preset fills in.
-
-| Field | Value |
-| --- | --- |
-| SMTP Host | `smtp.gmail.com` |
-| Port | `587` with `starttls`, or `465` with `tls` |
-| Authentication | `plain` |
-| Username | the full address of the Workspace account |
-| Password | an app password for that account |
-| From Address | the authenticated account's own address, or one of its verified **Send mail as** aliases |
-
-Google states the sending limit for this server is 2,000 messages per day.
-
-The constraint is the from address. In practice, Gmail's SMTP server replaces the From address with the signed-in account's address unless that address is one of the account's configured **Send mail as** addresses. Google's help pages do not state this rewrite; it is what happens. Your members then see mail arrive from the account rather than from the address you configured, and the connection test cannot catch it, because it hangs up before naming a sender. If you want to send as `no-reply@example.com` through this path, [add it as a Send mail as address](https://support.google.com/mail/answer/22370) on the authenticating account and complete Google's confirmation step first. For a white-labeled sender, Path A is the better choice precisely because the relay service has no such constraint: with **Only addresses in my domains** it sends as any address in your domain.
-
-### Both paths
-
--   **Verification.** Your Workspace domain is a domain you control, so the TXT record in [Proving You Control the Sending Domain](#proving-you-control-the-sending-domain) is published like any other record at your DNS host. A personal `@gmail.com` address cannot complete this step.
--   **Mail authentication.** Your Workspace domain already carries Google's SPF include, and DKIM signing applies once it is turned on in the Admin console under **Menu > Apps > Google Workspace > Gmail > Authenticate email**. Google notes it can take up to 48 hours for DKIM authentication to start working after the key is added. Confirm DKIM is on for the domain: [Set up DKIM](https://knowledge.workspace.google.com/admin/security/set-up-dkim). No other mail-authentication DNS is needed beyond Layer5 Cloud's TXT proof record.
-
-## Microsoft 365
-
-The **Microsoft 365** preset fills Microsoft's [client SMTP submission](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365) endpoint, which sends authenticated mail through a cloud mailbox.
-
-| Field | Value |
-| --- | --- |
-| SMTP Host | `smtp.office365.com` |
-| Port | `587` |
-| Encryption | `starttls` |
-| Authentication | `plain` |
-| Username | the sign-in address of a licensed mailbox in your tenant |
-| Password | that mailbox's own sign-in password, where the tenant permits it |
-| From Address | that same mailbox's address, unless you grant **Send As** (below) |
-
-Microsoft 365 is the one provider on this page whose SMTP credential **is** the account's sign-in password rather than a separate token or app password, so the caveats below are about whether your tenant still allows that, not about where to mint something else.
-
-Microsoft names port 587 or 25 for this path and requires TLS 1.2 or later. It also states that a device defaulting to port 465 "doesn't support the required versions of TLS for client SMTP submission", so choose `starttls` on 587 and not `tls` on 465.
-
-Four things decide whether this works, and each of them produces a specific failure:
-
--   **SMTP AUTH is off by default.** Microsoft disables authenticated client SMTP submission for organizations created after January 2020, and it is turned on per mailbox. Enable it for the mailbox you are using - see [Enable or disable authenticated client SMTP submission](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/authenticated-client-smtp-submission) - or the test returns "SMTP authentication was refused by the mail server".
--   **The authentication mechanism has to be one Layer5 Cloud offers.** Layer5 Cloud implements `PLAIN` and `CRAM-MD5` and does not implement `AUTH LOGIN`; the preset says so beneath the picker. A tenant that will not accept `AUTH PLAIN` returns "The mail server does not support the selected authentication method", and no setting on this page changes that. Use a mailbox whose tenant accepts `AUTH PLAIN`, or one of the alternatives below.
--   **Security defaults block this path entirely.** Microsoft states that client SMTP submission using basic authentication "isn't compatible with Security defaults in Microsoft Entra ID". A tenant with [security defaults](https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults) on cannot use this path at all.
--   **Sending as a different address needs Send As.** If the from address is not the mailbox you authenticate with, that mailbox needs **Send As** permission on it; Microsoft returns "5.7.60 SMTP; Client doesn't have permissions to send as this sender", which arrives here as the **Last failure** "The server refused the from address." A connection test cannot detect it, because the test never names a sender.
-
-Microsoft's stated limits for this path are 10,000 recipients per day and 30 messages per minute.
-
-{{< alert title="Basic authentication for client submission is being retired" type="warning" >}}
-Microsoft has [published a deprecation timeline](https://techcommunity.microsoft.com/blog/exchange/updated-exchange-online-smtp-auth-basic-authentication-deprecation-timeline/4489835) for basic authentication on client SMTP submission: behavior is unchanged through December 2026, after which it is disabled by default for existing tenants - administrators can still re-enable it - and not available by default to tenants created after that point, with a final removal date to be announced in the second half of 2027. Because Layer5 Cloud authenticates with a username and password, a tenant that reaches that cut-off without the setting re-enabled will start failing with "The server rejected the username and password." Plan a move to a provider on this page that authenticates with a token, or keep the setting enabled while Microsoft still allows it.
-{{< /alert >}}
-
-Microsoft's two alternatives to client submission do not substitute cleanly here, and it is worth knowing why before you try them:
-
--   **High Volume Email** (`smtp.hve.mx.microsoft`, port 587) accepts basic authentication on a dedicated endpoint even where SMTP AUTH is disabled, but Microsoft states it delivers to [internal recipients within the tenant only](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/high-volume-mails-m365). It can only carry your Organization's mail if every member has a mailbox in your tenant, and it needs pay-as-you-go billing configured before the account can send at all.
--   **SMTP relay** through your tenant's MX endpoint authenticates by certificate or static IP on port 25 rather than by credential. Hosted Layer5 Cloud publishes no fixed sending addresses to allow, so this is only an option for a self-hosted install with a static egress address, configured with **Authentication** set to `none`.
-
-## Amazon SES
-
-The **Amazon SES** preset fills a regional endpoint, and **the region in it is a placeholder you must replace**. The preset ships `email-smtp.us-east-1.amazonaws.com`; if you send from another region, the host is wrong and nothing will work until you change it.
-
-| Field | Value |
-| --- | --- |
-| SMTP Host | `email-smtp.<region>.amazonaws.com`, for example `email-smtp.eu-west-1.amazonaws.com`. AWS lists every endpoint under [Amazon SES endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html). |
-| Port | `587` for STARTTLS, or `465` for implicit TLS |
-| Encryption | `starttls` on 587, `tls` on 465 |
-| Authentication | `plain` |
-| Username | your SES SMTP user name |
-| Password | your SES SMTP password |
-| From Address | an address on an identity you have verified in SES, in the same region |
-
--   **SES SMTP credentials are not your AWS access keys.** AWS states plainly that "Your SMTP password is different from your AWS secret access key". Create a dedicated pair in the SES console under **SMTP settings** > **Create SMTP credentials**, and download them at that point - they cannot be retrieved afterwards. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html). Credentials are **unique to each region**, so a set minted for one region will not authenticate against another region's endpoint.
--   **Sandbox accounts cannot mail your members.** A new SES account is in the [sandbox](https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html) in every region, where you can send only to verified addresses and domains, at most 200 messages per 24 hours and 1 per second. Any member whose address is not itself verified, and whose domain is not verified either, is refused - recorded here as "The server refused the recipient." Unless every member is covered by a verified identity, request production access before turning the server on.
--   **Two separate verifications apply.** SES requires you to verify the identity you send as, and Layer5 Cloud requires its own TXT proof of the same domain. Neither substitutes for the other; do both.
--   **Use 587 or 465, not SES's alternates.** AWS also documents ports 2587 and 2465. Layer5 Cloud permits only `25`, `465`, `587` and `2525`, so either alternate is refused before any connection is made.
-
-## SendGrid
-
-The **SendGrid** preset fills its SMTP relay, where the credential is an API key rather than an account login.
-
-| Field | Value |
-| --- | --- |
-| SMTP Host | `smtp.sendgrid.net` |
-| Port | `587` |
-| Encryption | `starttls` |
-| Authentication | `plain` |
-| Username | `apikey` |
-| Password | your SendGrid API key |
-| From Address | an address on an authenticated domain, or a verified single sender |
-
-{{< alert title="The username is the word apikey" type="warning" >}}
-The **Username** field takes the literal string `apikey` - seven characters, the same for every account. It is not your email address, not your SendGrid login and not the API key itself. The API key goes in the **Password** field. Entering the key in both fields, or your email address as the username, produces "The server rejected the username and password." The preset shows this caveat beneath the picker for the same reason.
-{{< /alert >}}
-
--   **Create the key with Mail Send permission**, and copy it when it is shown: SendGrid displays an API key once and cannot show it again. See [Integrating with the SMTP API](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/integrating-with-the-smtp-api).
--   **Verify the sender identity first.** SendGrid requires every sending address to be covered by [domain authentication or single sender verification](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/sender-identity), and describes single sender verification as suitable for testing only. Authenticate the domain your from address is on. Unverified, delivery is refused and recorded as "The server refused the from address."
--   **Other ports.** SendGrid documents 25, 587 and 2525 for STARTTLS and 465 for implicit TLS. All four are within Layer5 Cloud's allowlist; 587 with `starttls` is the recommended pairing.
-
-## Postmark
-
-The **Postmark** preset fills its transactional SMTP endpoint. Its credential is unusual: the same token goes in both fields.
-
-| Field | Value |
-| --- | --- |
-| SMTP Host | `smtp.postmarkapp.com` |
-| Port | `587` |
-| Encryption | `starttls` |
-| Authentication | `plain` |
-| Username | your Postmark **Server API token** |
-| Password | the same Server API token |
-| From Address | an address on a verified domain, or a confirmed Sender Signature |
-
--   **Username and password are both the Server API token.** Postmark documents that "The Server API Token acts as the username and password". It is per-server, so take it from the server you intend the mail to come from. An SMTP token works too, with its access key as the username and its secret key as the password. See [Send email with SMTP](https://postmarkapp.com/developer/user-guide/send-email-with-smtp).
--   **The from address must be verified with Postmark.** Postmark requires a confirmed Sender Signature for a single address, or a [verified domain](https://postmarkapp.com/support/article/1046-how-do-i-verify-a-domain) to send from any address on it. Verifying the domain is the better fit, since your from address and Reply-To are usually on the same domain. Without it, delivery is refused and recorded as "The server refused the from address."
--   **Mail goes to the default transactional stream.** Postmark selects a message stream from a header that Layer5 Cloud does not send, so messages take the server's default `outbound` transactional stream. That is the right stream for the notification, invitation and account mail this feature carries. Postmark's separate broadcast host is not applicable here.
--   **There is no implicit-TLS port.** Postmark documents 25, 2525 and 587, all with STARTTLS. Do not choose the `tls` encryption mode; pair `starttls` with 587.
-
-## Any Other Provider
-
-Choose the **Custom** preset - it fills nothing and leaves whatever you typed alone - and get these four things from your provider's documentation. They map one-to-one onto [Requirements on the mail server](#requirements-on-the-mail-server):
-
-| What to ask your provider | What to do with it |
-| --- | --- |
-| The submission hostname and port | Enter them as **SMTP Host** and **Port**. The port has to be `25`, `465`, `587` or `2525`; if your provider names only something else, it cannot be used. |
-| Whether that port expects STARTTLS or implicit TLS | Set **Encryption** to match: `starttls` for 587-style ports, `tls` for 465. A mismatch fails as "The TLS handshake failed." |
-| How the SMTP credential is minted | Almost never your account password. Enter it as **Username** and **Password** with **Authentication** set to `plain`, or `cram-md5` if the provider offers it and you prefer that the password never crosses the wire. |
-| Which from addresses the account may send as | Providers vary from "any address on a verified domain" to "the authenticated mailbox only". Confirm your from address is authorized, because the connection test cannot check it. |
-
-Two constraints rule some providers out before you start. The server must resolve to a public address, so an internal relay is unreachable from hosted Layer5 Cloud. And a server that offers only `AUTH LOGIN` cannot be used, because Layer5 Cloud implements `PLAIN` and `CRAM-MD5` and will not fall back to `LOGIN`.
-
-**Authentication** set to `none` is for one case only: a relay that authorizes by source address rather than by credential. That needs a fixed egress address to allow, which hosted Layer5 Cloud does not publish, so in practice it is a self-hosted option.
-
-## Troubleshooting
-
-A failed test shows a one-line result beneath the **Test connection** button, and the **Last failure** line in **Delivery health** shows the classified reason recorded for the most recent failure, whether that was a test or a real delivery. Neither is the mail server's own reply. Both name the stage that failed, which is what tells you where to look.
-
-| The test result says | The Last failure line says | What it means | What to do |
-| --- | --- | --- | --- |
-| "The mail server address is one this server will not connect to" | "The address the host resolved to is not a permitted destination." | Either the destination address or the port was refused before any connection was made, and both report the same way. **The address**: the host resolved to a loopback, private, link-local or carrier-shared address. **The port**: it is not one of `25`, `465`, `587` or `2525` - the form accepts any port in range, and the allowlist is applied when you test. | Check both. Use a mail server with a public address; an internal relay cannot be used from hosted Layer5 Cloud. Then check the port against your provider's submission port, remembering that several providers document alternates - SES's `2587` and `2465`, for instance - that are outside this list. |
-| "The selected authentication method sends the password in the clear, so it cannot be used on an unencrypted connection. ..." | "The server refused the message." | You paired a password with `none` encryption. The check runs before any connection is made. | Choose `starttls` or `tls`. |
-| "Unable to open a mail session with the configured server" | "The server refused the connection." | Something answered at that address but nothing is listening on that port. | Check the port. Check that the host is the SMTP submission endpoint, not a web address. |
-| "Unable to open a mail session with the configured server" | "The server did not answer in time." | The connection attempt timed out, or the server opened the connection and then went silent, including part-way through authentication. | Check the host and port. A firewall on the server side silently dropping the connection produces this result. |
-| "Unable to open a mail session with the configured server" | "The TLS handshake failed." | Encryption negotiation failed. The most common cause is a mismatched pairing: `tls` on port 587 or `starttls` on port 465. A certificate that is not trusted or does not name the host also lands here. | Match the mode to the port: `starttls` on 587, `tls` on 465. Check the server's certificate. |
-| "The mail server does not offer STARTTLS" | "The server does not offer STARTTLS." | You chose `starttls` and the server did not advertise it. Layer5 Cloud refuses to continue unencrypted rather than send your password in the clear. | If the port is 465, choose `tls`. Otherwise enable STARTTLS on the server. |
-| "SMTP authentication was refused by the mail server" | "The server rejected the username and password." | The server answered the credential with a refusal. | Re-enter the password with **Replace password**. For Google Workspace, use an app password, never the sign-in password. For SendGrid, the username is `apikey`. For Microsoft 365, check that SMTP AUTH is enabled on the mailbox. For Amazon SES, check you used SES SMTP credentials rather than AWS access keys. |
-| "The mail server does not support the selected authentication method" | "The server rejected the username and password." | The server answered that it does not implement the mechanism you chose, or does not offer it on this connection. | Choose a mechanism the server advertises. `AUTH LOGIN` is not supported by Layer5 Cloud, so a server that offers nothing else cannot be used. |
-| "The mail server requires an encrypted connection for the selected authentication method" | "The server rejected the username and password." | The server accepts authentication only over an encrypted connection. | Choose `starttls` or `tls`. |
-| "The mail server temporarily declined authentication, and no setting needs to change" | "The server rejected the username and password." | The server is greylisting or rate-limiting the connection. | Retry in a few minutes before changing anything. |
-| "The mail server answered reply code ... to the authentication attempt" | "The server rejected the username and password." | The server refused at the authentication stage with a reply Layer5 Cloud does not classify. | Check the mail server's logs for the reply. |
-| Not shown by a test | "The server refused the from address." | A real delivery reached the server and it would not send as your from address. The test cannot detect this. | Authorize the from address on the server: a verified **Send mail as** alias or the SMTP relay service for Google, **Send As** permission for Microsoft 365, a verified identity for Amazon SES, an authenticated domain for SendGrid, a verified domain or Sender Signature for Postmark. |
-| Not shown by a test | "The server refused the recipient." | A real delivery reached the server and it would not relay to that recipient. | Check the server's relay restrictions. The relay must accept external recipients. |
-| Not shown by a test | "The server refused the message." | A real delivery reached the server, which accepted sender and recipient and then refused the message itself, typically on a size or content policy. | Check the server's message policies and logs. |
-| Not shown by a test | "The stored password could not be read." | Layer5 Cloud could not decrypt the stored password. This is not a configuration mistake on your side, and the message was sent through the shared server regardless of your fallback setting. | Contact Layer5 support. Replacing the password with **Replace password** re-encrypts it and may clear the condition. |
-| A passing test, but mail arrives from the wrong address | Nothing recorded | The server accepted your credentials but sends as the authenticated account instead of your from address. Typical of `smtp.gmail.com`. | See [Google Workspace, Path B](#path-b-the-gmail-smtp-server). |
-| **Failing** with fallback off | Any of the above | Members did not receive the message that failed. | Fix the cause named on the **Last failure** line. Consider turning fallback on until it is fixed. |
-
-{{< alert title="Why the reasons are classifications" type="info" >}}
-The mail server's own reply text is never shown on the Email tab or returned by the API, only these fixed reasons. Repeating a remote server's reply would turn the test into a way of probing what Layer5's network can reach. The full detail is written to Layer5 Cloud's server log.
-{{< /alert >}}
-
-## Related
-
--   [Organization Management](/cloud/guides/organizations/org-management/) for the rest of the Edit Organization modal, including the Identity Providers tab.
--   [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) for how custom domains and identity providers combine.
--   [White-labeling](/cloud/guides/self-hosted/white-labeling/) for the branding carried in the message body and footer.
-
-
---------------------------------------------------------------------------------
-title: "Child Organizations"
-url: /cloud/guides/organizations/org-management/child-organizations/index.md
-description: Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
-
---------------------------------------------------------------------------------
-
-A **child organization** is an organization created inside another organization, called its **parent**. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child's settings and membership from the parent.
-
-{{< alert title="Permissions Required" type="info" >}}
-Creating a child organization requires the **Create Organization** permission in the parent. Seeing the list of a parent's children requires **View Organizations** in the parent. Editing, deleting, or adding members to a child from the parent requires the Organization Administrator or Owner role in the parent. To understand the specific roles needed for each action, please refer to the [Default Permissions reference](https://docs.layer5.io/cloud/reference/default-permissions/).
-{{< /alert >}}
-
-## How Organizations Nest
-
-- An organization can have any number of child organizations.
-- A child can have child organizations of its own, and those can have children of their own. There is no limit on depth.
-- Every top-level organization sits directly under the **provider organization** of your Layer5 Cloud deployment. The provider organization is never itself a child, and it does not appear in the child organizations section.
-- A child belongs to exactly one parent. A child cannot be moved to another parent after it is created.
-
-A parent administers its **direct** children only. An administrator of a grandparent does not administer a grandchild by virtue of that role; the administrator of the intermediate organization does.
-
-## Creating a Child Organization
-
-Any member holding the **Create Organization** permission in the parent can create a child. The creator becomes an Organization Administrator of the new child.
-
-1.  Switch to the parent organization.
-2.  Go to the Organizations page and find the **Child organizations** section.
-3.  Use the create control in that section and fill in the same details you provide for any organization: name, country, region, and description.
-
-The parent is always the organization you have selected, so there is no parent field to fill in. If you do not see a create control, your role in the parent does not include **Create Organization**.
-
-## Viewing Child Organizations
-
-The **Child organizations** section on the Organizations page lists the direct children of the selected organization, showing each child's **name**, **description**, and **domain**. It appears for anyone holding **View Organizations** in the selected organization, and it does not appear when you have the provider organization or all organizations selected.
-
-{{< alert title="Seeing a Child Is Not Joining It" type="info" >}}
-Being able to see the list of children does not make you a member of any child. You do not see a child's members, invitations, or other settings from the list, and the child does not appear in your organization switcher unless you are a member of it.
-{{< /alert >}}
-
-## What a Parent Administrator Can Do
-
-An Organization Administrator or Owner of the parent can manage a direct child from the parent, without joining the child. From the parent, they can:
-
--   **Edit the child's settings**, using the edit action on the child's row.
--   **Add members to the child.** The **Child organizations** section has no add-member control, so this is done through the existing add-member API for the child.
--   **Search the child's members.**
--   **Delete the child**, using the delete action on the child's row, provided the child has no child organizations of its own (see [Deleting Organizations That Have Children](#deleting-organizations-that-have-children)).
-
-This access is read from the parent administrator's role in the parent on every request. Removing someone as an Organization Administrator of the parent ends their access to the settings of every child at once, with nothing to clean up in the children.
-
-## What a Parent Administrator Cannot Do
-
-Governing a child does not make the parent administrator a member of it. Anything inside the child still requires membership in the child and the usual role there, including:
-
--   workspaces, environments, connections, and credentials,
--   teams,
--   identity providers,
--   the mail server.
-
-To work inside a child, a parent administrator must be added to it as a member like anyone else. Holding a permission such as Edit Organization in the parent does not grant that permission in the child.
-
-## Switching into a Child
-
-The organization switcher lists only the organizations you are a member of. A parent administrator who is not a member of a child can edit that child's settings from the parent but cannot switch into it. The creator of a child is a member of it from the start, so the creator can switch into it right away. Other members of the parent do not appear in the child until someone adds them to it. See [Navigating Organizations](../navigating-organizations/) for how the switcher and the active organization work.
-
-## Deleting Organizations That Have Children
-
-An organization that still has child organizations cannot be deleted. The request is refused and nothing is deleted. Delete the children first, starting with the deepest, and then delete the parent. Children are never deleted along with their parent and are never moved to another parent.
-
-Deleting a child removes it as described in [Deleting Your Organization](../#deleting-your-organization).
 
 
 --------------------------------------------------------------------------------
@@ -10728,68 +9985,6 @@ Estimate telemetry volume early to avoid unexpected costs.
 This setup is vendor-neutral and can be substituted with managed offerings from your cloud provider or APM vendor.
 
 
-
-
---------------------------------------------------------------------------------
-title: "Recognizing User and Contributor Milestones"
-url: /cloud/guides/tutorials/assigning-user-badges/index.md
-description: Showcasing user and contributor achievements
-
---------------------------------------------------------------------------------
-
-
-Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.
-
-{{< alert type="info" >}}
-See all Achievement and all Project badges in the [Badge Gallery](https://badges.layer5.io).
-{{< /alert >}}
-
-<!-- 
-Pending Leaderboard completion
-See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). -->
-
-### How to Earn Badges
-
-Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you'll begin to unlock badges that showcase your multifaceted involvement.
-
-These badges will be prominently displayed on your Layer5 community profile, visually representing your journey as a contributor. Not only does this serve as a source of personal pride, but it also helps others in the community recognize your expertise and dedication.
-
-Project Badges are assigned by the admin to the user when a user contributes to a particular project. Achievement Badges are the badges that are assigned automatically when a user completes a task like sharing a design, creating a design for the first time, etc.
-
-{{< alert type="info" >}}
-See the **Recognition** section of the [Layer5 Community Handbook](https://layer5.io/community/handbook/recognition) for details of when and how each badge is awarded.
-{{< /alert >}}
-
-
-### How to Embed Badges
-To share your badges on other social profiles, utilize the provided embedded code and direct share functionality. Access your badges from the Layer5 Cloud profile badges section, and then use it to post your achievements on social media platforms seamlessly. This enables you to showcase your Layer5 contributions and milestones to a wider audience.
-##### Follow these steps to display your badge:
-
-1. Visit your [Layer5 Cloud](https://cloud.layer5.io/) Profile to see the badges
-2. Click on the badge, which you wanted to display
-3. Copy the html or the markdown code by clicking the Embed Code icon
-4. Paste the code in your site
-
-{{< figure src="images/embedding-badges-modal.svg" alt="Embedding-badges-modal">}}
-
-### FAQ
-- **Is there a limit to the number of badges that I can earn?**  
-  There is no set limit to the number of badges you can earn within the Layer5 Recognition Program. Your achievements and contributions determine the badges you receive, showcasing your dedication and skills within the community.
-
-- **How do I share my badges on other social profiles?**  
-  To share your badges on other social profiles, utilize the provided embedded code and direct share functionality. Access your badges from the Layer5 Cloud profile badges section, and then use it to post your achievements on social media platforms seamlessly. This enables you to showcase your Layer5 contributions and milestones to a wider audience.
-
-- **How many badges are there?**  
-  With three sets of badges, each with their own echelons you'll be collecting new badges for a while. Will you make it onto the badge leaderboard? New badges are being developed, so keep your eyes peeled for their emergence... or help us design a new one!
-
-- **Will there be other categories in the future?**  
-  Yes, we aim to expand badge categories to recognize a broader range of achievements and contributions, fostering a more inclusive and diverse community.
-
-- **Should I add these to my résumé?**  
-  Yes, incorporating Layer5 recognition badges into your résumé showcases your technical proficiency, commitment, and collaborative spirit, adding credibility to your open-source contributions and skills.
-
-- **Can I design a badge?**  
-  Yes, Layer5 encourages collaboration and welcomes your ideas to enhance the badge design process and community engagement.
 
 
 --------------------------------------------------------------------------------
@@ -12374,6 +11569,399 @@ Your browser sign-ins are represented by their own tokens and are listed on the 
 
 
 --------------------------------------------------------------------------------
+title: "Bring Your Own Mail Server"
+url: /cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md
+description: Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
+
+--------------------------------------------------------------------------------
+
+By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5's shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.
+
+The **Email** tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.
+
+This guide walks an Organization Administrator through configuring it, proving the domain, testing the connection, and reading the delivery health it reports afterwards. It then gives a worked example for each provider the tab offers a preset for: [Google Workspace](#google-workspace), [Microsoft 365](#microsoft-365), [Amazon SES](#amazon-ses), [SendGrid](#sendgrid), [Postmark](#postmark), and [any other provider](#any-other-provider).
+
+{{< alert title="Who can configure this" type="info" >}}
+Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server. The same gate applies to the [Identity Providers tab]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}).
+{{< /alert >}}
+
+## What You Will Need
+
+Have these in hand before you open the Email tab:
+
+-   **The hostname and submission port of your SMTP server**, and whether it uses STARTTLS or implicit TLS.
+-   **A username and password the server accepts.** Which credential that is differs by provider, and for most of them it is not the password you sign in with. The table below says which one each provider expects.
+-   **A from address on a domain whose DNS you control.** You prove control by publishing a TXT record, so you need access to the domain's DNS zone.
+
+### Where each provider's credential comes from
+
+Every provider on this page mints its SMTP credential somewhere different, and getting the wrong one produces the same result in every case: "The server rejected the username and password." Follow the link for how to create it and what else that provider requires.
+
+| Provider | Username | Password |
+| --- | --- | --- |
+| [Google Workspace](#google-workspace) | the sending account's full address | an app password for that account, never its account password |
+| [Microsoft 365](#microsoft-365) | the mailbox's sign-in address | that mailbox's own sign-in password. This is the exception on this page: client submission authenticates with the account credential itself, and only where the tenant permits it |
+| [Amazon SES](#amazon-ses) | your SES SMTP user name | your SES SMTP password, which is not an AWS access key |
+| [SendGrid](#sendgrid) | the literal string `apikey` | your SendGrid API key |
+| [Postmark](#postmark) | your Postmark server API token | the same server API token again |
+| [Any other provider](#any-other-provider) | whatever that provider documents for SMTP submission | |
+
+### Requirements on the mail server
+
+Layer5 Cloud refuses a configuration that does not meet these, so check them first:
+
+| Requirement | Detail |
+| --- | --- |
+| **Submission port** | Only ports `25`, `465`, `587` and `2525` are permitted. Any other port is refused when the connection is tested. |
+| **Encryption** | Choose **STARTTLS** (usually port 587) or **TLS** (implicit TLS, usually port 465). The unencrypted mode exists for a relay that needs no credentials at all: Layer5 Cloud will not present a password over an unencrypted connection, and refuses that combination rather than sending the password in the clear. |
+| **Publicly reachable address** | The server must resolve to a public address. A host that resolves to a loopback, private, link-local or carrier-shared address is refused at the moment of connection. A relay on your internal network cannot be used from hosted Layer5 Cloud. |
+| **Authentication method** | `PLAIN` or `CRAM-MD5`. Choose **None** only for a relay that authorizes by source address. A mail server that requires `AUTH LOGIN` is not supported. |
+
+## Configuring the Mail Server
+
+The **Email** tab of Edit Organization holds the configuration. Choosing **Configure mail server** opens the form **Add your mail server**, with the panels **What changes if you bring your own mail server** and **What you will need** above it.
+
+A **Provider preset** (**Gmail / Google Workspace**, **Microsoft 365**, **Amazon SES**, **SendGrid**, **Postmark**, or **Custom**) fills only the host, port, and encryption. It never fills your username, password, or from address. Some presets show a provider-specific caveat beneath the picker, for example that the SendGrid username is the literal string `apikey`.
+
+The form takes these fields:
+
+| Field | Purpose |
+| --- | --- |
+| **SMTP Host** | Your server's hostname. |
+| **Port (587 for STARTTLS, 465 for TLS)** | The submission port. The port and the encryption mode must agree. |
+| **Encryption** | `starttls`, `tls`, or `none`. |
+| **Authentication (None only for a relay that authorises by IP)** | `plain`, `cram-md5`, or `none`. Any method other than `none` requires both a username and a password. |
+| **Username** and **Password** | The credential your server accepts. The password is encrypted before it is stored and is never shown again. |
+| **From Address (its domain must be verified)** | The address your members see mail arrive from. You prove control of its domain in the next step. |
+| **From Display Name** | The name shown beside the from address. |
+| **Reply-To Address** | Where replies go. Optional. |
+| **Fall back to the shared mail server when delivery fails** | On by default. See [Fallback](#fallback) before you turn it off. |
+
+Saving the form stores the configuration.
+
+The tab confirms with "Saved *your Organization's name*'s mail server. Test the connection, verify the from domain, then turn it on to start routing mail through it." Nothing about your email has changed yet. Mail keeps leaving through Layer5's shared server until you have verified the domain, passed a connection test, and turned the server on.
+
+Once saved, the tab switches to its configured view. The heading names your Organization and states where its mail is going: it reads "*Your Organization* has its own mail server set up." while the server is off, and "*Your Organization* is using its own mail server." once it is on. A status chip sits beside it, followed by the panels **Delivery health**, **From-domain verification**, **Mail server settings**, **Password** and **Stop using your own mail server**.
+
+## Proving You Control the Sending Domain
+
+The Email tab will not let you turn a server on until you have proven you control the domain in its from address. The proof is a DNS TXT record, and every from domain needs one.
+
+The **From-domain verification** panel names the domain taken from your from address, shows a **Not verified** chip, and lists the record to publish:
+
+-   **Record name**: `_meshery-mail.` followed by your domain. For a from address of `no-reply@example.com`, the record name is `_meshery-mail.example.com`.
+-   **Record value**: a string beginning `meshery-mail-verification=` followed by a token minted for your Organization.
+
+Publish a TXT record with exactly that name and value in the DNS zone for your domain, then run **Re-check now**.
+
+{{< alert title="DNS propagation is not instant" type="info" >}}
+The panel says so itself: "Publish this TXT record, then re-check. DNS changes can take a while to propagate." A re-check made moments after you publish the record commonly reports that no record was found. That is not a defect. Wait for your DNS provider's stated propagation time and re-check again.
+{{< /alert >}}
+
+The check reports one of three failures, and each asks for a different action:
+
+| The panel says | What it means | What to do |
+| --- | --- | --- |
+| "No matching TXT record was found at that name." | The lookup completed and there is no TXT record at the record name. | Publish the record, or wait for propagation if you already have. |
+| "A TXT record exists but does not carry the expected value." | A TXT record exists at that name, but none of its values match the record value shown. | Correct the value. Surrounding whitespace is ignored, but the token must match exactly. |
+| "The DNS lookup did not complete. Try again shortly." | The lookup timed out or the resolver did not answer, so nothing was established about the domain either way. A previous proof is not withdrawn by this result. | Retry in a few minutes. If it persists, check that the domain's nameservers are answering. |
+
+When the check succeeds the chip changes to **Verified** and the panel reads "Control of this domain is proven (last checked ...). Keep the TXT record published - removing it will fail the next re-check." Leave the record in place.
+
+Two things reset verification:
+
+-   Changing the **From Address** to an address on a different domain. The panel then shows a new record name and a newly minted record value for the new domain.
+-   A re-check that completes and finds the record gone or changed. The proof is withdrawn, and the chip returns to **Not verified** until a re-check finds the record again.
+
+{{< alert title="A personal @gmail.com address cannot be verified" type="warning" >}}
+Domain verification requires publishing a record under the from address's domain. Nobody can publish a DNS record under `gmail.com`, so a personal Gmail address can never complete this step. A custom domain hosted on Google Workspace is fine, because you control its DNS.
+{{< /alert >}}
+
+## Testing the Connection
+
+The **Test connection** control in the **Delivery health** panel runs the connection test.
+
+Understand exactly what the test does. It opens a connection to your server, negotiates the encryption mode you chose, greets the server, presents your username and password, and hangs up. It proves that the server accepts the connection and the credentials, and nothing more. **It sends no message.** There is no recipient to choose, because none is used. On success the tab reports "The mail server accepted the connection. No test message was sent."
+
+{{< alert title="What a passing test does not prove" type="warning" >}}
+Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google's Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account's address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider's side. See [Google Workspace](#google-workspace).
+{{< /alert >}}
+
+A passing test is a prerequisite for turning the server on, and it stamps **Last success** in the **Delivery health** panel. A failing test names the stage that refused the connection; use [Troubleshooting](#troubleshooting) to act on it.
+
+## Turning the Server On
+
+With the domain verified and a test passed, **Turn on** in the **Delivery health** panel routes mail through your server. The tab confirms with "Mail server turned on. Mail for *your Organization* now goes out through it."
+
+Both preconditions are enforced on the button, and the panel says which one is outstanding: "Pass a connection test before turning this server on." and "Verify the from domain before turning this server on." The API enforces the test independently, refusing to enable a server whose last verdict is not a success with the message "the mail relay must pass a test before it can be enabled; run the test operation first".
+
+From this point, application mail for your Organization's members leaves through your server from your from address. The from display name is the one you configured, and the Reply-To header carries your Reply-To address if you set one.
+
+### Reading the status
+
+The status chip beside the heading reports one of four states. It is derived from two facts - whether the server is turned on, and how the last connection test or delivery through it went - so a decision somebody made is never reported as a fault:
+
+| Chip | Meaning |
+| --- | --- |
+| **Off** | The server is not turned on: either nobody has turned it on yet, or an administrator turned it off. Mail is going out through the shared mail server. This is also what a newly saved configuration reads as, and what any settings save or password rotation returns it to. |
+| **Delivering** | The server is on and the last connection test or delivery through it succeeded. Mail for this Organization is leaving through it. |
+| **Failing** | The server is on and the last connection test or delivery through it failed. The **Last failure** line names the reason, and what happened to that message depends on your fallback setting. Your server is still used for the next message. |
+| **Not yet proven** | The server is on and nothing has succeeded through it yet. Mail for this Organization is leaving through it. You are unlikely to see this: turning a server on requires a passed test, and every settings save turns it back off. |
+
+{{< alert title="Failing does not take your server out of service" type="info" >}}
+There is no circuit that stops using a server after repeated failures. **Failing** describes the last attempt and nothing more; the next message is sent through your server just the same. If it keeps failing, fix the cause named on the **Last failure** line - the status will not recover on its own, and it will not deteriorate into your server being skipped either.
+{{< /alert >}}
+
+The **Delivery health** panel also shows the **Server** host and port, the **From** address, the time of the **Last success**, and the count of **Consecutive failures**. That count means delivery failures since the last success: a failed connection test does not advance it, and neither does a rejection of one recipient's address, which says nothing about the server. When the last attempt failed, a **Last failure** line gives the time and the classified reason, using the same reasons as [Troubleshooting](#troubleshooting).
+
+## Fallback
+
+**Fall back to the shared mail server when delivery fails** is on by default. It decides what happens to a message your server does not accept.
+
+**With fallback on**, a message your server does not accept is re-sent through Layer5's shared mail server, and the failure is recorded against your server's delivery health. "Does not accept" is every way a delivery can fail against your server, not only a refusal it voiced: a host nobody can reach, a connection that times out, a TLS handshake that fails and a rejected password all take the same path. The re-sent message cannot claim your from address, because Layer5's server is not authorized to send as your domain and the message would fail your own SPF and DMARC checks. Instead it arrives from Layer5's address with a display name of your Organization's name followed by "(via Layer5)", and its Reply-To is your Reply-To address, or your from address if you did not set one. Your members still receive the message. Your Organization's name still appears on it.
+
+**With fallback off**, your Organization owns delivery entirely. A message your server does not accept is dropped and is not re-sent. Turning it off is a deliberate decision, so the tab asks you to confirm it with the dialog **Turn off fallback to the shared mail server?**, which states the consequence in full:
+
+> With fallback off this organization owns delivery entirely: a message its mail server will not accept is dropped rather than re-sent. Users of this organization may be unable to verify their email address or reset their password while the mail server is unavailable.
+
+Leave fallback on unless you have a specific reason to accept dropped mail. If you do turn it off, watch the **Delivery health** panel: with fallback off, **Failing** means members did not receive that message.
+
+Two exceptions apply whatever the setting:
+
+-   **A password Layer5 Cloud cannot read.** That is a fault on Layer5's side and not a delivery policy you chose, so the message is sent through the shared server regardless and the failure is recorded as "The stored password could not be read."
+-   **A server that took the whole message and then went away.** If your server accepts the message body and then drops the connection or stops answering instead of confirming it, the outcome is genuinely unknown - it may have queued the message. Re-sending could deliver it twice, so nothing more is sent, whichever way fallback is set. The failure is still recorded against your server's delivery health.
+
+## Managing the Configuration Afterwards
+
+### Changing settings
+
+The **Mail server settings** panel holds the same fields as the setup form, minus the password, with its own **Provider preset** picker and **Save settings** button. Saving confirms with "Mail server settings saved. The stored password is unchanged." Any settings save returns the server to unproven and turns it off, because a host or port nothing has tested is unproven; the recorded test result, failure reason and failure count are cleared with it. Run the connection test and turn the server on again afterwards. Your from-domain proof survives an edit that leaves the from address on the same domain - renaming the display name does not cost you the TXT record - but changing the from address to a different domain resets domain verification.
+
+### Replacing the password
+
+The **Password** panel reports **Stored - hidden** when a password is held, or **None stored** for a relay configured with authentication set to `none`. The stored password is never shown, on this page or through the API, and saving settings can never change or clear it.
+
+To rotate it, enter the new value in **New password (replaces the stored one)** and use **Replace password**. The field's helper text says "Left empty, nothing changes." Rotation returns the server to unproven and turns it off, because a password nothing has tested is as unproven as a host nothing has tested. Test the connection and turn the server on again afterwards.
+
+Paste the password exactly. Leading and trailing whitespace is kept, because it can be part of a password.
+
+### Turning it off
+
+**Turn off** in the **Delivery health** panel stops routing through your server. The dialog **Turn off this mail server?** explains that mail goes back to Layer5's shared server and stops arriving from your domain, and that the configuration and stored password are kept so you can turn it back on. The tab confirms with "Mail server turned off. Mail is going out through Layer5 again." The chip returns to **Off**, and the recorded test result is kept, so turning it back on needs only the domain to still be verified.
+
+### Removing it
+
+The **Stop using your own mail server** panel's **Remove mail server** button deletes the configuration and the stored password together. The dialog **Remove this mail server?** states that this cannot be undone, and the tab confirms with "Removed *your Organization*'s mail server. Mail is going out through Layer5 again." Mail is not interrupted: every message leaves through Layer5's shared server from the moment the configuration is removed. Re-adding means entering the host, credentials and from address again, and verifying the domain again.
+
+## Google Workspace
+
+Google supports two ways for an application to send through your Workspace domain. Both work with Layer5 Cloud, and both need an app password rather than the account's sign-in password.
+
+{{< alert title="An ordinary account password does not work" type="warning" >}}
+Google Workspace [no longer supports less secure apps](https://knowledge.workspace.google.com/admin/apps/control-access-to-less-secure-apps) that sign in with a username and password, and the setting to allow them has been removed from the Admin console. An application sending over SMTP must present an [app password](https://support.google.com/accounts/answer/185833), which requires 2-Step Verification to be turned on for that account. A sign-in password pasted into the **Password** field produces "The server rejected the username and password." on test. That is Google refusing the credential, not a fault in Layer5 Cloud.
+{{< /alert >}}
+
+### App passwords, and Google's "you must use OAuth"
+
+Google's own pages say that third-party apps must use OAuth, and a reader who finds that paragraph will reasonably ask why this guide asks for an app password. Both are true, and the exception is the point.
+
+What Google turned off on 14 March 2025 is sign-in with the **account** password. Its [transition article](https://knowledge.workspace.google.com/admin/sync/transition-from-less-secure-apps-to-oauth) states that from that date "You will no longer use a password for access (with the exception of app passwords)", and for this exact case - "scanners or other devices using SMTP" - it lists "Configure an app password for use with the device" beside configuring OAuth. [App passwords](https://support.google.com/accounts/answer/185833) remain available, and "can only be used with accounts that have 2-Step Verification turned on".
+
+So an app password is the credential to use here. **Layer5 Cloud does not support OAuth (`XOAUTH2`) for outbound mail**: it authenticates with `PLAIN` or `CRAM-MD5`, which is why it needs a password rather than a token. Google is explicit that it prefers neither - it says app passwords "aren't recommended and are unnecessary in most cases" - and its recommended path for an application is the relay service authenticating by source IP address instead of by credential. Hosted Layer5 Cloud cannot take that path, because it publishes no fixed sending addresses for you to allow. A self-hosted Layer5 Cloud that egresses from a static address can: allow that address on the relay and set **Authentication** to `none`.
+
+### Path A: the SMTP relay service
+
+This is [Google's recommended path for applications and devices](https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google) and it lets you send from any address in your domain, such as `no-reply@`.
+
+In the Google Admin console, open the **SMTP relay service** setting under Gmail routing and configure it as follows:
+
+-   **Allowed senders**: **Only addresses in my domains**. Google states that with this option the sender does not have to be a Workspace user, but the address must be in your primary domain or a subdomain of it.
+-   **Authentication**: **Require SMTP Authentication**. Google describes this as verifying the connection with a Workspace user's email address and password. Do not rely on the IP-address option on hosted Layer5 Cloud, which publishes no fixed sending addresses to allow; see [App passwords, and Google's "you must use OAuth"](#app-passwords-and-googles-you-must-use-oauth) for the self-hosted exception.
+-   **Encryption**: **Require TLS encryption**.
+
+Then on the Email tab:
+
+| Field | Value |
+| --- | --- |
+| SMTP Host | `smtp-relay.gmail.com` |
+| Port | `587` (Google's page names this port for TLS) |
+| Encryption | `starttls` |
+| Authentication | `plain` |
+| Username | the full address of a Workspace user. A dedicated account created for this purpose is recommended, so that a person leaving does not take the mail credential with them. |
+| Password | an app password for that user, with 2-Step Verification on |
+| From Address | any address in your domain, for example `no-reply@example.com` |
+
+Google states a limit for the relay of 10,000 messages per user in a 24-hour period. Google's page also states that when the sender is not in one of your domains the envelope sender is rewritten to `postmaster@` your domain; the settings above keep the sender in your domain, so that rewrite does not apply.
+
+### Path B: the Gmail SMTP server
+
+This path needs [no Admin console change](https://knowledge.workspace.google.com/admin/gmail/send-email-from-a-printer-scanner-or-app) and is what the **Gmail / Google Workspace** preset fills in.
+
+| Field | Value |
+| --- | --- |
+| SMTP Host | `smtp.gmail.com` |
+| Port | `587` with `starttls`, or `465` with `tls` |
+| Authentication | `plain` |
+| Username | the full address of the Workspace account |
+| Password | an app password for that account |
+| From Address | the authenticated account's own address, or one of its verified **Send mail as** aliases |
+
+Google states the sending limit for this server is 2,000 messages per day.
+
+The constraint is the from address. In practice, Gmail's SMTP server replaces the From address with the signed-in account's address unless that address is one of the account's configured **Send mail as** addresses. Google's help pages do not state this rewrite; it is what happens. Your members then see mail arrive from the account rather than from the address you configured, and the connection test cannot catch it, because it hangs up before naming a sender. If you want to send as `no-reply@example.com` through this path, [add it as a Send mail as address](https://support.google.com/mail/answer/22370) on the authenticating account and complete Google's confirmation step first. For a white-labeled sender, Path A is the better choice precisely because the relay service has no such constraint: with **Only addresses in my domains** it sends as any address in your domain.
+
+### Both paths
+
+-   **Verification.** Your Workspace domain is a domain you control, so the TXT record in [Proving You Control the Sending Domain](#proving-you-control-the-sending-domain) is published like any other record at your DNS host. A personal `@gmail.com` address cannot complete this step.
+-   **Mail authentication.** Your Workspace domain already carries Google's SPF include, and DKIM signing applies once it is turned on in the Admin console's Gmail email authentication settings. Google notes it can take up to 48 hours for DKIM authentication to start working after the key is added. Confirm DKIM is on for the domain: [Set up DKIM](https://knowledge.workspace.google.com/admin/security/set-up-dkim). No other mail-authentication DNS is needed beyond Layer5 Cloud's TXT proof record.
+
+## Microsoft 365
+
+The **Microsoft 365** preset fills Microsoft's [client SMTP submission](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365) endpoint, which sends authenticated mail through a cloud mailbox.
+
+| Field | Value |
+| --- | --- |
+| SMTP Host | `smtp.office365.com` |
+| Port | `587` |
+| Encryption | `starttls` |
+| Authentication | `plain` |
+| Username | the sign-in address of a licensed mailbox in your tenant |
+| Password | that mailbox's own sign-in password, where the tenant permits it |
+| From Address | that same mailbox's address, unless you grant **Send As** (below) |
+
+Microsoft 365 is the one provider on this page whose SMTP credential **is** the account's sign-in password rather than a separate token or app password, so the caveats below are about whether your tenant still allows that, not about where to mint something else.
+
+Microsoft names port 587 or 25 for this path and requires TLS 1.2 or later. It also states that a device defaulting to port 465 "doesn't support the required versions of TLS for client SMTP submission", so choose `starttls` on 587 and not `tls` on 465.
+
+Four things decide whether this works, and each of them produces a specific failure:
+
+-   **SMTP AUTH is off by default.** Microsoft disables authenticated client SMTP submission for organizations created after January 2020, and it is turned on per mailbox. Enable it for the mailbox you are using - see [Enable or disable authenticated client SMTP submission](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/authenticated-client-smtp-submission) - or the test returns "SMTP authentication was refused by the mail server".
+-   **The authentication mechanism has to be one Layer5 Cloud offers.** Layer5 Cloud implements `PLAIN` and `CRAM-MD5` and does not implement `AUTH LOGIN`; the preset says so beneath the picker. A tenant that will not accept `AUTH PLAIN` returns "The mail server does not support the selected authentication method", and no setting on this page changes that. Use a mailbox whose tenant accepts `AUTH PLAIN`, or one of the alternatives below.
+-   **Security defaults block this path entirely.** Microsoft states that client SMTP submission using basic authentication "isn't compatible with Security defaults in Microsoft Entra ID". A tenant with [security defaults](https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults) on cannot use this path at all.
+-   **Sending as a different address needs Send As.** If the from address is not the mailbox you authenticate with, that mailbox needs **Send As** permission on it; Microsoft returns "5.7.60 SMTP; Client doesn't have permissions to send as this sender", which arrives here as the **Last failure** "The server refused the from address." A connection test cannot detect it, because the test never names a sender.
+
+Microsoft's stated limits for this path are 10,000 recipients per day and 30 messages per minute.
+
+{{< alert title="Basic authentication for client submission is being retired" type="warning" >}}
+Microsoft has [published a deprecation timeline](https://techcommunity.microsoft.com/blog/exchange/updated-exchange-online-smtp-auth-basic-authentication-deprecation-timeline/4489835) for basic authentication on client SMTP submission: behavior is unchanged through December 2026, after which it is disabled by default for existing tenants - administrators can still re-enable it - and not available by default to tenants created after that point, with a final removal date to be announced in the second half of 2027. Because Layer5 Cloud authenticates with a username and password, a tenant that reaches that cut-off without the setting re-enabled will start failing with "The server rejected the username and password." Plan a move to a provider on this page that authenticates with a token, or keep the setting enabled while Microsoft still allows it.
+{{< /alert >}}
+
+Microsoft's two alternatives to client submission do not substitute cleanly here, and it is worth knowing why before you try them:
+
+-   **High Volume Email** (`smtp.hve.mx.microsoft`, port 587) accepts basic authentication on a dedicated endpoint even where SMTP AUTH is disabled, but Microsoft states it delivers to [internal recipients within the tenant only](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/high-volume-mails-m365). It can only carry your Organization's mail if every member has a mailbox in your tenant, and it needs pay-as-you-go billing configured before the account can send at all.
+-   **SMTP relay** through your tenant's MX endpoint authenticates by certificate or static IP on port 25 rather than by credential. Hosted Layer5 Cloud publishes no fixed sending addresses to allow, so this is only an option for a self-hosted install with a static egress address, configured with **Authentication** set to `none`.
+
+## Amazon SES
+
+The **Amazon SES** preset fills a regional endpoint, and **the region in it is a placeholder you must replace**. The preset ships `email-smtp.us-east-1.amazonaws.com`; if you send from another region, the host is wrong and nothing will work until you change it.
+
+| Field | Value |
+| --- | --- |
+| SMTP Host | `email-smtp.<region>.amazonaws.com`, for example `email-smtp.eu-west-1.amazonaws.com`. AWS lists every endpoint under [Amazon SES endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html). |
+| Port | `587` for STARTTLS, or `465` for implicit TLS |
+| Encryption | `starttls` on 587, `tls` on 465 |
+| Authentication | `plain` |
+| Username | your SES SMTP user name |
+| Password | your SES SMTP password |
+| From Address | an address on an identity you have verified in SES, in the same region |
+
+-   **SES SMTP credentials are not your AWS access keys.** AWS states plainly that "Your SMTP password is different from your AWS secret access key". Create a dedicated pair from the SMTP settings in the SES console, and download them at that point - they cannot be retrieved afterwards. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html). Credentials are **unique to each region**, so a set minted for one region will not authenticate against another region's endpoint.
+-   **Sandbox accounts cannot mail your members.** A new SES account is in the [sandbox](https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html) in every region, where you can send only to verified addresses and domains, at most 200 messages per 24 hours and 1 per second. Any member whose address is not itself verified, and whose domain is not verified either, is refused - recorded here as "The server refused the recipient." Unless every member is covered by a verified identity, request production access before turning the server on.
+-   **Two separate verifications apply.** SES requires you to verify the identity you send as, and Layer5 Cloud requires its own TXT proof of the same domain. Neither substitutes for the other; do both.
+-   **Use 587 or 465, not SES's alternates.** AWS also documents ports 2587 and 2465. Layer5 Cloud permits only `25`, `465`, `587` and `2525`, so either alternate is refused before any connection is made.
+
+## SendGrid
+
+The **SendGrid** preset fills its SMTP relay, where the credential is an API key rather than an account login.
+
+| Field | Value |
+| --- | --- |
+| SMTP Host | `smtp.sendgrid.net` |
+| Port | `587` |
+| Encryption | `starttls` |
+| Authentication | `plain` |
+| Username | `apikey` |
+| Password | your SendGrid API key |
+| From Address | an address on an authenticated domain, or a verified single sender |
+
+{{< alert title="The username is the word apikey" type="warning" >}}
+The **Username** field takes the literal string `apikey` - seven characters, the same for every account. It is not your email address, not your SendGrid login and not the API key itself. The API key goes in the **Password** field. Entering the key in both fields, or your email address as the username, produces "The server rejected the username and password." The preset shows this caveat beneath the picker for the same reason.
+{{< /alert >}}
+
+-   **Create the key with Mail Send permission**, and copy it when it is shown: SendGrid displays an API key once and cannot show it again. See [Integrating with the SMTP API](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/integrating-with-the-smtp-api).
+-   **Verify the sender identity first.** SendGrid requires every sending address to be covered by [domain authentication or single sender verification](https://www.twilio.com/docs/sendgrid/for-developers/sending-email/sender-identity), and describes single sender verification as suitable for testing only. Authenticate the domain your from address is on. Unverified, delivery is refused and recorded as "The server refused the from address."
+-   **Other ports.** SendGrid documents 25, 587 and 2525 for STARTTLS and 465 for implicit TLS. All four are within Layer5 Cloud's allowlist; 587 with `starttls` is the recommended pairing.
+
+## Postmark
+
+The **Postmark** preset fills its transactional SMTP endpoint. Its credential is unusual: the same token goes in both fields.
+
+| Field | Value |
+| --- | --- |
+| SMTP Host | `smtp.postmarkapp.com` |
+| Port | `587` |
+| Encryption | `starttls` |
+| Authentication | `plain` |
+| Username | your Postmark **Server API token** |
+| Password | the same Server API token |
+| From Address | an address on a verified domain, or a confirmed Sender Signature |
+
+-   **Username and password are both the Server API token.** Postmark documents that "The Server API Token acts as the username and password". It is per-server, so take it from the server you intend the mail to come from. An SMTP token works too, with its access key as the username and its secret key as the password. See [Send email with SMTP](https://postmarkapp.com/developer/user-guide/send-email-with-smtp).
+-   **The from address must be verified with Postmark.** Postmark requires a confirmed Sender Signature for a single address, or a [verified domain](https://postmarkapp.com/support/article/1046-how-do-i-verify-a-domain) to send from any address on it. Verifying the domain is the better fit, since your from address and Reply-To are usually on the same domain. Without it, delivery is refused and recorded as "The server refused the from address."
+-   **Mail goes to the default transactional stream.** Postmark selects a message stream from a header that Layer5 Cloud does not send, so messages take the server's default `outbound` transactional stream. That is the right stream for the notification, invitation and account mail this feature carries. Postmark's separate broadcast host is not applicable here.
+-   **There is no implicit-TLS port.** Postmark documents 25, 2525 and 587, all with STARTTLS. Do not choose the `tls` encryption mode; pair `starttls` with 587.
+
+## Any Other Provider
+
+Choose the **Custom** preset - it fills nothing and leaves whatever you typed alone - and get these four things from your provider's documentation. They map one-to-one onto [Requirements on the mail server](#requirements-on-the-mail-server):
+
+| What to ask your provider | What to do with it |
+| --- | --- |
+| The submission hostname and port | Enter them as **SMTP Host** and **Port**. The port has to be `25`, `465`, `587` or `2525`; if your provider names only something else, it cannot be used. |
+| Whether that port expects STARTTLS or implicit TLS | Set **Encryption** to match: `starttls` for 587-style ports, `tls` for 465. A mismatch fails as "The TLS handshake failed." |
+| How the SMTP credential is minted | Almost never your account password. Enter it as **Username** and **Password** with **Authentication** set to `plain`, or `cram-md5` if the provider offers it and you prefer that the password never crosses the wire. |
+| Which from addresses the account may send as | Providers vary from "any address on a verified domain" to "the authenticated mailbox only". Confirm your from address is authorized, because the connection test cannot check it. |
+
+Two constraints rule some providers out before you start. The server must resolve to a public address, so an internal relay is unreachable from hosted Layer5 Cloud. And a server that offers only `AUTH LOGIN` cannot be used, because Layer5 Cloud implements `PLAIN` and `CRAM-MD5` and will not fall back to `LOGIN`.
+
+**Authentication** set to `none` is for one case only: a relay that authorizes by source address rather than by credential. That needs a fixed egress address to allow, which hosted Layer5 Cloud does not publish, so in practice it is a self-hosted option.
+
+## Troubleshooting
+
+A failed test shows a one-line result beneath the **Test connection** button, and the **Last failure** line in **Delivery health** shows the classified reason recorded for the most recent failure, whether that was a test or a real delivery. Neither is the mail server's own reply. Both name the stage that failed, which is what tells you where to look.
+
+| The test result says | The Last failure line says | What it means | What to do |
+| --- | --- | --- | --- |
+| "The mail server address is one this server will not connect to" | "The address the host resolved to is not a permitted destination." | Either the destination address or the port was refused before any connection was made, and both report the same way. **The address**: the host resolved to a loopback, private, link-local or carrier-shared address. **The port**: it is not one of `25`, `465`, `587` or `2525` - the form accepts any port in range, and the allowlist is applied when you test. | Check both. Use a mail server with a public address; an internal relay cannot be used from hosted Layer5 Cloud. Then check the port against your provider's submission port, remembering that several providers document alternates - SES's `2587` and `2465`, for instance - that are outside this list. |
+| "The selected authentication method sends the password in the clear, so it cannot be used on an unencrypted connection. ..." | "The server refused the message." | You paired a password with `none` encryption. The check runs before any connection is made. | Choose `starttls` or `tls`. |
+| "Unable to open a mail session with the configured server" | "The server refused the connection." | Something answered at that address but nothing is listening on that port. | Check the port. Check that the host is the SMTP submission endpoint, not a web address. |
+| "Unable to open a mail session with the configured server" | "The server did not answer in time." | The connection attempt timed out, or the server opened the connection and then went silent, including part-way through authentication. | Check the host and port. A firewall on the server side silently dropping the connection produces this result. |
+| "Unable to open a mail session with the configured server" | "The TLS handshake failed." | Encryption negotiation failed. The most common cause is a mismatched pairing: `tls` on port 587 or `starttls` on port 465. A certificate that is not trusted or does not name the host also lands here. | Match the mode to the port: `starttls` on 587, `tls` on 465. Check the server's certificate. |
+| "The mail server does not offer STARTTLS" | "The server does not offer STARTTLS." | You chose `starttls` and the server did not advertise it. Layer5 Cloud refuses to continue unencrypted rather than send your password in the clear. | If the port is 465, choose `tls`. Otherwise enable STARTTLS on the server. |
+| "SMTP authentication was refused by the mail server" | "The server rejected the username and password." | The server answered the credential with a refusal. | Re-enter the password with **Replace password**. For Google Workspace, use an app password, never the sign-in password. For SendGrid, the username is `apikey`. For Microsoft 365, check that SMTP AUTH is enabled on the mailbox. For Amazon SES, check you used SES SMTP credentials rather than AWS access keys. |
+| "The mail server does not support the selected authentication method" | "The server rejected the username and password." | The server answered that it does not implement the mechanism you chose, or does not offer it on this connection. | Choose a mechanism the server advertises. `AUTH LOGIN` is not supported by Layer5 Cloud, so a server that offers nothing else cannot be used. |
+| "The mail server requires an encrypted connection for the selected authentication method" | "The server rejected the username and password." | The server accepts authentication only over an encrypted connection. | Choose `starttls` or `tls`. |
+| "The mail server temporarily declined authentication, and no setting needs to change" | "The server rejected the username and password." | The server is greylisting or rate-limiting the connection. | Retry in a few minutes before changing anything. |
+| "The mail server answered reply code ... to the authentication attempt" | "The server rejected the username and password." | The server refused at the authentication stage with a reply Layer5 Cloud does not classify. | Check the mail server's logs for the reply. |
+| Not shown by a test | "The server refused the from address." | A real delivery reached the server and it would not send as your from address. The test cannot detect this. | Authorize the from address on the server: a verified **Send mail as** alias or the SMTP relay service for Google, **Send As** permission for Microsoft 365, a verified identity for Amazon SES, an authenticated domain for SendGrid, a verified domain or Sender Signature for Postmark. |
+| Not shown by a test | "The server refused the recipient." | A real delivery reached the server and it would not relay to that recipient. | Check the server's relay restrictions. The relay must accept external recipients. |
+| Not shown by a test | "The server refused the message." | A real delivery reached the server, which accepted sender and recipient and then refused the message itself, typically on a size or content policy. | Check the server's message policies and logs. |
+| Not shown by a test | "The stored password could not be read." | Layer5 Cloud could not decrypt the stored password. This is not a configuration mistake on your side, and the message was sent through the shared server regardless of your fallback setting. | Contact Layer5 support. Replacing the password with **Replace password** re-encrypts it and may clear the condition. |
+| A passing test, but mail arrives from the wrong address | Nothing recorded | The server accepted your credentials but sends as the authenticated account instead of your from address. Typical of `smtp.gmail.com`. | See [Google Workspace, Path B](#path-b-the-gmail-smtp-server). |
+| **Failing** with fallback off | Any of the above | Members did not receive the message that failed. | Fix the cause named on the **Last failure** line. Consider turning fallback on until it is fixed. |
+
+{{< alert title="Why the reasons are classifications" type="info" >}}
+The mail server's own reply text is never shown on the Email tab or returned by the API, only these fixed reasons. Repeating a remote server's reply would turn the test into a way of probing what Layer5's network can reach. The full detail is written to Layer5 Cloud's server log.
+{{< /alert >}}
+
+## Related
+
+-   [Organization Management](/cloud/guides/organizations/org-management/) for the rest of the Edit Organization modal, including the Identity Providers tab.
+-   [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) for how custom domains and identity providers combine.
+-   [White-labeling](/cloud/guides/self-hosted/white-labeling/) for the branding carried in the message body and footer.
+
+
+--------------------------------------------------------------------------------
 title: "Create Your Layer5 Account"
 url: /cloud/getting-started/getting-started-with-layer5-account/index.md
 description: Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
@@ -12660,6 +12248,205 @@ Choose a remote provider for any feature that depends on accounts, sharing, or s
 ## SaaS versus self-hosted
 
 Layer5 Cloud runs as a hosted service and as a self-hosted deployment, and both act as a remote provider in the same way. The trusted-source rules above are relative to each deployment: a self-hosted Cloud trusts its own configured base URL and the custom domains of its own organizations, not those of the hosted service. To run your own deployment, see [Self-Hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Child Organizations"
+url: /cloud/guides/organizations/org-management/child-organizations/index.md
+description: Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
+
+--------------------------------------------------------------------------------
+
+A **child organization** is an organization created inside another organization, called its **parent**. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child's settings and membership from the parent.
+
+{{< alert title="Permissions Required" type="info" >}}
+Creating a child organization requires the **Create Organization** permission in the parent. Seeing the list of a parent's children requires **View Organizations** in the parent. Editing, deleting, or adding members to a child from the parent requires the Organization Administrator or Owner role in the parent. To understand the specific roles needed for each action, please refer to the [Roles and Permissions reference]({{< ref "cloud/reference/default-permissions.md" >}}).
+{{< /alert >}}
+
+## How Organizations Nest
+
+- An organization can have any number of child organizations.
+- A child can have child organizations of its own, and those can have children of their own. There is no limit on depth.
+- Every top-level organization sits directly under the **provider organization** of your Layer5 Cloud deployment. The provider organization is never itself a child, and it does not appear in the child organizations section.
+- A child belongs to exactly one parent. A child cannot be moved to another parent after it is created.
+
+A parent administers its **direct** children only. An administrator of a grandparent does not administer a grandchild by virtue of that role; the administrator of the intermediate organization does.
+
+## Creating a Child Organization
+
+Any member holding the **Create Organization** permission in the parent can create a child. The creator becomes an Organization Administrator of the new child.
+
+Select the parent organization, then create the child from the **Child organizations** section of the Organizations page. The form asks for the same details as any organization: name (required), country, region, and description.
+
+The parent is always the organization you have selected, so there is no parent field to fill in. If you do not see a create control, your role in the parent does not include **Create Organization**.
+
+## Viewing Child Organizations
+
+The **Child organizations** section on the Organizations page lists the direct children of the selected organization, showing each child's **name**, **description**, and **domain**. It appears for anyone holding **View Organizations** in the selected organization, and it does not appear when you have the provider organization or all organizations selected.
+
+{{< alert title="Seeing a Child Is Not Joining It" type="info" >}}
+Being able to see the list of children does not make you a member of any child. You do not see a child's members, invitations, or other settings from the list, and the child does not appear in your organization switcher unless you are a member of it.
+{{< /alert >}}
+
+## What a Parent Administrator Can Do
+
+An Organization Administrator or Owner of the parent can manage a direct child from the parent, without joining the child. From the parent, they can:
+
+-   **Edit the child's settings**, using the edit action on the child's row.
+-   **Add members to the child.** The **Child organizations** section has no add-member control, so this is done through the existing add-member API for the child.
+-   **Search the child's members.**
+-   **Delete the child**, using the delete action on the child's row, provided the child has no child organizations of its own (see [Deleting Organizations That Have Children](#deleting-organizations-that-have-children)).
+
+This access is read from the parent administrator's role in the parent on every request. Removing someone as an Organization Administrator of the parent ends their access to the settings of every child at once, with nothing to clean up in the children.
+
+## What a Parent Administrator Cannot Do
+
+Governing a child does not make the parent administrator a member of it. Anything inside the child still requires membership in the child and the usual role there, including:
+
+-   workspaces, environments, connections, and credentials,
+-   teams,
+-   identity providers,
+-   the mail server.
+
+To work inside a child, a parent administrator must be added to it as a member like anyone else. Holding a permission such as Edit Organization in the parent does not grant that permission in the child.
+
+## Switching into a Child
+
+The organization switcher lists only the organizations you are a member of. A parent administrator who is not a member of a child can edit that child's settings from the parent but cannot switch into it. The creator of a child is a member of it from the start, so the creator can switch into it right away. Other members of the parent do not appear in the child until someone adds them to it. See [Switching Between Organizations](../#switching-between-organizations) for how the switcher and the active organization work.
+
+## Deleting Organizations That Have Children
+
+An organization that still has child organizations cannot be deleted. The request is refused and nothing is deleted. Delete the children first, starting with the deepest, and then delete the parent. Children are never deleted along with their parent and are never moved to another parent.
+
+Deleting a child removes it as described in [Deleting Your Organization](../#deleting-your-organization).
+
+
+--------------------------------------------------------------------------------
+title: "Organization Configuration Scenarios"
+url: /cloud/guides/organizations/configuration-scenarios/index.md
+description: Choose how an organization is reached and who authenticates its users, then set up a custom domain. Covers the Hosted, Branded, and White-Label scenarios.
+
+--------------------------------------------------------------------------------
+
+Every organization in Layer5 Cloud is configured by two choices: **where your users sign in** (the front door) and **whose identity provider authenticates them**. The combinations form five named scenarios. This guide helps you pick one and then walks through the settings that implement it, including who is allowed to change each setting.
+
+For the mechanics behind the choices, see [White-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}) (themes, logos, custom domains) and [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}) (bring-your-own-credentials and authentication boundaries).
+
+## Provider and tenant organizations {#first-the-two-organization-types}
+
+These scenarios configure a **tenant organization**, which is every organization except one.
+
+- **Provider organization.** The single top-level organization that operates the deployment. On the hosted service it is Layer5. On a self-hosted deployment it is your platform team. It owns the deployment's default identity providers, the Google and GitHub applications every other organization falls back to. A Provider Admin manages platform-wide settings.
+- **Tenant organization.** Every other organization: a customer, partner, or business unit. A tenant is what you configure into one of the scenarios below.
+
+The provider organization always signs in on the deployment's canonical address with the default identity providers.
+
+## The two choices
+
+| Choice | Options |
+| --- | --- |
+| **Front door**: where users sign in | **Shared**: the deployment's own address, such as `cloud.layer5.io`. **Branded subdomain**: a subdomain of the deployment's base domain, such as `acme.layer5.io`. **Custom domain**: your own domain, such as `cloud.acme.com`. |
+| **Identity provider**: who runs sign-in | **Shared**: the deployment's Google and GitHub applications. **Your own (BYOC)**: your own Google, GitHub, or OIDC single sign-on. |
+
+Email-and-password sign-in and the Google and GitHub buttons work in every scenario, including on a custom domain that uses the default identity providers. The scenarios differ in whose identity provider authenticates users and whose brand appears on the consent screen, not in whether social sign-in is available.
+
+## The scenarios at a glance
+
+| Scenario | Front door | Identity provider | Branded sign-in pages | Consent screen shows | Setting needed |
+| --- | --- | --- | --- | --- | --- |
+| **Hosted** | Shared | Shared | No (shared page) | Platform name | None. This is the default. |
+| **Branded** | Branded subdomain | Shared | Yes | Platform name | Domain (Provider Admin) |
+| **Branded + BYOC** | Branded subdomain | Your own | Yes | Your brand | Domain (Provider Admin) and identity providers |
+| **White-Label** | Custom domain | Shared | Yes | Platform name | Domain (Provider Admin) |
+| **White-Label + BYOC** | Custom domain | Your own | Yes | Your brand | Domain (Provider Admin) and identity providers |
+
+One combination does not exist: the shared front door always uses the shared identity provider, so there is no "Shared + your own identity provider". To use your own identity provider, give the organization a branded subdomain or a custom domain first.
+
+## Choose a scenario {#how-to-choose}
+
+1. **Do you need a branded address?**
+   - No: use **Hosted**. Nothing to configure.
+   - A subdomain of the platform is fine: continue with **Branded**.
+   - It must be your own domain: continue with **White-Label**.
+2. **Do you need your own identity provider?** You need one for your own consent-screen branding, your own OAuth rate limits and audit trail, corporate single sign-on, or a distinct authentication boundary.
+   - On a subdomain: no means **Branded**, yes means **Branded + BYOC**.
+   - On your own domain: no means **White-Label**, yes means **White-Label + BYOC**.
+
+Bringing your own identity provider is always optional, whatever the domain.
+
+## What each scenario means for your users {#the-scenarios-in-detail}
+
+### Hosted
+
+Users sign in at the deployment's address and pick your organization in the organization switcher. Theme colors and logo appear inside the app. The sign-in page itself is the platform's, shared by every organization on that address. This is the default and needs no configuration.
+
+### Branded
+
+The organization has its own subdomain of the deployment's base domain. Sign-in, sign-up, and error pages carry your colors, logo, and links. Social buttons use the platform's applications, so the consent screen shows the platform's name.
+
+### Branded + BYOC
+
+A branded subdomain plus your own OAuth clients or OIDC provider. The consent screen shows your brand, and the organization becomes a distinct authentication boundary. See [The identity provider is the security boundary]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md#the-identity-provider-is-the-security-boundary" >}}).
+
+### White-Label
+
+The organization runs on your own domain, on a different base domain from the deployment, with the platform's identity providers. Social sign-in works without extra setup and shows the platform's name on the consent screen.
+
+### White-Label + BYOC
+
+Your domain and your identity provider. The organization is branded end to end. This is the usual choice for a partner or reseller that offers the platform under its own name.
+
+## Set up a custom domain
+
+A domain routes users who arrive at that address into your organization. The scenarios other than Hosted all depend on it.
+
+### Who can set it
+
+Only a **Provider Admin** can set a domain to a new value. An Organization Admin sees the domain field in the organization settings, but the save fails with a 403 error that says the domain requires a Provider Admin. Organization administrators can keep the stored value and can clear it. Ask the provider to set the domain, and tell them the exact hostname.
+
+### What a valid domain looks like
+
+Layer5 Cloud checks the domain when it changes:
+
+| Rule | Detail |
+| --- | --- |
+| Length | 3 to 253 characters. |
+| Labels | Dot-separated, each 1 to 63 ASCII letters, digits, or hyphens, not starting or ending with a hyphen. |
+| Format | A hostname. Email-shaped input with `@` is rejected. The value cannot start with `http`, `https`, or `www`. |
+| Internationalized names | Write them in Punycode (`xn--`). |
+| Reserved hosts | The provider's own hosts, including the canonical Layer5 Cloud address and the Layer5 marketing and documentation hosts, are rejected. |
+| Uniqueness | One organization per domain. Deleted organizations keep their domain, so clear the domain before you delete an organization if the address must be reused. |
+
+The check is syntactic. Layer5 Cloud does not resolve the name when you save, so a valid hostname whose DNS is not ready yet is accepted. Point the domain's DNS at your Layer5 Cloud deployment, as described in [White-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}).
+
+### How the domain is used
+
+- **Exact match.** Layer5 Cloud compares the host of each request, with the protocol and port removed, to organization domains. The match is exact, so `cloud.acme.com` and `www.cloud.acme.com` are different hosts.
+- **The domain wins.** A request that arrives on an organization's domain runs in that organization, ahead of the request header, the saved preference, and the browser session. See [Switching Between Organizations]({{< ref "cloud/guides/organizations/org-management/_index.md#switching-between-organizations" >}}).
+- **Never custom.** The deployment's own address, IP addresses, and reserved hosts are never treated as custom domains.
+- **Cache.** Lookups, including misses, are cached for five minutes. Creating, updating, or deleting an organization clears the affected entry on the server that handled the change, so the change is visible there immediately and everywhere within the cache window.
+- **Clearing.** Emptying the field removes the assignment. Users who arrive on the old address no longer land in the organization.
+- **Open invitation.** When an organization has an [open invitation]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}), a non-member who signs in on its domain joins through it.
+
+Changing a domain that users already rely on can break their routing and bookmarks. Announce the change first.
+
+### Verify the assignment
+
+The by-domain lookup is public and needs no credentials. It returns the organization record when the domain is assigned and `null` with a 200 status when it is not:
+
+```bash
+curl "https://cloud.layer5.io/api/identity/orgs/by-domain?domain=cloud.acme.com"
+```
+
+Substitute your deployment's address and your hostname. A `null` result means the domain is unassigned, mistyped, or still inside the cache window for a recent change.
+
+## Add your own identity provider
+
+Organization Admins and Owners add, rotate, and remove identity providers without the provider's help. The procedure is in [Configuring Identity Providers]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}). The first provider you save switches the organization to its own identity providers. Removing the last one returns it to the platform's defaults.
+
+## Membership policy is independent {#these-choices-are-independent-of-who-can-join}
+
+The scenario controls where and how users sign in. It does not control who may join. Membership is governed by invitations, open sign-up, and the roles and teams an invitation grants. Any scenario pairs with any membership policy. See [Using the Open Organization Invitation Link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}) and [User Invitations]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -13125,6 +12912,139 @@ These are commercial entitlements. Layer5 Cloud does not check your plan when yo
 ## Account recovery
 
 If you forget your password, the sign-in page offers account recovery by email. Layer5 Cloud sends a recovery link and code to the address on the account. Both are valid for 30 days. Password sign-in is refused until the address on the account is verified, so verify your address before you rely on password sign-in. See [Getting started with a Layer5 account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Manage Teams"
+url: /cloud/guides/organizations/managing-teams/index.md
+description: Create a team, add and remove members, assign Team Admins, attach a team to a workspace, and delete a team.
+
+--------------------------------------------------------------------------------
+
+This guide covers the administrator tasks for teams. For what a team is and how it grants access, read the [Teams concept]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
+
+{{< keys-matrix caption="Team permissions" functions="Create Team|Edit Team|Delete Team|View All Teams|Add User to Team|Remove User from Team|Leave Team|Assign team to workspace" >}}
+
+## Create a team
+
+**Needs:** the Create Team permission in your current organization.
+
+A team takes a name and a description. The name is required on the Teams page; Layer5 Cloud does not check it for uniqueness or length beyond 255 characters. You can pick initial members from the organization's users in the same step.
+
+The creator becomes the team's owner, a member, and a Team Admin. Members chosen at creation are added as plain members with no role.
+
+The team is created in the organization you have selected. Confirm the organization switcher shows the organization you intend before you create it.
+
+## Add members
+
+**Needs:** Team Admin or owner of the team, or Provider Admin.
+
+1. Make sure each person is already a member of the organization. Add them first if not.
+2. Add them to the team.
+
+Added people receive an email unless they have turned off organization and team user-management notifications. Adding an existing member is harmless and changes nothing.
+
+Adding someone to the team does not give them a role in it. A member with no role holds only what they receive through their organization roles and the team's workspace assignments.
+
+## Make a member a Team Admin
+
+**Needs:** Team Admin of the team, Organization Admin or a holder of Assign User Roles, or Provider Admin.
+
+Team Admin is the only role offered for team scope. Assigning it sets the person's role list in that team: the roles you submit replace the roles they held there, and an empty list removes every team role while keeping the membership. The person must belong to the organization. Granting the role to someone not yet on the team also adds them to it.
+
+Team Admin permissions apply across the whole organization, not just this team. See [How a team grants access]({{< ref "cloud/concepts/identity-and-security/teams/_index.md#how-a-team-grants-access" >}}).
+
+## Remove a member or leave a team
+
+| You are | You can |
+| --- | --- |
+| Team Admin removing someone else | Remove them |
+| A member without Team Admin | Leave the team (remove yourself) |
+| A Team Admin | Not remove yourself; another Team Admin or a Provider Admin removes you |
+| The owner | Not leave; delete the team instead |
+| Provider Admin | Remove anyone except the owner removing themselves |
+
+Removal ends the person's membership and all their roles in the team. It leaves their organization membership and other teams unchanged. A removed owner remains the owner of record.
+
+## Give a team access to a workspace
+
+**Needs:** Assign team to workspace in the workspace's organization (Organization Admin, Workspace Admin, Academy Admin, Provider Admin).
+
+Assign the team to the workspace. The team and the workspace must belong to the same organization. Unassigning needs Remove team from workspace. See [Workspaces]({{< ref "cloud/guides/workspaces/_index.md" >}}).
+
+## Delete a team
+
+**Needs:** Organization Admin or Owner, Provider Admin, or the person who is both owner and Team Admin of the team. Team Admin alone and owner alone are refused.
+
+Deleting is irreversible and removes only the team record: members keep their user accounts, and resources remain. Before you delete, do these so no access remains:
+
+1. Remove every member from the team.
+2. Unassign the team from each workspace it has access to.
+
+## Limits and failure modes
+
+- Deleting the team does not remove its members' team roles or workspace assignments on its own; do the steps above.
+- Updates that fail partway can leave a team without its creator as member. If the creator is not listed, add them to the team.
+- A team cannot be moved to another owner. Plan to keep at least one other Team Admin so someone can administer the team if the owner leaves the organization.
+
+
+--------------------------------------------------------------------------------
+title: "Recognize Members with Badges"
+url: /cloud/guides/organizations/assigning-user-badges/index.md
+description: Create recognitions for your organization, award them to members, and let members share them from their public profile.
+
+--------------------------------------------------------------------------------
+
+A **recognition** is a badge that an organization defines and awards to its members. Recognitions mark milestones such as completing training, contributing to a project, or reaching a team goal. An awarded badge appears on the recipient's public profile, where the recipient can share it.
+
+Two kinds of badges exist, and they come from different places:
+
+- **Organization recognitions** are created and awarded by an organization's administrators. This guide covers them.
+- **Layer5 community badges** belong to the Layer5 community recognition program. Browse them in the [Badge Gallery](https://badges.layer5.io) and read how they are earned in the [Recognition section of the Layer5 Community Handbook](https://layer5.io/community/handbook/recognition).
+
+## Who can do what
+
+| Task | What it needs |
+| --- | --- |
+| Create, edit, or delete a recognition | The **Manage Recognitions** permission in the organization that owns the recognition. Organization Admin, Provider Admin, and Academy Admin hold it by default. The **Manage Recognitions** control on the Organizations page is enabled for holders of **Edit Organization**. |
+| Award a recognition to a member | The permission to update that member's profile, held in an organization you share with the member. |
+| View a badge | Anyone who can open the recipient's public profile. |
+
+Two limits apply to every award:
+
+- **You cannot award a badge to yourself.** Layer5 Cloud refuses the request with a 403 error, including for a Provider Admin. A badge is a public claim about what its holder completed, so someone else must grant it.
+- **The recipient is notified**, and an event records who awarded which badge to whom.
+
+## Create a recognition
+
+Open **Manage Recognitions** from the Organizations page to see every recognition and to create, edit, or delete the ones your organization owns.
+
+Each recognition follows these rules:
+
+- **The name must contain at least one letter or number.**
+- **The label must be unique.** A label that another organization has already reserved is refused with a 409 conflict. Choose a different name.
+- **Ownership is fixed.** A recognition belongs to the organization where it was created. You can edit or delete it only while that organization is selected. A recognition owned by another organization stays visible in the list, but its edit and delete controls are disabled, with the message that it belongs to another organization.
+
+The recognition list itself is not private. The recognition catalog read is unauthenticated and not scoped to an organization, so any recognition's name and label can be read by anyone. Do not put sensitive text in a recognition's name or description.
+
+## Award a recognition
+
+Administrators award a recognition to one member at a time, or set a member's full badge list from the member's profile editor. Both paths apply the same rules: the recipient is never the person awarding, and the awarder needs permission to update the recipient's profile.
+
+Some badges are awarded automatically. Completing an Academy quiz awards the badge tied to that quiz. Layer5 Cloud awards no other badge automatically.
+
+Removing a badge uses a separate request from awarding and needs the same permission to update the member's profile.
+
+## Share a badge
+
+A member opens a badge from the **Badges** tab of their public profile. The badge detail offers:
+
+- **Share buttons** for X, LinkedIn, and Facebook.
+- **An HTML snippet** that embeds the badge image and links to the badge on the member's profile.
+
+A profile badge link has the form `https://cloud.layer5.io/user/<profile-id>?tab=badges&badge=<label>`.
+
+{{< figure src="images/embedding-badges-modal.svg" alt="Badge detail dialog showing share buttons and an embeddable HTML snippet" >}}
 
 
 --------------------------------------------------------------------------------

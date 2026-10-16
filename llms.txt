@@ -131,16 +131,8 @@
 - [Learner Guide](/cloud/academy/using-the-academy/index.md): Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
 
 - [Managing Environments](/cloud/guides/workspaces/managing-environments/index.md): Learn how to view, create, and edit Environments, and how to assign Connections to an Environment or remove them from it.
-- [Navigating Organizations](/cloud/guides/organizations/org-management/navigating-organizations/index.md): Learn how to navigate between different organizations in Layer5 Cloud and understand the order of precedence for organization settings.
-
 - [Networking](/cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md): Prepare and configure network services for your Layer5 Cloud deployment.
-- [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/index.md): The named ways an organization can be configured in Layer5 Cloud — Hosted, Branded, and White-Label — and how to choose between them based on your domain, identity provider, and sign-in needs.
-
 - [Promoting a Design from Staging to Prod](/cloud/guides/tutorials/promoting-a-design/index.md): Learn how to move a design from a staging workspace to a production workspace, with environment assignment and access approval.
-
-- [Bring Your Own Mail Server](/cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md): Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
-
-- [Child Organizations](/cloud/guides/organizations/org-management/child-organizations/index.md): Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
 
 - [Creating Content for the Academy](/cloud/academy/creating-content/creating-your-learning-path/index.md): A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
 
@@ -151,8 +143,6 @@
 - [Integrating Assessments in the Academy](/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
 
 - [Monitoring](/cloud/guides/self-hosted/planning/monitoring/index.md): Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts.
-- [Recognizing User and Contributor Milestones](/cloud/guides/tutorials/assigning-user-badges/index.md): Showcasing user and contributor achievements
-
 - [User Management](/cloud/concepts/identity-and-security/users/user-management/index.md): Learn how to create, add, invite, and manage users within Layer5 Cloud.
 
 - [Academy Instructor Console Guide](/cloud/academy/creating-content/instructor-console-guide/index.md): A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
@@ -174,15 +164,25 @@
 
 - [Tokens](/cloud/concepts/identity-and-security/tokens/index.md): API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
 
+- [Bring Your Own Mail Server](/cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md): Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
+
 - [Create Your Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
 - [Feature Availability by Plan](/cloud/reference/feature-availability/index.md): Which Layer5 Cloud capabilities each Layer5 plan includes, the limits each plan records, and the role and deployment conditions that also decide whether a capability is available to you.
 - [How Layer5 Cloud Works with Meshery and Kanvas](/cloud/concepts/architecture/index.md): How Layer5 Cloud acts as the remote provider for Meshery Server and Kanvas, what it supplies to a connected server, how sign-in is handed off, and what it stores.
+- [Child Organizations](/cloud/guides/organizations/org-management/child-organizations/index.md): Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
+
+- [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/index.md): Choose how an organization is reached and who authenticates its users, then set up a custom domain. Covers the Hosted, Branded, and White-Label scenarios.
+
 - [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
 - [Notification Preferences](/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
 - [Roles and Permissions](/cloud/reference/default-permissions/index.md): Which permissions each default Layer5 Cloud role holds, who assigns each role, and which default keychains group the permissions.
 - [Set Up Your Organization](/cloud/getting-started/setting-up-your-organization/index.md): Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
 - [Start from a Catalog Design](/cloud/getting-started/creating-a-design-from-template/index.md): Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
 - [Support](/cloud/reference/support/index.md): The support channels for Layer5 Cloud, what each Layer5 plan includes, and what the in-product support form sends.
+- [Manage Teams](/cloud/guides/organizations/managing-teams/index.md): Create a team, add and remove members, assign Team Admins, attach a team to a workspace, and delete a team.
+
+- [Recognize Members with Badges](/cloud/guides/organizations/assigning-user-badges/index.md): Create recognitions for your organization, award them to members, and let members share them from their public profile.
+
 - [v1.0.278](/cloud/reference/releases/v1.0.278/index.md):  feat(ui): shorten Canvas-first onboarding to land new users on Import from GitHub @jijillery (#6172) 👨🏽‍💻 Contributors …
 - [v1.0.277](/cloud/reference/releases/v1.0.277/index.md):  fix(ui): normalize DEPLOY_ENVIRONMENT aliases for GITHUB_APP_URL resolution @leecalcote (#6169) 👨🏽‍💻 Contributors 🔗 …
 - [v1.0.276](/cloud/reference/releases/v1.0.276/index.md):  fix(connect): navigate to GitHub authorization instead of silently failing on connect @leecalcote (#6166) …

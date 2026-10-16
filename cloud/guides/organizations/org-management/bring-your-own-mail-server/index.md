@@ -60,20 +60,25 @@ Layer5 Cloud refuses a configuration that does not meet these, so check them fir
 
 ## Configuring the Mail Server
 
-1.  Go to the Organizations section, select your Organization and click **Edit**, then open the **Email** tab.
-2.  Click **Configure mail server**. The tab shows the panels **What changes if you bring your own mail server** and **What you will need**, and the form **Add your mail server** opens beneath them.
-3.  Optionally choose a **Provider preset**: **Gmail / Google Workspace**, **Microsoft 365**, **Amazon SES**, **SendGrid**, **Postmark** or **Custom**. A preset fills only the host, port and encryption. It never fills your username, password or from address. Some presets show a warning beneath the picker with a provider-specific caveat, for example that the SendGrid username is the literal string `apikey`.
-4.  Fill in the form:
-    -   **SMTP Host**: your server's hostname.
-    -   **Port (587 for STARTTLS, 465 for TLS)**: the submission port. The port and the encryption mode must agree.
-    -   **Encryption**: `starttls`, `tls` or `none`.
-    -   **Authentication (None only for a relay that authorises by IP)**: `plain`, `cram-md5` or `none`. Any method other than `none` requires both a username and a password.
-    -   **Username** and **Password**: the credential your server accepts. The password is encrypted before it is stored and is never shown again.
-    -   **From Address (its domain must be verified)**: the address your members will see mail arrive from. Its domain is what you prove control of in the next step.
-    -   **From Display Name**: the name shown beside the from address.
-    -   **Reply-To Address**: where replies go. Optional.
-    -   **Fall back to the shared mail server when delivery fails**: on by default. See [Fallback](#fallback) before you turn it off.
-5.  Click **Save mail server**.
+The **Email** tab of Edit Organization holds the configuration. Choosing **Configure mail server** opens the form **Add your mail server**, with the panels **What changes if you bring your own mail server** and **What you will need** above it.
+
+A **Provider preset** (**Gmail / Google Workspace**, **Microsoft 365**, **Amazon SES**, **SendGrid**, **Postmark**, or **Custom**) fills only the host, port, and encryption. It never fills your username, password, or from address. Some presets show a provider-specific caveat beneath the picker, for example that the SendGrid username is the literal string `apikey`.
+
+The form takes these fields:
+
+| Field | Purpose |
+| --- | --- |
+| **SMTP Host** | Your server's hostname. |
+| **Port (587 for STARTTLS, 465 for TLS)** | The submission port. The port and the encryption mode must agree. |
+| **Encryption** | `starttls`, `tls`, or `none`. |
+| **Authentication (None only for a relay that authorises by IP)** | `plain`, `cram-md5`, or `none`. Any method other than `none` requires both a username and a password. |
+| **Username** and **Password** | The credential your server accepts. The password is encrypted before it is stored and is never shown again. |
+| **From Address (its domain must be verified)** | The address your members see mail arrive from. You prove control of its domain in the next step. |
+| **From Display Name** | The name shown beside the from address. |
+| **Reply-To Address** | Where replies go. Optional. |
+| **Fall back to the shared mail server when delivery fails** | On by default. See [Fallback](#fallback) before you turn it off. |
+
+Saving the form stores the configuration.
 
 The tab confirms with "Saved *your Organization's name*'s mail server. Test the connection, verify the from domain, then turn it on to start routing mail through it." Nothing about your email has changed yet. Mail keeps leaving through Layer5's shared server until you have verified the domain, passed a connection test, and turned the server on.
 
@@ -88,7 +93,7 @@ The **From-domain verification** panel names the domain taken from your from add
 -   **Record name**: `_meshery-mail.` followed by your domain. For a from address of `no-reply@example.com`, the record name is `_meshery-mail.example.com`.
 -   **Record value**: a string beginning `meshery-mail-verification=` followed by a token minted for your Organization.
 
-Publish a TXT record with exactly that name and value in the DNS zone for your domain, then click **Re-check now**.
+Publish a TXT record with exactly that name and value in the DNS zone for your domain, then run **Re-check now**.
 
 
 
@@ -137,7 +142,7 @@ Two things reset verification:
 
 ## Testing the Connection
 
-In the **Delivery health** panel, click **Test connection**.
+The **Test connection** control in the **Delivery health** panel runs the connection test.
 
 Understand exactly what the test does. It opens a connection to your server, negotiates the encryption mode you chose, greets the server, presents your username and password, and hangs up. It proves that the server accepts the connection and the credentials, and nothing more. **It sends no message.** There is no recipient to choose, because none is used. On success the tab reports "The mail server accepted the connection. No test message was sent."
 
@@ -150,7 +155,7 @@ Understand exactly what the test does. It opens a connection to your server, neg
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
   <h4 class="alert-heading" style="color: #EBC017;">What a passing test does not prove</h4>
   
-      Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google&rsquo;s Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account&rsquo;s address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider&rsquo;s side. See <a href="/cloud/guides/organizations/org-management/bring-your-own-mail-server/#google-workspace">Google Workspace</a>.
+      Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google&rsquo;s Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account&rsquo;s address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider&rsquo;s side. See <a href="/#google-workspace">Google Workspace</a>.
   
 </div>
 
@@ -160,7 +165,7 @@ A passing test is a prerequisite for turning the server on, and it stamps **Last
 
 ## Turning the Server On
 
-With the domain verified and a test passed, click **Turn on** in the **Delivery health** panel. The tab confirms with "Mail server turned on. Mail for *your Organization* now goes out through it."
+With the domain verified and a test passed, **Turn on** in the **Delivery health** panel routes mail through your server. The tab confirms with "Mail server turned on. Mail for *your Organization* now goes out through it."
 
 Both preconditions are enforced on the button, and the panel says which one is outstanding: "Pass a connection test before turning this server on." and "Verify the from domain before turning this server on." The API enforces the test independently, refusing to enable a server whose last verdict is not a success with the message "the mail relay must pass a test before it can be enabled; run the test operation first".
 
@@ -215,19 +220,19 @@ Two exceptions apply whatever the setting:
 
 ### Changing settings
 
-The **Mail server settings** panel holds the same fields as the setup form, minus the password, with its own **Provider preset** picker and **Save settings** button. Saving confirms with "Mail server settings saved. The stored password is unchanged." Any settings save returns the server to unproven and turns it off, because a host or port nothing has tested is unproven; the recorded test result, failure reason and failure count are cleared with it. Run the connection test and click **Turn on** again afterwards. Your from-domain proof survives an edit that leaves the from address on the same domain - renaming the display name does not cost you the TXT record - but changing the from address to a different domain resets domain verification.
+The **Mail server settings** panel holds the same fields as the setup form, minus the password, with its own **Provider preset** picker and **Save settings** button. Saving confirms with "Mail server settings saved. The stored password is unchanged." Any settings save returns the server to unproven and turns it off, because a host or port nothing has tested is unproven; the recorded test result, failure reason and failure count are cleared with it. Run the connection test and turn the server on again afterwards. Your from-domain proof survives an edit that leaves the from address on the same domain - renaming the display name does not cost you the TXT record - but changing the from address to a different domain resets domain verification.
 
 ### Replacing the password
 
 The **Password** panel reports **Stored - hidden** when a password is held, or **None stored** for a relay configured with authentication set to `none`. The stored password is never shown, on this page or through the API, and saving settings can never change or clear it.
 
-To rotate it, enter the new value in **New password (replaces the stored one)** and click **Replace password**. The field's helper text says "Left empty, nothing changes." Rotation returns the server to unproven and turns it off, because a password nothing has tested is as unproven as a host nothing has tested. Test the connection and turn the server on again afterwards.
+To rotate it, enter the new value in **New password (replaces the stored one)** and use **Replace password**. The field's helper text says "Left empty, nothing changes." Rotation returns the server to unproven and turns it off, because a password nothing has tested is as unproven as a host nothing has tested. Test the connection and turn the server on again afterwards.
 
 Paste the password exactly. Leading and trailing whitespace is kept, because it can be part of a password.
 
 ### Turning it off
 
-Click **Turn off** in the **Delivery health** panel. The dialog **Turn off this mail server?** explains that mail goes back to Layer5's shared server and stops arriving from your domain, and that the configuration and stored password are kept so you can turn it back on. The tab confirms with "Mail server turned off. Mail is going out through Layer5 again." The chip returns to **Off**, and the recorded test result is kept, so turning it back on needs only the domain to still be verified.
+**Turn off** in the **Delivery health** panel stops routing through your server. The dialog **Turn off this mail server?** explains that mail goes back to Layer5's shared server and stops arriving from your domain, and that the configuration and stored password are kept so you can turn it back on. The tab confirms with "Mail server turned off. Mail is going out through Layer5 again." The chip returns to **Off**, and the recorded test result is kept, so turning it back on needs only the domain to still be verified.
 
 ### Removing it
 
@@ -264,7 +269,7 @@ So an app password is the credential to use here. **Layer5 Cloud does not suppor
 
 This is [Google's recommended path for applications and devices](https://knowledge.workspace.google.com/admin/gmail/advanced/route-outgoing-smtp-relay-messages-through-google) and it lets you send from any address in your domain, such as `no-reply@`.
 
-In the Google Admin console, go to **Menu > Apps > Google Workspace > Gmail > Routing**, scroll to **SMTP relay service** and click **Configure**. Set:
+In the Google Admin console, open the **SMTP relay service** setting under Gmail routing and configure it as follows:
 
 -   **Allowed senders**: **Only addresses in my domains**. Google states that with this option the sender does not have to be a Workspace user, but the address must be in your primary domain or a subdomain of it.
 -   **Authentication**: **Require SMTP Authentication**. Google describes this as verifying the connection with a Workspace user's email address and password. Do not rely on the IP-address option on hosted Layer5 Cloud, which publishes no fixed sending addresses to allow; see [App passwords, and Google's "you must use OAuth"](#app-passwords-and-googles-you-must-use-oauth) for the self-hosted exception.
@@ -304,7 +309,7 @@ The constraint is the from address. In practice, Gmail's SMTP server replaces th
 ### Both paths
 
 -   **Verification.** Your Workspace domain is a domain you control, so the TXT record in [Proving You Control the Sending Domain](#proving-you-control-the-sending-domain) is published like any other record at your DNS host. A personal `@gmail.com` address cannot complete this step.
--   **Mail authentication.** Your Workspace domain already carries Google's SPF include, and DKIM signing applies once it is turned on in the Admin console under **Menu > Apps > Google Workspace > Gmail > Authenticate email**. Google notes it can take up to 48 hours for DKIM authentication to start working after the key is added. Confirm DKIM is on for the domain: [Set up DKIM](https://knowledge.workspace.google.com/admin/security/set-up-dkim). No other mail-authentication DNS is needed beyond Layer5 Cloud's TXT proof record.
+-   **Mail authentication.** Your Workspace domain already carries Google's SPF include, and DKIM signing applies once it is turned on in the Admin console's Gmail email authentication settings. Google notes it can take up to 48 hours for DKIM authentication to start working after the key is added. Confirm DKIM is on for the domain: [Set up DKIM](https://knowledge.workspace.google.com/admin/security/set-up-dkim). No other mail-authentication DNS is needed beyond Layer5 Cloud's TXT proof record.
 
 ## Microsoft 365
 
@@ -367,7 +372,7 @@ The **Amazon SES** preset fills a regional endpoint, and **the region in it is a
 | Password | your SES SMTP password |
 | From Address | an address on an identity you have verified in SES, in the same region |
 
--   **SES SMTP credentials are not your AWS access keys.** AWS states plainly that "Your SMTP password is different from your AWS secret access key". Create a dedicated pair in the SES console under **SMTP settings** > **Create SMTP credentials**, and download them at that point - they cannot be retrieved afterwards. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html). Credentials are **unique to each region**, so a set minted for one region will not authenticate against another region's endpoint.
+-   **SES SMTP credentials are not your AWS access keys.** AWS states plainly that "Your SMTP password is different from your AWS secret access key". Create a dedicated pair from the SMTP settings in the SES console, and download them at that point - they cannot be retrieved afterwards. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html). Credentials are **unique to each region**, so a set minted for one region will not authenticate against another region's endpoint.
 -   **Sandbox accounts cannot mail your members.** A new SES account is in the [sandbox](https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html) in every region, where you can send only to verified addresses and domains, at most 200 messages per 24 hours and 1 per second. Any member whose address is not itself verified, and whose domain is not verified either, is refused - recorded here as "The server refused the recipient." Unless every member is covered by a verified identity, request production access before turning the server on.
 -   **Two separate verifications apply.** SES requires you to verify the identity you send as, and Layer5 Cloud requires its own TXT proof of the same domain. Neither substitutes for the other; do both.
 -   **Use 587 or 465, not SES's alternates.** AWS also documents ports 2587 and 2465. Layer5 Cloud permits only `25`, `465`, `587` and `2525`, so either alternate is refused before any connection is made.
