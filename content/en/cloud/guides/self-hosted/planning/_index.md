@@ -1,145 +1,90 @@
 ---
-title: Planning
-description: Plan your self-hosted Layer5 Cloud deployment
-weight: 2
+title: Plan a Deployment
+linkTitle: Plan a Deployment
+description: >
+  Make the decisions a Layer5 Cloud deployment needs before you install it: database, hostname and TLS, secrets, identity providers, mail, the first administrator, and network paths.
+weight: 10
+diataxis: how-to
+categories: [self-hosted]
+tags: [self-hosted, planning]
 aliases:
   - /cloud/self-hosted/planning/
-
 ---
 
-## Provider Configuration Planning
+Layer5 Cloud starts with unsafe placeholder values for every secret and with `localhost` for every URL. Settle the decisions below first, so the install is a single `helm install` with a complete values file.
 
-When planning your self-hosted Layer5 Cloud deployment, consider how you will initialize and configure your provider instance. The `INIT_CONFIG` environment variable enables you to automate provider configuration during deployment.
+## Decisions to make
 
-### Configuration Strategy
+| Decision | What to settle | Where it is configured |
+| --- | --- | --- |
+| Database | A PostgreSQL server that hosts three databases: `meshery`, `kratos`, and `hydra`. | `env.db`, `env.kratosdb`, `env.hydradb`, and the subchart `dsn` values |
+| Hostname and TLS | One public hostname, a certificate for it, and the scheme (`https`). | `ingress.*`, `env.serverbaseurl`, `env.serverHost`, `env.proto` |
+| Secrets | Replace every placeholder before first start. See [Secrets to generate](#secrets-to-generate). | `env.*`, `kratos.*`, `hydra.*` |
+| Identity providers | The Google and GitHub OAuth applications that act as the default sign-in providers. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}). | `env.providerOrg*` |
+| Mail | A relay on a public address that offers STARTTLS (or implicit TLS on 465), and how identity mail leaves. See [Mail](#mail). | `smtp.*`, Kratos courier values |
+| First administrator | The Provider Admin account and the provider organization. See [Provider initialization]({{< ref "cloud/guides/self-hosted/deployment/provider-initialization.md" >}}). | `env.initConfig` |
+| Network paths | What must be reachable between components and from users. See [Networking]({{< ref "cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md" >}}). | Ingress, network policy, egress rules |
+| Observability | Where logs and traces go. See [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}}). | `env.loglevel`, `env.otelConfig` |
 
-Before deploying, plan your configuration approach:
+## Database
 
-1. **Provider Identity**: Define your provider name and identification
-2. **Initial Settings**: Determine which settings need to be configured at startup
-3. **Configuration Management**: Decide how configuration will be managed (environment variables, secrets, config files)
-4. **Update Strategy**: Plan for configuration updates and changes over time
+Layer5 Cloud creates and migrates its own schema. The server applies migrations every time it starts, and exits if a migration fails, so give the database user the rights to create tables and the `uuid-ossp` extension in the `public` schema of the `meshery` database. Kratos and Hydra run their own migrations when the chart's `automigration` setting is on, which is the default.
 
-### Provider Admin Organization Initialization
+The chart does not install a database. Size it for your user count and design volume. Run PostgreSQL with persistent storage that survives pod rescheduling, and back it up: organizations, designs, credentials, and identities all live in it.
 
-The Provider Admin organization is a special organization identified by the hardcoded UUID `11111111-1111-1111-1111-111111111111`. It represents the root administrative organization for the cloud platform.
+## Hostname and TLS
 
-#### Configuration Format
+Users, Meshery Servers, and API clients reach everything through one hostname. The ingress must route three paths:
 
-The `INIT_CONFIG` environment variable accepts a YAML configuration with the following structure:
+| Path | Backend | Notes |
+| --- | --- | --- |
+| `/` | Layer5 Cloud server, port 9876 | The chart's default ingress route. |
+| `/kratos` | Kratos public service, port 9010 | Browsers load sign-in and account flows from here. Strip the prefix when your controller supports it. |
+| `/hydra` | Hydra public service | Browsers use this for the OAuth2 sign-in redirect. |
 
-```yaml
-organization:
-  name: "Layer5"
-  description: "The uber organization for all things Layer5."
-  country: "United States"
-  region: "North America"
+Pass WebSocket upgrades on `/collaboration`. Set the same public URL in `env.serverbaseurl`, `env.kratosbrowser`, `env.hydrabrowser`, and the Kratos and Hydra `urls` values, or sign-in redirects point at the wrong host. On a TLS deployment, set `env.proto` to `https`: the server builds redirects to organization custom domains from that value and uses `http` for anything else.
 
-user:
-  first_name: "Admin"
-  last_name: "User"
-  email: "admin@layer5.io"
-  username: "admin@layer5.io"  # Optional, defaults to email if not provided
-  password: "change-me-on-first-login"  # Required
-```
+The chart does not create or request a certificate. Terminate TLS at the ingress with a secret or a certificate manager of your choice.
 
-#### Setting the Environment Variable
+## Secrets to generate
 
-To enable Provider Admin organization initialization, set the `INIT_CONFIG` environment variable with the entire YAML configuration as its value:
+Generate each value once, store it in your secret manager, and pass it to Helm. A change to a value that the chart writes into the Layer5 Cloud ConfigMap or Secret rolls the server pods.
 
-```bash
-INIT_CONFIG='organization:
-  name: "Layer5"
-  description: "The uber organization for all things Layer5."
-  country: "United States"
-  region: "North America"
+| Value | Purpose | Notes |
+| --- | --- | --- |
+| `env.oauthsecret` | Secret of the OAuth2 client that Layer5 Cloud uses against Hydra. | Must match the Hydra client you create. The default is a public placeholder. |
+| `env.cloudCredentialEncryptionKey` | Encrypts stored identity-provider and mail credentials. | Base64 of 32 random bytes. When empty, credential encryption fails. Losing it makes stored credentials unreadable. |
+| `env.cloudOidcStateHmacKey` | Signs the state of the brokered OIDC sign-in. | Base64 of 32 random bytes. When empty, brokered sign-in fails. |
+| `env.kratosWebhookApiKey` | Shared key Kratos presents when it calls the registration hooks. | Must equal the `value` in the Kratos registration `web_hook` configuration. The shipped default is the placeholder `dev_token` on both sides. |
+| `kratos.kratos.config.secrets.cookie` and `.cipher` | Kratos session cookie and data encryption. | Long random strings. The shipped value is empty. |
+| `hydra.hydra.config.secrets.system` | Hydra system secret. | Long random string. The shipped value is empty. |
+| `env.providerOrgGithubSecret`, `env.providerOrgGoogleSecret` | Client secrets of the default OAuth applications. | See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}). |
+| `smtp.smtppassword` | Password of the shared mail relay. | Stored in a Kubernetes Secret, but also visible in the release's stored Helm values. |
 
-user:
-  first_name: "Admin"
-  last_name: "User"
-  email: "admin@layer5.io"
-  username: "admin@layer5.io"
-  password: "change-me-on-first-login"'
-```
+Generate a 32-byte key with `openssl rand -base64 32`. The server logs an error at startup when the credential encryption key is not a valid key, and keeps running without it.
 
-#### Required and Optional Fields
+## Mail
 
-**Organization:**
-- `name`: Name of the provider organization (required)
-- `description`: Description of the organization (optional)
-- `country`: Country where the organization is located (optional)
-- `region`: Region where the organization is located (optional)
+Two kinds of mail leave a deployment, and they take different paths.
 
-**User:**
-- `first_name`: First name of the provider admin user (required)
-- `last_name`: Last name of the provider admin user (required)
-- `email`: Email address of the provider admin user (required)
-- `username`: Username for the provider admin user (optional, defaults to email)
-- `password`: Password for the provider admin user (required)
+- **Application mail** (invitations, notifications, welcome mail) is sent by the Layer5 Cloud server through the shared relay in `smtp.*`, unless an organization has registered its own relay.
+- **Identity mail** (email verification and account recovery) is sent by Kratos through its courier. The chart ships the SMTP courier with an empty connection string, so set `kratos.kratos.config.courier.smtp.connection_uri`, or switch the courier to the HTTP strategy that posts to `/api/identity/flow/emails` on Layer5 Cloud.
 
-#### Initialization Process
+The HTTP strategy renders each message with the signup organization's branding and rewrites the link onto its custom domain, and sends it as application mail. It has no SMTP fallback: when Layer5 Cloud rejects a message, Kratos retries and then abandons it without a visible error. Choose it when you use custom domains; choose the SMTP courier when you want identity mail independent of the application.
 
-When the server starts and `INIT_CONFIG` is set:
+The shared relay is screened at startup. A relay on a non-submission port, an internal address, or without STARTTLS stops the server. See [Troubleshoot Email Delivery]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}).
 
-1. The YAML configuration is parsed and validated
-2. The system checks if the provider organization already exists (by UUID `11111111-1111-1111-1111-111111111111`)
-3. If the organization exists, initialization is skipped
-4. If the organization does not exist:
-   - Kratos identity is created with password credentials for authentication
-   - Provider admin user is created
-   - Admin and MeshMap roles are assigned to the user
-   - Provider organization is created with the hardcoded UUID
-   - User is added to the provider organization with organization admin role
+## Outbound dependencies
 
-#### Idempotency
+| Destination | Used for | Required |
+| --- | --- | --- |
+| Your SMTP relay | All mail | For any mail |
+| Google and GitHub | Social sign-in, when you register OAuth applications | Only if you offer social sign-in |
+| reCAPTCHA | Signup verification when you set both reCAPTCHA keys | Only when configured |
+| Your webhook receivers | Support requests, signup decisions, Kanvas entitlement events | Only when configured |
+| OpenTelemetry collector | Traces | Only when `env.otelConfig` is set |
+| Public STUN and TURN hosts (from browsers) | Direct co-editing between browsers | For real-time collaboration |
 
-The initialization process is idempotent:
-- Running the server multiple times with the same configuration will not create duplicate organizations
-- If the provider organization already exists, the initialization is skipped
-- No errors are thrown if the organization already exists
+## Next step
 
-#### Error Handling
-
-If initialization fails:
-- Errors are logged using MeshKit logger
-- The server continues to start (non-fatal error)
-- All database operations are wrapped in a transaction for atomicity
-- If any step fails, all changes are rolled back
-
-### Deployment Options
-
-You can set the `INIT_CONFIG` environment variable using several methods:
-
-**Option A (Helm with inline values)**: Include `initConfig` in the Helm `values.yaml` file with the YAML configuration as a multiline string
-
-**Option B (Helm with --set-file flag)**: Use `--set-file` to load configuration from a separate file:
-```bash
-helm install meshery-cloud ./install/kubernetes/helm/layer5-cloud \
-  --set-file env.initConfig=./config/provider-init.yaml.example
-```
-
-**Option C (Direct environment variable)**: Set the `INIT_CONFIG` environment variable with the YAML content as a string
-
-### Using INIT_CONFIG for Automated Setup
-
-The `INIT_CONFIG` environment variable allows you to pre-configure your provider during deployment, eliminating manual setup steps. This is particularly valuable for:
-
-- **Reproducible Deployments**: Ensure consistent configuration across environments
-- **CI/CD Integration**: Automate deployments with predefined configurations
-- **Infrastructure as Code**: Manage provider configuration alongside your infrastructure
-
-For detailed configuration options, see the configuration schema below.
-
-{{< alert type="warning" title="Important" >}}
-Plan your INIT_CONFIG carefully as it is only processed during initial startup. Changes require redeployment or manual configuration updates.
-{{< /alert >}}
-
-### Considerations of Air-Gapped Deployments
-
-Layer5 acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Layer5's commitment to versatile deployment scenarios.
-
-### Monitoring Considerations
-
-Plan for comprehensive observability across your Layer5 Cloud deployment, including metrics, logs, tracing, dashboards, and alerting. Establish SLOs for latency, availability, and saturation; size telemetry storage appropriately; and ensure privacy and access controls for operational data.
-
-See: [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}})
+[Deploy Layer5 Cloud]({{< ref "cloud/guides/self-hosted/deployment/_index.md" >}}) with the decisions above written into a values file.
