@@ -1,147 +1,101 @@
 ---
 title: Collaborative Editing
-description: >
-  Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
+description: Work on one Kanvas design with a teammate in real time, from saving and sharing it to resolving a review thread.
 weight: 5
+diataxis: tutorial
 categories: [designer, tutorials]
 tags: [collaboration, sharing, comments, review]
-draft: false
 aliases:
   - /meshmap/tutorials/collaborative-editing
 ---
 
-Kanvas Designer supports team collaboration on infrastructure designs: you can share access, control who can open a design, review with inline comments, and work alongside teammates when they join the same design. This tutorial walks through a practical share-and-review flow on [kanvas.new](https://kanvas.new).
+In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.
 
-For deeper reference, see [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}) and [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}).
+## Before you begin
 
-## What you will do
+- You and a teammate each need a Layer5 account, and both of you sign in. Anonymous sessions are asked to sign in to share.
+- Sharing requires the Share Design permission. Searching for people in the Share dialog and in comment mentions requires the View All Users permission. See [Permissions]({{< ref "kanvas/reference/permissions.md" >}}).
+- Use [kanvas.new](https://kanvas.new). Everything in this tutorial happens in Designer and needs no cluster.
 
-1. Open a design in Designer and share it
-2. Choose **Private** or **Public** visibility and invite people
-3. Copy a share link and verify **People with Access**
-4. Leave comments for design review
-5. Set honest expectations for live collaborators (cursors / presence)
+## Step 1: Save a design
 
-## Prerequisites
+Open Designer, add two or three components, give the design a name, and save it.
 
-- Access to [Kanvas Designer](https://kanvas.new) (anonymous browsing works for Share on Designer; sign in for full identity, invites, and catalog flows)
-- A design you own or can edit (clone a sample design if you are starting fresh)
-- Optional: a teammate's Layer5 Cloud username or email to invite
+Saving matters before anything else. A live session is keyed to the saved design, and a new design has no identity until its first save, so it has no session and nobody can join it. From the moment the design is saved, Kanvas opens a session for it whenever the design is loaded.
 
-{{< alert type="info" title="Designer vs Operator Share" >}}
-This tutorial covers **Designer** designs. Designer Share works for anonymous sessions on hosted Kanvas. Operator view Share can fail when no Kubernetes context / view is loaded — do not assume the same share UX in Operator.
-{{< /alert >}}
+You should now see the design's name in the top bar and the Share control available. Kanvas hides Share for an empty design.
 
-## Step 1: Open your design in Designer
+## Step 2: Share the design with your teammate
 
-1. Go to [kanvas.new](https://kanvas.new) and open **Designer** (center mode toggle).
-2. Open an existing design from **File → Open…**, or clone a sample design and rename it.
-3. Confirm the design name and autosave indicator appear in the top bar.
-
-You are ready to share when the canvas has loaded and the top-bar **Share** control is available.
-
-## Step 2: Open Share and review access
-
-Open the Share modal in either of these ways:
-
-1. Click **Share** in the Designer top bar (near Comments and Actions), or
-2. Open **File** and choose **Share**
-
-In the Share modal you should see:
-
-- **Add Users** — invite people by name or email
-- **People with Access** — authoritative list of who can open the design
-- **Private / Public** — overall visibility
-- **Copy Link** — shareable URL to the design
+Open the Share dialog, search for your teammate, and add them. Leave visibility set to Private. Copy the link and send it to your teammate.
 
 <figure>
-  <img src="../images/collaborative-editing/designer-share.png" alt="Kanvas Designer Share modal showing Add Users, People with Access, Private/Public, and Copy Link" />
-  <figcaption>Designer Share: Add Users, People with Access, Private/Public, and Copy Link</figcaption>
+  <img src="../images/collaborative-editing/designer-share.png" alt="Share dialog listing people with access, visibility, and a copy-link control" />
+  <figcaption>The Share dialog</figcaption>
 </figure>
 
-{{< alert type="warning" title="People with Access is the source of truth" >}}
-After every grant or revoke, re-open **Share** and confirm the **People with Access** list. Treat that list as authoritative — do not rely on a toast alone. See [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
-{{< /alert >}}
+You should now see your teammate in the list of people with access.
 
-## Step 3: Set visibility (Private vs Public)
+This step is about **access**. A share is a grant to one person, and it carries no access level: there is no view-only or comment-only option. Your teammate can now do what you can do with the design except delete it or take ownership. They can open, edit, and save it, clone and download it, comment on it, switch it between private and public, and share it with others if their role includes Share Design. Only you as owner, or a provider administrator, can delete the design, and ownership never transfers.
 
-Choose visibility that matches how broadly you want the design reachable:
+The link alone does not open a private design. The grant does.
 
-| Visibility | Who can reach it | Typical use |
-|------------|------------------|-------------|
-| **Private** | You (owner) plus people or teams you explicitly grant | Drafts, internal review, limited collaboration |
-| **Public** | Anyone with the link (and discoverable public channels) | Broad feedback, demos, open templates |
+## Step 3: Open the design together
 
-Notes:
+Your teammate opens the link while signed in. Keep the design open on your side.
 
-- **Copy Link** works for both Private and Public designs.
-- For **Private** designs, the link alone is not enough — recipients must also appear under **People with Access**.
-- **Published** (Catalog) is a separate lifecycle from Private/Public share. Publishing is covered in [Publishing to Catalog]({{< ref "kanvas/tutorials/publishing-to-catalog.md" >}}) and [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}}).
+You should now see:
 
-## Step 4: Invite collaborators
+- Your teammate's avatar in the action toolbar, with their first name and a ring in their color.
+- Their cursor on your canvas, labeled with their first name in the same color, whenever it lies inside your visible canvas area.
+- A border in their color around any component they select.
 
-1. In **Add Users**, type a username or email and select the person (or team, when available).
-2. Confirm they appear under **People with Access**.
-3. Optionally **Copy Link** and send it so they can open the design quickly.
+This step is about the **live session**. Your browsers connect to each other directly, peer to peer. Layer5 Cloud only introduces the two browsers; your design edits do not pass through it. People appear as live collaborators only while both of you have the saved design open. Granting access does not make anyone appear, and closing the design removes them. Colors are assigned at random for each session, so two people can share a color. A second browser tab of your own appears as another collaborator.
 
-Owner vs collaborator capabilities (summary):
+If no avatar appears, the session did not open. Kanvas shows no error in that case, and each of you keeps working alone. Confirm that both of you are signed in and have the saved design open. Live sync uses direct browser connections with a public relay as fallback, so a network that blocks WebRTC prevents the session.
 
-- **Owner** — full control: edit, share, change visibility, delete
-- **Collaborator** — can view and edit the design content; cannot delete the design, re-share it, or change overall visibility
+## Step 4: Edit at the same time
 
-Full detail: [Sharing Designs — Owner vs Collaborator]({{< ref "kanvas/designer/sharing/index.md" >}}).
+Move or reconfigure one component while your teammate adds another.
 
-## Step 5: Review with comments
+You should now see each other's changes arrive without reloading. Your zoom, viewport, selection, and layout stay your own; the design itself is what syncs.
 
-Comments are the primary async review tool on the canvas.
+This step is about **saving**. The live session shares changes but does not store them. Each person's browser autosaves that person's own changes a few seconds after they stop editing, and each save writes the whole design, so the last save wins. Receiving a teammate's change does not trigger a save on your side. Anyone who opens the design later loads the last saved version, not the live session.
 
-1. Open the **Comments** panel from the top bar, or use the **Comments** tool on the bottom dock.
-2. Add a comment via the dock, context-click → **Add a Comment**, or the <button class="kbc-button kbc-button-xs">M</button> hotkey.
-3. Pin feedback to a specific component or canvas area; use `@` mentions when you need someone's attention.
-4. Resolve threads when discussion is done (prefer resolve over delete so history remains).
+## Step 5: Start a review thread
+
+Place a comment next to the component your teammate added, using the comment tool on the dock, Add Comment from the canvas context menu, or the <kbd>M</kbd> key. Type a question, type `@` followed by part of your teammate's name, pick them from the suggestions, and press Enter to send.
+
+You should now see the comment appear on your teammate's canvas immediately. Your teammate receives an email because you mentioned them, unless they turned off comment notifications in their account preferences.
+
+The Comments panel in the toolbar lists every thread that has at least one message, with filters for All, Open, Resolved, and For me. Before the first comment, it shows an empty state.
 
 <figure>
-  <!-- Prefer a signed-in comments thread screenshot when available; audit capture shows empty Comments panel with docs learn-more link. -->
-  <img src="../images/collaborative-editing/designer-comments.png" alt="Kanvas Designer Comments panel showing the empty No Comments state with a Who sees comments note and Learn more link" />
-  <figcaption>Comments panel in Designer (empty state includes a learn-more link to the comments docs)</figcaption>
+  <img src="../images/collaborative-editing/designer-comments.png" alt="Comments panel in Designer showing the empty state" />
+  <figcaption>The Comments panel before any comments exist</figcaption>
 </figure>
 
-<!-- SCREENSHOT: Signed-in comment thread with @mention and Resolve — replace designer-comments.png empty-state shot when available. Source candidate: /workspace/kanvas-docs-audit/screenshots/designer-comments.png -->
+This step is about **comments**. A comment is part of the design: it syncs live, saves with the design, and travels with clones and exports. Anyone who can edit the design can comment on it. Email follows mentions and participation: a first comment that mentions nobody emails nobody, including the owner. The mention search covers all users, and mentioning someone does not give them access to the design. Grant access through the Share dialog.
 
-Deep dive: [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}).
+## Step 6: Reply and resolve
 
-## Step 6: Live collaborators — what to expect
+Your teammate replies in the same thread. Because you took part in the thread, you receive an email about the reply, unless you muted the thread with its bell or turned off the preference. A thread shows its first message until you choose to show all of them.
 
-Kanvas includes real-time collaboration in the product (presence / awareness cursors and join-leave signaling via Cloud collaboration). When another collaborator has the **same design** open:
+Resolve the thread from its own controls.
 
-- You may see collaborator avatars or presence indicators in the designer chrome
-- Live peer cursors can appear on the canvas while others edit
+You should now see the comment leave the canvas for both of you and appear under the Resolved filter in the Comments panel. Resolving sends no notification, and neither does reopening. Adding a new message to a resolved thread reopens it.
 
-{{< alert type="note" title="Live multiplayer cursors" >}}
-Peer cursors require other signed-in collaborators on the same design. An anonymous solo session will not show multiplayer cursors. Do not treat marketing multi-cursor imagery as a guarantee of what you will see in every session.
-{{< /alert >}}
+## What you learned
 
-<!-- SCREENSHOT: Two signed-in users on the same design showing peer cursors / collaborator avatars. Not confirmed in anonymous audit browse — capture when available; do not invent. -->
+- **Live session:** a peer-to-peer connection keyed to the saved design. It exists only while people have that design open, and an unsaved design has none.
+- **Access:** a grant to one person with no access level. Grantees can do what the owner can do except delete the design or take ownership.
+- **Comments:** part of the design itself. Mentions and thread participation decide who gets email; resolving and reopening notify no one.
+- **Saving:** each person's changes autosave from their own browser, and the last save wins.
 
-Practical tips while collaborating live:
+## Where to go next
 
-1. Agree who owns structural changes (large layout moves) vs configuration edits.
-2. Use comments for decisions that should persist after the session.
-3. Re-check **People with Access** if someone cannot open the design.
-4. Prefer **Private + explicit invites** for sensitive architectures; use **Public** only when link-wide access is intentional.
-
-## Recap
-
-| Goal | Where in Kanvas |
-|------|-----------------|
-| Invite people / set Private·Public / copy link | Top bar **Share** (or **File → Share**) |
-| Confirm grants | Share → **People with Access** |
-| Async review | **Comments** panel / dock / <button class="kbc-button kbc-button-xs">M</button> |
-| Catalog publish (separate from Share) | **File → Details → Publish to Catalog** |
-
-## Related reading
-
-- [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}})
-- [Reviewing Designs (Comments)]({{< ref "kanvas/designer/comments/index.md" >}})
-- [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}})
-- Tutorial: [Publishing to Catalog]({{< ref "kanvas/tutorials/publishing-to-catalog.md" >}})
+- [Share a Design]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}) covers visibility, grants, revokes, and share errors.
+- [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}) covers comment placement, filters, muting, and notifications.
+- [Collaboration]({{< ref "kanvas/concepts/collaboration/index.md" >}}) explains how live sessions, presence, and persistence work.
+- [Saving Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}) explains how and when a design is saved.
+- [Publishing Designs]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}}) explains publishing, which is separate from sharing.

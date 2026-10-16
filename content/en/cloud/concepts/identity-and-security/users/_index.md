@@ -1,5 +1,6 @@
 ---
 title: Users
+diataxis: explanation
 description: >
   Each user account represents an individual collaborator. Individual user accounts exist beyond the bounds of organizations.
 weight: 3
@@ -15,7 +16,7 @@ aliases:
 Anyone who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five's profile.
 
 {{< cardpane >}}
-{{% card header="**Five** — Platform Engineer" %}}
+{{% card header="**Five** - Platform Engineer" %}}
 <img src='../../../images/five/1.svg' alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
@@ -24,9 +25,8 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 
 Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
 
-[See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
-{{% card header="**Maya Chen** — Org Admin" %}}
+{{% card header="**Maya Chen** - Org Admin" %}}
 <img src='../../../images/five/2.svg' alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
@@ -35,7 +35,6 @@ Curious, enthusiastic, and reliably the first to discover that a feature works d
 
 Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM.
 
-[See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
 {{< /cardpane >}}
 
@@ -43,7 +42,7 @@ Your user account can own resources such as workspaces, designs, connections, cr
 
 Each user account is subscribed to a plan: Free, Team, or Enterprise. All user accounts can own an unlimited number of public and private workspaces, with an unlimited number of collaborators on those workspaces. If you use Layer5 Free, private workspaces owned by your user account have a limited feature set. You can upgrade to Layer5 Enterprise to get a full feature set for private workspaces.
 
-Note: Free plan users are limited to a single organization — their initial default organization, typically named "My Organization".
+Note: Free plan users are limited to a single organization - their initial default organization, typically named "My Organization".
 
 {{< alert type="info" >}}
 For more information, see [Layer5 subscription plans](https://layer5.io/pricing).
@@ -85,9 +84,11 @@ If a provider that is already linked to your account later reports a different v
 5. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account instead of replacing it automatically
 6. You may unlink a social sign-in provider at any time
 
+To link or unlink a provider, see [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md#link-or-unlink-a-sign-in-provider" >}}).
+
 ## Account Deletion
 
-When a user deletes their account, the following behaviors apply:
+When a user deletes their account, the following behaviors apply: To delete your own account, and for the case where deletion is refused, see [Delete your account]({{< ref "cloud/guides/account/managing-your-account.md#delete-your-account" >}}).
 
 **1. Personal Resources**
 

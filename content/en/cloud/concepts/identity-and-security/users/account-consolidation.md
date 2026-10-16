@@ -1,5 +1,6 @@
 ---
 title: Account Consolidation
+diataxis: explanation
 description: >
   Layer5 Cloud resolves email/password, GitHub sign-in, and Google sign-in to a single account per verified email address.
 weight: 6
@@ -30,7 +31,7 @@ Organizations were handled separately from that transfer. An organization owned 
 If a connection name collided during the merge, the duplicate was renamed with a `(merged)` suffix - and `(merged, 2)`, `(merged, 3)`, and so on for any further collisions on the same name - so both remain identifiable.
 
 {{< alert type="info" title="Nothing for you to do" >}}
-Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, [contact support]({{< ref "cloud/getting-started/support.md" >}}).
+Consolidation ran automatically as a maintenance operation and is complete. You keep access to everything you had, under one account. If you sign in with a different method and resources appear to be missing, [contact support]({{< ref "cloud/reference/support.md" >}}).
 {{< /alert >}}
 
 ## Signing in with multiple methods

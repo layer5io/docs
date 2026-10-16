@@ -1,102 +1,67 @@
 ---
-title: Deploying WordPress and MySQL with Persistent Volumes with Meshery
+title: Deploy WordPress and MySQL with Persistent Volumes
+linkTitle: WordPress and MySQL with Persistent Volumes
+description: Build a stateful two-tier application in Kanvas with a Secret and PersistentVolumes, deploy it, and learn what persists, where, and what Undeploy leaves behind.
+weight: 70
+diataxis: tutorial
 model: kubernetes
 params:
     kind: deployments
 categories: [tutorials]
-description: Deploy a WordPress site and a MySQL database with Persistent Volumes using Meshery Playground in an interactive live cluster environment.
+tags: [kubernetes, persistent-volumes, secrets, stateful]
 aliases:
 - /kanvas/tutorials/wordpress-mysql-persistentvolume
 ---
 
-## Deploying WordPress and MySql with Persistent Volumes with Meshery
+In this tutorial you deploy WordPress backed by a MySQL database, and you give both tiers storage that outlives their Pods. You import the two Kubernetes example manifests into one design, add the Secret that holds the database password, and add the PersistentVolumes that the claims bind to. Stateless Pods can be replaced at any moment; a database cannot lose its files when that happens. This tutorial shows how Kubernetes separates the data from the Pod, and exactly which pieces a deploy creates and an undeploy removes.
 
-### Introduction
+## What you will learn
 
-In this tutorial, we will learn how to deploy a **WordPress site and a MySQL database with Persistent Volumes** using Meshery Playground. Meshery Playground is an interactive and collaborative live cluster environment that simplifies the deployment process and enhances user experience by providing visual tools for managing Kubernetes resources.
+- How a PersistentVolumeClaim requests storage and how Kubernetes binds it to a PersistentVolume.
+- Why data on a volume survives Pod restarts, and where it physically lives with a `hostPath` volume.
+- How a Secret passes a password to containers without writing it into the Deployment, and what a Secret does not protect.
+- How labels and sections organize a design without changing what it deploys.
+- What Undeploy removes and what it leaves in place.
 
-> **NOTE:** If this is your first time working with Meshery Playground, consider starting with the [Exploring Kubernetes Pods with Meshery Playground]({{< ref "kanvas/tutorials/kubernetes/kubernetes-pods/index.md" >}}) tutorial first.
+## Before you begin
 
-### Prerequisites
+- **A cluster-backed Kanvas environment.** Deploying needs a Kubernetes cluster connected to Meshery. Use [Meshery Playground](https://play.meshery.io), a shared live cluster, or a self-hosted Meshery with a connected cluster. Hosted kanvas.new does not run cluster actions: Validate, Deploy, and Undeploy there open a prompt to self-host instead. Operator views and terminal sessions also need Meshery Operator and MeshSync running in the cluster.
+- **The multi-tier pattern.** You have completed [Deploy a PHP Guestbook with Redis]({{< ref "kanvas/tutorials/kubernetes/deploy-php-redis/index.md" >}}), or you already know how to import and merge manifests and how Services select Pods. [Understanding Kubernetes ConfigMaps and Secrets]({{< ref "kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md" >}}) covers Secrets in more depth.
+- **Unique names.** Playground is shared. Deploy replaces any object with the same kind, name, and namespace, and Undeploy deletes by kind and name. This tutorial uses the namespace `wordpress-ada` and the prefix `ada` for cluster-wide names; substitute your own.
 
-- Basic understanding of Kubernetes concepts.
-- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
+## The scenario
 
-### Lab Scenario
+You build nine objects. Two of them, the PersistentVolumes, are cluster-scoped; the rest live in your namespace.
 
-- Import the WordPress and MySQL manifest files into Meshery Playground.
+```text
+  wordpress (Service, LoadBalancer, port 80)          mysql-pass (Secret)
+        |                                              /          \
+  wordpress (Deployment) ---- WORDPRESS_DB_PASSWORD --'            '-- MYSQL_ROOT_PASSWORD
+        |        \                                                       |
+        |         '-- connects to host "wordpress-mysql" -->  wordpress-mysql (Service, headless, 3306)
+        |                                                                |
+  wp-pv-claim (PVC, 20Gi)                                  wordpress-mysql (Deployment, Recreate)
+        |                                                                |
+  ada-wp-pv (PV, hostPath)                                 mysql-pv-claim (PVC, 20Gi)
+                                                                         |
+                                                           ada-mysql-pv (PV, hostPath)
+```
 
-- Create persistent volumes and a secret for the resources using the visual tools provided by Meshery.
+The two manifests, [mysql-deployment.yaml](https://kubernetes.io/examples/application/wordpress/mysql-deployment.yaml) and [wordpress-deployment.yaml](https://kubernetes.io/examples/application/wordpress/wordpress-deployment.yaml), each hold a Service, a PersistentVolumeClaim, and a Deployment. They do not include the Secret or any PersistentVolume: both Deployments expect a Secret named `mysql-pass`, and the claims expect the cluster to provide storage. You add those pieces yourself.
 
-- Deploy these resources on the playground.
+## Import and merge the manifests
 
-In this lab, you will import the WordPress and MySQL manifest files into Meshery Playground. You will visualize these Kubernetes resources and create persistent volumes for them using the visual tools provided by Meshery. Finally, you will deploy these resources on the Playground.
+1. On an empty canvas, import `https://kubernetes.io/examples/application/wordpress/mysql-deployment.yaml` with the **Import Design** dialog (URL Import). Name it after your design, for example `wordpress-ada`.
+2. Import `https://kubernetes.io/examples/application/wordpress/wordpress-deployment.yaml` and choose **Merge into current**.
+3. Set the namespace of all six components to `wordpress-ada`.
 
-### Objective
+**What just happened.** Each import converted one multi-document manifest into components and saved it as its own design; merging copied the second design's components into the open one. The open design now holds six components, and your account also holds the single-manifest WordPress design, which you can delete at the end. Deploy creates the `wordpress-ada` namespace if it does not exist.
 
-Learn how to import manifest files, visualize Kubernetes resources, create new resource components, and deploy the application using Meshery Playground.
+**Check your work.** The canvas shows two Deployments, two Services, and two PersistentVolumeClaims. If an import fails with `Failed to import design "<name>"`, download the file and import it with File Upload, keeping the `.yaml` extension.
 
-### Steps
+## Add the Secret for the database password
 
-#### Download the Kubernetes Configuration Files
-
-Go ahead and download these yaml files [mysql-deployment.yaml](https://kubernetes.io/examples/application/wordpress/mysql-deployment.yaml) and [wordpress-deployment.yaml](https://kubernetes.io/examples/application/wordpress/wordpress-deployment.yaml)
-
-These YAML files contain the Service definitions, Persistent Volume Claims, and Deployment configurations for the WordPress site and the MySQL database.
-
-#### Access Meshery Playground
-
-1. Log in to the [Meshery Playground](https://play.meshery.io) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
-
-2. Click **Explore** in the Cloud Native Playground tile to navigate to _Kanvas_
-
-#### Import the Files to Meshery Playground
-
-1. In the left sidebar, click on the upward arrow symbol(import icon) to import the designs into Meshery.
-
-2. In the modal that appears:
-   - Enter a name for your design in the "Design File Name" field (e.g.`mysql-deployment`).
-
-   - Select `Kubernetes Manifest` from the "Design Type" dropdown menu.
-
-        ![Import modal](images/wordpress-mysql-persistentvolume/wp1.png)
-
-   - Choose `File Upload` for the upload method, and select the file you just downloaded.
-
-   - Then, click on `Import`
-
-        ![Import mysql-deployment](images/wordpress-mysql-persistentvolume/wp2.png)
-
-3. Under the "Designs" tab, you will see that we have successfully imported the `mysql-deployment` design.
-
-   When you click on the names of the designs on the `Designs` tab, you can see the visual representations of the various Kubernetes resources and their relationships on the canvas.
-
-    ![Imported designs on canvas](images/wordpress-mysql-persistentvolume/wp3.png)
-
-4. Now, follow the same steps to import the `wordpress-deployment` file.
-
-    ![wordpress-deployment](images/wordpress-mysql-persistentvolume/wp4.png)
-
-#### Merging the Designs
-
-Next, we will combine the WordPress and MySQL designs into a single design file. By merging these designs, we can manage and deploy both resources together.
-
-To merge the MySQL deployment design with the WordPress deployment design:/
-1. Click and drag the `mysql-deployment` design from the left panel and drop it onto the design canvas of the `wordpress-deployment`.
-
-    ![drag and drop design](images/wordpress-mysql-persistentvolume/wp5.png)
-
-2. This action will open a merge modal asking if you want to merge the design, Click on `Merge`.
-
-    ![merge modal](images/wordpress-mysql-persistentvolume/wp6.png)
-
-3. Click on `Save As` and enter `wordpress-mysql-deployment` as the new file name.
-
-    ![save design](images/wordpress-mysql-persistentvolume/wp7.png)
-
-#### Create and Configure Secret for MySQL Database
-
-In this step, we need to create a Kubernetes secret component for the MySQL database. This is necessary because of this configuration in the environment variables section of the mysql-deployment yaml file.
+Both Deployments read the password from the Secret `mysql-pass`, key `password`:
 
 ```yaml
 env:
@@ -107,143 +72,88 @@ env:
       key: password
 ```
 
-Before you proceed, choose a password and convert it into base64 format. You can use an online tool for this conversion. For this example the password is `password` and its base64 encoding is `cGFzc3dvcmQ=`
+1. Encode a throwaway password in base64, for example `echo -n 'tutorial-only' | base64`.
+2. Add a **Secret** component from the Kubernetes components in the dock.
+3. Set its name to `mysql-pass`, its namespace to `wordpress-ada`, and its type to `Opaque`.
+4. Add one data entry with the key `password` and your base64 value.
 
-1. Click on the Kubernetes icon on the dock, search for `secret`, and click on it or drag it to the canvas.
+**What just happened.** The Deployments refer to the password by Secret name and key, so the password never appears in either Deployment, and you can change it without editing them. Base64 is an encoding, not encryption. The value is stored in your design, and new designs are saved with public visibility, so anyone who can open the design can decode it. Use a password that protects nothing else. In Operator, the details panel shows a Secret's type but not its values; the resource download from the details panel does include them.
 
-    ![Create secret component](images/wordpress-mysql-persistentvolume/wp8.png)
+**Check your work.** The Secret's name and key match the `secretKeyRef` exactly. A mismatch does not fail Validate or the dry run; it shows up after deployment as Pods that never start, with a status such as `CreateContainerConfigError`.
 
-2. Click on the Secret component to open the configuration window.
+## Add PersistentVolumes and bind the claims
 
-    - Set the _name_ as `mysql-pass`
-    - Set the _Type_ as `Opaque`.
-    - Click **+** next to Data and add the secret as a key value pair `password:cGFzc3dvcmQ=`
+The claims in the manifests request 20Gi each and name no storage class, which means "use the cluster's default dynamic provisioner". Instead, you provide the volumes yourself and bind each claim to them through a storage class name of your own.
 
-        ![Configure secret](images/wordpress-mysql-persistentvolume/wp9.png)
+1. Add two **PersistentVolume** components. They are cluster-scoped, so they have no namespace field, and their names must be unique across the whole cluster: name them `ada-wp-pv` and `ada-mysql-pv`.
+2. On both, set the storage class name to `ada-manual`, add the access mode `ReadWriteOnce`, and set the capacity to `storage: 20Gi`.
+3. Give each a `hostPath` volume source with type `DirectoryOrCreate`: path `/mnt/data/ada-wp-pv` for the WordPress volume and `/mnt/data/ada-mysql-pv` for the MySQL volume.
+4. Set the storage class name of both claims, `wp-pv-claim` and `mysql-pv-claim`, to `ada-manual`.
 
-3. Click outside the window to close the configuration tab.
+**What just happened.** A claim is a request: "20Gi, mounted read-write by one node, from class `ada-manual`." The Kubernetes control plane binds each claim to an available volume of the same class with a compatible access mode and at least the requested capacity. The class name needs no StorageClass object behind it; it only has to match. A class name unique to you keeps another reader's claim from binding your volume. A `hostPath` volume is a directory on the node where the Pod runs, so the data belongs to that node. That is acceptable for learning and wrong for production, where a node failure takes the data with it.
 
-#### Create Persistent Volumes
+**Check your work.** You have two PersistentVolumes and two claims, all with the class `ada-manual`, and each volume's capacity is at least its claim's request.
 
-MySQL and WordPress each require a [Persistent Volume(PV)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) to store their data.
+## Label and group the components
 
-For this tutorial, we will use the `manual` StorageClassName and set the Persistent Volume to use the `hostPath` type.
+1. Add the label `tutorial: wordpress-ada` to every component in its **Labels** tab.
+2. Add two sections (the Section tool in the dock, or press `S`). Name one `web tier` and the other `database tier`, and drag the WordPress and MySQL components into their sections.
 
-Please note that using `hostPath` for Persistent Volumes is generally not recommended for production environments because it ties the volume to the node's filesystem, which can lead to data loss if the node fails. However, we can use it in this tutorial for development purposes.
+**What just happened.** Labels on a component become labels on the object it deploys, so you can filter for all of your objects at once in Operator, across kinds. These labels change object metadata only. They do not change any Deployment's Pod template or any Service's selector, so they do not affect traffic. Sections are annotations: a section is saved with the design, components inside it move with it, and Deploy skips it because annotations are never applied to the cluster.
 
-1. Click on the Kubernetes icon on the dock, search for `Persistent Volume`, and select it. We will create two PV's.
+**Check your work.** The design has nine Kubernetes components inside two sections, and each component lists the new label.
 
-    ![Create persistent volume](images/wordpress-mysql-persistentvolume/wp10.png)
+## Deploy and verify
 
-2. Click on the wordpress PV to open the configuration window.
+1. Run **Validate**, then **Deploy**. Select the environment that holds your cluster connection.
+2. At the dry-run step, expect a not-found error for each namespaced component on the first deployment: a dry run does not create namespaces, and `wordpress-ada` does not exist yet. Select **Bypass errors and initiate deployment**. Any other error names the field at fault.
+3. Confirm the deployment and read the summary.
 
-    - Change the "name" to `wp-pv`
-    - Set the "StorageClassName" as `manual`
-    - Click **+** next to "AccessMode" and enter `ReadWriteOnce`
+**What just happened.** Meshery Server created the namespace, then created each object, or replaced it in place if it already existed. Independent components are applied in parallel, with no ordering. Kubernetes reconciles the rest: a Pod waits for its claim to bind, a container that starts before its Secret exists retries, and WordPress restarts until MySQL accepts connections. The MySQL Deployment uses the `Recreate` strategy so that an update stops the old Pod before the new one mounts the same `ReadWriteOnce` volume.
 
-        ![Configure persistent volume](images/wordpress-mysql-persistentvolume/wp11.png)
+**Check your work.** The summary lists nine `Deployed` rows. A `Failed to deploy` row carries an error card with the cause and remediation. Read the rows even when the notification says the deployment completed, since it also says so when some components failed.
 
-    - Scroll down to "Capacity" and enter in the key pair `storage:20Gi`
+## Inspect storage in Operator
 
-        ![Persistent volume capacity](images/wordpress-mysql-persistentvolume/wp12.png)
+1. Open the design in Operator. The view is scoped to the objects your design created.
+2. In the Layers panel, open the **Storage** group and turn on PersistentVolumes and PersistentVolumeClaims, or filter by the label `tutorial=wordpress-ada`.
+3. Select `ada-mysql-pv`. Its details show capacity, the bound claim and its namespace, access modes, and storage class.
+4. Select the `wordpress` Service. Its type is `LoadBalancer`.
+5. Optional: right-click the MySQL Pod, start a terminal session, and run `ls /var/lib/mysql` to see the database files on the mounted volume.
 
-    - Scroll down to "Hostpath" and input `mnt/data/wp-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
+**What just happened.** Operator shows a snapshot of the cluster from MeshSync, refetched when you open a view, change a filter, or change clusters; it does not stream. Change a filter to see Pods that were still starting. A `LoadBalancer` Service receives an external address only when the cluster has a load balancer integration, so on Playground the load balancer field stays empty and WordPress is reachable only inside the cluster.
 
-        ![Persistent volume hostpath](images/wordpress-mysql-persistentvolume/wp13.png)
+**Check your work.** Both claims and both volumes show `Bound`, and both Pods are Running. A claim stuck in Pending means no volume matched its class, access mode, or size; compare the claim's storage class with the volume's. A Pod stuck in Pending is usually waiting for that claim.
 
-3. Repeat similar steps for the Mysql Persistent Volume
+## What persistence means here
 
-    - Click on the MySQL PV to open the configuration window.
-    - Change the "name" to `mysql-pv`
-    - Set the "StorageClassName" to `manual`
-    - Click **+** next to "AccessMode" and set it to `ReadWriteOnce`
-    - Scroll down to "Capacity", and enter the key pair `storage:20Gi`
-    - Scroll down to "Hostpath" and input `mnt/data/mysql-pv` for the _path_ and `DirectoryOrCreate` for the _type_.
+MySQL writes its files to `/var/lib/mysql`, which is the mounted claim, which is bound to `ada-mysql-pv`, which is the directory `/mnt/data/ada-mysql-pv` on a node. When the Pod is replaced, for a crash, an update, or a rescheduling, the new Pod mounts the same claim and finds the same files. The data's lifetime is tied to the volume and the directory, not to any Pod.
 
-4. Click on `wp-pv-claim` and `mysql-pv-claim` and set their "StorageClassName" as `manual`
+The limit of this setup is the node. A `hostPath` directory exists on one node only. If the replacement Pod lands on a different node, it gets a different, empty directory. Production clusters use a storage class backed by network or cloud storage, which can follow a Pod from node to node. The Kubernetes documentation on [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) covers binding, reclaim policies, and dynamic provisioning in full.
 
-#### Add Labels
+## Clean up
 
-To make it easier to filter and manage our resources during visualization, let's add labels to all of them.
+1. Run **Undeploy** and select the same environment.
+2. Delete the design and the single-manifest WordPress design if you no longer need them. See [Deleting a design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}}).
 
- You can also choose to use the existing label, `app:wordpress`, but a new one, `dev:tutorial`, is recommended for this tutorial to prevent our resources from getting mixed up with others in the public playground cluster.
+Undeploy deletes each component's object by kind and name. This design has a component for every object you built, so Undeploy removes both Deployments, both Services, the Secret, both claims, and both PersistentVolumes. Kubernetes holds a claim's deletion until no Pod uses it, and a volume's until no claim is bound to it, so the order resolves itself. Sections were never deployed, so there is nothing to remove for them. [Undeploying designs]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}}) describes removal in full.
 
-1. Click on the label icon.
-2. Click the **+** sign next to Labels.
-3. Add the label `dev:tutorial`.
-4. Do this for **all** the resources on the canvas.
+Undeploy does not remove:
 
-    ![Add label](images/wordpress-mysql-persistentvolume/wp14.png)
+- **The data.** Deleting a manually created PersistentVolume object does not delete the files under `/mnt/data/ada-wp-pv` and `/mnt/data/ada-mysql-pv`. If you deploy again and the Pods land on the same node, MySQL starts with its old database.
+- **The namespace.** `wordpress-ada` remains, empty, because the design has no Namespace component.
+- **Anything not in the design.** Undeploy acts only on components it finds in the design. Had you removed the PersistentVolume components before undeploying, the volumes would stay in the cluster.
 
-5. Now click on `Save As` and save the design.
+## What you learned
 
-#### Group Components
+- A claim requests storage by class, access mode, and size; the control plane binds it to a matching volume, and a unique class name keeps the binding yours.
+- Data lives on the volume, not in the Pod, so it survives Pod replacement; with `hostPath` it is also tied to one node.
+- A Secret decouples a password from the Deployments that use it, but base64 is not encryption, and a Secret component stores its value in the design.
+- Labels and sections organize a design. Labels also mark the deployed objects; sections never reach the cluster.
+- Undeploy removes exactly the components in the design, by kind and name, and leaves volume data and unlisted objects in place.
 
-The _**Group Components**_ icon on the dock below allows you to group resources based on shared labels or annotations.
+## Next steps
 
-This functionality aids in visualizing the relationships between various resources, making it easier to manage them, troubleshoot issues, and understand the overall cluster architecture.
-
-![Group Components](images/wordpress-mysql-persistentvolume/wp21.png)
-
-#### Deploy the Resources
-
-1. Click `Actions` in the top right corner and click on `Deploy`.
-
-    ![Actions dropdown menu](images/wordpress-mysql-persistentvolume/wp15.png)
-
-2. The design will be validated to make sure there are no errors.
-
-    ![Validate design](images/wordpress-mysql-persistentvolume/wp16.png)
-
-3. Choose the Kubernetes cluster you want to deploy to.
-
-    ![Choose deployment Environment](images/wordpress-mysql-persistentvolume/wp17.png)
-
-    **_Note_**: The Meshery Playground is connected to live Kubernetes cluster(s) and allows users full control over these clusters but you can also have the option to add your own Kubernetes cluster to the Playground.
-
-4. Finally click `Deploy` to deploy the application to the cluster.
-
-    ![Deploy resources](images/wordpress-mysql-persistentvolume/wp18.png)
-
-5. To check the status of your deployment, click on the notification icon on the top right corner. You can click on `Open In visualizer` to navigate to the Visualize section or follow the steps below.
-
-    ![Deploy resources](images/wordpress-mysql-persistentvolume/wp22.png)
-
-
-#### Visualizing the Deployed Resources
-
-To view the resources deployed we will use the Visualize section of the _Kanvas_. In this section, you can apply filters to display the specific resources you want to see.
-
-1. Move to the Visualize tab.
-2. Click the filter icon and choose the appropriate filters
-
-    - For "Kinds" select `Deployment`, `Service`, `PersistentVolume`, `PersistentVolumeClaim` and `Secret`
-    - For the "label" select `dev=tutorial`
-
-3. You can also use the icons on the right sidebar to filter the resources.
-
-    After selecting your filters, you should see a view displaying only your relevant resources, as shown in the image below.
-
-    ![Filter resources](images/wordpress-mysql-persistentvolume/wp19.png)
-
-#### Resource Details
-
-You can click on any resource to view more details about it in the "Details" section on the right sidebar.
-
-**Deployment**
-
-![Get more details about deployment](images/wordpress-mysql-persistentvolume/wp23.png)
-
-**Service**
-
-The Service details only display the cluster IP for now. So there is no means for us to access the application externally.
-
-![Get more details about service](images/wordpress-mysql-persistentvolume/wp20.png)
-
-#### Deleting Resources
-
-To delete the resources, use the `Undeploy` option from the Action dropdown in the _Design_ tab.
-
-#### Conclusion
-
-Congratulations! You’ve successfully completed the tutorial on deploying a WordPress site and MySQL database with Persistent Volumes using Meshery Playground. This hands-on experience should have given you valuable insights into importing manifest files, visualizing resources, creating persistent volumes, and managing deployments in Meshery Playground.
+- Give each replica its own identity and its own volume in [Deploy Cassandra with a StatefulSet]({{< ref "kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/index.md" >}}).
+- Review every deploy option and failure mode in [Deploying designs]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}).
+- Learn how Operator discovers and draws cluster resources in [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}).
