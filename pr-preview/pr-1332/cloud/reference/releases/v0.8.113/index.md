@@ -1,0 +1,19 @@
+# v0.8.113
+
+date: 2024-12-26
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Catalog]: reposition share action and visibility selector @sudhanshutech (#3082)
+- [Chore]: Bump Sistent v0.14.132 @l5io (#3083)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @sudhanshutech
+
+

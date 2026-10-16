@@ -1,0 +1,22 @@
+# v0.8.301
+
+date: 2025-07-19
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add:create-your-design into reusable component && replace: old content @FaheemOnHub (#3777)
+
+## 🧰 Maintenance
+
+- Update to go1.24.5 @leecalcote (#3785)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @l5io, @leecalcote and @meshery-ci
+
+
