@@ -1,0 +1,22 @@
+# v0.8.300
+
+date: 2025-07-18
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- feature: schema driven connections @n2h9 (#3753)
+
+## 💻 Server
+
+- feature: schema driven connections @n2h9 (#3753)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @n2h9
+
+
