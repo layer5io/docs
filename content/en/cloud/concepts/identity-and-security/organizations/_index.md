@@ -23,7 +23,7 @@ The structure is flexible:
 - A team has any number of users, and a user can belong to any number of teams.
 - A user can belong to any number of organizations, and holds an independent set of roles in each.
 
-Teams group users inside an organization and control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}) and [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
+Teams group users inside an organization and control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}) and [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}).
 
 <img src="images/organization_units.svg" alt="Diagram of Layer5 Cloud organizational units: an organization contains teams, and teams contain users." style="width: 35%;" />
 

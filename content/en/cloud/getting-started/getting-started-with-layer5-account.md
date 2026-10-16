@@ -82,7 +82,7 @@ You can rename **My Organization** and change its description at any time. See [
 Workspaces are logical groups of shared resources such as environments, connections, credentials, and designs. On your first sign-in, Layer5 Cloud creates a workspace named **My Workspace** (description "Default Workspace") in **My Organization**, owned by you. You can create more workspaces and share access to their resources through teams. If any of your organizations ever has no workspace, Layer5 Cloud re-creates **My Workspace** in it.
 
 {{< alert type="info" >}}
-For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
+For more information, see [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}).
 {{< /alert >}}
 
 You can rename **My Workspace** and change its description at any time. See [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
