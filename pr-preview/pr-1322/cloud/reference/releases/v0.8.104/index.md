@@ -1,0 +1,21 @@
+# v0.8.104
+
+date: 2024-12-05
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.128 @l5io (#3055)
+- [Chore]: Bump Sistent v0.14.127 @l5io (#3054)
+- add regex for signup form @sudhanshutech (#3052)
+- Refactor lowercase the “b” in Leaderboard tooltip text @mdkaifansari04 (#3051)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @mdkaifansari04 and @sudhanshutech
+
+

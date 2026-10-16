@@ -1,0 +1,24 @@
+# v0.8.394
+
+date: 2025-08-21
+
+
+
+## 🖥 Cloud UI
+
+- Add fine grained invitations @aabidsofi19 (#3983)
+
+## 💻 Server
+
+- Add fine grained invitations @aabidsofi19 (#3983)
+
+## 🦴 Infrastructure
+
+- Add fine grained invitations @aabidsofi19 (#3983)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

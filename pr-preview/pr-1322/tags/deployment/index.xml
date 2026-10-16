@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deployment on Layer5 Documentation</title><link>/pr-preview/pr-1322/tags/deployment/</link><description>Recent content in Deployment on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1322/tags/deployment/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy a Design</title><link>/pr-preview/pr-1322/kanvas/guides/deploying/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1322/kanvas/guides/deploying/deploying-designs/</guid><description>&lt;p&gt;Deploying applies the components in a design to the Kubernetes clusters in the environments you choose. Meshery Server does the work with the kubeconfig it holds: it creates each object, or updates it in place when it already exists. Deploying the same design again is safe and idempotent.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Meshery you run, with a connected cluster.&lt;/strong&gt; The hosted kanvas.new site does not deploy; it shows a self-hosted-feature prompt. Meshery needs at least one connected Kubernetes context that belongs to an environment in your organization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A non-empty design.&lt;/strong&gt; The Actions menu is disabled for an empty design. An unsaved design deploys as it stands on the canvas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; The Deploy Design permission gates the action. See &lt;a href="/pr-preview/pr-1322/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;. Selecting environments from the empty state also needs the Create Environment and Edit Environment permissions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A provider session.&lt;/strong&gt; Without a signed-in session the request fails before any event is raised.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.&lt;/p&gt;</description></item><item><title>Validate and Deploy</title><link>/pr-preview/pr-1322/kanvas/guides/deploying/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1322/kanvas/guides/deploying/</guid><description>&lt;p&gt;Four actions take a design from the canvas to running infrastructure and back. Run them in this order. Each one is stricter than the last and costs a little more.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;th&gt;Checks or changes&lt;/th&gt;
+ &lt;th&gt;Needs a cluster&lt;/th&gt;
+ &lt;th&gt;Changes the cluster&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1322/kanvas/guides/deploying/validating-designs/"&gt;Validate&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Each component&amp;rsquo;s configuration against its schema, in your browser&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1322/kanvas/guides/deploying/dry-running-a-design/"&gt;Dry run&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;The design against the Kubernetes API of each target cluster&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;No&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1322/kanvas/guides/deploying/deploying-designs/"&gt;Deploy&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Creates or updates every component&amp;rsquo;s object on the target clusters&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1322/kanvas/guides/deploying/undeploying-designs/"&gt;Undeploy&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Deletes every component&amp;rsquo;s object from the target clusters&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;td&gt;Yes&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The deploy and undeploy flows are five-step wizards that run validation and a dry run for you, so you do not need to run them separately first.&lt;/p&gt;</description></item><item><title>Undeploy a Design</title><link>/pr-preview/pr-1322/kanvas/guides/deploying/undeploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1322/kanvas/guides/deploying/undeploying-designs/</guid><description>&lt;p&gt;Undeploying deletes the Kubernetes objects that each component in a design describes, from every cluster in the environments you select. It does not touch the design itself. The design record, its versions, and its Operator view are unchanged.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The prerequisites match &lt;a href="/pr-preview/pr-1322/kanvas/guides/deploying/deploying-designs/"&gt;Deploy a Design&lt;/a&gt;: a Meshery you run with a connected cluster, a non-empty design, and the &lt;strong&gt;Undeploy Design&lt;/strong&gt; permission. The hosted kanvas.new site does not run undeploy. See &lt;a href="/pr-preview/pr-1322/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
