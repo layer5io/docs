@@ -1,58 +1,73 @@
 ---
 title: Tokens
 description: >
-  API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
-weight: 8
+  An API token is a long-lived credential that authenticates scripts, pipelines and Meshery clients to Layer5 Cloud as your user account. It never expires and ends only when you delete it.
+weight: 80
+diataxis: explanation
 aliases:
   - /cloud/security/tokens/
-
 ---
 
-## What tokens are
+An API token lets software act as you. Scripts, CI/CD pipelines, `mesheryctl` and other Meshery clients present it to Layer5 Cloud instead of signing in through a browser. Because a token carries your full authority and never expires, deciding how many tokens to create, who holds them and when to delete them is a security decision. This page explains how tokens behave so you can make it.
 
-For authentication and authorization, a token is a digital object that contains information about the identity of the principal making the request and what kind of access they are authorized for. In most authentication flows, the application—or a library used by the application—exchanges a credential for a token, which determines which resources the application is authorized to access.
+## What a token is
 
-## Access tokens
+A token is a credential bound to your user account. A client sends it as a bearer token in the `Authorization` header of each request; the [Cloud API reference]({{< ref "cloud/reference/api-reference/_index.md" >}}) shows the exact form.
 
-Layer5 Cloud REST API uses [OAuth 2.0](https://oauth.net/2/) for authentication and authorization. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.
+A token is not scoped to an organization. One token reaches every organization you belong to. Each request chooses the organization it runs in, so a single pipeline token can act in several organizations if you are a member of each. See [Organization context]({{< ref "cloud/reference/api-reference/_index.md#organization-context" >}}) for how Layer5 Cloud selects it.
 
-Access tokens are opaque tokens that conform to the OAuth 2.0 framework. They contain authorization information, but not identity information. They are used to authenticate and provide authorization information to Layer5 APIs. Access tokens are associated with a user account. They have an unlimited lifetime and can be revoked at any time.
+## What a token can do
 
-{{< alert type="info" title="API Tokens are User-Scoped, Not Organization-Scoped" >}}
-Layer5 Cloud API tokens are scoped to your user account, not to a specific organization. This means a single API token provides access to all organizations you are a member of, similar to how [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) work. For users who belong to multiple organizations, see [Specifying Organization Context]({{< ref "cloud/reference/api-reference/_index.md#specifying-organization-context" >}}) in the REST API documentation to learn how to control which organization your API requests operate on.
+A token can do exactly what you can do, no more and no less. Layer5 Cloud does not record permissions inside the token. It evaluates your roles at the moment of each call, in the organization of that request.
+
+- **Role changes apply at once.** When an administrator grants or removes a role, the next request made with your token reflects the change.
+- **Removing the user ends the token.** If your account is disabled or deleted, Layer5 Cloud refuses every request that presents your tokens.
+- **There are no token scopes.** You cannot limit a token to read-only access, to one organization or to a subset of your permissions. To give automation narrower authority, give it a token from an account whose roles are narrower.
+
+## Lifetime
+
+Tokens never expire. Layer5 Cloud offers no expiry setting, and a token remains valid until it is deleted. This differs from [sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}), which Layer5 Cloud creates at each sign-in and which lapse on their own. A token is the right credential for unattended automation; a session is the right one for a person at a browser.
+
+## Name, purpose and retrieval
+
+Every token has a name, which is required. The Tokens tab also asks for a purpose. Both are labels: they appear in your token list and help you recognize each token later, and they have no effect on what the token can do.
+
+The token list never shows a token's value. Instead, you can download any live token you own as a JSON file at any time after creation. The file uses the Meshery provider format, so Meshery clients read it directly. Anyone who obtains the file can act as you, so protect it like a password.
+
+Creating, downloading and deleting a token each write an audit event, so your organization's audit trail records who generated a token, who retrieved it and who revoked it.
+
+## Revocation
+
+Deleting a token revokes it. Revocation takes effect immediately and cannot be undone.
+
+- Layer5 Cloud removes the stored credential, so a deleted token cannot be downloaded again.
+- Every request that presents the deleted token fails.
+- Layer5 Cloud checks revocation on every request. If it cannot complete that check, it refuses the request rather than accept a token that might be revoked.
+
+To rotate a token without downtime, create the replacement first, switch each consumer to it, then delete the old token. The [API tokens guide]({{< ref "cloud/guides/security/api-tokens.md" >}}) walks through creating, downloading, rotating and deleting tokens.
+
+## Who can manage tokens by default
+
+Each action on the Tokens tab is governed by a [key]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}). With the default roles:
+
+- **View Tokens**, which opens the Tokens tab, is held by every default user role.
+- **Download Token** is held by User, Team Admin, Workspace Admin and Organization Admin.
+- **Create Token** and **Delete Token** are held by Organization Admin and Provider Admin only. For every other role, the interface disables the create and delete controls.
+
+Every token action applies only to your own tokens. You cannot list, download or delete another user's token.
+
+{{< alert type="warning" title="Current behavior: Create Token and Delete Token are enforced in the interface only" >}}
+The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not itself check the Create Token or Delete Token keys. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token.
 {{< /alert >}}
 
-## Creating tokens
+The [security reference]({{< ref "cloud/reference/security.md" >}}) lists every security key and the roles that hold it.
 
-You can create a token for your user account at any time. Tokens never expire, but can be revoked. You can also give the token a descriptive label. This label will be shown in the list of tokens on your user account's security tokens page.
+A Provider Admin can mint a token on behalf of another account; that token appears in the account holder's token list, and the account holder can revoke it.
 
-See [Tokens](https://cloud.layer5.io/security/tokens) in Layer5 Cloud.
+## Practices that limit risk
 
-## Using tokens
+- **Create one token per consumer.** A separate token for each pipeline, script or Meshery Server lets you revoke one without breaking the others.
+- **Name each token after its consumer.** The name is the only way to tell tokens apart in the list.
+- **Delete a token when its consumer is retired.** A token never expires, so an unused token remains a live credential until you delete it.
 
-To use a token to authenticate to Layer5 Cloud's REST API, pass the token as a Bearer token in the Authorization header of your HTTP request:
-
-```bash
-Authorization: mdJhY2Nlc3NfdG9rgW4iOiJleUpoYkdjaU9pSlNVekkxTmlJc0ltdHBaQ0k2SW5CMVlteHBZem81T1dJNE1XSTBOeTA1TTJaaExUUTBNRE10T0RjMU15MHhOelU1TkRGaFptWmpOV0lpTJNKMGVYQWlPaUpLVjFRaWZRLmV5SmhkV1FpT2x0ZExDSmpiR2xsYm5SZmFXUWlPaUp0WlhOb1pYSjVMV05zYjNWa0lpd2laWGgwSWpwN2ZTd2lhV0YwSWpveE56RTROemsxTVRFMUxDSnBjM01pT2lKb2RIUndjem92TDIxbGMyaGxjbmt1YkdGNVpYSTFMbWx2TDJoNVpISmhJaXdpYW5
-```
-
-## Deleting tokens
-
-Deleting a token is how you revoke it. A deleted token is immediately invalidated and cannot be used to make requests to the API again, and any refresh tokens associated with it are revoked along with it. There is no way to restore a deleted token; anything still authenticating with it will start failing, so replace it with a newly created token first if it is in use.
-
-To delete a token:
-
-1. Go to the [Tokens](https://cloud.layer5.io/security/tokens) page in Layer5 Cloud. Each row shows the token's **ID**, **Name**, **Purpose** and **Creation Date**.
-2. Find the token you want to remove. The list is searchable and sortable, and shows the newest tokens first by default.
-3. Click the **trash can** icon in that row's **Actions** column.
-4. Confirm in the **Delete Token** dialog, which names the token it is about to delete. Click **Proceed**.
-
-A confirmation notification reports the deleted token by name.
-
-{{< alert type="info" title="Permissions Required" >}}
-Deleting a token requires the **Delete Token** key. Without it the trash can icon is disabled. See [Keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}).
-{{< /alert >}}
-
-{{< alert type="info" title="Sessions Are Deleted the Same Way" >}}
-Your browser sign-ins are represented by their own tokens and are listed on the [Sessions](https://cloud.layer5.io/security/sessions) page rather than here. There the same action is presented as **Logout** instead of Delete, and it ends that session. See [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}).
-{{< /alert >}}
+For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/guides/integrations/github-actions/_index.md" >}}). Manage your tokens at [cloud.layer5.io/security/tokens](https://cloud.layer5.io/security/tokens).

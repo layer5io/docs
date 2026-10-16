@@ -1,8 +1,9 @@
 ---
 title: Sessions
 description: >
-  User sessions are created each time a user successfully authenticates.
-weight: 7
+  How long a Layer5 Cloud sign-in lasts, what ends it, how the browser stores it, and how sessions differ from API tokens.
+weight: 70
+diataxis: explanation
 categories: [security]
 tags: [sessions, permissions]
 aliases:
@@ -10,24 +11,71 @@ aliases:
 
 ---
 
-## What sessions are
+A session is the credential Layer5 Cloud issues each time someone signs in. It is what keeps a browser tab, a second device, or a connected Meshery Server signed in, and it is what you end when you want one of those sign-ins to stop working. Sessions expire on their own; API tokens do not.
 
-A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.
+## One session per sign-in
 
-Layer5 Cloud sessions use [OAuth 2.0](https://oauth.net/2/) for authentication. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.
+Every sign-in creates its own session. Each browser, device, and Meshery Server that signs in through Layer5 Cloud holds a separate session with its own expiry, and any number of them can be active at once. Ending one session leaves the others untouched.
 
-Session OAuth tokens are stored in your user-agent (web browser) in a cookie. The cookie is named `meshery_session` and is a [signed cookie](https://expressjs.com/en/advanced/best-practice-security.html#use-signed-cookies). The cookie is only sent over HTTPS and is not accessible to JavaScript running in the browser.
+A session acts as the user who signed in. What it can do in an organization is whatever the roles that user holds there allow, checked on every request. See [Keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) for how roles grant permissions.
 
-## Creating and using sessions
+Users see their own sessions on the [Sessions](https://cloud.layer5.io/security/sessions) tab of the Security page, which lists each session's ID, name, purpose, and creation date. The tab requires the View Sessions key, which every default user role holds. The list shows no device, browser, or location for a session.
 
-A session is created each time a user successfully authenticates. See all active sessions on your [user account's security sessions page](https://cloud.layer5.io/security/sessions).
+## How long a session lasts
 
-To use a session, sign into your Layer5 Cloud user account, thereby creating a new session. Your session's token will automatically be stored in your web browser using a cookie. To use that same session, simply use the same browser until the session expires. You can have multiple sessions active concurrently, whether on the same device or different device. Each session receives it's own authentication token and expiry time.
+These are the Layer5 Cloud deployment defaults. Operators of a self-hosted deployment can change them.
 
- In this way, it is possible to use your same account to collaborate between different sessions that you have established. For example, you may use those two different sessions to open up the same Kanvas design and you will find that your avatar shows up twice in the design (along with your mouse cursor). You can use this to collaborate with yourself or with others. We recommend collaborating with others, though.
+| Credential | Default lifetime | Behavior |
+|---|---|---|
+| Access token | 24 hours | The browser session ends when it lapses. Activity in the interface does not extend it, so a browser user signs in again after 24 hours. |
+| Refresh token | 1000 hours (about 41 days) | Clients such as Meshery Server use it to obtain a new access token. Each refresh token works once; every refresh issues a new one. A failed refresh returns an error. |
+| Privileged-action window | Set by the deployment; 15 minutes in the packaged default | Sensitive actions, such as profile changes, ask you to authenticate again once this window has passed since sign-in. |
 
-## Revoking sessions
+Anonymous Kanvas use, without signing in, lasts 24 hours and does not appear on the Sessions tab.
 
-You can revoke your sessions at any time. When you revoke a session, it is immediately invalidated and cannot be used to make requests to the API. Revoking a session also revokes any refresh tokens associated with that session.
+## What ends a session
 
-See [Sessions](https://cloud.layer5.io/security/sessions) in Layer5 Cloud.
+A session ends in one of three ways:
+
+- **Expiry.** The access token lapses at its lifetime, as described above.
+- **Logout from the Sessions tab.** The session's token is revoked immediately; the next request that presents it fails. The action records the same audit event as deleting a token.
+- **Signing out of the app.** Signing out ends the browser's identity session and revokes its stored grant.
+
+Changing your password does not end your other sessions. Layer5 Cloud has no sign-out-everywhere action and no idle timeout setting. To end your other sessions, log each one out from the Sessions tab. [Review and sign out sessions]({{< ref "cloud/guides/security/sessions.md" >}}) covers the task.
+
+{{< alert type="info" title="Who can use Logout" >}}
+The Logout action on the Sessions tab requires the Delete Token key, which only Organization Admins and Provider Admins hold by default. Users, Team Admins, and Workspace Admins see Logout disabled, even though their roles hold the Logout from a Session key. Layer5 Cloud lets each user log out only their own sessions; no role can end another user's session from this tab.
+{{< /alert >}}
+
+## How the browser stores a session
+
+The browser keeps the session in a cookie that page scripts cannot read (HttpOnly), that is sent only over HTTPS, and that uses SameSite Lax, so other sites cannot send it along with their own requests except on ordinary top-level navigation. A second, companion cookie tells the interface that a session exists. It carries no secret and lapses with the session.
+
+The cookie's scope depends on how the organization signs users in:
+
+- **Platform sign-in provider.** The cookie is shared across the platform's hosts, so one sign-in covers them.
+- **Organization's own identity provider, or a custom domain outside the platform's domain.** The cookie is host-only and is never sent to any other host.
+
+See [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}) for how custom domains and identity providers decide where a user signs in.
+
+## Sessions and API tokens
+
+Sessions and API tokens both authenticate as you, and Layer5 Cloud revokes them through the same mechanism. They differ in how they start and how long they live.
+
+| | Session | API token |
+|---|---|---|
+| Created by | Signing in from a browser, device, or Meshery Server | Creating it on the Tokens tab with a name and purpose |
+| Lifetime | 24-hour access token, renewable by clients for up to about 41 days | No expiry |
+| Ended by | Expiry, Logout on the Sessions tab, or signing out | Deleting it on the Tokens tab |
+| Used for | Interactive use and connected Meshery Servers | Scripts and API clients sending a Bearer token |
+
+The Tokens tab never lists sessions, and the Sessions tab never lists API tokens. See [Tokens]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}) for how API tokens behave.
+
+## What Layer5 Cloud does not offer
+
+- No organization-level session policy. Lifetimes are set for the whole deployment.
+- No idle timeout setting in the product interface.
+- No device, browser, or location detail on a session.
+- No action that ends every session at once.
+
+The [security reference]({{< ref "cloud/reference/security.md" >}}) lists the session keys, default lifetimes, and cookie attributes in one place.
