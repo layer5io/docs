@@ -51,7 +51,7 @@ A Provider Admin can create keychains beyond the defaults. The Provider Admin wh
 
 ## Who can change a keychain
 
-Keychains and their assignment to roles apply across the whole provider, not to one organization. Only a Provider Admin can create, edit, or delete a keychain, add or remove its keys, or include it in a role or remove it from one.
+Keychains and their assignment to roles apply across the whole provider, not to one organization. Only a Provider Admin can create, edit, or delete a keychain, add or remove its keys, or include it in a role or remove it from one. This is the rule as of Layer5 Cloud **v1.0.280**.
 
 Layer5 Cloud enforces keychain operations in two places. The interface enables or disables each control based on the keys you hold. The server checks the matching key and then confirms that the caller holds the Provider Admin role for the whole deployment. Holding the Provider Admin role inside one organization does not satisfy that check.
 

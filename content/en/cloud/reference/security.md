@@ -9,7 +9,7 @@ categories: [reference]
 tags: [security, keys, keychains, tokens, sessions, api]
 ---
 
-This page states how keys, keychains, tokens, and sessions behave, exactly, as of Layer5 Cloud v1.0.278. For the model, read the [Keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}), [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}), [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}), and [Tokens]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}) concepts. For tasks, use the [security guides]({{< ref "cloud/guides/security/_index.md" >}}). For base URL, authentication, and the organization header, see the [Cloud API]({{< ref "cloud/reference/api-reference/_index.md" >}}). All paths below sit under `/api` unless noted.
+This page states how keys, keychains, tokens, and sessions behave, exactly, as of Layer5 Cloud v1.0.280. For the model, read the [Keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}), [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}), [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}), and [Tokens]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}) concepts. For tasks, use the [security guides]({{< ref "cloud/guides/security/_index.md" >}}). For base URL, authentication, and the organization header, see the [Cloud API]({{< ref "cloud/reference/api-reference/_index.md" >}}). All paths below sit under `/api` unless noted.
 
 ## Permission keys
 
