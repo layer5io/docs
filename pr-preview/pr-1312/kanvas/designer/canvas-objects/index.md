@@ -1,5 +1,0 @@
-# Working with Canvas Objects
-
-
-
-
