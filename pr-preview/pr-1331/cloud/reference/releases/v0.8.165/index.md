@@ -1,0 +1,22 @@
+# v0.8.165
+
+date: 2025-03-04
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Revert ix: logo responsive issue for header\ @leecalcote (#3263)
+
+## 🐛 Bug Fixes
+
+- Revert ix: logo responsive issue for header\ @leecalcote (#3263)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

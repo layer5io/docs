@@ -1,0 +1,22 @@
+# v0.8.358
+
+date: 2025-08-06
+
+
+
+### 🔤 General
+## 🖥 Cloud UI
+
+- Removal of github from the welcome modal @FaheemOnHub (#3892)
+- Add support for loading and assigning badges @aabidsofi19 (#3889)
+
+## 💻 Server
+
+- Add support for loading and assigning badges @aabidsofi19 (#3889)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @l5io and @leecalcote
+
+
