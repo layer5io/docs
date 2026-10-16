@@ -13529,6 +13529,21 @@ For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/gu
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.282"
+url: /cloud/reference/releases/v1.0.282/index.md
+date: "2026-10-16"
+--------------------------------------------------------------------------------
+
+- fix(connect): reset stuck connect spinner on bfcache restore @leecalcote (#6170)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.281"
 url: /cloud/reference/releases/v1.0.281/index.md
 date: "2026-10-16"
