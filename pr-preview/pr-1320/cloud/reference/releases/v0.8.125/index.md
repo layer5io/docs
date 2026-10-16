@@ -1,0 +1,18 @@
+# v0.8.125
+
+date: 2025-01-22
+
+
+
+## What's New
+## 🔤 General
+## 🧰 Maintenance
+
+- Chore: Upgrade to Golang 1.23 @leecalcote (#3130)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and MUzairS15
+
+
