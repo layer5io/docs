@@ -83,9 +83,11 @@ If a provider that is already linked to your account later reports a different v
 5. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account instead of replacing it automatically
 6. You may unlink a social sign-in provider at any time
 
+To link or unlink a provider, see [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md#link-or-unlink-a-sign-in-provider" >}}).
+
 ## Account Deletion
 
-When a user deletes their account, the following behaviors apply:
+When a user deletes their account, the following behaviors apply: To delete your own account, and for the case where deletion is refused, see [Delete your account]({{< ref "cloud/guides/account/managing-your-account.md#delete-your-account" >}}).
 
 **1. Personal Resources**
 
