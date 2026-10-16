@@ -1,5 +1,6 @@
 ---
 title: Users
+diataxis: explanation
 description: >
   Each user account represents an individual collaborator. Individual user accounts exist beyond the bounds of organizations.
 weight: 3
@@ -15,7 +16,7 @@ aliases:
 Anyone who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five's profile.
 
 {{< cardpane >}}
-{{% card header="**Five** — Platform Engineer" %}}
+{{% card header="**Five** - Platform Engineer" %}}
 <img src='../../../images/five/1.svg' alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
@@ -25,7 +26,7 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
 
 {{% /card %}}
-{{% card header="**Maya Chen** — Org Admin" %}}
+{{% card header="**Maya Chen** - Org Admin" %}}
 <img src='../../../images/five/2.svg' alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
@@ -41,7 +42,7 @@ Your user account can own resources such as workspaces, designs, connections, cr
 
 Each user account is subscribed to a plan: Free, Team, or Enterprise. All user accounts can own an unlimited number of public and private workspaces, with an unlimited number of collaborators on those workspaces. If you use Layer5 Free, private workspaces owned by your user account have a limited feature set. You can upgrade to Layer5 Enterprise to get a full feature set for private workspaces.
 
-Note: Free plan users are limited to a single organization — their initial default organization, typically named "My Organization".
+Note: Free plan users are limited to a single organization - their initial default organization, typically named "My Organization".
 
 {{< alert type="info" >}}
 For more information, see [Layer5 subscription plans](https://layer5.io/pricing).

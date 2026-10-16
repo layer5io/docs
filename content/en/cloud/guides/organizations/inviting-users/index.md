@@ -3,9 +3,10 @@ title: User Invitations
 description: >
  Learn how to create custom, secure, and flexible invitations for new members.
 weight: 3
-categories: [identity]
+diataxis: how-to
 tags: [users]
 aliases:
+  - /cloud/concepts/identity-and-security/users/user-invitations/
   - /cloud/identity/users/user-invitations/
 
 ---
@@ -20,7 +21,7 @@ Managing invitations requires the **Manage Invitations** permission within your 
 
 ### Default organization state
 
-By default, organizations are **closed**: there is no open registration. A user cannot join your organization simply by navigating to a URL — they must either click a valid invitation link or register through a page associated with an organization that has a [default invitation](#invitation-properties-explained) configured.
+By default, organizations are **closed**: there is no open registration. A user cannot join your organization simply by navigating to a URL - they must either click a valid invitation link or register through a page associated with an organization that has a [default invitation](#invitation-properties-explained) configured.
 
 When no default invitation is set, new users who arrive at your organization's registration page are registered as platform users but are **not** automatically added to your organization. They will have no organization membership and no roles until an administrator adds them or they accept an invitation link.
 
@@ -67,7 +68,7 @@ To create a new invitation, navigate to the [Invitations page](https://cloud.lay
 <img src="./images/create-invitation.png" alt="Create Invitation Dialog" style="width:30%; height:auto;" />
 
 {{< alert type="info" title="Email notifications" >}}
-After an invitation is created, a notification email is sent only to addresses listed in the `emails` field that are exact email addresses. Domain-wide patterns (e.g., `@layer5.io`) and public invitations (empty `emails` field) do not trigger individual notification emails — share the invitation link directly in those cases.
+After an invitation is created, a notification email is sent only to addresses listed in the `emails` field that are exact email addresses. Domain-wide patterns (e.g., `@layer5.io`) and public invitations (empty `emails` field) do not trigger individual notification emails - share the invitation link directly in those cases.
 {{< /alert >}}
 
 <img src="./images/invitation-email.png" alt="Invitation Email" style="width:50%; height:auto;" />
@@ -85,7 +86,7 @@ After an invitation is created, a notification email is sent only to addresses l
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
 | `name` | A human-readable name used to identify the invitation. |
 | `description` | Additional information about the invitation's purpose, for internal reference. |
-| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time — designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
+| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time - designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
 
 ### Managing existing invitations
 
@@ -94,9 +95,9 @@ All existing invitations are displayed in a table showing key details for each i
 ![Invitations Overview Table](./images/overview.png)
 
 You can filter the list using the filter control at the top right of the table. Available filters are:
-- **Status** — show only enabled or disabled invitations
-- **Roles** — show invitations that grant a specific role
-- **Teams** — show invitations that add members to a specific team
+- **Status** - show only enabled or disabled invitations
+- **Roles** - show invitations that grant a specific role
+- **Teams** - show invitations that add members to a specific team
 
 From the table you can perform the following management actions on each invitation:
 
@@ -108,19 +109,19 @@ If another administrator deletes an invitation while your edit dialog is open, s
 
 ### Tracking who has accepted an invitation
 
-The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit — for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
+The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit - for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
 
-To see the individual users who are now members of the organization, navigate to the [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}) page. Members who joined via invitation appear there alongside their assigned roles.
+To see the individual users who are now members of the organization, navigate to the [User Management]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}) page. Members who joined via invitation appear there alongside their assigned roles.
 
 ### What happens when a user accepts an invitation
 
 When a user clicks an acceptance link and is logged in, the system performs the following steps in order:
 
-1. **Validates the invitation** — confirms it exists, is `enabled`, has not passed its expiration date, and has not exceeded its quota.
-2. **Checks email eligibility** — verifies the user's email matches the invitation's `emails` list. An empty list allows any email (public invitation).
-3. **Adds the user to the organization** — the user immediately becomes a member of the organization that owns the invitation.
-4. **Assigns roles** — all roles configured on the invitation are assigned to the user in that organization. If no roles are configured, the user joins with no role.
-5. **Adds the user to teams** — the user is added to all teams configured on the invitation.
+1. **Validates the invitation** - confirms it exists, is `enabled`, has not passed its expiration date, and has not exceeded its quota.
+2. **Checks email eligibility** - verifies the user's email matches the invitation's `emails` list. An empty list allows any email (public invitation).
+3. **Adds the user to the organization** - the user immediately becomes a member of the organization that owns the invitation.
+4. **Assigns roles** - all roles configured on the invitation are assigned to the user in that organization. If no roles are configured, the user joins with no role.
+5. **Adds the user to teams** - the user is added to all teams configured on the invitation.
 
 Role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
 
@@ -141,7 +142,7 @@ A person can sign in successfully and still not join your organization. The open
 - Its quota has not been reached.
 - The person's email address matches its `emails` list. An empty list matches everyone.
 
-When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
+When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}).
 {{< /alert >}}
 
 ### Use cases and examples
