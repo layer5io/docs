@@ -1,5 +1,6 @@
 ---
 title: Identity and Security
+diataxis: explanation
 linkTitle: Identity and Security
 description: >
   Organizations, teams, users, roles, keychains, keys, sessions, and tokens.
