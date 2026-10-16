@@ -1,10 +1,12 @@
 ---
-title: Creating Content for the Academy
-weight: 3
+title: Create a Learning Path
+linkTitle: Create a Learning Path
+weight: 10
 description: >
-  A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
+  Set up your Academy content repository, structure and describe a learning path, preview it, and publish it. The repository, front matter, and publishing steps also apply to challenges and certifications.
 categories: [academy]
 tags: [academy]
+diataxis: how-to
 aliases:
 - /cloud/academy/creating-your-learning-path/
 - /cloud/academy/creating-academy-content/
@@ -12,172 +14,54 @@ aliases:
 - /cloud/academy/creating-content-for-academy/
 ---
 
-This guide provides a step-by-step walkthrough for creating and organizing new content in the [Layer5 Academy](https://cloud.layer5.io/academy). You'll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.
+A learning path teaches a subject through courses and modules, with assessments that gate progress. You write it as Markdown in your organization's Academy content repository, then publish a version. This page covers the repository, layout, front matter, assets, preview, and publishing that every Academy content type shares. For the credential and assessment differences, see [Build a Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) and [Build a Certification]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}).
 
-### Prerequisites
+## Prerequisites
 
-Before you dive into creating your first Academy content, it's helpful to be familiar with the core technologies and concepts used by the Academy platform. 
+- Git, a GitHub account, and Markdown. The Academy is built with the Hugo static site generator.
+- Content registered in the [Instructor Console]({{< ref "cloud/academy/creating-content/_index.md" >}}), which gives you the content `id` and the front matter to start from.
+- Your organization's ID and a personal access token from Layer5 Cloud, used when you publish. Create tokens as described in [Tokens]({{< ref "cloud/guides/security/api-tokens.md" >}}).
 
-- **Git and GitHub**: All learning content is managed in a Git repository.
-- **Markdown**: All content is written in standard Markdown. 
-- **Hugo**: The entire Academy platform is built on the [Hugo](https://gohugo.io/) static site generator. 
-- **Academy Template & Theme**: We provide an `academy-example` repository that serves as a pre-configured template. [Layer5 Academy theme](https://github.com/layer5io/academy-theme) to ensure your content is styled correctly right out of the box.
-- **A Layer5 Cloud Account**: Required to obtain your Organization ID and Personal Access Token for publishing.
+## Set up the content repository
 
-## 1. Set Up Your Content Repository
+Start from the `academy-example` template repository published by Layer5: [github.com/layer5io/academy-example](https://github.com/layer5io/academy-example). Fork it, clone your fork, and work on a branch.
 
-Start by preparing a dedicated Git repository for your learning content. Using our official Layer5 template to help you get started quickly.
+The template's Go module path must match your fork. Change the `module` line in its module file from the template's path to `github.com/<your-username>/<your-repo-name>`, then commit and push. The publish build fails while the path still names the template.
 
-### 1. Fork the academy-example Repository
+## Directory layout
 
-- Go to the [academy-example repository](https://github.com/layer5io/academy-example) on GitHub.
-- Click **Fork** to create a copy under your own GitHub account.
+Each organization's content lives in its own directory, which is how the Academy keeps one organization's content apart from another's. Replace `<your-organization-uuid>` with your organization's ID.
 
-### 2. Clone Your Fork Locally
+| Directory | Holds |
+| --- | --- |
+| `content/<content-type>/<your-organization-uuid>/` | Everything you write. `<content-type>` is `learning-paths`, `challenges`, or `certifications`. The folder hierarchy defines the navigation. |
+| `layouts/shortcodes/<your-organization-uuid>/` | Optional custom Hugo shortcodes for reusable components. |
 
-- Use the `git clone` command to download your forked repository. 
-- Example:
-  ```bash
-  # Replace `<your-username>` with your actual GitHub username
-  git clone https://github.com/<your-username>/academy-example.git
-  cd academy-example
-  git checkout -b <your-feature-branch>
-  ```
+### Learning path structure
 
-### 3. Update the Go Module Path
-
-1. Open the `go.mod` file located at the root of your `academy-example` project.
-2. The first line will be: 
-  ```go
-  module github.com/layer5io/academy-example
-  ```
-3. Change this line to match your fork's path: 
-  ```go
-  module github.com/<your-username>/<your-repo-name>
-  ```
-4. Save the file, then commit and push this change to your repository.
-
-{{< alert type="info" title="Critical Step" >}}
-This step is essential. It updates your repository's "identity card" (`go.mod`) to match its new "address" (your GitHub URL). Without this change, the Academy publishing process will fail.
-{{< /alert >}}
-
-## 2. Understanding Content Types
-
-The Academy supports three distinct content types, each designed for specific educational goals. Use this table to determine which format best suits your objectives.
-
-| Feature | Learning Path | Challenge | Certification |
-| :--- | :--- | :--- | :--- |
-| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
-| Structure | Hierarchical (Learning Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
-| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
-| Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
-
-## 3. Structure Your Content
-
-The Academy uses a specific directory layout to keep each organization's content separate and secure. The structure varies depending on the content type you're creating.
-
-### Find Your Organization UUID and Content ID
-
-{{< alert type="warning" title="Important: Replace UUIDs" >}}
-Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-content-uuid>` placeholders. Make sure to replace all of these with your actual UUIDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when implementing your content.
-{{< /alert >}}
-
-Each piece of Academy content is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
-
-You'll need two types of UUIDs:
-- **Content ID**: A unique identifier for your specific content (learning path, certification, or challenge) that gets added to the front matter of your content's index file
-- **Organization ID**: Your organization's UUID that's used in directory paths
-
-{{< alert type="info" title="Generating Your IDs from the Instructor Console" >}}
-
-The easiest way to get the correct IDs is by using the content creation tool.
-
-- Navigate to the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) in Layer5 Cloud.
-- Use the "Create New Content" tool and fill in the information for your new content
-- The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
-
-[Learn more](https://cloud.layer5.io/academy/instructors-console) about academy console.
-{{< /alert >}}
-
-### Create the Core Directories
-
-Now, inside your academy repository, you should see the following top-level folders.
-
-1. `content/<content-type>/<your-organization-uuid>/`
-  This `content` directory is where all your written material lives. Replace `<content-type>` with either `learning-paths`, `certifications`, or `challenges`. The folder hierarchy you create here directly defines the navigation and organization of your content.
-2. `layouts/shortcodes/<your-organization-uuid>/`
-  This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components.
-
-### Build the Content Hierarchy
-
-The content structure varies by type:
-
-#### Learning Path Structure
-A **Learning Path** contains **Courses**. A **Course** is primarily broken down into **Modules**, but can also conclude with a final **Test** that serves as a course exam. Finally, a **Module** consists of individual **Pages** and **Labs**.
-
-A high-level view of the learning path structure looks like this:
-
- ```text
- learning-paths/<your-organization-uuid>
- └── {learning-path-name}/ 
-     ├── _index.md                            
-     ├── course-1/
-     │   └── _index.md                        
-     └── course-2/  
-         ├── _index.md   
-         ├── course-exam.md  
-         └── module-1/ 
-             ├── _index.md                    
-             ├── page-1/
-             │   └── _index.md 
-             ├── test.md 
- ```
-
-#### Certification Structure
-A **Certification** typically contains one or more **Exams** and optional study materials.
+A learning path contains courses. A course contains modules and can end with a test that serves as the course exam. A module contains pages and labs.
 
 ```text
-certifications/<your-organization-uuid>
-└── {certification-name}/
-    ├── _index.md  
-    ├── exam/
-    │   ├── _index.md  
-    ├── test-1/
-    ├── test-2/
-    └── test-3/
+learning-paths/<your-organization-uuid>
+└── {learning-path-name}/
+    ├── _index.md
+    ├── course-1/
+    │   └── _index.md
+    └── course-2/
+        ├── _index.md
+        ├── course-exam.md
+        └── module-1/
+            ├── _index.md
+            ├── page-1/
+            │   └── _index.md
+            └── test.md
 ```
 
-#### Challenge Structure
-A **Challenge** is typically a single scenario-based task with lab and exam components.
+The `_index.md` in each folder defines that level's `title`, `description`, and `type`. The remaining `.md` files are the individual activities. [Challenges]({{< ref "cloud/academy/creating-content/building-challenges/index.md#1-set-up-the-directory-structure" >}}) and [certifications]({{< ref "cloud/academy/creating-content/building-certifications/index.md#1-set-up-the-directory-structure" >}}) use a flatter layout.
 
-```text
-challenges/<your-organization-uuid>
-└── {challenge-name}/
-    ├── _index.md 
-    ├── lab/
-    │   ├── _index.md 
-    ├── exam/
-    │   ├── _index.md 
-    └── content/
-        ├── description/
-        ├── getting-started/
-        ├── faq/
-        └── {other-sections}/
-```
+## Front matter
 
-Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`, `type: "certification"`, or `type: "challenge"`). The final `.md` files represent your individual learning activities.
-
-> For a deeper understanding of how Hugo uses `_index.md` to create content sections, you can refer to the official [Hugo Page Bundles documentation](https://gohugo.io/content-management/page-bundles/).
-
-### Front Matter
-
-Front matter is the configuration block at the top of every content file that defines its metadata. The most critical field is type, which tells the Academy how to render the content.
-
-The front matter configuration varies depending on the content type. The following examples illustrate typical setups for each content type.
-
-#### Frontmatter
-
-All `_index.md` files use the same frontmatter structure. Only the `type` field differs based on the content level:
+Every `_index.md` uses the same front matter. Only `type` changes with the level.
 
 ```yaml
 ---
@@ -243,302 +127,73 @@ additionalAttributes:
 
 ---
 ```
- 
- **Summary of Required Fields**
 
- > In this table, fields marked with ✅ are required, while those marked with – are optional.
+| Field | Applies to | Required | Behavior |
+| --- | --- | :---: | --- |
+| `title` | All | Yes | Display title. |
+| `description` | All | Yes | Summary shown on the catalog card. |
+| `type` | Path, certification, challenge | Yes | `learning-path`, `certification`, `challenge`, or `course` (singular). Plural values are rejected. |
+| `id` | Path, certification, challenge | Yes | Stable UUID that learner progress is recorded against. Never change it after learners register. Two items sharing an `id` are rejected. |
+| `weight` | All | No | Display order, lowest first. Without it, items sort alphabetically by title. |
+| `draft` | All | No | When `true`, the page is not published. |
+| `level` | Path, certification, challenge | No | `beginner`, `intermediate`, or `advanced`. Default `beginner`. |
+| `banner` | Path, certification, challenge | No | Path to an image in the same folder. |
+| `badge` | Path, certification, challenge | No | The awarded badge. Its `png` and `svg` fields accept a full URL or a file in the same folder. |
+| `tags` | All | No | Keywords for discovery. Several allowed. |
+| `categories` | All | No | The main category. Only one. |
 
-| Applicable To                 | Field         | Required | Notes                                                                                                         |
-| ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
-| All                           | `title`       |    ✅     | The main display title.                                                                                       |
-| All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
-| All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
-| All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
-| **Learning Path**, **Certification**, **Challenge** | `type`        |    ✅     | Defines the content's role. Values: `challenge`, `learning-path`, `certification` |
-| **Learning Path**, **Certification**, **Challenge** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
-| **Learning Path**, **Certification**, **Challenge** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., meshery-contributor-badge.svg).|
-| **Learning Path**, **Certification**, **Challenge** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
-| **Learning Path**, **Certification**, **Challenge** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
-| All | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
-| All | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
+Renaming content after publication breaks nothing as long as the `id` is unchanged. Changing the `id` orphans every existing registration.
 
+## Assets
 
-> For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
+Place images and other files in the same folder as the Markdown that uses them (a Hugo page bundle) and reference them by file name:
 
-{{< alert type="info" title="Be Careful About Name Changes" >}}
-Renaming content after publication would break progress tracking for enrolled learners. It's like changing pages while someone is following the story. Consider updating the content's description, adding an introductory note, or creating a versioned copy.
-{{< /alert >}}
-
-## 4. Add Assets and Interactive Content
-
-Enhance your course with images and other visual aids. The recommended and standard method for adding images is Page Bundling. This approach involves placing your image files directly alongside the Markdown content they belong to, which is simpler and keeps content organized.
-
-{{< alert type="success" title="Recommended Method: Page Bundling" >}}
-For all assets, please use the Page Bundling method. It simplifies asset management by co-locating images with the Markdown files that use them.
-{{< /alert >}}
-
-### Size Limits for Embedded Media
-While there's no hard-coded size limit, we enforce these practical constraints:
-| Media Type | Recommended Max Size | Impact Beyond Limit          |
-|------------|----------------------|------------------------------|
-| Video      | 50 MB                | Slow builds, CI failures     |
-| Image      | 5 MB                 | Hugo memory overflow         |
-| PDF        | 20 MB                | Browser loading delays       |
-
-
-### How to Add an Image
-
-1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `01-pods.md`). 
-
-2.  In your `01-pods.md` file, embed the image using a **standard Markdown link**. The path should just be the filename.
-
-    ```markdown
-    ![The Hugo Logo](hugo-logo.png)
-    ```
-
-{{< alert type="warning" title="Legacy Method: Do Not Use" >}}
-The `usestatic` shortcode is **deprecated** and should not be used!
-{{< /alert >}}
-
-### How to Add a Video
-
-**Page Bundling (Recommended)**
 ```markdown
-<video controls width="100%">
-  <source src="video-demo.mp4" type="video/mp4">
-</video>
+![Pod lifecycle diagram showing Pending, Running, and Succeeded states](pod-lifecycle.png)
 ```
 
-**External Hosting (Large Files)**
-```markdown
-{{</* card title="Video Tutorial" */>}}
-<video controls preload="metadata">
-  <source src="https://cdn.yourcompany.com/video.mp4" type="video/mp4">
-  Your browser doesn't support HTML5 video.
-</video>
-{{</* /card */>}}
-```
+Every image needs descriptive alt text. The Academy does not enforce a size limit, but large assets slow builds and can make them fail. Host large videos on an external platform and embed them with a `<video>` element that points at the hosted file. Add subtitle tracks (VTT) and a poster image to embedded video. For private videos, use signed URLs or unlisted links. The `usestatic` shortcode is deprecated; do not use it.
 
-#### External Hosting Recommendations
-For optimal performance, we recommend hosting large videos on dedicated platforms:
-- **YouTube** (Free, public/private options)
-- **AWS S3** (Requires bucket & CORS configuration)
-- **Cloudflare Stream** (Paid, enterprise-grade)
-- **Vimeo** (Paid, professional features)
-
-
-#### Critical Considerations
-- Best practice: Page Bundling
-
-- Accessibility: Always include subtitle tracks (VTT format)
-
-- Thumbnails: Set custom posters with ```poster="image.jpg"```
-
-- Bandwidth: Self-hosted videos may incur significant costs
-
-- Authentication: For private videos, use signed URLs (S3) or unlisted (YouTube)
-
-## 5. Build and Preview Locally
-
-Before publishing, it is crucial to preview your content locally to check for formatting errors, broken links, and overall structure.
+## Preview locally
 
 ```bash
-# Set Up the Environment (One-time Task)
-make setup
-# Run the Local Preview Server
-make site
+make setup   # one time
+make site    # start the local preview server
 ```
 
-This will start a local development server, where you can view your content as you build it.
-![Preview site](./images/preview-site.png)
+The preview uses a generic theme, so it shows structure and content but not your organization's branding. Branding comes from your organization settings in Layer5 Cloud. If the preview shows stale content, run `make clean` to delete the build cache and restart. To pick up theme improvements before a release, run `make theme-update`.
 
-{{< alert type="info" title="Local Previews" >}}
-The local preview uses a generic theme to show the structure and content. It **will not** display your organization's specific branding, such as custom logos or color schemes.
+## Publish
 
-You can configure your organization's branding in the [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations).
-{{< /alert >}}
-
-## 6. Publishing Your Content
-
-Once you have tested your content locally, you can publish it to the [Layer5 Academy](https://cloud.layer5.io/academy) through our automated workflow.
-
-To help you visualize how your content goes from a local file to live Academy content, the diagram below illustrates the entire end-to-end publishing workflow. It shows which components you will interact with directly and how the CI/CD pipeline handles the rest automatically.
+Publishing sends your organization's ID and a version to Layer5 Cloud, which builds your Academy at that version.
 
 {{< meshery-design-embed src="..//creating-your-learning-path/images/embedded-design-academy-content-publishing-workflow.js" id="embedded-design-37c37d14-be76-487a-90aa-5ada0c1c115f" size="full" >}}
 
-The process involves a one-time setup of secrets in your repository, followed by creating a GitHub Release to publish each new version of your content.
+### One-time setup
 
-### Stage 1: Configure the Publishing Workflow (One-Time Setup)
+Store two repository secrets that the template's publish workflow reads. The names must match exactly.
 
-To allow your repository to securely communicate with the Academy's build system, you must configure GitHub Secrets. This one-time setup ensures your publishing workflow can authenticate automatically.
+| Secret | Value |
+| --- | --- |
+| `ACADEMY_ORG_ID` | Your organization's ID. |
+| `ACADEMY_TOKEN` | Only the token string from the token JSON, beginning `eyj`. Omit the braces, the `"token":` key, and the quotes. |
 
-#### 1. Verify Required Secret Names
+### Release
 
-First, confirm the **exact secret names** required by the workflow.
+Commit your changes to the default branch, then publish a GitHub release with a new version tag such as `v1.0.2`. The release starts the workflow.
 
-In your repository, open the workflow file at `.github/workflows/build-and-release.yml`. This confirms the workflow expects secrets named exactly `ACADEMY_ORG_ID` and `ACADEMY_TOKEN`.
-  ```yaml
-  with:
-    orgId: ${{ secrets.ACADEMY_ORG_ID }}
-    token: ${{ secrets.ACADEMY_TOKEN }}
-    # ... and other parameters
-  ```
+- The publish request is accepted only from an organization admin or owner. The request calls Layer5 Cloud with your organization ID and the version.
+- Content reaches the staging environment in about 10 minutes and production with the next Layer5 Cloud release.
+- If the build fails, your previous version stays live.
+- Corrections follow the same path: push, then release a new version.
 
-#### 2. Set Up Repository Secrets
+### Troubleshooting
 
-Now, create the two required secrets in your repository.
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| `401 Unauthorized` or "User must be logged in" | `ACADEMY_TOKEN` contains the whole JSON object. | Store only the token string. |
+| A URL containing `//`, such as `/api/academy//update/`, | The organization ID secret is missing or misnamed. | Name the secret `ACADEMY_ORG_ID`. |
+| Content missing after a release | The publish failed. | Open the audit events for your organization and filter by the Academy upsert action to see each attempt and its error. |
+| Duplicate ID, invalid content type, or missing required field | Two items share an `id`, `type` is plural, or `title`, `description`, `type`, or `id` is absent. | Make IDs unique, use the singular type, and add the field. |
 
-1.  Navigate to your GitHub repository and go to `Settings` > `Secrets and variables` > `Actions`.
-2.  Ensure you are on the **Secrets** tab.
-3.  Click `New repository secret` to add the following two secrets:
-    1. **Name:** `ACADEMY_ORG_ID` 
-
-       **Value:** Paste your unique Organization ID string.
-
-    2. **Name:** `ACADEMY_TOKEN` 
-
-       **Value:** Paste the personal access token generated from Layer5 Cloud by following the instructions below.
-
-{{< alert type="info" title="How to Correctly Copy Your Token" >}}
-When you generate a token from the [Layer5 Cloud Tokens page](https://cloud.layer5.io/security/tokens), you will get a JSON object like this:
-`{"meshery-provider":"Meshery","token":"eyj...your-long-token-string..."}` You must copy only the token string itself—the value inside the quotes for the `"token"` key. 
-
-Do NOT include the curly braces `{}`, the `"token":` key, or the surrounding quotes. The value you paste into the secret should begin with `eyj...`.
-{{< /alert >}}
-
-Once configured correctly, your secrets page should look like this:
-![Secrets page showing correct configuration](./images/setting.png)
-
-{{< alert type="info" title="Alternative Method (Not Recommended)" >}}
-While you can hardcode your `ACADEMY_ORG_ID` directly in the workflow file, we strongly recommend using secrets for better security and flexibility.
-{{< /alert >}}
-
-### Stage 2: Publish by Creating a GitHub Release
-
-With the setup complete, you can publish your content anytime by creating a new release.
-
-1.  Ensure all your latest changes are committed and pushed to your repository's `master` branch.
-2.  On your GitHub repository page, navigate to the **"Releases"** section.
-3.  Click **"Draft a new release"**.
-4.  Create a new version tag for your release (e.g., `v1.0.1`).
-5.  Provide a title and description for your release.
-6.  Click **"Publish release"**.
-
-This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/academy).
-
-- Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
-- Your content will go fully live to the production Academy platform during the next scheduled cloud release.
-
-> **For Urgent Updates:** If you have a time-sensitive publishing request or encounter any issues with the automated process, please [contact the Layer5 team](https://layer5.io/company/contact) for expedited assistance.
-
-![Release Example](./images/release-publish.gif)
-
-## 7. Ongoing Maintenance and Updates
-
-Once your content is live, you may need to perform routine tasks to keep your local environment and dependencies up-to-date.
-
-### Updating the Academy Theme
-The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the core layout, style, and features for your Academy content. Regularly updating it ensures you benefit from the latest improvements and bug fixes.
-
-To upgrade to the latest theme version, run: 
-```bash
-make theme-update
-```
-
-You will see output similar to this as Hugo fetches the new modules:
-```bash 
-hugo mod get -u
-hugo: collected modules in 1707 ms
-go: downloading github.com/layer5io/academy-theme v0.1.6
-go: upgraded github.com/layer5io/academy-theme v0.1.5 => v0.1.6
-go: upgraded github.com/twbs/bootstrap v5.3.6+incompatible => v5.3.7+incompatible
-```
-
-{{< alert type="info" title="When to Update?" >}}
-It's a good practice to update the theme before creating a new release or when you notice that your local preview is missing recent design changes.
-{{< /alert >}}
-
-### Clearing the Local Cache for Troubleshooting
-
-If you encounter unexpected formatting issues or your content doesn't update correctly during local development, your build cache might be stale. Use the `make clean` command to resolve this.
-This command first deletes the local build cache (`public` directory) and then restarts the development server, ensuring you are previewing a fresh build of your content.
-```bash
-make clean
-```
-
-## Frequently Asked Questions
-
-<details>
-  <summary>1. Why is my workflow failing with a <code>401 Unauthorized</code> or <code>User must be logged in</code> error?</summary>
-  
-This error indicates an issue with your <code>ACADEMY_TOKEN</code>. Please ensure you have correctly copied only the token string and not the entire JSON object from the downloaded file.
-</details>
-
-<details>
-  <summary>2. Why is my workflow failing with a URL containing a double slash </code>( // )</code>?</summary>
-  
-A double slash in the URL (e.g., <code>.../api/academy//update/...</code>) means your <strong>ACADEMY_ORG_ID</strong> was not found. This typically happens when the secret name in your repository does not <strong>exactly match</strong> the name expected by the workflow file (e.g., <code>ORG_ID</code>).
-</details>
-
-<details>
-  <summary>3. How do I handle updates or corrections after my content is live?</summary>
-  
-All content updates are managed through your Git repository. Simply commit and push your changes, then <strong>create a new GitHub Release</strong> with a new version number (e.g., <code>v1.0.2</code>). This automatically triggers the publishing workflow and updates your content on the Academy platform.
-</details>
-
-<details>
-  <summary>4. What happens if my new content has an error?</summary>
-  
-The publishing process is designed to be safe. If your new content causes a build error, the workflow will fail, and the previously working version of the Academy will remain unchanged. Your broken update will not be published.
-</details>
-
-<details>
-  <summary>5. How do I structure multiple courses under one learning path?</summary>
-
-The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your <code>content</code> directory directly maps to the content structure presented to users. For certifications and challenges, the structure is typically flatter with exams or scenario-based tasks.
-</details>
-
-<details>
-  <summary>6. Why does my local build fail when adding large videos?</summary>
-  
-The ideal size should be less than 10MB for our service performance and sustainability, and server resource management. If your asset size is larger than 10MB, we recommend using external hosting as listed.
-</details>
- 
-<details>
-  <summary>7. How to securely host private training videos?</summary>
-  
-Use AWS S3 with signed URLs:
-```html
-<video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
-```
-</details>
-
-<details>
-  <summary>8. How do I debug using Layer5 Cloud Events?</summary>
-
-If your content is not appearing in the Academy after a GitHub release, it may have failed to publish. You can troubleshoot these issues using the **Events** section in [Layer5 Cloud](https://cloud.layer5.io).
- 
-To view publishing logs:
-1. Navigate to **Settings > Events**
-2. Switch to the **Audit** tab
-3. Apply a filter using the action type:
- `AcademyUpserted`
-This will show all attempts to upload content, including which ones failed and why.
-
-**Common Errors You Might See**
-- **Duplicate IDs**
-  Two pieces of content using the same identifier. You can fix this by renaming or regenerating unique IDs.
-
-- **Invalid Content Type**
-  For example, ensure you use singular forms:
-  - Use `type: "learning-path"` not `type: "learning-paths"`
-  - Use `type: "certification"` not `type: "certifications"`
-  - Use `type: "challenge"` not `type: "challenges"`
-
-- **Missing Required Fields**
- Ensure that title, description, type, and id are included in the content's frontmatter.
-
- {{< alert type="info" title="Tip" >}}
- Use the event filter `AcademyRegisteredToContent` to track user activity, like who enrolled in which content.
- {{< /alert >}}
-</details>
+To see who registered for what, filter the audit events by the Academy registration action.
