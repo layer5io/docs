@@ -1,0 +1,18 @@
+# v0.7.164-1
+
+date: 2024-11-28
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- update catalog modal performer section default open @amitamrutiya (#3197)
+- [Chore]: Bump Sistent v0.14.124 @l5io (#3196)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
