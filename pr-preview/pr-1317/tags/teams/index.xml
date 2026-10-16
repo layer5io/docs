@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teams on Layer5 Documentation</title><link>/pr-preview/pr-1317/tags/teams/</link><description>Recent content in Teams on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1317/tags/teams/index.xml" rel="self" type="application/rss+xml"/><item><title>Teams</title><link>/pr-preview/pr-1317/cloud/concepts/identity-and-security/teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1317/cloud/concepts/identity-and-security/teams/</guid><description>&lt;p&gt;Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. Organizations can have any number of teams. Teams can have any number of users. Users can belong to any number of teams. Users may belong to any number of organizations.&lt;/p&gt;
-&lt;p&gt;Outside of grouping users together, teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections.&lt;/p&gt;
-
-&lt;h2 id="example-orbital-labs-teams" class="heading-link"&gt;
- Example: Orbital Labs Teams
- &lt;a href="#example-orbital-labs-teams" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;The following teams illustrate how organizations use teams to segment access and responsibilities.&lt;/p&gt;</description></item></channel></rss>
