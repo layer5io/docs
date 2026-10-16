@@ -44,7 +44,7 @@ Generally, there are four types of keys:
 3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
 4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
 
-Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud-native design to [Cloud Catalog](/cloud/concepts/catalog/), and the `Connect GitHub Account to Workspace` key enables you to connect your GitHub Account to your [workspace](/cloud/concepts/spaces/workspaces/) in the context of any organization.
+Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud-native design to [Cloud Catalog](/cloud/concepts/catalog/), and the `Connect GitHub Account to Workspace` key enables you to connect your GitHub Account to your [workspace](/cloud/concepts/workspaces/) in the context of any organization.
 
 
 ### Keys Enforcement

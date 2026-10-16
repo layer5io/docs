@@ -1,37 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designs on Layer5 Documentation</title><link>/tags/designs/</link><description>Recent content in Designs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/designs/index.xml" rel="self" type="application/rss+xml"/><item><title>Sharing a Workspace</title><link>/cloud/guides/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
- Share designs from Workspaces
- &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the &lt;code&gt;microservices-baseline&lt;/code&gt; design and test his service changes without touching staging.&lt;/p&gt;
-&lt;p&gt;Here is how Five shares the &lt;code&gt;orbital-dev&lt;/code&gt; workspace with Rex.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/cloud/guides/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This guide walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline:&lt;/p&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Workspace&lt;/th&gt;
- &lt;th&gt;Environment&lt;/th&gt;
- &lt;th&gt;Teams with Access&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-staging&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;staging-aws&lt;/code&gt; (EKS + S3 + ElastiCache), &lt;code&gt;staging-azure&lt;/code&gt; (AKS + Azure Blob + Azure Service Bus)&lt;/td&gt;
- &lt;td&gt;Infrastructure + Development&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;orbital-production&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;prod-aws&lt;/code&gt; (EKS + RDS + S3 + CloudFront + SQS), &lt;code&gt;prod-gcp&lt;/code&gt; (GKE + Cloud SQL + Cloud Storage + Pub/Sub)&lt;/td&gt;
- &lt;td&gt;Infrastructure only&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Five has finished validating &lt;code&gt;prod-deployment-v2&lt;/code&gt; in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs&amp;rsquo; AWS production platform.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designs on Layer5 Documentation</title><link>/tags/designs/</link><description>Recent content in Designs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/designs/index.xml" rel="self" type="application/rss+xml"/><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
 &lt;p&gt;You need a design open in Designer mode. Designer is the only mode that allows authoring.&lt;/p&gt;
 
 &lt;h2 id="add-a-component" class="heading-link"&gt;
@@ -142,7 +109,7 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Share a Design</title><link>/kanvas/guides/collaborating/sharing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/sharing-designs/</guid><description>&lt;p&gt;Sharing opens a private design to the people you name. Each grant is for one person, and it has no access level: a person who can open the shared design can also edit it and comment on it. You can also change a design&amp;rsquo;s visibility to make it open to everyone, and you can copy a link that points people to it.&lt;/p&gt;
+&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Promote a Design from Staging to Production</title><link>/cloud/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/tutorials/promoting-a-design/</guid><description>&lt;p&gt;A pipeline is only as trustworthy as its boundaries. In this tutorial you build two stages of one in a single organization: a staging workspace and a production workspace, each with its own team and its own environment. You put a design in staging, promote it to production, deploy it to the production environment from Kanvas, and read the production workspace&amp;rsquo;s activity log to confirm every change and who made it.&lt;/p&gt;</description></item><item><title>Share a Design</title><link>/kanvas/guides/collaborating/sharing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/sharing-designs/</guid><description>&lt;p&gt;Sharing opens a private design to the people you name. Each grant is for one person, and it has no access level: a person who can open the shared design can also edit it and comment on it. You can also change a design&amp;rsquo;s visibility to make it open to everyone, and you can copy a link that points people to it.&lt;/p&gt;
 &lt;p&gt;This guide covers the task. For the reasoning behind the access model, read &lt;a href="/kanvas/concepts/collaboration/"&gt;Collaboration Model&lt;/a&gt;. For a worked example with two people, follow &lt;a href="/kanvas/tutorials/collaborative-editing/"&gt;Collaborative Editing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Validate a Design</title><link>/kanvas/guides/deploying/validating-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/validating-designs/</guid><description>&lt;p&gt;Validation checks the configuration of each component in a design against the schema of that component&amp;rsquo;s definition. It runs in your browser, needs no cluster, and changes nothing. Run it while you build to catch missing or malformed fields before a dry run or a deployment spends time on them.&lt;/p&gt;
 
 &lt;h2 id="before-you-start" class="heading-link"&gt;

@@ -111,7 +111,7 @@ Workspaces are logical groups of shared resources such as environments, connecti
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Info</h4>
   
-      For more information, see <a href="/cloud/concepts/spaces/workspaces/">Workspaces</a>.
+      For more information, see <a href="/cloud/concepts/workspaces/">Workspaces</a>.
   
 </div>
 

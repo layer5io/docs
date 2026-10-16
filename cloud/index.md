@@ -56,7 +56,7 @@ Layer5 Cloud is the identity, tenancy, and collaboration service behind Kanvas a
 | Section | Go here to |
 |---|---|
 | [Getting Started](/cloud/getting-started/) | Create an account and learn what Layer5 Cloud sets up for you at first sign-in. |
-| [Tutorials](/cloud/guides/tutorials/) | Work through end-to-end examples that build a working mental model. |
+| [Tutorials](/cloud/tutorials/) | Work through end-to-end examples that build a working mental model. |
 | [How-to Guides](/cloud/guides/) | Complete a specific task: manage organizations and workspaces, connect integrations, or self-host. |
 | [Concepts](/cloud/concepts/) | Understand organizations, teams, workspaces, roles, the catalog, and how they relate. |
 | [Reference](/cloud/reference/) | Look up default permissions by role and the API. |

@@ -1336,7 +1336,7 @@ Deleting a design removes every grant for it.
 ## What does not grant access
 
 - **Teams.** The dialog finds individual users only. Layer5 Cloud accepts a grant for a team through its API, but no access check honors it, so team members gain nothing from it.
-- **Workspaces.** Adding a design to a workspace, and assigning teams to that workspace, does not open a private design to those teams. Layer5 Cloud checks the owner, provider administrators, and the design's own grants. See [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) for what a workspace does control.
+- **Workspaces.** Adding a design to a workspace, and assigning teams to that workspace, does not open a private design to those teams. Layer5 Cloud checks the owner, provider administrators, and the design's own grants. See [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) for what a workspace does control.
 - **Organization membership.** Being in the owner's organization does not open a private design.
 
 To give a whole team access, grant each member.
@@ -7081,7 +7081,7 @@ is a visual designer and operator for Kubernetes and multi-cloud infrastructure.
 | Section | Go here to |
 |---|---|
 | [Getting Started]({{< ref "cloud/getting-started/_index.md" >}}) | Create an account and learn what Layer5 Cloud sets up for you at first sign-in. |
-| [Tutorials]({{< ref "cloud/guides/tutorials/_index.md" >}}) | Work through end-to-end examples that build a working mental model. |
+| [Tutorials]({{< ref "cloud/tutorials/_index.md" >}}) | Work through end-to-end examples that build a working mental model. |
 | [How-to Guides]({{< ref "cloud/guides/_index.md" >}}) | Complete a specific task: manage organizations and workspaces, connect integrations, or self-host. |
 | [Concepts]({{< ref "cloud/concepts/_index.md" >}}) | Understand organizations, teams, workspaces, roles, the catalog, and how they relate. |
 | [Reference]({{< ref "cloud/reference/_index.md" >}}) | Look up default permissions by role and the API. |
@@ -7152,252 +7152,6 @@ Once the configuration is applied, test the webhooks to ensure they are function
 
 
 --------------------------------------------------------------------------------
-title: "Managing Workspaces"
-url: /cloud/guides/workspaces/managing-workspaces/index.md
-description: Learn how to create, edit, delete, and configure your Workspaces.
---------------------------------------------------------------------------------
-
-This guide walks you through the practical steps of managing your Workspaces. Here, you'll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.
-
-If you're new to the concept of Workspaces, we recommend starting with the [Workspaces Overview]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.
-
-{{< alert type="info" title="A Note on Permissions" >}}
-Every action described in this guide is governed by roles and permissions. To see a detailed breakdown of what your assigned role allows you to do, please refer to the [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) documentation.
-{{< /alert >}}
-
-### View Workspaces
-
-The [Workspaces page](https://cloud.layer5.io/spaces/workspaces) is where you can see all of the workspaces within the currently selected organization.
-
-> To suit different workflows, you can switch between two distinct layouts: a visual [grid view](#grid-view) and a detailed [table view](#table-view).
-
-#### Grid View
-The grid view offers a card-based layout, perfect for quickly identifying workspaces at a glance. Each card displays essential information, and you can flip it to reveal management options like editing or deleting and get audit history.
-![Grid view of workspaces showing card-based layout](images/grid-view.png)
-
-#### Table View
-The table view provides a dense, list-based format that is ideal for managing a large number of workspaces. This view allows for sorting and gives you more control over the specific details you see.
-
-To customize the information displayed, click the **View Columns** icon and select the attributes you want to see, such as Owner ID or Created Date.
-
-![Table view of workspaces showing list-based format with sorting options](images/table-view.png)
-
-{{< alert type="info" title="Consistent Actions Across Views" >}}
-Both the grid and table views provide the same set of management capabilities. You can choose the layout that best fits your needs without losing any functionality.
-{{< /alert >}}
-
-### Create a Workspace
-
-Creating a new workspace allows you to manage resources, and define team access.
-
-{{< alert type="info" title="Permissions Required" >}}
-Only users with the Workspace Admin or Organization Admin role can create new workspaces.
-{{< /alert >}}
-
-To create a workspace:
-
-1. Click the **+ Create** button to open the creation Dialog.
-2. From the dropdown menu, select the **Organization** that will own the new workspace. The chosen Organization **cannot be** changed after the workspace is created. Please select carefully.
-3. Enter a descriptive **Name** and an optional **Description**, then click **Save**.
-4. Your new workspace will now appear on the page.
-
-![Animation showing workspace creation process](images/create-workspace.gif)
-
-### Edit a Workspace
-
-You can modify a workspace's name and description at any time after it has been created.
-
-- **From the Grid View:** Flip the workspace card, then click the **pencil icon**.
-- **From the Table View:** Click the **pencil icon** in the row of the workspace you wish to modify.
-
-![Animation showing workspace editing process](images/edit-workspace.gif)
-
-### Delete a Workspace
-
-You can delete a single workspace or multiple workspaces at once.
-
-- **To delete a single workspace:**
-
-    - From the **Grid View**, flip the workspace card, then click the **trash can icon**.
-    - From the **Table View**, click the **trash can icon** in the row of the workspace you wish to delete.
-
-- **To delete multiple workspaces (Grid View only):**
-
-  1. Select the checkboxes on the cards of the workspaces you want to delete.
-  2. Click the **Delete** button that appears at the top of the page.
-
-![Animation showing workspace deletion process](images/delete-workspace.gif)
-
-{{< alert type="info" title="Deletion Restrictions" >}}
-Meshery requires at least one workspace to exist within an organization at all times, so you cannot delete the last remaining workspace.
-{{< /alert >}}
-
-#### Workspace Deletion Behavior
-
-{{< alert type="danger" title="What Happens When a Workspace is Deleted?" >}}
-Deleting a Workspace will permanently delete the Workspace itself and its associated Designs and Views.
-{{< /alert >}}
-
-When a Workspace is deleted:
-
-- Deletion is **permanent and irreversible**. Proceed with caution.
-- Before deletion, users have the option to transfer associated Designs and Views to another Workspace.
-- If no transfer is made, all associated Designs and Views will be permanently deleted along with the Workspace[^1].
-- Any associated Teams or Environments will be detached from the Workspace but will remain available for reassignment.
-
-### Assign Teams to a Workspace
-Assigning teams is the way you grant users access to a workspace. Once a team is assigned, its members can access all of the Designs, Views, and Environments linked to that workspace.
-
-![Animation showing team assignment process](images/assign-teams.gif)
-
-You can open the team management Dialog from either the grid or table view.
-
-- **From the Grid View:** Click the **Teams** tile.
-- **From the Table View:** Click the **Teams icon** in the workspace row. A list of currently assigned teams will appear. From there, click the **Assign Team** button to open the assignment Dialog.
-
-Inside the assignment Dialog, you will see two lists: **Available Teams** on the left and **Assigned Teams** on the right.
-
-1. Select one or more teams from either list.
-2. Use the arrow buttons to move the selected teams between the lists:
-      - **>** Assigns a selected team.
-      - **<** Unassigns a selected team.
-      - **>>** Assigns all available teams.
-      - **<<** Unassigns all assigned teams.
-3. Click **Save** to apply your changes.
-
-{{< alert type="info" title="Team and Workspace Relationships" >}}
-You can assign multiple teams to a single workspace, and a single team can also be a member of multiple workspaces. This provides flexible access control across your projects. For more restrictions, see [Workspaces documentation]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
-{{< /alert >}}
-
-### Link Environments to a Workspace
-When you link an [Environment]({{< ref "cloud/concepts/spaces/environments.md" >}}) to a Workspace, you make all the connections (like those to Kubernetes clusters or databases) grouped within that Environment available. This means any team members with access to that Workspace can then deploy their applications or configurations to the resources.
-
-The process of linking environments is almost the same as assigning teams.
-![Animation showing environment assignment process](images/assign_environment.png)
-
-Opening the **Environments** tile is also how you see which Environments a Workspace currently draws on: the dialog's assigned list is that Workspace's Environments.
-
-{{< alert type="info" title="Many-to-Many Relationship" >}}
-An Environment can be linked to multiple Workspaces, and a Workspace can have multiple Environments. This allows you to share common environments across different projects.
-{{< /alert >}}
-
-{{< alert type="info" title="Managing the Environments Themselves" >}}
-Creating an Environment, editing it, and choosing which Connections belong to it are done on the Environments page rather than here. See [Managing Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}).
-{{< /alert >}}
-
-### Move Designs and Views Between Workspaces
-
-Unlike Environments, every Design and View **must belong to exactly one Workspace at all times.**
-
-When you create a new Design, it is automatically added to your current Workspace. Therefore, you don't "link" them in the same way you link an Environment; instead, you **move** them from one Workspace to another.
-
-#### How to Move a Design or View
-
-1. Click the **Designs/Views** tile on the Workspace card (or the equivalent icon in the table view) to open the management Dialog.
-2. Inside the Dialog, select the Design(s) or View(s).
-3. Use the arrow buttons to move the selected Design(s) or View(s) to the target workspace.
-4. Click **Save**.
-
-![Animation showing design and view assignment process](images/assign-designs-views.gif)
-
-{{< alert type="info" title="Exclusive Ownership" >}}
-A Design or View can only exist in one Workspace at a time. Moving it to a new Workspace will automatically remove it from its original location. For more detailed information, see [Workspaces documentation]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
-{{< /alert >}}
-
-### View Recent Activity
-
-Meshery keeps a detailed audit log for each workspace, allowing you to track all significant events. This is useful for maintaining security and troubleshooting issues.
-
-![Workspace audit log showing recent activity](images/security-audit.png)
-
-The activity log captures a variety of events, including:
-- The creation or deletion of the workspace.
-- Updates to the workspace's name or description.
-- The assignment or unassignment of Teams.
-- The linking or unlinking of Environments.
-- The movement of Designs or Views between workspaces.
-
-At the bottom of the log, you will also find timestamps for when the workspace was initially created and when it was last updated.
-
-{{< alert type="info" title="Putting It All Together: A Hands-on Guide" >}}
-To see how managing a Workspace fits into a complete, end-to-end workflow, follow the [Using Workspaces Effectively](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=using-workspaces-effectively) learning path.
-{{< /alert >}}
-
-### Common Workspace Usage Patterns
-
-There isn't a single "best" way to organize your workspaces, as structure depends heavily on team dynamics and project needs. Instead, we recommend a flexible, multi-layered approach to maximize workspace effectiveness. Below are common usage patterns:  
-
-**1. The Project Hub** 
-
-Dedicate a shared workspace to each project. It becomes a central hub where your team can co-develop designs, share reusable components, and align with specific environments (e.g., staging or production). This keeps all your environments, history, and resources in one place
-
-**2. Your Personal "My Drive"** 
-
-Think of a private workspace as your personal Google "My Drive." You can use it for anything—from important, confidential designs to just playing around with new ideas in a "sandbox." It's more than just a place for quick tests; it's also where you can build and polish your professional work before it's ready to be shared.
-
-**3. Template Library** 
-
-Create a separate, access-controlled Workspace to serve as your organization's internal, private template library. This is for storing non-public, organization-specific, or sensitive patterns. 
-> This practice complements the [public Catalog]({{< ref "cloud/concepts/catalog/exploring-the-catalog/index.md" >}}), which is used for sharing generic, non-sensitive designs with the community. A dedicated Organization Catalog feature is also planned for the future.
-
-**4. The Team Space** 
-
-You can also organize long-term workspaces around specific teams, such as a "Developer Hub" or "QA Workspace." This simplifies resource management and makes it easy to monitor team-wide activity.
-
-**5. The Environment-Specific Space** 
-
-For teams requiring strict separation between environments, this pattern is essential. You can create dedicated workspaces like a "Production Workspace," which would exclusively contain designs approved for deployment and link only to production clusters. This approach builds a secure barrier between your development, staging, and production assets.
-
-### FAQ
-
-#### 1. When a design is transferred from one Workspace to the next, is design ownership affected? Who has access? What if the Workspaces are in different orgs?
-
-  - **Ownership**: A Design’s ownership is permanent. It always belongs to the user account that created it.
-  - **Access**: Access to the Design is determined by the Teams assigned to its new Workspace.
-  - **Cross-Organization Transfers**: You can move a Design you own into a Workspace in a different Organization, provided you have the necessary permissions in the target Organization. 
-
-> A key restriction is that a user, even with a [Workspace Admin]({{< ref "cloud/reference/default-permissions.md" >}}) role, cannot manage a Design they **do not own**. This action requires [Organization Admin]({{< ref "cloud/reference/default-permissions.md" >}}) or Organization Owner permissions.
-
-#### 2. What can other users of a Workspace do with my design? Can they delete my design?
-
-Other members of a Workspace can view and edit your Design, but they **cannot delete it**. The permission to delete a Design is exclusive to its **Owner**.
-
-#### 3. Can Workspaces contain private, public, and published designs?
-
-Yes. A Workspace can simultaneously contain Designs that are private, public, and published.
-
-#### 4. How will I know if another user made changes to my design? Will I be notified? Is there an edit history or audit trail?
-
-Currently, it is **not possible** to receive direct notifications or see a collaborative audit trail of changes made by other users. While a Version History feature exists for Designs, it currently only tracks changes made by you, not changes from other collaborators.
-
-#### 5. If I share my private design with a user in a different org, can they share my design with other users?
-
-No. A user with whom you share a private Design cannot re-share it with others.
-
-> [learn more about sharing designs]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}).
-
-#### 6. Does a workspace have space limitations or file count limitations?
-
-Currently, there are no specific space or file count limitations for Workspaces. However, this may be subject to change in the future and could be tied to different [subscription plans](https://layer5.io/pricing).
-
-#### 7. How can I make my design publicly available, but read-only to other users?
-
-To make a Design available to everyone but in a read-only state, you should **[Publish]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}})** it. A **Published** design can be viewed and cloned by any user, but the original cannot be edited by others.
-
-#### 8. How do I share a private design with a specific team for collaboration?
-
-To share a design exclusively with a select group:
-
-1.  First, ensure your Design's visibility is set to **Private**. This prevents anyone from accessing it by default.
-2.  Next, place the private Design into a **Workspace**.
-3.  Finally, assign a specific **Team** to that Workspace.
-
-This grants members of the assigned Team exclusive access and the permission to edit the design.
-
-[^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
-
-
---------------------------------------------------------------------------------
 title: "Metrics"
 url: /cloud/concepts/catalog/metrics/index.md
 description: Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
@@ -7437,95 +7191,6 @@ Cloning metrics indicate how often users are creating copies of a design for mod
 
 ##### 5. Shares
 Shares measure the social aspect of design usage.
-
---------------------------------------------------------------------------------
-title: "Sharing a Workspace"
-url: /cloud/guides/tutorials/sharing-a-workspace/index.md
-description: Learn how to control access to workspaces and their resources.
-
---------------------------------------------------------------------------------
-## Share designs from Workspaces
-
-Five has been working in the `orbital-dev` workspace — a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park, a developer on the Orbital Labs Development team, needs access so he can deploy the `microservices-baseline` design and test his service changes without touching staging.
-
-Here is how Five shares the `orbital-dev` workspace with Rex.
-
-### Share a single design from orbital-dev
-
-In your browser, go to [Layer5 Cloud](https://cloud.layer5.io).
-1. Click the design you want to share (`microservices-baseline` in Five's case).
-2. Click **Share**.
-3. Enter Rex's email address (`rex@orbital-labs.example`).
-4. Set the permission level — Five gives Rex **edit** access so he can deploy and modify the design.
-5. Click **Send**.
-
-![Flow for sharing designs](../../../images/Slide51.svg)
-
-Rex receives an invitation and can now open `microservices-baseline` in the `orbital-dev` workspace.
-
-{{< alert type="info" >}}
-Sharing a single design gives the recipient access to that design only — not to the full workspace or its other designs. To give Rex access to everything in `orbital-dev`, Five asks Maya Chen (Org Admin) to assign the Development team to the workspace instead.
-{{< /alert >}}
-
-## Stop, limit, or change Workspace sharing
-
-After you share a workspace, you can stop sharing at any time. You can also control whether the people you've shared with can edit, comment on, or further share your workspace.
-
-If Five later wants to remove Rex's individual design access (for example, when the feature is merged and the design no longer needs collaborative review), he can:
-
-1. Open the design and click **Share**
-2. Find Rex in the list of people with access
-3. Change Rex's permission to **No access** or click **Remove**
-
-### Share and collaborate on a design with many people
-
-**Important:**
-
-At any time, a design can only be edited on up to 25 open tabs or devices. If there are more than 25 instances of the design open, only the owner and some users with editing permissions can edit the design. A single design can only be shared with up to 600 individual email addresses.
-
-To share and collaborate on a design with a very wide audience:
-
-#### Share without publishing
-
-If you need multiple people to open a design without making it broadly discoverable, publish the design and then create a restricted link to share only with those who have access. You can grant edit access to people who need to edit or comment on the design. [Learn how to publish a design](#publish-the-design).
-
-#### Publish the design
-
-{{< alert type="info" title="When a design is Public" >}}
-- When a design is published, viewers and commenters can view, download, and clone the design.
-- Editors can change permissions and share the design with others.
-- These permissions apply consistently to all public designs.
-
-Note: **Published** and **Public** are distinct states. Publishing a design makes it available via a link; marking it Public makes it discoverable by anyone on the web or within your organization, depending on your account settings.
-{{< /alert >}}
-
-- If many people need to open a design, publish it and share the link. You can give edit access to people who need to edit or comment on the design.
-- Depending on your account's settings, publishing a design makes it visible to everyone on the web, everyone in your organization, or a defined group.
-- To remove a design from the web, stop publishing it.
-
-### Stop sharing a design
-
-If you share a design with people, the owner and anyone with edit access can change sharing permissions.
-
-<details>
-<summary>Delete a shared design</summary>
-
-If you delete a shared design that you own:
-- People who can view, comment, or edit can make a copy of the design until you permanently delete it.
-- To permanently delete the design, click the design in your trash and click **Delete forever**.
-
-</details>
-
-### Anonymous or unknown users in a design
-
-You might see "anonymous user" viewing your design. This can happen when a design is shared publicly or with anyone who has the link.
-
-Someone you don't know might be viewing your design because:
-- The design is shared with a mailing list.
-- The design is shared with someone who doesn't have a Layer5 account or isn't signed in.
-- Someone who can edit your design shared it further.
-
-
 
 --------------------------------------------------------------------------------
 title: "Customizing Layer5 Cloud Deployment with Helm"
@@ -8263,153 +7928,6 @@ Upon successful completion, you’ll receive a verifiable digital certificate. Y
 
 
 --------------------------------------------------------------------------------
-title: "Managing Environments"
-url: /cloud/guides/workspaces/managing-environments/index.md
-description: Learn how to view, create, and edit Environments, and how to assign Connections to an Environment or remove them from it.
---------------------------------------------------------------------------------
-
-This guide walks you through the practical steps of managing your Environments. Here you will learn how to see the Environments in your organization, create and edit them, review the Connections that belong to an Environment, and assign or remove those Connections.
-
-If you are new to the concept of Environments, start with the [Environments Overview]({{< ref "cloud/concepts/spaces/environments.md" >}}) to understand what an Environment is and how it relates to Connections, Credentials, and Workspaces.
-
-{{< alert type="info" title="A Note on Permissions" >}}
-Every action described in this guide is governed by roles and permissions. Buttons and icons for actions you are not authorized to perform are disabled rather than hidden, and the Environments page itself is only reachable with the **View Environment** key. For a breakdown of what your assigned role allows, see [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
-{{< /alert >}}
-
-## View Environments
-
-The [Environments page](https://cloud.layer5.io/spaces/environments) - **Environment** in the Spaces navigation, alongside Overview, Workspaces and Integrations - lists every Environment in the organization you currently have selected. Switching organizations with the organization context switcher in the top navigation bar changes the list.
-
-Environments are presented as cards, ten to a page, with pagination beneath the grid. Each card shows:
-
-- the Environment's **name**
-- its **description**, or *No description* when none has been set
-- an **Assigned Connections** tile carrying the number of Connections currently in the Environment
-
-Flip a card over to reveal its management actions - the **pencil** (edit) and **trash can** (delete) icons - along with the **Created At** and **Updated At** timestamps.
-
-If the organization has no Environments yet, the page shows a **No environments available** empty state instead of the grid.
-
-![The Environments page, showing an environment card with its name, its "No description" placeholder and the Assigned Connections tile, above the pagination control](images/environments-grid.png)
-
-### Finding an Environment
-
-Click the **magnifier** in the toolbar to expand the search box, then filter the list by name. Searching resets you to the first page of results, so a match on a later page is still found.
-
-
-## View the Connections in an Environment
-
-The **Assigned Connections** tile on an Environment card is both a count and a control. Clicking it opens the *&lt;Environment name&gt;* **Resources** dialog, which shows two lists side by side:
-
-- **Available Connections (n)** on the left - Connections in the organization that are *not* in this Environment.
-- **Assigned Connections (n)** on the right - the Connections that belong to this Environment.
-
-The heading of each list carries its total, so the dialog answers "what is in this Environment, and what could be?" in one place. Both lists load twenty-five Connections at a time and fetch the next page as you scroll.
-
-{{< alert type="info" title="Connections, Credentials, and Access" >}}
-Assigning a Connection to an Environment implicitly makes its Credentials available too. Who can then use them is governed by the Workspaces the Environment is linked to - see [Access Control for Connections and Credentials]({{< ref "cloud/concepts/spaces/environments.md#access-control-for-connections-and-credentials" >}}).
-{{< /alert >}}
-
-
-## See the Environments in a Workspace
-
-The Environments page lists every Environment in the organization. To see only the Environments that a particular Workspace can draw on, open the [Workspaces page](https://cloud.layer5.io/spaces/workspaces) and use that Workspace's **Environments** tile - the same control you use to link and unlink them.
-
-See [Link Environments to a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#link-environments-to-a-workspace" >}}) for the full procedure.
-
-{{< alert type="info" title="Many-to-Many Relationship" >}}
-An Environment can be linked to more than one Workspace, and a Workspace can have more than one Environment. An Environment that appears in no Workspace is still perfectly valid - it simply is not shared with any team yet.
-{{< /alert >}}
-
-{{< alert type="info" title="Managed Environments Cannot Be Linked to a Workspace" >}}
-Linking an Environment that Layer5 Cloud provisioned for your organization - the Environment behind your own identity providers, for instance - to a Workspace is refused. Linking one grants every member of that Workspace's teams read access to the Environment's Connections and the Credentials behind them, and your organization's identity-provider credentials are not shared that way.
-
-Unlinking is not refused. If such an Environment was linked to a Workspace before this restriction existed, you can still remove it from that Workspace.
-{{< /alert >}}
-
-## Create an Environment
-
-{{< alert type="info" title="Permissions Required" >}}
-Creating an Environment requires the **Create Environment** key. Without it the **Create** button is disabled.
-{{< /alert >}}
-
-1. On the [Environments page](https://cloud.layer5.io/spaces/environments), click **Create**.
-2. In the **Create Environment** dialog, confirm the **Organization** that will own the Environment. The select is pre-filled with the organization you currently have in context and lists every organization you are a member of, so change it here if the Environment belongs elsewhere. The field is required and is fixed once the Environment exists, so choose carefully.
-3. Enter a **Name** (required) and an optional **Description**.
-4. Click **Save**.
-
-The new Environment appears in the grid with no Connections assigned. Assigning them is a separate step - see [Assign Connections to an Environment](#assign-connections-to-an-environment).
-
-## Edit an Environment
-
-You can change an Environment's name and description at any time.
-
-1. Flip the Environment's card to its back face.
-2. Click the **pencil** icon.
-3. Amend the **Name** and **Description** in the **Edit Environment** dialog.
-4. Click **Update**.
-
-The owning **Organization** is fixed at creation and is therefore not offered for editing.
-
-{{< alert type="info" title="Editing Connection Membership" >}}
-The Edit dialog covers the Environment's own details only. Its Connection membership is edited from the **Assigned Connections** tile on the card, described next.
-{{< /alert >}}
-
-## Assign Connections to an Environment
-
-1. Click the **Assigned Connections** tile on the Environment's card to open the **Resources** dialog.
-2. Select one or more Connections in the **Available Connections** list on the left.
-3. Move them across with the arrow buttons between the two lists:
-    - **>** moves the selected Connections to **Assigned Connections**.
-    - **>>** moves every available Connection across at once.
-4. Click **Save**.
-
-{{< alert type="info" title="Why Move All is Sometimes Unavailable" >}}
-The **>>** and **<<** buttons act on the whole list, so they stay disabled until every page of that list has been loaded. Scroll to the bottom of the list to load the rest, or move your selection across with **>** and **<** instead.
-{{< /alert >}}
-
-**Save** stays disabled until you have actually changed something, and one **Save** commits every addition and removal you made in the dialog together.
-
-{{< alert type="info" title="Some Environments Are Managed for You" >}}
-A few Environments are provisioned for your organization by Layer5 Cloud rather than created by someone in it, and they hold organization-level configuration Layer5 Cloud itself relies on - the Environment behind your organization's own identity providers is one. Their Connections are managed from the [Identity Providers tab]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}) of Edit Organization, so assigning or removing Connections here is refused.
-
-You can still open such an Environment, see what belongs to it, and change its name and description. Only Connection membership, deletion, and linking it to a Workspace are declined.
-{{< /alert >}}
-
-## Remove Connections from an Environment
-
-Removal is the same dialog in the other direction:
-
-1. Click the **Assigned Connections** tile on the Environment's card.
-2. Select one or more Connections in the **Assigned Connections** list on the right.
-3. Move them back with **<** (selected) or **<<** (all).
-4. Click **Save**.
-
-{{< alert type="info" title="Removal Does Not Delete the Connection" >}}
-Taking a Connection out of an Environment only ends its membership of that Environment. The Connection itself, and any Credentials it uses, continue to exist and remain assigned to any other Environments they belong to. See [lifecycle of connections](https://docs.meshery.io/concepts/logical/connections) in the Meshery documentation for what does delete a Connection.
-{{< /alert >}}
-
-## Delete an Environment
-
-You can delete a single Environment or several at once.
-
-- **A single Environment:** flip its card and click the **trash can** icon, then confirm in the **Delete Environment?** prompt. Deletion is irreversible.
-- **Several Environments:** tick the bulk-select checkbox on the back face of each card you want to remove. A bar appears above the grid reporting how many are selected; click its delete icon and confirm.
-
-{{< alert type="danger" title="What Happens When an Environment is Deleted?" >}}
-Deleting an Environment does **not** delete the Connections inside it. Connections that also belong to other Environments continue to belong to those Environments. The Environment is detached from any Workspaces it was linked to, and the resources it made available to those Workspaces stop being available through it.
-{{< /alert >}}
-
-{{< alert type="info" title="Managed Environments Cannot Be Deleted Here" >}}
-Deleting an Environment your organization did not create - one Layer5 Cloud provisioned to hold organization-level configuration, such as the Environment behind your own identity providers - is refused, whether you delete it singly or as part of a bulk selection. Use **Delete All Identity Providers** on the [Identity Providers tab]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}) instead, and the Environment is taken away with the configuration it holds.
-
-This is why deletion is refused rather than the Environment simply being hidden: an Environment that still holds live configuration should not disappear from a grid where you can see everything else you own.
-{{< /alert >}}
-
-While an Environment is bulk-selected its card cannot be flipped and its individual edit and delete icons are suppressed, so the bulk toolbar is the only way to act on it. Clear the selection to get the per-card actions back.
-
-
---------------------------------------------------------------------------------
 title: "Networking"
 url: /cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md
 description: Prepare and configure network services for your Layer5 Cloud deployment.
@@ -8438,87 +7956,6 @@ Minimum: 20
 Maximum: 34
 
 Layer5 Cloud uses a min and max range for the total number of users in multi-player mode in one document at-a-time in order to prevent users forming clusters (groups), that can't connect to other users. The min and max range is randomly selected for each document editing session.
-
-
---------------------------------------------------------------------------------
-title: "Promoting a Design from Staging to Prod"
-url: /cloud/guides/tutorials/promoting-a-design/index.md
-description: Learn how to move a design from a staging workspace to a production workspace, with environment assignment and access approval.
-
---------------------------------------------------------------------------------
-
-This guide walks through how Five promotes the `prod-deployment-v2` design from the `orbital-staging` workspace to `orbital-production`, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.
-
-## Overview
-
-At Orbital Labs, workspaces mirror the deployment pipeline:
-
-| Workspace | Environment | Teams with Access |
-|---|---|---|
-| `orbital-staging` | `staging-aws` (EKS + S3 + ElastiCache), `staging-azure` (AKS + Azure Blob + Azure Service Bus) | Infrastructure + Development |
-| `orbital-production` | `prod-aws` (EKS + RDS + S3 + CloudFront + SQS), `prod-gcp` (GKE + Cloud SQL + Cloud Storage + Pub/Sub) | Infrastructure only |
-
-Five has finished validating `prod-deployment-v2` in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs' AWS production platform.
-
-## Prerequisites
-
-- You have a design ready in a staging workspace that has been tested and reviewed.
-- You have access to the target production workspace (Infrastructure team membership at Orbital Labs).
-- The production workspace has at least one environment assigned with the target cloud connections.
-
-## Steps
-
-### Step 1 — Open the design in staging
-
-1. Navigate to [Layer5 Cloud](https://cloud.layer5.io) and open the `orbital-staging` workspace.
-2. Find `prod-deployment-v2` in the **Designs** tab.
-3. Open the design and confirm it is in the expected state — all components connected, no validation errors.
-
-### Step 2 — Transfer the design to the production workspace
-
-Designs belong to exactly one workspace at a time. To promote the design, transfer it.
-
-1. From the design's menu (⋮), click **Move to Workspace**.
-2. Select `orbital-production` from the workspace list.
-3. Confirm the transfer.
-
-{{< alert type="info" >}}
-Only users with access to **both** the source and destination workspace can transfer a design. Five is a member of the Infrastructure team, which has access to both `orbital-staging` and `orbital-production`.
-{{< /alert >}}
-
-### Step 3 — Select the target environment
-
-With `prod-deployment-v2` now in `orbital-production`, assign the environment where it will deploy.
-
-1. Open the design in `orbital-production`.
-2. Click **Deploy** and select the target environment — in this case, `prod-aws`.
-3. Review the connection list: EKS cluster, RDS (PostgreSQL), S3, CloudFront, SQS.
-
-### Step 4 — Zara approves (if required)
-
-If your organization requires Team Admin approval before production deployments, Zara receives a review request.
-
-1. Zara opens the pending deployment request in her notifications.
-2. She reviews the design diff and the target environment.
-3. She clicks **Approve** — the deployment proceeds to `prod-aws`.
-
-{{< alert type="info" title="Why does Zara need to approve?" >}}
-The Infrastructure team's keychain grants `orbital-production` workspace access and `prod-aws` environment deployment rights only to members who have been explicitly granted those keys. Zara, as Team Admin, holds the approval authority for production environment assignments. See [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) for how this is configured.
-{{< /alert >}}
-
-### Step 5 — Verify the deployment
-
-After approval:
-
-1. Navigate to the **Deployments** tab in `orbital-production`.
-2. Confirm that `prod-deployment-v2` shows a **Deployed** status against `prod-aws`.
-3. Verify the connected resources (EKS, RDS, S3, CloudFront, SQS) show healthy connection status.
-
-## What's Next
-
-- To give the Development team visibility into the production design (read-only), Five can share the design individually with Rex and Jordan. See [Sharing a Workspace]({{< ref "cloud/guides/tutorials/sharing-a-workspace.md" >}}).
-- To set up a parallel deployment to `prod-gcp`, Five repeats Steps 3–5 selecting `prod-gcp` as the environment.
-- To roll back, Five transfers `prod-deployment-v2` back to `orbital-staging` and deploys the previous version from there.
 
 
 --------------------------------------------------------------------------------
@@ -11047,7 +10484,7 @@ Generally, there are four types of keys:
 3. **Update** - Update keys permit you to update resources. For instance, `Update Organization` key allows you to update an organization details.
 4. **Delete** - Delete keys permit you to delete resources. For instance, `Delete Organization` key allows you to delete an organization.
 
-Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud-native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}), and the `Connect GitHub Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/spaces/workspaces.md" >}}) in the context of any organization.
+Some keys do not fit any of those four shapes, because the action they grant is not simply creating, reading, updating or deleting something. For example, the `Approve Catalog Request` key allows you to approve a catalog request to publish a cloud-native design to [Cloud Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}), and the `Connect GitHub Account to Workspace` key enables you to connect your GitHub Account to your [workspace]({{< ref "cloud/concepts/workspaces.md" >}}) in the context of any organization.
 
 
 ### Keys Enforcement
@@ -11361,123 +10798,6 @@ Control invitation accessibility:
 
 {{< alert type="info" title="Invitation Idempotency" >}}
 Users only need to accept one invitation, regardless of how many invitation emails they receive. Once accepted, additional invitations to the same user are automatically ignored.
-{{< /alert >}}
-
-
---------------------------------------------------------------------------------
-title: "Workspaces"
-url: /cloud/concepts/spaces/workspaces/index.md
-description: Understand the core concepts of Workspaces.
-
---------------------------------------------------------------------------------
-
-Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.
-
-You can create Workspaces to group related Designs and Environments, define domains of responsibility for your teams, and streamline resource management.
-
-## Key Features
-
-- **Resource Sharing:** Workspaces allow for seamless resource sharing among team members, fostering collaboration.
-- **Logical Grouping:** Within Workspaces, you can group related components such as environments and infrastructure designs.
-- **Flexibility:** Workspaces support various resources like Kubernetes, Prometheus, Jaeger, Nginx, and more.
-- **Simplified Management:** Managing and deploying resources is made easy within Workspaces.
-- **Access Control:** Workspaces allow you to control access to resources by granting permissions to users and teams.
-
-### Workspace Relationships and Restrictions
-
-- Access to Workspaces may be granted to one or more teams.
-- As a point of collaboration to facilitate work, Workspaces may have zero or more Environments associated.
-- A Workspace is closely associated with Teams. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
-- One or more teams can be assigned access to a workspace.
-
-After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment's connections available to users of the Workspace.
-
-Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Designs are your Google Docs.
-
-## Key Workspace Components
-
-### Environments
-
-- Environments are a central part of a workspace. They serve as a logical grouping for managing connections. A connection, in this context, can be either managed or discovered. Examples of connections include Kubernetes clusters, Prometheus instances, Jaeger traces, Nginx servers, and more.
-- One or more environments can be assigned to a workspace.
-- Same environment can be assigned to multiple workspaces.
-
-{{< alert type="info" title="Assigning Environments to Workspaces" >}}
-Assign any number of Environments to one or more Workspaces. See [Environments]({{< ref "cloud/concepts/spaces/environments.md" >}}) section for more information.
-{{< /alert >}}
-
-### Designs
-
-- Infrastructure Designs are essential for creating reusable deployment templates. Users belonging to teams with access to a workspace can utilize these designs to deploy resources in the Kubernetes clusters associated with that workspace.
-- Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Designs are your Google Docs.
-- One or more designs can be assigned to a workspace.
-
-{{< alert type="info" title="Design Ownership in Workspaces" >}}
-Designs belong to only one Workspace at any given time. See [Designs](https://docs.meshery.io/concepts/designs) section for more information.
-{{< /alert >}}
-
-### Teams
-
-- A Workspace is closely associated with Teams. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
-- One or more teams can be assigned to a workspace.
-- Same team can be assigned to multiple workspaces.
-
-{{< alert type="info" title="Team Access Control in Workspaces" >}}
-Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
-{{< /alert >}}
-
-### Connections
-
-- Connections refer to various resources that can be either managed or unmanaged, but are discovered and made accessible for use. Examples of Connections include Kubernetes clusters, Prometheus instances, Jaeger services, Nginx deployments, and more. These Connections serve as a fundamental part of Workspaces, as users can deploy infrastructure designs within the context of these Connections.
-- Connections can be assigned to one or more environments.
-- Same connection can be assigned to multiple environments.
-
-{{< alert type="info" title="Learn More About Connections" >}}
-See [Connections](https://docs.meshery.io/concepts/logical/connections) section for more information.
-{{< /alert >}}
-
-## Best Practices
-
-To make the most of Workspaces, here are some best practices:
-
-- Clearly define permissions in the form of team assignment to ensure proper access control.
-- Use Infrastructure Designs to standardize resource deployments.
-- Regularly review and update your Workspace's resources and configurations.
-
-Workspaces enhance collaboration within your teams, providing a structured environment for sharing and managing resources. By following best practices and understanding the core components of Workspaces, you can maximize the benefits of this feature.
-
-{{< alert type="info" title="Looking for Practical Workspace Management?" >}}
-For a step-by-step guide on how to create, edit, and manage your workspaces, see the [Managing Workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}) documentation.
-{{< /alert >}}
-
-## Example: Orbital Labs Workspace Setup
-
-The following illustrates how Five and Maya set up workspaces at Orbital Labs to segment access across infrastructure and development workflows.
-
-### Workspace Inventory
-
-| Workspace | Owner Org | Teams with Access | Environments |
-|---|---|---|---|
-| `orbital-production` | Orbital Labs | Infrastructure only | `prod-aws` (EKS + RDS + S3 + CloudFront + SQS), `prod-gcp` (GKE + Cloud SQL + Cloud Storage + Pub/Sub) |
-| `orbital-staging` | Orbital Labs | Infrastructure + Development | `staging-aws` (EKS + S3 + ElastiCache), `staging-azure` (AKS + Azure Blob + Azure Service Bus) |
-| `orbital-dev` | Orbital Labs | Development only | `dev-local` (kind + LocalStack) |
-
-### Creating orbital-staging
-
-Five creates the `orbital-staging` workspace to give the Development team a shared environment for feature-branch testing — without handing them the keys to production.
-
-**Steps Five follows:**
-1. Navigate to **Workspaces** and click **Create Workspace**
-2. Name the workspace `orbital-staging`
-3. Save — the workspace is created with no team access and no environments assigned
-
-**Maya then assigns team access:**
-1. Open the `orbital-staging` workspace settings
-2. Add the **Infrastructure** team — enabling Zara and Five to manage environment connections
-3. Add the **Development** team — enabling Rex and Jordan to deploy designs and use connections
-
-{{< alert type="info" title="Why both teams?" >}}
-Infrastructure owns the environments (Zara assigns connections); Development owns the designs (Rex and Jordan deploy them). Assigning both teams to `orbital-staging` gives each group the access it needs without elevating Development's access to `orbital-production`.
 {{< /alert >}}
 
 
@@ -12044,7 +11364,7 @@ You can rename **My Organization** and change its description at any time. See [
 Workspaces are logical groups of shared resources such as environments, connections, credentials, and designs. On your first sign-in, Layer5 Cloud creates a workspace named **My Workspace** (description "Default Workspace") in **My Organization**, owned by you. You can create more workspaces and share access to their resources through teams. If any of your organizations ever has no workspace, Layer5 Cloud re-creates **My Workspace** in it.
 
 {{< alert type="info" >}}
-For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
+For more information, see [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}).
 {{< /alert >}}
 
 You can rename **My Workspace** and change its description at any time. See [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
@@ -12251,6 +11571,221 @@ Layer5 Cloud runs as a hosted service and as a self-hosted deployment, and both 
 
 
 --------------------------------------------------------------------------------
+title: "Manage Workspaces"
+url: /cloud/guides/workspaces/managing-workspaces/index.md
+description: Create, edit, and delete workspaces; give teams access; attach environments; place designs and views; and review workspace activity.
+
+--------------------------------------------------------------------------------
+
+A workspace is the unit you use to organize designs and to decide which teams can reach an organization's environments and connections. This guide covers every task on a workspace. For what a workspace is and how it relates to teams, environments, and designs, read the [Workspaces concept]({{< ref "cloud/concepts/workspaces.md" >}}).
+
+Each task names the permission it needs. Layer5 Cloud checks the permission in the organization that owns the workspace. A custom role or a team role can hold any of these permissions; the default holders are below.
+
+{{< keys-matrix caption="Workspace permissions" functions="View Workspace|Create Workspace|Edit Workspace|Delete Workspace|Assign team to workspace|Remove team from workspace|Assign environment to workspace|Remove environment from workspace|Assign Designs to Workspaces|Remove Designs from Workspaces|Assign Views to Workspace|Unassign Views from Workspace" >}}
+
+## Find workspaces {#view-workspaces}
+
+**Needs:** View Workspace to see the Workspaces page. The API lists workspaces for any signed-in member of the organization.
+
+Every member of an organization can list every workspace in it. Team membership does not narrow the list. A list request names one organization. A user who holds View All Organizations can ask for every organization at once.
+
+You can search by name or description, order by creation or update time, and page through results.
+
+## Create a workspace
+
+**Needs:** Create Workspace in the organization that will own the workspace.
+
+A workspace takes a name, a description, and an organization. The workspace stays in that organization for its whole life; Layer5 Cloud ignores a later request to change it.
+
+- The Workspaces page requires a name and an organization. The API does not check that the name is non-empty.
+- Name and description are each limited to 255 characters. A longer value fails with `Unable to create workspace`.
+- Names do not have to be unique. Two workspaces in one organization can share a name, so choose names you can tell apart.
+- You become the owner of record. Creating a workspace does not assign any team or environment, and an empty workspace gives nobody access to anything.
+
+## Edit a workspace
+
+**Needs:** Edit Workspace.
+
+You can change the name and the description. An update changes only the fields you send. A request with an empty body fails. A workspace that is not in one of your organizations answers `workspace not found`.
+
+## Give a team access to a workspace {#assign-teams-to-a-workspace}
+
+**Needs:** Assign team to workspace to add a team, Remove team from workspace to take it away.
+
+The team and the workspace must belong to the same organization. A team from another organization is refused with HTTP 403. Assigning a team that is already assigned changes nothing and returns the existing assignment.
+
+What a team assignment grants is narrower than it sounds:
+
+| It grants | It does not grant |
+| --- | --- |
+| Read-only access to the connections, and their credentials, in every environment attached to the workspace | Access to private designs in the workspace |
+| | The ability to see the workspace (all organization members see all workspaces) |
+| | Permission to create, edit, or delete anything |
+
+Removing the team ends the access at once. To give a team access to a private design, share the design with the people who need it. See [Share Designs]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}).
+
+## Attach an environment to a workspace {#link-environments-to-a-workspace}
+
+**Needs:** Assign environment to workspace to attach, Remove environment from workspace to detach.
+
+Attaching an environment makes its connections readable to every member of the workspace's teams. The environment and the workspace must belong to the same organization; a cross-organization attachment is refused with HTTP 403.
+
+Some environments are provisioned by Layer5 Cloud itself to hold organization configuration such as the mail server or sign-in providers. Layer5 Cloud refuses to attach one to a workspace: `this environment is provisioned by the platform and cannot be added to a workspace`.
+
+Attaching an environment that is already attached returns the existing attachment. Detaching one that was never attached answers `no such environment assignment`. Detaching an environment that was already detached returns the earlier record without error.
+
+The same environment can sit in any number of workspaces. Creating and filling environments is covered in [Manage Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}).
+
+## Place designs and views in a workspace {#move-designs-and-views-between-workspaces}
+
+**Needs:** Assign Designs to Workspaces and Remove Designs from Workspaces for designs. Assign Views to Workspace and Unassign Views from Workspace for views.
+
+A design or view belongs to at most one workspace. Placing it in a workspace moves it: Layer5 Cloud removes every earlier workspace assignment, then adds the new one. There is no copy.
+
+- **Ownership does not change.** The user who created a design stays its owner after any move.
+- **The workspace decides the organization.** A design is listed under the organization of the workspace that holds it, and the Share Design permission is checked in that organization. Moving a design into a workspace in another organization moves it into that organization.
+- **Workspace membership is not design access.** A private design stays private. Only the owner, provider administrators, and users the design was shared with can open it, wherever it sits. Private, public, and published designs can all live in one workspace.
+- **Removing a design** from its workspace leaves it with no workspace. The design and its owner are unaffected.
+
+The permission is checked in the destination workspace's organization only. Layer5 Cloud does not check that you own the design or that the design is in your organization.
+
+The unassigned list for a workspace shows only designs you own.
+
+## Review workspace activity {#view-recent-activity}
+
+**Needs:** View Workspace.
+
+Each workspace keeps an event log. It records the creation, update, and deletion of the workspace, and every assignment and unassignment of a team, environment, design, or view, with the email of the person who acted. Failed attempts are recorded as error events. The log is paged and searchable.
+
+## Delete a workspace
+
+**Needs:** Delete Workspace.
+
+Deleting a workspace ends, in one step, every team, environment, design, and view assignment it holds. It deletes none of those resources: the teams, environments, connections, designs, and views all remain. Designs and views that were in the workspace have no workspace afterwards, and team members lose the connection access the workspace gave them.
+
+**An organization must keep at least one workspace.** Layer5 Cloud refuses to delete the last one with `cannot delete workspace: at least one workspace must exist for the organization`. The check holds under concurrent requests, so two simultaneous deletes cannot empty an organization. The refusal arrives as HTTP 500.
+
+Create the replacement workspace first, then delete the other.
+
+## Patterns that work
+
+- **One workspace per project.** Attach the project's team and environments, and keep its designs together.
+- **One workspace per stage.** Give a production workspace only the production environment and the platform team. Members of other teams cannot read production connections through it. See [Promote a Design from Staging to Production]({{< ref "cloud/tutorials/promoting-a-design.md" >}}).
+- **One workspace per team.** Attach the team and the environments it works with.
+
+## Questions
+
+**Can other workspace members edit or delete my design?** Workspace membership grants no design access. People you shared the design with can read, edit, and clone it. Only the owner or a provider administrator can delete it.
+
+**How do I make a design read-only for everyone?** Publish it. See [Publish Designs]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}}).
+
+**Does a workspace have size limits?** No. Layer5 Cloud enforces no space or file-count limit on workspaces, and no plan check on workspace actions.
+
+
+--------------------------------------------------------------------------------
+title: "Promote a Design from Staging to Production"
+url: /cloud/tutorials/promoting-a-design/index.md
+description: Build staging and production workspaces, promote a design between them, deploy it to a production environment, and confirm who did what.
+
+--------------------------------------------------------------------------------
+
+A pipeline is only as trustworthy as its boundaries. In this tutorial you build two stages of one in a single organization: a staging workspace and a production workspace, each with its own team and its own environment. You put a design in staging, promote it to production, deploy it to the production environment from Kanvas, and read the production workspace's activity log to confirm every change and who made it.
+
+By the end you know what each object controls:
+
+- A **workspace** is a boundary. It decides where a design lives and which teams reach which connections.
+- An **environment** is a deploy target: a named group of connections.
+- A **team assignment** gives read-only access to connections. It does not give access to designs.
+
+## Before you begin
+
+- You have a Layer5 Cloud account and work in an organization where your role holds the permissions below. Organization Admin and Workspace Admin hold all of them.
+- The organization has at least one connection, such as a Kubernetes cluster. Two connections, one per stage, make the separation clearer, but one works: a connection can belong to more than one environment.
+- The organization has a team for each stage, or one team you assign to both. To create teams, see [Manage Teams]({{< ref "cloud/guides/organizations/managing-teams/index.md" >}}).
+- To complete step 7, you run a Meshery Server that holds the cluster connection. The hosted kanvas.new site does not deploy designs.
+- You own a design. If you do not, clone one with [Start from a Catalog Design]({{< ref "cloud/getting-started/creating-a-design-from-template.md" >}}).
+
+Each step needs a specific permission. The table shows which built-in roles hold each one:
+
+{{< keys-matrix caption="Permissions used in this tutorial" functions="Create Workspace|Assign team to workspace|Create Environment|Assign connections to environment|Assign environment to workspace|Assign Designs to Workspaces" >}}
+
+Confirm that the organization switcher shows the organization you intend. Every workspace and environment you create belongs to that organization permanently.
+
+## 1. Create the staging and production workspaces
+
+Create two workspaces in your organization and name them `staging` and `production`. Layer5 Cloud does not require unique names, so check the workspace list first and pick names nobody else in the organization uses.
+
+Each new workspace starts empty: no teams, no environments, no designs. Every member of your organization can already see both workspaces in the list. Visibility is organization-wide; what a workspace grants comes from what you assign to it next.
+
+## 2. Create an environment for each stage
+
+Create two environments named `staging` and `production`. Assign a connection to each: your staging cluster to the staging environment and your production cluster to the production environment. If you have one connection, assign it to both.
+
+An environment is the unit you deploy to. Grouping connections this way means that later, choosing where a design runs is one choice, not a list of clusters.
+
+## 3. Give each workspace its environment
+
+Assign the staging environment to the staging workspace and the production environment to the production workspace.
+
+A workspace never holds connections directly. It holds environments, and the environments hold connections. This step makes each stage's connections reachable from its workspace.
+
+## 4. Assign a team to each workspace
+
+Assign your staging team to the staging workspace and your production team to the production workspace. Each team must belong to the same organization as the workspace.
+
+Assigning a team completes a chain: team member, to team, to workspace, to environment, to connection. Every member of the production team can now read the production connection and its credential. That access is read-only; only the connection's owner can modify or delete it. Remove any link in the chain and the access ends.
+
+## 5. Put your design in staging
+
+Assign your design to the staging workspace. When you look for designs to add, the list offers only designs you own that are not already in the workspace.
+
+The design is now listed under your organization through the staging workspace. The staging team cannot open it, though. A team assignment grants connection access, not design access, so a private design stays private. Keep that in mind for step 8.
+
+## 6. Promote the design to production
+
+Assign the same design to the production workspace.
+
+Now look at the staging workspace: the design is gone. A design lives in at most one workspace, so assigning it to production moved it there. Promotion is a move, not a copy, which means there is exactly one current version and one place to find it.
+
+Layer5 Cloud checks one permission for this move: Assign Designs to Workspaces in the production workspace's organization. Anyone who holds it can promote, so grant it only to the people who should decide what reaches production.
+
+## 7. Deploy to the production environment
+
+Open the design in Kanvas and deploy it. The deploy action offers environments from your organization's whole list at the moment you deploy. It does not limit the list to the design's workspace, so select the production environment yourself. For the deploy options, see [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}).
+
+The workspace decided where the design lives. The environment you choose now decides where it runs. Those are two separate decisions, and keeping them separate is what lets one design move through stages.
+
+## 8. Let the production team read the design
+
+The production team can reach the production connection but still cannot read your private design. To give them access, share the design with the people who need it. See [Share a Design]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}).
+
+## 9. Confirm who did what
+
+Open the production workspace's recent activity. It lists each change recorded against the workspace, including the environment assignment, the team assignment, and the design assignment from this tutorial, each with the email address of the person who made it. Reading the activity log requires the View Workspace permission.
+
+Use this log whenever you need to answer who promoted a design and when.
+
+## Roll back
+
+To roll back, assign the design to the staging workspace again. It leaves production the same way it left staging, and the staging workspace's activity log records the assignment.
+
+## What you built
+
+| Object | Staging | Production |
+| --- | --- | --- |
+| Workspace | `staging` | `production` |
+| Environment (deploy target) | `staging`, with the staging connection | `production`, with the production connection |
+| Team access | Read-only access to the staging connection | Read-only access to the production connection |
+| Design | Lived here first | Lives here now, deployed to the production environment |
+
+## Next steps
+
+- [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) explains the full access chain and lifecycle rules.
+- [Environments]({{< ref "cloud/concepts/environments.md" >}}) explains deploy targets and connection access.
+- [Manage Workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}) covers editing, removing members, and deleting workspaces.
+
+
+--------------------------------------------------------------------------------
 title: "Child Organizations"
 url: /cloud/guides/organizations/org-management/child-organizations/index.md
 description: Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
@@ -12447,6 +11982,109 @@ Organization Admins and Owners add, rotate, and remove identity providers withou
 ## Membership policy is independent {#these-choices-are-independent-of-who-can-join}
 
 The scenario controls where and how users sign in. It does not control who may join. Membership is governed by invitations, open sign-up, and the roles and teams an invitation grants. Any scenario pairs with any membership policy. See [Using the Open Organization Invitation Link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}) and [User Invitations]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Manage Environments"
+url: /cloud/guides/workspaces/managing-environments/index.md
+description: Create environments, assign and remove connections, edit and delete environments, and know which environments you cannot change.
+
+--------------------------------------------------------------------------------
+
+An environment groups connections into a deploy target and is the means by which a workspace exposes those connections to its teams. This guide covers every task on an environment. For the model behind it, read the [Environments concept]({{< ref "cloud/concepts/environments.md" >}}).
+
+Each task names the permission it needs. Layer5 Cloud checks the permission in the organization that owns the environment.
+
+{{< keys-matrix caption="Environment permissions" functions="View Environment|Create Environment|Edit Environment|Delete Environment|Assign connections to environment|Remove connections from environment|View Connections" >}}
+
+The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions because of the plan.
+
+## Find environments {#view-environments}
+
+**Needs:** View Environment to see the Environments page. The API lists environments for any signed-in member of the organization.
+
+Every member of an organization can list every environment in it, whether or not the environment is attached to a workspace they belong to. A list request names one organization; View All Organizations widens it to every organization. You can search by name or description, order by creation or update time, and page through results.
+
+Environments that Layer5 Cloud provisions for itself appear in the list too. See [Environments you cannot change](#environments-you-cannot-change).
+
+## Create an environment
+
+**Needs:** Create Environment in the organization that will own the environment.
+
+An environment takes a name, a description, and an organization. The organization is required; without it the request fails with `organizationId is required`. The environment stays in that organization for its whole life.
+
+- The Environments page requires a name and an organization. The API does not check that the name is non-empty or unique.
+- Name and description are each limited to 255 characters.
+- A new environment is empty and attached to no workspace. It is an ordinary environment, which means you can edit and delete it and manage its connections.
+
+## Edit an environment
+
+**Needs:** Edit Environment.
+
+An update replaces both the name and the description with the values you send. A field you leave out becomes empty, so send both every time. Editing never changes the organization and never changes the connections.
+
+## Assign connections to an environment
+
+**Needs:** Assign connections to environment.
+
+Assigning a connection places it in the environment, whether the connection is managed or discovered. One connection can be in any number of environments, and an environment can hold any number of connections.
+
+Assigning a connection also makes its credentials reachable. Who can use it follows the [access rules for connections]({{< ref "cloud/concepts/environments.md#access-to-connections-and-credentials" >}}): the owner, members of teams assigned to a workspace that holds the environment, and holders of View All Organizations.
+
+Layer5 Cloud answers an assignment this way:
+
+| Condition | Result |
+| --- | --- |
+| The environment exists and is ordinary | The connection is assigned |
+| No live environment has that identifier | HTTP 404, `no environment with the requested id` |
+| The environment is provisioned by the platform | HTTP 403, `this connection cannot be assigned to this environment` |
+
+Layer5 Cloud checks the permission in the environment's organization. It does not compare the connection's organization with the environment's, and it does not check who owns the connection.
+
+## View the connections in an environment
+
+**Needs:** View Environment.
+
+The connection list of an environment defaults to the connections assigned to it. Switch the filter to see the connections not yet in it, which is the pick list for an assignment. You can search, order by creation time, update time, or name, and page through results.
+
+## Remove connections from an environment
+
+**Needs:** Remove connections from environment.
+
+Removing a connection takes it out of this environment only. The connection and its credential remain, and so does its membership in any other environment. Team members who reached the connection only through this environment lose that access.
+
+| Condition | Result |
+| --- | --- |
+| The connection is in the environment | It is removed |
+| The connection was never assigned | HTTP 404, `no such connection assignment` |
+| The environment is provisioned by the platform | HTTP 403, `this connection cannot be detached from this environment` |
+
+## See the environments in a workspace {#see-the-environments-in-a-workspace}
+
+The environments attached to a workspace default to the list of its environments. Switch the filter to list the organization's environments not yet attached, which is the pick list for an attachment. Attaching and detaching are workspace tasks. See [Attach an environment to a workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#link-environments-to-a-workspace" >}}).
+
+## Delete an environment
+
+**Needs:** Delete Environment.
+
+Deleting an environment ends every connection assignment and every workspace attachment it holds. It deletes no connection, credential, or workspace. Connections that also belong to other environments stay in those. Team members lose the access the environment gave them through workspaces.
+
+| Condition | Result |
+| --- | --- |
+| The environment is ordinary and live | It is deleted |
+| No live environment has that identifier | HTTP 404, `no environment with the requested id` |
+| The environment is provisioned by the platform | HTTP 403, `this environment is provisioned by the platform and cannot be deleted here` |
+| Any other failure | HTTP 400, `unable to delete environment` |
+
+## Environments you cannot change
+
+Layer5 Cloud provisions some environments itself to hold organization configuration, such as the mail server or sign-in providers. They show in the environment list like any other. The controls on this page refuse them:
+
+- You cannot delete one.
+- You cannot assign connections to one or remove connections from one.
+- You cannot attach one to a workspace.
+
+An existing attachment of one to a workspace can still be removed. Manage the configuration they hold through the organization guides: [Bring Your Own Mail Server]({{< ref "cloud/guides/organizations/org-management/bring-your-own-mail-server.md" >}}) and [Organization Configuration Scenarios]({{< ref "cloud/guides/organizations/configuration-scenarios/index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -12793,7 +12431,7 @@ Your organization is set up when all of the following are true:
 
 - [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}): organizations as the unit of tenancy.
 - [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}): how teams group users.
-- [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}): what a workspace holds and how it is shared.
+- [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}): what a workspace holds and how it is shared.
 - [Organization management]({{< ref "cloud/guides/organizations/org-management/_index.md" >}}): editing your organization and managing invitations.
 - [Managing workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}): editing, deleting, and organizing workspaces.
 
@@ -12912,6 +12550,283 @@ These are commercial entitlements. Layer5 Cloud does not check your plan when yo
 ## Account recovery
 
 If you forget your password, the sign-in page offers account recovery by email. Layer5 Cloud sends a recovery link and code to the address on the account. Both are valid for 30 days. Password sign-in is refused until the address on the account is verified, so verify your address before you rely on password sign-in. See [Getting started with a Layer5 account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Workspace and Environment Reference"
+url: /cloud/reference/workspaces-and-environments/index.md
+description: Defaults, limits, scope, permissions by operation, responses, and deletion effects for workspaces and environments.
+
+--------------------------------------------------------------------------------
+
+This page states how workspaces and environments behave, exactly. For the model, read the [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) and [Environments]({{< ref "cloud/concepts/environments.md" >}}) concepts. For tasks, use the [workspace guides]({{< ref "cloud/guides/workspaces/_index.md" >}}). For every endpoint's schema, see the [REST API Reference]({{< ref "cloud/reference/api-reference/rest.md" >}}), and for base URL and authentication see the [Cloud API]({{< ref "cloud/reference/api-reference/_index.md" >}}). All paths below sit under `/api`.
+
+## Fields, defaults, and limits
+
+| Property | Workspace | Environment |
+| --- | --- | --- |
+| Name | Up to 255 characters. Not required or unique on the API. | Up to 255 characters. Not required or unique on the API. |
+| Description | Up to 255 characters. May be empty. | Up to 255 characters. May be empty. |
+| Organization | Required on create. Fixed for the life of the workspace. | Required on create (`organizationId is required`). Fixed for the life of the environment. |
+| Owner | The user who created it. | Not recorded on create. |
+| Starting state | No teams, environments, designs, or views. | No connections, in no workspace. |
+| Kind | Single kind. | Ordinary when created through the API. Platform-provisioned environments exist and are protected. |
+| Update | Only the fields sent change. | Name and description are both replaced; an omitted field becomes empty. |
+| Plan check | None. | None. The feature matrix lists environments under Enterprise. |
+| Count limits | None. An organization must keep at least one workspace. | None. |
+
+Layer5 Cloud creates **My Workspace** in any organization that has no workspace.
+
+## Scope and visibility
+
+| Question | Answer |
+| --- | --- |
+| Who sees a workspace or environment in a list? | Every member of its organization. Team membership does not narrow the list. |
+| How is the organization chosen? | A list request carries one organization identifier. The all-organizations value needs View All Organizations and otherwise returns HTTP 403. |
+| What does a missing or foreign identifier return? | HTTP 404, `workspace not found` or `environment not found`. |
+| Can a workspace or environment move to another organization? | No. |
+| Which relationships can cross organizations? | None for teams and environments: both must share the workspace's organization (HTTP 403 otherwise). A design assigned to a workspace takes on that workspace's organization. |
+
+## Permissions by operation
+
+Layer5 Cloud checks each key in the organization that owns the workspace or environment. Operations marked UI only are hidden in the interface but not checked by the server.
+
+| Operation | Permission |
+| --- | --- |
+| `POST /workspaces` | Create Workspace (organization from the request body) |
+| `GET /workspaces`, `GET /workspaces/{id}` | UI only (View Workspace); organization scoping applies |
+| `PUT /workspaces/{id}` | Edit Workspace |
+| `DELETE /workspaces/{id}` | Delete Workspace |
+| `POST`, `DELETE /workspaces/{id}/teams/{teamId}` | Assign team to workspace, Remove team from workspace |
+| `POST`, `DELETE /workspaces/{id}/environments/{environmentId}` | Assign environment to workspace, Remove environment from workspace |
+| `POST`, `DELETE /workspaces/{id}/designs/{designId}` | Assign Designs to Workspaces, Remove Designs from Workspaces |
+| `POST`, `DELETE /workspaces/{id}/views/{viewId}` | Assign Views to Workspace, Unassign Views from Workspace |
+| `GET /workspaces/{id}/views`, `GET /workspaces/{id}/events` | View Workspace |
+| `GET /workspaces/{id}/teams`, `/environments`, `/designs` | None |
+| `POST /environments` | Create Environment (organization from the request body) |
+| `GET /environments`, `GET /environments/{id}` | UI only (View Environment); organization scoping applies |
+| `PUT /environments/{id}` | Edit Environment |
+| `DELETE /environments/{id}` | Delete Environment |
+| `POST`, `DELETE /environments/{id}/connections/{connectionId}` | Assign connections to environment, Remove connections from environment |
+| `GET /environments/{id}/connections` | View Environment |
+
+Default holders by role:
+
+{{< keys-matrix caption="Workspace and environment permissions" functions="View Workspace|Create Workspace|Edit Workspace|Delete Workspace|Assign team to workspace|Remove team from workspace|Assign environment to workspace|Remove environment from workspace|Assign Designs to Workspaces|Remove Designs from Workspaces|View Environment|Create Environment|Edit Environment|Delete Environment|Assign connections to environment|Remove connections from environment|View Connections" >}}
+
+## List parameters
+
+| Parameter | Applies to | Meaning |
+| --- | --- | --- |
+| `orgId` | Workspace and environment lists | The organization to list. Required. |
+| `search` | All lists | Case-insensitive match on name or description. |
+| `order` | All lists | Order by `created_at` or `updated_at`. Environment connection lists also accept `name`. Default is newest first. |
+| `page`, `pageSize` | All lists | Zero-based page and page size. |
+| `filter` | Lists of a workspace's teams, environments, designs, views, and an environment's connections | `{"assigned": true}` (default) lists what is in; `{"assigned": false}` lists what is not yet in. For designs, the not-yet-in list holds only designs the caller owns. |
+| `visibility` | Lists of a workspace's designs and views | Repeatable. Keeps only designs or views with that visibility. |
+
+## Responses
+
+| Operation | Condition | Response |
+| --- | --- | --- |
+| Create workspace | Organization missing or malformed | HTTP 400, `organizationId is required` or `invalid organizationId format` |
+| Create workspace | Name or description over 255 characters | HTTP 500, `Unable to create workspace` |
+| Update workspace | Empty or `null` body | HTTP 400, `Unable to update workspace` |
+| Update or delete workspace | Not in the caller's organizations | HTTP 404, `workspace not found` |
+| Delete workspace | Last live workspace in the organization | HTTP 500, `cannot delete workspace: at least one workspace must exist for the organization` |
+| Assign team or environment | Team or environment in another organization | HTTP 403, `unable to add team to workspace` or `unable to add environment to workspace` |
+| Assign environment | Platform-provisioned environment | HTTP 403, `this environment is provisioned by the platform and cannot be added to a workspace` |
+| Remove environment from workspace | Never attached | HTTP 404, `no such environment assignment` |
+| Create environment | Organization missing | HTTP 400, `organizationId is required` |
+| Delete environment | Platform-provisioned | HTTP 403, `this environment is provisioned by the platform and cannot be deleted here` |
+| Delete environment | No live environment | HTTP 404, `no environment with the requested id` |
+| Assign connection | Platform-provisioned environment | HTTP 403, `this connection cannot be assigned to this environment` |
+| Remove connection | Platform-provisioned environment | HTTP 403, `this connection cannot be detached from this environment` |
+| Remove connection | Never assigned | HTTP 404, `no such connection assignment` |
+
+Assigning a team or environment that is already assigned succeeds and returns the existing assignment. Every workspace create, update, delete, assign, and unassign writes an event to the workspace's activity log, and a failure writes an error event.
+
+## What deletion ends
+
+| Deleting a | Ends | Leaves in place |
+| --- | --- | --- |
+| Workspace | Team, environment, design, and view assignments | Teams, environments, connections, designs, views, and their owners |
+| Environment | Connection assignments and workspace attachments | Connections, credentials, workspaces, and the connections' other environments |
+
+Access that flowed through a deleted or detached link ends at once. See [Access to connections and credentials]({{< ref "cloud/concepts/environments.md#access-to-connections-and-credentials" >}}).
+
+
+--------------------------------------------------------------------------------
+title: "Workspaces"
+url: /cloud/concepts/workspaces/index.md
+description: A workspace groups teams, environments, designs, and views inside one organization, and decides which connections a team can reach.
+
+--------------------------------------------------------------------------------
+
+A workspace is a named grouping inside an organization that brings together the teams who do a piece of work, the environments they deploy to, and the designs and views they work on. Workspaces exist so an administrator can draw a boundary around a project or a stage of a pipeline, such as staging or production, and decide in one place which teams reach which infrastructure connections.
+
+A workspace does two separate jobs, and keeping them apart is the key to the model:
+
+- **It organizes resources.** Designs and views live in a workspace, and the workspace decides which organization they are listed under.
+- **It grants connection access.** Assigning a team to a workspace gives that team's members read-only access to the connections in the workspace's environments. That is the only access a team assignment grants.
+
+Workspaces and environments appear together in the Spaces area of Layer5 Cloud, which also shows counts of your organization's environments, workspaces, and connections.
+
+## What a workspace contains
+
+A workspace belongs to exactly one organization for its whole life. Editing a workspace changes its name, description, or metadata, never its organization. To have a workspace in another organization, create one there.
+
+A workspace holds zero or more of each of the following:
+
+| Member | How many workspaces it can be in | What assigning it means |
+| --- | --- | --- |
+| Team | Any number | Members of the team gain read-only access to the connections in this workspace's environments. The team must belong to the workspace's organization. |
+| Environment | Any number | The environment's connections become reachable by the workspace's teams. The environment must belong to the workspace's organization. |
+| Design | At most one | The design moves here. Assigning a design to a workspace removes it from the workspace it was in. |
+| View | At most one | The view moves here, the same way a design does. |
+
+Assigning a team or environment that is already in the workspace changes nothing. Creating a workspace assigns no team and no environment; you add them afterward.
+
+### Designs live in one workspace at a time
+
+Because a design sits in at most one workspace, assigning it to a workspace is a move, not a copy. The workspace a design sits in decides two things:
+
+- The organization under which the design is listed.
+- The organization in which the Share Design permission is checked when someone shares the design.
+
+Moving a design requires the Assign Designs to Workspaces permission in the destination workspace's organization. Layer5 Cloud does not also require access to the workspace the design leaves. When you list the designs you can add to a workspace, the list shows only designs you own that are not already in it.
+
+## Who sees a workspace and what a team assignment grants
+
+Workspace visibility is organization-wide by design. Every member of an organization can list and open every workspace in that organization, whether or not one of their teams is assigned to it. Team assignment does not narrow what you see. The Workspaces, Environments, and connection areas of the Cloud UI appear only to people who hold the matching View Workspace, View Environment, and View Connections permissions.
+
+Team assignment grants exactly one thing: **read-only access to the connections, and their credentials, in the workspace's environments.**
+
+It does not grant access to designs. Placing a private design in a workspace and assigning a team to that workspace does not let the team read the design. To give people access to a design, share it with them; see [Share a Design]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}).
+
+### The access chain for connections
+
+A member of a team reaches a connection through a chain of four live links. Breaking any one of them ends the access.
+
+| Link | Created by | Broken by |
+| --- | --- | --- |
+| 1. User is a member of a team | Adding the user to the team | Removing the user from the team |
+| 2. Team is assigned to a workspace | Assign team to workspace | Removing the team from the workspace, or deleting the workspace |
+| 3. Environment is assigned to the workspace | Assign environment to workspace | Removing the environment from the workspace, or deleting either one |
+| 4. Connection is assigned to the environment | Assign connections to environment | Removing the connection from the environment, or deleting the environment |
+
+The result is read-only. Modifying or deleting a connection still requires owning it. Two other routes reach a connection independently of this chain: owning it, and holding the View All Organizations key. See [Environments]({{< ref "cloud/concepts/environments.md" >}}) for the full access rules.
+
+## Lifecycle
+
+- **Default workspace.** Every organization receives a workspace when it is created, so designs always have somewhere to live.
+- **Names.** A name and description are each limited to 255 characters. Names are not unique: two workspaces in one organization can share a name.
+- **Editing.** Only the fields you change are updated; the others keep their values.
+- **The last workspace stays.** An organization always keeps at least one workspace. Deleting the last one is refused with `cannot delete workspace: at least one workspace must exist for the organization`. Two simultaneous deletes cannot both succeed and leave the organization empty.
+- **Deleting a workspace** ends every team, environment, design, and view assignment it holds, in one step. The teams, environments, designs, views, and connections themselves remain. Designs and views that were in the workspace are left in no workspace until you assign them to another one. Team members lose any connection access that flowed through the deleted workspace.
+
+## Recent activity
+
+Each workspace records an activity log: creating, editing, and deleting the workspace, and assigning or removing teams, environments, designs, and views. Every entry carries the email address of the person who acted. Reading the log requires the View Workspace permission.
+
+## Permissions
+
+Every workspace action is checked in the organization that owns the workspace. Creating a workspace is checked in the organization you create it in.
+
+{{< keys-matrix caption="Workspace permissions" functions="View Workspace|Create Workspace|Edit Workspace|Delete Workspace|Assign team to workspace|Remove team from workspace|Assign environment to workspace|Remove environment from workspace|Assign Designs to Workspaces|Remove Designs from Workspaces|Assign Views to Workspace|Unassign Views from Workspace" >}}
+
+## Plan availability
+
+{{< feature-tiers categories="Workspaces" functions="My Workspace|Shared Workspaces" >}}
+
+The matrix shows how workspaces are packaged across plans. Layer5 Cloud enforces no plan check on workspace actions: creating, editing, deleting, and assigning work the same on every plan, governed only by the permissions above.
+
+## Related
+
+- [Manage Workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}) covers creating, editing, and deleting workspaces and assigning their members.
+- [Environments]({{< ref "cloud/concepts/environments.md" >}}) explains the deploy targets a workspace exposes.
+- [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}) explains how teams group people.
+
+
+--------------------------------------------------------------------------------
+title: "Environments"
+url: /cloud/concepts/environments/index.md
+description: An environment is a named group of connections that forms a deploy target and the unit through which workspaces expose connections to teams.
+
+--------------------------------------------------------------------------------
+
+An environment is a named group of connections, such as Kubernetes clusters, together with the credentials those connections use. Environments matter for two reasons:
+
+- **An environment is a deploy target.** When you deploy a design, you choose the environment to deploy it to, and the design deploys to that environment's connections.
+- **An environment is how a workspace exposes connections.** A workspace never holds connections directly. It holds environments, and teams assigned to the workspace reach the connections inside them.
+
+Group connections the way you deploy: one environment per pipeline stage, region, or purpose, so that choosing a target means choosing one environment instead of a list of clusters.
+
+## Scope and membership
+
+An environment belongs to one organization for its whole life. Editing an environment never changes its organization.
+
+| Relationship | Rule |
+| --- | --- |
+| Connection in environments | A connection can be in any number of environments. Adding it to one does not remove it from another. |
+| Environment in workspaces | An environment can be in any number of workspaces in its organization. |
+| Who sees an environment | Every member of the organization can list and open every environment in it. Team membership does not narrow the list. |
+
+Names and descriptions are limited to 255 characters. Names are not unique: two environments in one organization can share a name.
+
+## Choosing an environment at deploy time
+
+Deploying a design happens in Kanvas. The deploy action offers environments from your organization's whole list at the moment you deploy. The workspace the design sits in does not limit that choice, so a design in a staging workspace can still be deployed to a production environment. Choose the target deliberately. See [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}).
+
+## Access to connections and credentials
+
+A user can read a connection, and the credential it uses, when any one of these holds:
+
+| Route | What it grants | How it ends |
+| --- | --- | --- |
+| You own the connection | Read, modify, and delete | - |
+| You belong to a team assigned to a workspace that contains an environment that contains the connection | Read only | Removing you from the team, the team from the workspace, the environment from the workspace, or the connection from the environment, or deleting the workspace or environment |
+| You hold the [View All Organizations key]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) | Read access to every connection and credential in every organization | Losing the key |
+
+Only ownership allows changes. Access through a workspace is always read-only, however many workspaces lead to the same connection.
+
+This chain governs connections and credentials only. Designs and views are not opened by environment or workspace assignment; share a design to give someone access to it. See [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) for the full access chain.
+
+## Platform-provisioned environments
+
+Some environments are created by Layer5 Cloud itself to hold organization configuration, such as sign-in providers or the mail server. They appear in your organization's environment list, but they are not deploy targets you manage:
+
+- They cannot be deleted. The attempt is refused with `this environment is provisioned by the platform and cannot be deleted here`.
+- Connections cannot be assigned to them or detached from them through the normal environment controls.
+- They cannot be added to a workspace. If one is already in a workspace, you can remove it.
+
+Every environment you create is an ordinary environment.
+
+## Deleting an environment
+
+Deleting an environment ends its connection assignments and its workspace assignments in one step. The connections remain, and keep their membership in any other environment. Teams that reached a connection only through the deleted environment lose that access.
+
+## Limits and behavior
+
+- **Editing replaces both fields.** An environment edit sets both the name and the description. A field left out of the request becomes empty, so always send both.
+- **Organization is fixed.** An edit never moves an environment to another organization.
+- **Removing a connection that was never assigned** is refused with `no such connection assignment`.
+
+## Permissions
+
+Every environment action is checked in the organization that owns the environment. Creating an environment is checked in the organization you create it in.
+
+{{< keys-matrix caption="Environment permissions" functions="View Environment|Create Environment|Edit Environment|Delete Environment|Assign connections to environment|Remove connections from environment|Assign environment to workspace|Remove environment from workspace" >}}
+
+## Plan availability
+
+The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions by plan: creating, editing, deleting, and assigning environments are governed only by the permissions above.
+
+## Related
+
+- [Manage Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}) covers creating environments and assigning connections.
+- [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) explains how environments reach teams.
+- [Promote a Design from Staging to Production]({{< ref "cloud/tutorials/promoting-a-design.md" >}}) puts environments and workspaces to work together.
 
 
 --------------------------------------------------------------------------------
@@ -30645,113 +30560,6 @@ Consider setting up monitoring for email-related metrics:
 - [ ] Verify recipient email addresses are valid
 - [ ] Check SMTP server logs for additional error details
 - [ ] Monitor email service provider quotas and limits
-
-
---------------------------------------------------------------------------------
-title: "Environments"
-url: /cloud/concepts/spaces/environments/index.md
-description: Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into resource groups.
---------------------------------------------------------------------------------
-
-Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
-Environments allow you to logically group related [Connections](#connections) and their associated [Credentials](#credentials). Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.
-
-{{< alert type="info" title="Looking for Practical Environment Management?" >}}
-For step-by-step instructions on how to view, create, and edit environments, and how to assign connections to an environment or remove them from it, see the [Managing Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}) guide.
-{{< /alert >}}
-
-### Assigning Resources to Environments
-
-Assign any number of Connections to an environment whether that Connection is managed or unmanaged (see [MeshSync](https://docs.meshery.io/concepts/architecture/meshsync) to learn more about managed and unmanaged Connections). In-turn, assign any number of Environments to one or more [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}). Connections (and any associated Credentials) that are assigned to an Environment become immediately available for use in any associated Workspace.
-
-### Sharing Resources between Environments
-
-Environments can share resources. For example, you might create an environment named "production" and assign three connections: a GitHub connection, a Kubernetes connection, and a Prometheus connection. Subsequently, you also define an environment named "dev/test" and assign three connections: a different Kubernetes connection, a different Prometheus connection, _and_ the same GitHub connection that is also assigned to the "production" environment.
-
-### Deleting an Environment
-
-Deleting an environment does not delete any resources (e.g. connections) currently contained in the environment. Resources that belong to other environments will continue to belong to those other environments. Learn more about the behavior of [lifecycle of connections](https://docs.meshery.io/concepts/logical/connections). For the steps themselves, see [Delete an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#delete-an-environment" >}}).
-
-## Summary
-
-Environments represent a collection of resources in the form of Connections - both of managed and unmanaged Connections. Environment resources are comprised of Connections (and implicitly any Credentials used by those assigned Connections). Create and use environments to organize your connections and credentials into groups, and then make these resources available to you and your teams by assigning environments to Workspaces.
-
-## Key Features
-
-- **Logical Grouping** Environments allow you to logically group related connections and their associated credentials. This makes it easier to manage, share, and work with a subset of resources instead of dealing with all your connections individually.
-
-- **Resource Sharing** Environments can be seamlessly assigned to [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}), another essential concept in Meshery. When you assign an Environment to a Workspace, you enable resource sharing among team members. This collaborative approach simplifies the sharing of connections and resources, making it easier to work together in cloud native environments.
-
-## Key Components
-
-### Connections
-
-Connections are an integral part of Environment. These are cloud native resources that can be both managed and unmanaged, and they're registered by the Meshery Server. Examples of connections include Kubernetes clusters, Prometheus instances, Jaeger tracers, and Nginx web servers.
-
-> See "[Connections](https://docs.meshery.io/concepts/logical/connections)" in Meshery Docs for more information.
-
-### Credentials
-
-Credentials in an Environment are the keys to securely authenticate and access managed connections. For example, valid Prometheus secrets or Kubernetes API tokens are essential credentials for securely interacting with these managed resources.
-
-> See "[Credentials](https://docs.meshery.io/concepts/logical/credentials)" in Meshery Docs for more information.
-
-## Access Control for Connections and Credentials
-
-Access to a Connection — and therefore to its associated Credentials — is granted through any of the following, evaluated independently:
-
-1. **Direct ownership** — the Connection's owner (User ID) matches the current user's ID. Ownership grants full read and write access, including deleting the Connection and its Credentials.
-2. **Indirect access through a shared Workspace** — the Connection is assigned to an Environment linked to a Workspace, and the current user belongs to a Team with access to that Workspace. This grants **read-only** access; Team membership alone does not grant the right to modify or delete the Connection or its Credentials.
-3. **The "View All Organizations" key** — a user holding this [key]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) can access every Connection and Credential across all organizations, bypassing the ownership and Team checks above.
-
-> Designs and Views are governed by a separate mechanism — resource-access mappings — rather than inheriting through Workspace/Team membership. See [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}) for how these mechanisms fit together.
-
-## Example: Orbital Labs Environment Setup
-
-The following illustrates how Five and Zara set up multi-cloud environments at Orbital Labs, spanning AWS, GCP, and Azure.
-
-### Environment Inventory
-
-| Environment | Workspace | Cloud Provider | Connections |
-|---|---|---|---|
-| `prod-aws` | orbital-production | AWS | EKS cluster, RDS (PostgreSQL), S3, CloudFront, SQS |
-| `prod-gcp` | orbital-production | GCP | GKE cluster, Cloud SQL, Cloud Storage, Pub/Sub |
-| `staging-aws` | orbital-staging | AWS | EKS cluster, S3, ElastiCache |
-| `staging-azure` | orbital-staging | Azure | AKS cluster, Azure Blob Storage, Azure Service Bus |
-| `dev-local` | orbital-dev | Local | kind (local Kubernetes), LocalStack (AWS emulation) |
-| `stellar-enterprise` | stellar-main | Azure | AKS, Azure SQL, Azure API Management, Azure AD |
-
-### Connecting prod-aws
-
-Five connects Orbital Labs' primary AWS production environment to Layer5 Cloud:
-
-1. Navigate to **Environments** and click **Create** (see [Create an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#create-an-environment" >}}))
-2. Name it `prod-aws` and save
-3. Add connections one at a time — each connection is a discrete cloud resource:
-   - **EKS cluster** — the compute layer for deployed workloads
-   - **RDS (PostgreSQL)** — the managed database instance
-   - **S3 bucket** — object storage for design artifacts and state
-   - **CloudFront distribution** — CDN layer for the frontend
-   - **SQS queue** — async messaging between services
-4. Zara assigns `prod-aws` to the `orbital-production` workspace, making all five connections available to Infrastructure team members
-
-### Adding prod-gcp for Multi-Cloud Coverage
-
-Five repeats the process for GCP to give Orbital Labs multi-cloud flexibility:
-
-1. Create environment `prod-gcp`
-2. Add connections:
-   - **GKE cluster** — Google Kubernetes Engine compute
-   - **Cloud SQL** — managed relational database on GCP
-   - **Cloud Storage bucket** — GCP object storage
-   - **Pub/Sub topic** — async messaging on GCP
-3. Zara assigns `prod-gcp` to `orbital-production` alongside `prod-aws`
-
-Both environments are now available to any design deployed within the `orbital-production` workspace.
-
-{{< alert type="info" title="dev-local for Getting Started" >}}
-The `dev-local` environment uses a local Kubernetes cluster (kind) and LocalStack to emulate AWS services — no cloud credentials required. If you are following along with these docs for the first time, start with `dev-local` in the `orbital-dev` workspace.
-{{< /alert >}}
 
 
 --------------------------------------------------------------------------------

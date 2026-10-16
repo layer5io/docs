@@ -90,7 +90,7 @@ Deleting a design removes every grant for it.
 ## What does not grant access
 
 - **Teams.** The dialog finds individual users only. Layer5 Cloud accepts a grant for a team through its API, but no access check honors it, so team members gain nothing from it.
-- **Workspaces.** Adding a design to a workspace, and assigning teams to that workspace, does not open a private design to those teams. Layer5 Cloud checks the owner, provider administrators, and the design's own grants. See [Workspaces](/cloud/concepts/spaces/workspaces/) for what a workspace does control.
+- **Workspaces.** Adding a design to a workspace, and assigning teams to that workspace, does not open a private design to those teams. Layer5 Cloud checks the owner, provider administrators, and the design's own grants. See [Workspaces](/cloud/concepts/workspaces/) for what a workspace does control.
 - **Organization membership.** Being in the owner's organization does not open a private design.
 
 To give a whole team access, grant each member.
