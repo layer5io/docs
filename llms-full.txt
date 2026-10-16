@@ -13503,6 +13503,21 @@ For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/gu
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.279"
+url: /cloud/reference/releases/v1.0.279/index.md
+date: "2026-10-16"
+--------------------------------------------------------------------------------
+
+- fix(server): attribute every program-signup badge award in event_trackers @jijillery (#6186)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jijillery, @meshery-ci, @sarajkrishnasingh and @suttonskate
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.278"
 url: /cloud/reference/releases/v1.0.278/index.md
 date: "2026-10-15"
