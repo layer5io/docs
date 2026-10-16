@@ -44,6 +44,8 @@ You can commence the integration process from the "**Extensions Page in Meshery*
 
     ![Integrations](images/github/integrations.png)
 
+    If you open the GitHub card's connection count before you have connected, the **GitHub Connections** window reads "No GitHub connections yet". It explains that connecting GitHub imports Helm charts, Kubernetes manifests and Docker Compose files from your repositories as designs, and refreshes them when the files change. Click **Connect GitHub** there to start the same wizard, or follow **Learn how the GitHub integration works** to return to this guide.
+
 ### Connect GitHub and Import Designs
 
 Let’s go through the steps required to connect your GitHub account and import files from your repository.
@@ -98,9 +100,23 @@ Let’s go through the steps required to connect your GitHub account and import 
     - If you want to go back and change your selection or choose a different repository, click **Back**.
 
       ![Select Files](images/github/select_file.png)
-    - After the import, the files that were imported successfully and those that weren't will be indicated on the screen.
+    - After the import, the files that were imported successfully and those that weren't will be indicated on the screen. A notification sums up the result, for example `2 designs imported, 1 updated, 3 already imported and skipped.`
 
       <!-- ![After Import](/cloud/getting-started/images/github/png) -->
+
+    **Returning to a Repository You Imported From**
+
+    When you run the wizard again for a repository you have imported from, for example with **Reconfigure** on the GitHub card, files you already imported carry a check mark. Hover over it to see which design the file became, for example `Imported as "nginx-deployment"`. If you have nothing new to import, you can click **Next** without importing.
+
+    A design is matched to its file by repository, path and branch, never by name, so renaming a design does not break the match. When your selection includes files you imported before, Meshery asks what to do with them before importing. The prompt lists the files, up to five followed by "and N more", and offers three choices:
+
+    | Choice | What happens to the previously imported files |
+    |---|---|
+    | **Import new files only** (default) | They are left as they are. Only files that were never imported become new designs. |
+    | **Update the existing designs** | Each design's content is replaced with the file's current content. The design keeps its ID, sharing and links. Edits made to it since the last import are lost. |
+    | **Import them again as new designs** | Additional designs are created alongside the existing ones. |
+
+    Click **Import** to proceed with your choice, or **Cancel** to change the selection. A file selected both on its own and through its directory is imported once.
 
 ### [Optional] Enabling Snapshots
 
@@ -155,6 +171,47 @@ To view imported designs:
 
     ![Catalog](images/github/catalog.png)
 
+In the table view of My Designs, the **Source** column shows where each imported design came from: the repository and the file path, followed by the branch when the design was imported from one other than the repository's default. Hover over it to see the full source, or click it to open the file on GitHub. The cell is empty for a design that was not imported from GitHub. The column appears on large screens.
+
+When you open an imported design's details page, a **Source** section below the left panel lists the repository, which links to the file on GitHub, the file path and the branch ("Default branch" when the design follows the repository's default branch).
+
+The source stays with the design when you edit it in Kanvas or Meshery, so later imports and refreshes still recognize it.
+
+## Manage Imported Designs from the GitHub Connection
+
+Your GitHub connection lists every design you have imported from GitHub, with actions to open each one or bring it up to date with its file.
+
+1. On the [Integrations page in Layer5 Cloud](https://cloud.layer5.io/spaces/integrations), click the GitHub card's connection count to open **GitHub Connections**.
+1. Click a connection to expand it. Below the connection's details, **Imported designs** lists your imported designs, newest first, with these columns:
+
+    | Column | Shows |
+    |---|---|
+    | **Design** | The design's name. |
+    | **Type** | The format the design was imported from, or `-` when it is not known. |
+    | **Source** | The repository, file path and, when it is not the default, branch the design was imported from. Click it to open the file on GitHub. |
+    | **Last updated** | When the design last changed. |
+    | **Actions** | **Open design** opens the design's page in My Designs. **Open source file on GitHub** opens the file in a new tab. **Refresh from source** updates the design from the file, described below. |
+
+The list shows only your own designs, and only you can see it on your connection. When you have not imported any designs yet, it reads "No imported designs yet" and offers **Import designs**, which reopens the wizard for this connection. If the list cannot be loaded, it reads "Imported designs could not be loaded"; click **Try again**.
+
+### Refresh a Design from Its Source
+
+When a file changes in its repository, refresh the design instead of importing the file again:
+
+1. In **Imported designs**, click **Refresh from source** on the design's row. The action appears only if your role can import designs.
+1. Confirm with **Refresh**. The design's content is replaced with the file's current content on GitHub, and changes made to the design since it was imported or last refreshed are lost.
+
+The refresh updates the same design, so it keeps its ID, owner, visibility, catalog data, workspace assignments and links. Only its content and source change. A design that was not imported as a Meshery Design keeps its source file unconverted, and Meshery converts it the next time you open it.
+
+If the refresh fails, the notification names the cause and what to do:
+
+| Cause | What to do |
+|---|---|
+| The source file no longer exists, for example because it was moved, renamed or deleted | Import the file from its new location. |
+| The file is no longer a valid Helm chart, Kubernetes manifest, Docker Compose file or Meshery design | Fix the file in its repository and refresh again. |
+| The GitHub App no longer has access to the repository | Reconfigure your GitHub connection and grant the GitHub App access to the repository. |
+| GitHub could not be reached, rate-limited the request or rejected the GitHub App's credentials | Retry in a few minutes, and reconfigure your GitHub connection if the problem persists. |
+
 ## View GitHub Integration Connection on Meshery Playground
 
 To view and manage the GitHub connection, on the left sidebar of the playground, click on **Lifecycle** > **Connections**.
@@ -182,7 +239,7 @@ On the [Integrations Page in Layer5 Cloud](https://cloud.layer5.io/spaces/integr
 
 In this guide, you walked through the steps to integrate your GitHub account with Meshery.
 
-You authorized Meshery to access your GitHub account, imported designs from repositories, and viewed them in the Meshery Catalog. You also learned how to enable Meshery Snapshots for your GitHub repositories, allowing you to version and track changes to your infrastructure configurations.
+You authorized Meshery to access your GitHub account, imported designs from repositories, viewed them and their sources in the Meshery Catalog, and kept them up to date by refreshing them from their files. You also learned how to enable Meshery Snapshots for your GitHub repositories, allowing you to version and track changes to your infrastructure configurations.
 
 Additionally, you saw how to view, manage, and delete your GitHub connection within Meshery and Layer5 Cloud.
 
