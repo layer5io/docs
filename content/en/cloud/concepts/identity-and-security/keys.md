@@ -51,7 +51,7 @@ A key has an effect only where something checks it. Two places do:
 - **The server.** On a guarded action, the server resolves the organization of the request and tests whether the user holds the required key there. A missing key returns HTTP 403 with a JSON body. This check is what actually protects the action.
 - **The interface.** The Layer5 Cloud UI reads your effective keys for the organization in context and disables or hides controls for actions you cannot perform.
 
-Not every key is checked in both places. Some security keys are enforced only by the interface: the server does not test Create Token, Delete Token, or Create Keychain, and it governs keychain changes by ownership rather than by the Edit Keychain and Delete Keychain keys. The [Security reference]({{< ref "cloud/reference/security.md" >}}) lists which security keys the server enforces.
+Not every key is checked in both places. Some security keys are enforced only by the interface: the server does not test Create Token or Delete Token. Changes to keys, keychains, and roles are checked on the server, which also requires the Provider Admin role for the whole deployment. The [Security reference]({{< ref "cloud/reference/security.md" >}}) lists which security keys the server enforces.
 
 Because a key grants nothing unless a check names it, a custom key is only a record. Adding one to a keychain and a role changes no behavior anywhere.
 
@@ -59,7 +59,7 @@ Because a key grants nothing unless a check names it, a custom key is only a rec
 
 Every signed-in user can open the [Keys](https://cloud.layer5.io/security/keys) tab. It lists the system's keys plus any keys you created, and searches by key name. Viewing keys requires no key on the server.
 
-Creating or editing a key, including changing which keychains carry it, requires the Edit Key key. Deleting a key requires the Delete Key key. Both belong to the Provider Management keychain, which only Provider Admin holds by default. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so organizations cannot change keys. On a self-hosted deployment, the operator's Provider Admins can.
+Creating or editing a key, including changing which keychains carry it, requires the Edit Key key. Deleting a key requires the Delete Key key. Both belong to the Provider Management keychain, which only Provider Admin holds by default, and the server also requires the caller to hold the Provider Admin role for the whole deployment. Only a Provider Admin can change which keys a keychain carries or which keychains a role includes. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so organizations cannot change keys. On a self-hosted deployment, the operator's Provider Admins can.
 
 Deleting a key is a soft delete. The key stops granting access immediately and disappears from every keychain that contained it. Because keys are deployment-wide, editing or deleting one changes access for every organization at once.
 

@@ -70,7 +70,7 @@ Every new user receives the Kanvas role at sign-up, and anonymous accounts recei
 
 The Roles page of the Layer5 Cloud UI offers creating a role (a name, a description, and a set of keychains), editing it, and deleting it. The UI gates each of these actions on the matching key: Create Custom Roles, Update Custom Roles, or Delete Custom Roles.
 
-The server is stricter than the UI. It accepts a new role only from a Provider Admin and refuses everyone else with HTTP 403. The three custom role keys also belong to the Provider Management keychain, which only Provider Admin holds by default. The practical result depends on where Layer5 Cloud runs:
+The server is stricter than the UI. It accepts a new role, or a change to an existing role, only from a Provider Admin and refuses everyone else with HTTP 403. The three custom role keys also belong to the Provider Management keychain, which only Provider Admin holds by default. The practical result depends on where Layer5 Cloud runs:
 
 - **Hosted Layer5 Cloud** - an organization cannot create a custom role itself.
 - **Self-hosted Layer5 Cloud** - the operator's Provider Admins create custom roles for their deployment.
@@ -81,7 +81,7 @@ The server is stricter than the UI. It accepts a new role only from a Provider A
 
 Because roles and keychains are defined for the whole deployment, a role is the same object in every organization that uses it. Adding a keychain to a role, or removing one, changes that role for every user who holds it in every organization. This applies to built-in roles as much as to custom ones.
 
-Assigning keychains to a role requires the Assign Keychains to Roles key, which the Organization Admin and Provider Admin roles hold by default. Anyone exercising that key is editing a deployment-wide definition, not an organization-local copy. To change what people in one organization can do, change which roles they hold in that organization rather than what a shared role contains.
+Only a Provider Admin can include a keychain in a role or remove it, because a role is a deployment-wide definition, not an organization-local copy. The Assign Keychains to Roles key belongs to the Provider Management keychain, and the server also confirms that the caller holds the Provider Admin role for the whole deployment. To change what people in one organization can do, change which roles they hold in that organization rather than what a shared role contains.
 
 ## Why checks test keys, not role names
 
