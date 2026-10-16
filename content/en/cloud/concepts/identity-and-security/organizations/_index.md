@@ -15,7 +15,7 @@ An organization is the tenant boundary in Layer5 Cloud. It decides whose resourc
 
 ## What an organization is
 
-The organization is the unit of multi-tenancy and the core security boundary. Everything else composes on top of it: teams, workspaces, roles, keychains, and keys all belong to one organization. Resources, billing, and access control are isolated per organization, so a role held in one organization grants nothing in another.
+The organization is the unit of multi-tenancy and the core security boundary. Everything else composes on top of it: teams and workspaces belong to one organization, and users hold roles in it. Roles, keychains, and keys are defined once for the whole provider, but resources, billing, and access control are isolated per organization, so a role held in one organization grants nothing in another.
 
 The structure is flexible:
 
