@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Merge on Layer5 Documentation</title><link>/pr-preview/pr-1281/tags/merge/</link><description>Recent content in Merge on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1281/tags/merge/index.xml" rel="self" type="application/rss+xml"/><item><title>Import and Merge Designs</title><link>/pr-preview/pr-1281/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1281/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.&lt;/p&gt;
+&lt;p&gt;Import works in Designer mode. The import action is hidden in Operator mode.&lt;/p&gt;
+
+&lt;h2 id="choose-how-to-import" class="heading-link"&gt;
+ Choose how to import
+ &lt;a href="#choose-how-to-import" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Method&lt;/th&gt;
+ &lt;th&gt;Accepts&lt;/th&gt;
+ &lt;th&gt;Result&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Import dialog, File Upload&lt;/td&gt;
+ &lt;td&gt;One local file&lt;/td&gt;
+ &lt;td&gt;New design, or merge into the open design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Import dialog, URL Import&lt;/td&gt;
+ &lt;td&gt;One direct http or https URL to a single file&lt;/td&gt;
+ &lt;td&gt;New design, or merge into the open design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Drag or paste onto the canvas&lt;/td&gt;
+ &lt;td&gt;One or more files&lt;/td&gt;
+ &lt;td&gt;One new design per file, or a merge prompt if the canvas is not empty&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Catalog clone or open&lt;/td&gt;
+ &lt;td&gt;A published design&lt;/td&gt;
+ &lt;td&gt;Copy of the design, see &lt;a href="/pr-preview/pr-1281/kanvas/guides/designs/cloning-a-design/"&gt;Clone a Design&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;GitHub integration in Layer5 Cloud&lt;/td&gt;
+ &lt;td&gt;Files and folders in a connected repository&lt;/td&gt;
+ &lt;td&gt;One private design per valid file&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item></channel></rss>

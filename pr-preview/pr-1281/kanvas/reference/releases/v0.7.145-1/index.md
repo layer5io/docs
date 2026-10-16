@@ -1,0 +1,25 @@
+# v0.7.145-1
+
+date: 2024-11-12
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Sync table action buttons with the catalog detail buttons @amitamrutiya (#3143)
+- feat: add conditionally show playground action in catalog @amitamrutiya (#3144)
+- [Chore]: Bump v0.14.116 @l5io (#3145)
+- fix: comment not getting dropped at click position @aabidsofi19 (#3142)
+
+## 🐛 Bug Fixes
+
+- Sync table action buttons with the catalog detail buttons @amitamrutiya (#3143)
+- feat: add conditionally show playground action in catalog @amitamrutiya (#3144)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+
