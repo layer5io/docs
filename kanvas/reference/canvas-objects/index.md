@@ -218,7 +218,7 @@ A new edge uses a dotted line, a vee arrowhead, a bezier curve, a width of 1.5 p
 
 ## Permissions {#permission-reference}
 
-Kanvas gates canvas actions by mode and by object capability, not by role. The permission catalog in Layer5 Cloud lists a key for each shape, section, textbox and component-styling action (add, copy, clone, lock, delete, configure styles, reset styles and resize), and organization administrators can include them in roles and keychains. Kanvas does not check those keys on the canvas today, so withholding one does not hide a control.
+Kanvas gates canvas actions by mode and by object capability, not by role. The permission catalog in Layer5 Cloud lists a key for each shape, section, textbox and component-styling action (add, copy, clone, lock, delete, configure styles, reset styles and resize), and a Provider Admin can include them in keychains and roles. Kanvas does not check those keys on the canvas today, so withholding one does not hide a control.
 
 The permissions Kanvas does enforce on the toolbar are Validate Design, Deploy Design, Undeploy Design and Share Design. See [Permissions by Role](/kanvas/reference/permissions/).
 

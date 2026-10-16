@@ -5,7 +5,7 @@
 
 
 
-This page states how keys, keychains, tokens, and sessions behave, exactly, as of Layer5 Cloud v1.0.278. For the model, read the [Keys](/cloud/concepts/identity-and-security/keys/), [Keychains](/cloud/concepts/identity-and-security/keychains/), [Sessions](/cloud/concepts/identity-and-security/sessions/), and [Tokens](/cloud/concepts/identity-and-security/tokens/) concepts. For tasks, use the [security guides](/cloud/guides/security/). For base URL, authentication, and the organization header, see the [Cloud API](/cloud/reference/api-reference/). All paths below sit under `/api` unless noted.
+This page states how keys, keychains, tokens, and sessions behave, exactly, as of Layer5 Cloud v1.0.280. For the model, read the [Keys](/cloud/concepts/identity-and-security/keys/), [Keychains](/cloud/concepts/identity-and-security/keychains/), [Sessions](/cloud/concepts/identity-and-security/sessions/), and [Tokens](/cloud/concepts/identity-and-security/tokens/) concepts. For tasks, use the [security guides](/cloud/guides/security/). For base URL, authentication, and the organization header, see the [Cloud API](/cloud/reference/api-reference/). All paths below sit under `/api` unless noted.
 
 ## Permission keys
 
@@ -20,15 +20,15 @@ Provider Admin holds every key. The table lists the default holders of the other
 | View Sessions | The Sessions tab | User, Team Admin, Workspace Admin, Organization Admin | Interface |
 | Logout from a Session | Seeded for ending a session | User, Team Admin, Workspace Admin, Organization Admin | Not checked. The interface uses Delete Token for Logout. |
 | View Keys | Seeded for the Keys tab | User, Team Admin, Workspace Admin, Organization Admin | Not checked. Every signed-in user sees the Keys tab. |
-| Edit Key | Creating and changing a key | None | Interface and server |
-| Delete Key | Deleting a key | None | Interface and server |
+| Edit Key | Creating and changing a key | None | Interface and server. The server also requires the Provider Admin role. |
+| Delete Key | Deleting a key | None | Interface and server. The server also requires the Provider Admin role. |
 | View Keychains | The Keychains tab | User, Team Admin, Workspace Admin, Organization Admin | Interface |
-| Create Keychain | Creating a keychain | None | Interface only. The server accepts any signed-in user. |
-| Edit Keychain | Renaming a keychain, adding or removing its keys | None | Interface. The server requires the keychain's owner or a Provider Admin. |
-| Delete Keychain | Deleting a keychain | None | Interface. The server requires the keychain's owner or a Provider Admin. |
-| Assign Keychains to Roles | Adding or removing a keychain on a role | Organization Admin | Server |
+| Create Keychain | Creating a keychain | None | Interface and server. The server also requires the Provider Admin role. |
+| Edit Keychain | Renaming a keychain, adding or removing its keys | None | Interface and server. The server also requires the Provider Admin role. |
+| Delete Keychain | Deleting a keychain | None | Interface and server. The server also requires the Provider Admin role. |
+| Assign Keychains to Roles | Adding or removing a keychain on a role | None | Server. The server also requires the Provider Admin role. |
 
-Roles that hold the keys come from the default keychains: View keys sit in User View, Create Token and Delete Token in Security Management, Download Token in Security Management and User Edit, and the key and keychain management keys in Provider Management. See [Roles and Permissions](/cloud/reference/default-permissions/) for the full role-by-keychain mapping.
+Roles that hold the keys come from the default keychains: View keys sit in User View, Create Token and Delete Token in Security Management, Download Token in Security Management and User Edit, and the key and keychain management keys, including Assign Keychains to Roles, in Provider Management. Where the server requires the Provider Admin role, it checks the role across the whole deployment, not the role held in one organization. See [Roles and Permissions](/cloud/reference/default-permissions/) for the full role-by-keychain mapping.
 
 ## Visibility rules
 
@@ -73,8 +73,8 @@ Success responses are JSON unless stated. Errors from the handlers below return 
 | --- | --- | --- |
 | `GET /auth/keys` | Signed-in user | Lists keys you can see. Parameters: `page`, `pageSize`, `order`, `search` (matches the key name). Default order: most recently updated first. |
 | `GET /auth/keys/{keyId}` | Signed-in user | Returns one key. A malformed id returns `400`. |
-| `POST /auth/keys` | Edit Key | Creates or updates a key. |
-| `DELETE /auth/keys/{keyId}` | Delete Key | Soft-deletes the key. Returns `204`. |
+| `POST /auth/keys` | Provider Admin holding Edit Key | Creates or updates a key. |
+| `DELETE /auth/keys/{keyId}` | Provider Admin holding Delete Key | Soft-deletes the key. Returns `204`. |
 | `GET /identity/orgs/{orgId}/users/keys` | Signed-in user | Returns your effective keys in the organization. The interface uses it to enable controls. |
 
 ### Keychains
@@ -84,14 +84,14 @@ Success responses are JSON unless stated. Errors from the handlers below return 
 | `GET /auth/keychains` | Signed-in user | Lists keychains you can see. Parameters: `page`, `pageSize`, `order`, `search` (matches the keychain name). |
 | `GET /auth/keychains/{keychainId}` | Signed-in user | Returns one keychain. |
 | `GET /auth/keychains/{keychainId}/keys` | Signed-in user | Lists the keys in a keychain. `search` matches the key description. |
-| `POST /auth/keychains` | Signed-in user | Creates a keychain owned by the caller. |
-| `PUT /auth/keychains/{keychainId}` | Provider Admin or the keychain's owner | Updates the keychain name. |
-| `POST /auth/keychains/{keychainId}/{keyId}` | Provider Admin or the keychain's owner | Adds a key. |
-| `DELETE /auth/keychains/{keychainId}/{keyId}` | Provider Admin or the keychain's owner | Removes a key. |
-| `DELETE /auth/keychains/{keychainId}` | Provider Admin or the keychain's owner | Soft-deletes the keychain and its key mappings. |
-| `POST` and `DELETE /identity/orgs/{orgId}/roles/{roleId}/keychains/{keychainId}` | Assign Keychains to Roles | Adds or removes a keychain on a role. Roles are global, so the change applies in every organization. |
+| `POST /auth/keychains` | Provider Admin holding Create Keychain | Creates a keychain owned by the caller. Only the `name` in the body is used. |
+| `PUT /auth/keychains/{keychainId}` | Provider Admin holding Edit Keychain | Updates the keychain name. |
+| `POST /auth/keychains/{keychainId}/{keyId}` | Provider Admin holding Edit Keychain | Adds a key. |
+| `DELETE /auth/keychains/{keychainId}/{keyId}` | Provider Admin holding Edit Keychain | Removes a key. |
+| `DELETE /auth/keychains/{keychainId}` | Provider Admin holding Delete Keychain | Soft-deletes the keychain and its key mappings. |
+| `POST` and `DELETE /identity/orgs/{orgId}/roles/{roleId}/keychains/{keychainId}` | Provider Admin holding Assign Keychains to Roles | Adds or removes a keychain on a role. Roles are global, so the change applies in every organization. |
 
-A caller who is neither a Provider Admin nor the owner receives `403` with `user <email> must be Provider Admin or Keychain Owner for "<id>" Keychain to perform this operation`. A malformed keychain id on these routes returns `500` with `invalid keychain id`.
+These key, keychain, and role writes refuse with `403` and a JSON error. A caller who lacks the route's key receives code `meshery_cloud-1108`. A caller who holds the key but is not a Provider Admin for the whole deployment receives code `meshery_cloud-3336`, "Only a Provider Admin can change roles, keychains or permission keys". Owning a keychain does not authorize a change to it. For a Provider Admin, a malformed keychain id on these routes returns `400` with a plain-text message.
 
 ### Tokens and sessions
 

@@ -20033,5 +20033,5 @@ Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lif
 
 A custom role bundles keychains that the default roles do not combine. Only a Provider Admin can create, edit, or delete a custom role. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so an organization cannot create custom roles itself. On a self-hosted deployment, the operator's Provider Admins can.
 
-Roles and keychains are defined for the whole Layer5 Cloud deployment, not per organization. Changing the keychains of a role changes that role for every organization that uses it. See [Roles](/cloud/concepts/identity-and-security/roles/).
+Roles and keychains are defined for the whole Layer5 Cloud deployment, not per organization. Only a Provider Admin can create, edit, or delete a keychain, change its keys, or assign a keychain to a role. Changing the keychains of a role changes that role for every organization that uses it. See [Roles](/cloud/concepts/identity-and-security/roles/).
 

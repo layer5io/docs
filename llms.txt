@@ -173,7 +173,7 @@
 
 - [Build a Certification](/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
 
-- [Build a Custom Keychain](/cloud/guides/security/custom-keychains/index.md): Group keys into a keychain you own, change its keys, and delete it. A role must include the keychain before it grants anything.
+- [Build a Custom Keychain](/cloud/guides/security/custom-keychains/index.md): Group keys into a keychain, change its keys, and delete it. A role must include the keychain before it grants anything.
 
 - [Customize Webhooks](/cloud/guides/self-hosted/customizing-webhooks/index.md): Send support requests, signup decisions, and Kanvas entitlement events from your self-hosted Layer5 Cloud to your own systems: the three webhooks, when each fires, the payloads, and how failures behave.
 
