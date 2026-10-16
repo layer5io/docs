@@ -1,97 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designer on Layer5 Documentation</title><link>/tags/designer/</link><description>Recent content in Designer on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/designer/index.xml" rel="self" type="application/rss+xml"/><item><title>Metrics</title><link>/cloud/concepts/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
-&lt;p&gt;The design catalog can be accessed from the &lt;em&gt;Layer5 Cloud&lt;/em&gt; catalog page at &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt;.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Design Capabilities&lt;/h4&gt;
- 
- Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about &lt;a href="/kanvas/getting-started/"&gt;Designs&lt;/a&gt;
- 
-&lt;/div&gt;
-
-
-&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/concepts/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/leaderboard-page.gif" onclick="openModal(this)" alt="Leaderboard page overview"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Understanding Metrics&lt;/h4&gt;
- 
- Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="/cloud/concepts/catalog/metrics/"&gt;Metrics&lt;/a&gt;
- 
-&lt;/div&gt;
-
-
-
-&lt;h3 id="how-to-access-the-leaderboard" class="heading-link"&gt;
- How to Access the Leaderboard
- &lt;a href="#how-to-access-the-leaderboard" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;You can reach the Leaderboard page in two ways:&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/catalog-view.gif" onclick="openModal(this)" alt="Catalog main page view"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id="viewing-catalog-items" class="heading-link"&gt;
- Viewing Catalog Items
- &lt;a href="#viewing-catalog-items" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Meshery Catalog displays all published designs in an organized, searchable format.&lt;/p&gt;
-
-&lt;h3 id="top-performers" class="heading-link"&gt;
- Top Performers
- &lt;a href="#top-performers" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="/cloud/concepts/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Catalog</title><link>/cloud/concepts/catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/</guid><description>&lt;div class="pageinfo"&gt;
-&lt;p&gt;Public Catalog: &lt;a href="https://cloud.layer5.io/catalog"&gt;https://cloud.layer5.io/catalog&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;!-- &lt;figure class="image-center-shadow"&gt;&lt;img src="/cloud/concepts/catalog/images/delivering-catalog-content.svg"
- alt="Delivering-catalog-content"&gt;
-&lt;/figure&gt;
- --&gt;
-&lt;img src="images/delivering-catalog-content.svg" alt="Delivering-catalog-content" /&gt;
-&lt;p&gt;The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of existing designs. Designs that are published into the catalog can be, but are not always curated for known best practices and patterns. Content is published at &lt;a href="https://cloud.layer5.io/catalog"&gt;cloud.layer5.io/catalog&lt;/a&gt;, and one-click import of catalog content into Meshery Server is seamlessly integrated.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="../../images/Slide51.svg" onclick="openModal(this)" alt="Flow for sharing design"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id="content-visibility" class="heading-link"&gt;
- Content Visibility
- &lt;a href="#content-visibility" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Each item in the catalog comes with an associated level of visibility.&lt;/p&gt;</description></item><item><title>Build a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;In this tutorial you follow Zara Osei, Team Admin of the Orbital Labs Infrastructure Team, as she models the team&amp;rsquo;s Google Cloud data pipeline in Kanvas. The pipeline ingests events through Pub/Sub, processes them with Dataflow, writes analytical results to BigQuery, archives raw payloads to Cloud Storage, and runs alongside a GKE cluster. The result is a design named &lt;code&gt;data-pipeline-gcp&lt;/code&gt;: a reviewable, shareable model of the architecture that lives in the team&amp;rsquo;s workspace instead of in a slide deck.&lt;/p&gt;</description></item><item><title>Designer</title><link>/kanvas/concepts/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designer/</guid><description>&lt;p&gt;Designer mode is where you author a Kanvas design. You compose infrastructure from versioned components, configure each one against its schema, connect components with relationships, annotate the result, and validate or deploy it, all on one canvas that every collaborator edits at the same time. Designer works on intent: what you want to run. &lt;a href="/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt; works on live state: what is running.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Designer on Layer5 Documentation</title><link>/tags/designer/</link><description>Recent content in Designer on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/designer/index.xml" rel="self" type="application/rss+xml"/><item><title>Build a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;In this tutorial you follow Zara Osei, Team Admin of the Orbital Labs Infrastructure Team, as she models the team&amp;rsquo;s Google Cloud data pipeline in Kanvas. The pipeline ingests events through Pub/Sub, processes them with Dataflow, writes analytical results to BigQuery, archives raw payloads to Cloud Storage, and runs alongside a GKE cluster. The result is a design named &lt;code&gt;data-pipeline-gcp&lt;/code&gt;: a reviewable, shareable model of the architecture that lives in the team&amp;rsquo;s workspace instead of in a slide deck.&lt;/p&gt;</description></item><item><title>Designer</title><link>/kanvas/concepts/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designer/</guid><description>&lt;p&gt;Designer mode is where you author a Kanvas design. You compose infrastructure from versioned components, configure each one against its schema, connect components with relationships, annotate the result, and validate or deploy it, all on one canvas that every collaborator edits at the same time. Designer works on intent: what you want to run. &lt;a href="/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt; works on live state: what is running.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/designer-dock.png" alt="Kanvas Designer workspace with the bottom dock of authoring tools, the Layers panel open, and the Share control in the header" /&gt;
  &lt;figcaption&gt;Designer: the bottom dock holds the tools for adding components and annotations, and the Layers panel controls what the canvas draws.&lt;/figcaption&gt;
@@ -101,7 +8,80 @@
  A design is a shared document
  &lt;a href="#a-design-is-a-shared-document" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Everything on the canvas is an entry in one design document: every component you configure, every relationship, and every annotation you draw. The canvas draws that document. Moving a node, applying a layout, or hiding a layer writes into the design. As a result:&lt;/p&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;p&gt;Kanvas binds every shortcut to both modifier keys. On Windows and Linux use &lt;kbd&gt;Ctrl&lt;/kbd&gt;. On macOS use &lt;kbd&gt;Cmd&lt;/kbd&gt;. The tables write the modifier as &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;Everything on the canvas is an entry in one design document: every component you configure, every relationship, and every annotation you draw. The canvas draws that document. Moving a node, applying a layout, or hiding a layer writes into the design. As a result:&lt;/p&gt;</description></item><item><title>Find and Use Catalog Designs</title><link>/cloud/guides/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;catalog&lt;/a&gt; holds published designs: reusable infrastructure patterns that anyone can inspect and any signed-in user with the right permission can clone. This guide covers finding a design, using it, and managing the entries you own. For how the catalog works, who can publish, and what the metrics mean, see &lt;a href="/cloud/concepts/catalog/"&gt;Catalog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img src="images/catalog-view.gif" onclick="openModal(this)" alt="The catalog page showing published designs as a grid of cards with the Top Performers panel above them"
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Browsing needs no account.&lt;/strong&gt; Signed-out visitors can search, filter, and read every published design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloning, downloading, editing, and deleting need you to sign in&lt;/strong&gt; and hold the matching permission. A role without the permission sees the action disabled. See &lt;a href="/cloud/reference/default-permissions/"&gt;Roles and Permissions&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloning needs an organization.&lt;/strong&gt; The copy lands in your selected workspace, so you must have an organization selected. Cloud refuses a clone while the all-organizations view is active.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;th&gt;Permission&lt;/th&gt;
+ &lt;th&gt;Notes&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browse, search, read details&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;td&gt;Open to signed-out visitors.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Open in the Playground&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;td&gt;Changes there are never written back to the catalog design.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Clone&lt;/td&gt;
+ &lt;td&gt;Clone Design&lt;/td&gt;
+ &lt;td&gt;Source must be published or public.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Download&lt;/td&gt;
+ &lt;td&gt;Download a design&lt;/td&gt;
+ &lt;td&gt;Core YAML only, without catalog metadata.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Edit catalog details&lt;/td&gt;
+ &lt;td&gt;Publish Design&lt;/td&gt;
+ &lt;td&gt;Type, technology, description, and caveats.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Unpublish&lt;/td&gt;
+ &lt;td&gt;Unpublish Design&lt;/td&gt;
+ &lt;td&gt;You must be the design&amp;rsquo;s creator or hold Approve Catalog Request.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Delete&lt;/td&gt;
+ &lt;td&gt;Delete a design&lt;/td&gt;
+ &lt;td&gt;You must own the design. Provider administrators are the exception.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="browse-the-catalog" class="heading-link"&gt;
+ Browse the catalog
+ &lt;a href="#browse-the-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The catalog shows every published design from every organization. Two layouts show the same results:&lt;/p&gt;</description></item><item><title>Catalog</title><link>/cloud/concepts/catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/</guid><description>&lt;p&gt;The catalog is the library of designs that their owners have published for everyone to use. It turns a design that worked for one team into a reusable starting point for every other team: anyone can find it, read it, and see how often others open, deploy, and clone it, and any signed-in user can clone it into their own workspace and adapt it.&lt;/p&gt;
+&lt;p&gt;The catalog works on a simple contract. Publishing makes a design readable by the world and clonable by any signed-in user, a review step decides what gets in, and a class label tells readers who stands behind each entry. The rest of this page explains each part of that contract and where it stops.&lt;/p&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;p&gt;Kanvas binds every shortcut to both modifier keys. On Windows and Linux use &lt;kbd&gt;Ctrl&lt;/kbd&gt;. On macOS use &lt;kbd&gt;Cmd&lt;/kbd&gt;. The tables write the modifier as &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt;.&lt;/p&gt;
 &lt;p&gt;Kanvas ignores shortcuts while you type in a text field, so typing a label, a comment or a search never triggers one. Open the same list inside the app with &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;/&lt;/kbd&gt;.&lt;/p&gt;
 
 &lt;h2 id="modes-and-navigation" class="heading-link"&gt;

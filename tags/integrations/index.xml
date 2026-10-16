@@ -1,1 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Integrations on Layer5 Documentation</title><link>/tags/integrations/</link><description>Recent content in Integrations on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/integrations/index.xml" rel="self" type="application/rss+xml"/><item><title>Integrations</title><link>/cloud/guides/integrations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/</guid><description>&lt;p&gt;Use these guides to connect Layer5 Cloud and Kanvas with external systems, repositories, and automation workflows.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Integrations on Layer5 Documentation</title><link>/tags/integrations/</link><description>Recent content in Integrations on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/integrations/index.xml" rel="self" type="application/rss+xml"/><item><title>Connect GitHub</title><link>/cloud/guides/integrations/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/github-integration/</guid><description>&lt;p&gt;The GitHub integration connects your GitHub account to Layer5 Cloud through the Layer5 GitHub App. Once connected, you can browse the repositories you granted, pick Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs, and import each file as a design. The same connection can also install a pull-request snapshot workflow in your repositories.&lt;/p&gt;
+&lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Integrations</title><link>/cloud/guides/integrations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/</guid><description>&lt;p&gt;Integrations connect Layer5 Cloud to systems outside it. Today that means GitHub, for importing infrastructure files and posting pull-request snapshots, and the infrastructure connections that Meshery Servers register. This page lists every integration the product offers, what each one does, and where to configure it, so you can tell quickly whether Layer5 Cloud can connect to the tool you use.&lt;/p&gt;
+
+&lt;h2 id="integration-matrix" class="heading-link"&gt;
+ Integration matrix
+ &lt;a href="#integration-matrix" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Integration&lt;/th&gt;
+ &lt;th&gt;What it does&lt;/th&gt;
+ &lt;th&gt;Where to start&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;GitHub (Layer5 GitHub App)&lt;/td&gt;
+ &lt;td&gt;Reads the repositories you grant, imports Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs as private designs, and can commit a snapshot workflow to a repository.&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/cloud/guides/integrations/github-integration/"&gt;Connect GitHub&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;GitHub Actions (Kanvas Snapshot)&lt;/td&gt;
+ &lt;td&gt;Posts a picture of your infrastructure on every pull request.&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/cloud/guides/integrations/github-actions/"&gt;Use GitHub Actions&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Meshery Server&lt;/td&gt;
+ &lt;td&gt;Registers each Meshery Server as a connection, so you can see and manage the servers in your organization.&lt;/td&gt;
+ &lt;td&gt;Listed under Meshery on the Integrations tab.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Kubernetes&lt;/td&gt;
+ &lt;td&gt;Lists the clusters your Meshery Servers manage, so you can assign them to environments.&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/cloud/guides/workspaces/managing-environments/"&gt;Manage Environments&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Prometheus&lt;/td&gt;
+ &lt;td&gt;Lists Prometheus connections that Meshery Servers report.&lt;/td&gt;
+ &lt;td&gt;Listed under Prometheus on the Integrations tab.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Meshery Servers register Meshery, Kubernetes, and Prometheus connections. Layer5 Cloud has no setup wizard for them. The Integrations tab shows what the servers in your organization registered, and you assign those connections to environments to decide which teams reach them.&lt;/p&gt;</description></item></channel></rss>

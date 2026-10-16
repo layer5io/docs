@@ -63,23 +63,7 @@
  Customize and add your own custom webhook
  &lt;a href="#customize-and-add-your-own-custom-webhook" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud&amp;rsquo;s webhook configurations are managed through environment variables defined in &lt;strong&gt;.env&lt;/strong&gt; files. Here&amp;rsquo;s how you can customize them:&lt;/p&gt;</description></item><item><title>Metrics</title><link>/cloud/concepts/catalog/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/metrics/</guid><description>&lt;p&gt;Metrics provide valuable insights into how users engage with the designs, allowing us to understand usage patterns, identify trends, and make data-driven decisions to improve the user experience.&lt;/p&gt;
-&lt;p&gt;The design catalog can be accessed from the &lt;em&gt;Layer5 Cloud&lt;/em&gt; catalog page at &lt;a href="https://cloud.layer5.io/catalog"&gt;Layer5 Cloud Catalog&lt;/a&gt;.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Design Capabilities&lt;/h4&gt;
- 
- Designs can be imported, exported, versioned, forked, merged, snapshotted, published, shared, embedded, templatized, and more. Learn more about &lt;a href="/kanvas/getting-started/"&gt;Designs&lt;/a&gt;
- 
-&lt;/div&gt;
-
-
-&lt;p&gt;You can view the metrics of a Design in two ways:&lt;/p&gt;</description></item><item><title>Customizing Layer5 Cloud Deployment with Helm</title><link>/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;h2 id="requirements" class="heading-link"&gt;
+&lt;p&gt;Layer5 Cloud&amp;rsquo;s webhook configurations are managed through environment variables defined in &lt;strong&gt;.env&lt;/strong&gt; files. Here&amp;rsquo;s how you can customize them:&lt;/p&gt;</description></item><item><title>Customizing Layer5 Cloud Deployment with Helm</title><link>/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;h2 id="requirements" class="heading-link"&gt;
  Requirements
  &lt;a href="#requirements" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
@@ -605,42 +589,7 @@
  Who Can Create Content
  &lt;a href="#who-can-create-content" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Integrating GitHub with Meshery</title><link>/cloud/getting-started/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/github-integration/</guid><description>&lt;h2 id="introduction" class="heading-link"&gt;
- Introduction
- &lt;a href="#introduction" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Meshery&amp;rsquo;s GitHub Integration is a powerful feature that lets you authorize your GitHub account and import infrastructure files into Meshery. These files are then readily available in the Meshery catalog and can be easily opened in the Meshery Playground for viewing and configuration.&lt;/p&gt;
-&lt;p&gt;The GitHub integration offers an alternative to &lt;a href="https://docs.meshery.io/guides/configuration-management/importing-designs"&gt;importing designs from the canvas or through mesheryctl&lt;/a&gt;. It simplifies configuration management and enhances deployment workflow efficiency. By leveraging this integration, you ensure your infrastructure designs are easily accessible and always up-to-date.&lt;/p&gt;</description></item><item><title>Leaderboard</title><link>/cloud/concepts/catalog/leaderboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/leaderboard/</guid><description>&lt;p&gt;Leaderboard provides a clear and engaging way to view and compare the performance of different Designs, highlighting the most popular and actively used ones within the Cloud.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/leaderboard-page.gif" onclick="openModal(this)" alt="Leaderboard page overview"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Understanding Metrics&lt;/h4&gt;
- 
- Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs. Learn more about &lt;a href="/cloud/concepts/catalog/metrics/"&gt;Metrics&lt;/a&gt;
- 
-&lt;/div&gt;
-
-
-
-&lt;h3 id="how-to-access-the-leaderboard" class="heading-link"&gt;
- How to Access the Leaderboard
- &lt;a href="#how-to-access-the-leaderboard" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;You can reach the Leaderboard page in two ways:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
+&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
 &lt;p&gt;Here, you can achieve:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A systematic understanding of complex topics&lt;/li&gt;
@@ -663,29 +612,7 @@
  Prerequisites
  &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Exploring the Catalog</title><link>/cloud/concepts/catalog/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/catalog/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;Cloud Catalog&lt;/a&gt; is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="images/catalog-view.gif" onclick="openModal(this)" alt="Catalog main page view"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id="viewing-catalog-items" class="heading-link"&gt;
- Viewing Catalog Items
- &lt;a href="#viewing-catalog-items" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Meshery Catalog displays all published designs in an organized, searchable format.&lt;/p&gt;
-
-&lt;h3 id="top-performers" class="heading-link"&gt;
- Top Performers
- &lt;a href="#top-performers" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;At the top of the page, you can find the &lt;strong&gt;Top Performers&lt;/strong&gt; section. This provides a snapshot of the &lt;strong&gt;Leaderboard&lt;/strong&gt;, highlighting the most popular designs based on various &lt;a href="/cloud/concepts/catalog/metrics/"&gt;metrics&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="/cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="/cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
 &lt;p&gt;Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
@@ -932,7 +859,8 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;a href="#add-a-component" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Kanvas offers several ways to place a component. All of them produce the same result: a component in the design, with its configurator open beside it.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Connect GitHub</title><link>/cloud/guides/integrations/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/github-integration/</guid><description>&lt;p&gt;The GitHub integration connects your GitHub account to Layer5 Cloud through the Layer5 GitHub App. Once connected, you can browse the repositories you granted, pick Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs, and import each file as a design. The same connection can also install a pull-request snapshot workflow in your repositories.&lt;/p&gt;
+&lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Along the way you learn what a design is made of, how relationships express the way components depend on each other, and when and how Kanvas saves your work.&lt;/p&gt;</description></item><item><title>Create Your Layer5 Account</title><link>/cloud/getting-started/getting-started-with-layer5-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/getting-started-with-layer5-account/</guid><description>&lt;p&gt;Your Layer5 account is your personal identity on Layer5 Cloud. One account can belong to many organizations and teams, and it is how you import and create designs, collaborate through workspaces, and connect Meshery Servers. In this tutorial you create an account, verify it, sign in, and confirm that Layer5 Cloud has prepared an organization, a team, and a workspace for you. You do not set up any of those yourself before you can start working. The &lt;strong&gt;Check your email&lt;/strong&gt; page and the &lt;strong&gt;Import from GitHub&lt;/strong&gt; first-run page described below arrived in Layer5 Cloud &lt;strong&gt;v1.0.278&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Designs and Components</title><link>/kanvas/concepts/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designs/</guid><description>&lt;p&gt;A design is the unit of work in Kanvas. It is a declarative description of infrastructure that you author on a canvas, save as a versioned document, share with others, and deploy to your clusters. Components are the building blocks of a design: some represent real infrastructure that Kanvas deploys, and others are annotations that only explain the design. Knowing which is which, and how a design behaves when you save, share, and deploy it, tells you exactly what Kanvas will do with your work.&lt;/p&gt;</description></item><item><title>Explore Pods</title><link>/kanvas/tutorials/kubernetes/kubernetes-pods/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-pods/</guid><description>&lt;p&gt;In this tutorial you build a single NGINX Pod in Kanvas, deploy it to a live cluster, expose it with a NodePort Service, and inspect the running Pod in Operator: its details, a shell inside its container, and its log stream. A Pod is the smallest unit Kubernetes schedules, and every workload controller you meet later (Deployments, StatefulSets, CronJobs) exists to create and replace Pods. Working with a bare Pod first shows you exactly what those controllers automate.&lt;/p&gt;</description></item><item><title>Feature Availability by Plan</title><link>/cloud/reference/feature-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/feature-availability/</guid><description>&lt;p&gt;This page tells you which Layer5 Cloud capabilities each Layer5 plan includes. Your plan is one condition for using a capability, not the only one: your role and where your Layer5 Cloud deployment runs also decide what you can do. Those conditions follow the matrix and the limits table.&lt;/p&gt;
 
 &lt;h2 id="plans" class="heading-link"&gt;
@@ -3621,7 +3549,79 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;a href="#a-design-is-a-shared-document" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Everything on the canvas is an entry in one design document: every component you configure, every relationship, and every annotation you draw. The canvas draws that document. Moving a node, applying a layout, or hiding a layer writes into the design. As a result:&lt;/p&gt;</description></item><item><title>Export Designs</title><link>/kanvas/guides/designs/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/export-designs/</guid><description>&lt;p&gt;Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or &lt;code&gt;kubectl&lt;/code&gt;, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.&lt;/p&gt;
-&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Pin Models to the Dock</title><link>/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
+&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Find and Use Catalog Designs</title><link>/cloud/guides/exploring-the-catalog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/exploring-the-catalog/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/catalog"&gt;catalog&lt;/a&gt; holds published designs: reusable infrastructure patterns that anyone can inspect and any signed-in user with the right permission can clone. This guide covers finding a design, using it, and managing the entries you own. For how the catalog works, who can publish, and what the metrics mean, see &lt;a href="/cloud/concepts/catalog/"&gt;Catalog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;img src="images/catalog-view.gif" onclick="openModal(this)" alt="The catalog page showing published designs as a grid of cards with the Top Performers panel above them"
+ class="md-image-responsive" /&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Browsing needs no account.&lt;/strong&gt; Signed-out visitors can search, filter, and read every published design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloning, downloading, editing, and deleting need you to sign in&lt;/strong&gt; and hold the matching permission. A role without the permission sees the action disabled. See &lt;a href="/cloud/reference/default-permissions/"&gt;Roles and Permissions&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloning needs an organization.&lt;/strong&gt; The copy lands in your selected workspace, so you must have an organization selected. Cloud refuses a clone while the all-organizations view is active.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Action&lt;/th&gt;
+ &lt;th&gt;Permission&lt;/th&gt;
+ &lt;th&gt;Notes&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browse, search, read details&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;td&gt;Open to signed-out visitors.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Open in the Playground&lt;/td&gt;
+ &lt;td&gt;None&lt;/td&gt;
+ &lt;td&gt;Changes there are never written back to the catalog design.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Clone&lt;/td&gt;
+ &lt;td&gt;Clone Design&lt;/td&gt;
+ &lt;td&gt;Source must be published or public.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Download&lt;/td&gt;
+ &lt;td&gt;Download a design&lt;/td&gt;
+ &lt;td&gt;Core YAML only, without catalog metadata.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Edit catalog details&lt;/td&gt;
+ &lt;td&gt;Publish Design&lt;/td&gt;
+ &lt;td&gt;Type, technology, description, and caveats.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Unpublish&lt;/td&gt;
+ &lt;td&gt;Unpublish Design&lt;/td&gt;
+ &lt;td&gt;You must be the design&amp;rsquo;s creator or hold Approve Catalog Request.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Delete&lt;/td&gt;
+ &lt;td&gt;Delete a design&lt;/td&gt;
+ &lt;td&gt;You must own the design. Provider administrators are the exception.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="browse-the-catalog" class="heading-link"&gt;
+ Browse the catalog
+ &lt;a href="#browse-the-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The catalog shows every published design from every organization. Two layouts show the same results:&lt;/p&gt;</description></item><item><title>Pin Models to the Dock</title><link>/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
 &lt;p&gt;Pinning works in Designer mode. In Operator mode the dock does not show pinned models.&lt;/p&gt;
 
 &lt;h2 id="pin-a-model" class="heading-link"&gt;

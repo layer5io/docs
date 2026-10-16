@@ -58,7 +58,7 @@ You are not asked to name an organization or a workspace. Layer5 Cloud creates b
 
 Your first sign-in normally opens your [dashboard](#6-dashboard). One exception applies: if you started signing up from Kanvas, or from a Meshery Server on your organization's custom domain, and you registered in this browser, your first sign-in opens the **Import from GitHub** page (titled "Get started") once. If the sign-in carries an explicit return address, Layer5 Cloud sends you there instead.
 
-The **Import from GitHub** page holds one card. It explains that connecting GitHub lets you pick repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs. It also names your organization and workspace: "Organizations own workspaces. You're in My Organization, working in My Workspace. Rename either anytime." From there you either start the [GitHub integration](/cloud/getting-started/github-integration/) wizard or skip to your dashboard.
+The **Import from GitHub** page holds one card. It explains that connecting GitHub lets you pick repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs. It also names your organization and workspace: "Organizations own workspaces. You're in My Organization, working in My Workspace. Rename either anytime." From there you either start the [GitHub integration](/cloud/guides/integrations/github-integration/) wizard or skip to your dashboard.
 
 
 

@@ -83,5 +83,5 @@ Files dropped on the canvas follow separate rules. Images and `.txt` files becom
 ## Related
 
 - [Save Designs](/kanvas/guides/designs/saving-designs/) covers plan limits and failures after an import.
-- [GitHub Integration](/cloud/getting-started/github-integration/) covers connecting a repository.
+- [GitHub Integration](/cloud/guides/integrations/github-integration/) covers connecting a repository.
 

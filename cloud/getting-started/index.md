@@ -24,7 +24,7 @@ Work through these in order. Each one builds on the last.
 2. [Set Up Your Organization](/cloud/getting-started/setting-up-your-organization/): invite a teammate by email, create a team and a workspace, assign the team to the workspace, and move a design into it.
 3. [Start from a Catalog Design](/cloud/getting-started/creating-a-design-from-template/): browse the public catalog, try a design in the Playground, and clone it into your workspace as a private copy.
 
-If you would rather start from your own repositories, [GitHub integration](/cloud/getting-started/github-integration/) imports Kubernetes manifests, Helm charts, and Docker Compose files as designs.
+If you would rather start from your own repositories, [GitHub integration](/cloud/guides/integrations/github-integration/) imports Kubernetes manifests, Helm charts, and Docker Compose files as designs.
 
 ## Using Cloud with Meshery
 
