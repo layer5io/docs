@@ -116,7 +116,7 @@ To see the individual users who are now members of the organization, navigate to
 
 ### What happens when a user accepts an invitation
 
-When a user clicks an acceptance link and is logged in, the system performs the following steps in order:
+When a user clicks an acceptance link and is logged in, the system performs the following steps in order. Steps 3 to 5 describe a `direct_membership` invitation, the default; a `child_organization` invitation replaces them, as described after the list.
 
 1. **Validates the invitation** - confirms it exists, is `enabled`, has not passed its expiration date, and has not exceeded its quota.
 2. **Checks email eligibility** - verifies the user's email matches the invitation's `emails` list. An empty list allows any email (public invitation).
@@ -124,7 +124,9 @@ When a user clicks an acceptance link and is logged in, the system performs the 
 4. **Assigns roles** - all roles configured on the invitation are assigned to the user in that organization. If no roles are configured, the user joins with no role.
 5. **Adds the user to teams** - the user is added to all teams configured on the invitation.
 
-Role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
+For a `direct_membership` invitation, role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
+
+For a `child_organization` invitation, the user is not added to the inviting organization. Instead, a child organization is created for them with the invitation's roles and teams applied inside it, as described in [Choosing what accepting an invitation does](#choosing-what-accepting-an-invitation-does). That acceptance is all or nothing: if any part of it fails, including a single role or team, nothing is created and the acceptance is not counted against the quota.
 
 ### Choosing what accepting an invitation does
 
@@ -147,7 +149,7 @@ A few things hold for both outcomes:
 
 ### How the open signup invitation is applied at sign-in
 
-The open signup invitation is not limited to first-time registration. It is applied whenever someone signs in through your organization's own address, such as its custom domain, on every sign-in method that address offers, including email and password as well as social sign-in. Someone who already has a Layer5 Cloud account and has never been a member of your organization becomes a member on that sign-in, with the roles and teams the invitation configures.
+The open signup invitation is not limited to first-time registration. It is applied whenever someone signs in through your organization's own address, such as its custom domain, on every sign-in method that address offers, including email and password as well as social sign-in. Someone who already has a Layer5 Cloud account and has never been a member of your organization becomes a member on that sign-in, with the roles and teams the invitation configures. When the open signup invitation is a `child_organization` invitation, that person instead receives their own child organization beneath yours, as described in [Choosing what accepting an invitation does](#choosing-what-accepting-an-invitation-does).
 
 It is applied only to people who are not already members, which has two consequences worth knowing:
 
@@ -170,7 +172,7 @@ When one of them does not hold, someone who is not already a member signs in as 
 The invitation system offers flexible configurations to fit a variety of use cases.
 
 {{< alert type="info" title="How invitation links handle unauthenticated users" >}}
-When a user who is not logged in clicks an invitation link, the system saves the invitation ID in a short-lived 30-minute cookie and redirects them to the organization's registration page. After a successful login or signup, the system reads the cookie and automatically completes the invitation acceptance, adding the user to the organization with the configured roles and teams.
+When a user who is not logged in clicks an invitation link, the system saves the invitation ID in a short-lived 30-minute cookie and redirects them to the organization's registration page. After a successful login or signup, the system reads the cookie and automatically completes the invitation acceptance with the outcome the invitation's `acceptanceOutcome` selects: membership in the organization with the configured roles and teams, or a new child organization.
 {{< /alert >}}
 
 #### Scenario 1: Inviting a single team member
