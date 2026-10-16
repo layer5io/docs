@@ -1,4 +1,0 @@
-# Academy
-
-
-<no value>
