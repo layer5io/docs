@@ -1,0 +1,24 @@
+# v0.8.63-1
+
+date: 2025-04-25
+
+
+
+## What's New
+## 🔤 General
+- rename unresolve to reopen @aabidsofi19 (#3584)
+- [Chore]: Bump Sistent v0.14.180 @l5io (#3583)
+- use sistent tooltip styling of bottom dock tooltip @amitamrutiya (#3582)
+- Self-host Modal: Add id to component and enhance message formatting @leecalcote (#3580)
+- [Chore]: Bump Sistent v0.14.179 @l5io (#3579)
+
+## 🖌️ Designer
+
+- Enhance and fix Comment history @aabidsofi19 (#3581)
+- Comment History: Enhance empty state @leecalcote (#3578)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+
