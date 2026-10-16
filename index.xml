@@ -6320,7 +6320,18 @@ creating learning paths, challenges, and certifications by collecting all necess
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.280</title><link>/cloud/reference/releases/v1.0.280/</link><pubDate>Fri, 16 Oct 2026 04:58:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.280/</guid><description>&lt;ul&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.281</title><link>/cloud/reference/releases/v1.0.281/</link><pubDate>Fri, 16 Oct 2026 05:57:00 +0000</pubDate><guid>/cloud/reference/releases/v1.0.281/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): refuse provider roles in organization and team role writes @jijillery (#6215)&lt;/li&gt;
+&lt;li&gt;fix(ui): report per-row failures of bulk user actions @jijillery (#6216)&lt;/li&gt;
+&lt;li&gt;deploy: provision GitHub App OAuth client credentials for production and staging @alexquincy (#6218)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@alexquincy, @arjunmehta-git, @jijillery and @miacycle&lt;/p&gt;</description></item><item><title>v1.0.280</title><link>/cloud/reference/releases/v1.0.280/</link><pubDate>Fri, 16 Oct 2026 04:58:38 +0000</pubDate><guid>/cloud/reference/releases/v1.0.280/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(server): restrict role, keychain and key grant writes to provider admins @jijillery (#6201)&lt;/li&gt;
 &lt;/ul&gt;
 
