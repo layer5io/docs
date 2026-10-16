@@ -37,9 +37,10 @@ What a token can do is the same as what you can do: every guarded endpoint check
 
 A guarded request runs in one organization. Layer5 Cloud resolves the organization from these sources, in this order:
 
-1. The `X-Current-Orgid` request header.
-2. The organization saved in your user preferences.
-3. The organization saved in your browser session (browser clients only).
+1. The request's host. A request that arrives on an organization's custom domain runs in that organization, and the sources below are not consulted. Requests to the deployment's own address skip this step.
+2. The `X-Current-Orgid` request header.
+3. The organization saved in your user preferences.
+4. The organization saved in your browser session (browser clients only).
 
 Header names are case-insensitive. The first source that holds a value wins.
 
