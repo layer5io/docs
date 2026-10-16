@@ -39,7 +39,7 @@ Layer5 Cloud ships 30 default keychains, each grouping the keys for one area. Th
 | Team Management | Managing teams and team membership |
 | Organization Management | Managing organizations, their teams, and their users |
 | Security Management | Token administration, including Create Token, Delete Token, and Download Token |
-| Provider Management | Deployment administration, including Edit Key, Delete Key, Create Keychain, Edit Keychain, and Delete Keychain |
+| Provider Management | Deployment administration, including Edit Key, Delete Key, Create Keychain, Edit Keychain, Delete Keychain, and Assign Keychains to Roles |
 
 The remaining default keychains cover workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, events, and the Kanvas action sets. The [Roles and Permissions reference]({{< ref "cloud/reference/default-permissions.md" >}}) lists them and shows which roles hold which keys.
 
