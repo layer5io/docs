@@ -1,241 +1,179 @@
-# Deploying Layer5 Cloud
+# Deploy Layer5 Cloud
 
-> Layer5 Cloud is a collection of services that can be deployed on-premises using Helm.
+> Install Layer5 Cloud on Kubernetes with Helm, create the OAuth2 client, confirm the deployment is ready, and connect a Meshery Server to it.
 
 
-## High-level List of Deployment Tasks
 
-<ol>
-    <li>Review the prequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
-    <li>Prepare INIT_CONFIG parameters for initial setup</li>
-    <li>Install Layer5 Cloud on Kubernetes using Helm. Deploy it's services in Kubernetes in-cluster. (<a href="#installation">docs</a>)</li>
-    <li>Meshery deployments are separate from <a href="https://docs.meshery.io/extensibility/providers">Remote Provider</a> deployments (Layer5 Cloud). Deploy Meshery in Kubernetes in-cluster (or out-of-cluster). (<a href="https://docs.meshery.io/installation/quick-start">docs</a>)</li>
-    <li>Configure Meshery Server point to your Remote Provider. Learn more about the Meshery Server registration process with Remote Providers. (<a href="https://docs.meshery.io/extensibility/providers#meshery-server-registration">docs</a>)</li>
-</ol>
+This guide installs the `layer5-cloud` chart, which deploys the Layer5 Cloud server together with Kratos and Hydra. It assumes you have made the decisions in [Plan a Deployment](/cloud/guides/self-hosted/planning/). The commands use the release name `layer5-cloud` in the namespace `layer5-cloud`.
 
-### Kubernetes-based Installation with Helm
+## Prerequisites
 
-Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud. Available in the [Layer5 Helm repository](https://docs.layer5.io/charts) is the layer5-cloud chart, which contains two subcharts. See the Helm repo [index](https://docs.layer5.io/charts/index.yaml) for details.
+- A Kubernetes cluster and Helm 3.
+- An ingress controller that supports WebSocket upgrades, and a TLS certificate for your hostname.
+- A PostgreSQL server you can create databases on.
+- An SMTP relay that satisfies the [mail constraints](/cloud/guides/self-hosted/operating/smtp/#constraints-on-the-shared-mail-server), or the decision to run without mail.
+- The OAuth applications for Google and GitHub, if you offer social sign-in.
 
-#### Prerequisites
+## Install
 
-Before you begin ensure the following are installed:
-- Helm.
-- An ingress controller like `ingress-nginx`.
-- A certificate manager like `cert-manager`.
+### 1. Prepare the database
 
-##### 1. Create dedicated namespaces
+Create one role and three databases on your PostgreSQL server, then create the `uuid-ossp` extension in the `meshery` database. The server creates the schema itself.
 
-This deployment uses two namespaces, `cnpg-postgres` for hosting the PostgreSQL database using CloudNativePG operator and `layer5-cloud` namespace for the Layer5 Cloud. You can also choose to keep all components in the same namespace. 
-```bash
-kubectl create ns cnpg-postgres
-kubectl create ns layer5-cloud
+```sql
+CREATE ROLE meshery LOGIN PASSWORD '<password>';
+CREATE DATABASE meshery OWNER meshery;
+CREATE DATABASE kratos OWNER meshery;
+CREATE DATABASE hydra OWNER meshery;
+\c meshery
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```
 
-##### 2. Prepare for data persistence (Persistent Volume)
+Any PostgreSQL deployment works, including an operator such as CloudNativePG, a managed service, or a server outside the cluster. The chart reaches it only through the connection strings you set in the next step.
 
-Layer5 uses PostgreSQL database that requires a persistent storage. It can be configured in many different ways in a Kubernetes cluster. Here we are using _local path provisioner from Rancher_ which automatically creates a PV using a set local path. Running the follwing command to deploy the local path provisioner: 
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.31/deploy/local-path-storage.yaml
-```
-
-This creates a default storage class called `local-path` which stores data by default in `/opt/local-path-provisioner` and has the reclaim policy set to `Delete`. 
-
-> **_NOTE:_** It is recommended you create a new storage class that uses a different path with ample storage and uses `Retain` reclaim policy. 
-
-For this guide, we will use the defaults.
-
-##### 3. Install an ingress controller
-
-This example deployment uses ingress-nginx but you may choose to use an ingress controller of your choice.
+### 2. Create the namespace and add the chart repository
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.3/deploy/static/provider/cloud/deploy.yaml
+kubectl create namespace layer5-cloud
+helm repo add layer5 https://docs.layer5.io/charts
+helm repo update
+helm show values layer5/layer5-cloud > values.yaml
 ```
 
-#### INIT_CONFIG
+`helm show values` prints every value of the chart version you are about to install. Keep that file as the baseline and edit it. The [chart values reference](/cloud/guides/self-hosted/deployment/helm-chart-values/) explains each value.
 
-The `INIT_CONFIG` environment variable allows you to configure the initial setup of your self-hosted Layer5 Cloud provider. This variable accepts a JSON string that defines the provider initialization configuration.
+### 3. Write the values file
 
-##### Purpose
-
-`INIT_CONFIG` enables you to:
-- Pre-configure provider settings during deployment
-- Automate initial setup for consistent deployments  
-- Define custom provider configurations without manual intervention
-
-##### Usage
-
-Set the `INIT_CONFIG` environment variable with a JSON configuration string:
-
-```bash
-export INIT_CONFIG='{"provider": {"name": "my-provider", "settings": {...}}}'
-```
-
-For Docker deployments:
-
-```bash
-# example
-docker run -e INIT_CONFIG='{"provider": {"name": "my-provider"}}' layer5/meshery-cloud
-```
-
-For Kubernetes deployments, add to your deployment manifest:
+Set at least the following. The `kratospublic`, `kratosadmin`, and `hydraadmin` addresses and the ingress backend names are the in-cluster service names of the Kratos and Hydra subcharts. Run `kubectl -n layer5-cloud get svc` after the first install and correct them to match your release. The chart defaults for these addresses (`hydra-admin`, `hydra-public`) do not match the names the subcharts create. The `/(.*)`, `/kratos/(.*)`, and `/hydra/(.*)` paths with the rewrite annotation strip the prefix before the request reaches each service; use your controller's equivalent if it is not NGINX.
 
 ```yaml
 env:
-  - name: INIT_CONFIG
-    value: '{"provider": {"name": "my-provider", "settings": {...}}}'
+  proto: https
+  serverbaseurl: https://cloud.example.com
+  serverHost: cloud.example.com
+  db: postgres://meshery:<password>@<db-host>:5432/meshery?sslmode=require
+  kratosdb: postgres://meshery:<password>@<db-host>:5432/kratos?sslmode=require
+  hydradb: postgres://meshery:<password>@<db-host>:5432/hydra?sslmode=require
+  kratospublic: http://layer5-cloud-kratos-public.layer5-cloud.svc.cluster.local:9010
+  kratosadmin: http://layer5-cloud-kratos-admin.layer5-cloud.svc.cluster.local:9011
+  kratosbrowser: https://cloud.example.com/kratos
+  hydrapublic: https://cloud.example.com/hydra
+  hydrabrowser: https://cloud.example.com/hydra
+  hydraadmin: http://cloud-hydra-admin.layer5-cloud.svc.cluster.local:4445
+  oauthclientid: layer5-cloud
+  oauthsecret: <generated>
+  cloudCredentialEncryptionKey: <base64 32 bytes>
+  cloudOidcStateHmacKey: <base64 32 bytes>
+  kratosWebhookApiKey: <generated>
+  initConfig: |
+    organization:
+      name: "Example Corp"
+    user:
+      first_name: "Ada"
+      last_name: "Admin"
+      email: "admin@example.com"
+      password: "<initial password>"
+ingress:
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+  hosts:
+    - host: cloud.example.com
+      paths:
+        - path: /(.*)
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: meshery-cloud
+              port:
+                number: 9876
+        - path: /kratos/(.*)
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: layer5-cloud-kratos-public
+              port:
+                number: 9010
+        - path: /hydra/(.*)
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: cloud-hydra-public
+              port:
+                number: 4444
+  tls:
+    - secretName: cloud-example-com-tls
+      hosts:
+        - cloud.example.com
+smtp:
+  smtphost: smtp.example.com
+  smtpport: "587"
+  smtpusername: no-reply@example.com
+  smtppassword: <password>
 ```
 
+Then set the Kratos and Hydra values. Helm replaces a list as a whole, so copy the lists you change from `values.yaml` and edit them in place:
 
+- Replace every `http://localhost:9876` and `http://localhost:9010` URL under `kratos.kratos.config` with your public URL. That covers `serve.public.base_url` (`https://cloud.example.com/kratos`), `serve.public.cors.allowed_origins`, `selfservice.default_browser_return_url`, `selfservice.allowed_return_urls`, and each `ui_url` and `default_browser_return_url` under `selfservice.flows`.
+- Point the registration `web_hook` entries at `https://cloud.example.com/api/identity/users`. Add a hook to `https://cloud.example.com/api/identity/signup/validate` before it on the password method if you use signup validation or reCAPTCHA. Set each hook's `X-API-Key` value to `env.kratosWebhookApiKey`. The chart default URL omits the `/api` prefix, which the server does not serve.
+- Set `kratos.kratos.config.secrets.cookie` and `.cipher`, and `hydra.hydra.config.secrets.system`.
+- Set the Kratos `dsn` and Hydra `dsn` to the same database URLs as `env.kratosdb` and `env.hydradb`.
+- Set the Hydra `urls` (login, consent, error, and `self.public` and `self.issuer`) to `https://cloud.example.com/...`, with `self.public` and `self.issuer` ending in `/hydra/`. Set `hydra.hydra.dangerousForceHttp` to `false` once Hydra is reached over TLS.
+- Add the Google and GitHub `client_id` and `client_secret` under the Kratos `oidc` providers, and the matching `env.providerOrg*` values.
+- Choose the identity mail courier. See [Mail](/cloud/guides/self-hosted/planning/#mail).
 
+Route `/kratos` and `/hydra` on the ingress to the Kratos and Hydra public services, as described in [Plan a Deployment](/cloud/guides/self-hosted/planning/#hostname-and-tls).
 
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Note</h4>
-  
-      The INIT_CONFIG variable is only processed during the initial startup. Subsequent restarts will not reprocess this configuration.
-  
-</div>
-
-
-
-##### Configuration Schema
-
-The `INIT_CONFIG` JSON structure supports the following fields:
-
-- `provider.name`: The name of your provider instance
-- `provider.settings`: Custom provider settings specific to your deployment
-
-
-#### Installation
-
-You will install the Postgres database first or configure connection details to your existing Postgres v12+ database server, followed by the rest of Layer5 Cloud's containers.
-
-##### 1. Deploy PostgreSQL using CloudNativePG
-
-In this example, we are using CloudNativePG's operator based approach to create a PostgreSQL cluster. You can choose a different approach of your choice.
-
-PostgreSQL requires persistent storage which can be configured in many different ways in a Kubernetes cluster. Here we are using _local path provisioner from Rancher_ which automatically creates a PV using a set local path. Running the follwing command to deploy the local path provisioner: 
+### 4. Install the chart
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.31/deploy/local-path-storage.yaml
+helm install layer5-cloud layer5/layer5-cloud \
+  --namespace layer5-cloud \
+  --values values.yaml
 ```
 
-This creates a default storage class called `local-path` which stores data by default in `/opt/local-path-provisioner`. You can create a new storage class that uses a different path. For this deployment, we will use the defaults.
-
-Add and install CloudNativePG operator using the following commands:
+Kratos and Hydra run their database migrations when they start, and the Layer5 Cloud server applies its own before it reports ready. Pods can restart once or twice while the databases fill. Wait for them:
 
 ```bash
-helm repo add cnpg https://cloudnative-pg.github.io/charts
-
-helm upgrade --install cnpg --namespace cnpg-system --create-namespace cnpg/cloudnative-pg
+kubectl -n layer5-cloud rollout status deploy/meshery-cloud
 ```
 
-Deploying a PostgreSQL cluster requires the follwing pre-requisite resources:
-- A super user secret
-- A Meshery user secret
+### 5. Create the OAuth2 client in Hydra
 
-Run the following commands to create them replacing username and passwords as needed:
-```bash
-kubectl -n cnpg-postgres create secret generic meshery-user --from-literal=username=meshery --from-literal=password=meshery --type=kubernetes.io/basic-auth
-```
+Layer5 Cloud authenticates to Hydra as an OAuth2 client whose id and secret you set in `env.oauthclientid` and `env.oauthsecret`. Create that client in Hydra with the matching values and the redirect address `<serverbaseurl>/callback`. The server does not create it, and sign-in does not work until it exists.
 
 ```bash
-kubectl -n cnpg-postgres create secret generic cnpg-superuser --from-literal=username=postgres --from-literal=password=postgres --type=kubernetes.io/basic-auth
+kubectl -n layer5-cloud exec deploy/cloud-hydra -- hydra create client \
+  --endpoint http://127.0.0.1:4445 \
+  --id layer5-cloud \
+  --secret '<the value of env.oauthsecret>' \
+  --grant-type authorization_code,refresh_token,client_credentials,implicit \
+  --response-type token,code,id_token \
+  --scope openid,offline,offline_access \
+  --redirect-uri https://cloud.example.com/callback \
+  --skip-consent
 ```
 
-For this documentation, we use the following manifests to deploy a PostgreSQL cluster:
-```yaml
-# cluster.yaml
-apiVersion: postgresql.cnpg.io/v1
-kind: Cluster
-metadata:
-  name: cnpg-postgres
-  namespace: cnpg-postgres
-spec:
-  instances: 2
-  # Persistent storage configuration
-  storage:
-    storageClass: local-path
-    size: 10Gi
+The command uses the flag names of the Hydra version in the chart's subchart. If your Hydra is older, its command is `hydra clients create` with `--grant-types`, `--response-types`, and `--callbacks`.
 
-  superuserSecret:
-    name: cnpg-superuser
-  bootstrap:
-    initdb:
-      database: meshery
-      owner: meshery
-      secret:
-        name: meshery-user
-      postInitSQL:
-        - create database hydra owner meshery;
-        - create database kratos owner meshery;
-        - create extension "uuid-ossp";
-        - ALTER ROLE meshery WITH SUPERUSER;
-      postInitApplicationSQLRefs:
-        configMapRefs:
-          - name: extra-init
-            key: init.sql
----
-# extra-init.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: extra-init
-  namespace: cnpg-postgres
-data:
-  init.sql: |
-    GRANT ALL PRIVILEGES ON DATABASE meshery to meshery;
-    GRANT ALL PRIVILEGES ON DATABASE hydra to meshery;
-    GRANT ALL PRIVILEGES ON DATABASE kratos to meshery;
-```
+## Confirm the deployment works
 
-CloudNativePG provides a curated list of [samples](https://github.com/cloudnative-pg/cloudnative-pg/blob/main/docs/src/samples.md) showing configuration options that can be used as a reference.
+1. `GET https://cloud.example.com/readyz` returns `200`.
+2. The server log contains `Server is up and running!` and no `Failed to initialize Provider Admin` line.
+3. You can sign in as the administrator you defined in `env.initConfig`. That user holds the Provider Admin role. See [Provider initialization](/cloud/guides/self-hosted/deployment/provider-initialization/).
+4. Send a test email through `POST /api/system/email/test`. See [Troubleshoot Email Delivery](/cloud/guides/self-hosted/operating/smtp/#send-a-test-email).
+5. If you registered Google or GitHub, sign in with each.
 
-Apply the YAML file. You should notice two cnpg pods shortly thereafter.
-```bash
-NAME     READY   STATUS    RESTARTS   AGE
-cnpg-postgres-1   1/1     Running   0          3h5m
-cnpg-postgres-2   1/1     Running   0          3h5m
-```
-Retrieve the _Service_ endpoints of cnpg. This must be updated in the Layer5 `values.yaml` file later.
+Once sign-in works, remove `env.initConfig` from your values file and run `helm upgrade`, so the initial password does not stay in your release history and logs.
 
-##### 2. Deploy Layer5 cloud
+## Connect a Meshery Server
 
-1. Start by adding the Layer5 helm chart repo.
-    ```bash
-    helm repo add layer5 https://docs.layer5.io/charts
-    ```
+Meshery Server is a separate deployment. Install it by following the [Meshery documentation](https://docs.meshery.io/installation/quick-start), then point it at your deployment as its remote provider. See [Meshery Server registration](/cloud/concepts/meshery-server-registration/) and the Meshery guide to [remote providers](https://docs.meshery.io/extensibility/providers#meshery-server-registration). The server rejects sign-in from a Meshery Server older than `env.minmesheryversion`.
 
-2. Next, to modify values such as the database connection or other parameters, you will use the `values.yaml` file. 
+## Upgrade
 
-    You can generate it using the following command:
-    ```bash
-    helm show values layer5/layer5-cloud > values.yaml
-    ```
-    Review and update values if necessary. If you have followed this tutorial with the exact steps, there are no changes requires to get started.
+Run `helm upgrade` with the new chart version and your values file. The server applies pending database migrations when it starts, and exits if one fails. Take a database backup first.
 
-3. Deploy Layer5 Cloud using the `helm install` command.
-
-    ```bash
-    helm install -f values.yaml layer5-cloud -n layer5-cloud
-    ```
-
-##### 3. Create an OAuth 2.0 client
-1. Port forward the _Hydra Admin_ service.
-
-2. Run the following command to create the hydra client:
-```bash
-hydra clients create \
---endpoint <port forwarded endpoint> \
---id meshery-cloud \ <--- ensure the id specified matches with the env.oauthclientid in values.yaml
---secret some-secret \ <--- ensure the secret specified matches with the env.oauthsecret in values.yaml
---grant-types authorization_code,refresh_token,client_credentials,implicit \
---response-types token,code,id_token \
---scope openid,offline,offline_access \
---callbacks <Layer5 Cloud host>/callback 
-```

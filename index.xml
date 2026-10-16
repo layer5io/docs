@@ -57,518 +57,7 @@
  2. Adding Videos to Your Category
  &lt;a href="#2-adding-videos-to-your-category" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Customizing Webhooks</title><link>/cloud/guides/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 offers on-premises installation of its &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery Remote Provider&lt;/a&gt;, Layer5 Cloud. In this guide, we will walk through configurable webhooks that Layer5 Cloud uses internally to automate tasks and how you can customize these webhooks to integrate with your existing tools.&lt;/p&gt;
-
-&lt;h2 id="customize-and-add-your-own-custom-webhook" class="heading-link"&gt;
- Customize and add your own custom webhook
- &lt;a href="#customize-and-add-your-own-custom-webhook" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud&amp;rsquo;s webhook configurations are managed through environment variables defined in &lt;strong&gt;.env&lt;/strong&gt; files. Here&amp;rsquo;s how you can customize them:&lt;/p&gt;</description></item><item><title>Customizing Layer5 Cloud Deployment with Helm</title><link>/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;h2 id="requirements" class="heading-link"&gt;
- Requirements
- &lt;a href="#requirements" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;table class="td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Repository&lt;/th&gt;
- &lt;th&gt;Name&lt;/th&gt;
- &lt;th&gt;Version&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;@ory&lt;/td&gt;
- &lt;td&gt;hydra&lt;/td&gt;
- &lt;td&gt;0.24.2&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;@ory&lt;/td&gt;
- &lt;td&gt;kratos&lt;/td&gt;
- &lt;td&gt;0.39.1&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id="values" class="heading-link"&gt;
- Values
- &lt;a href="#values" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="table-container"&gt;
-&lt;table class="td-initial"&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Key&lt;/th&gt;
- &lt;th&gt;Type&lt;/th&gt;
- &lt;th&gt;Default&lt;/th&gt;
- &lt;th&gt;Description&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;affinity&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Affinity for Layer5 Cloud primary pods assignment ref: &lt;a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity"&gt;https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity&lt;/a&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;appVersion&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;v0.7.15&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;autoscaling.enabled&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;autoscaling.maxReplicas&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;100&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;autoscaling.minReplicas&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;autoscaling.targetCPUUtilizationPercentage&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;80&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.db&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/meshery?sslmode=disable&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;URL to be used to connect with the meshery database.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.debug&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.environment&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;cloud&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;If the environment is set as &amp;ldquo;development&amp;rdquo;, the cloud server expects the meshery database connection at postgres://postgres:postgres@127.0.0.1:5432/meshery. For any other value env.db variable is used to connect to the database.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.ghtoken&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;GitHub PAT to be used by server for dispatching workflows.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.githubappkeypath&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;key.pem&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.hydraadmin&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;http://hydra-admin:4445&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.hydradb&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/hydra?sslmode=disable&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;URL to be used to connect with the hydra database.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.hydrapublic&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;http://hydra-public:4444&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.kratosdb&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/kratos?sslmode=disable&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;URL to be used to connect with the kratos database.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.minmesheryversion&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;v0.7.0&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Minimum Meshery Server version compatible with the current Layer5 cloud server.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.oauthclientid&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;meshery-cloud&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.oauthsecret&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;secret1234567890&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.port&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;9876&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;The port on which Layer5 Cloud server runs.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.serverHost&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;localhost&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;env.serverbaseurl&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;http://localhost:9876&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Layer5 Cloud base URL&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;fullnameOverride&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;meshery-cloud&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;hydra.hydra.config&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{&amp;quot;dsn&amp;quot;:&amp;quot;postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/hydra?sslmode=disable&amp;quot;,&amp;quot;log&amp;quot;:{&amp;quot;leak_sensitive_values&amp;quot;:false,&amp;quot;level&amp;quot;:&amp;quot;debug&amp;quot;},&amp;quot;oauth2&amp;quot;:{&amp;quot;expose_internal_errors&amp;quot;:true},&amp;quot;secrets&amp;quot;:{&amp;quot;system&amp;quot;:[&amp;quot;&amp;quot;]},&amp;quot;serve&amp;quot;:{&amp;quot;public&amp;quot;:{&amp;quot;cors&amp;quot;:{&amp;quot;enabled&amp;quot;:true}}},&amp;quot;strategies&amp;quot;:{&amp;quot;access_token&amp;quot;:&amp;quot;jwt&amp;quot;},&amp;quot;ttl&amp;quot;:{&amp;quot;access_token&amp;quot;:&amp;quot;24h&amp;quot;,&amp;quot;auth_code&amp;quot;:&amp;quot;1h&amp;quot;,&amp;quot;id_token&amp;quot;:&amp;quot;1h&amp;quot;,&amp;quot;refresh_token&amp;quot;:&amp;quot;1000h&amp;quot;},&amp;quot;urls&amp;quot;:{&amp;quot;consent&amp;quot;:&amp;quot;https://public.hydra.localhost/consent&amp;quot;,&amp;quot;error&amp;quot;:&amp;quot;https://public.hydra.localhost/error&amp;quot;,&amp;quot;login&amp;quot;:&amp;quot;https://public.hydra.localhost/login&amp;quot;,&amp;quot;post_logout_redirect&amp;quot;:&amp;quot;https://public.hydra.localhost/login&amp;quot;,&amp;quot;self&amp;quot;:{&amp;quot;issuer&amp;quot;:&amp;quot;https://public.hydra.localhost/hydra/&amp;quot;,&amp;quot;public&amp;quot;:&amp;quot;https://public.hydra.localhost/hydra/&amp;quot;}}}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Hydra configuration to use. You can pass your own Hydra configuration file and configure callback, admin and public urls. (Hydra Reference Configuration)[https://www.ory.sh/docs/hydra/reference/configuration] for detailed description of each fields.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;hydra.hydra.config.secrets.system[0]&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;pass in a seceret to be used in AuthZ flow&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;hydra.hydra.config.ttl.access_token&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;24h&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Expiry of the issued token&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;hydra.hydra.config.ttl.auth_code&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;1h&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Expiry of the issued auth code to be exchanged for access_token.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;hydra.hydra.config.ttl.refresh_token&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;1000h&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Expiry of the issued refresh token, once expired the refresh token cannot be used to re-issue the access token.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;hydra.hydra.dangerousForceHttp&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;enabled for development environment to skip TLS.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;image.pullPolicy&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;IfNotPresent&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;image.repository&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;layer5/meshery-cloud&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;image.tag&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;latest&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;imagePullSecrets&lt;/td&gt;
- &lt;td&gt;list&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.annotations&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.className&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.enabled&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.hosts[0].host&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.hosts[0].paths[0].path&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;/&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.hosts[0].paths[0].pathType&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;ImplementationSpecific&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;ingress.tls&lt;/td&gt;
- &lt;td&gt;list&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.enabled&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.automigration.enabled&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{&amp;quot;ciphers&amp;quot;:{&amp;quot;algorithm&amp;quot;:&amp;quot;xchacha20-poly1305&amp;quot;},&amp;quot;courier&amp;quot;:{&amp;quot;smtp&amp;quot;:{&amp;quot;connection_uri&amp;quot;:&amp;quot;&amp;quot;},&amp;quot;templates&amp;quot;:{&amp;quot;recovery_code&amp;quot;:{&amp;quot;valid&amp;quot;:{&amp;quot;email&amp;quot;:{&amp;quot;body&amp;quot;:{&amp;quot;html&amp;quot;:&amp;quot;&amp;quot;},&amp;quot;subject&amp;quot;:&amp;quot;&amp;quot;}}},&amp;quot;verification_code&amp;quot;:{&amp;quot;valid&amp;quot;:{&amp;quot;email&amp;quot;:{&amp;quot;body&amp;quot;:{&amp;quot;html&amp;quot;:&amp;quot;&amp;quot;},&amp;quot;subject&amp;quot;:&amp;quot;&amp;quot;}}}}},&amp;quot;dsn&amp;quot;:&amp;quot;postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/kratos?sslmode=disable&amp;quot;,&amp;quot;hashers&amp;quot;:{&amp;quot;argon2&amp;quot;:{&amp;quot;iterations&amp;quot;:2,&amp;quot;key_length&amp;quot;:16,&amp;quot;memory&amp;quot;:&amp;quot;128MB&amp;quot;,&amp;quot;parallelism&amp;quot;:1,&amp;quot;salt_length&amp;quot;:16}},&amp;quot;identity&amp;quot;:{&amp;quot;default_schema_id&amp;quot;:&amp;quot;default&amp;quot;,&amp;quot;schemas&amp;quot;:[{&amp;quot;id&amp;quot;:&amp;quot;default&amp;quot;,&amp;quot;url&amp;quot;:&amp;quot;file:///etc/config/identity.schema.json&amp;quot;}]},&amp;quot;log&amp;quot;:{&amp;quot;format&amp;quot;:&amp;quot;text&amp;quot;,&amp;quot;leak_sensitive_values&amp;quot;:false,&amp;quot;level&amp;quot;:&amp;quot;debug&amp;quot;},&amp;quot;secrets&amp;quot;:{&amp;quot;cipher&amp;quot;:[&amp;quot;&amp;quot;],&amp;quot;cookie&amp;quot;:[&amp;quot;&amp;quot;]},&amp;quot;selfservice&amp;quot;:{&amp;quot;allowed_return_urls&amp;quot;:[&amp;quot;http://localhost:9876&amp;quot;],&amp;quot;default_browser_return_url&amp;quot;:&amp;quot;http://localhost:9876&amp;quot;,&amp;quot;flows&amp;quot;:{&amp;quot;error&amp;quot;:{&amp;quot;ui_url&amp;quot;:&amp;quot;http://localhost:9876/error&amp;quot;},&amp;quot;login&amp;quot;:{&amp;quot;after&amp;quot;:{&amp;quot;default_browser_return_url&amp;quot;:&amp;quot;http://localhost:9876/oauth/callback&amp;quot;,&amp;quot;password&amp;quot;:{&amp;quot;hooks&amp;quot;:[{&amp;quot;hook&amp;quot;:&amp;quot;require_verified_address&amp;quot;}]}},&amp;quot;lifespan&amp;quot;:&amp;quot;720m&amp;quot;,&amp;quot;ui_url&amp;quot;:&amp;quot;http://localhost:9876/login&amp;quot;},&amp;quot;logout&amp;quot;:{&amp;quot;after&amp;quot;:{&amp;quot;default_browser_return_url&amp;quot;:&amp;quot;http://localhost:9876/login&amp;quot;}},&amp;quot;recovery&amp;quot;:{&amp;quot;enabled&amp;quot;:true,&amp;quot;lifespan&amp;quot;:&amp;quot;720h&amp;quot;,&amp;quot;ui_url&amp;quot;:&amp;quot;http://localhost:9876/recovery&amp;quot;,&amp;quot;use&amp;quot;:&amp;quot;code&amp;quot;},&amp;quot;registration&amp;quot;:{&amp;quot;after&amp;quot;:{&amp;quot;default_browser_return_url&amp;quot;:&amp;quot;http://localhost:9876/registered&amp;quot;,&amp;quot;oidc&amp;quot;:{&amp;quot;hooks&amp;quot;:[{&amp;quot;hook&amp;quot;:&amp;quot;session&amp;quot;},{&amp;quot;config&amp;quot;:{&amp;quot;auth&amp;quot;:{&amp;quot;config&amp;quot;:{&amp;quot;in&amp;quot;:&amp;quot;header&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;X-API-Key&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;dev_token&amp;quot;},&amp;quot;type&amp;quot;:&amp;quot;api_key&amp;quot;},&amp;quot;body&amp;quot;:&amp;quot;file:///home/ory/identity/password.webhook.jsonnet&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;POST&amp;quot;,&amp;quot;response&amp;quot;:{&amp;quot;ignore&amp;quot;:true},&amp;quot;url&amp;quot;:&amp;quot;http://localhost:9876/identity/users&amp;quot;},&amp;quot;hook&amp;quot;:&amp;quot;web_hook&amp;quot;}]},&amp;quot;password&amp;quot;:{&amp;quot;hooks&amp;quot;:[{&amp;quot;config&amp;quot;:{&amp;quot;auth&amp;quot;:{&amp;quot;config&amp;quot;:{&amp;quot;in&amp;quot;:&amp;quot;header&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;X-API-Key&amp;quot;,&amp;quot;value&amp;quot;:&amp;quot;dev_token&amp;quot;},&amp;quot;type&amp;quot;:&amp;quot;api_key&amp;quot;},&amp;quot;body&amp;quot;:&amp;quot;file:///home/ory/identity/password.webhook.jsonnet&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;POST&amp;quot;,&amp;quot;response&amp;quot;:{&amp;quot;ignore&amp;quot;:true},&amp;quot;url&amp;quot;:&amp;quot;http://localhost:9876/identity/users&amp;quot;},&amp;quot;hook&amp;quot;:&amp;quot;web_hook&amp;quot;}]}},&amp;quot;lifespan&amp;quot;:&amp;quot;24h&amp;quot;,&amp;quot;ui_url&amp;quot;:&amp;quot;http://localhost:9876/registration&amp;quot;},&amp;quot;settings&amp;quot;:{&amp;quot;after&amp;quot;:{&amp;quot;default_browser_return_url&amp;quot;:&amp;quot;http://localhost:9876/account/profile&amp;quot;},&amp;quot;privileged_session_max_age&amp;quot;:&amp;quot;15m&amp;quot;,&amp;quot;ui_url&amp;quot;:&amp;quot;http://localhost:9876/reset&amp;quot;},&amp;quot;verification&amp;quot;:{&amp;quot;enabled&amp;quot;:true,&amp;quot;lifespan&amp;quot;:&amp;quot;720h&amp;quot;,&amp;quot;ui_url&amp;quot;:&amp;quot;http://localhost:9876/verification&amp;quot;,&amp;quot;use&amp;quot;:&amp;quot;code&amp;quot;}},&amp;quot;methods&amp;quot;:{&amp;quot;oidc&amp;quot;:{&amp;quot;config&amp;quot;:{&amp;quot;providers&amp;quot;:[{&amp;quot;client_id&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;client_secret&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;github&amp;quot;,&amp;quot;mapper_url&amp;quot;:&amp;quot;file:///home/ory/identity/oidc.github.jsonnet&amp;quot;,&amp;quot;provider&amp;quot;:&amp;quot;github&amp;quot;,&amp;quot;requested_claims&amp;quot;:{&amp;quot;id_token&amp;quot;:{&amp;quot;email&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;email_verified&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;name&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;picture&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;profile&amp;quot;:{&amp;quot;essential&amp;quot;:true}}},&amp;quot;scope&amp;quot;:[&amp;quot;read:user&amp;quot;,&amp;quot;user:email&amp;quot;]},{&amp;quot;client_id&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;client_secret&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;id&amp;quot;:&amp;quot;google&amp;quot;,&amp;quot;mapper_url&amp;quot;:&amp;quot;file:///home/ory/identity/oidc.google.jsonnet&amp;quot;,&amp;quot;provider&amp;quot;:&amp;quot;google&amp;quot;,&amp;quot;requested_claims&amp;quot;:{&amp;quot;id_token&amp;quot;:{&amp;quot;email&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;email_verified&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;family_name&amp;quot;:null,&amp;quot;given_name&amp;quot;:{&amp;quot;essential&amp;quot;:true},&amp;quot;hd&amp;quot;:null}},&amp;quot;scope&amp;quot;:[&amp;quot;email&amp;quot;,&amp;quot;profile&amp;quot;]}]},&amp;quot;enabled&amp;quot;:true},&amp;quot;password&amp;quot;:{&amp;quot;config&amp;quot;:{&amp;quot;haveibeenpwned_enabled&amp;quot;:true,&amp;quot;identifier_similarity_check_enabled&amp;quot;:true,&amp;quot;min_password_length&amp;quot;:8},&amp;quot;enabled&amp;quot;:true}}},&amp;quot;serve&amp;quot;:{&amp;quot;admin&amp;quot;:{&amp;quot;base_url&amp;quot;:&amp;quot;http://localhost:9011/&amp;quot;},&amp;quot;public&amp;quot;:{&amp;quot;base_url&amp;quot;:&amp;quot;http://localhost:9010/&amp;quot;,&amp;quot;cors&amp;quot;:{&amp;quot;allowed_headers&amp;quot;:[&amp;quot;Authorization&amp;quot;,&amp;quot;Cookie&amp;quot;],&amp;quot;allowed_methods&amp;quot;:[&amp;quot;POST&amp;quot;,&amp;quot;GET&amp;quot;,&amp;quot;PUT&amp;quot;,&amp;quot;PATCH&amp;quot;,&amp;quot;DELETE&amp;quot;],&amp;quot;allowed_origins&amp;quot;:[&amp;quot;http://localhost:9010/&amp;quot;],&amp;quot;enabled&amp;quot;:true,&amp;quot;exposed_headers&amp;quot;:[&amp;quot;Content-Type&amp;quot;,&amp;quot;Set-Cookie&amp;quot;]}}}}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Kratos configuration to use. You can pass your own Kratos configuration file and configure self-service flows, enable/disable features as required. (Kratos Reference Configuration)[https://www.ory.sh/docs/kratos/reference/configuration] for detailed description of each fields.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.ciphers&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{&amp;quot;algorithm&amp;quot;:&amp;quot;xchacha20-poly1305&amp;quot;}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;One of the values: &lt;code&gt;[noop, aes, xchacha20-poly1305]&lt;/code&gt;. Default if not provided is &lt;code&gt;noop&lt;/code&gt;.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.secrets.cookie&lt;/td&gt;
- &lt;td&gt;list&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;[&amp;quot;&amp;quot;]&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Fill in values for cookie and cipher to be used in the AuthN flows&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.flows.login.lifespan&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;720m&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Each session is valid for a set amount of time. This time is the session&amp;rsquo;s lifespan. When the session lifespan expires, the user must re-authenticate.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.flows.recovery.lifespan&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;720h&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;In the configuration, session lifespan is expressed in hours, minutes, and seconds. Use a combination of these units to define the desired lifespan. For example: 72h, 10m, 12s, 1h13m3s.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.flows.registration.lifespan&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;24h&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Each session is valid for a set amount of time. This time is the session&amp;rsquo;s lifespan. When the session lifespan expires, the user must re-authenticate.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.flows.verification.lifespan&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;720h&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;In the configuration, session lifespan is expressed in hours, minutes, and seconds. Use a combination of these units to define the desired lifespan. For example: 72h, 10m, 12s, 1h13m3s.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[0].client_id&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;GitHub OAuth App client_id to enable GitHub OIDC support for cloud IDP.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[0].client_secret&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;GitHub OAuth App client_secret to enable GitHub OIDC support for cloud IDP.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[0].mapper_url&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;file:///home/ory/identity/oidc.github.jsonnet&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;mapper_url is a jsonnet file to map the incoming OIDC profile details to the Kratos Identity.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[0].scope&lt;/td&gt;
- &lt;td&gt;list&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;[&amp;quot;read:user&amp;quot;,&amp;quot;user:email&amp;quot;]&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;GitHub OAuth App scope&amp;rsquo;s to specify exactly what type of access you need. Scopes limit access for OAuth tokens. They do not grant any additional permission beyond that which the user already has.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[1].client_id&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Google OAuth App client_id to enable Google OIDC support for cloud IDP.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[1].client_secret&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Google OAuth App client_secret to enable Google OIDC support for cloud IDP.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[1].mapper_url&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;file:///home/ory/identity/oidc.google.jsonnet&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;mapper_url is a jsonnet file to map the incoming OIDC profile details to the Kratos Identity.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.config.selfservice.methods.oidc.config.providers[1].scope&lt;/td&gt;
- &lt;td&gt;list&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;[&amp;quot;email&amp;quot;,&amp;quot;profile&amp;quot;]&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;GitHub OAuth App scope&amp;rsquo;s to specify exactly what type of access you need. Scopes limit access for OAuth tokens. They do not grant any additional permission beyond that which the user already has.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.kratos.identitySchemas.&amp;ldquo;identity.schema.json&amp;rdquo;&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;{\n\&amp;quot;$id\&amp;quot;: \&amp;quot;identity.schema.json\&amp;quot;,\n\&amp;quot;$schema\&amp;quot;: \&amp;quot;http://json-schema.org/draft-07/schema#\&amp;quot;,\n\&amp;quot;title\&amp;quot;: \&amp;quot;Person\&amp;quot;,\n\&amp;quot;type\&amp;quot;: \&amp;quot;object\&amp;quot;,\n\&amp;quot;properties\&amp;quot;: {\n \&amp;quot;traits\&amp;quot;: {\n \&amp;quot;type\&amp;quot;: \&amp;quot;object\&amp;quot;,\n \&amp;quot;properties\&amp;quot;: {\n \&amp;quot;email\&amp;quot;: {\n \&amp;quot;type\&amp;quot;: \&amp;quot;string\&amp;quot;,\n \&amp;quot;format\&amp;quot;: \&amp;quot;email\&amp;quot;,\n \&amp;quot;title\&amp;quot;: \&amp;quot;E-Mail\&amp;quot;,\n \&amp;quot;minLength\&amp;quot;: 3,\n \&amp;quot;ory.sh/kratos\&amp;quot;: {\n \&amp;quot;credentials\&amp;quot;: {\n \&amp;quot;password\&amp;quot;: {\n \&amp;quot;identifier\&amp;quot;: true\n }\n },\n \&amp;quot;verification\&amp;quot;: {\n \&amp;quot;via\&amp;quot;: \&amp;quot;email\&amp;quot;\n },\n \&amp;quot;recovery\&amp;quot;: {\n \&amp;quot;via\&amp;quot;: \&amp;quot;email\&amp;quot;\n }\n }\n },\n \&amp;quot;name\&amp;quot;: {\n \&amp;quot;type\&amp;quot;: \&amp;quot;object\&amp;quot;,\n \&amp;quot;properties\&amp;quot;: {\n \&amp;quot;first_name\&amp;quot;: {\n \&amp;quot;title\&amp;quot;: \&amp;quot;First Name\&amp;quot;,\n \&amp;quot;type\&amp;quot;: \&amp;quot;string\&amp;quot;\n },\n \&amp;quot;last_name\&amp;quot;: {\n \&amp;quot;title\&amp;quot;: \&amp;quot;Last Name\&amp;quot;,\n \&amp;quot;type\&amp;quot;: \&amp;quot;string\&amp;quot;\n }\n },\n \&amp;quot;required\&amp;quot;: [\n \&amp;quot;first_name\&amp;quot;,\n \&amp;quot;last_name\&amp;quot;\n ]\n },\n \&amp;quot;avatar\&amp;quot;: {\n \&amp;quot;title\&amp;quot;: \&amp;quot;Avatar URL\&amp;quot;,\n \&amp;quot;type\&amp;quot;: \&amp;quot;string\&amp;quot;\n }\n },\n \&amp;quot;required\&amp;quot;: [\n \&amp;quot;email\&amp;quot;,\n \&amp;quot;name\&amp;quot;\n ],\n \&amp;quot;additionalProperties\&amp;quot;: true\n }\n}\n}&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.service.admin.enabled&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.service.admin.port&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;9011&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Kratos Admin API port&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.service.public.enabled&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;kratos.service.public.port&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;9010&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Kratos Public API port&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;nameOverride&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;nodeSelector&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Node labels for Layer5 Cloud pods assignment ref: &lt;a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/"&gt;https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/&lt;/a&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;podAnnotations&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;podSecurityContext&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;replicaCount&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;resources.limits&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;The resources limits for the Layer5 Cloud containers&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;resources.requests.cpu&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;250m&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;The requested cpu for the Layer5 Cloud containers&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;resources.requests.memory&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;256Mi&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;The requested memory for the Layer5 Cloud containers&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;securityContext&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;service.port&lt;/td&gt;
- &lt;td&gt;int&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;9876&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;service.type&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;ClusterIP&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;serviceAccount.annotations&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;serviceAccount.create&lt;/td&gt;
- &lt;td&gt;bool&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Specifies whether a service account should be created&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;serviceAccount.name&lt;/td&gt;
- &lt;td&gt;string&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;&amp;quot;meshery-cloud&amp;quot;&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;smtp&lt;/td&gt;
- &lt;td&gt;object&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;{&amp;quot;smtphost&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;smtppassword&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;smtpport&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;smtpusername&amp;quot;:&amp;quot;&amp;quot;}&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;smtp configuration to be used when sending out emails&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;tolerations&lt;/td&gt;
- &lt;td&gt;list&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;Tolerations for Layer5 Cloud pods assignment ref: &lt;a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/"&gt;https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/&lt;/a&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</description></item><item><title>Extending the Academy</title><link>/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Cloud Academy&lt;/a&gt; is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and &lt;strong&gt;&lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;&lt;/strong&gt; — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.&lt;/p&gt;
+&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Extending the Academy</title><link>/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Cloud Academy&lt;/a&gt; is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and &lt;strong&gt;&lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;&lt;/strong&gt; — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.&lt;/p&gt;
 &lt;p&gt;This approach transforms learning from passive reading into active, hands-on practice.&lt;/p&gt;
 &lt;p&gt;
 
@@ -602,18 +91,13 @@
  Exploring the Content Catalog
  &lt;a href="#exploring-the-content-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Your journey begins at the Academy&amp;rsquo;s main catalog page, where you can discover all available learning content.&lt;/p&gt;</description></item><item><title>Networking</title><link>/cloud/guides/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;h2 id="considerations-of-peer-to-peer-communication" class="heading-link"&gt;
- Considerations of Peer-to-Peer Communication
- &lt;a href="#considerations-of-peer-to-peer-communication" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud offers central coordination for real-time user presence and its multi-player experience and does so by propagating document (e.g. designs, views, and so on) updates peer-to-peer to all users using WebRTC. This allows for real-time collaboration without the need for a central server. The signaling server is only used to establish the initial connection between peers. The signaling server does not have access to the content of the document.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
+&lt;p&gt;Your journey begins at the Academy&amp;rsquo;s main catalog page, where you can discover all available learning content.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
 
 &lt;h3 id="prerequisites" class="heading-link"&gt;
  Prerequisites
  &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;Layer5 Cloud offers a built-in identity provider (IDP), supporting OIDC for normal users and token-based authentication (access, ID, refresh tokens) for API clients with JSON Web Signature (JWS) for token signing. Layer5 Cloud users can sign-up via email and password in addition to social identity providers (Google and GitHub) via OAuth2. See &lt;a href="/cloud/getting-started/getting-started-with-layer5-account/"&gt;Getting Started with a Layer5 Account&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;Layer5 Cloud identity services include features such as account recovery, email verification, automatica social sign-in account linking, and multi-factor authentication (coming soon).&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
 
@@ -649,24 +133,7 @@
 &lt;li&gt;Challenges = the garden competition - focused skill challenges&lt;/li&gt;
 &lt;li&gt;Certifications = master gardener diploma - expertise validation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Monitoring is essential to operate a reliable Layer5 Cloud deployment. Plan for metrics, logs, traces, dashboards, alerting, and retention so that you can detect and resolve issues quickly, understand capacity, and meet compliance needs.&lt;/p&gt;
-
-&lt;h2 id="objectives" class="heading-link"&gt;
- Objectives
- &lt;a href="#objectives" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Establish observability for core services (API, UI, real-time collaboration, identity, database, cache, ingress) and infrastructure (Kubernetes, nodes, storage, networking)&lt;/li&gt;
-&lt;li&gt;Provide dashboards for SLOs and golden signals (latency, traffic, errors, saturation)&lt;/li&gt;
-&lt;li&gt;Configure actionable alerts with clear ownership and runbooks&lt;/li&gt;
-&lt;li&gt;Size and retain telemetry data according to compliance and cost constraints&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="metrics" class="heading-link"&gt;
- Metrics
- &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/concepts/identity-and-security/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
+&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/concepts/identity-and-security/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -798,8 +265,7 @@
  How to Create Your Challenge
  &lt;a href="#how-to-create-your-challenge" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Challenges are authored the same way as every other Academy content type: as Markdown in your organization&amp;rsquo;s Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Creating Content for the Academy&lt;/a&gt;, which covers the repository setup once for all three content types.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.&lt;/p&gt;</description></item><item><title>Keychains</title><link>/cloud/concepts/identity-and-security/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/keychains/</guid><description>&lt;p&gt;In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;role&lt;/a&gt;. Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.&lt;/p&gt;
-&lt;p&gt;For instance, consider a system shipped default keychain &lt;code&gt;Team Management&lt;/code&gt;, which is a collection of eight keys: &lt;code&gt;View All Teams&lt;/code&gt;, &lt;code&gt;Add User to Team&lt;/code&gt;, &lt;code&gt;Invite User to Team&lt;/code&gt;, &lt;code&gt;Remove User from Team&lt;/code&gt;, &lt;code&gt;Create Team&lt;/code&gt;, &lt;code&gt;Delete Team&lt;/code&gt;, &lt;code&gt;Remove User Role from Team&lt;/code&gt;, and &lt;code&gt;Assign User Role in a Team&lt;/code&gt;. This implies that you can perform all these operations only if your user account possesses a role to which &lt;code&gt;Team Management&lt;/code&gt; keychain is assigned in a given organization.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
+&lt;p&gt;Challenges are authored the same way as every other Academy content type: as Markdown in your organization&amp;rsquo;s Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Creating Content for the Academy&lt;/a&gt;, which covers the repository setup once for all three content types.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="the-multi-repository-model" class="heading-link"&gt;
  The Multi-Repository Model
@@ -811,8 +277,7 @@
  What changed
  &lt;a href="#what-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Previously, signing in with email/password, GitHub, or Google could each create a &lt;strong&gt;separate&lt;/strong&gt; account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &amp;ldquo;disappear&amp;rdquo; when you signed in with another.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/concepts/identity-and-security/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/keys/</guid><description>&lt;p&gt;In Layer5 Cloud, permissions are represented as keys, each serving as a unique identifier for a specific permission. One or more keys can be grouped together and assigned to a &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;keychain&lt;/a&gt;. Then this keychain can be assigned to a &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;role&lt;/a&gt; and that role can be assigned to a user. This is the general flow of how keys are assigned to a user.&lt;/p&gt;
-&lt;p&gt;For instance, consider a system shipped default key &lt;code&gt;Create Organization&lt;/code&gt;, which corresponds to the permission to create an organization in the Cloud. This implies that to create an organization, you need to have &lt;code&gt;Create Organization&lt;/code&gt; key assigned to a keychain, which, in turn, is assigned to a role that&amp;rsquo;s associated with your user account for a given organization.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
+&lt;p&gt;Previously, signing in with email/password, GitHub, or Google could each create a &lt;strong&gt;separate&lt;/strong&gt; account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &amp;ldquo;disappear&amp;rdquo; when you signed in with another.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
 creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.&lt;/p&gt;
 
 &lt;h2 id="getting-started" class="heading-link"&gt;
@@ -837,28 +302,30 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;Access the Creator: Click on the &amp;ldquo;Create New Content&amp;rdquo; card in your Academy dashboard&lt;/li&gt;
 &lt;li&gt;Create Your Content: The wizard will guide you through &lt;strong&gt;5 essential steps&lt;/strong&gt; to create your content template&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Since it&amp;rsquo;s straightforward, let&amp;rsquo;s walk through a practical example to demonstrate the process.&lt;/p&gt;</description></item><item><title>Sessions</title><link>/cloud/concepts/identity-and-security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/sessions/</guid><description>&lt;h2 id="what-sessions-are" class="heading-link"&gt;
- What sessions are
- &lt;a href="#what-sessions-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;A session represents a user authenticated connection to Layer5 Cloud. Sessions are created each time a user successfully authenticates. Sessions expire after a period of 24 hours. Before reaching their expiration time, sessions can be refreshed by an associated refresh token, which is also automatically generated at the time a user authenticates (at the same time that the adjoining session token is generated). Refresh token have an expiration period of 36 hours. Active sessions are automatically refreshed (kept alive) by the refresh token until such time as the refresh token expires, and subsequently, the session token expires thereafter.&lt;/p&gt;</description></item><item><title>Tokens</title><link>/cloud/concepts/identity-and-security/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/tokens/</guid><description>&lt;h2 id="what-tokens-are" class="heading-link"&gt;
- What tokens are
- &lt;a href="#what-tokens-are" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;For authentication and authorization, a token is a digital object that contains information about the identity of the principal making the request and what kind of access they are authorized for. In most authentication flows, the application—or a library used by the application—exchanges a credential for a token, which determines which resources the application is authorized to access.&lt;/p&gt;
-
-&lt;h2 id="access-tokens" class="heading-link"&gt;
- Access tokens
- &lt;a href="#access-tokens" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Layer5 Cloud REST API uses &lt;a href="https://oauth.net/2/"&gt;OAuth 2.0&lt;/a&gt; for authentication and authorization. OAuth 2.0 is a standard protocol for authorization and focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and so on.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
+&lt;p&gt;Since it&amp;rsquo;s straightforward, let&amp;rsquo;s walk through a practical example to demonstrate the process.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
 &lt;p&gt;You need a design open in Designer mode. Designer is the only mode that allows authoring.&lt;/p&gt;
 
 &lt;h2 id="add-a-component" class="heading-link"&gt;
  Add a component
  &lt;a href="#add-a-component" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kanvas offers several ways to place a component. All of them produce the same result: a component in the design, with its configurator open beside it.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
+&lt;p&gt;Kanvas offers several ways to place a component. All of them produce the same result: a component in the design, with its configurator open beside it.&lt;/p&gt;</description></item><item><title>Create and Use an API Token</title><link>/cloud/guides/security/api-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/security/api-tokens/</guid><description>&lt;p&gt;An API token lets a script, a CI job, or a Meshery client act as your user account against Layer5 Cloud. This guide creates one, uses it, rotates it, and revokes it. For what a token can reach and why it never expires, read the &lt;a href="/cloud/concepts/identity-and-security/tokens/"&gt;Tokens concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the &lt;strong&gt;Create Token&lt;/strong&gt; permission to create a token in the interface. Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.&lt;/li&gt;
+&lt;li&gt;You need &lt;strong&gt;View Tokens&lt;/strong&gt; to open the Tokens tab. Every default user role holds it.&lt;/li&gt;
+&lt;li&gt;Decide which consumer gets this token. Create one token per consumer so you can revoke one without breaking the others.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="create-a-token" class="heading-link"&gt;
+ Create a token
+ &lt;a href="#create-a-token" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open the Tokens tab under Security and start a new token. Enter a name and a purpose. Both are labels that appear in the token list: name the consumer (&amp;ldquo;ci-snapshots&amp;rdquo;), and state what it does in the purpose.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Connect GitHub</title><link>/cloud/guides/integrations/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/github-integration/</guid><description>&lt;p&gt;The GitHub integration connects your GitHub account to Layer5 Cloud through the Layer5 GitHub App. Once connected, you can browse the repositories you granted, pick Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs, and import each file as a design. The same connection can also install a pull-request snapshot workflow in your repositories.&lt;/p&gt;
 &lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Along the way you learn what a design is made of, how relationships express the way components depend on each other, and when and how Kanvas saves your work.&lt;/p&gt;</description></item><item><title>Create Your Layer5 Account</title><link>/cloud/getting-started/getting-started-with-layer5-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/getting-started-with-layer5-account/</guid><description>&lt;p&gt;Your Layer5 account is your personal identity on Layer5 Cloud. One account can belong to many organizations and teams, and it is how you import and create designs, collaborate through workspaces, and connect Meshery Servers. In this tutorial you create an account, verify it, sign in, and confirm that Layer5 Cloud has prepared an organization, a team, and a workspace for you. You do not set up any of those yourself before you can start working. The &lt;strong&gt;Check your email&lt;/strong&gt; page and the &lt;strong&gt;Import from GitHub&lt;/strong&gt; first-run page described below arrived in Layer5 Cloud &lt;strong&gt;v1.0.278&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Designs and Components</title><link>/kanvas/concepts/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designs/</guid><description>&lt;p&gt;A design is the unit of work in Kanvas. It is a declarative description of infrastructure that you author on a canvas, save as a versioned document, share with others, and deploy to your clusters. Components are the building blocks of a design: some represent real infrastructure that Kanvas deploys, and others are annotations that only explain the design. Knowing which is which, and how a design behaves when you save, share, and deploy it, tells you exactly what Kanvas will do with your work.&lt;/p&gt;</description></item><item><title>Explore Pods</title><link>/kanvas/tutorials/kubernetes/kubernetes-pods/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-pods/</guid><description>&lt;p&gt;In this tutorial you build a single NGINX Pod in Kanvas, deploy it to a live cluster, expose it with a NodePort Service, and inspect the running Pod in Operator: its details, a shell inside its container, and its log stream. A Pod is the smallest unit Kubernetes schedules, and every workload controller you meet later (Deployments, StatefulSets, CronJobs) exists to create and replace Pods. Working with a bare Pod first shows you exactly what those controllers automate.&lt;/p&gt;</description></item><item><title>Feature Availability by Plan</title><link>/cloud/reference/feature-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/feature-availability/</guid><description>&lt;p&gt;This page tells you which Layer5 Cloud capabilities each Layer5 plan includes. Your plan is one condition for using a capability, not the only one: your role and where your Layer5 Cloud deployment runs also decide what you can do. Those conditions follow the matrix and the limits table.&lt;/p&gt;
@@ -873,7 +340,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  Plans
  &lt;a href="#plans" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization&amp;rsquo;s plan. Current pricing and plan details are listed at &lt;a href="https://layer5.io/pricing"&gt;layer5.io/pricing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>How Layer5 Cloud Works with Meshery and Kanvas</title><link>/cloud/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/architecture/</guid><description>&lt;p&gt;Layer5 Cloud is a &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery remote provider&lt;/a&gt;. Meshery Server delegates identity, tenancy, and persistence to it, and Kanvas, which runs inside Meshery, reaches it through Meshery Server. Knowing what Cloud supplies, and what it does not touch, explains why some features need an account, why a feature can appear for one user and not another, and why Meshery Server, rather than your browser, is what reaches your clusters.&lt;/p&gt;
+&lt;p&gt;The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization&amp;rsquo;s plan. Current pricing and plan details are listed at &lt;a href="https://layer5.io/pricing"&gt;layer5.io/pricing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Helm Chart Values</title><link>/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;p&gt;The &lt;code&gt;layer5-cloud&lt;/code&gt; chart installs the Layer5 Cloud server and, as subcharts from the Ory repository, Kratos and Hydra. The defaults below are those of chart version 0.2.0, which ships with Layer5 Cloud v1.0.278. Run &lt;code&gt;helm show values layer5/layer5-cloud&lt;/code&gt; to print the defaults of the version you install. For the install procedure, see &lt;a href="/cloud/guides/self-hosted/deployment/"&gt;Deploy Layer5 Cloud&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="how-values-reach-the-server" class="heading-link"&gt;
+ How values reach the server
+ &lt;a href="#how-values-reach-the-server" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The chart writes &lt;code&gt;env.*&lt;/code&gt; values into one ConfigMap and one Secret, and the server pod reads both as environment variables. Sensitive values go to the Secret. Any change to either rolls the server pods, because the pod template carries a checksum of both.&lt;/p&gt;</description></item><item><title>How Layer5 Cloud Works with Meshery and Kanvas</title><link>/cloud/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/architecture/</guid><description>&lt;p&gt;Layer5 Cloud is a &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery remote provider&lt;/a&gt;. Meshery Server delegates identity, tenancy, and persistence to it, and Kanvas, which runs inside Meshery, reaches it through Meshery Server. Knowing what Cloud supplies, and what it does not touch, explains why some features need an account, why a feature can appear for one user and not another, and why Meshery Server, rather than your browser, is what reaches your clusters.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/cloud-meshery-provider-architecture.webp" alt="Architecture diagram titled Meshery Architecture - Providers. On the left, a Remote Provider and a Local Provider connect to Meshery in the center. On the right, Meshery connects to Kubernetes clusters, where Meshery Operator runs MeshSync and Meshery Broker, and to adapters." /&gt;
  &lt;figcaption&gt;Read the diagram from left to right. Providers sit on the left: Meshery runs with either a remote provider, which is the role Layer5 Cloud plays, or a local provider. The remote provider handles identity, tenancy, and the storage and sharing of designs. Meshery sits in the middle and mediates every request between the provider and your infrastructure. Your clusters sit on the right, where Meshery Operator runs MeshSync and Meshery Broker to report live state back to Meshery. Meshery, not the provider, is drawn connecting to the clusters and adapters on the right.&lt;/figcaption&gt;
@@ -883,7 +356,59 @@ creating learning paths, challenges, and certifications by collecting all necess
  What Cloud provides to a connected Meshery Server
  &lt;a href="#what-cloud-provides-to-a-connected-meshery-server" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;When a Meshery Server uses Layer5 Cloud as its provider, Cloud supplies four things:&lt;/p&gt;</description></item><item><title>Import and Merge Designs</title><link>/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.&lt;/p&gt;
+&lt;p&gt;When a Meshery Server uses Layer5 Cloud as its provider, Cloud supplies four things:&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;A self-hosted deployment is its own identity provider. Ory Kratos owns user accounts and sign-in, Ory Hydra issues OAuth2 tokens, and the Layer5 Cloud server connects the two to organizations, teams, and roles. Users can sign up with an email address and password, or with Google or GitHub. For how identity fits together as a concept, see &lt;a href="/cloud/concepts/identity-and-security/"&gt;Identity and Security&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="what-the-chart-configures-by-default" class="heading-link"&gt;
+ What the chart configures by default
+ &lt;a href="#what-the-chart-configures-by-default" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Capability&lt;/th&gt;
+ &lt;th&gt;Default&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Password sign-in&lt;/td&gt;
+ &lt;td&gt;On. Minimum 8 characters, checked against known-breached passwords, and rejected when too similar to the account identifier.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Email verification&lt;/td&gt;
+ &lt;td&gt;Required before a password sign-in succeeds. Delivered as a code.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Account recovery&lt;/td&gt;
+ &lt;td&gt;On, delivered as a code.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Social sign-in&lt;/td&gt;
+ &lt;td&gt;Google and GitHub are enabled but have no credentials until you add them.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Login flow lifespan&lt;/td&gt;
+ &lt;td&gt;A started sign-in must finish within 12 hours (&lt;code&gt;720m&lt;/code&gt;).&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Recovery and verification flow lifespan&lt;/td&gt;
+ &lt;td&gt;A recovery or verification request stays valid for 30 days (&lt;code&gt;720h&lt;/code&gt;).&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Registration flow lifespan&lt;/td&gt;
+ &lt;td&gt;A started sign-up must finish within 24 hours.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Session lifespan&lt;/td&gt;
+ &lt;td&gt;Not set by the chart. Kratos applies its own default. See &lt;a href="/cloud/concepts/identity-and-security/sessions/"&gt;Sessions&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Access tokens&lt;/td&gt;
+ &lt;td&gt;JWT, valid 24 hours. Refresh tokens are valid 1000 hours, ID tokens 1 hour, and authorization codes 1 hour.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Change any of these through the &lt;code&gt;kratos.kratos.config&lt;/code&gt; and &lt;code&gt;hydra.hydra.config&lt;/code&gt; values. Both are passed to the Ory services unchanged, so the &lt;a href="https://www.ory.sh/docs/kratos/reference/configuration"&gt;Kratos&lt;/a&gt; and &lt;a href="https://www.ory.sh/docs/hydra/reference/configuration"&gt;Hydra&lt;/a&gt; configuration references apply.&lt;/p&gt;</description></item><item><title>Import and Merge Designs</title><link>/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.&lt;/p&gt;
 &lt;p&gt;Import works in Designer mode. The import action is hidden in Operator mode.&lt;/p&gt;
 
 &lt;h2 id="choose-how-to-import" class="heading-link"&gt;
@@ -2797,7 +2322,79 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;/table&gt;
 &lt;/div&gt;
 
-&lt;p&gt;The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions because of the plan.&lt;/p&gt;</description></item><item><title>Meshery Server Registration</title><link>/cloud/concepts/meshery-server-registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/meshery-server-registration/</guid><description>&lt;p&gt;Layer5 Cloud is a &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery remote provider&lt;/a&gt;. When a Meshery Server uses Layer5 Cloud, hosted or self-hosted, the server registers itself with Cloud on behalf of the signed-in user. Registration is what makes that Meshery Server known to Cloud: it appears as a &lt;code&gt;meshery&lt;/code&gt; connection owned by that user. This page explains what the server sends, how Cloud tells a new server from one it already knows, what survives re-registration, and what each failure means.&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
+&lt;p&gt;The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions because of the plan.&lt;/p&gt;</description></item><item><title>Meshery Server Registration</title><link>/cloud/concepts/meshery-server-registration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/meshery-server-registration/</guid><description>&lt;p&gt;Layer5 Cloud is a &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;Meshery remote provider&lt;/a&gt;. When a Meshery Server uses Layer5 Cloud, hosted or self-hosted, the server registers itself with Cloud on behalf of the signed-in user. Registration is what makes that Meshery Server known to Cloud: it appears as a &lt;code&gt;meshery&lt;/code&gt; connection owned by that user. This page explains what the server sends, how Cloud tells a new server from one it already knows, what survives re-registration, and what each failure means.&lt;/p&gt;</description></item><item><title>Networking</title><link>/cloud/guides/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;p&gt;Plan these network paths before you deploy. Most are ordinary HTTPS traffic through your ingress. Real-time co-editing is the exception: it connects browsers directly to each other, and the deployment only introduces them.&lt;/p&gt;
+
+&lt;h2 id="required-network-paths" class="heading-link"&gt;
+ Required network paths
+ &lt;a href="#required-network-paths" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;From&lt;/th&gt;
+ &lt;th&gt;To&lt;/th&gt;
+ &lt;th&gt;Protocol&lt;/th&gt;
+ &lt;th&gt;Purpose&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browsers, Meshery Servers, API clients&lt;/td&gt;
+ &lt;td&gt;Ingress, public hostname&lt;/td&gt;
+ &lt;td&gt;HTTPS&lt;/td&gt;
+ &lt;td&gt;UI, API, sign-in (&lt;code&gt;/kratos&lt;/code&gt;), and OAuth2 (&lt;code&gt;/hydra&lt;/code&gt;)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browsers&lt;/td&gt;
+ &lt;td&gt;Ingress, &lt;code&gt;/collaboration&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;WebSocket over HTTPS&lt;/td&gt;
+ &lt;td&gt;Co-editing signaling&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;Kratos and Hydra services&lt;/td&gt;
+ &lt;td&gt;HTTP, in cluster&lt;/td&gt;
+ &lt;td&gt;Account and token operations. Default ports: Kratos public 9010 and admin 9011, Hydra public 4444 and admin 4445&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Kratos&lt;/td&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;HTTP, in cluster&lt;/td&gt;
+ &lt;td&gt;Registration hooks, and identity mail when the HTTP courier is selected&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server, Kratos, Hydra&lt;/td&gt;
+ &lt;td&gt;PostgreSQL&lt;/td&gt;
+ &lt;td&gt;TCP 5432&lt;/td&gt;
+ &lt;td&gt;Databases &lt;code&gt;meshery&lt;/code&gt;, &lt;code&gt;kratos&lt;/code&gt;, &lt;code&gt;hydra&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;SMTP relay&lt;/td&gt;
+ &lt;td&gt;SMTP on 25, 465, 587, or 2525&lt;/td&gt;
+ &lt;td&gt;Mail. The relay must resolve to a public address&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;Webhook receivers&lt;/td&gt;
+ &lt;td&gt;HTTPS&lt;/td&gt;
+ &lt;td&gt;Optional webhooks&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;OpenTelemetry collector&lt;/td&gt;
+ &lt;td&gt;OTLP gRPC&lt;/td&gt;
+ &lt;td&gt;Optional traces&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browsers&lt;/td&gt;
+ &lt;td&gt;Public STUN and TURN hosts&lt;/td&gt;
+ &lt;td&gt;UDP and TCP&lt;/td&gt;
+ &lt;td&gt;Direct connections between co-editing browsers&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The ingress must support WebSocket upgrades. A controller or load balancer that closes idle connections shorter than the signaling keep-alive (below) disconnects users from their co-editing session.&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
 &lt;img src="images/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
 
 &lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
@@ -2824,7 +2421,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  How permissions work
  &lt;a href="#how-permissions-work" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;A permission is a named key, such as Deploy Design, that allows one action. Keys are grouped into keychains, and a role bundles one or more keychains. Your organization assigns roles to users. Before Kanvas offers certain actions, it checks whether the user holds the matching key. Kanvas uses the shared Layer5 permission set and defines no permissions of its own. See &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;Roles&lt;/a&gt; and &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;Keychains&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Review a Design with Comments</title><link>/kanvas/guides/collaborating/reviewing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/reviewing-designs/</guid><description>&lt;p&gt;A comment is a note on the canvas that holds a threaded conversation. Use comments to give feedback, record the reason behind a configuration choice, or ask a teammate a question next to the component it concerns. A comment is part of the design: it saves with the design, appears live to everyone who has the design open, and travels with clones and exports.&lt;/p&gt;
+&lt;p&gt;A permission is a named key, such as Deploy Design, that allows one action. Keys are grouped into keychains, and a role bundles one or more keychains. Your organization assigns roles to users. Before Kanvas offers certain actions, it checks whether the user holds the matching key. Kanvas uses the shared Layer5 permission set and defines no permissions of its own. See &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;Roles&lt;/a&gt; and &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;Keychains&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Provider Initialization</title><link>/cloud/guides/self-hosted/deployment/provider-initialization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/deployment/provider-initialization/</guid><description>&lt;p&gt;A new deployment has no users, so nobody can sign in to administer it. Provider initialization solves that: when the server starts with &lt;code&gt;INIT_CONFIG&lt;/code&gt; set, it creates the &lt;strong&gt;provider organization&lt;/strong&gt; and its first &lt;strong&gt;Provider Admin&lt;/strong&gt;. From that account, you create organizations, assign roles, and manage the deployment. See &lt;a href="/cloud/reference/default-permissions/"&gt;Roles and Permissions&lt;/a&gt; for what a Provider Admin can do.&lt;/p&gt;
+
+&lt;h2 id="format" class="heading-link"&gt;
+ Format
+ &lt;a href="#format" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;INIT_CONFIG&lt;/code&gt; holds a YAML document. In Helm, set it as a multiline string in &lt;code&gt;env.initConfig&lt;/code&gt;, or load it from a file with &lt;code&gt;--set-file env.initConfig=provider-init.yaml&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Relationships</title><link>/kanvas/concepts/relationships/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationships/</guid><description>&lt;p&gt;A relationship records how two components connect: one runs inside the other, one sends traffic to the other, one mounts the other&amp;rsquo;s storage, or both carry the same label. Relationships do more than draw lines. Each relationship definition names the configuration fields on both sides that must agree, so Kanvas can write values from one component into the other and keep the design consistent as you edit. The definitions come from the Meshery registry, not from Kanvas, so the set of relationships available to you depends on the models you use.&lt;/p&gt;</description></item><item><title>Review a Design with Comments</title><link>/kanvas/guides/collaborating/reviewing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/collaborating/reviewing-designs/</guid><description>&lt;p&gt;A comment is a note on the canvas that holds a threaded conversation. Use comments to give feedback, record the reason behind a configuration choice, or ask a teammate a question next to the component it concerns. A comment is part of the design: it saves with the design, appears live to everyone who has the design open, and travels with clones and exports.&lt;/p&gt;
 &lt;p&gt;For how comments fit with live editing and access, read &lt;a href="/kanvas/concepts/collaboration/"&gt;Collaboration Model&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Roles and Permissions</title><link>/cloud/reference/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/default-permissions/</guid><description>&lt;p&gt;This page tells you which permissions each default Layer5 Cloud role holds. Use it to find out why an action is missing for a user and which role grants it. For how roles, keychains, and permissions fit together, see &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;Roles&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id="how-permission-checks-work" class="heading-link"&gt;
@@ -2832,7 +2435,23 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;a href="#how-permission-checks-work" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;A permission is a named key that allows one action, such as Create Team. A keychain groups keys, and a role groups keychains. Layer5 Cloud checks the key, never the role name. Before it runs a guarded action, Cloud resolves the organization the request names, then checks whether the user holds the key through a role in that organization. A user&amp;rsquo;s permissions are the union of the keys from every role the user holds there.&lt;/p&gt;</description></item><item><title>Save Designs</title><link>/kanvas/guides/designs/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/saving-designs/</guid><description>&lt;p&gt;Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.&lt;/p&gt;
-&lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Set Up Your Organization</title><link>/cloud/getting-started/setting-up-your-organization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/setting-up-your-organization/</guid><description>&lt;p&gt;An organization becomes useful when more than one person works in it. In this tutorial you invite a teammate by email, create a team, create a workspace, give the team that workspace, and move one of your designs into it. By the end you know which object controls what: the organization decides who is in, teams group people, and workspaces decide which shared resources those people reach.&lt;/p&gt;
+&lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Review and Sign Out Sessions</title><link>/cloud/guides/security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/security/sessions/</guid><description>&lt;p&gt;Every sign-in to Layer5 Cloud creates a session, on every browser, device, and Meshery Server you use. This guide reviews your sessions and ends the ones you do not want. For how long sessions last and what a session can reach, read the &lt;a href="/cloud/concepts/identity-and-security/sessions/"&gt;Sessions concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the &lt;strong&gt;View Sessions&lt;/strong&gt; permission to open the Sessions tab. Every default user role holds it.&lt;/li&gt;
+&lt;li&gt;Ending another session from the tab requires the &lt;strong&gt;Delete Token&lt;/strong&gt; permission, which Organization Admin and Provider Admin hold by default. Other roles see the Logout control disabled. This is how the interface works today.&lt;/li&gt;
+&lt;li&gt;You can end only your own sessions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="review-your-sessions" class="heading-link"&gt;
+ Review your sessions
+ &lt;a href="#review-your-sessions" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open the Sessions tab under Security. Each row is one sign-in and shows its ID, name, purpose, and creation date. Search filters by name or purpose, and the newest sessions appear first.&lt;/p&gt;</description></item><item><title>Set Up Your Organization</title><link>/cloud/getting-started/setting-up-your-organization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/setting-up-your-organization/</guid><description>&lt;p&gt;An organization becomes useful when more than one person works in it. In this tutorial you invite a teammate by email, create a team, create a workspace, give the team that workspace, and move one of your designs into it. By the end you know which object controls what: the organization decides who is in, teams group people, and workspaces decide which shared resources those people reach.&lt;/p&gt;
 
 &lt;h2 id="before-you-begin" class="heading-link"&gt;
  Before you begin
@@ -2860,14 +2479,73 @@ creating learning paths, challenges, and certifications by collecting all necess
  Start a stream
  &lt;a href="#start-a-stream" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The action is named &lt;strong&gt;Initiate Log Session&lt;/strong&gt; and is offered on &lt;strong&gt;Pod&lt;/strong&gt; and &lt;strong&gt;Container&lt;/strong&gt; resources only. Right-click the resource, or select it and use the action in the header of the Details panel. The stream opens in the same bottom-left panel as &lt;a href="/kanvas/guides/operating/interactive-terminal/"&gt;terminal sessions&lt;/a&gt;, as a tab.&lt;/p&gt;</description></item><item><title>Build a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;In this tutorial you follow Zara Osei, Team Admin of the Orbital Labs Infrastructure Team, as she models the team&amp;rsquo;s Google Cloud data pipeline in Kanvas. The pipeline ingests events through Pub/Sub, processes them with Dataflow, writes analytical results to BigQuery, archives raw payloads to Cloud Storage, and runs alongside a GKE cluster. The result is a design named &lt;code&gt;data-pipeline-gcp&lt;/code&gt;: a reviewable, shareable model of the architecture that lives in the team&amp;rsquo;s workspace instead of in a slide deck.&lt;/p&gt;</description></item><item><title>Canvas Objects</title><link>/kanvas/reference/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/canvas-objects/</guid><description>&lt;p&gt;Everything on a Designer canvas is an object, and every object answers to the same small set of actions: add, select, copy, duplicate, lock, restyle, resize and delete. This page lists each object kind, each action, every style option and the limits that apply. Edges - the lines that connect objects - have their own section at the end.&lt;/p&gt;
+&lt;p&gt;The action is named &lt;strong&gt;Initiate Log Session&lt;/strong&gt; and is offered on &lt;strong&gt;Pod&lt;/strong&gt; and &lt;strong&gt;Container&lt;/strong&gt; resources only. Right-click the resource, or select it and use the action in the header of the Details panel. The stream opens in the same bottom-left panel as &lt;a href="/kanvas/guides/operating/interactive-terminal/"&gt;terminal sessions&lt;/a&gt;, as a tab.&lt;/p&gt;</description></item><item><title>Security Reference</title><link>/cloud/reference/security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/security/</guid><description>&lt;p&gt;This page states how keys, keychains, tokens, and sessions behave, exactly, as of Layer5 Cloud v1.0.278. For the model, read the &lt;a href="/cloud/concepts/identity-and-security/keys/"&gt;Keys&lt;/a&gt;, &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;Keychains&lt;/a&gt;, &lt;a href="/cloud/concepts/identity-and-security/sessions/"&gt;Sessions&lt;/a&gt;, and &lt;a href="/cloud/concepts/identity-and-security/tokens/"&gt;Tokens&lt;/a&gt; concepts. For tasks, use the &lt;a href="/cloud/guides/security/"&gt;security guides&lt;/a&gt;. For base URL, authentication, and the organization header, see the &lt;a href="/cloud/reference/api-reference/"&gt;Cloud API&lt;/a&gt;. All paths below sit under &lt;code&gt;/api&lt;/code&gt; unless noted.&lt;/p&gt;
+
+&lt;h2 id="permission-keys" class="heading-link"&gt;
+ Permission keys
+ &lt;a href="#permission-keys" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Provider Admin holds every key. The table lists the default holders of the other roles. &amp;ldquo;Interface&amp;rdquo; means the control or tab is disabled or replaced by a permission error screen. &amp;ldquo;Server&amp;rdquo; means the Layer5 Cloud server refuses the request with HTTP 403.&lt;/p&gt;</description></item><item><title>Build a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;In this tutorial you follow Zara Osei, Team Admin of the Orbital Labs Infrastructure Team, as she models the team&amp;rsquo;s Google Cloud data pipeline in Kanvas. The pipeline ingests events through Pub/Sub, processes them with Dataflow, writes analytical results to BigQuery, archives raw payloads to Cloud Storage, and runs alongside a GKE cluster. The result is a design named &lt;code&gt;data-pipeline-gcp&lt;/code&gt;: a reviewable, shareable model of the architecture that lives in the team&amp;rsquo;s workspace instead of in a slide deck.&lt;/p&gt;</description></item><item><title>Canvas Objects</title><link>/kanvas/reference/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/canvas-objects/</guid><description>&lt;p&gt;Everything on a Designer canvas is an object, and every object answers to the same small set of actions: add, select, copy, duplicate, lock, restyle, resize and delete. This page lists each object kind, each action, every style option and the limits that apply. Edges - the lines that connect objects - have their own section at the end.&lt;/p&gt;
 &lt;p&gt;Designer mode only. In Operator mode you cannot add, edit, duplicate, delete or rename objects, and live nodes discovered from a cluster are read-only in every mode. See &lt;a href="/kanvas/concepts/designer/"&gt;Designer&lt;/a&gt; for how the two modes differ.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
 
 &lt;h2 id="what-you-can-clone" class="heading-link"&gt;
  What you can clone
  &lt;a href="#what-you-can-clone" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The server clones only designs whose visibility is public or published. A request for any other design fails with 403 &amp;ldquo;unauthorized to clone design&amp;rdquo;. That includes your own private designs. To copy one of those, open it and use Save as. See &lt;a href="/kanvas/guides/designs/saving-designs/"&gt;Save Designs&lt;/a&gt;. A missing source design returns 500 &amp;ldquo;could not find design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Deploy a Design</title><link>/kanvas/guides/deploying/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/deploying-designs/</guid><description>&lt;p&gt;Deploying applies the components in a design to the Kubernetes clusters in the environments you choose. Meshery Server does the work with the kubeconfig it holds: it creates each object, or updates it in place when it already exists. Deploying the same design again is safe and idempotent.&lt;/p&gt;
+&lt;p&gt;The server clones only designs whose visibility is public or published. A request for any other design fails with 403 &amp;ldquo;unauthorized to clone design&amp;rdquo;. That includes your own private designs. To copy one of those, open it and use Save as. See &lt;a href="/kanvas/guides/designs/saving-designs/"&gt;Save Designs&lt;/a&gt;. A missing source design returns 500 &amp;ldquo;could not find design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Build a Custom Keychain</title><link>/cloud/guides/security/custom-keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/security/custom-keychains/</guid><description>&lt;p&gt;A custom keychain bundles the keys that a custom role needs. This guide creates a keychain, changes its keys, and deletes it. It is written for Provider Admins and self-hosted operators, because only they can complete the whole path from keys to users. For the model, read the &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;Keychains concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the &lt;strong&gt;Create Keychain&lt;/strong&gt;, &lt;strong&gt;Edit Keychain&lt;/strong&gt;, and &lt;strong&gt;Delete Keychain&lt;/strong&gt; permissions to use the matching controls. Provider Admin holds all three. No other default role does.&lt;/li&gt;
+&lt;li&gt;A keychain does nothing until a role includes it. Creating and editing roles is a Provider Admin action. On hosted Layer5 Cloud an organization cannot complete this path alone. On a self-hosted deployment, your Provider Admins can.&lt;/li&gt;
+&lt;li&gt;Keychains are not organization-scoped. A role that includes your keychain grants its keys to every user who holds that role, in every organization.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="create-a-keychain" class="heading-link"&gt;
+ Create a keychain
+ &lt;a href="#create-a-keychain" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open the Keychains tab under Security and create a keychain. Give it a name and choose the keys it bundles. Layer5 Cloud creates the keychain and adds each key to it. If adding a key fails, the interface reports it as &amp;ldquo;Failed to add key to keychain&amp;rdquo;. Open the keychain and confirm every key you chose is present.&lt;/p&gt;</description></item><item><title>Customize Webhooks</title><link>/cloud/guides/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 Cloud calls an HTTP endpoint you choose when three things happen: a person asks for help, a Provider Admin decides a signup request, and a person gains Kanvas access. The calls let you route those events into your help desk, your chat, or your onboarding automation. On a self-hosted deployment you set the three endpoints; none is set by default, and an unset webhook does nothing useful.&lt;/p&gt;
+
+&lt;h2 id="the-three-webhooks" class="heading-link"&gt;
+ The three webhooks
+ &lt;a href="#the-three-webhooks" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Chart value&lt;/th&gt;
+ &lt;th&gt;Fires when&lt;/th&gt;
+ &lt;th&gt;Payload&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookHelpAndSupport&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Someone submits the Help and Support form in Layer5 Cloud, or a support request raised in Kanvas reaches your deployment&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;memberFormOne&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookSignupRequest&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A Provider Admin approves or denies a signup request&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;signupData&lt;/code&gt; and &lt;code&gt;newUser&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookKanvasEntitlement&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A new user registers, a user completes a first brokered social sign-in, or a role assignment gives a user Kanvas access&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;signupData&lt;/code&gt; and &lt;code&gt;newUser&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="set-the-endpoints" class="heading-link"&gt;
+ Set the endpoints
+ &lt;a href="#set-the-endpoints" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Add the three URLs to your Helm values and upgrade. The values are written into the server&amp;rsquo;s ConfigMap, so the pods restart when you change them.&lt;/p&gt;</description></item><item><title>Deploy a Design</title><link>/kanvas/guides/deploying/deploying-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/deploying/deploying-designs/</guid><description>&lt;p&gt;Deploying applies the components in a design to the Kubernetes clusters in the environments you choose. Meshery Server does the work with the kubeconfig it holds: it creates each object, or updates it in place when it already exists. Deploying the same design again is safe and idempotent.&lt;/p&gt;
 
 &lt;h2 id="before-you-start" class="heading-link"&gt;
  Before you start
@@ -2879,7 +2557,34 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; The Deploy Design permission gates the action. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;. Selecting environments from the empty state also needs the Create Environment and Edit Environment permissions.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A provider session.&lt;/strong&gt; Without a signed-in session the request fails before any event is raised.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.&lt;/p&gt;</description></item><item><title>Explore Services</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;p&gt;In this tutorial you put three Services in front of running workloads: a ClusterIP Service in front of a Deployment, a NodePort Service in front of one Pod, and a LoadBalancer Service in front of another. Pods come and go and change IP addresses every time they are replaced. A Service gives a changing set of Pods one stable address and finds them by label, and its type decides who can reach that address. Building all three side by side makes the difference between the types concrete.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Run a Performance Test</title><link>/kanvas/guides/operating/performance-testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/operating/performance-testing/</guid><description>&lt;p&gt;Operator mode shows a live picture of your clusters. A performance test adds the missing signal: how a service responds under load. You select a Service or Ingress on the canvas, Kanvas seeds a test from it, and Meshery runs the load and keeps the result as a reusable performance profile.&lt;/p&gt;
+&lt;p&gt;Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.&lt;/p&gt;</description></item><item><title>Explore Services</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;p&gt;In this tutorial you put three Services in front of running workloads: a ClusterIP Service in front of a Deployment, a NodePort Service in front of one Pod, and a LoadBalancer Service in front of another. Pods come and go and change IP addresses every time they are replaced. A Service gives a changing set of Pods one stable address and finds them by label, and its type decides who can reach that address. Building all three side by side makes the difference between the types concrete.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
+
+&lt;h2 id="health-endpoints" class="heading-link"&gt;
+ Health endpoints
+ &lt;a href="#health-endpoints" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Endpoint&lt;/th&gt;
+ &lt;th&gt;Answers&lt;/th&gt;
+ &lt;th&gt;Meaning&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;GET /healthz&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;200&lt;/code&gt; with the text &lt;code&gt;Cloud is live&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;The process is running. The chart uses it for the liveness probe.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;GET /readyz&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;200&lt;/code&gt; when ready, &lt;code&gt;503&lt;/code&gt; before&lt;/td&gt;
+ &lt;td&gt;The server finished startup and is serving. The chart uses it for the readiness and startup probes.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Both endpoints are unauthenticated. The startup probe allows 20 failed checks at 10-second intervals, so a slow start gets about 200 seconds before Kubernetes restarts the pod. Database migrations run before the server reports ready, so an upgrade that carries a large migration can approach that limit.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Run a Performance Test</title><link>/kanvas/guides/operating/performance-testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/operating/performance-testing/</guid><description>&lt;p&gt;Operator mode shows a live picture of your clusters. A performance test adds the missing signal: how a service responds under load. You select a Service or Ingress on the canvas, Kanvas seeds a test from it, and Meshery runs the load and keeps the result as a reusable performance profile.&lt;/p&gt;
 
 &lt;h2 id="before-you-start" class="heading-link"&gt;
  Before you start
@@ -3708,7 +3413,13 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;&lt;strong&gt;An environment is a deploy target.&lt;/strong&gt; When you deploy a design, you choose the environment to deploy it to, and the design deploys to that environment&amp;rsquo;s connections.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;An environment is how a workspace exposes connections.&lt;/strong&gt; A workspace never holds connections directly. It holds environments, and teams assigned to the workspace reach the connections inside them.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Group connections the way you deploy: one environment per pipeline stage, region, or purpose, so that choosing a target means choosing one environment instead of a list of clusters.&lt;/p&gt;</description></item><item><title>Manage Teams</title><link>/cloud/guides/organizations/managing-teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/managing-teams/</guid><description>&lt;p&gt;This guide covers the administrator tasks for teams. For what a team is and how it grants access, read the &lt;a href="/cloud/concepts/identity-and-security/teams/"&gt;Teams concept&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Group connections the way you deploy: one environment per pipeline stage, region, or purpose, so that choosing a target means choosing one environment instead of a list of clusters.&lt;/p&gt;</description></item><item><title>Keys</title><link>/cloud/concepts/identity-and-security/keys/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/keys/</guid><description>&lt;p&gt;A key is a named permission for exactly one action, such as Create Organization, Approve Catalog Request, or Download Token. Every authorization decision in Layer5 Cloud comes down to one question: does this user hold the key this action requires, in this organization? Understanding keys tells you why a user can or cannot do something, and whether the model fits the access rules you need.&lt;/p&gt;
+
+&lt;h2 id="how-a-key-reaches-a-user" class="heading-link"&gt;
+ How a key reaches a user
+ &lt;a href="#how-a-key-reaches-a-user" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Keys roll up in three layers. A &lt;a href="/cloud/concepts/identity-and-security/keychains/"&gt;keychain&lt;/a&gt; groups related keys, a &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;role&lt;/a&gt; groups keychains, and a user holds roles in an organization or a team. A user never receives a key directly: granting a key means placing it in a keychain that belongs to a role the user holds.&lt;/p&gt;</description></item><item><title>Manage Teams</title><link>/cloud/guides/organizations/managing-teams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/managing-teams/</guid><description>&lt;p&gt;This guide covers the administrator tasks for teams. For what a team is and how it grants access, read the &lt;a href="/cloud/concepts/identity-and-security/teams/"&gt;Teams concept&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -5690,7 +5401,7 @@ creating learning paths, challenges, and certifications by collecting all necess
  Where Operator data comes from
  &lt;a href="#where-operator-data-comes-from" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kanvas does not talk to your clusters directly. Four pieces sit between a cluster and the canvas:&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
+&lt;p&gt;Kanvas does not talk to your clusters directly. Four pieces sit between a cluster and the canvas:&lt;/p&gt;</description></item><item><title>Troubleshoot Email Delivery</title><link>/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;p&gt;Layer5 Cloud sends two kinds of mail. &lt;strong&gt;Application mail&lt;/strong&gt; (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization&amp;rsquo;s own mail server when one is turned on, and otherwise through the &lt;strong&gt;shared mail server&lt;/strong&gt; you configure in the chart&amp;rsquo;s &lt;code&gt;smtp&lt;/code&gt; values. &lt;strong&gt;Identity mail&lt;/strong&gt; (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See &lt;a href="/cloud/guides/self-hosted/planning/#mail"&gt;Plan a Deployment&lt;/a&gt;. This guide helps you find which of those paths is failing and why.&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
 
 &lt;h2 id="add-labels-and-annotations" class="heading-link"&gt;
  Add labels and annotations
@@ -5702,7 +5413,13 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;&lt;strong&gt;Access&lt;/strong&gt; - the design&amp;rsquo;s visibility and its grant list decide who can open and change the design.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Conversation (comments)&lt;/strong&gt; - comment threads that live inside the design itself.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The three layers are independent. A live session forms between whoever has the design open at the same time. Access decides who can open the design in the first place. Comments are part of the design&amp;rsquo;s content, so they follow the design wherever it goes. Keeping these layers apart in your head explains most of what you see when a team works on one design.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/reference/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
+&lt;p&gt;The three layers are independent. A live session forms between whoever has the design open at the same time. Access decides who can open the design in the first place. Comments are part of the design&amp;rsquo;s content, so they follow the design wherever it goes. Keeping these layers apart in your head explains most of what you see when a team works on one design.&lt;/p&gt;</description></item><item><title>Keychains</title><link>/cloud/concepts/identity-and-security/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/keychains/</guid><description>&lt;p&gt;A keychain is a named bundle of keys. It sits between the single permission and the role a person holds:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;a href="/cloud/concepts/identity-and-security/keys/"&gt;key&lt;/a&gt; allows one action, such as Create Token.&lt;/li&gt;
+&lt;li&gt;A keychain groups related keys, such as everything needed to manage teams.&lt;/li&gt;
+&lt;li&gt;A &lt;a href="/cloud/concepts/identity-and-security/roles/"&gt;role&lt;/a&gt; groups keychains, and users hold roles in an organization or team.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A user&amp;rsquo;s effective keys in an organization are the union of the keys in every keychain of every role the user holds there. A keychain grants nothing by itself. It takes effect only through a role that includes it.&lt;/p&gt;</description></item><item><title>Layout and Layers</title><link>/kanvas/reference/layout-and-layers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/layout-and-layers/</guid><description>&lt;p&gt;Two controls decide how a design reads on screen. &lt;strong&gt;Layout&lt;/strong&gt; arranges the components - where they sit relative to one another. &lt;strong&gt;Layers&lt;/strong&gt; decide which of them are drawn at all.&lt;/p&gt;
 &lt;p&gt;Both are recorded in the design rather than in your browser, so they travel with it: a layout writes the components&amp;rsquo; positions, and the Layers panel writes their visibility into the design&amp;rsquo;s preferences. Anyone else opening the design sees the same arrangement and the same components hidden. What neither touches is &lt;strong&gt;configuration&lt;/strong&gt; - a hidden component is still part of the design and is still deployed, and re-running a layout changes only where components sit.&lt;/p&gt;</description></item><item><title>Deploy a PHP Guestbook with Redis</title><link>/kanvas/tutorials/kubernetes/deploy-php-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-php-redis/</guid><description>&lt;p&gt;In this tutorial you build the Kubernetes guestbook: a PHP frontend that writes entries to a Redis leader and reads them from Redis followers. Six manifests from the Kubernetes examples become one Kanvas design, which you deploy, inspect in Operator, scale, and remove. The application is small, but it carries the pattern behind most multi-tier systems: each tier runs as a Deployment, each tier is reached through a Service, and tiers find each other by Service name, never by Pod address.&lt;/p&gt;</description></item><item><title>Publish Designs</title><link>/kanvas/guides/designs/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/publishing-designs/</guid><description>&lt;p&gt;Publishing makes a design discoverable in the Layer5 Cloud catalog, where anyone can view and &lt;a href="/kanvas/guides/designs/cloning-a-design/"&gt;clone&lt;/a&gt; it. Publishing is separate from visibility: making a design public does not publish it.&lt;/p&gt;
 
 &lt;h2 id="visibility-and-publication-states" class="heading-link"&gt;
@@ -5748,7 +5465,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  What each mode trades away
  &lt;a href="#what-each-mode-trades-away" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kanvas has four render modes. Each of the first three gives up something the mode above it draws.&lt;/p&gt;</description></item><item><title>Deploy WordPress and MySQL with Persistent Volumes</title><link>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</guid><description>&lt;p&gt;In this tutorial you deploy WordPress backed by a MySQL database, and you give both tiers storage that outlives their Pods. You import the two Kubernetes example manifests into one design, add the Secret that holds the database password, and add the PersistentVolumes that the claims bind to. Stateless Pods can be replaced at any moment; a database cannot lose its files when that happens. This tutorial shows how Kubernetes separates the data from the Pod, and exactly which pieces a deploy creates and an undeploy removes.&lt;/p&gt;</description></item><item><title>Deploy Cassandra with a StatefulSet</title><link>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;p&gt;In this tutorial you deploy Apache Cassandra as a three-node ring. A Deployment treats its Pods as interchangeable; Cassandra cannot, because each node owns part of the data and other nodes must find it at a known address. A StatefulSet gives every replica a fixed ordinal, a fixed DNS name, and its own volume, and starts the replicas one at a time. You import the Kubernetes example manifests into a Kanvas design, adapt them to your cluster, deploy, and watch the ring form.&lt;/p&gt;</description></item><item><title>How Kanvas Works with Meshery and Layer5 Cloud</title><link>/kanvas/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/architecture/</guid><description>&lt;p&gt;Kanvas is not a standalone service. It is an extension that runs inside Meshery, relies on Meshery Server to reach your clusters, and relies on a remote provider, Layer5 Cloud, to store and share designs. Knowing which part does what explains why some features need a cluster connection, why others need an account, and why the hosted Kanvas at kanvas.new offers a subset of what a self-hosted Meshery deployment offers.&lt;/p&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;p&gt;Kanvas binds every shortcut to both modifier keys. On Windows and Linux use &lt;kbd&gt;Ctrl&lt;/kbd&gt;. On macOS use &lt;kbd&gt;Cmd&lt;/kbd&gt;. The tables write the modifier as &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;Kanvas has four render modes. Each of the first three gives up something the mode above it draws.&lt;/p&gt;</description></item><item><title>Sessions</title><link>/cloud/concepts/identity-and-security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/sessions/</guid><description>&lt;p&gt;A session is the credential Layer5 Cloud issues each time someone signs in. It is what keeps a browser tab, a second device, or a connected Meshery Server signed in, and it is what you end when you want one of those sign-ins to stop working. Sessions expire on their own; API tokens do not.&lt;/p&gt;
+
+&lt;h2 id="one-session-per-sign-in" class="heading-link"&gt;
+ One session per sign-in
+ &lt;a href="#one-session-per-sign-in" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Every sign-in creates its own session. Each browser, device, and Meshery Server that signs in through Layer5 Cloud holds a separate session with its own expiry, and any number of them can be active at once. Ending one session leaves the others untouched.&lt;/p&gt;</description></item><item><title>Deploy WordPress and MySQL with Persistent Volumes</title><link>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/</guid><description>&lt;p&gt;In this tutorial you deploy WordPress backed by a MySQL database, and you give both tiers storage that outlives their Pods. You import the two Kubernetes example manifests into one design, add the Secret that holds the database password, and add the PersistentVolumes that the claims bind to. Stateless Pods can be replaced at any moment; a database cannot lose its files when that happens. This tutorial shows how Kubernetes separates the data from the Pod, and exactly which pieces a deploy creates and an undeploy removes.&lt;/p&gt;</description></item><item><title>Deploy Cassandra with a StatefulSet</title><link>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/</guid><description>&lt;p&gt;In this tutorial you deploy Apache Cassandra as a three-node ring. A Deployment treats its Pods as interchangeable; Cassandra cannot, because each node owns part of the data and other nodes must find it at a known address. A StatefulSet gives every replica a fixed ordinal, a fixed DNS name, and its own volume, and starts the replicas one at a time. You import the Kubernetes example manifests into a Kanvas design, adapt them to your cluster, deploy, and watch the ring form.&lt;/p&gt;</description></item><item><title>How Kanvas Works with Meshery and Layer5 Cloud</title><link>/kanvas/concepts/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/architecture/</guid><description>&lt;p&gt;Kanvas is not a standalone service. It is an extension that runs inside Meshery, relies on Meshery Server to reach your clusters, and relies on a remote provider, Layer5 Cloud, to store and share designs. Knowing which part does what explains why some features need a cluster connection, why others need an account, and why the hosted Kanvas at kanvas.new offers a subset of what a self-hosted Meshery deployment offers.&lt;/p&gt;</description></item><item><title>Keyboard Shortcuts</title><link>/kanvas/reference/keyboard-shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/keyboard-shortcuts/</guid><description>&lt;p&gt;Kanvas binds every shortcut to both modifier keys. On Windows and Linux use &lt;kbd&gt;Ctrl&lt;/kbd&gt;. On macOS use &lt;kbd&gt;Cmd&lt;/kbd&gt;. The tables write the modifier as &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt;.&lt;/p&gt;
 &lt;p&gt;Kanvas ignores shortcuts while you type in a text field, so typing a label, a comment or a search never triggers one. Open the same list inside the app with &lt;kbd&gt;Ctrl&lt;/kbd&gt;/&lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;/&lt;/kbd&gt;.&lt;/p&gt;
 
 &lt;h2 id="modes-and-navigation" class="heading-link"&gt;
@@ -5860,7 +5583,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Two limits apply to every award:&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow</title><link>/kanvas/concepts/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kubernetes-request-flow/</guid><description>&lt;p&gt;A request to an application in Kubernetes passes through several objects before it reaches a process in a container, and none of those objects is wired to the next by a fixed address. Each layer finds the next one by name or by label at the moment the request arrives. Knowing that path, and what each layer is responsible for, turns &amp;ldquo;why am I not getting a response?&amp;rdquo; into a short list of places to look. This page walks the path from the client to the container, explains why labels and selectors are what hold it together, and shows how the same path appears in a Kanvas design.&lt;/p&gt;</description></item><item><title>Operator Views</title><link>/kanvas/reference/views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/views/</guid><description>&lt;p&gt;A view is to Operator mode what a design is to Designer mode: a named, saved definition you reopen later. A view stores &lt;strong&gt;which resources to show&lt;/strong&gt;, not the resources themselves. Opening a view re-applies its filters to the current inventory of your connected clusters.&lt;/p&gt;
+&lt;p&gt;Two limits apply to every award:&lt;/p&gt;</description></item><item><title>Tokens</title><link>/cloud/concepts/identity-and-security/tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/tokens/</guid><description>&lt;p&gt;An API token lets software act as you. Scripts, CI/CD pipelines, &lt;code&gt;mesheryctl&lt;/code&gt; and other Meshery clients present it to Layer5 Cloud instead of signing in through a browser. Because a token carries your full authority and never expires, deciding how many tokens to create, who holds them and when to delete them is a security decision. This page explains how tokens behave so you can make it.&lt;/p&gt;
+
+&lt;h2 id="what-a-token-is" class="heading-link"&gt;
+ What a token is
+ &lt;a href="#what-a-token-is" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A token is a credential bound to your user account. A client sends it as a bearer token in the &lt;code&gt;Authorization&lt;/code&gt; header of each request; the &lt;a href="/cloud/reference/api-reference/"&gt;Cloud API reference&lt;/a&gt; shows the exact form.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow</title><link>/kanvas/concepts/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/kubernetes-request-flow/</guid><description>&lt;p&gt;A request to an application in Kubernetes passes through several objects before it reaches a process in a container, and none of those objects is wired to the next by a fixed address. Each layer finds the next one by name or by label at the moment the request arrives. Knowing that path, and what each layer is responsible for, turns &amp;ldquo;why am I not getting a response?&amp;rdquo; into a short list of places to look. This page walks the path from the client to the container, explains why labels and selectors are what hold it together, and shows how the same path appears in a Kanvas design.&lt;/p&gt;</description></item><item><title>Operator Views</title><link>/kanvas/reference/views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/views/</guid><description>&lt;p&gt;A view is to Operator mode what a design is to Designer mode: a named, saved definition you reopen later. A view stores &lt;strong&gt;which resources to show&lt;/strong&gt;, not the resources themselves. Opening a view re-applies its filters to the current inventory of your connected clusters.&lt;/p&gt;
 
 &lt;h2 id="what-a-view-stores" class="heading-link"&gt;
  What a view stores
@@ -33741,17 +33470,7 @@ Thank you to our contributors for making this release possible:
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/bb6J--aApk8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;</description></item><item><title>Design Reviews: Adding Comments 1</title><link>/videos/template-category/sub-category/video-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/template-category/sub-category/video-1/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/bb6J--aApk8?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
- &lt;/div&gt;</description></item><item><title>Email / SMTP Troubleshooting</title><link>/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;h1 id="email-debugging-guide-for-layer5-cloud" class="heading-link"&gt;
- Email Debugging Guide for Layer5 Cloud
- &lt;a href="#email-debugging-guide-for-layer5-cloud" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.&lt;/p&gt;
-
-&lt;h2 id="overview" class="heading-link"&gt;
- Overview
- &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.&lt;/p&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/designer-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/designer-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
+ &lt;/div&gt;</description></item><item><title>Kanvas Designer Overview</title><link>/videos/getting-started/basics/designer-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/designer-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qaoYRP3oLok?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
  &lt;/div&gt;</description></item><item><title>Kanvas Operator Overview</title><link>/videos/getting-started/basics/operator-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/videos/getting-started/basics/operator-overview/</guid><description>&lt;div class="yt-embed-container"&gt;
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/QANUEikEwQY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;

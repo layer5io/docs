@@ -9,6 +9,7 @@ These pages state what Layer5 Cloud does, exactly: which plan includes a capabil
 |---|---|
 | [Feature Availability by Plan](/cloud/reference/feature-availability/) | Find out which plan includes a capability and which plan limits Cloud enforces. |
 | [Roles and Permissions](/cloud/reference/default-permissions/) | Find out which default role holds a permission. |
+| [Security Reference](/cloud/reference/security/) | Check which keys hold each security permission, how long sessions and tokens last, and which endpoints manage keys, keychains, tokens, and sessions. |
 | [Workspace and Environment Reference](/cloud/reference/workspaces-and-environments/) | Check defaults, limits, scope, permissions by operation, and error responses for workspaces and environments. |
 | [Support](/cloud/reference/support/) | Choose a support channel and see what each plan includes. |
 | [Cloud API](/cloud/reference/api-reference/) | Authenticate, set the organization, page through results, and handle errors. |

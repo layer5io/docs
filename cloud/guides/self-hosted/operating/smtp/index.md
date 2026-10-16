@@ -1,17 +1,11 @@
-# Email / SMTP Troubleshooting
+# Troubleshoot Email Delivery
 
 
-> This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.
+> Diagnose why a self-hosted Layer5 Cloud is not sending mail: the shared mail server's requirements, what the server checks at startup, how to test delivery, how mail is routed, and what each error code means.
 
 
 
-# Email Debugging Guide for Layer5 Cloud
-
-This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.
-
-## Overview
-
-Email issues in Layer5 Cloud can occur due to various reasons including SMTP configuration problems, template errors, recipient validation issues, or network connectivity problems. This guide provides comprehensive debugging tools and techniques.
+Layer5 Cloud sends two kinds of mail. **Application mail** (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization's own mail server when one is turned on, and otherwise through the **shared mail server** you configure in the chart's `smtp` values. **Identity mail** (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See [Plan a Deployment](/cloud/guides/self-hosted/planning/#mail). This guide helps you find which of those paths is failing and why.
 
 
 
@@ -22,13 +16,7 @@ Email issues in Layer5 Cloud can occur due to various reasons including SMTP con
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
   <h4 class="alert-heading" style="color: #EBC017;">Read this before upgrading to v1.0.253 or later</h4>
   
-      The shared mail server your deployment configures with <code>SMTP_HOST</code> and
-<code>SMTP_PORT</code> is now screened the same way an Organization&rsquo;s own mail server is,
-and <strong>the server refuses to start when it fails that screen</strong>. If <code>SMTP_HOST</code>
-points at an in-cluster relay, at a non-submission port such as mailpit on
-<code>1025</code>, or at a plaintext MTA, this deployment stops sending mail on upgrade
-and says so at startup. See
-<a href="/#constraints-on-the-shared-mail-server">Constraints on the shared mail server</a>.
+      The shared mail server you configure with <code>SMTP_HOST</code> and <code>SMTP_PORT</code> is screened the same way an organization&rsquo;s own mail server is, and <strong>the server refuses to start when it fails that screen</strong>. If <code>SMTP_HOST</code> points at an in-cluster relay, at a non-submission port such as mailpit on <code>1025</code>, or at a plaintext MTA, this deployment stops on upgrade and says so at startup. See <a href="/#constraints-on-the-shared-mail-server">Constraints on the shared mail server</a>.
   
 </div>
 
@@ -36,11 +24,11 @@ and says so at startup. See
 
 ## Debug Log Levels
 
-To enable email debugging, set the `LOG_LEVEL` environment variable to `5` (Debug) or `6` (Trace):
+To enable email debugging, set `env.loglevel` in your Helm values to `5` (debug) or `6` (trace) and upgrade. The chart default is `4` (info). Return it to `4` when you finish, because debug logs record more detail.
 
-```bash
-# In config.env or environment variables
-LOG_LEVEL=5
+```yaml
+env:
+  loglevel: 5
 ```
 
 ## Testing Email Configuration
@@ -96,9 +84,9 @@ SMTP configuration error for field 'SMTP_HOST'
 }
 ```
 
-### 2. Authenticated Email Send Test (Provider Admin Only)
+### 2. Send a test email {#send-a-test-email}
 
-Send an actual test email to verify end-to-end email functionality. This endpoint requires authentication and provider admin role:
+Send an actual test email to verify delivery end to end. The endpoint requires authentication and the Provider Admin role:
 
 ```bash
 curl -X POST "https://cloud.layer5.io/api/system/email/test" \
@@ -162,13 +150,12 @@ Either set all four values or leave all four empty. A deployment that leaves
 them empty is a supported state - it simply sends no mail - but a deployment
 that sets some of them and not others does not start.
 
-```bash
-# Required SMTP Configuration
-SMTP_HOST=smtp.example.com     # must resolve to a publicly routable address
-SMTP_PORT=587                  # one of 25, 465, 587, 2525
-SMTP_USERNAME=no-reply@example.com   # a full address: it becomes the From: header
-SMTP_PASSWORD=your-app-password
-```
+| Variable | Chart value | Requirement |
+| --- | --- | --- |
+| `SMTP_HOST` | `smtp.smtphost` | Must resolve to a publicly routable address |
+| `SMTP_PORT` | `smtp.smtpport` | One of `25`, `465`, `587`, `2525` |
+| `SMTP_USERNAME` | `smtp.smtpusername` | A full address: it becomes the `From:` header |
+| `SMTP_PASSWORD` | `smtp.smtppassword` | The mailbox password or app password |
 
 `SMTP_PORT` also decides how the session is encrypted, because the four keys
 carry no mode of their own: **`465` means implicit TLS**, and every other
@@ -186,8 +173,7 @@ so the shared mail server is screened exactly as a tenant's is.
 
 That screening is new. The previous send path applied none of it, so a
 deployment that has been sending mail happily can be refused after an upgrade.
-Layer5's own hosted environments use `smtp.gmail.com:587` and are unaffected;
-a self-hosted install that points `SMTP_HOST` somewhere else can be.
+A self-hosted install that points `SMTP_HOST` at an internal, plaintext, or non-submission relay can be refused.
 
 ### What is refused
 
@@ -253,83 +239,9 @@ this endpoint&rsquo;s.
 
 
 
-## Debug Log Examples
-
-When `LOG_LEVEL=5`, you'll see detailed debug logs for email operations.
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">The transport is no longer described in the send logs</h4>
-  
-      The lines that echoed the relay host, port and SMTP username before every send
-were removed in <strong>v1.0.253</strong>.
-The transport is now chosen in one place for both senders, so it is reported
-once at startup instead of being restated by every message - and <code>SMTP_USERNAME</code>
-is an email address, which does not belong in a line emitted per send. If you
-are grepping for <code>SMTP Configuration Debug</code>, <code>Attempting SMTP send</code>,
-<code>Email construction completed</code>, <code>SMTP send failed - detailed error info</code>, or
-any of the <code>Flow email</code> lines that named a host, they no longer exist.
-  
-</div>
-
-
-
-### 1. The Shared Mail Server, at Startup {#1-smtp-configuration-validation}
-
-This is where the relay is described now, once per process:
-
-```log
-INFO The shared mail relay answered on smtp.example.com:587 over starttls
-```
-
-When none of the four values is set, the deployment starts and says so:
-
-```log
-WARN The shared mail relay is not configured (SMTP_HOST is unset). No transactional or identity mail can be sent over it; organizations with their own mail server are unaffected
-```
-
-A refusal names the constraint that refused it and the process exits; see
-[What happens at startup](#what-happens-at-startup).
-
-### 2. Template Processing
-
-```log
-DEBUG Email template parsing template_paths=[email-templates/meshery-cloud/email.body.gotmpl, ...] template_count=5 base_template_path=email-templates/meshery-cloud/email.body.gotmpl
-DEBUG Email template parsed template_name=email.body.gotmpl
-DEBUG Executing email template email_type=welcome recipients=user@example.com has_org_vars=true org_name=MyOrg
-DEBUG Email template executed body_length=2048 email_type=welcome
-```
-
-### 3. Sending {#3-email-construction-and-sending}
-
-```log
-DEBUG Email sending attempt initiated subject="Welcome to Layer5 Cloud" recipient_count=1 cc_count=0
-INFO Email sent recipients=user@example.com subject="Welcome to Layer5 Cloud"
-```
-
-### 4. Error Scenarios
-
-A failed send is logged as its structured error, carrying a code:
-
-```log
-ERROR meshery_cloud-1145: SMTP send mail error
-```
-
-For a message that belonged to an Organization with its own mail server, the
-failure is recorded against that Organization as well - see
-[Which mail server a message left through](#which-mail-server-a-message-left-through).
-
 ## Flow Emails (Kratos Integration)
 
-Flow emails are rendered by the same process and logged through the same
-structured logger. They used to be written to standard output with a `[DEBUG]`
-prefix, echoing the relay host and the SMTP username past the logger at a level
-nothing could turn down; those lines no longer exist.
+Identity mail reaches Layer5 Cloud only when Kratos uses the HTTP courier, which posts each message to `/api/identity/flow/emails`. Layer5 Cloud then renders it with the signup organization's branding and sends it like other application mail. Under the HTTP courier there is no SMTP fallback. When Layer5 Cloud answers anything but a success, Kratos retries the message (five times by default) and then abandons it, with no visible error to the user, so an unreachable or misconfigured Layer5 Cloud silently stops verification and recovery mail. With the default SMTP courier, Kratos sends the mail itself through `kratos.kratos.config.courier.smtp.connection_uri`, and none of the shared-relay rules on this page apply to it.
 
 **Only two Kratos template types are dispatched:** `verification_code_valid`
 and `recovery_code_valid`. Every environment runs the `code` strategy for
@@ -415,11 +327,7 @@ the response - an SMTP username is an email address.
 
 **Issue:** `Email template missing or inaccessible`
 
-**Solution:**
-
-- Verify email template files exist in `config/email-templates/`
-- Check file permissions
-- Validate template syntax and required variables
+**Solution:** the templates ship inside the Layer5 Cloud image. If you built a custom image or mounted a volume over its configuration directory, restore the bundled templates, and confirm that the image tag matches the release you run.
 
 ### 4. Recipient Validation Errors
 
@@ -520,33 +428,21 @@ this deployment configures.
 | meshery_cloud-3303 | send path | An Organization's mail server took the whole message and never acknowledged it. Recorded as uncertain and **not** re-sent, because re-sending could deliver it twice |
 | meshery_cloud-3304 | starts | The shared mail server's certificate failed verification - expiry, host name or issuer. Check the certificate, not the network |
 
-## Monitoring and Alerting
+## Monitoring
 
-Consider setting up monitoring for email-related metrics:
-
-1. **Email Send Success Rate**: Monitor successful vs failed email sends
-2. **SMTP Response Times**: Track SMTP server response times
-3. **Template Processing Time**: Monitor email template rendering performance
-4. **Configuration Validation**: Regular health checks for email configuration
-
-## Best Practices
-
-1. **Use Debug Logs Sparingly**: Only enable debug logging when troubleshooting
-2. **Secure Credentials**: Never log SMTP passwords in plaintext
-3. **Regular Testing**: Use the test endpoint to validate configuration regularly
-4. **Monitor Quotas**: Keep track of email service provider quotas and limits
-5. **Template Validation**: Test email templates thoroughly before deployment
+Alert on the error codes in the tables above, in particular `meshery_cloud-3301`, `3302`, `3304`, `3300`, and `3303`. See [Monitoring](/cloud/guides/self-hosted/planning/monitoring/).
 
 ## Troubleshooting Checklist
 
-- [ ] Check `LOG_LEVEL` is set to 5 or 6 for debug logging
+- [ ] Set `env.loglevel` to `5` for debug logging while you diagnose
 - [ ] Verify all SMTP environment variables are configured
 - [ ] Confirm `SMTP_PORT` is one of `25`, `465`, `587`, `2525`, and that `SMTP_USERNAME` is a full address
 - [ ] Confirm `SMTP_HOST` resolves only to publicly routable addresses, and that the relay offers STARTTLS (or is on `465`)
 - [ ] Read the startup log for `meshery_cloud-3301`, `-3302` or `-3304` before looking anywhere else
-- [ ] Test email configuration using the provider-admin-only `/api/system/email/test` endpoint, authenticating the request
+- [ ] Test the configuration with the Provider Admin-only `/api/system/email/test` endpoint, authenticating the request
+- [ ] If only identity mail is missing, check which Kratos courier you use and, for the HTTP courier, that Kratos can reach `/api/identity/flow/emails`
 - [ ] Check network connectivity to SMTP server
-- [ ] Validate email template files exist and are accessible
+- [ ] Confirm the image still carries its bundled email templates
 - [ ] Verify recipient email addresses are valid
 - [ ] Check SMTP server logs for additional error details
 - [ ] Monitor email service provider quotas and limits

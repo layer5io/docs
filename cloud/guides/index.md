@@ -15,5 +15,6 @@ These guides each accomplish one task for a reader who already knows the basics.
 | Put an organization on its own domain or sign-in provider | [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) |
 | Organize work into workspaces and environments | [Workspaces](/cloud/guides/workspaces/) |
 | Connect Layer5 Cloud to GitHub or automate with GitHub Actions | [Integrations](/cloud/guides/integrations/) |
+| Create, rotate, or revoke an API token, end a session, or build a custom keychain | [Security](/cloud/guides/security/) |
 | Run Layer5 Cloud on my own infrastructure | [Self-Hosted Deployments](/cloud/guides/self-hosted/) |
 
