@@ -2325,7 +2325,7 @@ Kanvas emails these people, after removing the author of the new message:
 
 A request is sent only when the message mentions someone, or the thread already has an earlier message by or mentioning another person. **A first comment that mentions nobody emails nobody, including the design owner.** Mention the owner when you need them to see a new comment.
 
-An email goes out only if the recipient's account preferences allow it. Two preferences apply: comments on your designs, which governs the owner's email, and participating and mentions in comments, which governs the other two. See [Notification Preferences]({{< ref "cloud/concepts/identity-and-security/users/notification-preferences/index.md" >}}).
+An email goes out only if the recipient's account preferences allow it. Two preferences apply: comments on your designs, which governs the owner's email, and participating and mentions in comments, which governs the other two. See [Notification Preferences]({{< ref "cloud/guides/account/notification-preferences.md" >}}).
 
 Kanvas does not check that a recipient can open the design before it emails them. The email shows the thread and links to the design in the Meshery Playground, whichever Meshery the design is stored for.
 
@@ -7103,7 +7103,7 @@ description: A high-level guide to understanding the architecture, features, and
 
 --------------------------------------------------------------------------------
 
-The [Layer5 Cloud Academy](https://cloud.layer5.io/academy) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
+The [Layer5 Cloud Academy](https://cloud.layer5.io/academy) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** - a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
 
 This approach transforms learning from passive reading into active, hands-on practice.
 
@@ -7193,7 +7193,7 @@ Custom shortcodes are reusable components that enhance Academy content. They fun
 
 ##### Basic Shortcode
 
-**Step 1:** Create the shortcode file in your organization's directory ([example](https://github.com/layer5io/academy-example/tree/master/layouts)):
+**Step 1:** Create the shortcode file in your organization's directory:
 
 ```shell
 layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
@@ -7302,749 +7302,282 @@ Email templates automatically incorporate your organization's logo and primary b
 --------------------------------------------------------------------------------
 title: "Learner Guide"
 url: /cloud/academy/using-the-academy/index.md
-description: Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
+description: Walk through the Layer5 Academy as a learner: find content, enroll, work through a learning path, pass its assessments, and earn a badge or certificate.
 
 --------------------------------------------------------------------------------
 
-This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.
+This guide takes you through one complete learning journey in the [Layer5 Academy](https://cloud.layer5.io/academy): you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.
 
-Here, you can achieve:
+You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.
 
-- A systematic understanding of complex topics
-- Hands-on experience by solving real-world problems  
-- Verifiable badges to showcase your skills
-- Official certificates to formally recognize your expertise
+## Step 1: Find content in the catalog
 
-## Exploring the Content Catalog
+The catalog lists every piece of content available to you as a card. Each card shows the content type, title, number of courses, and difficulty level.
 
-Your journey begins at the Academy's main catalog page, where you can discover all available learning content.
+![Academy catalog showing content cards with type, title, course count, and level, beside the Level, Content Type, and Organization filters](./images/academy-catalog.gif)
 
-### Navigating the Catalog
+Narrow the catalog with three filters:
 
-First you will see a collection of content cards. Each card gives you a quick overview of learning content, including the type, its title, the number of courses it contains, and its difficulty level.
+- **Level** limits results to one difficulty level.
+- **Content Type** limits results to learning paths, challenges, or certifications. Set it alone to list every item of that type.
+- **Organization** limits results to one organization's content. It appears only on the main Layer5 Academy catalog.
 
-![Academy Catalog Overview](./images/academy-catalog.gif)
+Filters combine, so Level plus Content Type lists, for example, every beginner learning path. Clearing the filters returns the full catalog.
 
-Use the filters on the left - **Level**, **Content Type**, and, when browsing the full Layer5 Academy, **Organization** - to narrow the catalog to what you are looking for.
-
-{{< alert type="info" title="Browsing an Organization's Own Academy" >}}
-When you visit an organization's own Academy on its custom domain (for example, `exoscale.layer5.io`), the catalog is automatically scoped to that organization's content and the **Organization** filter is hidden, so you stay focused on that academy's offerings. To browse the full cross-organization catalog, visit the main Layer5 Academy at [cloud.layer5.io/academy](https://cloud.layer5.io/academy), where the **Organization** filter is available.
+{{< alert type="info" title="What you see depends on where you are" >}}
+The main Layer5 Academy at [cloud.layer5.io/academy](https://cloud.layer5.io/academy) spans organizations and offers the Organization filter. An organization's own Academy on its custom domain shows only that organization's content and hides the Organization filter.
 {{< /alert >}}
 
-### Understanding Content Types
+Pick the content type that matches your goal:
 
-To help you choose the right content for your goals, we offer three distinct types. You can use the Content Type filter on the left to narrow your search.
+| Type | Choose it when you want to |
+|---|---|
+| Learning path | Learn a subject systematically, from start to finish |
+| Challenge | Solve a specific, practical problem in a realistic scenario |
+| Certification | Prove skills you already have through a formal exam |
 
-1. **Learning Path**: Choose this when you want to systematically learn a new subject from start to finish. It's a comprehensive curriculum designed to build your knowledge from the ground up.
+For this walkthrough, choose a beginner learning path.
 
-2. **Certification**: Choose this when you already have the knowledge and want to formally prove your skills. It focuses on assessment and evaluation through exams.
+## Step 2: Enroll
 
-3. **Challenge**: Choose this when you want a hands-on, practical task to solve a specific problem, often in a competitive scenario.
+The content's detail page describes what it covers. Enroll from this page.
 
-### Viewing All Content of One Type
+![Learning path detail page with the course outline, description, and enroll action](./images/learning-path-page.png)
 
-The **Content Type** filter is also how you browse one type exhaustively rather than searching for a particular title:
+Enrolling creates your registration for that content and starts progress tracking. From then on the Academy records the item you are on, the items you have completed, your quiz grades, and your time spent, so you resume exactly where you left off. Every piece of content you have enrolled in appears in **My Academy**.
 
-- Set it to **Learning Path** to list every learning path available to you.
-- Set it to **Challenge** to list every challenge.
-- Set it to **Certification** to list every certification.
+If the content's organization attached an invitation to it, enrolling also accepts that invitation and adds you to the team that the invitation grants.
 
-Combine it with **Level** to narrow further - for example every beginner learning path - and, on the main [Layer5 Academy](https://cloud.layer5.io/academy) catalog, with **Organization** to see one organization's content only. Clearing the filters returns the full catalog.
+Your registration moves through these statuses, which your instructors also see in their console:
 
-{{< alert type="info" title="What You See Depends on Where You Are" >}}
-The main Layer5 Academy catalog spans organizations, so listing all learning paths there lists everyone's public learning paths. An organization's own Academy on its custom domain is scoped to that organization's content, so the same filter lists only theirs.
-{{< /alert >}}
+| Status | Meaning |
+|---|---|
+| `Registered` | You enrolled and have not yet started |
+| `In Progress` | You are working through the content |
+| `Completed` | You passed the final test |
+| `Failed` | You did not pass |
+| `Withdrawn` | The registration was withdrawn, by you or by an instructor in the content's organization |
 
-## Starting Your Learning Journey
+## Step 3: Work through the learning path
 
-Once you've found a content that interests you, it's time to begin.
+The learning interface has three areas.
 
-### Enrolling in a learning path
+![Learning interface with the course outline in the left sidebar, lesson content in the center, and tags and categories in the right sidebar](./images/page-overview.png)
 
-The content detail page gives you a full overview of what you'll learn. To start, simply click the "Enroll Now" button.
+1. **Course outline (left sidebar)** shows the full structure of the learning path and your current position. You can move to any course at any time.
+2. **Study area (center)** displays the lesson content: text, images, and videos.
+3. **Tags and categories (right sidebar)** link to other Academy content on related topics.
 
-![Learning Path Detail Page](./images/learning-path-page.png)
+Work through the courses in order. Each course ends with an assessment that checks what you just learned.
 
-**Why enroll?**
+## Step 4: Take an assessment
 
-Enrolling is a key step because it allows the Academy to track your progress. Once enrolled, the system will remember where you left off, mark your completed content, and save your quiz results, so you can always pick up right where you were.
+Each assessment is a test with a pass percentage set by the content's author. The test may also set a time limit, an attempt limit, and prerequisites.
 
-### The Learning Interface
+### Final and practice tests
 
-After enrolling, you'll be taken to the main learning interface. This is where you'll spend most of your time.
+A test marked final is mandatory: passing it is what completes the content. Other tests are practice. Take them to check your understanding; passing them is not required to complete the content.
 
-![Learning Interface Overview](./images/page-overview.png)
+### Prerequisites
 
-We've designed it to be simple and intuitive. Think of it in three parts:
+A test can require you to finish specific items first. If any prerequisite is missing from your completed items, the test does not start and reports `Prerequisites not completed`. Finish those items and try again.
 
-1. **Your Learning Map (Left Sidebar)**: This is the complete outline of your course. It shows where you are currently positioned.
+### Attempts and question rotation
 
-2. **Your Study Area (Center Panel)**: This is where the core content—text, images, and videos—is displayed.
+Every time you start a test, you begin a new attempt. If the test sets a maximum number of attempts, you cannot start an attempt beyond it; the Academy reports `Maximum attempts reached for this test` with the number of attempts you have used. A test with no maximum allows unlimited attempts.
 
-3. **Discover More (Right Sidebar)**: Here, you can find tags and categories across all the content, helping you discover other relevant content in the Academy. You can click to see all related content.
-   
-{{< alert type="info" title="Discover More" >}}
-After finishing a course, check out the **Tags** and **Categories** on the right. They are a great way to discover other related topics that might interest you.
-{{< /alert >}}
+Tests can draw from a question bank larger than one sitting. Each attempt serves the next set of questions from the bank, wrapping back to the start when the bank runs out, so a retake usually shows you different questions.
 
-## Testing Your Knowledge
+### Time limit
 
-Assessments are an integral part of the learning process, designed to reinforce your knowledge.
+If the test sets a time limit, your attempt expires that many minutes after it starts. A submission after expiry is rejected with `Test submission has expired`. Each attempt is submitted once; a second submission of the same attempt is rejected.
 
-### How to Take a Quiz
+### Answering and scoring
 
-By default, assessments in a Learning Path are mandatory. This creates a structured progression where you must pass the assessment for one section (like a Course) before unlocking the next. Passing an assessment marks that section as complete.
+Each question carries its own marks. The test supports three question types, each scored strictly:
 
-Some assessments may be marked as **Optional**. You can take these for extra practice, but you are not required to pass them to advance. 
+- **Single answer.** Select one option. You earn full marks only when you select exactly one option and it is the correct one.
 
-### Answering Questions and Scoring
+  ![Single-answer question with radio-button options](./images/q-single-answer.png)
 
-When you encounter an assessment, you'll see a clean interface with questions and answer options.
+- **Multiple answers.** Select every option that applies. You earn full marks only when you select every correct option and no incorrect option. There is no partial credit.
 
-**Answering**: Select your answer(s) by clicking the corresponding radio button (for single-choice) or checkbox (for multiple-choice). For short-answer questions, type your response directly into the text field.
+  ![Multiple-answer question with checkbox options](./images/q-multi-answer.png)
 
-{{< alert type="info" title="Need a Refresher?" >}}
-If you're ever unsure about a concept, you can always use the Back button to revisit previous courses.
-{{< /alert >}}
+- **Short answer.** Type your answer. It must match the expected answer exactly, ignoring letter case and leading or trailing spaces. A blank answer is wrong.
 
-**Scoring Rules:**
+  ![Short-answer question with a free-text input field](./images/q-short-answer.png)
 
-- **Single-Answer**: You receive full marks for selecting the one correct option.
+Unanswered questions score zero. Your percentage is your score divided by the test's total marks, and you pass when that percentage meets or exceeds the pass percentage. Scoring happens on the server the moment you submit, and the result shows your score, your pass or fail status, and which questions you answered correctly.
 
-![Single Answer Question Example](./images/q-single-answer.png)
+## Step 5: Review your result
 
-- **Multiple-Answer**: Scoring is strict. You must select all correct options and none of the incorrect options to earn marks. There is no partial credit.
+If you do not pass, the result marks which questions you answered correctly, so you can see exactly where to improve. Revisit the relevant courses through the outline, then start another attempt if the test's attempt limit allows it.
 
-![Multiple Answer Question Example](./images/q-multi-answer.png)
+![Failed quiz result showing the score, the fail status, and which questions were answered correctly](./images/q-result-failed.png)
 
-- **Short-Answer**: Your answer is compared case-insensitively, and extra spaces at the beginning or end are ignored.
+If you pass, the assessment is complete and you move on to the next course.
 
-![Short Answer Question Example](./images/q-short-answer.png)
+![Passed quiz result showing the score and the pass status](./images/q-result-pass.png)
 
-**Submitting**: Once you've answered all questions, click the "Submit" button at the end of the quiz. Your results, including your score and pass/fail status, will be displayed immediately.
+## Step 6: Earn your badge and certificate
 
-**If you fail**: You can retake the assessment. The system will highlight the successful parts, allowing you to precisely identify where you need improvement.
+When you pass the final test, your registration becomes `Completed` and the Academy awards the content's credentials.
 
-![Quiz Result - Failed](./images/q-result-failed.png)
+**Badges.** If the content names a completion badge, you receive it immediately. Each badge is tied to one piece of content, is awarded only when you finish everything that content requires, and stays on your public Layer5 Cloud profile. Badges are free.
 
-**If you pass**: Congratulations! You've successfully completed the assessment and can proceed to the next section.
+![Example Academy completion badge](./images/badge.png)
 
-![Quiz Result - Passed](./images/q-result-pass.png)
+**Certificates.** If the content defines a certificate, the Academy issues one in your first and last name, with the issuing organization and the issue date, and emails it to you. Each certificate has a unique ID and a public verification page that anyone can open from its link, so you can share it on professional profiles or a resume. Learning and exams are free; issuance of the official certificate is an optional, paid feature. Certificates do not expire.
 
-## Your Achievements
+## Withdrawing from content
 
-Completing content in the Academy earns you valuable credentials that you can share with your professional network.
+You can withdraw your own registration at any time. Withdrawing sets its status to `Withdrawn`. Instructors who hold the View Academy Metrics permission in the content's organization can also withdraw learners from that organization's content.
 
-### Earning Badges and Certificates
-
-**Badges**: You earn a digital badge for successfully completing all the required components of a Learning Path, Challenge, or Certification. Badges are how the Academy marks the milestones you reach: each one is tied to a specific piece of content, is awarded only once you have finished everything that content requires, and stays on your public profile afterward. They are free and serve as a great way to showcase your new skills.
-
-Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn` - tracks your progress toward that milestone in the meantime, and is what your instructors see in their console.
-
-> See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
-
-![Example badge image](./images/badge.png)
-
-**Certificates**: You earn an official Certificate of Completion after passing a Certification exam. While the learning and exams are free, the issuance of the official certificate is an optional, paid feature.
-
-## Frequently Asked Questions
-
-> Expand a section below to learn more.
+## Frequently asked questions
 
 <details>
-<summary>Will my learning progress be saved if I leave and come back later?</summary>
+<summary>Will my progress be saved if I leave and come back later?</summary>
 
-Yes, as long as you are enrolled in a content, your progress is saved automatically. You can always return and continue from your last completed course.
+Yes. While you are enrolled, the Academy saves your current item, completed items, and quiz grades automatically. You resume where you left off.
 </details>
 
 <details>
 <summary>Can I skip courses and jump directly to the exam?</summary>
 
-You can navigate to any course at any time using the sidebar. However, for a Learning Path to be marked as complete, you typically need to pass all required quizzes and the final test in sequence.
+You can open any course at any time from the outline. A test with prerequisites does not start until you complete those prerequisite items, and the content is complete only when you pass its final test.
 </details>
 
 <details>
-<summary>Can I download content materials for offline study?</summary>
+<summary>Can I download content for offline study?</summary>
 
-Currently, all content is designed to be accessed online through the Academy platform. Offline or downloadable materials are not available at this time.
+No. Academy content is available online only.
 </details>
-
-<details>
-<summary>Where can I ask questions or discuss the content material?</summary>
-
-Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to open new or participate in existing topics in the community [discussion forum](https://discuss.layer5.io). We also warmly welcome you to join the [Layer5 Community Slack](https://slack.layer5.io).
-</details>
-
-</details>
-
----
-
-<details>
-<summary><strong>Certification and Assessment</strong></summary>
-
 
 <details>
 <summary>If I fail an assessment, can I retake it?</summary>
 
-It depends on the certification. Some certifications allow multiple attempts, while others do not offer retries. Please refer to the specific certification’s guidelines to confirm whether retakes are permitted.
+Yes, up to the test's attempt limit. A test with no limit allows unlimited retakes. Each retake usually draws different questions from the test's question bank.
 </details>
 
 <details>
 <summary>Does my certificate expire?</summary>
 
-Yes. Meshery Academy certifications may have an expiration date. Please check the specific certification details for validity duration.
+No. Academy certificates carry an issue date and no expiration date.
 </details>
 
 <details>
-<summary>How can I showcase my credential?</summary>
+<summary>How can I share my credential?</summary>
 
-Upon successful completion, you’ll receive a verifiable digital certificate. You can share your achievement by adding it to your professional profiles (for example, on LinkedIn) or including it on your resume. A shareable verification link is available within your certification dashboard, which you can use to confirm your credential publicly.
+Badges appear on your public Layer5 Cloud profile. Each certificate has a public verification page; share its link on professional profiles such as LinkedIn or on your resume so anyone can confirm it.
 </details>
 
+<details>
+<summary>Where can I ask questions or discuss the content?</summary>
+
+Open a new topic or join an existing one in the community [discussion forum](https://discuss.layer5.io), or join the [Layer5 Community Slack](https://slack.layer5.io).
+</details>
 
 
 --------------------------------------------------------------------------------
-title: "Creating Content for the Academy"
-url: /cloud/academy/creating-content/creating-your-learning-path/index.md
-description: A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
+title: "User Management"
+url: /cloud/guides/organizations/managing-users/index.md
+description: Learn how to create, add, invite, and manage users within Layer5 Cloud.
 
 --------------------------------------------------------------------------------
 
-This guide provides a step-by-step walkthrough for creating and organizing new content in the [Layer5 Academy](https://cloud.layer5.io/academy). You'll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.
+This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.
 
-### Prerequisites
+![User Management options](images/org_invite.png)
 
-Before you dive into creating your first Academy content, it's helpful to be familiar with the core technologies and concepts used by the Academy platform. 
+## Create User Account
 
-- **Git and GitHub**: All learning content is managed in a Git repository.
-- **Markdown**: All content is written in standard Markdown. 
-- **Hugo**: The entire Academy platform is built on the [Hugo](https://gohugo.io/) static site generator. 
-- **Academy Template & Theme**: We provide an `academy-example` repository that serves as a pre-configured template. [Layer5 Academy theme](https://github.com/layer5io/academy-theme) to ensure your content is styled correctly right out of the box.
-- **A Layer5 Cloud Account**: Required to obtain your Organization ID and Personal Access Token for publishing.
+Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user's introduction to Layer5 Cloud.
 
-## 1. Set Up Your Content Repository
+![Create User](images/create-user.gif)
 
-Start by preparing a dedicated Git repository for your learning content. Using our official Layer5 template to help you get started quickly.
-
-### 1. Fork the academy-example Repository
-
-- Go to the [academy-example repository](https://github.com/layer5io/academy-example) on GitHub.
-- Click **Fork** to create a copy under your own GitHub account.
-
-### 2. Clone Your Fork Locally
-
-- Use the `git clone` command to download your forked repository. 
-- Example:
-  ```bash
-  # Replace `<your-username>` with your actual GitHub username
-  git clone https://github.com/<your-username>/academy-example.git
-  cd academy-example
-  git checkout -b <your-feature-branch>
-  ```
-
-### 3. Update the Go Module Path
-
-1. Open the `go.mod` file located at the root of your `academy-example` project.
-2. The first line will be: 
-  ```go
-  module github.com/layer5io/academy-example
-  ```
-3. Change this line to match your fork's path: 
-  ```go
-  module github.com/<your-username>/<your-repo-name>
-  ```
-4. Save the file, then commit and push this change to your repository.
-
-{{< alert type="info" title="Critical Step" >}}
-This step is essential. It updates your repository's "identity card" (`go.mod`) to match its new "address" (your GitHub URL). Without this change, the Academy publishing process will fail.
+{{< alert type="info" title="Permission Required for User Creation" >}}
+Only Provider Admins and Organization Admins can create users. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 {{< /alert >}}
 
-## 2. Understanding Content Types
+## Add / Remove Existing User
 
-The Academy supports three distinct content types, each designed for specific educational goals. Use this table to determine which format best suits your objectives.
+This section explains how to add existing Layer5 Cloud users to one of your organizations or remove them.
 
-| Feature | Learning Path | Challenge | Certification |
-| :--- | :--- | :--- | :--- |
-| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
-| Structure | Hierarchical (Learning Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
-| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
-| Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
+{{< meshery-design-embed  src="export-designs/embedded-design-page-open-source.js"  id="embedded-design-066b0ef3-7956-4c3b-a5cc-1d276ac13ec6" >}}
 
-## 3. Structure Your Content
+### Adding a User to an Organization
 
-The Academy uses a specific directory layout to keep each organization's content separate and secure. The structure varies depending on the content type you're creating.
+If someone already has a Layer5 Cloud account but isn't part of your organization, you can add them.
 
-### Find Your Organization UUID and Content ID
+1. Go to the Users tab in the Identity section 
+2. Click the **Add User** button.
+3. Select the organization to which you want to add the user.
+4. Select the user from the list of available users.
+5. Assign appropriate roles within the organization.
 
-{{< alert type="warning" title="Important: Replace UUIDs" >}}
-Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-content-uuid>` placeholders. Make sure to replace all of these with your actual UUIDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when implementing your content.
+![Add User to Organization](images/add-user.gif)
+
+### Removing Users from an Organization
+
+You can remove users from an organization one by one or several at once. This action takes away their membership and access to that specific organization's resources but doesn’t delete their overall Layer5 Cloud account.
+
+#### Method 1: Individual User Removal (One by One)
+   * **Locate the User:** Find the specific user you wish to remove from the list.
+   * **Use Row Action:** Click the "Remove User" icon.
+   * **Confirm:** When prompted, confirm your decision to remove the user from the organization.
+
+#### Method 2: Bulk User Removal (Multiple Users at Once)
+   * **Select Users:** Use the checkboxes next to each user's name to select all the users you intend to remove.
+   * **Use Bulk Action:** Click the "Delete" button.
+   * **Confirm:** When prompted, confirm that you want to remove all the selected users from the organization.
+
+![Removing Users from an Organization](images/remove_user.png)
+
+#### What Removal Ends
+
+Removing a member ends every access-bearing relationship they hold **inside that organization**, as a single operation:
+
+* **Their organization membership**, together with the organization [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to it.
+* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to those memberships.
+
+Both matter, because permissions reach a user through the roles carried on those memberships. A [keychain]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) granted by a team role is revoked by the removal just as an organization role's keychain is, so a removed member is left holding no [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) in the organization by either route. Both removal methods above behave identically in this respect; removing several members at once applies the same operation to each one.
+
+Removal does **not** affect:
+
+* The person's Layer5 Cloud user account, which continues to exist.
+* Their membership in any other organization, or in teams belonging to those organizations.
+* Designs, environments, and other resources they created, which remain in the organization.
+
+Removal is not reversible from the Users tab. To restore someone's access, add them to the organization again and reassign their organization roles and team memberships. Neither returns on its own.
+
+{{< alert type="warning" title="Team Access Is Not Itemized in the Confirmation" >}}
+The confirmation shown after a removal reports only that the member was removed from the organization. It does not list the team memberships that ended with it. Review the member's teams before removing them if you need a record of what their removal revoked.
 {{< /alert >}}
 
-Each piece of Academy content is tied to a specific organization and secured by a unique identifier (UUID). This is a system-generated ID that ensures your content is scoped only to your organization.
-
-You'll need two types of UUIDs:
-- **Content ID**: A unique identifier for your specific content (learning path, certification, or challenge) that gets added to the front matter of your content's index file
-- **Organization ID**: Your organization's UUID that's used in directory paths
-
-{{< alert type="info" title="Generating Your IDs from the Instructor Console" >}}
-
-The easiest way to get the correct IDs is by using the content creation tool.
-
-- Navigate to the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) in Layer5 Cloud.
-- Use the "Create New Content" tool and fill in the information for your new content
-- The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
-
-[Learn more](https://cloud.layer5.io/academy/instructors-console) about academy console.
+{{< alert type="info" title="Organization Owners Cannot Be Removed" >}}
+An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 {{< /alert >}}
 
-### Create the Core Directories
+## Invite User via Email
 
-Now, inside your academy repository, you should see the following top-level folders.
+You can invite new or existing users to join one of your organizations by sending them an email invitation.
 
-1. `content/<content-type>/<your-organization-uuid>/`
-  This `content` directory is where all your written material lives. Replace `<content-type>` with either `learning-paths`, `certifications`, or `challenges`. The folder hierarchy you create here directly defines the navigation and organization of your content.
-2. `layouts/shortcodes/<your-organization-uuid>/`
-  This `layouts` directory is for advanced use. You can place custom **Hugo Shortcodes** here if you need special reusable components.
+* **How to Invite:**
+    1.  Click the "Invite User" button.
+    2.  Enter the person's First Name, Last Name, and Email address.
+    3.  Assign them to a target Organization. Optionally, Team(s) and Organization Role(s) they will receive.
+    4.  Layer5 Cloud sends an invitation email to the user.
+* **What the User Does:** The person you invited will click a link in the email to accept. If they're new to Layer5 Cloud, they'll need to create an account first before they can join your organization.
 
-### Build the Content Hierarchy
-
-The content structure varies by type:
-
-#### Learning Path Structure
-A **Learning Path** contains **Courses**. A **Course** is primarily broken down into **Modules**, but can also conclude with a final **Test** that serves as a course exam. Finally, a **Module** consists of individual **Pages** and **Labs**.
-
-A high-level view of the learning path structure looks like this:
-
- ```text
- learning-paths/<your-organization-uuid>
- └── {learning-path-name}/ 
-     ├── _index.md                            
-     ├── course-1/
-     │   └── _index.md                        
-     └── course-2/  
-         ├── _index.md   
-         ├── course-exam.md  
-         └── module-1/ 
-             ├── _index.md                    
-             ├── page-1/
-             │   └── _index.md 
-             ├── test.md 
- ```
-
-#### Certification Structure
-A **Certification** typically contains one or more **Exams** and optional study materials.
-
-```text
-certifications/<your-organization-uuid>
-└── {certification-name}/
-    ├── _index.md  
-    ├── exam/
-    │   ├── _index.md  
-    ├── test-1/
-    ├── test-2/
-    └── test-3/
-```
-
-#### Challenge Structure
-A **Challenge** is typically a single scenario-based task with lab and exam components.
-
-```text
-challenges/<your-organization-uuid>
-└── {challenge-name}/
-    ├── _index.md 
-    ├── lab/
-    │   ├── _index.md 
-    ├── exam/
-    │   ├── _index.md 
-    └── content/
-        ├── description/
-        ├── getting-started/
-        ├── faq/
-        └── {other-sections}/
-```
-
-Each folder represents a level in the hierarchy. The `_index.md` file within a folder is crucial as it defines the metadata for that level, such as its `title`, `description`, and `type` (e.g., `type: "course"`, `type: "certification"`, or `type: "challenge"`). The final `.md` files represent your individual learning activities.
-
-> For a deeper understanding of how Hugo uses `_index.md` to create content sections, you can refer to the official [Hugo Page Bundles documentation](https://gohugo.io/content-management/page-bundles/).
-
-### Front Matter
-
-Front matter is the configuration block at the top of every content file that defines its metadata. The most critical field is type, which tells the Academy how to render the content.
-
-The front matter configuration varies depending on the content type. The following examples illustrate typical setups for each content type.
-
-#### Frontmatter
-
-All `_index.md` files use the same frontmatter structure. Only the `type` field differs based on the content level:
-
-```yaml
----
-type: "learning-path"  # or "certification", "challenge", "course"
-title: "Cloud Fundamentals"
-description: "A learning path focused on providing the technical knowledge required for advanced topics."
-weight: 5
-banner: "kubernetes-icon.svg"
-id: "<your-content-uuid>"
-tags: [kubernetes, infrastructure]
-categories: [cloud]
-level: "beginner"
-
-# Table of content covered in the test
-# Each domain can have a weightage (percentage) and subdomains (items)
-# Weightage should sum up to 100 across all domains ( not strictly enforced, but recommended )
-competencies:
-  - title: "Domain 1"
-    percentage: 10 # Weightage of this domain in the test
-    items: 
-       -  "Subdomain 1"
-       -  "Subdomain 2"
-
-  - title: "Domain 2"
-    percentage: 30
-    items:
-      - "Subdomain 1"
-      - "Subdomain 2"
-
-  - title: "Domain 3"
-    percentage: 60
-    items:
-      - "Subdomain 1"
-      - "Subdomain 2"
-
-
-
-# List of resource that are recommended to complete before taking the test
-# Not strictly enforced, but recommended
-prerequisiteKnowledge:
-  - title: "Learning Path: Cloud Computing Basics"
-    link: "https://academy-domain.com/learning-paths/cloud-computing-basics"
-  - title: "Basic Certification: Networking Basics"
-    link: "https://academy-domain.com/certifications/networking-basics"
-  - title: "Basic knowledge of Linux command line"
-    link: "https://linuxcommand.org/"
-
-# List of additional resources for further reading 
-relatedResources:
-  - title: "Documentation"
-    link: "https://docs.example.com/"
-  - title: "Instructions"
-    link: "https://instructions.example.com/"
-  - title: "YouTube Channel"
-    link: "https://www.youtube.com/c/example" 
-
-# Additional attributes about the test
-additionalAttributes: 
-  - title: "Retake Policy"
-    description: "One Retake allowed after 30 days"
-  - title: "Labs"
-    description: "Hands-on labs included"
-
----
-```
- 
- **Summary of Required Fields**
-
- > In this table, fields marked with ✅ are required, while those marked with – are optional.
-
-| Applicable To                 | Field         | Required | Notes                                                                                                         |
-| ----------------------------- | ------------- | :------: | ------------------------------------------------------------------------------------------------------------- |
-| All                           | `title`       |    ✅     | The main display title.                                                                                       |
-| All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
-| All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
-| All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
-| **Learning Path**, **Certification**, **Challenge** | `type`        |    ✅     | Defines the content's role. Values: `challenge`, `learning-path`, `certification` |
-| **Learning Path**, **Certification**, **Challenge** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
-| **Learning Path**, **Certification**, **Challenge** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., meshery-contributor-badge.svg).|
-| **Learning Path**, **Certification**, **Challenge** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
-| **Learning Path**, **Certification**, **Challenge** | `banner`      |    -    | Path to a banner image located in the same folder (Page Bundle). |
-| All | `tags`        |    -    | Keywords for content discovery. Multiple tags can be selected.                                                |
-| All | `categories`  |    -    | The main categories for the content. Only one can be selected.                                                |
-
-
-> For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
-
-{{< alert type="info" title="Be Careful About Name Changes" >}}
-Renaming content after publication would break progress tracking for enrolled learners. It's like changing pages while someone is following the story. Consider updating the content's description, adding an introductory note, or creating a versioned copy.
+{{< alert type="info" title="Permissions for Role Assignment" >}}
+An Organization Admin can assign organization roles to users, but provider roles can only be assigned by Provider Admins. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 {{< /alert >}}
-
-## 4. Add Assets and Interactive Content
-
-Enhance your course with images and other visual aids. The recommended and standard method for adding images is Page Bundling. This approach involves placing your image files directly alongside the Markdown content they belong to, which is simpler and keeps content organized.
-
-{{< alert type="success" title="Recommended Method: Page Bundling" >}}
-For all assets, please use the Page Bundling method. It simplifies asset management by co-locating images with the Markdown files that use them.
-{{< /alert >}}
-
-### Size Limits for Embedded Media
-While there's no hard-coded size limit, we enforce these practical constraints:
-| Media Type | Recommended Max Size | Impact Beyond Limit          |
-|------------|----------------------|------------------------------|
-| Video      | 50 MB                | Slow builds, CI failures     |
-| Image      | 5 MB                 | Hugo memory overflow         |
-| PDF        | 20 MB                | Browser loading delays       |
-
-
-### How to Add an Image
-
-1.  Place your image file (e.g., `hugo-logo.png`) in the **same directory** as your Markdown file (e.g., `01-pods.md`). 
-
-2.  In your `01-pods.md` file, embed the image using a **standard Markdown link**. The path should just be the filename.
-
-    ```markdown
-    ![The Hugo Logo](hugo-logo.png)
-    ```
-
-{{< alert type="warning" title="Legacy Method: Do Not Use" >}}
-The `usestatic` shortcode is **deprecated** and should not be used!
-{{< /alert >}}
-
-### How to Add a Video
-
-**Page Bundling (Recommended)**
-```markdown
-<video controls width="100%">
-  <source src="video-demo.mp4" type="video/mp4">
-</video>
-```
-
-**External Hosting (Large Files)**
-```markdown
-{{</* card title="Video Tutorial" */>}}
-<video controls preload="metadata">
-  <source src="https://cdn.yourcompany.com/video.mp4" type="video/mp4">
-  Your browser doesn't support HTML5 video.
-</video>
-{{</* /card */>}}
-```
-
-#### External Hosting Recommendations
-For optimal performance, we recommend hosting large videos on dedicated platforms:
-- **YouTube** (Free, public/private options)
-- **AWS S3** (Requires bucket & CORS configuration)
-- **Cloudflare Stream** (Paid, enterprise-grade)
-- **Vimeo** (Paid, professional features)
-
-
-#### Critical Considerations
-- Best practice: Page Bundling
-
-- Accessibility: Always include subtitle tracks (VTT format)
-
-- Thumbnails: Set custom posters with ```poster="image.jpg"```
-
-- Bandwidth: Self-hosted videos may incur significant costs
-
-- Authentication: For private videos, use signed URLs (S3) or unlisted (YouTube)
-
-## 5. Build and Preview Locally
-
-Before publishing, it is crucial to preview your content locally to check for formatting errors, broken links, and overall structure.
-
-```bash
-# Set Up the Environment (One-time Task)
-make setup
-# Run the Local Preview Server
-make site
-```
-
-This will start a local development server, where you can view your content as you build it.
-![Preview site](./images/preview-site.png)
-
-{{< alert type="info" title="Local Previews" >}}
-The local preview uses a generic theme to show the structure and content. It **will not** display your organization's specific branding, such as custom logos or color schemes.
-
-You can configure your organization's branding in the [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations).
-{{< /alert >}}
-
-## 6. Publishing Your Content
-
-Once you have tested your content locally, you can publish it to the [Layer5 Academy](https://cloud.layer5.io/academy) through our automated workflow.
-
-To help you visualize how your content goes from a local file to live Academy content, the diagram below illustrates the entire end-to-end publishing workflow. It shows which components you will interact with directly and how the CI/CD pipeline handles the rest automatically.
-
-{{< meshery-design-embed src="..//creating-your-learning-path/images/embedded-design-academy-content-publishing-workflow.js" id="embedded-design-37c37d14-be76-487a-90aa-5ada0c1c115f" size="full" >}}
-
-The process involves a one-time setup of secrets in your repository, followed by creating a GitHub Release to publish each new version of your content.
-
-### Stage 1: Configure the Publishing Workflow (One-Time Setup)
-
-To allow your repository to securely communicate with the Academy's build system, you must configure GitHub Secrets. This one-time setup ensures your publishing workflow can authenticate automatically.
-
-#### 1. Verify Required Secret Names
-
-First, confirm the **exact secret names** required by the workflow.
-
-In your repository, open the workflow file at `.github/workflows/build-and-release.yml`. This confirms the workflow expects secrets named exactly `ACADEMY_ORG_ID` and `ACADEMY_TOKEN`.
-  ```yaml
-  with:
-    orgId: ${{ secrets.ACADEMY_ORG_ID }}
-    token: ${{ secrets.ACADEMY_TOKEN }}
-    # ... and other parameters
-  ```
-
-#### 2. Set Up Repository Secrets
-
-Now, create the two required secrets in your repository.
-
-1.  Navigate to your GitHub repository and go to `Settings` > `Secrets and variables` > `Actions`.
-2.  Ensure you are on the **Secrets** tab.
-3.  Click `New repository secret` to add the following two secrets:
-    1. **Name:** `ACADEMY_ORG_ID` 
-
-       **Value:** Paste your unique Organization ID string.
-
-    2. **Name:** `ACADEMY_TOKEN` 
-
-       **Value:** Paste the personal access token generated from Layer5 Cloud by following the instructions below.
-
-{{< alert type="info" title="How to Correctly Copy Your Token" >}}
-When you generate a token from the [Layer5 Cloud Tokens page](https://cloud.layer5.io/security/tokens), you will get a JSON object like this:
-`{"meshery-provider":"Meshery","token":"eyj...your-long-token-string..."}` You must copy only the token string itself—the value inside the quotes for the `"token"` key. 
-
-Do NOT include the curly braces `{}`, the `"token":` key, or the surrounding quotes. The value you paste into the secret should begin with `eyj...`.
-{{< /alert >}}
-
-Once configured correctly, your secrets page should look like this:
-![Secrets page showing correct configuration](./images/setting.png)
-
-{{< alert type="info" title="Alternative Method (Not Recommended)" >}}
-While you can hardcode your `ACADEMY_ORG_ID` directly in the workflow file, we strongly recommend using secrets for better security and flexibility.
-{{< /alert >}}
-
-### Stage 2: Publish by Creating a GitHub Release
-
-With the setup complete, you can publish your content anytime by creating a new release.
-
-1.  Ensure all your latest changes are committed and pushed to your repository's `master` branch.
-2.  On your GitHub repository page, navigate to the **"Releases"** section.
-3.  Click **"Draft a new release"**.
-4.  Create a new version tag for your release (e.g., `v1.0.1`).
-5.  Provide a title and description for your release.
-6.  Click **"Publish release"**.
-
-This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/academy).
-
-- Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
-- Your content will go fully live to the production Academy platform during the next scheduled cloud release.
-
-> **For Urgent Updates:** If you have a time-sensitive publishing request or encounter any issues with the automated process, please [contact the Layer5 team](https://layer5.io/company/contact) for expedited assistance.
-
-![Release Example](./images/release-publish.gif)
-
-## 7. Ongoing Maintenance and Updates
-
-Once your content is live, you may need to perform routine tasks to keep your local environment and dependencies up-to-date.
-
-### Updating the Academy Theme
-The  [`academy-theme`](https://github.com/layer5io/academy-theme) provides the core layout, style, and features for your Academy content. Regularly updating it ensures you benefit from the latest improvements and bug fixes.
-
-To upgrade to the latest theme version, run: 
-```bash
-make theme-update
-```
-
-You will see output similar to this as Hugo fetches the new modules:
-```bash 
-hugo mod get -u
-hugo: collected modules in 1707 ms
-go: downloading github.com/layer5io/academy-theme v0.1.6
-go: upgraded github.com/layer5io/academy-theme v0.1.5 => v0.1.6
-go: upgraded github.com/twbs/bootstrap v5.3.6+incompatible => v5.3.7+incompatible
-```
-
-{{< alert type="info" title="When to Update?" >}}
-It's a good practice to update the theme before creating a new release or when you notice that your local preview is missing recent design changes.
-{{< /alert >}}
-
-### Clearing the Local Cache for Troubleshooting
-
-If you encounter unexpected formatting issues or your content doesn't update correctly during local development, your build cache might be stale. Use the `make clean` command to resolve this.
-This command first deletes the local build cache (`public` directory) and then restarts the development server, ensuring you are previewing a fresh build of your content.
-```bash
-make clean
-```
-
-## Frequently Asked Questions
-
-<details>
-  <summary>1. Why is my workflow failing with a <code>401 Unauthorized</code> or <code>User must be logged in</code> error?</summary>
-  
-This error indicates an issue with your <code>ACADEMY_TOKEN</code>. Please ensure you have correctly copied only the token string and not the entire JSON object from the downloaded file.
-</details>
-
-<details>
-  <summary>2. Why is my workflow failing with a URL containing a double slash </code>( // )</code>?</summary>
-  
-A double slash in the URL (e.g., <code>.../api/academy//update/...</code>) means your <strong>ACADEMY_ORG_ID</strong> was not found. This typically happens when the secret name in your repository does not <strong>exactly match</strong> the name expected by the workflow file (e.g., <code>ORG_ID</code>).
-</details>
-
-<details>
-  <summary>3. How do I handle updates or corrections after my content is live?</summary>
-  
-All content updates are managed through your Git repository. Simply commit and push your changes, then <strong>create a new GitHub Release</strong> with a new version number (e.g., <code>v1.0.2</code>). This automatically triggers the publishing workflow and updates your content on the Academy platform.
-</details>
-
-<details>
-  <summary>4. What happens if my new content has an error?</summary>
-  
-The publishing process is designed to be safe. If your new content causes a build error, the workflow will fail, and the previously working version of the Academy will remain unchanged. Your broken update will not be published.
-</details>
-
-<details>
-  <summary>5. How do I structure multiple courses under one learning path?</summary>
-
-The structure is defined by your folder hierarchy. A learning path is a directory, and each course is a sub-directory within that path. This folder structure in your <code>content</code> directory directly maps to the content structure presented to users. For certifications and challenges, the structure is typically flatter with exams or scenario-based tasks.
-</details>
-
-<details>
-  <summary>6. Why does my local build fail when adding large videos?</summary>
-  
-The ideal size should be less than 10MB for our service performance and sustainability, and server resource management. If your asset size is larger than 10MB, we recommend using external hosting as listed.
-</details>
- 
-<details>
-  <summary>7. How to securely host private training videos?</summary>
-  
-Use AWS S3 with signed URLs:
-```html
-<video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
-```
-</details>
-
-<details>
-  <summary>8. How do I debug using Layer5 Cloud Events?</summary>
-
-If your content is not appearing in the Academy after a GitHub release, it may have failed to publish. You can troubleshoot these issues using the **Events** section in [Layer5 Cloud](https://cloud.layer5.io).
- 
-To view publishing logs:
-1. Navigate to **Settings > Events**
-2. Switch to the **Audit** tab
-3. Apply a filter using the action type:
- `AcademyUpserted`
-This will show all attempts to upload content, including which ones failed and why.
-
-**Common Errors You Might See**
-- **Duplicate IDs**
-  Two pieces of content using the same identifier. You can fix this by renaming or regenerating unique IDs.
-
-- **Invalid Content Type**
-  For example, ensure you use singular forms:
-  - Use `type: "learning-path"` not `type: "learning-paths"`
-  - Use `type: "certification"` not `type: "certifications"`
-  - Use `type: "challenge"` not `type: "challenges"`
-
-- **Missing Required Fields**
- Ensure that title, description, type, and id are included in the content's frontmatter.
-
- {{< alert type="info" title="Tip" >}}
- Use the event filter `AcademyRegisteredToContent` to track user activity, like who enrolled in which content.
- {{< /alert >}}
-</details>
 
 
 --------------------------------------------------------------------------------
 title: "User Invitations"
-url: /cloud/concepts/identity-and-security/users/user-invitations/index.md
+url: /cloud/guides/organizations/inviting-users/index.md
 description: Learn how to create custom, secure, and flexible invitations for new members.
 
 --------------------------------------------------------------------------------
@@ -8059,7 +7592,7 @@ Managing invitations requires the **Manage Invitations** permission within your 
 
 ### Default organization state
 
-By default, organizations are **closed**: there is no open registration. A user cannot join your organization simply by navigating to a URL — they must either click a valid invitation link or register through a page associated with an organization that has a [default invitation](#invitation-properties-explained) configured.
+By default, organizations are **closed**: there is no open registration. A user cannot join your organization simply by navigating to a URL - they must either click a valid invitation link or register through a page associated with an organization that has a [default invitation](#invitation-properties-explained) configured.
 
 When no default invitation is set, new users who arrive at your organization's registration page are registered as platform users but are **not** automatically added to your organization. They will have no organization membership and no roles until an administrator adds them or they accept an invitation link.
 
@@ -8106,7 +7639,7 @@ To create a new invitation, navigate to the [Invitations page](https://cloud.lay
 <img src="./images/create-invitation.png" alt="Create Invitation Dialog" style="width:30%; height:auto;" />
 
 {{< alert type="info" title="Email notifications" >}}
-After an invitation is created, a notification email is sent only to addresses listed in the `emails` field that are exact email addresses. Domain-wide patterns (e.g., `@layer5.io`) and public invitations (empty `emails` field) do not trigger individual notification emails — share the invitation link directly in those cases.
+After an invitation is created, a notification email is sent only to addresses listed in the `emails` field that are exact email addresses. Domain-wide patterns (e.g., `@layer5.io`) and public invitations (empty `emails` field) do not trigger individual notification emails - share the invitation link directly in those cases.
 {{< /alert >}}
 
 <img src="./images/invitation-email.png" alt="Invitation Email" style="width:50%; height:auto;" />
@@ -8124,7 +7657,7 @@ After an invitation is created, a notification email is sent only to addresses l
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
 | `name` | A human-readable name used to identify the invitation. |
 | `description` | Additional information about the invitation's purpose, for internal reference. |
-| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time — designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
+| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time - designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
 
 ### Managing existing invitations
 
@@ -8133,9 +7666,9 @@ All existing invitations are displayed in a table showing key details for each i
 ![Invitations Overview Table](./images/overview.png)
 
 You can filter the list using the filter control at the top right of the table. Available filters are:
-- **Status** — show only enabled or disabled invitations
-- **Roles** — show invitations that grant a specific role
-- **Teams** — show invitations that add members to a specific team
+- **Status** - show only enabled or disabled invitations
+- **Roles** - show invitations that grant a specific role
+- **Teams** - show invitations that add members to a specific team
 
 From the table you can perform the following management actions on each invitation:
 
@@ -8147,19 +7680,19 @@ If another administrator deletes an invitation while your edit dialog is open, s
 
 ### Tracking who has accepted an invitation
 
-The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit — for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
+The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit - for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
 
-To see the individual users who are now members of the organization, navigate to the [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}) page. Members who joined via invitation appear there alongside their assigned roles.
+To see the individual users who are now members of the organization, navigate to the [User Management]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}) page. Members who joined via invitation appear there alongside their assigned roles.
 
 ### What happens when a user accepts an invitation
 
 When a user clicks an acceptance link and is logged in, the system performs the following steps in order:
 
-1. **Validates the invitation** — confirms it exists, is `enabled`, has not passed its expiration date, and has not exceeded its quota.
-2. **Checks email eligibility** — verifies the user's email matches the invitation's `emails` list. An empty list allows any email (public invitation).
-3. **Adds the user to the organization** — the user immediately becomes a member of the organization that owns the invitation.
-4. **Assigns roles** — all roles configured on the invitation are assigned to the user in that organization. If no roles are configured, the user joins with no role.
-5. **Adds the user to teams** — the user is added to all teams configured on the invitation.
+1. **Validates the invitation** - confirms it exists, is `enabled`, has not passed its expiration date, and has not exceeded its quota.
+2. **Checks email eligibility** - verifies the user's email matches the invitation's `emails` list. An empty list allows any email (public invitation).
+3. **Adds the user to the organization** - the user immediately becomes a member of the organization that owns the invitation.
+4. **Assigns roles** - all roles configured on the invitation are assigned to the user in that organization. If no roles are configured, the user joins with no role.
+5. **Adds the user to teams** - the user is added to all teams configured on the invitation.
 
 Role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
 
@@ -8180,7 +7713,7 @@ A person can sign in successfully and still not join your organization. The open
 - Its quota has not been reached.
 - The person's email address matches its `emails` list. An empty list matches everyone.
 
-When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
+When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}).
 {{< /alert >}}
 
 ### Use cases and examples
@@ -8255,7 +7788,7 @@ Think of it as a **botanical garden**:
 - Challenges = the garden competition - focused skill challenges
 - Certifications = master gardener diploma - expertise validation
 
-Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment
+Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere - after a single activity, at the end of a module, or as a final course assessment
 
 ## Why assessments matter:
 
@@ -8271,9 +7804,9 @@ Well-designed assessments are crucial because they:
 
 ### 1. Each Level Can Have Assessments
 Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/), to avoid confusion and clearly distinguish between assessment types at each level, we use specific naming conventions:
-- Firsr Level (Root Level): Exam – assesses learning outcomes at root level
-    - Second Level: Test – measures understanding within a course
-      - Third Level: Quiz – short assessments tied to specific modules
+- First Level (Root Level): Exam - assesses learning outcomes at root level
+    - Second Level: Test - measures understanding within a course
+      - Third Level: Quiz - short assessments tied to specific modules
 
 ```
 Layer5 Cloud Academy
@@ -8371,7 +7904,7 @@ Quiz frontmatter uses **camelCase** (`passPercentage`, `isOptional`, `isCorrect`
 
 ### Assessment Frontmatter Fields
 
-> In this table, fields marked with ✅ are required, while those marked with – are optional.
+> In this table, fields marked with ✅ are required, while those marked with - are optional.
 
 | Applicable To | Field | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -8524,14 +8057,14 @@ This assessment allows you to review your educational progress. Give it a try!
    * If none are marked, the **last exam** (by file path) is treated as final.
    * There must be **only one** explicitly marked final exam per section.
 3. A **final exam cannot be optional**.
-   * This applies even when only one exam is present — it cannot have `isOptional: true`.
+   * This applies even when only one exam is present - it cannot have `isOptional: true`.
 
 ### Final Exam Determination Logic
 A exam is considered final if:
 - It has `final: true` in its front matter.
 - It is the **only** exam under its parent section.
 - It is the **last exam** (ordered by `File.Path`) among sibling exams, and no other exam is explicitly marked as final. 
-- If any sibling exam is marked as `final: true`, no other exam will be considered final — even if it’s last.
+- If any sibling exam is marked as `final: true`, no other exam will be considered final - even if it’s last.
 
 {{< alert type="info" title="Why Not Use `weight` to Determine the Final Exam" >}}
 To ensure the final exam is always clear and uniquely identified, we don't use the `weight` field, which can be ambiguous (e.g., missing or duplicated across files). Instead, we rely on the file path order as a more stable and reliable standard.
@@ -8630,737 +8163,7 @@ No partial credit is awarded. To receive points, the learner must select all cor
 <details>
   <summary>5. Can a learner retake an assessment even after scoring 100%?</summary>
 
-Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows—without enforcing score-based access rules.
-</details>
-
-
---------------------------------------------------------------------------------
-title: "User Management"
-url: /cloud/concepts/identity-and-security/users/user-management/index.md
-description: Learn how to create, add, invite, and manage users within Layer5 Cloud.
-
---------------------------------------------------------------------------------
-
-This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.
-
-![User Management options](images/org_invite.png)
-
-## Create User Account
-
-Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user's introduction to Layer5 Cloud.
-
-![Create User](images/create-user.gif)
-
-{{< alert type="info" title="Permission Required for User Creation" >}}
-Only Provider Admins and Organization Admins can create users. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
-{{< /alert >}}
-
-## Add / Remove Existing User
-
-This section explains how to add existing Layer5 Cloud users to one of your organizations or remove them.
-
-{{< meshery-design-embed  src="export-designs/embedded-design-page-open-source.js"  id="embedded-design-066b0ef3-7956-4c3b-a5cc-1d276ac13ec6" >}}
-
-### Adding a User to an Organization
-
-If someone already has a Layer5 Cloud account but isn't part of your organization, you can add them.
-
-1. Go to the Users tab in the Identity section 
-2. Click the **Add User** button.
-3. Select the organization to which you want to add the user.
-4. Select the user from the list of available users.
-5. Assign appropriate roles within the organization.
-
-![Add User to Organization](images/add-user.gif)
-
-### Removing Users from an Organization
-
-You can remove users from an organization one by one or several at once. This action takes away their membership and access to that specific organization's resources but doesn’t delete their overall Layer5 Cloud account.
-
-#### Method 1: Individual User Removal (One by One)
-   * **Locate the User:** Find the specific user you wish to remove from the list.
-   * **Use Row Action:** Click the "Remove User" icon.
-   * **Confirm:** When prompted, confirm your decision to remove the user from the organization.
-
-#### Method 2: Bulk User Removal (Multiple Users at Once)
-   * **Select Users:** Use the checkboxes next to each user's name to select all the users you intend to remove.
-   * **Use Bulk Action:** Click the "Delete" button.
-   * **Confirm:** When prompted, confirm that you want to remove all the selected users from the organization.
-
-![Removing Users from an Organization](images/remove_user.png)
-
-#### What Removal Ends
-
-Removing a member ends every access-bearing relationship they hold **inside that organization**, as a single operation:
-
-* **Their organization membership**, together with the organization [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to it.
-* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to those memberships.
-
-Both matter, because permissions reach a user through the roles carried on those memberships. A [keychain]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) granted by a team role is revoked by the removal just as an organization role's keychain is, so a removed member is left holding no [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) in the organization by either route. Both removal methods above behave identically in this respect; removing several members at once applies the same operation to each one.
-
-Removal does **not** affect:
-
-* The person's Layer5 Cloud user account, which continues to exist.
-* Their membership in any other organization, or in teams belonging to those organizations.
-* Designs, environments, and other resources they created, which remain in the organization.
-
-Removal is not reversible from the Users tab. To restore someone's access, add them to the organization again and reassign their organization roles and team memberships. Neither returns on its own.
-
-{{< alert type="warning" title="Team Access Is Not Itemized in the Confirmation" >}}
-The confirmation shown after a removal reports only that the member was removed from the organization. It does not list the team memberships that ended with it. Review the member's teams before removing them if you need a record of what their removal revoked.
-{{< /alert >}}
-
-{{< alert type="info" title="Organization Owners Cannot Be Removed" >}}
-An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
-{{< /alert >}}
-
-## Invite User via Email
-
-You can invite new or existing users to join one of your organizations by sending them an email invitation.
-
-* **How to Invite:**
-    1.  Click the "Invite User" button.
-    2.  Enter the person's First Name, Last Name, and Email address.
-    3.  Assign them to a target Organization. Optionally, Team(s) and Organization Role(s) they will receive.
-    4.  Layer5 Cloud sends an invitation email to the user.
-* **What the User Does:** The person you invited will click a link in the email to accept. If they're new to Layer5 Cloud, they'll need to create an account first before they can join your organization.
-
-{{< alert type="info" title="Permissions for Role Assignment" >}}
-An Organization Admin can assign organization roles to users, but provider roles can only be assigned by Provider Admins. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
-{{< /alert >}}
-
-
---------------------------------------------------------------------------------
-title: "Academy Instructor Console Guide"
-url: /cloud/academy/creating-content/instructor-console-guide/index.md
-description: A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
-
---------------------------------------------------------------------------------
-
-The [Academy Instructor Console](https://cloud.layer5.io/academy/instructors-console) serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.
-
-### Gaining Access
-
-To view the Instructor Console, you must have the **Academy Admin** role or be an **organization admin**.
-
-{{< alert type="info" title="Enterprise Feature" >}}
-The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. [Learn more](https://layer5.io/pricing)
-{{< /alert >}}
-
-![Academy Admin Role](./images/academy-admin.svg)
-
-### Using the Content Creation Tool
-
-The Instructor Console includes a Content Creation Tool to help you develop new learning materials. It's a simple, guided process that generates the initial configuration for your content.
-
-This tool walks you through three quick steps to create your content's boilerplate configuration.
-
-![Content Creation Tool](./images/create-content-model.gif)
-
-1. **Basic Information**: First, you'll provide the essential details for your new content, such as its **Content Type** (Learning Path/Certification/Challenge), **Title**, and **Description**.
-
-    | Feature | Learning Path | Challenge | Certification |
-    | :--- | :--- | :--- | :--- |
-    | Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
-    | Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
-    | Outcome | Acquired knowledge and skills. | A score and rank status. | An optional, paid official certificate and a verifiable badge.|
-
-2. **Content Details**: Next, you'll refine additional properties for the content.
-
-> Need help understanding these properties? [Learn more]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#3-structure-your-content" >}}).
-
-3. **Copy Template**: Finally, the Creation Tool presents you with a **"Generated Front Matter & Setup Guide"**. You'll copy this YAML configuration and place it at the top of the corresponding `_index.md` file in your content repository.
-
-{{< alert type="info" title="Console Creation Tool vs. Full Guides" >}}
-Think of the console's creation tool as a 'quick start' generator. It generates the necessary configuration boilerplate, but the detailed work of writing, structuring files, and publishing your content is done in your Git repository. For that, you'll need to follow our [comprehensive guides]({{< ref "cloud/academy/creating-content/_index.md" >}}).
-{{< /alert >}}
-
-## Understanding the Dashboard
-
-Below the creation tool is the main dashboard, which provides an overview of your academy's statistics through a series of widgets.
-
-### Core Metrics
-
-These charts display your most important, high-level statistics, giving you a snapshot of your academy's health:
-
-<!-- Screenshot out of date: it shows the old three-card row (Total Learners / Active Learners /
-     Total Test Taken). The shipped Overview has the five cards listed below. Recapture against the
-     current console. Tracked in layer5io/docs#1184. -->
-![Core Metrics Dashboard](./images/core-metrics.png)
-
-*This screenshot predates the current layout and is pending recapture. The console now shows the five cards described below.*
-
-- **Total Learners**: Represents the overall reach of your academy. This is the total number of people who have ever shown interest in your content.
-- **Active Learners**: Measures current engagement. This is the number of distinct learners who have worked with your content this calendar month, giving you an idea of your active student body.
-- **Registrations**: Every registration in the organization, whatever the state of the content it points at. This is the same total the [Learner Registration](#learner-registration) chart breaks down, so the two always agree.
-- **Completion Rate**: Registrations marked completed as a share of all registrations.
-- **Quiz Pass Rate**: The share of quiz attempts that passed, across every test in your organization. The card's subtitle carries the underlying counts (for example "762 of 1,036 attempts passed"), so the raw attempt total is still visible.
-
-A rate card with nothing to divide renders as `-`, not `0%`. "Nobody has attempted this quiz yet" and "everybody failed it" are different facts, and reporting the first as zero would send you looking for a problem that isn't there.
-
-**Strategic Uses**
-- Monitor Total Learners growth - steady increases indicate growing academy reach
-- Analyze Quiz Pass Rate - a low rate suggests challenging material or unclear content, a very high rate may indicate assessments that are too easy. The attempt count in the card's subtitle distinguishes a low rate over many attempts (a real difficulty signal) from one over a handful (not yet meaningful).
-
-{{< alert type="info" title="What Defines an 'Active Learner'?" >}}
-The **Active Learners** metric is a key indicator for engagement and billing. It counts *learners*, not registrations, and it is scoped to the current calendar month.
-
-A learner counts as active this month if, against academy content that is still live, they either created or touched a registration during the month, or submitted a quiz attempt during the month. A learner who does both counts once. A learner who enrolled months ago and takes a quiz this month is active this month, even though their registration row has not changed.
-
-Because it counts distinct people over a monthly window rather than counting registrations, it is not directly comparable to the registration totals beside it, and it resets each month rather than accumulating. A learner who finished a curriculum long ago still counts as active in any month they take a quiz.
-{{< /alert >}}
-
-{{< alert type="info" title="'Registrations' vs. 'Registrations Here'" >}}
-The **Curricula** tab has its own registrations card, named **Registrations Here**, which deliberately counts something narrower: only registrations against the published curricula listed on that tab. It is normally a smaller number than the Overview's **Registrations** card, which counts every registration in the organization including those against draft or retired content. That gap is expected, not a discrepancy - the card carries a tooltip explaining the difference.
-{{< /alert >}}
-
-### Content Details
-
-This widget provides a quick inventory of your academy's content:
-
-- **Content Version**: Shows the version of the academy content your learners are using. 
-- **Content Stats**: Shows a quick count of the different types of content you've published. Each category is interactive; clicking on one will take you to the Academy Catalog, pre-filtered to show all your content of that type.
-
-![Content Details](./images/content-details.png)
-
-**Strategic Uses**
-- Monitor content version updates - when version numbers don't change, check if your GitHub releases and Layer5 Cloud deployments are complete
-- Track content distribution - if one content type dominates, consider diversifying your academy offerings
-
-{{< alert type="info" title="Content Versioning and Release Process" >}}
-If you've recently published new content but don't see the version number updated here, it is likely due to the platform's two-stage release process. Your updates become fully live only after both your content repository's GitHub Release is created and the subsequent Layer5 Cloud release is deployed. 
-
-For a complete walkthrough of this workflow, see the [Publishing Your Content Guide]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#6-publishing-your-content" >}}).
-{{< /alert >}}
-
-### Learner Registration
-
-This chart provides an immediate visual summary of your learner base. 
-
-![Learner Registration](./images/learner-registration.png)
-
-While the chart will only display statuses that currently have data, the system recognizes the following five definitions, each represented by a specific color:
-  -   `Registered` (Blue): The learner has enrolled but has not yet started the content.
-  -   `In Progress` (Amber): The learner has started the content but has not yet finished it.
-  -   `Completed` (Green): The learner has successfully finished all required parts of the content.
-  -   `Failed` (Crimson): The learner did not pass the content.
-  -   `Withdrawn` (Red): The learner has unenrolled from the content.
-
-**Strategic Uses**
-- Monitor the `registered` vs `completed` ratio - if `registered` grows much faster than `completed`, your content may be too difficult or lacks engagement
-- Watch for large `withdrawn` segments - high withdrawal rates may indicate content quality issues or poor learner experience
-- Track completion rates over time - improving rates suggest content optimization success, declining rates may signal new content challenges
-
-### Content Metrics
-
-It lists your content and ranks them by the total number of passes, giving you a clear view of what learners find most engaging. Each title is a direct link, allowing you to navigate straight to it.
-
-![Content Metrics](./images/content-metrics.png)
-
-**Strategic Uses**
-- Identify top-performing content - high registration numbers indicate strong learner interest, use this to understand what resonates
-- Monitor new content launch performance - if new Learning Paths get few registrations, check marketing or content positioning
-- Compare content performance - if similar topics have very different registration numbers, investigate what makes the difference
-
-### All Learners Report
-
-The All Learners section provides a detailed, interactive table that allows you to track individual progress, see who is taking which content, and get a granular view of your learner base.
-
-![All Learners Report](./images/learners.png)
-
-#### Understanding the Table
-
-Each row in the table represents a single user's registration for a specific content. Here's what each column means:
-
--   **USER**: The learner's information. Clicking the avatar will take you to their public user profile.
--   **CURRICULA**: The specific content the user is enrolled in. Clicking the title will navigate you directly to that content.
--   **REGISTERED AT**: A timestamp indicating when the user enrolled. This is shown as a relative time (e.g., "6 hours ago") and will display the full date on hover.
--   **STATUS**: The learner's current standing in the content. The definition for each status is provided in the Learner Registration section [above](#learner-registration).
-
-#### Filtering and Finding Learners
-
-To find specific groups of learners, use the filter control at the top-right of the table.
-
--   **Filter by Content Type**: Want to see everyone enrolled only in Certifications? Select `Certification` from the 'Content Type' filter.
--   **Filter by Status**: Need a list of everyone who has successfully finished content? Select `Completed` from the 'Status' filter.
-
-#### Customizing Your View
-
-You can customize which columns are visible to tailor the report to your specific needs. Click the **View Columns** button at the top-right of the table. A dropdown menu will appear, allowing you to check or uncheck columns to show or hide them.
-
-![Filtering](./images/filter.png)
-
-#### Navigating Through Pages
-
-If there are a large number of learner registrations, the report is split into multiple pages. Use the controls at the bottom of the table to navigate through the data:
-
-**Rows per page**: Choose how many records to display on each page (e.g., 10, 25, 50).
-
-**Strategic Uses**
-- Identify at-risk learners - filter for users in `Registered` status for over 30 days, they may need support or content may be too challenging
-- Gather feedback from recent completions - contact learners who moved to `Completed` status within the last week while content is fresh in their minds
-
-### Analyzing Test Performance
-
-The final section is dedicated to analyzing the performance of your assessments. 
-
-![Test Statistics Overview](./images/test-stats.png)
-
-#### Test Stats
-
-These statistics provide a high-level summary of all test activities in your academy.
-
--   **Pass/Fail Summary Bar:** This bar chart gives you an at-a-glance comparison of the total number of passed attempts (green) versus failed attempts (red) across all tests.
-
--   **Insight Cards:** These three cards automatically surface key trends and outliers from your data:
-    -   **Lowest Pass Rate:** The quiz with the smallest share of passing attempts, helping you identify challenging content.
-    -   **Highest Pass Rate:** The quiz with the largest share of passing attempts.
-    -   **Most Attempted Test:** The quiz that learners have attempted the most times, regardless of the outcome.
-
-    The two rate cards rank on pass rate rather than on raw pass and fail counts, and only tests with at least five attempts are ranked. Ranking on counts would measure popularity instead of difficulty - the test the most people take holds both the most passes and the most failures - and the attempts floor stops a single learner failing a brand-new quiz from crowning it the hardest test. In a young academy where no test has reached five attempts yet, the ranking falls back to the full set.
-
-#### Test Metrics
-
-The **Test Metrics** list provides a detailed performance breakdown for each individual test. Each test title in this list is a clickable link that will take you directly to that assessment.
-
-The percentage (e.g., `33%`) shows the overall pass rate for that specific test.
-
-{{< alert type="info" title="Identifying Problem Areas" >}}
-Use this list to quickly identify which specific assessments are causing the most trouble for your learners. A low pass rate on a particular assessment might indicate that the source material needs clarification or that the questions themselves are unclear.
-{{< /alert >}}
-
-**Strategic Uses**
-- Investigate difficult tests - when a quiz appears in the **Lowest Pass Rate** card, review the content and questions for clarity
-- Monitor test attempt patterns - if **Most Attempted Test** has low pass rates, learners may be struggling with fundamental concepts
-- Use pass rate trends - improving pass rates suggest content optimization success, declining rates may indicate new content is too challenging
-
-## Frequently Asked Questions
-
-<details>
-<summary>I'm my organization's administrator. Can I assign Academy Admin roles?</summary>
-Yes, you can assign Academy Admin roles to users within your organization. As an administrator, you have the ability to manage user permissions and roles in [user page](https://cloud.layer5.io/identity/users).
-</details>
-
-<details>
-<summary>Can I export the All Learners Report to a CSV or Excel file?</summary>
-
-Currently, the Instructor Console does not have a built-in feature to export the report directly to a file format like CSV. If you need this functionality urgently, please contact us at https://layer5.io/company/contact
-</details>
-
-<details>
-<summary>Does "Quiz Pass Rate" count unique learners?</summary>
-
-No. It is computed over attempts, not people: retakes by the same learner each count, so a learner who fails twice and then passes contributes two failures and one pass. It measures assessment outcomes, not how many distinct learners have been tested. For a headcount, use Total Learners or Active Learners.
-</details>
-
-
---------------------------------------------------------------------------------
-title: "Building Certifications"
-url: /cloud/academy/creating-content/building-certifications/index.md
-description: A step-by-step guide to building a professional certification in the Academy.
-
---------------------------------------------------------------------------------
-
-In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Certification** is a formal assessment designed to validate a learner's professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification's primary goal is evaluation.
-
-The successful completion of a Certification results in an official, shareable **Certificate of Completion** and a valuable badge, signifying a verified level of proficiency.
-
-![example image](./images/index-page.png)
-
-### When to Use a Certification
-
-To understand its unique role, here is a comparison with other content types in the Academy. Use this table to decide if a Certification is the right format for your content.
-
-| Feature | Learning Path | Challenge | Certification |
-| :--- | :--- | :--- | :--- |
-| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
-| Structure | Hierarchical (Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
-| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
-| Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
-
-{{< alert type="info" title="Certification: Focus on Assessment, Not Instruction" >}}
-A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise. If the objective is instead for the learner to solve a concrete, hands-on problem, build a [Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) rather than a Certification.
-{{< /alert >}}
-
-## How to Create Your Certification
-
-Building a new certification involves setting up the correct directory structure and defining its properties through Markdown frontmatter.
-
-### Find Your Organization ID and Certification ID {#find-your-organization-uuid-and-certification-id}
-
-{{< alert type="warning" title="Important: Replace the Placeholder IDs" >}}
-Throughout this guide, you'll see references to `<your-organization-uuid>` and `<your-certification-uuid>` placeholders. Make sure to replace all of these with your actual IDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) when you build your certification.
-{{< /alert >}}
-
-Each certification is tied to a specific organization and secured by a unique identifier. Layer5 Cloud generates these IDs for you, and they are what keep your content visible only under your own organization.
-
-You'll need two IDs:
-- **Certification ID**: A unique identifier for your specific certification that gets added to the front matter of your certification's index file
-- **Organization ID**: Your organization's own ID, used in directory paths
-
-{{< alert type="info" title="Generating Your IDs from the Instructor Console" >}}
-
-The easiest way to get the correct IDs is by using the content creation tool.
-
-- Navigate to the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) in Layer5 Cloud.
-- Use the "Create New Content" tool and fill in the information for your new content
-- The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.
-
-[Learn more](https://cloud.layer5.io/academy/instructors-console) about the Academy Console.
-{{< /alert >}}
-
-### 1. Set Up the Directory Structure
-
-All content for a new certification must reside within the `content/certifications/<your-organization-uuid>` directory. To keep content organized, each certification has its own folder named with a descriptive, URL-friendly slug.
-
-The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/<your-organization-uuid>/<certification-folder-name>/`
-
-Below is the standard file structure:
-
-```
-content/certifications/<your-organization-uuid>
-└── layer5-certification-exam/   <-- The <certification-name> directory
-    ├── _index.md                      <-- Defines the certification's metadata
-    ├── exam-1.md                      <-- (Optional) A standard content page for introduction
-    ├── optional-exam-2.md             <-- An optional supplementary exam
-    └── exam-3.md                      <-- A mandatory exam, accessible after completing all previous required units.
-```
-
-**Key Files:**
-- **`_index.md`**: The entry point for your certification containing all metadata (title, description, banner, etc.)
-- **Exam Files (`*.md`)**: Individual Markdown files containing the exams. Order and optional status are controlled by frontmatter, not filename.
-
-### 2. Define the Certification with Frontmatter
-
-The `_index.md` file's frontmatter controls how the certification is presented to users..
-
-Here's a complete example of the YAML frontmatter for a certification's `_index.md` file:
-
-```yaml
----
-type: "certification"
-id: "<your-certification-uuid>"
-title: "Layer5 Network Certification"
-description: "Validate your expertise in Layer5 networking technologies through comprehensive assessment"
-banner: "images/layer5-icon.svg"
-weight: 1
-tags: [layer5, cloud, infrastructure]
-level: "beginner"
-categories: [platform]
-badge: 
-    png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
-    svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
-    title: "Layer5 Certified"
-    description: "Earn the Certification badge to showcase your expertise in Layer5 cloud services."
----
-```
-
-#### Frontmatter Fields Reference
-
-> In this table, fields marked with ✅  are required, while those marked with – are optional.
-
-| Field | Required | Description |
-| :--- | :--- | :--- |
-| `type` | ✅  | Must be set to `"certification"` to identify this content correctly. |
-| `id` | ✅  | **Crucial.** A stable ID used to track learner progress. **Do not change.** |
-| `title` | ✅  | The human-readable title that will be displayed to users. |
-| `description` | ✅  | A comprehensive summary of the certification's scope and objectives. |
-| `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
-| `banner` | - | Path to a banner image located in the same folder (Page Bundle).  |
-| `tags` | - | Keywords for content discovery. Multiple tags can be selected. |
-| `level` | - | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
-| `categories` | - | A string that assigns the certification to a specific category. |
-| `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., layer5-badge.svg).|
-
-### 3. Add Content and Exams
-
-A certification is primarily composed of exams. However, you can also include standard content pages to provide context.
-
-  - **Exams:** The core assessable components. A certification can contain one or multiple exams.
-  - **Informational Pages:** Standard Markdown pages that can serve as an introduction, a study guide, or a list of helpful resources.
-
-{{< alert type="info" title="How to Create and Configure Exams" >}}
-Every "Exam" file within a certification follows the unified Academy assessment standard.
-
-For detailed instructions on how to write an exam file, define various question types, set scoring and passing percentages, and use advanced options, please refer to our comprehensive [Integrating Assessments in the Academy]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) guide.
-{{< /alert >}}
-
-### 4. Managing Question Pools and Test Attempts
-
-A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank** — collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
-
-This behavior is controlled by the `numberOfQuestions` property in the front matter.
-
-* If `numberOfQuestions` is **not defined**, all questions in the test are used in every attempt.
-* If it **is defined**, the test is automatically divided into multiple sets, each containing the specified number of questions.
-
-To ensure even division, the **total number of questions** must be a **multiple** of `numberOfQuestions`.
-
-By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
-
-{{< alert type="warning" title="Multi-Exam Certification Settings" >}}
-For certifications containing multiple exams, each exam may have its own test bank, question count, and retry settings.  
-These configurations are defined per test and may differ across exams within the same certification.
-{{< /alert >}}
-
-
-
-
-## Learner Outcomes: Badges and Certificates
-
-Successfully completing a certification provides learners with valuable, verifiable credentials.
-
-### Badges
-
-Upon successful completion of all mandatory exams, learners are awarded a digital badge. This badge serves as a verifiable credential that is perfect for sharing on professional profiles to showcase the achievement.
-
-See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
-
-![example badge image](./images/badge.png)
-
-### Official Certificates
-
-The ultimate outcome of a certification is an **official Certificate of Completion**.
-
-A key feature unique to the Certification content type is that while the learning materials and exams are offered for free, the **issuance of the official certificate is a paid feature**. This model allows anyone to learn and validate their skills at no cost, with the option to purchase the formal certificate to document their accomplishment.
-
-
-## Frequently Asked Questions
-
-<details>
-  <summary>Can my certification have only one exam?</summary>
-  
-Yes, it can. The simplest form of a certification consists of a single final exam. You can also include multiple independent exams if you wish to assess different skills.
-</details>
-
-<details>
-  <summary>When should I choose to create a "Certification" instead of a "Learning Path"?</summary>
-  
-You should choose a Certification when your primary goal is to **test and assess** a learner's existing knowledge, rather than **teaching them** from scratch. A Learning Path focuses on instruction, while a Certification focuses on assessment.
-</details>
-
-<details>
-  <summary>What does an "Optional" exam mean, and how does it affect a learner's progress?</summary>
-  
-An optional exam is supplementary material. Learners can take it, but they **do not** have to pass it to earn the final certificate. Its score **does not count** towards the certification's passing requirements. This is typically used for extra practice or to test non-core knowledge.
-</details>
-
-<details>
-  <summary>How do I set an exam as "Optional"?</summary>
-  
-You need to add a specific field, `isOptional: true`, to the front matter of the exam's `.md` file. This field tells the system that the exam is not a mandatory requirement to pass the certification.
-</details>
-
-<details>
-  <summary>Can I control the order of multiple exams within a certification?</summary>
-  
-Yes, you can. Each exam file's front matter has a `weight` field. Lower numbers result in an earlier display order. If you don't set a `weight`, the exams will be sorted alphabetically by file title by default.
-</details>
-
-<details>
-  <summary>As a content creator, do I need to handle the certificate payment process?</summary>
-  
-No, you don't. The payment and certificate issuance process is handled by the Layer5 platform. You only need to focus on creating high-quality assessment content.
-</details>
-
-
---------------------------------------------------------------------------------
-title: "Building Challenges"
-url: /cloud/academy/creating-content/building-challenges/index.md
-description: A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
-
---------------------------------------------------------------------------------
-
-In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Challenge** is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.
-
-## When to Use a Challenge
-
-| Feature | Learning Path | Challenge | Certification |
-| :--- | :--- | :--- | :--- |
-| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
-| Structure | Hierarchical (Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
-| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
-| Outcome | Acquired knowledge and skills. | A score and rank status. | An optional, paid official certificate and a verifiable badge. |
-
-{{< alert type="info" title="Challenge: Focus on Doing, Not Reading" >}}
-Choose a Challenge when the point is for the learner to build, break, or fix something real. If most of your material is explanation, it belongs in a [Learning Path]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) instead.
-{{< /alert >}}
-
-## How to Create Your Challenge
-
-Challenges are authored the same way as every other Academy content type: as Markdown in your organization's Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}), which covers the repository setup once for all three content types.
-
-### Find Your Organization UUID and Challenge ID
-
-{{< alert type="warning" title="Important: Replace UUIDs" >}}
-Throughout this guide you will see `<your-organization-uuid>` and `<your-challenge-uuid>` placeholders. Replace all of them with your actual UUIDs from the [Instructor Console](https://cloud.layer5.io/academy/instructors-console).
-{{< /alert >}}
-
-Each challenge is tied to a specific organization and identified by a UUID, which is how the Academy scopes your content to your organization and tracks learner progress against it.
-
-You need two:
-
-- **Challenge ID** - a unique identifier for this challenge, set as the `id` in the front matter of its `_index.md`.
-- **Organization ID** - your organization's UUID, used in the directory path.
-
-The **Create New Content** tool in the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) generates both for you, along with a ready-to-paste front matter block. Choose **Challenge** as the Content Type. See [Using the Content Creation Tool]({{< ref "cloud/academy/creating-content/instructor-console-guide/index.md#using-the-content-creation-tool" >}}).
-
-### 1. Set Up the Directory Structure
-
-All challenges live under `content/challenges/<your-organization-uuid>`, each in its own folder named with a descriptive, URL-friendly slug. The final URL follows this pattern:
-
-`https://cloud.layer5.io/academy/content/challenges/<your-organization-uuid>/<challenge-folder-name>/`
-
-A challenge is typically one scenario broken into a few sections:
-
-```text
-content/challenges/<your-organization-uuid>
-└── keda-autoscaling-challenge/     <-- The <challenge-name> directory
-    ├── _index.md                   <-- Defines the challenge's metadata
-    ├── keda-icon.svg               <-- Banner image, referenced from the front matter
-    └── autoscaling-with-keda/      <-- The task itself
-        ├── _index.md               <-- The objective and prerequisites
-        └── content/
-            ├── description/        <-- What the challenge is about, and the steps
-            ├── getting-started/    <-- How to set up and begin
-            └── faq/                <-- Common questions
-```
-
-A challenge that ships an interactive lab and a graded exam adds them as their own sections alongside the task:
-
-```text
-content/challenges/<your-organization-uuid>
-└── heal-the-mesh/
-    ├── _index.md
-    ├── lab/
-    │   └── _index.md               <-- The hands-on lab
-    └── exam/
-        └── _index.md               <-- The assessment that closes the challenge
-```
-
-{{< alert type="info" title="Sections Are Yours to Name" >}}
-`description`, `getting-started` and `faq` are a convention, not a fixed structure - the folder hierarchy you create is what the Academy renders as the challenge's navigation. Use the sections your scenario actually needs.
-{{< /alert >}}
-
-### 2. Define the Challenge with Front Matter
-
-The `_index.md` at the root of the challenge folder carries its metadata. Here is a complete example, taken from a published challenge:
-
-```yaml
----
-title: "CNCF Autoscaling Challenge"
-description: "Learn event-driven autoscaling in Kubernetes. Work with scaled objects in KEDA, monitoring with Prometheus, OpenTelemetry & CloudEvents and advanced KEDA configurations."
-banner: "keda-icon.svg"
-id: "<your-challenge-uuid>"
-weight: 1
-tags: [meshery, keda, open source]
-level: "advanced"
-categories: [platform]
-
-prerequisite_knowledge:
-  - title: "Access to Meshery"
-    children:
-      - title: "Self-hosted Meshery"
-        link: "https://docs.meshery.io/installation"
-      - title: "Meshery Playground"
-        link: "https://play.meshery.io"
-
-additional_attributes:
-  - title: "Retake Policy"
-    value: "3"
-    description: "Up to three retakes allowed per exam"
----
-```
-
-#### Front Matter Fields Reference
-
-> Fields marked ✅ are required; those marked - are optional.
-
-| Field | Required | Description |
-| :--- | :--- | :--- |
-| `id` | ✅ | **Crucial.** A stable UUID used to track learner progress. **Do not change it** once learners have enrolled. |
-| `title` | ✅ | The human-readable title shown to learners. |
-| `description` | ✅ | A summary of the scenario. This is the text learners read on the catalog card. |
-| `weight` | - | Controls display order (lower numbers appear first). Items are sorted alphabetically by title if not specified. |
-| `banner` | - | Path to a banner image in the same folder (Page Bundle). |
-| `tags` | - | Keywords for discovery. Learners can browse by tag. |
-| `level` | - | Intended difficulty: `beginner`, `intermediate` or `advanced`. Default: `beginner`. |
-| `categories` | - | Assigns the challenge to a category. |
-| `badge` | - | Defines the digital badge awarded on completion. Its `png` and `svg` fields accept a full remote URL or a local file path in the same folder. |
-| `prerequisite_knowledge` | - | What a learner needs before starting, rendered as a list with optional links. |
-| `additional_attributes` | - | Free-form title/value/description rows, used for things like retake policy and scoring. |
-
-{{< alert type="info" title="Where `type` Comes From" >}}
-You do not set `type: "challenge"` on every file. The `content/challenges/_index.md` at the top of the section declares it once and cascades it to everything beneath, so each challenge inherits the right type - and therefore the right template - automatically.
-{{< /alert >}}
-
-### 3. Write the Scenario
-
-The task's own `_index.md` is where you state the objective and the prerequisites, and the sections beneath it carry the detail:
-
-- **Description** - what the challenge is about, and the numbered steps a learner must follow to complete it.
-- **Getting Started** - how to get an environment ready, including any Meshery access the scenario needs.
-- **FAQ** - the questions learners predictably ask.
-
-Write the steps so that success is unambiguous. A challenge is scored, so a learner needs to know exactly what "done" looks like before they start.
-
-### 4. Add the Assessment
-
-Most challenges close with an exam that validates the learner's work. Exams in a challenge follow the same unified Academy assessment standard as every other content type.
-
-{{< alert type="info" title="How to Create and Configure Exams" >}}
-For question types, scoring, passing percentages, question pools and retry settings, see the [Integrating Assessments in the Academy]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) guide.
-{{< /alert >}}
-
-### 5. Publish
-
-Publishing a challenge is the same two-stage release process as the rest of your Academy content: a GitHub Release on your content repository, followed by a Layer5 Cloud release. Until both have happened, your changes will not be live. See [Publishing Your Content]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#6-publishing-your-content" >}}).
-
-## Monitoring Your Challenge
-
-Once a challenge is live, the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) is where you watch how it is doing. Every widget there can be narrowed to challenges:
-
-- **Content Stats** counts your published content by type; clicking the Challenge count opens the Academy Catalog filtered to your challenges.
-- **Content Metrics** ranks your content by passes, so you can see where your challenge sits against your other material.
-- **All Learners Report** lists individual registrations. Filter **Content Type** to `Challenge` to see only the people attempting yours, and filter **Status** to follow who is `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn`.
-- **Test Stats** and **Test Metrics** report pass rates per assessment, which is how you tell a challenge that is hard from one whose instructions are unclear.
-
-A full tour of each widget, and what to do about what it tells you, is in the [Academy Instructor Console Guide]({{< ref "cloud/academy/creating-content/instructor-console-guide/index.md" >}}).
-
-{{< alert type="info" title="Enterprise Feature" >}}
-The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. [Learn more](https://layer5.io/pricing)
-{{< /alert >}}
-
-## Learner Outcomes: Badges
-
-Completing all the required components of a challenge earns the learner a digital badge - a verifiable credential they can share on their professional profiles. Unlike a Certification, a Challenge does not issue a paid Certificate of Completion; its outcome is the score, the rank, and the badge.
-
-See [Earning Badges and Certificates]({{< ref "cloud/academy/using-the-academy/index.md#earning-badges-and-certificates" >}}) for the learner's side of this.
-
-## Frequently Asked Questions
-
-<details>
-<summary>Can a challenge have more than one task?</summary>
-
-Yes. The folder hierarchy beneath the challenge's `_index.md` is what defines its structure, so a challenge can hold several sections. Most challenges are a single scenario because that keeps the objective sharp, but nothing prevents a longer one.
-</details>
-
-<details>
-<summary>Does a challenge have to include an exam?</summary>
-
-No. An exam is the usual way to validate that the learner solved the problem, but a challenge whose completion is judged by a lab does not need one.
-</details>
-
-<details>
-<summary>Can I change a challenge after learners have started it?</summary>
-
-You can edit its content freely - but never change its `id`. That UUID is what learner progress is recorded against, and changing it orphans every registration made against the old value.
-</details>
-
-<details>
-<summary>How do learners find my challenge?</summary>
-
-Through the Academy catalog, filtered by **Content Type** → **Challenge**. See [Exploring the Content Catalog]({{< ref "cloud/academy/using-the-academy/index.md#exploring-the-content-catalog" >}}).
+Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows - without enforcing score-based access rules.
 </details>
 
 
@@ -9413,7 +8216,7 @@ This request effectively says: "A new version of content is ready for this organ
 
 When its workflow is triggered, an automated process acts like a master assembly line:
 
-1.  **Collects Parts**: It begins by gathering all the necessary components—`academy-theme` and all the course content from the various content repositories.
+1.  **Collects Parts**: It begins by gathering all the necessary components - `academy-theme` and all the course content from the various content repositories.
 
 2.  **Assembles the Website**: Next, it combines everything. It applies the theme's design to all the course content, building a single, complete website.
 
@@ -10409,6 +9212,198 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
 
 
 --------------------------------------------------------------------------------
+title: "Create a Learning Path"
+url: /cloud/academy/creating-content/creating-your-learning-path/index.md
+description: Set up your Academy content repository, structure and describe a learning path, preview it, and publish it. The repository, front matter, and publishing steps also apply to challenges and certifications.
+
+--------------------------------------------------------------------------------
+
+A learning path teaches a subject through courses and modules, with assessments that gate progress. You write it as Markdown in your organization's Academy content repository, then publish a version. This page covers the repository, layout, front matter, assets, preview, and publishing that every Academy content type shares. For the credential and assessment differences, see [Build a Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) and [Build a Certification]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}).
+
+## Prerequisites
+
+- Git, a GitHub account, and Markdown. The Academy is built with the Hugo static site generator.
+- Content registered in the [Instructor Console]({{< ref "cloud/academy/creating-content/_index.md" >}}), which gives you the content `id` and the front matter to start from.
+- Your organization's ID and a personal access token from Layer5 Cloud, used when you publish. Create tokens as described in [Tokens]({{< ref "cloud/guides/security/api-tokens.md" >}}).
+
+## Set up the content repository
+
+Start from the `academy-example` template repository published by Layer5: [github.com/layer5io/academy-example](https://github.com/layer5io/academy-example). Fork it, clone your fork, and work on a branch.
+
+The template's Go module path must match your fork. Change the `module` line in its module file from the template's path to `github.com/<your-username>/<your-repo-name>`, then commit and push. The publish build fails while the path still names the template.
+
+## Directory layout
+
+Each organization's content lives in its own directory, which is how the Academy keeps one organization's content apart from another's. Replace `<your-organization-uuid>` with your organization's ID.
+
+| Directory | Holds |
+| --- | --- |
+| `content/<content-type>/<your-organization-uuid>/` | Everything you write. `<content-type>` is `learning-paths`, `challenges`, or `certifications`. The folder hierarchy defines the navigation. |
+| `layouts/shortcodes/<your-organization-uuid>/` | Optional custom Hugo shortcodes for reusable components. |
+
+### Learning path structure
+
+A learning path contains courses. A course contains modules and can end with a test that serves as the course exam. A module contains pages and labs.
+
+```text
+learning-paths/<your-organization-uuid>
+└── {learning-path-name}/
+    ├── _index.md
+    ├── course-1/
+    │   └── _index.md
+    └── course-2/
+        ├── _index.md
+        ├── course-exam.md
+        └── module-1/
+            ├── _index.md
+            ├── page-1/
+            │   └── _index.md
+            └── test.md
+```
+
+The `_index.md` in each folder defines that level's `title`, `description`, and `type`. The remaining `.md` files are the individual activities. [Challenges]({{< ref "cloud/academy/creating-content/building-challenges/index.md#1-set-up-the-directory-structure" >}}) and [certifications]({{< ref "cloud/academy/creating-content/building-certifications/index.md#1-set-up-the-directory-structure" >}}) use a flatter layout.
+
+## Front matter
+
+Every `_index.md` uses the same front matter. Only `type` changes with the level.
+
+```yaml
+---
+type: "learning-path"  # or "certification", "challenge", "course"
+title: "Cloud Fundamentals"
+description: "A learning path focused on providing the technical knowledge required for advanced topics."
+weight: 5
+banner: "kubernetes-icon.svg"
+id: "<your-content-uuid>"
+tags: [kubernetes, infrastructure]
+categories: [cloud]
+level: "beginner"
+
+# Table of content covered in the test
+# Each domain can have a weightage (percentage) and subdomains (items)
+# Weightage should sum up to 100 across all domains ( not strictly enforced, but recommended )
+competencies:
+  - title: "Domain 1"
+    percentage: 10 # Weightage of this domain in the test
+    items: 
+       -  "Subdomain 1"
+       -  "Subdomain 2"
+
+  - title: "Domain 2"
+    percentage: 30
+    items:
+      - "Subdomain 1"
+      - "Subdomain 2"
+
+  - title: "Domain 3"
+    percentage: 60
+    items:
+      - "Subdomain 1"
+      - "Subdomain 2"
+
+
+
+# List of resource that are recommended to complete before taking the test
+# Not strictly enforced, but recommended
+prerequisiteKnowledge:
+  - title: "Learning Path: Cloud Computing Basics"
+    link: "https://academy-domain.com/learning-paths/cloud-computing-basics"
+  - title: "Basic Certification: Networking Basics"
+    link: "https://academy-domain.com/certifications/networking-basics"
+  - title: "Basic knowledge of Linux command line"
+    link: "https://linuxcommand.org/"
+
+# List of additional resources for further reading 
+relatedResources:
+  - title: "Documentation"
+    link: "https://docs.example.com/"
+  - title: "Instructions"
+    link: "https://instructions.example.com/"
+  - title: "YouTube Channel"
+    link: "https://www.youtube.com/c/example" 
+
+# Additional attributes about the test
+additionalAttributes: 
+  - title: "Retake Policy"
+    description: "One Retake allowed after 30 days"
+  - title: "Labs"
+    description: "Hands-on labs included"
+
+---
+```
+
+| Field | Applies to | Required | Behavior |
+| --- | --- | :---: | --- |
+| `title` | All | Yes | Display title. |
+| `description` | All | Yes | Summary shown on the catalog card. |
+| `type` | Path, certification, challenge | Yes | `learning-path`, `certification`, `challenge`, or `course` (singular). Plural values are rejected. |
+| `id` | Path, certification, challenge | Yes | Stable UUID that learner progress is recorded against. Never change it after learners register. Two items sharing an `id` are rejected. |
+| `weight` | All | No | Display order, lowest first. Without it, items sort alphabetically by title. |
+| `draft` | All | No | When `true`, the page is not published. |
+| `level` | Path, certification, challenge | No | `beginner`, `intermediate`, or `advanced`. Default `beginner`. |
+| `banner` | Path, certification, challenge | No | Path to an image in the same folder. |
+| `badge` | Path, certification, challenge | No | The awarded badge. Its `png` and `svg` fields accept a full URL or a file in the same folder. |
+| `tags` | All | No | Keywords for discovery. Several allowed. |
+| `categories` | All | No | The main category. Only one. |
+
+Renaming content after publication breaks nothing as long as the `id` is unchanged. Changing the `id` orphans every existing registration.
+
+## Assets
+
+Place images and other files in the same folder as the Markdown that uses them (a Hugo page bundle) and reference them by file name:
+
+```markdown
+![Pod lifecycle diagram showing Pending, Running, and Succeeded states](pod-lifecycle.png)
+```
+
+Every image needs descriptive alt text. The Academy does not enforce a size limit, but large assets slow builds and can make them fail. Host large videos on an external platform and embed them with a `<video>` element that points at the hosted file. Add subtitle tracks (VTT) and a poster image to embedded video. For private videos, use signed URLs or unlisted links. The `usestatic` shortcode is deprecated; do not use it.
+
+## Preview locally
+
+```bash
+make setup   # one time
+make site    # start the local preview server
+```
+
+The preview uses a generic theme, so it shows structure and content but not your organization's branding. Branding comes from your organization settings in Layer5 Cloud. If the preview shows stale content, run `make clean` to delete the build cache and restart. To pick up theme improvements before a release, run `make theme-update`.
+
+## Publish
+
+Publishing sends your organization's ID and a version to Layer5 Cloud, which builds your Academy at that version.
+
+{{< meshery-design-embed src="..//creating-your-learning-path/images/embedded-design-academy-content-publishing-workflow.js" id="embedded-design-37c37d14-be76-487a-90aa-5ada0c1c115f" size="full" >}}
+
+### One-time setup
+
+Store two repository secrets that the template's publish workflow reads. The names must match exactly.
+
+| Secret | Value |
+| --- | --- |
+| `ACADEMY_ORG_ID` | Your organization's ID. |
+| `ACADEMY_TOKEN` | Only the token string from the token JSON, beginning `eyj`. Omit the braces, the `"token":` key, and the quotes. |
+
+### Release
+
+Commit your changes to the default branch, then publish a GitHub release with a new version tag such as `v1.0.2`. The release starts the workflow.
+
+- The publish request is accepted only from an organization admin or owner. The request calls Layer5 Cloud with your organization ID and the version.
+- Content reaches the staging environment in about 10 minutes and production with the next Layer5 Cloud release.
+- If the build fails, your previous version stays live.
+- Corrections follow the same path: push, then release a new version.
+
+### Troubleshooting
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| `401 Unauthorized` or "User must be logged in" | `ACADEMY_TOKEN` contains the whole JSON object. | Store only the token string. |
+| A URL containing `//`, such as `/api/academy//update/`, | The organization ID secret is missing or misnamed. | Name the secret `ACADEMY_ORG_ID`. |
+| Content missing after a release | The publish failed. | Open the audit events for your organization and filter by the Academy upsert action to see each attempt and its error. |
+| Duplicate ID, invalid content type, or missing required field | Two items share an `id`, `type` is plural, or `title`, `description`, `type`, or `id` is absent. | Make IDs unique, use the singular type, and add the field. |
+
+To see who registered for what, filter the audit events by the Academy registration action.
+
+
+--------------------------------------------------------------------------------
 title: "Create Your Layer5 Account"
 url: /cloud/getting-started/getting-started-with-layer5-account/index.md
 description: Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
@@ -10515,7 +9510,7 @@ The dashboard is your normal landing page after sign-in. It is a grid of widgets
 
 Whatever method you signed up with, you can later link a GitHub or Google account to your existing profile from your profile page. Once linked, either method signs you in to the same Layer5 Cloud profile. Each provider shows **Link** or **Unlink** depending on its current state. Linking sends you to the provider and then back to your profile.
 
-Profile changes are privileged actions. If your session has been active for more than 15 minutes, Layer5 Cloud asks you to authenticate again before it saves them.
+Changing a password or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to authenticate again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default on a self-hosted chart. For every account setting, see [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md" >}}).
 
 ## Check your result
 
@@ -11056,6 +10051,107 @@ Create the replacement workspace first, then delete the other.
 
 
 --------------------------------------------------------------------------------
+title: "Manage Your Account"
+url: /cloud/guides/account/managing-your-account/index.md
+description: Edit your profile, change your password, link GitHub or Google sign-in, and delete your account, with what each change does and what it leaves behind.
+
+--------------------------------------------------------------------------------
+
+Your profile belongs to you, not to an organization. A change applies in every organization you belong to. This guide covers the four things you can change about your account: the profile, the password, the linked sign-in providers, and the account itself.
+
+## Before you start
+
+- You need the **View Profile** permission to open the profile. The default user role holds it.
+- Changing your password needs **Reset Password**. Deleting the account needs **Delete Account**. The default user role holds both.
+- Layer5 Cloud signs you in through an identity service. Password changes and account deletion need a live browser sign-in. A script that holds only an API token cannot do either.
+- Changing a password or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to sign in again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default in the self-hosted chart.
+- A user's profile can also be edited by an administrator who holds **Update User Profile** in an organization you share with them. Only a Provider Admin can change another user's email address.
+
+## Edit your profile
+
+The profile form saves itself. About one second after you stop typing, Layer5 Cloud saves the change and confirms it with a short message. There is no Save button, and edits made during a save are queued, not lost.
+
+| Field | Behavior |
+| --- | --- |
+| First Name, Last Name | Free text. An empty value never overwrites the stored name. |
+| Username | Read-only. It is the identifier assigned to the account and cannot be edited. |
+| E-mail | Must look like an address (`name@host.domain`). An invalid value blocks saving and shows "Please enter a valid email address". |
+| Country, Region | Optional. Pick a country, then a region of that country. |
+| Avatar URL | Optional. A public URL to a JPEG, PNG, GIF, SVG, or WEBP image. Layer5 Cloud loads the image before it saves. An address that does not load as an image is rejected. |
+| Avatar color | The background color shown when you have no avatar image. Saved as a user preference. |
+| Tagline | A short public line about you. |
+| Social Links | Up to 5 links, each with a type (GitHub, LinkedIn, X, Company or Organization, or Personal Website) and a URL. An empty URL is allowed; a malformed one is rejected. |
+
+Your avatar, tagline, and social links appear on your public profile.
+
+### Change your email address
+
+Changing the email address changes the identifier you sign in with. Layer5 Cloud marks the new address as unverified and sends it a verification message. The confirmation reads "Profile updated. Please check your new email address to verify it." Verify the new address before you rely on it. If the verification message cannot be sent, the change still completes.
+
+Layer5 Cloud writes the change to the identity service first and to your profile second, so a rejected address never leaves the two out of step.
+
+## Change your password
+
+Use the Reset Password control on the profile. Enter the new password twice. The two entries must match, or the form reports "Your new passwords do not match".
+
+The identity service enforces the password policy:
+
+- At least 8 characters.
+- Not a password found in known breaches.
+- Not too similar to your email address.
+
+A strength bar (Very weak to Strong) shows how guessable the password is. It is advice only and does not block you; the policy above does. A rejected password returns the identity service's reason. A successful change shows "Password updated".
+
+Changing your password does not end your other sessions or revoke your API tokens. To cut off a device or script, end the session or revoke the token yourself with [Review and Sign Out Sessions]({{< ref "cloud/guides/security/sessions.md" >}}) and [Create and Use an API Token]({{< ref "cloud/guides/security/api-tokens.md" >}}).
+
+If you forgot your password, use the recovery flow from the sign-in page instead. It emails a one-time code and link that stay valid for 30 days.
+
+## Link or unlink a sign-in provider
+
+Link GitHub or Google to sign in with whichever you prefer. Either method opens the same account, with the same organizations, designs, and roles. GitHub and Google are the only supported providers.
+
+The profile lists a **Link** option for each provider you have not linked and an **Unlink** option for each provider you have linked. The provider you used to create the account appears in neither list: you cannot unlink it, and it is already linked.
+
+Linking sends you to the provider to approve access, then returns you to Layer5 Cloud. Layer5 Cloud asks GitHub for your profile and email address and Google for your email and profile. Unlinking removes the provider from your account. Your password and the other linked provider keep working.
+
+A provider account can be linked to one Layer5 Cloud account only. Linking depends on the provider reporting a verified email address. For how Layer5 Cloud resolves sign-ins that share an email address, read [Account Consolidation]({{< ref "cloud/concepts/identity-and-security/users/account-consolidation.md" >}}) and the [Account Linking]({{< ref "cloud/concepts/identity-and-security/users/_index.md#account-linking" >}}) rules.
+
+## Delete your account
+
+Deletion is permanent. Layer5 Cloud asks you to confirm, and then does not offer recovery.
+
+What deletion does:
+
+1. Hands any credential you hold on behalf of an organization to that organization's successor, so the organization keeps working. The successor is the organization's owner, or else its longest-standing Organization Admin.
+2. Marks your account as deleted and removes your memberships in every organization and team, which removes your roles with them.
+3. Records the deletion in the audit trail.
+4. Removes your sign-in identity, including linked GitHub and Google sign-in, and signs you out.
+
+What deletion leaves behind:
+
+- Published content, such as items you published to the catalog, stays public.
+- Organizations you own continue to exist. Deleting your account does not delete or transfer them.
+- The audit trail keeps its entries.
+
+Re-registering with the same email address does not restore the old account or re-link a provider.
+
+### When deletion is refused
+
+Layer5 Cloud refuses the deletion, and changes nothing, when you are the only owner or Organization Admin of an organization that holds credentials designated to it. The message begins "Refusing to delete your account" and names the organization. Without a successor, those credentials would be orphaned.
+
+Resolve it, then retry:
+
+- Promote another member of that organization to Organization Admin. An organization's ownership cannot be transferred, so a second Organization Admin is the way to give it a successor.
+- Or release the credentials from the organization, or delete them.
+
+## See also
+
+- [Users]({{< ref "cloud/concepts/identity-and-security/users/_index.md" >}}) explains accounts, memberships, and sign-in methods.
+- [Set Notification Preferences]({{< ref "cloud/guides/account/notification-preferences.md" >}}) controls the email you receive.
+- [Security]({{< ref "cloud/guides/security/_index.md" >}}) covers sessions and API tokens.
+
+
+--------------------------------------------------------------------------------
 title: "Promote a Design from Staging to Production"
 url: /cloud/tutorials/promoting-a-design/index.md
 description: Build staging and production workspaces, promote a design between them, deploy it to a production environment, and confirm who did what.
@@ -11156,6 +10252,185 @@ To roll back, assign the design to the staging workspace again. It leaves produc
 - [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) explains the full access chain and lifecycle rules.
 - [Environments]({{< ref "cloud/concepts/environments.md" >}}) explains deploy targets and connection access.
 - [Manage Workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}) covers editing, removing members, and deleting workspaces.
+
+
+--------------------------------------------------------------------------------
+title: "Build a Challenge"
+url: /cloud/academy/creating-content/building-challenges/index.md
+description: A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
+
+--------------------------------------------------------------------------------
+
+In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Challenge** is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.
+
+## When to use a challenge
+
+Choose a challenge when the learner should build, break, or fix something real and is scored on the result. Compare the content types in [Create Academy Content]({{< ref "cloud/academy/creating-content/_index.md#choose-a-content-type" >}}).
+
+{{< alert type="info" title="Challenge: Focus on Doing, Not Reading" >}}
+Choose a Challenge when the point is for the learner to build, break, or fix something real. If most of your material is explanation, it belongs in a [Learning Path]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) instead.
+{{< /alert >}}
+
+## How to Create Your Challenge
+
+Challenges are authored the same way as every other Academy content type: as Markdown in your organization's Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}), which covers the repository setup once for all three content types.
+
+### Get your identifiers
+
+Register the challenge in the Instructor Console and choose **Challenge** as the content type. The console generates the challenge `id` and a ready-to-paste front matter block. Use your organization's ID in the directory path. See [Create Academy Content]({{< ref "cloud/academy/creating-content/_index.md#register-content-in-the-console" >}}).
+
+### 1. Set Up the Directory Structure
+
+All challenges live under `content/challenges/<your-organization-uuid>`, each in its own folder named with a descriptive, URL-friendly slug. The final URL follows this pattern:
+
+`https://cloud.layer5.io/academy/content/challenges/<your-organization-uuid>/<challenge-folder-name>/`
+
+A challenge is typically one scenario broken into a few sections:
+
+```text
+content/challenges/<your-organization-uuid>
+└── keda-autoscaling-challenge/     <-- The <challenge-name> directory
+    ├── _index.md                   <-- Defines the challenge's metadata
+    ├── keda-icon.svg               <-- Banner image, referenced from the front matter
+    └── autoscaling-with-keda/      <-- The task itself
+        ├── _index.md               <-- The objective and prerequisites
+        └── content/
+            ├── description/        <-- What the challenge is about, and the steps
+            ├── getting-started/    <-- How to set up and begin
+            └── faq/                <-- Common questions
+```
+
+A challenge that ships an interactive lab and a graded exam adds them as their own sections alongside the task:
+
+```text
+content/challenges/<your-organization-uuid>
+└── heal-the-mesh/
+    ├── _index.md
+    ├── lab/
+    │   └── _index.md               <-- The hands-on lab
+    └── exam/
+        └── _index.md               <-- The assessment that closes the challenge
+```
+
+{{< alert type="info" title="Sections Are Yours to Name" >}}
+`description`, `getting-started` and `faq` are a convention, not a fixed structure - the folder hierarchy you create is what the Academy renders as the challenge's navigation. Use the sections your scenario actually needs.
+{{< /alert >}}
+
+### 2. Define the Challenge with Front Matter
+
+The `_index.md` at the root of the challenge folder carries its metadata. Here is a complete example, taken from a published challenge:
+
+```yaml
+---
+title: "CNCF Autoscaling Challenge"
+description: "Learn event-driven autoscaling in Kubernetes. Work with scaled objects in KEDA, monitoring with Prometheus, OpenTelemetry & CloudEvents and advanced KEDA configurations."
+banner: "keda-icon.svg"
+id: "<your-challenge-uuid>"
+weight: 1
+tags: [meshery, keda, open source]
+level: "advanced"
+categories: [platform]
+
+prerequisite_knowledge:
+  - title: "Access to Meshery"
+    children:
+      - title: "Self-hosted Meshery"
+        link: "https://docs.meshery.io/installation"
+      - title: "Meshery Playground"
+        link: "https://play.meshery.io"
+
+additional_attributes:
+  - title: "Retake Policy"
+    value: "3"
+    description: "Up to three retakes allowed per exam"
+---
+```
+
+#### Front Matter Fields Reference
+
+> Fields marked ✅ are required; those marked - are optional.
+
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `id` | ✅ | **Crucial.** A stable UUID used to track learner progress. **Do not change it** once learners have enrolled. |
+| `title` | ✅ | The human-readable title shown to learners. |
+| `description` | ✅ | A summary of the scenario. This is the text learners read on the catalog card. |
+| `weight` | - | Controls display order (lower numbers appear first). Items are sorted alphabetically by title if not specified. |
+| `banner` | - | Path to a banner image in the same folder (Page Bundle). |
+| `tags` | - | Keywords for discovery. Learners can browse by tag. |
+| `level` | - | Intended difficulty: `beginner`, `intermediate` or `advanced`. Default: `beginner`. |
+| `categories` | - | Assigns the challenge to a category. |
+| `badge` | - | Defines the digital badge awarded on completion. Its `png` and `svg` fields accept a full remote URL or a local file path in the same folder. |
+| `prerequisite_knowledge` | - | What a learner needs before starting, rendered as a list with optional links. |
+| `additional_attributes` | - | Free-form title/value/description rows, used for things like retake policy and scoring. |
+
+{{< alert type="info" title="Where `type` Comes From" >}}
+You do not set `type: "challenge"` on every file. The `content/challenges/_index.md` at the top of the section declares it once and cascades it to everything beneath, so each challenge inherits the right type - and therefore the right template - automatically.
+{{< /alert >}}
+
+### 3. Write the Scenario
+
+The task's own `_index.md` is where you state the objective and the prerequisites, and the sections beneath it carry the detail:
+
+- **Description** - what the challenge is about, and the numbered steps a learner must follow to complete it.
+- **Getting Started** - how to get an environment ready, including any Meshery access the scenario needs.
+- **FAQ** - the questions learners predictably ask.
+
+Write the steps so that success is unambiguous. A challenge is scored, so a learner needs to know exactly what "done" looks like before they start.
+
+### 4. Add the Assessment
+
+Most challenges close with an exam that validates the learner's work. Exams in a challenge follow the same unified Academy assessment standard as every other content type.
+
+{{< alert type="info" title="How to Create and Configure Exams" >}}
+For question types, scoring, passing percentages, question pools and retry settings, see the [Integrating Assessments in the Academy]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) guide.
+{{< /alert >}}
+
+### 5. Publish
+
+Publishing a challenge is the same two-stage release process as the rest of your Academy content: a GitHub Release on your content repository, followed by a Layer5 Cloud release. Until both have happened, your changes will not be live. See [Publishing Your Content]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md#publish" >}}).
+
+## Monitor your challenge
+
+The [Instructor Console]({{< ref "cloud/academy/instructor-console-guide/index.md" >}}) reports on challenges alongside your other content:
+
+- **Learners** lists registrations. Filter by content type `Challenge` and by status to follow who is Registered, In Progress, Completed, Failed, or Withdrawn.
+- **Curricula** shows registrations, completion rate, and pass rate for each published challenge.
+- **Overview** shows pass rates per assessment. A low pass rate separates a hard challenge from unclear instructions only when the attempt count is high enough to mean something.
+
+{{< feature-tiers categories="Academy" >}}
+
+## Learner outcomes
+
+Completing all the required components of a challenge earns the learner a digital badge - a verifiable credential they can share on their professional profiles. Unlike a Certification, a Challenge does not issue a paid Certificate of Completion; its outcome is the score, the rank, and the badge.
+
+The badge is awarded when the learner passes the final test of the challenge. See the [Learner Guide]({{< ref "cloud/academy/using-the-academy/index.md" >}}) for the learner's side of this.
+
+## Frequently Asked Questions
+
+<details>
+<summary>Can a challenge have more than one task?</summary>
+
+Yes. The folder hierarchy beneath the challenge's `_index.md` is what defines its structure, so a challenge can hold several sections. Most challenges are a single scenario because that keeps the objective sharp, but nothing prevents a longer one.
+</details>
+
+<details>
+<summary>Does a challenge have to include an exam?</summary>
+
+No. An exam is the usual way to validate that the learner solved the problem, but a challenge whose completion is judged by a lab does not need one.
+</details>
+
+<details>
+<summary>Can I change a challenge after learners have started it?</summary>
+
+You can edit its content freely - but never change its `id`. That UUID is what learner progress is recorded against, and changing it orphans every registration made against the old value.
+</details>
+
+<details>
+<summary>How do learners find my challenge?</summary>
+
+Through the Academy catalog, filtered by **Content Type** → **Challenge**. See [Exploring the Content Catalog]({{< ref "cloud/academy/using-the-academy/index.md" >}}).
+</details>
 
 
 --------------------------------------------------------------------------------
@@ -11354,7 +10629,7 @@ Organization Admins and Owners add, rotate, and remove identity providers withou
 
 ## Membership policy is independent {#these-choices-are-independent-of-who-can-join}
 
-The scenario controls where and how users sign in. It does not control who may join. Membership is governed by invitations, open sign-up, and the roles and teams an invitation grants. Any scenario pairs with any membership policy. See [Using the Open Organization Invitation Link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}) and [User Invitations]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}}).
+The scenario controls where and how users sign in. It does not control who may join. Membership is governed by invitations, open sign-up, and the roles and teams an invitation grants. Any scenario pairs with any membership policy. See [Using the Open Organization Invitation Link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}) and [User Invitations]({{< ref "cloud/guides/organizations/inviting-users/index.md" >}}).
 
 
 --------------------------------------------------------------------------------
@@ -11630,42 +10905,56 @@ Kanvas keeps working as a single-user editor and writes the reason to the browse
 
 
 --------------------------------------------------------------------------------
-title: "Notification Preferences"
-url: /cloud/concepts/identity-and-security/users/notification-preferences/index.md
-description: Manage your notifications on Layer5 Cloud
+title: "Set Notification Preferences"
+url: /cloud/guides/account/notification-preferences/index.md
+description: Choose which Layer5 Cloud events send you email, and know which preferences are live today.
+
 --------------------------------------------------------------------------------
 
-Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.
+Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.
 
-<img src="images/notification-preferences.gif" alt="How to set your notifications preferences" />
+Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.
 
-## To change the notification preferences
+## Before you start
 
-1. Sign into [Layer5 Cloud](https://cloud.layer5.io)
+You need the **View Profile** permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.
 
-2. Visit **Account** > [Preferences](https://cloud.layer5.io/account/preferences)
+## How preferences work
 
-3. Under “Notifications,” choose what notifications you want to receive:
-    - **Acknowledgment:** You'll receive notifications about badges you've been awarded and related updates.
+- **Everything is on until you turn it off.** A new account receives every notification. You opt out of the ones you do not want, and a notification added later is on for you until you turn it off.
+- **Preferences save themselves.** About one second after your last change, Layer5 Cloud saves it and confirms with "Notification preferences updated". There is no Save button.
+- **Preferences are grouped.** The preferences appear under categories and sub-categories. Each category has a switch that turns every preference in it on or off at once. To opt out of all email, turn every category off.
+- **A preference suppresses email, not the event.** The event still happens and still appears in the audit trail. Only the email is skipped.
 
-    - **Approval Requests:** You'll be notified about Workspace, Account, Permissions, Catalog
+## Preferences you can set
 
-    - **Organization Activity:** When this is checked, you'll be notified when
-       - you're added or invited to a new organization
-       - you're removed from an organization
-       - a new user is added, invited to, or removed from your organization (provided that your organization admin has enabled notifications for these updates to be sent to organization members).
+The categories below are the ones the account page lists. Layer5 Cloud reads the list of available preferences from its own configuration, so a deployment can list more or fewer.
 
-     - **Workspace Activity:** You can choose to be notified about:
-        - Changes to Designs
-        - Comments on Your Designs: Check this box to receive notifications for all new comments on your designs. Unchecking this box will disable all comment notifications. If you prefer to keep this box checked but wish to stop receiving notifications for a specific comment thread, you can directly mute notifications for that thread in the comment modal. You can [learn more about this feature](https://docs.layer5.io/kanvas/designer/comments/#mute-comment-notifications).
-        - Deployment in environments
-        - Membership Changes: team membership, user account creation/deletion
-        - Participating, @mentions in comments: [Learn more](https://docs.layer5.io/kanvas/designer/comments/#mute-comment-notifications)
-        - Weekly summary
+| Category | Preference | Emails you when |
+| --- | --- | --- |
+| Acknowledgment | Badge assignment and updates | A badge is awarded to you or changed. |
+| Organization Activity | Organization update | An organization you belong to is updated. |
+| Workspace Activity | Team, user, and organization management | A team you belong to is updated, or you are added to a team. |
+| Workspace Activity | Role assignment and updates | Your roles change. |
+| Workspace Activity | Comments on your designs | Someone comments on a design you own. Turning this off silences email about comments on your designs. |
+| Workspace Activity | Participating and @mentions in comments | You are mentioned in a comment, or a thread you took part in gets a reply. |
 
-5. Click **Save Preferences**
+To stop email from one thread without turning the preference off, mute that thread. See [Mute a thread]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md#mute-comment-notifications" >}}).
 
-You can opt out of all email notifications by toggling the button located on the right side of the Notifications.
+### Preferences that do nothing yet
+
+Three preferences appear greyed out and unchecked, and cannot be changed: **Changes to designs**, **Deployments in environments**, and **Weekly summary**. Layer5 Cloud does not send those emails today. Do not rely on them.
+
+## Edge cases
+
+- Anonymous accounts never receive organization update email.
+- Layer5 Cloud checks the preference when it is about to send the email. Turning a preference back on does not resend email that was skipped while it was off.
+- If saving fails, the page shows the reason, and your previous setting stays in force.
+
+## See also
+
+- [Review and collaborate on designs]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}) describes who receives comment email.
+- [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md" >}}) covers your profile and sign-in.
 
 
 --------------------------------------------------------------------------------
@@ -12117,6 +11406,175 @@ Key and keychain changes do not write audit events.
 
 
 --------------------------------------------------------------------------------
+title: "Build a Certification"
+url: /cloud/academy/creating-content/building-certifications/index.md
+description: A step-by-step guide to building a professional certification in the Academy.
+
+--------------------------------------------------------------------------------
+
+In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Certification** is a formal assessment designed to validate a learner's professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification's primary goal is evaluation.
+
+The successful completion of a Certification results in an official, shareable **Certificate of Completion** and a valuable badge, signifying a verified level of proficiency.
+
+## When to use a certification
+
+Choose a certification when the goal is to test, not teach. It assumes prior knowledge. Compare the content types in [Create Academy Content]({{< ref "cloud/academy/creating-content/_index.md#choose-a-content-type" >}}).
+
+{{< alert type="info" title="Certification: Focus on Assessment, Not Instruction" >}}
+A Certification is ideal when the main objective is to test, not teach. It assumes learners have prior knowledge and are ready to prove their expertise. If the objective is instead for the learner to solve a concrete, hands-on problem, build a [Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) rather than a Certification.
+{{< /alert >}}
+
+## How to Create Your Certification
+
+Building a new certification involves setting up the correct directory structure and defining its properties through Markdown frontmatter.
+
+### Get your identifiers
+
+Register the certification in the Instructor Console and choose **Certification** as the content type. The console generates the certification `id` and a ready-to-paste front matter block. Use your organization's ID in the directory path. See [Create Academy Content]({{< ref "cloud/academy/creating-content/_index.md#register-content-in-the-console" >}}).
+
+### 1. Set Up the Directory Structure
+
+All content for a new certification must reside within the `content/certifications/<your-organization-uuid>` directory. To keep content organized, each certification has its own folder named with a descriptive, URL-friendly slug.
+
+The final URL will follow this pattern: `https://cloud.layer5.io/academy/content/certifications/<your-organization-uuid>/<certification-folder-name>/`
+
+Below is the standard file structure:
+
+```
+content/certifications/<your-organization-uuid>
+└── layer5-certification-exam/   <-- The <certification-name> directory
+    ├── _index.md                      <-- Defines the certification's metadata
+    ├── exam-1.md                      <-- (Optional) A standard content page for introduction
+    ├── optional-exam-2.md             <-- An optional supplementary exam
+    └── exam-3.md                      <-- A mandatory exam, accessible after completing all previous required units.
+```
+
+**Key Files:**
+- **`_index.md`**: The entry point for your certification containing all metadata (title, description, banner, etc.)
+- **Exam Files (`*.md`)**: Individual Markdown files containing the exams. Order and optional status are controlled by frontmatter, not filename.
+
+### 2. Define the Certification with Frontmatter
+
+The `_index.md` file's frontmatter controls how the certification is presented to users..
+
+Here's a complete example of the YAML frontmatter for a certification's `_index.md` file:
+
+```yaml
+---
+type: "certification"
+id: "<your-certification-uuid>"
+title: "Layer5 Network Certification"
+description: "Validate your expertise in Layer5 networking technologies through comprehensive assessment"
+banner: "images/layer5-icon.svg"
+weight: 1
+tags: [layer5, cloud, infrastructure]
+level: "beginner"
+categories: [platform]
+badge: 
+    png: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+    svg: "https://images.credly.com/images/f28f1d88-428a-47f6-95b5-7da1dd6c1000/twitter_thumb_201604_KCNA_badge.png"
+    title: "Layer5 Certified"
+    description: "Earn the Certification badge to showcase your expertise in Layer5 cloud services."
+---
+```
+
+#### Frontmatter Fields Reference
+
+> In this table, fields marked with ✅  are required, while those marked with a hyphen are optional.
+
+| Field | Required | Description |
+| :--- | :--- | :--- |
+| `type` | ✅  | Must be set to `"certification"` to identify this content correctly. |
+| `id` | ✅  | **Crucial.** A stable ID used to track learner progress. **Do not change.** |
+| `title` | ✅  | The human-readable title that will be displayed to users. |
+| `description` | ✅  | A comprehensive summary of the certification's scope and objectives. |
+| `weight` | - | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
+| `banner` | - | Path to a banner image located in the same folder (Page Bundle).  |
+| `tags` | - | Keywords for content discovery. Multiple tags can be selected. |
+| `level` | - | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
+| `categories` | - | A string that assigns the certification to a specific category. |
+| `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., layer5-badge.svg).|
+
+### 3. Add Content and Exams
+
+A certification is primarily composed of exams. However, you can also include standard content pages to provide context.
+
+  - **Exams:** The core assessable components. A certification can contain one or multiple exams.
+  - **Informational Pages:** Standard Markdown pages that can serve as an introduction, a study guide, or a list of helpful resources.
+
+{{< alert type="info" title="How to Create and Configure Exams" >}}
+Every "Exam" file within a certification follows the unified Academy assessment standard.
+
+For detailed instructions on how to write an exam file, define various question types, set scoring and passing percentages, and use advanced options, please refer to our comprehensive [Integrating Assessments in the Academy]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) guide.
+{{< /alert >}}
+
+### 4. Manage question pools and test attempts
+
+A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank**, the collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
+
+This behavior is controlled by the `numberOfQuestions` property in the front matter.
+
+* If `numberOfQuestions` is **not defined**, all questions in the test are used in every attempt.
+* If it **is defined**, the test is automatically divided into multiple sets, each containing the specified number of questions.
+
+To ensure even division, the **total number of questions** must be a **multiple** of `numberOfQuestions`.
+
+By default, the **number of retries** is set to the number of generated sets. However, you can increase it, in which case the question sets will **cycle** through repeatedly across attempts.
+
+{{< alert type="warning" title="Multi-Exam Certification Settings" >}}
+For certifications containing multiple exams, each exam may have its own test bank, question count, and retry settings.  
+These configurations are defined per test and may differ across exams within the same certification.
+{{< /alert >}}
+
+
+
+
+## Learner outcomes
+
+| Outcome | When it is awarded | Details |
+| --- | --- | --- |
+| Badge | The learner passes the certification's final test. | Named by the content's badge setting. A badge setting that points at a badge that no longer exists awards nothing, and the failure is logged. |
+| Certificate of Completion | The same moment, when the certification defines a certificate. | Free learning and exams; certificate issuance is an optional paid feature. Each certificate gets its own ID, the recipient's name, the organization, and the issue date. It is served at a public certificate page, and the learner receives an email. A failed email does not undo the certificate. |
+| Registration status | Becomes Completed. | Visible to instructors in the console. |
+
+Certificates do not carry an expiry date. Attempt limits and time limits come from each exam's settings, covered in [Add Assessments]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}). You do not handle certificate payment; the platform does.
+
+{{< feature-tiers categories="Academy" >}}
+
+## Frequently Asked Questions
+
+<details>
+  <summary>Can my certification have only one exam?</summary>
+  
+Yes, it can. The simplest form of a certification consists of a single final exam. You can also include multiple independent exams if you wish to assess different skills.
+</details>
+
+<details>
+  <summary>When should I choose to create a "Certification" instead of a "Learning Path"?</summary>
+  
+You should choose a Certification when your primary goal is to **test and assess** a learner's existing knowledge, rather than **teaching them** from scratch. A Learning Path focuses on instruction, while a Certification focuses on assessment.
+</details>
+
+<details>
+  <summary>What does an "Optional" exam mean, and how does it affect a learner's progress?</summary>
+  
+An optional exam is supplementary material. Learners can take it, but they **do not** have to pass it to earn the final certificate. Its score **does not count** towards the certification's passing requirements. This is typically used for extra practice or to test non-core knowledge.
+</details>
+
+<details>
+  <summary>How do I set an exam as "Optional"?</summary>
+  
+You need to add a specific field, `isOptional: true`, to the front matter of the exam's `.md` file. This field tells the system that the exam is not a mandatory requirement to pass the certification.
+</details>
+
+<details>
+  <summary>Can I control the order of multiple exams within a certification?</summary>
+  
+Yes, you can. Each exam file's front matter has a `weight` field. Lower numbers result in an earlier display order. If you don't set a `weight`, the exams will be sorted alphabetically by file title by default.
+</details>
+
+
+--------------------------------------------------------------------------------
 title: "Build a Custom Keychain"
 url: /cloud/guides/security/custom-keychains/index.md
 description: Group keys into a keychain you own, change its keys, and delete it. A role must include the keychain before it grants anything.
@@ -12290,6 +11748,107 @@ Trigger each one through its real action: submit the Help and Support form, appr
 
 
 --------------------------------------------------------------------------------
+title: "Instructor Console"
+url: /cloud/academy/instructor-console-guide/index.md
+description: Every view, metric, and action in the Academy Instructor Console: who can open it, how each number is calculated, and what instructors can manage.
+
+--------------------------------------------------------------------------------
+
+The Instructor Console reports on your organization's Academy content and learners. It answers three questions: how many people are learning, how far they get, and which assessments stop them. The console is also where you register new content and manage who can access it.
+
+## Availability and access
+
+{{< feature-tiers categories="Academy" >}}
+
+Opening the console requires the **View Academy Metrics** permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.
+
+| Role | Opens the console | Notes |
+| --- | --- | --- |
+| Academy Admin | Yes | Also holds team and workspace management, so it can assign content access to teams. |
+| Organization Admin | Yes | |
+| Provider Admin | Yes | Can view the combined "all organizations" scope. |
+| Academy Learner | No | Holds content access only. |
+| User, Team Admin, Workspace Admin, Billing Manager | No | Unless an operator has added the permission to the role. |
+
+Role-to-permission assignments are seeded defaults and an operator can change them. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
+
+### Organizations that are not configured
+
+The console reports data only for an organization that has an Academy content module and version configured. Until your first content version is published, the console shows a "not configured" state that lists what you get after configuration: learner registration and progress tracking, content creation tools, test analytics, and reporting. Publishing is described in [Create a Learning Path]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}).
+
+## Views
+
+The console has three views: **Overview**, **Learners**, and **Curricula**. "Curricula" is the console's term for a learning path, challenge, or certification.
+
+### Overview
+
+| Metric | Definition |
+| --- | --- |
+| Total Learners | Distinct learners who have registered for any of the organization's content to date. |
+| Active Learners | Distinct learners who registered, progressed, or were graded on content this calendar month. Shown with its share of all learners. |
+| Registrations | Every registration in the organization, including registrations against draft or retired content. Also shown as an average per learner. |
+| Completion Rate | Registrations with status Completed divided by all registrations. |
+| Quiz Pass Rate | Passed quiz attempts divided by all attempts. Retakes by one learner each count. A rate below 60% is highlighted. |
+
+A rate with nothing to divide displays as `-`, not `0%`. No attempts and all attempts failed are different facts.
+
+The Overview also charts:
+
+- **Registrations by status**, using the five registration statuses below.
+- **Final exams against practice quizzes.** Tests marked as final gate completion of the content. Every other test is practice. Comparing the two shows whether learners who practice successfully fail the exam that counts.
+- **Test outcomes**, with the lowest pass rate, highest pass rate, and most attempted test. The two pass-rate rankings consider only tests with at least five attempts, so one failure on a new quiz does not crown it the hardest test. While no test has five attempts, the ranking uses all tests.
+- **Content by type and level**, and the content ranked by registrations.
+
+### Learners
+
+A table with one row per registration: learner, content, registration time, and status. Rows load 20 at a time by default. Filter by content type (learning path, challenge, certification) and by status.
+
+| Status | Meaning |
+| --- | --- |
+| Registered | The learner enrolled and has not started. |
+| In Progress | The learner started and has not finished. |
+| Completed | The learner finished everything the content requires. |
+| Failed | The learner did not pass the content. |
+| Withdrawn | The learner left the content, or an instructor withdrew the registration. |
+
+The Learners view does not export to a file.
+
+### Curricula
+
+Lists the **published** content of the organization. Draft and retired content is excluded, so the registrations count here is normally smaller than the Overview total. Each row shows the registrations, completion rate, and pass rate. Content that nobody has registered for is marked **Awaiting First Learner**. The view also shows the **content version** your learners are using.
+
+If you published a release and the version does not change, publishing is a two-stage process: your content repository release, then the next Layer5 Cloud release for production. See [Create a Learning Path]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}).
+
+## Actions
+
+| Action | Where | Effect |
+| --- | --- | --- |
+| Register new content | Content creation flow | Creates the content record and generates the configuration for your repository. See [Create Academy Content]({{< ref "cloud/academy/creating-content/_index.md" >}}). |
+| Update content access | Curricula | Changes the team that can access the content, the access end date, the access status, the workspace, and the awarded badge. |
+| Copy invite link | Curricula | Copies the link that registers a learner for the content. |
+| Delete content | Curricula | Removes the content record after confirmation. |
+| Withdraw a registration | Learners | Sets the registration to Withdrawn. Learners can also withdraw themselves. Any other learner needs an instructor with View Academy Metrics. |
+
+## Active Learner definition
+
+Active Learners counts people, not registrations, over the current calendar month, and it resets each month. A learner who enrolled months ago and submits a quiz this month is active this month. A learner who both registers and takes a quiz counts once. Because it counts distinct people over a monthly window, it is not comparable with the registration totals beside it.
+
+## Limits and edge cases
+
+| Situation | Behavior |
+| --- | --- |
+| Quiz Pass Rate | Counts attempts, not learners. A learner who fails twice and then passes contributes two failures and one pass. |
+| Registrations differ between views | Overview counts all registrations. Curricula counts registrations against published content only. |
+| Provider "all organizations" scope | The console skips the not-configured check and aggregates across organizations. |
+| Exporting | Not available in the console. |
+
+## Related
+
+- [Academy]({{< ref "cloud/academy/_index.md" >}}) for how content types relate.
+- [Build a Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) and [Build a Certification]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}) for authoring.
+
+
+--------------------------------------------------------------------------------
 title: "Monitoring"
 url: /cloud/guides/self-hosted/planning/monitoring/index.md
 description: What a self-hosted Layer5 Cloud deployment exposes for monitoring: health endpoints, logs and error codes, startup signals, and OpenTelemetry traces.
@@ -12441,6 +12000,128 @@ Your copy is ready when a design named after the original with " (Copy)" appende
 - [Kanvas]({{< ref "kanvas/_index.md" >}}): design and edit infrastructure visually.
 - [Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}): how the catalog works.
 - [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): move your copy into a workspace your team shares.
+
+
+--------------------------------------------------------------------------------
+title: "Manage Subscriptions and Billing"
+url: /cloud/guides/account/managing-subscriptions/index.md
+description: See your organization's subscriptions, start or upgrade a paid plan, cancel at the end of a billing period, and understand how the billable user count and proration work.
+
+--------------------------------------------------------------------------------
+
+A subscription connects an organization to a Layer5 plan and bills for it. This guide covers what you can see and do with subscriptions, who can do it, and how the amount you pay follows your membership. For what each plan includes, read [Feature Availability by Plan]({{< ref "cloud/reference/feature-availability.md" >}}). Current prices are on the [pricing page](https://layer5.io/pricing).
+
+## Who can manage a subscription
+
+A subscription belongs to an organization, not to a person. Layer5 Cloud checks the caller against the subscription's own organization, so administering one organization gives you no access to another organization's billing.
+
+| Action | Organization Owner | Organization Admin | Provider Admin | Other members |
+| --- | --- | --- | --- | --- |
+| See the organization's subscriptions | Yes | Yes | Yes | No |
+| Start a paid subscription | Yes | Yes | Yes | No |
+| Upgrade a subscription | Yes | Yes | Yes | No |
+| Cancel a subscription | Yes | Yes | Yes | No |
+
+The Subscription and Plans tabs open for any user who holds **View Subcription** or **View Plans**. The default user role holds both. A member who is not an owner or Organization Admin can open the tab, but Layer5 Cloud refuses the data behind it, so the subscription table cannot load. For subscriptions that belong to another organization, Layer5 Cloud answers "subscription not found", the same answer it gives for an id that does not exist.
+
+The Subscription and Plans tabs belong to the Layer5 Cloud interface. When the account page is shown inside a Meshery UI that uses Layer5 Cloud as its provider, only the Profile tab appears.
+
+## Read your subscriptions
+
+The Subscription tab lists each subscription with these columns:
+
+| Column | Meaning |
+| --- | --- |
+| Plan | The plan the subscription is on. |
+| Cadence | Monthly or annual billing. |
+| Status | The subscription's state, from the table below. |
+| Users Billable | The number of billable users counted for the subscription. |
+| Forecasted Amount | Users Billable multiplied by the plan's price per user, in US dollars. |
+| Start Date, Created At, Updated At | When the subscription started, was created, and last changed. |
+
+Three summary cards sit above the table: your current plan, the forecasted bill ("Based on current usage", or "No billable usage" when the amount is zero), and the next payment due.
+
+| Status | Meaning |
+| --- | --- |
+| active | Paid and in good standing. |
+| trialing | In a trial period. Layer5 Cloud's own checkout starts no trial. |
+| incomplete | Created, but the first payment has not completed. |
+| past_due | A payment failed. |
+| unpaid | Payment attempts for the period have been exhausted. |
+| canceled | Ended. |
+| expired, inactive | No longer in effect. |
+| incomplete_expired | The first payment never completed. The row is hidden from the list. |
+
+Layer5 Cloud takes the status from the payment processor. Status changes arrive when the processor reports them, so the tab can trail a payment by a short time. Use the refresh control to reload.
+
+## Start a paid subscription
+
+The Plans tab lists the Personal plan ("Free Forever"), Team Designer, Team Operator, and Enterprise, each with monthly and annual prices and a currency selector.
+
+- **Personal** is free and needs no subscription step.
+- **Team Designer and Team Operator** start in the tab. Review the plan, apply a coupon if you have one, and enter your billing address and payment details. The payment form is hosted by the payment processor, and Layer5 Cloud does not store card details.
+- **Enterprise** does not use self-service checkout. Its subscribe action opens a contact form, and the Layer5 team arranges the subscription.
+
+Layer5 Cloud creates the subscription as incomplete, counts your billable users, and asks the payment processor to start billing. The status becomes active when the first payment succeeds. Checkout starts no free trial.
+
+## Upgrade a subscription
+
+Upgrade moves a subscription to a higher plan on the same ladder. Each ladder is separate:
+
+- Monthly core plans, in order: Team Designer, Team Operator, Enterprise.
+- Annual core plans, in the same order.
+- Academy theory and lab bundles, each with its own monthly and annual ladder.
+
+You cannot move down a ladder, and you cannot switch between monthly and annual billing on an existing subscription. To change cadence or move to a lower plan, contact [Support]({{< ref "cloud/reference/support.md" >}}).
+
+Before you confirm, the upgrade shows an invoice preview with the prorated line items. Layer5 Cloud prorates the change: you pay for the new plan's price for the rest of the current period, less credit for the unused part of the old plan. The confirmation reads "Subscription upgraded to" followed by the plan name.
+
+Upgrade is unavailable for subscriptions that are canceled, inactive, incomplete, or on the free plan.
+
+## Cancel a subscription
+
+Cancel asks you to confirm and then tells the payment processor to end the subscription **at the end of the current billing period**. The plan stays in force until the period ends. Because the plan runs to the end of the period, canceling issues no refund.
+
+Cancel is unavailable for subscriptions that are already canceled or inactive, that never completed, or that are on the free plan.
+
+## How the billable user count works
+
+Plans bill per user. The count is the number of distinct people who are members of the organization, with these rules:
+
+- The account must be active. A person who has been invited but has not accepted is not counted. A deleted account is not counted.
+- A member whose only role is academy learner is not counted.
+- A member added without any role is not counted.
+- The count never falls below the plan's minimum number of users.
+- Academy plans that bill per learner count active learners instead of organization members.
+
+Layer5 Cloud recalculates the count when it creates a subscription, and then every 2 hours for subscriptions that are active, trialing, past due, incomplete, or unpaid. It sends the new count to the payment processor each time. No plan blocks you from adding users: the count changes what you pay, never what you can do.
+
+### What a change in the count costs
+
+- **The count rises mid-period.** The payment processor charges a prorated amount for the added users for the rest of the period. At renewal, the full amount reflects the new count.
+- **The count falls mid-period.** The processor issues a prorated credit for the unused part. The credit stays on the organization's account balance, does not expire, and reduces future invoices. It is not refunded automatically.
+- **Renewal date.** A change in the count never moves the renewal date. At renewal, the organization pays for the count as of that date.
+
+Removing a user from the organization, or deleting their account, lowers the count at the next recalculation.
+
+## What a plan enforces
+
+Plans record several limits, but Layer5 Cloud enforces only the number of components in a design. See [Feature Availability by Plan]({{< ref "cloud/reference/feature-availability.md#limits-by-plan" >}}). Saving or importing a design that exceeds the component limit of the organization's active plan is refused, and an organization with no active subscription cannot add components to a design at all. Reduce the design or upgrade the plan.
+
+## Failure modes
+
+| What you see | Cause | What to do |
+| --- | --- | --- |
+| The subscription table does not load | You are not an Organization Owner or Organization Admin of the selected organization | Ask an owner or Organization Admin to manage billing, or switch to the right organization. |
+| "Payment Error" during checkout | The payment processor declined the payment | Correct the payment details and retry. |
+| Status stays incomplete | The first payment has not completed | Complete the payment. An incomplete subscription that never completes becomes incomplete_expired. |
+| Cancel and Upgrade are disabled | The status or plan rules above | Check the status column. |
+
+## See also
+
+- [Feature Availability by Plan]({{< ref "cloud/reference/feature-availability.md" >}}) lists what each plan includes.
+- [Organizations]({{< ref "cloud/guides/organizations/_index.md" >}}) explains organization owners and Organization Admins.
+- [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md" >}}) covers your own profile and sign-in.
 
 
 --------------------------------------------------------------------------------

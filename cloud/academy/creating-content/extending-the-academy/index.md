@@ -5,7 +5,7 @@
 
 
 
-The [Layer5 Cloud Academy](https://cloud.layer5.io/academy) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
+The [Layer5 Cloud Academy](https://cloud.layer5.io/academy) is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and **[Kanvas](https://kanvas.new/)** - a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.
 
 This approach transforms learning from passive reading into active, hands-on practice.
 
@@ -128,7 +128,7 @@ Custom shortcodes are reusable components that enhance Academy content. They fun
 
 ##### Basic Shortcode
 
-**Step 1:** Create the shortcode file in your organization's directory ([example](https://github.com/layer5io/academy-example/tree/master/layouts)):
+**Step 1:** Create the shortcode file in your organization's directory:
 
 ```shell
 layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html

@@ -11,7 +11,7 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 <div class="td-card-group card-group p-0 mb-4">
 <div class="td-card card border me-4">
 <div class="card-header">
-      <strong>Five</strong> — Platform Engineer
+      <strong>Five</strong> - Platform Engineer
     </div>
 <div class="card-body">
     <p class="card-text">
@@ -26,7 +26,7 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 
 <div class="td-card card border me-4">
 <div class="card-header">
-      <strong>Maya Chen</strong> — Org Admin
+      <strong>Maya Chen</strong> - Org Admin
     </div>
 <div class="card-body">
     <p class="card-text">
@@ -46,7 +46,7 @@ Your user account can own resources such as workspaces, designs, connections, cr
 
 Each user account is subscribed to a plan: Free, Team, or Enterprise. All user accounts can own an unlimited number of public and private workspaces, with an unlimited number of collaborators on those workspaces. If you use Layer5 Free, private workspaces owned by your user account have a limited feature set. You can upgrade to Layer5 Enterprise to get a full feature set for private workspaces.
 
-Note: Free plan users are limited to a single organization — their initial default organization, typically named "My Organization".
+Note: Free plan users are limited to a single organization - their initial default organization, typically named "My Organization".
 
 
 
@@ -121,9 +121,11 @@ If a provider that is already linked to your account later reports a different v
 5. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account instead of replacing it automatically
 6. You may unlink a social sign-in provider at any time
 
+To link or unlink a provider, see [Manage Your Account](/cloud/guides/account/managing-your-account/#link-or-unlink-a-sign-in-provider).
+
 ## Account Deletion
 
-When a user deletes their account, the following behaviors apply:
+When a user deletes their account, the following behaviors apply: To delete your own account, and for the case where deletion is refused, see [Delete your account](/cloud/guides/account/managing-your-account/#delete-your-account).
 
 **1. Personal Resources**
 

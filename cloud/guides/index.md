@@ -10,6 +10,7 @@ These guides each accomplish one task for a reader who already knows the basics.
 
 | I want to | Go to |
 | --- | --- |
+| Update my profile or password, link GitHub or Google sign-in, choose which emails I receive, or manage my organization's subscription | [Your Account](/cloud/guides/account/) |
 | Create, edit, brand, switch between, or delete an organization | [Organizations](/cloud/guides/organizations/) |
 | Send an organization's email through my own mail server | [Bring Your Own Mail Server](/cloud/guides/organizations/org-management/bring-your-own-mail-server/) |
 | Put an organization on its own domain or sign-in provider | [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) |

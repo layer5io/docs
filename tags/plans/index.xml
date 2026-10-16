@@ -10,7 +10,13 @@
  Plans
  &lt;a href="#plans" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization&amp;rsquo;s plan. Current pricing and plan details are listed at &lt;a href="https://layer5.io/pricing"&gt;layer5.io/pricing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/reference/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/support/</guid><description>&lt;p&gt;This page lists the ways to reach Layer5 about Layer5 Cloud and the support each plan includes.&lt;/p&gt;
+&lt;p&gt;The matrix has one column for each of the four Layer5 plans: Free, Team Designer, Team Operator, and Enterprise. Entitlements follow your organization&amp;rsquo;s plan. Current pricing and plan details are listed at &lt;a href="https://layer5.io/pricing"&gt;layer5.io/pricing&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Manage Subscriptions and Billing</title><link>/cloud/guides/account/managing-subscriptions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/account/managing-subscriptions/</guid><description>&lt;p&gt;A subscription connects an organization to a Layer5 plan and bills for it. This guide covers what you can see and do with subscriptions, who can do it, and how the amount you pay follows your membership. For what each plan includes, read &lt;a href="/cloud/reference/feature-availability/"&gt;Feature Availability by Plan&lt;/a&gt;. Current prices are on the &lt;a href="https://layer5.io/pricing"&gt;pricing page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="who-can-manage-a-subscription" class="heading-link"&gt;
+ Who can manage a subscription
+ &lt;a href="#who-can-manage-a-subscription" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A subscription belongs to an organization, not to a person. Layer5 Cloud checks the caller against the subscription&amp;rsquo;s own organization, so administering one organization gives you no access to another organization&amp;rsquo;s billing.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/reference/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/support/</guid><description>&lt;p&gt;This page lists the ways to reach Layer5 about Layer5 Cloud and the support each plan includes.&lt;/p&gt;
 
 &lt;h2 id="contacting-support" class="heading-link"&gt;
  Contacting support

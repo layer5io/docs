@@ -58,7 +58,7 @@ This content repository doesn't build the final website itself. Instead, it uses
 
 When its workflow is triggered, an automated process acts like a master assembly line:
 
-1.  **Collects Parts**: It begins by gathering all the necessary components—`academy-theme` and all the course content from the various content repositories.
+1.  **Collects Parts**: It begins by gathering all the necessary components - `academy-theme` and all the course content from the various content repositories.
 
 2.  **Assembles the Website**: Next, it combines everything. It applies the theme's design to all the course content, building a single, complete website.
 

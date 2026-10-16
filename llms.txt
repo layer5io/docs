@@ -118,21 +118,13 @@
 
 - [Extending the Academy](/cloud/academy/creating-content/extending-the-academy/index.md): A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
 
-- [Learner Guide](/cloud/academy/using-the-academy/index.md): Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
+- [Learner Guide](/cloud/academy/using-the-academy/index.md): Walk through the Layer5 Academy as a learner: find content, enroll, work through a learning path, pass its assessments, and earn a badge or certificate.
 
-- [Creating Content for the Academy](/cloud/academy/creating-content/creating-your-learning-path/index.md): A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
+- [User Management](/cloud/guides/organizations/managing-users/index.md): Learn how to create, add, invite, and manage users within Layer5 Cloud.
 
-- [User Invitations](/cloud/concepts/identity-and-security/users/user-invitations/index.md): Learn how to create custom, secure, and flexible invitations for new members.
+- [User Invitations](/cloud/guides/organizations/inviting-users/index.md): Learn how to create custom, secure, and flexible invitations for new members.
 
 - [Integrating Assessments in the Academy](/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
-
-- [User Management](/cloud/concepts/identity-and-security/users/user-management/index.md): Learn how to create, add, invite, and manage users within Layer5 Cloud.
-
-- [Academy Instructor Console Guide](/cloud/academy/creating-content/instructor-console-guide/index.md): A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
-
-- [Building Certifications](/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
-
-- [Building Challenges](/cloud/academy/creating-content/building-challenges/index.md): A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
 
 - [Platform Development Guide](/cloud/academy/platform-development/index.md): An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
 
@@ -145,6 +137,8 @@
 
 - [Connect GitHub](/cloud/guides/integrations/github-integration/index.md): Connect the Layer5 GitHub App to Layer5 Cloud, import infrastructure files from your repositories as designs, and manage or remove the connection.
 
+- [Create a Learning Path](/cloud/academy/creating-content/creating-your-learning-path/index.md): Set up your Academy content repository, structure and describe a learning path, preview it, and publish it. The repository, front matter, and publishing steps also apply to challenges and certifications.
+
 - [Create Your Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
 - [Feature Availability by Plan](/cloud/reference/feature-availability/index.md): Which Layer5 Cloud capabilities each Layer5 plan includes, the limits each plan records, and the role and deployment conditions that also decide whether a capability is available to you.
 - [Helm Chart Values](/cloud/guides/self-hosted/deployment/helm-chart-values/index.md): Reference for the layer5-cloud Helm chart: every value you set, its default, what it controls, and whether it lands in a ConfigMap or a Secret.
@@ -153,7 +147,11 @@
 - [Identity Services](/cloud/guides/self-hosted/planning/identity-services/index.md): Plan the identity services of a self-hosted deployment: Kratos accounts, Hydra tokens, the default Google and GitHub sign-in, and where organizations bring their own.
 - [Manage Workspaces](/cloud/guides/workspaces/managing-workspaces/index.md): Create, edit, and delete workspaces; give teams access; attach environments; place designs and views; and review workspace activity.
 
+- [Manage Your Account](/cloud/guides/account/managing-your-account/index.md): Edit your profile, change your password, link GitHub or Google sign-in, and delete your account, with what each change does and what it leaves behind.
+
 - [Promote a Design from Staging to Production](/cloud/tutorials/promoting-a-design/index.md): Build staging and production workspaces, promote a design between them, deploy it to a production environment, and confirm who did what.
+
+- [Build a Challenge](/cloud/academy/creating-content/building-challenges/index.md): A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
 
 - [Child Organizations](/cloud/guides/organizations/org-management/child-organizations/index.md): Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
 
@@ -163,7 +161,8 @@
 
 - [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
 - [Networking](/cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md): The network paths a self-hosted Layer5 Cloud deployment needs, including how real-time co-editing connects browsers and what the signaling endpoint can see.
-- [Notification Preferences](/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
+- [Set Notification Preferences](/cloud/guides/account/notification-preferences/index.md): Choose which Layer5 Cloud events send you email, and know which preferences are live today.
+
 - [Provider Initialization](/cloud/guides/self-hosted/deployment/provider-initialization/index.md): Reference for INIT_CONFIG, the setting that creates the provider organization and the first Provider Admin when a self-hosted deployment starts: format, fields, behavior, and failure modes.
 
 - [Roles and Permissions](/cloud/reference/default-permissions/index.md): Which permissions each default Layer5 Cloud role holds, who assigns each role, and which default keychains group the permissions.
@@ -172,12 +171,18 @@
 - [Set Up Your Organization](/cloud/getting-started/setting-up-your-organization/index.md): Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
 - [Security Reference](/cloud/reference/security/index.md): Security permission keys and who holds them, session and token lifetimes, cookies, visibility rules, and the endpoints behind keys, keychains, tokens, and sessions.
 
+- [Build a Certification](/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
+
 - [Build a Custom Keychain](/cloud/guides/security/custom-keychains/index.md): Group keys into a keychain you own, change its keys, and delete it. A role must include the keychain before it grants anything.
 
 - [Customize Webhooks](/cloud/guides/self-hosted/customizing-webhooks/index.md): Send support requests, signup decisions, and Kanvas entitlement events from your self-hosted Layer5 Cloud to your own systems: the three webhooks, when each fires, the payloads, and how failures behave.
 
+- [Instructor Console](/cloud/academy/instructor-console-guide/index.md): Every view, metric, and action in the Academy Instructor Console: who can open it, how each number is calculated, and what instructors can manage.
+
 - [Monitoring](/cloud/guides/self-hosted/planning/monitoring/index.md): What a self-hosted Layer5 Cloud deployment exposes for monitoring: health endpoints, logs and error codes, startup signals, and OpenTelemetry traces.
 - [Start from a Catalog Design](/cloud/getting-started/creating-a-design-from-template/index.md): Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
+- [Manage Subscriptions and Billing](/cloud/guides/account/managing-subscriptions/index.md): See your organization's subscriptions, start or upgrade a paid plan, cancel at the end of a billing period, and understand how the billable user count and proration work.
+
 - [Support](/cloud/reference/support/index.md): The support channels for Layer5 Cloud, what each Layer5 plan includes, and what the in-product support form sends.
 - [Workspace and Environment Reference](/cloud/reference/workspaces-and-environments/index.md): Defaults, limits, scope, permissions by operation, responses, and deletion effects for workspaces and environments.
 

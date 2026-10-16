@@ -14,7 +14,7 @@ Think of it as a **botanical garden**:
 - Challenges = the garden competition - focused skill challenges
 - Certifications = master gardener diploma - expertise validation
 
-Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment
+Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere - after a single activity, at the end of a module, or as a final course assessment
 
 ## Why assessments matter:
 
@@ -30,9 +30,9 @@ Well-designed assessments are crucial because they:
 
 ### 1. Each Level Can Have Assessments
 Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/), to avoid confusion and clearly distinguish between assessment types at each level, we use specific naming conventions:
-- Firsr Level (Root Level): Exam – assesses learning outcomes at root level
-    - Second Level: Test – measures understanding within a course
-      - Third Level: Quiz – short assessments tied to specific modules
+- First Level (Root Level): Exam - assesses learning outcomes at root level
+    - Second Level: Test - measures understanding within a course
+      - Third Level: Quiz - short assessments tied to specific modules
 
 ```
 Layer5 Cloud Academy
@@ -163,7 +163,7 @@ questions:
 
 ### Assessment Frontmatter Fields
 
-> In this table, fields marked with ✅ are required, while those marked with – are optional.
+> In this table, fields marked with ✅ are required, while those marked with - are optional.
 
 | Applicable To | Field | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -327,14 +327,14 @@ This assessment allows you to review your educational progress. Give it a try!
    * If none are marked, the **last exam** (by file path) is treated as final.
    * There must be **only one** explicitly marked final exam per section.
 3. A **final exam cannot be optional**.
-   * This applies even when only one exam is present — it cannot have `isOptional: true`.
+   * This applies even when only one exam is present - it cannot have `isOptional: true`.
 
 ### Final Exam Determination Logic
 A exam is considered final if:
 - It has `final: true` in its front matter.
 - It is the **only** exam under its parent section.
 - It is the **last exam** (ordered by `File.Path`) among sibling exams, and no other exam is explicitly marked as final. 
-- If any sibling exam is marked as `final: true`, no other exam will be considered final — even if it’s last.
+- If any sibling exam is marked as `final: true`, no other exam will be considered final - even if it’s last.
 
 
 
@@ -444,6 +444,6 @@ No partial credit is awarded. To receive points, the learner must select all cor
 <details>
   <summary>5. Can a learner retake an assessment even after scoring 100%?</summary>
 
-Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows—without enforcing score-based access rules.
+Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows - without enforcing score-based access rules.
 </details>
 

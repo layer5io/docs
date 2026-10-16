@@ -2633,7 +2633,7 @@ You designate it in either of two places: the **Open Org Invitation** setting of
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Inviting users to specific teams</h4>
   
-      To place invited users into teams, list the teams on an invitation. See <a href="/cloud/guides/organizations/managing-teams/">Manage Teams</a>. For individual invitations and their expiry, see <a href="/cloud/concepts/identity-and-security/users/user-invitations/">User Invitations</a>.
+      To place invited users into teams, list the teams on an invitation. See <a href="/cloud/guides/organizations/managing-teams/">Manage Teams</a>. For individual invitations and their expiry, see <a href="/cloud/guides/organizations/inviting-users/">User Invitations</a>.
   
 </div>
 

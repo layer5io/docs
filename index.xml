@@ -57,7 +57,7 @@
  2. Adding Videos to Your Category
  &lt;a href="#2-adding-videos-to-your-category" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Extending the Academy</title><link>/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Cloud Academy&lt;/a&gt; is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and &lt;strong&gt;&lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;&lt;/strong&gt; — a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.&lt;/p&gt;
+&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Extending the Academy</title><link>/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Cloud Academy&lt;/a&gt; is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and &lt;strong&gt;&lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;&lt;/strong&gt; - a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.&lt;/p&gt;
 &lt;p&gt;This approach transforms learning from passive reading into active, hands-on practice.&lt;/p&gt;
 &lt;p&gt;
 
@@ -78,26 +78,28 @@
  Who Can Create Content
  &lt;a href="#who-can-create-content" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.&lt;/p&gt;
-&lt;p&gt;Here, you can achieve:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A systematic understanding of complex topics&lt;/li&gt;
-&lt;li&gt;Hands-on experience by solving real-world problems&lt;/li&gt;
-&lt;li&gt;Verifiable badges to showcase your skills&lt;/li&gt;
-&lt;li&gt;Official certificates to formally recognize your expertise&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide takes you through one complete learning journey in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;: you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.&lt;/p&gt;
+&lt;p&gt;You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/guides/organizations/managing-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/managing-users/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
+&lt;p&gt;
 
-&lt;h2 id="exploring-the-content-catalog" class="heading-link"&gt;
- Exploring the Content Catalog
- &lt;a href="#exploring-the-content-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/contentimg/cloud/guides/organizations/managing-users/images/org_invite_hu_8dc70b7353643a06.webp" type="image/webp" width="2260" height="982"&gt;
+ &lt;img src="images/org_invite.png" onclick="openModal(this)" alt="User Management options"
+ width="2260" height="982"
+ class="md-image-responsive" /&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id="create-user-account" class="heading-link"&gt;
+ Create User Account
+ &lt;a href="#create-user-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Your journey begins at the Academy&amp;rsquo;s main catalog page, where you can discover all available learning content.&lt;/p&gt;</description></item><item><title>Creating Content for the Academy</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;This guide provides a step-by-step walkthrough for creating and organizing new content in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;. You&amp;rsquo;ll learn how to set up your content repository, structure your content, add assets, preview your work, and publish it for your organization.&lt;/p&gt;
-
-&lt;h3 id="prerequisites" class="heading-link"&gt;
- Prerequisites
- &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Before you dive into creating your first Academy content, it&amp;rsquo;s helpful to be familiar with the core technologies and concepts used by the Academy platform.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+&lt;p&gt;Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user&amp;rsquo;s introduction to Layer5 Cloud.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/cloud/guides/organizations/inviting-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/inviting-users/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
 &lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
 
 
@@ -118,7 +120,7 @@
  Default organization state
  &lt;a href="#default-organization-state" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;By default, organizations are &lt;strong&gt;closed&lt;/strong&gt;: there is no open registration. A user cannot join your organization simply by navigating to a URL — they must either click a valid invitation link or register through a page associated with an organization that has a &lt;a href="/cloud/concepts/identity-and-security/users/user-invitations/#invitation-properties-explained"&gt;default invitation&lt;/a&gt; configured.&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
+&lt;p&gt;By default, organizations are &lt;strong&gt;closed&lt;/strong&gt;: there is no open registration. A user cannot join your organization simply by navigating to a URL - they must either click a valid invitation link or register through a page associated with an organization that has a &lt;a href="/cloud/guides/organizations/inviting-users/#invitation-properties-explained"&gt;default invitation&lt;/a&gt; configured.&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
 &lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Learning Path = the comprehensive plant collection
@@ -133,139 +135,7 @@
 &lt;li&gt;Challenges = the garden competition - focused skill challenges&lt;/li&gt;
 &lt;li&gt;Certifications = master gardener diploma - expertise validation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere – after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>User Management</title><link>/cloud/concepts/identity-and-security/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/user-management/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/cloud/concepts/identity-and-security/users/user-management/images/org_invite_hu_8dc70b7353643a06.webp" type="image/webp" width="2260" height="982"&gt;
- &lt;img src="images/org_invite.png" onclick="openModal(this)" alt="User Management options"
- width="2260" height="982"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id="create-user-account" class="heading-link"&gt;
- Create User Account
- &lt;a href="#create-user-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user&amp;rsquo;s introduction to Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Academy Instructor Console Guide</title><link>/cloud/academy/creating-content/instructor-console-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/instructor-console-guide/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy/instructors-console"&gt;Academy Instructor Console&lt;/a&gt; serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.&lt;/p&gt;
-
-&lt;h3 id="gaining-access" class="heading-link"&gt;
- Gaining Access
- &lt;a href="#gaining-access" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;To view the Instructor Console, you must have the &lt;strong&gt;Academy Admin&lt;/strong&gt; role or be an &lt;strong&gt;organization admin&lt;/strong&gt;.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Enterprise Feature&lt;/h4&gt;
- 
- The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. &lt;a href="https://layer5.io/pricing"&gt;Learn more&lt;/a&gt;
- 
-&lt;/div&gt;
-
-
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;img src="./images/academy-admin.svg" onclick="openModal(this)" alt="Academy Admin Role"
- class="md-image-responsive" /&gt;
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Building Certifications</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
-&lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/cloud/academy/creating-content/building-certifications/images/index-page_hu_68368cf0e80d09b4.webp" type="image/webp" width="1684" height="1384"&gt;
- &lt;img src="./images/index-page.png" onclick="openModal(this)" alt="example image"
- width="1684" height="1384"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id="when-to-use-a-certification" class="heading-link"&gt;
- When to Use a Certification
- &lt;a href="#when-to-use-a-certification" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;To understand its unique role, here is a comparison with other content types in the Academy. Use this table to decide if a Certification is the right format for your content.&lt;/p&gt;</description></item><item><title>Building Challenges</title><link>/cloud/academy/creating-content/building-challenges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-challenges/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Challenge&lt;/strong&gt; is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.&lt;/p&gt;
-
-&lt;h2 id="when-to-use-a-challenge" class="heading-link"&gt;
- When to Use a Challenge
- &lt;a href="#when-to-use-a-challenge" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th style="text-align: left"&gt;Feature&lt;/th&gt;
- &lt;th style="text-align: left"&gt;Learning Path&lt;/th&gt;
- &lt;th style="text-align: left"&gt;Challenge&lt;/th&gt;
- &lt;th style="text-align: left"&gt;Certification&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;Primary Goal&lt;/td&gt;
- &lt;td style="text-align: left"&gt;To teach and guide through a comprehensive curriculum.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;To solve a specific, hands-on problem in a competitive scenario.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;To validate and prove existing knowledge through formal examination.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;Structure&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Hierarchical (Path → Courses → Modules).&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Typically a single, scenario-based task.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Flat; a collection of one or more exams.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;Main Content&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Lessons, informational pages, labs, and progressive assessments.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;A set of instructions for a practical task and a validation mechanism.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;A series of exams, potentially with a brief study guide.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;Outcome&lt;/td&gt;
- &lt;td style="text-align: left"&gt;Acquired knowledge and skills.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;A score and rank status.&lt;/td&gt;
- &lt;td style="text-align: left"&gt;An optional, paid official certificate and a verifiable badge.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Challenge: Focus on Doing, Not Reading&lt;/h4&gt;
- 
- Choose a Challenge when the point is for the learner to build, break, or fix something real. If most of your material is explanation, it belongs in a &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Learning Path&lt;/a&gt; instead.
- 
-&lt;/div&gt;
-
-
-
-&lt;h2 id="how-to-create-your-challenge" class="heading-link"&gt;
- How to Create Your Challenge
- &lt;a href="#how-to-create-your-challenge" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Challenges are authored the same way as every other Academy content type: as Markdown in your organization&amp;rsquo;s Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Creating Content for the Academy&lt;/a&gt;, which covers the repository setup once for all three content types.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
+&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere - after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
 
 &lt;h2 id="the-multi-repository-model" class="heading-link"&gt;
  The Multi-Repository Model
@@ -327,7 +197,23 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;/h2&gt;
 &lt;p&gt;Open the Tokens tab under Security and start a new token. Enter a name and a purpose. Both are labels that appear in the token list: name the consumer (&amp;ldquo;ci-snapshots&amp;rdquo;), and state what it does in the purpose.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Connect GitHub</title><link>/cloud/guides/integrations/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/github-integration/</guid><description>&lt;p&gt;The GitHub integration connects your GitHub account to Layer5 Cloud through the Layer5 GitHub App. Once connected, you can browse the repositories you granted, pick Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs, and import each file as a design. The same connection can also install a pull-request snapshot workflow in your repositories.&lt;/p&gt;
-&lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Create a Learning Path</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;A learning path teaches a subject through courses and modules, with assessments that gate progress. You write it as Markdown in your organization&amp;rsquo;s Academy content repository, then publish a version. This page covers the repository, layout, front matter, assets, preview, and publishing that every Academy content type shares. For the credential and assessment differences, see &lt;a href="/cloud/academy/creating-content/building-challenges/"&gt;Build a Challenge&lt;/a&gt; and &lt;a href="/cloud/academy/creating-content/building-certifications/"&gt;Build a Certification&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Git, a GitHub account, and Markdown. The Academy is built with the Hugo static site generator.&lt;/li&gt;
+&lt;li&gt;Content registered in the &lt;a href="/cloud/academy/creating-content/"&gt;Instructor Console&lt;/a&gt;, which gives you the content &lt;code&gt;id&lt;/code&gt; and the front matter to start from.&lt;/li&gt;
+&lt;li&gt;Your organization&amp;rsquo;s ID and a personal access token from Layer5 Cloud, used when you publish. Create tokens as described in &lt;a href="/cloud/guides/security/api-tokens/"&gt;Tokens&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="set-up-the-content-repository" class="heading-link"&gt;
+ Set up the content repository
+ &lt;a href="#set-up-the-content-repository" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Start from the &lt;code&gt;academy-example&lt;/code&gt; template repository published by Layer5: &lt;a href="https://github.com/layer5io/academy-example"&gt;github.com/layer5io/academy-example&lt;/a&gt;. Fork it, clone your fork, and work on a branch.&lt;/p&gt;</description></item><item><title>Create Your First Design</title><link>/kanvas/getting-started/starting-scratch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/getting-started/starting-scratch/</guid><description>&lt;p&gt;In this tutorial you build a small web application design in Kanvas Designer: a Deployment that runs the application, a ConfigMap that holds its settings, and a Service that exposes it. You start from an empty canvas, connect the components, and save the result. The saved design is the starting point for &lt;a href="/kanvas/getting-started/design-to-deployment/"&gt;Deploy and Observe Your First Design&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Along the way you learn what a design is made of, how relationships express the way components depend on each other, and when and how Kanvas saves your work.&lt;/p&gt;</description></item><item><title>Create Your Layer5 Account</title><link>/cloud/getting-started/getting-started-with-layer5-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/getting-started/getting-started-with-layer5-account/</guid><description>&lt;p&gt;Your Layer5 account is your personal identity on Layer5 Cloud. One account can belong to many organizations and teams, and it is how you import and create designs, collaborate through workspaces, and connect Meshery Servers. In this tutorial you create an account, verify it, sign in, and confirm that Layer5 Cloud has prepared an organization, a team, and a workspace for you. You do not set up any of those yourself before you can start working. The &lt;strong&gt;Check your email&lt;/strong&gt; page and the &lt;strong&gt;Import from GitHub&lt;/strong&gt; first-run page described below arrived in Layer5 Cloud &lt;strong&gt;v1.0.278&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Designs and Components</title><link>/kanvas/concepts/designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/concepts/designs/</guid><description>&lt;p&gt;A design is the unit of work in Kanvas. It is a declarative description of infrastructure that you author on a canvas, save as a versioned document, share with others, and deploy to your clusters. Components are the building blocks of a design: some represent real infrastructure that Kanvas deploys, and others are annotations that only explain the design. Knowing which is which, and how a design behaves when you save, share, and deploy it, tells you exactly what Kanvas will do with your work.&lt;/p&gt;</description></item><item><title>Explore Pods</title><link>/kanvas/tutorials/kubernetes/kubernetes-pods/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-pods/</guid><description>&lt;p&gt;In this tutorial you build a single NGINX Pod in Kanvas, deploy it to a live cluster, expose it with a NodePort Service, and inspect the running Pod in Operator: its details, a shell inside its container, and its log stream. A Pod is the smallest unit Kubernetes schedules, and every workload controller you meet later (Deployments, StatefulSets, CronJobs) exists to create and replace Pods. Working with a bare Pod first shows you exactly what those controllers automate.&lt;/p&gt;</description></item><item><title>Feature Availability by Plan</title><link>/cloud/reference/feature-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/feature-availability/</guid><description>&lt;p&gt;This page tells you which Layer5 Cloud capabilities each Layer5 plan includes. Your plan is one condition for using a capability, not the only one: your role and where your Layer5 Cloud deployment runs also decide what you can do. Those conditions follow the matrix and the limits table.&lt;/p&gt;
 
 &lt;h2 id="plans" class="heading-link"&gt;
@@ -452,7 +338,25 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Manage Workspaces</title><link>/cloud/guides/workspaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/workspaces/managing-workspaces/</guid><description>&lt;p&gt;A workspace is the unit you use to organize designs and to decide which teams can reach an organization&amp;rsquo;s environments and connections. This guide covers every task on a workspace. For what a workspace is and how it relates to teams, environments, and designs, read the &lt;a href="/cloud/concepts/workspaces/"&gt;Workspaces concept&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Each task names the permission it needs. Layer5 Cloud checks the permission in the organization that owns the workspace. A custom role or a team role can hold any of these permissions; the default holders are below.&lt;/p&gt;</description></item><item><title>Open an Interactive Terminal</title><link>/kanvas/guides/operating/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/operating/interactive-terminal/</guid><description>&lt;p&gt;The interactive terminal opens a shell inside a running container without leaving the Operator canvas. Use it for last-mile diagnosis that logs and status cannot answer: testing connectivity from inside a pod, reading a mounted file, or checking an injected environment variable. It is a browser-based equivalent of &lt;code&gt;kubectl exec&lt;/code&gt;, scoped to the resource you selected.&lt;/p&gt;
+&lt;p&gt;Each task names the permission it needs. Layer5 Cloud checks the permission in the organization that owns the workspace. A custom role or a team role can hold any of these permissions; the default holders are below.&lt;/p&gt;</description></item><item><title>Manage Your Account</title><link>/cloud/guides/account/managing-your-account/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/account/managing-your-account/</guid><description>&lt;p&gt;Your profile belongs to you, not to an organization. A change applies in every organization you belong to. This guide covers the four things you can change about your account: the profile, the password, the linked sign-in providers, and the account itself.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission to open the profile. The default user role holds it.&lt;/li&gt;
+&lt;li&gt;Changing your password needs &lt;strong&gt;Reset Password&lt;/strong&gt;. Deleting the account needs &lt;strong&gt;Delete Account&lt;/strong&gt;. The default user role holds both.&lt;/li&gt;
+&lt;li&gt;Layer5 Cloud signs you in through an identity service. Password changes and account deletion need a live browser sign-in. A script that holds only an API token cannot do either.&lt;/li&gt;
+&lt;li&gt;Changing a password or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to sign in again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default in the self-hosted chart.&lt;/li&gt;
+&lt;li&gt;A user&amp;rsquo;s profile can also be edited by an administrator who holds &lt;strong&gt;Update User Profile&lt;/strong&gt; in an organization you share with them. Only a Provider Admin can change another user&amp;rsquo;s email address.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="edit-your-profile" class="heading-link"&gt;
+ Edit your profile
+ &lt;a href="#edit-your-profile" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The profile form saves itself. About one second after you stop typing, Layer5 Cloud saves the change and confirms it with a short message. There is no Save button, and edits made during a save are queued, not lost.&lt;/p&gt;</description></item><item><title>Open an Interactive Terminal</title><link>/kanvas/guides/operating/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/operating/interactive-terminal/</guid><description>&lt;p&gt;The interactive terminal opens a shell inside a running container without leaving the Operator canvas. Use it for last-mile diagnosis that logs and status cannot answer: testing connectivity from inside a pod, reading a mounted file, or checking an injected environment variable. It is a browser-based equivalent of &lt;code&gt;kubectl exec&lt;/code&gt;, scoped to the resource you selected.&lt;/p&gt;
 
 &lt;h2 id="before-you-start" class="heading-link"&gt;
  Before you start
@@ -508,7 +412,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Annotation components (text, shapes, and other visual elements) carry no infrastructure and are skipped. They are counted separately in the summary.&lt;/p&gt;</description></item><item><title>Visualize Pull Requests with Kanvas Snapshot</title><link>/kanvas/guides/snapshots/kanvas-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/snapshots/kanvas-snapshot/</guid><description>&lt;p&gt;Kanvas Snapshot posts a picture of your infrastructure as a comment on each GitHub pull request. Reviewers see which components a Kubernetes manifest, Docker Compose file, or Helm chart defines, and how they connect, before they read the YAML. The comment updates on every push to the pull request.&lt;/p&gt;
-&lt;p&gt;The snapshot runs in a GitHub Actions workflow on GitHub-hosted runners. It never touches your cluster. For how a snapshot is built and what it can and cannot do, see &lt;a href="/kanvas/guides/snapshots/"&gt;Kanvas Snapshot&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Child Organizations</title><link>/cloud/guides/organizations/org-management/child-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/child-organizations/</guid><description>&lt;p&gt;A &lt;strong&gt;child organization&lt;/strong&gt; is an organization created inside another organization, called its &lt;strong&gt;parent&lt;/strong&gt;. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child&amp;rsquo;s settings and membership from the parent.&lt;/p&gt;
+&lt;p&gt;The snapshot runs in a GitHub Actions workflow on GitHub-hosted runners. It never touches your cluster. For how a snapshot is built and what it can and cannot do, see &lt;a href="/kanvas/guides/snapshots/"&gt;Kanvas Snapshot&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Build a Challenge</title><link>/cloud/academy/creating-content/building-challenges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-challenges/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Challenge&lt;/strong&gt; is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.&lt;/p&gt;
+
+&lt;h2 id="when-to-use-a-challenge" class="heading-link"&gt;
+ When to use a challenge
+ &lt;a href="#when-to-use-a-challenge" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Choose a challenge when the learner should build, break, or fix something real and is scored on the result. Compare the content types in &lt;a href="/cloud/academy/creating-content/#choose-a-content-type"&gt;Create Academy Content&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Child Organizations</title><link>/cloud/guides/organizations/org-management/child-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/organizations/org-management/child-organizations/</guid><description>&lt;p&gt;A &lt;strong&gt;child organization&lt;/strong&gt; is an organization created inside another organization, called its &lt;strong&gt;parent&lt;/strong&gt;. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child&amp;rsquo;s settings and membership from the parent.&lt;/p&gt;
 
 
 
@@ -2394,28 +2304,14 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The ingress must support WebSocket upgrades. A controller or load balancer that closes idle connections shorter than the signaling keep-alive (below) disconnects users from their co-editing session.&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud offers a range of user-configurable preferences that allows you to control the types of email notifications you receive.&lt;/p&gt;
-&lt;img src="images/notification-preferences.gif" alt="How to set your notifications preferences" /&gt;
+&lt;p&gt;The ingress must support WebSocket upgrades. A controller or load balancer that closes idle connections shorter than the signaling keep-alive (below) disconnects users from their co-editing session.&lt;/p&gt;</description></item><item><title>Set Notification Preferences</title><link>/cloud/guides/account/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/account/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
+&lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
 
-&lt;h2 id="to-change-the-notification-preferences" class="heading-link"&gt;
- To change the notification preferences
- &lt;a href="#to-change-the-notification-preferences" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Sign into &lt;a href="https://cloud.layer5.io"&gt;Layer5 Cloud&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Visit &lt;strong&gt;Account&lt;/strong&gt; &amp;gt; &lt;a href="https://cloud.layer5.io/account/preferences"&gt;Preferences&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Under “Notifications,” choose what notifications you want to receive:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Acknowledgment:&lt;/strong&gt; You&amp;rsquo;ll receive notifications about badges you&amp;rsquo;ve been awarded and related updates.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Approval Requests:&lt;/strong&gt; You&amp;rsquo;ll be notified about Workspace, Account, Permissions, Catalog&lt;/p&gt;</description></item><item><title>Permissions by Role</title><link>/kanvas/reference/permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/permissions/</guid><description>&lt;p&gt;This page tells you which Kanvas actions require a permission, which default roles grant each permission, and which actions are limited by something other than a permission. Use it to find out why an action is missing for a user and which role grants it.&lt;/p&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>Permissions by Role</title><link>/kanvas/reference/permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/permissions/</guid><description>&lt;p&gt;This page tells you which Kanvas actions require a permission, which default roles grant each permission, and which actions are limited by something other than a permission. Use it to find out why an action is missing for a user and which role grants it.&lt;/p&gt;
 
 &lt;h2 id="how-permissions-work" class="heading-link"&gt;
  How permissions work
@@ -2485,7 +2381,14 @@ creating learning paths, challenges, and certifications by collecting all necess
  Permission keys
  &lt;a href="#permission-keys" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Provider Admin holds every key. The table lists the default holders of the other roles. &amp;ldquo;Interface&amp;rdquo; means the control or tab is disabled or replaced by a permission error screen. &amp;ldquo;Server&amp;rdquo; means the Layer5 Cloud server refuses the request with HTTP 403.&lt;/p&gt;</description></item><item><title>Build a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;In this tutorial you follow Zara Osei, Team Admin of the Orbital Labs Infrastructure Team, as she models the team&amp;rsquo;s Google Cloud data pipeline in Kanvas. The pipeline ingests events through Pub/Sub, processes them with Dataflow, writes analytical results to BigQuery, archives raw payloads to Cloud Storage, and runs alongside a GKE cluster. The result is a design named &lt;code&gt;data-pipeline-gcp&lt;/code&gt;: a reviewable, shareable model of the architecture that lives in the team&amp;rsquo;s workspace instead of in a slide deck.&lt;/p&gt;</description></item><item><title>Canvas Objects</title><link>/kanvas/reference/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/canvas-objects/</guid><description>&lt;p&gt;Everything on a Designer canvas is an object, and every object answers to the same small set of actions: add, select, copy, duplicate, lock, restyle, resize and delete. This page lists each object kind, each action, every style option and the limits that apply. Edges - the lines that connect objects - have their own section at the end.&lt;/p&gt;
+&lt;p&gt;Provider Admin holds every key. The table lists the default holders of the other roles. &amp;ldquo;Interface&amp;rdquo; means the control or tab is disabled or replaced by a permission error screen. &amp;ldquo;Server&amp;rdquo; means the Layer5 Cloud server refuses the request with HTTP 403.&lt;/p&gt;</description></item><item><title>Build a Certification</title><link>/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
+&lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
+
+&lt;h2 id="when-to-use-a-certification" class="heading-link"&gt;
+ When to use a certification
+ &lt;a href="#when-to-use-a-certification" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Choose a certification when the goal is to test, not teach. It assumes prior knowledge. Compare the content types in &lt;a href="/cloud/academy/creating-content/#choose-a-content-type"&gt;Create Academy Content&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Build a GCP Data Pipeline Design</title><link>/kanvas/tutorials/data-pipeline-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/data-pipeline-gcp/</guid><description>&lt;p&gt;In this tutorial you follow Zara Osei, Team Admin of the Orbital Labs Infrastructure Team, as she models the team&amp;rsquo;s Google Cloud data pipeline in Kanvas. The pipeline ingests events through Pub/Sub, processes them with Dataflow, writes analytical results to BigQuery, archives raw payloads to Cloud Storage, and runs alongside a GKE cluster. The result is a design named &lt;code&gt;data-pipeline-gcp&lt;/code&gt;: a reviewable, shareable model of the architecture that lives in the team&amp;rsquo;s workspace instead of in a slide deck.&lt;/p&gt;</description></item><item><title>Canvas Objects</title><link>/kanvas/reference/canvas-objects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/canvas-objects/</guid><description>&lt;p&gt;Everything on a Designer canvas is an object, and every object answers to the same small set of actions: add, select, copy, duplicate, lock, restyle, resize and delete. This page lists each object kind, each action, every style option and the limits that apply. Edges - the lines that connect objects - have their own section at the end.&lt;/p&gt;
 &lt;p&gt;Designer mode only. In Operator mode you cannot add, edit, duplicate, delete or rename objects, and live nodes discovered from a cluster are read-only in every mode. See &lt;a href="/kanvas/concepts/designer/"&gt;Designer&lt;/a&gt; for how the two modes differ.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
 
 &lt;h2 id="what-you-can-clone" class="heading-link"&gt;
@@ -2557,7 +2460,679 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; The Deploy Design permission gates the action. See &lt;a href="/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;. Selecting environments from the empty state also needs the Create Environment and Edit Environment permissions.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A provider session.&lt;/strong&gt; Without a signed-in session the request fails before any event is raised.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.&lt;/p&gt;</description></item><item><title>Explore Services</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;p&gt;In this tutorial you put three Services in front of running workloads: a ClusterIP Service in front of a Deployment, a NodePort Service in front of one Pod, and a LoadBalancer Service in front of another. Pods come and go and change IP addresses every time they are replaced. A Service gives a changing set of Pods one stable address and finds them by label, and its type decides who can reach that address. Building all three side by side makes the difference between the types concrete.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
+&lt;p&gt;Deploying does not need Meshery Operator, MeshSync, or the broker. Those make the result visible in Operator mode.&lt;/p&gt;</description></item><item><title>Explore Services</title><link>/kanvas/tutorials/kubernetes/kubernetes-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/kubernetes-services/</guid><description>&lt;p&gt;In this tutorial you put three Services in front of running workloads: a ClusterIP Service in front of a Deployment, a NodePort Service in front of one Pod, and a LoadBalancer Service in front of another. Pods come and go and change IP addresses every time they are replaced. A Service gives a changing set of Pods one stable address and finds them by label, and its type decides who can reach that address. Building all three side by side makes the difference between the types concrete.&lt;/p&gt;</description></item><item><title>Instructor Console</title><link>/cloud/academy/instructor-console-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/instructor-console-guide/</guid><description>&lt;p&gt;The Instructor Console reports on your organization&amp;rsquo;s Academy content and learners. It answers three questions: how many people are learning, how far they get, and which assessments stop them. The console is also where you register new content and manage who can access it.&lt;/p&gt;
+
+&lt;h2 id="availability-and-access" class="heading-link"&gt;
+ Availability and access
+ &lt;a href="#availability-and-access" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="feature-tiers"&gt;
+
+&lt;table class="feature-tiers-table"&gt;
+ &lt;caption&gt;Academy&lt;/caption&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th scope="col"&gt;Capability&lt;/th&gt;
+ &lt;th scope="col"&gt;What it does&lt;/th&gt;
+ &lt;th scope="col"&gt;Free&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Designer&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Operator&lt;/th&gt;
+ &lt;th scope="col"&gt;Enterprise&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Academy Theoretical Learning&lt;/th&gt;
+ &lt;td&gt;A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Academy Practical Learning&lt;/th&gt;
+ &lt;td&gt;An inclusive, collaborative, hands-on learning environment for students.&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Opening the console requires the &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
 
 &lt;h2 id="health-endpoints" class="heading-link"&gt;
  Health endpoints
@@ -3129,7 +3704,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  1. Browse the catalog
  &lt;a href="#1-browse-the-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Open the &lt;a href="https://cloud.layer5.io/catalog"&gt;catalog&lt;/a&gt; and search by technology or type. Sort by &lt;strong&gt;Most Cloned&lt;/strong&gt; or &lt;strong&gt;Most Downloaded&lt;/strong&gt; to see what other people rely on most. Each design card shows a summary, and opening a design shows its full details. You can also download a design to work with it outside Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/reference/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/support/</guid><description>&lt;p&gt;This page lists the ways to reach Layer5 about Layer5 Cloud and the support each plan includes.&lt;/p&gt;
+&lt;p&gt;Open the &lt;a href="https://cloud.layer5.io/catalog"&gt;catalog&lt;/a&gt; and search by technology or type. Sort by &lt;strong&gt;Most Cloned&lt;/strong&gt; or &lt;strong&gt;Most Downloaded&lt;/strong&gt; to see what other people rely on most. Each design card shows a summary, and opening a design shows its full details. You can also download a design to work with it outside Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Manage Subscriptions and Billing</title><link>/cloud/guides/account/managing-subscriptions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/account/managing-subscriptions/</guid><description>&lt;p&gt;A subscription connects an organization to a Layer5 plan and bills for it. This guide covers what you can see and do with subscriptions, who can do it, and how the amount you pay follows your membership. For what each plan includes, read &lt;a href="/cloud/reference/feature-availability/"&gt;Feature Availability by Plan&lt;/a&gt;. Current prices are on the &lt;a href="https://layer5.io/pricing"&gt;pricing page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="who-can-manage-a-subscription" class="heading-link"&gt;
+ Who can manage a subscription
+ &lt;a href="#who-can-manage-a-subscription" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A subscription belongs to an organization, not to a person. Layer5 Cloud checks the caller against the subscription&amp;rsquo;s own organization, so administering one organization gives you no access to another organization&amp;rsquo;s billing.&lt;/p&gt;</description></item><item><title>Support</title><link>/cloud/reference/support/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/support/</guid><description>&lt;p&gt;This page lists the ways to reach Layer5 about Layer5 Cloud and the support each plan includes.&lt;/p&gt;
 
 &lt;h2 id="contacting-support" class="heading-link"&gt;
  Contacting support
