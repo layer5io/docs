@@ -13525,6 +13525,21 @@ For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/gu
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.280"
+url: /cloud/reference/releases/v1.0.280/index.md
+date: "2026-10-16"
+--------------------------------------------------------------------------------
+
+- fix(server): restrict role, keychain and key grant writes to provider admins @jijillery (#6201)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jijillery and @miacycle
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.279"
 url: /cloud/reference/releases/v1.0.279/index.md
 date: "2026-10-16"
