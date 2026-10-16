@@ -70,7 +70,7 @@ Merging needs no permission key, but the incoming design must be one you can rea
 
 ## Where the imported design lands
 
-The imported design is owned by you, placed in your selected workspace, public, at version 0.0.1, and records its detected source type. Imports from a GitHub repository are the exception: each file becomes a private design named after the file, and the connection records its repository, path, and branch. Invalid files in a selection are reported per path and do not stop valid files from importing.
+The imported design is owned by you, placed in your selected workspace, public, at version 0.0.1, and records its detected source type. Imports from a GitHub repository are the exception: each file becomes a private design named after the file, and the design records the repository, path, and branch it came from. Re-importing, refreshing, and viewing that source are covered in [GitHub Integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}). Invalid files in a selection are reported per path and do not stop valid files from importing.
 
 The components-per-design plan limit applies to URL imports and to every save. GitHub imports are not checked at import time. They are checked the first time the design is saved.
 

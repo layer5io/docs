@@ -111,7 +111,7 @@ Let’s go through the steps required to connect your GitHub account and import 
     A design is matched to its file by repository, path and branch, never by name, so renaming a design does not break the match. When your selection includes files you imported before, Meshery asks what to do with them before importing. The prompt lists the files, up to five followed by "and N more", and offers three choices:
 
     | Choice | What happens to the previously imported files |
-    |---|---|
+    | --- | --- |
     | **Import new files only** (default) | They are left as they are. Only files that were never imported become new designs. |
     | **Update the existing designs** | Each design's content is replaced with the file's current content. The design keeps its ID, sharing and links. Edits made to it since the last import are lost. |
     | **Import them again as new designs** | Additional designs are created alongside the existing ones. |
@@ -185,7 +185,7 @@ Your GitHub connection lists every design you have imported from GitHub, with ac
 1. Click a connection to expand it. Below the connection's details, **Imported designs** lists your imported designs, newest first, with these columns:
 
     | Column | Shows |
-    |---|---|
+    | --- | --- |
     | **Design** | The design's name. |
     | **Type** | The format the design was imported from, or `-` when it is not known. |
     | **Source** | The repository, file path and, when it is not the default, branch the design was imported from. Click it to open the file on GitHub. |
@@ -206,7 +206,7 @@ The refresh updates the same design, so it keeps its ID, owner, visibility, cata
 If the refresh fails, the notification names the cause and what to do:
 
 | Cause | What to do |
-|---|---|
+| --- | --- |
 | The source file no longer exists, for example because it was moved, renamed or deleted | Import the file from its new location. |
 | The file is no longer a valid Helm chart, Kubernetes manifest, Docker Compose file or Meshery design | Fix the file in its repository and refresh again. |
 | The GitHub App no longer has access to the repository | Reconfigure your GitHub connection and grant the GitHub App access to the repository. |
