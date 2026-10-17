@@ -16,7 +16,7 @@ The [invitation system](https://cloud.layer5.io/identity/invitations) gives you 
 You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.
 
 {{< alert type="info" title="Required permission" >}}
-Managing invitations requires the **Manage Invitations** permission within your organization. Contact your organization administrator if you need access.
+Creating, editing, and deleting invitations requires the **Manage Invitations** permission within your organization. That one permission also covers choosing the roles and teams an invitation grants, so anyone who can write an invitation, Academy Admins included, can specify its roles. Contact your organization administrator if you need access.
 {{< /alert >}}
 
 ### Default organization state
@@ -79,15 +79,15 @@ After an invitation is created, a notification email is sent only to addresses l
 | Property | Description |
 | :--- |  :--- |
 | `emails` | List of email addresses or domain patterns allowed to use the invitation. Exact addresses (e.g., `user@example.com`) and domain patterns (e.g., `@example.com`) are both supported. If empty, the invitation is public. |
-| `roles` | List of roles automatically assigned to new members upon accepting the invitation. If empty, the user joins with no role. |
-| `teams` | List of teams new members are automatically added to upon accepting the invitation. |
+| `roles` | List of roles automatically assigned to new members upon accepting the invitation. If empty, the user joins with no role. Each role must be an existing organization role. Provider-wide roles, such as Provider Admin, cannot be granted by an invitation, and an invitation listing one, or a role that does not exist, is refused when it is created or edited. |
+| `teams` | List of teams new members are automatically added to upon accepting the invitation. Each team must be an existing team of your organization; an invitation listing any other team is refused when it is created or edited. |
 | `quota` | Number that limits how many users can accept the invitation. If not set, there is no usage limit. |
 | `expiresAt` | Date after which the invitation link can no longer be used. Does not affect existing members. If not set, the invitation never expires. |
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
 | `name` | A human-readable name used to identify the invitation. |
 | `description` | Additional information about the invitation's purpose, for internal reference. |
 | `acceptanceOutcome` | What accepting the invitation does. `direct_membership` (the default) makes the user a member of the inviting organization. `child_organization` instead creates a new organization for the user beneath the inviting organization. See [Choosing what accepting does](#choosing-what-accepting-an-invitation-does). Creating or editing a `child_organization` invitation requires the **Create Organization** permission in the inviting organization. |
-| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time - designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
+| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time - designating a new one clears the previous. Like every other change to an invitation, turning this setting on or off requires the **Manage Invitations** permission. An edit that does not include this setting leaves it as it was. |
 
 ### Managing existing invitations
 
