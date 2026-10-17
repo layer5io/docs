@@ -13529,6 +13529,21 @@ For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/gu
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.285"
+url: /cloud/reference/releases/v1.0.285/index.md
+date: "2026-10-17"
+--------------------------------------------------------------------------------
+
+- feat(invitations): add acceptanceOutcome picker and child-organization acceptance @leecalcote (#6167)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu, @leecalcote and @winkletinkle
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.284"
 url: /cloud/reference/releases/v1.0.284/index.md
 date: "2026-10-17"
