@@ -1,0 +1,24 @@
+# v0.8.115
+
+date: 2025-01-03
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.135 @l5io (#3102)
+- make download patters, filters from the server side @amitamrutiya (#3099)
+- [Chore]: Bump Sistent v0.14.134 @l5io (#3100)
+
+## 🐛 Bug Fixes
+
+- make download patters, filters from the server side @amitamrutiya (#3099)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io, @sudhanshutech and MUzairS15
+
+

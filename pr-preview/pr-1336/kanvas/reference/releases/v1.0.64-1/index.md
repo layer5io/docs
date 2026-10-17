@@ -1,0 +1,15 @@
+# v1.0.64-1
+
+date: 2026-08-03
+
+
+
+## What's New
+## 🔤 General
+- chore(skills): hard-rename iterate-pr --full mode to --merge @hamza-mohd (#4314)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hamza-mohd and @l5io
+

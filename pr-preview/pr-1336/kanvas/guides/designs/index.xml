@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manage Designs on Layer5 Documentation</title><link>/pr-preview/pr-1336/kanvas/guides/designs/</link><description>Recent content in Manage Designs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1336/kanvas/guides/designs/index.xml" rel="self" type="application/rss+xml"/><item><title>Import and Merge Designs</title><link>/pr-preview/pr-1336/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. A File Upload or URL Import does not keep the original file, so exporting later produces a new file from the current design. A GitHub import is different: the design stays bound to its source, as described in &lt;a href="/pr-preview/pr-1336/kanvas/guides/designs/import-designs/#where-the-imported-design-lands"&gt;Where the imported design lands&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Save Designs</title><link>/pr-preview/pr-1336/kanvas/guides/designs/saving-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/saving-designs/</guid><description>&lt;p&gt;Kanvas saves a design for you. There is no Save button and no Save shortcut. Every change that alters the design, such as adding, moving, configuring, or deleting a component, renaming, editing a relationship, or merging, queues a save. The request is sent 3 seconds after your last change. Changes made while a save is in flight queue a new save when it finishes.&lt;/p&gt;
+&lt;p&gt;Saving needs a signed-in user or a guest session on kanvas.new, and an organization. It does not check a permission key.&lt;/p&gt;</description></item><item><title>Clone a Design</title><link>/pr-preview/pr-1336/kanvas/guides/designs/cloning-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/cloning-a-design/</guid><description>&lt;p&gt;Cloning copies a design into your own workspace so you can change it freely. The clone is an independent record: later changes to the source never reach it, and edits to the clone never reach the source.&lt;/p&gt;
+
+&lt;h2 id="what-you-can-clone" class="heading-link"&gt;
+ What you can clone
+ &lt;a href="#what-you-can-clone" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The server clones only designs whose visibility is public or published. A request for any other design fails with 403 &amp;ldquo;unauthorized to clone design&amp;rdquo;. That includes your own private designs. To copy one of those, open it and use Save as. See &lt;a href="/pr-preview/pr-1336/kanvas/guides/designs/saving-designs/"&gt;Save Designs&lt;/a&gt;. A missing source design returns 500 &amp;ldquo;could not find design&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Export Designs</title><link>/pr-preview/pr-1336/kanvas/guides/designs/export-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/export-designs/</guid><description>&lt;p&gt;Export writes a design out of Kanvas so you can back it up, move it between Meshery deployments, hand it to Helm or &lt;code&gt;kubectl&lt;/code&gt;, or put it on a web page. Every export is generated from the current state of the design. You cannot export an earlier version.&lt;/p&gt;
+&lt;p&gt;Export is a File menu action, disabled on an empty design. In Operator mode, Export instead downloads the open view as &lt;code&gt;&amp;lt;view name&amp;gt;.json&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Embed Designs</title><link>/pr-preview/pr-1336/kanvas/guides/designs/embedding-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/embedding-designs/</guid><description>&lt;p&gt;An embedded design is an interactive picture of a design on your own page. Readers can pan and zoom it, but cannot edit it. It is a static export: Kanvas gives you a JavaScript module file and a snippet that loads it.&lt;/p&gt;
+
+&lt;h2 id="how-an-embed-works" class="heading-link"&gt;
+ How an embed works
+ &lt;a href="#how-an-embed-works" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It is a snapshot.&lt;/strong&gt; The file holds the canvas as it was at export time: node positions, element styles, and inline background images converted to data URLs where the fetch succeeded. Later edits to the design do not change an exported file. Re-export to refresh it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It needs no Layer5 Cloud at view time.&lt;/strong&gt; The page makes no request to Layer5 Cloud, so the embed works for private designs and keeps working if the design is deleted. Anyone who can read your page can read the embedded design data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It is view only.&lt;/strong&gt; Layout is fixed to the exported positions. Selection and box selection are disabled, zoom is limited to 0.5x to 6.6x, and there is no editing, component configuration, relationship evaluation, or live cluster data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It loads one library.&lt;/strong&gt; The page fetches the Cytoscape library (version 3.27.0) from a public CDN, so viewers need outbound access to it. A Meshery logo link, which opens meshery.io, is drawn at the bottom right of the canvas. No option removes it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It has no parameters.&lt;/strong&gt; Width, height, theme, background, and zoom are not options. The container&amp;rsquo;s CSS sets the size.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;There is no iframe embed.&lt;/strong&gt; Kanvas offers no embed URL for the app itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Embedding needs no permission key and no paid plan.&lt;/p&gt;</description></item><item><title>Publish Designs</title><link>/pr-preview/pr-1336/kanvas/guides/designs/publishing-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/publishing-designs/</guid><description>&lt;p&gt;Publishing makes a design discoverable in the Layer5 Cloud catalog, where anyone can view and &lt;a href="/pr-preview/pr-1336/kanvas/guides/designs/cloning-a-design/"&gt;clone&lt;/a&gt; it. Publishing is separate from visibility: making a design public does not publish it.&lt;/p&gt;
+
+&lt;h2 id="visibility-and-publication-states" class="heading-link"&gt;
+ Visibility and publication states
+ &lt;a href="#visibility-and-publication-states" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;State&lt;/th&gt;
+ &lt;th&gt;Who can read it&lt;/th&gt;
+ &lt;th&gt;How it gets there&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Private&lt;/td&gt;
+ &lt;td&gt;Owner, provider administrators, and users with a share grant&lt;/td&gt;
+ &lt;td&gt;Cloning, unpublishing, or switching a public design to private&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Public&lt;/td&gt;
+ &lt;td&gt;Anyone, including anonymous callers, who has the design&amp;rsquo;s id or link&lt;/td&gt;
+ &lt;td&gt;The default for every newly saved design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Published&lt;/td&gt;
+ &lt;td&gt;Everyone through the catalog&lt;/td&gt;
+ &lt;td&gt;An approved publish request, or a direct publish by an approver&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The owner can toggle a design between private and public until it is published. A published design cannot be toggled. The toggle saves through the normal save path, so it raises the version and re-checks the components limit.&lt;/p&gt;</description></item><item><title>Delete a Design</title><link>/pr-preview/pr-1336/kanvas/guides/designs/deleting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/designs/deleting-a-design/</guid><description>&lt;p&gt;Deleting a design removes the design record and its workspace mappings in one transaction. There is no trash and no restore. Export a copy first if you might need it. See &lt;a href="/pr-preview/pr-1336/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="who-can-delete" class="heading-link"&gt;
+ Who can delete
+ &lt;a href="#who-can-delete" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The server allows the design&amp;rsquo;s owner or a provider administrator. Organization administrators, workspace owners, and collaborators with a share grant cannot delete a design (403 &amp;ldquo;unauthorized for the operation&amp;rdquo;). Layer5 Cloud hides its Delete action for roles without the Delete a Design permission, but the server decides by ownership, not by the key. To remove a design from a workspace without deleting it, use the workspace&amp;rsquo;s remove action instead.&lt;/p&gt;</description></item></channel></rss>

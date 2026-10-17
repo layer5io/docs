@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Terminal on Layer5 Documentation</title><link>/pr-preview/pr-1336/tags/terminal/</link><description>Recent content in Terminal on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1336/tags/terminal/index.xml" rel="self" type="application/rss+xml"/><item><title>Open an Interactive Terminal</title><link>/pr-preview/pr-1336/kanvas/guides/operating/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1336/kanvas/guides/operating/interactive-terminal/</guid><description>&lt;p&gt;The interactive terminal opens a shell inside a running container without leaving the Operator canvas. Use it for last-mile diagnosis that logs and status cannot answer: testing connectivity from inside a pod, reading a mounted file, or checking an injected environment variable. It is a browser-based equivalent of &lt;code&gt;kubectl exec&lt;/code&gt;, scoped to the resource you selected.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Operator mode on a Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not offer Operator mode. See &lt;a href="/pr-preview/pr-1336/kanvas/concepts/architecture/"&gt;How Kanvas Works with Meshery and Layer5 Cloud&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A connected cluster with Meshery Operator deployed.&lt;/strong&gt; Meshery Operator runs MeshSync and a message broker in the cluster. MeshSync executes the shell, and Meshery Server relays input and output through the broker. If any of the three is unavailable, the terminal does not connect (see &lt;a href="/pr-preview/pr-1336/kanvas/guides/operating/interactive-terminal/#failure-modes"&gt;Failure modes&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A running container whose image contains &lt;code&gt;/bin/sh&lt;/code&gt;.&lt;/strong&gt; Distroless images have no shell and cannot be used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="open-a-session" class="heading-link"&gt;
+ Open a session
+ &lt;a href="#open-a-session" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The action is named &lt;strong&gt;Initiate Terminal Session&lt;/strong&gt; and is offered on &lt;strong&gt;Pod&lt;/strong&gt; and &lt;strong&gt;Container&lt;/strong&gt; resources only. Right-click the resource on the canvas, or select it and use the action in the header of the Details panel. The session starts immediately and the terminal panel opens at the bottom left of the canvas. There is no separate connect step.&lt;/p&gt;</description></item></channel></rss>
