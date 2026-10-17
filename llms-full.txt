@@ -13529,6 +13529,21 @@ For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/gu
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.284"
+url: /cloud/reference/releases/v1.0.284/index.md
+date: "2026-10-17"
+--------------------------------------------------------------------------------
+
+- feat(identity): native client sign-in via loopback redirect and PKCE @leecalcote (#6223)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @meshery-ci
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.283"
 url: /cloud/reference/releases/v1.0.283/index.md
 date: "2026-10-16"
