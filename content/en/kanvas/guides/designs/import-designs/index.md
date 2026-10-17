@@ -13,7 +13,7 @@ aliases:
   - /kanvas/designer/merging-designs/
 ---
 
-Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.
+Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. A File Upload or URL Import does not keep the original file, so exporting later produces a new file from the current design. A GitHub import is different: the design stays bound to its source, as described in [Where the imported design lands](#where-the-imported-design-lands).
 
 Import works in Designer mode. The import action is hidden in Operator mode.
 
@@ -70,7 +70,7 @@ Merging needs no permission key, but the incoming design must be one you can rea
 
 ## Where the imported design lands
 
-The imported design is owned by you, placed in your selected workspace, public, at version 0.0.1, and records its detected source type. Imports from a GitHub repository are the exception: each file becomes a private design named after the file, and the connection records its repository, path, and branch. Invalid files in a selection are reported per path and do not stop valid files from importing.
+The imported design is owned by you, placed in your selected workspace, public, at version 0.0.1, and records its detected source type. Imports from a GitHub repository are the exception: each file becomes a private design named after the file. The design records the repository, file path, and branch it came from, and the imported file itself is stored with the design. The GitHub connection also keeps a list of the designs it imported. The stored file is not offered for download, so exporting still produces a new file from the current design. Invalid files in a selection are reported per path and do not stop valid files from importing.
 
 The components-per-design plan limit applies to URL imports and to every save. GitHub imports are not checked at import time. They are checked the first time the design is saved.
 
