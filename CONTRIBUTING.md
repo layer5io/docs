@@ -276,11 +276,11 @@ If you add a new page layout, render the link only through
 `page-markdown-link.html` directly, or the link appears outside the meta column.
 
 To leave a path out of `llms.txt` and `llms-full.txt`, add it to `exclude` under
-`[params.llms]` in `hugo.toml`. To keep only the newest N pages of a section
-(by front matter `date`), add it to `[params.llms.limit_sections]`; Kanvas
-releases are capped at 5 this way. That cap lives in `layouts/index.llms` and
-`layouts/index.llmsfull`, which are copies of the module's templates with one
-added block, so re-check them against the module when you update it.
+`[params.llms]` in `hugo.toml`; a trailing `/*` matches direct children only and
+`/**` matches everything beneath. Cloud and Kanvas release notes (one page per
+version) are excluded this way. Keep this configuration-only: don't copy the module's
+`index.llms` / `index.llmsfull` templates into `layouts/`, because a copy silently
+stops tracking upstream fixes.
 
 # <a name="maintaining"> Reviews</a>
 All contributors are invited to review pull requests. See this short video on [how to review a pull request](https://www.youtube.com/watch?v=isLfo7jfE6g&feature=youtu.be).
