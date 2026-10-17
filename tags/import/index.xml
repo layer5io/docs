@@ -1,48 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Import on Layer5 Documentation</title><link>/tags/import/</link><description>Recent content in Import on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/import/index.xml" rel="self" type="application/rss+xml"/><item><title>Connect GitHub</title><link>/cloud/guides/integrations/github-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/guides/integrations/github-integration/</guid><description>&lt;p&gt;The GitHub integration connects your GitHub account to Layer5 Cloud through the Layer5 GitHub App. Once connected, you can browse the repositories you granted, pick Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs, and import each file as a design. The same connection can also install a pull-request snapshot workflow in your repositories.&lt;/p&gt;
-&lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Import and Merge Designs</title><link>/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. The original file is not kept for download, so exporting later produces a new file from the current design.&lt;/p&gt;
-&lt;p&gt;Import works in Designer mode. The import action is hidden in Operator mode.&lt;/p&gt;
-
-&lt;h2 id="choose-how-to-import" class="heading-link"&gt;
- Choose how to import
- &lt;a href="#choose-how-to-import" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Method&lt;/th&gt;
- &lt;th&gt;Accepts&lt;/th&gt;
- &lt;th&gt;Result&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;Import dialog, File Upload&lt;/td&gt;
- &lt;td&gt;One local file&lt;/td&gt;
- &lt;td&gt;New design, or merge into the open design&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Import dialog, URL Import&lt;/td&gt;
- &lt;td&gt;One direct http or https URL to a single file&lt;/td&gt;
- &lt;td&gt;New design, or merge into the open design&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Drag or paste onto the canvas&lt;/td&gt;
- &lt;td&gt;One or more files&lt;/td&gt;
- &lt;td&gt;One new design per file, or a merge prompt if the canvas is not empty&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Catalog clone or open&lt;/td&gt;
- &lt;td&gt;A published design&lt;/td&gt;
- &lt;td&gt;Copy of the design, see &lt;a href="/kanvas/guides/designs/cloning-a-design/"&gt;Clone a Design&lt;/a&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;GitHub integration in Layer5 Cloud&lt;/td&gt;
- &lt;td&gt;Files and folders in a connected repository&lt;/td&gt;
- &lt;td&gt;One private design per valid file&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The URL must point at a file, not a repository, a chart repository, or a directory. Folders cannot be imported directly: compress a Kustomize project or Helm chart into a single archive first.&lt;/p&gt;</description></item><item><title>Deploy a PHP Guestbook with Redis</title><link>/kanvas/tutorials/kubernetes/deploy-php-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-php-redis/</guid><description>&lt;p&gt;In this tutorial you build the Kubernetes guestbook: a PHP frontend that writes entries to a Redis leader and reads them from Redis followers. Six manifests from the Kubernetes examples become one Kanvas design, which you deploy, inspect in Operator, scale, and remove. The application is small, but it carries the pattern behind most multi-tier systems: each tier runs as a Deployment, each tier is reached through a Service, and tiers find each other by Service name, never by Pod address.&lt;/p&gt;</description></item><item><title>Supported Import and Export Formats</title><link>/kanvas/reference/supported-formats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/supported-formats/</guid><description>&lt;p&gt;This page lists exactly what Kanvas accepts and produces. For the steps, see &lt;a href="/kanvas/guides/designs/import-designs/"&gt;Import and Merge Designs&lt;/a&gt; and &lt;a href="/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Use it when your infrastructure already lives in Git and you want those files on the canvas without downloading and uploading them one at a time. For a one-off file, &lt;a href="/kanvas/guides/designs/import-designs/"&gt;import it directly&lt;/a&gt; instead.&lt;/p&gt;</description></item><item><title>Import and Merge Designs</title><link>/kanvas/guides/designs/import-designs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/guides/designs/import-designs/</guid><description>&lt;p&gt;Import turns an existing configuration into an editable design. Kanvas identifies the format from the file content, converts it to a Meshery design, and saves it as a new design in your account. A File Upload or URL Import does not keep the original file, so exporting later produces a new file from the current design. A GitHub import is different: the design stays bound to its source, as described in &lt;a href="/kanvas/guides/designs/import-designs/#where-the-imported-design-lands"&gt;Where the imported design lands&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Deploy a PHP Guestbook with Redis</title><link>/kanvas/tutorials/kubernetes/deploy-php-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/tutorials/kubernetes/deploy-php-redis/</guid><description>&lt;p&gt;In this tutorial you build the Kubernetes guestbook: a PHP frontend that writes entries to a Redis leader and reads them from Redis followers. Six manifests from the Kubernetes examples become one Kanvas design, which you deploy, inspect in Operator, scale, and remove. The application is small, but it carries the pattern behind most multi-tier systems: each tier runs as a Deployment, each tier is reached through a Service, and tiers find each other by Service name, never by Pod address.&lt;/p&gt;</description></item><item><title>Supported Import and Export Formats</title><link>/kanvas/reference/supported-formats/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/reference/supported-formats/</guid><description>&lt;p&gt;This page lists exactly what Kanvas accepts and produces. For the steps, see &lt;a href="/kanvas/guides/designs/import-designs/"&gt;Import and Merge Designs&lt;/a&gt; and &lt;a href="/kanvas/guides/designs/export-designs/"&gt;Export Designs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id="import" class="heading-link"&gt;
  Import
