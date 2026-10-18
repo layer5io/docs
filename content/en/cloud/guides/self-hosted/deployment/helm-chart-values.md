@@ -19,7 +19,7 @@ The chart writes `env.*` values into one ConfigMap and one Secret, and the serve
 
 | Where it lands | Values |
 | --- | --- |
-| Secret | `env.githubappkeypath` (the key file content), `env.stripeWebhookSecret`, `env.githubWebhookSecret`, `env.kratosWebhookApiKey`, `env.cloudCredentialEncryptionKey`, `env.cloudOidcStateHmacKey`, `env.providerOrgGithubSecret`, `env.providerOrgGoogleSecret`, and all four `smtp.*` values |
+| Secret | `env.githubappkeypath` (the key file content), `env.githubAppClientSecret`, `env.stripeWebhookSecret`, `env.githubWebhookSecret`, `env.kratosWebhookApiKey`, `env.cloudCredentialEncryptionKey`, `env.cloudOidcStateHmacKey`, `env.providerOrgGithubSecret`, `env.providerOrgGoogleSecret`, and all four `smtp.*` values |
 | ConfigMap | Every other `env.*` value |
 
 Both the Secret and the Helm release still hold your values in plaintext, so protect the release history and your values file.
@@ -78,6 +78,7 @@ The container has a liveness probe on `/healthz` and readiness and startup probe
 | `ghtoken` | `""` | GitHub token the server uses to dispatch workflows. |
 | `githubappid` | not set | GitHub App identifier for the GitHub integration. |
 | `githubappkeypath` | `key.pem` | Path of the GitHub App private key file inside the chart. |
+| `githubAppClientId`, `githubAppClientSecret` | `""` | OAuth client ID and a client secret from the GitHub App's settings page. Layer5 Cloud v1.0.287 and later uses them to confirm which installations of the App the authorizing GitHub account can access. When either is empty, the server logs a warning at startup and no GitHub connection can be created or re-authorized. |
 | `stripeSecretKey`, `stripePublicKey` | not set | Stripe keys for payment processing. |
 | `recaptchaSiteKey`, `recaptchaSecretKey` | not set | Google reCAPTCHA keys. Signup verification runs only when both are set. Organizations on a custom domain with a different registrable domain are exempt. |
 
