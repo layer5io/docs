@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.66
+  version: v1.3.67
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -31423,7 +31423,7 @@ paths:
       description: >
         Register a new connection with credentials. Meshery Cloud reserves the GitHub App connection's identity (name
         `GitHub App`, sub_type `git`): only its GitHub authorization flow creates that connection, so a request naming
-        it is refused with `409` (code `meshery_cloud-3397`).
+        it is refused with a `409` MeshKit error that names the reserved GitHub App connection identity.
       requestBody:
         required: true
         content:
@@ -32877,7 +32877,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -33895,9 +33898,9 @@ paths:
       operationId: updateConnection
       summary: Update a connection
       description: >
-        Update an existing connection. Meshery Cloud refuses (`409`, code `meshery_cloud-3397`) an edit that would give
-        a connection the GitHub App connection's identity (name `GitHub App`, sub_type `git`). On the GitHub App
-        connection itself, the server-written metadata keys `installations`, `installationId` and
+        Update an existing connection. Meshery Cloud refuses, with a `409` MeshKit error naming the reserved identity,
+        an edit that would give a connection the GitHub App connection's identity (name `GitHub App`, sub_type `git`).
+        On the GitHub App connection itself, the server-written metadata keys `installations`, `installationId` and
         `installationsVerifiedAt` are carried forward from the stored row: a client edit can neither set nor erase them
         (other metadata keys are written as sent). Their shape is `GithubConnectionMetadata` in the v1beta3 `github`
         construct.
@@ -35368,7 +35371,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -41487,8 +41493,8 @@ paths:
         installations - the installations GitHub lists for the caller's own GitHub account when they authorize the App.
         The refusal is deliberately uniform: the App not being installed on the repository's account and its being
         installed there for someone else answer the same body, so the route does not reveal where the App is installed.
-        A `403` whose `code` is `meshery_cloud-3381` means the caller's GitHub connection predates verification and must
-        be re-authorized (see `startGithubAuthorization`) before it can be used; `409` means the design has no
+        A distinct `403` whose MeshKit error asks for re-authorization means the caller's GitHub connection predates
+        verification; re-authorize it (see `startGithubAuthorization`) before use; `409` means the design has no
         refreshable source (`location.type` is not `github`, or `host`/`path` is missing) or its source path no longer
         resolves to an importable file; `502` means GitHub could not be reached or rejected the request. The server
         resolves the tracked ref to a commit, reads the file at that commit, and records it in `location.commitSha`.
@@ -42413,7 +42419,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -42472,7 +42481,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -42513,11 +42525,11 @@ paths:
         is not reachable through one of the caller's verified GitHub App installations - the installations GitHub lists
         for the caller's own GitHub account when they authorize the App. The refusal is deliberately uniform: the App
         not being installed on the repository's account and its being installed there for someone else answer the same
-        body, so the route does not reveal where the App is installed. A `403` whose `code` is `meshery_cloud-3381`
-        means the caller's GitHub connection predates verification and must be re-authorized (see
-        `startGithubAuthorization`) before it can be used; `409` means `ref` does not resolve to a commit, or `path`
-        does not name an importable file at it (missing, a directory, or not a supported format); `502` means GitHub
-        could not be reached or rejected the request.
+        body, so the route does not reveal where the App is installed. A distinct `403` whose MeshKit error asks for
+        re-authorization means the caller's GitHub connection predates verification; re-authorize it (see
+        `startGithubAuthorization`) before use; `409` means `ref` does not resolve to a commit, or `path` does not name
+        an importable file at it (missing, a directory, or not a supported format); `502` means GitHub could not be
+        reached or rejected the request.
       parameters:
         - name: designId
           in: path
@@ -43479,7 +43491,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -43538,7 +43553,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -45515,10 +45533,10 @@ paths:
         not reachable through one of the caller's verified GitHub App installations - the installations GitHub lists for
         the caller's own GitHub account when they authorize the App. The refusal is deliberately uniform: the App not
         being installed on the repository's account and its being installed there for someone else answer the same body,
-        so the route does not reveal where the App is installed. A `403` whose `code` is `meshery_cloud-3381` means the
-        caller's GitHub connection predates verification and must be re-authorized (see `startGithubAuthorization`)
-        before it can be used; `502` means GitHub could not be reached or rejected the request. Each imported or updated
-        design records the commit its file was read at in `location.commitSha`.
+        so the route does not reveal where the App is installed. A distinct `403` whose MeshKit error asks for
+        re-authorization means the caller's GitHub connection predates verification; re-authorize it (see
+        `startGithubAuthorization`) before use; `502` means GitHub could not be reached or rejected the request. Each
+        imported or updated design records the commit its file was read at in `location.commitSha`.
       parameters:
         - name: connectionId
           in: path
@@ -46699,7 +46717,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -46752,7 +46773,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -46787,9 +46811,9 @@ paths:
         installations - the installations GitHub lists for the caller's own GitHub account when they authorize the App.
         The refusal is deliberately uniform: the App not being installed on the repository's account and its being
         installed there for someone else answer the same body, so the route does not reveal where the App is installed.
-        A `403` whose `code` is `meshery_cloud-3381` means the caller's GitHub connection predates verification and must
-        be re-authorized (see `startGithubAuthorization`) before it can be used; `502` means GitHub could not be reached
-        or rejected the request.
+        A distinct `403` whose MeshKit error asks for re-authorization means the caller's GitHub connection predates
+        verification; re-authorize it (see `startGithubAuthorization`) before use; `502` means GitHub could not be
+        reached or rejected the request.
       parameters:
         - name: connectionId
           in: path
@@ -46908,7 +46932,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -46961,7 +46988,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -52746,7 +52776,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -54883,11 +54916,12 @@ paths:
       description: >
         Checks the caller's GitHub App connection. A connection is usable only when its installations were verified
         against the caller's own GitHub account and GitHub confirms the installation it opens on still exists. `403`
-        (code `meshery_cloud-3381`) means the connection must be re-authorized (`startGithubAuthorization` with
-        `flow=authorize`). When GitHub reports the installation the connection opens on removed, that installation is
-        dropped and the connection re-points at its next verified installation, which is checked in turn: `200` when one
-        remains. `404` means the caller has no GitHub connection, or no verified installation remains - in which case
-        the connection is deleted. `502` means GitHub could not confirm either way; the connection is kept.
+        with a MeshKit error saying the connection must be re-authorized means it predates verification; re-authorize it
+        with `startGithubAuthorization` (`flow=authorize`). When GitHub reports the installation the connection opens on
+        removed, that installation is dropped and the connection re-points at its next verified installation, which is
+        checked in turn: `200` when one remains. `404` means the caller has no GitHub connection, or no verified
+        installation remains - in which case the connection is deleted. `502` means GitHub could not confirm either way;
+        the connection is kept.
       responses:
         '200':
           description: The connection is verified and its installation exists. No body.
@@ -54919,7 +54953,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -54960,7 +54997,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55001,7 +55041,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55042,7 +55085,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55121,7 +55167,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55168,7 +55217,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55209,7 +55261,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55250,7 +55305,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55401,7 +55459,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55448,7 +55509,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55489,7 +55553,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55530,7 +55597,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55632,7 +55702,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55679,7 +55752,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55720,7 +55796,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55761,7 +55840,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55865,7 +55947,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55912,7 +55997,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55953,7 +56041,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -55994,7 +56085,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -56769,7 +56863,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -56816,7 +56913,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -56857,7 +56957,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -56898,7 +57001,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -57571,7 +57677,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -57618,7 +57727,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
@@ -57659,7 +57771,10 @@ paths:
                   code:
                     type: string
                     minLength: 1
-                    description: MeshKit error code, e.g. `meshery_cloud-3420`. Omitted for an error that is not a MeshKit error.
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
                   severity:
                     type: string
                     description: MeshKit severity name. Omitted when MeshKit reports none.
