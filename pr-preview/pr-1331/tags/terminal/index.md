@@ -1,4 +1,0 @@
-# Terminal
-
-
-<no value>
