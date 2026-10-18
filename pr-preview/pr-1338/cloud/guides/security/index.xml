@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Layer5 Documentation</title><link>/pr-preview/pr-1338/cloud/guides/security/</link><description>Recent content in Security on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1338/cloud/guides/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Create and Use an API Token</title><link>/pr-preview/pr-1338/cloud/guides/security/api-tokens/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1338/cloud/guides/security/api-tokens/</guid><description>&lt;p&gt;An API token lets a script, a CI job, or a Meshery client act as your user account against Layer5 Cloud. This guide creates one, uses it, rotates it, and revokes it. For what a token can reach and why it never expires, read the &lt;a href="/pr-preview/pr-1338/cloud/concepts/identity-and-security/tokens/"&gt;Tokens concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the &lt;strong&gt;Create Token&lt;/strong&gt; permission to create a token in the interface. Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.&lt;/li&gt;
+&lt;li&gt;You need &lt;strong&gt;View Tokens&lt;/strong&gt; to open the Tokens tab. Every default user role holds it.&lt;/li&gt;
+&lt;li&gt;Decide which consumer gets this token. Create one token per consumer so you can revoke one without breaking the others.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="create-a-token" class="heading-link"&gt;
+ Create a token
+ &lt;a href="#create-a-token" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open the Tokens tab under Security and start a new token. Enter a name and a purpose. Both are labels that appear in the token list: name the consumer (&amp;ldquo;ci-snapshots&amp;rdquo;), and state what it does in the purpose.&lt;/p&gt;</description></item><item><title>Review and Sign Out Sessions</title><link>/pr-preview/pr-1338/cloud/guides/security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1338/cloud/guides/security/sessions/</guid><description>&lt;p&gt;Every sign-in to Layer5 Cloud creates a session, on every browser, device, and Meshery Server you use. This guide reviews your sessions and ends the ones you do not want. For how long sessions last and what a session can reach, read the &lt;a href="/pr-preview/pr-1338/cloud/concepts/identity-and-security/sessions/"&gt;Sessions concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the &lt;strong&gt;View Sessions&lt;/strong&gt; permission to open the Sessions tab. Every default user role holds it.&lt;/li&gt;
+&lt;li&gt;Ending another session from the tab requires the &lt;strong&gt;Delete Token&lt;/strong&gt; permission, which Organization Admin and Provider Admin hold by default. Other roles see the Logout control disabled. This is how the interface works today.&lt;/li&gt;
+&lt;li&gt;You can end only your own sessions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="review-your-sessions" class="heading-link"&gt;
+ Review your sessions
+ &lt;a href="#review-your-sessions" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open the Sessions tab under Security. Each row is one sign-in and shows its ID, name, purpose, and creation date. Search filters by name or purpose, and the newest sessions appear first.&lt;/p&gt;</description></item><item><title>Build a Custom Keychain</title><link>/pr-preview/pr-1338/cloud/guides/security/custom-keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1338/cloud/guides/security/custom-keychains/</guid><description>&lt;p&gt;A custom keychain bundles the keys that a custom role needs. This guide creates a keychain, changes its keys, and deletes it. It is written for Provider Admins and self-hosted operators, because only a Provider Admin can create, change, or delete a keychain, or include it in a role. For the model, read the &lt;a href="/pr-preview/pr-1338/cloud/concepts/identity-and-security/keychains/"&gt;Keychains concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the Provider Admin role. The interface also checks the &lt;strong&gt;Create Keychain&lt;/strong&gt;, &lt;strong&gt;Edit Keychain&lt;/strong&gt;, and &lt;strong&gt;Delete Keychain&lt;/strong&gt; permissions for the matching controls. Provider Admin holds all three. No other default role does.&lt;/li&gt;
+&lt;li&gt;A keychain does nothing until a role includes it. Creating and editing roles is a Provider Admin action. On hosted Layer5 Cloud an organization cannot complete this path alone. On a self-hosted deployment, your Provider Admins can.&lt;/li&gt;
+&lt;li&gt;Keychains are not organization-scoped. A role that includes your keychain grants its keys to every user who holds that role, in every organization.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="create-a-keychain" class="heading-link"&gt;
+ Create a keychain
+ &lt;a href="#create-a-keychain" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Open the Keychains tab under Security and create a keychain. Give it a name and choose the keys it bundles. Layer5 Cloud creates the keychain and adds each key to it. If adding a key fails, the interface reports it as &amp;ldquo;Failed to add key to keychain&amp;rdquo;. Open the keychain and confirm every key you chose is present.&lt;/p&gt;</description></item></channel></rss>
