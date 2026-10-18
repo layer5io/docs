@@ -76,10 +76,11 @@ What deletion does, in one step that either completes or changes nothing:
 
 1. Hands on every organization and team you own (see [Organizations and teams you own](#organizations-and-teams-you-own)).
 2. Hands any credential you hold on behalf of an organization to that organization's owner, or else its longest-standing Organization Admin, so the organization keeps working. For an organization you owned, that is its new owner.
-3. Marks your account as deleted and ends your memberships in every organization and team, which removes your roles with them. Each membership is kept as an ended record, so organization history shows when your access ended.
-4. Releases your email address, so it can be used to sign up again.
-5. Records the deletion, and each organization or team handed on or deleted, in the audit trail.
-6. Removes your sign-in identity, including linked GitHub and Google sign-in, and signs you out.
+3. Marks your account as deleted and ends your memberships in every organization and team, which removes your roles with them, along with any provider-wide role. Each membership is kept as an ended record, so organization history shows when your access ended.
+4. Revokes every API token you created, so none of them works afterwards.
+5. Releases your email address, so it can be used to sign up again.
+6. Records the deletion, and each organization or team handed on or deleted, in the audit trail.
+7. Removes your sign-in identity, including linked GitHub and Google sign-in, and signs you out.
 
 What deletion leaves behind:
 
