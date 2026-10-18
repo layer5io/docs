@@ -1,0 +1,22 @@
+# v0.8.290
+
+date: 2025-07-15
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- feat/academy hugo integration @leecalcote (#3756)
+
+## 💻 Server
+
+- feat/academy hugo integration @leecalcote (#3756)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @meshery-ci
+
+
