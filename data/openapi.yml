@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.68
+  version: v1.3.69
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -56515,11 +56515,7 @@ paths:
               description: Payload for creating or updating an invitation.
               required:
                 - name
-                - description
                 - orgId
-                - emails
-                - roles
-                - teams
                 - status
               properties:
                 id:
@@ -56556,7 +56552,7 @@ paths:
                   maxLength: 255
                 description:
                   type: string
-                  description: Description of the invitation.
+                  description: Description of the invitation. Optional; omitting it stores an empty description.
                   maxLength: 5000
                 emails:
                   type: array
@@ -56568,7 +56564,9 @@ paths:
                     pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
                     description: Email address or pattern that is permitted to use this invitation.
                     x-go-type: string
-                  description: Email addresses or patterns this invitation is valid for.
+                  description: >-
+                    Email addresses or patterns this invitation is valid for. Optional; omitting it or sending an empty
+                    list means any email address may accept the invitation.
                 orgId:
                   type: string
                   format: uuid
@@ -56597,7 +56595,9 @@ paths:
                   items:
                     type: string
                     description: Role identifier granted by this invitation on acceptance.
-                  description: Roles that the user will have when accepting the invitation.
+                  description: >-
+                    Roles that the user will have when accepting the invitation. Optional; omitting it or sending an
+                    empty list grants no roles.
                 teams:
                   type: array
                   x-go-type: pq.StringArray
@@ -56606,7 +56606,9 @@ paths:
                   items:
                     type: string
                     description: Team identifier the invited user is added to on acceptance.
-                  description: Teams that the user will be added to when accepting the invitation.
+                  description: >-
+                    Teams that the user will be added to when accepting the invitation. Optional; omitting it or sending
+                    an empty list adds the user to no teams.
                 acceptanceOutcome:
                   description: >-
                     Determines what accepting this invitation does for the accepting user, for new and existing accounts
@@ -57329,11 +57331,7 @@ paths:
               description: Payload for creating or updating an invitation.
               required:
                 - name
-                - description
                 - orgId
-                - emails
-                - roles
-                - teams
                 - status
               properties:
                 id:
@@ -57370,7 +57368,7 @@ paths:
                   maxLength: 255
                 description:
                   type: string
-                  description: Description of the invitation.
+                  description: Description of the invitation. Optional; omitting it stores an empty description.
                   maxLength: 5000
                 emails:
                   type: array
@@ -57382,7 +57380,9 @@ paths:
                     pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
                     description: Email address or pattern that is permitted to use this invitation.
                     x-go-type: string
-                  description: Email addresses or patterns this invitation is valid for.
+                  description: >-
+                    Email addresses or patterns this invitation is valid for. Optional; omitting it or sending an empty
+                    list means any email address may accept the invitation.
                 orgId:
                   type: string
                   format: uuid
@@ -57411,7 +57411,9 @@ paths:
                   items:
                     type: string
                     description: Role identifier granted by this invitation on acceptance.
-                  description: Roles that the user will have when accepting the invitation.
+                  description: >-
+                    Roles that the user will have when accepting the invitation. Optional; omitting it or sending an
+                    empty list grants no roles.
                 teams:
                   type: array
                   x-go-type: pq.StringArray
@@ -57420,7 +57422,9 @@ paths:
                   items:
                     type: string
                     description: Team identifier the invited user is added to on acceptance.
-                  description: Teams that the user will be added to when accepting the invitation.
+                  description: >-
+                    Teams that the user will be added to when accepting the invitation. Optional; omitting it or sending
+                    an empty list adds the user to no teams.
                 acceptanceOutcome:
                   description: >-
                     Determines what accepting this invitation does for the accepting user, for new and existing accounts
