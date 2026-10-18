@@ -6277,7 +6277,16 @@ creating learning paths, challenges, and certifications by collecting all necess
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.286</title><link>/cloud/reference/releases/v1.0.286/</link><pubDate>Sat, 17 Oct 2026 23:48:20 +0000</pubDate><guid>/cloud/reference/releases/v1.0.286/</guid><description>&lt;ul&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.287</title><link>/cloud/reference/releases/v1.0.287/</link><pubDate>Sun, 18 Oct 2026 00:26:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.287/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): act only through the caller&amp;rsquo;s verified GitHub App installations @jijillery (#6217)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jijillery and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.286</title><link>/cloud/reference/releases/v1.0.286/</link><pubDate>Sat, 17 Oct 2026 23:48:20 +0000</pubDate><guid>/cloud/reference/releases/v1.0.286/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(identity): return the stored row id from minted API tokens @leecalcote (#6227)&lt;/li&gt;
 &lt;li&gt;docs(skills): add a read-only production-diagnostics skill @leecalcote (#6226)&lt;/li&gt;
 &lt;/ul&gt;
