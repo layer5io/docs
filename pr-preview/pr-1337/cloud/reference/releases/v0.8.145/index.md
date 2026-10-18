@@ -1,0 +1,18 @@
+# v0.8.145
+
+date: 2025-02-05
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- Stop spam @vishalvivekm (#3178)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @vishalvivekm
+
+
