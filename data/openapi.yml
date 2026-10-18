@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.67
+  version: v1.3.68
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -68342,7 +68342,15 @@ paths:
                   x-order: 5
       responses:
         '302':
-          description: Redirect to the loopback callback carrying code and state
+          description: >-
+            Redirect to the loopback callback carrying code and state. The callback's query parameters are described by
+            NativeAuthorizationCallback.
+          headers:
+            Location:
+              required: true
+              description: http://127.0.0.1:{port}/callback?code=...&state=..., whose query is a NativeAuthorizationCallback.
+              schema:
+                type: string
         '400':
           description: Invalid request body or request param
           content:
