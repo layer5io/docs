@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.70
+  version: v1.3.71
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -55338,8 +55338,8 @@ paths:
       description: >
         Returns one page of a repository's file tree, as nested tree items. The repository must be reachable through one
         of the caller's verified GitHub App installations; otherwise the request is refused with the same uniform `403`
-        as `importGithubRepository`, which does not reveal where the App is installed. `206` answers a page of a tree
-        that has further pages.
+        as `importGithubRepository`, which does not reveal where the App is installed. With `ref`, the tree is read at
+        the commit the ref resolves to. `206` answers a page of a tree that has further pages.
       parameters:
         - name: name
           in: query
@@ -55348,6 +55348,15 @@ paths:
           schema:
             type: string
             maxLength: 512
+        - name: ref
+          in: query
+          required: false
+          description: >-
+            Branch or tag to scan. Empty or omitted scans the repository's default branch. A ref that names no commit
+            answers 409.
+          schema:
+            type: string
+            maxLength: 255
         - name: page
           in: query
           description: Get responses by page
@@ -55489,6 +55498,50 @@ paths:
                 type: string
         '403':
           description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '409':
+          description: Conflict
           content:
             application/json:
               schema:
