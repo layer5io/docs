@@ -9140,7 +9140,14 @@ Use it when your infrastructure already lives in Git and you want those files on
 - A GitHub account that can install a GitHub App on the user or organization that owns the repositories. For an organization, an owner may have to approve the installation.
 - The View Connections permission, which shows the Integrations area in Layer5 Cloud. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 
-A self-hosted deployment needs its own GitHub App credentials in its deployment settings. From Layer5 Cloud v1.0.287 these include the GitHub App's OAuth client ID and client secret, which the deployment uses to ask GitHub which installations your GitHub account can access. Without them no GitHub connection can be created or re-authorized. See the GitHub App values in [Helm Chart Values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}). The hosted service at cloud.layer5.io provides the Layer5 GitHub App.
+### Self-hosted GitHub App requirements {#self-hosted-github-app-requirements}
+
+The hosted service at cloud.layer5.io provides the Layer5 GitHub App. A self-hosted deployment uses its own GitHub App, and from Layer5 Cloud v1.0.287 that App must meet every item below. See the matching values in [Helm Chart Values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}).
+
+- Each Layer5 Cloud deployment has its own GitHub App. Do not share one App between deployments, such as production and staging.
+- The App's first callback URL is this deployment's `https://<host>/api/integrations/github/callback`, where `<host>` is the deployment's public hostname. Layer5 Cloud sends GitHub no `redirect_uri`, so GitHub always returns to the first callback URL.
+- **Request user authorization (OAuth) during installation** is enabled.
+- `githubappid`, the private key, `githubAppClientId` and `githubAppClientSecret` all come from that same App.
 
 ## How the connection works
 
@@ -9220,6 +9227,7 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
 | `GitHub did not confirm that your GitHub account can access that installation, so it was not connected.` | The GitHub account you are signed in with cannot access the installation you chose. | Sign in to GitHub with an account that can access it, then connect GitHub again. |
 | `Your GitHub account cannot access any installation of the GitHub App. Install the app on your account or organization to connect a repository.` | GitHub reports no installation of the App that your GitHub account can access. | Install the App on your account or organization, then connect GitHub again. |
 | `GitHub authorization is not configured for this environment, so GitHub cannot be connected. Please contact support.` | The deployment is missing the GitHub App's OAuth client ID or client secret. | On the hosted service, contact support. On a self-hosted deployment, set `env.githubAppClientId` and `env.githubAppClientSecret`. |
+| Connect, **Add Repository** or **Re-authorize** ends anywhere other than the wizard, or shows `GitHub authorization could not be completed, so GitHub was not connected. Please connect GitHub again.` or `This GitHub connection was not started from this session, took too long, or was already used, so GitHub was not connected. Please connect GitHub again.` | You declined the authorization on GitHub, took more than five minutes on GitHub, reused a return page, or are signed in to Layer5 Cloud as a different user than the one who started. Changing repository access or installing the App from GitHub's own settings or App page, instead of the wizard, returns you without the request the wizard started. On a self-hosted deployment, the GitHub App can also miss one of its requirements. | Connect GitHub again from the wizard, approve the authorization, and finish on GitHub within five minutes. Change repository access with **Add Repository**, not in GitHub's settings. On a self-hosted deployment, check every item in [Self-hosted GitHub App requirements](#self-hosted-github-app-requirements). |
 | The wizard shows **Re-authorize your GitHub connection** | The connection predates installation confirmation. | Click **Re-authorize**. See [Re-authorize an existing connection](#re-authorize-an-existing-connection). |
 | The connection vanished | The App was uninstalled from every account it was connected through. | Run the wizard again. |
 | `unable to create JWT for GitHub integration, please uninstall app and try again` | The deployment cannot sign requests as the GitHub App. | On the hosted service, uninstall and reinstall the App. On a self-hosted deployment, check the GitHub App credentials in the deployment settings. |
@@ -9702,7 +9710,7 @@ The container has a liveness probe on `/healthz` and readiness and startup probe
 | `ghtoken` | `""` | GitHub token the server uses to dispatch workflows. |
 | `githubappid` | not set | GitHub App identifier for the GitHub integration. |
 | `githubappkeypath` | `key.pem` | Path of the GitHub App private key file inside the chart. |
-| `githubAppClientId`, `githubAppClientSecret` | `""` | OAuth client ID and a client secret from the GitHub App's settings page. Layer5 Cloud v1.0.287 and later uses them to confirm which installations of the App the authorizing GitHub account can access. When either is empty, the server logs a warning at startup and no GitHub connection can be created or re-authorized. |
+| `githubAppClientId`, `githubAppClientSecret` | `""` | OAuth client ID and a client secret from the settings page of the GitHub App that `githubappid` names. Layer5 Cloud v1.0.287 and later uses them to confirm which installations of the App the authorizing GitHub account can access. When either is empty, the server logs a warning at startup and no GitHub connection can be created or re-authorized. The App must also meet the [Self-hosted GitHub App requirements]({{< ref "cloud/guides/integrations/github-integration/index.md#self-hosted-github-app-requirements" >}}). |
 | `stripeSecretKey`, `stripePublicKey` | not set | Stripe keys for payment processing. |
 | `recaptchaSiteKey`, `recaptchaSecretKey` | not set | Google reCAPTCHA keys. Signup verification runs only when both are set. Organizations on a custom domain with a different registrable domain are exempt. |
 
