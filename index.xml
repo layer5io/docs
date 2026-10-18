@@ -6277,7 +6277,17 @@ creating learning paths, challenges, and certifications by collecting all necess
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.291</title><link>/cloud/reference/releases/v1.0.291/</link><pubDate>Sun, 18 Oct 2026 22:36:28 +0000</pubDate><guid>/cloud/reference/releases/v1.0.291/</guid><description>&lt;ul&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.292</title><link>/cloud/reference/releases/v1.0.292/</link><pubDate>Sun, 18 Oct 2026 22:50:00 +0000</pubDate><guid>/cloud/reference/releases/v1.0.292/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): issue and verify a fresh Hydra authorize nonce per sign-in @leecalcote (#6239)&lt;/li&gt;
+&lt;li&gt;test(smoke): follow the Hydra sign-in chain in the custom-domain probe @leecalcote (#6238)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.291</title><link>/cloud/reference/releases/v1.0.291/</link><pubDate>Sun, 18 Oct 2026 22:36:28 +0000</pubDate><guid>/cloud/reference/releases/v1.0.291/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat: imported GitHub designs inventory, refresh from source, and idempotent re-import @jijillery (#6190)&lt;/li&gt;
 &lt;/ul&gt;
 
