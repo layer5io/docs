@@ -1,4 +1,0 @@
-# Organizations
-
-
-<no value>
