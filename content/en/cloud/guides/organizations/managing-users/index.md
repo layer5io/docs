@@ -84,6 +84,10 @@ The confirmation shown after a removal reports only that the member was removed 
 An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 {{< /alert >}}
 
+{{< alert type="info" title="When the Owner Deletes Their Account" >}}
+If an organization's owner deletes their Layer5 Cloud account, the organization passes to its longest-standing Organization Admin, or else its longest-standing member. An organization with nobody else in it is deleted. Teams follow the same rule with Team Admins. See [Delete your account]({{< ref "cloud/guides/account/managing-your-account.md#organizations-and-teams-you-own" >}}).
+{{< /alert >}}
+
 ## Invite User via Email
 
 You can invite new or existing users to join one of your organizations by sending them an email invitation.

@@ -88,7 +88,7 @@ To link or unlink a provider, see [Manage Your Account]({{< ref "cloud/guides/ac
 
 ## Account Deletion
 
-When a user deletes their account, the following behaviors apply: To delete your own account, and for the case where deletion is refused, see [Delete your account]({{< ref "cloud/guides/account/managing-your-account.md#delete-your-account" >}}).
+When a user deletes their account, the following behaviors apply: To delete your own account, see [Delete your account]({{< ref "cloud/guides/account/managing-your-account.md#delete-your-account" >}}).
 
 **1. Personal Resources**
 
@@ -102,21 +102,20 @@ When a user deletes their account, the following behaviors apply: To delete your
 
 **3. Organization Ownership**
 
-- If you are the [only Org Admin or Owner](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/), the organization may become **unmanageable** after you delete your account.
-- It is strongly recommended to assign multiple admins before deletion.
+- Each organization you own passes to its longest-standing Organization Admin, or else its longest-standing member. Teams you own follow the same rule with Team Admins.
+- An organization or team with nobody else in it is deleted, unless the organization is the parent of another live organization.
+- For the full rule, see [Organizations and teams you own]({{< ref "cloud/guides/account/managing-your-account.md#organizations-and-teams-you-own" >}}).
 
 **4. Organization Deletion**
 
-- Organizations cannot be deleted just by leaving or deleting accounts.
-- Only Org Owners can delete an organization, and it must be done as an explicit, manual action.
+- Leaving an organization never deletes it. Deleting your account deletes only organizations and teams you own that nobody else belongs to.
+- Otherwise, only Org Owners can delete an organization, and it must be done as an explicit, manual action.
 - Org Admins do not have this permission.
 
 **5. Re-registering with the Same Email**
 
-- Signing up again with the same email address creates a **new, separate account**.
-- The new account:
-  - Will not automatically regain access to resources linked to the deleted account.
-  - May, in rare cases, display inconsistent profile data (e.g., old display name in design attribution).
+- Deleting your account releases its email address. Signing up again with it creates a **new, separate account**.
+- The new account inherits nothing from the deleted one: no profile, preferences, memberships, roles, ownership, or linked sign-in providers. An account is identified by its account ID, not by its email address.
 
 {{< alert type="info" >}}
 This is a known issue. Future versions of Layer5 Cloud will address it through UUID-based identity linking.
