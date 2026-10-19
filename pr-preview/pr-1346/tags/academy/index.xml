@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Academy on Layer5 Documentation</title><link>/pr-preview/pr-1346/tags/academy/</link><description>Recent content in Academy on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1346/tags/academy/index.xml" rel="self" type="application/rss+xml"/><item><title>Learner Guide</title><link>/pr-preview/pr-1346/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide takes you through one complete learning journey in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;: you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.&lt;/p&gt;
+&lt;p&gt;You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.&lt;/p&gt;</description></item><item><title>Create a Learning Path</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;A learning path teaches a subject through courses and modules, with assessments that gate progress. You write it as Markdown in your organization&amp;rsquo;s Academy content repository, then publish a version. This page covers the repository, layout, front matter, assets, preview, and publishing that every Academy content type shares. For the credential and assessment differences, see &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/building-challenges/"&gt;Build a Challenge&lt;/a&gt; and &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/building-certifications/"&gt;Build a Certification&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Git, a GitHub account, and Markdown. The Academy is built with the Hugo static site generator.&lt;/li&gt;
+&lt;li&gt;Content registered in the &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/"&gt;Instructor Console&lt;/a&gt;, which gives you the content &lt;code&gt;id&lt;/code&gt; and the front matter to start from.&lt;/li&gt;
+&lt;li&gt;Your organization&amp;rsquo;s ID and a personal access token from Layer5 Cloud, used when you publish. Create tokens as described in &lt;a href="/pr-preview/pr-1346/cloud/guides/security/api-tokens/"&gt;Tokens&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="set-up-the-content-repository" class="heading-link"&gt;
+ Set up the content repository
+ &lt;a href="#set-up-the-content-repository" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Start from the &lt;code&gt;academy-example&lt;/code&gt; template repository published by Layer5: &lt;a href="https://github.com/layer5io/academy-example"&gt;github.com/layer5io/academy-example&lt;/a&gt;. Fork it, clone your fork, and work on a branch.&lt;/p&gt;</description></item><item><title>Build a Challenge</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/building-challenges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/building-challenges/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Challenge&lt;/strong&gt; is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.&lt;/p&gt;
+
+&lt;h2 id="when-to-use-a-challenge" class="heading-link"&gt;
+ When to use a challenge
+ &lt;a href="#when-to-use-a-challenge" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Choose a challenge when the learner should build, break, or fix something real and is scored on the result. Compare the content types in &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/#choose-a-content-type"&gt;Create Academy Content&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Create Academy Content</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/</guid><description>&lt;p&gt;Academy content is written as Markdown in your organization&amp;rsquo;s own Git repository and published as a numbered version. Layer5 Cloud holds the record of each piece of content (its identity, access rules, and badge) and every learner&amp;rsquo;s registration, progress, and test results. This guide covers the workflow end to end. The pages beneath it cover each content type in depth.&lt;/p&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in your organization (Academy Admin, Organization Admin, or Provider Admin). See the &lt;a href="/pr-preview/pr-1346/cloud/academy/instructor-console-guide/"&gt;Instructor Console&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;An organization with the Academy configured, so the console is not in its &amp;ldquo;not configured&amp;rdquo; state.&lt;/li&gt;
+&lt;li&gt;Comfort with Git and Markdown.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="the-workflow" class="heading-link"&gt;
+ The workflow
+ &lt;a href="#the-workflow" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Register the content in the console.&lt;/strong&gt; The content creation flow creates the content record and generates the identifiers and front matter you paste into your repository.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write the content&lt;/strong&gt; in your repository, following the layout for its type.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Preview locally&lt;/strong&gt; to check structure and links.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Publish&lt;/strong&gt; by releasing a version of your repository. The release asks Layer5 Cloud to build your organization&amp;rsquo;s Academy at that version.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor&lt;/strong&gt; registrations, completion, and pass rates in the console.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="register-content-in-the-console" class="heading-link"&gt;
+ Register content in the console
+ &lt;a href="#register-content-in-the-console" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The creation flow collects the following. Only the content type is required to create the record. The record starts with status &lt;strong&gt;not ready&lt;/strong&gt;, &lt;strong&gt;public&lt;/strong&gt; visibility, and &lt;strong&gt;beginner&lt;/strong&gt; level. Cloud generates the slug from the content type plus three random words.&lt;/p&gt;</description></item><item><title>Build a Certification</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/building-certifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/building-certifications/</guid><description>&lt;p&gt;In &lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt;, a &lt;strong&gt;Certification&lt;/strong&gt; is a formal assessment designed to validate a learner&amp;rsquo;s professional skills in a specific domain. Unlike a Learning Path, which guides a user through a curriculum, a Certification&amp;rsquo;s primary goal is evaluation.&lt;/p&gt;
+&lt;p&gt;The successful completion of a Certification results in an official, shareable &lt;strong&gt;Certificate of Completion&lt;/strong&gt; and a valuable badge, signifying a verified level of proficiency.&lt;/p&gt;
+
+&lt;h2 id="when-to-use-a-certification" class="heading-link"&gt;
+ When to use a certification
+ &lt;a href="#when-to-use-a-certification" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Choose a certification when the goal is to test, not teach. It assumes prior knowledge. Compare the content types in &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/#choose-a-content-type"&gt;Create Academy Content&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Instructor Console</title><link>/pr-preview/pr-1346/cloud/academy/instructor-console-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/instructor-console-guide/</guid><description>&lt;p&gt;The Instructor Console reports on your organization&amp;rsquo;s Academy content and learners. It answers three questions: how many people are learning, how far they get, and which assessments stop them. The console is also where you register new content and manage who can access it.&lt;/p&gt;
+
+&lt;h2 id="availability-and-access" class="heading-link"&gt;
+ Availability and access
+ &lt;a href="#availability-and-access" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="feature-tiers"&gt;
+
+&lt;table class="feature-tiers-table"&gt;
+ &lt;caption&gt;Academy&lt;/caption&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th scope="col"&gt;Capability&lt;/th&gt;
+ &lt;th scope="col"&gt;What it does&lt;/th&gt;
+ &lt;th scope="col"&gt;Free&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Designer&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Operator&lt;/th&gt;
+ &lt;th scope="col"&gt;Enterprise&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Academy Theoretical Learning&lt;/th&gt;
+ &lt;td&gt;A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Academy Practical Learning&lt;/th&gt;
+ &lt;td&gt;An inclusive, collaborative, hands-on learning environment for students.&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Opening the console requires the &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.&lt;/p&gt;</description></item><item><title>Add Assessments</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;Assessments gate progress and trigger completion in Academy content. A learner who passes an assessment unlocks the next level of the content, and a learner who passes the final assessment completes the content and receives its badge and, where defined, its certificate. Layer5 Cloud scores every submission on the server and records the result in the learner&amp;rsquo;s grade history.&lt;/p&gt;
+&lt;p&gt;This page shows how to write an assessment file and explains how the server treats it. It assumes you have a content repository with a &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/creating-your-learning-path/"&gt;learning path&lt;/a&gt;, &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/building-challenges/"&gt;challenge&lt;/a&gt;, or &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/building-certifications/"&gt;certification&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Use the Content Template Creator</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Content Template Creator is the five-step flow in the Instructor Console that registers a learning path, challenge, or certification and hands you the front matter to start writing it. One run does three things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Creates the content&amp;rsquo;s record in Layer5 Cloud, with status &lt;strong&gt;not ready&lt;/strong&gt;, &lt;strong&gt;public&lt;/strong&gt; visibility, and a generated slug.&lt;/li&gt;
+&lt;li&gt;Creates the invitation that governs who can enroll.&lt;/li&gt;
+&lt;li&gt;Generates the front matter, the content ID, and the organization ID that tie your repository files to that record.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The record is what learners enroll in, what progress and grades attach to, and what the Instructor Console reports on. The front matter is how your repository declares the same content, so the two must carry the same ID.&lt;/p&gt;</description></item><item><title>Academy</title><link>/pr-preview/pr-1346/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is the learning platform built into Layer5 Cloud. Organizations use it to publish structured training on cloud native infrastructure, assess what learners know, and award verifiable badges and certificates. Layer5 Cloud tracks every learner&amp;rsquo;s enrollment, progress, and test results, and gives instructors a console to measure how their content performs.&lt;/p&gt;
+&lt;p&gt;Academy is an Enterprise-tier capability. An organization needs an Academy configuration from Layer5 before it can publish its own content.&lt;/p&gt;</description></item><item><title>Extend the Academy</title><link>/pr-preview/pr-1346/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1346/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;Academy content is Markdown in your organization&amp;rsquo;s Git repository, built with Hugo into your organization&amp;rsquo;s Academy. Markdown covers most lessons. When a lesson needs a custom layout, a reusable component, or a live design, you extend the content in your own repository without touching the shared theme.&lt;/p&gt;
+&lt;p&gt;This page covers what you can extend and the limits of each extension. It assumes a working content repository. If you do not have one yet, start with &lt;a href="/pr-preview/pr-1346/cloud/academy/creating-content/creating-your-learning-path/"&gt;Create a Learning Path&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

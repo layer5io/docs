@@ -1,0 +1,29 @@
+# v0.8.355
+
+date: 2025-08-04
+
+
+
+### 🔤 General
+- update question types @aabidsofi19 (#3879)
+
+## 🖥 Cloud UI
+
+- [Chore]: Update to Sistent v0.14.215 @l5io (#3883)
+- [Chore]: Update to Sistent v0.14.214 @l5io (#3882)
+
+## 💻 Server
+
+- update question types @aabidsofi19 (#3878)
+
+## 🦴 Infrastructure
+
+- Change makefile target from 'db' to 'db-init' @leecalcote (#3880)
+- CI: Create a 'metal01' environment @leecalcote (#3881)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @hamza-mohd, @jamieplu, @l5io, @leecalcote and @miacycle
+
+
