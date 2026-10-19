@@ -170,6 +170,22 @@ For both outcomes:
 - Acceptance counts once per person. Accepting again creates no second child organization and uses no more quota.
 - A person who creates a new account through your open sign-up invitation does not also receive a separate personal organization; the invitation decides where they land. If the invitation turns out not to apply, such as when its quota is used up, a personal organization is created as usual.
 
+#### Branding of a child organization
+
+A child organization created through a `child_organization` invitation starts with your organization's branding by default. The invitation's `childOrganizationBranding`, shown in the invitation dialogs as **Child organization branding**, can change that. It is ignored for `direct_membership`.
+
+| `childOrganizationBranding` | The child organization starts with |
+| :--- | :--- |
+| `parent` (default) | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links (including social profiles), and the sign-in page carousel setting. |
+| `provider` | A copy of the platform provider's branding. |
+| `none` | No branding of its own. |
+
+The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and changes the child organization's admins make do not affect yours. Organizations created directly, not through an invitation, are unaffected.
+
+#### Email verification
+
+Someone who signs up with email and password through your open signup invitation must verify their email address before a `direct_membership` invitation adds them to your organization. Until then they are not a member, and they cannot sign in. They join on their first sign-in after verifying. A `child_organization` invitation does not wait: the new account's own child organization is created at sign-up, because it gives the person nothing of yours beyond a place beneath you. Either way the account becomes active once the address is verified.
+
 ## The open sign-up invitation
 
 The open sign-up invitation is the one that admits people who sign in through your organization's own address, such as a custom domain. You designate it in either of two places:
