@@ -1,4 +1,0 @@
-# Deletion
-
-
-<no value>
