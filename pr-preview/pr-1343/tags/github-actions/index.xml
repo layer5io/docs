@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github-Actions on Layer5 Documentation</title><link>/pr-preview/pr-1343/tags/github-actions/</link><description>Recent content in Github-Actions on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1343/tags/github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>Use GitHub Actions</title><link>/pr-preview/pr-1343/cloud/guides/integrations/github-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1343/cloud/guides/integrations/github-actions/</guid><description>&lt;p&gt;GitHub Actions is how Layer5 Cloud meets your pull-request workflow. The Kanvas Snapshot action renders the infrastructure file in a pull request as a Kanvas design and posts the picture as a comment, so reviewers see the resources and their connections before they read the YAML. It runs on GitHub-hosted runners and never touches your cluster.&lt;/p&gt;
+
+&lt;h2 id="choose-how-to-install-it" class="heading-link"&gt;
+ Choose how to install it
+ &lt;a href="#choose-how-to-install-it" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Path&lt;/th&gt;
+ &lt;th&gt;Use it when&lt;/th&gt;
+ &lt;th&gt;Where it is documented&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 GitHub App wizard&lt;/td&gt;
+ &lt;td&gt;You want Layer5 Cloud to commit the workflow and show you the API token to store as a secret.&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1343/cloud/guides/integrations/github-integration/"&gt;Connect GitHub&lt;/a&gt; and the snapshot guide.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Your own workflow&lt;/td&gt;
+ &lt;td&gt;You want to pick the triggers, run snapshots from a workflow you already maintain, or authenticate with a personal access token.&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1343/kanvas/guides/snapshots/kanvas-snapshot/"&gt;Visualize Pull Requests with Kanvas Snapshot&lt;/a&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Both paths produce the same pull request comment. The snapshot guide documents every action input, the workflow the wizard installs, token handling, and troubleshooting. It is the single reference for the action, so this page does not repeat it.&lt;/p&gt;</description></item></channel></rss>

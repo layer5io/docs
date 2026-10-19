@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dry-Run on Layer5 Documentation</title><link>/pr-preview/pr-1343/tags/dry-run/</link><description>Recent content in Dry-Run on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1343/tags/dry-run/index.xml" rel="self" type="application/rss+xml"/><item><title>Dry-run a Design</title><link>/pr-preview/pr-1343/kanvas/guides/deploying/dry-running-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1343/kanvas/guides/deploying/dry-running-a-design/</guid><description>&lt;p&gt;A dry run submits every component in the design to the Kubernetes API server of each target cluster as a server-side dry-run request. The API server validates the object exactly as it would on a real apply, including schema, field values, and admission, and then discards it. Nothing is created, updated, or persisted, so you can repeat a dry run as often as you like.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A connected cluster.&lt;/strong&gt; Meshery must hold at least one connected Kubernetes context. With none, the request fails with error &lt;code&gt;meshery-server-1096&lt;/code&gt;, Kubernetes cluster is unavailable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A non-empty design.&lt;/strong&gt; The Actions menu is disabled for an empty design.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permission.&lt;/strong&gt; Dry run is gated by the Validate Design permission. See &lt;a href="/pr-preview/pr-1343/kanvas/reference/permissions/"&gt;Permissions by Role&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not run dry runs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Meshery Server performs the dry run with the kubeconfig it holds. Meshery Operator, MeshSync, and the broker are not required.&lt;/p&gt;</description></item></channel></rss>

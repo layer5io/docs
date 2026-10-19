@@ -1,0 +1,2710 @@
+# Catalog
+
+> The catalog is the shared, publicly readable library of published designs that any team can discover, measure, and clone as a starting point for its own infrastructure.
+
+
+
+The catalog is the library of designs that their owners have published for everyone to use. It turns a design that worked for one team into a reusable starting point for every other team: anyone can find it, read it, and see how often others open, deploy, and clone it, and any signed-in user can clone it into their own workspace and adapt it.
+
+The catalog works on a simple contract. Publishing makes a design readable by the world and clonable by any signed-in user, a review step decides what gets in, and a class label tells readers who stands behind each entry. The rest of this page explains each part of that contract and where it stops.
+
+## What the catalog holds
+
+The catalog is every design whose visibility is **published**. It is not tied to an organization: entries come from publishers in every organization, and one listing shows them all. You can narrow the listing by organization, workspace, team, or owner, but by default you see everything.
+
+The catalog is readable without signing in. A signed-out visitor can browse entries, open them, and read their metadata. Each entry shows the publisher's name and avatar. The publisher's email address is not included in what anonymous visitors receive.
+
+Every catalog entry carries metadata that the publisher supplies at publish time:
+
+| Metadata | What it tells a reader |
+| --- | --- |
+| Type | The kind of design, such as deployment. Stored in lower case. |
+| Technology tags | The technologies the design is compatible with. Stored in lower case, and used by the technology filter. |
+| Description | The purpose and intended use of the design. |
+| Caveats | Known limitations or conditions a reader should weigh before using it. |
+| Class | Who produced the design and who stands behind it. See [Classes](#classes). |
+| Published version | The design version that was approved for the catalog. |
+| Snapshot images | Light and dark preview images of the design. |
+
+### WebAssembly filters
+
+The catalog serves a second content type, WebAssembly filters, through the same API. Published filters are available to Meshery and to API clients, but the Cloud UI has no tab for browsing them. To manage filters, see [Filter Management](https://docs.meshery.io/guides/infrastructure-management/filter-management) in the Meshery documentation. The rest of this page covers designs.
+
+## Visibility
+
+Every design has one of three visibility levels. Visibility decides who can read a design and who can clone it.
+
+| Visibility | Who can read it | Who can clone it | Listed in the catalog |
+| --- | --- | --- | --- |
+| Private | The owner, provider administrators, and users the design is shared with | Nobody, not even the owner | No |
+| Public | Anyone with the link, signed in or not, including downloads | Any signed-in user | No |
+| Published | Anyone, signed in or not | Any signed-in user | Yes |
+
+Published is public plus a catalog entry. A design saved for the first time is public by default, while designs imported through the GitHub integration start private.
+
+Once a design is published, its visibility cannot be changed from the publish dialog. The only way out of the catalog is to unpublish, and **unpublishing returns the design to private, not public**. If you want the design to stay readable by link after it leaves the catalog, set it to public again afterward. The catalog metadata stays on the design after unpublishing.
+
+## Classes
+
+A class tells a reader who produced an entry and who supports it.
+
+| Class | Meaning |
+| --- | --- |
+| Official | Produced and fully supported by Meshery maintainers. |
+| Verified | Produced by partners and verified by Meshery maintainers. |
+| Community | Produced and shared by Meshery users. |
+
+Publishers do not choose their own class. The class is set by who publishes and who reviews:
+
+- **A publisher without the Approve Catalog Request permission** creates a publish request with the class Community. The request waits in the review queue.
+- **A publisher with the Approve Catalog Request permission** skips the queue. The design is approved immediately with the class Official.
+- **An approver deciding a queued request** chooses the class, Official, Verified, or Community, at the moment of approval.
+
+This keeps the Official and Verified labels in the hands of the people who review catalog content.
+
+## Publication lifecycle
+
+A design moves through the catalog in these stages:
+
+| Stage | What happens | Who is notified |
+| --- | --- | --- |
+| 1. Request | A signed-in user publishes a design with its catalog metadata. Without the Approve Catalog Request permission, this creates a pending request and the design's visibility does not change yet. | The catalog maintainers receive an email, and the requester receives a copy. |
+| 2. Review queue | Pending requests wait in the queue. Reviewers see the author, the author's email, the content name and type, the status, the class, and when the request was created. The queue shows requests from the reviewer's current organization, or from all organizations for holders of View All Organizations. | - |
+| 3. Approve or deny | A reviewer approves, choosing the class, or denies. Approval publishes the design and records its published version. Denial leaves the design's visibility unchanged. Only pending requests can be decided; a request that was already approved or denied cannot be decided again. | The owner receives an approval or denial email, unless their notification preferences turn approval emails off. |
+| 4. Published | The design is in the catalog, readable by anyone and clonable by any signed-in user. | - |
+| 5. Unpublish | The design's creator, or a holder of Approve Catalog Request, removes it from the catalog. The design becomes private and an event is recorded. | - |
+
+The publish form asks for a type, at least one technology, a description, and caveats. Cloud does not reliably reject an entry with empty fields, so a reviewer should confirm they are filled in before approving.
+
+Denying a request is checked against the Approve Catalog Request permission, the same as approving. Holding Deny Catalog Request alone does not let you deny a request.
+
+### One request per design
+
+Each design can have only one publish request, ever. **A design that already has a request, whether pending, approved, or denied, cannot be submitted again.** Unpublishing does not clear the earlier request, so a design that was unpublished, or whose request was denied, cannot be published through a new request. Plan the metadata and timing of a submission with this in mind.
+
+### The Meshery catalog website
+
+The Cloud catalog and the public Meshery catalog website are separate listings. When a holder of Approve Catalog Request publishes a design directly, Layer5 Cloud triggers a refresh of the Meshery catalog website. If that refresh cannot be triggered, the publish still succeeds and an error event is recorded for the publisher.
+
+**Approving a request from the review queue does not refresh the Meshery catalog website.** A design approved from the queue appears in the Cloud catalog immediately but is not pushed to the website at that moment.
+
+Unpublishing triggers removal of the design from the Meshery catalog website. A failure to trigger that removal is logged but not shown to the user.
+
+## Cloning
+
+A clone is a private copy of a catalog design that you own and can change freely. Cloning is how a catalog entry becomes your own working design. The original stays untouched, and its owner keeps control of it.
+
+When you clone a design:
+
+- The copy is private and owned by you.
+- The copy is placed in the workspace you have selected in your current organization. Cloning requires a selected organization; it is refused when you are viewing all organizations. See [Workspaces](/pr-preview/pr-1343/cloud/concepts/workspaces/) for how workspaces organize designs.
+- The copy starts at a fresh version, and keeps the original's catalog metadata and record of where it came from.
+- The source design's clone count goes up by one.
+
+Any signed-in user can clone a published or public design, provided they hold the Clone Design permission, which the Cloud UI requires before it enables the clone action. Signed-out visitors cannot clone. **Private designs cannot be cloned by anyone, including their owner.** To duplicate one of your own private designs, save a copy from Kanvas instead.
+
+## Metrics
+
+Every design keeps five counters. They appear on catalog cards and in the leaderboard, and they give readers a rough sense of how widely an entry is used.
+
+| Metric | What it counts |
+| --- | --- |
+| Opens | Each time the design is loaded, whether from the catalog, from Kanvas, or from a direct link. |
+| Downloads | Each time the design is downloaded. |
+| Deploys | Each time the design is deployed. |
+| Clones | Each time someone clones the design. |
+| Shares | Each time the design is shared. |
+
+### Reading the counters
+
+The counters are lifetime totals. Keep these properties in mind when you compare entries:
+
+- **No deduplication.** One person opening a design ten times adds ten Opens. The counters measure activity, not distinct people.
+- **Signed-out activity counts.** Opens from anonymous visitors are included.
+- **No time window and no reset.** A counter only grows. An older design has had more time to accumulate counts than a newer one.
+- **Edits do not reset them.** Changing a design keeps its counts.
+- **Best effort.** If recording a count fails, the action itself still succeeds, so a counter can undercount slightly.
+
+Treat a high count as a signal of attention, and use the description, caveats, and class to judge fitness for your use.
+
+### Leaderboard
+
+The leaderboard is the catalog sorted by one of these counters. It is not a separate ranking or score. By default it sorts by Opens, highest first, and you can sort by any of the other counters instead. You can filter it by type and by class, one choice each, and search it by design name. The catalog page shows the top performers in a summary panel, and the dashboard shows the leaderboard as a widget.
+
+## Permissions and plans
+
+Browsing the catalog requires no permission and no account. Publishing, reviewing, unpublishing, and cloning are governed by the permissions below.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="feature-tiers">
+<table class="feature-tiers-table keys-matrix">
+  <caption>Catalog permissions by role</caption>
+  <thead>
+    <tr>
+      <th scope="col">Permission</th>
+      <th scope="col">What it allows</th>
+      <th scope="col">User</th><th scope="col">Team Admin</th><th scope="col">Workspace Admin</th><th scope="col">Org Admin</th><th scope="col">Provider Admin</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">View Catalog Requests</th>
+      <td>View the catalog publication request queue</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Approve Catalog Request</th>
+      <td>Approve catalog publication requests</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Deny Catalog Request</th>
+      <td>Deny catalog publication requests</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Publish Design</th>
+      <td>Publish a design</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Unpublish Design</th>
+      <td>Unpublish a design</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;*</span><span class="sr-only">Allowed on resources the user owns</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;*</span><span class="sr-only">Allowed on resources the user owns</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Clone Design</th>
+      <td>Clone any published design to customise it according to your use cases</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">View Designs</th>
+      <td>View all public and published designs of other team members and private of signed-in user</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </tbody>
+</table>
+</div>
+
+
+Users and Team Admins can unpublish only designs they created. Workspace Admins, Organization Admins, and Provider Admins can unpublish any design. Reviewing requests requires a selected organization, and a reviewer cannot decide a request from outside their current organization. For the complete role defaults, see [Roles and Permissions](/pr-preview/pr-1343/cloud/reference/default-permissions/).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="feature-tiers">
+
+<table class="feature-tiers-table">
+  <caption>Catalog</caption>
+  <thead>
+    <tr>
+      <th scope="col">Capability</th>
+      <th scope="col">What it does</th>
+      <th scope="col">Free</th>
+      <th scope="col">Team Designer</th>
+      <th scope="col">Team Operator</th>
+      <th scope="col">Enterprise</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Public Catalog: 400 Cloud Native Patterns</th>
+      <td>A library of pre-built design patterns and operational templates for common deployment scenarios, simplifying the configuration process and ensuring best practices.</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Organization Private Catalog</th>
+      <td>Privately publish and share reusable design patterns and operational templates within your organization.</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Share Design</th>
+      <td>Share design with anyone within your organization, and make your design easily accessible to all relevant team members.</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Clone Design</th>
+      <td>Clone any published design to customise it according to your use cases</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Publish Design</th>
+      <td>Publish a design</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">View Designs</th>
+      <td>View all public and published designs of other team members and private of signed-in user</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">View Filters</th>
+      <td>View all public and published filters of other team members and private of signed-in user</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Approve Catalog Request</th>
+      <td>Change management for the curation of content published in the catalog.</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Single and multiple approvers</th>
+      <td></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Import Filter</th>
+      <td>Import a publish WASM filter</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </tbody>
+</table>
+
+</div>
+
+
+The plan matrix lists what each plan includes. Layer5 Cloud does not check your plan when you publish, review, or clone a design: those actions are governed only by the permission matrix above, which is what the product enforces.
+
+## Limits and edge cases
+
+- **Search matches design names only.** It does not search descriptions, caveats, or technology tags. Use the type, technology, and class filters to narrow by metadata.
+- **One publish request per design.** A design with any earlier request, including a denied one or one that was later unpublished, cannot be submitted again.
+- **Unpublishing makes a design private.** It does not return to public.
+- **The Meshery catalog website is a separate listing.** It is refreshed on direct publish by an approver, not on approval from the review queue.
+- **Filters are not browsable in the Cloud UI.** The catalog API and Meshery still serve them.
+- **Private designs cannot be cloned,** even by their owner.
+
+## Next steps
+
+- [Find and Use Catalog Designs](/pr-preview/pr-1343/cloud/guides/exploring-the-catalog/) shows how to find, filter, and use catalog entries.
+- [Publish Designs](/pr-preview/pr-1343/kanvas/guides/designs/publishing-designs/) covers submitting a design to the catalog from Kanvas.
+- [Clone a Design](/pr-preview/pr-1343/kanvas/guides/designs/cloning-a-design/) covers making your own copy of a design.
+- [Roles and Permissions](/pr-preview/pr-1343/cloud/reference/default-permissions/) lists every permission by role.
+- [Workspaces](/pr-preview/pr-1343/cloud/concepts/workspaces/) explains where your clones land.
+
