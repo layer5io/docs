@@ -6207,7 +6207,28 @@
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.299</title><link>/cloud/reference/releases/v1.0.299/</link><pubDate>Mon, 19 Oct 2026 05:56:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.299/</guid><description>&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.300</title><link>/cloud/reference/releases/v1.0.300/</link><pubDate>Mon, 19 Oct 2026 07:03:59 +0000</pubDate><guid>/cloud/reference/releases/v1.0.300/</guid><description>&lt;h2 id="-server" class="heading-link"&gt;
+ 💻 Server
+ &lt;a href="#-server" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(identity): native client sign-in works on custom domains and for child-organization users @leecalcote (#6260)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(identity): native client sign-in works on custom domains and for child-organization users @leecalcote (#6260)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.299</title><link>/cloud/reference/releases/v1.0.299/</link><pubDate>Mon, 19 Oct 2026 05:56:27 +0000</pubDate><guid>/cloud/reference/releases/v1.0.299/</guid><description>&lt;h2 id="-bug-fixes" class="heading-link"&gt;
  🐛 Bug Fixes
  &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

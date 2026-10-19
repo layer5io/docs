@@ -63,7 +63,7 @@ Every token action applies only to your own tokens. You cannot list, download or
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
   <h4 class="alert-heading" style="color: #EBC017;">Current behavior: token create and delete requests are not checked against the keys</h4>
   
-      The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not check the Create Token or Delete Token keys on those requests. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token. Approving a desktop app or CLI sign-in is different: the server requires Create Token in the selected organization.
+      The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not check the Create Token or Delete Token keys on those requests. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token. Approving a desktop app or CLI sign-in is different: the server requires Create Token in at least one organization you belong to. The organization you have selected, or the one a custom domain belongs to, does not matter, so a member of a child organization can approve a sign-in on its parent&rsquo;s custom domain.
   
 </div>
 
