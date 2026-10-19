@@ -1,4 +1,0 @@
-# Resource-Group
-
-
-<no value>

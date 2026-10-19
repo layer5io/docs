@@ -1,4 +1,0 @@
-# Catalog
-
-
-<no value>
