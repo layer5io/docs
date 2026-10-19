@@ -21,11 +21,19 @@ Use it when your infrastructure already lives in Git and you want those files on
 - A GitHub account that can install a GitHub App on the user or organization that owns the repositories. For an organization, an owner may have to approve the installation.
 - The View Connections permission, which shows the Integrations area in Layer5 Cloud. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 
-A self-hosted deployment needs its own GitHub App credentials in its deployment settings. The hosted service at cloud.layer5.io provides the Layer5 GitHub App.
+### Self-hosted GitHub App requirements {#self-hosted-github-app-requirements}
+
+The hosted service at cloud.layer5.io provides the Layer5 GitHub App. A self-hosted deployment uses its own GitHub App, and from Layer5 Cloud v1.0.287 that App must meet every item below. See the matching values in [Helm Chart Values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}).
+
+- Each Layer5 Cloud deployment has its own GitHub App. Do not share one App between deployments, such as production and staging.
+- The App's first callback URL is this deployment's `https://<host>/api/integrations/github/callback`, where `<host>` is the deployment's public hostname. Layer5 Cloud sends GitHub no `redirect_uri`, so GitHub always returns to the first callback URL.
+- **Request user authorization (OAuth) during installation** is enabled.
+- `githubappid`, the private key, `githubAppClientId` and `githubAppClientSecret` all come from that same App.
 
 ## How the connection works
 
 - **The connection belongs to you, not to your organization.** Each user has at most one GitHub connection. A teammate who wants to import from GitHub connects their own account.
+- **GitHub confirms which installations are yours.** When you install and authorize the App, GitHub reports which installations of the Layer5 GitHub App your GitHub account can access, and only those are connected. This check ships in Layer5 Cloud v1.0.287.
 - **The App sees only what you grant.** At install time GitHub asks whether the App may reach all repositories or only the ones you select. Layer5 Cloud lists exactly those repositories. Widen or narrow the grant at any time by running the setup again.
 - **Cloud reads the default branch.** Scans and imports always use each repository's default branch.
 - **Import is read-only.** Importing creates designs in Layer5 Cloud. It never writes to your repository. Only the optional snapshot stages commit a file.
@@ -76,9 +84,13 @@ Layer5 Cloud scans a repository by reading its full file tree from GitHub and ke
 
 ## Check or reconfigure the connection
 
-Layer5 Cloud verifies with GitHub that the App installation still exists. If you uninstalled the App in GitHub, Cloud finds no installation and deletes its now-stale connection. Run the wizard again to reconnect.
+Layer5 Cloud verifies with GitHub that the App installation the wizard opens on still exists. If you uninstalled the App from that account in GitHub, Cloud removes only that installation from the connection and opens the wizard on the next installation your connection holds. Cloud deletes the connection only once none of its installations remain. Run the wizard again to reconnect.
 
-To change which repositories the App can read, rerun the wizard and use **Add Repository**. GitHub keeps the App installed and updates its grant.
+To change which repositories the App can read, rerun the wizard and use **Add Repository**. GitHub keeps the App installed and updates its grant. When you install the App on another account, the connection is updated with every installation your GitHub account can access, so the new installation joins the ones you already had.
+
+### Re-authorize an existing connection
+
+A connection created before Layer5 Cloud v1.0.287 opens the wizard on **Re-authorize your GitHub connection**, and its repositories cannot be used until GitHub confirms which installations your GitHub account can access. Click **Re-authorize**. GitHub returns you to the wizard, without asking again if you have already authorized the App, and your repository settings are kept.
 
 ## Remove the connection
 
@@ -93,7 +105,12 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
 | A repository is missing from the list | The App is not installed on it. | Use **Add Repository** and grant access in GitHub. |
 | `invalid or unsupported file` for a file | The extension or content is not an importable type. | Check the file against the table above. |
 | A partial file list | GitHub truncated the tree of a large repository. | Select the directory you need, or import the file directly. |
-| The connection vanished | The App was uninstalled in GitHub. | Run the wizard again. |
+| `GitHub did not confirm that your GitHub account can access that installation, so it was not connected.` | The GitHub account you are signed in with cannot access the installation you chose. | Sign in to GitHub with an account that can access it, then connect GitHub again. |
+| `Your GitHub account cannot access any installation of the GitHub App. Install the app on your account or organization to connect a repository.` | GitHub reports no installation of the App that your GitHub account can access. | Install the App on your account or organization, then connect GitHub again. |
+| `GitHub authorization is not configured for this environment, so GitHub cannot be connected. Please contact support.` | The deployment is missing the GitHub App's OAuth client ID or client secret. | On the hosted service, contact support. On a self-hosted deployment, set `env.githubAppClientId` and `env.githubAppClientSecret`. |
+| Connect, **Add Repository** or **Re-authorize** ends anywhere other than the wizard, or shows `GitHub authorization could not be completed, so GitHub was not connected. Please connect GitHub again.` or `This GitHub connection was not started from this session, took too long, or was already used, so GitHub was not connected. Please connect GitHub again.` | You declined the authorization on GitHub, took more than five minutes on GitHub, reused a return page, or are signed in to Layer5 Cloud as a different user than the one who started. Changing repository access or installing the App from GitHub's own settings or App page, instead of the wizard, returns you without the request the wizard started. On a self-hosted deployment, the GitHub App can also miss one of its requirements. | Connect GitHub again from the wizard, approve the authorization, and finish on GitHub within five minutes. Change repository access with **Add Repository**, not in GitHub's settings. On a self-hosted deployment, check every item in [Self-hosted GitHub App requirements](#self-hosted-github-app-requirements). |
+| The wizard shows **Re-authorize your GitHub connection** | The connection predates installation confirmation. | Click **Re-authorize**. See [Re-authorize an existing connection](#re-authorize-an-existing-connection). |
+| The connection vanished | The App was uninstalled from every account it was connected through. | Run the wizard again. |
 | `unable to create JWT for GitHub integration, please uninstall app and try again` | The deployment cannot sign requests as the GitHub App. | On the hosted service, uninstall and reinstall the App. On a self-hosted deployment, check the GitHub App credentials in the deployment settings. |
 | `Workflow already exists, try deleting it first at ./.github/workflows/kanvas.yml` | GitHub refused to write the snapshot workflow. | See the troubleshooting table in [Visualize Pull Requests with Kanvas Snapshot]({{< ref "kanvas/guides/snapshots/kanvas-snapshot/index.md" >}}). |
 
