@@ -1,0 +1,15 @@
+# v0.8.121-1
+
+date: 2025-07-19
+
+
+
+## What's New
+## 🔤 General
+- Update go 1.24 @n2h9 (#3814)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hamza-mohd, @hortison, @l5io, @leecalcote and @n2h9
+

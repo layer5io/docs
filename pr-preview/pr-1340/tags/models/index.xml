@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Models on Layer5 Documentation</title><link>/pr-preview/pr-1340/tags/models/</link><description>Recent content in Models on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1340/tags/models/index.xml" rel="self" type="application/rss+xml"/><item><title>Pin Models to the Dock</title><link>/pr-preview/pr-1340/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
+&lt;p&gt;Pinning works in Designer mode. In Operator mode the dock does not show pinned models.&lt;/p&gt;
+
+&lt;h2 id="pin-a-model" class="heading-link"&gt;
+ Pin a model
+ &lt;a href="#pin-a-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Hover a model row in the component palette and use the pin icon. Its tooltip reads &amp;ldquo;Pin To Dock&amp;rdquo;. The shape palette offers the same pin on each shape category row.&lt;/p&gt;</description></item><item><title>Pinning Models to Dock</title><link>/pr-preview/pr-1340/videos/getting-started/basics/pinning-models-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/videos/getting-started/basics/pinning-models-to-dock/</guid><description>&lt;div class="yt-embed-container"&gt;
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8lQ6ed_1Tss?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" title="YouTube video"&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Transcript:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Five has found that he frequently references the same set of models while designing. If you know that you’ll be using components from a model frequently, you can pin that model for easy retrieval of its components.
+To pin a model to the dock in Layer5 Kanvas, click the pin icon next to the model. The model will now be accessible in the dock for quick use.&lt;/p&gt;</description></item></channel></rss>

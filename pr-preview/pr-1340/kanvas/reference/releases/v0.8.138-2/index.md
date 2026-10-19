@@ -1,0 +1,19 @@
+# v0.8.138-2
+
+date: 2025-10-16
+
+
+
+## What's New
+## 🔤 General
+- open layers panel in operator mode by default @aabidsofi19 (#3854)
+
+## 🐛 Bug Fixes
+
+- fixed invalid mastering meshery URL @Darshan174 (#3855)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Darshan174, @aabidsofi19, @l5io, @leecalcote and Darshan N
+
