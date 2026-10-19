@@ -7728,14 +7728,15 @@ A few things hold for both outcomes:
 
 #### Branding of a child organization
 
-A `child_organization` invitation also sets `childOrganizationBranding`, the branding the new child organization starts with. In the invitation dialogs it appears under **Child organization branding**. It is ignored for `direct_membership`.
+A child organization created through a `child_organization` invitation starts with your organization's branding by default. The invitation's `childOrganizationBranding`, shown in the invitation dialogs as **Child organization branding**, can change that. It is ignored for `direct_membership`.
 
 | `childOrganizationBranding` | The child organization starts with |
 | :--- | :--- |
-| `provider` (default) | No branding of its own, so it shows the platform's branding. |
-| `inviting_organization` | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links, and the sign-in page carousel setting. |
+| `parent` (default) | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links (including social profiles), and the sign-in page carousel setting. |
+| `provider` | A copy of the platform provider's branding. |
+| `none` | No branding of its own. |
 
-The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and the child organization's admins can change its branding afterwards.
+The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and changes the child organization's admins make do not affect yours. Organizations created directly, not through an invitation, are unaffected.
 
 #### Email verification
 
@@ -13621,6 +13622,22 @@ A Provider Admin can mint a token on behalf of another account; that token appea
 - **Delete a token when its consumer is retired.** A token never expires, so an unused token remains a live credential until you delete it.
 
 For storing a token as a pipeline secret, see [GitHub Actions]({{< ref "cloud/guides/integrations/github-actions/_index.md" >}}). Manage your tokens at [cloud.layer5.io/security/tokens](https://cloud.layer5.io/security/tokens).
+
+
+--------------------------------------------------------------------------------
+title: "v1.0.294"
+url: /pr-preview/pr-1340/cloud/reference/releases/v1.0.294/index.md
+date: "2026-10-19"
+--------------------------------------------------------------------------------
+
+- fix(tokens): default isOauth to false when omitted @leecalcote (#6249)
+- fix(invitations): child_organization places a registrant at sign-up; direct_membership waits for verification; verified accounts become active @leecalcote (#6241)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
 
 
 --------------------------------------------------------------------------------

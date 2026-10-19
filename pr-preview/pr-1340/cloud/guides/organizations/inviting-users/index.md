@@ -211,14 +211,15 @@ A few things hold for both outcomes:
 
 #### Branding of a child organization
 
-A `child_organization` invitation also sets `childOrganizationBranding`, the branding the new child organization starts with. In the invitation dialogs it appears under **Child organization branding**. It is ignored for `direct_membership`.
+A child organization created through a `child_organization` invitation starts with your organization's branding by default. The invitation's `childOrganizationBranding`, shown in the invitation dialogs as **Child organization branding**, can change that. It is ignored for `direct_membership`.
 
 | `childOrganizationBranding` | The child organization starts with |
 | :--- | :--- |
-| `provider` (default) | No branding of its own, so it shows the platform's branding. |
-| `inviting_organization` | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links, and the sign-in page carousel setting. |
+| `parent` (default) | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links (including social profiles), and the sign-in page carousel setting. |
+| `provider` | A copy of the platform provider's branding. |
+| `none` | No branding of its own. |
 
-The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and the child organization's admins can change its branding afterwards.
+The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and changes the child organization's admins make do not affect yours. Organizations created directly, not through an invitation, are unaffected.
 
 #### Email verification
 
