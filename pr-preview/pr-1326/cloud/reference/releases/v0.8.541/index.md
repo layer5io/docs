@@ -1,0 +1,20 @@
+# v0.8.541
+
+date: 2025-10-31
+
+
+
+## 🖥 Cloud UI
+
+- simplify continue to next test and fix go to overview @aabidsofi19 (#4455)
+
+## 💻 Server
+
+- simplify continue to next test and fix go to overview @aabidsofi19 (#4455)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+
