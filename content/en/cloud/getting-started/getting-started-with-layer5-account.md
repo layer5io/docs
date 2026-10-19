@@ -59,7 +59,7 @@ You are not asked to name an organization or a workspace. Layer5 Cloud creates b
 
 Your first sign-in normally opens your [dashboard](#6-dashboard). One exception applies: if you started signing up from Kanvas, or from a Meshery Server on your organization's custom domain, and you registered in this browser, your first sign-in opens the **Import from GitHub** page (titled "Get started") once. If the sign-in carries an explicit return address, Layer5 Cloud sends you there instead.
 
-The **Import from GitHub** page holds one card. It explains that connecting GitHub lets you pick repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs. It also names your organization and workspace: "Organizations own workspaces. You're in My Organization, working in My Workspace. Rename either anytime." From there you either start the [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) wizard or skip to your dashboard.
+The **Import from GitHub** page holds one card. It explains that connecting GitHub lets you pick repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs. It also names your organization and workspace: "Organizations own workspaces. You're in My Organization, working in My Workspace. Rename either anytime." From there you either start the [GitHub integration]({{< ref "cloud/guides/integrations/github-integration/index.md" >}}) wizard or skip to your dashboard.
 
 {{< alert type="info" >}}
 Layer5 Cloud remembers where you started only for the browser session you signed up in. If you sign in from a different browser, or after closing the browser you signed up in, you land on your dashboard. The **Import from GitHub** page is always available at <https://cloud.layer5.io/register/choose-start>.
@@ -106,7 +106,7 @@ The dashboard is your normal landing page after sign-in. It is a grid of widgets
 
 Whatever method you signed up with, you can later link a GitHub or Google account to your existing profile from your profile page. Once linked, either method signs you in to the same Layer5 Cloud profile. Each provider shows **Link** or **Unlink** depending on its current state. Linking sends you to the provider and then back to your profile.
 
-Profile changes are privileged actions. If your session has been active for more than 15 minutes, Layer5 Cloud asks you to authenticate again before it saves them.
+Changing a password or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to authenticate again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default on a self-hosted chart. For every account setting, see [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md" >}}).
 
 ## Check your result
 

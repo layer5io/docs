@@ -47,10 +47,10 @@ The Teams page lists the teams of the selected organization with name, descripti
 
 ## Membership rules
 
-- **Adding a member.** The Teams page only offers users who already belong to the organization. The API accepts any existing user, so treat organization membership as the intended precondition and add people to the organization first (see [Manage Users]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}})).
+- **Adding a member.** The Teams page only offers users who already belong to the organization. The API accepts any existing user, so treat organization membership as the intended precondition and add people to the organization first (see [Manage Users]({{< ref "cloud/guides/organizations/managing-users/index.md" >}})).
 - **Adding is idempotent.** Adding someone who is already a member changes nothing.
 - **Notification.** An added member receives an email unless their notification preferences disable organization and team user-management email.
-- **Invitations.** Teams have no invite link or join request of their own. To bring someone into an organization and into specific teams in one step, create an organization invitation that lists the teams and team roles (see [Invite Users]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}})).
+- **Invitations.** Teams have no invite link or join request of their own. To bring someone into an organization and into specific teams in one step, create an organization invitation that lists the teams and team roles (see [Invite Users]({{< ref "cloud/guides/organizations/inviting-users/index.md" >}})).
 - **Removing a member.** Removing a member ends their membership and every role they held in that team. It does not touch their organization membership, organization roles, or other teams.
 
 ## Deleting a team

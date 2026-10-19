@@ -1,5 +1,6 @@
 ---
 title: Platform Development Guide
+diataxis: explanation
 weight: 5
 description: >
   An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
@@ -51,7 +52,7 @@ This request effectively says: "A new version of content is ready for this organ
 
 When its workflow is triggered, an automated process acts like a master assembly line:
 
-1.  **Collects Parts**: It begins by gathering all the necessary components—`academy-theme` and all the course content from the various content repositories.
+1.  **Collects Parts**: It begins by gathering all the necessary components - `academy-theme` and all the course content from the various content repositories.
 
 2.  **Assembles the Website**: Next, it combines everything. It applies the theme's design to all the course content, building a single, complete website.
 

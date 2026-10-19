@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.65
+  version: v1.3.71
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -82,6 +82,10 @@ tags:
     description: APIs for Meshery Cloud events.
   - name: Filter_filters
     description: Operations related to Meshery filters.
+  - name: GitHub_github
+    description: >-
+      GitHub App connection status and authorization, installation repositories, repository trees and the Kanvas
+      workflow.
   - name: Invitation_Invitation
     description: Operations related to invitation
   - name: JobLease_jobLeases
@@ -31416,7 +31420,10 @@ paths:
         - Connection_API_Connections
       operationId: registerConnection
       summary: Register a new connection
-      description: Register a new connection with credentials
+      description: >
+        Register a new connection with credentials. Meshery Cloud reserves the GitHub App connection's identity (name
+        `GitHub App`, sub_type `git`): only its GitHub authorization flow creates that connection, so a request naming
+        it is refused with a `409` MeshKit error that names the reserved GitHub App connection identity.
       requestBody:
         required: true
         content:
@@ -32848,6 +32855,50 @@ paths:
             text/plain:
               schema:
                 type: string
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '500':
           description: Internal server error
           content:
@@ -33846,7 +33897,13 @@ paths:
         - Connection_API_Connections
       operationId: updateConnection
       summary: Update a connection
-      description: Update an existing connection
+      description: >
+        Update an existing connection. Meshery Cloud refuses, with a `409` MeshKit error naming the reserved identity,
+        an edit that would give a connection the GitHub App connection's identity (name `GitHub App`, sub_type `git`).
+        On the GitHub App connection itself, the server-written metadata keys `installations`, `installationId` and
+        `installationsVerifiedAt` are carried forward from the stored row: a client edit can neither set nor erase them
+        (other metadata keys are written as sent). Their shape is `GithubConnectionMetadata` in the v1beta3 `github`
+        construct.
       parameters:
         - name: connectionId
           in: path
@@ -35292,6 +35349,50 @@ paths:
             text/plain:
               schema:
                 type: string
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '500':
           description: Internal server error
           content:
@@ -41388,11 +41489,15 @@ paths:
         `sourceContent` and clears `patternFile`, so Meshery reconverts it the next time the design is opened - exactly
         the state a first import leaves. Only the design's owner may refresh it. No request body. Denials: `404` answers
         both "no such design" and "not the caller's design" with the same body by design, so the route is not an
-        existence oracle; `403` means the caller has no GitHub App installation with access to the design's repository;
-        `409` means the design has no refreshable source (`location.type` is not `github`, or `host`/`path` is missing)
-        or its source path no longer resolves to an importable file; `502` means GitHub could not be reached or rejected
-        the request. The server resolves the tracked ref to a commit, reads the file at that commit, and records it in
-        `location.commitSha`.
+        existence oracle; `403` means the repository is not reachable through one of the caller's verified GitHub App
+        installations - the installations GitHub lists for the caller's own GitHub account when they authorize the App.
+        The refusal is deliberately uniform: the App not being installed on the repository's account and its being
+        installed there for someone else answer the same body, so the route does not reveal where the App is installed.
+        A distinct `403` whose MeshKit error asks for re-authorization means the caller's GitHub connection predates
+        verification; re-authorize it (see `startGithubAuthorization`) before use; `409` means the design has no
+        refreshable source (`location.type` is not `github`, or `host`/`path` is missing) or its source path no longer
+        resolves to an importable file; `502` means GitHub could not be reached or rejected the request. The server
+        resolves the tracked ref to a commit, reads the file at that commit, and records it in `location.commitSha`.
       parameters:
         - name: designId
           in: path
@@ -42295,9 +42400,47 @@ paths:
         '403':
           description: Forbidden
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '404':
           description: Result not found
           content:
@@ -42319,9 +42462,47 @@ paths:
         '502':
           description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/content/patterns/{designId}/source:
     patch:
       x-internal:
@@ -42340,10 +42521,15 @@ paths:
         the new source; it is kept when the request names the binding the design already has. A design with no GitHub
         source (an upload or URL import) may be bound to one; it becomes refreshable. Only the design's owner may remap
         it. Denials: `404` answers "no such design", "not the caller's design" and "connectionId is not the caller's own
-        live GitHub connection" with the same body, so the route is not an existence oracle; `403` means the caller has
-        no GitHub App installation with access to the repository; `409` means `ref` does not resolve to a commit, or
-        `path` does not name an importable file at it (missing, a directory, or not a supported format); `502` means
-        GitHub could not be reached or rejected the request.
+        live GitHub connection" with the same body, so the route is not an existence oracle; `403` means the repository
+        is not reachable through one of the caller's verified GitHub App installations - the installations GitHub lists
+        for the caller's own GitHub account when they authorize the App. The refusal is deliberately uniform: the App
+        not being installed on the repository's account and its being installed there for someone else answer the same
+        body, so the route does not reveal where the App is installed. A distinct `403` whose MeshKit error asks for
+        re-authorization means the caller's GitHub connection predates verification; re-authorize it (see
+        `startGithubAuthorization`) before use; `409` means `ref` does not resolve to a commit, or `path` does not name
+        an importable file at it (missing, a directory, or not a supported format); `502` means GitHub could not be
+        reached or rejected the request.
       parameters:
         - name: designId
           in: path
@@ -43286,9 +43472,47 @@ paths:
         '403':
           description: Forbidden
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '404':
           description: Result not found
           content:
@@ -43310,9 +43534,47 @@ paths:
         '502':
           description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/pattern/import:
     post:
       x-internal:
@@ -45267,9 +45529,14 @@ paths:
         Imports the selected files (a selected directory is walked recursively) from one repository reachable through
         the caller's GitHub App connection. Matching is idempotent: a file whose (owner, location.type, location.host,
         location.path, location.branch) already identifies one of the caller's designs is handled per `onExisting`.
-        `connectionId` must name the caller's own live GitHub connection (404 otherwise). `403` means the caller has no
-        GitHub App installation with access to the repository; `502` means GitHub could not be reached or rejected the
-        request. Each imported or updated design records the commit its file was read at in `location.commitSha`.
+        `connectionId` must name the caller's own live GitHub connection (404 otherwise). `403` means the repository is
+        not reachable through one of the caller's verified GitHub App installations - the installations GitHub lists for
+        the caller's own GitHub account when they authorize the App. The refusal is deliberately uniform: the App not
+        being installed on the repository's account and its being installed there for someone else answer the same body,
+        so the route does not reveal where the App is installed. A distinct `403` whose MeshKit error asks for
+        re-authorization means the caller's GitHub connection predates verification; re-authorize it (see
+        `startGithubAuthorization`) before use; `502` means GitHub could not be reached or rejected the request. Each
+        imported or updated design records the commit its file was read at in `location.commitSha`.
       parameters:
         - name: connectionId
           in: path
@@ -46431,9 +46698,47 @@ paths:
         '403':
           description: Forbidden
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '404':
           description: Result not found
           content:
@@ -46449,9 +46754,47 @@ paths:
         '502':
           description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/integrations/github/branches/{connectionId}:
     get:
       x-internal:
@@ -46464,8 +46807,13 @@ paths:
         Lists the branches of one repository reachable through the caller's GitHub App connection, with the repository's
         default branch, so a client can offer the refs a design's source can track. Branch order is GitHub's.
         `connectionId` must name the caller's own live GitHub connection (404 otherwise, with the same body as "no such
-        connection"). `403` means the caller has no GitHub App installation with access to the repository; `502` means
-        GitHub could not be reached or rejected the request.
+        connection"). `403` means the repository is not reachable through one of the caller's verified GitHub App
+        installations - the installations GitHub lists for the caller's own GitHub account when they authorize the App.
+        The refusal is deliberately uniform: the App not being installed on the repository's account and its being
+        installed there for someone else answer the same body, so the route does not reveal where the App is installed.
+        A distinct `403` whose MeshKit error asks for re-authorization means the caller's GitHub connection predates
+        verification; re-authorize it (see `startGithubAuthorization`) before use; `502` means GitHub could not be
+        reached or rejected the request.
       parameters:
         - name: connectionId
           in: path
@@ -46565,9 +46913,47 @@ paths:
         '403':
           description: Forbidden
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '404':
           description: Result not found
           content:
@@ -46583,9 +46969,47 @@ paths:
         '502':
           description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/catalog/content/{type}:
     get:
       x-internal:
@@ -52330,8 +52754,56 @@ paths:
                 additionalProperties: true
         '401':
           description: Unauthorized
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '404':
-          description: Not found
+          description: Not found - the caller is not a provider-wide Provider Admin
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Server error
     post:
@@ -54433,6 +54905,1357 @@ paths:
             text/plain:
               schema:
                 type: string
+  /api/integrations/github/status:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: Whether the caller's GitHub connection is usable
+      operationId: getGithubAppStatus
+      description: >
+        Checks the caller's GitHub App connection. A connection is usable only when its installations were verified
+        against the caller's own GitHub account and GitHub confirms the installation it opens on still exists. `403`
+        with a MeshKit error saying the connection must be re-authorized means it predates verification; re-authorize it
+        with `startGithubAuthorization` (`flow=authorize`). When GitHub reports the installation the connection opens on
+        removed, that installation is dropped and the connection re-points at its next verified installation, which is
+        checked in turn: `200` when one remains. `404` means the caller has no GitHub connection, or no verified
+        installation remains - in which case the connection is deleted. `502` means GitHub could not confirm either way;
+        the connection is kept.
+      responses:
+        '200':
+          description: The connection is verified and its installation exists. No body.
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '404':
+          description: Result not found
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '502':
+          description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/integrations/github:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: List the repositories one of the caller's installations can access
+      operationId: getGithubInstallationRepositories
+      description: >
+        Returns one page of the repositories a GitHub App installation can access. `id` must name one of the caller's
+        verified GitHub App installations; any other id - another account's, or one that does not exist - is the same
+        `403`, so the route does not reveal which installations exist. `502` means GitHub could not be reached or
+        rejected the request.
+      parameters:
+        - name: id
+          in: query
+          required: true
+          description: GitHub App installation id; must be one of the caller's verified installations.
+          schema:
+            type: string
+            pattern: ^[1-9][0-9]*$
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+      responses:
+        '200':
+          description: One page of the installation's repositories.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  One page of GitHub's `GET /installation/repositories` answer, passed through as GitHub returns it
+                  (`total_count`, `repositories`).
+                additionalProperties: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '502':
+          description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/integrations/github/scan:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: One page of a repository's file tree
+      operationId: scanGithubRepository
+      description: >
+        Returns one page of a repository's file tree, as nested tree items. The repository must be reachable through one
+        of the caller's verified GitHub App installations; otherwise the request is refused with the same uniform `403`
+        as `importGithubRepository`, which does not reveal where the App is installed. With `ref`, the tree is read at
+        the commit the ref resolves to. `206` answers a page of a tree that has further pages.
+      parameters:
+        - name: name
+          in: query
+          required: true
+          description: Repository as `<owner>/<repo>`.
+          schema:
+            type: string
+            maxLength: 512
+        - name: ref
+          in: query
+          required: false
+          description: >-
+            Branch or tag to scan. Empty or omitted scans the repository's default branch. A ref that names no commit
+            answers 409.
+          schema:
+            type: string
+            maxLength: 255
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+        - name: pageSize
+          in: query
+          description: Number of items per page.
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        '200':
+          description: Tree page.
+          content:
+            application/json:
+              schema:
+                type: array
+                description: One page of a repository's file tree.
+                items:
+                  type: object
+                  description: One file or directory of a repository's file tree, with its children.
+                  additionalProperties: false
+                  properties:
+                    id:
+                      description: Identifier of the tree item, for the UI's tree view.
+                      x-go-name: ID
+                      type: string
+                      format: uuid
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
+                    label:
+                      type: string
+                      description: Display name of the file or directory.
+                      maxLength: 4096
+                    type:
+                      type: string
+                      description: Kind of the tree item, such as a file or a directory.
+                      maxLength: 64
+                    entry:
+                      type: object
+                      description: GitHub's tree entry for the item, passed through as GitHub returns it.
+                      additionalProperties: true
+                    children:
+                      type: array
+                      description: The items under a directory, each shaped as a `GithubRepositoryTreeItem`.
+                      items:
+                        type: object
+                        additionalProperties: true
+        '206':
+          description: Tree page of a tree that has further pages.
+          content:
+            application/json:
+              schema:
+                type: array
+                description: One page of a repository's file tree.
+                items:
+                  type: object
+                  description: One file or directory of a repository's file tree, with its children.
+                  additionalProperties: false
+                  properties:
+                    id:
+                      description: Identifier of the tree item, for the UI's tree view.
+                      x-go-name: ID
+                      type: string
+                      format: uuid
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
+                    label:
+                      type: string
+                      description: Display name of the file or directory.
+                      maxLength: 4096
+                    type:
+                      type: string
+                      description: Kind of the tree item, such as a file or a directory.
+                      maxLength: 64
+                    entry:
+                      type: object
+                      description: GitHub's tree entry for the item, passed through as GitHub returns it.
+                      additionalProperties: true
+                    children:
+                      type: array
+                      description: The items under a directory, each shaped as a `GithubRepositoryTreeItem`.
+                      items:
+                        type: object
+                        additionalProperties: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '502':
+          description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/integrations/github/verify/{owner}/{repo}:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: Whether the Kanvas workflow is already present in a repository
+      operationId: verifyGithubRepositoryWorkflow
+      description: >
+        Reports whether the Kanvas workflow is already committed to a repository. The repository's installation is
+        resolved and authorized by the server; the `id` query parameter is accepted for compatibility and is not
+        consulted. A repository the caller cannot reach through one of their verified GitHub App installations is
+        refused with the same uniform `403` as `importGithubRepository`. No request body.
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          description: Login of the account that owns the repository.
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          description: Repository name, without its owner.
+          schema:
+            type: string
+        - name: id
+          in: query
+          required: false
+          deprecated: true
+          description: Ignored. Accepted for compatibility; the server resolves the installation itself.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Workflow presence.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Whether the Kanvas workflow is already present in a repository.
+                additionalProperties: false
+                required:
+                  - status
+                properties:
+                  status:
+                    type: string
+                    description: >-
+                      `ok` when no workflow is present; `error` when one is (`fileUrl` names it) or the check failed
+                      (`error` says why).
+                    enum:
+                      - ok
+                      - error
+                  fileUrl:
+                    type: string
+                    format: uri
+                    description: URL of the workflow file already present.
+                  error:
+                    type: string
+                    maxLength: 4096
+                    description: Why the repository cannot take the workflow.
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '502':
+          description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/integrations/github/install:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: Commit the Kanvas workflow into repositories
+      operationId: installGithubWorkflow
+      description: >
+        Commits the Kanvas workflow into each requested repository. Every well-formed repository is authorized before
+        anything is written: one repository the caller cannot reach through their verified GitHub App installations
+        refuses the whole request with the uniform `403`, and nothing is committed anywhere. A malformed repository
+        identifier is reported per repository (`code: 400`) and never reaches GitHub. The `id` query parameter is
+        accepted for compatibility and is not consulted.
+      parameters:
+        - name: id
+          in: query
+          required: false
+          deprecated: true
+          description: Ignored. Accepted for compatibility; the server resolves the installation itself.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: The repositories to commit the Kanvas workflow into.
+              additionalProperties: false
+              required:
+                - repositories
+              properties:
+                repositories:
+                  type: array
+                  description: Repositories as `<owner>/<repo>`.
+                  items:
+                    type: string
+                    maxLength: 512
+      responses:
+        '200':
+          description: One entry per requested repository.
+          content:
+            application/json:
+              schema:
+                type: array
+                description: One single-key entry per requested repository, keyed by `<owner>/<repo>`.
+                items:
+                  type: object
+                  additionalProperties:
+                    type: object
+                    description: The outcome of committing the workflow into one repository.
+                    additionalProperties: false
+                    properties:
+                      code:
+                        type: integer
+                        minimum: 100
+                        maximum: 599
+                        description: HTTP-style status of the repository's outcome; `400` for a malformed repository identifier.
+                      description:
+                        type: string
+                        maxLength: 4096
+                        description: The outcome, in words.
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '502':
+          description: Bad gateway - an upstream service the operation depends on could not be reached or rejected the request
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/integrations/github/authorize:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: Start a trip to GitHub (browser navigation)
+      operationId: startGithubAuthorization
+      description: >
+        Browser navigation, not a data call. Issues a single-use state bound to the signed-in user (consumed once,
+        five-minute lifetime) and redirects to GitHub carrying it: `flow=install` to the GitHub App's installation page
+        (derived from the App's own `html_url`), `flow=authorize` to GitHub's user-authorization page for the App. The
+        UI never links to GitHub directly. Failures redirect to `/connect/github/new/<userId>?githubError=<reason>`, as
+        the callback does.
+      parameters:
+        - name: flow
+          in: query
+          required: true
+          description: >-
+            `install` sends the browser to the GitHub App's installation page; `authorize` sends it to GitHub's
+            user-authorization page for the App.
+          schema:
+            type: string
+            enum:
+              - install
+              - authorize
+      responses:
+        '302':
+          description: Redirect to GitHub, or to the connection wizard with a reason.
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/integrations/github/callback:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - GitHub_github
+      summary: The GitHub App's callback (browser navigation)
+      operationId: githubAppCallback
+      description: >
+        Browser navigation, not a data call. GitHub returns the browser here with the `state` issued by
+        `startGithubAuthorization` and a one-time `code`. A missing, expired, reused or foreign `state` is refused
+        before the code is exchanged or any connection is touched (`githubError=authorization-stale`). The server then
+        exchanges the code for a user-to-server token, lists the installations of the App the authorizing GitHub account
+        can access (GitHub's `GET /user/installations`) and stores exactly that set on the caller's GitHub connection -
+        creating it, or updating it in place. An `installation_id` not in that set is never stored, and a result of zero
+        installations never deletes or replaces an existing connection. Always answers a `302`: to
+        `/connect/github/verify?githubLogin=true&id=<installation>[&setup_action=update]` on success, else to
+        `/connect/github/new/<userId>?githubError=<reason>`, `reason` one of `authorization-failed`,
+        `authorization-stale`, `authorization-unavailable`, `connection-failed`, `installation-not-verified`,
+        `no-installations`. The `installation_id` and `setup_action` query parameter names are GitHub's and are kept as
+        GitHub sends them.
+      parameters:
+        - name: state
+          in: query
+          required: true
+          description: The single-use state `startGithubAuthorization` issued.
+          schema:
+            type: string
+        - name: code
+          in: query
+          required: false
+          description: GitHub's one-time authorization code.
+          schema:
+            type: string
+        - name: installation_id
+          in: query
+          required: false
+          description: >-
+            The installation GitHub names on return (GitHub's parameter name). It is stored only when it is one of the
+            installations GitHub lists for the authorizing account.
+          schema:
+            type: string
+        - name: setup_action
+          in: query
+          required: false
+          description: GitHub's setup action (GitHub's parameter name).
+          schema:
+            type: string
+            enum:
+              - install
+              - update
+              - request
+      responses:
+        '302':
+          description: Redirect to the connection wizard, as described.
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
   /api/organizations/invitations/{invitationId}:
     get:
       x-internal:
@@ -54745,11 +56568,7 @@ paths:
               description: Payload for creating or updating an invitation.
               required:
                 - name
-                - description
                 - orgId
-                - emails
-                - roles
-                - teams
                 - status
               properties:
                 id:
@@ -54786,7 +56605,7 @@ paths:
                   maxLength: 255
                 description:
                   type: string
-                  description: Description of the invitation.
+                  description: Description of the invitation. Optional; omitting it stores an empty description.
                   maxLength: 5000
                 emails:
                   type: array
@@ -54798,7 +56617,9 @@ paths:
                     pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
                     description: Email address or pattern that is permitted to use this invitation.
                     x-go-type: string
-                  description: Email addresses or patterns this invitation is valid for.
+                  description: >-
+                    Email addresses or patterns this invitation is valid for. Optional; omitting it or sending an empty
+                    list means any email address may accept the invitation.
                 orgId:
                   type: string
                   format: uuid
@@ -54827,7 +56648,9 @@ paths:
                   items:
                     type: string
                     description: Role identifier granted by this invitation on acceptance.
-                  description: Roles that the user will have when accepting the invitation.
+                  description: >-
+                    Roles that the user will have when accepting the invitation. Optional; omitting it or sending an
+                    empty list grants no roles.
                 teams:
                   type: array
                   x-go-type: pq.StringArray
@@ -54836,7 +56659,9 @@ paths:
                   items:
                     type: string
                     description: Team identifier the invited user is added to on acceptance.
-                  description: Teams that the user will be added to when accepting the invitation.
+                  description: >-
+                    Teams that the user will be added to when accepting the invitation. Optional; omitting it or sending
+                    an empty list adds the user to no teams.
                 acceptanceOutcome:
                   description: >-
                     Determines what accepting this invitation does for the accepting user, for new and existing accounts
@@ -55074,9 +56899,47 @@ paths:
         '400':
           description: Invalid request body or request param
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -55086,21 +56949,135 @@ paths:
         '403':
           description: Forbidden
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '404':
           description: Result not found
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '500':
           description: Internal server error
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/organizations/invitations:
     get:
       x-internal:
@@ -55407,11 +57384,7 @@ paths:
               description: Payload for creating or updating an invitation.
               required:
                 - name
-                - description
                 - orgId
-                - emails
-                - roles
-                - teams
                 - status
               properties:
                 id:
@@ -55448,7 +57421,7 @@ paths:
                   maxLength: 255
                 description:
                   type: string
-                  description: Description of the invitation.
+                  description: Description of the invitation. Optional; omitting it stores an empty description.
                   maxLength: 5000
                 emails:
                   type: array
@@ -55460,7 +57433,9 @@ paths:
                     pattern: ^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}|@[a-zA-Z0-9.-]+\.[a-z]{2,})$
                     description: Email address or pattern that is permitted to use this invitation.
                     x-go-type: string
-                  description: Email addresses or patterns this invitation is valid for.
+                  description: >-
+                    Email addresses or patterns this invitation is valid for. Optional; omitting it or sending an empty
+                    list means any email address may accept the invitation.
                 orgId:
                   type: string
                   format: uuid
@@ -55489,7 +57464,9 @@ paths:
                   items:
                     type: string
                     description: Role identifier granted by this invitation on acceptance.
-                  description: Roles that the user will have when accepting the invitation.
+                  description: >-
+                    Roles that the user will have when accepting the invitation. Optional; omitting it or sending an
+                    empty list grants no roles.
                 teams:
                   type: array
                   x-go-type: pq.StringArray
@@ -55498,7 +57475,9 @@ paths:
                   items:
                     type: string
                     description: Team identifier the invited user is added to on acceptance.
-                  description: Teams that the user will be added to when accepting the invitation.
+                  description: >-
+                    Teams that the user will be added to when accepting the invitation. Optional; omitting it or sending
+                    an empty list adds the user to no teams.
                 acceptanceOutcome:
                   description: >-
                     Determines what accepting this invitation does for the accepting user, for new and existing accounts
@@ -55736,9 +57715,47 @@ paths:
         '400':
           description: Invalid request body or request param
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -55748,15 +57765,91 @@ paths:
         '403':
           description: Forbidden
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '500':
           description: Internal server error
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/organizations/invitations/{invitationId}/accept:
     post:
       x-internal:
@@ -55983,9 +58076,47 @@ paths:
         '400':
           description: Invalid request body or request param
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -55995,15 +58126,91 @@ paths:
         '404':
           description: Result not found
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
         '500':
           description: Internal server error
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError500` and `MeshkitError502` responses for an operation whose server
+                  answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/identity/orgs/{orgId}/users/invite:
     post:
       x-internal:
@@ -65253,7 +67460,7 @@ paths:
           in: query
           description: >-
             Token purpose. Tokens are minted with this purpose on generate, and listed tokens are filtered to this
-            purpose on list (e.g. blowhorn device tokens).
+            purpose on list.
           schema:
             type: string
             maxLength: 500
@@ -65468,7 +67675,7 @@ paths:
           in: query
           description: >-
             Token purpose. Tokens are minted with this purpose on generate, and listed tokens are filtered to this
-            purpose on list (e.g. blowhorn device tokens).
+            purpose on list.
           schema:
             type: string
             maxLength: 500
@@ -65835,8 +68042,8 @@ paths:
       summary: Download token
       operationId: downloadToken
       description: >-
-        Downloads a specific token by its ID for use as a local credential file (e.g. mesheryctl's auth.json). Gated by
-        the Download Token permission and recorded as a distinct audit event from viewing or listing tokens.
+        Downloads a specific token by its ID for use as a local credential file (e.g. a CLI auth file). Gated by the
+        Download Token permission and recorded as a distinct audit event from viewing or listing tokens.
       parameters:
         - name: tokenId
           in: path
@@ -66159,6 +68366,336 @@ paths:
                     x-order: 4
                     x-oapi-codegen-extra-tags:
                       json: pageSize
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/identity/native/authorize:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - token_tokens
+      summary: Show native client sign-in consent
+      operationId: getNativeClientAuthorization
+      description: >-
+        Browser-facing step of the native client sign-in flow (RFC 8252 loopback redirect with RFC 7636 PKCE). Requires
+        the session cookie of a signed-in user, never URL credentials. Validates the request and renders a consent page
+        that asks the user to allow the named local client to act on their behalf. Nothing is issued by this call.
+      parameters:
+        - name: clientName
+          in: query
+          description: >-
+            Display name of the native client asking to sign in. Shown on the consent page and used as the name and
+            purpose of the minted token.
+          required: true
+          schema:
+            type: string
+            pattern: ^[A-Za-z0-9][A-Za-z0-9 ._-]{0,62}$
+        - name: port
+          in: query
+          description: Port on 127.0.0.1 where the native client listens for the callback.
+          required: true
+          schema:
+            type: integer
+            minimum: 1024
+            maximum: 65535
+        - name: codeChallenge
+          in: query
+          description: PKCE code challenge, BASE64URL(SHA256(codeVerifier)) without padding.
+          required: true
+          schema:
+            type: string
+            pattern: ^[A-Za-z0-9_-]{43}$
+        - name: codeChallengeMethod
+          in: query
+          description: PKCE challenge method. Only S256 is accepted.
+          required: true
+          schema:
+            type: string
+            enum:
+              - S256
+        - name: state
+          in: query
+          description: Opaque value from the native client, returned unchanged on the callback.
+          required: true
+          schema:
+            type: string
+            minLength: 8
+            maxLength: 512
+      responses:
+        '200':
+          description: Consent page
+          content:
+            text/html:
+              schema:
+                type: string
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - token_tokens
+      summary: Approve native client sign-in
+      operationId: approveNativeClientAuthorization
+      description: >-
+        Submitted by the consent page with the same parameters as the GET, as a same-origin form post. Stores a
+        single-use authorization code that expires after 60 seconds, bound to the user, the client name and the PKCE
+        code challenge, then redirects the browser to http://127.0.0.1:{port}/callback with code and state query
+        parameters. Only the 127.0.0.1 loopback IP literal is ever used as the redirect host; no token or cookie is
+        placed in the redirect.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              description: Consent form fields for approving a native client sign-in.
+              required:
+                - clientName
+                - port
+                - codeChallenge
+                - codeChallengeMethod
+                - state
+              properties:
+                clientName:
+                  type: string
+                  description: Display name of the native client.
+                  pattern: ^[A-Za-z0-9][A-Za-z0-9 ._-]{0,62}$
+                  x-order: 1
+                port:
+                  type: integer
+                  description: Port on 127.0.0.1 for the callback.
+                  minimum: 1024
+                  maximum: 65535
+                  x-order: 2
+                codeChallenge:
+                  type: string
+                  description: PKCE S256 code challenge.
+                  pattern: ^[A-Za-z0-9_-]{43}$
+                  x-order: 3
+                codeChallengeMethod:
+                  type: string
+                  description: PKCE challenge method.
+                  enum:
+                    - S256
+                  x-order: 4
+                state:
+                  type: string
+                  description: Opaque client state returned on the callback.
+                  minLength: 8
+                  maxLength: 512
+                  x-order: 5
+      responses:
+        '302':
+          description: >-
+            Redirect to the loopback callback carrying code and state. The callback's query parameters are described by
+            NativeAuthorizationCallback.
+          headers:
+            Location:
+              required: true
+              description: http://127.0.0.1:{port}/callback?code=...&state=..., whose query is a NativeAuthorizationCallback.
+              schema:
+                type: string
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/identity/native/token:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - token_tokens
+      summary: Exchange native client authorization code
+      operationId: exchangeNativeAuthorizationCode
+      description: >-
+        Redeems a single-use authorization code from the native client sign-in flow. The caller proves possession of the
+        PKCE code verifier (BASE64URL(SHA256(codeVerifier)) must equal the stored S256 challenge). The code is consumed
+        on the first redemption attempt, whether or not the verifier matches. On success an API token is minted for the
+        user with name and purpose set to the client name. This call is authenticated by the code and verifier, not by a
+        session.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: Redeems a native client authorization code with its PKCE verifier.
+              required:
+                - code
+                - codeVerifier
+              properties:
+                code:
+                  type: string
+                  description: Single-use authorization code from the loopback callback.
+                  minLength: 1
+                  maxLength: 128
+                  x-order: 1
+                codeVerifier:
+                  type: string
+                  description: PKCE code verifier (RFC 7636, 43 to 128 unreserved characters).
+                  pattern: ^[A-Za-z0-9._~-]{43,128}$
+                  x-order: 2
+      responses:
+        '201':
+          description: API token minted for the native client
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: Represents a user-owned API token or OAuth session.
+                required:
+                  - id
+                  - owner
+                  - provider
+                  - accessToken
+                  - name
+                  - purpose
+                  - isOauth
+                  - createdAt
+                  - updatedAt
+                properties:
+                  id:
+                    description: Unique identifier for the token.
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                      json: id
+                    x-order: 1
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  owner:
+                    description: UUID of the user who owns the token.
+                    x-go-name: Owner
+                    x-oapi-codegen-extra-tags:
+                      db: owner
+                      json: owner
+                    x-order: 2
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  provider:
+                    type: string
+                    description: Authentication provider associated with the token.
+                    x-oapi-codegen-extra-tags:
+                      db: provider
+                      json: provider
+                    maxLength: 500
+                    x-order: 3
+                  accessToken:
+                    type: string
+                    description: Access token value.
+                    x-oapi-codegen-extra-tags:
+                      db: access_token
+                      json: accessToken
+                    maxLength: 4096
+                    x-order: 4
+                  refreshToken:
+                    type: string
+                    description: Refresh token value when applicable.
+                    x-oapi-codegen-extra-tags:
+                      db: refresh_token
+                      json: refreshToken
+                    maxLength: 4096
+                    x-order: 5
+                  name:
+                    type: string
+                    description: Human-readable token name.
+                    x-oapi-codegen-extra-tags:
+                      db: name
+                      json: name
+                    minLength: 1
+                    maxLength: 255
+                    x-order: 6
+                  purpose:
+                    type: string
+                    description: Purpose for which the token was created.
+                    x-oapi-codegen-extra-tags:
+                      db: purpose
+                      json: purpose
+                    maxLength: 500
+                    x-order: 7
+                  isOauth:
+                    type: boolean
+                    description: Whether this entry represents an OAuth session.
+                    x-go-name: IsOAuth
+                    x-oapi-codegen-extra-tags:
+                      db: is_oauth
+                      json: isOauth
+                    x-order: 8
+                  createdAt:
+                    type: string
+                    format: date-time
+                    description: Timestamp when the token was created.
+                    x-go-type: time.Time
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                      json: createdAt
+                    x-order: 9
+                  updatedAt:
+                    type: string
+                    format: date-time
+                    description: Timestamp when the token was last updated.
+                    x-go-type: time.Time
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                      json: updatedAt
+                    x-order: 10
         '400':
           description: Invalid request body or request param
           content:

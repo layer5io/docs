@@ -116,7 +116,7 @@ Each default keychain groups the permissions for one area. Roles hold keychains,
 | Team Management | Managing teams and team membership. |
 | Organization Management | Managing organizations, their teams, and their users. |
 | Events Management | Event management: statistics, audit, and summaries. |
-| Security Management | Managing keys, keychains, credentials, and tokens. |
+| Security Management | Creating, downloading, and deleting API tokens, and managing credentials. Key and keychain management belongs to Provider Management. See the [Security Reference]({{< ref "cloud/reference/security.md#permission-keys" >}}). |
 
 Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, and the two Kanvas action sets (Designer Actions and Operator Actions). For keychain behavior, see [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
 
@@ -130,4 +130,4 @@ Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lif
 
 A custom role bundles keychains that the default roles do not combine. Only a Provider Admin can create, edit, or delete a custom role. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so an organization cannot create custom roles itself. On a self-hosted deployment, the operator's Provider Admins can.
 
-Roles and keychains are defined for the whole Layer5 Cloud deployment, not per organization. Changing the keychains of a role changes that role for every organization that uses it. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+Roles and keychains are defined for the whole Layer5 Cloud deployment, not per organization. Only a Provider Admin can create, edit, or delete a keychain, change its keys, or assign a keychain to a role. Changing the keychains of a role changes that role for every organization that uses it. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
