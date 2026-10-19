@@ -149,6 +149,21 @@ A few things hold for both outcomes:
 - Accepting is counted once per person. Accepting the same invitation again does not create a second child organization or use more of the quota.
 - When someone creates a new account through your organization's open signup invitation, they do not also receive a separate personal organization; the invitation decides where they land. If the invitation turns out not to apply (for example, its quota is used up), a personal organization is created for them as usual.
 
+#### Branding of a child organization
+
+A `child_organization` invitation also sets `childOrganizationBranding`, the branding the new child organization starts with. In the invitation dialogs it appears under **Child organization branding**. It is ignored for `direct_membership`.
+
+| `childOrganizationBranding` | The child organization starts with |
+| :--- | :--- |
+| `provider` (default) | No branding of its own, so it shows the platform's branding. |
+| `inviting_organization` | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links, and the sign-in page carousel setting. |
+
+The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and the child organization's admins can change its branding afterwards.
+
+#### Email verification
+
+Someone who signs up with email and password through your open signup invitation must verify their email address before a `direct_membership` invitation adds them to your organization. Until then they are not a member, and they cannot sign in. They join on their first sign-in after verifying. A `child_organization` invitation does not wait: the new account's own child organization is created at sign-up, because it gives the person nothing of yours beyond a place beneath you. Either way the account becomes active once the address is verified.
+
 ### How the open signup invitation is applied at sign-in
 
 The open signup invitation is not limited to first-time registration. It is applied whenever someone signs in through your organization's own address, such as its custom domain, on every sign-in method that address offers, including email and password as well as social sign-in. Someone who already has a Layer5 Cloud account and has never been a member of your organization becomes a member on that sign-in, with the roles and teams the invitation configures. When the open signup invitation is a `child_organization` invitation, that person instead receives their own child organization beneath yours, as described in [Choosing what accepting an invitation does](#choosing-what-accepting-an-invitation-does).
