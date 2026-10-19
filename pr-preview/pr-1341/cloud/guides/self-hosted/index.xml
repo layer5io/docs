@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self-Hosted Deployments on Layer5 Documentation</title><link>/pr-preview/pr-1341/cloud/guides/self-hosted/</link><description>Recent content in Self-Hosted Deployments on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1341/cloud/guides/self-hosted/index.xml" rel="self" type="application/rss+xml"/><item><title>Customize Webhooks</title><link>/pr-preview/pr-1341/cloud/guides/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1341/cloud/guides/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 Cloud calls an HTTP endpoint you choose when three things happen: a person asks for help, a Provider Admin decides a signup request, and a person gains Kanvas access. The calls let you route those events into your help desk, your chat, or your onboarding automation. On a self-hosted deployment you set the three endpoints; none is set by default, and an unset webhook does nothing useful.&lt;/p&gt;
+
+&lt;h2 id="the-three-webhooks" class="heading-link"&gt;
+ The three webhooks
+ &lt;a href="#the-three-webhooks" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Chart value&lt;/th&gt;
+ &lt;th&gt;Fires when&lt;/th&gt;
+ &lt;th&gt;Payload&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookHelpAndSupport&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Someone submits the Help and Support form in Layer5 Cloud, or a support request raised in Kanvas reaches your deployment&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;memberFormOne&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookSignupRequest&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A Provider Admin approves or denies a signup request&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;signupData&lt;/code&gt; and &lt;code&gt;newUser&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookKanvasEntitlement&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A new user registers, a user completes a first brokered social sign-in, or a role assignment gives a user Kanvas access&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;signupData&lt;/code&gt; and &lt;code&gt;newUser&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="set-the-endpoints" class="heading-link"&gt;
+ Set the endpoints
+ &lt;a href="#set-the-endpoints" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Add the three URLs to your Helm values and upgrade. The values are written into the server&amp;rsquo;s ConfigMap, so the pods restart when you change them.&lt;/p&gt;</description></item><item><title>Troubleshoot Email Delivery</title><link>/pr-preview/pr-1341/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1341/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;p&gt;Layer5 Cloud sends two kinds of mail. &lt;strong&gt;Application mail&lt;/strong&gt; (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization&amp;rsquo;s own mail server when one is turned on, and otherwise through the &lt;strong&gt;shared mail server&lt;/strong&gt; you configure in the chart&amp;rsquo;s &lt;code&gt;smtp&lt;/code&gt; values. &lt;strong&gt;Identity mail&lt;/strong&gt; (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See &lt;a href="/pr-preview/pr-1341/cloud/guides/self-hosted/planning/#mail"&gt;Plan a Deployment&lt;/a&gt;. This guide helps you find which of those paths is failing and why.&lt;/p&gt;</description></item></channel></rss>
