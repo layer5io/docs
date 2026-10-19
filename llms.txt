@@ -118,7 +118,7 @@
 
 - [Learner Guide](/cloud/academy/using-the-academy/index.md): Walk through the Layer5 Academy as a learner: find content, enroll, work through a learning path, pass its assessments, and earn a badge or certificate.
 
-- [Account Consolidation](/cloud/concepts/identity-and-security/users/account-consolidation/index.md): Layer5 Cloud resolves email/password, GitHub sign-in, and Google sign-in to a single account per verified email address.
+- [Account Consolidation](/cloud/concepts/identity-and-security/users/account-consolidation/index.md): Account consolidation merges duplicate Layer5 Cloud accounts that belong to one person into a single canonical account. It is an operator-run command, not a customer-facing feature.
 
 - [Create and Use an API Token](/cloud/guides/security/api-tokens/index.md): Create an API token, hand it to a script or CI job, rotate it without downtime, and revoke it.
 
@@ -196,6 +196,8 @@
 - [Troubleshoot Email Delivery](/cloud/guides/self-hosted/operating/smtp/index.md): Diagnose why a self-hosted Layer5 Cloud is not sending mail: the shared mail server's requirements, what the server checks at startup, how to test delivery, how mail is routed, and what each error code means.
 
 - [Use the Content Template Creator](/cloud/academy/creating-content/using-content-template-creator/index.md): Register Academy content with the Content Template Creator, copy the front matter and identifiers it generates into your repository, and control who can enroll through the content's invitation.
+
+- [Assign and Manage Roles](/cloud/guides/organizations/managing-roles/index.md): Assign organization, team, and provider roles to people, remove them, and create or edit custom roles. Covers who can do each, what the server enforces, and how to confirm a change took effect.
 
 - [Extend the Academy](/cloud/academy/creating-content/extending-the-academy/index.md): Go beyond plain Markdown in your Academy content with inline HTML and CSS, organization-specific Hugo shortcodes, embedded Kanvas designs, and branded award emails.
 
