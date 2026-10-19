@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1337/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1337/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.286</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.286/</link><pubDate>Sat, 17 Oct 2026 23:48:20 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.286/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/pr-preview/pr-1337/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1337/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.293</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.293/</link><pubDate>Mon, 19 Oct 2026 01:41:38 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.293/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): authorize invitation writes, validate their roles and teams, and restrict the events aggregate @jijillery (#6219)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jijillery, @leecalcote, @pontusringblom and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.292</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.292/</link><pubDate>Sun, 18 Oct 2026 22:50:00 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.292/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(auth): issue and verify a fresh Hydra authorize nonce per sign-in @leecalcote (#6239)&lt;/li&gt;
+&lt;li&gt;test(smoke): follow the Hydra sign-in chain in the custom-domain probe @leecalcote (#6238)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.291</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.291/</link><pubDate>Sun, 18 Oct 2026 22:36:28 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.291/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat: imported GitHub designs inventory, refresh from source, and idempotent re-import @jijillery (#6190)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jijillery, @simihablo and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.290</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.290/</link><pubDate>Sun, 18 Oct 2026 21:57:40 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.290/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): scope team writes to the organization in the URL @leecalcote (#6164)&lt;/li&gt;
+&lt;li&gt;test(e2e): assert the Hydra-bounce /oidc/start contract in the OAuth redirect monitor @winkletinkle (#6237)&lt;/li&gt;
+&lt;li&gt;[Chore-UI] Fix Badge Overflow in Grid Layout @Katotodan (#6220)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Katotodan, @leecalcote, @pontusringblom and @winkletinkle&lt;/p&gt;</description></item><item><title>v1.0.289</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.289/</link><pubDate>Sun, 18 Oct 2026 20:21:06 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.289/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): store an omitted invitation emails, roles or teams list as empty @jijillery (#6236)&lt;/li&gt;
+&lt;li&gt;feat(badges): award first-share badge on design share @Maanvi212006 (#6230)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.24.2 @l5io (#6225)&lt;/li&gt;
+&lt;li&gt;fix(server): make the GitHub installation token cache safe for concurrent use @jijillery (#6231)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Maanvi212006, @arjunmehta-git, @carlosriosilva, @jijillery, @l5io, @leecalcote and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.288</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.288/</link><pubDate>Sun, 18 Oct 2026 18:18:11 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.288/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): bounce custom-domain sign-up through tenant Hydra to mint a login_challenge @leecalcote (#6235)&lt;/li&gt;
+&lt;li&gt;refactor(badges): remove redundant duplicate first-design award block in save handler @Maanvi212006 (#6228)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Maanvi212006 and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.287</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.287/</link><pubDate>Sun, 18 Oct 2026 00:26:04 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.287/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(server): act only through the caller&amp;rsquo;s verified GitHub App installations @jijillery (#6217)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@jijillery and @pontusringblom&lt;/p&gt;</description></item><item><title>v1.0.286</title><link>/pr-preview/pr-1337/cloud/reference/releases/v1.0.286/</link><pubDate>Sat, 17 Oct 2026 23:48:20 +0000</pubDate><guid>/pr-preview/pr-1337/cloud/reference/releases/v1.0.286/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(identity): return the stored row id from minted API tokens @leecalcote (#6227)&lt;/li&gt;
 &lt;li&gt;docs(skills): add a read-only production-diagnostics skill @leecalcote (#6226)&lt;/li&gt;
 &lt;/ul&gt;

@@ -63,7 +63,7 @@ Per-repository install results are:
 
 ### If you uninstall the App
 
-Cloud checks whether the App installation still exists. When GitHub reports that it does not, Cloud deletes the stale GitHub connection. Run the wizard again to reconnect.
+Uninstalling the App from one account removes only that installation from your GitHub connection. See [Check or reconfigure the connection](/pr-preview/pr-1337/cloud/guides/integrations/github-integration/#check-or-reconfigure-the-connection).
 
 ## Use the action in your own workflow
 

@@ -18,7 +18,7 @@ You can create highly customized invitations for any scenario, from onboarding s
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Required permission</h4>
   
-      Creating, editing, and deleting invitations requires the <strong>Manage Invitations</strong> permission within your organization. That one permission also covers choosing the roles and teams an invitation grants, so anyone who can write an invitation, Academy Admins included, can specify its roles. Contact your organization administrator if you need access.
+      From Layer5 Cloud v1.0.293, creating, editing, and deleting invitations requires the <strong>Manage Invitations</strong> permission within your organization. That one permission also covers choosing the roles and teams an invitation grants, so anyone who can write an invitation, Academy Admins included, can specify its roles. Contact your organization administrator if you need access.
   
 </div>
 
@@ -138,9 +138,9 @@ To create a new invitation, navigate to the [Invitations page](https://cloud.lay
 
 | Property | Description |
 | :--- |  :--- |
-| `emails` | List of email addresses or domain patterns allowed to use the invitation. Exact addresses (e.g., `user@example.com`) and domain patterns (e.g., `@example.com`) are both supported. If empty, the invitation is public. |
+| `emails` | List of email addresses or domain patterns allowed to use the invitation. Exact addresses (e.g., `user@example.com`) and domain patterns (e.g., `@example.com`) are both supported. If empty, the invitation is public: any email address can use it. |
 | `roles` | List of roles automatically assigned to new members upon accepting the invitation. If empty, the user joins with no role. Each role must be an existing organization role. Provider-wide roles, such as Provider Admin, cannot be granted by an invitation, and an invitation listing one, or a role that does not exist, is refused when it is created or edited. |
-| `teams` | List of teams new members are automatically added to upon accepting the invitation. Each team must be an existing team of your organization; an invitation listing any other team is refused when it is created or edited. |
+| `teams` | List of teams new members are automatically added to upon accepting the invitation. If empty, the user joins no team. Each team must be an existing team of your organization; an invitation listing any other team is refused when it is created or edited. |
 | `quota` | Number that limits how many users can accept the invitation. If not set, there is no usage limit. |
 | `expiresAt` | Date after which the invitation link can no longer be used. Does not affect existing members. If not set, the invitation never expires. |
 | `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
@@ -148,6 +148,8 @@ To create a new invitation, navigate to the [Invitations page](https://cloud.lay
 | `description` | Additional information about the invitation's purpose, for internal reference. |
 | `acceptanceOutcome` | What accepting the invitation does. `direct_membership` (the default) makes the user a member of the inviting organization. `child_organization` instead creates a new organization for the user beneath the inviting organization. See [Choosing what accepting does](#choosing-what-accepting-an-invitation-does). Creating or editing a `child_organization` invitation requires the **Create Organization** permission in the inviting organization. |
 | `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time - designating a new one clears the previous. Like every other change to an invitation, turning this setting on or off requires the **Manage Invitations** permission. An edit that does not include this setting leaves it as it was. |
+
+From Layer5 Cloud v1.0.289, `emails`, `roles`, and `teams` can each be left empty or omitted: the invitation then accepts any email address, grants no roles, or adds no teams.
 
 ### Managing existing invitations
 
