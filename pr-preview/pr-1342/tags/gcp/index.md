@@ -1,4 +1,0 @@
-# Gcp
-
-
-<no value>
