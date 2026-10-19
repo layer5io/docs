@@ -72,7 +72,7 @@
  &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;You need the &lt;strong&gt;Create Token&lt;/strong&gt; permission to create a token in the interface. Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.&lt;/li&gt;
+&lt;li&gt;You need the &lt;strong&gt;Create Token&lt;/strong&gt; permission to create a token in the interface. User, Team Admin, Workspace Admin, Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.&lt;/li&gt;
 &lt;li&gt;You need &lt;strong&gt;View Tokens&lt;/strong&gt; to open the Tokens tab. Every default user role holds it.&lt;/li&gt;
 &lt;li&gt;Decide which consumer gets this token. Create one token per consumer so you can revoke one without breaking the others.&lt;/li&gt;
 &lt;/ul&gt;

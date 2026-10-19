@@ -7463,7 +7463,7 @@ An API token lets a script, a CI job, or a Meshery client act as your user accou
 
 ## Before you start
 
-- You need the **Create Token** permission to create a token in the interface. Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.
+- You need the **Create Token** permission to create a token in the interface. User, Team Admin, Workspace Admin, Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.
 - You need **View Tokens** to open the Tokens tab. Every default user role holds it.
 - Decide which consumer gets this token. Create one token per consumer so you can revoke one without breaking the others.
 
@@ -10216,7 +10216,7 @@ Provider Admin holds every key. The table lists the default holders of the other
 | Key | Governs | Default holders besides Provider Admin | Enforced by |
 | --- | --- | --- | --- |
 | View Tokens | The Tokens tab | User, Team Admin, Workspace Admin, Organization Admin | Interface |
-| Create Token | Creating an API token | Organization Admin | Interface only |
+| Create Token | Creating an API token, and approving a desktop app or CLI sign-in | User, Team Admin, Workspace Admin, Organization Admin | Interface for the Tokens tab; server for approving a desktop app or CLI sign-in |
 | Download Token | Downloading a token file | User, Team Admin, Workspace Admin, Organization Admin | Interface; the server returns only your own tokens |
 | Delete Token | Revoking a token, and the Logout control on the Sessions tab | Organization Admin | Interface only; the server deletes only your own tokens |
 | View Sessions | The Sessions tab | User, Team Admin, Workspace Admin, Organization Admin | Interface |
@@ -10230,7 +10230,7 @@ Provider Admin holds every key. The table lists the default holders of the other
 | Delete Keychain | Deleting a keychain | None | Interface and server. The server also requires the Provider Admin role. |
 | Assign Keychains to Roles | Adding or removing a keychain on a role | None | Server. The server also requires the Provider Admin role. |
 
-Roles that hold the keys come from the default keychains: View keys sit in User View, Create Token and Delete Token in Security Management, Download Token in Security Management and User Edit, and the key and keychain management keys, including Assign Keychains to Roles, in Provider Management. Where the server requires the Provider Admin role, it checks the role across the whole deployment, not the role held in one organization. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for the full role-by-keychain mapping.
+Roles that hold the keys come from the default keychains: View keys sit in User View, Delete Token in Security Management, Create Token and Download Token in Security Management and User Edit, and the key and keychain management keys, including Assign Keychains to Roles, in Provider Management. Where the server requires the Provider Admin role, it checks the role across the whole deployment, not the role held in one organization. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for the full role-by-keychain mapping.
 
 ## Visibility rules
 
@@ -12303,7 +12303,7 @@ A key has an effect only where something checks it. Two places do:
 - **The server.** On a guarded action, the server resolves the organization of the request and tests whether the user holds the required key there. A missing key returns HTTP 403 with a JSON body. This check is what actually protects the action.
 - **The interface.** The Layer5 Cloud UI reads your effective keys for the organization in context and disables or hides controls for actions you cannot perform.
 
-Not every key is checked in both places. Some security keys are enforced only by the interface: the server does not test Create Token or Delete Token. Changes to keys, keychains, and roles are checked on the server, which also requires the Provider Admin role for the whole deployment. The [Security reference]({{< ref "cloud/reference/security.md" >}}) lists which security keys the server enforces.
+Not every key is checked in both places. Some security keys are enforced only by the interface: the server does not test Delete Token, and tests Create Token only when you approve a desktop app or CLI sign-in. Changes to keys, keychains, and roles are checked on the server, which also requires the Provider Admin role for the whole deployment. The [Security reference]({{< ref "cloud/reference/security.md" >}}) lists which security keys the server enforces.
 
 Because a key grants nothing unless a check names it, a custom key is only a record. Adding one to a keychain and a role changes no behavior anywhere.
 
@@ -13582,12 +13582,13 @@ Each action on the Tokens tab is governed by a [key]({{< ref "cloud/concepts/ide
 
 - **View Tokens**, which opens the Tokens tab, is held by every default user role.
 - **Download Token** is held by User, Team Admin, Workspace Admin and Organization Admin.
-- **Create Token** and **Delete Token** are held by Organization Admin and Provider Admin only. For every other role, the interface disables the create and delete controls.
+- **Create Token** is held by User, Team Admin, Workspace Admin, Organization Admin and Provider Admin.
+- **Delete Token** is held by Organization Admin and Provider Admin only. For every other role, the interface disables the delete control.
 
 Every token action applies only to your own tokens. You cannot list, download or delete another user's token.
 
-{{< alert type="warning" title="Current behavior: Create Token and Delete Token are enforced in the interface only" >}}
-The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not itself check the Create Token or Delete Token keys. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token.
+{{< alert type="warning" title="Current behavior: token create and delete requests are not checked against the keys" >}}
+The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not check the Create Token or Delete Token keys on those requests. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token. Approving a desktop app or CLI sign-in is different: the server requires Create Token in the selected organization.
 {{< /alert >}}
 
 The [security reference]({{< ref "cloud/reference/security.md" >}}) lists every security key and the roles that hold it.

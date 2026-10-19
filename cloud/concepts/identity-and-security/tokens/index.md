@@ -49,7 +49,8 @@ Each action on the Tokens tab is governed by a [key](/cloud/concepts/identity-an
 
 - **View Tokens**, which opens the Tokens tab, is held by every default user role.
 - **Download Token** is held by User, Team Admin, Workspace Admin and Organization Admin.
-- **Create Token** and **Delete Token** are held by Organization Admin and Provider Admin only. For every other role, the interface disables the create and delete controls.
+- **Create Token** is held by User, Team Admin, Workspace Admin, Organization Admin and Provider Admin.
+- **Delete Token** is held by Organization Admin and Provider Admin only. For every other role, the interface disables the delete control.
 
 Every token action applies only to your own tokens. You cannot list, download or delete another user's token.
 
@@ -60,9 +61,9 @@ Every token action applies only to your own tokens. You cannot list, download or
 
 
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
-  <h4 class="alert-heading" style="color: #EBC017;">Current behavior: Create Token and Delete Token are enforced in the interface only</h4>
+  <h4 class="alert-heading" style="color: #EBC017;">Current behavior: token create and delete requests are not checked against the keys</h4>
   
-      The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not itself check the Create Token or Delete Token keys. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token.
+      The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not check the Create Token or Delete Token keys on those requests. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token. Approving a desktop app or CLI sign-in is different: the server requires Create Token in the selected organization.
   
 </div>
 

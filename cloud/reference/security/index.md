@@ -14,7 +14,7 @@ Provider Admin holds every key. The table lists the default holders of the other
 | Key | Governs | Default holders besides Provider Admin | Enforced by |
 | --- | --- | --- | --- |
 | View Tokens | The Tokens tab | User, Team Admin, Workspace Admin, Organization Admin | Interface |
-| Create Token | Creating an API token | Organization Admin | Interface only |
+| Create Token | Creating an API token, and approving a desktop app or CLI sign-in | User, Team Admin, Workspace Admin, Organization Admin | Interface for the Tokens tab; server for approving a desktop app or CLI sign-in |
 | Download Token | Downloading a token file | User, Team Admin, Workspace Admin, Organization Admin | Interface; the server returns only your own tokens |
 | Delete Token | Revoking a token, and the Logout control on the Sessions tab | Organization Admin | Interface only; the server deletes only your own tokens |
 | View Sessions | The Sessions tab | User, Team Admin, Workspace Admin, Organization Admin | Interface |
@@ -28,7 +28,7 @@ Provider Admin holds every key. The table lists the default holders of the other
 | Delete Keychain | Deleting a keychain | None | Interface and server. The server also requires the Provider Admin role. |
 | Assign Keychains to Roles | Adding or removing a keychain on a role | None | Server. The server also requires the Provider Admin role. |
 
-Roles that hold the keys come from the default keychains: View keys sit in User View, Create Token and Delete Token in Security Management, Download Token in Security Management and User Edit, and the key and keychain management keys, including Assign Keychains to Roles, in Provider Management. Where the server requires the Provider Admin role, it checks the role across the whole deployment, not the role held in one organization. See [Roles and Permissions](/cloud/reference/default-permissions/) for the full role-by-keychain mapping.
+Roles that hold the keys come from the default keychains: View keys sit in User View, Delete Token in Security Management, Create Token and Download Token in Security Management and User Edit, and the key and keychain management keys, including Assign Keychains to Roles, in Provider Management. Where the server requires the Provider Admin role, it checks the role across the whole deployment, not the role held in one organization. See [Roles and Permissions](/cloud/reference/default-permissions/) for the full role-by-keychain mapping.
 
 ## Visibility rules
 

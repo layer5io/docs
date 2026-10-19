@@ -9,7 +9,7 @@ An API token lets a script, a CI job, or a Meshery client act as your user accou
 
 ## Before you start
 
-- You need the **Create Token** permission to create a token in the interface. Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.
+- You need the **Create Token** permission to create a token in the interface. User, Team Admin, Workspace Admin, Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.
 - You need **View Tokens** to open the Tokens tab. Every default user role holds it.
 - Decide which consumer gets this token. Create one token per consumer so you can revoke one without breaking the others.
 
