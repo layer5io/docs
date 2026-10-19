@@ -129,7 +129,7 @@ A team can be mapped to more than one organization. Removing a member from one o
 
 | Situation | Result |
 | --- | --- |
-| The person is the organization's owner | Refused with `Organization owner cannot be removed`. Transfer ownership to another administrator first. |
+| The person is the organization's owner | Refused with `Organization owner cannot be removed`. Ownership cannot be transferred, so the owner stays a member for the life of the organization. Promote another member to Organization Admin if you need a second administrator. |
 | An owner tries to remove themselves | Refused: owners cannot leave. Delete the organization instead. |
 | An administrator removes themselves, and is not the owner | Allowed. |
 | The person was never a member | `no organization membership to remove`. |
