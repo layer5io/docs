@@ -1,189 +1,135 @@
-# Integrating Assessments in the Academy
+# Add Assessments
 
 
-> Learn how to spice up the Academy with interactive assessments that keep learners engaged.
+> Add quizzes, tests, and exams to Academy content. Covers the file format, question types, scoring, attempt and time limits, and how a passing result completes a course, learning path, challenge, or certification.
 
 
 
-[Layer5 Cloud Academy](https://cloud.layer5.io/academy/) implements **Learning Paths**, **Challenges**, and **Certifications** to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.
+Assessments gate progress and trigger completion in Academy content. A learner who passes an assessment unlocks the next level of the content, and a learner who passes the final assessment completes the content and receives its badge and, where defined, its certificate. Layer5 Cloud scores every submission on the server and records the result in the learner's grade history.
 
-Think of it as a **botanical garden**:
-- Learning Path = the comprehensive plant collection
-  - Courses = themed sections within the garden
-    - Modules = individual plant exhibits or plots
-- Challenges = the garden competition - focused skill challenges
-- Certifications = master gardener diploma - expertise validation
+This page shows how to write an assessment file and explains how the server treats it. It assumes you have a content repository with a [learning path](/cloud/academy/creating-content/creating-your-learning-path/), [challenge](/cloud/academy/creating-content/building-challenges/), or [certification](/cloud/academy/creating-content/building-certifications/).
 
-Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere - after a single activity, at the end of a module, or as a final course assessment
+## Place assessments at each level
 
-## Why assessments matter:
+Each level of the content hierarchy takes its own kind of assessment. The kinds differ in name only. All three use the same file format.
 
-In Layer5 Academy, assessments are more than just tests; they are integral checkpoints in the learning journey. They provide a structured way to validate understanding and build confidence, serving as a bridge that ensures a learner has mastered key concepts before advancing.
-
-Well-designed assessments are crucial because they:
-
-- **Reinforce Knowledge:** Help lock in new information and improve long-term retention.
-- **Enable Self-Checks:** Allow learners to accurately gauge their own understanding and confirm they are ready to move on to more complex topics.
-- **Provide Instant Feedback:** Offer an immediate opportunity to learn from mistakes, understand why an answer was incorrect, and solidify the correct concepts.
-
-## Key Rules
-
-### 1. Each Level Can Have Assessments
-Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/), to avoid confusion and clearly distinguish between assessment types at each level, we use specific naming conventions:
-- First Level (Root Level): Exam - assesses learning outcomes at root level
-    - Second Level: Test - measures understanding within a course
-      - Third Level: Quiz - short assessments tied to specific modules
+| Level | Assessment | Typical file | Scope |
+| --- | --- | --- | --- |
+| Learning path, challenge, or certification | Exam | `exam.md` | Validates the whole content item |
+| Course | Test | `test.md` | Validates one course |
+| Module | Quiz | `quiz.md` | Checks one module |
 
 ```
-Layer5 Cloud Academy
-├── Learning Path                               → 🎯 Exam
-│      ├── Course 1 (Rose Garden)               → 🎯 Test
-│      │    ├── Module A (Rose Bed 1)           → 🎯 Quiz
-│      │    │   └── [quiz.md]
-│      │    ├── Module B (Rose Bed 2)           → 🎯 Quiz
-│      │    │   └── [quiz.md]
-│      │    └── [test.md]
-│      ├── Course 2  
-│      │    ├── Module A
-│      │    │   └── [quiz.md]
-│      │    ├── Module B
-│      │    │   └── [quiz.md]
-│      │    └── [test.md]
-│      └── [exam.md]
-├── Challenge                                  → 🎯 Exam
-│      └── [exam.md]
-└── Certification                              → 🎯 Exam
-       └── [exam.md]
+Learning path
+├── Course 1
+│   ├── Module A
+│   │   └── quiz.md
+│   ├── Module B
+│   │   └── quiz.md
+│   └── test.md
+├── Course 2
+│   ├── Module A
+│   │   └── quiz.md
+│   └── test.md
+└── exam.md
 ```
 
+Challenges and certifications place their exams directly under the content item. You may use any file names that keep the levels distinguishable, for example `test-for-course.md`.
 
+Each mandatory section needs at least one assessment. A course with no test, or a learning path with no exam, has no event that can mark it complete or award its badge.
 
+## Write an assessment file
 
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Naming Flexibility</h4>
-  
-      You are free to use any naming convention, as long as it&rsquo;s consistent and clearly distinguishes assessment levels.<br>
-For example, filenames like <code>test-for-course.md</code> and <code>test-for-module.md</code> are perfectly acceptable.
-  
-</div>
-
-
-
-### 2. Assessment Quantity Per Level
-
-Each **mandatory section** must contain **at least one assessment**.
-
-Take **Learning Path** as an example:  
-- Learning Path Level: At leat one exam (exam.md)
-- Course Level: At leat one test (test.md)
-- Module Level: At leat one quiz (quiz.md)
-
-### 3. Unified Assessment Structure
-All assessment files follow [the same format](#assessment-file-structure) regardless of which level they're placed in. Whether it's a module quiz or learning path exam, the structure stays consistent.
-
-### 4. Assessment Requirements and Prerequisites
-
-**By default, all assessments are required.** This means learners must pass each assessment to unlock the next level.
-
-Take **Learning Path** as an example:
-- Pass all Module quizzes → Unlock Course test
-- Pass all Course tests → Unlock Learning Path exam
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Passing the Assessment Marks that Level as Completed</h4>
-  
-      Pass <code>course-1/test.md</code> → Course 1 is marked as completed.<br>
-Pass <code>learning-path-name/exam.md</code> → Entire learning path is marked as completed.
-  
-</div>
-
-
-
-**Making assessments optional:**
-
-You can make any assessment **optional** by adding this to its frontmatter:
-  ```yaml
-  isOptional: true
-  ```
-This means the Optional sections are **excluded** from prerequisite checks.
-
-**What this means:**
- - Optional assessments don't block progress.
- - Learners can skip them and still advance.
- - Example: If all modules in a course are optional, learners can go straight to the course test.
-
-## Assessment File Structure
-Each assessment file must contain the following YAML frontmatter:
+An assessment is a Markdown file whose front matter holds the questions. Text after the front matter appears above the questions as orientation for the learner.
 
 ```yaml
 ---
-title: "Assessment Example"
-id: "assessment-id"
-passPercentage: 70
+title: "Kubernetes Basics Quiz"
+id: "quiz-kubernetes-basics"
 type: "test"
 layout: "test"
-isOptional: true
+passPercentage: 70
+timeLimit: 15
+maxAttempts: 3
 final: false
+isOptional: false
 questions:
   - id: "q1"
-    text: "Your question text here"
+    text: "Which object runs one or more containers as a unit?"
     type: "single-answer"
     marks: 2
     options:
       - id: "a"
-        text: "Option A text"
-      - id: "b"
-        text: "Option B text"
+        text: "Pod"
         isCorrect: true
+      - id: "b"
+        text: "Namespace"
+  - id: "q2"
+    text: "Which kubectl command lists all pods?"
+    type: "short-answer"
+    marks: 2
+    correctAnswer: "kubectl get pods"
 ---
+Answer every question. You can retake this quiz.
 ```
 
+Front matter keys are camelCase. The theme still accepts older snake_case keys such as `pass_percentage` and `is_optional` for existing content, but new content should use camelCase.
 
+### Assessment fields
 
+| Field | Required | Behavior |
+| --- | --- | --- |
+| `type` | Yes | Must be `test`. |
+| `layout` | No | Must be `test` when set. |
+| `passPercentage` | Yes | Minimum percentage of total marks needed to pass, for example `70`. |
+| `questions` | Yes | The list of questions. |
+| `title` | No | Name shown to the learner. |
+| `id` | No | Unique identifier. When omitted, the build generates one from the file path. Set a readable, globally unique value such as `quiz-containers` so grade history stays traceable. |
+| `isOptional` | No | When `true`, the assessment does not block progress. See [Required and optional assessments](#required-and-optional-assessments). Default `false`. |
+| `final` | No | When `true`, passing completes the parent section. See [Final assessments](#final-assessments). |
+| `timeLimit` | No | Minutes allowed per attempt. `0` (the default) means no limit. |
+| `maxAttempts` | No | Attempts allowed per learner and registration. `0` means unlimited. |
+| `numberOfQuestions` | No | Number of questions served per attempt when the file holds a larger question bank. The bank size should be a multiple of this value. |
 
+### Question fields
 
+| Field | Required | Behavior |
+| --- | --- | --- |
+| `id` | Yes | Identifier, unique within the assessment, for example `q1`. |
+| `text` | Yes | The question prompt. |
+| `type` | Yes | `single-answer`, `multiple-answers`, or `short-answer`. |
+| `marks` | Yes | Points awarded for a correct answer. |
+| `options` | For choice questions | List of options. Each has an `id`, `text`, and optional `isCorrect: true`. |
+| `correctAnswer` | For `short-answer` | The expected text. |
+| `instructions` | No | Replaces the default hint shown with the question. |
 
+## Question types
 
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Frontmatter naming convention</h4>
-  
-      Quiz frontmatter uses <strong>camelCase</strong> (<code>passPercentage</code>, <code>isOptional</code>, <code>isCorrect</code>, <code>correctAnswer</code>, <code>timeLimit</code>, <code>maxAttempts</code>, <code>numberOfQuestions</code>, <code>caseSensitive</code>, <code>multipleAnswers</code>). Older snake_case keys (e.g., <code>pass_percentage</code>, <code>is_optional</code>) are still accepted by the Hugo theme for backward compatibility but are deprecated; new content should be authored in camelCase to align with the canonical academy quiz schema.
-  
-</div>
+| Type | Learner action | Scored correct when | Default hint |
+| --- | --- | --- | --- |
+| `single-answer` | Selects one option | Exactly one option is selected and it is correct | Select one answer |
+| `multiple-answers` | Selects any number of options | Every correct option is selected and no incorrect option is selected | Select all that apply |
+| `short-answer` | Types text | The text equals `correctAnswer` after trimming whitespace, ignoring case | Type your answer below |
 
+Scoring is all or nothing per question. A `multiple-answers` question gives no partial credit. An unanswered question scores zero.
 
+Short-answer matching is always case-insensitive. Layer5 Cloud has no case-sensitive mode, so write `correctAnswer` as the one canonical form you accept and avoid questions with several valid phrasings.
 
-### Assessment Frontmatter Fields
+For a true or false question, use `single-answer` with two options:
 
-> In this table, fields marked with ✅ are required, while those marked with - are optional.
-
-| Applicable To | Field | Required | Description |
-| :--- | :--- | :--- | :--- |
-| **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
-| | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
-| | `passPercentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
-| | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
-| | `layout` | - | Metadata type for the assessment. The value must be `test`. |
-| | `isOptional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
-| | `timeLimit` | - | Duration of the test in minutes. Use `0` (the default) for no limit. |
-| | `maxAttempts` | - | Maximum number of attempts allowed. Defaults to the number of question sets when a question bank is configured. |
-| | `numberOfQuestions` | - | Size of each question set when the test should draw from a larger question bank. Total questions must be a multiple of this value. |
-| | `final` | - | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
-| | `questions` | ✅  | An array containing one or more question objects.                                                         |
-| **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`).                              |
-| | `text` | ✅  | The text of the question prompt.                                                                          |
-| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers`, `short-answer`, or `true-false`. |
-| | `marks` | ✅  | The number of points awarded for a correct answer.                                                        |
-| | `instructions` | -  | Custom instruction for each question                                                                      |
-| | `options` | - | An array of answer options.                                                                               |
+```yaml
+questions:
+  - id: "q3"
+    text: "A Kubernetes pod can contain multiple containers."
+    type: "single-answer"
+    marks: 1
+    options:
+      - id: "true"
+        text: "True"
+        isCorrect: true
+      - id: "false"
+        text: "False"
+```
 
 
 
@@ -192,258 +138,104 @@ questions:
 
 
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
-  <h4 class="alert-heading" style="color: #EBC017;">Quick heads up</h4>
+  <h4 class="alert-heading" style="color: #EBC017;">Use only the supported types</h4>
   
-      Remember: <code>type: &quot;test&quot;</code> are fixed values that cannot be modified. The system needs these exact words to work properly.
-  
-</div>
-
- 
-
-## Supported Assessment Types
-
-Layer5 Academy supports four question formats:
-
-***Single Choice Questions***
-- Single correct answer
-- True/False questions
-
-<details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: single-answer</code> </summary>
-  
-    ---
-    questions:
-      - id: "question1"
-        text: "Test single choice question"
-        type: "single-answer"             # choose the type
-        marks: 1
-        instructions: "Only one option is correct"
-        options:
-          - id: "a"
-            text: "Option A"
-            isCorrect: true    # correct option
-          - id: "b"
-            text: "Option B"
-    ---
-</code></pre>
-</details>
-
-<details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: true-false</code> </summary>
-
-    ---
-    questions:
-      - id: "question2"
-        text: "Kubernetes Pods can contain multiple containers."
-        type: "true-false"             # choose the type
-        marks: 1
-        options:
-          - id: "true"
-            text: "True"
-            isCorrect: true    # correct option
-          - id: "false"
-            text: "False"
-    ---
-  </code></pre>
-</details>
-
-***Multiple Choice Questions***
-
-- Multiple correct answers  
-
-<details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: multiple-answers</code> </summary>
-  
-    ---
-    questions:
-      - id: "question3"
-        text: "Test multiple choice question"
-        type: "multiple-answers"             # choose the type
-        marks: 2
-        instructions: "More then one answer can be correct"
-        options:
-          - id: "a"
-            text: "Option A"
-            isCorrect: true    # correct option
-          - id: "b"
-            text: "Option B"
-          - id: "c"
-            text: "Option C"
-            isCorrect: true    # correct option
-    ---
-  </code></pre>
-</details>
-
-
-
-***Short Answer Questions***
-
-- Fill-in-the-blank responses  
-- Direct text input
-
-<details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: short-answer</code> </summary>
-
-    ---
-    questions:
-      - id: "question4"
-        text: "In Kubernetes, ___ is the default namespace."
-        type: "short-answer"                # choose the type
-        marks: 2
-        instructions: "Just type the command"
-        correctAnswer: "default"           # expected answer
-
-      - id: "question5"
-        text: "Which kubectl command lists all pods?"
-        type: "short-answer"                # choose the type
-        marks: 2
-        correctAnswer: "kubectl get pods"  # expected answer
-    ---
-</details>
-  
-
-## Post-Frontmatter
-
-After the frontmatter, you can add some content for learner orientation:
-```markdown
----
-questions:
-
----
-This assessment allows you to review your educational progress. Give it a try!
-```
-
-## About Final Exam
-- A **final exam** is the exam that evaluates whether a root section (with mandatory children) is complete.
-- A **final exam** can only be taken after all **mandatory sibling and childern pages** are complete.
-
-### Rules for Final Exam Selection
-1. If **only one exam** exists in a section, it is treated as the **final exam**.
-2. If **multiple exams** exist:
-   * One may be explicitly marked as final using:
-     ```yaml
-     final: true
-     ```
-   * If none are marked, the **last exam** (by file path) is treated as final.
-   * There must be **only one** explicitly marked final exam per section.
-3. A **final exam cannot be optional**.
-   * This applies even when only one exam is present - it cannot have `isOptional: true`.
-
-### Final Exam Determination Logic
-A exam is considered final if:
-- It has `final: true` in its front matter.
-- It is the **only** exam under its parent section.
-- It is the **last exam** (ordered by `File.Path`) among sibling exams, and no other exam is explicitly marked as final. 
-- If any sibling exam is marked as `final: true`, no other exam will be considered final - even if it’s last.
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Why Not Use `weight` to Determine the Final Exam</h4>
-  
-      To ensure the final exam is always clear and uniquely identified, we don&rsquo;t use the <code>weight</code> field, which can be ambiguous (e.g., missing or duplicated across files). Instead, we rely on the file path order as a more stable and reliable standard.
+      The scoring service evaluates <code>single-answer</code>, <code>multiple-answers</code>, and <code>short-answer</code>. A question with any other <code>type</code> is shown but never scores, so a learner cannot earn its marks.
   
 </div>
 
 
 
-## About Instructions
+## Required and optional assessments
 
-Instructions are a way to help or clarify what the question is trying to ask , and user doesnt get confused . 
+Assessments are required by default. A learner must pass every required assessment in a section before the next level unlocks.
 
-Instructions are defaultly defined for each question type : 
-- single-answer: Select one answer
-- multiple-answers: Select all that apply
-- short-answer: Type your answer below
-- true-false: Select True or False
+- Pass all module quizzes to unlock the course test.
+- Pass all course tests to unlock the learning path exam.
+
+Set `isOptional: true` to exclude an assessment from these prerequisite checks. Optional assessments never block progress, and a learner can skip them. If every module in a course is optional, learners go straight to the course test.
+
+When a learner submits a test whose prerequisites are incomplete, the server rejects the submission with `Prerequisites not completed`.
+
+## Final assessments
+
+The final assessment of a section decides when that section is complete. The build selects it with these rules:
+
+1. A section with a single exam treats it as final.
+2. A section with several exams uses the one marked `final: true`. Mark at most one per section.
+3. When no exam is marked, the last exam by file path is final.
+4. A final exam cannot be optional, even when it is the only exam.
+
+The build orders by file path and not by `weight`, because `weight` can be missing or duplicated across files. Name the file that must come last so that it sorts last, or mark it `final: true`.
+
+A learner can take a final exam only after completing every mandatory sibling and child item.
+
+## What passing does
+
+| Result | Effect |
+| --- | --- |
+| Pass any assessment | That assessment is marked completed in the learner's progress. |
+| Pass a final assessment | The parent section is marked completed. |
+| Pass the final assessment of a learning path, challenge, or certification | The registration becomes **Completed**, the content's badge is awarded when one is set, and a certificate is issued and emailed when the content defines one. |
+| Pass a non-final assessment | Only that assessment completes. Passing a course test that is not final does not complete the course. |
+
+Mark the assessment that closes each course or content item `final: true` when a section holds more than one exam, so completion does not depend on file ordering.
+
+A learner can retake an assessment after passing it, subject to `maxAttempts`. The server never blocks a retake because of an earlier score.
+
+## Attempts, time limits, and question banks
+
+Layer5 Cloud applies these limits when a learner starts and submits an attempt.
+
+| Behavior | Rule |
+| --- | --- |
+| Attempt counting | Starting an attempt counts against `maxAttempts`, whether or not the learner submits it. |
+| Attempt limit reached | Starting another attempt fails with `Maximum attempts reached for this test`. |
+| Time limit | The attempt expires `timeLimit` minutes after it starts. A submission after expiry fails with `Test submission has expired`. |
+| Resubmission | A submitted attempt cannot be submitted again. |
+| Ownership | A learner can submit only their own attempt, and only against their own registration. |
+| Payload size | A submission larger than 1 MiB is rejected. |
+
+With `numberOfQuestions` set, the learner receives the next window of questions from the bank on each attempt. Attempt 1 gets questions 1 to N, attempt 2 gets N+1 to 2N, and so on. After the last window, the sequence restarts at question 1. When the bank size is not a multiple of N, the final window is shorter, so keep the bank an exact multiple.
+
+The server never sends correct answers to the learner's browser.
 
 
-Instructions can be override in frontmatter by defining a custom intruction for each question.
 
-<details style="margin-bottom: 1em;">
-  <summary>Examples: <code>Instruction</code> </summary>
 
-    ---
-    questions:
-      - id: "question4"
-        text: "In Kubernetes, ___ is the default namespace."
-        type: "short-answer"                
-        marks: 2
-        instructions: "Just type the command" #custom instruction
-        correctAnswer: "default"           
 
-      questions:                              # will display the default instructions for question type
-      - id: "question3"
-        text: "Test multiple choice question"
-        type: "multiple-answers"             # choose the type
-        marks: 2
-        options:
-          - id: "a"
-            text: "Option A"
-            isCorrect: true    # correct option
-          - id: "b"
-            text: "Option B"
-          - id: "c"
-            text: "Option C"
-            isCorrect: true    # correct option
-    ---
-</details>
+
+
+<div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
+  <h4 class="alert-heading" style="color: #EBC017;">Do not rename or move assessment files after launch</h4>
   
+      The server identifies an assessment by its published path. Renaming or moving the file makes the new path a different assessment. Earlier attempts and passes recorded against the old path no longer count, so attempt limits reset and prerequisites that depended on the old path stay unmet.
+  
+</div>
+
+
 
 ## Scoring
 
-The scoring process is handled automatically by the backend system. As a content creator, your main responsibility is to define the `marks` for each question and the overall `passPercentage` for the assessment. Here is how the system processes the scores:
+The build sums the `marks` of the questions into the assessment's total marks. The server computes:
 
-### How Scores Are Calculated
+```
+percentage = learner's score / total marks * 100
+```
 
-1.  **Total Possible Marks**: The total score for a assessment is automatically calculated by summing the `marks` value of every question within that assessment. You do not need to define this total manually.
-2.  **Learner's Score**: A learner's final score is the sum of the `marks` from all the questions they answered correctly.
-3.  **Pass/Fail Status**: The system calculates the final percentage using the formula `(Learner's Score / Total Possible Marks) * 100`. If this percentage is greater than or equal to the `passPercentage` you set, the assessment is marked as "Passed".
+The attempt passes when the percentage is greater than or equal to `passPercentage`. The saved result holds the score, the percentage, the pass or fail outcome, and which questions the learner got right. Instructors see pass rates in the [Instructor Console](/cloud/academy/instructor-console-guide/).
 
-### Scoring Rules for Question Types
+## Test your assessment
 
-- **Multiple-Choice Questions**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
-- **Short Answer Questions**: The learner's input is compared against the `correctAnswer` field. The comparison is **case-insensitive** by default; set `caseSensitive: true` on a question to require exact case matching. Leading/trailing whitespace is always ignored to avoid penalizing minor typing variations.
+Local preview renders the assessment layout. It does not score. Submission, grading, attempt counting, and completion run on the server, so you must publish a version of your content to test them end to end. Use a dedicated test learner registration in a non-production organization so that pass and completion states do not appear in your real metrics.
 
-### The Result of Scoring
+## Answers to common questions
 
-After an assessment is submitted and scored, a detailed result record is permanently saved to the learner's grade history. If the assessment is a designated test for a Course or an exam for a Learning Path and the result is "Passed", it will trigger the completion of that Course or Learning Path in the learner's progress tracker.
+**Is the `id` required?** No. The build generates one from the file path when you omit it. Set one yourself for traceability.
 
+**Why does every course and learning path need an assessment?** Completion is triggered by passing the final assessment. Without one, nothing marks the level complete or awards its badge.
 
-## Frequently Asked Questions
+**How are `multiple-answers` questions scored?** All or nothing. Selecting a wrong option or missing a correct one scores zero for the question.
 
-<details>
-  <summary>1. Is the <code>id</code> field required in the file's front matter?</summary>
-
-No, the <code>id</code> field is <strong>optional</strong>. If omitted, the system auto-generates a unique ID based on the file path (e.g., <code>7a4af2222daae1111acfac539f657724</code>). However, we strongly recommend specifying a human-readable, globally unique ID (e.g., <code>test-intro-meshery</code>, <code>quiz-containers</code>, <code>test-intro-kubernetes</code>) for better traceability and debugging.
-</details>
-
-<details>
-  <summary>2. Why is an assessment required for every Course and Learning Path?</summary>
-
-The system determines the completion of a Course or Learning Path based on whether the learner passes its designated assessment (e.g., <code>test.md</code>, <code>exam.md</code>). Without this, the system has no trigger to mark the level as completed or to award achievements such as badges. Module-level quizzes are intended for practice and do not trigger parent-level completion.
-
-</details>
-
-<details>
-  <summary>3. Can I fully test the assessment (including scoring) locally?</summary>
-
-You can preview the test layout locally, but scoring and evaluation are handled by the backend server. This means submission, grading, and result processing are not available in local previews. You must publish the content to test full functionality.
-</details>
-
-<details>
-  <summary>4. How are multiple-answer questions scored? Is partial credit given?</summary>
-
-No partial credit is awarded. To receive points, the learner must select all correct options and avoid all incorrect ones. Selecting a wrong option or missing a correct one results in zero marks for that question.
-</details>
-
-<details>
-  <summary>5. Can a learner retake an assessment even after scoring 100%?</summary>
-
-Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows - without enforcing score-based access rules.
-</details>
+**Can a learner retake an assessment after scoring 100%?** Yes, until `maxAttempts` is reached. When `maxAttempts` is `0`, retakes are unlimited.
 

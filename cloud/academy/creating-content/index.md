@@ -56,5 +56,8 @@ You can change the team, access status, end date, workspace, and badge later fro
 - [Create a Learning Path](/cloud/academy/creating-content/creating-your-learning-path/): repository setup, structure, front matter, preview, and publishing, which apply to every content type.
 - [Build a Challenge](/cloud/academy/creating-content/building-challenges/)
 - [Build a Certification](/cloud/academy/creating-content/building-certifications/)
-- [Add Assessments](/cloud/academy/creating-content/integrating-assessments-in-the-academy/) for quiz and exam rules.
+- [Add Assessments](/cloud/academy/creating-content/integrating-assessments-in-the-academy/): quiz, test, and exam files, question types, scoring, and attempt limits.
+- [Use the Content Template Creator](/cloud/academy/creating-content/using-content-template-creator/): the registration flow, the front matter it generates, and the invitation behind each content item.
+- [Extend the Academy](/cloud/academy/creating-content/extending-the-academy/): HTML, CSS, custom shortcodes, embedded designs, and award emails.
+- [Platform Development](/cloud/academy/platform-development/): local preview, theme development, and end-to-end builds.
 

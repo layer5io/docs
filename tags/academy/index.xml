@@ -1,66 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Academy on Layer5 Documentation</title><link>/tags/academy/</link><description>Recent content in Academy on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/academy/index.xml" rel="self" type="application/rss+xml"/><item><title>Extending the Academy</title><link>/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Cloud Academy&lt;/a&gt; is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and &lt;strong&gt;&lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;&lt;/strong&gt; - a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.&lt;/p&gt;
-&lt;p&gt;This approach transforms learning from passive reading into active, hands-on practice.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/cloud/academy/creating-content/extending-the-academy/images/overview_hu_be86832c49259e3b.webp" type="image/webp" width="1534" height="993"&gt;
- &lt;img src="./images/overview.png" onclick="openModal(this)" alt="Example of Academy"
- width="1534" height="993"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id="who-can-create-content" class="heading-link"&gt;
- Who Can Create Content
- &lt;a href="#who-can-create-content" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide takes you through one complete learning journey in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;: you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.&lt;/p&gt;
-&lt;p&gt;You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
-&lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Learning Path = the comprehensive plant collection
-&lt;ul&gt;
-&lt;li&gt;Courses = themed sections within the garden
-&lt;ul&gt;
-&lt;li&gt;Modules = individual plant exhibits or plots&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Challenges = the garden competition - focused skill challenges&lt;/li&gt;
-&lt;li&gt;Certifications = master gardener diploma - expertise validation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere - after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
-creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.&lt;/p&gt;
-
-&lt;h2 id="getting-started" class="heading-link"&gt;
- Getting Started
- &lt;a href="#getting-started" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/contentimg/cloud/academy/creating-content/using-content-template-creator/images/template-creator_hu_7864663dcbca87fe.webp" type="image/webp" width="1674" height="906"&gt;
- &lt;img src="images/template-creator.png" onclick="openModal(this)" alt="Academy Content Template Creator"
- width="1674" height="906"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Access the Creator: Click on the &amp;ldquo;Create New Content&amp;rdquo; card in your Academy dashboard&lt;/li&gt;
-&lt;li&gt;Create Your Content: The wizard will guide you through &lt;strong&gt;5 essential steps&lt;/strong&gt; to create your content template&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Since it&amp;rsquo;s straightforward, let&amp;rsquo;s walk through a practical example to demonstrate the process.&lt;/p&gt;</description></item><item><title>Create a Learning Path</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;A learning path teaches a subject through courses and modules, with assessments that gate progress. You write it as Markdown in your organization&amp;rsquo;s Academy content repository, then publish a version. This page covers the repository, layout, front matter, assets, preview, and publishing that every Academy content type shares. For the credential and assessment differences, see &lt;a href="/cloud/academy/creating-content/building-challenges/"&gt;Build a Challenge&lt;/a&gt; and &lt;a href="/cloud/academy/creating-content/building-certifications/"&gt;Build a Certification&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Academy on Layer5 Documentation</title><link>/tags/academy/</link><description>Recent content in Academy on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/academy/index.xml" rel="self" type="application/rss+xml"/><item><title>Learner Guide</title><link>/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide takes you through one complete learning journey in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;: you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.&lt;/p&gt;
+&lt;p&gt;You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.&lt;/p&gt;</description></item><item><title>Create a Learning Path</title><link>/cloud/academy/creating-content/creating-your-learning-path/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/creating-your-learning-path/</guid><description>&lt;p&gt;A learning path teaches a subject through courses and modules, with assessments that gate progress. You write it as Markdown in your organization&amp;rsquo;s Academy content repository, then publish a version. This page covers the repository, layout, front matter, assets, preview, and publishing that every Academy content type shares. For the credential and assessment differences, see &lt;a href="/cloud/academy/creating-content/building-challenges/"&gt;Build a Challenge&lt;/a&gt; and &lt;a href="/cloud/academy/creating-content/building-certifications/"&gt;Build a Certification&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id="prerequisites" class="heading-link"&gt;
  Prerequisites
@@ -789,5 +728,13 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 &lt;/div&gt;
 
-&lt;p&gt;Opening the console requires the &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.&lt;/p&gt;</description></item><item><title>Academy</title><link>/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is the learning platform built into Layer5 Cloud. Organizations use it to publish structured training on cloud native infrastructure, assess what learners know, and award verifiable badges and certificates. Layer5 Cloud tracks every learner&amp;rsquo;s enrollment, progress, and test results, and gives instructors a console to measure how their content performs.&lt;/p&gt;
-&lt;p&gt;Academy is an Enterprise-tier capability. An organization needs an Academy configuration from Layer5 before it can publish its own content.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Opening the console requires the &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.&lt;/p&gt;</description></item><item><title>Add Assessments</title><link>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;Assessments gate progress and trigger completion in Academy content. A learner who passes an assessment unlocks the next level of the content, and a learner who passes the final assessment completes the content and receives its badge and, where defined, its certificate. Layer5 Cloud scores every submission on the server and records the result in the learner&amp;rsquo;s grade history.&lt;/p&gt;
+&lt;p&gt;This page shows how to write an assessment file and explains how the server treats it. It assumes you have a content repository with a &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;learning path&lt;/a&gt;, &lt;a href="/cloud/academy/creating-content/building-challenges/"&gt;challenge&lt;/a&gt;, or &lt;a href="/cloud/academy/creating-content/building-certifications/"&gt;certification&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Use the Content Template Creator</title><link>/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Content Template Creator is the five-step flow in the Instructor Console that registers a learning path, challenge, or certification and hands you the front matter to start writing it. One run does three things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Creates the content&amp;rsquo;s record in Layer5 Cloud, with status &lt;strong&gt;not ready&lt;/strong&gt;, &lt;strong&gt;public&lt;/strong&gt; visibility, and a generated slug.&lt;/li&gt;
+&lt;li&gt;Creates the invitation that governs who can enroll.&lt;/li&gt;
+&lt;li&gt;Generates the front matter, the content ID, and the organization ID that tie your repository files to that record.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The record is what learners enroll in, what progress and grades attach to, and what the Instructor Console reports on. The front matter is how your repository declares the same content, so the two must carry the same ID.&lt;/p&gt;</description></item><item><title>Academy</title><link>/cloud/academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Academy&lt;/a&gt; is the learning platform built into Layer5 Cloud. Organizations use it to publish structured training on cloud native infrastructure, assess what learners know, and award verifiable badges and certificates. Layer5 Cloud tracks every learner&amp;rsquo;s enrollment, progress, and test results, and gives instructors a console to measure how their content performs.&lt;/p&gt;
+&lt;p&gt;Academy is an Enterprise-tier capability. An organization needs an Academy configuration from Layer5 before it can publish its own content.&lt;/p&gt;</description></item><item><title>Extend the Academy</title><link>/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;Academy content is Markdown in your organization&amp;rsquo;s Git repository, built with Hugo into your organization&amp;rsquo;s Academy. Markdown covers most lessons. When a lesson needs a custom layout, a reusable component, or a live design, you extend the content in your own repository without touching the shared theme.&lt;/p&gt;
+&lt;p&gt;This page covers what you can extend and the limits of each extension. It assumes a working content repository. If you do not have one yet, start with &lt;a href="/cloud/academy/creating-content/creating-your-learning-path/"&gt;Create a Learning Path&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

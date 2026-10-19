@@ -1,320 +1,114 @@
-# Using Academy Content Template Creator
+# Use the Content Template Creator
+
+
+> Register Academy content with the Content Template Creator, copy the front matter and identifiers it generates into your repository, and control who can enroll through the content's invitation.
 
 
 
+The Content Template Creator is the five-step flow in the Instructor Console that registers a learning path, challenge, or certification and hands you the front matter to start writing it. One run does three things:
 
-The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
-creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.
+1. Creates the content's record in Layer5 Cloud, with status **not ready**, **public** visibility, and a generated slug.
+2. Creates the invitation that governs who can enroll.
+3. Generates the front matter, the content ID, and the organization ID that tie your repository files to that record.
 
+The record is what learners enroll in, what progress and grades attach to, and what the Instructor Console reports on. The front matter is how your repository declares the same content, so the two must carry the same ID.
 
-## Getting Started
-![Academy Content Template Creator](images/template-creator.png)
-1. Access the Creator: Click on the "Create New Content" card in your Academy dashboard
-2. Create Your Content: The wizard will guide you through **5 essential steps** to create your content template
+## Prerequisites
 
-Since it's straightforward, let's walk through a practical example to demonstrate the process.
+- The **View Academy Metrics** permission, held by Academy Admin, Organization Admin, and Provider Admin. See [Roles and Permissions](/cloud/reference/default-permissions/).
+- A workspace and a team to assign. You can type a new workspace name instead of picking an existing one. The team must already exist.
+- Optional: a badge to award on completion. The Recognition step can create one.
 
-## Example: Creating "Meshery Contributors Certification"
+## Run the creator
 
-This example demonstrates how to use the **Academy Content Template Creator** to build a **certification** program for **Meshery contributors**. Each step shows what information to enter, followed by specific example values.
+The field list, with the behavior of each field, is in [Create Academy Content](/cloud/academy/creating-content/#register-content-in-the-console). Three details matter when you run it.
 
-### Step 1: Basic Information
-![Step 1: Basic Information](images/template-creator-step1.png)
-- Type: Choose "Certification" from Learning Path, Challenge, or Certification
-- Title: "Meshery Contributors Certification"
-- Description: "A comprehensive certification program for developers looking to become active contributors to Meshery"
+- **Team accepts one value.** The team you pick is added to the invitation, and learners join it when they enroll.
+- **Access status** sets the invitation to enabled or disabled. It defaults to enabled. A disabled invitation blocks enrollment. See [How the invitation controls enrollment](#how-the-invitation-controls-enrollment).
+- **Content Access End Date** sets the invitation's expiry. Leave it empty for no expiry.
 
-### Step 2: Content Details
-![Step 2: Content Details](images/template-creator-step2.png)
-<!-- - Level: Intermediate (assumes basic cloud-native knowledge) -->
-- Categories: "open-source, cloud-native"
-- Add Tags: "meshery", "kubernetes", "golang", "contribution", "open-source"
-- Banner Image: "images/meshery-contributors-banner.svg"
+![Screenshot of the Academy content creation flow in the Instructor Console](images/template-creator.png)
 
-### Step 3: Content Access
-![Step 3: Content Access](images/template-creator-step3.png)
-- Workspace: "Meshery Academy"
-- Team: "Contributors Program"
-- Access Status: Enabled
-- Content Access End Date: Leave blank for permanent access (Meshery always welcomes contributors)
+The creator writes the record when you advance from Recognition to Generate Template. You can go back to earlier steps and the entries you made stay in place, but advancing to the last step again creates another record with a new content ID and a new invitation. Use the ID on the final screen of your last run, and treat any earlier record as unused.
 
-**Understanding Access Status: Enabled vs Disabled**
+## The generated front matter
 
-The Access Status setting in Step 3 controls the visibility and accessibility of your Academy content to users.
-
-**Enabled Status Behavior:**
-- **Visible**: Content appears in Academy catalogs and search results
-- **Accessible**: Users with proper permissions can view and interact with the content
-- **Active**: All features work normally (enrollment, progress tracking, badge awarding)
-- **Discoverable**: Content shows up in filtered searches and category browsing
-
-**Disabled Status Behavior:**
-- **Hidden**: Content does not appear in public Academy catalogs
-- **Inaccessible**: Users cannot access the content even with direct links
-- **Inactive**: No progress tracking or badge awarding occurs
-- **Non-discoverable**: Content is excluded from search results and browsing
-
-**For the Meshery Contributors Certification example:**
-
-*If Enabled:*
-- Contributors can immediately find and enroll in the certification
-- Progress tracking begins upon enrollment
-- Badge is awarded upon successful completion
-- Content appears in the Contributors Program workspace
-
-*If Disabled:*
-- Certification is hidden from the Contributors Program
-- No new enrollments possible
-- Existing progress is paused
-- Content remains invisible until re-enabled
-
-### Step 4: Recognition
-![Step 4: Recognition](images/template-creator-step4.png)
-
-The Recognition step defines the badge or certificate awarded upon completion. You have two options:
-- **Use Existing Recognition**: Choose from the Layer5 collection
-- **Create New Recognition**: Design a custom badge with an image URL
-
-**For our example:**
-- Create a "Meshery Contributor" badge with the Meshery logo
-
-
-### Step 5: Generate Template
-![Step 5: Generate Template](images/template-creator-step5.png)
-
-After clicking "Continue" in Step 4, a success notification appears in the bottom-right corner confirming your template has been created successfully.
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Navigation Between Steps</h4>
-  
-      You can navigate back to any previous step to make modifications. When you return to earlier steps and make changes, your entries in the subsequent steps will remain intact.
-  
-</div>
-
-
-
-
-**Generated Template Output for Meshery Contributors Certification:**
-
-This template provides the YAML front matter metadata for static site generators (like Hugo/Jekyll). After copying it, we can directly create new content files in our Academy repository.
+The last step shows the front matter with a copy button, followed by the content ID and your organization ID. For a certification titled "Meshery Contributors Certification", the output has this shape:
 
 ```yaml
 ---
 type: "certification"
 title: "Meshery Contributors Certification"
-description: "A comprehensive certification program for developers looking to become active contributors to Meshery"
+description: "A certification for developers who contribute to Meshery"
 weight: 1
 banner: "images/meshery-contributors-banner.svg"
-id: "unique-content-id"
+id: "7c0f6a3e-2b1d-4c58-9d0e-5a1b2c3d4e5f"
+tags: ["meshery", "kubernetes", "golang"]
+categories: "open-source, cloud-native"
 level: "beginner"
+# competencies:
+#   - title: "Domain Name"
+#     percentage: 25
+#     items:
+#       - "Competency item 1"
+# prerequisite_knowledge:
+#   - title: "Prerequisite Title"
+#     url: "https://example.com/resource"
+#     description: "Brief description of the prerequisite"
 ---
-
-Provide a brief summary of what learners will gain.
+A certification for developers who contribute to Meshery.
 <!-- Add your Academy content here -->
 ```
 
+| Key | Source | Notes |
+| --- | --- | --- |
+| `type` | Content type | `learning-path`, `challenge`, or `certification`. |
+| `title`, `description` | Basic Information | Also appear on the catalog card. |
+| `weight` | Fixed at `1` | Change it to order the content among its siblings. |
+| `banner` | Content Details | Present only when you entered a banner. The path is relative to the folder that holds the content's index file. |
+| `id` | Generated | The content ID. It links your files to the record. |
+| `tags`, `categories` | Content Details | Present only when you entered values. |
+| `level` | The content record | Always reads `beginner` at creation, whatever difficulty you picked. Set it to `beginner`, `intermediate`, or `advanced` yourself. |
+| `competencies`, `prerequisite_knowledge` | Commented samples | Uncomment and fill them in to describe what an exam covers and what learners should know first. |
+
+Paste the output into the content's index file in your repository, inside the directory named for your organization ID. Then write the content as described in [Create a Learning Path](/cloud/academy/creating-content/creating-your-learning-path/).
 
 
 
 
 
 
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Important Reference IDs</h4>
+
+<div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
+  <h4 class="alert-heading" style="color: #EBC017;">Never change the content ID after learners enroll</h4>
   
-      <p>Make note of two key identifiers for your content files:</p>
-<ul>
-<li><strong>Content ID</strong>: Unique identifier for this specific content</li>
-<li><strong>Organization ID</strong>: Your organization&rsquo;s identifier (remains constant)</li>
-</ul>
-  
-</div>
-
-
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Content ID Updates</h4>
-  
-      If you click &ldquo;Back&rdquo; and return to Step 5, a new Content ID will be generated. Simply use the new ID and discard the previous one.
+      Registrations, progress, grades, and certificates are recorded against the content ID. Changing the <code>id</code> in your repository orphans the existing learners&rsquo; progress.
   
 </div>
 
 
 
-### Next Steps
+## How the invitation controls enrollment
 
-After generating our template:
+Every content record created in an organization other than the provider organization has an invitation attached. Enrolling in the content accepts that invitation for the learner, and acceptance is where access is decided.
 
-1. **Copy the Template**: Use the provided copy button to get your front matter
-2. **Create Your Content File**: Paste the template into a new .md file in your academy repository
-3. **Add Your Content**: Replace the placeholder comment with your actual learning material
+| Invitation setting | Value the creator sets | Effect on a learner who enrolls |
+| --- | --- | --- |
+| Name | `Academy Invitation for <slug>`, using the generated slug | Identifies the invitation in the organization's invitation list. |
+| Role | Academy Learner | Assigned in the organization if the learner does not hold it. |
+| Team | The team you picked | The learner is added to it if not already a member. |
+| Status | Your Access status | A disabled invitation blocks enrollment. |
+| Expiry | Your Content Access End Date | Checked at enrollment. Once it passes, new learners cannot enroll. Learners who already enrolled keep their role and team membership. |
+| Email list | Empty | Anyone who is signed in can accept. Add exact addresses or `@domain` entries to restrict it. |
+| Quota | Empty | Unlimited. A quota blocks enrollment once that many people have accepted. |
 
+Acceptance is idempotent. A learner who accepts twice gains no duplicate membership or role, and the invitation counts them once.
 
-## Manage Invitation
+When an enrollment hits a disabled, expired, full, or email-restricted invitation, the request fails with a server error. The registration is recorded before the invitation is evaluated, so the learner appears in the Learners view without having joined the organization or team. Fix the invitation, then have the learner enroll again.
 
-### Auto-Generated Invitations
-Navigate to **Identity → Invitations** to find your automatically created invitation.
-![](images/auto-invitation.png)
+You can change the team, access status, and end date later from the Curricula view of the [Instructor Console](/cloud/academy/instructor-console-guide/). Editing the invitation itself, to set a quota or restrict the email list, follows the [invitation guide](/cloud/guides/organizations/inviting-users/). To bring in a co-instructor, create an invitation with the Academy Admin role instead of Academy Learner.
 
-The first column labeled "INVITATION" contains a shareable link that you can copy.
+## Content owned by the provider organization
 
-## What Can the Invitation Link Do for You?
-
-The auto-generated invitation link is a powerful tool that helps instructors efficiently manage learner access and streamline the enrollment process.
-
-### 1. Precise Team Access Control
-
-Your invitation link provides targeted access management:
-
-- **Specific Team Access**: Only members of your selected teams can access the content through this link
-- **Automatic Role Assignment**: Users who accept the invitation automatically receive the "Academy Learner" role
-- **Organization Boundary Protection**: Only users within your [organization](https://docs.layer5.io/cloud/concepts/identity-and-security/organizations/) can use this invitation
-
-### 2. Flexible Sharing and Distribution
-
-**Automated Email Distribution:**
-- The system automatically sends invitation emails to specified team members
-- Emails include course descriptions and one-click access links
-- Reduces your manual notification workload and ensures consistent messaging
-
-**Direct Sharing Options:**
-- Copy and send the invitation link directly to team members
-- Share through collaboration tools like Slack, Microsoft Teams, or Discord
-- Embed the link in internal documentation, wikis, or learning portals
-
-
-### Customize Invitation Properties
-
-Click the pencil icon to access the invitation customization form.
-![](images/auto-invitation-details.png)
-
-The invitation form contains eight properties. Three are automatically generated by the system for convenience, which you can modify according to your needs:
-
-**Auto-Generated Properties:**
-1. **Name**: Automatically formatted as "Academy Invitation for [your-content-name]"
-   *Example: "Academy Invitation for meshery-contributors-certification" (lowercase with dash)*
-2. **Description**: "Invitation to join organization [organization-name] for academy curricula [course-name]"
-3. **Roles**: Defaults to "Academy Learner" - [Learn more about Academy roles](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/academy-roles/)
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Admin Role Invitations</h4>
-  
-      Academy admins can invite other instructors to become co-admins by changing the <strong>Roles</strong> property from &ldquo;Academy Learner&rdquo; to &ldquo;Academy Admin&rdquo; during invitation customization.
-  
-</div>
-
-
-
-**Customizable Properties:**
-
-### 1. Emails - Invitation Email List
-
-Configure who receives the invitation:
-
-- **Supported Formats:**
-  - Individual emails: `test@domain.com`
-  - Domain-wide invitations: `@domain.com` (invites all users from that domain)
-- **Duplicate Handling**: The system automatically merges duplicate entries
-- **Quantity Recommendations:**
-  - Small team invitations: 10-50 email addresses
-  - Department-level invitations: 100-200 email addresses
-  - Large organizations: Use domain wildcards like `@company.com` instead of listing individual emails
-
-### 2. Expires At - Expiration Settings
-
-Control when the invitation expires:
-
-- **Flexibility**: Supports any time setting, extension, and recovery. Leave blank for permanent access
-- **What happens at expiration?**
-  - Expiration is only checked when users attempt to accept the invitation
-  - If the expiration time has passed, users cannot proceed with the invitation
-  - Expiration check compares server current time vs. set expiration time
-- **Can I modify expired invitations?**
-  - Yes, you can recover and extend expiration times by entering edit mode
-
-### 3. Quota - Usage Limits
-
-Set limits on how many users can accept the invitation:
-
-- **When quota is exceeded:**
-  - Operates on a first-accept, first-in basis
-  - Users beyond the quota cannot join, even with a valid invitation link
-- **Recovery options:**
-  - If quota is reached, you can increase the quota to restore access
-  - Admin console provides real-time usage monitoring
-
-### 4. Teams - Team Assignment List
-
-Specify which teams invited users will join:
-
-- **Team Selection**: Choose from available teams via dropdown menu
-- **Multiple Teams**: You can assign users to multiple teams
-- **No Teams Available**: If your organization has no teams, [create them](https://docs.layer5.io/cloud/concepts/identity-and-security/teams/) first. Users will be added to all successfully configured teams
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Team Structure Changes</h4>
-  
-      <p><strong>During Organization Restructuring:</strong></p>
-<ul>
-<li>If team structure changes after invitations are sent</li>
-<li>Some teams may be merged or deleted</li>
-<li>New users can still join remaining valid teams</li>
-</ul>
-<p><strong>Permission Management Updates:</strong></p>
-<ul>
-<li>Team permission policies may change</li>
-<li>Some teams might close to new users</li>
-<li>Other teams continue accepting new members normally</li>
-</ul>
-
-  
-</div>
-
-
-
-### 5. Status - Enabled/Disabled
-
-Control invitation accessibility:
-
-- **Enabled**: Invitation functions normally
-- **Disabled**: If users open a disabled invitation link, they can choose to "Retry" or "Go to Dashboard"
-
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Invitation Idempotency</h4>
-  
-      Users only need to accept one invitation, regardless of how many invitation emails they receive. Once accepted, additional invitations to the same user are automatically ignored.
-  
-</div>
-
-
+Content created while the console is scoped to all organizations belongs to the provider organization. It has no attached invitation, so enrollment accepts nothing and grants no team or role.
 
