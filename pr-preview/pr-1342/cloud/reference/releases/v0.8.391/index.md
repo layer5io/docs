@@ -1,0 +1,16 @@
+# v0.8.391
+
+date: 2025-08-16
+
+
+
+## 💻 Server
+
+- log email in developement mode @aabidsofi19 (#3969)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

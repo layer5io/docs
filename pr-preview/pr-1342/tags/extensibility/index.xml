@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extensibility on Layer5 Documentation</title><link>/pr-preview/pr-1342/tags/extensibility/</link><description>Recent content in Extensibility on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1342/tags/extensibility/index.xml" rel="self" type="application/rss+xml"/><item><title>Cloud API</title><link>/pr-preview/pr-1342/cloud/reference/api-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1342/cloud/reference/api-reference/</guid><description>&lt;p&gt;The Layer5 Cloud REST API lets you build integrations, retrieve data, and automate your infrastructure. This page states the conventions every endpoint shares: base URL, authentication, organization context, pagination, and errors. For the list of endpoints, see the &lt;a href="/pr-preview/pr-1342/cloud/reference/api-reference/rest/"&gt;REST API Reference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="base-url" class="heading-link"&gt;
+ Base URL
+ &lt;a href="#base-url" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Every endpoint lives under &lt;code&gt;/api&lt;/code&gt; on the host of your Layer5 Cloud deployment.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Deployment&lt;/th&gt;
+ &lt;th&gt;Base URL&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Hosted Layer5 Cloud&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;https://cloud.layer5.io/api&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Self-hosted&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;https://&amp;lt;your-cloud-host&amp;gt;/api&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="authentication" class="heading-link"&gt;
+ Authentication
+ &lt;a href="#authentication" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Authenticate with a &lt;a href="/pr-preview/pr-1342/cloud/concepts/identity-and-security/tokens/"&gt;security token&lt;/a&gt;. Send it as a bearer token in the &lt;code&gt;Authorization&lt;/code&gt; header:&lt;/p&gt;</description></item><item><title>API Reference</title><link>/pr-preview/pr-1342/cloud/reference/api-reference/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1342/cloud/reference/api-reference/rest/</guid><description/></item></channel></rss>
