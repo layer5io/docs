@@ -46,6 +46,8 @@ The Connect wizard has seven stages. You can start it from the Integrations area
 | Add Workflows | Commits the snapshot workflow to the repository. | Optional |
 | Finish | Summarizes what was imported and which repositories received the workflow. | Yes |
 
+If you open the GitHub card's connection count before you have connected, the **GitHub Connections** window reads "No GitHub connections yet". Click **Connect GitHub** there to start the wizard, or follow **Learn how the GitHub integration works** to return to this guide.
+
 The three optional stages are covered in [Visualize Pull Requests with Kanvas Snapshot](/kanvas/guides/snapshots/kanvas-snapshot/).
 
 ### What you can import
@@ -66,15 +68,62 @@ Layer5 Cloud accepts files with these extensions: `.yml`, `.yaml`, `.json`, `.ta
 
 - **One design per file.** The design is named after the file, including its extension.
 - **Private by default.** The importing user owns it. Publish or share it when you are ready. See [Publish Designs](/kanvas/guides/designs/publishing-designs/).
-- **Traceable to its source.** The design records its repository, path, and branch.
+- **Placed in your selected workspace.** From Layer5 Cloud v1.0.291, each new design is added to the workspace selected in your current organization, or to the organization's first workspace when none is selected, so it shows in My Designs.
+- **Traceable to its source.** The design records its repository, path, and branch. Renaming the design does not break that link.
 - **Directories import recursively.** Selecting a directory imports every supported file beneath it.
 - **Failures are per file.** An unsupported or invalid file produces an error entry and does not stop the other files. The result screen lists what succeeded and what failed.
 
-Imported designs appear in [My Designs](https://cloud.layer5.io/catalog/content/my-designs).
+Imported designs appear in [My Designs](https://cloud.layer5.io/catalog/content/my-designs). After the import, a notification sums up the result, for example `2 designs imported, 1 updated, 3 already imported and skipped.`
+
+### Import from a repository again
+
+When you run the wizard again for a repository you have imported from, for example with **Reconfigure** on the GitHub card, files you already imported carry a check mark. Hover over it to see which design the file became, for example `Imported as "nginx-deployment"`. If you have nothing new to import, click **Next** without importing.
+
+A file is matched to its design by repository, path and branch, never by name. When your selection includes files you imported before, Layer5 Cloud asks what to do with them before importing. The prompt lists the files, up to five followed by "and N more", and offers three choices:
+
+| Choice | What happens to the previously imported files |
+| --- | --- |
+| **Import new files only** (default) | They are left as they are. Only files that were never imported become new designs. |
+| **Update the existing designs** | Each design's content is replaced with the file's current content. The design keeps its ID, sharing and links. Edits made to it since the last import are lost. |
+| **Import them again as new designs** | Additional designs are created alongside the existing ones. |
+
+Click **Import** to proceed with your choice, or **Cancel** to change the selection. A file selected both on its own and through its directory is imported once.
+
+### See where a design came from
+
+In the table view of My Designs, the **Source** column shows the repository and file path of each imported design, followed by the branch when it is not the repository's default. Hover over it to see the full source, or click it to open the file on GitHub. The cell is empty for a design that was not imported from GitHub. The column appears on large screens.
+
+An imported design's details page has a **Source** section below the left panel that lists the repository, which links to the file on GitHub, the file path and the branch ("Default branch" when the design follows the repository's default branch). The source stays with the design when you edit it, so later imports and refreshes still recognize it.
 
 ### Large repositories
 
 Layer5 Cloud scans a repository by reading its full file tree from GitHub and keeps the result for five minutes. GitHub truncates the tree for very large repositories. When that happens, the file list is partial and Cloud answers with HTTP status 206. If a file you need is missing, select its directory or import it directly.
+
+## Manage imported designs {#manage-imported-designs}
+
+From Layer5 Cloud v1.0.291, your GitHub connection lists every design you have imported from GitHub, with actions to open each one or bring it up to date with its file.
+
+1. On the Integrations area of Spaces in Layer5 Cloud, click the GitHub card's connection count to open **GitHub Connections**.
+1. Click your connection to expand it. **Imported designs** lists your imported designs, newest first:
+
+    | Column | Shows |
+    | --- | --- |
+    | **Design** | The design's name. |
+    | **Type** | The format the design was imported from, or `-` when it is not known. |
+    | **Source** | The repository, file path and, when it is not the default, branch the design was imported from. Click it to open the file on GitHub. |
+    | **Last updated** | When the design last changed. |
+    | **Actions** | **Open design** opens the design in My Designs. **Open source file on GitHub** opens the file in a new tab. **Refresh from source** updates the design from the file. |
+
+The list shows only your own designs, and only you can see it on your connection. It includes every design you imported from GitHub, whatever its workspace, so designs imported before Layer5 Cloud v1.0.291 are listed here until you move them to a workspace. When you have not imported any designs yet, it reads "No imported designs yet" and offers **Import designs**, which reopens the wizard. If the list cannot be loaded, it reads "Imported designs could not be loaded"; click **Try again**.
+
+### Refresh a design from its source
+
+When a file changes in its repository, refresh the design instead of importing the file again:
+
+1. In **Imported designs**, click **Refresh from source** on the design's row. The action appears only if your role holds Import Design.
+1. Confirm with **Refresh**. The design's content is replaced with the file's current content on GitHub, and changes made to the design since it was imported or last refreshed are lost.
+
+The refresh updates the same design, so it keeps its ID, owner, visibility, catalog data, workspace assignments and links. Only its content and source change. A design that was not imported as a Meshery design keeps its source file unconverted and is converted the next time you open it.
 
 ## Check or reconfigure the connection
 
@@ -106,6 +155,10 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
 | The wizard shows **Re-authorize your GitHub connection** | The connection predates installation confirmation. | Click **Re-authorize**. See [Re-authorize an existing connection](#re-authorize-an-existing-connection). |
 | The connection vanished | The App was uninstalled from every account it was connected through. | Run the wizard again. |
 | `unable to create JWT for GitHub integration, please uninstall app and try again` | The deployment cannot sign requests as the GitHub App. | On the hosted service, uninstall and reinstall the App. On a self-hosted deployment, check the GitHub App credentials in the deployment settings. |
+| **Refresh from source** fails because the source file no longer exists | The file was moved, renamed or deleted in its repository. | Import the file from its new location. |
+| **Refresh from source** fails because the file is not importable | The file is no longer a valid Helm chart, Kubernetes manifest, Docker Compose file or Meshery design. | Fix the file in its repository and refresh again. |
+| **Refresh from source** fails because the App cannot reach the repository | The GitHub App no longer has access to the repository. | Reconfigure the connection with **Add Repository** and grant the App access to the repository. |
+| **Refresh from source** fails because GitHub could not be reached | GitHub was unreachable, rate-limited the request or rejected the App's credentials. | Retry in a few minutes, and reconfigure the connection if the problem persists. |
 | `Workflow already exists, try deleting it first at ./.github/workflows/kanvas.yml` | GitHub refused to write the snapshot workflow. | See the troubleshooting table in [Visualize Pull Requests with Kanvas Snapshot](/kanvas/guides/snapshots/kanvas-snapshot/). |
 
 ## Permissions
@@ -114,6 +167,7 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
 | --- | --- |
 | See the Integrations area | View Connections |
 | Run the wizard, scan, and import | Signed in. The server checks no permission key for these routes. |
+| Refresh an imported design from its source | Own the design and hold Import Design |
 | Delete the connection | Own the connection and hold Delete a connection |
 
 
@@ -132,7 +186,7 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
 
 <div class="feature-tiers">
 <table class="feature-tiers-table keys-matrix">
-  <caption>Connection permissions by role</caption>
+  <caption>Connection and import permissions by role</caption>
   <thead>
     <tr>
       <th scope="col">Permission</th>
@@ -328,6 +382,248 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+      <th scope="row">Import Design</th>
+      <td>Import a design</td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+      
+      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
+      
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
