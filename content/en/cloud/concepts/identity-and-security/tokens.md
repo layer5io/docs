@@ -58,7 +58,7 @@ Each action on the Tokens tab is governed by a [key]({{< ref "cloud/concepts/ide
 Every token action applies only to your own tokens. You cannot list, download or delete another user's token.
 
 {{< alert type="warning" title="Current behavior: token create and delete requests are not checked against the keys" >}}
-The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not check the Create Token or Delete Token keys on those requests. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token. Approving a desktop app or CLI sign-in is different: the server requires Create Token in the selected organization.
+The Layer5 Cloud server allows any signed-in user to create and delete their own tokens through the API. It does not check the Create Token or Delete Token keys on those requests. Withholding those keys hides the controls in the interface; it does not prevent a user from minting a token. Approving a desktop app or CLI sign-in is different: the server requires Create Token in at least one organization you belong to. The organization you have selected, or the one a custom domain belongs to, does not matter, so a member of a child organization can approve a sign-in on its parent's custom domain.
 {{< /alert >}}
 
 The [security reference]({{< ref "cloud/reference/security.md" >}}) lists every security key and the roles that hold it.
