@@ -51,7 +51,7 @@ A key has an effect only where something checks it. Two places do:
 - **The server.** On a guarded action, the server resolves the organization of the request and tests whether the user holds the required key there. A missing key returns HTTP 403 with a JSON body. This check is what actually protects the action.
 - **The interface.** The Layer5 Cloud UI reads your effective keys for the organization in context and disables or hides controls for actions you cannot perform.
 
-Not every key is checked in both places. Some security keys are enforced only by the interface: the server does not test Create Token or Delete Token. Changes to keys, keychains, and roles are checked on the server, which also requires the Provider Admin role for the whole deployment. The [Security reference]({{< ref "cloud/reference/security.md" >}}) lists which security keys the server enforces.
+Not every key is checked in both places. Some security keys are enforced only by the interface: the server does not test Delete Token, and tests Create Token only when you approve a desktop app or CLI sign-in. Changes to keys, keychains, and roles are checked on the server, which also requires the Provider Admin role for the whole deployment. The [Security reference]({{< ref "cloud/reference/security.md" >}}) lists which security keys the server enforces.
 
 Because a key grants nothing unless a check names it, a custom key is only a record. Adding one to a keychain and a role changes no behavior anywhere.
 
