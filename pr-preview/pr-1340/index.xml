@@ -57,122 +57,14 @@
  2. Adding Videos to Your Category
  &lt;a href="#2-adding-videos-to-your-category" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Extending the Academy</title><link>/pr-preview/pr-1340/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Cloud Academy&lt;/a&gt; is a modular learning management system (LMS) designed for building learning paths and interactive, hands-on challenges. It is deeply integrated into the Layer5 cloud ecosystem and &lt;strong&gt;&lt;a href="https://kanvas.new/"&gt;Kanvas&lt;/a&gt;&lt;/strong&gt; - a visual designer for cloud native infrastructure. This integration allows you to embed live visualizations, interactive designs, and contextual experiences directly into your courses.&lt;/p&gt;
-&lt;p&gt;This approach transforms learning from passive reading into active, hands-on practice.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/pr-preview/pr-1340/contentimg/cloud/academy/creating-content/extending-the-academy/images/overview_hu_be86832c49259e3b.webp" type="image/webp" width="1534" height="993"&gt;
- &lt;img src="./images/overview.png" onclick="openModal(this)" alt="Example of Academy"
- width="1534" height="993"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id="who-can-create-content" class="heading-link"&gt;
- Who Can Create Content
- &lt;a href="#who-can-create-content" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;The ability to create, manage, and publish content is available to organizations on our &lt;strong&gt;Enterprise Plan&lt;/strong&gt;. This plan includes full support for:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/pr-preview/pr-1340/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide takes you through one complete learning journey in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;: you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.&lt;/p&gt;
-&lt;p&gt;You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.&lt;/p&gt;</description></item><item><title>User Management</title><link>/pr-preview/pr-1340/cloud/guides/organizations/managing-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/organizations/managing-users/</guid><description>&lt;p&gt;This guide outlines methods for creating user accounts, adding users to organizations, inviting new members, and managing user access within Layer5 Cloud to maintain a secure and organized environment.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/pr-preview/pr-1340/contentimg/cloud/guides/organizations/managing-users/images/org_invite_hu_8dc70b7353643a06.webp" type="image/webp" width="2260" height="982"&gt;
- &lt;img src="images/org_invite.png" onclick="openModal(this)" alt="User Management options"
- width="2260" height="982"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id="create-user-account" class="heading-link"&gt;
- Create User Account
- &lt;a href="#create-user-account" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;Seamlessly initiate new user accounts, ensuring a smooth onboarding process. Specify user details, such as email, and tailor their access by adding them to one or more organizations. Optionally assign roles, defining their scope within the platform. Complete the process by sending a personalized account setup email, streamlining the user&amp;rsquo;s introduction to Layer5 Cloud.&lt;/p&gt;</description></item><item><title>User Invitations</title><link>/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
-&lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
-
-
-
-
-
-
-&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
- &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Required permission&lt;/h4&gt;
- 
- From Layer5 Cloud v1.0.293, creating, editing, and deleting invitations requires the &lt;strong&gt;Manage Invitations&lt;/strong&gt; permission within your organization. That one permission also covers choosing the roles and teams an invitation grants, so anyone who can write an invitation, Academy Admins included, can specify its roles. Contact your organization administrator if you need access.
- 
-&lt;/div&gt;
-
-
-
-&lt;h3 id="default-organization-state" class="heading-link"&gt;
- Default organization state
- &lt;a href="#default-organization-state" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;By default, organizations are &lt;strong&gt;closed&lt;/strong&gt;: there is no open registration. A user cannot join your organization simply by navigating to a URL - they must either click a valid invitation link or register through a page associated with an organization that has a &lt;a href="/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/#invitation-properties-explained"&gt;default invitation&lt;/a&gt; configured.&lt;/p&gt;</description></item><item><title>Integrating Assessments in the Academy</title><link>/pr-preview/pr-1340/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;&lt;a href="https://cloud.layer5.io/academy/"&gt;Layer5 Cloud Academy&lt;/a&gt; implements &lt;strong&gt;Learning Paths&lt;/strong&gt;, &lt;strong&gt;Challenges&lt;/strong&gt;, and &lt;strong&gt;Certifications&lt;/strong&gt; to enrich the learner experience. We support multi-level assessments to guide and evaluate progress. The content structure is hierarchical and modular, enabling scalable learning design.&lt;/p&gt;
-&lt;p&gt;Think of it as a &lt;strong&gt;botanical garden&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Learning Path = the comprehensive plant collection
-&lt;ul&gt;
-&lt;li&gt;Courses = themed sections within the garden
-&lt;ul&gt;
-&lt;li&gt;Modules = individual plant exhibits or plots&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Challenges = the garden competition - focused skill challenges&lt;/li&gt;
-&lt;li&gt;Certifications = master gardener diploma - expertise validation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Our assessment strategy is like conducting growth check-ins throughout the garden. As a content developer, you have the flexibility to place assessments anywhere - after a single activity, at the end of a module, or as a final course assessment&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/pr-preview/pr-1340/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.&lt;/p&gt;</description></item><item><title>Platform Development Guide</title><link>/pr-preview/pr-1340/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/platform-development/</guid><description>&lt;p&gt;This guide walks you through the Layer5 Academy platform&amp;rsquo;s multi-repository architecture. You will learn the role of each core component and master the practical workflows for theme development, local testing, and end-to-end validation with Layer5 Cloud.&lt;/p&gt;
-
-&lt;h2 id="the-multi-repository-model" class="heading-link"&gt;
- The Multi-Repository Model
- &lt;a href="#the-multi-repository-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;The &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy platform&lt;/a&gt; is built on a &amp;ldquo;separation of concerns&amp;rdquo; architecture. Instead of a single monolithic repository, we use a multi-repository model where content, style, and build configurations are managed independently. This approach keeps the system modular, simplifies maintenance, and allows teams to work on different parts of the platform concurrently.&lt;/p&gt;</description></item><item><title>Account Consolidation</title><link>/pr-preview/pr-1340/cloud/concepts/identity-and-security/users/account-consolidation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/concepts/identity-and-security/users/account-consolidation/</guid><description>&lt;p&gt;Layer5 Cloud recognizes one account per verified email address, no matter which method you use to sign in.&lt;/p&gt;
+&lt;p&gt;There are two approaches for adding videos:&lt;/p&gt;</description></item><item><title>Learner Guide</title><link>/pr-preview/pr-1340/cloud/academy/using-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/using-the-academy/</guid><description>&lt;p&gt;This guide takes you through one complete learning journey in the &lt;a href="https://cloud.layer5.io/academy"&gt;Layer5 Academy&lt;/a&gt;: you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.&lt;/p&gt;
+&lt;p&gt;You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.&lt;/p&gt;</description></item><item><title>Collaborative Editing</title><link>/pr-preview/pr-1340/kanvas/tutorials/collaborative-editing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/tutorials/collaborative-editing/</guid><description>&lt;p&gt;In this tutorial, you and a teammate work on the same design at the same time. You save a design, share it, watch your teammate join as a live collaborator, edit together, and run a short review in a comment thread. Along the way you learn the four separate mechanisms behind collaboration in Kanvas: the live session, access, comments, and saving. Each one explains a different part of what you see.&lt;/p&gt;</description></item><item><title>Account Consolidation</title><link>/pr-preview/pr-1340/cloud/concepts/identity-and-security/users/account-consolidation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/concepts/identity-and-security/users/account-consolidation/</guid><description>&lt;p&gt;Layer5 Cloud recognizes one account per verified email address, no matter which method you use to sign in.&lt;/p&gt;
 
 &lt;h2 id="what-changed" class="heading-link"&gt;
  What changed
  &lt;a href="#what-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Previously, signing in with email/password, GitHub, or Google could each create a &lt;strong&gt;separate&lt;/strong&gt; account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &amp;ldquo;disappear&amp;rdquo; when you signed in with another.&lt;/p&gt;</description></item><item><title>Using Academy Content Template Creator</title><link>/pr-preview/pr-1340/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your Academy content. This generator streamlines the process of
-creating learning paths, challenges, and certifications by collecting all necessary metadata and generating a ready-to-use template.&lt;/p&gt;
-
-&lt;h2 id="getting-started" class="heading-link"&gt;
- Getting Started
- &lt;a href="#getting-started" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;
-
-
-
-
-&lt;div class="md__image"&gt;
- &lt;picture&gt;
- &lt;source srcset="/pr-preview/pr-1340/contentimg/cloud/academy/creating-content/using-content-template-creator/images/template-creator_hu_7864663dcbca87fe.webp" type="image/webp" width="1674" height="906"&gt;
- &lt;img src="images/template-creator.png" onclick="openModal(this)" alt="Academy Content Template Creator"
- width="1674" height="906"
- class="md-image-responsive" /&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Access the Creator: Click on the &amp;ldquo;Create New Content&amp;rdquo; card in your Academy dashboard&lt;/li&gt;
-&lt;li&gt;Create Your Content: The wizard will guide you through &lt;strong&gt;5 essential steps&lt;/strong&gt; to create your content template&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Since it&amp;rsquo;s straightforward, let&amp;rsquo;s walk through a practical example to demonstrate the process.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/pr-preview/pr-1340/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
+&lt;p&gt;Previously, signing in with email/password, GitHub, or Google could each create a &lt;strong&gt;separate&lt;/strong&gt; account, even when they shared the same email address. This led to a confusing experience: designs, organizations, and workspaces created under one sign-in method would appear to &amp;ldquo;disappear&amp;rdquo; when you signed in with another.&lt;/p&gt;</description></item><item><title>Add and Configure Components</title><link>/pr-preview/pr-1340/kanvas/guides/designing/configuring-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/configuring-components/</guid><description>&lt;p&gt;A component is one piece of infrastructure in a design, and its configuration is what Kanvas applies when you deploy. This guide covers placing components on the canvas, editing their configuration, and moving them around by duplicating, copying, and pasting.&lt;/p&gt;
 &lt;p&gt;You need a design open in Designer mode. Designer is the only mode that allows authoring.&lt;/p&gt;
 
 &lt;h2 id="add-a-component" class="heading-link"&gt;
@@ -3089,7 +2981,8 @@ creating learning paths, challenges, and certifications by collecting all necess
 
 &lt;/div&gt;
 
-&lt;p&gt;Opening the console requires the &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/pr-preview/pr-1340/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
+&lt;p&gt;Opening the console requires the &lt;strong&gt;View Academy Metrics&lt;/strong&gt; permission in the selected organization. Without it, the console shows a missing-permission message that names the permission.&lt;/p&gt;</description></item><item><title>Manage Users</title><link>/pr-preview/pr-1340/cloud/guides/organizations/managing-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/organizations/managing-users/</guid><description>&lt;p&gt;The Users page is where administrators manage the people in an organization. It lists the organization&amp;rsquo;s members and carries the actions that put people into the organization, change what they can do, and take them out. This guide covers each action, who can run it, and what it changes.&lt;/p&gt;
+&lt;p&gt;To bring in people who do not have an account yet, or to let a group join without administrator action, use &lt;a href="/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/"&gt;Invite Users&lt;/a&gt;. For what a user account is and how membership and roles combine, read the &lt;a href="/pr-preview/pr-1340/cloud/concepts/identity-and-security/users/"&gt;Users concept&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/pr-preview/pr-1340/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
 
 &lt;h2 id="health-endpoints" class="heading-link"&gt;
  Health endpoints
@@ -3781,7 +3674,8 @@ creating learning paths, challenges, and certifications by collecting all necess
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Layer5 Cloud creates &lt;strong&gt;My Workspace&lt;/strong&gt; in any organization that has no workspace.&lt;/p&gt;</description></item><item><title>Use ConfigMaps and Secrets</title><link>/pr-preview/pr-1340/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;p&gt;In this tutorial you design a MySQL Pod that takes its database name from a ConfigMap and its root password from a Secret, deploy it to a cluster, and prove from inside the container that each value arrived. Separating configuration and credentials from the container image is how one image runs unchanged in every environment, and knowing exactly how Kubernetes delivers those values tells you why a changed setting sometimes reaches a running container and sometimes does not.&lt;/p&gt;</description></item><item><title>Deploy AWS EC2 Instances</title><link>/pr-preview/pr-1340/kanvas/tutorials/deploy-aws-ec2-instances-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/tutorials/deploy-aws-ec2-instances-with-meshery/</guid><description>&lt;p&gt;In this tutorial you create a VPC network and EC2 instances in your AWS account without leaving Kanvas. You deploy three designs from the catalog, in order, to your own Kubernetes cluster: a controller that talks to AWS, a VPC network, and the EC2 instances that run inside it. Each AWS resource is a Kubernetes custom resource in the design, and a controller in the cluster turns that resource into real infrastructure.&lt;/p&gt;</description></item><item><title>Designer</title><link>/pr-preview/pr-1340/kanvas/concepts/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/concepts/designer/</guid><description>&lt;p&gt;Designer mode is where you author a Kanvas design. You compose infrastructure from versioned components, configure each one against its schema, connect components with relationships, annotate the result, and validate or deploy it, all on one canvas that every collaborator edits at the same time. Designer works on intent: what you want to run. &lt;a href="/pr-preview/pr-1340/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt; works on live state: what is running.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud creates &lt;strong&gt;My Workspace&lt;/strong&gt; in any organization that has no workspace.&lt;/p&gt;</description></item><item><title>Add Assessments</title><link>/pr-preview/pr-1340/cloud/academy/creating-content/integrating-assessments-in-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/creating-content/integrating-assessments-in-the-academy/</guid><description>&lt;p&gt;Assessments gate progress and trigger completion in Academy content. A learner who passes an assessment unlocks the next level of the content, and a learner who passes the final assessment completes the content and receives its badge and, where defined, its certificate. Layer5 Cloud scores every submission on the server and records the result in the learner&amp;rsquo;s grade history.&lt;/p&gt;
+&lt;p&gt;This page shows how to write an assessment file and explains how the server treats it. It assumes you have a content repository with a &lt;a href="/pr-preview/pr-1340/cloud/academy/creating-content/creating-your-learning-path/"&gt;learning path&lt;/a&gt;, &lt;a href="/pr-preview/pr-1340/cloud/academy/creating-content/building-challenges/"&gt;challenge&lt;/a&gt;, or &lt;a href="/pr-preview/pr-1340/cloud/academy/creating-content/building-certifications/"&gt;certification&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Use ConfigMaps and Secrets</title><link>/pr-preview/pr-1340/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/</guid><description>&lt;p&gt;In this tutorial you design a MySQL Pod that takes its database name from a ConfigMap and its root password from a Secret, deploy it to a cluster, and prove from inside the container that each value arrived. Separating configuration and credentials from the container image is how one image runs unchanged in every environment, and knowing exactly how Kubernetes delivers those values tells you why a changed setting sometimes reaches a running container and sometimes does not.&lt;/p&gt;</description></item><item><title>Deploy AWS EC2 Instances</title><link>/pr-preview/pr-1340/kanvas/tutorials/deploy-aws-ec2-instances-with-meshery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/tutorials/deploy-aws-ec2-instances-with-meshery/</guid><description>&lt;p&gt;In this tutorial you create a VPC network and EC2 instances in your AWS account without leaving Kanvas. You deploy three designs from the catalog, in order, to your own Kubernetes cluster: a controller that talks to AWS, a VPC network, and the EC2 instances that run inside it. Each AWS resource is a Kubernetes custom resource in the design, and a controller in the cluster turns that resource into real infrastructure.&lt;/p&gt;</description></item><item><title>Designer</title><link>/pr-preview/pr-1340/kanvas/concepts/designer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/concepts/designer/</guid><description>&lt;p&gt;Designer mode is where you author a Kanvas design. You compose infrastructure from versioned components, configure each one against its schema, connect components with relationships, annotate the result, and validate or deploy it, all on one canvas that every collaborator edits at the same time. Designer works on intent: what you want to run. &lt;a href="/pr-preview/pr-1340/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt; works on live state: what is running.&lt;/p&gt;
 &lt;figure&gt;
  &lt;img src="images/designer-dock.png" alt="Kanvas Designer workspace with the bottom dock of authoring tools, the Layers panel open, and the Share control in the header" /&gt;
  &lt;figcaption&gt;Designer: the bottom dock holds the tools for adding components and annotations, and the Layers panel controls what the canvas draws.&lt;/figcaption&gt;
@@ -3864,14 +3758,47 @@ creating learning paths, challenges, and certifications by collecting all necess
  Browse the catalog
  &lt;a href="#browse-the-catalog" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The catalog shows every published design from every organization. Two layouts show the same results:&lt;/p&gt;</description></item><item><title>Pin Models to the Dock</title><link>/pr-preview/pr-1340/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
+&lt;p&gt;The catalog shows every published design from every organization. Two layouts show the same results:&lt;/p&gt;</description></item><item><title>Invite Users</title><link>/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/</guid><description>&lt;p&gt;An invitation is a link that lets people join one organization, with the roles and teams you choose, under limits you set: who may accept, how many may accept, when it stops working, and what accepting does. The same mechanism powers your organization&amp;rsquo;s open sign-up. This guide covers creating and managing invitations, what happens when someone accepts, and the separate direct invite for a single new person.&lt;/p&gt;
+&lt;p&gt;Layer5 Cloud has two ways to bring a person in:&lt;/p&gt;</description></item><item><title>Pin Models to the Dock</title><link>/pr-preview/pr-1340/kanvas/guides/designing/pin-model-to-dock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/pin-model-to-dock/</guid><description>&lt;p&gt;Pinning a model puts its icon in the dock at the bottom of the canvas, so you can reach its components without opening the full palette. Pins belong to your account. They are not stored per design or in the browser, so they follow you across designs, browsers, and devices.&lt;/p&gt;
 &lt;p&gt;Pinning works in Designer mode. In Operator mode the dock does not show pinned models.&lt;/p&gt;
 
 &lt;h2 id="pin-a-model" class="heading-link"&gt;
  Pin a model
  &lt;a href="#pin-a-model" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Hover a model row in the component palette and use the pin icon. Its tooltip reads &amp;ldquo;Pin To Dock&amp;rdquo;. The shape palette offers the same pin on each shape category row.&lt;/p&gt;</description></item><item><title>Tool Modes</title><link>/pr-preview/pr-1340/kanvas/reference/tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/reference/tool-modes/</guid><description>&lt;p&gt;The canvas has four tool modes. The mode decides what a mouse drag does: move an object, pan the view, draw freehand or draw a connecting line. Select is the default. This page lists how to enter and leave each mode, what every mouse gesture does in it, and the wheel and zoom controls that work in all of them.&lt;/p&gt;
+&lt;p&gt;Hover a model row in the component palette and use the pin icon. Its tooltip reads &amp;ldquo;Pin To Dock&amp;rdquo;. The shape palette offers the same pin on each shape category row.&lt;/p&gt;</description></item><item><title>Platform Development</title><link>/pr-preview/pr-1340/cloud/academy/platform-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/platform-development/</guid><description>&lt;p&gt;The Academy is assembled from separate repositories for content, theme, and build. This page shows how to preview content on your machine, how to change the theme and see the result on real content, and how to run a production-like build before you publish. Most authors need only the first workflow. Theme development and end-to-end builds are for contributors to the platform itself.&lt;/p&gt;
+
+&lt;h2 id="how-the-repositories-fit-together" class="heading-link"&gt;
+ How the repositories fit together
+ &lt;a href="#how-the-repositories-fit-together" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Repository&lt;/th&gt;
+ &lt;th&gt;Role&lt;/th&gt;
+ &lt;th&gt;Who touches it&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Content repository, such as the &lt;code&gt;academy-example&lt;/code&gt; starter or an organization&amp;rsquo;s own repository&lt;/td&gt;
+ &lt;td&gt;Your learning paths, challenges, and certifications, plus the workflow that announces a new version&lt;/td&gt;
+ &lt;td&gt;Content authors&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;academy-theme&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Layouts, colors, fonts, and the standard shortcodes. Content repositories import it as a Go module, so you never fork it to author content.&lt;/td&gt;
+ &lt;td&gt;Platform contributors&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;academy-build&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;The Hugo configuration for the production build. It pins the version of the theme and of every content module.&lt;/td&gt;
+ &lt;td&gt;Platform maintainers&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The path from a content change to a live Academy has three stages:&lt;/p&gt;</description></item><item><title>Tool Modes</title><link>/pr-preview/pr-1340/kanvas/reference/tool-modes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/reference/tool-modes/</guid><description>&lt;p&gt;The canvas has four tool modes. The mode decides what a mouse drag does: move an object, pan the view, draw freehand or draw a connecting line. Select is the default. This page lists how to enter and leave each mode, what every mouse gesture does in it, and the wheel and zoom controls that work in all of them.&lt;/p&gt;
 
 &lt;h2 id="modes-at-a-glance" class="heading-link"&gt;
  Modes at a glance
@@ -5939,7 +5866,13 @@ creating learning paths, challenges, and certifications by collecting all necess
  Where Operator data comes from
  &lt;a href="#where-operator-data-comes-from" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kanvas does not talk to your clusters directly. Four pieces sit between a cluster and the canvas:&lt;/p&gt;</description></item><item><title>Troubleshoot Email Delivery</title><link>/pr-preview/pr-1340/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;p&gt;Layer5 Cloud sends two kinds of mail. &lt;strong&gt;Application mail&lt;/strong&gt; (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization&amp;rsquo;s own mail server when one is turned on, and otherwise through the &lt;strong&gt;shared mail server&lt;/strong&gt; you configure in the chart&amp;rsquo;s &lt;code&gt;smtp&lt;/code&gt; values. &lt;strong&gt;Identity mail&lt;/strong&gt; (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See &lt;a href="/pr-preview/pr-1340/cloud/guides/self-hosted/planning/#mail"&gt;Plan a Deployment&lt;/a&gt;. This guide helps you find which of those paths is failing and why.&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/pr-preview/pr-1340/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
+&lt;p&gt;Kanvas does not talk to your clusters directly. Four pieces sit between a cluster and the canvas:&lt;/p&gt;</description></item><item><title>Troubleshoot Email Delivery</title><link>/pr-preview/pr-1340/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;p&gt;Layer5 Cloud sends two kinds of mail. &lt;strong&gt;Application mail&lt;/strong&gt; (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization&amp;rsquo;s own mail server when one is turned on, and otherwise through the &lt;strong&gt;shared mail server&lt;/strong&gt; you configure in the chart&amp;rsquo;s &lt;code&gt;smtp&lt;/code&gt; values. &lt;strong&gt;Identity mail&lt;/strong&gt; (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See &lt;a href="/pr-preview/pr-1340/cloud/guides/self-hosted/planning/#mail"&gt;Plan a Deployment&lt;/a&gt;. This guide helps you find which of those paths is failing and why.&lt;/p&gt;</description></item><item><title>Use the Content Template Creator</title><link>/pr-preview/pr-1340/cloud/academy/creating-content/using-content-template-creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/creating-content/using-content-template-creator/</guid><description>&lt;p&gt;The Content Template Creator is the five-step flow in the Instructor Console that registers a learning path, challenge, or certification and hands you the front matter to start writing it. One run does three things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Creates the content&amp;rsquo;s record in Layer5 Cloud, with status &lt;strong&gt;not ready&lt;/strong&gt;, &lt;strong&gt;public&lt;/strong&gt; visibility, and a generated slug.&lt;/li&gt;
+&lt;li&gt;Creates the invitation that governs who can enroll.&lt;/li&gt;
+&lt;li&gt;Generates the front matter, the content ID, and the organization ID that tie your repository files to that record.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The record is what learners enroll in, what progress and grades attach to, and what the Instructor Console reports on. The front matter is how your repository declares the same content, so the two must carry the same ID.&lt;/p&gt;</description></item><item><title>Work with Tags</title><link>/pr-preview/pr-1340/kanvas/guides/designing/tagsets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/kanvas/guides/designing/tagsets/</guid><description>&lt;p&gt;Tags are the key-value labels and annotations on a component. When components share matching labels, Kanvas groups them in a TagSet, a shaded region drawn around the matching components. Use tags to see which components belong together, such as the Service and Deployment of one application.&lt;/p&gt;
 
 &lt;h2 id="add-labels-and-annotations" class="heading-link"&gt;
  Add labels and annotations
@@ -5951,7 +5884,8 @@ creating learning paths, challenges, and certifications by collecting all necess
 &lt;li&gt;&lt;strong&gt;Access&lt;/strong&gt; - the design&amp;rsquo;s visibility and its grant list decide who can open and change the design.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Conversation (comments)&lt;/strong&gt; - comment threads that live inside the design itself.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The three layers are independent. A live session forms between whoever has the design open at the same time. Access decides who can open the design in the first place. Comments are part of the design&amp;rsquo;s content, so they follow the design wherever it goes. Keeping these layers apart in your head explains most of what you see when a team works on one design.&lt;/p&gt;</description></item><item><title>Keychains</title><link>/pr-preview/pr-1340/cloud/concepts/identity-and-security/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/concepts/identity-and-security/keychains/</guid><description>&lt;p&gt;A keychain is a named bundle of keys. It sits between the single permission and the role a person holds:&lt;/p&gt;
+&lt;p&gt;The three layers are independent. A live session forms between whoever has the design open at the same time. Access decides who can open the design in the first place. Comments are part of the design&amp;rsquo;s content, so they follow the design wherever it goes. Keeping these layers apart in your head explains most of what you see when a team works on one design.&lt;/p&gt;</description></item><item><title>Extend the Academy</title><link>/pr-preview/pr-1340/cloud/academy/creating-content/extending-the-academy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/academy/creating-content/extending-the-academy/</guid><description>&lt;p&gt;Academy content is Markdown in your organization&amp;rsquo;s Git repository, built with Hugo into your organization&amp;rsquo;s Academy. Markdown covers most lessons. When a lesson needs a custom layout, a reusable component, or a live design, you extend the content in your own repository without touching the shared theme.&lt;/p&gt;
+&lt;p&gt;This page covers what you can extend and the limits of each extension. It assumes a working content repository. If you do not have one yet, start with &lt;a href="/pr-preview/pr-1340/cloud/academy/creating-content/creating-your-learning-path/"&gt;Create a Learning Path&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Keychains</title><link>/pr-preview/pr-1340/cloud/concepts/identity-and-security/keychains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/concepts/identity-and-security/keychains/</guid><description>&lt;p&gt;A keychain is a named bundle of keys. It sits between the single permission and the role a person holds:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A &lt;a href="/pr-preview/pr-1340/cloud/concepts/identity-and-security/keys/"&gt;key&lt;/a&gt; allows one action, such as Create Token.&lt;/li&gt;
 &lt;li&gt;A keychain groups related keys, such as everything needed to manage teams.&lt;/li&gt;
@@ -6003,7 +5937,8 @@ creating learning paths, challenges, and certifications by collecting all necess
  What each mode trades away
  &lt;a href="#what-each-mode-trades-away" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Kanvas has four render modes. Each of the first three gives up something the mode above it draws.&lt;/p&gt;</description></item><item><title>Sessions</title><link>/pr-preview/pr-1340/cloud/concepts/identity-and-security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/concepts/identity-and-security/sessions/</guid><description>&lt;p&gt;A session is the credential Layer5 Cloud issues each time someone signs in. It is what keeps a browser tab, a second device, or a connected Meshery Server signed in, and it is what you end when you want one of those sign-ins to stop working. Sessions expire on their own; API tokens do not.&lt;/p&gt;
+&lt;p&gt;Kanvas has four render modes. Each of the first three gives up something the mode above it draws.&lt;/p&gt;</description></item><item><title>Review Access Requests</title><link>/pr-preview/pr-1340/cloud/guides/organizations/access-requests/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/guides/organizations/access-requests/</guid><description>&lt;p&gt;An access request is a person asking for access to a Layer5 product capability, such as Kanvas. Layer5 Cloud collects these as &lt;strong&gt;signup requests&lt;/strong&gt; in a queue. A Provider Admin reviews the queue, then approves or denies each request. Approval grants the requester Kanvas access and, for someone without an account, creates one.&lt;/p&gt;
+&lt;p&gt;This guide covers who can review requests, what the queue shows, and exactly what approval and denial do. It describes the queue that ships today. Layer5 Cloud has no general request flow for access to a specific design, workspace, or environment, and a denial does not restrict any resource. See &lt;a href="/pr-preview/pr-1340/cloud/guides/organizations/access-requests/#what-this-does-not-cover"&gt;What this does not cover&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Sessions</title><link>/pr-preview/pr-1340/cloud/concepts/identity-and-security/sessions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/concepts/identity-and-security/sessions/</guid><description>&lt;p&gt;A session is the credential Layer5 Cloud issues each time someone signs in. It is what keeps a browser tab, a second device, or a connected Meshery Server signed in, and it is what you end when you want one of those sign-ins to stop working. Sessions expire on their own; API tokens do not.&lt;/p&gt;
 
 &lt;h2 id="one-session-per-sign-in" class="heading-link"&gt;
  One session per sign-in
@@ -6277,7 +6212,37 @@ creating learning paths, challenges, and certifications by collecting all necess
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/pr-preview/pr-1340/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.294</title><link>/pr-preview/pr-1340/cloud/reference/releases/v1.0.294/</link><pubDate>Mon, 19 Oct 2026 03:01:37 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/reference/releases/v1.0.294/</guid><description>&lt;ul&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/pr-preview/pr-1340/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.296</title><link>/pr-preview/pr-1340/cloud/reference/releases/v1.0.296/</link><pubDate>Mon, 19 Oct 2026 04:19:32 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/reference/releases/v1.0.296/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(invitations): child organizations start with the inviting organization&amp;rsquo;s branding (childOrganizationBranding) @leecalcote (#6252)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.295</title><link>/pr-preview/pr-1340/cloud/reference/releases/v1.0.295/</link><pubDate>Mon, 19 Oct 2026 03:44:28 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/reference/releases/v1.0.295/</guid><description>&lt;h2 id="-server" class="heading-link"&gt;
+ 💻 Server
+ &lt;a href="#-server" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(tokens): filter GET /api/identity/tokens by purpose @leecalcote (#6253)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(tokens): filter GET /api/identity/tokens by purpose @leecalcote (#6253)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.294</title><link>/pr-preview/pr-1340/cloud/reference/releases/v1.0.294/</link><pubDate>Mon, 19 Oct 2026 03:01:37 +0000</pubDate><guid>/pr-preview/pr-1340/cloud/reference/releases/v1.0.294/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(tokens): default isOauth to false when omitted @leecalcote (#6249)&lt;/li&gt;
 &lt;li&gt;fix(invitations): child_organization places a registrant at sign-up; direct_membership waits for verification; verified accounts become active @leecalcote (#6241)&lt;/li&gt;
 &lt;/ul&gt;

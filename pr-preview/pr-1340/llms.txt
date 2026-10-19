@@ -117,21 +117,10 @@
 ## Layer5 Cloud Documentation
 - [Layer5 Cloud Documentation](/pr-preview/pr-1340/cloud/index.md): What Layer5 Cloud does for Kanvas and Meshery, what it leaves to Meshery Server, and where to start.
 
-- [Extending the Academy](/pr-preview/pr-1340/cloud/academy/creating-content/extending-the-academy/index.md): A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
-
 - [Learner Guide](/pr-preview/pr-1340/cloud/academy/using-the-academy/index.md): Walk through the Layer5 Academy as a learner: find content, enroll, work through a learning path, pass its assessments, and earn a badge or certificate.
-
-- [User Management](/pr-preview/pr-1340/cloud/guides/organizations/managing-users/index.md): Learn how to create, add, invite, and manage users within Layer5 Cloud.
-
-- [User Invitations](/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/index.md): Learn how to create custom, secure, and flexible invitations for new members.
-
-- [Integrating Assessments in the Academy](/pr-preview/pr-1340/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
-
-- [Platform Development Guide](/pr-preview/pr-1340/cloud/academy/platform-development/index.md): An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
 
 - [Account Consolidation](/pr-preview/pr-1340/cloud/concepts/identity-and-security/users/account-consolidation/index.md): Layer5 Cloud resolves email/password, GitHub sign-in, and Google sign-in to a single account per verified email address.
 
-- [Using Academy Content Template Creator](/pr-preview/pr-1340/cloud/academy/creating-content/using-content-template-creator/index.md): The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your …
 - [Create and Use an API Token](/pr-preview/pr-1340/cloud/guides/security/api-tokens/index.md): Create an API token, hand it to a script or CI job, rotate it without downtime, and revoke it.
 
 - [Bring Your Own Mail Server](/pr-preview/pr-1340/cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md): Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
@@ -180,6 +169,8 @@
 
 - [Instructor Console](/pr-preview/pr-1340/cloud/academy/instructor-console-guide/index.md): Every view, metric, and action in the Academy Instructor Console: who can open it, how each number is calculated, and what instructors can manage.
 
+- [Manage Users](/pr-preview/pr-1340/cloud/guides/organizations/managing-users/index.md): Add, create, edit, and remove the people in an organization, change their roles, and understand what each action revokes and what it bills.
+
 - [Monitoring](/pr-preview/pr-1340/cloud/guides/self-hosted/planning/monitoring/index.md): What a self-hosted Layer5 Cloud deployment exposes for monitoring: health endpoints, logs and error codes, startup signals, and OpenTelemetry traces.
 - [Start from a Catalog Design](/pr-preview/pr-1340/cloud/getting-started/creating-a-design-from-template/index.md): Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
 - [Manage Subscriptions and Billing](/pr-preview/pr-1340/cloud/guides/account/managing-subscriptions/index.md): See your organization's subscriptions, start or upgrade a paid plan, cancel at the end of a billing period, and understand how the billable user count and proration work.
@@ -187,7 +178,13 @@
 - [Support](/pr-preview/pr-1340/cloud/reference/support/index.md): The support channels for Layer5 Cloud, what each Layer5 plan includes, and what the in-product support form sends.
 - [Workspace and Environment Reference](/pr-preview/pr-1340/cloud/reference/workspaces-and-environments/index.md): Defaults, limits, scope, permissions by operation, responses, and deletion effects for workspaces and environments.
 
+- [Add Assessments](/pr-preview/pr-1340/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Add quizzes, tests, and exams to Academy content. Covers the file format, question types, scoring, attempt and time limits, and how a passing result completes a course, learning path, challenge, or certification.
+
 - [Find and Use Catalog Designs](/pr-preview/pr-1340/cloud/guides/exploring-the-catalog/index.md): Search the catalog, read a design's details, open it in the Playground, clone it into your workspace, and manage the catalog entries you own.
+
+- [Invite Users](/pr-preview/pr-1340/cloud/guides/organizations/inviting-users/index.md): Bring people into an organization with invitation links or a direct invite, control who can accept and what they receive, and revoke access.
+
+- [Platform Development](/pr-preview/pr-1340/cloud/academy/platform-development/index.md): Preview Academy content locally, develop the Academy theme against real content, and run an end-to-end build before you publish. Includes how the Academy repositories fit together.
 
 - [Workspaces](/pr-preview/pr-1340/cloud/concepts/workspaces/index.md): A workspace groups teams, environments, designs, and views inside one organization, and decides which connections a team can reach.
 
@@ -199,7 +196,13 @@
 
 - [Troubleshoot Email Delivery](/pr-preview/pr-1340/cloud/guides/self-hosted/operating/smtp/index.md): Diagnose why a self-hosted Layer5 Cloud is not sending mail: the shared mail server's requirements, what the server checks at startup, how to test delivery, how mail is routed, and what each error code means.
 
+- [Use the Content Template Creator](/pr-preview/pr-1340/cloud/academy/creating-content/using-content-template-creator/index.md): Register Academy content with the Content Template Creator, copy the front matter and identifiers it generates into your repository, and control who can enroll through the content's invitation.
+
+- [Extend the Academy](/pr-preview/pr-1340/cloud/academy/creating-content/extending-the-academy/index.md): Go beyond plain Markdown in your Academy content with inline HTML and CSS, organization-specific Hugo shortcodes, embedded Kanvas designs, and branded award emails.
+
 - [Keychains](/pr-preview/pr-1340/cloud/concepts/identity-and-security/keychains/index.md): How keychains group keys into reusable bundles for roles in Layer5 Cloud, who owns and can change a keychain, and what a change to a keychain affects.
+
+- [Review Access Requests](/pr-preview/pr-1340/cloud/guides/organizations/access-requests/index.md): Review, approve, and deny signup requests for product access, and learn what an approval or a denial changes.
 
 - [Sessions](/pr-preview/pr-1340/cloud/concepts/identity-and-security/sessions/index.md): How long a Layer5 Cloud sign-in lasts, what ends it, how the browser stores it, and how sessions differ from API tokens.
 
@@ -207,6 +210,8 @@
 
 - [Tokens](/pr-preview/pr-1340/cloud/concepts/identity-and-security/tokens/index.md): An API token is a long-lived credential that authenticates scripts, pipelines and Meshery clients to Layer5 Cloud as your user account. It never expires and ends only when you delete it.
 
+- [v1.0.296](/pr-preview/pr-1340/cloud/reference/releases/v1.0.296/index.md):  feat(invitations): child organizations start with the inviting organization&rsquo;s branding …
+- [v1.0.295](/pr-preview/pr-1340/cloud/reference/releases/v1.0.295/index.md):  💻 Server 🔗 fix(tokens): filter GET /api/identity/tokens by purpose @leecalcote (#6253) 🐛 Bug Fixes 🔗 fix(tokens): …
 - [v1.0.294](/pr-preview/pr-1340/cloud/reference/releases/v1.0.294/index.md):  fix(tokens): default isOauth to false when omitted @leecalcote (#6249) fix(invitations): child_organization places a …
 - [v1.0.293](/pr-preview/pr-1340/cloud/reference/releases/v1.0.293/index.md):  fix(server): authorize invitation writes, validate their roles and teams, and restrict the events aggregate @jijillery …
 - [v1.0.292](/pr-preview/pr-1340/cloud/reference/releases/v1.0.292/index.md):  fix(auth): issue and verify a fresh Hydra authorize nonce per sign-in @leecalcote (#6239) test(smoke): follow the Hydra …
