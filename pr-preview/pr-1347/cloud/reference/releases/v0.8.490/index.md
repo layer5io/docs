@@ -1,0 +1,16 @@
+# v0.8.490
+
+date: 2025-10-07
+
+
+
+## 💻 Server
+
+- Enhance AssignBadge functionality to include notification control and improve UX @leecalcote (#4297)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Troubleshooting on Layer5 Documentation</title><link>/pr-preview/pr-1347/tags/troubleshooting/</link><description>Recent content in Troubleshooting on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1347/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Open an Interactive Terminal</title><link>/pr-preview/pr-1347/kanvas/guides/operating/interactive-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1347/kanvas/guides/operating/interactive-terminal/</guid><description>&lt;p&gt;The interactive terminal opens a shell inside a running container without leaving the Operator canvas. Use it for last-mile diagnosis that logs and status cannot answer: testing connectivity from inside a pod, reading a mounted file, or checking an injected environment variable. It is a browser-based equivalent of &lt;code&gt;kubectl exec&lt;/code&gt;, scoped to the resource you selected.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Operator mode on a Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not offer Operator mode. See &lt;a href="/pr-preview/pr-1347/kanvas/concepts/architecture/"&gt;How Kanvas Works with Meshery and Layer5 Cloud&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A connected cluster with Meshery Operator deployed.&lt;/strong&gt; Meshery Operator runs MeshSync and a message broker in the cluster. MeshSync executes the shell, and Meshery Server relays input and output through the broker. If any of the three is unavailable, the terminal does not connect (see &lt;a href="/pr-preview/pr-1347/kanvas/guides/operating/interactive-terminal/#failure-modes"&gt;Failure modes&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A running container whose image contains &lt;code&gt;/bin/sh&lt;/code&gt;.&lt;/strong&gt; Distroless images have no shell and cannot be used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="open-a-session" class="heading-link"&gt;
+ Open a session
+ &lt;a href="#open-a-session" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The action is named &lt;strong&gt;Initiate Terminal Session&lt;/strong&gt; and is offered on &lt;strong&gt;Pod&lt;/strong&gt; and &lt;strong&gt;Container&lt;/strong&gt; resources only. Right-click the resource on the canvas, or select it and use the action in the header of the Details panel. The session starts immediately and the terminal panel opens at the bottom left of the canvas. There is no separate connect step.&lt;/p&gt;</description></item><item><title>Stream Container Logs</title><link>/pr-preview/pr-1347/kanvas/guides/operating/log-streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1347/kanvas/guides/operating/log-streaming/</guid><description>&lt;p&gt;Log streaming live-tails the output of a pod&amp;rsquo;s containers inside the Operator canvas. Each stream starts with the most recent lines and then follows new output as it is written, so you can watch a rollout, a crash loop, or a request path next to the topology that produced it.&lt;/p&gt;
+
+&lt;h2 id="before-you-start" class="heading-link"&gt;
+ Before you start
+ &lt;a href="#before-you-start" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Operator mode on a Meshery you run.&lt;/strong&gt; The hosted kanvas.new site does not offer Operator mode.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A connected cluster with Meshery Operator deployed.&lt;/strong&gt; MeshSync reads the logs and Meshery Server relays them through the broker, the same path the terminal uses. See &lt;a href="/pr-preview/pr-1347/kanvas/concepts/operator/"&gt;Operator&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Containers that exist.&lt;/strong&gt; Logs come from the Kubernetes log API, so a container that has not started has nothing to stream.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="start-a-stream" class="heading-link"&gt;
+ Start a stream
+ &lt;a href="#start-a-stream" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The action is named &lt;strong&gt;Initiate Log Session&lt;/strong&gt; and is offered on &lt;strong&gt;Pod&lt;/strong&gt; and &lt;strong&gt;Container&lt;/strong&gt; resources only. Right-click the resource, or select it and use the action in the header of the Details panel. The stream opens in the same bottom-left panel as &lt;a href="/pr-preview/pr-1347/kanvas/guides/operating/interactive-terminal/"&gt;terminal sessions&lt;/a&gt;, as a tab.&lt;/p&gt;</description></item><item><title>Policy Evaluation</title><link>/pr-preview/pr-1347/kanvas/concepts/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1347/kanvas/concepts/relationship-evaluation/</guid><description>&lt;p&gt;Evaluation is how a design stays consistent. After you change a design, Kanvas runs it through the policy engine, which applies the registry&amp;rsquo;s &lt;a href="/pr-preview/pr-1347/kanvas/concepts/relationships/"&gt;relationship&lt;/a&gt; definitions: it identifies relationships, writes configuration across related components, and drops relationships that no longer hold. The engine returns the whole evaluated design, and Kanvas applies it back to the canvas. This is why a value you did not touch can change a moment after you edit a related component.&lt;/p&gt;</description></item><item><title>Troubleshoot Email Delivery</title><link>/pr-preview/pr-1347/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1347/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;p&gt;Layer5 Cloud sends two kinds of mail. &lt;strong&gt;Application mail&lt;/strong&gt; (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization&amp;rsquo;s own mail server when one is turned on, and otherwise through the &lt;strong&gt;shared mail server&lt;/strong&gt; you configure in the chart&amp;rsquo;s &lt;code&gt;smtp&lt;/code&gt; values. &lt;strong&gt;Identity mail&lt;/strong&gt; (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See &lt;a href="/pr-preview/pr-1347/cloud/guides/self-hosted/planning/#mail"&gt;Plan a Deployment&lt;/a&gt;. This guide helps you find which of those paths is failing and why.&lt;/p&gt;</description></item><item><title>Kubernetes Request Flow</title><link>/pr-preview/pr-1347/kanvas/concepts/kubernetes-request-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1347/kanvas/concepts/kubernetes-request-flow/</guid><description>&lt;p&gt;A request to an application in Kubernetes passes through several objects before it reaches a process in a container, and none of those objects is wired to the next by a fixed address. Each layer finds the next one by name or by label at the moment the request arrives. Knowing that path, and what each layer is responsible for, turns &amp;ldquo;why am I not getting a response?&amp;rdquo; into a short list of places to look. This page walks the path from the client to the container, explains why labels and selectors are what hold it together, and shows how the same path appears in a Kanvas design.&lt;/p&gt;</description></item><item><title>Troubleshoot Kanvas</title><link>/pr-preview/pr-1347/kanvas/guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1347/kanvas/guides/troubleshooting/</guid><description>&lt;p&gt;Kanvas separates two kinds of failure. A design action that fails, such as a dry run or a deployment, produces an event with an error code and a remediation. A Kanvas that fails to load, or an Operator view with no data, produces an in-product message. This page covers both.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Ask for help from within Kanvas&lt;/h4&gt;
+ 
+ The &lt;strong&gt;Get Help&lt;/strong&gt; action opens the Help and Support form. It needs a remote provider and a signed-in identity. See &lt;a href="/pr-preview/pr-1347/kanvas/reference/help-and-support/"&gt;Help and Support&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="kanvas-does-not-load" class="heading-link"&gt;
+ Kanvas does not load
+ &lt;a href="#kanvas-does-not-load" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;If an unhandled error occurs, or the extension fails to load in the Meshery shell, Kanvas shows &lt;code&gt;Uh-oh! Something went wrong..&lt;/code&gt; (&lt;code&gt;Uh-oh! Please pardon our mesh.&lt;/code&gt; in the shell) with the error text. The screen offers:&lt;/p&gt;</description></item></channel></rss>
