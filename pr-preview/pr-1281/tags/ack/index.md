@@ -1,4 +1,0 @@
-# Ack
-
-
-<no value>
