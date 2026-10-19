@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.74
+  version: v1.3.75
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -71566,8 +71566,8 @@ paths:
         - name: purpose
           in: query
           description: >-
-            Token purpose. Tokens are minted with this purpose on generate, and listed tokens are filtered to this
-            purpose on list.
+            Token purpose. Tokens are minted with this purpose on generate. On list, only tokens whose purpose is
+            exactly this value (case-sensitive, not a substring match) are returned; omit it to list every purpose.
           schema:
             type: string
             maxLength: 500
@@ -71781,8 +71781,8 @@ paths:
         - name: purpose
           in: query
           description: >-
-            Token purpose. Tokens are minted with this purpose on generate, and listed tokens are filtered to this
-            purpose on list.
+            Token purpose. Tokens are minted with this purpose on generate. On list, only tokens whose purpose is
+            exactly this value (case-sensitive, not a substring match) are returned; omit it to list every purpose.
           schema:
             type: string
             maxLength: 500
