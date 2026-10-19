@@ -95,6 +95,17 @@ Branding applies to the signed-in experience and, on an organization with its ow
 - **Logos.** Four slots: desktop, mobile, dark desktop, and dark mobile. Each image can be at most 500 KB. A larger file fails the update with `image size exceeds the maximum limit`.
 - **Links.** Terms of Service and Privacy Policy accept an `http` or `https` URL, a `mailto:` or `tel:` link, or a root-relative path. Support entries (Discussion Forum URL, Support Email, Slack URL) accept the same forms plus plain text without a colon, such as a bare email address. LinkedIn, X, and YouTube accept an absolute `http` or `https` URL. Layer5 Cloud silently drops a value it considers unsafe, including `javascript:` and `data:` links, instead of rejecting the update. Clearing every link restores the defaults. An organization that publishes any link of its own gets an email footer without the provider's channels for the ones it left empty.
 
+#### On your own domain, nothing falls back to the provider
+
+On an organization with its own domain, a branding field you leave empty is hidden. It is never filled with the provider's value. People who sign up or sign in on your domain see only what you set:
+
+- **Pages.** The page title, description, social card, and favicon carry your organization's name, description, and logos, or nothing. The error page lists only your support entries, and leaves out the contact sentence when you have none. Provider content, such as the playground, videos, help center, and badges widgets on the dashboard, is not shown.
+- **Email.** The header shows your logo, or your organization's name when you have not uploaded one. The footer carries only your links. Every link in the message (verification, recovery, invitation, account, and design links) points at your domain.
+- **Sender.** Mail is sent under your organization's name. The sending address stays the shared mail server's until you [bring your own mail server](bring-your-own-mail-server/); sending from your domain needs your own server, so the message passes your domain's SPF and DMARC checks.
+- **Child organizations.** A child organization without a domain of its own, such as the one a `child_organization` invitation creates, uses the nearest parent organization that has a domain for its email branding and link address. A child organization that set its own theme keeps it.
+
+Fill in every branding field you want people to see: theme colors, all four logos, Terms of Service and Privacy Policy, support entries, and social profiles. A field you leave empty does not appear.
+
 ### Domain
 
 The domain field routes users who arrive at that address into the organization. Layer5 Cloud validates a changed domain when you save:
