@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.76
+  version: v1.3.77
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -37726,7 +37726,12 @@ paths:
         - ContentPiece_contentPieces
       summary: List content pieces
       operationId: listContentPieces
-      description: Returns a paginated list of content pieces in the organization of the authenticated session.
+      description: |
+        Returns a paginated list of the live content pieces in the
+        organization of the authenticated session, ordered by `rowNumber`
+        unless `order` names another column (`rowNumber`, `createdAt`,
+        `updatedAt`). `search` matches the profile or the content values,
+        case-insensitively.
       parameters:
         - name: page
           in: query
@@ -37762,7 +37767,7 @@ paths:
         - name: profile
           in: query
           required: false
-          description: Filter by owning profile subject.
+          description: Filter by owning profile subject (exact match).
           schema:
             type: string
       responses:
@@ -37810,6 +37815,8 @@ paths:
                       properties:
                         id:
                           description: Server-generated content piece ID.
+                          x-oapi-codegen-extra-tags:
+                            db: id
                           x-order: 1
                           type: string
                           format: uuid
@@ -37899,6 +37906,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -37922,7 +37935,9 @@ paths:
         Inserts a new content piece. Insert-only: any supplied
         `id` and `expectedFingerprint` are ignored; existing rows change
         only through the conditional `updateContentPiece`. The
-        `fingerprint` is server-computed.
+        `fingerprint` is server-computed. A live content piece of the
+        organization that already holds the same `profile` and
+        `rowNumber` refuses the insert with a 409.
       requestBody:
         required: true
         content:
@@ -37999,6 +38014,8 @@ paths:
                 properties:
                   id:
                     description: Server-generated content piece ID.
+                    x-oapi-codegen-extra-tags:
+                      db: id
                     x-order: 1
                     type: string
                     format: uuid
@@ -38093,8 +38110,22 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
+            another live content piece of the organization already holds the same profile and rowNumber
           content:
             text/plain:
               schema:
@@ -38153,6 +38184,8 @@ paths:
                 properties:
                   id:
                     description: Server-generated content piece ID.
+                    x-oapi-codegen-extra-tags:
+                      db: id
                     x-order: 1
                     type: string
                     format: uuid
@@ -38247,6 +38280,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -38269,7 +38308,9 @@ paths:
       description: |
         Conditionally updates the content piece. When
         `expectedFingerprint` is supplied and stale, the update is
-        refused with a 409.
+        refused with a 409, as is an update that would move the piece
+        onto a `profile` and `rowNumber` another live content piece of
+        the organization holds.
       parameters:
         - name: contentPieceId
           in: path
@@ -38360,6 +38401,8 @@ paths:
                 properties:
                   id:
                     description: Server-generated content piece ID.
+                    x-oapi-codegen-extra-tags:
+                      db: id
                     x-order: 1
                     type: string
                     format: uuid
@@ -38454,6 +38497,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '404':
           description: Result not found
           content:
@@ -38461,7 +38510,9 @@ paths:
               schema:
                 type: string
         '409':
-          description: Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint
+          description: >-
+            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
+            another live content piece of the organization already holds the same profile and rowNumber
           content:
             text/plain:
               schema:
@@ -38499,6 +38550,12 @@ paths:
           description: Content piece deleted
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
