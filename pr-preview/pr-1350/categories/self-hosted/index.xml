@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self-Hosted on Layer5 Documentation</title><link>/pr-preview/pr-1350/categories/self-hosted/</link><description>Recent content in Self-Hosted on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1350/categories/self-hosted/index.xml" rel="self" type="application/rss+xml"/><item><title>Helm Chart Values</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;p&gt;The &lt;code&gt;layer5-cloud&lt;/code&gt; chart installs the Layer5 Cloud server and, as subcharts from the Ory repository, Kratos and Hydra. The defaults below are those of chart version 0.2.0, which ships with Layer5 Cloud v1.0.278. Run &lt;code&gt;helm show values layer5/layer5-cloud&lt;/code&gt; to print the defaults of the version you install. For the install procedure, see &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/"&gt;Deploy Layer5 Cloud&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="how-values-reach-the-server" class="heading-link"&gt;
+ How values reach the server
+ &lt;a href="#how-values-reach-the-server" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The chart writes &lt;code&gt;env.*&lt;/code&gt; values into one ConfigMap and one Secret, and the server pod reads both as environment variables. Sensitive values go to the Secret. Any change to either rolls the server pods, because the pod template carries a checksum of both.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;A self-hosted deployment is its own identity provider. Ory Kratos owns user accounts and sign-in, Ory Hydra issues OAuth2 tokens, and the Layer5 Cloud server connects the two to organizations, teams, and roles. Users can sign up with an email address and password, or with Google or GitHub. For how identity fits together as a concept, see &lt;a href="/pr-preview/pr-1350/cloud/concepts/identity-and-security/"&gt;Identity and Security&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="what-the-chart-configures-by-default" class="heading-link"&gt;
+ What the chart configures by default
+ &lt;a href="#what-the-chart-configures-by-default" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Capability&lt;/th&gt;
+ &lt;th&gt;Default&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Password sign-in&lt;/td&gt;
+ &lt;td&gt;On. Minimum 8 characters, checked against known-breached passwords, and rejected when too similar to the account identifier.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Email verification&lt;/td&gt;
+ &lt;td&gt;Required before a password sign-in succeeds. Delivered as a code.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Account recovery&lt;/td&gt;
+ &lt;td&gt;On, delivered as a code.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Social sign-in&lt;/td&gt;
+ &lt;td&gt;Google and GitHub are enabled but have no credentials until you add them.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Login flow lifespan&lt;/td&gt;
+ &lt;td&gt;A started sign-in must finish within 12 hours (&lt;code&gt;720m&lt;/code&gt;).&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Recovery and verification flow lifespan&lt;/td&gt;
+ &lt;td&gt;A recovery or verification request stays valid for 30 days (&lt;code&gt;720h&lt;/code&gt;).&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Registration flow lifespan&lt;/td&gt;
+ &lt;td&gt;A started sign-up must finish within 24 hours.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Session lifespan&lt;/td&gt;
+ &lt;td&gt;Not set by the chart. Kratos applies its own default. See &lt;a href="/pr-preview/pr-1350/cloud/concepts/identity-and-security/sessions/"&gt;Sessions&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Access tokens&lt;/td&gt;
+ &lt;td&gt;JWT, valid 24 hours. Refresh tokens are valid 1000 hours, ID tokens 1 hour, and authorization codes 1 hour.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Change any of these through the &lt;code&gt;kratos.kratos.config&lt;/code&gt; and &lt;code&gt;hydra.hydra.config&lt;/code&gt; values. Both are passed to the Ory services unchanged, so the &lt;a href="https://www.ory.sh/docs/kratos/reference/configuration"&gt;Kratos&lt;/a&gt; and &lt;a href="https://www.ory.sh/docs/hydra/reference/configuration"&gt;Hydra&lt;/a&gt; configuration references apply.&lt;/p&gt;</description></item><item><title>Plan a Deployment</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/</guid><description>&lt;p&gt;Layer5 Cloud starts with unsafe placeholder values for every secret and with &lt;code&gt;localhost&lt;/code&gt; for every URL. Settle the decisions below first, so the install is a single &lt;code&gt;helm install&lt;/code&gt; with a complete values file.&lt;/p&gt;
+
+&lt;h2 id="decisions-to-make" class="heading-link"&gt;
+ Decisions to make
+ &lt;a href="#decisions-to-make" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Decision&lt;/th&gt;
+ &lt;th&gt;What to settle&lt;/th&gt;
+ &lt;th&gt;Where it is configured&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Database&lt;/td&gt;
+ &lt;td&gt;A PostgreSQL server that hosts three databases: &lt;code&gt;meshery&lt;/code&gt;, &lt;code&gt;kratos&lt;/code&gt;, and &lt;code&gt;hydra&lt;/code&gt;.&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;env.db&lt;/code&gt;, &lt;code&gt;env.kratosdb&lt;/code&gt;, &lt;code&gt;env.hydradb&lt;/code&gt;, and the subchart &lt;code&gt;dsn&lt;/code&gt; values&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Hostname and TLS&lt;/td&gt;
+ &lt;td&gt;One public hostname, a certificate for it, and the scheme (&lt;code&gt;https&lt;/code&gt;).&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;ingress.*&lt;/code&gt;, &lt;code&gt;env.serverbaseurl&lt;/code&gt;, &lt;code&gt;env.serverHost&lt;/code&gt;, &lt;code&gt;env.proto&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Secrets&lt;/td&gt;
+ &lt;td&gt;Replace every placeholder before first start. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/#secrets-to-generate"&gt;Secrets to generate&lt;/a&gt;.&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;env.*&lt;/code&gt;, &lt;code&gt;kratos.*&lt;/code&gt;, &lt;code&gt;hydra.*&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Identity providers&lt;/td&gt;
+ &lt;td&gt;The Google and GitHub OAuth applications that act as the default sign-in providers. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/identity-services/"&gt;Identity Services&lt;/a&gt;.&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;env.providerOrg*&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Mail&lt;/td&gt;
+ &lt;td&gt;A relay on a public address that offers STARTTLS (or implicit TLS on 465), and how identity mail leaves. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/#mail"&gt;Mail&lt;/a&gt;.&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;smtp.*&lt;/code&gt;, Kratos courier values&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;First administrator&lt;/td&gt;
+ &lt;td&gt;The Provider Admin account and the provider organization. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/provider-initialization/"&gt;Provider initialization&lt;/a&gt;.&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;env.initConfig&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Network paths&lt;/td&gt;
+ &lt;td&gt;What must be reachable between components and from users. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/peer-to-peer-communication/"&gt;Networking&lt;/a&gt;.&lt;/td&gt;
+ &lt;td&gt;Ingress, network policy, egress rules&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Observability&lt;/td&gt;
+ &lt;td&gt;Where logs and traces go. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/monitoring/"&gt;Monitoring&lt;/a&gt;.&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;env.loglevel&lt;/code&gt;, &lt;code&gt;env.otelConfig&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="database" class="heading-link"&gt;
+ Database
+ &lt;a href="#database" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Layer5 Cloud creates and migrates its own schema. The server applies migrations every time it starts, and exits if a migration fails, so give the database user the rights to create tables and the &lt;code&gt;uuid-ossp&lt;/code&gt; extension in the &lt;code&gt;public&lt;/code&gt; schema of the &lt;code&gt;meshery&lt;/code&gt; database. Kratos and Hydra run their own migrations when the chart&amp;rsquo;s &lt;code&gt;automigration&lt;/code&gt; setting is on, which is the default.&lt;/p&gt;</description></item><item><title>Deploy Layer5 Cloud</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/</guid><description>&lt;p&gt;This guide installs the &lt;code&gt;layer5-cloud&lt;/code&gt; chart, which deploys the Layer5 Cloud server together with Kratos and Hydra. It assumes you have made the decisions in &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/"&gt;Plan a Deployment&lt;/a&gt;. The commands use the release name &lt;code&gt;layer5-cloud&lt;/code&gt; in the namespace &lt;code&gt;layer5-cloud&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kubernetes cluster and Helm 3.&lt;/li&gt;
+&lt;li&gt;An ingress controller that supports WebSocket upgrades, and a TLS certificate for your hostname.&lt;/li&gt;
+&lt;li&gt;A PostgreSQL server you can create databases on.&lt;/li&gt;
+&lt;li&gt;An SMTP relay that satisfies the &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/operating/smtp/#constraints-on-the-shared-mail-server"&gt;mail constraints&lt;/a&gt;, or the decision to run without mail.&lt;/li&gt;
+&lt;li&gt;The OAuth applications for Google and GitHub, if you offer social sign-in.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="install" class="heading-link"&gt;
+ Install
+ &lt;a href="#install" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="1-prepare-the-database" class="heading-link"&gt;
+ 1. Prepare the database
+ &lt;a href="#1-prepare-the-database" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Create one role and three databases on your PostgreSQL server, then create the &lt;code&gt;uuid-ossp&lt;/code&gt; extension in the &lt;code&gt;meshery&lt;/code&gt; database. The server creates the schema itself.&lt;/p&gt;</description></item><item><title>Networking</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/peer-to-peer-communication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/peer-to-peer-communication/</guid><description>&lt;p&gt;Plan these network paths before you deploy. Most are ordinary HTTPS traffic through your ingress. Real-time co-editing is the exception: it connects browsers directly to each other, and the deployment only introduces them.&lt;/p&gt;
+
+&lt;h2 id="required-network-paths" class="heading-link"&gt;
+ Required network paths
+ &lt;a href="#required-network-paths" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;From&lt;/th&gt;
+ &lt;th&gt;To&lt;/th&gt;
+ &lt;th&gt;Protocol&lt;/th&gt;
+ &lt;th&gt;Purpose&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browsers, Meshery Servers, API clients&lt;/td&gt;
+ &lt;td&gt;Ingress, public hostname&lt;/td&gt;
+ &lt;td&gt;HTTPS&lt;/td&gt;
+ &lt;td&gt;UI, API, sign-in (&lt;code&gt;/kratos&lt;/code&gt;), and OAuth2 (&lt;code&gt;/hydra&lt;/code&gt;)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browsers&lt;/td&gt;
+ &lt;td&gt;Ingress, &lt;code&gt;/collaboration&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;WebSocket over HTTPS&lt;/td&gt;
+ &lt;td&gt;Co-editing signaling&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;Kratos and Hydra services&lt;/td&gt;
+ &lt;td&gt;HTTP, in cluster&lt;/td&gt;
+ &lt;td&gt;Account and token operations. Default ports: Kratos public 9010 and admin 9011, Hydra public 4444 and admin 4445&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Kratos&lt;/td&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;HTTP, in cluster&lt;/td&gt;
+ &lt;td&gt;Registration hooks, and identity mail when the HTTP courier is selected&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server, Kratos, Hydra&lt;/td&gt;
+ &lt;td&gt;PostgreSQL&lt;/td&gt;
+ &lt;td&gt;TCP 5432&lt;/td&gt;
+ &lt;td&gt;Databases &lt;code&gt;meshery&lt;/code&gt;, &lt;code&gt;kratos&lt;/code&gt;, &lt;code&gt;hydra&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;SMTP relay&lt;/td&gt;
+ &lt;td&gt;SMTP on 25, 465, 587, or 2525&lt;/td&gt;
+ &lt;td&gt;Mail. The relay must resolve to a public address&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;Webhook receivers&lt;/td&gt;
+ &lt;td&gt;HTTPS&lt;/td&gt;
+ &lt;td&gt;Optional webhooks&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Layer5 Cloud server&lt;/td&gt;
+ &lt;td&gt;OpenTelemetry collector&lt;/td&gt;
+ &lt;td&gt;OTLP gRPC&lt;/td&gt;
+ &lt;td&gt;Optional traces&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Browsers&lt;/td&gt;
+ &lt;td&gt;Public STUN and TURN hosts&lt;/td&gt;
+ &lt;td&gt;UDP and TCP&lt;/td&gt;
+ &lt;td&gt;Direct connections between co-editing browsers&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The ingress must support WebSocket upgrades. A controller or load balancer that closes idle connections shorter than the signaling keep-alive (below) disconnects users from their co-editing session.&lt;/p&gt;</description></item><item><title>Provider Initialization</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/provider-initialization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/deployment/provider-initialization/</guid><description>&lt;p&gt;A new deployment has no users, so nobody can sign in to administer it. Provider initialization solves that: when the server starts with &lt;code&gt;INIT_CONFIG&lt;/code&gt; set, it creates the &lt;strong&gt;provider organization&lt;/strong&gt; and its first &lt;strong&gt;Provider Admin&lt;/strong&gt;. From that account, you create organizations, assign roles, and manage the deployment. See &lt;a href="/pr-preview/pr-1350/cloud/reference/default-permissions/"&gt;Roles and Permissions&lt;/a&gt; for what a Provider Admin can do.&lt;/p&gt;
+
+&lt;h2 id="format" class="heading-link"&gt;
+ Format
+ &lt;a href="#format" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;INIT_CONFIG&lt;/code&gt; holds a YAML document. In Helm, set it as a multiline string in &lt;code&gt;env.initConfig&lt;/code&gt;, or load it from a file with &lt;code&gt;--set-file env.initConfig=provider-init.yaml&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Customize Webhooks</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/customizing-webhooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/customizing-webhooks/</guid><description>&lt;p&gt;Layer5 Cloud calls an HTTP endpoint you choose when three things happen: a person asks for help, a Provider Admin decides a signup request, and a person gains Kanvas access. The calls let you route those events into your help desk, your chat, or your onboarding automation. On a self-hosted deployment you set the three endpoints; none is set by default, and an unset webhook does nothing useful.&lt;/p&gt;
+
+&lt;h2 id="the-three-webhooks" class="heading-link"&gt;
+ The three webhooks
+ &lt;a href="#the-three-webhooks" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Chart value&lt;/th&gt;
+ &lt;th&gt;Fires when&lt;/th&gt;
+ &lt;th&gt;Payload&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookHelpAndSupport&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;Someone submits the Help and Support form in Layer5 Cloud, or a support request raised in Kanvas reaches your deployment&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;memberFormOne&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookSignupRequest&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A Provider Admin approves or denies a signup request&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;signupData&lt;/code&gt; and &lt;code&gt;newUser&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;env.webhookKanvasEntitlement&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;A new user registers, a user completes a first brokered social sign-in, or a role assignment gives a user Kanvas access&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;signupData&lt;/code&gt; and &lt;code&gt;newUser&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id="set-the-endpoints" class="heading-link"&gt;
+ Set the endpoints
+ &lt;a href="#set-the-endpoints" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Add the three URLs to your Helm values and upgrade. The values are written into the server&amp;rsquo;s ConfigMap, so the pods restart when you change them.&lt;/p&gt;</description></item><item><title>Monitoring</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
+
+&lt;h2 id="health-endpoints" class="heading-link"&gt;
+ Health endpoints
+ &lt;a href="#health-endpoints" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Endpoint&lt;/th&gt;
+ &lt;th&gt;Answers&lt;/th&gt;
+ &lt;th&gt;Meaning&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;GET /healthz&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;200&lt;/code&gt; with the text &lt;code&gt;Cloud is live&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;The process is running. The chart uses it for the liveness probe.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;code&gt;GET /readyz&lt;/code&gt;&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;200&lt;/code&gt; when ready, &lt;code&gt;503&lt;/code&gt; before&lt;/td&gt;
+ &lt;td&gt;The server finished startup and is serving. The chart uses it for the readiness and startup probes.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Both endpoints are unauthenticated. The startup probe allows 20 failed checks at 10-second intervals, so a slow start gets about 200 seconds before Kubernetes restarts the pod. Database migrations run before the server reports ready, so an upgrade that carries a large migration can approach that limit.&lt;/p&gt;</description></item><item><title>White-label Layer5 Cloud</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/white-labeling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/white-labeling/</guid><description>&lt;p&gt;White-labeling lets the people who use your deployment see your brand, not Layer5&amp;rsquo;s: your logo and colors in the product, your support and legal links on sign-in pages and in email footers, your domain in the address bar, and your address on the mail they receive. Branding is set per organization, so a provider that hosts many organizations can give each its own identity.&lt;/p&gt;
+&lt;p&gt;White-labeling is part of the Managed Service Provider capability of the Enterprise plan.&lt;/p&gt;</description></item><item><title>Troubleshoot Email Delivery</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/operating/smtp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/operating/smtp/</guid><description>&lt;p&gt;Layer5 Cloud sends two kinds of mail. &lt;strong&gt;Application mail&lt;/strong&gt; (invitations, notifications, welcome mail) leaves the Layer5 Cloud server, through an organization&amp;rsquo;s own mail server when one is turned on, and otherwise through the &lt;strong&gt;shared mail server&lt;/strong&gt; you configure in the chart&amp;rsquo;s &lt;code&gt;smtp&lt;/code&gt; values. &lt;strong&gt;Identity mail&lt;/strong&gt; (email verification and account recovery) is produced by Kratos and reaches the same server only when you select the HTTP courier. See &lt;a href="/pr-preview/pr-1350/cloud/guides/self-hosted/planning/#mail"&gt;Plan a Deployment&lt;/a&gt;. This guide helps you find which of those paths is failing and why.&lt;/p&gt;</description></item><item><title>Self-Hosted Deployments</title><link>/pr-preview/pr-1350/cloud/guides/self-hosted/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1350/cloud/guides/self-hosted/</guid><description>&lt;p&gt;A self-hosted deployment runs the same Layer5 Cloud that Layer5 operates, on infrastructure you control. Your users sign in against your identity services, your organizations and designs live in your database, and Meshery Servers in your network connect to your deployment as their &lt;a href="https://docs.meshery.io/extensibility/providers"&gt;remote provider&lt;/a&gt;. Your data stays in your database.&lt;/p&gt;
+&lt;p&gt;Self-hosting is part of the Enterprise plan.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class="feature-tiers"&gt;
+
+&lt;table class="feature-tiers-table"&gt;
+ &lt;caption&gt;Identity &amp;amp; Access Management&lt;/caption&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th scope="col"&gt;Capability&lt;/th&gt;
+ &lt;th scope="col"&gt;What it does&lt;/th&gt;
+ &lt;th scope="col"&gt;Free&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Designer&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Operator&lt;/th&gt;
+ &lt;th scope="col"&gt;Enterprise&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Cloud as an IDP&lt;/th&gt;
+ &lt;td&gt;Own and control the user accounts of your enterprise members with Cloud your identity provider (IdP).&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table class="feature-tiers-table"&gt;
+ &lt;caption&gt;Support and Deployment&lt;/caption&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th scope="col"&gt;Capability&lt;/th&gt;
+ &lt;th scope="col"&gt;What it does&lt;/th&gt;
+ &lt;th scope="col"&gt;Free&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Designer&lt;/th&gt;
+ &lt;th scope="col"&gt;Team Operator&lt;/th&gt;
+ &lt;th scope="col"&gt;Enterprise&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Managed Service Provider&lt;/th&gt;
+ &lt;td&gt;White Label: Customize the appearance and branding of your engineering platform powered by Cloud.
+&lt;br /&gt;&lt;br /&gt;Multi-tenancy: Hierarchical organizations, teams, users and customizable permissioning.&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;tr&gt;
+ &lt;th scope="row"&gt;Self-hosted Deployment&lt;/th&gt;
+ &lt;td&gt;Self-hosted Cloud for on-prem appliances or self-managed cloud tenants. Keep your designs internal to your workplace. Get remote support when you need it.&lt;/td&gt;
+ 
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;-&lt;/span&gt;&lt;span class="sr-only"&gt;Not included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Included&lt;/span&gt;&lt;/td&gt;
+ 
+ &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+
+
+&lt;h2 id="what-you-deploy" class="heading-link"&gt;
+ What you deploy
+ &lt;a href="#what-you-deploy" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;One Helm chart, &lt;code&gt;layer5-cloud&lt;/code&gt;, installs the identity-aware application and its two identity services. You supply the database, the ingress, and the TLS certificate.&lt;/p&gt;</description></item></channel></rss>

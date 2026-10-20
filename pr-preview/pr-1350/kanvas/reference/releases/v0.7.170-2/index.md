@@ -1,0 +1,18 @@
+# v0.7.170-2
+
+date: 2024-12-16
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- import all plugins in desinger/index.ts @aabidsofi19 (#3244)
+- Fix sharemodal and actions button issues in operrator mode @aabidsofi19 (#3243)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

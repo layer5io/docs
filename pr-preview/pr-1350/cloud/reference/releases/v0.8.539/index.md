@@ -1,0 +1,18 @@
+# v0.8.539
+
+date: 2025-10-29
+
+
+
+## 🦴 Infrastructure
+
+- Add functions for cleaning up anonymous users and recording daily stats; remove outdated user stats function @leecalcote (#4453)
+- Move Kratos upgrade test scripts  @leecalcote (#4452)
+- Add organization customization documentation, PostgreSQL Dockerfile, and Meshery cloud database server configurations @leecalcote (#4451)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

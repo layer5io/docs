@@ -1,0 +1,19 @@
+# v0.8.219
+
+date: 2025-05-20
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- Websockets @aabidsofi19 (#3508)
+- Fix: Remove Anonymous User Role from Role List @zihanKuang (#3503)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @zihanKuang
+
+

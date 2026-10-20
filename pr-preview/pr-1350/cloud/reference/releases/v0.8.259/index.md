@@ -1,0 +1,34 @@
+# v0.8.259
+
+date: 2025-06-20
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Fixed Resources styling on support page @AmankeldinovaMadina (#3620)
+- [Docs] Add example curl commands for creating approval requests @leecalcote (#3653)
+
+## 💻 Server
+
+- add play.meshery.io in allowOrigins @vishalvivekm (#3660)
+- allow api req from docs.layer5.io origin @vishalvivekm (#3658)
+- add support permission key  check middleware @aabidsofi19 (#3655)
+- Fix: Correct logic for removing organization admins @zihanKuang (#3609)
+
+## 🐛 Bug Fixes
+
+- Fixed Resources styling on support page @AmankeldinovaMadina (#3620)
+
+## 📖 Documentation
+
+- [Docs] Add example curl commands for creating approval requests @leecalcote (#3653)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@AmankeldinovaMadina, @aabidsofi19, @l5io, @leecalcote, @vishalvivekm and @zihanKuang
+
+

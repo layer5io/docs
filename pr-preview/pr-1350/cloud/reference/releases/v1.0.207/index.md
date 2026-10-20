@@ -1,0 +1,15 @@
+# v1.0.207
+
+date: 2026-07-27
+
+
+
+- fix(auth): close open redirect on unauthenticated GET /account @ritzorama (#5784)
+- document(release): close the merge, supersession, and post-publish gaps in the cut-release skill @alexquincy (#5782)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy, @hortison and @ritzorama
+
+
