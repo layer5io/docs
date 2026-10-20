@@ -1,88 +1,98 @@
 ---
 title: Monitoring
-description: "What a self-hosted Layer5 Cloud deployment exposes for monitoring: health endpoints, logs and error codes, startup signals, and OpenTelemetry traces."
+description: "Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts."
 categories: [self-hosted]
-tags: [monitoring, observability, logs, tracing]
-weight: 30
-diataxis: how-to
+tags: [monitoring]
+weight: 4
 aliases:
   - /cloud/self-hosted/planning/monitoring/
+
 ---
 
-Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.
+Monitoring is essential to operate a reliable Layer5 Cloud deployment. Plan for metrics, logs, traces, dashboards, alerting, and retention so that you can detect and resolve issues quickly, understand capacity, and meet compliance needs.
 
-## Health endpoints
+## Objectives
 
-| Endpoint | Answers | Meaning |
-| --- | --- | --- |
-| `GET /healthz` | `200` with the text `Cloud is live` | The process is running. The chart uses it for the liveness probe. |
-| `GET /readyz` | `200` when ready, `503` before | The server finished startup and is serving. The chart uses it for the readiness and startup probes. |
+- Establish observability for core services (API, UI, real-time collaboration, identity, database, cache, ingress) and infrastructure (Kubernetes, nodes, storage, networking)
+- Provide dashboards for SLOs and golden signals (latency, traffic, errors, saturation)
+- Configure actionable alerts with clear ownership and runbooks
+- Size and retain telemetry data according to compliance and cost constraints
 
-Both endpoints are unauthenticated. The startup probe allows 20 failed checks at 10-second intervals, so a slow start gets about 200 seconds before Kubernetes restarts the pod. Database migrations run before the server reports ready, so an upgrade that carries a large migration can approach that limit.
+## Metrics
 
-Kratos and Hydra expose their own health endpoints through their subcharts. The chart configures Hydra liveness on `/health/alive` and readiness on `/health/ready`.
+Collect system and application metrics. Common choices include Prometheus or any OpenMetrics-compatible backend.
+
+- Kubernetes: kube-state-metrics, cAdvisor/node-exporter, API server, etcd, ingress controller
+- Layer5 Cloud services: HTTP latency and error rates, request throughput, worker queue depth, WebSocket/WebRTC health
+- Datastores: database query latency, connections, cache hit ratio
+
+Recommended metrics and SLOs:
+
+- Request success rate (5xx, 4xx) per route and service; target ≥ 99.9% over 30 days
+- p50/p90/p99 latency per route and service; budget aligned to user experience goals
+- Resource saturation: CPU, memory, pod restarts, HPA activity; queue length where applicable
+- Collaboration health: signaling availability, peer connection success, message delivery error rate
 
 ## Logs
 
-The server writes logs in syslog format. The chart sets the level to `4` (info). Set `env.loglevel` to `5` for debug and `6` for trace; use debug only while diagnosing, because it records more detail about requests and mail.
+Use a centralized, searchable logging stack (e.g., Loki, Elasticsearch, or a managed service). Ensure structured logs (JSON) for Layer5 Cloud services and infrastructure components.
 
-Errors carry a stable code of the form `meshery_cloud-NNNN`. Alert on the codes, not on message text. The codes that matter operationally:
+- Retention tiers: short-term hot (7–14 days), longer-term warm/cold per compliance
+- Privacy: scrub/omit secrets and PII; apply data minimization and access control
+- Context: include request IDs, user/session IDs (where appropriate), and correlation IDs
 
-| Code | Level | Meaning | Reference |
-| --- | --- | --- | --- |
-| `meshery_cloud-3301` | Error, then the process exits | The shared mail relay fails a startup screen. | [Troubleshoot Email Delivery]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}) |
-| `meshery_cloud-3302` | Error | The mail relay is unreachable. No mail leaves until it clears. | Same |
-| `meshery_cloud-3304` | Error | The mail relay's certificate does not verify. | Same |
-| `meshery_cloud-3300` | Critical | An organization's own mail relay refused a message and fallback is off, so the message was dropped. | Same |
-| `meshery_cloud-3303` | Critical | An organization's mail relay accepted a message and never confirmed it. | Same |
+## Tracing
 
-Failures that the server survives are logged and, where a person acted, recorded as events that Provider Admins can read: an entitlement webhook that did not return `200` or `202`, and a signup decision whose webhook failed. A failed support-request webhook is logged and returned to the person who sent the request, but not recorded as an event.
+Enable distributed tracing with OpenTelemetry to diagnose cross-service latency and failures.
 
-### Startup messages worth alerting on
+- Propagate W3C Trace Context across ingress → services → dependencies
+- Sample rates: start with 1–5% head sampling; use tail-based sampling for errors/latency outliers
+- Storage/backends: Tempo/Jaeger/managed APM
 
-The server exits when a database connection fails or a migration fails. It logs and keeps running for these, so a green pod does not prove they succeeded:
+## Dashboards
 
-| Message | What it means |
-| --- | --- |
-| `Failed to initialize Provider Admin And Provider Organization` | `INIT_CONFIG` was invalid or a step failed. The deployment runs without a provider administrator. |
-| `IdP seed` warnings | The default Google or GitHub sign-in credentials were not stored. Sign-in on custom domains that use the defaults fails. |
-| A credential encryption key error | `env.cloudCredentialEncryptionKey` is missing or malformed. Stored credentials cannot be read or written. |
-| `Failed to initialize OpenTelemetry tracing` | The tracing configuration was rejected. The server runs without traces. |
+Provide Grafana (or equivalent) dashboards for:
 
-## Traces
+- Service health overview: error rate, latency, throughput, saturation
+- Ingress and API gateway performance by route
+- Real-time collaboration: signaling uptime, peer connection success, message RTT
+- Identity/OIDC: login success, token issuance errors, external IdP health
+- Database/cache: latency, throughput, errors, saturation
+- Kubernetes: cluster/node/pod health, HPA activity, pending pods, eviction events
 
-Set `env.otelConfig` to send OpenTelemetry traces to an OTLP gRPC collector:
+## Alerts
 
-```yaml
-env:
-  otelConfig: |
-    service_name: layer5-cloud
-    service_version: "1.0.278"
-    environment: production
-    endpoint: otel-collector.monitoring.svc.cluster.local:4317
-    insecure: true
-```
+Create multi-level alerts (warning/critical) with clear runbooks and ownership.
 
-| Field | Required | Meaning |
-| --- | --- | --- |
-| `service_name` | Yes | Name that identifies the service in traces. |
-| `endpoint` | Yes | Collector address in `host:port` form, without a scheme. |
-| `insecure` | No | `true` sends without TLS. Defaults to `false`. |
-| `service_version` | No | Version reported with each trace. |
-| `environment` | No | Deployment environment reported with each trace. |
+- Availability: elevated 5xx rate or failure rate by route/service
+- Latency: p99 above budget for sustained periods
+- Saturation: CPU/memory pressure, pod crashloops, queue backlogs
+- Dependencies: database unreachable, cache error spikes, external IdP failures
+- Collaboration: signaling down, degraded connection success, message delivery failures
 
-Each request produces one trace with a span for the whole HTTP request, a span for each middleware that ran (domain resolution, authentication, authorization), and a span for the handler. Leave `otelConfig` empty to turn tracing off.
+Alert destinations may include Slack, email, PagerDuty, or your incident tool. Include links to dashboards and logs in notifications.
 
-## What to monitor
+## Sizing and Retention
 
-| Concern | Signal |
-| --- | --- |
-| The server is up | `/healthz`, pod restarts |
-| The server is serving | `/readyz`, ingress `5xx` rate and latency by route |
-| Sign-in works | Ingress `5xx` on `/kratos` and `/hydra`, Kratos and Hydra pod health |
-| Mail flows | Error codes `3301` to `3304`, and a periodic send through the [email test endpoint]({{< ref "cloud/guides/self-hosted/operating/smtp.md#send-a-test-email" >}}) |
-| Webhooks deliver | Recorded webhook failure events |
-| The database is healthy | PostgreSQL connection count, storage, and replication, from your database's own metrics |
-| Co-editing works | Ingress WebSocket connection counts on `/collaboration` |
+Estimate telemetry volume early to avoid unexpected costs.
 
-Restrict access to logs: they carry user email addresses, and at debug level they include request detail. Provider initialization also logs the configuration it reads, including the initial administrator password, so treat startup logs as secret and remove `env.initConfig` after the first successful start.
+- Metrics: number of time series × scrape interval; downsample older data
+- Logs: average line size × events/sec; apply sampling/filters and retention tiers
+- Traces: sample strategically; store only spans needed for SLOs and investigations
+
+## Security and Compliance
+
+- Restrict telemetry access by role; audit access to sensitive logs
+- Encrypt in transit and at rest; segregate prod/staging data
+- Redact secrets and PII at the source where possible
+
+## Reference Architecture (example)
+
+- Metrics: Prometheus + Alertmanager; long-term storage via remote-write (e.g., Thanos, Mimir)
+- Logs: Loki (or Elasticsearch) with LogQL saved views and retention tiers
+- Traces: Tempo/Jaeger with OpenTelemetry SDKs/collectors
+- Dashboards: Grafana with folders for platform, services, and business metrics
+
+This setup is vendor-neutral and can be substituted with managed offerings from your cloud provider or APM vendor.
+
+

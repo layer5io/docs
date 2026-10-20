@@ -1,168 +1,104 @@
 ---
-title: Helm Chart Values
-linkTitle: Helm Chart Values
-description: >
-  Reference for the layer5-cloud Helm chart: every value you set, its default, what it controls, and whether it lands in a ConfigMap or a Secret.
-weight: 10
-diataxis: reference
+title: "Customizing Layer5 Cloud Deployment with Helm"
 categories: [self-hosted]
-tags: [helm, configuration, values]
+description: "Layer5’s Helm charts support a number of configuration options. Please refer to following table of configuration options."
+weight: 2
 aliases:
   - /cloud/self-hosted/deployment/helm-chart-values/
+
 ---
 
-The `layer5-cloud` chart installs the Layer5 Cloud server and, as subcharts from the Ory repository, Kratos and Hydra. The defaults below are those of chart version 0.2.0, which ships with Layer5 Cloud v1.0.278. Run `helm show values layer5/layer5-cloud` to print the defaults of the version you install. For the install procedure, see [Deploy Layer5 Cloud]({{< ref "cloud/guides/self-hosted/deployment/_index.md" >}}).
+## Requirements
 
-## How values reach the server
+| Repository | Name | Version |
+|------------|------|---------|
+| @ory | hydra | 0.24.2 |
+| @ory | kratos | 0.39.1 |
+{.td-initial}
 
-The chart writes `env.*` values into one ConfigMap and one Secret, and the server pod reads both as environment variables. Sensitive values go to the Secret. Any change to either rolls the server pods, because the pod template carries a checksum of both.
+## Values
 
-| Where it lands | Values |
-| --- | --- |
-| Secret | `env.githubappkeypath` (the key file content), `env.githubAppClientSecret`, `env.stripeWebhookSecret`, `env.githubWebhookSecret`, `env.kratosWebhookApiKey`, `env.cloudCredentialEncryptionKey`, `env.cloudOidcStateHmacKey`, `env.providerOrgGithubSecret`, `env.providerOrgGoogleSecret`, and all four `smtp.*` values |
-| ConfigMap | Every other `env.*` value |
+<div class="table-container">
 
-Both the Secret and the Helm release still hold your values in plaintext, so protect the release history and your values file.
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| affinity | object | `{}` | Affinity for Layer5 Cloud primary pods assignment ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity |
+| appVersion | string | `"v0.7.15"` |  |
+| autoscaling.enabled | bool | `false` |  |
+| autoscaling.maxReplicas | int | `100` |  |
+| autoscaling.minReplicas | int | `1` |  |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| env.db | string | `"postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/meshery?sslmode=disable"` | URL to be used to connect with the meshery database. |
+| env.debug | string | `"false"` |  |
+| env.environment | string | `"cloud"` | If the environment is set as "development", the cloud server expects the meshery database connection at postgres://postgres:postgres@127.0.0.1:5432/meshery. For any other value env.db variable is used to connect to the database. |
+| env.ghtoken | string | `""` | GitHub PAT to be used by server for dispatching workflows. |
+| env.githubappkeypath | string | `"key.pem"` |  |
+| env.hydraadmin | string | `"http://hydra-admin:4445"` |  |
+| env.hydradb | string | `"postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/hydra?sslmode=disable"` | URL to be used to connect with the hydra database. |
+| env.hydrapublic | string | `"http://hydra-public:4444"` |  |
+| env.kratosdb | string | `"postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/kratos?sslmode=disable"` | URL to be used to connect with the kratos database. |
+| env.minmesheryversion | string | `"v0.7.0"` | Minimum Meshery Server version compatible with the current Layer5 cloud server.  |
+| env.oauthclientid | string | `"meshery-cloud"` |  |
+| env.oauthsecret | string | `"secret1234567890"` |  |
+| env.port | int | `9876` | The port on which Layer5 Cloud server runs. |
+| env.serverHost | string | `"localhost"` |  |
+| env.serverbaseurl | string | `"http://localhost:9876"` | Layer5 Cloud base URL |
+| fullnameOverride | string | `"meshery-cloud"` |  |
+| hydra.hydra.config | object | `{"dsn":"postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/hydra?sslmode=disable","log":{"leak_sensitive_values":false,"level":"debug"},"oauth2":{"expose_internal_errors":true},"secrets":{"system":[""]},"serve":{"public":{"cors":{"enabled":true}}},"strategies":{"access_token":"jwt"},"ttl":{"access_token":"24h","auth_code":"1h","id_token":"1h","refresh_token":"1000h"},"urls":{"consent":"https://public.hydra.localhost/consent","error":"https://public.hydra.localhost/error","login":"https://public.hydra.localhost/login","post_logout_redirect":"https://public.hydra.localhost/login","self":{"issuer":"https://public.hydra.localhost/hydra/","public":"https://public.hydra.localhost/hydra/"}}}` | Hydra configuration to use. You can pass your own Hydra configuration file and configure callback, admin and public urls. (Hydra Reference Configuration)[https://www.ory.sh/docs/hydra/reference/configuration] for detailed description of each fields. |
+| hydra.hydra.config.secrets.system[0] | string | `""` | pass in a seceret to be used in AuthZ flow |
+| hydra.hydra.config.ttl.access_token | string | `"24h"` | Expiry of the issued token |
+| hydra.hydra.config.ttl.auth_code | string | `"1h"` | Expiry of the issued auth code to be exchanged for access_token. |
+| hydra.hydra.config.ttl.refresh_token | string | `"1000h"` | Expiry of the issued refresh token, once expired the refresh token cannot be used to re-issue the access token. |
+| hydra.hydra.dangerousForceHttp | bool | `true` | enabled for development environment to skip TLS. |
+| image.pullPolicy | string | `"IfNotPresent"` |  |
+| image.repository | string | `"layer5/meshery-cloud"` |  |
+| image.tag | string | `"latest"` |  |
+| imagePullSecrets | list | `[]` |  |
+| ingress.annotations | object | `{}` |  |
+| ingress.className | string | `""` |  |
+| ingress.enabled | bool | `false` |  |
+| ingress.hosts[0].host | string | `""` |  |
+| ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
+| ingress.tls | list | `[]` |  |
+| kratos.enabled | bool | `true` |  |
+| kratos.kratos.automigration.enabled | bool | `true` |  |
+| kratos.kratos.config | object | `{"ciphers":{"algorithm":"xchacha20-poly1305"},"courier":{"smtp":{"connection_uri":""},"templates":{"recovery_code":{"valid":{"email":{"body":{"html":""},"subject":""}}},"verification_code":{"valid":{"email":{"body":{"html":""},"subject":""}}}}},"dsn":"postgres://postgres:postgres@postgres-postgresql.postgres.svc.cluster.local:5432/kratos?sslmode=disable","hashers":{"argon2":{"iterations":2,"key_length":16,"memory":"128MB","parallelism":1,"salt_length":16}},"identity":{"default_schema_id":"default","schemas":[{"id":"default","url":"file:///etc/config/identity.schema.json"}]},"log":{"format":"text","leak_sensitive_values":false,"level":"debug"},"secrets":{"cipher":[""],"cookie":[""]},"selfservice":{"allowed_return_urls":["http://localhost:9876"],"default_browser_return_url":"http://localhost:9876","flows":{"error":{"ui_url":"http://localhost:9876/error"},"login":{"after":{"default_browser_return_url":"http://localhost:9876/oauth/callback","password":{"hooks":[{"hook":"require_verified_address"}]}},"lifespan":"720m","ui_url":"http://localhost:9876/login"},"logout":{"after":{"default_browser_return_url":"http://localhost:9876/login"}},"recovery":{"enabled":true,"lifespan":"720h","ui_url":"http://localhost:9876/recovery","use":"code"},"registration":{"after":{"default_browser_return_url":"http://localhost:9876/registered","oidc":{"hooks":[{"hook":"session"},{"config":{"auth":{"config":{"in":"header","name":"X-API-Key","value":"dev_token"},"type":"api_key"},"body":"file:///home/ory/identity/password.webhook.jsonnet","method":"POST","response":{"ignore":true},"url":"http://localhost:9876/identity/users"},"hook":"web_hook"}]},"password":{"hooks":[{"config":{"auth":{"config":{"in":"header","name":"X-API-Key","value":"dev_token"},"type":"api_key"},"body":"file:///home/ory/identity/password.webhook.jsonnet","method":"POST","response":{"ignore":true},"url":"http://localhost:9876/identity/users"},"hook":"web_hook"}]}},"lifespan":"24h","ui_url":"http://localhost:9876/registration"},"settings":{"after":{"default_browser_return_url":"http://localhost:9876/account/profile"},"privileged_session_max_age":"15m","ui_url":"http://localhost:9876/reset"},"verification":{"enabled":true,"lifespan":"720h","ui_url":"http://localhost:9876/verification","use":"code"}},"methods":{"oidc":{"config":{"providers":[{"client_id":"","client_secret":"","id":"github","mapper_url":"file:///home/ory/identity/oidc.github.jsonnet","provider":"github","requested_claims":{"id_token":{"email":{"essential":true},"email_verified":{"essential":true},"name":{"essential":true},"picture":{"essential":true},"profile":{"essential":true}}},"scope":["read:user","user:email"]},{"client_id":"","client_secret":"","id":"google","mapper_url":"file:///home/ory/identity/oidc.google.jsonnet","provider":"google","requested_claims":{"id_token":{"email":{"essential":true},"email_verified":{"essential":true},"family_name":null,"given_name":{"essential":true},"hd":null}},"scope":["email","profile"]}]},"enabled":true},"password":{"config":{"haveibeenpwned_enabled":true,"identifier_similarity_check_enabled":true,"min_password_length":8},"enabled":true}}},"serve":{"admin":{"base_url":"http://localhost:9011/"},"public":{"base_url":"http://localhost:9010/","cors":{"allowed_headers":["Authorization","Cookie"],"allowed_methods":["POST","GET","PUT","PATCH","DELETE"],"allowed_origins":["http://localhost:9010/"],"enabled":true,"exposed_headers":["Content-Type","Set-Cookie"]}}}}` | Kratos configuration to use. You can pass your own Kratos configuration file and configure self-service flows, enable/disable features as required. (Kratos Reference Configuration)[https://www.ory.sh/docs/kratos/reference/configuration] for detailed description of each fields. |
+| kratos.kratos.config.ciphers | object | `{"algorithm":"xchacha20-poly1305"}` | One of the values: `[noop, aes, xchacha20-poly1305]`. Default if not provided is `noop`. |
+| kratos.kratos.config.secrets.cookie | list | `[""]` | Fill in values for cookie and cipher to be used in the AuthN flows |
+| kratos.kratos.config.selfservice.flows.login.lifespan | string | `"720m"` | Each session is valid for a set amount of time. This time is the session's lifespan. When the session lifespan expires, the user must re-authenticate. |
+| kratos.kratos.config.selfservice.flows.recovery.lifespan | string | `"720h"` | In the configuration, session lifespan is expressed in hours, minutes, and seconds. Use a combination of these units to define the desired lifespan. For example: 72h, 10m, 12s, 1h13m3s. |
+| kratos.kratos.config.selfservice.flows.registration.lifespan | string | `"24h"` | Each session is valid for a set amount of time. This time is the session's lifespan. When the session lifespan expires, the user must re-authenticate. |
+| kratos.kratos.config.selfservice.flows.verification.lifespan | string | `"720h"` | In the configuration, session lifespan is expressed in hours, minutes, and seconds. Use a combination of these units to define the desired lifespan. For example: 72h, 10m, 12s, 1h13m3s. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[0].client_id | string | `""` | GitHub OAuth App client_id to enable GitHub OIDC support for cloud IDP. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[0].client_secret | string | `""` | GitHub OAuth App client_secret to enable GitHub OIDC support for cloud IDP. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[0].mapper_url | string | `"file:///home/ory/identity/oidc.github.jsonnet"` | mapper_url is a jsonnet file to map the incoming OIDC profile details to the Kratos Identity. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[0].scope | list | `["read:user","user:email"]` | GitHub OAuth App scope's to specify exactly what type of access you need. Scopes limit access for OAuth tokens. They do not grant any additional permission beyond that which the user already has. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[1].client_id | string | `""` | Google OAuth App client_id to enable Google OIDC support for cloud IDP. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[1].client_secret | string | `""` | Google OAuth App client_secret to enable Google OIDC support for cloud IDP. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[1].mapper_url | string | `"file:///home/ory/identity/oidc.google.jsonnet"` | mapper_url is a jsonnet file to map the incoming OIDC profile details to the Kratos Identity. |
+| kratos.kratos.config.selfservice.methods.oidc.config.providers[1].scope | list | `["email","profile"]` | GitHub OAuth App scope's to specify exactly what type of access you need. Scopes limit access for OAuth tokens. They do not grant any additional permission beyond that which the user already has. |
+| kratos.kratos.identitySchemas."identity.schema.json" | string | `"{\n\"$id\": \"identity.schema.json\",\n\"$schema\": \"http://json-schema.org/draft-07/schema#\",\n\"title\": \"Person\",\n\"type\": \"object\",\n\"properties\": {\n  \"traits\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"email\": {\n        \"type\": \"string\",\n        \"format\": \"email\",\n        \"title\": \"E-Mail\",\n        \"minLength\": 3,\n        \"ory.sh/kratos\": {\n          \"credentials\": {\n            \"password\": {\n              \"identifier\": true\n            }\n          },\n          \"verification\": {\n            \"via\": \"email\"\n          },\n          \"recovery\": {\n            \"via\": \"email\"\n          }\n        }\n      },\n      \"name\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"first_name\": {\n            \"title\": \"First Name\",\n            \"type\": \"string\"\n          },\n          \"last_name\": {\n            \"title\": \"Last Name\",\n            \"type\": \"string\"\n          }\n        },\n        \"required\": [\n          \"first_name\",\n          \"last_name\"\n        ]\n      },\n      \"avatar\": {\n        \"title\": \"Avatar URL\",\n        \"type\": \"string\"\n      }\n    },\n    \"required\": [\n      \"email\",\n      \"name\"\n    ],\n    \"additionalProperties\": true\n  }\n}\n}"` |  |
+| kratos.service.admin.enabled | bool | `true` |  |
+| kratos.service.admin.port | int | `9011` | Kratos Admin API port |
+| kratos.service.public.enabled | bool | `true` |  |
+| kratos.service.public.port | int | `9010` | Kratos Public API port |
+| nameOverride | string | `""` |  |
+| nodeSelector | object | `{}` | Node labels for Layer5 Cloud pods assignment ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/ |
+| podAnnotations | object | `{}` |  |
+| podSecurityContext | object | `{}` |  |
+| replicaCount | int | `1` |  |
+| resources.limits | object | `{}` | The resources limits for the Layer5 Cloud containers |
+| resources.requests.cpu | string | `"250m"` | The requested cpu for the Layer5 Cloud containers |
+| resources.requests.memory | string | `"256Mi"` | The requested memory for the Layer5 Cloud containers |
+| securityContext | object | `{}` |  |
+| service.port | int | `9876` |  |
+| service.type | string | `"ClusterIP"` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
+| serviceAccount.name | string | `"meshery-cloud"` |  |
+| smtp | object | `{"smtphost":"","smtppassword":"","smtpport":"","smtpusername":""}` | smtp configuration to be used when sending out emails |
+| tolerations | list | `[]` | Tolerations for Layer5 Cloud pods assignment ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
+{.td-initial}
 
-## Workload
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `replicaCount` | `1` | Server replicas. Ignored when autoscaling is on. |
-| `image.repository` | `layer5/meshery-cloud` | Server image. |
-| `image.tag` | `latest` | Image tag. Pin it to a release such as `v1.0.278`. When empty, the chart uses its own `appVersion`. |
-| `image.pullPolicy` | `Always` | Image pull policy. |
-| `imagePullSecrets` | `[]` | Pull secrets for a private registry. |
-| `updateStrategy` | RollingUpdate, 25% unavailable, 25% surge | Deployment update strategy. |
-| `resources.requests` | `256Mi` memory, `250m` CPU | Requested resources. |
-| `resources.limits` | `{}` | No limits by default. |
-| `autoscaling.enabled` | `false` | Enables a HorizontalPodAutoscaler. |
-| `autoscaling.minReplicas`, `.maxReplicas` | `1`, `100` | Autoscaler bounds. |
-| `autoscaling.targetCPUUtilizationPercentage` | `80` | Autoscaler target. |
-| `nodeSelector`, `tolerations`, `affinity` | `{}`, `[]`, `{}` | Pod scheduling. |
-| `podAnnotations`, `podSecurityContext`, `securityContext` | `{}` | Pod and container settings. |
-| `serviceAccount.create`, `.name`, `.annotations` | `true`, `meshery-cloud`, `{}` | Service account. |
-| `nameOverride`, `fullnameOverride` | `""`, `meshery-cloud` | Resource naming. The Deployment, Service, ConfigMap, and Secret derive their names from `fullnameOverride`. |
-
-The container has a liveness probe on `/healthz` and readiness and startup probes on `/readyz`. See [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}}).
-
-## Networking
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `service.type` | `ClusterIP` | Service type. |
-| `service.port` | `9876` | Service port for the server. |
-| `service.hydraAdminProxyPort` | `9879` | Port of the internal proxy that sits between Kratos and the Hydra admin API. Set `0` to turn the proxy off. |
-| `ingress.enabled` | `true` | Creates the Ingress. |
-| `ingress.className` | `nginx` | Ingress class. |
-| `ingress.annotations` | `{}` | Controller annotations. |
-| `ingress.hosts` | One empty host routing `/` to port 9876 | Hosts and paths. You must set the host. Add `/kratos` and `/hydra` paths for the identity services. |
-| `ingress.tls` | `[]` | TLS secret and hosts. The chart does not create certificates. |
-
-## Server settings (`env`)
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `proto` | `""` | `http` or `https`. Used to build redirects to organization custom domains. Set `https` on a TLS deployment. |
-| `serverbaseurl` | `http://localhost:9876` | Public base URL of the deployment. Also the base of the OAuth2 callback `<serverbaseurl>/callback`. |
-| `serverHost` | `localhost` | Public hostname of the deployment. |
-| `port` | `9876` | Port the server listens on. |
-| `environment` | `cloud` | Deployment mode. `development` connects to a local database at `127.0.0.1:5432`, tolerates a failed migration, logs rendered email bodies, and skips reCAPTCHA. Use any other value in production. |
-| `debug` | `"false"` | Sets the `DEBUG` variable. |
-| `loglevel` | `4` | Log level: `4` info, `5` debug, `6` trace. Not in the default values; the server uses `4` when unset. |
-| `db`, `hydradb`, `kratosdb` | In-cluster PostgreSQL URLs with `sslmode=disable` | Connection strings for the `meshery`, `hydra`, and `kratos` databases. Change the user, password, host, and `sslmode`. |
-| `minmesheryversion` | `v1.0.55` | Lowest Meshery Server version that can complete sign-in. A connecting Meshery Server below it is shown a "Meshery Deployment Incompatible" error. |
-| `initConfig` | `""` | Provider initialization document. See [Provider Initialization]({{< ref "cloud/guides/self-hosted/deployment/provider-initialization.md" >}}). |
-| `otelConfig` | `""` | OpenTelemetry tracing configuration. See [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md#traces" >}}). |
-| `anonymousUserSessionsEnabled` | `false` | Lets the deployment serve guest sessions, as used by kanvas.new. Leave off unless you operate that flow. |
-| `ghtoken` | `""` | GitHub token the server uses to dispatch workflows. |
-| `githubappid` | not set | GitHub App identifier for the GitHub integration. |
-| `githubappkeypath` | `key.pem` | Path of the GitHub App private key file inside the chart. |
-| `githubAppClientId`, `githubAppClientSecret` | `""` | OAuth client ID and a client secret from the settings page of the GitHub App that `githubappid` names. Layer5 Cloud v1.0.287 and later uses them to confirm which installations of the App the authorizing GitHub account can access. When either is empty, the server logs a warning at startup and no GitHub connection can be created or re-authorized. The App must also meet the [Self-hosted GitHub App requirements]({{< ref "cloud/guides/integrations/github-integration/index.md#self-hosted-github-app-requirements" >}}). |
-| `stripeSecretKey`, `stripePublicKey` | not set | Stripe keys for payment processing. |
-| `recaptchaSiteKey`, `recaptchaSecretKey` | not set | Google reCAPTCHA keys. Signup verification runs only when both are set. Organizations on a custom domain with a different registrable domain are exempt. |
-
-### Identity connections
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `kratospublic` | none, required | In-cluster address of the Kratos public service. The chart fails to render without it. May contain `{{ .Release.Namespace }}`. |
-| `kratosadmin` | not set | In-cluster address of the Kratos admin service. |
-| `kratosbrowser` | not set | Address browsers use for Kratos, such as `https://cloud.example.com/kratos`. |
-| `hydrapublic` | `http://hydra-public:4444` | Address of Hydra's public API. |
-| `hydrabrowser` | not set | Address browsers use for Hydra, such as `https://cloud.example.com/hydra`. |
-| `hydraadmin` | `http://hydra-admin:4445` | Address of Hydra's admin API. |
-| `hydrapublicinternal` | `""` | In-cluster address of Hydra's public API for calls the server makes to itself. Falls back to `hydrabrowser` when empty. May contain `{{ .Release.Namespace }}`. |
-| `oauthclientid` | `meshery-cloud` | Id of the Hydra OAuth2 client the server uses. |
-| `oauthsecret` | `secret1234567890` | Secret of that client. Replace it. |
-| `kratosWebhookApiKey` | `""` | Key Kratos sends in the `X-API-Key` header on registration hooks. When empty, the server accepts the placeholder `dev_token`. Set it, and set the same value in the Kratos hooks. |
-| `providerOrgGithubKey`, `providerOrgGithubSecret` | `""` | Client id and secret of the default GitHub OAuth application. |
-| `providerOrgGoogleKey`, `providerOrgGoogleSecret` | `""` | Client id and secret of the default Google OAuth application. |
-
-### Encryption keys
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `cloudCredentialEncryptionKey` | not set | Base64 of 32 bytes. Encrypts stored credentials. When empty, encrypting or decrypting a credential fails. |
-| `cloudOidcStateHmacKey` | not set | Base64 of 32 bytes. Signs the state of brokered social sign-in. When empty, brokered sign-in fails. |
-| `stripeWebhookSecret`, `githubWebhookSecret` | not set | Signing secrets for inbound payment and GitHub webhooks. When empty, those inbound webhooks are rejected. |
-
-### Webhooks
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `webhookHelpAndSupport` | not set | URL that receives support requests. |
-| `webhookKanvasEntitlement` | not set | URL that receives Kanvas entitlement events. |
-| `webhookSignupRequest` | not set | URL that receives signup decisions. |
-
-See [Customize Webhooks]({{< ref "cloud/guides/self-hosted/customizing-webhooks.md" >}}).
-
-## Mail (`smtp`)
-
-| Key | Default | Meaning |
-| --- | --- | --- |
-| `smtp.smtphost` | `""` | Relay host. Must resolve to a public address. |
-| `smtp.smtpport` | `""` | `25`, `465`, `587`, or `2525`. Port `465` uses implicit TLS; the others require STARTTLS. |
-| `smtp.smtpusername` | `""` | Mailbox login. Must be a full email address, because it becomes the `From` address. |
-| `smtp.smtppassword` | `""` | Mailbox password. |
-
-Set all four or none. A partial configuration stops the server at startup. See [Troubleshoot Email Delivery]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}).
-
-## Kratos (`kratos`)
-
-The `kratos.kratos.config` tree is passed to Kratos unchanged. The [Kratos configuration reference](https://www.ory.sh/docs/kratos/reference/configuration) describes every field. The values you must change for a real deployment:
-
-| Key | Default | Change to |
-| --- | --- | --- |
-| `kratos.enabled` | `true` | Keep `true` unless you bring your own Kratos. |
-| `kratos.service.public.port`, `.admin.port` | `9010`, `9011` | Public and admin ports. |
-| `kratos.kratos.config.dsn` | In-cluster URL for the `kratos` database | Your connection string. |
-| `kratos.kratos.config.secrets.cookie`, `.cipher` | `[""]` | Long random strings. |
-| `kratos.kratos.config.serve.public.base_url` | `http://localhost:9010/` | `https://<host>/kratos`. |
-| `kratos.kratos.config.serve.public.cors.allowed_origins` | `http://localhost:9010/` | Your public origin. |
-| `kratos.kratos.config.selfservice.default_browser_return_url`, `.allowed_return_urls` | `http://localhost:9876` | Your public URL. |
-| `kratos.kratos.config.selfservice.flows.*.ui_url` | `http://localhost:9876/...` | Your public URL with the same paths. |
-| `kratos.kratos.config.selfservice.flows.registration.after.*.hooks` | `web_hook` to `http://localhost:9876/identity/users`, key `dev_token` | `https://<host>/api/identity/users` and your `kratosWebhookApiKey`. |
-| `kratos.kratos.config.selfservice.methods.oidc.config.providers` | GitHub and Google with empty credentials | Your `client_id` and `client_secret`. |
-| `kratos.kratos.config.courier` | SMTP courier, empty connection string | Your courier. See [Plan a Deployment]({{< ref "cloud/guides/self-hosted/planning/_index.md#mail" >}}). |
-
-Other defaults you can change: password sign-in is on with a minimum length of 8, breached-password and similarity checks on; login flows last `720m`, registration `24h`, recovery and verification `720h`; verification and recovery use codes; `privileged_session_max_age` is `15m`; the log level is `debug`; automatic migration is on.
-
-A list in a values file replaces the chart's list as a whole. Copy the full `providers` or `hooks` list before you edit it.
-
-## Hydra (`hydra`)
-
-The `hydra.hydra.config` tree is passed to Hydra unchanged. See the [Hydra configuration reference](https://www.ory.sh/docs/hydra/reference/configuration).
-
-| Key | Default | Change to |
-| --- | --- | --- |
-| `hydraPrefix` | `cloud-hydra` | Name prefix of the Hydra resources. The services become `<prefix>-public` and `<prefix>-admin`. |
-| `hydra.hydra.config.dsn` | In-cluster URL for the `hydra` database | Your connection string. |
-| `hydra.hydra.config.secrets.system` | `[""]` | A long random string. |
-| `hydra.hydra.config.urls.login`, `.consent`, `.error`, `.post_logout_redirect` | `https://public.hydra.localhost/...` | `https://<host>/login`, `/consent`, `/error`, and `/login`. |
-| `hydra.hydra.config.urls.self.public`, `.self.issuer` | `https://public.hydra.localhost/hydra/` | `https://<host>/hydra/`. |
-| `hydra.hydra.dangerousForceHttp` | `true` | `false` once Hydra is reached over TLS. |
-| `hydra.hydra.config.strategies.access_token` | `jwt` | Keep `jwt`. |
-| `hydra.hydra.config.ttl.access_token`, `.refresh_token`, `.id_token`, `.auth_code` | `24h`, `1000h`, `1h`, `1h` | Token lifetimes. |
-
-Other defaults: automatic migration is on, the log level is `debug`, and the liveness and readiness probes use `/health/alive` and `/health/ready` on port 4444.
+</div>
