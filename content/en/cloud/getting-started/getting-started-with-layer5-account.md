@@ -108,7 +108,7 @@ The dashboard is your normal landing page after sign-in. It is a grid of widgets
 
 Whatever method you signed up with, you can later link a GitHub or Google account to your existing profile from your profile page. Once linked, either method signs you in to the same Layer5 Cloud profile. Each provider shows **Link** or **Unlink** depending on its current state. Linking sends you to the provider and then back to your profile.
 
-Changing a password or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to authenticate again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default on a self-hosted chart. For every account setting, see [Manage Your Account]({{< ref "cloud/guides/account/managing-your-account.md" >}}).
+Profile changes are privileged actions. If your session has been active for more than 15 minutes, Layer5 Cloud asks you to authenticate again before it saves them.
 
 ## Check your result
 

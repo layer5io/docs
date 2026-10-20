@@ -83,7 +83,7 @@ Kanvas emails these people, after removing the author of the new message:
 
 A request is sent only when the message mentions someone, or the thread already has an earlier message by or mentioning another person. **A first comment that mentions nobody emails nobody, including the design owner.** Mention the owner when you need them to see a new comment.
 
-An email goes out only if the recipient's account preferences allow it. Two preferences apply: comments on your designs, which governs the owner's email, and participating and mentions in comments, which governs the other two. See [Notification Preferences]({{< ref "cloud/guides/account/notification-preferences.md" >}}).
+An email goes out only if the recipient's account preferences allow it. Two preferences apply: comments on your designs, which governs the owner's email, and participating and mentions in comments, which governs the other two. See [Notification Preferences]({{< ref "cloud/concepts/identity-and-security/users/notification-preferences/index.md" >}}).
 
 Kanvas does not check that a recipient can open the design before it emails them. The email shows the thread and links to the design in the Meshery Playground, whichever Meshery the design is stored for.
 
