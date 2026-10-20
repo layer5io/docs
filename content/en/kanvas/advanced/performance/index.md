@@ -47,7 +47,7 @@ Kanvas supports up to 1,000 relationships per design. Exceeding this limit can i
 
 Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.
 
-Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags]({{< ref "kanvas/guides/designing/tagsets/index.md" >}}).
+Upon loading a design exceeds that exceeds 20 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the "Group Components" button in the Designer dock. For more information, see [Working with Tags]({{< ref "kanvas/designer/tagsets/index.md" >}}).
 
 <!--
 #### Maximum Number of Relationships per Component

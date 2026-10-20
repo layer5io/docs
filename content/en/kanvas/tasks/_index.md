@@ -11,7 +11,7 @@ Cookbook-style guides for common Kanvas workflows — from whiteboarding on the 
 
 ## On the canvas
 
-- [Whiteboard on the Canvas]({{< ref "kanvas/guides/designing/whiteboarding/index.md" >}}) - freestyle shapes, text, and annotations.
+- [Whiteboarding]({{< ref "kanvas/tasks/whiteboarding.md" >}}) — freestyle shapes, text, and annotations (see also [Designer whiteboarding]({{< ref "kanvas/designer/whiteboarding/index.md" >}})).
 
 ## Design lifecycle
 
