@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Orgs on Layer5 Documentation</title><link>/pr-preview/pr-1349/tags/orgs/</link><description>Recent content in Orgs on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1349/tags/orgs/index.xml" rel="self" type="application/rss+xml"/><item><title>Organizations</title><link>/pr-preview/pr-1349/cloud/concepts/identity-and-security/organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/concepts/identity-and-security/organizations/</guid><description>&lt;p&gt;An organization is the tenant boundary in Layer5 Cloud. It decides whose resources a request can reach, whose billing it counts against, and which roles apply. Understanding how organizations isolate, nest, and resolve explains most of what a user can and cannot see.&lt;/p&gt;
+
+&lt;h2 id="what-an-organization-is" class="heading-link"&gt;
+ What an organization is
+ &lt;a href="#what-an-organization-is" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The organization is the unit of multi-tenancy and the core security boundary. Everything else composes on top of it: teams and workspaces belong to one organization, and users hold roles in it. Roles, keychains, and keys are defined once for the whole provider, but resources, billing, and access control are isolated per organization, so a role held in one organization grants nothing in another.&lt;/p&gt;</description></item><item><title>Identity and Security</title><link>/pr-preview/pr-1349/cloud/concepts/identity-and-security/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/concepts/identity-and-security/</guid><description>&lt;p&gt;Identity and security in Layer5 Cloud answer two questions for every request: who is acting, and what that person may do in the organization the request runs in. The answer is never decided by one thing. Organization membership, the roles a person holds in that organization, and resources shared with them directly each contribute, and the same person can hold different access in each organization they belong to. This page gives you that mental model and the boundaries it creates. To go straight to a task or a lookup, use &lt;a href="/pr-preview/pr-1349/cloud/concepts/identity-and-security/#choose-the-right-page"&gt;Choose the right page&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Bring Your Own Mail Server</title><link>/pr-preview/pr-1349/cloud/guides/organizations/org-management/bring-your-own-mail-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/organizations/org-management/bring-your-own-mail-server/</guid><description>&lt;p&gt;By default, every email Layer5 Cloud sends to the members of your Organization leaves through Layer5&amp;rsquo;s shared mail server and arrives from a Layer5 address. The body of the message already carries your branding. The address it arrives from does not.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Email&lt;/strong&gt; tab of Edit Organization changes that. Your Organization registers its own SMTP server and its own from address, and once you have proven control of the sending domain and turned the server on, application mail such as invitations and notifications leaves through your server from your domain. Nothing about the message points to a shared provider.&lt;/p&gt;</description></item><item><title>Identity Services</title><link>/pr-preview/pr-1349/cloud/guides/self-hosted/planning/identity-services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/self-hosted/planning/identity-services/</guid><description>&lt;p&gt;A self-hosted deployment is its own identity provider. Ory Kratos owns user accounts and sign-in, Ory Hydra issues OAuth2 tokens, and the Layer5 Cloud server connects the two to organizations, teams, and roles. Users can sign up with an email address and password, or with Google or GitHub. For how identity fits together as a concept, see &lt;a href="/pr-preview/pr-1349/cloud/concepts/identity-and-security/"&gt;Identity and Security&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="what-the-chart-configures-by-default" class="heading-link"&gt;
+ What the chart configures by default
+ &lt;a href="#what-the-chart-configures-by-default" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Capability&lt;/th&gt;
+ &lt;th&gt;Default&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Password sign-in&lt;/td&gt;
+ &lt;td&gt;On. Minimum 8 characters, checked against known-breached passwords, and rejected when too similar to the account identifier.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Email verification&lt;/td&gt;
+ &lt;td&gt;Required before a password sign-in succeeds. Delivered as a code.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Account recovery&lt;/td&gt;
+ &lt;td&gt;On, delivered as a code.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Social sign-in&lt;/td&gt;
+ &lt;td&gt;Google and GitHub are enabled but have no credentials until you add them.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Login flow lifespan&lt;/td&gt;
+ &lt;td&gt;A started sign-in must finish within 12 hours (&lt;code&gt;720m&lt;/code&gt;).&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Recovery and verification flow lifespan&lt;/td&gt;
+ &lt;td&gt;A recovery or verification request stays valid for 30 days (&lt;code&gt;720h&lt;/code&gt;).&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Registration flow lifespan&lt;/td&gt;
+ &lt;td&gt;A started sign-up must finish within 24 hours.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Session lifespan&lt;/td&gt;
+ &lt;td&gt;Not set by the chart. Kratos applies its own default. See &lt;a href="/pr-preview/pr-1349/cloud/concepts/identity-and-security/sessions/"&gt;Sessions&lt;/a&gt;.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Access tokens&lt;/td&gt;
+ &lt;td&gt;JWT, valid 24 hours. Refresh tokens are valid 1000 hours, ID tokens 1 hour, and authorization codes 1 hour.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Change any of these through the &lt;code&gt;kratos.kratos.config&lt;/code&gt; and &lt;code&gt;hydra.hydra.config&lt;/code&gt; values. Both are passed to the Ory services unchanged, so the &lt;a href="https://www.ory.sh/docs/kratos/reference/configuration"&gt;Kratos&lt;/a&gt; and &lt;a href="https://www.ory.sh/docs/hydra/reference/configuration"&gt;Hydra&lt;/a&gt; configuration references apply.&lt;/p&gt;</description></item><item><title>Manage an Organization</title><link>/pr-preview/pr-1349/cloud/guides/organizations/org-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/organizations/org-management/</guid><description>&lt;p&gt;An organization is the tenant boundary in Layer5 Cloud: teams, workspaces, roles, resources, and billing all attach to one. This guide covers the administrator tasks for an organization: create it, edit its branding and sign-in settings, manage its members, move between organizations, and delete it. For what an organization is and how it relates to teams and roles, see &lt;a href="/pr-preview/pr-1349/cloud/concepts/identity-and-security/organizations/"&gt;Organizations&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/pr-preview/pr-1349/contentimg/cloud/guides/organizations/org-management/images/org_overview_hu_652cc5f67369ff4b.webp" type="image/webp" width="2264" height="919"&gt;
+ &lt;img src="images/org_overview.png" onclick="openModal(this)" alt="Organization Overview"
+ width="2264" height="919"
+ class="md-image-responsive" /&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id="who-can-do-what" class="heading-link"&gt;
+ Who can do what
+ &lt;a href="#who-can-do-what" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The Organizations page opens for members who hold &lt;strong&gt;View Org&lt;/strong&gt; or &lt;strong&gt;View All Organizations&lt;/strong&gt;. Each task needs its own permission, and a few tasks are enforced more tightly than the permission matrix shows.&lt;/p&gt;</description></item><item><title>Child Organizations</title><link>/pr-preview/pr-1349/cloud/guides/organizations/org-management/child-organizations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/organizations/org-management/child-organizations/</guid><description>&lt;p&gt;A &lt;strong&gt;child organization&lt;/strong&gt; is an organization created inside another organization, called its &lt;strong&gt;parent&lt;/strong&gt;. A child is otherwise an ordinary organization: it has its own members, teams, workspaces, invitations, domain, and credentials. The parent relationship adds one thing, which is that administrators of the parent can manage the child&amp;rsquo;s settings and membership from the parent.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Permissions Required&lt;/h4&gt;
+ 
+ Creating a child organization requires the &lt;strong&gt;Create Organization&lt;/strong&gt; permission in the parent. Seeing the list of a parent&amp;rsquo;s children requires &lt;strong&gt;View Organizations&lt;/strong&gt; in the parent. Editing, deleting, or adding members to a child from the parent requires the Organization Administrator or Owner role in the parent. To understand the specific roles needed for each action, please refer to the &lt;a href="/pr-preview/pr-1349/cloud/reference/default-permissions/"&gt;Roles and Permissions reference&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="how-organizations-nest" class="heading-link"&gt;
+ How Organizations Nest
+ &lt;a href="#how-organizations-nest" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An organization can have any number of child organizations.&lt;/li&gt;
+&lt;li&gt;A child can have child organizations of its own, and those can have children of their own. There is no limit on depth.&lt;/li&gt;
+&lt;li&gt;Every top-level organization sits directly under the &lt;strong&gt;provider organization&lt;/strong&gt; of your Layer5 Cloud deployment. The provider organization is never itself a child, and it does not appear in the child organizations section.&lt;/li&gt;
+&lt;li&gt;A child belongs to exactly one parent. A child cannot be moved to another parent after it is created.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A parent administers its &lt;strong&gt;direct&lt;/strong&gt; children only. An administrator of a grandparent does not administer a grandchild by virtue of that role; the administrator of the intermediate organization does.&lt;/p&gt;</description></item><item><title>Organization Configuration Scenarios</title><link>/pr-preview/pr-1349/cloud/guides/organizations/configuration-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/organizations/configuration-scenarios/</guid><description>&lt;p&gt;Every organization in Layer5 Cloud is configured by two choices: &lt;strong&gt;where your users sign in&lt;/strong&gt; (the front door) and &lt;strong&gt;whose identity provider authenticates them&lt;/strong&gt;. The combinations form five named scenarios. This guide helps you pick one and then walks through the settings that implement it, including who is allowed to change each setting.&lt;/p&gt;
+&lt;p&gt;For the mechanics behind the choices, see &lt;a href="/pr-preview/pr-1349/cloud/guides/self-hosted/white-labeling/"&gt;White-labeling&lt;/a&gt; (themes, logos, custom domains) and &lt;a href="/pr-preview/pr-1349/cloud/guides/self-hosted/planning/identity-services/"&gt;Identity Services&lt;/a&gt; (bring-your-own-credentials and authentication boundaries).&lt;/p&gt;</description></item><item><title>White-label Layer5 Cloud</title><link>/pr-preview/pr-1349/cloud/guides/self-hosted/white-labeling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/self-hosted/white-labeling/</guid><description>&lt;p&gt;White-labeling lets the people who use your deployment see your brand, not Layer5&amp;rsquo;s: your logo and colors in the product, your support and legal links on sign-in pages and in email footers, your domain in the address bar, and your address on the mail they receive. Branding is set per organization, so a provider that hosts many organizations can give each its own identity.&lt;/p&gt;
+&lt;p&gt;White-labeling is part of the Managed Service Provider capability of the Enterprise plan.&lt;/p&gt;</description></item></channel></rss>

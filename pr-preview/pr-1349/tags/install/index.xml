@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Install on Layer5 Documentation</title><link>/pr-preview/pr-1349/tags/install/</link><description>Recent content in Install on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1349/tags/install/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy Layer5 Cloud</title><link>/pr-preview/pr-1349/cloud/guides/self-hosted/deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1349/cloud/guides/self-hosted/deployment/</guid><description>&lt;p&gt;This guide installs the &lt;code&gt;layer5-cloud&lt;/code&gt; chart, which deploys the Layer5 Cloud server together with Kratos and Hydra. It assumes you have made the decisions in &lt;a href="/pr-preview/pr-1349/cloud/guides/self-hosted/planning/"&gt;Plan a Deployment&lt;/a&gt;. The commands use the release name &lt;code&gt;layer5-cloud&lt;/code&gt; in the namespace &lt;code&gt;layer5-cloud&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="prerequisites" class="heading-link"&gt;
+ Prerequisites
+ &lt;a href="#prerequisites" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kubernetes cluster and Helm 3.&lt;/li&gt;
+&lt;li&gt;An ingress controller that supports WebSocket upgrades, and a TLS certificate for your hostname.&lt;/li&gt;
+&lt;li&gt;A PostgreSQL server you can create databases on.&lt;/li&gt;
+&lt;li&gt;An SMTP relay that satisfies the &lt;a href="/pr-preview/pr-1349/cloud/guides/self-hosted/operating/smtp/#constraints-on-the-shared-mail-server"&gt;mail constraints&lt;/a&gt;, or the decision to run without mail.&lt;/li&gt;
+&lt;li&gt;The OAuth applications for Google and GitHub, if you offer social sign-in.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="install" class="heading-link"&gt;
+ Install
+ &lt;a href="#install" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="1-prepare-the-database" class="heading-link"&gt;
+ 1. Prepare the database
+ &lt;a href="#1-prepare-the-database" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Create one role and three databases on your PostgreSQL server, then create the &lt;code&gt;uuid-ossp&lt;/code&gt; extension in the &lt;code&gt;meshery&lt;/code&gt; database. The server creates the schema itself.&lt;/p&gt;</description></item></channel></rss>
