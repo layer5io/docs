@@ -24,17 +24,16 @@ Tasks you perform on the canvas. See [Build Designs]({{< ref "kanvas/guides/desi
 
 ## Manage designs
 
-See [Manage Designs]({{< ref "kanvas/guides/designs/_index.md" >}}) for the group.
-
 | Goal | Guide |
 |---|---|
-| Bring in a manifest, Helm chart, Compose file, Kustomize project, or design, or merge one design into another | [Import and Merge Designs]({{< ref "kanvas/guides/designs/import-designs/index.md" >}}) |
-| Understand and control how work is saved | [Save Designs]({{< ref "kanvas/guides/designs/saving-designs/index.md" >}}) |
-| Start from a public or published design | [Clone a Design]({{< ref "kanvas/guides/designs/cloning-a-design/index.md" >}}) |
-| Back up a design or use it offline | [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}) |
-| Show a design on another site | [Embed Designs]({{< ref "kanvas/guides/designs/embedding-designs/index.md" >}}) |
-| Make a design available in the catalog | [Publish Designs]({{< ref "kanvas/guides/designs/publishing-designs/index.md" >}}) |
-| Remove a design permanently | [Delete a Design]({{< ref "kanvas/guides/designs/deleting-a-design/index.md" >}}) |
+| Bring in a manifest, Helm chart, Compose file, or design | [Importing a Design]({{< ref "kanvas/getting-started/import-designs/index.md" >}}) |
+| Combine two designs, or open one in place of the canvas | [Merging and Loading Designs]({{< ref "kanvas/designer/merging-designs/index.md" >}}) |
+| Understand and control how work is saved | [Saving Designs]({{< ref "kanvas/designer/saving-designs/index.md" >}}) |
+| Start from an existing design | [Cloning a Design]({{< ref "kanvas/tasks/designs/cloning-a-design/index.md" >}}) |
+| Back up a design or use it offline | [Exporting Designs]({{< ref "kanvas/designer/export-designs/index.md" >}}) |
+| Show a design on another site | [Embedding Designs]({{< ref "kanvas/designer/embedding-designs/index.md" >}}) |
+| Make a design available in the catalog | [Publishing Designs]({{< ref "kanvas/designer/publishing-designs/index.md" >}}) |
+| Remove a design permanently | [Deleting a Design]({{< ref "kanvas/tasks/designs/deleting-a-design/index.md" >}}) |
 
 ## Validate and deploy
 

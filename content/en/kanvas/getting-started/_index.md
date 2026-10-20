@@ -62,9 +62,9 @@ Complete these two tutorials in order. The second one starts from the design you
 
 ## After the first design
 
-- [Import designs]({{< ref "kanvas/guides/designs/import-designs/index.md" >}}) from Kubernetes manifests, Helm charts, Docker Compose files, and existing Meshery designs.
+- [Import designs]({{< ref "kanvas/getting-started/import-designs/index.md" >}}) from Kubernetes manifests, Helm charts, Docker Compose files, and existing Meshery designs.
 - [Create relationships]({{< ref "kanvas/guides/designing/creating-relationships/index.md" >}}) between components and learn how Kanvas interprets them.
 - [Work with components]({{< ref "kanvas/guides/designing/configuring-components/index.md" >}}) to configure, copy, and arrange them on the canvas.
-- [Embed designs]({{< ref "kanvas/guides/designs/embedding-designs/index.md" >}}) in your own documentation so diagrams stay in step with the design they describe.
+- [Embed designs]({{< ref "kanvas/designer/embedding-designs/index.md" >}}) in your own documentation so diagrams stay in step with the design they describe.
 - Browse the [Tutorials]({{< ref "kanvas/tutorials/_index.md" >}}) for longer, scenario-based walkthroughs.
 - Read the [Concepts]({{< ref "kanvas/concepts/_index.md" >}}) to understand designs, relationships, and the Kanvas architecture in depth.
