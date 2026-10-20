@@ -1,4 +1,0 @@
-# Operator
-
-
-<no value>
