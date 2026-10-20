@@ -24,6 +24,7 @@ Anyone who uses Layer5 Cloud signs into a user account. Your user account is you
 
 Curious, enthusiastic, and reliably the first to discover that a feature works differently than the docs say it does.
 
+[See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
 {{% card header="**Maya Chen** — Org Admin" %}}
 <img src='../../../images/five/2.svg' alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
@@ -34,6 +35,7 @@ Curious, enthusiastic, and reliably the first to discover that a feature works d
 
 Voice of reason. Has a calendar block called "Preventing Five from touching prod" that recurs every Friday at 4:45 PM.
 
+[See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
 {{< /cardpane >}}
 

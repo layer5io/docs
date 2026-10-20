@@ -10,7 +10,7 @@ tags: [sharing, collaboration, organizations, review]
 
 In this tutorial, an Organization Admin at one company asks an engineer at another company to review a private design. By the end, you will have given someone outside your organization access to one design, held a review in a comment thread, and removed that access. Along the way, you will learn what a grant gives someone, where Kanvas checks permissions, and why the review itself has to happen in comments.
 
-The cast is the same one used across these docs. Marcus Webb is the Organization Admin at Stellar Dynamics. Five is a Platform Engineer at Orbital Labs, a separate organization.
+The cast is the same one used across these docs (see [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}})). Marcus Webb is the Organization Admin at Stellar Dynamics. Five is a Platform Engineer at Orbital Labs, a separate organization.
 
 ## Before you begin
 

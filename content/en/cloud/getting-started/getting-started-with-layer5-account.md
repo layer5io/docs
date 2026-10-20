@@ -1,124 +1,90 @@
 ---
-title: Create Your Layer5 Account
-description: Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
-weight: 10
-diataxis: tutorial
+title: Setting up Layer5 Account
+description: With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
+weight: 1
 ---
 
-Your Layer5 account is your personal identity on Layer5 Cloud. One account can belong to many organizations and teams, and it is how you import and create designs, collaborate through workspaces, and connect Meshery Servers. In this tutorial you create an account, verify it, sign in, and confirm that Layer5 Cloud has prepared an organization, a team, and a workspace for you. You do not set up any of those yourself before you can start working. The **Check your email** page and the **Import from GitHub** first-run page described below arrived in Layer5 Cloud **v1.0.278**.
+This guide will walk you through setting up your Layer5 account.
 
-## 1. Create an account
+## Configuring your Layer5 account
 
-Sign up at <https://cloud.layer5.io/signup>. The registration page offers these sign-up methods:
+The first steps in starting with Layer5 are to create an account, verify your email, sign in, and view your profile. You do not need to set up an organization or a workspace: Layer5 Cloud creates one of each for you when you sign up. The **Check your email** page and the **Import from GitHub** first-run page described below arrived in Layer5 Cloud **v1.0.278**.
 
-| Method | What happens next |
-|---|---|
-| Email and password | You fill in one form. Layer5 Cloud signs you in right away and sends a verification email. Opening its link verifies your address and takes you back to where you started. |
-| GitHub | You authorize with GitHub and are signed in straight after registration. Layer5 Cloud treats the email address GitHub reports as verified, so no verification email is sent. |
-| Google | You authorize with Google and are signed in straight after registration. Layer5 Cloud treats the email address Google reports as verified, so no verification email is sent. |
-| Your organization's identity provider | An organization that brings its own identity provider credentials, including a generic OIDC provider, shows that provider on its own sign-up page. |
+ Every person who uses Layer5 Cloud has their own personal account, which can be part of multiple organizations and teams. Your personal account is your identity on Layer5 Cloud and represents you as an individual.
 
-### What the email sign-up form checks
+### 1. Creating an account
 
-The email sign-up form is a single screen that asks for your first name, last name, email address, and password. Layer5 Cloud validates each field and keeps what you typed when it shows an error, so you only correct the field at fault.
+To sign up for an account on Layer5 Cloud, navigate to <https://cloud.layer5.io/signup>.
+You may choose to either signup with your personal email or any of our supported OAuth providers like Github and Gmail. See "OAuth Providers" for more information.
 
-| Field | Rule |
-|---|---|
-| First and last name | 1 to 50 characters. Letters, combining marks, and spaces only. A spam filter also rejects blocked keywords in names. An invalid name shows "Invalid first name." or "Invalid last name." |
-| Email address | A syntactically valid address. The spam filter also rejects disposable-email domains. An invalid or rejected address shows "Invalid email address or domain not allowed." |
-| Password | At least 8 characters. Must not appear in the Have I Been Pwned breach corpus. Must not be too similar to your email address. |
+{{< meshery-design-embed src="export-designs/embedded-design-flows.js" id="embedded-design-8c9106f6-2b0e-4bd1-8eea-8ccdab5c117d" >}}
 
-When the deployment has a reCAPTCHA check enabled, the submit button stays disabled until you solve it. A field-level validation failure keeps your solved captcha. If the server rejects the whole submission after the captcha was sent, the captcha resets and asks you to "Please complete the verification again." If the network fails, the page shows "We couldn't submit your sign-up. Check your connection and try again."
 
-GitHub and Google sign-up skip the spam filter and the captcha.
 
-The sign-up form stays valid for 24 hours. If you leave it open longer, it restarts and you fill it in again.
+### 2. Verifying your email address
 
-## 2. Verify your email address
+After signing up, a verification email is sent to the email address associated with your account. The email contains a verification code and a verification link. You can complete your email verification using either method.
 
-After an email sign-up, Layer5 Cloud signs you in and sends a verification email that contains both a verification link and a verification code. Either one completes verification. Both stay valid for 720 hours (30 days). You cannot use your account, or sign in again with your password, until you verify your address.
+When you sign up with your email, Layer5 Cloud takes you to a **Check your email** page that names the address the verification email was sent to. You can stay on this page while you wait for the email:
 
-Opening the link verifies your address at once. You do not need to type the code or press a button. Layer5 Cloud then takes you back to the page you started signing up from, or to your dashboard if you opened the sign-up page directly. If the link has expired or was already used, the verification page says so and lets you request a new email.
+- **Resend email** sends a new verification email without leaving the page. Once it is sent, the page also links to a form where you can type the code from the new email instead of opening its link.
+- **Use a different email** takes you back to the sign-up form with your name kept and the email address cleared. Use it if you mistyped your address: an account cannot change its email address before that address is verified, so signing up again with the correct address is how you fix it.
 
-Your browser lands on a **Check your email** page that says you are signed in and names the address the verification email went to. You can wait on this page:
+If you reach the **Check your email** page in a different browser tab from the one you signed up in, or your browser blocks site storage, the page cannot name your address. **Resend email** then opens the verification page, which asks for your address before sending a new email.
 
-- **Resend email** sends a new verification email without leaving the page. Once it is sent, the page also offers a form where you type the code from the new email instead of opening its link.
-- **Sign out and use a different email** signs you out so you can sign up again with the correct address. Use it if you mistyped your address. An account cannot change its email address before that address is verified, so signing up again with the correct address is the fix.
+If you are using a custom domain, the verification link stays on your organization's domain instead of redirecting to the default domain.
 
-The page remembers your address only in the browser tab you signed up in. If you open **Check your email** in a different tab, or your browser blocks site storage, the page shows generic text instead of your address. **Resend email** then opens the verification page, which asks for your address before it sends a new email.
+On custom domains, verification links sent before the email-verification fix was released cannot be completed. Verification links are valid for 720 hours (30 days). If your link expired - or was sent before the fix - request a new verification email and use the latest verification link.
 
-If your organization uses a custom domain, the verification link, the page it opens, and the return afterward all stay on your organization's domain, with your organization's name and logo.
 
-If your link has expired, request a new verification email and use the latest link.
+<!-- considering we would want to use 2FA in future
+4. Configuring two-factor authentication
 
-## 3. Sign in {#3-signing-in-to-layer5-cloud}
+Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. We strongly urge you to configure 2FA for the safety of your account. For more information, see "About two-factor authentication."
 
-Sign in at <https://cloud.layer5.io/login> with the method you signed up with. If you signed up with GitHub or Google, Layer5 Cloud sends you to that provider to authenticate. The sign-in form stays valid for 12 hours; an expired form restarts.
+Optionally, after you have configured 2FA, add a passkey to your account to enable a secure, passwordless login. For more information, see "About passkeys" and "Managing your passkeys." -->
 
-You are not asked to name an organization or a workspace. Layer5 Cloud creates both on your first successful sign-in, as described in the next steps.
+### 3. Signing in to Layer5 Cloud
 
-### Where your first sign-in takes you
+To sign in to Layer5 Cloud, navigate to <https://cloud.layer5.io/login>. Use your new credentials to sign in. In case you have signed up with OAuth provider, you will be redirected to the provider's login page.
 
-Your first sign-in normally opens your [dashboard](#6-dashboard). One exception applies: if you started signing up from Kanvas, or from a Meshery Server on your organization's custom domain, and you registered in this browser, your first sign-in opens the **Import from GitHub** page (titled "Get started") once. If the sign-in carries an explicit return address, Layer5 Cloud sends you there instead.
+You are not asked to name an organization or a workspace. Both were created when you signed up, as described in the next two steps. Where your first sign-in takes you depends on where you started:
 
-The **Import from GitHub** page holds one card. It explains that connecting GitHub lets you pick repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs. It also names your organization and workspace: "Organizations own workspaces. You're in My Organization, working in My Workspace. Rename either anytime." From there you either start the [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) wizard or skip to your dashboard.
+- **You started from Kanvas.** If you came to Layer5 Cloud from Kanvas and created your account on Layer5 Cloud, your first sign-in opens the **Import from GitHub** page. If you instead signed in with GitHub or Google on the sign-in page Kanvas sent you to, you are returned to Kanvas.
+- **You started on Layer5 Cloud.** Your first sign-in opens your [dashboard](#6-dashboard).
+
+The **Import from GitHub** page holds a single card. It explains that connecting GitHub lets you choose repositories and import Kubernetes manifests, Helm charts, and Docker Compose files as designs, and it names your organization and workspace, each linked to where you can rename it. Select **Import from GitHub** to start the [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) wizard, or **Skip for now** to go to your dashboard.
 
 {{< alert type="info" >}}
-Layer5 Cloud remembers where you started only for the browser session you signed up in. If you sign in from a different browser, or after closing the browser you signed up in, you land on your dashboard. The **Import from GitHub** page is always available at <https://cloud.layer5.io/register/choose-start>.
+Layer5 Cloud remembers that you started from Kanvas only for the browser session you signed up in. If you sign in from a different browser, or after closing the browser you signed up in, you may land on your dashboard instead. The **Import from GitHub** page is always available at <https://cloud.layer5.io/register/choose-start>.
 {{< /alert >}}
 
-## 4. Your default organization {#4-creating-an-organization}
 
-Organizations are the unit of tenancy in Layer5 Cloud, and every user belongs to at least one. On your first sign-in, Layer5 Cloud creates an organization named **My Organization** (description "Default Organization"), makes you its owner, and gives you the Organization Admin role in it. You can create more organizations and join existing ones.
+### 4. Your default organization {#4-creating-an-organization}
 
-Layer5 Cloud also creates a team named **My Team** (description "Default Team"), attaches it to **My Organization**, and gives you the Team Admin role on it.
+Organizations are the unit of tenancy in Layer5 Cloud. Every user on Layer5 Cloud is part of at least one organization. When you sign up, Layer5 Cloud creates an organization named **My Organization** for you and makes you its owner and Organization Admin. Depending on your plan, you can also create more organizations, and you can join existing ones.
 
 {{< alert type="info" >}}
-For more information, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}).
+For more information, see [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}})
 {{< /alert >}}
 
-You can rename **My Organization** and change its description at any time. See [Editing your organization]({{< ref "cloud/guides/organizations/org-management/_index.md#editing-your-organization" >}}).
 
-## 5. Your default workspace {#5-creating-a-workspace}
+You can rename **My Organization** and change its description at any time. For more information, see [Editing your organization]({{< ref "cloud/guides/organizations/org-management/_index.md#editing-your-organization" >}}).
 
-Workspaces are logical groups of shared resources such as environments, connections, credentials, and designs. On your first sign-in, Layer5 Cloud creates a workspace named **My Workspace** (description "Default Workspace") in **My Organization**, owned by you. You can create more workspaces and share access to their resources through teams. If any of your organizations ever has no workspace, Layer5 Cloud re-creates **My Workspace** in it.
+### 5. Your default workspace {#5-creating-a-workspace}
+
+Workspaces are logical groups of shared resources like environments, connections, credentials, infrastructure designs and more. Every user on Layer5 Cloud is part of at least one workspace. When you sign up, Layer5 Cloud creates a workspace named **My Workspace** in your organization, owned by you. You can also create more workspaces or join an existing one. You can share access to resources in your workspaces through teams.
 
 {{< alert type="info" >}}
-For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}).
+For more information, see [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}})
 {{< /alert >}}
 
-You can rename **My Workspace** and change its description at any time. See [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
+You can rename **My Workspace** and change its description at any time. For more information, see [Edit a Workspace]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md#edit-a-workspace" >}}).
 
-### Everything your first sign-in sets up
+### 6. Dashboard
 
-| Created for you | Name | Your access |
-|---|---|---|
-| Organization | My Organization | Owner, Organization Admin role |
-| Team | My Team, attached to My Organization | Team Admin role |
-| Workspace | My Workspace, in My Organization | Owner |
-| Global role | Kanvas | Grants the Kanvas extension capabilities when a Meshery Server connects with your account |
+The dashboard is the first page you see when you sign in to Layer5 Cloud, except for the first sign-in of an account created from Kanvas, which opens the **Import from GitHub** page described in [step 3](#3-signing-in-to-layer5-cloud). It provides a high-level overview of your Layer5 account. For more information, see "About your dashboard."
 
-Layer5 Cloud also records your primary email address so that one person signing in by a different method reuses the same account instead of creating a second one. Layer5 Cloud accepts open organization invitation links on every sign-in, not only the first.
+### 7. Viewing your Layer5 profile
 
-## 6. Explore your dashboard {#6-dashboard}
-
-The dashboard is your normal landing page after sign-in. It is a grid of widgets whose layout you can edit; Layer5 Cloud prompts you before you leave with unsaved layout changes. Available widgets include Getting Started, Workspace Activity, Explore Playground, My Academy, Learn by Video, Help Center, Meshery Instances, Kubernetes Clusters Count, Catalog Content Count, Invite Friends, Badges, My Designs, System Version, Catalog Leaderboard, and Catalog Metrics. Academy administrators see additional widgets for Academy content statistics, metrics, test analytics, and registrations.
-
-## 7. Link GitHub or Google to your profile
-
-Whatever method you signed up with, you can later link a GitHub or Google account to your existing profile from your profile page. Once linked, either method signs you in to the same Layer5 Cloud profile. Each provider shows **Link** or **Unlink** depending on its current state. Linking sends you to the provider and then back to your profile.
-
-Profile changes are privileged actions. If your session has been active for more than 15 minutes, Layer5 Cloud asks you to authenticate again before it saves them.
-
-## Check your result
-
-Your account is ready when all of the following are true:
-
-- You can sign in at <https://cloud.layer5.io/login>. For an email account, a successful password sign-in also proves your address is verified.
-- Your dashboard loads after sign-in.
-- Your organization is **My Organization**, and it contains **My Workspace**.
-
-## Next steps
-
-- [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): invite a teammate, create a team, and give it a workspace.
-- [Start from a Catalog Design]({{< ref "cloud/getting-started/creating-a-design-from-template.md" >}}): clone a public design into your workspace.
+Your Layer5 profile tells people the story of your work through the recent activities, designs that you've published to Cloud catalog and much more. For more information, see "About your profile".

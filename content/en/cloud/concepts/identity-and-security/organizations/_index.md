@@ -20,7 +20,7 @@ An organization plays one of two roles: a **Provider Organization** — the sing
 
 ## Example: The Orbital Labs Ecosystem
 
-The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers.
+The following organizations illustrate how multi-tenancy works across provider, startup, and enterprise tiers. Follow along in the rest of the docs using [Five and the cast at Orbital Labs]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
 
 {{< cardpane >}}
 {{% card header="**Constellation Cloud** — Provider" %}}
@@ -62,3 +62,6 @@ Cross-organization access works through **resource-access mappings** — a grant
 Identity and authorization are decided by a combination of mechanisms, not by organization membership alone. For how the connected identity provider, org-scoped roles, and resource-access mappings fit together — and what counts as a security boundary — see [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
 {{< /alert >}}
 
+{{< alert type="info" >}}
+See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full narrative reference, including team structure and workspace inventory.
+{{< /alert >}}

@@ -1,42 +1,48 @@
 ---
 title: Getting Started
-description: Go from sign-up to a shared organization and your first design in Layer5 Cloud.
-weight: 10
-diataxis: tutorial
+description: Learn how to effectively manage your organizations, teams, users, workspaces, environments, and more.
+weight: 1
+draft: false
 ---
 
-Layer5 Cloud gives you a home for your designs and the people who work on them: an account, an organization that holds your teams, and workspaces that hold shared resources. You reach first value in three short tutorials. Sign up and you already have an organization, a team, and a workspace. Invite a teammate and give your team a workspace. Clone a design from the public catalog and you have something to work on.
+The Layer5 Cloud provides a centralized management plane for your cloud-native infrastructure. This guide will help you set up your account and deploy your first design.
 
-## The tenancy model in one table
+## Prerequisites
 
-Everything in Layer5 Cloud sits inside this structure. Your first sign-in creates one of each for you, so you never start from an empty account.
+Before you begin, ensure you have the following:
+* A [Layer5 Cloud account](https://cloud.layer5.io).
+* A running Kubernetes cluster (local or cloud-based).
+* [Meshery](https://docs.meshery.io/installation) installed and connected to your cluster.
 
-| Object | What it is | How it relates | What you get by default |
-|---|---|---|---|
-| User | Your personal identity on Layer5 Cloud. | One user can belong to many organizations and teams. | Your account, plus the global Kanvas role. |
-| Organization | The unit of tenancy. Membership in an organization decides who is in. | Owns its teams and workspaces. Every user belongs to at least one. | **My Organization**, owned by you, with the Organization Admin role. |
-| Team | A named group of organization members. | Belongs to the organization it is created in. Can be assigned to several workspaces. | **My Team**, attached to **My Organization**, with the Team Admin role. |
-| Workspace | A group of shared resources such as environments, connections, credentials, and designs. | Lives in one organization. Has zero or more teams. A design belongs to at most one workspace. | **My Workspace**, in **My Organization**, owned by you. |
+## Installation and Setup
 
-## Tutorials
+Layer5 Cloud functions as a Remote Provider for Meshery. To get started:
 
-Work through these in order. Each one builds on the last.
+1.  **Log in:** Navigate to your Meshery UI (usually `http://localhost:9081`).
+2.  **Select Provider:** On the login screen, select **Layer5 Cloud** from the provider dropdown.
+3.  **Authenticate:** You will be redirected to the Layer5 Cloud authentication page. Log in with your preferred identity provider (GitHub, Google, etc.).
 
-1. [Create Your Layer5 Account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}): sign up, verify your address, sign in, and confirm what Layer5 Cloud set up for you.
-2. [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): invite a teammate by email, create a team and a workspace, assign the team to the workspace, and move a design into it.
-3. [Start from a Catalog Design]({{< ref "cloud/getting-started/creating-a-design-from-template.md" >}}): browse the public catalog, try a design in the Playground, and clone it into your workspace as a private copy.
+## Core Workflow
 
-If you would rather start from your own repositories, [GitHub integration]({{< ref "cloud/getting-started/github-integration/index.md" >}}) imports Kubernetes manifests, Helm charts, and Docker Compose files as designs.
+Once authenticated, you can begin organizing your infrastructure using the following hierarchy:
 
-## Using Cloud with Meshery
+* **Organizations:** Create an Organization to manage your teams and billing.
+* **Workspaces:** Group your projects and resources logically.
+* **Environments:** Map your Kubernetes clusters to specific environments (e.g., Staging, Production).
 
-Layer5 Cloud is a Remote Provider for [Meshery](https://docs.meshery.io/installation). When you choose Layer5 Cloud as the provider in a Meshery Server, the server sends your browser to Layer5 Cloud to sign in, and Layer5 Cloud returns you to the server with a token. If your browser already holds a live Layer5 Cloud session, Layer5 Cloud skips the sign-in page and hands the token straight back. Layer5 Cloud returns tokens only to callback addresses it trusts and refuses all others.
+## Try it out!
 
-A Meshery Server registers itself with Layer5 Cloud as a connection owned by the signed-in user. Registering the same server again updates that connection in place instead of creating a new one. Because every new account holds the Kanvas role, the Meshery Server receives the Kanvas extension capabilities when it connects with your account.
+To verify your setup, try deploying a sample design:
 
-- [Architecture]({{< ref "cloud/concepts/architecture/index.md" >}}): how the sign-in handoff, trusted callbacks, and provider capabilities work.
-- [Meshery Server registration]({{< ref "cloud/concepts/meshery-server-registration.md" >}}): how a Meshery Server becomes a connection in your account.
+1.  Navigate to the **Designs** section in the sidebar.
+2.  Click on **Import** and select a sample pattern from the Meshery Catalog.
+3.  Click **Deploy** and select your target Environment.
 
-## Get help
+---
 
-If you run into issues during setup, join the [Layer5 Slack community](http://slack.layer5.io).
+### Need Help?
+If you run into issues during setup, join our [Slack Community](http://slack.layer5.io)
+
+{{< alert type="info" title="Follow Along with Five" >}}
+Throughout these docs you'll follow Five — a Platform Engineer at Orbital Labs — and his colleagues as they set up organizations, configure workspaces, deploy designs, and navigate the occasional Friday-afternoon incident. [Meet Five and the full cast →]({{< relref "cloud/getting-started/meet-five/_index.md" >}})
+{{< /alert >}}

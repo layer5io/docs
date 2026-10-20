@@ -220,7 +220,7 @@ For more information, see [Teams]({{< ref "cloud/concepts/identity-and-security/
 
 ## Example: The Orbital Labs Role Hierarchy
 
-The following illustrates how Provider Admin, Org Admin, and Team Admin roles stack in practice across the Orbital Labs ecosystem.
+The following illustrates how Provider Admin, Org Admin, and Team Admin roles stack in practice across the Orbital Labs ecosystem. See [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}) for the full narrative.
 
 <img src='../../../images/five/layer5-five-mascot-means-business.svg' alt="Five means business" style="width:90px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
 
