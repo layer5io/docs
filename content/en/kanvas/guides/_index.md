@@ -4,8 +4,6 @@ linkTitle: How-to Guides
 description: Task guides for building, managing, validating, deploying, sharing, and operating Kanvas designs.
 weight: 30
 diataxis: how-to
-aliases:
-  - /meshmap/tasks
 ---
 
 Each guide accomplishes one task for a reader who already knows the basics. If you are new to Kanvas, start with [Getting Started]({{< ref "kanvas/getting-started/_index.md" >}}). If you want the reasoning behind a behavior, read [Concepts]({{< ref "kanvas/concepts/_index.md" >}}). For exact options, limits, and shortcuts, use [Reference]({{< ref "kanvas/reference/_index.md" >}}).
@@ -40,14 +38,14 @@ See [Manage Designs]({{< ref "kanvas/guides/designs/_index.md" >}}) for the grou
 
 ## Validate and deploy
 
-See [Validate and Deploy]({{< ref "kanvas/guides/deploying/_index.md" >}}) for the group. Run the steps in this order. Validation catches configuration errors in the design, a dry run checks the design against the target clusters, and a deployment applies it.
+Run the steps in this order. Validation catches configuration errors in the design, a dry run checks the design against the target clusters, and a deployment applies it.
 
 | Goal | Guide |
 |---|---|
-| Check a design's configuration | [Validate a Design]({{< ref "kanvas/guides/deploying/validating-designs/index.md" >}}) |
-| Simulate a deployment without changes | [Dry-run a Design]({{< ref "kanvas/guides/deploying/dry-running-a-design/index.md" >}}) |
-| Apply a design to one or more clusters | [Deploy a Design]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}) |
-| Roll a deployment back | [Undeploy a Design]({{< ref "kanvas/guides/deploying/undeploying-designs/index.md" >}}) |
+| Check a design's configuration | [Validating Designs]({{< ref "kanvas/tasks/designs/validating-designs/index.md" >}}) |
+| Simulate a deployment without changes | [Dry Running a Design]({{< ref "kanvas/tasks/designs/dry-running-a-design/index.md" >}}) |
+| Apply a design to one or more clusters | [Deploying Designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}}) |
+| Roll a deployment back | [Undeploying Designs]({{< ref "kanvas/tasks/designs/undeploying-designs/index.md" >}}) |
 
 ## Collaborate and review
 
@@ -75,4 +73,4 @@ See [Validate and Deploy]({{< ref "kanvas/guides/deploying/_index.md" >}}) for t
 
 | Goal | Guide |
 |---|---|
-| Diagnose and resolve a Kanvas problem | [Troubleshoot Kanvas]({{< ref "kanvas/guides/troubleshooting.md" >}}) |
+| Diagnose and resolve a Kanvas problem | [Troubleshooting Kanvas]({{< ref "kanvas/reference/troubleshooting.md" >}}) |
