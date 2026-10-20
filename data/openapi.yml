@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.89
+  version: v1.3.90
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -61732,6 +61732,209 @@ paths:
               schema:
                 type: string
   /api/ledgers/{ledger}/entries:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Ledger_ledgers
+      summary: List ledger entries
+      operationId: listLedgerEntries
+      description: >
+        Returns a paginated list of the entries in the ledger, in the organization of the authenticated session.
+        `search` matches entry keys that contain the term, ignoring case. `order` sorts by `entryKey`, `createdAt` or
+        `updatedAt` (`asc` or `desc`); the default is `entryKey asc`. A ledger with no entries returns an empty page,
+        and a caller who is not a member of the session organization gets `404`.
+      parameters:
+        - name: ledger
+          in: path
+          description: Name of the ledger, for example `processed-profiles`.
+          required: true
+          schema:
+            type: string
+            pattern: ^[a-z0-9][a-z0-9._-]*$
+            minLength: 1
+            maxLength: 255
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+        - name: pageSize
+          in: query
+          description: >-
+            Number of responses to return per page. Canonical camelCase pagination parameter; prefer this over the
+            deprecated all-lowercase `pagesize`.
+          schema:
+            type: integer
+            minimum: 1
+        - name: search
+          in: query
+          description: Get responses that match search param value
+          schema:
+            type: string
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Ledger entries page
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated collection of ledger entries.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - ledgerEntries
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                  ledgerEntries:
+                    type: array
+                    items:
+                      x-go-type: LedgerEntry
+                      $schema: http://json-schema.org/draft-07/schema#
+                      title: Ledger Entry Schema
+                      description: >
+                        Server-returned ledger entry. An organization keeps any number of named ledgers, each an
+                        idempotent set keyed by entryKey: recording an existing key never creates a second entry and
+                        returns the stored entry unchanged, and claim-if-absent gives a key to exactly one claimant, so
+                        two workers never both act on it. Any organization member may read, claim and delete entries;
+                        claimedBy is an advisory label, not an authorization principal.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - id
+                        - organizationId
+                        - ledger
+                        - entryKey
+                        - createdAt
+                        - updatedAt
+                      properties:
+                        id:
+                          description: Server-generated ledger entry ID.
+                          x-order: 1
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        organizationId:
+                          description: Owning organization ID. Derived from the authenticated session, never client-settable.
+                          x-go-name: OrganizationID
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                          x-order: 2
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        ledger:
+                          type: string
+                          description: Name of the ledger (the idempotent set) the entry belongs to.
+                          minLength: 1
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            db: ledger
+                          x-order: 3
+                        entryKey:
+                          type: string
+                          description: Key within the ledger. Unique per (organization, ledger).
+                          minLength: 1
+                          maxLength: 1024
+                          x-go-name: EntryKey
+                          x-oapi-codegen-extra-tags:
+                            db: entry_key
+                          x-order: 4
+                        value:
+                          type: object
+                          description: Entry value, stored as a JSON blob.
+                          x-go-type: core.Map
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: value
+                          x-order: 5
+                        claimedBy:
+                          type: string
+                          description: >-
+                            Claimant that holds the entry, if any. Set only by claim-if-absent and never changed
+                            afterwards.
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            db: claimed_by
+                          x-order: 6
+                        claimedAt:
+                          type: string
+                          format: date-time
+                          description: Time the entry was claimed, if any. Set only by claim-if-absent.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: claimed_at
+                          x-order: 7
+                        createdAt:
+                          description: Timestamp of ledger entry creation.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                          x-order: 8
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp of last ledger entry modification.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                          x-order: 9
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                    description: Ledger entries included on this page of results.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
     post:
       x-internal:
         - cloud
