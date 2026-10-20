@@ -191,12 +191,22 @@ The switcher lists only the organizations you are a member of. Members who hold 
 
 Layer5 Cloud decides your organization for each request from these sources, first match wins:
 
-1. **Domain.** If the address you reached maps to an organization, that organization applies. This outranks every selection you make.
+1. **Domain.** If the address you reached maps to an organization, you work inside that organization or one of the organizations beneath it. This outranks every selection you make. See [On a custom domain](#on-a-custom-domain).
 2. **`X-Current-Orgid` request header.** API clients set it per request.
 3. **Saved preference.** The organization you last selected is stored in your user preferences.
 4. **Browser session.** The organization saved in the session cookie.
 
 Layer5 Cloud ignores a header, preference, or session value that names an organization you do not belong to, and runs the request with no organization scope. Holders of **View All Organizations** are exempt and can name any organization. There is no query-string or URL-parameter source. The API request format, including the header name, is in the [API reference]({{< ref "cloud/reference/api-reference/_index.md" >}}).
+
+### On a custom domain {#on-a-custom-domain}
+
+An organization's custom domain sets two things separately. The **domain's organization** supplies the branding, sign-in pages, and links in email. The organization you **work in** is your own organization within the domain's organization or beneath it:
+
+1. An organization in that tree that you select, through the header, your saved preference, or the browser session. It counts only if you are a member, or if you hold **View All Organizations**.
+2. Otherwise, your membership closest to the domain's organization. Members of the domain's organization itself work in it. If you belong to several organizations at the same level, the one you joined first applies, every time.
+3. Otherwise, the domain's organization.
+
+A selection that names an organization outside the domain's tree is ignored on that domain. The deployment's own address keeps the order above.
 
 ### What changes when you switch {#impact-of-organization-context}
 
