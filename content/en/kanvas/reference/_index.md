@@ -34,15 +34,20 @@ Kanvas checks a permission before it offers these actions. When the user does no
 | Undeploy | Undeploy Design | Disabled while the design is empty. |
 | Share | Share Design | Also hidden while the design is empty or published. |
 | Publish | Publish Design | Anonymous users get a sign-in prompt instead. |
+| Add a comment and reply | Add comments | Anonymous users get a sign-in prompt instead. |
+| Resolve and reopen a comment | Resolve a comment | |
+| @mention someone in a comment | View All Users and Discuss any design by leaving review comments | Both are required. Without them the composer offers no mention picker. |
 | Operator mode | None | The provider enables Operator mode. When it does not, the Operator switch is disabled. |
 
 Layer5 Cloud checks Share Design when a design is shared, View Designs when a user reads other members' private designs, the workspace permissions when designs or views are assigned or removed, and Share Views when a view is shared.
 
 Default roles, from the permission list: User and Team Admin hold Validate, Share, Publish, Clone, and View Designs, and Unpublish only on resources they own. They do not hold Deploy or Undeploy. Workspace Admin, Organization Admin, and Provider Admin hold Validate, Deploy, Undeploy, Share, Publish, Unpublish, Clone, and View Designs. Organization Admin is the Org Admin role. Org Billing Manager and the Academy roles hold none of these. Provider Admin holds every permission.
 
-Anonymous users receive the anonymous role. It holds the same canvas permissions as the User role, plus Screenshot Canvas and View help center. It does not hold the Operator terminal, metrics, or component details permissions.
+Anonymous users receive the anonymous role. It holds the same canvas permissions as the User role, plus Screenshot Canvas and View help center. It does not hold the Operator terminal, metrics, component details, Add comments, Resolve a comment, Delete comments, or Lock comments permissions.
 
-Kanvas does not check a permission for individual canvas edits (add, delete, clone, copy, lock, style). Roles carry keys with those names, but removing them does not prevent the edit. Designer mode allows authoring. Operator mode does not. Live cluster nodes are read-only in every mode. A user edits a design they own or one shared with them.
+Anonymous users can read the comments on a design they open, but cannot add, reply to, resolve, or reopen a comment, and cannot @mention anyone. Adding a comment opens the sign-in prompt. Layer5 Cloud enforces the same boundary on its side: it refuses comment notifications, user search, the online users list, and API token creation for an anonymous session, so no one is emailed on behalf of a guest and a guest cannot look up other users.
+
+Kanvas does not check a permission for individual canvas edits (add, delete, clone, copy, lock, style), except adding and resolving comments, which are checked as listed above. Roles carry keys with those names, but removing them does not prevent the edit. Designer mode allows authoring. Operator mode does not. Live cluster nodes are read-only in every mode. A user edits a design they own or one shared with them.
 
 The Kanvas interface does not check a permission before it opens a terminal session, streams container logs, or runs a performance test. Layer5 Cloud defines Stream container logs, Perform performance test in Operator, and Select performance profile in Operator. By default only Organization Admin and Provider Admin hold them.
 
