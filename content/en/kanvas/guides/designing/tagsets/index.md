@@ -40,7 +40,7 @@ Grouping is automatic. No button creates a TagSet. After you change labels, Kanv
 | Render fidelity | TagSets draw only in Full render fidelity. |
 | Maximum drawn | 30. Past that, Kanvas warns "Skipped rendering of N matchlabels relationships due to limit of 30". |
 | Region outline | Kanvas builds the outline from the first 10 members of a group. Later members are still inside the region. |
-| Adaptive mode | TagSets disappear when Adaptive mode steps below Full. |
+| Adaptive mode | With more than 5 TagSets, Kanvas suggests disabling them to improve performance. |
 
 ## What tags do not do
 
