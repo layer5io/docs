@@ -1,0 +1,16 @@
+# v0.8.274
+
+date: 2025-06-25
+
+
+
+## What's New
+## 🔤 General
+- dont allow saving empty domains @aabidsofi19 (#3693)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

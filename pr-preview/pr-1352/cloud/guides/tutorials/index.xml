@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Layer5 Documentation</title><link>/pr-preview/pr-1352/cloud/guides/tutorials/</link><description>Recent content in Tutorials on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1352/cloud/guides/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Sharing a Workspace</title><link>/pr-preview/pr-1352/cloud/guides/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1352/cloud/guides/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
+ Share designs from Workspaces
+ &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace, a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park needs to open the &lt;code&gt;microservices-baseline&lt;/code&gt; design.&lt;/p&gt;
+&lt;p&gt;Assigning the Development team to &lt;code&gt;orbital-dev&lt;/code&gt; does not do that. Team assignment grants read-only access to the connections in the workspace&amp;rsquo;s environments. It does not open designs. Every member of the organization can already see the workspace.&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/pr-preview/pr-1352/cloud/guides/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1352/cloud/guides/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This guide walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, then deploys it to the &lt;code&gt;prod-aws&lt;/code&gt; environment.&lt;/p&gt;
+&lt;p&gt;Promotion is a move. A design lives in at most one workspace, so assigning it to production removes it from staging. There is no approval step and no copy.&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/pr-preview/pr-1352/cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline. A workspace decides where a design lives and which teams can read which connections. An environment is the deploy target. A team assignment gives read-only access to connections. It does not give access to designs.&lt;/p&gt;</description></item><item><title>Kanvas Snapshots</title><link>/pr-preview/pr-1352/cloud/guides/tutorials/gitops-snapshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1352/cloud/guides/tutorials/gitops-snapshots/</guid><description>&lt;p&gt;Kanvas Snapshots offer visual insights in every pull request. Verify your workload designs and Kubernetes cluster configurations prior to accepting and merging pull requests.&lt;/p&gt;
+
+&lt;h2 id="layer5-github-app" class="heading-link"&gt;
+ Layer5 GitHub App
+ &lt;a href="#layer5-github-app" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In order to generate snapshots and apply them as screenshots in comments on your pool request, you need to authorize the measure you get home app to access. Your infrastructure is code. This is done by creating a GitHub connection in Layer5 Cloud.&lt;/p&gt;</description></item><item><title>Recognizing User and Contributor Milestones</title><link>/pr-preview/pr-1352/cloud/guides/tutorials/assigning-user-badges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1352/cloud/guides/tutorials/assigning-user-badges/</guid><description>&lt;p&gt;Layer5 badges are one of the many ways that we recognize the efforts of our contributors and uplift our users. Layer5 badges represent milestones that you achieve both in using and in contributing to Layer5-supported open source projects. As a contributor, this is how you demonstrate your ownership, dedication, skills and loyalty to Layer5. As a user, this is how you demonstrate your prowess.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Info&lt;/h4&gt;
+ 
+ See all Achievement and all Project badges in the &lt;a href="https://badges.layer5.io"&gt;Badge Gallery&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+&lt;!-- 
+Pending Leaderboard completion
+See the badge leaderboard in the [Leaderboard](https://badges.layer5.io/leaderboard). --&gt;
+
+&lt;h3 id="how-to-earn-badges" class="heading-link"&gt;
+ How to Earn Badges
+ &lt;a href="#how-to-earn-badges" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Earning Layer5 badges is both rewarding and straightforward. Each badge is tied to specific activities. For users, badges for activities such as using our projects, talking about the projects, sharing your successes and what you like about them. For contributors, badges include activities such as submitting code, assisting with documentation, participating in community events, and more. As you accumulate contributions in various areas, you&amp;rsquo;ll begin to unlock badges that showcase your multifaceted involvement.&lt;/p&gt;</description></item></channel></rss>

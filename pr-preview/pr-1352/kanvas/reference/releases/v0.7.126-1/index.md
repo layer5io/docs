@@ -1,0 +1,22 @@
+# v0.7.126-1
+
+date: 2024-10-25
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Verify mesheryui compatibilty for shared dependencies @aabidsofi19 (#3051)
+
+## 🧰 Maintenance
+
+- fix workflow and make target @aabidsofi19 (#3052)
+- Verify mesheryui compatibilty for shared dependencies @aabidsofi19 (#3051)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
