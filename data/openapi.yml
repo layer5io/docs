@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.86
+  version: v1.3.87
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -29631,7 +29631,7 @@ paths:
                         description:
                           x-oapi-codegen-extra-tags:
                             db: description
-                            json: description
+                            json: description,omitempty
                           x-order: 3
                           type: string
                           description: Human-readable description of the connection and its purpose.
@@ -29639,7 +29639,7 @@ paths:
                         url:
                           x-oapi-codegen-extra-tags:
                             db: url
-                            json: url
+                            json: url,omitempty
                           x-order: 4
                           type: string
                           format: uri
@@ -31167,7 +31167,7 @@ paths:
                   description:
                     x-oapi-codegen-extra-tags:
                       db: description
-                      json: description
+                      json: description,omitempty
                     x-order: 3
                     type: string
                     description: Human-readable description of the connection and its purpose.
@@ -31175,7 +31175,7 @@ paths:
                   url:
                     x-oapi-codegen-extra-tags:
                       db: url
-                      json: url
+                      json: url,omitempty
                     x-order: 4
                     type: string
                     format: uri
@@ -32135,7 +32135,7 @@ paths:
                   description:
                     x-oapi-codegen-extra-tags:
                       db: description
-                      json: description
+                      json: description,omitempty
                     x-order: 3
                     type: string
                     description: Human-readable description of the connection and its purpose.
@@ -32143,7 +32143,7 @@ paths:
                   url:
                     x-oapi-codegen-extra-tags:
                       db: url
-                      json: url
+                      json: url,omitempty
                     x-order: 4
                     type: string
                     format: uri
@@ -33190,7 +33190,7 @@ paths:
                   description:
                     x-oapi-codegen-extra-tags:
                       db: description
-                      json: description
+                      json: description,omitempty
                     x-order: 3
                     type: string
                     description: Human-readable description of the connection and its purpose.
@@ -33198,7 +33198,7 @@ paths:
                   url:
                     x-oapi-codegen-extra-tags:
                       db: url
-                      json: url
+                      json: url,omitempty
                     x-order: 4
                     type: string
                     format: uri
@@ -34671,7 +34671,7 @@ paths:
                   description:
                     x-oapi-codegen-extra-tags:
                       db: description
-                      json: description
+                      json: description,omitempty
                     x-order: 3
                     type: string
                     description: Human-readable description of the connection and its purpose.
@@ -34679,7 +34679,7 @@ paths:
                   url:
                     x-oapi-codegen-extra-tags:
                       db: url
-                      json: url
+                      json: url,omitempty
                     x-order: 4
                     type: string
                     format: uri
@@ -35851,7 +35851,7 @@ paths:
                   description:
                     x-oapi-codegen-extra-tags:
                       db: description
-                      json: description
+                      json: description,omitempty
                     x-order: 3
                     type: string
                     description: Human-readable description of the connection and its purpose.
@@ -35859,7 +35859,7 @@ paths:
                   url:
                     x-oapi-codegen-extra-tags:
                       db: url
-                      json: url
+                      json: url,omitempty
                     x-order: 4
                     type: string
                     format: uri
