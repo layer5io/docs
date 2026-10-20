@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.77
+  version: v1.3.78
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -829,9 +829,10 @@ paths:
                       What the environment exists for. `user` is an ordinary environment that people create to logically
                       group Connections and their Credentials. `administrative` designates an environment the platform
                       itself provisions to hold organization-level configuration, and which resolvers of that
-                      configuration therefore trust. `blowhorn` designates an environment the platform itself provisions
-                      to hold an organization's Blowhorn configuration and secrets, resolved by the purpose-typed
-                      credential chain; it is privileged in the same sense as `administrative`.
+                      configuration therefore trust. `profile` is an ordinary, non-privileged environment that holds one
+                      profile, by convention one per profile: `name` is the profile's short name, `owner` is the
+                      profile's user, `metadata` holds the profile's settings, and the profile's accounts are linked as
+                      Connections. Like `user`, it carries no authority and a client may choose it.
 
 
                       Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test for
@@ -846,9 +847,10 @@ paths:
                       live row matches: return an error rather than whichever row the database happened to return first.
 
 
-                      Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                      environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                      environment create and update endpoints have no field for it. That exclusion is a codegen
+                      Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which every
+                      environment POST and PUT requestBody references, accepts only the non-privileged values (`user`
+                      and `profile`), and the create-or-edit form has no field for it, so the environment create and
+                      update endpoints cannot designate an environment administrative. That restriction is a codegen
                       guarantee, never access control: the registrant connection inlines the full environment entity, so
                       `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose` in a request
                       type and consumers MUST refuse it on input there too. Whatever surface a value arrives on, every
@@ -862,11 +864,11 @@ paths:
                     enum:
                       - user
                       - administrative
-                      - blowhorn
+                      - profile
                     x-enum-varnames:
                       - EnvironmentPurposeUser
                       - EnvironmentPurposeAdministrative
-                      - EnvironmentPurposeBlowhorn
+                      - EnvironmentPurposeProfile
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: purpose
@@ -8454,6 +8456,35 @@ paths:
                                   description: >-
                                     Whether the feature carousel renders on the organization's auth pages. Unset is
                                     treated as true (shown); set false to hide it.
+                                schedulePause:
+                                  x-go-type: SchedulePause
+                                  description: >-
+                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
+                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
+                                    from a preferences write keeps the current pause unchanged; it does not lift the
+                                    pause.
+                                  type: object
+                                  additionalProperties: false
+                                  properties:
+                                    paused:
+                                      type: boolean
+                                      description: Whether every schedule in the organization is paused.
+                                    reason:
+                                      type: string
+                                      maxLength: 1000
+                                      description: Reason given for the pause. Cleared when the pause is lifted.
+                                    pausedAt:
+                                      type: string
+                                      format: date-time
+                                      description: >-
+                                        Time the pause was set. Server-managed; recorded when `paused` turns true and
+                                        cleared when it is lifted.
+                                    pausedBy:
+                                      type: string
+                                      maxLength: 255
+                                      description: >-
+                                        Identity that set the pause. Server-managed; recorded when `paused` turns true
+                                        and cleared when it is lifted.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -8758,6 +8789,24 @@ paths:
                       description: >-
                         Whether the feature carousel renders on the organization's auth pages. Unset is treated as true
                         (shown); set false to hide it.
+                    schedulePause:
+                      x-go-type: SchedulePausePayload
+                      description: >-
+                        Organization-wide schedule pause. Only organization admins may set or lift it; a write from
+                        anyone else that changes it is refused with 403. Omitting schedulePause from a preferences write
+                        keeps the current pause unchanged; it does not lift the pause.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - paused
+                      properties:
+                        paused:
+                          type: boolean
+                          description: Whether every schedule in the organization is paused.
+                        reason:
+                          type: string
+                          maxLength: 1000
+                          description: Reason given for the pause. Cleared when the pause is lifted.
       responses:
         '201':
           description: Single-organization page response
@@ -9061,6 +9110,35 @@ paths:
                                   description: >-
                                     Whether the feature carousel renders on the organization's auth pages. Unset is
                                     treated as true (shown); set false to hide it.
+                                schedulePause:
+                                  x-go-type: SchedulePause
+                                  description: >-
+                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
+                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
+                                    from a preferences write keeps the current pause unchanged; it does not lift the
+                                    pause.
+                                  type: object
+                                  additionalProperties: false
+                                  properties:
+                                    paused:
+                                      type: boolean
+                                      description: Whether every schedule in the organization is paused.
+                                    reason:
+                                      type: string
+                                      maxLength: 1000
+                                      description: Reason given for the pause. Cleared when the pause is lifted.
+                                    pausedAt:
+                                      type: string
+                                      format: date-time
+                                      description: >-
+                                        Time the pause was set. Server-managed; recorded when `paused` turns true and
+                                        cleared when it is lifted.
+                                    pausedBy:
+                                      type: string
+                                      maxLength: 255
+                                      description: >-
+                                        Identity that set the pause. Server-managed; recorded when `paused` turns true
+                                        and cleared when it is lifted.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -9117,6 +9195,9 @@ paths:
       tags:
         - Organization_Organizations
       summary: Get organization by domain
+      description: >-
+        Unauthenticated lookup. Servers MUST omit `preferences.schedulePause` from this response; the organization-wide
+        pause is read through getOrgPreferences.
       operationId: getOrgByDomain
       parameters:
         - name: domain
@@ -9586,6 +9667,35 @@ paths:
                                   description: >-
                                     Whether the feature carousel renders on the organization's auth pages. Unset is
                                     treated as true (shown); set false to hide it.
+                                schedulePause:
+                                  x-go-type: SchedulePause
+                                  description: >-
+                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
+                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
+                                    from a preferences write keeps the current pause unchanged; it does not lift the
+                                    pause.
+                                  type: object
+                                  additionalProperties: false
+                                  properties:
+                                    paused:
+                                      type: boolean
+                                      description: Whether every schedule in the organization is paused.
+                                    reason:
+                                      type: string
+                                      maxLength: 1000
+                                      description: Reason given for the pause. Cleared when the pause is lifted.
+                                    pausedAt:
+                                      type: string
+                                      format: date-time
+                                      description: >-
+                                        Time the pause was set. Server-managed; recorded when `paused` turns true and
+                                        cleared when it is lifted.
+                                    pausedBy:
+                                      type: string
+                                      maxLength: 255
+                                      description: >-
+                                        Identity that set the pause. Server-managed; recorded when `paused` turns true
+                                        and cleared when it is lifted.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -9708,7 +9818,9 @@ paths:
       security:
         - Organization_jwt: []
       summary: Update an organization
-      description: Updates the organization.
+      description: >-
+        Updates the organization. Changing `preferences.schedulePause` is restricted to organization admins (otherwise
+        403); omitting `schedulePause` keeps the current pause unchanged.
       operationId: updateOrg
       parameters:
         - name: orgId
@@ -9981,6 +10093,24 @@ paths:
                       description: >-
                         Whether the feature carousel renders on the organization's auth pages. Unset is treated as true
                         (shown); set false to hide it.
+                    schedulePause:
+                      x-go-type: SchedulePausePayload
+                      description: >-
+                        Organization-wide schedule pause. Only organization admins may set or lift it; a write from
+                        anyone else that changes it is refused with 403. Omitting schedulePause from a preferences write
+                        keeps the current pause unchanged; it does not lift the pause.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - paused
+                      properties:
+                        paused:
+                          type: boolean
+                          description: Whether every schedule in the organization is paused.
+                        reason:
+                          type: string
+                          maxLength: 1000
+                          description: Reason given for the pause. Cleared when the pause is lifted.
       responses:
         '200':
           description: Single-organization page response for the updated organization
@@ -10284,6 +10414,35 @@ paths:
                                   description: >-
                                     Whether the feature carousel renders on the organization's auth pages. Unset is
                                     treated as true (shown); set false to hide it.
+                                schedulePause:
+                                  x-go-type: SchedulePause
+                                  description: >-
+                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
+                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
+                                    from a preferences write keeps the current pause unchanged; it does not lift the
+                                    pause.
+                                  type: object
+                                  additionalProperties: false
+                                  properties:
+                                    paused:
+                                      type: boolean
+                                      description: Whether every schedule in the organization is paused.
+                                    reason:
+                                      type: string
+                                      maxLength: 1000
+                                      description: Reason given for the pause. Cleared when the pause is lifted.
+                                    pausedAt:
+                                      type: string
+                                      format: date-time
+                                      description: >-
+                                        Time the pause was set. Server-managed; recorded when `paused` turns true and
+                                        cleared when it is lifted.
+                                    pausedBy:
+                                      type: string
+                                      maxLength: 255
+                                      description: >-
+                                        Identity that set the pause. Server-managed; recorded when `paused` turns true
+                                        and cleared when it is lifted.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -10792,6 +10951,24 @@ paths:
                       description: >-
                         Whether the feature carousel renders on the organization's auth pages. Unset is treated as true
                         (shown); set false to hide it.
+                    schedulePause:
+                      x-go-type: SchedulePausePayload
+                      description: >-
+                        Organization-wide schedule pause. Only organization admins may set or lift it; a write from
+                        anyone else that changes it is refused with 403. Omitting schedulePause from a preferences write
+                        keeps the current pause unchanged; it does not lift the pause.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - paused
+                      properties:
+                        paused:
+                          type: boolean
+                          description: Whether every schedule in the organization is paused.
+                        reason:
+                          type: string
+                          maxLength: 1000
+                          description: Reason given for the pause. Cleared when the pause is lifted.
       responses:
         '201':
           description: Single-organization page response for the created child organization
@@ -11095,6 +11272,35 @@ paths:
                                   description: >-
                                     Whether the feature carousel renders on the organization's auth pages. Unset is
                                     treated as true (shown); set false to hide it.
+                                schedulePause:
+                                  x-go-type: SchedulePause
+                                  description: >-
+                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
+                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
+                                    from a preferences write keeps the current pause unchanged; it does not lift the
+                                    pause.
+                                  type: object
+                                  additionalProperties: false
+                                  properties:
+                                    paused:
+                                      type: boolean
+                                      description: Whether every schedule in the organization is paused.
+                                    reason:
+                                      type: string
+                                      maxLength: 1000
+                                      description: Reason given for the pause. Cleared when the pause is lifted.
+                                    pausedAt:
+                                      type: string
+                                      format: date-time
+                                      description: >-
+                                        Time the pause was set. Server-managed; recorded when `paused` turns true and
+                                        cleared when it is lifted.
+                                    pausedBy:
+                                      type: string
+                                      maxLength: 255
+                                      description: >-
+                                        Identity that set the pause. Server-managed; recorded when `paused` turns true
+                                        and cleared when it is lifted.
                         createdAt:
                           description: Timestamp when the organization was created.
                           x-oapi-codegen-extra-tags:
@@ -11416,6 +11622,34 @@ paths:
                         description: >-
                           Whether the feature carousel renders on the organization's auth pages. Unset is treated as
                           true (shown); set false to hide it.
+                      schedulePause:
+                        x-go-type: SchedulePause
+                        description: >-
+                          Organization-wide schedule pause. Only organization admins may set or lift it; a write from
+                          anyone else that changes it is refused with 403. Omitting schedulePause from a preferences
+                          write keeps the current pause unchanged; it does not lift the pause.
+                        type: object
+                        additionalProperties: false
+                        properties:
+                          paused:
+                            type: boolean
+                            description: Whether every schedule in the organization is paused.
+                          reason:
+                            type: string
+                            maxLength: 1000
+                            description: Reason given for the pause. Cleared when the pause is lifted.
+                          pausedAt:
+                            type: string
+                            format: date-time
+                            description: >-
+                              Time the pause was set. Server-managed; recorded when `paused` turns true and cleared when
+                              it is lifted.
+                          pausedBy:
+                            type: string
+                            maxLength: 255
+                            description: >-
+                              Identity that set the pause. Server-managed; recorded when `paused` turns true and cleared
+                              when it is lifted.
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -31662,10 +31896,11 @@ paths:
                                   What the environment exists for. `user` is an ordinary environment that people create
                                   to logically group Connections and their Credentials. `administrative` designates an
                                   environment the platform itself provisions to hold organization-level configuration,
-                                  and which resolvers of that configuration therefore trust. `blowhorn` designates an
-                                  environment the platform itself provisions to hold an organization's Blowhorn
-                                  configuration and secrets, resolved by the purpose-typed credential chain; it is
-                                  privileged in the same sense as `administrative`.
+                                  and which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                                  non-privileged environment that holds one profile, by convention one per profile:
+                                  `name` is the profile's short name, `owner` is the profile's user, `metadata` holds
+                                  the profile's settings, and the profile's accounts are linked as Connections. Like
+                                  `user`, it carries no authority and a client may choose it.
 
 
                                   Absent means `user`. Nothing may read an unset or unrecognised value as
@@ -31682,16 +31917,17 @@ paths:
                                   than whichever row the database happened to return first.
 
 
-                                  Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which
-                                  every environment POST and PUT requestBody references, and from the create-or-edit
-                                  form, so the environment create and update endpoints have no field for it. That
-                                  exclusion is a codegen guarantee, never access control: the registrant connection
-                                  inlines the full environment entity, so `registerRegistryComponent` and
-                                  `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
-                                  refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
-                                  assign this property only from server-side provisioning or a data migration.
-                                  Permission to create an environment does not confer the ability to make one
-                                  administrative.
+                                  Privileged values are server-owned and never client-settable. `EnvironmentPayload`,
+                                  which every environment POST and PUT requestBody references, accepts only the
+                                  non-privileged values (`user` and `profile`), and the create-or-edit form has no field
+                                  for it, so the environment create and update endpoints cannot designate an environment
+                                  administrative. That restriction is a codegen guarantee, never access control: the
+                                  registrant connection inlines the full environment entity, so
+                                  `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose` in a
+                                  request type and consumers MUST refuse it on input there too. Whatever surface a value
+                                  arrives on, every consumer MUST assign this property only from server-side
+                                  provisioning or a data migration. Permission to create an environment does not confer
+                                  the ability to make one administrative.
 
 
                                   The database index that enforces the uniqueness invariant, the migration path for
@@ -31701,11 +31937,11 @@ paths:
                                 enum:
                                   - user
                                   - administrative
-                                  - blowhorn
+                                  - profile
                                 x-enum-varnames:
                                   - EnvironmentPurposeUser
                                   - EnvironmentPurposeAdministrative
-                                  - EnvironmentPurposeBlowhorn
+                                  - EnvironmentPurposeProfile
                                 x-go-type-skip-optional-pointer: true
                                 x-oapi-codegen-extra-tags:
                                   db: purpose
@@ -33136,10 +33372,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -33156,15 +33393,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -33174,11 +33412,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
@@ -34164,10 +34402,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -34184,15 +34423,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -34202,11 +34442,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
@@ -35624,10 +35864,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -35644,15 +35885,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -35662,11 +35904,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
@@ -52204,11 +52446,12 @@ paths:
               description: >-
                 Payload for creating or updating an environment. Carries only the client-settable fields. Server-owned
                 fields are deliberately absent: `id`, `owner`, `createdAt`, `updatedAt` and `deletedAt` because the
-                server assigns them, and `purpose` because permission to create an environment must not confer the
-                ability to designate it administrative. Excluding it here is a codegen guarantee rather than access
-                control: the registrant connection inlines the full environment entity, so `purpose` still reaches the
-                `registerRegistryComponent` and `registerRegistryRelationship` request types, and every consumer must
-                refuse it on input whatever surface it arrives on. Do not add `purpose` here - see
+                server assigns them. `purpose` is present but limited to the non-privileged values, because permission
+                to create an environment must not confer the ability to designate it administrative. Limiting it here is
+                a codegen guarantee rather than access control: the registrant connection inlines the full environment
+                entity, so `purpose` still reaches the `registerRegistryComponent` and `registerRegistryRelationship`
+                request types, and every consumer must refuse a privileged value on input whatever surface it arrives
+                on. Do not widen `EnvironmentPayloadPurpose` to a privileged value - see
                 https://github.com/meshery/schemas/blob/master/docs/environment-purpose-contract.md.
               required:
                 - name
@@ -52239,6 +52482,28 @@ paths:
                     json: organizationId
                   maxLength: 500
                   format: uuid
+                metadata:
+                  type: object
+                  description: Free-form settings stored with the environment, for example a profile's settings.
+                  additionalProperties: true
+                  x-go-type: core.Map
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/core
+                    name: core
+                  x-go-type-skip-optional-pointer: true
+                purpose:
+                  type: string
+                  description: >-
+                    The purposes a client may give an environment on create or update: `user` (an ordinary environment)
+                    or `profile` (an ordinary environment holding one profile's settings and accounts). Omitted means
+                    `user` on create and unchanged on update. A server refuses any other value with 400, and never lets
+                    this field change an environment that already carries a privileged purpose.
+                  enum:
+                    - user
+                    - profile
+                  x-enum-varnames:
+                    - EnvironmentPayloadPurposeUser
+                    - EnvironmentPayloadPurposeProfile
       responses:
         '201':
           description: Created environment
@@ -52393,9 +52658,10 @@ paths:
                       What the environment exists for. `user` is an ordinary environment that people create to logically
                       group Connections and their Credentials. `administrative` designates an environment the platform
                       itself provisions to hold organization-level configuration, and which resolvers of that
-                      configuration therefore trust. `blowhorn` designates an environment the platform itself provisions
-                      to hold an organization's Blowhorn configuration and secrets, resolved by the purpose-typed
-                      credential chain; it is privileged in the same sense as `administrative`.
+                      configuration therefore trust. `profile` is an ordinary, non-privileged environment that holds one
+                      profile, by convention one per profile: `name` is the profile's short name, `owner` is the
+                      profile's user, `metadata` holds the profile's settings, and the profile's accounts are linked as
+                      Connections. Like `user`, it carries no authority and a client may choose it.
 
 
                       Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test for
@@ -52410,9 +52676,10 @@ paths:
                       live row matches: return an error rather than whichever row the database happened to return first.
 
 
-                      Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                      environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                      environment create and update endpoints have no field for it. That exclusion is a codegen
+                      Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which every
+                      environment POST and PUT requestBody references, accepts only the non-privileged values (`user`
+                      and `profile`), and the create-or-edit form has no field for it, so the environment create and
+                      update endpoints cannot designate an environment administrative. That restriction is a codegen
                       guarantee, never access control: the registrant connection inlines the full environment entity, so
                       `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose` in a request
                       type and consumers MUST refuse it on input there too. Whatever surface a value arrives on, every
@@ -52426,11 +52693,11 @@ paths:
                     enum:
                       - user
                       - administrative
-                      - blowhorn
+                      - profile
                     x-enum-varnames:
                       - EnvironmentPurposeUser
                       - EnvironmentPurposeAdministrative
-                      - EnvironmentPurposeBlowhorn
+                      - EnvironmentPurposeProfile
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: purpose
@@ -52503,6 +52770,65 @@ paths:
             format: uuid
             maxLength: 36
           required: true
+        - name: purpose
+          in: query
+          required: false
+          description: >-
+            Return only environments with this purpose; absent returns every purpose the caller may see. The filter only
+            narrows the environments the caller can already list and grants no visibility - a caller who cannot see
+            administrative environments receives an empty page for purpose=administrative.
+          schema:
+            type: string
+            description: >-
+              What the environment exists for. `user` is an ordinary environment that people create to logically group
+              Connections and their Credentials. `administrative` designates an environment the platform itself
+              provisions to hold organization-level configuration, and which resolvers of that configuration therefore
+              trust. `profile` is an ordinary, non-privileged environment that holds one profile, by convention one per
+              profile: `name` is the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+              settings, and the profile's accounts are linked as Connections. Like `user`, it carries no authority and a
+              client may choose it.
+
+
+              Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test for the
+              administrative value explicitly rather than for "not user", so the property fails closed.
+
+
+              At most one live environment per organization may carry any single privileged purpose - `administrative`,
+              and each privileged value a later version adds. Name those values explicitly wherever the rule is
+              enforced, including the database index predicate: a "not `user`" test also matches the empty value that
+              unmigrated rows and un-normalised writes read back as, which means ordinary. A resolver that selects an
+              environment by purpose MUST fail closed when more than one live row matches: return an error rather than
+              whichever row the database happened to return first.
+
+
+              Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which every
+              environment POST and PUT requestBody references, accepts only the non-privileged values (`user` and
+              `profile`), and the create-or-edit form has no field for it, so the environment create and update
+              endpoints cannot designate an environment administrative. That restriction is a codegen guarantee, never
+              access control: the registrant connection inlines the full environment entity, so
+              `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose` in a request type and
+              consumers MUST refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+              assign this property only from server-side provisioning or a data migration. Permission to create an
+              environment does not confer the ability to make one administrative.
+
+
+              The database index that enforces the uniqueness invariant, the migration path for environments that are
+              administrative by naming convention today, and each consumer's obligations are specified in
+              https://github.com/meshery/schemas/blob/master/docs/environment-purpose-contract.md.
+            enum:
+              - user
+              - administrative
+              - profile
+            x-enum-varnames:
+              - EnvironmentPurposeUser
+              - EnvironmentPurposeAdministrative
+              - EnvironmentPurposeProfile
+            x-go-type-skip-optional-pointer: true
+            x-oapi-codegen-extra-tags:
+              db: purpose
+              gorm: not null;default:user
+              json: purpose,omitempty
+            x-order: 11
       responses:
         '200':
           description: Environments
@@ -52685,10 +53011,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -52705,15 +53032,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -52723,11 +53051,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
@@ -52958,10 +53286,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -52978,15 +53307,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -52996,11 +53326,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
@@ -53062,11 +53392,12 @@ paths:
               description: >-
                 Payload for creating or updating an environment. Carries only the client-settable fields. Server-owned
                 fields are deliberately absent: `id`, `owner`, `createdAt`, `updatedAt` and `deletedAt` because the
-                server assigns them, and `purpose` because permission to create an environment must not confer the
-                ability to designate it administrative. Excluding it here is a codegen guarantee rather than access
-                control: the registrant connection inlines the full environment entity, so `purpose` still reaches the
-                `registerRegistryComponent` and `registerRegistryRelationship` request types, and every consumer must
-                refuse it on input whatever surface it arrives on. Do not add `purpose` here - see
+                server assigns them. `purpose` is present but limited to the non-privileged values, because permission
+                to create an environment must not confer the ability to designate it administrative. Limiting it here is
+                a codegen guarantee rather than access control: the registrant connection inlines the full environment
+                entity, so `purpose` still reaches the `registerRegistryComponent` and `registerRegistryRelationship`
+                request types, and every consumer must refuse a privileged value on input whatever surface it arrives
+                on. Do not widen `EnvironmentPayloadPurpose` to a privileged value - see
                 https://github.com/meshery/schemas/blob/master/docs/environment-purpose-contract.md.
               required:
                 - name
@@ -53097,6 +53428,28 @@ paths:
                     json: organizationId
                   maxLength: 500
                   format: uuid
+                metadata:
+                  type: object
+                  description: Free-form settings stored with the environment, for example a profile's settings.
+                  additionalProperties: true
+                  x-go-type: core.Map
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/core
+                    name: core
+                  x-go-type-skip-optional-pointer: true
+                purpose:
+                  type: string
+                  description: >-
+                    The purposes a client may give an environment on create or update: `user` (an ordinary environment)
+                    or `profile` (an ordinary environment holding one profile's settings and accounts). Omitted means
+                    `user` on create and unchanged on update. A server refuses any other value with 400, and never lets
+                    this field change an environment that already carries a privileged purpose.
+                  enum:
+                    - user
+                    - profile
+                  x-enum-varnames:
+                    - EnvironmentPayloadPurposeUser
+                    - EnvironmentPayloadPurposeProfile
       responses:
         '200':
           description: Environment page
@@ -53279,10 +53632,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -53299,15 +53653,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -53317,11 +53672,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
@@ -63308,10 +63663,11 @@ paths:
                         linked to a workspace. A worker takes a schedule through a claim (the
                         generic `claim` construct, nested under the schedule); while the claim is
                         live no other worker can take it, and a claim past its `expiresAt` is
-                        stale and the schedule is claimable again. The `claim`, the status
-                        values `assigned`, `claimed` and `running`, and the pause fields are
-                        server-managed: they change only through the claim, release, pause and
-                        resume operations and are refused on create and update.
+                        stale and the schedule is claimable again. The `claim` and the status
+                        values `assigned`, `claimed` and `running` are server-managed and change
+                        only through the claim and release operations. Pausing is data, not an
+                        operation: a client sets `paused` (and optionally `pauseReason`) on create
+                        or update, and the server records `pausedAt` and `pausedBy`.
                       type: object
                       additionalProperties: false
                       required:
@@ -63648,7 +64004,9 @@ paths:
                           x-order: 19
                         pauseReason:
                           type: string
-                          description: Reason given for pausing the schedule. Server-managed.
+                          description: >-
+                            Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                            paused.
                           x-oapi-codegen-extra-tags:
                             db: pause_reason
                           x-order: 20
@@ -63708,8 +64066,10 @@ paths:
       operationId: createSchedule
       description: |
         Creates a schedule in the organization of the authenticated session. The
-        claim, the server-managed status values (`assigned`, `claimed`, `running`)
-        and the pause fields are refused here.
+        server-managed fields (the claim, `pausedAt`, `pausedBy`, `retryCount`,
+        `lastRunAt`, `lastError`, `organizationId` and the timestamps) are ignored
+        on input. `status` accepts only `pending`, `scheduled` and `cancelled`.
+        Send `paused: true` to create the schedule already paused.
       requestBody:
         required: true
         content:
@@ -63718,9 +64078,11 @@ paths:
               type: object
               description: |
                 Payload for creating or updating a schedule. Contains only
-                client-settable fields; the owning `organizationId`, the claim, the
-                pause fields, `retryCount`, `lastRunAt`, `lastError` and the
-                timestamps are server-managed. `status` accepts only `pending`,
+                client-settable fields; the owning `organizationId`, the claim,
+                `pausedAt`, `pausedBy`, `retryCount`, `lastRunAt`, `lastError` and the
+                timestamps are server-managed. The server ignores them on input. Pausing
+                is a field, not an operation: `paused` pauses or resumes the schedule.
+                `status` accepts only `pending`,
                 `scheduled` and `cancelled` here; the other values are set by the
                 claim and release operations.
               required:
@@ -63800,6 +64162,16 @@ paths:
                   type: integer
                   description: Minutes to wait before a retry becomes due.
                   minimum: 0
+                paused:
+                  type: boolean
+                  description: |
+                    `true` pauses the schedule so it is never claimed (unless a claim
+                    carries `ignorePause`); `false` resumes it. Omit to leave the pause
+                    unchanged. The server records `pausedAt` and `pausedBy`.
+                pauseReason:
+                  type: string
+                  description: Reason for pausing; stored only while `paused` is true and cleared on resume.
+                  maxLength: 1000
       responses:
         '201':
           description: Schedule created
@@ -63815,10 +64187,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -64155,7 +64528,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -64274,10 +64649,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -64614,7 +64990,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -64672,285 +65050,6 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/schedules/pause:
-    get:
-      x-internal:
-        - cloud
-      tags:
-        - Schedule_schedules
-      summary: Get the organization-wide schedule pause
-      operationId: getSchedulePause
-      description: |
-        Returns the organization-wide pause, or 204 when every schedule in the
-        organization may be claimed.
-      responses:
-        '200':
-          description: The organization-wide pause
-          content:
-            application/json:
-              schema:
-                $schema: http://json-schema.org/draft-07/schema#
-                title: Schedule Pause Schema
-                description: |
-                  Server-returned organization-wide schedule pause. While a pause exists for
-                  an organization, none of its schedules is claimed unless the claim
-                  request carries the operator override. Absence of a pause means
-                  unpaused; there is at most one live pause per organization. A pause on a
-                  single schedule is carried on the schedule itself.
-                type: object
-                additionalProperties: false
-                required:
-                  - id
-                  - organizationId
-                  - pausedAt
-                  - createdAt
-                  - updatedAt
-                properties:
-                  id:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-order: 1
-                  organizationId:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-go-name: OrganizationID
-                    x-oapi-codegen-extra-tags:
-                      db: organization_id
-                    x-order: 2
-                  pausedAt:
-                    description: Time the pause was set.
-                    x-oapi-codegen-extra-tags:
-                      db: paused_at
-                    x-order: 3
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  pausedBy:
-                    type: string
-                    description: Identity that set the pause. Server-managed.
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: paused_by
-                    x-order: 4
-                  reason:
-                    type: string
-                    description: Reason given for pausing every schedule in the organization.
-                    x-oapi-codegen-extra-tags:
-                      db: reason
-                    x-order: 5
-                  createdAt:
-                    description: Timestamp of schedule pause creation.
-                    x-oapi-codegen-extra-tags:
-                      db: created_at
-                    x-order: 6
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  updatedAt:
-                    description: Timestamp of last schedule pause modification.
-                    x-oapi-codegen-extra-tags:
-                      db: updated_at
-                    x-order: 7
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-        '204':
-          description: The organization is not paused
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '404':
-          description: Result not found
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
-          content:
-            text/plain:
-              schema:
-                type: string
-    put:
-      x-internal:
-        - cloud
-      tags:
-        - Schedule_schedules
-      summary: Pause every schedule in the organization
-      operationId: setSchedulePause
-      description: |
-        Sets the organization-wide pause. While it exists no schedule in the
-        organization is claimed unless the claim request carries `ignorePause`.
-        Setting it again updates the reason and keeps the original time.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              description: Request to pause a schedule or every schedule in the organization.
-              properties:
-                pausedBy:
-                  type: string
-                  description: Identity setting the pause; defaults to the authenticated user.
-                  maxLength: 255
-                reason:
-                  type: string
-                  description: Reason for the pause.
-                  maxLength: 1000
-      responses:
-        '200':
-          description: The organization-wide pause
-          content:
-            application/json:
-              schema:
-                $schema: http://json-schema.org/draft-07/schema#
-                title: Schedule Pause Schema
-                description: |
-                  Server-returned organization-wide schedule pause. While a pause exists for
-                  an organization, none of its schedules is claimed unless the claim
-                  request carries the operator override. Absence of a pause means
-                  unpaused; there is at most one live pause per organization. A pause on a
-                  single schedule is carried on the schedule itself.
-                type: object
-                additionalProperties: false
-                required:
-                  - id
-                  - organizationId
-                  - pausedAt
-                  - createdAt
-                  - updatedAt
-                properties:
-                  id:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-order: 1
-                  organizationId:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-go-name: OrganizationID
-                    x-oapi-codegen-extra-tags:
-                      db: organization_id
-                    x-order: 2
-                  pausedAt:
-                    description: Time the pause was set.
-                    x-oapi-codegen-extra-tags:
-                      db: paused_at
-                    x-order: 3
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  pausedBy:
-                    type: string
-                    description: Identity that set the pause. Server-managed.
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: paused_by
-                    x-order: 4
-                  reason:
-                    type: string
-                    description: Reason given for pausing every schedule in the organization.
-                    x-oapi-codegen-extra-tags:
-                      db: reason
-                    x-order: 5
-                  createdAt:
-                    description: Timestamp of schedule pause creation.
-                    x-oapi-codegen-extra-tags:
-                      db: created_at
-                    x-order: 6
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  updatedAt:
-                    description: Timestamp of last schedule pause modification.
-                    x-oapi-codegen-extra-tags:
-                      db: updated_at
-                    x-order: 7
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-        '400':
-          description: Invalid request body or request param
-          content:
-            text/plain:
-              schema:
-                type: string
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '404':
-          description: Result not found
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
-          content:
-            text/plain:
-              schema:
-                type: string
-    delete:
-      x-internal:
-        - cloud
-      tags:
-        - Schedule_schedules
-      summary: Lift the organization-wide schedule pause
-      operationId: clearSchedulePause
-      description: |
-        Lifts the organization-wide pause. Lifting a pause that does not exist
-        is a no-op.
-      responses:
-        '204':
-          description: The organization is not paused
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '404':
-          description: Result not found
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
-          content:
-            text/plain:
-              schema:
-                type: string
   /api/schedules/{scheduleId}:
     get:
       x-internal:
@@ -64990,10 +65089,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -65330,7 +65430,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -65388,8 +65490,14 @@ paths:
       summary: Update a schedule
       operationId: updateSchedule
       description: |
-        Updates the client-settable fields of a schedule. The claim, the
-        server-managed status values and the pause fields are refused here.
+        Updates the client-settable fields of a schedule. The server-managed
+        fields (the claim, `pausedAt`, `pausedBy`, `retryCount`, `lastRunAt`,
+        `lastError`, `organizationId` and the timestamps) are ignored on input.
+        `status` accepts only `pending`, `scheduled` and `cancelled`. Pause or resume the
+        schedule by setting `paused` (with an optional `pauseReason`); the
+        server then records `pausedAt` and `pausedBy`. Pausing a paused
+        schedule keeps its original `pausedAt`; omitting `paused` leaves the
+        pause unchanged.
       parameters:
         - name: scheduleId
           in: path
@@ -65412,9 +65520,11 @@ paths:
               type: object
               description: |
                 Payload for creating or updating a schedule. Contains only
-                client-settable fields; the owning `organizationId`, the claim, the
-                pause fields, `retryCount`, `lastRunAt`, `lastError` and the
-                timestamps are server-managed. `status` accepts only `pending`,
+                client-settable fields; the owning `organizationId`, the claim,
+                `pausedAt`, `pausedBy`, `retryCount`, `lastRunAt`, `lastError` and the
+                timestamps are server-managed. The server ignores them on input. Pausing
+                is a field, not an operation: `paused` pauses or resumes the schedule.
+                `status` accepts only `pending`,
                 `scheduled` and `cancelled` here; the other values are set by the
                 claim and release operations.
               required:
@@ -65494,6 +65604,16 @@ paths:
                   type: integer
                   description: Minutes to wait before a retry becomes due.
                   minimum: 0
+                paused:
+                  type: boolean
+                  description: |
+                    `true` pauses the schedule so it is never claimed (unless a claim
+                    carries `ignorePause`); `false` resumes it. Omit to leave the pause
+                    unchanged. The server records `pausedAt` and `pausedBy`.
+                pauseReason:
+                  type: string
+                  description: Reason for pausing; stored only while `paused` is true and cleared on resume.
+                  maxLength: 1000
       responses:
         '200':
           description: Schedule updated
@@ -65509,10 +65629,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -65849,7 +65970,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -66019,10 +66142,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -66359,7 +66483,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -66484,10 +66610,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -66824,7 +66951,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -66978,10 +67107,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -67318,7 +67448,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -67372,887 +67504,6 @@ paths:
           description: >-
             Conflict - the schedule is held by another claimant's live claim, or the caller is not the holder of the
             claim it tried to renew or release
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
-          content:
-            text/plain:
-              schema:
-                type: string
-  /api/schedules/{scheduleId}/pause:
-    post:
-      x-internal:
-        - cloud
-      tags:
-        - Schedule_schedules
-      summary: Pause a schedule
-      operationId: pauseSchedule
-      description: |
-        Pauses this schedule so it is never claimed until resumed. Pausing a
-        paused schedule keeps its original pause time.
-      parameters:
-        - name: scheduleId
-          in: path
-          description: Schedule ID
-          required: true
-          schema:
-            type: string
-            format: uuid
-            description: >-
-              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
-              used across different schemas.
-            x-go-type: uuid.UUID
-            x-go-type-import:
-              path: github.com/gofrs/uuid
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              description: Request to pause a schedule or every schedule in the organization.
-              properties:
-                pausedBy:
-                  type: string
-                  description: Identity setting the pause; defaults to the authenticated user.
-                  maxLength: 255
-                reason:
-                  type: string
-                  description: Reason for the pause.
-                  maxLength: 1000
-      responses:
-        '200':
-          description: The paused schedule
-          content:
-            application/json:
-              schema:
-                $schema: http://json-schema.org/draft-07/schema#
-                title: Schedule Schema
-                description: |
-                  Server-returned schedule. A schedule is a job: an action to run with its
-                  parameters, when it is due (`runAt`, `nextRunAt`, `recurrence`), its retry
-                  budget and its outcome. Schedules belong to an organization and may be
-                  linked to a workspace. A worker takes a schedule through a claim (the
-                  generic `claim` construct, nested under the schedule); while the claim is
-                  live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
-                type: object
-                additionalProperties: false
-                required:
-                  - id
-                  - organizationId
-                  - name
-                  - action
-                  - enabled
-                  - status
-                  - retryCount
-                  - maxRetries
-                  - createdAt
-                  - updatedAt
-                properties:
-                  id:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-order: 1
-                  organizationId:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-go-name: OrganizationID
-                    x-oapi-codegen-extra-tags:
-                      db: organization_id
-                    x-order: 2
-                  workspaceId:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-oapi-codegen-extra-tags:
-                      db: workspace_id
-                      json: workspaceId,omitempty
-                    x-order: 3
-                  name:
-                    type: string
-                    description: Human-readable name for the schedule.
-                    minLength: 1
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: name
-                    x-order: 4
-                  action:
-                    type: string
-                    description: The action the worker runs when it holds the schedule's claim, for example a command name.
-                    minLength: 1
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: action
-                    x-order: 5
-                  params:
-                    type: object
-                    description: Action parameters, stored as a JSON blob.
-                    x-go-type: core.Map
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-go-type-skip-optional-pointer: true
-                    x-oapi-codegen-extra-tags:
-                      db: params
-                    x-order: 6
-                  enabled:
-                    type: boolean
-                    description: Whether the schedule is eligible to run. A disabled schedule is never claimed.
-                    x-oapi-codegen-extra-tags:
-                      db: enabled
-                    x-order: 7
-                  runAt:
-                    type: string
-                    format: date-time
-                    description: Time the schedule first becomes due.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: run_at
-                    x-order: 8
-                  nextRunAt:
-                    type: string
-                    format: date-time
-                    description: Next time a recurring or retrying schedule becomes due.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: next_run_at
-                    x-order: 9
-                  recurrence:
-                    type: string
-                    description: Recurrence rule for repeating schedules. Empty for a run-once schedule.
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: recurrence
-                    x-order: 10
-                  status:
-                    type: string
-                    description: |
-                      Lifecycle status. `pending`: created, not yet due-scheduled.
-                      `scheduled`: waiting for its due time. `assigned`: designated for a
-                      particular worker but not yet claimed. `claimed`: a worker holds the
-                      claim and has not started. `running`: the claim holder is executing
-                      it. `retrying`: the last attempt failed and another is due.
-                      `completed`, `failed` and `cancelled` are terminal for a run-once
-                      schedule; a recurring schedule returns to `scheduled`.
-                    enum:
-                      - pending
-                      - scheduled
-                      - assigned
-                      - claimed
-                      - running
-                      - retrying
-                      - completed
-                      - failed
-                      - cancelled
-                    x-oapi-codegen-extra-tags:
-                      db: status
-                    x-order: 11
-                  retryCount:
-                    type: integer
-                    description: Attempts already retried for the current run.
-                    minimum: 0
-                    x-oapi-codegen-extra-tags:
-                      db: retry_count
-                    x-order: 12
-                  maxRetries:
-                    type: integer
-                    description: Maximum retries before the run is marked failed.
-                    minimum: 0
-                    x-oapi-codegen-extra-tags:
-                      db: max_retries
-                    x-order: 13
-                  retryDelayMinutes:
-                    type: integer
-                    description: Minutes to wait before a retry becomes due.
-                    minimum: 0
-                    x-oapi-codegen-extra-tags:
-                      db: retry_delay_minutes
-                    x-order: 14
-                  lastRunAt:
-                    type: string
-                    format: date-time
-                    description: Time of the most recent attempt.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: last_run_at
-                    x-order: 15
-                  lastError:
-                    type: string
-                    description: Error reported by the most recent attempt.
-                    x-oapi-codegen-extra-tags:
-                      db: last_error
-                    x-order: 16
-                  claim:
-                    x-go-type: '*claimv1beta3.Claim'
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/v1beta3/claim
-                      name: claimv1beta3
-                    description: >-
-                      The schedule's live claim, when one is held. Server-managed; omitted when the schedule is
-                      unclaimed.
-                    x-oapi-codegen-extra-tags:
-                      db: '-'
-                      json: claim,omitempty
-                    x-order: 17
-                    $schema: http://json-schema.org/draft-07/schema#
-                    title: Claim Schema
-                    type: object
-                    additionalProperties: false
-                    required:
-                      - id
-                      - organizationId
-                      - resourceType
-                      - resourceId
-                      - claimant
-                      - status
-                      - claimedAt
-                      - expiresAt
-                      - createdAt
-                      - updatedAt
-                    properties:
-                      id:
-                        type: string
-                        format: uuid
-                        description: >-
-                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                          definition is used across different schemas.
-                        x-go-type: uuid.UUID
-                        x-go-type-import:
-                          path: github.com/gofrs/uuid
-                        x-order: 1
-                      organizationId:
-                        type: string
-                        format: uuid
-                        description: >-
-                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                          definition is used across different schemas.
-                        x-go-type: uuid.UUID
-                        x-go-type-import:
-                          path: github.com/gofrs/uuid
-                        x-go-name: OrganizationID
-                        x-oapi-codegen-extra-tags:
-                          db: organization_id
-                        x-order: 2
-                      resourceType:
-                        type: string
-                        description: Type of the claimed resource, for example `schedule`.
-                        minLength: 1
-                        maxLength: 64
-                        x-oapi-codegen-extra-tags:
-                          db: resource_type
-                        x-order: 3
-                      resourceId:
-                        type: string
-                        format: uuid
-                        description: >-
-                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                          definition is used across different schemas.
-                        x-go-type: uuid.UUID
-                        x-go-type-import:
-                          path: github.com/gofrs/uuid
-                        x-oapi-codegen-extra-tags:
-                          db: resource_id
-                        x-order: 4
-                      claimant:
-                        type: string
-                        description: >-
-                          Identity of the holder, as asserted by the worker that took the claim (for example a machine
-                          and process identifier).
-                        minLength: 1
-                        maxLength: 255
-                        x-oapi-codegen-extra-tags:
-                          db: claimant
-                        x-order: 5
-                      status:
-                        type: string
-                        description: >-
-                          Lifecycle of the claim. `active` while held, `released` once the holder lets it go, `expired`
-                          once `expiresAt` passed without a renewal.
-                        enum:
-                          - active
-                          - released
-                          - expired
-                        x-oapi-codegen-extra-tags:
-                          db: status
-                        x-order: 6
-                      claimedAt:
-                        description: Time the claim was taken.
-                        x-oapi-codegen-extra-tags:
-                          db: claimed_at
-                        x-order: 7
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                      expiresAt:
-                        description: >-
-                          Time the claim lapses unless the holder renews it. Always set by the server; a claim past this
-                          time is stale.
-                        x-oapi-codegen-extra-tags:
-                          db: expires_at
-                        x-order: 8
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                      releasedAt:
-                        type: string
-                        format: date-time
-                        description: Time the holder released the claim. Null while the claim is active or after it expired.
-                        nullable: true
-                        x-go-type: core.NullTime
-                        x-go-type-import:
-                          path: github.com/meshery/schemas/models/core
-                          name: core
-                        x-oapi-codegen-extra-tags:
-                          db: released_at
-                        x-order: 9
-                      createdAt:
-                        description: Timestamp of claim creation.
-                        x-oapi-codegen-extra-tags:
-                          db: created_at
-                        x-order: 10
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                      updatedAt:
-                        description: Timestamp of last claim modification.
-                        x-oapi-codegen-extra-tags:
-                          db: updated_at
-                        x-order: 11
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                  pausedAt:
-                    type: string
-                    format: date-time
-                    description: Time the schedule was paused. Null when the schedule is not paused. Server-managed.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: paused_at
-                    x-order: 18
-                  pausedBy:
-                    type: string
-                    description: Identity that paused the schedule. Server-managed.
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: paused_by
-                    x-order: 19
-                  pauseReason:
-                    type: string
-                    description: Reason given for pausing the schedule. Server-managed.
-                    x-oapi-codegen-extra-tags:
-                      db: pause_reason
-                    x-order: 20
-                  createdAt:
-                    description: Timestamp of schedule creation.
-                    x-oapi-codegen-extra-tags:
-                      db: created_at
-                    x-order: 21
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  updatedAt:
-                    description: Timestamp of last schedule modification.
-                    x-oapi-codegen-extra-tags:
-                      db: updated_at
-                    x-order: 22
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  deletedAt:
-                    type: string
-                    format: date-time
-                    description: Timestamp when the schedule was soft-deleted. Null while live.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: deleted_at
-                    x-order: 23
-        '400':
-          description: Invalid request body or request param
-          content:
-            text/plain:
-              schema:
-                type: string
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '404':
-          description: Result not found
-          content:
-            text/plain:
-              schema:
-                type: string
-        '500':
-          description: Internal server error
-          content:
-            text/plain:
-              schema:
-                type: string
-  /api/schedules/{scheduleId}/resume:
-    post:
-      x-internal:
-        - cloud
-      tags:
-        - Schedule_schedules
-      summary: Resume a schedule
-      operationId: resumeSchedule
-      description: |
-        Clears this schedule's pause. Resuming a schedule that is not paused is a no-op.
-      parameters:
-        - name: scheduleId
-          in: path
-          description: Schedule ID
-          required: true
-          schema:
-            type: string
-            format: uuid
-            description: >-
-              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
-              used across different schemas.
-            x-go-type: uuid.UUID
-            x-go-type-import:
-              path: github.com/gofrs/uuid
-      responses:
-        '200':
-          description: The resumed schedule
-          content:
-            application/json:
-              schema:
-                $schema: http://json-schema.org/draft-07/schema#
-                title: Schedule Schema
-                description: |
-                  Server-returned schedule. A schedule is a job: an action to run with its
-                  parameters, when it is due (`runAt`, `nextRunAt`, `recurrence`), its retry
-                  budget and its outcome. Schedules belong to an organization and may be
-                  linked to a workspace. A worker takes a schedule through a claim (the
-                  generic `claim` construct, nested under the schedule); while the claim is
-                  live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
-                type: object
-                additionalProperties: false
-                required:
-                  - id
-                  - organizationId
-                  - name
-                  - action
-                  - enabled
-                  - status
-                  - retryCount
-                  - maxRetries
-                  - createdAt
-                  - updatedAt
-                properties:
-                  id:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-order: 1
-                  organizationId:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-go-name: OrganizationID
-                    x-oapi-codegen-extra-tags:
-                      db: organization_id
-                    x-order: 2
-                  workspaceId:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
-                    x-oapi-codegen-extra-tags:
-                      db: workspace_id
-                      json: workspaceId,omitempty
-                    x-order: 3
-                  name:
-                    type: string
-                    description: Human-readable name for the schedule.
-                    minLength: 1
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: name
-                    x-order: 4
-                  action:
-                    type: string
-                    description: The action the worker runs when it holds the schedule's claim, for example a command name.
-                    minLength: 1
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: action
-                    x-order: 5
-                  params:
-                    type: object
-                    description: Action parameters, stored as a JSON blob.
-                    x-go-type: core.Map
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-go-type-skip-optional-pointer: true
-                    x-oapi-codegen-extra-tags:
-                      db: params
-                    x-order: 6
-                  enabled:
-                    type: boolean
-                    description: Whether the schedule is eligible to run. A disabled schedule is never claimed.
-                    x-oapi-codegen-extra-tags:
-                      db: enabled
-                    x-order: 7
-                  runAt:
-                    type: string
-                    format: date-time
-                    description: Time the schedule first becomes due.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: run_at
-                    x-order: 8
-                  nextRunAt:
-                    type: string
-                    format: date-time
-                    description: Next time a recurring or retrying schedule becomes due.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: next_run_at
-                    x-order: 9
-                  recurrence:
-                    type: string
-                    description: Recurrence rule for repeating schedules. Empty for a run-once schedule.
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: recurrence
-                    x-order: 10
-                  status:
-                    type: string
-                    description: |
-                      Lifecycle status. `pending`: created, not yet due-scheduled.
-                      `scheduled`: waiting for its due time. `assigned`: designated for a
-                      particular worker but not yet claimed. `claimed`: a worker holds the
-                      claim and has not started. `running`: the claim holder is executing
-                      it. `retrying`: the last attempt failed and another is due.
-                      `completed`, `failed` and `cancelled` are terminal for a run-once
-                      schedule; a recurring schedule returns to `scheduled`.
-                    enum:
-                      - pending
-                      - scheduled
-                      - assigned
-                      - claimed
-                      - running
-                      - retrying
-                      - completed
-                      - failed
-                      - cancelled
-                    x-oapi-codegen-extra-tags:
-                      db: status
-                    x-order: 11
-                  retryCount:
-                    type: integer
-                    description: Attempts already retried for the current run.
-                    minimum: 0
-                    x-oapi-codegen-extra-tags:
-                      db: retry_count
-                    x-order: 12
-                  maxRetries:
-                    type: integer
-                    description: Maximum retries before the run is marked failed.
-                    minimum: 0
-                    x-oapi-codegen-extra-tags:
-                      db: max_retries
-                    x-order: 13
-                  retryDelayMinutes:
-                    type: integer
-                    description: Minutes to wait before a retry becomes due.
-                    minimum: 0
-                    x-oapi-codegen-extra-tags:
-                      db: retry_delay_minutes
-                    x-order: 14
-                  lastRunAt:
-                    type: string
-                    format: date-time
-                    description: Time of the most recent attempt.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: last_run_at
-                    x-order: 15
-                  lastError:
-                    type: string
-                    description: Error reported by the most recent attempt.
-                    x-oapi-codegen-extra-tags:
-                      db: last_error
-                    x-order: 16
-                  claim:
-                    x-go-type: '*claimv1beta3.Claim'
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/v1beta3/claim
-                      name: claimv1beta3
-                    description: >-
-                      The schedule's live claim, when one is held. Server-managed; omitted when the schedule is
-                      unclaimed.
-                    x-oapi-codegen-extra-tags:
-                      db: '-'
-                      json: claim,omitempty
-                    x-order: 17
-                    $schema: http://json-schema.org/draft-07/schema#
-                    title: Claim Schema
-                    type: object
-                    additionalProperties: false
-                    required:
-                      - id
-                      - organizationId
-                      - resourceType
-                      - resourceId
-                      - claimant
-                      - status
-                      - claimedAt
-                      - expiresAt
-                      - createdAt
-                      - updatedAt
-                    properties:
-                      id:
-                        type: string
-                        format: uuid
-                        description: >-
-                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                          definition is used across different schemas.
-                        x-go-type: uuid.UUID
-                        x-go-type-import:
-                          path: github.com/gofrs/uuid
-                        x-order: 1
-                      organizationId:
-                        type: string
-                        format: uuid
-                        description: >-
-                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                          definition is used across different schemas.
-                        x-go-type: uuid.UUID
-                        x-go-type-import:
-                          path: github.com/gofrs/uuid
-                        x-go-name: OrganizationID
-                        x-oapi-codegen-extra-tags:
-                          db: organization_id
-                        x-order: 2
-                      resourceType:
-                        type: string
-                        description: Type of the claimed resource, for example `schedule`.
-                        minLength: 1
-                        maxLength: 64
-                        x-oapi-codegen-extra-tags:
-                          db: resource_type
-                        x-order: 3
-                      resourceId:
-                        type: string
-                        format: uuid
-                        description: >-
-                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                          definition is used across different schemas.
-                        x-go-type: uuid.UUID
-                        x-go-type-import:
-                          path: github.com/gofrs/uuid
-                        x-oapi-codegen-extra-tags:
-                          db: resource_id
-                        x-order: 4
-                      claimant:
-                        type: string
-                        description: >-
-                          Identity of the holder, as asserted by the worker that took the claim (for example a machine
-                          and process identifier).
-                        minLength: 1
-                        maxLength: 255
-                        x-oapi-codegen-extra-tags:
-                          db: claimant
-                        x-order: 5
-                      status:
-                        type: string
-                        description: >-
-                          Lifecycle of the claim. `active` while held, `released` once the holder lets it go, `expired`
-                          once `expiresAt` passed without a renewal.
-                        enum:
-                          - active
-                          - released
-                          - expired
-                        x-oapi-codegen-extra-tags:
-                          db: status
-                        x-order: 6
-                      claimedAt:
-                        description: Time the claim was taken.
-                        x-oapi-codegen-extra-tags:
-                          db: claimed_at
-                        x-order: 7
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                      expiresAt:
-                        description: >-
-                          Time the claim lapses unless the holder renews it. Always set by the server; a claim past this
-                          time is stale.
-                        x-oapi-codegen-extra-tags:
-                          db: expires_at
-                        x-order: 8
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                      releasedAt:
-                        type: string
-                        format: date-time
-                        description: Time the holder released the claim. Null while the claim is active or after it expired.
-                        nullable: true
-                        x-go-type: core.NullTime
-                        x-go-type-import:
-                          path: github.com/meshery/schemas/models/core
-                          name: core
-                        x-oapi-codegen-extra-tags:
-                          db: released_at
-                        x-order: 9
-                      createdAt:
-                        description: Timestamp of claim creation.
-                        x-oapi-codegen-extra-tags:
-                          db: created_at
-                        x-order: 10
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                      updatedAt:
-                        description: Timestamp of last claim modification.
-                        x-oapi-codegen-extra-tags:
-                          db: updated_at
-                        x-order: 11
-                        type: string
-                        format: date-time
-                        x-go-type-skip-optional-pointer: true
-                  pausedAt:
-                    type: string
-                    format: date-time
-                    description: Time the schedule was paused. Null when the schedule is not paused. Server-managed.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: paused_at
-                    x-order: 18
-                  pausedBy:
-                    type: string
-                    description: Identity that paused the schedule. Server-managed.
-                    maxLength: 255
-                    x-oapi-codegen-extra-tags:
-                      db: paused_by
-                    x-order: 19
-                  pauseReason:
-                    type: string
-                    description: Reason given for pausing the schedule. Server-managed.
-                    x-oapi-codegen-extra-tags:
-                      db: pause_reason
-                    x-order: 20
-                  createdAt:
-                    description: Timestamp of schedule creation.
-                    x-oapi-codegen-extra-tags:
-                      db: created_at
-                    x-order: 21
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  updatedAt:
-                    description: Timestamp of last schedule modification.
-                    x-oapi-codegen-extra-tags:
-                      db: updated_at
-                    x-order: 22
-                    type: string
-                    format: date-time
-                    x-go-type-skip-optional-pointer: true
-                  deletedAt:
-                    type: string
-                    format: date-time
-                    description: Timestamp when the schedule was soft-deleted. Null while live.
-                    nullable: true
-                    x-go-type: core.NullTime
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
-                    x-oapi-codegen-extra-tags:
-                      db: deleted_at
-                    x-order: 23
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '404':
-          description: Result not found
           content:
             text/plain:
               schema:
@@ -68364,10 +67615,11 @@ paths:
                         linked to a workspace. A worker takes a schedule through a claim (the
                         generic `claim` construct, nested under the schedule); while the claim is
                         live no other worker can take it, and a claim past its `expiresAt` is
-                        stale and the schedule is claimable again. The `claim`, the status
-                        values `assigned`, `claimed` and `running`, and the pause fields are
-                        server-managed: they change only through the claim, release, pause and
-                        resume operations and are refused on create and update.
+                        stale and the schedule is claimable again. The `claim` and the status
+                        values `assigned`, `claimed` and `running` are server-managed and change
+                        only through the claim and release operations. Pausing is data, not an
+                        operation: a client sets `paused` (and optionally `pauseReason`) on create
+                        or update, and the server records `pausedAt` and `pausedBy`.
                       type: object
                       additionalProperties: false
                       required:
@@ -68704,7 +67956,9 @@ paths:
                           x-order: 19
                         pauseReason:
                           type: string
-                          description: Reason given for pausing the schedule. Server-managed.
+                          description: >-
+                            Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                            paused.
                           x-oapi-codegen-extra-tags:
                             db: pause_reason
                           x-order: 20
@@ -68808,10 +68062,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -69148,7 +68403,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -69249,10 +68506,11 @@ paths:
                   linked to a workspace. A worker takes a schedule through a claim (the
                   generic `claim` construct, nested under the schedule); while the claim is
                   live no other worker can take it, and a claim past its `expiresAt` is
-                  stale and the schedule is claimable again. The `claim`, the status
-                  values `assigned`, `claimed` and `running`, and the pause fields are
-                  server-managed: they change only through the claim, release, pause and
-                  resume operations and are refused on create and update.
+                  stale and the schedule is claimable again. The `claim` and the status
+                  values `assigned`, `claimed` and `running` are server-managed and change
+                  only through the claim and release operations. Pausing is data, not an
+                  operation: a client sets `paused` (and optionally `pauseReason`) on create
+                  or update, and the server records `pausedAt` and `pausedBy`.
                 type: object
                 additionalProperties: false
                 required:
@@ -69589,7 +68847,9 @@ paths:
                     x-order: 19
                   pauseReason:
                     type: string
-                    description: Reason given for pausing the schedule. Server-managed.
+                    description: >-
+                      Reason given for pausing the schedule, set with `paused` on create or update. Empty when not
+                      paused.
                     x-oapi-codegen-extra-tags:
                       db: pause_reason
                     x-order: 20
@@ -74906,10 +74166,11 @@ paths:
                             What the environment exists for. `user` is an ordinary environment that people create to
                             logically group Connections and their Credentials. `administrative` designates an
                             environment the platform itself provisions to hold organization-level configuration, and
-                            which resolvers of that configuration therefore trust. `blowhorn` designates an environment
-                            the platform itself provisions to hold an organization's Blowhorn configuration and secrets,
-                            resolved by the purpose-typed credential chain; it is privileged in the same sense as
-                            `administrative`.
+                            which resolvers of that configuration therefore trust. `profile` is an ordinary,
+                            non-privileged environment that holds one profile, by convention one per profile: `name` is
+                            the profile's short name, `owner` is the profile's user, `metadata` holds the profile's
+                            settings, and the profile's accounts are linked as Connections. Like `user`, it carries no
+                            authority and a client may choose it.
 
 
                             Absent means `user`. Nothing may read an unset or unrecognised value as administrative: test
@@ -74926,15 +74187,16 @@ paths:
                             database happened to return first.
 
 
-                            Server-owned and not client-settable. It is absent from `EnvironmentPayload`, which every
-                            environment POST and PUT requestBody references, and from the create-or-edit form, so the
-                            environment create and update endpoints have no field for it. That exclusion is a codegen
-                            guarantee, never access control: the registrant connection inlines the full environment
-                            entity, so `registerRegistryComponent` and `registerRegistryRelationship` do carry `purpose`
-                            in a request type and consumers MUST refuse it on input there too. Whatever surface a value
-                            arrives on, every consumer MUST assign this property only from server-side provisioning or a
-                            data migration. Permission to create an environment does not confer the ability to make one
-                            administrative.
+                            Privileged values are server-owned and never client-settable. `EnvironmentPayload`, which
+                            every environment POST and PUT requestBody references, accepts only the non-privileged
+                            values (`user` and `profile`), and the create-or-edit form has no field for it, so the
+                            environment create and update endpoints cannot designate an environment administrative. That
+                            restriction is a codegen guarantee, never access control: the registrant connection inlines
+                            the full environment entity, so `registerRegistryComponent` and
+                            `registerRegistryRelationship` do carry `purpose` in a request type and consumers MUST
+                            refuse it on input there too. Whatever surface a value arrives on, every consumer MUST
+                            assign this property only from server-side provisioning or a data migration. Permission to
+                            create an environment does not confer the ability to make one administrative.
 
 
                             The database index that enforces the uniqueness invariant, the migration path for
@@ -74944,11 +74206,11 @@ paths:
                           enum:
                             - user
                             - administrative
-                            - blowhorn
+                            - profile
                           x-enum-varnames:
                             - EnvironmentPurposeUser
                             - EnvironmentPurposeAdministrative
-                            - EnvironmentPurposeBlowhorn
+                            - EnvironmentPurposeProfile
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: purpose
