@@ -87,7 +87,7 @@ When the server starts and `INIT_CONFIG` is set:
 4. If the organization does not exist:
    - Kratos identity is created with password credentials for authentication
    - Provider admin user is created
-   - Admin and MeshMap roles are assigned to the user
+   - The Provider Admin role and the Kanvas role are assigned to the user
    - Provider organization is created with the hardcoded UUID
    - User is added to the provider organization with organization admin role
 
@@ -101,10 +101,10 @@ The initialization process is idempotent:
 #### Error Handling
 
 If initialization fails:
-- Errors are logged using MeshKit logger
-- The server continues to start (non-fatal error)
-- All database operations are wrapped in a transaction for atomicity
-- If any step fails, all changes are rolled back
+- The server logs the error and keeps starting
+- The steps are not wrapped in one transaction, so rows from earlier steps remain
+- A restart repeats the whole sequence for as long as the provider organization does not exist
+- After the provider organization exists, a change to `INIT_CONFIG` is ignored
 
 ### Deployment Options
 
@@ -114,8 +114,9 @@ You can set the `INIT_CONFIG` environment variable using several methods:
 
 **Option B (Helm with --set-file flag)**: Use `--set-file` to load configuration from a separate file:
 ```bash
-helm install meshery-cloud ./install/kubernetes/helm/layer5-cloud \
-  --set-file env.initConfig=./config/provider-init.yaml.example
+helm install layer5-cloud layer5/layer5-cloud \
+  --namespace layer5-cloud \
+  --set-file env.initConfig=./provider-init.yaml
 ```
 
 **Option C (Direct environment variable)**: Set the `INIT_CONFIG` environment variable with the YAML content as a string
@@ -131,15 +132,35 @@ The `INIT_CONFIG` environment variable allows you to pre-configure your provider
 For detailed configuration options, see the configuration schema below.
 
 {{< alert type="warning" title="Important" >}}
-Plan your INIT_CONFIG carefully as it is only processed during initial startup. Changes require redeployment or manual configuration updates.
+`INIT_CONFIG` creates the provider organization only when that organization does not exist yet. After the first successful start, changing or removing it has no effect. Change the administrator through the product. The full field list, failure modes, and password handling are in [Provider initialization]({{< ref "cloud/guides/self-hosted/deployment/_index.md#provider-initialization" >}}).
 {{< /alert >}}
 
 ### Considerations of Air-Gapped Deployments
 
-Layer5 acknowledges the importance of air-gapped deployments and ensures content support for such environments. Content registered should be available even in the absence of internet connectivity, thus aligning with Layer5's commitment to versatile deployment scenarios.
+Real-time co-editing needs browsers to reach public STUN and TURN hosts. Those hosts are set by the Kanvas client and are not configurable in the deployment. A network that blocks them keeps single-user editing and still cannot connect collaborators. See [Networking]({{< ref "cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md" >}}). Social sign-in also needs outbound access to Google or GitHub when you offer it. Mail needs a relay on a public address.
 
 ### Monitoring Considerations
 
 Plan for comprehensive observability across your Layer5 Cloud deployment, including metrics, logs, tracing, dashboards, and alerting. Establish SLOs for latency, availability, and saturation; size telemetry storage appropriately; and ensure privacy and access controls for operational data.
 
 See: [Monitoring]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}})
+
+## Decisions to make before install
+
+Layer5 Cloud starts with unsafe placeholder values for every secret and with `localhost` for every URL. Settle these before the first `helm install`.
+
+| Decision | What to settle | Where it is configured |
+| --- | --- | --- |
+| Database | A PostgreSQL server that hosts `meshery`, `kratos`, and `hydra`. The chart does not install a database. | `env.db`, `env.kratosdb`, `env.hydradb`, and the subchart `dsn` values |
+| Hostname and TLS | One public hostname, a certificate for it, and `https`. The chart does not create a certificate. | `ingress.*`, `env.serverbaseurl`, `env.serverHost`, `env.proto` |
+| Secrets | Replace every placeholder. A 32-byte key is `openssl rand -base64 32`. | `env.oauthsecret`, `env.cloudCredentialEncryptionKey`, `env.cloudOidcStateHmacKey`, `env.kratosWebhookApiKey`, Kratos and Hydra secrets |
+| Identity providers | The Google and GitHub OAuth applications used as defaults. | `env.providerOrg*` and the Kratos OIDC providers |
+| Mail | A relay on a public address that offers STARTTLS, or implicit TLS on 465. | `smtp.*` and the Kratos courier |
+| First administrator | The Provider Admin account. | `env.initConfig` |
+| Network paths | What must be reachable, including WebSocket upgrades on `/collaboration`. | Ingress and egress rules |
+
+The server applies migrations every time it starts and exits if a migration fails. Give the database user rights to create tables and the `uuid-ossp` extension in the `public` schema of the `meshery` database.
+
+On a TLS deployment, set `env.proto` to `https`. The server builds redirects to organization custom domains from that value and uses `http` for anything else.
+
+Application mail (invitations, notifications, welcome mail) leaves through `smtp.*` unless an organization has registered its own relay. Identity mail (verification and recovery) leaves through the Kratos courier. The HTTP courier posts to `/api/identity/flow/emails` and has no SMTP fallback. See [Email / SMTP Troubleshooting]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}).

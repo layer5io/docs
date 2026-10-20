@@ -82,7 +82,7 @@ The new Environment appears in the grid with no Connections assigned. Assigning 
 
 ## Edit an Environment
 
-You can change an Environment's name and description at any time.
+You can change an Environment's name and description at any time. An update replaces both the name and the description with the values you send. A field you leave out becomes empty, so send both every time. Names and descriptions are each limited to 255 characters, and names do not have to be unique. Editing never changes the organization and never changes the connections.
 
 1. Flip the Environment's card to its back face.
 2. Click the **pencil** icon.
@@ -147,3 +147,22 @@ This is why deletion is refused rather than the Environment simply being hidden:
 {{< /alert >}}
 
 While an Environment is bulk-selected its card cannot be flipped and its individual edit and delete icons are suppressed, so the bulk toolbar is the only way to act on it. Clear the selection to get the per-card actions back.
+
+## Behavior the server enforces
+
+The Environments page requires a name and an organization. The API does not check that the name is non-empty or unique. Creating an environment without an organization fails with `organizationId is required`. A new environment is empty and attached to no workspace.
+
+| Condition | Result |
+| --- | --- |
+| Assign a connection to an ordinary environment | The connection is assigned. One connection can be in any number of environments. |
+| No live environment has that identifier | HTTP 404, `no environment with the requested id` |
+| Assign or detach a connection on a platform-provisioned environment | HTTP 403, `this connection cannot be assigned to this environment` or `this connection cannot be detached from this environment` |
+| Remove a connection that was never assigned | HTTP 404, `no such connection assignment` |
+| Delete a platform-provisioned environment | HTTP 403, `this environment is provisioned by the platform and cannot be deleted here` |
+| Any other delete failure | HTTP 400, `unable to delete environment` |
+
+Who can use an assigned connection follows [Access Control for Connections and Credentials]({{< ref "cloud/concepts/spaces/environments.md#access-control-for-connections-and-credentials" >}}): the owner, members of teams assigned to a workspace that holds the environment, and holders of View All Organizations. Access through a workspace is read-only.
+
+The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions because of the plan. The keys are View Environment, Create Environment, Edit Environment, Delete Environment, Assign connections to environment, Remove connections from environment, and View Connections. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
+
+Every member of an organization can list every environment in it. A list request names one organization. View All Organizations widens it to every organization.

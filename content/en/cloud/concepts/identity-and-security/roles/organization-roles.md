@@ -1,7 +1,7 @@
 ---
 title: Default Organization Roles
 description: >
-  By default, Organizations have two roles available: Organization Administrator and Organization Billing Manager.
+  Organization-scoped roles include Organization Administrator. There is no Organization Billing Manager role.
 weight: 2
 categories: [security]
 tags: [orgs, roles]
@@ -26,20 +26,19 @@ aliases:
 
 **Who can assign this role?**
 
-- The Organization Owner
+- An Organization Admin of that organization, a holder of Assign User Roles there, or a Provider Admin. The person must already be a member, unless the caller is a Provider Admin.
 
 **When this role first assigned?**
 
-- Creation of new organization or User Account creation
+- When an authorized administrator assigns it. Creating a user does not assign Organization Admin. The creator of an organization is its owner and keeps administrator access through ownership, which is separate from this role.
 
 **How many instances of these roles?**
 
-- Min: 1, Max: many (based on plan)
-- By default, the first Organization Admin is the owner (the creator of the organization).
+- Any number, on every plan. Layer5 Cloud does not stop you removing the last Organization Admin. The owner keeps administrator access through ownership.
 
 **Who can remove assignment of this role?**
 
-- Organization Owner
+- The same people who can assign it. The roles you submit replace the roles held in that organization.
 
 **What permissions does this role have?**
 
@@ -48,32 +47,6 @@ aliases:
 {{% /card %}}
 {{< /cardpane >}}
 
-{{< cardpane >}}
-{{% card header="## Organization Billing Managers" %}}
+Layer5 Cloud has no Organization Billing Manager role. The other organization-scoped roles are User, Workspace Admin, Workspace Manager, Academy Admin, and Academy Learner. Organization Admins assign them. Provider Admin can assign any of them. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 
-**What is the purpose of this role?**
-
-- Administration of subscriptions, plans, payments, billing methods and information, spending limits, invoice mgmt etc.
-
-**Who can assign this role?**
-
-- Organization Owner
-
-**When this role first assigned?**
-
-- Manually by Organization Owner
-
-**How many instances of these roles?**
-
-- Min: 0, Max: many
-
-**Who can remove assignment of this role?**
-
-- Organization Owner
-
-**What permissions does this role have?**
-
-- Check [Permissions Reference]({{< ref "cloud/reference/default-permissions.md" >}})
-
-{{% /card %}}
-{{< /cardpane >}}
+The owner of an organization is not a role. Ownership cannot be transferred. The owner can delete the organization. An Organization Admin who is not the owner cannot. A role write replaces the member's roles in that scope. An empty list removes every organization role and keeps the membership. Provider roles cannot be granted in an organization row.

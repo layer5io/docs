@@ -8,6 +8,7 @@ tags: [badges, recognition, profile]
 aliases:
   - /cloud/tutorials/assigning-user-badges/
   - /cloud/guides/profile/recognizing-user-and-contributor-milestones/
+  - /cloud/guides/organizations/assigning-user-badges/
 
 ---
 
@@ -28,7 +29,7 @@ Earning Layer5 badges is both rewarding and straightforward. Each badge is tied 
 
 These badges will be prominently displayed on your Layer5 community profile, visually representing your journey as a contributor. Not only does this serve as a source of personal pride, but it also helps others in the community recognize your expertise and dedication.
 
-Project Badges are assigned by the admin to the user when a user contributes to a particular project. Achievement Badges are the badges that are assigned automatically when a user completes a task like sharing a design, creating a design for the first time, etc.
+Project Badges in the Layer5 community program are assigned by an admin when a user contributes to a particular project. The community handbook describes when Achievement Badges are awarded. Inside Layer5 Cloud, the only badge awarded automatically is the one tied to an Academy quiz. Layer5 Cloud awards no other badge automatically. Sharing or creating a design does not award an organization recognition.
 
 {{< alert type="info" >}}
 See the **Recognition** section of the [Layer5 Community Handbook](https://layer5.io/community/handbook/recognition) for details of when and how each badge is awarded.
@@ -64,3 +65,34 @@ To share your badges on other social profiles, utilize the provided embedded cod
 
 - **Can I design a badge?**  
   Yes, Layer5 encourages collaboration and welcomes your ideas to enhance the badge design process and community engagement.
+
+## Organization recognitions
+
+A **recognition** is a badge that an organization defines and awards to its members. Recognitions mark milestones such as completing training, contributing to a project, or reaching a team goal. An awarded badge appears on the recipient's public profile, where the recipient can share it.
+
+Two kinds of badges exist:
+
+- **Organization recognitions** are created and awarded by an organization's administrators. This section covers them.
+- **Layer5 community badges** belong to the Layer5 community recognition program described above.
+
+| Task | What it needs |
+| --- | --- |
+| Create, edit, or delete a recognition | The **Manage Recognitions** permission in the organization that owns the recognition. Organization Admin, Provider Admin, and Academy Admin hold it by default. The **Manage Recognitions** control on the Organizations page is enabled for holders of **Edit Organization**. |
+| Award a recognition to a member | Permission to update that member's profile, held in an organization you share with the member. |
+| View a badge | Anyone who can open the recipient's public profile. |
+
+You cannot award a badge to yourself. Layer5 Cloud refuses the request with a 403 error, including for a Provider Admin. The recipient is notified, and an event records who awarded which badge to whom.
+
+Open **Manage Recognitions** from the Organizations page to see every recognition and to create, edit, or delete the ones your organization owns.
+
+- The name must contain at least one letter or number.
+- The label must be unique. A label that another organization has already reserved is refused with a 409 conflict.
+- Ownership is fixed. A recognition belongs to the organization where it was created. You can edit or delete it only while that organization is selected. A recognition owned by another organization stays visible, but its edit and delete controls are disabled.
+
+The recognition catalog read is unauthenticated and not scoped to an organization, so any recognition's name and label can be read by anyone. Do not put sensitive text in a recognition's name or description.
+
+Administrators award a recognition to one member at a time, or set a member's full badge list from the member's profile editor. Both paths apply the same rules. Completing an Academy quiz awards the badge tied to that quiz. Removing a badge uses a separate request and needs the same permission to update the member's profile.
+
+A member opens a badge from the **Badges** tab of their public profile. The badge detail offers share buttons for X, LinkedIn, and Facebook, and an HTML snippet that embeds the badge image and links to the badge on the member's profile. A profile badge link has the form `https://cloud.layer5.io/user/<profile-id>?tab=badges&badge=<label>`.
+
+{{< figure src="images/embedding-badges-modal.svg" alt="Badge detail dialog showing share buttons and an embeddable HTML snippet" >}}

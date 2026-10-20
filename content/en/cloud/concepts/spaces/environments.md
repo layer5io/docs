@@ -4,11 +4,16 @@ description: "Environments are how you organize your deployment targets (whether
 categories: [spaces]
 aliases:
   - /cloud/spaces/environments/
+  - /cloud/concepts/environments/
 
 ---
 
-Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into groups that represent the different stages of your deployment pipeline, for instance, development, test, and production.
-Environments allow you to logically group related [Connections](#connections) and their associated [Credentials](#credentials). Environments make it easier for you to manage, share, and work with a collection of resources as a group, instead of dealing with all your Connections and Credentials on an individual basis.
+An environment is a named group of connections, such as Kubernetes clusters, together with the credentials those connections use. Environments matter for two reasons:
+
+- **An environment is a deploy target.** When you deploy a design, you choose the environment to deploy it to, and the design deploys to that environment's connections.
+- **An environment is how a workspace exposes connections.** A workspace never holds connections directly. It holds environments, and teams assigned to the workspace reach the connections inside them.
+
+Group connections the way you deploy: one environment per pipeline stage, region, or purpose. An environment belongs to one organization for its whole life. Editing an environment never changes its organization. Every member of the organization can list and open every environment in it. Team membership does not narrow the list.
 
 {{< alert type="info" title="Looking for Practical Environment Management?" >}}
 For step-by-step instructions on how to view, create, and edit environments, and how to assign connections to an environment or remove them from it, see the [Managing Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}) guide.
@@ -52,13 +57,13 @@ Credentials in an Environment are the keys to securely authenticate and access m
 
 ## Access Control for Connections and Credentials
 
-Access to a Connection — and therefore to its associated Credentials — is granted through any of the following, evaluated independently:
+Access to a Connection, and therefore to its associated Credentials, is granted through any one of the following, evaluated independently:
 
-1. **Direct ownership** — the Connection's owner (User ID) matches the current user's ID. Ownership grants full read and write access, including deleting the Connection and its Credentials.
-2. **Indirect access through a shared Workspace** — the Connection is assigned to an Environment linked to a Workspace, and the current user belongs to a Team with access to that Workspace. This grants **read-only** access; Team membership alone does not grant the right to modify or delete the Connection or its Credentials.
-3. **The "View All Organizations" key** — a user holding this [key]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) can access every Connection and Credential across all organizations, bypassing the ownership and Team checks above.
+1. **Direct ownership**  -  the Connection's owner (User ID) matches the current user's ID. Ownership grants full read and write access, including deleting the Connection and its Credentials.
+2. **Indirect access through a shared Workspace**  -  the Connection is assigned to an Environment linked to a Workspace, and the current user belongs to a Team with access to that Workspace. This grants **read-only** access; Team membership alone does not grant the right to modify or delete the Connection or its Credentials.
+3. **The "View All Organizations" key**  -  a user holding this [key]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) can access every Connection and Credential across all organizations, bypassing the ownership and Team checks above.
 
-> Designs and Views are governed by a separate mechanism — resource-access mappings — rather than inheriting through Workspace/Team membership. See [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}) for how these mechanisms fit together.
+> Designs and Views are governed by a separate mechanism  -  resource-access mappings  -  rather than inheriting through Workspace/Team membership. See [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}) for how these mechanisms fit together.
 
 ## Example: Orbital Labs Environment Setup
 
@@ -81,12 +86,12 @@ Five connects Orbital Labs' primary AWS production environment to Layer5 Cloud:
 
 1. Navigate to **Environments** and click **Create** (see [Create an Environment]({{< ref "cloud/guides/workspaces/managing-environments/index.md#create-an-environment" >}}))
 2. Name it `prod-aws` and save
-3. Add connections one at a time — each connection is a discrete cloud resource:
-   - **EKS cluster** — the compute layer for deployed workloads
-   - **RDS (PostgreSQL)** — the managed database instance
-   - **S3 bucket** — object storage for design artifacts and state
-   - **CloudFront distribution** — CDN layer for the frontend
-   - **SQS queue** — async messaging between services
+3. Add connections one at a time  -  each connection is a discrete cloud resource:
+   - **EKS cluster**: the compute layer for deployed workloads
+   - **RDS (PostgreSQL)**: the managed database instance
+   - **S3 bucket**: object storage for design artifacts and state
+   - **CloudFront distribution**: CDN layer for the frontend
+   - **SQS queue**: async messaging between services
 4. Zara assigns `prod-aws` to the `orbital-production` workspace, making all five connections available to Infrastructure team members
 
 ### Adding prod-gcp for Multi-Cloud Coverage
@@ -95,14 +100,44 @@ Five repeats the process for GCP to give Orbital Labs multi-cloud flexibility:
 
 1. Create environment `prod-gcp`
 2. Add connections:
-   - **GKE cluster** — Google Kubernetes Engine compute
-   - **Cloud SQL** — managed relational database on GCP
-   - **Cloud Storage bucket** — GCP object storage
-   - **Pub/Sub topic** — async messaging on GCP
+   - **GKE cluster**: Google Kubernetes Engine compute
+   - **Cloud SQL**: managed relational database on GCP
+   - **Cloud Storage bucket**: GCP object storage
+   - **Pub/Sub topic**: async messaging on GCP
 3. Zara assigns `prod-gcp` to `orbital-production` alongside `prod-aws`
 
-Both environments are now available to any design deployed within the `orbital-production` workspace.
+Both environments are now readable by teams assigned to the `orbital-production` workspace. Deploying a design still offers environments from the organization's whole list, so choose the target deliberately.
 
 {{< alert type="info" title="dev-local for Getting Started" >}}
-The `dev-local` environment uses a local Kubernetes cluster (kind) and LocalStack to emulate AWS services — no cloud credentials required. If you are following along with these docs for the first time, start with `dev-local` in the `orbital-dev` workspace.
+The `dev-local` environment uses a local Kubernetes cluster (kind) and LocalStack to emulate AWS services, with no cloud credentials required. If you are following along with these docs for the first time, start with `dev-local` in the `orbital-dev` workspace.
 {{< /alert >}}
+
+## Choosing an environment at deploy time
+
+Deploying a design happens in Kanvas. The deploy action offers environments from your organization's whole list at the moment you deploy. The workspace the design sits in does not limit that choice, so a design in a staging workspace can still be deployed to a production environment. Choose the target deliberately. See [Deploying Designs]({{< ref "kanvas/tasks/designs/deploying-designs/index.md" >}}).
+
+## Platform-provisioned environments
+
+Some environments are created by Layer5 Cloud itself to hold organization configuration, such as sign-in providers or the mail server. They appear in your organization's environment list, but they are not deploy targets you manage:
+
+- They cannot be deleted. The attempt is refused with `this environment is provisioned by the platform and cannot be deleted here`.
+- Connections cannot be assigned to them or detached from them through the normal environment controls.
+- They cannot be added to a workspace. If one is already in a workspace, you can remove it.
+
+Every environment you create is an ordinary environment.
+
+## Limits and behavior
+
+- Names and descriptions are limited to 255 characters. Names are not unique: two environments in one organization can share a name.
+- **Editing replaces both fields.** An environment edit sets both the name and the description. A field left out of the request becomes empty, so always send both.
+- **Organization is fixed.** An edit never moves an environment to another organization.
+- A connection can be in any number of environments. Adding it to one does not remove it from another.
+- An environment can be in any number of workspaces in its organization.
+- **Removing a connection that was never assigned** is refused with `no such connection assignment`.
+- Deleting an environment ends its connection assignments and its workspace assignments in one step. The connections remain, and keep their membership in any other environment.
+
+## Permissions
+
+Every environment action is checked in the organization that owns the environment. The keys are View Environment, Create Environment, Edit Environment, Delete Environment, Assign connections to environment, Remove connections from environment, Assign environment to workspace, and Remove environment from workspace. Default holders are in [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
+
+The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions by plan: creating, editing, deleting, and assigning environments are governed only by the permissions above.

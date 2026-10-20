@@ -254,7 +254,7 @@ additionalAttributes:
 | All                           | `description` |    ✅     | A brief summary of the content.                                                                               |
 | All                           | `weight`      |    -    | Controls the display order (lower numbers appear first). Items are sorted alphabetically by title if not specified.|
 | All                           | `draft`       |    -    | If `true`, the page will not be published.                                                                    |
-| **Learning Path**, **Certification**, **Challenge** | `type`        |    ✅     | Defines the content's role. Values: `challenge`, `learning-path`, `certification` |
+| **Learning Path**, **Certification**, **Challenge**, **Course** | `type`        |    ✅     | `learning-path`, `certification`, `challenge`, or `course` (singular). Plural values such as `learning-paths` are rejected. |
 | **Learning Path**, **Certification**, **Challenge** | `id`          |    ✅     | **Crucial.** A stable UUID for tracking progress. **Do not change.**                                    |
 | **Learning Path**, **Certification**, **Challenge** | `badge` | - | Defines the awarded digital badge. The png and svg fields accept either a full remote URL or a local file path for an image in the same folder (e.g., meshery-contributor-badge.svg).|
 | **Learning Path**, **Certification**, **Challenge** | `level`       |    -    | A string for the intended difficulty (`beginner`, `intermediate`, `advanced`). Default: `beginner`. |
@@ -265,8 +265,8 @@ additionalAttributes:
 
 > For a complete list of all predefined variables and advanced usage, please refer to the official [Hugo Front Matter documentation](https://gohugo.io/content-management/front-matter/).
 
-{{< alert type="info" title="Be Careful About Name Changes" >}}
-Renaming content after publication would break progress tracking for enrolled learners. It's like changing pages while someone is following the story. Consider updating the content's description, adding an introductory note, or creating a versioned copy.
+{{< alert type="info" title="Be Careful About the Content ID" >}}
+Renaming content after publication breaks nothing as long as the `id` is unchanged. Changing the `id` orphans every existing registration, because progress is recorded against that identifier. Two items that share an `id` are rejected at publish time.
 {{< /alert >}}
 
 ## 4. Add Assets and Interactive Content
@@ -278,12 +278,8 @@ For all assets, please use the Page Bundling method. It simplifies asset managem
 {{< /alert >}}
 
 ### Size Limits for Embedded Media
-While there's no hard-coded size limit, we enforce these practical constraints:
-| Media Type | Recommended Max Size | Impact Beyond Limit          |
-|------------|----------------------|------------------------------|
-| Video      | 50 MB                | Slow builds, CI failures     |
-| Image      | 5 MB                 | Hugo memory overflow         |
-| PDF        | 20 MB                | Browser loading delays       |
+
+The Academy does not enforce a size limit. Large assets slow builds and can make them fail. Host large videos on an external platform and embed them with a `<video>` element that points at the hosted file. Every image needs descriptive alt text. The `usestatic` shortcode is deprecated.
 
 
 ### How to Add an Image
@@ -417,7 +413,7 @@ While you can hardcode your `ACADEMY_ORG_ID` directly in the workflow file, we s
 
 With the setup complete, you can publish your content anytime by creating a new release.
 
-1.  Ensure all your latest changes are committed and pushed to your repository's `master` branch.
+1.  Ensure all your latest changes are committed and pushed to your repository's default branch.
 2.  On your GitHub repository page, navigate to the **"Releases"** section.
 3.  Click **"Draft a new release"**.
 4.  Create a new version tag for your release (e.g., `v1.0.1`).
@@ -426,8 +422,10 @@ With the setup complete, you can publish your content anytime by creating a new 
 
 This action will automatically trigger the workflow, and your content will be deployed to the [Layer5 Academy](https://cloud.layer5.io/academy).
 
+- The publish request is accepted only from an organization admin or owner. It calls Layer5 Cloud with your organization ID and the version.
 - Your content will be available in the [staging environment](https://staging-cloud.layer5.io/) within approximately 10 minutes.
 - Your content will go fully live to the production Academy platform during the next scheduled cloud release.
+- If the build fails, your previous version stays live.
 
 > **For Urgent Updates:** If you have a time-sensitive publishing request or encounter any issues with the automated process, please [contact the Layer5 team](https://layer5.io/company/contact) for expedited assistance.
 
@@ -501,16 +499,13 @@ The structure is defined by your folder hierarchy. A learning path is a director
 <details>
   <summary>6. Why does my local build fail when adding large videos?</summary>
   
-The ideal size should be less than 10MB for our service performance and sustainability, and server resource management. If your asset size is larger than 10MB, we recommend using external hosting as listed.
+The Academy does not enforce a size limit. Large assets slow the build and can make it fail. Host large videos externally, as listed above.
 </details>
  
 <details>
   <summary>7. How to securely host private training videos?</summary>
   
-Use AWS S3 with signed URLs:
-```html
-<video src="{{</* s3_signed_url path="training/private.mp4" */>}}">
-```
+Host the file outside the repository and point a <code>&lt;video&gt;</code> element at it. For private videos, use signed URLs or unlisted links. Add subtitle tracks (VTT) and a poster image. There is no <code>s3_signed_url</code> shortcode.
 </details>
 
 <details>

@@ -25,5 +25,32 @@ Each content type also has a dedicated build guide:
 * [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) - repository setup and learning paths.
 * [Building Challenges]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) - hands-on, scenario-based tasks.
 * [Building Certifications]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}) - formal assessments and certificates.
+* [Instructor Console]({{< ref "cloud/academy/creating-content/instructor-console-guide/index.md" >}}) - registrations, completion, and pass rates.
+* [Integrating Assessments]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) - quiz, test, and exam files, question types, scoring, and attempt limits.
+* [Using the Content Template Creator]({{< ref "cloud/academy/creating-content/using-content-template-creator/index.md" >}}) - the registration flow, the front matter it generates, and the invitation behind each content item.
+* [Extending the Academy]({{< ref "cloud/academy/creating-content/extending-the-academy/index.md" >}}) - HTML, CSS, custom shortcodes, embedded designs, and award emails.
+* [Platform Development]({{< ref "cloud/academy/platform-development.md" >}}) - local preview, theme development, and end-to-end builds.
 
-We're excited to see what you'll build!
+## Register content in the console
+
+The content creation flow creates the content record and generates the identifiers and front matter you paste into your repository. Only the content type is required to create the record. The record starts with status **not ready**, **public** visibility, and **beginner** level. Cloud generates the slug from the content type plus three random words.
+
+| Step | Field | Behavior |
+| --- | --- | --- |
+| Basic Information | Content Type | Learning path, challenge, or certification. |
+| Basic Information | Title, Description | Appear on the catalog card. |
+| Content Details | Difficulty Level | `beginner`, `intermediate`, or `advanced`. |
+| Content Details | Categories, Tags | Used for discovery in the catalog. |
+| Content Details | Banner Image | Optional. A path to an image in the same folder as the content's index file. |
+| Content Access | Workspace | An existing workspace, or a new one. |
+| Content Access | Team | One existing team. Learners join it when they enroll. |
+| Content Access | Status | Enabled or Disabled. Disabled blocks new enrollment. |
+| Content Access | Content Access End Date | When the invitation behind the content expires. Empty means no expiry. |
+| Recognition | Badge | The badge awarded when a learner completes the content. |
+| Generate Template | Front matter | The YAML to place at the top of the content's index file, including the content ID. |
+
+Registering content also creates an invitation, except when the content is owned by the provider organization. When a learner registers, that invitation is accepted at the same time, which adds the learner to the content's team and assigns the Academy Learner role if the learner does not already hold it.
+
+You can change the team, access status, end date, workspace, and badge later from the Curricula view. Changing the content's `id` in your repository after learners register orphans their progress, because progress is recorded against that identifier.
+
+Opening the console requires the **View Academy Metrics** permission (Academy Admin, Organization Admin, or Provider Admin). The organization must already have the Academy configured, or the console stays in its "not configured" state.

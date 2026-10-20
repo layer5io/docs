@@ -56,11 +56,9 @@ With all five components on the canvas, Marcus draws the connection edges:
 
 He annotates the **saas-aad → saas-apim** edge with `oauth2/oidc` to make the authentication protocol explicit for reviewers.
 
-### Step 4: Attach the stellar-enterprise environment
+### Step 4: Leave the design unbound
 
-Marcus opens **Design Settings → Environments** and selects `stellar-enterprise` from the list. This environment carries live connections for AKS, Azure SQL, Azure API Management, and Azure AD — once attached, Kanvas resolves those components against real infrastructure and surfaces connection status on the canvas.
-
-He saves the environment binding. The `saas-aks` node now shows the live AKS cluster version and node count pulled from the `stellar-enterprise` connection.
+Kanvas does not store an environment on a design, and the canvas does not overlay connection status or a live cluster version. `stellar-enterprise` stays a deploy-time choice: the Deploy stepper asks which environments to target. This tutorial does not deploy.
 
 ### Step 5: Cross-org sharing with Orbital Labs
 
@@ -68,7 +66,7 @@ This is the step that makes the tutorial interesting. Marcus wants Five — a Pl
 
 Cross-org sharing is possible here because both Stellar Dynamics and Orbital Labs are managed under **Constellation Cloud**, a shared MSP provider. Dr. Aiko Sato, Constellation Cloud's Provider Admin, has already configured cross-org access permissions that allow design sharing across the two orgs. Without that provider-level configuration, the Share dialog would not surface users from the other organization at all.
 
-Marcus opens the **Share** panel on `stellar-saas-platform`. He types Five's name in the user search field. Because Dr. Aiko Sato has established the cross-org trust relationship, Five appears as a valid share target even though he belongs to Orbital Labs. Marcus selects **view + comment** as the permission level — Five will be able to read the design and leave comments, but not move components or edit connections.
+Marcus opens the **Share** panel on `stellar-saas-platform`. He types Five's name in the user search field. Because Dr. Aiko Sato has established the cross-org trust relationship, Five appears as a valid share target even though he belongs to Orbital Labs. A share has no permission level. Five can edit the design and leave comments.
 
 Marcus clicks **Share**. Five receives an in-app notification in his Orbital Labs account.
 
@@ -78,7 +76,7 @@ Cross-organization design sharing requires that both organizations exist under a
 
 ### Step 6: Five reviews the design from Orbital Labs
 
-Five opens the shared design notification from his Orbital Labs account. The `stellar-saas-platform` design loads in Kanvas with a read-only canvas — he can inspect all five Azure components, explore their configuration panels, and view the connection annotations, but the drag, connect, and delete controls are disabled for him.
+Five opens the shared design notification from his Orbital Labs account. The `stellar-saas-platform` design loads in Kanvas. He can inspect all five Azure components, explore their configuration panels, and view the connection annotations. The canvas is not read-only: a share does not disable drag, connect, or delete.
 
 After a few minutes of review, Five leaves a comment pinned to the **saas-apim** component:
 

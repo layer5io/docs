@@ -17,14 +17,14 @@ Creating a child organization requires the **Create Organization** permission in
 
 - An organization can have any number of child organizations.
 - A child can have child organizations of its own, and those can have children of their own. There is no limit on depth.
-- Every top-level organization sits directly under the **provider organization** of your Layer5 Cloud deployment. The provider organization is never itself a child, and it does not appear in the child organizations section.
+- The provider organization is never a child, and it cannot hold child organizations. Its child list is always empty, and it does not appear in the child organizations section. A tenant organization is not a child of the provider.
 - A child belongs to exactly one parent. A child cannot be moved to another parent after it is created.
 
 A parent administers its **direct** children only. An administrator of a grandparent does not administer a grandchild by virtue of that role; the administrator of the intermediate organization does.
 
 ## Creating a Child Organization
 
-Any member holding the **Create Organization** permission in the parent can create a child. The creator becomes an Organization Administrator of the new child.
+Any member holding the **Create Organization** permission in the parent can create a child. The creator becomes a member and an Organization Administrator of the new child.
 
 1.  Switch to the parent organization.
 2.  Go to the Organizations page and find the **Child organizations** section.

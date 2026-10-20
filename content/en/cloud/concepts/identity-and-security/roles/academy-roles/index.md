@@ -49,13 +49,13 @@ aliases:
 
 {{< cardpane >}}
 {{% card header="Learner" %}}
-Learner = A [User]({{< ref "cloud/concepts/identity-and-security/roles/user-role/index.md" >}}) who has registered for academy content.
+Academy Learner is an organization role. It is separate from the [User]({{< ref "cloud/concepts/identity-and-security/roles/user-role/index.md" >}}) role. Holding it grants access to Academy content and registration.
 <img src="images/learner.svg" link="images/learner.svg"  width="100%" alt="Learner Roles" />
 {{% /card %}}
 {{< /cardpane >}}
 
-{{< alert title="Managing Learner Costs" color="info" >}}
-While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization's subscription plan. Please be mindful of your subscription to manage costs effectively.
+{{< alert title="Learners and billing" color="info" >}}
+There is no seat cap that blocks someone from receiving Academy Learner. A member whose only role is Academy Learner is excluded from the organization's billable user count. The count still never falls below the plan's minimum, and it does not stop anyone from joining.
 
 {{< /alert >}}
 
@@ -69,20 +69,19 @@ While the maximum number of instances is unlimited, the available seats for Lear
 
 **Who can assign this role?**
 
-- Organization Administrators or Academy Administrators
+- An Organization Admin of that organization, a holder of Assign User Roles there, or a Provider Admin. Academy Admin does not assign organization roles by virtue of that role.
 
 **When this role first assigned?**
 
-- Automatically to users who join through a special learner invite link
-- Manually by an Organization Administrator or Academy Administrator
+- When an authorized administrator assigns it, or when an invitation lists Academy Learner. There is no automatic learner role and no separate learner invite link. An invitation is an organization invitation that can name this role.
 
 **How many instances of these roles?**
 
-- Min: 0, Max: many
+- Any number. The role is available on every plan.
 
 **Who can remove assignment of this role?**
 
-- Organization Administrators or Academy Administrators
+- The same people who can assign it. Removing the role does not end the membership.
 
 **What permissions does this role have?**
 

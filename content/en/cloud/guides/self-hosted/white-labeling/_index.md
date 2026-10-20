@@ -10,11 +10,11 @@ aliases:
 
 ---
 
-You can change the logo, color scheme, domain name, and other aspects of the user interface to match your own identity and preferences. White-labeling enables you to offer a seamless and consistent experience to your customers, partners, or internal users who access your service mesh platform. White-labeling also helps you to differentiate your platform from other Layer5 Cloud users and competitors, and to enhance your brand recognition and loyalty.
+You can change the logo, color scheme, domain name, and other aspects of the user interface to match your own identity. Branding is set per organization. You do not need to self-host to white-label: a hosted organization can use the same theme, logos, links, domain, and mail settings. Self-hosting adds the provider-level defaults that every organization inherits.
 
 ## Customizing Themes
 
-The Layer5 Cloud dashboard can be customized with your own branding, including your full-sized logo, logo mark, and color scheme. Customized theme colors also affect email notifications.
+The Layer5 Cloud dashboard can be customized with your own branding. An organization sets theme colors and four logos: desktop, mobile, dark desktop, and dark mobile. Theme colors accept only hexadecimal values. Each logo can be at most 500 KB. Layer5 Cloud rejects a color or an oversized logo with an error that names it. The signed-in product, and the sign-in, sign-up, and error pages on the organization's own domain, use that theme.
 
 {{< cardpane >}}
 {{% card header="Dashboard Example" footer="<i>Example: Cloudfire branding on Dashboard</i>" %}}
@@ -162,7 +162,7 @@ Each of the prebuilt widgets can be added to a dashboard only once. If you find 
 ## Custom Domain Name and Login Screen
 
 {{< alert type="info" >}}
-Not sure whether you want a subdomain of the platform or your own separate custom domain — and whether you'll need your own identity provider? The [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) guide names each combination (Hosted, Branded, White-Label) and explains when to choose one over the next.
+Not sure whether you want a subdomain of the platform or your own separate custom domain  -  and whether you'll need your own identity provider? The [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/) guide names each combination (Hosted, Branded, White-Label) and explains when to choose one over the next.
 {{< /alert >}}
 
 Layer5 Cloud supports customizing the login screen based on custom domain name. Redirect your users to your own domain name. For example, if your domain name is `mycompany.com`, you can redirect users to `meshery.mycompany.com`.
@@ -182,19 +182,20 @@ Changing your custom domain name after configuring an external Academy can break
 
 ### Configuring a subdomain
 
-To set up a www or custom subdomain, such as `www.example.com` or `meshery.example.com`, you must add your domain in the repository settings. After that, configure a CNAME record with your DNS provider.
+To set up a hostname such as `hub.example.org`:
 
-In Layer5 Cloud, navigate to your Provider Organization.
+1. A Provider Admin enters the domain in the organization's settings. Only a Provider Admin can set a new domain. An organization administrator can only clear one. Layer5 Cloud checks the format and uniqueness when you save, and does not look the name up in DNS. Saving does not reboot the server.
+2. Create a `CNAME` record that points the custom hostname at your deployment's hostname. Use an internationalized name in its Punycode form.
+3. Add the custom hostname to `ingress.hosts` with the same paths as your main host, and add it to `ingress.tls` with a certificate that covers it. The chart routes only the hosts you list.
+4. Set `env.proto` to `https`. The server builds redirects to the custom domain from that value.
 
-Under your Organization name, click Edit. If you cannot click the "Edit" action, verify that you are a [Provider Administrator]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
-
-Under "Custom domain", type your custom domain, then click Save. This will create a server configuration that will require a reboot in order to take effect.
+If you cannot edit the organization, verify that you are a [Provider Administrator]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 
 {{< alert title="Internationalized Domain Names" color="info" >}}
 If your custom domain is an internationalized domain name, you must enter the Punycode encoded version.
 {{< /alert >}}
 
-Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `hub.cncf.io` for your user site, create a CNAME record that points `hub.cncf.io` to `cloud.layer5.io`. For more information about how to create the correct record, see your DNS provider's documentation.
+Create one CNAME per hostname. Point it at your deployment's hostname. On the hosted service that hostname is `cloud.layer5.io`. Do not rely on a wildcard record.
 
 {{< alert title="Risks of Using Wildcard DNS Records" color="warning" >}}
 Warning: We strongly recommend that you do not use wildcard DNS records, such as `*.example.com`. These records put you at an immediate risk of domain takeovers, even if you verify the domain. For example, if you verify example.com this prevents someone from using `a.example.com`, but they could still take over `b.a.example.com` (which is covered by the wildcard DNS record).
@@ -202,13 +203,13 @@ Warning: We strongly recommend that you do not use wildcard DNS records, such as
 
 #### Domain Format Requirements
 
-1. **Uniqueness:** The domain must be unique across all organizations in Meshery Cloud. It cannot be in use by another organization.
+1. **Uniqueness:** The domain must be unique across organizations, including deleted ones.
 
-2. **Format:** Do not include the protocol (http:// or https://) or the www. prefix. You should enter the pure hostname (e.g., meshery.mycompany.com).
+2. **Format:** 3 to 253 characters. Dot-separated labels of 1 to 63 ASCII letters, digits, or hyphens. A label cannot start or end with a hyphen. Do not include a protocol or a `www.` prefix. Enter the hostname, for example `meshery.mycompany.com`. Internationalized names are written in Punycode (`xn--`).
 
-3. **Length:** The domain name must be between 3 and 63 characters long.
+3. **Who can set it:** Only a Provider Admin can set a new domain. An organization administrator can clear one. Clearing the field removes the assignment.
 
-4. **Removing a Domain:** To remove a custom domain assignment, simply clear the domain field and save. An empty field is treated as a request to nullify the domain linkage.
+4. **DNS:** Layer5 Cloud does not look the name up when you save. Lookups are cached for five minutes, and an organization change clears the affected entry.
 
 #### Verifying your custom domain
 
@@ -229,14 +230,14 @@ Optionally, to enforce HTTPS encryption for your site, select Enforce HTTPS. It 
 
 ### Social sign-in on a custom domain
 
-**Social sign-in (Google and GitHub) works on any custom domain** — whether it is a subdomain of your deployment's **base domain** (its registrable domain, technically the [eTLD+1](https://developer.mozilla.org/en-US/docs/Glossary/eTLD), for example `layer5.io` or `example.com`) or a fully-custom domain on a different base domain. In every case, the Google and GitHub buttons appear and complete sign-in using the deployment's default identity providers. No per-organization setup is required, and bringing your own identity provider is **not** a prerequisite for social sign-in.
+**Social sign-in (Google and GitHub) works on any custom domain**  -  whether it is a subdomain of your deployment's **base domain** (its registrable domain, technically the [eTLD+1](https://developer.mozilla.org/en-US/docs/Glossary/eTLD), for example `layer5.io` or `example.com`) or a fully-custom domain on a different base domain. In every case, the Google and GitHub buttons appear and complete sign-in using the deployment's default identity providers. No per-organization setup is required, and bringing your own identity provider is **not** a prerequisite for social sign-in.
 
-- **Same base domain.** If the custom domain is a subdomain of your deployment's base domain — for example a deployment at `cloud.example.com` with a `meshery.example.com` custom domain (or, on the hosted service, a Layer5-provisioned partner subdomain such as `partner.layer5.io`) — Google and GitHub sign-in work out of the box with the deployment's default identity providers.
+- **Same base domain.** If the custom domain is a subdomain of your deployment's base domain  -  for example a deployment at `cloud.example.com` with a `meshery.example.com` custom domain (or, on the hosted service, a Layer5-provisioned partner subdomain such as `partner.layer5.io`)  -  Google and GitHub sign-in work out of the box with the deployment's default identity providers.
 
-- **Different base domain (fully-custom).** If the custom domain sits on a different base domain — for example you CNAME `meshery.yourcompany.com` to the hosted `cloud.layer5.io`, where `yourcompany.com` and `layer5.io` are different base domains — Google and GitHub sign-in still work out of the box, again using the deployment's default identity providers. You only need to bring your own identity provider credentials (BYOC) if you want your own brand on the consent screen, your own OAuth rate limits and audit trail, corporate single sign-on, or a distinct authentication boundary — never merely to enable social sign-in.
+- **Different base domain (fully-custom).** If the custom domain sits on a different base domain  -  for example you CNAME `meshery.yourcompany.com` to the hosted `cloud.layer5.io`, where `yourcompany.com` and `layer5.io` are different base domains  -  Google and GitHub sign-in still work out of the box, again using the deployment's default identity providers. You only need to bring your own identity provider credentials (BYOC) if you want your own brand on the consent screen, your own OAuth rate limits and audit trail, corporate single sign-on, or a distinct authentication boundary  -  never merely to enable social sign-in.
 
 {{< alert title="Social sign-in works without bringing your own identity providers" color="info" >}}
-On any custom domain, the Google and GitHub buttons are **shown** and fully functional alongside email-and-password sign-in, using the deployment's default identity providers — no per-organization configuration is required. Bringing your own identity providers (BYOC) remains optional and changes *whose* OAuth apps and consent screen are used, not *whether* social sign-in is available. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}) for what BYOC is and when you might want it.
+On any custom domain, the Google and GitHub buttons are **shown** and fully functional alongside email-and-password sign-in, using the deployment's default identity providers  -  no per-organization configuration is required. Bringing your own identity providers (BYOC) remains optional and changes *whose* OAuth apps and consent screen are used, not *whether* social sign-in is available. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}) for what BYOC is and when you might want it.
 {{< /alert >}}
 
 The same base domain / different base domain split above still marks an **authentication boundary**. Organizations that share an identity provider (the canonical host and custom domains that use the shared, central provider) sit within the same authentication boundary, while an organization that brings its own (BYOC) provider is a distinct authentication boundary: **same identity provider source means the same security boundary**, regardless of how the host is named. See [Identity Services → The identity provider is the security boundary]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md#the-identity-provider-is-the-security-boundary" >}}) and [Identity and Security → Security Boundaries]({{< ref "cloud/concepts/identity-and-security/_index.md#security-boundaries" >}}).
@@ -252,7 +253,7 @@ No, you can access and use all the same custom theming, custom dashboards, and o
 <details>
   <summary>Do users have to use my custom URL to access the Organization?</summary>
   
-No. In addition to your custom URL, you'll always be able to log in from our website and access your Organization from <https://cloud.layer5.io>.
+No. Users can always sign in through the deployment's own address and reach the organization. On the hosted service that address is <https://cloud.layer5.io>. On a self-hosted deployment it is the hostname you configured.
 </details>
 
 <details>

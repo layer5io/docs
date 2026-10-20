@@ -5,13 +5,15 @@ description: >
   A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
 categories: [academy]
 tags: [academy]
+aliases:
+- /cloud/academy/instructor-console-guide/
 ---
 
 The [Academy Instructor Console](https://cloud.layer5.io/academy/instructors-console) serves as your command center for the Layer5 Academy, providing both a comprehensive overview of your content and detailed insights into learner engagement.
 
 ### Gaining Access
 
-To view the Instructor Console, you must have the **Academy Admin** role or be an **organization admin**.
+Opening the console requires the **View Academy Metrics** permission in the selected organization. Without it, the console shows a missing-permission message that names the permission. Academy Admin, Organization Admin, and Provider Admin hold the permission by default. Academy Learner holds content access only and cannot open the console. User, Team Admin, Workspace Admin, and Billing Manager cannot open it either, unless an operator has added the permission to the role. Provider Admin can view the combined all-organizations scope. In that scope the console skips the not-configured check and aggregates across organizations. Role assignments are seeded defaults and an operator can change them. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 
 {{< alert type="info" title="Enterprise Feature" >}}
 The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. [Learn more](https://layer5.io/pricing)
@@ -23,7 +25,7 @@ The Instructor Console and custom academy features are available exclusively for
 
 The Instructor Console includes a Content Creation Tool to help you develop new learning materials. It's a simple, guided process that generates the initial configuration for your content.
 
-This tool walks you through three quick steps to create your content's boilerplate configuration.
+The same flow is documented step by step, with the invitation it creates, in [Using Academy Content Template Creator]({{< ref "cloud/academy/creating-content/using-content-template-creator/index.md" >}}). It collects more than a title: content type, description, difficulty, categories, tags, banner, one workspace, one existing team, access status, an optional access end date, and the badge. The record starts not ready, public, and beginner. The last step gives you the front matter and the content ID.
 
 ![Content Creation Tool](./images/create-content-model.gif)
 
@@ -60,11 +62,11 @@ These charts display your most important, high-level statistics, giving you a sn
 
 *This screenshot predates the current layout and is pending recapture. The console now shows the five cards described below.*
 
-- **Total Learners**: Represents the overall reach of your academy. This is the total number of people who have ever shown interest in your content.
+- **Total Learners**: Distinct learners who have registered for any of the organization's content.
 - **Active Learners**: Measures current engagement. This is the number of distinct learners who have worked with your content this calendar month, giving you an idea of your active student body.
 - **Registrations**: Every registration in the organization, whatever the state of the content it points at. This is the same total the [Learner Registration](#learner-registration) chart breaks down, so the two always agree.
 - **Completion Rate**: Registrations marked completed as a share of all registrations.
-- **Quiz Pass Rate**: The share of quiz attempts that passed, across every test in your organization. The card's subtitle carries the underlying counts (for example "762 of 1,036 attempts passed"), so the raw attempt total is still visible.
+- **Quiz Pass Rate**: Passed quiz attempts divided by all attempts. Retakes by one learner each count. The card's subtitle carries the underlying counts (for example "762 of 1,036 attempts passed"), so the raw attempt total is still visible. A rate below 60% is highlighted.
 
 A rate card with nothing to divide renders as `-`, not `0%`. "Nobody has attempted this quiz yet" and "everybody failed it" are different facts, and reporting the first as zero would send you looking for a problem that isn't there.
 
@@ -164,7 +166,7 @@ You can customize which columns are visible to tailor the report to your specifi
 
 If there are a large number of learner registrations, the report is split into multiple pages. Use the controls at the bottom of the table to navigate through the data:
 
-**Rows per page**: Choose how many records to display on each page (e.g., 10, 25, 50).
+**Rows per page**: The table loads 20 registrations at a time by default. The Learners view does not export to a file.
 
 **Strategic Uses**
 - Identify at-risk learners - filter for users in `Registered` status for over 30 days, they may need support or content may be too challenging
@@ -181,6 +183,8 @@ The final section is dedicated to analyzing the performance of your assessments.
 These statistics provide a high-level summary of all test activities in your academy.
 
 -   **Pass/Fail Summary Bar:** This bar chart gives you an at-a-glance comparison of the total number of passed attempts (green) versus failed attempts (red) across all tests.
+
+The Overview also compares final exams with practice quizzes. Tests marked final gate completion of the content. Every other test is practice.
 
 -   **Insight Cards:** These three cards automatically surface key trends and outliers from your data:
     -   **Lowest Pass Rate:** The quiz with the smallest share of passing attempts, helping you identify challenging content.
@@ -222,3 +226,19 @@ Currently, the Instructor Console does not have a built-in feature to export the
 
 No. It is computed over attempts, not people: retakes by the same learner each count, so a learner who fails twice and then passes contributes two failures and one pass. It measures assessment outcomes, not how many distinct learners have been tested. For a headcount, use Total Learners or Active Learners.
 </details>
+
+## When the organization is not configured
+
+The console reports data only for an organization that has an Academy content module and version configured. Until the first content version is published, the console shows a "not configured" state that lists what you get after configuration: learner registration and progress tracking, content creation tools, test analytics, and reporting. The provider all-organizations scope skips that check.
+
+## Actions
+
+| Action | Where | Effect |
+| --- | --- | --- |
+| Register new content | Content creation flow | Creates the content record, its invitation (except for provider-owned content), and the front matter for your repository. |
+| Update content access | Curricula | Changes the team that can access the content, the access end date, the access status, the workspace, and the awarded badge. |
+| Copy invite link | Curricula | Copies the link that registers a learner for the content. |
+| Delete content | Curricula | Removes the content record after confirmation. |
+| Withdraw a registration | Learners | Sets the registration to Withdrawn. Learners can also withdraw themselves. Withdrawing another learner requires View Academy Metrics. |
+
+Curricula lists published content only. Draft and retired content is excluded, so its registrations count is normally smaller than the Overview total. Content that nobody has registered for is marked **Awaiting First Learner**. The two pass-rate rankings (lowest and highest) consider only tests with at least five attempts. While no test has five attempts, the ranking uses all tests.

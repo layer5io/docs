@@ -174,11 +174,11 @@ Show user how to use Designs and components in Kanvas Designer.
 4. Invite Friends to Collaborate:
    - Share the link with friends or collaborators to enable collaboration on your design.
 
-5. Confirm Sharing Settings:
-   - Ensure sharing settings align with your preferences, such as viewing, editing, or commenting permissions.
+5. Confirm who has access:
+   - A share has no viewing, editing, or commenting level. There is no view-and-comment option. Anyone you add can edit the design, so share only with people who should be able to change it.
 
 6. Save Changes:
-   - Save any changes made to the sharing settings to apply them.
+   - Visibility changes are saved with the design. There is no separate permission level to save.
 
 <!-- 
 
