@@ -166,7 +166,7 @@ You designate it in either of two places: the **Open Org Invitation** setting of
 - **Visibility.** The organization record publishes the open invitation's id, and the id is also its invitation code. Treat an open invitation as a shareable link, not a secret.
 
 {{< alert title="Inviting users to specific teams" type="info" >}}
-To place invited users into teams, list the teams on an invitation. See [Manage Teams]({{< ref "cloud/guides/organizations/managing-teams/index.md" >}}). For individual invitations and their expiry, see [User Invitations]({{< ref "cloud/guides/organizations/inviting-users/index.md" >}}).
+To place invited users into teams, list the teams on an invitation. See [Manage Teams]({{< ref "cloud/guides/organizations/managing-teams/index.md" >}}). For individual invitations and their expiry, see [User Invitations]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}}).
 {{< /alert >}}
 
 ## Managing Members {#managing-members}

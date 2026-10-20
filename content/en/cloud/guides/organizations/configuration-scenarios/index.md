@@ -129,4 +129,4 @@ Organization Admins and Owners add, rotate, and remove identity providers withou
 
 ## Membership policy is independent {#these-choices-are-independent-of-who-can-join}
 
-The scenario controls where and how users sign in. It does not control who may join. Membership is governed by invitations, open sign-up, and the roles and teams an invitation grants. Any scenario pairs with any membership policy. See [Using the Open Organization Invitation Link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}) and [User Invitations]({{< ref "cloud/guides/organizations/inviting-users/index.md" >}}).
+The scenario controls where and how users sign in. It does not control who may join. Membership is governed by invitations, open sign-up, and the roles and teams an invitation grants. Any scenario pairs with any membership policy. See [Using the Open Organization Invitation Link]({{< ref "cloud/guides/organizations/org-management/_index.md#using-the-open-organization-invitation-link" >}}) and [User Invitations]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}}).

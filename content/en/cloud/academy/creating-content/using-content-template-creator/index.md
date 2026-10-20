@@ -1,6 +1,5 @@
 ---
 title: Using Academy Content Template Creator
-diataxis: how-to
 weight: 6
 description: >
 
