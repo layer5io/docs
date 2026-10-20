@@ -32,7 +32,7 @@ Every plan includes community support. Standard and Premium support add direct c
 
 {{< feature-tiers categories="Support and Deployment" functions="Community Support|Standard Support|Premium Support" >}}
 
-For the channels themselves, see [Layer5 Cloud support]({{< ref "cloud/reference/support.md" >}}).
+For the channels themselves, see [Layer5 Cloud support]({{< ref "cloud/getting-started/support.md" >}}).
 
 ## How a support request is delivered
 

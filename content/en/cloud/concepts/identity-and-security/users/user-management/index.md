@@ -62,8 +62,8 @@ You can remove users from an organization one by one or several at once. This ac
 
 Removing a member ends every access-bearing relationship they hold **inside that organization**, as a single operation:
 
-* **Their organization membership**, together with the organization [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to it.
-* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/reference/default-permissions.md" >}}) attached to those memberships.
+* **Their organization membership**, together with the organization [roles]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) attached to it.
+* **Their membership in that organization's [teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}})**, together with the team [roles]({{< ref "cloud/concepts/identity-and-security/roles/team-roles.md" >}}) attached to those memberships.
 
 Both matter, because permissions reach a user through the roles carried on those memberships. A [keychain]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}) granted by a team role is revoked by the removal just as an organization role's keychain is, so a removed member is left holding no [keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) in the organization by either route. Both removal methods above behave identically in this respect; removing several members at once applies the same operation to each one.
 
@@ -80,7 +80,7 @@ The confirmation shown after a removal reports only that the member was removed 
 {{< /alert >}}
 
 {{< alert type="info" title="Organization Owners Cannot Be Removed" >}}
-An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
+An attempt to remove the organization's owner is rejected. Transfer ownership to another administrator first, then remove the former owner. See [Organization Roles]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}).
 {{< /alert >}}
 
 ## Invite User via Email

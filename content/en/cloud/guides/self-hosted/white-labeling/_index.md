@@ -39,7 +39,7 @@ This example includes a custom branding with colors and full-sized logo.
 
 Layer5 Cloud supports customizing themes on a per organization basis. This includes the ability to upload your own logo and define your own color scheme. Your logo will be displayed in the top left corner of the dashboard. Both a full-sized logo and a logo mark are supported.
 
-As an [Organization Administrator]({{< ref "cloud/reference/default-permissions.md" >}}), you can add your organization's logo to the global navigation bar, which supports a large, horizontal logo for desktop users and a small, square logo for mobile users. The logo appears at the top of each user's window for all Layer5 Cloud pages within your organization.
+As an [Organization Administrator]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}), you can add your organization's logo to the global navigation bar, which supports a large, horizontal logo for desktop users and a small, square logo for mobile users. The logo appears at the top of each user's window for all Layer5 Cloud pages within your organization.
 
 {{% card header="Preference Example" footer="<i>Example: Selection of theme</i>" %}}
 This example shows how to customize through different themes
@@ -101,7 +101,7 @@ White-labeling extends past the browser: the footer shared by every transactiona
 
 That covers what the message says. The address it arrives from is a separate setting: by default every message leaves through Layer5's shared mail server, so a fully branded email still arrives from a Layer5 address. An organization can instead register its own mail server on the **Email** tab of Edit Organization. Once the sending domain is verified, a connection test has passed and the server is turned on, application mail such as invitations and notifications leaves through that server from the organization's own domain, subject to its fallback setting. See [Bring Your Own Mail Server]({{< ref "cloud/guides/organizations/org-management/bring-your-own-mail-server.md" >}}).
 
-The same five link fields drive both your sign-in pages and your email footers. Set them as an [Organization Administrator]({{< ref "cloud/reference/default-permissions.md" >}}) on the [Organizations page](https://cloud.layer5.io/identity/organizations): click the pencil icon next to your organization name, then fill in the fields under **Login page links**.
+The same five link fields drive both your sign-in pages and your email footers. Set them as an [Organization Administrator]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) on the [Organizations page](https://cloud.layer5.io/identity/organizations): click the pencil icon next to your organization name, then fill in the fields under **Login page links**.
 
 | Field | Where it appears in email |
 |---|---|
