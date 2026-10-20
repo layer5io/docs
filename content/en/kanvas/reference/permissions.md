@@ -24,6 +24,9 @@ Kanvas checks a permission before it offers each of the following actions:
 | Undeploy | Undeploy Design | Disabled while the design is empty. |
 | Share | Share Design | Also hidden while the design is empty or published. |
 | Publish | Publish Design | Anonymous users get a sign-in prompt instead. |
+| Add a comment and reply | Add comments | Anonymous users get a sign-in prompt instead. |
+| Resolve and reopen a comment | Resolve a comment | |
+| @mention someone in a comment | View All Users and Discuss any design by leaving review comments | Both are required. Without them the composer offers no mention picker. |
 | Operator mode | None | The provider enables Operator mode. When the provider does not enable it, the Operator switch is disabled. |
 
 When a user does not hold the permission, Kanvas does not offer the action: the toolbar hides it or shows it disabled, and the action sheet on small screens omits it.
@@ -48,7 +51,9 @@ Org Admin is the Organization Admin role. The roles not shown, Org Billing Manag
 
 A user is anonymous when no one is signed in or the signed-in account has anonymous status. An anonymous user authors and edits designs. Sharing or publishing a design opens a sign-in prompt that names the feature and offers a single Sign in action.
 
-Anonymous users receive the anonymous role. It holds the same canvas permissions as the User role, plus Screenshot Canvas and View help center. It does not hold the Operator terminal, metrics, or component details permissions.
+Anonymous users receive the anonymous role. It holds the same canvas permissions as the User role, plus Screenshot Canvas and View help center. It does not hold the Operator terminal, metrics, component details, Add comments, Resolve a comment, Delete comments, or Lock comments permissions.
+
+Anonymous users can read the comments on a design they open, but cannot add, reply to, resolve, or reopen a comment, and cannot @mention anyone. Adding a comment opens the sign-in prompt. Layer5 Cloud enforces the same boundary on its side: it refuses comment notifications, user search, the online users list, and API token creation for an anonymous session, so no one is emailed on behalf of a guest and a guest cannot look up other users.
 
 On [kanvas.new](https://kanvas.new), Validate, Dry run, Deploy, Undeploy, connecting a cluster, and Operator mode open a prompt that directs the user to the [Meshery Playground](https://playground.meshery.io) or a self-hosted Meshery deployment. This applies to signed-in users on kanvas.new as well. See [Feature Availability by Plan]({{< ref "kanvas/reference/feature-availability.md" >}}).
 
@@ -56,7 +61,7 @@ On [kanvas.new](https://kanvas.new), Validate, Dry run, Deploy, Undeploy, connec
 
 ### Canvas editing
 
-Kanvas does not check a permission for individual canvas edits: adding, deleting, cloning, copying, locking, and styling components, shapes, text boxes, sections, and comments; undo and redo; and the pen and pencil tools. Roles carry permissions with these names, but removing them from a role does not prevent the edit. Three things limit canvas editing instead:
+Kanvas does not check a permission for individual canvas edits: adding, deleting, cloning, copying, locking, and styling components, shapes, text boxes, and sections; deleting, copying, and locking comments; undo and redo; and the pen and pencil tools. Adding and resolving comments are checked, as listed above. Roles carry permissions with these names, but removing them from a role does not prevent the edit. Three things limit canvas editing instead:
 
 - **Mode.** Designer mode allows authoring. Operator mode does not.
 - **Node kind.** Live nodes, the resources Kanvas reads from a connected cluster, are read-only in every mode.
