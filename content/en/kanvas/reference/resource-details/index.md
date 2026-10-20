@@ -110,4 +110,4 @@ The panel does not render Secret values. The stored values still reach your brow
 ## Related
 
 - [Operator Views]({{< ref "kanvas/reference/views/index.md" >}}) save the filters you build with labels and deep links.
-- [Kubernetes events and the Layers panel]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}) describes the Layers panel in both modes.
+- [Kubernetes events and the Layers panel]({{< ref "kanvas/designer/layout-and-layers/index.md" >}}) describes the Layers panel in both modes.

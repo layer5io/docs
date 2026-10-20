@@ -1,13 +1,10 @@
 ---
 title: Canvas Actions
-linkTitle: Canvas Actions
-description: Reference for the Designer canvas menu - undo and redo, paste, select all, reset, screenshot, options, shortcuts and the Help Center - with the mode in which each action is available.
-weight: 50
-diataxis: reference
+weight: 12
+description: >
+  The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
 categories: [designer]
-tags: [designs, canvas, shortcuts]
-aliases:
-  - /kanvas/designer/canvas-actions
+tags: [designs]
 ---
 
 Right-clicking an empty part of the canvas - anywhere no component sits - opens the **Canvas Actions** menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.
@@ -19,8 +16,8 @@ The menu adapts to the mode you are in. Commenting and pasting, for example, are
 | Action | Shortcut | Behavior |
 | --- | --- | --- |
 | Add Comment | <kbd>M</kbd> | Drops a comment at the point you right-clicked. Designer mode only. See [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}). |
-| Undo | <kbd>Cmd/Ctrl</kbd> + <kbd>Z</kbd> | Reverses the last change to the design: components, configuration, styles, relationships, annotations and layer toggles. A message confirms the change was reverted, or reports that no changes remain. |
-| Redo | <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> or <kbd>Cmd/Ctrl</kbd> + <kbd>Y</kbd> | Re-applies the last undone change. |
+| Undo | <kbd>Cmd/Ctrl</kbd> + <kbd>Z</kbd> | Reverses the last change. |
+| Redo | <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Re-applies the last undone change. |
 | Paste | <kbd>Cmd/Ctrl</kbd> + <kbd>V</kbd> | Pastes the clipboard contents at the cursor position. Designer mode only. |
 | Select All | <kbd>Cmd/Ctrl</kbd> + <kbd>A</kbd> | Selects every component on the canvas. |
 | Reset Design | | Clears every component from the canvas. Designer mode only, and destructive - see below. |
@@ -31,35 +28,15 @@ Reset Design removes everything currently on the canvas. Kanvas asks you to conf
 
 ## Screenshot Canvas
 
-**Take Screenshot** captures the canvas as drawn - components, relationships and annotations - and downloads it to your machine as a PNG. The file is named `Kanvas-<timestamp>.png`, so repeated captures of the same design do not overwrite one another.
+**Take Screenshot** captures the canvas exactly as it is drawn - components, relationships, annotations and all - and downloads it to your machine as a PNG. The file is named `Kanvas-<timestamp>.png`, so repeated captures of the same design do not overwrite one another.
 
-The capture is of the canvas, not your browser window: panels, the dock and the toolbar are not included. It records the canvas as currently viewed, so pan and zoom to frame what you want before you capture. Object controls and badges appear only when the canvas is zoomed in far enough, so zoom in first if you want them in the image.
+The capture is of the canvas rather than of your browser window: panels, the dock and the toolbar are not included, and the image is rendered from the design itself rather than screen-grabbed, so it is not limited to the part of the design currently scrolled into view.
 
 This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}) instead.
 
 ## Options
 
-**Options** opens the canvas settings drawer. Each change saves to your user preferences on the server after a short pause, applies to every design you open and shows a confirmation message. Preferences belong to you, not to a design.
-
-| Option | Default | Effect |
-| --- | --- | --- |
-| Dark Theme | - | Switches the canvas between light and dark themes. |
-| Snap to Grid | On | Snaps objects to the grid as you drag. |
-| Hide Gridlines | On | Gridlines are hidden by default. |
-| Enable Dock | On | Off hides the whole bottom dock, including the drawing tools and pickers. Keyboard shortcuts still work. |
-| Show Reset Canvas Confirmation | On | Off makes Reset Design act immediately. |
-| Enable Pencil | On | Shows the Pencil tool in the dock. |
-| Enable Pen | On | Shows the Pen tool in the dock. |
-| Auto-pan on Drag | Off | Pans the view while you drag an object past the canvas edge. Kanvas turns it off on large designs and outside Full render mode. |
-| Max Canvas Zoom | 30 | Upper zoom limit, from 0.1 to 30. |
-| Min Canvas Zoom | 0.1 | Lower zoom limit, from 0.1 to 5. |
-| Enable Debugger | Off | Shows debugging aids. |
-| Relationship Evaluation Engine | Automatic (recommended) | Chooses how relationships are evaluated. |
-| Show Tutorial | On | Shows the in-app tutorial. |
-| Show Walkthrough | On | Shows the walkthrough. |
-| Render Fidelity | - | Sets how much detail the canvas draws, from full fidelity down to a wireframe, and can adapt as a design grows. See [Layout and Layers]({{< ref "kanvas/reference/layout-and-layers/index.md" >}}). |
-
-Operator mode offers only Show Tutorial and Show Walkthrough.
+**Options** opens the canvas settings drawer, where preferences that affect how the canvas behaves and renders are gathered.
 
 ## Shortcuts
 
