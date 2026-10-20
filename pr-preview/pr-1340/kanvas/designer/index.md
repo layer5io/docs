@@ -1,4 +1,0 @@
-# Exploring Designer
-
-
-<no value>
