@@ -1,38 +1,11 @@
 ---
 title: Help and Support
-description: What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
-weight: 150
-diataxis: reference
-categories: [reference]
-tags: [support, help]
+description: |
+  How Kanvas submits support requests, and the two preconditions - a remote provider and a signed-in identity - that Help and Support requires.
+weight: 20
 ---
 
-Kanvas gives you two ways to get help without leaving the canvas: the **Help Center**, a single place for documentation, learning material and community channels, and the **support form**, which sends a request to the Layer5 team. This page lists what each one contains, which support channels each plan includes, and the conditions the support form needs to work.
-
-## Help Center
-
-The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the **Get Help** action in the [troubleshooting]({{< ref "kanvas/reference/troubleshooting.md" >}}) panel.
-
-| Entry | What it gives you |
-|---|---|
-| Documentation | These docs, opened in a new tab. |
-| Video Tutorials | The Layer5 video library, opened in a new tab. |
-| Quick Tips | An in-app tour of the core Kanvas workflow: placing and configuring components, connecting and grouping them, loading and combining designs, sharing, validating, deploying and undeploying, and collaborating. In Operator mode it covers filtering the resources under observation, health and details, quick operations, performance tests, the terminal and log streaming. |
-| Academy | Structured learning paths in Layer5 Cloud, opened in a new tab. |
-| Discussion Forum | The community forum at [discuss.layer5.io](https://discuss.layer5.io). |
-| Slack | The Layer5 community Slack at [slack.layer5.io](https://slack.layer5.io). |
-| Keyboard Shortcuts | A side panel listing shortcuts for Designer and Operator modes. The full list is in [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}}). |
-| Support | Opens the support form described below. |
-
-The Help Center footer shows the installed Kanvas version and links to that version's release notes.
-
-## Support channels by plan
-
-Every plan includes community support. Standard and Premium support add direct contact with the Layer5 team. The table below is rendered from the product feature list and updates with it.
-
-{{< feature-tiers categories="Support and Deployment" functions="Community Support|Standard Support|Premium Support" >}}
-
-For the channels themselves, see [Layer5 Cloud support]({{< ref "cloud/getting-started/support.md" >}}).
+Kanvas offers a **Help and Support** form for sending a support request to the Layer5 team. You can open it from the Help menu, and from the **Get Help** action in Kanvas's troubleshooting panel.
 
 ## How a support request is delivered
 
@@ -42,35 +15,28 @@ A support request never leaves your browser for a third party. Kanvas submits th
 Kanvas (browser)  ->  Meshery Server extension proxy  ->  Remote provider support webhook
 ```
 
-For [Layer5 Cloud]({{< ref "cloud/_index.md" >}}) that intake is Layer5's support queue, the same one the Layer5 Cloud Help and Support form uses, so a request raised from Kanvas is triaged exactly like one raised from Layer5 Cloud. For a self-hosted Layer5 Cloud deployment it is whatever endpoint the operator has configured - see [Customizing Webhooks]({{< ref "cloud/guides/self-hosted/customizing-webhooks.md" >}}).
+For [Layer5 Cloud](/cloud) that intake is Layer5's support queue. For a self-hosted Layer5 Cloud deployment it is whatever endpoint the operator has configured - see [Customizing Webhooks](/cloud/guides/self-hosted/customizing-webhooks).
 
-## Requirements
+## Help and Support requires a remote provider
 
-### A remote provider
+Because the submission travels through Meshery Server's extension proxy, Help and Support only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider (`None`) Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`.
 
-Because the submission travels through Meshery Server's extension proxy, the support form only works when Meshery is connected to a [remote provider](https://docs.meshery.io/extensibility/providers). Under the **local** provider, Meshery Server has no support intake to forward to, and the extension proxy returns `501 Not Implemented`. This matches every other provider-bound Kanvas capability, including [sharing]({{< ref "kanvas/designer/sharing/index.md" >}}), the catalog and views.
+This puts Help and Support in line with every other Cloud-bound Kanvas capability - [sharing designs and views](/kanvas/designer/sharing), the [catalog](/cloud/concepts/catalog), and resource access - all of which likewise require a remote provider.
 
-If the form fails under the local provider, switch Meshery to a remote provider and submit again. If you cannot switch, reach the Layer5 team through the [community forum](https://discuss.layer5.io) or [Slack](https://slack.layer5.io).
+**If Help and Support fails under the local provider:** switch Meshery to a remote provider (Meshery UI, **Providers** in the profile menu, then sign in) and submit the request again. If you cannot switch providers, reach the Layer5 team through the [community forum](https://discuss.layer5.io) or [Slack](https://slack.layer5.io) instead.
 
-### A signed-in identity
+## Help and Support requires a signed-in identity
 
-Every request carries the requester's name and email so the team can reply. Kanvas resolves your signed-in profile when you open the form instead of asking you to retype it:
+Every support request carries the requester's name and email so the team can reply. Kanvas resolves your signed-in profile when you open Help and Support, rather than asking you to retype it:
 
-- While the profile loads, the dialog shows a loading state and the form is unavailable.
-- When the profile resolves, the form appears addressed with your identity.
-- When the profile cannot be resolved, for example because the session expired, the form does not appear and nothing is submitted. A request with no way to reply has no value.
+- While the profile is being fetched, the dialog shows a loading state and the form is not yet available for input.
+- Once the profile resolves, the form appears, pre-addressed with your identity.
+- If the profile cannot be resolved - an expired or degraded session, for example - the form is not shown and nothing is submitted, because a support request with no way to reply is of no use.
 
-If the form does not appear, sign in to your provider again and reopen it. If it still does not appear, see [Troubleshooting Kanvas]({{< ref "kanvas/reference/troubleshooting.md" >}}).
+**If the form does not appear:** sign in to your provider again, then reopen Help and Support. If it still does not appear, see [Troubleshooting Kanvas](/kanvas/reference/troubleshooting).
 
-## Type of inquiry
+## Type of Inquiry
 
-Each request carries a type that the support intake uses to route it.
+Each request carries a **Type of Inquiry** - one of **Support**, **Community**, **Account**, or **Commercial** - which the support intake uses to route your request. **Support** is selected by default. These are the same categories used by the Layer5 Cloud Help and Support form, so a request raised from Kanvas is triaged exactly like one raised from Layer5 Cloud.
 
-| Type | Default |
-|---|---|
-| Support | Yes |
-| Community | No |
-| Account | No |
-| Commercial | No |
-
-If a submission fails, Kanvas keeps your subject, description and type so you can retry without retyping them.
+If a submission fails, your subject, description, and type of inquiry are preserved so you can retry without retyping them.
