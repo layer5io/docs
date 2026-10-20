@@ -81,7 +81,7 @@ The server is stricter than the UI. It accepts a new role, or a change to an exi
 
 Because roles and keychains are defined for the whole deployment, a role is the same object in every organization that uses it. Adding a keychain to a role, or removing one, changes that role for every user who holds it in every organization. This applies to built-in roles as much as to custom ones.
 
-Only a Provider Admin can include a keychain in a role or remove it, because a role is a deployment-wide definition, not an organization-local copy. The Assign Keychains to Roles key belongs to the Provider Management keychain, and the server also confirms that the caller holds the Provider Admin role for the whole deployment. To change what people in one organization can do, change which roles they hold in that organization rather than what a shared role contains.
+Assigning keychains to a role requires the Assign Keychains to Roles key, which the Organization Admin, Team Admin, and Provider Admin roles hold by default. Anyone exercising that key is editing a deployment-wide definition, not an organization-local copy. To change what people in one organization can do, change which roles they hold in that organization rather than what a shared role contains.
 
 ## Why checks test keys, not role names
 

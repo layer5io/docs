@@ -1,97 +1,100 @@
 ---
 title: Keychains
-description: >
-  How keychains group keys into reusable bundles for roles in Layer5 Cloud, who owns and can change a keychain, and what a change to a keychain affects.
-weight: 60
+description: Keychains are a collection of keys
+weight: 5
 categories: [security]
 tags: [keychains, permissions]
 aliases:
   - /cloud/security/keychains/
-diataxis: explanation
+
 ---
 
-A keychain is a named bundle of keys. It sits between the single permission and the role a person holds:
+In Layer5 Cloud, a collection of permissions is represented as a keychain. One or more keychains can are grouped together and assigned to a [role]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}). Later, a role can be assigned to a user. This is the general flow of how keychains are assigned to a user.
 
-- A [key]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) allows one action, such as Create Token.
-- A keychain groups related keys, such as everything needed to manage teams.
-- A [role]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) groups keychains, and users hold roles in an organization or team.
-
-A user's effective keys in an organization are the union of the keys in every keychain of every role the user holds there. A keychain grants nothing by itself. It takes effect only through a role that includes it.
-
-## Why keychains exist
-
-Keychains make permissions reusable. Many roles need the same set of keys: every default user role, for example, needs to view tokens, sessions, keys, and keychains. Instead of attaching those keys to each role one by one, Layer5 Cloud puts them in one keychain and includes that keychain in each role. The same keychain can belong to many roles, and a role can include many keychains.
-
-Reuse also means one change propagates. Adding a key to a keychain grants it to every role that includes the keychain, and removing a key withdraws it from all of them at once.
-
-## Keychains are defined for the whole deployment
-
-Keys, keychains, and roles are records of the whole Layer5 Cloud deployment, not copies inside each organization. What is scoped to an organization is the role assignment. As a result, a change to a keychain, or to the keychains a role includes, applies to every user who holds an affected role in every organization. [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md#changing-a-role-changes-it-everywhere" >}}) explains this from the role side.
-
-## Default keychains
-
-Layer5 Cloud ships 30 default keychains, each grouping the keys for one area. The system account owns them. Representative examples:
-
-| Keychain | What it groups |
-|---|---|
-| User View | Viewing keys every user needs, including View Tokens, View Sessions, View Keys, and View Keychains |
-| User Management | Managing users and their roles |
-| Team Management | Managing teams and team membership |
-| Organization Management | Managing organizations, their teams, and their users |
-| Security Management | Token administration, including Create Token, Delete Token, and Download Token |
-| Provider Management | Deployment administration, including Edit Key, Delete Key, Create Keychain, Edit Keychain, Delete Keychain, and Assign Keychains to Roles |
-
-The remaining default keychains cover workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, events, and the Kanvas action sets. The [Roles and Permissions reference]({{< ref "cloud/reference/default-permissions.md" >}}) lists them and shows which roles hold which keys.
-
-Only a Provider Admin can change a default keychain, as with every other keychain. See [Who can change a keychain](#who-can-change-a-keychain).
-
-## Custom keychains
-
-A Provider Admin can create keychains beyond the defaults. The Provider Admin who creates a keychain is recorded as its owner, and a custom keychain appears only in its owner's keychain list. Other administrators, including other Provider Admins, do not see it in their list, although any Provider Admin can still change or delete it on the server. Ownership only decides that list: it grants no right to change the keychain. A custom keychain does not belong to an organization.
-
-## Who can change a keychain
-
-Keychains and their assignment to roles apply across the whole provider, not to one organization. Only a Provider Admin can create, edit, or delete a keychain, add or remove its keys, or include it in a role or remove it from one. This is the rule as of Layer5 Cloud **v1.0.280**.
-
-Layer5 Cloud enforces keychain operations in two places. The interface enables or disables each control based on the keys you hold. The server checks the matching key and then confirms that the caller holds the Provider Admin role for the whole deployment. Holding the Provider Admin role inside one organization does not satisfy that check.
-
-| Operation | Who can do it | Where it is enforced |
-|---|---|---|
-| View the keychain list and a keychain's keys | Anyone holding View Keychains, which every default user role holds through User View. The list shows system-owned keychains and the viewer's own. | Interface: the Keychains tab requires View Keychains. Server: returns only system-owned keychains and the caller's own. |
-| Create a keychain | Provider Admin. The interface also requires Create Keychain. | Server and interface |
-| Rename a keychain, add keys, remove keys | Provider Admin. The interface also requires Edit Keychain. | Server and interface |
-| Delete a keychain | Provider Admin. The interface also requires Delete Keychain. | Server and interface |
-| Include a keychain in a role, or remove it | Provider Admin | Server |
-
-When the server refuses a change to a keychain, it answers HTTP 403 with a JSON error. A caller who lacks the route's key receives code `meshery_cloud-1108`. A caller who holds the key without being a Provider Admin for the whole deployment receives code `meshery_cloud-3336`, "Only a Provider Admin can change roles, keychains or permission keys".
+For instance, consider a system shipped default keychain `Team Management`, which is a collection of eight keys: `View All Teams`, `Add User to Team`, `Invite User to Team`, `Remove User from Team`, `Create Team`, `Delete Team`, `Remove User Role from Team`, and `Assign User Role in a Team`. This implies that you can perform all these operations only if your user account possesses a role to which `Team Management` keychain is assigned in a given organization.
 
 {{< alert title="Note" >}}
-Create Keychain, Edit Keychain, Delete Keychain, and Assign Keychains to Roles belong to the Provider Management keychain, so by default only Provider Admins see these controls enabled. Everyone else can still view keychains.
+
+1. Same keychain can be asssigned to multiple roles.
+2. One or more keychains can be assigned to a role.
+3. Each keychain is assigned in context of an organization.
+
 {{< /alert >}}
 
-## A keychain takes effect only through a role
 
-Creating a keychain changes no one's permissions. The keychain grants its keys only when a role includes it, and including it in a role changes that role for every holder in every organization.
+### Keychains Types
 
-Creating and editing roles is a Provider Admin action on the server. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so an organization cannot build its own custom role from custom keychains. On a self-hosted deployment, the operator's Provider Admins can create custom keychains and the custom roles that use them. To give people a role, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) and [Users]({{< ref "cloud/concepts/identity-and-security/users/_index.md" >}}).
+Layer5 Cloud ships with the following 10 default keychains
 
-## What changes take effect, and when
+<!-- TODO: Create separate page to explain in detail about each of the default keys assigned to the following default keychains. -->
 
-- **Deleting a keychain** removes its key mappings, so the keychain stops granting anything immediately, in every role that included it.
-- **Removing a key from a keychain** stops that key flowing to every role that includes the keychain.
-- **Adding a key to a keychain** grants it to every holder of every role that includes the keychain.
+1. **Provider Management** - This keychain is a collection of keys that allows you to manage providers. For instance, this keychain permits you to view, approve or deny catalog requests.
+2. **Security Management** - This keychain is a collection of keys that allows you to manage security. For instance, this keychain permits you to create/delete credentials and tokens.
+3. **User View** - This keychain is a collection of keys that allows you to manage users views. For instance, this keychain permits you to view all users within an organization or all environments and connections within a workspace of your organization.
+4. **Team View** - This keychain is a collection of keys that allows you to manage team level views. For instance, this keychain permits you to view and edit teams within an organization.
+5. **User Management** - This keychain is a collection of keys that allows you to manage users. For instance, this keychain permits you to invite user to a team or remove user from a team.
+6. **Organization Management** - This keychain is a collection of keys that allows you to manage organizations. For instance, this keychain permits you to create/delete organizations.
+7. **Environment Management** - This keychain is a collection of keys that allows you to manage environments. For instance, this keychain permits you to create, view, edit and delete environments assigned to a workspace of your organization.
+8. **Workspace Management** - This keychain is a collection of keys that allows you to manage workspaces. For instance, this keychain permits you to create, view, edit and delete workspaces of your organization.
+9. **Team Management** - This keychain is a collection of keys that allows you to manage teams. For instance, this keychain permits you to create, view, edit and delete teams of your organization.
+10. **Events Management** - This keychain is a collection of keys that allows you to manage events. For instance, this keychain permits you to view events of all users of the Layer5 Cloud.
 
-Authorization is evaluated on every request, so users gain or lose access on their next action, without signing in again.
 
-## Change keychains deliberately
+### Keychains Management
 
-Default roles carry the default keychains, and every new user receives a default role. A change to a default keychain therefore changes permissions for users across the deployment, regardless of organization. Leave default keychains as shipped unless that is the intended outcome. On a self-hosted deployment, to grant a different combination of keys, a Provider Admin creates a new keychain and includes it in a new role, and then the role is assigned to the users who need it. Keychains and roles are shared by every organization, so per-organization differences come from which roles a user holds in that organization.
+#### Create Keychains
 
-The [custom keychains guide]({{< ref "cloud/guides/security/custom-keychains.md" >}}) covers creating, editing, and deleting a keychain and including it in a role. To browse keychains in your account, open [Keychains](https://cloud.layer5.io/security/keychains) in Layer5 Cloud.
+Create a new keychain by navigating to the [Keychains](https://cloud.layer5.io/security/keychains) page and clicking the **Create Keychain** button. Provide a name and choose the one more keys from the list of available keys. Then click the **Create Keychain** button to create the keychain.
 
-## Related
 
-- [Keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) - the individual permissions and how they are enforced.
-- [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) - how roles bundle keychains and who assigns them.
-- [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) - the default roles, keychains, and keys.
-- [Security reference]({{< ref "cloud/reference/security.md" >}}) - security permissions, token and session lifetimes, and endpoints.
+{{< alert title="Note" >}}
+
+If you don't have permission to create keychains for your selected organization, you will see a disabled Keychains tab. In that case, consider switching to a different organization for which you have permission to view keychains, or contact your organization admin to assign you access to the keychains page.
+{{< /alert >}}
+
+
+#### View Keychains
+
+Review keychains assigned to your user account by navigating to the [Keychains](https://cloud.layer5.io/security/keychains) page.
+
+{{< alert title="Note" >}}
+
+If you don't have permission to view keychains for your selected organization, you will see a disabled Keychains tab. In that case, consider switching to a different organization for which you have permission to view keychains, or contact your organization admin to assign you access to the keychains page.
+
+{{< /alert >}}
+
+#### Assign Keychains
+
+1. Select the organization for which you wish to assign keychains to users. You can do this by selecting the organization from the organization context switcher in the top navigation bar.
+2. Navigate to the [Roles](https://cloud.layer5.io/security/roles) page.
+3. Choose from the existing set of roles or create a new role to which you want to assign the keychain. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+4. Navigate to [Users](https://cloud.layer5.io/identity/users) page.
+5. Select the user to whom you want to assign the role with a new set of permissions. Alternatively, you can invite a new user and assign the role with the new set of permissions separately. For more information, see [Users]({{< ref "cloud/concepts/identity-and-security/users/_index.md" >}}).
+
+{{< alert title="Note" >}}
+
+If you don't have permission to perform any of the above operations, consider switching to a different organization for which you are authorized to perform these actions. Alternatively, contact your organization admin for elevated access.
+
+{{< /alert >}}
+
+
+{{< alert title="Permission Assignment at Teams, Organization and Provider Levels" >}}
+
+1. You need to have the default `Team Admin` role (or a custom role with `Edit User` key assigned) to assign permissions to users in your team.
+2. You need to have the default `Organization Admin` role (or a custom role with `Edit User` key assigned) to assign permissions to users in your organization.
+3. You need to have default `Provider Admin` role (or a custom role with `Update Profile` key assigned) to assign permissions to users across any organization or teams.
+
+{{< /alert >}}
+
+
+### Keychains Lifecycle
+
+Layer5 Cloud ships with 10 default keychains, each designed to enforce permissions across the platform. These default keychains are mutable, that is, you can add or remove keys from these keychains (provided you have permission to Edit a Keychain). Separately, you can also create your own keychains and assign them to roles.
+
+{{< alert title="Best Practice" >}}
+
+It is recommended not to alter the existing default keychains unless you intend to change permissions across the entire platform, affecting all users regardless of their organization. This is because the default keychains are assigned to default roles, and each new user is assigned a default role.
+
+If you wish to change the permission for a specific organization, consider creating a new keychain and assigning it to a role. Then assign the role to the users of that organization.
+
+{{< /alert >}}

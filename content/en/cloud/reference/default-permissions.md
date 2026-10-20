@@ -116,7 +116,7 @@ Each default keychain groups the permissions for one area. Roles hold keychains,
 | Team Management | Managing teams and team membership. |
 | Organization Management | Managing organizations, their teams, and their users. |
 | Events Management | Event management: statistics, audit, and summaries. |
-| Security Management | Creating, downloading, and deleting API tokens, and managing credentials. Key and keychain management belongs to Provider Management. See the [Security Reference]({{< ref "cloud/reference/security.md#permission-keys" >}}). |
+| Security Management | Managing keys, keychains, credentials, and tokens. |
 
 Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, and the two Kanvas action sets (Designer Actions and Operator Actions). For keychain behavior, see [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
 
