@@ -1,0 +1,22 @@
+# v0.7.160-1
+
+date: 2024-11-22
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- refactor: update terminology and notifications for Kanvas Operator @leecalcote (#3183)
+- pass the right user id for collaborate avatar group @amitamrutiya (#3182)
+
+## 🐛 Bug Fixes
+
+- pass the right user id for collaborate avatar group @amitamrutiya (#3182)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+
