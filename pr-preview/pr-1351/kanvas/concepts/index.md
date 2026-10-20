@@ -1,26 +1,50 @@
-# Concepts
+# Working with Designs
 
-> The core mental model behind Kanvas: designs, components, relationships, the two modes, and how Kanvas works with Meshery and Layer5 Cloud.
+> Kanvas Designs are descriptive, declarative characterizations of how your Kubernetes infrastructure should be configured.
 
 
 
-Kanvas rests on one idea: a design is a declarative description of infrastructure. It records which components exist, how they relate to each other, how each one is configured, and any annotations that explain the intent. A design describes the state you want; it is not a script of steps to run.
+## Designs
 
-Each part of Kanvas plays one role around that design:
+Designs are declarative, descriptive characterizations of how your Kubernetes infrastructure should be configured. Designs are versioned and can be shared with other users and teams. Designs are the primary tool for collaborative authorship of your infrastructure and services.
 
-- **Designer authors the design.** You place components, connect them, and configure them on a shared canvas. Every save creates a new version, and collaborators can edit the same design at the same time.
-- **Meshery validates and deploys the design.** It checks the design against component schemas, dry-runs it against target clusters, and deploys or undeploys it on the Kubernetes contexts you choose.
-- **Operator shows the running result.** It displays live cluster state and links it back to the design: every resource Kanvas deploys carries the identity of its source design, so Operator can show exactly what one design produced.
+### Using Designs
 
-Layer5 Cloud, as the remote provider, stores designs and their versions and governs who can see them. Every new design starts public; [Designs and Components](/pr-preview/pr-1351/kanvas/concepts/designs/) explains visibility in full.
 
-## Concept pages
+### Controlling Access to Designs
+A newly saved design is public, whatever visibility the client requests. Make it private before you put sensitive architecture in it. Subscribers do not get a different default at creation time.
 
-- **[Designs and Components](/pr-preview/pr-1351/kanvas/concepts/designs/)** - what a design contains, how it is saved and versioned, what components are, and how a design maps to deployed resources.
-- **[How Kanvas Works with Meshery and Layer5 Cloud](/pr-preview/pr-1351/kanvas/concepts/architecture/)** - the extension model, where designs live, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
-- **[Relationships](/pr-preview/pr-1351/kanvas/concepts/relationships/)** - how Kanvas maps the ways connected components interact.
-- **[Collaboration Model](/pr-preview/pr-1351/kanvas/concepts/collaboration/)** - how live co-editing, design access, and comments work together, and what each one controls.
-- **[Designer](/pr-preview/pr-1351/kanvas/concepts/designer/)** - the authoring mode: its purpose, scope, and tools.
-- **[Render Modes](/pr-preview/pr-1351/kanvas/concepts/render-modes/)** - how Kanvas trades visual detail for canvas speed, and how Adaptive mode moves between modes.
-- **[Operator](/pr-preview/pr-1351/kanvas/concepts/operator/)** - the operating mode: live cluster state and per-design views.
+
+
+
+
+
+
+
+
+
+
+
+<div class="alert alert-primary" role="alert">
+  <h4 class="alert-heading">Google Docs Analogy</h4>
+  
+      Google Docs are a useful analogy for understanding designs. In many ways a Meshery design is like a single Google Doc in that they are collaboratively authored, versioned, permissioned and can move from workspace to workspace. Workspaces, a shared collection of designs, can be likened to a Google Drive, a shared collection of files.
+  
+</div>
+
+
+
+
+## How Kanvas runs
+
+Kanvas is not a standalone service. It is an extension that runs inside Meshery. The Kanvas interface loads into Meshery UI, and a server-side plugin is loaded by Meshery Server. Kanvas sends every request to Meshery Server. Requests about connected clusters stay in Meshery. Requests for designs, views, the catalog, sharing, and support are forwarded to the remote provider, Layer5 Cloud. Kanvas does not call Layer5 Cloud directly, except for real-time collaboration: the browser connects to a signaling service hosted by Layer5 Cloud, and after that edits synchronize peer to peer over WebRTC.
+
+Meshery Server, not the browser, talks to Kubernetes clusters, through Meshery Operator, MeshSync, and Meshery Broker. Under the local provider there is no remote service, so provider-bound features, including views, the catalog, sharing, and support requests, return HTTP 501 Not Implemented.
+
+The hosted Kanvas at [kanvas.new](https://kanvas.new) is for authoring designs. Validate, dry-run, deploy, undeploy, connecting clusters, and Operator mode are not available there, signed in or not. Those actions open a prompt that directs you to the [Meshery Playground](https://playground.meshery.io) or a self-hosted Meshery. Share and publish open a sign-in prompt while you are anonymous. If the provider address is malformed, sign-in does not start and Kanvas shows "Sign-in could not start:" followed by the reason.
+
+<figure>
+  <img src="images/kanvas-meshery-provider-architecture.webp" alt="Meshery architecture with a remote provider and a local provider on the left, Meshery in the center, and Kubernetes clusters on the right" />
+  <figcaption>Providers sit on the left, Meshery in the middle, and your clusters on the right.</figcaption>
+</figure>
 

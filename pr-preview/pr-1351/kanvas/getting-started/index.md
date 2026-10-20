@@ -1,65 +1,91 @@
-# Getting Started
+# Getting Started with Designs
 
-> Learn the Kanvas model of design, validate, deploy, and operate, choose where to run Kanvas, and build your first design.
+> Learn how to create, import, and share cloud native infrastructure designs in Kanvas — from your first design to deployable architecture.
 
 
-Kanvas turns cloud native infrastructure into a design you can see, check, and deploy. This section takes you from an empty canvas to resources running in a Kubernetes cluster. Along the way you learn the four ideas that every other Kanvas page builds on, and which parts of Kanvas need a Meshery deployment of your own.
 
-## What you will learn
 
-- How a design is built from components, relationships, and configuration, and how Kanvas saves it.
-- How Kanvas checks a design before it touches a cluster.
-- How a design becomes running resources, and how Kanvas tracks them afterward.
-- Which capabilities work on hosted Kanvas and which need a Meshery you run.
 
-## The model in four steps
 
-1. **Design.** In Designer mode you describe infrastructure as a design: components (such as a Kubernetes Deployment or Service), the relationships between them, and their configuration.
-2. **Validate.** Kanvas checks the design against each component's schema and attaches every error to the component and field that caused it; a dry run then checks the design against a real cluster without changing it.
-3. **Deploy.** Kanvas applies the design to the Kubernetes clusters you select and labels every resource it creates with the design's identity.
-4. **Operate.** In Operator mode you see the recorded state of your clusters and can filter it to the resources that belong to one design.
 
-## Where do you want to work?
 
-Kanvas runs in two places. Both use the same Designer, but only a Meshery you run can reach your clusters.
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Follow Along with Jordan and Five</h4>
+  
+      Throughout the Kanvas docs, you&rsquo;ll follow <strong>Jordan Reyes</strong> — a developer and designer at Orbital Labs — as she creates, shares, and iterates on infrastructure designs. <strong>Five</strong> reviews her work and occasionally discovers that a design works better in practice than it does in theory. Their starting point is the <code>microservices-baseline</code> design in the <code>orbital-dev</code> workspace. <a href="/pr-preview/pr-1351/cloud/getting-started/meet-five/">Meet the full cast →</a>
+  
+</div>
 
-| Capability | Hosted Kanvas at kanvas.new | Meshery you run (Playground or self-hosted) |
-|---|---|---|
-| Create and edit designs | Yes | Yes |
-| Share and publish designs | Yes, after you sign in | Yes, after you sign in, when Meshery uses Layer5 Cloud as its provider |
-| Validate a design | No | Yes |
-| Dry-run, deploy, and undeploy a design | No | Yes |
-| Connect and view Kubernetes clusters | No | Yes |
-| Operator mode | No | Yes |
 
-On kanvas.new, validating, deploying, undeploying, connecting clusters, and opening Operator mode open a prompt that points you to a Meshery you run instead of performing the action. You have two choices:
-
-- **Meshery Playground** at [playground.meshery.io](https://playground.meshery.io) is a hosted Meshery you can use without installing anything.
-- **Self-hosted Meshery** runs in your own environment and connects to your own clusters. See the [Meshery installation guide](https://docs.meshery.io/installation/).
-
-A Meshery you run must use Layer5 Cloud as its remote provider for the features that live in Layer5 Cloud: sharing, the catalog, and Operator views. With the local provider, Meshery reports those features as not implemented.
-
-Start on kanvas.new if you only want to design. Start on the Playground or your own Meshery if you plan to complete both tutorials below.
 
 ## Sign in
 
-You can open Kanvas and start designing without an account. Sharing and publishing a design require sign-in: when you are anonymous, these actions show a "Sign in to" prompt with a single Sign in action. Signing in takes you to the Layer5 Cloud sign-in page and returns you to the page you were on.
+Anonymous users can author designs and save them into a guest account. Sharing or publishing opens a sign-in prompt. On kanvas.new, Validate, Dry run, Deploy, Undeploy, connecting a cluster, and Operator mode open a prompt that directs you to the Meshery Playground or a self-hosted Meshery, including when you are signed in.
 
-If sign-in cannot start because the provider address is malformed, Kanvas shows the notification "Sign-in could not start" followed by the reason.
+<figure>
+  <img src="images/auth-login.png" alt="Layer5 Cloud login with GitHub, Google, and email options" />
+  <figcaption>Sign-in page: continue with GitHub or Google, or log in with email.</figcaption>
+</figure>
 
-## Your first path
+## Start here
 
-Complete these two tutorials in order. The second one starts from the design you save in the first.
+1. [Starting from scratch](/pr-preview/pr-1351/kanvas/getting-started/starting-scratch/) — open Designer and create your first design.
+2. [Importing a Design](/pr-preview/pr-1351/kanvas/getting-started/import-designs/) — bring in Kubernetes, Helm, Compose, or existing Meshery designs.
+3. [Working with Components](/pr-preview/pr-1351/kanvas/getting-started/working-with-components/) — configure, copy, and arrange components on the canvas.
+4. [Creating Relationships](/pr-preview/pr-1351/kanvas/getting-started/creating-relationships/) — connect components with context-aware edges.
 
-1. [Create Your First Design](/pr-preview/pr-1351/kanvas/getting-started/starting-scratch/) - build a small web application design from an empty canvas, connect its components, and save it.
-2. [Deploy and Observe Your First Design](/pr-preview/pr-1351/kanvas/getting-started/design-to-deployment/) - validate, dry-run, and deploy that design, then find its running resources in Operator mode and remove them.
+Choose **Designer** when you are authoring infrastructure; switch to **Operator** when you are inspecting live clusters. See the [Kanvas overview](/pr-preview/pr-1351/kanvas/) for the mode chooser.
 
-## After the first design
+## Use Kanvas for your diagrams
 
-- [Import designs](/pr-preview/pr-1351/kanvas/guides/designs/import-designs/) from Kubernetes manifests, Helm charts, Docker Compose files, and existing Meshery designs.
-- [Create relationships](/pr-preview/pr-1351/kanvas/guides/designing/creating-relationships/) between components and learn how Kanvas interprets them.
-- [Work with components](/pr-preview/pr-1351/kanvas/guides/designing/configuring-components/) to configure, copy, and arrange them on the canvas.
-- [Embed designs](/pr-preview/pr-1351/kanvas/guides/designs/embedding-designs/) in your own documentation so diagrams stay in step with the design they describe.
-- Browse the [Tutorials](/pr-preview/pr-1351/kanvas/tutorials/) for longer, scenario-based walkthroughs.
-- Read the [Concepts](/pr-preview/pr-1351/kanvas/concepts/) to understand designs, relationships, and the Kanvas architecture in depth.
+<div class="td-card-group card-group p-0 mb-4">
+<div class="td-card card border me-4">
+<div class="card-header">
+      Dev Env Documentation
+    </div>
+<div class="card-body">
+    <p class="card-text">
+        <p>The dev environment is an often overlooked but critical part of an organization&rsquo;s infrastructure. Knowing what clusters and services are used, how to run and test services locally, and how to troubleshoot are critical parts for getting a team up and running quickly. With Kanvas, you can easily embed designs into your How To and Getting Started guides, making it easy to create, maintain and update concise documentation.</p>
+</p>
+      </div>
+  </div>
+
+<div class="td-card card border me-4">
+<div class="card-header">
+      Migrations and Rollbacks
+    </div>
+<div class="card-body">
+    <p class="card-text">
+        <p>Migrations and rollbacks are some of the most important things to get right when they&rsquo;re needed. By making it easy to create, find, and reference these documents and diagrams, you can be confident that your processes will be understood and your knowledge up to date.</p>
+</p>
+      </div>
+  </div>
+
+<div class="td-card card border me-4">
+<div class="card-header">
+      Deployment Pipeline
+    </div>
+<div class="card-body">
+    <p class="card-text">
+        <p>Kanvas keyboard shortcuts and preset icons make it easy to create beautiful, informative designs that explain every aspect of your deploy, test, and monitor pipeline. Embed several designs in one document to cover all of your different services, vendors, and data stores.</p>
+</p>
+      </div>
+  </div>
+
+</div>
+
+
+## From a saved design to a cluster
+
+Validation checks every component against its schema and does not contact a cluster. A dry run sends the design to the target cluster without applying it. Deploy and undeploy apply to the Kubernetes contexts you select. If you select none, the action targets all connected clusters. Each resource Kanvas creates carries:
+
+| Metadata | Key | Value |
+| --- | --- | --- |
+| Label | `design.meshery.io/id` | The design's ID |
+| Annotation | `design.meshery.io/version` | The design version that was deployed |
+| Annotation | `component.meshery.io/id` | The component the resource came from |
+
+Validate Design permits both validation and dry runs. Deploy Design permits deploying. Undeploy Design permits undeploying. Those actions are disabled while the design is empty. Switching to Operator with unsaved changes asks "You have unsaved changes. Are you sure you want to leave?" A design's Operator view is named after the design, with `-View` appended, and filters on `design.meshery.io/id`.
+
+The steps live on [Validating Designs](/pr-preview/pr-1351/kanvas/tasks/designs/validating-designs/), [Dry Running a Design](/pr-preview/pr-1351/kanvas/tasks/designs/dry-running-a-design/), [Deploying Designs](/pr-preview/pr-1351/kanvas/tasks/designs/deploying-designs/), and [Undeploying Designs](/pr-preview/pr-1351/kanvas/tasks/designs/undeploying-designs/).
 

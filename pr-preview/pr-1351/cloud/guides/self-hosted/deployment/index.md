@@ -1,24 +1,105 @@
-# Deploy Layer5 Cloud
+# Deploying Layer5 Cloud
 
-> Install Layer5 Cloud on Kubernetes with Helm, create the OAuth2 client, confirm the deployment is ready, and connect a Meshery Server to it.
+> Layer5 Cloud is a collection of services that can be deployed on-premises using Helm.
 
 
+## High-level List of Deployment Tasks
 
-This guide installs the `layer5-cloud` chart, which deploys the Layer5 Cloud server together with Kratos and Hydra. It assumes you have made the decisions in [Plan a Deployment](/pr-preview/pr-1351/cloud/guides/self-hosted/planning/). The commands use the release name `layer5-cloud` in the namespace `layer5-cloud`.
+<ol>
+    <li>Review the prerequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
+    <li>Prepare <code>INIT_CONFIG</code> so the first start creates the provider organization and its Provider Admin. (<a href="#provider-initialization">docs</a>)</li>
+    <li>Install the <code>layer5-cloud</code> chart. (<a href="#installation">docs</a>)</li>
+    <li>Create the OAuth2 client in Hydra. The server does not create it.</li>
+    <li>Deploy Meshery separately and point it at this deployment as its remote provider. (<a href="https://docs.meshery.io/installation/quick-start">docs</a>, <a href="https://docs.meshery.io/extensibility/providers#meshery-server-registration">registration</a>)</li>
+</ol>
 
-## Prerequisites
+### Kubernetes-based Installation with Helm
+
+The `layer5-cloud` chart is in the [Layer5 Helm repository](https://docs.layer5.io/charts). It deploys the Layer5 Cloud server together with Kratos and Hydra. It does not install PostgreSQL, an ingress controller, or a TLS certificate. Make the decisions in [Planning](/pr-preview/pr-1351/cloud/guides/self-hosted/planning/) first. The commands below use the release name `layer5-cloud` in the namespace `layer5-cloud`.
+
+#### Prerequisites
 
 - A Kubernetes cluster and Helm 3.
-- An ingress controller that supports WebSocket upgrades, and a TLS certificate for your hostname.
-- A PostgreSQL server you can create databases on.
-- An SMTP relay that satisfies the [mail constraints](/pr-preview/pr-1351/cloud/guides/self-hosted/operating/smtp/#constraints-on-the-shared-mail-server), or the decision to run without mail.
+- An ingress controller that supports WebSocket upgrades, and a TLS certificate for your hostname. The chart does not request a certificate.
+- A PostgreSQL server you can create databases on. Any deployment works, including an operator such as CloudNativePG, a managed service, or a server outside the cluster. The chart reaches it only through the connection strings you set.
+- An SMTP relay that satisfies the [mail constraints](/pr-preview/pr-1351/cloud/guides/self-hosted/operating/smtp/#constraints-on-the-shared-mail-server), or the decision to run without mail. Set all four `smtp` values or none.
 - The OAuth applications for Google and GitHub, if you offer social sign-in.
 
-## Install
+The chart does not require a dedicated database namespace, a local-path provisioner, or cert-manager.
 
-### 1. Prepare the database
+#### INIT_CONFIG
 
-Create one role and three databases on your PostgreSQL server, then create the `uuid-ossp` extension in the `meshery` database. The server creates the schema itself.
+`INIT_CONFIG` is a YAML document, set in Helm as `env.initConfig`. It is not a JSON object and it is not a Docker run flag. When it is set and the provider organization does not exist yet, the server creates that organization and the first Provider Admin. See [Provider initialization](#provider-initialization).
+
+##### Purpose
+
+`INIT_CONFIG` gives a new deployment an administrator who can sign in. Without it, the server starts with no provider administrator.
+
+##### Usage
+
+```yaml
+env:
+  initConfig: |
+    organization:
+      name: "Example Corp"
+      description: "The provider organization for Example Corp."
+      country: "United States"
+      region: "North America"
+    user:
+      first_name: "Ada"
+      last_name: "Admin"
+      email: "admin@example.com"
+      username: "admin@example.com"
+      password: "<initial password>"
+```
+
+Or load the same YAML from a file:
+
+```bash
+helm install layer5-cloud layer5/layer5-cloud \
+  --namespace layer5-cloud \
+  --set-file env.initConfig=provider-init.yaml \
+  --values values.yaml
+```
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Note</h4>
+  
+      The server evaluates <code>INIT_CONFIG</code> on every start. If the provider organization already exists, initialization is skipped and later edits are ignored.
+  
+</div>
+
+
+
+##### Configuration Schema
+
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `organization.name` | Yes | Name of the provider organization. |
+| `organization.description` | No | Description. |
+| `organization.country` | No | Country. |
+| `organization.region` | No | Region. |
+| `user.first_name` | Yes | First name of the administrator. |
+| `user.last_name` | Yes | Last name of the administrator. |
+| `user.email` | Yes | Email address. It is the sign-in identifier. |
+| `user.username` | No | Defaults to the email address. |
+| `user.password` | Yes | Initial password. |
+
+There is no `provider.name` or `provider.settings` field.
+
+#### Installation
+
+Create the databases, write a values file that replaces the chart's localhost and placeholder secrets, install the chart, then create the Hydra client.
+
+##### 1. Prepare PostgreSQL
+
+Create one role and three databases, then create the `uuid-ossp` extension in `meshery`. The server creates its own schema. CloudNativePG is one way to run PostgreSQL. It is not required, and this chart does not install it.
 
 ```sql
 CREATE ROLE meshery LOGIN PASSWORD '<password>';
@@ -29,9 +110,9 @@ CREATE DATABASE hydra OWNER meshery;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```
 
-Any PostgreSQL deployment works, including an operator such as CloudNativePG, a managed service, or a server outside the cluster. The chart reaches it only through the connection strings you set in the next step.
+Give that user the rights to create tables in the `public` schema of `meshery`. Kratos and Hydra run their own migrations when the chart's automatic migration setting is on, which is the default.
 
-### 2. Create the namespace and add the chart repository
+##### 2. Deploy Layer5 cloud
 
 ```bash
 kubectl create namespace layer5-cloud
@@ -40,110 +121,20 @@ helm repo update
 helm show values layer5/layer5-cloud > values.yaml
 ```
 
-`helm show values` prints every value of the chart version you are about to install. Keep that file as the baseline and edit it. The [chart values reference](/pr-preview/pr-1351/cloud/guides/self-hosted/deployment/helm-chart-values/) explains each value.
-
-### 3. Write the values file
-
-Set at least the following. The `kratospublic`, `kratosadmin`, and `hydraadmin` addresses and the ingress backend names are the in-cluster service names of the Kratos and Hydra subcharts. Run `kubectl -n layer5-cloud get svc` after the first install and correct them to match your release. The chart defaults for these addresses (`hydra-admin`, `hydra-public`) do not match the names the subcharts create. The `/(.*)`, `/kratos/(.*)`, and `/hydra/(.*)` paths with the rewrite annotation strip the prefix before the request reaches each service; use your controller's equivalent if it is not NGINX.
-
-```yaml
-env:
-  proto: https
-  serverbaseurl: https://cloud.example.com
-  serverHost: cloud.example.com
-  db: postgres://meshery:<password>@<db-host>:5432/meshery?sslmode=require
-  kratosdb: postgres://meshery:<password>@<db-host>:5432/kratos?sslmode=require
-  hydradb: postgres://meshery:<password>@<db-host>:5432/hydra?sslmode=require
-  kratospublic: http://layer5-cloud-kratos-public.layer5-cloud.svc.cluster.local:9010
-  kratosadmin: http://layer5-cloud-kratos-admin.layer5-cloud.svc.cluster.local:9011
-  kratosbrowser: https://cloud.example.com/kratos
-  hydrapublic: https://cloud.example.com/hydra
-  hydrabrowser: https://cloud.example.com/hydra
-  hydraadmin: http://cloud-hydra-admin.layer5-cloud.svc.cluster.local:4445
-  oauthclientid: layer5-cloud
-  oauthsecret: <generated>
-  cloudCredentialEncryptionKey: <base64 32 bytes>
-  cloudOidcStateHmacKey: <base64 32 bytes>
-  kratosWebhookApiKey: <generated>
-  initConfig: |
-    organization:
-      name: "Example Corp"
-    user:
-      first_name: "Ada"
-      last_name: "Admin"
-      email: "admin@example.com"
-      password: "<initial password>"
-ingress:
-  className: nginx
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-  hosts:
-    - host: cloud.example.com
-      paths:
-        - path: /(.*)
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: meshery-cloud
-              port:
-                number: 9876
-        - path: /kratos/(.*)
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: layer5-cloud-kratos-public
-              port:
-                number: 9010
-        - path: /hydra/(.*)
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: cloud-hydra-public
-              port:
-                number: 4444
-  tls:
-    - secretName: cloud-example-com-tls
-      hosts:
-        - cloud.example.com
-smtp:
-  smtphost: smtp.example.com
-  smtpport: "587"
-  smtpusername: no-reply@example.com
-  smtppassword: <password>
-```
-
-Then set the Kratos and Hydra values. Helm replaces a list as a whole, so copy the lists you change from `values.yaml` and edit them in place:
-
-- Replace every `http://localhost:9876` and `http://localhost:9010` URL under `kratos.kratos.config` with your public URL. That covers `serve.public.base_url` (`https://cloud.example.com/kratos`), `serve.public.cors.allowed_origins`, `selfservice.default_browser_return_url`, `selfservice.allowed_return_urls`, and each `ui_url` and `default_browser_return_url` under `selfservice.flows`.
-- Point the registration `web_hook` entries at `https://cloud.example.com/api/identity/users`. Add a hook to `https://cloud.example.com/api/identity/signup/validate` before it on the password method if you use signup validation or reCAPTCHA. Set each hook's `X-API-Key` value to `env.kratosWebhookApiKey`. The chart default URL omits the `/api` prefix, which the server does not serve.
-- Set `kratos.kratos.config.secrets.cookie` and `.cipher`, and `hydra.hydra.config.secrets.system`.
-- Set the Kratos `dsn` and Hydra `dsn` to the same database URLs as `env.kratosdb` and `env.hydradb`.
-- Set the Hydra `urls` (login, consent, error, and `self.public` and `self.issuer`) to `https://cloud.example.com/...`, with `self.public` and `self.issuer` ending in `/hydra/`. Set `hydra.hydra.dangerousForceHttp` to `false` once Hydra is reached over TLS.
-- Add the Google and GitHub `client_id` and `client_secret` under the Kratos `oidc` providers, and the matching `env.providerOrg*` values.
-- Choose the identity mail courier. See [Mail](/pr-preview/pr-1351/cloud/guides/self-hosted/planning/#mail).
-
-Route `/kratos` and `/hydra` on the ingress to the Kratos and Hydra public services, as described in [Plan a Deployment](/pr-preview/pr-1351/cloud/guides/self-hosted/planning/#hostname-and-tls).
-
-### 4. Install the chart
+Edit `values.yaml` before you install. The chart defaults do not produce a working deployment: URLs point at localhost, secrets are placeholders, and the in-cluster Hydra addresses (`hydra-admin`, `hydra-public`) do not match the service names the subcharts create. Set at least `env.proto`, `env.serverbaseurl`, `env.serverHost`, the three database URLs, the Kratos and Hydra addresses, `env.oauthclientid`, `env.oauthsecret`, the two encryption keys, `env.kratosWebhookApiKey`, `env.initConfig`, ingress hosts for `/`, `/kratos`, and `/hydra`, and either all four `smtp` values or none. Point Kratos registration web hooks at `https://<host>/api/identity/users`. The chart default URL omits the `/api` prefix, which the server does not serve. The field-by-field list is [Helm Chart Values](/pr-preview/pr-1351/cloud/guides/self-hosted/deployment/helm-chart-values/).
 
 ```bash
 helm install layer5-cloud layer5/layer5-cloud \
   --namespace layer5-cloud \
   --values values.yaml
-```
-
-Kratos and Hydra run their database migrations when they start, and the Layer5 Cloud server applies its own before it reports ready. Pods can restart once or twice while the databases fill. Wait for them:
-
-```bash
 kubectl -n layer5-cloud rollout status deploy/meshery-cloud
 ```
 
-### 5. Create the OAuth2 client in Hydra
+After the first install, run `kubectl -n layer5-cloud get svc` and correct `env.kratospublic`, `env.kratosadmin`, and `env.hydraadmin` if the service names differ, then upgrade.
 
-Layer5 Cloud authenticates to Hydra as an OAuth2 client whose id and secret you set in `env.oauthclientid` and `env.oauthsecret`. Create that client in Hydra with the matching values and the redirect address `<serverbaseurl>/callback`. The server does not create it, and sign-in does not work until it exists.
+##### 3. Create an OAuth 2.0 client
+
+Layer5 Cloud authenticates to Hydra as an OAuth2 client whose id and secret you set in `env.oauthclientid` and `env.oauthsecret`. Create that client with the matching values and the redirect address `<serverbaseurl>/callback`. Sign-in does not work until it exists.
 
 ```bash
 kubectl -n layer5-cloud exec deploy/cloud-hydra -- hydra create client \
@@ -161,19 +152,54 @@ The command uses the flag names of the Hydra version in the chart's subchart. If
 
 ## Confirm the deployment works
 
-1. `GET https://cloud.example.com/readyz` returns `200`.
+1. `GET https://<host>/readyz` returns `200`.
 2. The server log contains `Server is up and running!` and no `Failed to initialize Provider Admin` line.
-3. You can sign in as the administrator you defined in `env.initConfig`. That user holds the Provider Admin role. See [Provider initialization](/pr-preview/pr-1351/cloud/guides/self-hosted/deployment/provider-initialization/).
-4. Send a test email through `POST /api/system/email/test`. See [Troubleshoot Email Delivery](/pr-preview/pr-1351/cloud/guides/self-hosted/operating/smtp/#send-a-test-email).
+3. You can sign in as the administrator from `env.initConfig`.
+4. Send a test email. See [Email / SMTP Troubleshooting](/pr-preview/pr-1351/cloud/guides/self-hosted/operating/smtp/#send-a-test-email).
 5. If you registered Google or GitHub, sign in with each.
 
-Once sign-in works, remove `env.initConfig` from your values file and run `helm upgrade`, so the initial password does not stay in your release history and logs.
+Once sign-in works, remove `env.initConfig` from your values file and run `helm upgrade`, so the initial password does not stay in the release history and logs.
 
 ## Connect a Meshery Server
 
-Meshery Server is a separate deployment. Install it by following the [Meshery documentation](https://docs.meshery.io/installation/quick-start), then point it at your deployment as its remote provider. See [Meshery Server registration](/pr-preview/pr-1351/cloud/concepts/meshery-server-registration/) and the Meshery guide to [remote providers](https://docs.meshery.io/extensibility/providers#meshery-server-registration). The server rejects sign-in from a Meshery Server older than `env.minmesheryversion`.
+Meshery Server is a separate deployment. Install it from the [Meshery documentation](https://docs.meshery.io/installation/quick-start), then point it at your deployment as its remote provider. See [Meshery Server registration](/pr-preview/pr-1351/cloud/concepts/meshery-server-registration/). The server rejects sign-in from a Meshery Server older than `env.minmesheryversion`.
 
 ## Upgrade
 
 Run `helm upgrade` with the new chart version and your values file. The server applies pending database migrations when it starts, and exits if one fails. Take a database backup first.
+
+## Provider initialization {#provider-initialization}
+
+A new deployment has no users, so nobody can sign in to administer it. Provider initialization solves that: when the server starts with `INIT_CONFIG` set, it creates the **provider organization** and its first **Provider Admin**. The provider organization always has the fixed identifier `11111111-1111-1111-1111-111111111111`.
+
+### What happens at startup
+
+The server evaluates `INIT_CONFIG` on every start, after database migrations and before it reports ready.
+
+1. **Not set.** Initialization is skipped.
+2. **Set but invalid.** A missing required field or YAML that does not parse is logged as an error. The server keeps starting, with no provider administrator.
+3. **The provider organization already exists.** Initialization is skipped, and any change to `INIT_CONFIG` is ignored.
+4. **The provider organization does not exist.** The server runs these steps in order:
+   1. Creates a Kratos identity with the password and the email marked verified.
+   2. Creates the user and marks the account active.
+   3. Grants the user the Provider Admin role and the Kanvas role.
+   4. Creates the provider organization with the fixed identifier, owned by that user.
+   5. Adds the user to the organization with the Organization Admin role.
+
+The first administrator can sign in as soon as the server is ready. They never see an email verification step, because the address is created verified.
+
+After the organization exists, the server also seeds the deployment's default Google and GitHub sign-in credentials from `env.providerOrg*`. See [Identity Services](/pr-preview/pr-1351/cloud/guides/self-hosted/planning/identity-services/#how-the-defaults-are-stored).
+
+### Failure modes
+
+| Condition | Result |
+| --- | --- |
+| A step fails after earlier steps succeeded | The server logs the error and keeps starting. The steps are not wrapped in one transaction, so rows from earlier steps remain. Fix the cause and restart. A restart repeats the whole sequence for as long as the provider organization does not exist. |
+| Kratos rejects the identity (for example, the password is too weak or the identity exists) | The server logs a warning and continues with the remaining steps. |
+| `INIT_CONFIG` removed after the first successful start | No effect. The organization exists. |
+| `INIT_CONFIG` changed after the first successful start | No effect. Change the administrator through the product. |
+
+### Handling the password
+
+The initial password is stored in the Helm release, in the pod environment, and in the server log, because the server logs the configuration it reads. Treat all three as secret. After you have signed in and changed the password, remove `env.initConfig` and run `helm upgrade`. The administrator account is unaffected.
 

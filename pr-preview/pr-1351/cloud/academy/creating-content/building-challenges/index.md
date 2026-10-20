@@ -1,4 +1,4 @@
-# Build a Challenge
+# Building Challenges
 
 
 > A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
@@ -7,9 +7,14 @@
 
 In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Challenge** is a hands-on, scenario-based task. Where a Learning Path teaches a subject from the ground up and a Certification tests knowledge a learner already has, a Challenge gives them a concrete problem and asks them to solve it.
 
-## When to use a challenge
+## When to Use a Challenge
 
-Choose a challenge when the learner should build, break, or fix something real and is scored on the result. Compare the content types in [Create Academy Content](/pr-preview/pr-1351/cloud/academy/creating-content/#choose-a-content-type).
+| Feature | Learning Path | Challenge | Certification |
+| :--- | :--- | :--- | :--- |
+| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
+| Structure | Hierarchical (Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
+| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
+| Outcome | Acquired knowledge and skills. | A score and rank status. | An optional, paid official certificate and a verifiable badge. |
 
 
 
@@ -30,9 +35,31 @@ Choose a challenge when the learner should build, break, or fix something real a
 
 Challenges are authored the same way as every other Academy content type: as Markdown in your organization's Academy content repository, published through a Git-native workflow. If you have not set that repository up yet, start with [Creating Content for the Academy](/pr-preview/pr-1351/cloud/academy/creating-content/creating-your-learning-path/), which covers the repository setup once for all three content types.
 
-### Get your identifiers
+### Find Your Organization UUID and Challenge ID
 
-Register the challenge in the Instructor Console and choose **Challenge** as the content type. The console generates the challenge `id` and a ready-to-paste front matter block. Use your organization's ID in the directory path. See [Create Academy Content](/pr-preview/pr-1351/cloud/academy/creating-content/#register-content-in-the-console).
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
+  <h4 class="alert-heading" style="color: #EBC017;">Important: Replace UUIDs</h4>
+  
+      Throughout this guide you will see <code>&lt;your-organization-uuid&gt;</code> and <code>&lt;your-challenge-uuid&gt;</code> placeholders. Replace all of them with your actual UUIDs from the <a href="https://cloud.layer5.io/academy/instructors-console">Instructor Console</a>.
+  
+</div>
+
+
+
+Each challenge is tied to a specific organization and identified by a UUID, which is how the Academy scopes your content to your organization and tracks learner progress against it.
+
+You need two:
+
+- **Challenge ID** - a unique identifier for this challenge, set as the `id` in the front matter of its `_index.md`.
+- **Organization ID** - your organization's UUID, used in the directory path.
+
+The **Create New Content** tool in the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) generates both for you, along with a ready-to-paste front matter block. Choose **Challenge** as the Content Type. See [Using the Content Creation Tool](/pr-preview/pr-1351/cloud/academy/creating-content/instructor-console-guide/#using-the-content-creation-tool).
 
 ### 1. Set Up the Directory Structure
 
@@ -176,16 +203,18 @@ Most challenges close with an exam that validates the learner's work. Exams in a
 
 ### 5. Publish
 
-Publishing a challenge is the same two-stage release process as the rest of your Academy content: a GitHub Release on your content repository, followed by a Layer5 Cloud release. Until both have happened, your changes will not be live. See [Publishing Your Content](/pr-preview/pr-1351/cloud/academy/creating-content/creating-your-learning-path/#publish).
+Publishing a challenge is the same two-stage release process as the rest of your Academy content: a GitHub Release on your content repository, followed by a Layer5 Cloud release. Until both have happened, your changes will not be live. See [Publishing Your Content](/pr-preview/pr-1351/cloud/academy/creating-content/creating-your-learning-path/#6-publishing-your-content).
 
-## Monitor your challenge
+## Monitoring Your Challenge
 
-The [Instructor Console](/pr-preview/pr-1351/cloud/academy/instructor-console-guide/) reports on challenges alongside your other content:
+Once a challenge is live, the [Instructor Console](https://cloud.layer5.io/academy/instructors-console) is where you watch how it is doing. Every widget there can be narrowed to challenges:
 
-- **Learners** lists registrations. Filter by content type `Challenge` and by status to follow who is Registered, In Progress, Completed, Failed, or Withdrawn.
-- **Curricula** shows registrations, completion rate, and pass rate for each published challenge.
-- **Overview** shows pass rates per assessment. A low pass rate separates a hard challenge from unclear instructions only when the attempt count is high enough to mean something.
+- **Content Stats** counts your published content by type; clicking the Challenge count opens the Academy Catalog filtered to your challenges.
+- **Content Metrics** ranks your content by passes, so you can see where your challenge sits against your other material.
+- **All Learners Report** lists individual registrations. Filter **Content Type** to `Challenge` to see only the people attempting yours, and filter **Status** to follow who is `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn`.
+- **Test Stats** and **Test Metrics** report pass rates per assessment, which is how you tell a challenge that is hard from one whose instructions are unclear.
 
+A full tour of each widget, and what to do about what it tells you, is in the [Academy Instructor Console Guide](/pr-preview/pr-1351/cloud/academy/creating-content/instructor-console-guide/).
 
 
 
@@ -193,671 +222,20 @@ The [Instructor Console](/pr-preview/pr-1351/cloud/academy/instructor-console-gu
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="feature-tiers">
-
-<table class="feature-tiers-table">
-  <caption>Academy</caption>
-  <thead>
-    <tr>
-      <th scope="col">Capability</th>
-      <th scope="col">What it does</th>
-      <th scope="col">Free</th>
-      <th scope="col">Team Designer</th>
-      <th scope="col">Team Operator</th>
-      <th scope="col">Enterprise</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Academy Theoretical Learning</th>
-      <td>A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Academy Practical Learning</th>
-      <td>An inclusive, collaborative, hands-on learning environment for students.</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </tbody>
-</table>
-
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Enterprise Feature</h4>
+  
+      The Instructor Console and custom academy features are available exclusively for organizations on an Enterprise plan. <a href="https://layer5.io/pricing">Learn more</a>
+  
 </div>
 
 
-## Learner outcomes
 
-Completing all the required components of a challenge earns the learner a digital badge - a verifiable credential they can share on their professional profiles. Unlike a Certification, a Challenge does not issue a paid Certificate of Completion; its outcome is the score, the rank, and the badge.
+## Learner Outcomes: Badges
 
-The badge is awarded when the learner passes the final test of the challenge. See the [Learner Guide](/pr-preview/pr-1351/cloud/academy/using-the-academy/) for the learner's side of this.
+The badge is awarded when the learner passes the final test of the challenge. Unlike a Certification, a Challenge does not issue a paid Certificate of Completion. Its outcome is the score, the rank, and the badge, which the learner can share on professional profiles. A badge setting that points at a badge that no longer exists awards nothing, and the failure is logged.
+
+See [Earning Badges and Certificates](/pr-preview/pr-1351/cloud/academy/using-the-academy/#earning-badges-and-certificates) for the learner's side of this.
 
 ## Frequently Asked Questions
 
@@ -882,6 +260,6 @@ You can edit its content freely - but never change its `id`. That UUID is what l
 <details>
 <summary>How do learners find my challenge?</summary>
 
-Through the Academy catalog, filtered by **Content Type** → **Challenge**. See [Exploring the Content Catalog](/pr-preview/pr-1351/cloud/academy/using-the-academy/).
+Through the Academy catalog, filtered by **Content Type** → **Challenge**. See [Exploring the Content Catalog](/pr-preview/pr-1351/cloud/academy/using-the-academy/#exploring-the-content-catalog).
 </details>
 

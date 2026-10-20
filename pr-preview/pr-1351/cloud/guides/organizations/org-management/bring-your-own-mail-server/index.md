@@ -155,7 +155,7 @@ Understand exactly what the test does. It opens a connection to your server, neg
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
   <h4 class="alert-heading" style="color: #EBC017;">What a passing test does not prove</h4>
   
-      Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google&rsquo;s Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account&rsquo;s address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider&rsquo;s side. See <a href="/pr-preview/pr-1351/#google-workspace">Google Workspace</a>.
+      Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google&rsquo;s Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account&rsquo;s address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider&rsquo;s side. See <a href="/pr-preview/pr-1351/cloud/guides/organizations/org-management/bring-your-own-mail-server/#google-workspace">Google Workspace</a>.
   
 </div>
 

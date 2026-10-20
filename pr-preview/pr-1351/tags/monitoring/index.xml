@@ -1,28 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Monitoring on Layer5 Documentation</title><link>/pr-preview/pr-1351/tags/monitoring/</link><description>Recent content in Monitoring on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1351/tags/monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring</title><link>/pr-preview/pr-1351/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1351/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Monitoring on Layer5 Documentation</title><link>/pr-preview/pr-1351/tags/monitoring/</link><description>Recent content in Monitoring on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1351/tags/monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring</title><link>/pr-preview/pr-1351/cloud/guides/self-hosted/planning/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1351/cloud/guides/self-hosted/planning/monitoring/</guid><description>&lt;p&gt;Layer5 Cloud gives you health endpoints, structured logs with stable error codes, startup messages, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint. Build service-level indicators from your ingress and Kubernetes metrics plus the signals below.&lt;/p&gt;
 
-&lt;h2 id="health-endpoints" class="heading-link"&gt;
- Health endpoints
- &lt;a href="#health-endpoints" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;h2 id="objectives" class="heading-link"&gt;
+ Objectives
+ &lt;a href="#objectives" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Endpoint&lt;/th&gt;
- &lt;th&gt;Answers&lt;/th&gt;
- &lt;th&gt;Meaning&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;GET /healthz&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;200&lt;/code&gt; with the text &lt;code&gt;Cloud is live&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;The process is running. The chart uses it for the liveness probe.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;&lt;code&gt;GET /readyz&lt;/code&gt;&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;200&lt;/code&gt; when ready, &lt;code&gt;503&lt;/code&gt; before&lt;/td&gt;
- &lt;td&gt;The server finished startup and is serving. The chart uses it for the readiness and startup probes.&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Both endpoints are unauthenticated. The startup probe allows 20 failed checks at 10-second intervals, so a slow start gets about 200 seconds before Kubernetes restarts the pod. Database migrations run before the server reports ready, so an upgrade that carries a large migration can approach that limit.&lt;/p&gt;</description></item></channel></rss>
+&lt;ul&gt;
+&lt;li&gt;Know whether the process is running (&lt;code&gt;/healthz&lt;/code&gt;) and whether startup finished (&lt;code&gt;/readyz&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Alert on stable error codes, not on message text&lt;/li&gt;
+&lt;li&gt;Turn tracing on only when you have a collector&lt;/li&gt;
+&lt;li&gt;Keep startup logs secret, because provider initialization logs the initial administrator password&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="metrics" class="heading-link"&gt;
+ Metrics
+ &lt;a href="#metrics" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The server does not publish application metrics. Use the ingress and the cluster:&lt;/p&gt;</description></item></channel></rss>

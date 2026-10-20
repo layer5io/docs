@@ -1,27 +1,30 @@
 # Learner Guide
 
 
-> Walk through the Layer5 Academy as a learner: find content, enroll, work through a learning path, pass its assessments, and earn a badge or certificate.
+> Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
 
 
 
-This guide takes you through one complete learning journey in the [Layer5 Academy](https://cloud.layer5.io/academy): you find a learning path, enroll, work through it, pass its final assessment, and receive your credential. Along the way you learn how the Academy tracks your progress and how its tests are scored, so you know what to expect from any content you take next.
+This guide is designed to be your friendly companion, helping you navigate the platform, understand its features, and make the most of your learning experience.
 
-You need a Layer5 Cloud account to enroll. Browsing the catalog needs no account.
+Here, you can achieve:
 
-## Step 1: Find content in the catalog
+- A systematic understanding of complex topics
+- Hands-on experience by solving real-world problems  
+- Verifiable badges to showcase your skills
+- Official certificates to formally recognize your expertise
 
-The catalog lists every piece of content available to you as a card. Each card shows the content type, title, number of courses, and difficulty level.
+## Exploring the Content Catalog
 
-![Academy catalog showing content cards with type, title, course count, and level, beside the Level, Content Type, and Organization filters](./images/academy-catalog.gif)
+Your journey begins at the Academy's main catalog page, where you can discover all available learning content.
 
-Narrow the catalog with three filters:
+### Navigating the Catalog
 
-- **Level** limits results to one difficulty level.
-- **Content Type** limits results to learning paths, challenges, or certifications. Set it alone to list every item of that type.
-- **Organization** limits results to one organization's content. It appears only on the main Layer5 Academy catalog.
+First you will see a collection of content cards. Each card gives you a quick overview of learning content, including the type, its title, the number of courses it contains, and its difficulty level.
 
-Filters combine, so Level plus Content Type lists, for example, every beginner learning path. Clearing the filters returns the full catalog.
+![Academy Catalog Overview](./images/academy-catalog.gif)
+
+Use the filters on the left - **Level**, **Content Type**, and, when browsing the full Layer5 Academy, **Organization** - to narrow the catalog to what you are looking for.
 
 
 
@@ -30,144 +33,201 @@ Filters combine, so Level plus Content Type lists, for example, every beginner l
 
 
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">What you see depends on where you are</h4>
+  <h4 class="alert-heading" style="color: #3772ff;">Browsing an Organization's Own Academy</h4>
   
-      The main Layer5 Academy at <a href="https://cloud.layer5.io/academy">cloud.layer5.io/academy</a> spans organizations and offers the Organization filter. An organization&rsquo;s own Academy on its custom domain shows only that organization&rsquo;s content and hides the Organization filter.
+      When you visit an organization&rsquo;s own Academy on its custom domain (for example, <code>exoscale.layer5.io</code>), the catalog is automatically scoped to that organization&rsquo;s content and the <strong>Organization</strong> filter is hidden, so you stay focused on that academy&rsquo;s offerings. To browse the full cross-organization catalog, visit the main Layer5 Academy at <a href="https://cloud.layer5.io/academy">cloud.layer5.io/academy</a>, where the <strong>Organization</strong> filter is available.
   
 </div>
 
 
 
-Pick the content type that matches your goal:
+### Understanding Content Types
 
-| Type | Choose it when you want to |
-|---|---|
-| Learning path | Learn a subject systematically, from start to finish |
-| Challenge | Solve a specific, practical problem in a realistic scenario |
-| Certification | Prove skills you already have through a formal exam |
+To help you choose the right content for your goals, we offer three distinct types. You can use the Content Type filter on the left to narrow your search.
 
-For this walkthrough, choose a beginner learning path.
+1. **Learning Path**: Choose this when you want to systematically learn a new subject from start to finish. It's a comprehensive curriculum designed to build your knowledge from the ground up.
 
-## Step 2: Enroll
+2. **Certification**: Choose this when you already have the knowledge and want to formally prove your skills. It focuses on assessment and evaluation through exams.
 
-The content's detail page describes what it covers. Enroll from this page.
+3. **Challenge**: Choose this when you want a hands-on, practical task to solve a specific problem, often in a competitive scenario.
 
-![Learning path detail page with the course outline, description, and enroll action](./images/learning-path-page.png)
+### Viewing All Content of One Type
 
-Enrolling creates your registration for that content and starts progress tracking. From then on the Academy records the item you are on, the items you have completed, your quiz grades, and your time spent, so you resume exactly where you left off. Every piece of content you have enrolled in appears in **My Academy**.
+The **Content Type** filter is also how you browse one type exhaustively rather than searching for a particular title:
 
-If the content's organization attached an invitation to it, enrolling also accepts that invitation and adds you to the team that the invitation grants.
+- Set it to **Learning Path** to list every learning path available to you.
+- Set it to **Challenge** to list every challenge.
+- Set it to **Certification** to list every certification.
 
-Your registration moves through these statuses, which your instructors also see in their console:
+Combine it with **Level** to narrow further - for example every beginner learning path - and, on the main [Layer5 Academy](https://cloud.layer5.io/academy) catalog, with **Organization** to see one organization's content only. Clearing the filters returns the full catalog.
 
-| Status | Meaning |
-|---|---|
-| `Registered` | You enrolled and have not yet started |
-| `In Progress` | You are working through the content |
-| `Completed` | You passed the final test |
-| `Failed` | You did not pass |
-| `Withdrawn` | The registration was withdrawn, by you or by an instructor in the content's organization |
 
-## Step 3: Work through the learning path
 
-The learning interface has three areas.
 
-![Learning interface with the course outline in the left sidebar, lesson content in the center, and tags and categories in the right sidebar](./images/page-overview.png)
 
-1. **Course outline (left sidebar)** shows the full structure of the learning path and your current position. You can move to any course at any time.
-2. **Study area (center)** displays the lesson content: text, images, and videos.
-3. **Tags and categories (right sidebar)** link to other Academy content on related topics.
 
-Work through the courses in order. Each course ends with an assessment that checks what you just learned.
 
-## Step 4: Take an assessment
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">What You See Depends on Where You Are</h4>
+  
+      The main Layer5 Academy catalog spans organizations, so listing all learning paths there lists everyone&rsquo;s public learning paths. An organization&rsquo;s own Academy on its custom domain is scoped to that organization&rsquo;s content, so the same filter lists only theirs.
+  
+</div>
 
-Each assessment is a test with a pass percentage set by the content's author. The test may also set a time limit, an attempt limit, and prerequisites.
 
-### Final and practice tests
 
-A test marked final is mandatory: passing it is what completes the content. Other tests are practice. Take them to check your understanding; passing them is not required to complete the content.
+## Starting Your Learning Journey
 
-### Prerequisites
+Once you've found a content that interests you, it's time to begin.
 
-A test can require you to finish specific items first. If any prerequisite is missing from your completed items, the test does not start and reports `Prerequisites not completed`. Finish those items and try again.
+### Enrolling in a learning path
 
-### Attempts and question rotation
+The content detail page gives you a full overview of what you'll learn. To start, simply click the "Enroll Now" button.
 
-Every time you start a test, you begin a new attempt. If the test sets a maximum number of attempts, you cannot start an attempt beyond it; the Academy reports `Maximum attempts reached for this test` with the number of attempts you have used. A test with no maximum allows unlimited attempts.
+![Learning Path Detail Page](./images/learning-path-page.png)
 
-Tests can draw from a question bank larger than one sitting. Each attempt serves the next set of questions from the bank, wrapping back to the start when the bank runs out, so a retake usually shows you different questions.
+**Why enroll?**
 
-### Time limit
+Enrolling is a key step because it allows the Academy to track your progress. Once enrolled, the system records the item you are on, the items you have completed, your quiz grades, and your time spent, so you resume where you left off. Every piece of content you have enrolled in appears in **My Academy**. Browsing the catalog needs no account. Enrolling does.
 
-If the test sets a time limit, your attempt expires that many minutes after it starts. A submission after expiry is rejected with `Test submission has expired`. Each attempt is submitted once; a second submission of the same attempt is rejected.
+If the content's organization attached an invitation to it, enrolling also accepts that invitation and adds you to the team the invitation grants. Your registration then moves through `Registered`, `In Progress`, `Completed`, `Failed`, and `Withdrawn`. `Completed` means you passed the final test. `Withdrawn` means you or an instructor withdrew the registration.
 
-### Answering and scoring
+### The Learning Interface
 
-Each question carries its own marks. The test supports three question types, each scored strictly:
+After enrolling, you'll be taken to the main learning interface. This is where you'll spend most of your time.
 
-- **Single answer.** Select one option. You earn full marks only when you select exactly one option and it is the correct one.
+![Learning Interface Overview](./images/page-overview.png)
 
-  ![Single-answer question with radio-button options](./images/q-single-answer.png)
+We've designed it to be simple and intuitive. Think of it in three parts:
 
-- **Multiple answers.** Select every option that applies. You earn full marks only when you select every correct option and no incorrect option. There is no partial credit.
+1. **Your Learning Map (Left Sidebar)**: This is the complete outline of your course. It shows where you are currently positioned.
 
-  ![Multiple-answer question with checkbox options](./images/q-multi-answer.png)
+2. **Your Study Area (Center Panel)**: This is where the core content—text, images, and videos—is displayed.
 
-- **Short answer.** Type your answer. It must match the expected answer exactly, ignoring letter case and leading or trailing spaces. A blank answer is wrong.
+3. **Discover More (Right Sidebar)**: Here, you can find tags and categories across all the content, helping you discover other relevant content in the Academy. You can click to see all related content.
+   
 
-  ![Short-answer question with a free-text input field](./images/q-short-answer.png)
 
-Unanswered questions score zero. Your percentage is your score divided by the test's total marks, and you pass when that percentage meets or exceeds the pass percentage. Scoring happens on the server the moment you submit, and the result shows your score, your pass or fail status, and which questions you answered correctly.
 
-## Step 5: Review your result
 
-If you do not pass, the result marks which questions you answered correctly, so you can see exactly where to improve. Revisit the relevant courses through the outline, then start another attempt if the test's attempt limit allows it.
 
-![Failed quiz result showing the score, the fail status, and which questions were answered correctly](./images/q-result-failed.png)
 
-If you pass, the assessment is complete and you move on to the next course.
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Discover More</h4>
+  
+      After finishing a course, check out the <strong>Tags</strong> and <strong>Categories</strong> on the right. They are a great way to discover other related topics that might interest you.
+  
+</div>
 
-![Passed quiz result showing the score and the pass status](./images/q-result-pass.png)
 
-## Step 6: Earn your badge and certificate
 
-When you pass the final test, your registration becomes `Completed` and the Academy awards the content's credentials.
+## Testing Your Knowledge
 
-**Badges.** If the content names a completion badge, you receive it immediately. Each badge is tied to one piece of content, is awarded only when you finish everything that content requires, and stays on your public Layer5 Cloud profile. Badges are free.
+Assessments are an integral part of the learning process, designed to reinforce your knowledge.
 
-![Example Academy completion badge](./images/badge.png)
+### How to Take a Quiz
 
-**Certificates.** If the content defines a certificate, the Academy issues one in your first and last name, with the issuing organization and the issue date, and emails it to you. Each certificate has a unique ID and a public verification page that anyone can open from its link, so you can share it on professional profiles or a resume. Learning and exams are free; issuance of the official certificate is an optional, paid feature. Certificates do not expire.
+You can open any course from the outline at any time. A test marked final is what completes the content. Other tests are practice: passing them is not required to finish. A test can also require specific items first. If a prerequisite is missing from your completed items, the test does not start and reports `Prerequisites not completed`.
 
-## Withdrawing from content
+Some assessments may be marked as **Optional**. You can take these for extra practice, but you are not required to pass them to advance.
 
-You can withdraw your own registration at any time. Withdrawing sets its status to `Withdrawn`. Instructors who hold the View Academy Metrics permission in the content's organization can also withdraw learners from that organization's content.
+Every time you start a test, you begin a new attempt. If the test sets `maxAttempts`, you cannot start another attempt past that limit, and the Academy reports `Maximum attempts reached for this test`. A test with no maximum allows unlimited attempts. Starting an attempt counts whether or not you submit it. Tests can draw from a question bank larger than one sitting. Each attempt serves the next set of questions, wrapping back to the start, so a retake usually shows different questions.
 
-## Frequently asked questions
+If the test sets a time limit, the attempt expires that many minutes after it starts. A submission after expiry is rejected with `Test submission has expired`. Each attempt is submitted once. A second submission of the same attempt is rejected. Unanswered questions score zero. Your percentage is your score divided by the test's total marks, and you pass when that percentage meets or exceeds the pass percentage. Scoring happens on the server when you submit. 
+
+### Answering Questions and Scoring
+
+When you encounter an assessment, you'll see a clean interface with questions and answer options.
+
+**Answering**: Select your answer(s) by clicking the corresponding radio button (for single-choice) or checkbox (for multiple-choice). For short-answer questions, type your response directly into the text field.
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Need a Refresher?</h4>
+  
+      If you&rsquo;re ever unsure about a concept, you can always use the Back button to revisit previous courses.
+  
+</div>
+
+
+
+**Scoring Rules:**
+
+- **Single-Answer**: You receive full marks only when you select exactly one option and it is the correct one.
+
+![Single Answer Question Example](./images/q-single-answer.png)
+
+- **Multiple-Answer**: Scoring is strict. You must select all correct options and none of the incorrect options to earn marks. There is no partial credit.
+
+![Multiple Answer Question Example](./images/q-multi-answer.png)
+
+- **Short-Answer**: Your answer must match the expected answer exactly, ignoring letter case and leading or trailing spaces. A blank answer is wrong. There is no case-sensitive mode.
+
+![Short Answer Question Example](./images/q-short-answer.png)
+
+**Submitting**: Once you've answered all questions, click the "Submit" button at the end of the quiz. Your results, including your score and pass/fail status, will be displayed immediately.
+
+**If you fail**: You can retake the assessment. The system will highlight the successful parts, allowing you to precisely identify where you need improvement.
+
+![Quiz Result - Failed](./images/q-result-failed.png)
+
+**If you pass**: Congratulations! You've successfully completed the assessment and can proceed to the next section.
+
+![Quiz Result - Passed](./images/q-result-pass.png)
+
+## Your Achievements
+
+Completing content in the Academy earns you valuable credentials that you can share with your professional network.
+
+### Earning Badges and Certificates
+
+**Badges**: You earn a digital badge for successfully completing all the required components of a Learning Path, Challenge, or Certification. Badges are how the Academy marks the milestones you reach: each one is tied to a specific piece of content, is awarded only once you have finished everything that content requires, and stays on your public profile afterward. They are free and serve as a great way to showcase your new skills.
+
+Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `Withdrawn` - tracks your progress toward that milestone in the meantime, and is what your instructors see in their console.
+
+> See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
+
+![Example badge image](./images/badge.png)
+
+**Certificates**: If the certification defines a certificate, passing its final test issues one in your first and last name, with the issuing organization and the issue date, and emails it to you. Each certificate has a unique ID and a public verification page. Learning and exams are free. Issuance of the official certificate is an optional, paid feature. Certificates do not expire. A challenge does not issue this certificate. Its outcome is the badge.
+
+## Frequently Asked Questions
+
+> Expand a section below to learn more.
 
 <details>
-<summary>Will my progress be saved if I leave and come back later?</summary>
+<summary>Will my learning progress be saved if I leave and come back later?</summary>
 
-Yes. While you are enrolled, the Academy saves your current item, completed items, and quiz grades automatically. You resume where you left off.
+Yes, as long as you are enrolled in a content, your progress is saved automatically. You can always return and continue from your last completed course.
 </details>
 
 <details>
 <summary>Can I skip courses and jump directly to the exam?</summary>
 
-You can open any course at any time from the outline. A test with prerequisites does not start until you complete those prerequisite items, and the content is complete only when you pass its final test.
+You can open any course at any time from the outline. A test with prerequisites does not start until those items are complete. The content is complete when you pass its final test. Practice tests do not have to be passed for that to happen.
 </details>
 
 <details>
-<summary>Can I download content for offline study?</summary>
+<summary>Can I download content materials for offline study?</summary>
 
-No. Academy content is available online only.
+Currently, all content is designed to be accessed online through the Academy platform. Offline or downloadable materials are not available at this time.
+</details>
+
+<details>
+<summary>Where can I ask questions or discuss the content material?</summary>
+
+Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to open new or participate in existing topics in the community [discussion forum](https://discuss.layer5.io). We also warmly welcome you to join the [Layer5 Community Slack](https://slack.layer5.io).
 </details>
 
 <details>
 <summary>If I fail an assessment, can I retake it?</summary>
 
-Yes, up to the test's attempt limit. A test with no limit allows unlimited retakes. Each retake usually draws different questions from the test's question bank.
+Yes, until the test's attempt limit. A test with no limit allows unlimited retakes. The Academy does not block a retake because of an earlier score, including a score of 100%. Each retake usually draws different questions from the test's question bank.
 </details>
 
 <details>
@@ -177,14 +237,13 @@ No. Academy certificates carry an issue date and no expiration date.
 </details>
 
 <details>
-<summary>How can I share my credential?</summary>
+<summary>How can I showcase my credential?</summary>
 
-Badges appear on your public Layer5 Cloud profile. Each certificate has a public verification page; share its link on professional profiles such as LinkedIn or on your resume so anyone can confirm it.
+Badges appear on your public Layer5 Cloud profile. Each certificate has a public verification page. Share that link on professional profiles such as LinkedIn or on your resume so anyone can confirm it.
 </details>
 
-<details>
-<summary>Where can I ask questions or discuss the content?</summary>
+## Withdrawing from content
 
-Open a new topic or join an existing one in the community [discussion forum](https://discuss.layer5.io), or join the [Layer5 Community Slack](https://slack.layer5.io).
-</details>
+You can withdraw your own registration at any time. Withdrawing sets its status to `Withdrawn`. Instructors who hold the View Academy Metrics permission in the content's organization can also withdraw learners from that organization's content.
+
 

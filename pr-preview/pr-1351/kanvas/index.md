@@ -1,43 +1,44 @@
 # Kanvas Documentation
 
-> Kanvas is a visual, collaborative tool for designing, validating, deploying, and operating Kubernetes and cloud infrastructure.
+> Kanvas delivers a collaborative experience for engineers similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling.
 
 
-Kanvas lets you design Kubernetes and cloud infrastructure visually, validate and deploy that design to your clusters, and then operate what is running, all from one shared canvas. Teams work on the same design at the same time, so the diagram you discuss is the configuration you deploy.
+
+
+<div class="pageinfo">
+
+<h2 id="understanding-the-layer5-ecosystem" class="heading-link">
+  Understanding the Layer5 Ecosystem
+  <a href="#understanding-the-layer5-ecosystem" class="heading-anchor" aria-label="Permalink to this heading">🔗</a>
+</h2>
+<a class="highlight-box" style="display:flex; gap:1.5rem; text-decoration:none; color:inherit;">
+  <span style="min-width:50px; align-self:center; line-height:1.85rem;"><img src="/pr-preview/pr-1351/images/logos/kanvas-icon-color.svg" alt="Kanvas logo" style="height:65px; width:65px; border:0; background:transparent;"></span>
+  <span style="margin:auto; color:#ccc; line-height:1.85rem;">
+    <strong>Kanvas</strong> delivers a collaborative experience similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+  </span>
+</a>
+<a href="/pr-preview/pr-1351/cloud/" class="hidden-highlight-box" style="display:flex; gap:1.5rem; text-decoration:none; color:inherit;">
+  <span style="min-width:50px; align-self:center; line-height:1.85rem;"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.73 141.73"><title>5-light-bg</title><rect id="_Path_" data-name="&lt;Path&gt;" x="79.63" y="23.97" width="36.93" height="17.79" style="fill:#00b39f"/><path id="_Path_2" data-name="&lt;Path&gt;" d="M119.92,83.9V76.53c0-8.49-7.14-15.37-15.94-15.37H44.38V56.31H22.56v21H98.1V83.9Z" style="fill:#00b39f"/><polygon id="_Path_3" data-name="&lt;Path&gt;" points="44.38 50.5 44.38 41.76 73.6 41.76 73.6 23.97 22.56 23.97 22.56 50.5 44.38 50.5" style="fill:#00d3a9"/><path id="_Path_4" data-name="&lt;Path&gt;" d="M98.1,89.62V100H68.88v17.79h36a14.77,14.77,0,0,0,15-14.49V89.62Z" style="fill:#00d3a9"/><path id="_Path_5" data-name="&lt;Path&gt;" d="M42.63,90.58V100H62.85v17.79h-26a14.77,14.77,0,0,1-15-14.49V90.58Z" style="fill:#00b39f"/></svg></span>
+  <span style="margin:auto; color:#ccc; line-height:1.85rem;">
+    <strong>Layer5 Cloud</strong> is an identity provider and global console for deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+  </span>
+</a>
+
+</div>
 
 ## What is Kanvas?
 
-Kanvas is a web application for creating and sharing orchestratable designs of cloud native infrastructure. A design is a declarative description of infrastructure: the components it contains, the relationships between them, their configuration, and any annotations you add to explain it. You build a design by placing components on a canvas, connecting them, and configuring each one. You can also draw shapes, lines, text, and icons to document your intent; Kanvas treats those as annotations and never deploys them.
+<p style="display:flex;text-align:center;margin:1rem auto;color:white;"><i>Kanvas is like Google Workspace for DevOps, as it allows you to create, test, and deploy cloud native architectures collaboratively and easily.</i></p>
 
-A design does not stop at the diagram. Kanvas validates a design against the schema of every component in it, dry-runs it against your target clusters without applying anything, and deploys or undeploys it on the Kubernetes contexts you select. Every save creates a new version of the design, and multiple people can edit the same design together in real time.
-
-This matters because one artifact carries your infrastructure from whiteboard to running cluster. Reviewers read the same design that operators deploy, and every resource Kanvas deploys carries the identity of the design that produced it, so you can trace running workloads back to their source.
-
-## Two modes: Designer and Operator
-
-Kanvas has two modes. You switch between them at any time; if the open design or resource has unsaved changes, Kanvas asks you to confirm before you leave.
-
-- **[Designer](/pr-preview/pr-1351/kanvas/concepts/designer/)** is for authoring. You compose designs from versioned components, define relationships, configure each component, and annotate the result. Whiteboarding is a toolset inside Designer, not a separate mode. Validate, dry-run, deploy, and undeploy actions run from Designer.
-- **[Operator](/pr-preview/pr-1351/kanvas/concepts/operator/)** is for running infrastructure. It shows the recorded state of your connected Kubernetes clusters, collected by MeshSync and served through Meshery. Operator can scope its view to the resources a single design deployed.
-
-### Where each mode is available
-
-Designer is available everywhere Kanvas runs, including the hosted Kanvas at [kanvas.new](https://kanvas.new). Operator mode, and every action that touches a cluster, needs a Meshery deployment that can reach your clusters.
-
-| Capability | Hosted Kanvas (kanvas.new) | Meshery Playground or self-hosted Meshery |
-|---|---|---|
-| Designer: author and import designs | Available | Available |
-| Share and publish designs | Requires sign-in | Requires sign-in |
-| Validate, dry-run, deploy, and undeploy | Not available | Available |
-| Connect clusters | Not available | Available |
-| Operator mode | Not available | Available |
-
-When you invoke a cluster-bound capability on kanvas.new, Kanvas explains that it is not available there and points you to the [Meshery Playground](https://playground.meshery.io) or a self-hosted Meshery deployment. Plan details live at [layer5.io/pricing](https://layer5.io/pricing).
+Kanvas is a web-based application that allows you to create and share orchestratable diagrams of cloud native infrastructure for Kubernetes and public cloud services. You can draw shapes, lines, text, and icons to represent your infrastructure components and their relationships. Kanvas also supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints. Kanvas enables real-time collaboration, meaning that you can invite others to join your sessions and edit the diagrams together. Kanvas is a simple and intuitive tool for designing and communicating cloud native infrastructure for Kubernetes and multi-cloud services.
 
 ### Choose your mode
 
+Choose your mode of operation for Kanvas.
+
 <div style="display:flex;justify-content:center;">
 <div class="td-card-group card-group p-0 mb-4">
+    <a href="/pr-preview/pr-1351/kanvas/designer/">
   <div class="td-card card border me-4">
 <div class="card-header">
       Designer
@@ -45,13 +46,15 @@ When you invoke a cluster-bound capability on kanvas.new, Kanvas explains that i
 <div class="card-body">
     <p class="card-text">
         
-    <p><a href="/pr-preview/pr-1351/kanvas/concepts/designer/">Designer</a> mode is for creating and editing designs.</p>
-    <p>Compose infrastructure from a palette of versioned components, connect components with relationships, and configure each one.</p>
-    <p>Validate a design, dry-run it against your clusters, and deploy it.</p>
+    <a href="/pr-preview/pr-1351/kanvas/designer/">Designer</a> mode is for those who want to create their own Kanvas, using the palette of components.
+    <p>Drag-and-drop your cloud native infrastructure using a palette of thousands of versioned Kubernetes components.</p>
+    <p>Use context-aware relationships configure your infrastructure intuitively.</p>
   </p>
       </div>
   </div>
 
+    </a>
+  <a href="/pr-preview/pr-1351/kanvas/operator/">
   <div class="td-card card border me-4">
 <div class="card-header">
       Operator
@@ -59,26 +62,15 @@ When you invoke a cluster-bound capability on kanvas.new, Kanvas explains that i
 <div class="card-body">
     <p class="card-text">
         
-    <p><a href="/pr-preview/pr-1351/kanvas/concepts/operator/">Operator</a> mode is for operating your Kubernetes clusters and the infrastructure running on them.</p>
-    <p>See the recorded state of the clusters you select.</p>
-    <p>Filter the view to the resources that a specific design deployed.</p>
+    <a href="/pr-preview/pr-1351/kanvas/operator/">Operator</a> mode is for operating your Kubernetes clusters and cloud native infrastructure.
+    <p>Bring all your Kubernetes clusters under a common management. Deploy designs, apply patterns, manage and operate your deployments and services in real-time.</p>
+    <p>Interactively connect to pods and containers to debug and troubleshoot.</p>
   </p>
       </div>
   </div>
 
+  </a>
 </div>
 
 </div>
-
-## How Kanvas relates to Meshery and Layer5 Cloud
-
-Kanvas is an extension of Meshery. Its interface loads into Meshery UI, and a companion plugin runs inside Meshery Server. Meshery Server is the component that talks to your clusters: it deploys and observes infrastructure on Kanvas's behalf. [Layer5 Cloud](/pr-preview/pr-1351/cloud/) is the remote provider behind Kanvas: it stores your designs and their versions and handles identity, sharing, the catalog, and events. [How Kanvas Works with Meshery and Layer5 Cloud](/pr-preview/pr-1351/kanvas/concepts/architecture/) explains how requests move between these parts.
-
-## Where to go next
-
-- **[Getting Started](/pr-preview/pr-1351/kanvas/getting-started/)** - create your first design and reach a working result fast.
-- **[Tutorials](/pr-preview/pr-1351/kanvas/tutorials/)** - learn Kanvas by building realistic designs end to end.
-- **[How-to Guides](/pr-preview/pr-1351/kanvas/guides/)** - accomplish a specific task, such as deploying or sharing a design.
-- **[Concepts](/pr-preview/pr-1351/kanvas/concepts/)** - understand designs, components, relationships, and how Kanvas works.
-- **[Reference](/pr-preview/pr-1351/kanvas/reference/)** - look up exact options, limits, permissions, and shortcuts.
 

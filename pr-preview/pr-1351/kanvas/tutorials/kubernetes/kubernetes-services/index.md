@@ -1,106 +1,267 @@
-# Explore Services
+# Exploring Kubernetes Services with Meshery
 
 
-> Expose a Deployment and two Pods with ClusterIP, NodePort, and LoadBalancer Services in Kanvas and see what each Service type gives you in a live cluster.
+> Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
 
 
-In this tutorial you put three Services in front of running workloads: a ClusterIP Service in front of a Deployment, a NodePort Service in front of one Pod, and a LoadBalancer Service in front of another. Pods come and go and change IP addresses every time they are replaced. A Service gives a changing set of Pods one stable address and finds them by label, and its type decides who can reach that address. Building all three side by side makes the difference between the types concrete.
+## Introduction
 
-## What you will learn
+In this tutorial, we'll learn to implement Kubernetes **Services**, the
+resources responsible for exposing applications inside and outside the cluster.
+Using Meshery Playground, an interactive live cluster environment, we'll perform
+hands-on labs to gain practical experience with Kubernetes Services, without
+writing any YAML.
 
-- A Service selects its backend Pods by label, and any Pod whose labels match joins the Service automatically.
-- A ClusterIP Service gets a virtual IP reachable only from inside the cluster.
-- A NodePort Service adds a port on every node, and a LoadBalancer Service adds an external load balancer provisioned by the cluster's cloud provider.
-- In Kanvas, the Network relationship documents which workload a Service sends traffic to, while the selector is what Kubernetes acts on.
+> **NOTE:** If this is your first time working with Meshery Playground, consider
+> starting with the
+> [Exploring Kubernetes Pods with Meshery Playground](/kanvas/tutorials/kubernetes-pods)
+> tutorial first or
+> [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes-deployments).
 
-## Before you begin
+## Prerequisites
 
-- **A cluster-backed environment.** Use Meshery Playground (https://play.meshery.io), a shared live cluster, or a self-hosted Meshery with a connected Kubernetes cluster. Hosted kanvas.new has no cluster actions; Validate, Deploy, and Undeploy there open a prompt to self-host instead.
-- **An environment that holds your cluster's connection.** Deploy targets Meshery environments and the Kubernetes connections assigned to them. See [Environments](https://docs.meshery.io/concepts/logical/environments).
-- **Operator mode** for the inspection phases, which needs Meshery Operator and MeshSync running in the cluster. Where Operator mode is turned off, its switch is disabled; the deploy summary still confirms each object.
-- **A unique prefix.** Playground is shared. Use your own prefix in every name and label; this tutorial uses `alex`.
-- **The earlier tutorials.** [Explore Pods](/pr-preview/pr-1351/kanvas/tutorials/kubernetes/kubernetes-pods/) and [Explore Deployments](/pr-preview/pr-1351/kanvas/tutorials/kubernetes/kubernetes-deployments/) cover building, deploying, and inspecting workloads, which this tutorial uses without re-explaining.
+- Basic understanding of containerization and Kubernetes concepts.
+- Access to the _Meshery Playground_. If you don't have an account, sign up at
+  [Meshery Playground](https://playground.meshery.io/).
 
-## The scenario
+## Lab Scenario
 
-You build one design with six components and deploy it in three rounds:
+Deploy a simple application or a simple Pod and expose it using ClusterIP,
+NodePort, and LoadBalancer services. Each service will route traffic to the pods
+via a common label selector. We’ll inspect the service details in Operator mode
+to confirm their types and behavior.
 
-| Service | Type | Selector | Backend |
-|---|---|---|---|
-| `alex-api-cip` | ClusterIP | `app=alex-api` | Deployment `alex-api`, 2 replicas |
-| `alex-np` | NodePort | `app=alex-np` | Pod `alex-np-pod` |
-| `alex-lb` | LoadBalancer | `app=alex-lb` | Pod `alex-lb-pod` |
+## Objective
 
-Every workload runs `nginx:latest`, which listens on port 80. Every Service listens on port 80 and forwards to target port 80.
+Learn how to create, manage, and explore _Kubernetes Services_ to expose
+applications within the context of a microservices architecture.
 
-What each type exposes, and what you can observe in Meshery Playground:
+## Steps
 
-| Type | Reachable from | Kubernetes allocates | In Playground |
-|---|---|---|---|
-| ClusterIP | Pods inside the cluster | A cluster IP | Works fully |
-| NodePort | Anything that can reach a node | A cluster IP and a port on every node | The node port is assigned; node IPs are often unreachable from your browser |
-| LoadBalancer | Clients outside the cluster | A cluster IP, a node port, and an external address from the cloud provider | No external address is assigned; it stays pending |
+### Access Meshery Playground
 
-[Kubernetes request flow](/pr-preview/pr-1351/kanvas/concepts/kubernetes-request-flow/) follows a single request from a client through a Service to a Pod, and [Creating relationships](/pr-preview/pr-1351/kanvas/guides/designing/creating-relationships/) covers every relationship you can draw between components.
+- Log in to the [Meshery Playground](https://playground.meshery.io/) using your
+  credentials.
+- On successful login, you should be at the dashboard.
+- Click **Kanvas** from the left menu to navigate to the
+  [_Kanvas_ design](https://kanvas.new/extension/meshmap) page.
 
-## Expose a Deployment with a ClusterIP Service
+  ![Kanvas Design page in Meshery Playground showing the empty design canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-deployments/2025-02-27_16-59.png)
 
-1. Create a new design named `alex-services`.
-2. Add a **Deployment** named `alex-api` with replicas `2`, selector match labels `app: alex-api`, template labels `app: alex-api`, and one container named `web` with image `nginx:latest` and container port `80`. Add the label `app: alex-api` to the Deployment itself in the **Labels** tab.
-3. Add a **Service** named `alex-api-cip`. Set its type to `ClusterIP`, add a port with port `80` and target port `80`, and set its selector to `app: alex-api`. Add the label `app: alex-api` to the Service in the **Labels** tab so it shows up with the workload when you filter by label.
-4. Draw a **Network** relationship from the Service to the Deployment. Edge handles appear when you hover a component; choose the network option and drag to the Deployment. Compatible targets show a green outline while you drag, and releasing anywhere else creates nothing.
-5. Run **Validate**, **Dry Run**, and then **Deploy** from the **Actions** menu, selecting the environment that holds your cluster's connection.
+> **_NOTE:_** Kanvas is still in beta.
 
-**What just happened.** The Service's selector, `app=alex-api`, matches the labels in the Deployment's Pod template, so both Pods the Deployment creates become backends of the Service. The selector points at Pod labels, not at the Deployment: Kubernetes matches Pods, whoever created them. Port `80` is the port clients use on the Service's address, and target port `80` is the container port that traffic is forwarded to.
+### Create a Deployment
 
-The Network relationship records the same connection in the design so that anyone reading the diagram sees where traffic flows. Its edge shows the port values it reads from both components, and Kanvas evaluates relationships after every change; a relationship's registry definition can copy designated fields from one component to the other. Kubernetes routes by the selector alone, so confirm the selector in the Service's configurator after you draw the edge.
+1. In the _Kanvas Design_ page, start by renaming the design to a name of your
+   choice for easier identification later.
 
-**Check your work.** The summary lists `Deployed Deployment "alex-api"` and `Deployed Service "alex-api-cip"`. Switch to **Operator**, select the Service, and switch its details panel to **Details**. It shows the service type `ClusterIP`, a cluster IP, no external IP, and the selector `app=alex-api`. The cluster IP is reachable only from inside the cluster: any Pod can send requests to it, and the cluster's DNS also resolves the name `alex-api-cip.default.svc.cluster.local` to it.
+   ![Kanvas design renamed from Untitled Design to a custom name](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_02.png)
 
-A selector that matches no Pods is not an error. The Service still deploys and gets a cluster IP, but it has no backends and requests to it fail. If you mistype the selector, nothing warns you; compare the selector with the Pod labels.
+2. From the floating dock below, click the **Kubernetes** icon and then click
+   **Deployment** from the list. This will create the _Deployment_ component on
+   the design canvas.
 
-## Expose a Pod with a NodePort Service
+   ![Selecting the Deployment component from the Kubernetes icon in the floating dock](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_03.png)
 
-1. Switch to **Designer** and add a **Pod** named `alex-np-pod` with the label `app: alex-np` and one container named `web`, image `nginx:latest`, container port `80`.
-2. Add a **Service** named `alex-np`. Set its type to `NodePort`, add a port with port `80` and target port `80`, and set its selector to `app: alex-np`. Leave the node port empty so Kubernetes assigns a free one from the node port range (30000 to 32767 by default).
-3. Draw a **Network** relationship from `alex-np` to `alex-np-pod`.
-4. Run **Deploy** again with the same environment.
+3. Click or Drag the _Deployment_ component onto the canvas and the
+   **Configure** tab automatically opens.
 
-**What just happened.** A NodePort Service is a ClusterIP Service plus one port opened on every node in the cluster. Traffic that arrives at any node on that port is forwarded to the Service's backends, wherever they run. Deploying the design again created the two new objects; Kanvas also resubmitted the Deployment and the ClusterIP Service, which already exist, and those stay as they are.
+   ![Configure tab opening after dragging the Deployment component onto the canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_04.png)
 
-**Check your work.** Switch to **Operator** and select `alex-np`. Its details show the service type `NodePort`, a cluster IP, the selector `app=alex-np`, and, under its connections, the ports including the node port Kubernetes assigned. The Service is reachable at `http://<node IP>:<node port>` from any machine that can reach a node; the Pod's host IP is one node address. In Playground, node IPs are often not reachable from your browser, and the assigned node port still confirms that Kubernetes exposed the Pod. If you set a fixed node port and another user on the cluster already holds it, the dry run fails with a `Field Value Invalid` error on the node port; clear the field and let Kubernetes choose.
+4. Change the **Name** of the deployment and the **Namespace** if required. For
+   this demonstration, we will leave them as they are and deploy this to the
+   _default_ namespace.
 
-## Expose a Pod with a LoadBalancer Service
+5. Set **Replicas** to `2`. Under **Selector** and **MatchLabels**, set a
+   _matchLabel_ pair. Here we have set `app:9988110`.
 
-1. Switch to **Designer** and add a **Pod** named `alex-lb-pod` with the label `app: alex-lb` and one container named `web`, image `nginx:latest`, container port `80`.
-2. Add a **Service** named `alex-lb`. Set its type to `LoadBalancer`, add a port with port `80` and target port `80`, and set its selector to `app: alex-lb`.
-3. Draw a **Network** relationship from `alex-lb` to `alex-lb-pod`.
-4. Run **Deploy** again.
+   ![Replicas set to 2 with matchLabels app:9988110 under the Selector section](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_05.png)
 
-**What just happened.** A LoadBalancer Service builds on a NodePort Service: Kubernetes allocates a cluster IP and a node port, then asks the cluster's cloud provider integration to create an external load balancer that forwards to those node ports. When the provider finishes, Kubernetes records the load balancer's IP or hostname in the Service's status. A cluster without such an integration, such as Playground, accepts the Service and never assigns an external address.
+6. Under **Template → Metadata → Labels**, add the same label `app:9988110`.
 
-**Check your work.** In **Operator**, select `alex-lb`. Its details show the service type `LoadBalancer`, a cluster IP, and a node port under its connections. In Playground there is no external IP and no load balancer address, because no cloud provider fulfills the request. On a managed cloud cluster, an external address appears once the provider has created the load balancer; load a fresh snapshot to see it, because Operator does not update on its own.
+   ![Adding the matching label app:9988110 under Template Metadata Labels](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/metadata.png)
 
-## Change a deployed Service
+7. While still under **Template**, click **Spec** to load the _spec_
+   configuration modal. Then scroll down and click **+ Add Item** next to
+   **Containers**. This will create a container **Containers 1**. Click on it
+   and add:
+   - **Image**: `meshery/meshery-milestone:latest`
+   - **Name**: `meshery-milestone`
 
-Deploy replaces an existing object in place, but Kubernetes rejects some changes to a Service, such as clearing the cluster IP it assigned. Kanvas reports those rejected changes as `Deployed`, and the Service stays as it was. To change a deployed Service's type or ports reliably, undeploy the design and deploy it again.
+   ![Containers 1 configured with image meshery/meshery-milestone:latest and name meshery-milestone](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_06.png)
 
-## Clean up
+8. Click outside to close the modal. The deployment is now ready and it will
+   look similar to this:
 
-Run **Undeploy** from the **Actions** menu and select the same environment. Undeploy deletes each component's object by kind, name, and namespace: the Deployment, both Pods, and all three Services. Kubernetes then removes the ReplicaSet and Pods the Deployment owned. Undeploy matches by name, not by the design label, so same-named objects that someone else created in the same namespace are deleted too. If the dry-run step reports objects as not found, they are already gone; select the bypass option to finish.
+   ![Completed Deployment component on the Kanvas design canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_07.png)
 
-The design stays in your account until you delete it from the design's file menu. Deleting a design never removes cluster objects.
+9. Validate and Deploy the design: Click Validate (**Actions** toolbar), ensure
+   that there are no errors and then click Deploy. Wait for the deployment to
+   complete (Notifications will appear on bottom right).
 
-## What you learned
+#### You have now deployed a Deployment with 2 pods running in the cluster.
 
-- A Service gives a changing set of Pods one stable address and finds them by label selector, not by owner.
-- ClusterIP serves clients inside the cluster, NodePort adds a port on every node, and LoadBalancer adds an external load balancer that only a cloud provider integration can supply.
-- A selector that matches nothing deploys without error, so checking it is your job.
-- The Network relationship documents traffic flow in the design; the selector is what Kubernetes routes by.
+---
 
-## Next steps
+### Add a ClusterIP Service
 
-- Continue with [ConfigMaps and Secrets](/pr-preview/pr-1351/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/) to configure workloads without rebuilding images.
-- Read [Deploying designs](/pr-preview/pr-1351/kanvas/guides/deploying/deploying-designs/) for every option in the Deploy workflow.
-- Read [Operator](/pr-preview/pr-1351/kanvas/concepts/operator/) to understand views, filters, and snapshots.
+1. From **Components**, search for **Service** and drag it to the canvas, rename
+   the service, here I will go with `service-clusterip`. Click on the service
+   component to open its config modal.
+
+   ![Service component renamed to service-clusterip on the Kanvas canvas](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-04_08.png)
+
+2. In the service configuration modal:
+   - Set **Type** to `ClusterIP`.
+   - Click on **+ Add Item** under Ports to add a port called **Ports 1**. Click
+     on it and add:
+     - **Port**: `80`
+     - **TargetPort**: `80` (these match the container port that our image
+       serves on).
+   - Also add the same key value pair as before under **Selector**:
+     `app:9988110`.
+   - We will also add the same label as the deployment for easier identification
+     in Operator Mode.
+
+   ![ClusterIP service configured with port 80, targetPort 80, and selector app:9988110](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/edit-01.png)
+
+3. Connect the Service to the Deployment: Click over the service component until
+   green dots appear, click the arrow and select network. Drag to the
+   deployment. This creates a Network link.
+
+   ![Network link drawn between the Service and Deployment components](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_1.png)
+
+From the Actions Tab, Undeploy the deployment first and then validate and
+dry-run the new design, resolving any errors that may arise. Now, deploy the
+design. A pop-up in the bottom right will confirm that the design is
+successfully configured.
+
+![Deploy success pop-up in the bottom right corner of the Kanvas page](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_2.png)
+
+Switch to Operator mode and explore the Service details. Select the
+`service-clusterip` resource to see its details.
+
+![service-clusterip details panel in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-05_11.png)
+
+Notice the ClusterIP listed under Addresses and that no external IP or NodePort
+is assigned. This confirms that a ClusterIP service provides an internal IP
+reachable only within the cluster. This Service has a ClusterIP (10.98.146.20)
+and a selector (app=9988110). Any Pod with that label automatically becomes part
+of the Service’s backend. This label-to-Pod binding is how a ClusterIP Service
+internally routes traffic to its backing workloads.
+
+![ClusterIP address and selector details for service-clusterip in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-05_12.png)
+
+---
+
+### Add a NodePort Service
+
+To allow external access, we’ll use a NodePort service. For simplicity, I will
+switch from using a Deployment to a Pod for our next Service.
+
+1. Back in Design mode, drag a Pod from the dock onto the canvas. Scroll down
+   within the Pod configuration modal to the Containers section. Click **+** to
+   add a container. Expand **Containers-1**. Next, fill out some of the required
+   container specifications. Start by entering the container image — we will use
+   _meshery/meshery-milestone:latest_ for this exercise. Give the container a
+   name and a unique label (this unique label will be used by the service
+   selector).
+
+   ![Pod component with a container configured using meshery/meshery-milestone:latest and a unique label](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_13.png)
+
+2. Now, drag a Service component onto the canvas and rename it to
+   `service-nodeport`.
+
+3. Under the config modal, set **Type** to `NodePort` and the same selector as
+   the Pod label, so that our Service is able to connect with our Pod.
+
+   ![Service type set to NodePort with selector matching the Pod label](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_14.png)
+
+4. Click on **+ Add Item** under Ports to reveal **Ports 1**, expand **Ports
+   1**, and add:
+   - **Port**: `80`
+   - **TargetPort**: `80`
+   - **NodePort**: `30091` (or leave blank to auto-assign).
+
+   ![NodePort service configured with port 80, targetPort 80, and nodePort 30091](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_15.png)
+
+5. Validate and deploy from the Action tab at the top right.
+
+   ![Deploy action confirmation for the NodePort design](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_3.png)
+
+Now switch to Operator mode and click on any component to view details (like
+type or selector) about the Service or the Pod.
+
+![NodePort service component details in Operator mode showing service type and selector](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_4.png)
+
+Note that this service is mapped to a NodePort and is accessible on the **Node’s
+IP address**.
+
+Expand the details section and you will see a NodePort value (30091); this means
+the service is exposed on each Node’s IP at port 30091. You can access the app
+externally via `http://<NodeIP>:30091`.
+
+![NodePort details showing the assigned port 30091 in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-09-06_17.png)
+
+The Operator mode also provides an interactive terminal, along with other
+Details about the Pod. Click on the Pod to reveal the
+`Initiate Terminal Session` option.
+
+![Pod details panel showing the Initiate Terminal Session option in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_5.png)
+
+> **_NOTE:_** In Meshery Playground, Node IPs may not be directly reachable from
+> your local machine due to the sandboxed environment. The NodePort value
+> confirms that the Service is correctly exposed by Kubernetes, even if direct
+> browser access is restricted.
+
+---
+
+### Add a LoadBalancer Service
+
+Finally, we’ll create a LoadBalancer service. In a real cloud environment, this
+would provision an external load balancer. In Meshery Playground, you will see
+how the service object is defined, even though a real cloud IP isn’t provided.
+
+1. In Design mode, add another Pod to the canvas (as before). Add a container
+   with Name `meshery-milestone`, Image `meshery/meshery-milestone:latest`, and
+   add label `app:8080` (or any unique label).
+
+2. Drag a Service component onto the canvas, rename it `service-loadbalancer`.
+
+3. In the service’s Configure panel, set **Type** to `LoadBalancer`. Under
+   Selector, add `app:8080`.
+
+4. Under Ports, click **+ Add Item**. Expand **Ports 1** and set:
+   - **Port**: `80`
+   - **TargetPort**: `80`
+
+5. Close the panel.
+
+   ![LoadBalancer service-loadbalancer configured with type LoadBalancer and selector app:8080](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_6.png)
+
+6. Validate and Deploy (undeploy the old design first).
+
+In Operator mode, observe the LoadBalancer service. In a real Kubernetes
+environment, a LoadBalancer provides an **external IP address**.
+
+![LoadBalancer service details in Operator mode](https://docs.meshery.io/guides/tutorials/images/kubernetes-services/2025-12-13_7.png)
+
+---
+
+## Cleaning Up
+
+To remove all the resources you created in this tutorial: in Design mode, go to
+Actions → Undeploy and confirm. This will delete the Deployments/Pods and
+Services from the cluster.
+
+---
+
+## Conclusion
+
+Congratulations! You've successfully completed the lab on exploring Kubernetes
+Services with Meshery Playground. You created and deployed a sample application,
+then exposed it with different Service types (ClusterIP, NodePort,
+LoadBalancer).
+
+Continue exploring more scenarios in the Meshery Kanvas to enhance your skills.
 
