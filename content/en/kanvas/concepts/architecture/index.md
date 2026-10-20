@@ -43,9 +43,9 @@ The remote provider persists your designs. Layer5 Cloud stores each design and e
 Meshery Server, not your browser, talks to your Kubernetes clusters. It reaches them through components it deploys into each cluster:
 
 - **Meshery Operator** runs in the cluster and deploys MeshSync and Meshery Broker there.
-- **MeshSync** records the state of the cluster in Meshery Server.
+- **MeshSync** streams the live state of the cluster to Meshery Server.
 
-Meshery Server feeds that inventory into Operator mode. Operator draws a snapshot of it each time you load a view, change a filter, or change clusters, so it reflects the cluster as of the last refresh. When you dry-run, deploy, or undeploy a design, Meshery performs the operation against the Kubernetes contexts you selected, or against all connected contexts when you select none. Meshery can also connect to adapters, which Kanvas does not require for designing or deploying.
+Meshery Server feeds the live state from MeshSync into Operator mode, which is why Operator shows changes as they happen in the cluster. When you dry-run, deploy, or undeploy a design, Meshery performs the operation against the Kubernetes contexts you selected, or against all connected contexts when you select none. Meshery can also connect to adapters, which Kanvas does not require for designing or deploying.
 
 Every resource Kanvas deploys carries a label with the id of its source design and annotations with the design version and component id. Operator's per-design view uses that label to show exactly what one design produced. See [Designs and Components]({{< ref "kanvas/concepts/designs/index.md" >}}).
 

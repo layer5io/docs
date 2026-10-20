@@ -121,7 +121,7 @@ Right-click a component to open its action menu. Items appear only when they app
 
 The menu labels Delete as <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Delete</kbd>, but <kbd>Delete</kbd> or <kbd>Backspace</kbd> alone performs the deletion.
 
-Other items appear in Operator mode, such as terminal, log, and performance sessions. See [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}).
+Other items appear in Operator mode, such as terminal, log, and performance sessions. See [Operator]({{< ref "kanvas/operator/_index.md" >}}).
 
 ### Style a component
 

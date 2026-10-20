@@ -27,7 +27,7 @@ This matters because one artifact carries your infrastructure from whiteboard to
 Kanvas has two modes. You switch between them at any time; if the open design or resource has unsaved changes, Kanvas asks you to confirm before you leave.
 
 - **[Designer]({{< ref "kanvas/designer/_index.md" >}})** is for authoring. You compose designs from versioned components, define relationships, configure each component, and annotate the result. Whiteboarding is a toolset inside Designer, not a separate mode. Validate, dry-run, deploy, and undeploy actions run from Designer.
-- **[Operator]({{< ref "kanvas/concepts/operator/index.md" >}})** is for running infrastructure. It shows the recorded state of your connected Kubernetes clusters, collected by MeshSync and served through Meshery. Operator can scope its view to the resources a single design deployed.
+- **[Operator]({{< ref "kanvas/operator/_index.md" >}})** is for running infrastructure. It shows the live state of your connected Kubernetes clusters, streamed from the clusters through Meshery. Operator can scope its view to the resources a single design deployed.
 
 ### Where each mode is available
 
@@ -53,8 +53,8 @@ When you invoke a cluster-bound capability on kanvas.new, Kanvas explains that i
     <p>Validate a design, dry-run it against your clusters, and deploy it.</p>
   {{< /card >}}
   {{< card header="Operator" >}}
-    <p><a href="{{< ref "kanvas/concepts/operator/index.md" >}}">Operator</a> mode is for operating your Kubernetes clusters and the infrastructure running on them.</p>
-    <p>See the recorded state of the clusters you select.</p>
+    <p><a href="{{< ref "kanvas/operator/_index.md" >}}">Operator</a> mode is for operating your Kubernetes clusters and the infrastructure running on them.</p>
+    <p>See live cluster state across every connected cluster.</p>
     <p>Filter the view to the resources that a specific design deployed.</p>
   {{< /card >}}
 {{< /cardpane >}}

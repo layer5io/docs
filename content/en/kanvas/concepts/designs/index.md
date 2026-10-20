@@ -187,4 +187,4 @@ When Kanvas deploys a design, every resource it creates carries the identity of 
 
 A resource that carries the design id label is managed by Meshery. Because the label is a standard Kubernetes label, you can also select a design's resources with your own tooling.
 
-This metadata powers Operator's per-design view. A design's view is named "&lt;design name&gt;-View" and shows only the resources whose design id label matches that design, so you see exactly what one design produced across your clusters. See [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}).
+This metadata powers Operator's per-design view. A design's view is named "&lt;design name&gt;-View" and shows only the resources whose design id label matches that design, so you see exactly what one design produced across your clusters. See [Operator]({{< ref "kanvas/operator/_index.md" >}}).
